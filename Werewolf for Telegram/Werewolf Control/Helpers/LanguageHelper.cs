@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using System.Text.RegularExpressions;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using File = System.IO.File;
@@ -466,7 +467,7 @@ namespace Werewolf_Control.Helpers
         public static void UseNewLanguageFile(string fileName, long id, int msgId)
         {
             var msg = "Moving file to production..\n";
-            Console.WriteLine(msg);
+            
             Bot.Api.EditMessageText(id, msgId, msg);
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
@@ -501,12 +502,12 @@ namespace Werewolf_Control.Helpers
                 copyToPath = lang.FilePath;
             System.IO.File.Copy(newFilePath, copyToPath, true);
             msg += "File moved to production folder.\nCopying to git directory...\n";
-            Console.WriteLine(msg);
+            
             Bot.Api.EditMessageText(id, msgId, msg);
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += "File copied, committing changes to repo...\n";
-            Console.WriteLine(msg);
+            
             Bot.Api.EditMessageText(id, msgId, msg);
             try
             {
@@ -524,18 +525,41 @@ namespace Werewolf_Control.Helpers
                     }
                 };
                 p.Start();
+                var output = "";
                 while (!p.StandardOutput.EndOfStream)
-                    Console.WriteLine(p.StandardOutput.ReadLine());
+                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
                 while (!p.StandardError.EndOfStream)
-                    Console.WriteLine(p.StandardError.ReadLine());
-                msg += "File committed to repo.\nOperation complete.";
+                    output += p.StandardError.ReadLine() + Environment.NewLine;
+                
+                //validate the output
+                if (output.Contains("failed"))
+                {
+                    msg += $"*Failed to commit file.  See control output for information*";
+                    Console.WriteLine(output);
+                }
+                else if (output.Contains("nothing to commit"))
+                {
+                    msg += $"*File not committed, matches existing file.*";
+                }
+                else
+                {
+                    //try to grab the commit
+                    var regex = new Regex("(\\[master .*])");
+                    var match = regex.Match(output);
+                    var commit = "";
+                    if (match.Success)
+                    {
+                        commit = match.Value.Replace("[master ", "").Replace("]", "");
+                    }
+                    msg += $"File committed successfully. {(String.IsNullOrEmpty(commit) ? "" : $"[{commit}](https://github.com/parabola949/Werewolf/commit/{commit})")}\n*Operation complete.*";
+                }
             }
             catch (Exception e)
             {
                 msg += e.Message;
             }
-            Console.WriteLine(msg);
-            Bot.Api.EditMessageText(id, msgId, msg);
+            
+            Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Markdown);
         }
 
         public static void SendAllFiles(long id)
