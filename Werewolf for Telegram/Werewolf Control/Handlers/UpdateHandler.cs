@@ -292,7 +292,7 @@ namespace Werewolf_Control.Handler
 
                             break;
                         case "upload":
-
+                            Console.WriteLine(choice);
                             if (choice == "current")
                             {
                                 Bot.Api.EditMessageText(query.Message.Chat.Id, query.Message.MessageId, "No action taken.");
