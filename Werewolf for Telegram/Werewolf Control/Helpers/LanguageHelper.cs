@@ -466,6 +466,7 @@ namespace Werewolf_Control.Helpers
         public static void UseNewLanguageFile(string fileName, long id, int msgId)
         {
             var msg = "Moving file to production..\n";
+            Console.WriteLine(msg);
             Bot.Api.EditMessageText(id, msgId, msg);
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
@@ -500,22 +501,40 @@ namespace Werewolf_Control.Helpers
                 copyToPath = lang.FilePath;
             System.IO.File.Copy(newFilePath, copyToPath, true);
             msg += "File moved to production folder.\nCopying to git directory...\n";
+            Console.WriteLine(msg);
             Bot.Api.EditMessageText(id, msgId, msg);
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += "File copied, committing changes to repo...\n";
+            Console.WriteLine(msg);
             Bot.Api.EditMessageText(id, msgId, msg);
-            var p = new Process
+            try
             {
-                StartInfo =
+                var p = new Process
                 {
-                    FileName = "commit.bat",
-                    Arguments = fileName,
-                    WorkingDirectory = gitPath
-                }
-            };
-            p.Start();
-            msg += "File committed to repo.\nOperation complete.";
+                    StartInfo =
+                    {
+                        FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
+                        Arguments = $"\"Updating {fileName} from Telegram\"",
+                        WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
+                    }
+                };
+                p.Start();
+                while (!p.StandardOutput.EndOfStream)
+                    Console.WriteLine(p.StandardOutput.ReadLine());
+                while (!p.StandardError.EndOfStream)
+                    Console.WriteLine(p.StandardError.ReadLine());
+                msg += "File committed to repo.\nOperation complete.";
+            }
+            catch (Exception e)
+            {
+                msg += e.Message;
+            }
+            Console.WriteLine(msg);
             Bot.Api.EditMessageText(id, msgId, msg);
         }
 
