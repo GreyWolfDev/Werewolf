@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -464,11 +465,14 @@ namespace Werewolf_Control.Helpers
 
         public static void UseNewLanguageFile(string fileName, long id, int msgId)
         {
+            var msg = "Moving file to production..\n";
+            Bot.Api.EditMessageText(id, msgId, msg);
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
             var langPath = Bot.LanguageDirectory;
             var newFilePath = Path.Combine(tempPath, fileName);
             var copyToPath = Path.Combine(langPath, fileName);
+            var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", fileName);
             //get the new files language
             var doc = XDocument.Load(newFilePath);
 
@@ -495,9 +499,24 @@ namespace Werewolf_Control.Helpers
             if (lang != null)
                 copyToPath = lang.FilePath;
             System.IO.File.Copy(newFilePath, copyToPath, true);
+            msg += "File moved to production folder.\nCopying to git directory...\n";
+            Bot.Api.EditMessageText(id, msgId, msg);
+            File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
-
-            Bot.Api.EditMessageText(id, msgId, "File moved to production folder.");
+            msg += "File copied, committing changes to repo...\n";
+            Bot.Api.EditMessageText(id, msgId, msg);
+            var p = new Process
+            {
+                StartInfo =
+                {
+                    FileName = "commit.bat",
+                    Arguments = fileName,
+                    WorkingDirectory = gitPath
+                }
+            };
+            p.Start();
+            msg += "File committed to repo.\nOperation complete.";
+            Bot.Api.EditMessageText(id, msgId, msg);
         }
 
         public static void SendAllFiles(long id)
