@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -17,6 +18,18 @@ namespace Werewolf_Control
         private static bool _writingInfo = false;
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
+            {
+                //drop the error to log file and exit
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "error.log"), true))
+                {
+                    var e = (eventArgs.ExceptionObject as Exception);
+                    sw.WriteLine(e.Message);
+                    sw.WriteLine(e.StackTrace);
+                    if (eventArgs.IsTerminating)
+                        Environment.Exit(5);
+                }
+            };
             //get the version of the bot and set the window title
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
@@ -48,6 +61,7 @@ namespace Werewolf_Control
         {
             while (_writingInfo)
                 Thread.Sleep(50);
+            Console.CursorTop = Math.Max(Console.CursorTop, 6);
             Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
             Console.WriteLine(s);
         }
@@ -63,7 +77,7 @@ namespace Werewolf_Control
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
-                    var ypos = Console.CursorTop;
+                    var ypos = Math.Max(Console.CursorTop, 6);
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;

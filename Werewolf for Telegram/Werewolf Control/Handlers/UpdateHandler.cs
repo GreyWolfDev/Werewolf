@@ -28,7 +28,7 @@ namespace Werewolf_Control.Handler
             {
                 Bot.MessagesReceived++;
 
-                //ignore previous messages TODO: Remove this later!
+                //ignore previous messages
                 if ((e.Update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
                 var update = e.Update;

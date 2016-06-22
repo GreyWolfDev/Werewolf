@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Database;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
@@ -51,7 +52,7 @@ namespace Werewolf_Control.Helpers
         public static void Initialize()
         {
             //load the commands list
-            foreach (var m in typeof(Werewolf_Control.Commands).GetMethods())
+            foreach (var m in typeof(Commands).GetMethods())
             {
                 var c = new Command();
                 foreach (var a in m.GetCustomAttributes(true))
@@ -64,7 +65,7 @@ namespace Werewolf_Control.Helpers
                         c.GlobalAdminOnly = ca.GlobalAdminOnly;
                         c.GroupAdminOnly = ca.GroupAdminOnly;
                         c.Trigger = ca.Trigger;
-                        c.Method = (ChatCommandMethod) Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
+                        c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
                         c.InGroupOnly = ca.InGroupOnly;
                         Commands.Add(c);
                     }
@@ -110,10 +111,12 @@ namespace Werewolf_Control.Helpers
         public static void SendOnline()
         {
 #if !DEBUG
-            var ids = DBHelper.GetNotifyGroups().ToList();
+            List<long> ids = new List<long>();
+            using (var db = new WWContext())
+                ids.AddRange(db.Database.SqlQuery<long>("select distinct groupid from [group] where groupid not in (select distinct groupid from[group] where BotInGroup = 0)"));
             foreach (var id in ids)
             {
-                Api.SendTextMessage(id, "Werewolf Bot 2.0 online.  Join the dev channel for live updates: https://telegram.me/werewolfdev\nTo disable this message or change other settings, use /config (admin only)");
+                Api.SendTextMessage(id, "Werewolf Bot 3.0 online.  Join the dev channel for live updates: https://telegram.me/werewolfdev\nTo disable this message or change other settings, use /config (admin only)");
             }
 #else
             Api.SendTextMessage(Settings.MainChatId, "Bot 2.0 Test online (I should be named Mr. Spammy)");

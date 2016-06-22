@@ -15,7 +15,7 @@ namespace Werewolf_Control.Helpers
     internal static class TCP
     {
         public static SimpleTcpServer Server;
-
+        
         public static void Initialize()
         {
             Server = new SimpleTcpServer {AutoTrimStrings = false};
@@ -23,8 +23,6 @@ namespace Werewolf_Control.Helpers
             Server.ClientDisconnected += ServerOnClientDisconnected;
             Server.DataReceived += ServerOnDataReceived;
             Server.DelimiterDataReceived += ServerOnDelimiterDataReceived;
-
-            Server.Start(IPAddress.Any, 9050);
             new Thread(Ping).Start();
         }
 
@@ -36,7 +34,7 @@ namespace Werewolf_Control.Helpers
                 {
                     //check server
                     if (!Server.IsStarted)
-                        Server.Start(IPAddress.Any, 9050);
+                        Server.Start(IPAddress.Any, Settings.Port);
                     for (var i = Bot.Nodes.Count - 1; i >= 0; i--)
                     {
                         try
