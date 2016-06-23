@@ -1,9 +1,4 @@
 ﻿using System.Collections.Generic;
-<<<<<<< HEAD
-using Werewolf_Control;
-=======
-
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
 
 namespace Werewolf_Node
 {
@@ -31,15 +26,6 @@ namespace Werewolf_Node
         internal static List<string> SerialKillerWins = new List<string> { "BQADBAADKwMAAsQZZAf4t254zcOVdgI", "BQADBAADOAQAAqUXZAdnNEO6TaxtnQI", "BQADBAADdQMAAsEcZAfkYMOxn9xzBAI", "BQADBAADmgMAArgcZAfW46sJoTg9VQI" };
         internal static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeSI-kDTlm6QAI", "BQADBAADYAMAAkMdZAesBzPWN8zN3QI" };
 
-<<<<<<< HEAD
-#if DEBUG
-        public static string TelegramAPIKey = Internal.Default.TelegramAPIDebug; //TEST
-#else
-        public static string TelegramAPIKey = Internal.Default.TelegramAPIProduction; //PRODUCTION
-#endif
-
-=======
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
         public static int
 #if DEBUG
             MinPlayers = 1,

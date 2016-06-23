@@ -5,10 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-<<<<<<< HEAD
-=======
 using Microsoft.Win32;
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
 using Newtonsoft.Json;
 using TcpFramework;
 using Telegram.Bot;
@@ -23,11 +20,7 @@ namespace Werewolf_Node
         internal static Guid ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
-<<<<<<< HEAD
-        internal static Client Bot = new Client(Settings.TelegramAPIKey);
-=======
         internal static Client Bot;
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
         internal static List<long> GroupInitializing = new List<long>();
@@ -45,8 +38,7 @@ namespace Werewolf_Node
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-=======
+
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
@@ -56,7 +48,7 @@ namespace Werewolf_Node
 #else
             Bot = new Client(key.GetValue("ProductionAPI").ToString());
 #endif
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
+
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
