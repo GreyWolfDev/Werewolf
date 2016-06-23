@@ -61,7 +61,13 @@ namespace Werewolf_Control
         {
             while (_writingInfo)
                 Thread.Sleep(50);
+<<<<<<< HEAD
             Console.CursorTop = Math.Max(Console.CursorTop, 6);
+=======
+            Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
+            if (Console.CursorTop >= 30)
+                Console.CursorTop = 19;
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
             Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
             Console.WriteLine(s);
         }
@@ -77,7 +83,13 @@ namespace Werewolf_Control
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
+<<<<<<< HEAD
                     var ypos = Math.Max(Console.CursorTop, 6);
+=======
+                    var ypos = Math.Max(Console.CursorTop, 19);
+                    if (ypos >= 30)
+                        ypos = 19;
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
@@ -109,9 +121,22 @@ namespace Werewolf_Control
             var MessagesRx = Bot.MessagesReceived;
             var CommandsRx = Bot.CommandsReceived;
 
+<<<<<<< HEAD
             return
                 $"Connected Nodes: {Nodes.Count}\nCurrent Players: {CurrentPlayers}\tCurrent Games: {CurrentGames}\nTotal Players: {TotalPlayers}\tTotal Games: {TotalGames}\n" +
                 $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}";
+=======
+            var msg =
+                $"Connected Nodes: {Nodes.Count}\nCurrent Players: {CurrentPlayers}\tCurrent Games: {CurrentGames}\nTotal Players: {TotalPlayers}\tTotal Games: {TotalGames}\n" +
+                $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}\n\n";
+
+            msg = Nodes.Aggregate(msg, (current, n) => current + $"{n.ClientId} - {n.Version} - Games: {n.Games.Count}\n");
+
+            for (var i = 0; i < 12 - Nodes.Count; i++)
+                msg += "\n";
+
+            return msg;
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
 
         }
     }
