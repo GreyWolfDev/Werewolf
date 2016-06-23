@@ -8,10 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Database;
-<<<<<<< HEAD
-=======
 using Microsoft.Win32;
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
@@ -23,19 +20,10 @@ namespace Werewolf_Control.Helpers
 {
     internal static class Bot
     {
-<<<<<<< HEAD
-#if DEBUG
-        internal static string TelegramAPIKey = Internal.Default.TelegramAPIDebug;
-#else
-        internal static string TelegramAPIKey = Internal.Default.TelegramAPIProduction;
-#endif
-        public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static readonly Client Api = new Client(TelegramAPIKey);
-=======
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
         public static Client Api;
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
+
         public static User Me;
         public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
@@ -61,28 +49,7 @@ namespace Werewolf_Control.Helpers
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         public static void Initialize()
         {
-<<<<<<< HEAD
-            //load the commands list
-            foreach (var m in typeof(Commands).GetMethods())
-            {
-                var c = new Command();
-                foreach (var a in m.GetCustomAttributes(true))
-                {
-                    if (a is Attributes.Command)
-                    {
-                        var ca = a as Attributes.Command;
-                        c.Blockable = ca.Blockable;
-                        c.DevOnly = ca.DevOnly;
-                        c.GlobalAdminOnly = ca.GlobalAdminOnly;
-                        c.GroupAdminOnly = ca.GroupAdminOnly;
-                        c.Trigger = ca.Trigger;
-                        c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
-                        c.InGroupOnly = ca.InGroupOnly;
-                        Commands.Add(c);
-                    }
-                }
-            }
-=======
+            
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
@@ -115,30 +82,18 @@ namespace Werewolf_Control.Helpers
             //        }
             //    }
             //}
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
+
 
             Api.UpdateReceived += UpdateHandler.UpdateReceived;
             Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
             Api.ReceiveError += ApiOnReceiveError;
             Me = Api.GetMe().Result;
-<<<<<<< HEAD
-            //wait for a node to connect...
-            //#if !DEBUG
-            //            while (Nodes.Count == 0)
-            //            {
-            //                Thread.Sleep(100);
-            //            }
-            //#endif
-            StartTime = DateTime.UtcNow;
-            //now we can start receiving
-            Api.StartReceiving();
-            //new Task(SendOnline).Start();
-=======
+
+
             
             StartTime = DateTime.UtcNow;
             //now we can start receiving
             Api.StartReceiving();
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
         }
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
