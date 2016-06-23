@@ -6,7 +6,10 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
 using System.Windows.Forms.Design;
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Args;
@@ -62,7 +65,11 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
+<<<<<<< HEAD
+                                
+=======
 
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
                                 if (PermaBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     Bot.Api.SendTextMessage(id, "*You have been permanently banned from Werewolf.*",
@@ -75,8 +82,11 @@ namespace Werewolf_Control.Handler
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
 
                                 //check for the command
+<<<<<<< HEAD
+=======
                                 #region More optimized code, but slow as hell
                                 /*
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
                                 var command = Bot.Commands.FirstOrDefault(
                                         x =>
                                             String.Equals(x.Trigger, args[0],
@@ -115,6 +125,8 @@ namespace Werewolf_Control.Handler
                                     Bot.CommandsReceived++;
                                     command.Method.Invoke(update, args);
                                 }
+<<<<<<< HEAD
+=======
                                 */
                                 Bot.CommandsReceived++;
                                 switch (args[0].ToLower())
@@ -322,6 +334,7 @@ namespace Werewolf_Control.Handler
 
 
                                 #endregion
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
                             }
                             break;
                         case MessageType.PhotoMessage:
@@ -348,7 +361,11 @@ namespace Werewolf_Control.Handler
                         case MessageType.ServiceMessage:
                             using (var DB = new WWContext())
                             {
+<<<<<<< HEAD
+                                
+=======
 
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
                                 id = update.Message.Chat.Id;
                                 var m = update.Message;
                                 if (m.LeftChatMember?.Id == Bot.Me.Id)
@@ -407,7 +424,11 @@ namespace Werewolf_Control.Handler
 #endif
             }
         }
+<<<<<<< HEAD
+        
+=======
 
+>>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
         /// <summary>
         /// Gets the language for the group, defaulting to English
         /// </summary>
