@@ -27,12 +27,6 @@ namespace Werewolf_Node
         internal static List<string> SerialKillerWins = new List<string> { "BQADBAADKwMAAsQZZAf4t254zcOVdgI", "BQADBAADOAQAAqUXZAdnNEO6TaxtnQI", "BQADBAADdQMAAsEcZAfkYMOxn9xzBAI", "BQADBAADmgMAArgcZAfW46sJoTg9VQI" };
         internal static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeSI-kDTlm6QAI", "BQADBAADYAMAAkMdZAesBzPWN8zN3QI" };
 
-#if DEBUG
-        public static string TelegramAPIKey = Internal.Default.TelegramAPIDebug; //TEST
-#else
-        public static string TelegramAPIKey = Internal.Default.TelegramAPIProduction; //PRODUCTION
-#endif
-
         public static int
 #if DEBUG
             MinPlayers = 1,

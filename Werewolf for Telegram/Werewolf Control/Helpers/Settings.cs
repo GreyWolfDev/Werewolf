@@ -13,7 +13,7 @@ namespace Werewolf_Control.Helpers
 #else
         public static int Port = 9050;
 #endif
-        public static string TcpSecret => Internal.Default.TelegramAPIDebug.GetHashCode().ToString();
+        public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
         public static long MainChatId = -1001049529775; //Beta group
         public static long SupportChatId = -1001060486754; //@werewolfsupport
         public static long PrimaryChatId = -1001030085238; //@werewolfgame
