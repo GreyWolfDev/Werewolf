@@ -42,7 +42,7 @@ namespace Werewolf_Control.Helpers
 #else
         public static int NewNodeThreshhold = 30;
 #endif
-        public static int ShutDownNodesAt = 10;
+        public static int ShutDownNodesAt = 15;
 
         public static int
 #if DEBUG

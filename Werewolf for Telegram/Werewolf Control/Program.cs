@@ -71,6 +71,8 @@ namespace Werewolf_Control
 
         private static void NodeMonitor()
         {
+            //wait a bit to allow nodes to register
+            Thread.Sleep(6000);
             while (Running)
             {
                 try
@@ -122,13 +124,13 @@ namespace Werewolf_Control
                     if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
                     {
                         NewNode();
-                        Thread.Sleep(2000);
+                        Thread.Sleep(5000); //give the node time to register
                     }
 
                     if (Nodes.All(x => x.ShuttingDown)) //replace nodes
                     {
                         NewNode();
-                        Thread.Sleep(2000);
+                        Thread.Sleep(5000); //give the node time to register
                     }
                 }
                 finally
