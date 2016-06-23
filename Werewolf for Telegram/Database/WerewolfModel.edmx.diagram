@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a0652562d3e43489c9175bbb793ff46" Name="Diagram1">
+        <EntityTypeShape EntityType="werewolfModel.Action" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.Game" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.GameKill" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.GamePlayer" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.Group" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.KillMethod" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.Player" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.NotifyGame" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.v_NonDefaultGroups" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.v_PreferredGroups" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="werewolfModel.v_WaitList" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="werewolfModel.FK_Action_Game" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_Action_Initiator" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_Action_Receiver" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_Game_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_GameKill_Game" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_GameKill_Killer" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_GameKill_KillMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_GameKill_Victim" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.FK_GamePlayer_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="werewolfModel.GroupAdmin" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

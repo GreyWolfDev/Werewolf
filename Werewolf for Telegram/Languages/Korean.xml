@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="한국어" base="한글" variant="SFW"/>
+  <string key="NotInGame">
+    <value>당신은 지금 어떤 게임에 있을 나타나지 않습니다...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} 게임을 시작 했다! 사용 하 여 /join 재미...에 아마 죽으: P</value>
+    <value>새로운 게임에 의해 시작 되었습니다. {0}! 사용 /join 먹는 얻을!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} 혼돈 게임 시작! 사용 하 여 /join 재미...에 아마 죽으: P</value>
+    <value>에 의해 시작 된 새로운 혼돈 게임 {0}! 사용 /join 먹는 얻을!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>지금에 참여할 수 없습니다! 게임은 이미 실행 하 고.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>당신은 이미 합류 했습니다!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 분 왼쪽 /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} 초 왼쪽으로 /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>충분 하지 않은 플레이어 게임 취소!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>게임은 시작 하 고, 역할 할당 및 데이터베이스를 업데이트 하는 동안 기다리십시오.</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} 공격 시도 대 한 금지 (이름 맨먼저 /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, 가입 하 여 이름을 변경 하십시오</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>죄송 합니다, 최대 선수 제한에 도달 했습니다!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} 게임에 합류 했다. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <value>{0} 이 클릭: @{1}, 다음 시작을 클릭 합니다.  당신이 할 때까지 내가 당신의 역할은 당신을 말할 수 없습니다.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>당신이 도망 수 없습니다! 넌 죽 었 어!  지상에 돌아갈...  이런</value>
+  </string>
+  <string key="Flee">
+    <value>{0} 공포에 도망가!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} 이었다 {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} 플레이어는 남아 있다.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>이 봐, 난 하지 않았다 물어 아무것도 아직!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>재생 될 것 하지 않습니다...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>그 이름 하 여 플레이어를 찾을 수 없습니다!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>이 응답이 올바르지 않습니다!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0}식사를 투표 했다 {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} 투표 린치 하고있다 {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} 2 박 연속에서 선정 하지 있다.  좋은의 힘 보았다이 끔찍한 범죄 및 {0} 갑자기 폭포, 죽은. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>당신은 반역자! 당신은 늑대 지금 있다...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>선택 허용</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\n예언자는 {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} was the seer. 제자로 서 당신이 될 새로운 예언자 단계.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} 제자, 그리고 지금은 새로운 예언자로 {1}의 자리를 채우기 위해 강화 하고있다.</value>
+  </string>
+  <string key="SeerSees">
+    <value>당신이 볼 {0} 은 {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>누가 린치 하 시겠습니까?</value>
+  </string>
+  <string key="AskDetect">
+    <value>누가 검색 하 시겠습니까?</value>
+  </string>
+  <string key="AskShoot">
+    <value>누가 쏘고 싶어 당신은? {0} bullet(s) remain</value>
+  </string>
+  <string key="AskVisit">
+    <value>누가 방문 하 시겠습니까?</value>
+  </string>
+  <string key="AskSee">
+    <value>누가 볼 수 시겠습니까?</value>
+  </string>
+  <string key="AskGuard">
+    <value>누가 감시 하 시겠습니까?</value>
+  </string>
+  <string key="AskEat">
+    <value>누가 먹을 시겠습니까?</value>
+  </string>
+  <string key="AskHunt">
+    <value>사람을 사냥 하 시겠습니까?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>누가 당신의 역할 모델은?</value>
+  </string>
+  <string key="AskConvert">
+    <value>누가 당신의 순서를 변환 하 시겠습니까?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  당신이 함께 토론 다는 것을 확인합니다 {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>당신은 저주는. 당신은이 시간에는 주민 하지만 늑대를 당신을 죽 일 선택 될 것입니다 대신 늑대 인간 자신.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>당신은 형사입니다. 낮에, 그들의 역할을 한 선수를 선택할 수 있습니다.  그러나-이렇게, 당신의 역할은 늑대에 게 공개 수! (40% 확률)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>축 하! 당신은 마을 술! (정말, 모두 그것을 알고...)</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>수호 천사 있습니다. 매일 밤, 하기 선수를 선택할 수 있습니다.  그러나, 늑대를 선택 하면, 당신은 죽을 것 이다 50% 기회가 있다.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>포 수는 있습니다.  당신은 두 개의 글머리 기호.  낮에, 다른 선수를 촬영 선택할 수 있습니다. 모두 촬영, 여기 것 이다 그리고 당신이 사 수 (안 늑대) 인지.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>당신은 창녀! 당신은 창녀입니다. 밤 동안, 그들이 있다면 늑대 하지 확인 하려면 다른 선수를 방문 하도록 선택할 수 있습니다.  그러나-늑대, 방문 하거나 누군가가 늑대에 의해 살해를 방문, 당신은 죽을 것 이다.  하지만, 방문 하는 야 할 늑대 당신의 가정에 당신을 죽 일 하려고 하는 경우에, 당신은 살아남을 것입니다.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>배신자! 모든 늑대 가 죽을 일단 지금은 당신이 주민 하지만 , 배신자! 지금, 당신은 주민, 하지만 모든 늑대 죽을, 일단 늑대 인간이 될 것입니다.  예언자 당신에 게 보인다면, 당신은 수 있습니다 또는 늑대로 식별 되지 않을 수 있습니다. </value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>늑대는 XD!! (나중에 좋은) 밤 마다 사람을 죽 일을 선택할 수 있습니다.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >당신은 예언자 이다.  매일 밤, 당신은 ' 보고 ', 선수를 선택 하 고 당신에 게 그들의 역할을 공개 수 있습니다.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >당신은 수확 필드, 당신의 일을 보내고 운명 천 주민 이며 먹 히.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >태 너 있습니다.  당신은 뛰어 얻을 경우 자동으로 승리!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >당신은 야생 아이입니다! ' 역할 모델 '-하는 선수를 선택 늑대 될 그들이 죽을 경우.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >당신이 보는, (진짜) 예언자는 말 될 것-그건 당신의 유일한 함수.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >당신은 제자 예언자입니다.  죽는 경우에 (진짜) 예언자, 예언자로 그들의 장소를 소요 됩니다.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >당신은 추종자입니다. 매일 밤,변환할 플레이어 선택할 수 있습니다 추종자를.모든 생활 나머지 플레이어에는 끝은 추종자, 그들은 승리.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >거기에 추종자는 마을 모두 변환 하려고!  매일 밤, 플레이어를 선택 합니다.  만약 그들이 cultist, 그들은 죽어.  컬트 변환 하는 경우, 신입 회원이 죽는다.</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      황혼 근처, 그리고 그들은 오늘 저녁 린치는 누가 결정 하는 마을 수집...
+      이제 누구나 {0} 투표 하는 초!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >그것은 지금 낮 시간입니다.  여러분 모두는 {0} 당신의 비난을 초 / 방어 체계 / 이야기.</value>
+  </string>
+  <string key="NightTime" >
+    <value >밤은 떨어졌다.  모두 침대, 또 다른 스트레스를 하루 후 지친 머리.  박 선수: 당신은 {0} 당신의 행동을 사용 하는 초!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >마을 의심과 의혹 속에서 그들의 투표 캐스팅 했습니다. {0} 죽 다입니다. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >올 수 없는 린치, 사람에 대 한 적절 한 결정으로 마피아 반환 그들의 가정에 밤, 좌절된에 대 한...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >뭔가 비린내, 아무도 투표는!  아니 린치 오늘...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >마을 사람들은 아침에 수집 하지만 표시 되지 않습니다 {0}. 그들은 찾을 수 집에 위로 방황 {0} 그들의 목 구멍에 쑤 셔 넣고 오래 된 배지와 함께, 꺼 냈다..</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >아침 제공, 그리고 모든 사람의 실망, 교회의 십자가 위에 찔 려는 {0},수호 천사입니다.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >모두가 그들의 집에서와 서, 샷건의 찾기 조각 천지에 대해... 다음 다리... 다음 손가락...  다음 본문의 마 광장에 분수에 떠 {0}, 늑대 인간에서 죽은.  당신의 사 수를 잃 었.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >늑대 인간에서 죽은.  당신의 사 수를 잃 었. {0} 
+위자 보드와 타로 카드 를 통해 haunched . 선견자 는 죽었어요.
+</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >모두가 불타는 알코올과 나무 의 냄새 에 깨어 ... 술집 에 불 입니다 !!!! 밖으로 의 유골 을 불을 퍼팅 후 {0} 발견 분열 되어 있습니다 ....</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >태양이 마을 이상으로 상승 , 그들은 발견 {0} 위자 보드 위에 앉아 있지만 .... 자전거 카드 놀이의 갑판 ??? 무슨 바보 !
+</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>모든 사람이 아침에 상승 , 그들은 끔찍한 악취 냄새 . 그들은 찾아 냄새 를 따라 {0}돼지 펜 에 ​​떨어져 났습니다 , ​​머리 가 없습니다 . NOMNOMNOMNOM {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>두드러진 악취 은 오고있다 {0}'s 집...</value>
+  </string>
+  <string key="NoAttack" >
+    <value >마을 수집 다음것 아침 에서 그만큼 마을 센터는 안도의 한숨 에 - 그것은 이전의 밤 이 더 공격 을 가 없었다 나타납니다.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >당신 은 늑대 에 의해 살해 되었다. 저주 , 당신은 이제 늑대 가되었습니다 !</value>
+  </string>
+  <string key="WolfTeam">
+    <value>당신의 늑대 상대방 (들): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >{0} 이었다 물린 .... 하지만 저주 하고, 늑대 인간 이되었다 ! 새 팀 동료 의 축하 !
+</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value >오 ! 늑대 는 당신 을 어갈 . NOMNOMNOMNOM</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >오 !{0} 음주 이었다! 지금 당신은 술 , 그리고 내일 밤에 공격 할 수 없다 ..</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >
+당신은 늑대 를 보호 하기 위해 노력 ! 늑대 는 당신 을 먹은 .</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >당신은 저장 한 {0}'s 생명!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >{0} 공격 하지 않은 , 그래서 당신은 무엇 을 많이 하지 않았다.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>당신은 보호 갔다 {0}, 그러나 그들은 집에 없었다 !</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >수호신 은 지난 밤에 당신을 지켜보고 있었고, 늑대 를 싸웠다 !</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >창녀 오프 잘못 밤 을 하기로 결정 하고, 집에 있었다 .  {0} 늑대 에 의해 먹게 되었습니다!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >이상한... {0} 홈 아니었다! 당신을 위해 어떤 저녁 식사를 하지 ...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >당신은 에 미끄러 {0}'s 약간의 재미 를위한 집은 , 단지 늑대 에 직면 한다. 당신은 죽은.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} 지난 밤에 잘못된 집으로 미끄러 ! 그들의 섹시한 남아 어떻게 슬픈 철 막대 ... 와 교회 문 에 고정 발견 :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >{0} 에 미끄러 져 {1}'s집, 준비 는 이 합니다 약간의 재미 에 용이함 스트레스 끕니다. 그러나, 그들은 대신 늑대 인간 식사 를 찾을 수 {1}!  늑대 인간 은 빨리 켜지 {0} 그리고 점프 ....{0} 죽었어요.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >당신은 참조 {0} 그들은 당신이 좋은 긴 하드 밤새 실수 로 , 늑대 되지 않습니다 !</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >그것은 조금 어두운 , 그래서 당신은 충분히 잘 볼 수없는 , 하지만 당신은 일어나 한밤중에 , 창녀 당신을 타고 .  여러분 모두 는 그들이 밖으로 자동으로 다시 미끄러 , 마무리 ...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >당신은 적발 {0} 
+대한 스누핑 ! 그들은 형사 입니다</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >당신의 스누핑 이 있음을 보여 주었다 {0}이다 {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >것 같은데 {0} 음녀 와 밤 후 다시 긍정적 인 왔어요! 사수 는 복수를 얻었다. {1} 죽었어요.</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >갑자기 , 슛 아웃 반지 . 마을은 볼 집니다 {0} 이상 서 {1}'s 몸은 , 총 여전히 머리를 겨냥. {2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value >늑대 인간 은 이겼다 !</value>
+  </string>
+  <string key="WolvesWin" >
+    <value >늑대 인간 이 승리 !</value>
+  </string>
+  <string key="VillageWins" >
+    <value >마을 사람들 은 승리 ! 모든 늑대 가 사망했다 ....</value>
+  </string>
+  <string key="TannerWins" >
+    <value >오 ! 당신은 태너 를 린치 ! 그는 바보 , 게임을 승리 .</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living players, roles, and team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0}변환 투표 했다 {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} 당신의 더러운 일을 하고, 변환 전송 된 {1}... 그러나 , 그들은 숭배 했다 사냥꾼! {0} 죽은 !</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} 당신 을 변환 할 준비가 , 지난 밤에 집 에 와서 .... 하지만 당신은 바로 그를 통해 칼을 쑤셔 . 이교도 는 죽었다 ... {1} 남아있는!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>숭배 는 순서 로 전환 했다 ! 이제 이교도 입니다. 다른 모든 밤 , 당신은 다른 플레이어 를 변환하는 기회를 가질 것입니다 .</value>
+  </string>
+  <string key="CultTeam">
+    <value>Cultists: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} 숭배 에 합류했다 !</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} 당신의 더러운 일을 하고, 변환 전송 된 {1}...하지만 아무도 집에 없었다 !</value>
+  </string>
+  <string key="CultWins" >
+    <value >모든 늑대 가 사망 하고, 서 남아 있는 유일한 사람은 모든 숭배 가 수상했다 .. 컬 티스트 로 변환 되었습니다 !</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>당신은 사냥을 갔다{0}, 하지만 그들은 이미 죽어 있다!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>당신은 으로 이동 {0}'s 집, 그들을 발견 기도 전 제단 에  약간 알 수없는 신  당신은 신속하게 바로 사악한 이교도 를 통해 칼을 밀어 넣습니다.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>당신은 이동 {0}'s 집은 있지만 신비 영창 이 없습니다. 당신이 집에 돌아 그래서 그들은 는 이교도 없습니다.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>{0}'s 
+역할 모델 은 죽었다 ! 자신의 분노 , 그들은 늑대 인간 이되었다 !</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} 사망했다 ! 당신의 분노 , 당신은 늑대 인간 이되었다 ! 새 팀원 은 다음과 같습니다 :
+ {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>마을 사람 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>음주 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>음녀💋</value>
+  </string>
+  <string key="Seer">
+    <value>예언자 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>배신자 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>가디언 엔젤 👼</value>
+  </string>
+  <string key="Detective">
+    <value>형사 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>늑대 인간 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>저주 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>사수 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>태너 👺</value>
+  </string>
+  <string key="Fool">
+    <value>바보 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>야생 아이 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>보는 사람 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>도제 예언자 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>이교도👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>이교도 헌터 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Ran away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Dead</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Alive</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Players Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>메이슨 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>당신은 메이슨 있습니다 . 다른 석공 이있는 경우 , 당신은 그들이 누군지 알 수 있습니다. 그렇지 않으면, 당신은 주민 입니다.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>모두가 상승함에 따라 , 그들은 돌 더미 에 밀려 몸 이 , 피가 사방에 산산조각 찾을 수 있습니다. 당신의 석공 중 하나가 사망했다 !</value>
+  </string>
+  <string key="MasonTeam">
+    <value> 프리메이슨 은 다음과 같습니다 : {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>당신의 새로운 멤버 까지 머리 {0}'s 집은 변환 , 대신 사방 집 에게 완전한 난파선 , 피를 발견 하고 늑대 모피의 비트는 출입구 에 걸 렸 합니다 ...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>팩 의 머리 에{0}'s 집은 그들을 먹을 수 있지만 치아에 무장 한 키 큰 어두운 그림 에 의해 충족 된다. 가디언 천사 는 모두의 싸움 , 그리고 당신은 다시 패배 향한다.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>당신은 보내 {0} 변환하려고 합니다{1}, 그러나 그들의 믿음은 너무 강한 , 당신은 변환 할 수 없습니다 :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, 이름의 선수 {0} 이미 합류했다 .  가입 이름을 변경하십시오.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>당신은 에 미끄러{0}'s 약간의 재미 를위한 집 ...하지만 당신이 떠나 , 당신 은 이상한 제단 , 가난 숨겨진 을 발견 하는 일 , 옆의 방에 떨어져 , 이상한 그것에서 오는 적열 ....</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>모든 사람은 아침에 깨어 나면 , 그 통지{0} 주변 아니지만 ...  그들은 의 유물 을 찾기 위해 집을 확인 {0}.</value>
+    <value>마을 사람들 이 태양 상승 으로 수집 된 바와 같이, 의 유물 을 찾아 {0}, 사람 은 지난 밤에 어떻게 든 사망 ...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>이상한.... {0} 오늘 아침 석수 회의 를 위해 보이지 않았다 .... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>게임이 실행하는 그룹 관리자에 의해 비활성화 된 상태에서 탈출 !</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>is dead</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>너는 이미 게임 에 !({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>그룹 은 엑스트라를 죽이고 ... 여러 게임을 시작할 수있게되었다 .</value>
+  </string>
+  <string key="GroupQueue">
+    <value>당신의 그룹은 큐에 현재 . 위치: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>죄송합니다, 나는 당신이 지금 게임을 시작할 수 없습니다 , ​​짧은 유지 보수 휴식을 시작하려고 해요 .\n에 대기 {0} 게임을 종료합니다 ...\n로 이동 @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <value>죄송합니다, 최대 동시 게임 에 도달했습니다 ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} 바람직한 기 이며, 큐를 생략 하고있다 !</value>
+  </string>
+  <string key="NoGame">
+    <value>더 게임 실행 이 없습니다. 함께 새로운 게임을 시작합니다 /startgame 또는 으로 혼돈 게임을 시작 /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>이 게임 후, 나는 유지 보수를 위해 종료 하고.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>이 게임 후, 나는 ( 자동 ) 업데이트를 일시적으로 종료 하고 있습니다.</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>사용자 아이디 가 null 이었다. 당신은 당신이 응답 으로 이 보내 시겠습니까 ?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} 이미 관리자 입니다!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0}관리자 하지 않습니다!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} 관리 목록에서 제거 .</value>
+  </string>
+  <string key="LanguageSet">
+    <value>언어 로 설정 {0}</value>
+  </string>
+  <string key="NoSeer">
+  <value>No seer!</value>
+  </string>
+  <string key="TimesUp">
+  <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>당신은 큐피드입니다. 단지 속옷이랑 활이랑 화살 두개만 갖고 지구에 도착하였습니다. 플레이어 2명을 선택하면 그들은 사랑에 빠질것입니다. 한명이 죽으면, 다른 한명도 슬픔으로 인해 죽을것입니다.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>당신은 도플갱어 있습니다 . 전설 조상 이 metamorphs 있었고, 그들이 원하는 어떤 형태 를 선택할 수 그것이있다 . 당신은 그들의 능력 의 일부를 상속 했다. 그 플레이어 가 죽었을 때 , 당신은 자신의 역할 에 걸립니다 , 플레이어 를 선택합니다.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>당신은 마을 사냥꾼 이다. 당신은 잠을 잘 하지 않는다 , 당신은 당신의 소총 없이 침대로 가지 않을 것이다. 당신이 죽을 경우에, 당신은 죽일 다른 사람 을 선택할 수 있습니다. 당신이 먹을 경우 , 당신은 늑대 인간 을 취할 수있는 기회를 가지고 있지만, 죽일 플레이어를 선택할 수 없습니다.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>당신은 연쇄 살인범 이다. 최근 현지 정신 병원 에서 탈출 , 당신의 목표는 죽을 다른 사람 을위한 것입니다. 매일 밤 , 당신은 당신의 컬렉션에 선수 의 몸 을 추가 할 수 있습니다.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>당신은 사랑에 의해 공격되었다. {0}의 메모리는 당신의 마음에서 사라지지 않을 것입니다. 둘은 살아 남기 위해 당신의 목표입니다. 둘 중 하나가 죽으면, 다른 하나는 '슬픔에서 죽을 것이다</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>마을 을 걸어 선택했다 ! 이것은 당신이 아래로 가서 사람을 쏠 수 있는 마지막 기회 선택 입니다!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0}은 총을 집으려고 했지만, 늦은 바람에,결국 그의 목뼈가 부러지면서 사망하였습니다...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} 자신의 권총 밖으로 채찍 , 군중 에 보이는 ..... 와 촬영 하는 사람 에 대한 결정 을 할 수 없습니다 . 그는 자신의 운명을 받아들이고 , 자신의 죽음에 떨어지면 ...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>올가미 주위 강화 로 {0}'s 목 , 그들은 그것을 팔 , 권총 을 채찍 목표로 가지고 가고, 트리거 , 촬영 을 당겨 {1} 바닥 이 그 아래 밖으로 방울 로 ! {1} 죽은 이상 떨어진다.  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>사수 는 총 있다 ! 마지막 순간 , 당신은 .... 사람을 촬영 이 빨리 만들 수있는 기회가 !</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>에 샷 {0} 너무 많이 , 너무 많은 사람들 이 혈액의 수영장 에 누워 그들은 심지어 자신의 권총 을 위해 도달 할 수 있었다 .....</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0}은 누워있었습니다, 그는 힘겹게 숨을 쉬면서, 누굴 쏴야할지 결정을 못한 나머지...운명을 맞이합니다.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>A총알이 {0}을 몸통응 뚫어서, 그는 쓰러지지만...죽기전에 그는 총을 들고, {1}에게 쐈읍니다, 그 총알이 눈 사이를 뚫었네요. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} 까지 몰래 {1}'s 집 , 아빠 는 문을 열고 , 즉시 칼으로 미친 미치광이 로 인사 한다 ! {1} 칼 깊은 로 를 틈 {0}'s 칼 깊은 로 를 틈, 전체 시간을 꼬꼬댁 우는 ! {0} 죽은 D:</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>늑대 는 지난 밤 사냥꾼 을 공격 하려고했으나 사냥꾼 걸릴 수 있었다 하나 아래로 그들과 함께 죽었다 으로 ! {0} 죽은 ( 늑대 )</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>늑대 는 지난 밤 사냥꾼 을 공격 하려고했으나 사냥꾼 이 늑대 를 취할 수 있었다 {0} 자신의 소총 다운 !</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>늑대들은 맛있는 야식을 먹을거라 생각했지만, 미친 살인범을 만났습니다! {0}은 싸움에 인해 사망하였습니다!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>{0}한테는 조용한 밤인줄 알았지만, 틀렸나봐요. 마을 사람들이 아침에 모였는데 {0}이 머리부터 발끝까지 갈라져있었고, 이상하게 간이 실종되어있었습니다... 연쇄 살인범이 다시 공격했어요! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>당신은 {0}의 몸통을 수집하고 싶었으나, 수호천사가 당신을 내쫒았습니다. 오늘 저녁에는 아무도 못 죽였네요...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>숭배 는 전송 {0} 변환하려고 합니다 {1}, 대신 슛 아웃 반지 와 {0}'s 몸은 창 밖을 비행 온다 ! {0} 죽은 ....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>숭배 는 전송 {0} 변환하려고 합니다 {1}, 하지만 대신 {0}'s 몸이 창 밖을 비행 온다 , 칼 은 자신의 신체 의 모든 부분 에 밀어 ! 무엇 사이코 ! {0} is dead....</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Y당신은 연쇄 살인범을 지키려했지만 그는 당신을 89번 찔렀습니다! 사망하였습니다.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>당신은 에 미끄러 {0}'s 집 , 그리고 약간의 재미를 시작합니다. 모든 때까지 좋은 것 같다 {0} 칼을 꺼내서 , 당신 을 찔러 미치광이 처럼 웃고 시작 ! 당신은 죽었다 ....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now!</value>
+  </string>
+  <string key="DGToMason">
+    <value>도플갱어가 {0} 석공이 됐어요, 바로 당신처럼요!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{{0}은 사망했습니다, 그래서 당신은 석공으로 변신하였습니다. 당신의 팀멤버들은 (있으면) {1}입니다</value>
+  </string>
+  <string key="DGToCult">
+    <value>도플갱어 {0} 지금 당신 처럼 이교도 가되었습니다 !</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} 사망 , 당신은 이교도 로 변신 했다  당신의 동료 는 (있는 경우) 은 다음과 같습니다 {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>도플갱어 {0} 지금 당신처럼 , 늑대 가되었다 !</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} 사망 , 당신은 늑대 로 변신 했다 . 당신의 동료 는 (있는 경우) 은 다음과 같습니다 {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>남은 생존자는 연쇄 살인범이네요! 그의 승리입니다!</value>
+  </string>
+  <string key="AskKill">
+    <value>오늘 밤엔 누굴 죽이고싶습니까?</value>
+  </string>
+  <string key="LoverDied">
+    <value>와 {0}'s 숨 죽어 , {1} 울고 , 몰리게 및 떨어진다. 그들은 하나의 사랑 의 손실을 서서 하고 찾을 수있는 가까운 권총 으로 자신을 촬영할 수 없습니다 . {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>누가 당신은 그들이 죽으면되고 싶어?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>당신은 연인 이 되고 싶지 않는 사람들? 첫 번째 플레이어 를 선택</value>
+  </string>
+  <string key="AskCupid2">
+    <value>누가 당신 의 연인 이되고 싶어? 두 번째 플레이어 를 선택</value>
+  </string>
+  <string key="Hunter">
+    <value>사냥꾼 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>큐핏 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>시리얼 킬러 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>도플갱어 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>쿠 피드 당신을 공격 했다 화살표 ! 당신은 사랑에 미친 듯이 있습니다 {0}!  그들이 죽으면 , 당신도 죽을 것이다 . 둘 다 마지막에 그것을 만드는 경우에, 당신은 둘 다 이길 것이다 .</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>당신은 야생 의 자녀 가되었습니다. 당신은 역할 모델 이다 {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>진정한 사랑 의 영속 ! 연인 이 승리 !</value>
+  </string>
+</strings>

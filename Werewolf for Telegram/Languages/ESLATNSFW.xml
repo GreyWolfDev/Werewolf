@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Español (LatAm) NSFW" base="Español" variant="LatAm NSFW"/>
+  <string key="NotInGame">
+    <value>No parece que estés en ninguna partida ahora mismo...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>¡*{0}* ha empezado un juego! Usa /join para unirte a la diversión… y probablemente morir :P</value>
+    <value>¡Se ha iniciado un nuevo juego por {0}! ¡Usa /join para que te coman!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+   <value>¡{0} ha empezado una partida caótica! Usa /join para unirte a la diversión… y probablemente morir :P</value>
+   <value>¡Se ha iniciado una nueva partida caótica por {0}! ¡Usa /join para que te coman!</value>
+ </string>
+  <string key="NoJoinGameRunning">
+    <value>¡No podes unir ahora! El juego ya empezó.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>¡Ya te has unido!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto restante para unirse con /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} segundos para unirse con /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>¡No hay suficientes jugadores, se cancela el juego!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>_El juego está empezando, espera un cachito mientras asigno los roles y actualizo la base de datos._</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} has sido *baneado* por intentar hacer trampas (prohibidos nombres con /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, *por favor, cambia tu nombre para unirte*</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>¡Lo siento, se ha alcanzado el límite de jugadores!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} se ha unido a la partida. _{1} jugadores, {2} mínimo, {3} máximo_</value>
+  </string>
+  <string key="PMTheBot">
+    <value>*{0} Mandame un mensaje privado (@{1}) con el comando /start, y luego escribeme cualquier otra cosa para poder registrarte para que pueda enviarte mensajes con información sobre la partida.*</value>
+  </string>
+  <string key="DeadFlee">
+    <value>¡No puedes huir! ¡ESTÁS MUERTO!  Vuelve a la tumba...  por dios.</value>
+  </string>
+  <string key="Flee">
+    <value>¡*{0}* ha huido presa del pánico!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>*{0}* era *{1}*.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>*{0}* jugadores restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>¡Vamo a calmarno, todavía no te pregunté nada!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>No parece que estés jugando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>¡No encuentro ningún jugador con ese nombre!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>¡Esta respuesta no es válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>*{0}* ha votado comerse a *{1}*.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>*{0}* ha votado linchar a *{1}*.</value>
+  </string>
+  <string key="IdleKill">
+    <value>*{0}* no ha votado dos noches seguidas. Resulta que se abrió el intestino metiendose cosas por la cola y *{0}* murió por desangramiento.\n*{1}*.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>¡¡¡Tú, traidor!!! Ahora sos el lobo...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Ya has elegido. No hay vuelta atrás.</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nEl vidente es {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} era el vidente. Como su aprendiz, es tu turno de convertirte en vidente.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} era un aprendiz, ahora ha llegado su turno de relevar a {1} como el nuevo vidente.</value>
+  </string>
+  <string key="SeerSees">
+    <value>¡Percibes que {0} es {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>¿A quién queres *linchar*?</value>
+  </string>
+  <string key="AskDetect">
+    <value>¿A quién queres *investigar*?</value>
+  </string>
+  <string key="AskShoot">
+    <value>¿A quién queres *disparar*? {0} bala(s) restantes.</value>
+  </string>
+  <string key="AskVisit">
+    <value>¿A quién queres *visitar*?</value>
+  </string>
+  <string key="AskSee">
+    <value>¿A quién queres *percibir*?</value>
+  </string>
+  <string key="AskGuard">
+    <value>¿A quién queres *proteger*?</value>
+  </string>
+  <string key="AskEat">
+    <value>¿A quién queres *comerte*?</value>
+  </string>
+  <string key="AskHunt">
+    <value>¿A quién queres *dar caza*?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>¿Quién queres que sea tu *guía*?</value>
+  </string>
+  <string key="AskConvert">
+    <value>¿A quién queres *convertir* a tu orden?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Asegúrate de discutir con {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value>y</value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Estás *maldito*. Por el momento, sos un campesino, pero si los lobos te matan, en lugar de morir te convertirás en otro hombre-lobo.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Eres el detective. Durante el día, puedes elegir un jugador para investigar su rol. Sin embargo, si lo haces, puede que tu rol se revele a los lobos (40% de posibilidades).</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>¡A mamarse! ¡Eres la borracha del pueblo! (De verdad, todo el mundo lo sabe...).</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sos el Ángel de la Guarda. Cada noche, podes elegir un jugador para proteger con la luz de Cristo. Sin embargo, si eliges un lobo, puede que mueras (50% de posibilidades).</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sos el justiciero. Tenes dos balas. Durante el día, podes elegir disparar a otro jugador. Todo el mundo oirá los disparos y sabrá que eres el justiciero (y no un lobo).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>¡Putarraca! Sos la putita. Te pones loquita de día, te pones putita de noche ... y podes ir a encamarte con otro jugador y sabrás si es un campesino (no es un lobo). Si visitas a un lobo o a la víctima de los lobos esa noche, morirás. Por otro lado, si esa noche los lobos tratan de matarte, no te encontrarán en tu casa y sobrevivirás.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>¡Traidor! Por ahora, sos un campesino, pero una vez los lobos mueran, te convertirás en hombre-lobo. Si la vidente te elige, puede que te identifique como lobo o no.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>XD ¡¡SOS UN LOBO!! (Bien por ti). Cada noche puedes elegir comerte a alguien.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Sos la vidente. Cada noche puedes elegir un personaje para percibir su rol.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Sos un simple campesino, condenado a pasar tus días labrando el campo.. y ser comido.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Sos Jack !!!. Si consigues ser linchado, ¡ganas inmediatamente! Pro-Tip: Yakeala fuerte hablando español neutro para que quieran eliminarte</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >¡Sos el niño morbo! Elige un jugador para que sea tu ‘guía’; si muere, te convertirás en hombre-lobo.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Sos el observador, se te dirá quién es la (verdadera) vidente. Ésta es tu única función.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Sos el aprendiz de vidente. Si la (verdadera) vidente muere, tomarás su lugar como vidente.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Sos el tupa. Cada noche puedes elegir a otro jugador para convertirlo en tupamaro. Si al final de la partida todos los jugadores vivos son tupas, ellos ganan.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >¡Hay un tupa en el pueblo que está tratando de convertir a todos! Cada noche, elige un jugador; si es un tupa, ese jugador muere. Si los tupas tratan de convertirte, el último miembro del culto muere.</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      El ocaso se acerca y los campesinos tratan de decidir a quién lincharán esta tarde… ¡Todo el mundo tiene *{0}* segundos para votar a partir de ahora!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >Ha salido el sol y con él un nuevo día. Tienen *{0}* segundos para discutir, hacer sus acusaciones y defensas.</value>
+  </string>
+  <string key="NightTime" >
+    <value >Se vino la noche. Todo el mundo se dirige a su cama, agotado después de un día tan intenso. Jugadores nocturnos, ¡tienen *{0}* segundos para realizar sus acciones!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >Los campesinos tienen su veredicto, entre tantas dudas y sospechas. *{0}* ha muerto. *{1}*.</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Incapaces de tomar una decisión sobre el linchamiento, la multitud vuelve frustrada a pasar la noche en sus casas, dieron asco... [Empate en las votaciones].</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >¡Qúe morbo, nadie ha votado! No hay linchamiento esta noche...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >Los campesinos se reúnen por la mañana pero no ven a *{0}*. Deambulan por la casa, hasta encontrar a *{0}* desmembrado, con un palo de escoba clavado en el ojete. [Detective eliminado].</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >Llega la mañana y, para la consternación de todos, empalado en lo alto de la iglesia aparece *{0}*, el *Ángel de la guarda*.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >Mientras que todo el mundo empieza a salir de sus casas, encuentran piezas de una escopeta desperdigadas… luego piernas… luego dedos… Luego, flotando en la fuente de la plaza del pueblo, el cuerpo de *{0}*, asesinado por un Lobo. Se han quedado sin *justiciero*.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >Los aldeanos se despiertan en la mañana para encontrar los restos desmembrados de *{0}* esparcidos sobre una tabla de ouija y unas cartas de tarot. La *vidente* ha muerto.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >Todo el mundo se despierta con el olor a madera y alcohol quemado… ¡El *bar* está ardiendo! Tras apagar las llamas, encuentran los restos de *{0}*, despedazados (y con restos de semen)… [Borracha eliminada. Los lobos no actúan esta noche].</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >Mientras que el sol sale en el pueblito, encuentran a  *{0}* sentado sobre un tablero de ouija, pero con una baraja de.... ¿¿¿cartas de Pokemon??? ¡¡¡QUÉ *BOLUDO*!!!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>Al levantarse todo el mundo, un olor a mierda inunda el pueblo. Siguen el rastro hasta encontrar a *{0}* yace en el piso, sin ropa, con un bollón de cucumelos al lado y las paredes pintadas con su propia mierda...  KHE KHÉEEEEEE???... ya no respira.\n*{1}*.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Un gran hedor viene de la casa de *{0}*...  los aldeanos la inspeccionan hasta encontrar un cuerpo yaciente frente a un diploma de licenciatura en genetica humana...  ¡Un *tupa* ha sido asesinado por un facho!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Los campesinos se reúnen por la mañana en el centro del pueblo, suspirando de alivio. Parece que esta noche no ha habido ningún ataque.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Has sido mordido por los lobos. ¡Como estabas maldito ahora te has convertido en un lobo más!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Tu manada: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >¡*{0}* fue mordido.... pero estaba maldito y se ha convertido en un lobo más! ¡Felicidades por el nuevo compañero!</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value >¡Oh, no! ¡Los lobos te han comido! ÑAMÑAMÑAM (y luego vomitado, si sos incomible... pescado)</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >¡Oh, no! ¡*{0}* era el borracho! Ahora están borrachos y no podran atacar mañana por debido a la resaca.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >¡Has intentado proteger a un lobo! El lobo te comió (te pasa por gil).</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >¡Le salvaste el culo a {0}! [Los lobos le atacaron pero sobrevivió gracias a ti].</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >{0} no fue atacado anoche. Básicamente, no has hecho nada. [Al menos sabes que no es un hombre-lobo].</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>¡Fuiste a proteger a {0}, pero no había nadie en casa! [Anda a saber donde andaría mamando verga].</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >¡Tu Ángel de la guarda estuvo velando por ti anoche y luchó contra los lobos que te acechaban! [Fuiste elegido por los lobos, pero te salvaron].</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >La putita decidió quedarse en casa porque tenía la concha ardida. ¡*{0}* ha sido comida por los lobos! [No garchó esa noche y los lobos la atacaron].</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >¡Ups!... ¡*{0}* no estaba en casa!  Te quedaste sin cena… [Estaba tragando nateando por ahí].</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Te escabulliste en la casa de *{0}* para sobarle la chota un rato, pero te encontraste con un lobo. Has muerto.[Has visitado a un lobo, te mató y te la puso post-mortem].</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >¡*{0}* se escabulló anoche en la casa equivocada! Se ha encontrado su cuerpo lujurioso clavado y cubierto de semen en la puerta de la iglesia… ¡Extrañaremos el picor de sus ladillas! :( [Visitó un hombre-lobo].</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >*{0}* se escabulló anoche en la casa de *{1}* para pasar un buen rato y que le dejen el orto como una olla. ¡Desafortunadamente, lo que se encontró fue a un hombre-lobo comiéndose a *{1}*! ¡El hombre-lobo se giró en un segundo y saltó a su yugular...  *{0}* ha muerto (y después se la garchó eh).</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >¡Después de una noche loca de sexo, perversión y de pegarle el sida a *{0}*, puedes asegurar que no es un lobo!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >En mitad de la noche soñaste que la putita del pueblo te estaba cabalgando… pero llegaste a despertar del todo para darte cuenta de que no fue un sueño… aunque la noche era oscura y no pudiste ver bien su cara. Tan pronto acabaste, se fue en silencio para dejarte a solas con tus pensamientos… [La puta te ha follado].</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >¡Jaaaa, viste a {0} husmeando por ahí! Él es el detective.</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Tus investigaciones te han mostrado que *{0}* es *{1}*.</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Parece que al justiciero se le pegó el chobi después de pasar la noche con la putaraca. {0} ha tomado venganza por mano propia y *{1}* ha muerto. [{0} es el justiciero y ha eliminado a {1}].</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >De repente, el sonido de un disparo inunda el aire. La aldea se gira para ver a *{0}* de pie sobre el cadáver de *{1}* con una pistola apuntando aún a su cabeza mientras los sesos están desparramados y la sangre brota a borbotones *{2}*. [{0} es el justiciero y ha eliminado a {1}].</value>
+  </string>
+  <string key="WolfWins" >
+    <value >¡El *lobo* ha ganado, jaaaaaaaaaa!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value >¡Los *lobos* han ganado, JAAAAAAAAAAA!</value>
+  </string>
+  <string key="VillageWins" >
+    <value >¡Los *campesinos* han ganado! Todos los lobos han muerto...</value>
+  </string>
+  <string key="TannerWins" >
+    <value >¡Oh no! ¡Han linchado a *Jack*!  De forma estúpida, él gana la partida, ASCOTT.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jugadores restantes, roles, y equipos:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >*{0}* ha votado tupamarizar a *{1}*.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} fue enviado para hacer tu trabajo sucio y tupamarizar a {1}... sin embargo, ¡era tremendo facho hdp! ¡{0} está muerto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} vino a tu casa ésta noche para ofrecerte un plan del MIDES... pero le mostraste que la licenciatura de Sendic era falsa y le dio un ACV. Un tupa ha muerto… ¡Quedan {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>¡Los tupamaros te han convertido a su partido político! Ahora eres un tupa. Cada noche tendrás ocasión de tupamarizar y comer asado del Pepe con otra persona.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Tupamaros: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>¡{0} se ha unido a los tupas!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} fue enviado a hacer tu trabajo sucio y tupamarizar a {1}... ¡pero no había nadie en casa!</value>
+  </string>
+  <string key="CultWins" >
+    <value >Todos los lobos han muerto y los únicos campesinos en pie han sido tupamarizados... ¡La *Izquierda morbosa* ha ganado!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>¡Fuiste a torturar a {0}, pero ya estaba muerto! (que aburrimiento)</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Vas a la casa de {0}; y ves que está leyendo La Diaria...  cuando se distrae te escabulles por la ventana y se lo cambias por El País, le da un derrame cerebral en el acto. [{0} era un tupa].</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Vas a casa de {0}, pero tiene pegotines de Lacalle Pou en la ventana. No es un tupa, por lo que te vuelves a casa.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>¡El guía de {0} acaba de morir! En un ataque de rabia, ¡se convierte en Hombre-Lobo!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>¡{0} ha muerto! En un ataque de rabia, ¡te has convertido en Hombre-Lobo! Tus nuevos compañeros son: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>un Campesino 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>la Borracha 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>la Putita 💋</value>
+  </string>
+  <string key="Seer">
+    <value>la Vidente 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>el Traidor 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>el Ángel de la guarda 👼</value>
+  </string>
+  <string key="Detective">
+    <value>el Detective 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>un Hombre-Lobo 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>el Maldito 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>el Justiciero 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Jack 👺</value>
+  </string>
+  <string key="Fool">
+    <value>el Boludo 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>el Niño Salvaje 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>el Observador 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>El aprendiz de Vidente 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>un Tupa 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>el Facho 💂</value>
+  </string>
+<!-- These are for the player list -->
+  <string key="RanAway">
+   <value>Huido</value>
+ </string>
+ <string key="Dead">
+   <value>💀 Muerto</value>
+ </string>
+ <string key="Alive">
+   <value>💃 Vivo</value>
+ </string>
+ <string key="PlayersAlive">
+   <value>Jugadores vivos</value>
+ </string>
+<!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Nazi 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sos un Nazi. Si hay algún otro, sabrás quién es; si no, eres un campesino (inferior).</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Cuando todo el mundo se levanta, encuentran un cadáver bello, reluciente y claramente superior, salpicaduras de sangre por todos lados. ¡Uno de vuestros masones ha muerto!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Los nazis son: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>The pack heads to {0}'s house to eat them, but they are met by a tall dark figure, armed to the teeth. The Guardian Angel fights everyone off, and you head back defeated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>You send {0} to try to convert {1}, however their belief was too strong, and you were unable to convert them :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, you happen to notice a strange altar, poorly hidden, off in a side room, a strange glowing coming from it....</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the house to find the remains of {0}.</value>
+    <value>As the villagers gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Odd.... {0} didn't show up for the masons meeting this morning.... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>is dead</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} añadido a la lista de administración. Usa /config para cambiar los ajustes del grupo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>¡Ya estás en una partida en otro grupo! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Se han comenzado varias partidas a la vez… Acabando con los excesos.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Tu grupo está en la cola de espera (no en la tuya ... ya quisieras). Posición: {0} / {1}.</value>
+  </string>
+  <string key="MaintBreak">
+    <value>¡Perdonen, voy a empezar un breve periodo de mantenimiento. No pueden comenzar partidas ahora.\nEsperando que terminen {0} partidas...\nConsulta @werewolfdev para más información.</value>
+  </string>
+  <string key="MaxGames">
+    <value>Perdonen, se ha alcanzado el máximo de partidas simultáneas ({0}).\nPosición en la cola de espera: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>¡{0} es un grupo privilegiado y se ha saltado la cola de espera!</value>
+  </string>
+  <string key="NoGame">
+    <value>No hay ninguna partida en curso. Comienza una nueva partida con /startgame o una partida caótica con /startchaos .</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Sólo la administración puede usar este comando. Echa al bot y añádelo de nuevo. Se te incluirá como administración.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Después de esta partida, me apagaré para mantenimiento.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Después de esta partida, me apagaré un momento para actualizarme (automático).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>El identificador de usuario es nulo. ¿Seguro que estás enviando esto como una respuesta?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>¡{0} ya es administrador/a!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>¡{0} no es administrador/a!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>¡{0} ha sido eliminado de la lista de administración.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Idioma ajustado a {0}.</value>
+  </string>
+</strings>

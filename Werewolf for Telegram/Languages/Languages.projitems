@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>594fdc40-26dc-4edd-9c16-c79b3ad35e9d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Languages</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Bahasa Indo.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Bahaso Minang.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)BrazilianPort.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Cantonese.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Deutsch NSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Deutsch.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)English SFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)English.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)EnglishNSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)ESLATNSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Espanol.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Esperanto.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)French.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Furry.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)FurryNSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Hindi.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Italian.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)ItalianNSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Javanese.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Korean.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Nederlands.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Persian Normal.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)persian SFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Russian.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)RussianNSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Simplified.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)SimplifiedNSFW.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)SpanishNSFWYMCA.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Traditional.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)commit.bat" />
+  </ItemGroup>
+</Project>

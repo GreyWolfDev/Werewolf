@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="werewolfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" Nullable="false" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="InitiatorId" Type="int" Nullable="false" />
+          <Property Name="ReceiverId" Type="int" Nullable="false" />
+          <Property Name="ActionTaken" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GroupId" Type="bigint" Nullable="false" />
+          <Property Name="TimeStarted" Type="datetime" />
+          <Property Name="TimeEnded" Type="datetime" />
+          <Property Name="Winner" Type="nvarchar" MaxLength="50" />
+          <Property Name="GrpId" Type="int" />
+        </EntityType>
+        <EntityType Name="GameKill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" Nullable="false" />
+          <Property Name="KillerId" Type="int" Nullable="false" />
+          <Property Name="VictimId" Type="int" Nullable="false" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="KillMethodId" Type="int" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GamePlayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerId" Type="int" Nullable="false" />
+          <Property Name="GameId" Type="int" Nullable="false" />
+          <Property Name="Survived" Type="bit" Nullable="false" />
+          <Property Name="Won" Type="bit" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GroupId" Type="bigint" Nullable="false" />
+          <Property Name="Preferred" Type="bit" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="DisableNotification" Type="bit" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="BotInGroup" Type="bit" />
+          <Property Name="ShowRoles" Type="bit" />
+          <Property Name="Mode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DayTime" Type="int" />
+          <Property Name="NightTime" Type="int" />
+          <Property Name="LynchTime" Type="int" />
+          <Property Name="AllowTanner" Type="bit" />
+          <Property Name="AllowFool" Type="bit" />
+          <Property Name="AllowCult" Type="bit" />
+          <Property Name="ShowRolesEnd" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaxPlayers" Type="int" />
+          <Property Name="DisableFlee" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GroupAdmin">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="PlayerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KillMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NotifyGame">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Banned" Type="bit" />
+          <Property Name="BannedBy" Type="nvarchar(max)" />
+          <Property Name="HasPM" Type="bit" />
+          <Property Name="BanReason" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_BotInGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_BotInGroups">
+          <Property Name="Groups" Type="int" />
+          <Property Name="Has Bot?" Type="varchar" MaxLength="3" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_LanguageCounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_LanguageCounts">
+          <Property Name="Groups" Type="int" />
+          <Property Name="Language" Type="nvarchar(max)" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_NonDefaultGroups">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="ShowRoles" Type="bit" />
+          <Property Name="ShowRolesEnd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DayTime" Type="int" />
+          <Property Name="NightTime" Type="int" />
+          <Property Name="LynchTime" Type="int" />
+          <Property Name="AllowFool" Type="bit" />
+          <Property Name="AllowTanner" Type="bit" />
+          <Property Name="AllowCult" Type="bit" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="BotInGroup" Type="bit" />
+          <Property Name="DisableNotification" Type="bit" />
+          <Property Name="MaxPlayers" Type="int" />
+          <Property Name="DisableFlee" Type="bit" />
+          <Property Name="Preferred" Type="bit" />
+          <Property Name="GroupId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_PreferredGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GroupId" Type="bigint" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_SummaryTotals">
+          <Property Name="Players" Type="int" />
+          <Property Name="Games" Type="int" />
+          <Property Name="Groups" Type="int" />
+          <Property Name="Deaths" Type="int" />
+          <Property Name="Survivors" Type="int" />
+          <Property Name="Since" Type="datetime" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_WaitList">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_WinRatios">
+          <Property Name="Players" Type="int" />
+          <Property Name="Wins" Type="int" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" />
+          <Property Name="%" Type="numeric" Precision="26" Scale="12" />
+        </EntityType>-->
+        <Association Name="FK_Action_Game">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="GameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Initiator">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="InitiatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Receiver">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="ReceiverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Game_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="GrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_Game">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="GameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_Killer">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="KillerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_KillMethod">
+          <End Role="KillMethod" Type="Self.KillMethod" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KillMethod">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="KillMethodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_Victim">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="VictimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GamePlayer_Player">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GamePlayer" Type="Self.GamePlayer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GamePlayer">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupAdmin_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="1" />
+          <End Role="GroupAdmin" Type="Self.GroupAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupAdmin">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupAdmin_Player">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GroupAdmin" Type="Self.GroupAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupAdmin">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="getPlayTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="playerCount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="groupName" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="werewolfModelStoreContainer">
+          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameKill" EntityType="Self.GameKill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GamePlayer" EntityType="Self.GamePlayer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KillMethod" EntityType="Self.KillMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupAdmin" EntityType="Self.GroupAdmin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GroupAdmin].[GroupId] AS [GroupId], 
+    [GroupAdmin].[PlayerId] AS [PlayerId]
+    FROM [dbo].[GroupAdmin] AS [GroupAdmin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NotifyGame" EntityType="Self.NotifyGame" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NotifyGame].[UserId] AS [UserId], 
+    [NotifyGame].[GroupId] AS [GroupId]
+    FROM [dbo].[NotifyGame] AS [NotifyGame]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_NonDefaultGroups" EntityType="Self.v_NonDefaultGroups" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_NonDefaultGroups].[Name] AS [Name], 
+    [v_NonDefaultGroups].[Language] AS [Language], 
+    [v_NonDefaultGroups].[ShowRoles] AS [ShowRoles], 
+    [v_NonDefaultGroups].[ShowRolesEnd] AS [ShowRolesEnd], 
+    [v_NonDefaultGroups].[Mode] AS [Mode], 
+    [v_NonDefaultGroups].[DayTime] AS [DayTime], 
+    [v_NonDefaultGroups].[NightTime] AS [NightTime], 
+    [v_NonDefaultGroups].[LynchTime] AS [LynchTime], 
+    [v_NonDefaultGroups].[AllowFool] AS [AllowFool], 
+    [v_NonDefaultGroups].[AllowTanner] AS [AllowTanner], 
+    [v_NonDefaultGroups].[AllowCult] AS [AllowCult], 
+    [v_NonDefaultGroups].[UserName] AS [UserName], 
+    [v_NonDefaultGroups].[BotInGroup] AS [BotInGroup], 
+    [v_NonDefaultGroups].[DisableNotification] AS [DisableNotification], 
+    [v_NonDefaultGroups].[MaxPlayers] AS [MaxPlayers], 
+    [v_NonDefaultGroups].[DisableFlee] AS [DisableFlee], 
+    [v_NonDefaultGroups].[Preferred] AS [Preferred], 
+    [v_NonDefaultGroups].[GroupId] AS [GroupId]
+    FROM [db_owner].[v_NonDefaultGroups] AS [v_NonDefaultGroups]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_PreferredGroups" EntityType="Self.v_PreferredGroups" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_PreferredGroups].[Id] AS [Id], 
+    [v_PreferredGroups].[Name] AS [Name], 
+    [v_PreferredGroups].[GroupId] AS [GroupId], 
+    [v_PreferredGroups].[Language] AS [Language], 
+    [v_PreferredGroups].[UserName] AS [UserName]
+    FROM [db_owner].[v_PreferredGroups] AS [v_PreferredGroups]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_WaitList" EntityType="Self.v_WaitList" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_WaitList].[Name] AS [Name], 
+    [v_WaitList].[Expr1] AS [Expr1]
+    FROM [db_owner].[v_WaitList] AS [v_WaitList]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Action_Game" Association="Self.FK_Action_Game">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Initiator" Association="Self.FK_Action_Initiator">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Receiver" Association="Self.FK_Action_Receiver">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Game_Group" Association="Self.FK_Game_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Game" EntitySet="Game" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_Game" Association="Self.FK_GameKill_Game">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="GameKill" EntitySet="GameKill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_Killer" Association="Self.FK_GameKill_Killer">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="GameKill" EntitySet="GameKill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_KillMethod" Association="Self.FK_GameKill_KillMethod">
+            <End Role="KillMethod" EntitySet="KillMethod" />
+            <End Role="GameKill" EntitySet="GameKill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_Victim" Association="Self.FK_GameKill_Victim">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="GameKill" EntitySet="GameKill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GamePlayer_Player" Association="Self.FK_GamePlayer_Player">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="GamePlayer" EntitySet="GamePlayer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupAdmin_Group" Association="Self.FK_GroupAdmin_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="GroupAdmin" EntitySet="GroupAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupAdmin_Player" Association="Self.FK_GroupAdmin_Player">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="GroupAdmin" EntitySet="GroupAdmin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="werewolfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InitiatorId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiverId" Type="Int32" Nullable="false" />
+          <Property Name="ActionTaken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK_Action_Game" FromRole="Action" ToRole="Game" />
+          <NavigationProperty Name="Player" Relationship="Self.FK_Action_Initiator" FromRole="Action" ToRole="Player" />
+          <NavigationProperty Name="Player1" Relationship="Self.FK_Action_Receiver" FromRole="Action" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupId" Type="Int64" Nullable="false" />
+          <Property Name="TimeStarted" Type="DateTime" Precision="3" />
+          <Property Name="TimeEnded" Type="DateTime" Precision="3" />
+          <Property Name="Winner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrpId" Type="Int32" />
+          <NavigationProperty Name="Actions" Relationship="Self.FK_Action_Game" FromRole="Game" ToRole="Action" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_Game_Group" FromRole="Game" ToRole="Group" />
+          <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Game" FromRole="Game" ToRole="GameKill" />
+        </EntityType>
+        <EntityType Name="GameKill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" Nullable="false" />
+          <Property Name="KillerId" Type="Int32" Nullable="false" />
+          <Property Name="VictimId" Type="Int32" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KillMethodId" Type="Int32" Nullable="false" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK_GameKill_Game" FromRole="GameKill" ToRole="Game" />
+          <NavigationProperty Name="Player" Relationship="Self.FK_GameKill_Killer" FromRole="GameKill" ToRole="Player" />
+          <NavigationProperty Name="KillMethod" Relationship="Self.FK_GameKill_KillMethod" FromRole="GameKill" ToRole="KillMethod" />
+          <NavigationProperty Name="Player1" Relationship="Self.FK_GameKill_Victim" FromRole="GameKill" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="GamePlayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerId" Type="Int32" Nullable="false" />
+          <Property Name="GameId" Type="Int32" Nullable="false" />
+          <Property Name="Survived" Type="Boolean" Nullable="false" />
+          <Property Name="Won" Type="Boolean" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Player" Relationship="Self.FK_GamePlayer_Player" FromRole="GamePlayer" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupId" Type="Int64" Nullable="false" />
+          <Property Name="Preferred" Type="Boolean" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisableNotification" Type="Boolean" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BotInGroup" Type="Boolean" />
+          <Property Name="ShowRoles" Type="Boolean" />
+          <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DayTime" Type="Int32" />
+          <Property Name="NightTime" Type="Int32" />
+          <Property Name="LynchTime" Type="Int32" />
+          <Property Name="AllowTanner" Type="Boolean" />
+          <Property Name="AllowFool" Type="Boolean" />
+          <Property Name="AllowCult" Type="Boolean" />
+          <Property Name="ShowRolesEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaxPlayers" Type="Int32" />
+          <Property Name="DisableFlee" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Games" Relationship="Self.FK_Game_Group" FromRole="Group" ToRole="Game" />
+          <NavigationProperty Name="Players" Relationship="Self.GroupAdmin" FromRole="Group" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="KillMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_KillMethod" FromRole="KillMethod" ToRole="GameKill" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Banned" Type="Boolean" />
+          <Property Name="BannedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HasPM" Type="Boolean" />
+          <Property Name="BanReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Actions" Relationship="Self.FK_Action_Initiator" FromRole="Player" ToRole="Action" />
+          <NavigationProperty Name="Actions1" Relationship="Self.FK_Action_Receiver" FromRole="Player" ToRole="Action" />
+          <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Killer" FromRole="Player" ToRole="GameKill" />
+          <NavigationProperty Name="GameKills1" Relationship="Self.FK_GameKill_Victim" FromRole="Player" ToRole="GameKill" />
+          <NavigationProperty Name="GamePlayers" Relationship="Self.FK_GamePlayer_Player" FromRole="Player" ToRole="GamePlayer" />
+          <NavigationProperty Name="Groups" Relationship="Self.GroupAdmin" FromRole="Player" ToRole="Group" />
+        </EntityType>
+        <EntityType Name="NotifyGame">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_NonDefaultGroups">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShowRoles" Type="Boolean" />
+          <Property Name="ShowRolesEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DayTime" Type="Int32" />
+          <Property Name="NightTime" Type="Int32" />
+          <Property Name="LynchTime" Type="Int32" />
+          <Property Name="AllowFool" Type="Boolean" />
+          <Property Name="AllowTanner" Type="Boolean" />
+          <Property Name="AllowCult" Type="Boolean" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BotInGroup" Type="Boolean" />
+          <Property Name="DisableNotification" Type="Boolean" />
+          <Property Name="MaxPlayers" Type="Int32" />
+          <Property Name="DisableFlee" Type="Boolean" />
+          <Property Name="Preferred" Type="Boolean" />
+          <Property Name="GroupId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_PreferredGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupId" Type="Int64" Nullable="false" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_WaitList">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Expr1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Action_Game">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="GameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Initiator">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="InitiatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Receiver">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="ReceiverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Game_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="GrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_Game">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="GameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_Killer">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="KillerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_KillMethod">
+          <End Role="KillMethod" Type="Self.KillMethod" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KillMethod">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="KillMethodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameKill_Victim">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameKill">
+              <PropertyRef Name="VictimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GamePlayer_Player">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GamePlayer" Type="Self.GamePlayer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GamePlayer">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GroupAdmin">
+          <End Role="Group" Type="Self.Group" Multiplicity="*" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actions" EntityType="Self.Action" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="GameKills" EntityType="Self.GameKill" />
+          <EntitySet Name="GamePlayers" EntityType="Self.GamePlayer" />
+          <EntitySet Name="Groups" EntityType="Self.Group" />
+          <EntitySet Name="KillMethods" EntityType="Self.KillMethod" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="NotifyGames" EntityType="Self.NotifyGame" />
+          <EntitySet Name="v_NonDefaultGroups" EntityType="Self.v_NonDefaultGroups" />
+          <EntitySet Name="v_PreferredGroups" EntityType="Self.v_PreferredGroups" />
+          <EntitySet Name="v_WaitList" EntityType="Self.v_WaitList" />
+          <AssociationSet Name="FK_Action_Game" Association="Self.FK_Action_Game">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="Action" EntitySet="Actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Initiator" Association="Self.FK_Action_Initiator">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="Action" EntitySet="Actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Receiver" Association="Self.FK_Action_Receiver">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="Action" EntitySet="Actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Game_Group" Association="Self.FK_Game_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Game" EntitySet="Games" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_Game" Association="Self.FK_GameKill_Game">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="GameKill" EntitySet="GameKills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_Killer" Association="Self.FK_GameKill_Killer">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="GameKill" EntitySet="GameKills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_KillMethod" Association="Self.FK_GameKill_KillMethod">
+            <End Role="KillMethod" EntitySet="KillMethods" />
+            <End Role="GameKill" EntitySet="GameKills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameKill_Victim" Association="Self.FK_GameKill_Victim">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="GameKill" EntitySet="GameKills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GamePlayer_Player" Association="Self.FK_GamePlayer_Player">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="GamePlayer" EntitySet="GamePlayers" />
+          </AssociationSet>
+          <AssociationSet Name="GroupAdmin" Association="Self.GroupAdmin">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+          <FunctionImport Name="getPlayTime" ReturnType="Collection(werewolfModel.getPlayTime_Result)">
+            <Parameter Name="playerCount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getRoles" ReturnType="Collection(werewolfModel.getRoles_Result)">
+            <Parameter Name="groupName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getPlayTime_Result">
+          <Property Type="Int32" Name="Average" Nullable="true" />
+          <Property Type="Int32" Name="Minimum" Nullable="true" />
+          <Property Type="Int32" Name="Maximum" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getRoles_Result">
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="werewolfModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Actions">
+            <EntityTypeMapping TypeName="werewolfModel.Action">
+              <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="InitiatorId" ColumnName="InitiatorId" />
+                <ScalarProperty Name="ReceiverId" ColumnName="ReceiverId" />
+                <ScalarProperty Name="ActionTaken" ColumnName="ActionTaken" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="werewolfModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="werewolfModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="TimeStarted" ColumnName="TimeStarted" />
+                <ScalarProperty Name="TimeEnded" ColumnName="TimeEnded" />
+                <ScalarProperty Name="Winner" ColumnName="Winner" />
+                <ScalarProperty Name="GrpId" ColumnName="GrpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameKills">
+            <EntityTypeMapping TypeName="werewolfModel.GameKill">
+              <MappingFragment StoreEntitySet="GameKill">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="KillerId" ColumnName="KillerId" />
+                <ScalarProperty Name="VictimId" ColumnName="VictimId" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="KillMethodId" ColumnName="KillMethodId" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GamePlayers">
+            <EntityTypeMapping TypeName="werewolfModel.GamePlayer">
+              <MappingFragment StoreEntitySet="GamePlayer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="Survived" ColumnName="Survived" />
+                <ScalarProperty Name="Won" ColumnName="Won" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="werewolfModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="Preferred" ColumnName="Preferred" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="DisableNotification" ColumnName="DisableNotification" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="BotInGroup" ColumnName="BotInGroup" />
+                <ScalarProperty Name="ShowRoles" ColumnName="ShowRoles" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="DayTime" ColumnName="DayTime" />
+                <ScalarProperty Name="NightTime" ColumnName="NightTime" />
+                <ScalarProperty Name="LynchTime" ColumnName="LynchTime" />
+                <ScalarProperty Name="AllowTanner" ColumnName="AllowTanner" />
+                <ScalarProperty Name="AllowFool" ColumnName="AllowFool" />
+                <ScalarProperty Name="AllowCult" ColumnName="AllowCult" />
+                <ScalarProperty Name="ShowRolesEnd" ColumnName="ShowRolesEnd" />
+                <ScalarProperty Name="MaxPlayers" ColumnName="MaxPlayers" />
+                <ScalarProperty Name="DisableFlee" ColumnName="DisableFlee" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KillMethods">
+            <EntityTypeMapping TypeName="werewolfModel.KillMethod">
+              <MappingFragment StoreEntitySet="KillMethod">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="werewolfModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Banned" ColumnName="Banned" />
+                <ScalarProperty Name="BannedBy" ColumnName="BannedBy" />
+                <ScalarProperty Name="HasPM" ColumnName="HasPM" />
+                <ScalarProperty Name="BanReason" ColumnName="BanReason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotifyGames">
+            <EntityTypeMapping TypeName="werewolfModel.NotifyGame">
+              <MappingFragment StoreEntitySet="NotifyGame">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_NonDefaultGroups">
+            <EntityTypeMapping TypeName="werewolfModel.v_NonDefaultGroups">
+              <MappingFragment StoreEntitySet="v_NonDefaultGroups">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="ShowRoles" ColumnName="ShowRoles" />
+                <ScalarProperty Name="ShowRolesEnd" ColumnName="ShowRolesEnd" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="DayTime" ColumnName="DayTime" />
+                <ScalarProperty Name="NightTime" ColumnName="NightTime" />
+                <ScalarProperty Name="LynchTime" ColumnName="LynchTime" />
+                <ScalarProperty Name="AllowFool" ColumnName="AllowFool" />
+                <ScalarProperty Name="AllowTanner" ColumnName="AllowTanner" />
+                <ScalarProperty Name="AllowCult" ColumnName="AllowCult" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="BotInGroup" ColumnName="BotInGroup" />
+                <ScalarProperty Name="DisableNotification" ColumnName="DisableNotification" />
+                <ScalarProperty Name="MaxPlayers" ColumnName="MaxPlayers" />
+                <ScalarProperty Name="DisableFlee" ColumnName="DisableFlee" />
+                <ScalarProperty Name="Preferred" ColumnName="Preferred" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_PreferredGroups">
+            <EntityTypeMapping TypeName="werewolfModel.v_PreferredGroups">
+              <MappingFragment StoreEntitySet="v_PreferredGroups">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_WaitList">
+            <EntityTypeMapping TypeName="werewolfModel.v_WaitList">
+              <MappingFragment StoreEntitySet="v_WaitList">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="GroupAdmin" TypeName="werewolfModel.GroupAdmin" StoreEntitySet="GroupAdmin">
+            <EndProperty Name="Group">
+              <ScalarProperty Name="Id" ColumnName="GroupId" />
+            </EndProperty>
+            <EndProperty Name="Player">
+              <ScalarProperty Name="Id" ColumnName="PlayerId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="getPlayTime" FunctionName="werewolfModel.Store.getPlayTime">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.getPlayTime_Result">
+                <ScalarProperty Name="Average" ColumnName="Average" />
+                <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+                <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getRoles" FunctionName="werewolfModel.Store.getRoles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.getRoles_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
