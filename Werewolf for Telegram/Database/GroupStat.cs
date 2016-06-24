@@ -14,7 +14,8 @@ namespace Database
     
     public partial class GroupStat
     {
-        public int GroupId { get; set; }
+        public int Id { get; set; }
+        public long GroupId { get; set; }
         public int GamesPlayed { get; set; }
         public string MostKilledFirstNight { get; set; }
         public Nullable<int> MostKilledFirstPercent { get; set; }
@@ -25,5 +26,6 @@ namespace Database
         public string BestSurvivor { get; set; }
         public Nullable<int> BestSurvivorPercent { get; set; }
         public Nullable<System.DateTime> LastRun { get; set; }
+        public string GroupName { get; set; }
     }
 }

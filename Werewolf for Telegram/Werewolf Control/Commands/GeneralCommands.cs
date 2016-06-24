@@ -168,5 +168,16 @@ namespace Werewolf_Control
             var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
             Bot.Api.SendTextMessage(update.Message.Chat.Id, "Get which language file?", replyToMessageId: update.Message.MessageId, replyMarkup: gmenu);
         }
+
+        [Command(Trigger = "stats")]
+        public static void GetStats(Update update, string[] args)
+        {
+            var reply = $"Global Stats (coming soon)\n";
+            if (update.Message.Chat.Type != ChatType.Private)
+                reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id})\n";
+            reply += $"Player Stats (coming soon)";
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, reply, parseMode: ParseMode.Markdown,
+                disableWebPagePreview: true);
+        }
     }
 }

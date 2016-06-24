@@ -14,6 +14,7 @@ namespace Database
     
     public partial class PlayerStat
     {
+        public int Id { get; set; }
         public int PlayerId { get; set; }
         public int GamesPlayed { get; set; }
         public int GamesWon { get; set; }

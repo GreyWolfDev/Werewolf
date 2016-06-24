@@ -286,6 +286,9 @@ namespace Werewolf_Control.Handler
                                         break;
                                     #endregion
                                     #region General Commands
+                                    case "stats":
+                                        Commands.GetStats(update, args);
+                                        break;
                                     case "ping":
                                         Commands.Ping(update, args);
                                         break;

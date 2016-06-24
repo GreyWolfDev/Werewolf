@@ -39,9 +39,9 @@ namespace Database
         public virtual DbSet<v_NonDefaultGroups> v_NonDefaultGroups { get; set; }
         public virtual DbSet<v_PreferredGroups> v_PreferredGroups { get; set; }
         public virtual DbSet<v_WaitList> v_WaitList { get; set; }
-        public virtual DbSet<GroupStat> GroupStats { get; set; }
-        public virtual DbSet<PlayerStat> PlayerStats { get; set; }
         public virtual DbSet<GlobalStat> GlobalStats { get; set; }
+        public virtual DbSet<PlayerStat> PlayerStats { get; set; }
+        public virtual DbSet<GroupStat> GroupStats { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {
@@ -79,6 +79,42 @@ namespace Database
         public virtual ObjectResult<GlobalSurvivor_Result> GlobalSurvivor()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalSurvivor_Result>("GlobalSurvivor");
+        }
+    
+        public virtual ObjectResult<GroupDay1Death_Result> GroupDay1Death(Nullable<long> groupid)
+        {
+            var groupidParameter = groupid.HasValue ?
+                new ObjectParameter("groupid", groupid) :
+                new ObjectParameter("groupid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupDay1Death_Result>("GroupDay1Death", groupidParameter);
+        }
+    
+        public virtual ObjectResult<GroupDay1Lynch_Result> GroupDay1Lynch(Nullable<long> groupid)
+        {
+            var groupidParameter = groupid.HasValue ?
+                new ObjectParameter("groupid", groupid) :
+                new ObjectParameter("groupid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupDay1Lynch_Result>("GroupDay1Lynch", groupidParameter);
+        }
+    
+        public virtual ObjectResult<GroupNight1Death_Result> GroupNight1Death(Nullable<long> groupid)
+        {
+            var groupidParameter = groupid.HasValue ?
+                new ObjectParameter("groupid", groupid) :
+                new ObjectParameter("groupid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupNight1Death_Result>("GroupNight1Death", groupidParameter);
+        }
+    
+        public virtual ObjectResult<GroupSurvivor_Result> GroupSurvivor(Nullable<long> groupid)
+        {
+            var groupidParameter = groupid.HasValue ?
+                new ObjectParameter("groupid", groupid) :
+                new ObjectParameter("groupid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupSurvivor_Result>("GroupSurvivor", groupidParameter);
         }
     }
 }
