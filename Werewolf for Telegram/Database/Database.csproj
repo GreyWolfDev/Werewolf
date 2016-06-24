@@ -72,7 +72,25 @@
     <Compile Include="getRoles_Result.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GlobalDay1Death_Result.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalDay1Lynch_Result.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalNight1Death_Result.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalStat.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSurvivor_Result.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Group.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupStat.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Internal.Designer.cs">
@@ -87,6 +105,9 @@
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Player.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerStat.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

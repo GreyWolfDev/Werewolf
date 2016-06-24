@@ -17,10 +17,10 @@ namespace Database
     
     public partial class WWContext : DbContext
     {
-        public WWContext(): base(Internal.Default.DBConnectionString)
+        public WWContext()
+            : base(Internal.Default.DBConnectionString)
         {
         }
-        
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,6 +39,9 @@ namespace Database
         public virtual DbSet<v_NonDefaultGroups> v_NonDefaultGroups { get; set; }
         public virtual DbSet<v_PreferredGroups> v_PreferredGroups { get; set; }
         public virtual DbSet<v_WaitList> v_WaitList { get; set; }
+        public virtual DbSet<GroupStat> GroupStats { get; set; }
+        public virtual DbSet<PlayerStat> PlayerStats { get; set; }
+        public virtual DbSet<GlobalStat> GlobalStats { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {
@@ -56,6 +59,26 @@ namespace Database
                 new ObjectParameter("groupName", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getRoles_Result>("getRoles", groupNameParameter);
+        }
+    
+        public virtual ObjectResult<GlobalDay1Death_Result> GlobalDay1Death()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalDay1Death_Result>("GlobalDay1Death");
+        }
+    
+        public virtual ObjectResult<GlobalDay1Lynch_Result> GlobalDay1Lynch()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalDay1Lynch_Result>("GlobalDay1Lynch");
+        }
+    
+        public virtual ObjectResult<GlobalNight1Death_Result> GlobalNight1Death()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalNight1Death_Result>("GlobalNight1Death");
+        }
+    
+        public virtual ObjectResult<GlobalSurvivor_Result> GlobalSurvivor()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalSurvivor_Result>("GlobalSurvivor");
         }
     }
 }
