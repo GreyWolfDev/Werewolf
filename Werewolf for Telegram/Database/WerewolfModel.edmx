@@ -75,6 +75,8 @@
           <Property Name="BestSurvivor" Type="nvarchar(max)" />
           <Property Name="BestSurvivorPercent" Type="int" />
           <Property Name="LastRun" Type="datetime" />
+          <Property Name="TotalPlayers" Type="int" />
+          <Property Name="TotalGroups" Type="int" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -215,6 +217,16 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="Language" Type="nvarchar(max)" />
           <Property Name="UserName" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_SummaryTotals">
+          <Property Name="Players" Type="int" />
+          <Property Name="Games" Type="int" />
+          <Property Name="Groups" Type="int" />
+          <Property Name="Deaths" Type="int" />
+          <Property Name="Survivors" Type="int" />
+          <Property Name="Since" Type="datetime" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
@@ -892,6 +904,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="BestSurvivor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BestSurvivorPercent" Type="Int32" />
           <Property Name="LastRun" Type="DateTime" Precision="3" />
+          <Property Name="TotalPlayers" Type="Int32" />
+          <Property Name="TotalGroups" Type="Int32" />
         </EntityType>
         <EntityType Name="PlayerStat">
           <Key>
@@ -1166,6 +1180,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <EntitySetMapping Name="GlobalStats">
             <EntityTypeMapping TypeName="werewolfModel.GlobalStat">
               <MappingFragment StoreEntitySet="GlobalStats">
+                <ScalarProperty Name="TotalGroups" ColumnName="TotalGroups" />
+                <ScalarProperty Name="TotalPlayers" ColumnName="TotalPlayers" />
                 <ScalarProperty Name="LastRun" ColumnName="LastRun" />
                 <ScalarProperty Name="BestSurvivorPercent" ColumnName="BestSurvivorPercent" />
                 <ScalarProperty Name="BestSurvivor" ColumnName="BestSurvivor" />

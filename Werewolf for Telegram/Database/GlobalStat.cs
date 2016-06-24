@@ -27,5 +27,7 @@ namespace Database
         public string BestSurvivor { get; set; }
         public Nullable<int> BestSurvivorPercent { get; set; }
         public Nullable<System.DateTime> LastRun { get; set; }
+        public Nullable<int> TotalPlayers { get; set; }
+        public Nullable<int> TotalGroups { get; set; }
     }
 }

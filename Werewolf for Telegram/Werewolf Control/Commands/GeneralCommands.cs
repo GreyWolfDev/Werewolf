@@ -172,10 +172,10 @@ namespace Werewolf_Control
         [Command(Trigger = "stats")]
         public static void GetStats(Update update, string[] args)
         {
-            var reply = $"Global Stats (coming soon)\n";
+            var reply = $"[Global Stats](werewolf.parawuff.com/Stats)\n";
             if (update.Message.Chat.Type != ChatType.Private)
-                reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id})\n";
-            reply += $"Player Stats (coming soon)";
+                reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
+            reply += $"[Player Stats](werewolf.parawuff.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
             Bot.Api.SendTextMessage(update.Message.Chat.Id, reply, parseMode: ParseMode.Markdown,
                 disableWebPagePreview: true);
         }

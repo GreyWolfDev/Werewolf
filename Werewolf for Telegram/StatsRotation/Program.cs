@@ -25,48 +25,47 @@ namespace StatsRotation
                 try
                 {
                     //start with global stats
-                    //GlobalStats();
-                    //Thread.Sleep(5000);
+                    GlobalStats();
+                    Thread.Sleep(TimeSpan.FromHours(1));
 
 
-                    //now groups
-                    List<long> groupids;
-                    using (var db = new WWContext())
-                    {
-                        groupids = db.Groups.Select(x => x.GroupId).ToList().Skip(2179).ToList();
-                    }
-                    var start = DateTime.Now;
-                    GroupStats(-128121710);
-                    foreach (var g in groupids)
-                    {
-                        var index = groupids.IndexOf(g);
-                        Console.Clear();
-                        Console.WriteLine($"Working on group {groupids.IndexOf(g)} out of {groupids.Count}");
-                        if (index != 0)
-                        {
-                            var time = (DateTime.Now - start).Ticks;
-                            Console.WriteLine($"Time taken so far: {new TimeSpan(time)}");
-                            time /= index;
-                            time *= groupids.Count;
-                            Console.WriteLine($"Total time estimated: {new TimeSpan(time)}");
-                            time -= (DateTime.Now - start).Ticks;
-                            Console.WriteLine($"Estimated time remaining: {new TimeSpan(time)}");
-                        }
-                        //calculate time
-                        GroupStats(g);
-                        //Thread.Sleep(500);
-                    }
-                    //players
-                    List<int> playerids;
-                    using (var db = new WWContext())
-                    {
-                        playerids = db.Players.Select(x => x.Id).ToList();
-                    }
-                    foreach (var p in playerids)
-                    {
-                        PlayerStats(p);
-                        //Thread.Sleep(500);
-                    }
+                    ////now groups
+                    //List<long> groupids;
+                    //using (var db = new WWContext())
+                    //{
+                    //    groupids = db.Groups.Select(x => x.GroupId).ToList();
+                    //}
+                    //var start = DateTime.Now;
+                    //foreach (var g in groupids)
+                    //{
+                    //    var index = groupids.IndexOf(g);
+                    //    Console.Clear();
+                    //    Console.WriteLine($"Working on group {groupids.IndexOf(g)} out of {groupids.Count}");
+                    //    if (index != 0)
+                    //    {
+                    //        var time = (DateTime.Now - start).Ticks;
+                    //        Console.WriteLine($"Time taken so far: {new TimeSpan(time)}");
+                    //        time /= index;
+                    //        time *= groupids.Count;
+                    //        Console.WriteLine($"Total time estimated: {new TimeSpan(time)}");
+                    //        time -= (DateTime.Now - start).Ticks;
+                    //        Console.WriteLine($"Estimated time remaining: {new TimeSpan(time)}");
+                    //    }
+                    //    //calculate time
+                    //    GroupStats(g);
+                    //    //Thread.Sleep(500);
+                    //}
+                    ////players
+                    //List<int> playerids;
+                    //using (var db = new WWContext())
+                    //{
+                    //    playerids = db.Players.Select(x => x.Id).ToList();
+                    //}
+                    //foreach (var p in playerids)
+                    //{
+                    //    PlayerStats(p);
+                    //    //Thread.Sleep(500);
+                    //}
                 }
                 catch (Exception ex)
                 {
@@ -97,7 +96,8 @@ namespace StatsRotation
 
                     stat.PlayersKilled = DB.GamePlayers.Count(x => !x.Survived);
                     stat.PlayersSurvived = DB.GamePlayers.Count(x => x.Survived);
-
+                    stat.TotalGroups = DB.Groups.Count();
+                    stat.TotalPlayers = DB.Players.Count();
                     stat.BestSurvivor = DB.Players.Find(survivor.playerid).Name;
                     stat.BestSurvivorPercent = (int)survivor.pct;
                     stat.GamesPlayed = gamesPlayed;
