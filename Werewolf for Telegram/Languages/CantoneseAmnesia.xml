@@ -8,16 +8,21 @@
   <string key="PlayerStartedGame" isgif="true">
     <value>有個賤人叫【{0}】 開始左個『正常版（失憶版）』新遊戲！\n打 /join 加入，準備失憶啦  :P</value>
     <value>【{0}】 求其開始左個『正常版（失憶版）』新遊戲！\n打 /join 加入，等比人食啦！</value>
+    <value>超級好人嘅【{0}】 幫大家開始左個『正常版（失憶版）』新遊戲！\n打 /join 加入，一齊同月光玩遊戲啦！</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <value>有個賤人叫【{0}】 開始左個『混亂版（失憶版）』新遊戲！\n打 /join 加入，準備失憶啦  :P</value>
     <value>【{0}】 求其開始左個『混亂版（失憶版）』新遊戲！\n打 /join 加入，等比人食啦！</value>
+    <value>超級好人嘅【{0}】 幫大家開始左個『混亂版（失憶版）』新遊戲！\n打 /join 加入，一齊同月光玩遊戲啦！</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>你嚟遲左啦，遊戲早就開始左啦！</value>
   </string>
   <string key="AlreadyJoined">
-    <value>你已經係個遊戲入面啦！</value>
+    <value>你已經喺個遊戲入面啦傻仔！乖，唔好亂撳制 :D。</value>
+    <value>你咪入左囉，仲入😡仲入😡仲入😡仲入😡！再入斬手指架！</value>
+    <value>入完又入，好好玩啊依家？再入信唔信我派個廢村比你做吖嗱！</value>
+    <value>由於你入完又入，本席宣判︰你永世都係廢村！</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>仲有一分鐘開始，快啲 /join 啦！</value>
@@ -48,9 +53,18 @@
   </string>
   <string key="DeadFlee">
     <value>作為一條死屍，你覺你走到咩？訓返落地下啦二打六。</value>
+    <value>入左黎就唔准出去！</value>
+    <value>哈！哈！哈！今次你插翼都難飛啦！</value>
+    <value>想走，冇咁易！</value>
   </string>
   <string key="Flee">
     <value>【{0}】淆底，已搭洗頭艇走佬。</value>
+    <value>地球很危險，所以【{0}】已經去左火星。</value>
+    <value>身為一個專業既農夫，【{0}】已經返左去深耕細作。</value>
+    <value>【{0}】實在太怕死，遊戲未開始就脫左村。</value>
+    <value>廢柴係冇辦法係度生存嘅，深明此道既【{0}】已經着左草啦。</value>
+    <value>從兩秒前起就無提過，【{0}】已經唔存在啦。</value>
+    <value>燃燒吧渣滓！淆底獸【{0}】瞬間化成一堆灰燼。</value>
   </string>
   <string key="PlayerRoleWas">
     <value>【{0}】原來係【{1}】</value>
@@ -78,12 +92,23 @@
   </string>
   <string key="IdleKill">
     <value>【{0}】呢條賤人明明係選民，但係又連續兩晚唔投票，實在係罪大惡極啦！【{0}】已經被自殺啦。\n【{1}】</value>
+    <value>大膽刁民，【{0}】竟敢連續兩晚唔投票？人嚟，拖【{0}】出去斬！\n【{1}】</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>你個身份變左喎，但係究竟由咩變做咩呢？</value>
   </string>
   <string key="ChoiceAccepted">
-    <value>收到！清楚！明白！</value>
+    <value>清楚！明白！</value>
+    <value>一男子已經收到你既柯打啦！</value>
+    <value>收到！依家即刻做！</value>
+    <value>明晒！如果冇咩事咁我出返去先啦！</value>
+    <value>命令執行中……</value>
+    <value>係！得！聽晒你話！</value>
+    <value>就用你啦︰</value>
+    <value>咁做好咩？不過揀左都冇得改㗎啦！</value>
+    <value>已經幫你買重左︰</value>
+    <value>我一定會做好呢份工㗎！</value>
+    <value>唔駛驚，我一定會幫你拆掂佢！</value>
   </string>
   <string key="BeholderSeer">
     <value>\n雖然你唔記得自己係邊個，但係【{0}】似乎係好重要既人。</value>
@@ -128,7 +153,7 @@
     <value>你知道你應該求其搵個人搞下啲野，你對邊個有興趣？</value>
   </string>
   <string key="DiscussWith"><!--Leave the leading spaces here please-->
-    <value>  唔該你同【{0}】傾掂佢。</value>
+    <value>唔該你同【{0}】傾掂佢。</value>
   </string>
   <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> 仲有</value>
@@ -192,10 +217,17 @@
     <value >入夜啦，大家係時候去撻落床等俾人食啦。\n夜鬼注意︰你有 {0} 秒可以行動！</value>
   </string>
   <string key="LynchKill" >
-    <value >村民在一片迷糊之中，仍然決定要投死【{0}】。【{1}】</value>
+    <value>村民在一片迷糊之中，仍然決定要投死【{0}】。\n【{1}】</value>
+    <value>雖然大家咩都唔記得，但都決定要投死【{0}】。\n【{1}】</value>
+    <value>冇辦法，犯眾憎既【{0}】係註定要死。\n【{1}】</value>
+    <value>既然大家都咁講啦，【{0}】仲可以唔死咩？\n【{1}】</value>
+    <value>去死啦，【{0}】冇人想見到你啊！\n【{1}】</value>
+    <value>愚民一致決定要投你，永別了【{0}】。\n【{1}】</value>
+    <value>再見啦【{0}】，要怪就怪投死你嘅人啦！\n【{1}】</value>
   </string>
   <string key="LynchTie" >
     <value>投票投到亂晒，我宣布今日冇人要死，開心啦？</value>
+    <value>睇黎大家對呢個議題仲未有共識，我宣布今日冇人死？</value>
   </string>
   <string key="NoLynchVotes" >
     <value >冇人投票，嘥左我成晚！</value>
@@ -442,7 +474,7 @@
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
-    <value>was</value>
+    <value>】原來係【</value>
   </string>
   <string key="GenericDeathNoReveal">
     <value>村民起身飲早茶，發覺一向準時既【{0}】竟然冇黎，於是佢地就去佢屋企睇下啦，原來【{0}】已經死左。</value>
@@ -464,7 +496,9 @@
     <value>【{0}】 已成為admin。使用 /config 黎更改遊戲設定。</value>
   </string>
   <string key="AlreadyInGame">
-    <value>你已經係個遊戲入面啦！【({0})】</value>
+    <value>你已經喺個遊戲入面啦傻仔！乖，唔好亂撳制 :D。【({0})】</value>
+    <value>你咪入左囉，仲入😡仲入😡仲入😡仲入😡！再入斬手指架！【({0})】</value>
+    <value>入完又入，好好玩啊依家？再入信唔信我派個廢村比你做吖嗱！【({0})】</value>
   </string>
   <string key="MultipleGames">
     <value>你地開得太多遊戲啦，咁准咁貪心。現刪除多餘的遊戲。</value>
@@ -517,6 +551,8 @@
 	<value>你係咪訓著左？（夠鐘！）</value>
 	<value>你知道我憎人遲到嗎？（夠鐘！）</value>
 	<value>請放底筆！（夠鐘！）</value>
+	<value>佛誕都黎啦，仲未諗好！（夠鐘！）</value>
+	<value>咁小事都決定唔到，點做大事啊！（夠鐘！）</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
@@ -629,7 +665,7 @@ whips out their pistol, looks at the crowd..... and cannot make a decision on wh
     <value>你知道你應該求其搵個人搞下啲野，你對邊個有興趣？仲可以揀多 1 個！</value>
   </string>
   <string key="Hunter">
-    <value>the 獵人 🎯</value>
+    <value>獵人 🎯</value>
   </string>
   <string key="Cupid">
     <value>邱比特 🏹</value>
@@ -670,6 +706,7 @@ In the middle of the town square, everyone finds the body of {0}, multiple shots
   </string>
   <string key="NoWinner" isgif="true">
     <value>呢條村既人已經死晒……除左屍體之外，咩都冇。呢一場遊戲冇人贏，除左嗰班鍾意食人肉既禿鷹。</value>
+    <value>呢條村既人已經死晒……世界和平 :D</value>
   </string>
   <string key="SKHunterEnd">
     <value>天一光，【{0}】同【{1}】在村入面迎頭相撞。【{0}】拎出佢把刀，撲向【{1}】。【{1}】都唔執輸，即刻拿出一把槍，射向【{0}】嘅頭殼。在子彈穿過【{1}】既瞬間，【{0}】把刀都貫穿左【{1}】既心臟。最後兩個人都死左，喺呢條空蕩蕩既村莊，冇人贏……</value>
