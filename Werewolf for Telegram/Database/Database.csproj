@@ -57,6 +57,9 @@
     <Compile Include="Admin.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DailyCount.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
@@ -64,6 +67,9 @@
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GamePlayer.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getDailyCounts_Result.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="getPlayTime_Result.cs">

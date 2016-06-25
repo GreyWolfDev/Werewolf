@@ -42,6 +42,7 @@ namespace Database
         public virtual DbSet<GlobalStat> GlobalStats { get; set; }
         public virtual DbSet<PlayerStat> PlayerStats { get; set; }
         public virtual DbSet<GroupStat> GroupStats { get; set; }
+        public virtual DbSet<DailyCount> DailyCounts { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {
@@ -142,6 +143,11 @@ namespace Database
                 new ObjectParameter("groupid", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupSurvivor_Result1>("GroupSurvivor", groupidParameter);
+        }
+    
+        public virtual ObjectResult<getDailyCounts_Result> getDailyCounts()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getDailyCounts_Result>("getDailyCounts");
         }
     }
 }

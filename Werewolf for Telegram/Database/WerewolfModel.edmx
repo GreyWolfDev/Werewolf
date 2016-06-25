@@ -23,6 +23,16 @@
           </Key>
           <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="DailyCount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="date" Nullable="false" />
+          <Property Name="Groups" Type="int" Nullable="false" />
+          <Property Name="Games" Type="int" Nullable="false" />
+          <Property Name="Users" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Game">
           <Key>
             <PropertyRef Name="Id" />
@@ -363,6 +373,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="getDailyCounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getPlayTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="playerCount" Type="int" Mode="In" />
         </Function>
@@ -397,6 +408,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
         <EntityContainer Name="werewolfModelStoreContainer">
           <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailyCount" EntityType="Self.DailyCount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameKill" EntityType="Self.GameKill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GamePlayer" EntityType="Self.GamePlayer" Schema="dbo" store:Type="Tables" />
@@ -873,6 +885,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <FunctionImport Name="GroupSurvivor" ReturnType="Collection(werewolfModel.GroupSurvivor_Result1)">
           <Parameter Name="groupid" Mode="In" Type="Int64" />
           </FunctionImport>
+          <EntitySet Name="DailyCounts" EntityType="werewolfModel.DailyCount" />
+          <FunctionImport Name="getDailyCounts" ReturnType="Collection(werewolfModel.getDailyCounts_Result)" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1026,6 +1040,22 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
           <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="DailyCount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Groups" Type="Int32" Nullable="false" />
+          <Property Name="Games" Type="Int32" Nullable="false" />
+          <Property Name="Users" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="getDailyCounts_Result">
+          <Property Type="DateTime" Name="Day" Nullable="true" />
+          <Property Type="Int32" Name="Games" Nullable="true" />
+          <Property Type="Int32" Name="Groups" Nullable="true" />
+          <Property Type="Int32" Name="players" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1371,6 +1401,27 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
                 <ScalarProperty Name="pct" ColumnName="pct" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="DailyCounts">
+            <EntityTypeMapping TypeName="werewolfModel.DailyCount">
+              <MappingFragment StoreEntitySet="DailyCount">
+                <ScalarProperty Name="Users" ColumnName="Users" />
+                <ScalarProperty Name="Games" ColumnName="Games" />
+                <ScalarProperty Name="Groups" ColumnName="Groups" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getDailyCounts" FunctionName="werewolfModel.Store.getDailyCounts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.getDailyCounts_Result">
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Games" ColumnName="Games" />
+                <ScalarProperty Name="Groups" ColumnName="Groups" />
+                <ScalarProperty Name="players" ColumnName="players" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

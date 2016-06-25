@@ -116,6 +116,18 @@ namespace StatsRotation
                     DB.SaveChanges();
                     
                 }
+
+                //now do daily counts
+                using (var db = new WWContext())
+                {
+                    //get daily counts
+                    var counts = db.getDailyCounts();
+                    db.DailyCounts.RemoveRange(db.DailyCounts);
+                    foreach (var count in counts)
+                        db.DailyCounts.Add(new DailyCount { Day = count.Day.Value, Games = count.Games.Value, Groups = count.Groups.Value, Users = count.players.Value });
+                    db.SaveChanges();
+
+                }
             }
             catch(Exception e)
             {
