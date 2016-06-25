@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Database;
+using Microsoft.Win32;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
@@ -19,13 +20,10 @@ namespace Werewolf_Control.Helpers
 {
     internal static class Bot
     {
-#if DEBUG
-        internal static string TelegramAPIKey = Internal.Default.TelegramAPIDebug;
-#else
-        internal static string TelegramAPIKey = Internal.Default.TelegramAPIProduction;
-#endif
+        internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static readonly Client Api = new Client(TelegramAPIKey);
+        public static Client Api;
+
         public static User Me;
         public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
@@ -51,42 +49,51 @@ namespace Werewolf_Control.Helpers
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         public static void Initialize()
         {
-            //load the commands list
-            foreach (var m in typeof(Commands).GetMethods())
-            {
-                var c = new Command();
-                foreach (var a in m.GetCustomAttributes(true))
-                {
-                    if (a is Attributes.Command)
-                    {
-                        var ca = a as Attributes.Command;
-                        c.Blockable = ca.Blockable;
-                        c.DevOnly = ca.DevOnly;
-                        c.GlobalAdminOnly = ca.GlobalAdminOnly;
-                        c.GroupAdminOnly = ca.GroupAdminOnly;
-                        c.Trigger = ca.Trigger;
-                        c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
-                        c.InGroupOnly = ca.InGroupOnly;
-                        Commands.Add(c);
-                    }
-                }
-            }
+            
+            //get api token from registry
+            var key =
+                    RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
+                        .OpenSubKey("SOFTWARE\\Werewolf");
+#if DEBUG
+            TelegramAPIKey = key.GetValue("DebugAPI").ToString();
+#else
+            TelegramAPIKey = key.GetValue("ProductionAPI").ToString();
+#endif
+            Api = new Client(TelegramAPIKey);
+
+
+            ////load the commands list
+            //foreach (var m in typeof(Commands).GetMethods())
+            //{
+            //    var c = new Command();
+            //    foreach (var a in m.GetCustomAttributes(true))
+            //    {
+            //        if (a is Attributes.Command)
+            //        {
+            //            var ca = a as Attributes.Command;
+            //            c.Blockable = ca.Blockable;
+            //            c.DevOnly = ca.DevOnly;
+            //            c.GlobalAdminOnly = ca.GlobalAdminOnly;
+            //            c.GroupAdminOnly = ca.GroupAdminOnly;
+            //            c.Trigger = ca.Trigger;
+            //            c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
+            //            c.InGroupOnly = ca.InGroupOnly;
+            //            Commands.Add(c);
+            //        }
+            //    }
+            //}
+
 
             Api.UpdateReceived += UpdateHandler.UpdateReceived;
             Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
             Api.ReceiveError += ApiOnReceiveError;
             Me = Api.GetMe().Result;
-            //wait for a node to connect...
-            //#if !DEBUG
-            //            while (Nodes.Count == 0)
-            //            {
-            //                Thread.Sleep(100);
-            //            }
-            //#endif
+
+
+            
             StartTime = DateTime.UtcNow;
             //now we can start receiving
             Api.StartReceiving();
-            //new Task(SendOnline).Start();
         }
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)

@@ -13,7 +13,9 @@ namespace Werewolf_Control.Helpers
 #else
         public static int Port = 9050;
 #endif
-        public static string TcpSecret => Internal.Default.TelegramAPIDebug.GetHashCode().ToString();
+
+        public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
+
         public static long MainChatId = -1001049529775; //Beta group
         public static long SupportChatId = -1001060486754; //@werewolfsupport
         public static long PrimaryChatId = -1001030085238; //@werewolfgame
@@ -35,8 +37,12 @@ namespace Werewolf_Control.Helpers
         /// <summary>
         /// How many games on each node before starting a new node (to be added later)
         /// </summary>
+#if DEBUG
+        public static int NewNodeThreshhold = 1;
+#else
         public static int NewNodeThreshhold = 30;
-
+#endif
+        public static int ShutDownNodesAt = 15;
 
         public static int
 #if DEBUG

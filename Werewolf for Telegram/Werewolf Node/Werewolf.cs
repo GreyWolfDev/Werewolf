@@ -217,7 +217,6 @@ namespace Werewolf_Node
                 using (var db = new WWContext())
                 {
                     GameId = db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
-
                 }
                 IsInitializing = false;
                 Program.GroupInitializing.Remove(ChatId);
@@ -3060,7 +3059,7 @@ namespace Werewolf_Node
                 }
                 if (!String.IsNullOrEmpty(final))
                     Send(final);
-                Thread.Sleep(2500);
+                Thread.Sleep(3500);
             }
             //do one last send
             final = "";

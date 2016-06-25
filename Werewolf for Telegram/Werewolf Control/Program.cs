@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Database;
 using Werewolf_Control.Helpers;
 
@@ -61,33 +62,76 @@ namespace Werewolf_Control
         {
             while (_writingInfo)
                 Thread.Sleep(50);
-            Console.CursorTop = Math.Max(Console.CursorTop, 6);
+            Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
+            if (Console.CursorTop >= 30)
+                Console.CursorTop = 19;
             Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
             Console.WriteLine(s);
         }
 
         private static void NodeMonitor()
         {
+            //wait a bit to allow nodes to register
+            Thread.Sleep(6000);
             while (Running)
             {
                 try
                 {
-                    var info = GetRunInfo();
+                    var Nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
+                    var CurrentPlayers = Nodes.Sum(x => x.CurrentPlayers);
+                    var CurrentGames = Nodes.Sum(x => x.CurrentGames);
+                    var TotalPlayers = Nodes.Sum(x => x.TotalPlayers);
+                    var TotalGames = Nodes.Sum(x => x.TotalGames);
+                    var NumThreads = Process.GetCurrentProcess().Threads.Count;
+                    var Uptime = DateTime.UtcNow - Bot.StartTime;
+                    var MessagesRx = Bot.MessagesReceived;
+                    var CommandsRx = Bot.CommandsReceived;
+
+                    var msg =
+                        $"Connected Nodes: {Nodes.Count}\nCurrent Players: {CurrentPlayers}\tCurrent Games: {CurrentGames}\nTotal Players: {TotalPlayers}\tTotal Games: {TotalGames}\n" +
+                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}\n\n";
+
+                    msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
+
+                    for (var i = 0; i < 12 - Nodes.Count; i++)
+                        msg += new string(' ', Console.WindowWidth);
+
 
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
-                    var ypos = Math.Max(Console.CursorTop, 6);
+                    var ypos = Math.Max(Console.CursorTop, 19);
+                    if (ypos >= 30)
+                        ypos = 19;
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
 
                     //write the info
-                    Console.WriteLine(info);
+                    Console.WriteLine(msg);
                     //put the cursor back;
                     Console.CursorTop = ypos;
                     Console.CursorLeft = xpos;
                     _writingInfo = false;
+
+                    //now, let's manage our nodes.
+                    if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
+                    {
+                        //we have too many nodes running, kill one.
+                        Nodes.First().ShutDown();
+                    }
+
+                    if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
+                    {
+                        NewNode();
+                        Thread.Sleep(5000); //give the node time to register
+                    }
+
+                    if (Nodes.All(x => x.ShuttingDown)) //replace nodes
+                    {
+                        NewNode();
+                        Thread.Sleep(5000); //give the node time to register
+                    }
                 }
                 finally
                 {
@@ -97,22 +141,32 @@ namespace Werewolf_Control
             }
         }
 
-        public static string GetRunInfo()
+        private static void NewNode()
         {
-            var Nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
-            var CurrentPlayers = Nodes.Sum(x => x.CurrentPlayers);
-            var CurrentGames = Nodes.Sum(x => x.CurrentGames);
-            var TotalPlayers = Nodes.Sum(x => x.TotalPlayers);
-            var TotalGames = Nodes.Sum(x => x.TotalGames);
-            var NumThreads = Process.GetCurrentProcess().Threads.Count;
-            var Uptime = DateTime.UtcNow - Bot.StartTime;
-            var MessagesRx = Bot.MessagesReceived;
-            var CommandsRx = Bot.CommandsReceived;
+            //all nodes have quite a few games, let's spin up another
+            //this is a bit more tricky, we need to figure out which node folder has the latest version...
+            var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
+            var currentChoice = new NodeChoice();
+            foreach (var dir in Directory.GetDirectories(baseDirectory, "*Node*"))
+            {
+                //get the node exe in this directory
+                var file = Directory.GetFiles(dir, "Werewolf Node.exe").First();
+                Version fvi = Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
+                if (fvi > currentChoice.Version)
+                {
+                    currentChoice.Path = file;
+                    currentChoice.Version = fvi;
+                }
+            }
 
-            return
-                $"Connected Nodes: {Nodes.Count}\nCurrent Players: {CurrentPlayers}\tCurrent Games: {CurrentGames}\nTotal Players: {TotalPlayers}\tTotal Games: {TotalGames}\n" +
-                $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}";
-
+            //now we have the most recent version, launch one
+            Process.Start(currentChoice.Path);
         }
+    }
+
+    class NodeChoice
+    {
+        public string Path { get; set; }
+        public Version Version { get; set; } = Version.Parse("0.0.0.0");
     }
 }

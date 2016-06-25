@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="werewolfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="werewolfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Action">
           <Key>
             <PropertyRef Name="Id" />
@@ -58,6 +58,30 @@
           <Property Name="Won" Type="bit" Nullable="false" />
           <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="GlobalStats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GamesPlayed" Type="int" Nullable="false" />
+          <Property Name="PlayersKilled" Type="int" Nullable="false" />
+          <Property Name="PlayersSurvived" Type="int" Nullable="false" />
+          <Property Name="MostKilledFirstNight" Type="nvarchar(max)" />
+          <Property Name="MostKilledFirstPercent" Type="int" />
+          <Property Name="MostLynchedFirstDay" Type="nvarchar(max)" />
+          <Property Name="MostLynchedFirstPercent" Type="int" />
+          <Property Name="MostKilledFirstDay" Type="nvarchar(max)" />
+          <Property Name="MostKilledFirstDayPercent" Type="int" />
+          <Property Name="BestSurvivor" Type="nvarchar(max)" />
+          <Property Name="BestSurvivorPercent" Type="int" />
+          <Property Name="LastRun" Type="datetime" />
+          <Property Name="TotalPlayers" Type="int" />
+          <Property Name="TotalGroups" Type="int" />
+          <Property Name="MostKilledFirstNightId" Type="int" />
+          <Property Name="MostLynchedFirstDayId" Type="int" />
+          <Property Name="MostKilledFirstDayId" Type="int" />
+          <Property Name="BestSurvivorId" Type="int" />
+        </EntityType>
         <EntityType Name="Group">
           <Key>
             <PropertyRef Name="Id" />
@@ -93,6 +117,24 @@ warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary k
           <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="PlayerId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="GroupStats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupId" Type="bigint" Nullable="false" />
+          <Property Name="GamesPlayed" Type="int" Nullable="false" />
+          <Property Name="MostKilledFirstNight" Type="nvarchar(max)" />
+          <Property Name="MostKilledFirstPercent" Type="int" />
+          <Property Name="MostLynchedFirstNight" Type="nvarchar(max)" />
+          <Property Name="MostLynchFirstPercent" Type="int" />
+          <Property Name="MostDeadFirstDay" Type="nvarchar(max)" />
+          <Property Name="MostDeadFirstPercent" Type="int" />
+          <Property Name="BestSurvivor" Type="nvarchar(max)" />
+          <Property Name="BestSurvivorPercent" Type="int" />
+          <Property Name="LastRun" Type="datetime" />
+          <Property Name="GroupName" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="KillMethod">
           <Key>
             <PropertyRef Name="Id" />
@@ -123,18 +165,22 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="HasPM" Type="bit" />
           <Property Name="BanReason" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_BotInGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_BotInGroups">
-          <Property Name="Groups" Type="int" />
-          <Property Name="Has Bot?" Type="varchar" MaxLength="3" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_LanguageCounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_LanguageCounts">
-          <Property Name="Groups" Type="int" />
-          <Property Name="Language" Type="nvarchar(max)" />
-        </EntityType>-->
+        <EntityType Name="PlayerStats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerId" Type="int" Nullable="false" />
+          <Property Name="GamesPlayed" Type="int" Nullable="false" />
+          <Property Name="GamesWon" Type="int" Nullable="false" />
+          <Property Name="GamesLost" Type="int" Nullable="false" />
+          <Property Name="MostCommonRole" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MostKilled" Type="nvarchar(max)" />
+          <Property Name="MostKilledBy" Type="nvarchar(max)" />
+          <Property Name="MostCommonRolePercent" Type="int" Nullable="false" />
+          <Property Name="GamesSurvived" Type="int" Nullable="false" />
+          <Property Name="LastRun" Type="datetime" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_NonDefaultGroups">
@@ -176,16 +222,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="UserName" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_SummaryTotals">
-          <Property Name="Players" Type="int" />
-          <Property Name="Games" Type="int" />
-          <Property Name="Groups" Type="int" />
-          <Property Name="Deaths" Type="int" />
-          <Property Name="Survivors" Type="int" />
-          <Property Name="Since" Type="datetime" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
           <Key>
@@ -195,14 +231,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_WinRatios">
-          <Property Name="Players" Type="int" />
-          <Property Name="Wins" Type="int" />
-          <Property Name="Team" Type="nvarchar" MaxLength="50" />
-          <Property Name="%" Type="numeric" Precision="26" Scale="12" />
-        </EntityType>-->
         <Association Name="FK_Action_Game">
           <End Role="Game" Type="Self.Game" Multiplicity="1" />
           <End Role="Action" Type="Self.Action" Multiplicity="*" />
@@ -341,15 +369,43 @@ warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a pri
         <Function Name="getRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="groupName" Type="nvarchar(max)" Mode="In" />
         </Function>
+        <Function Name="GlobalDay1Death" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GlobalDay1Lynch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GlobalNight1Death" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GlobalSurvivor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GroupDay1Death" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="groupid" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GroupDay1Lynch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="groupid" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GroupNight1Death" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="groupid" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GroupSurvivor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="groupid" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="PlayerMostKilled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PlayerMostKilledBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PlayerRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
           <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameKill" EntityType="Self.GameKill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GamePlayer" EntityType="Self.GamePlayer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GlobalStats" EntityType="Self.GlobalStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupStats" EntityType="Self.GroupStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KillMethod" EntityType="Self.KillMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayerStats" EntityType="Self.PlayerStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GroupAdmin" EntityType="Self.GroupAdmin" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [GroupAdmin].[GroupId] AS [GroupId], 
@@ -444,8 +500,7 @@ warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a pri
             <End Role="GroupAdmin" EntitySet="GroupAdmin" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="werewolfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -731,7 +786,7 @@ warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a pri
           <End Role="Group" Type="Self.Group" Multiplicity="*" />
           <End Role="Player" Type="Self.Player" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WWContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Actions" EntityType="Self.Action" />
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Games" EntityType="Self.Game" />
@@ -785,10 +840,38 @@ warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a pri
             <End Role="Player" EntitySet="Players" />
           </AssociationSet>
           <FunctionImport Name="getPlayTime" ReturnType="Collection(werewolfModel.getPlayTime_Result)">
-            <Parameter Name="playerCount" Mode="In" Type="Int32" />
+          <Parameter Name="playerCount" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getRoles" ReturnType="Collection(werewolfModel.getRoles_Result)">
-            <Parameter Name="groupName" Mode="In" Type="String" />
+          <Parameter Name="groupName" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="GlobalStats" EntityType="werewolfModel.GlobalStat" />
+          <EntitySet Name="PlayerStats" EntityType="werewolfModel.PlayerStat" />
+          <EntitySet Name="GroupStats" EntityType="werewolfModel.GroupStat" />
+          <FunctionImport Name="PlayerMostKilled" ReturnType="Collection(werewolfModel.PlayerMostKilled_Result)">
+          <Parameter Name="pid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PlayerMostKilledBy" ReturnType="Collection(werewolfModel.PlayerMostKilledBy_Result)">
+          <Parameter Name="pid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PlayerRoles" ReturnType="Collection(werewolfModel.PlayerRoles_Result)">
+          <Parameter Name="pid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GlobalDay1Death" ReturnType="Collection(werewolfModel.GlobalDay1Death_Result1)" />
+          <FunctionImport Name="GlobalDay1Lynch" ReturnType="Collection(werewolfModel.GlobalDay1Lynch_Result1)" />
+          <FunctionImport Name="GlobalNight1Death" ReturnType="Collection(werewolfModel.GlobalNight1Death_Result1)" />
+          <FunctionImport Name="GlobalSurvivor" ReturnType="Collection(werewolfModel.GlobalSurvivor_Result1)" />
+          <FunctionImport Name="GroupDay1Death" ReturnType="Collection(werewolfModel.GroupDay1Death_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GroupDay1Lynch" ReturnType="Collection(werewolfModel.GroupDay1Lynch_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GroupNight1Death" ReturnType="Collection(werewolfModel.GroupNight1Death_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GroupSurvivor" ReturnType="Collection(werewolfModel.GroupSurvivor_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
@@ -800,12 +883,156 @@ warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a pri
           <Property Type="String" Name="name" Nullable="false" />
           <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="GlobalDay1Death_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="victimid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalDay1Lynch_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="victimid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalNight1Death_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="victimid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalSurvivor_Result">
+          <Property Type="Decimal" Name="pct" Nullable="true" Precision="26" Scale="12" />
+          <Property Type="Int32" Name="playerid" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="GlobalStat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GamesPlayed" Type="Int32" Nullable="false" />
+          <Property Name="PlayersKilled" Type="Int32" Nullable="false" />
+          <Property Name="PlayersSurvived" Type="Int32" Nullable="false" />
+          <Property Name="MostKilledFirstNight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostKilledFirstPercent" Type="Int32" />
+          <Property Name="MostLynchedFirstDay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostLynchedFirstPercent" Type="Int32" />
+          <Property Name="MostKilledFirstDay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostKilledFirstDayPercent" Type="Int32" />
+          <Property Name="BestSurvivor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BestSurvivorPercent" Type="Int32" />
+          <Property Name="LastRun" Type="DateTime" Precision="3" />
+          <Property Name="TotalPlayers" Type="Int32" />
+          <Property Name="TotalGroups" Type="Int32" />
+          <Property Name="MostKilledFirstNightId" Type="Int32" />
+          <Property Name="MostLynchedFirstDayId" Type="Int32" />
+          <Property Name="MostKilledFirstDayId" Type="Int32" />
+          <Property Name="BestSurvivorId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PlayerStat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerId" Type="Int32" Nullable="false" />
+          <Property Name="GamesPlayed" Type="Int32" Nullable="false" />
+          <Property Name="GamesWon" Type="Int32" Nullable="false" />
+          <Property Name="GamesLost" Type="Int32" Nullable="false" />
+          <Property Name="MostCommonRole" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MostKilled" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostKilledBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostCommonRolePercent" Type="Int32" Nullable="false" />
+          <Property Name="GamesSurvived" Type="Int32" Nullable="false" />
+          <Property Name="LastRun" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="GroupDay1Death_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="victimid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupDay1Lynch_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="victimid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupNight1Death_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="victimid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupSurvivor_Result">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="Int32" Name="playerid" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="GroupStat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupId" Type="Int64" Nullable="false" />
+          <Property Name="GamesPlayed" Type="Int32" Nullable="false" />
+          <Property Name="MostKilledFirstNight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostKilledFirstPercent" Type="Int32" />
+          <Property Name="MostLynchedFirstNight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostLynchFirstPercent" Type="Int32" />
+          <Property Name="MostDeadFirstDay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MostDeadFirstPercent" Type="Int32" />
+          <Property Name="BestSurvivor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BestSurvivorPercent" Type="Int32" />
+          <Property Name="LastRun" Type="DateTime" Precision="3" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="PlayerMostKilled_Result">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int32" Name="times" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PlayerMostKilledBy_Result">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int32" Name="times" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PlayerRoles_Result">
+          <Property Type="Int32" Name="times" Nullable="true" />
+          <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GlobalDay1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalDay1Lynch_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalNight1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalSurvivor_Result1">
+          <Property Type="Decimal" Name="pct" Nullable="true" Precision="26" Scale="12" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupDay1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupDay1Lynch_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupNight1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupSurvivor_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="werewolfModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="werewolfModelStoreContainer" CdmEntityContainer="WWContext">
           <EntitySetMapping Name="Actions">
             <EntityTypeMapping TypeName="werewolfModel.Action">
               <MappingFragment StoreEntitySet="Action">
@@ -985,6 +1212,165 @@ warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a pri
               <ComplexTypeMapping TypeName="werewolfModel.getRoles_Result">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="role" ColumnName="role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="GlobalStats">
+            <EntityTypeMapping TypeName="werewolfModel.GlobalStat">
+              <MappingFragment StoreEntitySet="GlobalStats">
+                <ScalarProperty Name="BestSurvivorId" ColumnName="BestSurvivorId" />
+                <ScalarProperty Name="MostKilledFirstDayId" ColumnName="MostKilledFirstDayId" />
+                <ScalarProperty Name="MostLynchedFirstDayId" ColumnName="MostLynchedFirstDayId" />
+                <ScalarProperty Name="MostKilledFirstNightId" ColumnName="MostKilledFirstNightId" />
+                <ScalarProperty Name="TotalGroups" ColumnName="TotalGroups" />
+                <ScalarProperty Name="TotalPlayers" ColumnName="TotalPlayers" />
+                <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+                <ScalarProperty Name="BestSurvivorPercent" ColumnName="BestSurvivorPercent" />
+                <ScalarProperty Name="BestSurvivor" ColumnName="BestSurvivor" />
+                <ScalarProperty Name="MostKilledFirstDayPercent" ColumnName="MostKilledFirstDayPercent" />
+                <ScalarProperty Name="MostKilledFirstDay" ColumnName="MostKilledFirstDay" />
+                <ScalarProperty Name="MostLynchedFirstPercent" ColumnName="MostLynchedFirstPercent" />
+                <ScalarProperty Name="MostLynchedFirstDay" ColumnName="MostLynchedFirstDay" />
+                <ScalarProperty Name="MostKilledFirstPercent" ColumnName="MostKilledFirstPercent" />
+                <ScalarProperty Name="MostKilledFirstNight" ColumnName="MostKilledFirstNight" />
+                <ScalarProperty Name="PlayersSurvived" ColumnName="PlayersSurvived" />
+                <ScalarProperty Name="PlayersKilled" ColumnName="PlayersKilled" />
+                <ScalarProperty Name="GamesPlayed" ColumnName="GamesPlayed" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayerStats">
+            <EntityTypeMapping TypeName="werewolfModel.PlayerStat">
+              <MappingFragment StoreEntitySet="PlayerStats">
+                <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+                <ScalarProperty Name="GamesSurvived" ColumnName="GamesSurvived" />
+                <ScalarProperty Name="MostCommonRolePercent" ColumnName="MostCommonRolePercent" />
+                <ScalarProperty Name="MostKilledBy" ColumnName="MostKilledBy" />
+                <ScalarProperty Name="MostKilled" ColumnName="MostKilled" />
+                <ScalarProperty Name="MostCommonRole" ColumnName="MostCommonRole" />
+                <ScalarProperty Name="GamesLost" ColumnName="GamesLost" />
+                <ScalarProperty Name="GamesWon" ColumnName="GamesWon" />
+                <ScalarProperty Name="GamesPlayed" ColumnName="GamesPlayed" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupStats">
+            <EntityTypeMapping TypeName="werewolfModel.GroupStat">
+              <MappingFragment StoreEntitySet="GroupStats">
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+                <ScalarProperty Name="BestSurvivorPercent" ColumnName="BestSurvivorPercent" />
+                <ScalarProperty Name="BestSurvivor" ColumnName="BestSurvivor" />
+                <ScalarProperty Name="MostDeadFirstPercent" ColumnName="MostDeadFirstPercent" />
+                <ScalarProperty Name="MostDeadFirstDay" ColumnName="MostDeadFirstDay" />
+                <ScalarProperty Name="MostLynchFirstPercent" ColumnName="MostLynchFirstPercent" />
+                <ScalarProperty Name="MostLynchedFirstNight" ColumnName="MostLynchedFirstNight" />
+                <ScalarProperty Name="MostKilledFirstPercent" ColumnName="MostKilledFirstPercent" />
+                <ScalarProperty Name="MostKilledFirstNight" ColumnName="MostKilledFirstNight" />
+                <ScalarProperty Name="GamesPlayed" ColumnName="GamesPlayed" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PlayerMostKilled" FunctionName="werewolfModel.Store.PlayerMostKilled">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.PlayerMostKilled_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="times" ColumnName="times" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PlayerMostKilledBy" FunctionName="werewolfModel.Store.PlayerMostKilledBy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.PlayerMostKilledBy_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="times" ColumnName="times" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PlayerRoles" FunctionName="werewolfModel.Store.PlayerRoles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.PlayerRoles_Result">
+                <ScalarProperty Name="times" ColumnName="times" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalDay1Death" FunctionName="werewolfModel.Store.GlobalDay1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalDay1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalDay1Lynch" FunctionName="werewolfModel.Store.GlobalDay1Lynch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalDay1Lynch_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalNight1Death" FunctionName="werewolfModel.Store.GlobalNight1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalNight1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalSurvivor" FunctionName="werewolfModel.Store.GlobalSurvivor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalSurvivor_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupDay1Death" FunctionName="werewolfModel.Store.GroupDay1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupDay1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupDay1Lynch" FunctionName="werewolfModel.Store.GroupDay1Lynch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupDay1Lynch_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupNight1Death" FunctionName="werewolfModel.Store.GroupNight1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupNight1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupSurvivor" FunctionName="werewolfModel.Store.GroupSurvivor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupSurvivor_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
