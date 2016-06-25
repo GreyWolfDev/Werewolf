@@ -98,16 +98,21 @@ namespace StatsRotation
                     stat.PlayersSurvived = DB.GamePlayers.Count(x => x.Survived);
                     stat.TotalGroups = DB.Groups.Count();
                     stat.TotalPlayers = DB.Players.Count();
-                    stat.BestSurvivor = DB.Players.Find(survivor.playerid).Name;
+                    stat.BestSurvivor = survivor.Name;
                     stat.BestSurvivorPercent = (int)survivor.pct;
+                    stat.BestSurvivorId = survivor.TelegramId;
                     stat.GamesPlayed = gamesPlayed;
                     stat.LastRun = DateTime.Now;
-                    stat.MostKilledFirstDay = DB.Players.Find(day1death.victimid).Name;
+                    stat.MostKilledFirstDay = day1death.Name;
                     stat.MostKilledFirstDayPercent = day1death.pct;
-                    stat.MostKilledFirstNight = DB.Players.Find(night1death.victimid).Name;
+                    stat.MostKilledFirstDayId = day1death.TelegramId;
+                    stat.MostKilledFirstNight = night1death.Name;
                     stat.MostKilledFirstPercent = night1death.pct;
-                    stat.MostLynchedFirstDay = DB.Players.Find(day1lynch.victimid).Name;
+                    stat.MostKilledFirstNightId = night1death.TelegramId;
+                    stat.MostLynchedFirstDay = day1lynch.Name;
                     stat.MostLynchedFirstPercent = day1lynch.pct;
+                    stat.MostLynchedFirstDayId = day1lynch.TelegramId;
+                    
                     DB.SaveChanges();
                     
                 }
@@ -167,24 +172,24 @@ namespace StatsRotation
 
                     if (survivor != null)
                     {
-                        stat.BestSurvivor = db.Players.Find(survivor.playerid).Name;
+                        stat.BestSurvivor = survivor.Name;
                         stat.BestSurvivorPercent = (int) survivor.pct;
                     }
                     stat.GamesPlayed = gamesPlayed;
                     stat.LastRun = DateTime.Now;
                     if (day1death != null)
                     {
-                        stat.MostDeadFirstDay = db.Players.Find(day1death.victimid).Name;
+                        stat.MostDeadFirstDay = day1death.Name;
                         stat.MostDeadFirstPercent = day1death.pct;
                     }
                     if (night1death != null)
                     {
-                        stat.MostKilledFirstNight = db.Players.Find(night1death.victimid).Name;
+                        stat.MostKilledFirstNight = night1death.Name;
                         stat.MostKilledFirstPercent = night1death.pct;
                     }
                     if (day1lynch != null)
                     {
-                        stat.MostLynchedFirstNight = db.Players.Find(day1lynch.victimid).Name;
+                        stat.MostLynchedFirstNight = day1lynch.Name;
                         stat.MostLynchFirstPercent = day1lynch.pct;
                     }
                     db.SaveChanges();

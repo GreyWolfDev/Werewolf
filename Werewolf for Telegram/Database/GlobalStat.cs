@@ -29,5 +29,9 @@ namespace Database
         public Nullable<System.DateTime> LastRun { get; set; }
         public Nullable<int> TotalPlayers { get; set; }
         public Nullable<int> TotalGroups { get; set; }
+        public Nullable<int> MostKilledFirstNightId { get; set; }
+        public Nullable<int> MostLynchedFirstDayId { get; set; }
+        public Nullable<int> MostKilledFirstDayId { get; set; }
+        public Nullable<int> BestSurvivorId { get; set; }
     }
 }

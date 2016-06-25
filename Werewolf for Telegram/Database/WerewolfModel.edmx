@@ -77,6 +77,10 @@
           <Property Name="LastRun" Type="datetime" />
           <Property Name="TotalPlayers" Type="int" />
           <Property Name="TotalGroups" Type="int" />
+          <Property Name="MostKilledFirstNightId" Type="int" />
+          <Property Name="MostLynchedFirstDayId" Type="int" />
+          <Property Name="MostKilledFirstDayId" Type="int" />
+          <Property Name="BestSurvivorId" Type="int" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -217,16 +221,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="Language" Type="nvarchar(max)" />
           <Property Name="UserName" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_SummaryTotals">
-          <Property Name="Players" Type="int" />
-          <Property Name="Games" Type="int" />
-          <Property Name="Groups" Type="int" />
-          <Property Name="Deaths" Type="int" />
-          <Property Name="Survivors" Type="int" />
-          <Property Name="Since" Type="datetime" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
@@ -390,6 +384,15 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
         </Function>
         <Function Name="GroupSurvivor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="groupid" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="PlayerMostKilled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PlayerMostKilledBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PlayerRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
           <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
@@ -842,25 +845,34 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <FunctionImport Name="getRoles" ReturnType="Collection(werewolfModel.getRoles_Result)">
           <Parameter Name="groupName" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GlobalDay1Death" ReturnType="Collection(werewolfModel.GlobalDay1Death_Result)" />
-          <FunctionImport Name="GlobalDay1Lynch" ReturnType="Collection(werewolfModel.GlobalDay1Lynch_Result)" />
-          <FunctionImport Name="GlobalNight1Death" ReturnType="Collection(werewolfModel.GlobalNight1Death_Result)" />
-          <FunctionImport Name="GlobalSurvivor" ReturnType="Collection(werewolfModel.GlobalSurvivor_Result)" />
           <EntitySet Name="GlobalStats" EntityType="werewolfModel.GlobalStat" />
           <EntitySet Name="PlayerStats" EntityType="werewolfModel.PlayerStat" />
-          <FunctionImport Name="GroupDay1Death" ReturnType="Collection(werewolfModel.GroupDay1Death_Result)">
-          <Parameter Name="groupid" Mode="In" Type="Int64" />
-          </FunctionImport>
-          <FunctionImport Name="GroupDay1Lynch" ReturnType="Collection(werewolfModel.GroupDay1Lynch_Result)">
-          <Parameter Name="groupid" Mode="In" Type="Int64" />
-          </FunctionImport>
-          <FunctionImport Name="GroupNight1Death" ReturnType="Collection(werewolfModel.GroupNight1Death_Result)">
-          <Parameter Name="groupid" Mode="In" Type="Int64" />
-          </FunctionImport>
-          <FunctionImport Name="GroupSurvivor" ReturnType="Collection(werewolfModel.GroupSurvivor_Result)">
-          <Parameter Name="groupid" Mode="In" Type="Int64" />
-          </FunctionImport>
           <EntitySet Name="GroupStats" EntityType="werewolfModel.GroupStat" />
+          <FunctionImport Name="PlayerMostKilled" ReturnType="Collection(werewolfModel.PlayerMostKilled_Result)">
+          <Parameter Name="pid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PlayerMostKilledBy" ReturnType="Collection(werewolfModel.PlayerMostKilledBy_Result)">
+          <Parameter Name="pid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PlayerRoles" ReturnType="Collection(werewolfModel.PlayerRoles_Result)">
+          <Parameter Name="pid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GlobalDay1Death" ReturnType="Collection(werewolfModel.GlobalDay1Death_Result1)" />
+          <FunctionImport Name="GlobalDay1Lynch" ReturnType="Collection(werewolfModel.GlobalDay1Lynch_Result1)" />
+          <FunctionImport Name="GlobalNight1Death" ReturnType="Collection(werewolfModel.GlobalNight1Death_Result1)" />
+          <FunctionImport Name="GlobalSurvivor" ReturnType="Collection(werewolfModel.GlobalSurvivor_Result1)" />
+          <FunctionImport Name="GroupDay1Death" ReturnType="Collection(werewolfModel.GroupDay1Death_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GroupDay1Lynch" ReturnType="Collection(werewolfModel.GroupDay1Lynch_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GroupNight1Death" ReturnType="Collection(werewolfModel.GroupNight1Death_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GroupSurvivor" ReturnType="Collection(werewolfModel.GroupSurvivor_Result1)">
+          <Parameter Name="groupid" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -906,6 +918,10 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="LastRun" Type="DateTime" Precision="3" />
           <Property Name="TotalPlayers" Type="Int32" />
           <Property Name="TotalGroups" Type="Int32" />
+          <Property Name="MostKilledFirstNightId" Type="Int32" />
+          <Property Name="MostLynchedFirstDayId" Type="Int32" />
+          <Property Name="MostKilledFirstDayId" Type="Int32" />
+          <Property Name="BestSurvivorId" Type="Int32" />
         </EntityType>
         <EntityType Name="PlayerStat">
           <Key>
@@ -957,6 +973,60 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="LastRun" Type="DateTime" Precision="3" />
           <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="PlayerMostKilled_Result">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int32" Name="times" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PlayerMostKilledBy_Result">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int32" Name="times" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PlayerRoles_Result">
+          <Property Type="Int32" Name="times" Nullable="true" />
+          <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GlobalDay1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalDay1Lynch_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalNight1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GlobalSurvivor_Result1">
+          <Property Type="Decimal" Name="pct" Nullable="true" Precision="26" Scale="12" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupDay1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupDay1Lynch_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupNight1Death_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GroupSurvivor_Result1">
+          <Property Type="Int32" Name="pct" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1145,41 +1215,13 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GlobalDay1Death" FunctionName="werewolfModel.Store.GlobalDay1Death">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GlobalDay1Death_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="victimid" ColumnName="victimid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GlobalDay1Lynch" FunctionName="werewolfModel.Store.GlobalDay1Lynch">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GlobalDay1Lynch_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="victimid" ColumnName="victimid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GlobalNight1Death" FunctionName="werewolfModel.Store.GlobalNight1Death">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GlobalNight1Death_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="victimid" ColumnName="victimid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GlobalSurvivor" FunctionName="werewolfModel.Store.GlobalSurvivor">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GlobalSurvivor_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="playerid" ColumnName="playerid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="GlobalStats">
             <EntityTypeMapping TypeName="werewolfModel.GlobalStat">
               <MappingFragment StoreEntitySet="GlobalStats">
+                <ScalarProperty Name="BestSurvivorId" ColumnName="BestSurvivorId" />
+                <ScalarProperty Name="MostKilledFirstDayId" ColumnName="MostKilledFirstDayId" />
+                <ScalarProperty Name="MostLynchedFirstDayId" ColumnName="MostLynchedFirstDayId" />
+                <ScalarProperty Name="MostKilledFirstNightId" ColumnName="MostKilledFirstNightId" />
                 <ScalarProperty Name="TotalGroups" ColumnName="TotalGroups" />
                 <ScalarProperty Name="TotalPlayers" ColumnName="TotalPlayers" />
                 <ScalarProperty Name="LastRun" ColumnName="LastRun" />
@@ -1215,38 +1257,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="GroupDay1Death" FunctionName="werewolfModel.Store.GroupDay1Death">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GroupDay1Death_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="victimid" ColumnName="victimid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GroupDay1Lynch" FunctionName="werewolfModel.Store.GroupDay1Lynch">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GroupDay1Lynch_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="victimid" ColumnName="victimid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GroupNight1Death" FunctionName="werewolfModel.Store.GroupNight1Death">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GroupNight1Death_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="victimid" ColumnName="victimid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GroupSurvivor" FunctionName="werewolfModel.Store.GroupSurvivor">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="werewolfModel.GroupSurvivor_Result">
-                <ScalarProperty Name="pct" ColumnName="pct" />
-                <ScalarProperty Name="playerid" ColumnName="playerid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="GroupStats">
             <EntityTypeMapping TypeName="werewolfModel.GroupStat">
               <MappingFragment StoreEntitySet="GroupStats">
@@ -1266,6 +1276,104 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PlayerMostKilled" FunctionName="werewolfModel.Store.PlayerMostKilled">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.PlayerMostKilled_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="times" ColumnName="times" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PlayerMostKilledBy" FunctionName="werewolfModel.Store.PlayerMostKilledBy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.PlayerMostKilledBy_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="times" ColumnName="times" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PlayerRoles" FunctionName="werewolfModel.Store.PlayerRoles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.PlayerRoles_Result">
+                <ScalarProperty Name="times" ColumnName="times" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalDay1Death" FunctionName="werewolfModel.Store.GlobalDay1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalDay1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalDay1Lynch" FunctionName="werewolfModel.Store.GlobalDay1Lynch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalDay1Lynch_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalNight1Death" FunctionName="werewolfModel.Store.GlobalNight1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalNight1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GlobalSurvivor" FunctionName="werewolfModel.Store.GlobalSurvivor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GlobalSurvivor_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupDay1Death" FunctionName="werewolfModel.Store.GroupDay1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupDay1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupDay1Lynch" FunctionName="werewolfModel.Store.GroupDay1Lynch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupDay1Lynch_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupNight1Death" FunctionName="werewolfModel.Store.GroupNight1Death">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupNight1Death_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GroupSurvivor" FunctionName="werewolfModel.Store.GroupSurvivor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="werewolfModel.GroupSurvivor_Result1">
+                <ScalarProperty Name="pct" ColumnName="pct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -61,60 +61,87 @@ namespace Database
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getRoles_Result>("getRoles", groupNameParameter);
         }
     
-        public virtual ObjectResult<GlobalDay1Death_Result> GlobalDay1Death()
+        public virtual ObjectResult<PlayerMostKilled_Result> PlayerMostKilled(Nullable<int> pid)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalDay1Death_Result>("GlobalDay1Death");
+            var pidParameter = pid.HasValue ?
+                new ObjectParameter("pid", pid) :
+                new ObjectParameter("pid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PlayerMostKilled_Result>("PlayerMostKilled", pidParameter);
         }
     
-        public virtual ObjectResult<GlobalDay1Lynch_Result> GlobalDay1Lynch()
+        public virtual ObjectResult<PlayerMostKilledBy_Result> PlayerMostKilledBy(Nullable<int> pid)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalDay1Lynch_Result>("GlobalDay1Lynch");
+            var pidParameter = pid.HasValue ?
+                new ObjectParameter("pid", pid) :
+                new ObjectParameter("pid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PlayerMostKilledBy_Result>("PlayerMostKilledBy", pidParameter);
         }
     
-        public virtual ObjectResult<GlobalNight1Death_Result> GlobalNight1Death()
+        public virtual ObjectResult<PlayerRoles_Result> PlayerRoles(Nullable<int> pid)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalNight1Death_Result>("GlobalNight1Death");
+            var pidParameter = pid.HasValue ?
+                new ObjectParameter("pid", pid) :
+                new ObjectParameter("pid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PlayerRoles_Result>("PlayerRoles", pidParameter);
         }
     
-        public virtual ObjectResult<GlobalSurvivor_Result> GlobalSurvivor()
+        public virtual ObjectResult<GlobalDay1Death_Result1> GlobalDay1Death()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalSurvivor_Result>("GlobalSurvivor");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalDay1Death_Result1>("GlobalDay1Death");
         }
     
-        public virtual ObjectResult<GroupDay1Death_Result> GroupDay1Death(Nullable<long> groupid)
+        public virtual ObjectResult<GlobalDay1Lynch_Result1> GlobalDay1Lynch()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalDay1Lynch_Result1>("GlobalDay1Lynch");
+        }
+    
+        public virtual ObjectResult<GlobalNight1Death_Result1> GlobalNight1Death()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalNight1Death_Result1>("GlobalNight1Death");
+        }
+    
+        public virtual ObjectResult<GlobalSurvivor_Result1> GlobalSurvivor()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GlobalSurvivor_Result1>("GlobalSurvivor");
+        }
+    
+        public virtual ObjectResult<GroupDay1Death_Result1> GroupDay1Death(Nullable<long> groupid)
         {
             var groupidParameter = groupid.HasValue ?
                 new ObjectParameter("groupid", groupid) :
                 new ObjectParameter("groupid", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupDay1Death_Result>("GroupDay1Death", groupidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupDay1Death_Result1>("GroupDay1Death", groupidParameter);
         }
     
-        public virtual ObjectResult<GroupDay1Lynch_Result> GroupDay1Lynch(Nullable<long> groupid)
+        public virtual ObjectResult<GroupDay1Lynch_Result1> GroupDay1Lynch(Nullable<long> groupid)
         {
             var groupidParameter = groupid.HasValue ?
                 new ObjectParameter("groupid", groupid) :
                 new ObjectParameter("groupid", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupDay1Lynch_Result>("GroupDay1Lynch", groupidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupDay1Lynch_Result1>("GroupDay1Lynch", groupidParameter);
         }
     
-        public virtual ObjectResult<GroupNight1Death_Result> GroupNight1Death(Nullable<long> groupid)
+        public virtual ObjectResult<GroupNight1Death_Result1> GroupNight1Death(Nullable<long> groupid)
         {
             var groupidParameter = groupid.HasValue ?
                 new ObjectParameter("groupid", groupid) :
                 new ObjectParameter("groupid", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupNight1Death_Result>("GroupNight1Death", groupidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupNight1Death_Result1>("GroupNight1Death", groupidParameter);
         }
     
-        public virtual ObjectResult<GroupSurvivor_Result> GroupSurvivor(Nullable<long> groupid)
+        public virtual ObjectResult<GroupSurvivor_Result1> GroupSurvivor(Nullable<long> groupid)
         {
             var groupidParameter = groupid.HasValue ?
                 new ObjectParameter("groupid", groupid) :
                 new ObjectParameter("groupid", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupSurvivor_Result>("GroupSurvivor", groupidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GroupSurvivor_Result1>("GroupSurvivor", groupidParameter);
         }
     }
 }
