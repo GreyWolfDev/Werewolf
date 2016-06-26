@@ -48,6 +48,7 @@ namespace Werewolf_Control.Helpers
             TimeDay = 60,
             TimeNight = 90,
             TimeLynch = 90,
+            GameExtendTime = 1200,
 #if DEBUG
             PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,

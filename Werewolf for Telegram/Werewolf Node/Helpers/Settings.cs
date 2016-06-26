@@ -43,6 +43,7 @@ namespace Werewolf_Node
             TimeDay = 60,
             TimeNight = 90,
             TimeLynch = 90,
+            GameExtendTime = 1200,
 #if !DEBUG
             PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
@@ -80,7 +81,7 @@ namespace Werewolf_Node
             SerialKillerConversionChance = 20,
 
 #else
-             PlayerCountSeerCursed = 6,
+        PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
             PlayerCountBeholderChance = 8,
             PlayerCountSecondWolf = 9,
@@ -117,6 +118,7 @@ namespace Werewolf_Node
 #endif
 
             GameJoinTime = 180;
+
 
 
 

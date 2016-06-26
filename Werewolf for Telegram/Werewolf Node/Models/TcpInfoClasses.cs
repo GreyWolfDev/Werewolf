@@ -99,4 +99,10 @@ namespace Werewolf_Node.Models
         public string JType { get; set; } = "CallbackInfo";
         public CallbackQuery Query { get; set; }
     }
+
+    public class ExtendTimeInfo
+    {
+        public String JType { get; set; } = "ExtendTimeInfo";
+        public long GroupId { get; set; }
+    }
 }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Xml.Linq;
+using System.Threading;
 using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -25,6 +25,7 @@ namespace Werewolf_Node
             IsJoining = true,
             KillTimer,
             IsInitializing,
+            ExtendTime,
             MessageQueueing = true;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
@@ -118,6 +119,30 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
+                if (ExtendTime)
+                {
+                    for(var i = 0; i < Settings.GameExtendTime; i++)
+                    {
+                        if (count != Players.Count)
+                        {
+                            i = Math.Min(i, Math.Max(Settings.GameExtendTime, i - 30));
+                            count = Players.Count;
+                        }
+                        if (i == 1200)
+                        {
+                            SendWithQueue(GetLocaleString("ExtendLeftToJoin", 20));
+                        }
+                        if (i == 600)
+                        {
+                            SendWithQueue(GetLocaleString("ExtendLeftToJoin", 10));
+                        }
+                        if (i == 300)
+                        {
+                            SendWithQueue(GetLocaleString("ExtendLeftToJoin", 5));
+                            ExtendTime = false;
+                        }
+                    }
+                }
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -3182,6 +3207,10 @@ namespace Werewolf_Node
             return GetLocaleString(en.ToString());
         }
 
+        public void ExtenTime()
+        {
+            ExtendTime = true;
+        }
     }
 
     internal enum GameTime

@@ -168,5 +168,30 @@ namespace Werewolf_Control
 
 
         }
+
+        [Command(Trigger = "extend", Blockable = true, InGroupOnly = true)] //BladeZero
+        public static void extendTimer(Update update, string[] args)
+        {
+            var id = update.Message.Chat.Id;
+            var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+            if (game == null)
+            {
+                Send(GetLocaleString("NoGame", GetLanguage(id)), id);
+            }
+            if (update.Message.Chat.Title == null)
+            {
+                //PM....  can't do that here
+                Send("You can only extend a game from within a group chat!", id);
+                return;
+            }
+
+            var node = GetPlayerNode(update.Message.From.Id);
+            if (game != null || node != null)
+            {
+                //send ExtendTime. I based this off how forcestart works. Not sure if i did it right 
+                game.ExtendTime();
+            }
+            
+        }
     }
 }

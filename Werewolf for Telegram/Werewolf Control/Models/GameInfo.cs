@@ -67,6 +67,13 @@ namespace Werewolf_Control.Models
             var json = JsonConvert.SerializeObject(new PlayerSmiteInfo { GroupId = GroupId, UserId = id });
             n.Broadcast(json);
         }
+
+        public void ExtendTime()
+        {
+            var json = JsonConvert.SerializeObject(new ExtendTimeInfo { GroupId = GroupId });
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            n?.Broadcast(json);
+        }
     }
 
     public enum GameState
