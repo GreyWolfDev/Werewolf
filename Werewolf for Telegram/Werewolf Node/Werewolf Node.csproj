@@ -65,11 +65,6 @@
   <ItemGroup>
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Internal.Designer.cs">
-      <DependentUpon>Internal.settings</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="Models\DayRole.cs" />
     <Compile Include="Models\GameInfo.cs" />
     <Compile Include="Models\IPlayer.cs" />
@@ -86,10 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Internal.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Internal.Designer.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

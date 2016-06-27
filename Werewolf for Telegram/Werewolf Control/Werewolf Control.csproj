@@ -97,11 +97,6 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\TCP.cs" />
     <Compile Include="Helpers\UpdateHelper.cs" />
-    <Compile Include="Internal.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Internal.settings</DependentUpon>
-    </Compile>
     <Compile Include="Models\Command.cs" />
     <Compile Include="Models\GameInfo.cs" />
     <Compile Include="Models\Node.cs" />
@@ -111,10 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Internal.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Internal.Designer.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
