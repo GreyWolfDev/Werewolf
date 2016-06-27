@@ -178,7 +178,8 @@ namespace Werewolf_Node
                         GroupName = ChatGroup,
                         TimeStarted = DateTime.Now,
                         GroupId = ChatId,
-                        GrpId = int.Parse(DbGroup.Id.ToString())
+                        GrpId = int.Parse(DbGroup.Id.ToString()),
+                        Mode = Chaos?"Chaos":"Normal"
                     };
                     db.Games.Add(game);
                     db.SaveChanges();
