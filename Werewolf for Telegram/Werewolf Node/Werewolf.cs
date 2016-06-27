@@ -997,6 +997,18 @@ namespace Werewolf_Node
                     try
                     {
                         if (p.CurrentQuestion.MessageId != 0)
+                            //I can't test this because I haven't set up all the API keys, etc.
+                            //One thing that bothered me was that the Doppleganger wouldn't have any Role Model if they timed out.
+                            //So I'm trying to have the bot assign them a random role model; it's not perfect,
+                            //the DG won't know their role model
+                            if (p.PlayerRole == IRole.Doppelgänger)
+                            {
+                                var possibleRoleModels = Players.Where(x => !x.IsDead && x.Id != player.Id).ToList();
+                                possibleRoleModels.Shuffle();
+                                p.RoleModel = possibleRoleModels[0].Id;
+                            }
+                            
+                        
                             Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                     }
                     catch
