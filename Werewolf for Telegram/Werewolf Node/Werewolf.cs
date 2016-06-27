@@ -2185,7 +2185,7 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
-                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead))
+                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
                                 {
                                     Send(GetLocaleString("DGToMason", p.Name), w.Id);
                                     teammates += w.Name + ", ";
@@ -2231,7 +2231,7 @@ namespace Werewolf_Node
                                 p.Team = ITeam.Wolf;
                                 p.HasNightAction = true;
                                 p.HasDayAction = false;
-                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead))
+                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead && x.Id != p.Id))
                                 {
                                     Send(GetLocaleString("DGToWolf", p.Name), w.Id);
                                     teammates += w.Name + ", ";
@@ -2247,7 +2247,7 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 p.HasNightAction = true;
                                 p.Team = ITeam.Cult;
-                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead))
+                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
                                 {
                                     Send(GetLocaleString("DGToCult", p.Name), w.Id);
                                     teammates += w.Name + ", ";
