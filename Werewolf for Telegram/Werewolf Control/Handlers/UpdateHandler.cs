@@ -289,8 +289,15 @@ namespace Werewolf_Control.Handler
                                 LanguageHelper.SendAllFiles(query.Message.Chat.Id);
                             else
                                 LanguageHelper.SendFile(query.Message.Chat.Id, choice);
-
+                                
                             break;
+
+                        case "extendTime": 
+                            Bot.Api.SendTextMessage(query.Message.Chat.Id, "Join time has been extened", parseMode: ParseMode.Default);
+                            var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
+                            node.
+                            break;
+
                         case "upload":
                             Console.WriteLine(choice);
                             if (choice == "current")

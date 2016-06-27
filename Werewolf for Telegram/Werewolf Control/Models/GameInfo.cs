@@ -68,7 +68,7 @@ namespace Werewolf_Control.Models
             n.Broadcast(json);
         }
 
-        public void ExtendTime()
+        public void ExtendTime(long groupID)
         {
             var json = JsonConvert.SerializeObject(new ExtendTimeInfo { GroupId = GroupId });
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
