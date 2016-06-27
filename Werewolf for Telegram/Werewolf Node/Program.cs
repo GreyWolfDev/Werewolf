@@ -33,7 +33,7 @@ namespace Werewolf_Node
         internal static int Para = 129046388;
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
-
+        internal static string APIToken;
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         static void Main(string[] args)
@@ -44,11 +44,11 @@ namespace Werewolf_Node
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                         .OpenSubKey("SOFTWARE\\Werewolf");
 #if DEBUG
-            Bot = new Client(key.GetValue("DebugAPI").ToString());
+            APIToken = key.GetValue("DebugAPI").ToString();
 #else
-            Bot = new Client(key.GetValue("ProductionAPI").ToString());
+            APIToken = key.GetValue("ProductionAPI").ToString();
 #endif
-
+            Bot = new Client(APIToken);
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";

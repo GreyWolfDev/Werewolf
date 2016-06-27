@@ -44,6 +44,7 @@
           <Property Name="TimeEnded" Type="datetime" />
           <Property Name="Winner" Type="nvarchar" MaxLength="50" />
           <Property Name="GrpId" Type="int" />
+          <Property Name="Mode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="GameKill">
           <Key>
@@ -116,6 +117,7 @@
           <Property Name="MaxPlayers" Type="int" />
           <Property Name="DisableFlee" Type="bit" />
           <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ImageFile" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -174,6 +176,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="BannedBy" Type="nvarchar(max)" />
           <Property Name="HasPM" Type="bit" />
           <Property Name="BanReason" Type="nvarchar(max)" />
+          <Property Name="ImageFile" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -551,6 +554,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <NavigationProperty Name="Actions" Relationship="Self.FK_Action_Game" FromRole="Game" ToRole="Action" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Game_Group" FromRole="Game" ToRole="Group" />
           <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Game" FromRole="Game" ToRole="GameKill" />
+          <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GameKill">
           <Key>
@@ -606,6 +610,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Games" Relationship="Self.FK_Game_Group" FromRole="Group" ToRole="Game" />
           <NavigationProperty Name="Players" Relationship="Self.GroupAdmin" FromRole="Group" ToRole="Player" />
+          <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -633,6 +638,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <NavigationProperty Name="GameKills1" Relationship="Self.FK_GameKill_Victim" FromRole="Player" ToRole="GameKill" />
           <NavigationProperty Name="GamePlayers" Relationship="Self.FK_GamePlayer_Player" FromRole="Player" ToRole="GamePlayer" />
           <NavigationProperty Name="Groups" Relationship="Self.GroupAdmin" FromRole="Player" ToRole="Group" />
+          <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1086,6 +1092,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="werewolfModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="GroupName" ColumnName="GroupName" />
                 <ScalarProperty Name="GroupId" ColumnName="GroupId" />
@@ -1124,6 +1131,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="GroupId" ColumnName="GroupId" />
@@ -1158,6 +1166,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

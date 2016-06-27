@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
@@ -211,6 +212,8 @@ namespace Werewolf_Node
                         };
                         dbp.GamePlayers.Add(gamePlayer);
                         db.SaveChanges();
+
+                        new Task(() => { ImageHelper.GetUserImage(p.TeleUser.Id); }).Start();
                     }
                 }
 

@@ -33,6 +33,7 @@ namespace Database
         public string BannedBy { get; set; }
         public Nullable<bool> HasPM { get; set; }
         public string BanReason { get; set; }
+        public string ImageFile { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Actions { get; set; }
