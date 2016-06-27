@@ -25,7 +25,7 @@ namespace Werewolf_Node.Models
     {
         public string JType { get; set; } = "ClientRegistrationInfo";
         public Guid ClientId { get; set; }
-        public string Secret => "50967971444601";
+        public string Secret => Environment.MachineName.GetHashCode().ToString();
     }
 
     public class PlayerJoinInfo

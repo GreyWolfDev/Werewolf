@@ -84,8 +84,6 @@ namespace Werewolf_Control
                         if (update.Message.Chat.Username != null)
                             groupName += $" @{update.Message.Chat.Username}";
                         Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
-                        db.Database.ExecuteSqlCommand(
-                            $"DELETE FROM NotifyGame WHERE GroupID = {n.GroupId} AND UserId = {n.UserId}");
                         Thread.Sleep(100);
                     }
 
