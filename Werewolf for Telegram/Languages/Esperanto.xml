@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Esperanto" base="Esperanto" variant="Normal"/>
+  <language name="Esperanto" base="Esperanto" variant="Normala Maniero"/>
   <string key="NotInGame">
     <value>Ŝajnas, ke vi ne ludas nune...\nKlaku sur /nextgame por esti sciigota kiam la sekva partio komenciĝos.</value>
   </string>
@@ -31,13 +31,13 @@
     <value>La partio komenciĝas!</value>
   </string>
   <string key="BannedForExploit">
-    <value>{0} estas blokita pro provi mizuson (estas malpermesataj nomoj kun vortkomenca /)</value>
+    <value>{0} provis misuzon kaj pro tio estas blokita (estas malpermesataj nomoj kun vortkomenca /)</value>
   </string>
   <string key="ChangeNameToJoin">
     <value>{0}, bonvolu ŝanĝi vian nomon por aliĝi</value>
   </string>
   <string key="PlayerLimitReached">
-    <value>Pardonon, jam estas maksimuma nombro de ludantoj!</value>
+    <value>Pardonon, jam estas la maksimuma nombro da ludantoj!</value>
   </string>
   <string key="PlayerJoined">
     <value>{0} aliĝis al la partio.\n{1} ludantoj ĉeestas (min. {2}, maks. {3})</value>
@@ -127,7 +127,7 @@
     <value>Kiun vi volas sektanigi?</value>
   </string>
   <string key="DiscussWith"><!--Leave the leading spaces here please-->
-    <value>  Via teamo povas elekti nur unu ludanton, do priparolu kun {0}</value>
+    <value> Via teamo povas elekti nur unu ludanton, do priparolu kun {0}</value>
   </string>
   <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> kaj </value>
@@ -151,7 +151,7 @@
     <value>Vi estas la maldeculo. Dumnokte, vi povas elekti ludanton por viziti lin, kaj kontroli, ke li ne estas lupo. Se li estas sektano, vi vidos tion je 50% probablo. Tamen, se vi vizitas lupon aŭ manĝaton de lupo, vi estas mortigita. Ĉiuokaze, se vi vizitas iun, kaj la lupoj venas ĉe via domo por manĝi vin, ili ne trovas vin kaj vi supervivas.</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value>Fiulo! Vi nuntempe estas vilaĝano, sed, kiam ĉiuj lupoj mortos, vi iĝos lupo. La divenisto ekscios vian rolon kiel vilaĝano aŭ kiel lupo, je 50% probablo.</value>
+    <value>Fiulo! Vi nuntempe estas vilaĝano, sed, kiam ĉiuj lupoj mortos, vi iĝos lupo. Al la divenisto, via rolo ŝajnos vilaĝano aŭ lupo, je 50% probablo.</value>
   </string>
   <string key="RoleInfoWolf">
     <value>VI ESTAS LUPO! Ĉiunokte, vi povas elekti ludanton por manĝi.</value>
@@ -163,7 +163,7 @@
     <value >Vi estas vilaĝano. Vi faras preskaŭ nenion krom esti manĝata kaj amikiĝi kun bovinoj kiuj ŝatas muĝi. Eble ankaŭ vi ŝatus muĝi. Mu.</value>
   </string>
   <string key="RoleInfoTanner" >
-    <value >Vi estas la maskulo. Vi volas esti linĉata, kaj tial vi devas igi homoj kredi, ke vi estas lupo. Se vi igas vilaĝanojn linĉi vin, vi venkas! </value>
+    <value >Vi estas la maskulo. Vi volas esti linĉata, kaj tial vi devas igi homojn kredi, ke vi estas lupo. Se vi igas vilaĝanojn linĉi vin, vi venkas! </value>
   </string>
   <string key="RoleInfoWildChild" >
     <value >Vi estas la kolera infano. Elektu vian modelon: se li mortos, vi koleriĝos kaj iĝos lupo!</value>
@@ -178,7 +178,7 @@
     <value >Vi estas sektano. Ĉiunokte, vi povas elekti ludanton por sektanigi. Se ĉiuj la supervivantoj estas sektanoj, ili venkas.\nAtentu! Se vi elektas la sektoĉasiston, li mortigas la lastan aniĝinton! Krome, vi ne povas sektanigi lupojn; la diveniston, la Gardanĝelon, la detektivon, la malbeniton kaj la maldeculon vi povas sektanigi nur je iu probablo.</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value >Vi estas la sektoĉasisto. Sektanoj estas en la vilaĝo! Ĉiunokte, vi povas elekti ludanton: se li estas sektano, vi mortigas lin. Se ili provas sektanigi vin, la lasta ludanton kiu iĝis sektano mortas.</value>
+    <value >Vi estas la sektoĉasisto. Sektanoj estas en la vilaĝo! Ĉiunokte, vi povas elekti ludanton: se li estas sektano, vi mortigas lin. Se ili provas sektanigi vin, la lasta ludanto kiu iĝis sektano mortas.</value>
   </string>
   <string key="LynchTime" >
     <value >
@@ -205,7 +205,7 @@
     <value >La vilaĝanoj matene kolektiĝas, sed {0} mankas. Ili iras apud lia domo, kaj trovas {0} ventrotranĉita, kun polica distingilo ŝovita en lia gorĝo. La detektivo mortis.</value>
   </string>
   <string key="GuardianEaten" >
-    <value >Mateno alvenas, kaj ĉiuj ŝokiĝas pro vidi {0}, la Gardanĝelo, palisumita sur la preĝeja kruco.</value>
+    <value >Mateno alvenas, kaj ĉiuj ŝokiĝas vidante {0}, la Gardanĝelo, palisumita sur la preĝeja kruco.</value>
   </string>
   <string key="GunnerEaten" >
     <value >Kiam ĉiuj eliras el domo, ili trovas pecojn de pafilo disvastigitaj.. kaj poste krurojn.. kaj fingrojn.. kaj, flosantan en la fontano, la kadavron de {0}, mortigita de lupo. La pafisto mortis.</value>
@@ -214,13 +214,13 @@
     <value >La vilaĝanoj vekiĝas, kaj trovas restaĵojn de {0} sur tablo kune kun kristala globo kaj tarokoj. La divenisto mortis.</value>
   </string>
   <string key="DrunkEaten" >
-    <value >Ĉiuj vekiĝas sensante odoron de alkoholo kaj ligno brulita... La drinkejo brulas!! Kiam oni estingas la brulon, restaĵoj de {0} troviĝas, konsumitaj de fajro. La lupoj manĝis la ebriulon, sed tial ebriiĝis kaj ne povos ataki venontnokte!</value>
+    <value >Ĉiuj vekiĝas flarante odoron de alkoholo kaj ligno brulita... La drinkejo brulas!! Kiam oni estingas la brulon, restaĵoj de {0} troviĝas, konsumitaj de fajro. La lupoj manĝis la ebriulon, sed tial ebriiĝis kaj ne povos ataki venontnokte!</value>
   </string>
   <string key="FoolEaten" >
     <value >Kiam la suno ekleviĝas, oni trovas {0} sidanta apud kristala globo, kun ...ludkartoj?? Li estis la frenezulo!</value>
   </string>
   <string key="DefaultEaten" >
-    <value>Kiam ĉiuj ellitiĝas, ili sensas teruran fetoron. Ili sekvas la odoron kaj trovas {0} ŝirita en la porkejo, sen la kapo. NOMNOMNOMNOM {1}</value>
+    <value>Kiam ĉiuj ellitiĝas, ili flaras teruran fetoron. Ili sekvas la odoron kaj trovas {0} ŝirita en la porkejo, sen la kapo. NOMNOMNOMNOM {1}</value>
   </string>
   <string key="HunterKilledCultist">
     <value>Fortega fetoro venas de la domo de {0}... ene de ĝi, la vilaĝanoj trovas lian korpon apud malhela altaro. La sektoĉasisto mortigis sektanon!</value>
@@ -235,7 +235,7 @@
     <value>La aliaj lupoj estas: {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
-    <value >{0} estis mordata.. sed li estis malbenita, do li iĝis lupo! Vi havas novan teamanon!</value>
+    <value >{0} estis mordata sed... estis malbenito, kaj iĝis lupo! Vi havas novan teamanon!</value>
   </string>
   <string key="WolvesEatYou" >
     <value >Ho ne! La lupoj manĝis vin. NOMNOMNOMNOM</value>
@@ -244,7 +244,7 @@
     <value >Ho ne! {0} estis la ebriulo! Nun vi ebriiĝis, kaj ne povos ataki venontnokte...</value>
   </string>
   <string key="GuardWolf" >
-    <value >Vi gardis lupon, kiu tial mortigis vin.</value>
+    <value >Vi gardis lupon! Vi estis mortigata.</value>
   </string>
   <string key="GuardSaved" >
     <value >Vi savis {0}!</value>
@@ -253,7 +253,7 @@
     <value >{0} ne estis atakata, do vi faris preskaŭ nenion.</value>
   </string>
   <string key="GuardEmptyHouse">
-    <value>Vi iris ĉe {0} por gardi lin, sed li ne estis hejme!</value>
+    <value>Vi decidis gardi {0}, sed neniu estis hejme!</value>
   </string>
   <string key="GuardSavedYou" >
     <value >Iu atakis vin lastnokte...! Tamen vi ne mortis ĉar la Gardanĝelo batalis for vi, kaj savis vin!</value>
@@ -265,7 +265,7 @@
     <value >Strange... {0} ne estis hejme! Nun vi malsatas...</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value >Vi ŝtele iris ĉe {0} por amuziĝi.. sed li estis lupo! Vi mortis.</value>
+    <value >Vi ŝtele iris ĉe {0} por amuziĝi.. sed vi trovis lupon! Vi mortis.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <value >{0} eniris la malĝustan domon lastnokte! Liaj maldecaj restaĵoj troviĝas kejlitaj ĉe la preĝejaj pordoj...</value>
@@ -274,13 +274,13 @@
     <value >{0} ŝtele iris ĉe {1}, por iomete amuziĝi post granda lacigo. Tamen, li trovas lupon manĝantan {1}! La lupo subite turniĝas al {0}... {0} mortis.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
-    <value >Vi nun certas, ke {0} ne estas lupo, ĉar vi agrable fikis kun li dum la tuta nokto!</value>
+    <value >Vi nun certas, ke {0} ne estas lupo, ĉar vi du agrable fikis kune dum la tuta nokto!</value>
   </string>
   <string key="HarlotVisitYou" >
-    <value >Iomete malhelis, do vi ne vidis ĉion bone, sed meznokte vi vekiĝis, kaj la maldeculo estis tie, kaj estis tiom seksalloga... Vi seksumas, kaj poste li ŝtele eliras...</value>
+    <value >Iomete malhelis, do vi ne vidis ĉion bone, sed meznokte vi vekiĝis, kaj la maldeculo estis tie, kaj estis tiom seksalloga... Vi seksumas, kaj poste vi subite trovas vin sola...</value>
   </string>
   <string key="DetectiveCaught" >
-    <value >Vi trovis {0} enketadanta! Li estas la detektivo.</value>
+    <value >Vi trovis {0} enketadantan! Li estas la detektivo.</value>
   </string>
   <string key="DetectiveSnoop" >
     <value >Via enketo montris, ke {0} estas {1}</value>
@@ -289,7 +289,7 @@
     <value >Ŝajnas, ke {0} plifortiĝis post nokto kun maldeculo! La pafisto venĝis. {1} mortis.</value>
   </string>
   <string key="DefaultShot" >
-    <value >Subite, aŭdeblas pafon. La vilaĝanoj turniĝas kaj vidas {0} apud la kadavro de {1}, kun la pafilo ankoraŭ kontraŭ lia kapo. {2}</value>
+    <value >Subite, aŭdeblas pafo. La vilaĝanoj turniĝas kaj vidas {0} apud la kadavro de {1}, kun la pafilo ankoraŭ kontraŭ lia kapo. {2}</value>
   </string>
   <string key="WolfWins" >
     <value >La lupo venkas!</value>
@@ -310,13 +310,13 @@
     <value >{0} voĉis por sektanigi {1}.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <value>Vi sendis {0} por fari vian filaboron, kaj sektanigi {1}. Tamen, li estis la sektoĉasisto! {0} mortis.</value>
+    <value>Vi sendis {0} por fari vian filaboron, kaj sektanigi {1}. Tamen, {1} estis la sektoĉasisto! {0} mortis.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <value>{0} alvenis ĉe vi lastnokte, kaj li volis sektanigi vin, sed vi ŝovis vian glavon tra li. Sektano mortis... Restas {1} sektano(j)!</value>
+    <value>{0} alvenis ĉe vi lastnokte, kaj volis sektanigi vin, sed tuj mortis, traŝovata de via glavo. Restas {1} sektano(j)!</value>
   </string>
   <string key="CultConvertYou">
-    <value>Vi iĝis sektano! Ĉiunokte, vi povas elekti ludanton por sektanigi lin.</value>
+    <value>Vi iĝis sektano! Ĉiunokte, vi povas elekti ludanton por sektanigi.</value>
   </string>
   <string key="CultTeam">
     <value>Sektanoj: {0}</value>
@@ -331,19 +331,19 @@
     <value >Ĉiuj lupoj mortis, kaj ĉiuj supervivantoj estas sektanoj. La sekto venkas!</value>
   </string>
   <string key="HunterVisitDead">
-    <value>Vi iris ĉe {0} por ĉasi lin, sed vi trovis lin mortinta!</value>
+    <value>Vi decidis ĉasi {0}, sed vi alvenis tro malfrue... {0} jam mortis!</value>
   </string>
   <string key="HunterFindCultist">
     <value>Vi iras ĉe {0}, kaj trovas lin antaŭ altaro preĝantan iun strangan dion... Vi rapide eltiras vian glavon kaj mortigas lin.</value>
   </string>
   <string key="HunterFailedToFind">
-    <value>Vi iras ĉe {0}, sed vi aŭdas neniun misteran litanion. Li ne estas sektano, do vi reiras hejmen.</value>
+    <value>Vi iras ĉe {0}, sed vi aŭdas neniun misteran litanion. {0} ne estas sektano, do vi reiras hejmen.</value>
   </string>
   <string key="WildChildToWolves">
-    <value>La modelo de {0} mortis. Li ekkoleris tiom, ke iĝis lupo!</value>
+    <value>{0} multe koleriĝis pro morto de sia modelo, kaj pro troa kolero subite iĝis lupo!</value>
   </string>
   <string key="WildChildTransform">
-    <value>{0} mortis! Vi ekkoleras tiom, ke iĝas lupo! Viaj novaj teamanoj estas: {1}</value>
+    <value>{0} mortis! Vi ekkoleras tiom, ke vi iĝas lupo! Viaj novaj teamanoj estas: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
@@ -399,13 +399,13 @@
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
-    <value>🏃Forkuris</value>
+    <value>🏃 Forkuris</value>
   </string>
   <string key="Dead">
     <value>💀 Mortis</value>
   </string>
   <string key="Alive">
-    <value>🙂Vivas</value>
+    <value>🙂 Vivas</value>
   </string>
   <string key="PlayersAlive">
     <value>Vivantaj ludantoj</value>
@@ -425,10 +425,10 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <value>La lasta aniĝinto iris ĉe {0} por sektanigi lin, sed trovas lian domon detruigita, kun pecoj de lupa haro apud la pordo...</value>
+    <value>La lasta aniĝinto iris ĉe {0} por sektanigi lin, sed trovas lian domon detruigita, kun lupaj haroj apud la pordo...</value>
   </string>
   <string key="GuardBlockedWolf">
-    <value>La tuta luparo iras ĉe {0} por manĝi lin, sed ili renkontas altan, malhelan, kaj ege armitan homon. La Gardanĝelo forpelis vin ĉiujn, kaj vi retroiras malvenkinte.</value>
+    <value>La tuta luparo volis manĝi {0}, sed apud la domo ili renkontas altan, malhelan, kaj ege armitan homon. La Gardanĝelo forpelis vin ĉiujn, kaj vi retroiras malvenkinte.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
@@ -436,7 +436,7 @@
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
-    <value>@{1}, jam aliĝis ludanto nomata {0}. Bonvolu ŝangi vian nomon por aliĝi.</value>
+    <value>@{1}, jam aliĝis ludanto nomata {0}. Bonvolu ŝanĝi vian nomon por aliĝi.</value>
   </string>
   <string key="HarlotDiscoverCult">
     <value>Vi ŝtele iris ĉe {0} por iomete amuziĝi.. sed kiam vi eliras, vi hazarde rimarkas strangan altaron, nebone kaŝitan, strange lumantan...</value>
@@ -450,7 +450,7 @@
     <value>Kiam la vilaĝanoj kolektiĝas matene, ili trovas restaĵojn de {0}, kiu iel mortis lastnokte...</value>
   </string>
   <string key="MasonConverted">
-    <value>Strange... {0} ne ĉeestis la masonistan kunvenon ĉi-matene... Ĉu li eble aliĝis al sekto..?</value>
+    <value>Strange... {0} ne ĉeestis la masonistan kunvenon ĉi-matene... Ĉu eble tio iom rilatas al sekto..?</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -495,7 +495,7 @@
     <value>Post tiu ĉi partio, mi momente malŝaltiĝos por ĝisdatigo (aŭtomata).</value>
   </string>
   <string key="NullIdAdmin">
-    <value>UserId ne ebla. Ĉu vi certas, ke vi sendis tiun ĉi komandon kiel respondo?</value>
+    <value>UserId ne ebla. Ĉu vi certas, ke vi sendis tiun ĉi komandon kiel respondon?</value>
   </string>
   <string key="AlreadyAdmin">
     <value>{0} jam estas administranto!</value>
@@ -520,28 +520,29 @@
     <value>Vi estas Kupido. Vi estis sendita sur la Tero nur kun subvesto, pafarko kaj du sagoj. Elektu du ludantojn: ili sin amos reciproke por ĉiam. Se unu el la amantoj mortos, ankaŭ la alia mortos pro sufero.</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>Vi estas la legenda Doppelgänger, kies prauloj, laŭ mito, povis sin aliformigi en formon kiun ili volis. Vi heredis kelkajn kapablojn de ili: vi povas elekti ludanton kies rolon vi deprenis de li, kiam li mortos.</value>
+    <value>Vi estas la legenda Doppelgänger, kies prauloj, laŭ mito, povis sin aliformigi en formon kiun ili volis. Vi heredis kelkajn kapablojn de ili: vi povas elekti ludanton kies rolon vi deprenos de li, kiam li mortos.</value>
   </string>
   <string key="RoleInfoHunter">
-    <value>Vi estas la ĉasisto. Vi ne povas bone dormi, kaj nenial enlitiĝus sen via pafilo: vi tuj mortigos ĉiun, kiu vizitos vin. Se vi mortos, vi povos elekti ludanton por mortigi; se vi estos manĝata de lupo, vi ne povos elekti kiun mortigi, sed vi eble mortigos lupon.</value>
+    <value>Vi estas la ĉasisto. Vi ne povas bone dormi, kaj nenial enlitiĝus sen via pafilo... Se iu mortigos vin, dum viaj lastaj momentoj vi povos elekti ludanton por mortigi. Se vi estos manĝata de lupo, vi ne povos elekti kiun mortigi, sed vi havos probablon mortigi unu hazardan lupon; same, se sektanoj ne sukcesos sektanigi vin, vi mortigos la lastan aniĝinton je 50% probablo.</value>
   </string>
   <string key="RoleInfoSerialKiller">
     <value>Vi estas la murdadisto, kiu lastatempe forkuris de frenezulejo. Via celo estas ke ĉiuj aliaj ludantoj mortu. Ĉiunokte, vi povas murdi ludanton kaj aldoni kadavron al via specimeno.</value>
   </string>
   <string key="CupidChosen">
     <value>Vi enamiĝis. {0} por ĉiam estos en via koro kaj memoro. Via celo nun estas ke vi du supervivu. Se unu el vi mortos, ankaŭ la alia mortos pro sufero.</value>
+    <value>La sago de Kupido frapis vin! Vi fervore enamiĝis al {0}! Se {0} mortos, ankaŭ vi mortos pro sufero. Se vi ambaŭ estos la lastaj supervivantoj, vi venkos.</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>La vilaĝanoj volas linĉi vin! Tiu ĉi estas via lasta ŝanco pafi al iu ludanto dume ke vi estas mortkondamnata!</value>
+    <value>La vilaĝanoj volas linĉi vin! Tiu ĉi estas via lasta ŝanco pafi al iu ludanto dum vi estas mortkondamnata!</value>
   </string>
   <string key="HunterNoChoiceLynched">
-    <value>{0} klopodas preni sian pafilon dume ke la penduma nodo ĉirkaŭpremas lian kolon, sed ne sukcesas atingi ĝin antaŭ ke li falas, mortante kun laŭta kolokrako...</value>
+    <value>{0} klopodas preni sian pafilon dum la penduma nodo ĉirkaŭpremas lian kolon, sed ne sukcesas atingi ĝin antaŭ ol li falas, mortante kun laŭta kolokrako...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
     <value>{0} elprenas sian pafilon, rigardas la vilaĝamason... sed ne sukcesas decidi al kiu pafi, kaj subite falas, akceptante fatalon...</value>
   </string>
   <string key="HunterKilledFinalLynched">
-    <value>Dume ke la penduma nodo ĉikaŭpremas la kolon de {0}, subite li elprenas sian pafilon, pretigas ĝin, celas al {1} kaj premas la ĉanon, sukcesante pafi al {1} ĵus antaŭ ke la planko malfermas sub liaj piedoj... {1} falas, mortinte. {2}</value>
+    <value>Dum la penduma nodo ĉikaŭpremas la kolon de {0}, subite li elprenas sian pafilon, pretigas ĝin, celas al {1} kaj premas la ĉanon, sukcesante pafi al {1} ĵus antaŭ ol la planko malfermas sub liaj piedoj... {1} falas, mortinte. {2}</value>
   </string>
   <string key="HunterShotChoice">
     <value>La pafisto pafis al vi! En viaj lastaj momentoj, vi povas pafi al iu.. estu rapida!</value>
@@ -556,7 +557,7 @@
     <value>Kiam la kuglo traboras {0}, li falas teren, sed tuj atingas sian pafilon kaj pafas al {1}, kiu ricevas kuglon ĝuste inter siajn okulojn. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>{0} ŝtele iras ĉe {1}, malfermas la pordon, sed subite renkontas maniulon kun tranĉilo!! {1}, kriante, ŝovas la tranĉilo en la organoj de {0} laŭ alfabeta ordo. {0} mortis.</value>
+    <value>{0} ŝtele iras ĉe {1}, malfermas la pordon, sed subite renkontas maniulon kun tranĉilo!! {1}, kriante, ŝovas la tranĉilon en la organojn de {0} laŭ alfabeta ordo. {0} mortis.</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>La lupoj provis ataki la ĉasiston, sed li, mortante, sukcesis sterni unu el ili! {0} mortis.</value>
@@ -565,10 +566,10 @@
     <value>La lupo provis ataki la ĉasiston, sed li, mortante, sukcesis sterni la lupon {0}! {0} mortis.</value>
   </string>
   <string key="SerialKillerKilledWolf">
-    <value>La lupoj provis havi bonan noktomanĝon, sed li estis salutata de murdadisto! {0} mortis en la batalo. {0} estis lupo.</value>
+    <value>La lupoj provis havi bonan noktomanĝon, sed ili estis salutataj de murdadisto! {0} mortis en la batalo. {0} estis lupo.</value>
   </string>
   <string key="DefaultKilled">
-    <value>Lasta nokto ŝajnis trankvila al {0}, sed ĝi ne estis... La vilaĝanoj kolektiĝas matene kaj trovas {0} tute disigita, kaj strange hepato mankas... La murdadisto trafis denove! {1}</value>
+    <value>La lasta nokto ŝajnis trankvila al {0}, sed ĝi ne estis... La vilaĝanoj kolektiĝas matene kaj trovas {0} tute disigita, kaj strange hepato mankas... La murdadisto trafis denove! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <value>Vi provis preni la kadavron de {0} por via specimeno, sed la Gardanĝelo forkurigis vin!</value>
@@ -583,7 +584,7 @@
     <value>Vi provis gardi la murdadiston, sed li tranĉile vundis vin 89 fojojn! Vi mortis..</value>
   </string>
   <string key="HarlotFuckKiller">
-    <value>Vi ŝtele iras ĉe {0}, kaj komenci amuziĝi. Ĉio ŝajnas mojosega, ĝis kiam {0} elprenas tranĉilon kaj vundas vin, ridante kiel maniulo! Vi mortis..</value>
+    <value>Vi ŝtele iras ĉe {0}, kaj komencas amuziĝi. Ĉio ŝajnas mojosega, ĝis {0} elprenas tranĉilon kaj vundas vin, ridante kiel maniulo! Vi mortis..</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>don't worry about this string for now!</value>
@@ -592,19 +593,19 @@
     <value>La Doppelgänger {0} iĝis masonisto kiel vi!</value>
   </string>
   <string key="DGTransformToMason">
-    <value>{0} mortis, kaj vi aliformiĝas en masonisto. Viaj teamanoj, se ili ekzistas, estas: {1}</value>
+    <value>{0} mortis, kaj vi aliformiĝas en masoniston. Viaj teamanoj, se ili vivas, estas: {1}</value>
   </string>
   <string key="DGToCult">
     <value>La Doppelgänger {0} iĝis sektano kiel vi!</value>
   </string>
   <string key="DGTransformToCult">
-    <value>{0} mortis, kaj vi aliformiĝas en sektano. Viaj teamanoj, se ili ekzistas, estas: {1}</value>
+    <value>{0} mortis, kaj vi aliformiĝas en sektanon. Viaj teamanoj, se ili vivas, estas: {1}</value>
   </string>
   <string key="DGToWolf">
     <value>La Doppelgänger {0} iĝis lupo kiel vi!</value>
   </string>
   <string key="DGTransformToWolf">
-    <value>{0} mortis, kaj vi aliformiĝas en lupo. Viaj teamanoj, se ili ekzistas, estas: {1}</value>
+    <value>{0} mortis, kaj vi aliformiĝas en lupon. Viaj teamanoj, se ili ekzistas, estas: {1}</value>
   </string>
   <string key="SerialKillerWins">
     <value>La lasta supervivanto estas la murdadisto! Li venkas!</value>
@@ -613,7 +614,7 @@
     <value>Kiun vi volas murdi ĉi-nokte?</value>
   </string>
   <string key="LoverDied">
-    <value>Kiam {0} mortas, {1} tuj kuras kaj falas plorante, ne tolerante la perdo de sia amato, kaj sin pafas per la plej proksima pafilo. {2}</value>
+    <value>Kiam {0} mortas, {1} tuj kuras kaj falas plorante, ne tolerante la perdon de sia amato, kaj sin pafas per la plej proksima pafilo. {2}</value>
   </string>
   <string key="AskDoppelganger">
     <value>Kies formon vi volas preni post lia morto?</value>
@@ -636,9 +637,11 @@
   <string key="Doppelgänger">
     <value>Doppelgänger 🎭</value>
   </string>
+<!-- alportita supren
   <string key="CupidChosen">
     <value>La sago de Kupido frapis vin! Vi fervore enamiĝis al {0}! Se {0} mortos, ankaŭ vi mortos pro sufero. Se vi ambaŭ estos la lastaj supervivantoj, vi venkos.</value>
   </string>
+-->
   <string key="NewWCRoleModel">
     <value>Vi iĝis kolera infano. Via modelo estas {0}.</value>
   </string>
@@ -646,7 +649,7 @@
     <value>Vera amo daŭras! La amantoj venkas!</value>
   </string>
   <string key="HunterKilledVisiter">
-    <value>En la centra placo de la vilaĝo, oni trovas la kadavron de {0}, multfoje borita de kugloj. Ŝajnas ke {0} provis eniri la domo de la ĉasisto! {1}</value>
+    <value>En la centra placo de la vilaĝo, oni trovas la kadavron de {0}, multfoje borita de kugloj. Ŝajnas ke {0} provis eniri la domon de la ĉasisto! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>Kapuĉulo provis sektanigi vin, sed via kredo estas tro forta.</value>
@@ -667,6 +670,6 @@
     <value>Ĉiuj en la vilaĝo mortis... Nur korpoj restas... Neniu venkas, krom vulturoj...</value>
   </string>
   <string key="SKHunterEnd">
-    <value>Kiam la suno leviĝas, {0} kaj {1} iras en la vilaĝo. {0} eltiras sian tranĉilon, kaj saltas sur {1}. {1} siavice eltiras pafilo kaj pafas al vizaĝo de {0} dume ke {0} falas, ŝovante la tranĉilon profunde en {1}. Ambaŭ mortas.</value>
+    <value>Kiam la suno leviĝas, {0} kaj {1} iras en la vilaĝo. {0} eltiras sian tranĉilon, kaj saltas sur {1}. {1} siavice eltiras pafilon kaj pafas al vizaĝo de {0} dum {0} falas, ŝovante la tranĉilon profunde en {1}. Ambaŭ mortas.</value>
   </string>
 </strings>

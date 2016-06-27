@@ -41,6 +41,7 @@ namespace Database
         public Nullable<int> MaxPlayers { get; set; }
         public Nullable<bool> DisableFlee { get; set; }
         public string CreatedBy { get; set; }
+        public string ImageFile { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Game> Games { get; set; }

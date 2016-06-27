@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using System.Text.RegularExpressions;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using File = System.IO.File;
@@ -464,11 +466,15 @@ namespace Werewolf_Control.Helpers
 
         public static void UseNewLanguageFile(string fileName, long id, int msgId)
         {
+            var msg = "Moving file to production..\n";
+            
+            Bot.Api.EditMessageText(id, msgId, msg);
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
             var langPath = Bot.LanguageDirectory;
             var newFilePath = Path.Combine(tempPath, fileName);
             var copyToPath = Path.Combine(langPath, fileName);
+            var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", fileName);
             //get the new files language
             var doc = XDocument.Load(newFilePath);
 
@@ -495,9 +501,65 @@ namespace Werewolf_Control.Helpers
             if (lang != null)
                 copyToPath = lang.FilePath;
             System.IO.File.Copy(newFilePath, copyToPath, true);
+            msg += "File moved to production folder.\nCopying to git directory...\n";
+            
+            Bot.Api.EditMessageText(id, msgId, msg);
+            File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
-
-            Bot.Api.EditMessageText(id, msgId, "File moved to production folder.");
+            msg += "File copied, committing changes to repo...\n";
+            
+            Bot.Api.EditMessageText(id, msgId, msg);
+            try
+            {
+                var p = new Process
+                {
+                    StartInfo =
+                    {
+                        FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
+                        Arguments = $"\"Updating {fileName} from Telegram\"",
+                        WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
+                    }
+                };
+                p.Start();
+                var output = "";
+                while (!p.StandardOutput.EndOfStream)
+                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
+                while (!p.StandardError.EndOfStream)
+                    output += p.StandardError.ReadLine() + Environment.NewLine;
+                
+                //validate the output
+                if (output.Contains("failed"))
+                {
+                    msg += $"*Failed to commit file.  See control output for information*";
+                    Console.WriteLine(output);
+                }
+                else if (output.Contains("nothing to commit"))
+                {
+                    msg += $"*File not committed, matches existing file.*";
+                }
+                else
+                {
+                    //try to grab the commit
+                    var regex = new Regex("(\\[master .*])");
+                    var match = regex.Match(output);
+                    var commit = "";
+                    if (match.Success)
+                    {
+                        commit = match.Value.Replace("[master ", "").Replace("]", "");
+                    }
+                    msg += $"File committed successfully. {(String.IsNullOrEmpty(commit) ? "" : $"[{commit}](https://github.com/parabola949/Werewolf/commit/{commit})")}\n*Operation complete.*";
+                }
+            }
+            catch (Exception e)
+            {
+                msg += e.Message;
+            }
+            
+            Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Markdown);
         }
 
         public static void SendAllFiles(long id)
