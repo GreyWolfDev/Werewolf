@@ -113,6 +113,12 @@ namespace Werewolf_Node
                                 game = Games.FirstOrDefault(x => x.ChatId == fsi.GroupId);
                                 game?.ForceStart();
                                 break;
+                            case "ExtendTimeInfo":
+                                var eti = JsonConvert.DeserializeObject<ExtendTimeInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == eti.GroupId);
+                                game?.runExtendTime();
+
+                                break;
                             //case "ReplyInfo":
                             //    var ri = JsonConvert.DeserializeObject<ReplyInfo>(msg);
                             //    game =

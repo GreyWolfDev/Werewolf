@@ -3206,7 +3206,7 @@ namespace Werewolf_Node
             return GetLocaleString(en.ToString());
         }
 
-        public void ExtenTime()
+        public void runExtendTime()
         {
             ExtendTime = true;
         }

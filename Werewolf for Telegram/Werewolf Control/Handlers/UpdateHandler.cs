@@ -506,10 +506,25 @@ namespace Werewolf_Control.Handler
                                 
                             break;
 
-                        case "extendTime": 
-                            Bot.Api.SendTextMessage(query.Message.Chat.Id, "Join time has been extened", parseMode: ParseMode.Default);
-                            var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
-                            node.
+                        case "extend":
+                            var id = query.Message.Chat.Id;
+                            var game = GetGroupNodeAndGame(id);
+                            if(game == null)
+                            {
+                                Send(GetLocaleString("NoGame", GetLanguage(id)), id);
+                            }
+                            if (query.Message.Chat.Title == null)
+                            {
+                                //PM....  can't do that here
+                                Send("You can only extend a game from within a group chat!", id);
+                                return;
+                            }
+                            if (game != null)
+                            {
+                                //send ExtendTime. I based this off how forcestart works. Not sure if i did it right 
+                                game.ExtendTime(id);
+                                Bot.Api.SendTextMessage(id, "Join time has been extened", parseMode: ParseMode.Default);
+                            }
                             break;
 
                         case "upload":
