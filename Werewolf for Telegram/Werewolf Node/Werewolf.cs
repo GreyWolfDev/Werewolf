@@ -2068,6 +2068,7 @@ namespace Werewolf_Node
 
         private void ValidateSpecialRoleChoices()
         {
+            if (GameDay != 1) return;
             //Wild Child
             var wc = Players.FirstOrDefault(x => x.PlayerRole == IRole.WildChild);
             if (wc != null && wc.RoleModel == 0)
