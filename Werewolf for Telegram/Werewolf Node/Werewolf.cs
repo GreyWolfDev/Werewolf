@@ -936,7 +936,7 @@ namespace Werewolf_Node
                 case IRole.Beholder:
                     msg = GetLocaleString("RoleInfoBeholder");
                     if (Players.Any(x => x.PlayerRole == IRole.Seer))
-                        msg += GetLocaleString("BeholderSeer", Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.Name);
+                        msg += GetLocaleString("BeholderSeer", Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.Name, Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.TeleUser.Username);
                     else
                         msg += "  " + GetLocaleString("NoSeer");
                     break;
