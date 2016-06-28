@@ -168,7 +168,7 @@ namespace Werewolf_Node
                 IsRunning = true;
                 AssignRoles();
 
-                
+
 
                 //create new game for database
                 using (var db = new WWContext())
@@ -179,7 +179,7 @@ namespace Werewolf_Node
                         TimeStarted = DateTime.Now,
                         GroupId = ChatId,
                         GrpId = int.Parse(DbGroup.Id.ToString()),
-                        Mode = Chaos?"Chaos":"Normal"
+                        Mode = Chaos ? "Chaos" : "Normal"
                     };
                     db.Games.Add(game);
                     db.SaveChanges();
@@ -403,7 +403,7 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-        
+
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -423,7 +423,7 @@ namespace Werewolf_Node
                 {
                     throw new NullReferenceException("Object was null: query.Data");
                 }
-                
+
                 if (args[2] == "-1")
                 {
                     player.Choice = -1;
@@ -469,7 +469,7 @@ namespace Werewolf_Node
                     player.Choice = 0;
                     Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
                        GetLocaleString("ChoiceAccepted") + " - " + target.Name);
-                    
+
                     SendMenu(buttons, player, GetLocaleString("AskCupid2"), QuestionType.Lover2);
                     return;
                 }
@@ -935,8 +935,9 @@ namespace Werewolf_Node
                     break;
                 case IRole.Beholder:
                     msg = GetLocaleString("RoleInfoBeholder");
-                    if (Players.Any(x => x.PlayerRole == IRole.Seer))
-                        msg += GetLocaleString("BeholderSeer", Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.Name);
+                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                    if (seer != null)
+                        msg += GetLocaleString("BeholderSeer", $"{seer.Name} {(String.IsNullOrEmpty(seer.TeleUser.Username)?"":$"(@{seer.TeleUser.Username})")}");
                     else
                         msg += "  " + GetLocaleString("NoSeer");
                     break;
@@ -980,7 +981,7 @@ namespace Werewolf_Node
             if (Players == null) return;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
-            
+
             if (CheckForGameEnd()) return;
             SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime ?? Settings.TimeLynch));
             SendLynchMenu();
@@ -1014,8 +1015,8 @@ namespace Werewolf_Node
             {
                 // ignored
             }
-            
-                
+
+
             //Log.WriteLine("Lynch time ended, adding up votes");
             if (CheckForGameEnd()) return;
             foreach (var p in Players.Where(x => !x.IsDead))
@@ -1127,7 +1128,7 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Day;
-            
+
             //see who died over night
             if (Players == null) return;
             foreach (var p in Players)
@@ -2161,8 +2162,13 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
-                                if (Players.Any(x => x.PlayerRole == IRole.Seer))
-                                    Send(GetLocaleString("BeholderSeer", Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.Name), p.Id);
+                                var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                                if (seer != null)
+                                    Send(GetLocaleString("BeholderSeer",
+                                        $"{seer.Name} {(String.IsNullOrEmpty(seer.TeleUser.Username) ? "" : $"(@{seer.TeleUser.Username})")}"),
+                                        p.Id);
+                                else
+                                    Send(GetLocaleString("NoSeer"), p.Id);
                                 break;
                             case IRole.ApprenticeSeer:
                                 p.HasDayAction = false;
@@ -2356,7 +2362,7 @@ namespace Werewolf_Node
                 if (!IsRunning) return true;
                 IsRunning = false;
                 var msg = "";
-                
+
                 var game = db.Games.FirstOrDefault(x => x.Id == GameId);
                 if (game == null)
                     game = new Game();
@@ -2503,7 +2509,7 @@ namespace Werewolf_Node
 
         private void SendLynchMenu()
         {
-            
+
             Thread.Sleep(1000); //sleep to let any clear keyboard messages go through....
             foreach (var player in Players.Where(x => !x.IsDead).OrderBy(x => x.Name))
             {
@@ -2613,7 +2619,7 @@ namespace Werewolf_Node
 
         private void SendNightActions()
         {
-            
+
             Thread.Sleep(1000); //sleep to let any clear keyboard messages go through....
             foreach (var player in Players.Where(x => !x.IsDead))
             {
@@ -3124,7 +3130,7 @@ namespace Werewolf_Node
             Night
         }
 
-#endregion
+        #endregion
 
         public void ForceStart()
         {
@@ -3157,7 +3163,7 @@ namespace Werewolf_Node
                     return;
                 }
                 Send(GetLocaleString("Flee", p.Name));
-                
+
                 if (IsRunning)
                 {
                     //kill the player
