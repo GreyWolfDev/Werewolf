@@ -2093,29 +2093,33 @@ namespace Werewolf_Node
                 }
             }
 
-            //cupid stuffs
-            var lovers = Players.Where(x => x.InLove);
-            while (lovers.Count() != 2)
+            //first, make sure there even IS a cupid
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
             {
-                //ok, missing lover, create one
-                var choiceid = ChooseRandomPlayerId(lovers);
-                var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
-                if (newLover != null)
+                //cupid stuffs
+                var lovers = Players.Where(x => x.InLove);
+                while (lovers.Count() != 2)
                 {
-                    newLover.InLove = true;
-                    var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
-                    if (otherLover != null)
+                    //ok, missing lover, create one
+                    var choiceid = ChooseRandomPlayerId(lovers);
+                    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+                    if (newLover != null)
                     {
-                        otherLover.LoverId = newLover.Id;
-                        newLover.LoverId = otherLover.Id;
+                        newLover.InLove = true;
+                        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+                        if (otherLover != null)
+                        {
+                            otherLover.LoverId = newLover.Id;
+                            newLover.LoverId = otherLover.Id;
+                        }
                     }
                 }
-            }
-            var loversNotify = lovers.ToList();
-            if (loversNotify.Count == 2)
-            {
-                Send(GetLocaleString("CupidChosen", loversNotify[0].Name), loversNotify[1].Id);
-                Send(GetLocaleString("CupidChosen", loversNotify[1].Name), loversNotify[0].Id);
+                var loversNotify = lovers.ToList();
+                if (loversNotify.Count == 2)
+                {
+                    Send(GetLocaleString("CupidChosen", loversNotify[0].Name), loversNotify[1].Id);
+                    Send(GetLocaleString("CupidChosen", loversNotify[1].Name), loversNotify[0].Id);
+                }
             }
         }
 
