@@ -485,8 +485,6 @@ namespace Werewolf_Node
                     var lover2 = Players.FirstOrDefault(x => x.Id == player.Choice);
                     if (lover2 == null)
                         return;
-                    Send(GetLocaleString("CupidChosen", lover11.Name), lover2.Id);
-                    Send(GetLocaleString("CupidChosen", lover2.Name), id);
                     lover2.InLove = true;
                     lover2.LoverId = id;
                     player.Choice = -1;
@@ -704,6 +702,15 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
                 rolesToAssign.Shuffle();
 
+
+#if DEBUG
+                //force roles for testing
+                rolesToAssign[0] = IRole.Cupid;
+                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[2] = IRole.WildChild;
+                rolesToAssign[3] = IRole.Wolf;
+#endif
+
                 var lastIndex = 0;
                 for (var i = 0; i < Players.Count; i++)
                 {
@@ -864,6 +871,8 @@ namespace Werewolf_Node
                     ch.Team = ITeam.Village;
                 }
 
+
+
                 foreach (var p in Players)
                     p.OriginalRole = p.PlayerRole;
             }
@@ -937,7 +946,7 @@ namespace Werewolf_Node
                     msg = GetLocaleString("RoleInfoBeholder");
                     var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
                     if (seer != null)
-                        msg += GetLocaleString("BeholderSeer", $"{seer.Name} {(String.IsNullOrEmpty(seer.TeleUser.Username)?"":$"(@{seer.TeleUser.Username})")}");
+                        msg += GetLocaleString("BeholderSeer", $"{seer.Name} {(String.IsNullOrEmpty(seer.TeleUser.Username) ? "" : $"(@{seer.TeleUser.Username})")}");
                     else
                         msg += "  " + GetLocaleString("NoSeer");
                     break;
@@ -1355,6 +1364,11 @@ namespace Werewolf_Node
             {
                 // ignored
             }
+
+            //if first night, make sure cupid / wc / dg have picked
+            ValidateSpecialRoleChoices();
+
+
             var wolves = Players?.Where(x => x.PlayerRole == IRole.Wolf && !x.IsDead).ToList();
 
             if (CheckForGameEnd()) return;
@@ -2051,6 +2065,59 @@ namespace Werewolf_Node
             }
         }
 
+        private void ValidateSpecialRoleChoices()
+        {
+            //Wild Child
+            var wc = Players.FirstOrDefault(x => x.PlayerRole == IRole.WildChild);
+            if (wc != null && wc.RoleModel == 0)
+            {
+                var choiceid = ChooseRandomPlayerId(wc);
+                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (choice != null)
+                {
+                    wc.RoleModel = choice.Id;
+                    Send(GetLocaleString("RoleModelChosen", choice.Name), wc.Id);
+                }
+            }
+
+            var dg = Players.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
+            if (dg != null && dg.RoleModel == 0)
+            {
+                var choiceid = ChooseRandomPlayerId(dg);
+                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (choice != null)
+                {
+                    dg.RoleModel = choice.Id;
+                    Send(GetLocaleString("RoleModelChosen", choice.Name), dg.Id);
+                }
+            }
+
+            //cupid stuffs
+            var lovers = Players.Where(x => x.InLove);
+            while (lovers.Count() != 2)
+            {
+                //ok, missing lover, create one
+                var choiceid = ChooseRandomPlayerId(lovers);
+                var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (newLover != null)
+                {
+                    newLover.InLove = true;
+                    var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+                    if (otherLover != null)
+                    {
+                        otherLover.LoverId = newLover.Id;
+                        newLover.LoverId = otherLover.Id;
+                    }
+                }
+            }
+            var loversNotify = lovers.ToList();
+            if (loversNotify.Count == 2)
+            {
+                Send(GetLocaleString("CupidChosen", loversNotify[0].Name), loversNotify[1].Id);
+                Send(GetLocaleString("CupidChosen", loversNotify[1].Name), loversNotify[0].Id);
+            }
+        }
+
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult)
         {
             target.OriginalRole = target.PlayerRole;
@@ -2063,6 +2130,12 @@ namespace Werewolf_Node
             Send(GetLocaleString("CultTeam", voteCult.Select(x => x.Name + $" (@{x.TeleUser.Username})").Aggregate((a, b) => a + ", " + b)), target.Id);
             foreach (var c in voteCult)
                 Send(GetLocaleString("CultJoin", target.Name), c.Id);
+        }
+
+        public void SkipVote()
+        {
+            foreach (var p in Players.Where(x => x.Choice == 0))
+                p.Choice = -1;
         }
 
         #endregion
@@ -3189,6 +3262,36 @@ namespace Werewolf_Node
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString());
+        }
+
+        private int ChooseRandomPlayerId(IPlayer exclude)
+        {
+            try
+            {
+                var possible = Players.Where(x => x.Id != exclude.Id).ToList();
+                possible.Shuffle();
+                possible.Shuffle();
+                return possible[0].Id;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        private int ChooseRandomPlayerId(IEnumerable<IPlayer> exclude)
+        {
+            try
+            {
+                var possible = Players.Where(x => !exclude.Contains(x)).ToList();
+                possible.Shuffle();
+                possible.Shuffle();
+                return possible[0].Id;
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
     }

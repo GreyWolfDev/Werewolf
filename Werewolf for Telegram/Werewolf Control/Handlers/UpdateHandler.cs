@@ -227,6 +227,16 @@ namespace Werewolf_Control.Handler
                                             Send("You aren't the developer...", id);
                                         }
                                         break;
+                                    case "skipvote":
+                                        if (update.Message.From.Id == Para)
+                                        {
+                                            Commands.SkipVote(update, args);
+                                        }
+                                        else
+                                        {
+                                            Send("You aren't the developer...", id);
+                                        }
+                                        break;
                                     #endregion
                                     #region Game Commands
                                     case "startgame":

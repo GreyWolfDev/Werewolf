@@ -102,4 +102,10 @@ namespace Werewolf_Control.Models
         public string JType { get; set; } = "CallbackInfo";
         public CallbackQuery Query { get; set; }
     }
+
+    public class SkipVoteInfo
+    {
+        public string JType { get; set; } = "SkipVoteInfo";
+        public long GroupId { get; set; }
+    }
 }

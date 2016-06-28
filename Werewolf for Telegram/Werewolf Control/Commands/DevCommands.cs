@@ -84,5 +84,27 @@ namespace Werewolf_Control
                 }
             }
         }
+
+        [Command(Trigger = "skipvote", DevOnly = true)]
+        public static void SkipVote(Update update, string[] args)
+        {
+            var node = GetPlayerNode(update.Message.From.Id);
+            var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+            if (game != null || node != null)
+            {
+                //try grabbing the game again...
+                if (node != null && game == null)
+                    game =
+                        node.Games.FirstOrDefault(
+                            x => x.Users.Contains(update.Message.From.Id));
+                //try again.....
+                if (game == null)
+                    game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                //player is not in game, they need to join, if they can
+                game?.SkipVote();
+                
+                return;
+            }
+        }
     }
 }
