@@ -537,7 +537,8 @@ namespace Werewolf_Node
                 if (Chaos)
                 {
                     //need to set the max wolves so game doesn't end immediately - 25% max wolf population
-                    for (int i = 0; i < Players.Count / 4; i++)
+                    //25% was too much, max it at 5 wolves.
+                    for (int i = 0; i < Math.Max(Players.Count / 6, 1); i++)
                         rolesToAssign.Add(IRole.Wolf);
                     //add remaining roles to 'card pile'
                     foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
