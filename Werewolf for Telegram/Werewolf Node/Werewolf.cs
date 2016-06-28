@@ -2450,6 +2450,7 @@ namespace Werewolf_Node
                 {
                     foreach (var w in Players.Where(x => x.InLove))
                     {
+                        w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
                     }
@@ -2458,14 +2459,18 @@ namespace Werewolf_Node
                 {
                     foreach (var w in Players.Where(x => x.Team == team))
                     {
+                        w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
                         if (w.InLove)
                         {
-                            //find lover (should be alive)
+                            //find lover
                             var lover = Players.FirstOrDefault(x => x.Id == w.LoverId);
                             if (lover != null)
+                            {
+                                lover.Won = true;
                                 GetDBGamePlayer(lover, db).Won = true;
+                            }
                         }
                     }
                 }
@@ -2495,13 +2500,6 @@ namespace Werewolf_Node
                         msg += GetLocaleString("TannerWins");
                         game.Winner = "Tanner";
                         SendWithQueue(msg, GetRandomImage(Settings.TannerWin));
-                        var tanner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                        if (tanner?.InLove ?? false)
-                        {
-                            //find lover (should be alive)
-                            var lover = Players.FirstOrDefault(x => x.Id == tanner.LoverId);
-                            GetDBGamePlayer(lover, db).Won = true;
-                        }
                         break;
                     case ITeam.Cult:
                         msg += GetLocaleString("CultWins");
@@ -2564,16 +2562,15 @@ namespace Werewolf_Node
                                  .Aggregate("",
                                      (current, p) =>
                                          current +
-                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")}\n"));
+                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won?"Won":"Lost")}\n"));
                         break;
-
                     case "Living":
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
                         msg = Players.Where(x => !x.IsDead)
                             .OrderBy(x => x.Team)
                             .Aggregate(msg,
-                                (current, p) => current + $"\n{p.Name}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")}");
+                                (current, p) => current + $"\n{p.Name}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 SendWithQueue(msg);
