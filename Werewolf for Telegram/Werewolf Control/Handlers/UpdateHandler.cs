@@ -122,7 +122,7 @@ namespace Werewolf_Control.Handler
                                 Bot.CommandsReceived++;
                                 switch (args[0].ToLower())
                                 {
-                                    
+
                                     #region Admin Commands
                                     case "smite":
                                         if (UpdateHelper.IsGroupAdmin(update))
@@ -333,7 +333,7 @@ namespace Werewolf_Control.Handler
                                         Commands.GetLang(update, args);
                                         break;
 
-                                    #endregion
+                                        #endregion
                                 }
 
 
@@ -446,6 +446,8 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
+        private static string[] nonCommandsList = new[] {"vote", "getlang", "validate", "upload" };
+
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
             using (var DB = new WWContext())
@@ -479,6 +481,14 @@ namespace Werewolf_Control.Handler
                             $"What would you like to do?", replyMarkup: GetConfigMenu(groupid));
                         return;
                     }
+                    if (!nonCommandsList.Contains(command.ToLower()))
+                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid))
+                        {
+                            Bot.Api.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
+                                "You do not appear to be an admin");
+                            return;
+                        }
+
                     switch (command)
                     {
                         case "validate":
@@ -522,8 +532,6 @@ namespace Werewolf_Control.Handler
                                 Bot.Api.EditMessageText(query.Message.Chat.Id, query.Message.MessageId, "No action taken.");
                                 return;
                             }
-
-
                             Helpers.LanguageHelper.UseNewLanguageFile(choice, query.Message.Chat.Id, query.Message.MessageId);
                             return;
 
@@ -583,7 +591,6 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setlang":
-
                             //first, is this the base or variant?
                             var isBase = args[4] == "base";
                             //ok, they picked a language, let's set it.
