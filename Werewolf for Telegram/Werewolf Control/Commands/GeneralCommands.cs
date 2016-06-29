@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -152,6 +153,16 @@ namespace Werewolf_Control
                                                         ).ToList();
             glangs.Insert(0, "All");
 
+            foreach (var lang in glangs)
+            {
+                var test =
+                    $"getlang|-1001049529775|" + lang;
+                var count = Encoding.UTF8.GetByteCount(test);
+                if (count > 64)
+                {
+                    Send("Problem with " + lang + ": name is too long!", update.Message.Chat.Id);
+                }
+            }
             var gbuttons = glangs.Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.Chat.Id}|{x}")).ToList();
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < gbuttons.Count; i++)
@@ -166,7 +177,25 @@ namespace Werewolf_Control
             }
 
             var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Get which language file?", replyToMessageId: update.Message.MessageId, replyMarkup: gmenu);
+            try
+            {
+                var result =
+                    Bot.Api.SendTextMessage(update.Message.Chat.Id, "Get which language file?",
+                        replyToMessageId: update.Message.MessageId, replyMarkup: gmenu).Result;
+            }
+            catch (AggregateException e)
+            {
+                foreach (var ex in e.InnerExceptions)
+                {
+                    var x = ex as ApiRequestException;
+                    
+                    Send(x.Message, update.Message.Chat.Id);
+                }
+            }
+            catch (ApiRequestException ex)
+            {
+                Send(ex.Message, update.Message.Chat.Id);
+            }
         }
 
         [Command(Trigger = "stats")]

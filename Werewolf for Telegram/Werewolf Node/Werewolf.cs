@@ -2800,7 +2800,7 @@ namespace Werewolf_Node
                 var buttons =
                     targets.Select(
                         x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                if (player.PlayerRole != IRole.WildChild)
+                if (player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid)
                     buttons.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{Program.ClientId}|-1") });
 
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))

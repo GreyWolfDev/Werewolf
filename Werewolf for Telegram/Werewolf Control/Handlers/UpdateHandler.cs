@@ -124,6 +124,7 @@ namespace Werewolf_Control.Handler
                                 {
 
                                     #region Admin Commands
+                                    
                                     case "smite":
                                         if (UpdateHelper.IsGroupAdmin(update))
                                             Commands.Smite(update, args);
@@ -157,6 +158,29 @@ namespace Werewolf_Control.Handler
 
                                     #endregion
                                     #region Dev Commands
+                                    case "test":
+                                        if (update.Message.From.Id == Para)
+                                        {
+                                            var buttons = new List<InlineKeyboardButton[]>();
+                                            for (int i = 1; i < int.Parse(args[1]); i++)
+                                            {
+                                                buttons.Add(new [] {new InlineKeyboardButton(i.ToString()) });
+                                            }
+                                            try
+                                            {
+                                                var result = Bot.Api.SendTextMessage(id, "Test buttons",
+                                                    replyMarkup: new InlineKeyboardMarkup(buttons.ToArray()));
+                                            }
+                                            catch (AggregateException ex)
+                                            {
+                                                Send(ex.InnerExceptions.First().Message, id);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Send("You aren't the developer...", id);
+                                        }
+                                        break;
                                     case "winchart":
                                         if (update.Message.From.Id == Para)
                                         {
