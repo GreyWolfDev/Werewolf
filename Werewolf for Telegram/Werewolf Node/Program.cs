@@ -150,7 +150,11 @@ namespace Werewolf_Node
                             case "UpdateNodeInfo":
                                 IsShuttingDown = true;
                                 break;
-
+                            case "SkipVoteInfo":
+                                var svi = JsonConvert.DeserializeObject<SkipVoteInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == svi.GroupId);
+                                game?.SkipVote();
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;

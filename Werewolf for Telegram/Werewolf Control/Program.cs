@@ -88,7 +88,7 @@ namespace Werewolf_Control
                     var CommandsRx = Bot.CommandsReceived;
 
                     var msg =
-                        $"Connected Nodes: {Nodes.Count}\nCurrent Players: {CurrentPlayers}\tCurrent Games: {CurrentGames}\nTotal Players: {TotalPlayers}\tTotal Games: {TotalGames}\n" +
+                        $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
                         $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}\n\n";
 
                     msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");

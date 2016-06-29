@@ -12,10 +12,15 @@ namespace Werewolf_Control.Helpers
     {
         internal static bool IsGroupAdmin(Update update)
         {
+            return IsGroupAdmin(update.Message.From.Id, update.Message.Chat.Id);
+        }
+
+        internal static bool IsGroupAdmin(int user, long group)
+        {
             //fire off admin request
             try
             {
-                var admin = Bot.Api.GetChatMember(update.Message.Chat.Id, update.Message.From.Id).Result;
+                var admin = Bot.Api.GetChatMember(group, user).Result;
                 return admin.Status == ChatMemberStatus.Administrator || admin.Status == ChatMemberStatus.Creator;
             }
             catch

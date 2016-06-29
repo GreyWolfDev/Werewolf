@@ -168,7 +168,7 @@ namespace Werewolf_Node
                 IsRunning = true;
                 AssignRoles();
 
-                
+
 
                 //create new game for database
                 using (var db = new WWContext())
@@ -179,7 +179,7 @@ namespace Werewolf_Node
                         TimeStarted = DateTime.Now,
                         GroupId = ChatId,
                         GrpId = int.Parse(DbGroup.Id.ToString()),
-                        Mode = Chaos?"Chaos":"Normal"
+                        Mode = Chaos ? "Chaos" : "Normal"
                     };
                     db.Games.Add(game);
                     db.SaveChanges();
@@ -403,7 +403,7 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-        
+
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -423,7 +423,7 @@ namespace Werewolf_Node
                 {
                     throw new NullReferenceException("Object was null: query.Data");
                 }
-                
+
                 if (args[2] == "-1")
                 {
                     player.Choice = -1;
@@ -469,7 +469,7 @@ namespace Werewolf_Node
                     player.Choice = 0;
                     Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
                        GetLocaleString("ChoiceAccepted") + " - " + target.Name);
-                    
+
                     SendMenu(buttons, player, GetLocaleString("AskCupid2"), QuestionType.Lover2);
                     return;
                 }
@@ -485,8 +485,6 @@ namespace Werewolf_Node
                     var lover2 = Players.FirstOrDefault(x => x.Id == player.Choice);
                     if (lover2 == null)
                         return;
-                    Send(GetLocaleString("CupidChosen", lover11.Name), lover2.Id);
-                    Send(GetLocaleString("CupidChosen", lover2.Name), id);
                     lover2.InLove = true;
                     lover2.LoverId = id;
                     player.Choice = -1;
@@ -539,7 +537,8 @@ namespace Werewolf_Node
                 if (Chaos)
                 {
                     //need to set the max wolves so game doesn't end immediately - 25% max wolf population
-                    for (int i = 0; i < Players.Count / 4; i++)
+                    //25% was too much, max it at 5 wolves.
+                    for (int i = 0; i < Math.Max(Players.Count / 6, 1); i++)
                         rolesToAssign.Add(IRole.Wolf);
                     //add remaining roles to 'card pile'
                     foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
@@ -704,6 +703,15 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
                 rolesToAssign.Shuffle();
 
+
+#if DEBUG
+                //force roles for testing
+                rolesToAssign[0] = IRole.Cupid;
+                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[2] = IRole.WildChild;
+                rolesToAssign[3] = IRole.Wolf;
+#endif
+
                 var lastIndex = 0;
                 for (var i = 0; i < Players.Count; i++)
                 {
@@ -864,6 +872,8 @@ namespace Werewolf_Node
                     ch.Team = ITeam.Village;
                 }
 
+
+
                 foreach (var p in Players)
                     p.OriginalRole = p.PlayerRole;
             }
@@ -935,8 +945,9 @@ namespace Werewolf_Node
                     break;
                 case IRole.Beholder:
                     msg = GetLocaleString("RoleInfoBeholder");
-                    if (Players.Any(x => x.PlayerRole == IRole.Seer))
-                        msg += GetLocaleString("BeholderSeer", Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.Name);
+                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                    if (seer != null)
+                        msg += GetLocaleString("BeholderSeer", $"{seer.Name} {(String.IsNullOrEmpty(seer.TeleUser.Username) ? "" : $"(@{seer.TeleUser.Username})")}");
                     else
                         msg += "  " + GetLocaleString("NoSeer");
                     break;
@@ -980,7 +991,7 @@ namespace Werewolf_Node
             if (Players == null) return;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
-            
+
             if (CheckForGameEnd()) return;
             SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime ?? Settings.TimeLynch));
             SendLynchMenu();
@@ -1014,8 +1025,8 @@ namespace Werewolf_Node
             {
                 // ignored
             }
-            
-                
+
+
             //Log.WriteLine("Lynch time ended, adding up votes");
             if (CheckForGameEnd()) return;
             foreach (var p in Players.Where(x => !x.IsDead))
@@ -1127,7 +1138,7 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Day;
-            
+
             //see who died over night
             if (Players == null) return;
             foreach (var p in Players)
@@ -1354,6 +1365,11 @@ namespace Werewolf_Node
             {
                 // ignored
             }
+
+            //if first night, make sure cupid / wc / dg have picked
+            ValidateSpecialRoleChoices();
+
+
             var wolves = Players?.Where(x => x.PlayerRole == IRole.Wolf && !x.IsDead).ToList();
 
             if (CheckForGameEnd()) return;
@@ -2050,6 +2066,64 @@ namespace Werewolf_Node
             }
         }
 
+        private void ValidateSpecialRoleChoices()
+        {
+            if (GameDay != 1) return;
+            //Wild Child
+            var wc = Players.FirstOrDefault(x => x.PlayerRole == IRole.WildChild);
+            if (wc != null && wc.RoleModel == 0)
+            {
+                var choiceid = ChooseRandomPlayerId(wc);
+                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (choice != null)
+                {
+                    wc.RoleModel = choice.Id;
+                    Send(GetLocaleString("RoleModelChosen", choice.Name), wc.Id);
+                }
+            }
+
+            var dg = Players.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
+            if (dg != null && dg.RoleModel == 0)
+            {
+                var choiceid = ChooseRandomPlayerId(dg);
+                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (choice != null)
+                {
+                    dg.RoleModel = choice.Id;
+                    Send(GetLocaleString("RoleModelChosen", choice.Name), dg.Id);
+                }
+            }
+
+            //first, make sure there even IS a cupid
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
+            {
+                //cupid stuffs
+                var lovers = Players.Where(x => x.InLove);
+                while (lovers.Count() != 2)
+                {
+                    //ok, missing lover, create one
+                    var choiceid = ChooseRandomPlayerId(lovers);
+                    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+                    if (newLover != null)
+                    {
+                        newLover.InLove = true;
+                        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+                        if (otherLover != null)
+                        {
+                            otherLover.LoverId = newLover.Id;
+                            newLover.LoverId = otherLover.Id;
+                        }
+                    }
+                }
+                var loversNotify = lovers.ToList();
+                if (loversNotify.Count == 2)
+                {
+                    Send(GetLocaleString("CupidChosen", loversNotify[0].Name), loversNotify[1].Id);
+                    Send(GetLocaleString("CupidChosen", loversNotify[1].Name), loversNotify[0].Id);
+                }
+            }
+        }
+
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult)
         {
             target.OriginalRole = target.PlayerRole;
@@ -2062,6 +2136,12 @@ namespace Werewolf_Node
             Send(GetLocaleString("CultTeam", voteCult.Select(x => x.Name + $" (@{x.TeleUser.Username})").Aggregate((a, b) => a + ", " + b)), target.Id);
             foreach (var c in voteCult)
                 Send(GetLocaleString("CultJoin", target.Name), c.Id);
+        }
+
+        public void SkipVote()
+        {
+            foreach (var p in Players.Where(x => x.Choice == 0))
+                p.Choice = -1;
         }
 
         #endregion
@@ -2161,8 +2241,13 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
-                                if (Players.Any(x => x.PlayerRole == IRole.Seer))
-                                    Send(GetLocaleString("BeholderSeer", Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer)?.Name), p.Id);
+                                var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                                if (seer != null)
+                                    Send(GetLocaleString("BeholderSeer",
+                                        $"{seer.Name} {(String.IsNullOrEmpty(seer.TeleUser.Username) ? "" : $"(@{seer.TeleUser.Username})")}"),
+                                        p.Id);
+                                else
+                                    Send(GetLocaleString("NoSeer"), p.Id);
                                 break;
                             case IRole.ApprenticeSeer:
                                 p.HasDayAction = false;
@@ -2356,7 +2441,7 @@ namespace Werewolf_Node
                 if (!IsRunning) return true;
                 IsRunning = false;
                 var msg = "";
-                
+
                 var game = db.Games.FirstOrDefault(x => x.Id == GameId);
                 if (game == null)
                     game = new Game();
@@ -2366,6 +2451,7 @@ namespace Werewolf_Node
                 {
                     foreach (var w in Players.Where(x => x.InLove))
                     {
+                        w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
                     }
@@ -2374,14 +2460,18 @@ namespace Werewolf_Node
                 {
                     foreach (var w in Players.Where(x => x.Team == team))
                     {
+                        w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
                         if (w.InLove)
                         {
-                            //find lover (should be alive)
+                            //find lover
                             var lover = Players.FirstOrDefault(x => x.Id == w.LoverId);
                             if (lover != null)
+                            {
+                                lover.Won = true;
                                 GetDBGamePlayer(lover, db).Won = true;
+                            }
                         }
                     }
                 }
@@ -2411,13 +2501,6 @@ namespace Werewolf_Node
                         msg += GetLocaleString("TannerWins");
                         game.Winner = "Tanner";
                         SendWithQueue(msg, GetRandomImage(Settings.TannerWin));
-                        var tanner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                        if (tanner?.InLove ?? false)
-                        {
-                            //find lover (should be alive)
-                            var lover = Players.FirstOrDefault(x => x.Id == tanner.LoverId);
-                            GetDBGamePlayer(lover, db).Won = true;
-                        }
                         break;
                     case ITeam.Cult:
                         msg += GetLocaleString("CultWins");
@@ -2480,16 +2563,15 @@ namespace Werewolf_Node
                                  .Aggregate("",
                                      (current, p) =>
                                          current +
-                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")}\n"));
+                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won?"Won":"Lost")}\n"));
                         break;
-
                     case "Living":
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
                         msg = Players.Where(x => !x.IsDead)
                             .OrderBy(x => x.Team)
                             .Aggregate(msg,
-                                (current, p) => current + $"\n{p.Name}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")}");
+                                (current, p) => current + $"\n{p.Name}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 SendWithQueue(msg);
@@ -2503,7 +2585,7 @@ namespace Werewolf_Node
 
         private void SendLynchMenu()
         {
-            
+
             Thread.Sleep(1000); //sleep to let any clear keyboard messages go through....
             foreach (var player in Players.Where(x => !x.IsDead).OrderBy(x => x.Name))
             {
@@ -2613,7 +2695,7 @@ namespace Werewolf_Node
 
         private void SendNightActions()
         {
-            
+
             Thread.Sleep(1000); //sleep to let any clear keyboard messages go through....
             foreach (var player in Players.Where(x => !x.IsDead))
             {
@@ -3124,7 +3206,7 @@ namespace Werewolf_Node
             Night
         }
 
-#endregion
+        #endregion
 
         public void ForceStart()
         {
@@ -3157,7 +3239,7 @@ namespace Werewolf_Node
                     return;
                 }
                 Send(GetLocaleString("Flee", p.Name));
-                
+
                 if (IsRunning)
                 {
                     //kill the player
@@ -3183,6 +3265,36 @@ namespace Werewolf_Node
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString());
+        }
+
+        private int ChooseRandomPlayerId(IPlayer exclude)
+        {
+            try
+            {
+                var possible = Players.Where(x => x.Id != exclude.Id).ToList();
+                possible.Shuffle();
+                possible.Shuffle();
+                return possible[0].Id;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        private int ChooseRandomPlayerId(IEnumerable<IPlayer> exclude)
+        {
+            try
+            {
+                var possible = Players.Where(x => !exclude.Contains(x)).ToList();
+                possible.Shuffle();
+                possible.Shuffle();
+                return possible[0].Id;
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
     }
