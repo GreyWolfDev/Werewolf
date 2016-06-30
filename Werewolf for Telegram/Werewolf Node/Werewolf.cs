@@ -1052,7 +1052,7 @@ namespace Werewolf_Node
                     p.TimeDied = DateTime.Now;
                     CheckRoleChanges();
                     //update the database
-                    DBKill(p, p, KillMthd.Flee);
+                    DBKill(p, p, KillMthd.Idle);
                 }
             }
 
