@@ -1174,6 +1174,9 @@ namespace Werewolf_Node
                             case IRole.Fool:
                                 msg = GetLocaleString("FoolEaten", p.Name);
                                 break;
+                            case IRole.Mason:
+                                msg = GetLocaleString("MasonEaten", p.Name);
+                                break;
                             default:
                                 msg = GetLocaleString("DefaultEaten", p.Name, $"{p.Name} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                 break;
