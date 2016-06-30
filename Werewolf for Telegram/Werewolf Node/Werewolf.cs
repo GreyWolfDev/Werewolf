@@ -2465,6 +2465,24 @@ namespace Werewolf_Node
                 {
                     foreach (var w in Players.Where(x => x.Team == team))
                     {
+                        //for sk, only let the one that is alive win
+                        if (team == ITeam.SerialKiller && w.IsDead)
+                            continue;
+
+                        //same with tanner, but this is a little trickier
+                        if (team == ITeam.Tanner && Players.Count(x => x.PlayerRole == IRole.Tanner) > 1)
+                        {
+                            //get the last tanner alive
+                            var lastTanner =
+                                Players.Where(x => x.PlayerRole == IRole.Tanner)
+                                    .OrderByDescending(x => x.TimeDied)
+                                    .Select(x => x.Id).FirstOrDefault();
+                            //compare to this player
+                            if (w.Id != lastTanner)
+                                continue;
+                        }
+
+
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
@@ -2568,7 +2586,7 @@ namespace Werewolf_Node
                                  .Aggregate("",
                                      (current, p) =>
                                          current +
-                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won?"Won":"Lost")}\n"));
+                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}\n"));
                         break;
                     case "Living":
                     default:
