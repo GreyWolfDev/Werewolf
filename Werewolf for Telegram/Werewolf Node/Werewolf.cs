@@ -1285,6 +1285,7 @@ namespace Werewolf_Node
                             }
                             break;
                         case IRole.Hunter:
+                            SendWithQueue(GetLocaleString("DefaultShot", gunner.Name, check.Name, DbGroup.ShowRoles == false ? "" : $"{GetDescription(check.PlayerRole)} {GetLocaleString("IsDead")}"));
                             HunterFinalShot(check, KillMthd.Shoot);
                             break;
                         case IRole.Villager:
