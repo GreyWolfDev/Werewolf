@@ -51,7 +51,22 @@ namespace Werewolf_Control
         {
             foreach(var n in Bot.Nodes)
                 n.ShutDown();
-            Bot.Send("Nodes will stop accepting new games", update.Message.Chat.Id);
+            //get version
+            var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
+            var currentChoice = new NodeChoice();
+            foreach (var dir in Directory.GetDirectories(baseDirectory, "*Node*"))
+            {
+                //get the node exe in this directory
+                var file = Directory.GetFiles(dir, "Werewolf Node.exe").First();
+                Version fvi = System.Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
+                if (fvi > currentChoice.Version)
+                {
+                    currentChoice.Path = file;
+                    currentChoice.Version = fvi;
+                }
+            }
+
+            Bot.Send($"Replacing nodes with latest version: {currentChoice.Version}", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "playtime", DevOnly = true)]
