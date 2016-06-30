@@ -1601,7 +1601,8 @@ namespace Werewolf_Node
                 }
             }
 
-
+            if (Players == null)
+                return;
             //start with the cult...
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
 
@@ -1865,7 +1866,11 @@ namespace Werewolf_Node
                 }
             }
 
-
+            if (Players == null)
+            {
+                CheckForGameEnd();
+                return;
+            }
             if (ga != null)
             {
                 var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
