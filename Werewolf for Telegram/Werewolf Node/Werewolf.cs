@@ -2935,7 +2935,7 @@ namespace Werewolf_Node
                     var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
                     if (p != null)
                     {
-                        Send(GetLocaleString("LoverDied", victim.Name, p.Name, DbGroup.ShowRoles == false ? "" : $"{p.Name} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"), ChatId);
+                        SendWithQueue(GetLocaleString("LoverDied", victim.Name, p.Name, DbGroup.ShowRoles == false ? "" : $"{p.Name} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                         DBKill(victim, p, KillMthd.LoverDied);
                         p.IsDead = true;
                         p.TimeDied = DateTime.Now;
