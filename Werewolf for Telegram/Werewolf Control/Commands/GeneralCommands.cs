@@ -21,7 +21,7 @@ namespace Werewolf_Control
         public static void Ping(Update update, string[] args)
         {
             var ts = DateTime.UtcNow - update.Message.Date;
-            Bot.Send($"Reply process time: {ts:ss\\.ff}", update.Message.Chat.Id);
+            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "help")]
