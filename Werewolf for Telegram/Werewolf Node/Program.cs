@@ -38,6 +38,25 @@ namespace Werewolf_Node
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         static void Main(string[] args)
         {
+            //set up exception logging.  It appears nodes are crashing and I'm not getting any output
+            AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
+            {
+                var ex = eventArgs.ExceptionObject as Exception;
+                using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\NodeFatalError.log"), true))
+                {
+                    
+                    sw.WriteLine($"{DateTime.Now} - {Version} - {ex.Message}");
+                    sw.WriteLine(ex.StackTrace);
+                    while (ex.InnerException != null)
+                    {
+                        ex = ex.InnerException;
+                        sw.WriteLine($"{ex.Message}");
+                        sw.WriteLine(ex.StackTrace);
+                    }
+                    sw.WriteLine("--------------------------------------------------------");
+                }
+            };
+
 
             //get api token from registry
             var key =
