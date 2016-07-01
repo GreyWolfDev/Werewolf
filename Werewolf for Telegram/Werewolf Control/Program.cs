@@ -67,6 +67,17 @@ namespace Werewolf_Control
                 Console.CursorTop = 19;
             Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
             Console.WriteLine(s);
+            try
+            {
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
+                {
+                    sw.WriteLine($"{DateTime.Now} - {s}");
+                }
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         private static void NodeMonitor()
