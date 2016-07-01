@@ -286,22 +286,23 @@ namespace Werewolf_Node
                 //monitor the tcp connection to keep it open
                 try
                 {
+                    var games = Games.ToList();
                     var info = new NodeInfo
                     {
                         Games = new HashSet<GameInfo>(),
                         ClientId = ClientId,
-                        CurrentGames = Games.Count,
-                        CurrentPlayers = Games.Sum(x => x.Players.Count),
+                        CurrentGames = games.Count,
+                        CurrentPlayers = games.Sum(x => x.Players.Count),
                         DuplicateGamesRemoved = DupGamesKilled,
                         ThreadCount = Process.GetCurrentProcess().Threads.Count,
                         TotalGames = GamesStarted,
-                        TotalPlayers = Games.Sum(x => x.Players.Count) + TotalPlayers,
+                        TotalPlayers = games.Sum(x => x.Players.Count) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
                         Version = Version.FileVersion,
                         ShuttingDown = IsShuttingDown
                     };
 
-                    foreach (var g in Games)
+                    foreach (var g in games)
                     {
                         var gi = new GameInfo
                         {
