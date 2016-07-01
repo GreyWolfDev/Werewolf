@@ -2590,7 +2590,7 @@ namespace Werewolf_Node
                                  .Aggregate("",
                                      (current, p) =>
                                          current +
-                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}\n"));
+                                         ($"{p.Name}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
                         break;
                     case "Living":
                     default:
