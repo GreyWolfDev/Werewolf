@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- It's Mafia vs Cops ver 1.2 by @NoxCaelis! Mafia's the goodies, by the way. -->
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- It's Mafia vs Cops ver 1.3 by @NoxCaelis! Mafia's the goodies, by the way. -->
 <strings>
   <language name="English (Mafia)" base="English" variant="Mafia"/>
   <string key="NotInGame">
@@ -92,7 +92,7 @@
     <value>{0} is arrested! You decided to take up their mantle. After all, you've watched them extracting information over and over again. You know you can do it.</value>
   </string>
   <string key="BeholderNewSeer">
-    <value>{0} the torture chamber guard takes intiative to serve you in {1}'s death. You're happy, and promote them into your new "personal advisor"!</value>
+    <value>{0} the torture chamber guard takes intiative to serve you in {1}'s disappearance. You're happy, and promote them into your new "personal advisor"!</value>
   </string>
   <string key="SeerSees">
     <value>After a long session, you've learnt that {0} is {1}! Well, they won't miss a relative or two, right?</value>
@@ -119,10 +119,10 @@
     <value>Who do you want to arrest?</value>
   </string>
   <string key="AskHunt">
-    <value>Who will meet your bullet?</value>
+    <value>Who do you think are involved in the Church of Happyology?</value>
   </string>
   <string key="AskRoleModel">
-    <value>Who is your role model?</value>
+    <value>Who is your parent?</value>
   </string>
   <string key="AskConvert">
     <value>Who do you want to convert to the Church of Happyology?</value>
@@ -215,7 +215,7 @@
     <value >The Newspaper just come in! {0} is arrested for assault and kidnapping charge. They can't "extract information" anymore. The Torture Technician 👳 is arrested.</value>
   </string>
   <string key="DrunkEaten" >
-    <value >The Newspaper just come in! {0} the corrupt politician's spouse was found dead in their house. Tonight, every member of the cops will guard at their funeral. </value>
+    <value >The Newspaper just come in! The spouse of {0} the corrupt politician was found dead in their house. Tonight, every member of the cops will guard at their funeral. </value>
   </string>
   <string key="FoolEaten" >
     <value >The Newspaper just come in! It seems that {0} was caught for libel, slander, and generally every lie ever made. They can't Gossip about someone's true allegiance anymore.</value>
@@ -372,7 +372,7 @@
     <value>a Police Officer 🐺</value>
   </string>
   <string key="Cursed">
-    <value>a Repentant Mafia 😾</value>
+    <value>the Repentant Mafia 😾</value>
   </string>
   <string key="Gunner">
     <value>the Paparazzi 🔫</value>
@@ -419,7 +419,7 @@
     <value>You are a Caporegime 👷, a Mafia Captain! You are the only ones at mafia meeting, so you know other Capo as well.</value>
   </string>
   <string key="MasonEaten">
-    <value>The Newspaper just come in! One of the Capo, {0}, was arrested for accomplice to mafia activities.</value>
+    <value>The Newspaper just come in! One of the Capo 👷, {0}, was arrested for accomplice to mafia activities.</value>
   </string>
   <string key="MasonTeam">
     <value>  The other Caporegimes at your meeting with the Godfather are {0}</value>
@@ -569,7 +569,7 @@
     <value>The police raided a house last night, but now {0} hasn't been seen since! It's like they are kidnapped and disappear from the face of the earth! </value> 
   </string>
   <string key="DefaultKilled">
-    <value>The Newspaper just come in! On page 8:  Mysterious Disappearance of {0}. The Kidnapper takes another one for his collection! {1}</value>
+    <value>The Newspaper just come in! On page 8:  Mysterious Disappearance of {0}. The Kidnapper takes another one for his collection, {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <value>You try to induct {0} to your collection, but on the way you see the Bouncer and his Mobile Arsenal. You hastily retreated for the night.</value>
@@ -620,10 +620,10 @@
     <value>Whose identity do you want to pickpocket?</value>
   </string>
   <string key="AskCupid1">
-    <value>Who did swear eternal love in front of you? Choose the first player!</value>
+    <value>Who did swear eternal love in the Church of Fairview? Choose the first player!</value>
   </string>
   <string key="AskCupid2">
-    <value>Who did swear eternal love in front of you? Choose the last player!</value>
+    <value>Who did swear eternal love in the Church of Fairview? Choose the last player!</value>
   </string>
   <string key="Hunter">
     <value>the Construction Worker 🎯</value>
@@ -641,7 +641,7 @@
     <value>You swore your eternal love to {0}, for better, for worse, in health and in sickness. If they have to leave the city, you will also follow. If you survives until the end, you will both win.</value>
   </string>
   <string key="NewWCRoleModel">
-    <value>You take the identity of an Idealist. Your parent is {0}.</value>
+    <value>You take the identity of an Idealist 👶. Your parent is {0}.</value>
   </string>
   <string key="LoversWin">
     <value>True love endures! The lovers have won!</value>
@@ -668,9 +668,15 @@
     <value>The city lost all of its citizen, now even more eerie than the scariest ghost town...</value>
   </string>
   <string key="SKHunterEnd">
-    <value>As the sun rises, {0} and {1} walk out into the ton square.  {0} drags {1} to their dungeon, but {1} managed to demolish it from within. The crumbling sounds is the last sound of the city, nobody wins...</value>
+    <value>As the sun rises, {0} and {1} walk out into the town square.  {0} drags {1} to their dungeon, but {1} managed to demolish it from within. The crumbling sounds is the last sound of the city, nobody wins...</value>
   </string>
   <string key="RoleModelChosen">
     <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+  </string>
+    <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
   </string>
 </strings>
