@@ -2432,6 +2432,8 @@ namespace Werewolf_Node
             {
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Cultist) & !Players.Any(x => !x.IsDead && x.PlayerRole == IRole.CultistHunter) & !Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf))
                 {
+                    if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
+                        return DoGameEnd(ITeam.SerialKiller);
                     //cult outnumbers, win
                     return DoGameEnd(ITeam.Cult);
                 }
