@@ -276,7 +276,7 @@ namespace Werewolf_Node
             Connect();
             while (Running)
             {
-                if (IsShuttingDown && Games.Count == 0)
+                if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
                     Thread.Sleep(10000);
                     Running = false;
@@ -286,6 +286,11 @@ namespace Werewolf_Node
                 //monitor the tcp connection to keep it open
                 try
                 {
+                    if (Games == null)
+                    {
+                        //uhhhhhhhhh  ok.....
+                        continue;
+                    }
                     var games = Games.ToList();
                     var info = new NodeInfo
                     {
