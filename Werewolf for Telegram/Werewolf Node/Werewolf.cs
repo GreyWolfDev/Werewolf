@@ -2258,7 +2258,7 @@ namespace Werewolf_Node
                                 else
                                     Send(GetLocaleString("NoSeer"), p.Id);
                                 break;
-                            case IRole.ApprenticeSeer:
+                            case IRole.ApprenticeSeer: 
                                 p.HasDayAction = false;
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
@@ -2266,6 +2266,9 @@ namespace Werewolf_Node
                                 {
                                     p.PlayerRole = IRole.Seer;
                                     p.HasNightAction = true;
+                                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                                    if (beholder != null)
+                                        Send(GetLocaleString("BeholderNewSeer", $"{p.Name} {(String.IsNullOrEmpty(p.TeleUser.Username) ? "" : $"(@{p.TeleUser.Username})")}", rm?.Name ?? GetDescription(IRole.Seer)), beholder.Id);
                                 }
                                 break;
                             case IRole.Traitor:
@@ -2299,6 +2302,13 @@ namespace Werewolf_Node
                             case IRole.Harlot:
                             case IRole.CultistHunter:
                             case IRole.Seer:
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                                if (bh != null)
+                                    Send(GetLocaleString("BeholderNewSeer", $"{p.Name} {(String.IsNullOrEmpty(p.TeleUser.Username) ? "" : $"(@{p.TeleUser.Username})")}", rm?.Name ?? GetDescription(IRole.Seer)), bh.Id);
+                                break;
                             case IRole.GuardianAngel:
 
                                 p.Team = ITeam.Village;
