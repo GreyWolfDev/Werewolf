@@ -19,6 +19,7 @@ namespace Werewolf_Control
         private static bool _writingInfo = false;
         static void Main(string[] args)
         {
+#if !DEBUG
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
                 //drop the error to log file and exit
@@ -31,6 +32,7 @@ namespace Werewolf_Control
                         Environment.Exit(5);
                 }
             };
+#endif
             //get the version of the bot and set the window title
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);

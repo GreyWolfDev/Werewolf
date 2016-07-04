@@ -26,13 +26,18 @@ namespace Werewolf_Control.Handler
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
+            new Task(() => {HandleUpdate(e.Update);}).Start();
+        }
+
+        internal static void HandleUpdate(Update update)
+        {
             {
                 Bot.MessagesReceived++;
 
                 //ignore previous messages
-                if ((e.Update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
+                if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
-                var update = e.Update;
+                
                 var id = update.Message.Chat.Id;
 #if DEBUG
                 if (update.Message.Chat.Title != "Werewolf Beta Testing" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
@@ -124,7 +129,7 @@ namespace Werewolf_Control.Handler
                                 {
 
                                     #region Admin Commands
-                                    
+
                                     case "smite":
                                         if (UpdateHelper.IsGroupAdmin(update))
                                             Commands.Smite(update, args);
@@ -164,7 +169,7 @@ namespace Werewolf_Control.Handler
                                             var buttons = new List<InlineKeyboardButton[]>();
                                             for (int i = 1; i < int.Parse(args[1]); i++)
                                             {
-                                                buttons.Add(new [] {new InlineKeyboardButton(i.ToString()) });
+                                                buttons.Add(new[] { new InlineKeyboardButton(i.ToString()) });
                                             }
                                             try
                                             {
@@ -446,6 +451,8 @@ namespace Werewolf_Control.Handler
 #endif
             }
         }
+
+
         /// <summary>
         /// Gets the language for the group, defaulting to English
         /// </summary>
@@ -474,11 +481,15 @@ namespace Werewolf_Control.Handler
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
+            new Task(() => {HandleCallback(e.CallbackQuery);}).Start();
+        }
+
+        internal static void HandleCallback(CallbackQuery query)
+        {
             using (var DB = new WWContext())
             {
                 try
                 {
-                    var query = e.CallbackQuery;
                     string[] args = query.Data.Split('|');
                     InlineKeyboardMarkup menu;
                     Group grp;

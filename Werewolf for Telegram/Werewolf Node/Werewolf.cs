@@ -2864,31 +2864,32 @@ namespace Werewolf_Node
         {
             using (var db = new WWContext())
             {
-                var initid = initator.DBPlayerId;
-                if (initid == 0)
-                {
-                    initid = GetDBPlayer(initator, db).Id;
-                }
-                var recid = receiver.DBPlayerId;
-                if (recid == 0)
-                    recid = GetDBPlayer(receiver, db).Id;
-                if (DBGameId == 0)
-                {
-                    DBGameId = db.Games.FirstOrDefault(x => x.Id == GameId)?.Id ?? 0;
-                }
-                var a = new Action
-                {
-                    ActionTaken = action,
-                    GameId = DBGameId,
-                    InitiatorId = initid,
-                    ReceiverId = recid,
-                    TimeStamp = DateTime.Now,
-                    Day = GameDay
-                };
-                db.Actions.Add(a);
                 try
                 {
                     db.SaveChanges();
+
+                    var initid = initator.DBPlayerId;
+                    if (initid == 0)
+                    {
+                        initid = GetDBPlayer(initator, db).Id;
+                    }
+                    var recid = receiver.DBPlayerId;
+                    if (recid == 0)
+                        recid = GetDBPlayer(receiver, db).Id;
+                    if (DBGameId == 0)
+                    {
+                        DBGameId = db.Games.FirstOrDefault(x => x.Id == GameId)?.Id ?? 0;
+                    }
+                    var a = new Action
+                    {
+                        ActionTaken = action,
+                        GameId = DBGameId,
+                        InitiatorId = initid,
+                        ReceiverId = recid,
+                        TimeStamp = DateTime.Now,
+                        Day = GameDay
+                    };
+                    db.Actions.Add(a);
                 }
                 catch (Exception e)
                 {

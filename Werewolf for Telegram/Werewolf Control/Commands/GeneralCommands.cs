@@ -60,11 +60,11 @@ namespace Werewolf_Control
             var version = Program.GetVersion();
             try
             {
-                var nodeVersion =
-                    Bot.Nodes.ToList().FirstOrDefault(x => x.Games.Any(g => g.GroupId == update.Message.Chat.Id))?
-                        .Version;
-                version += !String.IsNullOrWhiteSpace(nodeVersion)
-                    ? $"\nNode Version: {nodeVersion}"
+                var node =
+                    Bot.Nodes.ToList().FirstOrDefault(x => x.Games.Any(g => g.GroupId == update.Message.Chat.Id));
+
+                version += !String.IsNullOrWhiteSpace(node?.Version)
+                    ? $"\nNode Version: {node?.Version}\nNode Id: {node?.ClientId}"
                     : "\nNode Version: You are not on a node right now (no game running in this group)";
             }
             catch
