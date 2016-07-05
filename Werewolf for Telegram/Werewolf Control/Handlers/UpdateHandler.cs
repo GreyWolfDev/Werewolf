@@ -34,11 +34,18 @@ namespace Werewolf_Control.Handler
             {
                 Bot.MessagesReceived++;
 
+                
+
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
                 
                 var id = update.Message.Chat.Id;
+                //payback!
+                if (update.Message?.From?.Id == 133439848)
+                {
+                    Send("HAPPY BIRTHDAY AMELIA", id);
+                }
 #if DEBUG
                 if (update.Message.Chat.Title != "Werewolf Beta Testing" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
                 {
