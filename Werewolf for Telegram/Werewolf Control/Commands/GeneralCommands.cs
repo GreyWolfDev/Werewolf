@@ -119,7 +119,7 @@ namespace Werewolf_Control
                             //player is already in a game, and alive
                             Send(
                                 GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                    game.ChatGroup), update.Message.Chat.Id);
+                                    game.ChatGroup.ToBold()), update.Message.Chat.Id);
                             return;
                         }
                     }
@@ -127,7 +127,7 @@ namespace Werewolf_Control
 
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
-                    Send(GetLocaleString("AlreadyOnWaitList", grp.Language, grp.Name),
+                    Send(GetLocaleString("AlreadyOnWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id);
                 }
                 else
@@ -135,7 +135,7 @@ namespace Werewolf_Control
                     db.Database.ExecuteSqlCommand(
                         $"INSERT INTO NotifyGame VALUES ({update.Message.From.Id}, {id})");
                     db.SaveChanges();
-                    Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name),
+                    Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id);
                 }
             }

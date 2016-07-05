@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
@@ -170,15 +171,15 @@ namespace Werewolf_Control.Helpers
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true);
+                Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)
             {
-                Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true);
+                Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else
             {
-                Api.SendTextMessage(id, message, disableWebPagePreview: true);
+                Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
 
         }

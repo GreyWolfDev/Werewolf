@@ -98,7 +98,16 @@ namespace Werewolf_Control.Helpers
                         {
                             errors.Add(new LanguageError(fileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
                         }
+                        //foreach (var html in new[] { "<", ">", "\"", "&" })
+                        //{
+                        //    if (value.Value.Contains(html))
+                        //        errors.Add(new LanguageError(fileName, key, "Value contains HTML markup: " + html, ErrorLevel.Error));
+                        //}
+
+
                     }
+
+
                 }
             }
 
@@ -114,7 +123,7 @@ namespace Werewolf_Control.Helpers
 
 
             }
-            Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Default);
             result =
                 $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
 
@@ -194,6 +203,12 @@ namespace Werewolf_Control.Helpers
                     {
                         errors.Add(new LanguageError(fileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
                     }
+
+                    //foreach (var html in new[] { "<", ">", "\"", "&" })
+                    //{
+                    //    if (value.Value.Contains(html))
+                    //        errors.Add(new LanguageError(fileName, key, "Value contains HTML markup: " + html, ErrorLevel.Error));
+                    //}
                 }
             }
 

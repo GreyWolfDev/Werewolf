@@ -6,6 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -122,10 +124,26 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "cpu", DevOnly = true)]
-        public static void Cpu(Update update, string[] args)
+        [Command(Trigger = "test", DevOnly = true)]
+        public static void Test(Update update, string[] args)
         {
-            Send(Program.AvgCpuTime.ToString(), update.Message.Chat.Id);
+            //test inline button thingy
+            //var button = new InlineKeyboardButton("Test") {Url = "tg-user://95890871"};
+            //Bot.Api.SendTextMessage(update.Message.Chat.Id, "<a href=\"tg-user://123732221\">Test</a>", parseMode: ParseMode.Html);
+            //var result = Bot.Api.SendTextMessage(update.Message.Chat.Id, "Test",
+            //    replyMarkup: new InlineKeyboardMarkup(new InlineKeyboardButton[] {button})).Result;
+            var reply = $"Test <a href=\"telegram.me/para949\">Para</a>";
+            try
+            {
+
+                var result = Bot.Api.SendTextMessage(update.Message.Chat.Id, reply,
+                    parseMode: ParseMode.Html).Result;
+            }
+            catch (AggregateException e)
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.InnerExceptions[0].Message);
+            }
+            //{"BUTTON_URL_INVALID"}
         }
     }
 }

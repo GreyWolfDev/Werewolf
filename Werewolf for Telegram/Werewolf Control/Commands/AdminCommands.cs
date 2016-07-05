@@ -22,7 +22,7 @@ namespace Werewolf_Control
         {
             if (u.Message.ReplyToMessage == null)
             {
-                Bot.Send("You must reply to the user you want to smite", u.Message.Chat.Id);
+                Bot.Send("You must reply to the user you want to smite".ToBold(), u.Message.Chat.Id);
                 return;
             }
 

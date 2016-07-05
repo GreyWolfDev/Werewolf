@@ -41,11 +41,7 @@ namespace Werewolf_Control.Handler
                     return; //toss it
                 
                 var id = update.Message.Chat.Id;
-                //payback!
-                if (update.Message?.From?.Id == 133439848)
-                {
-                    Send("HAPPY BIRTHDAY AMELIA", id);
-                }
+                
 #if DEBUG
                 if (update.Message.Chat.Title != "Werewolf Beta Testing" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
                 {
@@ -170,29 +166,6 @@ namespace Werewolf_Control.Handler
 
                                     #endregion
                                     #region Dev Commands
-                                    case "test":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            var buttons = new List<InlineKeyboardButton[]>();
-                                            for (int i = 1; i < int.Parse(args[1]); i++)
-                                            {
-                                                buttons.Add(new[] { new InlineKeyboardButton(i.ToString()) });
-                                            }
-                                            try
-                                            {
-                                                var result = Bot.Api.SendTextMessage(id, "Test buttons",
-                                                    replyMarkup: new InlineKeyboardMarkup(buttons.ToArray()));
-                                            }
-                                            catch (AggregateException ex)
-                                            {
-                                                Send(ex.InnerExceptions.First().Message, id);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
                                     case "winchart":
                                         if (update.Message.From.Id == Para)
                                         {
@@ -273,10 +246,10 @@ namespace Werewolf_Control.Handler
                                             Send("You aren't the developer...", id);
                                         }
                                         break;
-                                    case "cpu":
+                                    case "test":
                                         if (update.Message.From.Id == Para)
                                         {
-                                            Commands.Cpu(update, args);
+                                            Commands.Test(update, args);
                                         }
                                         else
                                         {
@@ -521,7 +494,7 @@ namespace Werewolf_Control.Handler
 
                     groupid = long.Parse(args[1]);
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate")
                         return;
                     var command = args[0];
                     var choice = "";
@@ -988,7 +961,7 @@ namespace Werewolf_Control.Handler
             var values = strings.Descendants("value");
             var choice = Bot.R.Next(values.Count());
             var selected = values.ElementAt(choice);
-            return String.Format(selected.Value, args).Replace("\\n", Environment.NewLine);
+            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
