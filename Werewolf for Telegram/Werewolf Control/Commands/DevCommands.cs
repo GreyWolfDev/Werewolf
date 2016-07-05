@@ -132,7 +132,8 @@ namespace Werewolf_Control
             //Bot.Api.SendTextMessage(update.Message.Chat.Id, "<a href=\"tg-user://123732221\">Test</a>", parseMode: ParseMode.Html);
             //var result = Bot.Api.SendTextMessage(update.Message.Chat.Id, "Test",
             //    replyMarkup: new InlineKeyboardMarkup(new InlineKeyboardButton[] {button})).Result;
-            var reply = $"Test <a href=\"telegram.me/para949\">Para</a>";
+            var name = "Pierre </b> *test* </b> (Ingress CloneMMDDCVII)".FormatHTML();
+            var reply = $"Test <a href=\"telegram.me/para949\">{name}</a>";
             try
             {
 

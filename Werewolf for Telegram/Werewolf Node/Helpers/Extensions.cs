@@ -48,9 +48,9 @@ namespace Werewolf_Node.Helpers
             if (menu)
                 return player.Name;
             if (!String.IsNullOrEmpty(player.TeleUser.Username))
-                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name}</a>";
+                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name.FormatHTML()}</a>";
 
-            return $"<b>{player.Name}</b>";
+            return player.Name.ToBold();
         }
     }
 }
