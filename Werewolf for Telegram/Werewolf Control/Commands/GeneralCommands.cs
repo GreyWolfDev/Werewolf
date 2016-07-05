@@ -21,7 +21,7 @@ namespace Werewolf_Control
         public static void Ping(Update update, string[] args)
         {
             var ts = DateTime.UtcNow - update.Message.Date;
-            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}", update.Message.Chat.Id);
+            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}\nCurrent CPU Usage: {Program.AvgCpuTime.ToString("F0")}%", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "help")]
@@ -188,7 +188,7 @@ namespace Werewolf_Control
                 foreach (var ex in e.InnerExceptions)
                 {
                     var x = ex as ApiRequestException;
-                    
+
                     Send(x.Message, update.Message.Chat.Id);
                 }
             }
@@ -201,12 +201,21 @@ namespace Werewolf_Control
         [Command(Trigger = "stats")]
         public static void GetStats(Update update, string[] args)
         {
-            var reply = $"[Global Stats](werewolf.parawuff.com/Stats)\n";
+            //var reply = $"[Global Stats](werewolf.parawuff.com/Stats)\n";
+            //if (update.Message.Chat.Type != ChatType.Private)
+            //    reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
+            //reply += $"[Player Stats](werewolf.parawuff.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
+
+            //change this to buttons
+            var buttons = new List<InlineKeyboardButton[]>
+            {
+                new[] {new InlineKeyboardButton {Text = "Global Stats", Url = "http://werewolf.parawuff.com/Stats"}}
+            };
             if (update.Message.Chat.Type != ChatType.Private)
-                reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
-            reply += $"[Player Stats](werewolf.parawuff.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, reply, parseMode: ParseMode.Markdown,
-                disableWebPagePreview: true);
+                buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.Chat.Title} Stats", Url = "http://werewolf.parawuff.com/Stats/Group/" + update.Message.Chat.Id } });
+            buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.From.FirstName} Stats", Url = "http://werewolf.parawuff.com/Stats/Player/" + update.Message.From.Id } });
+            var menu = new InlineKeyboardMarkup(buttons.ToArray());
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Stats", replyMarkup: menu);
         }
     }
 }

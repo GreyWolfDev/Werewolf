@@ -121,5 +121,11 @@ namespace Werewolf_Control
                 return;
             }
         }
+
+        [Command(Trigger = "cpu", DevOnly = true)]
+        public static void Cpu(Update update, string[] args)
+        {
+            Send(Program.AvgCpuTime.ToString(), update.Message.Chat.Id);
+        }
     }
 }

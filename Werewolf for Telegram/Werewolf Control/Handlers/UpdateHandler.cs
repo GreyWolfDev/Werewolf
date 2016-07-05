@@ -21,7 +21,7 @@ namespace Werewolf_Control.Handler
     internal static class UpdateHandler
     {
         internal static int Para = 129046388;
-
+        
         internal static int[] PermaBanList = { 226424085 };//Duce
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
@@ -267,6 +267,16 @@ namespace Werewolf_Control.Handler
                                         if (update.Message.From.Id == Para)
                                         {
                                             Commands.SkipVote(update, args);
+                                        }
+                                        else
+                                        {
+                                            Send("You aren't the developer...", id);
+                                        }
+                                        break;
+                                    case "cpu":
+                                        if (update.Message.From.Id == Para)
+                                        {
+                                            Commands.Cpu(update, args);
                                         }
                                         else
                                         {

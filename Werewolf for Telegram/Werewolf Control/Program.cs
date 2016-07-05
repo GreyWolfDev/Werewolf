@@ -17,6 +17,9 @@ namespace Werewolf_Control
     {
         internal static bool Running = true;
         private static bool _writingInfo = false;
+        internal static PerformanceCounter CpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        internal static float AvgCpuTime;
+        private static List<float> CpuTimes = new List<float>();
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -47,6 +50,7 @@ namespace Werewolf_Control
             //start up the bot
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
+            new Thread(CpuMonitor).Start();
             //now pause the main thread to let everything else run
             Thread.Sleep(-1);
         }
@@ -79,6 +83,27 @@ namespace Werewolf_Control
             catch
             {
                 // ignored
+            }
+        }
+
+        private static void CpuMonitor()
+        {
+            while (Running)
+            {
+                try
+                {
+                    CpuTimes.Insert(0, CpuCounter.NextValue());
+                    if (CpuTimes.Count > 10)
+                        CpuTimes.RemoveAt(10);
+                    AvgCpuTime = CpuTimes.Average();
+                    
+                }
+                catch
+                {
+                    // ignored
+                }
+
+                Thread.Sleep(250);
             }
         }
 
