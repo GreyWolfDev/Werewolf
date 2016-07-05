@@ -21,7 +21,8 @@ namespace Werewolf_Control
         public static void Ping(Update update, string[] args)
         {
             var ts = DateTime.UtcNow - update.Message.Date;
-            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}\nCurrent CPU Usage: {Program.AvgCpuTime.ToString("F0")}%", update.Message.Chat.Id);
+            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}\nCurrent CPU Usage: {Program.AvgCpuTime.ToString("F0")}%\n" +
+                     $"Messages per second: {Program.MessagePerSecond}", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "help")]

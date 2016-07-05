@@ -81,10 +81,10 @@ namespace Werewolf_Control
                     var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
                     foreach (var n in notify)
                     {
-                        var groupName = update.Message.Chat.Title;
+                        var groupName = update.Message.Chat.Title.ToBold();
                         if (update.Message.Chat.Username != null)
                             groupName += $" @{update.Message.Chat.Username}";
-                        Send(GetLocaleString("NotifyNewGame", grp.Language, groupName.ToBold()), n.UserId);
+                        Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
                         Thread.Sleep(100);
                     }
 

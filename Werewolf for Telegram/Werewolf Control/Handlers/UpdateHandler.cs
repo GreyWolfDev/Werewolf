@@ -21,12 +21,12 @@ namespace Werewolf_Control.Handler
     internal static class UpdateHandler
     {
         internal static int Para = 129046388;
-        
+
         internal static int[] PermaBanList = { 226424085 };//Duce
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
-            new Task(() => {HandleUpdate(e.Update);}).Start();
+            new Task(() => { HandleUpdate(e.Update); }).Start();
         }
 
         internal static void HandleUpdate(Update update)
@@ -34,14 +34,14 @@ namespace Werewolf_Control.Handler
             {
                 Bot.MessagesReceived++;
 
-                
+
 
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
-                
+
                 var id = update.Message.Chat.Id;
-                
+
 #if DEBUG
                 if (update.Message.Chat.Title != "Werewolf Beta Testing" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
                 {
@@ -467,11 +467,11 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] {"vote", "getlang", "validate", "upload" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "upload" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
-            new Task(() => {HandleCallback(e.CallbackQuery);}).Start();
+            new Task(() => { HandleCallback(e.CallbackQuery); }).Start();
         }
 
         internal static void HandleCallback(CallbackQuery query)

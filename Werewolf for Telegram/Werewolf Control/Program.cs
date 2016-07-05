@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Database;
+using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 
 namespace Werewolf_Control
@@ -20,6 +21,9 @@ namespace Werewolf_Control
         internal static PerformanceCounter CpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         internal static float AvgCpuTime;
         private static List<float> CpuTimes = new List<float>();
+        private static List<long> MessagesProcessed = new List<long>();
+        private static long _previousMessages;
+        internal static float MessagePerSecond;
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -51,6 +55,7 @@ namespace Werewolf_Control
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
             new Thread(CpuMonitor).Start();
+            new Thread(MessageMonitor).Start();
             //now pause the main thread to let everything else run
             Thread.Sleep(-1);
         }
@@ -83,6 +88,28 @@ namespace Werewolf_Control
             catch
             {
                 // ignored
+            }
+        }
+
+        private static void MessageMonitor()
+        {
+            while (Running)
+            {
+                try
+                {
+                    var newMessages = Bot.MessagesReceived - _previousMessages;
+                    _previousMessages = Bot.MessagesReceived;
+                    MessagesProcessed.Insert(0, newMessages);
+                    if (MessagesProcessed.Count > 10)
+                        MessagesProcessed.RemoveAt(10);
+                    MessagePerSecond = (float)MessagesProcessed.Average()/10;
+                }
+                catch
+                {
+                    // ignored
+                }
+
+                Thread.Sleep(1000);
             }
         }
 
