@@ -63,26 +63,26 @@ namespace Werewolf_Control.Helpers
             Api = new Client(TelegramAPIKey);
 
 
-            ////load the commands list
-            //foreach (var m in typeof(Commands).GetMethods())
-            //{
-            //    var c = new Command();
-            //    foreach (var a in m.GetCustomAttributes(true))
-            //    {
-            //        if (a is Attributes.Command)
-            //        {
-            //            var ca = a as Attributes.Command;
-            //            c.Blockable = ca.Blockable;
-            //            c.DevOnly = ca.DevOnly;
-            //            c.GlobalAdminOnly = ca.GlobalAdminOnly;
-            //            c.GroupAdminOnly = ca.GroupAdminOnly;
-            //            c.Trigger = ca.Trigger;
-            //            c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
-            //            c.InGroupOnly = ca.InGroupOnly;
-            //            Commands.Add(c);
-            //        }
-            //    }
-            //}
+            //load the commands list
+            foreach (var m in typeof(Commands).GetMethods())
+            {
+                var c = new Command();
+                foreach (var a in m.GetCustomAttributes(true))
+                {
+                    if (a is Attributes.Command)
+                    {
+                        var ca = a as Attributes.Command;
+                        c.Blockable = ca.Blockable;
+                        c.DevOnly = ca.DevOnly;
+                        c.GlobalAdminOnly = ca.GlobalAdminOnly;
+                        c.GroupAdminOnly = ca.GroupAdminOnly;
+                        c.Trigger = ca.Trigger;
+                        c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
+                        c.InGroupOnly = ca.InGroupOnly;
+                        Commands.Add(c);
+                    }
+                }
+            }
 
 
             Api.UpdateReceived += UpdateHandler.UpdateReceived;
