@@ -43,7 +43,21 @@ namespace Werewolf_Control.Helpers
                         }
                         catch (Exception)
                         {
-                            Bot.Nodes.ElementAt(i).Disconnect();
+                            Thread.Sleep(2000);
+                            var n = Bot.Nodes.ElementAt(i);
+                            if (Bot.Nodes.Count(x => x.ClientId == n.ClientId) > 1)
+                                n.Disconnect(false);
+                            else
+                            {
+                                try
+                                {
+                                    n.Broadcast("ping", false);
+                                }
+                                catch (Exception)
+                                {
+                                    n.Disconnect();
+                                }
+                            }
                         }
 
                     }

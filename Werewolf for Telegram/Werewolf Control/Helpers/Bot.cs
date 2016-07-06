@@ -50,7 +50,7 @@ namespace Werewolf_Control.Helpers
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         public static void Initialize()
         {
-            
+
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
@@ -91,7 +91,7 @@ namespace Werewolf_Control.Helpers
             Me = Api.GetMe().Result;
 
 
-            
+
             StartTime = DateTime.UtcNow;
             //now we can start receiving
             Api.StartReceiving();
@@ -140,15 +140,16 @@ namespace Werewolf_Control.Helpers
         }
 
         //TODO this needs to be an event as well
-        public static void Disconnect(this Node n)
+        public static void Disconnect(this Node n, bool notify = true)
         {
 #if DEBUG
             Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
 #endif
-            foreach (var g in n.Games)
-            {
-                Api.SendTextMessage(g.GroupId, $"Something went wrong, and this node has shut down.");
-            }
+            if (notify)
+                foreach (var g in n.Games)
+                {
+                    Api.SendTextMessage(g.GroupId, $"Something went wrong, and this node has shut down.");
+                }
             Nodes.Remove(n);
             n = null;
         }
