@@ -97,5 +97,55 @@ namespace Werewolf_Control
             Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
                 replyToMessageId: update.Message.MessageId, replyMarkup: menu);
         }
+
+
+        [Command(Trigger = "getidles", GroupAdminOnly = true)]
+        public static void GetIdles(Update update, string[] args)
+        {
+            //check user ids and such
+            List<int> ids = new List<int>();
+            foreach (var arg in args.Skip(1).FirstOrDefault()?.Split(' ')??new [] {""})
+            {
+                var id = 0;
+                if (int.TryParse(arg, out id))
+                {
+                    ids.Add(id);
+                }
+            }
+
+            //now check for mentions
+            foreach (var ent in update.Message.Entities.Where(x => x.Type == MessageEntityType.TextMention))
+            {
+                ids.Add(ent.User.Id);
+            }
+
+            //check for reply
+            if (update.Message.ReplyToMessage != null)
+                ids.Add(update.Message.ReplyToMessage.From.Id);
+
+            var reply = "";
+            //now get the idle kills
+            using (var db = new WWContext())
+            {
+                foreach (var id in ids)
+                {
+                    var idles = db.GetIdleKills24Hours(id).FirstOrDefault() ?? 0;
+                    //get the user
+                    ChatMember user = null;
+                    try
+                    {
+                        user = Bot.Api.GetChatMember(update.Message.Chat.Id, id).Result;
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+
+                    reply += $"{id} ({user?.User.FirstName}) has been idle killed {idles} time(s) in the past 24 hours\n";
+                }
+            }
+
+            Send(reply, update.Message.Chat.Id);
+        }
     }
 }
