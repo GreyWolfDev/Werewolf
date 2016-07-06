@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 
@@ -59,9 +60,8 @@ namespace Werewolf_Control
                         if (game?.GroupId != update.Message.Chat.Id)
                         {
                             //player is already in a game, and alive
-                            Send(
-                                GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                    game.ChatGroup), update.Message.Chat.Id);
+                            Send(GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                                    game.ChatGroup.ToBold()), update.Message.Chat.Id);
                             return;
                         }
                     }

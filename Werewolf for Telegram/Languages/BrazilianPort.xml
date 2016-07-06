@@ -2,22 +2,23 @@
 <!--
    Translated by / Traduzido por:
        Lucas Montuano (@montuano) e Guto Cristino (@guto_xtino)
+	   (Última edição: 02/07/2016 por @ayylimao)
 -->
 <strings>
   <language name="Português (Brasil)" base="Português" variant="Brasil"/>
   <string key="NotInGame">
     <value>Você não parece estar em um jogo agora...</value>
   </string>
-  <string key="PlayerStartedGame">
+  <string key="PlayerStartedGame" isgif="true">
     <value>{0} iniciou uma nova partida! Use /join para entrar na brincadeira.... e provavelmente ser morto :P</value>
     <value>Uma nova partida foi iniciada por {0}! Use /join para ser devorado(a)!</value>
   </string>
-  <string key="PlayerStartedChaosGame">
+  <string key="PlayerStartedChaosGame" isgif="true">
     <value>{0} deu a loka e começou um jogo caótico. Use /join para começar a diversão... e provavelmente morrer :P</value>
     <value>Um novo jogo caótico foi iniciado por {0}! Use /join para entrar nessa loucura!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>Você não pode entrar agora! O jogo já começou.</value>
+    <value>Você não pode entrar agora! O jogo já começou. Use /nextgame para receber uma mensagem no privado quando uma nova partida for iniciada!</value>
   </string>
   <string key="AlreadyJoined">
     <value>Você já está na partida!</value>
@@ -47,7 +48,7 @@
     <value>{0} se juntou à partida. {1} jogadores, {2} mínimo, {3} máximo</value>
   </string>
   <string key="PMTheBot">
-    <value>\n{0} por favor, me envie uma mensagem no privado (@{1}) com /start, pois você ainda não está registrado.  Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
+    <value>\n{0} por favor, me envie uma mensagem no privado ({1}) e clique start, pois você ainda não está registrado.  Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
   </string>
   <string key="DeadFlee">
     <value>Você não pode fugir! VOCÊ ESTÁ MORTO(A)!  Volte para sua cova....  zumbi</value>
@@ -206,13 +207,13 @@
     <value >Alguma coisa está cheirando mal, ninguém votou!  Ninguém será linchado hoje.....</value>
   </string>
   <string key="DetectiveEaten" >
-    <value >Os aldeões se reúnem durante a manhã, mas ninguém consegue achar {0} entre eles.  Eles correm para sua casa e então encontram {0} despedaçado, um enferrujado distintivo enfiado em sua goela. {0} Era o detetive!</value>
+    <value >Os aldeões se reúnem durante a manhã, mas ninguém consegue achar {0} entre eles.  Eles correm para sua casa e encontram {0} despedaçado, com um distintivo enferrujado enfiado em sua goela. {0} Era o detetive!</value>
   </string>
   <string key="GuardianEaten" >
     <value >A manhã chega e, para a surpresa de todos, empalado no topo da cruz da igreja estava o corpo de {0}, o(a) Anjo(a) da Guarda, sem vida.</value>
   </string>
   <string key="GunnerEaten" >
-    <value >Todos saem de casa e então encontram pedaços de uma espingarda despedaçada... em seguida pernas... em seguida dedos...  e flutuando no chafariz da praça, o corpo de {0}, morto(a) por lobisomens.  Vocês perderam sua atiradora.</value>
+    <value >Todos saem de casa e então encontram pedaços de uma espingarda despedaçada... em seguida pernas... então dedos...  e flutuando no chafariz da praça, o corpo de {0}, morto(a) por lobisomens.  Vocês perderam sua atiradora.</value>
   </string>
   <string key="SeerEaten" >
     <value >Os aldeões acordam ao amanhecer e encontram pedaços do que um dia foi {0} em cima de uma mesa de búzios e com cartas de tarô espalhadas pelo chão.  A Vidente está morta.</value>
@@ -241,11 +242,11 @@
   <string key="CursedBittenToWolves" >
     <value >{0} foi mordido(a)....  mas estava amaldiçoado(a) e se tornou um lobo! Parabéns pelo seu novo companheiro!</value>
   </string>
-  <string key="WolvesEatYou" >
+  <string key="WolvesEatYou" isgif="true" >
     <value >Ah não!  Os lobos te devoraram. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Ah não! {0} estava bêbado(a)!  Agora você está bebado(a) e não poderá atacar na próxima noite,..</value>
+    <value >Ah não! {0} estava bêbado(a)!  Agora você está bêbado(a) e não poderá atacar na próxima noite...</value>
   </string>
   <string key="GuardWolf" >
     <value >Você tentou proteger um lobo!  O lobo te devorou!</value>
@@ -295,17 +296,17 @@
   <string key="DefaultShot" >
     <value >De repente, um tiro é disparado.  Os aldeões se viram para ver {0} de pé em cima do corpo de {1}, com a arma ainda apontada para a cabeça e os miolos espalhados.  {2}.</value>
   </string>
-  <string key="WolfWins" >
+  <string key="WolfWins" isgif="true" >
     <value >O lobo venceu!</value>
   </string>
-  <string key="WolvesWin" >
+  <string key="WolvesWin" isgif="true" >
     <value >Os lobisomens venceram!</value>
   </string>
-  <string key="VillageWins" >
+  <string key="VillageWins" isgif="true" >
     <value >Os aldeões  venceram! Todos os lobos morreram....</value>
   </string>
-  <string key="TannerWins" >
-    <value >Ah não! Vocês lincharam o Suicida!  Ele venceu o jogo, suas antas!</value> 
+  <string key="TannerWins" isgif="true" >
+    <value >Ah não! Vocês lincharam o Suicida!  Ele venceu o jogo, suas antas!</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
@@ -331,7 +332,7 @@
   <string key="CultVisitEmpty">
     <value>{0} foi enviado(a) para fazer o trabalho sujo e converter {1}... mas ninguém estava em casa!</value>
   </string>
-  <string key="CultWins" >
+  <string key="CultWins" isgif="true">
     <value >Todos os lobos morreram e as únicas pessoas sobreviventes pertencem à seita..  A seita venceu! A SEITA QUE DÓI MENOS!</value>
   </string>
   <string key="HunterVisitDead">
@@ -422,7 +423,7 @@
     <value>Você é um Maçom.  Se houver outros maçons, você saberá quem são.  Caso contrário, você será um simples aldeão.\nLembre-se: Os maçons são membros da ALDEIA!</value>
   </string>
   <string key="MasonEaten">
-    <value>À medida que todos se levantam durante a manhã, um corpo é encontrado num templo local, com um esquadro, um compasso e uma estrela de cinco pontas à sua volta. Um dos maçons está morto.</value>
+    <value>À medida que todos se levantam durante a manhã, o corpo de {0} é encontrado num templo local, com um esquadro, um compasso e uma estrela de cinco pontas à sua volta. Um dos maçons está morto.</value>
   </string>
   <string key="MasonTeam">
     <value>  Os maçons são: {0}</value>
@@ -450,7 +451,7 @@
     <value>era</value>
   </string>
   <string key="GenericDeathNoReveal">
-    <value>A medida que todos se levantam e saem de casa durante a manhã, percebem a ausência de {0}...   Decidem então checar a sua casa e encontram o corpo sem vida de {0}.</value>
+    <value>À medida que todos se levantam e saem de casa durante a manhã, percebem a ausência de {0}... Quando checam sua casa, encontram seu corpo sem vida.</value>
   </string>
   <string key="MasonConverted">
     <value>Estranho.... {0} não apareceu no templo maçônico esta manhã.... O.o</value>
@@ -488,7 +489,7 @@
     <value>Não há nenhuma partida ativa no momento. Inicie um novo jogo normal com /startgame ou caótico com /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Somente um administrador(a) pode usar este comando. Remova o bot, adicione ele de volta, assim você se tornará administrador(a)</value>
+    <value>Somente um administrador(a) pode usar este comando.</value>
   </string>
   <string key="ShuttingDown">
     <value>Após este jogo, estarei desligando o bot brevemente para manutenção.</value>
@@ -497,7 +498,7 @@
     <value>Após este jogo, estarei desligando o bot brevemente para uma atualização (automatizada).</value>
   </string>
   <string key="NullIdAdmin">
-    <value>ID do usuário não encontrado.  Verifique se você enviou o comando como resposta</value>
+    <value>ID do usuário não encontrado.  Verifique se você enviou o comando como resposta.</value>
   </string>
   <string key="AlreadyAdmin">
     <value>{0} já é um(a) adminsitrador(a)!</value>
@@ -543,28 +544,28 @@
     <value>{0} saca seu revolver, e aponta para a multidão... Seus olhos de atirador tentam decidir quem ele vai levar com ele. Mas ele aceita seu fim, sozinho...</value>
   </string>
   <string key="HunterKilledFinalLynched">
-    <value>Com o nó em torno do pescoço, {0} saca seu revolver, e rápido como o bote de uma cobra, atira em {1}! "Hasta la vista, baby..." diz o caçador para {1} que cai duro no chão.  {2}</value>
+    <value>Com o nó em torno do pescoço, {0} saca seu revolver e, rápido como o bote de uma cobra, atira em {1}! "Hasta la vista, baby..." diz o caçador para {1} que cai duro no chão. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>A Atiradora te acertou! Com seu último suspiro, você pode levar alguém com você... Sejá rápido!</value>
+    <value>Você foi ferido mortalmente! Com seu último suspiro, você pode levar alguém com você... Sejá rápido!</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <value>O tiro em {0} foi certeiro, tanto que ele não conseguiu nem mesmo sacar sua arma, caindo duro no chão...</value>
+    <value>{0} recebeu um ferimento profundo, tanto que ele não conseguiu nem mesmo sacar sua arma, caindo duro no chão...</value>
   </string>
   <string key="HunterSkipChoiceShot">
-    <value>{0} calmo como se o sangue saindo de sua barriga não fosse nada, decide não dar seu utlimo tiro, aceitando seu destino...</value>
+    <value>{0}, calmo como se o sangue saindo de sua barriga não fosse nada, decide não dar seu último tiro, aceitando seu destino...</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>POW!! {0} cai no chão, com uma bala no peito... Mas antes de morrer, ele puxa sua pistola dá um tiro certeiro em {1}, que cai duro no chão, com um novo orifício na testa. {2}</value>
+    <value>{0} cai no chão, ferido mortalmente... Mas antes de morrer, ele puxa sua pistola e dá um tiro certeiro em {1}, que cai duro no chão, com um novo orifício na testa. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>{0} entra de fininho na casa de {1}. Assim que entra, ouve uma voz sinistra "Que os jogos começem"! {1} aparece derrepende com uma tesoura e começa a cortar {0} criando um lindo retalho para sua coleção. {0} está morta D:</value>
+    <value>{0} entra de fininho na casa de {1}. Assim que entra, ouve uma voz sinistra "Que os jogos começem"! {1} aparece de repente com uma tesoura e começa a cortar {0} criando um lindo retalho para sua coleção. {0} está morta D:</value>
   </string>
   <string key="HunterShotWolfMulti">
-    <value>POW! POW! POW! A aldeia ouve o pipoco a noite! Os lobos atacaram a pessoa errada, o caçador não iria embora sozinho, levou {0} junto com ele. (wolf)</value>
+    <value>POW! POW! POW! A aldeia ouve o pipoco a noite! Os lobos atacaram a pessoa errada, o caçador não iria embora sozinho, levou {0} (um lobo) junto com ele.</value>
   </string>
   <string key="HunterShotWolf">
-    <value>Os lobos tentaram atacar a pessoa errada a noite passada! O Caçador sabe se proteger muito bem e deixou um presentinho pra vila, o corpo de {0}!</value>
+    <value>O lobo tentou atacar a pessoa errada a noite passada! O Caçador sabe se proteger muito bem e deixou um presentinho pra vila, o corpo de {0}!</value>
   </string>
   <string key="SerialKillerKilledWolf">
     <value>Os lobos tentaram atacar a pessoa errada noite passada! {0} é econtrado sem sua pele pendurado na forca, quase dá pra sentir pena do lobo! O Assassino em Série ganhou um novo casaco de peles.</value>
@@ -573,7 +574,7 @@
     <value>Pareceu uma noite normal, mas onde está {0}? Os aldeões se reúnem na casa de {0}, e encontram seu corpo na banheira cheia de sangue com seus orgãos boiando... O Assassino em Série se divertiu essa noite... {1}</value>
   </string>
   <string key="GuardBlockedKiller">
-    <value>Você foi jogar um joginho com {0}. Mas chegando lá o Anjo Guardião acabou com sua diversão! Sem brincadeiras essa noite...</value>
+    <value>Você foi jogar um joguinho com {0}. Mas chegando lá o Anjo Guardião acabou com sua diversão! Sem brincadeiras essa noite...</value>
   </string>
   <string key="CultConvertHunter">
     <value>A Seita manda {0} para converter {1}. Chegando lá {0} é recebido com uma bala de três oitão bem no meio dos córneo! {0} tá morta...</value>
@@ -591,10 +592,10 @@
     <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
-    <value>O Doppelganger {0} agora se tornou um Maçon, assim como você!</value>
+    <value>O Doppelganger {0} agora se tornou um Maçom, assim como você!</value>
   </string>
   <string key="DGTransformToMason">
-    <value>{0} morreu, e você agora é um maçon.  Seus companheiros (se houver) são: {1}</value>
+    <value>{0} morreu, e você agora é um maçom.  Seus companheiros (se houver) são: {1}</value>
   </string>
   <string key="DGToCult">
     <value>O Doppelganger {0} se transformou em um membro da Seita. A Seita ele!</value>
@@ -608,14 +609,14 @@
   <string key="DGTransformToWolf">
     <value>{0} morreu, e você se transformou em um lobo, AUUUUU!!!  Seu novo bando é: {1}</value>
   </string>
-  <string key="SerialKillerWins">
-    <value>O unico sobrevivente foi o Assassino em Série! Ele se divertiu muito com essa brincadeirinha, porque não existe diversão melhor que vencer, em especial quando isso envolve matar todos vocês!</value>
+  <string key="SerialKillerWins" isgif="true">
+    <value>O único sobrevivente foi o Assassino em Série! Ele se divertiu muito com essa brincadeirinha, porque não existe diversão melhor que vencer, em especial quando isso envolve matar todos vocês!</value>
   </string>
   <string key="AskKill">
     <value>Quem você quer matar essa noite?</value>
   </string>
   <string key="LoverDied">
-    <value>{0} dá seu último suspiro olhando no fundo dos olhos de seu amado(a), {1} de joelhos, segurando seu corpo não aguenta a dor. Com uma faca, perfura o próprio coração... Eles ficaraõ juntos, mesmo no mundo dos mortos.{2}</value>
+    <value>{0} dá seu último suspiro olhando no fundo dos olhos de seu amado(a), {1}, que segura seu corpo de joelhos. {1} não aguenta a dor, e, com uma faca, perfura o próprio coração... Eles ficarão juntos, mesmo no mundo dos mortos. {2}</value>
   </string>
   <string key="AskDoppelganger">
     <value> Quem você escolherá para se transformar?</value>
@@ -624,7 +625,7 @@
     <value>Quem será o casal? Escolha o primeiro amante.</value>
   </string>
   <string key="AskCupid2">
-    <value>Quem será o casal? Escolha o segundo amante</value>
+    <value>Quem será o casal? Escolha o segundo amante.</value>
   </string>
   <string key="Hunter">
     <value>a Caçadora 🎯</value>
@@ -639,7 +640,7 @@
     <value>a Doppelgänger 🎭</value>
   </string>
   <string key="CupidChosen">
-    <value>A flecha do cupido acertou seu coração! Você está apaixonado por {0}!  Se ele(a) morre, você morre também. No final se ambos estiverem vivos, vocês vencem.</value>
+    <value>A flecha do cupido acertou seu coração! Você está apaixonado por {0}!  Se ele(a) morre, você morre também. No final, se ambos estiverem vivos, vocês vencem.</value>
   </string>
   <string key="NewWCRoleModel">
     <value>Você se tornou a Criança Rebelde.  Seu modelo exemplar é {0}</value>
@@ -647,28 +648,40 @@
   <string key="LoversWin">
     <value>Os amantes venceram! Queriam o que né? O Amor sempre vence!</value>
   </string>
+  <string key="HunterKilledVisiter">
+    <value>Quando acordam, vocês encontram {0} largado no meio da praça, parecendo uma peneira por causa dos tiros. Parece que alguém visitou o caçador e se deu mal! {1}</value>
+  </string>
+
+  <string key="CultAttempt">
+    <value>Alguém bateu na sua porta a noite, "Olá, você tem um minuto para ouvir a palavra da Seita?" Você fecha a porta na cara deles, sua fé é mais forte!</value>
+  </string>
   <string key="AlreadyOnWaitList">
     <value>Você já está na lista de espera para {0}</value>
   </string>
   <string key="AddedToWaitList">
-    <value>YVocê foi adicionado à lista de espera para {0}. Mandarei uma mensagem para você quando o próximo jogo começar.</value>
+    <value>Você foi adicionado à lista de espera para {0}. Mandarei uma mensagem para você quando o próximo jogo começar.</value>
   </string>
   <string key="NotifyNewGame">
     <value>Um novo jogo vai começar em {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
-    <value>A manã chega ao vilarejo, e somente duas pessoas estão de pé.  {0} olha para {1}, um sorriso sinistro abre em sua face, ele puxa a faca e brinca com {1}, que agora está morto.</value>
+    <value>A manhã chega ao vilarejo, e somente duas pessoas estão de pé. {0} olha para {1}, um sorriso sinistro abre em sua face, ele puxa a faca e brinca com {1}, que agora está morto.</value>
   </string>
   <string key="NoWinner" isgif="true">
     <value>Todos na aldeia morreram... Ninguém venceu essa partida... A não ser, talvez, os urubus.</value>
   </string>
   <string key="SKHunterEnd">
-    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima, sorridente de {1}, e o convida para uma brincadeira.  {1} rápido como o trovão saca sua arma e atira em {0}. {0}, com seu último sopro joga sua faca em {1}. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
+    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para uma brincadeira.  {1} rápido como o trovão saca sua arma e atira em {0}. {0}, com seu último suspiro, joga sua faca em {1}. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
   </string>
-  <string key="HunterKilledVisiter">
-    <value>Quando acordam, vocês encontram {0} largado no meio da praça, parecendo uma peneira por causa dos tiros. Parece que alguém visitou o caçador e se deu mau! {1}</value>
+    <string key="RoleModelChosen">
+    <value>Você não decidiu a tempo, então o bot escolheu por você: {0}</value>
   </string>
-  <string key="CultAttempt">
-    <value>Alguém bateu na sua porta a noite, "Olá, você tem um minuto para ouvir a palavra da Seita?" Você fecha a porta na cara deles, sua fé é mais forte!</value>
+  <string key="Won">
+
+    <value>Ganhou</value>
+  </string>
+  <string key="Lost">
+
+    <value>Perdeu</value>
   </string>
 </strings>

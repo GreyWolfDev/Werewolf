@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Esse é o Máfia vs Polícia v1.3, criado pelo @NoxCaelis, e traduzido para o Português por Dan (@vergonha) e Eric (@ericromeero). -->
+<strings>
+  <language name="Mafia Brazilian" base="Brazilian" variant="Mafia"/>
+  <string key="NotInGame">
+    <value>Você não parece estar em um jogo agora...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} começou uma partida! Use /join para jogar em Fairview, uma cidade dominada por mafiosos.</value>
+    <value>Uma partida foi iniciado por {0}! Use /join para entrar em ação!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} começou uma partida caótica! Use /join para jogar em Fairview, uma cidade dominada por mafiosos.</value>
+    <value>Uma nova partida chaos foi iniciada por {0}, que aparentemente está louco! Use /join para entrar em ação!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Você não pode entrar agora! O jogo já começou. Use /nextgame para receber uma mensagem no privado quando uma nova partida for iniciada!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Você já está na partida!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto restando para enviar o /join!</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} segundos restando para enviar o /join!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Quantidade mínima de jogadores não foi atingida, cancelando a partida... 😫</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>A partida está iniciando, por favor aguarde enquanto eu distribuo os papéis e atualizo o banco de dados. Bom jogo à todos! Que os melhores vençam...</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} está banido(a) por tentar explorar um erro. Não são permitidos nomes iniciados por /</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, por favor, mude seu nome para entrar na partida!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sinto muito, o número máximo de jogadores foi atingido!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} se juntou à partida. {1} jogadores, {2} mínimo, {3} máximo</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} por favor, me envie uma mensagem no privado (@{1}) com "/start", pois você ainda não está registrado. Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Você não pode fugir! Você já está fora da Cidade! Não há mais para onde fugir.</value>
+  </string>
+  <string key="Flee">
+    <value>{0} fugiu aterrorizado(a)!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} jogadores restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Ei, não te perguntei nada ainda!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Você não parece estar jogando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Eu não consegui encontrar um(a) jogador(a) com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Essa resposta não é válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} votou para prender {1}!</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} votou para exilar {1}!</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} não quis exilar ninguém duas vezes seguidas. Xuxa amaldiçoou {0}, que nunca mais foi encotrado na cidade... {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Hora de mostrar a quem você realmente é fiel! Agora é sua vez de pegar nas algemas e retirar os mafiosos da cidade!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Opção aceita!</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\n O seu "informante pessoal" é {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} foi preso! Você decidiu que é hora de substituí-lo. Você já o viu "extrair informações" várias e várias vezes. Você sabe como fazer isso.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>Devido ao sumiço de {1}, {0} assume seu lugar! Você fica muito feliz, e o promove ao posto de torturador!</value>
+  </string>
+  <string key="SeerSees">
+    <value>Depois de uma longa sessão, {0} confessa que é {1}! Bem, acho que ninguém vai sentir falta de um ou dois dedos dele, certo?</value>
+  </string>
+  <string key="AskLynch">
+    <value>Quem você deseja exilar da cidade?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Quem você deseja stalkear? Discretamente, claro.</value>
+  </string>
+  <string key="AskShoot">
+    <value>Quem você acha que tem um babado tão pesado, que será a capa do jornal e ainda será exilado da cidade? Se lembre que seu editor só te deu mais {0} chances!</value>
+  </string>
+  <string key="AskVisit">
+    <value>Então, quem irá receber suas encomendas de hoje?</value>
+  </string>
+  <string key="AskSee">
+    <value>De quem você deseja "extrair informações"? Se é que você me entende...</value>
+  </string>
+  <string key="AskGuard">
+    <value>Hora de fazer seu serviço! Você deseja proteger a casa de quem essa noite?</value>
+  </string>
+  <string key="AskEat">
+    <value>Está ná hora de prender esses mafiosos! Quem você deseja prender?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Quem você acha que está usando Jesus como laranja para desviar dinheiro da Santa Igreja?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Quem será seu parente dentro da cidade?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Quem você deseja tentar converter para o Lado Santo da Força? E trazê-lo para a Santa Igreja?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Não esqueça de dicutir com {0}!</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+<string key="RoleInfoCursed">
+    <value>Você está cansado da forma com que a máfia trata sua cidade, e quer sair dessa vida criminal. E é isso que fará caso um policial venha até você. A hora de se arrepender logo chegará, Arrependido 🙏!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Você sai todo dia atrás de alguém, seguindo seus passos para descobrir a quem é sua verdadeira lealdade. Mas tome cuidado, a polícia é esperta e pode te ver, eles tem 40% de chances de te descobrir! Hora de stalkear, Stalker 🏃!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Você tem muito poder, além de possuir ligações com a Máfia e com a polícia. Caso você morra, a cidade entrará em luto por uma noite. Político Corrupto 👔 é o que você é! Que vergonha, hein!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Ninguém melhor do que você para proteger as casas da cidade. Toda noite você pode escolher a casa de alguém para proteger, mas tome cuidado para não ir proteger a casa do policial, pois há 50% de chances de você ser preso. E claro, se você for no sequestrador, ele te sequestrará!. Hora do jogo, Segurança ⛑!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Você e sua câmera tem um grande poder: ao flagrar alguém em suas atividades, fará com que eles apareçam na capa do jornal da cidade, e, consequentemente, fugirão da cidade. Odiado por alguns, você é o Paparazzi 📸!</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Você pode conseguir o que te pedirem: armas, drogas, munição. Mas tome muito cuidado para não vender para a pessoa errada. Caso você tente vender mercadoria ilegal para um policial, você será preso, e, caso tente vender para o sequestrador, ele irá ficar com todas as suas armas, e também com a sua vida. Contrabandear é o seu hobby, Contrabandista 💎!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Você está infiltrado na Máfia! Todos pensam que você é um soldado leal, e estão certos, mas se enganam a quem pertence essa lealdade. Se todos os seus amigos policiais morrerem você vai mostrar a quem é realmente fiel, e tentará terminar o trabalho deles. Você é um Agente Duplo 🎎! Hora do show.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value> Você jurou que vai livrar a cidade dessa escória, e, toda noite, você tentará capturar um membro da Máfia. Mas tome cuidado para não tentar prender o sequestrador, ele é bom e com certeza irá te matar. Hora de prender mafiosos, Policial 👮!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Não importa o quão difícil seja para a pessoa falar, você sempre consegue fazer com que falem, com seus métodos nada sutis. Você é o Torturador 💉! Hora de torturar! MUAHAHAHA </value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>Você é fiel ao seu Padrinho da Máfia, e vai protegê-lo da polícia à todo custo. Seja bem vindo ao jogo, Soldado da Máfia 👲!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Quando desistirem de você, você também desistirá deles, e acionará sua bomba com o maior prazer. KABUM! Seja bem vindo ao jogo, Homem Bomba 💣!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Você nunca perde esperança na natureza humana, até que um de seus parentes seja morto. De fato, se isso acontecer, você entrará na polícia para erradicar o mal da cidade! Este é seu papel do jogo: você é o Justiceiro 💀!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Você tem um "conselheiro pessoal" para "extrair informações". Você é o Conselheiro 👥, mão direita do torturador! Este é o Torturador 💉!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Você nunca "extrai informações" sozinho, mas se o Tortudador 💉 sumir, você será o substituto! O jogo começou, Ajudante do Torturador ✂️!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Seja bem-vindo à Igreja Santa! Você deseja todos, mafiosos ou não, e gosta de adorar sua divindade acima de tudo. Agora, vá converter esse bando de gente incrédula! Mãos à obra, Fanático Religioso 😇!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Você foi informado pelo governo de que a Igreja está desviando recursos da cidade. Vá e dê um jeito nesses Fanáticos Religiosos 😇! O jogo já está rolando, Agente da Receita Fereral 💷!</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      A noite está chegando. Todos se reunem na praça central da cidade para escolher quem será exilado da cidade dessa vez.
+      Vocês tem {0} segundos para fazer suas escolhas!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >Amanheceu na Cidade. Vocês têm {0} segundos para fazer suas acusações / defesas / discutir.</value>
+  </string>
+  <string key="NightTime" >
+    <value >Caiu a noite. Todos vão dormir bastante cansados após mais um dia bem estressante.  Jogadores: vocês têm {0} segundos para utilizar suas ações!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >Os cidadãos votaram, em meio a dúvidas e suspeitas. {0} foi exilado! {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Os cidadãos ouvem um cara murmurar: "Porque não podemos nos unir?". A cidade se divide sobre quem será exilado, e como resultado, ninguém será exilado.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Algo está pegando mal na cidade, pois ninguém votou! Ninguém será exilado essa noite.</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: a polícia prendeu {0}, os dias de stalker dele acabaram. O Stalker 🏃 foi preso!</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e veem a BREAKING NEWS: {0} foi preso pela polícia, e agora ele só espera não ter de pegar o sabonete no chão do banheiro da prisão. Parece que o Segurança ⛑ que precisava de um segurança!</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: {0} foi pego espionando o vestiário dos policiais, o que será que ele procurava lá? O Paparazzi 📸 foi prezo pela polícia!</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: a polícia captura {0} por acusações de tortura e venda de órgãos. Parece que agora a máfia não poderá mais "extrair informações". O Torturador 💉 foi preso.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: a mulher do político corrupto foi encontrada morta em sua casa, {0} não gostou nem um pouco disso, e irá sair da cidade, mas colocará toda a polícia para gardar o funeral de sua mulher. Político Corrupto 👔 deixou a cidade.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: após muitas acusações {0} foi preso por difamação, calúnia, falso testemunho e por cada mentira já dita por ele. O Delator 📓 foi preso e não pode mais fazer delações premiadas.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: O jornal relata que {0} foi preso pela polícia por participar dos negócios da Máfia! {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Os cidadãos abrem o seu jornal de manhã e veem a BREAKING NEWS: Um membro da Santa igreja foi preso! {0} foi preso pelos Agentes da Receita Federal! Parece que os membros da igreja estão desviando dinheiro da Cidade. Este Fanático Religioso 😇 não usará mais o nome de Jesus em vão!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Uma noite calma paira sobre a cidade, sem nenhum sinal de batida policial ou sequestro. Algo não cheira bem...</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Os policiais bateram à sua porta essa noite, e você, cansado desta vida de mafioso, oferece-lhes sua colaboração para derrubar a máfia. Vocês são companheiros agora!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Seus companheiros agora são: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >Vocês fizeram uma batida para prender um mafioso, mas acabaram conseguindo um novo parceiro. {0} se arrependeu de seus dias de mafioso se juntou a policia para derrubar a Máfia!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="false" >
+    <value >Você está dormindo tranquilamente, mas de repente ouve o som de sua porta sendo arrombada, e se assusta quando ouve as vozes dizerem: "Polícia de Fairview, você está preso!".</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Eita, parece que o policial novato fez cagada, deixou a arma disparar e acertou a esposa do {0}. Amanhã à noite haverá um funeral e toda a força polícial deverá estar lá.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Você ouve uma voz: "Mãos para o alto, você está preso!". O que imaginou que aconteceria indo rondar a casa de um policial? Seu louco...</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Você salvou {0} dessa batida policial. Parece que um caminhão cheio de armas ajuda, não é mesmo?</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >Depois de uma longa noite sem nenhum movimento, a casa de {0} está segura, você entra no seu caminhão arsenal para ir para casa e tentar tirar um cochilo.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>{0} não estava em casa essa noite!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Os policiais vão a sua casa à noite, mas parece que eles ficaram assustados com o seu segurança os aguardando com um caminhão lotado de armas.</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: os policiais encontram na casa de {0} armas ilegais, drogas, dinheiro falso, parece ser mais que o suiciente para o prender, não é mesmo? O Contrabandista 💎 está preso!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >{0} Não estava em casa essa noite!</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >{0} era um policial! O que você estava pensando, ao tentar vender armas ilegais para um policial?</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: relatos indicam que {0} foi tentar vender armas ilegais para um policial. O Contrabandista 💎 foi preso, e suas armas também.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: os policiais estavam montando guarda na casa de {1}, aguardando {0} ir lá para finalizar a transação. Ambos são presos por posse ilegal de armas. </value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >A transação com {0} foi realizada com sucesso! Você volta pra casa com um caminhão mais leve e a carteira mais pesada.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >O contrabandista 💎 trouxe suas encomendas: um caminhão cheio de armas e diamantes. Você paga a quantia combinada e ambos seguem o seu caminho.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Você pega o {0} bisbilhotando os outros na delegacia de polícia. Ele é o Stalker 🏃!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Como um bom Stalker que você é, você descobre que {0} é {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Parece que {0} não gosta muito de quem vende armas ilegais nessa cidade. {0} escreve um artigo sobre {1}, que é rapidamente preso pela polícia.</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: {0} escreve uma reportagem com fotos comprometedoras de {1}! Ele ficou muito envergonhado e pegou o primeiro ônibus para fora de Fairview! {2}</value>
+  </string>
+  <string key="WolfWins" isgif="false" >
+    <value >O policial ganhou! Fairview está livre da máfias!</value>
+  </string>
+  <string key="WolvesWin" isgif="false" >
+    <value >Os policias ganharam! Fairview está livre da máfias!</value>
+  </string>
+  <string key="VillageWins" isgif="false" >
+    <value >A máfia ganhou! Nada de policia nessa cidade, aqui é território da máfia!</value>
+  </string>
+  <string key="TannerWins" isgif="false" >
+    <value >Ah nãooo! Vocês exilaram a pessoa errada! O Homem Bomba aciona o detonador que explode bombas por toda a cidade e claro, a si mesmo.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jogadores restantes, papéis e time:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0} votou para converter {1} para a Santa Igreja.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} foi à casa de {1} para convertê-lo a Santa Igreja oferecendo o plano de "evasão fiscal". Mas {0} é o Agente da Receita Federal e o prende por desvio de dinheiro.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} foi preso por tentar oferecer o plano de "evasão fiscal". Seu informante diz que há {1} membros da Santa Igreja.</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Bem-vindo à Santa Igreja! Esqueça a máfia, esta igreja irá ajudá-lo. Todas as noites, você tem a oportunidade de oferecer a mesma comunhão aos outros jogadores.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Membros da Igreja {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} é o mais novo membro da Igreja</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} foi enviado para a casa de {1} para convertê-lo a Igreja, mas não tinha ninguém em casa...</value>
+  </string>
+  <string key="CultWins" isgif="false">
+    <value >Nem máfia, nem polícia, Fairview agora é um refúgio para o membros da Santa Igreja!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Você tenta prender {0}, mas ele já está preso!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Você vai a casa do {0} no meio da noite, mas o encontra escondendo dinheiro dentro de bíblias. Você o prende imediatamente. </value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Você vai a casa do {0} no meio da noite, e depois de várias perguntas difíceis, você acredita que ele não está envolvido com a Santa Igreja e seu esquema. Imediatamente você vai embora.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>Seu parente {0} foi morto! E esse foi o estopim para você, você entra para força policial e agora vai erradicar o mal dessa cidade.</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} morreu. Determinado a se vingar, você convence o chefe de polícia e entra para a polícia. Os seus novos companheiros de equipe são: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>Soldado da Máfia 👲</value>
+  </string>
+  <string key="Drunk">
+    <value>Político Corrupto 👔</value>
+  </string>
+  <string key="Harlot">
+    <value>Contrabandista 💎</value>
+  </string>
+  <string key="Seer">
+    <value>Torturador 💉</value>
+  </string>
+  <string key="Traitor">
+    <value>Agente Duplo 🎎</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Segurança ⛑</value>
+  </string>
+  <string key="Detective">
+    <value>Stalker 🏃</value>
+  </string>
+  <string key="Wolf">
+    <value>Policial 👮</value>
+  </string>
+  <string key="Cursed">
+    <value>Arrependido 🙏</value>
+  </string>
+  <string key="Gunner">
+    <value>Paparazzi 📸</value>
+  </string>
+  <string key="Tanner">
+    <value>Homem Bomba 💣</value>
+  </string>
+  <string key="Fool">
+    <value>Delator 📓</value>
+  </string>
+  <string key="WildChild">
+    <value>Justiceiro  💀</value>
+  </string>
+  <string key="Beholder">
+    <value>Conselheiro 👥</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Ajudante de Torturador ✂️</value>
+  </string>
+  <string key="Cultist">
+    <value>Fanático Religioso 😇</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Agente da Receita Fereral 💷</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>🏃 Fugiu</value>
+  </string>
+  <string key="Dead">
+    <value>🚨 Preso</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Solto</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Jogadores soltos:</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Subchefe da Máfia 😎</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Você e seus companheiros são os únicos que sabem das reuniões da Elite da Máfia. Livre essa cidade desses policiais, e seja bem-vindo ao jogo, Subchefe da Máfia 😎.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: um dos Subchefes da Máfia 😎, {0}, é preso por participação criminosa juntamente à máfia.</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Os outros Subchefes que apareceram na reunião com o Poderoso Chefão são {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>{0} estava tentando converter um novo membro para a Igreja, mas ele percebe que uma batida policial estava acontecendo no local e vai embora.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>A polícia tenta invadir a casa de {0}, mas o arsenal do Segurança ⛑ está bloqueando o caminho. Os policiais não quiseram arriscar e recuaram.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} tenta converter {1} à Igreja, mas parece que a barganha da igreja não era tão boa assim.</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, um(a) jogador(a) com nome {0} já se juntou à partida.  Por favor mude seu nome para poder entrar no jogo.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Você vai entregar alguns documentos para {0}! Mas sua curiosidade é mais forte, e você abre o envelope. Havia uma carta do chefe da Santa Igreja!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+   <value> Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: parece que {0} foi visto deixando a cidade às pressas ontem à noite. Todos querem saber o que aconteceu. </value>
+   <value> Os cidadãos abrem o seu jornal de manhã e leem a BREAKING NEWS: parece que a cidade está em missão de busca para encontrar {0}, que não tem sido visto desde a noite passada. </value>
+  </string>
+  <string key="MasonConverted">
+    <value>Estranho, nem todos os seus companheiros apareceram na reunião com o Poderoso Chefão essa noite, onde {0} estava?</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Você tenta fugir da cidade, mas todas as pistas da cidade estão interditadas. O ADM do grupo fechou-as!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>está preso</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} foi adicionado(a) na lista de admins. Você pode agora usar /config para alterar as configurações do jogo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Você já está em uma partida! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Múltiplos jogos foram iniciados ao mesmo tempo. Fechando os extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Seu grupo está na fila. Posição: {0} de {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Desculpe, estou prestes a iniciar uma pequena pausa para manutenção, você não pode iniciar um jogo agora.\nEsperando {0} jogos terminarem...\nVá em @werewolfdev para mais informações (em inglês)</value>
+  </string>
+  <string key="MaxGames">
+    <value>Desculpe, o número máximo de jogos simultâneos foi atingido ({0}).  \nPosição na fila: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} é um grupo preferencial e pulou a fila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Não há nenhuma partida ativa no momento. Inicie um novo jogo normal com /startgame ou caótico com /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Somente um ADM do grupo pode executar esse comando. Remova o bot e o coloque de novo no grupo, depois o coloque como ADM</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Após este jogo, estarei desligando o bot brevemente para manutenção.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Após este jogo, estarei desligando o bot brevemente para uma atualização (automatizada).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>ID do usuário não encontrado. Verifique se você enviou o comando como resposta</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} já é um(a) adminsitrador(a)!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} não é um(a) administrador(a)!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} foi removido da lista de administradores.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Idioma alterado para {0}</value>
+  </string>
+  <string key="NoSeer">
+	<value>Não há torturador!</value>
+  </string>
+  <string key="TimesUp">
+	<value>Tempo esgotado!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Depois de muito tempo lendo em livros como amaldiçoar duas pessoas, você consegue finalmente preparar a poção! As duas pessoas selecionadas serão obrigadas a tomar a poção. Se um morrer, o outro morre também! Se uma fugir, a outra o acompanhará! Hora da ação, Bruxo 🕯!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sua linda máquina de clonagem chegou! Escolha algum RG para clonar. Depois que a pessoa portadora do RG sair da cidade, a identidade dela é sua! Seja bem-vindo ao jogo, Clonador de RG 📝!</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Você, apesar de ter um alto cargo na Máfia, dedurará o papel de uma outra pessoa quando for preso. Tudo para diminuir sua pena! Você é o Tesoureiro da Máfia 💷!</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sequestrando pessoas sem exigir resgate algum, você faz isso diariamente apenas para dar umas boas gargalhadas. Arraste alguém para o seu calabouço toda noite! Você adora esse jogo, não é, Sequestrador 💰?</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Alguém está brincando com os livros de feitiços, e você tirou a sorte grande, ou melhor, o azar, e agora você não consegue viver longe do amor bandido de {0}, e não há uma forma de quebrar esse feitiço.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>A cidade te exilou, quem você deseja expor em retaliação?</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} foi exilado e deixou a cidade. Em seu caminho para fora da cidade, ele deixa papéis de contabilidade espalhados pelo caminho, mas parece que esses papéis não incriminam ninguém</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} foi exilado e deixou a cidade. Em seu caminho para fora da cidade, você pensa em entregar alguém para não ir sozinho, mas parece que não têm coragem suficiente para fazer isso.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>{0} foi exilado e deixou a cidade. Em seu caminho para fora da cidade, ele deixa papéis de contabilidade espalhados pelo caminho, e eles apontam para {1}. {1} também deixou a cidade. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>O Paparazzi tem escrito e expôs suas fraudes! Antes de deixar a cidade, você tem tudo o que é preciso para derrubar alguém. Escolha, rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>O tesoureiro {0} foi exposto, mas ele deixou a cidade sem qualquer retaliação.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0} deixou a cidade em vergonha. Em seu caminho para fora da cidade, você pensa em entregar alguém para não ir sozinho, mas parece que não têm coragem suficiente para fazer isso.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>{0} deixou a cidade em vergonha. Em seu caminho para fora da cidade, ele deixa papéis de contabilidade espalhados pelo caminho, e eles apontam para {1}. {1} também deixou a cidade. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} foi enviado para tentar converter {1}, e não foi visto desde então! É como se ele tivesse sido sequestrado e desapareceu da face da terra!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>Os policiais tentam invadir a casa do tesoureiro da máfia, mas antes dele ser preso, um oficial caiu em um alçapão e tem que ser hospitalizado! {0} está incapacitado.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Os policiais tentam invadir a casa do tesoureiro da máfia, mas um oficial caiu em um alçapão e tem que ser hospitalizado! {0} está incapacitado.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>A polícia invadiu a casa errada na noite passada, e {0} não foi visto desde então! É como se ele tivesse desaparecido da face da terra! </value> 
+  </string>
+  <string key="DefaultKilled">
+    <value>Os cidadãos abrem o seu jornal de manhã e veem na página 8: o misterioso desaparecimento de {0}. O sequestrador leva outro para sua coleção, {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Você tenta sequestar {0} e adicioná-lo à sua coleção, mas você encontra o segurança com um grande Arsenal guardando a casa. Você repensa e decide recuar dessa vez.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>A Santa Igreja enviou {0} para a casa de {1}! Ao tocar a campainha {0} percebe que o chão se abriu, e ele caiu alçapão abaixo! {0} desapareceu...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>A Santa Igreja enviou {0} para a casa de {1}! {1} parecia estar colaborando até que empurra {0} porão abaixo! {0} foi seqüestrado!</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Você fica de guarda na frente da casa do sequestrador, mas você perde a consciência e a última coisa que se lembra é de sentir uma forte pancada na cabeça. Você foi seqüestrado!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Você foi a casa do {0} para entregar alguns produtos químicos, mas não percebe que ele chega sorrateiramente pelas suas costas com um lenço embebido com Cloroformio e tapa seu nariz com ele! Você entregou a mercadoria para o sequestrador, e agora você está desaparecido!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now!</value>
+  </string>
+  <string key="DGToMason">
+    <value>O Clonador de RG aparece no encontro com o padrinho! {0} é agora um Subchefe da Máfia!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} não está mais na cidade! Você começa a modificar o ID para ser recebido como um Subchefe da Máfia. Seus companheiros Subchefes da Máfia (se houver) são: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>O Clonador de RG aparece na reunião da Santa Igreja! {0} é o novo membro da igreja.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} não está mais na cidade! Você agora você tem um novo papel: servir à Deus fielmente. Seus amigos Fanáticos Religiosos (se houver) são: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>{0}, na brisa da manhã, agindo como um policial veterano. Parece que {0} é um novo membro da polícia!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} não está mais na cidade! Você começa outra carreira: a de policial. Os seus colegas policiais (se houver) são: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="false">
+    <value>Os cidadãos abrem o seu jornal de manhã e veem a BREAKING NEWS: Fairview abriu um museu de estátuas de ceras dos cidadãos que fugiram ou morreram! O sequestrador venceu!</value>
+  </string>
+  <string key="AskKill">
+    <value>Quem você deseja adicionar à sua coleção de pessoas sequestradas?</value>
+  </string>
+  <string key="LoverDied">
+    <value>Com o desaparecimento de {0}, parece que {1}, também amaldiçoado, desaparece misteriosamente. Eles se foram juntos, já que foram amaldiçoados pela tenebrosa Xuxa. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Você deseja clonar o RG de quem?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Quem será a primeira pessoa à ser amaldiçoada?</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Quem deve ser a segunda pessoa à ser amaldiçoada?</value>
+  </string>
+  <string key="Hunter">
+    <value>Tesoureiro da Máfia 💷</value>
+  </string>
+  <string key="Cupid">
+    <value>Bruxo 🕯</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Sequestrador 💰</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Clonador de RG 📝</value>
+  </string>
+  <string key="CupidChosen">
+    <value>A Bruxa lançou seu feitiço e agora você e {0} estão amaldiçoados para sempre. Quando você estiver no banho, ele estará lá. Quando você estiver no mercado, ele estará lá. Não importa onde você estiver, ELE ESTARÁ LÁ! HAHAHAHAHAHA!</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>À partir de agora você é o Justiceiro 💀. Seu parente é {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>Me parece que a maldição da Xuxa foi bem forte! Os Amaldiçoados venceram! Créditos à Xuxa, claro.</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>O jornal está nas bancas! {0} está perdido! Sua última mensagem dizia que ele estava indo para a casa do Tesoureiro da Máfia! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Um membro da Igreja Santa tentou te converter ao Lado Santo da Força, mas o seu próprio Lado da Força é mais forte, e você samba na cara do Fanático!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Você já está na lista de espera do grupo {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Você foi adicionado à lista de espera do grupo {0}. Eu te mandarei uma mensagem quando o próximo jogo for iniciado.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Uma nova partida começará em {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>A manhã chega, e restam dois cidadãos que vagam por aí. {0} dá uma olhanda em {1}, aparentemente murmurando sobre como o Calipso é uma banda boa. {0} chega sorrateiramente por trás de {1}, e o arrasta para o calabouço.</value>
+  </string>
+  <string key="NoWinner" isgif="false">
+    <value>A cidade perdeu todos os seus cidadãos, agora ainda mais estranha. Fairview é uma cidade fantasma...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Com o Sol nascendo, {0} e {1} andam em direção à praça da cidade.  {0} arrasta {1} para seu calabouço, mas {1} conseguiu derrubá-lo dentro também. Os som de um desmoronamento é o último som da cidade. Ninguém ganha...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>Você não fez sua escolha, então o moderador escolheu você: {0}</value>
+  </string>
+    <string key="Won">
+    <value>Ganhou!</value>
+  </string>
+  <string key="Lost">
+    <value>Perdeu.</value>
+  </string>
+</strings>

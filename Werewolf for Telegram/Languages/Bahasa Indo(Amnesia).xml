@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Expert mode by Saah (@ayylimao)! Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
+<strings>
+  <language name="Indonesia (Mode Amnesia)" base="Indonesia" variant="Amnesia Mode"/>
+  <string key="NotInGame">
+    <value>Kamu belum bergabung di permainan ini</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>📣【{0}】 telah memulai permainan (NORMAL)! Ketik /join untuk bergabung.</value>
+    <value>📣 Permainan (NORMAL) telah dimulai oleh 【{0}】! Ketik /join untuk bergabung.</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>📣【{0}】 telah memulai permainan (CHAOS)! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
+    <value>📣 Permainan (CHAOS) telah dimulai oleh 【{0}】! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Kamu terlambat! Permainan sedang berlangsung. Tunggu permainan selanjutnya ("`o´)-σ.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Kamu sudah ikut bermain! Jangan joan-join mulu! Bikin bingung aja! Peper upil nih (‾-ƪ‾)( ‾-‾)-σ••••</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 menit lagi untuk /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>【{0}】 detik lagi untuk /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Tidak cukup pemain! Permainan dibatalkan! panggil teman-temanmu \('o')-σ.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Permainan dimulai, silahkan tunggu. Sesuatu yang aneh terjadi di desa! Entah kenapa, semua orang tidak ingat siapa diri mereka sendiri.. (Peran tidak akan diberitahukan oleh Moderator!)</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>【{0}】 akun kamu terkena banned. (Mohon tidak memakai / di nama kamu).</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>【{0}】, mohon mengganti nama kamu untuk bergabung.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Maaf ya, kuota pemain maksimal (35 pemain) terpenuhi!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>【{0}】 bergabung. {1} pemain, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <value>【{0}】 Mohon PM bot (@{1}) kemudian ketik /start untuk bermain. Bot akan memberikan petunjuk permainan.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Tebar garam!! Ada zombie melarikan diri!! 👻</value>
+  </string>
+  <string key="Flee">
+    <value>【{0}】telah lari ketakutan! Sudah biasa PHP-in orang sepertinya. :(</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>【{0}】 adalah 【{1}】</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>【{0}】 pemain tersisa.</value>
+  </string>
+  <string key="DidntAsk">
+    <value> Kamu bahkan tidak tau siapa kamu sebenarnya, tapi kamu sudah ingin melakukan sesuatu? Sabar! Aku belum memintamu untuk 'bergerak'.</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Kamu tidak mengikuti permainan.</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Nama yang kamu pilih tidak ada.</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Jawaban kamu salah ("`▽´)-σ!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>【{0}】 memilih memakan 【{1}】</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>【{0}】 memilih 【{1}】 untuk dieksekusi.</value>
+  </string>
+  <string key="IdleKill">
+    <value>☠ 【{0}】 menghilang 2 malam berturut-turut. Dewa marah, bumi gonjang ganjing, langit terbelah, dan 【{0}】 mati kelilipan kapal. 
+	【{1}】</value>
+	<value>☠ 【{0}】 menghilang 2 malam berturut-turut. Warga panik sambil menunjuk sebuah piring terbang melintas di atas desa, 【{0}】 diculik Alien Tapir 👽. 
+	【{1}】</value>
+	<value>☠ 【{0}】 menghilang 2 malam berturut-turut. Dewa mengutuknya menjadi monster toilet WC dan mengacau desa. Warga dibuat resah, mereka marah dan memukul 【{0}】 hingga tewas.
+	【{1}】</value>
+	<value>☠ 【{0}】 menghilang 2 malam berturut-turut. Valak menghampirinya dan 【{0}】 disuruh mengerjakan deadline daripada main ww.
+	【{1}】</value>
+	</string>
+  <string key="TraitorTurnWolf">
+    <value>Peranmu telah berubah, tapi dari apa ke apa?</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Horeee! Pilihan diterima! UP,UP,UP! \('o' \) \('o')/ (/ 'o')/</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>Kamu mungkin tidak ingat kamu siapa, tapi kamu tau seseorang yang penting: 【{0}】</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>【{0}】 telah mati! Peranmu telah berubah, tapi dari apa ke apa?</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>Kamu mulai melupakan 【{1}】? Tunggu... Apa yang sedang kamu pikirkan? Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="SeerSees">
+    <value>Kamu mungkin tidak yakin siapa dirimu, paling tidak kamu tau kalau 【{0}】 adalah 【{1}】!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Siapa yang akan dieksekusi? 🔥</value>
+  </string>
+  <string key="AskDetect">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih? Sisa {0} lagi.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskSee">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskEat">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Kamu tau kamu harus melakukan sesuatu kepada seseorang, tapi siapa yang akan kamu pilih?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>Pastikan kamu berdiskusi dengan 【{0}】</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> dan </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di siang hari!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di siang hari!</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      Seluruh warga berkumpul di balai desa untuk memilih siapa yang akan dieksekusi, sebagian warga terlihat sibuk menyiapkan alat penyiksaan untuk malam ini.
+      Kalian mempunyai waktu selama {0} detik untuk memilih!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >☀️ Siang Hari. Matahari tepat di atas kepala. Warga desa mempunyai {0} detik untuk menuduh / membela diri / ngambek dituduh.. Pokoknya damai lho ya (╭￣3￣)╭</value>
+  </string>
+  <string key="NightTime" >
+    <value >🌙 Malam telah tiba, desa semakin sepi. Sebagian telah tertidur kelelahan, sebagian baper kangen mantan. Pemain malam hari, kalian punya {0} detik untuk menjalankan aksimu (ง•̀-•́)ง !</value>
+  </string>
+  <string key="LynchKill" >
+    <value >🔥 Warga desa mengambil keputusan bulat.
+		【{0}】 tewas dibakar massa. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】digantung oleh warga dan meronta sebelum akhirnya tewas. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】dilempari batu hingga tewas. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】dieksekusi penggal, kepalanya menggelinding ke tanah. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】dikelitikin oleh warga yang marah hingga tewas. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】cuma disuruh nyanyi balonku saja 🎈. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】dipaksa makan cabe rawit keriting 1 keranjang 🌶. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】memenangkan hadiah liburan ke Raja Ampat ✈️. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】disuruh untuk lulus kuliah tepat waktu 📖. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat. 
+		【{0}】ditelpon ortunya buat cepet nikah 🎎. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat.
+		【{0}】disuruh bersihin WC sampai ronde berakhir 💩. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat.
+		【{0}】disuruh menghadap dosen pembimbing besok pagi! 👹. {1}</value>
+	<value >🔥 Warga desa mengambil keputusan bulat.
+		【{0}】dimajukan deadlinenya hingga satu jam lagi ⏱. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Gagal mengambil keputusan bulat, warga pulang ke rumahnya masing-masing dengan frustasi, capedeee ┐(ˇ.ˇ")┌ ..</value>
+	<value >Warga gagal mengambil keputusan ┓(╯_╰")┏ , mereka pulang ke rumah masing-masing dengan tangan hampa .</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Mencurigakan, tidak ada yang memilih untuk digantung malam ini...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >🌤 Warga berkumpul di pagi hari dan tidak melihat keberadaan 【{0}】. 
+	Mereka ke rumah 【{0}】 dan melihat tubuh tercabik, kaca pembesar pecah, dan lencana detektif separuh keluar di tenggorokannya. Detektif telah mati 🕵.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >🌤 Pagi telah tiba, tidak percaya dengan apa yang mereka lihat. Sepasang sayap putih terjuntai di atas pohon jengkol. Tubuh 【{0}】 tergeletak, ia seorang Guardian Angel 👼.</value>
+	<value >🌤 Pagi telah tiba, Sepasang sayap putih berkibar di tiang bendera depan balai desa. Tubuh 【{0}】 tergeletak, ia seorang Guardian Angel 👼.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >🌤 Warga dikejutkan dengan ditemukannya potongan dari senapan.. Serta bercak darah segar ke arah sebuah gang sempit. Lalu ditemukan sebuah tubuh terkapar, terburai bekas gigitan serigala. 【{0}】 telah mati, kalian kehilangan seorang Gunner 🔫.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >🌤 Pagi telah tiba, bau menyan menyeruak dari sebuah rumah milik 【{0}】. Terkapar di atas buku mantera, sang penerawang (Seer) 👳 telah mati.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >🌤 KEBAKARAN DI PUB!! Warga berlarian memadamkan api, bau minuman keras membuat sebagian warga mabuk. Tubuh 【{0}】 ditemukan hangus, ia Drunk Si Pemabuk 🍻.</value>
+	<value >🌤 Sepertinya ada pesta semalam, warga menatap botol anggur berserakan di dalam Pub. Tubuh 【{0}】 ditemukan terjuntai di dalam tong anggur, ia Drunk Si Pemabuk 🍻.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >🌤 Pagi telah tiba, bau kemenyan menyeruak dari sebuah rumah milik 【{0}】. Terkapar di atas buku majalah judi togel, warga menatap FOOL telah mati 🃏.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>🌤 Mentari pagi dan semerbak bau pesing tercium di lumbung desa, namun bukan bau pipis belum disiram.. 【{0}】 mati mengenaskan dikerubuti lalat dengan isi perut terburai ke tanah, NOMNOMNOMNOM! {1}</value>
+	<value>🌤 Pagi ini warga dikejutkan dengan sebuah teriakan! 【{0}】 tergeletak di sebuah parit yang memerah dengan kondisi tanpa kepala, NOMNOMNOMNOM! Щ(ºДºщ) {1}</value>
+	<value>🌤 Pagi telah tiba, warga mengerumuni rumah yang porak poranda dan bercak darah di mana-mana. 【{0}】 terbujur di belakang rumah dengan kepala hampir terputus, NOMNOMNOMNOM! {1}</value>
+	<value>🌤 Pemandangan mengerikan!! Darah dan bagian organ tubuh berserakan di sepanjang jalan. 【{0}】 hanya tersisa sandal japitnya saja, NOMNOMNOMNOM! {1}</value>
+	<value>🌤 Beberapa garpu jerami tertancap di dada 【{0}】!! Bekas tungku barbeque dan sebuah gitar terlihat di dekat mayatnya, sepertinya ada yang berpesta semalam. NOMNOMNOMNOM! {1}</value>
+	<value>🌤 Sebuah piala dan kepala 【{0}】 ditemukan di depan gawang!! Skor 2-1, sepertinya para Serigala bertanding sepak bola semalam.. NOMNOMNOMNOM! {1}</value>
+	<value>🌤 Terdengar suara ribut di rumah 【{0}】 semalam!! Warga mengira Alien Tapir datang menyerang, ternyata ia dimakan Serigala.. NOMNOMNOMNOM! {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Bau aneh tercium dari rumah 【{0}】. Warga memeriksa ke dalam rumah dan menemukan altar pemujaan dan kerang raksasa terbelah dua. Seorang Cultist Pemuja Kerang Ajaib 👤 mati.</value>
+	<value>Ada yang mencurigakan di rumah【{0}】. Warga mengintip dari balik jendela dan menemukan sosok mayat di atas altar pemujaan. Seorang Cultist Pemuja Kerang Ajaib 👤 mati.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >🌤 Pagi telah tiba, Semua bernafas lega, tidak ada yang diserang semalam tadi.</value>
+	<value >🌤 Pagi telah tiba, Tidak ada yang diserang semalam tadi, namun mereka saling menatap curiga.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Peranmu telah berubah, tapi dari apa ke apa?</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{0}】</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >TIDAAK!! 🐺 Serigala telah memakanmu. NOMNOMNOMNOM (╬ Ò ‸ Ó)</value>
+	<value >Kamu mencoba menelepon polisi! Tersadar jaman itu belum ditemukan telepon. 🐺 Serigala telah memakanmu. NOMNOMNOMNOM ( ಠ ಠ ) </value>
+	<value >Kamu berlari menyelamatkan diri, sempat memberi perlawanan dengan jurus silat di padepokan, namun kamu kalah. 🐺 Serigala memakanmu. NOMNOMNOMNOM (ᗒᗣᗕ)՞</value>
+	<value >Kamu terlalu lelah dan tidak sadar ada yang masuk ke dalam kamarmu, 🐺 Serigala telah memakanmu. NOMNOMNOMNOM</value>
+	<value >Sepasang mata menyala di balik jendela, kamu mencoba bersembunyi di balik tempat tidur tapi mereka menemukanmu. 🐺 Serigala memakanmu. NOMNOMNOMNOM</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+     <value >Oh tidak! 【{0}】 adalah pemabuk! 🍻 Kamu berusaha pulang ke rumah dengan tergontai, sepertinya kamu harus istirahat besok malam ⋌༼ •̀ ⌂ •́ ༽⋋...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Kamu memilih untuk melindungi serigala, dan kamu pun mati. Di detik-detik akhir hidupmu, paling tidak kamu ingat kalau kamu adalah seorang Guardian Angel!</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Apa yang terjadi di rumah 【{0}】 tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >Apa yang terjadi di rumah 【{0}】 tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>【{0}】 ternyata tidak di rumah!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Apa yang terjadi tadi malam? Sepertinya kamu tidak ingat...</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >💋 Harlot terlalu lelah untuk ke rumah seseorang tadi malam, maka serigala yang berkunjung ke rumahnya. 【{0}】 mati.</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >【{0}】 ternyata tidak di rumah!</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >【{0}】 ternyata adalah serigala! Kamu telah dimakan. Di detik-detik akhir hidupmu, paling tidak kamu ingat kalau kamu adalah seorang Harlot!</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >【{0}】 salah masuk rumah!! Bukannya dapat enak, malah ketemunya di kandang ternak 🐷</value>
+    <value >Warga desa bergosip di hadapan mayat 【{0}】 yang salah masuk rumah! Seorang Harlot mati di kandang babi! 🐷</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >【{0}】 menyelinap ke rumah 【{1}】 untuk kelon enak 👄. Udah terlanjur pengen, eh malah 【{1}】 lagi dimamam Serigala! 【{0}】 udah balik arah mau lari, eh serigalanya nongol di depan dia..  
+	  【{0}】 mati deh.. kecian..</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >Apa yang terjadi di rumah 【{0}】 tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Apa yang terjadi tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Kamu merasa diawasi. Kamu melihat 【{0}】 mengikutimu. Ia adalah seorang Detektif.</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Kamu mungkin tidak yakin siapa dirimu, paling tidak kamu tau kalau 【{0}】 adalah 【{1}】!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Setelah ditolak untuk dipacari, 【{0}】 dendam kepada harlot! 💋 DOR!! 【{1}】 terkapar di tengah kerumunan warga.</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >DOR!! 💥 Warga menatap 【{0}】 🔫 berdiri di samping jasad 【{1}】 yang tergeletak, moncong senapan masih diarahkan ke kepalanya yang terburai. {2}.</value>
+	<value >DOR!! 💥 🔫 【{0}】 memeriksa jasad 【{1}】 yang tergeletak, warga hanya bisa melihat namun tidak ada yang berani mendekat. {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >🎉 ก็็็็็็็็็ᶘ•͡ᴥ•ᶅ ก้้ 🎉
+	SERIGALA TELAH MENANG!
+	AUUUUUUUUU!!! 🐺</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >🎉 ก็็็็็็็็็ᶘ•͡ᴥ•ᶅ ก้้ 🎉
+	KAWANAN SERIGALA MENANG!!!
+	AAAUUUUUUUU!! 🐺🐺</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >🎉 ⋛⋋( ˙Θ˙(˙Θ˙)˙Θ˙ )⋌⋚ 🎉
+	👱 WARGA DESA MENANG!
+	Semua Serigala telah mati.</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >🎉 ∠( ᐛ 」∠)＿ 🎉
+	WAKACAW!! Kalian terjebak telah menggantung Tanner si pembuat onar! 
+	TANNER MENANG! 👺.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Pemain Tersisa, Peran, dan Team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >【{0}】 memilih menghasut 【{1}】.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>【{0}】 diutus untuk menghasut 【{1}】. Dengan polosnya, ia baru sadar bahwa ternyata ia pemburu aliran sesat. 💂 【{0}】 telah mati!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>【{0}】ke rumahmu semalam membawa formulir pendaftaran dan presentasi 120 slide.. Nyengir dikit, kamu langsung menghunus tepat di dadanya.  Seorang Pemuja Kerang Ajaib mati.. {1} tersisa!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Peranmu telah berubah! Tapi dari apa ke apa?</value>
+  </string>
+  <string key="CultTeam">
+    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{0}】</value>
+  </string>
+  <string key="CultJoin">
+    <value>Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>【{0}】 pergi ke rumah 【{1}】, tapi dia sedang tidak di rumah!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >🎉 ~(˘з˘)~~(˘з˘)~~(˘з˘)~ 🎉
+	BIDIP BIDIP!! 👤
+	Semua serigala telah mati, Warga yang tersisa telah menjadi pemuja kerang ajaib!  
+	SEKTE PEMUJA KERANG AJAIB MENANG! 
+	ULULULULULU.. ~(˘з˘)~</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>【{0}】 sudah mati!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Apa yang terjadi di rumah 【{0}】 tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Apa yang terjadi di rumah 【{0}】 tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>【{0}】 telah mati! Peranmu telah berubah, tapi dari apa ke apa? Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{1}】.</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>Warga Desa 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Pemabuk 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Harlot 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Penerawang (Seer) 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Pengkhianat 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Guardian Angel 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Detektif 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Serigala 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Terkutuk (Cursed) 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Gunner 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Tanner 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Fool 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Wild Child 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Beholder 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Murid Penewarang (Apprentice Seer) 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Cultist 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Cultist Hunter 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Kabur</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Tewas</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Masih Hidup</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Pemain yang Masih Hidup</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Mason 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="MasonEaten">
+    <value>🌤 Pagi telah tiba, warga desa menemukan mayat 【{0}】 di tumpukan puing dan darah berceceran. Salah satu teman masonmu mati!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{0}】</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>【{0}】 sudah mati!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Apakah terjadi sesuatu di rumah 【{0}】 tadi malam? Tetapi, kamu tidak dapat mengingatnya...</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Kamu mengutus 【{0}】untuk mengajak 【{1}】 bergabung, tetapi tidak ingat apa yg terjadi disana
+	(☉_☉)</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>【@{1}】, Pemain dengan nama【{0}】sudah ada yang ikut main.  Ganti nama kamu ya.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tetapi setidaknya kamu mengetahui: 【{0}】 adalah seorang Cultist 👤!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>adalah</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Pagi telah tiba,【{0}】belum tanda tangan absensi harian. Warga ke rumah【{0}】dan melihat ia mati mengenaskan.</value>
+    <value>Pagi telah tiba, warga terkejut melihat jasad 【{0}】 di tengah jalan.</value>
+	<value>Warga berteriak, mereka menatap mayat【{0}】di bawah patung tanpa kepala.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Kamu mulai melupakan 【{0}】? Tunggu... Apa yang sedang kamu pikirkan?</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Kabur saat permainan berlangsung dianulir oleh Admin Grup!
+	(๑•̌.•̑๑)ˀ̣ˀ̣</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>tewas</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} ditambahkan di daftar admin. Gunakan /config untuk mengubah Grup Setting.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Kamu telah bergabung di permainan ini! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Grup ini mempunyai lebih dari 1 permainan, kami akan menganulir salah satunya.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Grup anda sedang dalam proses mengantre. Posisi: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Kami akan memulai maintenance, Anda tidak dapat memulai permainan untuk sementara. \nWaiting {0} games to end.\nGo Silakan ke @werewolfdev untuk informasi lainnya.</value>
+  </string>
+  <string key="MaxGames">
+    <value>Maaf, maximum permainan telah tercapai ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} adalah preferred group dan langsung mulai bermain!</value>
+  </string>
+  <string key="NoGame">
+    <value>Tidak ada permainan berlangsung.  Mulai permainan dengan /startgame atau mulai permainan chaos dengan /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Hanya Admin Grup yang dapat melakukan command. Hapus bot, lalu mengembalikannya kembali akan menjadikan kamu sebagai Admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Kami akan melakukan maintenance setelah permainan ini.
+	♪└|∵|┘♪</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Kami akan mematikan bot sementara untuk "Update" setelah permainan ini.
+	♪└|∵|┘♪</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId tidak tersedia. Sudahkan anda menggunakan sebagai reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} telah menjadi Admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} bukan seorang Admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} telah dihapus sebagai Admin.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Bahasa diubah menjadi {0}</value>
+  </string>
+  <string key="NoSeer">
+	<value>Seer tidak ditemukan!</value>
+  </string>
+  <string key="TimesUp">
+	<value>Jawabanmu terlambat!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya!</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Aneh... Kamu tidak ingat sama sekali siapa kamu sebenarnya! Yang jelas, kamu harus melakukan sesuatu di malam hari!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{0}】</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Warga desa memilih untuk mengeksekusimu! Inilah kesempatan terakhir untuk memilih siapa yang kamu bawa menemanimu ke akhirat!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>(30 Menit Sebelumnya)
+	【{0}】dikejar seluruh warga desa! Panik dengan keterbatasan waktu membuat senapannya terjatuh dan akhirnya ditangkap warga.
+	\(!!˚O˚)/ \(˚O˚!!)/</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>(30 Menit Sebelumnya)
+	【{0}】terperangkap! Ia menatap seluruh warga desa yang marah satu persatu. Tapi ia memilih menyerah, menerima nasibnya mati di tangan warga desa.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>(30 Menit Sebelumnya)
+	Seluruh warga desa mengejar【{0}】dan menemukannya terperangkap di salah satu rumah! Dengan sigap ia menatap satu per satu warga dan menembak【{1}】untuk membela diri! 
+	【{1}】terjatuh bersimbah darah, lalu mati. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Seseorang telah melukaimu! Kamu terjatuh ke tanah, namun masih punya kesempatan untuk menembak orang lain! CEPAT!!!
+	\(!!˚O˚)/ \(˚O˚!!)/</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>(Beberapa menit sebelumnya)🎯
+	Darah mengucur deras【{0}】membuat Hunter tak sadarkan diri! Terlambat, seorang hunter hanya diam pasrah meregang nyawa.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>(Beberapa menit sebelumnya)🎯
+	【{0}】terbujur di tanah dan berusaha untuk berpikir jernih! Dia menatap satu per satu warga namun memilih untuk tidak memilih, lalu mati dalam kesendiriannya.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>(Beberapa menit sebelumnya)🎯
+	【{0}】tertatih memegang dadanya yang penuh bercak darah lalu terjatuh ke tanah.... Dengan sisa hidupnya ia tersenyum mengarahkan senapannya ke arah kerumunan dan menembak【{1}】. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>【{0}】membawa formulir pendaftaran ke rumah【{1}】dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba【{1}】menghunus pisau berkali-kali ke dada dan perut【{0}】hingga mati</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>Kawanan Serigala menyerang Hunter 🎯, tetapi ia sempat menembak ke salah satu Serigala 🐺【{0}】tewas seketika!</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Serigala menyerang Hunter semalam, tetapi ia sempat menembak 🐺【{0}】</value>
+    <value>Terdengar suara ribut semalam, geraman Serigala dan suara letusan mengakhiri 🐺【{0}】!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>🐺 Serigala berusaha memakan seseorang tadi malam, tetapi malah bertemu dengan seorang maniak!!【{0}】tak sempat melarikan diri dan Bulunya Dikuliti Serial Killer 🔪!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Desa begitu tenang semalam, namun tidak bagi【{0}】!  
+	Warga menemukan mayat【{0}】terbujur dengan puluhan luka tusuk dan Kepala Terbelah! Ada yang Mencuri Otaknya semalam! 
+	Serial Killer telah kembali!! 🔪
+	{1}</value>
+	<value>Terdengar teriakan dari rumah【{0}】!  
+	Warga berlarian menuju arah suara membawa tombak, namun mereka menemukan【{0}】Wajahnya Dikuliti seseorang!!
+	Serial Killer telah kembali!! 🔪 
+	{1}</value>
+	<value>Pagi ini【{0}】terbangun dengan riang gembira!  
+	Membuka jendela dan menghirup udara segar, tersadar Dadanya Terbelah dan Jantungnya telah Hilang!【{0}】Tewas terlambat!!
+	Serial Killer Beraksi!! 🔪
+	{1}</value>
+	<value>【{0}】merintih meminta pertolongan!  
+	Warga menatap【{0}】menyeret tubuhnya, Kedua Matanya tercongkel dan punggung penuh luka tusuk!! Ia pun tewas kehabisan darah..
+	Serial Killer Beraksi!! 🔪
+	{1}</value>
+	<value>Pemabuk? Sepertinya bukan.. Warga menatap【{0}】tak sadar di depan Pub!  
+	Ternyata【{0}】tewas dan telinganya dicuri seseorang untuk menambah koleksinya!
+	Serial Killer Beraksi!! 🔪
+	{1}</value>
+	<value>Sepertinya ada yang tidak senang dengan【{0}】!  
+	Apakah ia terlalu berisik di grup atau terlalu diam, yang jelas【{0}】tewas ditusuk dengan Lidah terpotong!
+	Serial Killer Beraksi!! 🔪
+	{1}</value>
+	<value>KYAAAA!!! Serial Killer tengah beraksi menguliti kulit kepala【{0}】!  
+	Warga berhamburan membawa tombak dan obor, namun Serial Killer berhasil kabur terlebih dahulu!【{0}】tewas Botak Sebelah!
+	Serial Killer Beraksi!! 🔪
+	{1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Apa yang terjadi di rumah 【{0}】 tadi malam? Sepertinya kamu tidak ingat apapun...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>【{0}】membawa formulir pendaftaran ke rumah【{1}】dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba【{1}】menghunus pisau berkali-kali ke dada dan perut【{0}】hingga mati</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>【{0}】membawa formulir pendaftaran ke rumah【{1}】dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba【{1}】menghunus pisau berkali-kali ke dada dan perut【{0}】hingga mati</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Kamu mencoba melindungi Serial Killer 🔪. HIH... Dia malah keluar dengan tertawa dan menusukmu 89 kali!! Sayapmu telah dijadikan koleksi untuk hiasan kamarnya.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Perlahan kamu masuk ke rumah【{0}】berniat bobo-bobo ena sama dia, Semua terlihat baik baik saja sampai【{0}】keluarin pisau dan mulai menusukmu berkali kali sembari tertawa layaknya seorang Maniak!! Kamu mati dengan mengenaskan....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now!</value>
+  </string>
+  <string key="DGToMason">
+    <value>Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>【{0}】 telah mati! Peranmu telah berubah, tapi dari apa ke apa? Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{1}】.</value>
+  </string>
+  <string key="DGToCult">
+    <value>Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>【{0}】 telah mati! Peranmu telah berubah, tapi dari apa ke apa? Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{1}】.}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>Kamu mulai mengenal 【{0}】!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>【{0}】 telah mati! Peranmu telah berubah, tapi dari apa ke apa? Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: 【{1}】.</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>🎉 Seluruh penduduk desa telah mati dan menjadi koleksi di kamar Serial Killer !!!
+	Pembunuh Berantai Menang!! 🔪</value>
+  </string>
+  <string key="AskKill">
+    <value>Kamu seharusnya melakukan sesuatu dengan seseorang, tapi siapa yang kamu pilih?</value>
+  </string>
+  <string key="LoverDied">
+    <value>【{0}】mati di pelukan【{1}】. Ngga tahan ngejomblo lagi, dia milih bunuh diri.💔 {2}</value>
+	<value>【{0}】mati di pelukan【{1}】. Airmata menganak sungai di pipinya, ia meminum racun lalu mati.💔 {2}</value>
+	<value>【{0}】mati di pelukan【{1}】. Terlalu sedih untuk dijalani, ia meminta dewa mencabut nyawanya.💔 
+	(ˊ̥̥̥̥̥ ³ ˋ̥̥̥̥̥) {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Kamu seharusnya melakukan sesuatu dengan seseorang, tapi siapa yang kamu pilih?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Kamu seharusnya melakukan sesuatu dengan seseorang, tapi siapa yang kamu pilih?</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Kamu seharusnya melakukan sesuatu dengan seseorang, tapi siapa yang kamu pilih? Pilih 1 lagi!</value>
+  </string>
+  <string key="Hunter">
+    <value>the Hunter 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Cupid 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>the Serial Killer 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the Doppelgänger 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Kamu mungkin tidak ingat kamu siapa, tapi kamu tau seseorang yang penting: 【{0}】</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Peranmu telah berubah, tapi dari apa ke apa?  Kamu mungkin tidak ingat kamu siapa, tapi kamu tau seseorang yang penting: 【{0}】</value>
+  </string>
+  <string key="LoversWin">
+    <value>🎉 Cinta Sejati Selalu Bertahan!
+	Sepasang kekasih telah Menang! #LoveWins
+	(ɔ˘˘)˘˘c)❤️ </value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Seonggok mayat tersungkur di depan Balai Desa, mereka menatap【{0}】tewas dengan luka tembak di leher. Sepertinya ia berusaha masuk ke rumah seorang Hunter! {1}</value>
+    <value>Warga berkumpul di depan mayat【{0}】dengan luka tembak tepat di kepala! 
+	"Peringatan Bagi Siapa Saja yang Mengganggu Tidurku ---Hunter---!" {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Apakah terjadi sesuatu tadi malam? Kamu sepertinya tidak mengingatnya...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Kamu sudah terlebih dulu memesan panggilan, jangan bawel! Silakan menunggu! {0}
+	ಠ_ಠ</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk /join .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Permainan baru akan dimulai dalam {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Pagi telah tiba.
+	Hanya 2 orang tersisa,.
+	【{0}】menatap【{1}】sambil tertawa, koleksi terakhir berdiri di hadapannya.
+	Serial Killer memutilasinya hingga puluhan bagian! 🔪</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Seluruh penduduk desa telah tewas! Tidak ada yang tersisa kecuali mayat dan bau anyir. Tidak ada yang menang kali ini, kecuali burung kematian yang berpesta!</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>【{0}】menatap【{1}】sambil tertawa, ia berlari dan menusuk dadanya! 🔪
+	Saat itu juga moncong senapan sedang mengarah tepat di jidatnya 🎯. DOR!! 💥
+	Keduanya tersungkur, mereka tertawa sebelum mati.</value>
+  </string>
+  <string key="Won">
+    <value>Menang</value>
+  </string>
+  <string key="Lost">
+    <value>Kalah</value>
+</string>
+</strings>

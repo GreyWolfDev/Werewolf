@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
@@ -58,7 +59,7 @@ namespace Werewolf_Control
                         //player is already in a game, and alive
                         Send(
                             GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                game.ChatGroup), update.Message.Chat.Id);
+                                game.ChatGroup.ToBold() ), update.Message.Chat.Id);
                         return;
                     }
                 }
@@ -80,7 +81,7 @@ namespace Werewolf_Control
                     var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
                     foreach (var n in notify)
                     {
-                        var groupName = update.Message.Chat.Title;
+                        var groupName = update.Message.Chat.Title.ToBold();
                         if (update.Message.Chat.Username != null)
                             groupName += $" @{update.Message.Chat.Username}";
                         Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
@@ -121,7 +122,7 @@ namespace Werewolf_Control
             var values = strings.Descendants("value");
             var choice = Bot.R.Next(values.Count());
             var selected = values.ElementAt(choice);
-            return String.Format(selected.Value, args).Replace("\\n", Environment.NewLine);
+            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)

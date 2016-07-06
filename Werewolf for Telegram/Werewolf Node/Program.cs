@@ -9,6 +9,7 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using TcpFramework;
 using Telegram.Bot;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Models;
 
@@ -38,6 +39,25 @@ namespace Werewolf_Node
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         static void Main(string[] args)
         {
+            //set up exception logging.  It appears nodes are crashing and I'm not getting any output
+            AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
+            {
+                var ex = eventArgs.ExceptionObject as Exception;
+                using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\NodeFatalError.log"), true))
+                {
+                    
+                    sw.WriteLine($"{DateTime.Now} - {Version} - {ex.Message}");
+                    sw.WriteLine(ex.StackTrace);
+                    while (ex.InnerException != null)
+                    {
+                        ex = ex.InnerException;
+                        sw.WriteLine($"{ex.Message}");
+                        sw.WriteLine(ex.StackTrace);
+                    }
+                    sw.WriteLine("--------------------------------------------------------");
+                }
+            };
+
 
             //get api token from registry
             var key =
@@ -194,15 +214,15 @@ namespace Werewolf_Node
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true);
+                Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)
             {
-                Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true);
+                Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else
             {
-                Bot.SendTextMessage(id, message, disableWebPagePreview: true);
+                Bot.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
         }
 
@@ -257,7 +277,7 @@ namespace Werewolf_Node
             Connect();
             while (Running)
             {
-                if (IsShuttingDown && Games.Count == 0)
+                if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
                     Thread.Sleep(10000);
                     Running = false;
@@ -267,22 +287,28 @@ namespace Werewolf_Node
                 //monitor the tcp connection to keep it open
                 try
                 {
+                    if (Games == null)
+                    {
+                        //uhhhhhhhhh  ok.....
+                        continue;
+                    }
+                    var games = Games.ToList();
                     var info = new NodeInfo
                     {
                         Games = new HashSet<GameInfo>(),
                         ClientId = ClientId,
-                        CurrentGames = Games.Count,
-                        CurrentPlayers = Games.Sum(x => x.Players.Count),
+                        CurrentGames = games.Count,
+                        CurrentPlayers = games.Sum(x => x.Players.Count),
                         DuplicateGamesRemoved = DupGamesKilled,
                         ThreadCount = Process.GetCurrentProcess().Threads.Count,
                         TotalGames = GamesStarted,
-                        TotalPlayers = Games.Sum(x => x.Players.Count) + TotalPlayers,
+                        TotalPlayers = games.Sum(x => x.Players.Count) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
                         Version = Version.FileVersion,
                         ShuttingDown = IsShuttingDown
                     };
 
-                    foreach (var g in Games)
+                    foreach (var g in games)
                     {
                         var gi = new GameInfo
                         {

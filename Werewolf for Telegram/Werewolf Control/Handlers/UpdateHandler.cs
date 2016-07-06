@@ -26,14 +26,22 @@ namespace Werewolf_Control.Handler
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
+            new Task(() => { HandleUpdate(e.Update); }).Start();
+        }
+
+        internal static void HandleUpdate(Update update)
+        {
             {
                 Bot.MessagesReceived++;
 
+
+
                 //ignore previous messages
-                if ((e.Update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
+                if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
-                var update = e.Update;
+
                 var id = update.Message.Chat.Id;
+
 #if DEBUG
                 if (update.Message.Chat.Title != "Werewolf Beta Testing" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
                 {
@@ -76,8 +84,7 @@ namespace Werewolf_Control.Handler
                                 //check for the command
 
                                 #region More optimized code, but slow as hell
-                                /*
->>>>>>> a7441d7026626d52c1faa6849e40980ab92907c7
+                                
                                 var command = Bot.Commands.FirstOrDefault(
                                         x =>
                                             String.Equals(x.Trigger, args[0],
@@ -116,225 +123,234 @@ namespace Werewolf_Control.Handler
                                     Bot.CommandsReceived++;
                                     command.Method.Invoke(update, args);
                                 }
-<<<<<<< HEAD
-=======
-                                */
-                                Bot.CommandsReceived++;
-                                switch (args[0].ToLower())
-                                {
+                                
+                                //Bot.CommandsReceived++;
+                                //switch (args[0].ToLower())
+                                //{
 
-                                    #region Admin Commands
-                                    case "smite":
-                                        if (UpdateHelper.IsGroupAdmin(update))
-                                            Commands.Smite(update, args);
-                                        break;
-                                    case "config":
-                                        if (UpdateHelper.IsGroupAdmin(update))
-                                            Commands.Config(update, args);
-                                        break;
-                                    case "uploadlang":
-                                        using (var DB = new WWContext())
-                                        {
-                                            if (!DB.Admins.Any(x => x.UserId == update.Message.From.Id))
-                                            {
-                                                Send($"You aren't a global admin...", id);
-                                                return;
-                                            }
-                                        }
-                                        Commands.UploadLang(update, args);
-                                        break;
-                                    case "validatelangs":
-                                        using (var DB = new WWContext())
-                                        {
-                                            if (!DB.Admins.Any(x => x.UserId == update.Message.From.Id))
-                                            {
-                                                Send($"You aren't a global admin...", id);
-                                                return;
-                                            }
-                                        }
-                                        Commands.ValidateLangs(update, args);
-                                        break;
+                                //    #region Admin Commands
 
-                                    #endregion
-                                    #region Dev Commands
-                                    case "winchart":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.WinChart(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "learngif":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.LearnGif(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "update":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.Update(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "sendonline":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.SendOnline(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "replacenodes":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.ReplaceNodes(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "playtime":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.PlayTime(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "getroles":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.GetRoles(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    case "skipvote":
-                                        if (update.Message.From.Id == Para)
-                                        {
-                                            Commands.SkipVote(update, args);
-                                        }
-                                        else
-                                        {
-                                            Send("You aren't the developer...", id);
-                                        }
-                                        break;
-                                    #endregion
-                                    #region Game Commands
-                                    case "startgame":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        Commands.StartGame(update, args);
-                                        break;
-                                    case "startchaos":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        Commands.StartChaos(update, args);
-                                        break;
-                                    case "join":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        Commands.Join(update, args);
-                                        break;
-                                    case "forcestart":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        if (UpdateHelper.IsGroupAdmin(update))
-                                            Commands.ForceStart(update, args);
-                                        break;
-                                    case "players":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        Commands.Players(update, args);
-                                        break;
-                                    case "flee":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        Commands.Flee(update, args);
-                                        break;
-                                    #endregion
-                                    #region General Commands
-                                    case "stats":
-                                        Commands.GetStats(update, args);
-                                        break;
-                                    case "ping":
-                                        Commands.Ping(update, args);
-                                        break;
-                                    case "help":
-                                        Commands.Help(update, args);
-                                        break;
-                                    case "chatid":
-                                        Commands.ChatId(update, args);
-                                        break;
-                                    case "changelog":
-                                        Commands.ChangeLog(update, args);
-                                        break;
-                                    case "runinfo":
-                                        Commands.RunInfo(update, args);
-                                        break;
-                                    case "version":
-                                        Commands.Version(update, args);
-                                        break;
-                                    case "start":
-                                        Commands.Start(update, args);
-                                        break;
-                                    case "nextgame":
-                                        if (block) return;
-                                        if (update.Message.Chat.Type == ChatType.Private)
-                                        {
-                                            Send($"You must run this command in a group", id);
-                                            return;
-                                        }
-                                        Commands.NextGame(update, args);
-                                        break;
-                                    case "getlang":
-                                        Commands.GetLang(update, args);
-                                        break;
+                                //    case "smite":
+                                //        if (UpdateHelper.IsGroupAdmin(update))
+                                //            Commands.Smite(update, args);
+                                //        break;
+                                //    case "config":
+                                //        if (UpdateHelper.IsGroupAdmin(update))
+                                //            Commands.Config(update, args);
+                                //        break;
+                                //    case "uploadlang":
+                                //        using (var DB = new WWContext())
+                                //        {
+                                //            if (!DB.Admins.Any(x => x.UserId == update.Message.From.Id))
+                                //            {
+                                //                Send($"You aren't a global admin...", id);
+                                //                return;
+                                //            }
+                                //        }
+                                //        Commands.UploadLang(update, args);
+                                //        break;
+                                //    case "validatelangs":
+                                //        using (var DB = new WWContext())
+                                //        {
+                                //            if (!DB.Admins.Any(x => x.UserId == update.Message.From.Id))
+                                //            {
+                                //                Send($"You aren't a global admin...", id);
+                                //                return;
+                                //            }
+                                //        }
+                                //        Commands.ValidateLangs(update, args);
+                                //        break;
 
-                                        #endregion
-                                }
+                                //    #endregion
+                                //    #region Dev Commands
+                                //    case "winchart":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.WinChart(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "learngif":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.LearnGif(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "update":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.Update(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "sendonline":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.SendOnline(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "replacenodes":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.ReplaceNodes(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "playtime":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.PlayTime(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "getroles":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.GetRoles(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "skipvote":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.SkipVote(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    case "test":
+                                //        if (update.Message.From.Id == Para)
+                                //        {
+                                //            Commands.Test(update, args);
+                                //        }
+                                //        else
+                                //        {
+                                //            Send("You aren't the developer...", id);
+                                //        }
+                                //        break;
+                                //    #endregion
+                                //    #region Game Commands
+                                //    case "startgame":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        Commands.StartGame(update, args);
+                                //        break;
+                                //    case "startchaos":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        Commands.StartChaos(update, args);
+                                //        break;
+                                //    case "join":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        Commands.Join(update, args);
+                                //        break;
+                                //    case "forcestart":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        if (UpdateHelper.IsGroupAdmin(update))
+                                //            Commands.ForceStart(update, args);
+                                //        break;
+                                //    case "players":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        Commands.Players(update, args);
+                                //        break;
+                                //    case "flee":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        Commands.Flee(update, args);
+                                //        break;
+                                //    #endregion
+                                //    #region General Commands
+                                //    case "stats":
+                                //        Commands.GetStats(update, args);
+                                //        break;
+                                //    case "ping":
+                                //        Commands.Ping(update, args);
+                                //        break;
+                                //    case "help":
+                                //        Commands.Help(update, args);
+                                //        break;
+                                //    case "chatid":
+                                //        Commands.ChatId(update, args);
+                                //        break;
+                                //    case "changelog":
+                                //        Commands.ChangeLog(update, args);
+                                //        break;
+                                //    case "runinfo":
+                                //        Commands.RunInfo(update, args);
+                                //        break;
+                                //    case "version":
+                                //        Commands.Version(update, args);
+                                //        break;
+                                //    case "start":
+                                //        Commands.Start(update, args);
+                                //        break;
+                                //    case "nextgame":
+                                //        if (block) return;
+                                //        if (update.Message.Chat.Type == ChatType.Private)
+                                //        {
+                                //            Send($"You must run this command in a group", id);
+                                //            return;
+                                //        }
+                                //        Commands.NextGame(update, args);
+                                //        break;
+                                //    case "getlang":
+                                //        Commands.GetLang(update, args);
+                                //        break;
+
+                                //        #endregion
+                                //}
 
 
                                 #endregion
@@ -422,6 +438,8 @@ namespace Werewolf_Control.Handler
 #endif
             }
         }
+
+
         /// <summary>
         /// Gets the language for the group, defaulting to English
         /// </summary>
@@ -446,15 +464,19 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] {"vote", "getlang", "validate", "upload" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "upload" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
+        {
+            new Task(() => { HandleCallback(e.CallbackQuery); }).Start();
+        }
+
+        internal static void HandleCallback(CallbackQuery query)
         {
             using (var DB = new WWContext())
             {
                 try
                 {
-                    var query = e.CallbackQuery;
                     string[] args = query.Data.Split('|');
                     InlineKeyboardMarkup menu;
                     Group grp;
@@ -469,7 +491,7 @@ namespace Werewolf_Control.Handler
 
                     groupid = long.Parse(args[1]);
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate")
                         return;
                     var command = args[0];
                     var choice = "";
@@ -936,7 +958,7 @@ namespace Werewolf_Control.Handler
             var values = strings.Descendants("value");
             var choice = Bot.R.Next(values.Count());
             var selected = values.ElementAt(choice);
-            return String.Format(selected.Value, args).Replace("\\n", Environment.NewLine);
+            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)

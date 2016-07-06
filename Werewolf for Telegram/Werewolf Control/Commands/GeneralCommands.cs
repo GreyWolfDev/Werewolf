@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -20,7 +21,8 @@ namespace Werewolf_Control
         public static void Ping(Update update, string[] args)
         {
             var ts = DateTime.UtcNow - update.Message.Date;
-            Bot.Send($"Reply process time: {ts:ss\\.ff}", update.Message.Chat.Id);
+            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}\nCurrent CPU Usage: {Program.AvgCpuTime.ToString("F0")}%\n" +
+                     $"Messages per second: {Program.MessagePerSecond}", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "help")]
@@ -59,11 +61,11 @@ namespace Werewolf_Control
             var version = Program.GetVersion();
             try
             {
-                var nodeVersion =
-                    Bot.Nodes.ToList().FirstOrDefault(x => x.Games.Any(g => g.GroupId == update.Message.Chat.Id))?
-                        .Version;
-                version += !String.IsNullOrWhiteSpace(nodeVersion)
-                    ? $"\nNode Version: {nodeVersion}"
+                var node =
+                    Bot.Nodes.ToList().FirstOrDefault(x => x.Games.Any(g => g.GroupId == update.Message.Chat.Id));
+
+                version += !String.IsNullOrWhiteSpace(node?.Version)
+                    ? $"\nNode Version: {node?.Version}\nNode Id: {node?.ClientId}"
                     : "\nNode Version: You are not on a node right now (no game running in this group)";
             }
             catch
@@ -118,7 +120,7 @@ namespace Werewolf_Control
                             //player is already in a game, and alive
                             Send(
                                 GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                    game.ChatGroup), update.Message.Chat.Id);
+                                    game.ChatGroup.ToBold()), update.Message.Chat.Id);
                             return;
                         }
                     }
@@ -126,7 +128,7 @@ namespace Werewolf_Control
 
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
-                    Send(GetLocaleString("AlreadyOnWaitList", grp.Language, grp.Name),
+                    Send(GetLocaleString("AlreadyOnWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id);
                 }
                 else
@@ -134,7 +136,7 @@ namespace Werewolf_Control
                     db.Database.ExecuteSqlCommand(
                         $"INSERT INTO NotifyGame VALUES ({update.Message.From.Id}, {id})");
                     db.SaveChanges();
-                    Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name),
+                    Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id);
                 }
             }
@@ -152,6 +154,16 @@ namespace Werewolf_Control
                                                         ).ToList();
             glangs.Insert(0, "All");
 
+            foreach (var lang in glangs)
+            {
+                var test =
+                    $"getlang|-1001049529775|" + lang;
+                var count = Encoding.UTF8.GetByteCount(test);
+                if (count > 64)
+                {
+                    Send("Problem with " + lang + ": name is too long!", update.Message.Chat.Id);
+                }
+            }
             var gbuttons = glangs.Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.Chat.Id}|{x}")).ToList();
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < gbuttons.Count; i++)
@@ -166,18 +178,45 @@ namespace Werewolf_Control
             }
 
             var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Get which language file?", replyToMessageId: update.Message.MessageId, replyMarkup: gmenu);
+            try
+            {
+                var result =
+                    Bot.Api.SendTextMessage(update.Message.Chat.Id, "Get which language file?",
+                        replyToMessageId: update.Message.MessageId, replyMarkup: gmenu).Result;
+            }
+            catch (AggregateException e)
+            {
+                foreach (var ex in e.InnerExceptions)
+                {
+                    var x = ex as ApiRequestException;
+
+                    Send(x.Message, update.Message.Chat.Id);
+                }
+            }
+            catch (ApiRequestException ex)
+            {
+                Send(ex.Message, update.Message.Chat.Id);
+            }
         }
 
         [Command(Trigger = "stats")]
         public static void GetStats(Update update, string[] args)
         {
-            var reply = $"[Global Stats](werewolf.parawuff.com/Stats)\n";
+            //var reply = $"[Global Stats](werewolf.parawuff.com/Stats)\n";
+            //if (update.Message.Chat.Type != ChatType.Private)
+            //    reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
+            //reply += $"[Player Stats](werewolf.parawuff.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
+
+            //change this to buttons
+            var buttons = new List<InlineKeyboardButton[]>
+            {
+                new[] {new InlineKeyboardButton {Text = "Global Stats", Url = "http://werewolf.parawuff.com/Stats"}}
+            };
             if (update.Message.Chat.Type != ChatType.Private)
-                reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
-            reply += $"[Player Stats](werewolf.parawuff.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, reply, parseMode: ParseMode.Markdown,
-                disableWebPagePreview: true);
+                buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.Chat.Title} Stats", Url = "http://werewolf.parawuff.com/Stats/Group/" + update.Message.Chat.Id } });
+            buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.From.FirstName} Stats", Url = "http://werewolf.parawuff.com/Stats/Player/" + update.Message.From.Id } });
+            var menu = new InlineKeyboardMarkup(buttons.ToArray());
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Stats", replyMarkup: menu);
         }
     }
 }

@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
@@ -62,26 +63,26 @@ namespace Werewolf_Control.Helpers
             Api = new Client(TelegramAPIKey);
 
 
-            ////load the commands list
-            //foreach (var m in typeof(Commands).GetMethods())
-            //{
-            //    var c = new Command();
-            //    foreach (var a in m.GetCustomAttributes(true))
-            //    {
-            //        if (a is Attributes.Command)
-            //        {
-            //            var ca = a as Attributes.Command;
-            //            c.Blockable = ca.Blockable;
-            //            c.DevOnly = ca.DevOnly;
-            //            c.GlobalAdminOnly = ca.GlobalAdminOnly;
-            //            c.GroupAdminOnly = ca.GroupAdminOnly;
-            //            c.Trigger = ca.Trigger;
-            //            c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
-            //            c.InGroupOnly = ca.InGroupOnly;
-            //            Commands.Add(c);
-            //        }
-            //    }
-            //}
+            //load the commands list
+            foreach (var m in typeof(Commands).GetMethods())
+            {
+                var c = new Command();
+                foreach (var a in m.GetCustomAttributes(true))
+                {
+                    if (a is Attributes.Command)
+                    {
+                        var ca = a as Attributes.Command;
+                        c.Blockable = ca.Blockable;
+                        c.DevOnly = ca.DevOnly;
+                        c.GlobalAdminOnly = ca.GlobalAdminOnly;
+                        c.GroupAdminOnly = ca.GroupAdminOnly;
+                        c.Trigger = ca.Trigger;
+                        c.Method = (ChatCommandMethod)Delegate.CreateDelegate(typeof(ChatCommandMethod), m);
+                        c.InGroupOnly = ca.InGroupOnly;
+                        Commands.Add(c);
+                    }
+                }
+            }
 
 
             Api.UpdateReceived += UpdateHandler.UpdateReceived;
@@ -170,15 +171,15 @@ namespace Werewolf_Control.Helpers
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true);
+                Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)
             {
-                Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true);
+                Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else
             {
-                Api.SendTextMessage(id, message, disableWebPagePreview: true);
+                Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
 
         }

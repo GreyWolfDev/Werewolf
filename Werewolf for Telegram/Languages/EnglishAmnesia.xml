@@ -14,7 +14,7 @@
     <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>You can't join now! The game is already running.</value>
+    <value>You can't join now! The game is already running. Use /nextgame to be notified by PM the next time someone starts a game!</value>
   </string>
   <string key="AlreadyJoined">
     <value>You've already joined!</value>
@@ -44,7 +44,7 @@
     <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
-    <value>{0} click this: @{1}, then click start.  Until you do, you won't be able to play.</value>
+    <value>{0} click this: {1}, then click start.  Until you do, you won't be able to play.</value>
   </string>
   <string key="DeadFlee">
     <value>You can't run away! YOU'RE DEAD!  Get back in the ground....  jeez</value>
@@ -419,7 +419,7 @@
     <value>That's strange... you can't seem to remember who you are!</value>
   </string>
   <string key="MasonEaten">
-    <value>As everyone rises, they find a body shoved into a pile of stone, blood splattered everywhere.  One of your masons has died!</value>
+    <value>As everyone rises, they find the body of {0} shoved into a pile of stone, blood splattered everywhere. One of your masons has died!</value>
   </string>
   <string key="MasonTeam">
     <value>  You may not remember who you are, but you do remember someone important: {0}</value>
@@ -545,16 +545,16 @@
     <value>As the noose tightens around {0}'s neck, they whip out a pistol, arm it, take aim, and pull the trigger, shooting {1} as the floor drops out beneath them! {1} falls over, dead.  {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>The gunner has shot you! The fear of death makes you regain some clarity, and you know what to do...  This is your last chance, choose to shoot someone as you go down!</value>
+    <value>You've been murdered! The fear of death makes you regain some clarity, and you know what to do...  This is your last chance, choose to shoot someone as you go down!</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <value>The shot to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood.....</value>
+    <value>{0}'s wound was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
   </string>
   <string key="HunterSkipChoiceShot">
-    <value>As {0} lays there, gasping for their final breath, they can't decide who to shoot.... and accept their fate..</value>
+    <value>As {0} lays there, gasping for their final breath, they can't decide who to shoot... and accept their fate..</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>As the bullet pierces {0}, they fall to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+    <value>As {0} is deadly wounded, they fall to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} went to {1}'s house and is now dead!</value>
@@ -669,5 +669,14 @@
   </string>
   <string key="SKHunterEnd">
     <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the village is empty, there is no winner...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
   </string>
 </strings>

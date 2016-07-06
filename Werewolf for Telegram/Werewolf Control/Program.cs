@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Database;
+using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 
 namespace Werewolf_Control
@@ -17,8 +18,15 @@ namespace Werewolf_Control
     {
         internal static bool Running = true;
         private static bool _writingInfo = false;
+        internal static PerformanceCounter CpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        internal static float AvgCpuTime;
+        private static List<float> CpuTimes = new List<float>();
+        private static List<long> MessagesProcessed = new List<long>();
+        private static long _previousMessages;
+        internal static float MessagePerSecond;
         static void Main(string[] args)
         {
+#if !DEBUG
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
                 //drop the error to log file and exit
@@ -31,6 +39,7 @@ namespace Werewolf_Control
                         Environment.Exit(5);
                 }
             };
+#endif
             //get the version of the bot and set the window title
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
@@ -45,6 +54,8 @@ namespace Werewolf_Control
             //start up the bot
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
+            new Thread(CpuMonitor).Start();
+            new Thread(MessageMonitor).Start();
             //now pause the main thread to let everything else run
             Thread.Sleep(-1);
         }
@@ -67,6 +78,60 @@ namespace Werewolf_Control
                 Console.CursorTop = 19;
             Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
             Console.WriteLine(s);
+            try
+            {
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
+                {
+                    sw.WriteLine($"{DateTime.Now} - {s}");
+                }
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+
+        private static void MessageMonitor()
+        {
+            while (Running)
+            {
+                try
+                {
+                    var newMessages = Bot.MessagesReceived - _previousMessages;
+                    _previousMessages = Bot.MessagesReceived;
+                    MessagesProcessed.Insert(0, newMessages);
+                    if (MessagesProcessed.Count > 10)
+                        MessagesProcessed.RemoveAt(10);
+                    MessagePerSecond = (float)MessagesProcessed.Average()/10;
+                }
+                catch
+                {
+                    // ignored
+                }
+
+                Thread.Sleep(1000);
+            }
+        }
+
+        private static void CpuMonitor()
+        {
+            while (Running)
+            {
+                try
+                {
+                    CpuTimes.Insert(0, CpuCounter.NextValue());
+                    if (CpuTimes.Count > 10)
+                        CpuTimes.RemoveAt(10);
+                    AvgCpuTime = CpuTimes.Average();
+                    
+                }
+                catch
+                {
+                    // ignored
+                }
+
+                Thread.Sleep(250);
+            }
         }
 
         private static void NodeMonitor()
