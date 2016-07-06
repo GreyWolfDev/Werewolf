@@ -43,6 +43,7 @@ namespace Database
         public virtual DbSet<PlayerStat> PlayerStats { get; set; }
         public virtual DbSet<GroupStat> GroupStats { get; set; }
         public virtual DbSet<DailyCount> DailyCounts { get; set; }
+        public virtual DbSet<v_IdleKill24HoursMain> v_IdleKill24HoursMain { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {
@@ -148,6 +149,15 @@ namespace Database
         public virtual ObjectResult<getDailyCounts_Result> getDailyCounts()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getDailyCounts_Result>("getDailyCounts");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetIdleKills24Hours(Nullable<int> userid)
+        {
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetIdleKills24Hours", useridParameter);
         }
     }
 }

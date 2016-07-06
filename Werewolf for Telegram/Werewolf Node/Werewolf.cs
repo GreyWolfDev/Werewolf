@@ -1045,8 +1045,20 @@ namespace Werewolf_Node
                 {
                     p.NonVote++;
                     if (p.NonVote < 2) continue;
+                    var idles24 = 0;
+                    try
+                    {
+                        using (var db = new WWContext())
+                        {
+                            idles24 = db.GetIdleKills24Hours(p.Id).FirstOrDefault() ?? 0;
+                        }
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
                     SendWithQueue(GetLocaleString("IdleKill", p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
-
+                    SendWithQueue(GetLocaleString("IdleCount", p.GetName(), idles24));
                     //if hunter has died from AFK, too fucking bad....
                     p.IsDead = true;
                     p.TimeDied = DateTime.Now;

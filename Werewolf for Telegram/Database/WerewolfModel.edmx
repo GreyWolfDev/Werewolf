@@ -244,6 +244,16 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_IdleKill24HoursMain">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Idles" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+        </EntityType>
         <Association Name="FK_Action_Game">
           <End Role="Game" Type="Self.Game" Multiplicity="1" />
           <End Role="Action" Type="Self.Action" Multiplicity="*" />
@@ -377,6 +387,9 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           </ReferentialConstraint>
         </Association>
         <Function Name="getDailyCounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetIdleKills24Hours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
         <Function Name="getPlayTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="playerCount" Type="int" Mode="In" />
         </Function>
@@ -469,6 +482,13 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
     [v_WaitList].[Name] AS [Name], 
     [v_WaitList].[Expr1] AS [Expr1]
     FROM [db_owner].[v_WaitList] AS [v_WaitList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_IdleKill24HoursMain" EntityType="Self.v_IdleKill24HoursMain" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_IdleKill24HoursMain].[Idles] AS [Idles], 
+    [v_IdleKill24HoursMain].[Name] AS [Name], 
+    [v_IdleKill24HoursMain].[UserName] AS [UserName]
+    FROM [dbo].[v_IdleKill24HoursMain] AS [v_IdleKill24HoursMain]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Action_Game" Association="Self.FK_Action_Game">
             <End Role="Game" EntitySet="Game" />
@@ -893,6 +913,10 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           </FunctionImport>
           <EntitySet Name="DailyCounts" EntityType="werewolfModel.DailyCount" />
           <FunctionImport Name="getDailyCounts" ReturnType="Collection(werewolfModel.getDailyCounts_Result)" />
+          <EntitySet Name="v_IdleKill24HoursMain" EntityType="werewolfModel.v_IdleKill24HoursMain" />
+          <FunctionImport Name="GetIdleKills24Hours" ReturnType="Collection(Int32)">
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1063,6 +1087,14 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Type="Int32" Name="Groups" Nullable="true" />
           <Property Type="Int32" Name="players" Nullable="true" />
         </ComplexType>
+        <EntityType Name="v_IdleKill24HoursMain">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Idles" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1434,6 +1466,16 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="v_IdleKill24HoursMain">
+            <EntityTypeMapping TypeName="werewolfModel.v_IdleKill24HoursMain">
+              <MappingFragment StoreEntitySet="v_IdleKill24HoursMain">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Idles" ColumnName="Idles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetIdleKills24Hours" FunctionName="werewolfModel.Store.GetIdleKills24Hours" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
