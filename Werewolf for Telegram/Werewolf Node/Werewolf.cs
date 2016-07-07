@@ -2627,7 +2627,8 @@ namespace Werewolf_Node
                 }
                 if (game.TimeStarted != null)
                 {
-                    msg += "\n" + GetLocaleString("EndTime", (game.TimeEnded - game.TimeStarted));
+                    TimeSpan endGame = game.TimeEnded - game.TimeStarted;
+                    msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
                 Thread.Sleep(3000);
