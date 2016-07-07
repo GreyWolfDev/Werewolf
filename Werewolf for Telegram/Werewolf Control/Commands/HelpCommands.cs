@@ -23,7 +23,7 @@ namespace Werewolf_Control
             }
             try
             {
-                var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply, parseMode: ParseMode.Html).Result;
+                var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply, parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send("I have sent you a PM", update.Message.Chat.Id);
             }
