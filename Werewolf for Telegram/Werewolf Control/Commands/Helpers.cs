@@ -180,5 +180,17 @@ namespace Werewolf_Control
                 return grp?.Language ?? "English";
             }
         }
+
+        private static string GetLanguageName(string baseName)
+        {
+            var files = Directory.GetFiles(Bot.LanguageDirectory);
+            XDocument doc;
+            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == baseName);
+            {
+                doc = XDocument.Load(file);
+            }
+            var langNode = doc.Descendants("language").First();
+            return $"{langNode.Attribute("base").Value}"; // - {langNode.Attribute("variant").Value}
+        }
     }
 }

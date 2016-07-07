@@ -19,5 +19,7 @@ namespace Database
         public long GroupId { get; set; }
         public string Language { get; set; }
         public string UserName { get; set; }
+        public string Description { get; set; }
+        public string GroupLink { get; set; }
     }
 }

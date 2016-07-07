@@ -118,6 +118,8 @@
           <Property Name="DisableFlee" Type="bit" />
           <Property Name="CreatedBy" Type="nvarchar(max)" />
           <Property Name="ImageFile" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -233,6 +235,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="GroupId" Type="bigint" Nullable="false" />
           <Property Name="Language" Type="nvarchar(max)" />
           <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -474,7 +478,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [v_PreferredGroups].[Name] AS [Name], 
     [v_PreferredGroups].[GroupId] AS [GroupId], 
     [v_PreferredGroups].[Language] AS [Language], 
-    [v_PreferredGroups].[UserName] AS [UserName]
+    [v_PreferredGroups].[UserName] AS [UserName], 
+    [v_PreferredGroups].[Description] AS [Description], 
+    [v_PreferredGroups].[GroupLink] AS [GroupLink]
     FROM [db_owner].[v_PreferredGroups] AS [v_PreferredGroups]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_WaitList" EntityType="Self.v_WaitList" store:Type="Views" store:Schema="db_owner">
@@ -631,6 +637,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <NavigationProperty Name="Games" Relationship="Self.FK_Game_Group" FromRole="Group" ToRole="Game" />
           <NavigationProperty Name="Players" Relationship="Self.GroupAdmin" FromRole="Group" ToRole="Player" />
           <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -703,6 +711,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="GroupId" Type="Int64" Nullable="false" />
           <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="v_WaitList">
           <Key>
@@ -915,7 +925,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <FunctionImport Name="getDailyCounts" ReturnType="Collection(werewolfModel.getDailyCounts_Result)" />
           <EntitySet Name="v_IdleKill24HoursMain" EntityType="werewolfModel.v_IdleKill24HoursMain" />
           <FunctionImport Name="GetIdleKills24Hours" ReturnType="Collection(Int32)">
-            <Parameter Name="userid" Mode="In" Type="Int32" />
+          <Parameter Name="userid" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
@@ -1163,6 +1173,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1245,6 +1257,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="v_PreferredGroups">
             <EntityTypeMapping TypeName="werewolfModel.v_PreferredGroups">
               <MappingFragment StoreEntitySet="v_PreferredGroups">
+                <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="GroupId" ColumnName="GroupId" />

@@ -127,24 +127,12 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //test inline button thingy
-            //var button = new InlineKeyboardButton("Test") {Url = "tg-user://95890871"};
-            //Bot.Api.SendTextMessage(update.Message.Chat.Id, "<a href=\"tg-user://123732221\">Test</a>", parseMode: ParseMode.Html);
-            //var result = Bot.Api.SendTextMessage(update.Message.Chat.Id, "Test",
-            //    replyMarkup: new InlineKeyboardMarkup(new InlineKeyboardButton[] {button})).Result;
-            var name = "Pierre </b> *test* </b> (Ingress CloneMMDDCVII)".FormatHTML();
-            var reply = $"Test <a href=\"telegram.me/para949\">{name}</a>";
-            try
+            var reply = "";
+            using (var db = new WWContext())
             {
-
-                var result = Bot.Api.SendTextMessage(update.Message.Chat.Id, reply,
-                    parseMode: ParseMode.Html).Result;
+                reply = Enumerable.Aggregate(db.v_PreferredGroups, "", (current, g) => current + $"{GetLanguageName(g.Language)}{(String.IsNullOrEmpty(g.Description) ? "" : $" - {g.Description}")}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
             }
-            catch (AggregateException e)
-            {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.InnerExceptions[0].Message);
-            }
-            //{"BUTTON_URL_INVALID"}
+            Send(reply, update.Message.From.Id);
         }
     }
 }
