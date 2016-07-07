@@ -36,6 +36,7 @@ namespace Werewolf_Control
         public static void ChatId(Update update, string[] args)
         {
             Send(update.Message.Chat.Id.ToString(), update.Message.Chat.Id);
+            
         }
 
         [Command(Trigger = "changelog")]

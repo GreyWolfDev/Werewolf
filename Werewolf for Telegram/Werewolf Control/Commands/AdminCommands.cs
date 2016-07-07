@@ -66,17 +66,24 @@ namespace Werewolf_Control
         [Command(Trigger = "uploadlang", GlobalAdminOnly = true)]
         public static void UploadLang(Update update, string[] args)
         {
-            var id = update.Message.Chat.Id;
-            if (update.Message.ReplyToMessage?.Type != MessageType.DocumentMessage)
+            try
             {
-                Send("Please reply to the file with /uploadlang", id);
-                return;
+                var id = update.Message.Chat.Id;
+                if (update.Message.ReplyToMessage?.Type != MessageType.DocumentMessage)
+                {
+                    Send("Please reply to the file with /uploadlang", id);
+                    return;
+                }
+                var fileid = update.Message.ReplyToMessage.Document?.FileId;
+                if (fileid != null)
+                    LanguageHelper.UploadFile(fileid, id,
+                        update.Message.ReplyToMessage.Document.FileName,
+                        update.Message.MessageId);
             }
-            var fileid = update.Message.ReplyToMessage.Document?.FileId;
-            if (fileid != null)
-                LanguageHelper.UploadFile(fileid, id,
-                    update.Message.ReplyToMessage.Document.FileName,
-                    update.Message.MessageId);
+            catch (Exception e)
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+            }
         }
 
         [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]

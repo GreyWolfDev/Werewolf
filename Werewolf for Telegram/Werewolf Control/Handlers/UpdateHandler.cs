@@ -43,7 +43,7 @@ namespace Werewolf_Control.Handler
                 var id = update.Message.Chat.Id;
 
 #if DEBUG
-                if (update.Message.Chat.Title != "Werewolf Beta Testing" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
+                if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
                 {
                     try
                     {
