@@ -2628,9 +2628,9 @@ namespace Werewolf_Node
                                 (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}");
                         break;
                 }
-                if (game.TimeStarted != null)
+                if (game.TimeStarted.HasValue)
                 {
-                    TimeSpan endGame = game.TimeEnded - game.TimeStarted;
+                    var endGame = game.TimeEnded.Value - game.TimeStarted.Value;
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
