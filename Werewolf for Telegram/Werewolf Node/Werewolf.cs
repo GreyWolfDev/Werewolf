@@ -2313,6 +2313,10 @@ namespace Werewolf_Node
                             case IRole.Fool:
                             case IRole.Harlot:
                             case IRole.CultistHunter:
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                break;
                             case IRole.Seer:
                                 p.Team = ITeam.Village;
                                 p.HasNightAction = true;
