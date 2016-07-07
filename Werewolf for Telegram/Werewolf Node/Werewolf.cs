@@ -2881,8 +2881,6 @@ namespace Werewolf_Node
             {
                 try
                 {
-                    
-
                     var initid = initator.DBPlayerId;
                     if (initid == 0)
                     {
