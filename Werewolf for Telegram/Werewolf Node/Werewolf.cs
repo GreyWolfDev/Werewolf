@@ -1606,8 +1606,8 @@ namespace Werewolf_Node
                         DBKill(sk, skilled, KillMthd.SerialKilled);
                         if (DbGroup.ShowRoles != false)
                             SendWithQueue(GetLocaleString("DefaultKilled", skilled.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(skilled.PlayerRole)} {GetLocaleString("IsDead")}"));
-                        else
-                            SendWithQueue(GetLocaleString("GenericDeathNoReveal", skilled.GetName()));
+                        //else
+                        //    SendWithQueue(GetLocaleString("GenericDeathNoReveal", skilled.GetName()));
                         if (skilled.PlayerRole == IRole.Hunter)
                         {
                             HunterFinalShot(skilled, KillMthd.SerialKilled);
