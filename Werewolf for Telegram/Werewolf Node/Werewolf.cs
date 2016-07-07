@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -1058,6 +1058,7 @@ namespace Werewolf_Node
                         // ignored
                     }
                     SendWithQueue(GetLocaleString("IdleKill", p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n{GetLocaleString("IdleCount", p.GetName(), idles24 + 1)}"));
+                    Send(GetLocaleString("YouAreIdle"), p.Id);
 
                     //if hunter has died from AFK, too bad....
                     p.IsDead = true;
@@ -1103,6 +1104,7 @@ namespace Werewolf_Node
                     foreach (var pl in Players.Where(x => x.Choice == lynched.Id))
                     {
                         DBKill(pl, lynched, KillMthd.Lynch);
+                        Send(GetLocaleString("YouAreLynched"), lynched.Id);
                     }
                     //add the 'kill'
                     if (lynched.PlayerRole == IRole.Tanner)
@@ -1286,6 +1288,10 @@ namespace Werewolf_Node
                     gunner.Bullet--;
                     check.IsDead = true;
                     check.TimeDied = DateTime.Now;
+
+                    if (check.PlayerRole != IRole.Hunter) //hunter already gets HunterFinalShot
+                        Send(GetLocaleString("YouAreShot"), check.Id);
+
                     //update database
                     DBKill(gunner, check, KillMthd.Shoot);
                     DBAction(gunner, check, "Shoot");
@@ -1440,6 +1446,8 @@ namespace Werewolf_Node
                                             target.TimeDied = DateTime.Now;
                                             target.DiedFromWolf = true;
                                             DBKill(voteWolves, target, KillMthd.Eat);
+                                            SendGif(GetLocaleString("WolvesEatYou"),
+                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
                                             if (DbGroup.ShowRoles != false)
                                                 SendWithQueue(GetLocaleString("HarlotEaten", target.GetName()));
                                             else
@@ -1507,6 +1515,7 @@ namespace Werewolf_Node
                                             {
                                                 shotWuff.IsDead = true;
                                                 shotWuff.TimeDied = DateTime.Now;
+                                                Send(GetLocaleString("YouAreShot"), shotWuff.Id);
                                                 if (voteWolves.Count() > 1)
                                                 {
                                                     SendWithQueue(GetLocaleString("HunterShotWolfMulti", shotWuff.GetName()));
@@ -1548,6 +1557,7 @@ namespace Werewolf_Node
                                             shotWuff.IsDead = true;
                                             shotWuff.TimeDied = DateTime.Now;
                                             SendWithQueue(GetLocaleString("SerialKillerKilledWolf", shotWuff.GetName()));
+                                            Send(GetLocaleString("YouAreKilled"), shotWuff.Id);
                                             DBKill(target, shotWuff, KillMthd.SerialKilled);
                                         }
                                         else
@@ -1612,6 +1622,8 @@ namespace Werewolf_Node
                         {
                             HunterFinalShot(skilled, KillMthd.SerialKilled);
                         }
+                        else //don't want hunter to be notificated like that
+                            Send(GetLocaleString("YouAreKilled"), skilled.Id);
                     }
                 }
             }
@@ -1858,6 +1870,7 @@ namespace Werewolf_Node
                         hunter.DiedLastNight = true;
                         hunter.DiedFromKiller = true;
                         SendWithQueue(GetLocaleString("DefaultKilled", hunter.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(hunter.PlayerRole)} {GetLocaleString("IsDead")}"));
+                        Send(GetLocaleString("HunterWentToSK", hunted.GetName()), hunter.Id);
                     }
                     else
                     {
@@ -2972,6 +2985,8 @@ namespace Werewolf_Node
                         DBKill(victim, p, KillMthd.LoverDied);
                         p.IsDead = true;
                         p.TimeDied = DateTime.Now;
+                        if (p.PlayerRole != IRole.Hunter) //hunter already gets HunterFinalShot
+                            Send(GetLocaleString("YourLoverDied"), p.Id);
                     }
                     if (p?.PlayerRole == IRole.Hunter)
                     {
@@ -3010,7 +3025,6 @@ namespace Werewolf_Node
             hunter.IsDead = true;
             if (hunter.Choice == 0)
             {
-
                 Send(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()), ChatId);
             }
             else
@@ -3032,6 +3046,8 @@ namespace Werewolf_Node
                         CheckRoleChanges();
                         if (killed.PlayerRole == IRole.Hunter)
                             HunterFinalShot(killed, KillMthd.HunterShot);
+                        else
+                            Send(GetLocaleString("YouAreShot"), killed.Id);
                     }
                 }
             }
