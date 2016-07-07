@@ -1322,8 +1322,7 @@ namespace Werewolf_Node
             CheckRoleChanges();
         }
 
-        private void
-            NightCycle()
+        private void NightCycle()
         {
             if (!IsRunning) return;
             //FUN!
@@ -2882,7 +2881,7 @@ namespace Werewolf_Node
             {
                 try
                 {
-                    db.SaveChanges();
+                    
 
                     var initid = initator.DBPlayerId;
                     if (initid == 0)
@@ -2906,6 +2905,8 @@ namespace Werewolf_Node
                         Day = GameDay
                     };
                     db.Actions.Add(a);
+
+                    db.SaveChanges();
                 }
                 catch (Exception e)
                 {
