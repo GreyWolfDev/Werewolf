@@ -192,5 +192,17 @@ namespace Werewolf_Control
             var langNode = doc.Descendants("language").First();
             return $"{langNode.Attribute("base").Value}"; // - {langNode.Attribute("variant").Value}
         }
+
+        internal static string GetAbout(Update update, string[] args)
+        {
+            var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
+            var strings = efile.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+            if (strings == null)
+                return null;
+            var values = strings.Descendants("value");
+            var choice = Bot.R.Next(values.Count());
+            var selected = values.ElementAt(choice);
+            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+        }
     }
 }

@@ -2628,6 +2628,11 @@ namespace Werewolf_Node
                                 (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}");
                         break;
                 }
+                if (game.TimeStarted.HasValue)
+                {
+                    var endGame = game.TimeEnded.Value - game.TimeStarted.Value;
+                    msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
+                }
                 SendWithQueue(msg);
                 Thread.Sleep(3000);
                 Program.RemoveGame(this);
@@ -2881,8 +2886,6 @@ namespace Werewolf_Node
             {
                 try
                 {
-                    
-
                     var initid = initator.DBPlayerId;
                     if (initid == 0)
                     {

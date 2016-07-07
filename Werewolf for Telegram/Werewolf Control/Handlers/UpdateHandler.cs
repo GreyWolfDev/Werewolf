@@ -81,6 +81,14 @@ namespace Werewolf_Control.Handler
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
 
+                                if (args[0].StartsWith("about"))
+                                {
+                                    var reply = Commands.GetAbout(update, args);
+                                    if (reply != null)
+                                        Send(reply, update.Message.From.Id);
+                                    return;
+                                }
+
                                 //check for the command
 
                                 #region More optimized code, but slow as hell
