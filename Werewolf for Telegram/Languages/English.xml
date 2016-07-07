@@ -5,10 +5,12 @@
     <value>You don't appear to be in any games right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
     <value>{0} has started a game! use /join to get in on the fun.... and probably die :P</value>
     <value>A new game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
     <value>{0} has started a chaos game! use /join to get in on the fun.... and probably die :P</value>
     <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
   </string>
@@ -22,6 +24,7 @@
     <value>1 minute left to /join</value>
   </string>
   <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
     <value>{0} seconds left to /join</value>
   </string>
   <string key="NotEnoughPlayers">
@@ -31,30 +34,42 @@
     <value>Game is starting, please wait while I assign roles and update the database.</value>
   </string>
   <string key="BannedForExploit">
+    <!-- 0 - Player name -->
     <value>{0} is banned for attempting an exploit (no names starting with /)</value>
   </string>
   <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
     <value>{0}, please change your name to join</value>
   </string>
   <string key="PlayerLimitReached">
     <value>Sorry, max player limit has been reached!</value>
   </string>
   <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
     <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
     <value>{0} click this: @{1}, then click start.  Until you do, I cannot tell you what your role is.</value>
   </string>
   <string key="DeadFlee">
     <value>You can't run away! YOU'RE DEAD!  Get back in the ground....  jeez</value>
   </string>
   <string key="Flee">
+    <!-- 0 - Player name -->
     <value>{0} has fled in terror!</value>
   </string>
   <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
     <value>{0} was {1}</value>
   </string>
   <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
     <value>{0} players remain.</value>
   </string>
   <string key="DidntAsk">
@@ -70,12 +85,18 @@
     <value>This answer is not valid!</value>
   </string>
   <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
     <value>{0} has voted to eat {1}</value>
   </string>
   <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
     <value>{0} has voted to lynch {1}</value>
   </string>
   <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>{0} has not voted 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
@@ -85,15 +106,21 @@
     <value>Choice accepted</value>
   </string>
   <string key="BeholderSeer">
+    <!-- 0 - seer name -->
     <value>\nThe seer is {0}</value>
   </string>
   <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
     <value>{0} was the seer. As the apprentice, you step up to become the new seer.</value>
   </string>
   <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
     <value>{0} was an apprentice, and has now stepped up to fill {1}'s place as the new Seer.</value>
   </string>
   <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>You see {0} is {1}!</value>
   </string>
   <string key="AskLynch">
@@ -103,6 +130,7 @@
     <value>Who do you want to detect?</value>
   </string>
   <string key="AskShoot">
+    <!-- 0 - bullet count -->
     <value>Who do you want to shoot? {0} bullet(s) remain</value>
   </string>
   <string key="AskVisit">
@@ -126,10 +154,13 @@
   <string key="AskConvert">
     <value>Who do you want to convert to your order?</value>
   </string>
-  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
     <value>  Make sure you discuss with {0}</value>
   </string>
-  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> and </value>
   </string>
   <string key="RoleInfoCursed">
@@ -181,18 +212,22 @@
     <value >There is a cultist in the town, trying to convert everyone!  Each night, choose a player.  If they are a cultist, they die.  If the cult tries to convert you, the newest member dies.</value>
   </string>
   <string key="LynchTime" >
-    <value >
-      Dusk draws near, and the villagers gather to decide who they are lynching this evening...
+    <!-- 0 - number of seconds -->
+    <value>Dusk draws near, and the villagers gather to decide who they are lynching this evening...
       Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
+    <!-- 0 - number of seconds -->
     <value >It is now day time.  All of you have {0} seconds to make your accusations / defenses / talk.</value>
   </string>
   <string key="NightTime" >
+    <!-- 0 - number of seconds -->
     <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
   </string>
   <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value >The villagers have cast their votes, amid doubts and suspicions. {0} is dead. {1}</value>
   </string>
   <string key="LynchTie" >
@@ -202,27 +237,36 @@
     <value >Something is fishy, for no one voted!  No lynchmob tonight.....</value>
   </string>
   <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
     <value >The villagers gather in the morning, but do not see {0}.  They wander over to the house, to find {0} disemboweled, an old badge shoved down their throat.</value>
   </string>
   <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
     <value >Morning comes, and to everyone's dismay, impaled on top of the church's cross is {0}, the Guardian Angel.</value>
   </string>
   <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
     <value >As everyone comes out of their houses, the find pieces of a shotgun strewn about...  then legs.. then fingers..  then floating in the fountain in the town square, the body of {0}, dead from a werewolf.  You have lost your gunner.</value>
   </string>
   <string key="SeerEaten" >
+    <!-- 0 - victim name -->
     <value >The villagers awake in the morning, to find the disemboweled remains of {0} haunched over a ouija board and tarot cards.  The Seer is dead.</value>
   </string>
   <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
     <value >Everyone wakes to the smell of burning alcohol and wood...  the pub is on fire!!!!  After putting the fire out, the remains of {0} are found, torn apart....</value>
   </string>
   <string key="FoolEaten" >
+    <!-- 0 - victim name -->
     <value >As the sun rises above the village, they find {0} sitting over an ouija board, but with a deck of.... bicycle playing cards??? WHAT A FOOL!</value>
   </string>
   <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
     <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM {1}</value>
   </string>
   <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
     <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar...  a cultist has been killed by the hunter!</value>
   </string>
   <string key="NoAttack" >
@@ -232,57 +276,73 @@
     <value >You have been killed by the wolves.  As the cursed, you have now become a wolf!</value>
   </string>
   <string key="WolfTeam">
+    <!-- 0 - teammate names -->
     <value>Your wolf counterpart(s): {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
     <value >{0} was bitten....  but was cursed, and became a werewolf! Congrats on your new teammate!</value>
   </string>
   <string key="WolvesEatYou" isgif="true" >
     <value >Oh no!  The wolves eated you. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
     <value >Oh no! {0} was a drunk!  Now you are drunk, and can't attack tomorrow night..</value>
   </string>
   <string key="GuardWolf" >
     <value >You tried to guard a wolf!  The wolf has eaten you.</value>
   </string>
   <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
     <value >You have saved {0}'s life!</value>
   </string>
   <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
     <value >{0} was not attacked, so you didn't do much of anything.</value>
   </string>
   <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
     <value>You went to guard {0}, but they weren't home!</value>
   </string>
   <string key="GuardSavedYou" >
     <value >A guardian angel was watching over you last night, and fought off the wolves!</value>
   </string>
   <string key="HarlotEaten" >
+    <!-- 0 - player name -->
     <value >The harlot decided to take the wrong night off, and stayed home.  {0} has been eaten by the wolves!</value>
   </string>
   <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
     <value >Odd... {0} was not home!  No dinner for you...</value>
   </string>
   <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
     <value >You slip into {0}'s house for a little fun, only to be confronted by a wolf.  You are dead.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
     <value >{0} slipped into the wrong house last night! Their slutty remains are found pinned to the church doors with an iron rod...  how sad :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
     <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress.  However, they instead find a werewolf eating {1}!  The werewolf quickly turns on {0} and jumps....  {0} is dead.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
     <value >You see {0} is not wolf, as they fucked you good and hard all night long!</value>
   </string>
   <string key="HarlotVisitYou" >
     <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night you wake up, the harlot riding you.  Both of you finish up, then they slip back out silently...</value>
   </string>
   <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
     <value >You caught {0} snooping about! They are the detective</value>
   </string>
   <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
     <value >Your snooping has shown you that {0} is {1}</value>
   </string>
   <string key="HarlotShot" >
@@ -456,7 +516,8 @@
   <string key="FleeDisabled">
     <value>Fleeing while the game is running has been disabled by the group admin!</value>
   </string>
-  <string key="IsDead"> <!-- used when gunner shoots a player -->
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
     <value>is dead</value>
   </string>
 
@@ -510,10 +571,10 @@
     <value>Language set to {0}</value>
   </string>
   <string key="NoSeer">
-	<value>No seer!</value>
+    <value>No seer!</value>
   </string>
   <string key="TimesUp">
-	<value>Time's up!</value>
+    <value>Time's up!</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
@@ -681,7 +742,7 @@
   <string key="IdleCount">
     <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
   </string>
-<!--New strings 7th of July-->
+  <!--New strings 7th of July-->
   <string key="AboutVG">
     <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
   </string>
@@ -737,18 +798,24 @@
     <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
   </string>
   <string key="AboutDG">
-    <value>Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
-Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
-The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)</value>
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
   </string>
   <string key="AboutCupid">
-    <value>Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
-Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together</value>
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
   </string>
   <string key="AboutHunter">
-    <value>A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
-Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
-If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!</value>
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
   </string>
   <string key="AboutSK">
     <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
