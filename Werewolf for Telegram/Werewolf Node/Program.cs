@@ -279,6 +279,8 @@ namespace Werewolf_Node
             Connect();
             while (Running)
             {
+                var infoGathered = false;
+
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
                     Thread.Sleep(10000);
@@ -326,8 +328,9 @@ namespace Werewolf_Node
                         };
                         info.Games.Add(gi);
                     }
-
+                    
                     var json = JsonConvert.SerializeObject(info);
+                    infoGathered = true;
                     Client.WriteLine(json);
                 }
                 catch (Exception e)
@@ -335,20 +338,23 @@ namespace Werewolf_Node
                     while (e.InnerException != null)
                         e = e.InnerException;
                     Console.WriteLine($"Error in KeepAlive: {e.Message}\n{e.StackTrace}\n");
-                    if (Client != null)
+                    if (infoGathered) //only disconnect if tcp error
                     {
-                        try
+                        if (Client != null)
                         {
-                            Client.DataReceived -= ClientOnDataReceived;
-                            Client.DelimiterDataReceived -= ClientOnDelimiterDataReceived;
-                            Client.Disconnect();
+                            try
+                            {
+                                Client.DataReceived -= ClientOnDataReceived;
+                                Client.DelimiterDataReceived -= ClientOnDelimiterDataReceived;
+                                Client.Disconnect();
+                            }
+                            catch
+                            {
+                                // ignored
+                            }
                         }
-                        catch
-                        {
-                            // ignored
-                        }
+                        Connect();
                     }
-                    Connect();
                 }
                 Thread.Sleep(100);
             }
