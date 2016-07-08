@@ -300,11 +300,11 @@ namespace Werewolf_Node
                         Games = new HashSet<GameInfo>(),
                         ClientId = ClientId,
                         CurrentGames = games.Count,
-                        CurrentPlayers = games.Sum(x => x.Players.Count),
+                        CurrentPlayers = games.Sum(x => x.Players?.Count??0),
                         DuplicateGamesRemoved = DupGamesKilled,
                         ThreadCount = Process.GetCurrentProcess().Threads.Count,
                         TotalGames = GamesStarted,
-                        TotalPlayers = games.Sum(x => x.Players.Count) + TotalPlayers,
+                        TotalPlayers = games.Sum(x => x.Players?.Count ?? 0) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
                         Version = Version.FileVersion,
                         ShuttingDown = IsShuttingDown
@@ -319,7 +319,7 @@ namespace Werewolf_Node
                             GroupId = g.ChatId,
                             NodeId = ClientId,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id))
+                            Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)??new[] {0})
                         };
                         info.Games.Add(gi);
                     }
