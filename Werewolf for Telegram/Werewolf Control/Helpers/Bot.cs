@@ -148,8 +148,7 @@ namespace Werewolf_Control.Helpers
             if (notify)
                 foreach (var g in n.Games)
                 {
-                    
-                    Api.SendTextMessage(g.GroupId, $"Something went wrong, and this node has shut down.");
+                    Api.SendTextMessage(g.GroupId, UpdateHandler.GetLocaleString("NodeShutsDown",g.Language));
                 }
             Nodes.Remove(n);
             n = null;
