@@ -959,7 +959,7 @@ namespace Werewolf_Control.Handler
 
 
 
-        private static string GetLocaleString(string key, string language, params object[] args)
+        internal static string GetLocaleString(string key, string language, params object[] args)
         {
             var files = Directory.GetFiles(Bot.LanguageDirectory);
             XDocument doc;

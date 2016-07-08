@@ -38,28 +38,36 @@ namespace Werewolf_Node.Helpers
                     }
 
 
-
-                    var file = await Program.Bot.GetFile(id);
-                    var photoPath = file.FilePath;
-                    var fileName = photoPath.Substring(photoPath.LastIndexOf("/") + 1);
-                    //check that the file name is different
-                    if (p.ImageFile == fileName) 
-                        return; //same, no reason to download again
-
-                    var uri = $"https://api.telegram.org/file/bot{Program.APIToken}/{photoPath}";
-
-                    //write the new info to the database
-
-                    
-
-
-                    //now download the photo to the path
-                    using (var client = new WebClient())
+                    Telegram.Bot.Types.File file;
+                    try
                     {
-                        client.DownloadFile(new Uri(uri), ImagePath + fileName);
+                        file = await Program.Bot.GetFile(id);
+
+                        var photoPath = file.FilePath;
+                        var fileName = photoPath.Substring(photoPath.LastIndexOf("/") + 1);
+                        //check that the file name is different
+                        if (p.ImageFile == fileName)
+                            return; //same, no reason to download again
+
+                        var uri = $"https://api.telegram.org/file/bot{Program.APIToken}/{photoPath}";
+
+                        //write the new info to the database
+
+
+
+
+                        //now download the photo to the path
+                        using (var client = new WebClient())
+                        {
+                            client.DownloadFile(new Uri(uri), ImagePath + fileName);
+                        }
+                        p.ImageFile = fileName;
+                        db.SaveChanges();
                     }
-                    p.ImageFile = fileName;
-                    db.SaveChanges();
+                    catch
+                    {
+                        return;
+                    }
                 }
             }
         }
