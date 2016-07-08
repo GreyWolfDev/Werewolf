@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Database;
 using Microsoft.Win32;
 using Telegram.Bot;
@@ -33,6 +34,7 @@ namespace Werewolf_Control.Helpers
         public static long TotalPlayers = 0;
         public static long TotalGames = 0;
         public static Random R = new Random();
+        public static XDocument English;
 
         internal static string RootDirectory
         {
@@ -62,6 +64,7 @@ namespace Werewolf_Control.Helpers
 #endif
             Api = new Client(TelegramAPIKey);
 
+            English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //load the commands list
             foreach (var m in typeof(Commands).GetMethods())

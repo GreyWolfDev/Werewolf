@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using System.Xml.Linq;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using TcpFramework;
@@ -37,6 +38,7 @@ namespace Werewolf_Node
         internal static string APIToken;
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
+        internal static XDocument English;
         static void Main(string[] args)
         {
             //set up exception logging.  It appears nodes are crashing and I'm not getting any output
@@ -57,7 +59,7 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
-
+            English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //get api token from registry
             var key =

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
 using Werewolf_Control.Attributes;
@@ -131,6 +132,12 @@ namespace Werewolf_Control
                 reply = Enumerable.Aggregate(db.v_PreferredGroups, "", (current, g) => current + $"{GetLanguageName(g.Language)}{(String.IsNullOrEmpty(g.Description) ? "" : $" - {g.Description}")}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
             }
             Send(reply, update.Message.From.Id);
+        }
+
+        [Command(Trigger = "reloadenglish", DevOnly = true)]
+        public static void ReloadEnglish(Update update, string[] args)
+        {
+            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
     }
 }

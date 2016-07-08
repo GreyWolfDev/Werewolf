@@ -34,7 +34,7 @@ namespace Werewolf_Control
                 if (update.Message.Chat.Title == null)
                 {
                     //PM....  can't do that here
-                    Send("You must join a game from within a group chat!", id);
+                    Send(GetLocaleString("JoinFromGroup", GetLanguage(update.Message.From.Id)), id);
                     return;
                 }
                 var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);

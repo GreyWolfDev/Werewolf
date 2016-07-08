@@ -34,8 +34,7 @@ namespace Werewolf_Node
         public Group DbGroup;
         public bool Chaos;
         public int GameId;
-
-
+        
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
             try
@@ -199,11 +198,13 @@ namespace Werewolf_Node
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
                         {
-                            dbp = new Player { TelegramId = p.Id };
+                            dbp = new Player { TelegramId = p.Id, Language = Language};
                             db.Players.Add(dbp);
                         }
                         dbp.Name = p.Name;
                         dbp.UserName = p.TeleUser.Username;
+
+                        p.Language = dbp.Language;
 
                         var gamePlayer = new GamePlayer
                         {
@@ -2176,9 +2177,7 @@ namespace Werewolf_Node
             var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
             if (strings == null)
             {
-                //fallback to English
-                var file = XDocument.Load(Path.Combine(Program.LanguageDirectory, "English.xml"));
-                strings = file.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                strings = Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
             }
             var values = strings.Descendants("value");
             var choice = Program.R.Next(values.Count());

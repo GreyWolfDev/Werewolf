@@ -77,6 +77,7 @@ namespace Werewolf_Node.Models
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
 
+        public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;
 
         public int Id;

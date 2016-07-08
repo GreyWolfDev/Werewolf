@@ -24,10 +24,10 @@ namespace Werewolf_Control
 
         private static void StartGame(bool chaos, Update update)
         {
-            if (update.Message.Chat.Title == null)
+            if (update.Message.Chat.Type == ChatType.Private)
             {
                 //PM....  can't do that here
-                Bot.Send("You must start a game from within a group chat!", update.Message.Chat.Id);
+                Bot.Send(GetLocaleString("StartFromGroup", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
                 return;
             }
             Group grp;
@@ -59,7 +59,7 @@ namespace Werewolf_Control
                         //player is already in a game, and alive
                         Send(
                             GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                game.ChatGroup.ToBold() ), update.Message.Chat.Id);
+                                game.ChatGroup.ToBold()), update.Message.Chat.Id);
                         return;
                     }
                 }
@@ -95,7 +95,7 @@ namespace Werewolf_Control
             }
             else
             {
-                Send("There are no nodes online right now, please try again in a few seconds", update.Message.Chat.Id);
+                Send(GetLocaleString("NoNodes", grp.Language), update.Message.Chat.Id);
             }
         }
 
@@ -116,8 +116,8 @@ namespace Werewolf_Control
             if (strings == null)
             {
                 //fallback to English
-                var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
-                strings = efile.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                
+                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
             }
             var values = strings.Descendants("value");
             var choice = Bot.R.Next(values.Count());
@@ -172,16 +172,33 @@ namespace Werewolf_Control
         /// </summary>
         /// <param name="id">The ID of the group</param>
         /// <returns></returns>
-        private static string GetLanguage(long id)
+        public static string GetLanguage(long id)
         {
             using (var db = new WWContext())
             {
+                Player p = null;
                 var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
+                if (grp == null)
+                    p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                return grp?.Language ?? p?.Language ?? "English";
+            }
+        }
+
+        /// <summary>
+        /// Get language for a player
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static string GetLanguage(int id)
+        {
+            using (var db = new WWContext())
+            {
+                var grp = db.Players.FirstOrDefault(x => x.TelegramId == id);
                 return grp?.Language ?? "English";
             }
         }
 
-        private static string GetLanguageName(string baseName)
+        public static string GetLanguageName(string baseName)
         {
             var files = Directory.GetFiles(Bot.LanguageDirectory);
             XDocument doc;
@@ -195,8 +212,21 @@ namespace Werewolf_Control
 
         internal static string GetAbout(Update update, string[] args)
         {
-            var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
-            var strings = efile.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+            var language = GetLanguage(update.Message.From.Id);
+            var files = Directory.GetFiles(Bot.LanguageDirectory);
+            XDocument doc;
+            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+            {
+                doc = XDocument.Load(file);
+            }
+            var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+            if (strings == null)
+            {
+                var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
+                strings =
+                    efile.Descendants("string")
+                        .FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+            }
             if (strings == null)
                 return null;
             var values = strings.Descendants("value");

@@ -21,8 +21,7 @@ namespace Werewolf_Control
         public static void Ping(Update update, string[] args)
         {
             var ts = DateTime.UtcNow - update.Message.Date;
-            Bot.Send($"Reply process time: {ts:mm\\:ss\\.ff}\nCurrent CPU Usage: {Program.AvgCpuTime.ToString("F0")}%\n" +
-                     $"Messages per second: {Program.MessagePerSecond}", update.Message.Chat.Id);
+            Bot.Send(GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}", Program.AvgCpuTime.ToString("F0"), Program.MessagePerSecond), update.Message.Chat.Id);
         }
 
         [Command(Trigger = "help")]
@@ -36,7 +35,7 @@ namespace Werewolf_Control
         public static void ChatId(Update update, string[] args)
         {
             Send(update.Message.Chat.Id.ToString(), update.Message.Chat.Id);
-            
+
         }
 
         [Command(Trigger = "changelog")]
@@ -76,6 +75,91 @@ namespace Werewolf_Control
             Send(version, update.Message.Chat.Id);
         }
 
+        [Command(Trigger = "setlang")]
+        public static void SetLang(Update update, string[] args)
+        {
+            Player p = null;
+            using (var db = new WWContext())
+            {
+                p = db.Players.FirstOrDefault(x => x.TelegramId == update.Message.From.Id);
+
+                if (p == null)
+                {
+
+
+                    p = new Player
+                    {
+                        TelegramId = update.Message.From.Id,
+                        HasPM = update.Message.Chat.Type == ChatType.Private
+                    };
+                    db.Players.Add(p);
+
+
+                    p.UserName = update.Message.From.Username;
+                    p.Name = $"{update.Message.From.FirstName} {update.Message.From.LastName}".Trim();
+
+                    db.SaveChanges();
+                    //user obvious has no PM status, notify them
+                    if (p.HasPM != true)
+                    {
+                        Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                        return;
+                    }
+                }
+
+
+            }
+            //user wants to pick personal language
+            var langs =
+                                Directory.GetFiles(Bot.LanguageDirectory)
+                                    .Select(
+                                        x =>
+                                            new
+                                            {
+                                                Name =
+                                                        XDocument.Load(x)
+                                                            .Descendants("language")
+                                                            .First()
+                                                            .Attribute("name")
+                                                            .Value,
+                                                Base = XDocument.Load(x)
+                                                            .Descendants("language")
+                                                            .First()
+                                                            .Attribute("base")
+                                                            .Value,
+                                                Variant = XDocument.Load(x)
+                                                            .Descendants("language")
+                                                            .First()
+                                                            .Attribute("variant")
+                                                            .Value,
+                                                FileName = Path.GetFileNameWithoutExtension(x)
+                                            });
+
+
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+
+            var baseMenu = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                if (buttons.Count - 1 == i)
+                {
+                    baseMenu.Add(new[] { buttons[i] });
+                }
+                else
+                    baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                i++;
+            }
+
+            var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
+
+
+            var curLang = langs.First(x => x.FileName == (p.Language));
+            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", GetLanguage(update.Message.From.Id), curLang.Base),
+                replyMarkup: menu);
+            if (update.Message.Chat.Type != ChatType.Private)
+                Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+        }
+
         [Command(Trigger = "start")]
         public static void Start(Update update, string[] args)
         {
@@ -88,7 +172,7 @@ namespace Werewolf_Control
                         var p = GetDBPlayer(update.Message.From.Id, db);
                         p.HasPM = true;
                         db.SaveChanges();
-                        Bot.Send("PM Status set to true", update.Message.Chat.Id);
+                        Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                     }
                 }
             }
@@ -182,7 +266,7 @@ namespace Werewolf_Control
             try
             {
                 var result =
-                    Bot.Api.SendTextMessage(update.Message.Chat.Id, "Get which language file?",
+                    Bot.Api.SendTextMessage(update.Message.Chat.Id, GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
                         replyToMessageId: update.Message.MessageId, replyMarkup: gmenu).Result;
             }
             catch (AggregateException e)
