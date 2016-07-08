@@ -1229,7 +1229,7 @@ namespace Werewolf_Node
             var timeToAdd = Math.Max(((Players.Count(x => !x.IsDead) / 5) - 1) * 30, 60);
 
             SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
-            SendWithQueue("Day " + GameDay.ToBold());
+            SendWithQueue(GetLocaleString("Day", GameDay.ToBold()));
             SendDayActions();
             //incremental sleep time for large players....
             Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
