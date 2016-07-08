@@ -295,6 +295,7 @@ namespace Werewolf_Node
                         continue;
                     }
                     var games = Games.ToList();
+                    
                     var info = new NodeInfo
                     {
                         Games = new HashSet<GameInfo>(),
@@ -312,6 +313,8 @@ namespace Werewolf_Node
 
                     foreach (var g in games)
                     {
+                        if (g.Players == null)
+                            continue;
                         var gi = new GameInfo
                         {
                             Language = g.Language,
@@ -319,7 +322,7 @@ namespace Werewolf_Node
                             GroupId = g.ChatId,
                             NodeId = ClientId,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                            Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)??new[] {0})
+                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id))
                         };
                         info.Games.Add(gi);
                     }
