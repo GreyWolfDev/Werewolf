@@ -180,6 +180,11 @@ namespace Werewolf_Control
                 var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
                 if (grp == null)
                     p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (p != null && String.IsNullOrEmpty(p.Language))
+                {
+                    p.Language = "English";
+                    db.SaveChanges();
+                }
                 return grp?.Language ?? p?.Language ?? "English";
             }
         }
@@ -194,6 +199,11 @@ namespace Werewolf_Control
             using (var db = new WWContext())
             {
                 var grp = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (String.IsNullOrEmpty(grp?.Language) && grp != null)
+                {
+                    grp.Language = "English";
+                    db.SaveChanges();
+                }
                 return grp?.Language ?? "English";
             }
         }
