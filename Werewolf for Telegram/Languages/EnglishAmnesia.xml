@@ -1,32 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- Expert mode by Saah (@ayylimao)! Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
+<!-- Amnesia mode by Saah (@ayylimao)! Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? 
+Last update: 09/07/2016 by @ayylimao -->
 <strings>
   <language name="English (Amnesia Mode)" base="English" variant="Amnesia Mode"/>
   <string key="NotInGame">
-    <value>You don't appear to be in any games right now...</value>
+    <value>Did you forget? You're not in any games at the moment!</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} has started a game! use /join to get in on the fun.... and probably die :P</value>
-    <value>A new game has been started by {0}! Use /join to get eaten!</value>
+    <value>{0} has started a game! Use /join to have so much fun you'll even forget who you are!</value>
+    <value>A new game has been started by {0}! Use /join to get eaten by amnesiac wolves!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} has started a chaos game! use /join to get in on the fun.... and probably die :P</value>
-    <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
+    <value>{0} has started a chaos game! Use /join to take part in the confusion!</value>
+    <value>A new chaos game has been started by {0}! Use /join to get killed by accident!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>You can't join now! The game is already running. Use /nextgame to be notified by PM the next time someone starts a game!</value>
+    <value>You forgot to join while the game hadn't started yet! Use /nextgame and I'll notify you once a new game starts so you won't forget about it again!</value>
   </string>
   <string key="AlreadyJoined">
-    <value>You've already joined!</value>
+    <value>You've already joined, remember?</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join</value>
+    <value>1 minute left to /join, don't forget about it!</value>
   </string>
   <string key="SecondsLeftToJoin">
     <value>{0} seconds left to /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Not enough players, cancelling game!</value>
+    <value>Everyone forgot about this group... We didn't reach 5 players, cancelling game!</value>
   </string>
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database. Something strange is happening to the village! For some reason, no one can seem to remember who they are... (roles will not be revealed to their players!)</value>
@@ -38,22 +39,22 @@
     <value>{0}, please change your name to join</value>
   </string>
   <string key="PlayerLimitReached">
-    <value>Sorry, max player limit has been reached!</value>
+    <value>Sorry, max player limit has been reached! Remember to try again on the /nextgame!</value>
   </string>
   <string key="PlayerJoined">
     <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
-    <value>{0} click this: {1}, then click start.  Until you do, you won't be able to play.</value>
+    <value>{0}, you forgot to PM the bot first! Click this: {1}, then click start. Until you do, you won't be able to play.</value>
   </string>
   <string key="DeadFlee">
-    <value>You can't run away! YOU'RE DEAD!  Get back in the ground....  jeez</value>
+    <value>Did you even forget you're dead? Dead don't run away...</value>
   </string>
   <string key="Flee">
-    <value>{0} has fled in terror!</value>
+    <value>{0} forgot about his family and friends in the village and has fled in terror!</value>
   </string>
   <string key="PlayerRoleWas">
-    <value>{0} was {1}</value>
+    <value>{0} had forgotten, but was {1}</value>
   </string>
   <string key="CountPlayersRemain">
     <value>{0} players remain.</value>
@@ -62,10 +63,10 @@
     <value>You don't even know who you are but you already want to do something? Take a breath! I didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
-    <value>You don't seem to be playing...</value>
+    <value>Did you forget? You can't do that unless you're playing!</value>
   </string>
   <string key="NoPlayerName">
-    <value>I can't find a player by that name!</value>
+    <value>Looks like I've forgotten who you're talking about... I can't find a player by that name!</value>
   </string>
   <string key="AnswerNonValid">
     <value>This answer is not valid!</value>
@@ -77,7 +78,7 @@
     <value>{0} has voted to lynch {1}</value>
   </string>
   <string key="IdleKill">
-    <value>{0} has not voted 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
+    <value>{0} has forgotten to vote 2 nights in a row. Forgetting about this game is so bad that {0} forgot how to breathe too, and died. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>Your role changed, but from what, and to what?</value>
@@ -128,7 +129,7 @@
     <value>You know you should be doing something to someone, but who should you choose?</value>
   </string>
   <string key="DiscussWith"><!--Leave the leading spaces here please-->
-    <value>  Make sure you discuss with {0}</value>
+    <value>  Remember to discuss with {0}</value>
   </string>
   <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> and </value>
@@ -183,48 +184,48 @@
   </string>
   <string key="LynchTime" >
     <value >
-      Dusk draws near, and the villagers gather to decide who they are lynching this evening...
+      Dusk draws near, and the village gathers to decide who should... forget to breathe this time.
       Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
-    <value >It is now day time.  All of you have {0} seconds to make your accusations / defenses / talk.</value>
+    <value >It is now day time. All of you have {0} seconds to try and find out your role... And if you manage to, everyone else's!</value>
   </string>
   <string key="NightTime" >
-    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
+    <value >Night has fallen. Everyone heads to bed, hoping to wake up with all their memories. Night players: you have {0} seconds to use your actions!</value>
   </string>
   <string key="LynchKill" >
-    <value >The villagers have cast their votes, amid doubts and suspicions. {0} is dead. {1}</value>
+    <value >The villagers have cast their votes, hoping to have made the best choice even with so little information. {0} is dead. {1}</value>
   </string>
   <string key="LynchTie" >
     <value >Unable to come up with a proper decision on who to lynch, the mob returns to their homes for the night, frustrated...</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Something is fishy, for no one voted!  No lynchmob tonight.....</value>
+    <value >Looks like everyone forgot to vote! No lynchmob tonight...</value>
   </string>
   <string key="DetectiveEaten" >
-    <value >The villagers gather in the morning, but do not see {0}.  They wander over to the house, to find {0} disemboweled, an old badge shoved down their throat.</value>
+    <value >The villagers gather in the morning, but do not see {0}. They wander over to the house, only to find a disembowelled corpse. When searching for the culprit, they find an old and rusty badge strewn on the floor...</value>
   </string>
   <string key="GuardianEaten" >
-    <value >Morning comes, and to everyone's dismay, impaled on top of the church's cross is {0}, the Guardian Angel.</value>
+    <value >Morning comes, and, to everyone's dismay, there's a completely broken corpse near the church's door, its wings bent in unnatural directions. The face can still be recognized, though: {0} is dead.</value>
   </string>
   <string key="GunnerEaten" >
-    <value >As everyone comes out of their houses, the find pieces of a shotgun strewn about...  then legs.. then fingers..  then floating in the fountain in the town square, the body of {0}, dead from a werewolf.  You have lost your gunner.</value>
+    <value >As everyone comes out of their houses, they find pieces of a shotgun strewn about... then legs... then fingers... then floating in the fountain in the town square, the body of {0}, dead from a werewolf. You have lost your gunner.</value>
   </string>
   <string key="SeerEaten" >
-    <value >The villagers awake in the morning, to find the disemboweled remains of {0} haunched over a ouija board and tarot cards.  The Seer is dead.</value>
+    <value >The villagers awake in the morning, to find the disembowelled remains of {0} haunched over a ouija board and tarot cards. The Seer is dead.</value>
   </string>
   <string key="DrunkEaten" >
-    <value >Everyone wakes to the smell of burning alcohol and wood...  the pub is on fire!!!!  After putting the fire out, the remains of {0} are found, torn apart....</value>
+    <value >Everyone wakes to the smell of burning alcohol and wood... the pub is on fire! After putting the fire out, the remains of {0} are found, torn apart...</value>
   </string>
   <string key="FoolEaten" >
-    <value >As the sun rises above the village, they find {0} sitting over an ouija board, but with a deck of.... bicycle playing cards??? WHAT A FOOL!</value>
+    <value >As the sun rises above the village, they find {0} sitting over an ouija board, but with a deck of... memory game cards? What a strange combination...</value>
   </string>
   <string key="DefaultEaten" >
-    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM {1}</value>
+    <value>As everyone rises in the morning, they smell a terrible stink. They follow the smell to find {0} shredded apart in the pig pen, head missing. After investigating the now-vacant house to find out something about the culprit, the village finally realizes that {1}</value>
   </string>
   <string key="HunterKilledCultist">
-    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar...  a cultist has been killed by the hunter!</value>
+    <value>A noticeable stench is coming from {0}'s house... the village inspects it to find a body lying in front of a dark altar... a cultist has been killed by the hunter!</value>
   </string>
   <string key="NoAttack" >
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
@@ -239,13 +240,13 @@
     <value >Amidst the names in your head, a new one appears: {0}!</value>
   </string>
   <string key="WolvesEatYou" isgif="true" >
-    <value >Oh no!  The wolves eated you. NOMNOMNOMNOM</value>
+    <value >Oh no! The wolves ate you. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Oh no! {0} was a drunk!  Now you are drunk, and can't attack tomorrow night...</value>
+    <value >You can't remember what you did last night, but whatever happened at {0}'s house, it left you... drunk? You won't be able to do anything tonight like this...</value>
   </string>
   <string key="GuardWolf" >
-    <value >You went to a wolf's house!  You got eaten. In your dying breaths, at least you remember who you were: the Guardian Angel!</value>
+    <value >You went to a wolf's house! You got eaten. In your dying breaths, at least you remember who you were: the Guardian Angel!</value>
   </string>
   <string key="GuardSaved" >
     <value >Did something happen at {0}'s house last night? You can't seem to remember...</value>
@@ -260,19 +261,19 @@
     <value >Did something happen last night? You can't seem to remember...</value>
   </string>
   <string key="HarlotEaten" >
-    <value >The harlot decided to take the wrong night off, and stayed home.  {0} has been eaten by the wolves!</value>
+    <value >The harlot forgot to go out tonight, a terrible mistake... {0} has been eaten by the wolves!</value>
   </string>
   <string key="HarlotNotHome" >
     <value >{0} wasn't home!</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value >{0} was a wolf!  You got eaten. In your dying breaths, at least you remember who you were: the Harlot!</value>
+    <value >{0} was a wolf! You got eaten. In your dying breaths, at least you remember who you were: the Harlot!</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
-    <value >{0} slipped into the wrong house last night! Their slutty remains are found pinned to the church doors with an iron rod...  how sad :(</value>
+    <value >{0} slipped into the wrong house last night! Their remains are found in front of the church door...</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
-    <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress.  However, they instead find a werewolf eating {1}!  The werewolf quickly turns on {0} and jumps....  {0} is dead.</value>
+    <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress. However, they instead find a werewolf eating {1}! The werewolf quickly turns on {0} and jumps... {0} is dead.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <value >Did something happen at {0}'s house last night? You can't seem to remember...</value>
@@ -287,10 +288,10 @@
     <value >You may not remember for sure who you are, but at least now you know this: {0} is {1}!</value>
   </string>
   <string key="HarlotShot" >
-    <value >Looks like {0} came back positive after a night with the Harlot! The gunner got revenge. {1} is dead.</value>
+    <value >Suddenly, a shot rings out. The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {0} was the Harlot 💋</value>
   </string>
   <string key="DefaultShot" >
-    <value >Suddenly, a shot rings out.  The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
+    <value >Suddenly, a shot rings out. The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
   </string>
   <string key="WolfWins" isgif="true" >
     <value >The werewolf has won!</value>
@@ -299,10 +300,10 @@
     <value >The werewolves have won!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value >The villagers have won! All the wolves have died....</value>
+    <value >The villagers have won! All the wolves have died...</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value >Oh no! You lynched the Tanner!  He wins the game, silly.</value>
+    <value >Oh no! You lynched the Tanner! Didn't expect that, huh?</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
@@ -329,7 +330,7 @@
     <value>{0} went to {1}'s house, but they weren't home!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists..  The cult has won!</value>
+    <value >All the wolves have died, and the only people left standing have all been converted to cultists... The cult has won!</value>
   </string>
   <string key="HunterVisitDead">
     <value>{0} is already dead!</value>
@@ -447,7 +448,7 @@
     <value>was</value>
   </string>
   <string key="GenericDeathNoReveal">
-    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the house to find the remains of {0}.</value>
+    <value>Everyone wakes up in the morning, and notices that {0} is not around... They check the house to find the remains of {0}.</value>
     <value>As the villagers gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
   </string>
   <string key="MasonConverted">
@@ -466,13 +467,13 @@
     <value>{0} added to admin list. Use /config to change group settings.</value>
   </string>
   <string key="AlreadyInGame">
-    <value>You are already in a game! ({0})</value>
+    <value>Have you forgotten? You're already in a game! ({0})</value>
   </string>
   <string key="MultipleGames">
-    <value>Your group has managed to start multiple games...  Killing extras.</value>
+    <value>Your group has managed to start multiple games... Killing extras.</value>
   </string>
   <string key="GroupQueue">
-    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+    <value>Your group is currently in the queue. Don't worry, it won't be forgotten! Position: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
     <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
@@ -484,10 +485,10 @@
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
   <string key="NoGame">
-    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+    <value>There is no game running. Start a new game with /startgame or start a chaos game with /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Only a group admin can run this command.</value>
+    <value>You're not this group's admin, remember? That means you can't run this command!</value>
   </string>
   <string key="ShuttingDown">
     <value>After this game, I am shutting down for maintenance.</value>
@@ -496,17 +497,18 @@
     <value>After this game, I am shutting down momentarily for an update (automated).</value>
   </string>
   <string key="NullIdAdmin">
-    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+    <value>UserId was null. Are you sure you sent this as a reply?</value>
   </string>
   <string key="AlreadyAdmin">
-    <value>{0} is already an admin!</value>
+    <value>{0} is already an admin, remember?</value>
   </string>
   <string key="NotAdmin">
-    <value>{0} is not an admin!</value>
+    <value>{0} is not an admin, remember?</value>
   </string>
   <string key="AdminRemoved">
     <value>{0} removed from admin list.</value>
   </string>
+  <!-- HERE! EDIT HERE! is this message used when setting to or from amnesia? ayylmao-->
   <string key="LanguageSet">
     <value>Language set to {0}</value>
   </string>
@@ -514,7 +516,7 @@
 	<value> </value>
   </string>
   <string key="TimesUp">
-	<value>Time's up!</value>
+	<value>Did you forget to answer? Time's up!</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
@@ -539,28 +541,28 @@
     <value>{0} fumbles for their pistol as the noose tightens, but cannot get it in time, and falls to their death with a loud snap of their neck...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} whips out their pistol, looks at the crowd..... and cannot make a decision on who to shoot.  They fall to their death, accepting their fate...</value>
+    <value>{0} whips out their pistol, looks at the crowd... and cannot make a decision on who to shoot. They fall to their death, accepting their fate...</value>
   </string>
   <string key="HunterKilledFinalLynched">
-    <value>As the noose tightens around {0}'s neck, they whip out a pistol, arm it, take aim, and pull the trigger, shooting {1} as the floor drops out beneath them! {1} falls over, dead.  {2}</value>
+    <value>As the noose tightens around {0}'s neck, they whip out a pistol, arm it, take aim, and pull the trigger, shooting {1} as the floor drops out beneath them! {1} falls over, dead. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>You've been murdered! The fear of death makes you regain some clarity, and you know what to do...  This is your last chance, choose to shoot someone as you go down!</value>
+    <value>You've been murdered! The fear of death makes you regain some clarity, and you know what to do... This is your last chance, choose to shoot someone as you go down!</value>
   </string>
   <string key="HunterNoChoiceShot">
     <value>{0}'s wound was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
   </string>
   <string key="HunterSkipChoiceShot">
-    <value>As {0} lays there, gasping for their final breath, they can't decide who to shoot... and accept their fate..</value>
+    <value>As {0} lays there, gasping for their final breath, they can't decide who to shoot... and accept their fate...</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>As {0} is deadly wounded, they fall to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+    <value>As {0} is deadly wounded, they fall to the ground... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} went to {1}'s house and is now dead!</value>
   </string>
   <string key="HunterShotWolfMulti">
-    <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as he died! {0} has died (wolf)</value>
+    <value>The wolves attacked the hunter last night, but were met with a fight... The hunter may have died, but {0} died too!</value>
   </string>
   <string key="HunterShotWolf">
     <value>The wolf tried to attack the hunter last night, but the hunter was able to take the wolf {0} down with their rifle!</value>
@@ -569,7 +571,7 @@
     <value>The wolves attempted to have a nice late night snack, but were instead greeted by a crazed murderer! {0} was killed in the fight!</value>
   </string>
   <string key="DefaultKilled">
-    <value>It seemed a quiet enough night for {0}, but they were wrong.  The villagers gather in the morning to find {0} split from head to toe, but oddly the liver was missing.....  The serial killer has struck again! {1}</value>
+    <value>It seemed a quiet enough night for {0}, but they were wrong. The villagers gather in the morning to find {0} split from head to toe, but oddly the liver was missing... The serial killer has struck again! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
@@ -614,7 +616,7 @@
     <value>You know you should be doing something to someone, but who should you choose?</value>
   </string>
   <string key="LoverDied">
-    <value>With {0}'s dying breath, {1} rushes over and falls, crying.  They cannot stand the loss of their loved one, and shoot themselves with the nearest pistol the can find. {2}</value>
+    <value>With {0}'s dying breath, {1} rushes over and falls, crying. They cannot stand the loss of their loved one, and shoot themselves with the nearest pistol the can find. {2}</value>
   </string>
   <string key="AskDoppelganger">
     <value>You know you should be doing something to someone, but who should you choose?</value>
@@ -647,36 +649,338 @@
     <value>True love endures! The lovers have won!</value>
   </string>
   <string key="HunterKilledVisiter">
-    <value>In the middle of the town square, everyone finds the body of {0}, multiple shots to the body.  Looks like they tried to sneak up on the Hunter! {1}</value>
+    <value>In the middle of the town square, everyone finds the body of {0}, multiple shots to the body. Looks like they tried to sneak up on the Hunter! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>Did something happen last night? You can't seem to remember...</value>
   </string>
   <string key="AlreadyOnWaitList">
-    <value>You are already on the wait list for {0}</value>
+    <value>Did you forget? You are already on the wait list for {0}!</value>
   </string>
   <string key="AddedToWaitList">
-    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.</value>
+    <value>You have been added to the wait list for {0}. Don't worry, I won't forget to PM you when the next game is starting!</value>
   </string>
   <string key="NotifyNewGame">
-    <value>A new game is starting in {0}</value>
+    <value>A new game is starting in {0}! Don't forget to join!</value>
   </string>
   <string key="SerialKillerWinsOverpower">
-    <value>Morning comes, and the remaining two villagers walk out to the town square.  {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out.</value>
+    <value>Morning comes, and the remaining two villagers walk out to the town square. {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Everyone in the village has died....  there's nothing but bodies left.  No one wins this round, except the vultures...</value>
+    <value>Everyone in the village has died... there's nothing but bodies left. No one wins this round, except the vultures...</value>
   </string>
   <string key="SKHunterEnd">
-    <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the village is empty, there is no winner...</value>
+    <value>As the sun rises, {0} and {1} walk out into the village. {0} pulls out their knife, and jumps at {1}. {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}. Both are dead, the village is empty, there is no winner...</value>
   </string>
   <string key="RoleModelChosen">
-    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+    <value>You forgot to make a choice, so the moderator has chosen for you: {0}</value>
   </string>
   <string key="Won">
     <value>Won</value>
   </string>
   <string key="Lost">
     <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Player {0} forgot to vote and has been killed because of it {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>
+	Every player is a villager, able to vote every day to try and lynch the village's enemies (or their own...), but some people are nothing other than villagers! In that case, they won't have any actions for the whole game (other than the lynch vote), and their deaths will only make a difference as another number.
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>
+	The Seer may choose a player every night, and will find out their role once morning comes. Careful when revealing what you've found out to others, though: lots of people in the villager want a Seer dead... Trust no one, not even yourself: you may be the fool! (/aboutfool) When looking at the Traitor, there's a 50% chance of seeing them as either a villager or a wolf.
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutWw">
+    <value>
+	 Every night, all wolves in the pack vote to decide who to attack. Not all players should be attacked, though! \n The newest wolf in a pack will be killed if the Serial Killer is attacked, and may be killed if the target is the Hunter (30% chance for a sole wolf to die - and not be able to kill the Hunter! - and an additional 20% chance for the newest wolf to die for each additional wolf in the pack!) \n All wolves will get drunk if they attack the Village Drunk, and won't be able to do any actions the next night! \n <!--EDIT HERE HERE what are roles that won't be home? ayylmao-->The Harlot probably won't be home, so the night will be wasted if you try to attack them! \n Good news, though: if you attack the cursed, they will become a wolf along with you! If you kill a Wild Child's rolemodel, they will also become a wolf!
+	 NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutHarlot">
+    <!-- hunter! ayylmao -->
+	<value>
+	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a cultist, the harlot has a 50% chance of finding out their role!
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>
+	The Drunk is just like a villager... Except when they're killed by wolves! Then the wolves will become drunk too, and unable to attack on the next night!
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>
+	The Cursed is just like a villager... Until they're attacked by the wolves! Then they become a wolf as well, and join the pack!
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>
+	The Traitor is just like a villager... Until all wolves die! Then they take over the mantle and become a werewolf, ready to attack the villagers! When the Seer looks at the Traitor, there's a 50% chance of the traitor appearing as either a villager or a wolf.</value>
+	NO ACTIONS, until their role changes!
+  </string>
+  <string key="AboutGA">
+    <value><!--what's the chance for SK to kill GA? 50% wolf-->
+	The Guardian Angel can choose one player each night to protect from attacks, either from wolves or the Serial Killer. However, if they choose to protect one of those they should protect from, they may be killed!
+	NIGHT ACTIONS, every night!
+	</value>
+  </string>
+  <string key="AboutDetective">
+    <value>
+	Every day, the Detective can choose a player to investigate, and will find out what their role is. There is a 40% chance the werewolves will see the Detective investigating someone, though!
+	DAY ACTIONS, every day!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>
+	During the day, the Gunner will be given the chance to shoot (and kill!) another player. The whole village will know who did it, so they will (probably) not lynch the Gunner, knowing they're on the villagers' side! There are only two bullets on their gun, though...</value>
+	DAY ACTIONS, but it can only be used twice!
+  </string>
+  <string key="AboutTanner">
+    <value>
+	The Tanner is just like a villager... But if they're lynched, they win the game!
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutFool">
+    <value>
+	The Fool has no way of knowing they aren't actually the Seer... When choosing a player to find out their role, they will instead get told a random role out of all roles of alive players.
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutCult">
+  <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
+    <value>
+	Every night, all cultists in the cult vote to decide who to convert. The cult wins when every single alive player is a cultist. It's not that simple to convert players, though!
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutCH">
+    <value>
+	The Cultist Hunter has a single job: kill all cultists. Every night, they get to visit a player, who won't feel anything... unless they are a cultist, in which case, the Cultist Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutWC">
+    <value>
+	The Wild Child chooses a player as their rolemodel during the first night of the game. Once their role model dies, the Wild Child becomes a werewolf!
+	FIRST NIGHT ACTION, then none until their role changes!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>
+	The Apprentice Seer is just like a villager... Until the Seer dies, in which case, they will become the new Seer!
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutBH">
+    <value>
+	The Beholder is just like a villager, but, if there's a Seer in the game, they will be told their name. If the Seer dies and the Apprentice Seer and/or the Doppelgänger become Seer, the Beholder will also be told!
+	NO ACTIONS, but they do get information!</value>
+  </string>
+  <string key="AboutMason">
+    <value>
+	A mason is just like a villager, except they will always know who the other masons are! If a mason is converted to the cult, all other masons will be told!
+	NO ACTIONS, but they do get information!</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a cultist until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
+      FIRST NIGHT ACTION, then none until their role changes!
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      The Cupid will choose two players at the start of the game and make them fall in love with each other. If one of them dies, the other will die of sorrow... If one of them is on the winning team at the end of the game, both will be winners! If the only players left standing are the Lovers, they will be the winners! The Cupid can choose themselves as one of the Lovers.
+	  FIRST NIGHT ACTIONS, then none!
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a cultist will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
+	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
+	  NO ACTIONS, until they die!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>
+	The Serial Killer can choose a player every night to attack and kill. They win if they're the last one alive! There's no one that can't be killed by the Serial Killer, and visiting their house isn't a good idea, since everyone who tries will die... Serial Killers can only be killed by being lynched or shot (by the Gunner or the Hunter).
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutPara">
+    <value>
+	Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.
+	ACTIONS AT EVERY TIME OF THE DAY... Para is busy!</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occurred, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Did you forget? You must reply to the user you want to smite!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Reply process time: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}\nPatience for people who spam commands when the bot is lagging: 0, always.</value>
+  </string>
+  <string key="WhatLang">
+    <value>Nooo! Don't change the language out of Amnesia! If you really want to break my heart, what language do you want now?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Are you really changing out of Amnesia? So meeeean... What variant do you want?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file? I won't let you get it if it's not for improving Amnesia... (just kidding, go ahead!)</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Did you forget? You must run this command in a group!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para! How can you forget something like that!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any (oh come on!)</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: Players can {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Players will {0}be allowed to flee after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would you like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death? Amnesia gets really hard with hidden roles!\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be? Chaos is more fun with Amnesia!\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
   </string>
 </strings>
