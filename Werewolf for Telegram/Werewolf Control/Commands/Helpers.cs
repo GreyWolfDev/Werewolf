@@ -84,7 +84,8 @@ namespace Werewolf_Control
                         var groupName = update.Message.Chat.Title.ToBold();
                         if (update.Message.Chat.Username != null)
                             groupName += $" @{update.Message.Chat.Username}";
-                        Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
+                        if (n.UserId != update.Message.From.Id)
+                            Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
                         Thread.Sleep(100);
                     }
 
