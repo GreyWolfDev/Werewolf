@@ -35,7 +35,7 @@ namespace Werewolf_Control.Helpers
         public static long TotalGames = 0;
         public static Random R = new Random();
         public static XDocument English;
-
+        public static int MessagesSent = 0;
         internal static string RootDirectory
         {
             get
@@ -99,6 +99,7 @@ namespace Werewolf_Control.Helpers
             //now we can start receiving
             Api.StartReceiving();
         }
+        
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
         {
@@ -138,7 +139,7 @@ namespace Werewolf_Control.Helpers
         public static void NodeConnected(Node n)
         {
 #if DEBUG
-            Api.SendTextMessage(Settings.MainChatId, $"Node connected with guid {n.ClientId}");
+            //Api.SendTextMessage(Settings.MainChatId, $"Node connected with guid {n.ClientId}");
 #endif
         }
 
@@ -146,12 +147,12 @@ namespace Werewolf_Control.Helpers
         public static void Disconnect(this Node n, bool notify = true)
         {
 #if DEBUG
-            Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
+            //Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
 #endif
             if (notify)
                 foreach (var g in n.Games)
                 {
-                    Api.SendTextMessage(g.GroupId, UpdateHandler.GetLocaleString("NodeShutsDown",g.Language));
+                    Send(UpdateHandler.GetLocaleString("NodeShutsDown", g.Language), g.GroupId);
                 }
             Nodes.Remove(n);
             n = null;
@@ -169,21 +170,23 @@ namespace Werewolf_Control.Helpers
             return Nodes.Where(x => x.ShuttingDown == false && x.CurrentGames < Settings.MaxGamesPerNode).OrderBy(x => x.CurrentGames).FirstOrDefault(); //if this is null, there are no nodes
         }
 
-        internal static void Send(string message, long id, bool clearKeyboard = false, ReplyKeyboardMarkup customMenu = null)
+
+        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
         {
+            MessagesSent++;
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else if (customMenu != null)
             {
-                Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else
             {
-                Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: parseMode);
             }
 
         }

@@ -1613,6 +1613,7 @@ namespace Telegram.Bot
                 catch (HttpRequestException e) when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
                 {
                 }
+                
 #if !NETSTANDARD1_3
                 catch (UnsupportedMediaTypeException)
                 {

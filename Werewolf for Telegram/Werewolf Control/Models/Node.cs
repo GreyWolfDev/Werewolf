@@ -24,6 +24,7 @@ namespace Werewolf_Control.Models
         public TimeSpan Uptime { get; set; }
         public HashSet<GameInfo> Games { get; set; } = new HashSet<GameInfo>();
         public string Version { get; set; }
+        public int MessagesSent { get; set; }
 
         public void StartGame(Update update, bool chaos = false)
         {

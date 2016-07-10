@@ -12,7 +12,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
-
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
 {
     public static partial class Commands
@@ -27,7 +27,7 @@ namespace Werewolf_Control
             if (update.Message.Chat.Type == ChatType.Private)
             {
                 //PM....  can't do that here
-                Bot.Send(GetLocaleString("StartFromGroup", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                Send(GetLocaleString("StartFromGroup", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
                 return;
             }
             Group grp;
@@ -96,12 +96,13 @@ namespace Werewolf_Control
             else
             {
                 Send(GetLocaleString("NoNodes", grp.Language), update.Message.Chat.Id);
+
             }
         }
 
-        internal static void Send(string message, long id, bool clearKeyboard = false, ReplyKeyboardMarkup customMenu = null)
+        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
         {
-            Bot.Send(message, id, clearKeyboard, customMenu);
+            return await Bot.Send(message, id, clearKeyboard, customMenu);
         }
 
         private static string GetLocaleString(string key, string language, params object[] args)

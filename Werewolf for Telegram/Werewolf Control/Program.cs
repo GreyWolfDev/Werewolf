@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using Database;
 using Werewolf_Control.Handler;
@@ -22,8 +23,12 @@ namespace Werewolf_Control
         internal static float AvgCpuTime;
         private static List<float> CpuTimes = new List<float>();
         private static List<long> MessagesProcessed = new List<long>();
-        private static long _previousMessages;
-        internal static float MessagePerSecond;
+        private static List<long> MessagesSent = new List<long>();
+        private static long _previousMessages, _previousMessagesTx;
+        internal static float MessageRxPerSecond;
+        internal static float MessageTxPerSecond;
+        internal static int NodeMessagesSent = 0;
+        private static System.Timers.Timer _timer;
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -55,9 +60,38 @@ namespace Werewolf_Control
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
             new Thread(CpuMonitor).Start();
-            new Thread(MessageMonitor).Start();
+            //new Thread(MessageMonitor).Start();
+            _timer = new System.Timers.Timer();
+            _timer.Elapsed += new ElapsedEventHandler(TimerOnTick);
+            _timer.Interval = 1000;
+            _timer.Enabled = true;
+            
             //now pause the main thread to let everything else run
             Thread.Sleep(-1);
+        }
+
+        private static void TimerOnTick(object sender, EventArgs eventArgs)
+        {
+            try
+            {
+                var newMessages = Bot.MessagesReceived - _previousMessages;
+                _previousMessages = Bot.MessagesReceived;
+                MessagesProcessed.Insert(0, newMessages);
+                if (MessagesProcessed.Count > 60)
+                    MessagesProcessed.RemoveAt(60);
+                MessageRxPerSecond = MessagesProcessed.Max();
+
+                newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
+                _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
+                MessagesSent.Insert(0, newMessages);
+                if (MessagesSent.Count > 60)
+                    MessagesSent.RemoveAt(60);
+                MessageTxPerSecond = MessagesSent.Max();
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         internal static string GetVersion()
@@ -102,7 +136,14 @@ namespace Werewolf_Control
                     MessagesProcessed.Insert(0, newMessages);
                     if (MessagesProcessed.Count > 10)
                         MessagesProcessed.RemoveAt(10);
-                    MessagePerSecond = (float)MessagesProcessed.Average()/10;
+                    MessageRxPerSecond = (float)MessagesProcessed.Average()/10;
+
+                    newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
+                    _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
+                    MessagesSent.Insert(0, newMessages);
+                    if (MessagesSent.Count > 10)
+                        MessagesSent.RemoveAt(10);
+                    MessageTxPerSecond = (float)MessagesSent.Average() / 10;
                 }
                 catch
                 {
@@ -143,6 +184,7 @@ namespace Werewolf_Control
                 try
                 {
                     var Nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
+                    NodeMessagesSent = Nodes.Sum(x => x.MessagesSent);
                     var CurrentPlayers = Nodes.Sum(x => x.CurrentPlayers);
                     var CurrentGames = Nodes.Sum(x => x.CurrentGames);
                     var TotalPlayers = Nodes.Sum(x => x.TotalPlayers);
@@ -151,11 +193,11 @@ namespace Werewolf_Control
                     var Uptime = DateTime.UtcNow - Bot.StartTime;
                     var MessagesRx = Bot.MessagesReceived;
                     var CommandsRx = Bot.CommandsReceived;
-
+                    var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
                     var msg =
                         $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}\n\n";
-
+                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\n";
+                    
                     msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
 
                     for (var i = 0; i < 12 - Nodes.Count; i++)
