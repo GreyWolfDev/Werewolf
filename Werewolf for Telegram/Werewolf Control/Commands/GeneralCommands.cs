@@ -21,9 +21,16 @@ namespace Werewolf_Control
         public static void Ping(Update update, string[] args)
         {
             var ts = DateTime.UtcNow - update.Message.Date;
-            Bot.Send(GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}", Program.AvgCpuTime.ToString("F0"), $"\n{Program.MessageRxPerSecond.ToString("F2")} MAX IN | {Program.MessageTxPerSecond.ToString("F2")} MAX OUT"), update.Message.Chat.Id);
-            if (Program.MessageTxPerSecond >= 30)
-                Bot.Send("I am being rate limited most likely :(", update.Message.Chat.Id);
+            var send = DateTime.UtcNow;
+            var result =
+                Bot.Send(
+                    GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}",
+                        Program.AvgCpuTime.ToString("F0"),
+                        $"\n{Program.MessageRxPerSecond.ToString("F2")} MAX IN | {Program.MessageTxPerSecond.ToString("F2")} MAX OUT"),
+                    update.Message.Chat.Id).Result;
+            ts = DateTime.UtcNow - send;
+            Bot.Send($"Time for telegram to send ping message: {ts:mm\\:ss\\.ff}", update.Message.Chat.Id);
+
         }
 
         [Command(Trigger = "help")]

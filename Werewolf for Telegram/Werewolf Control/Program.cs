@@ -65,10 +65,11 @@ namespace Werewolf_Control
             _timer.Elapsed += new ElapsedEventHandler(TimerOnTick);
             _timer.Interval = 1000;
             _timer.Enabled = true;
-            
             //now pause the main thread to let everything else run
             Thread.Sleep(-1);
         }
+
+        
 
         private static void TimerOnTick(object sender, EventArgs eventArgs)
         {

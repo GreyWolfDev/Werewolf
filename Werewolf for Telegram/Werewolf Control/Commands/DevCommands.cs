@@ -126,12 +126,20 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            var reply = "";
-            using (var db = new WWContext())
+            Testing = !Testing;
+            new Task(APILimitTesting).Start();
+        }
+
+        private static bool Testing = false;
+
+        private static void APILimitTesting()
+        {
+            while (Testing)
             {
-                reply = Enumerable.Aggregate(db.v_PreferredGroups, "", (current, g) => current + $"{GetLanguageName(g.Language)}{(String.IsNullOrEmpty(g.Description) ? "" : $" - {g.Description}")}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                for (var i = 0; i < 20; i++)
+                    Bot.Send("Test", UpdateHandler.Para);
+                Thread.Sleep(2000);
             }
-            Send(reply, update.Message.From.Id);
         }
 
         [Command(Trigger = "reloadenglish", DevOnly = true)]
