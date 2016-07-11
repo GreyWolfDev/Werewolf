@@ -120,6 +120,7 @@
           <Property Name="ImageFile" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
+          <Property Name="MemberCount" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -179,6 +180,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="HasPM" Type="bit" />
           <Property Name="BanReason" Type="nvarchar(max)" />
           <Property Name="ImageFile" Type="nvarchar(max)" />
+          <Property Name="Language" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -639,6 +641,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemberCount" Type="Int32" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -667,6 +670,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <NavigationProperty Name="GamePlayers" Relationship="Self.FK_GamePlayer_Player" FromRole="Player" ToRole="GamePlayer" />
           <NavigationProperty Name="Groups" Relationship="Self.GroupAdmin" FromRole="Player" ToRole="Group" />
           <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1173,6 +1177,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="MemberCount" ColumnName="MemberCount" />
                 <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
@@ -1210,6 +1215,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Language" ColumnName="Language" />
                 <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
