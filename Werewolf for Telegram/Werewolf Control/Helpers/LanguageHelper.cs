@@ -27,31 +27,31 @@ namespace Werewolf_Control.Helpers
     }
     public static class LanguageHelper
     {
+        private static List<LangFile> _langFiles = new List<LangFile>();
+        private static DateTime LastGet = DateTime.MinValue;
         internal static List<LangFile> GetAllLanguages()
         {
-            return Directory.GetFiles(Bot.LanguageDirectory, "*.xml")
-                                    .Select(
-                                        x =>
-                                            new LangFile
-                                            {
-                                                Name =
-                                                        XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("name")
-                                                            .Value,
-                                                Base = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("base")
-                                                            .Value,
-                                                Variant = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("variant")
-                                                            .Value,
-                                                FileName = Path.GetFileNameWithoutExtension(x)
-                                            }).ToList();
+            if (LastGet < DateTime.Now.AddMinutes(60))
+            {
+                var files = Directory.GetFiles(Bot.LanguageDirectory, "*.xml");
+                var temp = new List<LangFile>();
+                foreach (var file in files)
+                {
+                    var doc = XDocument.Load(file).Descendants("language").First();
+                    var langFile = new LangFile
+                    {
+                        Base = doc.Attribute("base").Value,
+                        FileName = Path.GetFileNameWithoutExtension(file),
+                        Name = doc.Attribute("name").Value,
+                        Variant = doc.Attribute("variant").Value
+                    };
+                    temp.Add(langFile);
+                }
+
+                _langFiles = temp;
+                LastGet = DateTime.Now;
+            }
+            return _langFiles;
         }
         public static void ValidateFiles(long id, int msgId)
         {

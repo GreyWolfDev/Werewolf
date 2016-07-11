@@ -37,13 +37,19 @@ namespace Werewolf_Control.Helpers
                     }
                 }
                 _langs = langs;
+                _lastGet = DateTime.Now;
             }
             return _langs;
         }
 
-        internal static List<v_PublicGroups> ForLanguage(string baseLang)
+        internal static IEnumerable<v_PublicGroups> ForLanguage(string baseLang)
         {
-            return GetAll().Where(x => LanguageHelper.GetAllLanguages().Where(y => y.Base == baseLang).Any(y => y.FileName == x.Language)).ToList();
+            var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
+            foreach (var g in GetAll())
+            {
+                if (langs.Any(x => x.FileName == g.Language))
+                    yield return g;
+            }
         }
     }
 }
