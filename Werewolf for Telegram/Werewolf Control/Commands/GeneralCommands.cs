@@ -181,7 +181,10 @@ namespace Werewolf_Control
                         var p = GetDBPlayer(update.Message.From.Id, db);
                         p.HasPM = true;
                         db.SaveChanges();
-                        Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                        Bot.Send(
+                            "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by @werewolfsupport for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"werewolf.parawuff.com\">here</a>!",
+                            update.Message.Chat.Id);
+                        //Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                     }
                 }
             }
