@@ -22,7 +22,7 @@ namespace Werewolf_Control
         {
             if (u.Message.ReplyToMessage == null)
             {
-                Bot.Send("You must reply to the user you want to smite".ToBold(), u.Message.Chat.Id);
+                Bot.Send(GetLocaleString("MustReplySmite",GetLanguage(u.Message.Chat.Id)).ToBold(), u.Message.Chat.Id);
                 return;
             }
 
@@ -59,24 +59,31 @@ namespace Werewolf_Control
             }
 
             var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id);
-            Bot.Api.SendTextMessage(update.Message.From.Id, "What would you like to do?",
+            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatToDo",GetLanguage(update.Message.From.Id)),
                 replyMarkup: menu);
         }
 
         [Command(Trigger = "uploadlang", GlobalAdminOnly = true)]
         public static void UploadLang(Update update, string[] args)
         {
-            var id = update.Message.Chat.Id;
-            if (update.Message.ReplyToMessage?.Type != MessageType.DocumentMessage)
+            try
             {
-                Send("Please reply to the file with /uploadlang", id);
-                return;
+                var id = update.Message.Chat.Id;
+                if (update.Message.ReplyToMessage?.Type != MessageType.DocumentMessage)
+                {
+                    Send("Please reply to the file with /uploadlang", id);
+                    return;
+                }
+                var fileid = update.Message.ReplyToMessage.Document?.FileId;
+                if (fileid != null)
+                    LanguageHelper.UploadFile(fileid, id,
+                        update.Message.ReplyToMessage.Document.FileName,
+                        update.Message.MessageId);
             }
-            var fileid = update.Message.ReplyToMessage.Document?.FileId;
-            if (fileid != null)
-                LanguageHelper.UploadFile(fileid, id,
-                    update.Message.ReplyToMessage.Document.FileName,
-                    update.Message.MessageId);
+            catch (Exception e)
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+            }
         }
 
         [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]

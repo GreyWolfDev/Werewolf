@@ -25,11 +25,11 @@ namespace Werewolf_Control
             {
                 var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply, parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
-                    Send("I have sent you a PM", update.Message.Chat.Id);
+                    Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }
             catch (Exception e)
             {
-                Send("Please send me a pm so I can PM you: @werewolfbot", update.Message.Chat.Id);
+                Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
             }
 
         }
@@ -44,11 +44,11 @@ namespace Werewolf_Control
             {
                 var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
-                    Send("I have sent you a PM", update.Message.Chat.Id);
+                    Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }
             catch (Exception e)
             {
-                Send("Please send me a pm so I can PM you: @werewolfbot", update.Message.Chat.Id);
+                Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
             }
 
         }

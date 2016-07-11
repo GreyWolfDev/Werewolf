@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using TcpFramework;
@@ -37,6 +39,8 @@ namespace Werewolf_Node
         internal static string APIToken;
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
+        internal static XDocument English;
+        internal static int MessagesSent = 0;
         static void Main(string[] args)
         {
             //set up exception logging.  It appears nodes are crashing and I'm not getting any output
@@ -57,7 +61,7 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
-
+            English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //get api token from registry
             var key =
@@ -208,21 +212,22 @@ namespace Werewolf_Node
             }
         }
 
-        internal static void Send(string message, long id, bool clearKeyboard = false, ReplyKeyboardMarkup customMenu = null, Werewolf game = null)
+        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null)
         {
+            MessagesSent++;
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)
             {
-                Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else
             {
-                Bot.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
         }
 
@@ -277,6 +282,8 @@ namespace Werewolf_Node
             Connect();
             while (Running)
             {
+                var infoGathered = false;
+
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
                     Thread.Sleep(10000);
@@ -293,23 +300,27 @@ namespace Werewolf_Node
                         continue;
                     }
                     var games = Games.ToList();
+                    
                     var info = new NodeInfo
                     {
                         Games = new HashSet<GameInfo>(),
                         ClientId = ClientId,
                         CurrentGames = games.Count,
-                        CurrentPlayers = games.Sum(x => x.Players.Count),
+                        CurrentPlayers = games.Sum(x => x.Players?.Count??0),
                         DuplicateGamesRemoved = DupGamesKilled,
                         ThreadCount = Process.GetCurrentProcess().Threads.Count,
                         TotalGames = GamesStarted,
-                        TotalPlayers = games.Sum(x => x.Players.Count) + TotalPlayers,
+                        TotalPlayers = games.Sum(x => x.Players?.Count ?? 0) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
                         Version = Version.FileVersion,
-                        ShuttingDown = IsShuttingDown
+                        ShuttingDown = IsShuttingDown,
+                        MessagesSent = MessagesSent
                     };
 
                     foreach (var g in games)
                     {
+                        if (g.Players == null)
+                            continue;
                         var gi = new GameInfo
                         {
                             Language = g.Language,
@@ -321,8 +332,9 @@ namespace Werewolf_Node
                         };
                         info.Games.Add(gi);
                     }
-
+                    
                     var json = JsonConvert.SerializeObject(info);
+                    infoGathered = true;
                     Client.WriteLine(json);
                 }
                 catch (Exception e)
@@ -330,20 +342,23 @@ namespace Werewolf_Node
                     while (e.InnerException != null)
                         e = e.InnerException;
                     Console.WriteLine($"Error in KeepAlive: {e.Message}\n{e.StackTrace}\n");
-                    if (Client != null)
+                    if (infoGathered) //only disconnect if tcp error
                     {
-                        try
+                        if (Client != null)
                         {
-                            Client.DataReceived -= ClientOnDataReceived;
-                            Client.DelimiterDataReceived -= ClientOnDelimiterDataReceived;
-                            Client.Disconnect();
+                            try
+                            {
+                                Client.DataReceived -= ClientOnDataReceived;
+                                Client.DelimiterDataReceived -= ClientOnDelimiterDataReceived;
+                                Client.Disconnect();
+                            }
+                            catch
+                            {
+                                // ignored
+                            }
                         }
-                        catch
-                        {
-                            // ignored
-                        }
+                        Connect();
                     }
-                    Connect();
                 }
                 Thread.Sleep(100);
             }

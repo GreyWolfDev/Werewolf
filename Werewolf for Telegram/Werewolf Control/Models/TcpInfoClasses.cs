@@ -21,6 +21,7 @@ namespace Werewolf_Control.Models
         public HashSet<GameInfo> Games { get; set; } = new HashSet<GameInfo>();
         public string Version { get; set; }
         public bool ShuttingDown { get; set; }
+        public int MessagesSent { get; set; }
     }
 
     public class ClientRegistrationInfo

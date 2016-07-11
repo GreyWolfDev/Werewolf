@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Persian Normal" base="فارسی" variant="معمولی"/>
+  <language name="Persian Normal" base="فارسی" variant="[[نسخه اصلی]]"/>
   <string key="NotInGame">
     <value>حاجی تو که توی بازی نیستی!</value>
   </string>
@@ -543,10 +543,10 @@
     <value>کلانتر یعنی {0} لحظاتی قبل از مرگش اسلحه رو درآورد و به {1} شلیک کرد به امید اینکه یه گرگ رو هم با خودش کشته باشه. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>تفنگدار بهت شلیک کرده، داری میمیری سریع یه نفرو انتخاب کن که بکشی</value>
+    <value>حاجی کشتنت ولی هنوز جون داری قبل از اینکه بمیری یه تیر بزن یه نفرو بکش</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <value>انقدر تیری که به {0} بهش بد اصابت کرد که حتی وقت نکرد تفنگشو برداره</value>
+    <value>انقدر کلانترمون یعنی {0} به طرز فجیعی کشته شد که حتی وقت نکرد تیر آخرشو بزنه</value>
   </string>
   <string key="HunterSkipChoiceShot">
     <value>تیری که {0} اصابت کرد از پا درش آورد ولی میتونست به یه نفر شلیک کنه و نکرد</value>
@@ -677,4 +677,265 @@
   <string key="Lost">
     <value>بازنده</value>
   </string>
+<string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>خب {0} ریده با این بازی کردنش! طی 24 ساعته گذشته {1} بار به خاطر رای ندادن کشته شده</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the seer is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>مدت زمان بازی: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>روز {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>بابا هر دکمه ای دم دستتون میاد نزنین خب ریدین تو رباته ری استارت شد</value>
+  </string>
+  <string key="SentPrivate">
+    <value>حاجی پی ویتو چک کن</value>
+  </string>
+  <string key="StartPM">
+    <value>یه پی ام بهم بده تا بتونم بهت پی ام بدم @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>مرسی اومدی پی وی. دیگه میتونم بهت پی ام بدم</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>باید اونی که میخوای از بازی بندازی بیرون رو ریپلای کنی</value>
+  </string>
+  <string key="WhatToDo">
+    <value>میخوای چیکار کنی؟</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>باید توی گروه بزنی جوین</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>باید بازی رو توی گروه استارت کنی</value>
+  </string>
+  <string key="PingInfo">
+    <value>زمان پاسخدهی: {0}\n مصرف سی پی یو: {1}%\n پیام بر ثانیه: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>چه زبانی رو میخوای انتخاب کنی؟ \nزبان فعلی: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>چه نوع ترجمه ای رو میخوای؟\n نسخه فعلی: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>زبان به {0} تغییر پیدا کرد</value>
+  </string>
+  <string key="GetLang">
+    <value>کدوم فایل زبان رو میخوای؟</value>
+  </string>
+  <string key="NoNodes">
+    <value>سرور به گاج رفت. چند ثانیه دیگه دوباره امتحان کن</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>باید این دستور رو توی گروه وارد کنی</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>حاجی تو که ادمین ربات نیستی</value>
+  </string>
+  <string key="NotPara">
+    <value>حاجی تو که ادمین اصلی نیستی</value>
+  </string>
+  <string key="Yes">
+    <value>آره</value>
+  </string>
+  <string key="No">
+    <value>نه</value>
+  </string>
+  <string key="Allow">
+    <value>فعال</value>
+  </string>
+  <string key="Disallow">
+    <value>غیرفعال</value>
+  </string>
+  <string key="Show">
+    <value>نشون بده</value>
+  </string>
+  <string key="Hide">
+    <value>مخفی کن</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>فقط عادی</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>فقط آشوب</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>بازیکنا تعیین کنن</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>هیچ نقشی رو نشون نده</value>
+  </string>
+  <string key="ShowLiving">
+    <value>فقط نقش بازیکنهای زنده رو نشون بده</value>
+  </string>
+  <string key="ShowAll">
+    <value>نقش همه رو نشون بده</value>
+  </string>
+
+  <string key="Cancel">
+    <value>کنسل کن</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>بازیکنا اجازه داشته باشن از بازی فرار کنن؟\n حالت فعلی: {0}\n حواست باشه قبل از شروع بازی میتونن فرار کنن</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>بازیکنا میتونن وسط بازی فرار کنن: {0}</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>حداکثر تعداد بازیکنا چقدر باشه؟ الان حداکثر {0} نفر میتونن تو بازی باشن</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>حداکثر تعداد بازیکنا به {0} تغییر کرد</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>نقشا رو موقع مردن بازیکنا نشون بدم؟\n حالت فعلی: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>نشون دادن نقشا بعد از مرگ هر بازیکن: {0}</value>
+  </string>
+  <string key="GameModeQ">
+    <value>حالت بازی چی باشه؟\nحالت فعلی: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>حالت بازی تغییر کرد به: {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>نقشا رو آخر بازی چجوری نشون بدم؟\n حالت فعلی: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>نمایش نقشا آخر بازی تغییر داده شد به: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>هر روز چند ثانیه طول بکشه؟ اگه تعداد بازیکنا زیاد باشه حداقل 60 ثانیه به این زمان اضافه میشه.\n زمان پیش فرض: {0}\n زمان تنظیم شده: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>طول روز به {0} ثانیه تغییر کرد</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>هر شب چند ثانیه طول بکشه؟ .\n زمان پیش فرض: {0}\n زمان تنظیم شده: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>طول شب به {0} ثانیه تغییر کرد</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>هر رای گیری چند ثانیه طول بکشه؟ .\n زمان پیش فرض: {0}\n زمان تنظیم شده: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>طول رای گیری به {0} ثانیه تغییر کرد</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>نقش احمق فعال باشه؟\n حالت فعلی: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>نقش احمق: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>نقش منافق فعال باشه؟\n حالت فعلی: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>نقش خائن: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>نقش فرقه گرا فعال باشه؟\n حالت فعلی: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>نقش فرقه گرا: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>دمت گرم. روز خوبی داشته باشی</value>
+  </string>
 </strings>
+

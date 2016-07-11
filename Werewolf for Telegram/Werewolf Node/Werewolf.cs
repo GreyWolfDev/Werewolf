@@ -34,8 +34,7 @@ namespace Werewolf_Node
         public Group DbGroup;
         public bool Chaos;
         public int GameId;
-
-
+        
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
             try
@@ -67,7 +66,7 @@ namespace Werewolf_Node
                     LoadLanguage(DbGroup.Language);
                     AddPlayer(u, false);
                 }
-                SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
+                SendWithQueue(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
                     Chaos ? Settings.StartChaosGame : Settings.StartGame);
                 new Thread(GameTimer).Start();
             }
@@ -199,11 +198,13 @@ namespace Werewolf_Node
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
                         {
-                            dbp = new Player { TelegramId = p.Id };
+                            dbp = new Player { TelegramId = p.Id, Language = Language};
                             db.Players.Add(dbp);
                         }
                         dbp.Name = p.Name;
                         dbp.UserName = p.TeleUser.Username;
+
+                        p.Language = dbp.Language;
 
                         var gamePlayer = new GamePlayer
                         {
@@ -427,6 +428,7 @@ namespace Werewolf_Node
                 if (args[2] == "-1")
                 {
                     player.Choice = -1;
+                    Program.MessagesSent++;
                     Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
                         GetLocaleString("ChoiceAccepted") + " - Skip");
                     player.CurrentQuestion = null;
@@ -467,6 +469,7 @@ namespace Werewolf_Node
                     secondChoices.Select(
                         x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
                     player.Choice = 0;
+                    Program.MessagesSent++;
                     Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
                        GetLocaleString("ChoiceAccepted") + " - " + target.Name);
 
@@ -512,6 +515,7 @@ namespace Werewolf_Node
                 {
                     SendWithQueue(GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName()));
                 }
+                Program.MessagesSent++;
                 Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
                         GetLocaleString("ChoiceAccepted") + " - " + target.GetName(true));
                 player.CurrentQuestion = null;
@@ -1012,7 +1016,10 @@ namespace Werewolf_Node
                     try
                     {
                         if (p.CurrentQuestion.MessageId != 0)
+                        {
+                            Program.MessagesSent++;
                             Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                        }
                     }
                     catch
                     {
@@ -1229,7 +1236,7 @@ namespace Werewolf_Node
             var timeToAdd = Math.Max(((Players.Count(x => !x.IsDead) / 5) - 1) * 30, 60);
 
             SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
-            SendWithQueue("Day " + GameDay.ToBold());
+            SendWithQueue(GetLocaleString("Day", GameDay.ToBold()));
             SendDayActions();
             //incremental sleep time for large players....
             Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
@@ -1242,7 +1249,10 @@ namespace Werewolf_Node
                     try
                     {
                         if (p.CurrentQuestion.MessageId != 0)
+                        {
+                            Program.MessagesSent++;
                             Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                        }
                     }
                     catch
                     {
@@ -1367,7 +1377,10 @@ namespace Werewolf_Node
                     try
                     {
                         if (p.CurrentQuestion.MessageId != 0)
+                        {
+                            Program.MessagesSent++;
                             Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                        }
                     }
                     catch
                     {
@@ -2176,9 +2189,7 @@ namespace Werewolf_Node
             var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
             if (strings == null)
             {
-                //fallback to English
-                var file = XDocument.Load(Path.Combine(Program.LanguageDirectory, "English.xml"));
-                strings = file.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                strings = Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
             }
             var values = strings.Descendants("value");
             var choice = Program.R.Next(values.Count());
@@ -2677,10 +2688,7 @@ namespace Werewolf_Node
 
                 try
                 {
-                    var result =
-                        Program.Bot.SendTextMessage(to.Id, text,
-                            replyMarkup: menu)
-                            .Result;
+                    var result = Program.Send(text, to.Id, false, menu).Result;
                     msgId = result.MessageId;
                 }
                 catch (AggregateException ex)
@@ -3137,7 +3145,9 @@ namespace Werewolf_Node
         {
             if (id == 0)
                 id = ChatId;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             Program.Send(message, id, clearKeyboard, game: this);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         private void Send(string[] choices, long id = 0, bool clearKeyboard = false, params object[] args)
@@ -3147,6 +3157,7 @@ namespace Werewolf_Node
 
         private void SendGif(string text, string image, long id = 0)
         {
+            Program.MessagesSent++;
             if (id == 0)
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
@@ -3155,6 +3166,11 @@ namespace Werewolf_Node
 #else
             Program.Bot.SendDocument(id, image, text);
 #endif
+        }
+
+        private void SendWithQueue(string text, List<string> choices)
+        {
+            SendWithQueue(text, GetRandomImage(choices));
         }
 
         private void SendWithQueue(string text, string gif = null)
