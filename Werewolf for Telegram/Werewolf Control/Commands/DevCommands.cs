@@ -50,7 +50,7 @@ namespace Werewolf_Control
         [Command(Trigger = "replacenodes", DevOnly = true)]
         public static void ReplaceNodes(Update update, string[] args)
         {
-            foreach(var n in Bot.Nodes)
+            foreach (var n in Bot.Nodes)
                 n.ShutDown();
             //get version
             var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
@@ -118,7 +118,7 @@ namespace Werewolf_Control
                     game = GetGroupNodeAndGame(update.Message.Chat.Id);
                 //player is not in game, they need to join, if they can
                 game?.SkipVote();
-                
+
                 return;
             }
         }
@@ -126,22 +126,9 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            Testing = !Testing;
-            new Task(APILimitTesting).Start();
+           
         }
-
-        private static bool Testing = false;
-
-        private static void APILimitTesting()
-        {
-            while (Testing)
-            {
-                for (var i = 0; i < 20; i++)
-                    Bot.Send("Test", UpdateHandler.Para);
-                Thread.Sleep(2000);
-            }
-        }
-
+        
         [Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
@@ -151,7 +138,11 @@ namespace Werewolf_Control
         [Command(Trigger = "leavegroup", DevOnly = true)]
         public static void LeaveGroup(Update update, string[] args)
         {
-            Bot.Api.LeaveChat(args[1]);
+            Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", long.Parse(args[1]))
+                .ContinueWith((result) =>
+                {
+                    Bot.Api.LeaveChat(args[1]);
+                });
         }
     }
 }
