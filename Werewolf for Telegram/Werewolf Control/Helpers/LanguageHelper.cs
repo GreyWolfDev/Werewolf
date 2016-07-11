@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using File = System.IO.File;
@@ -415,6 +416,17 @@ namespace Werewolf_Control.Helpers
                     if (count > 64)
                         curFileErorrs.Add(new LanguageError(curFileName, "language node", "base and variant are too long. (*38 utf8 byte max*)", ErrorLevel.Error));
                 }
+
+                //check for matching filename, different name
+                var error = langs.FirstOrDefault(x => x.Name != newFileLang && x.FilePath == newFilePath);
+                if (error != null)
+                {
+                    //problem....
+                    newFileErrors.Add(new LanguageError(curFileName, "File Name",
+                        $"File with same name ({curFileName}) exists with a different language name!\nNew File Language: {newFileLang}\nExisting File Language: {error.Name}\nCancelled!", ErrorLevel.Error));
+                    return;
+                }
+
                 foreach (var str in masterStrings)
                 {
                     var key = str.Attribute("key").Value;
@@ -544,10 +556,11 @@ namespace Werewolf_Control.Helpers
                                                             .Attribute("name")
                                                             .Value,
                                                     FilePath = x
-                                                });
+                                                }).ToList();
             var lang = langs.FirstOrDefault(x => x.Name == newFileLang);
             if (lang != null)
                 copyToPath = lang.FilePath;
+
             System.IO.File.Copy(newFilePath, copyToPath, true);
             msg += "File moved to production folder.\nCopying to git directory...\n";
             
