@@ -53,7 +53,16 @@ namespace Werewolf_Node
                         Program.RemoveGame(this);
                         return;
                     }
-
+                    try
+                    {
+                        var memberCount = Program.Bot.GetChatMembersCount(chatid).Result;
+                        DbGroup.MemberCount = memberCount;
+                        db.SaveChanges();
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
                     //decide if chaos or not
                     if (DbGroup.Mode == "Player")
                         Chaos = chaos;
