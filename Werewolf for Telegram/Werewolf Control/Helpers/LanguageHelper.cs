@@ -18,8 +18,41 @@ using File = System.IO.File;
 
 namespace Werewolf_Control.Helpers
 {
+    public class LangFile
+    {
+        public string Name { get; set; }
+        public string Base { get; set; }
+        public string Variant { get; set; }
+        public string FileName { get; set; }
+    }
     public static class LanguageHelper
     {
+        internal static List<LangFile> GetAllLanguages()
+        {
+            return Directory.GetFiles(Bot.LanguageDirectory, "*.xml")
+                                    .Select(
+                                        x =>
+                                            new LangFile
+                                            {
+                                                Name =
+                                                        XDocument.Load(x)
+                                                            .Descendants("language")
+                                                            .First()
+                                                            .Attribute("name")
+                                                            .Value,
+                                                Base = XDocument.Load(x)
+                                                            .Descendants("language")
+                                                            .First()
+                                                            .Attribute("base")
+                                                            .Value,
+                                                Variant = XDocument.Load(x)
+                                                            .Descendants("language")
+                                                            .First()
+                                                            .Attribute("variant")
+                                                            .Value,
+                                                FileName = Path.GetFileNameWithoutExtension(x)
+                                            }).ToList();
+        }
         public static void ValidateFiles(long id, int msgId)
         {
             var errors = new List<LanguageError>();

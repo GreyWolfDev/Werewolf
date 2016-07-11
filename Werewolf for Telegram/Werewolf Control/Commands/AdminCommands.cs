@@ -154,5 +154,42 @@ namespace Werewolf_Control
 
             Send(reply, update.Message.Chat.Id);
         }
+
+        [Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true)]
+        public static void SetLink(Update update, string[] args)
+        {
+            //args[1] should be the link
+            
+            //first, check if the group has a username
+            if (!String.IsNullOrEmpty(update.Message.Chat.Username))
+            {
+                Send($"You're group link has already been set to https://telegram.me/{update.Message.Chat.Username}",
+                    update.Message.Chat.Id);
+                return;
+            }
+            
+            //now check the args
+            if (args.Length < 2 || String.IsNullOrEmpty(args[1]))
+            {
+                Send($"You must use /setlink with the link to the group (invite link)", update.Message.Chat.Id);
+                return;
+            }
+
+            var link = args[1].Trim();
+            if (!link.Contains("telegram.me/joinchat"))
+            {
+                Send("This is an invalid telegram join link.", update.Message.Chat.Id);
+                return;
+            }
+            using (var db = new WWContext())
+            {
+                var grp = db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id) ??
+                          MakeDefaultGroup(update.Message.Chat.Id, update.Message.Chat.Title, "setlink");
+                grp.GroupLink = link;
+                db.SaveChanges();
+            }
+
+            Send($"Your group will be listed as: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
+        }
     }
 }

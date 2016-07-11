@@ -147,5 +147,11 @@ namespace Werewolf_Control
         {
             Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
+
+        [Command(Trigger = "leavegroup", DevOnly = true)]
+        public static void LeaveGroup(Update update, string[] args)
+        {
+            Bot.Api.LeaveChat(args[1]);
+        }
     }
 }

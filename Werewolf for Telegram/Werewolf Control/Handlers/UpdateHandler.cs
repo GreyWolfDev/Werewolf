@@ -40,7 +40,7 @@ namespace Werewolf_Control.Handler
                 var id = update.Message.Chat.Id;
 
 #if DEBUG
-                if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)")
+                if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
                 {
                     try
                     {
@@ -472,7 +472,7 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "upload", "setlang" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "upload", "setlang", "groups" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
@@ -501,12 +501,12 @@ namespace Werewolf_Control.Handler
 
                     groupid = long.Parse(args[1]);
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups")
                         return;
                     if (grp == null)
                     {
                         p = DB.Players.FirstOrDefault(x => x.TelegramId == groupid);
-                        if (p == null && args[0] != "lang" && args[0] != "setlang")
+                        if (p == null && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups") //why am i doing this????  TODO: update later to array contains...
                             return;
                     }
 
@@ -533,6 +533,13 @@ namespace Werewolf_Control.Handler
                     var Cancel = GetLocaleString("Cancel", language);
                     switch (command)
                     {
+                        case "groups":
+                            var groups = PublicGroups.ForLanguage(choice).OrderByDescending(x => x.MemberCount);
+                            var reply = groups.Aggregate("",
+                                (current, g) => current + $"{(g.MemberCount?.ToString()??"Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                            Edit(query.Message.Chat.Id, query.Message.MessageId, GetLocaleString("HereIsList", language, choice));
+                            Send(reply, query.Message.Chat.Id);
+                            break;
                         case "validate":
                             //choice = args[1];
                             if (choice == "All")

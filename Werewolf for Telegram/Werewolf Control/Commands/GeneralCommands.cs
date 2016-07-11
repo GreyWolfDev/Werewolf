@@ -122,7 +122,7 @@ namespace Werewolf_Control
             var langs =
                                 Directory.GetFiles(Bot.LanguageDirectory)
                                     .Select(
-                                        x =>
+                                        x => 
                                             new
                                             {
                                                 Name =

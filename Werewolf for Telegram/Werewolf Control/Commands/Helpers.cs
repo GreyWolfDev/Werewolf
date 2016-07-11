@@ -42,6 +42,8 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+                if (!String.IsNullOrEmpty(update.Message.Chat.Username))
+                    grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game

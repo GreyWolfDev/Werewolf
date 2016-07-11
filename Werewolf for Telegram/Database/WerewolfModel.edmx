@@ -241,6 +241,19 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_PublicGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="MemberCount" Type="int" />
+          <Property Name="GroupLink" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
           <Key>
@@ -484,6 +497,15 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [v_PreferredGroups].[Description] AS [Description], 
     [v_PreferredGroups].[GroupLink] AS [GroupLink]
     FROM [db_owner].[v_PreferredGroups] AS [v_PreferredGroups]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_PublicGroups" EntityType="Self.v_PublicGroups" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_PublicGroups].[Id] AS [Id], 
+    [v_PublicGroups].[Name] AS [Name], 
+    [v_PublicGroups].[Language] AS [Language], 
+    [v_PublicGroups].[MemberCount] AS [MemberCount], 
+    [v_PublicGroups].[GroupLink] AS [GroupLink]
+    FROM [db_owner].[v_PublicGroups] AS [v_PublicGroups]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_WaitList" EntityType="Self.v_WaitList" store:Type="Views" store:Schema="db_owner">
             <DefiningQuery>SELECT 
@@ -931,6 +953,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <FunctionImport Name="GetIdleKills24Hours" ReturnType="Collection(Int32)">
           <Parameter Name="userid" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="v_PublicGroups" EntityType="werewolfModel.v_PublicGroups" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1108,6 +1131,17 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Idles" Type="Int32" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_PublicGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemberCount" Type="Int32" />
+          <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1496,6 +1530,17 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GetIdleKills24Hours" FunctionName="werewolfModel.Store.GetIdleKills24Hours" />
+          <EntitySetMapping Name="v_PublicGroups">
+            <EntityTypeMapping TypeName="werewolfModel.v_PublicGroups">
+              <MappingFragment StoreEntitySet="v_PublicGroups">
+                <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
+                <ScalarProperty Name="MemberCount" ColumnName="MemberCount" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

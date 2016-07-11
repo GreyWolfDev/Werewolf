@@ -44,6 +44,7 @@ namespace Database
         public virtual DbSet<GroupStat> GroupStats { get; set; }
         public virtual DbSet<DailyCount> DailyCounts { get; set; }
         public virtual DbSet<v_IdleKill24HoursMain> v_IdleKill24HoursMain { get; set; }
+        public virtual DbSet<v_PublicGroups> v_PublicGroups { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {

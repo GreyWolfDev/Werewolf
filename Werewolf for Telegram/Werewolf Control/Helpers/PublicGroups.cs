@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Database;
+using System.IO;
+using System.Xml.Linq;
+
+namespace Werewolf_Control.Helpers
+{
+    internal static class PublicGroups
+    {
+        private static List<v_PublicGroups> _list;
+        private static List<string> _langs;
+        private static DateTime _lastGet = DateTime.MinValue;
+        internal static List<v_PublicGroups> GetAll()
+        {
+            if (_lastGet < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+            using (var db = new WWContext())
+                _list = db.v_PublicGroups.ToList();
+            return _list;
+        }
+
+        internal static List<string> GetBaseLanguages()
+        {
+            if (_lastGet < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+            {
+                var langs = new List<string>();
+                foreach (var lang in LanguageHelper.GetAllLanguages())
+                {
+                    if (GetAll().Any(x => x.Language == lang.FileName))
+                    {
+                        //load the language to get the base
+                        if (!langs.Contains(lang.Base))
+                            langs.Add(lang.Base);
+                    }
+                }
+                _langs = langs;
+            }
+            return _langs;
+        }
+
+        internal static List<v_PublicGroups> ForLanguage(string baseLang)
+        {
+            return GetAll().Where(x => LanguageHelper.GetAllLanguages().Where(y => y.Base == baseLang).Any(y => y.FileName == x.Language)).ToList();
+        }
+    }
+}
