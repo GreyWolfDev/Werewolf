@@ -26,7 +26,8 @@ namespace Werewolf_Control.Handler
         internal static int[] PermaBanList =
         {
             226424085, //Duce
-            226703696 //unknown, impersonation / stalking
+            226703696, //unknown, impersonation / stalking
+            104427390  //@sunbae / Lixie - stalking
         };
 
         internal static int[] SpamBanList =
