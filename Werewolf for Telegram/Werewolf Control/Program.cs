@@ -197,7 +197,7 @@ namespace Werewolf_Control
                     var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
                     var msg =
                         $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\n";
+                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n";
                     
                     msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
 
@@ -205,7 +205,7 @@ namespace Werewolf_Control
                         msg += new string(' ', Console.WindowWidth);
 
                     var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value).Take(10);
-                    msg += "\n" + top.Aggregate("", (a, b) => a + b.Key + ": " + b.Value + "\n");
+                    msg += "\n" + top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value + "\t\n");
                     msg += new string(' ', Console.WindowWidth);
 
                     //now dump all this to the console
