@@ -28,6 +28,12 @@ namespace Werewolf_Control.Handler
             226424085, //Duce
             226703696 //unknown, impersonation / stalking
         };
+
+        internal static int[] SpamBanList =
+        {
+            187190305
+        };
+
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
@@ -129,7 +135,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
-                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0))
+                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id??0))
                                 {
                                     return;
                                 }

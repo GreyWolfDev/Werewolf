@@ -150,5 +150,17 @@ namespace Werewolf_Control
         {
             UpdateHandler.UserMessages.Clear();
         }
+
+        [Command(Trigger = "notifyspam", DevOnly = true)]
+        public static void NotifySpam(Update u, string[] args)
+        {
+            Send("Please don't spam me like that", long.Parse(args[1]));
+        }
+
+        [Command(Trigger = "notifyban", DevOnly = true)]
+        public static void NotifyBan(Update u, string[] args)
+        {
+            Send("You have been banned.  You may appeal your ban in @werewolfsupport", long.Parse(args[1]));
+        }
     }
 }
