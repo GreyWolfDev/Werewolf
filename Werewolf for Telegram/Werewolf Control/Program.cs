@@ -106,24 +106,24 @@ namespace Werewolf_Control
 
         public static void Log(string s, bool error = false)
         {
-            while (_writingInfo)
-                Thread.Sleep(50);
-            Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
-            if (Console.CursorTop >= 30)
-                Console.CursorTop = 19;
-            Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
-            Console.WriteLine(s);
-            try
-            {
-                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
-                {
-                    sw.WriteLine($"{DateTime.Now} - {s}");
-                }
-            }
-            catch
-            {
-                // ignored
-            }
+            //while (_writingInfo)
+            //    Thread.Sleep(50);
+            //Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
+            //if (Console.CursorTop >= 30)
+            //    Console.CursorTop = 19;
+            //Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
+            //Console.WriteLine(s);
+            //try
+            //{
+            //    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
+            //    {
+            //        sw.WriteLine($"{DateTime.Now} - {s}");
+            //    }
+            //}
+            //catch
+            //{
+            //    // ignored
+            //}
         }
 
         private static void MessageMonitor()
@@ -204,6 +204,9 @@ namespace Werewolf_Control
                     for (var i = 0; i < 12 - Nodes.Count; i++)
                         msg += new string(' ', Console.WindowWidth);
 
+                    var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value).Take(10);
+                    msg += "\n" + top.Aggregate("", (a, b) => a + b.Key + ": " + b.Value + "\n");
+                    msg += new string(' ', Console.WindowWidth);
 
                     //now dump all this to the console
                     //first get our current caret position

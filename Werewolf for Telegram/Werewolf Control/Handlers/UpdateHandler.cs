@@ -18,10 +18,11 @@ using Werewolf_Control.Models;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control.Handler
 {
+    
     internal static class UpdateHandler
     {
         internal static int Para = 129046388;
-
+        internal static Dictionary<int, int> UserMessages = new Dictionary<int, int>();
         internal static int[] PermaBanList =
         {
             226424085, //Duce
@@ -37,6 +38,16 @@ namespace Werewolf_Control.Handler
         {
             {
                 Bot.MessagesReceived++;
+                try
+                {
+                    if (!UserMessages.ContainsKey(update.Message.From.Id))
+                        UserMessages.Add(update.Message.From.Id, 0);
+                    UserMessages[update.Message.From.Id]++;
+                }
+                catch
+                {
+                    // ignored
+                }
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it

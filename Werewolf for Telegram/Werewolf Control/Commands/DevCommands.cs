@@ -144,5 +144,11 @@ namespace Werewolf_Control
                     Bot.Api.LeaveChat(args[1]);
                 });
         }
+
+        [Command(Trigger = "clearcount", DevOnly = true)]
+        public static void ClearCount(Update u, string[] args)
+        {
+            UpdateHandler.UserMessages.Clear();
+        }
     }
 }
