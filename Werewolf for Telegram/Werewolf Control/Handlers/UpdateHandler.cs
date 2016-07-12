@@ -32,7 +32,7 @@ namespace Werewolf_Control.Handler
 
         internal static int[] SpamBanList =
         {
-            187190305
+            
         };
 
         internal static bool SendGifIds = false;
@@ -41,20 +41,25 @@ namespace Werewolf_Control.Handler
             new Task(() => { HandleUpdate(e.Update); }).Start();
         }
 
+        private static void AddCount(int id)
+        {
+            try
+            {
+                if (!UserMessages.ContainsKey(id))
+                    UserMessages.Add(id, 0);
+                UserMessages[id]++;
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+
         internal static void HandleUpdate(Update update)
         {
             {
                 Bot.MessagesReceived++;
-                try
-                {
-                    if (!UserMessages.ContainsKey(update.Message.From.Id))
-                        UserMessages.Add(update.Message.From.Id, 0);
-                    UserMessages[update.Message.From.Id]++;
-                }
-                catch
-                {
-                    // ignored
-                }
+                
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
@@ -136,6 +141,8 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
+                                if (update.Message.Chat.Type == ChatType.Private)
+                                    AddCount(update.Message.From.Id);
                                 if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id??0))
                                 {
                                     return;
@@ -206,6 +213,8 @@ namespace Werewolf_Control.Handler
                                         return;
                                     }
                                     Bot.CommandsReceived++;
+                                    if (update.Message.Chat.Type != ChatType.Private)
+                                        AddCount(update.Message.From.Id);
                                     command.Method.Invoke(update, args);
                                 }
 
