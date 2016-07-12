@@ -60,6 +60,7 @@ namespace Werewolf_Control
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
             new Thread(CpuMonitor).Start();
+            new Thread(UpdateHandler.SpamDetection).Start();
             //new Thread(MessageMonitor).Start();
             _timer = new System.Timers.Timer();
             _timer.Elapsed += new ElapsedEventHandler(TimerOnTick);
@@ -204,8 +205,8 @@ namespace Werewolf_Control
                     for (var i = 0; i < 12 - Nodes.Count; i++)
                         msg += new string(' ', Console.WindowWidth);
 
-                    var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value).Take(10);
-                    msg += "\n" + top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value + "\t\n");
+                    var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
+                    msg += "\n" + top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
                     msg += new string(' ', Console.WindowWidth);
 
                     //now dump all this to the console

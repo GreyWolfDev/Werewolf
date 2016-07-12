@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms.Design;
+using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Args;
@@ -22,7 +23,7 @@ namespace Werewolf_Control.Handler
     internal static class UpdateHandler
     {
         internal static int Para = 129046388;
-        internal static Dictionary<int, int> UserMessages = new Dictionary<int, int>();
+        internal static Dictionary<int, SpamDetector> UserMessages = new Dictionary<int, SpamDetector>();
         internal static int[] PermaBanList =
         {
             226424085, //Duce
@@ -30,9 +31,9 @@ namespace Werewolf_Control.Handler
             104427390  //@sunbae / Lixie - stalking
         };
 
-        internal static int[] SpamBanList =
+        internal static HashSet<int> SpamBanList = new HashSet<int>
         {
-            
+            //leave this open for perma bans
         };
 
         internal static bool SendGifIds = false;
@@ -41,17 +42,66 @@ namespace Werewolf_Control.Handler
             new Task(() => { HandleUpdate(e.Update); }).Start();
         }
 
-        private static void AddCount(int id)
+        private static void AddCount(int id, string command)
         {
             try
             {
                 if (!UserMessages.ContainsKey(id))
-                    UserMessages.Add(id, 0);
-                UserMessages[id]++;
+                    UserMessages.Add(id, new SpamDetector {Messages = new HashSet<UserMessage>()});
+                UserMessages[id].Messages.Add(new UserMessage(command));
             }
             catch
             {
                 // ignored
+            }
+        }
+
+        internal static void SpamDetection()
+        {
+            while (true)
+            {
+                try
+                {
+                    var temp = UserMessages.ToDictionary(entry => entry.Key, entry => entry.Value);
+                    //clone the dictionary
+                    foreach (var key in temp.Keys.ToList())
+                    {
+                        //drop older messages (1 minute)
+                        temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
+                        if (temp[key].Messages.Count == 0)
+                            temp.Remove(key);
+                        //now count, notify if limit hit
+                        if (temp[key].Messages.Count() >= 20) // 20 in a minute
+                        {
+                            temp[key].Messages.Clear();
+                            temp[key].Warns++;
+                            if (temp[key].Warns < 3)
+                            {
+                                Send($"Please do not spam me. {temp[key].Warns} warns / 2 allowed", key);
+                                Send(
+                                    $"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.Aggregate("", (a, b) => a + "\n" + b.Command)}",
+                                    Para);
+                                continue;
+                            }
+                            if (temp[key].Warns >= 3 & !temp[key].NotifiedAdmin)
+                            {
+                                Send($"User {key} has reached warn limit!", Para);
+                                temp[key].NotifiedAdmin = true;
+                                //ban
+                                SpamBanList.Add(key);
+                                Send("You have been banned for spamming.  You may appeal your ban in @werewolfsupport",
+                                    key);
+                            }
+                            
+                        }
+                    }
+                    UserMessages = temp;
+                }
+                catch
+                {
+                    // ignored
+                }
+                Thread.Sleep(2000);
             }
         }
 
@@ -142,7 +192,7 @@ namespace Werewolf_Control.Handler
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
                                 if (update.Message.Chat.Type == ChatType.Private)
-                                    AddCount(update.Message.From.Id);
+                                    AddCount(update.Message.From.Id, update.Message.Text);
                                 if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id??0))
                                 {
                                     return;
@@ -193,9 +243,9 @@ namespace Werewolf_Control.Handler
                                     }
                                     if (command.GlobalAdminOnly)
                                     {
-                                        using (var DB = new WWContext())
+                                        using (var db = new WWContext())
                                         {
-                                            if (!DB.Admins.Any(x => x.UserId == update.Message.From.Id))
+                                            if (!db.Admins.Any(x => x.UserId == update.Message.From.Id))
                                             {
                                                 Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
                                                 return;
@@ -214,7 +264,7 @@ namespace Werewolf_Control.Handler
                                     }
                                     Bot.CommandsReceived++;
                                     if (update.Message.Chat.Type != ChatType.Private)
-                                        AddCount(update.Message.From.Id);
+                                        AddCount(update.Message.From.Id, update.Message.Text);
                                     command.Method.Invoke(update, args);
                                 }
 
