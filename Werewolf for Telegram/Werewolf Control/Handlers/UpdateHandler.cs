@@ -22,7 +22,11 @@ namespace Werewolf_Control.Handler
     {
         internal static int Para = 129046388;
 
-        internal static int[] PermaBanList = { 226424085 };//Duce
+        internal static int[] PermaBanList =
+        {
+            226424085, //Duce
+            226703696 //unknown, impersonation / stalking
+        };
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
@@ -52,6 +56,53 @@ namespace Werewolf_Control.Handler
                     }
                 }
 #endif
+
+                //let's make sure it is a bot command, as we shouldn't see anything else....
+                if (update.Message.Type != MessageType.ServiceMessage &&
+                    update.Message.Type != MessageType.UnknownMessage && update.Message.Chat.Type != ChatType.Private)
+                {
+                    if (
+                        update.Message.Entities.All(
+                            x => x.Type != MessageEntityType.BotCommand && x.Type != MessageEntityType.Mention))
+                    {
+                        var admins = Bot.Api.GetChatAdministrators(update.Message.Chat.Id).Result.ToList();
+
+
+                        var adminlist = admins.Aggregate("", (a, b) => a + Environment.NewLine + "@" + b.User.Username);
+                        //I shouldn't have seen this message!
+                        Send(
+                            "Privacy mode has been enabled, but has not updated for this group.  In order for it to be updated, I need to leave and be added back.  Admin, please add me back to this group!\n" +
+                            adminlist.FormatHTML(),
+                            update.Message.Chat.Id);
+                        
+                        try
+                        {
+                            using (var db = new WWContext())
+                            {
+                                var grps = db.Groups.Where(x => x.GroupId == id);
+                                if (!grps.Any())
+                                {
+                                    return;
+                                }
+                                foreach (var g in grps)
+                                {
+                                    g.BotInGroup = false;
+                                    g.UserName = update.Message.Chat.Username;
+                                    g.Name = update.Message.Chat.Title;
+                                }
+                                db.SaveChanges();
+                            }
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+
+                        Bot.Api.LeaveChat(update.Message.Chat.Id);
+                    }
+                }
+
+
                 //Settings.Main.LogText += update?.Message?.Text + Environment.NewLine;
                 bool block = (id == Settings.SupportChatId);
 
@@ -106,7 +157,10 @@ namespace Werewolf_Control.Handler
                                 {
                                     //check that we should run the command
                                     if (block && command.Blockable)
+                                    {
+                                        Send("No games in support chat!", id);
                                         return;
+                                    }
                                     if (command.DevOnly && update.Message.From.Id != Para)
                                     {
                                         Send(GetLocaleString("NotPara", GetLanguage(id)), id);
