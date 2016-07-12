@@ -162,5 +162,24 @@ namespace Werewolf_Control
         {
             Send("You have been banned.  You may appeal your ban in @werewolfsupport", long.Parse(args[1]));
         }
+
+        [Command(Trigger = "whois", DevOnly = true)]
+        public static void WhoIs(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                var search = int.Parse(args[1].Trim());
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == search);
+                if (p != null)
+                    Send($"User: {p.Name}\nUserName: @{p.UserName}", u.Message.Chat.Id);
+            }
+        }
+        [Command(Trigger="getcommands", DevOnly = true)]
+        public static void GetCommands(Update u, string[] args)
+        {
+            var target = int.Parse(args[1]);
+            var reply = UpdateHandler.UserMessages[target].Messages.Aggregate("", (a, b) => a + "\n" + b.Command);
+            Send(reply, u.Message.Chat.Id);
+        }
     }
 }

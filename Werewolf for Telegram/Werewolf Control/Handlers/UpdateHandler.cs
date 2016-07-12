@@ -19,7 +19,7 @@ using Werewolf_Control.Models;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control.Handler
 {
-    
+
     internal static class UpdateHandler
     {
         internal static int Para = 129046388;
@@ -47,7 +47,7 @@ namespace Werewolf_Control.Handler
             try
             {
                 if (!UserMessages.ContainsKey(id))
-                    UserMessages.Add(id, new SpamDetector {Messages = new HashSet<UserMessage>()});
+                    UserMessages.Add(id, new SpamDetector { Messages = new HashSet<UserMessage>() });
                 UserMessages[id].Messages.Add(new UserMessage(command));
             }
             catch
@@ -66,40 +66,52 @@ namespace Werewolf_Control.Handler
                     //clone the dictionary
                     foreach (var key in temp.Keys.ToList())
                     {
-                        //drop older messages (1 minute)
-                        temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
-                        if (temp[key].Messages.Count == 0)
-                            temp.Remove(key);
-                        //now count, notify if limit hit
-                        if (temp[key].Messages.Count() >= 20) // 20 in a minute
+                        try
                         {
-                            temp[key].Messages.Clear();
-                            temp[key].Warns++;
-                            if (temp[key].Warns < 3)
+                            //drop older messages (1 minute)
+                            temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
+                            if (temp[key].Messages.Count == 0)
                             {
-                                Send($"Please do not spam me. {temp[key].Warns} warns / 2 allowed", key);
-                                Send(
-                                    $"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.Aggregate("", (a, b) => a + "\n" + b.Command)}",
-                                    Para);
+                                temp.Remove(key);
                                 continue;
                             }
-                            if (temp[key].Warns >= 3 & !temp[key].NotifiedAdmin)
+                            //now count, notify if limit hit
+                            if (temp[key].Messages.Count() >= 20) // 20 in a minute
                             {
-                                Send($"User {key} has reached warn limit!", Para);
-                                temp[key].NotifiedAdmin = true;
-                                //ban
-                                SpamBanList.Add(key);
-                                Send("You have been banned for spamming.  You may appeal your ban in @werewolfsupport",
-                                    key);
+                                
+                                temp[key].Warns++;
+                                if (temp[key].Warns < 2)
+                                {
+                                    Send($"Please do not spam me. Next time is automated ban.", key);
+                                    Send(
+                                        $"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.Aggregate("", (a, b) => a + "\n" + b.Command)}",
+                                        Para);
+                                    continue;
+                                }
+                                if (temp[key].Warns >= 3 & !temp[key].NotifiedAdmin)
+                                {
+                                    Send($"User {key} has reached warn limit!", Para);
+                                    temp[key].NotifiedAdmin = true;
+                                    //ban
+                                    SpamBanList.Add(key);
+                                    Send("You have been banned for spamming.  You may appeal your ban in @werewolfsupport",
+                                        key);
+                                }
+
+                                temp[key].Messages.Clear();
+
                             }
-                            
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
                         }
                     }
                     UserMessages = temp;
                 }
-                catch
+                catch (Exception e)
                 {
-                    // ignored
+                    Console.WriteLine(e.Message);
                 }
                 Thread.Sleep(2000);
             }
@@ -109,7 +121,7 @@ namespace Werewolf_Control.Handler
         {
             {
                 Bot.MessagesReceived++;
-                
+
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
@@ -147,7 +159,7 @@ namespace Werewolf_Control.Handler
                 //            "Privacy mode has been enabled, but has not updated for this group.  In order for it to be updated, I need to leave and be added back.  Admin, please add me back to this group!\n" +
                 //            adminlist.FormatHTML(),
                 //            update.Message.Chat.Id);
-                        
+
                 //        try
                 //        {
                 //            using (var db = new WWContext())
@@ -193,7 +205,7 @@ namespace Werewolf_Control.Handler
                             {
                                 if (update.Message.Chat.Type == ChatType.Private)
                                     AddCount(update.Message.From.Id, update.Message.Text);
-                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id??0))
+                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     return;
                                 }
@@ -667,7 +679,7 @@ namespace Werewolf_Control.Handler
                         case "groups":
                             var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10); //top 10 groups, otherwise these lists will get LONG
                             var reply = groups.Aggregate("",
-                                (current, g) => current + $"{(g.MemberCount?.ToString()??"Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                (current, g) => current + $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
                             Edit(query.Message.Chat.Id, query.Message.MessageId, GetLocaleString("HereIsList", language, choice));
                             Send(reply, query.Message.Chat.Id);
                             break;

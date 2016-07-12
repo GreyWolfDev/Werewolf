@@ -206,7 +206,7 @@ namespace Werewolf_Control
                         msg += new string(' ', Console.WindowWidth);
 
                     var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
-                    msg += "\n" + top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
+                    msg += "\nSPAM DETECTION\n" + top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
                     msg += new string(' ', Console.WindowWidth);
 
                     //now dump all this to the console
