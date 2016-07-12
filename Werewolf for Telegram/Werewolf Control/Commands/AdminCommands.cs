@@ -20,20 +20,47 @@ namespace Werewolf_Control
         [Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true)]
         public static void Smite(Update u, string[] args)
         {
-            if (u.Message.ReplyToMessage == null)
-            {
-                Bot.Send(GetLocaleString("MustReplySmite",GetLanguage(u.Message.Chat.Id)).ToBold(), u.Message.Chat.Id);
-                return;
-            }
+            //if (u.Message.ReplyToMessage == null)
+            //{
+            //    Bot.Send(GetLocaleString("MustReplySmite",GetLanguage(u.Message.Chat.Id)).ToBold(), u.Message.Chat.Id);
+            //    return;
+            //}
+
+            //get the names to smite
+
+
+
 
             if (UpdateHelper.IsGroupAdmin(u))
             {
-                int smiteid = u.Message.ReplyToMessage?.From?.Id ??
-                            u.Message.ForwardFrom?.Id ?? 0;
-                if (smiteid != 0)
+                var tosmite = new List<int>();
+
+                foreach (var e in u.Message.Entities)
                 {
-                    Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(smiteid);
+                    switch (e.Type)
+                    {
+                        case MessageEntityType.Mention:
+                            //get user
+                            var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
+                            using (var db = new WWContext())
+                            {
+                                var id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
+                                if (id != 0)
+                                {
+                                    var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+                                    game?.SmitePlayer(id);
+                                }
+                            }
+                            break;
+                        case MessageEntityType.TextMention:
+                            Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(e.User.Id);
+                            break;
+                    }
+
+
                 }
+
+
             }
         }
 
@@ -59,7 +86,7 @@ namespace Werewolf_Control
             }
 
             var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id);
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatToDo",GetLanguage(update.Message.From.Id)),
+            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)),
                 replyMarkup: menu);
         }
 
@@ -111,7 +138,7 @@ namespace Werewolf_Control
         {
             //check user ids and such
             List<int> ids = new List<int>();
-            foreach (var arg in args.Skip(1).FirstOrDefault()?.Split(' ')??new [] {""})
+            foreach (var arg in args.Skip(1).FirstOrDefault()?.Split(' ') ?? new[] { "" })
             {
                 var id = 0;
                 if (int.TryParse(arg, out id))
@@ -159,7 +186,7 @@ namespace Werewolf_Control
         public static void SetLink(Update update, string[] args)
         {
             //args[1] should be the link
-            
+
             //first, check if the group has a username
             if (!String.IsNullOrEmpty(update.Message.Chat.Username))
             {
@@ -167,7 +194,7 @@ namespace Werewolf_Control
                     update.Message.Chat.Id);
                 return;
             }
-            
+
             //now check the args
             if (args.Length < 2 || String.IsNullOrEmpty(args[1]))
             {
