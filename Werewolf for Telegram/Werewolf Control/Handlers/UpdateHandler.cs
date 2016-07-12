@@ -18,21 +18,48 @@ using Werewolf_Control.Models;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control.Handler
 {
+    
     internal static class UpdateHandler
     {
         internal static int Para = 129046388;
+        internal static Dictionary<int, int> UserMessages = new Dictionary<int, int>();
+        internal static int[] PermaBanList =
+        {
+            226424085, //Duce
+            226703696, //unknown, impersonation / stalking
+            104427390  //@sunbae / Lixie - stalking
+        };
 
-        internal static int[] PermaBanList = { 226424085 };//Duce
+        internal static int[] SpamBanList =
+        {
+            
+        };
+
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
             new Task(() => { HandleUpdate(e.Update); }).Start();
         }
 
+        private static void AddCount(int id)
+        {
+            try
+            {
+                if (!UserMessages.ContainsKey(id))
+                    UserMessages.Add(id, 0);
+                UserMessages[id]++;
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+
         internal static void HandleUpdate(Update update)
         {
             {
                 Bot.MessagesReceived++;
+                
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
@@ -52,6 +79,53 @@ namespace Werewolf_Control.Handler
                     }
                 }
 #endif
+
+                //let's make sure it is a bot command, as we shouldn't see anything else....
+                //if (update.Message.Type != MessageType.ServiceMessage &&
+                //    update.Message.Type != MessageType.UnknownMessage && update.Message.Chat.Type != ChatType.Private)
+                //{
+                //    if (
+                //        update.Message.Entities.All(
+                //            x => x.Type != MessageEntityType.BotCommand && x.Type != MessageEntityType.Mention))
+                //    {
+                //        var admins = Bot.Api.GetChatAdministrators(update.Message.Chat.Id).Result.ToList();
+
+
+                //        var adminlist = admins.Aggregate("", (a, b) => a + Environment.NewLine + "@" + b.User.Username);
+                //        //I shouldn't have seen this message!
+                //        Send(
+                //            "Privacy mode has been enabled, but has not updated for this group.  In order for it to be updated, I need to leave and be added back.  Admin, please add me back to this group!\n" +
+                //            adminlist.FormatHTML(),
+                //            update.Message.Chat.Id);
+                        
+                //        try
+                //        {
+                //            using (var db = new WWContext())
+                //            {
+                //                var grps = db.Groups.Where(x => x.GroupId == id);
+                //                if (!grps.Any())
+                //                {
+                //                    return;
+                //                }
+                //                foreach (var g in grps)
+                //                {
+                //                    g.BotInGroup = false;
+                //                    g.UserName = update.Message.Chat.Username;
+                //                    g.Name = update.Message.Chat.Title;
+                //                }
+                //                db.SaveChanges();
+                //            }
+                //        }
+                //        catch
+                //        {
+                //            // ignored
+                //        }
+
+                //        Bot.Api.LeaveChat(update.Message.Chat.Id);
+                //    }
+                //}
+
+
                 //Settings.Main.LogText += update?.Message?.Text + Environment.NewLine;
                 bool block = (id == Settings.SupportChatId);
 
@@ -67,7 +141,9 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
-                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0))
+                                if (update.Message.Chat.Type == ChatType.Private)
+                                    AddCount(update.Message.From.Id);
+                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id??0))
                                 {
                                     return;
                                 }
@@ -106,7 +182,10 @@ namespace Werewolf_Control.Handler
                                 {
                                     //check that we should run the command
                                     if (block && command.Blockable)
+                                    {
+                                        Send("No games in support chat!", id);
                                         return;
+                                    }
                                     if (command.DevOnly && update.Message.From.Id != Para)
                                     {
                                         Send(GetLocaleString("NotPara", GetLanguage(id)), id);
@@ -134,6 +213,8 @@ namespace Werewolf_Control.Handler
                                         return;
                                     }
                                     Bot.CommandsReceived++;
+                                    if (update.Message.Chat.Type != ChatType.Private)
+                                        AddCount(update.Message.From.Id);
                                     command.Method.Invoke(update, args);
                                 }
 
