@@ -46,9 +46,18 @@ namespace Werewolf_Node.Helpers
                         var photoPath = file.FilePath;
                         var fileName = photoPath.Substring(photoPath.LastIndexOf("/") + 1);
                         //check that the file name is different
-                        if (p.ImageFile == fileName)
+                        if (p.ImageFile == fileName && System.IO.File.Exists(ImagePath + fileName))
                             return; //same, no reason to download again
-
+                        if (p.ImageFile != fileName)
+                            try
+                            {
+                                //delete old one
+                                System.IO.File.Delete(ImagePath + p.ImageFile);
+                            }
+                            catch
+                            {
+                                // ignored
+                            }
                         var uri = $"https://api.telegram.org/file/bot{Program.APIToken}/{photoPath}";
 
                         //write the new info to the database

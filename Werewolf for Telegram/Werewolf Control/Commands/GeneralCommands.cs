@@ -36,7 +36,7 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://werewolf.parawuff.com?referrer=help)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com?referrer=help)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
                                                         parseMode: ParseMode.Markdown);
         }
 
@@ -50,7 +50,7 @@ namespace Werewolf_Control
         [Command(Trigger = "changelog")]
         public static void ChangeLog(Update update, string[] args)
         {
-            Send("Changelog moved to <a href=\"werewolf.parawuff.com/#changes?referrer=changelog\">here</a>\nAlso check out the dev channel @werewolfdev", update.Message.Chat.Id);
+            Send("Changelog moved to <a href=\"www.tgwerewolf.com/#changes?referrer=changelog\">here</a>\nAlso check out the dev channel @werewolfdev", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "runinfo")]
@@ -182,7 +182,7 @@ namespace Werewolf_Control
                         p.HasPM = true;
                         db.SaveChanges();
                         Bot.Send(
-                            "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by @werewolfsupport for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"werewolf.parawuff.com?referrer=start\">here</a>!",
+                            "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by @werewolfsupport for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
                             update.Message.Chat.Id);
                         //Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                     }
@@ -299,19 +299,19 @@ namespace Werewolf_Control
         [Command(Trigger = "stats")]
         public static void GetStats(Update update, string[] args)
         {
-            //var reply = $"[Global Stats](werewolf.parawuff.com/Stats)\n";
+            //var reply = $"[Global Stats](www.tgwerewolf.com/Stats)\n";
             //if (update.Message.Chat.Type != ChatType.Private)
-            //    reply += $"[Group Stats](werewolf.parawuff.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
-            //reply += $"[Player Stats](werewolf.parawuff.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
+            //    reply += $"[Group Stats](www.tgwerewolf.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
+            //reply += $"[Player Stats](www.tgwerewolf.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
 
             //change this to buttons
             var buttons = new List<InlineKeyboardButton[]>
             {
-                new[] {new InlineKeyboardButton {Text = "Global Stats", Url = "http://werewolf.parawuff.com/Stats?referrer=stats"}}
+                new[] {new InlineKeyboardButton {Text = "Global Stats", Url = "http://www.tgwerewolf.com/Stats?referrer=stats"}}
             };
             if (update.Message.Chat.Type != ChatType.Private)
-                buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.Chat.Title} Stats", Url = "http://werewolf.parawuff.com/Stats/Group/" + update.Message.Chat.Id + "?referrer=stats" } });
-            buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.From.FirstName} Stats", Url = "http://werewolf.parawuff.com/Stats/Player/" + update.Message.From.Id + "?referrer=stats" } });
+                buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.Chat.Title} Stats", Url = "http://www.tgwerewolf.com/Stats/Group/" + update.Message.Chat.Id + "?referrer=stats" } });
+            buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.From.FirstName} Stats", Url = "http://www.tgwerewolf.com/Stats/Player/" + update.Message.From.Id + "?referrer=stats" } });
             var menu = new InlineKeyboardMarkup(buttons.ToArray());
             Bot.Api.SendTextMessage(update.Message.Chat.Id, "Stats", replyMarkup: menu);
         }

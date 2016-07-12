@@ -431,7 +431,7 @@ namespace Werewolf_Control.Handler
                                     msg += Environment.NewLine +
                                            "For updates on what is happening, join the dev channel @werewolfdev" +
                                            Environment.NewLine +
-                                           "Full information is available on the [website](http://werewolf.parawuff.com)";
+                                           "Full information is available on the [website](http://www.tgwerewolf.com)";
                                     Send(msg, id, parseMode: ParseMode.Markdown);
                                 }
                             }
