@@ -80,17 +80,18 @@ namespace Werewolf_Control.Handler
                             {
                                 
                                 temp[key].Warns++;
-                                if (temp[key].Warns < 2)
+                                if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
                                 {
                                     Send($"Please do not spam me. Next time is automated ban.", key);
-                                    Send(
-                                        $"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.Aggregate("", (a, b) => a + "\n" + b.Command)}",
+                                    Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
                                         Para);
                                     continue;
                                 }
-                                if (temp[key].Warns >= 3 & !temp[key].NotifiedAdmin)
+                                if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 40) & !temp[key].NotifiedAdmin)
                                 {
-                                    Send($"User {key} has reached warn limit!", Para);
+                                    Send(
+                                        $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                        Para);
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);

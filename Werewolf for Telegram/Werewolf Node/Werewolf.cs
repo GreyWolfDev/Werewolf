@@ -2674,7 +2674,7 @@ namespace Werewolf_Node
 
                 var menu = new InlineKeyboardMarkup(choices.ToArray());
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
-                Thread.Sleep(50);
+                Thread.Sleep(100);
             }
         }
 
@@ -2882,7 +2882,7 @@ namespace Werewolf_Node
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))
                 {
                     SendMenu(buttons, player, msg, qtype);
-                    Thread.Sleep(50);
+                    Thread.Sleep(100);
                 }
                 else
                 {

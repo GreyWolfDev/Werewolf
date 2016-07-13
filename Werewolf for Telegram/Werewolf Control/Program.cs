@@ -29,6 +29,8 @@ namespace Werewolf_Control
         internal static float MessageTxPerSecond;
         internal static int NodeMessagesSent = 0;
         private static System.Timers.Timer _timer;
+        public static int MaxGames;
+        public static DateTime MaxTime = DateTime.MinValue;
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -185,6 +187,7 @@ namespace Werewolf_Control
             {
                 try
                 {
+
                     var Nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
                     NodeMessagesSent = Nodes.Sum(x => x.MessagesSent);
                     var CurrentPlayers = Nodes.Sum(x => x.CurrentPlayers);
@@ -196,10 +199,20 @@ namespace Werewolf_Control
                     var MessagesRx = Bot.MessagesReceived;
                     var CommandsRx = Bot.CommandsReceived;
                     var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
+
+                    if (CurrentGames > MaxGames)
+                    {
+                        MaxGames = CurrentGames;
+                        MaxTime = DateTime.Now;
+                    }
+
                     var msg =
                         $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n";
+                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
+                        $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
+
                     
+
                     msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
 
                     for (var i = 0; i < 12 - Nodes.Count; i++)
@@ -212,9 +225,9 @@ namespace Werewolf_Control
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
-                    var ypos = Math.Max(Console.CursorTop, 19);
-                    if (ypos >= 30)
-                        ypos = 19;
+                    var ypos = Math.Max(Console.CursorTop, 30);
+                    if (ypos >= 60)
+                        ypos = 30;
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
