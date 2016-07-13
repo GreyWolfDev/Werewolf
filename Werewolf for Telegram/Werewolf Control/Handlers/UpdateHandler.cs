@@ -33,7 +33,14 @@ namespace Werewolf_Control.Handler
 
         internal static HashSet<int> SpamBanList = new HashSet<int>
         {
-            //leave this open for perma bans
+            105727213,  //👉Mr.MÀHĐÌ👈 @MMK1380
+            242203310,  //Samuel Solomon @
+            238586587,  //💫Mysterious💫 @
+            189560677,  //Ebrahim @SAS23
+            188905975,  //WaN.HeDa @wan_heda
+            99553580,   //Pheri KhunSa👊 @Khun_pheriO
+            84998282,   //@mi®ho§ein @Ace40pik
+            213787323   //... A.K ... @ 
         };
 
         internal static bool SendGifIds = false;
@@ -78,19 +85,20 @@ namespace Werewolf_Control.Handler
                             //now count, notify if limit hit
                             if (temp[key].Messages.Count() >= 20) // 20 in a minute
                             {
-                                
+
                                 temp[key].Warns++;
-                                if (temp[key].Warns < 2)
+                                if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
                                 {
                                     Send($"Please do not spam me. Next time is automated ban.", key);
-                                    Send(
-                                        $"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.Aggregate("", (a, b) => a + "\n" + b.Command)}",
+                                    Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
                                         Para);
                                     continue;
                                 }
-                                if (temp[key].Warns >= 3 & !temp[key].NotifiedAdmin)
+                                if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 40) & !temp[key].NotifiedAdmin)
                                 {
-                                    Send($"User {key} has reached warn limit!", Para);
+                                    Send(
+                                        $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                        Para);
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);
@@ -129,17 +137,17 @@ namespace Werewolf_Control.Handler
                 var id = update.Message.Chat.Id;
 
 #if DEBUG
-                if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
-                {
-                    try
-                    {
-                        Bot.Api.LeaveChat(update.Message.Chat.Id);
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
-                }
+                //if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
+                //{
+                //    try
+                //    {
+                //        Bot.Api.LeaveChat(update.Message.Chat.Id);
+                //    }
+                //    catch
+                //    {
+                //        // ignored
+                //    }
+                //}
 #endif
 
                 //let's make sure it is a bot command, as we shouldn't see anything else....

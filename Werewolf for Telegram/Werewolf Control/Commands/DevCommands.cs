@@ -10,7 +10,7 @@ using Telegram.Bot.Types;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
-
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
 {
     public static partial class Commands
@@ -118,8 +118,6 @@ namespace Werewolf_Control
                     game = GetGroupNodeAndGame(update.Message.Chat.Id);
                 //player is not in game, they need to join, if they can
                 game?.SkipVote();
-
-                return;
             }
         }
 
@@ -180,6 +178,25 @@ namespace Werewolf_Control
             var target = int.Parse(args[1]);
             var reply = UpdateHandler.UserMessages[target].Messages.Aggregate("", (a, b) => a + "\n" + b.Command);
             Send(reply, u.Message.Chat.Id);
+        }
+
+        [Command(Trigger = "getbans", DevOnly = true)]
+        public static void GetBans(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                var reply = "Spam Ban List:\n";
+                foreach (var id in UpdateHandler.SpamBanList)
+                {
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                    if (p != null) //it really shouldn't be...
+                    {
+                        reply += $"{id} - {p.Name} @{p.UserName}\n";
+                    }
+                }
+                Send(reply.FormatHTML(), u.Message.Chat.Id);
+
+            }
         }
     }
 }

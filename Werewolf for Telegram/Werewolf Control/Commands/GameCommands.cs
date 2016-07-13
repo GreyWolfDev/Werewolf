@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Database;
 using Telegram.Bot.Types;
@@ -31,7 +32,7 @@ namespace Werewolf_Control
             var id = update.Message.Chat.Id;
             using (var db = new WWContext())
             {
-                if (update.Message.Chat.Title == null)
+                if (update.Message.Chat.Type == ChatType.Private)
                 {
                     //PM....  can't do that here
                     Send(GetLocaleString("JoinFromGroup", GetLanguage(update.Message.From.Id)), id);
@@ -46,36 +47,23 @@ namespace Werewolf_Control
                 }
 
                 //check nodes to see if player is in a game
-                var node = GetPlayerNode(update.Message.From.Id);
-                var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                if (game != null || node != null)
-                {
-                    //try grabbing the game again...
-                    if (node != null && game == null)
-                        game =
-                            node.Games.FirstOrDefault(
-                                x => x.Users.Contains(update.Message.From.Id));
-                    if (game?.Users.Contains(update.Message.From.Id) ?? false)
-                    {
-                        if (game?.GroupId != update.Message.Chat.Id)
-                        {
-                            //player is already in a game, and alive
-                            Send(GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                    game.ChatGroup.ToBold()), update.Message.Chat.Id);
-                            return;
-                        }
-                    }
-                    //try again.....
-                    if (game == null)
-                        game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                    //player is not in game, they need to join, if they can
-                    game?.AddPlayer(update);
-                    if (game == null)
-                        Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
-                    return;
-                }
 
-                Send(GetLocaleString("NoGame", grp?.Language ?? "English"), id);
+                var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                if (game == null)
+                {
+                    Thread.Sleep(50);
+                    game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                }
+                if (game == null)
+                {
+                    Thread.Sleep(50);
+                    game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                }
+                game?.AddPlayer(update);
+                if (game == null)
+                {
+                    Send(GetLocaleString("NoGame", grp?.Language ?? "English"), id);
+                }
             }
         }
 

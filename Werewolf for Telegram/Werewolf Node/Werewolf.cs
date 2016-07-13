@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
@@ -78,6 +79,7 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
                     Chaos ? Settings.StartChaosGame : Settings.StartGame);
                 new Thread(GameTimer).Start();
+                
             }
             catch (Exception ex)
             {
@@ -363,6 +365,9 @@ namespace Werewolf_Node
                 SendWithQueue(msg);
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
+
+
+                //SendMenu(new List<InlineKeyboardButton[]> { new[] { new InlineKeyboardButton("test", "vote|" + Program.ClientId + "|-1") }, new[] { new InlineKeyboardButton("test", "vote|" + Program.ClientId + "|-1") } }, p, "Test", QuestionType.Kill);
             }
             catch (Exception e)
             {
@@ -2674,7 +2679,7 @@ namespace Werewolf_Node
 
                 var menu = new InlineKeyboardMarkup(choices.ToArray());
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
-                Thread.Sleep(50);
+                Thread.Sleep(100);
             }
         }
 
@@ -2882,7 +2887,7 @@ namespace Werewolf_Node
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))
                 {
                     SendMenu(buttons, player, msg, qtype);
-                    Thread.Sleep(50);
+                    Thread.Sleep(100);
                 }
                 else
                 {

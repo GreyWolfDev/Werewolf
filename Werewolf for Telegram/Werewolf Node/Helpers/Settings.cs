@@ -28,7 +28,7 @@ namespace Werewolf_Node
 
         public static int
 #if DEBUG
-            MinPlayers = 1,
+            MinPlayers = 5,
 #else
             MinPlayers = 5,
 #endif
