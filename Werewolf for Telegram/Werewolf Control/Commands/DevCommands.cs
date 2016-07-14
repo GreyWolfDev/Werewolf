@@ -44,11 +44,11 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "sendonline", DevOnly = true)]
-        public static void SendOnline(Update update, string[] args)
-        {
-            new Task(Bot.SendOnline).Start();
-        }
+        //[Command(Trigger = "sendonline", DevOnly = true)]
+        //public static void SendOnline(Update update, string[] args)
+        //{
+        //    new Task(Bot.SendOnline).Start();
+        //}
 
         [Command(Trigger = "replacenodes", DevOnly = true)]
         public static void ReplaceNodes(Update update, string[] args)
@@ -169,7 +169,7 @@ namespace Werewolf_Control
             Send("You have been banned.  You may appeal your ban in @werewolfsupport", long.Parse(args[1]));
         }
 
-        [Command(Trigger = "whois", DevOnly = true)]
+        [Command(Trigger = "whois", GlobalAdminOnly = true)]
         public static void WhoIs(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -188,7 +188,7 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "getbans", DevOnly = true)]
+        [Command(Trigger = "getbans", GlobalAdminOnly = true)]
         public static void GetBans(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -210,8 +210,8 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "ban", GlobalAdminOnly = true)]
-        public static void Ban(Update u, string[] args)
+        [Command(Trigger = "permban", GlobalAdminOnly = true)]
+        public static void PermBan(Update u, string[] args)
         {
             var tosmite = new List<int>();
 
@@ -242,6 +242,7 @@ namespace Werewolf_Control
                                 db.GlobalBans.Add(ban);
                                 UpdateHandler.BanList.Add(ban);
                                 db.SaveChanges();
+                                Send("User has been banned", u.Message.Chat.Id);
                             }
                         }
                         break;
@@ -266,6 +267,60 @@ namespace Werewolf_Control
                                 db.GlobalBans.Add(ban);
                                 UpdateHandler.BanList.Add(ban);
                                 db.SaveChanges();
+                                Send("User has been banned", u.Message.Chat.Id);
+                            }
+                        }
+                        break;
+                }
+            }
+        }
+
+        [Command(Trigger = "remban", GlobalAdminOnly = true)]
+        public static void RemoveBan(Update u, string[] args)
+        {
+            var tosmite = new List<int>();
+
+            foreach (var e in u.Message.Entities)
+            {
+                switch (e.Type)
+                {
+                    case MessageEntityType.Mention:
+                        //get user
+                        var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
+                        using (var db = new WWContext())
+                        {
+                            var player = db.Players.FirstOrDefault(x => x.UserName == username);
+                            if (player != null)
+                            {
+                                var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == player.TelegramId);
+                                if (ban != null)
+                                {
+                                    var localban = UpdateHandler.BanList.FirstOrDefault(x => x.Id == ban.Id);
+                                    if (localban != null)
+                                        UpdateHandler.BanList.Remove(localban);
+                                    db.GlobalBans.Remove(ban);
+                                    db.SaveChanges();
+                                    Send("User has been unbanned.", u.Message.Chat.Id);
+                                }
+                            }
+                        }
+                        break;
+                    case MessageEntityType.TextMention:
+                        using (var db = new WWContext())
+                        {
+                            var player = db.Players.FirstOrDefault(x => x.TelegramId == e.User.Id);
+                            if (player != null)
+                            {
+                                var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == player.TelegramId);
+                                if (ban != null)
+                                {
+                                    var localban = UpdateHandler.BanList.FirstOrDefault(x => x.Id == ban.Id);
+                                    if (localban != null)
+                                        UpdateHandler.BanList.Remove(localban);
+                                    db.GlobalBans.Remove(ban);
+                                    db.SaveChanges();
+                                    Send("User has been unbanned.", u.Message.Chat.Id);
+                                }
                             }
                         }
                         break;

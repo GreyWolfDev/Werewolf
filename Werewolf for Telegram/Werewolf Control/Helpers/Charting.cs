@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 using Database;
 using Telegram.Bot.Types;
+using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
 
 namespace Werewolf_Control.Helpers
@@ -19,7 +20,7 @@ namespace Werewolf_Control.Helpers
         {
             //first we need to get the start date / timespan, otherwise default.
             var start = new DateTime(2016, 5, 15);
-
+            var mode = "";
             if (!String.IsNullOrWhiteSpace(input))
             {
                 var args = input.Split(' ');
@@ -46,23 +47,26 @@ namespace Werewolf_Control.Helpers
                             break;
                     }
                 }
+                
+                if (args.Length == 3)
+                    mode = $"AND gm.MODE = '{args[2]}'";
 
+                if (args.Length == 1)
+                    mode = $"AND gm.MODE = '{args[0]}'";
             }
-
+            
             var query = $@"SELECT x.Players,
- Round((COUNT (x.GameId) * 100.0 / sum (count(x.GameId)) OVER (PARTITION BY Players)), 2) AS Wins
+ Round((COUNT (x.GameId) * 100.0 / sum (count(x.GameId)) OVER (PARTITION BY Players)), 2) AS Wins,
+sum(count(x.Gameid)) over (partition by players) as Games
  , X.Winner AS Team
  FROM
- (SELECT DISTINCT [gameid]
- FROM [werewolf].[Dbo].gameplayer gp inner join game g on gp.GameId = g.Id WHERE role = 'Cultist' AND TimeStarted > '{ start.ToString("yyyy-MM-dd HH:mm:ss")}') AS ac
- iNNER JOIN
  (SELECT count (gp.PlayerId) AS Players, gp.GameId, CASE WHEN gm.Winner = 'Wolves' THEN 'Wolf' ELSE gm.Winner END AS Winner
  FROM Game AS gm
  INNER JOIN GamePlayer AS gp ON gp.GameId = gm.Id
- WHERE gm.Winner is not null
+ WHERE gm.Winner is not null AND gm.TimeStarted > '{ start.ToString("yyyy-MM-dd HH:mm:ss")}' {mode}
  GROUP BY gp.GameId, gm.Winner
  HAVING COUNT (gp.PlayerId)> = 5)
- AS x on ac.gameId = x.gameId
+ AS x 
  GROUP BY x.Winner, x.Players
  ORDER BY x.Players, Wins DESC";
 
@@ -78,13 +82,16 @@ namespace Werewolf_Control.Helpers
             var dt = new DataTable();
             dt.Columns.Add("Players", typeof(int));
             dt.Columns.Add("Wins", typeof(int));
+            dt.Columns.Add("Games", typeof(int));
             dt.Columns.Add("Team", typeof(string));
+            
             foreach (var r in result)
             {
                 var row = dt.NewRow();
                 row[0] = r.Players;
                 row[1] = (int)r.Wins;
-                row[2] = r.Team;
+                row[2] = r.Games;
+                row[3] = r.Team;
                 dt.Rows.Add(row);
             }
 
@@ -188,6 +195,7 @@ namespace Werewolf_Control.Helpers
             var path = Path.Combine(Bot.RootDirectory, "myChart.png");
             chart.SaveImage(path, ChartImageFormat.Png);
             SendImage(path, u.Message.Chat.Id);
+            UpdateHandler.Send(result.Select(x => new {Players = x.Players, Games = x.Games}).Distinct().Aggregate("", (a, b) => $"{a}\n{b.Players}: {b.Games}"), u.Message.Chat.Id);
         }
 
         private static void SendImage(string path, long id)
@@ -202,6 +210,8 @@ namespace Werewolf_Control.Helpers
 
         public int Players { get; set; }
         public Decimal Wins { get; set; }
+        public int Games { get; set; }
         public string Team { get; set; }
+        
     }
 }
