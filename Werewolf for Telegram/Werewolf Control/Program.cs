@@ -218,10 +218,17 @@ namespace Werewolf_Control
                     for (var i = 0; i < 12 - Nodes.Count; i++)
                         msg += new string(' ', Console.WindowWidth);
 
-                    var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
-                    msg += "\nSPAM DETECTION\n" + top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
-                    msg += new string(' ', Console.WindowWidth);
-
+                    try
+                    {
+                        var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
+                        msg += "\nSPAM DETECTION\n" +
+                               top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
+                        msg += new string(' ', Console.WindowWidth);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
