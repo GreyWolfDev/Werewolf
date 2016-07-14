@@ -26,21 +26,36 @@ namespace Werewolf_Control.Handler
         internal static Dictionary<int, SpamDetector> UserMessages = new Dictionary<int, SpamDetector>();
         internal static int[] PermaBanList =
         {
-            226424085, //Duce
-            226703696, //unknown, impersonation / stalking
-            104427390  //@sunbae / Lixie - stalking
+            226424085,  //Duce
+            226703696,  //unknown, impersonation / stalking
+            104427390,  //@sunbae / Lixie - stalking
+            238377175,  //Cropa-Senpai  }
+            135866541,  //Plox :v       }}  These 4 are banned for
+            194979294,  //Rocco         }}  posting CP in a public group
+            115439685   //Cosme         }
         };
 
         internal static HashSet<int> SpamBanList = new HashSet<int>
         {
             105727213,  //👉Mr.MÀHĐÌ👈 @MMK1380
-            242203310,  //Samuel Solomon @
-            238586587,  //💫Mysterious💫 @
+            242203310,  //Samuel Solomon 
+            238586587,  //💫Mysterious💫 
             189560677,  //Ebrahim @SAS23
             188905975,  //WaN.HeDa @wan_heda
             99553580,   //Pheri KhunSa👊 @Khun_pheriO
             84998282,   //@mi®ho§ein @Ace40pik
-            213787323   //... A.K ... @ 
+            213787323,  //... A.K ... 
+            243010373,  //Muhammad Inan @muhammadpnth
+            243688985,  //Yasfin @Yasfin
+            222026756,  //Jenny
+            81668647,   //elestia and tera @titansgomylittelpon
+            139687647,  //nassibeh norouzi @nassibehnorouzi
+            260543373,  //Z . @Amoreza328
+            214298101,  //Zein Ws @ZeinWs
+            209547657,  //Windy Taseri @windytaseri
+            104038231,  //#Amir+h @Amirniii
+            63118273,   //︻╦̵̵ ╤───💥Я£乙ﾑ $hﾑh💥───╤ ̵͇╦︻ @XxX_Reza_shah_telam_be3ik_XxX
+
         };
 
         internal static bool SendGifIds = false;
