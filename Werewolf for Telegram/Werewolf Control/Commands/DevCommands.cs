@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -7,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -199,8 +202,74 @@ namespace Werewolf_Control
                         reply += $"{id} - {p.Name} @{p.UserName}\n";
                     }
                 }
+                reply += "\nGlobal Bans in Database\n";
+                reply = UpdateHandler.BanList.Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name}: {ban.Reason}\n");
+
                 Send(reply.FormatHTML(), u.Message.Chat.Id);
 
+            }
+        }
+
+        [Command(Trigger = "ban", GlobalAdminOnly = true)]
+        public static void Ban(Update u, string[] args)
+        {
+            var tosmite = new List<int>();
+
+            foreach (var e in u.Message.Entities)
+            {
+                switch (e.Type)
+                {
+                    case MessageEntityType.Mention:
+                        //get user
+                        var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
+                        using (var db = new WWContext())
+                        {
+                            var player = db.Players.FirstOrDefault(x => x.UserName == username);
+                            if (player != null)
+                            {
+                                var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+                                game?.SmitePlayer(player.TelegramId);
+                                //add the ban
+                                var ban = new GlobalBan
+                                {
+                                    Expires = (DateTime) SqlDateTime.MaxValue,
+                                    Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
+                                    TelegramId = player.TelegramId,
+                                    BanDate = DateTime.Now,
+                                    BannedBy = u.Message.From.FirstName,
+                                    Name = player.Name
+                                };
+                                db.GlobalBans.Add(ban);
+                                UpdateHandler.BanList.Add(ban);
+                                db.SaveChanges();
+                            }
+                        }
+                        break;
+                    case MessageEntityType.TextMention:
+                        using (var db = new WWContext())
+                        {
+                            var player = db.Players.FirstOrDefault(x => x.TelegramId == e.User.Id);
+                            if (player != null)
+                            {
+                                var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+                                game?.SmitePlayer(player.TelegramId);
+                                //add the ban
+                                var ban = new GlobalBan
+                                {
+                                    Expires = (DateTime)SqlDateTime.MaxValue,
+                                    Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
+                                    TelegramId = player.TelegramId,
+                                    BanDate = DateTime.Now,
+                                    BannedBy = u.Message.From.FirstName,
+                                    Name = player.Name
+                                };
+                                db.GlobalBans.Add(ban);
+                                UpdateHandler.BanList.Add(ban);
+                                db.SaveChanges();
+                            }
+                        }
+                        break;
+                }
             }
         }
     }

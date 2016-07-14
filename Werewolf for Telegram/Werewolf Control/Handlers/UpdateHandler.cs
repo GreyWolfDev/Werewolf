@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -24,39 +25,13 @@ namespace Werewolf_Control.Handler
     {
         internal static int Para = 129046388;
         internal static Dictionary<int, SpamDetector> UserMessages = new Dictionary<int, SpamDetector>();
-        internal static int[] PermaBanList =
-        {
-            226424085,  //Duce
-            226703696,  //unknown, impersonation / stalking
-            104427390,  //@sunbae / Lixie - stalking
-            238377175,  //Cropa-Senpai  }
-            135866541,  //Plox :v       }}  These 4 are banned for
-            194979294,  //Rocco         }}  posting CP in a public group
-            115439685   //Cosme         }
-        };
 
         internal static HashSet<int> SpamBanList = new HashSet<int>
         {
-            105727213,  //👉Mr.MÀHĐÌ👈 @MMK1380
-            242203310,  //Samuel Solomon 
-            238586587,  //💫Mysterious💫 
-            189560677,  //Ebrahim @SAS23
-            188905975,  //WaN.HeDa @wan_heda
-            99553580,   //Pheri KhunSa👊 @Khun_pheriO
-            84998282,   //@mi®ho§ein @Ace40pik
-            213787323,  //... A.K ... 
-            243010373,  //Muhammad Inan @muhammadpnth
-            243688985,  //Yasfin @Yasfin
-            222026756,  //Jenny
-            81668647,   //elestia and tera @titansgomylittelpon
-            139687647,  //nassibeh norouzi @nassibehnorouzi
-            260543373,  //Z . @Amoreza328
-            214298101,  //Zein Ws @ZeinWs
-            209547657,  //Windy Taseri @windytaseri
-            104038231,  //#Amir+h @Amirniii
-            63118273,   //︻╦̵̵ ╤───💥Я£乙ﾑ $hﾑh💥───╤ ̵͇╦︻ @XxX_Reza_shah_telam_be3ik_XxX
 
         };
+
+        internal static List<GlobalBan> BanList = new List<GlobalBan>(); 
 
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
@@ -75,6 +50,50 @@ namespace Werewolf_Control.Handler
             catch
             {
                 // ignored
+            }
+        }
+
+        internal static void BanMonitor()
+        {
+            while (true)
+            {
+                try
+                {
+                    //first load up the ban list
+                    using (var db = new WWContext())
+                    {
+                        foreach (var id in SpamBanList)
+                            db.GlobalBans.Add(new GlobalBan
+                            {
+                                BannedBy="Moderator",
+                                Expires = (DateTime)SqlDateTime.MaxValue,
+                                TelegramId = id,
+                                Reason = "Spam / Flood",
+                                BanDate = DateTime.Now
+                            });
+                        SpamBanList.Clear();
+                        db.SaveChanges();
+
+                        //now refresh the list
+                        var list = db.GlobalBans.ToList();
+
+                        for (var i = list.Count - 1; i >= 0; i--)
+                        {
+                            if (list[i].Expires > DateTime.Now) continue;
+                            db.GlobalBans.Remove(db.GlobalBans.Find(list[i].Id));
+                            list.RemoveAt(i);
+                        }
+
+                        BanList = list;
+                    }
+                }
+                catch
+                {
+                    // ignored
+                }
+
+                //refresh every 20 minutes
+                Thread.Sleep(TimeSpan.FromMinutes(20));
             }
         }
 
@@ -228,7 +247,7 @@ namespace Werewolf_Control.Handler
                             {
                                 if (update.Message.Chat.Type == ChatType.Private)
                                     AddCount(update.Message.From.Id, update.Message.Text);
-                                if (PermaBanList.Contains(update.Message?.From?.Id ?? 0) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
+                                if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     return;
                                 }

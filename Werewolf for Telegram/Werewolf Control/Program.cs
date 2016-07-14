@@ -63,6 +63,7 @@ namespace Werewolf_Control
             new Thread(NodeMonitor).Start();
             new Thread(CpuMonitor).Start();
             new Thread(UpdateHandler.SpamDetection).Start();
+            new Thread(UpdateHandler.BanMonitor).Start();
             //new Thread(MessageMonitor).Start();
             _timer = new System.Timers.Timer();
             _timer.Elapsed += new ElapsedEventHandler(TimerOnTick);
