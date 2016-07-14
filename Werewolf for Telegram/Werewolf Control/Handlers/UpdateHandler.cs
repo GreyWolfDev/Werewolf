@@ -941,14 +941,14 @@ namespace Werewolf_Control.Handler
                             buttons.Add(new InlineKeyboardButton(Cancel, $"setflee|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
-                                GetLocaleString("AllowFleeQ", language, grp.DisableFlee == false ? "" : "not "),
+                                GetLocaleString("AllowFleeQ", language, grp.DisableFlee == false ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)),
                                 replyMarkup: menu);
                             break;
                         case "setflee":
 
                             grp.DisableFlee = (choice == "disable");
                             Bot.Api.AnswerCallbackQuery(query.Id,
-                                   GetLocaleString("AllowFleeA", language, grp.DisableFlee == true ? "not " : ""));
+                                   GetLocaleString("AllowFleeA", language, grp.DisableFlee == true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
