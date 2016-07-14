@@ -6,13 +6,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
-using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 using Action = Database.Action;
 // ReSharper disable PossibleMultipleEnumeration
+#pragma warning disable 4014
 
 namespace Werewolf_Node
 {
@@ -434,7 +434,7 @@ namespace Werewolf_Node
                     return;
                 }
 
-                if (query?.Data == null)
+                if (query.Data == null)
                 {
                     throw new NullReferenceException("Object was null: query.Data");
                 }
@@ -476,18 +476,21 @@ namespace Werewolf_Node
                 if (player.PlayerRole == IRole.Cupid && player.CurrentQuestion.QType == QuestionType.Lover1)
                 {
                     var lover1 = Players.FirstOrDefault(x => x.Id == player.Choice);
-                    lover1.InLove = true;
-                    //send menu for second choice....
-                    var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).OrderBy(x => x.Name).ToList();
-                    var buttons =
-                    secondChoices.Select(
-                        x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                    player.Choice = 0;
-                    Program.MessagesSent++;
-                    Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
-                       GetLocaleString("ChoiceAccepted") + " - " + target.Name);
+                    if (lover1 != null)
+                    {
+                        lover1.InLove = true;
+                        //send menu for second choice....
+                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).OrderBy(x => x.Name).ToList();
+                        var buttons =
+                            secondChoices.Select(
+                                x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
+                        player.Choice = 0;
+                        Program.MessagesSent++;
+                        Program.Bot.EditMessageText(query.Message.Chat.Id, query.Message.MessageId,
+                            GetLocaleString("ChoiceAccepted") + " - " + target.Name);
 
-                    SendMenu(buttons, player, GetLocaleString("AskCupid2"), QuestionType.Lover2);
+                        SendMenu(buttons, player, GetLocaleString("AskCupid2"), QuestionType.Lover2);
+                    }
                     return;
                 }
                 if (player.PlayerRole == IRole.Cupid && player.CurrentQuestion.QType == QuestionType.Lover2)
@@ -863,7 +866,7 @@ namespace Werewolf_Node
                                     p.HasNightAction = true;
                                     p.HasDayAction = false;
                                     p.Team = ITeam.SerialKiller;
-                                    break; ;
+                                    break; 
                             }
                         }
                     }
@@ -874,8 +877,11 @@ namespace Werewolf_Node
                     Players.All(x => x.PlayerRole != IRole.Seer))
                 {
                     var s = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer);
-                    s.PlayerRole = IRole.Seer;
-                    s.HasNightAction = true;
+                    if (s != null)
+                    {
+                        s.PlayerRole = IRole.Seer;
+                        s.HasNightAction = true;
+                    }
                 }
 
                 //check that CH exists if cult exist
@@ -1183,7 +1189,7 @@ namespace Werewolf_Node
                 {
                     foreach (var p in Players.Where(x => x.DiedLastNight && x.DiedFromWolf))
                     {
-                        var msg = "";
+                        string msg;
                         switch (p.PlayerRole)
                         {
                             case IRole.Detective:
@@ -1316,26 +1322,14 @@ namespace Werewolf_Node
                     switch (check.PlayerRole)
                     {
                         case IRole.Harlot:
-                            if (DbGroup.ShowRoles != false)
-                                SendWithQueue(GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()));
-                            else
-                            {
-                                SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
-                            }
+                            SendWithQueue(DbGroup.ShowRoles != false
+                                ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName())
+                                : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
                             break;
                         case IRole.Hunter:
                             SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(check.PlayerRole)} {GetLocaleString("IsDead")}"));
                             HunterFinalShot(check, KillMthd.Shoot);
                             break;
-                        case IRole.Villager:
-                        case IRole.Drunk:
-                        case IRole.Seer:
-                        case IRole.Traitor:
-                        case IRole.GuardianAngel:
-                        case IRole.Detective:
-                        case IRole.Wolf:
-                        case IRole.Cursed:
-                        case IRole.Gunner:
                         default:
                             SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(check.PlayerRole)} {GetLocaleString("IsDead")}"));
                             break;
@@ -1371,6 +1365,7 @@ namespace Werewolf_Node
             SendWithQueue(GetLocaleString("NightTime", nightTime.ToBold()));
             SendNightActions();
             var nightPlayers = Players.Where(x => !x.IsDead & !x.Drunk && x.HasNightAction);
+            // ReSharper disable once LoopVariableIsNeverChangedInsideLoop
             for (var i = 0; i < nightTime; i++)
             {
                 Thread.Sleep(1000);
@@ -1467,10 +1462,9 @@ namespace Werewolf_Node
                                             target.TimeDied = DateTime.Now;
                                             target.DiedFromWolf = true;
                                             DBKill(voteWolves, target, KillMthd.Eat);
-                                            if (DbGroup.ShowRoles != false)
-                                                SendWithQueue(GetLocaleString("HarlotEaten", target.GetName()));
-                                            else
-                                                SendWithQueue(GetLocaleString("GenericDeathNoReveal", target.GetName()));
+                                            SendWithQueue(DbGroup.ShowRoles != false
+                                                ? GetLocaleString("HarlotEaten", target.GetName())
+                                                : GetLocaleString("GenericDeathNoReveal", target.GetName()));
                                         }
                                         else
                                         {
@@ -1995,12 +1989,7 @@ namespace Werewolf_Node
                         var role = target.PlayerRole;
                         if (target.PlayerRole == IRole.Traitor)
                         {
-                            if (Program.R.Next(100) > 50)
-                                role = IRole.Wolf;
-                            else
-                            {
-                                role = IRole.Villager;
-                            }
+                            role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
                         }
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                     }
@@ -2050,33 +2039,27 @@ namespace Werewolf_Node
                                 DBKill(target, harlot, KillMthd.VisitWolf);
                                 //Send($"You slip into a villagers house, and are confronted by a large wolf.  He sees you, a slutty harlot, and you notice his sheath expand in excitement.  He grabs you, throws you on the bed, and proceeds to ram you until he is done...  then eats you as an after snack.", harlot.Id);
                                 Send(GetLocaleString("HarlotFuckWolf", target.GetName()), harlot.Id);
-                                if (DbGroup.ShowRoles != false)
-                                    SendWithQueue(GetLocaleString("HarlotFuckedWolfPublic", harlot.GetName()));
-                                else
-                                    SendWithQueue(GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
+                                SendWithQueue(DbGroup.ShowRoles != false
+                                    ? GetLocaleString("HarlotFuckedWolfPublic", harlot.GetName())
+                                    : GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
                             }
                             else
                             {
                                 DBKill(target, harlot, KillMthd.VisitVictim);
                                 //Send($"{harlot.Name} slips into {target.Name}'s house, ready to have a little fun to ease off the stress.  However, as they do, they find themselves staring at a werewolf, tearing apart {target.Name}'s corpse, his huge knot hanging out in his excitement.  He turns and sees them, grabs their face and shoves it between his legs as he continues gorging himself on the corpse.\nAs he cums, he presses them so hard into his fur, they suffocate.  Subsequently, {harlot.Name} is eated.");
-                                if (DbGroup.ShowRoles != false)
-                                    SendWithQueue(GetLocaleString("HarlotFuckedVictimPublic", harlot.GetName(), target.GetName()));
-                                else
-                                    SendWithQueue(GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
+                                SendWithQueue(DbGroup.ShowRoles != false
+                                    ? GetLocaleString("HarlotFuckedVictimPublic", harlot.GetName(), target.GetName())
+                                    : GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
                             }
                         }
                         else
                         {
                             if (target.PlayerRole == IRole.Cultist)
                             {
-                                if (Program.R.Next(100) < Settings.HarlotDiscoverCultChance)
-                                {
-                                    Send(GetLocaleString("HarlotDiscoverCult", target.GetName()), harlot.Id);
-                                }
-                                else
-                                {
-                                    Send(GetLocaleString("HarlotVisitNonWolf", target.GetName()), harlot.Id);
-                                }
+                                Send(
+                                    Program.R.Next(100) < Settings.HarlotDiscoverCultChance
+                                        ? GetLocaleString("HarlotDiscoverCult", target.GetName())
+                                        : GetLocaleString("HarlotVisitNonWolf", target.GetName()), harlot.Id);
                             }
                             else if (target.PlayerRole == IRole.SerialKiller)
                             {
@@ -2200,28 +2183,31 @@ namespace Werewolf_Node
 
         private string GetLocaleString(string key, params object[] args)
         {
-            var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
-            if (strings == null)
+            try
             {
-                strings = Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
+                              Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                if (strings != null)
+                {
+                    var values = strings.Descendants("value");
+                    var choice = Program.R.Next(values.Count());
+                    var selected = values.ElementAt(choice);
+                    return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+                }
+                else
+                {
+                    throw new Exception($"Error getting string {key} with parameters {args.Aggregate((a, b) => a + "," + b.ToString())}");
+                }
             }
-            var values = strings.Descendants("value");
-            var choice = Program.R.Next(values.Count());
-            var selected = values.ElementAt(choice);
-            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
-        }
-
-        private string GetString(string[] replyString)
-        {
-            //get a random string
-            return replyString[Program.R.Next(0, replyString.Length)];
+            catch (Exception e)
+            {
+                throw new Exception($"Error getting string {key} with parameters {args.Aggregate((a, b) => a + "," +b.ToString())}", e);
+            }
         }
 
         private void CheckWildChild()
         {
-            if (Players == null)
-                return;
-            var wc = Players.FirstOrDefault(x => x.PlayerRole == IRole.WildChild & !x.IsDead);
+            var wc = Players?.FirstOrDefault(x => x.PlayerRole == IRole.WildChild & !x.IsDead);
 
             // Check Wild Child
             if (wc != null)
@@ -2250,9 +2236,7 @@ namespace Werewolf_Node
 
         private void CheckDoppelganger()
         {
-            if (Players == null)
-                return;
-            var p = Players.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger & !x.IsDead);
+            var p = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger & !x.IsDead);
             //var aps = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
             //var traitor = Players.FirstOrDefault(x => x.PlayerRole == IRole.Traitor & !x.IsDead);
 
@@ -2304,7 +2288,7 @@ namespace Werewolf_Node
                                     p.HasNightAction = true;
                                     var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                                     if (beholder != null)
-                                        Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                                        Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
                                 }
                                 break;
                             case IRole.Traitor:
@@ -2347,7 +2331,7 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                                 if (bh != null)
-                                    Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm?.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
+                                    Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
                                 break;
                             case IRole.GuardianAngel:
 
@@ -2463,12 +2447,12 @@ namespace Werewolf_Node
             }
 
             //is everyone left a cultist?
-            if (Players.Where(x => !x.IsDead).All(x => x.Team == ITeam.Cult))
+            if (Players != null && Players.Where(x => !x.IsDead).All(x => x.Team == ITeam.Cult))
                 return DoGameEnd(ITeam.Cult);
 
 
 
-            if (Players.Count(x => !x.IsDead) == 2)
+            if (Players != null && Players.Count(x => !x.IsDead) == 2)
             {
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Cultist) & !Players.Any(x => !x.IsDead && x.PlayerRole == IRole.CultistHunter) & !Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf))
                 {
@@ -2489,8 +2473,11 @@ namespace Werewolf_Node
 
             }
 
-            if (Players.Count(x => !x.IsDead) == 1)
-                return DoGameEnd(Players.FirstOrDefault(x => !x.IsDead).Team);
+            if (Players != null && Players.Count(x => !x.IsDead) == 1)
+            {
+                var firstOrDefault = Players.FirstOrDefault(x => !x.IsDead);
+                return firstOrDefault != null && DoGameEnd(firstOrDefault.Team);
+            }
             return false;
         }
 
@@ -2503,9 +2490,7 @@ namespace Werewolf_Node
                 IsRunning = false;
                 var msg = "";
 
-                var game = db.Games.FirstOrDefault(x => x.Id == GameId);
-                if (game == null)
-                    game = new Game();
+                var game = db.Games.FirstOrDefault(x => x.Id == GameId) ?? new Game();
                 game.TimeEnded = DateTime.Now;
 
                 if (team == ITeam.Lovers)
@@ -2594,8 +2579,11 @@ namespace Werewolf_Node
                             var sk = alive.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller);
                             SendWithQueue(GetLocaleString("SerialKillerWinsOverpower", sk.GetName(), otherPerson.GetName()));
                             DBKill(sk, otherPerson, KillMthd.SerialKilled);
-                            otherPerson.IsDead = true;
-                            otherPerson.TimeDied = DateTime.Now;
+                            if (otherPerson != null)
+                            {
+                                otherPerson.IsDead = true;
+                                otherPerson.TimeDied = DateTime.Now;
+                            }
                         }
                         msg += GetLocaleString("SerialKillerWins");
                         game.Winner = "SerialKiller";
@@ -2614,11 +2602,17 @@ namespace Werewolf_Node
                         game.Winner = "NoOne";
                         DBKill(skh, hunter, KillMthd.SerialKilled);
                         DBKill(hunter, skh, KillMthd.HunterShot);
-                        skh.IsDead = true;
-                        skh.TimeDied = DateTime.Now;
-                        hunter.IsDead = true;
-                        hunter.TimeDied = DateTime.Now;
-                        SendWithQueue(GetLocaleString("SKHunterEnd", skh.GetName(), hunter.GetName()));
+                        if (skh != null)
+                        {
+                            skh.IsDead = true;
+                            skh.TimeDied = DateTime.Now;
+                            if (hunter != null)
+                            {
+                                hunter.IsDead = true;
+                                hunter.TimeDied = DateTime.Now;
+                                SendWithQueue(GetLocaleString("SKHunterEnd", skh.GetName(), hunter.GetName()));
+                            }
+                        }
                         SendWithQueue(msg, GetRandomImage(Settings.NoWinner));
                         break;
                     default: //village
@@ -2644,7 +2638,6 @@ namespace Werewolf_Node
                                          current +
                                          ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
                         break;
-                    case "Living":
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
                         msg = Players.Where(x => !x.IsDead)
@@ -2676,8 +2669,6 @@ namespace Werewolf_Node
                 player.CurrentQuestion = null;
                 player.Choice = 0;
                 var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId.ToString()}|{x.Id}") }).ToList();
-
-                var menu = new InlineKeyboardMarkup(choices.ToArray());
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
                 Thread.Sleep(100);
             }
@@ -2933,7 +2924,7 @@ namespace Werewolf_Node
 
                     db.SaveChanges();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
                 }
@@ -2980,7 +2971,7 @@ namespace Werewolf_Node
 
                     db.SaveChanges();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
                 }
@@ -3111,17 +3102,17 @@ namespace Werewolf_Node
             }
         }
 
-        private Player GetDBPlayer(IPlayer player, WWContext DB)
+        private Player GetDBPlayer(IPlayer player, WWContext db)
         {
             if (player.DBPlayerId == 0)
             {
-                var p = DB.Players.FirstOrDefault(x => x.TelegramId == player.Id);
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == player.Id);
                 player.DBPlayerId = p?.Id ?? 0;
                 return p;
             }
             try
             {
-                return DB.Players.Find(player.DBPlayerId);
+                return db.Players.Find(player.DBPlayerId);
             }
             catch
             {
@@ -3164,11 +3155,6 @@ namespace Werewolf_Node
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
-        private void Send(string[] choices, long id = 0, bool clearKeyboard = false, params object[] args)
-        {
-            Send(String.Format(GetString(choices), args), id, clearKeyboard);
-        }
-
         private void SendGif(string text, string image, long id = 0)
         {
             Program.MessagesSent++;
@@ -3194,8 +3180,8 @@ namespace Werewolf_Node
 
         class Message
         {
-            public string Msg { get; private set; }
-            public string GifId { get; private set; }
+            public string Msg { get; }
+            public string GifId { get; }
 
             public Message(string msg, string gifid = null)
             {
@@ -3208,7 +3194,7 @@ namespace Werewolf_Node
 
         private void GroupQueue()
         {
-            var final = "";
+            string final;
             while (MessageQueueing)
             {
                 final = "";
@@ -3259,26 +3245,6 @@ namespace Werewolf_Node
             }
             if (!String.IsNullOrEmpty(final))
                 Send(final);
-        }
-
-        private void SendGif(string text, List<string> choices, long id = 0)
-        {
-            SendGif(text, GetRandomImage(choices), id);
-        }
-
-        private void SendGif(string key, List<string> choices, long id = 0, params object[] args)
-        {
-            SendGif(String.Format(GetLocaleString(key), args), choices, id);
-        }
-
-        private void SendGif(string[] text, List<string> choices, long id = 0, params object[] args)
-        {
-            SendGif(text, GetRandomImage(choices), id, args);
-        }
-
-        private void SendGif(string[] choices, string image, long id = 0, params object[] args)
-        {
-            SendGif(String.Format(GetString(choices), args), image, id);
         }
 
         public void Dispose()
