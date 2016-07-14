@@ -124,7 +124,12 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-           
+            //get the user
+            using (var db = new WWContext())
+            {
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == 114006743);
+                Send(p.Name, update.Message.Chat.Id);
+            }
         }
         
         [Command(Trigger = "reloadenglish", DevOnly = true)]

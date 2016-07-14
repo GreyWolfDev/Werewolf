@@ -303,7 +303,7 @@ namespace Werewolf_Node
                     HasPM = false,
                     Name = $"{u.FirstName} {u.LastName}"
                 };
-                p.Name = p.Name.Trim();
+                p.Name = p.Name.Replace("\n","").Trim();
                 p.Id = p.TeleUser.Id;
                 //if ()
                 //{
