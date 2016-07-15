@@ -141,7 +141,7 @@ namespace Werewolf_Control
                 Send(p.Name, update.Message.Chat.Id);
             }
         }
-        
+
         [Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
@@ -187,7 +187,7 @@ namespace Werewolf_Control
                     Send($"User: {p.Name}\nUserName: @{p.UserName}", u.Message.Chat.Id);
             }
         }
-        [Command(Trigger="getcommands", DevOnly = true)]
+        [Command(Trigger = "getcommands", DevOnly = true)]
         public static void GetCommands(Update u, string[] args)
         {
             var target = int.Parse(args[1]);
@@ -195,7 +195,7 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "getbans", DevOnly = true)]
+        [Command(Trigger = "getbans", GlobalAdminOnly = true)]
         public static void GetBans(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -239,7 +239,7 @@ namespace Werewolf_Control
                                 //add the ban
                                 var ban = new GlobalBan
                                 {
-                                    Expires = (DateTime) SqlDateTime.MaxValue,
+                                    Expires = (DateTime)SqlDateTime.MaxValue,
                                     Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                     TelegramId = player.TelegramId,
                                     BanDate = DateTime.Now,
@@ -282,7 +282,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "remban", DevOnly = true)]
+        [Command(Trigger = "remban", GlobalAdminOnly = true)]
         public static void RemoveBan(Update u, string[] args)
         {
             var tosmite = new List<int>();
