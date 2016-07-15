@@ -704,4 +704,281 @@
   <string key="SKHunterEnd">
     <value>Als die Sonne aufgeht, spazieren {0} und {1} in Richtung Dorf. Plötzlich nimmt {0} das Messer 🔪 heraus und springt auf {1}.  Gerade als {0} das Messer tief in sein Herz rammt, greift {1} nach seinem Gewehr 🎯 und schießt {0} mit einem geziehlten Schuss in die Augäpfel. Die Gedärme liegen überall verteilt am Boden. Beide sind tot und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value>
   </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Du hast dir nichts ausgesucht, also hat das der Bot für dich gemacht: {0}</value>
+  </string>
+  <string key="Won">
+    <value>hat gewonnen</value>
+  </string>
+  <string key="Lost">
+    <value>hat verloren</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Spieler {0} wurde getötet, da er {1} mal keine Spieler in den letzten 24h umgebracht hat.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Deine Rolle ist einfach: Versuch zu überleben. Jeden Tag hast du die Chance, den Werwolf zu hängen.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Du bist der Seher. In dieser Rolle kannst du jede Nacht einen Spieler aussuchen und wirst daraufhin deren Rolle sehen können. Behandle deine Identität weise: Wenn du zugibst, dass du der Seher bist, werden dich die Werwölfe versuchen zu töten!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Du kannst Spaß haben! Jeden Tag wirst du versuchen deine Mitspieler zu täuschen, aber jede Nacht kannst du dir einen Spieler aussuchen den du töten willst! Hinweis: Falls du den Betrunkenen angreifst, wirst du selber betrunken und kannst die nächste Nacht wegen deines Katers nicht angreifen! Falls du den Verfluchten angreifst, werden sie wie du auch zu einem Werwolf! Hurra, Freunde!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Als die Hure wirst du jede Nacht die Chance haben mit einem anderen Spieler zu schlafen. Falls der Spieler kein Wolf ist, wird dir das gesagt (weil du lebst!). Falls du einen Wolf besuchst, wirst du getötet. Falls du den Spieler besuchst der von den Werwölfen getötet wird, stirbst du ebenfalls. Aber: Wenn du jemanden besuchst und die Wölfe dich töten wollen, wirst du überleben (du warst nicht zuhause).</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Du betrunkener Mistkerl! Als der Betrunkene bist du immer noch ein normaler Dorfbewohner. ABER: Wenn die Wölfe dich töten, werden sie behindert da sie von deinem unglaublich hohen BAK betrunken sein werden.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Als der Verfluchte bist du immer noch ein normaler Dorfbewohner... bis die Wölfe dich töten. Wenn sie das tun wirst du ebenfalls zu einem Wolf! Frei, nachts jagen zu gehen..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Du bist ein verräterischer Bastard. Wenn du lange genug überlebst bis alle Wölfe sterben, wirst du selber einer, bereit deine ehemaligen Teamkameraden nachts zu töten!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Du bist der Schutzengel! Jede Nacht darfst du einen Spieler beschützen. Sei aber vorsichtig - falls du einen Werwolf aussuchst, gibt es eine 50%ige Chance dass du stirbst.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Du alter Schnüffler... Jeden Tag hast du die Möglichkeit einen anderen Spieler zu untersuchen. Sei aber vorsichtig, mit einer 40%igen Chance wirst du dabei von den Werwölfen entdeckt!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Ein wenig schießfreudig, nicht wahr? Als der Schütze werden dir am Spielanfang zwei silberne Kugeln gegeben. Jeden Tag kannst du damit einen anderen Spieler erschießen. Wenn du das tust, wird jeder wissen dass du der Schütze bist! Sei aber vorsichtig, du hast nur 2 Kugeln!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Das Ziel des Gerbers ist simpel: Werde gehängt. Wenn der Gerber gehängt wird gewinnt er, Ende. Alle anderen verlieren.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Dem Narren wird gesagt, dass er der Seher ist... Wenn er sich die Rolle eines Spielers zeigen lässt, wird ihnen eine zufällige Rolle gesagt.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Als Kultist ist es dein Ziel, alle anderen Spieler (ausgenommen Wölfe) zu deinem Kult zu konvertieren. Wenn am Ende des Spiels jeder Kultist ist, gewinnt der Kult.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Deine Aufgabe ist es, den Kult zu jagen. Falls dieser dich attackiert, wird das neueste Mitglied von ihnen sterben. Jede Nacht darfst du einen Spieler 'jagen' - wenn sie ein Kultist sind, sterben sie.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Am Anfang des Spiels suchst du dir ein 'Vorbild' aus. Wenn dieses stirbt, wirst du zum Werwolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Im Moment bist du ein normaler Dorfbewohner. Wenn aber der Seher stirbt, wirst du der neue Seher.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Dir wird gesagt wer der Seher ist (der echte, nicht der Narr)</value>
+  </string>
+  <string key="AboutMason">
+    <value>Die Aufgabe des Freimaurers ist einfach - sie wissen automatisch wer die anderen Freimaurer sind. Ansonsten sind sie einfache Dorfbewohner.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Deine Vorfahren konnten sich frei in andere Formen verwandeln... während du zwar nicht ihre vollen Fähigkeiten hast, kannst du dir am Anfang des Spiels einen Spieler aussuchen. Falls dieser Spieler stirbt, wirst du zu dem was er vorher war.
+      Hinweis: Falls der Spieler zum Kult konvertiert wurde, wirst du zu seiner ursprüngliche Rolle. Alle anderen Regeln gelten: Falls er das Wilde Kind war und sein Vorbild starb, wirst du zum Werwolf. Ansonsten wirst du seinen Vorgänger übernehmen.
+      Der Kult kann den Doppelgänger nicht konvertieren, außer er hat schon die Rolle gewechselt. Noch was - der Doppelgänger kann NICHT gewinnen ohne sich verwandelt zu haben. Falls er am Ende des Spiels immer noch Doppelgänger ist, verliert er (Ausnahme: Liebender)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. Als Amor suchst du dir am Anfang des Spiels zwei Spieler aus. Diese beiden Spieler werden wahnsinnig verliebt sein! Falls einer von ihnen stirbt, stirbt der andere aus Trauer :(
+      Hinweis: Die Liebenden wissen, wer der jeweils andere ist, kennen aber nicht die Rollen des anderen. Falls die Liebenden als einzige überleben, gewinnen sie, egal welches Team. Falls die Liebenden in verschiedenen Teams sind (Dorfbewohner + Werwolf), und ein Team gewinnt (Werwolf), gewinnt der Liebende (Dorfbewohner) ebenfalls. TL;DR falls beide Liebende am Ende leben und mindestens einer von ihnen im Gewinnerteam ist, gewinnen beide.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Ein schießfreudiger, nachtragender Spieler. Als der Jäger versuchst du allein zu bleiben. Falls aber andere dich besuchen, werden diejenigen vielleicht sterben, da dein Verfolgungswahn überhand nimmt und du schießt. Wenn die Wölfe dich angreifen, hast du die Gelegenheit einen von ihnen mit in den Tod zu reißen. Ansonsten hast du falls du stirbst die Chance jemanden zu erschießen während du stirbst.
+      Hinweis: Für Werwolfattacken fängt die Chance bei 30% an. Falls es einen Wolf gibt, hat der Jäger eine 30%ige Chance den Wolf zu töten (und zu überleben). Für jeden weiteren Wolf, füg 20% hinzu (2 Wölfe = 50%, 3 = 70%, usw). Wenn jedoch mehrere Wölfe da sind wirst du zwar einen töten können, wirst aber gefressen da die Werwölfe in der Überzahl sind.
+      Wenn der Kult versucht dich zu konvertieren haben sie eine 50%ige Chance, das zu schaffen. Falls sie das nicht tun, hast du eine 50%ige Chance einen von ihnen umzubringen!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Dieses Irrenhaus war eh dumm. Was ein Scherz. Egal, du bist jetzt frei, zurück zu deiner Arbeit - Morden! Der Serienmörder ist ein einsamer Spieler, allein in seinem Team. Er kann nur gewinnen wenn er jeden umbringt (Ausnahme: Die Liebenden). Als Serienmörder kann er JEDEN umbringen - Wölfe, Schützen, Jäger, Schutzengel, wen auch immer er will. Falls die Wölfe versuchen dich anzugreifen, tötest du einen von ihnen (zufällig) und überlebst.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para ist ein dummer Entwickler der gerne Leute anbellt.  Vielleicht hat er sich zuviel mit Werwölfen angelegt... Sich mit Werwölfen anzulegen ist eine sehr schlechte Idee.</value>
+  </string>
+  <string key="EndTime">
+    <value>Spiellänge: {0}</value>
+  </string>
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Tag {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Ein Fehler ist aufgetreten, und dieser Knotenpunkt wurde deaktiviert:/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ich hab dir eine Privatnachricht geschickt</value>
+  </string>
+  <string key="StartPM">
+    <value>Send mir bitte eine Privatnachricht damit ich dich anschreiben kann: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Danke dass du mich gestartet hast! Jetzt kann ich dir schreiben.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Du musst dem Nutzer antworten den du zerschmettern willst.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Was würdest du gern machen?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Du musst einem Spiel von innerhalb einer Gruppe beitreten!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Du musst ein Spiel von innerhalb einer Gruppe starten!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Zeit die Telegram die Nachricht gesendet hat: {0}\nMomentane CPU-Auslastung: {1}%\nNachrichten pro Sekunde: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Welche Sprache?\nMomentan: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Welche Variante?\nMomentan: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Sprache eingestellt auf {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Welche Sprachdatei runterladen?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Es sind momentan keine Knotenpunkte aktiv, bitte probier es in ein paar Sekunden erneut</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Du musst dieses Kommando in einer Gruppe ausführen</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Du bist kein globaler Admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>Du bist nicht Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Ja</value>
+  </string>
+  <string key="No">
+    <value>Nein</value>
+  </string>
+  <string key="Allow">
+    <value>Erlauben</value>
+  </string>
+  <string key="Disallow">
+    <value>Verweigern</value>
+  </string>
+  <string key="Show">
+    <value>Zeigen</value>
+  </string>
+  <string key="Hide">
+    <value>Verstecken</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Nur Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Nur Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Auswahl des Spielers</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Keine zeigen</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Nur lebende zeigen</value>
+  </string>
+  <string key="ShowAll">
+    <value>Alle Spieler zeigen</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Abbrechen</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Möchtest du das Fliehen nach dem Spielstart erlauben?\nHinweis: Spieler können immer noch während der Beitrittphase fliehen\nMomentan: Spieler können {0}fliehen</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Spieler dürfen {0}fliehen nach dem Spielstart</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Wie viele Personen dürfen maximal mitspielen?\nMomentan: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maximale Anzahl gesetzt auf: {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Rollen nach dem Tod zeigen oder verstecken?\nMomentan: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Rollen werden beim Tod {0}.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Welcher Spielmodus soll die Gruppe haben?\nMomentan: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Spielmodus auf {0} gesetzt</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Wie sollen Rollen am Ende angezeigt werden?\nMomentan: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Rollenanzeige am Ende gesetzt auf: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Wähl die Basiszeit (in Sekunden) für die Tageszeit.   Diese wird noch je nach Spieleranzahl verändert.\nMinimale spielerbasierte Zeit ist 60 Sekunden.  Standardeinstellung: {0}\nMomentan: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Basistageszeit gesetzt auf {0} Sekunden</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Wähl die Zeit (in Sekunden) für die Nacht. Standardeinstellung: {0}\nMomentan:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Nachtzeit auf {0} Sekunden gesetzt</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Wähl die Zeit (in Sekunden) für die Wahl des Erhängens. Standardeinstellung: {0}\nMomentan:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Wahlzeit für das Erhängen auf {0} Sekunden gesetzt</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Narr als Rollenoption erlauben?\nMomentan: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Narr als Rolle gesetzt auf: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Gerber als Rollenoption erlauben?\nMomentan: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Gerber als Rolle gesetzt auf: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Kult als Rollenoption erlauben?\nMomentan: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Kult als Rolle gesetzt auf: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Danke, schönen Tag noch :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Nach welcher Sprache in einer Gruppe möchtest du suchen?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Hier sind die Gruppen für {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Mitglieder</value>
+  </string>
 </strings>
