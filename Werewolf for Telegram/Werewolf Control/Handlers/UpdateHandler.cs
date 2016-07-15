@@ -119,7 +119,6 @@ namespace Werewolf_Control.Handler
                             //now count, notify if limit hit
                             if (temp[key].Messages.Count() >= 20) // 20 in a minute
                             {
-
                                 temp[key].Warns++;
                                 if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
                                 {
@@ -141,7 +140,6 @@ namespace Werewolf_Control.Handler
                                 }
 
                                 temp[key].Messages.Clear();
-
                             }
                         }
                         catch (Exception e)
@@ -245,12 +243,13 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
-                                if (update.Message.Chat.Type == ChatType.Private)
-                                    AddCount(update.Message.From.Id, update.Message.Text);
+                                
                                 if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     return;
                                 }
+                                if (update.Message.Chat.Type == ChatType.Private)
+                                    AddCount(update.Message.From.Id, update.Message.Text);
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
 
@@ -306,7 +305,7 @@ namespace Werewolf_Control.Handler
                                             }
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update))
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != Para)
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
                                         return;

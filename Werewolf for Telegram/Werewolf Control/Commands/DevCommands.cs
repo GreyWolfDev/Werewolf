@@ -44,6 +44,13 @@ namespace Werewolf_Control
             }
         }
 
+        [Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
+        public static void KillGame(Update u, string[] args)
+        {
+            var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+            game?.Kill();
+        }
+
         //[Command(Trigger = "sendonline", DevOnly = true)]
         //public static void SendOnline(Update update, string[] args)
         //{
@@ -169,7 +176,7 @@ namespace Werewolf_Control
             Send("You have been banned.  You may appeal your ban in @werewolfsupport", long.Parse(args[1]));
         }
 
-        [Command(Trigger = "whois", GlobalAdminOnly = true)]
+        [Command(Trigger = "whois", DevOnly = true)]
         public static void WhoIs(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -188,7 +195,7 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "getbans", GlobalAdminOnly = true)]
+        [Command(Trigger = "getbans", DevOnly = true)]
         public static void GetBans(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -210,7 +217,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "permban", GlobalAdminOnly = true)]
+        [Command(Trigger = "permban", DevOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
             var tosmite = new List<int>();
@@ -275,7 +282,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "remban", GlobalAdminOnly = true)]
+        [Command(Trigger = "remban", DevOnly = true)]
         public static void RemoveBan(Update u, string[] args)
         {
             var tosmite = new List<int>();

@@ -3318,6 +3318,13 @@ namespace Werewolf_Node
             }
         }
 
+        public void Kill()
+        {
+            //forces game to exit
+            Send("Game removed");
+            Program.RemoveGame(this);
+        }
+
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();

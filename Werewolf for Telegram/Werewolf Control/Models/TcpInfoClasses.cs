@@ -109,4 +109,10 @@ namespace Werewolf_Control.Models
         public string JType { get; set; } = "SkipVoteInfo";
         public long GroupId { get; set; }
     }
+
+    public class GameKillInfo
+    {
+        public string JType { get; set; } = "GameKillInfo";
+        public long GroupId { get; set; }
+    }
 }

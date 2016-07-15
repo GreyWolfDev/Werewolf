@@ -74,6 +74,13 @@ namespace Werewolf_Control.Models
             var json = JsonConvert.SerializeObject(new SkipVoteInfo { GroupId = GroupId });
             n?.Broadcast(json);
         }
+
+        public void Kill()
+        {
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            var json = JsonConvert.SerializeObject(new GameKillInfo() { GroupId = GroupId });
+            n?.Broadcast(json);
+        }
     }
 
     public enum GameState

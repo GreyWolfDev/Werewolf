@@ -179,6 +179,11 @@ namespace Werewolf_Node
                                 game = Games.FirstOrDefault(x => x.ChatId == svi.GroupId);
                                 game?.SkipVote();
                                 break;
+                            case "GameKillInfo":
+                                var gki = JsonConvert.DeserializeObject<GameKillInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == gki.GroupId);
+                                game?.Kill();
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;
