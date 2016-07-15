@@ -1084,7 +1084,7 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
-                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n{GetLocaleString("IdleCount", p.GetName(), idles24 + 1)}"));
+                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName(), idles24 + 1)));
 
                     //if hunter has died from AFK, too bad....
                     p.IsDead = true;
@@ -1232,7 +1232,7 @@ namespace Werewolf_Node
                 }
                 else
                 {
-                    foreach (var p in Players.Where(x => x.DiedLastNight && x.PlayerRole != IRole.Harlot))
+                    foreach (var p in Players.Where(x => x.DiedLastNight && x.PlayerRole != IRole.Harlot & !x.DiedFromKiller))
                     {
                         SendWithQueue(GetLocaleString("GenericDeathNoReveal", p.GetName()));
                         p.DiedLastNight = false;
@@ -1627,8 +1627,8 @@ namespace Werewolf_Node
                         DBKill(sk, skilled, KillMthd.SerialKilled);
                         if (DbGroup.ShowRoles != false)
                             SendWithQueue(GetLocaleString("DefaultKilled", skilled.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(skilled.PlayerRole)} {GetLocaleString("IsDead")}"));
-                        //else
-                        //    SendWithQueue(GetLocaleString("GenericDeathNoReveal", skilled.GetName()));
+                        else
+                            SendWithQueue(GetLocaleString("GenericDeathNoReveal", skilled.GetName()));
                         if (skilled.PlayerRole == IRole.Hunter)
                         {
                             HunterFinalShot(skilled, KillMthd.SerialKilled);
