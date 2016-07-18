@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- THIS VERSION IS UP TO DATE AS OF 2016-05-14 20:49MDST -->
+<!-- THIS VERSION IS UP TO DATE AS OF 2016-07-18 20:49MDST -->
+<!-- About commands are still missing -->
 <strings>
   <language name="Nederlands" base="Nederlands" variant=""/>
   <string key="NotInGame">
@@ -459,4 +460,553 @@
     <value>Vreemd... {0} kwam niet naar het café voor het gebruikelijke biertje met de rest van de vakmannen... O.o</value>
   </string>
   <!-- UPDATED LAST ON 14 MAY 2016-->
+  <string key="FleeDisabled">
+    <value>Vluchten tijdens het spel mag niet van de admins!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>ging dood</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} aan admin lijst toegevoegd.  Gebruik /config om instellingen te veranderen.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Jij bent al in een spel! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Je groep is erin geslaagd om merdere spellen te starten...  De anderen spellen werden gestopt</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Je groep zit in de wachtrij.  Positie: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, Ik ga op pauze voor instandhouding, jij mag momenteel geen spel starten.\nIk wacht op het einde van {0} spellen...\nGa naar @werewolfdev voor meer informatie</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>Er is geen speel aan het lopen.  Typ  /startgame of /starchaos om een nieuwe spel te starten</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Alleen admins mogen dit bevel gebruiken</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Na dit spel ga ik me stopzetten voor instandhouding</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Na dit spel ga ik doorstarten voor een bijwerking</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Ben je zeker dat je op een bericht geantwoord hebt?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is al een admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is geen admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} werdt verwijdert van de admin lijst.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Taal verandert naar {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Geen ziener!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Tijd is op!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Jij bent amor!. Kies twee spelers die op eeuwig verliefd gaan raken op elkaar. Als een van die twee dood gaat, gaat de andere zich vanuit droefheid afmaken</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Jij bent dubbelganger!.  Kies een speler, als die stervt, krijg je hun role.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are the town Hunter. You do not sleep well, and you would never go to bed without your rifle. If you die, you can choose someone else to kill. If you are eaten, you have a chance to take a werewolf down, but will not be able to choose a player to kill.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Jij bent de seriemoordenaar. Kort geleden uit gevlucht uit het gekkenhuis is het je doel iederen af te maken. Elke nacht mag je iemand doden.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Je wordt geraakt door liefde. {0}'s naam gaat nooit uit je hart verdwijnen. Je doal is samen het {0} te overleven. Sterft een van jullie gaat de andere ook dood.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Het dorp heeft gekozen om je te lynchen! Dit is je laatse kans, bepaal iemand die met je sterft!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} wil zijn pistool trekken, maar slaagt er niet op tijd in, met een verdrietig gezicht sluiten zich hun oogen voor de laatse keer.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} trekt zijn pistool, kijk naar de boel..... en kan niet kiezen wie hij wil neerschieten.  Hij gaat dood, zonder iets te doen...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Als de strik rond {0}'s hoofd strakker wordt, trekt hij zijn pistool en richt zij op {1}! {1} stervt ter plaatse!  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Jij wordt vermoord!  Dit zijn je laatse momenten, en jij hebt de kans om iemand neer te schieten.... weez snel!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Neergeschoten werden was te veel voor {0} dus hij kon zijn pistool niet pakken en sterft, zonder zich nog een keer te bewegen.....</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} liegt op de grond, en haalt zijn laatste adem. Hij kan niet beslissen op wij hij wil schieten, en sterft...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>As the bullet pierces {0}, they fall to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>De wolven wilden vannacht de Jager freten, maar de Jager kon een van hen afmaken voordat hij stierf! {0} ging dood (wolf)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>De wolf wilde vannacht de Jager opeten, maar de Jager was sneller! {0} is niet meer onder de levenden!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>De wolven hadden zin in een leuke middernachtsnack, maar in de koelkast was een gekke mordenaar! {0} is niet meer onder ons!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0} was lekker rustig aan het slapen, maar nu moet hij voor eeuwig slapen.  De dorpelingen verzamelen zich in de midden van het dorp, daar ligt de lichaam van {0} en tien meter verden zijn hoofd.....  De seriemoordenaar was vannacht weer bezig! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Op je weg naar {0}'s huis wordt je geblindeerd dor het fel licht van een schutsengel!! Droevig ga jij weer naar huis, vannacht mag jij niemand vermoorden :( </value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>De cultus stuurde {0} om {1} te bekeren, maar nog voordat hij zijn bijbel uit zijn jas kan trekken had de cultus jager al zijn pistool in hand. RIP {0}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>De cultus leerde vannacht dat prediken in het gekkenhuis geen goed idee is. {0} is dood, zijn lichaam nu meer messen dan vles</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Jij hebt geprobeerd de seriemoordenaar te beveiligen, als dank heeft hij je jouw vleugels afgesneden. Jij sterft van verdriet</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>{0} houdt meer van BDSM dan jij, als jij geprobeerd om "stop" te zeggen snijd hij jij je keel door :O</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now!</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>De dubbelganger {0} werdt een vakman net zoals jij!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ging dood, je bent nu een vakman!  Je collega's (als zij bestaan) zijn: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>De dubbelganger {0} doet nu mee bij je cultus!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ging dood en jij verandert naar een cultus lid! Je collega's (als zij bestaan) zijn: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>De dubbelganger {0} is nu een weerwolf, net zoals jij!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ging dood en jij verandert naar een weerwolf!. Je collega's (als zij bestaan) zijn: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>De enige overblijvende persoon is de seriemoordenaar. Ze wint!</value>
+  </string>
+  <string key="AskKill">
+    <value>Wie wil jij vannacht afmaken?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Met de laatste ademhaling van {0} valt {1} naast hem neer en huilt. Zij weet zeker dat zij niet zonder {0} kan leven, en stort zich dus van een brug. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Wie wil je worden als hij doodgaat ?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Wie wil jij dat de liefhebbers zijn? Kies de eerste speler</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Wie wil jij dat de liefhebbers zijn? Kies de tweede	speler</value>
+  </string>
+  <string key="Hunter">
+    <value>de Jager 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Amor 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>de seriemoordenaar 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>de dubbelganger 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Amors pijl heeft je geraakt! Je houdt heel erg van {0}! Maar let op! Als hij sterft, sterf je met hem mee.  Als jij allebei overleefd, winnen jullie</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You have become the wild child.  You role model is {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Ware liefde eindigt nooit! De liefhebbers winnen!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>In het midden van het stadsplein, vinden jullie de lichaam van {0}, vol met kogels!. Blijkbaar heeft hij geprobeerd de jager te verrassen! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Een gast met een capuchon heeft geprobeerd om je te bekeren, maar je geloof was te sterk!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Jij zit aal te wachten voor een spel in {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Jij wordt aan de wachtrij voor {0} toegevoegd.  Ik stuur je een PB wanneer het volgende speel start! </value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Een nieuwe speel start in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>De zon komt op en de twee overblijvenden dorpelingen verlaten hun huizen. {0} kijkt naar {1}, lacht heel hard, trekt zijn mes uit en vermordt  {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Iedereen in het dorp is dood. Er zijn geen winners, behalve de wilde dieren :/</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Als de zon opkomt lopen {0} in het center van het dorp. {0} trekt zijn mes en stort zich op {1}.  {1} trekt een pistool out zijn tas een schiet op {0}'s gezicht.  Allebei gaan dood, er is geen winner....</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Jij hebt niet op tijd gekozen, dus de bot koos voor jou: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Winner</value>
+  </string>
+  <string key="Lost">
+    <value>Verliezer</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>{0} werd verwijdert omdat ie {1} keer in de laatste 24 uur niet heeft gestemd</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the seer is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Het speel duurde: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Dag {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Iets ging mis en dit knooppunt is uitgeschakeld</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ik heb jij een PB gestuurd</value>
+  </string>
+  <string key="StartPM">
+    <value>Stuur me alsjeblieft een PB, daarme ik je je rol kan vertellen: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Bedankt! Nu kan ik je ook een PB sturen</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Je moet antwoorden op de gebruiker die jij wilt verwijderen</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Wat wil jij doen?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Jij moet vanuit een groep een spel toetreden</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Jij moet vanuit een groep een spel starten!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time for Telegram to send message to me: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Welke taal?\nActueel: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Welke variant ?\nActueel: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Taal verandert naar {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Welke taal wil jij halen?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Actueel zijn er geen knooppunten online. probeer het alsjeblieft in een paar seconden weer</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Jij moet dit bevel in een groep uitvoeren</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Jij bent geen god! (Global Admin)</value>
+  </string>
+  <string key="NotPara">
+    <value>Jij bent niet Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Ja</value>
+  </string>
+  <string key="No">
+    <value>Nee</value>
+  </string>
+  <string key="Allow">
+    <value>Toestaan</value>
+  </string>
+  <string key="Disallow">
+    <value>Niet toestaan</value>
+  </string>
+  <string key="Show">
+    <value>Toonen</value>
+  </string>
+  <string key="Hide">
+    <value>verbergen</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Alleen normaal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Alleen Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Speler keuze</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Geen rollen toonen</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Alleen de rollen van levende spelers toonen</value>
+  </string>
+  <string key="ShowAll">
+    <value>Alle rollen toonen</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Annuleeren</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Wil jij vluchten nadat het spel begon toelaten?\nLet op: voor begin van het spel mogen spelers nog steeds vluchten!\nActueel: Spelers mogen {0}vluchten</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Spelers mogen {0}vluchten na start van het spel</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Hoeveel mensen mogen maximaal meespelen?\nActueel: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maximaal aantal van spelers is nu {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Op dood rollen toonen of verbergen?\nActueel: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Rollen worden {0} op dood.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Welke spelwijze gaat deze groep zijn?\nActueel: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Speelwijze veerandert naar {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Hoe wil jij dat op spel einde de rollen getoont worden?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Rollen aan het einde toonen is nu: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Kies de basis tijd (in seconden) die een dag zou duren. Dit gaat veranderen afhankelijk van de aantal aan spelers.\nEr worden minimaal 60 seconden aan toegevoegd. Standaardinstelling: {0}\nActueel: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Basis tijd voor een dag verandert naar: {0}</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Kies de tijd (in seconden) die een nacht zou duren. Standaardinstelling: {0}\nActueel: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duur vaan een nacht verandert naar {0} seconden</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Kies de tijd (in seconden) voor de lynch verkiezingen. Standaardinstelling: {0}\nActueel: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch verkiezingen tijd is nu {0} seconden</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Dwaas toestaan?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Dwaas is nu: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Looier toestaan?\nActueel: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Looier is nu: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Cultus toestaan?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cultus is nu: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Bedankt, finje dag! :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Jij bent op zoek naar in groep in welke taal?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Hier zijn de groepen voor {0}:</value>
+  </string>
+  <string key="Members">
+    <value>leden</value>
+  </string>
 </strings>
