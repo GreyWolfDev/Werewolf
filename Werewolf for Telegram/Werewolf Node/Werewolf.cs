@@ -2625,13 +2625,13 @@ namespace Werewolf_Node
                 switch (DbGroup.ShowRolesEnd)
                 {
                     case "None":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                        Players.OrderBy(x => x.TimeDied)
                            .Aggregate(msg,
                                (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                              Players.OrderBy(x => x.TimeDied)
                                  .Aggregate("",
                                      (current, p) =>
@@ -3274,7 +3274,7 @@ namespace Werewolf_Node
             if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
             {
                 LastPlayersOutput = DateTime.Now;
-                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                           Players.OrderBy(x => x.TimeDied)
                               .Aggregate("",
                                   (current, p) =>
