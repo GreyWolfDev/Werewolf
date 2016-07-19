@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms.Design;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
@@ -63,14 +64,41 @@ namespace Werewolf_Control.Handler
                     using (var db = new WWContext())
                     {
                         foreach (var id in SpamBanList)
+                        {
+                            var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                            var name = p?.Name;
+                            var count = p?.TempBanCount ?? 0;
+                            count++;
+                            if (p != null)
+                                p.TempBanCount = count; //update the count
+
+                            var expireTime = DateTime.Now;
+                            switch (count)
+                            {
+                                case 1:
+                                    expireTime = expireTime.AddHours(2);
+                                    break;
+                                case 2:
+                                    expireTime = expireTime.AddHours(8);
+                                    break;
+                                case 3:
+                                    expireTime = expireTime.AddDays(1);
+                                    break;
+                                default: //perm ban
+                                    expireTime = (DateTime) SqlDateTime.MaxValue;
+                                    break;
+
+                            }
                             db.GlobalBans.Add(new GlobalBan
                             {
-                                BannedBy="Moderator",
-                                Expires = (DateTime)SqlDateTime.MaxValue,
+                                BannedBy = "Moderator",
+                                Expires = expireTime,
                                 TelegramId = id,
                                 Reason = "Spam / Flood",
-                                BanDate = DateTime.Now
+                                BanDate = DateTime.Now,
+                                Name = name
                             });
+                        }
                         SpamBanList.Clear();
                         db.SaveChanges();
 
@@ -135,8 +163,30 @@ namespace Werewolf_Control.Handler
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);
-                                    Send("You have been banned for spamming.  You may appeal your ban in @werewolfsupport",
-                                        key);
+                                    var count = 0;
+                                    using (var db = new WWContext())
+                                    {
+                                        count = db.Players.FirstOrDefault(x => x.TelegramId == key).TempBanCount ?? 0;
+                                    }
+                                    var unban = "";
+                                    switch (count)
+                                    {
+                                        case 0:
+                                            unban = "2 hours";
+                                            break;
+                                        case 1:
+                                            unban = "8 hours";
+                                            break;
+                                        case 2:
+                                            unban = "24 hours";
+                                            break;
+                                        default:
+                                            unban =
+                                                "Permanent. You have reached the max limit of temp bans for spamming.";
+                                            break;
+                                    }
+                                        Send("You have been banned for spamming.  Your ban period is: " + unban,
+                                            key);
                                 }
 
                                 temp[key].Messages.Clear();

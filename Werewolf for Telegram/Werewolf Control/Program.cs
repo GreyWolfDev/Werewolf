@@ -40,8 +40,9 @@ namespace Werewolf_Control
                 using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
+                    sw.WriteLine(DateTime.Now);
                     sw.WriteLine(e.Message);
-                    sw.WriteLine(e.StackTrace);
+                    sw.WriteLine(e.StackTrace + "\n");
                     if (eventArgs.IsTerminating)
                         Environment.Exit(5);
                 }
@@ -212,9 +213,18 @@ namespace Werewolf_Control
                         $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
                         $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
 
-                    
 
-                    msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
+                    try
+                    {
+                        msg = Nodes.Aggregate(msg,
+                            (current, n) =>
+                                current +
+                                $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
 
                     for (var i = 0; i < 12 - Nodes.Count; i++)
                         msg += new string(' ', Console.WindowWidth);
