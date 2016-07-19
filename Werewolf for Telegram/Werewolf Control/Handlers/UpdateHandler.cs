@@ -121,7 +121,7 @@ namespace Werewolf_Control.Handler
                 }
 
                 //refresh every 20 minutes
-                Thread.Sleep(TimeSpan.FromMinutes(20));
+                Thread.Sleep(TimeSpan.FromMinutes(1));
             }
         }
 
@@ -139,11 +139,13 @@ namespace Werewolf_Control.Handler
                         {
                             //drop older messages (1 minute)
                             temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
-                            if (temp[key].Messages.Count == 0)
-                            {
-                                temp.Remove(key);
-                                continue;
-                            }
+
+                            //comment this out - if we remove it, it doesn't keep the warns
+                            //if (temp[key].Messages.Count == 0)
+                            //{
+                            //    temp.Remove(key);
+                            //    continue;
+                            //}
                             //now count, notify if limit hit
                             if (temp[key].Messages.Count() >= 20) // 20 in a minute
                             {

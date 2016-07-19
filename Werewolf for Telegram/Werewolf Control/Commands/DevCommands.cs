@@ -210,9 +210,10 @@ namespace Werewolf_Control
                     }
                 }
                 reply += "\nGlobal Bans in Database\n";
-                reply = UpdateHandler.BanList.Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name}: {ban.Reason}\n");
+                
+                reply = UpdateHandler.BanList.OrderBy(x => x.Expires).Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + $"\n{(ban.Expires < new DateTime(3000,1,1)?"Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n":"")}");
 
-                Send(reply.FormatHTML(), u.Message.Chat.Id);
+                Send(reply, u.Message.Chat.Id);
 
             }
         }
