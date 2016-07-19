@@ -76,13 +76,13 @@ namespace Werewolf_Control.Handler
                             switch (count)
                             {
                                 case 1:
-                                    expireTime = expireTime.AddHours(2);
+                                    expireTime = expireTime.AddHours(12);
                                     break;
                                 case 2:
-                                    expireTime = expireTime.AddHours(8);
+                                    expireTime = expireTime.AddDays(1);
                                     break;
                                 case 3:
-                                    expireTime = expireTime.AddDays(1);
+                                    expireTime = expireTime.AddDays(3);
                                     break;
                                 default: //perm ban
                                     expireTime = (DateTime) SqlDateTime.MaxValue;
@@ -172,13 +172,13 @@ namespace Werewolf_Control.Handler
                                     switch (count)
                                     {
                                         case 0:
-                                            unban = "2 hours";
+                                            unban = "12 hours";
                                             break;
                                         case 1:
-                                            unban = "8 hours";
+                                            unban = "24 hours";
                                             break;
                                         case 2:
-                                            unban = "24 hours";
+                                            unban = "3 days";
                                             break;
                                         default:
                                             unban =
