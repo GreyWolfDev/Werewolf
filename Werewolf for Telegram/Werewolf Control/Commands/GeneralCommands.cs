@@ -99,7 +99,11 @@ namespace Werewolf_Control
                     p = new Player
                     {
                         TelegramId = update.Message.From.Id,
+#if RELEASE
                         HasPM = update.Message.Chat.Type == ChatType.Private
+#elif RELEASE2
+                        HasPM2 = update.Message.Chat.Type == ChatType.Private
+#endif
                     };
                     db.Players.Add(p);
 
@@ -109,7 +113,11 @@ namespace Werewolf_Control
 
                     db.SaveChanges();
                     //user obvious has no PM status, notify them
+#if RELEASE
                     if (p.HasPM != true)
+#elif RELEASE2
+                    if (p.HasPM2 != true)
+#endif
                     {
                         Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                         return;
@@ -179,7 +187,11 @@ namespace Werewolf_Control
                     using (var db = new WWContext())
                     {
                         var p = GetDBPlayer(update.Message.From.Id, db);
+#if RELEASE
                         p.HasPM = true;
+#elif RELEASE2
+                        p.HasPM2 = true;
+#endif
                         db.SaveChanges();
                         Bot.Send(
                             "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by @werewolfsupport for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",

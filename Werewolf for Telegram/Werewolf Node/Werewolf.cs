@@ -76,8 +76,8 @@ namespace Werewolf_Node
                     LoadLanguage(DbGroup.Language);
                     AddPlayer(u, false);
                 }
-                SendWithQueue(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
-                    Chaos ? Settings.StartChaosGame : Settings.StartGame);
+                SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
+                    GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame));
                 new Thread(GameTimer).Start();
                 
             }
@@ -344,7 +344,8 @@ namespace Werewolf_Node
                         user = new Player
                         {
                             TelegramId = u.Id,
-                            HasPM = false
+                            HasPM = false,
+                            HasPM2 = false
                         };
                         db.Players.Add(user);
                     }
@@ -353,13 +354,12 @@ namespace Werewolf_Node
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
 
                     db.SaveChanges();
-                    var botname =
-#if DEBUG
-                        "@serastestbot";
-#else
-                "@werewolfbot";
-#endif
+                    var botname = "@" + Program.Me.Username;
+#if RELEASE
                     if (user.HasPM != true)
+#elif RELEASE2
+                    if (user.HasPM2 != true)
+#endif
                         msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
                 }
                 SendWithQueue(msg);
@@ -545,9 +545,9 @@ namespace Werewolf_Node
         }
 
 
-        #endregion
+#endregion
 
-        #region Roles
+#region Roles
 
         private void AssignRoles()
         {
@@ -1004,9 +1004,9 @@ namespace Werewolf_Node
             return msg;
         }
 
-        #endregion
+#endregion
 
-        #region Cycles
+#region Cycles
 
         private void LynchCycle()
         {
@@ -2174,7 +2174,7 @@ namespace Werewolf_Node
                 p.Choice = -1;
         }
 
-        #endregion
+#endregion
 
         private string GetRandomImage(List<string> input)
         {
@@ -2658,7 +2658,7 @@ namespace Werewolf_Node
             }
         }
 
-        #region Send Menus
+#region Send Menus
 
         private void SendLynchMenu()
         {
@@ -2889,9 +2889,9 @@ namespace Werewolf_Node
             }
         }
 
-        #endregion
+#endregion
 
-        #region Helpers
+#region Helpers
 
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
@@ -3161,7 +3161,7 @@ namespace Werewolf_Node
             if (id == 0)
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
-#if !RELEASE
+#if DEBUG
             Send(text, id);
 #else
             Program.Bot.SendDocument(id, image, text);
@@ -3217,7 +3217,7 @@ namespace Werewolf_Node
                     }
 #else
                     final += m.Msg + Environment.NewLine + Environment.NewLine;
-#endif          
+#endif
                 }
                 if (!String.IsNullOrEmpty(final))
                     Send(final);
@@ -3262,7 +3262,7 @@ namespace Werewolf_Node
             Night
         }
 
-        #endregion
+#endregion
 
         public void ForceStart()
         {

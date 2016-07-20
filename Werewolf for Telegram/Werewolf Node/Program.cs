@@ -11,9 +11,11 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using TcpFramework;
 using Telegram.Bot;
+using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Models;
+using Message = TcpFramework.Message;
 
 namespace Werewolf_Node
 {
@@ -24,6 +26,7 @@ namespace Werewolf_Node
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
         internal static Client Bot;
+        internal static User Me;
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
         internal static List<long> GroupInitializing = new List<long>();
@@ -75,6 +78,7 @@ namespace Werewolf_Node
             APIToken = key.GetValue("ProductionAPI2").ToString();
 #endif
             Bot = new Client(APIToken);
+            Me = Bot.GetMe().Result;
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";

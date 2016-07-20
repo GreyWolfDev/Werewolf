@@ -18,6 +18,76 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+        [Command(Trigger = "dumpgifs", DevOnly = true)]
+        public static void DumpGifs(Update u, string[] args)
+        {
+            foreach (var g in Settings.VillagerDieImages)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagerDieImages");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.WolfWin)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolfWin");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.WolvesWin)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolvesWin");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.VillagersWin)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagersWin");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.NoWinner)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "NoWinner");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.StartGame)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartGame");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.StartChaosGame)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartChaosGame");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.TannerWin)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "TannerWin");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.CultWins)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "CultWins");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.SerialKillerWins)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "SerialKillerWins");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            foreach (var g in Settings.LoversWin)
+            {
+                Bot.Api.SendDocument(u.Message.Chat.Id, g, "LoversWin");
+                Thread.Sleep(1000);
+            }
+        }
+
         [Command(Trigger = "winchart", DevOnly = true)]
         public static void WinChart(Update update, string[] args)
         {

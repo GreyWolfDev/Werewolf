@@ -155,7 +155,7 @@ namespace Werewolf_Control.Helpers
 #if DEBUG
             //Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
 #endif
-            if (notify)
+            if (notify && n.Games.Count > 2)
                 foreach (var g in n.Games)
                 {
                     Send(UpdateHandler.GetLocaleString("NodeShutsDown", g.Language), g.GroupId);
