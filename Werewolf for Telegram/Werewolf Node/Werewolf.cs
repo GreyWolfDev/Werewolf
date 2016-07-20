@@ -2699,11 +2699,11 @@ namespace Werewolf_Node
                 catch (AggregateException ex)
                 {
                     var e = ex.InnerExceptions.First();
-                    Console.WriteLine($"Error getting menu send result: {e.Message}");
+                    Console.WriteLine($"Error getting menu send result: {e.Message} {to.TeleUser.Username} {to.Name}");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"Error getting menu send result: {e.Message}");
+                    Console.WriteLine($"Error getting menu send result: {e.Message} {to.TeleUser.Username} {to.Name}");
                 }
                 to.CurrentQuestion = (new QuestionAsked
                 {
