@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Telegram.Bot.Args;
@@ -158,25 +160,62 @@ namespace Telegram.Bot
         }
 
 #pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
+
+        private CancellationTokenSource cts;
+
         private async void Receive()
         {
-            while (IsReceiving)
+            cts = new CancellationTokenSource();
+            var sw = new Stopwatch();
+            using (var s = new StreamWriter("getUpdates.log", true))
             {
-                var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
-
-                try
+                while (IsReceiving)
                 {
-                    var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
+                    var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
 
-                    foreach (var update in updates)
+                    try
                     {
-                        OnUpdateReceived(new UpdateEventArgs(update));
-                        MessageOffset = update.Id + 1;
+                        sw.Reset();
+                        sw.Start();
+                        await GetUpdates(MessageOffset, timeout: timeout).ContinueWith(r =>
+                        {
+                            sw.Stop();
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {r.Result.Length}");
+                            s.Flush();
+                            foreach (var update in r.Result)
+                            {
+                                OnUpdateReceived(new UpdateEventArgs(update));
+                                MessageOffset = update.Id + 1;
+                            }
+                        }, TaskContinuationOptions.OnlyOnRanToCompletion).ContinueWith(r =>
+                        {
+                            sw.Stop();
+                            //get the exception
+                            if (r.Exception.InnerExceptions.FirstOrDefault() is ApiRequestException)
+                            {
+                                OnReceiveError(r.Exception.InnerExceptions.FirstOrDefault() as ApiRequestException);
+                            }
+                            s.WriteLine(
+                                $"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {r.Exception.InnerExceptions.FirstOrDefault()?.Message}");
+                            s.Flush();
+
+
+                        }, TaskContinuationOptions.OnlyOnFaulted);
                     }
-                }
-                catch (ApiRequestException e)
-                {
-                    OnReceiveError(e);
+                    catch (ApiRequestException e)
+                    {
+                        sw.Stop();
+                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                        s.Flush();
+                        OnReceiveError(e);
+
+                    }
+                    catch (TaskCanceledException e)
+                    {
+                        sw.Stop();
+                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                        s.Flush();
+                    }
                 }
             }
         }

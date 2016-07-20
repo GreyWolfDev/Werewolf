@@ -59,6 +59,12 @@ namespace Werewolf_Control
             //Let the nodes reconnect
             Thread.Sleep(1000);
 
+            //initialize EF before we start receiving
+            using (var db = new WWContext())
+            {
+                var count = db.GlobalBans.Count();
+            }
+
             //start up the bot
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
@@ -74,7 +80,7 @@ namespace Werewolf_Control
             Thread.Sleep(-1);
         }
 
-        
+
 
         private static void TimerOnTick(object sender, EventArgs eventArgs)
         {
@@ -142,7 +148,7 @@ namespace Werewolf_Control
                     MessagesProcessed.Insert(0, newMessages);
                     if (MessagesProcessed.Count > 10)
                         MessagesProcessed.RemoveAt(10);
-                    MessageRxPerSecond = (float)MessagesProcessed.Average()/10;
+                    MessageRxPerSecond = (float)MessagesProcessed.Average() / 10;
 
                     newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
                     _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
@@ -170,7 +176,7 @@ namespace Werewolf_Control
                     if (CpuTimes.Count > 10)
                         CpuTimes.RemoveAt(10);
                     AvgCpuTime = CpuTimes.Average();
-                    
+
                 }
                 catch
                 {

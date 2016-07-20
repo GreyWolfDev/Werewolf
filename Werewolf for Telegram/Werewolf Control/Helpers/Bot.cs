@@ -110,7 +110,11 @@ namespace Werewolf_Control.Helpers
                 Api.StartReceiving();
             }
             var e = receiveErrorEventArgs.ApiRequestException;
-            Program.Log($"{e.ErrorCode} - {e.Message}\n{e.Source}");
+            using (var sw = new StreamWriter("apireceiveerror.log", true))
+            {
+                sw.WriteLine($"{DateTime.Now} {e.ErrorCode} - {e.Message}\n{e.Source}");
+            }
+                
         }
 
         private static void Reboot()
