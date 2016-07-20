@@ -177,30 +177,17 @@ namespace Telegram.Bot
                     {
                         sw.Reset();
                         sw.Start();
-                        await GetUpdates(MessageOffset, timeout: timeout).ContinueWith(r =>
-                        {
-                            sw.Stop();
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {r.Result.Length}");
-                            s.Flush();
-                            foreach (var update in r.Result)
-                            {
-                                OnUpdateReceived(new UpdateEventArgs(update));
-                                MessageOffset = update.Id + 1;
-                            }
-                        }, TaskContinuationOptions.OnlyOnRanToCompletion).ContinueWith(r =>
-                        {
-                            sw.Stop();
-                            //get the exception
-                            if (r.Exception.InnerExceptions.FirstOrDefault() is ApiRequestException)
-                            {
-                                OnReceiveError(r.Exception.InnerExceptions.FirstOrDefault() as ApiRequestException);
-                            }
-                            s.WriteLine(
-                                $"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {r.Exception.InnerExceptions.FirstOrDefault()?.Message}");
-                            s.Flush();
+                        var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
 
+                        sw.Stop();
+                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                        s.Flush();
+                        foreach (var update in updates)
+                        {
+                            OnUpdateReceived(new UpdateEventArgs(update));
+                            MessageOffset = update.Id + 1;
+                        }
 
-                        }, TaskContinuationOptions.OnlyOnFaulted);
                     }
                     catch (ApiRequestException e)
                     {
@@ -208,7 +195,6 @@ namespace Telegram.Bot
                         s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
                         s.Flush();
                         OnReceiveError(e);
-
                     }
                     catch (TaskCanceledException e)
                     {
@@ -1188,7 +1174,7 @@ namespace Telegram.Bot
 
             return SendWebRequest<bool>("leaveChat", parameters);
         }
-        
+
         /// <summary>
         /// Use this method to kick a user from a group or a supergroup. In the case of supergroups, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the group for this to work.
         /// </summary>
@@ -1652,7 +1638,7 @@ namespace Telegram.Bot
                 catch (HttpRequestException e) when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
                 {
                 }
-                
+
 #if !NETSTANDARD1_3
                 catch (UnsupportedMediaTypeException)
                 {
@@ -1663,7 +1649,7 @@ namespace Telegram.Bot
                 //TODO: catch more exceptions
 
                 if (responseObject == null)
-                    responseObject = new ApiResponse<T> {Ok = false, Message = "No response received"};
+                    responseObject = new ApiResponse<T> { Ok = false, Message = "No response received" };
 
                 if (!responseObject.Ok)
                     throw new ApiRequestException(responseObject.Message, responseObject.Code);
