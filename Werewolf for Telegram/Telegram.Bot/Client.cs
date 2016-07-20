@@ -1576,7 +1576,7 @@ namespace Telegram.Bot
 
                                 if (parameter.Key == "timeout" && (int)parameter.Value != 0)
                                 {
-                                    client.Timeout = TimeSpan.FromSeconds((int)parameter.Value + 1);
+                                    client.Timeout = TimeSpan.FromSeconds((int)parameter.Value + 10);
                                 }
 
                                 if (parameter.Value is FileToSend)

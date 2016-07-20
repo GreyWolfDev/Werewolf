@@ -51,6 +51,27 @@ namespace Werewolf_Control
             game?.Kill();
         }
 
+        [Command(Trigger = "stopnode", GlobalAdminOnly = true)]
+        public static void StopNode(Update u, string[] args)
+        {
+            //get the node
+            try
+            {
+                var nodeid = args[1];
+                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == Guid.Parse(nodeid));
+                node?.ShutDown();
+                if (node != null)
+                    Send($"Node {node.ClientId} will stop accepting games", u.Message.Chat.Id);
+                else
+                    Send("No node with that ID found.", u.Message.Chat.Id);
+            }
+            catch
+            {
+                Send("/stopnode <node guid>", u.Message.Chat.Id);
+            }
+            
+        }
+
         //[Command(Trigger = "sendonline", DevOnly = true)]
         //public static void SendOnline(Update update, string[] args)
         //{

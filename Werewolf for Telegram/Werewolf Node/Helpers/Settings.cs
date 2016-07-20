@@ -9,7 +9,13 @@ namespace Werewolf_Node
         public static int Port = 9051;
 #else
         public static string ServerIP = "127.0.0.1";
+
+#endif
+
+#if RELEASE
         public static int Port = 9050;
+#elif RELEASE2
+        public static int Port = 9051;
 #endif
 
 
@@ -25,6 +31,7 @@ namespace Werewolf_Node
         internal static List<string> CultWins = new List<string> { "BQADBAADWAMAAosYZAf5H-sYZ53nMwI", "BQADBAADHwsAAgUYZAeDkYYi5N3cIgI" };
         internal static List<string> SerialKillerWins = new List<string> { "BQADBAADKwMAAsQZZAf4t254zcOVdgI", "BQADBAADOAQAAqUXZAdnNEO6TaxtnQI", "BQADBAADdQMAAsEcZAfkYMOxn9xzBAI", "BQADBAADmgMAArgcZAfW46sJoTg9VQI" };
         internal static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeSI-kDTlm6QAI", "BQADBAADYAMAAkMdZAesBzPWN8zN3QI" };
+
 
         public static int
 #if DEBUG

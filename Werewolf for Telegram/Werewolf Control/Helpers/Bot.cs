@@ -59,8 +59,10 @@ namespace Werewolf_Control.Helpers
                         .OpenSubKey("SOFTWARE\\Werewolf");
 #if DEBUG
             TelegramAPIKey = key.GetValue("DebugAPI").ToString();
-#else
+#elif RELEASE
             TelegramAPIKey = key.GetValue("ProductionAPI").ToString();
+#elif RELEASE2
+            TelegramAPIKey = key.GetValue("ProductionAPI2").ToString();
 #endif
             Api = new Client(TelegramAPIKey);
 

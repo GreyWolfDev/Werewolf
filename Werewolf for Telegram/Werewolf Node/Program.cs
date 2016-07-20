@@ -69,8 +69,10 @@ namespace Werewolf_Node
                         .OpenSubKey("SOFTWARE\\Werewolf");
 #if DEBUG
             APIToken = key.GetValue("DebugAPI").ToString();
-#else
+#elif RELEASE
             APIToken = key.GetValue("ProductionAPI").ToString();
+#elif RELEASE2
+            APIToken = key.GetValue("ProductionAPI2").ToString();
 #endif
             Bot = new Client(APIToken);
             ClientId = Guid.NewGuid();

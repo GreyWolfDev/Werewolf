@@ -10,8 +10,10 @@ namespace Werewolf_Control.Helpers
     {
 #if DEBUG
         public static int Port = 9051;
-#else
-        public static int Port = 9050;
+#elif RELEASE
+        public static int Port = 9050;  //9050-@werewolfbot 
+#elif RELEASE2
+        public static int Port = 9051;  //9051-@werewolfIIbot
 #endif
 
         public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
