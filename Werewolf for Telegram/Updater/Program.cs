@@ -31,7 +31,11 @@ namespace Updater
 
                 Console.WriteLine("Waiting on bot to exit....");
                 //first, wait for the bot to close out
+#if RELEASE
                 while (Process.GetProcessesByName("Werewolf Control").Any())
+#elif RELEASE2
+                while (Process.GetProcessesByName("Werewolf Control 2").Any())
+#endif
                 {
                     Thread.Sleep(100);
                 }
@@ -47,7 +51,7 @@ namespace Updater
                 Console.WriteLine("Starting bot....");
                 //now start it back up
                 //if (!Process.GetProcessesByName("Werewolf Control").Any())
-                Process.Start(Path.Combine(mainPath, "werewolf control.exe"));
+                Process.Start(Path.Combine(mainPath, "werewolf control 2.exe"));
                 Console.WriteLine("Update complete");
                 Thread.Sleep(5000);
             }

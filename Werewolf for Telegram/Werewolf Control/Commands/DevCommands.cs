@@ -21,71 +21,87 @@ namespace Werewolf_Control
         [Command(Trigger = "dumpgifs", DevOnly = true)]
         public static void DumpGifs(Update u, string[] args)
         {
+
             foreach (var g in Settings.VillagerDieImages)
             {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagerDieImages");
+                try
+                {
+                    var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagerDieImages - " + g).Result;
+                }
+                catch (AggregateException e)
+                {
+                    Send(g + " - " + e.InnerExceptions.FirstOrDefault().Message, u.Message.Chat.Id);
+                }
                 Thread.Sleep(1000);
             }
             Thread.Sleep(5000);
-            foreach (var g in Settings.WolfWin)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolfWin");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.WolvesWin)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolvesWin");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.VillagersWin)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagersWin");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.NoWinner)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "NoWinner");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.StartGame)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartGame");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
+            //foreach (var g in Settings.WolfWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolfWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.WolvesWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolvesWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.VillagersWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagersWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.NoWinner)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "NoWinner - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.StartGame)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartGame - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
             foreach (var g in Settings.StartChaosGame)
             {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartChaosGame");
+                try
+                {
+                    var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartChaosGame - " + g).Result;
+                }
+                catch (AggregateException e)
+                {
+                    Send(g + " - " + e.InnerExceptions.FirstOrDefault().Message, u.Message.Chat.Id);
+                }
                 Thread.Sleep(1000);
             }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.TannerWin)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "TannerWin");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.CultWins)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "CultWins");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.SerialKillerWins)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "SerialKillerWins");
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            foreach (var g in Settings.LoversWin)
-            {
-                Bot.Api.SendDocument(u.Message.Chat.Id, g, "LoversWin");
-                Thread.Sleep(1000);
-            }
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.TannerWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "TannerWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.CultWins)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "CultWins - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.SerialKillerWins)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "SerialKillerWins - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.LoversWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "LoversWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+
         }
 
         [Command(Trigger = "winchart", DevOnly = true)]
@@ -139,7 +155,7 @@ namespace Werewolf_Control
             {
                 Send("/stopnode <node guid>", u.Message.Chat.Id);
             }
-            
+
         }
 
         //[Command(Trigger = "sendonline", DevOnly = true)]
@@ -301,8 +317,8 @@ namespace Werewolf_Control
                     }
                 }
                 reply += "\nGlobal Bans in Database\n";
-                
-                reply = UpdateHandler.BanList.OrderBy(x => x.Expires).Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + $"\n{(ban.Expires < new DateTime(3000,1,1)?"Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n":"")}");
+
+                reply = UpdateHandler.BanList.OrderBy(x => x.Expires).Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + $"\n{(ban.Expires < new DateTime(3000, 1, 1) ? "Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n" : "")}");
 
                 Send(reply, u.Message.Chat.Id);
 
