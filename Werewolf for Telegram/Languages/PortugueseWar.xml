@@ -683,7 +683,12 @@
 
     <value>Perdeu</value>
   </string>
-
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>O soldado {0} não votou e foi morto por isso {1} vezes nas últimas 24 horas.</value>
+  </string>
+	
 <!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
   <string key="AboutVG">
     <value>Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
@@ -871,7 +876,7 @@
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
-    <value>Players will {0}be allowed to flee after game start</value>
+    <value>Players will {0} be allowed to flee after game start</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Que quantidade de jogadores você gostaria de definir como a máxima?\nAtual: {0}</value>
@@ -911,22 +916,22 @@
     <value>Duração da noite definida como {0} segundos</value>
   </string>
   <string key="SetLynchTimeQ">
-    <value>Escolha a duração (em segundos) da votação do enforcamento. Configuração padrão: {0}\nAtual:{1}</value>
+    <value>Escolha a duração (em segundos) da votação para matar. Configuração padrão: {0}\nAtual:{1}</value>
   </string>
   <string key="SetLynchTimeA">
-    <value>Duração da votação do enforcamento definida como {0} segundos</value>
+    <value>Duração da votação para matar definida como {0} segundos</value>
   </string>
   <string key="AllowFoolQ">
-    <value>Permitir o Trouxa como um papel possível?\nAtual: {0}</value>
+    <value>Permitir o Hacker desatualizado como um papel possível?\nAtual: {0}</value>
   </string>
   <string key="AllowFoolA">
-    <value>Existência do Trouxa definida como: {0}</value>
+    <value>Existência do Hacker desatualizado definida como: {0}</value>
   </string>
   <string key="AllowTannerQ">
-    <value>Permitir o Suicida como um papel possível?\nAtual: {0}</value>
+    <value>Permitir o Homem-bomba como um papel possível?\nAtual: {0}</value>
   </string>
   <string key="AllowTannerA">
-    <value>Existência do Suicida definida como: {0}</value>
+    <value>Existência do Homem-bomba definida como: {0}</value>
   </string>
   <string key="AllowCultQ">
     <value>Permitir a seita como um papel possível?\nAtual: {0}</value>
@@ -936,5 +941,17 @@
   </string>
   <string key="ThankYou">
     <value>Obrigado e tenha um bom jogo!</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Você quer procurar um grupo jogando em que idioma?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aqui estão os grupos jogando em {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor me mande start no privado para eu poder te enviar mensagens.</value>
   </string>
 </strings>
