@@ -119,7 +119,7 @@ namespace Werewolf_Control
                     if (p.HasPM2 != true)
 #endif
                     {
-                        Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                        RequestPM(update.Message.Chat.Id);
                         return;
                     }
                 }
@@ -187,6 +187,20 @@ namespace Werewolf_Control
                     using (var db = new WWContext())
                     {
                         var p = GetDBPlayer(update.Message.From.Id, db);
+                        if (p == null)
+                        {
+                            var u = update.Message.From;
+                            p = new Player
+                            {
+                                UserName = u.Username,
+                                Name = (u.FirstName + " " + u.LastName).Trim(),
+                                TelegramId = u.Id,
+                                Language = "English"
+                            };
+                            db.Players.Add(p);
+                            db.SaveChanges();
+                            p = GetDBPlayer(update.Message.From.Id, db);
+                        }
 #if RELEASE
                         p.HasPM = true;
 #elif RELEASE2
@@ -194,7 +208,7 @@ namespace Werewolf_Control
 #endif
                         db.SaveChanges();
                         Bot.Send(
-                            "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by @werewolfsupport for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
+                            "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
                             update.Message.Chat.Id);
                         //Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                     }

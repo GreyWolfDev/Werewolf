@@ -150,6 +150,20 @@ namespace Werewolf_Control
             };
         }
 
+        internal static void RequestPM(long groupid)
+        {
+#if RELEASE
+            var username = "werewolfbot";
+#elif RELEASE2
+            var username = "werewolfIIbot";
+#else
+            var username = "serastestbot";
+#endif
+            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + username};
+            Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
+                customMenu: new InlineKeyboardMarkup(new[] {button}));
+        }
+
         private static Node GetPlayerNode(int id)
         {
             var node = Bot.Nodes.ToList().FirstOrDefault(n => n.Games.Any(g => g.Users.Contains(id)));

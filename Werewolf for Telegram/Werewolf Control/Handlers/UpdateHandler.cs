@@ -104,13 +104,15 @@ namespace Werewolf_Control.Handler
 
                         //now refresh the list
                         var list = db.GlobalBans.ToList();
-
+#if RELEASE2
                         for (var i = list.Count - 1; i >= 0; i--)
                         {
                             if (list[i].Expires > DateTime.Now) continue;
                             db.GlobalBans.Remove(db.GlobalBans.Find(list[i].Id));
                             list.RemoveAt(i);
                         }
+                        db.SaveChanges();
+#endif
 
                         BanList = list;
                     }
@@ -319,7 +321,7 @@ namespace Werewolf_Control.Handler
                                         }
                                         catch (Exception e)
                                         {
-                                            Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                                            Commands.RequestPM(update.Message.Chat.Id);
                                         }
                                     }
                                     return;
@@ -663,7 +665,7 @@ namespace Werewolf_Control.Handler
                                     grp.Name = update.Message.Chat.Title;
                                     DB.SaveChanges();
 
-                                    var msg = $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the support channel @werewolfsupport";
+                                    var msg = $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the [support channel](https://telegram.me/werewolfsupport)";
                                     msg += Environment.NewLine +
                                            "For updates on what is happening, join the dev channel @werewolfdev" +
                                            Environment.NewLine +

@@ -280,7 +280,7 @@ namespace Werewolf_Control
         [Command(Trigger = "notifyban", DevOnly = true)]
         public static void NotifyBan(Update u, string[] args)
         {
-            Send("You have been banned.  You may appeal your ban in @werewolfsupport", long.Parse(args[1]));
+            Send("You have been banned.  You may appeal your ban in @werewolfbanappeal", long.Parse(args[1]));
         }
 
         [Command(Trigger = "whois", DevOnly = true)]

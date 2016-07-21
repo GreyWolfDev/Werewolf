@@ -20,7 +20,7 @@ namespace Werewolf_Control.Helpers
 
         public static string FormatHTML(this string str)
         {
-            return str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
+            return str?.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
         }
     }
 }
