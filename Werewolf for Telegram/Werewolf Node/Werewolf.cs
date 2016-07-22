@@ -1286,6 +1286,7 @@ namespace Werewolf_Node
                 // ignored
             }
             //check detective
+            if (Players == null) return;
             var detect = Players.FirstOrDefault(x => x.PlayerRole == IRole.Detective & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (detect != null)
             {

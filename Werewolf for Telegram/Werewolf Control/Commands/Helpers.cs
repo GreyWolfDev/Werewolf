@@ -44,6 +44,10 @@ namespace Werewolf_Control
                 grp.BotInGroup = true;
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
+                else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
+                {
+                    grp.GroupLink = null;
+                }
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
