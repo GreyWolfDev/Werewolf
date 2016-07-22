@@ -35,6 +35,7 @@ namespace Werewolf_Node
         public Group DbGroup;
         public bool Chaos;
         public int GameId;
+        public Thread GameTimerThread;
         
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
@@ -78,8 +79,10 @@ namespace Werewolf_Node
                 }
                 SendWithQueue(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
                     Chaos ? Settings.StartChaosGame : Settings.StartGame);
-                new Thread(GameTimer).Start();
+                GameTimerThread = new Thread(GameTimer);
+                GameTimerThread.Start();
                 
+
             }
             catch (Exception ex)
             {
@@ -171,9 +174,6 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("StartingGameWait"));
                 IsInitializing = true;
                 Program.GroupInitializing.Add(ChatId);
-
-                //Log.WriteLine("Game start, timer ready.  \nPlayers:\n" +
-                //              Players.Aggregate("", (current, p) => current + ($"{p.Name}: {p.Id}\n")));
                 IsJoining = false;
                 IsRunning = true;
                 AssignRoles();
@@ -194,22 +194,13 @@ namespace Werewolf_Node
                     db.Games.Add(game);
                     db.SaveChanges();
 
-                    //NO LONGER DOING THIS, since group name is stored in group table
-
-                    //first, set the name of all groups with matching Id(in case they change the group name)
-                    //db.Database.ExecuteSqlCommand(
-                    //    $"UPDATE Game Set GroupName = '{ChatGroup.Replace("'", "''")}' WHERE GroupId = {ChatId}");
-
-                    //next, add chat id to any games where the group name matches(it's possible the chatid changed)
-                    //DB.Database.Connection.Execute($"UPDATE Game Set GroupId = {ChatId} Where GroupName = '{ChatGroup}'");
-
                     foreach (var p in Players)
                     {
                         //make sure they have DB entries
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
                         {
-                            dbp = new Player { TelegramId = p.Id, Language = Language};
+                            dbp = new Player {TelegramId = p.Id, Language = Language};
                             db.Players.Add(dbp);
                         }
                         dbp.Name = p.Name;
@@ -232,7 +223,8 @@ namespace Werewolf_Node
 
                 using (var db = new WWContext())
                 {
-                    GameId = db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
+                    GameId =
+                        db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
                 }
                 IsInitializing = false;
                 Program.GroupInitializing.Remove(ChatId);
@@ -274,8 +266,15 @@ namespace Werewolf_Node
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                Send(
+                    Program.Version.FileVersion +
+                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}",
+                    Program.Para);
 #endif
+
+            }
+            finally
+            {
                 Program.RemoveGame(this);
             }
 
@@ -305,16 +304,6 @@ namespace Werewolf_Node
                 };
                 p.Name = p.Name.Replace("\n","").Trim();
                 p.Id = p.TeleUser.Id;
-                //if ()
-                //{
-                //    var dbuser = GetDBPlayer(p);
-                //    if (dbuser != null)
-                //    {
-                //        dbuser.Banned = true;
-                //        DB.SaveChanges();
-                //        Send(GetLocaleString("BannedForExploit", p.Name));
-                //    }
-                //}
                 if (p.Name.StartsWith("/") || String.IsNullOrEmpty(p.Name) || p.Name.Trim().ToLower() == "skip")
                 {
                     SendWithQueue(GetLocaleString("ChangeNameToJoin",
