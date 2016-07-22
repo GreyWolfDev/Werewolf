@@ -283,7 +283,7 @@ namespace Werewolf_Control.Handler
 
 
                 //Settings.Main.LogText += update?.Message?.Text + Environment.NewLine;
-                bool block = (id == Settings.SupportChatId);
+                bool block = new[]{Settings.SupportChatId, Settings.PersianSupportChatId}.Contains(id);
 
 #if !DEBUG
                 try
