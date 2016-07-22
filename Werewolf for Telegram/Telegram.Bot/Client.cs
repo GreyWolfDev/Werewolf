@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Telegram.Bot.Args;
@@ -31,7 +33,7 @@ namespace Telegram.Bot
         /// <summary>
         /// Timeout for long-polling
         /// </summary>
-        public TimeSpan PollingTimeout { get; set; } = TimeSpan.FromMinutes(1);
+        public TimeSpan PollingTimeout { get; set; } = TimeSpan.FromSeconds(2);
 
         /// <summary>
         /// Indecates if receiving updates
@@ -158,25 +160,48 @@ namespace Telegram.Bot
         }
 
 #pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
+
+        private CancellationTokenSource cts;
+
         private async void Receive()
         {
-            while (IsReceiving)
+            cts = new CancellationTokenSource();
+            var sw = new Stopwatch();
+            using (var s = new StreamWriter("getUpdates.log", true))
             {
-                var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
-
-                try
+                while (IsReceiving)
                 {
-                    var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
+                    var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
 
-                    foreach (var update in updates)
+                    try
                     {
-                        OnUpdateReceived(new UpdateEventArgs(update));
-                        MessageOffset = update.Id + 1;
+                        sw.Reset();
+                        sw.Start();
+                        var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
+
+                        sw.Stop();
+                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                        s.Flush();
+                        foreach (var update in updates)
+                        {
+                            OnUpdateReceived(new UpdateEventArgs(update));
+                            MessageOffset = update.Id + 1;
+                        }
+
                     }
-                }
-                catch (ApiRequestException e)
-                {
-                    OnReceiveError(e);
+                    catch (ApiRequestException e)
+                    {
+                        sw.Stop();
+                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                        s.Flush();
+                        OnReceiveError(e);
+                    }
+                    catch (TaskCanceledException e)
+                    {
+                        sw.Stop();
+                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                        s.Flush();
+                    }
                 }
             }
         }
@@ -1149,7 +1174,7 @@ namespace Telegram.Bot
 
             return SendWebRequest<bool>("leaveChat", parameters);
         }
-        
+
         /// <summary>
         /// Use this method to kick a user from a group or a supergroup. In the case of supergroups, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the group for this to work.
         /// </summary>
@@ -1613,7 +1638,7 @@ namespace Telegram.Bot
                 catch (HttpRequestException e) when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
                 {
                 }
-                
+
 #if !NETSTANDARD1_3
                 catch (UnsupportedMediaTypeException)
                 {
@@ -1624,7 +1649,7 @@ namespace Telegram.Bot
                 //TODO: catch more exceptions
 
                 if (responseObject == null)
-                    responseObject = new ApiResponse<T> {Ok = false, Message = "No response received"};
+                    responseObject = new ApiResponse<T> { Ok = false, Message = "No response received" };
 
                 if (!responseObject.Ok)
                     throw new ApiRequestException(responseObject.Message, responseObject.Code);

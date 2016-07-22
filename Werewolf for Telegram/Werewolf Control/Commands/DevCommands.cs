@@ -18,6 +18,92 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+        [Command(Trigger = "dumpgifs", DevOnly = true)]
+        public static void DumpGifs(Update u, string[] args)
+        {
+
+            foreach (var g in Settings.VillagerDieImages)
+            {
+                try
+                {
+                    var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagerDieImages - " + g).Result;
+                }
+                catch (AggregateException e)
+                {
+                    Send(g + " - " + e.InnerExceptions.FirstOrDefault().Message, u.Message.Chat.Id);
+                }
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            //foreach (var g in Settings.WolfWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolfWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.WolvesWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolvesWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.VillagersWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagersWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.NoWinner)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "NoWinner - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.StartGame)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartGame - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            foreach (var g in Settings.StartChaosGame)
+            {
+                try
+                {
+                    var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartChaosGame - " + g).Result;
+                }
+                catch (AggregateException e)
+                {
+                    Send(g + " - " + e.InnerExceptions.FirstOrDefault().Message, u.Message.Chat.Id);
+                }
+                Thread.Sleep(1000);
+            }
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.TannerWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "TannerWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.CultWins)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "CultWins - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.SerialKillerWins)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "SerialKillerWins - " + g);
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(5000);
+            //foreach (var g in Settings.LoversWin)
+            //{
+            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "LoversWin - " + g);
+            //    Thread.Sleep(1000);
+            //}
+
+        }
+
         [Command(Trigger = "winchart", DevOnly = true)]
         public static void WinChart(Update update, string[] args)
         {
@@ -42,6 +128,34 @@ namespace Werewolf_Control
                 Thread.Sleep(500);
                 Environment.Exit(1);
             }
+        }
+
+        [Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
+        public static void KillGame(Update u, string[] args)
+        {
+            var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+            game?.Kill();
+        }
+
+        [Command(Trigger = "stopnode", GlobalAdminOnly = true)]
+        public static void StopNode(Update u, string[] args)
+        {
+            //get the node
+            try
+            {
+                var nodeid = args[1];
+                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == Guid.Parse(nodeid));
+                node?.ShutDown();
+                if (node != null)
+                    Send($"Node {node.ClientId} will stop accepting games", u.Message.Chat.Id);
+                else
+                    Send("No node with that ID found.", u.Message.Chat.Id);
+            }
+            catch
+            {
+                Send("/stopnode <node guid>", u.Message.Chat.Id);
+            }
+
         }
 
         //[Command(Trigger = "sendonline", DevOnly = true)]
@@ -134,7 +248,7 @@ namespace Werewolf_Control
                 Send(p.Name, update.Message.Chat.Id);
             }
         }
-        
+
         [Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
@@ -166,10 +280,10 @@ namespace Werewolf_Control
         [Command(Trigger = "notifyban", DevOnly = true)]
         public static void NotifyBan(Update u, string[] args)
         {
-            Send("You have been banned.  You may appeal your ban in @werewolfsupport", long.Parse(args[1]));
+            Send("You have been banned.  You may appeal your ban in @werewolfbanappeal", long.Parse(args[1]));
         }
 
-        [Command(Trigger = "whois", GlobalAdminOnly = true)]
+        [Command(Trigger = "whois", DevOnly = true)]
         public static void WhoIs(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -180,7 +294,7 @@ namespace Werewolf_Control
                     Send($"User: {p.Name}\nUserName: @{p.UserName}", u.Message.Chat.Id);
             }
         }
-        [Command(Trigger="getcommands", DevOnly = true)]
+        [Command(Trigger = "getcommands", DevOnly = true)]
         public static void GetCommands(Update u, string[] args)
         {
             var target = int.Parse(args[1]);
@@ -203,14 +317,15 @@ namespace Werewolf_Control
                     }
                 }
                 reply += "\nGlobal Bans in Database\n";
-                reply = UpdateHandler.BanList.Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name}: {ban.Reason}\n");
 
-                Send(reply.FormatHTML(), u.Message.Chat.Id);
+                reply = UpdateHandler.BanList.OrderBy(x => x.Expires).Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + $"\n{(ban.Expires < new DateTime(3000, 1, 1) ? "Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n" : "")}");
+
+                Send(reply, u.Message.Chat.Id);
 
             }
         }
 
-        [Command(Trigger = "permban", GlobalAdminOnly = true)]
+        [Command(Trigger = "permban", DevOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
             var tosmite = new List<int>();
@@ -232,7 +347,7 @@ namespace Werewolf_Control
                                 //add the ban
                                 var ban = new GlobalBan
                                 {
-                                    Expires = (DateTime) SqlDateTime.MaxValue,
+                                    Expires = (DateTime)SqlDateTime.MaxValue,
                                     Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                     TelegramId = player.TelegramId,
                                     BanDate = DateTime.Now,

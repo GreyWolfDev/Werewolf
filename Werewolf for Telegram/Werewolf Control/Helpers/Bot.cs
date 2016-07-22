@@ -59,8 +59,10 @@ namespace Werewolf_Control.Helpers
                         .OpenSubKey("SOFTWARE\\Werewolf");
 #if DEBUG
             TelegramAPIKey = key.GetValue("DebugAPI").ToString();
-#else
+#elif RELEASE
             TelegramAPIKey = key.GetValue("ProductionAPI").ToString();
+#elif RELEASE2
+            TelegramAPIKey = key.GetValue("ProductionAPI2").ToString();
 #endif
             Api = new Client(TelegramAPIKey);
 
@@ -108,7 +110,11 @@ namespace Werewolf_Control.Helpers
                 Api.StartReceiving();
             }
             var e = receiveErrorEventArgs.ApiRequestException;
-            Program.Log($"{e.ErrorCode} - {e.Message}\n{e.Source}");
+            using (var sw = new StreamWriter("apireceiveerror.log", true))
+            {
+                sw.WriteLine($"{DateTime.Now} {e.ErrorCode} - {e.Message}\n{e.Source}");
+            }
+                
         }
 
         private static void Reboot()
@@ -149,7 +155,7 @@ namespace Werewolf_Control.Helpers
 #if DEBUG
             //Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
 #endif
-            if (notify)
+            if (notify && n.Games.Count > 2)
                 foreach (var g in n.Games)
                 {
                     Send(UpdateHandler.GetLocaleString("NodeShutsDown", g.Language), g.GroupId);

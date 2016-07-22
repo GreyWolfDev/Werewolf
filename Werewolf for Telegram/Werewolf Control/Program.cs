@@ -40,8 +40,9 @@ namespace Werewolf_Control
                 using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
+                    sw.WriteLine(DateTime.Now);
                     sw.WriteLine(e.Message);
-                    sw.WriteLine(e.StackTrace);
+                    sw.WriteLine(e.StackTrace + "\n");
                     if (eventArgs.IsTerminating)
                         Environment.Exit(5);
                 }
@@ -58,6 +59,12 @@ namespace Werewolf_Control
             //Let the nodes reconnect
             Thread.Sleep(1000);
 
+            //initialize EF before we start receiving
+            using (var db = new WWContext())
+            {
+                var count = db.GlobalBans.Count();
+            }
+
             //start up the bot
             new Thread(Bot.Initialize).Start();
             new Thread(NodeMonitor).Start();
@@ -73,7 +80,7 @@ namespace Werewolf_Control
             Thread.Sleep(-1);
         }
 
-        
+
 
         private static void TimerOnTick(object sender, EventArgs eventArgs)
         {
@@ -141,7 +148,7 @@ namespace Werewolf_Control
                     MessagesProcessed.Insert(0, newMessages);
                     if (MessagesProcessed.Count > 10)
                         MessagesProcessed.RemoveAt(10);
-                    MessageRxPerSecond = (float)MessagesProcessed.Average()/10;
+                    MessageRxPerSecond = (float)MessagesProcessed.Average() / 10;
 
                     newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
                     _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
@@ -169,7 +176,7 @@ namespace Werewolf_Control
                     if (CpuTimes.Count > 10)
                         CpuTimes.RemoveAt(10);
                     AvgCpuTime = CpuTimes.Average();
-                    
+
                 }
                 catch
                 {
@@ -212,24 +219,36 @@ namespace Werewolf_Control
                         $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
                         $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
 
-                    
-
-                    msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
-
-                    for (var i = 0; i < 12 - Nodes.Count; i++)
-                        msg += new string(' ', Console.WindowWidth);
 
                     try
                     {
-                        var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
-                        msg += "\nSPAM DETECTION\n" +
-                               top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
-                        msg += new string(' ', Console.WindowWidth);
+                        msg = Nodes.Aggregate(msg,
+                            (current, n) =>
+                                current +
+                                $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
                     }
                     catch
                     {
                         // ignored
                     }
+
+                    for (var i = 0; i < 12 - Nodes.Count; i++)
+                        msg += new string(' ', Console.WindowWidth);
+
+                    //we don't need this anymore, but keeping code just in case
+                    //try
+                    //{
+                    //    var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
+                    //    msg += "\nSPAM DETECTION\n" +
+                    //           top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
+                    //    msg += new string(' ', Console.WindowWidth);
+                    //}
+                    //catch
+                    //{
+                    //    // ignored
+                    //}
+
+
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;

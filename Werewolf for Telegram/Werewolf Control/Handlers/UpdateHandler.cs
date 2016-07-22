@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms.Design;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
@@ -63,26 +64,55 @@ namespace Werewolf_Control.Handler
                     using (var db = new WWContext())
                     {
                         foreach (var id in SpamBanList)
+                        {
+                            var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                            var name = p?.Name;
+                            var count = p?.TempBanCount ?? 0;
+                            count++;
+                            if (p != null)
+                                p.TempBanCount = count; //update the count
+
+                            var expireTime = DateTime.Now;
+                            switch (count)
+                            {
+                                case 1:
+                                    expireTime = expireTime.AddHours(12);
+                                    break;
+                                case 2:
+                                    expireTime = expireTime.AddDays(1);
+                                    break;
+                                case 3:
+                                    expireTime = expireTime.AddDays(3);
+                                    break;
+                                default: //perm ban
+                                    expireTime = (DateTime) SqlDateTime.MaxValue;
+                                    break;
+
+                            }
                             db.GlobalBans.Add(new GlobalBan
                             {
-                                BannedBy="Moderator",
-                                Expires = (DateTime)SqlDateTime.MaxValue,
+                                BannedBy = "Moderator",
+                                Expires = expireTime,
                                 TelegramId = id,
                                 Reason = "Spam / Flood",
-                                BanDate = DateTime.Now
+                                BanDate = DateTime.Now,
+                                Name = name
                             });
+                        }
                         SpamBanList.Clear();
                         db.SaveChanges();
 
                         //now refresh the list
                         var list = db.GlobalBans.ToList();
-
+#if RELEASE2
                         for (var i = list.Count - 1; i >= 0; i--)
                         {
                             if (list[i].Expires > DateTime.Now) continue;
                             db.GlobalBans.Remove(db.GlobalBans.Find(list[i].Id));
                             list.RemoveAt(i);
                         }
+                        db.SaveChanges();
+#endif
 
                         BanList = list;
                     }
@@ -93,7 +123,7 @@ namespace Werewolf_Control.Handler
                 }
 
                 //refresh every 20 minutes
-                Thread.Sleep(TimeSpan.FromMinutes(20));
+                Thread.Sleep(TimeSpan.FromMinutes(1));
             }
         }
 
@@ -111,15 +141,16 @@ namespace Werewolf_Control.Handler
                         {
                             //drop older messages (1 minute)
                             temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
-                            if (temp[key].Messages.Count == 0)
-                            {
-                                temp.Remove(key);
-                                continue;
-                            }
+
+                            //comment this out - if we remove it, it doesn't keep the warns
+                            //if (temp[key].Messages.Count == 0)
+                            //{
+                            //    temp.Remove(key);
+                            //    continue;
+                            //}
                             //now count, notify if limit hit
                             if (temp[key].Messages.Count() >= 20) // 20 in a minute
                             {
-
                                 temp[key].Warns++;
                                 if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
                                 {
@@ -136,12 +167,33 @@ namespace Werewolf_Control.Handler
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);
-                                    Send("You have been banned for spamming.  You may appeal your ban in @werewolfsupport",
-                                        key);
+                                    var count = 0;
+                                    using (var db = new WWContext())
+                                    {
+                                        count = db.Players.FirstOrDefault(x => x.TelegramId == key).TempBanCount ?? 0;
+                                    }
+                                    var unban = "";
+                                    switch (count)
+                                    {
+                                        case 0:
+                                            unban = "12 hours";
+                                            break;
+                                        case 1:
+                                            unban = "24 hours";
+                                            break;
+                                        case 2:
+                                            unban = "3 days";
+                                            break;
+                                        default:
+                                            unban =
+                                                "Permanent. You have reached the max limit of temp bans for spamming.";
+                                            break;
+                                    }
+                                        Send("You have been banned for spamming.  Your ban period is: " + unban,
+                                            key);
                                 }
 
                                 temp[key].Messages.Clear();
-
                             }
                         }
                         catch (Exception e)
@@ -245,12 +297,13 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
-                                if (update.Message.Chat.Type == ChatType.Private)
-                                    AddCount(update.Message.From.Id, update.Message.Text);
+                                
                                 if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     return;
                                 }
+                                if (update.Message.Chat.Type == ChatType.Private)
+                                    AddCount(update.Message.From.Id, update.Message.Text);
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
 
@@ -268,7 +321,7 @@ namespace Werewolf_Control.Handler
                                         }
                                         catch (Exception e)
                                         {
-                                            Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                                            Commands.RequestPM(update.Message.Chat.Id);
                                         }
                                     }
                                     return;
@@ -306,7 +359,7 @@ namespace Werewolf_Control.Handler
                                             }
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update))
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != Para)
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
                                         return;
@@ -612,7 +665,7 @@ namespace Werewolf_Control.Handler
                                     grp.Name = update.Message.Chat.Title;
                                     DB.SaveChanges();
 
-                                    var msg = $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the support channel @werewolfsupport";
+                                    var msg = $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the [support channel](https://telegram.me/werewolfsupport)";
                                     msg += Environment.NewLine +
                                            "For updates on what is happening, join the dev channel @werewolfdev" +
                                            Environment.NewLine +

@@ -5,11 +5,16 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+#if RELEASE2
+[assembly: AssemblyTitle("Werewolf Control 2")]
+[assembly: AssemblyProduct("Werewolf Control 2")]
+#else
 [assembly: AssemblyTitle("Werewolf Control")]
+[assembly: AssemblyProduct("Werewolf Control")]
+#endif
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Werewolf Control")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

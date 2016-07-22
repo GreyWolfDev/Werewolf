@@ -67,7 +67,7 @@ namespace Werewolf_Control
             }
             catch
             {
-                Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                RequestPM(update.Message.Chat.Id);
             }
 
         }
@@ -86,7 +86,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                RequestPM(update.Message.Chat.Id);
             }
 
         }
