@@ -20,28 +20,33 @@ namespace Werewolf_Node
     class Werewolf : IDisposable
     {
         public long ChatId;
-        public int GameDay;
-        public string ChatGroup;
+        public int GameDay, GameId;
         public List<IPlayer> Players = new List<IPlayer>();
         public bool IsRunning,
             IsJoining = true,
             KillTimer,
             IsInitializing,
-            MessageQueueing = true;
+            MessageQueueing = true,
+            Chaos;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
-        public string Language = "English SFW";
+        public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-        public bool Chaos;
-        public int GameId;
-        
+
+        #region Constructor
+        /// <summary>
+        /// Starts a new instance of a werewolf game
+        /// </summary>
+        /// <param name="chatid">Id of the group starting the game</param>
+        /// <param name="u">User that started the game</param>
+        /// <param name="chatGroup">Name of the group starting the game</param>
+        /// <param name="chaos">Chaos mode yes or no</param>
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
             try
             {
                 new Thread(GroupQueue).Start();
-                //DB = new WWContext();
                 using (var db = new WWContext())
                 {
                     ChatGroup = chatGroup;
@@ -64,22 +69,17 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
+
                     //decide if chaos or not
-                    if (DbGroup.Mode == "Player")
-                        Chaos = chaos;
-                    else
-                    {
-                        Chaos = DbGroup.Mode == "Chaos";
-                    }
-                    //Log = new Log(Program.RootDirectory + "\\logs\\log-" + ChatId + "\\");
-                    //Log.WriteLine($"{u.FirstName} {u.LastName} is starting a game");
+                    Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
+
                     LoadLanguage(DbGroup.Language);
                     AddPlayer(u, false);
                 }
                 SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
                     GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame));
                 new Thread(GameTimer).Start();
-                
+
             }
             catch (Exception ex)
             {
@@ -89,14 +89,22 @@ namespace Werewolf_Node
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                Send(
+                    Program.Version.FileVersion +
+                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}",
+                    Program.Para);
 #endif
                 Program.RemoveGame(this);
             }
 
         }
-
-
+        #endregion
+        
+        #region Language Helpers
+        /// <summary>
+        /// Caches the language file in the instance
+        /// </summary>
+        /// <param name="language">The language filename to load</param>
         public void LoadLanguage(string language)
         {
             try
@@ -119,9 +127,41 @@ namespace Werewolf_Node
                     LoadLanguage("English");
             }
         }
-
+        /// <summary>
+        /// Gets the matching language string and formats it with parameters
+        /// </summary>
+        /// <param name="key">The XML Key of the string needed</param>
+        /// <param name="args">Any arguments to fill the strings {0} {n}</param>
+        /// <returns></returns>
+        private string GetLocaleString(string key, params object[] args)
+        {
+            try
+            {
+                var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
+                              Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                if (strings != null)
+                {
+                    var values = strings.Descendants("value");
+                    var choice = Program.R.Next(values.Count());
+                    var selected = values.ElementAt(choice);
+                    return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+                }
+                else
+                {
+                    throw new Exception($"Error getting string {key} with parameters {args.Aggregate((a, b) => a + "," + b.ToString())}");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error getting string {key} with parameters {args.Aggregate((a, b) => a + "," + b.ToString())}", e);
+            }
+        }
+        #endregion
 
         #region Main bits
+        /// <summary>
+        /// The main timer for the game
+        /// </summary>
         private void GameTimer()
         {
             try
@@ -158,28 +198,21 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
+                IsJoining = false;
+                IsInitializing = true;
                 //check we have enough players...
                 if (Players.Count < Settings.MinPlayers)
                 {
                     SendWithQueue(GetLocaleString("NotEnoughPlayers"));
-                    IsJoining = false;
+                    
                     Program.RemoveGame(this);
                     return;
                 }
-                //Log.WriteLine("writing to database");
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
-                IsInitializing = true;
-                Program.GroupInitializing.Add(ChatId);
-
-                //Log.WriteLine("Game start, timer ready.  \nPlayers:\n" +
-                //              Players.Aggregate("", (current, p) => current + ($"{p.Name}: {p.Id}\n")));
-                IsJoining = false;
+                
                 IsRunning = true;
                 AssignRoles();
-
-
-
                 //create new game for database
                 using (var db = new WWContext())
                 {
@@ -194,22 +227,13 @@ namespace Werewolf_Node
                     db.Games.Add(game);
                     db.SaveChanges();
 
-                    //NO LONGER DOING THIS, since group name is stored in group table
-
-                    //first, set the name of all groups with matching Id(in case they change the group name)
-                    //db.Database.ExecuteSqlCommand(
-                    //    $"UPDATE Game Set GroupName = '{ChatGroup.Replace("'", "''")}' WHERE GroupId = {ChatId}");
-
-                    //next, add chat id to any games where the group name matches(it's possible the chatid changed)
-                    //DB.Database.Connection.Execute($"UPDATE Game Set GroupId = {ChatId} Where GroupName = '{ChatGroup}'");
-
                     foreach (var p in Players)
                     {
                         //make sure they have DB entries
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
                         {
-                            dbp = new Player { TelegramId = p.Id, Language = Language};
+                            dbp = new Player {TelegramId = p.Id, Language = Language};
                             db.Players.Add(dbp);
                         }
                         dbp.Name = p.Name;
@@ -232,17 +256,13 @@ namespace Werewolf_Node
 
                 using (var db = new WWContext())
                 {
-                    GameId = db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
+                    GameId =
+                        db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
                 }
                 IsInitializing = false;
-                Program.GroupInitializing.Remove(ChatId);
                 NotifyRoles();
-
-                //Console.WriteLine($"{DB.Players.Count()} players in database,\n{DB.Games.Count()} games played");
-
+                
                 Time = GameTime.Night;
-                //try
-                //{
                 while (IsRunning)
                 {
                     GameDay++;
@@ -256,15 +276,6 @@ namespace Werewolf_Node
                     CheckRoleChanges();
                     LynchCycle();
                 }
-                //}
-                //catch (Exception ex)
-                //{
-                //    var e = ex;
-                //    while (e.InnerException != null)
-                //        e = e.InnerException;
-
-                //    _log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error);
-                //}
             }
             catch (Exception ex)
             {
@@ -274,13 +285,24 @@ namespace Werewolf_Node
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                Send(
+                    Program.Version.FileVersion +
+                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}",
+                    Program.Para);
 #endif
+
+            }
+            finally
+            {
                 Program.RemoveGame(this);
             }
 
         }
-
+        /// <summary>
+        /// Add (Join) a player to the game
+        /// </summary>
+        /// <param name="u">Telegram user who is joining</param>
+        /// <param name="notify">Should we announce the join?</param>
         public void AddPlayer(User u, bool notify = true)
         {
             try
@@ -303,7 +325,7 @@ namespace Werewolf_Node
                     HasPM = false,
                     Name = $"{u.FirstName} {u.LastName}"
                 };
-                p.Name = p.Name.Replace("\n","").Trim();
+                p.Name = p.Name.Replace("\n", "").Trim();
                 p.Id = p.TeleUser.Id;
                 //if ()
                 //{
@@ -374,7 +396,10 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in AddPlayer: {e.Message}");
             }
         }
-
+        /// <summary>
+        /// Removes (flees) player from the game
+        /// </summary>
+        /// <param name="u">The telegram user to remove</param>
         public void RemovePlayer(User u)
         {
             try
@@ -418,7 +443,9 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
+        #endregion
 
+        #region Communications
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -544,10 +571,123 @@ namespace Werewolf_Node
             }
         }
 
+        private void Send(string message, long id = 0, bool clearKeyboard = false)
+        {
+            if (id == 0)
+                id = ChatId;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            Program.Send(message, id, clearKeyboard, game: this);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+        }
 
-#endregion
+        private void SendGif(string text, string image, long id = 0)
+        {
+            Program.MessagesSent++;
+            if (id == 0)
+                id = ChatId;
+            //Log.WriteLine($"{id} -> {image} {text}");
+#if DEBUG
+            Send(text, id);
+#else
+            Program.Bot.SendDocument(id, image, text);
+#endif
+        }
 
-#region Roles
+        private void SendWithQueue(string text, string gif = null)
+        {
+            _messageQueue.Enqueue(new Message(text, gif));
+        }
+
+        class Message
+        {
+            public string Msg { get; }
+            public string GifId { get; }
+
+            public Message(string msg, string gifid = null)
+            {
+                Msg = msg;
+                GifId = gifid;
+            }
+        }
+
+        private readonly Queue<Message> _messageQueue = new Queue<Message>();
+
+        private void GroupQueue()
+        {
+            string final;
+            while (MessageQueueing)
+            {
+                final = "";
+                while (_messageQueue.Count > 0)
+                {
+                    var m = _messageQueue.Dequeue();
+#if !DEBUG
+                    if (!String.IsNullOrEmpty(m.GifId))
+                    {
+                        if (!String.IsNullOrEmpty(final))
+                            Send(final);
+                        Thread.Sleep(500);
+                        SendGif(m.Msg, m.GifId);
+                        Thread.Sleep(500);
+                        final = "";
+                    }
+                    else
+                    {
+                        final += m.Msg + Environment.NewLine + Environment.NewLine;
+                    }
+#else
+                    final += m.Msg + Environment.NewLine + Environment.NewLine;
+#endif
+                }
+                if (!String.IsNullOrEmpty(final))
+                    Send(final);
+                Thread.Sleep(3500);
+            }
+            //do one last send
+            final = "";
+            while (_messageQueue.Count > 0)
+            {
+                var m = _messageQueue.Dequeue();
+                if (m.GifId != null)
+                {
+                    if (!String.IsNullOrEmpty(final))
+                        Send(final);
+                    Thread.Sleep(500);
+                    SendGif(m.Msg, m.GifId);
+                    Thread.Sleep(500);
+                    final = "";
+                }
+                else
+                {
+                    final += m.Msg + Environment.NewLine;
+                }
+
+            }
+            if (!String.IsNullOrEmpty(final))
+                Send(final);
+        }
+
+        public void OutputPlayers()
+        {
+            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
+            {
+                LastPlayersOutput = DateTime.Now;
+                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                          Players.OrderBy(x => x.TimeDied)
+                              .Aggregate("",
+                                  (current, p) =>
+                                      current +
+                                      ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                Send(msg);
+            }
+        }
+        #endregion
+
+        #region Roles
+        string GetDescription(IRole en)
+        {
+            return GetLocaleString(en.ToString()).ToBold();
+        }
 
         private void AssignRoles()
         {
@@ -866,7 +1006,7 @@ namespace Werewolf_Node
                                     p.HasNightAction = true;
                                     p.HasDayAction = false;
                                     p.Team = ITeam.SerialKiller;
-                                    break; 
+                                    break;
                             }
                         }
                     }
@@ -1004,9 +1144,311 @@ namespace Werewolf_Node
             return msg;
         }
 
-#endregion
+        public void CheckRoleChanges()
+        {
+            //check Apprentice Seer
+            var aps = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
+            if (aps != null)
+            {
+                //check if seer is alive
+                if (!Players.Any(x => x.PlayerRole == IRole.Seer & !x.IsDead))
+                {
+                    //get the dead seer
+                    var ds = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer && x.IsDead);
 
-#region Cycles
+                    //seer is dead, promote app seer
+                    aps.HasDayAction = false;
+                    aps.HasNightAction = true;
+                    aps.OriginalRole = IRole.ApprenticeSeer;
+                    aps.PlayerRole = IRole.Seer;
+                    //notify
+                    Send(GetLocaleString("ApprenticeNowSeer", ds?.GetName() ?? GetDescription(IRole.Seer)), aps.Id);
+                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                    if (beholder != null)
+                        Send(GetLocaleString("BeholderNewSeer", $"{aps.GetName()}", ds?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                }
+
+            }
+            CheckWildChild();
+            CheckDoppelganger();
+        }
+
+        private void ValidateSpecialRoleChoices()
+        {
+            if (GameDay != 1) return;
+            //Wild Child
+            var wc = Players.FirstOrDefault(x => x.PlayerRole == IRole.WildChild);
+            if (wc != null && wc.RoleModel == 0)
+            {
+                var choiceid = ChooseRandomPlayerId(wc);
+                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (choice != null)
+                {
+                    wc.RoleModel = choice.Id;
+                    Send(GetLocaleString("RoleModelChosen", choice.GetName()), wc.Id);
+                }
+            }
+
+            var dg = Players.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
+            if (dg != null && dg.RoleModel == 0)
+            {
+                var choiceid = ChooseRandomPlayerId(dg);
+                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
+                if (choice != null)
+                {
+                    dg.RoleModel = choice.Id;
+                    Send(GetLocaleString("RoleModelChosen", choice.GetName()), dg.Id);
+                }
+            }
+
+            //first, make sure there even IS a cupid
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
+            {
+                //cupid stuffs
+                var lovers = Players.Where(x => x.InLove);
+                while (lovers.Count() != 2)
+                {
+                    //ok, missing lover, create one
+                    var choiceid = ChooseRandomPlayerId(lovers);
+                    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+                    if (newLover != null)
+                    {
+                        newLover.InLove = true;
+                        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+                        if (otherLover != null)
+                        {
+                            otherLover.LoverId = newLover.Id;
+                            newLover.LoverId = otherLover.Id;
+                        }
+                    }
+                }
+                var loversNotify = lovers.ToList();
+                if (loversNotify.Count == 2)
+                {
+                    Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
+                    Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
+                }
+            }
+        }
+
+        private void CheckWildChild()
+        {
+            var wc = Players?.FirstOrDefault(x => x.PlayerRole == IRole.WildChild & !x.IsDead);
+
+            // Check Wild Child
+            if (wc != null)
+            {
+                var rm = Players.FirstOrDefault(x => x.Id == wc.RoleModel);
+                if (rm != null)
+                {
+                    if (rm.IsDead)
+                    {
+                        var teammates = "";
+                        //notify other wolves
+                        foreach (var w in Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead))
+                        {
+                            Send(GetLocaleString("WildChildToWolves", $"{wc.GetName()}"), w.Id);
+                            teammates += $"{w.GetName()}" + ", ";
+                        }
+                        wc.PlayerRole = IRole.Wolf;
+                        wc.Team = ITeam.Wolf;
+                        wc.HasNightAction = true;
+                        wc.HasDayAction = false;
+                        Send(GetLocaleString("WildChildTransform", rm.GetName(), teammates), wc.Id);
+                    }
+                }
+            }
+        }
+
+        private void CheckDoppelganger()
+        {
+            var p = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger & !x.IsDead);
+            //var aps = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
+            //var traitor = Players.FirstOrDefault(x => x.PlayerRole == IRole.Traitor & !x.IsDead);
+
+            // Check DG
+            if (p != null)
+            {
+                var rm = Players.FirstOrDefault(x => x.Id == p.RoleModel);
+                if (rm != null)
+                {
+                    if (rm.IsDead)
+                    {
+
+                        var teammates = "";
+                        //notify other wolves
+
+                        p.PlayerRole = rm.OriginalRole;
+                        if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.WildChild || rm.OriginalRole == IRole.Traitor || rm.OriginalRole == IRole.Cursed)
+                            if (rm.PlayerRole != IRole.Cultist)
+                                p.PlayerRole = rm.PlayerRole;
+
+                        switch (p.PlayerRole)
+                        {
+                            case IRole.Villager:
+                            case IRole.Cursed:
+                            case IRole.Drunk:
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                p.Team = ITeam.Village;
+                                break;
+                            case IRole.Beholder:
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                p.Team = ITeam.Village;
+                                var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                                if (seer != null)
+                                    Send(GetLocaleString("BeholderSeer",
+                                        $"{seer.GetName()}"),
+                                        p.Id);
+                                else
+                                    Send(GetLocaleString("NoSeer"), p.Id);
+                                break;
+                            case IRole.ApprenticeSeer:
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                p.Team = ITeam.Village;
+                                if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Seer) == 0)
+                                {
+                                    p.PlayerRole = IRole.Seer;
+                                    p.HasNightAction = true;
+                                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                                    if (beholder != null)
+                                        Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                                }
+                                break;
+                            case IRole.Traitor:
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                p.Team = ITeam.Village;
+                                if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Wolf) == 0)
+                                {
+                                    p.HasNightAction = true;
+                                    p.PlayerRole = IRole.Wolf;
+                                    p.Team = ITeam.Wolf;
+                                }
+                                break;
+                            case IRole.Mason:
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                p.Team = ITeam.Village;
+                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
+                                {
+                                    Send(GetLocaleString("DGToMason", $"{p.GetName()}"), w.Id);
+                                    teammates += $"{w.GetName()}" + ", ";
+                                }
+                                Send(GetLocaleString("DGTransformToMason", rm.GetName(), teammates), p.Id);
+                                break;
+                            case IRole.Hunter:
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                p.Team = ITeam.Village;
+                                break;
+                            case IRole.Fool:
+                            case IRole.Harlot:
+                            case IRole.CultistHunter:
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                break;
+                            case IRole.Seer:
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                                if (bh != null)
+                                    Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
+                                break;
+                            case IRole.GuardianAngel:
+
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                break;
+                            case IRole.WildChild:
+                                p.RoleModel = rm.RoleModel;
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == p.RoleModel)?.GetName() ?? "None was chosen!"), p.Id);
+                                break;
+                            case IRole.Cupid:
+                            case IRole.Doppelgänger:
+                                p.Team = ITeam.Village;
+                                p.HasNightAction = false;
+                                p.HasDayAction = false;
+                                break;
+                            case IRole.Detective:
+                            case IRole.Gunner:
+                                p.Bullet = 2;
+                                p.Team = ITeam.Village;
+                                p.HasDayAction = true;
+                                p.HasNightAction = false;
+                                break;
+                            case IRole.Wolf:
+                                p.Team = ITeam.Wolf;
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead && x.Id != p.Id))
+                                {
+                                    Send(GetLocaleString("DGToWolf", $"{p.GetName()}"), w.Id);
+                                    teammates += $"{w.GetName()}" + ", ";
+                                }
+                                Send(GetLocaleString("DGTransformToWolf", rm.GetName(), teammates), p.Id);
+                                break;
+                            case IRole.Tanner:
+                                p.Team = ITeam.Tanner;
+                                p.HasDayAction = false;
+                                p.HasNightAction = false;
+                                break;
+                            case IRole.Cultist:
+                                p.HasDayAction = false;
+                                p.HasNightAction = true;
+                                p.Team = ITeam.Cult;
+                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                                {
+                                    Send(GetLocaleString("DGToCult", $"{p.GetName()}"), w.Id);
+                                    teammates += $"{w.GetName()}" + ", ";
+                                }
+                                Send(GetLocaleString("DGTransformToCult", rm.GetName(), teammates), p.Id);
+                                break;
+                            case IRole.SerialKiller:
+                                p.HasNightAction = true;
+                                p.HasDayAction = false;
+                                p.Team = ITeam.SerialKiller;
+                                break;
+                        }
+
+                        if (p.PlayerRole != IRole.Mason && p.PlayerRole != IRole.Wolf && p.PlayerRole != IRole.Cultist && p.PlayerRole != IRole.WildChild)
+                        {
+                            //tell them their new role
+                            Send(GetRoleInfo(p.PlayerRole), p.Id);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult)
+        {
+            target.OriginalRole = target.PlayerRole;
+            target.PlayerRole = IRole.Cultist;
+            target.Team = ITeam.Cult;
+            target.HasDayAction = false;
+            target.HasNightAction = true;
+            target.DayCult = GameDay;
+            Send(GetLocaleString("CultConvertYou"), target.Id);
+            Send(GetLocaleString("CultTeam", voteCult.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), target.Id);
+            foreach (var c in voteCult)
+                Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
+        }
+        #endregion
+
+        #region Cycles
+        public void ForceStart()
+        {
+            KillTimer = true;
+        }
 
         private void LynchCycle()
         {
@@ -2097,313 +2539,6 @@ namespace Werewolf_Node
             }
         }
 
-        private void ValidateSpecialRoleChoices()
-        {
-            if (GameDay != 1) return;
-            //Wild Child
-            var wc = Players.FirstOrDefault(x => x.PlayerRole == IRole.WildChild);
-            if (wc != null && wc.RoleModel == 0)
-            {
-                var choiceid = ChooseRandomPlayerId(wc);
-                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
-                if (choice != null)
-                {
-                    wc.RoleModel = choice.Id;
-                    Send(GetLocaleString("RoleModelChosen", choice.GetName()), wc.Id);
-                }
-            }
-
-            var dg = Players.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
-            if (dg != null && dg.RoleModel == 0)
-            {
-                var choiceid = ChooseRandomPlayerId(dg);
-                var choice = Players.FirstOrDefault(x => x.Id == choiceid);
-                if (choice != null)
-                {
-                    dg.RoleModel = choice.Id;
-                    Send(GetLocaleString("RoleModelChosen", choice.GetName()), dg.Id);
-                }
-            }
-
-            //first, make sure there even IS a cupid
-            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
-            {
-                //cupid stuffs
-                var lovers = Players.Where(x => x.InLove);
-                while (lovers.Count() != 2)
-                {
-                    //ok, missing lover, create one
-                    var choiceid = ChooseRandomPlayerId(lovers);
-                    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
-                    if (newLover != null)
-                    {
-                        newLover.InLove = true;
-                        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
-                        if (otherLover != null)
-                        {
-                            otherLover.LoverId = newLover.Id;
-                            newLover.LoverId = otherLover.Id;
-                        }
-                    }
-                }
-                var loversNotify = lovers.ToList();
-                if (loversNotify.Count == 2)
-                {
-                    Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
-                    Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
-                }
-            }
-        }
-
-        private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult)
-        {
-            target.OriginalRole = target.PlayerRole;
-            target.PlayerRole = IRole.Cultist;
-            target.Team = ITeam.Cult;
-            target.HasDayAction = false;
-            target.HasNightAction = true;
-            target.DayCult = GameDay;
-            Send(GetLocaleString("CultConvertYou"), target.Id);
-            Send(GetLocaleString("CultTeam", voteCult.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), target.Id);
-            foreach (var c in voteCult)
-                Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
-        }
-
-        public void SkipVote()
-        {
-            foreach (var p in Players.Where(x => x.Choice == 0))
-                p.Choice = -1;
-        }
-
-#endregion
-
-        private string GetRandomImage(List<string> input)
-        {
-            return input[Program.R.Next(0, input.Count)];
-        }
-
-        private string GetLocaleString(string key, params object[] args)
-        {
-            try
-            {
-                var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
-                              Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
-                if (strings != null)
-                {
-                    var values = strings.Descendants("value");
-                    var choice = Program.R.Next(values.Count());
-                    var selected = values.ElementAt(choice);
-                    return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
-                }
-                else
-                {
-                    throw new Exception($"Error getting string {key} with parameters {args.Aggregate((a, b) => a + "," + b.ToString())}");
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Error getting string {key} with parameters {args.Aggregate((a, b) => a + "," +b.ToString())}", e);
-            }
-        }
-
-        private void CheckWildChild()
-        {
-            var wc = Players?.FirstOrDefault(x => x.PlayerRole == IRole.WildChild & !x.IsDead);
-
-            // Check Wild Child
-            if (wc != null)
-            {
-                var rm = Players.FirstOrDefault(x => x.Id == wc.RoleModel);
-                if (rm != null)
-                {
-                    if (rm.IsDead)
-                    {
-                        var teammates = "";
-                        //notify other wolves
-                        foreach (var w in Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead))
-                        {
-                            Send(GetLocaleString("WildChildToWolves", $"{wc.GetName()}"), w.Id);
-                            teammates += $"{w.GetName()}" + ", ";
-                        }
-                        wc.PlayerRole = IRole.Wolf;
-                        wc.Team = ITeam.Wolf;
-                        wc.HasNightAction = true;
-                        wc.HasDayAction = false;
-                        Send(GetLocaleString("WildChildTransform", rm.GetName(), teammates), wc.Id);
-                    }
-                }
-            }
-        }
-
-        private void CheckDoppelganger()
-        {
-            var p = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger & !x.IsDead);
-            //var aps = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
-            //var traitor = Players.FirstOrDefault(x => x.PlayerRole == IRole.Traitor & !x.IsDead);
-
-            // Check DG
-            if (p != null)
-            {
-                var rm = Players.FirstOrDefault(x => x.Id == p.RoleModel);
-                if (rm != null)
-                {
-                    if (rm.IsDead)
-                    {
-
-                        var teammates = "";
-                        //notify other wolves
-
-                        p.PlayerRole = rm.OriginalRole;
-                        if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.WildChild || rm.OriginalRole == IRole.Traitor || rm.OriginalRole == IRole.Cursed)
-                            if (rm.PlayerRole != IRole.Cultist)
-                                p.PlayerRole = rm.PlayerRole;
-
-                        switch (p.PlayerRole)
-                        {
-                            case IRole.Villager:
-                            case IRole.Cursed:
-                            case IRole.Drunk:
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                p.Team = ITeam.Village;
-                                break;
-                            case IRole.Beholder:
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                p.Team = ITeam.Village;
-                                var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                                if (seer != null)
-                                    Send(GetLocaleString("BeholderSeer",
-                                        $"{seer.GetName()}"),
-                                        p.Id);
-                                else
-                                    Send(GetLocaleString("NoSeer"), p.Id);
-                                break;
-                            case IRole.ApprenticeSeer: 
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                p.Team = ITeam.Village;
-                                if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Seer) == 0)
-                                {
-                                    p.PlayerRole = IRole.Seer;
-                                    p.HasNightAction = true;
-                                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                                    if (beholder != null)
-                                        Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
-                                }
-                                break;
-                            case IRole.Traitor:
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                p.Team = ITeam.Village;
-                                if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Wolf) == 0)
-                                {
-                                    p.HasNightAction = true;
-                                    p.PlayerRole = IRole.Wolf;
-                                    p.Team = ITeam.Wolf;
-                                }
-                                break;
-                            case IRole.Mason:
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                p.Team = ITeam.Village;
-                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
-                                {
-                                    Send(GetLocaleString("DGToMason", $"{p.GetName()}"), w.Id);
-                                    teammates += $"{w.GetName()}" + ", ";
-                                }
-                                Send(GetLocaleString("DGTransformToMason", rm.GetName(), teammates), p.Id);
-                                break;
-                            case IRole.Hunter:
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                p.Team = ITeam.Village;
-                                break;
-                            case IRole.Fool:
-                            case IRole.Harlot:
-                            case IRole.CultistHunter:
-                                p.Team = ITeam.Village;
-                                p.HasNightAction = true;
-                                p.HasDayAction = false;
-                                break;
-                            case IRole.Seer:
-                                p.Team = ITeam.Village;
-                                p.HasNightAction = true;
-                                p.HasDayAction = false;
-                                var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                                if (bh != null)
-                                    Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
-                                break;
-                            case IRole.GuardianAngel:
-
-                                p.Team = ITeam.Village;
-                                p.HasNightAction = true;
-                                p.HasDayAction = false;
-                                break;
-                            case IRole.WildChild:
-                                p.RoleModel = rm.RoleModel;
-                                p.Team = ITeam.Village;
-                                p.HasNightAction = true;
-                                p.HasDayAction = false;
-                                Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == p.RoleModel)?.GetName() ?? "None was chosen!"), p.Id);
-                                break;
-                            case IRole.Cupid:
-                            case IRole.Doppelgänger:
-                                p.Team = ITeam.Village;
-                                p.HasNightAction = false;
-                                p.HasDayAction = false;
-                                break;
-                            case IRole.Detective:
-                            case IRole.Gunner:
-                                p.Bullet = 2;
-                                p.Team = ITeam.Village;
-                                p.HasDayAction = true;
-                                p.HasNightAction = false;
-                                break;
-                            case IRole.Wolf:
-                                p.Team = ITeam.Wolf;
-                                p.HasNightAction = true;
-                                p.HasDayAction = false;
-                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead && x.Id != p.Id))
-                                {
-                                    Send(GetLocaleString("DGToWolf", $"{p.GetName()}"), w.Id);
-                                    teammates += $"{w.GetName()}" + ", ";
-                                }
-                                Send(GetLocaleString("DGTransformToWolf", rm.GetName(), teammates), p.Id);
-                                break;
-                            case IRole.Tanner:
-                                p.Team = ITeam.Tanner;
-                                p.HasDayAction = false;
-                                p.HasNightAction = false;
-                                break;
-                            case IRole.Cultist:
-                                p.HasDayAction = false;
-                                p.HasNightAction = true;
-                                p.Team = ITeam.Cult;
-                                foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
-                                {
-                                    Send(GetLocaleString("DGToCult", $"{p.GetName()}"), w.Id);
-                                    teammates += $"{w.GetName()}" + ", ";
-                                }
-                                Send(GetLocaleString("DGTransformToCult", rm.GetName(), teammates), p.Id);
-                                break;
-                            case IRole.SerialKiller:
-                                p.HasNightAction = true;
-                                p.HasDayAction = false;
-                                p.Team = ITeam.SerialKiller;
-                                break;
-                        }
-
-                        if (p.PlayerRole != IRole.Mason && p.PlayerRole != IRole.Wolf && p.PlayerRole != IRole.Cultist && p.PlayerRole != IRole.WildChild)
-                        {
-                            //tell them their new role
-                            Send(GetRoleInfo(p.PlayerRole), p.Id);
-                        }
-                    }
-                }
-            }
-        }
-
         private bool CheckForGameEnd()
         {
             if (Players == null)
@@ -2659,7 +2794,11 @@ namespace Werewolf_Node
             }
         }
 
-#region Send Menus
+        
+
+        #endregion
+        
+        #region Send Menus
 
         private void SendLynchMenu()
         {
@@ -2890,10 +3029,162 @@ namespace Werewolf_Node
             }
         }
 
-#endregion
+        #endregion
 
-#region Helpers
+        #region Helpers
+        public void FleePlayer(int banid)
+        {
+            var p = Players?.FirstOrDefault(x => x.Id == banid);
+            if (p != null)
+            {
 
+                if (p.IsDead)
+                {
+                    return;
+                }
+                Send(GetLocaleString("Flee", p.GetName()));
+
+                if (IsRunning)
+                {
+                    //kill the player
+                    p.IsDead = true;
+                    p.TimeDied = DateTime.Now;
+                    p.Fled = true;
+                    if (DbGroup.ShowRoles != false)
+                        Send(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
+                    CheckRoleChanges();
+
+                    //add the 'kill'
+                    DBKill(p, p, KillMthd.Flee);
+                    CheckForGameEnd();
+                }
+                else if (IsJoining)
+                {
+                    Players.Remove(p);
+                    Send(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
+                }
+            }
+        }
+
+        public void Kill()
+        {
+            //forces game to exit
+            Send("Game removed");
+            Program.RemoveGame(this);
+        }
+
+        private string GetRandomImage(List<string> input)
+        {
+            return input[Program.R.Next(0, input.Count)];
+        }
+
+        public void SkipVote()
+        {
+            foreach (var p in Players.Where(x => x.Choice == 0))
+                p.Choice = -1;
+        }
+
+        public void HunterFinalShot(IPlayer hunter, KillMthd method)
+        {
+            CheckRoleChanges();
+
+            //send a menu to the hunter, asking who he wants to kill as he is hung....
+            var hunterChoices = new List<InlineKeyboardButton[]>();
+            hunterChoices.AddRange(
+                Players.Where(x => !x.IsDead).OrderBy(x => x.Name).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }));
+
+            //raise hunter from dead long enough to shoot
+            hunter.IsDead = false;
+
+            SendMenu(hunterChoices, hunter, GetLocaleString(method == KillMthd.Lynch ? "HunterLynchedChoice" : "HunterShotChoice"), QuestionType.HunterKill);
+
+            hunter.Choice = 0;
+            //hunter gets 30 seconds to choose
+            for (int i = 0; i < 30; i++)
+            {
+                if (hunter.Choice != 0)
+                {
+                    i = 30;
+                }
+                Thread.Sleep(1000);
+            }
+            hunter.IsDead = true;
+            if (hunter.Choice == 0)
+            {
+
+                Send(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()), ChatId);
+            }
+            else
+            {
+                if (hunter.Choice == -1)
+                {
+                    Send(GetLocaleString(method == KillMthd.Lynch ? "HunterSkipChoiceLynched" : "HunterSkipChoiceShot", hunter.GetName()), ChatId);
+                }
+                else
+                {
+                    //someone has been killed.....
+                    var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
+                    if (killed != null)
+                    {
+                        Send(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"), ChatId);
+                        killed.IsDead = true;
+                        killed.TimeDied = DateTime.Now;
+                        DBKill(hunter, killed, KillMthd.HunterShot);
+                        CheckRoleChanges();
+                        if (killed.PlayerRole == IRole.Hunter)
+                            HunterFinalShot(killed, KillMthd.HunterShot);
+                    }
+                }
+            }
+        }
+
+        public void Dispose()
+        {
+            Players?.Clear();
+            Players = null;
+            MessageQueueing = false;
+
+        }
+
+        internal enum GameTime
+        {
+            Day,
+            Lynch,
+            Night
+        }
+
+        private int ChooseRandomPlayerId(IPlayer exclude)
+        {
+            try
+            {
+                var possible = Players.Where(x => x.Id != exclude.Id).ToList();
+                possible.Shuffle();
+                possible.Shuffle();
+                return possible[0].Id;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        private int ChooseRandomPlayerId(IEnumerable<IPlayer> exclude)
+        {
+            try
+            {
+                var possible = Players.Where(x => !exclude.Contains(x)).ToList();
+                possible.Shuffle();
+                possible.Shuffle();
+                return possible[0].Id;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+        #endregion
+
+        #region Database Helpers
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
             using (var db = new WWContext())
@@ -2999,90 +3290,7 @@ namespace Werewolf_Node
 
 
         }
-
-        public void HunterFinalShot(IPlayer hunter, KillMthd method)
-        {
-            CheckRoleChanges();
-
-            //send a menu to the hunter, asking who he wants to kill as he is hung....
-            var hunterChoices = new List<InlineKeyboardButton[]>();
-            hunterChoices.AddRange(
-                Players.Where(x => !x.IsDead).OrderBy(x => x.Name).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }));
-
-            //raise hunter from dead long enough to shoot
-            hunter.IsDead = false;
-
-            SendMenu(hunterChoices, hunter, GetLocaleString(method == KillMthd.Lynch ? "HunterLynchedChoice" : "HunterShotChoice"), QuestionType.HunterKill);
-
-            hunter.Choice = 0;
-            //hunter gets 30 seconds to choose
-            for (int i = 0; i < 30; i++)
-            {
-                if (hunter.Choice != 0)
-                {
-                    i = 30;
-                }
-                Thread.Sleep(1000);
-            }
-            hunter.IsDead = true;
-            if (hunter.Choice == 0)
-            {
-
-                Send(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()), ChatId);
-            }
-            else
-            {
-                if (hunter.Choice == -1)
-                {
-                    Send(GetLocaleString(method == KillMthd.Lynch ? "HunterSkipChoiceLynched" : "HunterSkipChoiceShot", hunter.GetName()), ChatId);
-                }
-                else
-                {
-                    //someone has been killed.....
-                    var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
-                    if (killed != null)
-                    {
-                        Send(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"), ChatId);
-                        killed.IsDead = true;
-                        killed.TimeDied = DateTime.Now;
-                        DBKill(hunter, killed, KillMthd.HunterShot);
-                        CheckRoleChanges();
-                        if (killed.PlayerRole == IRole.Hunter)
-                            HunterFinalShot(killed, KillMthd.HunterShot);
-                    }
-                }
-            }
-        }
-
-        public void CheckRoleChanges()
-        {
-            //check Apprentice Seer
-            var aps = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
-            if (aps != null)
-            {
-                //check if seer is alive
-                if (!Players.Any(x => x.PlayerRole == IRole.Seer & !x.IsDead))
-                {
-                    //get the dead seer
-                    var ds = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer && x.IsDead);
-
-                    //seer is dead, promote app seer
-                    aps.HasDayAction = false;
-                    aps.HasNightAction = true;
-                    aps.OriginalRole = IRole.ApprenticeSeer;
-                    aps.PlayerRole = IRole.Seer;
-                    //notify
-                    Send(GetLocaleString("ApprenticeNowSeer", ds?.GetName() ?? GetDescription(IRole.Seer)), aps.Id);
-                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                    if (beholder != null)
-                        Send(GetLocaleString("BeholderNewSeer", $"{aps.GetName()}", ds?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
-                }
-
-            }
-            CheckWildChild();
-            CheckDoppelganger();
-        }
-
+        
         public int DBGameId { get; set; }
 
         private void DBKill(IEnumerable<IPlayer> killers, IPlayer victim, KillMthd method)
@@ -3126,7 +3334,6 @@ namespace Werewolf_Node
             return player.GamePlayers.FirstOrDefault(x => x.GameId == GameId);
         }
 
-
         private GamePlayer GetDBGamePlayer(IPlayer player, WWContext db)
         {
             if (player.DBGamePlayerId == 0)
@@ -3146,227 +3353,6 @@ namespace Werewolf_Node
             }
 
         }
-
-        private void Send(string message, long id = 0, bool clearKeyboard = false)
-        {
-            if (id == 0)
-                id = ChatId;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            Program.Send(message, id, clearKeyboard, game: this);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-        }
-
-        private void SendGif(string text, string image, long id = 0)
-        {
-            Program.MessagesSent++;
-            if (id == 0)
-                id = ChatId;
-            //Log.WriteLine($"{id} -> {image} {text}");
-#if DEBUG
-            Send(text, id);
-#else
-            Program.Bot.SendDocument(id, image, text);
-#endif
-        }
-
-        private void SendWithQueue(string text, List<string> choices)
-        {
-            SendWithQueue(text, GetRandomImage(choices));
-        }
-
-        private void SendWithQueue(string text, string gif = null)
-        {
-            _messageQueue.Enqueue(new Message(text, gif));
-        }
-
-        class Message
-        {
-            public string Msg { get; }
-            public string GifId { get; }
-
-            public Message(string msg, string gifid = null)
-            {
-                Msg = msg;
-                GifId = gifid;
-            }
-        }
-
-        private readonly Queue<Message> _messageQueue = new Queue<Message>();
-
-        private void GroupQueue()
-        {
-            string final;
-            while (MessageQueueing)
-            {
-                final = "";
-                while (_messageQueue.Count > 0)
-                {
-                    var m = _messageQueue.Dequeue();
-#if !DEBUG
-                    if (!String.IsNullOrEmpty(m.GifId))
-                    {
-                        if (!String.IsNullOrEmpty(final))
-                            Send(final);
-                        Thread.Sleep(500);
-                        SendGif(m.Msg, m.GifId);
-                        Thread.Sleep(500);
-                        final = "";
-                    }
-                    else
-                    {
-                        final += m.Msg + Environment.NewLine + Environment.NewLine;
-                    }
-#else
-                    final += m.Msg + Environment.NewLine + Environment.NewLine;
-#endif
-                }
-                if (!String.IsNullOrEmpty(final))
-                    Send(final);
-                Thread.Sleep(3500);
-            }
-            //do one last send
-            final = "";
-            while (_messageQueue.Count > 0)
-            {
-                var m = _messageQueue.Dequeue();
-                if (m.GifId != null)
-                {
-                    if (!String.IsNullOrEmpty(final))
-                        Send(final);
-                    Thread.Sleep(500);
-                    SendGif(m.Msg, m.GifId);
-                    Thread.Sleep(500);
-                    final = "";
-                }
-                else
-                {
-                    final += m.Msg + Environment.NewLine;
-                }
-
-            }
-            if (!String.IsNullOrEmpty(final))
-                Send(final);
-        }
-
-        public void Dispose()
-        {
-            Players?.Clear();
-            Players = null;
-            MessageQueueing = false;
-
-        }
-
-        internal enum GameTime
-        {
-            Day,
-            Lynch,
-            Night
-        }
-
-#endregion
-
-        public void ForceStart()
-        {
-            KillTimer = true;
-        }
-
-        public void OutputPlayers()
-        {
-            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
-            {
-                LastPlayersOutput = DateTime.Now;
-                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
-                          Players.OrderBy(x => x.TimeDied)
-                              .Aggregate("",
-                                  (current, p) =>
-                                      current +
-                                      ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                Send(msg);
-            }
-        }
-
-        public void FleePlayer(int banid)
-        {
-            var p = Players?.FirstOrDefault(x => x.Id == banid);
-            if (p != null)
-            {
-
-                if (p.IsDead)
-                {
-                    return;
-                }
-                Send(GetLocaleString("Flee", p.GetName()));
-
-                if (IsRunning)
-                {
-                    //kill the player
-                    p.IsDead = true;
-                    p.TimeDied = DateTime.Now;
-                    p.Fled = true;
-                    if (DbGroup.ShowRoles != false)
-                        Send(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
-                    CheckRoleChanges();
-
-                    //add the 'kill'
-                    DBKill(p, p, KillMthd.Flee);
-                    CheckForGameEnd();
-                }
-                else if (IsJoining)
-                {
-                    Players.Remove(p);
-                    Send(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
-                }
-            }
-        }
-
-        public void Kill()
-        {
-            //forces game to exit
-            Send("Game removed");
-            Program.RemoveGame(this);
-        }
-
-        string GetDescription(IRole en)
-        {
-            return GetLocaleString(en.ToString()).ToBold();
-        }
-
-        private int ChooseRandomPlayerId(IPlayer exclude)
-        {
-            try
-            {
-                var possible = Players.Where(x => x.Id != exclude.Id).ToList();
-                possible.Shuffle();
-                possible.Shuffle();
-                return possible[0].Id;
-            }
-            catch
-            {
-                return -1;
-            }
-        }
-
-        private int ChooseRandomPlayerId(IEnumerable<IPlayer> exclude)
-        {
-            try
-            {
-                var possible = Players.Where(x => !exclude.Contains(x)).ToList();
-                possible.Shuffle();
-                possible.Shuffle();
-                return possible[0].Id;
-            }
-            catch
-            {
-                return -1;
-            }
-        }
-
-    }
-
-    internal enum GameTime
-    {
-        Day,
-        Lynch,
-        Night
+        #endregion
     }
 }
