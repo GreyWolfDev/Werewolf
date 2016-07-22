@@ -1913,6 +1913,7 @@ namespace Werewolf_Node
                 if (save != null)
                     DBAction(ga, save, "Guard");
 
+                //save the choosen player
                 if (save.DiedLastNight)
                 {
                     if (save.PlayerRole == IRole.Cultist & !save.DiedFromWolf)
@@ -1938,38 +1939,40 @@ namespace Werewolf_Node
                         Send(GetLocaleString("GuardSavedYou"), save.Id);
                     }
                 }
-                else
+
+                //now check for saved role
+                if (save.PlayerRole == IRole.Wolf)
                 {
-                    if (save.PlayerRole == IRole.Wolf)
+                    if (Program.R.Next(100) > 50)
                     {
-                        if (Program.R.Next(100) > 50)
-                        {
-                            ga.IsDead = true;
-                            ga.TimeDied = DateTime.Now;
-                            ga.DiedLastNight = true;
-                            ga.DiedFromWolf = true;
-                            DBKill(save, ga, KillMthd.GuardWolf);
-                            Send(GetLocaleString("GuardWolf"), ga.Id);
-                        }
-                        else
-                        {
-                            Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                        }
+                        ga.IsDead = true;
+                        ga.TimeDied = DateTime.Now;
+                        ga.DiedLastNight = true;
+                        ga.DiedFromWolf = true;
+                        DBKill(save, ga, KillMthd.GuardWolf);
+                        Send(GetLocaleString("GuardWolf"), ga.Id);
                     }
                     else
                     {
                         Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                     }
-                    if (save.PlayerRole == IRole.SerialKiller)
+                }
+                else if (save.PlayerRole == IRole.SerialKiller)
+                {
+                    //oops, GA is dead
+                    ga.IsDead = true;
+                    ga.TimeDied = DateTime.Now;
+                    ga.DiedLastNight = true;
+                    ga.DiedFromKiller = true;
+                    DBKill(save, ga, KillMthd.GuardKiller);
+                    Send(GetLocaleString("GuardKiller"), ga.Id);
+                    SendWithQueue(GetLocaleString("DefaultKilled", ga.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(ga.PlayerRole)} {GetLocaleString("IsDead")}"));
+                }
+                //if GA didn't save wolf nor SK, they should be alive...
+                else {
+                    if (!save.DiedLastNight) //if they didn't choose the dead person, saved wasn't attacked
                     {
-                        //oops, GA is dead
-                        ga.IsDead = true;
-                        ga.TimeDied = DateTime.Now;
-                        ga.DiedLastNight = true;
-                        ga.DiedFromKiller = true;
-                        DBKill(save, ga, KillMthd.GuardKiller);
-                        Send(GetLocaleString("GuardKiller"), ga.Id);
-                        SendWithQueue(GetLocaleString("DefaultKilled", ga.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(ga.PlayerRole)} {GetLocaleString("IsDead")}"));
+                        Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                     }
                 }
             }
