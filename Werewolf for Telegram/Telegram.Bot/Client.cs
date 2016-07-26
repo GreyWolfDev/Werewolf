@@ -175,13 +175,13 @@ namespace Telegram.Bot
 
                     try
                     {
-                        sw.Reset();
-                        sw.Start();
+                        //sw.Reset();
+                        //sw.Start();
                         var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
 
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                        s.Flush();
+                        //sw.Stop();
+                        //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                        //s.Flush();
                         foreach (var update in updates)
                         {
                             OnUpdateReceived(new UpdateEventArgs(update));
