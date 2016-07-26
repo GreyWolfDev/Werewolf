@@ -200,6 +200,19 @@ namespace Werewolf_Node
             catch (Exception e)
             {
                 Console.WriteLine(e.Message + "\n" + message.MessageString);
+                try
+                {
+                    Directory.CreateDirectory(Path.Combine(RootDirectory, "ReceiveErrors"));
+                    using (var sw = new StreamWriter(Path.Combine(RootDirectory, "ReceiveErrors", "error.log"), true))
+                    {
+                        sw.WriteLine(e.Message + Environment.NewLine + message.MessageString + Environment.NewLine +
+                                     e.StackTrace);
+                    }
+                }
+                catch
+                {
+                    // ignored
+                }
             }
 
         }
