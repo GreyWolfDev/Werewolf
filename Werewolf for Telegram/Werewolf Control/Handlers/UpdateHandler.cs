@@ -720,6 +720,7 @@ namespace Werewolf_Control.Handler
         internal static void HandleCallback(CallbackQuery query)
         {
             Bot.MessagesReceived++;
+            Bot.CommandsReceived++;
             using (var DB = new WWContext())
             {
                 try
@@ -739,7 +740,7 @@ namespace Werewolf_Control.Handler
 
                     groupid = long.Parse(args[1]);
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload")
                         return;
                     if (grp == null)
                     {
