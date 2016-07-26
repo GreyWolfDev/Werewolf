@@ -29,7 +29,7 @@ namespace Werewolf_Node
         internal static User Me;
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
-        internal static List<long> GroupInitializing = new List<long>();
+        //internal static List<long> GroupInitializing = new List<long>();
         //private static werewolfEntities DB;
         internal static readonly DateTime StartupTime = DateTime.Now;
         internal static DateTime IgnoreTime = DateTime.UtcNow.AddSeconds(10);
@@ -208,14 +208,19 @@ namespace Werewolf_Node
         {
             try
             {
-                if (werewolf.Players != null)
+                if (werewolf?.Players != null)
                 {
                     TotalPlayers += werewolf.Players.Count();
                 }
-                Games.Remove(werewolf);
-                //kill the game completely
-                werewolf.Dispose();
-                werewolf = null;
+                if (werewolf != null)
+                {
+                    werewolf.MessageQueueing = false; // shut off the queue to be sure
+                    Games.Remove(werewolf);
+                    //kill the game completely
+                    werewolf.Dispose();
+                    werewolf = null;
+                }
+                
             }
             catch (Exception ex)
             {
