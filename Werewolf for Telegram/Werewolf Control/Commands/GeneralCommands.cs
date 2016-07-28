@@ -208,7 +208,7 @@ namespace Werewolf_Control
 #endif
                         db.SaveChanges();
                         Bot.Send(
-                            "Hi there! I'm @werewolfbot, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
+                            $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
                             update.Message.Chat.Id);
                         //Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                     }
