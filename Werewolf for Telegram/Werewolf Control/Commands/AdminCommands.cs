@@ -46,10 +46,7 @@ namespace Werewolf_Control
                             {
                                 var id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
                                 if (id != 0)
-                                {
-                                    var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
-                                    game?.SmitePlayer(id);
-                                }
+                                    Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(id);
                             }
                             break;
                         case MessageEntityType.TextMention:

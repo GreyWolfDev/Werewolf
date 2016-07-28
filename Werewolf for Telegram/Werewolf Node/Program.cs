@@ -52,7 +52,7 @@ namespace Werewolf_Node
                 var ex = eventArgs.ExceptionObject as Exception;
                 using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\NodeFatalError.log"), true))
                 {
-                    
+
                     sw.WriteLine($"{DateTime.Now} - {Version} - {ex.Message}");
                     sw.WriteLine(ex.StackTrace);
                     while (ex.InnerException != null)
@@ -154,7 +154,7 @@ namespace Werewolf_Node
                                 var ci = JsonConvert.DeserializeObject<CallbackInfo>(msg);
                                 game =
                                     Games.FirstOrDefault(
-                                        x => x.Players.Any(p => !p.IsDead && p.TeleUser.Id == ci.Query.From.Id));
+                                        x => x.Players?.Any(p => p != null && !p.IsDead && p.TeleUser.Id == ci.Query.From.Id) ?? false);
                                 game?.HandleReply(ci.Query);
                                 break;
                             case "PlayerListRequestInfo":
@@ -233,7 +233,7 @@ namespace Werewolf_Node
                     werewolf.Dispose();
                     werewolf = null;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -329,13 +329,13 @@ namespace Werewolf_Node
                         continue;
                     }
                     var games = Games.ToList();
-                    
+
                     var info = new NodeInfo
                     {
                         Games = new HashSet<GameInfo>(),
                         ClientId = ClientId,
                         CurrentGames = games.Count,
-                        CurrentPlayers = games.Sum(x => x.Players?.Count??0),
+                        CurrentPlayers = games.Sum(x => x.Players?.Count ?? 0),
                         DuplicateGamesRemoved = DupGamesKilled,
                         ThreadCount = Process.GetCurrentProcess().Threads.Count,
                         TotalGames = GamesStarted,
@@ -361,7 +361,7 @@ namespace Werewolf_Node
                         };
                         info.Games.Add(gi);
                     }
-                    
+
                     var json = JsonConvert.SerializeObject(info);
                     infoGathered = true;
                     Client.WriteLine(json);
