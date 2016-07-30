@@ -23,7 +23,7 @@ To set up werewolf on a private server, follow these steps:
    * Run the sql script.  This will create the `werewolf` database and all the tables / views / stored procs to go with it
    * If you already have some admins (including yourself), add their TelegramID's to the `dbo.Admin` table 
 		* In order to obtain your ID, headover to your bot in telegram and /Start. After that, toss a random text to it. Enter this URL to your browser (https://api.telegram.org/botYOURTELEGRAMBOTAPIKEY/getUpdates)
-3. Now it's time to compile the source code
+3. Now it's time to compile the source code **DO NOT OPEN OTHER FILES NOT STATED HERE**
    * In the Database project, you will need to create an Internal.settings file
 	  * **In order to create the Internal.settings file, right click on Database -> Add -> New Item**
 	  * Under Visual C# Items -> Settings File and name it as stated. 
@@ -34,7 +34,7 @@ To set up werewolf on a private server, follow these steps:
    * In Visual Studio, open the solution.  Make sure you are set to `RELEASE` build.  You may want to go into `Werewolf_Control.Handlers.UpdateHandler.cs` and change `internal static int Para = 129046388;` to match your id.  Also, double check the settings.cs files in both Control and Node.
    * Build the solution
 	  * A common issue with the package Net.Http.Formatting package not being referenced properly by NuGet has been found. Resolve it by looking at the top menu of VS, clicking on Tools -> NuGet Package Manager -> Package Manager Console.
-		* Do "Install-Package System.Net.Http.Formatting.Extension".
+		* **Do "Install-Package System.Net.Http.Formatting.Extension" for the projects, Werewolf_Control & Werewolf_Node. THIS IS IMPORTANT**
 		* Alternatively, you can manually add the package "DRIVE:\Users\YOURUSERNAME\.dnx\packages\Microsoft.AspNet.WebApi.Client\5.2.3\lib\net45"
 4. Server directories
    * Pick any directory for your root directory
