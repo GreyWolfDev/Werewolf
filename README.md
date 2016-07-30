@@ -6,7 +6,7 @@ For language file updates, please submit the xml file on Telegram to the [suppor
 
 ## Requirements
 * .NET Framework 4.5.2
-* SQL Server (I am using 2014)
+* SQL Server (I am using 2014) / SQL Server 2016
 * Windows Server
 
 ## Setup
@@ -14,14 +14,15 @@ For language file updates, please submit the xml file on Telegram to the [suppor
 To set up werewolf on a private server, follow these steps:
 
 1. Go to [BotFather](https://telegram.me/BotFather) and create a new bot.  Answer all of the questions it asks, and you will receive an API Token.
-   * On your server, open regedit, and go to `HKLM\SOFTWARE\`, create a new Key named `Werewolf`
+   * On your server, open regedit, and go to `HKLM\SOFTWARE\`, create a new Key named `Werewolf` (HKLM - HKEY_LOCAL_MACHINE)
    * In the new key create a new string value named `ProductionAPI`.  
-   * Paste you API token here.
+   * Paste your API token here.
 2. Grab the Werewolf Database.sql file from this repository
    * Open the file in notepad, notepad++, whatever you use
    * Double check the path at the top of the file - update it if you are using a different SQL version
    * Run the sql script.  This will create the `werewolf` database and all the tables / views / stored procs to go with it
-   * If you already have some admins (including yourself), add their TelegramID's to the `dbo.Admin` table
+   * If you already have some admins (including yourself), add their TelegramID's to the `dbo.Admin` table 
+		* In order to obtain your ID, headover to your bot in telegram and /Start. After that, toss a random text to it. Enter this URL to your browser (https://api.telegram.org/botYOURTELEGRAMBOTAPIKEY/getUpdates)
 3. Now it's time to compile the source code
    * In the Database project, you will need to create an Internal.settings file
       * Create a string setting named `DBConnectionString`, Application Scope, and set the Value to your SQL connection string for the database you created in step 2
