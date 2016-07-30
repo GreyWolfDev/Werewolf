@@ -33,6 +33,8 @@ To set up werewolf on a private server, follow these steps:
       * .gitignore has marked this file, so it won't be committed. **However, when you create the setting, VS will copy it to the app.config - make sure to remove it if you plan on committing back to your fork**
    * In Visual Studio, open the solution.  Make sure you are set to `RELEASE` build.  You may want to go into `Werewolf_Control.Handlers.UpdateHandler.cs` and change `internal static int Para = 129046388;` to match your id.  Also, double check the settings.cs files in both Control and Node.
    * Build the solution
+   
+### Issues in Step 3.
 	  * A common issue with the package Net.Http.Formatting package not being referenced properly by NuGet has been found. Resolve it by looking at the top menu of VS, clicking on Tools -> NuGet Package Manager -> Package Manager Console.
 		* **Do "Install-Package System.Net.Http.Formatting.Extension" for the projects, Werewolf_Control & Werewolf_Node. THIS IS IMPORTANT**
 		* Alternatively, you can manually add the package "DRIVE:\Users\YOURUSERNAME\.dnx\packages\Microsoft.AspNet.WebApi.Client\5.2.3\lib\net45"
