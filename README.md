@@ -8,6 +8,7 @@ For language file updates, please submit the xml file on Telegram to the [suppor
 * .NET Framework 4.5.2
 * SQL Server (I am using 2014) / SQL Server 2016
 * Windows Server
+* Visual Studio 2015 Community Edition / Enterprise
 
 ## Setup
 
