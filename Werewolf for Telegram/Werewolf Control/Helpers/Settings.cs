@@ -21,7 +21,7 @@ namespace Werewolf_Control.Helpers
         public static long MainChatId = -1001049529775; //Beta group
         public static long SupportChatId = -1001060486754; //@werewolfsupport
         public static long PrimaryChatId = -1001030085238; //@werewolfgame
-        public static string DevChannelId = "@werewolfdev"; //@werewolfdev
+        public static string DevChannelId = "@werewolfEnhanced"; //@werewolfdev
 #if RELEASE2
         internal static List<string> VillagerDieImages = new List<string> { "BQADAwAD2QEAAnQXsQeU2FMN-2D3GgI", "BQADAwADggADdBexB1_X0udQaRs7Ag", "BQADBAADWAMAAt4cZAcXTtE-UCQXxAI" }; //1
         internal static List<string> WolfWin = new List<string> { "BQADAwADgQADdBexB5kx2CsSNDp2Ag", "BQADAwADgAADdBexBx7XahnW5XBsAg" };
@@ -35,13 +35,13 @@ namespace Werewolf_Control.Helpers
         internal static List<string> SerialKillerWins = new List<string> { "BQADBAADdQMAAsEcZAd7skaRqoWKzQI", "BQADBAADmgMAArgcZAdPyqayfRT6bQI", "BQADBAADOAQAAqUXZAeeuV5vjRd6QAI", "BQADBAADKwMAAsQZZAfwd2_EAeeOTgI" };
         internal static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeHmbRRzioXXQI", "BQADBAADYAMAAkMdZAfR4qo8c95FGgI" };
 #else
-        internal static List<string> VillagerDieImages = new List<string> { "BQADAwADggADdBexB2aZTAMpXRGUAg", "BQADBAADKgMAAoMbZAfmSqOE1YY-9wI", "BQADBAADWAMAAt4cZAe6rGbV3KvLggI" };
-        internal static List<string> WolfWin = new List<string> { "BQADAwADgAADdBexB015e-EU6O9CAg", "BQADAwADgQADdBexB9ksBD5NOWQvAg" };
+        internal static List<string> VillagerDieImages = new List<string> { "BQADBAADIQcAAnkdZAcXTV8Y5EVXEgI", "BQADBAAD0QMAAqwdZAf9997pFGKG2QI", "BQADBAADLBsAAqgeZAevmM9GbTZ89wI" };
+        internal static List<string> WolfWin = new List<string> { "BQADAwADgAADdBexB015e-EU6O9CAg", "BQADAwADgQADdBexB9ksBD5NOWQvAg", "BQADBAADPgsAAlUYZAeEke4mit6cyQI" };
         internal static List<string> WolvesWin = new List<string> { "BQADBAADlwMAAtgaZAfCK5MVLj27CwI", "BQADBAADcAMAAn8ZZAe0Xjey6zCmQwI" };
         internal static List<string> VillagersWin = new List<string> { "BQADAwADgwADdBexB2K0cDWari8QAg" };
         internal static List<string> NoWinner = new List<string> { "BQADBAAD8QgAAqIeZAeufUVx9eT3SgI", "BQADBAADuAMAAlUXZAfNGmq-KVN_0AI" };
-        internal static List<string> StartGame = new List<string> { "BQADAwADhAADdBexB3lX1nJOQOdEAg", "BQADBAADwg0AAu0XZAcUNBLuEjnBhgI" };
-        internal static List<string> StartChaosGame = new List<string> { "BQADBAAD7wYAAgcYZAei_MiVQcRUIAI", "BQADBAAD_wcAAiUYZAeV5N-hkeMW0QI" };
+        internal static List<string> StartGame = new List<string> { "BQADBAADEyEAAsYbZAch9NzpwlicsQI", "BQADBAADwg0AAu0XZAcUNBLuEjnBhgI" };
+        internal static List<string> StartChaosGame = new List<string> { "BQADBAADQSEAAjQeZAc3R6XNs2cOBwI", "BQADBAADiBUAAkYXZAer4boCOSHpggI" };
         internal static List<string> TannerWin = new List<string> { "BQADBAADQwgAAuQaZAcWZKq6Zm4NJAI", "BQADBAAD_gMAAtgaZAeJOVus4yf3RAI" };
         internal static List<string> CultWins = new List<string> { "BQADBAADWAMAAosYZAf5H-sYZ53nMwI", "BQADBAADHwsAAgUYZAeDkYYi5N3cIgI" };
         internal static List<string> SerialKillerWins = new List<string> { "BQADBAADKwMAAsQZZAf4t254zcOVdgI", "BQADBAADOAQAAqUXZAdnNEO6TaxtnQI", "BQADBAADdQMAAsEcZAfkYMOxn9xzBAI", "BQADBAADmgMAArgcZAfW46sJoTg9VQI" };
@@ -67,9 +67,9 @@ namespace Werewolf_Control.Helpers
 #if DEBUG
             MinPlayers = 1,
 #else
-            MinPlayers = 5,
+            MinPlayers = 3,
 #endif
-            MaxPlayers = 35,
+            MaxPlayers = 200,
             TimeDay = 60,
             TimeNight = 90,
             TimeLynch = 90,

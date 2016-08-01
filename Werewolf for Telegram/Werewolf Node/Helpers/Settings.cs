@@ -49,9 +49,9 @@ namespace Werewolf_Node
 #if DEBUG
             MinPlayers = 5,
 #else
-            MinPlayers = 5,
+            MinPlayers = 3,
 #endif
-            MaxPlayers = 35,
+            MaxPlayers = 200,
             TimeDay = 60,
             TimeNight = 90,
             TimeLynch = 90,
