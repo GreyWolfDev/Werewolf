@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- It's Mafia vs Cops ver 1.3.1 by @NoxCaelis, Felicia, and @dhansck! Mafia's the goodies, by the way. Persian Translation by @SepehrHN and @pouria007 -->
+<strings>
+  <language name="Persian (Mafia)" base="Persian" variant="مافیا"/>
+  <string key="NotInGame">
+    <value> بنظر نمی رسد شما در حال حاضر در بازی باشید </value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} یه بازی جدید استارت کرد سریع /join بدین تا دیرتر نشده</value>
+    <value>یه بازی جدید توسط {0} استارت شد! برای ورود به بازی /join بدین. [👑OmeGaTeam👑](https://telegram.me/OmeGaTeam)</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0}یه بازى به حالت آشوب استارت كرده! براى ورود به بازى /join بزنيد.</value>
+    <value>بازی جدید توسط  {0} شروع شده با حالت مافیا ! برای ورود به بازی /join بزنید</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>!نميتونيد وارد بازي بشيد! بازي خيلي وقته شروع شده.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>تو عضو بازی هستی کمتر بزن اون لامصبو😐</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>یک دقیقه مانده به شروع بازی /join رو بزنید</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} ثانيه مونده تا اين بازى شروع بشه سريع /join بده تا زمان ورود به بازي تموم نشده😱
+(بعد زمانتون تموم شد به ما فحش ندين😂)</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>خیلی کمید من با این تعداد بازی رو شروع نمیکنم😓</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>ایول بازی شروع شد😄 یکم صبر کنید تا نقشاتونو بهتون بگم😋</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} میخواسته برینه تو ربات . اول اسمش / گذاشته بود واسه همین بن شد</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, براي ورود به بازى اسمت رو عوض كن</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>ببخشيد، ولى تعداد پليرا به حداكثر مقدار تايين شده رسيده😱</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} وارد بازی شد {1} بازیکن, {2} حداقل تعداد, {3} حداکثر تعداد</value>
+  </string>
+  <string key="PMTheBot">
+    <value>{0} کلیک کنید: @{1}, بیا پی وی من استارت کن تا بتونم نقشتو بهت بگم.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>نمیتونی فرار کنی😂 این همه راهو اومدی وارد شهر شدی کجا میخوای بری ناموسا؟!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} ديد شهر ريخته بهم وسايلشو جمع كردو فراري شد(ترسوي بدبخت😜) </value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} بود {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} نفر باقی مانده</value>
+  </string>
+  <string key="DidntAsk">
+    <value>برو یه نفس راحت بکش دیگه چیزی ازت نمیپرسم!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>بنظر نمیرسد شما درحال بازی باشید...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>من بازیکنی با این مشخصاتی که دادی پیدا نمیکنم!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>این پاسخ معتبر نیست !</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} برای انجام کاری رای داد {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} برای تبعید رای داد به {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} دو شب پشت سر هم رای نداده، شهروندا نگرانش میشن میرن خونش میبینن خودشو دار زده! {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>دوستان شما در نیرو همگی کشته یا مفقود شدند. حالا نوبت شماست که این زحمات رو به تنهایی به دوش بکشین و از شهر در برابر مافیاها محافظت کنید</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>انتخاب پذیرفته شد</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nمشاور شخصی شما {0} است</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} is arrested! You decided to take up their mantle. After all, you've watched them extracting information over and over again. You know you can do it.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} the Sadist takes intiative to serve you in {1}'s disappearance. You're happy, and promote them into your new "personal advisor"!</value>
+  </string>
+  <string key="SeerSees">
+    <value>After a long session, you've learnt that {0} is {1}! Well, they won't miss a relative or two, right?</value>
+  </string>
+  <string key="AskLynch">
+    <value>به کی رای میدی که تبعید بشه؟</value>
+  </string>
+  <string key="AskDetect">
+    <value>چه اطلاعاتی رو میخوای بفهمی؟</value>
+  </string>
+  <string key="AskShoot">
+    <value>Who do you think will make a scoop so big they'll leave the city? Your newspaper has {0} more opening.</value>
+  </string>
+  <string key="AskVisit">
+    <value>به کی میخوای عرق سگی برسونی؟</value>
+  </string>
+  <string key="AskSee">
+    <value>Whose relative do you want to "extract information" from?</value>
+  </string>
+  <string key="AskGuard">
+    <value>از کی میخوای محافظت کنی؟</value>
+  </string>
+  <string key="AskEat">
+    <value>کیو میخوای دستگیر کنی؟</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who do you think are involved in the Church of Happyology?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>پدر و مادر شما کیه؟</value>
+  </string>
+  <string key="AskConvert">
+    <value>کیو میخوای معتاد کنی؟</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  مطمئن شوید که با دیگران درمورد {0} صحبت کرده اید!</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> و </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>تو مافیا ترسو (نفرین شده) 😾هستی. تو از سرگذشت جنایی خودت پشیمونی و آماده یه فرصت برای داشتن زندگی بهتر هستی، اگه پلیسا دستگیرت کنن به همه رفیقای مافیات خیانت میکنی و پلیس میشی(ترسوی بدبخت🔫)</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>شما آویزون (کارآگاه) 🕵هستید. شما از اون آویزون میشی! تعقیبشون میکنی تا بفهمی کی چیکارس. ولی کمتر ضایع بازی در بیار با اینکارایی که تو میکنه 40% امکان داره پلیس بیاد دستگیرت کنه.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>تو پدرخوانده ای (مست) 🍻!  اگه دستگیر بشی، کشته بشی یا تبعیدت کنن توی شهر عزای عمومی اعلام میشه و پلیسا یه روز تعطیل میشن و روی هیچ پرونده ای کار نمیکنن.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>شما لاف زن (فرشته نگهبان) 👼 هستيد. هر شب، شما می توانید از خانه يكي از شهروندان محافظت كنيد🛡 شما يك کامیون پر از چاقو و مسلسل و انواع سلاح هارو به خونه شهروندان ميبريد، پليس جرعت نميكنه با شما رو به رو بشه يا يكي از شهروندان رو بكشه يا دستگير كنه، اما به احتمال 50%‏ اگر از خونه يک پليس بخواهيد محافظت كنيد به جرم قاچاق اسلحه بازداشت ميشيد.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>تو لات محل (تفنگدار) 🔫 هستی! یه تفنگ داری با دوتا گلوله! میتونی هر روز یکیو باهاش بکشی به امید اینکه پلیس کشته باشی ولی بعضی وقتا میرینی و رفیقای مافیاییتو میکشی.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>شما ساقی (فاحشه) 💋 هستید! خیابونای تهران و یه از خود بیخود شبگرد! ملت شدیدا به عرق سگی هات نیاز دارن، هرشب میتونی به یکی مشروب بفروشی، اگه پلیس باشه دستگیرت میکنه، ولی اگه پلیس نبود، سریع عرق سگیو بذار همونجا و  فرار کن. اگه بری خونه کسی که پلیس رفته سراغش بخوای مشروب بفروشی، پلیس جفتتون رو دستگیر میکنه! </value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>شما جاسوس (خائن) 🖕هستید. شما به عنوان جاسوس توی بامد مافیا فعالیت داری وقتی همه  رفیقای پلیست بمیرن جاشون پلیس میشی و همه مافیاهارو دستگیر میکنی.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>شما مامور پلیس (گرگینه) 🐺 هستید. شما باید مافیا ها رو از بین ببرید باند و شهر رو از گزند مافیا ها در امان نگه دارید. هرشب شما میتونید انتخاب کنید که کیو دستگیر کنید. توی انتخاب خودتون دقت کنید❗️</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >شما شکنجه گر (پیشگو) 👳 هستید. وظیفه کلی شما اینه که با شکنجه دادن اهالی شهر نقش هاشون رو متوجه بشید و پلیس رو پیدا کنید و به مافیاها گزارش بدین.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >شما یه مافیا ساده (روستایی) 👱 هستید! شما باید منتظر باشید تا دستورات از بالا برای شما فرستاده بشه و بهشون عمل کنید. ماموریت امروز شما اینه: به بهترین نحوه ممکن از پدرخوانده محافظت کنید(فرستادیمتون دنبال نخود سیاه😜).</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >شما تروریست (منافق) 👺هستید. همیشه زمان رای گیری به محل رای گیری عمومی برو زمانی که مردم بهت شک کردن و بهت رای دادن همونجا بمب رو منفجر کن و همه اهالی رو بکش و برنده بشو</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >تو بچه تخس (بچه وحشی) 👶 هستی. شب اول یه نفرو انتخاب میکنی تا تو رو به فرزند خوندگی قبول کنه. اگه سرپرستت بمیره تو مجبور میشی واسه سیر کردن شکمت بری پلیس بشی.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >شما ساقی (فاحشه) 💋 هستید! خیابونای تهران و یه از خود بیخود شبگرد! ملت شدیدا به عرق سگی هات نیاز دارن، هرشب میتونی به یکی مشروب بفروشی، اگه پلیس باشه دستگیرت میکنه، ولی اگه پلیس نبود، سریع عرق سگیو بذار همونجا و  فرار کن. اگه بری خونه کسی که پلیس رفته سراغش بخوای مشروب بفروشی، پلیس جفتتون رو دستگیر میکنه!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >تو دستیار شکنجه گری (پیشگو رزرو) 🙇. تا وقتی که شکنجه گر زندس نمیتونی تو کارش دخالت کنی اما همین که دستگیر یا تبعید بشه تو به جاش میری و از مردم حرف میکشی!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >تو مواد فروش (رییس فرقه) 👤! تو یکی از مواد فروشای شاخ تهرانی هدفت اینه که مردم رو معتاد کنی که فقط بیان از تو جنس بخرن و پول در بیاری! اگه بتونی همه رو معتاد کنی مفنگیا شهرو میگیرن و برنده میشن!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >تو پلیس مبارزه با مواد مخدری (شکارچی) 💂. تو پلیس مبارزه با مواد مخدری و هدفت کشتن و دستگیری پخش کننده مواد مخدره! ولی اگه بری خونه ی یه معتاد، اعصابت خورد میشه و اونم میکشی!</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+     زمان رای گیری شروع شد، باید یکیو از شهر تبعید کنید
+    شهروندان شما {0} وقت دارید رای بدین
+    </value>
+	<value >
+بيايين، بيايين، همه اهالي شهر، همتون در دادگاه عمومي كه در شهید رجایی تهران تشكيل ميشه شركت كنيد تا راي بدين كه چه كسي بايد محكوم به مرگ بشه☠
+شما {0} ثانيه وقت داريد كه راي بدين!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >صبح شده اهالی شهر {0} وقت دارید تا باهم صحبت کنید</value>
+	<value >صبح شده اهالی شهر {0} وقت دارید تا باهم صحبت کنید</value>
+  </string>
+  <string key="NightTime" >
+    <value >خب شب فرارسیده بازیکنای نقش دار {0} ثانیه وقت دارین هرکاری میخواین انجام بدین</value>
+	<value >خب شب فرارسیده بازیکنای نقش دار {0} ثانیه وقت دارین هرکاری میخواین انجام بدین</value>
+  </string>
+  <string key="LynchKill" >
+    <value >شهر انتخاب كرده است! {0}
+کسی که از شهر تبعید میشه
+{0} كسي نيست جز {1} !</value>
+	<value >شهر انتخاب كرده است! {0}
+کسی که از شهر تبعید میشه
+{0} كسي نيست جز {1} !</value>
+  </string>
+  <string key="LynchTie" >
+    <value >اهالی شهر نتونستن یه تصمیم درست بگیرن، هیچ کس تبعید نشد</value>
+	</string>
+  <string key="NoLynchVotes" >
+    <value >عجب! انگار امشب همه اهالی خواب بودن و به کسی رای ندادن :|</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >آویزون 🕵 محله یعنی {0} دیشب توسط مامورین زحمت کش پلیس دستگیر شد. روزهای فضولی تو کار بزرگترا دیگه برای آویزون به سر رسیده</value>
+	<value >آویزون 🕵 محله یعنی {0} دیشب توسط مامورین زحمت کش پلیس دستگیر شد. روزهای فضولی تو کار بزرگترا دیگه برای آویزون به سر رسیده</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >لاف زنمون 👼  دیشب رفت خونه پلیس و هنوز وار خونه نشده دستگیر شد :| {0} بدبخت شانسم نداره</value>
+	<value >روزنامه های امروز خبر میارن: لاف زن👼 دیشب درحالی که داشت سمت خونه مشتری جدیدش میرفت توسط نیروهای پلیس محاصره و دستگیر شد. لاف زن👼 کسی نبود جز {0} </value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >خبر داغ روزنامه امروز! لات محله 🔫 یعنی {0} دیشب میخواسته به یه پلیس حمله کنه که توسط نیروهای یگان ویژه دستگیر میشه و میوفته گوشه زندون!</value>
+	<value >لات محله 🔫 یعنی {0} دیشب دستگیر و بدون هیچ حکمی در میدون شهر اعدام شد !</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >بعد از مدته تلاش بی وقفه پلیس بالاخره شکنجه گر 👳 مافیا ها یعنی {0} توسط نیرو های پلیس دستگیر شد! رییس پلیس شهر امیدوار است با دستگیر شدن شکنجه گر نفوذ مافیا ها رو به لایه های امنیتی کمتر کرده باشد.</value>
+	<value >دیشب ساعت 11 شب {0} توسط نیرو های پلیس درحین خرید پفک نمکی دستگیر شد، {0} همون شکنجه گر👳 بود!</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >یکی از داغ ترین خبرهای روز👑 بالاخره نیرو های پلیس موفق شدند پدرخوانده🍻 رو دستگیر و با رای دادگاه از شهر تبعید کنند!
+پدرخوانده🍻 کسی نبود جز {0} ! </value>
+  </string>
+  <string key="FoolEaten" >
+    <value >در طی جستجویی که پلیس از خرابه های شهر داشت، نیرو های پلیس موفق شدند {0} که شکنجه گر روانی 🃏 بود رو دستگیر و به تیمارستان منتقل کنند!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>The Newspaper just come in! They reported that {0} was arrested by the police for being in Mafia business! {1}</value>
+    <value>خبر روز، نیروهای پلیس به خانه {0} حمله کردند و صاحب خونه رو دستگیذ کردند، {1} </value>\
+	<value>The Newspaper just come in! {0} was arrested last night on allegations of arson, murder, vandalism, and jaywalking! {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>The Newspaper just come in! A member of the Church of Happyology 👤, {0}, was arrested by federal officers. It seems they are embezzling money from the City.</value>
+	<value>The Newspaper just come in! {0} was arrested by the FBI! They say an informant from IRS notified them of "too much happiness in one room". Was it a code?</value>
+  </string>
+  <string key="NoAttack" >
+    <value >All was calm the previous night, no sound of police raid or anything whatsoever.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >The cops came and tried to arrest you, but you offer them your cooperation for taking down the mafia! You are their comrades now.</value>
+  </string>
+  <string key="WolfTeam">
+    <value>دیگر پلیس ها: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >It seems that the Repentant Mafia joins you as a comrade: {0}!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="false" >
+    <value >BANG! BANG! BANG! OPEN UP! THIS IS A POLICE RAID!</value>
+	<value >You were just about to lay your head and rest when someone forces into your and shout: "FREEZE, FAIRVIEW PD! YOU ARE NOW UNDER ARREST!"</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Uh oh, a cop shot {0}'s spouse in the raid! There will be a funeral tomorrow night, you won't be able to do raids.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >What are you doing, hanging about a police's house? You are arrested!</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >You have saved {0} from the cops. Guess that truck full of guns help, huh?</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >After a long, eventless night standing guard in front of {0}'s house from your arsenal truck, you head home and try to catch a quick nap.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>{0} wasn't home!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >The Bouncer decided to drop by your home last night, and scared the cops from raiding your house.</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >The Newspaper just come in! Headline: {0} stays home with truckload of illegal guns and counterfeit money! They are the Middleman 💋.</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >{0} خونه نیست!</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >{0} was a cop! What were you thinking, going to a police's house with illegal firearms and fake money?</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >The Newspaper just come in! {0} visited a police officer's house with counterfeit money, arrested immediately! They said they're only a Middleman 💋!</value>
+	<value >The Newspaper just come in! {0} visited a police officer's house with illegal firearms, arrested immediately! They confess to be a Middleman 💋 for the Godfather!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >The Newspaper just come in! {0} visited {1}'s house to complete a transaction. However, the cops were raiding their house. {0} the Middleman 💋 is arrested for illegal firearms possession. </value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >The transaction with {0} was a success! You went back with a lighter truck and a heavier wallet.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >The Middleman comes with your goods. You pay them a hefty sum and quickly sends them on their way.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >You caught {0} snooping about! They are the Stalker (Detective).</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Like a true Stalker, you now know that {0} is {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >It seems that {0} the Paparazzi got the short end of a deal. He wrote an expose on {1} and got revenge. {1} the Middleman 💋 was swiftly arrested.</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >The Newspaper just come in! HEADLINE: COMPROMISING PHOTOS OF {1}! Writer: {0}. They seem to be very embarassed and take the first bus out of Fairview! {2}</value>
+	<value >The Newspaper just come in! HEADLINE: IS {1} REALLY THE KINGPIN OF CRIME? Writer: {0}. Even if it's not true, their reputation is done for. They take leave Fairview hastily! {2}</value>
+  </string>
+  <string key="WolfWins" isgif="false" >
+    <value >The police has won! Fairview is free from corrupt mafias!</value>
+	<value >The Mafias are all caught, and with them, the Godfather! Fairview can boast a mafia-free neighborhood now!</value>
+  </string>
+  <string key="WolvesWin" isgif="false" >
+    <value >پلیس ها پیروز شدن! آرامش به تهران برگشته!</value>
+	<value >The Mafias are all caught, and with them, the Godfather! Fairview can boast a mafia-free neighborhood now!</value>
+  </string>
+  <string key="VillageWins" isgif="false" >
+    <value >The mafias have won! With no pesky do-gooder cop, it's mafia stronghold here.</value>
+	<value >The Fairview's Finest is now the Fairview's Crook, the Godfather control all Fairview!</value>
+  </string>
+  <string key="TannerWins" isgif="false" >
+    <value >Oh no! You choose to exile the Suicide Bomber! "It's not about me, it's about sending a message." They detonate themself and several bombs in the city!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>بازیکنان باقی مانده:</value>
+  </string> 
+  <string key="CultistVotedConvert" >
+    <value >{0} has voted to convert {1} to the Church of Happyology.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} was sent to {1}'s house to convert and offer them "tax evasion" plan. However, they were IRS Agent! {0} was arrested for tax embezzlement.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} was arrested for trying to offer you a "tax evasion" plan. Your informant says that {1} church member remain.</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Welcome to the Church of Happyology! Forget about the Mafia, this church will help you. Every night, you have the opportunity to offer the same fellowship to other players.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Fellow member of the Church: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} به جمع معتادا خوش اومدی</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} رفتی خونه {1} اما خونه نبود!</value>
+  </string>
+  <string key="CultWins" isgif="false">
+    <value >All the cops are gone, and Fairview is now a haven for the Church of Happyology!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>You try to arrest {0}, but they are already jailed!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>You go to {0} in the middle of the night, just to find their Church of Happyology membership card. You arrest them immediately. </value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>You go to {0} in the middle of the night, and after several rough questions, you believe that they aren't involved with the Church of Happyology. You leave immediately.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>{0}'s parents just disappeares! For their bravery, they are employed by the police temporarily.</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} has disappeared. Determined to get revenge, you persuade the police chief into employing you. Your new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>مافیا 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>پدرخوانده 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>ساقی 💋</value>
+  </string>
+  <string key="Seer">
+    <value>شکنجه گر 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>جاسوس 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>لاف زن 👼</value>
+  </string>
+  <string key="Detective">
+    <value>آویزون 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>مامور پلیس 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>مافیا ترسو 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>لات محل 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>تروریست 👺</value>
+  </string>
+  <string key="Fool">
+    <value>مافیا بازنشسته 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>بچه تخس 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>مشاور 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>دستیار شکنجه گر</value>
+  </string>
+  <string key="Cultist">
+    <value>معتاد 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>پلیس مبارزه با مواد مخدر 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>فرار کرده</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Oتبعید شده</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 زنده</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>بازیکنان زنده</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>لیدر مافیا 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a Caporegime (Mason) 👷, a Mafia Captain! You are the only ones at mafia meeting, so you know other Capo as well.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>The Newspaper just come in! One of the Capo 👷, {0}, was arrested for accomplice to mafia activities.</value>
+	<value>The Newspaper just come in! {0} was caught on their way to the meeting with the Godfather! They were a Mafia Captain 👷!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The other Caporegimes at your meeting with the Godfather are {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>{0} is trying to convert a new prospective member, but they find a police raid was happening on their house... </value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>The polices are trying to raid {0}'s house, but find that the Bouncer and their arsenal are blocking the way. Didn't want to risk a full-blown firefight, the cops retreated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} try to convert {1} to the Church, but they were dismissed as "child's play"!</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, یک پلیر با نام {0} قبلا وارد بازی شده.  لطفا اسم خودتون رو عوض کنید و دوباره جوین بدین.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>You deliver some documents to {0}'s house! Your curiosity wins out, and you peek into the envelope. There was a letter from the Head of the Church of Happyology!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>بود</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>The Newspaper just come in! It seems that {0} is seen leaving the town hastily last night. You wonder what happened.</value>
+    <value>The Newspaper just come in! It seems that the city is mounting a search mission for {0}, who has not been seen since last night.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>That's strange, {0} misses their meeting with the Godfather last night.</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>توانایی فرار در بازی درحال اجرا توسط ادمین گروه قفل شده است!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>left town.</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} به لیست ادمین ها اضاف شد، دستور /config دو وادر کنید و گروه رو تنظیم کنید!</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>شما درحال حاظر در بازی میباشید ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>هیچ بازی استارت نشده.  با استفاده از /startgame یا /startchaos یک بازی جدید استارت کنید</value>
+    <value>یه بازی با استایل مافیا میخواید؟ /startgame اگه بازی به حالت آشوب میخواید /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>حاجی تو که ادمین گروه نیستی</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>بعد این بازی, ربات برای یک سری تغییرات به مدت خیلی کم خاموش میشه.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>بعد این بازی ربات جهت بروزرسانی مدت کوتاهی خاموش میشه</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} از قبل ادمینه!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} اصلا ادمین نیست!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} از لیست ادمین ها خارج شد.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>زبان تغییر یافت به: {0}</value>
+  </string>
+  <string key="NoSeer">
+	<value> </value>
+  </string>
+  <string key="TimesUp">
+	<value>وقتت تموم شد جيگر😄</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>  بگو تو عاقد (الهه عشق)💘 هستی. شب اول دو نفرو عقد میکنی و میرن سر خونه زندگیشون. اگه یکی از این دو نفر بمیرن، اون یکی هم از غمش میمیره. اگه همه بمیرن و فقط این دو تا عاشق باقی بمونن برنده میشن. اگه یکی از دوتا عاشق جزو تیم برنده باشه، اتوماتیک اون یکی عاشق هم برنده میشه</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>شما یک دزد (همزاد) 🎭هستید. تو یه دزد بی سرپا هستی و هیچی از خودت نداری اول بازی باید یه نفرو انتخاب کنی که جیبشو بزنی، اما احتیاط کن فقط کسیو انتخاب کن که احتمال مرگش بالاست. بعد مردن یا ربوده شدنش میتونی بری کارت ملی و مدارکشو کش بری و خودتو جای اون جا بزنی.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value> تو مافیا بازنشسته (کلانتر) 🎯. از مافیا اومدی بیرون ولی همیشه همراه خودت یه اسلحه داری، پلیس بیوفته دنبالت یه نفرو میکشی 😐 </value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>شما آدم ربا هستید (قاتل زنجیره ای) 🔪. هرشب میتونی یک نفرو بکشی یا بتدازی توی سیاهچال و بعدا با جنازه افرادی که کشتی یه موزه بدای خودت راه بندازی، هدفت از این کارا فقط خندست(کرم داری دست خودت نیست، بیماری) فرقی نمیکنه تو تک هستی و میتونی همرو بکشی حتی پلیس فقط اگه یه زمان عاشق شدی نمیتونی بکشیش مگر اینکه از جون خودت سیر شده باشی.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>You wed {0} in the city's Church. You will not leave each other's side, in jail or in shame.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The city elect to exile you! Whose house will you demolish out of retaliation?</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} was exiled. In their way out of city, you saw them pushing a button, but nothing happens.</value>
+	</string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} was exiled. In their way out of city, you saw them trying to push a button, but it seems that they don't have enough courage to do that.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>{0} was exiled. In their way out of city, you saw them pushing a button, and then you heard an explosion! It seems that {1}'s house was reduced to rubble. {1} left the city. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>The Paparazzi has written an exposé on your frauds! Before you leave the city in shame, you have the power to reduce someone's house to ruins. Choose, quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>The expose on {0} was too much, they left the city without any retaliation.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0} left the city in shame. In their way out of city, you saw them trying to push a button, but it seems that they don't have enough courage to do that.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>{0} left the city in shame. In their way out of city, you saw them pushing a button, and then you heard an explosion! It seems that {1}'s house was reduced to rubble. {1} left the city. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} went to try to convert {1}, but they haven't been heard since! It's like they are kidnapped and disappear from the face of the earth!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>The policemen try to raid the Construction Worker's house, but before he can be arrested, an officer fell into a trap door and has to be hospitalized! {0} is incapacitated.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>The policemen try to raid the Construction Worker's house, but an officer fell into a trap door and has to be hospitalized! {0} is incapacitated.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The police raided a house last night, but now {0} hasn't been seen since! It's like they are kidnapped and disappear from the face of the earth! </value> 
+  </string>
+  <string key="DefaultKilled">
+    <value>روزنامه امروز رسيد! داغ ترين خبر در صفحه ٨ ميگه (نميدونم خبر داغ تو صفحه ٨ چيكار ميكنه😅): {0} ناپديد شده و بنظر مياد به طرز مرموزی به قتل رسيده. اينطور كه معلومه آدم ربا جنازه یک {1} 
+	رو به مجموعش اضافه كرده.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>You try to induct {0} to your collection, but on the way you see the Bouncer and his Mobile Arsenal. You hastily retreated for the night.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>The Church of Happyology sent {0} to {1}'s house! Unfortunately, when the bell is rung, a trap door swallowed {0}! {0} is missing...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>The Church of Happyology sent {0} to {1}'s house! {1} seemed nice enough until they shoved and locked {0} to the freezer room! {0} is missing...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You stand guard in front of the kidnapper's house, but after a sweet smell and a whack, you lose consciousness. You have been kidnapped!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>You went to deliver some chemical to {0}'s house, just for him to force a handkerchief soaked in it to your nose! You delivered the goods to the Kidnapper, and now you're deemed missing!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now!</value>
+  </string>
+  <string key="DGToMason">
+    <value>The ID theft shows up to the meeting with the Godfather! {0} is now a Caporegime!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} is not in the city anymore! You begin to modify the ID to be received as a Capo. Your fellow Capos (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>The ID theft shows up to the Church of Happyology meeting! {0} is now a member of the Church!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} is not in the city anymore! You begin to modify the ID to be received as a Church Member. Your fellow members (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>You saw {0} in the morning briefing, acting like a veteran police. It seems that {0} is a new police member!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} is not in the city anymore! You begin to modify the ID to be received as a Police Officer. Your fellow police officers (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="false">
+    <value>The Newspapers just come in! Fairview open a museum of wax statue of recent citizens! The Kidnapper have won!</value>
+  </string>
+  <string key="AskKill">
+    <value>امشب دوست دارى جنازه كيو به مجموعت اضاف كنى؟</value>
+  </string>
+  <string key="LoverDied">
+    <value>With {0}'s disappearance, it seems that {1} their spouse follows suit. They go together, just like a good couple should be. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Whose identity do you want to pickpocket?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who did swear eternal love in the Church of Fairview? Choose the first player!</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who did swear eternal love in the Church of Fairview? Choose the last player!</value>
+  </string>
+  <string key="Hunter">
+    <value>مافیا بازنشسته 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>عاقد 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>آدم ربا 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>دزد 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>💞💞 You swore your eternal love to {0}, for better, for worse, in health and in sickness. If they have to leave the city, you will also follow. 💞💞</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>You take the identity of an Idealist 👶. پدر تو {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>یه عشق واقعی و موندگار! عاشقا برنده شدن</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>The Newspaper just come in! {0} is lost, their last message said that they were going to the Construction Worker's house! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>یکی از معتادا دیشب خونت بود هر چی زور زد معتادت کنه تو گول نخوردی!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>شما از قبل در لیست انتظار بودید {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>شما به لیست انتظار اضاف شدید {0}.  درصورتی که بازی جدید در این گروه شروع شد پی وی خبرت میکنم.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>بازی جدید شروع میشه در {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Morning comes, and the remaining two citizen walk out to the town square.  {0} takes a look at {1}, apparently mumbling about how The Thinker's pose will be perfect for them. {0} then drags {1} into the dungeon.</value>
+	<value>"Hello, {1}. What would you like to be? David? Mona Lisa? Or maybe the Statue of Liberty?" said {0} cheerily. Then it dawns to them: {0} is the Kidnapper, and {1} is the last victim!</value>
+  </string>
+  <string key="NoWinner" isgif="false">
+    <value>تمامی شهروندان مردن! شهر به شهر ارواح تبدیل شده</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>صبح روز بعد {0} و {1} با هم دعواشون میشه و هردوتاشون بهم چاقو میزنن و هیچ کس زنده نمیمونه :|</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>ریدی با این بازی کردنت! دیر انتخاب کردی خودم واست یکیو انتخاب کردم! {0}</value>
+  </string>
+    <string key="Won">
+    <value>برنده</value>
+  </string>
+  <string key="Lost">
+    <value>بازنده</value>
+  </string>
+<string key="IdleCount">
+    <value>بازیکن {0} به دلیل رای ندادن رد 24 ساعت گذشته {1} مرده</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>شما یه مافیا ساده (روستایی) 👱 هستید! شما باید منتظر باشید تا دستورات از بالا برای شما فرستاده بشه و بهشون عمل کنید. ماموریت امروز شما اینه: به بهترین نحوه ممکن از پدرخوانده محافظت کنید(فرستادیمتون دنبال نخود سیاه😜).</value>
+  </string>
+  <string key="AboutSeer">
+    <value>شما شکنجه گر (پیشگو) 👳 هستید. وظیفه کلی شما اینه که با شکنجه دادن اهالی شهر نقش هاشون رو متوجه بشید و پلیس رو پیدا کنید و به مافیاها گزارش بدین.</value>
+  </string>
+  <string key="AboutWw">
+    <value>شما مامور پلیس (گرگینه) 🐺 هستید. شما باید مافیا ها رو از بین ببرید باند و شهر رو از گزند مافیا ها در امان نگه دارید. هرشب شما میتونید انتخاب کنید که کیو دستگیر کنید. توی انتخاب خودتون دقت کنید❗️</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>شما ساقی (فاحشه) 💋 هستید! خیابونای تهران و یه از خود بیخود شبگرد! ملت شدیدا به عرق سگی هات نیاز دارن، هرشب میتونی به یکی مشروب بفروشی، اگه پلیس باشه دستگیرت میکنه، ولی اگه پلیس نبود، سریع عرق سگیو بذار همونجا و  فرار کن. اگه بری خونه کسی که پلیس رفته سراغش بخوای مشروب بفروشی، پلیس جفتتون رو دستگیر میکنه!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>تو پدرخوانده ای (مست) 🍻!  اگه دستگیر بشی، کشته بشی یا تبعیدت کنن توی شهر عزای عمومی اعلام میشه و پلیسا یه روز تعطیل میشن و روی هیچ پرونده ای کار نمیکنن.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>تو مافیا ترسو (نفرین شده) 😾هستی. تو از سرگذشت جنایی خودت پشیمونی و آماده یه فرصت برای داشتن زندگی بهتر هستی، اگه پلیسا دستگیرت کنن به همه رفیقای مافیات خیانت میکنی و پلیس میشی(ترسوی بدبخت🔫)</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>شما جاسوس (خائن) 🖕هستید. شما به عنوان جاسوس توی بامد مافیا فعالیت داری وقتی همه  رفیقای پلیست بمیرن جاشون پلیس میشی و همه مافیاهارو دستگیر میکنی.</value>
+  </string>
+  <string key="AboutGA">
+    <value>شما لاف زن (فرشته نگهبان) 👼 هستيد. هر شب، شما می توانید از خانه يكي از شهروندان محافظت كنيد🛡 شما يك کامیون پر از چاقو و مسلسل و انواع سلاح هارو به خونه شهروندان ميبريد، پليس جرعت نميكنه با شما رو به رو بشه يا يكي از شهروندان رو بكشه يا دستگير كنه، اما به احتمال 50%‏ اگر از خونه يک پليس بخواهيد محافظت كنيد به جرم قاچاق اسلحه بازداشت ميشيد.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>شما آویزون (کارآگاه) 🕵هستید. شما از اون آویزون میشی! تعقیبشون میکنی تا بفهمی کی چیکارس. ولی کمتر ضایع بازی در بیار با اینکارایی که تو میکنه 40% امکان داره پلیس بیاد دستگیرت کنه.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>تو لات محل (تفنگدار) 🔫 هستی! یه تفنگ داری با دوتا گلوله! میتونی هر روز یکیو باهاش بکشی به امید اینکه پلیس کشته باشی ولی بعضی وقتا میرینی و رفیقای مافیاییتو میکشی.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>شما تروریست (منافق) 👺هستید. همیشه زمان رای گیری به محل رای گیری عمومی برو زمانی که مردم بهت شک کردن و بهت رای دادن همونجا بمب رو منفجر کن و همه اهالی رو بکش و برنده بشو</value>
+  </string>
+  <string key="AboutFool">
+    <value>تو شکنجه‌گر روانی (احمق)🃏 هستی! مردمو اینقدر تحت شکنجه قرار میدی که به یه نقش الکی اعتراف میکنن</value>
+  </string>
+  <string key="AboutCult">
+    <value>تو مواد فروش (رییس فرقه) 👤! تو یکی از مواد فروشای شاخ تهرانی هدفت اینه که مردم رو معتاد کنی که فقط بیان از تو جنس بخرن و پول در بیاری! اگه بتونی همه رو معتاد کنی مفنگیا شهرو میگیرن و برنده میشن!</value>
+  </string>
+  <string key="AboutCH">
+    <value>تو پلیس مبارزه با مواد مخدری (شکارچی) 💂. تو پلیس مبارزه با مواد مخدری و هدفت کشتن و دستگیری پخش کننده مواد مخدره! ولی اگه بری خونه ی یه معتاد، اعصابت خورد میشه و اونم میکشی!</value>
+  </string>
+  <string key="AboutWC">
+    <value>تو بچه تخس (بچه وحشی) 👶 هستی. شب اول یه نفرو انتخاب میکنی تا تو رو به فرزند خوندگی قبول کنه. اگه سرپرستت بمیره تو مجبور میشی واسه سیر کردن شکمت بری پلیس بشی.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>تو دستیار شکنجه گری (پیشگو رزرو) 🙇. تا وقتی که شکنجه گر زندس نمیتونی تو کارش دخالت کنی اما همین که دستگیر یا تبعید بشه تو به جاش میری و از مردم حرف میکشی!</value>
+  </string>
+  <string key="AboutBH">
+    <value>تو مشاور شخصی (ناظر) 👁 هستی، تو دست راست پدرخوانده هستی و اگر پدرخوانده شکنجه گری رو از قبل تعیین کرده باشه، تو تنها کسی هستی که اونو میشناسی و اگه شکنجه گر رو از دست بدی و یکی جانشینش بشه باز هم تو متوجه میشی. اما مراقب باش تو از هویت شکنجه گر روانی آگاه نمیشی😁</value>
+  </string>
+  <string key="AboutMason">
+    <value>شما لیدر مافیا (بنا) 👷 هستید، شما تنها اشخاصی هستید که در جلسات و دورهمی های مافیا ها حضور پیدا میکنند و شما تنها کسی هستی که بقیه لیدرهارو میشناسه!</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+     شما یک دزد (همزاد) 🎭هستید. تو یه دزد بی سرپا هستی و هیچی از خودت نداری اول بازی باید یه نفرو انتخاب کنی که جیبشو بزنی، اما احتیاط کن فقط کسیو انتخاب کن که احتمال مرگش بالاست. بعد مردن یا ربوده شدنش میتونی بری کارت ملی و مدارکشو کش بری و خودتو جای اون جا بزنی.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+     بگو تو عاقد (الهه عشق)💘 هستی. شب اول دو نفرو عقد میکنی و میرن سر خونه زندگیشون. اگه یکی از این دو نفر بمیرن، اون یکی هم از غمش میمیره. اگه همه بمیرن و فقط این دو تا عاشق باقی بمونن برنده میشن. اگه یکی از دوتا عاشق جزو تیم برنده باشه، اتوماتیک اون یکی عاشق هم برنده میشه
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+     تو مافیا بازنشسته (کلانتر) 🎯. از مافیا اومدی بیرون ولی همیشه همراه خودت یه اسلحه داری، پلیس بیوفته دنبالت یه نفرو میکشی 😐
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>شما آدم ربا هستید (قاتل زنجیره ای) 🔪. هرشب میتونی یک نفرو بکشی یا بتدازی توی سیاهچال و بعدا با جنازه افرادی که کشتی یه موزه بدای خودت راه بندازی، هدفت از این کارا فقط خندست(کرم داری دست خودت نیست، بیماری) فرقی نمیکنه تو تک هستی و میتونی همرو بکشی حتی پلیس فقط اگه یه زمان عاشق شدی نمیتونی بکشیش مگر اینکه از جون خودت سیر شده باشی.</value>
+  </string>
+  <string key="AboutPara">
+    <value>
+	[para](www.telegram.me/Para949)
+	سازنده ربات هست اما لطفا برای سوالات الکی پی ویش نرین مشکلی داشتین به گروه های پشتیبانی ما جوین بدین
+	</value>
+  </string>
+  <string key="EndTime">
+    <value>مدت زمان بازی: {0}</value>
+  </string>
+</strings>
