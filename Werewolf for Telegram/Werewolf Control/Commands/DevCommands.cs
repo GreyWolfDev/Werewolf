@@ -446,45 +446,71 @@ namespace Werewolf_Control
         [Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
         public static void CleanMain(Update u, string[] args)
         {
-            //fun times ahead!
-            //get our list of inactive users
-            
-            List<v_InactivePlayersMain> inactive;
-            using (var db = new WWContext())
+            using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
             {
-                inactive = db.v_InactivePlayersMain.ToList();
-            }
-            
-            foreach (var p in inactive)
-            {
-                try
+                
+                //fun times ahead!
+                //get our list of inactive users
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                List<v_InactivePlayersMain> inactive;
+                using (var db = new WWContext())
                 {
-                    //first, check if the user is in the group
-                    var status = Bot.Api.GetChatMember(Settings.MainChatId, p.TelegramId).Result.Status;
-                    if (status != ChatMemberStatus.Member) //user is not in group, skip
-                        continue;
-                    //kick
-                    Bot.Api.KickChatMember(Settings.MainChatId, p.TelegramId);
-
-                    //unban so they can rejoin
-                    status = ChatMemberStatus.Kicked;
-                    while (status == ChatMemberStatus.Kicked)
+                    inactive = db.v_InactivePlayersMain.ToList().Skip(90).ToList();
+                }
+                sw.WriteLine($"Beginning kick process.  Found {inactive.Count} users in database");
+                var i = 0;
+                foreach (var p in inactive)
+                {
+                    i++;
+                    sw.Write($"\n{i}: ");
+                    try
                     {
-                        
-                        Bot.Api.UnbanChatMember(Settings.MainChatId, p.TelegramId);
-                        status = Bot.Api.GetChatMember(Settings.MainChatId, p.TelegramId).Result.Status;
-                        Thread.Sleep(500);
+                        //first, check if the user is in the group
+                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                        sw.Write($"{status}");
+                        if (status != ChatMemberStatus.Member) //user is not in group, skip
+                            continue;
+                        //kick
+                        Bot.Api.KickChatMember(Settings.PrimaryChatId, p.TelegramId);
+                        sw.Write(" | Removed");
+                        //unban so they can rejoin
+                        status = ChatMemberStatus.Kicked;
+                        while (status == ChatMemberStatus.Kicked)
+                        {
+                            Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
+                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                            Thread.Sleep(500);
+                        }
+                        sw.Write(" | Unbanned");
+                        //let them know
+                        Send(
+                            "You have been removed from the main chat as you have not played in that group in the past month.  You are always welcome to rejoin!",
+                            p.TelegramId);
                     }
-
-                    //let them know
-                    Send("You have been removed from the main chat as you have not played in that group in the past month.  You are always welcome to rejoin!", p.TelegramId);
+                    catch (AggregateException ex)
+                    {
+                        var e = ex.InnerExceptions.First();
+                        if (e.Message.Contains("User not found"))
+                            sw.Write("Not Found");
+                        else if (e.Message.Contains("USER_ID_INVALID"))
+                            sw.Write("Account Closed");
+                        else
+                        {
+                            sw.Write(e.Message);
+                            //sw.WriteLine(e.StackTrace);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        sw.WriteLine(e.Message);
+                        sw.WriteLine(e.StackTrace);
+                        // ignored
+                    }
+                    sw.Flush();
+                    //sleep 4 seconds to avoid API rate limiting
+                    Thread.Sleep(4000);
                 }
-                catch
-                {
-                    // ignored
-                }
-                //sleep 5 seconds to avoid API rate limiting
-                Thread.Sleep(5000);
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
     }
