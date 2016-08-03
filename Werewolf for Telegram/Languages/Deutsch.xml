@@ -1,159 +1,236 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- maintained by @Laceygirl and @DingensX // version 03.08.2016 --> 
 <strings>
   <language name="Deutsch" base="Deutsch" variant="SFW" owner=""/>
   <string key="NotInGame">
+  <!-- Nicht implementiert? * -->
     <value>Es scheint, als wärst du gerade nicht in einem Spiel...</value>
   </string>
-  <string key="PlayerStartedGame">
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
     <value>{0} startete ein neues Spiel! Nutze /join, um beizutreten... und vermutlich zu sterben :P</value>
     <value>Ein neues Spiel wurde von {0} gestartet! Nutze /join, um gegessen zu werden!</value>
   </string>
-  <string key="PlayerStartedChaosGame">
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
     <value>{0} startete ein neues Chaos-Spiel! Nutze /join, um beizutreten... und vermutlich zu sterben :P</value>
     <value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze /join, um gegessen zu werden!</value>
+	<value>{0} ruft etwas... und plötzlich bricht Chaos im Dorf aus... nutze /join, um mitzumischen!</value>
+	<value>Was ist denn hier los, keine Ordnung mehr im Dorf?! Finde mit /join heraus, wer an dem Chaos schuld ist! Und hör auf {0} anzustarren, alleine gewinnt man keine Schlachten.</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Du kannst gerade nicht beitreten! Das Spiel läuft bereits.</value>
   </string>
   <string key="AlreadyJoined">
     <value>Du bist schon beigetreten.</value>
+	<value>Du bist doch schon beigetreten, Dummerchen!</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>Nur noch 1 Minute, um beizutreten.</value>
   </string>
   <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
     <value>Nur noch {0} Sekunden, um beizutreten.</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Nicht genügend Spieler, Spiel wird abgebrochen!</value>
+	<value>Leider ließen sich nicht genügend Spieler finden, das Spiel wird abgebrochen :/</value>
   </string>
-  <string key="StartingGameWait">
-    <value>Spiel startet, bitte warten, während ich die Rollen zuweise und die Datenbank aktualisiere.</value>
+ <string key="StartingGameWait">
+    <value>Spiel startet. Bitte warten, während ich die Rollen zuweise und die Datenbank aktualisiere.</value>
   </string>
   <string key="BannedForExploit">
+    <!-- 0 - Player name -->
     <value>{0} ist gebannt für den Versuch eines Exploits (keine Namen beginnend mit /).</value>
   </string>
   <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
     <value>{0}, bitte ändere deinen Namen, um beizutreten.</value>
   </string>
   <string key="PlayerLimitReached">
     <value>Entschuldigung, die maximale Spieleranzahl wurde erreicht!</value>
   </string>
   <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
     <value>{0} ist dem Spiel beigetreten. {1} Spieler, mindestens {2}, maximal {3}</value>
   </string>
   <string key="PMTheBot">
-    <value>{0}, tippe auf @{1} und dann auf "Starten", damit ich dir deine Rolle verraten kann.</value>
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, tippe auf {1} und dann auf "Starten", damit ich dir deine Rolle verraten kann.</value>
   </string>
   <string key="DeadFlee">
     <value>Du kannst nicht fliehen, DU BIST TOT! Zurück ins Grab mit dir, verdammt nochmal!</value>
   </string>
   <string key="Flee">
+    <!-- 0 - Player name -->
     <value>{0} floh aus Angst!</value>
+	<value>{0} floh wie ein Feigling!</value>
+	<value>{0} rannte davon, um euch alle eurem Schicksal zu überlassen!</value>
+	<value>{0} ging in den Wald und kam nie wieder. Komisch...</value>
+	<value>{0} floh überstürzt aus dem Dorf, und wurde seitdem nie wieder gesehen...</value>
   </string>
   <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
     <value>{0} war {1}</value>
   </string>
   <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
     <value>{0} Spieler verbleibend.</value>
   </string>
   <string key="DidntAsk">
+  <!-- Nicht implementiert? (Wobei die hier meine ich alle den Privatchat mit dem Bot betreffen, und das noch aus den Zeiten von vor dem Bot-Update sind. Also, inzwischen nicht mehr relevant.) -->
     <value>Du wurdest nicht aufgefordert, etwas zu schreiben!</value>
   </string>
   <string key="NotPlaying">
+  <!-- Nicht implementiert? -->
     <value>Du scheinst nicht in einem Spiel zu sein...</value>
   </string>
   <string key="NoPlayerName">
+  <!-- Nicht implementiert? -->
     <value>Ich kann keinen Spieler mit diesem Namen finden!</value>
   </string>
   <string key="AnswerNonValid">
+  <!-- Nicht implementiert? -->
     <value>Die Antwort ist nicht gültig!</value>
   </string>
   <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
     <value>{0} will {1} fressen.</value>
   </string>
   <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
     <value>{0} wählte {1}!</value>
   </string>
   <string key="IdleKill">
-    <value>{0} hat 2 Nächte hintereinander nicht abgestimmt. Das hat schreckliche Folgen! {0} starb auf mysteriöse Weise. {1}</value>
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} hat 2 Nächte hintereinander nicht abgestimmt. Das hat schreckliche Folgen! Obwohl man die Leiche sogleich findet, kann sich niemand einen Reim darauf machen, wie er gestorben ist... {1}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value>Du Verräter!! Du bist jetzt der Wolf..</value>
+    <value>Du Verräter!! Du bist jetzt der Wolf...</value>
     <value>Die Werwölfe sind alle gestorben! Du bist nun deren letzte Hoffnung. Zeig ihnen, dass du es besser kannst.</value>
+	<value>Na, kein Wunder, dass dich niemand leiden kann, du Verräter... gleich kannst du dir dein erstes Opfer aussuchen!</value>
   </string>
   <string key="ChoiceAccepted">
     <value>Wahl akzeptiert</value>
   </string>
   <string key="BeholderSeer">
+    <!-- 0 - seer name -->
     <value>\n{0} ist der Seher 👳.</value>
     <value>\n{0} ist der einzig richtige Seher 👳.</value>
+	<value>\nNur {0} sagt die Wahrheit...</value>
   </string>
   <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
     <value>{0} war der Seher. Als sein Lehrling trittst du die Nachfolge an und bist nun der neue Seher.</value>
     <value>Dein Lehrmeister {0} ist vor kurzem verstorben. Du bist jetzt sein Nachfolger.</value>
+	<value>Das Lehrlingsleben ist vorbei, Faulpelz! {0} lebt nicht mehr und nun musst du deine Fähigkeiten unter Beweis stellen. An die Arbeit!</value>
   </string>
   <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
     <value>{0} war ein Lehrling, und nimmt jetzt den Platz von {1} als Seher ein.</value>
     <value>Da {1} jetzt tot ist, nimmt sein überaus eifriger Lehrling {0} dessen Platz als Seher ein. </value>
+	<value>Oh nein! Mit {1} stirbt der Seher - aber das Dorf hat noch eine Hoffnung: {0} erhielt eine umfassende Ausbildung und wird nun dessen Aufgabe übernehmen.</value>
   </string>
   <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>Du siehst, dass {0} {1} ist!</value>
     <value>Tatsächlich! Die Karten sagen, dass {0} {1} ist!</value>
-    <value>Die Ahnen verrieten dir, dass {0}  {1} ist!</value>
+    <value>Die Ahnen verrieten dir, dass {0} {1} ist!</value>
     <value>Durch einen kurzen Blick in deine Glaskugel wurde dir sofort klar, dass {0} {1} sein muss! </value>
+	<value>Merkwürdig... {0} war noch gerade auf eine Tasse Tee zu Besuch, doch als du in den Blättern liest, offenbart sich dir, dass {0} {1} ist...</value>
   </string>
   <string key="AskLynch">
     <value>Wen willst du lynchen?</value>
+	<value>Mit wem willst du heute abrechnen?</value>
+	<value>Wer hat heute den Tod verdient?</value>
+	<value>Wähle, wer heute noch sterben soll...</value>
   </string>
   <string key="AskDetect">
     <value>Wen willst du aufspüren?</value>
+	<value>Wem willst du heute hinterherspionieren?</value>
+	<value>Wessen Spuren willst du heute verfolgen?</value>
+	<value>Wer erscheint dir heute besonders verdächtig?</value>
   </string>
   <string key="AskShoot">
+    <!-- 0 - bullet count -->
     <value>Wen willst du erschießen? {0} Kugeln verbleibend</value>
+	<value>Wer ist heute deine Zielscheibe? Dir bleiben {0} Kugeln!</value>
+	<value>Wer steht heute auf deiner Abschussliste? {0} Kugeln hast du noch.</value>
   </string>
   <string key="AskVisit">
     <value>Wen willst du besuchen?</value>
     <value>Wer darf sich heute über deinen Besuch freuen?</value>
     <value>Mit wem willst du die Nacht verbringen?</value>
+	<value>Wem willst du heute eine Freude machen?</value>
+	<value>In wessen Bett willst du heute schlafen?</value>
   </string>
   <string key="AskSee">
     <value>Wessen Karte willst du sehen?</value>
     <value>Wessen Ahnen willst du heute um Rat fragen?</value>
     <value>Wen willst du über die Glaskugel beobachten?</value>
     <value>Für wen willst du heute deine Seherkarten befragen?</value>
+	<value>Wessen Schicksal willst du heute erfragen?</value>
   </string>
   <string key="AskGuard">
     <value>Wen willst du beschützen?</value>
     <value>Über wen willst du heute Nacht wachen?</value>
+	<value>Vor welchem Haus wachst du heute?</value>
+	<value>Wer steht heute unter deinem Schutz?</value>
+	<value>Wen willst du vor den Bösen retten?</value>
   </string>
   <string key="AskEat">
     <value>Wen willst du essen?</value>
+	<value>An wem willst du heute knabbern?</value>
+	<value>Wer ist deine heutige Mahlzeit?</value>
   </string>
   <string key="AskHunt">
     <value>Wen willst du jagen?</value>
+	<value>Wen verdächtigst du heute?</value>
+	<value>Wer ist wohl ein Kultist?</value>
   </string>
   <string key="AskRoleModel">
     <value>Wer ist dein Vorbild?</value>
+	<value>Zu wem schaust du heimlich auf?</value>
+	<value>Wer hat sich deinen Respekt verdient?</value>
   </string>
   <string key="AskConvert">
     <value>Wen willst du zu deinem Kult bekehren?</value>
+	<value>Wer soll dir heute folgen?</value>
+	<value>Wen möchtest du diese Nacht von deinem Glauben überzeugen?</value>
   </string>
-  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
     <value>  Besprich dich mit {0}</value>
+	<value>  Sprich darüber mit {0}</value>
   </string>
-  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> und </value>
   </string>
   <string key="RoleInfoCursed">
     <value>Du bist der Verfluchte 😾. Du bist zwar aktuell ein Dorfbewohner, sobald sich die Wölfe aber dafür entscheiden, dich zu töten, wirst du stattdessen selbst zu einem Werwolf.</value>
+	<value>Du bist der Verfluchte 😾. Du bist zwar eigentlich ein Dorfbewohner, aber leiden konntest du die anderen noch nie so wirklich. Du ernährst dich ausschließlich von rohem Fleisch und wenn ein Wolf dich beißt, wirst du selbst zu einem!</value>
   </string>
   <string key="RoleInfoDetective">
     <value>Du bist der Detektiv 🕵. Während des Tages hast du die Möglichkeit, die Rolle eines Spielers zu erfahren. Wenn du dich dafür entscheidest, könnte deine Rolle den Wölfen verraten werden. (40% Wahrscheinlichkeit)</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>Glückwünsch! Du bist der Betrunkene 🍻.</value>
+    <value>Glückwunsch! Du bist der Betrunkene 🍻.</value>
     <value>Glückwunsch! Du bist der altbekannte Dorfsäufer 🍻.</value>
+	<value>Prost! Du verbringst den ganzen Tag (und auch die Nacht... wo sollst du auch sonst hin?) in der Dorfkneipe, dort kennt man dich schon. 🍻.</value>
+	<value>Du saufender Mistkerl! Als der Betrunkene 🍻 bist du immer noch ein normaler Dorfbewohner. ABER: Wenn die Wölfe dich töten, sind sie in der nächsten Nacht noch so betrunken, dass auch ein Aspirin nichts mehr hilft: sie können dann niemanden angreifen!</value>
+	<value>Moin! Du bist leider arbeitslos, kannst keine Miete bezahlen und verbringst deshalb die ganze Nacht im Pub und säufst. Cheers! 🍻</value>
   </string>
   <string key="RoleInfoGuardianAngel">
     <value>Du bist der Schutzengel 👼. Jede Nacht kannst du einen Spieler beschützen. Wenn du jedoch einen Wolf wählst, wirst du mit einer Wahrscheinlichkeit von 50% sterben.</value>
@@ -175,9 +252,14 @@
   </string>
   <string key="RoleInfoVillager" >
     <value>Du bist ein bescheidener Dorfbewohner 👱, dazu verdammt, Felder umzugraben und gegessen zu werden.</value>
+    <value>Du bist ein Dorfbewohner 👱 - dein Leben ist zwar nicht besonders aufregend, aber dafür ist dein Schlaganfallrisiko auch besonders gering. Gegen Werwolfattaken bist du aber, natürlich, wehrlos...</value>
+    <value>Als Dorfbewohner 👱 mag dein Leben vielleicht erst einmal nicht so rosig aussehen - dafür hast du immer eine ruhige Nacht und kannst dich tagsüber in Ruhe auf die Abstimmung vorbereiten, um das Böse auszutreiben.</value>
+	<value>Du bist ein einfacher Dorfbewohner 👱, der ein Faible für Porzellankitsch und Katzen hat. Werwölfe kannst du dafür nicht besonders gut leiden.</value>
+	<value>Du bist Got- ahh nee, doch nur Dorfbewohner 👱, 'tschuldigung, aber zumindest gehst du gern in die Kirche.</value>
+	<value>Du bist ein Dorfbewohner 👱, und am liebsten hast du es, wenn alle friedlich zusammensitzen - deshalb kochst du auch immer für deine Freunde! Pflichbewusst wie du bist, würdest du natürlich auch nie eine Abstimmung verpassen, um dein Dorf vor dem Bösen zu retten.</value>
   </string>
   <string key="RoleInfoTanner" >
-    <value>Du bist der Gerber 👺.  Wenn du gelyncht wirst, gewinnst du automatisch!</value>
+    <value>Du bist der Gerber 👺. Wenn du gelyncht wirst, gewinnst du automatisch!</value>
   </string>
   <string key="RoleInfoWildChild" >
     <value>Du bist ein wildes Kind 👶. Wähle einen Spieler aus, der dein 'Vorbild' wird - sobald dieser stirbt, wirst du ein Werwolf.</value>
@@ -192,125 +274,199 @@
     <value>Du bist ein Kultist 👤. Jede Nacht kannst du einen Spieler zu deinem Kult bekehren. Falls am Ende nur noch Kultisten leben, gewinnt ihr!</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value>Du bist der Kultistenjäger 💂. Es gibt einen Kultisten, welcher jeden von seinem Glauben überzeugen will. Du wählst jede Nacht einen Spieler aus.  Falls der gewählte Spieler ein Kultist ist, stirbt er.  Wenn sie dich bekehren wollen, stirbt das neueste Mitglied des Kults.</value>
+    <value>Du bist der Kultistenjäger 💂. Es gibt einen Kultisten, welcher jeden von seinem Glauben überzeugen will. Du wählst jede Nacht einen Spieler aus.  Falls der gewählte Spieler ein Kultist ist, stirbt er. Wenn sie dich bekehren wollen, stirbt das neueste Mitglied des Kults.</value>
   </string>
   <string key="LynchTime" >
-    <value>
+    <!-- 0 - number of seconds -->
+    <value> 
       Es dämmert und die Dorfbewohner versammeln sich, um zu entscheiden, wen sie heute lynchen wollen...
       Jeder hat {0} Sekunden, um seine Stimme abzugeben.
     </value>
+	<value>
+      Es wird langsam Abend und alle versammeln sich, um denjenigen zu bestimmen, den sie heute tot sehen wollen...
+      Jeder hat {0} Sekunden, um sich zu entscheiden!
+    </value>
+	<value>
+      Bevor alle schlafen gehen, treffen sie sich ein letztes Mal, um den zu wählen, an dem sie ihr Entsetzen rächen wollen...
+      Jeder hat {0} Sekunden, bevor es dunkel wird!
+    </value>
+	<value>
+      Langsam setzt die Dämmerung ein: die Zeit der Versammlung ist gekommen.
+      Das Dorf hat {0} Sekunden Zeit um zu wählen, wer heute noch sterben muss...
+    </value>
   </string>
   <string key="DayTime" >
-    <value>Es wurde Tag. Das Dorf hat nun {0} Sekunden, um zu diskutieren, wer gelyncht werden soll.</value>
+    <!-- 0 - number of seconds -->
+    <value>Es wurde Tag. Das Dorf hat nun {0} Sekunden, um zu diskutieren, wer verdächtig ist.</value>
+	<value>Die Nacht ist endlich vorbei... Alle versammeln sich, um die Toten zu zählen - nun habt ihr {0} Sekunden, um die Schuldigen zu finden!</value>
+	<value>Raus aus den Federn, ihr habt nicht ewig Zeit, immerhin treibt sich das Böse im Dorf um - beeilt euch, auch {0} Sekunden können schnell vorbei sein, wenn man sie vertrödelt!</value>
   </string>
   <string key="NightTime" >
-    <value>Es wurde Nacht.  Alle Spieler schlafen ein.  Nachtaktive Spieler haben {0} Sekunden für deren Aktionen!</value>
+    <!-- 0 - number of seconds -->
+    <value>Es wurde Nacht. Alle Spieler schlafen ein. Nachtaktive Spieler haben {0} Sekunden für deren Aktionen!</value>
+	<value>Schneller als gedacht wird es stockfinster, alle Spieler schlafen ein... doch einige tun auch nur so. Die Schlaflosen unter euch haben {0} Sekunden, um ihre Tätigkeiten auszuführen und zurück ins Bett zu huschen!</value>
+	<value>Die Nacht senkt sich über das Dorf. Alle gehen schlafen, ausser die Geschöpfe der Nacht... {0} Sekunden bleiben ihnen, um ihren Rollen gerecht zu werden!</value>
   </string>
   <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>Die Dorfbewohner stimmten erfolgreich ab. {0} wurde am Galgen gehängt. {1}</value>
     <value>Das Dorf ist sich einig, gemeinsam ertränken sie {0}. {1}</value>
-    <value>Gemeinsam entschied das Dorf, {0} am Dorfplatz zu verbrennen. {1}</value>
+    <value>Gemeinsam entschied das Dorf, {0} auf dem Dorfplatz zu verbrennen. {1}</value>
     <value>Nach reichlicher Überlegung entschieden die Dorfbewohner, den Kopf von {0} mit der Guillotine abzutrennen. {1}</value>
+	<value>Nach "fairer und demokratischer" Abstimmung fällt das heutige Todesurteil. Vor einer romantischen Sonnenuntergangskulisse stürzen die Dorfbewohner {0}} von den Klippen, und man hört nur einen dumpfen Aufschlag, als der Körper an den Felsen zerschellt... {1}</value>
   </string>
   <string key="LynchTie" >
     <value>Uneinig darüber, wer gelyncht werden soll, kehren die Dorfbewohner frustriert in ihre Häuser zurück...</value>
+	<value>Es entsteht eine angespannte Stille, in der sich alle misstrauisch anschauen - dennoch ist auch jeder erleichtert, für heute mit dem Leben davon gekommen zu sein. Langsam löst sich die Versammlung auf und das Dorf legt sich zur Ruhe...</value>
+	<value>Obwohl der Henker sein Beil schon wieder eingepackt hat, starren sich immer noch alle angriffslustig an; erst als es anfängt zu regnen, hasten alle in ihre Häuser, und löschen auch bald schon die Lichter - es war ein langer Tag...</value>
+	<value>Da keine Stimmen abgegeben wurden, entscheiden sich die Dorfbewohner stumm, an diesem Abend niemanden umzubringen. Langsam löst sich die Versammlung auf, denn die Nacht bricht an...</value>
   </string>
   <string key="NoLynchVotes" >
-    <value>Irgendwas ist verdächtig, niemand hat eine Stimme abgegeben!  Es gibt keine Toten...</value>
-    <value>Es erschien heute niemand zur Wahl! Es gibt keine Toten</value>
+    <value>Irgendwas ist verdächtig, niemand hat eine Stimme abgegeben! Es gibt keine Toten...</value>
+    <value>Es erschien heute niemand zur Wahl! Heute Abend gibt es keine Toten.</value>
+	<value>Bei der Abstimmung machte sich niemand die Mühe, die Hand zu heben. Wie wollt ihr denn so das Böse aus dem Dorf vertreiben?!</value>
   </string>
   <string key="DetectiveEaten" >
-    <value>Die Dorfbewohner versammeln sich am Morgen, treffen {0} aber nicht an. Sie begeben sich zu dessen Haus und treffen {0} leblos mit einer Lupe in Hand 🕵 an. </value>
-  </string>
+    <!-- 0 - victim name -->
+    <value>Die Dorfbewohner versammeln sich am Morgen, treffen {0} aber nicht an. Sie begeben sich zu dessen Haus und treffen {0}, leblos mit einer Lupe in der Hand 🕵, an.</value>
+	<value>Merkwürdig... Am Morgen taucht {0} nicht zur Besprechung auf. Zuerst ist man ja gar nicht so unglücklich, bei dem ganzen Qualm, den der mit seiner Pfeife immer produziert, auch kein Wunder... Aber eigentlich hatte er immer gute Ideen, also wird schließlich doch ein Suchtrupp losgeschickt - aber alles, was sie finden, ist seine Lupe 🕵, eine Menge Blut... und blutige Pfotenspuren.</value>
+    <value>Ein neuer Morgen bricht an, und, wie jeden Tag, trifft sich der Dorfsheriff mit dem Detektiv auf einen Kaffee. Zu seiner Verwunderung öffnet {0} ihm nicht, aber die Tür ist zum Glück unverschlossen. Innen bietet sich ihm ein schrecklicher Anblick: die blutige Leiche des Detektivs 🕵 liegt direkt im Eingang, komplett von Wölfen zerfleischt!</value>
+    </string>
   <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
     <value>Als der Morgen hereinbricht, sehen die Dorfbewohner zu ihrem Entsetzen {0}, den Schutzengel 👼, aufgespießt am Kreuz der Kirche.</value>
+	<value>Der Morgen bricht an, und überall im Dorf liegen Federn herum... zuerst glaubt man an einen Fuchs, der sich in den Hühnerstall geschlichen hat, doch stattdessen findet man dort {0}, den Schutzengel...</value>
+	<value>Ein neuer Tag bricht an. Doch was sehen die armen Dorfbewohner? {0}, der von Gott gesandte Engel 👼, liegt tot auf dem Dorfplatz. Ein schrecklicher Anblick, denn ein Werwolf 🐺 hat ihm beide Flügel ausgerissen!</value>
+	<value>Es wird Tag... zu ihrem Bestürzen finden die Dorfbewohner {0}, den Schutzengel 👼, in einer Blutlache vor der Kirche - die gute Seele ist den Wölfen zum Opfer gefallen...</value>
+	<value>Der Tag bricht an, und verspricht, ein guter zu werden: sogar Schnee können die Dorfbewohner aus ihren Fenstern erblicken. Doch, halt... Schnee?! Schnell finden sie heraus, dass es in Wahrheit Federn sind... von einer bösen Vorahnung beschlichen pilgern sie zum Dorfzentrum, um dort {0} auf dem Pflaster zu finden, mit zerfetzten Flügeln, auf dem Pflaster aufgeschlagen... Trauert um den Schutzengel 👼!</value>
   </string>
   <string key="GunnerEaten" >
-    <value>Als jeder morgens sein Haus verlässt, entdecken die Dorfbewohner verstreut im Dorf erst Teile einer Schrotflinte... dann Beine... dann Finger... und zuletzt den Körper von {0}, dem Schützen 🔫, treibend im Brunnen im Herzen des Dorfes, getötet durch einen Werwolf.</value>
+    <!-- 0 - victim name -->
+    <value>Als jeder morgens sein Haus verlässt, entdecken die Dorfbewohner verstreut im Dorf erst Teile einer Schrotflinte... dann Beine... dann Finger... und zuletzt den Körper von {0}, dem Schützen 🔫, treibend im Brunnen im Herzen des Dorfes - getötet durch einen Werwolf.</value>
   </string>
   <string key="SeerEaten" >
+    <!-- 0 - victim name -->
     <value>Die Sonne geht auf. Das Dorf erwacht, nur um die Überreste von {0} über einem Ouija-Brett und zwischen Seher-Karten verteilt zu finden. Der Seher 👳 ist tot.</value>
+	<value>Noch bevor die Sonne vollständig über die Hausdächer gekrochen ist, weiß jeder, dass irgendetwas nicht stimmt... dann hört man entsetzte Rufe, hier und da ein vereinzeltes Schluchzen. Trauert um {0}, denn der Seher 👳 ist tot!</value>
+	<value>Ein neuer Tag bricht an. Wie jeder Andere, beginnt dieser mit dem Flohmarkt auf dem Dorfplatz. Doch heute fehlt der Stand mit den Glaskugeln... Die Dorfbewohner wundern sich und sehen schließlich bei {0} nach. Alles scheint in Ordnung... doch dann sehen sie die Scherben der berühmten Glaskugel, und eine Blutspur, die ins Schlafzimmer führt... Dort finden sie die blutige Leiche des Sehers 👳.</value>
   </string>
   <string key="DrunkEaten" >
-    <value>Jeder erwacht zu dem Geruch von brennendem Alkohol und Holz... Die Kneipe brennt!!!! Nachdem das Feuer gelöscht wurde, fand man die von Wölfen auseinandergerissen Überreste von {0}, dem Betrunkenen 🍻...</value>
+    <!-- 0 - victim name -->
+    <value>Jeder erwacht zu dem Geruch von brennendem Alkohol und Holz... Die Kneipe brennt!!! Nachdem das Feuer gelöscht wurde, findet man die von Wölfen auseinandergerissen Überreste von {0}, dem Betrunkenen 🍻...</value>
     <value>Die allgegenwärtige Schnapsflasche von {0}, dem Betrunkenen 🍻, wurde am nächsten Morgen im Gestrüpp nahe der Taverne gefunden. Die dazugehörige Leiche, getötet durch einen Werwolf, lag auch nicht weit davon entfernt.</value>
   </string>
   <string key="FoolEaten" >
+    <!-- 0 - victim name -->
     <value>Als die Sonne über dem Dorf aufsteigt, finden die Dorfbewohner {0} neben einem Ouija-Brett, aber mit einem Deck aus... Spielkarten??? WAS FÜR EIN NARR 🃏!</value>
+	<value>Ein neuer Tag bricht an, doch irgendetwas stimmt nicht... das fröhliche Lachen von {0} fehlt! Besorgt macht ihr euch auf die Suche - und seht eine zusammengekauerte Gestalt, die eine große Murmel in der Hand hält - der Narr 🃏 ist tot...</value>
+	<value>Der Tag bricht an und der Dorfsheriff geht auf Kontrollgang. Er wundert sich, denn im Haus von {0} ist es erschreckend still... Es sieht zwar alles ordentlich aus, auch die Spielkartensammlung ist unberührt. Falscher Alarm? Im Schlafzimmer stößt der Dorfsheriff jedoch auf die Ursache, der Narr 🃏 wurde von den Wölfen zerrissen!</value>
   </string>
   <string key="DefaultEaten" >
-    <value>Als jeder aufwacht, bemerken die Dorfbewohner einen schrecklichen Gestank. Sie folgen dem Geruch und finden {0}, auseinandergerissen und mit abgetrenntem Kopf im Schweinestall. NOMNOMNOMNOM! {1}</value>
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Als jeder aufwacht, bemerken die Dorfbewohner einen schrecklichen Gestank. Sie folgen dem Geruch und finden {0}, auseinandergerissen und mit abgetrenntem Kopf im Schweinestall. NOMNOMNOMNOM {1}</value>
+	<value>Es wird Morgen und alle versammeln sich. Alle? Nein! {0} fehlt, und ist auch nicht zuhause... Man steht etwas ratlos beisammen, erst dann bemerkt man das abgetrennte Bein, das aus dem Gebüsch ragt... {1}</value>
   </string>
   <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+	<!-- bezieht sich auf den Kultistenjäger -->
     <value>Ein bemerkbarer Gestank kommt aus dem Haus von {0}... Das Dorf untersucht es und findet einen Körper vor einem dunklen Altar liegend... Ein Kultist 👤, getötet von einem Jäger!</value>
   </string>
   <string key="NoAttack" >
     <value>Am nächsten Morgen sammeln sich die Dorfbewohner im Dorfzentrum, Gott sei Dank - es scheint vorherige Nacht keinen Angriff gegeben zu haben.</value>
+	<value>Es scheint, als hätten die Therapiesitzungen etwas gebracht: heute Nacht ist alles ruhig geblieben, und der Morgen birgt keine unliebsamen Überraschungen. Der Tag steht euch zur freien Verfüfung, die tägliche Gruppensitzung fällt aus! (Trotzdem lebt immer noch das Böse unter euch, fühlt euch als nicht zu sicher!)</value>
   </string>
   <string key="CursedBitten" >
-    <value>Du bist von den Wölfen gebissen worden. Als der Verfluchte bist du nun ein Wolf 🐺 geworden!</value>
+    <value>Du bist von den Wölfen gebissen worden. Als Verfluchter bist du nun ein Wolf 🐺 geworden!</value>
   </string>
   <string key="WolfTeam">
+    <!-- 0 - teammate names -->
     <value>Die anderen Werwölfe sind: {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
     <value>{0} wurde gebissen... aber er war verflucht 😾 und ist nun ein Werwolf wie du selbst! Glückwunsch zum neuen Teamkollegen!</value>
   </string>
   <string key="WolvesEatYou" >
     <value>Oh nein! Die Wölfe haben dich gefressen. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
     <value>Oh nein! {0} war betrunken 🍻! Nun bist du betrunken, du kannst kommende Nacht niemanden angreifen...</value>
-    <value>Nachdem du {0} gefressen hast, ist dir ist ganz schwindelig und du beschließt, nächste Nacht erst einmal deinen Rausch 🍻 auszuschlafen, anstatt dir dein nächstes Opfer zu suchen.</value>
+    <value>Während du noch genüsslich an {0} kaust, wird dir auf einmal ganz schwindelig und du beschließt, nächste Nacht erst einmal deinen Rausch 🍻 auszuschlafen, anstatt dir dein nächstes Opfer zu suchen.</value>
   </string>
   <string key="GuardWolf" >
     <value>Du hast versucht einen Werwolf 🐺 zu beschützen! Der Wolf hat dich gefressen.</value>
     <value>Du Dummkopf! Dein Schützling war ein Werwolf 🐺. Zum 'Dank' hat er dich als Nachtmahl verspeist.</value>
   </string>
   <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
     <value>Du hast {0} das Leben gerettet!</value>
   </string>
   <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
     <value>{0} wurde nicht angegriffen, du hattest nichts zu tun.</value>
   </string>
   <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
     <value>Du wolltest {0} beschützen, es war aber niemand zu Hause!</value>
   </string>
   <string key="GuardSavedYou" >
     <value>Der Schutzengel 👼 wachte letzte Nacht über dich und vertrieb die Angreifer!</value>
   </string>
   <string key="HarlotEaten" >
+    <!-- 0 - player name -->
     <value>Die Hure 💋 entschied sich in der falschen Nacht, zu Hause zu bleiben. {0} wurde von den Wölfen gefressen!</value>
+	<value>An manchen Tagen sollte man sich wohl einfach keinen Urlaub nehmen... davon könnte {0}, die Hure 💋, wohl ein Lied singen - aber sie kommt nicht mehr dazu - nicht nur die Leiche zeugt von einem Rendezvous mit einem Wolf gestern Nacht...</value>
+	<value>Ob das Karma ist? Die Hure 💋 wollte heute niemanden beglücken - die Rache dafür lässt nicht auf sich warten. In {0} haben die Wölfe diese Nacht wohl mehr als nur ein gutes Abendessen gefunden...</value>
   </string>
   <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
     <value>Seltsam... {0} war nicht zu Hause! Kein Essen für dich...</value>
   </string>
   <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
     <value>Du schlüpftest in das Haus von {0}, um ein bisschen Spaß zu haben, nur um einem Werwolf 🐺 zu begegnen. Jetzt bist du tot.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
     <value>{0} geriet in das falsche Haus letzte Nacht 💋! Ihre nuttigen Überreste wurden mit einer Eisenstange an das Kirchentor geheftet gefunden... wie schade :(</value>
-  </string>
+	<value>Die Hure 💋 wollte ein bisschen Spass erleben, doch sie entschied sich für die falsche Person. Diese konnte wohl ein feines Abendessen genießen... Ob {0} wohl gemundet hat?</value>
+	</string>
   <string key="HarlotFuckedVictimPublic" >
-    <value>{0} schlüpfte in das Haus von {1}, bereit um Spaß zu haben 💋 und Stress abzubauen. Jedoch sah sie einen Werwolf dabei, {1} zu essen! Plötzlich wand sich der Werwolf zu {0} und springt...  {0} ist tot.</value>
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} schlüpfte in das Haus von {1}, bereit um Spaß zu haben 💋 und Stress abzubauen. Jedoch sah sie einen Werwolf dabei, {1} zu essen! Plötzlich wand sich der Werwolf zu {0} und springt... {0} ist tot.</value>
+	<value>{0} wollte nur ein bisschen mit {1} anbandeln 💋, aber mitten in der Nacht werden die Beiden plötzlich von den Wölfen überrascht... zwei auf einen Streich!</value>
   </string>
   <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
     <value>Du siehst, dass {0} kein Wolf ist, da {0} die ganze Nacht mit dir verbrachte 💋!</value>
   </string>
   <string key="HarlotVisitYou" >
     <value>Es war zu dunkel um etwas zu sehen, aber mitten in der Nacht merkst du, dass die Hure 💋 dich reitet. Ihr beide wurdet fertig, dann verließ sie dich leise...</value>
   </string>
   <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
     <value>Du erwischt {0} beim Schnüffeln! {0} ist der Detektiv 🕵</value>
   </string>
   <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
     <value>Deine Schnüfflerei brachte heraus, dass {0} {1} ist</value>
   </string>
   <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
     <value>Es sieht aus, als hätte sich {0} in der Nacht bei der Hure etwas eingefangen! Beschämt kommt er vom Dorfarzt zurück und zielt in einem unbeobachteten Moment auf {1}. Der Schütze bekam seine Rache. {1} ist tot 💋.</value>
   </string>
   <string key="DefaultShot" >
-    <value>Plötzlich hört man einen Schuss. Das Dorf sieht sich um und entdeckt {0}, den Schützen 🔫, über dem Körper von {1} stehen, die Pistole noch immer auf den Kopf gerichtet.  {2}</value>
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Plötzlich hört man einen Schuss. Das Dorf sieht sich um und entdeckt {0}, den Schützen 🔫, über dem Körper von {1} stehen, die Pistole noch immer auf den Kopf gerichtet. {2}</value>
+	<value>Da Schüsse hier nicht häufig fallen, ist das ganze Dorf in heller Aufregung, als man, kurz bevor die Dämmerung einbricht, einen solchen hört. Sie eilen zu der Stelle, von wo der Schuss kam und finden {0}, den Schützen 🔫, keuchend neben der Leiche von {1} stehen, die Pistole neben seinen Füßen im Gras liegend. {2}</value>
   </string>
   <string key="WolfWins" >
     <value>Der Werwolf hat gewonnen!</value>
@@ -319,51 +475,69 @@
     <value>Die Werwölfe haben gewonnen!</value>
   </string>
   <string key="VillageWins" >
-    <value>Die Dorfbewohner haben gewonnen! Alle Wölfe starben...</value>
+    <value>Die Dorfbewohner haben gewonnen! Alle Wölfe (und andere Menschenfresser) starben...</value>
   </string>
   <string key="TannerWins" >
     <value>Oh nein! Der Gerber wurde gelyncht! Er gewinnt das Spiel, du Dummerchen.</value>
   </string>
   <string key="RemainingPlayersEnd">
+  <!-- Nicht implementiert? * -->
     <value>Verbleibende lebende Spieler, Rollen und Teams:</value>
   </string>
   <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
     <value>{0} hat gewählt, {1} zu bekehren</value>
   </string>
   <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
     <value>{0} wurde gesendet, um die Drecksarbeit zu erledigen und {1} zu bekehren... jedoch war dieser der Kultjäger 💂! {0} ist tot!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
     <value>{0} kam zu deinem Haus, um dich zu bekehren... Doch dein Schwert durchdrang diesen zuerst. Ein Kultist 👤 ist tot... {1} leben noch!</value>
   </string>
   <string key="CultConvertYou">
     <value>Der Kult hat dich zu seinem Glauben bekehrt! Du bist nun ein Kultist 👤. Ab jetzt wirst du jede Nacht die Chance haben, einen anderen Spieler zu bekehren.</value>
   </string>
   <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
     <value>Kultisten: {0}</value>
   </string>
   <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
     <value>{0} trat dem Kult bei!</value>
   </string>
   <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
     <value>{0} wurde gesendet, um {1} zu bekehren... aber keiner war zu Hause!</value>
   </string>
   <string key="CultWins" >
     <value>Alle Wölfe starben, alle anderen Lebenden wurden zu Kultisten bekehrt.. Der Kult hat gewonnen!</value>
   </string>
   <string key="HunterVisitDead">
+  <!-- Nicht implementiert? * -->
+    <!-- 0 - target name -->
     <value>Du wolltest {0} jagen, allerdings ist {0} schon tot!</value>
   </string>
   <string key="HunterFindCultist">
+    <!-- 0 - target name -->
     <value>Du gehst in das Haus von {0}, findest ihn an einem Altar zu einem unbekannten Gott betend... Schnell schwingst du dein Schwert nach dem bösen Kultisten 👤.</value>
   </string>
   <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
     <value>Du gehst in das Haus von {0}, aber du hörst kein mysteriöses Singen. {0} ist kein Kultist, du kehrst wieder nach Hause zurück.</value>
   </string>
   <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
     <value>Das Vorbild von {0} starb 👶! In seiner Wut wurde {0} ein Werwolf!</value>
   </string>
   <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
     <value>{0} starb! In deiner Wut wurdest du ein Werwolf 🐺! Die anderen Werwölfe sind: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter -->
@@ -404,7 +578,7 @@
     <value>der Narr 🃏</value>
   </string>
   <string key="WildChild">
-    <value>das Wilde Kind 👶</value>
+    <value>das wilde Kind 👶</value>
   </string>
   <string key="Beholder">
     <value>der Beobachter 👁</value>
@@ -439,6 +613,7 @@
     <value>Du bist ein Freimaurer 👷. Falls es noch andere Freimaurer geben sollte, wirst du das erfahren. Sonst verhältst du dich wie ein ganz normaler Dorfbewohner.</value>
   </string>
   <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
     <value>Als die Sonne aufging, konnte man den Körper von {0} blutverschmiert auf einem Fels liegen sehen. Der Tote hatte ein Freimaurerabzeichen 👷 in seiner Westentasche.</value>
   </string>
   <string key="MasonTeam">
@@ -446,20 +621,28 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
+  <!-- Nicht implementiert? * -->
+    <!-- 0 - Youngest cultists name -->
     <value>Euer neuestes Mitglied lief zum Haus von {0}, um ihn zu bekehren, aber das Haus war vollkommen zerstört, überall Blut, und Fäden eines Wolfsfells 🐺 vor der Tür...</value>
   </string>
   <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
     <value>Die Horde lief zum Haus von {0}, um ihn zu essen, aber ihr bemerkt eine große helle Gestalt, bis zu den Zähnen bewaffnet. Der Schutzengel 👼 wehrte euch alle ab und ihr kehrt besiegt zurück.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
     <value>{0} wurde losgeschickt, um {1} zu bekehren, aber leider war der Glaube von {1} zu stark und konnte deshalb nicht überzeugt werden :(</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
-    <value>@{1}, ein Spieler mit dem Namen {0} ist bereits beigetreten.  Bitte ändere deinen Namen, um beizutreten.</value>
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, ein Spieler mit dem Namen {0} ist bereits beigetreten. Bitte ändere deinen Namen, um beizutreten.</value>
   </string>
   <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
     <value>Du schlüpftest in das Haus von {0}, um etwas Spaß zu haben... doch als du gerade gehen wolltest, konntest du einen kurzen Blick in einen Nebenraum erhaschen und erkennst im Dunkeln einen merkwürdig leuchtenden Altar 👤 ...</value>
   </string>
   <!-- new string May 13 2016-->
@@ -467,43 +650,54 @@
     <value>war</value>
   </string>
   <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
     <value>Das Dorf wachte auf und versammelte sich am Dorfplatz ... doch {0} kam nicht. Beim Untersuchen der Häuser fanden sie die Leiche von {0}.</value>
     <value>Als die Dorfbewohner am nächsten Morgen aufwachten, fanden sie die Leiche von {0}, welcher aus ungeklärten Umständen verstarb...</value>
   </string>
   <string key="MasonConverted">
-	<value>Merkwürdig... {0} kam heute Morgen nicht zur Versammlung der Freimaurer  👤... O.o</value>
+    <!-- 0 - mason's name -->
+    <value>Merkwürdig... {0} kam heute Morgen nicht zur Versammlung der Freimaurer 👤... O.o</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
     <value>Das Fliehen während eines laufenden Spiels wurde vom Gruppenadmin deaktiviert!</value>
   </string>
-  <string key="IsDead"> <!-- used when gunner shoots a player -->
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
     <value>ist tot</value>
   </string>
   <!-- MORE STRINGS May 16, 2016 -->
   <string key="AdminAdded">
+    <!-- 0 - target's name -->
     <value>{0} ist jetzt ein Gruppenadmin. Benutze /config, um Spieleinstellungen zu verändern.</value>
   </string>
   <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
     <value>Du bist bereits in einem Spiel! ({0})</value>
   </string>
   <string key="MultipleGames">
     <value>Die Gruppe startete mehrere Spiele zugleich... Überflüssige Spiele werden entfernt.</value>
   </string>
   <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
     <value>Die Gruppe ist momentan in der Warteschlange. Position: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
+    <!-- 0 - target's name -->
     <value>Aufgrund von Wartungsarbeiten müssen wir eine kurze Pause einlegen.\nEs muss noch auf {0} Spiele gewartet werden...\nSiehe @werewolfdev für mehr Informationen</value>
   </string>
   <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
     <value>Sorry, das Maximum an gleichzeitig laufenden Spielen wurde erreicht. Leider können keine weiteren Spiele gestartet werden ({0}).  \nPosition in der Warteschlange: {1} / {1}</value>
   </string>
   <string key="SkipQueue">
+    <!-- 0 - target's name -->
     <value>{0} ist eine bevorzugte Gruppe und hat deshalb die Warteschlange übersprungen!</value>
   </string>
   <string key="NoGame">
-    <value>Es wurde kein Spiel gestartet.  Starte ein neues Spiel mit /startgame  oder mit /startchaos, falls ihr im Chaosmodus spielen wollt.</value>
+    <value>Es wurde kein Spiel gestartet. Starte ein neues Spiel mit /startgame oder mit /startchaos, falls ihr im Chaosmodus spielen wollt.</value>
   </string>
   <string key="GroupAdminOnly">
     <value>Nur Gruppenadmins können diesen Befehl ausführen.</value>
@@ -515,18 +709,22 @@
     <value>Nach diesem Spiel wird der Bot wegen eines automatischen Updates kurz pausiert.</value>
   </string>
   <string key="NullIdAdmin">
-    <value>UserID war null.  Sicher, dass du die Nachricht als Antwort gesendet hast?</value>
+    <value>UserID war null. Sicher, dass du die Nachricht als Antwort gesendet hast?</value>
   </string>
   <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
     <value>{0} ist bereits ein Admin!</value>
   </string>
   <string key="NotAdmin">
+    <!-- 0 - target's name -->
     <value>{0} ist kein Admin!</value>
   </string>
   <string key="AdminRemoved">
+    <!-- 0 - target's name -->
     <value>{0} wurde von der Adminliste entfernt.</value>
   </string>
   <string key="LanguageSet">
+    <!-- 0 - language's name -->
     <value>Die Sprache wurde geändert zu: {0}</value>
   </string>
   <!-- new strings, don't know when they were added :P -->
@@ -550,31 +748,48 @@
     <value>Du bist der Serienmörder 🔪. Nachdem du vor Kurzem aus dem Irrenhaus entflohen bist, willst du jetzt so viele Personen wie möglich umbringen. Jede Nacht kannst du den Körper eines Spielers zu deiner Sammlung hinzufügen.</value>
   </string>
   <string key="CupidChosen">
-    <value>Du wurdest von der Liebe ❤️ getroffen.  Die Erinnerungen an {0} werden nie in deinem Herzen verblassen.  Euer Ziel ist, dass ihr beide überlebt. Falls einer von euch stirbt, wird der andere aus Kummer nicht mehr weiterleben können.</value>
-    <value>Du hast dich unsterblich in {0} verliebt ❤️.  Nichts und niemand kann euch trennen.  Falls einer von euch stirbt, wird der andere aus Liebeskummer Selbstmord begehen.</value>
+    <value>Du wurdest von der Liebe ❤️ getroffen. Die Erinnerungen an {0} werden nie in deinem Herzen verblassen. Euer Ziel ist, dass ihr beide überlebt. Falls einer von euch stirbt, wird der andere aus Kummer nicht mehr weiterleben können.</value>
+    <value>Du hast dich unsterblich in {0} verliebt ❤️. Nichts und niemand kann euch trennen. Falls einer von euch stirbt, wird der andere aus Liebeskummer Selbstmord begehen.</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>Das Dorf hat gewählt, dich zu lynchen! Dies ist deine letzte Chance; wähle jemanden, den du erschießt, während du stirbst!</value>
+    <value>Das Dorf hat gewählt, dich zu lynchen! Dies ist deine letzte Chance, wähle jemanden, den du erschießt, während du stirbst!</value>
+	<value>Das Dorf hat sich dafür entschieden, dich zu lynchen! Dies ist deine letzte Chance, um eine dir unliebsame Person mit in den Tod zu reißen. Eigentlich wären sie ja alle geeignete Kandidaten, so gehässig, wie sie sich dir gegenüber immer verhalten haben - aber die Zeit drängt!</value>
   </string>
   <string key="HunterNoChoiceLynched">
     <value>{0} tastet nach seiner Pistole 🎯, während die Schlinge sich um seinen Hals zuzieht, aber er schafft es nicht rechtzeitig und fällt mit einem lauten Knacken seines Nackens in den Tod...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} zückt seine Pistole 🎯, schaut in die Menschenmenge... und kann sich nicht entscheiden, wen er erschießen soll.  Er fällt, sein Schicksal, akzeptierend in seinen Tod...</value>
+    <value>{0} zückt seine Pistole 🎯, schaut in die Menschenmenge... und kann sich nicht entscheiden, wen er erschießen soll. Er fällt, sein Schicksal akzeptierend, in seinen Tod...</value>
   </string>
   <string key="HunterKilledFinalLynched">
-    <value>Während die Schlinge sich um den Hals von {0} zuzieht, zückt er eine Pistole 🎯, lädt sie, zielt, und drückt ab, um {1} zu erschießen! {1} fällt um, tot.  {2}</value>
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Während die Schlinge sich um den Hals von {0} zuzieht, zückt er eine Pistole 🎯, lädt sie, zielt, und drückt ab, um {1} zu erschießen! {1} fällt um, tot. {2}</value>
+	<value>Obwohl die Uhr gegen ihn spielt, schaut sich {0} die Gesichter seiner Mörder genau an, blickt dabei jedem einzelnen kurz in die Augen - fast wie ein Lehrer, der sich nicht sicher ist, wen er als nächstes drannehmen soll. Schließlich bleibt sein Blick an einer Gestalt hängen: er nickt zufrieden, zückt sein Gewehr 🎯 und erschießt {1}, während auch er seinen letzten Atemzug nimmt. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>Der Schütze hat dich getötet!  In deinen letzten Momenten hast du die Gelegenheit, jemanden zu erschießen... beeil dich!</value>
+  <!-- Default HunterKill-Message, von Narius im Code auszubessern -->
+  <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
+    <!-- <value>Der Schütze hat dich getötet! In deinen letzten Momenten hast du die Gelegenheit, jemanden zu erschießen... beeil dich!</value> -->
+  <value>Du wurdest getötet! In deinen letzten Momenten hast du die Gelegenheit, jemanden zu erschießen... beeil dich!</value>
+  <value>Man hat dich getötet! Bevor du den Löffel ganz abgibst, hast du aber die Möglichkeit, einen dir unliebsamen Mitbewohner, von dem du dich immer schlecht behandelt gefühlt hast, mit in den Tod zu reißen. Wie du dich nun entscheidest - ob nun per Zufall, oder ob du dich an jemand Bestimmten rächen willst - liegt ganz bei dir. Aber eins ist sicher: du musst dich beeilen!</value>
   </string>
   <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+	<!-- Default HunterKill-Message, von Narius im Code auszubessern -->
+  <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
+	<value>Der Angriff auf {0} war zu viel; so viel, dass er nicht einmal nach seiner Waffe 🎯 greifen konnte, als er in der Pfütze aus Blut lag...</value>
     <value>Der Schuss auf {0} war zu viel; so viel, dass er nicht einmal nach seiner Waffe 🎯 greifen konnte, als er in der Pfütze aus Blut lag...</value>
   </string>
   <string key="HunterSkipChoiceShot">
-    <value>Während {0} da liegt, die letzten Atemzüge nehmend, kann er sich nicht entscheiden, wenn er töten soll... 🎯 und akzepziert sein Schicksal...</value>
+    <!-- 0 - hunter's name -->
+    <value>Während {0} am Boden liegt, die letzten Atemzüge nehmend, kann er sich nicht entscheiden, wenn er töten soll... 🎯 und akzepziert sein Schicksal...</value>
   </string>
   <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
     <value>Während die Kugel {0} durchbohrt, fällt er zu Boden... aber nicht ohne nach seiner Pistole 🎯 zu greifen und {1} abzuschießen, welchen die Kugel direkt zwischen seinen Augen trifft. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
@@ -582,49 +797,70 @@
     <value>Der Kult sendet {0} aus, um {1} zu konvertieren, doch stattdessen fliegt der Körper von {0} aus dem Fenster, mit Messern 🔪 in jedem Teil seines Körpers! WAS FÜR EIN PSYCHO! {0} ist tot...</value>
   </string>
   <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
     <value>Die Wölfe haben zwar letzte Nacht den Jäger 🎯 getötet, aber der Jäger konnte noch jemanden mit in den Tod reißen! {0} ist gestorben (Wolf)</value>
   </string>
   <string key="HunterShotWolf">
-    <value>Der Wolf versuchte letzte Nacht den Jäger 🎯 zu töten, dieser konnte den Wolf {0} jedoch vorher durch mit Hilfe seines Gewehrs zur Strecke bringen!</value>
+    <!-- 0 - target's name -->
+    <value>Der Wolf versuchte letzte Nacht den Jäger 🎯 zu töten, dieser konnte den Wolf {0} jedoch vorher mit Hilfe seines Gewehrs zur Strecke bringen!</value>
   </string>
   <string key="SerialKillerKilledWolf">
     <value>Die Wölfe haben versucht ein Abendmahl zu nehmen, aber trafen stattdessen einen verrückten Mörder 🔪! {0} wurde im Kampf getötet!</value>
   </string>
   <string key="DefaultKilled">
-    <value>{0} schien es erst so, als würde es eine ruhige Nacht werden, aber er lag falsch.  Die Dorfbewohner versammeln sich am nächsten Morgen, um {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, aber merkwürdigerweise fehlte die Leber...  Der Serienmörder 🔪 hat wieder zugeschlagen - {1}</value>
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0} schien es erst so, als würde es eine ruhige Nacht werden, aber er lag falsch. Die Dorfbewohner versammeln sich am nächsten Morgen, um {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, aber merkwürdigerweise fehlte die Leber... Der Serienmörder 🔪 hat wieder zugeschlagen! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
     <value>Du hast versucht, den Körper von {0} in deine Sammlung aufzunehmen, wurdest aber vom Schutzengel 👼 abgewehrt! Keine Tötung für dich diese Nacht...</value>
   </string>
   <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
     <value>Der Kult sendet {0}, um {1} zu konvertieren, doch stattdessen hört man einen Schuss 🎯, als der Körper von {0} aus dem Fenster geflogen kommt! {0} ist tot...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} schleicht zu dem Haus von {1}, platzt herein, und wird direkt von einem Wahnsinnigen mit einem Messer 🔪 begrüßt!!! In alphabetischer Reihenfolge durchsticht {1} mit seinem Messer die Organe von {0} - {0} ist jetzt tot...</value>
+    <value>Der Kult sendet {0} aus, um {1} zu konvertieren, doch stattdessen fliegt der Körper von {0} aus dem Fenster, mit Messern 🔪 in jedem Teil seines Körpers! WAS FÜR EIN PSYCHO! {0} ist tot...</value>
   </string>
   <string key="GuardKiller">
     <value>Du hast versucht den Serienmörder 🔪 zu schützen, doch er kam heraus und stach dich 89 Mal! Du bist tot...</value>
   </string>
   <string key="HarlotFuckKiller">
-    <value>Du schlüpfst in das Haus von {0} und fängst an, ein bisschen Spaß zu haben.  Alles scheint gut zu gehen, bis {0} ein Messer enthüllt und auf dich einsticht 🔪, dabei wahnsinnig lachend!  Du bist gestorben...</value>
+    <!-- 0 - target's name -->
+    <value>Du schlüpfst in das Haus von {0} und fängst an, ein bisschen Spaß zu haben. Alles scheint gut zu gehen, bis {0} ein Messer enthüllt und auf dich einsticht 🔪, dabei wahnsinnig lachend! Du bist gestorben...</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>(Dieser Text ist im Moment unwichtig!)</value>
   </string>
   <string key="DGToMason">
+    <!-- 0 - target's name -->
     <value>Der Doppelgänger 🎭 {0} ist jetzt ein Freimaurer, genau wie du!</value>
   </string>
   <string key="DGTransformToMason">
-    <value>{0} ist gestorben, und du verwandelst dich in einen Freimaurer 👷.  Deine Kameraden sind (falls vorhanden): {1}</value>
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ist gestorben, und du verwandelst dich in einen Freimaurer 👷. Deine Kameraden sind (falls vorhanden): {1}</value>
   </string>
   <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
     <value>Der Doppelgänger 🎭 {0} ist zum Kultisten geworden, genau wie du!</value>
   </string>
   <string key="DGTransformToCult">
-    <value>{0} ist gestorben, und du verwandelst dich in einen Kultisten 👤.  Deine Brüder und Schwestern sind (falls vorhanden): {1}</value>
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ist gestorben, und du verwandelst dich in einen Kultisten 👤. Deine Brüder und Schwestern sind (falls vorhanden): {1}</value>
   </string>
   <string key="DGToWolf">
+    <!-- 0 - DG's name -->
     <value>Der Doppelgänger 🎭 {0} ist jetzt ein Wolf, genau wie du!</value>
   </string>
   <string key="DGTransformToWolf">
-    <value>{0} ist gestorben, und du verwandelst dich in einen Wolf 🐺.  Deine Kollegen sind (falls vorhanden): {1}</value>
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ist gestorben, und du verwandelst dich in einen Wolf 🐺. Deine Kollegen sind (falls vorhanden): {1}</value>
   </string>
   <string key="SerialKillerWins">
     <value>Die einzig lebende Person, die verbleibt, ist der Serienmörder! Er hat gewonnen!</value>
@@ -637,7 +873,10 @@
     <value>Wen willst du heute aufschlitzen?</value>
   </string>
   <string key="LoverDied">
-    <value>Mit dem sterbendem Atemzug von {0} eilt {1} vorbei und fällt weinend auf die Knie.  Er kann den Tod seiner Geliebten ❤️ nicht ertragen und erschießt sich mit der nächsten aufzutreibenden Pistole. {2}</value>
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Mit dem sterbendem Atemzug von {0} eilt {1} herbei und fällt weinend auf die Knie. Er kann den Tod seiner Geliebten ❤️ nicht ertragen und erschießt sich mit der nächsten aufzutreibenden Pistole. {2}</value>
   </string>
   <string key="AskDoppelganger">
     <value>Wer möchtest du werden, wenn diejenige Person stirbst?</value>
@@ -661,191 +900,204 @@
     <value>der Doppelgänger 🎭</value>
   </string>
   <string key="CupidChosen">
-    <value>Amors Pfeil trifft dich! Du bist wahnsinning in {0} verliebt ❤️!  Falls diese Person stirbt, stirbst du ebenfalls.  Falls ihr es beide bis zum Ende schafft, werdet ihr beide gewinnen.</value>
+    <!-- 0 - lover's name -->
+    <value>Amors Pfeil trifft dich! Du bist wahnsinning in {0} verliebt ❤️! Falls diese Person stirbt, stirbst du ebenfalls. Falls ihr es beide bis zum Ende schafft, werdet ihr beide gewinnen.</value>
   </string>
   <string key="NewWCRoleModel">
-    <value>Du bist das wilde Kind.  Dein Vorbild ist {0}.</value>
+    <!-- 0 - target's name -->
+    <value>Du bist das wilde Kind. Dein Vorbild ist {0}.</value>
   </string>
   <string key="LoversWin">
     <value>Wahre Liebe hält am längsten! Die Liebenden haben gewonnen!</value>
   </string>
   <string key="HunterKilledVisiter">
-    <value>Inmitten des Dorfzentrums finden die Dorfbewohner den Körper von {0}, mehrfach beschossen.  Sieht so aus, als hätte er versucht, sich an den Jäger 🎯 anzuschleichen! {1}</value>
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Inmitten des Dorfzentrums finden die Dorfbewohner den Körper von {0}, mehrfach beschossen. Sieht so aus, als hätte er versucht, sich an den Jäger 🎯 anzuschleichen! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>Eine verschleierte Gestalt versuchte, dich zu seinem Kult zu bekehren, doch dein Geist war zu stark.</value>
   </string>
   <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
     <value>Du bist schon auf der Warteliste für {0}</value>
   </string>
   <string key="AddedToWaitList">
-    <value>Du wurdest zur Warteliste für {0} hinzugefügt.  Ich werde dir privat eine Nachricht schreiben, sobald das nächste Spiel startet.</value>
+    <!-- 0 - target's name -->
+    <value>Du wurdest zur Warteliste für {0} hinzugefügt. Ich werde dir privat eine Nachricht schreiben, sobald das nächste Spiel startet.</value>
   </string>
   <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
     <value>Ein neues Spiel startet in {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
     <value>Der Morgen bricht an und die verbleibenden beiden Dorfbewohner gehen nach draußen zum Dorfplatz. {0} wirft einen Blick auf {1} und er muss auf einmal grinsen, zieht sein Messer 🔪 und ermordet {1}.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Jeder im Dorf starb...  die toten Körper liegen überall herum.  Niemand gewinnt die Runde...</value>
+    <value>Jeder im Dorf starb... die toten Körper liegen überall herum. Niemand gewinnt die Runde...</value>
   </string>
   <string key="SKHunterEnd">
-    <value>Als die Sonne aufgeht, spazieren {0} und {1} in Richtung Dorf. Plötzlich nimmt {0} das Messer 🔪 heraus und springt auf {1}.  Gerade als {0} das Messer tief in sein Herz rammt, greift {1} nach seinem Gewehr 🎯 und schießt {0} mit einem gezielten Schuss in den Kopf.  Beide sind tot und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value>
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Als die Sonne aufgeht, spazieren {0} und {1} in Richtung Dorf. Plötzlich nimmt {0} das Messer 🔪 heraus und springt auf {1}. Gerade als {0} das Messer tief in sein Herz rammt, greift {1} nach seinem Gewehr 🎯 und schießt {0} mit einem gezielten Schuss in den Kopf. Beide sind tot, und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
-    <value>Du hast dir nichts ausgesucht, also hat das der Bot für dich gemacht: {0}</value>
+    <value>Du hast vergessen zu wählen, daher hat der Moderator {0} für dich ausgewählt.</value>
+    <value>Nichts als Flausen im Kopf! Dein Vormund hat beschlossen, dass {0} ein gutes Vorbild für dich wäre.</value>
   </string>
   <string key="Won">
-    <value>hat gewonnen</value>
+    <value>Won</value>
   </string>
   <string key="Lost">
-    <value>hat verloren</value>
+    <value>Lost</value>
   </string>
   <string key="IdleCount">
     <!-- 0 - player's name -->
     <!-- 1 - idle count -->
-    <value>Spieler {0} wurde getötet, da er {1} mal keine Spieler in den letzten 24h umgebracht hat.</value>
+    <value>Das war das {1}. Mal, dass {0} innerhalb der letzten 24 Stunden wegen Nicht-Abstimmens getötet wurde.</value>
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
-    <value>Deine Rolle ist einfach: Versuch zu überleben. Jeden Tag hast du die Chance, den Werwolf zu hängen.</value>
+    <value>Als Dorfbewohner 👱 mag dein Leben vielleicht erst einmal nicht so rosig aussehen - dafür hast du immer eine ruhige Nacht und kannst dich tagsüber in Ruhe auf die Abstimmung vorbereiten, um das Böse auszutreiben.</value>
   </string>
   <string key="AboutSeer">
-    <value>Du bist der Seher. In dieser Rolle kannst du jede Nacht einen Spieler aussuchen und wirst daraufhin deren Rolle sehen können. Behandle deine Identität weise: Wenn du zugibst, dass du der Seher bist, werden dich die Werwölfe versuchen zu töten!</value>
+    <value>Du bist der Seher 👳. Nachts kannst du die Rolle eines Spielers in Erfahrung bringen - ob du dafür eine Glaskugel nutzt, Tarotkarten oder die Sache einfach auswürfelst, interessiert ehrlich gesagt im Dorf niemanden... Aber Achtung; gehe weise mit deinem Wissen um. Als Seher bist du natürlich ein interessantes Angriffsziel - dann nutzt du mit deinem Wissen niemandem mehr!</value>
   </string>
   <string key="AboutWw">
-    <value>Du kannst Spaß haben! Jeden Tag wirst du versuchen deine Mitspieler zu täuschen, aber jede Nacht kannst du dir einen Spieler aussuchen den du töten willst! Hinweis: Falls du den Betrunkenen angreifst, wirst du selber betrunken und kannst die nächste Nacht wegen deines Katers nicht angreifen! Falls du den Verfluchten angreifst, werden sie wie du auch zu einem Werwolf! Hurra, Freunde!</value>
+    <value>Du bist ein Gestaltwandler - also gewissermaßen. Während des Tages als normaler Bewohner des Dorfes um deine Deckung bemüht, bist du in der Nacht ein Werwolf 🐺 und kannst einen Spieler auswählen, den du töten willst. Aber Obacht! Wenn du dich für den Betrunkenen entscheidest, hast du zwar genug Disziplin, um zum täglichen Lynchen zu erscheinen, bist aber nicht mehr in der Lage, in der nächsten Nacht auf die Jagd zu gehen. Die Hure kannst du nur töten, wenn du ihren Dienstplan kennst und weißt, wann sie sich entscheidet, die Nacht zuhause zu verbringen. Wenn sie jedoch in der Nacht unterwegs ist, dann findest du nur ein leeres Haus vor und kehrst frustriert von deiner vergeblichen Jagd zurück. Wenn du versuchst, den Verfluchten zu fressen, verwandelt dieser sich auch in einen Werwolf und begleitet dich von nun an bei deinen Abenteuern - geh dem Jäger jedoch lieber aus dem Weg. Er ist geübt im Umgang mit seiner Waffe und kann sie im letzten Moment auf dich richten und dich mit in den Tod reißen. Wenn du der einzige Werwolf bist, und er es schafft, noch einen Schuss auf dich abzufeuern, dann stirbst du nicht nur, der Jäger überlebt es auch noch knapp. Dein größter Fehler wäre es, zu versuchen, den Serienmörder zu fressen. Du bist sowohl seinem Wahnsinn, als auch seinen Waffen nicht gewachsen und schaffst es nicht mehr, nach deinem Überraschungsangriff zu entkommen und stirbst, ohne diesen zu verletzen.</value>
   </string>
   <string key="AboutHarlot">
-    <value>Als die Hure wirst du jede Nacht die Chance haben einen anderen Spieler zu 'besuchen'. Falls der Spieler kein Wolf ist, wird dir das gesagt (weil du lebst!). Falls du einen Wolf besuchst, wirst du getötet. Falls du den Spieler besuchst der von den Werwölfen getötet wird, stirbst du ebenfalls. Aber: Wenn du jemanden besuchst und die Wölfe dich töten wollen, wirst du überleben (du warst nicht zuhause).</value>
+    <value>Du bist die Hure 💋 des Dorfes - was würden denn deine Eltern jetzt sagen?! Aber wie auch immer, Gott möge dir verzeihen. Du darfst jede Nacht einen deiner Mitbürger besuchen - nimm dich jedoch in Acht vor den anderen Wesen der Nacht! Wenn du einen Wolf besuchst, wirst du das nicht überleben... genauso verhält es sich, wenn dein Freier von einem Wolf heimgesucht wird. Ihr sterbt dann beide und werdet vielleicht fälschlicherweise als Romeo und Julia beerdigt (willst du das?). Aber, Kopf hoch: wenn die Wölfe dich erwählen, passiert dir nichts - du bist schließlich nicht zuhause!
+\nÜbrigens; halte die Augen offen... es könnten sich auch Kultisten im Dorf rumtreiben! Du bist zwar nicht die Hellste, aber manchmal kannst du ihre Absichten doch erkennen, und wirst nicht konvertiert - natürlich nur, wenn du in der Nacht überhaupt zuhause bist...</value>
   </string>
   <string key="AboutDrunk">
-    <value>Du betrunkener Mistkerl! Als der Betrunkene bist du immer noch ein normaler Dorfbewohner. ABER: Wenn die Wölfe dich töten, werden sie behindert da sie von deinem unglaublich hohen BAK betrunken sein werden.</value>
+    <value>Prost 🍻! Dein Leben ist einfach: du hast zwar kein Zuhause mehr (und dein Chef hat dir auch gekündigt), aber wer braucht schon solch einen Luxus, solange das Licht in der Dorfkneipe noch brennt?! Genau. Im Dorf bist du trotzdem recht beliebt - jeder weiß, dass es auch einen Wolf eine ganze Nacht ausknockt, wenn er deinen Blutcocktail trinkt!</value>
   </string>
   <string key="AboutCursed">
-    <value>Als der Verfluchte bist du immer noch ein normaler Dorfbewohner... bis die Wölfe dich töten. Wenn sie das tun wirst du ebenfalls zu einem Wolf! Frei, nachts jagen zu gehen..... XD</value>
+    <value>Als Verfluchter 😾 hast du nicht die offizielle Erlaubnis zu fluchen, nein, viel mehr hängt das Verflucht-Sein mit deinem Schicksal zu tun: du bist zwar ein Dorfbewohner, aber wenn dich in der Nacht ein Wolf beißt, verwandelst du dich ebenfalls in eine blutrünstige Bestie ;)</value>
   </string>
   <string key="AboutTraitor">
-    <value>Du bist ein verräterischer Bastard. Wenn du lange genug überlebst bis alle Wölfe sterben, wirst du selber einer, bereit deine ehemaligen Teamkameraden nachts zu töten!</value>
+    <value>Du Verräter 🖕! Du bist zwar anfangs ein Dorfbewohner, aber das kann sich jederzeit ändern: eigentlich kannst du die Dummköpfe nämlich gar nicht leiden. Wenn alle Wölfe tot sind, schlüpfst du in dein Wolfskostüm und ziehst dann an ihrer Stelle um die Häuser, um dich an den Dorfbewohnern zu rächen! Du bist zwar sehr gut darin, deinen Hass zu verstecken, aber der Seher kommt dir manchmal doch auf die Schliche - er kann dich zwar als Dorfbewohner sehen, aber auch als Verräter oder Wolf...</value>
   </string>
   <string key="AboutGA">
-    <value>Du bist der Schutzengel! Jede Nacht darfst du einen Spieler beschützen. Sei aber vorsichtig - falls du einen Werwolf aussuchst, gibt es eine 50%ige Chance dass du stirbst.</value>
+    <value>Du bist ein von Gott gesandter Engel 👼, dazu berufen, die bösen Kreaturen aufzuhalten! Jede Nacht kannst du über einen Bewohner wachen, um ihn vor dem Bösen zu schützen - aber gib Acht, nicht jeder will beschützt werden... der Serienmörder hat es gar nicht gerne, und auch der Wolf wird dich nur mit 50%iger Wahrscheinlichkeit am Leben lassen... Dafür schläfst du nachts etwas ruhiger, wenn Kultisten um dein Haus ziehen: durch deine gottgegebenen Kräfte hast du die Chance, sie abzuwehren!</value>
   </string>
   <string key="AboutDetective">
-    <value>Du alter Schnüffler... Jeden Tag hast du die Möglichkeit einen anderen Spieler zu untersuchen. Sei aber vorsichtig, mit einer 40%igen Chance wirst du dabei von den Werwölfen entdeckt!</value>
+    <value>No shit Sherlock, du bist tatsächlich der Detektiv 🕵! Jeden Tag hast du die Möglichkeit, einem beliebigen Bewohner hinterher zu spionieren, um am Ende des Tages Gewissheit zu haben. Aber nimm dich in Acht, wenn du schnüffelst, werden vielleicht die Wölfe auf dich aufmerksam! (40% Wahrscheinlichkeit) \nWenn Kultisten durch das Dorf wandeln, kannst du dich mit deiner Lupe etwas sicherer fühlen, denn die Reflektion verschreckt sie manchmal!</value>
   </string>
   <string key="AboutGunner">
-    <value>Ein wenig schießfreudig, nicht wahr? Als der Schütze werden dir am Spielanfang zwei silberne Kugeln gegeben. Jeden Tag kannst du damit einen anderen Spieler erschießen. Wenn du das tust, wird jeder wissen dass du der Schütze bist! Sei aber vorsichtig, du hast nur 2 Kugeln!</value>
+    <value>Du bist der Schütze 🔫 - und hast leider auch etwas zu viele Actionfilme gesehen. Gehe vorsichtig mit deiner Waffe um, denn wen du hier erschießt, der ist auch wirklich tot! Als kleine Vorsichtsmaßnahme hast du deshalb auch nur zwei Kugeln. Während des Tages kannst du einen Spieler aussuchen - nicht vergessen, das Zielwasser zu trinken! - und wirst diesen dann bei Anbruch der Dämmerung, genau vor der Abstimmung, zur Strecke bringen. Aber aufgepasst; wenn du abziehst, hört das ganze Dorf den Schuss: jeder weiß dann also, dass du der Schütze bist</value>
   </string>
   <string key="AboutTanner">
-    <value>Das Ziel des Gerbers ist simpel: Werde gehängt. Wenn der Gerber gehängt wird gewinnt er, Ende. Alle anderen verlieren.</value>
+    <value>Du bist der Gerber 👺. Du bist ein Außenseiter und im Dorf nicht besonders beliebt, aber das ist gut: dein einziges Ziel ist es nämlich, alle glauben zu lassen, dass du ein Werwolf bist. Wenn du gelyncht wirst, gewinnst du - und alle anderen gucken dumm aus der Wäsche ;)</value>
   </string>
   <string key="AboutFool">
-    <value>Dem Narren wird gesagt, dass er der Seher ist... Wenn er sich die Rolle eines Spielers zeigen lässt, wird ihnen eine zufällige Rolle gesagt.</value>
+    <value>Du bist der Narr 🃏. Zwar liebenswürdig, aber auch gefährlich, auf deine eigene Weise: weil du es nicht besser weißt, behauptest du, der Seher zu sein - dabei sind die Rollen, die dir angezeigt werden, komplett zufällig! Vielleicht hättest du damals bei Professor Trelawney doch besser aufpassen sollen...</value>
   </string>
   <string key="AboutCult">
-    <value>Als Kultist ist es dein Ziel, alle anderen Spieler (ausgenommen Wölfe) zu deinem Kult zu konvertieren. Wenn am Ende des Spiels jeder Kultist ist, gewinnt der Kult.</value>
+    <value>Du bist ein Kultist 👤 - fashiontechninsch vielleicht nicht ganz auf der Höhe, trotzdem - oder vielleicht gerade deshalb? - bist du relativ erfolgreich: jede Nacht kannst du einen Spieler aussuchen, den du zu deinem Kult bekehren willst; und das ist auch dein Lebensmotto: das ganze Dorf zu bekehren. Wenn am Ende nur noch Kultisten überleben, gewinnt ihr! Aber nicht immer hast du Glück - manche Bewohner sind schwerer zu bekehren als Andere...</value>
   </string>
   <string key="AboutCH">
-    <value>Deine Aufgabe ist es, den Kult zu jagen. Falls dieser dich attackiert, wird das neueste Mitglied von ihnen sterben. Jede Nacht darfst du einen Spieler 'jagen' - wenn sie ein Kultist sind, sterben sie.</value>
+    <value>Du bist der Kultjäger 💂, und, selbsternannter Fashionbeauftragter: schwarz ist so out! (Deshalb hasst du auch die Kultisten so.) Jede Nacht kannst du einen deiner Mitbürger besuchen, um ihren Kultstatus zu überprüfen - sollte er dazu gehören, benutze dein Schwert! Natürlich bist du auch gefeit gegen Angriffe aus dem Kult: sollten die Fashionvictims tatsächlich versuchen, dich zu attakieren, stirbt ihr neustes Mitglied.</value>
   </string>
   <string key="AboutWC">
-    <value>Am Anfang des Spiels suchst du dir ein 'Vorbild' aus. Wenn dieses stirbt, wirst du zum Werwolf.</value>
+    <value>Du bist das wilde Kind 👶! Jung und unerfahren, dafür aber rotzfrech. Trotzdem sitzt dein Herz am rechten Fleck und du hast auch ein Vorbild, das du anfangs auswählst und heimlich bewunderst - sollte dein Vorbild sterben, rennst du von zuhause fort und wirst ein Werwolf, um den Tod deiner Ikone zu rächen!</value>
   </string>
   <string key="AboutAppS">
-    <value>Im Moment bist du ein normaler Dorfbewohner. Wenn aber der Seher stirbt, wirst du der neue Seher.</value>
+    <value>Du bist der Seher-Lehrling 🙇! Noch führst du ein einfaches Leben, ohne Verpflichtungen, aber das wird sich ändern, sobald der - echte - Seher stirbt: dann nimmst du seinen Platz ein, mit den gleichen Rechten und Fähigkeiten wie dein Meister!</value>
   </string>
   <string key="AboutBH">
-    <value>Dir wird gesagt wer der Seher ist (der echte, nicht der Narr)</value>
+    <value>Du bist der Beobachter 👁! Und nein, an deiner Profession ist nichts Untugendhaftes: du weißt lediglich, wer - und ob - es einen (richtigen) Seher gibt: mit dem Narren gibst du dich erst gar nicht ab!</value>
   </string>
   <string key="AboutMason">
-    <value>Die Aufgabe des Freimaurers ist einfach - sie wissen automatisch wer die anderen Freimaurer sind. Ansonsten sind sie einfache Dorfbewohner.</value>
+    <value>Nach einem beschwerlichen Leben voller Arbeit hast du das Gefühl, etwas verändern zu wollen und, nach dem Sinn des Lebens suchend, entschließt du dich, ein Freimaurer 👷 zu werden. Dabei stehen für dich vor allem die Ideale Freiheit, Gleichheit und Brüderlichkeit im Mittelpunkt. Da du eine Loge gründest, um dich mit Gleichgesinnten auszutauschen, kennst du auch alle anderen Freimaurer im Spiel. Ansonsten erfüllst du auch weiterhin deine Pflichten als Dorfbewohner und erscheinst jeden Abend zum Lynchen. Durch eure regelmäßigen Treffen erfährst du auch, wenn einer der Euren vom Kult verführt wurde und diesem beitrat.</value>
   </string>
   <string key="AboutDG">
-    <value>
-      Deine Vorfahren konnten sich frei in andere Formen verwandeln... während du zwar nicht ihre vollen Fähigkeiten hast, kannst du dir am Anfang des Spiels einen Spieler aussuchen. Falls dieser Spieler stirbt, wirst du zu dem was er vorher war.
-      Hinweis: Falls der Spieler zum Kult konvertiert wurde, wirst du zu seiner ursprüngliche Rolle. Alle anderen Regeln gelten: Falls er das Wilde Kind war und sein Vorbild starb, wirst du zum Werwolf. Ansonsten wirst du seinen Vorgänger übernehmen.
-      Der Kult kann den Doppelgänger nicht konvertieren, außer er hat schon die Rolle gewechselt. Noch was - der Doppelgänger kann NICHT gewinnen ohne sich verwandelt zu haben. Falls er am Ende des Spiels immer noch Doppelgänger ist, verliert er (Ausnahme: Liebender)
-    </value>
+    <value>Du bist der Doppelgänger 🎭 - schon deine Ahnen verstanden sich gut darin, in die Rollen anderer zu schlüpfen: sie waren berühmte Schauspieler, Geheimagenten und Identitätsfälscher. In so einem kleinen Dorf ist es natürlich schwieriger, nicht aufzufallen - deshalb nimmst du die Identität dessen, den du bei deinem Einzug ins Dorf wählst, auch erst nach dessen Tod an. Du schlüpfst vollständig in die Rolle dessen, den du kopierst: hast die gleichen Fähigkeiten, musst allerdings auch mit den Entscheidungen dessen leben: kopierst du das wilde Kind, übernimmst du dessen Vorbild - und wenn dieses schon tot ist, wirst du direkt zum Wolf.
+	\nSollten Kultisten im Dorf verkehren, haben sie keine Möglichkeit, den Doppelgänger zu bekehren, bevor er sich nicht verwandelt hat. Außerdem verliert der Kult ein Mitglied, sollte der vom Doppelgänger Kopierte Kultist gewesen sein: der Doppelgänger nimmt dann die urprüngliche Rolle des Toten ein.
+	\nAls Doppelgänger ist es dir ganz wichtig, dass das Dorf erkennt, wie gut du deine Profession beherrscht: solange du dich nicht verwandelt hast, kannst du das Spiel auch nicht gewinnen! Wenn das Spiel vorbei ist, und du noch du bist... verlierst du.</value>
   </string>
   <string key="AboutCupid">
     <value>
-      Love is in the air. Als Amor suchst du dir am Anfang des Spiels zwei Spieler aus. Diese beiden Spieler werden wahnsinnig verliebt sein! Falls einer von ihnen stirbt, stirbt der andere aus Trauer :(
-      Hinweis: Die Liebenden wissen, wer der jeweils andere ist, kennen aber nicht die Rollen des anderen. Falls die Liebenden als einzige überleben, gewinnen sie, egal welches Team. Falls die Liebenden in verschiedenen Teams sind (Dorfbewohner + Werwolf), und ein Team gewinnt (Werwolf), gewinnt der Liebende (Dorfbewohner) ebenfalls. TL;DR falls beide Liebende am Ende leben und mindestens einer von ihnen im Gewinnerteam ist, gewinnen beide.
+      Es knistert, aber gewaltig! Dabei hast du deinen Job als Elektriker doch eigentlich an den Nagel gehangen - deine neue Berufskleidung ist zwar etwas seltsam, aber wer möchte nicht gern von Luft und Liebe leben? Also: deine Berufung als Amor 🏹 ist es, zwei Pfeile abzuschießen: die beiden Bewohner, die von ihnen getroffen werden, werden sich unsterblich ineinander verlieben, unfähig, ohne den jeweils anderen zu überleben: sollte einer von beiden sterben, wird sich der Andere aus Kummer das Leben nehmen... Je nachdem, wie geschickt dein Händchen ist, kann daraus ein großes Hochzeitsfest oder ein Killerpärchen entstehen!
+	  Wichtig: die Liebenden wissen zwar voneinander, bekommen die Rollen des jeweils Anderen jedoch nicht mitgeteilt. Sie gewinnen, wenn mindestens einer von ihnen im gewinnenden Team ist - sollten die Beiden es schaffen, als die letzten Beiden am Leben zu sein, gewinnen sie als Paar (Herzchen-Emoji hier evtl?)
     </value>
   </string>
   <string key="AboutHunter">
     <value>
-      Ein schießfreudiger, nachtragender Spieler. Als der Jäger versuchst du allein zu bleiben. Falls aber andere dich besuchen, werden diejenigen vielleicht sterben, da dein Verfolgungswahn überhand nimmt und du schießt. Wenn die Wölfe dich angreifen, hast du die Gelegenheit einen von ihnen mit in den Tod zu reißen. Ansonsten hast du falls du stirbst die Chance jemanden zu erschießen während du stirbst.
-      Hinweis: Für Werwolfattacken fängt die Chance bei 30% an. Falls es einen Wolf gibt, hat der Jäger eine 30%ige Chance den Wolf zu töten (und zu überleben). Für jeden weiteren Wolf, füg 20% hinzu (2 Wölfe = 50%, 3 = 70%, usw). Wenn jedoch mehrere Wölfe da sind wirst du zwar einen töten können, wirst aber gefressen da die Werwölfe in der Überzahl sind.
-      Wenn der Kult versucht dich zu konvertieren haben sie eine 50%ige Chance, das zu schaffen. Falls sie das nicht tun, hast du eine 50%ige Chance einen von ihnen umzubringen!
+      Im Dorf nur als Jäger 🎯 bekannt, bist ein nachtragender, mürrischer Kauz, der am liebsten für sich bleibt: die Gesellschaft von anderen kannst du nicht so gut leiden - die sind sowieso alle nur neidisch auf deine Trophäen! Wie auch immer; ohne dein Gewehr gehst du sowieso nicht aus dem Haus. Und überhaupt. Das muss überall mit hin. Beim Duschen ist es, zugegebenermaßen, immer etwas hinderlich - aber du hast genügend schlechte Filme gesehen, um zu wissen, was alles hinter dadrin auf dich warten kann... aber hier musst du dich ja vor allem gegen Wölfe wappnen: vorsichtshalber schläfst du deshalb immer nur mit einer geladenen Waffe (man erkennt dich im Dorf immer am Abdruck im Gesicht). Wenn die Wölfe dich angreifen, hast du so die Möglichkeit, einen letzten Schuss abzufeuern, bevor du stirbst! (30%-Chance bei einem Wolf, +20% für jeden weiteren) Sollte der Wolf allein sein, überlebst du somit, ansonsten stirbst du zwar, reißt aber einen aus dem verfluchten Pack mit dir!
+	  Leider bist du im Dorf nicht sonderlich beliebt. So kann es kommen, dass du auch am Tag nicht sicher lebst - aber das weißt du ja schon (und hast zum Glück ja auch vorgesorgt, für alle Fälle): wenn dich der Schütze tötet, oder du beim Lynchen stirbt, kannst du dich an einem Spieler deiner Wahl rächen.
+	  Und überhaupt: wenn irgendwer an deiner Tür steht (Versicherungsvertreter, Postbote, Zeugen Jehovas) bist du ja sowieso schon misstrauisch - aber wenn nachts verschleierte Gestalten um dein Haus schleichen, kann es gut sein, dass deine Paranoia mit dir durchgeht: wenn ein Kultist versucht, dich zu konvertieren, lässt du ihn  dann mit einem Fingerzeig auf deine Waffe wieder laufen, in der anderen Hälfte der Fälle bist du schon am Morgen mit dem falschen Fuß aufgestanden und kannst nicht anders, 
     </value>
   </string>
   <string key="AboutSK">
-    <value>Dieses Irrenhaus war eh dumm. Was ein Scherz. Egal, du bist jetzt frei, zurück zu deiner Arbeit - Morden! Der Serienmörder ist ein einsamer Spieler, allein in seinem Team. Er kann nur gewinnen wenn er jeden umbringt (Ausnahme: Die Liebenden). Als Serienmörder kann er JEDEN umbringen - Wölfe, Schützen, Jäger, Schutzengel, wen auch immer er will. Falls die Wölfe versuchen dich anzugreifen, tötest du einen von ihnen (zufällig) und überlebst.</value>
+    <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhin hilfst du ihnen, diese Werwolf-Pflage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn. Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
   </string>
   <string key="AboutPara">
-    <value>Para ist ein dummer Entwickler der gerne Leute anbellt.  Vielleicht hat er sich zuviel mit Werwölfen angelegt... Sich mit Werwölfen anzulegen ist eine sehr schlechte Idee.</value>
+    <value>Para ist nur ein verrückter Entwickler, der gerne die Leute anbellt. Vielleicht hat er sich auch einfach ein wenig zu oft mit Werwölfen angelegt... Man sollte sich nicht mit Werwölfen anlegen.</value>
   </string>
   <string key="EndTime">
-    <value>Spiellänge: {0}</value>
+    <value>´Spieldauer: {0}</value>
   </string>
+  <!--New strings, July the 8th -->
+
   <string key="Day">
     <!--0 - Day -->
     <value>Tag {0}</value>
   </string>
   <string key="NodeShutsDown">
-    <value>Ein Fehler ist aufgetreten, und dieser Knotenpunkt wurde deaktiviert:/</value>
+    <value>Irgendetwas muss schief gelaufen sein... dieser Knoten hat sich abgeschaltet :/</value>
   </string>
   <string key="SentPrivate">
-    <value>Ich hab dir eine Privatnachricht geschickt</value>
+    <value>Ich habe dir privat eine Nachricht geschickt :)</value>
   </string>
   <string key="StartPM">
-    <value>Send mir bitte eine Privatnachricht damit ich dich anschreiben kann: @werewolfbot</value>
+    <value>Bitte klick mich an, damit ich dir schreiben kann: @werewolfbot</value>
   </string>
   <string key="PMTrue">
-    <value>Danke dass du mich gestartet hast! Jetzt kann ich dir schreiben.</value>
+    <value>Vielen Dank, jetzt kann ich dir schreiben!</value>
   </string>
   <string key="MustReplySmite">
-    <value>Du musst dem Nutzer antworten den du zerschmettern willst.</value>
+    <value>Du musst auf den User antworten, den du aus dem Spiel nehmen willst!</value>
   </string>
   <string key="WhatToDo">
-    <value>Was würdest du gern machen?</value>
+    <value>Was hast du vor?</value>
   </string>
   <string key="JoinFromGroup">
-    <value>Du musst einem Spiel von innerhalb einer Gruppe beitreten!</value>
+    <value>Du musst in einem Gruppenchat beitreten ;)</value>
   </string>
   <string key="StartFromGroup">
-    <value>Du musst ein Spiel von innerhalb einer Gruppe starten!</value>
+    <value>Du kannst ein Spiel nur in einer Gruppe starten.</value>
   </string>
   <string key="PingInfo">
-    <value>Zeit die Telegram die Nachricht gesendet hat: {0}\nMomentane CPU-Auslastung: {1}%\nNachrichten pro Sekunde: {2}</value>
+    <value>Reaktionszeit von Telegram: {0}\nAktuelle CPU-Auslastung: {1}%\nNachrichten pro Sekunde: {2}</value>
   </string>
   <string key="WhatLang">
-    <value>Welche Sprache?\nMomentan: {0}</value>
+    <value>Welche Sprache?\nAktuell: {0}</value>
   </string>
   <string key="WhatVariant">
-    <value>Welche Variante?\nMomentan: {0}</value>
+    <value>Welche Variante?\nAktuell: {0}</value>
   </string>
   <string key="LangSet">
-    <value>Sprache eingestellt auf {0}</value>
+    <value>Die Sprache ist nun {0}</value>
   </string>
   <string key="GetLang">
-    <value>Welche Sprachdatei runterladen?</value>
+    <value>Welche Sprachversion willst du haben?</value>
   </string>
   <string key="NoNodes">
-    <value>Es sind momentan keine Knotenpunkte aktiv, bitte probier es in ein paar Sekunden erneut</value>
+    <value>Momentan sind keine Knoten verfügbar, probier es in ein paar Sekunden nochmal :/</value>
   </string>
   <string key="GroupCommandOnly">
-    <value>Du musst dieses Kommando in einer Gruppe ausführen</value>
+    <value>Du musst dieses Kommando in einer Gruppe ausführen.</value>
   </string>
   <string key="NotGlobalAdmin">
-    <value>Du bist kein globaler Admin...</value>
+    <value>Du bist doch gar kein globaler Admin...</value>
   </string>
   <string key="NotPara">
-    <value>Du bist nicht Para!</value>
+    <value>Na, du bist überhaupt nicht Para!</value>
   </string>
   <string key="Yes">
     <value>Ja</value>
@@ -857,10 +1109,10 @@
     <value>Erlauben</value>
   </string>
   <string key="Disallow">
-    <value>Verweigern</value>
+    <value>Verbieten</value>
   </string>
   <string key="Show">
-    <value>Zeigen</value>
+    <value>Anzeigen</value>
   </string>
   <string key="Hide">
     <value>Verstecken</value>
@@ -873,101 +1125,103 @@
     <value>Nur Chaos</value>
   </string>
   <string key="PlayerChoice">
-    <value>Auswahl des Spielers</value>
+    <value>Beides (Spieler entscheiden)</value>
   </string>
 
   <!-- Show Roles on End Game -->
   <string key="ShowNone">
-    <value>Keine zeigen</value>
+    <value>Keine Rollen anzeigen</value>
   </string>
   <string key="ShowLiving">
-    <value>Nur lebende zeigen</value>
+    <value>Nur die Rollen der Lebenden</value>
   </string>
   <string key="ShowAll">
-    <value>Alle Spieler zeigen</value>
+    <value>Zeige alle Rollen</value>
   </string>
-
   <string key="Cancel">
     <value>Abbrechen</value>
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Möchtest du das Fliehen nach dem Spielstart erlauben?\nHinweis: Spieler können immer noch während der Beitrittphase fliehen\nMomentan: Spieler können {0}fliehen</value>
+    <value>Soll es den Spielern erlaubt sein, während eines Spiels zu fliehen?\nBeachte: Spieler können trotzdem während der Beitrittsphase fliehen.\nAktuell: Spieler können {0}fliehen</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Spieler dürfen {0}fliehen nach dem Spielstart</value>
+    <value>Spielern ist es {0}erlaubt, nach Start des Spiels zu fliehen.</value>
   </string>
   <string key="MaxPlayersQ">
-    <value>Wie viele Personen dürfen maximal mitspielen?\nMomentan: {0}</value>
+    <value>Wie viele Spieler dürfen maximal einem Spiel beitreten?\nAktuell: {0}</value>
   </string>
   <string key="MaxPlayersA">
-    <value>Maximale Anzahl gesetzt auf: {0}</value>
+    <value>Maximale Spieleranzahl auf {0}festgelegt</value>
   </string>
   <string key="ShowRolesDeathQ">
-    <value>Rollen nach dem Tod zeigen oder verstecken?\nMomentan: {0}</value>
+    <value>Sollen Rollen nach dem Tod eines Spielers angezeigt werden?\nAktuell: {0}</value>
   </string>
   <string key="ShowRolesDeathA">
-    <value>Rollen werden beim Tod {0}.</value>
+    <value>Die Rollen werden nach dem Tod {0} angezeigt.</value>
   </string>
   <string key="GameModeQ">
-    <value>Welcher Spielmodus soll die Gruppe haben?\nMomentan: {0}</value>
+    <value>In welchem Modus wollt ihr spielen?\nAktuell: {0}</value>
   </string>
   <string key="GameModeA">
-    <value>Spielmodus auf {0} gesetzt</value>
+    <value>Spielmodus auf {0} festgelegt.</value>
   </string>
   <string key="ShowRolesEndQ">
-    <value>Wie sollen Rollen am Ende angezeigt werden?\nMomentan: {0}</value>
+    <value>Wie willst du die Rollenverteilung am Ende darstellen?\nAktuell: {0}</value>
   </string>
   <string key="ShowRolesEndA">
-    <value>Rollenanzeige am Ende gesetzt auf: {0}</value>
+    <value>Rollenverteilung am Ende wie folgt: {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Wähl die Basiszeit (in Sekunden) für die Tageszeit.   Diese wird noch je nach Spieleranzahl verändert.\nMinimale spielerbasierte Zeit ist 60 Sekunden.  Standardeinstellung: {0}\nMomentan: {1}</value>
+    <value>Lege die Basiszeit (in Sekunden) für den Tag fest. Dies kann allerdings immer noch anhand der Spielerzahl angepasst werden. \nMinimaldauer dafür ist 60 Sekunden. Standardeinstellung: {0}\nAktuell: {1}</value>
   </string>
   <string key="SetDayTimeA">
-    <value>Basistageszeit gesetzt auf {0} Sekunden</value>
+    <value>Basiszeit für den Tag beträgt nun {0} Sekunden.</value>
   </string>
   <string key="SetNightTimeQ">
-    <value>Wähl die Zeit (in Sekunden) für die Nacht. Standardeinstellung: {0}\nMomentan:{1}</value>
+    <value>Bestimme nun die Zeit (in Sekunden) für die Nacht. Standardeinstellung: {0}\nAktuell:{1}</value>
   </string>
   <string key="SetNightTimeA">
-    <value>Nachtzeit auf {0} Sekunden gesetzt</value>
+    <value>Die Nacht dauert nun {0} Sekunden.</value>
   </string>
   <string key="SetLynchTimeQ">
-    <value>Wähl die Zeit (in Sekunden) für die Wahl des Erhängens. Standardeinstellung: {0}\nMomentan:{1}</value>
+    <value>Wähle nun aus, wie lange die Spieler zum Lynchen Zeit haben sollen (in Sekunden). Standardeinstellung: {0}\nAktuell:{1}</value>
   </string>
   <string key="SetLynchTimeA">
-    <value>Wahlzeit für das Erhängen auf {0} Sekunden gesetzt</value>
+    <value>Zeit zum Lynchen beträgt nun {0} Sekunden.</value>
   </string>
   <string key="AllowFoolQ">
-    <value>Narr als Rollenoption erlauben?\nMomentan: {0}</value>
+    <value>Willst du den Narr als Rolle zulassen?\nAktuell: {0}</value>
   </string>
   <string key="AllowFoolA">
-    <value>Narr als Rolle gesetzt auf: {0}</value>
+    <value>Einstellung für den Narren: {0}</value>
   </string>
   <string key="AllowTannerQ">
-    <value>Gerber als Rollenoption erlauben?\nMomentan: {0}</value>
+    <value>Willst du den Gerber als Rolle zulassen?\nAktuell: {0}</value>
   </string>
   <string key="AllowTannerA">
-    <value>Gerber als Rolle gesetzt auf: {0}</value>
+    <value>Einstellung für den Gerber: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Kult als Rollenoption erlauben?\nMomentan: {0}</value>
+    <value>Willst du den Kult zulassen?\nCurrent: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Kult als Rolle gesetzt auf: {0}</value>
+    <value>Einstellung für Kult: {0}</value>
   </string>
   <string key="ThankYou">
-    <value>Danke, schönen Tag noch :)</value>
+    <value>Vielen Dank, viel Spaß mit dem Bot :)</value>
   </string>
   <string key="WhatLangGroup">
-    <value>Nach welcher Sprache in einer Gruppe möchtest du suchen?</value>
+    <value>Gruppen welcher Sprache willst du finden?</value>
   </string>
   <string key="HereIsList">
-    <value>Hier sind die Gruppen für {0}:</value>
+    <value>Hier ist eine Liste der Gruppen für {0}:</value>
   </string>
   <string key="Members">
     <value>Mitglieder</value>
+  </string>
+  <string key="StartMe">
+    <value>Du musst mich starten, damit ich dir schreiben kann :)</value>
   </string>
 </strings>
