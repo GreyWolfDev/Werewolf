@@ -454,21 +454,28 @@ namespace Werewolf_Control
             {
                 inactive = db.v_InactivePlayersMain.ToList();
             }
-
-            var ingroup = new List<ChatMemberStatus> {ChatMemberStatus.Administrator, ChatMemberStatus.Creator, ChatMemberStatus.Member};
-
+            
             foreach (var p in inactive)
             {
                 try
                 {
                     //first, check if the user is in the group
-                    var status = Bot.Api.GetChatMember(Settings.MainChatId, p.TelegramId).Result;
-                    if (!ingroup.Contains(status.Status)) //user is not in group, skip
+                    var status = Bot.Api.GetChatMember(Settings.MainChatId, p.TelegramId).Result.Status;
+                    if (status != ChatMemberStatus.Member) //user is not in group, skip
                         continue;
                     //kick
                     Bot.Api.KickChatMember(Settings.MainChatId, p.TelegramId);
+
                     //unban so they can rejoin
-                    Bot.Api.UnbanChatMember(Settings.MainChatId, p.TelegramId);
+                    status = ChatMemberStatus.Kicked;
+                    while (status == ChatMemberStatus.Kicked)
+                    {
+                        
+                        Bot.Api.UnbanChatMember(Settings.MainChatId, p.TelegramId);
+                        status = Bot.Api.GetChatMember(Settings.MainChatId, p.TelegramId).Result.Status;
+                        Thread.Sleep(500);
+                    }
+
                     //let them know
                     Send("You have been removed from the main chat as you have not played in that group in the past month.  You are always welcome to rejoin!", p.TelegramId);
                 }
