@@ -213,6 +213,19 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="LastRun" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_InactivePlayersMain">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="last" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_NonDefaultGroups">
           <Key>
@@ -479,6 +492,14 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [NotifyGame].[UserId] AS [UserId], 
     [NotifyGame].[GroupId] AS [GroupId]
     FROM [dbo].[NotifyGame] AS [NotifyGame]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_InactivePlayersMain" EntityType="Self.v_InactivePlayersMain" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_InactivePlayersMain].[Id] AS [Id], 
+    [v_InactivePlayersMain].[Name] AS [Name], 
+    [v_InactivePlayersMain].[TelegramId] AS [TelegramId], 
+    [v_InactivePlayersMain].[last] AS [last]
+    FROM [db_owner].[v_InactivePlayersMain] AS [v_InactivePlayersMain]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_NonDefaultGroups" EntityType="Self.v_NonDefaultGroups" store:Type="Views" store:Schema="db_owner">
             <DefiningQuery>SELECT 
@@ -972,6 +993,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </FunctionImport>
           <EntitySet Name="v_PublicGroups" EntityType="werewolfModel.v_PublicGroups" />
           <EntitySet Name="GlobalBans" EntityType="werewolfModel.GlobalBan" />
+          <EntitySet Name="v_InactivePlayersMain" EntityType="werewolfModel.v_InactivePlayersMain" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1172,6 +1194,17 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="BannedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BanDate" Type="DateTime" Precision="3" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_InactivePlayersMain">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="last" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1582,6 +1615,16 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
                 <ScalarProperty Name="Expires" ColumnName="Expires" />
                 <ScalarProperty Name="Reason" ColumnName="Reason" />
                 <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_InactivePlayersMain">
+            <EntityTypeMapping TypeName="werewolfModel.v_InactivePlayersMain">
+              <MappingFragment StoreEntitySet="v_InactivePlayersMain">
+                <ScalarProperty Name="last" ColumnName="last" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

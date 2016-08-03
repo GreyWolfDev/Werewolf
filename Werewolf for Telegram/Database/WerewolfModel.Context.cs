@@ -46,6 +46,7 @@ namespace Database
         public virtual DbSet<v_IdleKill24HoursMain> v_IdleKill24HoursMain { get; set; }
         public virtual DbSet<v_PublicGroups> v_PublicGroups { get; set; }
         public virtual DbSet<GlobalBan> GlobalBans { get; set; }
+        public virtual DbSet<v_InactivePlayersMain> v_InactivePlayersMain { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {
