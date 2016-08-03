@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="正體中文" base="正體中文" variant="正體中文"/>
+  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad"/>
   <string key="NotInGame">
     <value>你現在似乎並不在任何遊戲裡...</value>
   </string>
@@ -701,6 +701,281 @@
     <value>當太陽升起, {0} 與 {1} 走進了鎮中心, {0} 忽然間拔出了匕首, 往 {1} 的身上跳去. 當匕首深深刺入 {1} 的胸部的同時, {1} 也毫不猶豫的拔出了一把手槍, 對 {0} 的臉上就是一槍轟爆了他的腦門... 可惜還是慢了一步, 匕首已經貫穿了 {1} 的心臟. 最後兩人都沒能活下來...</value>
   </string>
     <string key="RoleModelChosen">
-    <value>時間已到, 你仍沒做出適當的選擇, 改為系統自動指派: {0}</value>
+    <!-- 0 - target's name -->
+    <value>時間已到, 你仍沒做出選擇, 系統已自動指派: {0}</value>
+  </string>
+  <string key="Won">
+    <value>生存</value>
+  </string>
+  <string key="Lost">
+    <value>死亡</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>玩家 {0} 因為過去24小時內, {1} 次未投票而被天譴了.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>你的腳色很簡單, 努力活下去, 不犯蠢的選出狼人處死他.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>你每天晚上可以透過水晶球看見一個人的真實身分, 小心你的身分, 如果你暴露了, 狼人會嘗試去殺你.</value>
+  </string>
+  <string key="AboutWw">
+    <value>你可開心了! 每天你要欺騙其他玩家證明你的清白, 每晚你可以去殺死其中一個其他玩家, 但是如果你殺了酒鬼, 你下一晚會醉到無法出去殺人, 如果你咬了受詛咒的人, 那他將會變成你狼群中的新成員.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>身為一個妓女(你這蕩婦)你每晚都可以選擇訪問一個玩家來滿足你的欲求不滿. 如果他不是狼, 那你會活下來, 如果你爬上狼人的床, 你會在高潮中死去. 如果你爬上一個被狼人光顧的玩家家, 那你也會被一起吃掉. 但如果你當晚出去享樂狼人找上了你, 那你會因此逃過一劫(因為你不在家阿).\nPS. 最新版本中, 你有50%的機會發現你的枕邊人是邪教徒.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>你這個醉漢! 身為一個酒鬼, 你依然是個村民, 你唯一的作用就是在被狼人吃掉時用你那高的嚇死人的血液酒精濃度讓那隻狼隔天醉得不能殺人.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>身為一個不詳之人, 你暫時只是個普通村民, 直到有隻狼咬了你, 你成為了他們最新的成員.開始了夜晚的狩獵遊戲.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>你這個牆頭草, 如果你能活到所有的狼都死掉, 你將會成為全新的一隻狼人, 並準備對你的前隊友展開獵殺.</value>
+  </string>
+  <string key="AboutGA">
+    <value>你是保護人的天使, 每天晚上你可以選擇一個玩家守護他. 小心! 如果守護一個狼人你有50%機率被他給吃了.\nPS. 不要透漏你的身分, 因為守護完回家睡覺時(你畢竟是人)還是會被狼人吃掉的.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>你是個年邁的老偵探. 每天晚上你有機會去調查其他玩家, 雖然你非常的小心, 但是你還是有40%的機會被狼人注意到你是鬼鬼祟祟的偵探行為.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>手握板機的快感很爽? 身為一個槍手你有兩枚銀子彈, 每天你都可以選一個玩家槍斃. 但是一但你開了第一槍, 所有人都知道你是槍手. 包含狼人. 注意你只有兩枚子彈.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>皮匠是目標很簡單「想辦法被村民處死」, 如果你被村民給處死你就成了唯一贏家, 其他所有人都輸.</value>
+  </string>
+  <string key="AboutFool">
+    <value>傻瓜一開始會以為自己是先知, 當看著水晶球, 水晶球會隨機告知這個玩家是任何一個可能的腳色, 而你還相信你真的是先知, 因為你就是個傻瓜.</value>
+  </string>
+  <string key="AboutCult">
+    <value>身為一個邪教崇拜者, 你的目標是把除了狼人以外的玩家都轉為邪教分子, 如果最後所有活著的玩家都是邪教徒, 那你就贏了.\nPS. 小心! 不是所有的狼人以外的腳色你都能轉換的喔.</value>
+  </string>
+  <string key="AboutCH">
+    <value>你的職責就是獵殺所有的邪教徒, 如果有教徒試圖轉化你, 那麼邪教徒的最新成員會死亡, 每天晚上你可以選擇一個玩家來獵殺, 只要他是邪教徒, 他就會被你所殺死.</value>
+  </string>
+  <string key="AboutWC">
+    <value>在遊戲開始的時候, 你可以選一個玩家作為你的"偶像". 如果你的偶像死亡, 你將變身為狼人!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>你暫時只是一個普通村民, 但如果先知死了, 你將繼承你師父的宿業成為最新的先知.</value>
+  </string>
+  <string key="AboutBH">
+    <value>旁觀者清, 你一開始就知道誰才是真正的先知, 而不是假的先知.</value>
+  </string>
+  <string key="AboutMason">
+    <value>磚瓦工其實跟村民沒甚麼兩樣, 不過他知道誰跟他是一樣的辛苦的磚瓦工.除此之外你就是村民\nPS.當你的磚瓦工朋友沒來每天的會議, 你會知道他再也不是你的同伴了!</value>
+  </string>
+  <string key="AboutDG">
+    <value>傳說你的祖先是魔形女能夠輕易模仿任何一個人外表及能力, 你繼承了一部分的力量, 選擇一位玩家, 如果玩家死了你將繼承他的能力.
+注意: 如果該玩家變成邪教徒, 你將會繼承他原本的腳色. 其他規則也適用: 如果他是孤兒, 他的偶像死了, 那你也會變成狼人; 不然你會繼承他的偶像.
+邪教徒無法轉換模仿者(除非模仿者已經轉換成別的腳色了). 另外模仿者除非已轉換, 不然不能贏. 如果遊戲結束模仿者還活著就代表輸了(例外: 如果模仿者是情侶)</value>
+  </string>
+  <string key="AboutCupid">
+    <value>愛意充滿了小鎮. 身為邱比特, 你將可以選擇兩個玩家成為至死不渝的戀人, 這兩名玩家會瘋狂地愛上彼此. 如果其中一個死了. 另外一個也未因為哀傷過度而死去 :(
+(然後邱比特除了射出愛神箭外...就是個村民)
+注意: 戀人會知道彼此是誰, 但是不知道彼此的身分. 如果戀人是最後兩個活下的腳色則不管他們是甚麼隊伍, 都算戀人獲勝. 如果戀人是不同隊伍(村民+狼), 任何一個隊伍贏了(狼), 那麼 戀人(村民隊伍那位)也贏了.
+&gt;太長懶得看嗎? 只要遊戲結束時,兩個戀人都還活著, 其中一個戀人在贏的隊伍, 那麼另外一個戀人也算贏了</value>
+  </string>
+  <string key="AboutHunter">
+    <value>一個板機狂熱且高復仇心的玩家. 身為一個獵人. 你總是遠離人群. 但是當別人來探往你, 他們可能發現因為你的偏執疑心而死於你的槍口下. 如果狼群攻擊你, 你有機會殺死其中一隻狼. 不然你有機會在你死之前射殺一個人.
+注意: 當一隻狼攻擊時. 你有30%機會殺死狼,並活下來. 每增加一個狼增加20%殺死狼的機率(2狼=50%, 3狼=70%). 但是因為多對一的關係, 雖然你或許可以殺死其中一隻狼, 但是你依然會被數量優勢給殺死.
+如果邪教徒試圖受洗你, 他們會有50%機會失敗, 當他失敗時, 你有50%機會殺死一位邪教徒.</value>  </string>
+  <string key="AboutSK">
+    <value>精神病收容所根本就是笑話般愚蠢的地方. 你自由了, 回到你心愛的本業了 - 殺人!
+(連續)殺人魔是一個孤單的玩家, 自已一隊. 除非他是最後活著的唯一人, 才會贏 (例外: 戀人) 身為一個殺人魔, 你可以殺死"任何人" - 狼/獵人/槍手/守護天使...任何人. 如果狼群試圖攻擊你, 你將會隨機殺死其中一隻狼, 並且活下來.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para 是一個喜歡對人嚎叫的笨開發者, 或許是他跟狼人混在一起太久了... 看來跟狼人混在一起可不是什麼好主意.</value>
+  </string>
+  <string key="EndTime">
+    <value>遊戲歷時: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>第 {0} 日</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>喔, 出錯了! 本遊戲節點已經被強迫停止了. 😂\nPS. 系統會嘗試自行修復, 遊戲可能仍然可以進行.</value>
+  </string>
+  <string key="SentPrivate">
+    <value>我已經將資訊私訊給你了.</value>
+  </string>
+  <string key="StartPM">
+    <value>請先對我 @werewolfbot 發送一則私訊, 我才能私訊你\nPS. Telegram系統規定Bot(機器人)不得主動私訊給使用者, 除非使用者曾經私訊過給Bot. </value>
+  </string>
+  <string key="PMTrue">
+    <value>感謝你, 啟動程序( /Start )已經完成, 現在起我可以私訊給你了.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>你必須回覆你想放逐玩家所說過的話, 才能執行放逐的動作.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>你想做什麼?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>加入遊戲(/joingame)只能在 群組(Group) 中進行</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>開始遊戲(/stargame /startchaos)只能在 群組(Group) 中進行</value>
+  </string>
+  <string key="PingInfo">
+    <value>訊息從Telegram伺服器傳給我費時: {0}\n目前CPU使用率: {1}\n每秒鐘處理訊息數: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>哪個語系?\n目前: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>哪個子語言?\n目前: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>語言已經設定為: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>取得哪個語系檔?</value>
+  </string>
+  <string key="NoNodes">
+    <value>目前沒有任何節點可以使用, 請過幾秒後再試試看.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>這個指令只能在 群組(Group) 中使用!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>抱歉, 你並非最高管理者.</value>
+  </string>
+  <string key="NotPara">
+    <value>你不是 Para(開發者)!</value>
+  </string>
+  <string key="Yes">
+    <value>是</value>
+  </string>
+  <string key="No">
+    <value>否</value>
+  </string>
+  <string key="Allow">
+    <value>允許</value>
+  </string>
+  <string key="Disallow">
+    <value>不允許</value>
+  </string>
+  <string key="Show">
+    <value>顯示</value>
+  </string>
+  <string key="Hide">
+    <value>隱藏</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>僅一般模式</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>僅混亂模式</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>由玩家選擇</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>不顯示角色</value>
+  </string>
+  <string key="ShowLiving">
+    <value>只顯示倖存玩家角色</value>
+  </string>
+  <string key="ShowAll">
+    <value>顯示所有玩家角色</value>
+  </string>
+
+  <string key="Cancel">
+    <value>取消</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>是否允許玩家遊戲在開始遊戲後逃跑?\n注意: 在遊戲開始之前, 玩家依然可以選擇逃跑.\n 目前: 玩家{0}逃跑.</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>已設定: 玩家於遊戲開始後{0}允許逃跑!</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>你想設定最多幾位玩家進行遊戲?\n目前: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>已設定: 最多 {0} 玩家進行遊戲.</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>死亡後顯示該玩家真實角色?\n目前: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>已設定: 角色在死後會 {0}.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>本群組(Group)的遊戲模式設定?\n目前: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>已設定: 遊戲模式為 {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>你希望遊戲結束後怎麼顯示玩家遊戲角色?\n目前: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>已設定: 遊戲結束後角色顯示為 {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>設定白天的基礎時間長度(秒數). 時間依然會依據玩家人數另外加計加權時間而變化, 玩家人數加權時間至少會增加60秒. 預設基礎時間: {0}\n目前基礎時間: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>已設定: 白天基礎時間 {0} 秒</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>設定夜晚的時間長度(秒數). 預設時間: {0}\n目前時間: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>已設定: 夜間時間 {0} 秒</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>設定處決公投的時間長度(秒數). 預設時間: {0}\n目前時間: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>已設定: 處決公投時間 {0} 秒</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>是否允許 傻瓜 角色?\n目前: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>已設定: {0} 傻瓜角色</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>是否允許 皮匠 角色?\n目前: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>已設定: {0} 皮匠角色</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>是否允許 邪教徒 角色?\n目前: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>已設定: {0} 邪教徒角色</value>
+  </string>
+  <string key="ThankYou">
+    <value>感謝您! 祝您順心.</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>你希望在甚麼語言的群組進行遊戲?</value>
+  </string>
+  <string key="HereIsList">
+    <value>這裏是 {0} 語言的群組:</value>
+  </string>
+  <string key="Members">
+    <value>成員</value>
+  </string>
+  <string key="StartMe">
+    <value>請&lt;&lt;&lt;私訊&gt;&gt;&gt;我 /start 來啟動我! 才能正常進行遊戲</value>
   </string>
 </strings>
