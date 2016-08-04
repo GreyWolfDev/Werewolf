@@ -6,7 +6,7 @@ base="Italiano"
 variant="Game of Thrones"/>
   <string key="NotInGame">
 
-    <value>Sembra che tu non in lizza per il gioco dei troni...</value>
+    <value>Sembra che tu non sia in lizza per il gioco dei troni...</value>
   </string>
   <string key="PlayerStartedGame">
 
@@ -18,14 +18,14 @@ variant="Game of Thrones"/>
 
 
     <value>{0} Ha iniziato una partita chaos! Usa /join per bruciare vivi tutti quanti con i draghi!</value>
-    <value>Una nuova partita caos è stata iniziata da {0}! Usa /join per decapitarlo.</value>
+    <value>Una nuova partita caos è stata iniziata da {0}! Usa /join per usurpargli il trono.</value>
   </string>
   <string key="NoJoinGameRunning">
 
     <value>Sei arrivato tardi! Il gioco dei troni è già iniziato.</value>
   </string>
   <string key="AlreadyJoined">
-    <value>Ti sei già unito!</value>
+    <value>Sei già in lizza!</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>Ancora 1 minuto per usare /join ...</value>
@@ -35,11 +35,11 @@ variant="Game of Thrones"/>
   </string>
   <string key="NotEnoughPlayers">
 
-    <value>Ah, non siamo abbastanza. Cancello la partita!</value>
+    <value>Non ci sono abbastanza pretendenti. Cancello la partita!</value>
   </string>
   <string key="StartingGameWait">
 
-    <value>L'inverno sta arrivando, pazientate. Nel frattempo vi assegno i personaggi.</value>
+    <value>L'inverno sta arrivando, pazientate. Nel frattempo vi mando un corvo con i vostri ruoli.\Leggete bene la descrizione dei personaggi.</value>
   </string>
   <string key="BannedForExploit">
 
@@ -58,7 +58,7 @@ variant="Game of Thrones"/>
   </string>
   <string key="PMTheBot">
 
-    <value>\n{0} Benvenuto a Grande Inverno! \nPer favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo.</value>
+    <value>\n{0} benvenuto a Grande Inverno! \nPer favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo.</value>
   </string>
   <string key="DeadFlee">
 
@@ -71,13 +71,13 @@ variant="Game of Thrones"/>
     <value>\n{0} era {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>Rimangono {0} giocatori.</value>
+    <value>Rimangono {0} pretendenti.</value>
   </string>
   <string key="DidntAsk">
     <value>Hey, non ti ho ancora chiesto nulla!</value>
   </string>
   <string key="NotPlaying">
-    <value>Non mi pare tu stia giocando...</value>
+    <value>Non mi pare tu sia in lizza... stai al tuo posto.</value>
   </string>
   <string key="NoPlayerName">
 
@@ -90,7 +90,7 @@ variant="Game of Thrones"/>
     <value>{0} vota per uccidere {1}</value>
   </string>
   <string key="PlayerVotedLynch">
-    <value>{0} vota per uccidere {1}</value>
+    <value>{0} vota per mandare {1} al patibolo</value>
   </string>
   <string key="IdleKill">
 
@@ -222,29 +222,28 @@ variant="Game of Thrones"/>
     <value >
 
 
-      L'inverno sta arrivando. Con l'ombra dei Estranei che incombe minacciosa, il popolo si riunisce in assemblea per mandare qualcuno al patibolo...
-      Ognuno ha {0} secondi per votare!
+      L'inverno sta arrivando. Un orda di Estranei incombe minacciosa al di là della Barriera, alcuni di loro si sono spinti oltre seminando morte a Westeros. Gli Uomini si riuniscono in assemblea per scongiurare il pericolo...\nOgnuno ha {0} secondi per votare!
     </value>
   </string>
   <string key="DayTime" >
 
-    <value >Il sole è sorto. Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
+    <value >Il sole è sorto, ed è sempre più freddo.\nAvete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
   </string>
   <string key="NightTime" >
 
-    <value >Il buio è calato. Ognuno si dirige verso il proprio letto, stremato, al termine di un'altra giornata carica di tensione.  Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+    <value >La notte è giunta. L'algido odore di morte è già nell'aria insieme a quello rancido degli intrighi di palazzo.\nRuoli della notte: avete {0} secondi per fare le vostre scelte!</value>
   </string>
   <string key="LynchKill" >
 
-    <value >La folla ha deciso, tra dubbi e sospetti. {0} è stato decapitato.\n{1}</value>
+    <value >Gli Uomini hanno deciso, tra dubbi e sospetti. {0} è stato mandato al patibolo e decapitato.\n{1}</value>
   </string>
   <string key="LynchTie" >
 
-    <value >Incapaci di trovare un accordo su chi decapitare, la folla torna frustrata alle proprie abitazioni, in attesa di un'altra notte di intrighi...</value>
+    <value >Incapaci di trovare un accordo su chi far eseguire, gli Uomini tornano alle proprie abitazioni, in attesa di un'altra notte di morte ed intrighi...</value>
   </string>
   <string key="NoLynchVotes" >
 
-    <value >Nessuno ha votato! Qualcosa mi puzza, nessuno verrà decapitato stanotte.....</value>
+    <value >Nessuno ha votato! Qualcosa mi puzza, nessuno verrà decapitato stanotte...</value>
   </string>
   <string key="DetectiveEaten" >
 
@@ -268,19 +267,21 @@ variant="Game of Thrones"/>
   </string>
   <string key="FoolEaten" >
 
-    <value >Non appena il sole si leva su Approdo del re avviene l'esecuzione pubblica di {0}, sotto gli occhi delle figlie Sansa ed Arya. Ned Stark è stato decapitato.</value>
+    <value >Non appena il sole si leva, ad Approdo del re viene ritrovata la testa di {0} , sotto gli occhi delle figlie Sansa ed Arya. Ned Stark è stato decapitato da qualcosa.</value>
   </string>
   <string key="DefaultEaten" >
 
-    <value>Il mattino è giunto, e con lui un fetore che sa di tragedia.  Seguendo l'odore, degli uomini trovano {0} fatto a pezzi nel bosco, senza testa.\n{1}</value>
-  </string>
+    <value>Il mattino è giunto, e con lui quel freddo che riporta in mente solo un Estraneo.  Seguendo l'odore del sangue, degli uomini trovano {0} fatto a pezzi nei pressi dell'Altopiano, senza testa.\n{1}</value>
+    <value>{0} stava galoppando per Delta delle Acque, ne approfittò per ristorarsi alla locanda e passare la notte. Non appena riuscì a batter ciglio, il gelo lo prese con sé.\n{1}..</value>
+	<value>A Braavos tirava un vento gelido, quasi anormale per le calde città di Essos. {0} stava aspettando la notte per salpare per Westeros alla prima nave, quando essere dall'innaturale color blu intenso degli occhi lo portò invece con se. Dopo averlo mutilato.\n{1}</value>
+	</string>
   <string key="HunterKilledCultist">
 
-    <value>Un odore rancido proviene dalla casa di {0}...  durante l'ispezione viene ritrovato un corpo senza vita, chinato inerme davanti ad un altare dei sette...  un Septon è stato ucciso da Cersei Lannister e 'la montagna'!</value>
+    <value>Un odore rancido proviene dalla casa di {0}...  durante l'ispezione delle guardie viene ritrovato un corpo senza vita, chinato inerme davanti ad un altare dei sette...  un Septon è stato ucciso da Cersei Lannister e 'la montagna'!</value>
   </string>
   <string key="NoAttack" >
 
-    <value >Il giorno successivo gli abitanti si riuniscono al centro della città, sollevati - sembra che non ci sia stato nessun morto la scorsa notte.</value>
+    <value >Un corvo giunto da ogni città di Westeros conferma che non c'è stato nessun morto la scorsa notte.</value>
   </string>
   <string key="CursedBitten" >
 
@@ -441,47 +442,47 @@ variant="Game of Thrones"/>
     <value>Ros💋</value>
   </string>
   <string key="Seer">
-    <value>il Primo cavaliere️👇(👳)</value>
+    <value>il Primo cavaliere️👇 (👳)</value>
   </string>
   <string key="Traitor">
     <value>Ditocorto🖕🏻</value>
   </string>
   <string key="GuardianAngel">
-    <value>Jon Snow❄️(👼)</value>
+    <value>Jon Snow❄️ (👼)</value>
   </string>
   <string key="Detective">
-    <value>Varys👳🏻(🕵)</value>
+    <value>Varys👳🏻 (🕵)</value>
   </string>
   <string key="Wolf">
-    <value>un Estraneo💀(🐺)</value>
+    <value>un Estraneo💀 (🐺)</value>
   </string>
   <string key="Cursed">
-    <value>Benjen Stark👣(😾)</value>
+    <value>Benjen Stark👣 (😾)</value>
   </string>
   <string key="Gunner">
-    <value>Daenerys Targaryen🐉(🔫)</value>
+    <value>Daenerys Targaryen🐉 (🔫)</value>
   </string>
   <string key="Tanner">
-    <value>Theon Greyjoy🍆(👺)</value>
+    <value>Theon Greyjoy🍆 (👺)</value>
   </string>
   <string key="Fool">
-    <value>Ned Stark🗡(🃏) </value>
+    <value>Ned Stark🗡 (🃏) </value>
   </string>
   <string key="WildChild">
-    <value>Arya Stark👧🏻(👶)</value>
+    <value>Arya Stark👧🏻 (👶)</value>
   </string>
   <string key="Beholder">
-    <value>Maestro Pycelle⛓(👁)</value>
+    <value>Maestro Pycelle⛓ (👁)</value>
   </string>
   <string key="ApprenticeSeer">
 
-    <value>Tyrion Lannister🍷(🙇)</value>
+    <value>Tyrion Lannister🍷 (🙇)</value>
   </string>
   <string key="Cultist">
     <value>un Septon💮(👤)</value>
   </string>
   <string key="CultistHunter">
-    <value>Cersei Lannister👸🏼(🎯)</value>
+    <value>Cersei Lannister👸🏼 (🎯)</value>
 
 
   </string>  
@@ -499,7 +500,7 @@ variant="Game of Thrones"/>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>un dothrako🏇🏽(👁‍🗨)</value>
+    <value>un dothrako🏇🏽 (👁‍🗨)</value>
   </string>
   <string key="RoleInfoMason">
 
@@ -694,7 +695,7 @@ variant="Game of Thrones"/>
   </string>
   <string key="DefaultKilled">
 
-    <value>Sembrava una notte tranquilla per {0}, ma non lo è stata. I cittadini si riuniscono nel mattino per trovare {0} tagliato a pezzettini dalla testa ai piedi, stranamente squoiato.....  Ramsey Bolton ha colpito ancora! {1}</value>
+    <value>Sembrava una notte tranquilla per {0}, ma non lo è stata. Gli Uomini quel mattino trovano {0} senza un orecchio, senza verga, e completamente squoiato.....  Ramsey Bolton ha colpito ancora! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
 
@@ -768,10 +769,10 @@ variant="Game of Thrones"/>
     <value>Chi sono i due a cui vuoi legare le anime ? Scegli il secondo mistificatore</value>
   </string>
   <string key="Hunter">
-    <value>Il Mastino🐶(</value>
+    <value>Il Mastino🐶 (🎯) </value>
   </string>
   <string key="Cupid">
-    <value>Melisandra💃(🏹)</value>
+    <value>Melisandra💃 (🏹)</value>
   </string>
   <string key="SerialKiller">
     <value>Ramsey Bolton🔪</value>
