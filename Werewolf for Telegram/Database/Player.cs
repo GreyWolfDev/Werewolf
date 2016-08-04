@@ -37,6 +37,7 @@ namespace Database
         public string Language { get; set; }
         public Nullable<int> TempBanCount { get; set; }
         public Nullable<bool> HasPM2 { get; set; }
+        public Nullable<bool> HasDebugPM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Actions { get; set; }

@@ -130,6 +130,18 @@ namespace Werewolf_Control
             }
         }
 
+        [Command(Trigger = "broadcast", DevOnly = true)]
+        public static void Broadcast(Update u, string[] args)
+        {
+            foreach (var n in Bot.Nodes.Select(x => x.Games.ToList()))
+            {
+                foreach (var g in n)
+                {
+                    Bot.Send(args[1], g.GroupId, parseMode: ParseMode.Markdown);
+                }
+            }
+        }
+
         [Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
         public static void KillGame(Update u, string[] args)
         {

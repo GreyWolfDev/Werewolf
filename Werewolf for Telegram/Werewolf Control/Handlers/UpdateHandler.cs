@@ -671,6 +671,11 @@ namespace Werewolf_Control.Handler
                                            Environment.NewLine +
                                            "Full information is available on the [website](http://www.tgwerewolf.com)";
                                     Send(msg, id, parseMode: ParseMode.Markdown);
+
+#if DEBUG
+                                    Send("*IMPORTANT NOTE- THIS IS A BETA BOT.  EXPECT BUGS, EXPECT SHUTDOWNS, EXPECT.. THE UNEXPECTED!*",
+                                        id, parseMode: ParseMode.Markdown);
+#endif
                                 }
                             }
                             break;

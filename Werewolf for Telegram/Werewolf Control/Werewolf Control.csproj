@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Werewolf_Control</RootNamespace>
-    <AssemblyName>Werewolf Control 2</AssemblyName>
+    <AssemblyName>Werewolf Control</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -137,7 +137,9 @@
     <Content Include="Resources\Telegram.Bot.dll" />
     <Content Include="Resources\Telegram.Bot.pdb" />
     <Content Include="Resources\Telegram.Bot.xml" />
-    <Content Include="Resources\Update.exe" />
+    <Content Include="Resources\Update.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

@@ -103,6 +103,8 @@ namespace Werewolf_Control
                         HasPM = update.Message.Chat.Type == ChatType.Private
 #elif RELEASE2
                         HasPM2 = update.Message.Chat.Type == ChatType.Private
+#elif DEBUG
+                        HasDebugPM = update.Message.Chat.Type == ChatType.Private
 #endif
                     };
                     db.Players.Add(p);
@@ -117,6 +119,8 @@ namespace Werewolf_Control
                     if (p.HasPM != true)
 #elif RELEASE2
                     if (p.HasPM2 != true)
+#elif DEBUG
+                    if (p.HasDebugPM != true)
 #endif
                     {
                         RequestPM(update.Message.Chat.Id);
@@ -205,6 +209,8 @@ namespace Werewolf_Control
                         p.HasPM = true;
 #elif RELEASE2
                         p.HasPM2 = true;
+#elif DEBUG
+                        p.HasDebugPM = true;
 #endif
                         db.SaveChanges();
                         Bot.Send(

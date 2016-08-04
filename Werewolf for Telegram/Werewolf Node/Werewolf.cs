@@ -367,7 +367,8 @@ namespace Werewolf_Node
                         {
                             TelegramId = u.Id,
                             HasPM = false,
-                            HasPM2 = false
+                            HasPM2 = false,
+                            HasDebugPM = false
                         };
                         db.Players.Add(user);
                     }
@@ -381,8 +382,10 @@ namespace Werewolf_Node
                     if (user.HasPM != true)
 #elif RELEASE2
                     if (user.HasPM2 != true)
+#elif DEBUG
+                    if (user.HasDebugPM != true)
 #endif
-                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                    msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
                 }
                 SendWithQueue(msg);
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
