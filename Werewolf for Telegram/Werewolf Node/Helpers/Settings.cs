@@ -6,13 +6,13 @@ namespace Werewolf_Node
     {
 #if DEBUG
         public static string ServerIP = "127.0.0.1";
-        public static int Port = 9051;
 #else
         public static string ServerIP = "127.0.0.1";
 
 #endif
-
-#if RELEASE
+#if DEBUG
+        public static int Port = 9052;
+#elif RELEASE
         public static int Port = 9050;
 #elif RELEASE2
         public static int Port = 9051;
