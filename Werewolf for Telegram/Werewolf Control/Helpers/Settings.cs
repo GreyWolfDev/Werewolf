@@ -9,7 +9,7 @@ namespace Werewolf_Control.Helpers
     internal static class Settings
     {
 #if DEBUG
-        public static int Port = 9051;
+        public static int Port = 9050;
 #elif RELEASE
         public static int Port = 9050;  //9050-@werewolfbot 
 #elif RELEASE2
