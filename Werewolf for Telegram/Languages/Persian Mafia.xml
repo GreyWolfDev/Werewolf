@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- It's Mafia vs Cops ver 1.3.1 by @NoxCaelis, Felicia, and @dhansck! Mafia's the goodies, by the way. Persian Translation by @SepehrHN and @pouria007 -->
 <strings>
-  <language name="Persian (Mafia)" base="Persian" variant="مافیا"/>
+  <language name="Persian (Mafia)" base="فارسی" variant="مافیا"/>
   <string key="NotInGame">
     <value> بنظر نمی رسد شما در حال حاضر در بازی باشید </value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <value>{0} یه بازی جدید استارت کرد سریع /join بدین تا دیرتر نشده</value>
-    <value>یه بازی جدید توسط {0} استارت شد! برای ورود به بازی /join بدین. [👑OmeGaTeam👑](https://telegram.me/OmeGaTeam)</value>
+    <value>یه بازی جدید توسط {0} استارت شد! برای ورود به بازی /join بدین.</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <value>{0}یه بازى به حالت آشوب استارت كرده! براى ورود به بازى /join بزنيد.</value>
@@ -42,7 +42,12 @@
     <value>ببخشيد، ولى تعداد پليرا به حداكثر مقدار تايين شده رسيده😱</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} وارد بازی شد {1} بازیکن, {2} حداقل تعداد, {3} حداکثر تعداد</value>
+    <value>
+	{0} وارد بازی شد! حالا ما {1} بازیکن داریم 😉
+➖➖➖➖➖
+حداقل تعداد بازیکن ها: {2}
+حداکثر تعداد پلیرها: {3}
+	</value>
   </string>
   <string key="PMTheBot">
     <value>{0} کلیک کنید: @{1}, بیا پی وی من استارت کن تا بتونم نقشتو بهت بگم.</value>
@@ -63,7 +68,7 @@
     <value>برو یه نفس راحت بکش دیگه چیزی ازت نمیپرسم!</value>
   </string>
   <string key="NotPlaying">
-    <value>بنظر نمیرسد شما درحال بازی باشید...</value>
+    <value>بنظر نمیاد درحال بازی باشی...</value>
   </string>
   <string key="NoPlayerName">
     <value>من بازیکنی با این مشخصاتی که دادی پیدا نمیکنم!</value>
@@ -78,7 +83,7 @@
     <value>{0} برای تبعید رای داد به {1}</value>
   </string>
   <string key="IdleKill">
-    <value>{0} دو شب پشت سر هم رای نداده، شهروندا نگرانش میشن میرن خونش میبینن خودشو دار زده! {1}</value>
+    <value>{0} دو شب پشت سر هم رای نداده، شهروندا نگرانش میشن میرن خونش میبینن خودشو دار زده!{1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>دوستان شما در نیرو همگی کشته یا مفقود شدند. حالا نوبت شماست که این زحمات رو به تنهایی به دوش بکشین و از شهر در برابر مافیاها محافظت کنید</value>
@@ -183,30 +188,25 @@
     <value >تو پلیس مبارزه با مواد مخدری (شکارچی) 💂. تو پلیس مبارزه با مواد مخدری و هدفت کشتن و دستگیری پخش کننده مواد مخدره! ولی اگه بری خونه ی یه معتاد، اعصابت خورد میشه و اونم میکشی!</value>
   </string>
   <string key="LynchTime" >
-    <value >
-     زمان رای گیری شروع شد، باید یکیو از شهر تبعید کنید
-    شهروندان شما {0} وقت دارید رای بدین
-    </value>
+    <value > 
+	زمان رای گیری شروع شد، باید یکیو از شهر تبعید کنید
+    شهروندان شما  {0}  ثانیه وقت دارید رای بدین 
+	[👑OmeGaTeam👑](https://telegram.me/OmeGaTeam)
+	</value>
 	<value >
-بيايين، بيايين، همه اهالي شهر، همتون در دادگاه عمومي كه در شهید رجایی تهران تشكيل ميشه شركت كنيد تا راي بدين كه چه كسي بايد محكوم به مرگ بشه☠
-شما {0} ثانيه وقت داريد كه راي بدين!
+همه اهالی شهر بیایید به میدون شهر!!! امروز یه دادگاه عمومی دیگه داریم، کسی که بیشترین رای رو بگیره تبعید میشه😱
+شما {0} ثانیه وقت دارید رای بدین😉
     </value>
   </string>
   <string key="DayTime" >
     <value >صبح شده اهالی شهر {0} وقت دارید تا باهم صحبت کنید</value>
-	<value >صبح شده اهالی شهر {0} وقت دارید تا باهم صحبت کنید</value>
   </string>
   <string key="NightTime" >
-    <value >خب شب فرارسیده بازیکنای نقش دار {0} ثانیه وقت دارین هرکاری میخواین انجام بدین</value>
-	<value >خب شب فرارسیده بازیکنای نقش دار {0} ثانیه وقت دارین هرکاری میخواین انجام بدین</value>
+    <value >خب باز دوباره شب شد بازیکنای نقش دار {0} ثانیه وقت دارین هرکاری میخواین انجام بدین</value>
   </string>
-  <string key="LynchKill" >
-    <value >شهر انتخاب كرده است! {0}
-کسی که از شهر تبعید میشه
-{0} كسي نيست جز {1} !</value>
-	<value >شهر انتخاب كرده است! {0}
-کسی که از شهر تبعید میشه
-{0} كسي نيست جز {1} !</value>
+<string key="LynchKill" >
+    <value >اهالی شهر رای خودشونو دادن و {0} رو تبعید کردن!
+خب اینطور که معلومه {0} چیزی نيست جز یه {1}!</value>
   </string>
   <string key="LynchTie" >
     <value >اهالی شهر نتونستن یه تصمیم درست بگیرن، هیچ کس تبعید نشد</value>
@@ -216,7 +216,6 @@
   </string>
   <string key="DetectiveEaten" >
     <value >آویزون 🕵 محله یعنی {0} دیشب توسط مامورین زحمت کش پلیس دستگیر شد. روزهای فضولی تو کار بزرگترا دیگه برای آویزون به سر رسیده</value>
-	<value >آویزون 🕵 محله یعنی {0} دیشب توسط مامورین زحمت کش پلیس دستگیر شد. روزهای فضولی تو کار بزرگترا دیگه برای آویزون به سر رسیده</value>
   </string>
   <string key="GuardianEaten" >
     <value >لاف زنمون 👼  دیشب رفت خونه پلیس و هنوز وار خونه نشده دستگیر شد :| {0} بدبخت شانسم نداره</value>
@@ -238,13 +237,16 @@
     <value >در طی جستجویی که پلیس از خرابه های شهر داشت، نیرو های پلیس موفق شدند {0} که شکنجه گر روانی 🃏 بود رو دستگیر و به تیمارستان منتقل کنند!</value>
   </string>
   <string key="DefaultEaten" >
-    <value>The Newspaper just come in! They reported that {0} was arrested by the police for being in Mafia business! {1}</value>
+    <value>گرارش های مردمی نشون میده {0} به جرم همکاری با مافیا دستگیر شده😳 {1}</value>
     <value>خبر روز، نیروهای پلیس به خانه {0} حمله کردند و صاحب خونه رو دستگیذ کردند، {1} </value>\
-	<value>The Newspaper just come in! {0} was arrested last night on allegations of arson, murder, vandalism, and jaywalking! {1}</value>
+	<value>{0} رو دیشب توی دستشویی خودش دستگیر کردن😢(خیلی حس بدیه فک کن وسط کار یکی با تفنگ بیاد داخل دستگیرت کنه) {1}</value>
   </string>
   <string key="HunterKilledCultist">
-    <value>The Newspaper just come in! A member of the Church of Happyology 👤, {0}, was arrested by federal officers. It seems they are embezzling money from the City.</value>
-	<value>The Newspaper just come in! {0} was arrested by the FBI! They say an informant from IRS notified them of "too much happiness in one room". Was it a code?</value>
+    <value>
+	به نقل از خبرگزاری Werewolf Land:
+دیروز صبح نیرو های مبارزه با مواد مخدر نیروهای خودشون رو در پارک آب و آتش مستقر کردند تا معتادان رو دستگیر کنند، حاصل این برنامه ها دستگیری {0} یکی از معتادای👤 داغون تهران بود
+	</value>
+	<value>{0} دیروز عصر درحین خرید مواد از مواد فروش دستگیر شذ، اما مواد فروش موفق شد فرار کنه😞. {0} چیزی نبود بجز یه معتاد 👤</value>
   </string>
   <string key="NoAttack" >
     <value >All was calm the previous night, no sound of police raid or anything whatsoever.</value>
@@ -259,23 +261,22 @@
     <value >It seems that the Repentant Mafia joins you as a comrade: {0}!</value>
   </string>
   <string key="WolvesEatYou" isgif="false" >
-    <value >BANG! BANG! BANG! OPEN UP! THIS IS A POLICE RAID!</value>
-	<value >You were just about to lay your head and rest when someone forces into your and shout: "FREEZE, FAIRVIEW PD! YOU ARE NOW UNDER ARREST!"</value>
+    <value >پلیس شما رو دستگیر کرده😱 شما حالا در اختیار نیروهای امنیتی هستی😢(خواستی خلاف نکنی واااااااااالا)</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Uh oh, a cop shot {0}'s spouse in the raid! There will be a funeral tomorrow night, you won't be able to do raids.</value>
+    <value >هرج و مرج شهرو گرفته، مافیا بهم ریخته پلیس {0} (پدرخوانده🍻) رو دستگیر کرده!</value>
   </string>
   <string key="GuardWolf" >
-    <value >What are you doing, hanging about a police's house? You are arrested!</value>
+    <value >چیکار کردی دیوونه! رفتی خونه پلیس انداختت گوشه زندون</value>
   </string>
   <string key="GuardSaved" >
-    <value >You have saved {0} from the cops. Guess that truck full of guns help, huh?</value>
+    <value >{0}، دیشب پلیسا نتونستن بهت حمله کنن، لاف زن یه کامیون پر از اسلحه پلاستکی دم در خونت پارک کرد</value>
   </string>
   <string key="GuardNoAttack" >
     <value >After a long, eventless night standing guard in front of {0}'s house from your arsenal truck, you head home and try to catch a quick nap.</value>
   </string>
   <string key="GuardEmptyHouse">
-    <value>{0} wasn't home!</value>
+    <value>{0} خونه نیست!</value>
   </string>
   <string key="GuardSavedYou" >
     <value >The Bouncer decided to drop by your home last night, and scared the cops from raiding your house.</value>
@@ -321,14 +322,14 @@
   </string>
   <string key="WolvesWin" isgif="false" >
     <value >پلیس ها پیروز شدن! آرامش به تهران برگشته!</value>
-	<value >The Mafias are all caught, and with them, the Godfather! Fairview can boast a mafia-free neighborhood now!</value>
+	<value >با همت پلیس همه مافیاها افتادن پشت میله های زندون یا از شهر تبعید شدن، تهران الان یه شهره امنه!</value>
   </string>
   <string key="VillageWins" isgif="false" >
-    <value >The mafias have won! With no pesky do-gooder cop, it's mafia stronghold here.</value>
-	<value >The Fairview's Finest is now the Fairview's Crook, the Godfather control all Fairview!</value>
+    <value >اعضای مافیا برنده😦 شدند شهر به دست مافیا ها افتاد🇮🇷</value>
+	<value >آشوب در شهر✋ انگار اتفاقی افتاده مافیایی ها با اسلحه هاشون توی شهر پرسه میزنن و مردمو میکشن😳 همه پلیسا مردن و شهر به دست مافیاها افتاد😄</value>
   </string>
   <string key="TannerWins" isgif="false" >
-    <value >Oh no! You choose to exile the Suicide Bomber! "It's not about me, it's about sending a message." They detonate themself and several bombs in the city!</value>
+    <value >خاک توسرتون به تبعید شدن تروریست رای دادن، پلیس هرچه تلاش کرد جلوی حمله تروریست رو بگیر و مانع منفحر شدن بمب بشه نتونست، تمام اهالی شهر مردن و شهر بدست تروریست ها افتاد.</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>بازیکنان باقی مانده:</value>
@@ -346,7 +347,7 @@
     <value>Welcome to the Church of Happyology! Forget about the Mafia, this church will help you. Every night, you have the opportunity to offer the same fellowship to other players.</value>
   </string>
   <string key="CultTeam">
-    <value>Fellow member of the Church: {0}</value>
+    <value>بقیه معتادا و مواد فروشا: {0}</value>
   </string>
   <string key="CultJoin">
     <value>{0} به جمع معتادا خوش اومدی</value>
@@ -355,7 +356,7 @@
     <value>{0} رفتی خونه {1} اما خونه نبود!</value>
   </string>
   <string key="CultWins" isgif="false">
-    <value >All the cops are gone, and Fairview is now a haven for the Church of Happyology!</value>
+    <value >همه پلیسا مردن شهر به دست معتادا افتاد 😱</value>
   </string>
   <string key="HunterVisitDead">
     <value>You try to arrest {0}, but they are already jailed!</value>
@@ -442,11 +443,13 @@
     <value>لیدر مافیا 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>You are a Caporegime (Mason) 👷, a Mafia Captain! You are the only ones at mafia meeting, so you know other Capo as well.</value>
+    <value>شما لیدر مافیا (بنا) 👷 هستید، شما تنها اشخاصی هستید که در جلسات و دورهمی های مافیا ها حضور پیدا میکنند و شما تنها کسی هستی که بقیه لیدرهارو میشناسه!</value>
   </string>
   <string key="MasonEaten">
-    <value>The Newspaper just come in! One of the Capo 👷, {0}, was arrested for accomplice to mafia activities.</value>
-	<value>The Newspaper just come in! {0} was caught on their way to the meeting with the Godfather! They were a Mafia Captain 👷!</value>
+    <value>طبق خبری که صفحه 1 روزنامه Werewolf Land نوشته:
+لیدر مافیا👷، {0} سوار لیموزین شخصیش شده که دم در محل گردهمایی لیدرها پیاده بشه اما دم در اداره پلیس پیاده شده😄 هنوز جزییات بیشتری از دستگیری {0} به دست ما نرسیده ولی اینطور که معلومه از شهر تبعید میشه😢</value>
+	<value>بازم خبر 😭 اینو میخوام به اون دسته ای بگم که میگن مگه مال ما خار داره؟
+لیدر مافیا 👷 {0} درحالی که تو خونش با اولین عشق زندگیش قرار گذاشته بود دستگیر و به زندان فرستاده شد(بدبخت شانستم نداره🔫😂)</value>
   </string>
   <string key="MasonTeam">
     <value>  The other Caporegimes at your meeting with the Godfather are {0}</value>
@@ -485,7 +488,7 @@
     <value>توانایی فرار در بازی درحال اجرا توسط ادمین گروه قفل شده است!</value>
   </string>
   <string key="IsDead"> <!-- used when gunner shoots a player -->
-    <value>left town.</value>
+    <value>از شهر رقت.</value>
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
@@ -691,8 +694,11 @@
     <value>بازی جدید شروع میشه در {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
-    <value>Morning comes, and the remaining two citizen walk out to the town square.  {0} takes a look at {1}, apparently mumbling about how The Thinker's pose will be perfect for them. {0} then drags {1} into the dungeon.</value>
-	<value>"Hello, {1}. What would you like to be? David? Mona Lisa? Or maybe the Statue of Liberty?" said {0} cheerily. Then it dawns to them: {0} is the Kidnapper, and {1} is the last victim!</value>
+    <value>صبح میشه و {0} هرچی میگرده کسی رو توی شهر پیدا نمیکنه یهویی یکی از پشت میگیرتش و میندازتش توی سیاهچال، آدم ربا 🔪کسی نیست جز {1}</value>
+	<value>
+	سلام {1} چه خبر شده؟! موزه جدیدی توی شهر بازی شده تو این موزه چی میخوان بذارن؟ مجسمه آزادی؟ نقاشی مونالیزا؟ یا جنازه مومیایی شده تو؟
+همه شهر به دست آدم ربا مردن و تو تنها شخصی هستی که به زودی میمیری و کلکسیون جنازه های {0} رو کامل میکنی.
+	</value>
   </string>
   <string key="NoWinner" isgif="false">
     <value>تمامی شهروندان مردن! شهر به شهر ارواح تبدیل شده</value>
