@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- Amnesia mode by Saah (@ayylimao)! Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? 
-Last update: 09/07/2016 by @ayylimao -->
+<!-- Amnesia mode by Amber (@ayylimao)! Play with role reveal after death off to have some serious fun lol 
+Last update: 09/08/2016 by @ayylimao -->
 <strings>
   <language name="English (Amnesia Mode)" base="English" variant="Amnesia Mode"/>
   <string key="NotInGame">
@@ -36,13 +36,13 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>{0} is banned for attempting an exploit (no names starting with /)</value>
   </string>
   <string key="ChangeNameToJoin">
-    <value>{0}, please change your name to join</value>
+    <value>{0}, did you forget to change your name? Please do that, otherwise you can't join!</value>
   </string>
   <string key="PlayerLimitReached">
     <value>Sorry, max player limit has been reached! Remember to try again on the /nextgame!</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+    <value>{0} forgot who they are! {1} amnesiacs, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
     <value>{0}, you forgot to PM the bot first! Click this: {1}, then click start. Until you do, you won't be able to play.</value>
@@ -57,7 +57,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>{0} had forgotten, but was {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>{0} players remain.</value>
+    <value>{0} amnesiacs remain.</value>
   </string>
   <string key="DidntAsk">
     <value>You don't even know who you are but you already want to do something? Take a breath! I didn't ask you anything yet!</value>
@@ -69,7 +69,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>Looks like I've forgotten who you're talking about... I can't find a player by that name!</value>
   </string>
   <string key="AnswerNonValid">
-    <value>This answer is not valid!</value>
+    <value>Did you forget how to play too? This answer is not valid!</value>
   </string>
   <string key="WolfVotedKill">
     <value>{0} has voted to do something to {1}</value>
@@ -102,10 +102,10 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>Who do you want to lynch?</value>
   </string>
   <string key="AskDetect">
-    <value>You know you should be doing something to someone, but who should you choose?</value>
+    <value>You know you should be doing something to someone, but who should you choose? And why is the number 2 stuck in your head?</value>
   </string>
   <string key="AskShoot">
-    <value>You know you should be doing something to someone, but who should you choose? {0} choices left!</value>
+    <value>You know you should be doing something to someone, but who should you choose? And why is the number {0} stuck in your head?</value>
   </string>
   <string key="AskVisit">
     <value>You know you should be doing something to someone, but who should you choose?</value>
@@ -204,7 +204,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value >Looks like everyone forgot to vote! No lynchmob tonight...</value>
   </string>
   <string key="DetectiveEaten" >
-    <value >The villagers gather in the morning, but do not see {0}. They wander over to the house, only to find a disembowelled corpse. When searching for the culprit, they find an old and rusty badge strewn on the floor...</value>
+    <value >The villagers gather in the morning, but do not see {0}. They wander over to the house, only to find a disembowelled corpse. When searching for the culprit, they find two old and rusty badges strewn on the floor... Why were there two badges? Maybe even the late owner was trying to remember...</value>
   </string>
   <string key="GuardianEaten" >
     <value >Morning comes, and, to everyone's dismay, there's a completely broken corpse near the church's door, its wings bent in unnatural directions. The face can still be recognized, though: {0} is dead.</value>
@@ -219,7 +219,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value >Everyone wakes to the smell of burning alcohol and wood... the pub is on fire! After putting the fire out, the remains of {0} are found, torn apart...</value>
   </string>
   <string key="FoolEaten" >
-    <value >As the sun rises above the village, they find {0} sitting over an ouija board, but with a deck of... memory game cards? What a strange combination...</value>
+    <value >As the sun rises above the village, they find {0} slumped over an ouija board, but with a deck of... memory game cards? What a strange combination...</value>
   </string>
   <string key="DefaultEaten" >
     <value>As everyone rises in the morning, they smell a terrible stink. They follow the smell to find {0} shredded apart in the pig pen, head missing. After investigating the now-vacant house to find out something about the culprit, the village finally realizes that {1}</value>
@@ -243,10 +243,10 @@ Last update: 09/07/2016 by @ayylimao -->
     <value >Oh no! The wolves ate you. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >You can't remember what you did last night, but whatever happened at {0}'s house, it left you... drunk? You won't be able to do anything tonight like this...</value>
+    <value >Did something happen at {0}'s house last night? You can't seem to remember...</value>
   </string>
   <string key="GuardWolf" >
-    <value >You went to a wolf's house! You got eaten. In your dying breaths, at least you remember who you were: the Guardian Angel!</value>
+    <value >You went to a wolf's house! You got eaten...</value>
   </string>
   <string key="GuardSaved" >
     <value >Did something happen at {0}'s house last night? You can't seem to remember...</value>
@@ -267,7 +267,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value >{0} wasn't home!</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value >{0} was a wolf! You got eaten. In your dying breaths, at least you remember who you were: the Harlot!</value>
+    <value >{0} was a wolf! You got eaten...</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <value >{0} slipped into the wrong house last night! Their remains are found in front of the church door...</value>
@@ -282,13 +282,13 @@ Last update: 09/07/2016 by @ayylimao -->
     <value >Did something happen last night? You can't seem to remember...</value>
   </string>
   <string key="DetectiveCaught" >
-    <value >You caught {0} snooping about! They are the detective</value>
+    <value >You may not remember for sure who you are, but at least now you know this: {0} is the Detective 🕵!</value>
   </string>
   <string key="DetectiveSnoop" >
     <value >You may not remember for sure who you are, but at least now you know this: {0} is {1}!</value>
   </string>
   <string key="HarlotShot" >
-    <value >Suddenly, a shot rings out. The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {0} was the Harlot 💋</value>
+    <value >Suddenly, a shot rings out. The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {1} was the Harlot 💋</value>
   </string>
   <string key="DefaultShot" >
     <value >Suddenly, a shot rings out. The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
@@ -300,13 +300,13 @@ Last update: 09/07/2016 by @ayylimao -->
     <value >The werewolves have won!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value >The villagers have won! All the wolves have died...</value>
+    <value >The villagers have won! All of their enemies have died...</value>
   </string>
   <string key="TannerWins" isgif="true" >
     <value >Oh no! You lynched the Tanner! Didn't expect that, huh?</value>
   </string>
   <string key="RemainingPlayersEnd">
-    <value>Remaining living players, roles, and team:</value>
+    <value>Suddenly, the survivors remembered everything! Their names, roles and teams were:</value>
   </string>
   <string key="CultistVotedConvert" >
     <value >{0} has voted to do something to {1}</value>
@@ -330,7 +330,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>{0} went to {1}'s house, but they weren't home!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists... The cult has won!</value>
+    <value >They might not remember who they are, but the only people left standing are cultists... The cult wins!</value>
   </string>
   <string key="HunterVisitDead">
     <value>{0} is already dead!</value>
@@ -410,7 +410,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>🙂 Alive</value>
   </string>
   <string key="PlayersAlive">
-    <value>Players Alive</value>
+    <value>Amnesiacs Alive</value>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
@@ -438,7 +438,7 @@ Last update: 09/07/2016 by @ayylimao -->
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
-    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+    <value>@{1}, a player with the name {0} has already joined. Please change your name to join.</value>
   </string>
   <string key="HarlotDiscoverCult">
     <value>You may not remember for sure who you are, but at least now you know this: {0} is a Cultist 👤!</value>
@@ -456,7 +456,7 @@ Last update: 09/07/2016 by @ayylimao -->
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
-    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+    <value>You can't forget about everything and run away when that everything is trying to kill you! Fleeing while the game is running has been disabled by the group admin!</value>
   </string>
   <string key="IsDead"> <!-- used when gunner shoots a player -->
     <value>is dead</value>
@@ -485,7 +485,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
   <string key="NoGame">
-    <value>There is no game running. Start a new game with /startgame or start a chaos game with /startchaos</value>
+    <value>Did you forget? there is no game running! Start a new game with /startgame or start a chaos game with /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
     <value>You're not this group's admin, remember? That means you can't run this command!</value>
@@ -547,7 +547,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>As the noose tightens around {0}'s neck, they whip out a pistol, arm it, take aim, and pull the trigger, shooting {1} as the floor drops out beneath them! {1} falls over, dead. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>You've been murdered! The fear of death makes you regain some clarity, and you know what to do... This is your last chance, choose to shoot someone as you go down!</value>
+    <value>You've been deathly wounded! The fear of death makes you regain some clarity, and you know what to do... This is your last chance, choose to shoot someone as you go down!</value>
   </string>
   <string key="HunterNoChoiceShot">
     <value>{0}'s wound was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
@@ -556,7 +556,7 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>As {0} lays there, gasping for their final breath, they can't decide who to shoot... and accept their fate...</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>As {0} is deadly wounded, they fall to the ground... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+    <value>As {0} is deathly wounded, they fall to the ground... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} went to {1}'s house and is now dead!</value>
@@ -622,10 +622,10 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>You know you should be doing something to someone, but who should you choose?</value>
   </string>
   <string key="AskCupid1">
-    <value>You know you should be doing something to someone, but who should you choose? 1 choices left!</value>
+    <value>You know you should be doing something to someone, but who should you choose?</value>
   </string>
   <string key="AskCupid2">
-    <value>You know you should be doing something to someone, but who should you choose? 0 choices left!</value>
+    <value>You know you should be doing something to someone else, but who should you choose?</value>
   </string>
   <string key="Hunter">
     <value>the Hunter 🎯</value>
@@ -690,105 +690,129 @@ Last update: 09/07/2016 by @ayylimao -->
   <string key="AboutVG">
     <value>
 	Every player is a villager, able to vote every day to try and lynch the village's enemies (or their own...), but some people are nothing other than villagers! In that case, they won't have any actions for the whole game (other than the lynch vote), and their deaths will only make a difference as another number.
+	
 	NO ACTIONS, ever!</value>
   </string>
   <string key="AboutSeer">
     <value>
 	The Seer may choose a player every night, and will find out their role once morning comes. Careful when revealing what you've found out to others, though: lots of people in the villager want a Seer dead... Trust no one, not even yourself: you may be the fool! (/aboutfool) When looking at the Traitor, there's a 50% chance of seeing them as either a villager or a wolf.
+	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutWw">
     <value>
-	 Every night, all wolves in the pack vote to decide who to attack. Not all players should be attacked, though! \n The newest wolf in a pack will be killed if the Serial Killer is attacked, and may be killed if the target is the Hunter (30% chance for a sole wolf to die - and not be able to kill the Hunter! - and an additional 20% chance for the newest wolf to die for each additional wolf in the pack!) \n All wolves will get drunk if they attack the Village Drunk, and won't be able to do any actions the next night! \n <!--EDIT HERE HERE what are roles that won't be home? ayylmao-->The Harlot probably won't be home, so the night will be wasted if you try to attack them! \n Good news, though: if you attack the cursed, they will become a wolf along with you! If you kill a Wild Child's rolemodel, they will also become a wolf!
+	 Every night, all wolves in the pack vote to decide who to attack. Not all players should be attacked, though!
+	 The newest wolf in a pack will be killed if the Serial Killer is attacked, and may be killed if the target is the Hunter (30% chance for a sole wolf to die - and not be able to kill the Hunter! - and an additional 20% chance for the newest wolf to die for each additional wolf in the pack!)
+	 All wolves will get drunk if they attack the Village Drunk, and won't be able to do any actions the next night!
+	 <!--EDIT HERE HERE what are roles that won't be home? ayylmao-->The Harlot probably won't be home, so the night will be wasted if you try to attack them!
+	 Good news, though: if you attack the cursed, they will become a wolf along with you! If you kill a Wild Child's rolemodel, they will also become a wolf!
+	 
 	 NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutHarlot">
     <!-- hunter! ayylmao -->
 	<value>
 	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a cultist, the harlot has a 50% chance of finding out their role!
+	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutDrunk">
     <value>
 	The Drunk is just like a villager... Except when they're killed by wolves! Then the wolves will become drunk too, and unable to attack on the next night!
+	
 	NO ACTIONS, ever!</value>
   </string>
   <string key="AboutCursed">
     <value>
 	The Cursed is just like a villager... Until they're attacked by the wolves! Then they become a wolf as well, and join the pack!
+	
 	NO ACTIONS, until their role changes!</value>
   </string>
   <string key="AboutTraitor">
     <value>
 	The Traitor is just like a villager... Until all wolves die! Then they take over the mantle and become a werewolf, ready to attack the villagers! When the Seer looks at the Traitor, there's a 50% chance of the traitor appearing as either a villager or a wolf.</value>
+	
 	NO ACTIONS, until their role changes!
   </string>
   <string key="AboutGA">
-    <value><!--what's the chance for SK to kill GA? 50% wolf-->
+    <value><!--what's the chance for SK to kill GA? 50% wolf ayylmao-->
 	The Guardian Angel can choose one player each night to protect from attacks, either from wolves or the Serial Killer. However, if they choose to protect one of those they should protect from, they may be killed!
+	
 	NIGHT ACTIONS, every night!
 	</value>
   </string>
   <string key="AboutDetective">
     <value>
 	Every day, the Detective can choose a player to investigate, and will find out what their role is. There is a 40% chance the werewolves will see the Detective investigating someone, though!
+	
 	DAY ACTIONS, every day!</value>
   </string>
   <string key="AboutGunner">
     <value>
 	During the day, the Gunner will be given the chance to shoot (and kill!) another player. The whole village will know who did it, so they will (probably) not lynch the Gunner, knowing they're on the villagers' side! There are only two bullets on their gun, though...</value>
+	
 	DAY ACTIONS, but it can only be used twice!
   </string>
   <string key="AboutTanner">
     <value>
 	The Tanner is just like a villager... But if they're lynched, they win the game!
+	
 	NO ACTIONS, ever!</value>
   </string>
   <string key="AboutFool">
     <value>
 	The Fool has no way of knowing they aren't actually the Seer... When choosing a player to find out their role, they will instead get told a random role out of all roles of alive players.
+	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutCult">
   <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
     <value>
 	Every night, all cultists in the cult vote to decide who to convert. The cult wins when every single alive player is a cultist. It's not that simple to convert players, though!
+	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutCH">
     <value>
 	The Cultist Hunter has a single job: kill all cultists. Every night, they get to visit a player, who won't feel anything... unless they are a cultist, in which case, the Cultist Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutWC">
     <value>
 	The Wild Child chooses a player as their rolemodel during the first night of the game. Once their role model dies, the Wild Child becomes a werewolf!
+	
 	FIRST NIGHT ACTION, then none until their role changes!</value>
   </string>
   <string key="AboutAppS">
     <value>
 	The Apprentice Seer is just like a villager... Until the Seer dies, in which case, they will become the new Seer!
+	
 	NO ACTIONS, until their role changes!</value>
   </string>
   <string key="AboutBH">
     <value>
 	The Beholder is just like a villager, but, if there's a Seer in the game, they will be told their name. If the Seer dies and the Apprentice Seer and/or the Doppelgänger become Seer, the Beholder will also be told!
+	
 	NO ACTIONS, but they do get information!</value>
   </string>
   <string key="AboutMason">
     <value>
 	A mason is just like a villager, except they will always know who the other masons are! If a mason is converted to the cult, all other masons will be told!
+	
 	NO ACTIONS, but they do get information!</value>
   </string>
   <string key="AboutDG">
     <value>
       The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a cultist until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
-      FIRST NIGHT ACTION, then none until their role changes!
+      
+	  FIRST NIGHT ACTION, then none until their role changes!
     </value>
   </string>
   <string key="AboutCupid">
     <value>
       The Cupid will choose two players at the start of the game and make them fall in love with each other. If one of them dies, the other will die of sorrow... If one of them is on the winning team at the end of the game, both will be winners! If the only players left standing are the Lovers, they will be the winners! The Cupid can choose themselves as one of the Lovers.
+	  
 	  FIRST NIGHT ACTIONS, then none!
     </value>
   </string>
@@ -796,17 +820,20 @@ Last update: 09/07/2016 by @ayylimao -->
     <value>
       The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a cultist will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
 	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
+	  
 	  NO ACTIONS, until they die!
     </value>
   </string>
   <string key="AboutSK">
     <value>
 	The Serial Killer can choose a player every night to attack and kill. They win if they're the last one alive! There's no one that can't be killed by the Serial Killer, and visiting their house isn't a good idea, since everyone who tries will die... Serial Killers can only be killed by being lynched or shot (by the Gunner or the Hunter).
+	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutPara">
     <value>
 	Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.
+	
 	ACTIONS AT EVERY TIME OF THE DAY... Para is busy!</value>
   </string>
   <string key="EndTime">
@@ -982,5 +1009,17 @@ Last update: 09/07/2016 by @ayylimao -->
   </string>
   <string key="ThankYou">
     <value>Thank you, have a good day :)</value>
+  </string>
+    <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please don't forget to start me so I can PM you!</value>
   </string>
 </strings>
