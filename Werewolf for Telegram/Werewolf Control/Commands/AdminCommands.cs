@@ -33,8 +33,6 @@ namespace Werewolf_Control
 
             if (UpdateHelper.IsGroupAdmin(u))
             {
-                var tosmite = new List<int>();
-
                 foreach (var e in u.Message.Entities)
                 {
                     switch (e.Type)

@@ -404,21 +404,30 @@ namespace Werewolf_Control.Handler
                             {
                                 id = update.Message.Chat.Id;
                                 var m = update.Message;
-                                if (m.LeftChatMember?.Id == Bot.Me.Id)
+                                
+                                if (m.LeftChatMember != null)
                                 {
-                                    //removed from group
-                                    var grps = DB.Groups.Where(x => x.GroupId == id);
-                                    if (!grps.Any())
+                                    if (m.LeftChatMember.Id == Bot.Me.Id)
                                     {
-                                        return;
+                                        //removed from group
+                                        var grps = DB.Groups.Where(x => x.GroupId == id);
+                                        if (!grps.Any())
+                                        {
+                                            return;
+                                        }
+                                        foreach (var g in grps)
+                                        {
+                                            g.BotInGroup = false;
+                                            g.UserName = update.Message.Chat.Username;
+                                            g.Name = update.Message.Chat.Title;
+                                        }
+                                        DB.SaveChanges();
                                     }
-                                    foreach (var g in grps)
+                                    else
                                     {
-                                        g.BotInGroup = false;
-                                        g.UserName = update.Message.Chat.Username;
-                                        g.Name = update.Message.Chat.Title;
+                                        //player left, attempt smite
+                                        Bot.GetGroupNodeAndGame(id)?.SmitePlayer(m.LeftChatMember.Id);
                                     }
-                                    DB.SaveChanges();
                                 }
                                 if (m.NewChatMember?.Id == Bot.Me.Id)
                                 {
