@@ -2439,11 +2439,7 @@ namespace Werewolf_Node
                             Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                         }
                     }
-                    else
-                    {
-                        Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                    }
-                    if (save.PlayerRole == IRole.SerialKiller)
+                    else if (save.PlayerRole == IRole.SerialKiller)
                     {
                         //oops, GA is dead
                         ga.IsDead = true;
@@ -2453,6 +2449,10 @@ namespace Werewolf_Node
                         DBKill(save, ga, KillMthd.GuardKiller);
                         Send(GetLocaleString("GuardKiller"), ga.Id);
                         SendWithQueue(GetLocaleString("DefaultKilled", ga.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(ga.PlayerRole)} {GetLocaleString("IsDead")}"));
+                    }
+                    else
+                    {
+                        Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                     }
                 }
             }
