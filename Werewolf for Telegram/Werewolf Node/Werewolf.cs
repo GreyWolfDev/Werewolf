@@ -75,7 +75,7 @@ namespace Werewolf_Node
                     Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
 
                     LoadLanguage(DbGroup.Language);
-                    
+
                     RequestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
                     AddPlayer(u, false);
                 }
@@ -102,7 +102,7 @@ namespace Werewolf_Node
 
         }
         #endregion
-        
+
         #region Language Helpers
         /// <summary>
         /// Caches the language file in the instance
@@ -207,13 +207,13 @@ namespace Werewolf_Node
                 if (Players.Count < Settings.MinPlayers)
                 {
                     SendWithQueue(GetLocaleString("NotEnoughPlayers"));
-                    
+
                     Program.RemoveGame(this);
                     return;
                 }
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
-                
+
                 IsRunning = true;
                 AssignRoles();
                 //create new game for database
@@ -236,7 +236,7 @@ namespace Werewolf_Node
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
                         {
-                            dbp = new Player {TelegramId = p.Id, Language = Language};
+                            dbp = new Player { TelegramId = p.Id, Language = Language };
                             db.Players.Add(dbp);
                         }
                         dbp.Name = p.Name;
@@ -264,7 +264,7 @@ namespace Werewolf_Node
                 }
                 IsInitializing = false;
                 NotifyRoles();
-                
+
                 Time = GameTime.Night;
                 while (IsRunning)
                 {
@@ -389,10 +389,15 @@ namespace Werewolf_Node
 #elif RELEASE2
                     if (user.HasPM2 != true)
 #elif DEBUG
+                    if (true)
+#elif BETA
                     if (user.HasDebugPM != true)
 #endif
-                    msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
-                    sendPM = true;
+
+                    {
+                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                        sendPM = true;
+                    }
                 }
                 SendWithQueue(msg, requestPM: sendPM);
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
@@ -608,8 +613,8 @@ namespace Werewolf_Node
             _messageQueue.Enqueue(new Message(text, gif, requestPM));
         }
 
-        
-        
+
+
 
         class Message
         {
@@ -889,13 +894,13 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
 
 
-//#if DEBUG
-//                //force roles for testing
-//                rolesToAssign[0] = IRole.Cupid;
-//                rolesToAssign[1] = IRole.Doppelgänger;
-//                rolesToAssign[2] = IRole.WildChild;
-//                rolesToAssign[3] = IRole.Wolf;
-//#endif
+                //#if DEBUG
+                //                //force roles for testing
+                //                rolesToAssign[0] = IRole.Cupid;
+                //                rolesToAssign[1] = IRole.Doppelgänger;
+                //                rolesToAssign[2] = IRole.WildChild;
+                //                rolesToAssign[3] = IRole.Wolf;
+                //#endif
 
                 var lastIndex = 0;
                 for (var i = 0; i < Players.Count; i++)
@@ -1085,7 +1090,7 @@ namespace Werewolf_Node
                 {
                     var result = Program.Send(msg, p.Id, true).Result;
                 }
-                catch(AggregateException e)
+                catch (AggregateException e)
                 {
                     if (e.InnerExceptions[0].Message.Contains("PEER_ID_INVALID"))
                     {
@@ -2829,10 +2834,10 @@ namespace Werewolf_Node
             }
         }
 
-        
+
 
         #endregion
-        
+
         #region Send Menus
 
         private void SendLynchMenu()
@@ -3325,7 +3330,7 @@ namespace Werewolf_Node
 
 
         }
-        
+
         public int DBGameId { get; set; }
 
         private void DBKill(IEnumerable<IPlayer> killers, IPlayer victim, KillMthd method)
