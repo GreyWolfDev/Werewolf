@@ -28,6 +28,7 @@ namespace Werewolf_Node
             IsInitializing,
             MessageQueueing = true,
             Chaos;
+        private InlineKeyboardMarkup RequestPMButton;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
         public string Language = "English SFW", ChatGroup;
@@ -74,6 +75,8 @@ namespace Werewolf_Node
                     Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
 
                     LoadLanguage(DbGroup.Language);
+                    
+                    RequestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
                     AddPlayer(u, false);
                 }
                 SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
@@ -358,6 +361,9 @@ namespace Werewolf_Node
 
                 var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
                     DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
+
+                bool sendPM = false;
+
                 using (var db = new WWContext())
                 {
                     var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
@@ -386,8 +392,9 @@ namespace Werewolf_Node
                     if (user.HasDebugPM != true)
 #endif
                     msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                    sendPM = true;
                 }
-                SendWithQueue(msg);
+                SendWithQueue(msg, requestPM: sendPM);
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
 
@@ -574,12 +581,12 @@ namespace Werewolf_Node
             }
         }
 
-        private void Send(string message, long id = 0, bool clearKeyboard = false)
+        private void Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null)
         {
             if (id == 0)
                 id = ChatId;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            Program.Send(message, id, clearKeyboard, game: this);
+            Program.Send(message, id, clearKeyboard, menu, game: this);
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
@@ -589,27 +596,33 @@ namespace Werewolf_Node
             if (id == 0)
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
-#if DEBUG
+#if (DEBUG || BETA)
             Send(text, id);
 #else
             Program.Bot.SendDocument(id, image, text);
 #endif
         }
 
-        private void SendWithQueue(string text, string gif = null)
+        private void SendWithQueue(string text, string gif = null, bool requestPM = false)
         {
-            _messageQueue.Enqueue(new Message(text, gif));
+            _messageQueue.Enqueue(new Message(text, gif, requestPM));
         }
+
+        
+        
 
         class Message
         {
             public string Msg { get; }
             public string GifId { get; }
 
-            public Message(string msg, string gifid = null)
+            public bool RequestPM { get; }
+
+            public Message(string msg, string gifid = null, bool requestPM = false)
             {
                 Msg = msg;
                 GifId = gifid;
+                RequestPM = requestPM;
             }
         }
 
@@ -621,6 +634,7 @@ namespace Werewolf_Node
             while (MessageQueueing)
             {
                 final = "";
+                bool requestPM = false;
                 while (_messageQueue.Count > 0)
                 {
                     var m = _messageQueue.Dequeue();
@@ -641,9 +655,16 @@ namespace Werewolf_Node
 #else
                     final += m.Msg + Environment.NewLine + Environment.NewLine;
 #endif
+                    if (m.RequestPM)
+                        requestPM = true;
                 }
                 if (!String.IsNullOrEmpty(final))
-                    Send(final);
+                {
+                    if (requestPM)
+                        Send(final, 0, false, RequestPMButton);
+                    else
+                        Send(final);
+                }
                 Thread.Sleep(3500);
             }
             //do one last send
@@ -868,13 +889,13 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
 
 
-#if DEBUG
-                //force roles for testing
-                rolesToAssign[0] = IRole.Cupid;
-                rolesToAssign[1] = IRole.Doppelgänger;
-                rolesToAssign[2] = IRole.WildChild;
-                rolesToAssign[3] = IRole.Wolf;
-#endif
+//#if DEBUG
+//                //force roles for testing
+//                rolesToAssign[0] = IRole.Cupid;
+//                rolesToAssign[1] = IRole.Doppelgänger;
+//                rolesToAssign[2] = IRole.WildChild;
+//                rolesToAssign[3] = IRole.Wolf;
+//#endif
 
                 var lastIndex = 0;
                 for (var i = 0; i < Players.Count; i++)
@@ -1060,7 +1081,18 @@ namespace Werewolf_Node
             foreach (var p in Players)
             {
                 var msg = GetRoleInfo(p.PlayerRole);
-                Send(msg, p.Id, true);
+                try
+                {
+                    var result = Program.Send(msg, p.Id, true).Result;
+                }
+                catch(AggregateException e)
+                {
+                    if (e.InnerExceptions[0].Message.Contains("PEER_ID_INVALID"))
+                    {
+                        SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
+                        FleePlayer(p.TeleUser.Id);
+                    }
+                }
                 Thread.Sleep(50);
             }
         }
@@ -3045,7 +3077,7 @@ namespace Werewolf_Node
                 {
                     return;
                 }
-                Send(GetLocaleString("Flee", p.GetName()));
+                SendWithQueue(GetLocaleString("Flee", p.GetName()));
 
                 if (IsRunning)
                 {
@@ -3175,7 +3207,7 @@ namespace Werewolf_Node
         {
             try
             {
-                var possible = Players.Where(x => !exclude.Contains(x)).ToList();
+                var possible = Players.Where(x => exclude.All(y => y?.TeleUser.Id != x?.TeleUser.Id)).ToList();
                 possible.Shuffle();
                 possible.Shuffle();
                 return possible[0].Id;

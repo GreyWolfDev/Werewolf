@@ -11,11 +11,13 @@ namespace Werewolf_Node
 
 #endif
 #if DEBUG
-        public static int Port = 9052;
+        public static int Port = 9049;
 #elif RELEASE
         public static int Port = 9050;
 #elif RELEASE2
         public static int Port = 9051;
+#elif BETA
+        public static int Port = 9052;
 #endif
 
 

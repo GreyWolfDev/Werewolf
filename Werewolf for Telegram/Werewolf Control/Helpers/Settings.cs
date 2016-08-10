@@ -9,11 +9,13 @@ namespace Werewolf_Control.Helpers
     internal static class Settings
     {
 #if DEBUG
-        public static int Port = 9052;
+        public static int Port = 9049;
 #elif RELEASE
         public static int Port = 9050;  //9050-@werewolfbot 
 #elif RELEASE2
         public static int Port = 9051;  //9051-@werewolfIIbot
+#elif BETA
+        public static int Port = 9052;
 #endif
 
         public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();

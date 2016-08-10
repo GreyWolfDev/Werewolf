@@ -76,6 +76,8 @@ namespace Werewolf_Node
             APIToken = key.GetValue("ProductionAPI").ToString();
 #elif RELEASE2
             APIToken = key.GetValue("ProductionAPI2").ToString();
+#elif BETA
+            APIToken = key.GetValue("BetaAPI").ToString();
 #endif
             Bot = new Client(APIToken);
             Me = Bot.GetMe().Result;
@@ -335,7 +337,7 @@ namespace Werewolf_Node
                         Games = new HashSet<GameInfo>(),
                         ClientId = ClientId,
                         CurrentGames = games.Count,
-                        CurrentPlayers = games.Sum(x => x.Players?.Count ?? 0),
+                        CurrentPlayers = games.Sum(x => x?.Players?.Count ?? 0),
                         DuplicateGamesRemoved = DupGamesKilled,
                         ThreadCount = Process.GetCurrentProcess().Threads.Count,
                         TotalGames = GamesStarted,
