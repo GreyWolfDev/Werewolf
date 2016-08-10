@@ -2396,7 +2396,7 @@ namespace Werewolf_Node
                 if (save != null)
                     DBAction(ga, save, "Guard");
 
-                if (save.DiedLastNight)
+                if (save.DiedLastNight & !save.DiedFromLove)
                 {
                     if (save.PlayerRole == IRole.Cultist & !save.DiedFromWolf)
                     {
@@ -3319,6 +3319,7 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                         DBKill(victim, p, KillMthd.LoverDied);
                         p.IsDead = true;
+                        p.DiedFromLove = true;
                         p.TimeDied = DateTime.Now;
                     }
                     if (p?.PlayerRole == IRole.Hunter)
