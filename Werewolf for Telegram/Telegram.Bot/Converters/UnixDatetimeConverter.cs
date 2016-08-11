@@ -23,15 +23,9 @@ namespace Telegram.Bot.Converters
             {
 
 #if NET45
-                if ((DateTime) value == DateTime.MinValue)
-                    val = ((DateTime) value).AddYears(1969).ToUnixTime();
-                else
-                    val = ((DateTime)value).ToUnixTime();
+                val = (DateTime) value == DateTime.MinValue ? -62135596800L : ((DateTime)value).ToUnixTime();
 #else
-                if ((DateTime)value == DateTime.MinValue)
-                    val = new DateTimeOffset(((DateTime)value).AddYears(1969)).ToUnixTimeSeconds();
-                else
-                    val = new DateTimeOffset((DateTime)value).ToUnixTimeSeconds();
+                val = (DateTime) value == DateTime.MinValue ? -62135596800L : new DateTimeOffset((DateTime)value).ToUnixTimeSeconds();
 #endif
             }
             else
