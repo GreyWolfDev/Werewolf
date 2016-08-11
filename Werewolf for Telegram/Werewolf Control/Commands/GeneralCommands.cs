@@ -209,7 +209,7 @@ namespace Werewolf_Control
                         p.HasPM = true;
 #elif RELEASE2
                         p.HasPM2 = true;
-#elif DEBUG
+#elif BETA
                         p.HasDebugPM = true;
 #endif
                         db.SaveChanges();
