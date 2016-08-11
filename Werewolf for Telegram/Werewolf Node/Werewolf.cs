@@ -1083,7 +1083,7 @@ namespace Werewolf_Node
         private void NotifyRoles()
         {
             //notify each player
-            foreach (var p in Players)
+            foreach (var p in Players.ToList())
             {
                 var msg = GetRoleInfo(p.PlayerRole);
                 try
@@ -1092,11 +1092,8 @@ namespace Werewolf_Node
                 }
                 catch (AggregateException e)
                 {
-                    if (e.InnerExceptions[0].Message.Contains("PEER_ID_INVALID"))
-                    {
-                        SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
-                        FleePlayer(p.TeleUser.Id);
-                    }
+                    SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
+                    FleePlayer(p.TeleUser.Id);
                 }
                 Thread.Sleep(50);
             }
