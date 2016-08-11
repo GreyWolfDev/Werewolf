@@ -182,6 +182,20 @@ namespace Werewolf_Control
             Send(reply, update.Message.Chat.Id);
         }
 
+        [Command(Trigger = "remlink", GroupAdminOnly = true, InGroupOnly = true)]
+        public static void RemLink(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                var grp = db.Groups.FirstOrDefault(x => x.GroupId == u.Message.Chat.Id) ??
+                          MakeDefaultGroup(u.Message.Chat.Id, u.Message.Chat.Title, "setlink");
+                grp.GroupLink = null;
+                db.SaveChanges();
+            }
+
+            Send($"Your group link has been removed.  You will no longer appear on the /grouplist", u.Message.Chat.Id);
+        }
+
         [Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true)]
         public static void SetLink(Update update, string[] args)
         {
