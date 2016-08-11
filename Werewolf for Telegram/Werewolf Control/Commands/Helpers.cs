@@ -157,14 +157,7 @@ namespace Werewolf_Control
 
         internal static void RequestPM(long groupid)
         {
-#if RELEASE
-            var username = "werewolfbot";
-#elif RELEASE2
-            var username = "werewolfIIbot";
-#else
-            var username = "serastestbot";
-#endif
-            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + username};
+            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + Bot.Me.Username};
             Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }

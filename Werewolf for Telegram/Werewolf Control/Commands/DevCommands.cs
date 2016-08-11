@@ -573,5 +573,39 @@ namespace Werewolf_Control
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
+
+        [Command(Trigger = "remgrp", GlobalAdminOnly = true)]
+        public static void RemGrp(Update u, string[] args)
+        {
+            var link = args[1];
+            if (String.IsNullOrEmpty(link))
+            {
+                Send("Use /remgrp <link>", u.Message.Chat.Id);
+                return;
+            }
+            //grouplink should be the argument
+            using (var db = new WWContext())
+            {
+                var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+                if (grp != null)
+                {
+                    
+                    try
+                    {
+                        var result = Bot.Api.LeaveChat(grp.GroupId).Result;
+                        Send($"Bot removed from group: " + result, u.Message.Chat.Id);
+                    }
+                    catch
+                    {
+                        
+                    }
+                    grp.GroupLink = null;
+                    db.SaveChanges();
+                    Send($"Group {grp.Name} removed from /grouplist", u.Message.Chat.Id);
+                }
+            }
+        }
     }
+
+
 }
