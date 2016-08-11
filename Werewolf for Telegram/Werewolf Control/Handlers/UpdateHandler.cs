@@ -340,7 +340,9 @@ namespace Werewolf_Control.Handler
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
-                                        Send("No games in support chat!", id);
+                                        Send(id == Settings.SupportChatId
+                                                ? "No games in support chat!"
+                                                : "اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         return;
                                     }
                                     if (command.DevOnly && update.Message.From.Id != Para)

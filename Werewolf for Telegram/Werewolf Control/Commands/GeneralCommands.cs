@@ -26,10 +26,10 @@ namespace Werewolf_Control
                 Bot.Send(
                     GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}",
                         Program.AvgCpuTime.ToString("F0"),
-                        $"\n{Program.MessageRxPerSecond.ToString("F2")} MAX IN | {Program.MessageTxPerSecond.ToString("F2")} MAX OUT"),
+                        $"\n{Program.MessageRxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT"),
                     update.Message.Chat.Id).Result;
             ts = DateTime.UtcNow - send;
-            Bot.Send($"Time for telegram to send ping message: {ts:mm\\:ss\\.ff}", update.Message.Chat.Id);
+            Bot.Send($"Time to send ping message: {ts:mm\\:ss\\.ff}", update.Message.Chat.Id);
 
         }
 

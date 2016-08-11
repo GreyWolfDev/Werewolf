@@ -3091,7 +3091,7 @@ namespace Werewolf_Node
                     p.TimeDied = DateTime.Now;
                     p.Fled = true;
                     if (DbGroup.ShowRoles != false)
-                        Send(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
+                        SendWithQueue(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
                     CheckRoleChanges();
 
                     //add the 'kill'
