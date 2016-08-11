@@ -2819,7 +2819,7 @@ namespace Werewolf_Node
                         msg = Players.Where(x => !x.IsDead)
                             .OrderBy(x => x.Team)
                             .Aggregate(msg,
-                                (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}");
+                                (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 if (game.TimeStarted.HasValue)
