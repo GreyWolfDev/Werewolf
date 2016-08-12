@@ -90,7 +90,8 @@ namespace Werewolf_Control
                         var groupName = update.Message.Chat.Title.ToBold();
                         if (update.Message.Chat.Username != null)
                             groupName += $" @{update.Message.Chat.Username}";
-                        Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
+                        if (n.UserId != update.Message.From.Id)
+                            Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
                         Thread.Sleep(100);
                     }
 
@@ -156,14 +157,7 @@ namespace Werewolf_Control
 
         internal static void RequestPM(long groupid)
         {
-#if RELEASE
-            var username = "werewolfbot";
-#elif RELEASE2
-            var username = "werewolfIIbot";
-#else
-            var username = "serastestbot";
-#endif
-            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + username};
+            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + Bot.Me.Username};
             Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }

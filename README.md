@@ -21,12 +21,12 @@ To set up werewolf on a private server, follow these steps:
    * Open the file in notepad, notepad++, whatever you use
    * Double check the path at the top of the file - update it if you are using a different SQL version
    * Run the sql script.  This will create the `werewolf` database and all the tables / views / stored procs to go with it
-   * If you already have some admins (including yourself), add their TelegramID's to the `dbo.Admin` table 
+   * If you already have some admins (including yourself), add their TelegramID's to the `dbo.Admin` table
 		* In order to obtain your ID, headover to your bot in telegram and /Start. After that, toss a random text to it. Enter this URL to your browser (https://api.telegram.org/botYOURTELEGRAMBOTAPIKEY/getUpdates)
 3. Now it's time to compile the source code
    * In the Database project, you will need to create an Internal.settings file
 	  * In order to create the Internal.settings file, right click on Database -> Add -> New Item
-	  * Under Visual C# Items -> Settings File and name it as stated. 
+	  * Under Visual C# Items -> Settings File and name it as stated.
       * Create a string setting named `DBConnectionString`, Application Scope, and set the Value to your SQL connection string for the database you created in step 2
          * Connection String should be this (change the values) `metadata=res://*/WerewolfModel.csdl|res://*/WerewolfModel.ssdl|res://*/WerewolfModel.msl;provider=System.Data.SqlClient;provider connection string="data source=SERVERADDRESS;initial catalog=werewolf;user id=USERNAME;password=PASSWORD;MultipleActiveResultSets=True;App=EntityFramework"`
 			* If you are using Windows Authentication for your MSSQL Server, do take note that the password property will NO Longer be required. You're required to replace it with "Trusted_Connection=True;" instead.
@@ -43,6 +43,14 @@ To set up werewolf on a private server, follow these steps:
    |`root\Node <#>`|Node updates can be added to a new Node folder.  Running `/replacenodes` in Telegram will tell the bot to automatically find the newest node (by build time) and run it|
    |`root\Logs`|Node crash directory|
    |`root\Languages`|Language xml files|
-   
+
    * Note - Once all nodes are running the newest version (Node 2 directory), the next time you update nodes, you can put the new files in Node 1 and `/replacenodes`.  Again, the bot will always take whichever node it finds that is the newest, as long as the directory has `Node` in the name.  **do not name any other directory in the root folder anything with `Node` in it**
 5. Fire up the bot!
+
+
+
+
+## GIF SUPPORT
+In order to use GIFs with the bot, you will need to "teach" the bot the new GIF IDs.  From Telegram, run `/learngif`, the bot will respond with `GIF learning = true`.  Now send it a GIF, and the bot will reply with an ID.  Send the bot all the GIFs you need.  In the Node project, go to Helpers > Settings.cs and find the GIF lists.  You'll need to remove all of the existing IDs and put in the IDs you just got from the bot.
+
+You can test these by running `/dumpgifs` (preferrably in PM!).  Make sure you check out DevCommands.cs, and look at the `DumpGifs()` method - most of it is commented out.  Uncomment what you need.

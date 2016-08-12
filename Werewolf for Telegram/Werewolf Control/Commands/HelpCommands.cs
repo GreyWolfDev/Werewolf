@@ -76,8 +76,34 @@ namespace Werewolf_Control
         public static void RoleList(Update update, string[] args)
         {
             var lang = GetLanguage(update.Message.Chat.Id);
-            var reply =
-                "/AboutVG - Villager\n/AboutSeer - Seer\n/AboutWw - Werewolf\n/AboutHarlot - Harlot\n/AboutDrunk - Drunk\n/AboutCursed - Cursed\n/AboutTraitor - Traitor\n/AboutGA - Guardian Angel\n/AboutDetective - Detective\n/AboutGunner - Gunner\n/AboutTanner - Tanner\n/AboutFool - Fool\n/AboutCult - Cultist\n/AboutCH - Cultist Hunter\n/AboutWC - Wild Child\n/AboutAppS - Apprentice seer\n/AboutBH - Beholder\n/AboutMason - Mason\n/AboutDG - Doppelgänger\n/AboutCupid - Cupid\n/AboutHunter - Hunter\n/AboutSK - Serial Killer";
+            // var reply =
+            //    "/AboutVG - Villager\n/AboutSeer - Seer\n/AboutWw - Werewolf\n/AboutHarlot - Harlot\n/AboutDrunk - Drunk\n/AboutCursed - Cursed\n/AboutTraitor - Traitor\n/AboutGA - Guardian Angel\n/AboutDetective - Detective\n/AboutGunner - Gunner\n/AboutTanner - Tanner\n/AboutFool - Fool\n/AboutCult - Cultist\n/AboutCH - Cultist Hunter\n/AboutWC - Wild Child\n/AboutAppS - Apprentice seer\n/AboutBH - Beholder\n/AboutMason - Mason\n/AboutDG - Doppelgänger\n/AboutCupid - Cupid\n/AboutHunter - Hunter\n/AboutSK - Serial Killer";
+
+            var reply = "";
+            reply += "/aboutVG - Villager 👱\n";
+            reply += "/aboutWW - Werewolf 🐺\n";
+            reply += "/aboutDrunk - Drunk 🍻\n";
+            reply += "/aboutSeer - Seer 👳\n";
+            reply += "/aboutCursed - Cursed 😾\n";
+            reply += "/aboutHarlot - Harlot 💋\n";
+            reply += "/aboutBH - Beholder 👁\n";
+            reply += "/aboutGunner - Gunner 🔫\n";
+            reply += "/aboutTraitor - Traitor 🖕\n";
+            reply += "/aboutGA - Guardian Angel 👼\n";
+            reply += "/aboutDetective - Detective 🕵\n";
+            reply += "/aboutAppS - Apprentice Seer 🙇\n";
+            reply += "/aboutCult - Cultist 👤\n";
+            reply += "/aboutCH - Cultist Hunter 💂\n";
+            reply += "/aboutWC - Wild Child 👶\n";
+            reply += "/aboutFool - Fool 🃏\n";
+            reply += "/aboutMason - Mason 👷\n";
+            reply += "/aboutDG - Doppelgänger 🎭\n";
+            reply += "/aboutCupid - Cupid 🏹\n";
+            reply += "/aboutHunter - Hunter 🎯\n";
+            reply += "/aboutSK - Serial Killer 🔪\n";
+            reply += "/aboutTanner - Tanner 👺\n";
+
+
             try
             {
                 var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply).Result;

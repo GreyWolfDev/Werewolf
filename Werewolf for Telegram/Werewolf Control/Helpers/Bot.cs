@@ -97,7 +97,7 @@ namespace Werewolf_Control.Helpers
             Api.ReceiveError += ApiOnReceiveError;
             Me = Api.GetMe().Result;
 
-
+            Console.Title += " " + Me.Username;
 
             StartTime = DateTime.UtcNow;
             //now we can start receiving

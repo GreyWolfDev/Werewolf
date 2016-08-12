@@ -22,14 +22,12 @@ namespace Werewolf_Control
         {
             var ts = DateTime.UtcNow - update.Message.Date;
             var send = DateTime.UtcNow;
-            var result =
-                Bot.Send(
-                    GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}",
-                        Program.AvgCpuTime.ToString("F0"),
-                        $"\n{Program.MessageRxPerSecond.ToString("F2")} MAX IN | {Program.MessageTxPerSecond.ToString("F2")} MAX OUT"),
-                    update.Message.Chat.Id).Result;
+            var message = GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}",
+                Program.AvgCpuTime.ToString("F0"),
+                $"\n{Program.MessageRxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
+            var result = Bot.Send(message, update.Message.Chat.Id).Result;
             ts = DateTime.UtcNow - send;
-            Bot.Send($"Time for telegram to send ping message: {ts:mm\\:ss\\.ff}", update.Message.Chat.Id);
+            Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message + $"\nTime to send ping message: {ts:mm\\:ss\\.ff}");
 
         }
 

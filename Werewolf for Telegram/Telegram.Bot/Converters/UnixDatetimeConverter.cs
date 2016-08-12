@@ -21,16 +21,18 @@ namespace Telegram.Bot.Converters
             long val;
             if (value is DateTime)
             {
+
 #if NET45
-                val = ((DateTime)value).ToUnixTime();
+                val = (DateTime) value == DateTime.MinValue ? -62135596800L : ((DateTime)value).ToUnixTime();
 #else
-                val = new DateTimeOffset((DateTime)value).ToUnixTimeSeconds();
+                val = (DateTime) value == DateTime.MinValue ? -62135596800L : new DateTimeOffset((DateTime)value).ToUnixTimeSeconds();
 #endif
             }
             else
             {
                 throw new Exception("Expected date object value.");
             }
+            
             writer.WriteValue(val);
         }
 

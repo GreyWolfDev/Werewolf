@@ -701,13 +701,13 @@ namespace Werewolf_Node
             if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
             {
                 LastPlayersOutput = DateTime.Now;
-                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
                           Players.OrderBy(x => x.TimeDied)
                               .Aggregate("",
                                   (current, p) =>
                                       current +
                                       ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                Send(msg);
+                SendWithQueue(msg);
             }
         }
         #endregion
@@ -1083,7 +1083,7 @@ namespace Werewolf_Node
         private void NotifyRoles()
         {
             //notify each player
-            foreach (var p in Players)
+            foreach (var p in Players.ToList())
             {
                 var msg = GetRoleInfo(p.PlayerRole);
                 try
@@ -1092,11 +1092,8 @@ namespace Werewolf_Node
                 }
                 catch (AggregateException e)
                 {
-                    if (e.InnerExceptions[0].Message.Contains("PEER_ID_INVALID"))
-                    {
-                        SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
-                        FleePlayer(p.TeleUser.Id);
-                    }
+                    SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
+                    FleePlayer(p.TeleUser.Id);
                 }
                 Thread.Sleep(50);
             }
@@ -2801,13 +2798,13 @@ namespace Werewolf_Node
                 switch (DbGroup.ShowRolesEnd)
                 {
                     case "None":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
                        Players.OrderBy(x => x.TimeDied)
                            .Aggregate(msg,
                                (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
                              Players.OrderBy(x => x.TimeDied)
                                  .Aggregate("",
                                      (current, p) =>
@@ -2819,7 +2816,7 @@ namespace Werewolf_Node
                         msg = Players.Where(x => !x.IsDead)
                             .OrderBy(x => x.Team)
                             .Aggregate(msg,
-                                (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {(p.Won ? "Won" : "Lost")}");
+                                (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} ({p.Team} Team) {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 if (game.TimeStarted.HasValue)
@@ -3091,7 +3088,7 @@ namespace Werewolf_Node
                     p.TimeDied = DateTime.Now;
                     p.Fled = true;
                     if (DbGroup.ShowRoles != false)
-                        Send(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
+                        SendWithQueue(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
                     CheckRoleChanges();
 
                     //add the 'kill'
@@ -3101,7 +3098,7 @@ namespace Werewolf_Node
                 else if (IsJoining)
                 {
                     Players.Remove(p);
-                    Send(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
+                    SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
         }
@@ -3152,13 +3149,13 @@ namespace Werewolf_Node
             if (hunter.Choice == 0)
             {
 
-                Send(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()), ChatId);
+                SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()));
             }
             else
             {
                 if (hunter.Choice == -1)
                 {
-                    Send(GetLocaleString(method == KillMthd.Lynch ? "HunterSkipChoiceLynched" : "HunterSkipChoiceShot", hunter.GetName()), ChatId);
+                    SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterSkipChoiceLynched" : "HunterSkipChoiceShot", hunter.GetName()));
                 }
                 else
                 {
@@ -3166,7 +3163,7 @@ namespace Werewolf_Node
                     var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                     if (killed != null)
                     {
-                        Send(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"), ChatId);
+                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
                         killed.IsDead = true;
                         killed.TimeDied = DateTime.Now;
                         DBKill(hunter, killed, KillMthd.HunterShot);
@@ -3346,7 +3343,7 @@ namespace Werewolf_Node
                 {
                     p.IsDead = true;
                     p.TimeDied = DateTime.Now;
-                    Send(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"), ChatId);
+                    SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                     DBKill(victim, p, KillMthd.LoverDied);
                 }
             }

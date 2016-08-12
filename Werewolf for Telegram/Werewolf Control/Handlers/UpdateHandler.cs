@@ -32,7 +32,7 @@ namespace Werewolf_Control.Handler
 
         };
 
-        internal static List<GlobalBan> BanList = new List<GlobalBan>(); 
+        internal static List<GlobalBan> BanList = new List<GlobalBan>();
 
         internal static bool SendGifIds = false;
         public static void UpdateReceived(object sender, UpdateEventArgs e)
@@ -85,7 +85,7 @@ namespace Werewolf_Control.Handler
                                     expireTime = expireTime.AddDays(3);
                                     break;
                                 default: //perm ban
-                                    expireTime = (DateTime) SqlDateTime.MaxValue;
+                                    expireTime = (DateTime)SqlDateTime.MaxValue;
                                     break;
 
                             }
@@ -189,8 +189,8 @@ namespace Werewolf_Control.Handler
                                                 "Permanent. You have reached the max limit of temp bans for spamming.";
                                             break;
                                     }
-                                        Send("You have been banned for spamming.  Your ban period is: " + unban,
-                                            key);
+                                    Send("You have been banned for spamming.  Your ban period is: " + unban,
+                                        key);
                                 }
 
                                 temp[key].Messages.Clear();
@@ -283,7 +283,7 @@ namespace Werewolf_Control.Handler
 
 
                 //Settings.Main.LogText += update?.Message?.Text + Environment.NewLine;
-                bool block = new[]{Settings.SupportChatId, Settings.PersianSupportChatId}.Contains(id);
+                bool block = new[] { Settings.SupportChatId, Settings.PersianSupportChatId }.Contains(id);
 
 #if !DEBUG
                 try
@@ -297,7 +297,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.TextMessage:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
-                                
+
                                 if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     return;
@@ -340,7 +340,9 @@ namespace Werewolf_Control.Handler
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
-                                        Send("No games in support chat!", id);
+                                        Send(id == Settings.SupportChatId
+                                                ? "No games in support chat!"
+                                                : "اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         return;
                                     }
                                     if (command.DevOnly && update.Message.From.Id != Para)
@@ -350,16 +352,13 @@ namespace Werewolf_Control.Handler
                                     }
                                     if (command.GlobalAdminOnly)
                                     {
-                                        using (var db = new WWContext())
+                                        if (!IsGlobalAdmin(update.Message.From.Id))
                                         {
-                                            if (!db.Admins.Any(x => x.UserId == update.Message.From.Id))
-                                            {
-                                                Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
-                                                return;
-                                            }
+                                            Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
+                                            return;
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != Para)
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != Para & !IsGlobalAdmin(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
                                         return;
@@ -374,7 +373,7 @@ namespace Werewolf_Control.Handler
                                         AddCount(update.Message.From.Id, update.Message.Text);
                                     command.Method.Invoke(update, args);
                                 }
-                                
+
                                 #endregion
                             }
                             break;
@@ -404,7 +403,7 @@ namespace Werewolf_Control.Handler
                             {
                                 id = update.Message.Chat.Id;
                                 var m = update.Message;
-                                
+
                                 if (m.LeftChatMember != null)
                                 {
                                     if (m.LeftChatMember.Id == Bot.Me.Id)
@@ -471,6 +470,14 @@ namespace Werewolf_Control.Handler
                     Send(ex.Message, id);
                 }
 #endif
+            }
+        }
+
+        private static bool IsGlobalAdmin(int id)
+        {
+            using (var db = new WWContext())
+            {
+                return db.Admins.Any(x => x.UserId == id);
             }
         }
 
@@ -780,14 +787,14 @@ namespace Werewolf_Control.Handler
                             buttons.Add(new InlineKeyboardButton(Cancel, $"setflee|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
-                                GetLocaleString("AllowFleeQ", language, grp.DisableFlee == false ? "" : "not "),
+                                GetLocaleString("AllowFleeQ", language, grp.DisableFlee == false ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)),
                                 replyMarkup: menu);
                             break;
                         case "setflee":
 
                             grp.DisableFlee = (choice == "disable");
                             Bot.Api.AnswerCallbackQuery(query.Id,
-                                   GetLocaleString("AllowFleeA", language, grp.DisableFlee == true ? "not " : ""));
+                                   GetLocaleString("AllowFleeA", language, grp.DisableFlee == true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();

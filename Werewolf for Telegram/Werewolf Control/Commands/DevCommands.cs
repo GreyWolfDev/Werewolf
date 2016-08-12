@@ -340,7 +340,7 @@ namespace Werewolf_Control
         [Command(Trigger = "permban", DevOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-            var tosmite = new List<int>();
+            
 
             foreach (var e in u.Message.Entities)
             {
@@ -400,6 +400,54 @@ namespace Werewolf_Control
                         break;
                 }
             }
+            if (args.Length < 2 || String.IsNullOrEmpty(args[1]))
+                return;
+            //now check for ids
+            var toBan = new List<int>();
+            var did = 0;
+            var banReason = "";
+            foreach (var arg in args[1].Split(' '))
+            {
+                if (int.TryParse(arg, out did))
+                {
+                    toBan.Add(did);
+                }
+                else
+                {
+                    banReason += arg + " ";
+                }
+            }
+            banReason = banReason.Trim();
+            if (toBan.Count > 0)
+            {
+                foreach (var uid in toBan)
+                {
+                    using (var db = new WWContext())
+                    {
+                        var player = db.Players.FirstOrDefault(x => x.TelegramId == uid);
+                        if (player != null)
+                        {
+                            var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+                            game?.SmitePlayer(player.TelegramId);
+                            //add the ban
+                            var ban = new GlobalBan
+                            {
+                                Expires = (DateTime)SqlDateTime.MaxValue,
+                                Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
+                                TelegramId = player.TelegramId,
+                                BanDate = DateTime.Now,
+                                BannedBy = u.Message.From.FirstName,
+                                Name = player.Name
+                            };
+                            db.GlobalBans.Add(ban);
+                            UpdateHandler.BanList.Add(ban);
+                            db.SaveChanges();
+                            Send($"User {player.Name} (@{player.UserName}) has been banned", u.Message.Chat.Id);
+                        }
+                    }
+                }
+            }
+            
         }
 
         [Command(Trigger = "remban", GlobalAdminOnly = true)]
@@ -487,7 +535,7 @@ namespace Werewolf_Control
                         sw.Write(" | Removed");
                         //unban so they can rejoin
                         status = ChatMemberStatus.Kicked;
-                        while (status == ChatMemberStatus.Kicked)
+                        while (status != ChatMemberStatus.Left)
                         {
                             Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
                             status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
@@ -525,5 +573,39 @@ namespace Werewolf_Control
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
+
+        [Command(Trigger = "remgrp", GlobalAdminOnly = true)]
+        public static void RemGrp(Update u, string[] args)
+        {
+            var link = args[1];
+            if (String.IsNullOrEmpty(link))
+            {
+                Send("Use /remgrp <link>", u.Message.Chat.Id);
+                return;
+            }
+            //grouplink should be the argument
+            using (var db = new WWContext())
+            {
+                var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+                if (grp != null)
+                {
+                    
+                    try
+                    {
+                        var result = Bot.Api.LeaveChat(grp.GroupId).Result;
+                        Send($"Bot removed from group: " + result, u.Message.Chat.Id);
+                    }
+                    catch
+                    {
+                        
+                    }
+                    grp.GroupLink = null;
+                    db.SaveChanges();
+                    Send($"Group {grp.Name} removed from /grouplist", u.Message.Chat.Id);
+                }
+            }
+        }
     }
+
+
 }
