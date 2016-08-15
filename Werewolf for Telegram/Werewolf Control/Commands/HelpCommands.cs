@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -56,7 +57,6 @@ namespace Werewolf_Control
 
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
 
-
             try
             {
                 var result = Bot.Api.SendTextMessage(update.Message.From.Id,
@@ -91,7 +91,18 @@ namespace Werewolf_Control
             reply += "/aboutTraitor - Traitor 🖕\n";
             reply += "/aboutGA - Guardian Angel 👼\n";
             reply += "/aboutDetective - Detective 🕵\n";
-            reply += "/aboutAppS - Apprentice Seer 🙇\n";
+            try
+            {
+                var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply).Result;
+                if (update.Message.Chat.Type != ChatType.Private)
+                    Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+            }
+            catch (Exception e)
+            {
+                RequestPM(update.Message.Chat.Id);
+                return;
+            }
+            reply = "/aboutAppS - Apprentice Seer 🙇\n";
             reply += "/aboutCult - Cultist 👤\n";
             reply += "/aboutCH - Cultist Hunter 💂\n";
             reply += "/aboutWC - Wild Child 👶\n";
@@ -102,19 +113,7 @@ namespace Werewolf_Control
             reply += "/aboutHunter - Hunter 🎯\n";
             reply += "/aboutSK - Serial Killer 🔪\n";
             reply += "/aboutTanner - Tanner 👺\n";
-
-
-            try
-            {
-                var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply).Result;
-                if (update.Message.Chat.Type != ChatType.Private)
-                    Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
-            }
-            catch (Exception e)
-            {
-                RequestPM(update.Message.Chat.Id);
-            }
-
+            Send(reply, update.Message.From.Id);
         }
     }
 }

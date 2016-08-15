@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -377,7 +378,7 @@ namespace Werewolf_Node
 
                 var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
                     DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
-
+                
                 bool sendPM = false;
 
                 using (var db = new WWContext())
@@ -405,7 +406,7 @@ namespace Werewolf_Node
 #elif RELEASE2
                     if (user.HasPM2 != true)
 #elif DEBUG
-                    if (true)
+                    if (false)
 #elif BETA
                     if (user.HasDebugPM != true)
 #endif
@@ -656,28 +657,52 @@ namespace Werewolf_Node
             {
                 final = "";
                 bool requestPM = false;
-                while (_messageQueue.Count > 0)
+                bool byteMax = false;
+                var i = 0;
+                while (_messageQueue.Count > 0 & !byteMax)
                 {
-                    var m = _messageQueue.Dequeue();
-#if !DEBUG
+                    i++;
+                    var m = _messageQueue.Peek();
+
+                    if (m.RequestPM)
+                        requestPM = true;
                     if (!String.IsNullOrEmpty(m.GifId))
                     {
                         if (!String.IsNullOrEmpty(final))
                             Send(final);
                         Thread.Sleep(500);
+#if !DEBUG
                         SendGif(m.Msg, m.GifId);
                         Thread.Sleep(500);
                         final = "";
+#else
+                        var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
+                        if (Encoding.UTF8.GetByteCount(temp) > 512 && i > 1)
+                        {
+                            byteMax = true; //break and send
+                        }
+                        else
+                        {
+                            _messageQueue.Dequeue(); //remove the message, we are sending it.
+                            final += m.Msg + Environment.NewLine + Environment.NewLine;
+                        }
+#endif
+                        
                     }
                     else
                     {
-                        final += m.Msg + Environment.NewLine + Environment.NewLine;
+                        var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
+                        if (Encoding.UTF8.GetByteCount(temp) > 512 && i > 1)
+                        {
+                            byteMax = true; //break and send
+                        }
+                        else
+                        {
+                            _messageQueue.Dequeue(); //remove the message, we are sending it.
+                            final += m.Msg + Environment.NewLine + Environment.NewLine;
+                        }
+
                     }
-#else
-                    final += m.Msg + Environment.NewLine + Environment.NewLine;
-#endif
-                    if (m.RequestPM)
-                        requestPM = true;
                 }
                 if (!String.IsNullOrEmpty(final))
                 {
@@ -686,7 +711,7 @@ namespace Werewolf_Node
                     else
                         Send(final);
                 }
-                Thread.Sleep(3500);
+                Thread.Sleep(4000);
             }
             //do one last send
             final = "";
@@ -712,23 +737,39 @@ namespace Werewolf_Node
                 Send(final);
         }
 
-        public void OutputPlayers()
+        private int PlayerListId = 0;
+
+        private void SendPlayerList()
         {
-            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
+            new Thread(() =>
             {
-                LastPlayersOutput = DateTime.Now;
+                Thread.Sleep(4500); //wait a moment before sending
                 var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
                           Players.OrderBy(x => x.TimeDied)
                               .Aggregate("",
                                   (current, p) =>
                                       current +
                                       ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                SendWithQueue(msg);
+                var result = Program.Send(msg, ChatId).Result;
+                PlayerListId = result.MessageId;
+            }).Start();
+            
+        }
+
+        public void OutputPlayers()
+        {
+            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (20))
+            {
+                LastPlayersOutput = DateTime.Now;
+                if (PlayerListId != 0)
+                {
+                    Program.Bot.SendTextMessage(ChatId, GetLocaleString("LatestList"), replyToMessageId: PlayerListId);
+                }
             }
         }
-        #endregion
+#endregion
 
-        #region Roles
+#region Roles
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();
@@ -1495,9 +1536,9 @@ namespace Werewolf_Node
             foreach (var c in voteCult)
                 Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
         }
-        #endregion
+#endregion
 
-        #region Cycles
+#region Cycles
         public void ForceStart()
         {
             KillTimer = true;
@@ -1513,6 +1554,7 @@ namespace Werewolf_Node
 
             if (CheckForGameEnd()) return;
             SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
+            SendPlayerList();
             SendLynchMenu();
             for (var i = 0; i < (DbGroup.LynchTime ?? Settings.TimeLynch); i++)
             {
@@ -1752,6 +1794,7 @@ namespace Werewolf_Node
 
             SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
             SendWithQueue(GetLocaleString("Day", GameDay.ToBold()));
+            SendPlayerList();
             SendDayActions();
             //incremental sleep time for large players....
             Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
@@ -1840,7 +1883,7 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             //FUN!
-
+            SendPlayerList();
             Time = GameTime.Night;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
@@ -2849,9 +2892,9 @@ namespace Werewolf_Node
 
 
 
-        #endregion
+#endregion
 
-        #region Send Menus
+#region Send Menus
 
         private void SendLynchMenu()
         {
@@ -3082,9 +3125,9 @@ namespace Werewolf_Node
             }
         }
 
-        #endregion
+#endregion
 
-        #region Helpers
+#region Helpers
         public void FleePlayer(int banid)
         {
             var p = Players?.FirstOrDefault(x => x.Id == banid);
@@ -3235,9 +3278,9 @@ namespace Werewolf_Node
                 return -1;
             }
         }
-        #endregion
+#endregion
 
-        #region Database Helpers
+#region Database Helpers
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
             using (var db = new WWContext())
@@ -3407,6 +3450,6 @@ namespace Werewolf_Node
             }
 
         }
-        #endregion
+#endregion
     }
 }
