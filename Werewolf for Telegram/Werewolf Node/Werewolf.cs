@@ -744,26 +744,38 @@ namespace Werewolf_Node
             new Thread(() =>
             {
                 Thread.Sleep(4500); //wait a moment before sending
-                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
+                LastPlayersOutput = DateTime.Now;
+                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                           Players.OrderBy(x => x.TimeDied)
                               .Aggregate("",
                                   (current, p) =>
                                       current +
                                       ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                var result = Program.Send(msg, ChatId).Result;
-                PlayerListId = result.MessageId;
+                try
+                {
+                    var result = Program.Send(msg, ChatId).Result;
+                    PlayerListId = result.MessageId;
+                }
+                catch
+                {
+                    PlayerListId = 0;
+                }
             }).Start();
             
         }
 
         public void OutputPlayers()
         {
-            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (20))
+            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
             {
                 LastPlayersOutput = DateTime.Now;
                 if (PlayerListId != 0)
                 {
                     Program.Bot.SendTextMessage(ChatId, GetLocaleString("LatestList"), replyToMessageId: PlayerListId);
+                }
+                else
+                {
+                    Program.Bot.SendTextMessage(ChatId, GetLocaleString("UnableToGetList"), replyToMessageId: PlayerListId);
                 }
             }
         }
@@ -2857,13 +2869,13 @@ namespace Werewolf_Node
                 switch (DbGroup.ShowRolesEnd)
                 {
                     case "None":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                        Players.OrderBy(x => x.TimeDied)
                            .Aggregate(msg,
                                (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}\\{Players.Count()}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                              Players.OrderBy(x => x.TimeDied)
                                  .Aggregate("",
                                      (current, p) =>
