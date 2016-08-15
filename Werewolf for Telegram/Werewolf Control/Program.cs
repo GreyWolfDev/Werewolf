@@ -54,6 +54,13 @@ namespace Werewolf_Control
             string version = fvi.FileVersion;
             Console.Title = $"Werewolf Moderator {version}";
 
+            var updateid = "";
+            //attempt to get id from update
+            if (args.Length > 0)
+            {
+                updateid = args[0];
+            }
+
             //Initialize the TCP connections
             TCP.Initialize();
             //Let the nodes reconnect
@@ -66,7 +73,7 @@ namespace Werewolf_Control
             }
 
             //start up the bot
-            new Thread(Bot.Initialize).Start();
+            new Thread(() => Bot.Initialize(updateid)).Start();
             new Thread(NodeMonitor).Start();
             new Thread(CpuMonitor).Start();
             new Thread(UpdateHandler.SpamDetection).Start();
@@ -258,7 +265,7 @@ namespace Werewolf_Control
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
-
+                    Console.Clear();
                     //write the info
                     Console.WriteLine(msg);
                     //put the cursor back;

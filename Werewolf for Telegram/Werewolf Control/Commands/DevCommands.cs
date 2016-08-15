@@ -122,7 +122,7 @@ namespace Werewolf_Control
         {
             if (update.Message.Date > DateTime.UtcNow.AddSeconds(-3))
             {
-                Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"));
+                Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), update.Message.Chat.Id.ToString());
                 Bot.Running = false;
                 Program.Running = false;
                 Thread.Sleep(500);

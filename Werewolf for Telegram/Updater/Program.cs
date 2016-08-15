@@ -26,15 +26,19 @@ namespace Updater
         {
             try
             {
+                var id = "";
+                if (args.Length > 0)
+                    id = args[0];
+                Console.WriteLine($"Update called from {id}");
                 //get the root directory for the control
                 var mainPath = Path.Combine(RootDirectory, @"..\");
 
                 Console.WriteLine("Waiting on bot to exit....");
                 //first, wait for the bot to close out
-#if RELEASE
-                while (Process.GetProcessesByName("Werewolf Control").Any())
-#elif RELEASE2
+#if RELEASE2
                 while (Process.GetProcessesByName("Werewolf Control 2").Any())
+#else
+                while (Process.GetProcessesByName("Werewolf Control").Any())
 #endif
                 {
                     Thread.Sleep(100);
@@ -51,7 +55,14 @@ namespace Updater
                 Console.WriteLine("Starting bot....");
                 //now start it back up
                 //if (!Process.GetProcessesByName("Werewolf Control").Any())
-                Process.Start(Path.Combine(mainPath, "werewolf control 2.exe"));
+                var path = Path.Combine(mainPath,
+#if RELEASE2
+                    "werewolf control 2.exe"
+#else
+                    "werewolf control.exe"
+#endif
+                    );
+                Process.Start(path, id);
                 Console.WriteLine("Update complete");
                 Thread.Sleep(5000);
             }

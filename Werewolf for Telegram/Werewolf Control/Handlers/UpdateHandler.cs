@@ -155,15 +155,15 @@ namespace Werewolf_Control.Handler
                                 if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
                                 {
                                     Send($"Please do not spam me. Next time is automated ban.", key);
-                                    Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
-                                        Para);
+                                    //Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                    //    Para);
                                     continue;
                                 }
                                 if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 40) & !temp[key].NotifiedAdmin)
                                 {
-                                    Send(
-                                        $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
-                                        Para);
+                                    //Send(
+                                    //    $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                    //    Para);
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);
@@ -198,14 +198,14 @@ namespace Werewolf_Control.Handler
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine(e.Message);
+                            //Console.WriteLine(e.Message);
                         }
                     }
                     UserMessages = temp;
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    //Console.WriteLine(e.Message);
                 }
                 Thread.Sleep(2000);
             }
@@ -565,11 +565,32 @@ namespace Werewolf_Control.Handler
                     switch (command)
                     {
                         case "groups":
-                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10); //top 10 groups, otherwise these lists will get LONG
-                            var reply = groups.Aggregate("",
-                                (current, g) => current + $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
-                            Edit(query.Message.Chat.Id, query.Message.MessageId, GetLocaleString("HereIsList", language, choice));
-                            Send(reply, query.Message.Chat.Id);
+                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
+                            Edit(query.Message.Chat.Id, query.Message.MessageId,
+                                    GetLocaleString("HereIsList", language, choice));
+                            if (groups.Count() > 5)
+                            {
+                                //need to split it
+                                var reply = groups.Take(5).Aggregate("",
+                                    (current, g) =>
+                                        current +
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                Send(reply, query.Message.Chat.Id);
+                                Thread.Sleep(500);
+                                reply = groups.Skip(5).Aggregate("",
+                                    (current, g) =>
+                                        current +
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                Send(reply, query.Message.Chat.Id);
+                            }
+                            else
+                            {
+                                var reply = groups.Aggregate("",
+                                    (current, g) =>
+                                        current +
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                Send(reply, query.Message.Chat.Id);
+                            }
                             break;
                         case "validate":
                             //choice = args[1];

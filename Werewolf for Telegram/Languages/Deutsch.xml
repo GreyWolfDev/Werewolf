@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- maintained by @Laceygirl and @DingensX // version 03.08.2016 --> 
+<!-- maintained by @Laceygirl and @DingensX // version 15.08.2016 --> 
 <strings>
   <language name="Deutsch" base="Deutsch" variant="SFW" owner=""/>
   <string key="NotInGame">
@@ -125,7 +125,7 @@
     <!-- 0 - seer name -->
     <value>\n{0} ist der Seher 👳.</value>
     <value>\n{0} ist der einzig richtige Seher 👳.</value>
-	<value>\nNur {0} sagt die Wahrheit...</value>
+	<value>\nNur {0} kennt die Wahrheit...</value>
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
@@ -304,7 +304,7 @@
     <!-- 0 - number of seconds -->
     <value>Es wurde Nacht. Alle Spieler schlafen ein. Nachtaktive Spieler haben {0} Sekunden für deren Aktionen!</value>
 	<value>Schneller als gedacht wird es stockfinster, alle Spieler schlafen ein... doch einige tun auch nur so. Die Schlaflosen unter euch haben {0} Sekunden, um ihre Tätigkeiten auszuführen und zurück ins Bett zu huschen!</value>
-	<value>Die Nacht senkt sich über das Dorf. Alle gehen schlafen, ausser die Geschöpfe der Nacht... {0} Sekunden bleiben ihnen, um ihren Rollen gerecht zu werden!</value>
+	<value>Die Nacht senkt sich über das Dorf. Alle gehen schlafen, außer die Geschöpfe der Nacht... {0} Sekunden bleiben ihnen, um ihren Rollen gerecht zu werden!</value>
   </string>
   <string key="LynchKill" >
     <!-- 0 - player name -->
@@ -319,7 +319,7 @@
     <value>Uneinig darüber, wer gelyncht werden soll, kehren die Dorfbewohner frustriert in ihre Häuser zurück...</value>
 	<value>Es entsteht eine angespannte Stille, in der sich alle misstrauisch anschauen - dennoch ist auch jeder erleichtert, für heute mit dem Leben davon gekommen zu sein. Langsam löst sich die Versammlung auf und das Dorf legt sich zur Ruhe...</value>
 	<value>Obwohl der Henker sein Beil schon wieder eingepackt hat, starren sich immer noch alle angriffslustig an; erst als es anfängt zu regnen, hasten alle in ihre Häuser, und löschen auch bald schon die Lichter - es war ein langer Tag...</value>
-	<value>Da keine Stimmen abgegeben wurden, entscheiden sich die Dorfbewohner stumm, an diesem Abend niemanden umzubringen. Langsam löst sich die Versammlung auf, denn die Nacht bricht an...</value>
+	<value>Da keine Entscheidung gefällt werden konnte, entscheiden sich die Dorfbewohner stumm, an diesem Abend niemanden umzubringen. Langsam löst sich die Versammlung auf, denn die Nacht bricht an...</value>
   </string>
   <string key="NoLynchVotes" >
     <value>Irgendwas ist verdächtig, niemand hat eine Stimme abgegeben! Es gibt keine Toten...</value>
@@ -335,7 +335,7 @@
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
     <value>Als der Morgen hereinbricht, sehen die Dorfbewohner zu ihrem Entsetzen {0}, den Schutzengel 👼, aufgespießt am Kreuz der Kirche.</value>
-	<value>Der Morgen bricht an, und überall im Dorf liegen Federn herum... zuerst glaubt man an einen Fuchs, der sich in den Hühnerstall geschlichen hat, doch stattdessen findet man dort {0}, den Schutzengel...</value>
+	<value>Der Morgen bricht an, und überall im Dorf liegen Federn herum... zuerst glaubt man an einen Fuchs, der sich in den Hühnerstall geschlichen hat, doch stattdessen findet man dort {0}, den Schutzengel 👼...</value>
 	<value>Ein neuer Tag bricht an. Doch was sehen die armen Dorfbewohner? {0}, der von Gott gesandte Engel 👼, liegt tot auf dem Dorfplatz. Ein schrecklicher Anblick, denn ein Werwolf 🐺 hat ihm beide Flügel ausgerissen!</value>
 	<value>Es wird Tag... zu ihrem Bestürzen finden die Dorfbewohner {0}, den Schutzengel 👼, in einer Blutlache vor der Kirche - die gute Seele ist den Wölfen zum Opfer gefallen...</value>
 	<value>Der Tag bricht an, und verspricht, ein guter zu werden: sogar Schnee können die Dorfbewohner aus ihren Fenstern erblicken. Doch, halt... Schnee?! Schnell finden sie heraus, dass es in Wahrheit Federn sind... von einer bösen Vorahnung beschlichen pilgern sie zum Dorfzentrum, um dort {0} auf dem Pflaster zu finden, mit zerfetzten Flügeln, auf dem Pflaster aufgeschlagen... Trauert um den Schutzengel 👼!</value>
@@ -374,7 +374,7 @@
   </string>
   <string key="NoAttack" >
     <value>Am nächsten Morgen sammeln sich die Dorfbewohner im Dorfzentrum, Gott sei Dank - es scheint vorherige Nacht keinen Angriff gegeben zu haben.</value>
-	<value>Es scheint, als hätten die Therapiesitzungen etwas gebracht: heute Nacht ist alles ruhig geblieben, und der Morgen birgt keine unliebsamen Überraschungen. Der Tag steht euch zur freien Verfüfung, die tägliche Gruppensitzung fällt aus! (Trotzdem lebt immer noch das Böse unter euch, fühlt euch als nicht zu sicher!)</value>
+	<value>Es scheint, als hätten die Therapiesitzungen etwas gebracht: heute Nacht ist alles ruhig geblieben, und der Morgen birgt keine unliebsamen Überraschungen. Der Tag steht euch zur freien Verfügung - die tägliche Gruppensitzung fällt aus! (Trotzdem lebt immer noch das Böse unter euch, fühlt euch als nicht zu sicher!)</value>
   </string>
   <string key="CursedBitten" >
     <value>Du bist von den Wölfen gebissen worden. Als Verfluchter bist du nun ein Wolf 🐺 geworden!</value>
@@ -458,14 +458,14 @@
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
     <!-- 1 - Harlot's name -->
-    <value>Es sieht aus, als hätte sich {0} in der Nacht bei der Hure etwas eingefangen! Beschämt kommt er vom Dorfarzt zurück und zielt in einem unbeobachteten Moment auf {1}. Der Schütze bekam seine Rache. {1} ist tot 💋.</value>
+    <value>Es sieht aus, als hätte sich {0} in der Nacht bei der Hure etwas eingefangen! Beschämt kommt er vom Dorfarzt zurück und zielt in einem unbeobachteten Moment auf {1}. Der Schütze 🔫 bekam seine Rache. {1} ist tot 💋.</value>
   </string>
   <string key="DefaultShot" >
     <!-- 0 - Gunner's name -->
     <!-- 1 - target name -->
     <!-- 2 - Target's revealed name ( Target was a role) -->
     <value>Plötzlich hört man einen Schuss. Das Dorf sieht sich um und entdeckt {0}, den Schützen 🔫, über dem Körper von {1} stehen, die Pistole noch immer auf den Kopf gerichtet. {2}</value>
-	<value>Da Schüsse hier nicht häufig fallen, ist das ganze Dorf in heller Aufregung, als man, kurz bevor die Dämmerung einbricht, einen solchen hört. Sie eilen zu der Stelle, von wo der Schuss kam und finden {0}, den Schützen 🔫, keuchend neben der Leiche von {1} stehen, die Pistole neben seinen Füßen im Gras liegend. {2}</value>
+	<value>Da Schüsse hier nicht häufig fallen, ist das ganze Dorf in heller Aufregung, als man, kurz bevor die Dämmerung einbricht, einen solchen hört. Sie eilen zu der Stelle, von wo der Schuss kam und finden {0}, den Schützen 🔫, neben der Leiche von {1} stehen, die Pistole neben seinen Füßen im Gras liegend - {2}</value>
   </string>
   <string key="WolfWins" >
     <value>Der Werwolf hat gewonnen!</value>
@@ -789,7 +789,7 @@
     <!-- 0 - hunter -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>Während die Kugel {0} durchbohrt, fällt er zu Boden... aber nicht ohne nach seiner Pistole 🎯 zu greifen und {1} abzuschießen, welchen die Kugel direkt zwischen seinen Augen trifft. {2}</value>
+    <value>Tödlich verletzt - und die letzten Atemzüge nehmend - fällt {0} zu Boden... aber nicht ohne nach seiner Pistole 🎯 zu greifen und {1} abzuschießen, welchen die Kugel direkt zwischen seinen Augen trifft. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} schleicht zu dem Haus von {1}, platzt herein, und wird direkt von einem Wahnsinnigen mit einem Messer 🔪 begrüßt!!! In alphabetischer Reihenfolge durchsticht {1} mit seinem Messer die Organe von {0} - {0} ist jetzt tot...</value>
@@ -809,7 +809,7 @@
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>{0} schien es erst so, als würde es eine ruhige Nacht werden, aber er lag falsch. Die Dorfbewohner versammeln sich am nächsten Morgen, um {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, aber merkwürdigerweise fehlte die Leber... Der Serienmörder 🔪 hat wieder zugeschlagen! {1}</value>
+    <value>{0} schien es erst so, als würde es eine ruhige Nacht werden, aber er lag falsch. Die Dorfbewohner versammeln sich am nächsten Morgen, um {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, aber merkwürdigerweise fehlte die Leber... Der Serienmörder 🔪 hat wieder zugeschlagen - {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
@@ -821,7 +821,7 @@
     <value>Der Kult sendet {0}, um {1} zu konvertieren, doch stattdessen hört man einen Schuss 🎯, als der Körper von {0} aus dem Fenster geflogen kommt! {0} ist tot...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>{0} schleicht zu dem Haus von {1}, platzt herein, und wird direkt von einem Wahnsinnigen mit einem Messer 🔪 begrüßt!!! In alphabetischer Reihenfolge durchsticht {1} mit seinem Messer die Organe von {0} - {0} ist jetzt tot...</value>
+    <value>{0} schleicht zu dem Haus von {1}, platzt herein, und wird direkt von einem Wahnsinnigen mit einem Messer 🔪 begrüßt!!! In alphabetischer Reihenfolge durchsticht {1} mit seinem Messer die Organe von {0}, dadurch unweigerlich dem Tod ausgesetzt.</value>
     <value>Der Kult sendet {0} aus, um {1} zu konvertieren, doch stattdessen fliegt der Körper von {0} aus dem Fenster, mit Messern 🔪 in jedem Teil seines Körpers! WAS FÜR EIN PSYCHO! {0} ist tot...</value>
   </string>
   <string key="GuardKiller">
@@ -932,7 +932,8 @@
   <string key="SerialKillerWinsOverpower">
     <!-- 0 - SK's name -->
     <!-- 1 - target's name -->
-    <value>Der Morgen bricht an und die verbleibenden beiden Dorfbewohner gehen nach draußen zum Dorfplatz. {0} wirft einen Blick auf {1} und er muss auf einmal grinsen, zieht sein Messer 🔪 und ermordet {1}.</value>
+    <!-- <value>Der Morgen bricht an und die verbleibenden beiden Dorfbewohner gehen nach draußen zum Dorfplatz. {0} wirft einen Blick auf {1} und er muss auf einmal grinsen, zieht sein Messer 🔪 und ermordet {1}.</value> -->
+    <value>Am Morgen stehen sich die beiden verliebenen Dorfbewohner in der Mitte des Dorfes gegenüber, als {0} auf einmal anfängt, breit zu grinsen. Man sieht noch kurz die Klinge eines Messers 🔪 aufblitzen, dann bohrt sie sich jedoch bereits in das Herz von {1}.</value>
   </string>
   <string key="NoWinner" isgif="true">
     <value>Jeder im Dorf starb... die toten Körper liegen überall herum. Niemand gewinnt die Runde...</value>
@@ -1048,7 +1049,7 @@
     <value>Tag {0}</value>
   </string>
   <string key="NodeShutsDown">
-    <value>Irgendetwas muss schief gelaufen sein... dieser Knoten hat sich abgeschaltet :/</value>
+    <value>Irgendetwas muss schief gelaufen sein... dieser Knotenpunkt hat sich abgeschaltet :/</value>
   </string>
   <string key="SentPrivate">
     <value>Ich habe dir privat eine Nachricht geschickt :)</value>
@@ -1087,7 +1088,7 @@
     <value>Welche Sprachversion willst du haben?</value>
   </string>
   <string key="NoNodes">
-    <value>Momentan sind keine Knoten verfügbar, probier es in ein paar Sekunden nochmal :/</value>
+    <value>Momentan sind keine Knotenpunkt verfügbar, probier es in ein paar Sekunden nochmal :/</value>
   </string>
   <string key="GroupCommandOnly">
     <value>Du musst dieses Kommando in einer Gruppe ausführen.</value>
@@ -1222,5 +1223,8 @@
   </string>
   <string key="StartMe">
     <value>Du musst mich starten, damit ich dir schreiben kann :)</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} hat den Bot nicht gestartet und wurde deswegen aus dem Spiel entfernt!</value>
   </string>
 </strings>

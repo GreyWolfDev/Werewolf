@@ -50,7 +50,7 @@ namespace Werewolf_Control.Helpers
         internal static List<Command> Commands = new List<Command>();
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
-        public static void Initialize()
+        public static void Initialize(string updateid = null)
         {
 
             //get api token from registry
@@ -98,7 +98,8 @@ namespace Werewolf_Control.Helpers
             Me = Api.GetMe().Result;
 
             Console.Title += " " + Me.Username;
-
+            if (!String.IsNullOrEmpty(updateid))
+                Api.SendTextMessage(updateid, "Control updated\n" + Program.GetVersion());
             StartTime = DateTime.UtcNow;
             //now we can start receiving
             Api.StartReceiving();

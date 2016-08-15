@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="English" base="English" variant="Normal" owner="Para949"/>
+  <language name="English Dota" base="English" variant="English (Dota)" owner="limatiga"/>
   <string key="NotInGame">
-    <value>You don't appear to be in any games right now...</value>
+    <value>You don't appear to be in any games right now.</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! use /join to get in on the fun.... and probably die :P</value>
+    <value>{0} has started a game in Azeroth! use /join to get in on the fun and raid all the Lycans! </value>
     <value>A new game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a chaos game! use /join to get in on the fun.... and probably die :P</value>
+    <value>{0} has started a chaos game in Azeroth! use /join to get in on the fun and raid all the Lycans!</value>
     <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="NoJoinGameRunning">
@@ -28,7 +28,7 @@
     <value>{0} seconds left to /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Not enough players, cancelling game!</value>
+    <value>Not enough players, Zeus cancelling game!</value>
   </string>
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
@@ -39,25 +39,25 @@
   </string>
   <string key="ChangeNameToJoin">
     <!-- 0 - Player name -->
-    <value>{0}, please change your name to join</value>
+    <value>{0} please change your name to join, Zeus doesn't like your name.</value>
   </string>
   <string key="PlayerLimitReached">
-    <value>Sorry, max player limit has been reached!</value>
+    <value>Sorry, max players limit has been reached!</value>
   </string>
   <string key="PlayerJoined">
     <!-- 0 - Player name -->
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+    <value>{0} has joined the game. {1} players, {2} min, {3} max</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  If you do not, you will be killed.</value>
+    <value>{0} Please click the start button below or {1} and start me, Zeus couldn't PM you your role.  If you do not start the bot, you will be killed.</value>
   </string>
   <string key="DeadFlee">
-    <value>You can't run away! YOU'RE DEAD!  Get back in the ground....  jeez</value>
+    <value>You can't run away! YOU'RE DEAD!  Get back back in the ground....  jeez</value>
   </string>
   <string key="Flee">
     <!-- 0 - Player name -->
@@ -73,13 +73,13 @@
     <value>{0} players remain.</value>
   </string>
   <string key="DidntAsk">
-    <value>Hey I didn't ask you anything yet!</value>
+    <value>Hey! Zeus didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
     <value>You don't seem to be playing...</value>
   </string>
   <string key="NoPlayerName">
-    <value>I can't find a player by that name!</value>
+    <value>Zeus can't find a player by that name!</value>
   </string>
   <string key="AnswerNonValid">
     <value>This answer is not valid!</value>
@@ -92,31 +92,31 @@
   <string key="PlayerVotedLynch">
     <!-- 0 - Voter name -->
     <!-- 1 - Target name -->
-    <value>{0} has voted to lynch {1}</value>
+    <value>{0} has voted to banish {1}</value>
   </string>
   <string key="IdleKill">
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value>{0} has not voted 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
+    <value>{0} has not voted 2 nights in a row.  Zeus mad, he strikes {0} with his powerful thunder and, {0} suddenly falls, dead. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value>You traitor!!! You are now the wolf..</value>
+    <value>You are Abaddon!!! You are now the Lycan.. (Such an Impossible thing)</value>
   </string>
   <string key="ChoiceAccepted">
     <value>Choice accepted</value>
   </string>
   <string key="BeholderSeer">
     <!-- 0 - seer name -->
-    <value>\nThe seer is {0}</value>
+    <value>\nThe Dark Seer is {0}</value>
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
-    <value>{0} was the seer. As the apprentice, you step up to become the new seer.</value>
+    <value>{0} was the Dark Seer. As the choosen Illusion, you step up to become the new Dark Seer.</value>
   </string>
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
     <!-- 1 - seer name -->
-    <value>{0} was an apprentice, and has now stepped up to fill {1}'s place as the new Seer.</value>
+    <value>{0} was a choosen Illusion, and has now stepped up to fill {1}'s place as the new Dark Seer.</value>
   </string>
   <string key="SeerSees">
     <!-- 0 - player name -->
@@ -124,23 +124,23 @@
     <value>You see {0} is {1}!</value>
   </string>
   <string key="AskLynch">
-    <value>Who do you want to lynch?</value>
+    <value>Who do you want to banish?</value>
   </string>
   <string key="AskDetect">
-    <value>Who do you want to detect?</value>
+    <value>Who do you want to follow?</value>
   </string>
   <string key="AskShoot">
     <!-- 0 - bullet count -->
-    <value>Who do you want to shoot? {0} bullet(s) remain</value>
+    <value>Who do you want to shoot with you Assassinate? {0} chance(s) remain</value>
   </string>
   <string key="AskVisit">
-    <value>Who do you want to visit?</value>
+    <value>Who do you want to rack?</value>
   </string>
   <string key="AskSee">
-    <value>Who do you want to see?</value>
+    <value>Who do you want to follow?</value>
   </string>
   <string key="AskGuard">
-    <value>Who do you want to guard?</value>
+    <value>Who do you want to protect?</value>
   </string>
   <string key="AskEat">
     <value>Who do you want to eat?</value>
@@ -152,7 +152,7 @@
     <value>Who is your role model?</value>
   </string>
   <string key="AskConvert">
-    <value>Who do you want to convert to your order?</value>
+    <value>Who do you want to convert to be another Enigma?</value>
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
@@ -164,135 +164,136 @@
     <value> and </value>
   </string>
   <string key="RoleInfoCursed">
-    <value>You are cursed. You are a villager at this time, but if the wolves choose to kill you, you will instead become a werewolf yourself.</value>
+    <value>You are Wraith king😾. The cursed cruel King, in the past you killed your father because you really want to be the King. Before your former king died, he cursed you to be Lycan if Lycan bite you!</value>
   </string>
   <string key="RoleInfoDetective">
-    <value>You are the detective. During the day, you may choose a player to reveal their role.  However - in doing so, your role could be revealed to the wolves! (40% chance)</value>
+    <value>You are Rikimaru🕵. During the day, you may choose a player to reveal their role by following them.  However - in doing so, your role could be revealed to the Lycan! (40% chance)</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>Congrats! You're the village drunk! (and really, everyone knows it...)</value>
+    <value>Brewmaster🍻 the Drunken Master. "It's okay if Lycan gonna eat me. But, they must Drink with me before I died! Haha" </value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>You are the Guardian Angel. Each night, you may choose a player to save.  However, if you choose a wolf, there is a 50% chance you will die.</value>
+    <value>You are Omniknight👼. Everynight you can call a Guardian Angel to protect a player you choose.  However, if you choose protecting Lycan, there is a 50% chance you will die.</value>
   </string>
   <string key="RoleInfoGunner">
-    <value>You are the gunner.  You have two bullets.  During the day, you may choose to shoot another player. Everyone will here the shots, and know you are the gunner (not a wolf).</value>
+    <value>You are Sniper🔫.  During the day, you may Assassinate another player with your shot. Everyone will hear the shots, and know you are the Sniper.</value>
   </string>
   <string key="RoleInfoHarlot">
-    <value>You slut! You are the Harlot. During the night, you may choose to visit another player, to verify if they are not a wolf.  However - if you visit a wolf, or visit someone killed by the wolf, you will die.  If you do go to visit though, and the wolf tries to kill you at your home, you will survive.</value>
+    <value>Akasha💋 the Queen of Pain. During the night, you may choose to rack another player.  However - if you are trying to rack lycan, or visit someone who killed by Lycan, you will die.  If you do go to visit though, and Lycan tries to visit you, you will survive.</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value>Traitor! For now, you are a villager, but once all the wolves die, you will become a werewolf.  If the seer looks to you, you may or may not be identified as a wolf.</value>
+    <value>Abaddon🖕 the Fallen Knight! For now, you are a creep, but once all the Lycan die, you will become a Lycan.  If the Dark Seer looks to you, you may or may not be identified as a Lycan.</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>XD YOU ARE A WOLF!! (good on ya) Each night you can choose to kill someone.</value>
+    <value>XD YOU ARE LYCAN!!🐺 (good on ya) Each night you can choose to eat someone.</value>
   </string>
   <string key="RoleInfoSeer" >
-    <value >You are the seer.  Each night, you may choose a player to 'see', and reveal their role to you.</value>
+    <value >You are Dark Seer👳.  Each night, you may choose a player to be followed by one of your Illusion, and reveal their role to you.</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >You are a lowly villager, doomed to spend your days plowing a field and get eated.</value>
+    <value >You are a lowly creep👱, doomed, spend your days to fight another creeps, and get eated. Your special ability is "do nothing".</value>
   </string>
   <string key="RoleInfoTanner" >
-    <value >You are the tanner.  If you get lynched, you win automatically!</value>
+    <value >You are Techies👺.   If you get banished, you will bomb the Azeroth and then you are the one who win!</value>
   </string>
   <string key="RoleInfoWildChild" >
-    <value >You are a wild child! Pick a player to be your 'role model' - if they die, you become a werewolf.</value>
+    <value >You are a Wisp👶! The weakest hero in Azeroth choose your 'role model' to protect you - if they die, you will become a Lycan.</value>
   </string>
   <string key="RoleInfoBeholder" >
-    <value >You are the beholder, you will be told who the (real) seer is - that is your only function.</value>
+    <value >You are Silencer👁, you will be told who the (real) Dark Seer is - Remember your name, keep it silence.</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >You are the apprentice seer.  If the (real) seer dies, you will take their place as the seer.</value>
+    <value >You are an Illusion🙇.  You are very different than other Illusions. You were decided to take Dark Seer's place if the (real) Dark Seer dies.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >You are a cultist.  Every night, you may choose a player to convert to a cultist. If all remaining living players at the end are cultists, they win.</value>
+    <value >You are Enigma👤.  Mother of Eidolon, every night you may choose a player to convert to be another Enigma. If all remaining living players at the end is Enigma, they win.</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value >There is a cultist in the town, trying to convert everyone!  Each night, choose a player.  If they are a cultist, they die.  If the cult tries to convert you, the newest member dies.</value>
+    <value >Bounty Hunter💂 loves to collect bounty from Enigma.  Your job is simple, get gold from all Enigma then be rich.  If the enigma tries to convert you, the newest Enigma will die.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
-      Dusk draws near, and the villagers gather to decide who they are lynching this evening...
+      Dusk draws near, and the creeps gather in front of the Ancient to decide who they are banishing today...
       Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
     <!-- 0 - number of seconds -->
-    <value >It is now day time.  All of you have {0} seconds to make your accusations / defenses / talk.</value>
+    <value >It is now day time.  Zeus gave you {0} seconds to make your accusations / defenses / talk.</value>
   </string>
   <string key="NightTime" >
     <!-- 0 - number of seconds -->
-    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
+    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: Zeus gave you {0} seconds to start your actions!</value>
   </string>
   <string key="LynchKill" >
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value >The villagers have cast their votes, amid doubts and suspicions. {0} is dead. {1}</value>
+    <value >The creeps have cast their votes, amid doubts and suspicions. {0} is banished from Azeroth. {1}</value>
   </string>
   <string key="LynchTie" >
-    <value >Unable to come up with a proper decision on who to lynch, the mob returns to their homes for the night, frustrated...</value>
+    <value >Unable to come up with a proper decision on who to banish, the creeps returns to their homes for the night, frustrated...</value>
   </string>
   <string key="NoLynchVotes" >
     <value >Something is fishy, for no one voted!  No lynchmob tonight.....</value>
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
-    <value >The villagers gather in the morning, but do not see {0}.  They wander over to the house, to find {0} disemboweled, an old badge shoved down their throat.</value>
+    <value >The creeps gather in the morning, but do not see {0}.  Gem of true sight is dropped in front of his house, they found Rikimaru is bleeding.  Rikimaru🕵 has been eaten by Lycan!.</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
-    <value >Morning comes, and to everyone's dismay, impaled on top of the church's cross is {0}, the Guardian Angel.</value>
+    <value >Morning comes, and to everyone's dismay, impaled on top of the church's cross is {0}, the Omniknight👼.</value>
   </string>
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
-    <value >As everyone comes out of their houses, the find pieces of a shotgun strewn about...  then legs.. then fingers..  then floating in the fountain in the town square, the body of {0}, dead from a werewolf.  You have lost your gunner.</value>
+    <value >As everyone comes out of their houses, the find pieces of a rifle strewn about...  the body of {0} floating in the fountain in Azeroth.  You have lost your Sniper🔫.</value>
   </string>
   <string key="SeerEaten" >
     <!-- 0 - victim name -->
-    <value >The villagers awake in the morning, to find the disemboweled remains of {0} haunched over a ouija board and tarot cards.  The Seer is dead.</value>
+    <value >The villagers awake in the morning, a wall of replica has been destroyed, {0} is dead.  the Dark Seer👳.</value>
   </string>
   <string key="DrunkEaten" >
     <!-- 0 - victim name -->
-    <value >Everyone wakes to the smell of burning alcohol and wood...  the pub is on fire!!!!  After putting the fire out, the remains of {0} are found, torn apart....</value>
+    <value >Everyone wakes to the smell of alcohol...  Seems like, Brewmaster have a closing party last night.  {0} the Brewmaster🍻 has been eaten.</value>
   </string>
   <string key="FoolEaten" >
     <!-- 0 - victim name -->
-    <value >As the sun rises above the village, they find {0} sitting over an ouija board, but with a deck of.... bicycle playing cards??? WHAT A FOOL!</value>
+    <value >The sun rises in Azeroth, golems is standing in front of {0}'s house this morning.  Someone try to check inside, and found the Warlock🃏 is dead.</value>
   </string>
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
     <!-- 1 - victim role -->
-    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM {1}</value>
+    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the river, head missing.  NOMNOMNOMNOM {1}</value>
+    <value>Azeroth feels more creepy than before, creep found {0}'s head in front of Roshan's place. NOMNOMNOMNOM {1} </value>
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar...  a cultist has been killed by the hunter!</value>
+    <value>Today, Bounty Hunter💂 get the salary. {0} the Enigma has been killed by the Bounty Hunter💂!</value>
   </string>
   <string key="NoAttack" >
-    <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
+    <value >All the creeps gather the next morning in the front of Azeroth's ancient, to sighs of relief - it appears there was no attack the previous night.</value>
   </string>
   <string key="CursedBitten" >
-    <value >You have been killed by the wolves.  As the cursed, you have now become a wolf!</value>
+    <value >You have been killed by the Lycans.  As the cursed king, you have now become a Lycan!</value>
   </string>
   <string key="WolfTeam">
     <!-- 0 - teammate names -->
-    <value>Your wolf counterpart(s): {0}</value>
+    <value>Your lycan partner(s): {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
     <!-- 0 - victim name -->
-    <value >{0} was bitten....  but was cursed, and became a werewolf! Congrats on your new teammate!</value>
+    <value >{0} was bitten....  but {0} was the cursed king, and became a Lycan! Grats on your new teammate!</value>
   </string>
   <string key="WolvesEatYou" isgif="true" >
-    <value >Oh no!  The wolves eated you. NOMNOMNOMNOM</value>
+    <value >Oh no!  The lycan eated you. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >Oh no! {0} was a drunk!  Now you are drunk, and can't attack tomorrow night..</value>
+    <value >Oh no! {0} was a Brewmaster!  You couldn't resist the party last night, that was an amazing closing party from the Drunken Master, you must take a rest next day.</value>
   </string>
   <string key="GuardWolf" >
-    <value >You tried to guard a wolf!  The wolf has eaten you.</value>
+    <value >You tried to protect Lycan!  The lycan has eaten you.</value>
   </string>
   <string key="GuardSaved" >
     <!-- 0 - saved player name -->
@@ -307,39 +308,39 @@
     <value>You went to guard {0}, but they weren't home!</value>
   </string>
   <string key="GuardSavedYou" >
-    <value >A guardian angel was watching over you last night, and fought off the wolves!</value>
+    <value >A guardian angel was watching over you last night, and fought off the Lycan! Thanks to Omniknight!</value>
   </string>
   <string key="HarlotEaten" >
     <!-- 0 - player name -->
-    <value >The harlot decided to take the wrong night off, and stayed home.  {0} has been eaten by the wolves!</value>
+    <value >Akasha decided to take the wrong night off, and stayed home.  {0} has been eaten by the lycan!</value>
   </string>
   <string key="HarlotNotHome" >
     <!-- 0 - player name -->
-    <value >Odd... {0} was not home!  No dinner for you...</value>
+    <value >Odd... {0} was not home!  No torment today...</value>
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
-    <value >You slip into {0}'s house for a little fun, only to be confronted by a wolf.  You are dead.</value>
+    <value >You come to {0}'s house for a rack tonight, but they are Lycan.  You are dead.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <!-- 0 - player name -->
-    <value >{0} slipped into the wrong house last night! Their slutty remains are found pinned to the church doors with an iron rod...  how sad :(</value>
+    <value >{0} come to the wrong house last night! Akasha was racked by Lycan! </value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
     <!-- 0 - harlot name -->
     <!-- 1 - victim name -->
-    <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress.  However, they instead find a werewolf eating {1}!  The werewolf quickly turns on {0} and jumps....  {0} is dead.</value>
+    <value >{0} come to {1}'s house, and ready to rack them.  However, they instead find Lycan eating {1}!  The Lycan quickly turns on {0} and jumps....  {0} is dead.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <!-- 0 - target name -->
-    <value >You see {0} is not wolf, as they fucked you good and hard all night long!</value>
+    <value >You see {0} is not Lycan, you racked them last night, HAHAHA.</value>
   </string>
   <string key="HarlotVisitYou" >
-    <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night you wake up, the harlot riding you.  Both of you finish up, then they slip back out silently...</value>
+    <value >Your eyes were closed, you couldn't see, but then someone slapped and racked you. Akasha, the Queen of Pain visited your house.</value>
   </string>
   <string key="DetectiveCaught" >
     <!-- 0 - detective name -->
-    <value >You caught {0} snooping about! They are the detective</value>
+    <value >You caught {0} snooping about! They are Rikimaru! </value>
   </string>
   <string key="DetectiveSnoop" >
     <!-- 0 - target name -->
@@ -349,25 +350,25 @@
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
     <!-- 1 - Harlot's name -->
-    <value >Looks like {0} came back positive after a night with the Harlot! The gunner got revenge. {1} is dead.</value>
+    <value >Looks like {0} came back positive after a night with Akasha! The Sniper got revenge. {1} is dead.</value>
   </string>
   <string key="DefaultShot" >
     <!-- 0 - Gunner's name -->
     <!-- 1 - target name -->
     <!-- 2 - Target's revealed name ( Target was a role) -->
-    <value >Suddenly, a shot rings out.  The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
+    <value >Suddenly, a shot rings out.  Azeroth turns to see {0} standing over {1}'s body, a rifle still aimed at the head. {2}</value>
   </string>
   <string key="WolfWins" isgif="true" >
-    <value >The werewolf has won!</value>
+    <value >Lycan has won the game!</value>
   </string>
   <string key="WolvesWin" isgif="true" >
-    <value >The werewolves have won!</value>
+    <value >The Lycans have won the game!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value >The villagers have won! All the wolves have died....</value>
+    <value >The creeps have won! All the lycans have died....</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value >Oh no! You lynched the Tanner!  He wins the game, silly.</value>
+    <value >Oh no! You just banished Techies!  He bombed azeroth and wins the game, silly.</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
@@ -380,23 +381,23 @@
   <string key="CultConvertCultHunter">
     <!-- 0 - Yougest Cultist (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} was sent to do your dirty work, and convert {1}... however, they were the cult hunter! {0} is dead!</value>
+    <value>{0} was sent to do your dirty work, and convert {1}... however, they were Bounty Hunter! {0} is dead!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - Number of cultists left -->
-    <value>{0} came to your house last night, ready to convert you....  but you shoved your sword right through him.  A cultist is dead... {1} remain!</value>
+    <value>{0} came to your house last night, ready to convert you....  but you shoved your blade right through him.  Enigma is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The cult has converted you to their order!  You are now a cultist.  Every other night, you will have a chance to convert another player.</value>
+    <value>The Enigma has converted you to their order!  You are now an Enigma.  Every other night, you will have a chance to convert another creep.</value>
   </string>
   <string key="CultTeam">
     <!-- 0 - Number of cultists -->
-    <value>Cultists: {0}</value>
+    <value>Enigmas: {0}</value>
   </string>
   <string key="CultJoin">
     <!-- 0 - new cultist's name -->
-    <value>{0} has joined the cult!</value>
+    <value>{0} has joined the eidolon and became Enigma!</value>
   </string>
   <string key="CultVisitEmpty">
     <!-- 0 - Newest cultist's name -->
@@ -404,7 +405,7 @@
     <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists..  The cult has won!</value>
+    <value >All the Lycans have died, and the only people left standing have all been converted to eidolon and become Enigma..  The enigma has won!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -416,68 +417,68 @@
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
-    <value>You go to {0}'s house, but there is no mysterious chanting.  They are not a cultist, so you return home.</value>
+    <value>You go to {0}'s house, but there is no bounty there.  They are not an enigma, so you return home.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
-    <value>{0}'s role model just died!  In their rage, they have become a werewolf!</value>
+    <value>{0}'s protector just died!  In their rage, they have become a Lycan!</value>
   </string>
   <string key="WildChildTransform">
     <!-- 0 - role's name -->
     <!-- 0 - teamate's names -->
-    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1}</value>
+    <value>{0} has died! In your rage, you have become a Lycan! Your new teammates are: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
-    <value>a Villager 👱</value>
+    <value>a Creep 👱</value>
   </string>
   <string key="Drunk">
-    <value>the Drunk 🍻</value>
+    <value>the Brewmaster 🍻</value>
   </string>
   <string key="Harlot">
-    <value>the Harlot 💋</value>
+    <value>Akasha 💋</value>
   </string>
   <string key="Seer">
-    <value>the Seer 👳</value>
+    <value>the Dark Seer 👳</value>
   </string>
   <string key="Traitor">
-    <value>the Traitor 🖕</value>
+    <value>Abaddon 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>the Guardian Angel 👼</value>
+    <value>Omniknight 👼</value>
   </string>
   <string key="Detective">
-    <value>the Detective 🕵</value>
+    <value>Rikimaru 🕵</value>
   </string>
   <string key="Wolf">
-    <value>a Werewolf 🐺</value>
+    <value>Lycan 🐺</value>
   </string>
   <string key="Cursed">
-    <value>the Cursed 😾</value>
+    <value>Wraith King 😾</value>
   </string>
   <string key="Gunner">
-    <value>the Gunner 🔫</value>
+    <value>Sniper 🔫</value>
   </string>
   <string key="Tanner">
-    <value>the Tanner 👺</value>
+    <value>Techies 👺</value>
   </string>
   <string key="Fool">
-    <value>the Fool 🃏</value>
+    <value>Warlock 🃏</value>
   </string>
   <string key="WildChild">
-    <value>the Wild Child 👶</value>
+    <value>the Wisp 👶</value>
   </string>
   <string key="Beholder">
-    <value>the Beholder 👁</value>
+    <value>the Silencer 👁</value>
   </string>
   <string key="ApprenticeSeer">
-    <value>the Apprentice Seer 🙇</value>
+    <value>Illusion 🙇</value>
   </string>
   <string key="Cultist">
-    <value>a Cultist 👤</value>
+    <value>Enigma the Eidolon 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>the Cultist Hunter 💂</value>
+    <value>the Bounty Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -494,26 +495,26 @@
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>a Mason 👷</value>
+    <value>Meepo 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>You are a Mason.  If there are any other masons, you will know who they are.  Otherwise, you are a villager.</value>
+    <value>You are Meepo.  If there are any other meepoes, you will know who they are.  Otherwise, you are a creep.</value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
-    <value>As everyone rises, they find the body of {0} shoved into a pile of stone, blood splattered everywhere.  One of your masons has died!</value>
+    <value>As everyone rises, they find the body of {0} shoved into a pile of stone, blood splattered everywhere.  Meepo has died!</value>
   </string>
   <string key="MasonTeam">
-    <value>  The masons are: {0}</value>
+    <value>  The meepoes are: {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
     <!-- 0 - Youngest cultists name -->
-    <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
+    <value>Your newest Enigma heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of Lycan fur snagged on the doorway...</value>
   </string>
   <string key="GuardBlockedWolf">
     <!-- 0 - target's name -->
-    <value>The pack heads to {0}'s house to eat them, but they are met by a tall dark figure, armed to the teeth. The Guardian Angel fights everyone off, and you head back defeated.</value>
+    <value>The pack heads to {0}'s house to eat them, but they are met by a tall dark figure, armed to the teeth. The Omniknight fights everyone off, and you head back defeated.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
@@ -525,11 +526,11 @@
   <string key="NameExists">
     <!-- 0 - target's name -->
     <!-- 1 - name -->
-    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+    <value>@{1}, a player with the name {0} has already joined.  Zeus said "change your name!".</value>
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, you happen to notice a strange altar, poorly hidden, off in a side room, a strange glowing coming from it....</value>
+    <value>You slipped into {0}'s house for torment... but as you are leaving, you happen to notice something strange, there are so much eidolon in the house....</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -542,7 +543,7 @@
   </string>
   <string key="MasonConverted">
     <!-- 0 - mason's name -->
-    <value>Odd.... {0} didn't show up for the masons meeting this morning.... O.o</value>
+    <value>Odd.... {0} didn't show up for the meepoes meeting this morning.... O.o</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -622,124 +623,124 @@
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>You are Cupid. Sent to Earth with only underpants, a bow and two arrows, choose two players who will love each other for eternity. If one of them dies, the other one dies of sorrow</value>
+    <value>You are Ogre Magi🏹. You were destined to be conjoined twins. You can choose two players who will be cursed to be next the next Ogre Magi, if one of them dies the other one dies of sorrow.</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>You are a Doppelgänger. Legend has it that your ancestors were metamorphs, and could choose any form they wanted. You have inherited some of their capacities. Choose a player, when that player dies, you will take on their role.</value>
+    <value>You are Rubick🎭. You have an ability to steal other player role. When that player dies, you will take on their role.</value>
   </string>
   <string key="RoleInfoHunter">
-    <value>You are the town Hunter. You do not sleep well, and you would never go to bed without your rifle. If you die, you can choose someone else to kill. If you are eaten, you have a chance to take a werewolf down, but will not be able to choose a player to kill.</value>
+    <value>You are Sven 🎯. As rogue knight, you never sleep well, and you would never go to bed without your hammer. If you die, you can choose someone else to kill. If you are eaten, you have a chance to take a Lycan down, but will not be able to choose a player to kill.</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>You are the serial killer. Recently escaped from the local asylum, your goal is for everyone else to die. Every night, you can add a player's body to your collection.</value>
+    <value>You are Pudge🔪 the Fatty Bastard.  He came from the Fields of Endless Carnage, and never have enough fresh meat from the creeps. Everynight, he haunts and seek for fresh meat.</value>
   </string>
   <string key="CupidChosen">
-    <value>You have been struck by love. {0}'s memory will never fade in your heart. Your goal is for both of you to survive. If one of you dies, the other one will die out of sorrow.</value>
+    <value>You have been cursed by Ogre Magi, {0} is your conjoined twins. If one of you dies, the other one will die out of sorrow.</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>The village has chosen to hang you! This is your last chance, choose to shoot someone as you go down!</value>
+    <value>Azeroth's creep has chosen to hang you! This is your last chance, use your stormhammer to someone as you go down!</value>
   </string>
   <string key="HunterNoChoiceLynched">
-    <value>{0} fumbles for their pistol as the noose tightens, but he cannot get it in time, and falls to their death with a loud snap of their neck...</value>
+    <value>{0} lost their blade, he cannot get it in time, and falls to their death with a loud snap of their neck...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} whips out their pistol, looks at the crowd..... and cannot make a decision on who to shoot.  He falls to their death, accepting their fate...</value>
+    <value>{0} whips out their blade, looks at the crowd..... and cannot make a decision on who to shoot.  They falls to their death, accepting their fate...</value>
   </string>
   <string key="HunterKilledFinalLynched">
     <!-- 0 - hunter's name -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>As the noose tightens around {0}'s neck, they whip out a pistol, arm it, take aim, and pull the trigger, shooting {1} as the floor drops out beneath them! {1} falls over, dead.  {2}</value>
+    <value>As the noose tightens around {0}'s neck, they show their blade, arm it, and threw the stormhammer to {1} as the floor drops out beneath them! {1} falls over, dead.  {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>You've been murdered!  In your last moments, you have the chance to shoot someone.... make it quick!</value>
+    <value>You've been murdered!  In your last moments, you have the chance to throw your stormhammer to someone.... make it quick!</value>
   </string>
   <string key="HunterNoChoiceShot">
     <!-- 0 - target's name -->
-    <value>The shot to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood.....</value>
+    <value>The shot to {0} was too much, so much that they couldn't even reach for their blade, as they lay in a pool of blood.....</value>
   </string>
   <string key="HunterSkipChoiceShot">
     <!-- 0 - hunter's name -->
-    <value>As {0} lays there, gasping for their final breathe, they can't decide who to shoot.... and accept their fate..</value>
+    <value>As {0} lays there, gasping for their final breathe, they can't decide who to kill.... and accept their fate..</value>
   </string>
   <string key="HunterKilledFinalShot">
     <!-- 0 - hunter -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>As the bullet pierces {0}, they fall to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+    <value>As the stormhammer thrown, {0} fall to the ground.... but not without their blade, and throwing his stormhammer upon {1} falls over, dead. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed bastard with a hook!!! {1} plunges the hook deep into {0}'s heart, cackling the entire time! {0} is dead D:</value>
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as he died! {0} has died (wolf)</value>
+    <value>The lycans tried to attack Sven last night, but Sven was able to take one down with them as he died! {0} has died (Lycan)</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
-    <value>The wolf tried to attack the hunter last night, but the hunter was able to take the wolf {0} down with their rifle!</value>
+    <value>Lycans tried to attack Sven last night, but Sven was able to take the wolf {0} down with their blade!</value>
   </string>
   <string key="SerialKillerKilledWolf">
-    <value>The wolves attempted to have a nice late night snack, but were instead greeted by a crazed murderer! {0} was killed in the fight!</value>
+    <value>Lycans attempted to have a nice late night snack, but were instead greeted by a crazed fat bastard! {0} was killed in the fight!</value>
   </string>
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>It seemed a quiet enough night for {0}, but they were wrong.  The villagers gather in the morning to find {0} split from head to toe, but oddly the liver was missing.....  The serial killer has struck again! {1}</value>
+    <value>It seemed a quiet enough night for {0}, but they were wrong.  The creeps gather in the morning to find {0} split from head to toe, but oddly the liver was missing.....  Pudge has struck again! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
-    <value>You tried to collect {0}'s body for your collection, but you were fought off by the guardian angel! No kill for you tonight....</value>
+    <value>You tried to hook {0}'s body for your dinner, but you were fought off by Omniknight's Guardian Angel! No kill for you tonight....</value>
   </string>
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
+    <value>The Eidolons sends {0} to try to convert {1}, boom a stormhammer and {0}'s body comes flying out of the window! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead a {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
+    <value>The Eidolons sends {0} to try to convert {1}, but a hook suddenly comes to {0}'s body. They are flying out of the window, hook and blade brings their body in! WHAT A BASTARD! {0} is dead....</value>
   </string>
   <string key="GuardKiller">
-    <value>You tried to guard the serial killer, but the came out and stabbed you 89 times! You are dead....</value>
+    <value>You tried to protect Pudge, but they came out and hooked you! You are dead....</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
-    <value>You slip into {0}'s house, and start having a little fun.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac!  You have died....</value>
+    <value>You come to {0}'s house, and start having a little rack.  All seems great until {0} pulls out a blade and starts stabbing you, laughing like a maniac!  You have died....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
-    <value>The doppelganger {0} has now become a mason, just like you!</value>
+    <value>Rubick {0} has now become a meepo, just like you!</value>
   </string>
   <string key="DGTransformToMason">
     <!-- 0 - dead mason's name -->
     <!-- 1 - mason collegues's name -->
-    <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
+    <value>{0} has died, and you transform into a meepo.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
     <!-- 0 - new cultist's name -->
-    <value>The doppelganger {0} has now become a cultist, just like you!</value>
+    <value>Rubick {0} has now become an Enigma, just like you!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into a cultist.  Your teammates (if any) are: {1}</value>
+    <value>{0} has died, and you transform into an Enigma.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
-    <value>The doppelganger {0} has now become a wolf, just like you!</value>
+    <value>Rubick {0} has now become a Lycan just like you!</value>
   </string>
   <string key="DGTransformToWolf">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into a wolf.  Your teammates (if any) are: {1}</value>
+    <value>{0} has died, and you transform into Lycan.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="SerialKillerWins" isgif="true">
-    <value>The only person left standing is the serial killer! They have won!</value>
+    <value>The only person left standing is the Pudge! They have won!</value>
   </string>
   <string key="AskKill">
     <value>Who do you want to kill tonight?</value>
@@ -748,47 +749,47 @@
     <!-- 0 - dead's name -->
     <!-- 1 - lover's name -->
     <!-- 2 - roles -->
-    <value>With {0}'s dying breath, {1} rushes over and falls, crying.  They cannot stand the loss of their loved one, and shoot themselves with the nearest pistol the can find. {2}</value>
+    <value>With {0}'s dying breath, {1} lost their ability and suddenly died. {1} was {2}</value>
   </string>
   <string key="AskDoppelganger">
-    <value>Who do you want to become if they die?</value>
+    <value>Who do you want to steal?</value>
   </string>
   <string key="AskCupid1">
-    <value>Who do you want the lovers to be? Choose the first player</value>
+    <value>Who do you want to curse? Choose the first player</value>
   </string>
   <string key="AskCupid2">
-    <value>Who do you want the lovers to be? Choose the second player</value>
+    <value>Who do you want to curse? Choose the second player</value>
   </string>
   <string key="Hunter">
-    <value>the Hunter 🎯</value>
+    <value>Sven 🎯</value>
   </string>
   <string key="Cupid">
-    <value>Cupid 🏹</value>
+    <value>Ogre Magi 🏹</value>
   </string>
   <string key="SerialKiller">
-    <value>the Serial Killer 🔪</value>
+    <value>Pudge 🔪</value>
   </string>
   <string key="Doppelgänger">
-    <value>the Doppelgänger 🎭</value>
+    <value>Rubick 🎭</value>
   </string>
   <string key="CupidChosen">
     <!-- 0 - lover's name -->
-    <value>Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If you both make it to the end, you will both win.</value>
+    <value>You were cursed! {0} is your conjoined twins.  If they die, you either.  If you both make it to the end, you will both win.</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
-    <value>You have become the wild child.  You role model is {0}</value>
+    <value>You have become Wisp.  Your protector is {0}</value>
   </string>
   <string key="LoversWin">
-    <value>True love endures! The lovers have won!</value>
+    <value>That was a lovely curse! The Conjoined Twins have won!</value>
   </string>
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
     <!-- 1 - role -->
-    <value>In the middle of the town square, everyone finds the body of {0}, multiple shots to the body.  Looks like they tried to sneak up on the Hunter! {1}</value>
+    <value>In the middle of the lane, everyone finds the body of {0}, thrown by the stormhammer to their body.  Looks like they tried to sneak up on Sven! {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>A hooded figure tried to convert you to their cult, but your faith was too strong</value>
+    <value>A hooded figure tried to convert you to their eidolon, but your faith was too strong.</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -796,7 +797,7 @@
   </string>
   <string key="AddedToWaitList">
     <!-- 0 - target's name -->
-    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting. </value>
+    <value>You have been added to the wait list for {0}.  Zeus will PM you when the next game is starting. </value>
   </string>
   <string key="NotifyNewGame">
     <!-- 0 - target's name -->
@@ -805,19 +806,19 @@
   <string key="SerialKillerWinsOverpower">
     <!-- 0 - SK's name -->
     <!-- 1 - target's name -->
-    <value>Morning comes, and the remaining two villagers walk out to the town square.  {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out.</value>
+    <value>Morning comes, and the remaining two creeps walk out to the Ancient.  {0} takes a look at {1}, gets a big grin on their face, pulls out a hook, and takes {1} out.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Everyone in the village has died....  there's nothing but bodies left.  No one wins this round, except the vultures...</value>
+    <value>Everyone in Azeroth has died....  there's nothing but bodies left.  No one wins this round, but Zeus...</value>
   </string>
   <string key="SKHunterEnd">
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
-    <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the village is empty, there is no winner...</value>
+    <value>As the sun rises, {0} and {1} walk out into the Azeroth's Ancient.  {0} pulls out their hook, and hooks {1}.  {1} pulls out their blade and threw a stormhammer upon {0}'s face as {0} lands, plunging the hook deep into {1}.  Both are dead, Azeroth is empty, there is no winner...</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
-    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+    <value>You failed to make a choice, so Zeus has chosen for you: {0}</value>
   </string>
   <string key="Won">
     <value>Won</value>
@@ -832,58 +833,58 @@
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
-    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+    <value>Your role is simple - fight with other creeps and try to survive. Each day, you will have a chance to banish the Lycan.</value>
   </string>
   <string key="AboutSeer">
-    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+    <value>You are Dark Seer. In this role, each night, you may follow a player with your illusion, and have their role revealed to you. Admit to your role wisely: If you reveal you are the dark seer, the lycan will try to kill you!</value>
   </string>
   <string key="AboutWw">
-    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack Brewmaster, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack Wraith King, they will become a Lycan like yourself! Hooray friends!</value>
   </string>
   <string key="AboutHarlot">
-    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+    <value>As the Akasha (Queen of Pain) you will be given the chance to 'rack' another player each night. If they are not lycan, you will be told so (because you live!). If you visit Lycan, you will be killed and racked. If you visit the player the Lycans have chosen to kill, you will be killed as well. However - If you are visiting a player, and the Lycans choose to kill you, you will survive (you weren't home)</value>
   </string>
   <string key="AboutDrunk">
-    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+    <value>You are the Brewmaster! As the drunken master, you are still just a creep. BUT! If the lycans kill you, they will become disabled for the next night, as they are drunk off your closing party last night.</value>
   </string>
   <string key="AboutCursed">
-    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+    <value>As the cursed Wraith King, you are a normal creep... until Lycan kill you. Once they do, you will become a lycan as well! Free to hunt in the night..... XD</value>
   </string>
   <string key="AboutTraitor">
-    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+    <value>You are a traitorous bastard. If you survive long enough for all the Lycans to die, you will become a Lycan, ready to kill your former teammates in the night!</value>
   </string>
   <string key="AboutGA">
-    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+    <value>You are the Omniknight! Each night, you may choose a player to be protected with your Guardian Angel. Be careful however - if you choose to protect a Lycan, there is a 50% chance you will be killed.</value>
   </string>
   <string key="AboutDetective">
-    <value>You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+    <value>You are the unseen Rikimaru.. Each day, you will have the chance to follow another player. Use this carefully however, Lycan always carry Gem of true sight then they will know if you are Rikimaru!</value>
   </string>
   <string key="AboutGunner">
-    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+    <value>As the Sniper, you are given 2 chances to shoot players with your assasinate. Once you do, everyone will know if you are Sniper! Be careful though, you only have 2 chances!</value>
   </string>
   <string key="AboutTanner">
-    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+    <value>Techies goal is simple: Get banished. If techies gets banished, he will bomb the Azeroth and wins. Everyone else loses.</value>
   </string>
   <string key="AboutFool">
-    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+    <value>Warlock is told that they are dark seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As Enigma, your goal is to convert all other players become Eidolon (except wolves). If at the end of the game, all living players are Enigma - the Eidolon wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt bounty from Enigma. If enigma tries to convert you, their newest member will die. Each night you may pick a player to 'hunt' - if they are Enigma, they will die and you get bounty from it.</value>
   </string>
   <string key="AboutWC">
-    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+    <value>At the beginning of the game, you will choose someone to be your 'protector'. If they die, you'll become a Lycan.</value>
   </string>
   <string key="AboutAppS">
-    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+    <value>For now, you are a normal creep. However, if dark seer dies, you will become the new dark seer</value>
   </string>
   <string key="AboutBH">
     <value>You will be told who the seer is (the real one, not the fool)</value>
   </string>
   <string key="AboutMason">
-    <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+    <value>A meepos job is simple - they automatically know who the other meepos are. Otherwise, they are a lowly creep.</value>
   </string>
   <string key="AboutDG">
     <value>
@@ -1099,11 +1100,5 @@
   </string>
   <string key="PlayerNoPM">
     <value>{0} failed to start the bot, and has been removed from the game!</value>
-  </string>
-  <string key="LatestList">
-    <value>Here is the latest list</value>
-  </string>
-  <string key="UnableToGetList">
-    <value>Unable to get latest list</value>
   </string>
 </strings>
