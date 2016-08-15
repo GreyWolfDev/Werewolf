@@ -93,11 +93,13 @@ namespace Werewolf_Control
                 using (var db = new WWContext())
                 {
                     var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
+                    var groupName = update.Message.Chat.Title.ToBold();
+                    if (update.Message.Chat.Username != null)
+                        groupName += $" @{update.Message.Chat.Username}";
+                    else if (grp.GroupLink != null)
+                        groupName = $"<a href=\"{grp.GroupLink}\">{update.Message.Chat.Title}</a>";
                     foreach (var n in notify)
                     {
-                        var groupName = update.Message.Chat.Title.ToBold();
-                        if (update.Message.Chat.Username != null)
-                            groupName += $" @{update.Message.Chat.Username}";
                         if (n.UserId != update.Message.From.Id)
                             Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
                         Thread.Sleep(100);
