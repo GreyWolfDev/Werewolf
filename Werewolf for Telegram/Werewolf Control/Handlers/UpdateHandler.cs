@@ -565,11 +565,32 @@ namespace Werewolf_Control.Handler
                     switch (command)
                     {
                         case "groups":
-                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10); //top 10 groups, otherwise these lists will get LONG
-                            var reply = groups.Aggregate("",
-                                (current, g) => current + $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
-                            Edit(query.Message.Chat.Id, query.Message.MessageId, GetLocaleString("HereIsList", language, choice));
-                            Send(reply, query.Message.Chat.Id);
+                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
+                            Edit(query.Message.Chat.Id, query.Message.MessageId,
+                                    GetLocaleString("HereIsList", language, choice));
+                            if (groups.Count() > 5)
+                            {
+                                //need to split it
+                                var reply = groups.Take(5).Aggregate("",
+                                    (current, g) =>
+                                        current +
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                Send(reply, query.Message.Chat.Id);
+                                Thread.Sleep(500);
+                                reply = groups.Skip(5).Aggregate("",
+                                    (current, g) =>
+                                        current +
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                Send(reply, query.Message.Chat.Id);
+                            }
+                            else
+                            {
+                                var reply = groups.Aggregate("",
+                                    (current, g) =>
+                                        current +
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                Send(reply, query.Message.Chat.Id);
+                            }
                             break;
                         case "validate":
                             //choice = args[1];

@@ -30,6 +30,14 @@ namespace Werewolf_Control
                 Send(GetLocaleString("StartFromGroup", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
                 return;
             }
+#if BETA
+            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238 };
+            if (!auth.Contains(update.Message.Chat.Id))
+            {
+                Bot.Api.LeaveChat(update.Message.Chat.Id);
+                return;
+            }
+#endif
             Group grp;
             using (var db = new WWContext())
             {
