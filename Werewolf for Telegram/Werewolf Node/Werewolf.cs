@@ -672,6 +672,7 @@ namespace Werewolf_Node
                             Send(final);
                         Thread.Sleep(500);
 #if !DEBUG
+                        _messageQueue.Dequeue();
                         SendGif(m.Msg, m.GifId);
                         Thread.Sleep(500);
                         final = "";
@@ -684,7 +685,7 @@ namespace Werewolf_Node
                         else
                         {
                             _messageQueue.Dequeue(); //remove the message, we are sending it.
-                            final += m.Msg + Environment.NewLine + Environment.NewLine;
+                            final += temp;
                         }
 #endif
                         
@@ -2869,13 +2870,13 @@ namespace Werewolf_Node
                 switch (DbGroup.ShowRolesEnd)
                 {
                     case "None":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count()}\n" +
                        Players.OrderBy(x => x.TimeDied)
                            .Aggregate(msg,
                                (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count()}\n" +
                              Players.OrderBy(x => x.TimeDied)
                                  .Aggregate("",
                                      (current, p) =>
@@ -2896,7 +2897,7 @@ namespace Werewolf_Node
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
-                Thread.Sleep(3000);
+                Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
             }
