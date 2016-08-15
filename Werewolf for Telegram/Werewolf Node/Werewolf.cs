@@ -236,7 +236,7 @@ namespace Werewolf_Node
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
                         {
-                            dbp = new Player { TelegramId = p.Id, Language = Language };
+                            dbp = new Player {TelegramId = p.Id, Language = Language};
                             db.Players.Add(dbp);
                         }
                         dbp.Name = p.Name;
@@ -279,6 +279,22 @@ namespace Werewolf_Node
                     CheckRoleChanges();
                     LynchCycle();
                 }
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+            {
+                var msg = "";
+                foreach (var ves in ex.EntityValidationErrors)
+                {
+                    foreach (var ve in ves.ValidationErrors)
+                    {
+                        msg += $"{ves.Entry.Entity}:{ve.ErrorMessage}\n";
+                    }
+                }
+                Send("Something just went terribly wrong, I had to cancel the game....");
+                Send(
+                    Program.Version.FileVersion +
+                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{msg}\n{ex.StackTrace}",
+                    Program.Para);
             }
             catch (Exception ex)
             {
