@@ -258,7 +258,7 @@ namespace Werewolf_Control
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
-
+                    Console.Clear();
                     //write the info
                     Console.WriteLine(msg);
                     //put the cursor back;

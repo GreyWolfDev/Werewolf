@@ -155,15 +155,15 @@ namespace Werewolf_Control.Handler
                                 if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
                                 {
                                     Send($"Please do not spam me. Next time is automated ban.", key);
-                                    Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
-                                        Para);
+                                    //Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                    //    Para);
                                     continue;
                                 }
                                 if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 40) & !temp[key].NotifiedAdmin)
                                 {
-                                    Send(
-                                        $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
-                                        Para);
+                                    //Send(
+                                    //    $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                    //    Para);
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);
@@ -198,14 +198,14 @@ namespace Werewolf_Control.Handler
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine(e.Message);
+                            //Console.WriteLine(e.Message);
                         }
                     }
                     UserMessages = temp;
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    //Console.WriteLine(e.Message);
                 }
                 Thread.Sleep(2000);
             }
