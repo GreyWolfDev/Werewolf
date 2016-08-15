@@ -17,7 +17,7 @@ variant="Fallout"/>
   <string key="PlayerStartedChaosGame">
 
 
-    <value>{0} Ha iniziato una partita caos. Usa /join per entrare… e forse diventare un ghoul…(</value>
+    <value>{0} Ha iniziato una partita caos. Usa /join per entrare… e forse diventare uno schifoso ghoul.</value>
     <value>Una nuova partita caos è stata iniziata da {0}. Usa /join per entrare nella Zona!</value>
   </string>
   <string key="NoJoinGameRunning">
@@ -51,10 +51,10 @@ variant="Fallout"/>
   </string>
   <string key="PlayerLimitReached">
 
-    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di giocatori!</value>
+    <value>Mi dispiace, siamo già in troppi. CERCATI UN'ALTRO INSEDIAMENTO.</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
+    <value>{0} é entrato nella Zona. {1} giocatori, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
 
@@ -107,7 +107,7 @@ variant="Fallout"/>
   </string>
   <string key="ApprenticeNowSeer">
 
-    <value>{0} era un Gunner Spia. In qualità di Recluta, prendi il suo posto.</value>
+    <value>{0} era un Gunner Spia, ma é morto :(. É il tuo momento di gloria. Sei stato promosso a Gunner Spia.</value>
   </string>
   <string key="BeholderNewSeer">
 
@@ -222,17 +222,17 @@ variant="Fallout"/>
     <value >
 
 
-      Il crepuscolo si avvicina inesorabile. Supermutanti pronti a mangiare, Deathclaw che si affila le unghie e Sintetici sotto copertura… L'unica speranza è giustiziare l'uomo giusto. 
+      Il sole inizia a calare sulla Zona... Supermutanti pronti a mangiare, Deathclaw che si affila le unghie e Sintetici sotto copertura… L'unica speranza è giustiziare l'uomo giusto. 
       Ognuno ha {0} secondi per votare!
     </value>
   </string>
   <string key="DayTime" >
 
-    <value >Il sole è sorto sopra la zona e inonda di luce gli alberi ormai spogli e senza vita. Avete {0} secondi per muovere le vostre accuse/difendervi/discutere.</value>
+    <value >Il sole è sorto sopra la Zona e inonda di luce gli alberi ormai spogli e senza vita. Avete {0} secondi per muovere le vostre accuse/difendervi/discutere.</value>
   </string>
   <string key="NightTime" >
 
-    <value >Il buio è calato. Ognuno è nella sua casa, non riesce a dormire, pensando a tutte le minaccie che incombono. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+    <value >É notte. Ognuno è nella sua casa, non riesce a dormire, pensando a tutte le minaccie che incombono. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
   </string>
   <string key="LynchKill" >
 
@@ -240,7 +240,7 @@ variant="Fallout"/>
   </string>
   <string key="LynchTie" >
 
-    <value >Incapaci di trovare un accordo su chi giustiziare, tutti tornano nelle loro case, in attesa di un'altra notte d'ansia e sconforto… e di cibo per i Supermutanti…</value>
+    <value >Il sopravvissuto esamina attentamente i voti, tirandosi la barba. Esclama poi: "non siamo riusciti a decidere. Stanotte nessuno morirà."</value>
   </string>
   <string key="NoLynchVotes" >
 
@@ -264,15 +264,15 @@ variant="Fallout"/>
   </string>
   <string key="DrunkEaten" >
 
-    <value > {0} non si presenta al Bar oggi. Il barista è preoccupato, e si reca a casa sua.  Quello che vede è agghiacciante: pezzi di pelle, uno qua, uno là…. l'Ubriaco è morto.</value>
+    <value > {0} Il Barista voleva fare una sorpresa all'ubriaco stamattina: una fornitura mensile di Nuka-Cola. Arriva a casa sua fischiettando, apre la porta e quello che vede è agghiacciante: pezzi di pelle, uno qua, uno là…. l'Ubriaco è morto.</value>
   </string>
   <string key="FoolEaten" >
 
-    <value >Non appena il sole sorge, viene rinvenuto il corpo di {0} seduto su una sedia, senza braccia, il cervello fuori dalla testa. Aveva una malattia mentale! Si credeva uno spione…</value>
+    <value >Non appena il sole inonda di luce il mondo ormai distrutto, viene rinvenuto da un sopravvissuto il corpo di {0} seduto su una sedia, senza braccia, il cervello fuori dalla testa. Aveva una malattia mentale! Si credeva uno spione…</value>
   </string>
   <string key="DefaultEaten" >
 
-    <value>Il mattino è giunto e con lui un fetore che sa di tragedia. Un sopravvissuto trova per caso {0} fatto a pezzi e buttato nell'orto, senza testa. \n{1}</value>
+    <value>Il sole sorge sopra la Zona, rivelando ancora una volta quei deprimenti alberi gialli e senza rami. Un sopravvissuto si mette subito al lavoro nel suo orto. Mentre raccoglie i tatos, trova {0} fatto a pezzi e impalato sopra una pianta, senza testa. \n{1}</value>
   </string>
   <string key="HunterKilledCultist">
 
@@ -337,11 +337,11 @@ variant="Fallout"/>
   </string>
   <string key="HarlotFuckedVictimPublic" >
 
-    <value >{0} ha fatto visita a {1}, per una lezione. Ma ha trovato un Supermutante intento a sbranare {1}! Si sa che i supermutanti sono pozzi senza fondo… {0} è stato il secondo. {0} è morto.</value>
+    <value >{0} ha fatto visita a {1}, per una lezione. Ma si é trovato davanti un Supermutante con in mano un'asse di legno che fracassava {1}! Si sa che i supermutanti non si stancano mai di uccidere... {0} è stato il secondo. {0} è morto.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
 
-    <value >Bella lezione hai fatto a {0}! Lui ti ringrazia e vai a casa.</value>
+    <value >Bella lezione hai fatto a {0}! Lui ti ringrazia e sei andato a casa.</value>
   </string>
   <string key="HarlotVisitYou" >
 
@@ -361,7 +361,7 @@ variant="Fallout"/>
   </string>
   <string key="DefaultShot" >
 
-    <value >Improvvisamente si sente uno sparo. Tutti accorrono e sorprendono {0} in piedi accanto al corpo di {1}, con l'arma ancora puntata alla sua testa.\n{2}</value>
+    <value >{0} camminava dietro {1}, con le mani in tasca. Ad un tratto estrae rapidamente una pistola .44 dalla tasca sinistra, e dopo una rotazione del tamburo, spara un singolo colpo mortale. I sopravvissuti escono dalle abitazioni e inseguono il Mercante. Viene lasciato libero, tutto sommato chi avrebbe armato i sopravvissuti se no?\n{2}</value>
   </string>
   <string key="WolfWins" >
     <value >Il supermutante ha vinto!</value>
@@ -543,7 +543,7 @@ variant="Fallout"/>
 
 
     <value>Tutti si svegliano la mattina, e si accorgono che {0} non si trova in giro… Controllano la sua casa per poi trovare i resti di {0}.</value>
-    <value>I sopravvissuti si svegliano al sorgere del sole, per poi trovare i resti di {0}, morto in qualche modo la scorsa notte….</value>
+    <value>I sopravvissuti escono dalle case. Le urla di qualcuno riecheggiano e spaccano il silenzio. Viene trovata una sopravvissuta tremante accanto a {0}, morto in qualche modo la scorsa notte….</value>
   </string>
   <string key="MasonConverted">
 
@@ -650,15 +650,15 @@ variant="Fallout"/>
   </string>
   <string key="HunterNoChoiceLynched">
 
-    <value>{0} fruga per la sua pistola mentre il cappio si stringe sempre più, ma non riesce a usarla in tempo, e la sua morte sopraggiunge con la rumorosa rottura del collo…</value>
+    <value>La prima pietra colpisce la tasca di {0}, e la sua pistola cade lontano. Fa per prenderla, ma un grosso sasso gli sfascia le tempie, uccidendolo sul colpo... </value>
   </string>
   <string key="HunterSkipChoiceLynched">
 
-    <value>{0} estrae la sua pistola, guarda i sopravvissuti….. Non può uccidere chi ha protetto tutto questo tempo.  Si lascia così morire, accettando il suo destino…</value>
+    <value>{0} riesce a raggiungere la sua pistola, non senza una grossa ferita al braccio. "Cazzo, le munizioni!" esclama... non ha potuto fare nulla. É morto.</value>
   </string>
   <string key="HunterKilledFinalLynched">
 
-    <value>Mentre il cappio si stringe intorno al collo di {0}, lui tira fuori una pistola, la carica, prende la mira e preme il grilletto, sparando a {1} giusto prima che il pavimento si ritiri. {1} cade a terra, senza vita.  {2}</value>
+    <value>Mentre una pietra si dirige verso l'occhio di {0}, lui la schiva e tira fuori un pistolone da 10mm. Prende la mira e colpisce in piena fronte {1}, prima che una pietra gli colpisca la cassa toracica. {1} cade a terra, senza vita.  {2}</value>
   </string>
   <string key="HunterShotChoice">
 
@@ -666,15 +666,15 @@ variant="Fallout"/>
   </string>
   <string key="HunterNoChoiceShot">
 
-    <value>Il colpo in testa a {0} è stato preciso, talmente tanto che non è riuscito nemmeno a raggiungere la sua pistola, che già era immerso in un bagno di sangue…..</value>
+    <value>Il colpo in testa a {0} é stato di una precisione inimmaginabile. In un nanosecondo é morto, senza vendicarsi.</value>
   </string>
   <string key="HunterSkipChoiceShot">
 
-    <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere a chi sparare… e accetta il suo triste destino…</value>
+    <value>Mentre {0} è steso per terra, con un buco nello stomaco, ormai deciso a morire, estrae la pistola, la punta alla testa del Mercante... ma nulla, un altro colpo nel cuore lo uccide.</value>
   </string>
   <string key="HunterKilledFinalShot">
 
-    <value>Appena il proiettile trapassa {0}, egli cade… Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
+    <value>Appena il proiettile trapassa {0}, egli cade… Cosí prende la sua pistola, spara senza mirare... e prende {1}, recidendoli la vena giugulare. Tutti e due muoiono dissanguati.{2}</value>
   </string>
   <string key="CultConvertSerialKiller">
 
@@ -694,7 +694,7 @@ variant="Fallout"/>
   </string>
   <string key="DefaultKilled">
 
-    <value>Sembrava una notte tranquilla per {0}, ma non lo è stata. I sopravvissuti seguono una scia di organi e trovano {0} squartato… è stato un Deathclaw!{1}</value>
+    <value>Nessuno ha notato nulla la scorsa notte. Al mattino, viene ritrovato però {0}, squartato in maniera orribile... nessuno ha il coraggio di seppellirlo, e {0} viene lasciato a decomporsi... è stato un Deathclaw!{1}</value>
   </string>
   <string key="GuardBlockedKiller">
 
@@ -745,7 +745,7 @@ variant="Fallout"/>
   </string>
   <string key="SerialKillerWins">
 
-    <value>Il Deathclaw è l'ultimo rimasto! È finita… ha vinto.</value>
+    <value>Il Deathclaw è l'ultimo rimasto! È finita… ha vinto. Ora cosa mangierà?</value>
   </string>
   <string key="AskKill">
 
@@ -818,7 +818,7 @@ variant="Fallout"/>
     <value>Non hai fatto una scelta, quindi il bot ha scelto {0} per te.</value>
   </string>
     <string key="Won">
-    <value>Sopravvissuto</value>
+    <value>Vittorioso</value>
   </string>
   <string key="Lost">
     <value>Vittima della Zona</value>
