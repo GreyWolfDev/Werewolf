@@ -20,7 +20,6 @@ namespace Database
         public WWContext()
             : base(Internal.Default.DBConnectionString)
         {
-            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 60; //increase timeout from 30
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

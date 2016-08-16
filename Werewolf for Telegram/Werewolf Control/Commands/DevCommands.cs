@@ -253,12 +253,20 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //get the user
-            using (var db = new WWContext())
-            {
-                var p = db.Players.FirstOrDefault(x => x.TelegramId == 114006743);
-                Send(p.Name, update.Message.Chat.Id);
-            }
+            //test writing to database
+            //using (var db = new WWContext())
+            //{
+            //    var p = db.Players.FirstOrDefault(x => x.TelegramId == UpdateHandler.Para);
+            //    if (p != null)
+            //    {
+            //        var flags = (Achievements) p.Achievements;
+            //        flags = flags | Achievements.GunnerSaves;
+                   
+            //        p.Achievements = (long)flags;
+            //    }
+            //    db.SaveChanges();
+            //    Send($"{p.Achievements}", update.Message.Chat.Id);
+            //}
         }
 
         [Command(Trigger = "reloadenglish", DevOnly = true)]

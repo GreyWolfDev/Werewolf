@@ -196,6 +196,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="TempBanCount" Type="int" />
           <Property Name="HasPM2" Type="bit" />
           <Property Name="HasDebugPM" Type="bit" />
+          <Property Name="Achievements" Type="bigint" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -733,6 +734,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="TempBanCount" Type="Int32" />
           <Property Name="HasPM2" Type="Boolean" />
           <Property Name="HasDebugPM" Type="Boolean" />
+          <Property Name="Achievements" Type="Int64" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1314,6 +1316,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Achievements" ColumnName="Achievements" />
                 <ScalarProperty Name="HasDebugPM" ColumnName="HasDebugPM" />
                 <ScalarProperty Name="HasPM2" ColumnName="HasPM2" />
                 <ScalarProperty Name="TempBanCount" ColumnName="TempBanCount" />
