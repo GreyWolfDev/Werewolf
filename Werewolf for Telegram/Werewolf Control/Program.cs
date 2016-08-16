@@ -239,7 +239,7 @@ namespace Werewolf_Control
                         // ignored
                     }
 
-                    for (var i = 0; i < 12 - Nodes.Count; i++)
+                    for (var i = 0; i < 12; i++)
                         msg += new string(' ', Console.WindowWidth);
 
                     //we don't need this anymore, but keeping code just in case
@@ -265,7 +265,7 @@ namespace Werewolf_Control
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
-                    Console.Clear();
+                    //Console.Clear();
                     //write the info
                     Console.WriteLine(msg);
                     //put the cursor back;

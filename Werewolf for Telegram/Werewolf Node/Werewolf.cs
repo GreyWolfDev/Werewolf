@@ -35,7 +35,7 @@ namespace Werewolf_Node
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-
+        private bool PlayerListChanged = false;
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -742,6 +742,7 @@ namespace Werewolf_Node
 
         private void SendPlayerList()
         {
+            if (!PlayerListChanged) return;
             new Thread(() =>
             {
                 Thread.Sleep(4500); //wait a moment before sending
@@ -752,6 +753,7 @@ namespace Werewolf_Node
                                   (current, p) =>
                                       current +
                                       ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                PlayerListChanged = false;
                 try
                 {
                     var result = Program.Send(msg, ChatId).Result;
@@ -3169,6 +3171,7 @@ namespace Werewolf_Node
                 }
                 else if (IsJoining)
                 {
+                    PlayerListChanged = true;
                     Players.Remove(p);
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
@@ -3334,6 +3337,7 @@ namespace Werewolf_Node
 
         private void DBKill(IPlayer killer, IPlayer victim, KillMthd method)
         {
+            PlayerListChanged = true;
             using (var db = new WWContext())
             {
                 try
