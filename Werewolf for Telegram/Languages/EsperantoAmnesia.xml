@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Esperanto Amnesia by @renyhp & @Robin. Administrantaj mesaĝoj ne tradukitas, sed ja estas sube en la dosiero. Komentoj estas anstataŭ tiaj tekstoj. -->
 <strings>
   <language name="Esperanto (Amnesia)" base="Esperanto" variant="Amnezia Maniero"/>
   <string key="NotInGame">
@@ -43,7 +44,7 @@
     <value>{0} aliĝis al la partio.\n{1} ludantoj ĉeestas (min. {2}, maks. {3})</value>
   </string>
   <string key="PMTheBot">
-    <value>{0}, bonvolu klaki sur {1} kaj sendi al mi private /start. Ĝis tiam, vi ne povos ludi.</value>
+    <value>{0}, bonvolu klaki sur {1} aŭ sur suba butono por ke mi povas mesaĝi al vi.\nSe vi ne faras tion, vi foriĝos de partio.</value>
   </string>
   <string key="DeadFlee">
     <value>Vi ne povas forkuri! Vi estas MORTINTA! Reiru tomben...</value>
@@ -181,34 +182,34 @@
     <value >Strange... Vi klopodas, sed ne povas memori kiu vi estas :/ Sed vi ja scias, ke vi ion devas fari dumnokte!</value>
   </string>
   <string key="LynchTime" >
-    <value >
-      La nokto alproksimiĝas, kaj la vilaĝanoj kolektiĝas por decidi kiun linĉi ĉi-vespere...
+    <value>
+      🌄 La nokto alproksimiĝas, kaj la vilaĝanoj kolektiĝas por decidi kiun linĉi ĉi-vespere...
       Ĉiuj havas {0} sekundojn por voĉi!
     </value>
   </string>
   <string key="DayTime" >
-    <value >Nun mateniĝas... Vi ĉiuj havas {0} sekundojn por esprimi viajn kulpigojn / defendojn / pripensojn.</value>
+    <value>🌅 Nun mateniĝas... Vi ĉiuj havas {0} sekundojn por esprimi viajn kulpigojn / defendojn / pripensojn.</value>
   </string>
   <string key="NightTime" >
-    <value >Nokto jam alvenis. Ĉiuj enlitiĝas, kaj ripozas post tre laciga tago. Noktoroloj havas {0} sekundojn por fari siajn elektojn.</value>
+    <value>🌌 Nokto jam alvenis. Ĉiuj enlitiĝas, kaj ripozas post tre laciga tago. Noktoroloj havas {0} sekundojn por fari siajn elektojn.</value>
   </string>
   <string key="LynchKill" >
-    <value >La vilaĝanoj esprimis siajn voĉojn, inter duboj kaj suspektoj. {0} estas linĉata. {1}</value>
+    <value>🗳 La vilaĝanoj esprimis siajn voĉojn, inter duboj kaj suspektoj. {0} estas linĉata. {1}</value>
   </string>
   <string key="LynchTie" >
-    <value >Ne sukcesante fari kunan decidon pri linĉindo, la vilaĝanoj malkontente reiras hejmen...</value>
+    <value>🗳 Ne sukcesante fari kunan decidon pri linĉindo, la vilaĝanoj malkontente reiras hejmen...</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Neniu voĉis, do neniu estis linĉata! Tio iom strangas...</value>
+    <value>🗳 Neniu voĉis, do neniu estis linĉata! Tio iom strangas...</value>
   </string>
   <string key="DetectiveEaten" >
-    <value >La vilaĝanoj matene kolektiĝas, sed manke de iu... Post kelkaj serĉoj, {0} troviĝas apud sia domo, ventrotranĉita, kun polica distingilo ŝovita en sia gorĝo. 🕵 La detektivo mortis.</value>
+    <value>La vilaĝanoj matene kolektiĝas, sed manke de iu... Post kelkaj serĉoj, {0} troviĝas apud sia domo, ventrotranĉita, kun polica distingilo ŝovita en sia gorĝo. 🕵 La detektivo mortis.</value>
   </string>
   <string key="GuardianEaten" >
-    <value >Mateno alvenas, kaj ĉiuj ŝokiĝas vidante {0}, la Gardanĝelo, palisumita sur la preĝeja kruco.</value>
+    <value>Mateno alvenas, kaj ĉiuj ŝokiĝas vidante {0}, la Gardanĝelo, palisumita sur la preĝeja kruco.</value>
   </string>
   <string key="GunnerEaten" >
-    <value >Kiam ĉiuj eliras el domo, ili trovas pecojn de pafilo disvastigitaj.. kaj poste krurojn.. kaj fingrojn.. kaj, flosantan en la fontano, la kadavron de {0}, mortigita de lupo. La pafisto mortis.</value>
+    <value>Kiam ĉiuj eliras el domo, ili trovas pecojn de pafilo disvastigitaj.. kaj poste krurojn.. kaj fingrojn.. kaj, flosantan en la fontano, la kadavron de {0}, mortigita de lupo. La pafisto mortis.</value>
   </string>
   <string key="SeerEaten" >
     <value >La vilaĝanoj vekiĝas, kaj trovas restaĵojn de {0} sur tablo kune kun kristala globo kaj tarokoj. La divenisto mortis.</value>
@@ -760,22 +761,25 @@
   <!--New strings, July the 8th -->
   <string key="Day">
     <!--0 - Day -->
-    <value>Tago {0}</value>
+    <value>{0}-a tago</value>
   </string>
   <string key="NodeShutsDown">
     <value>Eraro okazis kaj la nodo malŝaltiĝis. :/</value>
   </string>
   <string key="SentPrivate">
-    <value>Mi sendis al vi privatan mesaĝon.</value>
+    <value>Mi skribis al vi private.</value>
   </string>
   <string key="StartPM">
-    <value>Sendu al mi privatan mesaĝon, tiel ke mi povas sendi al vi privatajn mesaĝojn: @werewolfbot</value>
+    <value>Mesaĝu al mi, tiel ke mi povas sendi al vi privatajn mesaĝojn: @werewolfbot</value>
   </string>
   <string key="PMTrue">
-    <value>Bone! Nun mi povas mesaĝi al vi.</value>
+    <value>Dankon! Nun mi povas mesaĝi al vi.</value>
   </string>
   <string key="MustReplySmite">
     <value>Vi devas respondi al tiu, kiun vi volas eligi el partio.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Kion vi volas fari?</value>
   </string>
   <string key="JoinFromGroup">
     <value>Oni aliĝas al partio en grupo!</value>
@@ -786,6 +790,16 @@
   <string key="PingInfo">
     <value>Daŭro de mesaĝoprocezo: {0}\nNuna CPU-uzado: {1}%\nMesaĝoj po sekundo: {2}</value>
   </string>
+  <string key="WhatLang">
+    <value>Kiu lingvo?\nNuna agordo: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Kiu varianto?\nNuna agordo: {0}</value>
+  </string>
+<!-- Ne tradukita: GetLang -->
+  <string key="LangSet">
+    <value>Lingvo agordita al {0}</value>
+  </string>
   <string key="NoNodes">
     <value>Ne estas enretaj nodoj nun, reprovu poste.</value>
   </string>
@@ -793,28 +807,39 @@
     <value>Tiu komando eblas nur en grupo!</value>
   </string>
   <string key="NotGlobalAdmin">
-    <value>Vi ne estas administranto...</value>
+    <value>Vi ne estas ĉefa administranto...</value>
   </string>
   <string key="NotPara">
     <value>Vi ne estas Para...</value>
   </string>
-
-
+<!-- Ne tradukitaj: Yes ĝis AllowCultA -->
+  <string key="ThankYou">
+    <value>Dankon, ĝis :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Kiu lingvo estu parolata en la grupo kiun vi volas serĉi?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Jen grupoj en la lingvo {0}:</value>
+  </string>
+  <string key="Members">
+    <value>membroj</value>
+  </string>
+  <string key="StartMe">
+    <value>Bonvole klaku sube, tiel ke mi povas sendi al vi privatajn mesaĝojn.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} ne skribis al la roboto private, kaj tial foriĝis de la partio!</value>
+  </string>
+  <string key="LatestList">
+    <value>👆🏼 Jen la lasta listo.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Ne eblis atingi lastan liston.</value>
+  </string>
 
 
 <!-- MESAĜOJ NE TRADUKITAJ -->
-  <string key="WhatToDo">
-    <value>What would you like to do?</value>
-  </string>
-  <string key="WhatLang">
-    <value>What Language?\nCurrent: {0}</value>
-  </string>
-  <string key="WhatVariant">
-    <value>What Variant?\nCurrent: {0}</value>
-  </string>
-  <string key="LangSet">
-    <value>Language set to {0}</value>
-  </string>
   <string key="GetLang">
     <value>Get which language file?</value>
   </string>
@@ -861,11 +886,11 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: Players can {0}flee</value>
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Players will {0}be allowed to flee after game start</value>
+    <value>{0} fleeing after game start</value>
   </string>
   <string key="MaxPlayersQ">
     <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
@@ -892,7 +917,7 @@
     <value>Roles shown at end set to: {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
   </string>
   <string key="SetDayTimeA">
     <value>Base day time set to {0} seconds</value>
@@ -926,8 +951,5 @@
   </string>
   <string key="AllowCultA">
     <value>Cult as a role set to: {0}</value>
-  </string>
-  <string key="ThankYou">
-    <value>Thank you, have a good day :)</value>
   </string>
 </strings>
