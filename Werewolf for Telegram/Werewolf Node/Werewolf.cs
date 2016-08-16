@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -2899,6 +2900,7 @@ namespace Werewolf_Node
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
+                UpdateAchievements();
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
@@ -3445,7 +3447,7 @@ namespace Werewolf_Node
 
         private GamePlayer GetDBGamePlayer(Player player)
         {
-            return player.GamePlayers.FirstOrDefault(x => x.GameId == GameId);
+            return player?.GamePlayers.FirstOrDefault(x => x.GameId == GameId);
         }
 
         private GamePlayer GetDBGamePlayer(IPlayer player, WWContext db)
@@ -3467,6 +3469,73 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
+
+        private void UpdateAchievements()
+        {
+            if (Players == null) return;
+            using (var db = new WWContext())
+            {
+                foreach (var player in Players)
+                {
+                    var p = GetDBPlayer(player, db);
+                    
+                    
+                    if (p != null)
+                    {
+                        var gp = GetDBGamePlayer(p);
+
+                        if (p.Achievements == null)
+                            p.Achievements = 0;
+                        var ach = (Achievements)p.Achievements;
+
+                        //calculate achievements
+                        //automatically get welcome to hell
+                        ach = ach | Achievements.WelcomeToHell;
+                        if (Chaos)
+                            ach = ach | Achievements.WelcomeToAsylum;
+                        if (Language.Contains("Amnesia"))
+                            ach = ach | Achievements.AlzheimerPatient;
+                        if (Players.Any(x => x.TeleUser.Id == Program.Para))
+                            ach = ach | Achievements.OHAIDER;
+                        if (DbGroup.ShowRoles == false)
+                            ach = ach | Achievements.SpyVsSpy;
+                        if (DbGroup.ShowRoles == false && Language.Contains("Amnesia"))
+                            ach = ach | Achievements.NoIdeaWhat;
+                        if (Players.Count == 35)
+                            ach = ach | Achievements.Enochlophobia;
+                        if (Players.Count == 5)
+                            ach = ach | Achievements.Introvert;
+                        if (Language.Contains("NSFW"))
+                            ach = ach | Achievements.Naughty;
+                        if (p.GamePlayers.Count() >= 100)
+                            ach = ach | Achievements.Dedicated;
+                        if (p.GamePlayers.Count() >= 1000)
+                            ach = ach | Achievements.Obsessed;
+                        if (player.Won && player.PlayerRole == IRole.Tanner)
+                            ach = ach | Achievements.Masochist;
+                        if (!player.IsDead && player.PlayerRole == IRole.Drunk)
+                            ach = ach | Achievements.Wobble;
+                        if (p.GamePlayers.Count(x => x.Survived) >= 100)
+                            ach = ach | Achievements.Survivalist;
+                        if (player.PlayerRole == IRole.Mason &&
+                            Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
+                            ach = ach | Achievements.MasonBrother;
+                        if (player.OriginalRole != player.PlayerRole && player.Won)
+                            ach = ach | Achievements.ChangingSides;
+                        if (Players.Count >= 10 && player.PlayerRole == IRole.Wolf &&
+                            Players.Count(x => x.PlayerRole == IRole.Wolf) == 1 && player.Won)
+                            ach = ach | Achievements.LoneWolf;
+
+
+
+                        //now save
+                        p.Achievements = (long) ach;
+                        db.SaveChanges();
+                    }
+                }
+            }
+        }
+
+        #endregion
     }
 }

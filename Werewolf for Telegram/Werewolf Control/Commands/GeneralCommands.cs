@@ -31,6 +31,22 @@ namespace Werewolf_Control
 
         }
 
+        [Command(Trigger = "achv")]
+        public static void GetAchievements(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
+                if (p != null)
+                {
+                    if (p.Achievements == null)
+                        p.Achievements = 0;
+                    var ach = (Achievements) p.Achievements;
+                    Send(ach.ToString(), u.Message.Chat.Id);
+                }
+            }
+        }
+
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
