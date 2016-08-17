@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Telegram.Bot.Types;
 
 namespace Werewolf_Node.Models
@@ -84,8 +85,28 @@ namespace Werewolf_Node.Models
         public int Id;
 
         public QuestionAsked CurrentQuestion { get; set; }
-        
+
+
+        #region Achievement Related Stuff
+
+        public bool HasBeenVoted { get; set; } = false;
+        public bool HasStayedHome { get; set; } = false;
+        public bool HasRepeatedVisit { get; set; } = false;
+        public HashSet<int> PlayersVisited { get; set; } = new HashSet<int>();
+        public int ChangedRolesCount { get; set; } = 0;
+        public int FirstToLynchCount { get; set; } = 0;
+        public bool BulletHitVillager { get; set; } = false;
+        public int FoundBadRolesRowCount { get; set; } = 0;
+        public int FoolCorrectSeeCount { get; set; } = 0;
+        public int SerialKilledWolvesCount { get; set; } = 0;
+        public bool PackHunter { get; set; } = false;
+        public bool LastShotWasSKWolf { get; set; } = false;
+        public bool DoubleKillEnding { get; set; } = false;
     }
+
+        #endregion
+
+    
 
     public enum IRole
     {

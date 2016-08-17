@@ -266,7 +266,12 @@ namespace Werewolf_Node
                 }
                 IsInitializing = false;
                 NotifyRoles();
-
+                //disable Inconspicuous achievement if less than 20 players
+                if (Players.Count < 20)
+                {
+                    foreach (var p in Players)
+                        p.HasBeenVoted = true;
+                }
                 Time = GameTime.Night;
                 while (IsRunning)
                 {
@@ -1271,6 +1276,7 @@ namespace Werewolf_Node
                     aps.HasNightAction = true;
                     aps.OriginalRole = IRole.ApprenticeSeer;
                     aps.PlayerRole = IRole.Seer;
+                    aps.ChangedRolesCount++;
                     //notify
                     Send(GetLocaleString("ApprenticeNowSeer", ds?.GetName() ?? GetDescription(IRole.Seer)), aps.Id);
                     var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
@@ -1362,6 +1368,7 @@ namespace Werewolf_Node
                         }
                         wc.PlayerRole = IRole.Wolf;
                         wc.Team = ITeam.Wolf;
+                        wc.ChangedRolesCount++;
                         wc.HasNightAction = true;
                         wc.HasDayAction = false;
                         Send(GetLocaleString("WildChildTransform", rm.GetName(), teammates), wc.Id);
@@ -1392,7 +1399,7 @@ namespace Werewolf_Node
                         if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.WildChild || rm.OriginalRole == IRole.Traitor || rm.OriginalRole == IRole.Cursed)
                             if (rm.PlayerRole != IRole.Cultist)
                                 p.PlayerRole = rm.PlayerRole;
-
+                        p.ChangedRolesCount++;
                         switch (p.PlayerRole)
                         {
                             case IRole.Villager:
@@ -1615,6 +1622,7 @@ namespace Werewolf_Node
                 if (p.Choice != 0 && p.Choice != -1)
                 {
                     var target = Players.FirstOrDefault(x => x.Id == p.Choice);
+                    target.HasBeenVoted = true;
                     if (target != null)
                     {
                         target.Votes++;
@@ -2030,6 +2038,7 @@ namespace Werewolf_Node
                                     case IRole.Cursed:
                                         target.PlayerRole = IRole.Wolf;
                                         target.Team = ITeam.Wolf;
+                                        target.ChangedRolesCount++;
                                         target.HasNightAction = true;
                                         target.HasDayAction = false;
                                         Send(GetLocaleString("CursedBitten"), target.Id);
@@ -2576,6 +2585,15 @@ namespace Werewolf_Node
                 if (target != null)
                 {
                     DBAction(harlot, target, "Fuck");
+                    if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
+                        harlot.HasRepeatedVisit = true;
+
+                    harlot.PlayersVisited.Add(target.TeleUser.Id);
+                }
+                else
+                {
+                    //stayed home D:
+                    harlot.HasStayedHome = true;
                 }
                 if (!harlot.IsDead)
                 {
@@ -2672,6 +2690,7 @@ namespace Werewolf_Node
                     traitor.Team = ITeam.Wolf;
                     traitor.HasDayAction = false;
                     traitor.HasNightAction = true;
+                    traitor.ChangedRolesCount++;
                     Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
                 }
                 else if (Players.Count(x => x.PlayerRole == IRole.Cultist & !x.IsDead) == 0 && Players.Count(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller) == 0)
@@ -2848,6 +2867,7 @@ namespace Werewolf_Node
                         var skh = skhunter.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller);
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
+                        skh.DoubleKillEnding = hunter.DoubleKillEnding = true;
                         DBKill(skh, hunter, KillMthd.SerialKilled);
                         DBKill(hunter, skh, KillMthd.HunterShot);
                         if (skh != null)
@@ -3245,6 +3265,9 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
                         killed.IsDead = true;
                         killed.TimeDied = DateTime.Now;
+                        if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.SerialKiller)
+                            hunter.LastShotWasSKWolf = true;
+
                         DBKill(hunter, killed, KillMthd.HunterShot);
                         CheckRoleChanges();
                         if (killed.PlayerRole == IRole.Hunter)
@@ -3509,15 +3532,15 @@ namespace Werewolf_Node
                             ach = ach | Achievements.Introvert;
                         if (Language.Contains("NSFW"))
                             ach = ach | Achievements.Naughty;
-                        if (p.GamePlayers.Count() >= 100)
+                        if (!ach.HasFlag(Achievements.Dedicated) && p.GamePlayers.Count() >= 100)
                             ach = ach | Achievements.Dedicated;
-                        if (p.GamePlayers.Count() >= 1000)
+                        if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count() >= 1000)
                             ach = ach | Achievements.Obsessed;
                         if (player.Won && player.PlayerRole == IRole.Tanner)
                             ach = ach | Achievements.Masochist;
                         if (!player.IsDead && player.PlayerRole == IRole.Drunk)
                             ach = ach | Achievements.Wobble;
-                        if (p.GamePlayers.Count(x => x.Survived) >= 100)
+                        if (!ach.HasFlag(Achievements.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
                             ach = ach | Achievements.Survivalist;
                         if (player.PlayerRole == IRole.Mason &&
                             Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
@@ -3527,7 +3550,16 @@ namespace Werewolf_Node
                         if (Players.Count >= 10 && player.PlayerRole == IRole.Wolf &&
                             Players.Count(x => x.PlayerRole == IRole.Wolf) == 1 && player.Won)
                             ach = ach | Achievements.LoneWolf;
-
+                        if (!player.HasBeenVoted)
+                            ach = ach | Achievements.Inconspicuous;
+                        if (!player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
+                            ach = ach | Achievements.Promiscuous;
+                        if (player.ChangedRolesCount >= 2)
+                            ach = ach | Achievements.DoubleShifter;
+                        if (player.LastShotWasSKWolf)
+                            ach = ach | Achievements.HeyManNiceShot;
+                        if (player.DoubleKillEnding)
+                            ach = ach | Achievements.DoubleKill;
 
 
                         //now save
