@@ -81,12 +81,18 @@ namespace StatsRotation
             {
                 using (var DB = new WWContext())
                 {
-
+                    DB.Database.CommandTimeout = 600;
+                    Console.WriteLine("Total games..");
                     var gamesPlayed = DB.Games.Count();
+                    Console.WriteLine("Night 1 Death");
                     var night1death = DB.GlobalNight1Death().First();
+                    Console.WriteLine("Day 1 Lynch");
                     var day1lynch = DB.GlobalDay1Lynch().First();
+                    Console.WriteLine("Day 1 Death");
                     var day1death = DB.GlobalDay1Death().First();
+                    Console.WriteLine("Survivor");
                     var survivor = DB.GlobalSurvivor().First();
+                    Console.WriteLine("Creating stat object");
                     var stat = DB.GlobalStats.FirstOrDefault();
                     if (stat == null)
                     {
@@ -112,20 +118,22 @@ namespace StatsRotation
                     stat.MostLynchedFirstDay = day1lynch.Name;
                     stat.MostLynchedFirstPercent = day1lynch.pct;
                     stat.MostLynchedFirstDayId = day1lynch.TelegramId;
-                    
+                    Console.WriteLine("Saving to database");
                     DB.SaveChanges();
-                    
+                    Console.WriteLine("Done");
                 }
 
                 //now do daily counts
                 using (var db = new WWContext())
                 {
+                    Console.WriteLine("Updating Daily Counts");
                     //get daily counts
                     var counts = db.getDailyCounts();
                     db.DailyCounts.RemoveRange(db.DailyCounts);
                     foreach (var count in counts)
                         db.DailyCounts.Add(new DailyCount { Day = count.Day.Value, Games = count.Games.Value, Groups = count.Groups.Value, Users = count.players.Value });
                     db.SaveChanges();
+                    Console.WriteLine("Done");
 
                 }
             }
