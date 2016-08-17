@@ -31,7 +31,7 @@ namespace Werewolf_Control
                 return;
             }
 #if BETA
-            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788 };
+            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506 };
             if (!auth.Contains(update.Message.Chat.Id))
             {
                 Bot.Api.LeaveChat(update.Message.Chat.Id);
