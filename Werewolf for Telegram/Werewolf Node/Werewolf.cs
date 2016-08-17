@@ -36,7 +36,7 @@ namespace Werewolf_Node
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-        private bool PlayerListChanged = false;
+        private bool PlayerListChanged = true;
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -1569,8 +1569,9 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
 
             if (CheckForGameEnd()) return;
-            SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
             SendPlayerList();
+            SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
+            
             SendLynchMenu();
             for (var i = 0; i < (DbGroup.LynchTime ?? Settings.TimeLynch); i++)
             {
@@ -1799,7 +1800,7 @@ namespace Werewolf_Node
             }
 
             if (CheckForGameEnd()) return;
-
+            SendPlayerList();
             //reset choices
             foreach (var p in Players)
             {
@@ -1810,7 +1811,7 @@ namespace Werewolf_Node
 
             SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
             SendWithQueue(GetLocaleString("Day", GameDay.ToBold()));
-            SendPlayerList();
+            
             SendDayActions();
             //incremental sleep time for large players....
             Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
@@ -1899,12 +1900,11 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             //FUN!
-            SendPlayerList();
             Time = GameTime.Night;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
             if (CheckForGameEnd()) return;
-
+            SendPlayerList();
             foreach (var p in Players)
             {
                 p.Choice = 0;
