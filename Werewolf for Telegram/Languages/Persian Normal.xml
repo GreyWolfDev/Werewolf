@@ -344,7 +344,7 @@
   <string key="WildChildTransform">
     <value>چون {0} الگوت بود و مرده الان تو گرگی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, TraitGuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
     <value>روستایی 👱</value>
   </string>
@@ -683,81 +683,79 @@
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
-    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+    <value>نقش شما بسیار ساده هست! سعی کنید زنده بمونید شما هرشب فرصت این دارید که تو رای گیری شرکت کنید شاید بتوانید یک گرگ رو اعدام کنید</value>
   </string>
   <string key="AboutSeer">
-    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+    <value>شما پیشگو هستی!هرشب میتونی نقش یک نفر رو بفهمی مواظب باش نقشت لو نره چون گرگا میخورنت!</value>
   </string>
   <string key="AboutWw">
-    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+    <value>تو آقا گرگه ای! هرشب میتونی یک نفر بخوری ولی حواست باشه آگه مست رو بخوری شب بعدش نمیتونم کسی بخوری آگه نفرین شده رو بخوری اونم گرگ میشه! فقط حواست باشه سعی نکنی به قاتل حمله کنی که میکشتت😱</value>
   </string>
   <string key="AboutHarlot">
-    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+    <value>تو فاحشه ای👄هرشب میتونی بری خونه ی یکی از بازیکن تا بفهمی گروه یا نه! آگه خونه ی گرگ یا قاتل بری میمیری آگه پیش کسی رفته باشی و گرگ به خونت حمله کنه نمیگیرم چون خونه نبودی</value>
   </string>
   <string key="AboutDrunk">
-    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+    <value>تومستی مثل یه روستایی ساده هستی ولی آگه گرگا بخورنت مسموم میشن و شب بعد نمیتونن حمله کنند!</value>
   </string>
   <string key="AboutCursed">
-    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+    <value>یک روستایی ساده! البته تا قبل از اینکه گرگ ها بهت حمله کنند! وقتی گرگا به نفرین شده حمله میکنند نفرین شده تبدیل به گرگ میشه!</value>
   </string>
   <string key="AboutTraitor">
-    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+    <value>اول یه روستایی معمولی هست ولی بعد از این که همه ی گرگا مردن به روستایی ها خیانت میکنه و گرگ میشه البته آگه تا آون موقع زنده بمونه!</value>
   </string>
   <string key="AboutGA">
-    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+    <value>تو فرشته ی نگهبانی!ذهرشب میتونی از یکی در برابر حمله ی گرگ ها و قاتل محافظت کنی اما مواظب باش چه کسی رو انتخاب میکنی چون آگه سعی کنی از یک گرگ محافظت کنی 50 درصد احتمال داره بمیری</value>
   </string>
   <string key="AboutDetective">
-    <value>You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+    <value>تو کارآگاهی هر روز فرصت اینو داری که نقش یک نفر رو بفهمی اما 40 درصد احتمال داره لو بری و گرگا بخورنت</value>
   </string>
   <string key="AboutGunner">
-    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+    <value>تو تفنگدار هر شب میتونی به یک نفر شلیک کنی اما همه میفهمی کار تو بوده! سعی کن عاقلانه شلیک کنی چون فقط دوتا گلوله داری</value>
   </string>
   <string key="AboutTanner">
-    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+    <value>هدف  منافق ساده است"اعدام شدن" آگه منافق اعدام بشه میبره و بقیه میباشد!</value>
   </string>
   <string key="AboutFool">
-    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+    <value>به احمق گفته میشه که پیشگويه اما وقتی سعی میکنه نقش یه نفر رو بفهمه یه نقش به صورت تصادفی بهش کفته میشه</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>به عنوان رییس فرقه هدف شما آینه که همه ی بازیکن(بجز گرگ ها) به تو ایمان بیارند وقتی برنده میشی که همه ی روستایی های زنده عضو فرقه ی تو باشن</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>کار تو اینه که ریس فرقه گراها رو بکشی! آگه رییس فرقه سعی کنه تورو به فرقه دعوت کنه جدیدترین عضو فرقه میمیره تو هرشب فرصت اینو داری که به یه نفر حمله کنی! آگه آون شخص فرقه گرا باشه میمیره</value>
   </string>
   <string key="AboutWC">
-    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+    <value>بچه وحشی اول بازی یه نفر انتخاب میکنه تا الگوش باشه آگه الگوی بچه وحشی بمیره آون گرگ میشه</value>
   </string>
   <string key="AboutAppS">
-    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+    <value>شما یک روستایی معمولی هستید البته تا قبل از اینکه پیشگو بمیره! وقتی پیشگو مرد پیشگوی رزرو جاشو میگیره</value>
   </string>
   <string key="AboutBH">
-    <value>You will be told who the seer is (the real one, not the fool)</value>
+    <value>به شما گفته میشه پیشگو کیه(پیشگوی واقعی نه احمق)</value>
   </string>
   <string key="AboutMason">
-    <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+    <value>شما مثل یک روستایی معمولی هستی فقط بقیه ی بناهارو میشناسی</value>
   </string>
   <string key="AboutDG">
     <value>
-      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
-      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
-      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+      شما این قابلیت رو دارین که به جسم دیگران نفوذ کنید!
+در ابتدای بازی یک نفر رو انتخاب میکنید و وقتی که آن شخص مرد نقش اون رو به عهده میگیرید اگر یک فرقه گرا را انتخاب کرده بودید بعد از مرگش نقش اصلی آون رو میگیرید
+یک همزاد تا قبل از اینکه جای کسی رو بگیرم نمیتونم برنده بازی باشه!مگر اینکه عاشق باشه
     </value>
   </string>
   <string key="AboutCupid">
     <value>
-      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
-      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+      عشق در زندگی جریان داره! به عنوان الهه ی عشق در ابتدای بازی دو نفر رو انتخاب میکنی و آون دو نفر دیوانه وار عاشق هم میشن💕آگه یکی از عاشقا بمیره آون یکی هم از غمش میمیره آگه تو آخر بازی یکی از عاشقا برنده بشه آون یکی هم به طور اتوماتیک برنده حساب میشه حتی آگه توی تیم مخالف باشه!(مثال:گرگ و روستایی)
     </value>
   </string>
   <string key="AboutHunter">
     <value>
-      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
-      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
-      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+      تو کلانتری! آگه بمیری میتونی یکی دیگه رو با خودت به گور ببری! ولی آگه گرگ بخورتت قضیه یکم فرق میکنه....
+آگه تعداد گرگا یکی باشه 30 درصد احتمالش هست که گرگو بکشی و زنده بمونید و به ازای هر یه گرگ بیشتر 20 درصد بیشتر احتمال داره که بتونی یه گرگو بکشی ولی دیگه خودت زنده نمیمونی!
     </value>
   </string>
   <string key="AboutSK">
-    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+    <value>قاتل زنجیره ای آزاده تا هرکاری که میخواد بکنه! قاتل همه رو میشه و فقط وقتی میبره که همه بجز خودش بمیره(استثناء: آگه عاشق شده باشه عشقش هم زنده باشه دوتاشون میبرند) آگه گرگا بهش حمله کنند یکیشان میشه و خودش زنده میمونه فقط با تفنگ و اعدام میمیره</value>
   </string>
   <string key="AboutPara">
     <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
