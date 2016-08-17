@@ -9,9 +9,9 @@
 <!-- Changelog August 15, 2016 by @pierredplatypus
   1. Corrected several grammar and lexical errors such as 'mukang' to 'mukhang', 'jan' to 'dyan', 'PATAYA' to 'PATAY', 'ilynch' to 'bitayin', 'sakanila' to 'sa kanila', 'pimili' to 'pumili'.
   2. Changed some role names (Harlot, AppSeer, Gunner)
-     3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
-<!-- Changelog August 17, 2016 @michelleized
-	Added previous function to the roles-->
+  3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
+<!-- Changelog August 17, 2016 by @arbeanstok
+  1. Updated to new bot lines for /playerlist-->
 <strings>
   <language name="Filipino" base="Filipino" variant="SFW"/>
   <string key="NotInGame">
@@ -134,11 +134,11 @@
   </string>
   <string key="BeholderSeer">
     <!-- 0 - seer name -->
-    <value>\nAng Madam Auring (Seer) ay is {0} </value>
+    <value>\nAng Madam Auring ay is {0}</value>
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
-    <value>Si {0} ay OJT ni Madam Auring (Apprentice Seer). Bilang OJT ni Madam, napromote ka na at ikaw na ang bagong Madam Auring.</value>
+    <value>Si {0} ay OJT ni Madam Auring. Bilang OJT ni Madam, napromote ka na at ikaw na ang bagong Madam Auring.</value>
   </string>
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
@@ -458,13 +458,13 @@
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
-    <value>Tambay Lang 👱 (Villager)</value>
+    <value>Tambay Lang 👱</value>
   </string>
   <string key="Drunk">
     <value>Ang Lasenggero 🍻</value>
   </string>
   <string key="Harlot">
-    <value>Ang Haliparot 💋 (Harlot)</value>
+    <value>Ang Haliparot 💋</value>
   </string>
   <string key="Seer">
     <value>Si Madam Auring 👳</value>
@@ -473,7 +473,7 @@
     <value>Ang Traydor 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>Ang Baranggay Tanod 👼 (Guardian Angel)</value>
+    <value>Ang Baranggay Tanod 👼</value>
   </string>
   <string key="Detective">
     <value>Ang Detective 🕵</value>
@@ -482,41 +482,41 @@
     <value>isang Werewolf 🐺</value>
   </string>
   <string key="Cursed">
-    <value>ang Isinumpa (Cursed)😾</value>
+    <value>ang Isinumpa 😾</value>
   </string>
   <string key="Gunner">
-    <value>si FPJ 🔫 (Gunner)</value>
+    <value>si FPJ 🔫</value>
   </string>
   <string key="Tanner">
-    <value>Ang Ex Mo 👺 (Tanner)</value>
+    <value>Ang Ex Mo 👺</value>
   </string>
   <string key="Fool">
     <value>ang Fool 🃏</value>
   </string>
   <string key="WildChild">
-    <value>Ang Batang Hamog 👶 (Wild Child)</value>
+    <value>Ang Batang Hamog 👶</value>
   </string>
   <string key="Beholder">
     <value>ang Beholder 👁</value>
   </string>
   <string key="ApprenticeSeer">
-    <value>ang OJT ni Madam Auring 🙇 (Apprentice Seer)</value>
+    <value>ang OJT ni Madam Auring 🙇</value>
   </string>
   <string key="Cultist">
-    <value>Ang Bibe 👤 (Cultist)</value>
+    <value>Ang Bibe 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>Ang Nanghuhuli ng Bibe 💂 (Cultist Hunter)</value>
+    <value>Ang Cultist Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
     <value>Tumakas</value>
   </string>
   <string key="Dead">
-    <value>Deds 💀</value>
+    <value>💀 Deds</value>
   </string>
   <string key="Alive">
-    <value>Buhay 🙂</value>
+    <value>🙂 Buhay</value>
   </string>
   <string key="PlayersAlive">
     <value>Buhay pang players</value>
@@ -798,13 +798,13 @@
     <value>Ang Hunter 🎯</value>
   </string>
   <string key="Cupid">
-    <value>Cupido 🏹</value>
+    <value>Cupid 🏹</value>
   </string>
   <string key="SerialKiller">
     <value>ang Serial Killer 🔪</value>
   </string>
   <string key="Doppelgänger">
-    <value>Ang Transformer 🎭 (Dopplegangger)</value>
+    <value>Ang Transformer 🎭</value>
   </string>
   <string key="CupidChosen">
     <!-- 0 - lover's name -->
@@ -871,13 +871,13 @@
     <value>Simple lang ang role mo. Ang huminga at mabuhay. Kada araw may pagkakataon ka bumoto sino bibitayin. Yun lang.</value>
   </string>
   <string key="AboutSeer">
-    <value>Ikaw si Madam Auring (Seer). Tuwing gabi, pwede ka pumili ng player na sisilipin para malaman ang role nila. Wag ipagsabi ang role me. Pag nalaman ng wolves na ikaw si Madam Auring pwede ka nilang kainin!</value>
+    <value>Ikaw si Madam Auring. Tuwing gabi, pwede ka pumili ng player na sisilipin para malaman ang role nila. Wag ipagsabi ang role me. Pag nalaman ng wolves na ikaw si Madam Auring pwede ka nilang kainin!</value>
   </string>
   <string key="AboutWw">
     <value>Enjoy ka lang. Araw-araw mo pwede paniwalain mga kasama mo na di ka werewolf. Pero pag gabi iba na ang usapan, pwede ka pumili ng isang player na kakainin! PERO: Pag ang lasenggero (drunk) ang nakain mo, malalasing ka din at magkaka-hang over kaya di ka makakakain sa sunod na gabi. Pag sinubukan mong kainin ang isinumpa (cursed), magiging wolf din siya gaya mo. Party party wooh!</value>
   </string>
   <string key="AboutHarlot">
-    <value>Salahula ka! Isa kang Haliparot (Harlot). Tuwing gabi, pwede ka pumili ng bibisitahing player para malaman kung hindi sila wolf. PERO, kung ang binisita mo ay wolf, o kaya binisita mo ang kakainin ng wolf, patay ka din. Kung may binisita ka at sinubukan kang kainin ng wolf o irecruit sa kulto sa bahay mo, mabubuhay ka o di marerecruit. (Gala mo eh)</value>
+    <value>Salahula ka! Isa kang Haliparot. Tuwing gabi, pwede ka pumili ng bibisitahing player para malaman kung hindi sila wolf. PERO, kung ang binisita mo ay wolf, o kaya binisita mo ang kakainin ng wolf, patay ka din. Kung may binisita ka at sinubukan kang kainin ng wolf o irecruit sa kulto sa bahay mo, mabubuhay ka o di marerecruit. (Gala mo eh)</value>
   </string>
   <string key="AboutDrunk">
     <value>Pre! Ikaw ang lasengero ng barangay! (Drunk) Bilang lasenggero, akala mo may special? Wala lasenggero ka lang. PERO! Pag kinain ka ng wolves, malalasing sila at di makakakain sa sunod na gabi dahil sa hang over na dala mo.</value>
@@ -889,16 +889,16 @@
     <value>Traydor ka! Sa ngayon Tambay ka palang, pero pag namatay na lahat ng werewolf, magiging wolf ka. Pag sinilip ka ni Madam Auring, pwedeng masilip ka niya na wolf pwede ring hindi (Nice diba?)</value>
   </string>
   <string key="AboutGA">
-    <value>Ikaw ang Baranggay Tanod (Seer). Tuwing gabi, pwede ka pumili ng isang player na babantayan. PERO, kung ang napili mo ay wolf, may 50% chance na mapatay ka niya.</value>
+    <value>Ikaw ang Baranggay Tanod. Tuwing gabi, pwede ka pumili ng isang player na babantayan. PERO, kung ang napili mo ay wolf, may 50% chance na mapatay ka niya.</value>
   </string>
   <string key="AboutDetective">
     <value>Ikaw ang ang Detective. Sa araw, pwede ka pumili ng player para malaman ang role nila. PERO, may 40% chance na malaman ng wolves na ikaw ang detective.</value>
   </string>
   <string key="AboutGunner">
-    <value>Isang bala ka lang! Bang! Bang! Bang! Ikaw si FPJ (Gunner). May dalawa kang bala. Sa araw, pwede ka pumili ng player na babarilin. Maririnig ng lahat ang putok ng baril mo at malalaman na ikaw ang Gunner (at hindi wolf)</value>
+    <value>Isang bala ka lang! Bang! Bang! Bang! Ikaw si FPJ. May dalawa kang bala. Sa araw, pwede ka pumili ng player na babarilin. Maririnig ng lahat ang putok ng baril mo at malalaman na ikaw ang Gunner (at hindi wolf)</value>
   </string>
   <string key="AboutTanner">
-    <value>Ikaw ay parang ang EX MO (Tanner). Manloloko! Pag na-lynch ka, panalo ka agad! (parang yung ex mo, nanalo siya nung naloko ka niya)</value>
+    <value>Ikaw ay parang ang EX MO (Manloloko). Pag na-lynch ka, panalo ka agad! (parang yung ex mo, nanalo siya nung naloko ka niya)</value>
     <value>Ang goal ng EX MO ay simple: ma-lynch. Kapag ang EX MO ang na-lynch, panalo na siya. Period.</value>
   </string>
   <string key="AboutFool">
@@ -906,28 +906,28 @@
     <value>Ang fool ay sinasabihan na siya si Madam Auring… kapag pumili siya ng player na makita sa gabi, bibigyan siya ng random na role. Sad!</value>
   </string>
   <string key="AboutCult">
-   <value>Dahil Leader na Bibe (Cultist) ka, ang goal mo ay maisanib lahat ng players (maliban sa wolves) sa iyong Kulto ng Mahiwagang Bibe. Kapag ang natira sa dulo ng laro ay mga bibe, mananalo ang kulto.</value>
+   <value>Dahil Leader na Bibe ka, ang goal mo ay maisanib lahat ng players (maliban sa wolves) sa iyong Kulto ng Mahiwagang Bibe. Kapag ang natira sa dulo ng laro ay mga bibe, mananalo ang kulto.</value>
   </string>
   <string key="AboutCH">
-    <value>Tagahuli ka ng bibe! (Cultist Hunter) May Kulto sa baranggay na nangrerecruit! Tuwing gabi, pwede ka pumili ng player. Pag bibe na sila, mamamatay sila. Pag sinubukan kang irecruit sa kulto nila, mamamatay ang pinakabago nilang recruit.</value>
+    <value>May Kulto sa baranggay na nangrerecruit! Tuwing gabi, pwede ka pumili ng player. Pag bibe na sila, mamamatay sila. Pag sinubukan kang irecruit sa kulto nila, mamamatay ang pinakabago nilang recruit.</value>
     <value>Kapag ikaw ay inatake ng kulto, ang bagong recruit nila ay mamamatay. Tuwing gabi, makakapili ka ng player na i-'hunt'- kapag kulto siya, mamamatay siya.</value>
   </string>
   <string key="AboutWC">
-    <value>Sa simula ng laro, makakapili ka kung sino ang idol mo. Kapag namatay siya, ikaw ang magiging werewolf. Vote wisely. (Wild Child)</value>
+    <value>Sa simula ng laro, makakapili ka kung sino ang idol mo. Kapag namatay siya, ikaw ang magiging werewolf. Vote wisely.</value>
   </string>
   <string key="AboutAppS">
-    <value>Sa ngayon, isa kang tambay. Pero kapag namatay si Madam Auring, ikaw ang papalit sa kanya (Apprentice Seer). Uy, gusto niya yan!</value>
+    <value>Sa ngayon, isa kang tambay. Pero kapag namatay si Madam Auring, ikaw ang papalit sa kanya. Uy, gusto niya yan!</value>
   </string>
   <string key="AboutBH">
     <value>Ikaw ang Beholder, malalaman mo kung sino ang tunay na Madam Auring. Yun lang.</value>
     <value>Malalaman mo kung sino ang tunay na Madam Auring (yung totoo, hindi yung fool)</value>
   </string>
   <string key="AboutMason">
-    <value>Madali lang ang trabaho ng isang Mason - malalaman nila agad kung sino ang mga kasamahan nila. Kung wala, siya ay isang simpleng tambay. (Aww, loner!) </value>
+    <value>Madali lang ang trabaho ng isang mason - malalaman nila agad kung sino ang mga kasamahan nila. Kung wala, siya ay isang simpleng tambay. (Aww, loner!) </value>
   </string>
   <string key="AboutDG">
     <value>
-     Isa kang Transformer (Dopplegganger). Sabi sa kwento ay Ditto (sa pokemon) daw ang tatay mo, at iguana naman ang nanay mo kaya pwede ka mag transform sa kahit ano. Namana mo ang pinagsamang kapangyarihan ng dalawa. Pumili ka ng isang player. Kapag namatay siya, makukuha mo ang role niya.
+     Isa kang Transformer. Sabi sa kwento ay Ditto (sa pokemon) daw ang tatay mo, at iguana naman ang nanay mo kaya pwede ka mag transform sa kahit ano. Namana mo ang pinagsamang kapangyarihan ng dalawa. Pumili ka ng isang player. Kapag namatay siya, makukuha mo ang role niya.
       Note:\n1. Kung ang  napili mong player ay narecruit sa kulto, ang makukuha mo ay ang original nilang role. Kung Batang Hamog siya at naging Werewolf na, magiging wolf ka. Kung hindi, ang makukuha mo ay ang role ng idol niya.\n2. Hindi maaaring irecruit ng kulto ang Transformer (pero pwede kung nakapagpalit na ng role)\n3. Ang Transformer ay HINDI mananalo bukod kung nakapagtransform na. Kung pagtapos ng laro ay Transformer parin siya. Talo parin siya (bukod kapag lover).
     </value>
   </string>
@@ -1014,7 +1014,7 @@
     <value>Hindi ka global admin...</value>
   </string>
   <string key="NotPara">
-    <value>Hindi ka si Para!</value>
+    <value>Hindi ka Para!</value>
   </string>
   <string key="Yes">
     <value>Oo</value>
@@ -1146,5 +1146,11 @@
   </string>
   <string key="PlayerNoPM">
     <value>Hindi nasimulan ni {0} ang bot, at siya ay natanggal sa laro!</value>
+  </string>
+  <string key="LatestList">
+    <value>Ito parin yung list.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Teka! Di ko maabot yung list! (Ang liit ko kasi 😢) mamaya mo na hingin hahanap lang ako ng upuan na tungtungan.</value>
   </string>
 </strings>
