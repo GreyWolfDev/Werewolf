@@ -37,6 +37,7 @@ namespace Werewolf_Node
         public Locale Locale;
         public Group DbGroup;
         private bool PlayerListChanged = true;
+        private DateTime TimeStarted;
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -221,10 +222,11 @@ namespace Werewolf_Node
                 //create new game for database
                 using (var db = new WWContext())
                 {
+                    TimeStarted = DateTime.Now;
                     var game = new Game
                     {
                         GroupName = ChatGroup,
-                        TimeStarted = DateTime.Now,
+                        TimeStarted = TimeStarted,
                         GroupId = ChatId,
                         GrpId = int.Parse(DbGroup.Id.ToString()),
                         Mode = Chaos ? "Chaos" : "Normal"
@@ -278,12 +280,15 @@ namespace Werewolf_Node
                     GameDay++;
                     if (!IsRunning) break;
                     CheckRoleChanges();
+                    CheckLongHaul();
                     NightCycle();
                     if (!IsRunning) break;
                     CheckRoleChanges();
+                    CheckLongHaul();
                     DayCycle();
                     if (!IsRunning) break;
                     CheckRoleChanges();
+                    CheckLongHaul();
                     LynchCycle();
                 }
             }
@@ -541,8 +546,11 @@ namespace Werewolf_Node
                 if (player.PlayerRole == IRole.Cupid && player.CurrentQuestion.QType == QuestionType.Lover1)
                 {
                     var lover1 = Players.FirstOrDefault(x => x.Id == player.Choice);
+                    
                     if (lover1 != null)
                     {
+                        if (lover1.Id == player.Id)
+                            AddAchievement(player, Achievements.SelfLoving);
                         lover1.InLove = true;
                         //send menu for second choice....
                         var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).OrderBy(x => x.Name).ToList();
@@ -563,6 +571,8 @@ namespace Werewolf_Node
                     var lover11 = Players.FirstOrDefault(x => x.InLove);
                     if (lover11 == null)
                         return;
+                    if (lover11.Id == player.Id)
+                        AddAchievement(player, Achievements.SelfLoving);
                     lover11.LoverId = player.Choice;
                     lover11.InLove = true;
 
@@ -1238,7 +1248,7 @@ namespace Werewolf_Node
                     break;
                 case IRole.Mason:
                     msg = GetLocaleString("RoleInfoMason");
-                    if (Players.Count(x => x.PlayerRole == IRole.Mason) > 1)
+                    if (Players?.Count(x => x?.PlayerRole == IRole.Mason) > 1)
                     {
                         msg += GetLocaleString("MasonTeam", Players.Where(x => x.PlayerRole == IRole.Mason).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
                     }
@@ -1261,8 +1271,9 @@ namespace Werewolf_Node
 
         public void CheckRoleChanges()
         {
+            if (Players == null) return;
             //check Apprentice Seer
-            var aps = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
+            var aps = Players?.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer & !x.IsDead);
             if (aps != null)
             {
                 //check if seer is alive
@@ -1287,8 +1298,18 @@ namespace Werewolf_Node
             }
             CheckWildChild();
             CheckDoppelganger();
-        }
 
+            var wolves = Players.Where(x => x.PlayerRole == IRole.Wolf & !x.IsDead);
+            if (wolves.Count() >= 7)
+            {
+                foreach (var w in wolves)
+                {
+                    AddAchievement(w, Achievements.PackHunter);
+                }
+            }
+
+        }
+        
         private void ValidateSpecialRoleChoices()
         {
             if (GameDay != 1) return;
@@ -1661,7 +1682,7 @@ namespace Werewolf_Node
             try
             {
                 var maxVotes = Players.Max(x => x.Votes);
-                var choices = Players.Where(x => x.Votes == maxVotes).GroupBy(x => x.Choice).ToList();
+                var choices = Players.Where(x => x.Votes == maxVotes).ToList();
                 IPlayer lynched = new IPlayer() { Votes = -1 };
                 if (choices.Count > 1)
                 {
@@ -1671,12 +1692,12 @@ namespace Werewolf_Node
                         //select one at random now
                         choices.Shuffle();
                         choices.Shuffle();
-                        lynched = Players.First(x => x.Id == choices.First().First().Id);
+                        lynched = Players.First(x => x.Id == choices.First().Id);
                     }
                 }
                 else
                 {
-                    lynched = Players.First(x => x.Id == choices.First().First().Id);
+                    lynched = Players.First(x => x.Id == choices.First().Id);
                 }
 
                 //Log.WriteLine("lynched Votes = " + lynched.Votes);
@@ -1685,7 +1706,8 @@ namespace Werewolf_Node
                 {
                     lynched.IsDead = true;
                     lynched.TimeDied = DateTime.Now;
-
+                    if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
+                        AddAchievement(lynched, Achievements.LackOfTrust);
                     SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.ShowRoles == false ? "" : $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}"));
 
                     //update the database
@@ -1696,8 +1718,10 @@ namespace Werewolf_Node
                     //add the 'kill'
                     if (lynched.PlayerRole == IRole.Tanner)
                     {
+                        //check for overkill
+                        if (Players.Where(x => !x.IsDead).All(x => x.Choice == lynched.Id))
+                            AddAchievement(lynched, Achievements.TannerOverkill);
                         //end game
-
                         DoGameEnd(ITeam.Tanner);
                         return;
                     }
@@ -1712,6 +1736,9 @@ namespace Werewolf_Node
                 else if (lynched.Votes == -1)
                 {
                     SendWithQueue(GetLocaleString("LynchTie"));
+                    var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
+                    if (t != null)
+                        AddAchievement(t, Achievements.SoClose);
                 }
                 else
                 {
@@ -1879,6 +1906,8 @@ namespace Werewolf_Node
                     //kill them
                     gunner.Bullet--;
                     check.IsDead = true;
+                    if (!new[] {IRole.Wolf, IRole.Cultist, IRole.SerialKiller}.Contains(check.PlayerRole))
+                        gunner.BulletHitVillager = true;
                     check.TimeDied = DateTime.Now;
                     //update database
                     DBKill(gunner, check, KillMthd.Shoot);
@@ -2177,6 +2206,8 @@ namespace Werewolf_Node
                     skilled.TimeDied = DateTime.Now;
                     skilled.DiedFromWolf = false;
                     skilled.DiedFromKiller = true;
+                    if (skilled.PlayerRole == IRole.Wolf)
+                        sk.SerialKilledWolvesCount++;
                     if (ga?.Choice == skilled.Id)
                     {
 
@@ -2292,6 +2323,7 @@ namespace Werewolf_Node
                                     //kill the newest cult member
                                     newbie.DiedLastNight = true;
                                     newbie.IsDead = true;
+                                    AddAchievement(newbie, Achievements.CultFodder);
                                     newbie.TimeDied = DateTime.Now;
                                     DBKill(target, newbie, KillMthd.Hunt);
                                     //notify everyone
@@ -2538,24 +2570,29 @@ namespace Werewolf_Node
                 }
             }
             //let the seer know
-            var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer & !x.IsDead);
-            if (seer != null)
+            var seers = Players.Where(x => x.PlayerRole == IRole.Seer & !x.IsDead);
+            if (seers.Any())
             {
-                var target = Players.FirstOrDefault(x => x.Id == seer.Choice);
-                if (target != null)
+                foreach (var seer in seers)
                 {
-                    DBAction(seer, target, "See");
-                }
-                if (!seer.IsDead && seer.Choice != 0 && seer.Choice != -1)
-                {
+                    var target = Players.FirstOrDefault(x => x.Id == seer.Choice);
                     if (target != null)
                     {
-                        var role = target.PlayerRole;
-                        if (target.PlayerRole == IRole.Traitor)
+                        DBAction(seer, target, "See");
+                    }
+                    if (!seer.IsDead && seer.Choice != 0 && seer.Choice != -1)
+                    {
+                        if (target != null)
                         {
-                            role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
+                            var role = target.PlayerRole;
+                            if (target.PlayerRole == IRole.Beholder)
+                                AddAchievement(seer, Achievements.ShouldHaveKnown);
+                            if (target.PlayerRole == IRole.Traitor)
+                            {
+                                role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
+                            }
+                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                         }
-                        Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                     }
                 }
             }
@@ -2573,7 +2610,12 @@ namespace Werewolf_Node
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
                     if (possibleRoles.Any())
+                    {
+                        //check if it's accurate
+                        if (possibleRoles[0] == target.PlayerRole)
+                            fool.FoolCorrectSeeCount++;
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(possibleRoles[0])), fool.Id);
+                    }
                 }
 
 
@@ -2762,8 +2804,12 @@ namespace Werewolf_Node
 
                 if (team == ITeam.Lovers)
                 {
-                    foreach (var w in Players.Where(x => x.InLove))
+                    var lovers = Players.Where(x => x.InLove);
+                    var forbidden = lovers.Any(x => x.PlayerRole == IRole.Wolf) && lovers.Any(x => x.PlayerRole == IRole.Villager);
+                    foreach (var w in lovers)
                     {
+                        if (forbidden)
+                            AddAchievement(w, Achievements.ForbiddenLove);
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
@@ -2867,7 +2913,8 @@ namespace Werewolf_Node
                         var skh = skhunter.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller);
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
-                        skh.DoubleKillEnding = hunter.DoubleKillEnding = true;
+                        AddAchievement(skh, Achievements.DoubleKill);
+                        AddAchievement(hunter, Achievements.DoubleKill);
                         DBKill(skh, hunter, KillMthd.SerialKilled);
                         DBKill(hunter, skh, KillMthd.HunterShot);
                         if (skh != null)
@@ -3266,7 +3313,7 @@ namespace Werewolf_Node
                         killed.IsDead = true;
                         killed.TimeDied = DateTime.Now;
                         if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.SerialKiller)
-                            hunter.LastShotWasSKWolf = true;
+                            AddAchievement(hunter, Achievements.HeyManNiceShot);
 
                         DBKill(hunter, killed, KillMthd.HunterShot);
                         CheckRoleChanges();
@@ -3413,9 +3460,12 @@ namespace Werewolf_Node
             {
                 if (victim.InLove)
                 {
+                    if (victim.LoverId == killer.Id)
+                        AddAchievement(killer, Achievements.OhShi);
+
                     var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
                     if (p != null)
-                    {
+                    {    
                         SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                         DBKill(victim, p, KillMthd.LoverDied);
                         p.IsDead = true;
@@ -3430,6 +3480,20 @@ namespace Werewolf_Node
             }
 
 
+        }
+
+        private bool LongHaulReached = false;
+        private void CheckLongHaul()
+        {
+            if (Players == null) return;
+            if ((DateTime.Now - TimeStarted).Hours >= 1 & !LongHaulReached)
+            {
+                foreach (var p in Players)
+                {
+                    AddAchievement(p, Achievements.LongHaul);
+                }
+                LongHaulReached = true;
+            }
         }
 
         public int DBGameId { get; set; }
@@ -3500,6 +3564,8 @@ namespace Werewolf_Node
             if (Players == null) return;
             using (var db = new WWContext())
             {
+                //check for convention
+                var convention = Players.Count(x => x.PlayerRole == IRole.Cultist & !x.IsDead) >= 10;
                 foreach (var player in Players)
                 {
                     var p = GetDBPlayer(player, db);
@@ -3556,11 +3622,14 @@ namespace Werewolf_Node
                             ach = ach | Achievements.Promiscuous;
                         if (player.ChangedRolesCount >= 2)
                             ach = ach | Achievements.DoubleShifter;
-                        if (player.LastShotWasSKWolf)
-                            ach = ach | Achievements.HeyManNiceShot;
-                        if (player.DoubleKillEnding)
-                            ach = ach | Achievements.DoubleKill;
-
+                        if (player.FoolCorrectSeeCount >= 2)
+                            ach = ach | Achievements.BrokenClock;
+                        if (player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
+                            ach = ach | Achievements.SmartGunner;
+                        if (player.PlayerRole == IRole.Cultist && convention)
+                            ach = ach | Achievements.CultCon;
+                        if (player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
+                            ach = ach | Achievements.SerialSamaritan;
 
                         //now save
                         p.Achievements = (long) ach;
@@ -3568,6 +3637,25 @@ namespace Werewolf_Node
                     }
                 }
             }
+        }
+
+        private void AddAchievement(IPlayer player, Achievements a)
+        {
+            using (var db = new WWContext())
+            {
+                var p = GetDBPlayer(player, db);
+                if (p != null)
+                {
+                    if (p.Achievements == null)
+                        p.Achievements = 0;
+                    var ach = (Achievements)p.Achievements;
+                    if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                    ach = ach | a;
+                    p.Achievements = (long) ach;
+                    db.SaveChanges();
+                }
+            }
+
         }
 
         #endregion

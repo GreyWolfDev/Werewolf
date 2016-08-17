@@ -102,6 +102,7 @@ namespace Werewolf_Node.Models
         public bool PackHunter { get; set; } = false;
         public bool LastShotWasSKWolf { get; set; } = false;
         public bool DoubleKillEnding { get; set; } = false;
+
     }
 
         #endregion

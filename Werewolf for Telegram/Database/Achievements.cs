@@ -53,10 +53,12 @@ namespace Database
         SelfLoving = 1099511627776,
         ShouldveMentioned = 2199023255552,
         TannerOverkill = 4398046511104,
-        HelpfulKiller = 8796093022208,
+        SerialSamaritan = 8796093022208,
         CultFodder = 17592186044416,
         LoneWolf = 35184372088832,
         PackHunter = 70368744177664,
-        GunnerSaves = 140737488355328
+        GunnerSaves = 140737488355328,
+        LongHaul = 281474976710656,
+        OhShi = 562949953421312
     }
 }
