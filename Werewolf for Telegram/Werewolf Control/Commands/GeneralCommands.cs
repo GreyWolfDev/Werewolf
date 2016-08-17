@@ -30,7 +30,7 @@ namespace Werewolf_Control
             Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message + $"\nTime to send ping message: {ts:mm\\:ss\\.ff}");
 
         }
-
+#if (BETA || DEBUG)
         [Command(Trigger = "achv")]
         public static void GetAchievements(Update u, string[] args)
         {
@@ -46,7 +46,7 @@ namespace Werewolf_Control
                 }
             }
         }
-
+#endif
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {

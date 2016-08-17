@@ -2900,7 +2900,9 @@ namespace Werewolf_Node
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
+#if (BETA || DEBUG)
                 UpdateAchievements();
+#endif
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
