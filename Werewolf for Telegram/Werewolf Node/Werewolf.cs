@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -3633,7 +3636,7 @@ namespace Werewolf_Node
                             ach = ach | Achievements.Obsessed;
                         if (player.Won && player.PlayerRole == IRole.Tanner)
                             ach = ach | Achievements.Masochist;
-                        if (!player.IsDead && player.PlayerRole == IRole.Drunk)
+                        if (!player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
                             ach = ach | Achievements.Wobble;
                         if (!ach.HasFlag(Achievements.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
                             ach = ach | Achievements.Survivalist;
@@ -3682,11 +3685,12 @@ namespace Werewolf_Node
                     ach = ach | a;
                     p.Achievements = (long) ach;
                     db.SaveChanges();
-                    Send($"Achievement Unlocked!\n{a}", player.Id);
+                    Send($"Achievement Unlocked!\n{a.GetName()}\n{a.GetDescription()}", player.Id);
                 }
             }
 
         }
+        
 
         #endregion
     }

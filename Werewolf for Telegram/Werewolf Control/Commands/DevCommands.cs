@@ -254,20 +254,9 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //test writing to database
-            //using (var db = new WWContext())
-            //{
-            //    var p = db.Players.FirstOrDefault(x => x.TelegramId == UpdateHandler.Para);
-            //    if (p != null)
-            //    {
-            //        var flags = (Achievements) p.Achievements;
-            //        flags = flags | Achievements.GunnerSaves;
-                   
-            //        p.Achievements = (long)flags;
-            //    }
-            //    db.SaveChanges();
-            //    Send($"{p.Achievements}", update.Message.Chat.Id);
-            //}
+            Achievements a;
+            if(Enum.TryParse(args[1], out a))
+                Send($"Test Achievement:\n{a.GetName()}\n{a.GetDescription()}", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "sql", DevOnly = true)]
