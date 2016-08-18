@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<!-- Expert mode by Saah (@ayylimao)! Translated in Italian by @MatteoIlGrande and @Johta! Si consiglia di rivelare i ruoli alla morte :P -->
+<!-- Expert mode by Saah (@ayylimao)! Translated in Italian by @MatteoIlGrande! Si consiglia di rivelare i ruoli alla morte :P -->
+<!-- Last updated on 18 August 2016 -->
 <strings>
   <language name="Italiano (Amnesia Mode)" base="Italiano" variant="Amnesia Mode"/>
   <string key="NotInGame">
 
-  <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
+  <value>Te ne sei scordato? Non sei in nessuna partita al momento!</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
 
@@ -14,23 +15,23 @@
     <value>Una nuova partita è stata iniziata da {0}! Usa /join se hai intenzione di farti del male!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} Ha iniziato una partita caos! Usa /join per entrare e divertirti.. E probabilmente morire :P</value>
+    <value>{0} ha iniziato una partita caos! Usa /join per entrare e divertirti.. E probabilmente morire :P</value>
     <value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>Non puoi unirti ora! La partita è già iniziata.</value>
+    <value>Ti sei scordato di joinare prima che la partita iniziasse! Usa /nextgame e ti avviserò quando una nuova partita inizierà così non te ne scorderai di nuovo!</value>
   </string>
   <string key="AlreadyJoined">
-    <value>Ti sei già unito!</value>
+    <value>Ti sei già unito, ricordi?</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>Ancora 1 minuto per usare /join ...</value>
+    <value>Ancora 1 minuto per usare /join, non scordartene!</value>
   </string>
   <string key="SecondsLeftToJoin">
     <value>Ancora {0} secondi per usare /join ...</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Ah, non siamo abbastanza. Cancello la partita!</value>
+    <value>Si sono tutti scordati di questo gruppo.. Non abbiamo raggiunto 5 giocatori, cancello la partita!</value>
   </string>
   <string key="StartingGameWait">
     <value>Il gioco sta iniziando, aspettate qualche secondo mentre assegno i ruoli ed aggiorno il database. Qualcosa di strano è appena successo al villaggio, sembra che tutti si siano dimenticati dei loro ruoli...</value>
@@ -39,40 +40,40 @@
     <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
   </string>
   <string key="ChangeNameToJoin">
-    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
+    <value>{0}, hai per caso scordato di dover cambiare nome? Per favore, fallo, sennò non puoi giocare!</value>
   </string>
   <string key="PlayerLimitReached">
-    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di giocatori!</value>
+    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di giocatori! Prova più tardi con /nextgame!</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
+    <value>{0} si è scordato chi fosse!. {1} amnesiaci, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-    <value>{0} Clicca questo: @{1}, poi premi start. Finchè non lo fai il bot non potrá contattarti in privato.</value>
+    <value>{0}, hai scordato di scrivere al bot! vai su {1}, poi premi start. Finchè non lo fai il bot non potrá contattarti in privato.</value>
   </string>
   <string key="DeadFlee">
-    <value>Pazzo, non puoi scappare! SEI MORTO!  Torna a marcire nella fossa....</value>
+    <value>Ti sei anche scordato di esser morto? I morti non scappano...</value>
   </string>
   <string key="Flee">
-    <value>{0} ha ceduto al terrore!</value>
+    <value>{0} </value>
   </string>
   <string key="PlayerRoleWas">
-    <value>\n{0} era {1}</value>
+    <value>\n{0} si era scordato, ma era {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>Rimangono {0} giocatori.</value>
+    <value>Rimangono {0} amnesiaci.</value>
   </string>
   <string key="DidntAsk">
     <value>Tu non sai neanche che ruolo hai e vuoi fare qualcosa? Fai un respiro, non ti ho chiesto ancora nulla!</value>
   </string>
   <string key="NotPlaying">
-    <value>Sembra che tu non stia giocando..</value>
+    <value>Te ne sei scordato? Non puoi farlo se non stai giocando</value>
   </string>
   <string key="NoPlayerName">
-    <value>Non posso trovare un giocatore con questo nome!</value>
+    <value>Sembra che io mi sia scordato di chi tu stia parlato... Non riesco a trovare un giocatore con quel nome!</value>
   </string>
   <string key="AnswerNonValid">
-    <value>Questa risposta non è valida!</value>
+    <value>Ti sei per caso scordato come si gioca? Questa risposta non è valida!</value>
   </string>
   <string key="WolfVotedKill">
     <value>{0} vota per fare qualcosa a {1}</value>
@@ -81,7 +82,7 @@
     <value>{0} ha votato per linciare {1}</value>
   </string>
   <string key="IdleKill">
-    <value>{0} non ha votato per due notti consecutive.  Le forze del bene hanno visto ciò come un peccato imperdonabile. {0} viene eseguito pubblicamente, umiliato dalla folla.\n{1}</value>
+    <value>{0} si è scordato di votare per due notti consecutive.  Scordarsi di questo gioco è talmente terribile che {0} si scorda anche di respirare, e muore.\n{1}</value>
 	</string>
   <string key="TraitorTurnWolf">
     <value>Il tuo ruolo è cambiato. Ma da cosa? E a cosa?....</value>
@@ -132,7 +133,7 @@
     <value>Sai che dovresti fare qualcosa a qualcuno.. Ma cosa? e a chi lo vorresti fare?</value>
   </string>
   <string key="DiscussWith"><!--Leave the leading spaces here please-->
-    <value>  prova a discutere con: {0}</value>
+    <value>  Ricordati di parlarne con: {0}</value>
   </string>
   <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> e </value>
@@ -945,9 +946,22 @@
     <value>Questi sono i gruppi per {0}:</value>
   </string>
   <string key="Members">
-    <value>Membri</value>
+    <value>Amnesiaci</value>
   </string>
   <string key="StartMe">
-    <value>Per favore startami così potrò scriverti in privato</value>
+    <value>Non scordarti di startarmi, così potrò contattarti in privato!</value>
   </string> 
-</strings>
+    <string key="PlayerNoPM">
+    <value>{0} si è scordato di startare il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Che io mi ricordi, questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Mi sono scordato dove fosse l'ultima lista...</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Ti sei ricordato di fare qualcosa su {0}... ma cosa?</value>
+  </string> 
+  </strings>
