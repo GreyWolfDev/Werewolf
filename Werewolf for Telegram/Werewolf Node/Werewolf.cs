@@ -274,7 +274,7 @@ namespace Werewolf_Node
                 //disable Inconspicuous achievement if less than 20 players
                 if (Players.Count < 20)
                 {
-                    foreach (var p in Players)
+                    foreach (var p in Players.Where(x => x != null))
                         p.HasBeenVoted = true;
                 }
                 Time = GameTime.Night;
@@ -3673,9 +3673,10 @@ namespace Werewolf_Node
                         db.SaveChanges();
 
                         //notify
-                        if (newAch == 0) continue;
+                        var newFlags = newAch.GetUniqueFlags().ToList();
+                        if (newFlags.Count() == 1 && newFlags.FirstOrDefault() == Achievements.None) continue;
                         var msg = "New Unlocks!".ToBold() + Environment.NewLine;
-                        msg = newAch.GetUniqueFlags().Aggregate(msg, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
+                        msg = newFlags.Aggregate(msg, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
                         Send(msg, p.TelegramId);
                     }
                 }

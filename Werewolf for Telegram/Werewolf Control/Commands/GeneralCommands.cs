@@ -51,6 +51,12 @@ namespace Werewolf_Control
 
         }
 
+        [Command(Trigger = "donate")]
+        public static void Donate(Update u, string[] args)
+        {
+            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Want to donate? awesome! <a href=\"paypal.me/Para949\">Click here :)</a> ",parseMode: ParseMode.Html );
+        }
+
         [Command(Trigger = "changelog")]
         public static void ChangeLog(Update update, string[] args)
         {
