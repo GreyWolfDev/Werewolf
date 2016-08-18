@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
@@ -253,20 +254,49 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //test writing to database
-            //using (var db = new WWContext())
-            //{
-            //    var p = db.Players.FirstOrDefault(x => x.TelegramId == UpdateHandler.Para);
-            //    if (p != null)
-            //    {
-            //        var flags = (Achievements) p.Achievements;
-            //        flags = flags | Achievements.GunnerSaves;
-                   
-            //        p.Achievements = (long)flags;
-            //    }
-            //    db.SaveChanges();
-            //    Send($"{p.Achievements}", update.Message.Chat.Id);
-            //}
+            Achievements a;
+            if(Enum.TryParse(args[1], out a))
+                Send($"Test Achievement:\n{a.GetName()}\n{a.GetDescription()}", update.Message.Chat.Id);
+        }
+
+        [Command(Trigger = "sql", DevOnly = true)]
+        public static void Sql(Update u, string[] args)
+        {
+            if (args.Length == 1)
+            {
+                Send("You must enter a sql command...", u.Message.Chat.Id);
+            }
+            using (var db = new WWContext())
+            {
+                var sql = args[1];
+                var conn = db.Database.Connection;
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                string raw = "";
+                using (var comm = conn.CreateCommand())
+                {
+                    comm.CommandText = sql;
+                    var reader = comm.ExecuteReader();
+                    var result = "";
+                    if (reader.HasRows)
+                    {
+                        for (int i = 0; i < reader.FieldCount; i++)
+                            raw += reader.GetName(i) + " - ";
+                        result += raw + Environment.NewLine;
+                        raw = "";
+                        while (reader.Read())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                raw += reader[i] + " - ";
+                            }
+                            result += raw + Environment.NewLine;
+                            raw = "";
+                        }
+                    }
+                    Send(result + reader.RecordsAffected + " records affected", u.Message.Chat.Id);
+                }
+            }
         }
 
         [Command(Trigger = "reloadenglish", DevOnly = true)]

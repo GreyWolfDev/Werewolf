@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -80,7 +83,7 @@ namespace Werewolf_Node
                     LoadLanguage(DbGroup.Language);
 
                     RequestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
-                    AddPlayer(u, false);
+                    AddPlayer(u);
                 }
                 SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
                     GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame));
@@ -346,7 +349,7 @@ namespace Werewolf_Node
                 //first check the player hasn't already joined
                 if (Players.Any(x => x.Id == u.Id))
                 {
-                    SendWithQueue(GetLocaleString("AlreadyJoined"));
+                    //SendWithQueue(GetLocaleString("AlreadyJoined"));
                     return;
                 }
 
@@ -385,6 +388,8 @@ namespace Werewolf_Node
                     return;
                 }
                 Players.Add(p);
+
+
                 if (!notify) return;
 
                 var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
@@ -427,6 +432,23 @@ namespace Werewolf_Node
                         sendPM = true;
                     }
                 }
+
+                //now, attempt to PM the player
+                try
+                {
+                    var result = Send(GetLocaleString("YouJoined", ChatGroup), u.Id).Result;
+                }
+                catch(Exception e)
+                {
+                    var botname = "@" + Program.Me.Username;
+                    if (!sendPM)
+                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                    //unable to PM
+                    sendPM = true;
+                }
+                
+
+
                 SendWithQueue(msg, requestPM: sendPM);
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
@@ -619,13 +641,11 @@ namespace Werewolf_Node
             }
         }
 
-        private void Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null)
+        private Task<Telegram.Bot.Types.Message> Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null)
         {
             if (id == 0)
                 id = ChatId;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            Program.Send(message, id, clearKeyboard, menu, game: this);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            return Program.Send(message, id, clearKeyboard, menu, game: this);
         }
 
         private void SendGif(string text, string image, long id = 0)
@@ -1170,9 +1190,11 @@ namespace Werewolf_Node
 
         private void NotifyRoles()
         {
+            if (Players == null) return; //how the hell?
             //notify each player
             foreach (var p in Players.ToList())
             {
+                if (p?.PlayerRole == null) continue;
                 var msg = GetRoleInfo(p.PlayerRole);
                 try
                 {
@@ -1190,81 +1212,91 @@ namespace Werewolf_Node
         private string GetRoleInfo(IRole role)
         {
             var msg = "";
-            switch (role)
+            try
             {
-                case IRole.Cursed:
-                    msg = GetLocaleString("RoleInfoCursed");
-                    break;
-                case IRole.Detective:
-                    msg = GetLocaleString("RoleInfoDetective");
-                    break;
-                case IRole.Drunk:
-                    msg = GetLocaleString("RoleInfoDrunk");
-                    break;
-                case IRole.GuardianAngel:
-                    msg = GetLocaleString("RoleInfoGuardianAngel");
-                    break;
-                case IRole.Gunner:
-                    msg = GetLocaleString("RoleInfoGunner");
-                    break;
-                case IRole.Harlot:
-                    msg = GetLocaleString("RoleInfoHarlot");
-                    break;
-                case IRole.Traitor:
-                    msg = GetLocaleString("RoleInfoTraitor");
-                    break;
-                case IRole.Wolf:
-                    msg = GetLocaleString("RoleInfoWolf");
-                    break;
-                case IRole.Fool:
-                case IRole.Seer:
-                    msg = GetLocaleString("RoleInfoSeer");
-                    break;
-                case IRole.Villager:
-                    msg = GetLocaleString("RoleInfoVillager");
-                    break;
-                case IRole.Tanner:
-                    msg = GetLocaleString("RoleInfoTanner");
-                    break;
-                case IRole.Cultist:
-                    msg = GetLocaleString("RoleInfoCultist");
-                    break;
-                case IRole.WildChild:
-                    msg = GetLocaleString("RoleInfoWildChild");
-                    break;
-                case IRole.Beholder:
-                    msg = GetLocaleString("RoleInfoBeholder");
-                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                    if (seer != null)
-                        msg += GetLocaleString("BeholderSeer", $"{seer.GetName()}");
-                    else
-                        msg += "  " + GetLocaleString("NoSeer");
-                    break;
-                case IRole.ApprenticeSeer:
-                    msg = GetLocaleString("RoleInfoApprenticeSeer");
-                    break;
-                case IRole.CultistHunter:
-                    msg = GetLocaleString("RoleInfoCultistHunter");
-                    break;
-                case IRole.Mason:
-                    msg = GetLocaleString("RoleInfoMason");
-                    if (Players?.Count(x => x?.PlayerRole == IRole.Mason) > 1)
-                    {
-                        msg += GetLocaleString("MasonTeam", Players.Where(x => x.PlayerRole == IRole.Mason).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
-                    }
-                    break;
-                case IRole.Cupid:
-                    msg = GetLocaleString("RoleInfoCupid");
-                    break;
-                case IRole.Doppelgänger:
-                    msg = GetLocaleString("RoleInfoDoppelganger");
-                    break;
-                case IRole.Hunter:
-                    msg = GetLocaleString("RoleInfoHunter");
-                    break;
-                case IRole.SerialKiller:
-                    msg = GetLocaleString("RoleInfoSerialKiller");
-                    break;
+                switch (role)
+                {
+                    case IRole.Cursed:
+                        msg = GetLocaleString("RoleInfoCursed");
+                        break;
+                    case IRole.Detective:
+                        msg = GetLocaleString("RoleInfoDetective");
+                        break;
+                    case IRole.Drunk:
+                        msg = GetLocaleString("RoleInfoDrunk");
+                        break;
+                    case IRole.GuardianAngel:
+                        msg = GetLocaleString("RoleInfoGuardianAngel");
+                        break;
+                    case IRole.Gunner:
+                        msg = GetLocaleString("RoleInfoGunner");
+                        break;
+                    case IRole.Harlot:
+                        msg = GetLocaleString("RoleInfoHarlot");
+                        break;
+                    case IRole.Traitor:
+                        msg = GetLocaleString("RoleInfoTraitor");
+                        break;
+                    case IRole.Wolf:
+                        msg = GetLocaleString("RoleInfoWolf");
+                        break;
+                    case IRole.Fool:
+                    case IRole.Seer:
+                        msg = GetLocaleString("RoleInfoSeer");
+                        break;
+                    case IRole.Villager:
+                        msg = GetLocaleString("RoleInfoVillager");
+                        break;
+                    case IRole.Tanner:
+                        msg = GetLocaleString("RoleInfoTanner");
+                        break;
+                    case IRole.Cultist:
+                        msg = GetLocaleString("RoleInfoCultist");
+                        break;
+                    case IRole.WildChild:
+                        msg = GetLocaleString("RoleInfoWildChild");
+                        break;
+                    case IRole.Beholder:
+                        msg = GetLocaleString("RoleInfoBeholder");
+                        var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                        if (seer != null)
+                            msg += GetLocaleString("BeholderSeer", $"{seer.GetName()}");
+                        else
+                            msg += "  " + GetLocaleString("NoSeer");
+                        break;
+                    case IRole.ApprenticeSeer:
+                        msg = GetLocaleString("RoleInfoApprenticeSeer");
+                        break;
+                    case IRole.CultistHunter:
+                        msg = GetLocaleString("RoleInfoCultistHunter");
+                        break;
+                    case IRole.Mason:
+                        msg = GetLocaleString("RoleInfoMason");
+                        if (Players?.Count(x => x?.PlayerRole == IRole.Mason) > 1)
+                        {
+                            msg += GetLocaleString("MasonTeam",
+                                Players.Where(x => x.PlayerRole == IRole.Mason)
+                                    .Select(x => x.GetName())
+                                    .Aggregate((current, next) => current + ", " + next));
+                        }
+                        break;
+                    case IRole.Cupid:
+                        msg = GetLocaleString("RoleInfoCupid");
+                        break;
+                    case IRole.Doppelgänger:
+                        msg = GetLocaleString("RoleInfoDoppelganger");
+                        break;
+                    case IRole.Hunter:
+                        msg = GetLocaleString("RoleInfoHunter");
+                        break;
+                    case IRole.SerialKiller:
+                        msg = GetLocaleString("RoleInfoSerialKiller");
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                Send("Error in get role info: \n" + e.Message + "\n" + e.StackTrace, Program.Para);
             }
             return msg;
         }
@@ -2967,9 +2999,9 @@ namespace Werewolf_Node
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
-#if (BETA || DEBUG)
+
                 UpdateAchievements();
-#endif
+
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
@@ -3604,7 +3636,7 @@ namespace Werewolf_Node
                             ach = ach | Achievements.Obsessed;
                         if (player.Won && player.PlayerRole == IRole.Tanner)
                             ach = ach | Achievements.Masochist;
-                        if (!player.IsDead && player.PlayerRole == IRole.Drunk)
+                        if (!player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
                             ach = ach | Achievements.Wobble;
                         if (!ach.HasFlag(Achievements.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
                             ach = ach | Achievements.Survivalist;
@@ -3616,7 +3648,7 @@ namespace Werewolf_Node
                         if (Players.Count >= 10 && player.PlayerRole == IRole.Wolf &&
                             Players.Count(x => x.PlayerRole == IRole.Wolf) == 1 && player.Won)
                             ach = ach | Achievements.LoneWolf;
-                        if (!player.HasBeenVoted)
+                        if (!player.HasBeenVoted & !player.IsDead)
                             ach = ach | Achievements.Inconspicuous;
                         if (!player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             ach = ach | Achievements.Promiscuous;
@@ -3653,10 +3685,12 @@ namespace Werewolf_Node
                     ach = ach | a;
                     p.Achievements = (long) ach;
                     db.SaveChanges();
+                    Send($"Achievement Unlocked!\n{a.GetName()}\n{a.GetDescription()}", player.Id);
                 }
             }
 
         }
+        
 
         #endregion
     }

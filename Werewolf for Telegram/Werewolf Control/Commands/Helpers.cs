@@ -10,6 +10,7 @@ using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
@@ -31,8 +32,8 @@ namespace Werewolf_Control
                 return;
             }
 #if BETA
-            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894 };
-            if (!auth.Contains(update.Message.Chat.Id))
+            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030 };
+            if (!auth.Contains(update.Message.Chat.Id) && update.Message.From.Id != UpdateHandler.Para)
             {
                 Bot.Api.LeaveChat(update.Message.Chat.Id);
                 return;
