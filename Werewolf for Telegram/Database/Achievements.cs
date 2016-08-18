@@ -113,7 +113,9 @@ namespace Database
         [Display(Name="In for the Long Haul"), Description("Survive for at least an hour in a single game")]
         LongHaul = 281474976710656,
         [Display(Name="OH SHI-"), Description("Kill your lover on the first night")]
-        OhShi = 562949953421312
+        OhShi = 562949953421312,
+        [Display(Name="Veteran"), Description("Play 500 games.  You can now join @werewolfvets")]
+        Veteran = 1125899906842624
     }
 
     public static class Extensions
@@ -142,6 +144,24 @@ namespace Database
 
             if (descriptionAttributes == null) return string.Empty;
             return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
+        }
+
+        public static IEnumerable<Achievements> GetUniqueFlags(this Enum flags)
+        {
+            ulong flag = 1;
+            foreach (var value in Enum.GetValues(flags.GetType()).Cast<Achievements>())
+            {
+                ulong bits = Convert.ToUInt64(value);
+                while (flag < bits)
+                {
+                    flag <<= 1;
+                }
+
+                if (flag == bits && flags.HasFlag(value))
+                {
+                    yield return value;
+                }
+            }
         }
     }
 }

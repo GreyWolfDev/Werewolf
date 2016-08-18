@@ -32,7 +32,7 @@ namespace Werewolf_Control
                 return;
             }
 #if BETA
-            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030 };
+            var auth = new[] {-1001052326089, -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730 };
             if (!auth.Contains(update.Message.Chat.Id) && update.Message.From.Id != UpdateHandler.Para)
             {
                 Bot.Api.LeaveChat(update.Message.Chat.Id);
@@ -269,6 +269,34 @@ namespace Werewolf_Control
             var choice = Bot.R.Next(values.Count());
             var selected = values.ElementAt(choice);
             return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+        }
+
+        public static void KickChatMember(long chatid, int userid)
+        {
+            var status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+
+            if (status != ChatMemberStatus.Member) //user is not in group, skip
+                return;
+            //kick
+            Bot.Api.KickChatMember(chatid, userid);
+            //get their status
+            status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            while (status == ChatMemberStatus.Member) //loop
+            {
+                //wait for database to report status is kicked.
+                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+                Thread.Sleep(500);
+            }
+            //status is now kicked (as it should be)
+            
+            while (status != ChatMemberStatus.Left) //unban until status is left
+            {
+                Bot.Api.UnbanChatMember(chatid, userid);
+                Thread.Sleep(500);
+                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            }
+            //yay unbanned
+            
         }
     }
 }

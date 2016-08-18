@@ -563,40 +563,12 @@ namespace Werewolf_Control
                 foreach (var p in inactive)
                 {
                     i++;
-                    sw.Write($"\n{i}: ");
+                    sw.WriteLine($"\n{i}: {p.Name}");
                     try
                     {
                         //first, check if the user is in the group
-                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                        sw.Write($"{status}");
-                        if (status != ChatMemberStatus.Member) //user is not in group, skip
-                            continue;
-                        //kick
-                        Bot.Api.KickChatMember(Settings.PrimaryChatId, p.TelegramId);
+                        KickChatMember(Settings.PrimaryChatId, p.TelegramId);
                         removed++;
-                        sw.Write($" | Removed ({p.Name})");
-                        //get their status
-                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                        while (status == ChatMemberStatus.Member) //loop
-                        {
-                            //wait for database to report status is kicked.
-                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                            Thread.Sleep(500);
-                        }
-                        //status is now kicked (as it should be)
-                        var attempts = 0;
-                        sw.Write(" | Unbanning-");
-                        while (status != ChatMemberStatus.Left) //unban until status is left
-                        {
-                            attempts++;
-                            sw.Write($" {status} ");
-                            sw.Flush();
-                            Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
-                            Thread.Sleep(500);
-                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                        }
-                        //yay unbanned
-                        sw.Write($" | Unbanned ({attempts} attempts)");
                         //let them know
                         Send(
                             "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",

@@ -3601,10 +3601,12 @@ namespace Werewolf_Node
                 foreach (var player in Players)
                 {
                     var p = GetDBPlayer(player, db);
+
                     
                     
                     if (p != null)
                     {
+                        Achievements newAch = Achievements.None;
                         var gp = GetDBGamePlayer(p);
 
                         if (p.Achievements == null)
@@ -3613,59 +3615,68 @@ namespace Werewolf_Node
 
                         //calculate achievements
                         //automatically get welcome to hell
-                        ach = ach | Achievements.WelcomeToHell;
-                        if (Chaos)
-                            ach = ach | Achievements.WelcomeToAsylum;
-                        if (Language.Contains("Amnesia"))
-                            ach = ach | Achievements.AlzheimerPatient;
-                        if (Players.Any(x => x.TeleUser.Id == Program.Para))
-                            ach = ach | Achievements.OHAIDER;
-                        if (DbGroup.ShowRoles == false)
-                            ach = ach | Achievements.SpyVsSpy;
-                        if (DbGroup.ShowRoles == false && Language.Contains("Amnesia"))
-                            ach = ach | Achievements.NoIdeaWhat;
-                        if (Players.Count == 35)
-                            ach = ach | Achievements.Enochlophobia;
-                        if (Players.Count == 5)
-                            ach = ach | Achievements.Introvert;
-                        if (Language.Contains("NSFW"))
-                            ach = ach | Achievements.Naughty;
+                        if (!ach.HasFlag(Achievements.WelcomeToHell))
+                            newAch = newAch | Achievements.WelcomeToHell;
+                        if (!ach.HasFlag(Achievements.WelcomeToAsylum) && Chaos)
+                            newAch = newAch | Achievements.WelcomeToAsylum;
+                        if (!ach.HasFlag(Achievements.AlzheimerPatient) && Language.Contains("Amnesia"))
+                            newAch = newAch | Achievements.AlzheimerPatient;
+                        if (!ach.HasFlag(Achievements.OHAIDER) && Players.Any(x => x.TeleUser.Id == Program.Para))
+                            newAch = newAch | Achievements.OHAIDER;
+                        if (!ach.HasFlag(Achievements.SpyVsSpy) && DbGroup.ShowRoles == false)
+                            newAch = newAch | Achievements.SpyVsSpy;
+                        if (!ach.HasFlag(Achievements.NoIdeaWhat) && DbGroup.ShowRoles == false && Language.Contains("Amnesia"))
+                            newAch = newAch | Achievements.NoIdeaWhat;
+                        if (!ach.HasFlag(Achievements.Enochlophobia) && Players.Count == 35)
+                            newAch = newAch | Achievements.Enochlophobia;
+                        if (!ach.HasFlag(Achievements.Introvert) && Players.Count == 5)
+                            newAch = newAch | Achievements.Introvert;
+                        if (!ach.HasFlag(Achievements.Naughty) && Language.Contains("NSFW"))
+                            newAch = newAch | Achievements.Naughty;
                         if (!ach.HasFlag(Achievements.Dedicated) && p.GamePlayers.Count() >= 100)
-                            ach = ach | Achievements.Dedicated;
+                            newAch = newAch | Achievements.Dedicated;
                         if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count() >= 1000)
-                            ach = ach | Achievements.Obsessed;
-                        if (player.Won && player.PlayerRole == IRole.Tanner)
-                            ach = ach | Achievements.Masochist;
-                        if (!player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
-                            ach = ach | Achievements.Wobble;
+                            newAch = newAch | Achievements.Obsessed;
+                        if (!ach.HasFlag(Achievements.Veteran) && p.GamePlayers.Count() >= 500)
+                            newAch = newAch | Achievements.Obsessed;
+                        if (!ach.HasFlag(Achievements.Masochist) && player.Won && player.PlayerRole == IRole.Tanner)
+                            newAch = newAch | Achievements.Masochist;
+                        if (!ach.HasFlag(Achievements.Wobble) && !player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
+                            newAch = newAch | Achievements.Wobble;
                         if (!ach.HasFlag(Achievements.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
-                            ach = ach | Achievements.Survivalist;
-                        if (player.PlayerRole == IRole.Mason &&
+                            newAch = newAch | Achievements.Survivalist;
+                        if (!ach.HasFlag(Achievements.MasonBrother) && player.PlayerRole == IRole.Mason &&
                             Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
-                            ach = ach | Achievements.MasonBrother;
-                        if (player.OriginalRole != player.PlayerRole && player.Won)
-                            ach = ach | Achievements.ChangingSides;
-                        if (Players.Count >= 10 && player.PlayerRole == IRole.Wolf &&
+                            newAch = newAch | Achievements.MasonBrother;
+                        if (!ach.HasFlag(Achievements.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
+                            newAch = newAch | Achievements.ChangingSides;
+                        if (!ach.HasFlag(Achievements.LoneWolf) && Players.Count >= 10 && player.PlayerRole == IRole.Wolf &&
                             Players.Count(x => x.PlayerRole == IRole.Wolf) == 1 && player.Won)
-                            ach = ach | Achievements.LoneWolf;
-                        if (!player.HasBeenVoted & !player.IsDead)
-                            ach = ach | Achievements.Inconspicuous;
-                        if (!player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
-                            ach = ach | Achievements.Promiscuous;
-                        if (player.ChangedRolesCount >= 2)
-                            ach = ach | Achievements.DoubleShifter;
-                        if (player.FoolCorrectSeeCount >= 2)
-                            ach = ach | Achievements.BrokenClock;
-                        if (player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
-                            ach = ach | Achievements.SmartGunner;
-                        if (player.PlayerRole == IRole.Cultist && convention)
-                            ach = ach | Achievements.CultCon;
-                        if (player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
-                            ach = ach | Achievements.SerialSamaritan;
+                            newAch = newAch | Achievements.LoneWolf;
+                        if (!ach.HasFlag(Achievements.Inconspicuous) && !player.HasBeenVoted & !player.IsDead)
+                            newAch = newAch | Achievements.Inconspicuous;
+                        if (!ach.HasFlag(Achievements.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
+                            newAch = newAch | Achievements.Promiscuous;
+                        if (!ach.HasFlag(Achievements.DoubleShifter) && player.ChangedRolesCount >= 2)
+                            newAch = newAch | Achievements.DoubleShifter;
+                        if (!ach.HasFlag(Achievements.BrokenClock) && player.FoolCorrectSeeCount >= 2)
+                            newAch = newAch | Achievements.BrokenClock;
+                        if (!ach.HasFlag(Achievements.SmartGunner) && player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
+                            newAch = newAch | Achievements.SmartGunner;
+                        if (!ach.HasFlag(Achievements.CultCon) && player.PlayerRole == IRole.Cultist && convention)
+                            newAch = newAch | Achievements.CultCon;
+                        if (!ach.HasFlag(Achievements.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
+                            newAch = newAch | Achievements.SerialSamaritan;
 
                         //now save
-                        p.Achievements = (long) ach;
+                        p.Achievements = (long) (ach | newAch);
                         db.SaveChanges();
+
+                        //notify
+                        if (newAch == 0) continue;
+                        var msg = "New Unlocks!".ToBold() + Environment.NewLine;
+                        msg = newAch.GetUniqueFlags().Aggregate(msg, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
+                        Send(msg, p.TelegramId);
                     }
                 }
             }
@@ -3685,13 +3696,12 @@ namespace Werewolf_Node
                     ach = ach | a;
                     p.Achievements = (long) ach;
                     db.SaveChanges();
-                    Send($"Achievement Unlocked!\n{a.GetName()}\n{a.GetDescription()}", player.Id);
+                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
                 }
             }
 
         }
         
-
         #endregion
     }
 }

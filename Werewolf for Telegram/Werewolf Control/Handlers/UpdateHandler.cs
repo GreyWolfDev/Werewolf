@@ -444,7 +444,8 @@ namespace Werewolf_Control.Handler
                                     grp.Name = update.Message.Chat.Title;
                                     DB.SaveChanges();
 
-                                    var msg = $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the [support channel](https://telegram.me/werewolfsupport)";
+                                    var msg =
+                                        $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the [support channel](https://telegram.me/werewolfsupport)";
                                     msg += Environment.NewLine +
                                            "For updates on what is happening, join the dev channel @werewolfdev" +
                                            Environment.NewLine +
@@ -452,9 +453,20 @@ namespace Werewolf_Control.Handler
                                     Send(msg, id, parseMode: ParseMode.Markdown);
 
 #if BETA
-                                    Send("*IMPORTANT NOTE- THIS IS A BETA BOT.  EXPECT BUGS, EXPECT SHUTDOWNS, EXPECT.. THE UNEXPECTED!*",
+                                    Send(
+                                        "*IMPORTANT NOTE- THIS IS A BETA BOT.  EXPECT BUGS, EXPECT SHUTDOWNS, EXPECT.. THE UNEXPECTED!*",
                                         id, parseMode: ParseMode.Markdown);
 #endif
+                                }
+                                else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
+                                {
+                                    var uid = m.NewChatMember.Id;
+                                    //check that they are allowed to join.
+                                    var p = DB.Players.FirstOrDefault(x => x.TelegramId == uid);
+                                    if ((p?.GamePlayers.Count ?? 0) >= 500) return;
+                                    //user has not reach veteran
+                                    Send($"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran", m.Chat.Id);
+                                    Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
                             }
                             break;
