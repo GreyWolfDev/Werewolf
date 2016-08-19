@@ -275,7 +275,7 @@ namespace Werewolf_Control
         {
             var status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
 
-            if (status != ChatMemberStatus.Member) //user is not in group, skip
+            if (status == ChatMemberStatus.Administrator) //ignore admins
                 return;
             //kick
             Bot.Api.KickChatMember(chatid, userid);

@@ -314,15 +314,15 @@ namespace Werewolf_Node
             catch (Exception ex)
             {
                 while (ex.InnerException != null)
+                {
+                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
                     ex = ex.InnerException;
+                }
                 Send("Something just went terribly wrong, I had to cancel the game....\n" + ex.Message);
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(
-                    Program.Version.FileVersion +
-                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}",
-                    Program.Para);
+                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
 #endif
 
             }
@@ -1675,9 +1675,9 @@ namespace Werewolf_Node
                 if (p.Choice != 0 && p.Choice != -1)
                 {
                     var target = Players.FirstOrDefault(x => x.Id == p.Choice);
-                    target.HasBeenVoted = true;
                     if (target != null)
                     {
+                        target.HasBeenVoted = true;
                         target.Votes++;
                         DBAction(p, target, "Lynch");
                     }
@@ -3607,7 +3607,7 @@ namespace Werewolf_Node
                     if (p != null)
                     {
                         Achievements newAch = Achievements.None;
-                        var gp = GetDBGamePlayer(p);
+                        //var gp = GetDBGamePlayer(p);
 
                         if (p.Achievements == null)
                             p.Achievements = 0;
@@ -3674,7 +3674,7 @@ namespace Werewolf_Node
 
                         //notify
                         var newFlags = newAch.GetUniqueFlags().ToList();
-                        if (newFlags.Count() == 1 && newFlags.FirstOrDefault() == Achievements.None) continue;
+                        if (newAch == Achievements.None) continue;
                         var msg = "New Unlocks!".ToBold() + Environment.NewLine;
                         msg = newFlags.Aggregate(msg, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
                         Send(msg, p.TelegramId);
