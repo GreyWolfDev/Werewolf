@@ -270,13 +270,16 @@ namespace Werewolf_Node
                         db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
                 }
                 IsInitializing = false;
-                NotifyRoles();
+                
                 //disable Inconspicuous achievement if less than 20 players
                 if (Players.Count < 20)
                 {
                     foreach (var p in Players.Where(x => x != null))
                         p.HasBeenVoted = true;
                 }
+
+                NotifyRoles();
+
                 Time = GameTime.Night;
                 while (IsRunning)
                 {
@@ -343,7 +346,7 @@ namespace Werewolf_Node
             {
                 if (!IsJoining)
                 {
-                    SendWithQueue(GetLocaleString("NoJoinGameRunning"));
+                    //SendWithQueue(GetLocaleString("NoJoinGameRunning"));
                     return;
                 }
                 //first check the player hasn't already joined
@@ -1204,6 +1207,10 @@ namespace Werewolf_Node
                 {
                     SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
                     FleePlayer(p.TeleUser.Id);
+                }
+                catch (NullReferenceException ex)
+                {
+                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
                 }
                 Thread.Sleep(50);
             }

@@ -74,6 +74,18 @@ namespace Werewolf_Control
             Bot.Api.SendTextMessage(update.Message.Chat.Id, result, parseMode: ParseMode.Markdown);
         }
 
+        [Command(Trigger = "getstatus")]
+        public static void GetStatus(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                var msg =
+                    db.BotStatus.ToList().Select(x => $"{x.BotName} (@{x.BotLink}): {x.BotStatus}").ToList()
+                        .Aggregate((a, b) => a + "\n" + b);
+                Send(msg, u.Message.Chat.Id);
+            }
+        }
+
         [Command(Trigger = "version")]
         public static void Version(Update update, string[] args)
         {

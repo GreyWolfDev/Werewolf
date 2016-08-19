@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="werewolfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BotStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BotName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BotStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BotLink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="GlobalBan">
           <Key>
             <PropertyRef Name="Id" />
@@ -470,6 +479,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Parameter Name="pid" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
+          <EntitySet Name="BotStatus" EntityType="Self.BotStatus" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="GlobalBan" EntityType="Self.GlobalBan" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
@@ -998,6 +1008,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="v_PublicGroups" EntityType="werewolfModel.v_PublicGroups" />
           <EntitySet Name="GlobalBans" EntityType="werewolfModel.GlobalBan" />
           <EntitySet Name="v_InactivePlayersMain" EntityType="werewolfModel.v_InactivePlayersMain" />
+          <EntitySet Name="BotStatus" EntityType="werewolfModel.BotStatu" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1209,6 +1220,15 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TelegramId" Type="Int32" Nullable="false" />
           <Property Name="last" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BotStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BotStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BotLink" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1631,6 +1651,16 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
                 <ScalarProperty Name="last" ColumnName="last" />
                 <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BotStatus">
+            <EntityTypeMapping TypeName="werewolfModel.BotStatu">
+              <MappingFragment StoreEntitySet="BotStatus">
+                <ScalarProperty Name="BotLink" ColumnName="BotLink" />
+                <ScalarProperty Name="BotStatus" ColumnName="BotStatus" />
+                <ScalarProperty Name="BotName" ColumnName="BotName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

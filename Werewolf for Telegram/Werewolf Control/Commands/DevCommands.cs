@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -350,6 +351,17 @@ namespace Werewolf_Control
             var target = int.Parse(args[1]);
             var reply = UpdateHandler.UserMessages[target].Messages.Aggregate("", (a, b) => a + "\n" + b.Command);
             Send(reply, u.Message.Chat.Id);
+        }
+
+        [Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
+        public static void UpdateStatus(Update u, string[] args)
+        {
+            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
+            
+            Bot.Api.SendTextMessage(u.Message.From.Id, "Which bot?",
+                replyMarkup: menu);
+            if (u.Message.Chat.Type != ChatType.Private)
+                Send(GetLocaleString("SentPrivate", GetLanguage(u.Message.From.Id)), u.Message.Chat.Id);
         }
 
         [Command(Trigger = "getbans", GlobalAdminOnly = true)]

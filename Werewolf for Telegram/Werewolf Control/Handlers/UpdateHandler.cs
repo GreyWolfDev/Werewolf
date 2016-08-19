@@ -514,7 +514,7 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "upload", "setlang", "groups" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "upload", "setlang", "groups", "status" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
@@ -544,7 +544,7 @@ namespace Werewolf_Control.Handler
 
                     groupid = long.Parse(args[1]);
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status")
                         return;
                     if (grp == null)
                     {
@@ -576,6 +576,25 @@ namespace Werewolf_Control.Handler
                     var Cancel = GetLocaleString("Cancel", language);
                     switch (command)
                     {
+                        case "status":
+                            if (args[3] == "null")
+                            {
+                                //get status
+                                menu = new InlineKeyboardMarkup(new[] { "Normal", "Overloaded", "Recovering", "API Bug", "Offline", "Maintenance" }.Select(x => new [] { new InlineKeyboardButton(x, $"status|{groupid}|{choice}|{x}")}).ToArray());
+                                Edit(query.Message.Chat.Id, query.Message.MessageId, "Set status to?", menu);
+                            }
+                            else
+                            {
+                                //update the status
+                                var bot = DB.BotStatus.FirstOrDefault(x => x.BotName == choice);
+                                if (bot != null)
+                                {
+                                    bot.BotStatus = args[3];
+                                    DB.SaveChanges();
+                                }
+                                Edit(query.Message.Chat.Id, query.Message.MessageId, "Status updated");
+                            }
+                            break;
                         case "groups":
                             var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
