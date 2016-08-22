@@ -355,6 +355,7 @@ namespace Werewolf_Node
                     //SendWithQueue(GetLocaleString("AlreadyJoined"));
                     return;
                 }
+                
 
                 var p = new IPlayer
                 {
@@ -417,6 +418,18 @@ namespace Werewolf_Node
 
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
+
+                    if (user.Achievements == null)
+                        user.Achievements = 0;
+                    if (ChatId == Settings.VeteranChatId)
+                    {
+                        if (!((Achievements) user.Achievements).HasFlag(Achievements.Veteran))
+                        {
+                            Helpers.Helpers.KickChatMember(ChatId, user.TelegramId);
+                            Players.Remove(p);
+                            return;
+                        }
+                    }
 
                     db.SaveChanges();
                     var botname = "@" + Program.Me.Username;
