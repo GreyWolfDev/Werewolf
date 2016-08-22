@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -255,9 +256,7 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            Achievements a;
-            if(Enum.TryParse(args[1], out a))
-                Send($"Test Achievement:\n{a.GetName()}\n{a.GetDescription()}", update.Message.Chat.Id);
+            
         }
 
         [Command(Trigger = "sql", DevOnly = true)]
@@ -357,7 +356,7 @@ namespace Werewolf_Control
         public static void UpdateStatus(Update u, string[] args)
         {
             var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
-            
+
             Bot.Api.SendTextMessage(u.Message.From.Id, "Which bot?",
                 replyMarkup: menu);
             if (u.Message.Chat.Type != ChatType.Private)
@@ -390,7 +389,7 @@ namespace Werewolf_Control
         [Command(Trigger = "permban", DevOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-            
+
 
             foreach (var e in u.Message.Entities)
             {
@@ -497,7 +496,7 @@ namespace Werewolf_Control
                     }
                 }
             }
-            
+
         }
 
         [Command(Trigger = "remban", GlobalAdminOnly = true)]
@@ -558,7 +557,110 @@ namespace Werewolf_Control
         {
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
             {
-                
+
+                //now, check the json file
+                var json = new StreamReader("c:\\bot\\users.json").ReadToEnd();
+                var users = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                sw.WriteLine($"Beginning json kick process.  Found {users.Count} users json file");
+                var i = 0;
+                var removed = 0;
+                using (var db = new WWContext())
+                    foreach (var user in users)
+                    {
+                        i++;
+                        sw.Write($"\n{i}: ");
+                        try
+                        {
+                            var id = int.Parse(user.Key);
+                            var time = DateTime.Parse(user.Value);
+                            if (time >= DateTime.Now.AddDays(-14)) //two weeks
+                                continue;
+
+                            //check their status first, so we don't make db calls for someone not even in the chat.
+                            var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                            if (status != ChatMemberStatus.Member)
+                                continue;
+
+                            //get the last time they played a game
+                            var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+
+                            //get latest game player, check within 2 weeks
+                            var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new {game.TimeStarted, game.Id}).OrderByDescending(x => x.Id).FirstOrDefault();
+                            if (gp != null)
+                            {
+                                if (gp.TimeStarted >= DateTime.Now.AddDays(-14))
+                                    continue;
+                            }
+
+                            //at this point, they have been in the group at least 2 weeks, haven't played in the group in the past 2 weeks, and are a member.  Time to kick.
+                            try
+                            {
+                                //first, check if the user is in the group
+                                sw.Write($"{status}");
+                                if (status != ChatMemberStatus.Member) //user is not in group, skip
+                                    continue;
+                                //kick
+                                Bot.Api.KickChatMember(Settings.PrimaryChatId, p.TelegramId);
+                                removed++;
+                                sw.Write($" | Removed ({p.Name})");
+                                //get their status
+                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                                while (status == ChatMemberStatus.Member) //loop
+                                {
+                                    //wait for database to report status is kicked.
+                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                                    Thread.Sleep(500);
+                                }
+                                //status is now kicked (as it should be)
+                                var attempts = 0;
+                                sw.Write(" | Unbanning-");
+                                while (status != ChatMemberStatus.Left) //unban until status is left
+                                {
+                                    attempts++;
+                                    sw.Write($" {status} ");
+                                    sw.Flush();
+                                    Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
+                                    Thread.Sleep(500);
+                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                                }
+                                //yay unbanned
+                                sw.Write($" | Unbanned ({attempts} attempts)");
+                                //let them know
+                                Send(
+                                    "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
+                                    p.TelegramId);
+                            }
+                            catch (AggregateException ex)
+                            {
+                                var e = ex.InnerExceptions.First();
+                                if (e.Message.Contains("User not found"))
+                                    sw.Write($"Not Found - {p.Name}");
+                                else if (e.Message.Contains("USER_ID_INVALID"))
+                                    sw.Write($"Account Closed - {p.Name}");
+                                else
+                                {
+                                    sw.Write(e.Message);
+                                    //sw.WriteLine(e.StackTrace);
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                sw.WriteLine(e.Message);
+                                sw.WriteLine(e.StackTrace);
+                                // ignored
+                            }
+                            sw.Flush();
+                            //sleep 4 seconds to avoid API rate limiting
+                            Thread.Sleep(100);
+
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+
+                    }
+
                 //fun times ahead!
                 //get our list of inactive users
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -569,18 +671,46 @@ namespace Werewolf_Control
                 }
                 Send($"Checking {inactive.Count} users", u.Message.Chat.Id);
                 var timeStarted = DateTime.Now;
-                var removed = 0;
+                
                 sw.WriteLine($"Beginning kick process.  Found {inactive.Count} users in database");
-                var i = 0;
+                i = 0;
                 foreach (var p in inactive)
                 {
                     i++;
-                    sw.WriteLine($"\n{i}: {p.Name}");
+                    sw.Write($"\n{i}: ");
                     try
                     {
                         //first, check if the user is in the group
-                        KickChatMember(Settings.PrimaryChatId, p.TelegramId);
+                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                        sw.Write($"{status}");
+                        if (status != ChatMemberStatus.Member) //user is not in group, skip
+                            continue;
+                        //kick
+                        Bot.Api.KickChatMember(Settings.PrimaryChatId, p.TelegramId);
                         removed++;
+                        sw.Write($" | Removed ({p.Name})");
+                        //get their status
+                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                        while (status == ChatMemberStatus.Member) //loop
+                        {
+                            //wait for database to report status is kicked.
+                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                            Thread.Sleep(500);
+                        }
+                        //status is now kicked (as it should be)
+                        var attempts = 0;
+                        sw.Write(" | Unbanning-");
+                        while (status != ChatMemberStatus.Left) //unban until status is left
+                        {
+                            attempts++;
+                            sw.Write($" {status} ");
+                            sw.Flush();
+                            Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
+                            Thread.Sleep(500);
+                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                        }
+                        //yay unbanned
+                        sw.Write($" | Unbanned ({attempts} attempts)");
                         //let them know
                         Send(
                             "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
@@ -613,6 +743,10 @@ namespace Werewolf_Control
                 Send(
                     $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.Now - timeStarted}",
                     u.Message.Chat.Id);
+
+
+
+
             }
         }
 
@@ -631,7 +765,7 @@ namespace Werewolf_Control
                 var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
                 if (grp != null)
                 {
-                    
+
                     try
                     {
                         var result = Bot.Api.LeaveChat(grp.GroupId).Result;
@@ -639,7 +773,7 @@ namespace Werewolf_Control
                     }
                     catch
                     {
-                        
+
                     }
                     grp.GroupLink = null;
                     db.SaveChanges();
