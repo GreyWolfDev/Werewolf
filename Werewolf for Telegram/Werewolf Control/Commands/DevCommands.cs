@@ -568,6 +568,7 @@ namespace Werewolf_Control
                     foreach (var user in users)
                     {
                         i++;
+                        sw.Flush();
                         sw.Write($"\n{i}: ");
                         try
                         {
