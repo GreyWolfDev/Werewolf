@@ -728,33 +728,14 @@ namespace Werewolf_Control.Handler
                             //ok, they picked a language, let's set it.
                             var validlangs =
                                 Directory.GetFiles(Bot.LanguageDirectory)
-                                        .Select(
-                                            x =>
-                                                new
-                                                {
-                                                    Name =
-                                                        XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("name")
-                                                            .Value,
-                                                    Base = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("base")
-                                                            .Value,
-                                                    Variant = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("variant")
-                                                            .Value,
-                                                    FileName = Path.GetFileNameWithoutExtension(x)
-                                                });
+                                    .Select(
+                                        x =>
+                                            new LangFile(x)).ToList();
                             //ok, if base we need to check for variants....
                             var lang = validlangs.First(x => x.Base == choice);
                             if (isBase)
                             {
-                                var variants = validlangs.Where(x => x.Base == choice);
+                                var variants = validlangs.Where(x => x.Base == choice).ToList();
                                 if (variants.Count() > 1)
                                 {
                                     buttons.Clear();
