@@ -317,7 +317,7 @@ namespace Werewolf_Node
 
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
-                    Thread.Sleep(10000);
+                    Thread.Sleep(5000);
                     Running = false;
                     Environment.Exit(0);
                     return;
@@ -339,7 +339,7 @@ namespace Werewolf_Node
                         CurrentGames = games.Count,
                         CurrentPlayers = games.Sum(x => x?.Players?.Count ?? 0),
                         DuplicateGamesRemoved = DupGamesKilled,
-                        ThreadCount = Process.GetCurrentProcess().Threads.Count,
+                        ThreadCount = 0,//Process.GetCurrentProcess().Threads.Count,
                         //TotalGames = GamesStarted,
                         //TotalPlayers = games.Sum(x => x.Players?.Count ?? 0) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
@@ -391,7 +391,7 @@ namespace Werewolf_Node
                         Connect();
                     }
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(500);
             }
         }
     }
