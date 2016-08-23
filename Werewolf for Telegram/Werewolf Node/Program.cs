@@ -310,6 +310,9 @@ namespace Werewolf_Node
 
         public static void KeepAlive()
         {
+            string ver = Version.FileVersion;
+
+
             Connect();
             while (Running)
             {
@@ -343,7 +346,7 @@ namespace Werewolf_Node
                         //TotalGames = GamesStarted,
                         //TotalPlayers = games.Sum(x => x.Players?.Count ?? 0) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
-                        Version = Version.FileVersion,
+                        Version = ver,
                         ShuttingDown = IsShuttingDown,
                         MessagesSent = MessagesSent
                     };

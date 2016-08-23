@@ -38,14 +38,6 @@ namespace Werewolf_Control
                     Send(GetLocaleString("JoinFromGroup", GetLanguage(update.Message.From.Id)), id);
                     return;
                 }
-                var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
-                if (grp == null)
-                {
-                    grp = MakeDefaultGroup(id, update.Message.Chat.Title, "join");
-                    db.Groups.Add(grp);
-                    db.SaveChanges();
-                }
-
                 //check nodes to see if player is in a game
 
                 var game = GetGroupNodeAndGame(update.Message.Chat.Id);
@@ -62,6 +54,13 @@ namespace Werewolf_Control
                 game?.AddPlayer(update);
                 if (game == null)
                 {
+                    var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
+                    if (grp == null)
+                    {
+                        grp = MakeDefaultGroup(id, update.Message.Chat.Title, "join");
+                        db.Groups.Add(grp);
+                        db.SaveChanges();
+                    }
                     Send(GetLocaleString("NoGame", grp?.Language ?? "English"), id);
                 }
             }

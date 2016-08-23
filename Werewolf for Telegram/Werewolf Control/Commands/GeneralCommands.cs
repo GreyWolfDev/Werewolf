@@ -153,30 +153,7 @@ namespace Werewolf_Control
 
             }
             //user wants to pick personal language
-            var langs =
-                                Directory.GetFiles(Bot.LanguageDirectory)
-                                    .Select(
-                                        x => 
-                                            new
-                                            {
-                                                Name =
-                                                        XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("name")
-                                                            .Value,
-                                                Base = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("base")
-                                                            .Value,
-                                                Variant = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("variant")
-                                                            .Value,
-                                                FileName = Path.GetFileNameWithoutExtension(x)
-                                            });
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
 
 
             List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
