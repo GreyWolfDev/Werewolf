@@ -220,6 +220,23 @@ namespace Telegram.Bot
                         // do nothing
                     }
                 }
+                catch (Exception e)
+                {
+                    //well.  bad things happened.  ignore it this time I guess? At least until I can figure out what the error actually is
+                    try
+                    {
+                        using (var s = new StreamWriter("getUpdates.log", true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        // do nothing
+                    }
+                    
+                }
 
             }
         }
