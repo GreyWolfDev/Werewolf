@@ -167,42 +167,60 @@ namespace Telegram.Bot
         {
             cts = new CancellationTokenSource();
             var sw = new Stopwatch();
-            using (var s = new StreamWriter("getUpdates.log", true))
-            {
-                while (IsReceiving)
-                {
-                    var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
 
+            while (IsReceiving)
+            {
+                var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
+
+                try
+                {
+                    //sw.Reset();
+                    //sw.Start();
+                    var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
+
+                    //sw.Stop();
+                    //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                    //s.Flush();
+                    foreach (var update in updates)
+                    {
+                        OnUpdateReceived(new UpdateEventArgs(update));
+                        MessageOffset = update.Id + 1;
+                    }
+
+                }
+                catch (ApiRequestException e)
+                {
+                    sw.Stop();
                     try
                     {
-                        //sw.Reset();
-                        //sw.Start();
-                        var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
-
-                        //sw.Stop();
-                        //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                        //s.Flush();
-                        foreach (var update in updates)
+                        using (var s = new StreamWriter("getUpdates.log", true))
                         {
-                            OnUpdateReceived(new UpdateEventArgs(update));
-                            MessageOffset = update.Id + 1;
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
                         }
-
                     }
-                    catch (ApiRequestException e)
+                    finally
                     {
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        s.Flush();
                         OnReceiveError(e);
                     }
-                    catch (TaskCanceledException e)
+                }
+                catch (TaskCanceledException e)
+                {
+                    sw.Stop();
+                    try
                     {
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        s.Flush();
+                        using (var s = new StreamWriter("getUpdates.log", true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        // do nothing
                     }
                 }
+
             }
         }
 #pragma warning restore AsyncFixer03 // Avoid fire & forget async void methods
