@@ -20,27 +20,28 @@ namespace Werewolf_Node.Helpers
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
                 if (p != null)
                 {
-                    var photos = await Program.Bot.GetUserProfilePhotos(userid, limit: 1);
-                    if (photos.Photos.Length == 0) return;//nada
-                    var sizes = photos.Photos[0];
-                    var id = "";
-                    var largest = 0;
-                    foreach (var s in sizes)
-                    {
-                        if (s.FileSize > largest)
-                            id = s.FileId;
-
-                    }
-
-                    if (String.IsNullOrEmpty(id))
-                    {
-                        return;
-                    }
-
-
-                    Telegram.Bot.Types.File file;
                     try
                     {
+                        var photos = await Program.Bot.GetUserProfilePhotos(userid, limit: 1);
+                        if (photos.Photos.Length == 0) return;//nada
+                        var sizes = photos.Photos[0];
+                        var id = "";
+                        var largest = 0;
+                        foreach (var s in sizes)
+                        {
+                            if (s.FileSize > largest)
+                                id = s.FileId;
+
+                        }
+
+                        if (String.IsNullOrEmpty(id))
+                        {
+                            return;
+                        }
+
+
+                        Telegram.Bot.Types.File file;
+
                         file = await Program.Bot.GetFile(id);
 
                         var photoPath = file.FilePath;
