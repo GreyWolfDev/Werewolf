@@ -1278,7 +1278,7 @@ namespace Werewolf_Node
                         break;
                     case IRole.Beholder:
                         msg = GetLocaleString("RoleInfoBeholder");
-                        var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                        var seer = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
                         if (seer != null)
                             msg += GetLocaleString("BeholderSeer", $"{seer.GetName()}");
                         else
