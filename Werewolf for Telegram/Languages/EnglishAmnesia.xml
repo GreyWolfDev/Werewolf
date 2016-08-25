@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Amnesia mode by Amber (@ayylimao)! Play with role reveal after death off to have some serious fun lol 
-Last update: 09/08/2016 by @ayylimao -->
+Last update: 25/08/2016 by @ayylimao -->
 <strings>
   <language name="English (Amnesia Mode)" base="English" variant="Amnesia Mode"/>
   <string key="NotInGame">
@@ -45,7 +45,7 @@ Last update: 09/08/2016 by @ayylimao -->
     <value>{0} forgot who they are! {1} amnesiacs, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
-    <value>{0}, you forgot to PM the bot first! Click this: {1}, then click start. Until you do, you won't be able to play.</value>
+    <value>{0}, you forgot to PM the bot first! Click the button below or this: {1}, then click start. Unless you do, you will forget to breathe once the game starts...</value>
   </string>
   <string key="DeadFlee">
     <value>Did you even forget you're dead? Dead don't run away...</value>
@@ -210,7 +210,7 @@ Last update: 09/08/2016 by @ayylimao -->
     <value >Morning comes, and, to everyone's dismay, there's a completely broken corpse near the church's door, its wings bent in unnatural directions. The face can still be recognized, though: {0} is dead.</value>
   </string>
   <string key="GunnerEaten" >
-    <value >As everyone comes out of their houses, they find pieces of a shotgun strewn about... then legs... then fingers... then floating in the fountain in the town square, the body of {0}, dead from a werewolf. You have lost your gunner.</value>
+    <value >As everyone comes out of their houses, they find pieces of a shotgun strewn about... then legs... then fingers... then floating in the fountain in the town square, the body of {0}, dead from a werewolf attack. You have lost your gunner.</value>
   </string>
   <string key="SeerEaten" >
     <value >The villagers awake in the morning, to find the disembowelled remains of {0} haunched over a ouija board and tarot cards. The Seer is dead.</value>
@@ -941,11 +941,11 @@ Last update: 09/08/2016 by @ayylimao -->
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: Players can {0}flee</value>
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Players will {0}be allowed to flee after game start</value>
+    <value>{0} fleeing after game start</value>
   </string>
   <string key="MaxPlayersQ">
     <value>How many players would you like to set as the maximum?\nCurrent: {0}</value>
@@ -1021,5 +1021,18 @@ Last update: 09/08/2016 by @ayylimao -->
   </string>
   <string key="StartMe">
     <value>Please don't forget to start me so I can PM you!</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} forgot to start the bot, and has been removed from the game!</value>
+  </string>
+    <string key="LatestList">
+    <value>Did you already forget what was in the player list? Go back and read it!</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Either I forgot when was the last time I sent the player list, or you forgot I can't send it until the game starts!</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}, don't forget to play it!</value>
   </string>
 </strings>
