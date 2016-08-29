@@ -400,7 +400,7 @@ namespace Werewolf_Node
                     DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
                 
                 bool sendPM = false;
-
+                var language = "English";
                 using (var db = new WWContext())
                 {
                     var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
@@ -418,7 +418,7 @@ namespace Werewolf_Node
 
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
-
+                    language = user.Language ?? "English";
                     if (user.Achievements == null)
                         user.Achievements = 0;
                     if (ChatId == Settings.VeteranChatId)
@@ -452,7 +452,7 @@ namespace Werewolf_Node
                 //now, attempt to PM the player
                 try
                 {
-                    var result = Send(GetLocaleString("YouJoined", ChatGroup), u.Id).Result;
+                    var result = Send(GetLocaleString("YouJoined", language), u.Id).Result;
                 }
                 catch(Exception e)
                 {
