@@ -3658,7 +3658,7 @@ namespace Werewolf_Node
                         if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count() >= 1000)
                             newAch = newAch | Achievements.Obsessed;
                         if (!ach.HasFlag(Achievements.Veteran) && p.GamePlayers.Count() >= 500)
-                            newAch = newAch | Achievements.Obsessed;
+                            newAch = newAch | Achievements.Veteran;
                         if (!ach.HasFlag(Achievements.Masochist) && player.Won && player.PlayerRole == IRole.Tanner)
                             newAch = newAch | Achievements.Masochist;
                         if (!ach.HasFlag(Achievements.Wobble) && !player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
