@@ -3512,7 +3512,7 @@ namespace Werewolf_Node
             {
                 if (victim.InLove)
                 {
-                    if (victim.LoverId == killer.Id)
+                    if (victim.LoverId == killer.Id && GameDay == 1 && Time == GameTime.Night)
                         AddAchievement(killer, Achievements.OhShi);
 
                     var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
