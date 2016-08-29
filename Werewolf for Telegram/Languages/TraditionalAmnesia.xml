@@ -4,7 +4,7 @@ Last update: 09/08/2016 by @ayylimao
 Traditional Chinese Translated by @meowmeoww, @Cojad.
 -->
 <strings>
-  <language name="正體中文(失憶模式)" base="正體中文" variant="失憶模式" owner="@meowmeoww" version="2016-08-26"/>
+  <language name="正體中文(失憶模式)" base="正體中文" variant="失憶模式" owner="@meowmeoww" version="2016-08-29"/>
   <string key="NotInGame">
     <value>你是不是忘了甚麼? 你好像連遊戲也沒有加入...... </value>
   </string>
@@ -18,8 +18,8 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>{0} 開始了一場混亂的獵殺盛宴! 輸入指令 /join 來忘了過去! 來忘了錯對! </value>
     <value>{0} 開始了一場獵殺派對! 輸入指令 /join 來一起頭搖又尾擺, 飄移境界...... 咦? 頭好像有點暈...... </value>
     <value>{0} 在村子的井放下毒藥, 大家暈倒過後, 連自己的身份也忘了! 輸入指令 /join 來找回自己吧! </value>
-    <value>{0} 餵了村子的人喝孟婆湯! 輸入指拎 /join 找出自己的身世吧! </value>
-    <value>{0} 在村子的井參入了APTX-4869, 大家暈倒過後, 不僅身體縮小, 都不認得彼此更糟的是連自己是誰都忘了! 輸入指令 /join 來找出唯一的真相吧! </value>
+    <value>{0} 餵了村子的人喝孟婆湯! 輸入指令 /join 找出自己的身世吧! </value>
+    <value>{0} 在村子的井參入了APTX-4869, 大家暈倒過後, 不僅身體縮小, 還不認得彼此, 更糟的是連自己是誰都忘了! 輸入指令 /join 來找出唯一的真相吧! </value>
   </string>
   <string key="NoJoinGameRunning">
     <value>不能加入已經開始的遊戲! 使用 /nextgame 指令來接收下一局開始的通知吧? </value>
@@ -34,7 +34,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>剩餘 {0} 秒!  /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>看來大家也享受迷失的感覺, 不想找回自己的身份了. 遊戲已取消! </value>
+    <value>看來大家也享受迷失的感覺, 已經不想找回自己的身份. 遊戲已取消! </value>
     <value>大家都忘記這個小村莊嗎? 遊戲已取消! </value>
   </string>
   <string key="StartingGameWait">
@@ -50,7 +50,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>很抱歉, 本局遊戲人數已達上限. 下回合不要忘記提早參加喔. 患上健忘症的你, 試試用 /nextgame 提醒自己吧! </value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} 忘記自己是誰了!  {1} 名祭品參加, 最少 {2} 人參加, 最多 {3} 人參加. </value>
+    <value>{0} 忘記自己是誰了! 現有 {1} 名健忘症病患, 最少 {2} 人參加, 最多 {3} 人參加. </value>
     <value>{0} 也想找回自己的身份!  {1} 名祭品參加, 最少 {2} 人參加, 最多 {3} 人參加. </value>
   </string>
   <string key="PMTheBot">
@@ -63,12 +63,13 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>{0} 連村莊的朋友、家人的忘了, 就這樣衝出村莊尋找自己的世界. </value>
     <value>{0} 決定離開這個充滿愚民的村落, 不再隨愚民起舞. </value>
     <value>一道晴天霹靂, 只見 {0} 站立的地方站的已經不是原本的樣子, 而是向前倒下的烏黑軀體. </value>
+	<value>{0} 決定離開這個充滿愚民的村落, 在外面建立新生活. </value>
   </string>
   <string key="PlayerRoleWas">
     <value>{0} 原來是 {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>剩餘 {0} 失憶症病人. </value>
+    <value>剩餘 {0} 健忘症病患. </value>
   </string>
   <string key="DidntAsk">
     <value>你連自己的身份都忘記了, 還想做甚麼呢? 深呼吸一下, 我沒有問你任何事情啊! </value>
@@ -89,7 +90,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>{0} 已投票將 {1} 處死. </value>
   </string>
   <string key="IdleKill">
-    <value>{0} 不只忘記自己的身份, 也連續兩晚沒投票了. 正義的朋友視此為可怕的罪行, 忽然間,  {0} 身軀倒下並斷了氣. \n{1}</value>
+    <value>{0} 不只忘記自己的身份, 也連續兩晚忘記投票. 正義的朋友視此為可怕的罪行, 忽然間,  {0} 身軀倒下並斷了氣. \n{1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>咦? 你的身份好像有些轉變, 你到底現在又是甚麼呢? </value>
@@ -270,7 +271,8 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>你昨晚在家做了甚麼呢? 看來你自己也忘了. </value>
   </string>
   <string key="HarlotEaten" >
-    <value>妓女 {0} 挑錯日子不出門, 選擇留在家中, 然後...... 就被狼吃掉了! </value>
+    <value>{0} 忘記自己是妓女嗎? 選擇留在家中的他, 結果...... 就被狼吃掉了! </value>
+	<value>懶惰的妓女 {0} 竟然不出門找生意, 選擇留在家中, 結果...... 就被狼吃掉了! 活該!</value>
   </string>
   <string key="HarlotNotHome" >
     <value>{0} 不在家! </value>
@@ -347,7 +349,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>所有狼人都死清光之餘, 其餘村民也受洗成為教徒 —— #邪教徒勝! </value>
   </string>
   <string key="HunterVisitDead">
-    <value>{0} 己經死了! </value>
+    <value>{0} 已經死了! </value>
   </string>
   <string key="HunterFindCultist">
     <value>你昨晚在 {0} 的家做了甚麼呢? 看來你自己也忘了. </value>
@@ -359,8 +361,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>突然,  {0} 的名字在你腦海中閃過! </value>
   </string>
   <string key="WildChildTransform">
-    <value>{1} 死了, 你的身份好像有些轉變, 你到底現在又是甚麼呢? 
-    突然,  {0} 的名字在你腦海中閃過! </value>
+    <value>{1} 死了, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n突然,  {0} 的名字在你腦海中閃過! </value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
@@ -412,14 +413,14 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>邪教徒 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>邪教蠟人 💂</value>
+    <value>邪教獵人 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
     <value>已逃跑</value>
   </string>
   <string key="Dead">
-    <value>💀 死忙</value>
+    <value>💀 死亡</value>
   </string>
   <string key="Alive">
     <value>🙂 倖存</value>
@@ -460,7 +461,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
-    <value>was</value>
+    <value>是</value>
   </string>
   <string key="GenericDeathNoReveal">
     <value>早上醒來, 村民發現 {0} 不見蹤跡...... 到了他家卻發現 {0} 的屍體. </value>
@@ -471,9 +472,9 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
-    <value>很抱歉, 村莊大門關閉了, 守門人不讓你離開村莊. </value>
+    <value>你想不起離開村莊的方向, 還是留下來當愚民吧! </value>
     <value>得罪了方丈還想走, 一名掃地僧把你給攔下了! </value>
-  </string>
+	  </string>
   <string key="IsDead"> <!-- used when gunner shoots a player -->
     <value>已經死了💀</value>
   </string>
@@ -498,7 +499,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>抱歉同時遊戲群組最大上限已滿 ({0}). \n目前順位: {1} / {1}</value>
   </string>
   <string key="SkipQueue">
-    <value>{0} 是官方群組, 正在使用VIP通道啟動遊戲中...</value>
+    <value>{0} 是官方群組, 正在使用VIP通道啟動遊戲中...... </value>
   </string>
   <string key="NoGame">
     <value>你忘了嗎? 目前沒有遊戲進行中. \n/startgame 啟動正常模式\n/startchaos 啟動混亂模式(腳色完全隨機)</value>
@@ -612,7 +613,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>患上失憶症的你竟胡亂闖進殺人魔的地方, 他在你身上慢慢的用利刀劃上一條又一條的傷痕, 看著傷口一滴滴流出來的血, 他竟然咧嘴大笑...... </value>
   </string>
   <string key="HarlotFuckKiller">
-    <value>你跑到 {0} 的家裡, 與他一夜纏綿過後, 他突然拿著匕首向你大笑三聲, 先把你的耳朵割下來, 接下來到鼻子, 然後到你的手指...... </value>
+    <value>你跑到 {0} 的家裡, 與他一夜纏綿過後, 他突然拿著匕首向你大笑三聲, 先把你的耳朵割下來, 接下來到鼻子, 然後到你的手指...... 最後, 他剖開你的肚子, 拿出你的腎臟, 不是拿去賣掉, 而是整個放進他的口裡......</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>don't worry about this string for now!(這? ? ? )</value>
@@ -621,29 +622,29 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>突然,  {0} 的名字在你腦海中閃過! </value>
   </string>
   <string key="DGTransformToMason">
-    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你記起 {1} 是很重要的人! </value>
+    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你腦海中泛現出某些看來是很重要的人: {1} </value>
   </string>
   <string key="DGToCult">
     <value>突然,  {0} 的名字在你腦海中閃過! </value>
   </string>
   <string key="DGTransformToCult">
-    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你記起 {1} 是很重要的人! </value>
+    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你腦海中泛現出某些看來是很重要的人: {1} </value>
   </string>
   <string key="DGToWolf">
     <value>突然,  {0} 的名字在你腦海中閃過! </value>
   </string>
   <string key="DGTransformToWolf">
-    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你記起 {1} 是很重要的人! </value>
+    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你腦海中泛現出某些看來是很重要的人: {1} </value>
   </string>
   <string key="SerialKillerWins" isgif="true">
-    <value>唯一還活著的人是連續殺人魔! !  #殺人魔勝</value>
+    <value>唯一還活著的人是連續殺人魔!!  #殺人魔勝</value>
   </string>
   <string key="AskKill">
     <value>你好像有些事情要做, 你要選擇誰呢? </value>
   </string>
   <string key="LoverDied">
-    <value>隨著 {0} 吞下了最後一口氣, {1} 衝過去趴在他的戀人胸前崩潰大哭...... {1} 無法承受這樣的哀傷, 於是找到離他最近的一把手槍往自己的腦門毫不猶豫地扣下了板機...... \n{2}</value>
-  </string>
+    <value>即使 {1} 連自己的身份也忘了, 但 {0} 對他來說卻是如此刻骨銘心; 看到對方吞下最後一口氣時, 忍不衝上前面, 趴在他胸膛放聲大哭. 這樣的哀傷 {1} 顯然無法承受, 他隨手拿起一把匕首插入自己的心臟...... \n{2}</value>
+	  </string>
   <string key="AskDoppelganger">
     <value>你好像有些事情要做, 你要選擇誰呢? </value>
   </string>
@@ -654,7 +655,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>你好像有些事情要做, 你要選擇誰呢? </value>
   </string>
   <string key="Hunter">
-    <value>蠟人 🎯</value>
+    <value>獵人 🎯</value>
   </string>
   <string key="Cupid">
     <value>邱比特 🏹</value>
@@ -712,7 +713,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="IdleCount">
     <!-- 0 - player's name -->
     <!-- 1 - idle count -->
-    <value>玩家 {0} 因為過去24小時內, {1} 次未投票而被天譴了. </value>
+    <value>過去24小時內, 玩家 {0} 因為 {1} 次不行駛投票的權利而遭天譴了. </value>
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
