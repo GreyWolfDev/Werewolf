@@ -1165,6 +1165,10 @@ namespace Werewolf_Node
                     }
                 }
 
+                //do a shuffle, as the above portion can cause the SK / wolf to always be the last player in the list.
+                Players.Shuffle();
+                Players.Shuffle();
+
                 //one last check for seer
                 if (Players.Any(x => x.PlayerRole == IRole.ApprenticeSeer) &&
                     Players.All(x => x.PlayerRole != IRole.Seer))
