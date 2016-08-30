@@ -240,12 +240,17 @@ namespace Werewolf_Control
             //first, try by reply
             var id = 0;
             var achIndex = 0;
+            var param = args[1].Split(' ');
             if (u.Message.ReplyToMessage != null)
             {
                 var m = u.Message.ReplyToMessage;
                 while (m.ReplyToMessage != null)
                     m = m.ReplyToMessage;
+                //check for forwarded message
+               
                 id = m.From.Id;
+                if (m.ForwardFrom != null)
+                    id = m.ForwardFrom.Id;
             }
             else
             {
@@ -274,7 +279,7 @@ namespace Werewolf_Control
             if (id == 0)
             {
                 //check for arguments then
-                if (int.TryParse(args[0], out id))
+                if (int.TryParse(param[0], out id))
                     achIndex = 1;
             }
 
@@ -283,7 +288,7 @@ namespace Werewolf_Control
             {
                 //try to get the achievement
                 Achievements a;
-                if (Enum.TryParse(args[achIndex], out a))
+                if (Enum.TryParse(param[achIndex], out a))
                 {
                     //get the player from database
                     using (var db = new WWContext())
