@@ -17,7 +17,8 @@
 
     <!-- THEME CSS -->
     <link href="~/Content/essentials.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/layout-dark.css" rel="stylesheet" type="text/css" name="dark" />
 
     <!-- PAGE LEVEL SCRIPTS -->
     <link href="~/Content/header-1.css" rel="stylesheet" type="text/css" />
@@ -66,7 +67,6 @@
 
         @RenderBody()
 
-        <hr />
         <!-- SCROLL TO TOP -->
         <a href="#" id="toTop"></a>
 
@@ -78,8 +78,18 @@
             </div>
         </div><!-- /PRELOADER -->
 
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Werewolf for Telegram</p>
+        <footer id="footer" >
+            <div class="copyright">
+                <div class="container">
+                    <ul class="pull-right nomargin list-inline mobile-block">
+                        <li><a href="https://github.com/parabola949/Werewolf">GitHub</a></li>
+                        <li>&bull;</li>
+                        <li><a href="https://telegram.me/werewolfbot">@@werewolfbot</a></li>
+                    </ul>
+                    &copy; @DateTime.Now.Year - Werewolf for Telegram
+                </div>
+            </div>
+
         </footer>
     </div>
   

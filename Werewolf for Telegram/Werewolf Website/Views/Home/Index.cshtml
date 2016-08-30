@@ -1,6 +1,6 @@
 ﻿@using Database
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 
 
@@ -8,11 +8,11 @@
 <!-- SLIDER -->
 <section id="slider" class="fullheight parallax parallax-4"></section>
 @*<section id="mslider1" class="fullheight">
-    <img src='/images/mob_banner 1.png' style="width: 100%"/>
-</section>
-<section id="mslider2" class="fullheight">
-    <img src='/images/mob_banner 2.png' style="width: 100%"/>
-</section>*@
+        <img src='/images/mob_banner 1.png' style="width: 100%"/>
+    </section>
+    <section id="mslider2" class="fullheight">
+        <img src='/images/mob_banner 2.png' style="width: 100%"/>
+    </section>*@
 <!-- /SLIDER -->
 <!-- CALLOUT -->
 <section class="callout-dark heading-title heading-arrow-bottom" style="z-index:100;">
@@ -43,7 +43,7 @@
 
         <header class="text-center margin-bottom-60">
             <h2>Our Features</h2>
-            <p class="lead font-lato">What's in store for you</p>
+            <p class="lead font-lato">What to expect</p>
             <hr />
         </header>
 
@@ -60,21 +60,25 @@
                 <div class="text-center">
                     <i class="ico-light ico-lg ico-rounded ico-hover et-chat"></i>
                     <h4>Dedicated Support Team</h4>
-                    <p>A team of well trained werewolves is available 24/7 to <a href="https://telegram.me/werewolfsupport" target="_blank">help</a> you out</p>
+                    <p>
+                        A team of well trained werewolves is available 24/7 to <a href="https://telegram.me/werewolfsupport" target="_blank">help</a> you out
+                    </p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="text-center">
                     <i class="ico-light ico-lg ico-rounded ico-hover fa fa-github"></i>
                     <h4>Open Source</h4>
-                    <p>All source code is available on <a href="https://github.com/parabola949/Werewolf" target="_blank">GitHub</a></p>
+                    <p>
+                        All source code is available on <a href="https://github.com/parabola949/Werewolf" target="_blank">GitHub</a>
+                    </p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="text-center">
                     <i class="ico-light ico-lg ico-rounded ico-hover et-trophy"></i>
                     <h4>Achievements</h4>
-                    <p>That's right.  We even have achievements you can earn while playing Werewolf</p>
+                    <p>That's right. We even have achievements you can earn while playing Werewolf</p>
                 </div>
             </div>
         </div>
@@ -107,6 +111,122 @@
         </div>
     </div>
 </section>
+
+<!-- CALLOUT -->
+<div class="alert alert-transparent bordered-bottom nomargin">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-9 col-sm-12">
+                <!-- left text -->
+                <h3>Add <span><strong>@@werewolfbot</strong></span> to your group and start playing!</h3>
+                <p class="font-lato weight-300 size-20 nomargin-bottom">
+                    It's time to learn who your friends really are
+                </p>
+            </div><!-- /left text -->
+
+
+            <div class="col-md-3 col-sm-12 text-right">
+                <!-- right btn -->
+                <a href="https://telegram.me/werewolfbot?startgroup" rel="nofollow" target="_blank" class="btn btn-primary btn-lg">ADD NOW</a>
+            </div><!-- /right btn -->
+
+        </div>
+
+    </div>
+</div>
+<!-- /CALLOUT -->
+
+<section id="howto">
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#introduction" data-toggle="tab">What is Werewolf?</a></li>
+                <li><a href="#faq" data-toggle="tab">FAQ</a></li>
+                <li><a href="#groups" data-toggle="tab">Links</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="introduction">
+                    <p>To put it simply, Werewolf is a game of deception. You're goal in the game is to find out who the other players are, and lynch / kill the opposing teams.<br/>
+                    I need some more content here</p>
+                </div>
+
+                <div class="tab-pane fade" id="faq">
+                    <div class="col-md-9">
+                        <p class="lead">Got questions? Find some answers here!</p>
+
+                        <!-- TOGGLES -->
+                        <div class="toggle toggle-transparent toggle-bordered-full margin-top-60">
+
+                            <div class="toggle">
+                                <!-- toggle -->
+                                <label>How do I add Werewolf to my group?</label>
+                                <div class="toggle-content">
+                                    <p class="clearfix">
+                                        You can add it just like you would add a friend by their usernames (click Add Member and then type @@werewolfIIbot into the search box), or you can go to the bot's profile by clicking its name and click 'Add to group'!
+                                    </p>
+                                </div>
+                            </div><!-- /toggle -->
+
+                            <div class="toggle">
+                                <!-- toggle -->
+                                <label>How do I configure options for my group, like language / max players / show and hide roles?</label>
+                                <div class="toggle-content">
+                                    <p class="clearfix">
+                                        Simple! First off, you <span>must</span> be an admin in your group. If you are, then in your group simply use the /config command. The bot will PM you a menu
+                                    </p>
+                                </div>
+                            </div><!-- /toggle -->
+
+                            <div class="toggle">
+                                <!-- toggle -->
+                                <label>What is the difference between the two bots?</label>
+                                <div class="toggle-content">
+                                    <p class="clearfix">
+                                        As far as the code running the bots goes, there is no difference. @@werewolfbot and @@werewolfIIbot are the same. We had to split the game into multiple bots because it got too big, and we began hitting API limits (a bot can only send 30 messages per second)
+                                    </p>
+                                </div>
+                            </div><!-- /toggle -->
+
+                            <div class="toggle">
+                                <!-- toggle -->
+                                <label>How do I vote to lynch / kill / etc?</label>
+                                <div class="toggle-content">
+                                    <p class="clearfix">
+                                        When the time comes, the bot will PM you a list of players you can take action against.  Simply click the player you want to choose.
+                                    </p>
+                                </div>
+                            </div><!-- /toggle -->
+                        </div>
+                        <!-- /TOGGLES -->
+
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="groups">
+                    <div class="list-group">
+                        <a href="https://telegram.me/werewolfsupport" class="list-group-item">
+                            <h4 class="list-group-item-heading">Werewolf Support</h4>
+                            <p class="list-group-item-text">If you have further questions, and need assistance, join the support group.  We'll do our best to help you!</p>
+                        </a>
+                        <a href="https://telegram.me/joinchat/B7EXdD1l2nZnyyHrsP0ZYw" class="list-group-item">
+                            <h4 class="list-group-item-heading">Werewolf - The Game</h4>
+                            <p class="list-group-item-text">This is a very large group (thousands) of players, where you can always find a large game to play (seriously, 35 player chaos games are just that - chaos!)</p>
+                        </a>
+                        <a href="https://telegram.me/werewolfdev" class="list-group-item">
+                            <h4 class="list-group-item-heading">Werewolf Dev Channel</h4>
+                            <p class="list-group-item-text">A dedicated channel were the developer of Werewolf posts updates and information</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
 <!-- /FEATURES -->
 
 <script>
@@ -117,13 +237,20 @@
     a.setAttribute('href', "#features");
     li.appendChild(a);
     ul.appendChild(li);
+
+    li = document.createElement("li");
+    a = document.createElement("a");
+    a.textContent = "How To Play";
+    a.setAttribute('href', "#howto");
+    li.appendChild(a);
+    ul.appendChild(li);
 </script>
 
 
 <style>
     @@media only screen and (min-width: 801px) {
         #slider {
-            background-image:url('/images/banner.jpg');
+            background-image: url('/images/banner.jpg');
             /*display: block;*/
         }
 
