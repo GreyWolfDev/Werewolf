@@ -6,7 +6,13 @@
 
 
 <!-- SLIDER -->
-<section id="slider" class="fullheight parallax parallax-4" style="background-image:url('/images/banner.jpg');"></section>
+<section id="slider" class="fullheight parallax parallax-4"></section>
+@*<section id="mslider1" class="fullheight">
+    <img src='/images/mob_banner 1.png' style="width: 100%"/>
+</section>
+<section id="mslider2" class="fullheight">
+    <img src='/images/mob_banner 2.png' style="width: 100%"/>
+</section>*@
 <!-- /SLIDER -->
 <!-- CALLOUT -->
 <section class="callout-dark heading-title heading-arrow-bottom" style="z-index:100;">
@@ -112,3 +118,39 @@
     li.appendChild(a);
     ul.appendChild(li);
 </script>
+
+
+<style>
+    @@media only screen and (min-width: 801px) {
+        #slider {
+            background-image:url('/images/banner.jpg');
+            /*display: block;*/
+        }
+
+        /*#mslider1 {
+            display: none;
+        }
+
+        #mslider2 {
+            display: none;
+        }*/
+    }
+
+    @@media only screen and (max-width: 800px) {
+        #slider {
+            /*background-image: url('/images/mob_banner 1.png');
+            width:100%*/
+            display: none !important;
+        }
+
+        /*#mslider1 {
+            display: block;
+            padding: 0;
+        }
+
+        #mslider2 {
+            display: block;
+            padding: 0;
+        }*/
+    }
+</style>
