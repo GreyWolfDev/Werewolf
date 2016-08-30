@@ -1,33 +1,38 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div id="header" class="sticky dark clearfix">
+    <header id="topNav">
+        <div class="container">
+            <!-- Mobile Menu Button -->
+            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <!-- Logo -->
 
-<!--
-                PAGE MENU
+            <a href="#topNav" class="logo pull-left scrollTo">
+                <img src="/images/werewolf title.png" style="width: 20em; height: auto;" alt="" />
+            </a>
 
-                AVAILABLE CLASSES:
-                    .page-menu-light
-                    .page-menu-dark
-                    .page-menu-transparent
-                    .page-menu-color
-            -->
-<div id="page-menu" class="page-menu-dark">
-    <div class="container">
+            <div class="navbar-collapse pull-right nav-main-collapse collapse">
+                <nav class="nav-main">
+                    <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 
-        <nav class="pull-right">
-            <!-- page menu -->
-            <button id="page-menu-mobile" class="fa fa-bars"></button>
-            <!--
-                .menu-scrollTo - for scrollto page menu / no external links
-            -->
-            <ul class="list-inline">
-                <li><a href="#features">Features</a></li>
-            </ul>
-        </nav><!-- /page menu -->
+                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li><a href="#features">Features</a></li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-    </div>
+
+                    </ul>
+                    @*@Html.Partial("_LoginPartial")*@
+                </nav>
+            </div>
+        </div>
+    </header>
 </div>
-<!-- /PAGE MENU -->
+
+
 <!-- SLIDER -->
 <section id="slider" class="fullheight parallax parallax-4" style="background-image:url('/images/banner.jpg');"></section>
 <!-- /SLIDER -->
