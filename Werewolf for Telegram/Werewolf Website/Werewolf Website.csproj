@@ -257,7 +257,9 @@
     <Content Include="images\1x1.png" />
     <Content Include="images\avatar.png" />
     <Content Include="images\avatar2.jpg" />
-    <Content Include="images\banner.jpg" />
+    <Content Include="images\banner.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\bluebar.png" />
     <Content Include="images\caption_bg.png" />
     <Content Include="images\datatable-row-openclose.png" />
@@ -295,6 +297,7 @@
     <Content Include="images\timeline\timeline_right.png" />
     <Content Include="images\timeline\timeline_top.png" />
     <Content Include="images\transparent.png" />
+    <Content Include="images\werewolf title.png" />
     <Content Include="images\world-map.png" />
     <Content Include="plugins\bootstrap.datepicker\css\bootstrap-datepicker.css" />
     <Content Include="plugins\bootstrap.datepicker\css\bootstrap-datepicker.min.css" />
@@ -1481,6 +1484,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\Local for FTP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\contact.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

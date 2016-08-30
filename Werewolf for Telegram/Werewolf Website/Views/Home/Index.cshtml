@@ -2,6 +2,102 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <img src="~/images/banner.jpg" />
+<!--HEADER-->
+<div id="header" class="sticky transparent clearfix dark shadow-after-3">
+    <header id="topNav">
+        <div class="container">
+            <!-- Mobile Menu Button -->
+            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <!-- Logo -->
+
+            <a href="#top" class="logo pull-left scrollTo">
+                <img src="/images/werewolf title.png" style="width: 20em; height: auto;" alt=""/>
+            </a>
+
+            <div class="navbar-collapse pull-right nav-main-collapse collapse">
+                <nav class="nav-main">
+
+
+                    <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                    @*@Html.Partial("_LoginPartial")*@
+                </nav>
+            </div>
+        </div>
+    </header>
 </div>
+<!-- /HEADER -->
+
+
+<!-- SLIDER -->
+<section id="slider" class="fullheight parallax parallax-4" style="background-image:url('/images/banner.jpg');">
+</section>
+<!-- /SLIDER -->
+
+<!-- CALLOUT -->
+<section class="callout-dark heading-title heading-arrow-bottom" style="z-index:100;">
+    <div class="container">
+
+        <div class="text-center">
+            <h3 class="size-30">One small village.  Treachery, Deception, Murder.</h3>
+            <p>Can you find the werewolves before it's too late?</p>
+        </div>
+
+    </div>
+</section>
+<!-- /CALLOUT -->
+
+
+<!-- FEATURES -->
+<section id="features">
+    <div class="container">
+
+        <header class="text-center margin-bottom-60">
+            <h2>Our Features</h2>
+            <p class="lead font-lato">What's in store for you</p>
+            <hr />
+        </header>
+
+        <!-- FEATURED BOXES 3 -->
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <div class="text-center">
+                    <i class="ico-light ico-lg ico-rounded ico-hover fa fa-users"></i>
+                    <h4>Large Player Base</h4>
+                    <p>Over 450.000 players and counting</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="text-center">
+                    <i class="ico-light ico-lg ico-rounded ico-hover et-chat"></i>
+                    <h4>Dedicated Support Team</h4>
+                    <p>A team of well trained werewolves is available 24/7 to <a href="https://telegram.me/werewolfsupport">help</a> you out</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="text-center">
+                    <i class="ico-light ico-lg ico-rounded ico-hover fa fa-github"></i>
+                    <h4>Open Source</h4>
+                    <p>All source code is available on <a href="https://github.com/parabola949/Werewolf">GitHub</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="text-center">
+                    <i class="ico-light ico-lg ico-rounded ico-hover et-trophy"></i>
+                    <h4>Achievements</h4>
+                    <p>That's right.  We even have achievements you can earn while playing Werewolf</p>
+                </div>
+            </div>
+        </div>
+        <!-- /FEATURED BOXES 3 -->
+       
+    </div>
+</section>
+<!-- /FEATURES -->
+
+
