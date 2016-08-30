@@ -1,36 +1,8 @@
-﻿@{
+﻿@using Database
+@{
     ViewBag.Title = "Home Page";
 }
-<div id="header" class="sticky dark clearfix">
-    <header id="topNav">
-        <div class="container">
-            <!-- Mobile Menu Button -->
-            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-            <!-- Logo -->
 
-            <a href="#topNav" class="logo pull-left scrollTo">
-                <img src="/images/werewolf title.png" style="width: 20em; height: auto;" alt="" />
-            </a>
-
-            <div class="navbar-collapse pull-right nav-main-collapse collapse">
-                <nav class="nav-main">
-                    <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-
-                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li><a href="#features">Features</a></li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-
-                    </ul>
-                    @*@Html.Partial("_LoginPartial")*@
-                </nav>
-            </div>
-        </div>
-    </header>
-</div>
 
 
 <!-- SLIDER -->
@@ -49,6 +21,17 @@
 </section>
 <!-- /CALLOUT -->
 <!-- FEATURES -->
+@{
+    int totalPlayers, totalGroups, totalGames, totalDeaths;
+    using (var db = new WWContext())
+    {
+        var counts = db.GlobalStats.First();
+        totalPlayers = counts.TotalPlayers ?? 0;
+        totalGroups = counts.TotalGroups ?? 0;
+        totalGames = counts.GamesPlayed;
+        totalDeaths = counts.PlayersKilled;
+    }
+}
 <section id="features">
     <div class="container">
 
@@ -63,8 +46,8 @@
             <div class="col-md-3 col-xs-6">
                 <div class="text-center">
                     <i class="ico-light ico-lg ico-rounded ico-hover fa fa-users"></i>
-                    <h4>Large Player Base</h4>
-                    <p>Over 450.000 players and counting</p>
+                    <h4>Active Community</h4>
+                    <p>45.000 daily active users</p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
@@ -90,7 +73,42 @@
             </div>
         </div>
         <!-- /FEATURED BOXES 3 -->
+        <div class="row countTo-md text-center">
 
+            <div class="col-xs-6 col-sm-3">
+                <i class="ico-light ico-lg ico-rounded ico-hover fa fa-user"></i>
+                <span class="countTo" data-speed="3000">@totalPlayers</span>
+                <h5>TOTAL PLAYERS</h5>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+                <i class="ico-light ico-lg ico-rounded ico-hover fa fa-group"></i>
+                <span class="countTo" data-speed="3000">@totalGroups</span>
+                <h5>TOTAL GROUPS</h5>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+                <i class="ico-light ico-lg ico-rounded ico-hover fa fa-paw"></i>
+                <span class="countTo" data-speed="3000">@totalGames</span>
+                <h5>GAMES PLAYED</h5>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+                <i class="ico-light ico-lg ico-rounded ico-hover fa fa-bullseye"></i>
+                <span class="countTo" data-speed="3000">@totalDeaths</span>
+                <h5>PLAYER DEATHS</h5>
+            </div>
+        </div>
     </div>
 </section>
 <!-- /FEATURES -->
+
+<script>
+    var ul = document.getElementById('topMain');
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.textContent = "Features";
+    a.setAttribute('href', "#features");
+    li.appendChild(a);
+    ul.appendChild(li);
+</script>

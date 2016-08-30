@@ -36,7 +36,32 @@
 </head>
 <body class="smoothscroll enable-animation">
     <div id="wrapper">
-        
+        <div id="header" class="sticky dark clearfix">
+            <header id="topNav">
+                <div class="container">
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Logo -->
+
+                    <a href="#topNav" class="logo pull-left scrollTo">
+                        <img src="/images/werewolf title.png" style="width: 20em; height: auto;" alt="" />
+                    </a>
+
+                    <div class="navbar-collapse pull-right nav-main-collapse collapse">
+                        <nav class="nav-main">
+                            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+
+                                <li class="active"><a href="#">Home</a></li>
+
+                            </ul>
+                            @*@Html.Partial("_LoginPartial")*@
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
 
 
         @RenderBody()
