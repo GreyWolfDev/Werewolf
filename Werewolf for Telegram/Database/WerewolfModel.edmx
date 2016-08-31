@@ -14,6 +14,13 @@
           <Property Name="BotStatus" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="BotLink" Type="varchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="ContestTerms">
+          <Key>
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="AgreedTerms" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="GlobalBan">
           <Key>
             <PropertyRef Name="Id" />
@@ -480,6 +487,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
           <EntitySet Name="BotStatus" EntityType="Self.BotStatus" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="ContestTerms" EntityType="Self.ContestTerms" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="GlobalBan" EntityType="Self.GlobalBan" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
@@ -1009,6 +1017,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="GlobalBans" EntityType="werewolfModel.GlobalBan" />
           <EntitySet Name="v_InactivePlayersMain" EntityType="werewolfModel.v_InactivePlayersMain" />
           <EntitySet Name="BotStatus" EntityType="werewolfModel.BotStatu" />
+          <EntitySet Name="ContestTerms" EntityType="werewolfModel.ContestTerm" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1229,6 +1238,13 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="BotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BotStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BotLink" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ContestTerm">
+          <Key>
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="AgreedTerms" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1662,6 +1678,14 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
                 <ScalarProperty Name="BotStatus" ColumnName="BotStatus" />
                 <ScalarProperty Name="BotName" ColumnName="BotName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContestTerms">
+            <EntityTypeMapping TypeName="werewolfModel.ContestTerm">
+              <MappingFragment StoreEntitySet="ContestTerms">
+                <ScalarProperty Name="AgreedTerms" ColumnName="AgreedTerms" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
