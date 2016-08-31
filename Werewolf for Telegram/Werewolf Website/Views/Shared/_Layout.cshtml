@@ -23,7 +23,19 @@
     <!-- PAGE LEVEL SCRIPTS -->
     <link href="~/Content/header-1.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = '/plugins/';</script>
 
+
+    <script type="text/javascript" src="~/Scripts/scripts.js"></script>
+    <script>
+    $(document).ready(function() {
+        _misc();
+    });
+    </script>
     <script type="text/javascript">
         var appInsights = window.appInsights || function (config) {
             function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace", "Ajax"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
@@ -93,16 +105,19 @@
         </footer>
     </div>
   
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <!-- JAVASCRIPT FILES -->
     <script type="text/javascript">var plugin_path = '/plugins/';</script>
-    
+
 
     <script type="text/javascript" src="~/Scripts/scripts.js"></script>
+    <script>
+    $(document).ready(function() {
+        _misc();
+    });
+    </script>
 
+   
     <!-- STYLESWITCHER - REMOVE -->
     @*<script async type="text/javascript" src="~/plugins/styleswitcher/styleswitcher.js"></script>*@
 

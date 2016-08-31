@@ -1534,6 +1534,32 @@
  **************************************************************** **/
 	function _misc() {
 
+	    /** Flip Boxes
+		 *********************** **/
+	    if (jQuery('.box-flip').length > 0) {
+
+	        jQuery('.box-flip').each(function () {
+	            _height1 = jQuery('.box1', this).outerHeight();
+	            _height2 = jQuery('.box2', this).outerHeight();
+
+	            if (_height1 >= _height2) {
+	                _height = _height1;
+	            } else {
+	                _height = _height2;
+	            }
+
+	            jQuery(this).css({ "min-height": _height + "px" });
+	            jQuery('.box1', this).css({ "min-height": _height + "px" });
+	            jQuery('.box2', this).css({ "min-height": _height + "px" });
+	        });
+
+	        jQuery('.box-flip').hover(function () {
+	            jQuery(this).addClass('flip');
+	        }, function () {
+	            jQuery(this).removeClass('flip');
+	        });
+	    }
+
 		/** Portfolio Bugfix
 		 *********************** **/
 		if(jQuery("#portfolio").length > 0) {
@@ -1847,31 +1873,7 @@
 
 
 
-		/** Flip Boxes
-		 *********************** **/
-		if(jQuery('.box-flip').length > 0) {
-			
-			jQuery('.box-flip').each(function() {
-				_height1 = jQuery('.box1',this).outerHeight();
-				_height2 = jQuery('.box2',this).outerHeight();
-
-				if(_height1 >= _height2) {
-					_height = _height1;
-				} else {
-					_height = _height2;
-				}
-
-				jQuery(this).css({"min-height":_height+"px"});
-				jQuery('.box1',this).css({"min-height":_height+"px"});
-				jQuery('.box2',this).css({"min-height":_height+"px"});
-			});
-			
-			jQuery('.box-flip').hover(function() {
-				jQuery(this).addClass('flip');
-			},function(){
-				jQuery(this).removeClass('flip');
-			});
-		}
+		
 
 
 
