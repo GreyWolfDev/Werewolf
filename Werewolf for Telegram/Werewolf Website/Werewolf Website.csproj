@@ -213,6 +213,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,6 +294,7 @@
     <Content Include="images\playing-dark.gif" />
     <Content Include="images\playing.gif" />
     <Content Include="images\plugins\slider.nivo\bullets.png" />
+    <Content Include="images\shirt.jpg" />
     <Content Include="images\submenu_dark.png" />
     <Content Include="images\submenu_inverse_dark.png" />
     <Content Include="images\submenu_inverse_light.png" />
@@ -1359,9 +1361,7 @@
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="ApplicationInsights.config" />
     <Content Include="plugins\bootstrap.daterangepicker\bower.json" />
     <Content Include="plugins\bootstrap.daterangepicker\package.json" />
     <Content Include="plugins\bootstrap.daterangepicker\README.md" />
@@ -1493,6 +1493,8 @@
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Local for FTP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chartist\chartist-plugin-tooltip.css" />
+    <Content Include="Scripts\Chartist\chartist-plugin-tooltip.min.js" />
     <Content Include="Scripts\contact.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1553,6 +1555,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Stats\Index.cshtml" />
+    <Content Include="Views\Stats\Group.cshtml" />
+    <Content Include="Views\Stats\Player.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

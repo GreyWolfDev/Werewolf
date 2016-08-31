@@ -3,7 +3,21 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="werewolf, ultimate werewolf, telegram, moderator, para949" />
+    <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:url" content="http://www.tgwerewolf.com" />
+    @if (ViewBag.ImagePath != null)
+    {
+        <meta property="og:image" content="@ViewBag.ImagePath" />
+    }
+    else
+    {
+        <meta property="og:image" content="/images/mob_banner 2.jpg" />
+    }
     <title>@ViewBag.Title - Werewolf for Telegram</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -18,7 +32,7 @@
 
     <!-- THEME CSS -->
     <link href="~/Content/essentials.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/layout.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/layout-dark.css" rel="stylesheet" type="text/css" name="dark" />
 
     <!-- PAGE LEVEL SCRIPTS -->
@@ -27,14 +41,38 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="application/ld+json">
+        {
+        "@@context": "http://schema.org",
+        "@@type": "Organization",
+        "name": "Werewolf Telegram",
+        "alternateName": "Play Werewolf on Telegram with your friends",
+        "url": "http://www.tgwerewolf.com",
+        "logo": "http://www.tgwerewolf.com/Images/werewolf.jpg",
+        "sameAs": [
+        "https://twitter.com/tgwerewolf"
+        ],
+        "founder": {
+        "@@type": "Person",
+        "name": "Para"
+        }
+        }
+    </script>
+    @if (Request.Url.AbsoluteUri.Contains("parawuff.com"))
+    {
+        Response.Status = "301 Moved Permanently";
+        var newUri = Request.Url.AbsoluteUri.Replace("werewolf", "www").Replace("parawuff.com", "tgwerewolf.com");
+        Response.AddHeader("Location", newUri);
+        Response.StatusCode = 301;
+    }
     <!-- JAVASCRIPT FILES -->
-   
+
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             _misc();
         });
     </script>
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         var appInsights = window.appInsights || function (config) {
             function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace", "Ajax"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
         }({
@@ -43,10 +81,57 @@
 
         window.appInsights = appInsights;
         appInsights.trackPageView();
-    </script>
+    </script>*@
 </head>
 <body class="smoothscroll enable-animation">
+
     <div id="wrapper">
+        <div class="container">
+            <!--
+        MODAL ON LOAD
+
+        data-autoload="true" - load modal on page load
+        data-autoload-delay="2000" - load after 2000 ms (1000ms = 1s)
+
+        Please note, an unique ID is required.
+        localstorage use the ID to hide the modal, if used checked "Don't show this popup again"
+        -->
+            <div id="saleNotif" class="modal fade" data-autoload="true" data-autoload-delay="2000" style="overflow: visible">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Over 2 million games!</h4>
+                        </div><!-- /Modal Header -->
+                        <!-- body modal -->
+                        <div class="modal-body clearfix">
+
+                            <p>
+                                Hey everyone - at this point we've hit over 2M games, and reached over 100K groups.  We decided to celebrate with a whole new web site and a limited run of some clothing!  We've opened up a store where you can buy limited edition werewolf tshirt, hoodie, tank top, tote bag, whatever! You can get your swag <a href="https://teespring.com/stores/werewolf-for-telegram">HERE</a>
+                            </p>
+                            <p>
+                                If you are ordering internationally, we highly recommend you get together with friends / groups and order together - shipping rates will be much cheaper that way.  Again, this is only available for the next two weeks.
+                            </p>
+                            <img src="~/images/shirt.jpg" style="width: 50%; height: 50%" />
+                            <!-- Don't show this popup again -->
+                            <div class="size-11 text-left">
+                                <label class="checkbox pull-left">
+                                    <input class="loadModalHide" type="checkbox" />
+                                    <i></i> <span class="weight-300">Don't show this popup again</span>
+                                </label>
+
+                            </div>
+                            <!-- /Don't show this popup again -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /ODAL ON LOAD -->
+        </div>
         <div id="header" class="sticky dark clearfix">
             <header id="topNav">
                 <div class="container">
@@ -64,8 +149,8 @@
                         <nav class="nav-main">
                             <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 
-                                <li class="active"><a href="#">Home</a></li>
-
+                                <li><a href="/Home/Index">Home</a></li>
+                                <li><a href="/Stats/Index">Stats</a></li>
                             </ul>
                             @*@Html.Partial("_LoginPartial")*@
                         </nav>
@@ -73,6 +158,7 @@
                 </div>
             </header>
         </div>
+
 
 
         @RenderBody()
@@ -88,7 +174,9 @@
             </div>
         </div><!-- /PRELOADER -->
 
-        <footer id="footer" >
+
+
+        <footer id="footer">
             <div class="copyright">
                 <div class="container">
                     <ul class="pull-right nomargin list-inline mobile-block">
@@ -102,7 +190,7 @@
 
         </footer>
     </div>
-  
+
     @RenderSection("scripts", required: false)
     <!-- JAVASCRIPT FILES -->
     <script type="text/javascript">var plugin_path = '/plugins/';</script>
@@ -110,53 +198,82 @@
 
     <script type="text/javascript" src="~/Scripts/scripts.js"></script>
 
-<script>
-    // ReSharper disable AssignToImplicitGlobalInFunctionScope
-    $(document).ready(function () {
-        setTimeout(function() {
-                /** Flip Boxes
-                 *********************** **/
-                if (jQuery('.box-flip').length > 0) {
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] ||
+                function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-                    jQuery('.box-flip')
-                        .each(function() {
+        ga('create', 'UA-77215526-1', 'auto');
+        ga('send', 'pageview');
+        // ReSharper disable AssignToImplicitGlobalInFunctionScope
+        $(document)
+            .ready(function () {
+                setTimeout(function () {
+                    /** Flip Boxes
+                     *********************** **/
+                    if (jQuery('.box-flip').length > 0) {
 
-                            _height1 = jQuery('.box1', this).outerHeight();
-                            _height2 = jQuery('.box2', this).outerHeight();
+                        jQuery('.box-flip')
+                            .each(function () {
 
-                            if (_height1 >= _height2) {
-                                _height = _height1;
-                            } else {
-                                _height = _height2;
-                            }
+                                _height1 = jQuery('.box1', this).outerHeight();
+                                _height2 = jQuery('.box2', this).outerHeight();
 
-                            jQuery(this).css({ "min-height": _height + "px" });
-                            jQuery('.box1', this).css({ "min-height": _height + "px" });
-                            jQuery('.box2', this).css({ "min-height": _height + "px" });
-                        });
+                                if (_height1 >= _height2) {
+                                    _height = _height1;
+                                } else {
+                                    _height = _height2;
+                                }
 
-                    jQuery('.box-flip')
-                        .hover(function() {
-                                jQuery(this).addClass('flip');
-                            },
-                            function() {
-                                jQuery(this).removeClass('flip');
+                                jQuery(this).css({ "min-height": _height + "px" });
+                                jQuery('.box1', this).css({ "min-height": _height + "px" });
+                                jQuery('.box2', this).css({ "min-height": _height + "px" });
                             });
 
-                    $('#portfolio').isotope({ masonry: { columnWidth: 10 }, itemSelector: '.portfolio-item' });
-                }
-            },
-            1000);
-    });
-</script>
+                        jQuery('.box-flip')
+                            .hover(function () {
+                                jQuery(this).addClass('flip');
+                            },
+                                function () {
+                                    jQuery(this).removeClass('flip');
+                                });
 
-   
+                        $('#portfolio').isotope({ masonry: { columnWidth: 10 }, itemSelector: '.portfolio-item' });
+                    }
+                },
+                    1000);
+            });
+    </script>
+
+
     <!-- STYLESWITCHER - REMOVE -->
     @*<script async type="text/javascript" src="~/plugins/styleswitcher/styleswitcher.js"></script>*@
 
     <!-- PAGELEVEL SCRIPTS -->
     <script type="text/javascript" src="~/Scripts/contact.js"></script>
 
-
+<style>
+     .modal.fade.in {
+      right: 70%
+  }
+     @@media (max-width: 768px) {
+         .table-responsive > .table {
+             margin-bottom: 0;
+             background-color: #373737;
+         }
+         .modal.fade.in {
+             right: 2em;
+         }}
+</style>
 </body>
 </html>
+
