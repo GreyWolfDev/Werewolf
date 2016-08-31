@@ -167,42 +167,77 @@ namespace Telegram.Bot
         {
             cts = new CancellationTokenSource();
             var sw = new Stopwatch();
-            using (var s = new StreamWriter("getUpdates.log", true))
-            {
-                while (IsReceiving)
-                {
-                    var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
 
+            while (IsReceiving)
+            {
+                var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
+
+                try
+                {
+                    //sw.Reset();
+                    //sw.Start();
+                    var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
+
+                    //sw.Stop();
+                    //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                    //s.Flush();
+                    foreach (var update in updates)
+                    {
+                        OnUpdateReceived(new UpdateEventArgs(update));
+                        MessageOffset = update.Id + 1;
+                    }
+
+                }
+                catch (ApiRequestException e)
+                {
+                    sw.Stop();
                     try
                     {
-                        //sw.Reset();
-                        //sw.Start();
-                        var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
-
-                        //sw.Stop();
-                        //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                        //s.Flush();
-                        foreach (var update in updates)
+                        using (var s = new StreamWriter("getUpdates.log", true))
                         {
-                            OnUpdateReceived(new UpdateEventArgs(update));
-                            MessageOffset = update.Id + 1;
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
                         }
-
                     }
-                    catch (ApiRequestException e)
+                    finally
                     {
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        s.Flush();
                         OnReceiveError(e);
                     }
-                    catch (TaskCanceledException e)
+                }
+                catch (TaskCanceledException e)
+                {
+                    sw.Stop();
+                    try
                     {
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        s.Flush();
+                        using (var s = new StreamWriter("getUpdates.log", true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        // do nothing
                     }
                 }
+                catch (Exception e)
+                {
+                    //well.  bad things happened.  ignore it this time I guess? At least until I can figure out what the error actually is
+                    try
+                    {
+                        using (var s = new StreamWriter("getUpdates.log", true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        // do nothing
+                    }
+                    
+                }
+
             }
         }
 #pragma warning restore AsyncFixer03 // Avoid fire & forget async void methods
@@ -1599,15 +1634,15 @@ namespace Telegram.Bot
                             {
                                 var content = ConvertParameterValue(parameter.Value);
 
-                                if (parameter.Key == "timeout" && (int)parameter.Value != 0)
+                                if (parameter.Key == "timeout" && (int) parameter.Value != 0)
                                 {
-                                    client.Timeout = TimeSpan.FromSeconds((int)parameter.Value + 1);
+                                    client.Timeout = TimeSpan.FromSeconds((int) parameter.Value + 1);
                                 }
 
                                 if (parameter.Value is FileToSend)
                                 {
                                     client.Timeout = UploadTimeout;
-                                    form.Add(content, parameter.Key, ((FileToSend)parameter.Value).Filename);
+                                    form.Add(content, parameter.Key, ((FileToSend) parameter.Value).Filename);
                                 }
                                 else
                                     form.Add(content, parameter.Key);
@@ -1635,9 +1670,11 @@ namespace Telegram.Bot
                     _invalidToken = true;
                     throw new ApiRequestException("Invalid token", 401);
                 }
-                catch (HttpRequestException e) when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
+                catch (HttpRequestException e)
+                    when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
                 {
                 }
+
 
 #if !NETSTANDARD1_3
                 catch (UnsupportedMediaTypeException)
@@ -1645,7 +1682,10 @@ namespace Telegram.Bot
                     throw new ApiRequestException("Invalid response received", 501);
                 }
 #endif
-
+                catch (Exception e)
+                {
+                    //ignored
+                }
                 //TODO: catch more exceptions
 
                 if (responseObject == null)

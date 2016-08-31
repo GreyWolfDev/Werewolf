@@ -1165,6 +1165,10 @@ namespace Werewolf_Node
                     }
                 }
 
+                //do a shuffle, as the above portion can cause the SK / wolf to always be the last player in the list.
+                Players.Shuffle();
+                Players.Shuffle();
+
                 //one last check for seer
                 if (Players.Any(x => x.PlayerRole == IRole.ApprenticeSeer) &&
                     Players.All(x => x.PlayerRole != IRole.Seer))
@@ -1278,7 +1282,7 @@ namespace Werewolf_Node
                         break;
                     case IRole.Beholder:
                         msg = GetLocaleString("RoleInfoBeholder");
-                        var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                        var seer = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
                         if (seer != null)
                             msg += GetLocaleString("BeholderSeer", $"{seer.GetName()}");
                         else
@@ -2207,7 +2211,7 @@ namespace Werewolf_Node
                                         break;
                                     case IRole.SerialKiller:
                                         //serial killer has 50% of winning the fight....
-                                        if (Program.R.Next(50) < 100)
+                                        if (Program.R.Next(100) < 50)
                                         {
                                             //serial killer wins...
                                             var shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
@@ -3513,7 +3517,7 @@ namespace Werewolf_Node
             {
                 if (victim.InLove)
                 {
-                    if (victim.LoverId == killer.Id)
+                    if (victim.LoverId == killer.Id && GameDay == 1 && Time == GameTime.Night)
                         AddAchievement(killer, Achievements.OhShi);
 
                     var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
@@ -3659,7 +3663,7 @@ namespace Werewolf_Node
                         if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count() >= 1000)
                             newAch = newAch | Achievements.Obsessed;
                         if (!ach.HasFlag(Achievements.Veteran) && p.GamePlayers.Count() >= 500)
-                            newAch = newAch | Achievements.Obsessed;
+                            newAch = newAch | Achievements.Veteran;
                         if (!ach.HasFlag(Achievements.Masochist) && player.Won && player.PlayerRole == IRole.Tanner)
                             newAch = newAch | Achievements.Masochist;
                         if (!ach.HasFlag(Achievements.Wobble) && !player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)

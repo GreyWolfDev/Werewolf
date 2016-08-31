@@ -1,0 +1,162 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Werewolf for Telegram</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="~/Content/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/layout-dark.css" rel="stylesheet" type="text/css" name="dark" />
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <link href="~/Content/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <!-- JAVASCRIPT FILES -->
+   
+    <script>
+        $(document).ready(function() {
+            _misc();
+        });
+    </script>
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace", "Ajax"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: "195250cd-b6f3-42fc-9f62-7811e049eafa"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body class="smoothscroll enable-animation">
+    <div id="wrapper">
+        <div id="header" class="sticky dark clearfix">
+            <header id="topNav">
+                <div class="container">
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Logo -->
+
+                    <a href="#topNav" class="logo pull-left scrollTo">
+                        <img src="/images/werewolf title.png" style="width: 20em; height: auto;" alt="" />
+                    </a>
+
+                    <div class="navbar-collapse pull-right nav-main-collapse collapse">
+                        <nav class="nav-main">
+                            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+
+                                <li class="active"><a href="#">Home</a></li>
+
+                            </ul>
+                            @*@Html.Partial("_LoginPartial")*@
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+
+        @RenderBody()
+
+        <!-- SCROLL TO TOP -->
+        <a href="#" id="toTop"></a>
+
+
+        <!-- PRELOADER -->
+        <div id="preloader">
+            <div class="inner">
+                <span class="loader"></span>
+            </div>
+        </div><!-- /PRELOADER -->
+
+        <footer id="footer" >
+            <div class="copyright">
+                <div class="container">
+                    <ul class="pull-right nomargin list-inline mobile-block">
+                        <li><a href="https://github.com/parabola949/Werewolf">GitHub</a></li>
+                        <li>&bull;</li>
+                        <li><a href="https://telegram.me/werewolfbot">@@werewolfbot</a></li>
+                    </ul>
+                    &copy; @DateTime.Now.Year - Werewolf for Telegram
+                </div>
+            </div>
+
+        </footer>
+    </div>
+  
+    @RenderSection("scripts", required: false)
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = '/plugins/';</script>
+
+
+    <script type="text/javascript" src="~/Scripts/scripts.js"></script>
+
+<script>
+    // ReSharper disable AssignToImplicitGlobalInFunctionScope
+    $(document).ready(function () {
+        setTimeout(function() {
+                /** Flip Boxes
+                 *********************** **/
+                if (jQuery('.box-flip').length > 0) {
+
+                    jQuery('.box-flip')
+                        .each(function() {
+
+                            _height1 = jQuery('.box1', this).outerHeight();
+                            _height2 = jQuery('.box2', this).outerHeight();
+
+                            if (_height1 >= _height2) {
+                                _height = _height1;
+                            } else {
+                                _height = _height2;
+                            }
+
+                            jQuery(this).css({ "min-height": _height + "px" });
+                            jQuery('.box1', this).css({ "min-height": _height + "px" });
+                            jQuery('.box2', this).css({ "min-height": _height + "px" });
+                        });
+
+                    jQuery('.box-flip')
+                        .hover(function() {
+                                jQuery(this).addClass('flip');
+                            },
+                            function() {
+                                jQuery(this).removeClass('flip');
+                            });
+
+                    $('#portfolio').isotope({ masonry: { columnWidth: 10 }, itemSelector: '.portfolio-item' });
+                }
+            },
+            1000);
+    });
+</script>
+
+   
+    <!-- STYLESWITCHER - REMOVE -->
+    @*<script async type="text/javascript" src="~/plugins/styleswitcher/styleswitcher.js"></script>*@
+
+    <!-- PAGELEVEL SCRIPTS -->
+    <script type="text/javascript" src="~/Scripts/contact.js"></script>
+
+
+</body>
+</html>

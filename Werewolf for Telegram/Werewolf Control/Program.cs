@@ -273,6 +273,8 @@ namespace Werewolf_Control
                     Console.CursorLeft = xpos;
                     _writingInfo = false;
 
+
+#if !DEBUG
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
                     {
@@ -291,6 +293,7 @@ namespace Werewolf_Control
                         NewNode();
                         Thread.Sleep(5000); //give the node time to register
                     }
+#endif
                 }
                 finally
                 {
