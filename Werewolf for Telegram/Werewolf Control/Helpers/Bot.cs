@@ -66,7 +66,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new Client(TelegramAPIKey);
+            Api = new Client(TelegramAPIKey, Path.Combine(RootDirectory, "..\\Logs"));
 
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 

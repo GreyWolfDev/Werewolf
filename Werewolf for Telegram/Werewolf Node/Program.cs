@@ -79,7 +79,7 @@ namespace Werewolf_Node
 #elif BETA
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
-            Bot = new Client(APIToken);
+            Bot = new Client(APIToken, Path.Combine(RootDirectory, "..\\Logs"));
             Me = Bot.GetMe().Result;
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();

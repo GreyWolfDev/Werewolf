@@ -21,7 +21,9 @@ namespace Telegram.Bot
     {
         private const string BaseUrl = "https://api.telegram.org/bot";
         private const string BaseFileUrl = "https://api.telegram.org/file/bot";
+        public string LogDirectory;
 
+        private string LogPath => Path.Combine(LogDirectory, "getUpdates.log");
         private readonly string _token;
         private bool _invalidToken;
 
@@ -110,8 +112,9 @@ namespace Telegram.Bot
         /// </summary>
         /// <param name="token">API token</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invvalid</exception>
-        public Client(string token)
+        public Client(string token, string logDirectory)
         {
+            LogDirectory = logDirectory;
             if (!Regex.IsMatch(token, @"^\d*:[\w\d-_]{35}$"))
                 throw new ArgumentException("Invalid token format", nameof(token));
 
@@ -174,13 +177,23 @@ namespace Telegram.Bot
 
                 try
                 {
-                    //sw.Reset();
-                    //sw.Start();
+                    sw.Reset();
+                    sw.Start();
                     var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
 
-                    //sw.Stop();
-                    //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                    //s.Flush();
+                    sw.Stop();
+                    try
+                    {
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        
+                    }
                     foreach (var update in updates)
                     {
                         OnUpdateReceived(new UpdateEventArgs(update));
@@ -193,7 +206,7 @@ namespace Telegram.Bot
                     sw.Stop();
                     try
                     {
-                        using (var s = new StreamWriter("getUpdates.log", true))
+                        using (var s = new StreamWriter(LogPath, true))
                         {
                             s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
                             s.Flush();
@@ -209,7 +222,7 @@ namespace Telegram.Bot
                     sw.Stop();
                     try
                     {
-                        using (var s = new StreamWriter("getUpdates.log", true))
+                        using (var s = new StreamWriter(LogPath, true))
                         {
                             s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
                             s.Flush();
@@ -223,9 +236,11 @@ namespace Telegram.Bot
                 catch (Exception e)
                 {
                     //well.  bad things happened.  ignore it this time I guess? At least until I can figure out what the error actually is
+                    while (e.InnerException != null)
+                        e = e.InnerException;
                     try
                     {
-                        using (var s = new StreamWriter("getUpdates.log", true))
+                        using (var s = new StreamWriter(LogPath, true))
                         {
                             s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
                             s.Flush();

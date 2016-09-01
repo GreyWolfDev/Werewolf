@@ -6,6 +6,6 @@ namespace Telegram.Bot
     public class Api : Client
     {
         [Obsolete("Telegram.Bot.Api is Deprecated, please use Telegram.Bot.Client")]
-        public Api(string token) : base(token) { }
+        public Api(string token, string path) : base(token, path) { }
     }
 }
