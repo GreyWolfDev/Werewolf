@@ -22,7 +22,7 @@ namespace Telegram.Bot
         private const string BaseUrl = "https://api.telegram.org/bot";
         private const string BaseFileUrl = "https://api.telegram.org/file/bot";
         public string LogDirectory;
-
+        private Status _status = Status.Normal;
         private string LogPath => Path.Combine(LogDirectory, "getUpdates.log");
         private readonly string _token;
         private bool _invalidToken;
@@ -48,6 +48,11 @@ namespace Telegram.Bot
         public int MessageOffset { get; set; }
 
         #region Events
+
+        protected virtual void OnStatusChanged(StatusChangeEventArgs e)
+        {
+            StatusChanged?.Invoke(this, e);
+        }
 
         protected virtual void OnUpdateReceived(UpdateEventArgs e)
         {
@@ -82,6 +87,11 @@ namespace Telegram.Bot
         /// Fired when any updates are availible
         /// </summary>
         public event EventHandler<UpdateEventArgs> UpdateReceived;
+
+        /// <summary>
+        /// Fired when any updates are availible
+        /// </summary>
+        public event EventHandler<StatusChangeEventArgs> StatusChanged;
 
         /// <summary>
         /// Fired when messages are availible
@@ -182,6 +192,19 @@ namespace Telegram.Bot
                     var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
 
                     sw.Stop();
+                    //check updates.Length
+
+                    if (updates.Length == 0)
+                    {
+                       SetStatus(Status.NotReceiving);
+                    }
+                    else if (updates.Length == 100)
+                    {
+                        SetStatus(Status.Recovering);
+                    }
+                    else SetStatus(Status.Normal);
+
+
                     try
                     {
                         using (var s = new StreamWriter(LogPath, true))
@@ -204,6 +227,7 @@ namespace Telegram.Bot
                 catch (ApiRequestException e)
                 {
                     sw.Stop();
+                    SetStatus(Status.Error);
                     try
                     {
                         using (var s = new StreamWriter(LogPath, true))
@@ -220,6 +244,7 @@ namespace Telegram.Bot
                 catch (TaskCanceledException e)
                 {
                     sw.Stop();
+                    SetStatus(Status.Error);
                     try
                     {
                         using (var s = new StreamWriter(LogPath, true))
@@ -235,6 +260,8 @@ namespace Telegram.Bot
                 }
                 catch (Exception e)
                 {
+                    sw.Stop();
+                    SetStatus(Status.Error);
                     //well.  bad things happened.  ignore it this time I guess? At least until I can figure out what the error actually is
                     while (e.InnerException != null)
                         e = e.InnerException;
@@ -263,6 +290,15 @@ namespace Telegram.Bot
         public void StopReceiving()
         {
             IsReceiving = false;
+        }
+
+        internal void SetStatus(Status status)
+        {
+            if (_status != status)
+            {
+                _status = status;
+                OnStatusChanged(new StatusChangeEventArgs(status));
+            }
         }
 
         #endregion

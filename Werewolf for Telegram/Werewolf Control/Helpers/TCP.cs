@@ -15,6 +15,7 @@ namespace Werewolf_Control.Helpers
     internal static class TCP
     {
         public static SimpleTcpServer Server;
+        public static SimpleTcpServer StatusServer;
         
         public static void Initialize()
         {
