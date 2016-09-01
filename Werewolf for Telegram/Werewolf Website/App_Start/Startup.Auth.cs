@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Win32;
 using Owin;
 using Werewolf_Website.Models;
 
@@ -57,12 +58,13 @@ namespace Werewolf_Website
             //app.UseFacebookAuthentication(
             //   appId: "",
             //   appSecret: "");
+            var reg = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf\\Web");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = reg.GetValue("GoogleClientId").ToString(),
+                ClientSecret = reg.GetValue("GoogleClientSecret").ToString()
+            });
         }
     }
 }

@@ -13,6 +13,7 @@ using Werewolf_Website.Models;
 namespace Werewolf_Website.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

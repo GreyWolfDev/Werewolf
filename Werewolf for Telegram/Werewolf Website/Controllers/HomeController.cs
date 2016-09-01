@@ -7,6 +7,7 @@ using Database;
 
 namespace Werewolf_Website.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()

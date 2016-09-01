@@ -8,6 +8,8 @@ namespace Werewolf_Website
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new ErrorHandler.AiHandleErrorAttribute());
+            filters.Add(new System.Web.Mvc.AuthorizeAttribute());
+            //filters.Add(new RequireHttpsAttribute());
         }
     }
 }

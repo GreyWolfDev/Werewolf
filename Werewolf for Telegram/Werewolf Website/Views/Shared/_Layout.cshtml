@@ -39,6 +39,7 @@
     <link href="~/Content/header-1.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script type="application/ld+json">
@@ -191,8 +192,15 @@
         </footer>
     </div>
 
-    @RenderSection("scripts", required: false)
-    <!-- JAVASCRIPT FILES -->
+    @try
+    {
+        RenderSection("scripts", required: false);
+    }
+    finally
+    {
+        
+    }
+<!-- JAVASCRIPT FILES -->
     <script type="text/javascript">var plugin_path = '/plugins/';</script>
 
 
