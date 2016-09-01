@@ -7,6 +7,7 @@ using Database;
 
 namespace Werewolf_Web.Controllers
 {
+    [AllowAnonymous]
     public class StatsController : Controller
     {
         //private static werewolfEntities DB = new werewolfEntities();
