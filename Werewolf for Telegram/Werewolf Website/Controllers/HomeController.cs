@@ -38,8 +38,7 @@ namespace Werewolf_Website.Controllers
         [HttpGet]
         public JsonResult GetBotStatus()
         {
-            using (var DB = new WWContext())
-            return Json(DB.BotStatus.ToList().Select(x => new { Name = x.BotName, Status = x.BotStatus, Link = x.BotLink }).ToList(), JsonRequestBehavior.AllowGet);
+            return Json(Helpers.StatusMonitor.GetStatus, JsonRequestBehavior.AllowGet);
         }
 
 
