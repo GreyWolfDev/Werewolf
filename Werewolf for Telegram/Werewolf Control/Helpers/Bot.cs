@@ -122,6 +122,7 @@ namespace Werewolf_Control.Helpers
 #else
                     4;
 #endif
+                    if (id == 4) return;
                     var b = db.BotStatus.Find(id);
                     b.BotStatus = statusChangeEventArgs.Status.ToString();
                     db.SaveChanges();

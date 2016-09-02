@@ -181,28 +181,28 @@ namespace Werewolf_Control
         }
 
         [Command(Trigger = "start")]
-        public static void Start(Update update, string[] args)
+        public static void Start(Update u, string[] args)
         {
-            if (update.Message.Chat.Type == ChatType.Private)
+            if (u.Message.Chat.Type == ChatType.Private)
             {
-                if (update.Message.From != null)
+                if (u.Message.From != null)
                 {
                     using (var db = new WWContext())
                     {
-                        var p = GetDBPlayer(update.Message.From.Id, db);
+                        var p = GetDBPlayer(u.Message.From.Id, db);
                         if (p == null)
                         {
-                            var u = update.Message.From;
+                            var usr = u.Message.From;
                             p = new Player
                             {
-                                UserName = u.Username,
-                                Name = (u.FirstName + " " + u.LastName).Trim(),
+                                UserName = usr.Username,
+                                Name = (usr.FirstName + " " + usr.LastName).Trim(),
                                 TelegramId = u.Id,
                                 Language = "English"
                             };
                             db.Players.Add(p);
                             db.SaveChanges();
-                            p = GetDBPlayer(update.Message.From.Id, db);
+                            p = GetDBPlayer(u.Message.From.Id, db);
                         }
 #if RELEASE
                         p.HasPM = true;
@@ -212,10 +212,34 @@ namespace Werewolf_Control
                         p.HasDebugPM = true;
 #endif
                         db.SaveChanges();
-                        Bot.Send(
-                            $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
-                            update.Message.Chat.Id);
-                        //Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+
+                        if (args.Length == 1)
+                        {
+                            Bot.Send(
+                                $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
+                                u.Message.Chat.Id);
+                        }
+                        else
+                        {
+                            var uid = args[1];
+
+
+                            
+                            
+
+                            //check the database for that user
+                            {
+                                var aspuser = db.AspNetUsers.Find(uid);
+                                
+                                //we have the asp user, let's find the player
+                                var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
+                                if (user == null)
+                                    return;
+                                user.WebUserId = uid; //linked!
+                                db.SaveChanges();
+                                Send($"Your telegram account is now linked to your web account - {aspuser.Email}", u.Message.From.Id);
+                            }
+                        }
                     }
                 }
             }

@@ -37,6 +37,13 @@
         <EntityTypeShape EntityType="werewolfModel.v_InactivePlayersMain" Width="1.5" PointX="3.375" PointY="13.75" />
         <EntityTypeShape EntityType="werewolfModel.BotStatu" Width="1.5" PointX="11.375" PointY="12.75" />
         <EntityTypeShape EntityType="werewolfModel.ContestTerm" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="werewolfModel.AspNetRole" Width="1.5" PointX="13.375" PointY="12.5" />
+        <EntityTypeShape EntityType="werewolfModel.AspNetUserClaim" Width="1.5" PointX="17.875" PointY="11" />
+        <EntityTypeShape EntityType="werewolfModel.AspNetUserLogin" Width="1.5" PointX="17.875" PointY="13.75" />
+        <EntityTypeShape EntityType="werewolfModel.AspNetUser" Width="1.5" PointX="15.625" PointY="11.375" />
+        <AssociationConnector Association="werewolfModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="werewolfModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="werewolfModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
