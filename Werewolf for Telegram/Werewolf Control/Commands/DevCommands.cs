@@ -128,7 +128,23 @@ namespace Werewolf_Control
                 Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), update.Message.Chat.Id.ToString());
                 Bot.Running = false;
                 Program.Running = false;
+                Bot.Api.StopReceiving();
                 Thread.Sleep(500);
+                using (var db = new WWContext())
+                {
+                    var bot =
+#if DEBUG
+                        4;
+#elif BETA
+                        3;
+#elif RELEASE
+                        1;
+#elif RELEASE2
+                        2;
+#endif
+                    db.BotStatus.Find(bot).BotStatus = "Updating";
+                    db.SaveChanges();
+                }
                 Environment.Exit(1);
             }
         }
@@ -256,7 +272,7 @@ namespace Werewolf_Control
         [Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            
+
         }
 
         [Command(Trigger = "sql", DevOnly = true)]
@@ -586,7 +602,7 @@ namespace Werewolf_Control
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
 
                             //get latest game player, check within 2 weeks
-                            var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new {game.TimeStarted, game.Id}).OrderByDescending(x => x.Id).FirstOrDefault();
+                            var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id }).OrderByDescending(x => x.Id).FirstOrDefault();
                             if (gp != null)
                             {
                                 if (gp.TimeStarted >= DateTime.Now.AddDays(-14))
@@ -672,7 +688,7 @@ namespace Werewolf_Control
                 }
                 Send($"Checking {inactive.Count} users", u.Message.Chat.Id);
                 var timeStarted = DateTime.Now;
-                
+
                 sw.WriteLine($"Beginning kick process.  Found {inactive.Count} users in database");
                 i = 0;
                 foreach (var p in inactive)
