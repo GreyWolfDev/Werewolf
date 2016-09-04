@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web.Http;
 
 namespace Werewolf_Website
@@ -19,6 +20,9 @@ namespace Werewolf_Website
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
+            new Thread(Helpers.StatusMonitor.Start).Start();
         }
     }
 }

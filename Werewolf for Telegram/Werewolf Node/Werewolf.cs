@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
@@ -3023,7 +3024,9 @@ namespace Werewolf_Node
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
-
+                Program.Bot.SendTextMessage(ChatId,
+                    "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)",
+                    parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
 
                 Thread.Sleep(10000);
