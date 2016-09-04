@@ -54,7 +54,7 @@
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  If you do not, you will be killed.</value>
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  If you do not, you will be removed from the game.</value>
   </string>
   <string key="DeadFlee">
     <value>You can't run away! YOU'RE DEAD!  Get back in the ground... jeez!</value>
@@ -87,12 +87,12 @@
   <string key="WolfVotedKill">
     <!-- 0 - wolf teammate name -->
     <!-- 1 - Victim name -->
-    <value>{0} has voted to eat {1}</value>
+    <value>{0} has voted to eat {1}.</value>
   </string>
   <string key="PlayerVotedLynch">
     <!-- 0 - Voter name -->
     <!-- 1 - Target name -->
-    <value>{0} has voted to lynch {1}</value>
+    <value>{0} has voted to lynch {1}.</value>
   </string>
   <string key="IdleKill">
     <!-- 0 - player name -->
@@ -100,14 +100,14 @@
     <value>{0} has not voted for 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value>You traitor!!! You are now the wolf..</value>
+    <value>You traitor!!! You are now the wolf...</value>
   </string>
   <string key="ChoiceAccepted">
-    <value>Choice accepted</value>
+    <value>Choice accepted.</value>
   </string>
   <string key="BeholderSeer">
     <!-- 0 - seer name -->
-    <value>\nThe seer is {0}</value>
+    <value>\nThe seer is {0}.</value>
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
@@ -131,7 +131,7 @@
   </string>
   <string key="AskShoot">
     <!-- 0 - bullet count -->
-    <value>Who do you want to shoot? {0} bullet(s) remain</value>
+    <value>Who do you want to shoot? {0} bullet(s) remain.</value>
   </string>
   <string key="AskVisit">
     <value>Who do you want to visit?</value>
@@ -264,7 +264,7 @@
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
     <!-- 1 - victim role -->
-    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM {1}</value>
+    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM\n{1}</value>
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
@@ -274,7 +274,7 @@
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
   </string>
   <string key="CursedBitten" >
-    <value >You have been killed by the wolves.  As the cursed, you have now become a wolf!</value>
+    <value >You have been killed by the wolves.  As you were cursed, you have now become a wolf!</value>
   </string>
   <string key="WolfTeam">
     <!-- 0 - teammate names -->
@@ -311,7 +311,7 @@
   </string>
   <string key="HarlotEaten" >
     <!-- 0 - player name -->
-    <value >The harlot decided to take the wrong night off, and stayed home. {0} has been eaten by the wolves!</value>
+    <value >The harlot chose the wrong night to stay home. {0} has been eaten by the wolves!</value>
   </string>
   <string key="HarlotNotHome" >
     <!-- 0 - player name -->
@@ -344,7 +344,7 @@
   <string key="DetectiveSnoop" >
     <!-- 0 - target name -->
     <!-- 1 - target role -->
-    <value >Your snooping has shown you that {0} is {1}</value>
+    <value >Your snooping has shown you that {0} is {1}.</value>
   </string>
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
@@ -702,7 +702,7 @@
     <value>The cult sends {0} to try to convert {1}, but instead a {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
   </string>
   <string key="GuardKiller">
-    <value>You tried to guard the serial killer, but the came out and stabbed you 89 times! You are dead....</value>
+    <value>You tried to guard the serial killer, but they came out and stabbed you 89 times! You are dead....</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
