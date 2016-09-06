@@ -395,7 +395,7 @@ namespace Werewolf_Node
                 Players.Add(p);
 
 
-                if (!notify) return;
+                //if (!notify) return;
 
                 var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
                     DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
@@ -445,7 +445,7 @@ namespace Werewolf_Node
 #endif
 
                     {
-                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                        msg = GetLocaleString("PMTheBot", p.GetName(), botname);
                         sendPM = true;
                     }
                 }
@@ -459,19 +459,22 @@ namespace Werewolf_Node
                 {
                     var botname = "@" + Program.Me.Username;
                     if (!sendPM)
-                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                        msg = GetLocaleString("PMTheBot", p.GetName(), botname);
                     //unable to PM
                     sendPM = true;
                 }
-
-
-
+                
                 SendWithQueue(msg, requestPM: sendPM);
+
+                if (sendPM) //don't allow them to join
+                {
+                    Players.Remove(p);
+                    p = null;
+                }
+
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
-
-
-                //SendMenu(new List<InlineKeyboardButton[]> { new[] { new InlineKeyboardButton("test", "vote|" + Program.ClientId + "|-1") }, new[] { new InlineKeyboardButton("test", "vote|" + Program.ClientId + "|-1") } }, p, "Test", QuestionType.Kill);
+                
             }
             catch (Exception e)
             {
