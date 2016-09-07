@@ -2179,8 +2179,6 @@ namespace Werewolf_Node
                                             }
                                             if (shotWuff != null)
                                             {
-                                                shotWuff.IsDead = true;
-                                                shotWuff.TimeDied = DateTime.Now;
                                                 if (voteWolves.Count() > 1)
                                                 {
                                                     SendWithQueue(GetLocaleString("HunterShotWolfMulti", shotWuff.GetName()));
@@ -2196,6 +2194,8 @@ namespace Werewolf_Node
                                                 {
                                                     SendWithQueue(GetLocaleString("HunterShotWolf", shotWuff.GetName()));
                                                 }
+                                                shotWuff.IsDead = true;
+                                                shotWuff.TimeDied = DateTime.Now;
                                                 DBKill(target, shotWuff, KillMthd.HunterShot);
 
                                             }
