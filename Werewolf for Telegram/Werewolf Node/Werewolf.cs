@@ -261,7 +261,7 @@ namespace Werewolf_Node
                         dbp.GamePlayers.Add(gamePlayer);
                         db.SaveChanges();
 
-                        new Task(() => { ImageHelper.GetUserImage(p.TeleUser.Id); }).Start();
+                        //new Task(() => { ImageHelper.GetUserImage(p.TeleUser.Id); }).Start();
                     }
                 }
 
