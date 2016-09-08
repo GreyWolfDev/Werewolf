@@ -84,15 +84,8 @@ namespace Werewolf_Control
                     var game = GetGroupNodeAndGame(update.Message.Chat.Id);
                     if (game != null)
                     {
-                        if (game.Users.Contains(update.Message.From.Id))
-                        {
-                            //send forcestart                                            
-                            game.ForceStart();
-                        }
-                        else
-                        {
-                            Send(GetLocaleString("NotInGame", grp.Language), id);
-                        }
+                        //send forcestart                                            
+                        game.ForceStart();
                     }
                     else
                     {
