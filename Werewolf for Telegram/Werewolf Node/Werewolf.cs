@@ -210,7 +210,7 @@ namespace Werewolf_Node
                     if (SecondsToAdd != 0)
                     {
                         i -= SecondsToAdd;
-                        var remaining = Settings.GameJoinTime - i
+                        var remaining = Settings.GameJoinTime - i; //TODO: Convert remaining seconds to mm:ss (and change string)
                         SendWithQueue(GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString().ToBold()));
                         SecondsToAdd = 0;
                     }
@@ -1657,8 +1657,7 @@ namespace Werewolf_Node
         }
         public void ExtendTime(int seconds)
         {
-            if (!IsJoining)
-                return;
+            if (!IsJoining) return;
             SecondsToAdd = seconds;
             return;
         }

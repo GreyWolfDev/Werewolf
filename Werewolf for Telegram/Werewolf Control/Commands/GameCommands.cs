@@ -168,7 +168,7 @@ namespace Werewolf_Control
                     game =
                         node.Games.FirstOrDefault(
                             x => x.Users.Contains(update.Message.From.Id));
-                if (game?.Users.Contains(update.Message.From.Id) ?? UpdateHelper.IsGroupAdmin(update) && game?.State == 0)
+                if (game?.Users.Contains(update.Message.From.Id) ?? UpdateHelper.IsGroupAdmin(update))
                 {
                     int seconds;
                     seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
