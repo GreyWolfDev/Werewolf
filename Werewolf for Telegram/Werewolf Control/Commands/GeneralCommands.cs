@@ -197,7 +197,7 @@ namespace Werewolf_Control
                             {
                                 UserName = usr.Username,
                                 Name = (usr.FirstName + " " + usr.LastName).Trim(),
-                                TelegramId = u.Id,
+                                TelegramId = usr.Id,
                                 Language = "English"
                             };
                             db.Players.Add(p);
