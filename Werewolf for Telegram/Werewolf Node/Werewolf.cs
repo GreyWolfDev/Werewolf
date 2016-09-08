@@ -194,15 +194,15 @@ namespace Werewolf_Node
                         count = Players.Count;
                     }
 
-                    if (i == 120)
+                    if (i == Settings.GameJoinTime - 60)
                     {
                         SendWithQueue(GetLocaleString("MinuteLeftToJoin"));
                     }
-                    if (i == 150)
+                    if (i == Settings.GameJoinTime - 30)
                     {
                         SendWithQueue(GetLocaleString("SecondsLeftToJoin", "30".ToBold()));
                     }
-                    if (i == 170)
+                    if (i == Settings.GameJoinTime - 10)
                     {
                         SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
                     }
