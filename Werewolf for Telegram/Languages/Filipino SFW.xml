@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Pinoy SFW version by @michelleized, @arbeanstok, @genevasands
      Last update: August 14, 2016 -->
 <!-- Changelog August 12, 2016
@@ -12,8 +12,6 @@
   3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
 <!-- Changelog August 17, 2016 by @arbeanstok
   1. Updated to new bot lines for /playerlist-->
-<!-- Changelog August 19, 2016 by @arbeanstok
-  1. Added YouJoined string -->
 <strings>
   <language name="Filipino" base="Filipino" variant="SFW"/>
   <string key="NotInGame">
@@ -70,12 +68,12 @@
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-        <value>Si {0} ay sumali sa laro. {1} na ang kasali. Gamitin ang /join upang makasali. {2} hanggang {3} lang ang maaaring kasali.</value>
+        <value>Si {0} ay sumali sa laro. {1} na ang kasali, {2} hanggang {3} lang ang maaaring kasali.</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-        <value>{0} Pindutin ang 'Start' button sa baba o {1} at i-'Start" ako, para ma-PM ko sayo ang role mo. Kung hindi, mamamatay ka.</value>
+        <value>{0} Pindutin ang 'Start' button sa baba o {1} at i-'Start" ako, para ma-PM ko sayo ang role mo. Hindi ka maaaring makasali hangga't di mo ito ginagawa.</value>
   </string>
   <string key="DeadFlee">
         <value>Hindi ka na makakatakas! PATAY KA NA! Balik sa lupa... tsss</value>
@@ -88,7 +86,7 @@
     <!-- 0 - Player name -->
     <!-- 1 - Player role -->
     <value>Si {0} ay ang {1}</value>
-    <value>Si {0} sana ang {1}</value>
+        <value>Si {0} sana ang {1}</value>
   </string>
   <string key="CountPlayersRemain">
     <!-- 0 - Number of players -->
@@ -106,7 +104,7 @@
     <value>Wala naman akong makitang player na ganyan ang pangalan. Sure ka ba dyan?</value>
   </string>
   <string key="AnswerNonValid">
-        <value>Hindi valid ang sagot mo!</value>
+        <value>Hindi valid ang sagot na mo!</value>
         <value>Hindi tama ang sagot mo! Sure ka ba dyan?</value>
   </string>
   <string key="WolfVotedKill">
@@ -126,9 +124,10 @@
     <!-- 0 - player name -->
     <!-- 1 - player role -->
         <value>Si {0} ay dalawang gabi nang hindi bumoboto. Nakita ito ng mga concerned citizen, mukhang busy siya kaya't pinatay nalang nila siya. {1}</value>
+        <value>Si {0} ay dalawang gabi nang hindi bumoboto. Pinost ito ng mga concerned netizen sa social media, kaya pinatay na ng mga vigilante. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
-        <value>Deds na lahat ng wuff so ayun Isa ka ng wolf ngayon :D</value>
+        <value>Traydor ka!!! Isa ka ng wolf ngayon :D</value>
   </string>
   <string key="ChoiceAccepted">
     <value>Salamat sa pagpili</value>
@@ -294,7 +293,7 @@
     <!-- 1 - victim role -->
         <value>Nagising ang mga tambay dahil sa masangsang na amoy. Sinundan nila ang amoy, para makita si {0} Nakatali sa kahoy, mukhang shawarma na katawan niya. NOMNOMNOMNOM {1}</value>
   </string>
-<string key="HunterKilledCultist">
+  <string key="HunterKilledCultist">
         <!-- 0 - victim name -->
         <value>Nagising ang mga tambay dahil sa masangsang na amoy na galing sa bahay ni {0}... Pumasok sila sa bahay at nakita nila ang katawan niya sa harap ng gawa-gawang altar... Isang kulto ang napatay ng hunter!</value>
   </string>
@@ -585,8 +584,6 @@
     <!-- used when gunner shoots a player -->
     <value>ay namatay na.</value>
   </string>
-
-
   <!-- MORE STRINGS May 16, 2016 -->
   <string key="AdminAdded">
     <!-- 0 - target's name -->
@@ -960,8 +957,6 @@
     <value>Tagal ng Laro: {0}</value>
   </string>
   <!--New strings, July the 8th -->
-
-
   <string key="Day">
     <!--0 - Day -->
     <value>Day {0}</value>
@@ -991,7 +986,7 @@
     <value>Kailangan mong magsimula ng game sa mula groupchat!</value>
   </string>
   <string key="PingInfo">
-    <value>Oras na inabot ng Telegram para magmessage sa akin: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Oras na inabot ng Telegram para magmessage sa akin: {0}\nPaki-alam ko: {1}%\nMessages per second: {2}</value>
   </string>
   <string key="WhatLang">
     <value>Anong Language?\nCurrent: {0}</value>
@@ -1045,8 +1040,6 @@
   <string key="PlayerChoice">
     <value>Player Choice</value>
   </string>
-
-
   <!-- Show Roles on End Game -->
   <string key="ShowNone">
     <value>Wag ipakita</value>
@@ -1057,8 +1050,6 @@
   <string key="ShowAll">
     <value>Ipakita ang lahat ng players</value>
   </string>
-
-
   <string key="Cancel">
     <value>Cancel</value>
   </string>
@@ -1152,10 +1143,6 @@
     <value>Ito parin yung list.</value>
   </string>
   <string key="UnableToGetList">
-    <value>Hintayin mo muna magstart ang laro bago kumuha ng listahan ng players.</value>
-  </string>
-  <string key="YouJoined">
-    <!-- 0 - Group Name -->
-    <value>Kasali ka na sa nag-umpisang laro sa {0}</value>
+    <value>Teka! Di ko maabot yung list! (Ang liit ko kasi 😢) mamaya mo na hingin hahanap lang ako ng upuan na tungtungan.</value>
   </string>
 </strings>
