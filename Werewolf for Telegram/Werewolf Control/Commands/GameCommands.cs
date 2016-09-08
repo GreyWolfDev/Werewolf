@@ -154,7 +154,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "Extend", Blockable = true, InGroupOnly = true)]
+        [Command(Trigger = "extend", Blockable = true, InGroupOnly = true)]
         public static void Extend(Update update, string[] args)
         {
             var id = update.Message.Chat.Id;
@@ -175,8 +175,7 @@ namespace Werewolf_Control
                     game?.ExtendTime(seconds);
 
                     return;
-                }
-                if (node != null)
+                } else
                 {
                     //there is a game, but this player is not in it
                     Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
