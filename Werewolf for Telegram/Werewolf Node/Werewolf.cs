@@ -463,7 +463,7 @@ namespace Werewolf_Node
                     //unable to PM
                     sendPM = true;
                 }
-                
+
                 SendWithQueue(msg, requestPM: sendPM);
 
                 if (sendPM) //don't allow them to join
@@ -474,7 +474,7 @@ namespace Werewolf_Node
 
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
-                
+
             }
             catch (Exception e)
             {
@@ -1401,31 +1401,88 @@ namespace Werewolf_Node
             //first, make sure there even IS a cupid
             if (Players.Any(x => x.PlayerRole == IRole.Cupid))
             {
-                //cupid stuffs
-                var lovers = Players.Where(x => x.InLove);
-                while (lovers.Count() != 2)
+                //REDO
+                //how many lovers do we have?
+                var count = Players.Count(x => x.InLove);
+                if (count == 2)
+                    return;
+                if (count > 2) //how?!?
                 {
-                    //ok, missing lover, create one
-                    var choiceid = ChooseRandomPlayerId(lovers);
-                    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
-                    if (newLover != null)
+                    var lovers = Players.Where(x => x.InLove).ToList(); //to list, we have broken off
+                    var l1 = Players.FirstOrDefault(x => x.Id == lovers[0].Id);
+                    var l2 = Players.FirstOrDefault(x => x.Id == lovers[1].Id);
+                    if (l1 == null || l2 == null)
                     {
-                        newLover.InLove = true;
-                        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
-                        if (otherLover != null)
+                        //WTF IS GOING ON HERE?!
+                        if (l1 != null)
+                            AddLover(l1);
+                        if (l2 != null)
+                            AddLover(l2);
+                        //if both are null..
+                        if (l1 == null && l2 == null)
                         {
-                            otherLover.LoverId = newLover.Id;
-                            newLover.LoverId = otherLover.Id;
+                            //so lost....
+                            l1 = AddLover();
+                            l2 = AddLover(l1);
+                        }
+                    }
+                    l1.LoverId = l2.Id;
+                    l2.LoverId = l1.Id;
+                    foreach (var p in lovers.Skip(2))
+                    {
+                        var foreverAlone = Players.FirstOrDefault(x => x.Id == p.Id);
+                        if (foreverAlone != null)
+                        {
+                            foreverAlone.InLove = false;
+                            foreverAlone.LoverId = 0;
                         }
                     }
                 }
-                var loversNotify = lovers.ToList();
-                if (loversNotify.Count == 2)
+                if (count < 2)
                 {
-                    Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
-                    Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
+                    //ok, missing lovers.
+                    var exist = Players.FirstOrDefault(x => x.InLove) ?? AddLover();
+                    AddLover(exist);
                 }
+                ////cupid stuffs
+                //var lovers = Players.Where(x => x.InLove);
+                //while (lovers.Count() != 2)
+                //{
+                //    //ok, missing lover, create one
+                //    var choiceid = ChooseRandomPlayerId(lovers);
+                //    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+                //    if (newLover != null)
+                //    {
+                //        newLover.InLove = true;
+                //        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+                //        if (otherLover != null)
+                //        {
+                //            otherLover.LoverId = newLover.Id;
+                //            newLover.LoverId = otherLover.Id;
+                //        }
+                //    }
+                //}
+                NotifyLovers();
             }
+        }
+
+        private void NotifyLovers()
+        {
+            var loversNotify = Players.Where(x => x.InLove).ToList();
+            Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
+            Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
+
+        }
+
+        private IPlayer AddLover(IPlayer existing = null)
+        {
+            var lover = Players.FirstOrDefault(x => x.Id == ChooseRandomPlayerId(existing));
+            if (lover == null) return null;
+            lover.InLove = true;
+            if (existing == null) return lover;
+            existing.LoverId = lover.Id;
+            lover.LoverId = existing.Id;
+            return lover;
         }
 
         private void CheckWildChild()
@@ -3408,7 +3465,7 @@ namespace Werewolf_Node
         {
             try
             {
-                var possible = Players.Where(x => x.Id != exclude.Id).ToList();
+                var possible = exclude != null ? Players.Where(x => x.Id != exclude.Id).ToList() : Players.ToList();
                 possible.Shuffle();
                 possible.Shuffle();
                 return possible[0].Id;
