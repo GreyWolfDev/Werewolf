@@ -395,7 +395,7 @@ namespace Werewolf_Node
                 Players.Add(p);
 
 
-                if (!notify) return;
+                //if (!notify) return;
 
                 var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
                     DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
@@ -445,7 +445,7 @@ namespace Werewolf_Node
 #endif
 
                     {
-                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                        msg = GetLocaleString("PMTheBot", p.GetName(), botname);
                         sendPM = true;
                     }
                 }
@@ -459,19 +459,22 @@ namespace Werewolf_Node
                 {
                     var botname = "@" + Program.Me.Username;
                     if (!sendPM)
-                        msg += Environment.NewLine + GetLocaleString("PMTheBot", p.GetName(), botname);
+                        msg = GetLocaleString("PMTheBot", p.GetName(), botname);
                     //unable to PM
                     sendPM = true;
                 }
-
-
-
+                
                 SendWithQueue(msg, requestPM: sendPM);
+
+                if (sendPM) //don't allow them to join
+                {
+                    Players.Remove(p);
+                    p = null;
+                }
+
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
-
-
-                //SendMenu(new List<InlineKeyboardButton[]> { new[] { new InlineKeyboardButton("test", "vote|" + Program.ClientId + "|-1") }, new[] { new InlineKeyboardButton("test", "vote|" + Program.ClientId + "|-1") } }, p, "Test", QuestionType.Kill);
+                
             }
             catch (Exception e)
             {
@@ -2176,8 +2179,6 @@ namespace Werewolf_Node
                                             }
                                             if (shotWuff != null)
                                             {
-                                                shotWuff.IsDead = true;
-                                                shotWuff.TimeDied = DateTime.Now;
                                                 if (voteWolves.Count() > 1)
                                                 {
                                                     SendWithQueue(GetLocaleString("HunterShotWolfMulti", shotWuff.GetName()));
@@ -2193,6 +2194,8 @@ namespace Werewolf_Node
                                                 {
                                                     SendWithQueue(GetLocaleString("HunterShotWolf", shotWuff.GetName()));
                                                 }
+                                                shotWuff.IsDead = true;
+                                                shotWuff.TimeDied = DateTime.Now;
                                                 DBKill(target, shotWuff, KillMthd.HunterShot);
 
                                             }
@@ -2802,12 +2805,14 @@ namespace Werewolf_Node
             {
                 if (Players.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0 & !x.IsDead))
                 {
-                    // do nothing, gunner is alove
+                    // do nothing, gunner is alive
+                    return false;
                 }
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf & x.Drunk) &&
-                    Players.Count(x => x.IsDead) > 2)
+                    Players.Count(x => x.IsDead) > 2)  //what the hell was my logic here....  damn myself for not commenting this line. why would it matter if 2 players ARE dead?
                 {
                     //do nothing
+                    return false;
                 }
                 return DoGameEnd(ITeam.Wolf);
             }
