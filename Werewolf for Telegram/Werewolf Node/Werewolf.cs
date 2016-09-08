@@ -101,7 +101,7 @@ namespace Werewolf_Node
 #else
                 Send(
                     Program.Version.FileVersion +
-                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}",
+                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}",
                     Program.Para);
 #endif
                 Program.RemoveGame(this);
@@ -312,21 +312,21 @@ namespace Werewolf_Node
                 Send("Something just went terribly wrong, I had to cancel the game....");
                 Send(
                     Program.Version.FileVersion +
-                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{msg}\n{ex.StackTrace}",
+                    $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{msg}\n{ex.StackTrace}",
                     Program.Para);
             }
             catch (Exception ex)
             {
                 while (ex.InnerException != null)
                 {
-                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
                     ex = ex.InnerException;
                 }
                 Send("Something just went terribly wrong, I had to cancel the game....\n" + ex.Message);
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
 #endif
 
             }
@@ -1205,7 +1205,7 @@ namespace Werewolf_Node
             catch (Exception ex)
             {
                 Send($"Error while assigning roles: {ex.Message}\nPlease start a new game");
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
                 Thread.Sleep(1000);
                 Program.RemoveGame(this);
             }
@@ -1231,7 +1231,7 @@ namespace Werewolf_Node
                 }
                 catch (NullReferenceException ex)
                 {
-                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
                 }
                 Thread.Sleep(50);
             }
@@ -1401,74 +1401,100 @@ namespace Werewolf_Node
             //first, make sure there even IS a cupid
             if (Players.Any(x => x.PlayerRole == IRole.Cupid))
             {
-                //REDO
-                //how many lovers do we have?
-                var count = Players.Count(x => x.InLove);
-                if (count == 2)
-                    return;
-                if (count > 2) //how?!?
-                {
-                    var lovers = Players.Where(x => x.InLove).ToList(); //to list, we have broken off
-                    var l1 = Players.FirstOrDefault(x => x.Id == lovers[0].Id);
-                    var l2 = Players.FirstOrDefault(x => x.Id == lovers[1].Id);
-                    if (l1 == null || l2 == null)
-                    {
-                        //WTF IS GOING ON HERE?!
-                        if (l1 != null)
-                            AddLover(l1);
-                        if (l2 != null)
-                            AddLover(l2);
-                        //if both are null..
-                        if (l1 == null && l2 == null)
-                        {
-                            //so lost....
-                            l1 = AddLover();
-                            l2 = AddLover(l1);
-                        }
-                    }
-                    l1.LoverId = l2.Id;
-                    l2.LoverId = l1.Id;
-                    foreach (var p in lovers.Skip(2))
-                    {
-                        var foreverAlone = Players.FirstOrDefault(x => x.Id == p.Id);
-                        if (foreverAlone != null)
-                        {
-                            foreverAlone.InLove = false;
-                            foreverAlone.LoverId = 0;
-                        }
-                    }
-                }
-                if (count < 2)
-                {
-                    //ok, missing lovers.
-                    var exist = Players.FirstOrDefault(x => x.InLove) ?? AddLover();
-                    AddLover(exist);
-                }
-                ////cupid stuffs
-                //var lovers = Players.Where(x => x.InLove);
-                //while (lovers.Count() != 2)
-                //{
-                //    //ok, missing lover, create one
-                //    var choiceid = ChooseRandomPlayerId(lovers);
-                //    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
-                //    if (newLover != null)
-                //    {
-                //        newLover.InLove = true;
-                //        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
-                //        if (otherLover != null)
-                //        {
-                //            otherLover.LoverId = newLover.Id;
-                //            newLover.LoverId = otherLover.Id;
-                //        }
-                //    }
-                //}
+                CreateLovers();
                 NotifyLovers();
             }
+        }
+
+        private void CreateLovers()
+        {
+
+            //REDO
+            //how many lovers do we have?
+            var count = Players.Count(x => x.InLove);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"{count} Lovers found");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            if (count == 2)
+            {
+                return;
+            }
+            if (count > 2) //how?!?
+            {
+                var lovers = Players.Where(x => x.InLove).ToList(); //to list, we have broken off
+                var l1 = Players.FirstOrDefault(x => x.Id == lovers[0].Id);
+                var l2 = Players.FirstOrDefault(x => x.Id == lovers[1].Id);
+                if (l1 == null || l2 == null)
+                {
+                    //WTF IS GOING ON HERE?!
+                    if (l1 != null)
+                        AddLover(l1);
+                    if (l2 != null)
+                        AddLover(l2);
+                    //if both are null..
+                    if (l1 == null && l2 == null)
+                    {
+                        //so lost....
+                        l1 = AddLover();
+                        l2 = AddLover(l1);
+                    }
+                }
+                l1.LoverId = l2.Id;
+                l2.LoverId = l1.Id;
+                foreach (var p in lovers.Skip(2))
+                {
+                    var foreverAlone = Players.FirstOrDefault(x => x.Id == p.Id);
+                    if (foreverAlone != null)
+                    {
+                        foreverAlone.InLove = false;
+                        foreverAlone.LoverId = 0;
+                    }
+                }
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"Step 1: {Players.Count(x=> x.InLove)} Lovers found");
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            if (count < 2)
+            {
+                //ok, missing lovers.
+                var exist = Players.FirstOrDefault(x => x.InLove) ?? AddLover();
+                if (exist == null)
+                    exist = AddLover();
+
+                AddLover(exist);
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"Step 2: {Players.Count(x => x.InLove)} Lovers found");
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            ////cupid stuffs
+            //var lovers = Players.Where(x => x.InLove);
+            //while (lovers.Count() != 2)
+            //{
+            //    //ok, missing lover, create one
+            //    var choiceid = ChooseRandomPlayerId(lovers);
+            //    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+            //    if (newLover != null)
+            //    {
+            //        newLover.InLove = true;
+            //        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+            //        if (otherLover != null)
+            //        {
+            //            otherLover.LoverId = newLover.Id;
+            //            newLover.LoverId = otherLover.Id;
+            //        }
+            //    }
+            //}
         }
 
         private void NotifyLovers()
         {
             var loversNotify = Players.Where(x => x.InLove).ToList();
+            while (loversNotify.Count != 2)
+            {
+                CreateLovers();
+                loversNotify = Players.Where(x => x.InLove).ToList();
+            }
+            
             Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
             Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
 
@@ -1477,6 +1503,9 @@ namespace Werewolf_Node
         private IPlayer AddLover(IPlayer existing = null)
         {
             var lover = Players.FirstOrDefault(x => x.Id == ChooseRandomPlayerId(existing));
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"AddLover: {lover?.Name} picked");
+            Console.ForegroundColor = ConsoleColor.Gray;
             if (lover == null) return null;
             lover.InLove = true;
             if (existing == null) return lover;
@@ -1873,7 +1902,7 @@ namespace Werewolf_Node
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
+                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.Para);
 #endif
                 Program.RemoveGame(this);
             }
@@ -3470,8 +3499,15 @@ namespace Werewolf_Node
                 possible.Shuffle();
                 return possible[0].Id;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Send(
+                   Program.Version.FileVersion +
+                   $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}",
+                   Program.Para);
                 return -1;
             }
         }
