@@ -81,6 +81,14 @@ namespace Werewolf_Control.Models
             var json = JsonConvert.SerializeObject(new GameKillInfo() { GroupId = GroupId });
             n?.Broadcast(json);
         }
+
+        public void ExtendTime(int seconds)
+        {
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            if (n == null) return;
+            var json = JsonConvert.SerializeObject(new ExtendTimeInfo() { GroupId = GroupId , Seconds = seconds});
+            n?.Broadcast(json);
+        }
     }
 
     public enum GameState

@@ -26,7 +26,8 @@ namespace Werewolf_Node
     class Werewolf : IDisposable
     {
         public long ChatId;
-        public int GameDay, GameId;
+        public int GameDay, GameId, 
+            SecondsToAdd = 0;
         public List<IPlayer> Players = new List<IPlayer>();
         public bool IsRunning,
             IsJoining = true,
@@ -205,6 +206,13 @@ namespace Werewolf_Node
                     if (i == 170)
                     {
                         SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
+                    }
+                    if (SecondsToAdd != 0)
+                    {
+                        i -= SecondsToAdd;
+                        var remaining = Settings.GameJoinTime - i
+                        SendWithQueue(GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString().ToBold()));
+                        SecondsToAdd = 0;
                     }
                     Thread.Sleep(1000);
                 }
@@ -1647,7 +1655,13 @@ namespace Werewolf_Node
         {
             KillTimer = true;
         }
-
+        public void ExtendTime(int seconds)
+        {
+            if (!IsJoining)
+                return;
+            SecondsToAdd = seconds;
+            return;
+        }
         private void LynchCycle()
         {
             if (!IsRunning) return;
