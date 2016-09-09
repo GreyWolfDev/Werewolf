@@ -120,6 +120,13 @@ namespace Werewolf_Control
             Bot.Send($"GIF learning = {UpdateHandler.SendGifIds}", update.Message.Chat.Id);
         }
 
+        [Command(Trigger = "asplode", DevOnly = true)]
+        public static void Asplode(Update u, string[] args)
+        {
+            //yep, just an alias, for giggles.  Hey, developers gotta have some fun, right?
+            Update(u, args);
+        }
+
         [Command(Trigger = "update", DevOnly = true)]
         public static void Update(Update update, string[] args)
         {

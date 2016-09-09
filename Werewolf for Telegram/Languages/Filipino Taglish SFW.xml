@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Pinoy - Taglish SFW version by @michelleized
-     Last update: August 20, 2016 -->
+<!-- Pinoy - Taglish SFW version by @michelleized and @arbeanstok-->
+<!-- Update September 4, 2016 by @arbeanstok
+	~ typo fixes and stuff -->
 <strings>
   <language name="Taglish - SFW" base="Filipino" variant="Taglish SFW"  owner="Michelleized"/>
   <string key="NotInGame">
-    <value>Bes, you don't appear to be in any games right now...</value>
+    <value>Bes, you don't appear to be kasali in any games right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
@@ -17,20 +18,20 @@
     <value>A new magulo game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>You can't sali now! The game is already running.</value>
+    <value>You can't make sali now! The game is already running.</value>
   </string>
   <string key="AlreadyJoined">
     <value>You've already joined!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join</value>
+    <value>1 minute left to make sali-sali like /join</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} seconds left to /join</value>
+    <value>{0} seconds left to make sali-sali like /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Dude, not enough players, I'm cancelling game!</value>
+    <value>Bes! Not enough players, let's play later nalang!</value>
   </string>
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
@@ -41,7 +42,7 @@
   </string>
   <string key="ChangeNameToJoin">
     <!-- 0 - Player name -->
-    <value>{0}, please change your name to join</value>
+    <value>Bes {0}! There's someone else with the same name as you na. Change your name na para you can make sali na.</value>
   </string>
   <string key="PlayerLimitReached">
     <value>Sorry, max player limit has been reached!</value>
@@ -51,12 +52,12 @@
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+    <value>{0} has joined the game. {1} players na ang kasali, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  If you do not, you will be killed.</value>
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role. You may not join the game until you do.</value>
   </string>
   <string key="DeadFlee">
     <value>You can't run away! YOU'RE DEAD!  Get back in the ground....  jeez</value>
@@ -118,7 +119,7 @@
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
     <!-- 1 - seer name -->
-    <value>{0} was an apprentice (OJT), and has now stepped up to fill {1}'s place as the new Seer (Madam Auring).</value>
+    <value>{0} was an apprentice (OJT ni Madam), and has now level-ed up to fill {1}'s place as the new Seer (Madam Auring).</value>
   </string>
   <string key="SeerSees">
     <!-- 0 - player name -->
@@ -154,7 +155,7 @@
     <value>Who is your role model / idol?</value>
   </string>
   <string key="AskConvert">
-    <value>Who do you want to convert to your kulto?</value>
+    <value>Who do you want to recruit to the tatlong bibe kult?</value>
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
@@ -163,7 +164,7 @@
   </string>
   <string key="And">
     <!--this is paired with "DiscussWith".  again, leave the spaces!-->
-    <value> and </value>
+    <value> at </value>
   </string>
   <string key="RoleInfoCursed">
     <value>You are cursed (isinumpa). You are a villager at this time, but if the wolves choose to kill you, you will instead become a werewolf yourself.</value>
@@ -172,7 +173,7 @@
     <value>You are the detective. During the day, you may choose a player to reveal their role.  However - in doing so, your role could be revealed to the wolves! (40% chance)</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>Congrats! You're the village drunk (lasengero)! (and really, everyone knows it...)</value>
+    <value>Congrats! You're the village drunk (lasengero)! (and really, everyone knows it...) Wooh! Tagay pa!</value>
   </string>
   <string key="RoleInfoGuardianAngel">
     <value>You are the Guardian Angel (Baranggay Tanod). Each night, you may choose a player to save.  However, if you choose a wolf, there is a 50% chance you will die.</value>
@@ -208,25 +209,25 @@
     <value >You are the apprentice seer (OJT of Madam Auring).  If the (real) seer dies, you will take their place as the seer.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >You are a cultist (kulto!!!!).  Every night, you may choose a player to convert to a cultist. If all remaining living players at the end are cultists, they win.</value>
+    <value >You are a cultist (Bibe FTW!!!!).  Every night, you may choose a player to recruit. If all remaining living players at the end are already recruited, they win.</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value >You hate kulto! There is a cultist in the town, trying to convert everyone!  Each night, choose a player.  If they are a cultist, they die.  If the cult tries to convert you, the newest member dies.</value>
+    <value >You hate the tatlong bibe song! There is a lider na bibe in the town, trying to recruit everyone!  Each night, choose a player.  If they are a already recruited, they die.  If the bibe tries to convert you, the newest member dies.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
       Dusk draws near, and the villagers gather to decide who they are lynching this evening...
-      Everyone now has {0} seconds to boto!
+      Everyone now has {0} seconds to make boto!
     </value>
   </string>
   <string key="DayTime" >
     <!-- 0 - number of seconds -->
-    <value >It is now day time.  All of you have {0} seconds to make your accusations / defenses / talk.</value>
+    <value >It is now day time.  All of you have {0} seconds to chika-chika with your friends.</value>
   </string>
   <string key="NightTime" >
     <!-- 0 - number of seconds -->
-    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
+    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Nocturnals: you have {0} seconds use your actions!</value>
   </string>
   <string key="LynchKill" >
     <!-- 0 - player name -->
@@ -241,7 +242,7 @@
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
-    <value >The villagers gather in the morning, but do not see {0}.  They wander over to the house, to find {0} disemboweled, an old badge shoved down their throat. U ded...</value>
+    <value >The villagers gather in the morning, but do not see {0}.  They wander over to the house, to find {0} disemboweled, an old badge shoved down their throat. RIP</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
@@ -257,11 +258,11 @@
   </string>
   <string key="DrunkEaten" >
     <!-- 0 - victim name -->
-    <value >Everyone wakes to the smell of burning alcohol and wood...  the pub is on fire!!!!  After putting the fire out, the remains of {0} are found, torn apart....</value>
+    <value >Everyone wakes to the smell of burning alcohol and wood...  the local bar is on fire!!!!  After putting the fire out, the remains of {0} are found, torn apart.... NOMNOMNOMNOM</value>
   </string>
   <string key="FoolEaten" >
     <!-- 0 - victim name -->
-    <value >As the sun rises above the village, they find {0} sitting over an ouija board, but with a deck of.... bicycle playing cards??? WHAT A FOOL!</value>
+    <value >As the sun rises above the village, they find {0} sitting over a snakes and ladders board, and with a deck of.... Yu-Gi-Oh cards??? WHAT A FOOL!</value>
   </string>
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
@@ -270,7 +271,7 @@
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar...  a cultist has been killed by the hunter!</value>
+    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of three giant duck in an altar...  a bibe has been killed by the hunter!</value>
   </string>
   <string key="NoAttack" >
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
@@ -280,7 +281,7 @@
   </string>
   <string key="WolfTeam">
     <!-- 0 - teammate names -->
-    <value>Your wolf counterpart(s): {0}</value>
+    <value>Your wolf tropa(s): {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
     <!-- 0 - victim name -->
@@ -291,7 +292,7 @@
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >YIKES! {0} was a drunk!  Now you are drunk, and can't attack tomorrow night..</value>
+    <value >YIKES! {0} was a drunk!  Now you are drunk, and can't attack tomorrow night...</value>
   </string>
   <string key="GuardWolf" >
     <value >You tried to guard a wolf!  The wolf has eaten you. NOMNOMNOMNOM</value>
@@ -377,20 +378,20 @@
   <string key="CultistVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
-    <value >{0} has voted to convert {1}</value>
+    <value >{0} has voted to recruit {1}</value>
   </string>
   <string key="CultConvertCultHunter">
     <!-- 0 - Yougest Cultist (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} was sent to do your dirty work, and convert {1} for the kulto... however, they were the cult hunter! {0} is dead!</value>
+    <value>{0} was sent to recruit {1} for initiation rights... however, they were the cult hunter! {0} is dead!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - Number of cultists left -->
-    <value>{0} came to your house last night, ready to convert you... Kulto! So, you shoved your sword right through him.  A cultist is dead... {1} remain!</value>
+    <value>{0} came to your house last night, ready to recruit you... He have small statues of three ducks! So, you shoved your sword right through him.  A cultist is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The cult has converted you to their order! KULTO! You are now a cultist. Welcome to the FAM. Every other night, you will have a chance to convert another player.</value>
+    <value>The cult has recruited you to their order! KULTO! You are now a bibe. Welcome to the FAM. Every other night, you will have a chance to recruit another player. ♫May tatlong bibe akong nakita...♫</value>
   </string>
   <string key="CultTeam">
     <!-- 0 - Number of cultists -->
@@ -398,15 +399,15 @@
   </string>
   <string key="CultJoin">
     <!-- 0 - new cultist's name -->
-    <value>{0} has joined the cult (kulto)!</value>
+    <value>{0} has been recruited! (kulto)!</value>
   </string>
   <string key="CultVisitEmpty">
     <!-- 0 - Newest cultist's name -->
     <!-- 1 - target name -->
-    <value>{0} was sent to do your dirty work, and convert {1} for the kulto... but no one was home!</value>
+    <value>{0} was sent to recruit {1} for initiation rights... but no one was home!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists..  The cult has won! KULTO! </value>
+    <value >All the wolves have died, and the only people left standing have all been recruit..  The ducks has won! KULTO! </value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -414,11 +415,11 @@
   </string>
   <string key="HunterFindCultist">
     <!-- 0 - target name -->
-    <value>You go into {0}'s house, and find them praying before an altar to some unknown god...  You quickly slide your sword right through the evil cultist.</value>
-  </string>
-  <!-- 0 - target name -->
+    <value>You go into {0}'s house, and find them praying before an altar of three ducks (one mapayat, one matabe, one na nagsasabi ng quack quack)...  You quickly slide your sword right through the evil cultist.</value>
+  </string> 
   <string key="HunterFailedToFind">
-    <value>You go to {0}'s house, but there is no mysterious chanting.  They are not a cultist, so you return home.</value>
+   <!-- 0 - target name -->
+   <value>You go to {0}'s house, but there is no mysterious chanting.  They are not a cultist, so you return home.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -499,7 +500,7 @@
     <value>a Mason 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>You are a Mason.  If there are any other masons, you will know who they are.  Otherwise, you are a villager.</value>
+    <value>You are a Mason.  If there are any other masons, you will know who they are.  Otherwise, you are a lowly villager. Kakainin ka din ng wuff or papatayin ng SK chill ka lang.</value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
@@ -515,23 +516,23 @@
   </string>
   <string key="GuardBlockedWolf">
     <!-- 0 - target's name -->
-    <value>The pack heads to {0}'s house to eat them, but they are met by a tall dark figure, armed to the teeth. The Guardian Angel fights everyone off, and you head back defeated.</value>
+    <value>The pack heads to {0}'s house to eat them, but they are met by a tall white figure, armed to the teeth. The Guardian Angel fights everyone off, and you head back defeated.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
     <!-- 0 - newest  -->
     <!-- 1 - target's name -->
-    <value>You send {0} to try to convert {1}, however their belief was too strong, and you were unable to convert them :(</value>
+    <value>You send {0} to try to recruit {1}, however their belief was too strong, and you were unable to recruit them :(</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
     <!-- 0 - target's name -->
     <!-- 1 - name -->
-    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+    <value>Bes @{1}, may player na {0} na kasali Please make palit of your name to join.</value>
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, you happen to notice a strange altar, poorly hidden, off in a side room, a strange glowing coming from it....</value>
+    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, may tatlong bibe kang nakita, mapayat mataba mga bibe....</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -544,7 +545,7 @@
   </string>
   <string key="MasonConverted">
     <!-- 0 - mason's name -->
-    <value>Odd.... {0} didn't show up for the masons meeting this morning.... O.o</value>
+    <value>Odd.... {0} is absent sa meeting ng mga Masons.... O.o hmmm....</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -636,7 +637,7 @@
     <value>You are the serial killer (ADIK!). Recently escaped from the local asylum, your goal is for everyone else to die. Every night, you can add a player's body to your collection.</value>
   </string>
   <string key="CupidChosen">
-    <value>Yiiiiihiiiiiie! You have been struck by love. {0}'s memory will never fade in your heart. Your goal is for both of you to survive. If one of you dies, the other one will die out of sorrow.</value>
+    <value>Yiiiiihiiiiiie! You have been struck by love. {0}'s memory will never fade in your heart. Your goal is for both of you to survive. If one of you dies, the other one will die out of sorrow. #LoveWins! #ForeverNaThis</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>The village has chosen to hang you! This is your last chance, choose to shoot someone as you go down!</value>
@@ -645,7 +646,7 @@
     <value>{0} fumbles for their pistol as the noose tightens, but he cannot get it in time, and falls to their death with a loud snap of their neck...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} whips out their pistol, looks at the crowd..... and cannot make a decision on who to shoot.  He falls to their death, accepting their fate...</value>
+    <value>{0} whips out their pistol, looks at the madlang people..... and cannot make a decision on who to shoot.  He falls to their death, accepting their fate...</value>
   </string>
   <string key="HunterKilledFinalLynched">
     <!-- 0 - hunter's name -->
@@ -704,7 +705,7 @@
     <value>The cult (KULTO!) sends {0} to try to convert {1}, but instead a {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
   </string>
   <string key="GuardKiller">
-    <value>You tried to guard the serial killer, but the came out and stabbed you 89 times! You are dead....</value>
+    <value>You tried to guard the serial killer, but the came out and stabbed you 1 Million times! You are dead....</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
@@ -775,14 +776,14 @@
   </string>
   <string key="CupidChosen">
     <!-- 0 - lover's name -->
-    <value>Yiiiiiiiieee! Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If you both make it to the end, you will both win.</value>
+    <value>Yiiiiiiiieee! Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If you both make it to the end, you will both win. #LoveWins #MayForever</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
     <value>You have become the wild child.  You role model is {0}</value>
   </string>
   <string key="LoversWin">
-    <value>True love endures! The lovers have won!</value>
+    <value>True love endures! The lovers have won! #LoveWins</value>
   </string>
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
@@ -926,7 +927,7 @@
     <value>An error has occured, and this node has shut down :/</value>
   </string>
   <string key="SentPrivate">
-    <value>I have sent you a PM</value>
+    <value>Maybe you could check onto your Inbox?</value>
   </string>
   <string key="StartPM">
     <value>Please send me a pm so I can PM you: @werewolfbot</value>
@@ -947,7 +948,7 @@
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Time to receive ping message: {0}\nCare I have: {1}%\nMessages per second: {2}</value>
   </string>
   <string key="WhatLang">
     <value>What Language?\nCurrent: {0}</value>
@@ -1012,7 +1013,6 @@
   <string key="ShowAll">
     <value>Show all players</value>
   </string>
-
   <string key="Cancel">
     <value>Cancel</value>
   </string>
