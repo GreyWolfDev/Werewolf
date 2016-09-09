@@ -82,11 +82,11 @@ namespace Werewolf_Control.Models
             n?.Broadcast(json);
         }
 
-        public void ExtendTime(int seconds)
+        public void ExtendTime(int seconds, bool admin)
         {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;
-            var json = JsonConvert.SerializeObject(new ExtendTimeInfo() { GroupId = GroupId , Seconds = seconds});
+            var json = JsonConvert.SerializeObject(new ExtendTimeInfo() { GroupId = GroupId , Seconds = seconds, Admin = admin});
             n?.Broadcast(json);
         }
     }

@@ -171,8 +171,9 @@ namespace Werewolf_Control
                 if (game?.Users.Contains(update.Message.From.Id) ?? UpdateHelper.IsGroupAdmin(update))
                 {
                     int seconds;
+                    bool admin = UpdateHelper.IsGroupAdmin(update);
                     seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
-                    game?.ExtendTime(seconds);
+                    game?.ExtendTime(seconds, admin);
 
                     return;
                 } else

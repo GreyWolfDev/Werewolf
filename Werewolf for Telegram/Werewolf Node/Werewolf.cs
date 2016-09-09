@@ -1667,9 +1667,14 @@ namespace Werewolf_Node
         {
             KillTimer = true;
         }
-        public void ExtendTime(int seconds)
+        public void ExtendTime(int seconds, bool admin)
         {
             if (!IsJoining) return;
+            if (!admin && DbGroup.AllowExtend == false)
+            {
+                SendWithQueue(GetLocaleString("GroupAdminOnly"));
+                return;
+            }
             SecondsToAdd = seconds;
             return;
         }

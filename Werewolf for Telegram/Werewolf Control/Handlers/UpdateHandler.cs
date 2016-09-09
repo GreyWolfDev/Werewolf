@@ -981,6 +981,21 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
                             break;
+                        case "extend":
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Allow", language), $"setextend|{groupid}|true"));
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Disallow", language), $"setextend|{groupid}|false"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setcult|{groupid}|cancel"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            Edit(query.Message.Chat.Id, query.Message.MessageId,
+                                GetLocaleString("AllowExtendQ", language, grp.AllowExtend == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
+                            break;
+                        case "setextend":
+                            grp.AllowExtend = (choice == "true");
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("AllowExtendA", language, grp.AllowExtend == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
+                            Edit(query.Message.Chat.Id, query.Message.MessageId,
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                            DB.SaveChanges();
+                            break;
                         case "done":
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
                                 GetLocaleString("ThankYou", language));
@@ -1050,7 +1065,8 @@ namespace Werewolf_Control.Handler
                 AllowCult = true,
                 DisableFlee = false,
                 MaxPlayers = 35,
-                CreatedBy = createdBy
+                CreatedBy = createdBy,
+                AllowExtend = false,
             };
         }
 
@@ -1071,6 +1087,7 @@ namespace Werewolf_Control.Handler
             buttons.Add(new InlineKeyboardButton("Allow Fool", $"fool|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Tanner", $"tanner|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Cult", $"cult|{id}"));
+            buttons.Add(new InlineKeyboardButton("Allow Extending Timer", $"extend|{id}"));
             buttons.Add(new InlineKeyboardButton("Done", $"done|{id}"));
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)

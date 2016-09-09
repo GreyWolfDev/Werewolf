@@ -195,7 +195,7 @@ namespace Werewolf_Node
                             case "ExtendTimeInfo":
                                 var eti = JsonConvert.DeserializeObject<ExtendTimeInfo>(msg);
                                 game = Games.FirstOrDefault(x => x.ChatId == eti.GroupId);
-                                game?.ExtendTime(eti.Seconds);
+                                game?.ExtendTime(eti.Seconds, eti.Admin);
                                 break;
                             default:
                                 Console.WriteLine(msg);
