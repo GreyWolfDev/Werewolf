@@ -22,8 +22,8 @@ namespace Werewolf_Control
         internal static PerformanceCounter CpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         internal static float AvgCpuTime;
         private static List<float> CpuTimes = new List<float>();
-        private static List<long> MessagesProcessed = new List<long>();
-        private static List<long> MessagesSent = new List<long>();
+        internal static List<long> MessagesProcessed = new List<long>();
+        internal static List<long> MessagesSent = new List<long>();
         private static long _previousMessages, _previousMessagesTx;
         internal static float MessageRxPerSecond;
         internal static float MessageTxPerSecond;

@@ -214,11 +214,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
+    <Compile Include="Controllers\AdminApiController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\StatusMonitor.cs" />
+    <Compile Include="Helpers\Tcp.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -1578,6 +1580,10 @@
     <ProjectReference Include="..\Database\Database.csproj">
       <Project>{a5e58eab-3171-4859-8fd5-d61e78cbdc93}</Project>
       <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TcpFramework\TcpFramework.csproj">
+      <Project>{acb86d9a-837c-4bb6-83fa-99fe4dc7d3e4}</Project>
+      <Name>TcpFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

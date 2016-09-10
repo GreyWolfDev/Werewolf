@@ -43,7 +43,34 @@ namespace Werewolf_Control.Helpers
         {
             try
             {
-
+                var messages = message.MessageString.Split('\u0013');
+                foreach (var msg in messages)
+                {
+                    if (String.IsNullOrWhiteSpace(msg) || String.IsNullOrWhiteSpace(msg.Replace("\0", "")))
+                        continue;
+                    dynamic m = JsonConvert.DeserializeObject(msg);
+                    string t = m.JType?.ToString();
+                    if (t != null)
+                    {
+                        switch (t)
+                        {
+                            case "GetStatusInfo":
+                                var nodes = Bot.Nodes.ToList();
+                                //web api is requesting current status
+                                var status = new StatusResponseInfo();
+                                status.MessagesPerSecondIn = Program.MessagesProcessed.FirstOrDefault();
+                                status.MessagesPerSecondOut = Program.MessagesSent.FirstOrDefault();
+                                status.MaxGames = Program.MaxGames;
+                                status.MaxGamesTime = Program.MaxTime;
+                                status.NodeIds = nodes.Select(x => x.ClientId).ToList();
+                                status.NumGames = nodes.Sum(x => x.CurrentGames);
+                                status.NumPlayers = nodes.Sum(x => x.CurrentPlayers);
+                                status.Uptime = DateTime.UtcNow - Bot.StartTime;
+                                message.Reply(JsonConvert.SerializeObject(status));
+                                break;
+                        }
+                    }
+                }
             }
             catch
             {
@@ -51,7 +78,7 @@ namespace Werewolf_Control.Helpers
             }
             finally
             {
-                
+
             }
         }
 
@@ -71,6 +98,8 @@ namespace Werewolf_Control.Helpers
             {
                 try
                 {
+                    if (!StatusServer.IsStarted)
+                        StatusServer.Start(IPAddress.Any, Settings.AdminPort);
                     //check server
                     if (!Server.IsStarted)
                         Server.Start(IPAddress.Any, Settings.Port);
@@ -122,7 +151,6 @@ namespace Werewolf_Control.Helpers
                 var messages = message.MessageString.Split('\u0013');
                 foreach (var msg in messages)
                 {
-
                     if (String.IsNullOrWhiteSpace(msg) || String.IsNullOrWhiteSpace(msg.Replace("\0", "")))
                         continue;
                     dynamic m = JsonConvert.DeserializeObject(msg);
