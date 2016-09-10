@@ -362,7 +362,8 @@ namespace Werewolf_Node
                             GroupId = g.ChatId,
                             NodeId = ClientId,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id))
+                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)),
+                            Players = new HashSet<IPlayer>(g.Players)
                         };
                         info.Games.Add(gi);
                     }

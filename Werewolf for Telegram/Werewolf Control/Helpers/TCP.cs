@@ -50,23 +50,44 @@ namespace Werewolf_Control.Helpers
                         continue;
                     dynamic m = JsonConvert.DeserializeObject(msg);
                     string t = m.JType?.ToString();
+                    var nodes = Bot.Nodes.ToList();
                     if (t != null)
                     {
                         switch (t)
                         {
                             case "GetStatusInfo":
-                                var nodes = Bot.Nodes.ToList();
+                                
                                 //web api is requesting current status
-                                var status = new StatusResponseInfo();
-                                status.MessagesPerSecondIn = Program.MessagesProcessed.FirstOrDefault();
-                                status.MessagesPerSecondOut = Program.MessagesSent.FirstOrDefault();
-                                status.MaxGames = Program.MaxGames;
-                                status.MaxGamesTime = Program.MaxTime;
-                                status.NodeIds = nodes.Select(x => x.ClientId).ToList();
-                                status.NumGames = nodes.Sum(x => x.CurrentGames);
-                                status.NumPlayers = nodes.Sum(x => x.CurrentPlayers);
-                                status.Uptime = DateTime.UtcNow - Bot.StartTime;
+                                var status = new StatusResponseInfo
+                                {
+                                    BotName = Bot.Me.Username,
+                                    MessagesPerSecondIn = Program.MessagesProcessed.FirstOrDefault(),
+                                    MessagesPerSecondOut = Program.MessagesSent.FirstOrDefault(),
+                                    MaxGames = Program.MaxGames,
+                                    MaxGamesTime = Program.MaxTime,
+                                    NodeIds = nodes.Select(x => x.ClientId).ToList(),
+                                    NumGames = nodes.Sum(x => x.CurrentGames),
+                                    NumPlayers = nodes.Sum(x => x.CurrentPlayers),
+                                    Uptime = DateTime.UtcNow - Bot.StartTime,
+                                    Status = Bot.CurrentStatus
+                                };
                                 message.Reply(JsonConvert.SerializeObject(status));
+                                break;
+                            case "GetNodeInfo":
+                                var gni = JsonConvert.DeserializeObject<GetNodeInfo>(msg);
+                                var node = nodes.FirstOrDefault(x => x.ClientId == gni.ClientId);
+                                var nodeInfo = new NodeResponseInfo
+                                {
+                                    MessagesSent = node.MessagesSent,
+                                    ClientId = node.ClientId,
+                                    CurrentGames = node.CurrentGames,
+                                    CurrentPlayers = node.CurrentPlayers,
+                                    Games = node.Games,
+                                    ShuttingDown = node.ShuttingDown,
+                                    Uptime = node.Uptime,
+                                    Version = node.Version
+                                };
+                                message.Reply(JsonConvert.SerializeObject(nodeInfo));
                                 break;
                         }
                     }

@@ -36,6 +36,7 @@ namespace Werewolf_Control.Helpers
         public static Random R = new Random();
         public static XDocument English;
         public static int MessagesSent = 0;
+        public static string CurrentStatus = "";
         internal static string RootDirectory
         {
             get
@@ -125,7 +126,9 @@ namespace Werewolf_Control.Helpers
                     if (id == 4) return;
                     var b = db.BotStatus.Find(id);
                     b.BotStatus = statusChangeEventArgs.Status.ToString();
+                    CurrentStatus = b.BotStatus;
                     db.SaveChanges();
+                    
                 }
             }
             finally

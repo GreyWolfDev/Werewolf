@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Werewolf_Control.Models
+namespace Werewolf_Website.Models
 {
-    public class GetStatusInfo
+
+    public class TcpRequest
+    {
+        
+    }
+    public class GetStatusInfo : TcpRequest
     {
         public string JType { get; set; } = "GetStatusInfo";
     }
@@ -26,7 +30,7 @@ namespace Werewolf_Control.Models
         public DateTime MaxGamesTime { get; set; }
     }
 
-    public class GetNodeInfo
+    public class GetNodeInfo : TcpRequest
     {
         public string JType { get; set; } = "GetNodeInfo";
         public Guid ClientId { get; set; }
