@@ -39,6 +39,7 @@ namespace Database
         public Nullable<bool> HasPM2 { get; set; }
         public Nullable<bool> HasDebugPM { get; set; }
         public Nullable<long> Achievements { get; set; }
+        public string WebUserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Actions { get; set; }

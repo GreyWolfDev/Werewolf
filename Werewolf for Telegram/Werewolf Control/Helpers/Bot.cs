@@ -66,7 +66,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new Client(TelegramAPIKey);
+            Api = new Client(TelegramAPIKey, Path.Combine(RootDirectory, "..\\Logs"));
 
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
@@ -95,6 +95,7 @@ namespace Werewolf_Control.Helpers
             Api.UpdateReceived += UpdateHandler.UpdateReceived;
             Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
             Api.ReceiveError += ApiOnReceiveError;
+            Api.StatusChanged += ApiOnStatusChanged;
             Me = Api.GetMe().Result;
 
             Console.Title += " " + Me.Username;
@@ -104,7 +105,36 @@ namespace Werewolf_Control.Helpers
             //now we can start receiving
             Api.StartReceiving();
         }
-        
+
+        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        {
+            try
+            {
+                using (var db = new WWContext())
+                {
+                    var id =
+#if RELEASE
+                        1;
+#elif RELEASE2
+                    2;
+#elif BETA
+                    3;
+#else
+                    4;
+#endif
+                    if (id == 4) return;
+                    var b = db.BotStatus.Find(id);
+                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+                    db.SaveChanges();
+                }
+            }
+            finally
+            {
+                
+            }
+            
+        }
+
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
         {

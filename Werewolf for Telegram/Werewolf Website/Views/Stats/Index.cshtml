@@ -1,0 +1,164 @@
+﻿@*<h3>@ViewBag.Message</h3>*@
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<link rel="stylesheet" href="/Scripts/Chartist/chartist-plugin-tooltip.css" />
+<script src="/Scripts/Chartist/chartist-plugin-tooltip.min.js"></script>
+
+<section>
+    
+        <div class="box-static box-border-top padding-0">
+            <div class="box-title margin-bottom-30">
+                <h2 class="size-20">Global Stats</h2>
+                <p>
+                    (<b>NOTE</b> - <i>you must play at least 100 games to be included</i>)
+                </p>
+            </div>
+            <div id="groupStats" class="table-responsive">
+                Loading...
+            </div>
+        </div>
+    
+</section>
+
+@*<div class="row">
+
+    <div class="container">
+        <div class="ct-chart ct-double-octave" id="dailyGames"></div>
+    </div>
+
+</div>*@
+
+@*<div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info box">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h3>Users per day</h3><br />
+                    </div>
+                    <div class="panel-body">
+                        <div class="ct-chart ct-double-octave" id="dailyUsers"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info box">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h3>Groups per day</h3><br />
+                    </div>
+                    <div class="panel-body">
+                        <div class="ct-chart ct-double-octave" id="dailyGroups"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<script>
+
+    function wait(ms) {
+        var start = new Date().getTime();
+        var end = start;
+        while (end < start + ms) {
+            end = new Date().getTime();
+        }
+    };
+
+    function loadCSS(href) {
+
+        var cssLink = $("<link>");
+        $("head").append(cssLink); //IE hack: append before setting href
+
+        cssLink.attr({
+            rel: "stylesheet",
+            type: "text/css",
+            href: href
+        });
+        var group = false;
+        var player = false;
+        var global = false;
+        var id = 0;
+    };
+
+
+
+    $('#groupStats').html('Loading...');
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: {},
+        url: '/Stats/GlobalStats/',
+        error: function (error) {
+            console.log(error);
+            $('#groupStats').html(error);
+        },
+        success: function (d) {
+            $('#groupStats').html(d);
+
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: {},
+        url: '/Stats/DailyCounts/',
+        error: function (error) {
+            console.log(error);
+
+        },
+        success: function (d) {
+
+            this.chartdata = d;
+            var dates = [];
+            var games = [];
+            var groups = [];
+            var users = [];
+
+
+            $.each(d, function (i, o) {
+
+                dates[i] = o.Day;
+                games[i] = { meta: 'Games', value: o.Games };
+                groups[i] = o.Groups;
+                users[i] = { meta: 'Users', value: o.Users };
+            });
+
+
+
+            new Chartist.Line('#dailyGames', {
+                labels: dates,
+                series: [games],
+                plugins: [Chartist.plugins.tooltip({
+                    appendToBody: true
+                })]
+            }, {
+
+            });
+
+            //new Chartist.Line('#dailyGroups', {
+            //    labels: dates,
+            //    series: [groups]
+            //}, {
+
+            //});
+
+            //new Chartist.Line('#dailyUsers', {
+            //    labels: dates,
+            //    series: [users]
+            //}, {
+
+            //});
+        }
+    });
+
+
+</script>

@@ -232,5 +232,84 @@ namespace Werewolf_Control
 
             Send($"Your group will be listed as: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
+
+        [Command(Trigger = "addach", DevOnly = true)]
+        public static void AddAchievement(Update u, string[] args)
+        {
+            //get the user to add the achievement to
+            //first, try by reply
+            var id = 0;
+            var achIndex = 0;
+            var param = args[1].Split(' ');
+            if (u.Message.ReplyToMessage != null)
+            {
+                var m = u.Message.ReplyToMessage;
+                while (m.ReplyToMessage != null)
+                    m = m.ReplyToMessage;
+                //check for forwarded message
+               
+                id = m.From.Id;
+                if (m.ForwardFrom != null)
+                    id = m.ForwardFrom.Id;
+            }
+            else
+            {
+                //ok, check for a user mention
+                var e = u.Message.Entities?.FirstOrDefault();
+                if (e != null)
+                {
+                    switch (e.Type)
+                    {
+                        case MessageEntityType.Mention:
+                            //get user
+                            var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
+                            using (var db = new WWContext())
+                            {
+                                id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
+                            }
+                            break;
+                        case MessageEntityType.TextMention:
+                            id = e.User.Id;
+                            break;
+                    }
+                    achIndex = 1;
+                }
+            }
+
+            if (id == 0)
+            {
+                //check for arguments then
+                if (int.TryParse(param[0], out id))
+                    achIndex = 1;
+            }
+
+
+            if (id != 0)
+            {
+                //try to get the achievement
+                Achievements a;
+                if (Enum.TryParse(param[achIndex], out a))
+                {
+                    //get the player from database
+                    using (var db = new WWContext())
+                    {
+                        var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                        if (p != null)
+                        {
+                            if (p.Achievements == null)
+                                p.Achievements = 0;
+                            var ach = (Achievements)p.Achievements;
+                            if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                            ach = ach | a;
+                            p.Achievements = (long)ach;
+                            db.SaveChanges();
+                            Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.Id);
+                            Send($"Achievement {a} unlocked for {p.Name}", u.Message.Chat.Id);
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }

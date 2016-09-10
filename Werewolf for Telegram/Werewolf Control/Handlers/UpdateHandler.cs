@@ -674,30 +674,7 @@ namespace Werewolf_Control.Handler
                             break;
                         case "lang":
                             //load up each file and get the names
-                            var langs =
-                                Directory.GetFiles(Bot.LanguageDirectory)
-                                    .Select(
-                                        x =>
-                                            new
-                                            {
-                                                Name =
-                                                        XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("name")
-                                                            .Value,
-                                                Base = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("base")
-                                                            .Value,
-                                                Variant = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("variant")
-                                                            .Value,
-                                                FileName = Path.GetFileNameWithoutExtension(x)
-                                            });
+                            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
 
                             buttons.Clear();
                             buttons.AddRange(langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"setlang|{groupid}|{x}|null|base")));
@@ -727,34 +704,12 @@ namespace Werewolf_Control.Handler
                             var isBase = args[4] == "base";
                             //ok, they picked a language, let's set it.
                             var validlangs =
-                                Directory.GetFiles(Bot.LanguageDirectory)
-                                        .Select(
-                                            x =>
-                                                new
-                                                {
-                                                    Name =
-                                                        XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("name")
-                                                            .Value,
-                                                    Base = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("base")
-                                                            .Value,
-                                                    Variant = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("variant")
-                                                            .Value,
-                                                    FileName = Path.GetFileNameWithoutExtension(x)
-                                                });
+                                Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
                             //ok, if base we need to check for variants....
                             var lang = validlangs.First(x => x.Base == choice);
                             if (isBase)
                             {
-                                var variants = validlangs.Where(x => x.Base == choice);
+                                var variants = validlangs.Where(x => x.Base == choice).ToList();
                                 if (variants.Count() > 1)
                                 {
                                     buttons.Clear();

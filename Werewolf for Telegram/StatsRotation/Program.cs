@@ -79,6 +79,20 @@ namespace StatsRotation
             Console.WriteLine("Calculating Global Stats");
             try
             {
+                //now do daily counts
+                using (var db = new WWContext())
+                {
+                    Console.WriteLine("Updating Daily Counts");
+                    //get daily counts
+                    var counts = db.getDailyCounts();
+                    db.DailyCounts.RemoveRange(db.DailyCounts);
+                    foreach (var count in counts)
+                        db.DailyCounts.Add(new DailyCount { Day = count.Day.Value, Games = count.Games.Value, Groups = count.Groups.Value, Users = count.players.Value });
+                    db.SaveChanges();
+                    Console.WriteLine("Done");
+
+                }
+
                 using (var DB = new WWContext())
                 {
                     DB.Database.CommandTimeout = 600;

@@ -8,15 +8,24 @@ namespace Werewolf_Control.Helpers
 {
     internal static class Settings
     {
+
+        //By the way, these admin ports will have IP whitelisting.  Don't even bother trying to connect to them :P
+        //The regular ports are not even open on the firewall
 #if DEBUG
         public static int Port = 9049;
+        public static int AdminPort = 9059;
 #elif RELEASE
         public static int Port = 9050;  //9050-@werewolfbot 
+        public static int AdminPort = 9060;
 #elif RELEASE2
         public static int Port = 9051;  //9051-@werewolfIIbot
+        public static int AdminPort = 9061;
 #elif BETA
         public static int Port = 9052;
+        public static int AdminPort = 9062;
 #endif
+
+
 
         public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
         public static long PersianSupportChatId = -1001059174638;

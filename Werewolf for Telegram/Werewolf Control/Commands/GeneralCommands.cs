@@ -54,7 +54,7 @@ namespace Werewolf_Control
         [Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
-            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Want to donate? awesome!\nUse Square Cash for hassle free, no login donations:<a href=\"cash.me/Para949\"> click here </a>\nOr if you'd like to use PayPal:<a href=\"paypal.me/Para949\">Click here</a> \n\nDonations are always welcomed, and help support the developer (and make him want to keep coding more features)",parseMode: ParseMode.Html );
+            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Want to donate? awesome!\nUse Square Cash for hassle free, no login donations:<a href=\"cash.me/Para949\"> click here </a>\nOr if you'd like to use PayPal:<a href=\"paypal.me/Para949\">Click here</a> \n\nDonations are always welcomed, and help support the developer (and make him want to keep coding more features)", parseMode: ParseMode.Html);
         }
 
         [Command(Trigger = "changelog")]
@@ -153,30 +153,7 @@ namespace Werewolf_Control
 
             }
             //user wants to pick personal language
-            var langs =
-                                Directory.GetFiles(Bot.LanguageDirectory)
-                                    .Select(
-                                        x => 
-                                            new
-                                            {
-                                                Name =
-                                                        XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("name")
-                                                            .Value,
-                                                Base = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("base")
-                                                            .Value,
-                                                Variant = XDocument.Load(x)
-                                                            .Descendants("language")
-                                                            .First()
-                                                            .Attribute("variant")
-                                                            .Value,
-                                                FileName = Path.GetFileNameWithoutExtension(x)
-                                            });
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
 
 
             List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
@@ -204,28 +181,28 @@ namespace Werewolf_Control
         }
 
         [Command(Trigger = "start")]
-        public static void Start(Update update, string[] args)
+        public static void Start(Update u, string[] args)
         {
-            if (update.Message.Chat.Type == ChatType.Private)
+            if (u.Message.Chat.Type == ChatType.Private)
             {
-                if (update.Message.From != null)
+                if (u.Message.From != null)
                 {
                     using (var db = new WWContext())
                     {
-                        var p = GetDBPlayer(update.Message.From.Id, db);
+                        var p = GetDBPlayer(u.Message.From.Id, db);
                         if (p == null)
                         {
-                            var u = update.Message.From;
+                            var usr = u.Message.From;
                             p = new Player
                             {
-                                UserName = u.Username,
-                                Name = (u.FirstName + " " + u.LastName).Trim(),
-                                TelegramId = u.Id,
+                                UserName = usr.Username,
+                                Name = (usr.FirstName + " " + usr.LastName).Trim(),
+                                TelegramId = usr.Id,
                                 Language = "English"
                             };
                             db.Players.Add(p);
                             db.SaveChanges();
-                            p = GetDBPlayer(update.Message.From.Id, db);
+                            p = GetDBPlayer(u.Message.From.Id, db);
                         }
 #if RELEASE
                         p.HasPM = true;
@@ -235,10 +212,38 @@ namespace Werewolf_Control
                         p.HasDebugPM = true;
 #endif
                         db.SaveChanges();
-                        Bot.Send(
-                            $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf.\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist.\nFor role information, use /rolelist.\nIf you want to set your default language, use /setlang.\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer.\nMore infomation can be found <a href=\"www.tgwerewolf.com?referrer=start\">here</a>!",
-                            update.Message.Chat.Id);
-                        //Bot.Send(GetLocaleString("PMTrue", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+
+                        if (String.IsNullOrEmpty(args[1]))
+                        {
+                            var msg = $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf." +
+                                      $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
+                                      $"\nFor role information, use /rolelist." +
+                                      $"\nIf you want to set your default language, use /setlang." +
+                                      $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
+                                      $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
+                            Bot.Send(msg,u.Message.Chat.Id);
+                        }
+                        else
+                        {
+                            var uid = args[1];
+
+
+                            
+                            
+
+                            //check the database for that user
+                            {
+                                var aspuser = db.AspNetUsers.Find(uid);
+                                
+                                //we have the asp user, let's find the player
+                                var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
+                                if (user == null)
+                                    return;
+                                user.WebUserId = uid; //linked!
+                                db.SaveChanges();
+                                Send($"Your telegram account is now linked to your web account - {aspuser.Email}", u.Message.From.Id);
+                            }
+                        }
                     }
                 }
             }
@@ -351,23 +356,77 @@ namespace Werewolf_Control
         }
 
         [Command(Trigger = "stats")]
-        public static void GetStats(Update update, string[] args)
+        public static void GetStats(Update u, string[] args)
         {
             //var reply = $"[Global Stats](www.tgwerewolf.com/Stats)\n";
             //if (update.Message.Chat.Type != ChatType.Private)
             //    reply += $"[Group Stats](www.tgwerewolf.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
             //reply += $"[Player Stats](www.tgwerewolf.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
 
-            //change this to buttons
-            var buttons = new List<InlineKeyboardButton[]>
+            if (u.Message.ReplyToMessage != null)
             {
-                new[] {new InlineKeyboardButton {Text = "Global Stats", Url = "http://www.tgwerewolf.com/Stats?referrer=stats"}}
-            };
-            if (update.Message.Chat.Type != ChatType.Private)
-                buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.Chat.Title} Stats", Url = "http://www.tgwerewolf.com/Stats/Group/" + update.Message.Chat.Id + "?referrer=stats" } });
-            buttons.Add(new[] { new InlineKeyboardButton { Text = $"{update.Message.From.FirstName} Stats", Url = "http://www.tgwerewolf.com/Stats/Player/" + update.Message.From.Id + "?referrer=stats" } });
-            var menu = new InlineKeyboardMarkup(buttons.ToArray());
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Stats", replyMarkup: menu);
+                var m = u.Message.ReplyToMessage;
+                while (m.ReplyToMessage != null)
+                    m = m.ReplyToMessage;
+                //check for forwarded message
+                var name = m.From.FirstName;
+                var id = m.From.Id;
+                if (m.ForwardFrom != null)
+                {
+                    id = m.ForwardFrom.Id;
+                    name = m.ForwardFrom.FirstName;
+                }
+                var buttons = new List<InlineKeyboardButton[]>
+                {
+                    new[]
+                    {
+                    new InlineKeyboardButton
+                    {
+                        Text = $"{name} Stats",
+                        Url = "http://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats"
+                    }
+                }
+
+                };
+                var menu = new InlineKeyboardMarkup(buttons.ToArray());
+                Bot.Api.SendTextMessage(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+            }
+            else
+            {
+
+
+                //change this to buttons
+                var buttons = new List<InlineKeyboardButton[]>
+                {
+                    new[]
+                    {
+                        new InlineKeyboardButton
+                        {
+                            Text = "Global Stats",
+                            Url = "http://www.tgwerewolf.com/Stats?referrer=stats"
+                        }
+                    }
+                };
+                if (u.Message.Chat.Type != ChatType.Private)
+                    buttons.Add(new[]
+                    {
+                        new InlineKeyboardButton
+                        {
+                            Text = $"{u.Message.Chat.Title} Stats",
+                            Url = "http://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats"
+                        }
+                    });
+                buttons.Add(new[]
+                {
+                    new InlineKeyboardButton
+                    {
+                        Text = $"{u.Message.From.FirstName} Stats",
+                        Url = "http://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats"
+                    }
+                });
+                var menu = new InlineKeyboardMarkup(buttons.ToArray());
+                Bot.Api.SendTextMessage(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+            }
         }
     }
 }

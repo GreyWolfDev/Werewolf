@@ -15,6 +15,7 @@ namespace Werewolf_Control.Helpers
     internal static class TCP
     {
         public static SimpleTcpServer Server;
+        public static SimpleTcpServer StatusServer;
         
         public static void Initialize()
         {
@@ -24,6 +25,44 @@ namespace Werewolf_Control.Helpers
             Server.DataReceived += ServerOnDataReceived;
             Server.DelimiterDataReceived += ServerOnDelimiterDataReceived;
             new Thread(Ping).Start();
+
+            //open up the status server 
+            StatusServer = new SimpleTcpServer {AutoTrimStrings = false};
+            StatusServer.ClientConnected += StatusServerOnClientConnected;
+            StatusServer.ClientDisconnected += StatusServerOnClientDisconnected;
+            StatusServer.DataReceived += StatusServerOnDataReceived;
+            StatusServer.DelimiterDataReceived += StatusServerOnDelimiterDataReceived;
+        }
+
+        private static void StatusServerOnDelimiterDataReceived(object sender, Message message)
+        {
+            
+        }
+
+        private static void StatusServerOnDataReceived(object sender, Message message)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                // ignored
+            }
+            finally
+            {
+                
+            }
+        }
+
+        private static void StatusServerOnClientDisconnected(object sender, ConnectedClient connectedClient)
+        {
+            
+        }
+
+        private static void StatusServerOnClientConnected(object sender, ConnectedClient connectedClient)
+        {
+            
         }
 
         private static void Ping()

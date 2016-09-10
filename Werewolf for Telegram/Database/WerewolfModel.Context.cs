@@ -48,6 +48,11 @@ namespace Database
         public virtual DbSet<GlobalBan> GlobalBans { get; set; }
         public virtual DbSet<v_InactivePlayersMain> v_InactivePlayersMain { get; set; }
         public virtual DbSet<BotStatu> BotStatus { get; set; }
+        public virtual DbSet<ContestTerm> ContestTerms { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {

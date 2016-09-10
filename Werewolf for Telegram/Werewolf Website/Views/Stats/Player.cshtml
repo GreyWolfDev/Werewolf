@@ -1,0 +1,108 @@
+﻿
+@*<h2><img id="playerImage" style="display: none; height: 2em; width: 2em; margin-right: 1.2em" class="img-circle" />@ViewBag.Title</h2>*@
+@*<h3>@ViewBag.Message</h3>*@
+
+
+<section>
+    <div class="box-static box-border-top padding-6">
+        <div class="box-title margin-bottom-30">
+            <h2 class="size-20">Player Stats</h2>
+            <p>@ViewBag.Title</p>
+        </div>
+        <div id="groupStats" class="table-responsive">
+            Loading...
+        </div>
+
+    </div>
+</section>
+<section class="alternate">
+    <div class="box-static box-dark box-border-top padding-6">
+        <div class="box-title margin-bottom-30">
+            <h2 class="size-20">Player Achievements</h2>
+            <p>This section is still in beta, improvements are coming (including proper names / descriptions / icons)</p>
+        </div>
+        <div id="playerAchievement" class="table-responsive">
+            Loading...
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+
+    function wait(ms) {
+        var start = new Date().getTime();
+        var end = start;
+        while (end < start + ms) {
+            end = new Date().getTime();
+        }
+    };
+
+    function loadCSS(href) {
+
+        var cssLink = $("<link>");
+        $("head").append(cssLink); //IE hack: append before setting href
+
+        cssLink.attr({
+            rel:  "stylesheet",
+            type: "text/css",
+            href: href
+        });
+        var group = false;
+        var player = false;
+        var global = false;
+        var id = 0;
+    };
+    var id = @ViewBag.Id;
+
+
+    $('#groupStats').html('Loading...');
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: { pid: id },
+        url: '/Stats/PlayerStats/',
+        error: function (error) {
+            console.log(error);
+            $('#groupStats').html(error);
+        },
+        success: function (d) {
+            $('#groupStats').html(d);
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: { pid: id },
+        url: '/Stats/PlayerAchievements/',
+        error: function (error) {
+            console.log(error);
+            $('#playerAchievement').html(error);
+        },
+        success: function (d) {
+            $('#playerAchievement').html(d);
+        }
+    });
+
+    //$.ajax({
+    //    type: "GET",
+    //    contentType: 'application/json; charset=utf-8',
+    //    dataType: 'json',
+    //    data: { pid: id },
+    //    url: '/Stats/PlayerImage/',
+    //    error: function (error) {
+    //        $('#playerImage').hide();
+    //    },
+    //    success: function (d) {
+    //        $('#playerImage').attr('src',d);
+    //        $('#playerImage').show();
+    //    }
+    //});
+
+
+</script>

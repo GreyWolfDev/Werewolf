@@ -75,7 +75,7 @@ namespace Werewolf_Control
             //start up the bot
             new Thread(() => Bot.Initialize(updateid)).Start();
             new Thread(NodeMonitor).Start();
-            new Thread(CpuMonitor).Start();
+            //new Thread(CpuMonitor).Start();
             new Thread(UpdateHandler.SpamDetection).Start();
             new Thread(UpdateHandler.BanMonitor).Start();
             //new Thread(MessageMonitor).Start();
@@ -190,14 +190,14 @@ namespace Werewolf_Control
                     // ignored
                 }
 
-                Thread.Sleep(250);
+                Thread.Sleep(1000);
             }
         }
 
         private static void NodeMonitor()
         {
             //wait a bit to allow nodes to register
-            Thread.Sleep(6000);
+            Thread.Sleep(5000);
             while (Running)
             {
                 try
@@ -209,7 +209,7 @@ namespace Werewolf_Control
                     var CurrentGames = Nodes.Sum(x => x.CurrentGames);
                     var TotalPlayers = Nodes.Sum(x => x.TotalPlayers);
                     var TotalGames = Nodes.Sum(x => x.TotalGames);
-                    var NumThreads = Process.GetCurrentProcess().Threads.Count;
+                    //var NumThreads = Process.GetCurrentProcess().Threads.Count;
                     var Uptime = DateTime.UtcNow - Bot.StartTime;
                     var MessagesRx = Bot.MessagesReceived;
                     var CommandsRx = Bot.CommandsReceived;
@@ -220,10 +220,10 @@ namespace Werewolf_Control
                         MaxGames = CurrentGames;
                         MaxTime = DateTime.Now;
                     }
-
+                    //Threads: {NumThreads}\t
                     var msg =
                         $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
+                        $"Uptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
                         $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
 
 
@@ -273,6 +273,8 @@ namespace Werewolf_Control
                     Console.CursorLeft = xpos;
                     _writingInfo = false;
 
+
+#if !DEBUG
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
                     {
@@ -291,6 +293,7 @@ namespace Werewolf_Control
                         NewNode();
                         Thread.Sleep(5000); //give the node time to register
                     }
+#endif
                 }
                 finally
                 {

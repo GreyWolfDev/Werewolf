@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- It's Mafia vs Cops ver 1.4 by @HBramantyo, @noirhime, and @dhansck! Mafia's the goodies, by the way. -->
+<!-- It's Mafia vs Cops ver 1.4.1 by @HBramantyo, @noirhime, and @dhansck! Mafia's the goodies, by the way. -->
 <strings>
   <language name="English (Mafia)" base="English" variant="Mafia"/>
   <string key="NotInGame">
@@ -26,7 +26,7 @@
     <value>One minute left before the action begins. You can get your complimentary Fedora if you /join now.</value>
 	</string>
   <string key="SecondsLeftToJoin">
-    <value>{0} seconds left left before the hunt begins. You can get your complimentary Fedora if you /join now.</value>
+    <value>{0} seconds left before the hunt begins. You can get your complimentary Fedora if you /join now.</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>You think we can conduct deals with so few people? Fairview is closed for now!</value>
@@ -239,7 +239,7 @@
   </string>
   <string key="DefaultEaten" >
     <value>The Newspaper just come in! They reported that {0} was arrested by the police for being in Mafia business! {1}</value>
-    <value>The Newspaper just come in! Police Raid at {0}'s house, owner was arrested! {1}</value>\
+    <value>The Newspaper just come in! Police Raid at {0}'s house, owner was arrested! {1}</value>
 	<value>The Newspaper just come in! {0} was arrested last night on allegations of arson, murder, vandalism, and jaywalking! {1}</value>
   </string>
   <string key="HunterKilledCultist">
@@ -432,10 +432,10 @@
     <value>💀 Out of Town</value>
   </string>
   <string key="Alive">
-    <value>🙂 Alive</value>
+    <value>🙂 In Town</value>
   </string>
   <string key="PlayersAlive">
-    <value>Players Alive</value>
+    <value>Fairview. Population: </value>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
@@ -816,8 +816,7 @@
     <value>Fairview is a city, not a lone player. Go start in a city group.</value>
   </string>
   <string key="PingInfo">
-    <value>Time for Telegram to send message to me: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}
-	Don't push it, citizen, if you know what's good for you.</value>
+    <value>Time for Telegram to send message to me: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}\nDon't push it, citizen, if you know what's good for you.</value>
   </string>
   <string key="WhatLang">
     <value>What Language?\nCurrent: {0}</value>
@@ -955,7 +954,7 @@
     <value>Church of Happyology as a role set to: {0}</value>
   </string>
   <string key="ThankYou">
-    <value>Thank you. Now protect the godfather and our Family.</value>
+    <value>Thank you. Now protect the Godfather and our Family.</value>
   </string>
   <string key="WhatLangGroup">
     <value>What language do you want to look for a group to play in?</value>
@@ -969,5 +968,13 @@
   <string key="StartMe">
     <value>Please start me so I can PM you</value>
   </string>
-  
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest result for Fairview population census.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get the latest result for Fairview population census.</value>
+  </string>
 </strings>

@@ -21,7 +21,9 @@ namespace Telegram.Bot
     {
         private const string BaseUrl = "https://api.telegram.org/bot";
         private const string BaseFileUrl = "https://api.telegram.org/file/bot";
-
+        public string LogDirectory;
+        private Status _status = Status.Normal;
+        private string LogPath => Path.Combine(LogDirectory, "getUpdates.log");
         private readonly string _token;
         private bool _invalidToken;
 
@@ -46,6 +48,11 @@ namespace Telegram.Bot
         public int MessageOffset { get; set; }
 
         #region Events
+
+        protected virtual void OnStatusChanged(StatusChangeEventArgs e)
+        {
+            StatusChanged?.Invoke(this, e);
+        }
 
         protected virtual void OnUpdateReceived(UpdateEventArgs e)
         {
@@ -82,6 +89,11 @@ namespace Telegram.Bot
         public event EventHandler<UpdateEventArgs> UpdateReceived;
 
         /// <summary>
+        /// Fired when any updates are availible
+        /// </summary>
+        public event EventHandler<StatusChangeEventArgs> StatusChanged;
+
+        /// <summary>
         /// Fired when messages are availible
         /// </summary>
         public event EventHandler<MessageEventArgs> MessageReceived;
@@ -110,8 +122,9 @@ namespace Telegram.Bot
         /// </summary>
         /// <param name="token">API token</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invvalid</exception>
-        public Client(string token)
+        public Client(string token, string logDirectory)
         {
+            LogDirectory = logDirectory;
             if (!Regex.IsMatch(token, @"^\d*:[\w\d-_]{35}$"))
                 throw new ArgumentException("Invalid token format", nameof(token));
 
@@ -167,42 +180,106 @@ namespace Telegram.Bot
         {
             cts = new CancellationTokenSource();
             var sw = new Stopwatch();
-            using (var s = new StreamWriter("getUpdates.log", true))
+
+            while (IsReceiving)
             {
-                while (IsReceiving)
+                var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
+
+                try
                 {
-                    var timeout = Convert.ToInt32(PollingTimeout.TotalSeconds);
+                    sw.Reset();
+                    sw.Start();
+                    var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
+
+                    sw.Stop();
+                    //check updates.Length
+
+                    if (updates.Length == 0)
+                    {
+                       SetStatus(Status.NotReceiving);
+                    }
+                    else if (updates.Length == 100)
+                    {
+                        SetStatus(Status.Recovering);
+                    }
+                    else SetStatus(Status.Normal);
+
 
                     try
                     {
-                        //sw.Reset();
-                        //sw.Start();
-                        var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
-
-                        //sw.Stop();
-                        //s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                        //s.Flush();
-                        foreach (var update in updates)
+                        using (var s = new StreamWriter(LogPath, true))
                         {
-                            OnUpdateReceived(new UpdateEventArgs(update));
-                            MessageOffset = update.Id + 1;
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                            s.Flush();
                         }
-
                     }
-                    catch (ApiRequestException e)
+                    finally
                     {
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        s.Flush();
+                        
+                    }
+                    foreach (var update in updates)
+                    {
+                        OnUpdateReceived(new UpdateEventArgs(update));
+                        MessageOffset = update.Id + 1;
+                    }
+
+                }
+                catch (ApiRequestException e)
+                {
+                    sw.Stop();
+                    SetStatus(Status.Error);
+                    try
+                    {
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
                         OnReceiveError(e);
                     }
-                    catch (TaskCanceledException e)
+                }
+                catch (TaskCanceledException e)
+                {
+                    sw.Stop();
+                    SetStatus(Status.Error);
+                    try
                     {
-                        sw.Stop();
-                        s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        s.Flush();
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        // do nothing
                     }
                 }
+                catch (Exception e)
+                {
+                    sw.Stop();
+                    SetStatus(Status.Error);
+                    //well.  bad things happened.  ignore it this time I guess? At least until I can figure out what the error actually is
+                    while (e.InnerException != null)
+                        e = e.InnerException;
+                    try
+                    {
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        // do nothing
+                    }
+                    
+                }
+
             }
         }
 #pragma warning restore AsyncFixer03 // Avoid fire & forget async void methods
@@ -213,6 +290,15 @@ namespace Telegram.Bot
         public void StopReceiving()
         {
             IsReceiving = false;
+        }
+
+        internal void SetStatus(Status status)
+        {
+            if (_status != status)
+            {
+                _status = status;
+                OnStatusChanged(new StatusChangeEventArgs(status));
+            }
         }
 
         #endregion
@@ -1599,15 +1685,15 @@ namespace Telegram.Bot
                             {
                                 var content = ConvertParameterValue(parameter.Value);
 
-                                if (parameter.Key == "timeout" && (int)parameter.Value != 0)
+                                if (parameter.Key == "timeout" && (int) parameter.Value != 0)
                                 {
-                                    client.Timeout = TimeSpan.FromSeconds((int)parameter.Value + 1);
+                                    client.Timeout = TimeSpan.FromSeconds((int) parameter.Value + 1);
                                 }
 
                                 if (parameter.Value is FileToSend)
                                 {
                                     client.Timeout = UploadTimeout;
-                                    form.Add(content, parameter.Key, ((FileToSend)parameter.Value).Filename);
+                                    form.Add(content, parameter.Key, ((FileToSend) parameter.Value).Filename);
                                 }
                                 else
                                     form.Add(content, parameter.Key);
@@ -1635,9 +1721,11 @@ namespace Telegram.Bot
                     _invalidToken = true;
                     throw new ApiRequestException("Invalid token", 401);
                 }
-                catch (HttpRequestException e) when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
+                catch (HttpRequestException e)
+                    when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
                 {
                 }
+
 
 #if !NETSTANDARD1_3
                 catch (UnsupportedMediaTypeException)
@@ -1645,7 +1733,10 @@ namespace Telegram.Bot
                     throw new ApiRequestException("Invalid response received", 501);
                 }
 #endif
-
+                catch (Exception e)
+                {
+                    //ignored
+                }
                 //TODO: catch more exceptions
 
                 if (responseObject == null)

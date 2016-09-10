@@ -79,7 +79,7 @@ namespace Werewolf_Node
 #elif BETA
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
-            Bot = new Client(APIToken);
+            Bot = new Client(APIToken, Path.Combine(RootDirectory, "..\\Logs"));
             Me = Bot.GetMe().Result;
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();
@@ -310,6 +310,9 @@ namespace Werewolf_Node
 
         public static void KeepAlive()
         {
+            string ver = Version.FileVersion;
+
+
             Connect();
             while (Running)
             {
@@ -317,7 +320,7 @@ namespace Werewolf_Node
 
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
-                    Thread.Sleep(10000);
+                    Thread.Sleep(5000);
                     Running = false;
                     Environment.Exit(0);
                     return;
@@ -339,11 +342,11 @@ namespace Werewolf_Node
                         CurrentGames = games.Count,
                         CurrentPlayers = games.Sum(x => x?.Players?.Count ?? 0),
                         DuplicateGamesRemoved = DupGamesKilled,
-                        ThreadCount = Process.GetCurrentProcess().Threads.Count,
+                        ThreadCount = 0,//Process.GetCurrentProcess().Threads.Count,
                         //TotalGames = GamesStarted,
                         //TotalPlayers = games.Sum(x => x.Players?.Count ?? 0) + TotalPlayers,
                         Uptime = DateTime.Now - StartupTime,
-                        Version = Version.FileVersion,
+                        Version = ver,
                         ShuttingDown = IsShuttingDown,
                         MessagesSent = MessagesSent
                     };
@@ -391,7 +394,7 @@ namespace Werewolf_Node
                         Connect();
                     }
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(500);
             }
         }
     }
