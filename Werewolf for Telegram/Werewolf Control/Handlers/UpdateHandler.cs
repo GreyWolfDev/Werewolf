@@ -984,7 +984,7 @@ namespace Werewolf_Control.Handler
                         case "extend":
                             buttons.Add(new InlineKeyboardButton(GetLocaleString("Allow", language), $"setextend|{groupid}|true"));
                             buttons.Add(new InlineKeyboardButton(GetLocaleString("Disallow", language), $"setextend|{groupid}|false"));
-                            buttons.Add(new InlineKeyboardButton(Cancel, $"setcult|{groupid}|cancel"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setextend|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
                                 GetLocaleString("AllowExtendQ", language, grp.AllowExtend == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
