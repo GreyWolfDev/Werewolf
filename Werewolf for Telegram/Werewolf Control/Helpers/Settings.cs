@@ -19,7 +19,7 @@ namespace Werewolf_Control.Helpers
         public static int AdminPort = 9060;
 #elif RELEASE2
         public static int Port = 9051;  //9051-@werewolfIIbot
-        public static int AdminPort = 9061;
+        public static int AdminPort = 9063; //9061 not responding
 #elif BETA
         public static int Port = 9052;
         public static int AdminPort = 9062;

@@ -10,18 +10,9 @@ namespace Werewolf_Control.Models
     public class IPlayer
     {
         /// <summary>
-        /// Reference to the telegram user
-        /// </summary>
-        public User TeleUser { get; set; }
-        /// <summary>
         /// The players role
         /// </summary>
         public IRole PlayerRole { get; set; } = IRole.Villager;
-
-        /// <summary>
-        /// Whether or not the player has used their ability this round
-        /// </summary>
-        public bool HasUsedAbility { get; set; } = false;
 
         /// <summary>
         /// Choice of the player they want to use their ability on
@@ -58,22 +49,14 @@ namespace Werewolf_Control.Models
         /// </summary>
         public bool Drunk { get; set; } = false;
 
-        /// <summary>
-        /// Indicates whether user has PM'd the bot.  this is required by telegram.
-        /// </summary>
-        public bool HasPM { get; set; } = false;
-
         public bool Fled { get; set; } = false;
         public ITeam Team { get; set; } = ITeam.Village;
-        public bool HasNightAction { get; set; } = false;
-        public bool HasDayAction { get; set; } = false;
         public int DayCult { get; set; } = 0;
         public int RoleModel { get; set; } = 0;
         public bool DiedFromWolf { get; set; } = false;
         public bool DiedFromKiller { get; set; } = false;
         public bool DiedFromHunter { get; set; } = false;
         public bool DiedFromLove { get; set; } = false;
-        public int MessageId { get; set; }
         public string Name { get; set; }
         public IRole OriginalRole { get; set; }
         public bool InLove { get; set; } = false;
@@ -81,34 +64,8 @@ namespace Werewolf_Control.Models
         public int DBPlayerId { get; set; } = 0;
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
-
-        public string Language { get; set; } = "English";
-        public bool Won { get; set; } = false;
-
-        public int Id;
-
-        public QuestionAsked CurrentQuestion { get; set; }
-
-
-        #region Achievement Related Stuff
-
-        public bool HasBeenVoted { get; set; } = false;
-        public bool HasStayedHome { get; set; } = false;
-        public bool HasRepeatedVisit { get; set; } = false;
-        public HashSet<int> PlayersVisited { get; set; } = new HashSet<int>();
-        public int ChangedRolesCount { get; set; } = 0;
-        public int FirstToLynchCount { get; set; } = 0;
-        public bool BulletHitVillager { get; set; } = false;
-        public int FoundBadRolesRowCount { get; set; } = 0;
-        public int FoolCorrectSeeCount { get; set; } = 0;
-        public int SerialKilledWolvesCount { get; set; } = 0;
-        public bool PackHunter { get; set; } = false;
-        public bool LastShotWasSKWolf { get; set; } = false;
-        public bool DoubleKillEnding { get; set; } = false;
-
+        public int Id { get; set; }
     }
-
-    #endregion
 
 
 

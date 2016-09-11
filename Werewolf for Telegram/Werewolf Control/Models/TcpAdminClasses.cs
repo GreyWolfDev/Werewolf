@@ -39,9 +39,15 @@ namespace Werewolf_Control.Models
         public int CurrentGames { get; set; }
         public int CurrentPlayers { get; set; }
         public TimeSpan Uptime { get; set; }
-        public HashSet<GameInfo> Games { get; set; } = new HashSet<GameInfo>();
+        public List<GameListInfo> Games { get; set; } = new List<GameListInfo>();
         public string Version { get; set; }
         public bool ShuttingDown { get; set; }
         public int MessagesSent { get; set; }
+    }
+
+    public class GetGameInfo
+    {
+        public string JType { get; set; } = "GetGameInfo";
+        public long GroupId { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -51,13 +52,15 @@ namespace Werewolf_Control.Helpers
                     dynamic m = JsonConvert.DeserializeObject(msg);
                     string t = m.JType?.ToString();
                     var nodes = Bot.Nodes.ToList();
+                    
                     if (t != null)
                     {
+                        Console.WriteLine(t);
                         switch (t)
                         {
                             case "GetStatusInfo":
-                                
                                 //web api is requesting current status
+                                Console.WriteLine("Getting Status");
                                 var status = new StatusResponseInfo
                                 {
                                     BotName = Bot.Me.Username,
@@ -76,26 +79,53 @@ namespace Werewolf_Control.Helpers
                             case "GetNodeInfo":
                                 var gni = JsonConvert.DeserializeObject<GetNodeInfo>(msg);
                                 var node = nodes.FirstOrDefault(x => x.ClientId == gni.ClientId);
+                                if (node == null)
+                                {
+                                    message.Reply("null");
+                                    return;
+                                }
                                 var nodeInfo = new NodeResponseInfo
                                 {
                                     MessagesSent = node.MessagesSent,
                                     ClientId = node.ClientId,
                                     CurrentGames = node.CurrentGames,
                                     CurrentPlayers = node.CurrentPlayers,
-                                    Games = node.Games,
+                                    Games = node.Games.Select(x => new GameListInfo { GroupId = x.GroupId, GroupName= x.ChatGroup, NumPlayers = x.Players.Count, PlayersAlive = x.Players.Count(y => !y.IsDead), State = x.State}).ToList(),
                                     ShuttingDown = node.ShuttingDown,
                                     Uptime = node.Uptime,
                                     Version = node.Version
                                 };
                                 message.Reply(JsonConvert.SerializeObject(nodeInfo));
                                 break;
+
+                            case "GetGameInfo":
+                                var ggi = JsonConvert.DeserializeObject<GetGameInfo>(msg);
+                                var game =
+                                    nodes.FirstOrDefault(x => x.Games.Any(g => g.GroupId == ggi.GroupId))?
+                                        .Games.FirstOrDefault(x => x.GroupId == ggi.GroupId);
+                                if (game == null)
+                                {
+                                    message.Reply("null");
+                                    return;
+                                }
+                                message.Reply(JsonConvert.SerializeObject(game));
+                                break;
+                            default:
+                                message.Reply("null");
+                                break;
                         }
                     }
+                    
                 }
             }
-            catch
+            catch(Exception e)
             {
                 // ignored
+                while (e.InnerException != null)
+                    e = e.InnerException;
+                Console.WriteLine(e.Message);
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "tcperror.log"), true))
+                    sw.WriteLine(e.Message + "\n" + e.StackTrace + "\n");
             }
             finally
             {

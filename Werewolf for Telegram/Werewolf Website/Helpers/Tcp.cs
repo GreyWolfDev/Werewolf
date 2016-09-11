@@ -46,20 +46,55 @@ namespace Werewolf_Website.Helpers
             }
         }
 
+        public GameInfo GetGameInfo(long groupid)
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<GameInfo>(GetResponse(new GetGameInfo { GroupId = groupid }));
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
         public StatusResponseInfo GetStatus()
         {
-            return JsonConvert.DeserializeObject<StatusResponseInfo>(GetResponse(new GetStatusInfo()));
+            var stat = GetResponse(new GetStatusInfo());
+            if (String.IsNullOrWhiteSpace(stat))
+                return new StatusResponseInfo();
+            return JsonConvert.DeserializeObject<StatusResponseInfo>(stat);
         }
 
         public NodeResponseInfo GetNodeInfo(Guid id)
         {
-            return JsonConvert.DeserializeObject<NodeResponseInfo>(GetResponse(new GetNodeInfo {ClientId = id}));
+            try
+            {
+                return JsonConvert.DeserializeObject<NodeResponseInfo>(GetResponse(new GetNodeInfo {ClientId = id}));
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         private string GetResponse(TcpRequest request)
         {
-            Connect();
-            return Client.WriteLineAndGetReply(JsonConvert.SerializeObject(request), TimeSpan.FromSeconds(30)).MessageString;
+            try
+            {
+                Client.Connect(_ip, _port);
+            }
+            catch(Exception e)
+            {
+                while (e.InnerException != null)
+                    e = e.InnerException;
+                return e.Message;
+            }
+            var response =
+                Client.WriteLineAndGetReply(JsonConvert.SerializeObject(request), TimeSpan.FromSeconds(30))?
+                    .MessageString;
+            Client.Disconnect();
+            return response;
         }
 
 
