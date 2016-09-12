@@ -130,7 +130,8 @@ namespace Werewolf_Node
             SerialKillerConversionChance = 20,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            ExtendMaxValue = 300;
 
 
 
