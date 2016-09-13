@@ -90,7 +90,7 @@ namespace Werewolf_Control.Helpers
                                     ClientId = node.ClientId,
                                     CurrentGames = node.CurrentGames,
                                     CurrentPlayers = node.CurrentPlayers,
-                                    Games = node.Games.Select(x => new GameListInfo { GroupId = x.GroupId, GroupName= x.ChatGroup, NumPlayers = x.Players.Count, PlayersAlive = x.Players.Count(y => !y.IsDead), State = x.State}).ToList(),
+                                    Games = node.Games.Select(x => new GameListInfo { GroupId = x.GroupId, GroupName= x.ChatGroup, NumPlayers = x.PlayerCount, PlayersAlive = x.Users.Count, State = x.State}).ToList(),
                                     ShuttingDown = node.ShuttingDown,
                                     Uptime = node.Uptime,
                                     Version = node.Version
@@ -100,15 +100,23 @@ namespace Werewolf_Control.Helpers
 
                             case "GetGameInfo":
                                 var ggi = JsonConvert.DeserializeObject<GetGameInfo>(msg);
-                                var game =
-                                    nodes.FirstOrDefault(x => x.Games.Any(g => g.GroupId == ggi.GroupId))?
-                                        .Games.FirstOrDefault(x => x.GroupId == ggi.GroupId);
+                                //get the node
+
+                                var gamenode = Bot.Nodes.FirstOrDefault(x => x.ClientId == ggi.ClientId);
+                                var game = gamenode?.GetGameInfo(ggi);
+                                
                                 if (game == null)
                                 {
                                     message.Reply("null");
                                     return;
                                 }
-                                message.Reply(JsonConvert.SerializeObject(game));
+                                var response = JsonConvert.SerializeObject(game);
+                                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\tcpadmin.log"), true))
+                                {
+                                    sw.WriteLine("Control Replying to GetGameInfo with:\n" + response + "\n\n");
+                                }
+
+                                message.Reply(response);
                                 break;
                             default:
                                 message.Reply("null");
@@ -276,6 +284,7 @@ namespace Werewolf_Control.Helpers
         {
             try
             {
+                
                 Server.BroadcastLine(message, node.TcpClient);
             }
             catch (Exception e)
@@ -284,6 +293,21 @@ namespace Werewolf_Control.Helpers
                     Program.Log($"------------\nError sending broadcast!\n{e.Message}\n{message}\n------------", true);
                 else throw e;
             }
+        }
+
+        public static Message WriteLineAndGetReply(this Node node, string message, bool catchError = true)
+        {
+            try
+            {
+                return Server.WriteLineAndGetReply(message, TimeSpan.FromSeconds(30), node.TcpClient);
+            }
+            catch (Exception e)
+            {
+                if (catchError)
+                    Program.Log($"------------\nError sending broadcast!\n{e.Message}\n{message}\n------------", true);
+                else throw e;
+            }
+            return null;
         }
     }
 }

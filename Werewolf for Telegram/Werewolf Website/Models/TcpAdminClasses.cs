@@ -8,7 +8,7 @@ namespace Werewolf_Website.Models
 
     public class TcpRequest
     {
-        
+
     }
     public class GetStatusInfo : TcpRequest
     {
@@ -28,6 +28,8 @@ namespace Werewolf_Website.Models
         public string Status { get; set; }
         public int MaxGames { get; set; }
         public DateTime MaxGamesTime { get; set; }
+        public string IP { get; set; }
+        public int Port { get; set; }
     }
 
     public class GetNodeInfo : TcpRequest
@@ -53,5 +55,6 @@ namespace Werewolf_Website.Models
     {
         public string JType { get; set; } = "GetGameInfo";
         public long GroupId { get; set; }
+        public Guid ClientId { get; set; }
     }
 }

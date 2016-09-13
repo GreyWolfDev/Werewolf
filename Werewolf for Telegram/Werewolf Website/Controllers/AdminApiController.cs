@@ -25,17 +25,20 @@ namespace Werewolf_Website.Controllers
         public JsonResult GetStatus()
         {
 
-            
 
-    //get info from each bot
+
+            //get info from each bot
             var response = new List<StatusResponseInfo>
             {
+                
+#if DEBUG
+                new TcpAdminConnection(DebugIP, DebugPort).GetStatus(),
+#endif
                 new TcpAdminConnection(BetaIP, BetaPort).GetStatus(),
                 new TcpAdminConnection(Bot1IP, Bot1Port).GetStatus(),
-                new TcpAdminConnection(Bot2IP, Bot2Port).GetStatus(),
-#if DEBUG
-                new TcpAdminConnection(DebugIP, DebugPort).GetStatus()
-#endif
+                new TcpAdminConnection(Bot2IP, Bot2Port).GetStatus()
+
+
             };
 
             return Json(response, JsonRequestBehavior.AllowGet);
@@ -50,7 +53,6 @@ namespace Werewolf_Website.Controllers
 #if DEBUG
             response = new TcpAdminConnection(DebugIP, DebugPort).GetNodeInfo(id);
 #endif
-            //get each bots infos
             if (String.IsNullOrEmpty(response?.Version))
                 response = new TcpAdminConnection(BetaIP, BetaPort).GetNodeInfo(id);
             if (String.IsNullOrEmpty(response?.Version))
@@ -58,22 +60,26 @@ namespace Werewolf_Website.Controllers
             if (String.IsNullOrEmpty(response?.Version))
                 response = new TcpAdminConnection(Bot2IP, Bot2Port).GetNodeInfo(id);
 
+
+
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public JsonResult GetGameInfo(long groupid)
+        public JsonResult GetGameInfo(long groupid, string clientid)
         {
             GameInfo response = null;
 #if DEBUG
-            response = new TcpAdminConnection(DebugIP, DebugPort).GetGameInfo(groupid);
+            response = new TcpAdminConnection(DebugIP, DebugPort).GetGameInfo(groupid, clientid);
 #endif
             if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(BetaIP, BetaPort).GetGameInfo(groupid);
+                response = new TcpAdminConnection(BetaIP, BetaPort).GetGameInfo(groupid, clientid);
             if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(Bot1IP, Bot1Port).GetGameInfo(groupid);
+                response = new TcpAdminConnection(Bot1IP, Bot1Port).GetGameInfo(groupid, clientid);
             if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(Bot2IP, Bot2Port).GetGameInfo(groupid);
+                response = new TcpAdminConnection(Bot2IP, Bot2Port).GetGameInfo(groupid, clientid);
+
+
 
             return Json(response, JsonRequestBehavior.AllowGet);
         }

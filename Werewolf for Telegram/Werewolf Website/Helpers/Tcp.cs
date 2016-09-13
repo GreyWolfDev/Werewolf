@@ -46,15 +46,17 @@ namespace Werewolf_Website.Helpers
             }
         }
 
-        public GameInfo GetGameInfo(long groupid)
+        public GameInfo GetGameInfo(long groupid, string clientid)
         {
+            string response = "";
             try
             {
-                return JsonConvert.DeserializeObject<GameInfo>(GetResponse(new GetGameInfo { GroupId = groupid }));
+                response = GetResponse(new GetGameInfo {GroupId = groupid, ClientId = Guid.Parse(clientid)});
+                return JsonConvert.DeserializeObject<GameInfo>(response);
             }
             catch (Exception e)
             {
-                return null;
+                return new GameInfo {Error = e.Message, RawData = response};
             }
         }
 
@@ -62,8 +64,20 @@ namespace Werewolf_Website.Helpers
         {
             var stat = GetResponse(new GetStatusInfo());
             if (String.IsNullOrWhiteSpace(stat))
-                return new StatusResponseInfo();
-            return JsonConvert.DeserializeObject<StatusResponseInfo>(stat);
+                return new StatusResponseInfo{BotName = "NO RESPONSE"};
+            StatusResponseInfo response;
+            try
+            {
+                response = JsonConvert.DeserializeObject<StatusResponseInfo>(stat);
+                
+            }
+            catch
+            {
+                response = new StatusResponseInfo {Status = stat};
+            }
+            response.IP = _ip;
+                response.Port = _port;
+                return response;
         }
 
         public NodeResponseInfo GetNodeInfo(Guid id)
@@ -83,6 +97,8 @@ namespace Werewolf_Website.Helpers
             try
             {
                 Client.Connect(_ip, _port);
+                
+                
             }
             catch(Exception e)
             {
@@ -90,8 +106,9 @@ namespace Werewolf_Website.Helpers
                     e = e.InnerException;
                 return e.Message;
             }
-            var response =
-                Client.WriteLineAndGetReply(JsonConvert.SerializeObject(request), TimeSpan.FromSeconds(30))?
+            Client.TcpClient.ReceiveBufferSize = Int32.MaxValue;
+            
+            var response = Client.WriteLineAndGetReply(JsonConvert.SerializeObject(request), TimeSpan.FromSeconds(30))?
                     .MessageString;
             Client.Disconnect();
             return response;

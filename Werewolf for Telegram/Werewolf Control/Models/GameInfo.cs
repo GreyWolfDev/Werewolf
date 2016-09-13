@@ -17,6 +17,7 @@ namespace Werewolf_Control.Models
         public string ChatGroup { get; set; }
         public GameState State { get; set; }
         public HashSet<IPlayer> Players { get; set; } = new HashSet<IPlayer>();
+        public int PlayerCount { get; set; }
         public Guid NodeId { get; set; }
 
         public void AddPlayer(Update update)

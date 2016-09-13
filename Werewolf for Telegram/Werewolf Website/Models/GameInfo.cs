@@ -14,6 +14,8 @@ namespace Werewolf_Website.Models
         public GameState State { get; set; }
         public HashSet<IPlayer> Players { get; set; } = new HashSet<IPlayer>();
         public Guid NodeId { get; set; }
+        public string Error { get; set; }
+        public string RawData { get; set; }
     }
     public enum GameState
     {
