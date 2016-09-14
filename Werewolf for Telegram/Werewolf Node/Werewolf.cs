@@ -211,18 +211,18 @@ namespace Werewolf_Node
                     {
                         if (Math.Abs(SecondsToAdd) > Settings.ExtendMaxValue)
                             SecondsToAdd = Settings.ExtendMaxValue * SecondsToAdd / Math.Abs(SecondsToAdd);
-                        i -= SecondsToAdd;
+                        i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
                         var msg = "";
-                        var remaining = Settings.GameJoinTime - i;
+                        var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
                         if (SecondsToAdd > 0)
-                             msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString().ToBold());
+                             msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
                         else
                         {
                             SecondsToAdd = -SecondsToAdd;
-                            msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString().ToBold());
+                            msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
                         }
-                        if (remaining > 0)
-                            SendWithQueue(msg); //TODO: Convert remaining seconds to mm:ss in the string (and change the strings)
+                        if (Settings.GameJoinTime > i)
+                            SendWithQueue(msg);
 
                         SecondsToAdd = 0;
                     }

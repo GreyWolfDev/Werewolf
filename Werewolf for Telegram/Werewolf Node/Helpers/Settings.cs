@@ -131,6 +131,7 @@ namespace Werewolf_Node
 #endif
 
             GameJoinTime = 180,
+            MaxJoinTime = 600,
             ExtendMaxValue = 300;
 
 
