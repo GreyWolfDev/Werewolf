@@ -99,5 +99,13 @@ namespace Werewolf_Website.Controllers
 
             return new JsonNetResult(response, JsonRequestBehavior.AllowGet);
         }
+
+        public void StopNode(string id, string ip, int port)
+        {
+            //create request
+            var request = new StopNodeRequest {ClientId = Guid.Parse(id)};
+            new TcpAdminConnection(ip, port).StopNode(request);
+
+        }
     }
 }

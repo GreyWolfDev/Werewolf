@@ -60,6 +60,22 @@ namespace Werewolf_Website.Helpers
             }
         }
 
+        public void StopNode(StopNodeRequest req)
+        {
+            try
+            {
+                if (Client.TcpClient == null || !Client.TcpClient.Connected)
+                    Client.Connect(_ip, _port);
+            }
+            catch
+            {
+                // ignored
+                return;
+            }
+            Client.TcpClient.ReceiveBufferSize = Int32.MaxValue;
+            Client.WriteLine(JsonConvert.SerializeObject(req));
+        }
+
         public StatusResponseInfo GetStatus()
         {
             var stat = GetResponse(new GetStatusInfo());

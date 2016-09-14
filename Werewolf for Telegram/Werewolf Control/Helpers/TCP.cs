@@ -129,6 +129,10 @@ namespace Werewolf_Control.Helpers
 
                                 message.Reply(response);
                                 break;
+                            case "StopNodeRequest":
+                                var snr = JsonConvert.DeserializeObject<StopNodeRequest>(msg);
+                                Bot.Nodes.FirstOrDefault(x => x.ClientId == snr.ClientId)?.ShutDown();
+                                break;
                             default:
                                 message.Reply("null");
                                 break;

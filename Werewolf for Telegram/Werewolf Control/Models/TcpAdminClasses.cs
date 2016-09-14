@@ -52,4 +52,10 @@ namespace Werewolf_Control.Models
         public long GroupId { get; set; }
         public Guid ClientId { get; set; }
     }
+
+    public class StopNodeRequest
+    {
+        public string JType { get; set; } = "StopNodeRequest";
+        public Guid ClientId { get; set; }
+    }
 }

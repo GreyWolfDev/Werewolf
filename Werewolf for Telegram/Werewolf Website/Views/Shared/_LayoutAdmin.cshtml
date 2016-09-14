@@ -16,7 +16,7 @@
     <!-- THEME CSS -->
     <link href="~/Content/essentials.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/layout-admin.css" rel="stylesheet" type="text/css" />
-    
+
 
     <!-- PAGE LEVEL SCRIPTS -->
     @*<link href="~/Content/header-1.css" rel="stylesheet" type="text/css" />*@
@@ -26,93 +26,108 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </head>
-<body>
+<body class="min">
 
-<div id="wrapper" class="clearfix">
-
-
-   
-    <aside id="aside">
-        <nav id="sideNav">
-            <ul class="nav nav-list">
-                <li class="active el_primary" id="el_0">
-                    <a class="dashboard" href="Index"></a>
-                </li>
-                <li class="el_primary" id="el_1">
-                    <a href="#">
-                        <i class="fa fa-menu-arrow pull-right"></i>
-                        <i class="main-icon fa fa-bar-chart-o"></i> <span>Bots</span>
-                    </a>
-                    <ul id="botList">
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-menu-arrow pull-right"></i>
-                                <i class="fa fa-paper-plane-o"></i>
-                                Bot 1
-                            </a>
-                            <ul id="bot1NodeList">
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-menu-arrow pull-right"></i>
-                                <i class="fa fa-paper-plane-o"></i>
-                                Bot 2
-                            </a>
-                            <ul id="bot2NodeList"></ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-menu-arrow pull-right"></i>
-                                <i class="fa fa-paper-plane-o"></i>
-                                Beta Bot
-                            </a>
-                            <ul id="betaNodeList"></ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <span id="asidebg"></span>
-
-    </aside>
-
-    <!-- HEADER -->
-    <header id="header">
-
-        <!-- Mobile Button -->
-        <button id="mobileMenuBtn"></button>
-
-        <!-- Logo -->
-        <span class="logo pull-left">
-            <img src="/images/werewolf title.png" alt="admin panel" height="35" />
-        </span>
-
-        @*<form method="get" action="page-search.html" class="search pull-left hidden-xs">
-            <input type="text" class="form-control" name="k" placeholder="Search for something..." />
-        </form>*@
-    </header>
-    <!-- /HEADER -->
+    <div id="wrapper" class="clearfix">
 
 
-<section id="middle">
-    <div id="content" class="dashboard padding-20">
-        @RenderBody()
+
+        <aside id="aside">
+            <nav id="sideNav">
+                <ul class="nav nav-list">
+                    <li class="@{
+                                   if (ViewContext.RouteData.Values["controller"].ToString() == "AdminApi")
+                                   {
+                                       <text>active</text>
+                                   }
+                               } el_primary" id="el_0">
+                        <a class="dashboard" href="@Url.Action("Index","AdminApi")">
+                            <i class="main-icon fa fa-dashboard"></i><span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="el_primary" id="el_1">
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-code"></i> <span>Bots</span>
+                        </a>
+                        <ul id="botList">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-menu-arrow pull-right"></i>
+                                    <i class="fa fa-paper-plane-o"></i>
+                                    Bot 1
+                                </a>
+                                <ul id="bot1NodeList"></ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-menu-arrow pull-right"></i>
+                                    <i class="fa fa-paper-plane-o"></i>
+                                    Bot 2
+                                </a>
+                                <ul id="bot2NodeList"></ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-menu-arrow pull-right"></i>
+                                    <i class="fa fa-paper-plane-o"></i>
+                                    Beta Bot
+                                </a>
+                                <ul id="betaNodeList"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="@{
+                                   if (ViewContext.RouteData.Values["controller"].ToString() == "GlobalBans")
+                                   {
+                                       <text>active</text>
+                                   }
+                               } el_primary" id="el_1">
+                        <a href="@Url.Action("Index","GlobalBans")">
+                            <i class="main-icon fa fa-ban"></i> <span>Global Bans</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <span id="asidebg"></span>
+
+        </aside>
+
+        <!-- HEADER -->
+        <header id="header">
+
+            <!-- Mobile Button -->
+            <button id="mobileMenuBtn"></button>
+
+            <!-- Logo -->
+            <span class="logo pull-left">
+                <img src="/images/werewolf title.png" alt="admin panel" height="35" />
+            </span>
+
+            @*<form method="get" action="page-search.html" class="search pull-left hidden-xs">
+                    <input type="text" class="form-control" name="k" placeholder="Search for something..." />
+                </form>*@
+        </header>
+        <!-- /HEADER -->
+
+
+        <section id="middle" style="margin-left: 0px;">
+            <div id="content" class="dashboard padding-20">
+                @RenderBody()
+            </div>
+        </section>
+        <!-- SCROLL TO TOP -->
+        <a href="#" id="toTop"></a>
+
+
+        <!-- PRELOADER -->
+        <div id="preloader">
+            <div class="inner">
+                <span class="loader"></span>
+            </div>
+        </div><!-- /PRELOADER -->
+
     </div>
-</section>
-    <!-- SCROLL TO TOP -->
-    <a href="#" id="toTop"></a>
-
-
-    <!-- PRELOADER -->
-    <div id="preloader">
-        <div class="inner">
-            <span class="loader"></span>
-        </div>
-    </div><!-- /PRELOADER -->
-
-</div>
     @try
     {
         RenderSection("scripts", required: false);
@@ -125,7 +140,7 @@
     <script type="text/javascript">var plugin_path = '/plugins/';</script>
 
 
-<script type="text/javascript" src="~/Scripts/scripts.js"></script>
+    <script type="text/javascript" src="~/Scripts/scripts.js"></script>
     <script type="text/javascript" src="~/Scripts/app.js"></script>
 
     <script>

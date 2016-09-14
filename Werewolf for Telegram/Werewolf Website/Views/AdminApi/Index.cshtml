@@ -50,7 +50,7 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-12">
 
         <!--
             PANEL CLASSES:
@@ -105,6 +105,9 @@
                                         <th>Node Id</th>
                                         <th>Games</th>
                                         <th>Version</th>
+                                        <th>Shutting Down</th>
+                                        <th>Uptime</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -132,6 +135,9 @@
                                         <th>Node Id</th>
                                         <th>Games</th>
                                         <th>Version</th>
+                                        <th>Shutting Down</th>
+                                        <th>Uptime</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -159,6 +165,9 @@
                                         <th>Node Id</th>
                                         <th>Games</th>
                                         <th>Version</th>
+                                        <th>Shutting Down</th>
+                                        <th>Uptime</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -237,7 +246,7 @@
                                 $("#betaBotNodeTable tbody tr").remove();
                                 $.each(v.Nodes,
                                     function(index, value) {
-                                        addRow($('#betaBotNodeTable'), value.ClientId, value.CurrentGames, value.Version);
+                                        addRow($('#betaBotNodeTable'), value.ClientId, value.CurrentGames, value.Version, value.ShuttingDown, value.Uptime, v.IP, v.Port);
                                     });
                                 break;
                             case 1:
@@ -261,7 +270,7 @@
                                 $("#bot1NodeTable tbody tr").remove();
                                 $.each(v.Nodes,
                                     function (index, value) {
-                                        addRow($('#bot1NodeTable'), value.ClientId, value.CurrentGames, value.Version);
+                                        addRow($('#bot1NodeTable'), value.ClientId, value.CurrentGames, value.Version, value.ShuttingDown, value.Uptime, v.IP, v.Port);
                                     });
                                 break;
                             case 2:
@@ -285,7 +294,7 @@
                                 $("#bot2NodeTable tbody tr").remove();
                                 $.each(v.Nodes,
                                    function (index, value) {
-                                       addRow($('#bot2NodeTable'), value.ClientId, value.CurrentGames, value.Version);
+                                       addRow($('#bot2NodeTable'), value.ClientId, value.CurrentGames, value.Version, value.ShuttingDown, value.Uptime, v.IP, v.Port);
                                    });
                                 break;
                         };
@@ -497,13 +506,36 @@
         bot3Chart.update(ctx3, chart3Options);
     };
 
-    addRow = function (table, nodeid, games, shutDown) {
-        var body = table.find('tbody').append($('<tr>')
+    stopNode = function (nodeid, ip, port) {
         
-        .append($('<td>').append(nodeid))
-        .append($('<td>').append(games))
-        .append($('<td>').append(shutDown))
-        .append($('<td>').append("<a href='/AdminApi/Node?id=" + nodeid + "' class='btn btn-default btn-xs btn-block'>View</a>")));
+        $.ajax({
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            data: { id: nodeid, ip: ip, port: port},
+            url: '/AdminApi/StopNode/'
+        });
+    }
+
+    addRow = function (table, nodeid, games, version, shutDown, uptime, ip, port) {
+        var shuttingDown = '';
+        console.log(shutDown);
+        if (shutDown === true) {
+            shuttingDown = '<i class="fa fa-times-circle" style="color: red;"></i>';
+        }
+
+        var body = table.find('tbody')
+            .append($('<tr>')
+                .append($('<td>').append(nodeid))
+                .append($('<td>').append(games))
+                .append($('<td>').append(version))
+                .append($('<td>').append(shuttingDown))
+                .append($('<td>').append(uptime))
+                .append($('<td>')
+                    .append("<a href='/AdminApi/Node?id=" +
+                        nodeid +
+                        "' class='btn btn-default btn-xs btn-block'>View</a>"))
+                .append($('<td>')
+                    .append("<button type='button' class='btn btn-danger btn-xs btn-block' onclick='stopNode(\"" + nodeid + "\", \"" + ip + "\"," + port +")'>Stop</button>")));
     }
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>

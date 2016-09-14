@@ -211,6 +211,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AspNetUsersController.cs" />
+    <Compile Include="Controllers\GlobalBansController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
@@ -261,7 +263,9 @@
     <Content Include="Content\layout-RTL.css" />
     <Content Include="Content\layout-shop.css" />
     <Content Include="Content\layout.css" />
+    <Content Include="Content\multiselect.css" />
     <Content Include="Content\plugin-hover-buttons.css" />
+    <Content Include="Content\select.css" />
     <Content Include="Content\_layout-font-rewrite.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\et-line.svg" />
@@ -1515,9 +1519,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\multiselect.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\select.js" />
     <Content Include="Scripts\view\demo.camera_slider.js" />
     <Content Include="Scripts\view\demo.elastic_slider.js" />
     <Content Include="Scripts\view\demo.graphs.flot.js" />
@@ -1573,6 +1579,17 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\AdminApi\Node.cshtml" />
     <Content Include="Views\AdminApi\Game.cshtml" />
+    <Content Include="Views\GlobalBans\Create.cshtml" />
+    <Content Include="Views\GlobalBans\Delete.cshtml" />
+    <Content Include="Views\GlobalBans\Details.cshtml" />
+    <Content Include="Views\GlobalBans\Edit.cshtml" />
+    <Content Include="Views\GlobalBans\Index.cshtml" />
+    <Content Include="Views\AspNetUsers\Create.cshtml" />
+    <Content Include="Views\AspNetUsers\Delete.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Edit.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\AspNetUsers\DisplayTemplates\RoleTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
