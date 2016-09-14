@@ -595,7 +595,7 @@ namespace Werewolf_Node
                             AddAchievement(player, Achievements.SelfLoving);
                         lover1.InLove = true;
                         //send menu for second choice....
-                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).OrderBy(x => x.Name).ToList();
+                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
                         var buttons =
                             secondChoices.Select(
                                 x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
@@ -3148,7 +3148,7 @@ namespace Werewolf_Node
 
         private void SendMenu(List<InlineKeyboardButton[]> choices, IPlayer to, string text, QuestionType qtype)
         {
-            choices = choices.OrderBy(x => x[0].Text).ToList();
+            choices = choices.ToList();
             var skip = choices.FirstOrDefault(x => x[0].Text == "Skip");
 
             if (skip != null)
@@ -3425,7 +3425,7 @@ namespace Werewolf_Node
             //send a menu to the hunter, asking who he wants to kill as he is hung....
             var hunterChoices = new List<InlineKeyboardButton[]>();
             hunterChoices.AddRange(
-                Players.Where(x => !x.IsDead).OrderBy(x => x.Name).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }));
+                Players.Where(x => !x.IsDead).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }));
 
             //raise hunter from dead long enough to shoot
             hunter.IsDead = false;
