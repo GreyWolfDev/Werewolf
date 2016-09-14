@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Web;
 using System.Web.Helpers;
 
 using System.Web.Http.Results;
@@ -31,11 +32,37 @@ namespace Werewolf_Website.Controllers
             return View();
         }
 
-        public ActionResult Game(long groupid, string clientid)
+        public ActionResult Bot(string name)
+        {
+            ViewBag.BotName = name;
+            return View();
+        }
+
+        public ActionResult Game(long groupid)
         {
             ViewBag.GroupId = groupid;
-            ViewBag.ClientId = clientid;
+            var clientid = (from r in StatusMonitor.GetStatusResponses.Where(x => x != null)
+                         from n in r.Nodes
+                         from g in n.Games
+                         where (g.GroupId == groupid)
+                         select n.ClientId).FirstOrDefault();
+            if (clientid == Guid.Empty)
+                throw new HttpException(404, "Game with Group Id not found!");
+            ViewBag.ClientId = clientid.ToString();
+
             return View();
+        }
+
+        public ActionResult Search(string query)
+        {
+            //try to find the game
+            var games = (from r in StatusMonitor.GetStatusResponses.Where(x => x != null)
+                from n in r.Nodes
+                from g in n.Games
+                where (g.GroupId.ToString().Contains(query) || g.GroupName.ToLower().Contains(query.ToLower()))
+                         select g);
+            ViewBag.Query = query;
+            return View(games);
         }
         
 
@@ -43,6 +70,12 @@ namespace Werewolf_Website.Controllers
         public JsonResult GetStatus()
         {
             return new JsonNetResult {Data= StatusMonitor.GetStatusResponses, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+        }
+
+        [HttpGet]
+        public JsonResult GetBotStatus(string botname)
+        {
+            return new JsonNetResult { Data = StatusMonitor.GetStatusResponses.FirstOrDefault(x => x.BotName == botname), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         [HttpGet]
@@ -84,20 +117,12 @@ namespace Werewolf_Website.Controllers
         [HttpGet]
         public JsonResult GetGameInfo(long groupid, string clientid)
         {
-            GameInfo response = null;
-#if DEBUG
-            response = new TcpAdminConnection(BotConnectionInfo.DebugIP, BotConnectionInfo.DebugPort).GetGameInfo(groupid, clientid);
-#endif
-            if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(BotConnectionInfo.BetaIP, BotConnectionInfo.BetaPort).GetGameInfo(groupid, clientid);
-            if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(BotConnectionInfo.Bot1IP, BotConnectionInfo.Bot1Port).GetGameInfo(groupid, clientid);
-            if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(BotConnectionInfo.Bot2IP, BotConnectionInfo.Bot2Port).GetGameInfo(groupid, clientid);
-
-
-
-            return new JsonNetResult(response, JsonRequestBehavior.AllowGet);
+            var guid = Guid.Parse(clientid);
+            //find the node
+            var node = StatusMonitor.GetStatusResponses.FirstOrDefault(x => x.Nodes.Any(n => n.ClientId == guid));
+            if (node == null)
+                return null;
+            return new JsonNetResult(new TcpAdminConnection(node.IP, node.Port).GetGameInfo(groupid, clientid), JsonRequestBehavior.AllowGet);
         }
 
         public void StopNode(string id, string ip, int port)

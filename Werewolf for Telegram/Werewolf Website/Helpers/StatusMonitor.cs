@@ -116,7 +116,7 @@ namespace Werewolf_Website.Helpers
             _bot1Stat,
             _bot2Stat,
 #if DEBUG
-            _debugBotStat
+            //_debugBotStat
 #endif
         };
     }

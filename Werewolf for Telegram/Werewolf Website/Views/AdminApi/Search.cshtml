@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Werewolf_Website.Models.GameListInfo>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Search Results for: @ViewBag.Query</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </th>
+        <th>
+            Players
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            <!--view-->
+        </th>
+        <th>
+            <!--kill-->
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupName)
+            </td>
+            <td>
+                @item.PlayersAlive / @item.NumPlayers
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                <a href='@Url.Action("Game","AdminApi",new {groupid = item.GroupId})' class='btn btn-default btn-xs btn-block'>View</a>
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    }
+
+</table>

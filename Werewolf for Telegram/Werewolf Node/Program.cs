@@ -205,8 +205,8 @@ namespace Werewolf_Node
                                     GroupId = g.ChatId,
                                     NodeId = ClientId,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                                    Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)),
-                                    Players = new HashSet<IPlayer>(g.Players)
+                                    Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
+                                    Players = new HashSet<IPlayer>(g.Players??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
                                 };
                                 message.Reply(JsonConvert.SerializeObject(gi));
                                 break;
@@ -339,7 +339,7 @@ namespace Werewolf_Node
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
                 {
                     Thread.Sleep(5000);
-                    Running = false;
+                    //Running = false;
                     Environment.Exit(0);
                     return;
                 }
@@ -372,7 +372,10 @@ namespace Werewolf_Node
                     foreach (var g in games)
                     {
                         if (g.Players == null)
+                        {
+                            Games.Remove(g);
                             continue;
+                        }
                         var gi = new GameInfo
                         {
                             Language = g.Language,
@@ -380,8 +383,8 @@ namespace Werewolf_Node
                             GroupId = g.ChatId,
                             NodeId = ClientId,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)),
-                            PlayerCount = g.Players.Count
+                            Users = g.Players != null ? new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)) : new HashSet<int>(),
+                            PlayerCount = g.Players?.Count ?? 0
                             //Players = new HashSet<IPlayer>(g.Players)
                         };
                         info.Games.Add(gi);

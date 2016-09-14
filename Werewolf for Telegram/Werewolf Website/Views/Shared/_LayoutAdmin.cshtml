@@ -52,28 +52,28 @@
                         </a>
                         <ul id="botList">
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-menu-arrow pull-right"></i>
+                                <a href="@Url.Action("Bot","AdminApi",new {name = "werewolfbot"})">
+                                    
                                     <i class="fa fa-paper-plane-o"></i>
                                     Bot 1
                                 </a>
-                                <ul id="bot1NodeList"></ul>
+                                
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-menu-arrow pull-right"></i>
+                                <a href="@Url.Action("Bot","AdminApi",new {name = "werewolfIIbot"})">
+
                                     <i class="fa fa-paper-plane-o"></i>
                                     Bot 2
                                 </a>
-                                <ul id="bot2NodeList"></ul>
+                                
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-menu-arrow pull-right"></i>
+                                <a href="@Url.Action("Bot","AdminApi",new {name = "werewolfbetabot"})">
+
                                     <i class="fa fa-paper-plane-o"></i>
                                     Beta Bot
                                 </a>
-                                <ul id="betaNodeList"></ul>
+                                
                             </li>
                         </ul>
                     </li>
@@ -104,9 +104,9 @@
                 <img src="/images/werewolf title.png" alt="admin panel" height="35" />
             </span>
 
-            @*<form method="get" action="page-search.html" class="search pull-left hidden-xs">
-                    <input type="text" class="form-control" name="k" placeholder="Search for something..." />
-                </form>*@
+            <form method="get" action="@Url.Action("Search","AdminApi")" class="search pull-left hidden-xs">
+                <input type="text" class="form-control" name="query" placeholder="Search for a game..." />
+            </form>
         </header>
         <!-- /HEADER -->
 
