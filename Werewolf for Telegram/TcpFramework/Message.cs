@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Net.Sockets;
 using TcpFramework.Server;
 
@@ -43,13 +45,17 @@ namespace TcpFramework
 
         public void Reply(byte[] data)
         {
+            TcpClient.SendBufferSize = Int32.MaxValue;
             TcpClient.GetStream().Write(data, 0, data.Length);
         }
 
         public void Reply(string data)
         {
             if (string.IsNullOrEmpty(data)) { return; }
-            Reply(_encoder.GetBytes(data));
+            var bytes = _encoder.GetBytes(data);
+            using (var sw = new StreamWriter("reply.log"))
+                sw.WriteLine($"Original data length: {data.Length}\nBytes length: {bytes.Length}\nData: {data}\n\nBytes: {bytes}");
+            Reply(bytes);
         }
 
         public void ReplyLine(string data)

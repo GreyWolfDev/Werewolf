@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Werewolf_Control</RootNamespace>
-    <AssemblyName>Werewolf Control</AssemblyName>
+    <AssemblyName>Werewolf Control 2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -124,8 +124,11 @@
     <Compile Include="Helpers\UpdateHelper.cs" />
     <Compile Include="Models\Command.cs" />
     <Compile Include="Models\GameInfo.cs" />
+    <Compile Include="Models\GameListInfo.cs" />
+    <Compile Include="Models\IPlayer.cs" />
     <Compile Include="Models\Node.cs" />
     <Compile Include="Models\SpamDetector.cs" />
+    <Compile Include="Models\TcpAdminClasses.cs" />
     <Compile Include="Models\TcpInfoClasses.cs" />
     <Compile Include="Models\UserMessage.cs" />
     <Compile Include="Program.cs" />

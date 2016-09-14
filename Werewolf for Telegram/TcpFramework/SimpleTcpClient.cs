@@ -101,19 +101,38 @@ namespace TcpFramework
 
             while (c.Available > 0 && c.Connected)
             {
-                byte[] nextByte = new byte[1];
-                c.Client.Receive(nextByte, 0, 1, SocketFlags.None);
+                byte[] nextByte = new byte[c.Available];
+                c.Client.Receive(nextByte, 0, nextByte.Length, SocketFlags.None);
                 bytesReceived.AddRange(nextByte);
-                if (nextByte[0] == delimiter)
+                var delIndex = Array.IndexOf(nextByte, delimiter);
+                if (delIndex != -1)
                 {
+                    var part = nextByte.Take(delIndex + 1);
+                    var next = nextByte.Skip(delIndex + 1);
+                    _queuedMsg.AddRange(part);
                     byte[] msg = _queuedMsg.ToArray();
                     _queuedMsg.Clear();
+                    _queuedMsg.AddRange(next);
                     NotifyDelimiterMessageRx(c, msg);
                 }
                 else
                 {
                     _queuedMsg.AddRange(nextByte);
                 }
+                Thread.Sleep(75);
+                //byte[] nextByte = new byte[1];
+                //c.Client.Receive(nextByte, 0, 1, SocketFlags.None);
+                //bytesReceived.AddRange(nextByte);
+                //if (nextByte[0] == delimiter)
+                //{
+                //    byte[] msg = _queuedMsg.ToArray();
+                //    _queuedMsg.Clear();
+                //    NotifyDelimiterMessageRx(c, msg);
+                //}
+                //else
+                //{
+                //    _queuedMsg.AddRange(nextByte);
+                //}
             }
 
             if (bytesReceived.Count > 0)
@@ -143,6 +162,7 @@ namespace TcpFramework
         public void Write(byte[] data)
         {
             if (_client == null) { throw new Exception("Cannot send data to a null TcpClient (check to see if Connect was called)"); }
+            _client.ReceiveBufferSize = Int32.MaxValue;
             _client.GetStream().Write(data, 0, data.Length);
         }
 

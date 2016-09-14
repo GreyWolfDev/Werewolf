@@ -192,6 +192,24 @@ namespace Werewolf_Node
                                 game = Games.FirstOrDefault(x => x.ChatId == gki.GroupId);
                                 game?.Kill();
                                 break;
+                            case "GetGameInfo":
+                                var ggi = JsonConvert.DeserializeObject<GetGameInfo>(msg);
+                                var g = Games.FirstOrDefault(x => x.ChatId == ggi.GroupId);
+                                if (g == null)
+                                    message.Reply("null");
+                                //build our response
+                                var gi = new GameInfo
+                                {
+                                    Language = g.Language,
+                                    ChatGroup = g.ChatGroup,
+                                    GroupId = g.ChatId,
+                                    NodeId = ClientId,
+                                    State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
+                                    Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)),
+                                    Players = new HashSet<IPlayer>(g.Players)
+                                };
+                                message.Reply(JsonConvert.SerializeObject(gi));
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;
@@ -362,7 +380,9 @@ namespace Werewolf_Node
                             GroupId = g.ChatId,
                             NodeId = ClientId,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id))
+                            Users = new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)),
+                            PlayerCount = g.Players.Count
+                            //Players = new HashSet<IPlayer>(g.Players)
                         };
                         info.Games.Add(gi);
                     }

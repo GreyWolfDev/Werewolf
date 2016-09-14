@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -261,6 +262,23 @@ namespace TcpFramework
         internal void NotifyClientDisconnected(Server.ServerListener listener, ConnectedClient disconnectedClient)
         {
             ClientDisconnected?.Invoke(this, disconnectedClient);
+        }
+
+        public Message WriteLineAndGetReply(string data, TimeSpan timeout, TcpClient client)
+        {
+            Message mReply = null;
+            DataReceived += (s, e) => { mReply = e; };
+            BroadcastLine(data, client);
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            while (mReply == null && sw.Elapsed < timeout)
+            {
+                Thread.Sleep(10);
+            }
+
+            return mReply;
         }
 
         #region Debug logging
