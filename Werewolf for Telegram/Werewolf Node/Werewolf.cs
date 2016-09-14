@@ -3646,7 +3646,7 @@ namespace Werewolf_Node
             if (Players == null) return;
             if ((DateTime.Now - TimeStarted).Hours >= 1 & !LongHaulReached)
             {
-                foreach (var p in Players)
+                foreach (var p in Players.Where(x => !x.IsDead && !x.Fled))
                 {
                     AddAchievement(p, Achievements.LongHaul);
                 }
