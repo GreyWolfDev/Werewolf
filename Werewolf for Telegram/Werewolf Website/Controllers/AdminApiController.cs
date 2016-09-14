@@ -20,49 +20,65 @@ namespace Werewolf_Website.Controllers
     [RequireHttps]
     public class AdminApiController : Controller
     {
-        private JsonSerializerSettings settings = new JsonSerializerSettings();
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Node(string id)
+        {
+            ViewBag.NodeId = id;
+            return View();
+        }
+
+        public ActionResult Game(long groupid, string clientid)
+        {
+            ViewBag.GroupId = groupid;
+            ViewBag.ClientId = clientid;
+            return View();
+        }
+        
+
         [HttpGet]
         public JsonResult GetStatus()
         {
-
-
-
-            //get info from each bot
-            var response = new List<StatusResponseInfo>
-            {
-                
-#if DEBUG
-                new TcpAdminConnection(DebugIP, DebugPort).GetStatus(),
-#endif
-                new TcpAdminConnection(BetaIP, BetaPort).GetStatus(),
-                new TcpAdminConnection(Bot1IP, Bot1Port).GetStatus(),
-                new TcpAdminConnection(Bot2IP, Bot2Port).GetStatus()
-
-
-            };
-
-            return Json(response, JsonRequestBehavior.AllowGet);
-
+            return new JsonNetResult {Data= StatusMonitor.GetStatusResponses, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
         }
 
         [HttpGet]
         public JsonResult GetNodeInfo(string clientid)
         {
-            var id = Guid.Parse(clientid);
-            NodeResponseInfo response = null;
-#if DEBUG
-            response = new TcpAdminConnection(DebugIP, DebugPort).GetNodeInfo(id);
-#endif
-            if (String.IsNullOrEmpty(response?.Version))
-                response = new TcpAdminConnection(BetaIP, BetaPort).GetNodeInfo(id);
-            if (String.IsNullOrEmpty(response?.Version))
-                response = new TcpAdminConnection(Bot1IP, Bot1Port).GetNodeInfo(id);
-            if (String.IsNullOrEmpty(response?.Version))
-                response = new TcpAdminConnection(Bot2IP, Bot2Port).GetNodeInfo(id);
+            Guid id;
+            if (!Guid.TryParse(clientid, out id)) return null;
+            //NodeResponseInfo response = null;
+
+            foreach (var bot in StatusMonitor.GetStatusResponses)
+            {
+                if (bot?.Nodes != null)
+                {
+                    if (bot.Nodes.Any(n => n.ClientId == id))
+                    {
+                        return new JsonNetResult {Data =bot.Nodes.FirstOrDefault(x => x.ClientId == id), JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+                    }
+                }
+            }
+            //var result =
+            //    StatusMonitor.GetStatusResponses.FirstOrDefault(x => x.Nodes != null && x.Nodes.Any(n => n.ClientId == id))?
+            //        .Nodes.FirstOrDefault(x => x.ClientId == id);
+
+//#if DEBUG
+//            response = new TcpAdminConnection(BotConnectionInfo.DebugIP, BotConnectionInfo.DebugPort).GetNodeInfo(id);
+//#endif
+//            if (String.IsNullOrEmpty(response?.Version))
+//                response = new TcpAdminConnection(BotConnectionInfo.BetaIP, BotConnectionInfo.BetaPort).GetNodeInfo(id);
+//            if (String.IsNullOrEmpty(response?.Version))
+//                response = new TcpAdminConnection(BotConnectionInfo.Bot1IP, BotConnectionInfo.Bot1Port).GetNodeInfo(id);
+//            if (String.IsNullOrEmpty(response?.Version))
+//                response = new TcpAdminConnection(BotConnectionInfo.Bot2IP, BotConnectionInfo.Bot2Port).GetNodeInfo(id);
 
 
-
-            return Json(response, JsonRequestBehavior.AllowGet);
+            return null;
+            //   return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -70,31 +86,18 @@ namespace Werewolf_Website.Controllers
         {
             GameInfo response = null;
 #if DEBUG
-            response = new TcpAdminConnection(DebugIP, DebugPort).GetGameInfo(groupid, clientid);
+            response = new TcpAdminConnection(BotConnectionInfo.DebugIP, BotConnectionInfo.DebugPort).GetGameInfo(groupid, clientid);
 #endif
             if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(BetaIP, BetaPort).GetGameInfo(groupid, clientid);
+                response = new TcpAdminConnection(BotConnectionInfo.BetaIP, BotConnectionInfo.BetaPort).GetGameInfo(groupid, clientid);
             if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(Bot1IP, Bot1Port).GetGameInfo(groupid, clientid);
+                response = new TcpAdminConnection(BotConnectionInfo.Bot1IP, BotConnectionInfo.Bot1Port).GetGameInfo(groupid, clientid);
             if (String.IsNullOrEmpty(response?.Language))
-                response = new TcpAdminConnection(Bot2IP, Bot2Port).GetGameInfo(groupid, clientid);
+                response = new TcpAdminConnection(BotConnectionInfo.Bot2IP, BotConnectionInfo.Bot2Port).GetGameInfo(groupid, clientid);
 
 
 
-            return Json(response, JsonRequestBehavior.AllowGet);
+            return new JsonNetResult(response, JsonRequestBehavior.AllowGet);
         }
-
-        //TODO move these settings to registry
-
-        public static int DebugPort = 9059;
-        public static int Bot1Port = 9060;
-        public static int Bot2Port = 9063;
-        public static int BetaPort = 9062;
-
-        public static string DebugIP = "localhost";
-        public static string Bot1IP = "138.201.172.151";
-        public static string Bot2IP = "138.201.172.151";
-        public static string BetaIP = "168.61.40.195"; //beta bot runs on same server as website
-
     }
 }

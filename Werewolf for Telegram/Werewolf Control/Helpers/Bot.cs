@@ -30,6 +30,7 @@ namespace Werewolf_Control.Helpers
         public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
         public static long CommandsReceived = 0;
+        public static long MessagesProcessed = 0;
         public static long MessagesReceived = 0;
         public static long TotalPlayers = 0;
         public static long TotalGames = 0;
@@ -97,6 +98,7 @@ namespace Werewolf_Control.Helpers
             Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
             Api.ReceiveError += ApiOnReceiveError;
             Api.StatusChanged += ApiOnStatusChanged;
+            Api.UpdatesReceived += ApiOnUpdatesReceived;
             Me = Api.GetMe().Result;
 
             Console.Title += " " + Me.Username;
@@ -105,6 +107,11 @@ namespace Werewolf_Control.Helpers
             StartTime = DateTime.UtcNow;
             //now we can start receiving
             Api.StartReceiving();
+        }
+
+        private static void ApiOnUpdatesReceived(object sender, UpdatesReceivedEventArgs updatesReceivedEventArgs)
+        {
+            MessagesReceived += updatesReceivedEventArgs.UpdateCount;
         }
 
         private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)

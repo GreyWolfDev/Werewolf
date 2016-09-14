@@ -219,6 +219,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BotConnectionInfo.cs" />
     <Compile Include="Helpers\StatusMonitor.cs" />
     <Compile Include="Helpers\Tcp.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -226,6 +227,7 @@
     <Compile Include="Models\GameListInfo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IPlayer.cs" />
+    <Compile Include="Models\JsonNetResult.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TcpAdminClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -251,6 +253,7 @@
     <Content Include="Content\header-3.css" />
     <Content Include="Content\header-4.css" />
     <Content Include="Content\header-5.css" />
+    <Content Include="Content\layout-admin.css" />
     <Content Include="Content\layout-dark.css" />
     <Content Include="Content\layout-datatables.css" />
     <Content Include="Content\layout-footable-minimal.css" />
@@ -1366,6 +1369,7 @@
     <Content Include="plugins\widget.twittie\twittie.min.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="ApplicationInsights.config" />
@@ -1565,6 +1569,10 @@
     <Content Include="Views\Stats\Index.cshtml" />
     <Content Include="Views\Stats\Group.cshtml" />
     <Content Include="Views\Stats\Player.cshtml" />
+    <Content Include="Views\AdminApi\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\AdminApi\Node.cshtml" />
+    <Content Include="Views\AdminApi\Game.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

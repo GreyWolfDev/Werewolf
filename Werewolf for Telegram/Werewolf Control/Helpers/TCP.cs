@@ -64,11 +64,22 @@ namespace Werewolf_Control.Helpers
                                 var status = new StatusResponseInfo
                                 {
                                     BotName = Bot.Me.Username,
-                                    MessagesPerSecondIn = Program.MessagesProcessed.FirstOrDefault(),
+                                    MessagesProcPerSecond = Program.MessagesProcessed.FirstOrDefault(),
                                     MessagesPerSecondOut = Program.MessagesSent.FirstOrDefault(),
+                                    MessagesPerSecondIn = Program.MessagesReceived.FirstOrDefault(),
                                     MaxGames = Program.MaxGames,
                                     MaxGamesTime = Program.MaxTime,
-                                    NodeIds = nodes.Select(x => x.ClientId).ToList(),
+                                    Nodes = nodes.Select(n => new NodeResponseInfo
+                                    {
+                                        MessagesSent = n.MessagesSent,
+                                        ClientId = n.ClientId,
+                                        CurrentGames = n.CurrentGames,
+                                        CurrentPlayers = n.CurrentPlayers,
+                                        Games = n.Games.Select(x => new GameListInfo { GroupId = x.GroupId, GroupName = x.ChatGroup, NumPlayers = x.PlayerCount, PlayersAlive = x.Users.Count, State = x.State }).ToList(),
+                                        ShuttingDown = n.ShuttingDown,
+                                        Uptime = n.Uptime,
+                                        Version = n.Version
+                                    }).ToList(),
                                     NumGames = nodes.Sum(x => x.CurrentGames),
                                     NumPlayers = nodes.Sum(x => x.CurrentPlayers),
                                     Uptime = DateTime.UtcNow - Bot.StartTime,

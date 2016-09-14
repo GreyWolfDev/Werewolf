@@ -18,7 +18,8 @@ namespace Werewolf_Control.Models
         public int NumGames { get; set; }
         public int NumPlayers { get; set; }
         public TimeSpan Uptime { get; set; }
-        public List<Guid> NodeIds { get; set; }
+        public List<NodeResponseInfo> Nodes { get; set; }
+        public long MessagesProcPerSecond { get; set; }
         public long MessagesPerSecondIn { get; set; }
         public long MessagesPerSecondOut { get; set; }
         public string Status { get; set; }

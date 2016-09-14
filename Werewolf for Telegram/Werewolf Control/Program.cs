@@ -21,12 +21,12 @@ namespace Werewolf_Control
         private static bool _writingInfo = false;
         internal static PerformanceCounter CpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         internal static float AvgCpuTime;
-        private static List<float> CpuTimes = new List<float>();
+        ///private static List<float> CpuTimes = new List<float>();
+        internal static List<long> MessagesReceived = new List<long>();
         internal static List<long> MessagesProcessed = new List<long>();
         internal static List<long> MessagesSent = new List<long>();
-        private static long _previousMessages, _previousMessagesTx;
-        internal static float MessageRxPerSecond;
-        internal static float MessageTxPerSecond;
+        private static long _previousMessages, _previousMessagesTx, _previousMessagesRx;
+        internal static float MessagePxPerSecond, MessageRxPerSecond, MessageTxPerSecond;
         internal static int NodeMessagesSent = 0;
         private static System.Timers.Timer _timer;
         public static int MaxGames;
@@ -93,12 +93,12 @@ namespace Werewolf_Control
         {
             try
             {
-                var newMessages = Bot.MessagesReceived - _previousMessages;
-                _previousMessages = Bot.MessagesReceived;
+                var newMessages = Bot.MessagesProcessed - _previousMessages;
+                _previousMessages = Bot.MessagesProcessed;
                 MessagesProcessed.Insert(0, newMessages);
                 if (MessagesProcessed.Count > 60)
                     MessagesProcessed.RemoveAt(60);
-                MessageRxPerSecond = MessagesProcessed.Max();
+                MessagePxPerSecond = MessagesProcessed.Max();
 
                 newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
                 _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
@@ -106,6 +106,13 @@ namespace Werewolf_Control
                 if (MessagesSent.Count > 60)
                     MessagesSent.RemoveAt(60);
                 MessageTxPerSecond = MessagesSent.Max();
+
+                newMessages = Bot.MessagesReceived - _previousMessagesRx;
+                _previousMessagesRx = Bot.MessagesReceived;
+                MessagesReceived.Insert(0, newMessages);
+                if (MessagesReceived.Count > 60)
+                    MessagesReceived.RemoveAt(60);
+                MessageRxPerSecond = MessagesProcessed.Max();
             }
             catch
             {
@@ -150,12 +157,12 @@ namespace Werewolf_Control
             {
                 try
                 {
-                    var newMessages = Bot.MessagesReceived - _previousMessages;
-                    _previousMessages = Bot.MessagesReceived;
+                    var newMessages = Bot.MessagesProcessed - _previousMessages;
+                    _previousMessages = Bot.MessagesProcessed;
                     MessagesProcessed.Insert(0, newMessages);
                     if (MessagesProcessed.Count > 10)
                         MessagesProcessed.RemoveAt(10);
-                    MessageRxPerSecond = (float)MessagesProcessed.Average() / 10;
+                    MessagePxPerSecond = (float)MessagesProcessed.Average() / 10;
 
                     newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
                     _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
@@ -173,26 +180,26 @@ namespace Werewolf_Control
             }
         }
 
-        private static void CpuMonitor()
-        {
-            while (Running)
-            {
-                try
-                {
-                    CpuTimes.Insert(0, CpuCounter.NextValue());
-                    if (CpuTimes.Count > 10)
-                        CpuTimes.RemoveAt(10);
-                    AvgCpuTime = CpuTimes.Average();
+        //private static void CpuMonitor()
+        //{
+        //    while (Running)
+        //    {
+        //        try
+        //        {
+        //            CpuTimes.Insert(0, CpuCounter.NextValue());
+        //            if (CpuTimes.Count > 10)
+        //                CpuTimes.RemoveAt(10);
+        //            AvgCpuTime = CpuTimes.Average();
 
-                }
-                catch
-                {
-                    // ignored
-                }
+        //        }
+        //        catch
+        //        {
+        //            // ignored
+        //        }
 
-                Thread.Sleep(1000);
-            }
-        }
+        //        Thread.Sleep(1000);
+        //    }
+        //}
 
         private static void NodeMonitor()
         {
@@ -211,7 +218,7 @@ namespace Werewolf_Control
                     var TotalGames = Nodes.Sum(x => x.TotalGames);
                     //var NumThreads = Process.GetCurrentProcess().Threads.Count;
                     var Uptime = DateTime.UtcNow - Bot.StartTime;
-                    var MessagesRx = Bot.MessagesReceived;
+                    var MessagesRx = Bot.MessagesProcessed;
                     var CommandsRx = Bot.CommandsReceived;
                     var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
 
@@ -223,7 +230,7 @@ namespace Werewolf_Control
                     //Threads: {NumThreads}\t
                     var msg =
                         $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Uptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessageRxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
+                        $"Uptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessagePxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
                         $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
 
 

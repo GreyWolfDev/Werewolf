@@ -96,9 +96,8 @@ namespace Werewolf_Website.Helpers
         {
             try
             {
-                Client.Connect(_ip, _port);
-                
-                
+                if (Client.TcpClient == null || !Client.TcpClient.Connected)
+                    Client.Connect(_ip, _port);
             }
             catch(Exception e)
             {
@@ -110,7 +109,7 @@ namespace Werewolf_Website.Helpers
             
             var response = Client.WriteLineAndGetReply(JsonConvert.SerializeObject(request), TimeSpan.FromSeconds(30))?
                     .MessageString;
-            Client.Disconnect();
+            
             return response;
         }
 

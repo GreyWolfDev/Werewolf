@@ -214,7 +214,7 @@ namespace Werewolf_Control.Handler
         internal static void HandleUpdate(Update update)
         {
             {
-                Bot.MessagesReceived++;
+                Bot.MessagesProcessed++;
 
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
@@ -523,7 +523,7 @@ namespace Werewolf_Control.Handler
 
         internal static void HandleCallback(CallbackQuery query)
         {
-            Bot.MessagesReceived++;
+            Bot.MessagesProcessed++;
             Bot.CommandsReceived++;
             using (var DB = new WWContext())
             {
