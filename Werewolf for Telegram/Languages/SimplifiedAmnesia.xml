@@ -45,7 +45,7 @@
     <value>【{0}】加入了这场游戏。\n已有 {1} 人参加（最少 {2} 人，最多 {3} 人）。</value>
   </string>
   <string key="PMTheBot">
-    <value>【{0}】， 请立即点 {1}，按 start。如果你不这样做，我就无法告诉你在游戏中的角色了~</value>
+    <value>【{0}】， 请立即点 {1}，按 start。如果你不这样做，就没法加入游戏了~</value>
   </string>
   <string key="DeadFlee">
     <value>你无法逃走，因为你已经死了！ 回墓地好好躺着吧……</value>
@@ -302,7 +302,7 @@
     <value>#狼人胜！</value>
   </string>
   <string key="VillageWins" >
-    <value>#村民胜！ 所有狼人都已消失！</value>
+    <value>#村民胜！</value>
   </string>
   <string key="TannerWins" >
     <value>糟糕！你们把皮匠处决掉了！他轻轻松松就赢了！ #皮匠胜</value>
@@ -882,12 +882,10 @@
     <value>取消</value>
   </string>
   <string key="AllowFleeQ">
-    <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>是否允许游戏中逃跑?\n提示：玩家总是可以在游戏开始前逃跑。\n游戏中允许逃跑的状态为：{0}（不是 not 即表示允许）</value>
+    <value>是否允许游戏中逃跑?\n提示：玩家总是可以在游戏开始前逃跑。\n游戏中允许逃跑的状态为： {0}（不是 not 即表示允许）</value>
   </string>
   <string key="AllowFleeA">
-    <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>游戏中允许逃跑的状态为：{0}。</value>
+    <value>游戏中允许逃跑的状态为： {0}。</value>
   </string>
   <string key="MaxPlayersQ">
     <value>最大玩家数量?\n当前是: {0}</value>
@@ -971,11 +969,6 @@
     <value>目前的玩家列表</value>
   </string>
   <string key="UnableToGetList">
-    <value>不能在游戏开始前获得玩家列表 _(:з」∠)_\n其实是机器人偷懒啦，去翻下记录呗~</value>
-  </string>
-   <string key="YouJoined">
-    <!-- 0 - Group Name -->
-    <value>欢迎来到 {0} 的屠杀盛宴！准备好成为暴徒了么？</value>
-    <value>欢迎来到 {0} 的屠杀盛宴！准备好互相伤害了么？</value>
+    <value>没能获得玩家列表 _(:з」∠)_</value>
   </string>
 </strings>
