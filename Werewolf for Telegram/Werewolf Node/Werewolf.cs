@@ -1922,7 +1922,7 @@ namespace Werewolf_Node
                 if (Players == null) return;
                 if (DbGroup.ShowRoles != false)
                 {
-                    foreach (var p in Players.Where(x => x.DiedLastNight && x.DiedFromWolf))
+                    foreach (var p in Players.Where(x => x.DiedLastNight && x.DiedFromWolf && !x.DiedGuardingWolf))
                     {
                         string msg;
                         switch (p.PlayerRole)
@@ -2690,6 +2690,7 @@ namespace Werewolf_Node
                             ga.TimeDied = DateTime.Now;
                             ga.DiedLastNight = true;
                             ga.DiedFromWolf = true;
+                            ga.DiedGuardingWolf = true;
                             DBKill(save, ga, KillMthd.GuardWolf);
                             Send(GetLocaleString("GuardWolf"), ga.Id);
                         }
