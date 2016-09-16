@@ -524,7 +524,7 @@ namespace Werewolf_Control.Handler
         internal static void HandleCallback(CallbackQuery query)
         {
             Bot.MessagesProcessed++;
-            Bot.CommandsReceived++;
+            //Bot.CommandsReceived++;
             using (var DB = new WWContext())
             {
                 try
@@ -532,7 +532,7 @@ namespace Werewolf_Control.Handler
                     string[] args = query.Data.Split('|');
                     InlineKeyboardMarkup menu;
                     Group grp;
-                    Player p = null;
+                    Player p = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
                     List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
                     long groupid = 0;
                     if (args[0] == "vote")
@@ -543,17 +543,17 @@ namespace Werewolf_Control.Handler
                     }
 
                     groupid = long.Parse(args[1]);
+
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
                     if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status")
                         return;
                     if (grp == null)
                     {
-                        p = DB.Players.FirstOrDefault(x => x.TelegramId == groupid);
                         if (p == null && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups") //why am i doing this????  TODO: update later to array contains...
                             return;
                     }
 
-                    var language = GetLanguage(grp?.GroupId ?? p.TelegramId);
+                    var language = GetLanguage(p?.TelegramId ?? grp.GroupId);
                     var command = args[0];
                     var choice = "";
                     if (args.Length > 2)
