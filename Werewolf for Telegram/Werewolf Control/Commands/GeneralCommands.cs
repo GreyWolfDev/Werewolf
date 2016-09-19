@@ -121,6 +121,7 @@ namespace Werewolf_Control
                     p = new Player
                     {
                         TelegramId = update.Message.From.Id,
+                        Language = "English",
 #if RELEASE
                         HasPM = update.Message.Chat.Type == ChatType.Private
 #elif RELEASE2
@@ -172,9 +173,9 @@ namespace Werewolf_Control
 
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
 
-
-            var curLang = langs.First(x => x.FileName == (p.Language));
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", GetLanguage(update.Message.From.Id), curLang.Base),
+            var curLangFileName = GetLanguage(update.Message.From.Id);
+            var curLang = langs.First(x => x.FileName == curLangFileName);
+            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang.Base),
                 replyMarkup: menu);
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
