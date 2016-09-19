@@ -17,13 +17,25 @@ namespace Werewolf_Control
         [Command(Trigger = "startgame", Blockable = true, InGroupOnly = true)]
         public static void StartGame(Update update, string[] args)
         {
-            StartGame(false, update);
+            if (!Program.MaintMode)
+                StartGame(false, update);
+            else
+            {
+                Send("Sorry, we are about to start maintenance.  Please check @werewolfdev for more information.",
+                    update.Message.Chat.Id);
+            }
         }
 
         [Command(Trigger = "startchaos", Blockable = true, InGroupOnly = true)]
         public static void StartChaos(Update update, string[] args)
         {
-            StartGame(true, update);
+            if (!Program.MaintMode)
+                StartGame(true, update);
+            else
+            {
+                Send("Sorry, we are about to start maintenance.  Please check @werewolfdev for more information.",
+                    update.Message.Chat.Id);
+            }
         }
 
         [Command(Trigger = "join", Blockable = true, InGroupOnly = true)]

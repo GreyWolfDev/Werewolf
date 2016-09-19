@@ -107,6 +107,12 @@ namespace Werewolf_Control
 
         }
 
+        [Command(Trigger = "maintenance", DevOnly = true)]
+        public static void Maintenenace(Update u, string[] args)
+        {
+            //stop accepting all new games.
+        }
+
         [Command(Trigger = "winchart", DevOnly = true)]
         public static void WinChart(Update update, string[] args)
         {

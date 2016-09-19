@@ -31,6 +31,7 @@ namespace Werewolf_Control
         private static System.Timers.Timer _timer;
         public static int MaxGames;
         public static DateTime MaxTime = DateTime.MinValue;
+        public static bool MaintMode = false;
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -282,6 +283,7 @@ namespace Werewolf_Control
 
 
 #if !DEBUG
+                    
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
                     {
@@ -289,16 +291,19 @@ namespace Werewolf_Control
                         Nodes.First().ShutDown();
                     }
 
-                    if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
+                    if (!MaintMode)
                     {
-                        NewNode();
-                        Thread.Sleep(5000); //give the node time to register
-                    }
+                        if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
+                        {
+                            NewNode();
+                            Thread.Sleep(5000); //give the node time to register
+                        }
 
-                    if (Nodes.All(x => x.ShuttingDown)) //replace nodes
-                    {
-                        NewNode();
-                        Thread.Sleep(5000); //give the node time to register
+                        if (Nodes.All(x => x.ShuttingDown)) //replace nodes
+                        {
+                            NewNode();
+                            Thread.Sleep(5000); //give the node time to register
+                        }
                     }
 #endif
                 }
