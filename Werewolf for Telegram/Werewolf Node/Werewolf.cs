@@ -410,6 +410,7 @@ namespace Werewolf_Node
                         user = new Player
                         {
                             TelegramId = u.Id,
+                            Language = "English",
                             HasPM = false,
                             HasPM2 = false,
                             HasDebugPM = false
