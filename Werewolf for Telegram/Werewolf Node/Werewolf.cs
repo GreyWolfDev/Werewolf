@@ -3531,40 +3531,41 @@ namespace Werewolf_Node
         #region Database Helpers
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
-            using (var db = new WWContext())
-            {
-                try
-                {
-                    var initid = initator.DBPlayerId;
-                    if (initid == 0)
-                    {
-                        initid = GetDBPlayer(initator, db).Id;
-                    }
-                    var recid = receiver.DBPlayerId;
-                    if (recid == 0)
-                        recid = GetDBPlayer(receiver, db).Id;
-                    if (DBGameId == 0)
-                    {
-                        DBGameId = db.Games.FirstOrDefault(x => x.Id == GameId)?.Id ?? 0;
-                    }
-                    var a = new Action
-                    {
-                        ActionTaken = action,
-                        GameId = DBGameId,
-                        InitiatorId = initid,
-                        ReceiverId = recid,
-                        TimeStamp = DateTime.Now,
-                        Day = GameDay
-                    };
-                    db.Actions.Add(a);
+            return; //dropping actions.  We never use them, they just take up a massive amount of space in the database
+            //using (var db = new WWContext())
+            //{
+            //    try
+            //    {
+            //        var initid = initator.DBPlayerId;
+            //        if (initid == 0)
+            //        {
+            //            initid = GetDBPlayer(initator, db).Id;
+            //        }
+            //        var recid = receiver.DBPlayerId;
+            //        if (recid == 0)
+            //            recid = GetDBPlayer(receiver, db).Id;
+            //        if (DBGameId == 0)
+            //        {
+            //            DBGameId = db.Games.FirstOrDefault(x => x.Id == GameId)?.Id ?? 0;
+            //        }
+            //        var a = new Action
+            //        {
+            //            ActionTaken = action,
+            //            GameId = DBGameId,
+            //            InitiatorId = initid,
+            //            ReceiverId = recid,
+            //            TimeStamp = DateTime.Now,
+            //            Day = GameDay
+            //        };
+            //        db.Actions.Add(a);
 
-                    db.SaveChanges();
-                }
-                catch (Exception)
-                {
-                    //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
-                }
-            }
+            //        db.SaveChanges();
+            //    }
+            //    catch (Exception)
+            //    {
+            //        //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
+            //    }
+            //}
         }
 
         private void DBKill(IPlayer killer, IPlayer victim, KillMthd method)
