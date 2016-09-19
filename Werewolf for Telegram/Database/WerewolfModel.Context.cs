@@ -27,7 +27,6 @@ namespace Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Action> Actions { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<GameKill> GameKills { get; set; }

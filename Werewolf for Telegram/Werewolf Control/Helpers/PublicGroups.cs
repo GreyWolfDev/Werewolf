@@ -16,9 +16,13 @@ namespace Werewolf_Control.Helpers
         private static DateTime _lastGet = DateTime.MinValue;
         internal static List<v_PublicGroups> GetAll()
         {
-            if (_lastGet < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
-            using (var db = new WWContext())
-                _list = db.v_PublicGroups.ToList();
+            if (_lastGet < DateTime.Now.AddMinutes(-20))
+            {
+                //only refresh the list cache once every 20 minutes
+                using (var db = new WWContext())
+                    _list = db.v_PublicGroups.ToList();
+                _lastGet = DateTime.Now;
+            }
             return _list;
         }
 

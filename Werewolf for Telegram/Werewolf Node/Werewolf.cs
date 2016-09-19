@@ -16,7 +16,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
-using Action = Database.Action;
+
 // ReSharper disable PossibleMultipleEnumeration
 #pragma warning disable 4014
 
