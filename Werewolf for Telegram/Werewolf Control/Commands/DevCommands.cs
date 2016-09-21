@@ -24,87 +24,30 @@ namespace Werewolf_Control
         [Command(Trigger = "dumpgifs", DevOnly = true)]
         public static void DumpGifs(Update u, string[] args)
         {
-
-            foreach (var g in Settings.VillagerDieImages)
+            var gifLists = new[]
             {
-                try
-                {
-                    var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagerDieImages - " + g).Result;
-                }
-                catch (AggregateException e)
-                {
-                    Send(g + " - " + e.InnerExceptions.FirstOrDefault().Message, u.Message.Chat.Id);
-                }
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(5000);
-            //foreach (var g in Settings.WolfWin)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolfWin - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.WolvesWin)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "WolvesWin - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.VillagersWin)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "VillagersWin - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.NoWinner)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "NoWinner - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.StartGame)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartGame - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            foreach (var g in Settings.StartChaosGame)
-            {
-                try
-                {
-                    var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, "StartChaosGame - " + g).Result;
-                }
-                catch (AggregateException e)
-                {
-                    Send(g + " - " + e.InnerExceptions.FirstOrDefault().Message, u.Message.Chat.Id);
-                }
-                Thread.Sleep(1000);
-            }
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.TannerWin)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "TannerWin - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.CultWins)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "CultWins - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.SerialKillerWins)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "SerialKillerWins - " + g);
-            //    Thread.Sleep(1000);
-            //}
-            //Thread.Sleep(5000);
-            //foreach (var g in Settings.LoversWin)
-            //{
-            //    Bot.Api.SendDocument(u.Message.Chat.Id, g, "LoversWin - " + g);
-            //    Thread.Sleep(1000);
-            //}
+                "VillagerDieImages", "WolfWin", "WolvesWin", "VillagersWin", "NoWinner", "StartGame", "StartChaosGame",
+                "TannerWin", "CultWins", "SerialKillerWins", "LoversWin"
+            };
 
+            foreach (var name in gifLists)
+            {
+                var field = typeof(Settings).GetField(name);
+                var list = field.GetValue(null) as List<string>;
+                foreach (var g in list)
+                {
+                    try
+                    {
+                        var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, name + " - " + g).Result;
+                    }
+                    catch (AggregateException e)
+                    {
+                        Send(g + " - " + e.InnerExceptions.FirstOrDefault()?.Message, u.Message.Chat.Id);
+                    }
+                    Thread.Sleep(1000);
+                }
+                Thread.Sleep(5000);
+            }
         }
 
         [Command(Trigger = "maintenance", DevOnly = true)]
@@ -586,11 +529,12 @@ namespace Werewolf_Control
         {
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
             {
-
+                Console.ForegroundColor = ConsoleColor.Blue;
                 //now, check the json file
                 var json = new StreamReader("c:\\bot\\users.json").ReadToEnd();
                 var users = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
                 sw.WriteLine($"Beginning json kick process.  Found {users.Count} users json file");
+                Send($"Beginning json kick process.  Found {users.Count} users in json file", u.Message.Chat.Id);
                 var i = 0;
                 var removed = 0;
                 using (var db = new WWContext())
@@ -613,7 +557,7 @@ namespace Werewolf_Control
 
                             //get the last time they played a game
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
-
+                            
                             //get latest game player, check within 2 weeks
                             var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id }).OrderByDescending(x => x.Id).FirstOrDefault();
                             if (gp != null)
@@ -630,15 +574,15 @@ namespace Werewolf_Control
                                 if (status != ChatMemberStatus.Member) //user is not in group, skip
                                     continue;
                                 //kick
-                                Bot.Api.KickChatMember(Settings.PrimaryChatId, p.TelegramId);
+                                Bot.Api.KickChatMember(Settings.PrimaryChatId, id);
                                 removed++;
-                                sw.Write($" | Removed ({p.Name})");
+                                sw.Write($" | Removed ({p?.Name ?? id.ToString()})");
                                 //get their status
-                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
                                 while (status == ChatMemberStatus.Member) //loop
                                 {
                                     //wait for database to report status is kicked.
-                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
                                     Thread.Sleep(500);
                                 }
                                 //status is now kicked (as it should be)
@@ -649,16 +593,16 @@ namespace Werewolf_Control
                                     attempts++;
                                     sw.Write($" {status} ");
                                     sw.Flush();
-                                    Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
+                                    Bot.Api.UnbanChatMember(Settings.PrimaryChatId, id);
                                     Thread.Sleep(500);
-                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
+                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
                                 }
                                 //yay unbanned
                                 sw.Write($" | Unbanned ({attempts} attempts)");
                                 //let them know
                                 Send(
                                     "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
-                                    p.TelegramId);
+                                    id);
                             }
                             catch (AggregateException ex)
                             {
@@ -690,7 +634,7 @@ namespace Werewolf_Control
                         }
 
                     }
-
+                
                 //fun times ahead!
                 //get our list of inactive users
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -699,7 +643,7 @@ namespace Werewolf_Control
                 {
                     inactive = db.v_InactivePlayersMain.OrderByDescending(x => x.last).ToList();
                 }
-                Send($"Checking {inactive.Count} users", u.Message.Chat.Id);
+                Send($"Checking {inactive.Count} users from database. {removed} from json file", u.Message.Chat.Id);
                 var timeStarted = DateTime.Now;
 
                 sw.WriteLine($"Beginning kick process.  Found {inactive.Count} users in database");

@@ -675,7 +675,7 @@ namespace Werewolf_Node
             if (id == 0)
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
-#if (DEBUG || BETA)
+#if (DEBUG)
             Send(text, id);
 #else
             Program.Bot.SendDocument(id, image, text);
