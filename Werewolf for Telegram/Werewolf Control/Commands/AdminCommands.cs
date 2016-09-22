@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -174,8 +174,10 @@ namespace Werewolf_Control
                     {
                         // ignored
                     }
-
-                    reply += $"{id} ({user?.User.FirstName}) has been idle killed {idles} time(s) in the past 24 hours\n";
+                    
+                    var str = $"{id} ({user?.User.FirstName});
+                    reply += GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id, str, idles));
+                    reply += "\n"
                 }
             }
 
