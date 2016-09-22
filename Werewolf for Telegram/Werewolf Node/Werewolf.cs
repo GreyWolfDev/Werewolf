@@ -2301,8 +2301,8 @@ namespace Werewolf_Node
 
                                         break;
                                     case IRole.SerialKiller:
-                                        //serial killer has 50% of winning the fight....
-                                        if (Program.R.Next(100) < 50)
+                                        //serial killer has 20% of winning the fight....
+                                        if (Program.R.Next(100) < 20)
                                         {
                                             //serial killer wins...
                                             var shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
