@@ -3727,7 +3727,7 @@ namespace Werewolf_Node
             {
                 //check for convention
                 var convention = Players.Count(x => x.PlayerRole == IRole.Cultist & !x.IsDead) >= 10;
-                foreach (var player in Players)
+                foreach (var player in Players.Where(x => !x.Fled)) //flee / afk? no achievements for you.
                 {
                     var p = GetDBPlayer(player, db);
 
