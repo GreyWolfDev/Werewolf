@@ -152,11 +152,7 @@ namespace TcpFramework
 
         private void NotifyEndTransmissionRx(TcpClient client, byte[] msg)
         {
-            if (DataReceived != null)
-            {
-                Message m = new Message(msg, client, StringEncoder, Delimiter, AutoTrimStrings);
-                DataReceived(this, m);
-            }
+            DataReceived?.Invoke(this, new Message(msg, client, StringEncoder, Delimiter, AutoTrimStrings));
         }
 
         public void Write(byte[] data)
@@ -188,20 +184,33 @@ namespace TcpFramework
         public Message WriteLineAndGetReply(string data, TimeSpan timeout)
         {
             Message mReply = null;
-            DataReceived += (s, e) => { mReply = e; };
-            WriteLine(data);
-
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            while (mReply == null && sw.Elapsed < timeout)
+            EventHandler<Message> handler = (s, e) => { mReply = e; };
+            try
             {
-                Thread.Sleep(10);
-            }
+                DataReceived += handler;
+                WriteLine(data);
 
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (mReply == null && sw.Elapsed < timeout)
+                {
+                    Thread.Sleep(10);
+                }
+                sw.Stop();
+                sw = null;
+            }
+            finally
+            {
+                DataReceived -= handler;
+            }
             return mReply;
         }
 
+        public void ReplyReceived(object s, string e)
+        {
+            
+        }
 
         #region IDisposable Support
         private bool _disposedValue; // To detect redundant calls
