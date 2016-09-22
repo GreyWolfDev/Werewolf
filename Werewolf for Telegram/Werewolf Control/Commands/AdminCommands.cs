@@ -176,7 +176,7 @@ namespace Werewolf_Control
                     }
                     
                     var str = $"{id} ({user?.User.FirstName})";
-                    reply += GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id, str, idles));
+                    reply += GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id), str, idles);
                     reply += "\n";
                 }
             }
