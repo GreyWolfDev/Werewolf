@@ -70,6 +70,7 @@ namespace Werewolf_Node.Models
         public bool DiedFromKiller { get; set; } = false;
         public bool DiedFromHunter { get; set; } = false;
         public bool DiedFromLove { get; set; } = false;
+        public bool DiedGuardingWolf { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public IRole OriginalRole { get; set; }

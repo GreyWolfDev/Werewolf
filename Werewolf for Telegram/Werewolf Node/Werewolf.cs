@@ -454,7 +454,7 @@ namespace Werewolf_Node
                 //now, attempt to PM the player
                 try
                 {
-                    var result = Send(GetLocaleString("YouJoined", ChatGroup), u.Id).Result;
+                    var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
                 }
                 catch (Exception e)
                 {
@@ -1923,7 +1923,7 @@ namespace Werewolf_Node
                 if (Players == null) return;
                 if (DbGroup.ShowRoles != false)
                 {
-                    foreach (var p in Players.Where(x => x.DiedLastNight && x.DiedFromWolf))
+                    foreach (var p in Players.Where(x => x.DiedLastNight && x.DiedFromWolf && !x.DiedGuardingWolf))
                     {
                         string msg;
                         switch (p.PlayerRole)
@@ -2301,8 +2301,8 @@ namespace Werewolf_Node
 
                                         break;
                                     case IRole.SerialKiller:
-                                        //serial killer has 50% of winning the fight....
-                                        if (Program.R.Next(100) < 50)
+                                        //serial killer has 80% of winning the fight....
+                                        if (Program.R.Next(100) < 80)
                                         {
                                             //serial killer wins...
                                             var shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
@@ -2691,6 +2691,7 @@ namespace Werewolf_Node
                             ga.TimeDied = DateTime.Now;
                             ga.DiedLastNight = true;
                             ga.DiedFromWolf = true;
+                            ga.DiedGuardingWolf = true;
                             DBKill(save, ga, KillMthd.GuardWolf);
                             Send(GetLocaleString("GuardWolf"), ga.Id);
                         }
