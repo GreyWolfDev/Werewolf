@@ -454,7 +454,7 @@ namespace Werewolf_Node
                 //now, attempt to PM the player
                 try
                 {
-                    var result = Send(GetLocaleString("YouJoined", ChatGroup), u.Id).Result;
+                    var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
                 }
                 catch (Exception e)
                 {

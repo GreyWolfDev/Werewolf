@@ -111,6 +111,8 @@ namespace Werewolf_Control
         public static void Maintenenace(Update u, string[] args)
         {
             //stop accepting all new games.
+            Program.MaintMode = !Program.MaintMode;
+            Send($"Maintenance Mode: {Program.MaintMode}", u.Message.Chat.Id);
         }
 
         [Command(Trigger = "winchart", DevOnly = true)]
