@@ -101,18 +101,20 @@ namespace TcpFramework
 
             while (c.Available > 0 && c.Connected)
             {
-                byte[] nextByte = new byte[c.Available];
+                byte[] nextByte = new byte[4096];
                 c.Client.Receive(nextByte, 0, nextByte.Length, SocketFlags.None);
                 bytesReceived.AddRange(nextByte);
                 var delIndex = Array.IndexOf(nextByte, delimiter);
                 if (delIndex != -1)
                 {
                     var part = nextByte.Take(delIndex + 1);
-                    var next = nextByte.Skip(delIndex + 1);
+                    var next = nextByte.Skip(delIndex + 1).ToArray();
                     _queuedMsg.AddRange(part);
                     byte[] msg = _queuedMsg.ToArray();
                     _queuedMsg.Clear();
                     _queuedMsg.AddRange(next);
+                    bytesReceived.Clear();
+                    bytesReceived.AddRange(next);
                     NotifyDelimiterMessageRx(c, msg);
                 }
                 else
