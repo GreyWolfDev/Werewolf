@@ -1997,7 +1997,10 @@ namespace Werewolf_Node
                         SendWithQueue(msg);
                         p.DiedLastNight = false;
                     }
-
+                    foreach (var p in Players.Where(x => x.DiedLastNight & x.DiedHuntingSK))
+                    {
+                        SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}"));
+                    }
                     foreach (var p in Players.Where(x => x.DiedLastNight & !x.DiedFromWolf & !x.DiedFromKiller & !x.DiedFromHunter))
                     {
                         SendWithQueue(GetLocaleString("HunterKilledCultist", p.GetName()));
@@ -2659,7 +2662,7 @@ namespace Werewolf_Node
                         hunter.TimeDied = DateTime.Now;
                         hunter.DiedLastNight = true;
                         hunter.DiedFromKiller = true;
-                        SendWithQueue(GetLocaleString("DefaultKilled", hunter.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(hunter.PlayerRole)} {GetLocaleString("IsDead")}"));
+                        hunter.DiedHuntingSK = true;
                     }
                     else
                     {
@@ -2707,7 +2710,7 @@ namespace Werewolf_Node
                         save.DiedLastNight = false;
                         save.DiedFromWolf = false;
                         save.DiedFromKiller = false;
-
+                        save.DiedHuntingSK = false;
                         using (var db = new WWContext())
                         {
                             var dbsp = GetDBGamePlayer(save, db);
