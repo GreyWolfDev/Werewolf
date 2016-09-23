@@ -847,6 +847,57 @@ namespace Werewolf_Node
             return GetLocaleString(en.ToString()).ToBold();
         }
 
+        private static List<IRole> GetRoleList(int playerCount, bool allowCult = true, bool allowTanner = true, bool allowFool = true)
+        {
+            var rolesToAssign = new List<IRole>();
+            //need to set the max wolves so game doesn't end immediately - 25% max wolf population
+            //25% was too much, max it at 5 wolves.
+            for (int i = 0; i < Math.Max(playerCount / 5, 1); i++)
+                rolesToAssign.Add(IRole.Wolf);
+            //add remaining roles to 'card pile'
+            foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
+            {
+                switch (role)
+                {
+                    case IRole.Wolf:
+                        break;
+                    case IRole.CultistHunter:
+                    case IRole.Cultist:
+                        if (allowCult != false && playerCount > 10)
+                            rolesToAssign.Add(role);
+                        break;
+                    case IRole.Tanner:
+                        if (allowTanner != false)
+                            rolesToAssign.Add(role);
+                        break;
+                    case IRole.Fool:
+                        if (allowFool != false)
+                            rolesToAssign.Add(role);
+                        break;
+                    default:
+                        rolesToAssign.Add(role);
+                        break;
+                }
+            }
+
+            //add a couple more masons
+            rolesToAssign.Add(IRole.Mason);
+            rolesToAssign.Add(IRole.Mason);
+            //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
+            //same as it was before....
+
+            //if player count > role count, add another cultist into the mix
+            if (rolesToAssign.Any(x => x == IRole.CultistHunter))
+            {
+                rolesToAssign.Add(IRole.Cultist);
+                rolesToAssign.Add(IRole.Cultist);
+            }
+            //now fill rest of the slots with villagers (for large games)
+            for (int i = 0; i < playerCount / 4; i++)
+                rolesToAssign.Add(IRole.Villager);
+            return rolesToAssign;
+        }
+
         private void AssignRoles()
         {
             try
@@ -855,53 +906,39 @@ namespace Werewolf_Node
                 var count = Players.Count;
                 if (Chaos)
                 {
-                    //need to set the max wolves so game doesn't end immediately - 25% max wolf population
-                    //25% was too much, max it at 5 wolves.
-                    for (int i = 0; i < Math.Max(Players.Count / 6, 1); i++)
-                        rolesToAssign.Add(IRole.Wolf);
-                    //add remaining roles to 'card pile'
-                    foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
-                    {
-                        switch (role)
-                        {
-                            case IRole.Wolf:
-                                break;
-                            case IRole.CultistHunter:
-                            case IRole.Cultist:
-                                if (DbGroup.AllowCult != false && Players.Count > 10)
-                                    rolesToAssign.Add(role);
-                                break;
-                            case IRole.Tanner:
-                                if (DbGroup.AllowTanner != false)
-                                    rolesToAssign.Add(role);
-                                break;
-                            case IRole.Fool:
-                                if (DbGroup.AllowFool != false)
-                                    rolesToAssign.Add(role);
-                                break;
-                            default:
-                                rolesToAssign.Add(role);
-                                break;
-                        }
-
-
-                    }
-
-                    //add a couple more masons
-                    rolesToAssign.Add(IRole.Mason);
-                    rolesToAssign.Add(IRole.Mason);
-                    //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
-                    //same as it was before....
-
-                    //if player count > role count, add another cultist into the mix
-                    if (Players.Count > rolesToAssign.Count && DbGroup.AllowCult != false)
-                        rolesToAssign.Add(IRole.Cultist);
-                    //now fill rest of the slots with villagers (for large games)
-                    while (Players.Count > rolesToAssign.Count)
-                        rolesToAssign.Add(IRole.Villager);
+                    rolesToAssign = GetRoleList(count, DbGroup.AllowCult != false, DbGroup.AllowTanner != false, DbGroup.AllowFool != false);
                 }
                 else
                 {
+
+#if BETA || DEBUG
+                    var balanced = false;
+                    var attempts = 0;
+                    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
+                    while (!balanced)
+                    {
+                        attempts++;
+                        if (attempts >= 50)
+                        {
+                            throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again");
+                        }
+                        rolesToAssign = GetRoleList(count);
+                        rolesToAssign.Shuffle();
+                        rolesToAssign = rolesToAssign.Take(count).ToList();
+                        //check the balance
+
+                        var villageStrength = rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+                        var wolfStrength = rolesToAssign.Where(x => x == IRole.Wolf).Sum(x => x.GetStrength(rolesToAssign));
+                        var skStrength = rolesToAssign.Where(x => x == IRole.SerialKiller)
+                            .Sum(x => x.GetStrength(rolesToAssign));
+                        var cultStrength = rolesToAssign.Where(x => x == IRole.Cultist).Sum(x => x.GetStrength(rolesToAssign));
+
+                        //check balance
+                        var varianceAllowed = (count / 5) + 3;
+                        var enemyStrength = (wolfStrength + skStrength + cultStrength);
+                        balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+                    }
+#else
 
                     if (count >= Settings.PlayerCountDetective)
                     {
@@ -1012,6 +1049,7 @@ namespace Werewolf_Node
 
                     while (count > rolesToAssign.Count)
                         rolesToAssign.Add(IRole.Villager);
+#endif
                 }
 
 
@@ -1727,9 +1765,9 @@ namespace Werewolf_Node
             foreach (var c in voteCult)
                 Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
         }
-        #endregion
+#endregion
 
-        #region Cycles
+#region Cycles
         public void ForceStart()
         {
             KillTimer = true;
@@ -3130,9 +3168,9 @@ namespace Werewolf_Node
 
 
 
-        #endregion
+#endregion
 
-        #region Send Menus
+#region Send Menus
 
         private void SendLynchMenu()
         {
@@ -3364,9 +3402,9 @@ namespace Werewolf_Node
             }
         }
 
-        #endregion
+#endregion
 
-        #region Helpers
+#region Helpers
         public void FleePlayer(int banid)
         {
             var p = Players?.FirstOrDefault(x => x.Id == banid);
@@ -3528,9 +3566,9 @@ namespace Werewolf_Node
                 return -1;
             }
         }
-        #endregion
+#endregion
 
-        #region Database Helpers
+#region Database Helpers
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
             return; //dropping actions.  We never use them, they just take up a massive amount of space in the database
@@ -3832,6 +3870,6 @@ namespace Werewolf_Node
 
         }
 
-        #endregion
+#endregion
     }
 }

@@ -96,7 +96,7 @@ namespace TcpFramework
                 Thread.Sleep(10);
                 return;
             }
-
+            _queuedMsg.Clear();
             List<byte> bytesReceived = new List<byte>();
 
             while (c.Available > 0 && c.Connected)
@@ -121,7 +121,7 @@ namespace TcpFramework
                 {
                     _queuedMsg.AddRange(nextByte);
                 }
-                Thread.Sleep(75);
+                //Thread.Sleep(5);
                 //byte[] nextByte = new byte[1];
                 //c.Client.Receive(nextByte, 0, 1, SocketFlags.None);
                 //bytesReceived.AddRange(nextByte);

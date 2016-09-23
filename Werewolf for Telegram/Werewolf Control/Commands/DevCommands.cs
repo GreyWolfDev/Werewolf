@@ -13,15 +13,16 @@ using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
-using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
+using Werewolf_Control.Models;
+
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
 {
     public static partial class Commands
     {
-        [Command(Trigger = "dumpgifs", DevOnly = true)]
+        [Attributes.Command(Trigger = "dumpgifs", DevOnly = true)]
         public static void DumpGifs(Update u, string[] args)
         {
             var gifLists = new[]
@@ -50,7 +51,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "maintenance", DevOnly = true)]
+        [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
         public static void Maintenenace(Update u, string[] args)
         {
             //stop accepting all new games.
@@ -58,27 +59,27 @@ namespace Werewolf_Control
             Send($"Maintenance Mode: {Program.MaintMode}", u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "winchart", DevOnly = true)]
+        [Attributes.Command(Trigger = "winchart", DevOnly = true)]
         public static void WinChart(Update update, string[] args)
         {
             Charting.TeamWinChart(args[1], update);
         }
 
-        [Command(Trigger = "learngif", DevOnly = true)]
+        [Attributes.Command(Trigger = "learngif", DevOnly = true)]
         public static void LearnGif(Update update, string[] args)
         {
             UpdateHandler.SendGifIds = !UpdateHandler.SendGifIds;
             Bot.Send($"GIF learning = {UpdateHandler.SendGifIds}", update.Message.Chat.Id);
         }
 
-        [Command(Trigger = "asplode", DevOnly = true)]
+        [Attributes.Command(Trigger = "asplode", DevOnly = true)]
         public static void Asplode(Update u, string[] args)
         {
             //yep, just an alias, for giggles.  Hey, developers gotta have some fun, right?
             Update(u, args);
         }
 
-        [Command(Trigger = "update", DevOnly = true)]
+        [Attributes.Command(Trigger = "update", DevOnly = true)]
         public static void Update(Update update, string[] args)
         {
             if (update.Message.Date > DateTime.UtcNow.AddSeconds(-3))
@@ -107,7 +108,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "broadcast", DevOnly = true)]
+        [Attributes.Command(Trigger = "broadcast", DevOnly = true)]
         public static void Broadcast(Update u, string[] args)
         {
             foreach (var n in Bot.Nodes.Select(x => x.Games.ToList()))
@@ -119,14 +120,14 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
         public static void KillGame(Update u, string[] args)
         {
             var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
             game?.Kill();
         }
 
-        [Command(Trigger = "stopnode", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "stopnode", GlobalAdminOnly = true)]
         public static void StopNode(Update u, string[] args)
         {
             //get the node
@@ -153,7 +154,7 @@ namespace Werewolf_Control
         //    new Task(Bot.SendOnline).Start();
         //}
 
-        [Command(Trigger = "replacenodes", DevOnly = true)]
+        [Attributes.Command(Trigger = "replacenodes", DevOnly = true)]
         public static void ReplaceNodes(Update update, string[] args)
         {
             foreach (var n in Bot.Nodes)
@@ -176,7 +177,7 @@ namespace Werewolf_Control
             Bot.Send($"Replacing nodes with latest version: {currentChoice.Version}", update.Message.Chat.Id);
         }
 
-        [Command(Trigger = "playtime", DevOnly = true)]
+        [Attributes.Command(Trigger = "playtime", DevOnly = true)]
         public static void PlayTime(Update update, string[] args)
         {
             if (args.Length > 1)
@@ -192,7 +193,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "getroles", DevOnly = true)]
+        [Attributes.Command(Trigger = "getroles", DevOnly = true)]
         public static void GetRoles(Update update, string[] args)
         {
             if (args.Length > 1)
@@ -207,7 +208,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "skipvote", DevOnly = true)]
+        [Attributes.Command(Trigger = "skipvote", DevOnly = true)]
         public static void SkipVote(Update update, string[] args)
         {
             var node = GetPlayerNode(update.Message.From.Id);
@@ -227,13 +228,109 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "test", DevOnly = true)]
-        public static void Test(Update update, string[] args)
+        private static List<IRole> GetRoleList(int playerCount, bool allowCult = true, bool allowTanner = true, bool allowFool = true)
         {
+            var rolesToAssign = new List<IRole>();
+            //need to set the max wolves so game doesn't end immediately - 25% max wolf population
+            //25% was too much, max it at 5 wolves.
+            for (int i = 0; i < Math.Max(playerCount / 5, 1); i++)
+                rolesToAssign.Add(IRole.Wolf);
+            //add remaining roles to 'card pile'
+            foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
+            {
+                switch (role)
+                {
+                    case IRole.Wolf:
+                        break;
+                    case IRole.CultistHunter:
+                    case IRole.Cultist:
+                        if (allowCult != false && playerCount > 10)
+                            rolesToAssign.Add(role);
+                        break;
+                    case IRole.Tanner:
+                        if (allowTanner != false)
+                            rolesToAssign.Add(role);
+                        break;
+                    case IRole.Fool:
+                        if (allowFool != false)
+                            rolesToAssign.Add(role);
+                        break;
+                    default:
+                        rolesToAssign.Add(role);
+                        break;
+                }
+            }
 
+            //add a couple more masons
+            rolesToAssign.Add(IRole.Mason);
+            rolesToAssign.Add(IRole.Mason);
+            //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
+            //same as it was before....
+
+            //if player count > role count, add another cultist into the mix
+            if (rolesToAssign.Any(x => x== IRole.CultistHunter))
+            {
+                rolesToAssign.Add(IRole.Cultist);
+                rolesToAssign.Add(IRole.Cultist);
+            }
+            //now fill rest of the slots with villagers (for large games)
+            for(int i = 0; i < playerCount / 4; i++)
+                rolesToAssign.Add(IRole.Villager);
+            return rolesToAssign;
         }
 
-        [Command(Trigger = "sql", DevOnly = true)]
+        [Attributes.Command(Trigger = "test", DevOnly = true)]
+        public static void Test(Update update, string[] args)
+        {
+            var balanced = false;
+            var count = int.Parse(args[1]);
+            List<IRole> rolesToAssign = new List<IRole>();
+            int villageStrength = 0, enemyStrength = 0;
+            var attempts = 0;
+            var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
+            while (!balanced)
+            {
+                attempts++;
+                if (attempts >= 20)
+                    break;
+                rolesToAssign = GetRoleList(count);
+                rolesToAssign.Shuffle();
+                rolesToAssign = rolesToAssign.Take(count).ToList();
+                //check the balance
+                
+                villageStrength =
+                    rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+                var wolfStrength = rolesToAssign.Where(x => x == IRole.Wolf).Sum(x => x.GetStrength(rolesToAssign));
+                var skStrength = rolesToAssign.Where(x => x == IRole.SerialKiller)
+                    .Sum(x => x.GetStrength(rolesToAssign));
+                var cultStrength = rolesToAssign.Where(x => x == IRole.Cultist).Sum(x => x.GetStrength(rolesToAssign));
+
+                //check balance
+                var varianceAllowed = (count / 5) + 3;
+                enemyStrength = (wolfStrength + skStrength + cultStrength);
+                balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+            }
+
+            var msg = $"Attempts: {attempts}\n";
+            if (balanced)
+            {
+                msg = $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+                msg +=
+                    $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
+                msg +=
+                    $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
+            }
+            else
+            {
+                msg += "Unbalanced :(";
+            }
+
+            Send(msg, update.Message.Chat.Id);
+        }
+
+        [Attributes.Command(Trigger = "sql", DevOnly = true)]
         public static void Sql(Update u, string[] args)
         {
             if (args.Length == 1)
@@ -273,13 +370,13 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "reloadenglish", DevOnly = true)]
+        [Attributes.Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
             Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
 
-        [Command(Trigger = "leavegroup", DevOnly = true)]
+        [Attributes.Command(Trigger = "leavegroup", DevOnly = true)]
         public static void LeaveGroup(Update update, string[] args)
         {
             Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", long.Parse(args[1]))
@@ -289,25 +386,25 @@ namespace Werewolf_Control
                 });
         }
 
-        [Command(Trigger = "clearcount", DevOnly = true)]
+        [Attributes.Command(Trigger = "clearcount", DevOnly = true)]
         public static void ClearCount(Update u, string[] args)
         {
             UpdateHandler.UserMessages.Clear();
         }
 
-        [Command(Trigger = "notifyspam", DevOnly = true)]
+        [Attributes.Command(Trigger = "notifyspam", DevOnly = true)]
         public static void NotifySpam(Update u, string[] args)
         {
             Send("Please don't spam me like that", long.Parse(args[1]));
         }
 
-        [Command(Trigger = "notifyban", DevOnly = true)]
+        [Attributes.Command(Trigger = "notifyban", DevOnly = true)]
         public static void NotifyBan(Update u, string[] args)
         {
             Send("You have been banned.  You may appeal your ban in @werewolfbanappeal", long.Parse(args[1]));
         }
 
-        [Command(Trigger = "whois", DevOnly = true)]
+        [Attributes.Command(Trigger = "whois", DevOnly = true)]
         public static void WhoIs(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -318,7 +415,7 @@ namespace Werewolf_Control
                     Send($"User: {p.Name}\nUserName: @{p.UserName}", u.Message.Chat.Id);
             }
         }
-        [Command(Trigger = "getcommands", DevOnly = true)]
+        [Attributes.Command(Trigger = "getcommands", DevOnly = true)]
         public static void GetCommands(Update u, string[] args)
         {
             var target = int.Parse(args[1]);
@@ -326,7 +423,7 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
         {
             var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
@@ -337,7 +434,7 @@ namespace Werewolf_Control
                 Send(GetLocaleString("SentPrivate", GetLanguage(u.Message.From.Id)), u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "getbans", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "getbans", GlobalAdminOnly = true)]
         public static void GetBans(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -360,7 +457,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "permban", DevOnly = true)]
+        [Attributes.Command(Trigger = "permban", DevOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
 
@@ -473,7 +570,7 @@ namespace Werewolf_Control
 
         }
 
-        [Command(Trigger = "remban", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "remban", GlobalAdminOnly = true)]
         public static void RemoveBan(Update u, string[] args)
         {
             var tosmite = new List<int>();
@@ -526,7 +623,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
         public static void CleanMain(Update u, string[] args)
         {
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
@@ -559,7 +656,7 @@ namespace Werewolf_Control
 
                             //get the last time they played a game
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
-                            
+
                             //get latest game player, check within 2 weeks
                             var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id }).OrderByDescending(x => x.Id).FirstOrDefault();
                             if (gp != null)
@@ -636,7 +733,7 @@ namespace Werewolf_Control
                         }
 
                     }
-                
+
                 //fun times ahead!
                 //get our list of inactive users
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -726,7 +823,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "remgrp", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "remgrp", GlobalAdminOnly = true)]
         public static void RemGrp(Update u, string[] args)
         {
             var link = args[1];
