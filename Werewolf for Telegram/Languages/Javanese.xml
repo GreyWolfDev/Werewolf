@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Basa Jawa" base="Indonesia" variant="Basa Jawa"/>
+  <language name="Basa Jawa" base="Indonesia" variant="Basa Jawa" owner="kintar"/>
   <string key="NotInGame">
     <value>kowe ki durung melu dolanan. ra mabok to koe?</value>
   </string>
-  <string key="PlayerStartedGame">
+  <string key="PlayerStartedGame" isgif="true">
+  <!-- 0 - Player name -->
     <value>🗣 {0} wis nglekasi dolanan! gunake /join nek do arep melu dolanan yoo.... bar kuwi di akeh i le donga ben kowe ra gelis mati :P</value>
     <value>🗣 Dolanan wis dilekasi karo {0}! gunake /join nggo melu dolanan!</value>
   </string>
-  <string key="PlayerStartedChaosGame">
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
     <value>🗣 {0} wis nglekasi dolanan Chaos/Rusuh! gunake /join nek do arep melu dolanan yoo.... bar kuwi di akeh i le donga ben kowe ra gelis mati :P</value>
     <value>🗣 Dolanan Chaos/Rusuh wis dilekasi karo {0}! gunake /join nggo melu dolanan!</value>
   </string>
@@ -22,6 +24,7 @@
     <value>📣 Kurang sak menit meneh kanggo /join</value>
   </string>
   <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
     <value>📣 Kurang {0} detik meneh kanggo /join</value>
   </string>
   <string key="NotEnoughPlayers">
@@ -31,30 +34,42 @@
     <value>⌛️ Mbreng gedumbreng dumbreng (iki suworo drum ceritane)...\nDolanan wis dimulai. cek PM.</value><value>⌛️ Piye? Wis siap durung?...\nDolanan wis dimulai. cek PM.</value>
   </string>
   <string key="BannedForExploit">
+    <!-- 0 - Player name -->
     <value>⛔️ {0} di-banned soale wis nglanggar aturan (jeneng raoleh diawali nganggo /)</value>
   </string>
   <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
     <value>🗣 {0}, mbok tulung diganti jenenge ben iso melu dolanan</value>
   </string>
   <string key="PlayerLimitReached">
     <value>🗣 Ngapunten yo dab, bates pemain wis kebak!</value>
   </string>
   <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
     <value>🎉 {0} melu dolanan. {1} pemain, {2} paling sithik, {3} paling akeh.</value>
   </string>
   <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
     <value>🗣 {0} tulung PM aku nang (@{1}), bar kuwi ketik /start, soale aku rung tau chat ro kowe. Ben aku iso ngirim PM nang kowe, tulung PM aku disik.</value>
   </string>
   <string key="DeadFlee">
     <value>🗣 Heh, kowe arep nandi? KOWE KI WIS MATI! Bali meneh nang kuburan kono... asemik!</value>
   </string>
   <string key="Flee">
+    <!-- 0 - Player name -->
     <value>🗣 {0} kok malah minggat? wedi po kowe? Rakalap!</value>
   </string>
   <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
     <value>{0} ki dadi {1}</value>
   </string>
   <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
     <value>Isih ono {0} pemain.</value>
   </string>
   <string key="DidntAsk">
@@ -70,12 +85,18 @@
     <value>🗣 Jawabanmu ora bener!</value>
   </string>
   <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
     <value>{0} wis milih arep mangan {1}</value>
   </string>
   <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
     <value>{0} wis nuduh {1} ben diobong 🔥</value>
   </string>
   <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>🗣 {0} wis 2 bengi ora melu milih. Sing mbaurekso ra terimo. Nek wong ra niat dolanan ngene ki, {0} makbedunduk njut mati ketiban tronton 🚚 sak petine. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
@@ -85,15 +106,21 @@
     <value>🆗 Pilihanmu wis disimpen.</value><value>🆗 Pilihan sing jos gandos!</value>
   </string>
   <string key="BeholderSeer">
+    <!-- 0 - seer name -->
     <value>iki hlo Seer e {0} gek ndang di PM</value>
   </string>
   <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
     <value>{0} si Seer e wis mokad. Tugas Apprentice Seer ki dadi penggantine Seer 👳. Kowe saiki diangkat dadi Seer sing anyar.</value>
   </string>
   <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
     <value>{0} ternyata dadi Apprentice 🙇, terus saiki diangkat nggo ganteni posisi {1} dadi Seer sing anyar.</value>
   </string>
   <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>Kowe nyoba nerawang si {0}, lambemu komat-kamit ngerapal mantera karo nyawang wonge kuwi neng baskom, MAKJEGAGIK! ternyata wonge {1}!</value>
   </string>
   <string key="AskLynch">
@@ -103,6 +130,7 @@
     <value>❓ Sopo sing arep mbok indik?</value>
   </string>
   <string key="AskShoot">
+    <!-- 0 - bullet count -->
     <value>❓ Sopo sing arep mbok bedil? Pelurumu tinggal {0}</value>
   </string>
   <string key="AskVisit">
@@ -126,10 +154,13 @@
   <string key="AskConvert">
     <value>❓ Sopo sing arep mbok rekrut ben melu gabung nang Sekte-mu?</value>
   </string>
-  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
     <value>Pastekno kowe rembugan disik karo {0}</value>
   </string>
-  <string key="And"> <!--this is paired with "DiscussWith". again, leave the spaces!-->
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value>lan</value>
   </string>
   <string key="RoleInfoCursed">
@@ -181,18 +212,23 @@
     <value >Kowe Cultist Hunter 💂! Ceritane ono aliran sesat/Cultist sing nyebar ajaran sesat, terus ngerekrut warga ben dadi pengikut! Pas bengi, pilih uwong sing mbok curigai. Nek wonge kuwi Culitst, wonge mati. Nek Cultist pengen ngubah kowe dadi anggota Cultist. anggota terakhir Culrist bakal mati.</value>
   </string>
   <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
     <value >
       🌅 Wayah sore,\nKabeh warga podo kumpul nang Alun-alun koyo gondes mendes, nggo milih sopo sing arep dituduh bengi iki...
       Kabeh uwong diwenehi waktu {0} detik kanggo milih!
     </value>
   </string>
   <string key="DayTime" >
+    <!-- 0 - number of seconds -->
     <value >☀️ Srengenge wis nyunar nang duwur ndas. \nKabeh duwe waktu {0} detik kanggo padu opo tuduh-tuduhan / mbela awakmu dewe / nggosip, wis toh sak karepmu asal ojo jotos-jotosan yo!</value>
   </string>
   <string key="NightTime" >
+    <!-- 0 - number of seconds -->
     <value >🌙 Wayah wengi.\nKabeh wis do turu, kesel campur bingung. Sing duwe peran/lakon ing wayah bengi: kowe gur duwe {0} detik kanggo njalanke tugasmu!</value>
   </string>
   <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value >🔥 warga kabeh wis sepakat. \n{0} diwudani, diarak mubeng ndeso, terus dibakar urip-urip, banjur mati kekojel. {1}</value>
   </string>
   <string key="LynchTie" >
@@ -202,27 +238,36 @@
     <value >🤔 Kok podo aneh toh, do semaput po ya, kok ra ono sing do milih! Ra ono sing dituduh.....</value>
   </string>
   <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
     <value >🌄 Kukuruyukkk... \nIsuk-isuk warga kabeh podo kumpul, Tapi kok podo ra weruh si {0}. Warga banjur podo lungo nang ngomah e {0}, nemokake {0} wis dipateni, lencana Detektif tumancep nang gulune, getihe pating dlewer. Detective 🕵 wis mati</value>
   </string>
   <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
     <value >🌄 Kukuruyukkk... \nWayah wis isuk meneh, tanpo podo reti, ono sing digantung nang cagak gendero Alun-alun, ternyata kuwi {0}, si Guardian Angel 👼.</value>
   </string>
   <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
     <value >🌄 Kukuruyukkk... \nIsuk-isuk pas warga kabeh podo metu seko omahe, warga nemokake bedil... terus sikil.. terus tangan.. pas tekan Alun-alun, warga nemokake jasad e {0}, mati dipateni Werewolf. Gunner 🔫 mu wis mati.</value>
   </string>
   <string key="SeerEaten" >
+    <!-- 0 - victim name -->
     <value >🌄 Kukuruyukkk... \nIsuk-isuk warga ndeso podo tangi. Amarga mambu menyan sing durung mati, warga podo teko nang ngomahe {0}, lan nemokake sisa jenazah seko {0} mengkurep nang cerak tungku kemenyan. Seer 👳 wis mati diuntal Werewolf.</value>
   </string>
   <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
     <value >🌄 Kukuruyukkk... \nIsuk-isuk warga kabeh podo tangi mambu alkohol sing kobong... Omahe bakul ciu kobongan!!!! Warga podo ngewangi mateni geni sing ngobong omah, terus nemokake {0} remuk diuntal Werewolf. Drunk 🍻 wis mati</value>
   </string>
   <string key="FoolEaten" >
+    <!-- 0 - victim name -->
     <value >🌄 Kukuruyukkk... \nPas srengenge wis njedul seko wetan, Warga ndeso nemokake {0} mati nang jejer dingklik. Nang duwur bangku ono baskom banyu nggo nerawang, terus ono.... boneka rempon??? dasar seer jadi-jadian! Fool 🃏 wis mati</value>
   </string>
   <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
     <value>🌄 Kukuruyukkk... \nPas Warga ndeso podo tangi isuk, kabeh do kroso mambu raenak. Warga nemokake jasad {0} remuk digrawut-grawut ning kandang babi, ndase ilang. NYAMNYAMNYAM {1}</value>
   </string>
   <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
     <value>📰 Ono berita meneh, isuk-isuk ono sing aneh seko omahe {0}... warga sing podo curiga teko nang omahe, nemokake jasad nang cerak tempat semedi... si Cultist 👤 {0} jebule wis dipateni karo Cultist Hunter!</value>
   </string>
   <string key="NoAttack" >
@@ -232,63 +277,84 @@
     <value >Kowe uwis dipateni karo Werewolf. Amargo kowe cursed, kowe saiki dadi Wolf 🐺!</value>
   </string>
   <string key="WolfTeam">
+    <!-- 0 - teammate names -->
     <value>Konco Wolf-mu yaiku: {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
     <value >{0} wis mbok cokot.... tapi jebule wonge Cursed 😾, banjur dadi Werewolf! Apik tenan saiki kowe duwe konco anyar!</value>
   </string>
   <string key="WolvesEatYou" >
     <value >Bajilak! Kowe dipangan Wolf 🐺. NYAMNYAMNYAM</value>
   </string>
   <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
     <value >Modyaro! {0} senengane  lotse (drunk) 🍻! saiki kowe mabuk, lan raiso mangan sesuk bengi..</value>
   </string>
   <string key="GuardWolf" >
     <value >Kowe nyobo ngelindungi Wolf 🐺! Kowe malah genti dipangan Wolf. Sakne.</value>
   </string>
   <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
     <value >Kowe wis nyelametke nyawane {0} seko Wolf 🐺!</value>
   </string>
   <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
     <value >{0} ora diserang, dadi kowe mung tenguk2 karo udat-udut.</value>
   </string>
   <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
     <value>Kowe nyobo ngelindungi {0}, tapi wonge ora nang ngomah!</value>
   </string>
   <string key="GuardSavedYou" >
     <value >Guardian Angel 👼 ngelindungi kowe mau bengi, lan ngelawan Wolf sing arep mangan kowe. Kowe slamet!</value>
   </string>
   <string key="HarlotEaten" >
+    <!-- 0 - player name -->
     <value >si Harlot milih nang ngomah wae, ora mancik sayang dino iki amargo boyok e wis pegel-pegel. Tapi ternyata malah diserang Wolf 🐺. {0} wis dipangan Wolf!</value>
   </string>
   <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
     <value >Kok wagu... {0} ora ono nang ngomah! Raono sing iso mbok pangan bengi iki...</value>
   </string>
   <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
     <value >Kowe lagi mancik sayang si {0}, pas lagi kepenak, wonge kuwi jebule Wolf 🐺. Kowe dipangan sisan karo Wolf.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
     <value >{0} mlipir nang omah sing salah mau bengi! Rok mini, tanktop karo jasad e ditemokake nang cerak mbale ndeso karo gegodreh getih... Sakne, pengen jaran-jaranan malah mati :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
     <value >{0} mlipir nang ngomahe {1}.{0} wis siap-siap meh mancik sayang {1}. Cilakane, wonge malah delok Werewolf mangan si {1}! Werewolf ujug-ujug mbalik arah terus nyerang si {0} banjur mlumpat lungo.... {0} mati.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
     <value >Wis reti to? {0} ki dudu Wolf, soale sewengi kowe wis tumpak-tumpakan karo deknen! Penak to? Manteb to? 💕</value>
   </string>
   <string key="HarlotVisitYou" >
     <value >Bengi iki kowe ra sengojo tangi. Kowe kroso ditindihi, tapi kok udu tindihen? Jebule Harlot 💋 lagi mancik sayang ro kowe. Mbasan wis rampung, wonge mlipir lungo ora pamit... Kae mau sopo ya?</value>
   </string>
   <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
     <value >Kowe dikonangi si {0} pas wonge lagi mrikso TKP. Wonge jebule Detective 🕵</value>
   </string>
   <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
     <value >Olehmu goleki ngasilake bukti nek {0} ki jebule {1}</value>
   </string>
   <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
     <value >Harlot marai {0} si gunner ketaman asmoro bengi kuwi. Harlot dijak rabi karo si Gunner, TAPI DITOLAK! Cinta ditolak bedil bertindak! Gunner mangkel banjur mbedil Harlot 💋. {1} mati.</value>
   </string>
   <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
     <value >Ujug-ujug, krungu suworo tembakan sero banget. JEDER! Warga podo metu ndelok {0} ngadeg nang cerake si {1} sing wis dibedil, bedil e isih diarahke nang ndase. {2}.</value>
   </string>
   <string key="WolfWins" >
@@ -307,42 +373,58 @@
     <value>Pemain sing isih slamet:</value>
   </string>
   <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
     <value >{0} wis milih ngerekrut {1} dijak melu sekte 👤</value>
   </string>
   <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
     <value>{0} dikirim karo sekte kanggo ngerekrut {1}... jebule, wonge ki Cultist Hunter 💂! {0} modyar we dibacok pedang!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
     <value>{0} teko nang omahmu lan pengen ngerekrut kowe.... tapi kowe kanthi sigap mbacokake pedangmu nang arahe deknen. Cultist 👤 modyar... Cultist e tinggal {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>Cultist 👤 wis ngerekrut kowe dadi pengikut sekte! Kowe saiki dadi anggota aliran sesat anyaran. Pendhak wengi, kowe iso milih kanggo ngerekrut uwong mlebu melu sektemu.</value>
   </string>
   <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
     <value>Anggota Cultist: {0}</value>
   </string>
   <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
     <value>{0} wis gabung melu sekte Cultist 👤! Ciye-ciye ono cah anyaran.</value>
   </string>
   <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
     <value>{0} wis mbok kirim nggo ngajak {1} gabung melu sekte 👤... tapi sakne, ra ono uwong nang ngomah!</value>
   </string>
   <string key="CultWins" >
     <value >Kabeh Wolf wis mati, lan warga sing isih urip wis melu gabung nang sekte Cultist... Dolanan dimenangke Cultist 👤!</value>
   </string>
   <string key="HunterVisitDead">
+    <!-- 0 - target name -->
     <value>Kowe lungo nang ngomahe {0} nggo ngoyak Cultist, tapi wonge jebule wis mati!</value>
   </string>
   <string key="HunterFindCultist">
+    <!-- 0 - target name -->
     <value>Kowe lungo nang ngomahe {0}, lan ngonangi si {0} lagi donga karo dewa sing ra dikenal... Kowe langsung ngetokake pedang suci banjur mbacok ndase {0}. Cultist 👤 modyar.</value>
   </string>
+  <!-- 0 - target name -->
   <string key="HunterFailedToFind">
     <value>Kowe lungo nang ngomahe {0}, tapi kowe ra nemokake barang sing janggal nang kono. Wonge udu Cultist, kowe banjur bali ngomah.</value>
   </string>
   <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
     <value>Panutan e si {0} wis mati! Sinambi mangkel, wonge berubah/malih dadi Werewolf 🐺!</value>
   </string>
   <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
     <value>Panutanmu si {0} wis mati! Sinambi mangkel, kowe berubah/malih dadi werewolf 🐺! Kancamu sing anyar yaiku: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
@@ -418,6 +500,7 @@
     <value>Kowe ki Mason 👷.  Nek misale ono anggota mason liyane, kowe bakal reti sopo wae kancamu, tapi nek kowe dewekan, yowis rasah protes. Tapi kowe tetep, anggota warga biasa.</value>
   </string>
   <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
     <value>🌤 Pas kabeh warga podo tangi, warga nemokake jasad nang duwur watu ireng, getihe gegodreh nang ngendi-endi. Salah siji Mason uwis mati! -- {0}</value>
   </string>
   <string key="MasonTeam">
@@ -425,20 +508,27 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
     <value>Anggota anyaranmu lungo nang omahe {0} arep direkrut, tapi anggota anyaranmu malah delok omahe si {0} wis ra toto, getih nang ngendi-endi, lan ono wulu Wolf nyangkut nang cerak lawang...</value>
   </string>
   <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
     <value>Kabeh Wolf podo nang omahe {0} arep dipangan, tapi malah ketemu wujud sing gawe Wolf wedi. Ternyata kuwi Guardian Angel. Guardian Angel ngelawan Wolf, Wolf podo mlayu kocar-kacir bali nang omahe.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
     <value>Kowe ngutus {0} nggo ngrekrut {1}, ternyata wonge terlalu sholeh/sholehah lan susah direkrut, kowe raiso ngrekrut deknen :(</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
     <value>@{1}, pemain sing nganggo jeneng {0} uwis ono, cobo diganti jeneng liyane.</value>
   </string>
   <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
     <value>Kowe mlipir nang ngomahe {0} banjur tumpak-tumpakan... Pas wis rampung olehmu seneng-seneng, kowe delok tempat semedi si Cultist nang kamar e...</value>
   </string>
   <!-- new string May 13 2016-->
@@ -446,40 +536,51 @@
     <value>ki jebule</value>
   </string>
   <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
     <value>🌤 Kabeh warga podo tangi isuk, lan nyadar nek si {0} ora ono...   Kabeh langsung podo mlayu nang omahe si {0} kanggo ngecek.</value>
     <value>🌤 Isuk-isuk, Warga nemoke jasad si {0} klekaran nang ngomahe, tapi embuh rareti opo penyebab matine...</value>
   </string>
   <string key="MasonConverted">
+    <!-- 0 - mason's name -->
     <value>Aneh tenan.... Si {0} ora ketok nang pertemuan Mason 👷 esuk iki.... Mati opo yo O.o</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
     <value>🗣 Ndes, ra oleh minggat pas lagi dolanan, flee wis di-nonaktifke karo Admin e sing ganteng.</value>
   </string>
-  <string key="IsDead"> <!-- used when gunner shoots a player -->
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
     <value>wis modyar</value>
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
   <string key="AdminAdded">
+    <!-- 0 - target's name -->
     <value>{0} wis ditambahke dadi admin. Gunakke /config nggo ganti setelan group iki.</value>
   </string>
   <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
     <value>🗣 Kowe wis ono nang dolanan iki! Kowe ono nang group ({0})</value>
   </string>
   <string key="MultipleGames">
     <value>Groupmu koyone wis mulai dolanan akeh banget... Bot lagi mulai mateni dolanan sing ra kanggo</value>
   </string>
   <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
     <value>Sakne, groupmu saiki lagi ngantri nggo main.  Posisi: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
+    <!-- 0 - target's name -->
     <value>Ngapunten, Aku arep istirahat nggo perbaikan/maintenis, gur sedilit kok. Tapi kowe raiso mulai dolanan saiki.\nNunggu {0} permainan meneh rampung...\nCobo klik @werewolfdev nggo informasi sing luwih jelas.</value>
   </string>
   <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
     <value>Ngapunten, maksimal dolanan bareng nang bot iki wis tekan ({0}).  \nPosisi nang antrian: {1} / {1}</value>
   </string>
   <string key="SkipQueue">
+    <!-- 0 - target's name -->
     <value>{0} ki group sing didhisikke, lan rasah melu ngantri! ASEEEKK!</value>
   </string>
   <string key="NoGame">
@@ -498,15 +599,19 @@
     <value>UserId ra diisi/null.  Kowe yakin ngirim iki dadi balesan/reply?</value>
   </string>
   <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
     <value>{0} wis dadi admin!</value>
   </string>
   <string key="NotAdmin">
+    <!-- 0 - target's name -->
     <value>{0} dudu admin!</value>
   </string>
   <string key="AdminRemoved">
+    <!-- 0 - target's name -->
     <value>{0} dibusak seko daftar admin.</value>
   </string>
   <string key="LanguageSet">
+    <!-- 0 - language's name -->
     <value>Bahasa diganti dadi {0}</value>
   </string>
   <string key="NoSeer">
@@ -541,69 +646,96 @@
     <value>(5 menit kepungkur...)\n{0} ngetokake bedile, banjur delok nang kerumunan warga..... saking bingunge raiso nentokake sopo sing arep ditembak. Wonge wis bacut diobong warga, wis pancen takdire mati...</value>
   </string>
   <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
     <value>(5 menit kepungkur...)\nPas warga arep ngobong si {0}, wonge wis nyekel bedil 🔫, njut nginceng ngarahke tembakan nang {1} lan getihe gegodreh nang lemah! {1} nggletak mati. {2}</value>
   </string>
   <string key="HunterShotChoice">
     <value>Kowe wis dipateni! Nang wektu terakhir, kowe duwe kesempatan nggo nembak 🔫 wong liyo.... gek cepet milih sopo!</value>
   </string>
   <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
     <value>{0} wis ra iso obah, saking parahe nganti wonge ra iso jupuk bedil nggo nembak genti, banjur ngambruk nang lemah gegodreh getih.....</value>
   </string>
   <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
     <value>Si {0} wis ngambruk, nafase wis arep entek, lan raiso milih sopo sing arep ditembak genti.... pancen takdire wis kudu mati dewe..</value>
   </string>
   <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
     <value>Si {0} wis keno peluru, njut ngambruk nang ngisor.... tapi karo gegem bedil e wonge banjur nembak genti si {1} lan mati. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>Si {0} 👤 mlipir nang ngomahe {1} ben direkrut, wonge dibukake lawang, nanging ujug-ujug kaget amarga nang ngarepe ono wong stres ngacungke peso 🔪!!! {1} pesone banjur ditusuke nang dadane si {0}, ditusuk ping akeh banget nganti mati! {0} wis modyar.</value>
   </string>
   <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
     <value>Wolf nyobo arep mangan Hunter mau bengi, nanging Hunter iso sempet nembak salah siji Wolf mau. Si {0} banjur modyar (wolf 🐺)</value>
   </string>
   <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
     <value>Wolf nyobo nyerang Hunter mau bengi, nanging si Hunter iso mateni {0} sing ternyata Wolf 🐺!</value>
   </string>
   <string key="SerialKillerKilledWolf">
     <value>Wolf e wis niat arep nyerang uwong mau bengi, tapi jebule malah ketemu karo wong stres gowo peso 🔪! {0} si Wolf mati pas gelut karo Serial Killer!</value>
   </string>
   <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
     <value>🌙 Ndesone sepi nyenyet bengi iki, tapi kanggo {0} iki berita buruk.\nWarga podo kumpul lan nemokake jasad {0} diodel-odel jeroane, lan jantung e ilang... \nSerial Killer beraksi maneh!🔪\n{1}</value>
   </string>
   <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
     <value>Kowe nyoba arep nambah koleksi organ awak seko {0}, nanging wonge wis dilindungu Guardian Angel 👼! Sokor wonge ra iso dipateni...</value>
   </string>
   <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
     <value>Cultist 👤 ngutus si {0} nggo ngrekrut {1}, nanging ono suworo tembakan seko Hunter lan awake {0} menculat seko jendelo! {0} wis modyar....</value>
   </string>
   <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
     <value>Cultist 👤 ngutus si {0} nggo ngrekrut {1}, nanging bar kuwi krungu suworo jeritan, sisa jasade {0} sumebar metu seko jendelo, akeh bekas tusukan nang awake! PANCEN WONG EDAN! {0} wis modyar....</value>
   </string>
   <string key="GuardKiller">
     <value>Kowe nyoba ngelindungi si Serial Killer 🔪, tapi wonge malah bales nusuk kowe ping 69! Serial killer ra duwe roso terimakasih, Kowe modyar....</value>
   </string>
   <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
     <value>Kowe mlipir nang ngomahe {0}, lan mulai mancik sayang.  Awale kroso penak, makbedunduk si {0} ngetokake peso 🔪 ne lan nusuk kowe pas nang dodo. banjur ngguyu koyo Suzanna!  Kowe modyar....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
+    <!-- 0 - target's name -->
     <value>Si Doppelganger 🎭 {0} saiki wis malih dadi Mason 👷, persis koyo kowe!</value>
   </string>
   <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
     <value>{0} wis modyar, lan kowe malih dadi Mason. Koncomu (nek misal ono) yaiku: {1}</value>
   </string>
   <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
     <value>Si Doppelganger 🎭 {0} saiki wis malih dadi Cultist 👤, jan plek koyo kowe!</value>
   </string>
   <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
     <value>{0} wis modyar, lan kowe malih dadi Cultist 👤. Koncomu (nek misal ono) yaiku: {1}</value>
   </string>
   <string key="DGToWolf">
+    <!-- 0 - DG's name -->
     <value>Si Doppelganger 🎭 {0} saiki wis malih dadi Wolf 🐺, persis plek koyo kowe!</value>
   </string>
   <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
     <value>{0} wis modyar, lan kowe malih dadi Wolf 🐺. Koncomu (nek misal ono) yaiku: {1}</value>
   </string>
   <string key="SerialKillerWins">
@@ -613,6 +745,9 @@
     <value>❓ Sopo sing arep mbok pateni bengi iki?</value>
   </string>
   <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
     <value>si {0} mati nang kekepan e si {1}, banjur nangis kekejer. Wegah jones meneh, akhire wonge bunuh diri nang wit ceplukan. 💔 {2}</value>
   </string>
   <string key="AskDoppelganger">
@@ -637,39 +772,51 @@
     <value>Doppelgänger 🎭</value>
   </string>
   <string key="CupidChosen">
+    <!-- 0 - lover's name -->
     <value>Panahe Cupid 💘 wis ngenani atimu! CIYEEE WIS ORA JONES MENEH 💏! Kowe dadi cinta mati karo {0}! Dadi nek pasanganmu mati, kowe yo bakal mati. Nek kowe ro pasanganmu iso bertahan urip nganti rampung, kowe wong loro sing menang.</value>
   </string>
   <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
     <value>Kowe saiki dadi Wild Child 👶. Panutanmu yaiku: {0}</value>
   </string>
   <string key="LoversWin">
     <value>Tresno kang sejati bakal langgeng nganti tekan pati.\n💏 Pasangan sing ketaman asmoro wis menang! 💗</value>
   </string>
   <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
     <value>Nang tengah alun-alun, kabeh warga podo nemoke jasad {0} bekas ditembaki. Ketoke wonge waton mlebu nang ngomahe Hunter! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>Cultist 👤 nyobo arep ngrekrut kowe, tapi kowe terlalu sholeh/sholehah, wonge banjur mbok tolak!</value>
   </string>
   <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
     <value>🗣 Kowe uwis mlebu nang antrian {0}</value>
   </string>
   <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
     <value>🗣 Kowe uwis ditambahke nang daftar tunggu {0}. Bot bakal PM kowe nek dolanan anyar wis dilekasi.</value>
   </string>
   <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
     <value>🗣 Dolanan wis dilekasi ing {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
     <value>🌤 Isuk-isuk, 2 warga sing isih urip podo mlaku nang alun-alun. {0} ngematke si {1}, banjur mesam-mesem sambi ngetokake peso 🔪, nusuk si {1}</value>
   </string>
   <string key="NoWinner" isgif="true">
     <value>Iki jarang kedadean, tapi kabeh warga wis podo mati.... blas ra ono wong urip, gur tinggal mayit-mayit do gelimpangan. Ra ono sing menang nang dolanan iki...</value>
   </string>
   <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
     <value>🌤 Srengenge wis njedul, {0} lan {1} banjur mlaku metu nang alun-alun. {0} jupuk pesone 🔪 lan mlumpat arep nusuk si {1}. Si {1} jupuk bedil e 🔫 lan cepet-cepet nembak raine si {0}. {0} ngambruk lan akhire nusuk si {1}. Wong 2 akhire mati bareng. Desane saiki tanpo penduduk, lan ra ono sing menang...</value>
   </string>
   <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
     <value>🗣 Kowe kesuwen olehe keputusan, mulo moderator wis milihke acak nggo kowe: {0}</value>
   </string>
   <string key="Won">
@@ -677,5 +824,288 @@
   </string>
   <string key="Lost">
     <value>Kalah</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>🗣 Cecunguk {0} wis dipateni soale wis ra melu nuduh ping {1} ono ing wektu 24 jam.</value>
+  </string>
+  <!--New strings 7th of July-->
+    <string key="AboutVG">
+	<value>Lakonmu gur gampang - berusaha kanggo tetep urip. Pendak dino, kowe bakal duwe kesempatan nggo nuduh Werewolf.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Selaku Seer, pendak bengi kowe milih salah siji pemain kanggo diterawang kanggo ngerteni wujud asline. Ngati-ati karo role iki: Yen kowe ngaku awakmu iku Seer, Serigala bakal mangan kowe sesuk bengine!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Iki bakal mbungahi! Pendak dino, wong sing entuk dadi Serigala kudu nyoba ngapusi sing liyane nek Serigalane ki warga biasa. Nanging, pendak bengi, Serigala iso mateni pemain liane! Ngati-ngati yo: nek Serigala mangan Drunk/Cah Mabukan, Serigalane bakalan mabuk, tur ra iso golek mangsa nang mbengi ngarepe nggo ngilangke perasaan mabuk'e! (kadar alkohol'e de'e nganti 120%, mbok pikir) Nek Serigala nyerang Cursed, de'e bakalan dadi serigala pisan, HOKYA!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Nang lakon'e, Harlot bakal dikei kesempatan mampir nang omahe pemain liane pendak mbengi. Nek wonge dudu Serigala, bot bakal ngandani kowe (soal'e kowe urip to). Nek kowe mampir nang omahe Serigala, bot bakal ngandani kowe mati (de'e ngelih soale). Nek pilihanmu podo koyo Serigalane sedoyo, kowe bakal mati pisan. Nanging - nek kowe milih ben mlaku, tur Serigala sedoyo milih meh mangan kowe, kowe bakalan urip (soale kowe ora nang omah mbengine, baline isuk)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Drunk iki tim'e warga. Nanging, nek Serigala sedoyo milih meh mangan Drunk, Serigalane bakal dadi mabuk lan orak iso mangan nang mbengi ngarepe, goro-gorone kadar alkohol sing nyampur nang getih'e dhuwur banget.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Cursed iki jane tim warga. Nek Serigalane mangan Cursed, wonge dadi Serigala pisan. Ra sah mbok pikir meneh, wonge wes ganti tim!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Traitor ki jane tim warga. Nek Traitor ki bertahan nganti Serigalane mati kabeh, Traitor'e bakalan dadi Serigala. Setelah ganti tim ngono pemain sing dadi Traitor iso mateni sing mau ngirim-ngirimi PM termasuk mbribikanne (nek mbribikanne dolan pisan). </value>
+  </string>
+  <string key="AboutGA">
+    <value>Guardian Angel iki tim warga. Pendak mbengi, kowe iso milih nggo njogo pemain sing liane. Sing dadi Guardian Angel ki kudu ati-ati milih wong nggo dijogo. Soal'e, nek njogo Serigala mengko Guardian Angel'e iso modyar -- persentase modyar'e 50%, akeh banget kan? Tapi nek kowe njogo SK, persentase modyar'e malah dadi 100%.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Detective iki tim warga. Pendak awan, kowe iso milih nggo ngindik pemain sing liane. Sak uwes'e ngindik, ono kemungkinan 40% Serigala bakalan ngerti gerak-gerikmu selaku Detektif -- diiling-iling njaluk perlindungan seko Guardian Angel. </value>
+  </string>
+  <string key="AboutGunner">
+    <value>Selaku Gunner, kowe bakal diwenehi peluru perak 2 nang awal permainan. Pendhak awan, nek pelurune isih ono, sing dadi Gunner ki bakalan duwe kesempatan nggo mbedhil siji pemain sing liane, peluru sing dinggo mung siji (bedhil jaman mbiyen iso nembake gur siji-siji tok, sing dadi Gunner kudu sabar). Pas wektune Gunner mbedhil, bot bakalan ngomong neng grup nek Gunner wis mbedhil wong. Nek pelurune enthek, yo enthek ra ono meneh, soale peluru larang mbiyen. </value>
+  </string>
+  <string key="AboutTanner">
+    <value>Tanner ki ndhuwe tim'e dhewe. Carane menang mung siji: kowe kudu diobongke pas dina awan. Nek uwes keno obong, menang. Ngono thok. Pemain liyane kalah.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Fool iki tim warga. Nanging, bot ngandani de'e ki Seer. Pas wektune de'e nerawang peran'e pemain liyane, de'e diandani peran sing kadang bener kadang ndlepus, amargo presentase kebenarane hasil terawangane fool mung 40%. </value>
+  </string>
+  <string key="AboutCult">
+    <value>Cultist iki tim dhewe. Selaku Cultist, tujuan'e pemain kuwi ngubah pikiran pemain sing liyane ben melu kelompok Cultist. Cara dolanmu ngono, tujuanmu yo ngubah pemain liyane (kecuali Serigala yo) mlebu kelompokmu. Nek pemainne kabeh wes dadi Cultist, Cultist menang.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Cultist Hunter iki tim warga, gaweane berburu Cultist. Nek Cultist nekani omahe CH, anggotane sing paling anyar bakalan modyar. Pendhak mbengi, CH iki iso milih pemain nggo mbok cek -- nek de'e Cultist, de'e modyar.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Wild Child iki jane tim warga. Nang awal permainan, Wild Child bakalan milih pemain liyane selaku panutan. Nek panutane kuwi modyar, sing dadi Wild Child bakalan dadi Serigala tur pindah tim.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Apprentice Seer iki tim warga sing koyo warga biasa, ra ndhuwe kekuatan opo-opo. Nanging, nek Seer'e modyar, Apprentice Seer bakalan dadi Seer anyaran. Nek Seer'e keno rekrut Cultist, Apprentice Seer ra bakal iso malih dadi Seer.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Beholder iki tim warga sing diandani sopo Seer'e (Seer sing tenanan, dudu sing Fool).</value>
+  </string>
+  <string key="AboutMason">
+    <value>Mason iki tim warga. Dudu freemason yo, ngko dikiro antek wahyudi. Nek misale ono anggota Mason liyane, Mason bakal reti sopo wae kancane soale mason pendak esuk ngadakke srawungan. Nek ono kancane sing ora mangkat srawungan, ngko bot'e bakal ngandani mason liyane.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Doppelgänger ki jane ndhuwe tim dhewe. Nang mbengi pertama pemain'e bakalan iso milih sopo sing meh tiru peranne. Nek pemain sing ditiru mati, DG bakalan malih peran tur melu tim'e kuwi. Nek DG ora milih, mengko bot bakalan milih acak.
+      Elingo: Nek pemain'e kuwi malah dadi Cultist, DG bakalan malih dadi peran asline. Aturan sing liyane tetep: nek pemain sing ditiru kuwi WC tur panutan'e modyar, DG bakalan dadi Serigala. Nek ora, DG bakal ngewarisi panutan'e kuwi.
+      Cultist ra iso lebokke DG nang tim'e (isone di wektu DG ganti peran). DG iki ra iso menang kecuali nek de'e uwes malih. Nek ngasi dolanan bar DGne ora malih, DG-kalah kecuali nek de'e lover.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Cupid iki tim warga. Dikirim nang donya gur nganggo popok, panah, lan anak panah jumlahe 2. Pilih 2 (loro) pemain sing arep mbok jodokne dadi pasangan. Amargo setia sampe mati, nek salah siji pasangan kuwi mati, pasangane bakalan melu mati. Pasanganne kuwi dadi tim dhewe.
+      Elingo: Pasanganne bakalan ngerti sopo tresnone, nanging ra bakalan weruh peran-peran'e. Nek Pasanganne Cupid dadi 2 pemain terakhir, tim Pasanganne kuwi sing menang. Nek tim Pasanganne bedo (warga + Serigala), tur salah siji tim Pasanganne menang (Serigala), Pasangan sing liyane (warga) melu menang. KAKEAN COCOT nek Pasangan dho urip nang akhir permainan, tur salah siji tim Pasanganne menang, kelorone menang.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Hunter iki tim warga sing ora iso turu nyenyak. Nek Hunter mati diobong warga, Hunter iso milih wong liyo ben melu mati bareng Hunter'e. Nek Hunter dipangan Wolf, Hunter duwe kesempatan nggo mateni Wolf kuwi, tapi ra bakal duwe kesempatan nggo mateni pemain liyane. Wektu Hunter dipateni Serial Killer, Hunter'e iso milih sopo sing arep ditembak.
+      Elingo: Nggo serangan Serigala, kesempatane mulai seko 30%. Nek Serigalane siji, Hunter'e dadi duwe kesempatan 30% nggo mateni Serigalane tur tetep urip. Nggo Serigala masing-masing Hunter'e duwe kesempatan tambahan 20% (2 Serigala = 50%, 3 = 70%, sak uwes'e). Nek Serigalane akeh, Hunter ki malah iso nggowo Serigala siji -- tapi bakalan tetep mati pisan soale kakean Serigala.
+      Yen Cultist nyobo convert Hunter, 50% Hunter iso gagal direkrut tur terkadang koe iso mateni salah 1 Cultist sing nyobo ngrekrut koe!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Serial Killer iki ndhuwe tim'e dhewe. Serial Killer iki menange nek de'e dadi pemain terakhir sing urip, kecuali nek de'e dadi Lover. Serial Killer iki gaweane mateni wong utowo serigala saben mbengi. Nek Serial Killer kui diserang serigala ono kemungkinan 50% serial killer bakal modyar.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para ki wong ra cetho. Demenane nyolek-nyolek Serigala nang omahe, koyo jin. Padahal nyolek-nyolek Serigala koyo ngono gur membahayakan nyawa :(</value>
+	</string>
+  <string key="EndTime">
+    <value>⏱ Suwene dolanan: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>🗓 Dino ke {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>🗣 Ono sing ora beres, node game iki kudu dipateni :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>🗣 Aku wis ngirimi kowe PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Tulung kirimi aku PM ben aku yo iso PM kowe: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Matur nuwun wis mejet start! Aku saiki iso PM kowe :D</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Kowe kudu bales pesan nang pemain sing pengen mbok smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Kowe meh arep ngopo?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Kowe kudu join dolanan seko njero group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Kowe kudu start dolanan seko njero group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Wektu nggo nompo ping pesan: {0}\nCPU sing dinggo saiki: {1}%\nPesan per detik: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Milih boso opo?\nSaiki: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Varian?\nSaiki: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Bahasane diganti dadi {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Pengen goleki boso opo?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Saiki ra ono node sing online, dicobo dilit meneh</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Kowe kudu ngetik perintah iki nang group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Kowe ki udu admin global...</value>
+  </string>
+  <string key="NotPara">
+    <value>Kowe udu Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Iyo</value>
+  </string>
+  <string key="No">
+    <value>Ora</value>
+  </string>
+  <string key="Allow">
+    <value>Ijinke</value>
+  </string>
+  <string key="Disallow">
+    <value>Ora diijinke</value>
+  </string>
+  <string key="Show">
+    <value>Ketokne</value>
+  </string>
+  <string key="Hide">
+    <value>Delikne</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Tok</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Tok</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Pilihan Pemain</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Ojo diketokne kabeh</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Ketokne pemain sing urip wae</value>
+  </string>
+  <string key="ShowAll">
+    <value>Ketokne kabeh pemain</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Batal</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Opo kowe pingin ngijinke flee pas game dimulai?\nCathetan: pemain tetep isih iso flee pas fase join\nSaiki: {0} flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} flee sakwise game dimulai</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Piro sing pengen mbok setel kanggo maksimal pemain?\nSaiki: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maksimal pemain disetel dadi {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Ketokne opo Delikne lakon/roles pas mati?\nSaiki: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Lakon/roles bakal {0} pas mati.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Mode game opo sing mbok karepake?\nSaiki: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Mode game disetel dadi {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Kowe pengen nampilke lakon/roles pas akhir sing koyo piye?\nSaiki: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Lakon/roles pas akhir disetel dadi: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Pilih wektu dasar (detik) kanggo waktu awan. Setelan iki isih bakal dimodifikasi tergantung jumlah pemain.\nWektu minimal sing ditambahke menurut pemain yaiku 60 detik. Setelan awal: {0}\nSaiki: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Waktu dasar pas awan disetel dadi {0} detik</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Pilih wektu dasar (detik) kanggo waktu wengi. Setelan awal: {0}\nSaiki:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Wektu bengi disetel dadi {0} detik</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Pilih wektu (detik) kanggo vote nuduh. Setelan awal: {0}\nSaiki:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Wektu nuduh disetel dadi {0} detik</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ijinke Fool dadi pilihan nang role game?\nSaiki: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Role Fool disetel dadi: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ijinke Tanner dadi pilihan nang role game?\nSaiki: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner disetel dadi: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ijinke Cult dadi pilihan nang role game?\nSaiki: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult disetel dadi: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Matur nuwun, rahayu ingkang sami pinanggih :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Boso opo sing pengen mbok goleki nggo dolanan nang group?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Iki daftar group kanggo {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Anggota</value>
+  </string>
+  <string key="StartMe">
+    <value>🗣 Tulung start aku ben aku iso PM kowe</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>🗣 {0} ora mejet start nang bot lan wis ditokne seko dolanan!</value>
+  </string>
+  <string key="LatestList">
+    <value>Iki daftar sing paling anyar</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Raiso nampilke daftar paling anyar</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hokya! Kowe wis sukses join dolanan nang {0}</value>
   </string>
 </strings>
