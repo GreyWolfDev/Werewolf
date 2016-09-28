@@ -2842,7 +2842,6 @@ namespace Werewolf_Node
                         ga.DiedLastNight = true;
                         ga.DiedFromWolf = true;
                         ga.DiedFromWrongChoice = true;
-                        ga.DiedGuardingWolf = true;
                         DBKill(save, ga, KillMthd.GuardWolf);
                         Send(GetLocaleString("GuardWolf"), ga.Id);
                     }
