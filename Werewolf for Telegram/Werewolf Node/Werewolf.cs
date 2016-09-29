@@ -1782,10 +1782,10 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
 
             if (CheckForGameEnd()) return;
-            SendPlayerList();
             SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
-
+            SendPlayerList();
             SendLynchMenu();
+
             for (var i = 0; i < (DbGroup.LynchTime ?? Settings.TimeLynch); i++)
             {
                 Thread.Sleep(1000);
@@ -2023,7 +2023,6 @@ namespace Werewolf_Node
             }
 
             if (CheckForGameEnd()) return;
-            SendPlayerList();
             //reset choices
             foreach (var p in Players)
             {
@@ -2034,6 +2033,7 @@ namespace Werewolf_Node
 
             SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
             SendWithQueue(GetLocaleString("Day", GameDay.ToBold()));
+            SendPlayerList();
 
             SendDayActions();
             //incremental sleep time for large players....
@@ -2129,7 +2129,6 @@ namespace Werewolf_Node
             foreach (var p in Players)
                 p.CurrentQuestion = null;
             if (CheckForGameEnd()) return;
-            SendPlayerList();
             foreach (var p in Players)
             {
                 p.Choice = 0;
@@ -2143,7 +2142,9 @@ namespace Werewolf_Node
                     nightTime = Math.Max(nightTime, 120);
 
             SendWithQueue(GetLocaleString("NightTime", nightTime.ToBold()));
+            SendPlayerList();
             SendNightActions();
+
             var nightPlayers = Players.Where(x => !x.IsDead & !x.Drunk && x.HasNightAction);
             // ReSharper disable once LoopVariableIsNeverChangedInsideLoop
             for (var i = 0; i < nightTime; i++)
