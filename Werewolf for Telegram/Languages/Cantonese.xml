@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--
+    ==UPDATE LOG==
+    LAST UPDATE 29/09/2016 by @jeffffc
+    29/09: abouthunter: No one wins [only with SK but not wolves]
+    29/09: added "PlayerNoPM" "LatestList" "UnableToGetList" "YouJoined" strings
+-->
 <strings>
   <language name="廣東話" base="廣東話" variant="Normal" owner="hkgworm"/>
   <string key="NotInGame">
@@ -750,7 +756,7 @@
     </value>
   </string>
   <string key="AboutHunter">
-    <value>【獵人】喺臨死之前可以拉一個人陪葬。如果係狼人嚟食你，你有機會反殺狼群嘅其中一個，不過就冇得揀對住邊個開槍。如果得一隻狼嘅話，有 30% 反殺隻狼（並一定存活）。每多一隻狼多 20% （兩狼 50%；三狼 70%）。如果有多過一個狼人，就算你反殺到你都有機會死。如果邪教會員黎拉你入會，佢地有 50% 機率拉唔倒你入會，而你就再會有 50% 機率去殺佢地其中一個。當你同狼人或者連環殺手成為最後兩個生存者果時，就會一齊輸。
+    <value>【獵人】喺臨死之前可以拉一個人陪葬。如果係狼人嚟食你，你有機會反殺狼群嘅其中一個，不過就冇得揀對住邊個開槍。如果得一隻狼嘅話，有 30% 反殺隻狼（並一定存活）。每多一隻狼多 20% （兩狼 50%；三狼 70%）。如果有多過一個狼人，就算你反殺到你都有機會死。如果邪教會員黎拉你入會，佢地有 50% 機率拉唔倒你入會，而你就再會有 50% 機率去殺佢地其中一個。當你同連環殺手成為最後兩個生存者果時，就會一齊輸。
     </value>
   </string>
   <string key="AboutSK">
@@ -946,4 +952,17 @@
     <value>你唔啟動我，我PM唔到你，你唔會知自己係咩角色架喎。</value>
   </string>
   <!--Above Strings updated by @jeffffchoy on 10/8/2016-->
+  <string key="PlayerNoPM">
+    <value>{0} 未PM啟動狼人bot，所以今場冇得玩喇！</value>
+  </string>
+  <string key="LatestList">
+    <value>最新玩家名單係呢度</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>未有玩家名單喎！</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>你成功加入左 {0} 既遊戲啦！</value>
+  </string>
 </strings>
