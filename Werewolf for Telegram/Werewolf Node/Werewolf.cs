@@ -2941,7 +2941,8 @@ namespace Werewolf_Node
                     Players.Count(x => x.IsDead) > 2)  //what the hell was my logic here....  damn myself for not commenting this line. why would it matter if 2 players ARE dead?
                 {
                     //do nothing
-                    return false;
+                    // ^ why? Commenting next line out until we find out
+                    //return false;
                 }
                 return DoGameEnd(ITeam.Wolf);
             }
