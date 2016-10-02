@@ -375,16 +375,7 @@ namespace Werewolf_Control
         {
             Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
-
-        [Attributes.Command(Trigger = "leavegroup", DevOnly = true)]
-        public static void LeaveGroup(Update update, string[] args)
-        {
-            Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", long.Parse(args[1]))
-                .ContinueWith((result) =>
-                {
-                    Bot.Api.LeaveChat(args[1]);
-                });
-        }
+        
 
         [Attributes.Command(Trigger = "clearcount", DevOnly = true)]
         public static void ClearCount(Update u, string[] args)
@@ -823,35 +814,91 @@ namespace Werewolf_Control
             }
         }
 
-        [Attributes.Command(Trigger = "remgrp", GlobalAdminOnly = true)]
-        public static void RemGrp(Update u, string[] args)
+        
+
+        [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]
+        public static void LeaveGroup(Update update, string[] args)
         {
-            var link = args[1];
-            if (String.IsNullOrEmpty(link))
+            if (String.IsNullOrEmpty(args[1]))
             {
-                Send("Use /remgrp <link>", u.Message.Chat.Id);
+                Send("Use /leavegroup <id|link>", update.Message.Chat.Id);
                 return;
             }
-            //grouplink should be the argument
+            var grpid = (long) 0;
+            var grpname = "";
+            //check for id, else we hope it's a link..
+            if (!long.TryParse(args[1], out grpid))
+            {
+                var link = args[1];
+                using (var db = new WWContext())
+                {
+                    var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+                    if (grp != null)
+                    {
+                        grpid = grp.GroupId;
+                        grpname = grp.Name;
+                    }
+                }
+            }
+            if (grpid != 0)
+            {
+                try
+                {
+                    Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", grpid)
+                        .ContinueWith((result) =>
+                        {
+                            Bot.Api.LeaveChat(grpid);
+                        });
+                }
+                catch (Exception e)
+                {
+                    Send("An error occurred.\n" + e.Message, update.Message.Chat.Id);
+                    return;
+                }
+                var msg = "Bot successfully left from group";
+                msg += String.IsNullOrEmpty(grpname) ? $" {grpname}." : ".";
+                Send(msg, update.Message.Chat.Id);
+            }
+            else
+                Send("Couldn't find the group. Is the id/link valid?", update.Message.Chat.Id);
+            return;
+        }
+
+        [Attributes.Command(Trigger = "disapproved", GlobalAdminOnly = true)]
+        public static void Disapproved(Update update, string[] args)
+        //NOTE: Since the "Preferred" column is not used anymore, it is used here to mark groups as disapproved instead of creating a new "Disapproved" column.
+        {
+            if (String.IsNullOrEmpty(args[1]))
+            {
+                Send("Usage: /disapproved <link> [Y|N]\n\nTells if a group is disapproved (can't be on grouplist). If Y or N is specified, disapproves / approves the group", update.Message.Chat.Id);
+                return;
+            }
+            var link = args[1].Split(' ').First();
+            var choice = args[1].Split(' ').Skip(1).First();
             using (var db = new WWContext())
             {
                 var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
                 if (grp != null)
                 {
-
-                    try
+                    if (choice.ToUpper() == "Y" || choice.ToUpper() == "N")
                     {
-                        var result = Bot.Api.LeaveChat(grp.GroupId).Result;
-                        Send($"Bot removed from group: " + result, u.Message.Chat.Id);
+                        bool disapproved = (choice.ToUpper() == "Y");
+                        grp.Preferred = disapproved;
+                        db.SaveChanges();
+                        var msg = disapproved ? $"{grp.Name} won't appear on grouplist anymore" : $"{grp.Name} will now be able to appear on grouplist";
+                        Send(msg, update.Message.Chat.Id);
                     }
-                    catch
+                    else
                     {
-
+                        var msg = grp.Name +
+                            (grp.Preferred == true ? " can't " : " can ") +
+                            "appear on grouplist";
+                        Send(msg, update.Message.Chat.Id);
                     }
-                    grp.GroupLink = null;
-                    db.SaveChanges();
-                    Send($"Group {grp.Name} removed from /grouplist", u.Message.Chat.Id);
                 }
+                else
+                    Send("Couldn't find the group, so it is likely not to be in the grouplist.", update.Message.Chat.Id);
+                return;
             }
         }
     }
