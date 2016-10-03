@@ -565,7 +565,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     if (!nonCommandsList.Contains(command.ToLower()))
-                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid))
+                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) && query.From.Id != Para && !IsGlobalAdmin(query.From.Id))
                         {
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
                                 GetLocaleString("GroupAdminOnly", language));
