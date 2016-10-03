@@ -24,14 +24,12 @@ namespace Werewolf_Control.Handler
 
     internal static class UpdateHandler
     {
-        internal static int Para = 129046388;
         internal static Dictionary<int, SpamDetector> UserMessages = new Dictionary<int, SpamDetector>();
 
         internal static HashSet<int> SpamBanList = new HashSet<int>
         {
 
         };
-
         internal static List<GlobalBan> BanList = new List<GlobalBan>();
 
         internal static bool SendGifIds = false;
@@ -345,20 +343,20 @@ namespace Werewolf_Control.Handler
                                                 : "اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         return;
                                     }
-                                    if (command.DevOnly && update.Message.From.Id != Para)
+                                    if (command.DevOnly && update.Message.From.Id != UpdateHelper.Para)
                                     {
                                         Send(GetLocaleString("NotPara", GetLanguage(id)), id);
                                         return;
                                     }
                                     if (command.GlobalAdminOnly)
                                     {
-                                        if (!IsGlobalAdmin(update.Message.From.Id))
+                                        if (!UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                         {
                                             Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
                                             return;
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != Para & !IsGlobalAdmin(update.Message.From.Id))
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != UpdateHelper.Para & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
                                         return;
@@ -386,7 +384,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.VoiceMessage:
                             break;
                         case MessageType.DocumentMessage:
-                            if (update.Message.From.Id == Para && SendGifIds)
+                            if (update.Message.From.Id == UpdateHelper.Para && SendGifIds)
                             {
                                 var doc = update.Message.Document;
                                 Send(doc.FileId, update.Message.Chat.Id);
@@ -485,13 +483,7 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        private static bool IsGlobalAdmin(int id)
-        {
-            using (var db = new WWContext())
-            {
-                return db.Admins.Any(x => x.UserId == id);
-            }
-        }
+        
 
 
         /// <summary>
@@ -520,6 +512,7 @@ namespace Werewolf_Control.Handler
         {
             new Task(() => { HandleCallback(e.CallbackQuery); }).Start();
         }
+
 
         internal static void HandleCallback(CallbackQuery query)
         {
@@ -565,7 +558,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     if (!nonCommandsList.Contains(command.ToLower()))
-                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) && query.From.Id != Para && !IsGlobalAdmin(query.From.Id))
+                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) && query.From.Id != UpdateHelper.Para && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                         {
                             Edit(query.Message.Chat.Id, query.Message.MessageId,
                                 GetLocaleString("GroupAdminOnly", language));

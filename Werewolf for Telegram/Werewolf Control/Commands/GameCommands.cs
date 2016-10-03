@@ -91,7 +91,7 @@ namespace Werewolf_Control
                     db.Groups.Add(grp);
                     db.SaveChanges();
                 }
-                if (UpdateHelper.IsGroupAdmin(update))
+                if (UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != UpdateHelper.Para & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                 {
                     var game = GetGroupNodeAndGame(update.Message.Chat.Id);
                     if (game != null)
