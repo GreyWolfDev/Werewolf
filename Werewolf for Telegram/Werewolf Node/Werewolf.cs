@@ -920,7 +920,7 @@ namespace Werewolf_Node
                         attempts++;
                         if (attempts >= 50)
                         {
-                            throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again");
+                            throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + count);
                         }
                         rolesToAssign = GetRoleList(count);
                         rolesToAssign.Shuffle();
