@@ -91,21 +91,17 @@ namespace Werewolf_Control
                     db.Groups.Add(grp);
                     db.SaveChanges();
                 }
-                if (UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != UpdateHelper.Para & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
+
+                var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                if (game != null)
                 {
-                    var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                    if (game != null)
-                    {
-                        //send forcestart                                            
-                        game.ForceStart();
-                    }
-                    else
-                    {
-                        Send(GetLocaleString("NoGame", grp.Language), id);
-                    }
+                    //send forcestart                                            
+                    game.ForceStart();
                 }
                 else
-                    Send(GetLocaleString("GroupAdminOnly", grp?.Language ?? "English"), id);
+                {
+                    Send(GetLocaleString("NoGame", grp.Language), id);
+                }
             }
 
         }

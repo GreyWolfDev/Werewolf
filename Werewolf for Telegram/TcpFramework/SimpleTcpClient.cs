@@ -96,32 +96,32 @@ namespace TcpFramework
                 Thread.Sleep(10);
                 return;
             }
-            _queuedMsg.Clear();
+            //_queuedMsg.Clear();
             List<byte> bytesReceived = new List<byte>();
 
             while (c.Available > 0 && c.Connected)
             {
-                byte[] nextByte = new byte[4096];
+                byte[] nextByte = new byte[c.Available];
                 c.Client.Receive(nextByte, 0, nextByte.Length, SocketFlags.None);
                 bytesReceived.AddRange(nextByte);
                 var delIndex = Array.IndexOf(nextByte, delimiter);
                 if (delIndex != -1)
                 {
                     var part = nextByte.Take(delIndex + 1);
-                    var next = nextByte.Skip(delIndex + 1).ToArray();
+                    var next = nextByte.Skip(delIndex + 1);
                     _queuedMsg.AddRange(part);
                     byte[] msg = _queuedMsg.ToArray();
                     _queuedMsg.Clear();
                     _queuedMsg.AddRange(next);
-                    bytesReceived.Clear();
-                    bytesReceived.AddRange(next);
+                    //bytesReceived.Clear();
+                    //bytesReceived.AddRange(next);
                     NotifyDelimiterMessageRx(c, msg);
                 }
                 else
                 {
                     _queuedMsg.AddRange(nextByte);
                 }
-                //Thread.Sleep(5);
+                //Thread.Sleep(75);
                 //byte[] nextByte = new byte[1];
                 //c.Client.Receive(nextByte, 0, 1, SocketFlags.None);
                 //bytesReceived.AddRange(nextByte);
