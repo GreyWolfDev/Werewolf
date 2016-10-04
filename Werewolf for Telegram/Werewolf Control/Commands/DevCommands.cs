@@ -450,10 +450,18 @@ namespace Werewolf_Control
                 }
                 reply += "\nGlobal Bans in Database\n";
 
-                reply = UpdateHandler.BanList.OrderBy(x => x.Expires).Aggregate(reply, (current, ban) => current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + $"\n{(ban.Expires < new DateTime(3000, 1, 1) ? "Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n" : "")}");
+                reply = UpdateHandler.BanList.Where(x => x.Expires < new DateTime(3000, 1, 1)).OrderBy(x => x.Expires).
+                    Aggregate(reply, (current, ban) => 
+                    current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + 
+                    $"\n{"Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n"}");
 
                 Send(reply, u.Message.Chat.Id);
 
+                reply = "";
+                reply = UpdateHandler.BanList.Where(x => x.Expires >= new DateTime(3000, 1, 1)).OrderBy(x => x.Expires).
+                    Aggregate(reply, (current, ban) =>
+                    current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + "\n");
+                Send(reply, u.Message.Chat.Id);
             }
         }
 
