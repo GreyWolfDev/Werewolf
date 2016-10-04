@@ -2431,6 +2431,7 @@ namespace Werewolf_Node
                                                 shotWuff.TimeDied = DateTime.Now;
                                                 shotWuff.DiedFromWrongChoice = true;
                                                 shotWuff.DiedFromHunter = true;
+                                                shotWuff.DiedLastNight = true;
                                                 DBKill(target, shotWuff, KillMthd.HunterShot);
 
                                             }
@@ -2458,6 +2459,7 @@ namespace Werewolf_Node
                                             shotWuff.TimeDied = DateTime.Now;
                                             shotWuff.DiedFromWrongChoice = true;
                                             shotWuff.DiedFromKiller = true;
+                                            shotWuff.DiedLastNight = true;
                                             //SendWithQueue(GetLocaleString("SerialKillerKilledWolf", shotWuff.GetName()));
                                             DBKill(target, shotWuff, KillMthd.SerialKilled);
                                         }
