@@ -37,13 +37,13 @@ namespace BuildAutomation
 
                 
 
-                using (var sw = new StreamWriter(HttpContext.Current.Server.MapPath("~/App_Data/repo.log")))
+                using (var sw = new StreamWriter(HttpContext.Current.Server.MapPath("~/App_Data/build.log")))
                 {
-                    sw.WriteLine($"Output\n{output}\nError\n{error}");
+                    sw.WriteLine($"Git Pull\n{output}");
                 }
                 if (output.Contains("error"))
                 {
-                    throw new HttpException("Unable to pull repo\n" + error);
+                    throw new HttpException("Unable to pull repo\n" + output);
                 }
                 p.WaitForExit();
                 //TODO: Build each version (Beta, Release, Release 2)
