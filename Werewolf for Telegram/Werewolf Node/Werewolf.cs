@@ -2264,7 +2264,7 @@ namespace Werewolf_Node
                 }
                 //check if all votes are cast
 
-                if (nightPlayers.All(x => x.Choice != 0))
+                if (nightPlayers.All(x => x.CurrentQuestion == null))
                     break;
             }
             try
