@@ -918,7 +918,7 @@ namespace Werewolf_Node
                     while (!balanced)
                     {
                         attempts++;
-                        if (attempts >= 50)
+                        if (attempts >= 200)
                         {
                             throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + count);
                         }

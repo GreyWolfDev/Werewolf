@@ -268,64 +268,113 @@ namespace Werewolf_Control
             //same as it was before....
 
             //if player count > role count, add another cultist into the mix
-            if (rolesToAssign.Any(x => x== IRole.CultistHunter))
+            if (rolesToAssign.Any(x => x == IRole.CultistHunter))
             {
                 rolesToAssign.Add(IRole.Cultist);
                 rolesToAssign.Add(IRole.Cultist);
             }
             //now fill rest of the slots with villagers (for large games)
-            for(int i = 0; i < playerCount / 4; i++)
+            for (int i = 0; i < playerCount / 4; i++)
                 rolesToAssign.Add(IRole.Villager);
             return rolesToAssign;
         }
 
+        public class BalancedGameAttempt
+        {
+            public bool Balanced { get; set; }
+            public int AttemptsMade { get; set; }
+        }
+
+        private static Dictionary<int, List<BalancedGameAttempt>> BalancedAttempts;
+
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            var balanced = false;
-            var count = int.Parse(args[1]);
-            List<IRole> rolesToAssign = new List<IRole>();
-            int villageStrength = 0, enemyStrength = 0;
-            var attempts = 0;
-            var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
-            while (!balanced)
+            //get parameters
+            var parms = args[1].Split(' ');
+            if (parms.Length != 2)
             {
-                attempts++;
-                if (attempts >= 20)
-                    break;
-                rolesToAssign = GetRoleList(count);
-                rolesToAssign.Shuffle();
-                rolesToAssign = rolesToAssign.Take(count).ToList();
-                //check the balance
-                
-                villageStrength =
-                    rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-                var wolfStrength = rolesToAssign.Where(x => x == IRole.Wolf).Sum(x => x.GetStrength(rolesToAssign));
-                var skStrength = rolesToAssign.Where(x => x == IRole.SerialKiller)
-                    .Sum(x => x.GetStrength(rolesToAssign));
-                var cultStrength = rolesToAssign.Where(x => x == IRole.Cultist).Sum(x => x.GetStrength(rolesToAssign));
+                Send("!test <attempts per game> <games to create per player level>", update.Message.Chat.Id);
+                return;
 
-                //check balance
-                var varianceAllowed = (count / 5) + 3;
-                enemyStrength = (wolfStrength + skStrength + cultStrength);
-                balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+            }
+            var attemptCount = int.Parse(parms[0]);
+            var tries = int.Parse(parms[1]);
+            BalancedAttempts = new Dictionary<int, List<BalancedGameAttempt>>();
+            for (var count = 5; count <= 35; count++)
+            {
+                var balancedGameAttempts = new List<BalancedGameAttempt>();
+                var success = 0;
+                var totalAttempts = 0;
+                for (var i = 0; i < tries; i++)
+                {
 
+                    var balanced = false;
+
+                    List<IRole> rolesToAssign = new List<IRole>();
+                    int villageStrength = 0, enemyStrength = 0;
+                    var attempts = 0;
+                    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
+                    while (!balanced)
+                    {
+                        attempts++;
+                        if (attempts >= attemptCount)
+                            break;
+                        rolesToAssign = GetRoleList(count);
+                        rolesToAssign.Shuffle();
+                        rolesToAssign = rolesToAssign.Take(count).ToList();
+                        //check the balance
+
+                        villageStrength =
+                            rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+                        var wolfStrength =
+                            rolesToAssign.Where(x => x == IRole.Wolf).Sum(x => x.GetStrength(rolesToAssign));
+                        var skStrength = rolesToAssign.Where(x => x == IRole.SerialKiller)
+                            .Sum(x => x.GetStrength(rolesToAssign));
+                        var cultStrength =
+                            rolesToAssign.Where(x => x == IRole.Cultist).Sum(x => x.GetStrength(rolesToAssign));
+
+                        //check balance
+                        var varianceAllowed = (count / 5) + 3;
+                        enemyStrength = (wolfStrength + skStrength + cultStrength);
+                        balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+                    }
+
+                    totalAttempts += attempts;
+                    if (balanced)
+                        success++;
+                    balancedGameAttempts.Add(new BalancedGameAttempt {AttemptsMade = attempts, Balanced = balanced});
+                }
+
+                BalancedAttempts.Add(count, balancedGameAttempts);
+                //var msg = $"Attempts: {attempts}\n";
+                //if (balanced)
+                //{
+                //    msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+                //    msg +=
+                //        $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
+                //    msg +=
+                //        $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
+                //}
+                //else
+                //{
+                //    msg += "Unbalanced :(";
+                //}
 
             }
 
-            var msg = $"Attempts: {attempts}\n";
-            if (balanced)
-            {
-                msg = $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
-                msg +=
-                    $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
-                msg +=
-                    $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
-            }
-            else
-            {
-                msg += "Unbalanced :(";
-            }
+            //calculate totals
+            var totalPass = BalancedAttempts.Sum(x => x.Value.Count(v => v.Balanced));
+            var totalGames = BalancedAttempts.Sum(x => x.Value.Count);
+            var avgAttempts = (BalancedAttempts.Sum(x => x.Value.Sum(v => v.AttemptsMade)))/totalGames;
+
+
+            
+            //calculate success rates per player size
+            var msg = BalancedAttempts.Aggregate($"Number of games attempted: {totalGames}\nNumber of games per player count: {tries}\nNumber of attempts per game: {attemptCount}\nNumber of balanced games: {totalPass}\nAverage attempts: {avgAttempts}\n", (current, gameSet) => current + $"{gameSet.Key}: {(gameSet.Value.Count(x => x.Balanced)*100)/tries}% pass\n");
+
 
             Send(msg, update.Message.Chat.Id);
         }
@@ -451,8 +500,8 @@ namespace Werewolf_Control
                 reply += "\nGlobal Bans in Database\n";
 
                 reply = UpdateHandler.BanList.Where(x => x.Expires < new DateTime(3000, 1, 1)).OrderBy(x => x.Expires).
-                    Aggregate(reply, (current, ban) => 
-                    current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() + 
+                    Aggregate(reply, (current, ban) =>
+                    current + $"{ban.TelegramId} - {ban.Name.FormatHTML()}: {ban.Reason}".ToBold() +
                     $"\n{"Expires: " + TimeZoneInfo.ConvertTimeToUtc(ban.Expires, TimeZoneInfo.Local).ToString("u") + "\n"}");
 
                 Send(reply, u.Message.Chat.Id);
