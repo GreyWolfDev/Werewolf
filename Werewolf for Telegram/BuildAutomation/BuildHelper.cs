@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -11,10 +12,12 @@ namespace BuildAutomation
     {
         public static async void Automate()
         {
-            //TODO: Pull latest files from repo
-            var p = new Process
+            try
             {
-                StartInfo =
+                //TODO: Pull latest files from repo
+                var p = new Process
+                {
+                    StartInfo =
                     {
                         FileName = @"C:\Werewolf Source\Werewolf\sync repo.bat",
                         WorkingDirectory = @"C:\Werewolf Source\Werewolf",
@@ -23,16 +26,24 @@ namespace BuildAutomation
                         RedirectStandardError = true,
                         CreateNoWindow = true
                     }
-            };
-            p.Start();
-            p.WaitForExit();
-            //TODO: Build each version (Beta, Release, Release 2)
-            //methinks I'm gonna need to install VS for this
-            //TODO: Stage update for control
+                };
+                p.Start();
+                p.WaitForExit();
+                //TODO: Build each version (Beta, Release, Release 2)
+                //methinks I'm gonna need to install VS for this
+                //TODO: Stage update for control
 
-            //TODO: Stage Node update
+                //TODO: Stage Node update
 
-            //TODO: Send a message to dev chat, notifying updates are staged
+                //TODO: Send a message to dev chat, notifying updates are staged
+            }
+            catch (Exception e)
+            {
+                using (var sw = new StreamWriter(HttpContext.Current.Server.MapPath("~/App_Data/error.log"), true))
+                {
+                    sw.WriteLine($"----------------------------------------------------------\n{DateTime.Now}\n{e.Message}\n{e.StackTrace}\n");
+                }
+            }
         }
     }
 }

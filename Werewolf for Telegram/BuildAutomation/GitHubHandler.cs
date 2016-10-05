@@ -28,7 +28,7 @@ namespace BuildAutomation
                     sw.WriteLine(data);
                 }
 
-                if (push.commits.Any(x => x.message.Contains("#build#") && x.committer.username == "parabola949"))
+                if (push.commits.Any(x => x.message.Contains("#build#") && x.committer.username.Trim() == "parabola949"))
                 {
                     //we want to build, yay!
                     new Task(BuildHelper.Automate).Start();
