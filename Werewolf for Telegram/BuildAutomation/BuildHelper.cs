@@ -33,15 +33,15 @@ namespace BuildAutomation
                 while (!p.StandardOutput.EndOfStream)
                     output += p.StandardOutput.ReadLine() + Environment.NewLine;
                 while (!p.StandardError.EndOfStream)
-                    error += p.StandardError.ReadLine() + Environment.NewLine;
+                    output += p.StandardError.ReadLine() + Environment.NewLine;
 
-                error = error.Replace("Fatal: Exception encountered.\r\n", "");
+                
 
                 using (var sw = new StreamWriter(HttpContext.Current.Server.MapPath("~/App_Data/repo.log")))
                 {
                     sw.WriteLine($"Output\n{output}\nError\n{error}");
                 }
-                if (!String.IsNullOrWhiteSpace(error))
+                if (output.Contains("error"))
                 {
                     throw new HttpException("Unable to pull repo\n" + error);
                 }
