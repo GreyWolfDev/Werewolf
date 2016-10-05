@@ -2103,8 +2103,8 @@ namespace Werewolf_Node
                                     msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
                                 else if (p.DiedFromHunter)
                                 {
-                                    //if the wolves who acted last night are > 1... maybe there's some cleaner / simpler way to do this
-                                    if (Players.Where(x => x.PlayerRole == IRole.Wolf && !x.Drunk && (!x.IsDead || x.DiedLastNight)).Count() > 1)
+                                    //if the wolves who were alive last night are > 1... maybe there's some cleaner / simpler way to do this
+                                    if (Players.Where(x => x.PlayerRole == IRole.Wolf && (!x.IsDead || x.DiedLastNight)).Count() > 1)
                                         msg = GetLocaleString("HunterShotWolfMulti", p.GetName());
                                     else
                                         GetLocaleString("HunterShotWolf", p.GetName());
