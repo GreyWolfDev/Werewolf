@@ -25,7 +25,10 @@ namespace BuildAutomation
                 string path = HttpContext.Current.Server.MapPath("~/App_Data/last.json");
                 using (var sw = new StreamWriter(path))
                 {
+                    foreach (var c in push.commits)
+                        sw.WriteLine($"Commit by: {c.committer.username}\nMessage: {c.message}\n");
                     sw.WriteLine(data);
+                    
                 }
 
                 if (push.commits.Any(x => x.message.Contains("#build#") && x.committer.username.Trim() == "parabola949"))
