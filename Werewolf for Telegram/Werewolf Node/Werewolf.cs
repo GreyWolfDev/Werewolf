@@ -799,8 +799,9 @@ namespace Werewolf_Node
                         else
                             Send(final);
                     }
-                    Thread.Sleep(4000);
+                    
                 }
+                Thread.Sleep(4000);
 
             }
             //do one last send
@@ -936,8 +937,6 @@ namespace Werewolf_Node
                 }
                 else
                 {
-
-
                     var balanced = false;
                     var attempts = 0;
                     var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
