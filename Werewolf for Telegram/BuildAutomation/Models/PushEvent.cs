@@ -5,6 +5,7 @@ using System.Web;
 
 namespace BuildAutomation.Models
 {
+
     public class PushEvent
     {
         public string _ref { get; set; }
@@ -32,8 +33,8 @@ namespace BuildAutomation.Models
         public string url { get; set; }
         public Author author { get; set; }
         public Committer committer { get; set; }
-        public object[] added { get; set; }
-        public object[] removed { get; set; }
+        public string[] added { get; set; }
+        public string[] removed { get; set; }
         public string[] modified { get; set; }
     }
 
@@ -97,6 +98,7 @@ namespace BuildAutomation.Models
         public string notifications_url { get; set; }
         public string labels_url { get; set; }
         public string releases_url { get; set; }
+        public string deployments_url { get; set; }
         public int created_at { get; set; }
         public DateTime updated_at { get; set; }
         public int pushed_at { get; set; }
@@ -104,11 +106,11 @@ namespace BuildAutomation.Models
         public string ssh_url { get; set; }
         public string clone_url { get; set; }
         public string svn_url { get; set; }
-        public object homepage { get; set; }
+        public string homepage { get; set; }
         public int size { get; set; }
         public int stargazers_count { get; set; }
         public int watchers_count { get; set; }
-        public object language { get; set; }
+        public string language { get; set; }
         public bool has_issues { get; set; }
         public bool has_downloads { get; set; }
         public bool has_wiki { get; set; }
@@ -167,8 +169,8 @@ namespace BuildAutomation.Models
         public string url { get; set; }
         public Author1 author { get; set; }
         public Committer1 committer { get; set; }
-        public object[] added { get; set; }
-        public object[] removed { get; set; }
+        public string[] added { get; set; }
+        public string[] removed { get; set; }
         public string[] modified { get; set; }
     }
 
@@ -185,5 +187,6 @@ namespace BuildAutomation.Models
         public string email { get; set; }
         public string username { get; set; }
     }
+
 
 }
