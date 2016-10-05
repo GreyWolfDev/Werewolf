@@ -687,6 +687,11 @@ namespace Werewolf_Node
             _messageQueue.Enqueue(new Message(text, gif, requestPM));
         }
 
+        private void SendWithQueue(Message m)
+        {
+            _messageQueue.Enqueue(m);
+        }
+
 
 
 
@@ -696,6 +701,7 @@ namespace Werewolf_Node
             public string GifId { get; }
 
             public bool RequestPM { get; }
+            public bool PlayerList { get; set; } = false;
 
             public Message(string msg, string gifid = null, bool requestPM = false)
             {
@@ -715,14 +721,14 @@ namespace Werewolf_Node
                 final = "";
                 bool requestPM = false;
                 bool byteMax = false;
+                bool pList = false;
                 var i = 0;
                 while (_messageQueue.Count > 0 & !byteMax)
                 {
                     i++;
                     var m = _messageQueue.Peek();
 
-                    if (m.RequestPM)
-                        requestPM = true;
+
                     if (!String.IsNullOrEmpty(m.GifId))
                     {
                         if (!String.IsNullOrEmpty(final))
@@ -743,6 +749,10 @@ namespace Werewolf_Node
                         {
                             _messageQueue.Dequeue(); //remove the message, we are sending it.
                             final += temp;
+                            if (m.RequestPM)
+                                requestPM = true;
+                            if (m.PlayerList)
+                                pList = true;
                         }
 #endif
 
@@ -758,6 +768,10 @@ namespace Werewolf_Node
                         {
                             _messageQueue.Dequeue(); //remove the message, we are sending it.
                             final += m.Msg + Environment.NewLine + Environment.NewLine;
+                            if (m.RequestPM)
+                                requestPM = true;
+                            if (m.PlayerList)
+                                pList = true;
                         }
 
                     }
@@ -765,11 +779,29 @@ namespace Werewolf_Node
                 if (!String.IsNullOrEmpty(final))
                 {
                     if (requestPM)
+                    {
                         Send(final, 0, false, RequestPMButton);
+                    }
                     else
-                        Send(final);
+                    {
+                        if (pList)
+                        {
+                            try
+                            {
+                                var result = Send(final).Result;
+                                PlayerListId = result.MessageId;
+                            }
+                            catch
+                            {
+                                PlayerListId = 0;
+                            }
+                        }
+                        else
+                            Send(final);
+                    }
+                    Thread.Sleep(4000);
                 }
-                Thread.Sleep(4000);
+
             }
             //do one last send
             final = "";
@@ -802,7 +834,7 @@ namespace Werewolf_Node
             if (!PlayerListChanged) return;
             new Thread(() =>
             {
-                Thread.Sleep(4500); //wait a moment before sending
+                //Thread.Sleep(4500); //wait a moment before sending
                 LastPlayersOutput = DateTime.Now;
                 var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
                           Players.OrderBy(x => x.TimeDied)
@@ -811,15 +843,9 @@ namespace Werewolf_Node
                                       current +
                                       ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                 PlayerListChanged = false;
-                try
-                {
-                    var result = Program.Send(msg, ChatId).Result;
-                    PlayerListId = result.MessageId;
-                }
-                catch
-                {
-                    PlayerListId = 0;
-                }
+
+                SendWithQueue(new Message(msg) { PlayerList = true });
+
             }).Start();
 
         }
@@ -1490,7 +1516,7 @@ namespace Werewolf_Node
                     }
                 }
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"Step 1: {Players.Count(x=> x.InLove)} Lovers found");
+                Console.WriteLine($"Step 1: {Players.Count(x => x.InLove)} Lovers found");
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
             if (count < 2)
@@ -1533,7 +1559,7 @@ namespace Werewolf_Node
                 CreateLovers();
                 loversNotify = Players.Where(x => x.InLove).ToList();
             }
-            
+
             Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
             Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
 
@@ -1765,9 +1791,9 @@ namespace Werewolf_Node
             foreach (var c in voteCult)
                 Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
         }
-#endregion
+        #endregion
 
-#region Cycles
+        #region Cycles
         public void ForceStart()
         {
             KillTimer = true;
@@ -2067,50 +2093,50 @@ namespace Werewolf_Node
                                 HunterFinalShot(p, KillMthd.SerialKilled);
                         }
                         if (p.DiedFromWrongChoice)
-                        switch (p.PlayerRole)
-                        {
-                            case IRole.Cultist:
-                                if (p.DiedFromHunter)
-                                    msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
-                                else if (p.DiedFromKiller)
-                                {
-                                    //TODO: Add string "CultistVisitedKiller"
-                                }
-                                //else
-                                //TODO: Maybe add a "CultistVisitedCH" too?
-                                break;
-                            case IRole.CultistHunter:
-                                //TODO: Add string "CHVisitedSK"
-                                break;
-                            case IRole.GuardianAngel:
-                                //TODO: Add strings "GAGuardedWolf", "GAGuardedSK"
-                                break;
-                            case IRole.Harlot:
-                                if (p.DiedFromWolf)
-                                    msg = GetLocaleString("HarlotFuckedWolfPublic", p.GetName());
-                                else if (p.DiedFromKiller)
-                                {
-                                    //TODO: Use HarlotFuckedKillerPublic here
-                                }
-                                else //died from visiting wolves' victim...
-                                {
-                                    var victim = Players.FirstOrDefault(x => x.DiedFromWolf && x.DiedLastNight && !x.DiedFromWrongChoice); //hoping it's not null...
-                                    msg = GetLocaleString("HarlotFuckedVictimPublic", p.GetName(), victim.GetName());
-                                }
-                                break;
-                            case IRole.Wolf:
-                                if (p.DiedFromKiller)
-                                    msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
-                                else if (p.DiedFromHunter)
-                                {
-                                    //if the wolves who were alive last night are > 1... maybe there's some cleaner / simpler way to do this
-                                    if (Players.Where(x => x.PlayerRole == IRole.Wolf && (!x.IsDead || x.DiedLastNight)).Count() > 1)
-                                        msg = GetLocaleString("HunterShotWolfMulti", p.GetName());
-                                    else
-                                        GetLocaleString("HunterShotWolf", p.GetName());
-                                }
-                                break;
-                        }
+                            switch (p.PlayerRole)
+                            {
+                                case IRole.Cultist:
+                                    if (p.DiedFromHunter)
+                                        msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                    else if (p.DiedFromKiller)
+                                    {
+                                        //TODO: Add string "CultistVisitedKiller"
+                                    }
+                                    //else
+                                    //TODO: Maybe add a "CultistVisitedCH" too?
+                                    break;
+                                case IRole.CultistHunter:
+                                    //TODO: Add string "CHVisitedSK"
+                                    break;
+                                case IRole.GuardianAngel:
+                                    //TODO: Add strings "GAGuardedWolf", "GAGuardedSK"
+                                    break;
+                                case IRole.Harlot:
+                                    if (p.DiedFromWolf)
+                                        msg = GetLocaleString("HarlotFuckedWolfPublic", p.GetName());
+                                    else if (p.DiedFromKiller)
+                                    {
+                                        //TODO: Use HarlotFuckedKillerPublic here
+                                    }
+                                    else //died from visiting wolves' victim...
+                                    {
+                                        var victim = Players.FirstOrDefault(x => x.DiedFromWolf && x.DiedLastNight && !x.DiedFromWrongChoice); //hoping it's not null...
+                                        msg = GetLocaleString("HarlotFuckedVictimPublic", p.GetName(), victim.GetName());
+                                    }
+                                    break;
+                                case IRole.Wolf:
+                                    if (p.DiedFromKiller)
+                                        msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
+                                    else if (p.DiedFromHunter)
+                                    {
+                                        //if the wolves who were alive last night are > 1... maybe there's some cleaner / simpler way to do this
+                                        if (Players.Where(x => x.PlayerRole == IRole.Wolf && (!x.IsDead || x.DiedLastNight)).Count() > 1)
+                                            msg = GetLocaleString("HunterShotWolfMulti", p.GetName());
+                                        else
+                                            GetLocaleString("HunterShotWolf", p.GetName());
+                                    }
+                                    break;
+                            }
                         if (p.PlayerRole == IRole.Cultist && !p.DiedFromWolf && !p.DiedFromKiller && !p.DiedFromHunter)
                             msg = GetLocaleString("HunterKilledCultist", p.GetName());
                     }
@@ -2810,8 +2836,8 @@ namespace Werewolf_Node
                 if (save != null)
                     DBAction(ga, save, "Guard");
 
-                if (save.DiedLastNight) 
-                    //removed !save.DiedFromLove here... because if they are DiedFromLove they aren't DiedLastNight. This was actually the only use of DiedFromLove, so I removed it from the class
+                if (save.DiedLastNight)
+                //removed !save.DiedFromLove here... because if they are DiedFromLove they aren't DiedLastNight. This was actually the only use of DiedFromLove, so I removed it from the class
                 {
                     if (save.PlayerRole == IRole.Cultist & !save.DiedFromWolf & !save.DiedFromKiller) // -> has been killed by CH
                     {
@@ -2941,7 +2967,7 @@ namespace Werewolf_Node
 
                     if (target != null)
                     {
-                        if (target.PlayerRole == IRole.Wolf || 
+                        if (target.PlayerRole == IRole.Wolf ||
                             (target.DiedLastNight && target.DiedFromWolf && !target.DiedFromWrongChoice)) //it's wolves who ate them, not them choosing the wolves
                         //if choice is 0, they did not leave their house last night, so presumably they are not the wolf
                         {
@@ -3282,9 +3308,9 @@ namespace Werewolf_Node
 
 
 
-#endregion
+        #endregion
 
-#region Send Menus
+        #region Send Menus
 
         private void SendLynchMenu()
         {
@@ -3516,9 +3542,9 @@ namespace Werewolf_Node
             }
         }
 
-#endregion
+        #endregion
 
-#region Helpers
+        #region Helpers
         public void FleePlayer(int banid)
         {
             var p = Players?.FirstOrDefault(x => x.Id == banid);
@@ -3683,9 +3709,9 @@ namespace Werewolf_Node
                 return -1;
             }
         }
-#endregion
+        #endregion
 
-#region Database Helpers
+        #region Database Helpers
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
             return; //dropping actions.  We never use them, they just take up a massive amount of space in the database
@@ -3771,7 +3797,7 @@ namespace Werewolf_Node
                     //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
                 }
             }
-            
+
             if (victim.LoverId == killer.Id && GameDay == 1 && Time == GameTime.Night && method != KillMthd.LoverDied)
                 AddAchievement(killer, Achievements.OhShi);
         }
@@ -3970,6 +3996,6 @@ namespace Werewolf_Node
 
         }
 
-#endregion
+        #endregion
     }
 }
