@@ -19,6 +19,8 @@ namespace BuildAutomation
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.InitializeReceiveGitHubWebHooks();
         }
     }
 }
