@@ -937,7 +937,7 @@ namespace Werewolf_Node
                 else
                 {
 
-#if BETA || DEBUG
+
                     var balanced = false;
                     var attempts = 0;
                     var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
@@ -964,118 +964,118 @@ namespace Werewolf_Node
                         var enemyStrength = (wolfStrength + skStrength + cultStrength);
                         balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
                     }
-#else
 
-                    if (count >= Settings.PlayerCountDetective)
-                    {
-                        rolesToAssign.Add(IRole.Detective);
-                    }
-                    if (count >= Settings.PlayerCountThirdWolf)
-                    {
-                        rolesToAssign.Add(IRole.Wolf);
-                    }
-                    if (count >= Settings.PlayerCountSeerCursed)
-                    {
-                        rolesToAssign.Add(IRole.Cursed);
-                        rolesToAssign.Add(IRole.Seer);
-                    }
-                    if (count >= Settings.PlayerCountGuardianAngel)
-                        rolesToAssign.Add(IRole.GuardianAngel);
-                    if (count >= Settings.PlayerCountGunner)
-                    {
-                        rolesToAssign.Add(IRole.Gunner);
-                    }
-                    if (count >= Settings.PlayerCountTraitor)
-                    {
-                        rolesToAssign.Add(IRole.Traitor);
-                    }
-                    if (count >= Settings.PlayerCountHarlot)
-                    {
-                        rolesToAssign.Add(IRole.Harlot);
-                    }
 
-                    if (count >= Settings.PlayerCountSecondWolf)
-                    {
-                        rolesToAssign.Add(IRole.Wolf);
-                    }
+                    //if (count >= Settings.PlayerCountDetective)
+                    //{
+                    //    rolesToAssign.Add(IRole.Detective);
+                    //}
+                    //if (count >= Settings.PlayerCountThirdWolf)
+                    //{
+                    //    rolesToAssign.Add(IRole.Wolf);
+                    //}
+                    //if (count >= Settings.PlayerCountSeerCursed)
+                    //{
+                    //    rolesToAssign.Add(IRole.Cursed);
+                    //    rolesToAssign.Add(IRole.Seer);
+                    //}
+                    //if (count >= Settings.PlayerCountGuardianAngel)
+                    //    rolesToAssign.Add(IRole.GuardianAngel);
+                    //if (count >= Settings.PlayerCountGunner)
+                    //{
+                    //    rolesToAssign.Add(IRole.Gunner);
+                    //}
+                    //if (count >= Settings.PlayerCountTraitor)
+                    //{
+                    //    rolesToAssign.Add(IRole.Traitor);
+                    //}
+                    //if (count >= Settings.PlayerCountHarlot)
+                    //{
+                    //    rolesToAssign.Add(IRole.Harlot);
+                    //}
 
-                    if (count >= Settings.PlayerCountApprenticeSeer)
-                    {
-                        rolesToAssign.Add(IRole.ApprenticeSeer);
-                    }
+                    //if (count >= Settings.PlayerCountSecondWolf)
+                    //{
+                    //    rolesToAssign.Add(IRole.Wolf);
+                    //}
 
-                    if (count >= Settings.PlayerCountWildChild)
-                    {
-                        rolesToAssign.Add(IRole.WildChild);
-                    }
+                    //if (count >= Settings.PlayerCountApprenticeSeer)
+                    //{
+                    //    rolesToAssign.Add(IRole.ApprenticeSeer);
+                    //}
 
-                    if (count >= Settings.PlayerCountCultist && DbGroup.AllowCult != false)
-                    {
-                        rolesToAssign.Add(IRole.Cultist);
-                        rolesToAssign.Add(IRole.CultistHunter);
-                    }
-                    if (count >= Settings.PlayerCountSecondCultist)
-                    {
-                        rolesToAssign.Add(IRole.Cultist);
-                    }
+                    //if (count >= Settings.PlayerCountWildChild)
+                    //{
+                    //    rolesToAssign.Add(IRole.WildChild);
+                    //}
 
-                    if (count >= Settings.PlayerCountMasons)
-                    {
-                        rolesToAssign.Add(IRole.Mason);
-                        rolesToAssign.Add(IRole.Mason);
-                        rolesToAssign.Add(IRole.Mason);
-                    }
+                    //if (count >= Settings.PlayerCountCultist && DbGroup.AllowCult != false)
+                    //{
+                    //    rolesToAssign.Add(IRole.Cultist);
+                    //    rolesToAssign.Add(IRole.CultistHunter);
+                    //}
+                    //if (count >= Settings.PlayerCountSecondCultist)
+                    //{
+                    //    rolesToAssign.Add(IRole.Cultist);
+                    //}
 
-                    if (count >= Settings.PlayerCountCupid)
-                    {
-                        rolesToAssign.Add(IRole.Cupid);
-                    }
+                    //if (count >= Settings.PlayerCountMasons)
+                    //{
+                    //    rolesToAssign.Add(IRole.Mason);
+                    //    rolesToAssign.Add(IRole.Mason);
+                    //    rolesToAssign.Add(IRole.Mason);
+                    //}
 
-                    if (count >= Settings.PlayerCountDoppelGanger)
-                    {
-                        rolesToAssign.Add(IRole.Doppelgänger);
-                    }
+                    //if (count >= Settings.PlayerCountCupid)
+                    //{
+                    //    rolesToAssign.Add(IRole.Cupid);
+                    //}
 
-                    if (count >= Settings.PlayerCountSerialKiller)
-                    {
-                        rolesToAssign.Add(IRole.SerialKiller);
-                    }
+                    //if (count >= Settings.PlayerCountDoppelGanger)
+                    //{
+                    //    rolesToAssign.Add(IRole.Doppelgänger);
+                    //}
 
-                    if (count >= Settings.PlayerCountHunter)
-                    {
-                        rolesToAssign.Add(IRole.Hunter);
-                    }
+                    //if (count >= Settings.PlayerCountSerialKiller)
+                    //{
+                    //    rolesToAssign.Add(IRole.SerialKiller);
+                    //}
 
-                    //add beholder?
-                    if (count >= Settings.PlayerCountBeholderChance)
-                    {
-                        if (Program.R.Next(100) < Settings.BeholderChance)
-                        {
-                            rolesToAssign.Add(IRole.Beholder);
-                        }
-                    }
+                    //if (count >= Settings.PlayerCountHunter)
+                    //{
+                    //    rolesToAssign.Add(IRole.Hunter);
+                    //}
 
-                    //add tanner?
-                    if (Program.R.Next(100) < Settings.TannerChance && DbGroup.AllowTanner != false)
-                    {
-                        rolesToAssign.Add(IRole.Tanner);
-                    }
+                    ////add beholder?
+                    //if (count >= Settings.PlayerCountBeholderChance)
+                    //{
+                    //    if (Program.R.Next(100) < Settings.BeholderChance)
+                    //    {
+                    //        rolesToAssign.Add(IRole.Beholder);
+                    //    }
+                    //}
 
-                    //add Fool?
-                    if (count >= Settings.PlayerCountFoolChance)
-                    {
-                        if (Program.R.Next(100) < Settings.FoolChance && DbGroup.AllowFool != false)
-                        {
-                            rolesToAssign.Add(IRole.Fool);
-                        }
-                    }
+                    ////add tanner?
+                    //if (Program.R.Next(100) < Settings.TannerChance && DbGroup.AllowTanner != false)
+                    //{
+                    //    rolesToAssign.Add(IRole.Tanner);
+                    //}
 
-                    rolesToAssign.Add(IRole.Wolf);
-                    rolesToAssign.Add(IRole.Drunk);
+                    ////add Fool?
+                    //if (count >= Settings.PlayerCountFoolChance)
+                    //{
+                    //    if (Program.R.Next(100) < Settings.FoolChance && DbGroup.AllowFool != false)
+                    //    {
+                    //        rolesToAssign.Add(IRole.Fool);
+                    //    }
+                    //}
 
-                    while (count > rolesToAssign.Count)
-                        rolesToAssign.Add(IRole.Villager);
-#endif
+                    //rolesToAssign.Add(IRole.Wolf);
+                    //rolesToAssign.Add(IRole.Drunk);
+
+                    //while (count > rolesToAssign.Count)
+                    //    rolesToAssign.Add(IRole.Villager);
+
                 }
 
 
