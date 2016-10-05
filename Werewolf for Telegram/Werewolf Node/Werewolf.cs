@@ -2103,8 +2103,8 @@ namespace Werewolf_Node
                                     msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
                                 else if (p.DiedFromHunter)
                                 {
-                                    //if the wolves who acted last night are > 1... maybe there's some cleaner / simpler way to do this
-                                    if (Players.Where(x => x.PlayerRole == IRole.Wolf && !x.Drunk && (!x.IsDead || x.DiedLastNight)).Count() > 1)
+                                    //if the wolves who were alive last night are > 1... maybe there's some cleaner / simpler way to do this
+                                    if (Players.Where(x => x.PlayerRole == IRole.Wolf && (!x.IsDead || x.DiedLastNight)).Count() > 1)
                                         msg = GetLocaleString("HunterShotWolfMulti", p.GetName());
                                     else
                                         GetLocaleString("HunterShotWolf", p.GetName());
@@ -2264,7 +2264,7 @@ namespace Werewolf_Node
                 }
                 //check if all votes are cast
 
-                if (nightPlayers.All(x => x.Choice != 0))
+                if (nightPlayers.All(x => x.CurrentQuestion == null))
                     break;
             }
             try
@@ -2431,6 +2431,7 @@ namespace Werewolf_Node
                                                 shotWuff.TimeDied = DateTime.Now;
                                                 shotWuff.DiedFromWrongChoice = true;
                                                 shotWuff.DiedFromHunter = true;
+                                                shotWuff.DiedLastNight = true;
                                                 DBKill(target, shotWuff, KillMthd.HunterShot);
 
                                             }
@@ -2458,6 +2459,7 @@ namespace Werewolf_Node
                                             shotWuff.TimeDied = DateTime.Now;
                                             shotWuff.DiedFromWrongChoice = true;
                                             shotWuff.DiedFromKiller = true;
+                                            shotWuff.DiedLastNight = true;
                                             //SendWithQueue(GetLocaleString("SerialKillerKilledWolf", shotWuff.GetName()));
                                             DBKill(target, shotWuff, KillMthd.SerialKilled);
                                         }
@@ -3497,7 +3499,7 @@ namespace Werewolf_Node
                 var buttons =
                     targets.Select(
                         x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                if (player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid)
+                if (player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid && player.PlayerRole != IRole.Doppelgänger)
                     buttons.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{Program.ClientId}|-1") });
 
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))
