@@ -69,7 +69,7 @@ namespace Werewolf_Node.Models
         public bool DiedFromWolf { get; set; } = false;
         public bool DiedFromKiller { get; set; } = false;
         public bool DiedFromHunter { get; set; } = false;
-        public bool DiedFromLove { get; set; } = false;
+        public bool DiedFromWrongChoice { get; set; } = false; //roles that have night actions can die because of who they chose, eg harlot choosing wolf/victim.
         public int MessageId { get; set; }
         public string Name { get; set; }
         public IRole OriginalRole { get; set; }

@@ -17,13 +17,25 @@ namespace Werewolf_Control
         [Command(Trigger = "startgame", Blockable = true, InGroupOnly = true)]
         public static void StartGame(Update update, string[] args)
         {
-            StartGame(false, update);
+            if (!Program.MaintMode)
+                StartGame(false, update);
+            else
+            {
+                Send("Sorry, we are about to start maintenance.  Please check @werewolfdev for more information.",
+                    update.Message.Chat.Id);
+            }
         }
 
         [Command(Trigger = "startchaos", Blockable = true, InGroupOnly = true)]
         public static void StartChaos(Update update, string[] args)
         {
-            StartGame(true, update);
+            if (!Program.MaintMode)
+                StartGame(true, update);
+            else
+            {
+                Send("Sorry, we are about to start maintenance.  Please check @werewolfdev for more information.",
+                    update.Message.Chat.Id);
+            }
         }
 
         [Command(Trigger = "join", Blockable = true, InGroupOnly = true)]
@@ -79,28 +91,17 @@ namespace Werewolf_Control
                     db.Groups.Add(grp);
                     db.SaveChanges();
                 }
-                if (UpdateHelper.IsGroupAdmin(update))
+
+                var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                if (game != null)
                 {
-                    var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                    if (game != null)
-                    {
-                        if (game.Users.Contains(update.Message.From.Id))
-                        {
-                            //send forcestart                                            
-                            game.ForceStart();
-                        }
-                        else
-                        {
-                            Send(GetLocaleString("NotInGame", grp.Language), id);
-                        }
-                    }
-                    else
-                    {
-                        Send(GetLocaleString("NoGame", grp.Language), id);
-                    }
+                    //send forcestart                                            
+                    game.ForceStart();
                 }
                 else
-                    Send(GetLocaleString("GroupAdminOnly", grp?.Language ?? "English"), id);
+                {
+                    Send(GetLocaleString("NoGame", grp.Language), id);
+                }
             }
 
         }

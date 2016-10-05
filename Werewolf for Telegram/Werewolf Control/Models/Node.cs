@@ -70,5 +70,17 @@ namespace Werewolf_Control.Models
             var info = JsonConvert.SerializeObject(new CallbackInfo {Query = query});
             this.Broadcast(info);
         }
+
+        public GameInfo GetGameInfo(GetGameInfo ggi)
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<GameInfo>(this.WriteLineAndGetReply(JsonConvert.SerializeObject(ggi)).MessageString);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

@@ -49,6 +49,10 @@ namespace Telegram.Bot
 
         #region Events
 
+        protected virtual void OnUpdatesReceived(UpdatesReceivedEventArgs e)
+        {
+            UpdatesReceived?.Invoke(this, e);
+        }
         protected virtual void OnStatusChanged(StatusChangeEventArgs e)
         {
             StatusChanged?.Invoke(this, e);
@@ -89,9 +93,14 @@ namespace Telegram.Bot
         public event EventHandler<UpdateEventArgs> UpdateReceived;
 
         /// <summary>
-        /// Fired when any updates are availible
+        /// Fired when status has changed
         /// </summary>
         public event EventHandler<StatusChangeEventArgs> StatusChanged;
+
+        /// <summary>
+        /// Fired when updates have been received
+        /// </summary>
+        public event EventHandler<UpdatesReceivedEventArgs> UpdatesReceived;
 
         /// <summary>
         /// Fired when messages are availible
@@ -190,8 +199,8 @@ namespace Telegram.Bot
                     sw.Reset();
                     sw.Start();
                     var updates = await GetUpdates(MessageOffset, timeout: timeout).ConfigureAwait(false);
-
                     sw.Stop();
+                    OnUpdatesReceived(new UpdatesReceivedEventArgs(updates.Length));
                     //check updates.Length
 
                     if (updates.Length == 0)
@@ -294,6 +303,8 @@ namespace Telegram.Bot
 
         internal void SetStatus(Status status)
         {
+            if (status == Status.Error)
+                OnUpdatesReceived(new UpdatesReceivedEventArgs(0));
             if (_status != status)
             {
                 _status = status;
@@ -1669,9 +1680,10 @@ namespace Telegram.Bot
                 throw new ApiRequestException("Invalid token", 401);
 
             var uri = new Uri(BaseUrl + _token + "/" + method);
-
+            var error = "";
             using (var client = new HttpClient())
             {
+                client.Timeout = TimeSpan.FromSeconds(3);
                 ApiResponse<T> responseObject = null;
                 try
                 {
@@ -1685,10 +1697,10 @@ namespace Telegram.Bot
                             {
                                 var content = ConvertParameterValue(parameter.Value);
 
-                                if (parameter.Key == "timeout" && (int) parameter.Value != 0)
-                                {
-                                    client.Timeout = TimeSpan.FromSeconds((int) parameter.Value + 1);
-                                }
+                                //if (parameter.Key == "timeout" && (int) parameter.Value != 0)
+                                //{
+                                //    client.Timeout = TimeSpan.FromSeconds((int) parameter.Value + 1);
+                                //}
 
                                 if (parameter.Value is FileToSend)
                                 {
@@ -1724,6 +1736,7 @@ namespace Telegram.Bot
                 catch (HttpRequestException e)
                     when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
                 {
+                    error = e.Message;
                 }
 
 
@@ -1736,11 +1749,12 @@ namespace Telegram.Bot
                 catch (Exception e)
                 {
                     //ignored
+                    error = e.Message;
                 }
                 //TODO: catch more exceptions
 
                 if (responseObject == null)
-                    responseObject = new ApiResponse<T> { Ok = false, Message = "No response received" };
+                    responseObject = new ApiResponse<T> { Ok = false, Message = "No response received: " + error };
 
                 if (!responseObject.Ok)
                     throw new ApiRequestException(responseObject.Message, responseObject.Code);

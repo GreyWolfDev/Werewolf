@@ -96,24 +96,45 @@ namespace TcpFramework
                 Thread.Sleep(10);
                 return;
             }
-
+            //_queuedMsg.Clear();
             List<byte> bytesReceived = new List<byte>();
 
             while (c.Available > 0 && c.Connected)
             {
-                byte[] nextByte = new byte[1];
-                c.Client.Receive(nextByte, 0, 1, SocketFlags.None);
+                byte[] nextByte = new byte[c.Available];
+                c.Client.Receive(nextByte, 0, nextByte.Length, SocketFlags.None);
                 bytesReceived.AddRange(nextByte);
-                if (nextByte[0] == delimiter)
+                var delIndex = Array.IndexOf(nextByte, delimiter);
+                if (delIndex != -1)
                 {
+                    var part = nextByte.Take(delIndex + 1);
+                    var next = nextByte.Skip(delIndex + 1);
+                    _queuedMsg.AddRange(part);
                     byte[] msg = _queuedMsg.ToArray();
                     _queuedMsg.Clear();
+                    _queuedMsg.AddRange(next);
+                    //bytesReceived.Clear();
+                    //bytesReceived.AddRange(next);
                     NotifyDelimiterMessageRx(c, msg);
                 }
                 else
                 {
                     _queuedMsg.AddRange(nextByte);
                 }
+                //Thread.Sleep(75);
+                //byte[] nextByte = new byte[1];
+                //c.Client.Receive(nextByte, 0, 1, SocketFlags.None);
+                //bytesReceived.AddRange(nextByte);
+                //if (nextByte[0] == delimiter)
+                //{
+                //    byte[] msg = _queuedMsg.ToArray();
+                //    _queuedMsg.Clear();
+                //    NotifyDelimiterMessageRx(c, msg);
+                //}
+                //else
+                //{
+                //    _queuedMsg.AddRange(nextByte);
+                //}
             }
 
             if (bytesReceived.Count > 0)
@@ -133,16 +154,13 @@ namespace TcpFramework
 
         private void NotifyEndTransmissionRx(TcpClient client, byte[] msg)
         {
-            if (DataReceived != null)
-            {
-                Message m = new Message(msg, client, StringEncoder, Delimiter, AutoTrimStrings);
-                DataReceived(this, m);
-            }
+            DataReceived?.Invoke(this, new Message(msg, client, StringEncoder, Delimiter, AutoTrimStrings));
         }
 
         public void Write(byte[] data)
         {
             if (_client == null) { throw new Exception("Cannot send data to a null TcpClient (check to see if Connect was called)"); }
+            _client.ReceiveBufferSize = Int32.MaxValue;
             _client.GetStream().Write(data, 0, data.Length);
         }
 
@@ -168,20 +186,33 @@ namespace TcpFramework
         public Message WriteLineAndGetReply(string data, TimeSpan timeout)
         {
             Message mReply = null;
-            DataReceived += (s, e) => { mReply = e; };
-            WriteLine(data);
-
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            while (mReply == null && sw.Elapsed < timeout)
+            EventHandler<Message> handler = (s, e) => { mReply = e; };
+            try
             {
-                Thread.Sleep(10);
-            }
+                DataReceived += handler;
+                WriteLine(data);
 
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (mReply == null && sw.Elapsed < timeout)
+                {
+                    Thread.Sleep(10);
+                }
+                sw.Stop();
+                sw = null;
+            }
+            finally
+            {
+                DataReceived -= handler;
+            }
             return mReply;
         }
 
+        public void ReplyReceived(object s, string e)
+        {
+            
+        }
 
         #region IDisposable Support
         private bool _disposedValue; // To detect redundant calls

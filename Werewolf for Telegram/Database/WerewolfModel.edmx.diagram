@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8a0652562d3e43489c9175bbb793ff46" Name="Diagram1">
-        <EntityTypeShape EntityType="werewolfModel.Action" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="werewolfModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="werewolfModel.Game" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="werewolfModel.GameKill" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
@@ -17,9 +16,6 @@
         <EntityTypeShape EntityType="werewolfModel.v_NonDefaultGroups" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="werewolfModel.v_PreferredGroups" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="werewolfModel.v_WaitList" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="werewolfModel.FK_Action_Game" ManuallyRouted="false" />
-        <AssociationConnector Association="werewolfModel.FK_Action_Initiator" ManuallyRouted="false" />
-        <AssociationConnector Association="werewolfModel.FK_Action_Receiver" ManuallyRouted="false" />
         <AssociationConnector Association="werewolfModel.FK_Game_Group" ManuallyRouted="false" />
         <AssociationConnector Association="werewolfModel.FK_GameKill_Game" ManuallyRouted="false" />
         <AssociationConnector Association="werewolfModel.FK_GameKill_Killer" ManuallyRouted="false" />

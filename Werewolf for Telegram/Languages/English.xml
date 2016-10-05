@@ -364,7 +364,7 @@
     <value >The werewolves have won!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value >The villagers have won! All the wolves have died...</value>
+    <value >The villagers have won!</value>
   </string>
   <string key="TannerWins" isgif="true" >
     <value >Oh no! You lynched the Tanner! The Tanner wins the game, silly.</value>
@@ -656,7 +656,7 @@
   </string>
   <string key="HunterNoChoiceShot">
     <!-- 0 - target's name -->
-    <value>The shot to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
+    <value>The blow to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
   </string>
   <string key="HunterSkipChoiceShot">
     <!-- 0 - hunter's name -->
@@ -666,7 +666,7 @@
     <!-- 0 - hunter -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>As the bullet pierces {0}, they fall to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+    <value>Dying, {0} falls to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
@@ -1015,11 +1015,9 @@
     <value>Cancel</value>
   </string>
   <string key="AllowFleeQ">
-    <!-- note, there is NO space after {0}.  This is on purpose -->
     <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
   </string>
   <string key="AllowFleeA">
-    <!-- note, there is NO space after {0}.  This is on purpose -->
     <value>{0} fleeing after game start</value>
   </string>
   <string key="MaxPlayersQ">
@@ -1109,5 +1107,8 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
   </string>
 </strings>

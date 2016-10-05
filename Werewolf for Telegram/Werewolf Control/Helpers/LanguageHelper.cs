@@ -156,7 +156,7 @@ namespace Werewolf_Control.Helpers
 
 
             }
-            Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Default);
+            Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
             result =
                 $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
 
@@ -450,7 +450,7 @@ namespace Werewolf_Control.Helpers
                     }
                 }
             }
-            var result = $"NEW FILE\n*{newFile.FileName} - ({newFile.Name})*" + Environment.NewLine;
+            var result = $"NEW FILE\n*{newFile.FileName}.xml - ({newFile.Name})*" + Environment.NewLine;
             if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
             {
                 result += "_Errors:_\n";
@@ -468,13 +468,17 @@ namespace Werewolf_Control.Helpers
             if (lang != null)
             {
                 result += "\n\n";
-                result += $"CURRENT FILE\n*{curFileName} - ({lang.Name})*\n";
+                result += $"CURRENT FILE\n*{curFileName}.xml - ({lang.Name})*\n";
                 result +=
                     $"Errors: {curFileErorrs.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {curFileErorrs.Count(x => x.Level == ErrorLevel.MissingString)}";
             }
             else
             {
                 result += "\n\n*No current file, this is a new language*";
+                result += $"\n_Base:_ {newFile.Base}";
+                if (!langs.Any(x => x.Base == newFile.Base))
+                    result += " *(NEW)*";
+                result += $"\n_Variant:_ {newFile.Variant}";
             }
             Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
             Thread.Sleep(500);

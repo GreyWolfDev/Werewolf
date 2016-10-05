@@ -22,12 +22,13 @@ namespace Werewolf_Control
         {
             var ts = DateTime.UtcNow - update.Message.Date;
             var send = DateTime.UtcNow;
-            var message = GetLocaleString("PingInfo", GetLanguage(update.Message.Chat.Id), $"{ts:mm\\:ss\\.ff}",
+            var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
                 Program.AvgCpuTime.ToString("F0"),
-                $"\n{Program.MessageRxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
+                $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
             var result = Bot.Send(message, update.Message.Chat.Id).Result;
             ts = DateTime.UtcNow - send;
-            Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message + $"\nTime to send ping message: {ts:mm\\:ss\\.ff}");
+            message += "\n" + GetLocaleString("Ping2", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}");
+            Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message);
 
         }
 #if (BETA || DEBUG)
@@ -40,7 +41,7 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com?referrer=help)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
                                                         parseMode: ParseMode.Markdown);
         }
 
@@ -54,7 +55,7 @@ namespace Werewolf_Control
         [Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
-            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Want to donate? awesome!\nUse Square Cash for hassle free, no login donations:<a href=\"cash.me/Para949\"> click here </a>\nOr if you'd like to use PayPal:<a href=\"paypal.me/Para949\">Click here</a> \n\nDonations are always welcomed, and help support the developer (and make him want to keep coding more features)", parseMode: ParseMode.Html);
+            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Want to help keep werewolf online? Please donate to info@tgwerewolf.com through PayPal.\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @werewolfsupport", parseMode: ParseMode.Html);
         }
 
         [Command(Trigger = "changelog")]
@@ -121,6 +122,7 @@ namespace Werewolf_Control
                     p = new Player
                     {
                         TelegramId = update.Message.From.Id,
+                        Language = "English",
 #if RELEASE
                         HasPM = update.Message.Chat.Type == ChatType.Private
 #elif RELEASE2
@@ -172,9 +174,9 @@ namespace Werewolf_Control
 
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
 
-
-            var curLang = langs.First(x => x.FileName == (p.Language));
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", GetLanguage(update.Message.From.Id), curLang.Base),
+            var curLangFileName = GetLanguage(update.Message.From.Id);
+            var curLang = langs.First(x => x.FileName == curLangFileName);
+            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang.Base),
                 replyMarkup: menu);
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);

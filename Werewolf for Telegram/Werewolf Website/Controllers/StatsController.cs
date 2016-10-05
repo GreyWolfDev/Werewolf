@@ -97,9 +97,9 @@ namespace Werewolf_Web.Controllers
             var gStatReply = "";
             using (var DB = new WWContext())
             {
-                var day1LynchInfo = DB.GroupDay1Lynch(groupid).FirstOrDefault();
-                var night1DieInfo = DB.GroupNight1Death(groupid).FirstOrDefault();
-                var day1DieInfo = DB.GroupDay1Death(groupid).FirstOrDefault();
+                //var day1LynchInfo = DB.GroupDay1Lynch(groupid).FirstOrDefault();
+                //var night1DieInfo = DB.GroupNight1Death(groupid).FirstOrDefault();
+                //var day1DieInfo = DB.GroupDay1Death(groupid).FirstOrDefault();
                 var surviverInfo = DB.GroupSurvivor(groupid).FirstOrDefault();
 
                 ////most slutty
@@ -144,9 +144,9 @@ namespace Werewolf_Web.Controllers
                 //    DB.Games.Count(x => x.Winner == "Tanner" && x.GroupName == groupName);
                 //now build the reply
                 string night1dielink, day1lynchlink, day1dielink, survivorlink;
-                night1dielink = night1DieInfo != null ? $"<a href='../Player/{night1DieInfo.TelegramId}'>{night1DieInfo.Name}</a>" : "Not enough games";
-                day1lynchlink = day1LynchInfo != null ? $"<a href='../Player/{day1LynchInfo.TelegramId}'>{day1LynchInfo.Name}</a>" : "Not enough games";
-                day1dielink = day1DieInfo != null ? $"<a href='../Player/{day1DieInfo.TelegramId}'>{day1DieInfo.Name}</a>" : "Not enough games";
+                //night1dielink = night1DieInfo != null ? $"<a href='../Player/{night1DieInfo.TelegramId}'>{night1DieInfo.Name}</a>" : "Not enough games";
+                //day1lynchlink = day1LynchInfo != null ? $"<a href='../Player/{day1LynchInfo.TelegramId}'>{day1LynchInfo.Name}</a>" : "Not enough games";
+                //day1dielink = day1DieInfo != null ? $"<a href='../Player/{day1DieInfo.TelegramId}'>{day1DieInfo.Name}</a>" : "Not enough games";
                 survivorlink = surviverInfo != null ? $"<a href='../Player/{surviverInfo.TelegramId}'>{surviverInfo.Name}</a>" : "Not enough games";
                 gStatReply +=
 
@@ -155,9 +155,9 @@ namespace Werewolf_Web.Controllers
                     // $"<tr><td>Times Wolf / Wolves have won</td><td><b>{timesWolfsWon}</b></td></tr>" +
                     //$"<tr><td>Times Village won</td><td><b>{timesVillageWon}</b></td></tr>" +
                     //$"<tr><td>Times Tanner won</td><td><b>{timesTannerWon}</b></td></tr>" +
-                    $"<tr><td>Most likely to die first night</td><td><b>{night1dielink}</td><td>{(night1DieInfo?.pct ?? 0)}%</b></td></tr>" +
-                    $"<tr><td>Most likely to get lynched first day</td><td><b>{day1lynchlink}</td><td>{(day1LynchInfo?.pct ?? 0)}%</b></td></tr>" +
-                    $"<tr><td>Most likely to die first 24 hours</td><td><b>{day1dielink}</td><td>{(day1DieInfo?.pct ?? 0)}%</b></td></tr>" +
+                    //$"<tr><td>Most likely to die first night</td><td><b>{night1dielink}</td><td>{(night1DieInfo?.pct ?? 0)}%</b></td></tr>" +
+                    //$"<tr><td>Most likely to get lynched first day</td><td><b>{day1lynchlink}</td><td>{(day1LynchInfo?.pct ?? 0)}%</b></td></tr>" +
+                    //$"<tr><td>Most likely to die first 24 hours</td><td><b>{day1dielink}</td><td>{(day1DieInfo?.pct ?? 0)}%</b></td></tr>" +
                     $"<tr><td>Best survivor</td><td><b>{survivorlink}</td><td>{surviverInfo?.pct ?? 0}%</b></td></tr>" +
                     //$"<tr><td>Most common villager</td><td><b>{commonVillagerInfo?.name.Name}</td><td>{(commonVillagerInfo?.count ?? 0) * 100 / commonVillagerInfo?.games ?? 1}%</b></td></tr>" +
                     //$"<tr><td>Most common wolf</td><td><b>{commonWolfInfo?.name.Name}</td><td>{(commonWolfInfo?.count ?? 0) * 100 / commonWolfInfo?.games ?? 1}%</b></td></tr>" +
