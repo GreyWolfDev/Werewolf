@@ -34,7 +34,7 @@ namespace BuildAutomation
                 if (push.commits.Any(x => x.message.Contains("#build#") && x.committer.username.Trim() == "parabola949"))
                 {
                     //we want to build, yay!
-                    new Task(BuildHelper.Automate).Start();
+                    return BuildHelper.Automate();
                 }
                 return Task.FromResult(true);
             }

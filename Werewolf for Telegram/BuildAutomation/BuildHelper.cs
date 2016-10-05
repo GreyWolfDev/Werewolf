@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace BuildAutomation
 {
     public static class BuildHelper
     {
-        public static async void Automate()
+        public static Task Automate()
         {
             try
             {
@@ -28,6 +29,22 @@ namespace BuildAutomation
                     }
                 };
                 p.Start();
+                string output = "", error = "";
+                while (!p.StandardOutput.EndOfStream)
+                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
+                while (!p.StandardError.EndOfStream)
+                    error += p.StandardError.ReadLine() + Environment.NewLine;
+
+                error = error.Replace("Fatal: Exception encountered.\r\n", "");
+
+                using (var sw = new StreamWriter(HttpContext.Current.Server.MapPath("~/App_Data/repo.log")))
+                {
+                    sw.WriteLine($"Output\n{output}\nError\n{error}");
+                }
+                if (!String.IsNullOrWhiteSpace(error))
+                {
+                    throw new HttpException("Unable to pull repo\n" + error);
+                }
                 p.WaitForExit();
                 //TODO: Build each version (Beta, Release, Release 2)
                 //methinks I'm gonna need to install VS for this
@@ -36,13 +53,28 @@ namespace BuildAutomation
                 //TODO: Stage Node update
 
                 //TODO: Send a message to dev chat, notifying updates are staged
+
+
+                return Task.FromResult(true);
+            }
+            catch (HttpException e)
+            {
+                throw e;
             }
             catch (Exception e)
             {
+
                 using (var sw = new StreamWriter(HttpContext.Current.Server.MapPath("~/App_Data/error.log"), true))
                 {
                     sw.WriteLine($"----------------------------------------------------------\n{DateTime.Now}\n{e.Message}\n{e.StackTrace}\n");
+                    while (e.InnerException != null)
+                    {
+                        e = e.InnerException;
+                        sw.WriteLine($"\n{e.Message}\n");
+                    }
                 }
+
+                throw new HttpException(e.Message, e.InnerException);
             }
         }
     }
