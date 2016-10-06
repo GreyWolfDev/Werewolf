@@ -31,7 +31,12 @@
         </member>
         <member name="E:Telegram.Bot.Client.StatusChanged">
             <summary>
-            Fired when any updates are availible
+            Fired when status has changed
+            </summary>
+        </member>
+        <member name="E:Telegram.Bot.Client.UpdatesReceived">
+            <summary>
+            Fired when updates have been received
             </summary>
         </member>
         <member name="E:Telegram.Bot.Client.MessageReceived">
@@ -881,6 +886,17 @@
             <value>
             The error code.
             </value>
+        </member>
+        <member name="M:Telegram.Bot.Helpers.Extensions.FromUnixTime(System.Int64)">
+            <summary>
+              Convert a long into a DateTime
+            </summary>
+        </member>
+        <member name="M:Telegram.Bot.Helpers.Extensions.ToUnixTime(System.DateTime)">
+            <summary>
+              Convert a DateTime into a long
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="T:Telegram.Bot.Types.ApiResponse`1">
             <summary>
