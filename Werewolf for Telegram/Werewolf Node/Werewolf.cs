@@ -2132,7 +2132,7 @@ namespace Werewolf_Node
                                         if (Players.Where(x => x.PlayerRole == IRole.Wolf && (!x.IsDead || x.DiedLastNight)).Count() > 1)
                                             msg = GetLocaleString("HunterShotWolfMulti", p.GetName());
                                         else
-                                            GetLocaleString("HunterShotWolf", p.GetName());
+                                            msg = GetLocaleString("HunterShotWolf", p.GetName());
                                     }
                                     break;
                             }
