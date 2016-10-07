@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Dota mode by Ario (@limatiga)! The best mode for Dota players -->
 <strings>
   <language name="Indonesia DOTA" base="Indonesia" variant="Indonesia (DOTA)"/>
   <string key="NotInGame">
@@ -54,10 +55,10 @@
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-	<value>{0} harus memulai {1} (PM bot lalu ketik /start) Agar Zeus dapat mengirimmu pesan pribadi.  Jika kamu tidak mengirim pesan pribadi ke bot, kamu tidak akan tergabung didalam permainan.</value>
+    <value>{0} harus memulai {1} (PM bot lalu ketik /start) Agar Zeus dapat mengirimmu pesan pribadi.  Jika kamu tidak mengirim pesan pribadi ke bot, kamu akan otomatis terbunuh.</value>
   </string>
   <string key="DeadFlee">
-    <value>Kamu tidak bisa kabur dari permainan! Noob</value>
+    <value>You can't run away! YOU'RE DEAD!  Get back back in the ground....  jeez</value>
   </string>
   <string key="Flee">
     <!-- 0 - Player name -->
@@ -99,7 +100,7 @@
     <!-- 0 - player name -->
     <!-- 1 - player role -->
     <value>{0} telah hilang dua malam berturut-turut.  Zeus murka, dia membunuh {0} dengan petirnya yang sangat kuat, {0} terjatuh ketanah, mati. {1}</value>
-	<value>{0} telah hilang dua malam berturut-turut.  Kemana dia pergi ??? {1}</value>
+	<value>{0} telah hilang dua malam berturut-turut.  Kemana dia pergi .... {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>Semua lycan telah diusir, sekarang Abaddon si Pengkhianat telah berubah menjadi Lycan.. (suatu hal yang mustahil, bukan?)</value>
@@ -134,7 +135,7 @@
   </string>
   <string key="AskShoot">
     <!-- 0 - bullet count -->
-    <value>Assassinate tersisa {0} kali. Siapa yang akan kamu tembak?</value>
+    <value>Assassiante tersisa {0} kali. Siapa yang akan kamu tembak?</value>
   </string>
   <string key="AskVisit">
     <value>Siapa yang akan kamu siksa?</value>
@@ -417,7 +418,7 @@
   <string key="CultVisitEmpty">
     <!-- 0 - Newest cultist's name -->
     <!-- 1 - target name -->
-    <value>Malam kemarin, {0} datang kepadamu untuk mengubahmu menjadi Eidolon.... Tetapi, {1} dia tak ada dirumah . . . .</value>
+    <value>Malam kemarin, {0} datang ke rumah {1} untuk mengubahnya menjadi Eidolon.... Tetapi, ia tak ada dirumah . . . .</value>
   </string>
   <string key="CultWins" isgif="true">
     <value >Semua penjahat telah mati, creep yang tersisa telah menjadi pengikut Enigma dan berubah menjadi Eidolon. Eidolon telah memenangkan Permainan!</value>
@@ -701,7 +702,7 @@
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>{0} merasa malam ini adalah malam yang tenang untuknya, tetapi ia salah Pudge datang kerumahnya dan membunuh {0}.  Semua creep berkumpul di depan ancient, untuk mengistirahatkan {0} di rumah terakhirnya!! {1}</value>
+    <value>It seemed a quiet enough night for {0}, but they were wrong.  The creeps gather in the morning to find {0} split from head to toe, but oddly the liver was missing.....  Pudge has struck again! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
@@ -722,6 +723,7 @@
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
+    <value>You come to {0}'s house, and start having a little rack.  All seems great until {0} pulls out a blade and starts stabbing you, laughing like a maniac!  You have died....</value>
     <value>Kamu datang kerumah {0} untuk penyiksaan malam ini. Semua terlihat biasa saja sampai akhirnya {0} mengeluarkan pisaunya dan menusukmu berkali-kali, ia tertawa layaknya maniak! Kamu telah mati . . . .</value>
   </string>
   <string key="HarlotFuckKillerPublic">
@@ -804,6 +806,7 @@
    <value> Didepan rumah Sven, terlihat jasad {0} terbujur lemah, ia mencoba untuk mengganggu Sven malam tadi! {1}</value>
   </string>
   <string key="CultAttempt">
+    <value>A hooded figure tried to convert you to their eidolon, but your faith was too strong.</value>
     <value>Pasukan Eidolon mencoba untuk mengajakmu bergabung! Tetapi, kamu tidak membutuhkan banyak Emas . . .</value>
   </string>
   <string key="AlreadyOnWaitList">
@@ -830,8 +833,8 @@
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
    <value>Di Pagi hari, {0} dan {1} berjalan menuju Ancient di Azeroth. {0} mengeluarkan pisaunya yang sangat besar dan menarik {1}.
-{1} mengeluarkan senjatanya dan melemparkan stormhammer ke arah {0}. Keduanya telah mati, Azeroth tak berpenghuni. . . .tidak ada yang menang dalam permainan ini.</value>
-  </string>
+ {1} mengeluarkan senjatanya dan melemparkan stormhammer ke arah {0}. Keduanya telah mati, Azeroth tak berpenghuni. . . .tidak ada yang menang dalam permainan ini.</value>
+ </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
     <value>Kamu gagal untuk memilih, Zeus memilihkan acak untukmu! {0}</value>
@@ -1135,5 +1138,8 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Kamu telah bergabung di {0}</value>
+  </string>
+  <string key="Ping2">
+  <value>Waktu untuk mengirim PING : {0}</value>
   </string>
 </strings>
