@@ -2861,11 +2861,9 @@ namespace Werewolf_Node
                             }
                         }
                         //killed by SK
-                        else if (p.KilledByRole == IRole.SerialKiller &
-                                 !new[] {IRole.Wolf, IRole.Harlot}.Contains(p.PlayerRole))
+                        else if (p.KilledByRole == IRole.SerialKiller & !new[] { IRole.Wolf }.Contains(p.PlayerRole))
                         {
-                            msg = GetLocaleString("DefaultKilled", p.GetName(),
-                                $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                            msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
                             if (p.PlayerRole == IRole.Hunter)
                                 HunterFinalShot(p, KillMthd.SerialKilled);
                         }
@@ -2882,19 +2880,14 @@ namespace Werewolf_Node
                                     }
                                     else //died from hunter
                                     {
-                                        msg =
-                                            GetLocaleString(
-                                                Players.Count(x => x.PlayerRole == IRole.Wolf && !x.IsDead) + 1 > 1
-                                                    ? "HunterShotWolfMulti"
-                                                    : "HunterShotWolf", p.GetName());
+                                        msg = GetLocaleString(Players.Count(x => x.PlayerRole == IRole.Wolf && !x.IsDead) + 1 > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName());
                                     }
                                     break;
                                 case IRole.Cultist: //ch killed
                                     if (p.KilledByRole == IRole.CultistHunter)
                                         msg = GetLocaleString("HunterKilledCultist", p.GetName());
                                     else if (p.KilledByRole == IRole.Hunter)
-                                        msg = GetLocaleString("HunterKilledVisiter", p.GetName(),
-                                            $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                        msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
                                     break;
                                 case IRole.Harlot:
                                     switch (p.KilledByRole)
@@ -2903,18 +2896,16 @@ namespace Werewolf_Node
                                             if (p.DiedByVisitingKiller)
                                                 msg = GetLocaleString("HarlotFuckedWolfPublic", p.GetName());
                                             else if (p.DiedByVisitingVictim)
-                                                msg = GetLocaleString("HarlotFuckedVictimPublic", p.GetName(),
-                                                    Players.FirstOrDefault(x => x.Id == p.RoleModel).GetName());
+                                                msg = GetLocaleString("HarlotFuckedVictimPublic", p.GetName(), Players.FirstOrDefault(x => x.Id == p.RoleModel).GetName());
                                             else
                                                 msg = GetLocaleString("HarlotEaten", p.GetName());
                                             break;
-                                        case IRole.SerialKiller:
-                                            if (p.DiedByVisitingKiller)
-                                                msg = GetLocaleString("HarlotFuckKiller", p.GetName());
-                                            else
-                                                msg = GetLocaleString("DefaultKilled", p.GetName(),
-                                                    $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
-                                            break;
+                                            //case IRole.SerialKiller:
+                                            //    //if (p.DiedByVisitingKiller)
+                                            //    //    msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName()); //TODO update this string
+                                            //    //else
+                                            //        msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                            //    break;
                                     }
                                     break;
                             }
