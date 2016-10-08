@@ -2875,8 +2875,11 @@ namespace Werewolf_Node
                                 case IRole.Wolf: //sk and hunter can kill
                                     if (p.KilledByRole == IRole.SerialKiller)
                                     {
-                                        msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
-                                        //TODO Add visited vs hunted by killer
+                                        //visited vs hunted by killer
+                                        if (p.DiedByVisitingKiller)
+                                            msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
+                                        else
+                                            msg = GetLocaleString("DefaultKilled", p.GetName());
                                     }
                                     else //died from hunter
                                     {
