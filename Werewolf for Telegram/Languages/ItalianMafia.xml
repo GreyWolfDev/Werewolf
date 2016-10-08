@@ -45,7 +45,7 @@
     <value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-    <value>\n{0} per favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo.</value>
+    <value>\n{0} Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
   </string>
   <string key="DeadFlee">
     <value>Non puoi fuggire! Sei già fuori dalla città! Dove vorresti andare, comunque?</value>
@@ -301,7 +301,7 @@
     <value >I poliziotti hanno vinto! La città è ora libera dalla Mafia!</value>
   </string>
   <string key="VillageWins" isgif="false" >
-    <value >La mafia ha vinto! Senza poliziotti fastidiosi e inopportuni, questa città è ormai diventata una roccaforte mafiosa.</value>
+    <value >La mafia ha vinto! Senza poliziotti ficcanaso e Killer solitari, questa città è ormai diventata una roccaforte mafiosa.</value>
   </string>
   <string key="TannerWins" isgif="false" >
     <value >Oh no! Avete scelto di esiliare il Pazzo Suicida! "Non è per gloria personale, ma è per spedire un messaggio forte e chiaro". Si fa esplodere insieme a bombe disseminate per la città!</value>
@@ -548,7 +548,7 @@
     <value>{0} è stato esiliato. Mentre usciva dalla città, lo vedete premere un pulsante, seguito da una rumorosa esplosione! Sembra che la casa di {1} è stata trasformata in macerie. {1} ha lasciato la città. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>Il paparazzo ha scritto una denuncia sulle tue frodi! Prima di esser costretto ad abbandonare la città, hai il potere di distruggere la casa di qualcuno in rovine. Scegli, veloce!</value>
+    <value>Sei stato esiliato! Prima di esser costretto ad abbandonare la città, hai il potere di distruggere la casa di qualcuno in rovine. Scegli, veloce!</value>
   </string>
   <string key="HunterNoChoiceShot">
     <value>La denuncia di {0} era troppo pesante, che decide di andarsene senza rimpianti.</value>
@@ -557,7 +557,7 @@
     <value>{0} lascia la città pieno di vergogna. Mentre usciva dalla città, lo vedete provare a premere un pulsante, ma sembrava non aver abbastanza coraggio per farlo.</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>{0} lascia la città pieno di vergogna.entre usciva dalla città, lo vedete premere un pulsante, seguito da una rumorosa esplosione! Sembra che la casa di {1} non esista più. {1} ha lasciato la città. {2}</value>
+    <value>{0} lascia la città pieno di vergogna. Mentre usciva dalla città, lo vedete premere un pulsante, seguito da una rumorosa esplosione! Sembra che la casa di {1} non esista più. {1} ha lasciato la città. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} è andato a casa di {1}, ma non è stato più visto uscire. Sembra come fosse sparito dalla faccia della terra!</value>
@@ -860,11 +860,11 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -953,5 +953,8 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
   </string>
 </strings>
