@@ -2,27 +2,19 @@
 <!-- Currently updated by @MatteoIlGrande. Ask me for anything, thanks -->
 <!-- Last updated on 18 August 2016 -->
 <strings>
-  <language name="Italiano - Standard"
-base="Italiano"
-variant="Standard"/>
+  <language name="Italiano - Standard" base="Italiano" variant="Standard"/>
   <string key="NotInGame">
-
     <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
   </string>
   <string key="PlayerStartedGame">
-
-
     <value>{0} ha iniziato il gioco! Usa /join per unirti al divertimento.... e probabilmente morire :P</value>
     <value>Una nuova partita è stata iniziata da {0}! Usa /join se hai intenzione di farti del male!</value>
   </string>
   <string key="PlayerStartedChaosGame">
-
-
     <value>{0} ha iniziato una partita caos! Usa /join per entrare e divertirti.. E probabilmente morire :P</value>
     <value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
   </string>
   <string key="NoJoinGameRunning">
-
     <value>Non puoi unirti ora! La partita è già iniziata.</value>
   </string>
   <string key="AlreadyJoined">
@@ -58,8 +50,7 @@ variant="Standard"/>
     <value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-
-    <value>\n{0} Benvenuto a Werewolf! \nPer favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo.</value>
+    <value>\n{0} Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
   </string>
   <string key="DeadFlee">
 
@@ -107,12 +98,11 @@ variant="Standard"/>
     <value>\nIl veggente 👳 è {0}</value>
   </string>
   <string key="ApprenticeNowSeer">
-
-    <value>{0} era il Veggente. In qualità di apprendista, prendi il posto del Veggente.</value>
+    <value>Hai trovato i tarocchi abbandonati di {0}. Sei appena diventato il nuovo Veggente👳!</value>
   </string>
   <string key="BeholderNewSeer">
 
-    <value>{0} era un apprendista, ed ha appena fatto il grande passo prendendo il posto di {1} come nuovo Veggente.</value>
+    <value>{0} ha trovato i tarocchi abbandonati di {1} ed è ora il nuovo Veggente👳!</value>
   </string>
   <string key="SeerSees">
     <value>Hai visto che\n{0} era {1}!</value>
@@ -368,11 +358,10 @@ variant="Standard"/>
     <value >Il lupo ha vinto!</value>
   </string>
   <string key="WolvesWin" >
-    <value >I lupi hanno vinto!</value>
+    <value>I lupi hanno vinto!</value>
   </string>
   <string key="VillageWins" >
-
-    <value >I contadini hanno vinto! Tutti i lupi sono morti....</value>
+  <value>I contadini hanno vinto! Se ne tornano tranquilli alle loro case, coscienti del duro lavoro che li aspetta..</value>
   </string>
   <string key="TannerWins" >
 
@@ -451,7 +440,7 @@ variant="Standard"/>
     <value>l'Angelo Custode👼</value>
   </string>
   <string key="Detective">
-    <value>l'Investigatore🔎</value>
+    <value>l'Investigatore🕵</value>
   </string>
   <string key="Wolf">
     <value>un Lupo🐺</value>
@@ -500,7 +489,7 @@ variant="Standard"/>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>un Massone 👁‍🗨</value>
+    <value>un Massone 👷</value>
   </string>
   <string key="RoleInfoMason">
 
@@ -508,7 +497,7 @@ variant="Standard"/>
   </string>
   <string key="MasonEaten">
 
-    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e le gambe staccate a suon di morsi! Uno dei Massoni👁‍🗨 è morto!</value>
+    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e le gambe staccate a suon di morsi! Uno dei Massoni👷 è morto!</value>
   </string>
   <string key="MasonTeam">
     <value>  Gli altri Massoni sono: {0}</value>
@@ -667,7 +656,7 @@ variant="Standard"/>
   </string>
   <string key="HunterNoChoiceShot">
 
-    <value>Il colpo in testa a {0} è stato preciso, talmente tanto che non è riuscito nemmeno a raggiungere la sua pistola, che già era immerso in un bagno di sangue.....</value>
+    <value>{0} è morto prima di rendersene conto e poter tirar fuori la sua pistola, immerso in un bagno di sangue.....</value>
   </string>
   <string key="HunterSkipChoiceShot">
 
@@ -675,7 +664,7 @@ variant="Standard"/>
   </string>
   <string key="HunterKilledFinalShot">
 
-    <value>Appena il proiettile trapassa {0}, esso cade.... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
+    <value>In fin di vita, {0} cade.... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
 
@@ -1002,11 +991,11 @@ variant="Standard"/>
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -1095,5 +1084,8 @@ variant="Standard"/>
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
   </string>
    </strings>
