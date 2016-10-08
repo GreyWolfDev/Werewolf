@@ -49,7 +49,7 @@
     <value>{0} si è scordato chi fosse! {1} amnesiaci, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-    <value>{0}, hai scordato di scrivere al bot! vai su {1}, poi premi start. Finchè non lo fai il bot non potrá contattarti in privato.</value>
+    <value>{0}, hai scordato di scrivere al bot! Clicca il bottone qua sotto oppure vai su {1}, poi premi start.\nFinchè non lo fai il bot non potrá contattarti in privato.</value>
   </string>
   <string key="DeadFlee">
     <value>Ti sei anche scordato di esser morto? I morti non scappano...</value>
@@ -312,7 +312,7 @@
     <value>I lupi hanno vinto!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-  <value>I contadini hanno vinto! Tutti i lupi sono morti....</value>
+  <value>-I contadini hanno vinto! Se lo ricorderanno o continueranno a linciare persone l'indomani?</value>
   </string>
   <string key="TannerWins" isgif="true"  >
   <value>Oh no! Avete linciato il conciatore!  Direi che abbiamo un vincitore, complimenti al linciato!.</value>
@@ -379,7 +379,7 @@
     <value>l'Angelo Custode👼</value>
   </string>
   <string key="Detective">
-    <value>l'Investigatore🔎</value>
+    <value>l'Investigatore🕵</value>
   </string>
   <string key="Wolf">
     <value>un Lupo🐺</value>
@@ -426,13 +426,13 @@
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>un Massone 👁‍🗨</value>
+    <value>un Massone 👷</value>
   </string>
   <string key="RoleInfoMason">
     <value>Che strano.. Non riesci a ricordare cosa sei!</value>
   </string>
   <string key="MasonEaten">
-    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e con le gambe... ah no le gambe non ci sono più!! Uno dei Massoni👁‍🗨 è morto! -- {0}</value>
+    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e con le gambe... ah no le gambe non ci sono più!! Uno dei Massoni👷 è morto! -- {0}</value>
   </string>
   <string key="MasonTeam">
     <value>\nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {0}</value>
@@ -558,16 +558,16 @@
     <value>Mentre il cappio di stringe intorno al collo di {0}, lui tira fuori una pistola, la carica, prende la mira e preme il grilletto, sparando a {1} giusto prima che il pavimento si ritiri! {1} cade a terra, senza vita.  {2}</value>
 	</string>
   <string key="HunterShotChoice">
-    <value>L'artigliere ti ha sparato! La paura della morte ti fa riprendere un po' di coscienza, e capisci cosa fare... Questa è la tua ultima possibilità, scegli qualcuno a cui sparare!</value>
+    <value>Sei stato assassinato! La paura della morte ti fa riprendere un po' di coscienza, e capisci cosa fare... Questa è la tua ultima possibilità, scegli qualcuno a cui sparare!</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <value>Il colpo in testa a {0} è stato preciso, talmente tanto che non è riuscito nemmeno a raggiungere la sua pistola, che già era immerso in un bagno di sangue.....</value>
+    <value>{0} è morto prima di rendersene conto e poter tirar fuori la sua pistola, immerso in un bagno di sangue.....</value>
 	</string>
   <string key="HunterSkipChoiceShot">
     <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere a chi sparare.... e accetta il suo triste destino..</value>
 	</string>
   <string key="HunterKilledFinalShot">
-    <value>Appena il proiettile trapassa {0}, esso cade.... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
+    <value>In fin di vita, {0} cade.... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
 	</string>
   <string key="CultConvertSerialKiller">
     <value>{0} è andato a casa di {1} e ora è morto!</value>
@@ -870,11 +870,11 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -963,5 +963,8 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Ti sei ricordato di fare qualcosa su {0}... ma cosa?</value>
-  </string> 
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
   </strings>
