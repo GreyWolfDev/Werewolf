@@ -45,7 +45,8 @@
 		<value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
 	</string>
 	<string key="PMTheBot">
-		<value>\n{0} per favore scrivimi in privato (@{1}) con /start, dobbiamo fare le cose zozze :) </value>
+		<value>
+      {0}, capiamoci, se non vuoi morire prima di giocare, clicca su {1} o sul pulsante qui sotto, e fai /start. Fatto questo sarai pronto anche tu a fare cose zozze con me :)</value>
 	</string>
 	<string key="DeadFlee">
 		<value>Pazzo, non puoi scappare! SEI MORTO!  Torna a marcire nella fossa....</value>
@@ -301,7 +302,7 @@
 		<value >I lupi hanno vinto!</value>
 	</string>
 	<string key="VillageWins" >
-		<value >Il popolo plebeo ha vinto! Tutti i lupi sono morti....</value>
+		<value >Il popolo plebeo ha vinto!</value>
 	</string>
 	<string key="TannerWins" >
 		<value >Il masochista ha goduto fin troppo, avete perso. il masochista ha vinto!</value>
@@ -386,7 +387,7 @@
 		<value>il Folle🃏</value>
 	</string>
 	<string key="WildChild">
-		<value>il Becchino⚰</value>
+		<value>il Becchino👶</value>
 	</string>
 	<string key="Beholder">
 		<value>l'Osservatore👁</value>
@@ -414,7 +415,7 @@
 	</string>
 	<!-- New strings 4 MAY 2016-->
 	<string key="Mason">
-		<value>un Massone👁‍🗨</value>
+		<value>un Massone👷</value>
 	</string>
 	<string key="RoleInfoMason">
 		<value>Sei un Massone. Quindi conosci l'identità degli altri Massoni come te.</value>
@@ -571,22 +572,22 @@
 	</string>
 	<string key="HunterShotChoice">
 		<value>
-			Qualcuno ti ha puntato la pistola! Rispondi anche te sparando a qualcuno! VELOCEE!
-		</value>
+		Stai per morire!  Nei tuoi ultimi istanti di vita, Hai l'occasione di sparare a qualcuno.... Sbrigati!
+  		</value>
 	</string>
 	<string key="HunterNoChoiceShot">
 		<value>
-			Un colpo ha raggiunto {0}, talmente rapido che lui non ha potuto mettere la mano sulla pistola per poter rispondere. Mazza che sfiga
+		{0} è morto prima che se ne accorgesse e potesse mettere la mano sulla pistola per poter rispondere. Mazza che sfiga
 		</value>
 	</string>
 	<string key="HunterSkipChoiceShot">
 		<value>
-			{0} Impannolinato di paura, alza le mani e si rifiuta di rispondere alla provocazione della pistola puntata su di lui. Ah-ah! morto.
+			{0} Impannolinato di paura, alza le mani e si rifiuta di vendicare uccidendo qualcuno. Ah-ah! morto.
 		</value>
 	</string>
 	<string key="HunterKilledFinalShot">
 		<value>
-			Un proiettile colpisce {0} nel petto. Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
+		{0} è per terra, in fin di vita... Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
 		</value>
 	</string>
 	<string key="CultConvertSerialKiller">
@@ -938,11 +939,11 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -1019,4 +1020,20 @@
   <string key="StartMe">
     <value>Per favore startami così potrò scriverti in privato</value>
   </string> 
-</strings>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   </strings>
