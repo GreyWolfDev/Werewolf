@@ -748,7 +748,7 @@ namespace Werewolf_Node
                         else
                         {
                             _messageQueue.Dequeue(); //remove the message, we are sending it.
-                            final += temp;
+                            final = temp;
                             if (m.RequestPM)
                                 requestPM = true;
                             if (m.PlayerList)
@@ -799,7 +799,7 @@ namespace Werewolf_Node
                         else
                             Send(final);
                     }
-                    
+
                 }
                 Thread.Sleep(4000);
 
@@ -1982,183 +1982,6 @@ namespace Werewolf_Node
             if (Players == null) return;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
-            if (Players.Any(x => x.DiedLastNight))
-            {
-                if (Players == null) return;
-                //OLD CODE
-                //if (DbGroup.ShowRoles != false)
-                //{
-                //    foreach (var p in Players.Where(x => x.DiedLastNight && x.DiedFromWolf && !x.DiedGuardingWolf))
-                //    {
-                //        string msg;
-                //        switch (p.PlayerRole)
-                //        {
-                //            case IRole.Detective:
-                //                msg = GetLocaleString("DetectiveEaten", p.GetName());
-                //                break;
-                //            case IRole.GuardianAngel:
-                //                msg = GetLocaleString("GuardianEaten", p.GetName());
-                //                break;
-                //            case IRole.Gunner:
-                //                msg = GetLocaleString("GunnerEaten", p.GetName());
-                //                break;
-                //            case IRole.Harlot:
-                //                msg = null;
-                //                break;
-                //            case IRole.Seer:
-                //                msg = GetLocaleString("SeerEaten", p.GetName());
-                //                break;
-                //            case IRole.Drunk:
-                //                msg = GetLocaleString("DrunkEaten", p.GetName());
-                //                break;
-                //            case IRole.Fool:
-                //                msg = GetLocaleString("FoolEaten", p.GetName());
-                //                break;
-                //            case IRole.Mason:
-                //                msg = GetLocaleString("MasonEaten", p.GetName());
-                //                break;
-                //            default:
-                //                msg = GetLocaleString("DefaultEaten", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
-                //                break;
-                //        }
-                //        SendWithQueue(msg);
-                //        p.DiedLastNight = false;
-                //    }
-                //    foreach (var p in Players.Where(x => x.DiedLastNight & x.DiedHuntingSK))
-                //    {
-                //        SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}"));
-                //    }
-                //    foreach (var p in Players.Where(x => x.DiedLastNight & !x.DiedFromWolf & !x.DiedFromKiller & !x.DiedFromHunter))
-                //    {
-                //        SendWithQueue(GetLocaleString("HunterKilledCultist", p.GetName()));
-                //        p.DiedLastNight = false;
-                //    }
-                //}
-                //else
-                //{
-                //    foreach (var p in Players.Where(x => x.DiedLastNight && x.PlayerRole != IRole.Harlot & !x.DiedFromKiller))
-                //    {
-                //        SendWithQueue(GetLocaleString("GenericDeathNoReveal", p.GetName()));
-                //        p.DiedLastNight = false;
-                //    }
-                //}
-                var secret = (DbGroup.ShowRoles == false);
-                foreach (var p in Players.Where(x => x.DiedLastNight))
-                {
-                    var msg = "";
-                    if (secret)
-                    {
-                        msg = GetLocaleString("GenericDeathNoReveal", p.GetName());
-                    }
-                    else
-                    {
-                        if (p.DiedFromWolf)
-                        {
-                            switch (p.PlayerRole)
-                            {
-                                case IRole.Detective:
-                                    msg = GetLocaleString("DetectiveEaten", p.GetName());
-                                    break;
-                                case IRole.Drunk:
-                                    msg = GetLocaleString("DrunkEaten", p.GetName());
-                                    break;
-                                case IRole.Fool:
-                                    msg = GetLocaleString("FoolEaten", p.GetName());
-                                    break;
-                                case IRole.GuardianAngel:
-                                    msg = GetLocaleString("GuardianEaten", p.GetName());
-                                    break;
-                                case IRole.Gunner:
-                                    msg = GetLocaleString("GunnerEaten", p.GetName());
-                                    break;
-                                case IRole.Harlot:
-                                    msg = GetLocaleString("HarlotEaten", p.GetName());
-                                    break;
-                                case IRole.Mason:
-                                    msg = GetLocaleString("MasonEaten", p.GetName());
-                                    break;
-                                case IRole.Seer:
-                                    msg = GetLocaleString("SeerEaten", p.GetName());
-                                    break;
-                                default:
-                                    msg = GetLocaleString("DefaultEaten", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
-                                    break;
-                            }
-                        }
-                        else if (p.DiedFromKiller)
-                        {
-                            msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
-                            if (p.PlayerRole == IRole.Hunter)
-                                HunterFinalShot(p, KillMthd.SerialKilled);
-                        }
-                        if (p.DiedFromWrongChoice)
-                            switch (p.PlayerRole)
-                            {
-                                case IRole.Cultist:
-                                    if (p.DiedFromHunter)
-                                        msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
-                                    else if (p.DiedFromKiller)
-                                    {
-                                        //TODO: Add string "CultistVisitedKiller"
-                                    }
-                                    //else
-                                    //TODO: Maybe add a "CultistVisitedCH" too?
-                                    break;
-                                case IRole.CultistHunter:
-                                    //TODO: Add string "CHVisitedSK"
-                                    break;
-                                case IRole.GuardianAngel:
-                                    //TODO: Add strings "GAGuardedWolf", "GAGuardedSK"
-                                    break;
-                                case IRole.Harlot:
-                                    if (p.DiedFromWolf)
-                                        msg = GetLocaleString("HarlotFuckedWolfPublic", p.GetName());
-                                    else if (p.DiedFromKiller)
-                                    {
-                                        //TODO: Use HarlotFuckedKillerPublic here
-                                    }
-                                    else //died from visiting wolves' victim...
-                                    {
-                                        var victim = Players.FirstOrDefault(x => x.DiedFromWolf && x.DiedLastNight && !x.DiedFromWrongChoice); //hoping it's not null...
-                                        msg = GetLocaleString("HarlotFuckedVictimPublic", p.GetName(), victim.GetName());
-                                    }
-                                    break;
-                                case IRole.Wolf:
-                                    if (p.DiedFromKiller)
-                                        msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
-                                    else if (p.DiedFromHunter)
-                                    {
-                                        //if the wolves who were alive last night are > 1... maybe there's some cleaner / simpler way to do this
-                                        if (Players.Where(x => x.PlayerRole == IRole.Wolf && (!x.IsDead || x.DiedLastNight)).Count() > 1)
-                                            msg = GetLocaleString("HunterShotWolfMulti", p.GetName());
-                                        else
-                                            GetLocaleString("HunterShotWolf", p.GetName());
-                                    }
-                                    break;
-                            }
-                        if (p.PlayerRole == IRole.Cultist && !p.DiedFromWolf && !p.DiedFromKiller && !p.DiedFromHunter)
-                            msg = GetLocaleString("HunterKilledCultist", p.GetName());
-                    }
-                    SendWithQueue(msg);
-                    if (p.InLove)
-                        KillLover(p);
-                    p.DiedLastNight = false;
-                }
-            }
-            else
-            {
-                if (IsRunning)
-                    SendWithQueue(GetLocaleString("NoAttack"));
-            }
-
-            if (CheckForGameEnd()) return;
-            //reset choices
-            foreach (var p in Players)
-            {
-                p.Choice = 0;
-                p.HasUsedAbility = false;
-                p.Drunk = false;
-            }
             var timeToAdd = Math.Max(((Players.Count(x => !x.IsDead) / 5) - 1) * 30, 60);
 
             SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
@@ -2320,6 +2143,18 @@ namespace Werewolf_Node
             ValidateSpecialRoleChoices();
 
 
+            /* Role priority:
+             * Wolf
+             * Serial Killer
+             * Cultist Hunter
+             * Cult
+             * Harlot
+             * Seer
+             * Fool
+             * GA
+             */
+
+            #region Wolf Night
             var wolves = Players?.Where(x => x.PlayerRole == IRole.Wolf && !x.IsDead).ToList();
 
             if (CheckForGameEnd()) return;
@@ -2356,8 +2191,7 @@ namespace Werewolf_Node
                                     Send(GetLocaleString("GuardBlockedWolf", target.GetName()), wolf.Id);
                                 //Send(GetLocaleString("GuardSaved", target.Name), ga.Id);
                                 //Send(GetLocaleString("GuardSavedYou"), target.Id);
-                                target.DiedLastNight = true;
-                                target.DiedFromWolf = true;
+                                target.WasSavedLastNight = true;
                             }
                             else
                             {
@@ -2370,7 +2204,7 @@ namespace Werewolf_Node
                                             target.DiedLastNight = true;
                                             target.IsDead = true;
                                             target.TimeDied = DateTime.Now;
-                                            target.DiedFromWolf = true;
+                                            target.KilledByRole = IRole.Wolf;
                                             DBKill(voteWolves, target, KillMthd.Eat);
                                             //SendWithQueue(DbGroup.ShowRoles != false
                                             //    ? GetLocaleString("HarlotEaten", target.GetName())
@@ -2406,7 +2240,7 @@ namespace Werewolf_Node
                                         break;
                                     case IRole.Drunk:
                                         target.DiedLastNight = true;
-                                        target.DiedFromWolf = true;
+                                        target.KilledByRole = IRole.Wolf;
                                         target.IsDead = true;
                                         target.TimeDied = DateTime.Now;
                                         DBKill(voteWolves, target, KillMthd.Eat);
@@ -2439,23 +2273,18 @@ namespace Werewolf_Node
                                             {
                                                 if (voteWolves.Count() > 1)
                                                 {
-                                                    //SendWithQueue(GetLocaleString("HunterShotWolfMulti", shotWuff.GetName()));
                                                     SendGif(GetLocaleString("WolvesEatYou"),
                                                         GetRandomImage(Settings.VillagerDieImages), target.Id);
                                                     DBKill(voteWolves, target, KillMthd.Eat);
-                                                    target.DiedFromWolf = true;
+                                                    target.KilledByRole = IRole.Wolf;
                                                     target.IsDead = true;
                                                     target.TimeDied = DateTime.Now;
                                                     target.DiedLastNight = true;
                                                 }
-                                                else
-                                                {
-                                                    //SendWithQueue(GetLocaleString("HunterShotWolf", shotWuff.GetName()));
-                                                }
                                                 shotWuff.IsDead = true;
                                                 shotWuff.TimeDied = DateTime.Now;
-                                                shotWuff.DiedFromWrongChoice = true;
-                                                shotWuff.DiedFromHunter = true;
+                                                shotWuff.DiedByVisitingKiller = true;
+                                                shotWuff.KilledByRole = IRole.Hunter;
                                                 shotWuff.DiedLastNight = true;
                                                 DBKill(target, shotWuff, KillMthd.HunterShot);
 
@@ -2466,13 +2295,11 @@ namespace Werewolf_Node
                                         {
                                             SendGif(GetLocaleString("WolvesEatYou"), GetRandomImage(Settings.VillagerDieImages), target.Id);
                                             DBKill(voteWolves, target, KillMthd.Eat);
-                                            target.DiedFromWolf = true;
+                                            target.KilledByRole = IRole.Wolf;
                                             target.IsDead = true;
                                             target.TimeDied = DateTime.Now;
                                             target.DiedLastNight = true;
                                         }
-
-
                                         break;
                                     case IRole.SerialKiller:
                                         //serial killer has 80% of winning the fight....
@@ -2482,15 +2309,15 @@ namespace Werewolf_Node
                                             var shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
                                             shotWuff.IsDead = true;
                                             shotWuff.TimeDied = DateTime.Now;
-                                            shotWuff.DiedFromWrongChoice = true;
-                                            shotWuff.DiedFromKiller = true;
+                                            shotWuff.DiedByVisitingKiller = true;
+                                            shotWuff.KilledByRole = IRole.SerialKiller;
                                             shotWuff.DiedLastNight = true;
                                             //SendWithQueue(GetLocaleString("SerialKillerKilledWolf", shotWuff.GetName()));
                                             DBKill(target, shotWuff, KillMthd.SerialKilled);
                                         }
                                         else
                                         {
-                                            target.DiedFromWolf = true;
+                                            target.KilledByRole = IRole.Wolf;
                                             target.IsDead = true;
                                             target.TimeDied = DateTime.Now;
                                             target.DiedLastNight = true;
@@ -2499,7 +2326,7 @@ namespace Werewolf_Node
                                         }
                                         break;
                                     default:
-                                        target.DiedFromWolf = true;
+                                        target.KilledByRole = IRole.Wolf;
                                         target.IsDead = true;
                                         target.TimeDied = DateTime.Now;
                                         target.DiedLastNight = true;
@@ -2517,7 +2344,8 @@ namespace Werewolf_Node
                     }
                 }
             }
-
+            #endregion
+            #region Serial Killer Night
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
             if (sk != null)
@@ -2525,40 +2353,68 @@ namespace Werewolf_Node
                 var skilled = Players.FirstOrDefault(x => x.Id == sk.Choice && !x.IsDead);
                 if (skilled != null)
                 {
-                    skilled.DiedLastNight = true;
-                    skilled.IsDead = true;
-                    skilled.TimeDied = DateTime.Now;
-                    skilled.DiedFromWolf = false;
-                    skilled.DiedFromKiller = true;
-                    if (skilled.PlayerRole == IRole.Wolf)
-                        sk.SerialKilledWolvesCount++;
                     if (ga?.Choice == skilled.Id)
                     {
-
                         Send(GetLocaleString("GuardBlockedKiller", skilled.GetName()), sk.Id);
-                        //Send(GetLocaleString("GuardSaved", target.Name), ga.Id);
-                        //Send(GetLocaleString("GuardSavedYou"), target.Id);
-                        skilled.IsDead = false;
-                        skilled.TimeDied = DateTime.MaxValue;
+                        skilled.WasSavedLastNight = true;
+                        DBKill(sk, skilled, KillMthd.SerialKilled);
                     }
                     else
                     {
-                        DBKill(sk, skilled, KillMthd.SerialKilled);
-                        //if (DbGroup.ShowRoles != false)
-                        //    SendWithQueue(GetLocaleString("DefaultKilled", skilled.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(skilled.PlayerRole)} {GetLocaleString("IsDead")}"));
-                        //else
-                        //    SendWithQueue(GetLocaleString("GenericDeathNoReveal", skilled.GetName()));
-                        //if (skilled.PlayerRole == IRole.Hunter)
-                        //{
-                        //    HunterFinalShot(skilled, KillMthd.SerialKilled);
-                        //}
+                        skilled.DiedLastNight = true;
+                        skilled.IsDead = true;
+                        skilled.TimeDied = DateTime.Now;
+                        skilled.KilledByRole = IRole.SerialKiller;
+                        if (skilled.PlayerRole == IRole.Wolf)
+                            sk.SerialKilledWolvesCount++;
                     }
                 }
             }
-
+            #endregion
             if (Players == null)
                 return;
-            //start with the cult...
+
+            #region Cult Hunter Night
+            //cult hunter
+            var hunter = Players.FirstOrDefault(x => x.PlayerRole == IRole.CultistHunter & !x.IsDead);
+            if (hunter != null)
+            {
+                var hunted = Players.FirstOrDefault(x => x.Id == hunter.Choice);
+                if (hunted != null)
+                {
+                    DBAction(hunter, hunted, "Hunt");
+                    if (hunted.PlayerRole == IRole.SerialKiller)
+                    {
+                        //awwwwww CH gets popped
+                        DBKill(hunted, hunter, KillMthd.SerialKilled);
+                        hunter.IsDead = true;
+                        hunter.TimeDied = DateTime.Now;
+                        hunter.DiedLastNight = true;
+                        hunter.KilledByRole = IRole.SerialKiller;
+                        hunter.DiedByVisitingKiller = true;
+                    }
+                    else if (hunted.IsDead)
+                    {
+                        Send(GetLocaleString("HunterVisitDead", hunted.GetName()), hunter.Id);
+                    }
+                    else if (hunted.PlayerRole == IRole.Cultist)
+                    {
+                        Send(GetLocaleString("HunterFindCultist", hunted.GetName()), hunter.Id);
+                        hunted.IsDead = true;
+                        hunted.TimeDied = DateTime.Now;
+                        hunted.DiedLastNight = true;
+                        hunted.KilledByRole = IRole.CultistHunter;
+                        DBKill(hunter, hunted, KillMthd.Hunt);
+                    }
+                    else
+                    {
+                        Send(GetLocaleString("HunterFailedToFind", hunted.GetName()), hunter.Id);
+                    }
+                }
+            }
+            #endregion
+            #region Cult Night
+            //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
 
             if (voteCult.Any())
@@ -2603,23 +2459,14 @@ namespace Werewolf_Node
                                             newbie.DiedLastNight = true;
                                             newbie.IsDead = true;
                                             newbie.TimeDied = DateTime.Now;
-                                            newbie.DiedFromHunter = true;
-                                            newbie.DiedFromWrongChoice = true;
+                                            newbie.KilledByRole = IRole.Hunter;
+                                            newbie.DiedByVisitingKiller = true;
                                             DBKill(target, newbie, KillMthd.HunterCult);
                                             //notify everyone
                                             foreach (var c in voteCult)
                                             {
                                                 Send(GetLocaleString("CultConvertHunter", newbie.GetName(), target.GetName()), c.Id);
                                             }
-                                            //if (DbGroup.ShowRoles ?? true)
-                                            //{
-                                            //    SendWithQueue(GetLocaleString("HunterKilledVisiter", newbie.GetName(),
-                                            //        $"{GetDescription(newbie.PlayerRole)} {GetLocaleString("IsDead")}"));
-                                            //}
-                                            //else
-                                            //{
-                                            //    SendWithQueue(GetLocaleString("GenericDeathNoReveal", newbie.GetName()));
-                                            //}
                                         }
                                         else
                                         {
@@ -2636,8 +2483,8 @@ namespace Werewolf_Node
                                     newbie.DiedLastNight = true;
                                     newbie.IsDead = true;
                                     newbie.TimeDied = DateTime.Now;
-                                    newbie.DiedFromKiller = true;
-                                    newbie.DiedFromWrongChoice = true;
+                                    newbie.KilledByRole = IRole.SerialKiller;
+                                    newbie.DiedByVisitingKiller = true;
                                     DBKill(target, newbie, KillMthd.SerialKilled);
                                     foreach (var c in voteCult)
                                     {
@@ -2649,7 +2496,8 @@ namespace Werewolf_Node
                                     //kill the newest cult member
                                     newbie.DiedLastNight = true;
                                     newbie.IsDead = true;
-                                    newbie.DiedFromWrongChoice = true;
+                                    newbie.KilledByRole = IRole.CultistHunter;
+                                    newbie.DiedByVisitingKiller = true;
                                     AddAchievement(newbie, Achievements.CultFodder);
                                     newbie.TimeDied = DateTime.Now;
                                     DBKill(target, newbie, KillMthd.Hunt);
@@ -2786,115 +2634,87 @@ namespace Werewolf_Node
                     if (CheckForGameEnd()) return;
                 }
             }
-
-            //cult hunter
-            var hunter = Players.FirstOrDefault(x => x.PlayerRole == IRole.CultistHunter & !x.IsDead);
-            if (hunter != null)
-            {
-                var hunted = Players.FirstOrDefault(x => x.Id == hunter.Choice);
-                if (hunted != null)
-                {
-                    DBAction(hunter, hunted, "Hunt");
-                    if (hunted.PlayerRole == IRole.SerialKiller)
-                    {
-                        //awwwwww CH gets popped
-                        DBKill(hunted, hunter, KillMthd.SerialKilled);
-                        hunter.IsDead = true;
-                        hunter.TimeDied = DateTime.Now;
-                        hunter.DiedLastNight = true;
-                        hunter.DiedFromKiller = true;
-                        hunter.DiedFromWrongChoice = true;
-                    }
-                    else if (hunted.IsDead && hunted.DiedFromWolf && hunted.DiedFromKiller) //added DiedFromSK here... but, does this really matter? isn't IsDead enough?
-                    {
-                        Send(GetLocaleString("HunterVisitDead", hunted.GetName()), hunter.Id);
-                    }
-                    else if (hunted.PlayerRole == IRole.Cultist)
-                    {
-                        Send(GetLocaleString("HunterFindCultist", hunted.GetName()), hunter.Id);
-                        hunted.IsDead = true;
-                        hunted.TimeDied = DateTime.Now;
-                        hunted.DiedLastNight = true;
-                        DBKill(hunter, hunted, KillMthd.Hunt);
-                    }
-                    else
-                    {
-                        Send(GetLocaleString("HunterFailedToFind", hunted.GetName()), hunter.Id);
-                    }
-                }
-            }
-
+            #endregion
             if (Players == null)
             {
                 CheckForGameEnd();
                 return;
             }
-            if (ga != null)
+            #region Harlot Night
+            //let the harlot know
+            var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
+            if (harlot != null)
             {
-                var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
-                if (save != null)
-                    DBAction(ga, save, "Guard");
+                var target = Players.FirstOrDefault(x => x.Id == harlot.Choice);
+                if (target != null)
+                {
+                    DBAction(harlot, target, "Fuck");
+                    if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
+                        harlot.HasRepeatedVisit = true;
 
-                if (save.DiedLastNight)
-                //removed !save.DiedFromLove here... because if they are DiedFromLove they aren't DiedLastNight. This was actually the only use of DiedFromLove, so I removed it from the class
+                    harlot.PlayersVisited.Add(target.TeleUser.Id);
+                }
+                else
                 {
-                    if (save.PlayerRole == IRole.Cultist & !save.DiedFromWolf & !save.DiedFromKiller) // -> has been killed by CH
+                    //stayed home D:
+                    harlot.HasStayedHome = true;
+                }
+                if (!harlot.IsDead)
+                {
+                    if (target != null)
                     {
-                        Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
-                    }
-                    else
-                    {
-                        save.IsDead = false;
-                        save.TimeDied = DateTime.MaxValue;
-                        save.DiedLastNight = false;
-                        save.DiedFromWolf = false;
-                        save.DiedFromKiller = false;
-                        save.DiedFromWrongChoice = false;
-                        using (var db = new WWContext())
+                        switch (target.PlayerRole)
                         {
-                            var dbsp = GetDBGamePlayer(save, db);
-                            if (dbsp != null)
-                                dbsp.Survived = true;
-                            db.SaveChanges();
+                            case IRole.Wolf:
+                                harlot.IsDead = true;
+                                harlot.TimeDied = DateTime.Now;
+                                harlot.DiedLastNight = true;
+                                harlot.DiedByVisitingKiller = true;
+                                harlot.KilledByRole = IRole.Wolf;
+                                DBKill(target, harlot, KillMthd.VisitWolf);
+                                Send(GetLocaleString("HarlotFuckWolf", target.GetName()), harlot.Id);
+                                break;
+                            case IRole.SerialKiller:
+                                harlot.IsDead = true;
+                                harlot.TimeDied = DateTime.Now;
+                                harlot.DiedLastNight = true;
+                                harlot.DiedByVisitingKiller = true;
+                                harlot.KilledByRole = IRole.SerialKiller;
+                                Send(GetLocaleString("HarlotFuckKiller", target.GetName()), harlot.Id);
+                                break;
+                            case IRole.Cultist:
+                                Send(
+                                Program.R.Next(100) < Settings.HarlotDiscoverCultChance
+                                    ? GetLocaleString("HarlotDiscoverCult", target.GetName())
+                                    : GetLocaleString("HarlotVisitNonWolf", target.GetName()), harlot.Id);
+                                break;
+                            default:
+                                if (target.DiedLastNight &&
+                                    new[] { IRole.SerialKiller, IRole.Wolf }.Contains(target.KilledByRole) &
+                                    !target.DiedByVisitingKiller)
+                                {
+                                    harlot.IsDead = true;
+                                    harlot.TimeDied = DateTime.Now;
+                                    harlot.DiedLastNight = true;
+                                    harlot.DiedByVisitingVictim = true;
+                                    harlot.KilledByRole = target.KilledByRole;
+                                    harlot.RoleModel = target.Id; //store who they visited
+                                    DBKill(target, harlot, KillMthd.VisitVictim);
+                                }
+                                else
+                                {
+                                    Send(GetLocaleString("HarlotVisitNonWolf", target.GetName()), harlot.Id);
+                                    if (!target.IsDead)
+                                        Send(GetLocaleString("HarlotVisitYou"), target.Id);
+                                }
+                                break;
                         }
-                        Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
-                        Send(GetLocaleString("GuardSavedYou"), save.Id);
                     }
-                }
-                if (save.PlayerRole == IRole.Wolf) //removed "else" here, otherwise GA can't die guarding WW from SK or vice versa
-                {
-                    if (Program.R.Next(100) > 50)
-                    {
-                        ga.IsDead = true;
-                        ga.TimeDied = DateTime.Now;
-                        ga.DiedLastNight = true;
-                        ga.DiedFromWolf = true;
-                        ga.DiedFromWrongChoice = true;
-                        DBKill(save, ga, KillMthd.GuardWolf);
-                        Send(GetLocaleString("GuardWolf"), ga.Id);
-                    }
-                    else
-                    {
-                        Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                    }
-                }
-                else if (save.PlayerRole == IRole.SerialKiller)
-                {
-                    //oops, GA is dead
-                    ga.IsDead = true;
-                    ga.TimeDied = DateTime.Now;
-                    ga.DiedLastNight = true;
-                    ga.DiedFromKiller = true;
-                    ga.DiedFromWrongChoice = true;
-                    DBKill(save, ga, KillMthd.GuardKiller);
-                    Send(GetLocaleString("GuardKiller"), ga.Id);
-                    //SendWithQueue(GetLocaleString("DefaultKilled", ga.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(ga.PlayerRole)} {GetLocaleString("IsDead")}"));
-                }
-                else if (!save.DiedLastNight)
-                {
-                    Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                 }
             }
+
+            #endregion
+            #region Seer / Fool
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer & !x.IsDead);
             if (seers.Any())
@@ -2930,9 +2750,6 @@ namespace Werewolf_Node
                     var possibleRoles = Players.Where(x => !x.IsDead && x.Id != fool.Id && x.PlayerRole != IRole.Seer).Select(x => x.PlayerRole).ToList();
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
-                    possibleRoles.Shuffle();
-                    possibleRoles.Shuffle();
-                    possibleRoles.Shuffle();
                     if (possibleRoles.Any())
                     {
                         //check if it's accurate
@@ -2941,98 +2758,184 @@ namespace Werewolf_Node
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(possibleRoles[0])), fool.Id);
                     }
                 }
-
-
-            //let the harlot know
-            var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
-            if (harlot != null)
+            #endregion
+            #region GA Night
+            if (ga != null)
             {
-                var target = Players.FirstOrDefault(x => x.Id == harlot.Choice);
-                if (target != null)
-                {
-                    DBAction(harlot, target, "Fuck");
-                    if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
-                        harlot.HasRepeatedVisit = true;
+                var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
+                if (save != null)
+                    DBAction(ga, save, "Guard");
 
-                    harlot.PlayersVisited.Add(target.TeleUser.Id);
-                }
-                else
+                if (save.WasSavedLastNight)
                 {
-                    //stayed home D:
-                    harlot.HasStayedHome = true;
+                    Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
+                    Send(GetLocaleString("GuardSavedYou"), save.Id);
                 }
-                if (!harlot.IsDead)
+                else if (save.DiedLastNight)
                 {
-
-                    if (target != null)
+                    Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
+                }
+                else //no attack
+                {
+                    switch (save.PlayerRole)
                     {
-                        if (target.PlayerRole == IRole.Wolf ||
-                            (target.DiedLastNight && target.DiedFromWolf && !target.DiedFromWrongChoice)) //it's wolves who ate them, not them choosing the wolves
-                        //if choice is 0, they did not leave their house last night, so presumably they are not the wolf
-                        {
-                            harlot.IsDead = true;
-                            harlot.TimeDied = DateTime.Now;
-                            harlot.DiedLastNight = true;
-                            harlot.DiedFromWrongChoice = true;
-                            if (target.PlayerRole == IRole.Wolf)
+                        case IRole.Wolf:
+                            if (Program.R.Next(100) > 50)
                             {
-                                DBKill(target, harlot, KillMthd.VisitWolf);
-                                harlot.DiedFromWolf = true;
-                                //Send($"You slip into a villagers house, and are confronted by a large wolf.  He sees you, a slutty harlot, and you notice his sheath expand in excitement.  He grabs you, throws you on the bed, and proceeds to ram you until he is done...  then eats you as an after snack.", harlot.Id);
-                                Send(GetLocaleString("HarlotFuckWolf", target.GetName()), harlot.Id);
-                                //SendWithQueue(DbGroup.ShowRoles != false
-                                //    ? GetLocaleString("HarlotFuckedWolfPublic", harlot.GetName())
-                                //    : GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
+                                ga.IsDead = true;
+                                ga.TimeDied = DateTime.Now;
+                                ga.DiedLastNight = true;
+                                ga.DiedByVisitingKiller = true;
+                                ga.KilledByRole = IRole.Wolf;
+                                DBKill(save, ga, KillMthd.GuardWolf);
+                                Send(GetLocaleString("GuardWolf"), ga.Id);
                             }
                             else
                             {
-                                DBKill(target, harlot, KillMthd.VisitVictim);
-                                //Send($"{harlot.Name} slips into {target.Name}'s house, ready to have a little fun to ease off the stress.  However, as they do, they find themselves staring at a werewolf, tearing apart {target.Name}'s corpse, his huge knot hanging out in his excitement.  He turns and sees them, grabs their face and shoves it between his legs as he continues gorging himself on the corpse.\nAs he cums, he presses them so hard into his fur, they suffocate.  Subsequently, {harlot.Name} is eated.");
-                                //SendWithQueue(DbGroup.ShowRoles != false
-                                //    ? GetLocaleString("HarlotFuckedVictimPublic", harlot.GetName(), target.GetName())
-                                //    : GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
+                                Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             }
-                        }
-                        else if (target.PlayerRole == IRole.Cultist)
-                        {
-                            Send(
-                                Program.R.Next(100) < Settings.HarlotDiscoverCultChance
-                                    ? GetLocaleString("HarlotDiscoverCult", target.GetName())
-                                    : GetLocaleString("HarlotVisitNonWolf", target.GetName()), harlot.Id);
-                        }
-                        else if (target.PlayerRole == IRole.SerialKiller)
-                        {
-                            //oops, harlot dead....
-                            harlot.IsDead = true;
-                            harlot.TimeDied = DateTime.Now;
-                            harlot.DiedLastNight = true;
-                            harlot.DiedFromWrongChoice = true;
-                            harlot.DiedFromKiller = true;
-                            DBKill(target, harlot, KillMthd.VisitKiller);
-                            Send(GetLocaleString("HarlotFuckKiller", target.GetName()), harlot.Id);
-                            //if (DbGroup.ShowRoles != false)
-                            //    SendWithQueue(GetLocaleString("DefaultKilled", harlot.GetName(),
-                            //        $"{harlot.GetName()} {GetLocaleString("Was")} {GetDescription(harlot.PlayerRole)}"));
-                            //else
-                            //    SendWithQueue(GetLocaleString("GenericDeathNoReveal", harlot.GetName()));
-                        }
-                        else
-                        {
-                            Send(GetLocaleString("HarlotVisitNonWolf", target.GetName()), harlot.Id);
-                        }
-                        Send(GetLocaleString("HarlotVisitYou"), target.Id);
+                            break;
+                        case IRole.SerialKiller:
+                            ga.IsDead = true;
+                            ga.TimeDied = DateTime.Now;
+                            ga.DiedLastNight = true;
+                            ga.DiedByVisitingKiller = true;
+                            ga.KilledByRole = IRole.SerialKiller;
+                            DBKill(save, ga, KillMthd.GuardKiller);
+                            Send(GetLocaleString("GuardKiller"), ga.Id);
+                            break;
+                        default:
+                            Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
+                            break;
                     }
                 }
             }
+            #endregion
+
             CheckRoleChanges();
+
+            #region Night Death Notifications to Group
+
+            var secret = DbGroup.ShowRoles == false;
+            if (Players.Any(x => x.DiedLastNight))
+            {
+                foreach (var p in Players.Where(x => x.DiedLastNight))
+                {
+                    var msg = "";
+                    if (secret)
+                    {
+                        SendWithQueue(GetLocaleString("GenericDeathNoReveal", p.GetName()));
+                    }
+                    else
+                    {
+                        //Killed by wolf
+                        if (p.KilledByRole == IRole.Wolf && p.PlayerRole != IRole.Harlot)
+                        {
+                            switch (p.PlayerRole)
+                            {
+                                case IRole.Detective:
+                                    msg = GetLocaleString("DetectiveEaten", p.GetName());
+                                    break;
+                                case IRole.Drunk:
+                                    msg = GetLocaleString("DrunkEaten", p.GetName());
+                                    break;
+                                case IRole.Fool:
+                                    msg = GetLocaleString("FoolEaten", p.GetName());
+                                    break;
+                                case IRole.Gunner:
+                                    msg = GetLocaleString("GunnerEaten", p.GetName());
+                                    break;
+                                case IRole.GuardianAngel:
+                                    msg = GetLocaleString("GuardianEaten", p.GetName());
+                                    break;
+                                case IRole.Mason:
+                                    msg = GetLocaleString("MasonEaten", p.GetName());
+                                    break;
+                                case IRole.Seer:
+                                    msg = GetLocaleString("SeerEaten", p.GetName());
+                                    break;
+                                default:
+                                    msg = GetLocaleString("DefaultEaten", p.GetName(),
+                                        $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
+                                    break;
+                            }
+                        }
+                        //killed by SK
+                        else if (p.KilledByRole == IRole.SerialKiller & !new[] { IRole.Wolf }.Contains(p.PlayerRole))
+                        {
+                            msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                            if (p.PlayerRole == IRole.Hunter)
+                                HunterFinalShot(p, KillMthd.SerialKilled);
+                        }
+                        //died by visiting
+                        else
+                        {
+                            switch (p.PlayerRole)
+                            {
+                                case IRole.Wolf: //sk and hunter can kill
+                                    if (p.KilledByRole == IRole.SerialKiller)
+                                    {
+                                        msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
+                                        //TODO Add visited vs hunted by killer
+                                    }
+                                    else //died from hunter
+                                    {
+                                        msg = GetLocaleString(Players.Count(x => x.PlayerRole == IRole.Wolf && !x.IsDead) + 1 > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName());
+                                    }
+                                    break;
+                                case IRole.Cultist: //ch killed
+                                    if (p.KilledByRole == IRole.CultistHunter)
+                                        msg = GetLocaleString("HunterKilledCultist", p.GetName());
+                                    else if (p.KilledByRole == IRole.Hunter)
+                                        msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                    break;
+                                case IRole.Harlot:
+                                    switch (p.KilledByRole)
+                                    {
+                                        case IRole.Wolf:
+                                            if (p.DiedByVisitingKiller)
+                                                msg = GetLocaleString("HarlotFuckedWolfPublic", p.GetName());
+                                            else if (p.DiedByVisitingVictim)
+                                                msg = GetLocaleString("HarlotFuckedVictimPublic", p.GetName(), Players.FirstOrDefault(x => x.Id == p.RoleModel).GetName());
+                                            else
+                                                msg = GetLocaleString("HarlotEaten", p.GetName());
+                                            break;
+                                            //case IRole.SerialKiller:
+                                            //    //if (p.DiedByVisitingKiller)
+                                            //    //    msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName()); //TODO update this string
+                                            //    //else
+                                            //        msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                            //    break;
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+
+                    SendWithQueue(msg);
+                    if (p.InLove)
+                        KillLover(p);
+                }
+            }
+            else
+            {
+                if (IsRunning)
+                    SendWithQueue(GetLocaleString("NoAttack"));
+            }
+
+            #endregion
+            if (CheckForGameEnd()) return;
 
             //reset everything
             foreach (var p in Players)
             {
+                p.DiedLastNight = false;
                 p.Choice = 0;
                 p.HasUsedAbility = false;
                 p.Votes = 0;
             }
+
+
         }
 
         private bool CheckForGameEnd()

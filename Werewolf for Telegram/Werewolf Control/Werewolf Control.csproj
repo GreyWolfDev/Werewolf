@@ -8,7 +8,8 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Werewolf_Control</RootNamespace>
-    <AssemblyName>Werewolf Control</AssemblyName>
+    <AssemblyName>Werewolf Control 2</AssemblyName>
+    <AssemblyName Condition=" '$(Configuration)' == 'Release 2' ">Werewolf Control 2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -117,7 +118,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telegram.Bot, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Telegram.Bot\bin\Release\net46\Telegram.Bot.dll</HintPath>
+      <HintPath>..\Telegram.Bot\bin\Release\net45\Telegram.Bot.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

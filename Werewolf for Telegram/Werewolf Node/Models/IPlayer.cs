@@ -66,10 +66,10 @@ namespace Werewolf_Node.Models
         public bool HasDayAction { get; set; } = false;
         public int DayCult { get; set; } = 0;
         public int RoleModel { get; set; } = 0;
-        public bool DiedFromWolf { get; set; } = false;
-        public bool DiedFromKiller { get; set; } = false;
-        public bool DiedFromHunter { get; set; } = false;
-        public bool DiedFromWrongChoice { get; set; } = false; //roles that have night actions can die because of who they chose, eg harlot choosing wolf/victim.
+        public IRole KilledByRole { get; set; }
+        public bool DiedByVisitingKiller { get; set; } = false;
+        public bool DiedByVisitingVictim { get; set; } = false;
+        public bool WasSavedLastNight { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public IRole OriginalRole { get; set; }
