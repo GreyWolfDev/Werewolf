@@ -57,8 +57,7 @@ variant="Fallout"/>
     <value>{0} é entrato nella Zona. {1} sopravvissuti, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-
-    <value>\n{0} Benvenuto a Werewolf Fallout Edition! \nPer favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo, o morirai nella Zona da solo.</value>
+    <value>\n{0} Benvenuto a Werewolf FALLOUT EDITION! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
   </string>
   <string key="DeadFlee">
 
@@ -432,7 +431,7 @@ variant="Fallout"/>
   </string>
 
   <string key="Villager">
-    <value>un Sopravvissuto👨</value>
+    <value>un Sopravvissuto👱</value>
   </string>
   <string key="Drunk">
     <value>l'Ubriaco🍻</value>
@@ -450,7 +449,7 @@ variant="Fallout"/>
     <value>il Protectron🚨(👼)</value>
   </string>
   <string key="Detective">
-    <value>Nick Valentine🕵(🔎)</value>
+    <value>Nick Valentine🕵</value>
   </string>
   <string key="Wolf">
     <value>un Supermutante👹(🐺)</value>
@@ -499,7 +498,7 @@ variant="Fallout"/>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>uno Scriba 👁‍🗨</value>
+    <value>uno Scriba 👷</value>
   </string>
   <string key="RoleInfoMason">
 
@@ -507,7 +506,7 @@ variant="Fallout"/>
   </string>
   <string key="MasonEaten">
 
-    <value>Al risveglio di tutti, viene ritrovato il corpo di {0} con una tuta della Confraternita. Le gambe da tutt'altra parte, la testa in una mano e il vestito intriso di sangue. Uno Scriba👁‍🗨 è morto!</value>
+    <value>Al risveglio di tutti, viene ritrovato il corpo di {0} con una tuta della Confraternita. Le gambe da tutt'altra parte, la testa in una mano e il vestito intriso di sangue. Uno Scriba👷 è morto!</value>
   </string>
   <string key="MasonTeam">
     <value>  Gli altri Scribi sono: {0}</value>
@@ -662,11 +661,11 @@ variant="Fallout"/>
   </string>
   <string key="HunterShotChoice">
 
-    <value>Il Mercante ti ha sparato!  Nei tuoi ultimi istanti di vita, Hai l'occasione di sparare a qualcuno… di vendicarti…</value>
+    <value>Sei stato ucciso!  Nei tuoi ultimi istanti di vita, Hai l'occasione di sparare a qualcuno… di vendicarti…</value>
   </string>
   <string key="HunterNoChoiceShot">
 
-    <value>Il colpo in testa a {0} é stato di una precisione inimmaginabile. In un nanosecondo é morto, senza vendicarsi.</value>
+    <value>{0} casca a terra, senza vita. In un nanosecondo é morto, senza poter vendicarsi.</value>
   </string>
   <string key="HunterSkipChoiceShot">
 
@@ -1005,7 +1004,7 @@ variant="Fallout"/>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -1081,5 +1080,21 @@ variant="Fallout"/>
   </string>
   <string key="StartMe">
     <value>Per favore startami così potrò scriverti in privato, oppure resta solo nel vault.</value>
-  </string> 
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
    </strings>
