@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 29/09/2016 by @jeffffc
+    LAST UPDATE 14/10/2016 by @jeffffc
+    14/10: amendments on "aboutww" "aboutharlot" "aboutapps" "ABOUTSK" "ROLEINFOWOLF" "RoleInfoApprenticeSeer" "RoleInfoSerialKiller"
+    14/10: amendments on "ApprenticeNowSeer" and "BeholderNewSeer"
     04/10: added "Ping2" string
     29/09: abouthunter: No one wins [only with SK but not wolves]
     29/09: added "PlayerNoPM" "LatestList" "UnableToGetList" "YouJoined" strings
@@ -50,7 +52,7 @@
     <value>【{0}】 已加入遊戲。現有{1}個玩家，最少{2}個玩家，最多{3}個玩家</value>
   </string>
   <string key="PMTheBot">
-    <value>【{0}】 麻煩你PM 【 @{1} 】 同佢講句 【 /start 】 ，如果唔係，你會玩唔到遊戲架!</value>
+    <value>【{0}】 麻煩你PM 【 {1} 】 同佢講句 【 /start 】 ，如果唔係，你會玩唔到遊戲架!</value>
   </string>
   <string key="DeadFlee">
     <value>你死左喇，逃走都無用</value>
@@ -95,10 +97,10 @@
     <value>\n【{0}】 係先知</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>【{0}】 係先知，但係佢死左。既然你係學徒先知，當然由你黎做新一任先知啦</value>
+    <value>你無啦啦執倒　【{0}】 副塔羅牌，而家你代替左佢做先知喇！</value>
   </string>
   <string key="BeholderNewSeer">
-    <value>【{0}】 係學徒先知，岩岩 【{1}】 死左，所以由學徒先知繼任</value>
+    <value>【{0}】 無啦啦執倒 【{1}】 副塔羅牌，所以佢繼任左先知個位喇</value>
   </string>
   <string key="SeerSees">
     <value>你見到 【{0}】 係 【{1}】</value>
@@ -161,7 +163,7 @@
     <value>你係叛徒! 而家你只係一個村民，如果所有狼人死晒你都未死，你會變左做狼人繼續殺人。另外你有機會比先知見到你係一隻狼。</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>你係狼!</value>
+    <value>你係狼! 小心呀如果你地想去殺連環殺手既話，有20%機會會死一個盟友架。</value>
   </string>
   <string key="RoleInfoSeer" >
     <value >你係先知! 每round可以check一個人係咩身份。</value>
@@ -179,7 +181,7 @@
     <value>你係旁觀者，你會知邊個係真。先知。\n除左呢個功能之外，你同班等死村民一樣咁垃圾。</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value>你係學徒先知。一開始你係普通村民，如有先知死左，你會承繼佢。</value>
+    <value>你係學徒先知。一開始你係普通村民，如有先知死左或者入左邪教，你會承繼佢。</value>
   </string>
   <string key="RoleInfoCultist" >
     <value>你係邪教會員。\n1. 每一Round要令其他人去追隨你。(狼人不能追隨你)\n2. d人離開左間屋就追隨唔到你，小心唔好入錯邪教殺手屋企。\n3. 最後如果每個人類都追隨你，你就會贏。\n4. 被入會嘅人會失去原來嘅身份。</value>
@@ -534,7 +536,7 @@
     <value>你係獵人。\n1.如果其他人去你屋企，佢地有可能因為你發癲而畀你殺死。\n2.如果狼人黎殺你，你有機會去殺翻佢轉頭。\n3.你死前有得射死一個人去拉佢陪葬。\n備註：狼人黎你屋企時候會有機會畀你殺，機率按遊戲入面狼人數目而定。\n一隻狼=30%，兩隻狼=50%，三隻狼=70%，如此類推。\n如果邪教黎傳教，佢地有50%拉你唔到。如果佢地拉唔到，你就有50%去殺佢地其中一個。</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>你係連環殺手。\n你可以殺任何人，就算狼人黎殺你，都會畀你殺翻轉頭。</value>
+    <value>你係連環殺手。\n你可以殺任何人，但係狼人黎殺你既話，你有80%機會殺翻轉頭。</value>
   </string>
   <string key="CupidChosen">
     <value>你已跌入愛河。你另一半係 【{0}】，記住李安納度迪卡比奧曾經講過，You Jump, I Jump。你另一半死左，你都會死。</value>
@@ -702,10 +704,10 @@
     <value>【先知】每晚都可以查一個人嘅身份。</value>
   </string>
   <string key="AboutWw">
-    <value>【狼人】狼群每晚都可以揀一個人黎食，食到最後，生還者入面有一半係狼就贏。</value>
+    <value>【狼人】狼群每晚都可以揀一個人黎食，食到最後，生還者入面有一半係狼就贏。不過如果你地揀中左去食連環殺手，你地就得20%機會殺倒佢，另外有80%機會其中一隻狼會死。</value>
   </string>
   <string key="AboutHarlot">
-    <value>【妓女】每晚都可以去見一位恩客。如果揀左平民就會無事發生；揀左狼人或者連環殺手死硬；揀中狼人想食果個人，狼人會連埋你一齊食埋；去左搵恩容，狼人同邪教都搵你唔到，不過連環殺手點都會搵到你再殺左你。</value>
+    <value>【妓女】每晚都可以去見一位恩客。如果揀左平民就會無事發生；揀左狼人或者連環殺手死硬；揀中狼人想食果個人，狼人會連埋你一齊食埋；去左搵恩客，狼人同邪教都搵你唔到，不過連環殺手點都會搵到你再殺左你。</value>
   </string>
   <string key="AboutDrunk">
     <value>【醉酒佬】你飲酒飲到全身都充滿酒精，酒精濃度高到如果狼人食左你，第二晚佢都會醉埋一份而殺唔到人。</value>
@@ -741,7 +743,7 @@
     <value>【野仔】喺第一晚可以揀一個人做目標。如果你個目標死咗，你就即刻變狼人。佢一日未死，你就一日都仲係村民陣營。</value>
   </string>
   <string key="AboutAppS">
-    <value>【學徒先知】先知死左之後你就上位變先知喇。不講先知有無入邪教，佢一日未死，你一日都未會變真先知。</value>
+    <value>【學徒先知】先知死左或者入左邪教之後你就上位變先知喇。</value>
   </string>
   <string key="AboutBH">
     <value>【旁觀者】都係一個平凡既村民，唔同嘅係你會知道邊一個係真先知（唔計白痴仔）。</value>
@@ -761,7 +763,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>【連環殺手】每晚都可以去殺一個，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢地再殺左佢。如果狼人黎左你屋企想殺你，你會反殺番狼人，並且存活。</value>
+    <value>【連環殺手】每晚都可以去殺一個，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢地再殺左佢。如果狼人黎左你屋企想殺你，你有20%機會俾佢地食左。</value>
   </string>
   <string key="AboutPara">
     <value>【Para】係一個鍾意周圍吠嘅弱智程式員，佢可能對我狼人太多所以先製作倒呢個狼人遊戲...</value>
