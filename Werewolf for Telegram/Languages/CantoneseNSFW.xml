@@ -2,7 +2,9 @@
 <!-- Done by Firewood (@Firewood_LoKi) -->
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 29/09/2016 by @jeffffc
+    LAST UPDATE 14/10/2016 by @jeffffc
+    14/10: amendments on "aboutww" "aboutapps" "ABOUTSK" "ROLEINFOWOLF" "RoleInfoApprenticeSeer" "RoleInfoSerialKiller"
+    14/10: amendments on "ApprenticeNowSeer" and "BeholderNewSeer"
     04/10: added "Ping2" string
     29/09: abouthunter: No one wins [only with SK but not wolves]
 -->
@@ -143,10 +145,10 @@
     <value>\n【{0}】係先知。</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>先知【{0}】死撚咗，恭喜你升職攞咗佢個位。</value>
+    <value>你係街邊執撚左【{0}】跌左果副塔羅牌，恭喜你升職攞咗佢個位。</value>
   </string>
   <string key="BeholderNewSeer">
-    <value>先知【{1}】死撚咗，學徒【{0}】頂咗佢間鋪嚟做！</value>
+    <value>【{0}】係街邊執撚左【{1}】跌左果副塔羅牌，所以頂咗佢間鋪嚟做先知喇！</value>
   </string>
   <string key="SeerSees">
     <value>你發現【{0}】原來係【{1}】！</value>
@@ -211,7 +213,7 @@
     <value>你係二五仔。所有狼死晒之後你會變做狼。</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>你係狼人👏🏻👏🏻，晚晚你都可以食人。</value>
+    <value>你係狼人👏🏻👏🏻，晚晚你都可以食人。小心呀如果你地想去殺連環殺手既話，有20%機會會死一個盟友架</value>
   </string>
   <string key="RoleInfoSeer" >
     <value>你係先知，你每晚都可以睇一個人嘅命盤。</value>
@@ -229,7 +231,7 @@
     <value>你係旁觀者，你會知道邊個真先知，除此之外，你同一個廢村冇分別。</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value>你係學徒先知，先知死咗你就會頂佢個位嚟做。</value>
+    <value>你係學徒先知，先知死咗或者入左邪教你就會頂佢個位嚟做。</value>
   </string>
   <string key="RoleInfoCultist" >
     <value>你係邪教魔徒，每晚你都可以拉一個人入教，到最後所有人都係教友就贏！</value>
@@ -615,7 +617,7 @@
     <value>你係獵人，你晚晚都失眠，唔攬住支槍你都未必瞓得着。如果你要死，你可以臨死之前拉多一個人陪葬。如果狼人嚟食你，或者連環殺手嚟殺你，你有機會反殺佢地，不過就冇辦法揀一個人陪葬。</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>你係連環殺手👏🏻👏🏻，岩岩越獄嚟到呢條村，你生存嘅意義就係將全世界嘅腎攞晒返屋企擺。每晚，你都可以去人地屋企偷兩粒腎。</value>
+    <value>你係連環殺手👏🏻👏🏻，岩岩越獄嚟到呢條村，你生存嘅意義就係將全世界嘅腎攞晒返屋企擺。每晚，你都可以去人地屋企偷兩粒腎。如果狼人黎殺你既話，你有80%機會殺翻轉頭。</value>
   </string>
   <string key="CupidChosen">
     <value>邱比特見你單身咗咁耐，揀咗【{0}】做你嘅戀人。佢死咗你都冇辦法生存落去，如果你地一齊捱到最後就會贏。</value>
@@ -664,7 +666,7 @@
     <value>尋晚，你諗住去偷【{0}】嗰兩粒腎，點知守護天使喺度阻撚住晒，你唯有返屋企抖下啦。</value>
   </string>
   <string key="CultConvertHunter">
-    
+
     <value>【{0}】走撚咗去傳教，點知俾【{1}】一槍打撚死咗！</value>
   </string>
   <string key="CultConvertSerialKiller">
@@ -787,7 +789,7 @@
     <value>先知每晚都可以查一個人嘅身份。</value>
   </string>
   <string key="AboutWw">
-    <value>狼人每晚都可以食一個人，食到最後，生還者入面有一半係狼就贏。</value>
+    <value>狼人每晚都可以食一個人，食到最後，生還者入面有一半係狼就贏。不過如果你地揀中左去食連環殺手，你地就得20%機會殺倒佢，另外有80%機會其中一隻狼會死。</value>
   </string>
   <string key="AboutHarlot">
     <value>作為一隻稱職嘅雞，每晚都可以搵條友扑天光。啪平民，無事發生；啪狼人／連環殺手，即死；啪着狼人想食果條友，狼人會食左你同果條友；去左啪人，狼人／邪教都搵你唔到；去左啪人，連環殺手照殺你。</value>
@@ -826,7 +828,7 @@
     <value>野仔喺第一晚可以揀一個短命種。如果短命種死咗，野仔就變狼。短命種未死，就跟村民贏。</value>
   </string>
   <string key="AboutAppS">
-    <value>學徒先知，先知死左之後就會頂佢個位。如果先知入教但係未死，你唔會變先知。</value>
+    <value>學徒先知，先知死左或者入左邪教之後就會頂左佢個位。</value>
   </string>
   <string key="AboutBH">
     <value>旁觀者同廢村一樣，不過會知道邊個係真正嘅先知。</value>
@@ -849,8 +851,8 @@
       獵人喺臨死之前可以拉多一個人陪葬。如果係被狼嚟搵你，你有機會反殺佢地，不過就冇得揀對住邊個開槍。得一隻狼嘅話，有 30% 反殺隻狼（並存活）。每多一隻狼多 20% （兩狼 50%；三狼 70%）。如果有複數嘅狼，就算你反殺到你都有機會死。如果邪教魔徒過嚟傳福音，佢地有 50% 機率傳教失敗。若然傳教失敗，獵人有 50% 機率去殺佢地。當和連殺作為唯二生存者時，無人會贏。
     </value>
   </string>
+  <value>連環殺手每晚都可以偷兩粒腎，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，連殺總有辦法殺到佢地。如果狼去咗連殺屋企，連殺有80%機會反殺狼人，並存活。</value>
   <string key="AboutSK">
-    <value>連環殺手每晚都可以偷兩粒腎，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，連殺總有辦法殺到佢地。如果狼去咗連殺屋企，連殺會反殺狼人，並存活。</value>
   </string>
   <string key="AboutPara">
     <value>【Para】係一個鍾意周圍吠嘅弱智程式員，可能佢實在搞狼人搞得太辛苦……</value>
