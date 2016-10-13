@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Pinoy SFW version by @michelleized, @arbeanstok, @genevasands
-     Last update: August 14, 2016 -->
+<!-- Pinoy SFW version by @michelleized, @arbeanstok, @genevasands -->
 <!-- Changelog August 12, 2016
 	First Launch-->
 <!-- Changelog August 14, 2016
 	1. Corrected '*PlayerName* WAS *role*' to '*PlayerName* ay *role*'.
 	2. Changed some role names (Villager, Seer, Guardian Angel, Cultist, Wild Child, Doppelganger, Tanner)-->
 <!-- Changelog August 15, 2016 by @pierredplatypus
-  1. Corrected several grammar and lexical errors such as 'mukang' to 'mukhang', 'jan' to 'dyan', 'PATAYA' to 'PATAY', 'ilynch' to 'bitayin', 'sakanila' to 'sa kanila', 'pimili' to 'pumili'.
-  2. Changed some role names (Harlot, AppSeer, Gunner)
-  3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
+	1. Corrected several grammar and lexical errors such as 'mukang' to 'mukhang', 'jan' to 'dyan', 'PATAYA' to 'PATAY', 'ilynch' to 'bitayin', 'sakanila' to 'sa kanila', 'pimili' to 'pumili'.
+	2. Changed some role names (Harlot, AppSeer, Gunner)
+	3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
 <!-- Changelog August 17, 2016 by @arbeanstok
-  1. Updated to new bot lines for /playerlist-->
+	1. Updated to new bot lines for /playerlist-->
 <!-- Changelog August 19, 2016 by @arbeanstok
-  1. Added YouJoined string -->
+	1. Added YouJoined string -->
+<!-- Changelog October 13, 2016 by @arbeanstok
+	1. Updated ApprenticeNowSeer and BeholderNewSeer strings
+	2. Added Ping2 string
+	3. Updated VillageWins string
+	-->
 <strings>
   <language name="Filipino" base="Filipino" variant="SFW"/>
   <string key="NotInGame">
@@ -139,12 +143,12 @@
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
-    <value>Si {0} ay OJT ni Madam Auring. Bilang OJT ni Madam, napromote ka na at ikaw na ang bagong Madam Auring.</value>
+    <value>Pumunta ka sa bahay ni {0} at nakita ang mga nakakalat na tarot cards! Pinulot mo ito. Ikaw na ang bagong Madam Auring.</value>
   </string>
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
     <!-- 1 - seer name -->
-    <value>Si {0} ay ang dating OJT ni Madam Auring, napromote na siya kapalit ni {1} bilang bagong Madam Auring.</value>
+    <value>Napulot ni {0} ang mga nakakalat na tarot cards ni {1}. Siya na ang bagong Madam Auring.</value>
   </string>
   <string key="SeerSees">
     <!-- 0 - player name -->
@@ -392,7 +396,7 @@
     <value>Nanalo ang mga wolf!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value>Namatay na lahat ng wolves. Panalo na ang mga TAMBAY! (Party Party!)</value>
+    <value>Panalo na ang mga TAMBAY! (Party Party!)</value>
   </string>
   <string key="TannerWins" isgif="true" >
     <value>Hala! Bakit niyo ni-lynch yung EX NIYA?! Panalo na tuloy siya!</value>
@@ -875,7 +879,7 @@
     <value>Ikaw si Madam Auring. Tuwing gabi, pwede ka pumili ng player na sisilipin para malaman ang role nila. Wag ipagsabi ang role me. Pag nalaman ng wolves na ikaw si Madam Auring pwede ka nilang kainin!</value>
   </string>
   <string key="AboutWw">
-    <value>Enjoy ka lang. Araw-araw mo pwede paniwalain mga kasama mo na di ka werewolf. Pero pag gabi iba na ang usapan, pwede ka pumili ng isang player na kakainin! PERO: Pag ang lasenggero (drunk) ang nakain mo, malalasing ka din at magkaka-hang over kaya di ka makakakain sa sunod na gabi. Pag sinubukan mong kainin ang isinumpa (cursed), magiging wolf din siya gaya mo. Party party wooh!</value>
+    <value>Enjoy ka lang. Araw-araw mo pwede paniwalain mga kasama mo na di ka werewolf. Pero pag gabi iba na ang usapan, pwede ka pumili ng isang player na kakainin! PERO: Pag ang lasenggero (drunk) ang nakain mo, malalasing ka din at magkaka-hang over kaya di ka makakakain sa sunod na gabi. Pag sinubukan mong kainin ang isinumpa (cursed), magiging wolf din siya gaya mo. Pag sinubukan mong kainin ang adik (Serial Killer) mayroon lamang 20% chance na mapatay siya. Pero party party parin wooh!</value>
   </string>
   <string key="AboutHarlot">
     <value>Salahula ka! Isa kang Haliparot. Tuwing gabi, pwede ka pumili ng bibisitahing player para malaman kung hindi sila wolf. PERO, kung ang binisita mo ay wolf, o kaya binisita mo ang kakainin ng wolf, patay ka din. Kung may binisita ka at sinubukan kang kainin ng wolf o irecruit sa kulto sa bahay mo, mabubuhay ka o di marerecruit. (Gala mo eh)</value>
@@ -951,7 +955,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>Di ka naman gumagaling sa Rehab. Kalokohan. Nakatakas ka na at malaya ngayon kaya balik sa dating gawi, ang pumatay!. Ang Serial Killer ay solong player, sa sarili niyang team. Mananalo ka lang kapag ikaw nalang ang natitirang player na buhay (exception: lovers). Bilang Serial Killer, KAHIT SINO pwede mo patayin - wolves, hunters, gunners, guardian angel, kahit sino. Kapag sinubukan kang kainin ng wolves, mapapatay mo ang isa sakanila (random) at mabubuhay ka.</value>
+    <value>Di ka naman gumagaling sa Rehab. Kalokohan. Nakatakas ka na at malaya ngayon kaya balik sa dating gawi, ang pumatay!. Ang Serial Killer ay solong player, sa sarili niyang team. Mananalo ka lang kapag ikaw nalang ang natitirang player na buhay (exception: lovers). Bilang Serial Killer, KAHIT SINO pwede mo patayin - wolves, hunters, gunners, guardian angel, kahit sino. Kapag sinubukan kang kainin ng wolves, mayroon lang silang 20% na chance para mapatay ka.</value>
   </string>
   <string key="AboutPara">
     <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
@@ -1157,5 +1161,8 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Kasali ka na sa nag-umpisang laro sa {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Oras para magpadala ng Ping: {0}</value>
   </string>
 </strings>
