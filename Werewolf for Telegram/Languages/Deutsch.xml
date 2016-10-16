@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- maintained by @Laceygirl and @DingensX // version 09.09.2016 --> 
+<!-- maintained by @Laceygirl and @DingensX // version 16.10.2016 --> 
 <strings>
   <language name="Deutsch" base="Deutsch" variant="SFW" owner=""/>
   <string key="NotInGame">
@@ -117,6 +117,7 @@
     <value>Du Verräter!! Du bist jetzt ein Werwolf 🐺!</value>
     <value>Die Werwölfe sind alle gestorben! Du bist nun deren letzte Hoffnung 🐺. Zeig ihnen, dass du es besser kannst.</value>
 	<value>Na, kein Wunder, dass dich niemand leiden kann, du Verräter... gleich kannst du dir dein erstes Opfer 🐺 aussuchen!</value>
+	<value>Bis hierhin liefs ja ganz gut. Für deine tollen Bemühungen wirst du jetzt zum Werwolf. Viel Spaß! 🐺</value>
   </string>
   <string key="ChoiceAccepted">
     <value>Wahl akzeptiert</value>
@@ -128,17 +129,16 @@
 	<value>\nNur {0} kennt die Wahrheit 👳...</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <!-- 0 - seer name -->
-    <value>{0} war der Seher. Als sein Lehrling trittst du die Nachfolge an und bist nun der neue Seher 👳.</value>
-    <value>Dein Lehrmeister {0} ist vor kurzem verstorben. Du bist jetzt sein Nachfolger 👳.</value>
-	<value>Das Lehrlingsleben ist vorbei, Faulpelz! {0} lebt nicht mehr und nun musst du deine Fähigkeiten unter Beweis stellen 👳. An die Arbeit!</value>
+    <!-- 0 - <seer name> (dead) or "the seer" (converted) -->
+    <value>Komisch, {0} kann sein Amt nicht mehr ausführen - was da wohl passiert ist? Als sein Lehrling trittst du jedoch die Nachfolge an und bist nun der neue Seher 👳.</value>
+    <value>Dein Lehrmeister, {0}, hat sein Amt niedergelegt. Du bist jetzt sein Nachfolger 👳.</value>
+	<value>Das Lehrlingsleben ist vorbei, Faulpelz! Dein Meister, {0}, lebt nicht mehr und nun musst du deine Fähigkeiten unter Beweis stellen 👳. An die Arbeit!</value>
   </string>
   <string key="BeholderNewSeer">
-    <!-- 0 - apprentice name -->
-    <!-- 1 - seer name -->
-    <value>{0} war ein Lehrling 🙇, und nimmt jetzt den Platz von {1} als Seher ein.</value>
-    <value>Da {1} jetzt tot ist, nimmt sein überaus eifriger Lehrling 🙇 {0} dessen Platz als Seher ein. </value>
-	<value>Oh nein! Mit {1} stirbt der Seher - aber das Dorf hat noch eine Hoffnung: {0} erhielt eine umfassende Ausbildung 🙇 und wird nun dessen Aufgabe übernehmen.</value>
+	<!-- 0 - apprentice name -->
+    <!-- 1 - <seer name> (dead) or "the seer" (converted) -->
+    <value>Da {1} tot ist, nimmt sein überaus eifriger Lehrling 🙇 {0} dessen Platz als Seher ein. </value>
+	<value>Auf unerklärliche Weise ist {1} von der Bildfläche verschwunden... Aber {0} war ein Lehrling 🙇 und wird nun dessen Aufgabe übernehmen.</value>
   </string>
   <string key="SeerSees">
     <!-- 0 - player name -->
@@ -201,7 +201,6 @@
   <string key="AskRoleModel">
     <value>Wer ist dein Vorbild?</value>
 	<value>Zu wem schaust du heimlich auf?</value>
-	<value>Wer hat sich deinen Respekt verdient?</value>
   </string>
   <string key="AskConvert">
     <value>Wen willst du zu deinem Kult bekehren?</value>
@@ -224,6 +223,7 @@
   </string>
   <string key="RoleInfoDetective">
     <value>Du bist der Detektiv 🕵. Während des Tages hast du die Möglichkeit, die Rolle eines Spielers zu erfahren. Wenn du dich dafür entscheidest, könnte deine Rolle den Wölfen verraten werden. (40% Wahrscheinlichkeit)</value>
+	<value>Du bist der Detektiv. Mit deiner riesigen Lupe spazierst du tagsüber durchs Dorf und steckst deine Nase in alle Dinge, die dich nichts angehen. Bis auf Bellos Flöhe und Herr Müllers Affäre hast du noch nichts Nennenswertes  entdeckt, aber du hoffst, eines Tages was richtig Grosses in Erfahrung zu bringen. Pass nur auf, dass die Wölfe dich nicht erwischen. (40% Wahrscheinlichkeit)</value>
   </string>
   <string key="RoleInfoDrunk">
     <value>Glückwunsch! Du bist der Betrunkene 🍻.</value>
@@ -234,21 +234,27 @@
   </string>
   <string key="RoleInfoGuardianAngel">
     <value>Du bist der Schutzengel 👼. Jede Nacht kannst du einen Spieler beschützen. Wenn du jedoch einen Wolf wählst, wirst du mit einer Wahrscheinlichkeit von 50% sterben.</value>
+	<value>Du bist der Schutzengel 👼. Oder zumindest nennen die Leute dich so, denn eigentlich hast du keine besonderen Fähigkeiten. Du hast lediglich einen schalldichten Party-Keller, in dem du dich jede Nacht mit jemandem einsperrst... aber wenn es hilft? (Eine ganze Nacht mit einem Wolf oder Serienkiller ist halt ein bisschen wie Russisches Roulette.)</value>
   </string>
   <string key="RoleInfoGunner">
     <value>Du bist der Schütze 🔫. Du hast genau 2 Kugeln als Munition. Während des Tages hast du die Möglichkeit, einen anderen Spieler zu erschießen; der Schuss ist aber so laut, dass ihn jeder hört. Alle wissen dann, dass du der Schütze bist.</value>
+	<value>Du bist der Schütze 🔫. Irgendein ein verantwortungsloser Mitbürger hat dir eine Waffe mit 2 Kugeln in die Hand gedrückt. Du hast zwar keine Ahnung wie sie funktioniert, aber du wolltest schon immer mal in der Gegend rumballern. Versuch aber bitte wenigstens, nicht deine Mitbewohner zu töten...</value>
+	<value>Du bist der Schütze 🔫. Für 'ne echte Waffe hat das Geld leider nicht gereicht, also rennst du mit deiner Wasserpistole durch die Straßen und nässt diejenigen, die dir verdächtig erscheinen so richtig ein. Warum diese kurz darauf den Löffel abgeben, bleibt jedoch ein Mysterium...</value>
   </string>
   <string key="RoleInfoHarlot">
     <value>Du bist die Hure 💋 des Dorfes. In der Nacht kannst du einen Spieler besuchen, um festzustellen, ob dieser ein Bürger ist. Falls du einen Werwolf oder den, der vom Werwolf attackiert wird, besuchst, stirbst du. Wenn du jedoch jemanden besuchst und die Wölfe versuchen, dich zuhause zu töten, überlebst du.</value>
+	<value>Du bist die Hure 💋 des Dorfes. Seit dein Ex dich aus der gemeinsamen Wohnung geworfen hat, verbringst du jede Nacht in einem anderen Bett. Dabei freut sich jeder heimlich über deinen Besuch, aber wenn du den Serienmörder oder einen Werwolf besuchst, wirst du nicht lebend zurück kommen :/</value>
   </string>
   <string key="RoleInfoTraitor">
     <value>Du bist der Verräter 🖕! Du bist zwar aktuell ein Dorfbewohner, sobald aber alle Wölfe tot sind, verwandelst du dich in einen Werwolf. Wenn der Seher dich überprüft, kann er dich als Dorfbewohner oder Wolf identifizieren.</value>
   </string>
   <string key="RoleInfoWolf">
     <value>Du bist ein Werwolf 🐺. Jede Nacht darfst du dir ein Opfer aussuchen.</value>
+	<value>Du bist ein Werwolf 🐺. Du hast ein richtig flauschiges Fell und liebst es hinter den Ohren gekrault zu werden. Während des Tages hältst du dich versteckt, doch wenn der Mond aufgeht, kannst du deine wilde Seite nicht mehr zurückhalten und du ziehst mit dem Rudel los, um Dorfbewohner zu reissen.</value>
   </string>
   <string key="RoleInfoSeer" >
     <value>Du bist der Seher 👳. Du hast die Möglichkeit, in jeder Nacht die Rolle eines Spielers zu erfahren.</value>
+	<value>Du bist der Seher 👳. Du hast eine Affinität zu übergrossen Filzhüten und schwarzen Katzen und besitzt die magische Gabe, andere Leute zu durchschauen. Weil du bereits als Kind den Tod deiner Eltern in den Resten deines Kartoffelbreis vorausgesehen hast, meiden dich die meisten Leute. Denjenigen, die an dich glauben, stellst du deine Fähigkeiten aber gerne zur Verfügung.</value>
   </string>
   <string key="RoleInfoVillager" >
     <value>Du bist ein bescheidener Dorfbewohner 👱, dazu verdammt, Felder umzugraben und gegessen zu werden.</value>
@@ -257,6 +263,7 @@
 	<value>Du bist ein einfacher Dorfbewohner 👱, der ein Faible für Porzellankitsch und Katzen hat. Werwölfe kannst du dafür nicht besonders gut leiden.</value>
 	<value>Du bist Got- ahh nee, doch nur Dorfbewohner 👱, 'tschuldigung, aber zumindest gehst du gern in die Kirche.</value>
 	<value>Du bist ein Dorfbewohner 👱, und am liebsten hast du es, wenn alle friedlich zusammensitzen - deshalb kochst du auch immer für deine Freunde! Pflichbewusst wie du bist, würdest du natürlich auch nie eine Abstimmung verpassen, um dein Dorf vor dem Bösen zu retten.</value>
+	<value>Du bist ein Dorfbewohner 👱. Dein Leben ist ziemlich langweilig, also spielst du Computerspiele bis spät in die Nacht und trinkst dabei leidenschaftlich gerne Grapefruitsaft.</value>
   </string>
   <string key="RoleInfoTanner" >
     <value>Du bist der Gerber 👺. Wenn du gelyncht wirst, gewinnst du automatisch!</value>
@@ -269,12 +276,13 @@
   </string>
   <string key="RoleInfoApprenticeSeer" >
     <value>Du bist der Seher-Lehrling 🙇. Falls der (echte) Seher stirbt, übernimmst du dessen Rolle.</value>
+	<value>Du bist der Seher-Lehrling 🙇. Du wolltest schon immer mal Seher sein, doch leider waren deine Noten nicht gut genug, als du dich auf die Stelle beworben hast. Aus Mitleid hast du diese Ersatzposition bekommen, das heißt du kannst jetzt Däumchen drehen und warten, bis dein Vorgänger ins Gras beisst.</value>
   </string>
   <string key="RoleInfoCultist" >
     <value>Du bist ein Kultist 👤. Jede Nacht kannst du einen Spieler zu deinem Kult bekehren. Falls am Ende nur noch Kultisten leben, gewinnt ihr!</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value>Du bist der Kultistenjäger 💂. Es gibt einen Kultisten, welcher jeden von seinem Glauben überzeugen will. Du wählst jede Nacht einen Spieler aus.  Falls der gewählte Spieler ein Kultist ist, stirbt er. Wenn sie dich bekehren wollen, stirbt das neueste Mitglied des Kults.</value>
+    <value>Du bist der Kultistenjäger 💂. Es gibt einen Kultisten, welcher jeden von seinem Glauben überzeugen will. Du wählst jede Nacht einen Spieler aus. Falls der gewählte Spieler ein Kultist ist, stirbt er. Wenn sie dich bekehren wollen, stirbt das neueste Mitglied des Kults.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -338,7 +346,7 @@
 	<value>Der Morgen bricht an, und überall im Dorf liegen Federn herum... zuerst glaubt man an einen Fuchs, der sich in den Hühnerstall geschlichen hat, doch stattdessen findet man dort {0}, den Schutzengel 👼. Das können nur die Werwölfe 🐺 gewesen sein...</value>
 	<value>Ein neuer Tag bricht an. Doch was sehen die armen Dorfbewohner? {0}, der von Gott gesandte Engel 👼, liegt tot auf dem Dorfplatz. Ein schrecklicher Anblick, denn ein Werwolf 🐺 hat ihm beide Flügel ausgerissen!</value>
 	<value>Es wird Tag... zu ihrem Bestürzen finden die Dorfbewohner {0}, den Schutzengel 👼, in einer Blutlache vor der Kirche - die gute Seele ist den Wölfen 🐺 zum Opfer gefallen...</value>
-	<value>Der Tag bricht an, und verspricht, ein guter zu werden: sogar Schnee können die Dorfbewohner aus ihren Fenstern erblicken. Doch, halt... Schnee?! Schnell finden sie heraus, dass es in Wahrheit Federn sind... von einer bösen Vorahnung beschlichen pilgern sie zum Dorfzentrum, um dort {0} auf dem Pflaster zu finden, mit zerfetzten Flügeln, auf dem Pflaster aufgeschlagen von den Werwölfen 🐺... Trauert um den Schutzengel 👼!</value>
+	<value>Der Tag bricht an, und verspricht, ein guter zu werden: sogar Schnee können die Dorfbewohner aus ihren Fenstern erblicken. Doch, halt... Schnee?! Schnell finden sie heraus, dass es in Wahrheit Federn sind... von einer bösen Vorahnung beschlichen pilgern sie zum Dorfzentrum, um dort {0} auf dem Pflaster zu finden, auf dem Pflaster aufgeschlagen - die Flügel von den Werwölfen zerfetzt... 🐺 Trauert um den Schutzengel 👼!</value>
   </string>
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
@@ -436,12 +444,13 @@
   <string key="HarlotFuckedVictimPublic" >
     <!-- 0 - harlot name -->
     <!-- 1 - victim name -->
-    <value>{0} schlüpfte in das Haus von {1}, bereit um Spaß zu haben 💋 und Stress abzubauen. Jedoch sah sie einen Werwolf dabei, {1} zu essen! Plötzlich wand sich der Werwolf zu {0} und springt... {0} ist tot.</value>
+    <value>Wie schade... {0}, die Hure 💋 schlüpfte in das Haus von {1}, doch bevor sie übereinander herfallen können, stürmt ein Wolf ins Zimmer... Am nächsten Morgen sind beide tot, die Bettlaken voller Blut.</value>
 	<value>{0} wollte nur ein bisschen mit {1} anbandeln 💋, aber mitten in der Nacht werden die Beiden plötzlich von den Wölfen überrascht... zwei auf einen Streich!</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <!-- 0 - target name -->
-    <value>Du siehst, dass {0} kein Wolf ist, da {0} die ganze Nacht mit dir verbrachte 💋!</value>
+    <value>Du siehst, dass {0} nichts Böses im Schilde führt ist, da {0} die ganze Nacht mit dir verbrachte 💋!</value>
+	<value>Nach dieser Nacht kannst du dir sicher sein, dass {0} nicht zu den Bösen gehört... gut gemacht 😏</value>
   </string>
   <string key="HarlotVisitYou" >
     <value>Es war zu dunkel um etwas zu sehen, aber mitten in der Nacht merkst du, dass die Hure 💋 dich reitet. Ihr beide wurdet fertig, dann verließ sie dich leise...</value>
@@ -453,12 +462,12 @@
   <string key="DetectiveSnoop" >
     <!-- 0 - target name -->
     <!-- 1 - target role -->
-    <value>Deine Schnüfflerei brachte heraus, dass {0} {1} ist</value>
+    <value>Deine Schnüfflerei brachte heraus, dass {0} {1} ist.</value>
   </string>
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
     <!-- 1 - Harlot's name -->
-    <value>Es sieht aus, als hätte sich {0} in der Nacht bei der Hure etwas eingefangen! Beschämt kommt er vom Dorfarzt zurück und zielt in einem unbeobachteten Moment auf {1}. Der Schütze 🔫 bekam seine Rache. {1} ist tot 💋.</value>
+    <value>Es sieht aus, als hätte sich {0} in der Nacht bei der Hure etwas eingefangen! Beschämt kommt er vom Dorfarzt zurück und zielt in einem unbeobachteten Moment auf {1}: der Schütze 🔫 bekam seine Rache. {1} ist tot 💋.</value>
   </string>
   <string key="DefaultShot" >
     <!-- 0 - Gunner's name -->
@@ -609,14 +618,14 @@
     <value>ein Freimaurer 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>Du bist ein Freimaurer 👷. Falls es noch andere Freimaurer geben sollte, wirst du das erfahren. Sonst verhältst du dich wie ein ganz normaler Dorfbewohner.</value>
+	<value>Du bist ein Freimaurer 👷. Die Leute glauben zwar, du wärst Maurer von Beruf, aber das ist alles nur Teil deiner Tarnung. Wenn du nicht gerade über deinen Büchern sitzt und Verschwörungstheorien ausarbeitest, übst du auch gerne mittelalterlichen Schwertkampf und spielst historische Schlachten nach - wenn du tatsächlich Gleichgesinnte findest, natürlich auch liebend gern gemeinsam. So weißt du, wer die anderen Freimaurer sind und erfährst genauso, wenn einer von ihnen vom Kult bekehrt wird.</value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
     <value>Als die Sonne aufging, konnte man den Körper von {0} blutverschmiert auf einem Fels liegen sehen. Der Tote hatte ein Freimaurerabzeichen 👷 in seiner Westentasche.</value>
   </string>
   <string key="MasonTeam">
-    <value>  Mitglieder im Club der Freimaurer: {0}</value>
+    <value> Pass nur auf, dass du deine neuen Freunde nicht eines Tages anprangerst. Zur Erinnerung, hier ist die Mitgliederliste: {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
@@ -728,14 +737,15 @@
   </string>
   <!-- new strings, don't know when they were added :P -->
   <string key="NoSeer">
-<value>Leider gibt es keinen Seher.</value>
-</string>
+    <value>Leider gibt es keinen Seher.</value>
+  </string>
 <string key="TimesUp">
 <value>Die Zeit ist um!</value>
 </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
     <value>Du bist Amor 🏹. In Windel und mit einem Bogen und zwei Pfeilen bewaffnet, fliegst du auf die Erde nieder. Wähle zwei Spieler aus, die sich unsterblich ineinander verlieben. Falls einer der Verliebten stirbt, bringt sich der andere aus Liebeskummer auch um.</value>
+	<value>Du bist Amor 🏹. Mit deinen stylischen Flügelschuhen düst du durch den Himmel und feuerst Pfeile auf unschuldige Passanten, welche sich Hals über Kopf ineinander verlieben und auf offener Straße übereinander herfallen. Insbesondere hast du ein ausgeprägtes Talent dafür, problematische Beziehungskonstellationen herbeizuführen.</value>
   </string>
   <string key="RoleInfoDoppelganger">
     <value>Du bist ein Doppelgänger 🎭. Der Legende nach waren deine Vorfahren Gestaltwandler und konnten sich in ein beliebiges Wesen verwandeln. Du hast einige ihrer Fähigkeiten geerbt. Wähle einen Spieler, und sobald dieser Spieler stirbt übernimmst du dessen Rolle.</value>
@@ -745,6 +755,8 @@
   </string>
   <string key="RoleInfoSerialKiller">
     <value>Du bist der Serienmörder 🔪. Nachdem du vor Kurzem aus dem Irrenhaus entflohen bist, willst du jetzt so viele Personen wie möglich umbringen. Jede Nacht kannst du den Körper eines Spielers zu deiner Sammlung hinzufügen.</value>
+	<value>Du bist der Serienmörder 🔪. Als du ein Kind warst, hast du im Garten tote Tiere gesammelt. Heute sammelst du Lebern, legst sie ein und stellst sie in deinem Regal aus. Andere Leute mögen das eklig finden, aber dir gefällts.</value>
+	<value>Du bist der Serienmörder. Seit einer schiefgelaufenen Hirn-OP überkommt dich nachts immer das Bedürfnis mit dem großen Küchenmesser auf die Strasse zu laufen und den nächstbesten Dorfbewohner aufzuschlitzen, um dich an seinem Blut zu laben. Dass du dabei die Leber mitgehen lässt, ist wohl auf deine kleptomanische Neigung zurückzuführen.</value>
   </string>
   <string key="CupidChosen">
     <value>Du wurdest von der Liebe ❤️ getroffen. Die Erinnerungen an {0} werden nie in deinem Herzen verblassen. Euer Ziel ist, dass ihr beide überlebt. Falls einer von euch stirbt, wird der andere aus Kummer nicht mehr weiterleben können.</value>
@@ -797,7 +809,7 @@
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>Die Wölfe 🐺 haben zwar letzte Nacht den Jäger 🎯 getötet, aber der Jäger konnte noch jemanden mit in den Tod reißen! {0} ist gestorben (Wolf)</value>
+    <value>Die Wölfe 🐺 haben zwar letzte Nacht den Jäger 🎯 getötet, aber dieser konnte noch jemanden mit in den Tod reißen! Mit ihm stirbt der Wolf {0}.</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
@@ -818,7 +830,7 @@
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>Der Kult sendet {0}, um {1} zu konvertieren, doch stattdessen hört man einen Schuss 🎯, als der Körper von {0} aus dem Fenster geflogen kommt! {0} ist tot...</value>
+    <value>Der Kult sendet {0}, um {1} zu konvertieren, doch stattdessen hört man einen Schuss 🎯, kurz bevor der Körper eures jüngsten Mitglieds aus dem Fenster geflogen kommt! {0} ist tot...</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} schleicht zu dem Haus von {1}, platzt herein, und wird direkt von einem Wahnsinnigen mit einem Messer 🔪 begrüßt!!! In alphabetischer Reihenfolge durchsticht {1} mit seinem Messer die Organe von {0}, dadurch unweigerlich dem Tod ausgesetzt.</value>
@@ -941,7 +953,7 @@
   <string key="SKHunterEnd">
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
-    <value>Als die Sonne aufgeht, spazieren {0} und {1} in Richtung Dorf. Plötzlich nimmt {0} das Messer 🔪 heraus und springt auf {1}. Gerade als {0} das Messer tief in sein Herz rammt, greift {1} nach seinem Gewehr 🎯 und schießt {0} mit einem gezielten Schuss in den Kopf. Beide sind tot, und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value>
+    <value>Als die Sonne aufgeht, spazieren die beiden letzten Überlebenden in Richtung Dorf. Plötzlich nimmt {0} ein Messer 🔪 heraus und springt auf {1}. Gerade als das Messer sich tief in sein Herz rammt, greift der Jäger nach seinem Gewehr 🎯 und schießt {0} mit einem gezielten Schuss in den Kopf. Beide sind tot, und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
@@ -971,8 +983,8 @@
     <value>Du bist ein Gestaltwandler - also gewissermaßen. Während des Tages als normaler Bewohner des Dorfes um deine Deckung bemüht, bist du in der Nacht ein Werwolf 🐺 und kannst einen Spieler auswählen, den du töten willst. Aber Obacht! Wenn du dich für den Betrunkenen entscheidest, hast du zwar genug Disziplin, um zum täglichen Lynchen zu erscheinen, bist aber nicht mehr in der Lage, in der nächsten Nacht auf die Jagd zu gehen. Die Hure kannst du nur töten, wenn du ihren Dienstplan kennst und weißt, wann sie sich entscheidet, die Nacht zuhause zu verbringen. Wenn sie jedoch in der Nacht unterwegs ist, dann findest du nur ein leeres Haus vor und kehrst frustriert von deiner vergeblichen Jagd zurück. Wenn du versuchst, den Verfluchten zu fressen, verwandelt dieser sich auch in einen Werwolf und begleitet dich von nun an bei deinen Abenteuern - geh dem Jäger jedoch lieber aus dem Weg. Er ist geübt im Umgang mit seiner Waffe und kann sie im letzten Moment auf dich richten und dich mit in den Tod reißen. Wenn du der einzige Werwolf bist, und er es schafft, noch einen Schuss auf dich abzufeuern, dann stirbst du nicht nur, der Jäger überlebt es auch noch knapp. Dein größter Fehler wäre es, zu versuchen, den Serienmörder zu fressen. Du bist sowohl seinem Wahnsinn, als auch seinen Waffen nicht gewachsen und schaffst es nicht mehr, nach deinem Überraschungsangriff zu entkommen und stirbst, ohne diesen zu verletzen.</value>
   </string>
   <string key="AboutHarlot">
-    <value>Du bist die Hure 💋 des Dorfes - was würden denn deine Eltern jetzt sagen?! Aber wie auch immer, Gott möge dir verzeihen. Du darfst jede Nacht einen deiner Mitbürger besuchen - nimm dich jedoch in Acht vor den anderen Wesen der Nacht! Wenn du einen Wolf besuchst, wirst du das nicht überleben... genauso verhält es sich, wenn dein Freier von einem Wolf heimgesucht wird. Ihr sterbt dann beide und werdet vielleicht fälschlicherweise als Romeo und Julia beerdigt (willst du das?). Aber, Kopf hoch: wenn die Wölfe dich erwählen, passiert dir nichts - du bist schließlich nicht zuhause!
-\nÜbrigens; halte die Augen offen... es könnten sich auch Kultisten im Dorf rumtreiben! Du bist zwar nicht die Hellste, aber manchmal kannst du ihre Absichten doch erkennen, und wirst nicht konvertiert - natürlich nur, wenn du in der Nacht überhaupt zuhause bist...</value>
+    <value>Du bist die Hure 💋 des Dorfes - was würden denn deine Eltern jetzt sagen?! Aber wie auch immer, Gott möge dir verzeihen. Du darfst jede Nacht einen deiner Mitbürger besuchen - nimm dich jedoch in Acht vor den anderen Wesen der Nacht! Wenn du einen Wolf besuchst, wirst du das nicht überleben... genauso verhält es sich, wenn dein Freier von einem Wolf heimgesucht wird. Ihr sterbt dann beide und werdet vielleicht fälschlicherweise als Romeo und Julia beerdigt (willst du das?). Aber, Kopf hoch: wenn die Wölfe dich erwählen, passiert dir nichts - du bist schließlich nicht zuhause! Dem Verrückten mit dem Messer entkommst du so aber leider trotzdem nicht - dieser verfluchte Serienkiller weiß irgendwie trotzdem, wo du bist.
+	\nÜbrigens; halte die Augen offen... es könnten sich auch Kultisten im Dorf rumtreiben! Du bist zwar nicht die Hellste, aber manchmal kannst du ihre Absichten doch erkennen, und wirst nicht konvertiert - natürlich nur, wenn du in der Nacht überhaupt zuhause bist...</value>
   </string>
   <string key="AboutDrunk">
     <value>Prost 🍻! Dein Leben ist einfach: du hast zwar kein Zuhause mehr (und dein Chef hat dir auch gekündigt), aber wer braucht schon solch einen Luxus, solange das Licht in der Dorfkneipe noch brennt?! Genau. Im Dorf bist du trotzdem recht beliebt - jeder weiß, dass es auch einen Wolf eine ganze Nacht ausknockt, wenn er deinen Blutcocktail trinkt!</value>
@@ -1035,7 +1047,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhin hilfst du ihnen, diese Werwolf-Pflage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn (es sei denn, du bist gerade zu beschäftigt mit deinem eigenen Opfer - mit dem Alter überlebst du solche Attacken nur noch in der Hälfte der Fälle). Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
+    <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhin hilfst du ihnen, diese Werwolf-Pflage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn (es sei denn, du bist gerade zu beschäftigt mit deinem eigenen Opfer - mit dem Alter überlebst du solche Attacken nur noch in der 20% der Fälle). Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
   </string>
   <string key="AboutPara">
     <value>Para ist nur ein verrückter Entwickler, der gerne die Leute anbellt. Vielleicht hat er sich auch einfach ein wenig zu oft mit Werwölfen angelegt... Man sollte sich nicht mit Werwölfen anlegen.</value>
@@ -1237,5 +1249,8 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Du bist einem Spiel in der Gruppe {0} beigetreten.</value>
+  </string>
+  <string key="Ping2">
+    <value>Sendezeit der Pingnachricht: {0}</value>
   </string>
 </strings>
