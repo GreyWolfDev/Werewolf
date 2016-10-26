@@ -46,9 +46,9 @@
   </string>
   <string key="PlayerJoined">
     <!-- 0 - Player name -->
-    <!-- 1 - current players -->
-    <!-- 2 - Minimum players -->
-    <!-- 3 - Maximum players -->
+    <!-- 1 - current trainers -->
+    <!-- 2 - Minimum trainers -->
+    <!-- 3 - Maximum trainers -->
     <value>{0} has joined the game. {1} trainers, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
@@ -69,8 +69,8 @@
     <value>{0} is with {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <!-- 0 - Number of players -->
-    <value>{0} players remain.</value>
+    <!-- 0 - Number of trainers -->
+    <value>{0} trainers remain.</value>
   </string>
   <string key="DidntAsk">
     <value>Hey I didn't ask you anything yet!</value>
@@ -97,7 +97,7 @@
   <string key="IdleKill">
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value>{0} has not voted for 2 nights in a row. {1} thought that the trainer is not good enough and abandoned him/her!</value>
+    <value>{0} has not voted for 2 nights in a row. {1} thought that the trainer is not good enough and abandoned them!</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>Team Rocket had lost all their members, its now your time to bring team rocket back to their glory!</value>
@@ -111,7 +111,7 @@
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
-    <value>{0}'s Alakazam have fainted! Your Kadabra have gained enough experience and it evolved to Alakazam! </value>
+    <value>{0}'s Alakazam have fainted! Your Kadabra has gained enough experience and it evolved to Alakazam! </value>
   </string>
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
@@ -124,35 +124,35 @@
     <value>You see that trainer {0} is with {1}!</value>
   </string>
   <string key="AskLynch">
-    <value>Which trainer's Pokémon do you want to release it back to the wild?</value>
+    <value>Which trainer's Pokémon do you want to release back to the wild?</value>
   </string>
   <string key="AskDetect">
     <value>Who do you want to send your Raticate to snoop on?</value>
   </string>
   <string key="AskShoot">
     <!-- 0 - bullet count -->
-    <value>Snorlax should Hyper Beam on which trainer's Pokémon?? You have {0} PP left.</value>
+    <value>Whose Pokémon should Snorlax use Hyper Beam on?? You have {0} PP left.</value>
   </string>
   <string key="AskVisit">
-    <value>Which trainer do you want to befriend with?</value>
+    <value>Which trainer do you want to be friend with?</value>
   </string>
   <string key="AskSee">
-    <value>Which trainer should Alakazam cast his foresight on?</value>
+    <value>Which trainer should Alakazam cast his Foresight on?</value>
   </string>
   <string key="AskGuard">
     <value>Which trainer should Mr. Mime cast Teleport on?</value>
   </string>
   <string key="AskEat">
-    <value>Time for Team Rocket to choose a trainer to battle! Which trainer do you want to battle with?</value>
+    <value>Time for Team Rocket to choose a trainer to battle! Which trainer do you want to do battle with?</value>
   </string>
   <string key="AskHunt">
-    <value>Which trainer do you think ownes a clone Mewtwo for Mew to cleanse?</value>
+    <value>Which trainer do you think owns a clone Mewtwo for Mew to cleanse?</value>
   </string>
   <string key="AskRoleModel">
     <value>Which trainer is your beloved senpai?</value>
   </string>
   <string key="AskConvert">
-    <value>Which trainer do you want to hire into NEW Team Rocket to clone more Mewtwo?</value>
+    <value>Which trainer do you want to hire into cone factory to clone more Mewtwo?</value>
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
@@ -206,7 +206,7 @@
     <value >You owned a Kadabra. When Alakazam fainted, your Kadabra will evolve!</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >You are with NEW Team Rocket. Every day, you may choose a trainer and try to hire him into the team with cloned Mewtwo. If all the remainding Pokémons are all Mewtwo. NEW Team Rocket wins.</value>
+    <value >You are with the cloning organisation which clones Mewtwo. Every day, you may choose a trainer and try to hire him into the team to clone Mewtwo. If all the remainding Pokémons are all Mewtwo. Your evil org. wins.</value>
   </string>
   <string key="RoleInfoCultistHunter" >
     <value >You stumbled into a Mew! Mew needs your help to cleanse all cloned Mewtwo.</value>
@@ -220,7 +220,7 @@
   </string>
   <string key="DayTime" >
     <!-- 0 - number of seconds -->
-    <value >Hmm hmm~ All of the trainers have {0} seconds to see which trainers are not worth to stick with their Pokémon.</value>
+    <value >Hmm hmm~ All of the trainers have {0} seconds to see which trainers are not worthy to stick with their Pokémon.</value>
   </string>
   <string key="NightTime" >
     <!-- 0 - number of seconds -->
@@ -268,7 +268,7 @@
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>Mew have found out a cloned Mewtwo! As Mew is releasing the cloned Mewtwo from its suffering, {0} has lost his/her Pokémon and was sacked from NEW Team Rocket!</value>
+    <value>Mew have found out a cloned Mewtwo! Mew released the cloned Mewtwo from {0}.</value>
   </string>
   <string key="NoAttack" >
     <value >There's no Pokémon Battle in the last hour.</value>
@@ -367,7 +367,7 @@
     <value >The trainers have won!</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value >Oh no! You release Tauros back to the wild and they destoryed the whole town.</value>
+    <value >Oh no! You release Tauros back to the wild and they destroyed the whole town.</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Remaining living trainers, Pokémons, and team:</value>
@@ -385,14 +385,14 @@
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - Number of cultists left -->
-    <value>{0} came to you with a cloned Mewtwo trying to hire you into NEW Team Rocket. Mew release Mewtwo with his suffering and {0} was sacked! {1} members of NEW Team Rocket remain!</value>
+    <value>{0} came to you with a cloned Mewtwo trying to hire you into their evil clone factory. Mew release Mewtwo from {0}!! {1} members of the clone factory remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>NEW Team Rocket has come to you and lure you to join their team with a cloned Mewtwo. You abandoned your Pokémon and choose the Mewtwo. It's now your job to lure more trainers into the team.</value>
+    <value>Clone factory member has come to you and lure you to join their team with a cloned Mewtwo. You abandoned your Pokémon and choose the Mewtwo. It's now your job to lure more trainers into the team.</value>
   </string>
   <string key="CultTeam">
     <!-- 0 - Number of cultists -->
-    <value>NEW Team Rocket members: {0}</value>
+    <value>Clone factory members: {0}</value>
   </string>
   <string key="CultJoin">
     <!-- 0 - new cultist's name -->
@@ -404,7 +404,7 @@
     <value>{0} and Mewtwo was sent to lure {1}... but no one was home!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >Team Rocket has fallen but the remainding players are all with NEW Team Rocket! NEW Team Rocket has won!!!</value>
+    <value >Team Rocket has fallen but the remainding trainers are all with the clone factory! Clone factory with their clone Mewtwo has won!!!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -412,7 +412,7 @@
   </string>
   <string key="HunterFindCultist">
     <!-- 0 - target name -->
-    <value>Mew went to look for {0} and found out that he/she owned a cloned Mewtwo! Mew release Mewtwo from its suffering and {0} was sacked by NEW Team Rocket.</value>
+    <value>Mew went to look for {0} and found out that he/she owned a cloned Mewtwo! Mew release Mewtwo from {0}!</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
@@ -490,7 +490,7 @@
     <value>🙂 Alive</value>
   </string>
   <string key="PlayersAlive">
-    <value>Players Alive</value>
+    <value>Trainers Alive</value>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
@@ -787,7 +787,7 @@
     <value>Gengar found a Pokémon and Gengar used Shadow Punch! {1} fainted. Trainer is {0}</value>
   </string>
   <string key="CultAttempt">
-    <value>NEW Team Rocket tries to lure you with Mewtwo, but your bond with your Pokémon is too strong.</value>
+    <value>Clone factory member tries to lure you with Mewtwo, but your bond with your Pokémon is too strong.</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -837,7 +837,7 @@
     <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
   </string>
   <string key="AboutWw">
-    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow trainers. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
   </string>
   <string key="AboutHarlot">
     <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
@@ -867,7 +867,7 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a cultist, it is your goal to convert all other trainers (except wolves) to your cult. If at the end of the game, all living trainers are cultist - the cult wins</value>
   </string>
   <string key="AboutCH">
     <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
@@ -893,7 +893,7 @@
   </string>
   <string key="AboutCupid">
     <value>
-      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Love is in the air. As Cupid, you will choose two trainers at the start of the game. These two trainers will become madly in love! If one of them dies, the other will die of sorrow :(
       Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
     </value>
   </string>
@@ -1004,26 +1004,26 @@
     <value>Don't show any</value>
   </string>
   <string key="ShowLiving">
-    <value>Show only living players</value>
+    <value>Show only living trainers</value>
   </string>
   <string key="ShowAll">
-    <value>Show all players</value>
+    <value>Show all trainers</value>
   </string>
 
   <string key="Cancel">
     <value>Cancel</value>
   </string>
   <string key="AllowFleeQ">
-    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+    <value>Do you want to allow fleeing once the game has started?\nNote: trainers can still flee during join phase\nCurrent: {0} fleeing</value>
   </string>
   <string key="AllowFleeA">
     <value>{0} fleeing after game start</value>
   </string>
   <string key="MaxPlayersQ">
-    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+    <value>How many trainers would like to set as the maximum?\nCurrent: {0}</value>
   </string>
   <string key="MaxPlayersA">
-    <value>Max players set to {0}</value>
+    <value>Max trainers set to {0}</value>
   </string>
   <string key="ShowRolesDeathQ">
     <value>Show or Hide roles on death?\nCurrent: {0}</value>
@@ -1044,7 +1044,7 @@
     <value>Roles shown at end set to: {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of trainers.\nMinimum time added based on trainers is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
   </string>
   <string key="SetDayTimeA">
     <value>Base day time set to {0} seconds</value>
