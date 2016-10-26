@@ -2,23 +2,21 @@
 <strings>
   <language name="English (Pokémon)" base="English" variant="Pokémon" owner="icemeh"/>
   <string key="NotInGame">
-    <value>You don't appear to be in any games right now...</value>
+    <value>You don't appear to be in any Pokémon league right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! Use /join to get in and be the best Pokémon trainer!</value>
-    <value>A new game has been started by {0}! Use /join to be a Pokémon Master!!</value>
+    <value>[Normal]{0} has woke up Professor Oak! Use /join to receive your Pokémon!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a chaos game! Use /join to get in and be the best Pokémon trainer!</value>
-    <value>A new chaos game has been started by {0}! Use /join to be a Pokémon Master!!</value>
+	<value>[Chaos]Doctor Fuji has been awaken by {0}! Use /join to receive one of the many wild selection of Pokémons!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>You can't join now! The game is already running.</value>
+    <value>You can't join now! The Pokémons are already assigned!</value>
   </string>
   <string key="AlreadyJoined">
-    <value>You've already joined!</value>
+    <value>You are already queuing up for your Pokémon!</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>1 minute left to /join</value>
@@ -28,10 +26,10 @@
     <value>{0} seconds left to /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Not enough trainers, cancelling game!</value>
+    <value>Not enough trainers, cancelling the Pokémon League!</value>
   </string>
   <string key="StartingGameWait">
-    <value>Game is starting, please wait while I give you your Pokémon and update the database.</value>
+    <value>Pokémon League is starting, please wait while you get your Pokémon.</value>
   </string>
   <string key="BannedForExploit">
     <!-- 0 - Player name -->
@@ -49,15 +47,15 @@
     <!-- 1 - current trainers -->
     <!-- 2 - Minimum trainers -->
     <!-- 3 - Maximum trainers -->
-    <value>{0} has joined the game. {1} trainers, {2} minimum, {3} max</value>
+    <value>{0} has joined the game. {1} trainers, we need at least {2} to start the Pokémon League, max of {3}</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  You may not join the game until you do.</value>
+    <value>{0} Please click the start button below or click {1} so you can recieve your Pokémon. You may not join the Pokémon League until you do.</value>
   </string>
   <string key="DeadFlee">
-    <value>You can't release your Pokémon, your Pokémon already fainted! oh my~</value>
+    <value>You can't release your Pokémon, your Pokémon already fainted! </value>
   </string>
   <string key="Flee">
     <!-- 0 - Player name -->
@@ -213,9 +211,8 @@
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
-    <value>
-      It's time now! Time to send a Pokémon back to the wild because the trainer are too weak to handle them!
-      Everyone now has {0} seconds to vote!
+    <value>It's time now! Time to send a Pokémon back to the wild because the trainer are too weak to handle them!
+	Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
@@ -240,22 +237,37 @@
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
     <value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Radicate fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Radicate fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Radicate fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Radicate fainted.</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
-    <value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Mr. Mime fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Mr. Mime fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Mr. Mime fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Mr. Mime fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Mr. Mime fainted.</value>
   </string>
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Snorlax fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Snorlax fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Snorlax fainted.</value>
     <value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Snorlax fainted.</value>
   </string>
   <string key="SeerEaten" >
     <!-- 0 - victim name -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Alakazam fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Alakazam fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Alakazam fainted.</value>
     <value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Alakazam fainted.</value>
   </string>
   <string key="DrunkEaten" >
     <!-- 0 - victim name -->
-    <value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Butterfly fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Butterfree fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Butterfree fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Butterfree fainted.</value>
+    <value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Butterfree fainted.</value>
   </string>
   <string key="FoolEaten" >
     <!-- 0 - victim name -->
@@ -264,6 +276,8 @@
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
     <!-- 1 - victim role -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {1} fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {1} fainted.</value>
     <value>Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {1} fainted.</value>
   </string>
   <string key="HunterKilledCultist">
