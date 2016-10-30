@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="English" base="English" variant="Normal" owner="ayylimao"/>
+  <language name="English" base="English" variant="Normal" owner="Para949"/>
   <string key="NotInGame">
     <value>You don't appear to be in any games right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! Why don't you /join Halloween Town?</value>
+    <value>{0} has started a game! Use /join to get in on the fun... and probably die :P</value>
+    <value>A new game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started some serious chaos in Halloween Town! Why don't you /join in in the confusion?</value>
+    <value>{0} has started a chaos game! Use /join to get in on the fun... and probably die :P</value>
+    <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>Halloween Town is being attacked! No new denizens are being accepted at the moment...</value>
+    <value>You can't join now! The game is already running.</value>
   </string>
   <string key="AlreadyJoined">
     <value>You've already joined!</value>
@@ -26,7 +28,7 @@
     <value>{0} seconds left to /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Not enough monsters, cancelling game!</value>
+    <value>Not enough players, cancelling game!</value>
   </string>
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
@@ -47,19 +49,19 @@
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>Welcome {0} to Halloween Town! Population: {1}! There is no town without at least {2} monsters, and this one only has {3} dens!</value>
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
-    <value>{0} click this: {1}, then click start.  Until you do, I cannot tell you what your role is.</value>
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  You may not join the game until you do.</value>
   </string>
   <string key="DeadFlee">
-    <value>You can't run away! You're dead and there are no zombies in the game!</value>
+    <value>You can't run away! YOU'RE DEAD!  Get back in the ground... jeez!</value>
   </string>
   <string key="Flee">
     <!-- 0 - Player name -->
-    <value>Was this town too monstrous? {0} must have thought that, because they fled in terror!</value>
+    <value>{0} has fled in terror!</value>
   </string>
   <string key="PlayerRoleWas">
     <!-- 0 - Player name -->
@@ -68,89 +70,89 @@
   </string>
   <string key="CountPlayersRemain">
     <!-- 0 - Number of players -->
-    <value>{0} monsters remain.</value>
+    <value>{0} players remain.</value>
   </string>
   <string key="DidntAsk">
-    <value>I know you're bloodthirsty but wait, I didn't even ask you anything yet!</value>
+    <value>Hey I didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
-    <value>You aren't a monster...</value>
+    <value>You don't seem to be playing...</value>
   </string>
   <string key="NoPlayerName">
-    <value>I can't find that monster, are you sure that's the right name?</value>
+    <value>I can't find a player by that name!</value>
   </string>
   <string key="AnswerNonValid">
-    <value>You don't need to talk like a monster too, otherwise I won't understand!</value>
+    <value>This answer is not valid!</value>
   </string>
   <string key="WolfVotedKill">
     <!-- 0 - wolf teammate name -->
     <!-- 1 - Victim name -->
-    <value>{0} has voted to attack {1}</value>
+    <value>{0} has voted to eat {1}.</value>
   </string>
   <string key="PlayerVotedLynch">
     <!-- 0 - Voter name -->
     <!-- 1 - Target name -->
-    <value>{0} has voted to burn {1}</value>
+    <value>{0} has voted to lynch {1}.</value>
   </string>
   <string key="IdleKill">
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value>{0} for some reason didn't want anyone burned twice in a row... The whole town thought this was fishy, and {0} probably noticed that too, because they suddenly ran away. {1}</value>
+    <value>{0} has not voted for 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value>All of your brethren have been killed! Engulfed in rage, you decided to become one of them, ready to attack anyone in this hellhole...</value>
+    <value>You traitor!!! You are now the wolf...</value>
   </string>
   <string key="ChoiceAccepted">
-    <value>Choice accepted</value>
+    <value>Choice accepted.</value>
   </string>
   <string key="BeholderSeer">
     <!-- 0 - seer name -->
-    <value>\nYour master is {0}</value>
+    <value>\nThe seer is {0}.</value>
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
-    <value>{0}, the former head of your coven, has died. As their successor, you have become the new head, and are now allowed to use soul-searching spells.</value>
+    <value>You have found {0}'s abandoned tarot deck! You are now the new Seer.</value>
   </string>
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
     <!-- 1 - seer name -->
-    <value>{0} was {1}'s apprentice, and is now the new head of the coven. As your master's successor, they are now your new master.</value>
+    <value>{0} found {1}'s abandoned tarot deck, and is now the new Seer.</value>
   </string>
   <string key="SeerSees">
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value>After a long night of preparations, your spell finally works, revealing to you {0}'s soul, that of {1}!</value>
+    <value>You see {0} is {1}!</value>
   </string>
   <string key="AskLynch">
-    <value>Who do you want to burn?</value>
+    <value>Who do you want to lynch?</value>
   </string>
   <string key="AskDetect">
-    <value>Your former coven is asleep, and now you can use a soul-searching spell on someone, but who?</value>
+    <value>Who do you want to detect?</value>
   </string>
   <string key="AskShoot">
     <!-- 0 - bullet count -->
-    <value>Whose death can you feel Halloween Town wishing for? The town has {0} wishes left!</value>
+    <value>Who do you want to shoot? {0} bullet(s) remain.</value>
   </string>
   <string key="AskVisit">
-    <value>Who do you want to feed off?</value>
+    <value>Who do you want to visit?</value>
   </string>
   <string key="AskSee">
-    <value>Who should you use a soul-searching spell on?</value>
+    <value>Who do you want to see?</value>
   </string>
   <string key="AskGuard">
-    <value>What den do you want to guard?</value>
+    <value>Who do you want to guard?</value>
   </string>
   <string key="AskEat">
-    <value>Who do you want to attack?</value>
+    <value>Who do you want to eat?</value>
   </string>
   <string key="AskHunt">
-    <value>You ready your trusty blade for a visit... Who do you think might be a vampire?</value>
+    <value>Who do you want to hunt?</value>
   </string>
   <string key="AskRoleModel">
-    <value>Who is your master?</value>
+    <value>Who is your role model?</value>
   </string>
   <string key="AskConvert">
-    <value>Whose blood do you want to drink?</value>
+    <value>Who do you want to convert to your order?</value>
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
@@ -162,320 +164,320 @@
     <value> and </value>
   </string>
   <string key="RoleInfoCursed">
-    <value>You are the Half-Demon 😾! You look enough like your demonic counterparts to pass as one and live in Halloween Town. The only problem you have to contend with is your human blood making you more susceptible to curses... Both werewolves and vampires can try and make you one of their own!</value>
+    <value>You are cursed. You are a villager at this time, but if the wolves choose to kill you, you will become a werewolf yourself.</value>
   </string>
   <string key="RoleInfoDetective">
-    <value>You are the Warlock 🕵! You used to be a part of Halloween Town's only coven, but some disagreements made you be asked to leave... You can still use the soul-searching spells you learned with your former coven, just... not at the same time. The witches sleep during the day, so that's the time you can use your spells to find out exactly what kind of monster another person is! Be careful, though... When the sun is out, the walls have ears, and werewolves' heightened hearing may notice you preparing your spells!</value>
+    <value>You are the detective. During the day, you may choose a player to reveal their role.  However - in doing so, your role could be revealed to the wolves! (40% chance)</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>You are the Leprechaun 🍻! You spend the day... and night... drinking, which makes your blood have a very high alcohol content... While vampires might be (very!) fine with that, werewolves will get drunk if they kill you, rendering them unable to attack the next night!</value>
+    <value>Congrats! You're the village drunk! (and really, everyone knows it...)</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>You are the Gargoyle 👼! The church you lived in has been destroyed by the demons, and you honestly don't know where to live (and guard) now... Every night, you can choose one den to protect, but be careful: some monsters are quite territorial and might not like your presence...</value>
+    <value>You are the Guardian Angel. Each night, you may choose a player to save.  However, if you choose a wolf, there is a 50% chance you will die.</value>
   </string>
   <string key="RoleInfoGunner">
-    <value>You are the Genie 🔫! Long ago, you have promised three death wishes to Halloween Town. Only two are left, and you're planning to make them come true quickly, before the town is no more!</value>
+    <value>You are the gunner.  You have two bullets.  During the day, you may choose to shoot another player. Everyone will here the shots, and know you are the gunner (not a wolf).</value>
   </string>
   <string key="RoleInfoHarlot">
-    <value>You are the Succubus 💋! Every night, you go to someone's den and feed off them, which sounds wonderful but won't be if the monster you choose to feed off isn't very open to visitors. Still, a girl's gotta eat, right?</value>
+    <value>You slut! You are the Harlot. During the night, you may choose to visit another player, to verify that they are not a wolf.  However--if you visit a wolf, or visit someone killed by the wolf, you will die.  If you do go to visit though, and the wolf tries to kill you at your home, you will survive.</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value>You are the Wolf Demon 🖕! Nobody knows it - or maybe they suspect it - but you're actually the demon who started it all, creating the werewolves as a pastime. All went wonderfully until they started becoming violent... If all of your creations die, you will be so enraged you'll become one of them! Spells aren't that good with demon types, so a witch might see you as either a common demon or a werewolf...</value>
+    <value>Traitor! For now, you are a villager, but once all the wolves die, you will become a werewolf.  If the seer looks to you, you may or may not be identified as a wolf.</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>You are a Werewolf 🐺! Back in the day you lived peacefully with the other monsters at Halloween Town, but some time ago werewolves have become violent and stronger... Strong enough that, each night, you can choose a den to attack and will probably be able to kill the monster living there!</value>
+    <value>YOU ARE A WOLF!! XD (good on ya) Each night you can choose to kill someone.</value>
   </string>
   <string key="RoleInfoSeer" >
-    <value >You are the Witch 👳! The head of Halloween Town's coven, you are the only one allowed to use soul-searching spells. Those spells take time, though, so you will only be able to search the soul of one monster each night to find out what they are!</value>
+    <value >You are the seer.  Each night, you may choose a player to 'see', and reveal their role to you.</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >You are a Demon 👱! That sounds super awesome, but in Halloween Town you're actually another one in a crowd. Still, there's strength in numbers!</value>
+    <value >You are a lowly villager, doomed to spend your days plowing a field and get eated.</value>
   </string>
   <string key="RoleInfoTanner" >
-    <value >You are the Phoenix 👺! Back in the time, you used to be very powerful, but now it's the end of your life and you can't even summon fire to be reborn... Luckily, it seems every evening Halloween Town's denizens are burning someone at the stake... If they choose you, the flames will let you be reborn, at the cost of the entire town!</value>
+    <value >You are the tanner.  If you get lynched, you win automatically!</value>
   </string>
   <string key="RoleInfoWildChild" >
-    <value >You are Cerberus 👶! Choose one of Halloween Town's denizens to be your master, and you will be happy as long as they live... Once they die, though, your pain and rage will be so big you'll become a werewolf!</value>
+    <value >You are a wild child! Pick a player to be your 'role model' - if they die, you become a werewolf.</value>
   </string>
   <string key="RoleInfoBeholder" >
-    <value >You are the Witch's Familiar 👁! Having sworn loyalty to the witch, the same way you've been sworn loyalty to, you are the witch's most trusted companion. Of course, as much as the witch treats you well, you are also a symbol of power: only the head of the coven has a familiar, so anyone who isn't your master and claims they're the witch is either lying or a fool.</value>
+    <value >You are the beholder, you will be told who the (real) seer is - that is your only function.</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >You are the Witch's Apprentice 🙇! Having studied under the current head of the coven for years, you are the next in line if the current witch dies!</value>
+    <value >You are the apprentice seer.  If the (real) seer dies, you will take their place as the seer.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >You are a Vampire 👤! Every night, you and your clan can choose one person to attack... Not that you'll kill them! Your clan has a strict no-killing rule, so the most you ever do to your victims is drink their blood... And, well. If that turns them into vampires, who are you to complain? The more the merrier!</value>
+    <value >You are a cultist.  Every night, you may choose a player to convert to a cultist. If all remaining living players at the end are cultists, they win.</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value >You are a Dhampir 💂! Child of a vampire and a human, you are accepted in Halloween Town as a monster, but don't plan to live peacefully there! You've got a bone to pick with vampires, and, every night, you go to a monster's den, trusting your blade to cut them down if they're actually a vampire!</value>
+    <value >You are the Cultist Hunter, trying to stop the cult in town from converting everyone!  Each night, choose a player.  If they are a cultist, they die.  If the cult tries to convert you, the cult's newest member dies.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
-      The last remnants of light are finally going away, but now it's time to create a new source before embracing the darkness... A pyre has been prepared, and all monsters must now decide who will be burnt in it!
-      Only {0} seconds before the flames die down!
+      Dusk draws near, and the villagers gather to decide who they are lynching this evening...
+      Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
     <!-- 0 - number of seconds -->
-    <value >Sadly, all that's good must end, and the sun has come once more to cull Halloween Town's freedom... Few monsters can do anything at all during the day's {0} seconds other than talk.</value>
+    <value >It is now day time.  All of you have {0} seconds to make your accusations, defenses, or just talk.</value>
   </string>
   <string key="NightTime" >
     <!-- 0 - number of seconds -->
-    <value >All light has finally disappeared, and Halloween Town's denizens are free to do as they wish for {0} seconds!</value>
+    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
   </string>
   <string key="LynchKill" >
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value >It took some time but now Halloween Town has decided on who to burn at the stake. {0} dies in a flurry of ashes and flames. {1}</value>
+    <value >The villagers have cast their votes, amid doubts and suspicions. {0} is dead. {1}</value>
   </string>
   <string key="LynchTie" >
-    <value >The town's denizens tried and tried to decide who to burn, but were unable to do that before the flames died...</value>
+    <value >Unable to come up with a proper decision on who to lynch, the mob returns to their homes for the night, frustrated...</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Looks like no one wants to burn their fellow neighbors! The pyre's flames died without taking any lives with them...</value>
+    <value >Something is fishy, for no one voted!  No lynch mob tonight...</value>
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
-    <value >Strangely enough, no one could find {0} in the morning. Someone tried to search for them in their den, sidestepping cauldrons and magic tomes, but could only find blood and pieces of meat... Still, the contents of their den were enough to figure out it was the Warlock 🕵's!</value>
+    <value >The villagers gather in the morning, but do not see {0}.  They wander over to the house, to find {0} disemboweled, an old badge shoved down their throat.</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
-    <value >As soon as the first rays of light appear, everyone can see pieces of stone strewn around the town, obviously belonging to {0}, the Gargoyle 👼.</value>
+    <value >Morning comes, and to everyone's dismay, impaled on top of the church's cross is {0}, the Guardian Angel.</value>
   </string>
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
-    <value >{0} is nowhere to be seen, and there's nothing that could explain their disappearance, other than a broken lamp...</value>
+    <value >As everyone comes out of their houses, they find pieces of a shotgun strewn about... then legs... then fingers... then the body of {0}, floating in the fountain in the town square, dead from a werewolf attack.  You have lost your gunner.</value>
   </string>
   <string key="SeerEaten" >
     <!-- 0 - victim name -->
-    <value >The coven is in mourning... Gossip quickly spreads to the whole town, and soon everyone knows {0}, the former head of the Witches' 👳 coven, was found almost unrecognisable in their den last night.</value>
+    <value >The villagers awake in the morning, to find the disemboweled remains of {0} hunched over a Ouija board and tarot cards.  The Seer is dead.</value>
   </string>
   <string key="DrunkEaten" >
     <!-- 0 - victim name -->
-    <value >A few gold coins strewn around are quickly pocketed by the first to see them, until a smart monster realizes they make a trail. Following them to find the source, they find a toppled beer mug, and a small green body covered in gold, blood and beer... Isn't that a wonderful mixture? {0} is dead, but a lucky monster got a very good meal!</value>
+    <value >Everyone wakes to the smell of burning alcohol and wood...  the pub is on fire!  After putting the fire out, the remains of {0} are found, torn apart.</value>
   </string>
   <string key="FoolEaten" >
     <!-- 0 - victim name -->
-    <value >Surrounded by puppets and slumped above a magician's hat, the body of {0} is found by a demon who often brought them food. While mourning is completely natural for a demon, maybe that one should have paid attention to whose shoulder they were crying on... Thanks to an awful gossiper, the whole town now knows that recluse monster was delusional, thinking themselves the head of a big coven...</value>
+    <value >As the sun rises above the village, the villagers find the corpse of {0} sitting over a Ouija board, but with a deck of... Bicycle playing cards? WHAT A FOOL!</value>
   </string>
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
     <!-- 1 - victim role -->
-    <value>The instantly recognizable smell of blood permeates the entire town. Hungry demons search and search and finally find a good breakfast in {0}'s lifeless body. Greedier demons enter the late monster's den, stealing everything of value and in the process finding out {1}</value>
+    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM\n{1}</value>
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>WHAT is that thing surrounding {0}'s den? Holy water? Who would do such a thing... No one wants to try crossing that insurmountable barrier to find out exactly what happened, but whispers on the street mention a Dhampir going around, exterminating vampires in the exact same way...</value>
+    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar. A cultist has been killed by the cult hunter!</value>
   </string>
   <string key="NoAttack" >
-    <value >Morning comes, and it sounds like the night is the only thing to be mourned... Curious as to who died this time, Halloween Town was disappointed to see no one did.</value>
+    <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
   </string>
   <string key="CursedBitten" >
-    <value >You had little warning before being violently attacked last night by frenzied wolves... After they left you for dead, the pain you were feeling somehow only increased... You have no idea how long you were screaming in pain until you started howling, but at the end of all that, you realized you had become a werewolf yourself.</value>
+    <value >You have been killed by the wolves.  As you were cursed, you have now become a wolf!</value>
   </string>
   <string key="WolfTeam">
     <!-- 0 - teammate names -->
-    <value>Your pack is composed of {0}</value>
+    <value>Your wolf counterpart(s): {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
     <!-- 0 - victim name -->
-    <value >You had a lot of fun attacking {0} last night... And, hours after that, you could hear another wolf's howl. Looks like you got a new packmate!</value>
+    <value >{0} was bitten... but was cursed, and became a werewolf! Congrats on your new teammate!</value>
   </string>
   <string key="WolvesEatYou" isgif="true" >
-    <value >You fought valiantly after you were attacked in the dead of the night, but it was for naught.</value>
+    <value >Oh no! The wolves eated you. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >This was a great night! {0} was a fun prey, the meat was tasty, and even after returning home you're still feeling the buzz of victory... Or is it another buzz? Oops! Looks like that taste was the one of beer marinated meat...</value>
+    <value >Oh no! {0} was a drunk! Now you are drunk, and can't attack tomorrow night...</value>
   </string>
   <string key="GuardWolf" >
-    <value >You spent centuries guarding your church from outside threats... So how would you know what to do when the threat came from within? The den you tried to guard belonged to a very territorial wolf...</value>
+    <value >You tried to guard a wolf! The wolf has eaten you.</value>
   </string>
   <string key="GuardSaved" >
     <!-- 0 - saved player name -->
-    <value >The battle you fought tonight was one you were born to fight, and you emerged victorious, happy in the knowledge your victory saved {0}'s life.</value>
+    <value >You have saved {0}'s life!</value>
   </string>
   <string key="GuardNoAttack" >
     <!-- 0 - player name -->
-    <value >It was a quiet night outside {0}'s den, the stillness soothing for your stone heart.</value>
+    <value >{0} was not attacked, so you didn't do much of anything.</value>
   </string>
   <string key="GuardEmptyHouse">
     <!-- 0 - player name -->
-    <value>You spent the night outside {0}'s den, guarding it from anything and anyone... Why would it matter to you that the den was empty all night?</value>
+    <value>You went to guard {0}, but they weren't home!</value>
   </string>
   <string key="GuardSavedYou" >
-    <value >You heard a sound outside your den, quickly taking a look to see a gargoyle fighting someone. Silently wishing the stone monster good luck, you go back inside, feeling safer than ever.</value>
+    <value >A guardian angel was watching over you last night and fought off the wolves!</value>
   </string>
   <string key="HarlotEaten" >
     <!-- 0 - player name -->
-    <value >Undoubtedly the Succubus was already full, and decided to stay home for the night... A terrible choice, since the werewolves also wanted to satisfy their own appetite, and became full with {0}'s flesh...</value>
+    <value >The harlot chose the wrong night to stay home. {0} has been eaten by the wolves!</value>
   </string>
   <string key="HarlotNotHome" >
     <!-- 0 - player name -->
-    <value >You went to great lengths to stealthily attack {0}'s den tonight, only to find out there was no one inside...</value>
+    <value >Odd... {0} was not home! No dinner for you...</value>
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
-    <value >You decide to feed off {0} tonight, but, entering their den, you find out the meal today is going to be you...</value>
+    <value >You slip into {0}'s house for a little fun, only to be confronted by a wolf. You are dead.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <!-- 0 - player name -->
-    <value >{0} chose the wrong victim last night, and became one! Only the Succubus' 💋 wings are left, dropped like an afterthought in one of Halloween Town's many streets...</value>
+    <value >{0} slipped into the wrong house last night! {0}'s slutty remains are found pinned to the church doors with an iron rod...  how sad :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
     <!-- 0 - harlot name -->
     <!-- 1 - victim name -->
-    <value >Looks like {1} was just too appealing a victim, because two monsters chose that den to attack last night... But of course the werewolves won. {0}, the Succubus 💋, was killed along with their intended victim...</value>
+    <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress. Instead, {0} finds a werewolf eating {1}!  The werewolf quickly turns on {0} and jumps...  {0} is dead.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <!-- 0 - target name -->
-    <value >What a good meal you had tonight! {0} was full of energy when the night started, although now they're in a rather bad shape...</value>
+    <value >You see {0} is not a wolf, as you got fucked good and hard all night long!</value>
   </string>
   <string key="HarlotVisitYou" >
-    <value >What a wonderful night you had! Although you won't tell it to anyone, your dreams were very pleasurable, and you will remember them for a very long time... And if you're feeling worse for the wear once the morning comes, it's a small price to pay for that great night.</value>
+    <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night you wake up to the harlot riding you.  Both of you finish up, then they slip back out silently...</value>
   </string>
   <string key="DetectiveCaught" >
     <!-- 0 - detective name -->
-    <value >Your heightened hearing could catch some incantations being muttered in a den somewhere... Discreetly looking around, you realize the source of the sound is {0}'s den. Looks like you've caught the Warlock 🕵!</value>
+    <value >You caught {0} snooping about! That must be the detective!</value>
   </string>
   <string key="DetectiveSnoop" >
     <!-- 0 - target name -->
     <!-- 1 - target role -->
-    <value >After lots of preparing and a very tiring enchantment, your spell finally reveals {0}'s soul, that of {1}!</value>
+    <value >Your snooping has shown you that {0} is {1}.</value>
   </string>
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
     <!-- 1 - Harlot's name -->
-    <value >{0}'s voice resounds around. "Halloween Town's wish has been granted!" Suddenly, {1} falls death - obviously that was the wish the Genie talked about... {1} was the Succubus 💋</value>
+    <value >Looks like {0} came back positive after a night with the Harlot! The gunner got revenge. {1} is dead.</value>
   </string>
   <string key="DefaultShot" >
     <!-- 0 - Gunner's name -->
     <!-- 1 - target name -->
     <!-- 2 - Target's revealed name ( Target was a role) -->
-    <value >{0}'s voice resounds around. "Halloween Town's wish has been granted!" Suddenly, {1} falls death - obviously that was the wish the Genie talked about... {2}</value>
+    <value >Suddenly, a shot rings out.  The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
   </string>
   <string key="WolfWins" isgif="true" >
-    <value >A single werewolf has proven itself to be stronger than a whole village of monsters... The werewolf has won!</value>
+    <value >The werewolf has won!</value>
   </string>
   <string key="WolvesWin" isgif="true" >
-    <value >Monsters and demons did their best, but in the end, the werewolves prevailed!</value>
+    <value >The werewolves have won!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value >There's no match for a village full of monsters and demons! Halloween Town has endured all!</value>
+    <value >The villagers have won!</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value >As the pyre consumes a body, the flames grow higher and higher, until Halloween Town is consumed by them. The only thing remaning is a small phoenix chick...</value>
+    <value >Oh no! You lynched the Tanner! The Tanner wins the game, silly.</value>
   </string>
   <string key="RemainingPlayersEnd">
-    <value>The bloodbath in Halloween City was awful, but we must congratulate the survivors:</value>
+    <value>Remaining living players, roles, and team:</value>
   </string>
   <string key="CultistVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
-    <value >{0} wants to attack {1}</value>
+    <value >{0} has voted to convert {1}</value>
   </string>
   <string key="CultConvertCultHunter">
     <!-- 0 - Yougest Cultist (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>Your clan showed up in {1}'s den, ready to have a good snack... But they met a trained vampire hunter! {0} was killed in the fight with the Dhampir...</value>
+    <value>{0} was sent to do your dirty work, and convert {1}... however, they were the cult hunter! {0} is dead!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - Number of cultists left -->
-    <value>You sensed vampires nearby, and, true to that, soon Hallowen Town's entire clan was upon you. But you've been ready for that fight ever since you were born... {0} fell by your blade, but the {1} other vampires who attacked you managed to escape...</value>
+    <value>{0} came to your house last night, ready to convert you....  but you shoved your sword right through him.  A cultist is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The first thing you realized was a prickle in your neck, then another, then another... At the end of the night, you didn't even feel the blood loss anymore, and the vampire clan accepted you as one of their own.</value>
+    <value>The cult has converted you to their order!  You are now a cultist.  Every other night, you will have a chance to convert another player.</value>
   </string>
   <string key="CultTeam">
     <!-- 0 - Number of cultists -->
-    <value>The Vampire's clan is composed of {0}</value>
+    <value>Cultists: {0}</value>
   </string>
   <string key="CultJoin">
     <!-- 0 - new cultist's name -->
-    <value>{0} was a wonderful meal, and now is your fellow clanmate!</value>
+    <value>{0} has joined the cult!</value>
   </string>
   <string key="CultVisitEmpty">
     <!-- 0 - Newest cultist's name -->
     <!-- 1 - target name -->
-    <value>Your clan visited {1}'s den, but there was no one inside... You might be used to your new body by now, but {0}, the newest member of your clan, won't stop complaining about hunger...</value>
+    <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >Halloween Town was full of good meals, but now the only denizens left are part of the vampire clan... Soon, they should leave town in search of more victims.</value>
+    <value >All the wolves have died, and the only people left standing have all been converted to cultists..  The cult has won!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
-    <value>You entered {0}'s den with your blade ready to strike, only to find a dead body...</value>
+    <value>You went to hunt {0}, but they are already dead!</value>
   </string>
   <string key="HunterFindCultist">
     <!-- 0 - target name -->
-    <value>Stealthily and carefully, you get in {0}'s den, searching for any evidence they are a vampire... And you find it, in the shape of fangs going straight for your neck! The fight is a dance you know well, and at the end of it, you go home knowing there is one less vampire in Halloween Town.</value>
+    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil cultist.</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
-    <value>Stealthily and carefully, you get in {0}'s den, searching for any evidence they are a vampire... But there is none.</value>
+    <value>You go to {0}'s house, but there is no mysterious chanting. You return home, convinced that {0} is not a cultist.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
-    <value>{0}'s master died! Their rage is a sight for sore eyes, and at the end of it, you realize it left you with a new packmate.</value>
+    <value>{0}'s role model just died!  In their rage, they have become a werewolf!</value>
   </string>
   <string key="WildChildTransform">
     <!-- 0 - role's name -->
     <!-- 0 - teamate's names -->
-    <value>{0} has died! You are stricken by grief and an all-encompassing rage, only realizing after you've calmed down how feral you've gone... Enough to be considered a werewolf, that's for sure. You're accepted by the Town's pack, {1}</value>
+    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
-    <value>a Demon 👱</value>
+    <value>a Villager 👱</value>
   </string>
   <string key="Drunk">
-    <value>the Leprechaun 🍻</value>
+    <value>the Drunk 🍻</value>
   </string>
   <string key="Harlot">
-    <value>the Succubus 💋</value>
+    <value>the Harlot 💋</value>
   </string>
   <string key="Seer">
-    <value>the Witch 👳</value>
+    <value>the Seer 👳</value>
   </string>
   <string key="Traitor">
-    <value>the Wolf Demon 🖕</value>
+    <value>the Traitor 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>the Gargoyle 👼</value>
+    <value>the Guardian Angel 👼</value>
   </string>
   <string key="Detective">
-    <value>the Warlock 🕵</value>
+    <value>the Detective 🕵</value>
   </string>
   <string key="Wolf">
     <value>a Werewolf 🐺</value>
   </string>
   <string key="Cursed">
-    <value>the Half-Demon 😾</value>
+    <value>the Cursed 😾</value>
   </string>
   <string key="Gunner">
-    <value>the Genie 🔫</value>
+    <value>the Gunner 🔫</value>
   </string>
   <string key="Tanner">
-    <value>the Phoenix 👺</value>
+    <value>the Tanner 👺</value>
   </string>
   <string key="Fool">
-    <value>the Magician 🃏</value>
+    <value>the Fool 🃏</value>
   </string>
   <string key="WildChild">
-    <value>Cerberus 👶</value>
+    <value>the Wild Child 👶</value>
   </string>
   <string key="Beholder">
-    <value>the Witch's Familiar 👁</value>
+    <value>the Beholder 👁</value>
   </string>
   <string key="ApprenticeSeer">
-    <value>the Witch's Apprentice 🙇</value>
+    <value>the Apprentice Seer 🙇</value>
   </string>
   <string key="Cultist">
-    <value>a Vampire 👤</value>
+    <value>a Cultist 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>the Dhampir 💂</value>
+    <value>the Cultist Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -488,36 +490,36 @@
     <value>🙂 Alive</value>
   </string>
   <string key="PlayersAlive">
-    <value>Monsters Alive</value>
+    <value>Players Alive</value>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>an Alien 👷</value>
+    <value>a Mason 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>There is a big investigation going on about humans, and you're one of the unlucky ones who get to stay in the HQ and manage everything without taking part in the action. Usually, you would do that from the mothership, but humans are just too suspicious about space, so you had to set up a temporary base in Halloween Town, where even Aliens 👷 are accepted as denizens. Although you all live in different homes, you do know who your fellow planetmen are... After all, you need to work in a team to manage everything!</value>
+    <value>You are a Mason.  If there are any other masons, you will know who they are.  Otherwise, you are a villager.</value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
-    <value>Once again there is light, illuminating a really strange sight. {0} is obviously dead, with green blood splattered around... It seems aliens aren't a tasty meal for werewolves.</value>
+    <value>As everyone rises, they find the body of {0} shoved into a pile of stone, blood splattered everywhere.  One of your masons has died!</value>
   </string>
   <string key="MasonTeam">
-    <value>  The aliens are: {0}</value>
+    <value>  The masons are: {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
     <!-- 0 - Youngest cultists name -->
-    <value>Your clan goes into {0}'s den ready for a nice snack, finding evidence of a fight there, and lots of blood in the ground... But you're not that hungry tonight, and return home without drinking a drop of blood from there.</value>
+    <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
   </string>
   <string key="GuardBlockedWolf">
     <!-- 0 - target's name -->
-    <value>{0} sounded like a really good meal, but, when going to his den, your pack noticed a Gargoyle 👼 outside it. Sneaking around would have been useless, you were all rather hungry already, and the gargoyle was already looking at the pack, ready for a fight. And what a fight it was! One to be remembered, but maybe not by you, the losers... At least there were no casualties on your side (or any side, really).</value>
+    <value>The pack heads to {0}'s house to eat them, but they are met by a tall dark figure, armed to the teeth. The Guardian Angel fights everyone off, and you head back defeated.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
     <!-- 0 - newest  -->
     <!-- 1 - target's name -->
-    <value>Your clan safely gets into {1}'s den to attack them, and even {0}, the hungriest out of all of you, went back home feeling full... Somehow, you even managed to leave your prey completely alive, and can surely visit them again for another late night snack!</value>
+    <value>You send {0} to try to convert {1}, however their belief was too strong, and you were unable to convert them :(</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
@@ -527,7 +529,7 @@
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>Tonight's meal was slightly lacking... {0}'s energy wasn't as strong as most monsters', and while you fed, they tried to feed off you too! Your neck still hurts from the bite, even if you didn't let them take any blood...</value>
+    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, you happen to notice a strange altar, poorly hidden off in a side room, with a strange glowing coming from it...</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -535,12 +537,12 @@
   </string>
   <string key="GenericDeathNoReveal">
     <!-- 0 - Dead's name -->
-    <value>Soon after morning comes, someone notices {0} isn't anywhere to be seen... But no one could find them, so they were assumed dead, and life went on.</value>
-    <value>The sun didn't even rise completely and everyone already knows {0} is dead, because a friend of a friend of a friend saw their body... That's all anyone knows about it, though.</value>
+    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the house to find the remains of {0}.</value>
+    <value>As the villagers gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
   </string>
   <string key="MasonConverted">
     <!-- 0 - mason's name -->
-    <value>You waited the whole night for {0} to show up, even had to take care of a few of his investigators, but nothing. And yet, you know they're not dead because once morning came, you saw them outside!</value>
+    <value>Odd.... {0} didn't show up for the masons meeting this morning... O.o</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -613,180 +615,180 @@
     <value>Language set to {0}</value>
   </string>
   <string key="NoSeer">
-    <value>Sadly, the witches' coven is no more, and you have no master...</value>
+    <value>No seer!</value>
   </string>
   <string key="TimesUp">
     <value>Time's up!</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>You are the Love Fairy 🏹! You're cute, you're romantic, and you're ready to do some mischief. Your powers are a bit limited, but you can still work with them! Once in every blue moon, you can make it so two people's souls are connected... They will feel happiness when the other is happy, and death when the other is killed.</value>
+    <value>You are Cupid. Sent to Earth with only underpants, a bow and two arrows, you get to choose two players to love each other for eternity. If one of them dies, the other one dies of sorrow.</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>You are a Shapeshifter 🎭! Unfortunately, too many pranks have left you with a strict rule: no shifting into someone from the Town, and no shifting without telling someone responsible about it! Still, they didn't say anything about shifting into dead people... With all those attacks going around, today will be your last chance to choose someone to shift into once they die!</value>
+    <value>You are a Doppelgänger. Legend has it that your ancestors were metamorphs, and could choose any form they wanted. You have inherited some of their capacities. Choose a player, when that player dies, you will take on their role.</value>
   </string>
   <string key="RoleInfoHunter">
-    <value>You are the Yeti 🎯! You don't particularly care about Halloween Town's affairs, and your den is even in a remote location... But you're extremely territorial, and anyone who decides to pay you a visit will surely regret it, just as they will if they try to kill you.</value>
+    <value>You are the town Hunter. You do not sleep well, and you would never go to bed without your rifle. If you die, you can choose someone else to kill. If you are eaten, you have a chance to take a werewolf down, but will not be able to choose a player to kill.</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>You are the Chupacabra 🔪! While most monsters in Halloween Town only dare to eat corpses, you like your meals fresh, and they're only dead by the end of your dinner. You're so stealthy most of them don't even get the chance to fight, but if you choose the wrong victim, be careful, because there's no one watching your back...</value>
+    <value>You are the serial killer. Recently escaped from the local asylum, your goal is for everyone else to die. Every night, you can add a player's body to your collection.</value>
   </string>
   <string key="CupidChosen">
-    <value>Suddenly, you start to wonder what {0} is doing right now... You can't take them out of your head. You're hit by the great wish, almost a need, to see them happy, and can't even imagine what would happen should they die. Can it be... love?</value>
+    <value>You have been struck by love. {0}'s memory will never fade in your heart. Your goal is for both of you to survive. If one of you dies, the other one will die out of sorrow.</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>Demons fasten ropes tying you to the pyre, and light the fire... As soon as you feel flames catching on your fur, a maddening despair gives you strength you've never felt before, and you break free of the pyre! You're still catching fire, though, and won't be able to survive much longer. Will you use your last breaths to take revenge, and on who?</value>
+    <value>The village has chosen to hang you! This is your last chance, choose to shoot someone as you go down!</value>
   </string>
   <string key="HunterNoChoiceLynched">
-    <value>{0} breaks free of the pyre, but only manages to stumble a little forward before falling dead, the fire's heat too much for their body.</value>
+    <value>{0} fumbles for their pistol as the noose tightens, but cannot get it in time, and falls to their death with a loud snap of their neck...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} breaks free of the pyre, roaring... and tries, in vain, to take the fire that catched on their fur out. Sadly, their last breaths are spent fruitless, and the Yeti falls dead soon after.</value>
+    <value>{0} whips out their pistol and looks at the crowd... and cannot make a decision on who to shoot. They fall to their death, accepting their fate...</value>
   </string>
   <string key="HunterKilledFinalLynched">
     <!-- 0 - hunter's name -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>{0} breaks free of the pyre, roaring and still catching fire! It's a terrifying sight, for {1} more than anyone, since that's who the Yeti decided to attack. What follows is a gory death, followed by the Yeti's own, finally consumed by the flames. {2}</value>
+    <value>As the noose tightens, {0} whips out a pistol, takes aim, and shoots {1} as the floor drops out! {1} falls over, dead.  {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>You've been deadly wounded! Your strength is waning quickly, but you still have enough to at least try and get revenge... But on who?</value>
+    <value>You've been murdered!  In your last moments, you have the chance to shoot someone... make it quick!</value>
   </string>
   <string key="HunterNoChoiceShot">
     <!-- 0 - target's name -->
-    <value>The wounds were too much for {0}, and the Yeti didn't even growl before succumbing to them...</value>
+    <value>The blow to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
   </string>
   <string key="HunterSkipChoiceShot">
     <!-- 0 - hunter's name -->
-    <value>{0} decided to spend their final moments trying to survive instead of taking revenge, a truly useless endeavour...</value>
+    <value>As {0} lays there, gasping for their final breaths, they can't decide who to shoot... and accept their fate.</value>
   </string>
   <string key="HunterKilledFinalShot">
     <!-- 0 - hunter -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>{0} is bleeding out, but not quickly enough to be unable to fight! The Yeti attacks {1} with all the strength of a dying monster, and the result of their struggle is... both of their deaths. {2}</value>
+    <value>Dying, {0} falls to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>Your clan goes to {1}'s den, slipping inside carefully ready to suck their blood... But looks like the monster inside wanted to do the same to you! All vampires struggle and struggle, but finally manage to run from that treacherous den... Except for {0}, who sadly was killed in the fight.</value>
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>The werewolves chose the wrong den to attack, because that one was home to an Yeti! The fight was long and arduous, leaving both the Yeti and the werewolf {0} dead.</value>
+    <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as he died! {0} has died (wolf)</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
-    <value>The werewolf {0} tried to attack an Yeti's den, a mistake they paid for with their life!</value>
+    <value>The wolf tried to attack the hunter last night, but the hunter was able to take the wolf {0} down with their rifle!</value>
   </string>
   <string key="SerialKillerKilledWolf">
-    <value>The werewolves attacked someone who also wanted to attack people... {0} has been killed by the Chupacabra!</value>
+    <value>The wolves attempted to have a nice late night snack, but were instead greeted by a crazed murderer! {0} was killed in the fight!</value>
   </string>
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>Noticing {0}'s absence, someone goes to their den see what happened, only to find a corpse sucked dry, left there to rot... Halloween Town's vampires never kill, so this is obviously the work of the Chupacabra! {1}</value>
+    <value>It seemed a quiet enough night for {0}, but they were wrong.  The villagers gather in the morning to find {0} split from head to toe, but oddly the liver was missing...  The serial killer has struck again! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
-    <value>Incredibly hungry, you go to {0}'s den for a good meal, only to find a Gargoyle outside it! You try going in anyway, but the stone guardian fights you off.</value>
+    <value>You tried to collect {0}'s body for your collection, but you were fought off by the guardian angel! No kill for you tonight...</value>
   </string>
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The clan goes to {1}'s den, only to find a very angry Yeti! You all know better, and flee home, but sadly {0} wasn't fast enough... Their screams will haunt you for weeks.</value>
+    <value>The cult sends {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The clan goes into {1}'s den, ready to drink some blood, but looks like {1} also wants a nice meal... You fight valiantly to escape and drink for another day, but sadly {0} falls in the fight, and seeing no other choice, all of you flee while your clanmate is sucked dry by the Chupacabra...</value>
+    <value>The cult sends {0} to try to convert {1}, but instead a {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
   </string>
   <string key="GuardKiller">
-    <value>You spent centuries guarding your church from outside threats... So how would you know what to do when the threat came from within? Your back was turned to the Chupacabra, a terrible mistake.</value>
+    <value>You tried to guard the serial killer, but they came out and stabbed you 89 times! You are dead....</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
-    <value>You slip into {0}'s den, ready for a good meal, but trying to feed off the Chupacabra is never a good idea, and you became tonight's dinner instead...</value>
+    <value>You slip into {0}'s house, and start having a little fun.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac!  You have died....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
-    <value>There's no reason to mourn today, because the shapeshifter {0} shifted into an alien, and will now work just as your late colleague did!</value>
+    <value>The doppelganger {0} has now become a mason, just like you!</value>
   </string>
   <string key="DGTransformToMason">
     <!-- 0 - dead mason's name -->
     <!-- 1 - mason collegues's name -->
-    <value>{0} is dead, and you can finally shift into someone! Now you're an alien, which would be great, if you didn't have to work every single night now... Your colleagues are: {1}</value>
+    <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
     <!-- 0 - new cultist's name -->
-    <value>Your clan has mourned its lost member, but now there's a reason to rejoice! The shapeshifter {0} has shifted into them, and is now part of your clan!</value>
+    <value>The doppelganger {0} has now become a cultist, just like you!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} is dead, and you can finally shift into someone! As you shift, you can feel your fangs growing, and a thirst for blood... You have been accepted by the vampire clan: {1}</value>
+    <value>{0} has died, and you transform into a cultist.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
-    <value>The loss of a packmate is always sad, but at least now you've got a new one, {0}!</value>
+    <value>The doppelganger {0} has now become a wolf, just like you!</value>
   </string>
   <string key="DGTransformToWolf">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} is dead, and you can finally shift into someone! After the transformation is complete, you feel an overwhelming urge to howl at the moon... You have been accepted by the werewolf pack: {1}</value>
+    <value>{0} has died, and you transform into a wolf.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="SerialKillerWins" isgif="true">
-    <value>No more meals for the Chupacabra, because all denizens of Halloween Town are dead... Looks like migrating again is in order!</value>
+    <value>The only person left standing is the serial killer! They have won!</value>
   </string>
   <string key="AskKill">
-    <value>Who do you want to eat?</value>
+    <value>Who do you want to kill tonight?</value>
   </string>
   <string key="LoverDied">
     <!-- 0 - dead's name -->
     <!-- 1 - lover's name -->
     <!-- 2 - roles -->
-    <value>{0} dies by a very obvious cause, but left unexplained is the death of {1}, who died at the exact same time... {2}</value>
+    <value>With {0}'s dying breath, {1} rushes over and falls, crying.  They cannot stand the loss of their loved one, and shoot themselves with the nearest pistol they can find. {2}</value>
   </string>
   <string key="AskDoppelganger">
-    <value>Who do you want to shift into once they die?</value>
+    <value>Who do you want to become if they die?</value>
   </string>
   <string key="AskCupid1">
-    <value>Who should you connect someone's soul to?</value>
+    <value>Who do you want the lovers to be? Choose the first player</value>
   </string>
   <string key="AskCupid2">
-    <value>And who should that soul be connected to?</value>
+    <value>Who do you want the lovers to be? Choose the second player</value>
   </string>
   <string key="Hunter">
-    <value>the Yeti 🎯</value>
+    <value>the Hunter 🎯</value>
   </string>
   <string key="Cupid">
-    <value>the Love Fairy 🏹</value>
+    <value>Cupid 🏹</value>
   </string>
   <string key="SerialKiller">
-    <value>the Chupacabra 🔪</value>
+    <value>the Serial Killer 🔪</value>
   </string>
   <string key="Doppelgänger">
-    <value>the Shapeshifter 🎭</value>
+    <value>the Doppelgänger 🎭</value>
   </string>
   <string key="CupidChosen">
     <!-- 0 - lover's name -->
-    <value>Suddenly, you start to wonder what {0} is doing right now... You can't take them out of your head. You're hit by the great wish, almost a need, to see them happy, and can't even imagine what would happen should they die. Can it be... love?</value>
+    <value>Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If you both make it to the end, you will both win.</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
-    <value>You have shifted into the Cerberus, taking with their features their love for their master, {0}!</value>
+    <value>You have become the wild child.  You role model is {0}</value>
   </string>
   <string key="LoversWin">
-    <value>Not even the Love Fairy could have seen that coming... The only ones left alive are the lovers - and what an odd couple they make!</value>
+    <value>True love endures! The lovers have won!</value>
   </string>
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
     <!-- 1 - role -->
-    <value>The only thing remaining from {0} are pieces of flesh and a lot of blood... Looks like an Yeti attack! {1}</value>
+    <value>In the middle of the town square, everyone finds the body of {0}, multiple shots to the body.  Looks like they tried to sneak up on the Hunter! {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>Suddenly, you feel a sharp pain in your neck, quickly realizing you've been attacked by vampires... There's nothing to do but hold on to your consciousness, which you do, sighing with relief when they go away. Somehow, you didn't even became a vampire like them! Your blood must be truly strong.</value>
+    <value>A hooded figure tried to convert you to their cult, but your faith was too strong</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -794,7 +796,7 @@
   </string>
   <string key="AddedToWaitList">
     <!-- 0 - target's name -->
-    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting. </value>
+    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
   </string>
   <string key="NotifyNewGame">
     <!-- 0 - target's name -->
@@ -803,15 +805,15 @@
   <string key="SerialKillerWinsOverpower">
     <!-- 0 - SK's name -->
     <!-- 1 - target's name -->
-    <value>There are only two monsters left alive... No, wait... {0} plunges into {1}'s neck, quickly killing them. Only the Chupacabra is left, with a stomach full and energy to spare.</value>
+    <value>Morning comes, and the remaining two villagers walk out to the town square.  {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Halloween Town has become a ghost town... No monsters were left alive after the terrible Halloween Bloodbath.</value>
+    <value>Everyone in the village has died...  there's nothing but bodies left.  No one wins this round, except the vultures...</value>
   </string>
   <string key="SKHunterEnd">
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
-    <value>Monsters in a town... What's a town to a werewolf? What's a werewolf to a chupacabra? What's a chupacabra to an yeti? The fight between {0} and {1} was one to be remembered, but there was no one left to watch it, and there was no one left to tell the story, either.</value>
+    <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the village is empty, there is no winner...</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
@@ -854,7 +856,7 @@
     <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
   </string>
   <string key="AboutDetective">
-    <value>You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+    <value>You old sleuth. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
   </string>
   <string key="AboutGunner">
     <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
@@ -881,7 +883,7 @@
     <value>You will be told who the seer is (the real one, not the fool)</value>
   </string>
   <string key="AboutMason">
-    <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+    <value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
   </string>
   <string key="AboutDG">
     <value>
@@ -943,7 +945,7 @@
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Time for Telegram to send message to me: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
   </string>
   <string key="WhatLang">
     <value>What Language?\nCurrent: {0}</value>
@@ -1013,12 +1015,10 @@
     <value>Cancel</value>
   </string>
   <string key="AllowFleeQ">
-    <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: Players can {0}flee</value>
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
   </string>
   <string key="AllowFleeA">
-    <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Players will {0}be allowed to flee after game start</value>
+    <value>{0} fleeing after game start</value>
   </string>
   <string key="MaxPlayersQ">
     <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
@@ -1094,5 +1094,21 @@
   </string>
   <string key="StartMe">
     <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
   </string>
 </strings>
