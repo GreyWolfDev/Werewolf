@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -27,20 +28,7 @@ namespace BuildAutomation.Controllers
             var obj = JsonConvert.DeserializeObject<ReleaseEvent>(Request.Content.ReadAsStringAsync().Result);
             try
             {
-                string TelegramAPIKey;
-                //get api token from registry
-                var key =
-                    RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
-                        .OpenSubKey("SOFTWARE\\Werewolf");
-#if DEBUG
-                TelegramAPIKey = key.GetValue("DebugAPI").ToString();
-#elif RELEASE
-            TelegramAPIKey = key.GetValue("ProductionAPI").ToString();
-#elif RELEASE2
-            TelegramAPIKey = key.GetValue("ProductionAPI2").ToString();
-#elif BETA
-            TelegramAPIKey = key.GetValue("BetaAPI").ToString();
-#endif
+                string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
 
                 var msg =
                     "Woot!  New build has been released, and is staged on the server.  Do you want me to copy the files and update?";
