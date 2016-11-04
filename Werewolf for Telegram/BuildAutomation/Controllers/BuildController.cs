@@ -23,22 +23,24 @@ namespace BuildAutomation.Controllers
 
         public void Post()
         {
-            HttpResponseMessage response;
-
-            var obj = JsonConvert.DeserializeObject<ReleaseEvent>(Request.Content.ReadAsStringAsync().Result);
             try
             {
-                string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+                var obj = JsonConvert.DeserializeObject<ReleaseEvent>(Request.Content.ReadAsStringAsync().Result);
+                var validKey = ConfigurationManager.AppSettings.Get("VSTSSubId");
+                if (obj.subscriptionId == validKey) //can't have random people triggering this!
+                {
+                    string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
 
-                var msg =
-                    "Woot!  New build has been released, and is staged on the server.  Do you want me to copy the files and update?";
+                    var msg =
+                        "Woot!  New build has been released, and is staged on the server.  Do you want me to copy the files and update?";
 
-                var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
-                var result = bot.SendTextMessage(-1001094155678, msg,
-                    replyMarkup:
-                        new InlineKeyboardMarkup(new[]
-                        {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")})).Result;
-                response = new HttpResponseMessage(HttpStatusCode.OK);
+                    var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                    var result = bot.SendTextMessage(-1001094155678, msg,
+                        replyMarkup:
+                            new InlineKeyboardMarkup(new[]
+                            {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")}))
+                        .Result;
+                }
             }
             catch (Exception e)
             {
