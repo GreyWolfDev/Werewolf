@@ -26,7 +26,7 @@ if (container == null)
 // <#=CodeGenerationTools.GetResourceString("Template_GeneratedCodeCommentLine3")#>
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using Microsoft.Win32;
 <#
 
 var codeNamespace = code.VsNamespaceSuggestion();
@@ -56,7 +56,7 @@ using System.Linq;
 <#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : DbContext
 {
     public <#=code.Escape(container)#>()
-        : base(Internal.Default.DBConnectionString)
+        : base(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf").GetValue("BotConnectionString").ToString())
     {
 <#
 if (!loader.IsLazyLoadingEnabled(container))

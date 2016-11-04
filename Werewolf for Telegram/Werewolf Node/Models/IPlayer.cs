@@ -25,6 +25,8 @@ namespace Werewolf_Node.Models
         /// </summary>
         public int Choice { get; set; } = 0;
 
+        public int Choice2 { get; set; } = 0;
+
         /// <summary>
         /// Whooops! you died...
         /// </summary>
@@ -102,7 +104,8 @@ namespace Werewolf_Node.Models
         public bool PackHunter { get; set; } = false;
         public bool LastShotWasSKWolf { get; set; } = false;
         public bool DoubleKillEnding { get; set; } = false;
-
+        public bool Bitten { get; set; }
+        
     }
 
         #endregion
@@ -111,7 +114,9 @@ namespace Werewolf_Node.Models
 
     public enum IRole
     {
-        Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller
+        Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller,
+        //new roles
+        Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince
     }
 
     public enum ITeam

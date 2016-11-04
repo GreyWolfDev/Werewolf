@@ -111,12 +111,12 @@
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
-    <value>You have found {0}'s abandoned tarot deck! You are now the new Seer.</value>
+    <value>{0} was the seer. As the apprentice, you step up to become the new seer.</value>
   </string>
   <string key="BeholderNewSeer">
     <!-- 0 - apprentice name -->
     <!-- 1 - seer name -->
-    <value>{0} found {1}'s abandoned tarot deck, and is now the new Seer.</value>
+    <value>{0} was an apprentice, and has now stepped up to fill {1}'s place as the new Seer.</value>
   </string>
   <string key="SeerSees">
     <!-- 0 - player name -->
@@ -428,6 +428,7 @@
     <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>a Villager 👱</value>
   </string>
@@ -549,7 +550,7 @@
     <value>Fleeing while the game is running has been disabled by the group admin!</value>
   </string>
   <string key="IsDead">
-    <!-- used when a player is killed, but not by werewolf or lynching -->
+    <!-- used when gunner shoots a player -->
     <value>is dead</value>
   </string>
 
@@ -709,7 +710,7 @@
     <value>You slip into {0}'s house, and start having a little fun.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac!  You have died....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
+    <value>{0} tried to have some fun last night... but found a crazed murderer instead! {0} is dead...</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -831,6 +832,10 @@
     <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
   </string>
   <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
   <string key="AboutVG">
     <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
   </string>
@@ -1110,5 +1115,102 @@
   </string>
   <string key="Ping2">
     <value>Time to send ping message: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>You are the Mayor. Your vote during the lynching will count twice, once you have revealed yourself. You are on the village team</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are secretly the Prince, escaping from your boring, pampered life by spending the day with these peasants. If they try to lynch you, they realize their error, and no one will be lynched.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are the Clumsy Guy: You’ll try to vote, but there is a 50% chance you’ll vote for someone else other than you intended instead. You’re still on the village team though.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are the Sorcerer, allying yourself with creatures of the night rather than villagers. At night you will use your power to find the wolves or the Seer. You win only if the wolves win. Enjoy helping snuff out those miserable villagers.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are the Blacksmith: the metalworker of the village. You have a small amount of silver, enough to prevent the wolves from attacking for one night. During the day, you can choose to powder it and spread it around the village. Other than that, you are just a villager.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are the Alpha Wolf; the source of the scourge. Your bite is the cause of the curse that turns humans into werewolves. Each night, you will choose a human to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into a werewolf.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the Wolf Cub; adored by your wolf pack. Like other wolves, you will choose a villager to attack and kill every night. If you happen to be killed, your wolf pack will fly into a rage and attack two people the next night. You’ll still be dead though.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the village begins to lynch {0}, they say “Wait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil.” Feeling foolish, the villagers sheepishly retire for the night.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to look at {0}, but can't quite make out what they are.  They are not a wolf or seer however...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} steps forward and present the official seal of the Mayor, declaring himself as such.  From now on, {0}'s votes for lynching will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as the Mayor</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to spread the silver today, disabling the wolves tonight?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>As the rest of the village debates over the events, they suddenly notice {0} wandering around spreading silver across the grounds.  For now, at least, the village will be safe from wolf attacks. (Wolves are disabled tonight)</value>
+  </string>
+  <string key="Mayor">
+    <value>the Mayor 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>the Prince 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>the Sorcerer 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>the Clumsy Guy 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>the Blacksmith ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>the Alpha Wolf ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>the Wolf Cub 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the wolves attack {0}, {1} stops everyone, being the Alpha Wolf.  {1} tells the pack that {0} should join the pack instead of dying, so the pack leaves them to their infection.  They will become a werewolf tomorrow night.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>You were attacked by the wolves, but the Alpha Wolf chose you.  Instead of being killed, you have been infected..  and will become a wolf tomorrow night!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>As night falls, you feel a strange tingling, and your body aches as it begins to transform.... You are now a werewolf!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The prince is a key role in the Villagers Team's strategy. Once it gets lynched, his role as Prince is revealed, and he survives. He then can only be killed at night, or by hunter.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old seer ? Well now, it has it's Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfeast. You can't see a damn thing. Can you even vote for the person you want to ? (You have 50% chances to vote for someone random)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are the Alpha Wolf, the origin of the curse, the bane of banes. While you are alive, the Pack's meal has 20% chances to join your ranks if the victim is the one you voted for.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, i'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
   </string>
 </strings>

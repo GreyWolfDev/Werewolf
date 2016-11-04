@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Pinoy SFW version by @michelleized, @arbeanstok, @genevasands -->
+<!-- Pinoy SFW version by @michelleized, @inhinyerongkuryente, @genevasands -->
 <!-- Changelog August 12, 2016
 	First Launch-->
 <!-- Changelog August 14, 2016
@@ -9,14 +9,17 @@
 	1. Corrected several grammar and lexical errors such as 'mukang' to 'mukhang', 'jan' to 'dyan', 'PATAYA' to 'PATAY', 'ilynch' to 'bitayin', 'sakanila' to 'sa kanila', 'pimili' to 'pumili'.
 	2. Changed some role names (Harlot, AppSeer, Gunner)
 	3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
-<!-- Changelog August 17, 2016 by @arbeanstok
+<!-- Changelog August 17, 2016 by @inhinyerongkuryente
 	1. Updated to new bot lines for /playerlist-->
-<!-- Changelog August 19, 2016 by @arbeanstok
+<!-- Changelog August 19, 2016 by @inhinyerongkuryente
 	1. Added YouJoined string -->
-<!-- Changelog October 13, 2016 by @arbeanstok
+<!-- Changelog October 13, 2016 by @inhinyerongkuryente
 	1. Updated ApprenticeNowSeer and BeholderNewSeer strings
 	2. Added Ping2 string
 	3. Updated VillageWins string
+	-->
+<!-- Changelog November 4, 2016 by @inhinyerongkuryente
+	1. Added translation for new roles
 	-->
 <strings>
   <language name="Filipino" base="Filipino" variant="SFW"/>
@@ -1164,5 +1167,101 @@
   </string>
   <string key="Ping2">
     <value>Oras para magpadala ng Ping: {0}</value>
+  </string>
+  
+  <!-- UPDATE 4.0 (November Update)-->
+  
+  <string key="RoleInfoMayor">
+	<value>Ikaw ang Mayor. Dalawang boto ang katumbas ng boto kapag inamin mo ang role mo. Sa #TeamVG ka kasali</value>
+  </string>
+  <string key="RoleInfoPrince">
+	<value>Ikaw ang Prinsipe, nainip ka sa bonggang bonggang castle niyo kaya naisipan mong tumakas at tumamay with the villagers. Pag sinubukan kang ilynch malalaman nilang mali sila at walang mallynch.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Ikaw ang Clumsy Guy. Susubukan mong bumoto ng illynch. Pero, may 50% chance na iba ang maboboto mo kesa sa pinili mo. #TeamVG ka parin don't worry.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+	<value>Ikaw ang Salamangkera. Technically, you're a traitor witch. Sa gabi, magagamit mo ang kapangyarihan mo malaman kung sino ang mga Wuff o Madam Auring. Mananalo ka lang kung ang mga Wuff ang mananalo. Enjoy helping snuff out those miserable villagers.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Ikaw ang Panday, ang panday-bakal ng village. Meron kang kakaunting pilak na sapat lang para hindi ka makain ng wuff ng isang gabi. Sa araw, pwede mo pulbusin ang kakaunting pilak na meron ka at ikalat ito sa buong village. Bukod dun, isa kang simpleng villager.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+	<value>Ikaw ang Fafa Wuff, ang ugat ng sumpa sa mga wuff. Kagat mo ang dahilan ng sumpang nagttransform sa mga villages para maging werewolf. Kada gabi ay makakapili ka ng villager na pwedeng kainin. Pero hanggat buhay ka, ang mapipili mo ay may 20% chance na maging wolf rin.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+	<value>Isa kang Baby Wuff, spoiled ng Wuff Fam. Tulad ng ibang wolves, makakapili ka din ng isang villager para kainin tuwing gabi. Pag namatay ka, mabbeastmode lahat ng wuff at kakain sila ng dalawang random na tao sa sunod na gabi. Pero patay ka na talaga</value>
+  </string>
+  <string key="PrinceLynched">
+	<value>Naghahanda na ang baranggay para bitayin si {0} nang biglang sumigaw ito at sinabing, "TEKA! Ako ang Prinsipe! Ito ang singsing na may Seal of the King bilang patunay. May nakapaligid saking mga alila 24/7, imposible akong maging masama!". Nang malaman ng mga villagers ito, umuwi nalang sila at natulog.</value>
+  </string>
+  <string key="SorcererOther">
+	<value>Sinubukan mong tignan si {0}, pero di mo sure kung ano siya. Hindi siya Wolf o Madam Auring yun ang sure ka...</value>
+  </string>
+  <string key="MayorReveal">
+	<value>Biglang nag eskandalo si {0} habang pinagmamayabang ang Official Seal ng Mayor na nasakanya. Mula ngayon, dalawa ang bilang ng boto ni {0} sa mga lynch.</value>
+  </string>
+  <string key="AskMayor">
+	<value>Pindutin ang "Ipamalita" kapag handa ka ng ipagyabang ang pagiging Mayor mo</value>
+  </string>
+  <string key="Reveal">
+    <value>Ipamalita</value>
+  </string>
+  <string key="SpreadDust">
+	<value>Gusto mo bang ipakalat ang pilak mo ngayon para hindi makakain ang wuff ngayong gabi?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+	<value>Habang nagcchichismisang ang magkakapitbahay, bigla nilang napansin ang silver powder na kumakalat mula sa bahay ni {0}. Sa ngayon, at least, ligtas ang village sa safe mula sa wuff attacks. (Hindi makakakain ang wuff ngayong gabi)</value>
+  </string>
+  <string key="Mayor">
+    <value>Ang Mayor 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Ang Prinsipe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Ang Salamangkera 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Ang Clumsy Guy 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Ang Panday ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Ang Fafa Wuff ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Ang Baby Wuff 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+	<value>Habang pasugod ang mga wuff kay {0}, pinatigil silang lahat ni {1} ang Alpha Wolf. Sinabi ni {1} sa mga wuff na imbis na kainin nila si {0} ay dapat nalang siyang hayaan mabuhay. Dahil sa mga kagat ng wuff, magiging wuff si {0} bukas ng gabi.</value>
+  </string>
+  <string key="PlayerBitten">
+	<value>Napili kang kainin ng mga wolves, pero pinili ka ng Alpha Wolf. Imbis na mamatay, nainfect ka... at magiging wolf ka na bukas ng gabi!</value>
+  </string>
+  <string key="BittenTurned">
+	<value>Habang gumagabi, may kakaiba kang nararamdaman, at dahan-dahan kang nagtransform... Isa ka ng wolf!</value>
+  </string>
+  <string key="AboutMayor">
+	<value>Bilang Mayor, isa kang lowly villager, hanggang sa aminin mo ang role mo. Kung saan magiging dalawa ang bilang ng boto mo kada lynch. Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+	<value>Ang Prinsipe ay isang mahalagang role sa #TeamVG. Kapag nalynch siya, saka lang malalaman ng lahat na siya ang Prince, mabubuhay siya at maaari lamang siyang patayin tuwing gabi o ng hunter.</value>
+  </string>
+  <string key="AboutSorcerer">
+	<value>Naalala mo ba yung sikat na si Madam Auring? Ayun sa ngayon meron na siyang counterpart. Ang Salamangkera ay ang Madam Auring ng mga wuff. (mej mej mej lang) Ang maaari lang nilang makita ay ang Seer o ang Wolf, at mananalo lang sila kung nanalo ang mga wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+	<value>Ikaw ang Clumsy Guy. Mukang nalasing ka ng todo kagabi, kaya ayun hanggang ngayon may hangover ka (gabi-gabi kang umiinom kaya araw-araw kang may hangover alak pa more!) Hilong-hilo ka, ni hindi ka nga makaboto ng illynch. (May 50% chance na maiba ang boto mo kesa sa pinili mo)</value>
+  </string>
+  <string key="AboutBlacksmith">
+	<value>Ikaw ang Panday. Sa loob ng maraming taon, walang espada o itak na naging sobrang proud ka na nagawa bukod sa silver na espada na pinagawa sayo ng mga dwende.\nMay kakaunti pang natirang silver mula sa pinagawa nila sayo. Anong malay natin? Baka pwedeng pigilan nito ang pagkain ng wuff  🤔 </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Ikaw ang Fafa Wuff, the ugat ng mga sumpa sa mga wuff. Habang buhay ka, and kakainin ng mga wuff ay may 20% chance na maging wuff kung siya, kung siya ang napili mo.</value>
+  </string>
+  <string key="AboutWolfCub">
+     <value>Ang _cute cute cute_ -ehem ehem- Gaya nga ng sinasabi ko, ikaw ang Baby Wuff at hindi ko matiis ang cuteness mo. Tingin ko pag pinatay ka, bibigyan ko ng dalawang biktima ang mga wuff. Masyado kang cute para mamatay. Hindi na kita makikiliti pag namatay ka-</value>
   </string>
 </strings>

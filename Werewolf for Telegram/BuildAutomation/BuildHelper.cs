@@ -46,7 +46,7 @@ namespace BuildAutomation
                     throw new HttpException("Unable to pull repo\n" + output);
                 }
                 p.WaitForExit();
-                //TODO: Build each version (Beta, Release, Release 2)
+                //TODO: Build each version (Beta, Release, Release 2) test
                 //methinks I'm gonna need to install VS for this
                 //TODO: Stage update for control
 
