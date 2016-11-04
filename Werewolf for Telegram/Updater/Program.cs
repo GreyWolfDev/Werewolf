@@ -35,11 +35,15 @@ namespace Updater
 
                 Console.WriteLine("Waiting on bot to exit....");
                 //first, wait for the bot to close out
+                var botName = 
 #if RELEASE2
-                while (Process.GetProcessesByName("Werewolf Control 2").Any())
+                    "Werewolf Control 2";
+#elif RELEASE
+                    "Werewolf Control";
 #else
-                while (Process.GetProcessesByName("Werewolf Control").Any())
+                    "Werewolf Control Beta";
 #endif
+                while (Process.GetProcessesByName(botName).Any())
                 {
                     Thread.Sleep(100);
                 }
@@ -58,8 +62,10 @@ namespace Updater
                 var path = Path.Combine(mainPath,
 #if RELEASE2
                     "werewolf control 2.exe"
-#else
+#elif RELEASE
                     "werewolf control.exe"
+#else
+                    "Werewolf Control Beta.exe"
 #endif
                     );
                 Process.Start(path, id);

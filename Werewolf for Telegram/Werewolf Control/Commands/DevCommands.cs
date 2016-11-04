@@ -90,7 +90,7 @@ namespace Werewolf_Control
                 Bot.Running = false;
                 Program.Running = false;
                 Bot.Api.StopReceiving();
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
                 using (var db = new WWContext())
                 {
                     var bot =
