@@ -4,6 +4,9 @@ This is the main repo for Werewolf for Telegram.
 
 For language file updates, please submit the xml file on Telegram to the [support chat](http://telegram.me/werewolfsupport) and ask for assistance
 
+### Visual Studio Team Services Continuous Integration		
+![build status](https://parabola949.visualstudio.com/_apis/public/build/definitions/c0505bb4-b972-452b-88be-acdc00501797/2/badge)
+
 ## Requirements
 * .NET Framework 4.5.2
 * SQL Server (I am using 2014) / SQL Server 2016
