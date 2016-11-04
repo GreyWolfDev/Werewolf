@@ -2975,6 +2975,12 @@ namespace Werewolf_Node
                     // do nothing, gunner is alive
                     return false;
                 }
+                if (Players.Any(x => x.PlayerRole == IRole.Hunter && !x.IsDead) && Players.Count(x => !x.IsDead) == 2)
+                {
+                    // instead of a special ending with different chances for hunter to die or kill, just add a night
+                    return false;
+                }
+                    
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf & x.Drunk) &&
                     Players.Count(x => x.IsDead) > 2)  //what the hell was my logic here....  damn myself for not commenting this line. why would it matter if 2 players ARE dead?
                 {
