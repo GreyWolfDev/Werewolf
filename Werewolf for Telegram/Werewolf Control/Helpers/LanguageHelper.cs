@@ -571,7 +571,7 @@ namespace Werewolf_Control.Helpers
                     StartInfo =
                     {
                         FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
-                        Arguments = $"\"Updating {fileName} from Telegram\"",
+                        Arguments = $"\"Updating {fileName} from Telegram ***NO_CI***\"",
                         WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
                         UseShellExecute = false,
                         RedirectStandardOutput = true,
