@@ -629,7 +629,7 @@ namespace Werewolf_Node
 
                 if (WolfRoles.Contains(player.PlayerRole) && player.CurrentQuestion.QType == QuestionType.Kill2)
                 {
-                    var others = Players.GetPlayersForTeam(ITeam.Wolf, exceptPlayer: player);
+                    var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: player);
                     foreach (var w in others)
                     {
                         Send(GetLocaleString("WolfVotedKill", player.GetName(), target.GetName()), w.Id);
@@ -639,8 +639,8 @@ namespace Werewolf_Node
                 var clearCurrent = true;
                 if (WolfRoles.Contains(player.PlayerRole) && player.CurrentQuestion.QType == QuestionType.Kill)
                 {
-                    var others = Players.GetPlayersForTeam(ITeam.Wolf, exceptPlayer: player);
-                    foreach (var w in others.Where(x => x.PlayerRole != IRole.Sorcerer))
+                    var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: player);
+                    foreach (var w in others)
                     {
                         Send(GetLocaleString("WolfVotedKill", player.GetName(), target.GetName()), w.Id);
                     }
