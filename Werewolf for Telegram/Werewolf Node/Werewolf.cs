@@ -3696,8 +3696,8 @@ namespace Werewolf_Node
                 }
                 //reset drunk status
                 player.Drunk = false;
-                _silverSpread = false;
-            }
+            } // alive players foreach
+            _silverSpread = false;
         }
 
         #endregion
