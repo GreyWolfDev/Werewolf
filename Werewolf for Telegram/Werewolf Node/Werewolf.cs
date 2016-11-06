@@ -1268,17 +1268,22 @@ namespace Werewolf_Node
                 //    }
                 //}
 
-                ////check that CH exists if cult exist
-                //if (Players.Any(x => x.PlayerRole == IRole.Cultist) && Players.All(x => x.PlayerRole != IRole.CultistHunter))
-                //{
-                //    //fix dat shit
-                //    var ch = Players.First(x => x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.Wolf);
-                //    ch.PlayerRole = IRole.CultistHunter;
-                //    ch.HasDayAction = false;
-                //    ch.HasNightAction = true;
-                //    ch.Team = ITeam.Village;
-                //}
+                //check that CH exists if cult exist
+                if (Players.Any(x => x.PlayerRole == IRole.Cultist) && Players.All(x => x.PlayerRole != IRole.CultistHunter))
+                {
+                    //fix dat shit
+                    var ch = Players.First(x => x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.Wolf);
+                    ch.PlayerRole = IRole.CultistHunter;
+                    SetRoleAttributes();
+                }
 
+				//make sure Sorcerer doesn't play on its own
+				if (Players.Any(x => x.PlayerRole == IRole.Sorcerer) && Players.All(x => !WolfRoles.Contains(x.PlayerRole))) {
+					// turn Sorcerer into Wolf
+					var sorc = Players.First(x => x.PlayerRole == IRole.Sorcerer);
+					sorc.PlayerRole = WolfRoles[Program.R.Next(3)];
+					SetRoleAttributes();
+				}
 
                 foreach (var p in Players)
                     p.OriginalRole = p.PlayerRole;
