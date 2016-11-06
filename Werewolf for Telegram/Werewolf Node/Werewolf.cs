@@ -3107,8 +3107,10 @@ namespace Werewolf_Node
                         {
                             switch (p.PlayerRole)
                             {
+                                case IRole.WolfCub:
+                                case IRole.AlphaWolf:
                                 case IRole.Wolf: //sk and hunter can kill
-                                    if (p.PlayerRole == IRole.WolfCub) //p.PlayerRole will never be wolfcub here... maybe case IRole.WolfCub and AlphaWolf need to be added before previous line?
+                                    if (p.PlayerRole == IRole.WolfCub)
                                         WolfCubKilled = true;
                                     if (p.KilledByRole == IRole.SerialKiller)
                                     {
