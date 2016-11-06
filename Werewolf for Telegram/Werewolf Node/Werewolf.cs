@@ -2186,7 +2186,7 @@ namespace Werewolf_Node
                     p.PlayerRole = IRole.Wolf;
                     p.Team = ITeam.Wolf;
                     p.HasDayAction = false;
-                    p.HasNightAction = false;
+                    p.HasNightAction = true;
                     p.RoleModel = 0;
                     var msg = GetLocaleString("BittenTurned") + "\n";
                     var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p).Where(x => !x.IsDead).ToList();
