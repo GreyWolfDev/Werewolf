@@ -1032,8 +1032,7 @@ namespace Werewolf_Node
                     rolesToAssign = GetRoleList(count, DbGroup.AllowCult != false, DbGroup.AllowTanner != false,
                         DbGroup.AllowFool != false);
                     rolesToAssign.Shuffle();
-                    if (!Chaos)
-                        rolesToAssign = rolesToAssign.Take(count).ToList();
+                    rolesToAssign = rolesToAssign.Take(count).ToList();
 
 
 
