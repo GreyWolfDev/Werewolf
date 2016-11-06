@@ -1269,16 +1269,14 @@ namespace Werewolf_Node
                 //    }
                 //}
 
-                ////check that CH exists if cult exist
-                //if (Players.Any(x => x.PlayerRole == IRole.Cultist) && Players.All(x => x.PlayerRole != IRole.CultistHunter))
-                //{
-                //    //fix dat shit
-                //    var ch = Players.First(x => x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.Wolf);
-                //    ch.PlayerRole = IRole.CultistHunter;
-                //    ch.HasDayAction = false;
-                //    ch.HasNightAction = true;
-                //    ch.Team = ITeam.Village;
-                //}
+                //check that CH exists if cult exist
+                if (Players.Any(x => x.PlayerRole == IRole.Cultist) && Players.All(x => x.PlayerRole != IRole.CultistHunter))
+                {
+                    //fix dat shit
+                    var ch = Players.First(x => x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.Wolf);
+                    ch.PlayerRole = IRole.CultistHunter;
+                    SetRoleAttributes();
+                }
 
 
                 foreach (var p in Players)
