@@ -1278,6 +1278,13 @@ namespace Werewolf_Node
                     SetRoleAttributes();
                 }
 
+				//make sure Sorcerer doesn't play on its own
+				if (Players.Any(x => x.PlayerRole == IRole.Sorcerer) && Players.All(x => !WolfRoles.Contains(x.PlayerRole))) {
+					// turn Sorcerer into Wolf
+					var sorc = Players.First(x => x.PlayerRole == IRole.Sorcerer);
+					sorc.PlayerRole = WolfRoles[Program.R.Next(3)];
+					SetRoleAttributes();
+				}
 
                 foreach (var p in Players)
                     p.OriginalRole = p.PlayerRole;
