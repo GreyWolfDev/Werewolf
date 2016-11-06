@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- maintained by @Laceygirl and @DingensX | contributed by @Stella211 and @BlackPika // version 05.11.2016 --> 
+<!-- maintained by @Laceygirl and @DingensX | contributed by @Stella211 and @BlackPika // version 06.11.2016 -->
+<!-- RIP Hauptmann. We miss you. * 05.11.2016 † 06.11.2016 -->
+
 <strings>
   <language name="Deutsch" base="Deutsch" variant="SFW" owner=""/>
   <string key="NotInGame">
@@ -383,7 +385,7 @@
   </string>
   <string key="NoAttack" >
     <value>Am nächsten Morgen sammeln sich die Dorfbewohner im Dorfzentrum, Gott sei Dank - es scheint vorherige Nacht keinen Angriff gegeben zu haben.</value>
-	<value>Es scheint, als hätten die Therapiesitzungen etwas gebracht: heute Nacht ist alles ruhig geblieben, und der Morgen birgt keine unliebsamen Überraschungen. Der Tag steht euch zur freien Verfügung - die tägliche Gruppensitzung fällt aus! (Trotzdem lebt immer noch das Böse unter euch, fühlt euch als nicht zu sicher!)</value>
+	<value>Es scheint, als hätten die Therapiesitzungen etwas gebracht: heute Nacht ist alles ruhig geblieben, und der Morgen birgt keine unliebsamen Überraschungen. Der Tag steht euch zur freien Verfügung - die tägliche Gruppensitzung fällt aus! (Trotzdem lebt immer noch das Böse unter euch, fühlt euch also nicht zu sicher!)</value>
   </string>
   <string key="CursedBitten" >
     <value>Du bist von den Wölfen gebissen worden. Als Verfluchter bist du nun ein Wolf 🐺 geworden!</value>
@@ -490,8 +492,7 @@
     <value>Oh nein! Der Gerber wurde gelyncht! Er gewinnt das Spiel, ihr Dummerchen.</value>
   </string>
   <string key="RemainingPlayersEnd">
-  <!-- Nicht implementiert? * -->
-    <value>Sollte diese Nachricht erscheinen, bitte an @Laceygirl weiterleiten! Vielen Dank :) | Verbleibende lebende Spieler, Rollen und Teams:</value>
+    <value>Verbleibende lebende Spieler, Rollen und Teams:</value>
   </string>
   <string key="CultistVotedConvert" >
     <!-- 0 - Voter's name -->
@@ -1262,7 +1263,7 @@
   
   <!-- Update 4.0-->
   <string key="RoleInfoMayor">
-  <value>Du bist der Hauptmann 🎖 Sobald du dich zu erkennen gibst, zählt deine Stimme bei der allabendlichen Abstimmung doppelt. Dein Herz schlägt dabei, natürlich, für die Dorfbewohner.</value>
+  <value>Du bist der Bürgermeister 🎖 Sobald du dich zu erkennen gibst, zählt deine Stimme bei der allabendlichen Abstimmung doppelt. Dein Herz schlägt zwar nicht besonders schnell, aber für die Dorfbewohner.</value>
   </string>
   <string key="RoleInfoPrince">
     <value>Du bist der Prinz 👑! Dein Palastleben ist ziemlich langweilig und so mischst du dich täglich unter deine Untergebenen. Sollte das Volk dich lynchen, zeigst du ihnen dein Adelswappen und entgehst so dem Tod.</value>
@@ -1274,7 +1275,7 @@
     <value>Du bist der Zauberer 🔮, fühlst dich aber eher zur dunklen Magie hingezogen. Nachts kannst auf je eine Person deine Fähigkeiten anwenden, um so die Wölfe oder den Seher ausfindig zu machen: das Rudel weiß zwar nichts von seinem Glück, aber du bist ein Verbündeter und gewinnst mit ihnen.</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value>Du bist der Schmied ⚒ Du hast von deinen Aufträgen immer noch ein bisschen Silberstaub übrig, dass du einmal in deinem Leben einsetzen kannst, um die Wölfe abzuwehren. Du kannst dich tagsüber entscheiden, ihn im Dorf zu verteilen: alle im Dorf werden dann deutlich ruhiger schlafen.</value>
+    <value>Du bist der Schmied ⚒ Du hast von deinen Aufträgen immer noch ein bisschen Silberstaub übrig, den du einmal in deinem Leben einsetzen kannst, um die Wölfe abzuwehren. Du kannst dich tagsüber entscheiden, ihn im Dorf zu verteilen: alle im Dorf werden dann deutlich ruhiger schlafen.</value>
   </string>
   <string key="RoleInfoAlphaWolf">
     <value>Du bist der Rudelführer 🐺⚡️, die Wiege allen Übels. Dein Biss verbreitet den Virus, der Menschen in Werwölfe verwandelt. Wenn das Rudel deiner Stimme folgt, besteht die 20%ige Chance, dass euer Opfer, anstatt zu sterben, infiziert wird und in der darauffolgenden Nacht zum Wolf wird!</value>
@@ -1289,10 +1290,11 @@
     <value>Du versuchst auszumachen, was {0} ist, kannst die Profession aber nicht eindeutig bestimmen. Zwei Rollen kannst du aber mit Sicherheit ausschließen: Seher und Wolf. Die hättest du nämlich erkannt.</value>
   </string>
   <string key="MayorReveal">
-    <value>{0} drängelt sich ins Rampenlicht und hält sein wiedergefunden Hauptmannsabzeichen in die Höhe: er hat also nicht nur angegeben, sondern meint es ernst damit. Dadurch, dass seine Autorität nun bestätigt ist und ihr euch von seinen guten Absichten überzeugen konntet, zählt bei der abendlichen Abstimmung nun doppelt.</value>
+  <!-- und ihr euch von seinen guten Absichten überzeugen konntet, -->
+    <value>Als wäre es ihm gerade erst wieder eingefallen, drängelt sich auf einmal {0} ins Rampenlicht, schwafelt etwas von Verantwortung und hält dabei irgendeine Urkunde in die Höhe. Lesen kann es zwar niemand, aber ihr erkennt das Siegel darauf: er ist der Bürgermeister. Dadurch, dass seine Autorität nun bestätigt ist, zählt seine Stimme bei der abendlichen Abstimmung nun doppelt.</value>
   </string>
   <string key="AskMayor">
-    <value>Wenn du verkünden willst, dass du der Hauptmann bist, klick einfach auf den Button. Wann immer du willst.</value>
+    <value>Wenn du verkünden willst, dass du der Bürgermeister bist, klick einfach auf den Button. Wann immer du willst.</value>
   </string>
   <string key="Reveal">
     <value>Zeige dich!</value>
@@ -1304,7 +1306,7 @@
     <value>Während der Rest des Dorfes immer noch die Geschehnisse der Nacht diskutiert, bemerken sie plötzlich {0}, der Silberstaub im Dorf verteilt. Alle atmen erleichtert auf: die Wölfe werden sich heute Nacht fernhalten müssen, und ihr könnt euch alle einmal eine ordentliche Mütze Schlaf gönnen.</value>
   </string>
   <string key="Mayor">
-    <value>der Hauptmann 🎖</value>
+    <value>der Bürgermeister 🎖</value>
   </string>
   <string key="Prince">
     <value>der Prinz 👑</value>
@@ -1335,7 +1337,7 @@
     <value>Es wird Nacht, und du spürst, wie sich alles in dir langsam verwandelt... und jetzt bist du ein Werwolf! 🐺</value>
   </string>
   <string key="AboutMayor">
-    <value>Als Hauptmann 🎖 verbringst du dein Leben getarnt als einfacher Dorfbewohner, bis zu dich dazu entscheidest, deine wahre Profession öffentlich zu verkünden. Von diesem Moment an zählt deine Stimme beim Lynchen doppelt so viel wie eine normale Stimme.</value>
+    <value>Als Bürgermeister 🎖 verbringst du dein Leben getarnt als einfacher Dorfbewohner, bis zu dich dazu entscheidest, deine wahre Profession öffentlich zu verkünden. Von diesem Moment an zählt deine Stimme beim Lynchen doppelt so viel wie eine normale Stimme.</value>
   </string>
   <string key="AboutPrince">
     <value>Der Prinz 👑 ist ein schillernder Dorfbewohner. (Oder auch nicht. Eigentlich wohnt er ja in einem Palast, aber... das Aristokratenleben ist wohl auch nicht mehr, was es mal war.) Sollte das Dorf sich blind gegen ihn auflehnen, enthüllt er, bevor sie ihn in den Tod schicken, seinen königlichen Ring, der seine Abstammung beweist: seine Rolle ist dann zwar jedem bekannt, aber er überlebt. Er kann nur in der Nacht, oder durch das Gewehr des Jägers getötet werden.</value>
