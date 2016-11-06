@@ -1775,7 +1775,17 @@ namespace Werewolf_Node
                                     Send(GetLocaleString("DGToWolf", $"{p.GetName()}"), w.Id);
                                     teammates += $"{w.GetName()}" + ", ";
                                 }
-                                Send(GetLocaleString("DGTransformToWolf", rm.GetName(), teammates), p.Id);
+                                switch (p.PlayerRole) {
+                                    case IRole.AlphaWolf:
+                                        Send(GetLocaleString("DGTransformToAlpha", rm.GetName(), teammates), p.Id);
+                                        break;
+                                    case IRole.WolfCub:
+                                        Send(GetLocaleString("DGTransformToWolfCub", rm.GetName(), teammates), p.Id);
+                                        break;
+                                    case IRole.Wolf:
+                                        Send(GetLocaleString("DGTransformToWolf", rm.GetName(), teammates), p.Id);
+                                        break;
+                                }
                                 break;
                             case IRole.Tanner:
                                 p.Team = ITeam.Tanner;
