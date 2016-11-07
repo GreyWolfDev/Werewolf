@@ -2199,6 +2199,7 @@ namespace Werewolf_Node
                     Send(msg, p.Id);
                 }
             }
+            CheckForGameEnd();
             var nightTime = (DbGroup.NightTime ?? Settings.TimeNight);
             if (GameDay == 1)
                 if (Players.Any(x => new[] { IRole.Cupid, IRole.Doppelgänger, IRole.WildChild }.Contains(x.PlayerRole)))
