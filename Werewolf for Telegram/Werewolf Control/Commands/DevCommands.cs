@@ -1036,7 +1036,7 @@ namespace Werewolf_Control
             ZipFile.CreateFromDirectory(LogPath, path);
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("languages.zip", fs));
+            Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
         }
 
 

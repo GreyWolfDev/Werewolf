@@ -3026,7 +3026,7 @@ namespace Werewolf_Node
                 p.DiedLastNight = false;
                 p.Choice = 0;
                 p.Votes = 0;
-                if (p.Bitten)
+                if (p.Bitten &! p.IsDead)
                 {
                     Send(GetLocaleString("PlayerBitten"), p.Id);
                 }
