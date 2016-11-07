@@ -173,7 +173,7 @@ namespace Werewolf_Control.Helpers
                 Api.StartReceiving();
             }
             var e = receiveErrorEventArgs.ApiRequestException;
-            using (var sw = new StreamWriter("apireceiveerror.log", true))
+            using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
             {
                 sw.WriteLine($"{DateTime.Now} {e.ErrorCode} - {e.Message}\n{e.Source}");
             }

@@ -38,7 +38,7 @@ namespace Werewolf_Control
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
                 //drop the error to log file and exit
-                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "error.log"), true))
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
                     sw.WriteLine(DateTime.Now);

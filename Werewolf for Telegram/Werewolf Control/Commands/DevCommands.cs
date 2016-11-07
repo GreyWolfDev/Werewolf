@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
+using File = System.IO.File;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -994,6 +996,42 @@ namespace Werewolf_Control
                 }
             }
         }
+
+        [Attributes.Command(Trigger = "clearlogs", DevOnly = true)]
+        public static void ClearLogs(Update u, string[] args)
+        {
+            var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
+            var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
+            foreach (var file in files)
+            {
+                try
+                {
+                    System.IO.File.Delete(LogPath + file);
+                }
+                catch
+                {
+                    // ignored
+                }
+            }
+        }
+
+        [Attributes.Command(Trigger = "getlogs", DevOnly = true)]
+        public static void GetLogs(Update u, string[] args)
+        {
+            var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
+
+            var path = Path.Combine(Bot.RootDirectory, "errors.zip");
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            ZipFile.CreateFromDirectory(LogPath, path);
+            //now send the file
+            var fs = new FileStream(path, FileMode.Open);
+            Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("languages.zip", fs));
+        }
+
+
     }
 
 
