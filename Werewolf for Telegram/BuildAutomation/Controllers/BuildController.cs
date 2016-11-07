@@ -35,7 +35,7 @@ namespace BuildAutomation.Controllers
                         "Woot!  New build has been released, and is staged on the server.  Do you want me to copy the files and update?";
 
                     var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
-                    var result = bot.SendTextMessage(-1001094155678, msg,
+                    var result = bot.SendTextMessage(-1001077134233, msg,
                         replyMarkup:
                             new InlineKeyboardMarkup(new[]
                             {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")}))
