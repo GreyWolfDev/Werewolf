@@ -36,7 +36,7 @@
 		<value>Quantidade mínima de digiescolhidos não foi atingida, cancelando a partida no Digimundo! Todos voltarão ao mundo real.</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>A partida está iniciando, por favor aguarde enquanto o Digimundo recarrega os seus dados, e o seu digiespirito é iniciado.</value>
+		<value>A partida está iniciando, por favor aguarde enquanto o Digimundo recarrega os seus dados, e seleciona o seu digiespirito.</value>
 	</string>
 	<string key="BannedForExploit">
 		<value>{0} está banido por tentar explorar um erro (não são permitidos apelidos iniciados por /). Na próxima, siga as regras dos deuses digimon!</value>
@@ -232,7 +232,7 @@
 		<value >Vademon é encontrado com sua bola de cristal  {0} está morto.  </value>
 	</string>
 	<string key="DefaultEaten" >
-		<value>Um Burgamon foi visto sendo devorado por um Weregarurumon, mas ninguém soube identificar qual Weregarurumon, já que era noite. {0} está morto. NOMNOMNOMNOM {1}</value>
+		<value>Um digimon foi visto sendo devorado por um Weregarurumon, mas ninguém soube identificar qual Weregarurumon, já que era noite. {0} está morto. NOMNOMNOMNOM {1}</value>
 	</string>
 	<string key="HunterKilledCultist">
 		<value>Knightmon cumpriu o seu trabalho ontem a noite. Ele purificou um dos escravos de MaloMyotismon. {0} voltou pra cidade dos começos...</value>
@@ -434,7 +434,7 @@
 		<value>Você pertence a Tripulação de Olegmon 👷, e participa de uma sociedade secreta de piratas. Você é a favor da Vila.  Se houver outros piratas, você saberá quem são. </value>
 	</string>
 	<string key="MasonEaten">
-		<value>À medida que todos se levantam durante a manhã, o corpo de {0} é encontrado num templo local, com um esquadro, um compasso e uma estrela de cinco pontas à sua volta. Um dos maçons está morto.</value>
+		<value>À medida que todos se levantam durante a manhã, restos de uma perna de pau e tapa olho são encontrados próximo ao convés do barco pirata. {0}, um dos piratas da Tripulação de Olegmon está morto está morto.</value>
 	</string>
 	<string key="MasonTeam">
 		<value>Os piratas são: {0}</value>
@@ -462,14 +462,14 @@
 		<value>era</value>
 	</string>
 	<string key="GenericDeathNoReveal">
-		<value>À medida que todos se levantam e saem de casa durante a manhã, percebem a ausência de {0}... Quando checam sua casa, percebem que estava com vários móveis des.ruídos. Uma enorme bagunça!</value>
+		<value>À medida que todos se levantam e saem de casa durante a manhã, percebem a ausência de {0}... Quando checam sua casa, percebem que estava com vários móveis destruídos. Uma enorme bagunça!</value>
 	</string>
 	<string key="MasonConverted">
-		<value>Estranho.... {0} não compareceu no Navio esta manhã....</value>
+		<value>Estranho.... {0} não compareceu no barco pirata esta manhã....</value>
 	</string>
 	<!-- new string May 16 2016-->
 	<string key="FleeDisabled">
-		<value>Você tenta fugir, mas os rumores de que há Weregarurumons, fizeram você desistir da ideia. Já que, se correr o bicho pega!</value>
+		<value>Você tenta fugir, mas os rumores de que há Weregarurumons nas saidas da Vila fizeram você desistir da ideia. SE CORRER, O BICHO PEGA!</value>
 	</string>
 	<string key="IsDead">
 		<!-- used when gunner shoots a player -->
@@ -992,7 +992,7 @@
 		<value>Você é MetalGarurumon ⚡️, um digimau, e líder dos Weregarurumons. Você é um dos Digimaus capazes de decidir quando alguém deverá ser infectado pela Engrenagem Negra. Cada noite, você vai escolher um digimon para atacar e tomar seus dados, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de você decidir transformá-lo em um Weregarurumon.</value>
 	</string>
 	<string key="RoleInfoWolfCub">
-		<value>Você é Cutemon 🐶, e foi adotado pelos digimaus devido a sua tamanha fofura. _cuti cuti_ Ninguém resiste a sua fofura! Se você morrer, os Weregarurumons entrarão em fúria devido a uma ordem superior, e darão duas vitimas no time da Vila. Você é do time dos Weregarurumons.</value>
+		<value>Você é Cutemon 🐶, e foi adotado pelos digimaus devido a sua tamanha fofura. _cuti cuti_ Ninguém resiste a sua fofura! Se você morrer, os Weregarurumons entrarão em fúria devido a uma ordem superior, e darão duas vitimas no time da Vila. E sempre que você estiver sozinho, você irá digievoluir para Gazimon, e continuar o serviço (mas não se preocupe, é apenas uma digievolução temporária, a sua fofura irá continuar!) Você é do time dos Weregarurumons.</value>
 	</string>
 	<string key="PrinceLynched">
 		<value>A Vila se prepara para reiniciar {0}, que grita, "Esperem! Eu sou o PrinceMamemon, príncipe do reino que há tantos anos deu suporte a essa vila sem pedir nada em troca. Esse anel real, com o selo do rei, prova isso. Toda noite eu estou rodeado de criados, então não posso ser um digimau." Se sentindo tolos, os digimons vão para suas casas. Ninguém será reiniciado hoje.</value>
@@ -1064,6 +1064,18 @@
 		<value>MetalGarurumon ⚡ é um digimau, líder dos Weregarurumons infectados. Quando vivo, a sua vítima tem 20% você decidir infectá-lo com a Engrenagem Negra, isso se foi nela que você tinha votado.</value>
 	</string>
 	<string key="AboutWolfCub">
-		<value>Cutemon 🐶 foi adotado pelos digimaus devido a tamanha fofura dele. _cuti cuti_ Ninguém resiste a fofura de Cutemon! Se ele morrer, os Weregarurumons entrarão em fúria devido a uma ordem superior, e darão duas vitimas ao time da Vila. Cutemon é do time dos Weregarurumons.</value>
+		<value>Cutemon 🐶 foi adotado pelos digimaus devido a tamanha fofura dele. _cuti cuti_ Ninguém resiste a fofura de Cutemon! Se ele morrer, os Weregarurumons entrarão em fúria devido a uma ordem superior, e darão duas vitimas ao time da Vila. E sempre que ele estiver sozinho, irá digievoluir para Gazimon, e continuar o serviço (mas não se preocupe, é apenas uma digievolução temporária, a fofura dele irá continuar!). Cutemon é do time dos Weregarurumons.</value>
 	</string>
+	
+	  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu. E você decidiu dar continuidade ao trabalho dele. Sendo um DIGIMAU! Você se transforma em Metalgarurumon.  O seu bando (se tiver) são: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu. E você se transforma em Cutemon, com sua tamanha fofura, você é logo aceito no bando Weregarurumon.  O seu bando (se tiver) são: {1}</value>
+  </string>
 </strings>
