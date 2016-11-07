@@ -13,6 +13,7 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Task = System.Threading.Tasks.Task;
 
@@ -26,8 +27,9 @@ namespace BuildAutomation.Controllers
             try
             {
                 var obj = JsonConvert.DeserializeObject<ReleaseEvent>(Request.Content.ReadAsStringAsync().Result);
-                var validKey = ConfigurationManager.AppSettings.Get("VSTSSubId");
-                if (obj.subscriptionId == validKey) //can't have random people triggering this!
+                var releaseKey = ConfigurationManager.AppSettings.Get("VSTSReleaseId");
+                var buildKey = ConfigurationManager.AppSettings.Get("VSTSBuildId");
+                if (obj.subscriptionId == releaseKey) //can't have random people triggering this!
                 {
                     string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
 
@@ -40,6 +42,14 @@ namespace BuildAutomation.Controllers
                             new InlineKeyboardMarkup(new[]
                             {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")}))
                         .Result;
+                }
+
+                if (obj.subscriptionId == buildKey)
+                {
+                    string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+                    var msg = obj.message.markdown;
+                    var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                    bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Markdown);
                 }
             }
             catch (Exception e)
