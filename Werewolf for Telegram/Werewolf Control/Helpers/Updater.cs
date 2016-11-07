@@ -76,31 +76,41 @@ namespace Werewolf_Control.Helpers
                     msg += "\nCopied Control files for " + b.BotDirSuffix;
                     Bot.ReplyToCallback(query, msg);
                     //now find the oldest node folder
-                    Version oldVersion = new Version(99,99);
-                    var oldest = "";
+                    
+                    var copied = false;
+                    
                     foreach (
                         var d in Directory.GetDirectories(botBaseDir + b.BotDirSuffix, "*Node*"))
                     {
                         //get the version of werewolf
-                        var file = Directory.GetFiles(d, "Werewolf Node.exe").First();
-                        Version fvi = Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
-                        if (fvi < oldVersion)
+                        //copy the node files to it
+                        foreach (var file in Directory.GetFiles(nodeDir + b.BuildName))
                         {
-                            oldest = d;
-                            oldVersion = fvi;
+                            var fName = Path.GetFileName(file);
+                            try
+                            {
+                                System.IO.File.Copy(file, Path.Combine(d, fName), true);
+                            }
+                            catch (Exception e)
+                            {
+                                if (e.Message.Contains("because it is being used by another process")) //nodes in this folder are still active D:
+                                {
+                                    copied = false;
+                                    break;
+                                }
+                                else
+                                {
+                                    throw;
+                                }
+                            }
+                            copied = true;
+                            msg += "\nCopied Node files to " + d.Substring(d.LastIndexOf("\\") + 1);
+                            Bot.ReplyToCallback(query, msg);
                         }
                     }
-                    if (String.IsNullOrEmpty(oldest))
-                        throw new Exception("Could not determine oldest Node directory :(");
-                    
-                    //copy the node files to it
-                    foreach (var file in Directory.GetFiles(nodeDir + b.BuildName))
-                    {
-                        var fName = Path.GetFileName(file);
-                        System.IO.File.Copy(file, Path.Combine(oldest, fName), true);
-                    }
-                    msg += "\nCopied Node files to " + oldest.Substring(oldest.LastIndexOf("\\") + 1);
-                    Bot.ReplyToCallback(query, msg);
+
+                    if (!copied)
+                        throw new Exception("Unable to copy Node files to a directory.");
                 }
 
 
