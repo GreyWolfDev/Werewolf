@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using BuildAutomation.Models;
+using BuildAutomation.Models.Build;
+using BuildAutomation.Models.Release;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -33,21 +35,28 @@ namespace BuildAutomation.Controllers
                 {
                     string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
 
-                    var msg =
-                        "Woot!  New build has been released, and is staged on the server.  Do you want me to copy the files and update?";
+                    var msg = obj.detailedMessage.markdown;
+                    InlineKeyboardMarkup menu = null;
+                    if (obj.resource.environment.status == "succeeded")
+                    {
+                        msg += "\nDo you want me to copy the files and update?";
+                        menu = new InlineKeyboardMarkup(new[]
+                        {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")});
+                    }
 
                     var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
-                    var result = bot.SendTextMessage(-1001077134233, msg,
-                        replyMarkup:
-                            new InlineKeyboardMarkup(new[]
-                            {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")}))
-                        .Result;
+                    bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
                 }
 
                 if (obj.subscriptionId == buildKey)
                 {
+                    var build = JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
                     string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
-                    var msg = obj.message.markdown;
+                    var msg = obj.message.markdown + "\n";
+                    var urlPre = "https://github.com/parabola949/Werewolf/commit/";
+                    msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(7)}]({urlPre + build.resource.sourceVersion})";
+                    if (build.resource.result == "succeeded")
+                        msg += "\nRelease is now being created, you will be notified when it is completed.";
                     var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
                     bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Markdown);
                 }

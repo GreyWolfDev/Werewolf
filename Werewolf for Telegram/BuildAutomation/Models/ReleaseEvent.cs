@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BuildAutomation.Models
+namespace BuildAutomation.Models.Release
 {
-
 
     public class ReleaseEvent
     {
