@@ -1001,7 +1001,7 @@ namespace Werewolf_Control
         public static void ClearLogs(Update u, string[] args)
         {
             var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
-            var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
+            var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", "getUpdates.log"};
             foreach (var file in files)
             {
                 try
@@ -1010,7 +1010,15 @@ namespace Werewolf_Control
                 }
                 catch
                 {
-                    // ignored
+                    Thread.Sleep(50);
+                    try
+                    {
+                        System.IO.File.Delete(LogPath + file);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
                 }
             }
         }
