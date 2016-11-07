@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--
    Translated by / Traduzido por:
-       @Nical, @ayylimao, @caroulspies, @L0st1d0l, @Sylverzinhu, @Bakato, @BlackTailmon, @AznableType0, @Flpcrd, @Chysalys, @VladimirI,@jr750ac
+       @Nical, @ayylimao, @caroulspies, @L0st1d0l, @Sylverzinhu, @Bakato, @BlackTailmon, @AznableType0, @Flpcrd, @Chysalys, @VladimirI, @jr750ac, @RyoAkiyama
    Currently being translated by / Atualmente sendo traduzido por:
-   @Nical, @ayylimao, @caroulspies, @L0st1d0l, @Sylverzinhu, @Bakato, @BlackTailmon, @AznableType0, @Flpcrd, @Chysalys, @VladimirI,@jr750ac
+   @Nical, @ayylimao, @caroulspies, @L0st1d0l, @Sylverzinhu, @Bakato, @BlackTailmon, @AznableType0, @Flpcrd, @Chysalys, @VladimirI,@jr750ac, @RyoAkiyama
 		
-	   (Última edição: 05/11/2016 
-	   por: @Flpcrd/11/2016, by @Nical, @ayylimao, @caroulspies, @L0st1d0l, @Sylverzinhu, @Bakato, @BlackTailmon, @AznableType0, @Flpcrd, @Chysalys,@VladimirI,@jr750ac)
+	   (VERSÃO ATUAL: BETA 2.0
+	   Última edição em 05/11/2016, por: @Nical, @caroulspies, @L0st1d0l, @Sylverzinhu, @BlackTailmon, @jr750ac)
 -->
 <strings>
 	<language name="Português Digimon" base="Português" variant="Digimon"/>
@@ -14,11 +14,11 @@
 		<value>Você não parece estar em uma partida agora...</value>
 	</string>
 	<string key="PlayerStartedGame" isgif="true">
-		<value>{0} iniciou uma nova partida! Use /join para entrar no Digimundo... e provavelmente ter os seus dados capturados!</value>
-		<value>Uma nova partida foi iniciada por {0}! Use /join para ter seus dados roubados!</value>
+		<value>{0} iniciou uma nova partida! \nUse /join para entrar no Digimundo... e provavelmente ter os seus dados capturados!</value>
+		<value>Uma nova partida foi iniciada por {0}! \nUse /join para ter seus dados roubados!</value>
 	</string>
 	<string key="PlayerStartedChaosGame" isgif="true">
-		<value>{0} iniciou um jogo caótico. GRAÇAS A ELE O DIGIMUNDO ESTÁ UM CAOS!!!</value>
+		<value>{0} iniciou um jogo caótico. GRAÇAS A ELE O DIGIMUNDO ESTÁ UM CAOS!!! \nUse /join para entrar nessa bagunça!</value>
 	</string>
 	<string key="NoJoinGameRunning">
 		<value>Você não pode entrar agora, digiescolhido! O jogo no Digimundo já começou. Use /nextgame para receber uma mensagem no privado quando uma nova partida for iniciada!</value>
@@ -84,10 +84,10 @@
 		<value>{0} votou para reiniciar {1}</value>
 	</string>
 	<string key="IdleKill">
-		<value>{0} não votou por 2 noites seguidas. OH NÃO! YGGDRASIL CONSIDEROU ISSO UMA OFENSA! Y(a).\n{1}</value>
+		<value>{0} não votou por 2 noites seguidas. OH NÃO! OS DEUSES DIGIMON CONSIDERARAM ISSO UMA OFENSA! \n{1}</value>
 	</string>
 	<string key="TraitorTurnWolf">
-		<value>Você traiu a Vila, e digievoluiu para Weregarurumon.</value>
+		<value>Os Weregarurumons estão mortos. E você por ser um digimau, não pode desistir agora. Você trai a Vila, e digievolui para Weregarurumon. Você agora é um Weregarurumon.</value>
 	</string>
 	<string key="ChoiceAccepted">
 		<value>Opção aceita</value>
@@ -117,7 +117,7 @@
 		<value>Você é um brinquedo. E seu único desejo é fazer todos se divertirem. Você decide visitar alguém para brincar. Com quem você gostaria de brincar? </value>
 	</string>
 	<string key="AskSee">
-		<value>Wisemon trabalha muito com o seu livro, então você pode escolher alguém para estudá-lo, e descobrir se ele é ou não um digimau. Quem você gostaria de estudar? </value>
+		<value>Você pode escolher alguém para estudar. Quem você gostaria de estudar? </value>
 	</string>
 	<string key="AskGuard">
 		<value>Os digimaus estão a solta. É seu dever proteger alguém. Quem você gostaria de proteger?</value>
@@ -155,7 +155,7 @@
 		<value>Você é HolyAngemon 👼, você sabe que os digimaus estão a espreita, então sente a obrigação de defender a vila. Durante a noite, você poderá escolher alguém para proteger.  Porém, se você escolher o errado, pode acontecer o pior.</value>
 	</string>
 	<string key="RoleInfoGunner">
-		<value>Você é a Revolmon 🔫.  Você possui 2 Bullets of Justice para ajudar a Vila.  Durante o dia, você pode gastar uma em alguém. Todos ouvirão os tiros e saberão quem é você.</value>
+		<value>Você é Revolmon 🔫.  Você possui 2 Bullets of Justice para ajudar a Vila.  Durante o dia, você poderá gastar uma em alguém. Todos ouvirão os tiros e saberão que você é Revolmon.</value>
 	</string>
 	<string key="RoleInfoHarlot">
 		<value>Você é Teddymon 💋, o brinquedo incansável da vila. Você nunca descansa, só pensa em brincar. Durante a noite, você poderá escolher alguém para brincar, mas cuidado, poderá ser um digimau.  Se você decidir brincar com alguém e os Weregarurumons tentarem te devorar na sua casa, você irá sobreviver (já que você não estava lá).</value>
@@ -185,7 +185,7 @@
 		<value >Você é Wizardmon 🙇.  Caso Wisemon morra, você irá digievoluir, e tomar seu lugar.</value>
 	</string>
 	<string key="RoleInfoCultist" >
-		<value >Oh não! MaloMyotismon jogou a Semente das Trevas em todos os digiescolhidos, e você teve a sua semente ativada. Agora você é um Escravo de MalomMotismon 👤.  Durante a noite, você poderá escolher alguém para ter a sua semente ativada.   Se todos os jogadores restantes ao final do jogo forem Escravos das Trevas, MaloMyotismon triunfará!</value>
+		<value >Oh não! MaloMyotismon jogou a Semente das Trevas em todos os digimons, e você teve a sua semente ativada. Agora você é um Escravo de MalomMotismon 👤.  Durante a noite, você poderá escolher alguém para ter a sua semente ativada.   Se todos os jogadores restantes ao final do jogo forem Escravos das Trevas, MaloMyotismon triunfará!</value>
 	</string>
 	<string key="RoleInfoCultistHunter" >
 		<value >Você é Knightmon. É provável que MaloMyotismon esteja transformando algumas pessoas em seus Escravos. E você, deve proteger a Vila!  Durante a noite você poderá escolher alguém para purificar.  Se ele for Escravo de MaloMyotismon, será morto.  Caso os Escravos de MaloMyotismon tentem ativar a semente impregnada em você, falhará, e o Escravo mais recente morrerá.</value>
@@ -200,20 +200,20 @@
 		<value >Amanheceu na Vila.  Vocês têm agora {0} segundos para fazer suas acusações / defesas / discutir.</value>
 	</string>
 	<string key="NightTime" >
-		<value >Caiu a noite.  Todos vão dormir bastante cansados.  Digiescolhidos: vocês têm {0} segundos para usar suas ações!</value>
+		<value >Caiu a noite.  Todos vão dormir bastante cansados.  Digimons: vocês têm {0} segundos para usar suas ações!</value>
 	</string>
 	<string key="LynchKill" >
 		<value >Os digimons votaram, e em meio a toda a confusão, {0} foi reiniciado. {1}</value>
 	</string>
 	<string key="LynchTie" >
-		<value >Houve uma grande confusão. E ninguém chegou a uma decisão final sobre quem reiniciar. Mesmo em meio ao cansaço, todos voltam para suas casas....</value>
+		<value >Houve uma grande confusão. E ninguém chegou a uma decisão final sobre quem reiniciar. Mesmo em meio ao cansaço, todos voltam para suas casas...</value>
 	</string>
 	<string key="NoLynchVotes" >
-		<value >Alguma coisa está errada, ninguém votou!  Ninguém será reiniciado hoje.....</value>
+		<value >Alguma coisa está errada, ninguém votou!  Ninguém será reiniciado hoje...</value>
 	</string>
 	<string key="DetectiveEaten" >
 		<value >Os digimons se reúnem durante a manhã, mas ninguém consegue encontrar {0} entre eles.  Eles encontram um distintivo enferrujado no chão da praça da Vila. {0} Justimon teve os seus dados roubados!</value>
-		<value >Oh não! Justimon atacado por Weregarurumon ontem a noite, e foi derrotado. {0} está morto!</value>
+		<value >Oh não! Justimon foi atacado por Weregarurumon ontem a noite, e foi derrotado. {0} está morto!</value>
 	</string>
 	<string key="GuardianEaten" >
 		<value >Oh não. Durante a noite, os Weregarurumons atacaram HolyAngemon de surpresa, e seus dados foram rapidamente capturados. {0} está morto. Quem protegerá a Vila agora? </value>
@@ -229,7 +229,7 @@
 		<value >Oh não! O BAR ESTÁ PEGANDO FOGO!!!  Após apagarem o incêndio, Nanimon não é encontrado. {0} está morto.</value>
 	</string>
 	<string key="FoolEaten" >
-		<value >Vademon é encontrado com sua bola de cristal  {0} está morto.  </value>
+		<value >Durante o dia, os digimons decidiram ir até a casa de Vademon. Uma bola de cristal é encontrada quebrada no chão da casa de Vademon. {0} está morto.  </value>
 	</string>
 	<string key="DefaultEaten" >
 		<value>Um digimon foi visto sendo devorado por um Weregarurumon, mas ninguém soube identificar qual Weregarurumon, já que era noite. {0} está morto. NOMNOMNOMNOM {1}</value>
@@ -305,7 +305,7 @@
 		<value >Teddymon visita Revolmon durante a noite para brincar. Mas brincar de Roleta Russa não foi muito inteligente. Teddymon, {0}, está morto. {1} </value>
 	</string>
 	<string key="DefaultShot" >
-		<value >De repente, Revolmon decide entrar em ação.  Os digimons se assustam ao ver {0} em batalha acertando um Bullet of Justice certeiro em {1}. {2}.</value>
+		<value >De repente, Revolmon decide entrar em ação.  Os digimons se assustam ao ver {0} em batalha acertando um Bullet of Justice certeiro em {1}, {2}.</value>
 	</string>
 	<string key="WolfWins" isgif="true" >
 		<value >Weregarurumon venceu, logo os digimaus também! Todos tiveram os seus dados roubados...</value>
@@ -320,7 +320,7 @@
 		<value >Ah não! Vocês reiniciaram Leomon, logo ele morreu de novo.  E com isso ele venceu o jogo! </value>
 	</string>
 	<string key="RemainingPlayersEnd">
-		<value>Digiescolhidos restantes, papéis e lado:</value>
+		<value>Digimons restantes, papéis e lado:</value>
 	</string>
 	<string key="CultistVotedConvert" >
 		<value >{0} votou para converter {1}</value>
@@ -329,10 +329,10 @@
 		<value>{0} foi enviado para ativar a Semente das Trevas impregnada em você. {1}... Entretanto, ele era Knightmon! {0} foi purificado!</value>
 	</string>
 	<string key="CultHunterKilledCultVisit">
-		<value>{0} foi à sua casa na noite passada, pronto para ativar a Semente das Trevas impregnada em você....  Mas você é Knightmon, logo o purificou. Um Escravo voltou para a Cidade dos Começos... {1} restante(s)!</value>
+		<value>{0} foi à sua casa na noite passada, pronto para ativar a Semente das Trevas impregnada em você...  Mas você é Knightmon, logo o purificou. Um Escravo voltou para a Cidade dos Começos... {1} restante(s)!</value>
 	</string>
 	<string key="CultConvertYou">
-		<value>Você teve a sua Semente das Trevas ativada, e agora é um Escravo de MaloMyotismon.  Durante a noite, você poderá tentar ativar a Semente das Trevas de outros digiescolhido.</value>
+		<value>Você teve a sua Semente das Trevas ativada, e agora é um Escravo de MaloMyotismon.  Durante a noite, você poderá tentar ativar a Semente das Trevas de outros digimons.</value>
 	</string>
 	<string key="CultTeam">
 		<value>Escravos de MaloMyotismon: {0}</value>
@@ -424,7 +424,7 @@
 		<value>🙂 VIVO</value>
 	</string>
 	<string key="PlayersAlive">
-		<value>Digiescolhidos vivos</value>
+		<value>Digimons vivos</value>
 	</string>
 	<!-- New strings 4 MAY 2016-->
 	<string key="Mason">
@@ -434,7 +434,7 @@
 		<value>Você pertence a Tripulação de Olegmon 👷, e participa de uma sociedade secreta de piratas. Você é a favor da Vila.  Se houver outros piratas, você saberá quem são. </value>
 	</string>
 	<string key="MasonEaten">
-		<value>À medida que todos se levantam durante a manhã, restos de uma perna de pau e tapa olho são encontrados próximo ao convés do barco pirata. {0}, um dos piratas da Tripulação de Olegmon está morto está morto.</value>
+		<value>À medida que todos se levantam durante a manhã, restos de uma perna de pau e tapa olho são encontrados próximo ao convés do barco pirata. {0}, um dos Tripulantes de Olegmon está morto.</value>
 	</string>
 	<string key="MasonTeam">
 		<value>Os piratas são: {0}</value>
@@ -465,7 +465,7 @@
 		<value>À medida que todos se levantam e saem de casa durante a manhã, percebem a ausência de {0}... Quando checam sua casa, percebem que estava com vários móveis destruídos. Uma enorme bagunça!</value>
 	</string>
 	<string key="MasonConverted">
-		<value>Estranho.... {0} não compareceu no barco pirata esta manhã....</value>
+		<value>Estranho... {0} não compareceu no barco pirata esta manhã...</value>
 	</string>
 	<!-- new string May 16 2016-->
 	<string key="FleeDisabled">
@@ -535,7 +535,7 @@
 		<value>Você é MarineAngemon 🏹. Você pode escolher dois digimons para se apaixonarem. Se um deles morrer, o outro morrerá de tristeza.</value>
 	</string>
 	<string key="RoleInfoDoppelganger">
-		<value>Você é Metamormon 🎭. Você é um Digimon capaz de assumir a forma de qualquer Digimon! Escolha um digiescolhido, quando ele morrer você assumirá a role dele no jogo.</value>
+		<value>Você é Metamormon 🎭. Você é um Digimon capaz de assumir a forma de qualquer Digimon! Escolha um digimon, quando ele morrer você assumirá a role dele no jogo.</value>
 	</string>
 	<string key="RoleInfoHunter">
 		<value>Você é Beelzebumon 🎯! Você é um digimon demônio que sempre preferiu a solidão (e inclusive, deixará todos em paz se respeitarem) e é apaixonado pelas suas Pistolas Gêmeas! Se você for ferido gravemente, poderá escolher alguém para usar seu Quick Shot!</value>
@@ -544,7 +544,7 @@
 		<value>Você é Piedmon. Você é um egoísta, estranho, sangue frio e cruel psicopata. Toda noite você poderá escolher um digimon para matar e aumentar o seu número de mortos.</value>
 	</string>
 	<string key="CupidChosen">
-		<value>Você foi atingido pelo poder de MarineAngemon. A memória de {0} nunca deixará a sua memória. Seu objetivo é que os dois sobrevivam. Se um de vocês morrer, o outro não aguentará viver sozinho.</value>
+		<value>MarineAngemon atingiu você com Ocean Love. Você nunca mais esquecerá {0}. Agora o objetivo é que os dois sobrevivam. Se um de vocês morrer, o outro morrerá de tristeza.</value>
 	</string>
 	<string key="HunterLynchedChoice">
 		<value>Os digimons resolveram reiniciar você! É a sua última chance de usar o Quick Shot em alguém!</value>
@@ -644,7 +644,7 @@
 		<value>Beelzebumon 🎯</value>
 	</string>
 	<string key="Cupid">
-		<value>Cupido 🏹</value>
+		<value>MarineAngemon 🏹</value>
 	</string>
 	<string key="SerialKiller">
 		<value>Piedmon 🔪</value>
@@ -653,7 +653,7 @@
 		<value>Metamormon 🎭</value>
 	</string>
 	<string key="CupidChosen">
-		<value>O poder do amor de MarineAngemon atingiu você! Você está apaixonado por {0}!  Se ele morrer, você morre também. No final, se ambos estiverem vivos, vocês vencem.</value>
+		<value>MarineAngemon atingiu você com Ocean Love! Agora você está apaixonado por {0}!  Se ele morrer, você também morre. No final, se ambos estiverem vivos, vocês vencem.</value>
 	</string>
 	<string key="NewWCRoleModel">
 		<value>Você é Gabumon 👶.  O seu grande exemplo é {0}</value>
@@ -683,7 +683,7 @@
 		<value>Todos na vila morreram... Ninguém venceu essa partida...</value>
 	</string>
 	<string key="SKHunterEnd">
-		<value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para um jogo.  {1} rápido como o trovão saca suas Pistolas Gêmeas e atinge um Quick Shot em {0}. {0}, com seu último suspiro, joga uma das suas espada em {1}, ferindo-o gravemente. Consequentemente ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
+		<value>O sol nasce no horizonte, {0} 1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para um jogo.  {1} rápido como o trovão saca suas Pistolas Gêmeas e atinge um Quick Shot em {0}. {0}, com seu último suspiro, joga uma das suas espada em {1}, ferindo-o gravemente. Consequentemente ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
 	</string>
 	<string key="RoleModelChosen">
 		<value>Você não decidiu a tempo, então os deuses digimons escolheram por você: {0}</value>
@@ -697,7 +697,7 @@
 	<string key="IdleCount">
 		<!-- 0 - player's name -->
 		<!-- 1 - idle count -->
-		<value>O digiescolhido {0} não votou e os deuses digimons consideraram isso uma ofensa. Ele foi reiniciado por isso. {1} vezes nas últimas 24 horas.</value>
+		<value>{0} foi reiniciado por isso {1} vezes nas últimas 24 horas.</value>
 	</string>
 	<!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
 	<string key="AboutVG">
@@ -722,13 +722,13 @@
 		<value>Traíííííra!! Ogremon 🖕 é um morador que não cumpre nunca com a sua palavra, e seu único desejo é destruir a vila. Assim que todos os Weregarurumons estiverem mortos, ele irá digievoluir secretamente para a Weregarurumon, sem necessariamente precisar da Engrenagem Negra.  Se Wisemon estuda-lo, ele poderá ser ou não identificado como um Weregarurumon.</value>
 	</string>
 	<string key="AboutGA">
-		<value>HolyAngemon 👼 sente o dever de proteger a Vila. Durante a noite, ele poderá escolher um digiescolhido para proteger.  Porém, se escolher um Weregarurumon, o pior pode acontecer.</value>
+		<value>HolyAngemon 👼 sente o dever de proteger a Vila. Durante a noite, ele poderá escolher um digimon para proteger.  Porém, se escolher um Weregarurumon, o pior pode acontecer.</value>
 	</string>
 	<string key="AboutDetective">
-		<value>Justimon 🕵 joga pela Vila. Durante o dia, poderá escolher uma digiescolhido para investigar e descobrir seu papel.  No entanto, ao fazer isso, ele poderá ser descoberto pelos Weregarurumons! (40% de chance)</value>
+		<value>Justimon 🕵 joga pela Vila. Durante o dia, poderá escolher uma digimon para investigar e descobrir seu papel.  No entanto, ao fazer isso, ele poderá ser descoberto pelos Weregarurumons! (40% de chance)</value>
 	</string>
 	<string key="AboutGunner">
-		<value>Revolmon 🔫 é o atirador da vila.  Ele possui 2 Bullets of Justice para ajudar a Vila.  Durante o dia, ele pode atirar uma Bullet of Justice em um digiescolhido. Todo mundo ouvirá os tiros e saberão que é o Revolmon.</value>
+		<value>Revolmon 🔫 é o atirador da vila.  Ele possui 2 Bullets of Justice para ajudar a Vila.  Durante o dia, ele pode atirar uma Bullet of Justice em um digimon. Todo mundo ouvirá os tiros e saberão que é o Revolmon.</value>
 	</string>
 	<string key="AboutTanner">
 		<value>Leomon 👺 somente ganha se for reiniciado. Ao contrário, perde.</value>
@@ -737,7 +737,7 @@
 		<value>Vademon 🃏 se acha incrível! Tão incrível que ele se considera mais inteligente que Wisemon, e capaz de descobrir o papel da pessoa que ele escolher. Mas infelizmente, ele é apenas um trouxa, e descobrirá sempre o papel errado.</value>
 	</string>
 	<string key="AboutCult">
-		<value>MaloMyotismon jogou a Semente das Trevas em todos os digiescolhidos, quando ele ativa a Semente, o digimon se torna Escravo de Malomyotismon 👤.  Durante a noite, o Escravo poderá escolher algum digimon para ter a sua Semente ativada.   Se todos os digiescolhidos restantes ao final do jogo forem Escravos das Trevas, Malomyotismon triunfará!</value>
+		<value>MaloMyotismon jogou a Semente das Trevas em todos os digimons. Quando ele ativa a Semente, o digimon se torna Escravo de Malomyotismon 👤.  Durante a noite, o Escravo poderá escolher algum digimon para ter a sua Semente ativada.   Se todos os digimons restantes ao final do jogo forem Escravos das Trevas, Malomyotismon triunfará!</value>
 	</string>
 	<string key="AboutCH">
 		<value>Knightmon 💂 sabe que os Escravos de MaloMyotismon estão na Vila para ativar a Semente das Trevas impregnada nos digimons, para assim escravizar mais digimons.  Durante a noite, Knightmon poderá escolher alguém para purificar.  Se ele purificar um Escravo, o Escravo morre.  Caso o Escravo tente ativar a Semente das Trevas em Knightmon, o Escravo mais recente morre.</value>
@@ -752,7 +752,7 @@
 		<value>Renamon 👁 tem uma incrível habilidade de percepção! E graças a isso, ela saberá quem é o verdadeira Wisemon (e não o trouxa do Vadamon). Use isso para ajudar seu time, a Vila!</value>
 	</string>
 	<string key="AboutMason">
-		<value>A Tripulação de Olegmon 👷, é a sociedade secreta de piratas da Vila.  Se houver outros piratas, quem jogar com esse papel, saberá quem são.</value>
+		<value>A Tripulação de Olegmon 👷, é a sociedade secreta de piratas da Vila.  Se houver outros tripulantes, quem jogar com esse papel, saberá quem são.</value>
 	</string>
 	<string key="AboutDG">
 		<value>Metamormon 🎭 pode assumir a forma de qualquer digimon no jogo! Escolha um digimon, quando ele morrer você assumirá o papel dele no jogo.</value>
@@ -862,10 +862,10 @@
 		<value>Não mostrar nenhum</value>
 	</string>
 	<string key="ShowLiving">
-		<value>Mostrar apenas os de digiescolhidos vivos</value>
+		<value>Mostrar apenas os de digimons vivos</value>
 	</string>
 	<string key="ShowAll">
-		<value>Mostrar os de todos os digiescolhidos</value>
+		<value>Mostrar os de todos os digimons</value>
 	</string>
 	<string key="Cancel">
 		<value>Cancelar</value>
@@ -876,7 +876,7 @@
 	</string>
 	<string key="AllowFleeA">
 		<!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
-		<value>Digiescolhidos ter {0}permissão de abandonar o jogo apos o game start</value>
+		<value>Digiescolhidos ter {0} permissão de abandonar o jogo apos o game start</value>
 	</string>
 	<string key="MaxPlayersQ">
 		<value>Que quantidade de digiescolhidos você gostaria de definir como a máxima?\nAtual: {0}</value>
@@ -958,10 +958,10 @@
 		<value>{0} não iniciou o bot, e foi removido do jogo!</value>
 	</string>
 	<string key="LatestList">
-		<value>Aqui está a lista mais recente de digiescolhidos</value>
+		<value>Aqui está a lista mais recente de digimons</value>
 	</string>
 	<string key="UnableToGetList">
-		<value>Não fui capaz de obter a lista de digiescolhidos, você tem certeza de que o jogo já começou?</value>
+		<value>Não fui capaz de obter a lista de digimons, você tem certeza de que o jogo já começou?</value>
 	</string>
 	<string key="YouJoined">
 		<value>Você se juntou à partida em {0}</value>
@@ -986,22 +986,22 @@
 		<value>Você é Sorcerimon, um digimon infectado pela Engrenagem Negra. Você capaz de 'estudar' um digimon para descobrir o seu papel. Mas infelizmente, você não é tão poderoso e inteligente como Wisemon é, e por causa disso, você só poderá encontrar Wisemon e os seus aliados Weregarurumons. À noite, você usará de seu 'estudo' e inteligência para encontrá-los. Você ganha somente se os Weregarurumons ganharem. Desfrute de ajudar a capturar os dados dos digimons que você tanto odeia.</value>
 	</string>
 	<string key="RoleInfoBlacksmith">
-		<value>Você é Volcamon ⚒, o metalúrgico da Vila. Você sempre escuta rumores de todo tipo. Talvez você escute um rumor sobre um ataque de Weregarurumon está noite, e possa evitar o pior.</value>
+		<value>Você é Volcamon ⚒, o metalúrgico da Vila. Você sempre escuta rumores de todo tipo. Talvez você escute um rumor sobre um encontro de Weregarurumon esta manhã, e possa evitar o pior.</value>
 	</string>
 	<string key="RoleInfoAlphaWolf">
 		<value>Você é MetalGarurumon ⚡️, um digimau, e líder dos Weregarurumons. Você é um dos Digimaus capazes de decidir quando alguém deverá ser infectado pela Engrenagem Negra. Cada noite, você vai escolher um digimon para atacar e tomar seus dados, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de você decidir transformá-lo em um Weregarurumon.</value>
 	</string>
 	<string key="RoleInfoWolfCub">
-		<value>Você é Cutemon 🐶, e foi adotado pelos digimaus devido a sua tamanha fofura. _cuti cuti_ Ninguém resiste a sua fofura! Se você morrer, os Weregarurumons entrarão em fúria devido a uma ordem superior, e darão duas vitimas no time da Vila. E sempre que você estiver sozinho, você irá digievoluir para Gazimon, e continuar o serviço (mas não se preocupe, é apenas uma digievolução temporária, a sua fofura irá continuar!) Você é do time dos Weregarurumons.</value>
+		<value>Você é Cutemon 🐶, e foi adotado pelos digimaus devido a sua tamanha fofura. _cuti cuti_ Se você morrer, os Weregarurumons entrarão em fúria, e darão duas vitimas no time da Vila. E sempre que você estiver sozinho, você irá digievoluir para Gazimon, e continuar o serviço! Você é do time dos Weregarurumons.</value>
 	</string>
 	<string key="PrinceLynched">
-		<value>A Vila se prepara para reiniciar {0}, que grita, "Esperem! Eu sou o PrinceMamemon, príncipe do reino que há tantos anos deu suporte a essa vila sem pedir nada em troca. Esse anel real, com o selo do rei, prova isso. Toda noite eu estou rodeado de criados, então não posso ser um digimau." Se sentindo tolos, os digimons vão para suas casas. Ninguém será reiniciado hoje.</value>
+		<value>A Vila se prepara para reiniciar {0}, que grita, "Esperem! Eu sou PrinceMamemon, príncipe do reino que há tantos anos deu suporte a essa vila e jamais pedi algo em troca. Esse anel real, com o selo do rei, prova isso. Toda noite eu estou rodeado de criados, então não posso ser um digimau." Se sentindo tolos, os digimons vão para suas casas. Ninguém será reiniciado hoje.</value>
 	</string>
 	<string key="SorcererOther">
 		<value>Você tenta 'estudar' {0}, mas não consegue entender direito o que ele é. Tudo o que você sabe é que ele não é Wisemon, nem Weregarurumon...</value>
 	</string>
 	<string key="MayorReveal">
-		<value>Baromon 🎖, {0}, dá um passo à frente e mostra o selo oficial de prefeito da Vila, declarando que é ele. De agora em diante, os votos de {0} para enforcar alguém serão contados duas vezes.</value>
+		<value>Baromon 🎖, {0}, dá um passo à frente e mostra o selo oficial de prefeito da Vila. De agora em diante, os votos de {0} para reiniciar alguém serão contados duas vezes.</value>
 	</string>
 	<string key="AskMayor">
 		<value>Clique em "Revelar" quando estiver pronto para se revelar como Baromon, prefeito da Vila.</value>
@@ -1010,10 +1010,10 @@
 		<value>Revelar</value>
 	</string>
 	<string key="SpreadDust">
-		<value>Você ficou sabendo graças a um rumor, que os Weregarurumons poderão atacar essa noite. Você quer ir até o local e usar seu poder Big Bang Voice para impedir os Weregarurumons de atacarem essa noite?</value>
+		<value>Você ficou sabendo graças a um rumor que os Weregarurumons poderão atacar essa noite. Você quer ir até o local e usar seu poder Big Bang Voice para impedir os Weregarurumons de atacarem essa noite?</value>
 	</string>
 	<string key="BlacksmithSpreadSilver">
-		<value>Os Weregarurumons planejavam atacar essa noite. Mas Volcamon, {0}, já estava preparado para o ataque. Ele usa o seu poder Big Bang Voice nos Weregarurumons, deixando-os incapaz de atacar esta noite. Pelo menos por enquanto, a Vila estará segura de ataques de Weregarurumons.</value>
+		<value>Volcamon escutou um rumor que os Weregarurumons infectados planejavam se encontrar durante a manhã. {0} teimoso decide agir sozinho. Durante o encontro de Weregarurumons, ele lança o seu ataque Big Bang Voice, deixando-os incapazes de atacar esta noite. Pelo menos por enquanto a Vila estará segura de ataques de Weregarurumons.</value>
 	</string>
 	<string key="Mayor">
 		<value>Baromon 🎖</value>
@@ -1071,11 +1071,11 @@
   <string key="DGTransformToAlpha">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} morreu. E você decidiu dar continuidade ao trabalho dele. Sendo um DIGIMAU! Você se transforma em Metalgarurumon.  O seu bando (se tiver) são: {1}</value>
+    <value>{0} morreu. E você decidiu dar continuidade ao trabalho dele. Você se transformou em Metalgarurumon.  O seu bando (se tiver) são: {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} morreu. E você se transforma em Cutemon, com sua tamanha fofura, você é logo aceito no bando Weregarurumon.  O seu bando (se tiver) são: {1}</value>
+    <value>{0} morreu. E você se transforma em Cutemon, com sua fofura sem fim você consegue entrar no bando Weregarurumon.  O seu bando (se tiver) são: {1}</value>
   </string>
 </strings>
