@@ -2051,7 +2051,7 @@ namespace Werewolf_Node
                     Send(msg, p.Id);
                 }
             }
-            CheckForGameEnd();
+            if (CheckForGameEnd()) return;
             var nightTime = (DbGroup.NightTime ?? Settings.TimeNight);
             if (GameDay == 1)
                 if (Players.Any(x => new[] { IRole.Cupid, IRole.Doppelgänger, IRole.WildChild }.Contains(x.PlayerRole)))
@@ -3428,6 +3428,7 @@ namespace Werewolf_Node
 
         private void SendNightActions()
         {
+            if (Players == null) return;
             Thread.Sleep(1000); //sleep to let any clear keyboard messages go through....
             foreach (var player in Players.Where(x => !x.IsDead))
             {
