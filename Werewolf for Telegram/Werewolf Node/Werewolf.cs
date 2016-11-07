@@ -3969,7 +3969,7 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.MasonBrother;
                         if (!ach.HasFlag(Achievements.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
                             newAch = newAch | Achievements.ChangingSides;
-                        if (!ach.HasFlag(Achievements.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles).Count() == 1 && player.Won)
+                        if (!ach.HasFlag(Achievements.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
                             newAch = newAch | Achievements.LoneWolf;
                         if (!ach.HasFlag(Achievements.Inconspicuous) && !player.HasBeenVoted & !player.IsDead)
                             newAch = newAch | Achievements.Inconspicuous;
