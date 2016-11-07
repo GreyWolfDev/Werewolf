@@ -87,6 +87,7 @@ namespace Werewolf_Control.Helpers
                         foreach (var file in Directory.GetFiles(nodeDir + b.BuildName))
                         {
                             var fName = Path.GetFileName(file);
+                            copied = true;
                             try
                             {
                                 System.IO.File.Copy(file, Path.Combine(d, fName), true);
@@ -103,9 +104,14 @@ namespace Werewolf_Control.Helpers
                                     throw;
                                 }
                             }
-                            copied = true;
+                            
+                        }
+
+                        if (copied)
+                        {
                             msg += "\nCopied Node files to " + d.Substring(d.LastIndexOf("\\") + 1);
                             Bot.ReplyToCallback(query, msg);
+                            break;
                         }
                     }
 
