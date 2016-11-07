@@ -1007,62 +1007,79 @@ namespace Werewolf_Node
                 rolesToAssign.Add(IRole.Villager);
             return rolesToAssign;
         }
-
         private void AssignRoles()
         {
             try
             {
-                var rolesToAssign = new List<IRole>();
-                var count = Players.Count;
-
                 var balanced = false;
                 var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Sorcerer, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+                // Roles that may be replaced when we require a role that's missing.
+                var insignificantRoles = new[] { IRole.Drunk, IRole.Villager };
 
                 do
                 {
                     attempts++;
                     if (attempts >= 200)
                     {
-                        throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + count);
+                        throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + Players.Count);
                     }
-
-
-                    //determine which roles should be assigned
-                    rolesToAssign = GetRoleList(count, DbGroup.AllowCult != false, DbGroup.AllowTanner != false,
-                        DbGroup.AllowFool != false);
+                    var rolesToAssign = GetRoleList(Players.Count, DbGroup.AllowCult != false, DbGroup.AllowTanner != false, DbGroup.AllowFool != false);
+                    // randomize list some
                     rolesToAssign.Shuffle();
-                    if (!Chaos)
-                        rolesToAssign = rolesToAssign.Take(count).ToList();
+                    Players.Shuffle();
 
-
-
-                    //let's fix some roles that should or shouldn't be there...
-
-                    //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
-                    if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
-                        !rolesToAssign.Any(x => WolfRoles.Contains(x)))
+                    // already assign the roles here without any checks on the list itself.
+                    // no harm in settings values directly, or multiple times.
+                    // It also assures that we get a good random playing field.
+                    // Takes a random role from the list and assigns that to the player, then removes the role from the list of available roles
+                    foreach (var pl in Players)
                     {
-                        var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
-                        rolesToAssign[towolf] = WolfRoles[Program.R.Next(3)]; //choose randomly from WolfRoles
+                        pl.PlayerRole = rolesToAssign[Program.R.Next(rolesToAssign.Count)];
+                        rolesToAssign.Remove(pl.PlayerRole);
                     }
 
-                    //appseer without seer -> seer
-                    if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
+                    // Sanity Checks
+
+                    // CH required in Cultist Game
+                    if (Players.Any(x => x.PlayerRole == IRole.Cultist) && Players.All(x => x.PlayerRole != IRole.CultistHunter))
                     {
-                        //substitute with seer
-                        var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
-                        rolesToAssign[apps] = IRole.Seer;
+                        int replace = Players.FindIndex(x => insignificantRoles.Contains(x.PlayerRole));
+                        if (replace >= 0)
+                            Players[replace].PlayerRole = IRole.CultistHunter;
+                        else
+                            Players.First(x => x.PlayerRole == IRole.Cultist).PlayerRole = IRole.CultistHunter; // Might end up with a game that has CH w/o Cultist. Better than the other way around though.
                     }
 
-                    //cult without CH -> add CH
-                    if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
+                    // Wolf required if Sorcerer or Traitor present.
+                    if (Players.All(x => !WolfRoles.Contains(x.PlayerRole)))
                     {
-                        //just pick a vg, and turn them to CH
-                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-                        rolesToAssign[vg] = IRole.CultistHunter;
+                        // No wolf
+                        if (Players.Any(x => x.PlayerRole == IRole.Traitor))
+                        {
+                            // If there is a Traitor turn him into a Wolf. (No need to check for Sorcerers then)
+                            Players.First(x => x.PlayerRole == IRole.Traitor).PlayerRole = IRole.Wolf;
+                        }
+                        else if (Players.Any(x => x.PlayerRole == IRole.Sorcerer))
+                        {
+                            // No Traitor but Sorcerer, add Wolf
+                            int replace = Players.FindIndex(x => insignificantRoles.Contains(x.PlayerRole));
+                            if (replace >= 0)
+                                Players[replace].PlayerRole = WolfRoles[Program.R.Next(3)];
+                            else // In case there is no useless role to convert to Wolf, make the Sorcerer a wolf.
+                                Players.First(x => x.PlayerRole == IRole.Sorcerer).PlayerRole = WolfRoles[Program.R.Next(3)];
+                        }
                     }
 
+                    // Convert Apprentice Seer to Seer if there is no Seer
+                    if (Players.Any(x => x.PlayerRole == IRole.ApprenticeSeer) && Players.All(x => x.PlayerRole != IRole.Seer))
+                    {
+                        Players.First(x => x.PlayerRole == IRole.ApprenticeSeer).PlayerRole = IRole.Seer;
+                    }
+
+
+
+                    SetRoleAttributes();
 
                     //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
                     if (!Chaos)
@@ -1073,164 +1090,12 @@ namespace Werewolf_Node
                             rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
 
                         //check balance
-                        var varianceAllowed = (count / 4) + 1;
+                        var varianceAllowed = (Players.Count / 4) + 1;
                         balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
                     }
                 } while (!balanced && !Chaos); //if it's Chaos, let's not redo this again
 
-
-
-                //if (count >= Settings.PlayerCountDetective)
-                //{
-                //    rolesToAssign.Add(IRole.Detective);
-                //}
-                //if (count >= Settings.PlayerCountThirdWolf)
-                //{
-                //    rolesToAssign.Add(IRole.Wolf);
-                //}
-                //if (count >= Settings.PlayerCountSeerCursed)
-                //{
-                //    rolesToAssign.Add(IRole.Cursed);
-                //    rolesToAssign.Add(IRole.Seer);
-                //}
-                //if (count >= Settings.PlayerCountGuardianAngel)
-                //    rolesToAssign.Add(IRole.GuardianAngel);
-                //if (count >= Settings.PlayerCountGunner)
-                //{
-                //    rolesToAssign.Add(IRole.Gunner);
-                //}
-                //if (count >= Settings.PlayerCountTraitor)
-                //{
-                //    rolesToAssign.Add(IRole.Traitor);
-                //}
-                //if (count >= Settings.PlayerCountHarlot)
-                //{
-                //    rolesToAssign.Add(IRole.Harlot);
-                //}
-
-                //if (count >= Settings.PlayerCountSecondWolf)
-                //{
-                //    rolesToAssign.Add(IRole.Wolf);
-                //}
-
-                //if (count >= Settings.PlayerCountApprenticeSeer)
-                //{
-                //    rolesToAssign.Add(IRole.ApprenticeSeer);
-                //}
-
-                //if (count >= Settings.PlayerCountWildChild)
-                //{
-                //    rolesToAssign.Add(IRole.WildChild);
-                //}
-
-                //if (count >= Settings.PlayerCountCultist && DbGroup.AllowCult != false)
-                //{
-                //    rolesToAssign.Add(IRole.Cultist);
-                //    rolesToAssign.Add(IRole.CultistHunter);
-                //}
-                //if (count >= Settings.PlayerCountSecondCultist)
-                //{
-                //    rolesToAssign.Add(IRole.Cultist);
-                //}
-
-                //if (count >= Settings.PlayerCountMasons)
-                //{
-                //    rolesToAssign.Add(IRole.Mason);
-                //    rolesToAssign.Add(IRole.Mason);
-                //    rolesToAssign.Add(IRole.Mason);
-                //}
-
-                //if (count >= Settings.PlayerCountCupid)
-                //{
-                //    rolesToAssign.Add(IRole.Cupid);
-                //}
-
-                //if (count >= Settings.PlayerCountDoppelGanger)
-                //{
-                //    rolesToAssign.Add(IRole.Doppelgänger);
-                //}
-
-                //if (count >= Settings.PlayerCountSerialKiller)
-                //{
-                //    rolesToAssign.Add(IRole.SerialKiller);
-                //}
-
-                //if (count >= Settings.PlayerCountHunter)
-                //{
-                //    rolesToAssign.Add(IRole.Hunter);
-                //}
-
-                ////add beholder?
-                //if (count >= Settings.PlayerCountBeholderChance)
-                //{
-                //    if (Program.R.Next(100) < Settings.BeholderChance)
-                //    {
-                //        rolesToAssign.Add(IRole.Beholder);
-                //    }
-                //}
-
-                ////add tanner?
-                //if (Program.R.Next(100) < Settings.TannerChance && DbGroup.AllowTanner != false)
-                //{
-                //    rolesToAssign.Add(IRole.Tanner);
-                //}
-
-                ////add Fool?
-                //if (count >= Settings.PlayerCountFoolChance)
-                //{
-                //    if (Program.R.Next(100) < Settings.FoolChance && DbGroup.AllowFool != false)
-                //    {
-                //        rolesToAssign.Add(IRole.Fool);
-                //    }
-                //}
-
-                //rolesToAssign.Add(IRole.Wolf);
-                //rolesToAssign.Add(IRole.Drunk);
-
-                //while (count > rolesToAssign.Count)
-                //    rolesToAssign.Add(IRole.Villager);
-
-
-
-                //shuffle things
-                Players.Shuffle();
-                Players.Shuffle();
-                rolesToAssign.Shuffle();
-                rolesToAssign.Shuffle();
-
-
-                //#if DEBUG
-                //                //force roles for testing
-                //                rolesToAssign[0] = IRole.Mayor;
-                //                rolesToAssign[1] = IRole.Prince;
-                //                rolesToAssign[2] = IRole.AlphaWolf;
-                //                rolesToAssign[3] = IRole.Villager;
-                //                if (rolesToAssign.Count >= 5)
-                //                    rolesToAssign[4] = IRole.Villager;
-                //#endif
-
-                var lastIndex = 0;
-                for (var i = 0; i < Players.Count; i++)
-                {
-                    Players[i].PlayerRole = rolesToAssign[i];
-                    lastIndex = i;
-                }
-                lastIndex++;
-                SetRoleAttributes();
-
-                if (Chaos)
-                {
-                    //make sure we at least have more than one team (tanner doesn't count) ...sorcerer doesn't count either!
-                    while (Players.Where(x => x.Team != ITeam.Tanner && x.Team != ITeam.Neutral && x.PlayerRole != IRole.Sorcerer).Select(x => x.Team).Distinct().Count() < 2)
-                    {
-                        Players[count - 1].PlayerRole = rolesToAssign[lastIndex];
-                        lastIndex++;
-                        SetRoleAttributes();
-                    }
-                }
-
-                //do a shuffle, as the above portion can cause the SK / wolf to always be the last player in the list.
-
+                // Shuffle the player list a few
                 for (var i = 0; i < 10; i++)
                 {
                     try
@@ -1242,44 +1107,6 @@ namespace Werewolf_Node
                         // ignored
                     }
                 }
-
-
-
-                ////if there's a traitor without wolves, substitute it with wolf
-                //if (Players.Any(x => x.PlayerRole == IRole.Traitor) && Players.All(x => x.Team != ITeam.Wolf || x.PlayerRole == IRole.Sorcerer))
-                //{
-                //    var traitor = Players.FirstOrDefault(x => x.PlayerRole == IRole.Traitor);
-                //    if (traitor != null)
-                //    {
-                //        traitor.PlayerRole = IRole.Wolf;
-                //        traitor.Team = ITeam.Wolf;
-                //        traitor.HasDayAction = false;
-                //        traitor.HasNightAction = true;
-                //    }
-                //}
-
-                ////one last check for seer
-                //if (Players.Any(x => x.PlayerRole == IRole.ApprenticeSeer) && Players.All(x => x.PlayerRole != IRole.Seer))
-                //{
-                //    var s = Players.FirstOrDefault(x => x.PlayerRole == IRole.ApprenticeSeer);
-                //    if (s != null)
-                //    {
-                //        s.PlayerRole = IRole.Seer;
-                //        s.HasNightAction = true;
-                //    }
-                //}
-
-                ////check that CH exists if cult exist
-                //if (Players.Any(x => x.PlayerRole == IRole.Cultist) && Players.All(x => x.PlayerRole != IRole.CultistHunter))
-                //{
-                //    //fix dat shit
-                //    var ch = Players.First(x => x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.Wolf);
-                //    ch.PlayerRole = IRole.CultistHunter;
-                //    ch.HasDayAction = false;
-                //    ch.HasNightAction = true;
-                //    ch.Team = ITeam.Village;
-                //}
-
 
                 foreach (var p in Players)
                     p.OriginalRole = p.PlayerRole;
@@ -1775,7 +1602,8 @@ namespace Werewolf_Node
                                     Send(GetLocaleString("DGToWolf", $"{p.GetName()}"), w.Id);
                                     teammates += $"{w.GetName()}" + ", ";
                                 }
-                                switch (p.PlayerRole) {
+                                switch (p.PlayerRole)
+                                {
                                     case IRole.AlphaWolf:
                                         Send(GetLocaleString("DGTransformToAlpha", rm.GetName(), teammates), p.Id);
                                         break;
