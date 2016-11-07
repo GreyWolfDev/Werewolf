@@ -59,10 +59,10 @@ namespace Werewolf_Control.Models
             this.Broadcast(info);
         }
 
-        public void ShutDown()
+        public void ShutDown(bool kill = false)
         {
             ShuttingDown = true;
-            this.Broadcast(JsonConvert.SerializeObject(new UpdateNodeInfo()));
+            this.Broadcast(JsonConvert.SerializeObject(new UpdateNodeInfo() {Kill = kill}));
         }
 
         public void SendReply(CallbackQuery query)

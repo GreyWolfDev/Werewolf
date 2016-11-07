@@ -181,7 +181,13 @@ namespace Werewolf_Node
                                 game?.FleePlayer(psi.UserId);
                                 break;
                             case "UpdateNodeInfo":
+                                var uni = JsonConvert.DeserializeObject<UpdateNodeInfo>(msg);
                                 IsShuttingDown = true;
+                                if (uni.Kill)
+                                {
+                                    //force kill
+                                    Environment.Exit(1);
+                                }
                                 break;
                             case "SkipVoteInfo":
                                 var svi = JsonConvert.DeserializeObject<SkipVoteInfo>(msg);
