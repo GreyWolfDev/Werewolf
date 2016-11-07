@@ -54,7 +54,7 @@ namespace BuildAutomation.Controllers
                     string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
                     var msg = obj.message.markdown + "\n";
                     var urlPre = "https://github.com/parabola949/Werewolf/commit/";
-                    msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(7)}]({urlPre + build.resource.sourceVersion})";
+                    msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(0,7)}]({urlPre + build.resource.sourceVersion})";
                     if (build.resource.result == "succeeded")
                         msg += "\nRelease is now being created, you will be notified when it is completed.";
                     var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
