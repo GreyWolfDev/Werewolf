@@ -500,8 +500,10 @@ namespace Werewolf_Node
         /// <param name="u">The telegram user to remove</param>
         public void RemovePlayer(User u)
         {
+            
             try
             {
+                if (IsInitializing) throw new Exception("Cannot flee while game is initializing.  Try again once game is done starting.");
                 if (DbGroup.DisableFlee == true && !IsJoining && IsRunning)
                 {
                     SendWithQueue(GetLocaleString("FleeDisabled"));
@@ -3561,6 +3563,11 @@ namespace Werewolf_Node
 
         public void FleePlayer(int banid)
         {
+            if (IsInitializing)
+            {
+                SendWithQueue("Cannot flee while game is initializing.  Try again once game is done starting.");
+                return;
+            }
             var p = Players?.FirstOrDefault(x => x.Id == banid);
             if (p != null)
             {
