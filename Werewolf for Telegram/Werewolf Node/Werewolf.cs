@@ -910,23 +910,31 @@ namespace Werewolf_Node
         private void SendPlayerList()
         {
             if (!_playerListChanged) return;
-            new Thread(() =>
+            if (Players == null) return;
+            try
             {
-                //Thread.Sleep(4500); //wait a moment before sending
-                LastPlayersOutput = DateTime.Now;
-                var msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
-                          Players.OrderBy(x => x.TimeDied)
-                              .Aggregate("",
-                                  (current, p) =>
-                                      current +
-                                      ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
-                _playerListChanged = false;
+                new Thread(() =>
+                {
+                    //Thread.Sleep(4500); //wait a moment before sending
+                    LastPlayersOutput = DateTime.Now;
+                    var msg =
+                        $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
+                        Players.OrderBy(x => x.TimeDied)
+                            .Aggregate("",
+                                (current, p) =>
+                                    current +
+                                    ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                    //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
+                    _playerListChanged = false;
 
-                SendWithQueue(new Message(msg) { PlayerList = true });
+                    SendWithQueue(new Message(msg) {PlayerList = true});
 
-            }).Start();
-
+                }).Start();
+            }
+            catch (Exception ex)
+            {
+                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+            }
         }
 
         public void OutputPlayers()
