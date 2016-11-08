@@ -2848,6 +2848,11 @@ namespace Werewolf_Node
                         //check if it's accurate
                         if (possibleRoles[0] == target.PlayerRole)
                             fool.FoolCorrectSeeCount++;
+
+                        //don't see wolf type!
+                        if (WolfRoles.Contains(possibleRoles[0]))
+                            possibleRoles[0] = IRole.Wolf;
+
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(possibleRoles[0])), fool.Id);
                     }
                 }
