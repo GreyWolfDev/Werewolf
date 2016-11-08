@@ -1054,7 +1054,15 @@ namespace Werewolf_Control
             {
                 File.Delete(path);
             }
-            ZipFile.CreateFromDirectory(LogPath, path);
+            var zip = ZipFile.Open(path, ZipArchiveMode.Create);
+            var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
+            var someFileExists = false;
+            foreach (var file in files)
+            {
+                if (!File.Exists(file)) continue;
+                someFileExists = true;
+                zip.CreateEntryFromFile(file, Path.GetFileName(file), CompressionLevel.Optimal);
+            }
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
             Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
