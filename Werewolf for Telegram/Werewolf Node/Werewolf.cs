@@ -2164,6 +2164,7 @@ namespace Werewolf_Node
                 WolfCubKilled = false;
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
+                    if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
