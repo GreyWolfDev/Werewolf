@@ -357,7 +357,7 @@ namespace Werewolf_Node
         {
             try
             {
-                if (!IsJoining)
+                if (!IsJoining || IsInitializing)
                 {
                     //SendWithQueue(GetLocaleString("NoJoinGameRunning"));
                     return;
@@ -404,6 +404,9 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("PlayerLimitReached"));
                     return;
                 }
+                //check one more time
+                if (IsInitializing || !IsJoining) return;
+                //add player
                 Players.Add(p);
 
 
@@ -532,7 +535,7 @@ namespace Werewolf_Node
                     DBKill(p, p, KillMthd.Flee);
                     CheckForGameEnd();
                 }
-                else if (IsJoining)
+                else if (IsJoining &! IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
@@ -2315,7 +2318,15 @@ namespace Werewolf_Node
                                         if (Program.R.Next(100) < 80)
                                         {
                                             //serial killer wins...
-                                            var shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
+                                            IPlayer shotWuff;
+                                            try
+                                            {
+                                                shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
+                                            }
+                                            catch
+                                            {
+                                                shotWuff = voteWolves.FirstOrDefault();
+                                            }
                                             shotWuff.IsDead = true;
                                             if (shotWuff.PlayerRole == IRole.WolfCub)
                                                 WolfCubKilled = true;
