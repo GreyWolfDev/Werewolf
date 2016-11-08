@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
@@ -36,7 +35,7 @@ namespace Werewolf_Node
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-        private bool _playerListChanged = true, _silverSpread = false;
+        private bool _playerListChanged = true, _silverSpread;
         private DateTime _timeStarted;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         #region Constructor
@@ -144,8 +143,8 @@ namespace Werewolf_Node
         {
             try
             {
-                var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
-                              Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
+                              Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
                 if (strings != null)
                 {
                     var values = strings.Descendants("value");
@@ -164,11 +163,17 @@ namespace Werewolf_Node
                 {
                     //try the english string to be sure
                     var strings =
-                        Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
-                    var values = strings.Descendants("value");
-                    var choice = Program.R.Next(values.Count());
-                    var selected = values.ElementAt(choice);
-                    return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+                        Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
+                    var values = strings?.Descendants("value");
+                    if (values != null)
+                    {
+                        var choice = Program.R.Next(values.Count());
+                        var selected = values.ElementAt(choice);
+                        // ReSharper disable once AssignNullToNotNullAttribute
+                        return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+                    }
+                    else
+                        throw new Exception("Cannot load english string for fallback");
                 }
                 catch
                 {
@@ -469,9 +474,10 @@ namespace Werewolf_Node
                 //now, attempt to PM the player
                 try
                 {
+                    // ReSharper disable once UnusedVariable
                     var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     var botname = "@" + Program.Me.Username;
                     if (!sendPM)
@@ -485,7 +491,6 @@ namespace Werewolf_Node
                 if (sendPM) //don't allow them to join
                 {
                     Players.Remove(p);
-                    p = null;
                 }
 
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
@@ -503,7 +508,7 @@ namespace Werewolf_Node
         /// <param name="u">The telegram user to remove</param>
         public void RemovePlayer(User u)
         {
-            
+
             try
             {
                 if (IsInitializing) throw new Exception("Cannot flee while game is initializing.  Try again once game is done starting.");
@@ -535,7 +540,7 @@ namespace Werewolf_Node
                     DBKill(p, p, KillMthd.Flee);
                     CheckForGameEnd();
                 }
-                else if (IsJoining &! IsInitializing)// really, should never be both joining and initializing but....
+                else if (IsJoining & !IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
@@ -783,7 +788,7 @@ namespace Werewolf_Node
             public string GifId { get; }
 
             public bool RequestPM { get; }
-            public bool PlayerList { get; set; } = false;
+            public bool PlayerList { get; set; }
 
             public Message(string msg, string gifid = null, bool requestPM = false)
             {
@@ -871,11 +876,11 @@ namespace Werewolf_Node
                             try
                             {
                                 var result = Send(final).Result;
-                                PlayerListId = result.MessageId;
+                                _playerListId = result.MessageId;
                             }
                             catch
                             {
-                                PlayerListId = 0;
+                                _playerListId = 0;
                             }
                         }
                         else
@@ -910,7 +915,7 @@ namespace Werewolf_Node
                 Send(final);
         }
 
-        private int PlayerListId = 0;
+        private int _playerListId;
 
         private void SendPlayerList()
         {
@@ -923,7 +928,7 @@ namespace Werewolf_Node
                     //Thread.Sleep(4500); //wait a moment before sending
                     LastPlayersOutput = DateTime.Now;
                     var msg =
-                        $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count()}\n" +
+                        $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n" +
                         Players.OrderBy(x => x.TimeDied)
                             .Aggregate("",
                                 (current, p) =>
@@ -932,7 +937,7 @@ namespace Werewolf_Node
                     //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                     _playerListChanged = false;
 
-                    SendWithQueue(new Message(msg) {PlayerList = true});
+                    SendWithQueue(new Message(msg) { PlayerList = true });
 
                 }).Start();
             }
@@ -944,18 +949,9 @@ namespace Werewolf_Node
 
         public void OutputPlayers()
         {
-            if ((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))
-            {
-                LastPlayersOutput = DateTime.Now;
-                if (PlayerListId != 0)
-                {
-                    Program.Bot.SendTextMessage(ChatId, GetLocaleString("LatestList"), replyToMessageId: PlayerListId);
-                }
-                else
-                {
-                    Program.Bot.SendTextMessage(ChatId, GetLocaleString("UnableToGetList"), replyToMessageId: PlayerListId);
-                }
-            }
+            if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
+            LastPlayersOutput = DateTime.Now;
+            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0?"LatestList": "UnableToGetList"), replyToMessageId: _playerListId);
         }
         #endregion
 
@@ -981,15 +977,15 @@ namespace Werewolf_Node
                         break;
                     case IRole.CultistHunter:
                     case IRole.Cultist:
-                        if (allowCult != false && playerCount > 10)
+                        if (allowCult && playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Tanner:
-                        if (allowTanner != false)
+                        if (allowTanner)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Fool:
-                        if (allowFool != false)
+                        if (allowFool)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.WolfCub:
@@ -1024,7 +1020,7 @@ namespace Werewolf_Node
         {
             try
             {
-                var rolesToAssign = new List<IRole>();
+                List<IRole> rolesToAssign;
                 var count = Players.Count;
 
                 var balanced = false;
@@ -1096,7 +1092,7 @@ namespace Werewolf_Node
                         //else, redo role assignment. better to rely on randomness, than trying to fix it
                     }
                 } while (!balanced);
-                
+
 
                 //shuffle things
                 Players.Shuffle();
@@ -1232,9 +1228,10 @@ namespace Werewolf_Node
                 var msg = GetRoleInfo(p.PlayerRole);
                 try
                 {
+                    // ReSharper disable once UnusedVariable
                     var result = Program.Send(msg, p.Id, true).Result;
                 }
-                catch (AggregateException e) //is this really only because of the message not being able to be sent? and should it really smite the player? maybe send some message to Para...
+                catch (AggregateException) //is this really only because of the message not being able to be sent? and should it really smite the player? maybe send some message to Para...
                 {
                     SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
                     FleePlayer(p.TeleUser.Id);
@@ -1391,8 +1388,11 @@ namespace Werewolf_Node
                         l2 = AddLover(l1);
                     }
                 }
-                l1.LoverId = l2.Id;
-                l2.LoverId = l1.Id;
+                if (l1 != null && l2 != null)
+                {
+                    l1.LoverId = l2.Id;
+                    l2.LoverId = l1.Id;
+                }
                 foreach (var p in lovers.Skip(2))
                 {
                     var foreverAlone = Players.FirstOrDefault(x => x.Id == p.Id);
@@ -1409,10 +1409,7 @@ namespace Werewolf_Node
             if (count < 2)
             {
                 //ok, missing lovers.
-                var exist = Players.FirstOrDefault(x => x.InLove) ?? AddLover();
-                if (exist == null)
-                    exist = AddLover();
-
+                var exist = (Players.FirstOrDefault(x => x.InLove) ?? AddLover()) ?? AddLover();
                 AddLover(exist);
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"Step 2: {Players.Count(x => x.InLove)} Lovers found");
@@ -1533,10 +1530,10 @@ namespace Werewolf_Node
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
                                 var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                                if (seer != null)
-                                    Send(GetLocaleString("BeholderSeer", $"{seer.GetName()}"), p.Id);
-                                else
-                                    Send(GetLocaleString("NoSeer"), p.Id);
+                                Send(
+                                    seer != null
+                                        ? GetLocaleString("BeholderSeer", $"{seer.GetName()}")
+                                        : GetLocaleString("NoSeer"), p.Id);
                                 break;
                             case IRole.ApprenticeSeer:
                                 p.HasDayAction = false;
@@ -2156,7 +2153,7 @@ namespace Werewolf_Node
                 {
                     var chosen = Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).ToList();
 
-                    if (chosen.Count() > 1 && WolfCubKilled)
+                    if (chosen.Count > 1 && WolfCubKilled)
                         choices = chosen.Take(2).Select(x => x.Id).ToList();
                     else
                         choices = chosen.Take(1).Select(x => x.Id).ToList();
@@ -2801,8 +2798,6 @@ namespace Werewolf_Node
                                 case IRole.AlphaWolf:
                                     role = IRole.Wolf;
                                     break;
-                                default:
-                                    break;
                             }
                             Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                         }
@@ -2898,7 +2893,7 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("GuardWolf"), ga.Id);
                             }
                             else if (!save.WasSavedLastNight && !save.DiedLastNight)
-                                //only send if GA survived and wolf wasn't attacked
+                            //only send if GA survived and wolf wasn't attacked
                             {
                                 Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             }
@@ -3049,7 +3044,7 @@ namespace Werewolf_Node
                 p.DiedLastNight = false;
                 p.Choice = 0;
                 p.Votes = 0;
-                if (p.Bitten &! p.IsDead)
+                if (p.Bitten & !p.IsDead)
                 {
                     Send(GetLocaleString("PlayerBitten"), p.Id);
                 }
@@ -3287,10 +3282,10 @@ namespace Werewolf_Node
                 switch (DbGroup.ShowRolesEnd)
                 {
                     case "None":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count()}\n" + Players.OrderBy(x => x.TimeDied).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}");
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count()}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
                         break;
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
@@ -3735,20 +3730,20 @@ namespace Werewolf_Node
             }
         }
 
-        private int ChooseRandomPlayerId(IEnumerable<IPlayer> exclude)
-        {
-            try
-            {
-                var possible = Players.Where(x => exclude.All(y => y?.TeleUser.Id != x?.TeleUser.Id)).ToList();
-                possible.Shuffle();
-                possible.Shuffle();
-                return possible[0].Id;
-            }
-            catch
-            {
-                return -1;
-            }
-        }
+        //private int ChooseRandomPlayerId(IEnumerable<IPlayer> exclude)
+        //{
+        //    try
+        //    {
+        //        var possible = Players.Where(x => exclude.All(y => y?.TeleUser.Id != x?.TeleUser.Id)).ToList();
+        //        possible.Shuffle();
+        //        possible.Shuffle();
+        //        return possible[0].Id;
+        //    }
+        //    catch
+        //    {
+        //        return -1;
+        //    }
+        //}
 
         internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
         {
@@ -3775,9 +3770,10 @@ namespace Werewolf_Node
 
         #region Database Helpers
 
+        // ReSharper disable UnusedParameter.Local
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
         {
-            return; //dropping actions.  We never use them, they just take up a massive amount of space in the database
+            //return; //dropping actions.  We never use them, they just take up a massive amount of space in the database
             //using (var db = new WWContext())
             //{
             //    try
@@ -3884,18 +3880,18 @@ namespace Werewolf_Node
             }
         }
 
-        private bool LongHaulReached = false;
+        private bool _longHaulReached;
 
         private void CheckLongHaul()
         {
             if (Players == null) return;
-            if ((DateTime.Now - _timeStarted).Hours >= 1 & !LongHaulReached)
+            if ((DateTime.Now - _timeStarted).Hours >= 1 & !_longHaulReached)
             {
                 foreach (var p in Players.Where(x => !x.IsDead && !x.Fled))
                 {
                     AddAchievement(p, Achievements.LongHaul);
                 }
-                LongHaulReached = true;
+                _longHaulReached = true;
             }
         }
 
@@ -3990,11 +3986,11 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.Introvert;
                         if (!ach.HasFlag(Achievements.Naughty) && Language.Contains("NSFW"))
                             newAch = newAch | Achievements.Naughty;
-                        if (!ach.HasFlag(Achievements.Dedicated) && p.GamePlayers.Count() >= 100)
+                        if (!ach.HasFlag(Achievements.Dedicated) && p.GamePlayers.Count >= 100)
                             newAch = newAch | Achievements.Dedicated;
-                        if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count() >= 1000)
+                        if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count >= 1000)
                             newAch = newAch | Achievements.Obsessed;
-                        if (!ach.HasFlag(Achievements.Veteran) && p.GamePlayers.Count() >= 500)
+                        if (!ach.HasFlag(Achievements.Veteran) && p.GamePlayers.Count >= 500)
                             newAch = newAch | Achievements.Veteran;
                         if (!ach.HasFlag(Achievements.Masochist) && player.Won && player.PlayerRole == IRole.Tanner)
                             newAch = newAch | Achievements.Masochist;
