@@ -2849,53 +2849,57 @@ namespace Werewolf_Node
             {
                 var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
                 if (save != null)
-                    DBAction(ga, save, "Guard");
+                {
+                    //if (save != null)
+                    //    DBAction(ga, save, "Guard");
 
-                if (save.WasSavedLastNight)
-                {
-                    Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
-                    Send(GetLocaleString("GuardSavedYou"), save.Id);
-                    save.WasSavedLastNight = false;
-                }
-                else if (save.DiedLastNight)
-                {
-                    Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
-                }
+                    if (save.WasSavedLastNight)
+                    {
+                        Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
+                        Send(GetLocaleString("GuardSavedYou"), save.Id);
+                        save.WasSavedLastNight = false;
+                    }
+                    else if (save.DiedLastNight)
+                    {
+                        Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
+                    }
 
-                //check for save's role, even if they weren't attacked!
-                switch (save.PlayerRole)
-                {
-                    case IRole.AlphaWolf:
-                    case IRole.WolfCub:
-                    case IRole.Wolf:
-                        if (Program.R.Next(100) > 50)
-                        {
+                    //check for save's role, even if they weren't attacked!
+                    switch (save.PlayerRole)
+                    {
+                        case IRole.AlphaWolf:
+                        case IRole.WolfCub:
+                        case IRole.Wolf:
+                            if (Program.R.Next(100) > 50)
+                            {
+                                ga.IsDead = true;
+                                ga.TimeDied = DateTime.Now;
+                                ga.DiedLastNight = true;
+                                ga.DiedByVisitingKiller = true;
+                                ga.KilledByRole = IRole.Wolf;
+                                DBKill(save, ga, KillMthd.GuardWolf);
+                                Send(GetLocaleString("GuardWolf"), ga.Id);
+                            }
+                            else if (!save.WasSavedLastNight && !save.DiedLastNight)
+                                //only send if GA survived and wolf wasn't attacked
+                            {
+                                Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
+                            }
+                            break;
+                        case IRole.SerialKiller:
                             ga.IsDead = true;
                             ga.TimeDied = DateTime.Now;
                             ga.DiedLastNight = true;
                             ga.DiedByVisitingKiller = true;
-                            ga.KilledByRole = IRole.Wolf;
-                            DBKill(save, ga, KillMthd.GuardWolf);
-                            Send(GetLocaleString("GuardWolf"), ga.Id);
-                        }
-                        else if (!save.WasSavedLastNight && !save.DiedLastNight) //only send if GA survived and wolf wasn't attacked
-                        {
-                            Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                        }
-                        break;
-                    case IRole.SerialKiller:
-                        ga.IsDead = true;
-                        ga.TimeDied = DateTime.Now;
-                        ga.DiedLastNight = true;
-                        ga.DiedByVisitingKiller = true;
-                        ga.KilledByRole = IRole.SerialKiller;
-                        DBKill(save, ga, KillMthd.GuardKiller);
-                        Send(GetLocaleString("GuardKiller"), ga.Id);
-                        break;
-                    default:
-                        if (!save.WasSavedLastNight && !save.DiedLastNight) //only send if save wasn't attacked
-                            Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                        break;
+                            ga.KilledByRole = IRole.SerialKiller;
+                            DBKill(save, ga, KillMthd.GuardKiller);
+                            Send(GetLocaleString("GuardKiller"), ga.Id);
+                            break;
+                        default:
+                            if (!save.WasSavedLastNight && !save.DiedLastNight) //only send if save wasn't attacked
+                                Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
+                            break;
+                    }
                 }
             }
 
