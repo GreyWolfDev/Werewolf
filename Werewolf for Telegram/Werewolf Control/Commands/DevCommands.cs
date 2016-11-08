@@ -1064,8 +1064,12 @@ namespace Werewolf_Control
                 zip.CreateEntryFromFile(file, Path.GetFileName(file), CompressionLevel.Optimal);
             }
             //now send the file
-            var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+            if (someFileExists)
+            {
+                var fs = new FileStream(path, FileMode.Open);
+                Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+            }
+            
         }
 
 
