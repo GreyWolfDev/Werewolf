@@ -2743,7 +2743,7 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("HarlotFuckKiller", target.GetName()), harlot.Id);
                                 break;
                             default:
-                                if (target.DiedLastNight && new[] { IRole.SerialKiller, IRole.Wolf }.Contains(target.KilledByRole) & !target.DiedByVisitingKiller)
+                                if (target.DiedLastNight && (WolfRoles.Contains(target.KilledByRole) || target.KilledByRole == IRole.SerialKiller) && !target.DiedByVisitingKiller)
                                 {
                                     harlot.IsDead = true;
                                     harlot.TimeDied = DateTime.Now;
