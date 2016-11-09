@@ -76,8 +76,10 @@ namespace Werewolf_Node.Helpers
             return players?.Where(x => roles.Contains(x.PlayerRole) && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
         }
 
+
         public static int GetStrength(this IRole role, List<IRole> allRoles)
         {
+            IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf };
             switch (role)
             {
                 case IRole.Villager:
@@ -97,7 +99,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Wolf:
                     return 10;
                 case IRole.Cursed:
-                    return 5 - allRoles.Count(x => x == IRole.Wolf);
+                    return 1 - allRoles.Count(x => WolfRoles.Contains(x)) / 2; //vg, or worse
                 case IRole.Gunner:
                     return 6;
                 case IRole.Tanner:
