@@ -116,7 +116,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Cultist:
                     return 10 + allRoles.Count(x => !nonConvertibleRoles.Contains(x));
                 case IRole.CultistHunter:
-                    return 7;
+                    return allRoles.Count(x => x == IRole.Cultist) == 0 ? 1 : 7;
                 case IRole.Mason:
                     return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3 ; //strength in numbers
                 case IRole.Doppelgänger:
