@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    ==UPDATE LOG==
+    LAST UPDATE 
+	2016/11/9 HKTRPG GP版
+-->
+<strings>
+  <language name="廣東話 - TRPG" base="廣東話" variant="HKTRPG" owner="HKTRPGGP-Zetetic"/>
+  <string key="NotInGame">
+      <value>你仲未加入任何既團</value>
+  </string>
+<string key="PlayerStartedGame" isgif="true">
+    <value>【{0}】 打算開一場 『正常』 既團!\n打 /join 參團，同埋準備撕卡啦 www</value>
+    <value>有個TRPG發燒友叫 【{0}】 開左場 『正常』 既團!\n打 /join 加入 \n歡迎來玩TRPG。</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>【{0}】 打算開一場 『混亂』 既團!\n打 /join 參團，同埋準備撕卡啦 www</value>
+    <value>有個TRPG發燒友叫 【{0}】 開左場 『混亂』 既團!\n打 /join 加入 \n歡迎來玩TRPG。</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>嗰團開始左啦，你乖乖地等下一團吧啦!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>你已經加入左呢團啦!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>仲有 1 分鐘開始，打 /join 參團</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>仲有 {0} 秒開始，打 /join 參團</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>唔夠PL，呢團已經取消!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>呢團開始啦，而家KP會分派PC比大家</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>因為 【{0}】 企圖利用漏洞進行呢團，已被系統封鎖(你個名唔可以有"/")</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>【{0}】 ，唔該你改一改你個名先參團</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>對唔住，太多PL喇!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>【{0}】 已經報名參團啦。現有{1}個PL，最少{2}個PL，最多{3}個PL</value>
+  </string>
+  <string key="PMTheBot">
+    <value>【{0}】 麻煩你PM 【 {1} 】 同佢講句 【 /start 】 ，如果唔係，你會JOIN唔到團架!</value>
+  </string>
+  <string key="DeadFlee">
+    <value>你已經被撕卡喇，你走都無用</value>
+  </string>
+  <string key="Flee">
+	<value>【{0}】 放飛機，棄團禾!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>【{0}】 係 【{1}】</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>得返{0}個PL</value>
+  </string>
+  <string key="DidntAsk">
+    <value>喂PL! 我無問你問題喎!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>你無參加今次既團喎!</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>無呢個人喎!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>答錯問題喇你，根本都唔係呢個答案!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>【{0}】 話佢想殺左 【{1}】</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>【{0}】 話佢想撕左 【{1}】</value>
+  </string>
+  <string key="IdleKill">
+    <value>KP突然發現【{0}】 2晚無投票。\n天上陰雲密佈，雷聲滾滾，將【{0}】一野劈死。\n【{1}】</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>所有BOSS死晒，你終於可以變成BOSS，做一番大事喇!!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>已收到選擇</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\n【{0}】 係超遊者</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>你無啦啦學左【{0}】啲衰野 ，而家你成為超遊者喇！</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>【{0}】 無啦啦學左【{1}】 啲衰野，所以佢成為超遊者喇</value>
+  </string>
+  <string key="SeerSees">
+    <value>你見到 【{0}】 係 【{1}】</value>
+  </string>
+  <string key="AskLynch">
+    <value>你想 撕 邊個?</value>
+  </string>
+  <string key="AskDetect">
+    <value>你想 查 邊個?</value>
+  </string>
+  <string key="AskShoot">
+    <value>你想 打 邊個?\n仲有 {0} 拳可打</value>
+  </string>
+  <string key="AskVisit">
+    <value>你想 去 邊個屋企度?</value>
+  </string>
+  <string key="AskSee">
+    <value>你想 睇 邊個?</value>
+  </string>
+  <string key="AskGuard">
+    <value>你想 保護 邊個?</value>
+  </string>
+  <string key="AskEat">
+    <value>你想 殺左 邊個?</value>
+  </string>
+  <string key="AskHunt">
+    <value>你想幫邊個 脫離邪教?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>邊個係 禁書 既附身者 ?</value>
+  </string>
+  <string key="AskConvert">
+    <value>你想 令邊個 成為狂信徒?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  你可以同【{0}】傾下對策</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> 】同埋【 </value>
+  </string>
+  <string key="RoleInfoCursed">
+   <value>你係一個渣渣村民，因此你係呢個有好多角色既TRPG村壓力山大，SAN跌到接近0。所以如果BOSS去殺你，你會立即SAN 0變成另一個反派BOSS。</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>你係COC調查員。每日都可以係早上估其他人嘅身份，但係你有40%機會比BOSS知道你係COC調查員。</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>你係喵蘇魯裡面既喵喵。如果BOSS今round去殺死你，下一round佢殺死唔到人，因為你會係佢嗰肚玩捉迷藏。</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>你係PF既聖騎士。每round可以守護一個人令該人免於被BOSS同紅色大人攻擊。如果你揀錯左去守護啲惡勢力，你有50%機會率撕卡。</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>你係COC既古流武道家。你可以係日頭用你苦練多年既小左同小右黎殺任何人，如果你打左第一拳，人人都會知你係古流武道家。\n PS.小左同小右工作左一次之後就要休息</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>你係666裡面既淫魔！！ 每round要搵一個人啪啪啪。如果你去左平民屋企，你同佢都無事。\n 如果如果你去左BOSS屋企，你會即撕。\n 如果你去左BOSS想去果個人嘅屋企，BOSS會殺你同果條友。 如果你唔係屋企，你去左第2個度，BOSS又去你度，你唔會撕。\n如果對方係狂信徒，淫魔有50%機會發現佢係狂信徒</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>你係主角由細玩到大既朋友！ 你細細過就想好似主角咁做一番大事。但你一直只係一個渣渣。\n如果所有BOSS死晒而你都未死，你就會變做BOSS繼續殺人。另外你有機會比超遊者見到你係BOSS。</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>你係所有故事裡面既反派BOSS！你每晚都會去殺死一個人，目標係殺鬼晒成條村既人。\n小心呀如果你地想去殺死紅色大人既話，得20%機會率殺死到佢，另外有80%機會率被殺。</value>
+
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >你係超遊者！你平時跑團最鐘意就係偷睇MOD同超遊。\n你每round可以check一個人係咩身份。</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>你係TRPG村既一個土生土長渣渣，你既存在就係比其他角色欺負。</value>
+
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>你係Fiasco裡面既悲劇人物，你生來就係為左誕生一個悲傷故事，有咩野比你獨嬴更悲劇。\n如果大家投票殺左你，你就會贏！</value>
+
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>你係魔導書大戰既書籍卿！你知道禁書寄宿係邊個人身上，只要佢死左，你就可以回收禁書，變做反派BOSS啦</value>
+
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>你係規則控，你TRPG經驗豐富，對規則書瞭如指掌，所以你會知邊個係你最痛恨既超遊者。</value>
+
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>你係超遊者既朋友，佢講左好多超遊既好處比你。\n一開始你係TRPG村既渣渣，如果超遊者撕咭或者做左狂信徒，你會學佢超遊。</value>
+
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>你係狂信徒。\n 你目標係宣揚邪神的威名，每一Round都可以令其他人變成狂信徒。(BOSS除外)\n 小心唔好入錯邪教獵人屋企。\n 最後如果每個PC都追隨邪神，你就會贏。\n 被入教嘅人會失去原來嘅身份。</value>
+
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>你係邪教獵人，而家TRPG村入面有狂信徒！\n如果狂信徒要你追隨佢，你唔會追隨佢，而且佢地最後入教果個會撕咭。\n你每一Round要去一個人屋企，如佢係狂信徒，佢就會死。</value>
+  </string>
+  <string key="LynchTime" >
+    <value>差唔多日落喇，你地班人而家投票睇下一陣要將邊個撕卡，唔好亂投呀!!\n而家每人有 {0} 秒去投票!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value>日出喇，你地有 {0} 秒可以去進行討論，自我辯護或者去放鬆下，唱首歌抒發你既感受，因為你唔知道...KP會安排咩劇情比你。</value>
+  </string>
+  <string key="NightTime" >
+    <value>好啦TRPG村日以繼夜時間完啦，依家開始夜以繼日，所有人番去自己間屋訓教。\n夜間出沒嘅人請注意：你有 {0} 秒可以比你出動!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >班TRPG村民最後決定要將【{0}】撕卡 。【{1}】</value>
+  </string>
+  <string key="LynchTie" >
+    <value >你班人都亂咁黎嘅，投票投到亂晒，所以今round無人會撕卡。</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >搞乜呀? 竟然無人投票.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>天光啦，大家用手機聯絡大家，但係搵唔到 【{0}】，咁佢地就去左 【{0}】 間屋，\n發現呢個【COC調查員】SAN值變0，進入永久瘋狂，邊笑邊哭咁跑出村外，然後再無人見過佢。</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>今日天陰密雲，好多烏鴉係咁叫，大家發現 【{0}】 條屍高掛左係大聖堂屋頂個十字架上面，死狀恐怖，原來佢係 【聖騎士】!!</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>日出之後，見到【{0}】自豪既小左小右跌左係地下。原來你地個 【古流武道家】 琴晚比BOSS殺左。</value>
+  </string>
+  <string key="SeerEaten" >
+    <value>天光喇! 【{0}】死左係佢D MOD身邊 。\n【超遊者】 已死。</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value>天亮了，鳥兒叫，太陽出來了，唯有時時曬太陽既【{0}】無出來。你地去到佢屋企，發現地板剩番...條貓尾。\n【喵喵】 到底係死左定跳左入幻夢境，無人知</value>
+  </string>
+  <string key="FoolEaten" >
+    <value>日出之後，你地發現 【{0}】 死左喺佢堆MOD隔離。下，原來只係D漫畫書黎。\n【{0}】 【白痴仔】已死！</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>今日你地一直唔見 【{0}】出現...你地行去搵佢，發現 【{0}】 死左係間密室裡面。慘慘豬囉。\n【{1}】 。</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>你地發現 【{0}】 間屋好奇怪...你地行入去，見到有條屍瞓左係個邪神像隔離...原來佢係 【狂信徒】 ，但係佢竟然唔係比BOSS殺死，究竟係邊個做架呢!?!?</value>
+  </string>
+  <string key="NoAttack" >
+    <value>琴晚無人撕卡。</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>係BOSS跑去殺你既時候，你既San值瞬間跌到0，佢見你有潛質，就比你加入佢地做BOSS</value>
+  </string>
+  <string key="WolfTeam">
+    <value>你既BOSS同盟有： 【{0}】</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>你走去殺【{0}】....但你見佢SAN值歸0，係做BOSS既好材料，所以你多左個BOSS同伴!</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value>Oh no! 你比BOSS殺左喇..</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>Oh no! 【{0}】 係喵喵! 佢係你嗰肚入面跑來跑去，唔得，你唔多舒服，下晚要休息下先..</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>你做乜去保護個BOSS呀! 佢殺左你喇。</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>感謝神，你救左 【{0}】 條命!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>【{0}】 非常幸運，無比人襲擊。</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>你去左 【{0}】 屋企，但係無人!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>琴晚聖騎士救左你一命!!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>條村個淫魔 【{0}】 比BOSS殺左!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>搞錯... 【{0}】 唔係屋企，你既計劃要推遲喇...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>你諗住去 【{0}】 屋企同佢啪啪啪，佢拎出一堆道具，原來佢係BOSS，佢啪到你死左喇。</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>【{0}】 去左BOSS既屋企啪啪啪，下場係...爽死了!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>【{0}】 去左 【{1}】 間屋諗住強姦佢。點知佢見到個BOSS殺緊 【{1}】! BOSS當然唔會放過 【{0}】 ， 【{0}】 就係咁一齊被殺。</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>你知道 【{0}】 唔係BOSS，所以你地琴晚玩左好多唔同招式!</value>
+	<value>琴晚你同【{0}】渡過左一個又舒服又安全既晚上，所以你知道【{0}】 唔係BOSS!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>琴晚係一個寧靜嘅晚上，你瞓瞓下，無啦啦淫魔入左你間屋強姦你。\n係緊張又開心的心情下，你同佢玩左好多唔同花臣</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>你見到 【{0}】 係度查緊人，佢係COC調查員!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>你發現 【{0}】 係 【{1}】 。</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>【{0}】 搞完淫魔【{1}】，仲殺埋佢，以後無得同淫魔玩喇..</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>突然間 【{0}】 一拳打落 【{1}】嗰頭度 。\n【{2}】。</value>
+  </string>
+  <string key="WolfWins" >
+    <value>BOSS 勝出!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>BOSS 勝出!</value>
+  </string>
+  <string key="VillageWins" >
+    <value>TRPG村民 勝出!</value>
+  </string>
+  <string key="TannerWins" >
+    <value>Fiasco 勝出!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>生還名單：</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value>【{0}】 想 【{1}】 變成狂信徒。</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>【{0}】 比你叫左去搵 【{1}】 變成狂信徒...但原來佢係邪教獵人! 你搞到 【{0}】 撕卡喇!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>【{0}】 琴晚去左你屋企想令你變成狂信徒，你拎出你把又長又粗又硬嘅寶劍吉佢，一個狂信徒就咁比你撕左...仲有 【{1}】 個!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>多謝相信邪神~你係新既狂信徒!!</value>
+  </string>
+  <string key="CultTeam">
+    <value>狂信徒： 【{0}】</value>
+  </string>
+  <string key="CultJoin">
+    <value>【{0}】 變成狂信徒了!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>【{0}】 比你叫左去將人變狂信徒，但係 【{1}】 屋企無人!</value>
+  </string>
+  <string key="CultWins" >
+    <value>所有BOSS死晒，全世界都係狂信徒。\n狂信徒 勝出!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>你想殺死 【{0}】 ，但係佢一早已經撕左卡!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>你去到 【{0}】 間屋，發現佢拜緊邪神，你就拎出你把又長又粗又硬嘅寶劍吉佢，一個狂信徒就咁比你撕左卡!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>你去到 【{0}】 間屋，發現佢屋企無邪神神像，好明顯佢唔係狂信徒，你就獨自返歸了。</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>【{0}】 回收左本禁書! 所以佢變左BOSS!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>【{0}】 已死! 所以你變左BOSS，BOSS重有： 【{1}】</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>TRPG村渣渣 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>喵喵 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>666淫魔 💋</value>
+  </string>
+  <string key="Seer">
+    <value>超遊者 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>主角嗰朋友 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>聖騎士 👼</value>
+  </string>
+  <string key="Detective">
+    <value>COC調查員 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>BOSS 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>San值近0 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>古流武道家 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Fiasco 👺</value>
+  </string>
+  <string key="Fool">
+    <value>白痴仔 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>書籍卿 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>規則控 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>超遊者朋友 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>狂信徒 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>邪教獵人 💂</value>
+  </string>
+  <!-- These are for the player list-->
+  <string key="RanAway">
+    <value>逃走的廢渣</value>
+  </string>
+  <string key="Dead">
+    <value>💀 被撕</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 生存</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>生還者</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>神子 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>你係神話創世裡面既神子，你會知邊個同樣係神子。\n不過因為你既神力短期內都覺醒唔到，所以自己小心自己啦。</value>
+  </string>
+  <string key="MasonEaten">
+    <value>日出喇~ 你地發現 【{0}】 條屍係村既正中央，周圍都係血...其中一個神子去左賣鹹鴨蛋!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  神子： 【{0}】</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>你地最新加入嘅狂信徒去 【{0}】 屋企傳教時，發現果度好似有打鬥過嘅痕跡，周圍都係血...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>當BOSS想去 【{0}】 屋企殺人嘅時候，一個黑影出現係BOSS面前，聖騎士舉起巨劍，將BOSS擊退了!</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>你派出 【{0}】去搵 【{1}】 傳教。但，佢信念太強，你無法令佢變成狂信徒sosad!</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}，已經有人叫{0}，唔該你改改個名先跑團!</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>你今晚諗住去【{0}】間屋強姦佢，再捉佢黃腳雞逼佢比錢。當你爽完之後，你發現佢間屋嘅暗角位有個邪神神像...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>係</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>早上的廣場裡面，一班渣渣如常咁跳廣場舞，但係今日偏偏唔見 【{0}】出現。渣渣們趕去【{0}】間屋，發現佢d手手腳腳無晒。</value>
+    <value>太陽出來了，廣場裡傳出惡臭，【{0}】琴晚比人碎屍...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>【{0}】今日無出席神子聚會，究竟發生左咩事呢..唔通佢變左狂信徒?</value>
+  </string>
+   <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>對唔住, 村門已被封鎖, 無人可以離開呢一條TRPG村</value>
+    <value>得罪左UV大人仲想逃走? 死啦渣渣!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>已被撕卡 💀</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>【{0}】 已成為admin。使用 /config 黎更改團設定。</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>你已經加左入團! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>群組重複開團...刪除重複的團中...</value>
+  </string>
+  <string key="GroupQueue">
+    <value>跑團啟動排隊中。目前順位: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>抱歉準備更新中，你目前不能啟動遊戲\n正在等待 {0} 場遊戲結束\n閱讀更多資訊請至 @werewolfdev</value>
+  </string>
+  <string key="MaxGames">
+    <value>抱歉同時跑團群組最大上限已滿 ({0})。\n目前順位: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} 係官方群組，正在使用VIP通道啟動團中...</value>
+  </string>
+  <string key="NoGame">
+    <value>目前無人跑團禾。\n/startgame 開始『正常』MOD \n/startchaos 開始『混亂』MOD</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>抱歉只有admin可以使用此指令。請將bot移除後重新加回，即可獲得admin權限。</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>跑完呢團之後，我將暫時進入維修模式。</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>跑完呢團之後，我將進行短暫的自動更新維修，請稍等幾分鐘。</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>搵唔到使用者id, 請確定你係用回覆訊息(reply)來黎下指令!</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} 已經係admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} 唔係admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} 從admin名單中移除。</value>
+  </string>
+  <string key="LanguageSet">
+    <value>語言設定為 {0}</value>
+  </string>
+  <string key="NoSeer">
+  <value>沒有超遊者</value>
+  </string>
+  <string key="TimesUp">
+  <value>夠鐘喇!</value>
+  <value>鐘聲響起歸家的訊號~(時間到!)</value>
+  <value>你係咪瞓著左?(時間到!)</value>
+  <value>你知道我憎人遲到嗎?(時間到!)</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>你係永夜後日談既死靈法師。\n一開始你會揀兩個人制成人偶。如果佢地入面其中一個被完全解體(修復不能)，另一個會立即被狂氣填滿。\n備註：人偶會互相知道對方係邊個，但唔會知道對方身分。如果人偶係最後兩個存活就贏。</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>你係忍神裡面既忍者。\n一開始你會揀一個人用替身術，如果佢死左，你既替身術會複制佢既能力。\n備註：就算對像死前入左狂信徒，你仍然會複制佢原本既能力。如果對像係書籍卿而佢既禁書附身對像死左，你就會變成BOSS。反之，你就要等禁書被解放。\n狂信徒唔可以拉忍者入教(忍者複制後可以拉)。</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>你係B級電影既男主角。如果其他人去你屋企，佢地有可能因為你神表現而畀你殺死。\n如果BOSS黎殺你，你有機會去殺翻佢轉頭。你死前可以用你既主角威能去拉一個人陪葬。\n備註：BOSS黎你屋企時候會有機會畀你殺，機率按團入面BOSS數目而定。\n一隻BOSS=30%，兩隻BOSS=50%，三隻BOSS=70%，如此類推。\n如果狂信徒黎傳教，佢地有50%拉你唔到。如果佢地拉唔到，你就有50%去殺佢地其中一個。</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>你係Paranoia裡面既紅色大人。你每晚都會拎支激光槍殺人，直到嗰D唔受電腦支配既渣渣全滅。\n但係反派BOSS黎殺你既話，你有20%機會俾佢地殺死，另外有80%機會反殺翻佢地其中一個。</value>
+	</string>
+  <string key="CupidChosen">
+    <value>你被人...被人製成人偶，雖然你既外表性格甚至能力都同以前一模一樣，但你內在已經唔同。你知道 【{0}】同你一樣變成人偶，如果佢被完全解體，你都會立即被狂氣填滿而撕卡</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>TRPG村既小伙伴選中左你去受死，但係接受命運之前，你可以拉一個人去陪葬。</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>KP拎住 【{0}】張人物咭準備撕左佢， 佢好想搵人陪葬，但因為B級電影唔夠預算，佢連生果刀都無一把。慘慘豬囉!</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>KP拎住 【{0}】張人物咭準備撕左佢，但係作為男主角。最後佢選擇左放棄，唔搵人陪葬，單獨地接受左自己命運</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>KP拎住 【{0}】張人物咭準備撕左佢，呢個時候佢發動左主角威能，佢拎出一把生果刀，對準 【{1}】 飛過去，就係咁結束左 【{1}】 短短嘅一生。\n【{2}】</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>你被謀殺了! 係你人生嘅最後幾秒鐘，觀眾賜你主角威能，你可以揀一個人用生果刀飛死佢!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>武道家嘅小左對 【{0}】產生左嚴重嘅傷害，佢連把生果刀都未攞到出黎就被撕卡..</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>當 【{0}】 就死之時，佢吸左最後一口氣，但係佢最後都係放棄左殺人機會，做個光明既男主角。</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>【{0}】 嘅身體變成白光開始消失， 【{0}】 拎出佢把生果刀，對住 【{1}】 飛過去，把刀係 【{1}】 兩條眼眉中穿過。\n【{2}】</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>【{0}】 偷偷潛入左 【{1}】屋企，但紅色大人早已知道一切，【{1}】拎住把激光槍係咁ZAP佢， 再用匕首係 【{0}】 身上面寫上「電腦大人萬歲」六個大字。\n【{0}】 傳教失敗，死亡 :D</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>BOSS琴晚去左男主角屋企，但英勇嘅男主角成功搵其中一個BOSS陪葬。\n【{0}】 死亡</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>BOSS琴晚去左男主角屋企，但係英勇嘅男主角將佢地擊退，仲用生果刀殺左 【{0}】 !</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>BOSS琴晚諗住殺人，點知誤入紅色大人屋企!\nBOSS【{0}】 死亡 !</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>對於某D人來講，琴晚係一個和平既晚上，但係對於 【{0}】 黎講，係佢最重要既一晚! \n今朝班村民起身，見到 【{0}】 嘅灰燼係佢屋企地板...紅色大人又ZAP低左一個人!\n【{1}】</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>你諗住ZAP左 【{0}】去將反叛者全部殺死，但係聖騎士嘅出現，令你嘅計劃失敗，你白白浪費左一晚....</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>狂信徒派出 【{0}】 去 【{1}】 屋企傳教，行先真係死先，屋企面無啦啦有槍聲， 【{0}】條屍係窗口飛左落街。\n【{0}】 撕卡....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>狂信徒派出 【{0}】 去 【{1}】 屋企傳教，點知 【{0}】白光一閃，佢就變左一堆灰燼！係咪係咁高科技丫\n【{0}】 撕卡....</value>
+  </string>
+  <string key="GuardKiller">
+    <value>你諗住去保護人，點知佢係【紅色大人】，佢ZAP左你9981槍...你的靈魂回到主的神國...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>你入左 【{0}】間屋諗住強姦人，氣氛一直都好好，直到 【{0}】 拎左把槍出來，佢用匕首係你身上面寫上「我係淫魔」四隻字，然後佢gap gap聲笑住咁一槍射死你....</value>
+  </string>
+  <string key="DGToMason">
+    <value>忍者 【{0}】 變左做神子, 就好似你咁!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>【{0}】 已撕卡，你變左做神子。你班朋友仔係 (如有) ：【{1}】</value>
+  </string>
+  <string key="DGToCult">
+    <value>忍者 【{0}】 變左做狂信徒, 就好似你咁!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>【{0}】 已撕卡，你變左做狂信徒，你班朋友仔係 (如有) ： 【{1}】</value>
+  </string>
+  <string key="DGToWolf">
+    <value>忍者 【{0}】 變左做BOSS，就好似你咁!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>【{0}】 已撕卡，你變左做BOSS，同伴係 (如有) ： 【{1}】</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>條村得返紅色大人!佢大叫「幸福是市民的義務，電腦大人，我好幸福」\n紅色大人 勝出!</value>
+  </string>
+  <string key="AskKill">
+    <value>你今晚想殺邊個?</value>
+  </string>
+  <string key="LoverDied">
+    <value>【{1}】見到 【{0}】破碎的身體， 【{1}】就明白到佢根本修復唔到，諗到自己將來永遠要弧單一個，佢趴左係【{0}】身上面不斷喊，佢無法承受如此嘅哀傷。【{1}】狂氣滿值，活動不能\n【{2}】</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>你希望邊一個村民撕卡之後，自己會得到佢既能力呢?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>你想將個邊個製成人偶? 而家揀第一個</value>
+  </string>
+  <string key="AskCupid2">
+    <value>你想將個邊個製成人偶? 而家揀第二個</value>
+  </string>
+  <string key="Hunter">
+    <value>男主角 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>死靈法師 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>紅色大人 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>忍者 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>死靈法師將你同 【{0}】一齊變成人偶! 你地兩個不是一齊生存到最後，就是共同迎接悲慘未來。</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>你係新既書籍卿! 你知道禁書係 【{0}】身上，佢死左你就會變成BOSS。</value>
+  </string>
+  <string key="LoversWin">
+    <value>不死的人偶們站在村的中央，望著滿地的屍骸，迎來永遠的幸福。</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>係TRPG村嘅中央 ，大家見到【{0}】 嘅屍體插住把生果刀，睇黎佢想偷襲男主角但得到左淒慘嘅下場。\n【{1}】</value>
+  </string>
+  <string key="CultAttempt">
+    <value>一位狂信徒試圖說服你成為佢地一份子，但係你拒絕左佢地。</value>
+  <!-- New strings 15 June 2016-->
+  </string>
+    <string key="AlreadyOnWaitList">
+    <value>你已經在 {0} 排隊了。</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>你已經在 {0} 排隊了，當跑團既時候，我會PM你!</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>新團即將在 {0} 開始，請把握時間加入!</value>
+  </string>
+  <!-- New strings 16 June 2016-->
+  <string key="SerialKillerWinsOverpower">
+    <value>故事來到結局，TRPG村剩番最後兩個村民。\n【{0}】帶住【{1}】去到一道隨意門前面，佢一腳踢左【{1}】入去，度門發出血紅色既光芒。【{0}】成為條村既唯一生還者</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>呢條村所有PC都... 呢度除了NPC之外，咩野生物都搵唔到，無人勝出。...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>故事來到結局，TRPG村剩番【{0}】同【{1}】兩個村民， 你們走到【{0}】提供既隨意門前。 忽然間佢一腳踢【{1}】 入度門裡面。當【{1}】 就穿過度門時， 【{1}】 亦都毫不猶豫咁拎出一把生果刀，對 【{0}】 個頭飛左過去... 結果，【{1}】穿過之後度門發出血紅色既光芒，最後兩個人都死左...無人生還</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>你放棄選擇，所以我幫你做左決定: 【{0}】</value>
+  </string>
+  <string key="Won">
+    <value>勝利</value>
+  </string>
+  <string key="Lost">
+    <value>失敗</value>
+  </string>
+  <!--Below Strings updated by @jeffffchoy on 10/8/2016-->
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>喺過去廿四個鐘，【{0}】因為連續兩晚都無投票而俾KP撕左 {1} 次。</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>【渣渣】淨係可以喺黃昏投票嘅時候可以撳制投票。</value>
+  </string>
+  <string key="AboutSeer">
+    <value>【超遊者】每晚都可以查一個人嘅身份。</value>
+  </string>
+  <string key="AboutWw">
+    <value>【BOSS】佢地每晚都可以揀一個人黎殺，殺到最後，生還者入面有一半係BOSS就贏。不過如果你地揀中左去殺紅色大人，你地就得20%機會殺到佢，另外有80%機會比紅色大人反殺。</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>【666淫魔】每晚都會送上門同人搞。如果揀左平民就會無事發生；揀左BOSS或者紅色大人撕硬卡；揀中BOSS想殺果個人，BOSS會連埋你一齊殺埋；去左搵其他人，BOSS同邪教都搵你唔到，不過紅色大人點都會搵到你再殺左你。</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>【喵喵】喵有九條命同進入幻夢境的能力。BOSS係殺唔到你既，重會比你搞到唔舒服，不過你都會因此退場。</value>
+  </string>
+  <string key="AboutCursed">
+    <value>【San值近0】BOSS咬你你唔會撕卡，反而會變埋做BOSS添！</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>【主角嗰朋友】如果所有BOSS死晒而你都未撕卡，你就會變做BOSS！</value>
+  </string>
+  <string key="AboutGA">
+    <value>【聖騎士】每晚你都可以保護一個人，令到BOSS同紅色大人都殺唔到佢。但係如果你去左守護BOSS，你就有 50% 機率會死；去左守護紅色大人就必死無疑！</value>
+  </string>
+  <string key="AboutDetective">
+    <value>【COC調查員】每日朝早你都可以調查一個人嘅身份，但同時你有 40% 被BOSS發現你係COC調查員。</value>
+  </string>
+  <string key="AboutGunner">
+    <value>【古流武道家】每日朝早你都可以用你既小左或小右去殺一個人，不過佢地工作一次後就要休息。唔好亂殺好人呀，雖然你可以殺人，但你其實係村民陣營架！</value>
+  </string>
+  <string key="AboutTanner">
+    <value>【Fiasco】你一俾人投死就會自動勝出！你既存在目的就係為左產生悲劇，所以每日你都要設法令人當你係壞人，咁你就會獨羸喇！\n不過提提你，你唔係屬於村民陣營架，兩邊不討好！</value>
+  </string>
+  <string key="AboutFool">
+    <value>【白痴仔】系統你同你講你係超遊者，你每晚都同超遊者一樣可以「查」一個人嘅身份，不過系統多數都係呃你架喎！</value>
+  </string>
+  <string key="AboutCult">
+    <value>【狂信徒】成個教會每晚可以揀一個人拉佢入教（除左BOSS同忍者），但係啲人如果唔喺屋企就唔會俾你拉入教。入左教既人會失去原來既身份。邪教獵人／紅色大人會殺左你。神子、喵喵、規則控、男主角、超遊者朋友、書籍卿、白痴仔、Fiasco一定會俾你拉入教。其他人入教機率︰超遊者 40%，San值近0 60%，聖騎士 60%，COC調查員 70%，666淫魔 70%。如果你拉唔倒Z入教，佢有 50% 會殺左你。最後最果無晒BOSS同紅色大人，而且全村人都入晒教，咁你就贏喇。</value>
+  </string>
+  <string key="AboutCH">
+    <value>【邪教獵人】每晚都可以去人地屋企做家訪，發現狂信徒就會殺左佢。如果狂信徒黎左拉你入教，你會殺左佢地其中一個會員。</value>
+  </string>
+  <string key="AboutWC">
+    <value>【書籍卿】你係魔導書大戰既書籍卿！你知道禁書寄宿係邊個人身上，只要佢死左，你就可以回收禁書，變做BOSS啦。但你一日未回收禁書，你一日都係村民既陣營。</value>
+  </string>
+  <string key="AboutAppS">
+    <value>【超遊者朋友】超遊者撕左或者入左邪教之後你就上位變超遊者喇。</value>
+  </string>
+  <string key="AboutBH">
+    <value>【規則控】都係一個平凡既村民，唔同嘅係你會知道邊一個係真超遊者。</value>
+  </string>
+  <string key="AboutMason">
+    <value>【神子】都係一堆平凡未覺醒既村民，唔同嘅係你會知重有邊個係神子。</value>
+  </string>
+  <string key="AboutDG">
+    <value>【忍者】喺第一晚可以揀一個目標，若然佢撕咗，你就會變左做佢個身份。如果目標係入左教嘅神子，你會變做神子而唔係狂信徒。忍者唔會俾人拉入邪教，要變左身先得。如果忍者喺團結束時仲未變到身，就會輸（除非你嘅人偶贏咗）。</value>
+  </string>
+  <string key="AboutCupid">
+    <value>【死靈法師】你係永夜後日談既死靈法師。\n喺第一晚可以揀兩個人令佢地變成人偶。如果佢地入面其中一個被完全解體(修復不能)，另一個會立即被狂氣填滿而行動不能。\n人偶會互相知道另一方係邊個，但唔會知道對方身分。如果最後得番人偶生存，不論佢地係咩身份，都淨係佢地獨贏。另外，如果佢地其中一個贏左，另一個都會贏。（假設一個係BOSS一個係村民，無論最後村民贏定BOSS贏，佢兩個都會一齊贏。）而死靈法師自己就跟村民陣營分勝負。
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>【男主角】喺臨死之前可以拉一個人陪葬。如果係BOSS嚟殺你，你有機會反殺BOSS嘅其中一個，不過就冇得揀對住邊個開槍。如果得一個BOSS嘅話，有 30% 反殺個BOSS（並一定存活）。每多一個BOSS多 20% （兩BOSS 50%；三BOSS 70%）。如果有多過一個BOSS，就算你反殺到你都有機會撕卡。如果狂信徒黎拉你入會，佢地有 50% 機率拉唔倒你入會，而你就再會有 50% 機率去殺佢地其中一個。當你同紅色大人成為最後兩個生存者果時，就會一齊輸。
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>【紅色大人】每晚都可以去殺一個人，殺晒所有人先會贏（除非係人偶）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢地再殺左佢。如果BOSS黎左你屋企想殺你，你有20%機會俾佢地殺左，另外有80%機會反殺佢地共中一隻個。</value>
+  </string>
+  <string key="AboutPara">
+    <value>【Para】係一個鍾意周圍吠嘅弱智程式員，佢可能玩太多TRPG所以先製作倒呢個遊戲...</value>
+  </string>
+  <string key="EndTime">
+    <value>跑團時間︰ {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>第 {0} 日</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>發生錯誤，此節點（Node）已關閉。\n（應該不影響跑團）</value>
+  </string>
+  <string key="SentPrivate">
+    <value>我已經私底下話咗比你知（PM）。</value>
+  </string>
+  <string key="StartPM">
+    <value>請你先啟動我 @werewolfbot ，我至可以同你講嘢。</value>
+  </string>
+  <string key="PMTrue">
+    <value>唔該哂，咁之後我就可以PM你喇！</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>請回覆一個玩家嘅訊息黎用 /smite 踢佢出 game。</value>
+  </string>
+  <string key="WhatToDo">
+    <value>你想做咩呀？</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>你一定要喺一個群組入面先可以加入團架喎！</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>你一定要喺一個群組入面先可以開新團架喎！</value>
+  </string>
+  <string key="PingInfo">
+    <value>回應處理時間︰{0}\n現時 CPU 用量︰{1}%\n每秒接收訊息︰{2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>想轉用咩語言？\n而家用緊︰ {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>想玩邊個版本？\n而家玩緊︰ {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>轉左用呢個語言： {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>你想下載邊個語言檔？</value>
+  </string>
+  <string key="NoNodes">
+    <value>所有節點（Node）都暫時停止服務，請你等一陣再試過啦。</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>你一定要係一個群組入面先用到呢個指令！</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>你唔係邪教團嘅管理員...</value>
+  </string>
+  <string key="NotPara">
+    <value>你唔係團作者喎！</value>
+  </string>
+  <string key="Yes">
+    <value>是</value>
+  </string>
+  <string key="No">
+    <value>否</value>
+  </string>
+  <string key="Allow">
+    <value>准許</value>
+  </string>
+  <string key="Disallow">
+    <value>停用</value>
+  </string>
+  <string key="Show">
+    <value>顯示</value>
+  </string>
+  <string key="Hide">
+    <value>隱藏</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>只玩正常版</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>只玩混亂版</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>玩家自選</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>全部唔顯示</value>
+  </string>
+  <string key="ShowLiving">
+    <value>只顯示生還者</value>
+  </string>
+  <string key="ShowAll">
+    <value>顯示全部PC</value>
+  </string>
+
+  <string key="Cancel">
+    <value>取消</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>你允許PL在中途離場嗎？\n（在團開始前都可以逃走)\n當前設定︰{0}可以中途離場</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>PL將{0}中途離場。</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>你想最多可以一場有幾多個人跑？\n當前設定︰ {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>設定左每場最多 {0} 個PL。</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>撕亡時公開玩家PC身份嗎？\n當前設定︰ {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>撕亡時會 {0} 玩家PC身份</value>
+  </string>
+  <string key="GameModeQ">
+    <value>想限定跑團模式？\n當前設定︰ {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>跑團模式變更為 {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>跑團結束時公開玩家PC身份？\n當前設定︰ {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>跑團結束時，將會{0}玩家身份</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>請設定日頭嘅基本時間。實際時間會根據玩家數量調整，每次調整至少增加六十秒。預設時間︰{0} 秒\n當前設定︰{1} 秒</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>基本日頭時間設定為 {0} 秒</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>請設定夜晚嘅基本時間。有忍者、死靈法師或書籍卿嘅第一晚會特別長。預設時間︰{0} 秒\n當前設定︰{1} 秒</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>基本夜晚時間設定為 {0} 秒</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>請設定投票嘅時間。預設時間︰{0} 秒\n當前設定︰{1} 秒</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>投票時間設定為 {0} 秒</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>准許玩家抽中白痴仔？\n當前設定︰{0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>已{0}玩家抽中白痴仔</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>准許玩家抽中Fiasco？\n當前設定︰{0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>已{0}玩家抽中Fiasco</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>准許玩家抽中狂信徒？\n當前設定︰{0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>已{0}玩家抽中狂信徒</value>
+  </string>
+  <string key="ThankYou">
+    <value>多謝使用，希望你唔會被人殺啦！</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>你想睇吓邊種語言嘅公開群組？</value>
+  </string>
+  <string key="HereIsList">
+    <value>下列係使用 {0} 嘅公開群組︰</value>
+  </string>
+  <string key="Members">
+    <value>位團員</value>
+  </string>
+  <string key="StartMe">
+    <value>你唔啟動我，我PM唔到你，你唔會知自己係咩PC架喎。</value>
+  </string>
+  <!--Above Strings updated by @jeffffchoy on 10/8/2016-->
+  <string key="PlayerNoPM">
+    <value>{0} 未PM啟動邪教bot，所以今場冇得玩喇！</value>
+  </string>
+  <string key="LatestList">
+    <value>最新PL名單係呢度</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>未有PL名單喎！</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>你成功加入左 {0} 既團啦！</value>
+  </string>
+  <string key="Ping2">
+    <value>傳送Ping訊息所需時間: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>你係作者。你平時都好低調，直至投票時段果時你可以選擇表露你既作者身份。\n一旦表露之後，你每晚投既票都一票代表兩票。好好利用呢個能力幫助村民陣營啦。</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>你係亞俠必死的冒險中既亞俠。係村鎮陣營好重要嘅角色。/n一旦被投票要吊死，問吊前你會主動除晒衫除晒褲，比大家由內到外，再由外到番內咁檢查你。村民會覺悟並且決定今日唔會將你問吊。/n希望佢地記得唔好再投你啦，避到今次避唔到下次架。</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>你係醉酒團既PL，你每次跑團都會飲番杯酒，搞到你乜都睇唔清楚。\n你連投票都投唔好吖！(你有一半機會會投錯一個隨機嘅人。)</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>你係BOSS陣營既中BOSS。你每round可以好似超遊者咁check一個人，但係你只會知果個人係咪BOSS或超遊者，其他身份你check唔到。</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>你係劍世界裡面既魔法戰士。咁多年以嚟，你一直飲酒打架除左好事咩都做，終於村子出事啦，你可以用你既魔法保護條村...一晚 咁多(註：日間你可以選擇使出魔法，之後嗰晚BOSS唔能夠行動。全場只能用一次。)</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>你係幕後黑手。身為嗰班BOSS既首領，你就係呢條村發生咁多事嘅原凶。你活動嘅時候，你所揀嘅受害者有20%機會唔會死，仲變成其中一個BOSS。</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>你係BOSS嗰仔。因為情節需求，如果你死左既話，BOSS會爆發悲傷之力，下一晚可以一次過殺兩個人。(註：你係BOSS陣營。)</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>正當全村都想投死【{0}】既時候，佢突然企出黎大叫：「刀下留人！其實我係亞俠！」並且主動除晒衫除晒褲，比大家由內到外，再由外到番內咁檢查佢。大家見到咁既情況，村民即刻驚到收番埋張票，唔敢投死亞俠。</value>
+  </string>
+  <string key="SorcererOther">
+    <value>你嘗試去check下【{0}】既身份，你發覺佢原來又唔係BOSS，又唔係超遊者，咁就浪費左一晚添...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>【{0}】突然走出黎show出佢張作者證！由今日起，【{0}】每次投既票都一張當兩張票計！</value>
+  </string>
+  <string key="AskMayor">
+    <value>當你唔再甘心扮普通村民果時，就禁一下【表露作者身份】啦！</value>
+  </string>
+  <string key="Reveal">
+    <value>表露作者身份</value>
+  </string>
+  <string key="SpreadDust">
+    <value>你今日想唔用魔法保護條村，令到啲BOSS聽晚殺唔到人呢？</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>正當班村民仲係度諗緊投死邊個既時候，【{0}】無啦啦跪係地下施法。原來佢係你地既魔法戰士。快啲多謝佢啦，你地聽晚唔會俾BOSS殺喇。</value>
+  </string>
+  <string key="Mayor">
+    <value>Mod作者 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>亞俠 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>中BOSS 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>醉酒團既PL 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>魔法戰士 ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>幕後黑手 ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>BOSS嗰仔 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>正當啲BOSS想撲埋去殺死【{0}】既時候，身為幕後黑手既【{1}】走左出黎阻止佢地，拍左拍佢膊頭並講：「我覺得【{0}】好有潛質，我就免佢一死，俾佢加入我地做BOSS啦！」其他BOSS一聽到，即刻拍手歡迎佢加入。</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>正當啲BOSS打算殺死你既時候，你見到幕後黑手黎拍左拍你膊頭，同你講左句：「我覺得你好有潛質，我一於免你一死，俾你加入我地做BOSS啦！」你不但唔洗死，你聽晚仲會變埋BOSS添。</value>
+  </string>
+  <string key="BittenTurned">
+    <value>夜晚終於又黎啦，你突然覺得全身充滿力量，腦海出現好多陰謀詭計，原來不知不覺間你已經變左做BOSS。</value>
+  </string>
+  <string key="AboutMayor">
+    <value>【作者】你平時都好低調，直至投票時段果時你可以選擇表露你既作者身份。一旦表露之後，你每晚投既票都一票代表兩票。好好利用呢個能力幫助村民陣營啦。</value>
+  </string>
+  <string key="AboutPrince">
+    <value>【亞俠】你係亞俠必死的冒險中既亞俠。係村鎮陣營好重要嘅角色。/n一旦被投票要吊死，問吊前你會主動除晒衫除晒褲，比大家由內到外，再由外到番內咁檢查你。村民會覺悟並且決定今日唔會將你問吊。/n希望佢地記得唔好再投你啦，避到今次避唔到下次架。</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>【中BOSS】身為反派BOSS陣營既中BOSS，你每round可以好似超遊者咁check一個人，但係你只會知果個人係咪BOSS或者超遊者，其他身份你check唔到。</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>【醉酒團既PL】一個好論盡嘅醉酒團既PL。叫咗你空肚唔好飲酒，依家搞到你乜都睇唔清楚。你連投票都投唔好吖！(你有一半機會會投錯一個隨機嘅人。)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>【魔法戰士】咁多年以嚟，你一直飲酒打架除左好事咩都做，終於村子出事啦，你可以用你既魔法保護條村...一晚 咁多(註：日間你可以選擇使出魔法，之後嗰晚BOSS唔能夠行動。全場只能用一次。</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>【幕後黑手】身為嗰班BOSS既首領，你就係呢條村多多事既源頭。你生勾勾嘅時候，你所揀嘅受害者有20%機會唔會死，仲變成BOSS群既一份子。</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>【BOSS嗰仔】因為故事需要，如果你死左既話，BOSS下一晚可以一次過殺兩個人。(註：你係BOSS陣營。)</value>
+ </string>
+
+  <!-- new strings 06 nov-->
+
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>【{0}】 已死，你變左做【幕後黑手】，你既同伴係 (如有) ： 【{1}】</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>【{0}】 已死，你變左做【BOSS嗰仔】，你既同伴係 (如有) ： 【{1}】</value>
+  </string>
+    
+  <string key="VillageTeam">
+    <value>村民陣營</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>中間陣營</value>
+  </string>
+  <string key="WolfTeam">
+    <value>反派(Boss)陣營</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Paranoia(紅色大人)陣營</value>
+  </string>
+  <string key="CultTeam">
+    <value>邪神(狂信徒)陣營</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Fiasco陣營</value>
+  </string></strings>
