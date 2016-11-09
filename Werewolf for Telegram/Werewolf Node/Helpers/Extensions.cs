@@ -80,6 +80,7 @@ namespace Werewolf_Node.Helpers
         public static int GetStrength(this IRole role, List<IRole> allRoles)
         {
             IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf };
+            IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller };
             switch (role)
             {
                 case IRole.Villager:
@@ -113,7 +114,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.ApprenticeSeer:
                     return 6;
                 case IRole.Cultist:
-                    return 12 + allRoles.Count(x => x == IRole.Villager);
+                    return 10 + allRoles.Count(x => !nonConvertibleRoles.Contains(x));
                 case IRole.CultistHunter:
                     return 7;
                 case IRole.Mason:
