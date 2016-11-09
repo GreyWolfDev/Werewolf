@@ -2187,13 +2187,13 @@ namespace Werewolf_Node
                                 switch (target.PlayerRole)
                                 {
                                     case IRole.Harlot:
-                                        if (bitten)
+                                        if (target.Choice == 0 || target.Choice == -1) //stayed home
                                         {
-                                            BitePlayer(target, voteWolves, alpha);
-                                        }
-                                        else
-                                        {
-                                            if (target.Choice == 0 || target.Choice == -1)
+                                            if (bitten)
+                                            {
+                                                BitePlayer(target, voteWolves, alpha);
+                                            }
+                                            else
                                             {
                                                 target.DiedLastNight = true;
                                                 target.IsDead = true;
@@ -2204,11 +2204,11 @@ namespace Werewolf_Node
                                                 //    ? GetLocaleString("HarlotEaten", target.GetName())
                                                 //    : GetLocaleString("GenericDeathNoReveal", target.GetName()));
                                             }
-                                            else
-                                            {
-                                                foreach (var wolf in voteWolves)
-                                                    Send(GetLocaleString("HarlotNotHome", target.GetName()), wolf.Id);
-                                            }
+                                        }
+                                        else
+                                        {
+                                            foreach (var wolf in voteWolves)
+                                                Send(GetLocaleString("HarlotNotHome", target.GetName()), wolf.Id);
                                         }
                                         break;
                                     case IRole.Cursed:
