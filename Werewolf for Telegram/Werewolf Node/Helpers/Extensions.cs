@@ -117,7 +117,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.CultistHunter:
                     return 7;
                 case IRole.Mason:
-                    return 3 + (allRoles.Count(x => x == IRole.Mason)); //strength in numbers
+                    return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3 ; //strength in numbers
                 case IRole.Doppelgänger:
                     return 2;
                 case IRole.Cupid:
