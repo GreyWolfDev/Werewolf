@@ -1054,15 +1054,18 @@ namespace Werewolf_Control
             {
                 File.Delete(path);
             }
-            var zip = ZipFile.Open(path, ZipArchiveMode.Create);
-            var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
             var someFileExists = false;
-            foreach (var file in files)
+            using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
             {
-                var fp = LogPath + file;
-                if (!File.Exists(fp)) continue;
-                someFileExists = true;
-                zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
+                
+                foreach (var file in files)
+                {
+                    var fp = LogPath + file;
+                    if (!File.Exists(fp)) continue;
+                    someFileExists = true;
+                    zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                }
             }
             //now send the file
             if (someFileExists)
