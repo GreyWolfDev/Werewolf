@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <!-- Expert mode by Saah (@ayylimao)! Translated in Italian by @MatteoIlGrande! Si consiglia di rivelare i ruoli alla morte :P -->
-<!-- Last updated on 18 August 2016 -->
+<!-- Last updated on 9 November 2016, after 4.0 was released -->
 <strings>
-  <language name="Italiano (Amnesia Mode)" base="Italiano" variant="Amnesia Mode"/>
+  <language name="Italiano (Amnesia Mode)" base="Italiano" variant="Amnesia Mode" owner="MatteoIlGrande"/>
   <string key="NotInGame">
 
   <value>Te ne sei scordato? Non sei in nessuna partita al momento!</value>
@@ -255,10 +255,10 @@
     <value>Oh no! I lupi hanno banchettato coi tuoi ossicini. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Oh no! {0} era un ubriaco!  Ora sei ubriaco a tua volta, non potrai attaccare la prossima notte...</value>
+    <value >Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
 	</string>
   <string key="GuardWolf" >
-    <value> Sei andato a casa di un lupo! Sei stato mangiato. Con il tuo ultimo respiro almeno ricordi che ruolo avevi: l'Angelo Custode👼</value>
+    <value>Sei andato a casa di un lupo! Sei stato mangiato. Con il tuo ultimo respiro almeno ricordi che ruolo avevi: l'Angelo Custode👼</value>
   </string>
   <string key="GuardSaved" >
     <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
@@ -598,9 +598,6 @@
   </string>
   <string key="HarlotFuckKiller">
     <value>{0} era il serial killer! Sei stato ucciso. Negli ultimi istanti di vita, almeno ti ricordi cosa eri: La prostituta💋</value>
-  </string>
-  <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
     <value>Un nuovo nome appare nella tua testa: {0}!</value>
@@ -966,5 +963,127 @@
   </string>
     <string key="Ping2">
     <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che devi fare qualcosa durante il giorno!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Che strano.. Non riesci a ricordare cosa sei!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Che strano.. Non riesci a ricordare cosa sei!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che devi fare qualcosa durante il giorno!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena il villaggio si appresta a linciare {0}, qualcuno nota un anello nel suo dito, e urla al villaggio di smettere. «FERMI! Quella persona è della famiglia reale! Porta l'anello reale nel dito!». Preoccupati di una punizione per ferire la nobiltà, il villaggio ferma il linciaggio e fugge nelle proprie case, per la notte...</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} sussulta all'improvviso, dopo aver tirato fuori qualcosa dalla sua tasca: lo stemma ufficiale del Sindaco. Tutto il villaggio si rende conto che lui è il capo del villaggio, e dato ciò, che il suo voto per il linciaggio vale doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Sembra esserci qualcosa nella tua tasca..</value>
+  </string>
+  <string key="Reveal">
+    <value>Tiralo fuori</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Sai che dovresti fare qualcosa, ma vuoi farlo oggi?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre il resto del villaggio discute dell'amnesia che ha colpito tutti, si accorgono che {0} vaga per la città spargendo l'argento per terra. Per ora, o almeno, per stanotte, il villaggio sarà al sicuro dagli attacchi dei lupi.</value>
+  </string>
+  <string key="Mayor">
+    <value>il Sindaco 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>il Principe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>lo Stregone 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>il Ragazzo Goffo 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>il Fabbro ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>il Lupo Alfa ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>il Cucciolo di Lupo 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...\nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Sarà successo qualcosa? Non ne sei neanche sicuro...</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Sarà successo qualcosa? Non ne sei neanche sicuro...</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Il sindaco del paese, in incognito. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse convertito ai satanisti, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il principe è un ruolo chiave nella strategia del team dei Villici.La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere linciato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei un potente Stregone, ed hai poteri di Veggenza. Tuttavia non userai i tuoi poteri per vincere col popolo, invece, Ti schiererai con i Lupi. \nOgni notte scruta come il veggente, ma può vedere SOLO il veggente e i lupi. Vince con i lupi.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei il Ragazzo Goffo, talmente distratto che c'è un 50% di probabilità che il bot cambi il tuo voto di linciaggio a uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Il fabbro è un abitante del villaggio che ha passato gli anni a forgiare spade elfiche. Una volta durante la partita, può decidere di spargere la polvere d'argento durante il giorno (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare i lupi la notte seguente.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Il Lupo Alfa è l'origine della maledizione, la rovina delle rovine. Finché vivo, ha il 20% di possibilità di infettare le sue vittime (Se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in lupi la notte successiva.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il cucciolo di Lupo è un normale lupo, e verrà visto come Lupo dal veggente. Ma se venisse ucciso, la notte seguente gli altri lupi uccideranno due persone, in preda alla rabbia.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto! Il tuo ruolo è cambiato, ma da cosa, e a cosa? \nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto! Il tuo ruolo è cambiato, ma da cosa, e a cosa? \nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Villaggio</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Lupi</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team Satanisti</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Conciatore</value>
   </string>
   </strings>
