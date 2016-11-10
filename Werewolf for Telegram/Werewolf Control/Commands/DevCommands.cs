@@ -1049,7 +1049,7 @@ namespace Werewolf_Control
         {
             var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
 
-            var path = Path.Combine(Bot.RootDirectory, "errors.zip");
+            var path = LogPath + "errors.zip";
             if (File.Exists(path))
             {
                 File.Delete(path);
@@ -1059,9 +1059,10 @@ namespace Werewolf_Control
             var someFileExists = false;
             foreach (var file in files)
             {
-                if (!File.Exists(file)) continue;
+                var fp = LogPath + file;
+                if (!File.Exists(fp)) continue;
                 someFileExists = true;
-                zip.CreateEntryFromFile(file, Path.GetFileName(file), CompressionLevel.Optimal);
+                zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
             }
             //now send the file
             if (someFileExists)

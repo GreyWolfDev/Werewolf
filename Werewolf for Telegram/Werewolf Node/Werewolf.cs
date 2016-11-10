@@ -1905,7 +1905,7 @@ namespace Werewolf_Node
                     e = e.InnerException;
 
 
-                Send("Well shit. I broke. Check the logs...\n" + e.Message);
+                Send("Oh no, something went wrong :( Error report is being sent to the developers\n" + e.Message);
 #if DEBUG
                 Send(ex.StackTrace);
 #else
