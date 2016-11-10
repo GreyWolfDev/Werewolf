@@ -3012,10 +3012,10 @@ namespace Werewolf_Node
                                                 msg = GetLocaleString("HarlotEaten", p.GetName());
                                             break;
                                         case IRole.SerialKiller:
-                                            //if (p.DiedByVisitingKiller)
-                                            //    msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName());
-                                            //else
-                                            msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                            if (p.DiedByVisitingKiller)
+                                                msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName());
+                                            else
+                                                msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
                                             break;
                                     }
                                     break;
