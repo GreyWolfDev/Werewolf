@@ -2,6 +2,7 @@
 <!-- WEREWOLF FOR TELEGRAM: SINGAPORE (PUBLIC HOUSING) Language Pack. Learn more about Singapore from our language pack and the little references we have put in, for laughs! -->
 <!-- Version 1.00: Created proudly by Donavan, Holypanda, Kylor, Darryl, Klinsmann, Kopi, Ian and Cyril! Moral support and vetting from Jayjay, Kaykay and Risa! -->
 <!-- Version 1.01: Edited "serial killer" from KUMAR to Pontianak. Also language changes. -->
+<!-- Version 1.02: Multiple values for many common strings. Adding a bit of variety. -->
 <!-- If you would like to contribute to this language pack for more Singaporean flavour, please contact @donavancheah to see how it can be infused into the pack! -->
 <strings>
   <language name="English - Singapore" base="English" variant="Singapore Version"/>
@@ -11,18 +12,18 @@
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
     <value>{0} has started a game! Use /join to buy a HDB flat, and probably be chased out! :P</value>
-    <value>A new game has been started by {0}! Use /join to buy a HDB flat!</value>
+    <value>A new BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
     <value>{0} has started a chaos game! Use /join to buy a HDB flat. and probably be chased out! :P</value>
-    <value>A new chaos game has been started by {0}! Use /join to buy a HDB flat!</value>
+    <value>A new chaotic BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>You can't join now! Next round of build-to-order (BTO) flats, please! </value>
   </string>
   <string key="AlreadyJoined">
-    <value>You've already joined!</value>
+    <value>You've already joined the queue!</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>1 minute left to /join</value>
@@ -53,7 +54,7 @@
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>{0} has signed up for the build-to-order (BTO) flats! {1} players, {2} minimum, {3} maximum</value>
+    <value>{0} has signed up for the build-to-order (BTO) flats! {1} in queue! Min. queue {2}, max. queue {3}.</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
@@ -161,7 +162,7 @@
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
     <!-- 0 - teammate names -->
-    <value>  Make sure you discuss with {0}</value>
+    <value> Make sure you discuss with {0}</value>
   </string>
   <string key="And">
     <!--this is paired with "DiscussWith". again, leave the spaces!-->
@@ -177,7 +178,7 @@
     <value>You are the drunkard (drunk 🍻). If the HDB agents (wolves) must trail you all the way to Bedok Reservoir (while drowning your sorrows at losing huge bets due to José Mourinho), the HDB agents will still need to visit your house the next night to clean it up.</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>You are the "啰哩啰嗦" (longwinded) auntie (Guardian Angel 👼). Each night, you may want to discuss with another resident the prospect of a joint collaboration. If the HDB agents (wolves) find you, your exceptionally fantastic mouth allows you to outspeak the HDB agent to the point that they simply give up and leave you and your friend alone. However, if you try pitching this idea to the HDB agents there is a 50% chance they will evict you because you have definitely broken the law! And don't think about Kumar (serial killer); Kumar will make a joke out of your business proposal, giving you a heart attack. Hopefully that does not leave a speech impediment which will impair your ability to be long-winded.</value>
+    <value>You are the "啰哩啰嗦" (longwinded) auntie (Guardian Angel 👼). Each night, you may want to discuss with another resident the prospect of a joint collaboration. If the HDB agents (wolves) find you, your exceptionally fantastic mouth allows you to outspeak the HDB agent to the point that they simply give up and leave you and your friend alone. However, if you try pitching this idea to the HDB agents there is a 50% chance they will evict you because you have definitely broken the law! And don't think about the Pontianak (serial killer); you know better than to anger the resident ghost...</value>
   </string>
   <string key="RoleInfoGunner">
     <value>You are the shady NSF (gunner 🔫)! You somehow managed to smuggle SAF parts home, only to resell them through Tor (to supplement your pathetic allowance). If you hate someone for being noisy (up to 2), you could just go to their flat and shoot them in the head, but the lack of a suppressor means the whole block would hear the gunshot.</value>
@@ -186,7 +187,7 @@
     <value>You are the makcik (Malay for auntie) (harlot 💋). You sell laksa from your home illegally. The residents are more than happy to pay $2.50 for your laksa bowl, but if you try to sell it to the HDB agent (wolf), the law will ensnare you! If the HDB agent visits you while you are not at home, no one will know of your large industrial laksa cauldron, and nothing will happen to you.</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value>You are the jealous resident (traitor🖕). When all the HDB agents (wolves) have been sacked or killed, you take over their job as the next-in-line. The hacktivist (seer) may identify you as either an unhappy envious resident or a HDB agent.</value>
+    <value>You are the jealous resident (traitor🖕). When all the HDB agents (wolves) have given up, you take over their job as the next-in-line. The hacktivist (seer) may identify you as either an unhappy envious resident or a HDB agent, so beware!</value>
   </string>
   <string key="RoleInfoWolf">
     <value>YOU ARE AN HDB AGENT (WOLF 🐺)!! XD It's time to decide, once per night, who you want to evict! Down with all the illegal activities in this HDB estate!</value>
@@ -195,7 +196,8 @@
     <value >You are the hacktivist (seer 👳). Each night, you may compromise a resident's network, knowing what the resident's real life is.</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >You are one of those sad residents (villager 👱) who merely gambles away your salary on 4D and being envious over your other residents’ illegal HDB enterprises, but your knowledge of their illegal activity is enough to risk eviction!</value>
+    <value>You are one of those sad residents (villager 👱) who merely gambles away your salary on 4D and being envious over your other residents’ illegal HDB enterprises, but your knowledge of their illegal activity is enough to risk eviction!</value>
+    <value>You were hoping to be a good businessman? Nah, you're really just a sad resident (villager 👱) who hopes to make it big in TOTO someday... dan gu gu! (wait long long!)</value>
   </string>
   <string key="RoleInfoTanner" >a
     <value >You are the attention seeker (tanner 👺). If majority of the HDB block wants to chase you away, you spread a conspiracy and plunge the flat prices of your ex-residents!</value>
@@ -210,7 +212,7 @@
     <value >You are the rogue Computer Science student (apprentice seer 🙇). Someday, if the resident hacktivist (seer) is gone, you must take over to help your fellow residents intercept the goody-two-shoes before they start evicting everyone.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >You are a Money Lending Member (MLM) (Cultist 👤). Sometimes businesses just need that little more "oomph". Knowing how desperate the estate is for "easy money", the MLM is who they go to, for money, only to be sucked into a pit of no return.</value>
+    <value >You are a Money Lending Member (MLM) (Cultist 👤). Sometimes businesses just need that little more "oomph". Knowing how desperate the estate is for "easy money", the MLM is who they go to, for money, only to be sucked into a pit of no return. (tl;dr: you're just a bloody ah long (loanshark) with a fancy title.)</value>
   </string>
   <string key="RoleInfoCultistHunter" >
     <value >You are the fake CPIB officer (Cultist Hunter 💂). Scaring the MLM is an extremely effective way to earn money. Only the MLM gets frightened with your antics, though; the makcik, hacktivist, among others know better than to fall for your fake CPIB badge.</value>
@@ -218,32 +220,36 @@
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
-      Dusk draws near, and the villagers gather to decide who they are chasing away this evening...
+      Dusk draws near, and the residents gather to decide who they are chasing away this evening...
       Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
     <!-- 0 - number of seconds -->
     <value>It is now day time. All of you have {0} seconds to pretend to nurture the kampung spirit, or just ignore and buy 4D, hoping to retire early.</value>
+    <value>It is now day time. Maybe it's time to make peace with your neighbours. {0} seconds before dusk hits!</value>
   </string>
   <string key="NightTime" >
     <!-- 0 - number of seconds -->
     <value>Night has fallen. Everyone heads to bed, weary after another stressful day of work. Night players: you have {0} seconds to use your actions!</value>
+    <value>Night has fallen. Everyone heads to bed, praying that no more strange things will happen to this estate. Night players: you have {0} seconds to use your actions!</value>
   </string>
   <string key="LynchKill" >
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value>The villagers have cast their votes, amid doubts and suspicions. {0} has been chased away with a broomstick! {1}</value>
+    <value>The residents have cast their votes, amid doubts and suspicions. {0} has been chased away with a broomstick! {1}</value>
+    <value>The residents have voted for their choice of candidate, {0}. {0} has been swiftly glared at, and {0} knows to leave automatically, before the rotten eggs, tomatoes and cabbage gets thrown. {1}</value>
   </string>
   <string key="LynchTie" >
-    <value>It looks like all the gossip is in vain; nobody was chased away tonight! Everyone still has a flat!</value>
+    <value>It looks like the gossip was in vain; nobody was chased away tonight! Everyone still has a flat!</value>
+    <value>NATO (No action, talk only) SIA! Can't even decide who to evict? Everyone goes home, feeling pissed that the "chao betrayer" hasn't been fished out.</value>
   </string>
   <string key="NoLynchVotes" >
     <value >Something is fishy, for no one voted! No angry aunties chasing the scum of the HDB block out!</value>
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
-    <value >The villagers gather in the morning, but do not see {0}. They wander over to the house, to find {0}'s drone smashed on the covered walkway, with traces of an eviction notice for illegal flying..</value>
+    <value>Where's {0}? They find {0}'s drone smashed on the covered walkway, with traces of an eviction notice for illegal flying.</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
@@ -269,16 +275,17 @@
     <!-- 0 - victim name -->
     <!-- 1 - victim role -->
     <value>As everyone rises in the morning, they see an eviction notice pasted on {0}'s house.\n{1}</value>
-    <value>OH NO! {0}'s house is now empty! All there is is an eviction notice and the illegal business which {0} used to run! \n{1}</value>
+    <value>OH NO! {0}'s house is now empty! All that remains is an eviction notice! the illegal business which {0} used to run has ceased! \n{1}</value>
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>A noticeable stench of rotten pig is coming from the trash bin near {0}'s house... a Money Lending Member (cultist) has been "busted" by the fake CPIB officer (cultist hunter), and his pigs' heads disposed in the trash!</value>
-    <value>Morning comes, and it seems that an MLM, {0}, has left the HDB estate in shame! The "CPIB" has performed a raid and all the neighbours now know the one responsible for the pigs' heads and random blood trails.</value>
+    <value>A noticeable stench of rotten pig is coming from the trash bin near {0}'s house! A Money Lending Member (cultist) has been "busted" by the fake CPIB officer (cultist hunter), and his pigs' heads disposed in the trash! Ah Long say Ah Long lah! Simi money-lending member? (Don't say you are a money-lending member when you are just a loanshark!)</value>
+    <value>Morning comes, and it seems that an MLM, {0}, has left the HDB estate in shame! The "CPIB" has performed a raid and all the neighbours now know the one responsible for the pigs' heads and random blood trails. Ah Long say Ah Long lah! Simi money-lending member? (Don't say you are a money-lending member when you are just a loanshark!)</value>
   </string>
   <string key="NoAttack" >
-    <value>The residents gather the next morning under the void deck, to sighs of relief - it appears there no one lost their home.</value>
+    <value>The residents gather the next morning at the void deck, to sighs of relief - it appears there no one lost their home. Praise the HDB for their magnanimity.</value>
     <value>HENG ARH! (Lucky us!) Nobody seems to have been evicted last night.</value>
+    <value>Someone volunteers to perform a headcount. Everyone seems to be present, which is good. Maybe the estate isn't so spooky after all, considering how this place is well-known for "mysterious" evictions.</value>
   </string>
   <string key="CursedBitten" >
     <value>You have been visited by the HDB agents (wolves) for eviction. As you were the coward (cursed), you silently admitted your guilt, promising to work with the HDB agents (wolves) in exchange for your "safety"!</value>
@@ -291,19 +298,19 @@
     <!-- 0 - victim name -->
     <value >{0} was visited... but admitted to her illegal deeds! You felt that he would make a great HDB agent (wolf)! Congratulations on your new colleague!</value>
   </string>
-  <string key="WolvesEatYou" isgif="true" >
+  <string key="WolvesEatYou" isgif="false" >
     <value >Oh no! The HDB agents (wolves) have evicted you!</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >Oh no! {0} was a drunkard (drunk)! Evicting him took far longer than expected because his house was a fire hazard! You must re-visit her house tomorrow night just to clear the crates of Tiger Beer he was trying to resell!</value>
+    <value >Oh no! {0} was a drunkard (drunk)! Evicting him took far longer than expected because his house was a fire hazard! You must re-visit his house tomorrow night just to clear the crates of Tiger Beer he was trying to resell!</value>
   </string>
   <string key="GuardWolf" >
     <value >You tried to defend an HDB agent's (wolf's) "business"! Of course it was legal, and you were running the illegal business! You have been evicted.</value>
   </string>
   <string key="GuardSaved" >
     <!-- 0 - saved player name -->
-    <value >You have defended {0}'s from the HDB agents (wolves) and/or Kumar (serial killer)!</value>
+    <value >You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (Serial killer)!</value>
   </string>
   <string key="GuardNoAttack" >
     <!-- 0 - player name -->
@@ -365,12 +372,12 @@
     <value >Suddenly, a SAR-21 was fired. The block turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
   </string>
   <string key="WolfWins" isgif="false" >
-    <value>All the conniving residents have been evicted! The HDB agent has won!</value>
+    <value>Enough with the conniving residents! The HDB agent has won!</value>
   </string>
   <string key="WolvesWin" isgif="false" >
-    <value>All the conniving residents have been evicted! The HDB agents have won!</value>
+    <value>Enough with the conniving residents! The HDB agents have won!</value>
   </string>
-  <string key="VillageWins" isgif="false" >
+  <string key="VillageWins" isgif="true" >
     <value>All the pesky HDB agents have been dealt with! The residents have won and can continue their illegal enterprises!</value>
   </string>
   <string key="TannerWins" isgif="false" >
@@ -392,10 +399,10 @@
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - Number of cultists left -->
-    <value>{0} came to your house last night, ready to recruit you, but you managed to catch the slowest-running MLM and scare {0}'s wits; {1} remain!</value>
+    <value>{0} came to your house last night, ready to recruit you, but you managed to catch the slowest-running MLM and scare {0}'s wits; {1} remain! Clearly that ah long (loanshark) was too new!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The Money Lending Members (MLM) (cultists) have recruited you, because you could not repay their debts! Once per night, you will be sent to hang a pig's head demanding for repayment... or a "job offer" with you!</value>
+    <value>The Money Lending Members (MLM) (cultists) have recruited you, because you could not repay their debts! Once per night, you will be sent to hang a pig's head demanding for repayment... or a "job offer" with you! (Just your luck you are now an ah long (loanshark) with a pretty name, that's all!)</value>
   </string>
   <string key="CultTeam">
     <!-- 0 - Number of cultists -->
@@ -411,7 +418,7 @@
     <value>{0} was sent to do your dirty work, and recruit {1}... but no one was home! All you could do was to hang a "notice".</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the HDB agents have been busted, and the only people left standing are all Money-Lending Members! The MLM has won!</value>
+    <value>All the HDB agents have been busted, and the only people left standing are all Money-Lending Members! The MLM has won!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -419,7 +426,7 @@
   </string>
   <string key="HunterFindCultist">
     <!-- 0 - target name -->
-    <value>You go into {0}'s house and find them drying their pigs' heads and counting dirty cash. You quickly put on your "CPIB badge" and cleanse the house of all its valuables. The MLM feared the "CPIB" so much that the MLM went on the run the next morning.</value>
+    <value>You go into {0}'s house and find them drying their pigs' heads and counting dirty cash. You quickly put on your "CPIB badge" and cleanse the house of all its valuables. The MLM feared the "CPIB" so much that the MLM went on the run the next morning. After all, he's really just an ah long (loanshark), don't keng (pretend) to be a financial institute!</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
@@ -427,7 +434,7 @@
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
-    <value>{0}'s foster parents have been chased away! In their desperation to survive, they have been employed as an HDB agent!</value>
+    <value>{0}'s foster parents are gone! In their desperation to survive, they have been employed as an HDB agent!</value>
   </string>
   <string key="WildChildTransform">
     <!-- 0 - role's name -->
@@ -495,7 +502,7 @@
     <value>😭 No Longer Living Here</value>
   </string>
   <string key="Alive">
-    <value>🙂 A Proud Resident</value>
+    <value>🙂 A Grateful Resident</value>
   </string>
   <string key="PlayersAlive">
     <value>Players Alive</value>
@@ -505,7 +512,7 @@
     <value>a Gossip Auntie (a Mason) 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>You are a Gossip Auntie (a Mason) 👷. You kao-pei (complain) so much about the HDB that you now have a band of aunties with common interests. </value>
+    <value>You are a Gossip Auntie (a Mason) 👷. You kao-pei (complain) so much about the HDB that you may now have a band of aunties (if there are, they will be stated) with common interests. </value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
@@ -513,7 +520,7 @@
     <value>Looks like the HDB agents were too kiasi (Hokkien for afraid to die)! {0}, one of the gossip aunties, was named, shamed and lambasted on a Forum opinion article in the Straits Times! Eviction quickly happened to {0}!</value>
   </string>
   <string key="MasonTeam">
-    <value>  The gossip aunties are: {0}</value>
+    <value> The other gossip aunties are: {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
@@ -539,6 +546,7 @@
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
     <value>You send some freshly made laksa to {0}, but upon leaving, you question why there was a fresh pig’s head in the kitchen sink. You wonder if your neighbour has been paying you with dirty money, and greatly suspect the MLM is roaming around.</value>
+    <value>Did you just serve freshly-made laksa to {0}, the money-lending member who really is an ah long (loanshark)? Maybe you should inform the estate...</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -559,7 +567,7 @@
   </string>
   <string key="IsDead">
     <!-- used when gunner shoots a player -->
-    <value>is a goner</value>
+    <value>is a goner.</value>
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
@@ -624,23 +632,24 @@
     <value>Language set to {0}</value>
   </string>
   <string key="NoSeer">
-    <value>No seer!</value>
+    <value>No hacktivist!</value>
   </string>
   <string key="TimesUp">
     <value>Time's up!</value>
+    <value>Too slow!</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>You are the Matchmaker (cupid)! Although a dying trade, parents still approach you to matchmake their kids. Choose 2 unwilling parties to wed and satisfy their parents (and your pockets), so that they can get a BTO and stop pissing their parents off!</value>
+    <value>You are the Matchmaker (cupid 🏹)! Although a dying trade, parents still approach you to matchmake their kids. Choose 2 unwilling parties to wed and satisfy their parents (and your pockets), so that they can get a BTO and stop pissing their parents off!</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>You are the imitator (doppelganger). The MOE has taught you well. You have learnt to memorise the 词语手册 (book of phrases) back and forth and remembered every single organic chemistry reaction. However, you dream of actually living a life. What better than to imitate someone whom you always looked up to, so that you can live that person’s life when that person no longer lives in the estate!</value>
+    <value>You are the imitator (doppelganger 🎭). The MOE has taught you well. You have learnt to memorise the 词语手册 (book of phrases) back and forth and remembered every single organic chemistry reaction. However, you dream of actually living a life. What better than to imitate someone whom you always looked up to, so that you can live that person’s life when that person no longer lives in the estate!</value>
   </string>
   <string key="RoleInfoHunter">
-    <value>You are the tape-recording auntie (hunter). Everyone fears talking to you because they don't know whose scandal may be exposed, and so no one really likes talking to this auntie. Even the MLM fears you for fear that they will be exposed. If an HDB agent comes by, there is a chance she will dig out sordid information on Tor on the number of mistresses the HDB agent has in JB, causing the HDB agent himself to leave in shame!</value>
+    <value>You are the tape-recording auntie (hunter 🎯). Everyone fears talking to you because they don't know whose scandal may be exposed, and so no one really likes talking to this auntie. Even the MLM fears you for fear that they will be exposed. If an HDB agent comes by, there is a chance she will dig out sordid information on Tor on the number of mistresses the HDB agent has in JB, causing the HDB agent himself to leave in shame!</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>You are the PONTIANAK!!! (serial killer) Everyone else is human, but humans fear ghosts! Every night, you may scare someone! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!t</value>
+    <value>You are the PONTIANAK!!! (serial killer 🔪) Everyone else is human, but humans fear ghosts! Every night, you may scare someone! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!t</value>
   </string>
   <string key="CupidChosen">
     <value>You have been forced by your parents to wed. {0} is even worse than Patricia Mok or Mark Lee, but you accept that you need to get a BTO after all. Your goal is for both of you to survive. If one of you disappears (dies, gets evicted, gets scared out of your wits, chased away), the other one will no longer be eligible for a BTO under age 35, and hence commit suicide (even if illegal).</value>
@@ -695,7 +704,7 @@
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>The middle of the night did not go by silently! A strange shout from {0} meant only one thing: the pontianak has struck again! Strangely {0} did not try to move out even earlier, but {0} had already left the HDB estate by morning. {1}</value>
+    <value>The middle of the night did not go by silently! A strange shout from {0} meant only one thing: the pontianak has struck again! Strangely {0} did not try to move out even earlier, but {0} had already left the HDB estate by morning. {1}.</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
@@ -717,9 +726,6 @@
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
     <value>You tried to sell laksa to {0}, but a Pontianak greeted you at the door. Dropping your bowl, you hurriedly flee with your giant cauldron. PONTIANAK IS TRUE!</value>
-  </string>
-  <string key="HarlotFuckKillerPublic">
-    <value>{0} tried to sell some laksa, only to be met with a Pontianak. {0} was scared so white (whiter than the coconut milk) and ceased her laksa business immediately.</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -750,6 +756,7 @@
   </string>
   <string key="SerialKillerWins" isgif="true">
     <value>The only person left standing is the PONTIANAK! THE GHOST ROAMS FREE!</value>
+    <value>No more humans?! THE PONTIANAK IS THE LAST ONE FLOATING!</value>
   </string>
   <string key="AskKill">
     <value>Who do you want to scare?</value>
@@ -758,7 +765,7 @@
     <!-- 0 - dead's name -->
     <!-- 1 - lover's name -->
     <!-- 2 - roles -->
-    <value>With {0} vacating the flat, {1} "rushes over and falls", crying that they're no longer eligible for a new BTO flat. Having already fallen out with their parents, {1} has also decided to pack their bags and leave the HDB estate (and be homeless). {2}</value>
+    <value>With {0} vacating the flat, {1} "rushes over and falls", crying that they're no longer eligible for a new BTO flat 💔. Having already fallen out with their parents, {1} has also decided to pack their bags and leave the HDB estate (and be homeless). {2}</value>
   </string>
   <string key="AskDoppelganger">
     <value>Who do you want to copy if they ever vacate their flat?</value>
@@ -770,20 +777,20 @@
     <value>Who do you want to force a marriage on? Choose the second player</value>
   </string>
   <string key="Hunter">
-    <value>the Tape recording Auntie (the Hunter) 🎯</value>
+    <value>the Tape-recording Auntie (the Hunter) 🎯</value>
   </string>
   <string key="Cupid">
     <value>the Matchmaker (the Cupid) 🏹</value>
   </string>
   <string key="SerialKiller">
-    <value>KUMAR! (the Serial Killer) 🔪</value>
+    <value>the PONTIANAK! (the Serial Killer) 🔪</value>
   </string>
   <string key="Doppelgänger">
-    <value>the imitator (the Doppelgänger) 🎭</value>
+    <value>the Imitator (the Doppelgänger) 🎭</value>
   </string>
   <string key="CupidChosen">
     <!-- 0 - lover's name -->
-    <value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block, but if both of you make it to the end, you have the entire block to yourself!</value>
+    <value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block 💔, but if both of you make it to the end, you have the entire block to yourself!</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
@@ -795,10 +802,10 @@
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
     <!-- 1 - role -->
-    <value>At the playground below, multiple copies of TNP featured a scandal on  {0}. Looks like they tried to talk to the tape-recording auntie last night! {1}</value>
+    <value>At the playground below, multiple copies of TNP featured a scandal on {0}. Looks like they tried to talk to the tape-recording auntie last night! {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>A MLM tried to sell you a pyramid scheme with a pig's head, but you knew better not to believe in such snake oil.</value>
+    <value>A MLM tried to sell you a pyramid scheme with a pig's head, but you knew better not to believe in such snake oil. After all, trusting in the ah long (loanshark) is tantamount to giving up your life!</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -816,6 +823,7 @@
     <!-- 0 - SK's name -->
     <!-- 1 - target's name -->
     <value>Morning comes, and the remaining two residents walk/float to the nearby fishmonger. {0} takes a look at {1}, goes "Peek-a-boo" and {1} fled from the estate at lightning speed.</value>
+    <value>Morning comes, and the remaining two residents were sighted at the void deck. {1} realises that {0} isn't even human, and disappears at lightning speed!</value>
   </string>
   <string key="NoWinner" isgif="true">
     <value>The HDB block is strangely empty... while it's perfect for an en-bloc, no one can carry it out.</value>
@@ -823,7 +831,7 @@
   <string key="SKHunterEnd">
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
-    <value>As the sun rises, {0} and {1} walk out to the nearby fishmonger. {0} cracks a joke on {1}, only for {1} to upload less than flattering videos of Kumar onto EDMW, before suffering a heart attack from the insult. Kumar's identity has been blown, either way, and he immediately goes home to sell his flat and leave. No one is left, what a joke of the block.</value>
+    <value>As the sun rises, {0} and {1} walk out to the nearby fishmonger. {0} tries to scare {1}, only for {1} to upload less than flattering videos of the Pontianak onto EDMW. The housing estate is damned, and no one is left, what a joke of the block.</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
@@ -838,7 +846,7 @@
   <string key="IdleCount">
     <!-- 0 - player's name -->
     <!-- 1 - idle count -->
-    <value>Player {0} has been abandoning his neighbours by not voting {1} times in the past 24 hours.</value>
+    <value>Player {0} has abandoned his neighbours by not voting {1} times in the past 24 hours.</value>
   </string>
   <!--New strings 7th of July-->
   <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
@@ -912,7 +920,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>Regardless of race, language or religion, there is always a ghost story or two... \n \nThe one and only PONTIANAK (serial Killer) 🔪 used to be human! Since gaining supernatural status, the pontianak has decided to purify the HDB estate, by chasing everyone out! \n \nThey can win only if they are the last player with a HDB flat (exception: forced marriage). If the HDB agents try to harass you to evict you from the flat, you speak so bloody fast that the HDB agents have a four-in-five chance of losing the verbal duel and one of them gets a heart attack instead!</value>
+    <value>Regardless of race, language or religion, there is always a ghost story or two... \n \nThe one and only PONTIANAK (serial killer) 🔪 used to be human! Since gaining supernatural status, the pontianak has decided to purify the HDB estate, by chasing everyone out! \n \nThey can win only if they are the last player with a HDB flat (exception: forced marriage). If the HDB agents try to harass you to evict you from the flat, you speak so bloody fast that the HDB agents have a four-in-five chance of losing the verbal duel and one of them gets a heart attack instead!</value>
   </string>
   <string key="AboutPara">
     <value>O HAI DER!</value>
@@ -1123,7 +1131,7 @@
     <value>You are the self-declared lawyer (Mayor 🎖). Actually, you know nuts, but once you claimed you got a degree from Coursera (which really doesn't mean much), the residents think your words carry double their weight.</value>
   </string>
   <string key="RoleInfoPrince">
-    <value>You are THE OBESE ONE (Prince 👑)!!! Probably enjoying too much of makcik’s super fattening laksa (and always choosing McDonalds for lunch and dinner), if the other residents chooses to chase you with a broomstick, they will find immense difficulty moving you, giving up simply because you are too obese. However, obesity is no excuse for the law, and will certainly accelerate you getting a heart attack from Kumar.</value>
+    <value>You are THE OBESE ONE (Prince 👑)!!! Probably enjoying too much of makcik’s super fattening laksa (and always choosing McDonalds for lunch and dinner), if the other residents chooses to chase you with a broomstick, they will find immense difficulty moving you, giving up simply because you are too obese. However, obesity is no excuse for the law.</value>
   </string>
   <string key="RoleInfoClumsyGuy">
     <value>You are the Gambling Addict (Clumsy Guy 🤕). You visit RWS so often you think even the idea of chasing a neighbour from his/her unit is fun (you even asked for odds, remember?)! Half the time you decide… let’s play roulette with your neighbours.</value>
@@ -1148,6 +1156,7 @@
   </string>
   <string key="MayorReveal">
     <value>{0} steps forward and present his Coursera Certificate, declaring himself as a certified "lawyer". From now on, {0}'s votes for chasing people out will count twice.</value>
+    <value>{0} quickly brandishes his recent Coursera Certificate on "Estate Law". From now on, {0}'s votes for chasing people out will count twice.</value>
   </string>
   <string key="AskMayor">
     <value>Click "Reveal" whenever you are ready to reveal yourself as the Self-Declared Lawyer! Your Coursera degree has little use, but you can con the aunties anyway!</value>
