@@ -2966,7 +2966,7 @@ namespace Werewolf_Node
                             }
                         }
                         //killed by SK
-                        else if (p.KilledByRole == IRole.SerialKiller & !new[] { IRole.Wolf, IRole.Harlot }.Contains(p.PlayerRole))
+                        else if (p.KilledByRole == IRole.SerialKiller & !new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Harlot }.Contains(p.PlayerRole))
                         {
                             msg = null;
                             SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
@@ -2987,7 +2987,6 @@ namespace Werewolf_Node
                                     if (p.KilledByRole == IRole.SerialKiller)
                                     {
                                         msg = p.DiedByVisitingKiller ? GetLocaleString("SerialKillerKilledWolf", p.GetName()) : GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
-                                        //TODO Add visited vs hunted by killer
                                     }
                                     else //died from hunter
                                     {
