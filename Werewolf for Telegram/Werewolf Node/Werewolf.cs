@@ -1101,15 +1101,15 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
 
 
-                //#if DEBUG
-                //                //force roles for testing
-                //                rolesToAssign[0] = IRole.Mayor;
-                //                rolesToAssign[1] = IRole.Prince;
-                //                rolesToAssign[2] = IRole.AlphaWolf;
-                //                rolesToAssign[3] = IRole.Villager;
-                //                if (rolesToAssign.Count >= 5)
-                //                    rolesToAssign[4] = IRole.Villager;
-                //#endif
+//#if DEBUG
+//                //force roles for testing
+//                rolesToAssign[0] = IRole.CultistHunter;
+//                rolesToAssign[1] = IRole.Gunner;
+//                rolesToAssign[2] = IRole.AlphaWolf;
+//                rolesToAssign[3] = IRole.WolfCub;
+//                if (rolesToAssign.Count >= 5)
+//                    rolesToAssign[4] = IRole.Villager;
+//#endif
 
 
                 //assign the roles 
@@ -2031,6 +2031,7 @@ namespace Werewolf_Node
             foreach (var p in Players)
             {
                 p.Choice = 0;
+                p.Choice2 = 0;
                 p.CurrentQuestion = null;
                 p.Votes = 0;
                 p.DiedLastNight = false;
@@ -2128,19 +2129,19 @@ namespace Werewolf_Node
 
             if (voteWolves.Any())
             {
-                foreach (var w in voteWolves)
-                {
-                    var wchoice = Players.FirstOrDefault(x => x.Id == w.Choice);
-                    if (wchoice != null)
-                    {
-                        DBAction(w, wchoice, "Eat");
-                    }
-                    wchoice = Players.FirstOrDefault(x => x.Id == w.Choice2);
-                    if (wchoice != null)
-                    {
-                        DBAction(w, wchoice, "Eat");
-                    }
-                }
+                //foreach (var w in voteWolves)
+                //{
+                //    var wchoice = Players.FirstOrDefault(x => x.Id == w.Choice);
+                //    if (wchoice != null)
+                //    {
+                //        DBAction(w, wchoice, "Eat");
+                //    }
+                //    wchoice = Players.FirstOrDefault(x => x.Id == w.Choice2);
+                //    if (wchoice != null)
+                //    {
+                //        DBAction(w, wchoice, "Eat");
+                //    }
+                //}
                 var votechoice = voteWolves.Where(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1));
                 foreach (var w in votechoice)
                 {
@@ -2158,7 +2159,7 @@ namespace Werewolf_Node
                     else
                         choices = chosen.Take(1).Select(x => x.Id).ToList();
                 }
-                WolfCubKilled = false;
+                
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
@@ -2379,7 +2380,7 @@ namespace Werewolf_Node
                     }
                 }
             }
-
+            WolfCubKilled = false;
             #endregion
 
             #region Serial Killer Night

@@ -141,7 +141,7 @@ namespace Werewolf_Node
             HunterKillCultChance = 50,
             HunterKillWolfChanceBase = 30,
             SerialKillerConversionChance = 20,
-            AlphaWolfConversionChance = 20,
+            AlphaWolfConversionChance = 100,
 #endif
 
             GameJoinTime = 180;
