@@ -764,7 +764,7 @@ namespace Werewolf_Node
                 if (msg.Length > 4000) //too long! just send a new message
                     player.LatestMessage = Send(message, player.Id).Result;
                 else
-                    Program.Bot.EditMessageText(player.Id, player.LatestMessage.MessageId, msg);
+                    Edit(player.Id, player.LatestMessage.MessageId, msg);
             }
             
             return;
