@@ -86,6 +86,8 @@ namespace Werewolf_Node.Models
 
         public int Id;
 
+        public Message LatestMessage { get; set; } = null;
+
         public QuestionAsked CurrentQuestion { get; set; }
 
 
