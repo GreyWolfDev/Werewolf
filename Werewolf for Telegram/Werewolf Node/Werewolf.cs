@@ -749,11 +749,12 @@ namespace Werewolf_Node
             }
         }
 
-        private void SendPM(string message, IPlayer player, bool addspace = true)
+        private Telegram.Bot.Types.Message SendPM(string message, IPlayer player, bool addspace = true, bool clearKeyboard = false, InlineKeyboardMarkup menu = null)
         {
             if (player.LatestMessage == null)
             {
-                player.LatestMessage = Send(message, player.Id).Result; //store the message, so that we can edit it later
+                player.LatestMessage = Send(message, player.Id, clearKeyboard, menu).Result; //store the message, so that we can edit it later
+                return player.LatestMessage;
             }
             else
             {
@@ -762,12 +763,13 @@ namespace Werewolf_Node
                 var msg = player.LatestMessage.Text + Environment.NewLine + (addspace ? Environment.NewLine : "") + message;
 
                 if (msg.Length > 4000) //too long! just send a new message
-                    player.LatestMessage = Send(message, player.Id).Result;
+                {
+                    player.LatestMessage = Send(message, player.Id, clearKeyboard, menu).Result;
+                    return player.LatestMessage;
+                }
                 else
-                    Edit(player.Id, player.LatestMessage.MessageId, msg);
+                    return Edit(player.Id, player.LatestMessage.MessageId, msg, menu).Result;
             }
-            
-            return;
         }
 
         private Task<Telegram.Bot.Types.Message> Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null)
@@ -3365,9 +3367,8 @@ namespace Werewolf_Node
 
                 try
                 {
-                    var result = Program.Send(text, to.Id, false, menu).Result;
-                    to.LatestMessage = null; //next message should be a new one
-                    msgId = result.MessageId;
+                    to.LatestMessage = SendPM(text, to, clearKeyboard: false, menu: menu);
+                    msgId = to.LatestMessage.MessageId;
                 }
                 catch (AggregateException ex)
                 {
