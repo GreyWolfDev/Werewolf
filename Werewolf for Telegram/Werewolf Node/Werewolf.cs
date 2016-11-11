@@ -758,8 +758,13 @@ namespace Werewolf_Node
             else
             {
                 //don't send another message, edit the previous one
+
                 var msg = player.LatestMessage.Text + Environment.NewLine + (addspace ? Environment.NewLine : "") + message;
-                Program.Bot.EditMessageText(player.Id, player.LatestMessage.MessageId, msg);
+
+                if (msg.Length > 4000) //too long! just send a new message
+                    player.LatestMessage = Send(message, player.Id).Result;
+                else
+                    Program.Bot.EditMessageText(player.Id, player.LatestMessage.MessageId, msg);
             }
             
             return;
