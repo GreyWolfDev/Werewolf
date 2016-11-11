@@ -1978,6 +1978,7 @@ namespace Werewolf_Node
                         // ignored
                     }
                     p.CurrentQuestion = null;
+                    p.LatestMessage = null; //next message should notify them...
                 }
             }
             catch
@@ -2120,6 +2121,7 @@ namespace Werewolf_Node
                         // ignored
                     }
                     p.CurrentQuestion = null;
+                    p.LatestMessage = null; //if something happens over the night, they should be notified...
                 }
             }
             catch
@@ -3365,6 +3367,7 @@ namespace Werewolf_Node
             {
                 var msgId = 0;
 
+                to.LatestMessage = null;
                 try
                 {
                     to.LatestMessage = SendPM(text, to, clearKeyboard: false, menu: menu);
