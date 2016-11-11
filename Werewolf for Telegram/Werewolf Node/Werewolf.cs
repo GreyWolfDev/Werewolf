@@ -573,7 +573,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("MayorReveal", player.GetName()));
 
                     Program.MessagesSent++;
-                    ReplyToCallback(query,
+                    ReplyToCallback(query, player,
                         GetLocaleString("ChoiceAccepted"));
 
                     return;
@@ -588,7 +588,7 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()));
                     }
 
-                    ReplyToCallback(query,
+                    ReplyToCallback(query, player,
                         GetLocaleString("ChoiceAccepted"));
                     player.CurrentQuestion = null;
                     return;
@@ -608,7 +608,7 @@ namespace Werewolf_Node
                 {
                     player.Choice = -1;
                     Program.MessagesSent++;
-                    ReplyToCallback(query,
+                    ReplyToCallback(query, player,
                         GetLocaleString("ChoiceAccepted") + " - Skip");
                     player.CurrentQuestion = null;
                     return;
@@ -687,7 +687,7 @@ namespace Werewolf_Node
                                 x => new[] { new InlineKeyboardButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
                         player.Choice = 0;
                         Program.MessagesSent++;
-                        ReplyToCallback(query,
+                        ReplyToCallback(query, player,
                             GetLocaleString("ChoiceAccepted") + " - " + target.Name);
 
                         SendMenu(buttons, player, GetLocaleString("AskCupid2"), QuestionType.Lover2);
@@ -737,7 +737,7 @@ namespace Werewolf_Node
                     SendWithQueue(msg);
                 }
                 Program.MessagesSent++;
-                ReplyToCallback(query,
+                ReplyToCallback(query, player,
                         GetLocaleString("ChoiceAccepted") + " - " + target.GetName(true));
                 if (clearCurrent)
                     player.CurrentQuestion = null;
@@ -3771,13 +3771,14 @@ namespace Werewolf_Node
         //    }
         //}
 
-        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
+        internal void ReplyToCallback(CallbackQuery query, IPlayer player, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
         {
             //first answer the callback
             Program.Bot.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
-            //edit the original message
-            if (edit)
-                Edit(query, text, replyMarkup);
+
+            if (!edit)
+                player.LatestMessage = null; //send a new message
+            SendPM(text, player, addspace: false, menu: replyMarkup);
         }
 
         internal static Task<Telegram.Bot.Types.Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null)
