@@ -3680,7 +3680,7 @@ namespace Werewolf_Node
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
                         killed.TimeDied = DateTime.Now;
-                        if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.SerialKiller)
+                        if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.AlphaWolf || killed.PlayerRole == IRole.WolfCub || killed.PlayerRole == IRole.SerialKiller)
                             AddAchievement(hunter, Achievements.HeyManNiceShot);
 
                         DBKill(hunter, killed, KillMthd.HunterShot);
