@@ -10,6 +10,7 @@
 	<string key="PlayerStartedGame">
 		<value>{0} con fare sprezzante ha cominciato una partita. Usate /join per fargli capire chi comanda. </value>
 		<value>Una nuova partita è stata iniziata da {0}! Sarebbe quello che muore sempre al primo turno.\nUsate /join e non deludetelo.</value>
+		<value>Finalmente una nuova partita! {0} vuoi uccidere qualcuno, vero? Usate /join per ammazzarvi a vicenda. </value>
 	</string>
 	<string key="PlayerStartedChaosGame">
 		<value>{0} ha iniziato una partita Chaos! Usa /join per unirti. Chaos è l'entità primigenia così indicata nella Teogonia di Esiodo (Wikipedia).</value>
@@ -20,6 +21,7 @@
 	</string>
 	<string key="AlreadyJoined">
 		<value>Sei già dentro! Se non la smetti di joinare a random ti faccio morire al primo giorno.</value>
+		<value>Ancora non l'hai capito? Stai già dentrooo. Vi prego, uccidetelo per primo.</value>
 	</string>
 	<string key="MinuteLeftToJoin">
 		<value>Ancora 1 minuto per usare /join.</value>
@@ -29,9 +31,11 @@
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>Che gruppo inutile, non si trovano 5 col coraggio di joinare. Cancello la partita. 😒</value>
+		<value>Che infami! Mi svegliate e poi non trovate 5 persone per giocare. Non fatelo più.</value>
 	</string>
 	<string key="StartingGameWait">
 		<value>Era ora!! Siete più lenti di mia nonna a joinare. Vi sto passando i ruoli... </value>
+		<value>Finalmente siete riusciti a trovare 5 persone! Ci voleva tanto?!</value>
 	</string>
 	<string key="BannedForExploit">
 		<value>{0} è bannato per aver tentato un attentato (i nomi che iniziano per / non sono ammessi)</value>
@@ -54,6 +58,7 @@
 	</string>
 	<string key="Flee">
 		<value>{0} si è cagato sotto!</value>
+		<value>{0} vi ha mollati! Ve li scegliete bene i giocatori, eh.</value>
 	</string>
 	<string key="PlayerRoleWas">
 		<value>\n{0} era {1}</value>
@@ -92,7 +97,8 @@
 		<value>\nIl il veggente è {0}</value>
 	</string>
 	<string key="ApprenticeNowSeer">
-		<value>{0} era il Veggente. E siccome sei stronzo, prendi il suo posto</value>
+		<value>{0} era il Veggente. E siccome sei stronzo, prendi il suo posto.</value>
+		<value>{0} era il Veggente. Speravi che morisse, eh? Adesso hai preso il suo posto.</value>
 	</string>
 	<string key="BeholderNewSeer">
 		<value>{0} era solo un tirocinante. {1}, il veggente, è morto e finalmente {0} ha un incarico a tempo indeterminato.</value>
@@ -140,7 +146,7 @@
 		<value>Sei il maledetto. Per adesso sei un normale contadino che zappa la vigna; tuttavia ricordi bene il giorno della sensibilizzazione agli antigeni di lupo mannaro di quella notte.\Se i lupi dovessero morderti nuovamente, la reazione autoimmune scatenerà la mutazione del gene Lup3 e ti trasformerai a tua volta in un LUPO. (Nature, journal of Medicine R.A.F. 1875)</value>
 	</string>
 	<string key="RoleInfoDetective">
-		<value>Sei l'Investigatore. Ogni notte hai la possibilitá di pedinare gli abitanti del villaggio, e potrai scoprire così i loro ruoli. Ma la tua identità non è al sicuro, come diceva mio nonno:'chi si fa i cazzi suoi, campa cent'anni'. Diceva anche:'tanto va la gatta al largo che ci lascia lo zampino'. Ancora:'la curiosità uccise il gatto'. Vabeh hai capito. </value>
+		<value>Sei l'Investigatore. Ogni giorno hai la possibilità di pedinare gli abitanti del villaggio, e potrai scoprire così i loro ruoli. Ma la tua identità non è al sicuro, come diceva mio nonno: 'Chi si fa i cazzi suoi, campa cent'anni'. Diceva anche: 'Tanto va la gatta al largo che ci lascia lo zampino'. Ancora: 'La curiosità uccise il gatto'. Vabe', hai capito. </value>
 	</string>
 	<string key="RoleInfoDrunk">
 		<value>Congratulazioni! Sei un ubriacone! Ricorda che l'odore pungente del tuo vomito e il tuo alito fecaloide (sei messo messo male già di tuo) farà fermare i lupi per un turno, ma solo dopo che ti avranno mangiato... </value>
@@ -182,11 +188,10 @@
 		<value >Sei un Satanista. Devi convertire tutti al Belzebù. Attenzione però, se provi a convertire un cacciatore potrebbe bucarti la testa in pochi secondi...esattamente 666.</value>
 	</string>
 	<string key="RoleInfoCultistHunter" >
-		<value >Sei il Cacciatore di Satanisti! Ogni notte, puoi scegliere un giocatore. Se è un membro della setta di Satana, allora muore.  Dimenticavo, se un satanista prova a convertirti, grazie al tuo detonatore a distanza morirà l'ultimo adepto di quei serpenti.</value>
+		<value >Sei il Cacciatore di Satanisti! Ogni notte, puoi scegliere un giocatore. Se è un membro della setta di Satana, allora muore. Dimenticavo, se un satanista prova a convertirti, grazie al tuo detonatore a distanza morirà l'ultimo adepto di quei serpenti.</value>
 	</string>
 	<string key="LynchTime" >
-		<value>🌅 Il crepuscolo si avvicina inesorabile. Con i lupi che si preparano a banchettare, i satanisti che stanno invocando il Belzebù, e la puttana che...mi fermo qui, insomma dovete linciarvi.\n\nOgnuno ha {0} secondi per votare!
-		</value>
+		<value>🌅 Il crepuscolo si avvicina inesorabile. Con i lupi che si preparano a banchettare, i satanisti che stanno invocando il Belzebù, e la puttana che...mi fermo qui, insomma dovete linciarvi.\n\nOgnuno ha {0} secondi per votare!</value>
 	</string>
 	<string key="DayTime" >
 		<value >☀️ Il sole è sorto. Gli uccellini cinguettano, le galline invece giacciono stramorte nel pollaio.\nAvete {0} secondi per scannarvi, insultarvi e fingervi qualcun altro 😈.</value>
@@ -219,7 +224,7 @@
 		<value >Alla nona ora {0} era già ubriaco perso, tant'è che lo sceriffo gli aveva fatto una multa per deambulazione in stato di ebbrezza. Galeotte furono le 3 bottiglie di Jack Daniel's, {0} non si accorse della luna piena. L'indomani in una fetida pozza di sangue e vomito, ciò che rimaneva di {0} era il suo fegato cirrotico rigurgitato dallo sfortunato lupo. Stomachevole. \n{0} era l'Ubriaco🍻 </value>
 	</string>
 	<string key="FoolEaten" >
-		<value >Talmente tanto urlava parole senza senso per la cittá, che al lupo scattarono i cinque minuti nemmeno avesse sentito gli ultrasuoni, e decise di uccidere {0}, E finalmente!\n{0} era il Folle🃏 </value>
+		<value >Talmente tanto urlava parole senza senso per la città, che al lupo scattarono i cinque minuti nemmeno avesse sentito gli ultrasuoni, e decise di uccidere {0}, E finalmente!\n{0} era il Folle🃏 </value>
 	</string>
 	<string key="DefaultEaten" >
 		<value>Qualcuno mancava all'appello.. infatti è {0}! Venne poi ritrovato nella fontana della piazza centrale, appeso alla statua del santone con i suoi 7 metri di intestino, faceva ancora su e giù... nel frattempo degli adorabili gattini sorseggiavano il suo sangue nella fontana. \n{1}</value>
@@ -521,7 +526,7 @@
 	</string>
 	<!--  new strings june 10 2016  -->
 	<string key="RoleInfoCupid">
-		<value>Sei Cupido. Da sempre il tuo mestiere è quello di lanciare frecce con la punta a cuore e far innamorare la gente, quindi perché non farlo anche oggi?\nScegli due abitanti e rendili AMANTI, quando uno dei due muore, l'altro si suiciderá. Mi ricorda tanto una storia già sentita.
+		<value>Sei Cupido. Da sempre il tuo mestiere è quello di lanciare frecce con la punta a cuore e far innamorare la gente, quindi perché non farlo anche oggi?\nScegli due abitanti e rendili AMANTI, quando uno dei due muore, l'altro si suiciderà. Mi ricorda tanto una storia già sentita.
 		</value>
 	</string>
 	<string key="RoleInfoDoppelganger">
@@ -529,7 +534,7 @@
 		</value>
 	</string>
 	<string key="RoleInfoHunter">
-		<value>Sei il cacciatore urbano. Molto affezzionato al tuo fucile, sei comunque un tipo molto asociale e chiunque venga a farti visita, se la dovrá vedere con te. Che siano lupi, satanisti o la puttanella, non ce n'è per nessuno! Li ucciderai senza pietá! E se verrai linciato, hai pochissimo tempo prima di morire per estrarre la tua pistola ed uccidere qualcuno. Ad ogni modo avrai la tua vendetta. 
+		<value>Sei il cacciatore urbano. Molto affezzionato al tuo fucile, sei comunque un tipo molto asociale e chiunque venga a farti visita, se la dovrà vedere con te. Che siano lupi, satanisti o la puttanella, non ce n'è per nessuno! Li ucciderai senza pietà! E se verrai linciato, hai pochissimo tempo prima di morire per estrarre la tua pistola ed uccidere qualcuno. Ad ogni modo avrai la tua vendetta. 
 		</value>
 	</string>
 	<string key="RoleInfoSerialKiller">
@@ -538,7 +543,7 @@
 	</string>
 	<string key="CupidChosen">
 		<value>
-			Cupido ti ha maledetto. Ti ha fatto innamorare di {0} (condoglianze) Il vostro obiettivo è sopravvivere, insieme.*scena commovente* Se uno di voi due muore, l'altro si suiciderá dalla disperazione.
+			Cupido ti ha maledetto. Ti ha fatto innamorare di {0} (condoglianze) Il vostro obiettivo è sopravvivere, insieme.*scena commovente* Se uno di voi due muore, l'altro si suiciderà dalla disperazione.
 		</value>
 	</string>
 	<string key="HunterLynchedChoice">
@@ -568,18 +573,16 @@
 		</value>
 	</string>
 	<string key="HunterNoChoiceShot">
-		<value>
-			Un colpo ha raggiunto {0}, talmente rapido che lui non ha potuto mettere la mano sulla pistola per poter rispondere. Mazza che sfiga.
-		</value>
+		<value>{0} è morto prima di rendersene conto e poter tirar fuori la sua pistola, immerso in un bagno di sangue.....</value>
 	</string>
 	<string key="HunterSkipChoiceShot">
 		<value>
-			{0}, impannolinato di paura, alza le mani e si rifiuta di rispondere alla provocazione. Ah-ah! Morto.
+			{0}, impannolinato di paura, alza le mani e si rifiuta di vendicare. Ah-ah! Morto.
 		</value>
 	</string>
 	<string key="HunterKilledFinalShot">
 		<value>
-			{0} viene colpito nel petto. Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
+			{0} è per terra, morente... Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
 		</value>
 	</string>
 	<string key="CultConvertSerialKiller">
@@ -604,7 +607,7 @@
 		</value>
 	</string>
 	<string key="DefaultKilled">
-		<value>Quella sera {0} stava guardando 'Sepolti in casa' su Real Time come di consueto, quando tutt'ad un tratto un assassino entra in casa sventrando la porta con una motosega! Il corpo di {0} venne poi ritrovato con i bulbi oculari tirati fuori dalle cavità e messi in bocca; la lingua tagliata in due e messa nelle cavitá oculari. Il Serial killer artista del macabro ha colpito ancora! \n{1}
+		<value>Quella sera {0} stava guardando 'Cacciatori di fantasmi' su DMax come di consueto, quando tutt'ad un tratto un assassino entra in casa sventrando la porta con una motosega! Il corpo di {0} venne poi ritrovato con i bulbi oculari tirati fuori dalle cavità e messi in bocca; la lingua tagliata in due e messa nelle cavità oculari. Il Serial killer artista del macabro ha colpito ancora! \n{1}
 		</value>
 	</string>
 	<string key="GuardBlockedKiller">
@@ -634,9 +637,6 @@
 			Ti rechi a casa di {0} pronta a scopartelo per bene. Tutto fila liscio(letteralmente) fin quando, ad un certo punto, {0} estrae un coltello e... Si... Ti accoltella proprio li...
 			Per poi ucciderti. Per poi abusare di te dopo la tua morte. Necrofilia portami via.
 		</value>
-	</string>
-	<string key="HarlotFuckKillerPublic">
-		<value>don't worry about this string for now!</value>
 	</string>
 	<string key="DGToMason">
 		<value>
@@ -709,7 +709,7 @@
 	</string>
 	<string key="CupidChosen">
 		<value>
-			Cupido ha scoccato le sue frecce (non aveva altro da fare..) su di te e {0}! ora siete follemente innamorati. Dovete vincere insieme.. Se uno dei due muore.. l'altro cadrá in depressione
+			Cupido ha scoccato le sue frecce su di te e {0} (non aveva altro da fare...)! Ora siete follemente innamorati. Dovete vincere insieme... Se uno dei due muore... l'altro cadrà in depressione
 		</value>
 	</string>
 	<string key="NewWCRoleModel">
@@ -735,7 +735,7 @@
     Sicuramente ha vinto lo sport.</value>
   </string>
   <string key="AlreadyOnWaitList">
-    <value>Non vedi che sto dormendo?.. Sei giá nella lista d'attesa per {0}</value>
+    <value>Non vedi che sto dormendo?... Sei già nella lista d'attesa per {0}</value>
   </string>
   <string key="AddedToWaitList">
     <value>Sei stato messo nella lista d'attesa su {0}. Ora vado a dormire.. Ti scrivo appena una nuova partit.... *ronf*</value>
@@ -930,7 +930,7 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: È {0} fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
@@ -1020,5 +1020,102 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Sei entrato nell'oblio di {0}, preparati.</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Sei il Sindaco. Tra Bunga bunga e il traffico illegale di armi, trovi il tempo di farti vivo in città. Quando ti rivelerai, il tuo voto varrà doppio durante il linciaggio. Le elezioni si avvicinano, vedi di linciare la persona giusta se non vuoi che qualcuno si incazzi -lo sanno tutti che te la fai con la moglie dell'artigliere-.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei uno stupidissmo e viziatissimo Principe. Sei scappato dal castello dopo che i lupi hanno consumato un prelibato banchetto con i tuoi genitori come portata principale, e adesso ti ritrovi a rubare barbabietole per sopravvivere. Che cosa buffa! Se durante il giorno gli abitanti proveranno a linciarti, potrai mostrare quell'anello reale, che tieni nascosto dove non batte il sole, per salvarti. Ma fa attenzione, potrai farlo solo una volta.. poi morirai come tutti gli sfigati. </value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei lo Scemo del villaggio! Da piccolo hai visto la puttanella fare robe sadomaso con tua madre, così sei caduto sbattendo la testa e da quel giorno sei totalmente rincoglionito. Purtroppo, anche tu devi aiutare i contadini a scovare il lupo solo che, il più delle volte, cambi idea all'ultimo secondo e linci a caso. 
+Che sfiga essere te..</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei lo Stregone. Sei un essere così malvagio e stronzo che nessuno del villaggio vuole avere a che fare con te. Ti sei alleato con i lupi, giusto perché vuoi far pagare a quei mangiabarbabietole il tuo esilio. Di notte potrai usare la tua magia nera per scovare i Lupi o il Veggente. Vinci SOLO se vincono i lupi. Provoca il chaos con le tue stregonerie.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei il Fabbro! Solitamente sei inutile e ti snobbano tutti! Stavolta però, potrai salvare il fondo schiena a tutti quegli sciocchi. Ti è rimasto un po' d'argento da cospargere per tutto il villaggio per fermare quegli stronzi dei lupi per una notte. Poi, senza nemmeno esser ringraziato, tornerai ad esser snobbato da tutti.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei il Lupo Alfa, colui che ha dato via al chaos e alla disperazione. Ogni notte, sceglierai chi attaccare, ma finché rimarrai in vita c'è la possibilità che una delle tue vittime sopravviva e diventi un tuo seguace peloso.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei il Cucciolo di Lupo, il piccoletto coccolato e viziato da mamma lupa. Anche tu, sceglierai ogni notte uno sfigato da attaccare e mangiare con salsa barbecue. Se vieni ucciso, il tuo branco peloso si arrabbierà così tanto da sbranare, non una, ma ben due persone.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena il villaggio ha deciso che {0} sarebbe stato linciato senza pietà, lui, tirando fuori un anello da non si sa dove, urla: «Fermi tutti! Sono il Principe. Questo anello, anche se un po' sporco, ha sopra il sigillo reale. Ho le mani senza calli e la pelle candida, come posso esser cattivo? » Davanti a tanta superficiliatà, i contadini decidono di lasciarlo in vita ma tra la folla si sente qualcuno che dice "Io lo avrei ucciso ugualmente, l'ho visto rubare le mie barbabietole!".</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Hai provato a scrutare {0}, ma tutto quell'incenso che hai attorno non ti fa capire cos'è... Sei però sicuro che non sia nè il Veggente nè un Lupo! Sei sicuro che sia incenso?</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un passo avanti e mostra a tutti lo stemma ufficiale del Sindaco urlando: "Sono il vostro sindaco, sfioratemi e farò in modo che anche da morto le vostre tasse aumentino!" Da ora in poi, i voti del Sindaco {0} per i linciaggio conteranno doppio. Speriamo che all'ultimo Bunga Bunga non abbia tirato di colla e scelga bene!</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca "Rivelati" appena ti senti pronto a farti bello pubblicamente come Sindaco, anche se tutti sanno che sei una mezza calzetta.</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vorresti spargere per la città la tua polvere d'argento, così da poter salvare qualcuno di quegli ingrati?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre i cittadini si picchiano e insultano cercando di capire chi linciare, si accorgono che quello sfigato di {0} vaga per la città spargendo l'argento per terra. Per ora, o almeno, per stanotte, il villaggio sarà al sicuro dagli attacchi dei lupi. "Ah, ma allora {0} serve a qualcosa!" </value>
+  </string>
+  <string key="Mayor">
+    <value>il Sindaco 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>il Principe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>lo Stregone 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>lo scemo del villaggio 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>il Fabbro ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>il Lupo Alfa ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>il Cucciolo di Lupo 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Appena i lupi attaccano {0}, il Lupo Alfa {1} con un bagliore negli occhi, urla a tutti di fermarsi. {1} decide che {0} si unirà ai lupi invece di morire, così il branco va nel bordello più vicino, lasciando la vittima con un morso enorme sulla coscia. Domani notte, anche lui diventerà un lupo famelico!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Sei stato attaccato dai lupi, ma hai avuto la fortuna di esser scelto come nuovo adepto dal Lupo Alfa. Invece di essere arrostito e divorato, sei stato infettato e la prossima notte diverrai lupo! </value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena cala la notte, senti uno strano formicolio, senti dolori su tutto il corpo, ti guardi allo specchi e vedi che ti stai trasformando in un essere orribile. Dopo ore di atroci sofferenze, ecco sei un lupo!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Il sindaco del paese, in incognito. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse convertito ai satanisti, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il principe è un ruolo chiave nella strategia del team dei Villici.La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere linciato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei un potente Stregone, ed hai poteri di Veggenza. Tuttavia non userai i tuoi poteri per vincere col popolo, invece, Ti schiererai con i Lupi. \nOgni notte scruta come il veggente, ma può vedere SOLO il veggente e i lupi. Vince con i lupi.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei lo Scemo del Villaggio, talmente stupido che c'è un 50% di probabilità che il bot cambi il tuo voto di linciaggio a uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Il fabbro è un abitante del villaggio che ha passato gli anni a forgiare spade elfiche. Una volta durante la partita, può decidere di spargere la polvere d'argento durante il giorno (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare i lupi la notte seguente.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Il Lupo Alfa è l'origine della maledizione, la rovina delle rovine. Finché vivo, ha il 20% di possibilità di infettare le sue vittime (Se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in lupi la notte successiva.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il cucciolo di Lupo è un normale lupo, e verrà visto come Lupo dal veggente. Ma se venisse ucciso, la notte seguente gli altri lupi uccideranno due persone, in preda alla rabbia.</value>
   </string>
    </strings>

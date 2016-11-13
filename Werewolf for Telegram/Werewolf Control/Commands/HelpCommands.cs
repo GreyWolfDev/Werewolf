@@ -12,6 +12,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
+using System.Threading;
 
 namespace Werewolf_Control
 {
@@ -90,7 +91,6 @@ namespace Werewolf_Control
             reply += "/aboutGunner - Gunner 🔫\n";
             reply += "/aboutTraitor - Traitor 🖕\n";
             reply += "/aboutGA - Guardian Angel 👼\n";
-            reply += "/aboutDetective - Detective 🕵\n";
             try
             {
                 var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply).Result;
@@ -102,7 +102,9 @@ namespace Werewolf_Control
                 RequestPM(update.Message.Chat.Id);
                 return;
             }
-            reply = "/aboutAppS - Apprentice Seer 🙇\n";
+            Thread.Sleep(300);
+            reply = "/aboutDetective - Detective 🕵\n";
+            reply += "/aboutAppS - Apprentice Seer 🙇\n";
             reply += "/aboutCult - Cultist 👤\n";
             reply += "/aboutCH - Cultist Hunter 💂\n";
             reply += "/aboutWC - Wild Child 👶\n";
@@ -111,8 +113,17 @@ namespace Werewolf_Control
             reply += "/aboutDG - Doppelgänger 🎭\n";
             reply += "/aboutCupid - Cupid 🏹\n";
             reply += "/aboutHunter - Hunter 🎯\n";
-            reply += "/aboutSK - Serial Killer 🔪\n";
+            Send(reply, update.Message.From.Id);
+            Thread.Sleep(300);
+            reply = "/aboutSK - Serial Killer 🔪\n";
             reply += "/aboutTanner - Tanner 👺\n";
+            reply += "/aboutMayor - Mayor 🎖\n";
+            reply += "/aboutPrince - Prince 👑\n";
+            reply += "/aboutSorcerer - Sorcerer 🔮\n";
+            reply += "/aboutClumsy - ClumsyGuy 🤕\n";
+            reply += "/aboutBlacksmith - Blacksmith ⚒\n";
+            reply += "/aboutAlphaWolf - AlphaWolf ⚡️\n";
+            reply += "/aboutWolfCub - WolfCub 🐶\n";
             Send(reply, update.Message.From.Id);
         }
     }

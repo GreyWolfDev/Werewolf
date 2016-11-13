@@ -45,7 +45,8 @@
 		<value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
 	</string>
 	<string key="PMTheBot">
-		<value>\n{0} per favore scrivimi in privato (@{1}) con /start, dobbiamo fare le cose zozze :) </value>
+		<value>
+      {0}, capiamoci, se non vuoi morire prima di giocare, clicca su {1} o sul pulsante qui sotto, e fai /start. Fatto questo sarai pronto anche tu a fare cose zozze con me :)</value>
 	</string>
 	<string key="DeadFlee">
 		<value>Pazzo, non puoi scappare! SEI MORTO!  Torna a marcire nella fossa....</value>
@@ -301,7 +302,7 @@
 		<value >I lupi hanno vinto!</value>
 	</string>
 	<string key="VillageWins" >
-		<value >Il popolo plebeo ha vinto! Tutti i lupi sono morti....</value>
+		<value >Il popolo plebeo ha vinto!</value>
 	</string>
 	<string key="TannerWins" >
 		<value >Il masochista ha goduto fin troppo, avete perso. il masochista ha vinto!</value>
@@ -386,7 +387,7 @@
 		<value>il Folle🃏</value>
 	</string>
 	<string key="WildChild">
-		<value>il Becchino⚰</value>
+		<value>il Becchino👶</value>
 	</string>
 	<string key="Beholder">
 		<value>l'Osservatore👁</value>
@@ -414,7 +415,7 @@
 	</string>
 	<!-- New strings 4 MAY 2016-->
 	<string key="Mason">
-		<value>un Massone👁‍🗨</value>
+		<value>un Massone👷</value>
 	</string>
 	<string key="RoleInfoMason">
 		<value>Sei un Massone. Quindi conosci l'identità degli altri Massoni come te.</value>
@@ -571,22 +572,22 @@
 	</string>
 	<string key="HunterShotChoice">
 		<value>
-			Qualcuno ti ha puntato la pistola! Rispondi anche te sparando a qualcuno! VELOCEE!
-		</value>
+		Stai per morire!  Nei tuoi ultimi istanti di vita, Hai l'occasione di sparare a qualcuno.... Sbrigati!
+  		</value>
 	</string>
 	<string key="HunterNoChoiceShot">
 		<value>
-			Un colpo ha raggiunto {0}, talmente rapido che lui non ha potuto mettere la mano sulla pistola per poter rispondere. Mazza che sfiga
+		{0} è morto prima che se ne accorgesse e potesse mettere la mano sulla pistola per poter rispondere. Mazza che sfiga
 		</value>
 	</string>
 	<string key="HunterSkipChoiceShot">
 		<value>
-			{0} Impannolinato di paura, alza le mani e si rifiuta di rispondere alla provocazione della pistola puntata su di lui. Ah-ah! morto.
+			{0} Impannolinato di paura, alza le mani e si rifiuta di vendicare uccidendo qualcuno. Ah-ah! morto.
 		</value>
 	</string>
 	<string key="HunterKilledFinalShot">
 		<value>
-			Un proiettile colpisce {0} nel petto. Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
+		{0} è per terra, in fin di vita... Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
 		</value>
 	</string>
 	<string key="CultConvertSerialKiller">
@@ -642,9 +643,6 @@
 			Ti rechi a casa di {0} pronta a scopartelo per bene. Tutto fila liscio(letteralmente) fin quando, ad un certo punto, {0} estrae un coltello e... Si... Ti accoltella proprio li...
 			Per poi ucciderti. Per poi abusare di te dopo la tua morte. Necrofilia portami via.
 		</value>
-	</string>
-	<string key="HarlotFuckKillerPublic">
-		<value>don't worry about this string for now!</value>
 	</string>
 	<string key="DGToMason">
 		<value>
@@ -938,11 +936,11 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -1019,4 +1017,115 @@
   <string key="StartMe">
     <value>Per favore startami così potrò scriverti in privato</value>
   </string> 
-</strings>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Sei il VIP! Sei in vacanza in incognito in questo paesello sperduto dove nessuno ti conosce e pieno di mostri e assassini. Se deciderai di rivelare il tuo ruolo e vantarti della tua celebrità il tuo voto varrà doppio (dopotutto sei una Very Importan Person).</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Ti eri stufato della tua vita da Principe tra cortigiane e champagne così hai deciso di scendere tra il popolo per spassartela con contadine e bere birra. Ma se il popolo dovesse decidere di linciarti farai loro vedere chi comanda e annullerai l'esecuzione! Peccato che questo trucco non funzioni più di una volta…</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei il Fattone. Anni passati a sperimentare droghe ti hanno lascianto un pochino svanito… tu ci provi a linciare la persona giusta ma i draghi volanti rendono tutto così confuso…</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei il Furry: adori i lupi, ami i lupi, il tuo sogno è un villaggio di lupi! Per scoprire chi è lupo di notte sgattaioli fuori casa e ti metti a spiare alla finestra di qualcuno per vedere se di notte si trasformano nei tuoi amatissimi lupi o se fanno strani riti per trovare i tuoi alleati pellicciosi.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei lo Spacciatore. Hai diverse polveri interessanti nascoste nel materasso ma la migliore è una droga talmente forte da stordire perfino i lupi! Non ne hai moltissima, sufficiente appena a fermarli  per una notte, quando vuoi durante il giorno puoi decidere di lasciarne un po' in giro per il paese ma tutti ti vedranno e sapranno che sei un buon pusher.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei il Lupo Capo, il lupo originario! Ogni notte chi scegli di attaccare ha il 20% di possibilità di venire infettato dalla tua bava mannara e trasformarsi a sua volta in lupo!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei il Cucciolotto, il lupo più piccolo e tenero del branco. Sei pucciosissimo e tutti i lupi ti amano! Se tu dovessi morire la notte successiva i lupi onoreranno la tua morte uccidendo ben due persone in tua memoria.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Mentre il villaggio inizia ad preparare la forca per {0} lui dice “Oh, ma che fate! Io sono il Principe! E ve lo dimostrerò! Ho la voglia a forma di corona sulla chiappa destra, come tutti nella mia dinastia!” si gira e abbassa i pantaloni e sì, eccola lì, alla luce delle torce la voglia a forma di corona… la folla trovandosi il regal sedere in faccia scoppia a ridere e se ne torna a casa, ma non senza aver scattato qualche foto ricordo.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Sbirci dalla finestra di {0} ma non riesci a capire che cosa sta facendo esattamente. Comunque non è né lupo né veggente… niente di interessante…</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} sale su una panchina, si schiarisce la voce ed estrae una copia di Novella 2000 con la sua faccia in copertina! “IO” grida, “SONO UN VIP”!\nEffettivamente è una Very Important Person e ora il suo voto vale doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca “Sborona” quando vuoi far vedere a tutti che sei un vero VIP.</value>
+  </string>
+  <string key="Reveal">
+    <value>Sborona</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vuoi spargere in giro la droga per stordire i lupi stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre il resto del villaggio discute in piazza si nota {0} che gironzola con fare sospetto spargendo in giro una strana polverina. È la droga più potente che ha! Quella in grado di stordire perfino i lupi!\n(I lupi la prossima notte non potranno attaccare.)</value>
+  </string>
+  <string key="Mayor">
+    <value>il VIP 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>il Principe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>il Furry 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>il Fattone 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>lo Spacciatore ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>il Lupo Capo ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>il Cucciolotto 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Mentre il branco si accinge a pasteggiare con {0}, il Capo {1} ferma tutti e dà una bella morsicata alla vittima. {1} dice “La mia bava mannara dovrebbe bastare a far unire {0} alla gang, domani notte verrà a caccia con noi!”</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Questa notte i lupi sono passati da te per uno spuntino ma il Capo ha provato particolarmente gusto a sbranarti… E sei stato fortunato! La sua bava ti ha infettato e domani notte andrai a caccia con il resto del branco!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Col scendere della notte senti un formicolio sul tutta la pelle e mentre ti gratti il braccio lo scopri coperto da una folta peluria che diventa pelliccia sotto i tuoi occhi! Sei un LUPO!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Come VIP sei un normale cittadino… nessuno ti conosce, nessuno ti considera… almeno fino a quando stufo di essere ignorato farai vedere a tutti la copertina della tua ultima intervista. Da quel momento in poi il tuo voto varrà doppio. Stai attento a non sbagliare!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il principe è un ruolo importante per il villaggio. Quando viene linciato la prima volta sopravvive ed il suo ruolo viene rivelato a tutti.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei un fanatico dei lupi, li sogni e li ami e vuoi che ci sia almeno un lupo per ogni umano. Di notte sbirci nelle case per cercare i tuoi amati lupi e il pericolossimo veggente.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei il Fattone, passi le giornate tra fumo e acidi… sai che c'è quacosa di brutto nel paese e sai che ogni sera ti costringono a votare per giustiziare i cattivi… se solo tu non fossi così in aria magari saresti sicuro di votare la perona giusta… (hai il 50% di probabilità di votare diversamente da quello che intendi)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Sei lo Spacciatore, rifornisci tutto il paese ma non incontri mai i tuoi clienti, loro ti lasciano i soldi nel solito posto e tu ci lasci la roba. Tra le varie sostanze che gestisci c'è anche una polvere piuttosto potente che se sparsa in giro stordisce anche i lupi. Peccato che tu ne abbia abbastanza solo per la una notte.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Sei il Capo Lupo, il lupo originario. Da te discendono tutti i lupi del mondo! La tua bava ha il potere di infettare le tue vittime e trasformarle in lupi come te! Sfortunatamente anche tu hai la tua età e non funziona più come una volta, ormai riesci a trasformare la tua vittima solo nel 20% dei casi.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Ma che lupacchiotto ADORABILE! Sei pucciossimo con la tua pelliccetta morbidosa e le zannette bianche bianche! Sei la mascotte del branco tutti ti adorano ma quei brutti cattivi del villaggio non si faranno alcuno scrupolo ad ucciderti! E quando tu morirai i tuoi compagni lupi ti vendicheranno uccidendo ben DUE VOLTE in una sola notte.</value>
+  </string>
+   </strings>

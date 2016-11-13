@@ -8,8 +8,9 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Werewolf_Control</RootNamespace>
-    <AssemblyName>Werewolf Control 2</AssemblyName>
+    <AssemblyName>Werewolf Control</AssemblyName>
     <AssemblyName Condition=" '$(Configuration)' == 'Release 2' ">Werewolf Control 2</AssemblyName>
+    <AssemblyName Condition=" '$(Configuration)' == 'Beta' ">Werewolf Control Beta</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -139,6 +140,7 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\TCP.cs" />
     <Compile Include="Helpers\UpdateHelper.cs" />
+    <Compile Include="Helpers\Updater.cs" />
     <Compile Include="Models\Command.cs" />
     <Compile Include="Models\GameInfo.cs" />
     <Compile Include="Models\GameListInfo.cs" />

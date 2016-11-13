@@ -37,11 +37,12 @@ namespace Werewolf_Node
         internal static int CommandsReceived = 0;
         internal static int GamesStarted = 0;
         internal static int Para = 129046388;
+        internal static long ErrorGroup = -155425711;
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
-        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         internal static XDocument English;
         internal static int MessagesSent = 0;
         static void Main(string[] args)
@@ -180,7 +181,13 @@ namespace Werewolf_Node
                                 game?.FleePlayer(psi.UserId);
                                 break;
                             case "UpdateNodeInfo":
+                                var uni = JsonConvert.DeserializeObject<UpdateNodeInfo>(msg);
                                 IsShuttingDown = true;
+                                if (uni.Kill)
+                                {
+                                    //force kill
+                                    Environment.Exit(1);
+                                }
                                 break;
                             case "SkipVoteInfo":
                                 var svi = JsonConvert.DeserializeObject<SkipVoteInfo>(msg);

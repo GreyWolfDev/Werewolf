@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 29/09/2016 by @jeffffc
-    04/10: added "Ping2" string
-    29/09: abouthunter: No one wins [only with SK but not wolves]
-    29/09: added "PlayerNoPM" "LatestList" "UnableToGetList" "YouJoined" strings
+    LAST UPDATE 09/11/2016 by @jeffffc
+    09/11:  Added 6 team strings
+    07/11:  Added: "DGTransformToAlpha" and "DGTransformToWolfCub" strings
+    04/11:  Added ww4.0 translations
+            Credits to 中大狼人群組 and @WWFSbot
+    15/10:  minor fixes on below strings
+    14/10:  amendments on "aboutww" "aboutharlot" "aboutapps" "ABOUTSK" "ROLEINFOWOLF" "RoleInfoApprenticeSeer" "RoleInfoSerialKiller"
+    14/10:  amendments on "ApprenticeNowSeer" and "BeholderNewSeer"
+    04/10:  added "Ping2" string
+    29/09:  abouthunter: No one wins [only with SK but not wolves]
+    29/09:  added "PlayerNoPM" "LatestList" "UnableToGetList" "YouJoined" strings
 -->
 <strings>
   <language name="廣東話" base="廣東話" variant="Normal" owner="hkgworm"/>
@@ -50,7 +57,7 @@
     <value>【{0}】 已加入遊戲。現有{1}個玩家，最少{2}個玩家，最多{3}個玩家</value>
   </string>
   <string key="PMTheBot">
-    <value>【{0}】 麻煩你PM 【 @{1} 】 同佢講句 【 /start 】 ，如果唔係，你會玩唔到遊戲架!</value>
+    <value>【{0}】 麻煩你PM 【 {1} 】 同佢講句 【 /start 】 ，如果唔係，你會玩唔到遊戲架!</value>
   </string>
   <string key="DeadFlee">
     <value>你死左喇，逃走都無用</value>
@@ -95,10 +102,10 @@
     <value>\n【{0}】 係先知</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>【{0}】 係先知，但係佢死左。既然你係學徒先知，當然由你黎做新一任先知啦</value>
+    <value>你無啦啦執倒　【{0}】 副塔羅牌，而家你代替左佢做先知喇！</value>
   </string>
   <string key="BeholderNewSeer">
-    <value>【{0}】 係學徒先知，岩岩 【{1}】 死左，所以由學徒先知繼任</value>
+    <value>【{0}】 無啦啦執倒 【{1}】 副塔羅牌，所以佢繼任左先知個位喇</value>
   </string>
   <string key="SeerSees">
     <value>你見到 【{0}】 係 【{1}】</value>
@@ -161,10 +168,10 @@
     <value>你係叛徒! 而家你只係一個村民，如果所有狼人死晒你都未死，你會變左做狼人繼續殺人。另外你有機會比先知見到你係一隻狼。</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>你係狼!</value>
+    <value>你係狼! 小心呀如果你地想去殺連環殺手既話，得20%機會殺死佢，另外80%機會連殺會反殺共中一隻狼。</value>
   </string>
   <string key="RoleInfoSeer" >
-    <value >你係先知! 每round可以check一個人係咩身份。</value>
+    <value>你係先知! 每round可以check一個人係咩身份。</value>
   </string>
   <string key="RoleInfoVillager" >
     <value>你係一個垃圾村民，等死啦你。</value>
@@ -179,7 +186,7 @@
     <value>你係旁觀者，你會知邊個係真。先知。\n除左呢個功能之外，你同班等死村民一樣咁垃圾。</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value>你係學徒先知。一開始你係普通村民，如有先知死左，你會承繼佢。</value>
+    <value>你係學徒先知。一開始你係普通村民，如有先知死左或者入左邪教，你會承繼佢。</value>
   </string>
   <string key="RoleInfoCultist" >
     <value>你係邪教會員。\n1. 每一Round要令其他人去追隨你。(狼人不能追隨你)\n2. d人離開左間屋就追隨唔到你，小心唔好入錯邪教殺手屋企。\n3. 最後如果每個人類都追隨你，你就會贏。\n4. 被入會嘅人會失去原來嘅身份。</value>
@@ -198,13 +205,13 @@
     <value>小寶寶食蛋糕，夠鐘瞓覺啦。\n夜間出沒嘅人請注意：你有 {0} 秒可以比你出動!</value>
   </string>
   <string key="LynchKill" >
-    <value >班村民最後決定要將 【{0}】 殺死。【{1}】</value>
+    <value>班村民最後決定要將 【{0}】 殺死。【{1}】</value>
   </string>
   <string key="LynchTie" >
-    <value >你班人都亂咁黎嘅，投票投到亂晒，所以今round無人會死。</value>
+    <value>你班人都亂咁黎嘅，投票投到亂晒，所以今round無人會死。</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >搞乜呀? 竟然無人投票.....</value>
+    <value>搞乜呀? 竟然無人投票.....</value>
   </string>
   <string key="DetectiveEaten" >
     <value>日出之後，班村民搞左個聚會，但係唔見 【{0}】 出席，咁佢地就去左 【{0}】 間屋，發現佢被剖腹死左，另外仲有一個古老嘅綠毛族徽章吉穿左佢喉嚨，好噁心。</value>
@@ -534,7 +541,7 @@
     <value>你係獵人。\n1.如果其他人去你屋企，佢地有可能因為你發癲而畀你殺死。\n2.如果狼人黎殺你，你有機會去殺翻佢轉頭。\n3.你死前有得射死一個人去拉佢陪葬。\n備註：狼人黎你屋企時候會有機會畀你殺，機率按遊戲入面狼人數目而定。\n一隻狼=30%，兩隻狼=50%，三隻狼=70%，如此類推。\n如果邪教黎傳教，佢地有50%拉你唔到。如果佢地拉唔到，你就有50%去殺佢地其中一個。</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>你係連環殺手。\n你可以殺任何人，就算狼人黎殺你，都會畀你殺翻轉頭。</value>
+    <value>你係連環殺手。\n你可以殺任何人，但係狼人黎殺你既話，你有20%機會俾佢地食左，另外80%機會反殺翻佢地其中一隻。</value>
   </string>
   <string key="CupidChosen">
     <value>你已跌入愛河。你另一半係 【{0}】，記住李安納度迪卡比奧曾經講過，You Jump, I Jump。你另一半死左，你都會死。</value>
@@ -594,7 +601,7 @@
     <value>你入左 【{0}】間屋諗住強姦人，氣氛一直都好好，直到 【{0}】 拎左把刀仔出黎，係你身上面寫上「我唔叫雞」四隻字，佢笑到gap gap聲，而你就死左....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
+    <value>don't worry about this string for now!{0} - {0}</value>
   </string>
   <string key="DGToMason">
     <value>分身 【{0}】 變左做共濟會成員, 就好似你咁!</value>
@@ -702,10 +709,10 @@
     <value>【先知】每晚都可以查一個人嘅身份。</value>
   </string>
   <string key="AboutWw">
-    <value>【狼人】狼群每晚都可以揀一個人黎食，食到最後，生還者入面有一半係狼就贏。</value>
+    <value>【狼人】狼群每晚都可以揀一個人黎食，食到最後，生還者入面有一半係狼就贏。不過如果你地揀中左去食連環殺手，你地就得20%機會殺倒佢，另外有80%機會連殺會反殺其中一隻狼會死。</value>
   </string>
   <string key="AboutHarlot">
-    <value>【妓女】每晚都可以去見一位恩客。如果揀左平民就會無事發生；揀左狼人或者連環殺手死硬；揀中狼人想食果個人，狼人會連埋你一齊食埋；去左搵恩容，狼人同邪教都搵你唔到，不過連環殺手點都會搵到你再殺左你。</value>
+    <value>【妓女】每晚都可以去見一位恩客。如果揀左平民就會無事發生；揀左狼人或者連環殺手死硬；揀中狼人想食果個人，狼人會連埋你一齊食埋；去左搵恩客，狼人同邪教都搵你唔到，不過連環殺手點都會搵到你再殺左你。</value>
   </string>
   <string key="AboutDrunk">
     <value>【醉酒佬】你飲酒飲到全身都充滿酒精，酒精濃度高到如果狼人食左你，第二晚佢都會醉埋一份而殺唔到人。</value>
@@ -741,7 +748,7 @@
     <value>【野仔】喺第一晚可以揀一個人做目標。如果你個目標死咗，你就即刻變狼人。佢一日未死，你就一日都仲係村民陣營。</value>
   </string>
   <string key="AboutAppS">
-    <value>【學徒先知】先知死左之後你就上位變先知喇。不講先知有無入邪教，佢一日未死，你一日都未會變真先知。</value>
+    <value>【學徒先知】先知死左或者入左邪教之後你就上位變先知喇。</value>
   </string>
   <string key="AboutBH">
     <value>【旁觀者】都係一個平凡既村民，唔同嘅係你會知道邊一個係真先知（唔計白痴仔）。</value>
@@ -761,7 +768,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>【連環殺手】每晚都可以去殺一個，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢地再殺左佢。如果狼人黎左你屋企想殺你，你會反殺番狼人，並且存活。</value>
+    <value>【連環殺手】每晚都可以去殺一個，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢地再殺左佢。如果狼人黎左你屋企想殺你，你有20%機會俾佢地食左，另外有80%機會反殺佢地共中一隻。</value>
   </string>
   <string key="AboutPara">
     <value>【Para】係一個鍾意周圍吠嘅弱智程式員，佢可能對我狼人太多所以先製作倒呢個狼人遊戲...</value>
@@ -968,5 +975,132 @@
   </string>
   <string key="Ping2">
     <value>傳送Ping訊息所需時間: {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>你係村長。你平時都好低調，直至投票時段果時你可以選擇表露你既村長身份。一旦表露之後，你每晚投既票都一票代表兩票。好好利用呢個能力幫助村鎮陣營啦。</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>你係王子。係村鎮陣營好重要嘅角色。一旦被投票要吊死，問吊前你會自動表明王子身份，村民會覺悟並且決定今日唔會將你問吊。希望佢地記得唔好再投你啦，避到今次避唔到下次架。</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>你係乞衣。一個好論盡嘅乞衣。叫咗你空肚唔好飲酒，搞到你乜都睇唔清楚。你連投票都投唔好吖！(你有一半機會會投錯一個隨機嘅人。)</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>你係巫師。身為狼人陣營既巫師，你每round可以好似先知咁check一個人，但係你只會知果個人係咪狼或先知，其他身份你check唔到。</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>你係鐵匠。咁多年以嚟，你都以你為精靈鑄造嘅銀劍而自豪。你可能仲有銀粉淨低，或者可以阻止到狼人食人？(註：日間你可以選擇出嚟灑銀粉，之後一晚狼人唔能夠行動。全場只能用一次。)</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>你係狼王。身為狼群既首領，你就係呢條村詛咒嘅源頭。你生勾勾嘅時候，你所揀嘅受害者有20%機會唔會死，仲會係下一晚開始變成狼群既一份子。</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>你係幼狼。因為狼bb你實在太可愛啦，如果你死左既話，狼人下一晚可以一次過殺兩個人。(註：你係狼人陣營。)</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>正當全村都想投死【{0}】既時候，佢突然企出黎大叫：「刀下留人！其實我係王子！你地班蠢村唔好再投我喇！」一聽到呢番說話，村民即刻驚到收番埋張票，唔敢投死王子。</value>
+  </string>
+  <string key="SorcererOther">
+    <value>你嘗試去check下【{0}】既身份，你發覺佢原來又唔係狼，又唔係先知，咁就浪費左一晚添...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>【{0}】突然走出黎show出佢張村長證！由今日起，【{0}】每次投既票都一張當兩張票計！</value>
+  </string>
+  <string key="AskMayor">
+    <value>當你唔再甘心扮普通村民果時，就禁一下【表露村長身份】啦！</value>
+  </string>
+  <string key="Reveal">
+    <value>表露村長身份</value>
+  </string>
+  <string key="SpreadDust">
+    <value>你今日想唔想灑銀粉，令到班狼聽晚冇飯食呢？</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>正當班村民仲係度諗緊投死邊個既時候，【{0}】無啦啦拎住包銀粉灑勻成條村喎。原來佢係你地既鐵匠。快啲多謝佢啦，你地聽晚唔會俾狼食喇。</value>
+  </string>
+  <string key="Mayor">
+    <value>村長 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>王子 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>巫師 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>乞衣 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>鐵匠 ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>狼王 ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>幼狼 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>正當成班狼想撲埋去【{0}】身上搏命咬既時候，身為狼王既【{1}】走左出黎阻止佢地，拍左拍佢膊頭並講：「我覺得【{0}】好有潛質，我就免佢一死，俾佢加入我地狼群啦！」其他狼一聽到，即刻忍一忍口，唯有聽晚再食野啦。而佢聽晚就會加入你地狼群。</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>正當一班狼撲埋你身上既時候，你見到狼王黎拍左拍你膊頭，同你講左句：「我覺得你好有潛質，我一於免你一死，俾你加入我地狼群啦！」你不但唔洗死，你聽晚仲會變埋狼添。</value>
+  </string>
+  <string key="BittenTurned">
+    <value>夜晚終於又黎啦，你突然覺得成身都好痛，原來不知不覺間你已經變左做狼人。</value>
+  </string>
+  <string key="AboutMayor">
+    <value>【村長】你平時都好低調，直至投票時段果時你可以選擇表露你既村長身份。一旦表露之後，你每晚投既票都一票代表兩票。好好利用呢個能力幫助村鎮陣營啦。</value>
+  </string>
+  <string key="AboutPrince">
+    <value>【王子】係村鎮陣營好重要嘅角色。一旦被投票要吊死，問吊前你會自動表明王子身份，村民會覺悟並且決定今日唔會將你問吊。希望佢地記得唔好再投你啦，避到今次避唔到下次架。</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>【巫師】身為狼人陣營既巫師，你每round可以好似先知咁check一個人，但係你只會知果個人係咪狼或先知，其他身份你check唔到。</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>【乞衣】一個好論盡嘅乞衣。叫咗你空肚唔好飲酒，搞到你乜都睇唔清楚。你連投票都投唔好吖！(你有一半機會會投錯一個隨機嘅人。)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>【鐵匠】咁多年以嚟，你都以你為精靈鑄造嘅銀劍而自豪。你可能仲有銀粉淨低，或者可以阻止到狼人食人？(註：日間你可以選擇出嚟灑銀粉，之後一晚狼人唔能夠行動。全場只能用一次。)</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>【狼王】身為狼群既首領，你就係呢條村詛咒嘅源頭。你生勾勾嘅時候，你所揀嘅受害者有20%機會唔會死，仲會係下一晚開始變成狼群既一份子。</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>【幼狼】因為狼bb你實在太可愛啦，如果你死左既話，狼人下一晚可以一次過殺兩個人。(註：你係狼人陣營。)</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>【{0}】 已死，你變左做狼王，你班狼友係 (如有) ： 【{1}】</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>【{0}】 已死，你變左做幼狼，你班狼友係 (如有) ： 【{1}】</value>
+  </string>
+    
+  <string key="VillageTeam">
+    <value>村民陣營</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>中間陣營</value>
+  </string>
+  <string key="WolfTeam">
+    <value>狼人陣營</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>連殺陣營</value>
+  </string>
+  <string key="CultTeam">
+    <value>邪教陣營</value>
+  </string>
+  <string key="TannerTeam">
+    <value>皮匠陣營</value>
   </string>
 </strings>

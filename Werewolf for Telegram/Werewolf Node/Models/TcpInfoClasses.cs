@@ -80,6 +80,7 @@ namespace Werewolf_Node.Models
     public class UpdateNodeInfo
     {
         public string JType { get; set; } = "UpdateNodeInfo";
+        public bool Kill { get; set; } = false;
     }
 
     public class LoadLangInfo

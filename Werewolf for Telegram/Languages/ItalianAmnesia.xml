@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <!-- Expert mode by Saah (@ayylimao)! Translated in Italian by @MatteoIlGrande! Si consiglia di rivelare i ruoli alla morte :P -->
-<!-- Last updated on 18 August 2016 -->
+<!-- Last updated on 9 November 2016, after 4.0 was released -->
 <strings>
-  <language name="Italiano (Amnesia Mode)" base="Italiano" variant="Amnesia Mode"/>
+  <language name="Italiano (Amnesia Mode)" base="Italiano" variant="Amnesia Mode" owner="MatteoIlGrande"/>
   <string key="NotInGame">
 
   <value>Te ne sei scordato? Non sei in nessuna partita al momento!</value>
@@ -49,7 +49,7 @@
     <value>{0} si è scordato chi fosse! {1} amnesiaci, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-    <value>{0}, hai scordato di scrivere al bot! vai su {1}, poi premi start. Finchè non lo fai il bot non potrá contattarti in privato.</value>
+    <value>{0}, hai scordato di scrivere al bot! Clicca il bottone qua sotto oppure vai su {1}, poi premi start.\nFinchè non lo fai il bot non potrá contattarti in privato.</value>
   </string>
   <string key="DeadFlee">
     <value>Ti sei anche scordato di esser morto? I morti non scappano...</value>
@@ -255,10 +255,10 @@
     <value>Oh no! I lupi hanno banchettato coi tuoi ossicini. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Oh no! {0} era un ubriaco!  Ora sei ubriaco a tua volta, non potrai attaccare la prossima notte...</value>
+    <value >Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
 	</string>
   <string key="GuardWolf" >
-    <value> Sei andato a casa di un lupo! Sei stato mangiato. Con il tuo ultimo respiro almeno ricordi che ruolo avevi: l'Angelo Custode👼</value>
+    <value>Sei andato a casa di un lupo! Sei stato mangiato. Con il tuo ultimo respiro almeno ricordi che ruolo avevi: l'Angelo Custode👼</value>
   </string>
   <string key="GuardSaved" >
     <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
@@ -312,7 +312,7 @@
     <value>I lupi hanno vinto!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-  <value>I contadini hanno vinto! Tutti i lupi sono morti....</value>
+  <value>-I contadini hanno vinto! Se lo ricorderanno o continueranno a linciare persone l'indomani?</value>
   </string>
   <string key="TannerWins" isgif="true"  >
   <value>Oh no! Avete linciato il conciatore!  Direi che abbiamo un vincitore, complimenti al linciato!.</value>
@@ -379,7 +379,7 @@
     <value>l'Angelo Custode👼</value>
   </string>
   <string key="Detective">
-    <value>l'Investigatore🔎</value>
+    <value>l'Investigatore🕵</value>
   </string>
   <string key="Wolf">
     <value>un Lupo🐺</value>
@@ -426,13 +426,13 @@
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>un Massone 👁‍🗨</value>
+    <value>un Massone 👷</value>
   </string>
   <string key="RoleInfoMason">
     <value>Che strano.. Non riesci a ricordare cosa sei!</value>
   </string>
   <string key="MasonEaten">
-    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e con le gambe... ah no le gambe non ci sono più!! Uno dei Massoni👁‍🗨 è morto! -- {0}</value>
+    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e con le gambe... ah no le gambe non ci sono più!! Uno dei Massoni👷 è morto! -- {0}</value>
   </string>
   <string key="MasonTeam">
     <value>\nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {0}</value>
@@ -558,16 +558,16 @@
     <value>Mentre il cappio di stringe intorno al collo di {0}, lui tira fuori una pistola, la carica, prende la mira e preme il grilletto, sparando a {1} giusto prima che il pavimento si ritiri! {1} cade a terra, senza vita.  {2}</value>
 	</string>
   <string key="HunterShotChoice">
-    <value>L'artigliere ti ha sparato! La paura della morte ti fa riprendere un po' di coscienza, e capisci cosa fare... Questa è la tua ultima possibilità, scegli qualcuno a cui sparare!</value>
+    <value>Sei stato assassinato! La paura della morte ti fa riprendere un po' di coscienza, e capisci cosa fare... Questa è la tua ultima possibilità, scegli qualcuno a cui sparare!</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <value>Il colpo in testa a {0} è stato preciso, talmente tanto che non è riuscito nemmeno a raggiungere la sua pistola, che già era immerso in un bagno di sangue.....</value>
+    <value>{0} è morto prima di rendersene conto e poter tirar fuori la sua pistola, immerso in un bagno di sangue.....</value>
 	</string>
   <string key="HunterSkipChoiceShot">
     <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere a chi sparare.... e accetta il suo triste destino..</value>
 	</string>
   <string key="HunterKilledFinalShot">
-    <value>Appena il proiettile trapassa {0}, esso cade.... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
+    <value>In fin di vita, {0} cade.... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. {2}</value>
 	</string>
   <string key="CultConvertSerialKiller">
     <value>{0} è andato a casa di {1} e ora è morto!</value>
@@ -598,9 +598,6 @@
   </string>
   <string key="HarlotFuckKiller">
     <value>{0} era il serial killer! Sei stato ucciso. Negli ultimi istanti di vita, almeno ti ricordi cosa eri: La prostituta💋</value>
-  </string>
-  <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
     <value>Un nuovo nome appare nella tua testa: {0}!</value>
@@ -870,11 +867,11 @@
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -963,5 +960,130 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Ti sei ricordato di fare qualcosa su {0}... ma cosa?</value>
-  </string> 
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che devi fare qualcosa durante il giorno!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Che strano.. Non riesci a ricordare cosa sei!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Che strano.. Non riesci a ricordare cosa sei!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che devi fare qualcosa durante il giorno!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena il villaggio si appresta a linciare {0}, qualcuno nota un anello nel suo dito, e urla al villaggio di smettere. «FERMI! Quella persona è della famiglia reale! Porta l'anello reale nel dito!». Preoccupati di una punizione per ferire la nobiltà, il villaggio ferma il linciaggio e fugge nelle proprie case, per la notte...</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} sussulta all'improvviso, dopo aver tirato fuori qualcosa dalla sua tasca: lo stemma ufficiale del Sindaco. Tutto il villaggio si rende conto che lui è il capo del villaggio, e dato ciò, che il suo voto per il linciaggio vale doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Sembra esserci qualcosa nella tua tasca..</value>
+  </string>
+  <string key="Reveal">
+    <value>Tiralo fuori</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Sai che dovresti fare qualcosa, ma vuoi farlo oggi?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre il resto del villaggio discute dell'amnesia che ha colpito tutti, si accorgono che {0} vaga per la città spargendo l'argento per terra. Per ora, o almeno, per stanotte, il villaggio sarà al sicuro dagli attacchi dei lupi.</value>
+  </string>
+  <string key="Mayor">
+    <value>il Sindaco 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>il Principe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>lo Stregone 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>il Ragazzo Goffo 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>il Fabbro ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>il Lupo Alfa ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>il Cucciolo di Lupo 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...\nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Sarà successo qualcosa? Non ne sei neanche sicuro...</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Sarà successo qualcosa? Non ne sei neanche sicuro...</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Il sindaco del paese, in incognito. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse convertito ai satanisti, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il principe è un ruolo chiave nella strategia del team dei Villici.La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere linciato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei un potente Stregone, ed hai poteri di Veggenza. Tuttavia non userai i tuoi poteri per vincere col popolo, invece, Ti schiererai con i Lupi. \nOgni notte scruta come il veggente, ma può vedere SOLO il veggente e i lupi. Vince con i lupi.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei il Ragazzo Goffo, talmente distratto che c'è un 50% di probabilità che il bot cambi il tuo voto di linciaggio a uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Il fabbro è un abitante del villaggio che ha passato gli anni a forgiare spade elfiche. Una volta durante la partita, può decidere di spargere la polvere d'argento durante il giorno (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare i lupi la notte seguente.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Il Lupo Alfa è l'origine della maledizione, la rovina delle rovine. Finché vivo, ha il 20% di possibilità di infettare le sue vittime (Se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in lupi la notte successiva.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il cucciolo di Lupo è un normale lupo, e verrà visto come Lupo dal veggente. Ma se venisse ucciso, la notte seguente gli altri lupi uccideranno due persone, in preda alla rabbia.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto! Il tuo ruolo è cambiato, ma da cosa, e a cosa? \nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto! Il tuo ruolo è cambiato, ma da cosa, e a cosa? \nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Villaggio</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Lupi</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team Satanisti</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Conciatore</value>
+  </string>
   </strings>

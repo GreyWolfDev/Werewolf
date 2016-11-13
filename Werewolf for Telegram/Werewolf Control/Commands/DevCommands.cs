@@ -4,9 +4,11 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 using Database;
 using Newtonsoft.Json;
@@ -16,6 +18,8 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
+using Werewolf_Control.Attributes;
+using File = System.IO.File;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -88,7 +92,7 @@ namespace Werewolf_Control
                 Bot.Running = false;
                 Program.Running = false;
                 Bot.Api.StopReceiving();
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
                 using (var db = new WWContext())
                 {
                     var bot =
@@ -144,6 +148,27 @@ namespace Werewolf_Control
             catch
             {
                 Send("/stopnode <node guid>", u.Message.Chat.Id);
+            }
+
+        }
+
+        [Attributes.Command(Trigger = "killnode", GlobalAdminOnly = true)]
+        public static void KillNode(Update u, string[] args)
+        {
+            //get the node
+            try
+            {
+                var nodeid = args[1];
+                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == Guid.Parse(nodeid));
+                node?.ShutDown(true);
+                if (node != null)
+                    Send($"Node {node.ClientId} will shut down", u.Message.Chat.Id);
+                else
+                    Send("No node with that ID found.", u.Message.Chat.Id);
+            }
+            catch
+            {
+                Send("/killnode <node guid>", u.Message.Chat.Id);
             }
 
         }
@@ -241,8 +266,10 @@ namespace Werewolf_Control
                 switch (role)
                 {
                     case IRole.Wolf:
+                    case IRole.Faithful: //never start a game with faithfuls.
                         break;
                     case IRole.CultistHunter:
+                    case IRole.Preacher:
                     case IRole.Cultist:
                         if (allowCult != false && playerCount > 10)
                             rolesToAssign.Add(role);
@@ -254,6 +281,11 @@ namespace Werewolf_Control
                     case IRole.Fool:
                         if (allowFool != false)
                             rolesToAssign.Add(role);
+                        break;
+                    case IRole.WolfCub:
+                    case IRole.AlphaWolf: //don't add more wolves, just replace
+                        rolesToAssign.Add(role);
+                        rolesToAssign.Remove(IRole.Wolf);
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -267,8 +299,8 @@ namespace Werewolf_Control
             //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
             //same as it was before....
 
-            //if player count > role count, add another cultist into the mix
-            if (rolesToAssign.Any(x => x == IRole.CultistHunter))
+
+            if (rolesToAssign.Any(x => x == IRole.CultistHunter || x == IRole.Preacher))
             {
                 rolesToAssign.Add(IRole.Cultist);
                 rolesToAssign.Add(IRole.Cultist);
@@ -287,12 +319,86 @@ namespace Werewolf_Control
 
         private static Dictionary<int, List<BalancedGameAttempt>> BalancedAttempts;
 
+        [Attributes.Command(Trigger = "createbalance", DevOnly = true)]
+        public static void CreateBalancedGames(Update u, string[] args)
+        {
+            //get parameters
+            int count = 0;
+
+            if (!int.TryParse(args[1], out count))
+            {
+                Send("use !createbalance <playercount>", u.Message.Chat.Id);
+                return;
+
+            }
+
+
+
+            var balanced = false;
+
+            List<IRole> rolesToAssign = new List<IRole>();
+            int villageStrength = 0, enemyStrength = 0;
+            var attempts = 0;
+            var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+            while (!balanced)
+            {
+                attempts++;
+                if (attempts >= 200)
+                    break;
+                rolesToAssign = GetRoleList(count);
+                rolesToAssign.Shuffle();
+                rolesToAssign = rolesToAssign.Take(count).ToList();
+                if (rolesToAssign.Contains(IRole.Sorcerer) &
+                    !rolesToAssign.Any(x => new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub }.Contains(x)))
+                    //can't have a sorcerer without wolves.  That's silly
+                    continue;
+
+                //check the balance
+
+                villageStrength =
+                rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+                enemyStrength =
+                    rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+
+                //check balance
+                var varianceAllowed = (count / 5) + 3;
+
+                balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+            }
+
+
+
+            var msg = $"Attempts: {attempts}\n";
+            if (balanced)
+            {
+                msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+                msg +=
+                    $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
+                msg +=
+                    $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
+            }
+            else
+            {
+                msg += "Unbalanced :(";
+            }
+            Send(msg, u.Message.Chat.Id);
+        }
+
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
             //get parameters
-            var parms = args[1].Split(' ');
-            if (parms.Length != 2)
+            string[] parms = null;
+            try
+            {
+                parms = args[1].Split(' ');
+            }
+            catch
+            {
+            }
+            if (parms == null || parms.Length != 2)
             {
                 Send("!test <attempts per game> <games to create per player level>", update.Message.Chat.Id);
                 return;
@@ -314,7 +420,7 @@ namespace Werewolf_Control
                     List<IRole> rolesToAssign = new List<IRole>();
                     int villageStrength = 0, enemyStrength = 0;
                     var attempts = 0;
-                    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf };
+                    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
                     while (!balanced)
                     {
                         attempts++;
@@ -345,7 +451,7 @@ namespace Werewolf_Control
                     totalAttempts += attempts;
                     if (balanced)
                         success++;
-                    balancedGameAttempts.Add(new BalancedGameAttempt {AttemptsMade = attempts, Balanced = balanced});
+                    balancedGameAttempts.Add(new BalancedGameAttempt { AttemptsMade = attempts, Balanced = balanced });
                 }
 
                 BalancedAttempts.Add(count, balancedGameAttempts);
@@ -368,12 +474,12 @@ namespace Werewolf_Control
             //calculate totals
             var totalPass = BalancedAttempts.Sum(x => x.Value.Count(v => v.Balanced));
             var totalGames = BalancedAttempts.Sum(x => x.Value.Count);
-            var avgAttempts = (BalancedAttempts.Sum(x => x.Value.Sum(v => v.AttemptsMade)))/totalGames;
+            var avgAttempts = (BalancedAttempts.Sum(x => x.Value.Sum(v => v.AttemptsMade))) / totalGames;
 
 
-            
+
             //calculate success rates per player size
-            var msg = BalancedAttempts.Aggregate($"Number of games attempted: {totalGames}\nNumber of games per player count: {tries}\nNumber of attempts per game: {attemptCount}\nNumber of balanced games: {totalPass}\nAverage attempts: {avgAttempts}\n", (current, gameSet) => current + $"{gameSet.Key}: {(gameSet.Value.Count(x => x.Balanced)*100)/tries}% pass\n");
+            var msg = BalancedAttempts.Aggregate($"Number of games attempted: {totalGames}\nNumber of games per player count: {tries}\nNumber of attempts per game: {attemptCount}\nNumber of balanced games: {totalPass}\nAverage attempts: {avgAttempts}\n", (current, gameSet) => current + $"{gameSet.Key}: {(gameSet.Value.Count(x => x.Balanced) * 100) / tries}% pass\n");
 
 
             Send(msg, update.Message.Chat.Id);
@@ -911,6 +1017,66 @@ namespace Werewolf_Control
                 }
             }
         }
+
+        [Attributes.Command(Trigger = "clearlogs", DevOnly = true)]
+        public static void ClearLogs(Update u, string[] args)
+        {
+            var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
+            var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", "getUpdates.log"};
+            foreach (var file in files)
+            {
+                try
+                {
+                    System.IO.File.Delete(LogPath + file);
+                }
+                catch
+                {
+                    Thread.Sleep(50);
+                    try
+                    {
+                        System.IO.File.Delete(LogPath + file);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+                }
+            }
+        }
+
+        [Attributes.Command(Trigger = "getlogs", DevOnly = true)]
+        public static void GetLogs(Update u, string[] args)
+        {
+            var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
+
+            var path = LogPath + "errors.zip";
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            var someFileExists = false;
+            using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
+            {
+                var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
+                
+                foreach (var file in files)
+                {
+                    var fp = LogPath + file;
+                    if (!File.Exists(fp)) continue;
+                    someFileExists = true;
+                    zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                }
+            }
+            //now send the file
+            if (someFileExists)
+            {
+                var fs = new FileStream(path, FileMode.Open);
+                Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+            }
+            
+        }
+
+
     }
 
 

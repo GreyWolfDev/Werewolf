@@ -2,9 +2,16 @@
 <!-- Expert mode by Saah (@ayylimao)! Translated to Cantonese by Firewood (@Firewood_LoKi). Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 29/09/2016 by @jeffffc
-    04/10: added "Ping2" string
-    29/09: abouthunter: No one wins [only with SK but not wolves]
+    LAST UPDATE 09/11/2016 by @jeffffc
+    09/11:  Added 6 team strings
+    07/11:  Added: "DGTransformToAlpha" and "DGTransformToWolfCub" strings
+    04/11:  Added ww4.0 translations
+            Credits to 中大狼人群組 and @WWFSbot
+    15/10:  minor fixes on below strings
+    14/10:  amendments on "aboutww" "aboutapps" "ABOUTSK"
+    14/10:  amendments on "ApprenticeNowSeer"
+    04/10:  added "Ping2" string
+    29/09:  abouthunter: No one wins [only with SK but not wolves]
 -->
 <strings>
   <language name="廣東話（失憶版）" base="廣東話" variant="失憶版"/>
@@ -142,7 +149,7 @@
     <value>\n雖然你唔記得自己係邊個，但係【{0}】似乎係好重要嘅人。</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>【{0}】死咗，搞到你個身份變咗喎，但係究竟由咩變做咩呢？</value>
+    <value>【{0}】好似唔知出左D咩事，搞到你個身份變咗喎，但係究竟由咩變做咩呢？</value>
   </string>
   <string key="BeholderNewSeer">
     <value>你好似唔記得咗啲野，係咪【{1}】呢？你腦海之中突然閃出一個新的名字，【{0}】！</value>
@@ -430,7 +437,7 @@
     <value>妓女 💋</value>
   </string>
   <string key="Seer">
-    <value>先知 🔮</value>
+    <value>先知 👳</value>
   </string>
   <string key="Traitor">
     <value>叛徒 🖕</value>
@@ -670,7 +677,7 @@
     <value>{0} 係連環殺手，你死咗啦！同腎腎講聲拜拜啦！</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
+    <value>don't worry about this string for now!{0} - {0}</value>
   </string>
   <string key="DGToMason">
     <value>你腦海之中突然閃出一個新的名字，【{0}】！</value>
@@ -779,7 +786,7 @@
     <value>晚晚系列～先知\n每晚都可以查一個人嘅身份。</value>
   </string>
   <string key="AboutWw">
-    <value>晚晚系列～狼人\n每晚都可以食一個人，食到最後，生還者入面有一半係狼就贏。</value>
+    <value>晚晚系列～狼人\n每晚都可以食一個人，食到最後，生還者入面有一半係狼就贏。不過如果你地揀中左去食連環殺手，你地就得20%機會殺倒佢，另外有80%機會連殺會反殺其中一隻狼會死。</value>
   </string>
   <string key="AboutHarlot">
     <value>晚晚系列～妓女\n每晚都可以搵條友大戰三百六十個回合。啪平民，無事發生；啪狼人／連環殺手，即死；啪着狼人想食果條友，狼人會食左你同果條友；去左啪人，狼人／邪教都搵你唔到；去左啪人，連環殺手照殺你。</value>
@@ -818,7 +825,7 @@
     <value>一晚系列～野仔\n喺第一晚可以揀一個短命種。如果短命種死咗，野仔就變狼。短命種未死，就跟村民贏。</value>
   </string>
   <string key="AboutAppS">
-    <value>等運系列～學徒先知\n開始嗰陣係一個普通村民，先知死左之後就會頂佢個位。如果先知入教但係未死，你唔會變先知。</value>
+    <value>等運系列～學徒先知\n開始嗰陣係一個普通村民，先知死左或者入左邪教之後就會頂左佢個位。</value>
   </string>
   <string key="AboutBH">
     <value>廢村系列～旁觀者\n同廢村一樣冇制撳，不過會知道邊個係真正嘅先知。</value>
@@ -842,7 +849,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>晚晚系列～連環殺手\n每晚都可以偷兩粒腎，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，連殺總有辦法殺到佢地。如果狼去咗連殺屋企，連殺會反殺狼人，並存活。</value>
+    <value>晚晚系列～連環殺手\n每晚都可以偷兩粒腎，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢地再殺左佢。如果狼人黎左你屋企想殺你，你有20%機會俾佢地食左，另外有80%機會反殺佢地共中一隻。</value>
   </string>
   <string key="AboutPara">
     <value>Para 係一個鍾意周圍吠嘅弱智程式員，可能佢實在搞狼人搞得太辛苦……</value>
@@ -1048,5 +1055,132 @@
   </string>
   <string key="Ping2">
     <value>傳送Ping訊息所需時間: {0}</value>
+  </string>
+
+      <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>好奇怪，你竟然醒唔起自己係邊個。不過你記得你應該係日頭有啲野搞嘅。</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>好奇怪，你竟然醒唔起自己係邊個。</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>好奇怪，你竟然醒唔起自己係邊個。</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>好奇怪，你竟然醒唔起自己係邊個。不過你記得你應該係夜晚有啲野搞嘅。</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>好奇怪，你竟然醒唔起自己係邊個。不過你記得你應該係日頭有啲野搞嘅。</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>好奇怪，你竟然醒唔起自己係邊個。不過你記得你應該係夜晚有啲野搞嘅。</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>好奇怪，你竟然醒唔起自己係邊個。</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>正當全村都想投死【{0}】既時候，佢突然企出黎大叫：「刀下留人！其實我係王子！你地班蠢村唔好再投我喇！」一聽到呢番說話，村民即刻驚到收番埋張票，唔敢投死王子。</value>
+  </string>
+  <string key="SorcererOther">
+    <value>到底尋晚【{0}】屋企有冇野發生呢？你好似都唔多記得……</value>
+  </string>
+  <string key="MayorReveal">
+    <value>【{0}】突然走出黎show出佢張村長證！由今日起，【{0}】每次投既票都一張當兩張票計！</value>
+  </string>
+  <string key="AskMayor">
+    <value>你發現你褲袋好似有啲野...</value>
+  </string>
+  <string key="Reveal">
+    <value>拎出黎睇下</value>
+  </string>
+  <string key="SpreadDust">
+    <value>你知道你應該有啲野要做，但係係唔係一定要今晚做呢？</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>正當班村民仲係度諗緊投死邊個既時候，【{0}】無啦啦拎住包銀粉灑勻成條村喎。原來佢係你地既鐵匠。快啲多謝佢啦，你地聽晚唔會俾狼食喇。</value>
+  </string>
+  <string key="Mayor">
+    <value>村長 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>王子 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>巫師 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>乞衣 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>鐵匠 ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>狼王 ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>幼狼 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>到底尋晚【{0}】屋企有冇野發生呢？你好似都唔多記得…… 但係【{1}】似乎係好重要嘅人。</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>到底尋晚有冇野發生呢？你好似都唔多記得……</value>
+  </string>
+  <string key="BittenTurned">
+    <value>到底尋晚有冇野發生呢？你好似都唔多記得……</value>
+  </string>
+  <string key="AboutMayor">
+    <value>【村長】你平時都好低調，直至投票時段果時你可以選擇表露你既村長身份。一旦表露之後，你每晚投既票都一票代表兩票。好好利用呢個能力幫助村鎮陣營啦。</value>
+  </string>
+  <string key="AboutPrince">
+    <value>【王子】係村鎮陣營好重要嘅角色。一旦被投票要吊死，問吊前你會自動表明王子身份，村民會覺悟並且決定今日唔會將你問吊。希望佢地記得唔好再投你啦，避到今次避唔到下次架。</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>【巫師】身為狼人陣營既巫師，你每round可以好似先知咁check一個人，但係你只會知果個人係咪狼或先知，其他身份你check唔到。</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>【乞衣】一個好論盡嘅乞衣。叫咗你空肚唔好飲酒，搞到你乜都睇唔清楚。你連投票都投唔好吖！(你有一半機會會投錯一個隨機嘅人。)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>【鐵匠】咁多年以嚟，你都以你為精靈鑄造嘅銀劍而自豪。你可能仲有銀粉淨低，或者可以阻止到狼人食人？(註：日間你可以選擇出嚟灑銀粉，之後一晚狼人唔能夠行動。全場只能用一次。)</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>【狼王】身為狼群既首領，你就係呢條村詛咒嘅源頭。你生勾勾嘅時候，你所揀嘅受害者有20%機會唔會死，仲會係下一晚開始變成狼群既一份子。</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>【幼狼】因為狼bb你實在太可愛啦，如果你死左既話，狼人下一晚可以一次過殺兩個人。(註：你係狼人陣營。)</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>【{0}】 死咗，搞到你個身份變咗喎，但係究竟由咩變做咩呢？雖然你唔記得自己係邊個，但係【{1}】似乎係好重要嘅人。</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>【{0}】 死咗，搞到你個身份變咗喎，但係究竟由咩變做咩呢？雖然你唔記得自己係邊個，但係【{1}】似乎係好重要嘅人。</value>
+  </string>
+    
+  <string key="VillageTeam">
+    <value>村民陣營</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>中間陣營</value>
+  </string>
+  <string key="WolfTeam">
+    <value>狼人陣營</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>連殺陣營</value>
+  </string>
+  <string key="CultTeam">
+    <value>邪教陣營</value>
+  </string>
+  <string key="TannerTeam">
+    <value>皮匠陣營</value>
   </string>
 </strings>

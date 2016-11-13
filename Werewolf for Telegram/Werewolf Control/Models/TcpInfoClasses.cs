@@ -96,6 +96,7 @@ namespace Werewolf_Control.Models
     public class UpdateNodeInfo
     {
         public string JType { get; set; } = "UpdateNodeInfo";
+        public bool Kill { get; set; } = false;
     }
 
     public class CallbackInfo

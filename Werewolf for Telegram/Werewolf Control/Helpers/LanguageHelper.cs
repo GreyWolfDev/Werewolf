@@ -545,18 +545,19 @@ namespace Werewolf_Control.Helpers
 
 
             System.IO.File.Copy(newFilePath, copyToPath, true);
-#if RELEASE
-            msg += $"File copied to bot 1\n";
-#elif RELEASE2
-            msg += $"File copied to bot 2\n";
-#endif
+            msg += "File copied to bot\n";
+//#if RELEASE
+//            msg += $"File copied to bot 1\n";
+//#elif RELEASE2
+//            msg += $"File copied to bot 2\n";
+//#endif
             Bot.Api.EditMessageText(id, msgId, msg);
-#if RELEASE
-            copyToPath = copyToPath.Replace("Werewolf 3.0", "Werewolf 3.0 Clone");
-            System.IO.File.Copy(newFilePath, copyToPath, true);
-            msg += $"File copied to bot 2\n";
-            Bot.Api.EditMessageText(id, msgId, msg);
-#endif
+//#if RELEASE
+//            copyToPath = copyToPath.Replace("Werewolf 3.0", "Werewolf 3.0 Clone");
+//            System.IO.File.Copy(newFilePath, copyToPath, true);
+//            msg += $"File copied to bot 2\n";
+//            Bot.Api.EditMessageText(id, msgId, msg);
+//#endif
             var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
@@ -570,7 +571,7 @@ namespace Werewolf_Control.Helpers
                     StartInfo =
                     {
                         FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
-                        Arguments = $"\"Updating {fileName} from Telegram\"",
+                        Arguments = $"\"Updating {fileName} from Telegram ***NO_CI***\"",
                         WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
                         UseShellExecute = false,
                         RedirectStandardOutput = true,

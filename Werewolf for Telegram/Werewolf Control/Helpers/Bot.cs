@@ -50,8 +50,8 @@ namespace Werewolf_Control.Helpers
         }
         internal delegate void ChatCommandMethod(Update u, string[] args);
         internal static List<Command> Commands = new List<Command>();
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
-        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         public static void Initialize(string updateid = null)
         {
 
@@ -114,6 +114,26 @@ namespace Werewolf_Control.Helpers
             MessagesReceived += updatesReceivedEventArgs.UpdateCount;
         }
 
+        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
+        {
+            //first answer the callback
+            Bot.Api.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
+            //edit the original message
+            if (edit)
+                Edit(query, text, replyMarkup);
+        }
+
+        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null)
+        {
+            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup);
+        }
+
+        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
+        {
+            Bot.MessagesSent++;
+            return Bot.Api.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
+        }
+
         private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
         {
             try
@@ -153,7 +173,7 @@ namespace Werewolf_Control.Helpers
                 Api.StartReceiving();
             }
             var e = receiveErrorEventArgs.ApiRequestException;
-            using (var sw = new StreamWriter("apireceiveerror.log", true))
+            using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
             {
                 sw.WriteLine($"{DateTime.Now} {e.ErrorCode} - {e.Message}\n{e.Source}");
             }

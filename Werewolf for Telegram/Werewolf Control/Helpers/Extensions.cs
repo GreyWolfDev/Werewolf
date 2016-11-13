@@ -89,6 +89,24 @@ namespace Werewolf_Control.Helpers
                     return 6;
                 case IRole.SerialKiller:
                     return 15;
+                case IRole.Sorcerer:
+                    return 2;
+                case IRole.AlphaWolf:
+                    return 12;
+                case IRole.WolfCub:
+                    return 11;
+                case IRole.Blacksmith:
+                    return 5;
+                case IRole.Preacher:
+                    return 4;
+                case IRole.Faithful:
+                    return 3;
+                case IRole.ClumsyGuy:
+                    return -1;
+                case IRole.Mayor:
+                    return 4;
+                case IRole.Prince:
+                    return 3;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

@@ -57,8 +57,7 @@ variant="Fallout"/>
     <value>{0} é entrato nella Zona. {1} sopravvissuti, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-
-    <value>\n{0} Benvenuto a Werewolf Fallout Edition! \nPer favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo, o morirai nella Zona da solo.</value>
+    <value>\n{0} Benvenuto a Werewolf FALLOUT EDITION! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
   </string>
   <string key="DeadFlee">
 
@@ -432,7 +431,7 @@ variant="Fallout"/>
   </string>
 
   <string key="Villager">
-    <value>un Sopravvissuto👨</value>
+    <value>un Sopravvissuto👱</value>
   </string>
   <string key="Drunk">
     <value>l'Ubriaco🍻</value>
@@ -450,7 +449,7 @@ variant="Fallout"/>
     <value>il Protectron🚨(👼)</value>
   </string>
   <string key="Detective">
-    <value>Nick Valentine🕵(🔎)</value>
+    <value>Nick Valentine🕵</value>
   </string>
   <string key="Wolf">
     <value>un Supermutante👹(🐺)</value>
@@ -499,7 +498,7 @@ variant="Fallout"/>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>uno Scriba 👁‍🗨</value>
+    <value>uno Scriba 👷</value>
   </string>
   <string key="RoleInfoMason">
 
@@ -507,7 +506,7 @@ variant="Fallout"/>
   </string>
   <string key="MasonEaten">
 
-    <value>Al risveglio di tutti, viene ritrovato il corpo di {0} con una tuta della Confraternita. Le gambe da tutt'altra parte, la testa in una mano e il vestito intriso di sangue. Uno Scriba👁‍🗨 è morto!</value>
+    <value>Al risveglio di tutti, viene ritrovato il corpo di {0} con una tuta della Confraternita. Le gambe da tutt'altra parte, la testa in una mano e il vestito intriso di sangue. Uno Scriba👷 è morto!</value>
   </string>
   <string key="MasonTeam">
     <value>  Gli altri Scribi sono: {0}</value>
@@ -662,11 +661,11 @@ variant="Fallout"/>
   </string>
   <string key="HunterShotChoice">
 
-    <value>Il Mercante ti ha sparato!  Nei tuoi ultimi istanti di vita, Hai l'occasione di sparare a qualcuno… di vendicarti…</value>
+    <value>Sei stato ucciso!  Nei tuoi ultimi istanti di vita, Hai l'occasione di sparare a qualcuno… di vendicarti…</value>
   </string>
   <string key="HunterNoChoiceShot">
 
-    <value>Il colpo in testa a {0} é stato di una precisione inimmaginabile. In un nanosecondo é morto, senza vendicarsi.</value>
+    <value>{0} casca a terra, senza vita. In un nanosecondo é morto, senza poter vendicarsi.</value>
   </string>
   <string key="HunterSkipChoiceShot">
 
@@ -715,9 +714,6 @@ variant="Fallout"/>
   <string key="HarlotFuckKiller">
 
     <value>Sei sgattaiolato nella casa di {0} per la tua solita lezione. Però sorprendi {0} che dilania il corpo di un povero innocente! Lui si gira verso di te, e in un attimo sei morto.</value>
-  </string>
-  <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
   </string>
   <string key="DGToMason">
 
@@ -1005,7 +1001,7 @@ variant="Fallout"/>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -1081,5 +1077,115 @@ variant="Fallout"/>
   </string>
   <string key="StartMe">
     <value>Per favore startami così potrò scriverti in privato, oppure resta solo nel vault.</value>
-  </string> 
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   <!-- Per @Lore_Manga. Inizio della traduzione-->
+  <string key="RoleInfoMayor">
+    <value>Sei il Soprintendente del Vault. Il tuo voto durante la condanna voterà doppio, dopo che ti sarai rivelato.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei segretamente il Vice Soprintendente, fuggito dalla tua noiosa e lussuosa vita per vivere insieme ai normali sopravvissuti. Se proveranno a giustiziarti, potrai mostrare il tuo stemma e restare vivo. Nota che potrai farlo solo una volta..</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei un sopravvissuto pazzo: Sei talmente partito di testa che potresti sbagliare al 50% a votare. Vinci comunque con i sopravvissuti.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei il Supermutante Spia, e visto i tuoi poteri, preferisci allearti con i Supermutanti invece che con i vili sopravvissuti, che ti bandirono anni indietro. Di notte potrai usare i tuoi poteri per trovare i Supermutanti o il Gunner Spia. Vinci solo se vincono i Supermutanti. Divertiti a gettare caos nel vault.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei il Gunner Generale, l'amministratore delle guardie del vault. Puoi ordinare ai Gunner di stare alla guardia del vaultper impedire ai Supermutanti di attaccare per una notte. Di giorno, potrai scegliere di ordinare ai Gunner di posizionarsi. Per il resto, sei come un normale sopravvissuto.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei il Capo dei Supermutanti, l'origine della piaga dei Supermutanti. Il tuo morso è la causa della maledizione che trasforma gli umani in Supermutanti. Ogni notte, sceglierai insieme ai tuoi compagni, se presenti un umano da attaccare e uccidere, ma finchè sarai vivo, c'è un 20% di probabilità che la vittima diventi infetta e si trasformi in Supermutante la notte seguente.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei il Cucciolo di Supermutante, venerato e protetto dal tuo branco. Come gli altri Supermutanti, sceglierai ogni notte un giocatore da attaccare e uccidere. Se vieni ucciso, i tuoi compagni si infurieranno a tal punto da attaccare due volte la notte seguente.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena i sopravvissuti hanno deciso che {0} sarà il giustiziato stasera, lui urla «Aspettate! Sono il Vice Soprintendente. Questo stemma, con il sigillo del Soprintendente, lo dimostra. Ogni notte, sono circondato dai sopravvissuti. Quindi non posso essere malvagio.» Sentendosi sciocchi, I sopravvissuti si ritirano docilmente nei dormitori.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Hai provato a scrutare {0}, ma non riesci a capire cos'è... Sei però sicuro che non sia nè il Gunner Spia nè un Supermutante!</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un passo avanti e mostra a tutti lo stemma ufficiale del Soprintendente del vault, dichiarandosi come tale. Da ora in poi, i voti del Soprintendente {0} per le condanne conteranno doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca "Rivelati" appena ti senti pronto di rivelarti pubblicamente come il Soprintendente</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vorresti ordinare ai Gunner di posizionarsi, rendendo i Supermutanti incapaci di attaccare stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre gli abitanti del Vault si infuriano per decidere chi giustiziare, si accorgono che {0} ordina ai Gunner di posizionarsi. Per ora, o almeno, per stanotte, il Vault sarà al sicuro dagli attacchi dei Supermutanti.</value>
+  </string>
+  <string key="Mayor">
+    <value>il Soprintendente del Vault 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>il Vice Soprintendente del Vault 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value> Il Supermutante Spia</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>il sopravvissuto pazzo 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>il Gunner Generale ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>il Capo dei Supermutanti</value>
+  </string>
+  <string key="WolfCub">
+    <value>il Cucciolo di Supermutante</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Appena i Supermutanti attaccano {0}, il Supermutante Alfa {1} prega tutti di fermarsi. {1} confessa che {0} dovrebbe unirsi ai Supermutanti invece di morire, così il branco se ne va, lasciando la vittima con la loro infezione. Diverrà un Supermutante domani notte!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Sei stato attaccato dai Supermutanti, ma il Supermutante Alfa ti ha scelto. Invece di essere ucciso, sei stato infettato... e diverrai un Supermutante, la prossima notte!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena cala la notte, senti uno strano formicolio, e senti dolori su tutto il corpo appena inizi a trasformarti... Ora sei un Supermutante!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Il soprintendente del vault, in incognito. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse reclutato dai Sintetici, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il Vice Soprintendente del Vault è un ruolo chiave nella strategia del team dei sopravvissuti.La prima volta che viene giustiziato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere giustiziato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei un Supermutante Spia, ed hai poteri di un Gunner Spia. Tuttavia non userai i tuoi poteri per vincere coi sopravvissuti, invece, Ti schiererai con i Supermutanti. \nOgni notte scruta come il Gunner Spia, ma può vedere SOLO il Gunner Spia e i Supermutanti. Vince con i Supermutanti.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei il sopravvissuto pazzo, talmente partito di testa che c'è un 50% di probabilità che il bot cambi il tuo voto di condanna a uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Il Gunner Generale è un abitante del Vault che ha passato gli anni a comandare i Gunner. Una volta durante la partita, può ordinare ai Gunner di stare a guardia del Vault durante il giorno (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare i Supermutanti la notte seguente.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Il Supermutante Alfa è l'origine della maledizione, la rovina delle rovine. Finché vivo, ha il 20% di possibilità di infettare le sue vittime (Se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in Supermutanti la notte successiva.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il cucciolo di Supermutante è un normale Supermutante, e verrà visto come Supermutante dal Gunner Spia. Ma se venisse ucciso, la notte seguente gli altri Supermutanti uccideranno due persone, in preda alla rabbia.</value>
+  </string>
    </strings>

@@ -147,7 +147,7 @@ namespace Werewolf_Control.Helpers
                 while (e.InnerException != null)
                     e = e.InnerException;
                 Console.WriteLine(e.Message);
-                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "tcperror.log"), true))
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\tcperror.log"), true))
                     sw.WriteLine(e.Message + "\n" + e.StackTrace + "\n");
             }
             finally

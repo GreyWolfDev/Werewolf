@@ -303,35 +303,55 @@ namespace Werewolf_Control
         [Command(Trigger = "getlang")]
         public static void GetLang(Update update, string[] args)
         {
-            var glangs = Directory.GetFiles(Bot.LanguageDirectory)
-                                                        .Select(x => XDocument.Load(x)
-                                                                    .Descendants("language")
-                                                                    .First()
-                                                                    .Attribute("name")
-                                                                    .Value
-                                                        ).ToList();
-            glangs.Insert(0, "All");
+            //var glangs = Directory.GetFiles(Bot.LanguageDirectory)
+            //                                            .Select(x => XDocument.Load(x)
+            //                                                        .Descendants("language")
+            //                                                        .First()
+            //                                                        .Attribute("name")
+            //                                                        .Value
+            //                                            ).ToList();
+            //glangs.Insert(0, "All");
 
-            foreach (var lang in glangs)
-            {
-                var test =
-                    $"getlang|-1001049529775|" + lang;
-                var count = Encoding.UTF8.GetByteCount(test);
-                if (count > 64)
-                {
-                    Send("Problem with " + lang + ": name is too long!", update.Message.Chat.Id);
-                }
-            }
-            var gbuttons = glangs.Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.Chat.Id}|{x}")).ToList();
+            //foreach (var lang in glangs)
+            //{
+            //    var test =
+            //        $"getlang|-1001049529775|" + lang;
+            //    var count = Encoding.UTF8.GetByteCount(test);
+            //    if (count > 64)
+            //    {
+            //        Send("Problem with " + lang + ": name is too long!", update.Message.Chat.Id);
+            //    }
+            //}
+            //var gbuttons = glangs.Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.Chat.Id}|{x}")).ToList();
+            //var baseMenu = new List<InlineKeyboardButton[]>();
+            //for (var i = 0; i < gbuttons.Count; i++)
+            //{
+            //    if (gbuttons.Count - 1 == i)
+            //    {
+            //        baseMenu.Add(new[] { gbuttons[i] });
+            //    }
+            //    else
+            //        baseMenu.Add(new[] { gbuttons[i], gbuttons[i + 1] });
+            //    i++;
+            //}
+
+            //var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
+
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+
+
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            buttons.Insert(0, new InlineKeyboardButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
+
             var baseMenu = new List<InlineKeyboardButton[]>();
-            for (var i = 0; i < gbuttons.Count; i++)
+            for (var i = 0; i < buttons.Count; i++)
             {
-                if (gbuttons.Count - 1 == i)
+                if (buttons.Count - 1 == i)
                 {
-                    baseMenu.Add(new[] { gbuttons[i] });
+                    baseMenu.Add(new[] { buttons[i] });
                 }
                 else
-                    baseMenu.Add(new[] { gbuttons[i], gbuttons[i + 1] });
+                    baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
                 i++;
             }
 

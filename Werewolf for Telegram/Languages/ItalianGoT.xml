@@ -57,8 +57,7 @@ variant="Game of Thrones"/>
     <value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
   </string>
   <string key="PMTheBot">
-
-    <value>\n{0} benvenuto in Westeros! \nPer favore scrivimi in privato ({1}) con /start, penso che tu non mi abbia mai avviato.  Affinchè io possa scriverti, devi scrivermi per primo.</value>
+    <value>\n{0} Benvenuto in Westeros! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
   </string>
   <string key="DeadFlee">
 
@@ -372,7 +371,7 @@ variant="Game of Thrones"/>
   </string>
   <string key="VillageWins" >
 
-    <value >Gli Uomini hanno vinto! Tutti i gli Estranei sono morti....</value>
+    <value >Gli Uomini hanno vinto!</value>
   </string>
   <string key="TannerWins" >
 
@@ -433,7 +432,7 @@ variant="Game of Thrones"/>
   </string>
 
   <string key="Villager">
-    <value>un Dorniano👦🏽 (👨)</value>
+    <value>un Dorniano👦🏽 (👱)</value>
   </string>
   <string key="Drunk">
     <value>Hodor🚪 (🍻)</value>
@@ -500,7 +499,7 @@ variant="Game of Thrones"/>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>un dothrako🏇🏽 - (👁‍🗨)</value>
+    <value>un dothrako🏇🏽 - (👷)</value>
   </string>
   <string key="RoleInfoMason">
 
@@ -667,7 +666,7 @@ variant="Game of Thrones"/>
   </string>
   <string key="HunterNoChoiceShot">
 
-    <value>Il colpo d'ascia in testa a {0} è stato preciso, talmente tanto che non è riuscito nemmeno a raggiungere la sua spada, che già era immerso in un bagno di sangue.....</value>
+    <value>{0} è morto prima di rendersene conto e raggiungere la sua spada, che già era immerso in un bagno di sangue.....</value>
   </string>
   <string key="HunterSkipChoiceShot">
 
@@ -675,7 +674,7 @@ variant="Game of Thrones"/>
   </string>
   <string key="HunterKilledFinalShot">
 
-    <value>Appena l'ascia trapassa le carni di {0}, esso cade.... Ma non senza afferrare il coltello e lanciarlo tra gli occhi di {1}. {2}</value>
+    <value>{0} è morente, disteso a terra.. Ma tira fuori il coltello lo lancia tra gli occhi di {1}. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
 
@@ -718,7 +717,7 @@ variant="Game of Thrones"/>
     <value>Sei sgattaiolato nella casa di {0}, E iniziate a divertirvi. Tutto sembra andare alla grande finchè {0} tira fuori un coltello e inizia a scuoiarti, ridendo come un maniaco!  Sei morta....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
+    <value>don't worry about this string for now! - {0}</value>
   </string>
   <string key="DGToMason">
 
@@ -1002,11 +1001,11 @@ variant="Game of Thrones"/>
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente: I giocatori {0}possono fuggire</value>
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>I giocatori {0}potranno fuggire dopo l'inizio della partita</value>
+    <value>È {0} fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -1092,4 +1091,11 @@ variant="Game of Thrones"/>
   <string key="UnableToGetList">
     <value>Impossibile stilare la lista</value>
   </string>
-   </strings>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  </strings>
