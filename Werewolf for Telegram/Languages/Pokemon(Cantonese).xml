@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--
+    ==UPDATE LOG==
+    LAST UPDATE 13/11/2016 by @bluebear119
+    13/11: Modified Tanner Description and Tanner Win.
+-->
 <strings>
   <language name="廣東話（神奇寶貝寶可夢版）" base="廣東話" variant="神奇寶貝寶可夢版" owner="bluebear119，AnsonFat，Katherine_twn,proflayton,Dino"/>
   <string key="NotInGame">
@@ -23,11 +28,11 @@
     <value>你已經拿到下次參與寵物小精靈聯盟賽嘅資格了，請耐心等待下一場對決嘅開始。</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>比賽仲有一分鐘開始，快D /join 搶番隻小精靈做訓練員la。</value>
+    <value>比賽仲有一分鐘開始，快D /join 搶番隻小精靈做訓練員啦。</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!--0 - remaining seconds (number) -->
-    <value>比賽仲有【{0}】秒就開始，快D /join 搶番一隻小精靈做訓練員la。</value>
+    <value>比賽仲有【{0}】秒就開始，快D /join 搶番一隻小精靈做訓練員啦。</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>好唔好彩嘅係，呢個時間冇咩人願意參加比賽，你得閒就返去練強D自己隻小精靈先翻黎啦。</value>
@@ -63,7 +68,7 @@
   </string>
   <string key="Flee">
     <!-- 0 - Player name -->
-    <value>【{0}】因為你嘅懦弱，導致小精靈對你產生恨意，將精靈球已經摧毀，他已經離開了你，返去佢自己嘅同伴身邊。</value>
+    <value>【{0}】因為你嘅懦弱，導致小精靈對你產生恨意，將精靈球摧毀得支離破碎，無法修理。小精靈已經離開了你，返去佢自己嘅同伴身邊。</value>
   </string>
   <string key="PlayerRoleWas">
     <!-- 0 - Player name -->
@@ -106,6 +111,12 @@
   </string>
   <string key="ChoiceAccepted">
     <value>大木博士已經收到你嘅柯打啦！</value>
+    <value>海桐博士已經收到你嘅信息啦！</value>
+    <value>小田卷博士已經明白你嘅決定啦！</value>
+    <value>空木博士已經明晒你嘅心意啦！</value>
+    <value>山梨博士已經了解你嘅抉擇啦！</value>
+    <value>紅豆杉博士已經準備傳送你嘅指令啦！</value>
+    <value>庫庫伊博士已經答應你嘅請求啦！</value>
   </string>
   <string key="BeholderSeer">
     <!-- 0 - seer name -->
@@ -137,6 +148,8 @@
   </string>
   <string key="AskVisit">
     <value>你今晚想向邊隻小精靈獻出你既香吻？</value>
+    <value>你今晚想同邊個一齊打咖輪，留下愛嘅印記？</value>
+    <value>你今晚想搵邊個黎錫錫啊？</value>
   </string>
   <string key="AskSee">
     <value>你想叫你嘅小精靈對邊位使出先知能力？</value>
@@ -145,10 +158,10 @@
     <value>你想叫你嘅幸運蛋對邊位使出光牆?</value>
   </string>
   <string key="AskEat">
-    <value>火箭兵團，你地想綁架邊位唔入流訓練員既小精靈？</value>
+    <value>火箭兵團，你地想綁架邊位下三流訓練員既小精靈？</value>
   </string>
   <string key="AskHunt">
-    <value>你覺得邊個訓練員擁有神奇海螺？</value>
+    <value>你覺得邊個訓練員偷偷地私藏神奇海螺？</value>
   </string>
   <string key="AskRoleModel">
     <value>你覺得邊位低級訓練員最快被人摧毀佢既精靈球？</value>
@@ -199,16 +212,16 @@
 </value>
   </string>
   <string key="RoleInfoTanner" >
-    <value>你擁有既係皮皮👺。只要你成功令到無知既訓練員想摧毀嘅你自己精靈球，皮皮就會出黎唱歌，當啲人訓哂就會整蠱佢地，勝利就會係你架啦。</value>
+    <value>你唔好彩啦，你擁有嘅小精靈係加菲貓咁好食懶飛嘅騎呢皮皮👺，佢成日陷害你，你有幾次差啲破產同死亡，你下定決心，混入大賽，扮哂嘢去成功令到其他訓練員去摧毀你嘅精靈球，咁就可以放生皮皮，同佢斷絕僕主關係(沒錯，你係佢奴隸)，勝利就會係你架啦。</value>
   </string>
   <string key="RoleInfoWildChild" >
     <value >不得了啦，你擁有一隻外表天然呆，但實情腹黑嘅果然翁👶。選一個訓練員，一旦佢嘅精靈球被摧毀，你就會穿起個件R字頭嘅戰衣成為火箭兵團嘅一份子。</value>
   </string>
   <string key="RoleInfoBeholder" >
-    <value >你嘅小精靈就是天然雀👁. 不過天然雀既先知能力太弱了，淨係知道邊個擁有富迪。你可以扮你既小精靈係富迪，以保護富迪，避免佢既精靈球被吹毀。</value>
+    <value >你嘅小精靈就是天然雀👁。不過天然雀既先知能力太弱了，淨係知道邊個擁有富迪。你可以扮你既小精靈係富迪，以保護富迪，避免佢既精靈球被吹毀。</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >你嘅小精靈是尤基納 🙇. 當富迪失去戰鬥力,你就會進化成富迪!</value>
+    <value >你嘅小精靈是尤基納 🙇。當富迪失去戰鬥力,你就會進化成富迪!</value>
   </string>
   <string key="RoleInfoCultist" >
     <value >你既小精靈係螺旋神教嘅核心人物菊石獸👤，每一晚佢會聽你既指令對一個人既小精靈使出化石光線，令其他人變成菊石獸，去追隨你成為螺旋神教教徒。當你成功將所有人既小精靈變菊石獸，比賽冠軍就係你地架啦。</value>
@@ -235,7 +248,7 @@
     <value >訓練員們都信不過【{0}】嘅實力。\n【{1}】.</value>
   </string>
   <string key="LynchTie" >
-    <value >訓練員們商討已久，無法決定摧毀對方嘅精靈球，小精靈便歡天喜地嘅回到心愛嘅主人懷抱裡。</value>
+    <value >訓練員們商討已久，到無法決定摧毀邊個嘅精靈球，小精靈便歡天喜地嘅回到心愛嘅主人懷抱裡。</value>
   </string>
   <string key="NoLynchVotes" >
     <value >冇訓練員願意俾人吹毀自己嘅精靈球。</value>
@@ -286,7 +299,7 @@
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>萬年蟲決定去搵【{0}】既小精靈，他發現到【{0}】既小精靈竟然正在跪拜神奇海縲！ 萬年蟲一怒之下 ，使用原始之力，殲滅了呢隻菊石邪魔！</value>
+    <value>萬年蟲決定去搵【{0}】既小精靈，他發現到【{0}】既小精靈竟然正在跪拜神奇海縲！\n萬年蟲一怒之下，使用原始之力，殲滅了呢隻菊石邪魔！</value>
   </string>
   <string key="NoAttack" >
     <value >真係好彩啦，尋晚冇精靈被抓走。</value>
@@ -385,7 +398,7 @@
     <value>訓練員係咁展開反擊，火箭兵團係佢地嘅強攻下毫無還手之力。\n另一邊廂，天空突然出現咗異常嘅流星群，而隨住流星群俯衝落來嘅竟然係天空嘅王者裂空座。\n原來螺旋神教傳教嘅事情已經得罪咗裂空座，這片流星群落所到之處，將殘存到依加嘅螺旋神教教徒統統消滅。\n而一直以為冇人會發現到嘅耿鬼都俾佢仲要恐怖嘅敵人-達克萊伊收進黑洞裡，而家已經冇仼何野可以傷害訓練員嘅小精靈啦。</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value>大獲啦你哋，皮皮👺嘅精靈球因為俾你哋摧毀，皮皮好嬲咁出黎唱歌，當啲人訓哂就會整蠱佢地，勝利淨係屬於佢同佢嘅訓練員。 
+    <value>你哋中計喇！皮皮👺嘅精靈球因為俾你哋摧毀，皮皮走出咗嚟又冇王管，佢偷走哂全村食物。你哋餓得滯，去搵佢主(奴)人(隸)理論，點知嗰位人兄話隻皮皮係被大家放生，唔關佢事。你哋餓到暈嘅同時，明白到今次勝利只係屬於皮皮同佢嘅訓練員......(咕咕咕咕咕) 
 </value>
   </string>
   <string key="RemainingPlayersEnd">
@@ -733,7 +746,7 @@
     <value>你錫咗【{0}】一啖，原來佢係耿鬼！妳迷人紅唇變成元朗自設既大工場，鮮晒原味夠哂甘香嘅X華孖潤腸，毒發身亡。</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>日出了，大家喺【{0}】屋企聞到好香嘅潤腸味。大家打開【{0}】屋企度門一睇，發現有孖潤腸跌咗落地，下邊壓著【{0}】嘅屍體，孖腸係佢嗰嘴唇，原來佢係紅唇娃！到底發生咗咩事呀呀呀呀呀呀！ - {0}</value>
+    <value>日出了，大家喺【{0}】屋企聞到好香嘅潤腸味。大家打開【{0}】屋企度門一睇，發現有孖潤腸跌咗落地，下邊壓著【{0}】嘅屍體，孖腸係佢嗰嘴唇，原來佢係紅唇娃！到底發生咗咩事呀呀呀呀呀呀！</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -855,7 +868,7 @@
     <value>【{0}】的精靈球已經俾人摧毀咗，佢已經係24小時到冇投票【{1}】次。</value>
   </string>
   <!--New strings 7th of July-->
-  <string key="AboutVG">00
+  <string key="AboutVG">
     <value>【Villager 村民👱：鯉魚王】你嘅小精靈係鯉魚王，你係唔係以為一條死魚就唔可以有咩大作為呢？但係你唔好睇少你的小精靈能力，當有一日你收集夠400粒糖，死魚都可以變做鯉魚龍！(p.s.鯉魚門村冇糖俾你收集，都係慳翻啖氣啦你)
 
 </value>
@@ -889,7 +902,7 @@
     <value>【Gunner 槍手🔫：水箭龜】\n你擁有既小精靈係水箭龜，每日既朝早你都可以派水箭龜亂槍掃射一個小精靈訓練員，不過留意水箭龜得2枝水箭炮，而且其他小精靈訓練員亦會察覺到你擁有水箭龜，可能會被火箭兵團/耿鬼係夜晚襲擊你，所以請三思而後行。</value>
   </string>
   <string key="AboutTanner">
-    <value>【Tanner 皮匠👺：皮皮】\n你擁有既係皮皮👺。只要你成功令到無知既訓練員想摧毀嘅你自己精靈球，皮皮就會出黎唱歌，當啲人訓哂就會整蠱佢地，勝利就會係你架啦。</value>
+    <value>【Tanner 皮匠👺：皮皮】\n你唔好彩啦，你擁有嘅小精靈係加菲貓咁好食懶飛嘅騎呢皮皮👺，佢成日陷害你，你有幾次差啲破產同死亡，你下定決心，混入大賽，扮哂嘢去成功令到其他訓練員去摧毀你嘅精靈球，咁就可以放生皮皮，同佢斷絕僕主關係(沒錯，你係佢奴隸)，勝利就會係你架啦。</value>
   </string>
   <string key="AboutFool">
     <value>【Fool 白痴仔🃏：小呆獸】\nBot會呃你係富迪，但可惜你唔係，當你用不斷念力睇人地咩精靈時，bot會求奇同你講一種類精靈，但依然會有有可能睇中嘅。</value>
