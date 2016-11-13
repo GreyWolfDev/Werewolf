@@ -105,7 +105,7 @@ namespace Werewolf_Node.Models
         public bool LastShotWasSKWolf { get; set; } = false;
         public bool DoubleKillEnding { get; set; } = false;
         public bool Bitten { get; set; }
-        public int DetCheckedBadRolesContCount { get; set; } = 0;
+        
     }
 
         #endregion

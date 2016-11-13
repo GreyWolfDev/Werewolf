@@ -1980,32 +1980,6 @@ namespace Werewolf_Node
                 {
                     DBAction(detect, check, "Detect");
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
-
-                    //check if it is a re-snoop
-                    if (detect.PlayersVisited.Contains(check.TeleUser.Id))
-                        detect.HasRepeatedVisit = true;
-                    detect.PlayersVisited.Add(check.TeleUser.Id);
-                    //if snooped non-bad-roles:
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
-                        //reset streewise count:
-                        detect.DetCheckedBadRolesContCount = 0;
-                    else
-                    {
-                        //if snooped bad roles, add count:
-                        if (!detect.HasRepeatedVisit == false) //if it is a re-snoop
-                            detect.DetCheckedBadRolesContCount = 1; //reset the count as the first in a row
-                        else //if it is a new snoop
-                            detect.DetCheckedBadRolesContCount++; //add count
-
-                        //if snooped 4 times continously
-                        if (detect.DetCheckedBadRolesContCount >= 4)
-                        {
-                            AddAchievement(detect, Achievements.Streetwise);
-                            //reset count after adding achivement
-                            detect.DetCheckedBadRolesContCount = 0;
-                        }
-                    }
-
                 }
             }
 
