@@ -2430,7 +2430,7 @@ namespace Werewolf_Node
                         skilled.IsDead = true;
                         if (skilled.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
-                        skilled.TimeDied = Date
+                        skilled.TimeDied = DateTime.Now;
                         skilled.KilledByRole = IRole.SerialKiller;
                         DBKill(sk, skilled, KillMthd.SerialKilled);
                         if (WolfRoles.Contains(skilled.PlayerRole))
