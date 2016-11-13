@@ -307,7 +307,7 @@
     <value>You went to guard {0}, but they weren't home!</value>
   </string>
   <string key="GuardSavedYou" >
-    <value >A guardian angel was watching over you last night and fought off the wolves!</value>
+    <value >A guardian angel was watching over you last night and fought off an attacker!</value>
   </string>
   <string key="HarlotEaten" >
     <!-- 0 - player name -->
@@ -635,7 +635,8 @@
     <value>You are the serial killer. Recently escaped from the local asylum, your goal is for everyone else to die. Every night, you can add a player's body to your collection.</value>
   </string>
   <string key="CupidChosen">
-    <value>You have been struck by love. {0}'s memory will never fade in your heart. Your goal is for both of you to survive. If one of you dies, the other one will die out of sorrow.</value>
+    <value>You have been struck by love. {0}'s memory will never fade in your heart. If one of you dies, the other one will die out of sorrow. If one of you wins, the other one wins too.</value>
+	<value>Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If one of you two wins, you will both win.</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>The village has chosen to hang you! This is your last chance, choose to shoot someone as you go down!</value>
@@ -700,7 +701,7 @@
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead a {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
+    <value>The cult sends {0} to try to convert {1}, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
   </string>
   <string key="GuardKiller">
     <value>You tried to guard the serial killer, but they came out and stabbed you 89 times! You are dead....</value>
@@ -710,7 +711,11 @@
     <value>You slip into {0}'s house, and start having a little fun.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac!  You have died....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
+<<<<<<< HEAD
+    <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
+=======
     <value>{0} tried to have some fun last night... but found a crazed murderer instead! {0} is dead... - {0}</value>
+>>>>>>> dc1881bd41a1a4a5ce95bc1a184270e3a0bdadd8
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -771,10 +776,6 @@
   </string>
   <string key="Doppelgänger">
     <value>the Doppelgänger 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <!-- 0 - lover's name -->
-    <value>Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If you both make it to the end, you will both win.</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
@@ -900,7 +901,7 @@
   <string key="AboutCupid">
     <value>
       Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
-      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if at least one of the lovers was on the winning team, they both win together.
     </value>
   </string>
   <string key="AboutHunter">
