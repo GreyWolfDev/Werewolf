@@ -2870,7 +2870,6 @@ namespace Werewolf_Node
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
                         Send(GetLocaleString("GuardSavedYou"), save.Id);
-                        save.WasSavedLastNight = false;
                     }
                     else if (save.DiedLastNight)
                     {
@@ -2913,6 +2912,8 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             break;
                     }
+
+                    save.WasSavedLastNight = false;
                 }
             }
 
