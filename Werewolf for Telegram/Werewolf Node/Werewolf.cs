@@ -2992,7 +2992,7 @@ namespace Werewolf_Node
                                     }
                                     else //died from hunter
                                     {
-                                        msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName());
+                                        msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName()) + $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}";
                                     }
                                     break;
 
