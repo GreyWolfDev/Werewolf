@@ -2126,6 +2126,7 @@ namespace Werewolf_Node
             if (CheckForGameEnd()) return;
             var ga = Players.FirstOrDefault(x => x.PlayerRole == IRole.GuardianAngel & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             var voteWolves = wolves.Where(x => !x.Drunk);
+            var voteWolvesCount = voteWolves.Count();
 
             if (voteWolves.Any())
             {
@@ -2250,7 +2251,7 @@ namespace Werewolf_Node
                                         break;
                                     case IRole.Hunter:
                                         //hunter has a chance to kill....
-
+                                        voteWolvesCount = voteWolves.Count();
                                         //figure out what chance they have...
                                         var chance = Settings.HunterKillWolfChanceBase + ((voteWolves.Count() - 1) * 20);
                                         if (Program.R.Next(100) < chance)
@@ -2991,7 +2992,7 @@ namespace Werewolf_Node
                                     }
                                     else //died from hunter
                                     {
-                                        msg = GetLocaleString(Players.Count(x => WolfRoles.Contains(x.PlayerRole) && !x.IsDead) + 1 > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName());
+                                        msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName());
                                     }
                                     break;
 
