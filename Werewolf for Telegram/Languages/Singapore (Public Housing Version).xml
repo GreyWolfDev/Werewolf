@@ -33,7 +33,7 @@
     <value>{0} seconds left to /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Not enough players, cancelling game!</value>
+    <value>Not enough players, cancelling BTO exercise!</value>
   </string>
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
@@ -113,6 +113,7 @@
   <string key="BeholderSeer">
     <!-- 0 - seer name -->
     <value>\nThe hacktivist is {0}.</value>
+    <value>\nAs far as you know, only {0} the hacktivist could have been of real help to the residents.</value>
   </string>
   <string key="ApprenticeNowSeer">
     <!-- 0 - seer name -->
@@ -310,7 +311,7 @@
   </string>
   <string key="GuardSaved" >
     <!-- 0 - saved player name -->
-    <value >You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (Serial killer)!</value>
+    <value >You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (serial killer)!</value>
   </string>
   <string key="GuardNoAttack" >
     <!-- 0 - player name -->
@@ -353,12 +354,14 @@
   </string>
   <string key="DetectiveCaught" >
     <!-- 0 - detective name -->
-    <value >You caught {0}'s drone! That must be the drone operator (detective)!</value>
+    <value>You caught {0}'s drone! That must be the drone operator (detective)!</value>
+    <value>You hear the buzzing of {0}'s drone! Obviously that's the drone operator (detective)!</value>
   </string>
   <string key="DetectiveSnoop" >
     <!-- 0 - target name -->
     <!-- 1 - target role -->
     <value>Your drone has taken a 4k picture of {0}; that's the {1}.</value>
+    <value>The lens of your drone was a little clouded, but it revealed {0} to be the {1}.</value>
   </string>
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
@@ -369,13 +372,16 @@
     <!-- 0 - Gunner's name -->
     <!-- 1 - target name -->
     <!-- 2 - Target's revealed name ( Target was a role) -->
-    <value >Suddenly, a SAR-21 was fired. The block turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
+    <value>Suddenly, a SAR-21 was fired. The block turns to see {0} standing over {1}'s body, the SAR-21 still aimed at the head. {2}</value>
+    <value>The SAR-21 suddenly goes off! {1} lies in a pool of blood, with {0} standing over the dead soul, the SAR-21 still aimed at the head. {2}</value>
   </string>
   <string key="WolfWins" isgif="false" >
     <value>Enough with the conniving residents! The HDB agent has won!</value>
+    <value>The HDB agent has outsmarted the residents! The HDB agent has won!</value>
   </string>
   <string key="WolvesWin" isgif="false" >
     <value>Enough with the conniving residents! The HDB agents have won!</value>
+    <value>The HDB agents have outsmarted the residents! The HDB agent has won!</value>
   </string>
   <string key="VillageWins" isgif="true" >
     <value>All the pesky HDB agents have been dealt with! The residents have won and can continue their illegal enterprises!</value>
@@ -568,6 +574,7 @@
   <string key="IsDead">
     <!-- used when gunner shoots a player -->
     <value>is a goner.</value>
+    <value>is now called "ex-neighbour".</value>
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
@@ -577,7 +584,7 @@
   </string>
   <string key="AlreadyInGame">
     <!-- 0 - target's name -->
-    <value>You are already in a game! ({0})</value>
+    <value>You are already in a BTO exercise! ({0})</value>
   </string>
   <string key="MultipleGames">
     <value>Your group has managed to do extra BTOs. Killing extras.</value>
@@ -726,6 +733,9 @@
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
     <value>You tried to sell laksa to {0}, but a Pontianak greeted you at the door. Dropping your bowl, you hurriedly flee with your giant cauldron. PONTIANAK IS TRUE!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>The estate notices a white makcik with laksa all over her. Apparently she visited the Pontianak last night. {0} will leave the estate by morning.</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -1224,15 +1234,33 @@
     <value>You are the HDB Scholar (Wolf Cub 🐶). Adored by the HDB CEO, you are considered so valuable that all the HDB agents either look up to you because of your smarts, or are jealous because you're a scholar that will be promoted much faster than any farmer. Once you are out of the picture, however, everyone would want to start impressing their bosses for the next fast-track career vacancy, so the HDB agents will work harder to prove themselves!</value>
   </string>
   
-  <!-- missing strings added. -->
-  <string key="DGTransformtoAlpha">
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
     <value>{0} has left, and you found, amidst the ransacked pile, the CEO stamp! You quickly assert control over your fellow agents (if any) as HDB CEO. They are: {1}</value>
   </string>
-  <string key="DGTransformtoWolfCub">
+  <string key="DGTransformToWolfCub">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
     <value>{0} has left, and you found that you are hard-pressed to live up to the expectations of a HDB Scholar. Your fellow agents (if any) are: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Residents</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>The ones who don't give a damn!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>The HDB Agents</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>The PONTIANAK Team!</value>
+  </string>
+  <string key="CultTeam">
+    <value>The Money-Lending Members</value>
+  </string>
+  <string key="TannerTeam">
+    <value>The Attention Seeking Team</value>
   </string>
 </strings>
