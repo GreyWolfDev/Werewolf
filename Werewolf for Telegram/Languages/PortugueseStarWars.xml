@@ -2,7 +2,7 @@
 <!--
    Created by / Criado por:
        Lucas Mansoldo (@MansoldOS) - Ajuda por: Eduardo Brasil (@Eduardo_bra)
-	   (Última edição: 12/11/2016 por @MansoldOS)
+	   (Última edição: 14/11/2016 por @MansoldOS)
 -->
 <strings>
   <language name="Português (Star Wars)" base="Português" variant="StarWars"/>
@@ -15,7 +15,7 @@
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <value>A Força é intensa em {0}, porém seus caminhos são tortuosos. Use /join e que a Força esteja com você.</value>
-    <value>-"É como se milhares de vozes gritassem em desespero" disse {0}! Use /join e que a Força esteja com você!</value>
+    <value>{0} diz: -É como se milhares de vozes gritassem em desespero... Use /join e que a Força esteja com você!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>É assim que a liberdade morre... Com um estrondoso aplauso! A guerra já começou e não há o que fazer. Use /nextgame para receber uma mensagem no privado quando uma nova guerra for iniciada!</value>
@@ -39,7 +39,7 @@
     <value>Parece que {0} está banido(a) por tentar explorar um erro (não são permitidos nomes iniciados por /)</value>
   </string>
   <string key="ChangeNameToJoin">
-    <value>Soldado {0}, Sentido! Mude seu nome se quiser entrar na partida.</value>
+    <value>{0}, mudar seu nome você deve para na partida poder entrar. .</value>
   </string>
   <string key="PlayerLimitReached">
     <value>Sinto muito, o número máximo de jogadores foi atingido!</value>
@@ -60,7 +60,7 @@
     <value>{0} era {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>{0} soldados restantes.</value>
+    <value>{0} jogadores restantes.</value>
   </string>
   <string key="DidntAsk">
     <value>Ei, não te perguntei nada ainda!</value>
@@ -81,7 +81,7 @@
     <value>{0} votou para punir {1}</value>
   </string>
   <string key="IdleKill">
-    <value>Parece que {0} não votou por duas noites seguidas! O Conselho Jedi achou que ele era um infiltrado, e mandou matá-lo. Em um embate rápido contra os Jedi, {0} é atingido por um corte de lightsaber. \n{1}</value>
+    <value>Parece que {0} não votou por duas noites seguidas! O Conselho Jedi achou que ele era um infiltrado e mandou matá-lo. Em um embate rápido contra os Jedi, {0} é atingido por um corte de Sabre de Luz. \n{1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>Você deveria destruír os Sith, não se unir a eles! Trazer equilíbrio para à Força, não joga-la nas Trevas! Você se apegou à paixão por poder. Agora você é um Lord Sith!</value>
@@ -105,13 +105,13 @@
     <value>Quem você gostaria de punir?</value>
   </string>
   <string key="AskDetect">
-    <value>Quem você gostaria de bisbilhotar?</value>
+    <value>Quem você gostaria de investigar?</value>
   </string>
   <string key="AskShoot">
     <value>Quem será o alvo do seu sabre? {0} tentativa(s) restante(s)</value>
   </string>
   <string key="AskVisit">
-    <value> Agora a noite, seria uma boa hora para discutir sobre novas medidas no Senado sem chateações, não? Quem receberá sua ilustre visita?</value>
+    <value> Agora seria uma boa hora para discutir sobre novas medidas no Senado sem chateações, não? Quem receberá sua ilustre visita?</value>
   </string>
   <string key="AskSee">
     <value>De quem a unidade R2 suspeita? Deveria checar o painel da base...</value>
@@ -147,7 +147,7 @@
     <value>Você é o Estudioso da Força. Caso os Siths venham atrás de ti, antes de morrer, tentarás trazê-los de volta à luz. Os Siths não atacarão por enquanto, pois estão com a fé no Lado Sombrio abalada.</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>WWWWARRRRRGH! Você é um Wookie, e como prova de lealdade ao Mestre Yoda você protegerá os membros da República. Tome cuidado para não proteger algum Sith, pois o Lado Sombrio permanece nas sombras do Senado...</value>
+    <value>WWWWARRRRRGH! Você é um Wookiee, e como prova de lealdade ao Mestre Yoda você protegerá os membros da República. Tome cuidado para não proteger algum Sith, pois o Lado Sombrio permanece nas sombras do Senado...</value>
   </string>
   <string key="RoleInfoGunner">
     <value>Você é o Cavaleiro Jedi! Durante as batalhas você julgará e abaterá um inimigo da República! Devido ao calor da batalha você não pode se descuidar e só poderá entrar em combate com dois inimigos. Quando o fizer, todos vão escutar o rugido de seu Sabre de Luz!</value>
@@ -168,7 +168,7 @@
     <value >Você é um simples cidadão de Coruscant, vivendo no meio da disputa travada entre a República e os Separatistas. Você não tem poderes, mas pode participar dos julgamentos, votando em quem você considera suspeito.</value>
   </string>
   <string key="RoleInfoTanner" >
-    <value >Você é o Droid explosivo! Criado por mecânicos em Tatooine, seu objetivo é explodir e levar a todos consigo.</value>
+    <value >Você é o Dróide explosivo! Criado por mecânicos em Tatooine, seu objetivo é explodir e levar a todos consigo.</value>
   </string>
   <string key="RoleInfoWildChild" >
     <value >Você é um Padawan Rebelde! Escolha o seu Mestre - se ele(a) morrer, você será tomado pelo Ódio e se transformará em um Lord Sith, como forma de vingança.</value>
@@ -177,7 +177,7 @@
     <value >Você é o Engenheiro de Dróides, você saberá qual unidade R2 está 100% funcional.</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >Você é a unidade R2 Reserva. Caso o dróide seja destruído, você tomará seu lugar como R2. PIPIPI, WAAAAAAAAAAAAAAAAA </value>
+    <value >Você é a unidade R2 Reserva. Caso o dróide seja destruído, você tomará seu lugar como R2. PIPIPI WAAAAAAAAAAAAAAAAA </value>
   </string>
   <string key="RoleInfoCultist" >
     <value >Você é um membro dos Jedi "Renegados". Sensitivos à Força, frequentemente ex-Jedi, que optaram por negar o lado luminoso da Força e seguir o lado sombrio, vocês acreditam que os Jedi desequilibram a Força. Entre as batalhas, você poderá escolher alguém para converter aos Renegados. Se todos os jogadores restantes ao final do jogo forem Jedi Negros, eles vencem!</value>
@@ -203,13 +203,13 @@
     <value >Sem uma decisão em mãos, o Senado volta a discutir soluções. Alguns murmuram palavrões. Outros, apenas ficam calados.</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Alguma coisa está cheirando mal, ninguém votou!  Ninguém será morto hoje.....</value>
+    <value >Há algo estranho no ar da República, ninguém votou!  Ninguém será morto hoje.....</value>
   </string>
   <string key="DetectiveEaten" >
     <value >Após o calor da batalha, todos sentem a falta do Chefe de Inteligência. Após algumas horas de busca, encontram o corpo dele... completamente carbonizado. {0} era o Chefe de Inteligência.</value>
   </string>
   <string key="GuardianEaten" >
-    <value >Após o calor da batalha, todos sentem a falta do Wookie leal. Após algumas horas de busca, encontram o corpo dele... completamente destroçado. {0} era o Wookie leal.</value>
+    <value >Após o calor da batalha, todos sentem a falta do Wookie leal. Após algumas horas de busca, encontram o corpo dele... completamente destroçado. {0} era o Wookiee leal.</value>
   </string>
   <string key="GunnerEaten" >
     <value >Após o calor da batalha, todos sentem a falta de um dos Cavaleiros Jedi. Após algumas horas de busca, encontram o corpo dele... com uma marca de ferimento por Sabre de Luz. {0} era o Cavaleiro Jedi.</value>
@@ -272,7 +272,7 @@
     <value>WRAAAAAAAARGH??? Você foi proteger {0}, mas quando foi o visitar, ele não estava em seu dormitório!</value>
   </string>
   <string key="GuardSavedYou" >
-    <value >O Wookie Leal te protegeu de um possível ataque Separatista. Os Sith estão por trás disso...</value>
+    <value >O Wookiee Leal te protegeu de um possível ataque Separatista. Os Sith estão por trás disso...</value>
   </string>
   <string key="HarlotEaten" >
     <value >O Embaixador foi discutir política com a pessoa errada. {0} foi encontrado morto na porta de um bar.</value>
@@ -281,7 +281,7 @@
     <value >Estranho... {0} não estava em casa! Parece ele ganhou mais um dia no Senado</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value >Você decidiu abordar {0} para discutir soluções para guerra contra os Separatistas mas logo percebe que ele era um Sith. Enquanto tenta fugir, uma força invisível te agarra pelo pescoço e começa a te sufocar. Sinta o terror dos Sith! </value>
+    <value >Você decidiu abordar {0} para discutir soluções para guerra contra os Separatistas mas logo percebe que ele era um Sith. Enquanto tenta fugir, uma força invisível te agarra pelo pescoço e começa a te sufocar. Sinta o terror do Lado Sombrio! </value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <value >{0} decidiu conversar com a pessoa errada. Ele está morto. {0} era o Embaixador de Coruscant.</value>
@@ -320,7 +320,7 @@
     <value >A República venceu!</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value >Vocês decidiram explodir o droid-bomba. Após a aproximação de todos, ele se explode.</value>
+    <value >Vocês decidiram executar o dróide-bomba. Após a aproximação de todos, ele se explode.</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
@@ -332,16 +332,16 @@
     <value>{0} foi enviado(a) para converter {1}... entretanto, ele(a) era o Jedi Inquisidor! {0} está morto(a)!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <value>{0} foi em seus domínios, pronto(a) para te converter....  mas você o(a) atravessou com seu Sabre de Luz.  Um membro dos Jedi Renegados está morto... {1} restante(s)!</value>
+    <value>{0} foi em seus domínios, pronto(a) para te converter....  mas você o(a) atravessou com seu Sabre de Luz.  Um membro dos Jedi Negros está morto... {1} restante(s)!</value>
   </string>
   <string key="CultConvertYou">
     <value>Você foi convertido(a) e agora é um membro dos Jedi Negros.  Após a batalha, você poderá tentar converter outros jogadores.</value>
   </string>
   <string key="CultTeam">
-    <value>Membros dos Jedi Renegados: {0}</value>
+    <value>Membros dos Jedi Negros: {0}</value>
   </string>
   <string key="CultJoin">
-    <value>{0} se juntou os Jedi Renegados!</value>
+    <value>{0} se juntou os Jedi Negros!</value>
   </string>
   <string key="CultVisitEmpty">
     <value>{0} foi enviado(a) para converter {1}... mas ninguém estava no local!</value>
@@ -353,7 +353,7 @@
     <value>Você foi averiguar {0}, mas ele(a) já estava morto(a)!</value>
   </string>
   <string key="HunterFindCultist">
-    <value>O corpo de {0} aparece caído pela manhã nos corredores da cidade de Corsucant. Parece que o Jedi Inquisidor encontrou um Jedi Negro!</value>
+    <value>O corpo de {0} aparece caído pela manhã nos corredores da cidade de Coruscant. Parece que o Jedi Inquisidor encontrou um Jedi Negro!</value>
   </string>
   <string key="HunterFailedToFind">
     <value>Você manipula a Força e invade a mente de {0} mas não há nenhum sinal do Lado Sombrio.</value>
@@ -378,13 +378,13 @@
     <value>a Unidade R2 👳</value>
   </string>
   <string key="Traitor">
-    <value>o Traidor 🖕</value>
+    <value>o Traidor da República 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>o Wookie leal 👼</value>
+    <value>o Wookiee leal 👼</value>
   </string>
   <string key="Detective">
-    <value>o Lider 🕵</value>
+    <value>o Chefe de Inteligência da República 🕵</value>
   </string>
   <string key="Wolf">
     <value>um Lord Sith 🐺</value>
@@ -396,7 +396,7 @@
     <value>o Cavaleiro Jedi 🔫</value>
   </string>
   <string key="Tanner">
-    <value>o Droíde Bomba 👺</value>
+    <value>o Dróide Bomba 👺</value>
   </string>
   <string key="Fool">
     <value>a unidade R2 Corrompida 🃏</value>
@@ -447,7 +447,7 @@
     <value>Um dos Jedi Renegados foi até {0} para convertê-lo ao Lado Sombrio, mas encontra um corpo no chão com um buraco de blaster no peito... o alvo morreu!</value>
   </string>
   <string key="GuardBlockedWolf">
-    <value>Um dos Sith se dirige até {0} com um Sabre de Luz vermelho em punho, mas quando se aproxima é recebido por um tiro de uma besta Wookie bem no joelho, arremessando-o para trás e fazendo-o cair em um lago. WRAAAAAAARGH.</value>
+    <value>Um dos Sith se dirige até {0} com um Sabre de Luz vermelho em punho, mas quando se aproxima é recebido por um tiro de uma besta Wookiee bem no joelho, arremessando-o para trás e fazendo-o cair em um lago. WRAAAAAAARGH.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
@@ -465,10 +465,10 @@
     <value>era</value>
   </string>
   <string key="GenericDeathNoReveal">
-    <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. O que tenha matado ele, não parecia um terrorista.</value>
+    <value>Após uma intensa batalha a presença de {0} não foi notada. O Conselho Jedi inicia as buscas por {0} e após uma vasculhada nos registros o notam através de filmagens holográficas... O corpo dele encontra-se no chão. Não parece obra dos Sith...</value>
   </string>
   <string key="MasonConverted">
-    <value>Estranho... {0} não apareceu no treinamento de cabos esta manhã...</value>
+    <value>Estranho...  {0} não apareceu no Senado.</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -534,10 +534,10 @@
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>Você é um Atendente de bar em Corsucant. Em sua última viagem à orla exterior, você comprou o Elixir do Amor de um mercador suspeito que aparentava ter asas e carregava um arco. Espalhe o amor, batize a bebida de duas pessoas. A quem você entregará um drink?</value>
+    <value>Você é um Atendente de bar em Coruscant. Em sua última viagem à orla exterior, você comprou o Elixir do Amor de um mercador suspeito que aparentava ter asas e carregava um arco. Espalhe o amor, batize a bebida de duas pessoas. A quem você entregará um drink?</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>Os Kaminoanos receberam ordens de clonar membros de Corsucant em caso de o pior acontecer. Você pode escolher se tornar o clone de um dos membros, e, quando morrer, você assumirá seu papel na Capital da República.</value>
+    <value>Os Kaminoanos receberam ordens de clonar membros de Coruscant em caso de o pior acontecer. Você pode escolher se tornar o clone de um dos membros, e, quando morrer, você assumirá seu papel na Capital da República.</value>
   </string>
   <string key="RoleInfoHunter">
     <value>Você é o Jedi Furtivo! Caso os Siths te ataquem, há uma chance de você pegá-los de surpresa, ou você pode levar um membro da Capital para a cova antes de morrer.</value>
@@ -549,7 +549,7 @@
     <value>Parece que o atendente do bar batizou sua bebida com o Elixir do Amor. Você está profundamente apaixonado por {0} e não conseguirá mais viver sem ele. Caso {0} morra, você irá se matar para se juntar a ele na Força.</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>O Senado e o Conselho ordenaram a sua execução. Seja rápido, antes que os dróides lhe algeme e te carreguem para onde não pode ser visto.</value>
+    <value>O Senado e o Conselho ordenaram a sua execução. Seja rápido, antes que os dróides lhe algemem e te carreguem para onde não pode ser visto.</value>
   </string>
   <string key="HunterNoChoiceLynched">
     <value>{0} tenta alcançar seu blaster enquanto os dróides se aproximam, mas seus dedos estão cansados e antes de alcançar o coldre um tiro de blaster o atinge em cheio no peito...</value>
@@ -709,79 +709,73 @@
 	
 <!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
   <string key="AboutVG">
-    <value>Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
+    <value>Você é um simples cidadão de Coruscant, vivendo no meio da disputa travada entre a República e os Separatistas. Você não tem poderes, mas pode participar dos julgamentos, votando em quem você considera suspeito.</value>
   </string>
   <string key="AboutSeer">
-    <value>Você é o Hacker! Logo após de ter descoberto uma brecha nos servidores do governo, todas as noites você pode o invadir para saber o papel de alguém, antes que o firewall te desconecte! Não se esqueça de se conectar a uma VPN antes.</value>
+    <value>Você é a unidade R2! Durante a batalha, você se infiltra em naves e bases para obter acesso a registros e gravações a fim de descobrir os inimigos. Tome cuidado para não ser visto pelos Sith!</value>
   </string>
   <string key="AboutWw">
-    <value>Você é um terrorista! Devoto ao islamismo, seu objetivo é matar todos os que se recusam a se converter a sua religião.</value>
+    <value>Você é um Lord Sith! Sua missão é derrubar o Conselho Jedi, anular a Velha República e aos Separatistas!</value>
   </string>
   <string key="AboutHarlot">
-    <value>Você é o Piloto do Caça! Todas as noites, você faz um vôo noturno e segue uma pessoa de sua escolha para analizar seus movimentos! Mas cuidado. Se você seguir um terrorista, ele tem os contatinhos dele!</value>
+    <value>Você é o Embaixador de Coruscant! Preocupado com a política do Senado diante da guerra contra os separatistas você está aberto a discutir novas saídas e ideias, mas cuidado! Se você não for precavido, os Sith saberão de você!</value>
   </string>
   <string key="AboutDrunk">
-    <value>Você está doente, mas ninguém sabe disso! Se um terrorista te matar, ele vai ser contaminado pela sua doença e vai ficar um dia sem matar ninguém!</value>
+    <value>VVocê é o Estudioso da Força. Caso os Siths venham atrás de ti, antes de morrer, tentarás trazê-los de volta à luz. Os Siths não atacarão por enquanto, pois estão com a fé no Lado Sombrio abalada.</value>
   </string>
   <string key="AboutCursed">
-    <value>Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
+    <value>Você é um Jedi Corrompido! Seduzido pelo Lado Sombrio, se um Sith lhe atacar ele sentirá todo o seu ódio te transformando assim em um novo Sith. Mais um Darth nascerá...</value>
   </string>
   <string key="AboutTraitor">
-    <value>Os terroristas te confiaram uma missão: deixar seu legado em pé! Caso todos os terroristas morram, você vai se transformar em um.</value>
+    <value>Os Sith te entregaram um amuleto obscuro. Ele será ativado se houver um desequilibrio no Lado Sombrio e te transformará em um Sith!</value>
   </string>
   <string key="AboutGA">
-    <value>Você é o segurança! Pago pelo governo, todos os dias você pode escolher alguém para proteger. Mas cuidado, pois se você for proteger um terrorista, ele pode te matar!</value>
+    <value>WWWWARRRRRGH! Você é um Wookiee, e como prova de lealdade ao Mestre Yoda você protegerá os membros da República. Tome cuidado para não proteger algum Sith, pois o Lado Sombrio permanece nas sombras do Senado...</value>
   </string>
   <string key="AboutDetective">
-    <value>Você é o bisbilhoteiro, e joga pelo exército. Durante o dia, você escolhe uma pessoa pra bisbilhotar entre as frestas na parede. No entanto, ao fazer isso, você pode ser descoberto pelos terroristas! (40% de chance)</value>
+    <value>Você é o Chefe de Inteligência da República. Durante a batalha, você faz contato com outros Jedi para investigarem determinado membro, mas se o fizer de forma despreocupada os Sith podem ir atrás de você.</value>
   </string>
   <string key="AboutGunner">
-    <value>Você é o Atirador de Mísseis! Todos os dias, você pode escolher alguém para atirar! Você só tem dois mísseis, então use-os com sabedoria! Mas cuidado. Quando você atirar, todos vão escutar a explosão! (Óbvio :/)</value>
+    <value>Você é o Cavaleiro Jedi! Durante as batalhas você julgará e abaterá um inimigo da República! Devido ao calor da batalha você não pode se descuidar e só poderá entrar em combate com dois inimigos. Quando o fizer, todos vão escutar o rugido de seu Sabre de Luz!</value>
   </string>
   <string key="AboutTanner">
-    <value>Você é o Homem-bomba, seu time é você mesmo!  Se você for morto, você ganha automaticamente, sozinho.</value>
+    <value>Você é o Dróide explosivo! Criado por mecânicos em Tatooine, seu objetivo é explodir e levar a todos consigo.</value>
   </string>
   <string key="AboutFool">
-    <value>Você é o Hacker! Logo após de ter descoberto uma brecha nos servidores do governo, todas as noites você pode o invadir para saber o papel de alguém, antes que o firewall te desconecte! Não se esqueça de se conectar a uma VPN antes.</value>
+    <value>Você é a unidade R2! Durante a batalha, você se infiltra em naves e bases para obter acesso a registros e gravações a fim de descobrir os inimigos. Tome cuidado para não ser visto pelos Sith!</value>
   </string>
   <string key="AboutCult">
-    <value>Você é um agente da Nova Ordem. Vocês são um grupo de protestantes, que acham que deveriam assumir o poder... (de uma forma bruta). Durante a noite, você poderá escolher alguém para converter à Nova ordem. Se todos os jogadores restantes ao final do jogo forem da Nova Ordem, ela vence!</value>
+    <value>Você é um membro dos Jedi "Renegados". Sensitivos à Força, frequentemente ex-Jedi, que optaram por negar o lado luminoso da Força e seguir o lado sombrio, vocês acreditam que os Jedi desequilibram a Força. Entre as batalhas, você poderá escolher alguém para converter aos Renegados. Se todos os jogadores restantes ao final do jogo forem Jedi Negros, eles vencem!</value>
   </string>
   <string key="AboutCH">
-    <value>A Nova Ordem está infiltrada no exército tentando converter todo mundo, e você foi incumbido de proteger o exército.  Durante a noite você poderá escolher um(a) jogador(a).  Se ele(a) for da Nova Ordem, ele(a) morre.  Caso a Nova Ordem tente te converter, o membro mais recente morre. Você é o Agente de Controle.</value>
+    <value>O Lado Sombrio está infiltrado na República atraindo assim cada vez mais pessoas, e você foi incumbido de proteger o Lado Luminoso.  Após a batalha você poderá escolher um(a) jogador(a).  Se ele(a) for um Jedi Sombrio, ele(a) morre.  Caso o Lado Sombrio tente te converter, o membro mais recente morre. Você é o Jedi Inquisidor.</value>
   </string>
   <string key="AboutWC">
-    <value>Você é um Amigo Leal Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em terrorista, como forma de vingança.</value>
+    <value>Você é um Padawan Rebelde! Escolha o seu Mestre - se ele(a) morrer, você será tomado pelo Ódio e se transformará em um Lord Sith, como forma de vingança.</value>
   </string>
   <string key="AboutAppS">
-    <value>Você é o Aprendiz de Hacker. Caso o Hacker morra, você tomará seu lugar como Hacker. Empolgante, não?</value>
+    <value>Você é a unidade R2 Reserva. Caso o dróide seja destruído, você tomará seu lugar como R2. PIPIPI WAAAAAAAAAAAAAAAAA</value>
   </string>
   <string key="AboutBH">
-    <value>Você é o Representante do Hacker, você saberá quem é o verdadeiro hacker.</value>
+    <value>Você é o Engenheiro de Dróides, você saberá qual unidade R2 está 100% funcional.</value>
   </string>
   <string key="AboutMason">
-    <value>Você é um Cabo. Recebeu uma promoção recentemente, e agora luta em grupo. Caso outros cabos forem promovidos, você saberá quem são. Caso contrário, você é um cabo sozinho.</value>
+    <value>Você é um Senador da República. Burocrata, ouve logo falar de outros Senadores com os mesmos interesses. Caso entre um você saberá. Caso contrário, você é o único com desejo de parar esta guerra.</value>
   </string>
   <string key="AboutDG">
-    <value>
-     Você é um Substituto. Você é uma pessoa que pode assumir o papel de qualquer um, caso essa pessoa morra.
-    </value>
+    <value>Os Kaminoanos receberam ordens de clonar membros de Coruscant em caso de o pior acontecer. Você pode escolher se tornar o clone de um dos membros, e, quando morrer, você assumirá seu papel na Capital da República.</value>
   </string>
   <string key="AboutCupid">
-    <value>
-      Você é o General. Você tem dois filhos na guerra, que se amam muito. Caso um deles morrer, o outro vai se matar em desespero. Mas você pode escolher quem serão seus filhos.
-    </value>
+    <value>Você é um Atendente de bar em Coruscant. Em sua última viagem à orla exterior, você comprou o Elixir do Amor de um mercador suspeito que aparentava ter asas e carregava um arco. Espalhe o amor, batize a bebida de duas pessoas.</value>
   </string>
   <string key="AboutHunter">
-    <value>
-      Você é o Caçador(a)! Seu revolver é o seu amante e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para matar. E se os Terroristas te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.
-    </value>
+    <value>Você é o Jedi Furtivo! Caso os Sith te ataquem, há uma chance de você pegá-los de surpresa, ou você pode levar um membro da Capital para a cova antes de morrer.</value>
   </string>
   <string key="AboutSK">
-    <value>Você é o Louco. Após ver os efeitos da guerra, você enlouqueceu, e quer matar todos para que não haja mais uma guerra. Caso você tenha matado todos, você vencerá.</value>
+    <value>Você é o Caçador de Recompensas. Criado como um clone por Jango Fett, você não possui lados nesta guerra a não ser o seu BOLSO. Escolha com cautela as suas vítimas e não se esqueça de recolher a recompensa mais tarde.</value>
   </string>
   <string key="AboutPara">
-    <value>Para é o desenvolvedor desse jogo, e ele gosta de latir pras pessoas. Talvez ele tenha ficado muito tempo com os Lobos... Mexer com os lobos não é uma idéia muito boa, né?</value>
+    <value>Para é o desenvolvedor desse jogo, e ele gosta de latir pras pessoas. Não sei se ele gosta de Star Wars mas a Força é intensa nele.</value>
   </string>
   <string key="EndTime">
     <value>Duração do jogo: {0}</value>
@@ -940,22 +934,22 @@
     <value>Duração da votação para matar definida como {0} segundos</value>
   </string>
   <string key="AllowFoolQ">
-    <value>Permitir o Hacker desatualizado como um papel possível?\nAtual: {0}</value>
+    <value>Permitir a Unidade R2 Corrompida como um papel possível?\nAtual: {0}</value>
   </string>
   <string key="AllowFoolA">
-    <value>Existência do Hacker desatualizado definida como: {0}</value>
+    <value>Existência da Unidade R2 Corrompida definida como: {0}</value>
   </string>
   <string key="AllowTannerQ">
-    <value>Permitir o Homem-bomba como um papel possível?\nAtual: {0}</value>
+    <value>Permitir o Dróide Explosivo como um papel possível?\nAtual: {0}</value>
   </string>
   <string key="AllowTannerA">
-    <value>Existência do Homem-bomba definida como: {0}</value>
+    <value>Existência do Dróide Explosivo definida como: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Permitir a Nova ordem como um papel possível?\nAtual: {0}</value>
+    <value>Permitir os Jedi Negros como um papel possível?\nAtual: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Existência da Nova ordem definida como: {0}</value>
+    <value>Existência dos Jedi Negros definida como: {0}</value>
   </string>
   <string key="ThankYou">
     <value>Obrigado e tenha um bom jogo!</value>
@@ -979,7 +973,7 @@
     <value>{0} não iniciou o bot, e foi removido(a) do jogo!</value>
   </string>
   <string key="LatestList">
-    <value>Aqui está a lista mais recente de soldados</value>
+    <value>Aqui está a lista mais recente de membros</value>
   </string>
   <string key="UnableToGetList">
     <value>Não fui capaz de obter a lista de jogadores, você tem certeza de que a guerra já começou?</value>
@@ -1010,7 +1004,7 @@
   </string>
 
   <string key="RoleInfoBlacksmith">
-    <value>Você é o Ysalamiri. Com o poder de criar um campo onde a Força é anulada, seu papel durante a guerra é fundamental. Use suas habilidade com sabedoria, pois só tem energia para uma vez.</value>
+    <value>Você é o Criador de Ysalamiri. Por séculos, o planeta Myrkr foi ocultado dos registros da República e do Império devido a sua fauna... Peculiar. Os Ysalamiri, animais locais, possuem a habilidade de criar um campo de isolamento onde a Força não existe. Agora, um dos donos de seus criadouros foi convocado a Coruscant para tentar conter a ameaça Sith. Quando liberados, os Ysalamiri não permitem que os Sith ataquem, mas eles não vivem soltos por mais de uma noite.</value>
   </string>
 
   <string key="RoleInfoAlphaWolf">
@@ -1036,10 +1030,10 @@
     <value>Discursar</value>
   </string>
   <string key="SpreadDust">
-    <value>Você quer criar o campo agora, impedindo que os Sith ataquem?</value>
+    <value>Deseja retirar os Ysalamiri do seu módulo de contenção e espalhá-los por Coruscant?</value>
   </string>
   <string key="BlacksmithSpreadSilver">
-    <value>Enquanto o Senado debate sobre o que está acontecendo, {0} anda por aí erguendo os braços e murmurando. Pelo menos por enquanto, a República estará segura de ataques dos Sith.</value>
+    <value>Enquanto o Senado debate sobre o que está acontecendo, {0} anda por aí liberando os Ysalamiri. Pelo menos por enquanto, a República estará segura de ataques dos Sith.</value>
   </string>
   <string key="Mayor">
     <value>o Chanceler 🎖</value>
@@ -1054,7 +1048,7 @@
     <value>Jar Jar Binks 🤕</value>
   </string>
   <string key="Blacksmith">
-    <value>o Ysalamiri ⚒</value>
+    <value>o Criador de Ysalamiri ⚒</value>
   </string>
   <string key="AlphaWolf">
     <value>o Mestre Sith ⚡️</value>
@@ -1066,30 +1060,30 @@
     <value>Os Sith começaram a se aproximar de {0} até que pararam. {1}, o Mestre Sith diz em voz grossa "Você possui ódio. E medo... Junte-se a nós, eu lhe ensinarei os caminhos do Lado Sombrio, e nunca mais irá se sentir tão impotente.". Então {0} aceita. {0} vai se juntar aos Sith na próxima batalha.</value>
   </string>
   <string key="PlayerBitten">
-    <value>Os Sith começaram a se aproximar de você até que pararam. Então o Mestre Sith diz em voz grossa "ocê possui ódio. E medo... Junte-se a nós, eu lhe ensinarei os caminhos do Lado Sombrio, e nunca mais irá se sentir tão impotente.". Você, seduzido pelo Lado Sombrio, aceita. Você vai se tornar um Lord Sith na próxima batalha.</value>
+    <value>Os Sith começaram a se aproximar de você até que pararam. Então o Mestre Sith diz em voz grossa "Você possui ódio. E medo... Junte-se a nós, eu lhe ensinarei os caminhos do Lado Sombrio, e nunca mais irá se sentir tão impotente.". Você, seduzido pelo Lado Sombrio, aceita. Você vai se tornar um Lord Sith na próxima batalha.</value>
   </string>
   <string key="BittenTurned">
     <value>A batalha termina, e você escapa silenciosamente da República para se juntar aos Sith.</value>
   </string>
   <string key="AboutMayor">
-    <value>Você é o Marechal, pessoa de cargo mais importante no exército. Quando quiser, você pode falar com o general para que possa ter seus votos duas vezes mais poderoso na hora de matar alguém.</value>
+    <value>Você é o Chanceler. Seu voto durante as Assembléias contará duas vezes, uma vez que você se revelou. Você faz parte da República.</value>
   </string>
   <string key="AboutPrince">
-    <value>O Pobre Coitado é uma pessoa do bem. Sempre que for escolhido pra morrer, todos terão piedade de sua vida. Assim, ele só pode ser morto pelos terroristas.</value>
+    <value>Você é o Prícipe Disfarçado. Faz parte da República, mas possui um sósia em seu lugar. Se ele for executado pelo conselho, você se revelará e assumirá seu papel na República.</value>
   </string>
   <string key="AboutSorcerer">
-    <value>O Hacker de Contrato é um hacker que tem como objetivo descobrir quem são os terroristas para ajudá-los e o hacker do exército.</value>
+    <value>Você é a unidade R2 Espiã. Seu único papel é descobrir quais são os Sith para ajudá-los e onde está a unidade R2 da República. Você ganha somente se os Sith ganharem.</value>
   </string>
   <string key="AboutClumsy">
-    <value>Você é o Soldado Trapalhão. Acho que não deveriam aceitar desastrados para o exército... Sempre que você votar, há 50% de chance de votar em outra pessoa.</value>
+    <value>Você é o Jar Jar Binks. Não há nada de especial, você é atrapalhado e há 50% de chance de você votar na pessoa errada.</value>
   </string>
   <string key="AboutBlacksmith">
-    <value>Você é o Plantador de Minas. Seu unico (e importante) objetivo é plantar minas em volta do castelo para que não haja ataques por uma noite. Mas cuidado, pois te forneceram um número limitado de minas que só vão durar para uma noite.</value>
+    <value>Você é o Criador de Ysalamiri. Por séculos, o planeta Myrkr foi ocultado dos registros da República e do Império devido a sua fauna... Peculiar. Os Ysalamiri, animais locais, possuem a habilidade de criar um campo de isolamento onde a Força não existe. Agora, um dos donos de seus criadouros foi convocado a Coruscant para tentar conter a ameaça Sith. Quando liberados, os Ysalamiri não permitem que os Sith ataquem, mas eles não vivem soltos por mais de uma noite.</value>
   </string>
   <string key="AboutAlphaWolf">
-    <value>Você é o Lider dos Terroristas. Na hora de matar alguém, você avalia se a pessoa tem as condições necessárias para entrar no seu time. Ela tem 20% de chance de ser aceita.</value>
+    <value>Você é o Mestre Sith. Com um vasto conhecimento do Lado Sombrio, sempre que tentar matar alguém, você vai avaliar se a Força é intensa na sua vítima e se seu coração possui ódio, medo e cobiça. Há uma chance de 20% de conseguir seduzí-lo.</value>
   </string>
   <string key="AboutWolfCub">
-    <value>Você é o Terrorista Jr. Você é o xodó do lider, e eu acho que se te matassem ele não ia deixar barato. Acho que se v... OLHA COMO VOCÊ É FOFO *-*</value>
+    <value>Você é o Aprendiz de Sith. Por ser muito novo e extremamente talentoso, o Mestre Sith tem um certo apreço por você. Se você morrer, os Sith vão se enfurecer e haverá dois ataques de uma só vez.</value>
   </string>
 </strings>
