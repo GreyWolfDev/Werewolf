@@ -1995,7 +1995,7 @@ namespace Werewolf_Node
                     check.IsDead = true;
                     if (check.PlayerRole == IRole.WolfCub)
                         WolfCubKilled = true;
-                    if (!new[] { IRole.Wolf, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
                         gunner.BulletHitVillager = true;
                     check.TimeDied = DateTime.Now;
                     //update database
@@ -2126,6 +2126,7 @@ namespace Werewolf_Node
             if (CheckForGameEnd()) return;
             var ga = Players.FirstOrDefault(x => x.PlayerRole == IRole.GuardianAngel & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             var voteWolves = wolves.Where(x => !x.Drunk);
+            var voteWolvesCount = voteWolves.Count();
 
             if (voteWolves.Any())
             {
@@ -2250,7 +2251,7 @@ namespace Werewolf_Node
                                         break;
                                     case IRole.Hunter:
                                         //hunter has a chance to kill....
-
+                                        voteWolvesCount = voteWolves.Count();
                                         //figure out what chance they have...
                                         var chance = Settings.HunterKillWolfChanceBase + ((voteWolves.Count() - 1) * 20);
                                         if (Program.R.Next(100) < chance)
@@ -2870,7 +2871,6 @@ namespace Werewolf_Node
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
                         Send(GetLocaleString("GuardSavedYou"), save.Id);
-                        save.WasSavedLastNight = false;
                     }
                     else if (save.DiedLastNight)
                     {
@@ -2913,6 +2913,8 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             break;
                     }
+
+                    save.WasSavedLastNight = false;
                 }
             }
 
@@ -2966,7 +2968,7 @@ namespace Werewolf_Node
                             }
                         }
                         //killed by SK
-                        else if (p.KilledByRole == IRole.SerialKiller & !new[] { IRole.Wolf, IRole.Harlot }.Contains(p.PlayerRole))
+                        else if (p.KilledByRole == IRole.SerialKiller & !new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Harlot }.Contains(p.PlayerRole))
                         {
                             msg = null;
                             SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
@@ -2987,11 +2989,10 @@ namespace Werewolf_Node
                                     if (p.KilledByRole == IRole.SerialKiller)
                                     {
                                         msg = p.DiedByVisitingKiller ? GetLocaleString("SerialKillerKilledWolf", p.GetName()) : GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
-                                        //TODO Add visited vs hunted by killer
                                     }
                                     else //died from hunter
                                     {
-                                        msg = GetLocaleString(Players.Count(x => WolfRoles.Contains(x.PlayerRole) && !x.IsDead) + 1 > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName());
+                                        msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName()) + $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}";
                                     }
                                     break;
 
@@ -3013,10 +3014,10 @@ namespace Werewolf_Node
                                                 msg = GetLocaleString("HarlotEaten", p.GetName());
                                             break;
                                         case IRole.SerialKiller:
-                                            //if (p.DiedByVisitingKiller)
-                                            //    msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName());
-                                            //else
-                                            msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                            if (p.DiedByVisitingKiller)
+                                                msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName());
+                                            else
+                                                msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
                                             break;
                                     }
                                     break;
@@ -3681,7 +3682,7 @@ namespace Werewolf_Node
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
                         killed.TimeDied = DateTime.Now;
-                        if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.SerialKiller)
+                        if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.AlphaWolf || killed.PlayerRole == IRole.WolfCub || killed.PlayerRole == IRole.SerialKiller)
                             AddAchievement(hunter, Achievements.HeyManNiceShot);
 
                         DBKill(hunter, killed, KillMthd.HunterShot);

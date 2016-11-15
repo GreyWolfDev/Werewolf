@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- created by @bootmgr // version 22.08.2016 --> 
+<!-- created by @bootmgr // version 14.11.2016 --> 
 <strings>
   <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" />
   <string key="NotInGame">
@@ -680,7 +680,6 @@
     <!-- 0 - targets name -->
 	<!-- Default HunterKill-Message, von Narius im Code auszubessern -->
   <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
-	<value>Der Angriff auf {0} war zu viel; so viel, dass er nicht einmal nach seiner Waffe 🎯 greifen konnte, als er in der Pfütze aus Blut lag...</value>
     <value>Der Schuss auf {0} war zu viel; so viel, dass er nicht einmal nach seiner Waffe 🎯 greifen konnte, als er in der Pfütze aus Blut lag...</value>
   </string>
   <string key="HunterSkipChoiceShot">
@@ -732,7 +731,8 @@
     <value>{0} war der Serienmörder 🔪. Jetzt bist du tot.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>(Dieser Text ist im Moment unwichtig!)</value>
+  <!-- 0 - harlot's name -->
+    <value>Das Dorf entdeckt {0}s Körper, von Messerstichen durchlöchert. {0} ist tot.</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - targets name -->
@@ -930,7 +930,7 @@
     </value>
   </string>
   <string key="AboutSK">
-    <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhin hilfst du ihnen, diese Werwolf-Pflage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn. Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
+    <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn. Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
   </string>
   <string key="AboutPara">
     <value>Para ist nur ein verrückter Entwickler, der gerne die Leute anbellt. Vielleicht hat er sich auch einfach ein wenig zu oft mit Werwölfen angelegt... Man sollte sich nicht mit Werwölfen anlegen.</value>
@@ -1132,5 +1132,135 @@
   <string key="YouJoined">
     <!-- 0 - Group Name -->
     <value>Du bist einem Spiel in der Gruppe {0} beigetreten!</value>
+  </string>
+  <string key="Ping2">
+    <value>Sendezeit der Pingnachricht: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts etwas machen kannst.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts etwas machen kannst.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Komisch ... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts etwas machen kannst.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Kurz bevor das Dorf {0} lyncht, hört man die verurteile Person rufen: "Wartet! Ich bin der Prinz 👑. Dieser königliche Ring mit dem Siegel meines Geschlechts beweist es. Ich bin jede Nacht von Dienern umgeben, folglich kann ich also nicht dem Bösen angehören." Von der eigenen Torheit überrascht, ziehen sich die Bewohner des Dorfes kleinlaut in ihre Gemächer zurück, ohne auf ihr Lynchopfer zu bestehen.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} erschrickt, nachdem er etwas aus seiner Tasche gezogen hat: Die offizielle Plakette des Bürgermeisters. Jeder kapiert, dass er der Boss ist, und seine Stimme wird von nun an auf der allabendlichen Versammlung doppelt gezählt.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Du hast irgendwas in der Tasche...</value>
+  </string>
+  <string key="Reveal">
+    <value>Herausnehmen</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Du weißt, dass du etwas tun solltest, aber muss es heute sein?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Während der Rest des Dorfes immer noch die Geschehnisse der Nacht diskutiert, bemerken sie plötzlich {0}, der Silberstaub im Dorf verteilt. ⚒
+	Alle atmen erleichtert auf: die Wölfe werden sich heute Nacht fernhalten müssen, und ihr könnt euch alle einmal eine ordentliche Mütze Schlaf gönnen.</value>
+  </string>
+  <string key="Mayor">
+    <value>der Bürgermeister 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>der Prinz 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>der Zauberer 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>der Unglücksrabe 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>der Schmied ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>der Rudelführer ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>der Wolfswelpe 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Ist letzte Nacht irgendetwas bei {0}s Haus passiert? Du kannst dich nicht erinnern... \nDu erinnerst dich vielleicht nicht, wer du bist, aber du erinnerst dich an jemand Wichtigen: {1}</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Als Bürgermeister 🎖 verbringst du dein Leben getarnt als einfacher Dorfbewohner, bis zu dich dazu entscheidest, deine wahre Profession öffentlich zu verkünden. Von diesem Moment an zählt deine Stimme beim Lynchen doppelt so viel wie eine normale Stimme.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Der Prinz 👑 ist ein schillernder Dorfbewohner. (Oder auch nicht. Eigentlich wohnt er ja in einem Palast, aber... das Aristokratenleben ist wohl auch nicht mehr, was es mal war.) Sollte das Dorf sich blind gegen ihn auflehnen, enthüllt er, bevor sie ihn in den Tod schicken, seinen königlichen Ring, der seine Abstammung beweist: seine Rolle ist dann zwar jedem bekannt, aber er überlebt. Einmalig. Sollte sich das Volk immer noch gegen seine absolutistische Herrschaft wehren, endet ein zweiter Lynchversuch für ihn tödlich.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Erinnert ihr euch an den Seher? Sein böser Zwillingsbruder, der Zauberer 🔮, ist kürzlich in die Gegend gezogen, um ihm das Leben schwer zu machen: er verbündet sich mit den Wölfen, auch wenn diese anfangs nichts von seiner Existenz wissen. Nachts kann er seine Fähigkeiten nutzen, um die Rolle eines Spielers ausfindig zu machen. Da er es ein bisschen mit den Augen hat, erkennt er allerdings nur Wölfe (am Flauschefell!) oder seinen Bruder: den würde er auch auf dem Sterbebett noch erkennen.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Der Unglücksrabe 🤕... hat nicht jeder so einen Freund? Er ist ja eigentlich ganz liebenswürdig, aber dennoch verspürt man irgendwie ständig das Bedürfnis, ihm zu sagen, dass... nunja. Wie verpackt man denn höflich, dass er eigentlich mehr Unheil anrichtet, als dass er hilft? Irgendwie schafft er es nämlich in der Hälfte der Fälle nicht, sich wirklich klar auszudrücken, wer gehängt werden sollte. Und da Lippenlesen auch nicht zu euren Stärken gehört... nunja. Manchmal trifft es dann eben den Falschen. Vielleicht sogar dich.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Du bist der Schmied. ⚒
+	In all den Jahren hat dich keine Klinge und kein Schwert so zufriedengestellt, wie die Silberklinge, die du für die Elfen geschmiedet hast. Du könntest sogar noch etwas Silberstaub übrig haben, wer weiß? Es kursiert das Gerücht, dass wenn man diesen verstreut, man Werwölfe in der darauffolgenden Nacht vom Jagen abhalten kann... 🤔</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Der Rudelführer 🐺⚡️, soso. Lange munkelte man nur, dass es ihn wirklich gibt, aber inzwischen sind alle Zweifel verflogen: das Biest aller Biester lebt. Von ihm geht die schreckliche Seuche aus, die rechtschaffende Bürger in Werwölfe verwandeln kann: solange er am Leben ist, besteht die 20%ige Chance, dass ein Opfer sich mit dem Virus infiziert, anstatt zu sterben. Es verwandelt sich dann in der kommenden Nacht in einen Werwolf.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>So ein niedliches kleines Wölfchen! 🐶 Und so flauschig... man muss dich einfach gernhaben *-* Und diese süßen Kulleraugen...
+	Ähm, ja. Wo waren wir stehen geblieben? Genau. Alle lieben dich so sehr, dass sie deinen Tod nicht so einfach hinnehmen werden: solltest du sterben, werden sie deinen viel zu frühen Tod mit zwei Opfern in der nächsten Nacht rächen!</value>
+  </string>
+  <!-- new strings 06 nov -->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+	<value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+	<!-- 0 - target's name -->
+	<!-- 1 - teammates's name -->
+	<value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Dorftrottel</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Verlierer</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Pelzig</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Forever alone</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team Fashionvictim</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Gerbera</value>
   </string>
 </strings>
