@@ -1318,6 +1318,13 @@ namespace Werewolf_Node
                     AddAchievement(w, Achievements.PackHunter);
                 }
             }
+
+            var seers = Players.GetPlayersForRoles(new[] {IRole.Seer});
+            if (seers.Count() > 1)
+            {
+                foreach (var s in seers)
+                    AddAchievement(s, Achievements.DoubleVision);
+            }
         }
 
         private void ValidateSpecialRoleChoices()
