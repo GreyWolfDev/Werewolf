@@ -2050,6 +2050,7 @@ namespace Werewolf_Node
                     p.HasDayAction = false;
                     p.HasNightAction = true;
                     p.RoleModel = 0;
+                    p.ChangedRolesCount++;  //add count for double-shifter achv after converting to wolf
                     var msg = GetLocaleString("BittenTurned") + "\n";
                     var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p).Where(x => !x.IsDead).ToList();
                     if (others.Any())
