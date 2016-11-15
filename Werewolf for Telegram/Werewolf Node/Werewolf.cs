@@ -154,7 +154,7 @@ namespace Werewolf_Node
                 }
                 else
                 {
-                    throw new Exception($"Error getting string {key} with parameters {(args != null ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}");
+                    throw new Exception($"Error getting string {key} with parameters {(args != null && args.Length > 0 ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}");
                 }
             }
             catch (Exception e)
@@ -178,7 +178,7 @@ namespace Werewolf_Node
                 catch
                 {
                     throw new Exception(
-                        $"Error getting string {key} with parameters {(args != null ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}",
+                        $"Error getting string {key} with parameters {(args != null && args.Length > 0 ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}",
                         e);
                 }
             }
@@ -1101,15 +1101,15 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
 
 
-//#if DEBUG
-//                //force roles for testing
-//                rolesToAssign[0] = IRole.CultistHunter;
-//                rolesToAssign[1] = IRole.Gunner;
-//                rolesToAssign[2] = IRole.AlphaWolf;
-//                rolesToAssign[3] = IRole.WolfCub;
-//                if (rolesToAssign.Count >= 5)
-//                    rolesToAssign[4] = IRole.Villager;
-//#endif
+#if DEBUG
+                //force roles for testing
+                rolesToAssign[0] = IRole.WolfCub;
+                rolesToAssign[1] = IRole.WolfCub;
+                //rolesToAssign[2] = IRole.AlphaWolf;
+                //rolesToAssign[3] = IRole.WolfCub;
+                //if (rolesToAssign.Count >= 5)
+                //    rolesToAssign[4] = IRole.Villager;
+#endif
 
 
                 //assign the roles 
@@ -3291,7 +3291,7 @@ namespace Werewolf_Node
                         break;
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
-                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "Team")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
+                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 if (game.TimeStarted.HasValue)
