@@ -76,8 +76,11 @@ namespace Werewolf_Node.Helpers
             return players?.Where(x => roles.Contains(x.PlayerRole) && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
         }
 
+
         public static int GetStrength(this IRole role, List<IRole> allRoles)
         {
+            IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf };
+            IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller };
             switch (role)
             {
                 case IRole.Villager:
@@ -97,7 +100,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Wolf:
                     return 10;
                 case IRole.Cursed:
-                    return 5 - allRoles.Count(x => x == IRole.Wolf);
+                    return 1 - allRoles.Count(x => WolfRoles.Contains(x)) / 2; //vg, or worse
                 case IRole.Gunner:
                     return 6;
                 case IRole.Tanner:
@@ -111,11 +114,11 @@ namespace Werewolf_Node.Helpers
                 case IRole.ApprenticeSeer:
                     return 6;
                 case IRole.Cultist:
-                    return 12 + allRoles.Count(x => x == IRole.Villager);
+                    return 10 + allRoles.Count(x => !nonConvertibleRoles.Contains(x));
                 case IRole.CultistHunter:
-                    return 7;
+                    return allRoles.Count(x => x == IRole.Cultist) == 0 ? 1 : 7;
                 case IRole.Mason:
-                    return 3 + (allRoles.Count(x => x == IRole.Mason)); //strength in numbers
+                    return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3 ; //strength in numbers
                 case IRole.Doppelgänger:
                     return 2;
                 case IRole.Cupid:
