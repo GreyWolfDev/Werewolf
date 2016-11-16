@@ -182,9 +182,11 @@ namespace Werewolf_Control.Helpers
                 //now check for Control update
                 if (Directory.GetFiles(updateDirectory).Count() > 1)
                 {
+
                     //update available
                     //sleep 10 seconds to allow any nodes to connect and whatnot.
                     await Task.Delay(10000);
+                    await Bot.Send($"New control found.  Updating.", -1001077134233);
                     //fire off the updater
                     Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
                     Bot.Running = false;
