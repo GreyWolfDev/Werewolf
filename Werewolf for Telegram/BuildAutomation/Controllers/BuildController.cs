@@ -41,7 +41,27 @@ namespace BuildAutomation.Controllers
                     {
                         msg += "\nDo you want me to copy the files and update?";
                         menu = new InlineKeyboardMarkup(new[]
-                        {new InlineKeyboardButton("Yes", "update|yes"), new InlineKeyboardButton("No", "update|no")});
+                        {
+                            new []
+                            {
+                                new InlineKeyboardButton("Beta - Control", "update|betacontrol"),
+                                new InlineKeyboardButton("All - Control", "update|allcontrol"),
+                            },
+                            new []
+                            {
+                                new InlineKeyboardButton("Beta - Nodes", "update|betanodes"),
+                                new InlineKeyboardButton("All - Nodes", "update|allnodes"),
+                            },
+                            new []
+                            {
+                                new InlineKeyboardButton("Beta - Both", "update|betaboth"),
+                                new InlineKeyboardButton("All - Both", "update|allboth")
+                            },
+                            new []
+                            {
+                                new InlineKeyboardButton("Do Nothing", "update|no"),
+                            }
+                        });
                     }
 
                     var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
@@ -54,7 +74,7 @@ namespace BuildAutomation.Controllers
                     string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
                     var msg = obj.message.markdown + "\n";
                     var urlPre = "https://github.com/parabola949/Werewolf/commit/";
-                    msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(0,7)}]({urlPre + build.resource.sourceVersion})";
+                    msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion})";
                     if (build.resource.result == "succeeded")
                         msg += "\nRelease is now being created, you will be notified when it is completed.";
                     var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
@@ -67,7 +87,7 @@ namespace BuildAutomation.Controllers
                 StreamWriter writer = new StreamWriter(path);
                 writer.WriteLine(e.Message);
             }
-            
+
 
         }
     }

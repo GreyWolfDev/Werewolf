@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Database;
 using Telegram.Bot.Types;
 
 namespace Werewolf_Control.Helpers
@@ -36,6 +37,7 @@ namespace Werewolf_Control.Helpers
         public static void DoUpdate(CallbackQuery query)
         {
             var msg = "Beginning file moving...";
+            var updateType = query.Data.Split('|')[1];
             try
             {
 
@@ -60,79 +62,160 @@ namespace Werewolf_Control.Helpers
                 //stage the control files in the update folder
                 foreach (var b in Builds)
                 {
+                    if (updateType.StartsWith("beta") && b.BuildName != "Beta")
+                        continue; //if beta update, don't update release
 
-                    foreach (
-                        var file in
-                            Directory.GetFiles(controlDir + b.BuildName)
-                                .Where(
-                                    x =>
-                                        baseFiles.Contains(Path.GetFileName(x)) ||
-                                        Path.GetFileName(x).Contains(b.ControlExeName))
-                        )
+                    if (!updateType.Contains("nodes")) //if nodes only, don't update control
                     {
-                        var fName = Path.GetFileName(file);
-                        System.IO.File.Copy(file, botBaseDir + b.BotDirSuffix + "\\Control\\Update\\" + fName, true);
-                    }
-                    msg += "\nCopied Control files for " + b.BotDirSuffix;
-                    Bot.ReplyToCallback(query, msg);
-                    //now find the oldest node folder
-                    
-                    var copied = false;
-                    
-                    foreach (
-                        var d in Directory.GetDirectories(botBaseDir + b.BotDirSuffix, "*Node*"))
-                    {
-                        //get the version of werewolf
-                        //copy the node files to it
-                        foreach (var file in Directory.GetFiles(nodeDir + b.BuildName))
+                        foreach (
+                            var file in
+                                Directory.GetFiles(controlDir + b.BuildName)
+                                    .Where(
+                                        x =>
+                                            baseFiles.Contains(Path.GetFileName(x)) ||
+                                            Path.GetFileName(x).Contains(b.ControlExeName))
+                            )
                         {
                             var fName = Path.GetFileName(file);
-                            copied = true;
-                            try
-                            {
-                                System.IO.File.Copy(file, Path.Combine(d, fName), true);
-                            }
-                            catch (Exception e)
-                            {
-                                if (e.Message.Contains("because it is being used by another process")) //nodes in this folder are still active D:
-                                {
-                                    copied = false;
-                                    break;
-                                }
-                                else
-                                {
-                                    throw;
-                                }
-                            }
-                            
+                            System.IO.File.Copy(file, botBaseDir + b.BotDirSuffix + "\\Control\\Update\\" + fName, true);
                         }
-
-                        if (copied)
-                        {
-                            msg += "\nCopied Node files to " + d.Substring(d.LastIndexOf("\\") + 1);
-                            Bot.ReplyToCallback(query, msg);
-                            break;
-                        }
+                        msg += $"\nCopied {b.BuildName} Control files";
+                        Bot.ReplyToCallback(query, msg);
                     }
 
-                    if (!copied)
-                        throw new Exception("Unable to copy Node files to a directory.");
+                    if (!updateType.Contains("control")) //if control only, don't update nodes
+                    {
+                        //now find the oldest node folder
+
+                        var copied = false;
+
+                        foreach (
+                            var d in Directory.GetDirectories(botBaseDir + b.BotDirSuffix, "*Node*"))
+                        {
+                            //get the version of werewolf
+                            //copy the node files to it
+                            foreach (var file in Directory.GetFiles(nodeDir + b.BuildName))
+                            {
+                                var fName = Path.GetFileName(file);
+                                copied = true;
+                                try
+                                {
+                                    System.IO.File.Copy(file, Path.Combine(d, fName), true);
+                                }
+                                catch (Exception e)
+                                {
+                                    if (e.Message.Contains("because it is being used by another process"))
+                                        //nodes in this folder are still active D:
+                                    {
+                                        copied = false;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        throw;
+                                    }
+                                }
+
+                            }
+
+                            if (copied)
+                            {
+                                msg += $"\nCopied {b.BuildName} Node files to " + d.Substring(d.LastIndexOf("\\") + 1);
+                                Bot.ReplyToCallback(query, msg);
+                                break;
+                            }
+                        }
+
+                        if (!copied)
+                            throw new Exception("Unable to copy Node files to a directory.");
+                    }
+
+
                 }
-
-
-
 
 
                 //tell each bot to replace nodes
 
                 //tell each bot to update
-                msg += "\n\nCompleted Call - until this is fully automated, please run /replacenodes and /update";
+                msg += "\n\nCompleted Call, bots should now auto load updated files";
                 Bot.ReplyToCallback(query, msg);
             }
             catch (Exception e)
             {
                 Bot.ReplyToCallback(query, msg + "\n" + e.Message);
             }
+        }
+
+        internal static async Task MonitorUpdates()
+        {
+            var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
+            var updateDirectory = Path.Combine(Bot.RootDirectory, "\\Update");
+            var currentVersion = Bot.Nodes.Max(x => Version.Parse(x.Version));
+            var currentChoice = new NodeChoice();
+            while (true)
+            { 
+                //check nodes first
+                foreach (var dir in Directory.GetDirectories(baseDirectory, "*Node*"))
+                {
+                    //get the node exe in this directory
+                    var file = Directory.GetFiles(dir, "Werewolf Node.exe").First();
+                    Version fvi = Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
+                    if (fvi > currentChoice.Version)
+                    {
+                        currentChoice.Path = file;
+                        currentChoice.Version = fvi;
+                    }
+                }
+                if (currentChoice.Version > currentVersion)
+                {
+                    currentVersion = currentChoice.Version;
+                    //alert dev group
+                    await Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.", -1001077134233);
+                    //kill existing nodes
+                    foreach (var node in Bot.Nodes)
+                        node.ShutDown();
+                    await Task.Delay(500);
+                    foreach (var node in Bot.Nodes)
+                        node.ShutDown();
+                }
+
+                //now check for Control update
+                if (Directory.GetFiles(updateDirectory).Count() > 1)
+                {
+                    //update available
+                    //sleep 10 seconds to allow any nodes to connect and whatnot.
+                    await Task.Delay(10000);
+                    //fire off the updater
+                    Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
+                    Bot.Running = false;
+                    Program.Running = false;
+                    Bot.Api.StopReceiving();
+                    //Thread.Sleep(500);
+                    using (var db = new WWContext())
+                    {
+                        var bot =
+#if DEBUG
+                        4;
+#elif BETA
+                        3;
+#elif RELEASE
+                        1;
+#elif RELEASE2
+                        2;
+#endif
+                        var status = await db.BotStatus.FindAsync(bot);
+                        status.BotStatus = "Updating";
+                        await db.SaveChangesAsync();
+                    }
+                    Environment.Exit(1);
+                }
+
+
+                //check once every 5 seconds
+                await Task.Delay(5000);
+            }
+            //now we have the most recent version, launch one
+            
         }
     }
 
