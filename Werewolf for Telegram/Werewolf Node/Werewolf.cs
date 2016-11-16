@@ -2040,6 +2040,7 @@ namespace Werewolf_Node
             if (!IsRunning) return;
             //FUN!
             Time = GameTime.Night;
+            var nightStart = DateTime.Now;
             if (CheckForGameEnd()) return;
             foreach (var p in Players)
             {
@@ -2944,6 +2945,7 @@ namespace Werewolf_Node
 
             #region Night Death Notifications to Group
 
+
             var secret = DbGroup.ShowRoles == false;
             if (Players.Any(x => x.DiedLastNight))
             {
@@ -3050,8 +3052,10 @@ namespace Werewolf_Node
                         KillLover(p);
                 }
 
-                if (Players.Where(x => x.DiedLastNight).Count() >= 4)
-                    foreach (var p in Players.Where(x => x.DiedLastNight))
+                var bloodyVictims = Players.Where(x => x.TimeDied > nightStart);
+
+                if (bloodyVictims.Count() >= 4)
+                    foreach (var p in bloodyVictims)
                         AddAchievement(p, Achievements.BloodyNight);
             }
             else
