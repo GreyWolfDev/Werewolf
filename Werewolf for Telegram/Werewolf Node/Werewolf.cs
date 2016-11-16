@@ -227,6 +227,9 @@ namespace Werewolf_Node
                 }
                 IsJoining = false;
                 IsInitializing = true;
+
+                Thread.Sleep(5000); //wait for last second joins
+
                 //check we have enough players...
                 if (Players.Count < Settings.MinPlayers)
                 {
