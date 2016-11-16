@@ -3049,6 +3049,10 @@ namespace Werewolf_Node
                     if (p.InLove)
                         KillLover(p);
                 }
+
+                if (Players.Where(x => x.DiedLastNight).Count() >= 4)
+                    foreach (var p in Players.Where(x => x.DiedLastNight))
+                        AddAchievement(p, Achievements.BloodyNight);
             }
             else
             {
