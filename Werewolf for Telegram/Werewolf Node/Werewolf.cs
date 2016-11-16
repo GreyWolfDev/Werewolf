@@ -2386,11 +2386,6 @@ namespace Werewolf_Node
                                     }
                                     break;
                             }
-
-                            var wolflover = voteWolves.FirstOrDefault(x => x.LoverId == target.Id);
-
-                            if (wolflover != null && target.IsDead && GameDay != 1)
-                                AddAchievement(wolflover, Achievements.ShouldveMentioned);
                         }
                     }
                     else
@@ -3891,8 +3886,14 @@ namespace Werewolf_Node
                 }
             }
 
-            if (victim.LoverId == killer.Id && GameDay == 1 && Time == GameTime.Night && method != KillMthd.LoverDied)
-                AddAchievement(killer, Achievements.OhShi);
+            if (victim.LoverId == killer.Id && Time == GameTime.Night && method != KillMthd.LoverDied)
+            {
+                if (GameDay == 1) //killed lover on first night
+                    AddAchievement(killer, Achievements.OhShi);
+                else if (WolfRoles.Contains(killer.PlayerRole)) //wolf pack killed lover, not on first night
+                    AddAchievement(killer, Achievements.ShouldveMentioned);
+            }
+                
         }
 
         private void KillLover(IPlayer victim)
