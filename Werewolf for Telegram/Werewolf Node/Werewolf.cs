@@ -1089,8 +1089,8 @@ namespace Werewolf_Node
                     }
                     else //Chaos game, let's check that we have at least two teams
                     {
-                        if (rolesToAssign.Any(x => !nonVgRoles.Contains(x) //make sure we have VGs
-                            && rolesToAssign.Any(r => nonVgRoles.Contains(r) && r != IRole.Sorcerer && r != IRole.Tanner))) //make sure we have at least one enemy
+                        if (rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
+                            && rolesToAssign.Any(r => nonVgRoles.Contains(r) && r != IRole.Sorcerer && r != IRole.Tanner)) //make sure we have at least one enemy
                             balanced = true;
                         //else, redo role assignment. better to rely on randomness, than trying to fix it
                     }
