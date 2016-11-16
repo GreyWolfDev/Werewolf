@@ -2217,6 +2217,8 @@ namespace Werewolf_Node
                                                 //    ? GetLocaleString("HarlotEaten", target.GetName())
                                                 //    : GetLocaleString("GenericDeathNoReveal", target.GetName()));
                                             }
+                                            foreach (var w in voteWolves)
+                                                AddAchievement(w, Achievements.DontStayHome);
                                         }
                                         else
                                         {
@@ -2633,7 +2635,11 @@ namespace Werewolf_Node
                                     if (target.Choice == 0 || target.Choice == -1) // stayed home
                                     {
                                         if (Program.R.Next(100) < Settings.HarlotConversionChance)
+                                        {
                                             ConvertToCult(target, voteCult);
+                                            foreach (var c in voteCult)
+                                                AddAchievement(c, Achievements.DontStayHome);
+                                        }
                                         else
                                         {
                                             foreach (var c in voteCult)
