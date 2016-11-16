@@ -1097,6 +1097,9 @@ namespace Werewolf_Node
                 //shuffle things
                 Players.Shuffle();
                 Players.Shuffle();
+                Players.Shuffle();
+                Players.Shuffle();
+                Players.Shuffle();
                 rolesToAssign.Shuffle();
                 rolesToAssign.Shuffle();
 
