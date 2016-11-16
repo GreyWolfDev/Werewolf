@@ -3050,7 +3050,7 @@ namespace Werewolf_Node
                         KillLover(p);
                 }
 
-                var bloodyVictims = Players.Where(x => x.TimeDied > nightStart);
+                var bloodyVictims = Players.Where(x => x.TimeDied > nightStart && x.IsDead);
 
                 if (bloodyVictims.Count() >= 4)
                     foreach (var p in bloodyVictims)
