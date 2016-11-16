@@ -3122,7 +3122,7 @@ namespace Werewolf_Node
                 if (Players.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0 & !x.IsDead))
                 {
                     // do nothing, gunner is alive
-                    foreach (var p in Players.Where(x => x.PlayerRole == IRole.Villager))
+                    foreach (var p in Players.Where(x => x.Team == ITeam.Village & !x.IsDead))
                         AddAchievement(p, Achievements.GunnerSaves);
 
                     return false;
