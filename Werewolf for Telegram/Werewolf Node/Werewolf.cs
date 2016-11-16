@@ -3182,7 +3182,7 @@ namespace Werewolf_Node
                         if (team == ITeam.Tanner && Players.Count(x => x.PlayerRole == IRole.Tanner) > 1)
                         {
                             //get the last tanner alive
-                            var lastTanner = Players.Where(x => x.PlayerRole == IRole.Tanner).OrderByDescending(x => x.TimeDied).Select(x => x.Id).FirstOrDefault();
+                            var lastTanner = Players.Where(x => x.PlayerRole == IRole.Tanner && x.IsDead).OrderByDescending(x => x.TimeDied).Select(x => x.Id).FirstOrDefault();
                             //compare to this player
                             if (w.Id != lastTanner)
                                 continue;
