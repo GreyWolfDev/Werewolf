@@ -3124,6 +3124,9 @@ namespace Werewolf_Node
                 if (Players.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0 & !x.IsDead))
                 {
                     // do nothing, gunner is alive
+                    foreach (var p in Players.Where(x => x.PlayerRole == IRole.Villager))
+                        AddAchievement(p, Achievements.GunnerSaves);
+
                     return false;
                 }
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf & x.Drunk) && Players.Count(x => x.IsDead) > 2) //what the hell was my logic here....  damn myself for not commenting this line. why would it matter if 2 players ARE dead?
