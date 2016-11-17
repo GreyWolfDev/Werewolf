@@ -1075,11 +1075,12 @@ namespace Werewolf_Node
 
 
                     //make sure that we have at least two teams
-                    if (! (
+                    if (
                         rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                            && rolesToAssign.Any(r => nonVgRoles.Contains(r) && r != IRole.Sorcerer && r != IRole.Tanner) //make sure we have at least one enemy
-                            )) 
-                        continue; //redo role assignment. better to rely on randomness, than trying to fix it
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
+                    ) 
+                        balanced = true; 
+                    //else, redo role assignment. better to rely on randomness, than trying to fix it
 
                     //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
                     if (!Chaos)
@@ -1091,16 +1092,9 @@ namespace Werewolf_Node
 
                         //check balance
                         var varianceAllowed = (count / 4) + 1;
-                        balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+                        balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
                     }
-                    else //Chaos game, let's check that we have at least two teams
-                    {
-                        if (rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                            && rolesToAssign.Any(r => nonVgRoles.Contains(r) && r != IRole.Sorcerer && r != IRole.Tanner)) //make sure we have at least one enemy
-                            balanced = true;
-                        //else, redo role assignment. better to rely on randomness, than trying to fix it
-                    }
-                } while (!balanced && !Chaos);
+                } while (!balanced);
 
 
                 //shuffle things
