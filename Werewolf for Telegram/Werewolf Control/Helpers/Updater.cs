@@ -175,11 +175,10 @@ namespace Werewolf_Control.Helpers
                     }
                     if (currentChoice.Version > currentVersion)
                     {
+                        
                         currentVersion = currentChoice.Version;
                         //alert dev group
-                        await
-                            Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.",
-                                -1001077134233);
+                        Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.", -1001077134233);
                         //kill existing nodes
                         foreach (var node in Bot.Nodes)
                             node.ShutDown();
@@ -193,9 +192,9 @@ namespace Werewolf_Control.Helpers
                     {
 
                         //update available
-                        //sleep 10 seconds to allow any nodes to connect and whatnot.
-                        await Task.Delay(10000);
-                        await Bot.Send($"New control found.  Updating.", -1001077134233);
+                        //sleep 5 seconds to allow any nodes to connect and whatnot.
+                        await Task.Delay(5000);
+                        //await Bot.Send($"New control found.  Updating.", -1001077134233);
                         //fire off the updater
                         Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
                         Bot.Running = false;
