@@ -1565,7 +1565,7 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
-                                if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Wolf) == 0)
+                                if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
                                 {
                                     p.HasNightAction = true;
                                     p.PlayerRole = IRole.Wolf;
