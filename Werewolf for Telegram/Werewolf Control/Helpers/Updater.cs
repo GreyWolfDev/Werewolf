@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 
 namespace Werewolf_Control.Helpers
 {
@@ -33,7 +34,7 @@ namespace Werewolf_Control.Helpers
                 ControlExeName = "Werewolf Control 2"
             },
         };
-        
+
         public static void DoUpdate(CallbackQuery query)
         {
             var msg = "Beginning file moving...";
@@ -105,7 +106,7 @@ namespace Werewolf_Control.Helpers
                                 catch (Exception e)
                                 {
                                     if (e.Message.Contains("because it is being used by another process"))
-                                        //nodes in this folder are still active D:
+                                    //nodes in this folder are still active D:
                                     {
                                         copied = false;
                                         break;
@@ -148,10 +149,14 @@ namespace Werewolf_Control.Helpers
 
         internal static async void MonitorUpdates()
         {
+#if !DEBUG
             try
+#endif
             {
                 var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
-                var updateDirectory = Path.Combine(Bot.RootDirectory, "\\Update");
+                var updateDirectory = Path.Combine(Bot.RootDirectory, "Update");
+                while (Bot.Nodes.Count == 0)
+                    await Task.Delay(500);
                 var currentVersion = Bot.Nodes.Max(x => Version.Parse(x.Version));
                 var currentChoice = new NodeChoice();
                 while (true)
@@ -209,9 +214,12 @@ namespace Werewolf_Control.Helpers
 #elif RELEASE2
                         2;
 #endif
+
+#if !DEBUG
                             var status = await db.BotStatus.FindAsync(bot);
                             status.BotStatus = "Updating";
                             await db.SaveChangesAsync();
+#endif
                         }
                         Environment.Exit(1);
                     }
@@ -223,12 +231,14 @@ namespace Werewolf_Control.Helpers
                 //now we have the most recent version, launch one
 
             }
+#if !DEBUG
             catch (Exception e)
             {
-                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233);
+                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233, parseMode: ParseMode.Default);
             }
+#endif
         }
-     
+
     }
 
     class BuildConfiguration
