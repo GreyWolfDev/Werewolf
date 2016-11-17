@@ -105,6 +105,7 @@ namespace Werewolf_Node.Models
         public bool LastShotWasSKWolf { get; set; } = false;
         public bool DoubleKillEnding { get; set; } = false;
         public bool Bitten { get; set; }
+        public List<IPlayer> CorrectSnooped = new List<IPlayer>;
         
     }
 

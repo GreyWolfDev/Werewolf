@@ -1993,6 +1993,23 @@ namespace Werewolf_Node
                 {
                     DBAction(detect, check, "Detect");
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
+
+                    //if snooped non-bad-roles:
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+                        detect.CorrectSnooped.Clear();     //clear correct snoop list
+                    else
+                    {
+                        if (detect.CorrectSnooped.Contains(check))     //check if it is a re-snoop of correct roles
+                            detect.CorrectSnooped.Clear();             //clear the correct snoop list
+                        detect.CorrectSnooped.Add(check);              //add the current snoop to list
+
+                        //if snooped 4 times correct continously
+                        if (detect.CorrectSnooped.Count() >= 4)
+                        {
+                            AddAchievement(detect, Achievements.Streetwise);
+                            detect.CorrectSnooped.Clear();
+                        }
+                    }
                 }
             }
 
