@@ -214,7 +214,7 @@ namespace Werewolf_Control
         {
             //wait a bit to allow nodes to register
             Thread.Sleep(5000);
-            Updater.MonitorUpdates().Start();
+            new Task(Updater.MonitorUpdates).Start();
             while (Running)
             {
                 try

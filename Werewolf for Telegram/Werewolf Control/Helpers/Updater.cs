@@ -146,58 +146,62 @@ namespace Werewolf_Control.Helpers
             }
         }
 
-        internal static async Task MonitorUpdates()
+        internal static async void MonitorUpdates()
         {
-            var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
-            var updateDirectory = Path.Combine(Bot.RootDirectory, "\\Update");
-            var currentVersion = Bot.Nodes.Max(x => Version.Parse(x.Version));
-            var currentChoice = new NodeChoice();
-            while (true)
-            { 
-                //check nodes first
-                foreach (var dir in Directory.GetDirectories(baseDirectory, "*Node*"))
+            try
+            {
+                var baseDirectory = Path.Combine(Bot.RootDirectory, ".."); //go up one directory
+                var updateDirectory = Path.Combine(Bot.RootDirectory, "\\Update");
+                var currentVersion = Bot.Nodes.Max(x => Version.Parse(x.Version));
+                var currentChoice = new NodeChoice();
+                while (true)
                 {
-                    //get the node exe in this directory
-                    var file = Directory.GetFiles(dir, "Werewolf Node.exe").First();
-                    Version fvi = Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
-                    if (fvi > currentChoice.Version)
+                    //check nodes first
+                    foreach (var dir in Directory.GetDirectories(baseDirectory, "*Node*"))
                     {
-                        currentChoice.Path = file;
-                        currentChoice.Version = fvi;
+                        //get the node exe in this directory
+                        var file = Directory.GetFiles(dir, "Werewolf Node.exe").First();
+                        Version fvi = Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
+                        if (fvi > currentChoice.Version)
+                        {
+                            currentChoice.Path = file;
+                            currentChoice.Version = fvi;
+                        }
                     }
-                }
-                if (currentChoice.Version > currentVersion)
-                {
-                    currentVersion = currentChoice.Version;
-                    //alert dev group
-                    await Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.", -1001077134233);
-                    //kill existing nodes
-                    foreach (var node in Bot.Nodes)
-                        node.ShutDown();
-                    await Task.Delay(500);
-                    foreach (var node in Bot.Nodes)
-                        node.ShutDown();
-                }
-
-                //now check for Control update
-                if (Directory.GetFiles(updateDirectory).Count() > 1)
-                {
-
-                    //update available
-                    //sleep 10 seconds to allow any nodes to connect and whatnot.
-                    await Task.Delay(10000);
-                    await Bot.Send($"New control found.  Updating.", -1001077134233);
-                    //fire off the updater
-                    Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
-                    Bot.Running = false;
-                    Program.Running = false;
-                    Bot.Api.StopReceiving();
-                    //Thread.Sleep(500);
-                    using (var db = new WWContext())
+                    if (currentChoice.Version > currentVersion)
                     {
-                        var bot =
+                        currentVersion = currentChoice.Version;
+                        //alert dev group
+                        await
+                            Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.",
+                                -1001077134233);
+                        //kill existing nodes
+                        foreach (var node in Bot.Nodes)
+                            node.ShutDown();
+                        await Task.Delay(500);
+                        foreach (var node in Bot.Nodes)
+                            node.ShutDown();
+                    }
+
+                    //now check for Control update
+                    if (Directory.GetFiles(updateDirectory).Count() > 1)
+                    {
+
+                        //update available
+                        //sleep 10 seconds to allow any nodes to connect and whatnot.
+                        await Task.Delay(10000);
+                        await Bot.Send($"New control found.  Updating.", -1001077134233);
+                        //fire off the updater
+                        Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
+                        Bot.Running = false;
+                        Program.Running = false;
+                        Bot.Api.StopReceiving();
+                        //Thread.Sleep(500);
+                        using (var db = new WWContext())
+                        {
+                            var bot =
 #if DEBUG
-                        4;
+                                4;
 #elif BETA
                         3;
 #elif RELEASE
@@ -205,20 +209,26 @@ namespace Werewolf_Control.Helpers
 #elif RELEASE2
                         2;
 #endif
-                        var status = await db.BotStatus.FindAsync(bot);
-                        status.BotStatus = "Updating";
-                        await db.SaveChangesAsync();
+                            var status = await db.BotStatus.FindAsync(bot);
+                            status.BotStatus = "Updating";
+                            await db.SaveChangesAsync();
+                        }
+                        Environment.Exit(1);
                     }
-                    Environment.Exit(1);
+
+
+                    //check once every 5 seconds
+                    await Task.Delay(5000);
                 }
+                //now we have the most recent version, launch one
 
-
-                //check once every 5 seconds
-                await Task.Delay(5000);
             }
-            //now we have the most recent version, launch one
-            
+            catch (Exception e)
+            {
+                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233);
+            }
         }
+     
     }
 
     class BuildConfiguration
