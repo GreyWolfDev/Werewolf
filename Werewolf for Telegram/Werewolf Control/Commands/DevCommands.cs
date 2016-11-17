@@ -389,6 +389,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
+            IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
             //get parameters
             string[] parms = null;
             try
@@ -426,24 +427,60 @@ namespace Werewolf_Control
                         attempts++;
                         if (attempts >= attemptCount)
                             break;
+
+                        //determine which roles should be assigned
                         rolesToAssign = GetRoleList(count);
                         rolesToAssign.Shuffle();
                         rolesToAssign = rolesToAssign.Take(count).ToList();
-                        //check the balance
+
+
+
+                        //let's fix some roles that should or shouldn't be there...
+
+                        //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
+                        if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
+                            !rolesToAssign.Any(x => WolfRoles.Contains(x)))
+                        {
+                            var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
+                            rolesToAssign[towolf] = WolfRoles[0]; //choose randomly from WolfRoles
+                        }
+
+                        //appseer without seer -> seer
+                        if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
+                        {
+                            //substitute with seer
+                            var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
+                            rolesToAssign[apps] = IRole.Seer;
+                        }
+
+                        //cult without CH -> add CH
+                        if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
+                        {
+                            //just pick a vg, and turn them to CH
+                            var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                            rolesToAssign[vg] = IRole.CultistHunter;
+                        }
+
+
+                        //make sure that we have at least two teams
+                        if (
+                            rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
+                            && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
+                        )
+                            balanced = true;
+                        //else, redo role assignment. better to rely on randomness, than trying to fix it
+
+                        //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
 
                         villageStrength =
                             rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-                        var wolfStrength =
-                            rolesToAssign.Where(x => x == IRole.Wolf).Sum(x => x.GetStrength(rolesToAssign));
-                        var skStrength = rolesToAssign.Where(x => x == IRole.SerialKiller)
-                            .Sum(x => x.GetStrength(rolesToAssign));
-                        var cultStrength =
-                            rolesToAssign.Where(x => x == IRole.Cultist).Sum(x => x.GetStrength(rolesToAssign));
+                        enemyStrength =
+                            rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
 
                         //check balance
-                        var varianceAllowed = (count / 5) + 3;
-                        enemyStrength = (wolfStrength + skStrength + cultStrength);
-                        balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+                        var varianceAllowed = (count / 4) + 1;
+                        balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
 
 
                     }
@@ -1022,7 +1059,7 @@ namespace Werewolf_Control
         public static void ClearLogs(Update u, string[] args)
         {
             var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
-            var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", "getUpdates.log"};
+            var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", "getUpdates.log" };
             foreach (var file in files)
             {
                 try
@@ -1057,8 +1094,8 @@ namespace Werewolf_Control
             var someFileExists = false;
             using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
             {
-                var files = new[] {"NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log"};
-                
+                var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log" };
+
                 foreach (var file in files)
                 {
                     var fp = LogPath + file;
@@ -1073,7 +1110,7 @@ namespace Werewolf_Control
                 var fs = new FileStream(path, FileMode.Open);
                 Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
             }
-            
+
         }
 
 
