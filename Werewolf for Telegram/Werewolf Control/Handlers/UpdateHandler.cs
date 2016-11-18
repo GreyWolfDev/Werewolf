@@ -531,10 +531,10 @@ namespace Werewolf_Control.Handler
                     string[] args = query.Data.Split('|');
                     if (args[0] == "update")
                     {
-                        bool doUpdate = args[1] == "yes";
+                        bool dontUpdate = args[1] == "no";
                         if (query.From.Id == UpdateHelper.Para)
                         {
-                            if (!doUpdate)
+                            if (dontUpdate)
                             {
                                 Bot.ReplyToCallback(query, "Okay, I won't do anything D: *sadface*");
                                 return;

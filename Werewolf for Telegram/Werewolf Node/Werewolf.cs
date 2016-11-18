@@ -154,7 +154,7 @@ namespace Werewolf_Node
                 }
                 else
                 {
-                    throw new Exception($"Error getting string {key} with parameters {(args != null ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}");
+                    throw new Exception($"Error getting string {key} with parameters {(args != null && args.Length > 0 ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}");
                 }
             }
             catch (Exception e)
@@ -178,7 +178,7 @@ namespace Werewolf_Node
                 catch
                 {
                     throw new Exception(
-                        $"Error getting string {key} with parameters {(args != null ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}",
+                        $"Error getting string {key} with parameters {(args != null && args.Length > 0 ? args.Aggregate((a, b) => a + "," + b.ToString()) : "none")}",
                         e);
                 }
             }
@@ -227,6 +227,9 @@ namespace Werewolf_Node
                 }
                 IsJoining = false;
                 IsInitializing = true;
+
+                Thread.Sleep(5000); //wait for last second joins
+
                 //check we have enough players...
                 if (Players.Count < Settings.MinPlayers)
                 {
@@ -1030,7 +1033,7 @@ namespace Werewolf_Node
                 do
                 {
                     attempts++;
-                    if (attempts >= 200)
+                    if (attempts >= 500)
                     {
                         throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + count);
                     }
@@ -1071,6 +1074,13 @@ namespace Werewolf_Node
                     }
 
 
+                    //make sure that we have at least two teams
+                    if (
+                        rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
+                    ) 
+                        balanced = true; 
+                    //else, redo role assignment. better to rely on randomness, than trying to fix it
 
                     //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
                     if (!Chaos)
@@ -1082,14 +1092,7 @@ namespace Werewolf_Node
 
                         //check balance
                         var varianceAllowed = (count / 4) + 1;
-                        balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-                    }
-                    else //Chaos game, let's check that we have at least two teams
-                    {
-                        if (rolesToAssign.Any(x => !nonVgRoles.Contains(x) //make sure we have VGs
-                            && rolesToAssign.Any(r => nonVgRoles.Contains(r) && r != IRole.Sorcerer && r != IRole.Tanner))) //make sure we have at least one enemy
-                            balanced = true;
-                        //else, redo role assignment. better to rely on randomness, than trying to fix it
+                        balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
                     }
                 } while (!balanced);
 
@@ -1097,19 +1100,22 @@ namespace Werewolf_Node
                 //shuffle things
                 Players.Shuffle();
                 Players.Shuffle();
+                Players.Shuffle();
+                Players.Shuffle();
+                Players.Shuffle();
                 rolesToAssign.Shuffle();
                 rolesToAssign.Shuffle();
 
 
-//#if DEBUG
-//                //force roles for testing
-//                rolesToAssign[0] = IRole.CultistHunter;
-//                rolesToAssign[1] = IRole.Gunner;
-//                rolesToAssign[2] = IRole.AlphaWolf;
-//                rolesToAssign[3] = IRole.WolfCub;
-//                if (rolesToAssign.Count >= 5)
-//                    rolesToAssign[4] = IRole.Villager;
-//#endif
+#if DEBUG
+                //force roles for testing
+                rolesToAssign[0] = IRole.WolfCub;
+                rolesToAssign[1] = IRole.WolfCub;
+                //rolesToAssign[2] = IRole.AlphaWolf;
+                //rolesToAssign[3] = IRole.WolfCub;
+                //if (rolesToAssign.Count >= 5)
+                //    rolesToAssign[4] = IRole.Villager;
+#endif
 
 
                 //assign the roles 
@@ -1317,6 +1323,13 @@ namespace Werewolf_Node
                 {
                     AddAchievement(w, Achievements.PackHunter);
                 }
+            }
+
+            var seers = Players.GetPlayersForRoles(new[] {IRole.Seer});
+            if (seers.Count() > 1)
+            {
+                foreach (var s in seers)
+                    AddAchievement(s, Achievements.DoubleVision);
             }
         }
 
@@ -1552,7 +1565,7 @@ namespace Werewolf_Node
                                 p.HasDayAction = false;
                                 p.HasNightAction = false;
                                 p.Team = ITeam.Village;
-                                if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Wolf) == 0)
+                                if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
                                 {
                                     p.HasNightAction = true;
                                     p.PlayerRole = IRole.Wolf;
@@ -1980,6 +1993,23 @@ namespace Werewolf_Node
                 {
                     DBAction(detect, check, "Detect");
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
+
+                    //if snooped non-bad-roles:
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+                        detect.CorrectSnooped.Clear();     //clear correct snoop list
+                    else
+                    {
+                        if (detect.CorrectSnooped.Contains(check.Id))     //check if it is a re-snoop of correct roles
+                            detect.CorrectSnooped.Clear();             //clear the correct snoop list
+                        detect.CorrectSnooped.Add(check.Id);              //add the current snoop to list
+
+                        //if snooped 4 times correct continously
+                        if (detect.CorrectSnooped.Count() >= 4)
+                        {
+                            AddAchievement(detect, Achievements.Streetwise);
+                            detect.CorrectSnooped.Clear();
+                        }
+                    }
                 }
             }
 
@@ -2027,6 +2057,7 @@ namespace Werewolf_Node
             if (!IsRunning) return;
             //FUN!
             Time = GameTime.Night;
+            var nightStart = DateTime.Now;
             if (CheckForGameEnd()) return;
             foreach (var p in Players)
             {
@@ -2043,6 +2074,7 @@ namespace Werewolf_Node
                     p.HasDayAction = false;
                     p.HasNightAction = true;
                     p.RoleModel = 0;
+                    p.ChangedRolesCount++;  //add count for double-shifter achv after converting to wolf
                     var msg = GetLocaleString("BittenTurned") + "\n";
                     var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p).Where(x => !x.IsDead).ToList();
                     if (others.Any())
@@ -2167,68 +2199,26 @@ namespace Werewolf_Node
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        if (ga?.Choice == target.Id)
                         {
-                            if (ga?.Choice == target.Id)
+                            foreach (var wolf in voteWolves)
+                                Send(GetLocaleString("GuardBlockedWolf", target.GetName()), wolf.Id);
+                            //Send(GetLocaleString("GuardSaved", target.Name), ga.Id);
+                            //Send(GetLocaleString("GuardSavedYou"), target.Id);
+                            target.WasSavedLastNight = true;
+                        }
+                        else
+                        {
+                            var bitten = voteWolves.Any(x => x.PlayerRole == IRole.AlphaWolf) && Program.R.Next(100) < Settings.AlphaWolfConversionChance;
+                            var alpha = "";
+                            if (bitten)
+                                alpha = voteWolves.FirstOrDefault(x => x.PlayerRole == IRole.AlphaWolf).GetName();
+                            //check if they are the harlot, and were home
+                            switch (target.PlayerRole)
                             {
-                                foreach (var wolf in voteWolves)
-                                    Send(GetLocaleString("GuardBlockedWolf", target.GetName()), wolf.Id);
-                                //Send(GetLocaleString("GuardSaved", target.Name), ga.Id);
-                                //Send(GetLocaleString("GuardSavedYou"), target.Id);
-                                target.WasSavedLastNight = true;
-                            }
-                            else
-                            {
-                                var bitten = voteWolves.Any(x => x.PlayerRole == IRole.AlphaWolf) && Program.R.Next(100) < Settings.AlphaWolfConversionChance;
-                                var alpha = "";
-                                if (bitten)
-                                    alpha = voteWolves.FirstOrDefault(x => x.PlayerRole == IRole.AlphaWolf).GetName();
-                                //check if they are the harlot, and were home
-                                switch (target.PlayerRole)
-                                {
-                                    case IRole.Harlot:
-                                        if (target.Choice == 0 || target.Choice == -1) //stayed home
-                                        {
-                                            if (bitten)
-                                            {
-                                                BitePlayer(target, voteWolves, alpha);
-                                            }
-                                            else
-                                            {
-                                                target.DiedLastNight = true;
-                                                target.IsDead = true;
-                                                target.TimeDied = DateTime.Now;
-                                                target.KilledByRole = IRole.Wolf;
-                                                DBKill(voteWolves, target, KillMthd.Eat);
-                                                //SendWithQueue(DbGroup.ShowRoles != false
-                                                //    ? GetLocaleString("HarlotEaten", target.GetName())
-                                                //    : GetLocaleString("GenericDeathNoReveal", target.GetName()));
-                                            }
-                                        }
-                                        else
-                                        {
-                                            foreach (var wolf in voteWolves)
-                                                Send(GetLocaleString("HarlotNotHome", target.GetName()), wolf.Id);
-                                        }
-                                        break;
-                                    case IRole.Cursed:
-                                        target.PlayerRole = IRole.Wolf;
-                                        target.Team = ITeam.Wolf;
-                                        target.ChangedRolesCount++;
-                                        target.HasNightAction = true;
-                                        target.HasDayAction = false;
-                                        Send(GetLocaleString("CursedBitten"), target.Id);
-                                        try
-                                        {
-                                            Send(GetLocaleString("WolfTeam", wolves.Select(x => x.GetName()).Aggregate((current, w) => current + ", " + w)), target.Id);
-                                        }
-                                        catch
-                                        {
-                                            // ignored
-                                        }
-                                        foreach (var w in wolves)
-                                            Send(GetLocaleString("CursedBittenToWolves", $"{target.GetName()}"), w.Id);
-                                        break;
-                                    case IRole.Drunk:
+                                case IRole.Harlot:
+                                    if (target.Choice == 0 || target.Choice == -1) //stayed home
+                                    {
                                         if (bitten)
                                         {
                                             BitePlayer(target, voteWolves, alpha);
@@ -2236,126 +2226,152 @@ namespace Werewolf_Node
                                         else
                                         {
                                             target.DiedLastNight = true;
-                                            target.KilledByRole = IRole.Wolf;
                                             target.IsDead = true;
                                             target.TimeDied = DateTime.Now;
+                                            target.KilledByRole = IRole.Wolf;
                                             DBKill(voteWolves, target, KillMthd.Eat);
-                                            SendGif(GetLocaleString("WolvesEatYou"),
-                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
-                                            foreach (var w in voteWolves)
-                                            {
-                                                Send(GetLocaleString("WolvesEatDrunk", target.GetName()), w.Id);
-                                                w.Drunk = true;
-                                            }
+                                            //SendWithQueue(DbGroup.ShowRoles != false
+                                            //    ? GetLocaleString("HarlotEaten", target.GetName())
+                                            //    : GetLocaleString("GenericDeathNoReveal", target.GetName()));
                                         }
-                                        break;
-                                    case IRole.Hunter:
-                                        //hunter has a chance to kill....
-                                        voteWolvesCount = voteWolves.Count();
-                                        //figure out what chance they have...
-                                        var chance = Settings.HunterKillWolfChanceBase + ((voteWolves.Count() - 1) * 20);
-                                        if (Program.R.Next(100) < chance)
+                                        foreach (var w in voteWolves)
+                                            AddAchievement(w, Achievements.DontStayHome);
+                                    }
+                                    else
+                                    {
+                                        foreach (var wolf in voteWolves)
+                                            Send(GetLocaleString("HarlotNotHome", target.GetName()), wolf.Id);
+                                    }
+                                    break;
+                                case IRole.Cursed:
+                                    target.PlayerRole = IRole.Wolf;
+                                    target.Team = ITeam.Wolf;
+                                    target.ChangedRolesCount++;
+                                    target.HasNightAction = true;
+                                    target.HasDayAction = false;
+                                    Send(GetLocaleString("CursedBitten"), target.Id);
+                                    try
+                                    {
+                                        Send(GetLocaleString("WolfTeam", wolves.Select(x => x.GetName()).Aggregate((current, w) => current + ", " + w)), target.Id);
+                                    }
+                                    catch
+                                    {
+                                        // ignored
+                                    }
+                                    foreach (var w in wolves)
+                                        Send(GetLocaleString("CursedBittenToWolves", $"{target.GetName()}"), w.Id);
+                                    break;
+                                case IRole.Drunk:
+                                    if (bitten)
+                                    {
+                                        BitePlayer(target, voteWolves, alpha);
+                                    }
+                                    else
+                                    {
+                                        target.DiedLastNight = true;
+                                        target.KilledByRole = IRole.Wolf;
+                                        target.IsDead = true;
+                                        target.TimeDied = DateTime.Now;
+                                        DBKill(voteWolves, target, KillMthd.Eat);
+                                        SendGif(GetLocaleString("WolvesEatYou"),
+                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                        foreach (var w in voteWolves)
                                         {
-                                            //wolf dies!
-                                            IPlayer shotWuff;
-                                            try
+                                            Send(GetLocaleString("WolvesEatDrunk", target.GetName()), w.Id);
+                                            w.Drunk = true;
+                                        }
+                                    }
+                                    break;
+                                case IRole.Hunter:
+                                    //hunter has a chance to kill....
+                                    voteWolvesCount = voteWolves.Count();
+                                    //figure out what chance they have...
+                                    var chance = Settings.HunterKillWolfChanceBase + ((voteWolves.Count() - 1) * 20);
+                                    if (Program.R.Next(100) < chance)
+                                    {
+                                        //wolf dies!
+                                        IPlayer shotWuff;
+                                        try
+                                        {
+                                            shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
+                                        }
+                                        catch
+                                        {
+                                            shotWuff = voteWolves.FirstOrDefault();
+                                        }
+                                        if (shotWuff != null)
+                                        {
+                                            if (voteWolves.Count() > 1)
                                             {
-                                                shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
-                                            }
-                                            catch
-                                            {
-                                                shotWuff = voteWolves.FirstOrDefault();
-                                            }
-                                            if (shotWuff != null)
-                                            {
-                                                if (voteWolves.Count() > 1)
+                                                if (bitten)
                                                 {
-                                                    if (bitten)
-                                                    {
-                                                        BitePlayer(target, voteWolves, alpha);
-                                                    }
-                                                    else
-                                                    {
-                                                        SendGif(GetLocaleString("WolvesEatYou"),
-                                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
-                                                        DBKill(voteWolves, target, KillMthd.Eat);
-                                                        target.KilledByRole = IRole.Wolf;
-                                                        target.IsDead = true;
-                                                        target.TimeDied = DateTime.Now;
-                                                        target.DiedLastNight = true;
-                                                    }
+                                                    BitePlayer(target, voteWolves, alpha);
                                                 }
-                                                shotWuff.IsDead = true;
-                                                if (shotWuff.PlayerRole == IRole.WolfCub)
-                                                    WolfCubKilled = true;
-                                                shotWuff.TimeDied = DateTime.Now;
-                                                shotWuff.DiedByVisitingKiller = true;
-                                                shotWuff.KilledByRole = IRole.Hunter;
-                                                shotWuff.DiedLastNight = true;
-                                                DBKill(target, shotWuff, KillMthd.HunterShot);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            if (bitten)
-                                            {
-                                                BitePlayer(target, voteWolves, alpha);
-                                            }
-                                            else
-                                            {
-                                                SendGif(GetLocaleString("WolvesEatYou"),
-                                                    GetRandomImage(Settings.VillagerDieImages), target.Id);
-                                                DBKill(voteWolves, target, KillMthd.Eat);
-                                                target.KilledByRole = IRole.Wolf;
-                                                target.IsDead = true;
-                                                target.TimeDied = DateTime.Now;
-                                                target.DiedLastNight = true;
-                                            }
-                                        }
-                                        break;
-                                    case IRole.SerialKiller:
-                                        //serial killer has 80% of winning the fight....
-                                        if (Program.R.Next(100) < 80)
-                                        {
-                                            //serial killer wins...
-                                            IPlayer shotWuff;
-                                            try
-                                            {
-                                                shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
-                                            }
-                                            catch
-                                            {
-                                                shotWuff = voteWolves.FirstOrDefault();
+                                                else
+                                                {
+                                                    SendGif(GetLocaleString("WolvesEatYou"),
+                                                        GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                    DBKill(voteWolves, target, KillMthd.Eat);
+                                                    target.KilledByRole = IRole.Wolf;
+                                                    target.IsDead = true;
+                                                    target.TimeDied = DateTime.Now;
+                                                    target.DiedLastNight = true;
+                                                }
                                             }
                                             shotWuff.IsDead = true;
                                             if (shotWuff.PlayerRole == IRole.WolfCub)
                                                 WolfCubKilled = true;
                                             shotWuff.TimeDied = DateTime.Now;
                                             shotWuff.DiedByVisitingKiller = true;
-                                            shotWuff.KilledByRole = IRole.SerialKiller;
+                                            shotWuff.KilledByRole = IRole.Hunter;
                                             shotWuff.DiedLastNight = true;
-                                            //SendWithQueue(GetLocaleString("SerialKillerKilledWolf", shotWuff.GetName()));
-                                            DBKill(target, shotWuff, KillMthd.SerialKilled);
+                                            DBKill(target, shotWuff, KillMthd.HunterShot);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (bitten)
+                                        {
+                                            BitePlayer(target, voteWolves, alpha);
                                         }
                                         else
                                         {
-                                            if (bitten)
-                                            {
-                                                BitePlayer(target, voteWolves, alpha);
-                                            }
-                                            else
-                                            {
-                                                target.KilledByRole = IRole.Wolf;
-                                                target.IsDead = true;
-                                                target.TimeDied = DateTime.Now;
-                                                target.DiedLastNight = true;
-                                                DBKill(voteWolves, target, KillMthd.Eat);
-                                                SendGif(GetLocaleString("WolvesEatYou"),
-                                                    GetRandomImage(Settings.VillagerDieImages), target.Id);
-                                            }
+                                            SendGif(GetLocaleString("WolvesEatYou"),
+                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                            DBKill(voteWolves, target, KillMthd.Eat);
+                                            target.KilledByRole = IRole.Wolf;
+                                            target.IsDead = true;
+                                            target.TimeDied = DateTime.Now;
+                                            target.DiedLastNight = true;
                                         }
-                                        break;
-                                    default:
+                                    }
+                                    break;
+                                case IRole.SerialKiller:
+                                    //serial killer has 80% of winning the fight....
+                                    if (Program.R.Next(100) < 80)
+                                    {
+                                        //serial killer wins...
+                                        IPlayer shotWuff;
+                                        try
+                                        {
+                                            shotWuff = voteWolves.ElementAt(Program.R.Next(voteWolves.Count()));
+                                        }
+                                        catch
+                                        {
+                                            shotWuff = voteWolves.FirstOrDefault();
+                                        }
+                                        shotWuff.IsDead = true;
+                                        if (shotWuff.PlayerRole == IRole.WolfCub)
+                                            WolfCubKilled = true;
+                                        shotWuff.TimeDied = DateTime.Now;
+                                        shotWuff.DiedByVisitingKiller = true;
+                                        shotWuff.KilledByRole = IRole.SerialKiller;
+                                        shotWuff.DiedLastNight = true;
+                                        //SendWithQueue(GetLocaleString("SerialKillerKilledWolf", shotWuff.GetName()));
+                                        DBKill(target, shotWuff, KillMthd.SerialKilled);
+                                    }
+                                    else
+                                    {
                                         if (bitten)
                                         {
                                             BitePlayer(target, voteWolves, alpha);
@@ -2370,8 +2386,24 @@ namespace Werewolf_Node
                                             SendGif(GetLocaleString("WolvesEatYou"),
                                                 GetRandomImage(Settings.VillagerDieImages), target.Id);
                                         }
-                                        break;
-                                }
+                                    }
+                                    break;
+                                default:
+                                    if (bitten)
+                                    {
+                                        BitePlayer(target, voteWolves, alpha);
+                                    }
+                                    else
+                                    {
+                                        target.KilledByRole = IRole.Wolf;
+                                        target.IsDead = true;
+                                        target.TimeDied = DateTime.Now;
+                                        target.DiedLastNight = true;
+                                        DBKill(voteWolves, target, KillMthd.Eat);
+                                        SendGif(GetLocaleString("WolvesEatYou"),
+                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                    }
+                                    break;
                             }
                         }
                     }
@@ -2619,7 +2651,11 @@ namespace Werewolf_Node
                                     if (target.Choice == 0 || target.Choice == -1) // stayed home
                                     {
                                         if (Program.R.Next(100) < Settings.HarlotConversionChance)
+                                        {
                                             ConvertToCult(target, voteCult);
+                                            foreach (var c in voteCult)
+                                                AddAchievement(c, Achievements.DontStayHome);
+                                        }
                                         else
                                         {
                                             foreach (var c in voteCult)
@@ -2924,6 +2960,7 @@ namespace Werewolf_Node
 
             #region Night Death Notifications to Group
 
+
             var secret = DbGroup.ShowRoles == false;
             if (Players.Any(x => x.DiedLastNight))
             {
@@ -3029,6 +3066,12 @@ namespace Werewolf_Node
                     if (p.InLove)
                         KillLover(p);
                 }
+
+                var bloodyVictims = Players.Where(x => x.TimeDied > nightStart && x.IsDead);
+
+                if (bloodyVictims.Count() >= 4)
+                    foreach (var p in bloodyVictims)
+                        AddAchievement(p, Achievements.BloodyNight);
             }
             else
             {
@@ -3093,6 +3136,9 @@ namespace Werewolf_Node
                 if (Players.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0 & !x.IsDead))
                 {
                     // do nothing, gunner is alive
+                    foreach (var p in Players.Where(x => x.Team == ITeam.Village & !x.IsDead))
+                        AddAchievement(p, Achievements.GunnerSaves);
+
                     return false;
                 }
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf & x.Drunk) && Players.Count(x => x.IsDead) > 2) //what the hell was my logic here....  damn myself for not commenting this line. why would it matter if 2 players ARE dead?
@@ -3174,7 +3220,7 @@ namespace Werewolf_Node
                         if (team == ITeam.Tanner && Players.Count(x => x.PlayerRole == IRole.Tanner) > 1)
                         {
                             //get the last tanner alive
-                            var lastTanner = Players.Where(x => x.PlayerRole == IRole.Tanner).OrderByDescending(x => x.TimeDied).Select(x => x.Id).FirstOrDefault();
+                            var lastTanner = Players.Where(x => x.PlayerRole == IRole.Tanner && x.IsDead).OrderByDescending(x => x.TimeDied).Select(x => x.Id).FirstOrDefault();
                             //compare to this player
                             if (w.Id != lastTanner)
                                 continue;
@@ -3291,7 +3337,7 @@ namespace Werewolf_Node
                         break;
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
-                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "Team")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
+                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 if (game.TimeStarted.HasValue)
@@ -3859,8 +3905,14 @@ namespace Werewolf_Node
                 }
             }
 
-            if (victim.LoverId == killer.Id && GameDay == 1 && Time == GameTime.Night && method != KillMthd.LoverDied)
-                AddAchievement(killer, Achievements.OhShi);
+            if (victim.LoverId == killer.Id && Time == GameTime.Night && method != KillMthd.LoverDied)
+            {
+                if (GameDay == 1) //killed lover on first night
+                    AddAchievement(killer, Achievements.OhShi);
+                else if (WolfRoles.Contains(killer.PlayerRole)) //wolf pack killed lover, not on first night
+                    AddAchievement(killer, Achievements.ShouldveMentioned);
+            }
+                
         }
 
         private void KillLover(IPlayer victim)

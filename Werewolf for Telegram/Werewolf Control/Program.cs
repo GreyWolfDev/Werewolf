@@ -55,6 +55,14 @@ namespace Werewolf_Control
             string version = fvi.FileVersion;
             Console.Title = $"Werewolf Moderator {version}";
 
+
+            //Make sure another instance isn't already running
+            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
+            {
+                Environment.Exit(2);
+            }
+
+
             var updateid = "";
             //attempt to get id from update
             if (args.Length > 0)
@@ -206,6 +214,7 @@ namespace Werewolf_Control
         {
             //wait a bit to allow nodes to register
             Thread.Sleep(5000);
+            new Task(Updater.MonitorUpdates).Start();
             while (Running)
             {
                 try
@@ -283,7 +292,7 @@ namespace Werewolf_Control
 
 
 #if !DEBUG
-                    
+
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
                     {
