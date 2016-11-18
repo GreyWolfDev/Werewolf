@@ -2699,11 +2699,18 @@ namespace Werewolf_Node
                                     {
                                         foreach (var c in voteCult)
                                         {
-                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
+                                            //kill the newest cult member
+                                            newbie.DiedLastNight = true;
+                                            newbie.IsDead = true;
+                                            newbie.TimeDied = DateTime.Now;
+                                            newbie.KilledByRole = IRole.Wolf;
+                                            newbie.DiedByVisitingKiller = true;
+                                            DBKill(target, newbie, KillMthd.Eat);
+
+                                            Send(GetLocaleString("CultConvertWolf", newbie.GetName(), target.GetName()), c.Id);
                                         }
                                         Send(GetLocaleString("CultAttempt"), target.Id); //only notify if they were home
                                     }
-                                    //Send(GetLocaleString("CultAttempt"), target.Id);
                                     break;
                                 default:
                                     ConvertToCult(target, voteCult);
