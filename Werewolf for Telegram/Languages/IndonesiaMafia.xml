@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Ini adalah versi bahasa Indonesia dari Mafia vs Cops ver 1.3 oleh @NoxCaelis, @dhansck dan @noirhime! -->
 <strings>
   <language name="Bahasa (Mafia)" base="Indonesia" variant="Mafia"/>
@@ -619,7 +619,7 @@
     <value>Kamu mengantarkan pesanan seribu gayung ke rumah si {0}. Kebingungan dan penasaran, kamu bertanya untuk apa gayung-gayung tersebut. Ia menawarkan kepadamu untuk menunjukan kegunaannya, seketika duniamu terasa gelap! Kamu mengantarkan barang kepada si Tukang Ciduk, sekarang kamu telah hilang dari muka ibu pertiwi!</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now! - {0}</value>
+    <value>Breaking News! Polisi menemukan bahwa {0} telah menghilang dari Fairview. Penyidikan lebih lanjut menunjukan {0} adalab seorang Perantara (Harlot). Dalam berita lainnya, di negeri seberang terdapat seorang pria yang berubah menjadi serigala di malam hari. Laporan cuaca di pukul 6.</value>
   </string>
   <string key="DGToMason">
     <value>Si Calo KTP ikut berkumpul dengan sang Godfather! Sekarang {0} diterima sebagai salah satu Caporegime!</value>
@@ -802,7 +802,7 @@
     <value>Ada masalah node kota ini, kita terpaksa menutupnya.</value>
   </string>
   <string key="SentPrivate">
-    <value>Periksa kotak suratmu, kamu dapat suran tanpa nama ataupun alamat pengirim.</value>
+    <value>Periksa kotak suratmu, kamu dapat surat tanpa nama ataupun alamat pengirim.</value>
   </string>
   <string key="StartPM">
     <value>Mohon PM aku, agar aku dapat mengirim kamu PM: @werewolfbot</value>
@@ -956,10 +956,10 @@
     <value>Pilihan Tuan J (Tanner) dalam peran: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Apakah kamu ingin Serikat Pengamat Alien dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+    <value>Apakah kamu ingin Persekutuan Hedon dalam pilihan peran?\nPengaturan saat ini: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Pilihan Serikat Pengamat Alien dalam peran: {0}</value>
+    <value>Pilihan Persekutuan Hedon dalam peran: {0}</value>
   </string>
   <string key="ThankYou">
     <value>Terima kasih. Sekarang pergi dan lindungi sang Godfather serta Keluarga kita.</value>
@@ -984,5 +984,137 @@
   </string>
   <string key="UnableToGetList">
     <value>Tidak dapat mengambil daftar terakhir</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Selamat! Kamu telah sukses bergabung dengan game {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Waktu untuk mengirim pesan ping: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+	<value>Selamat! Kamu telah ditunjuk sebagai Bawahan Boss (Mayor), sang komandan mafia. Sebagai perwakilan bagi sang Godfather, suaramu sangatlah berpengaruh. Jikalau kamu berkata langit akan hujan, maka turunlah hujan.  Karenanya, ketika kamu menunjukan jati dirimu yang sebenarnya, maka vote kamu akan dihitung dua kali</value>
+  </string>
+  <string key="RoleInfoPrince">
+	<value>Kamulah sang Anak Godfather (Prince) itu sendiri. Kamu yang ingin memulai karir mafiamu dari bawah, menyamar menjadi salah satu prajurit mafia rendahan. Jika suatu saat, warga Fairview memutuskan untuk mengusirmu keluar dari kota ini, mereka akan tarsadar akan dosa nereka, dan pada hari itu tidak ada yang diusir dari kota ini.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+	<value>Kamu adalah Pemilih Galau (Clumsy Guy). Meskipun kamu adalah anggota mafia, kamu tidak pernah bisa menentukan untuk memilih siapa yang akan kamu usir dari kota ini. Maka dari itu ada 50% kemungkinan kamu akan memilih orang yang bukan kamu ingini.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+	<value>Kamu adalah si Informan (Sorcerer), sahabat kebajikan, pembela kebetulan. Bekerja di balik layar, di balik gedung, dan di dalam mafia, kamu membantu polisi untuk membebaskan kota ini dari mafia. Setiap malam kamu diam-diam mencari tau siapa saja para polisi dan sang Penyiksa.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+	<value>Kamu adalah sang Pengawas (Blacksmith), penjaga ketenangan kota. Pada siang hari, untuk sekali saja kamu dapat membangun sebuah menara pengawas di salah satu titik kota. Menara pengawas itu akan membuat Polisi menunda penyergapan malam itu untuk mencari jalan lain diluar pengawasanmu. Selain itu kamu hanyalah perajurit rendahan Mafia.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+	<value>Salam tertinggi bagi Kapolfa (Alpha Wolf), sang Kepala Polisi Fairview. Biarlah perintahmu tegas dan adil. Memimpin para Polisi dari bayang-bayang, perintahmu dapat meluluhkan setiap warga Fairview untuk bergabung dalam kesatuan Polisi.  Selama kamu masih berada di kota ini, setiap malam kamu memiliki 20% kemungkinan untuk mengajak salah satu warga fairview menjadi seorang polisi.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+	<value>Kamu adalah sang Kabareskrim (WolfCub), orang yang memimpin unit pembrantas mafia. Seperti polisi lainnya, setiap malam kamu dapat memilih dan menyerbu seorang warga mafia. Namun jika suatu saat kamu hilang dari kota ini. Polisi akan menggerakan seluruh pasukannya untuk mencarimu dan akan melakukan dua penyerbuan pada malam berikutnya. Namun kamu tetap hilang dari kota ini.</value>
+  </string>
+  <string key="PrinceLynched">
+	<value>Seketika para warga mencoba mengusir {0}, dia berkata "Eits, tunggu dulu. Sebelum kamu mencoba mengusir aku, mungkin kamu perlu tahu siapa aku sebenarnya."  {0} melepaskan kumis serta janggut palsu, lalu mengganti topi fedora murahnya. Terkejut melihat sang Anak Godfather (Prince), para warga kembali kerumah mereka masing-masing dengan malu. </value>
+  </string>
+  <string key="SorcererOther">
+	<value>Kamu mencoba mencari tahu identitas {0}, tetapi kamu tidak mengetahui siapa dia sebenarnya, hanya dia bukanlah Polisi (Werewolf) atau si Penyiksa (Seer).</value>
+  </string>
+  <string key="MayorReveal">
+	<value>{0} mengambil cincin dari dalam saku jasnya. Cincin tersebut merupakan lambang dari seorang Bawahan Boss (Mayor). Karenanya, vote {0} akan bernilai dua.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Tekan "Reg spasi BawahanBoss" kapanpun kamu mau menunjukan dirimu sebagai Bawahan Boss.</value>
+  </string>
+  <string key="Reveal">
+    <value>Reg spasi BawahanBoss</value>
+  </string>
+  <string key="SpreadDust">
+	<value>Maukah kamu ingin membangun menara pengawas, untuk mencegah penyerbuan Polisi malam ini?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+	<value>Sementara para warga berdebat, {0} membangun satu menara pengawas di satu sudut kota. Untuk malam ini saja, para Polisi tidak dapat melakukan penyerbuan, karena mereka harus mencari jalan lain diluar pengawasan menara pengawas.</value>
+  </string>
+  <string key="Mayor">
+    <value>Boss Bawahan (Mayor) 🎖</value>
+  </string>
+  <string key="Prince">
+	<value>Sang Anak Godfather (Prince) 👑</value>
+  </string>
+  <string key="Sorcerer">
+	<value>si Informan (Sorcerer) 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+	<value>Pemilih Galau (Clumsy Guy) 🤕</value>
+  </string>
+  <string key="Blacksmith">
+	<value>si Pengawas (Blacksmith) ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+	<value>Kepala Polisi Fairview (Alpha Wolf) ⚡️</value>
+  </string>
+  <string key="WolfCub">
+	<value>Kabareskrim (Wolf Cub) 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+	<value>Pada saat penyerbuan terhadap {0}, {1}, si Kepala Polisi menghentikan semuanya.  {1} memanggil {0}, untuk berbicara dua mulut. Setelah percakapan yang panjang, seluruh Polisi meninggalkan {0} dengan sehelai kain formulir pendaftaran kesatuan. Mereka percaya kalau dia akan bergabung dengan Polisi keesokannya.</value>
+  </string>
+  <string key="PlayerBitten">
+	<value>Polisi telah melakukan penyerbuan terhadap rumahmu!  Namun bukannya dijebloskan kedalam BUI, kamu malah didaftarkan kedalam Badan Urusan Internal oleh sang Kepala Polisi (Alpha Wolf). Tergugah oleh pidato sang Kepala.. kamu berniat bergabung dengan kesatuan Polisi pada malam berikutnya!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Kamu menatap lembaran dokumen diatas mejamu. Pidato sang Kepala Polisi berdengung di pikiranmu. Meskipun wajahmu masi menyimpan bimbang dan keraguan, kamu memantapkan hati dan berangkat bertemu dengan sang Kepala Polisi. Kini kamu adalah anggota Polisi (Werewolf) !</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Kamu adalah sang Boss Bawahan (Mayor). Sebelum kamu menunjukan jati dirimu, para warga Fairview menganggapmu hanya sebagai perajurit mafia rendahan.  Namun jika para warga mengetahui kamu adalah Bawahan Boss (Mayor), maka suara dan pendapatmu memiliki bobot dua kali lipat dari biasanya (vote pada siang hari dihitung sebagai dua).</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Sang Anak Godfather (Prince), pewaris tahta keluarga mafia Fairview. Meskipun begitu, ia ingin memulai karir mafinya dari bawah, seperti para pendahulunya. Jika sampai para warga memutuskan untuk mengusir dia dari kota ini, dia akan melepaskan samarannya sehingga pada siang itu tidak ada yang terusir dari Fairview. Namun para warga dapat mengusirnya lagi, jika mereka mau.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Kabarnya dikalangan mafia terdapat seorang Informan (Sorcerer). Dia merupakan salah satu anggota kesatuan polisi yang ditugaskan untuk mencari si Penyiksa (Seer). Setiap malam ia dapat mengetahui apakah seseorang yang dia periksa adalah Polisi (Werewolf), si Penyiksa (Seer), atau bukan keduanya.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Tidak bisa menentukan pilihan, begitulah kehidupan sehari-hari Pemilih Galau (Clumsy Guy). Sering kali (50%) dia memilih orang yang bukan ingin ia pilih, untuk diusir dari kota ini.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Didalam dunia yang penuh hingar bingar ini. Seorang mantan tukag bangungan meninggalkan kehidupan lamanya dan menjadi seorang Pengawas (Blacksmith). Ia dapat membangun menara di satu perimeter kota untuk menghentikan serangan Polisi (Werewolf) untuk satu malam. Sayangnya karena keterbatasan dana, hanya satu menara yang dapat dibangun.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Ada yang bilang, kalau di kehidupan sebelumnya dia memimpin kawanan serigala. Ada juga yang bilang, kalau dia memasang lampu sorot di atas gedung polisi. Ada pula yang bilang, kalau dia dapat mengajak siapapun ke dalam kesatuan Polisi (20%). Yang kita tahu, dia adalah Kapolfa, Kepala Polisi Fairview (AlphaWolf).</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Kabareskrim kota Fairview merupakan idola dan orang yang paling disegani di kalangan polisi. Inspirasi bagi yang dibawahnya, favorit di mata atasan-atasannya. Jika sampai hal buruk terjadi padanya di malam hari, seluruh kesatuan polisi akan membalas dendam dan dapat menyerang warga dua kali pada malam berikutnya.</value>
+  </string>
+  
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} kini telah tiada, meninggalkan kota ini beserta kesatuan polisinya tanpa kepala. Kamu menatap KTP milik {0} yang telah kamu duplikat, dan memutuskan untuk mengambil mantel kepemimpinannya. Setelah operasi yang banyak, kini kamu adalah sang Kapolfa, Kepala Polisi Fairview (AlphaWolf).  Temanmu (jika ada) adalah: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} kini telah pergi. Unit kriminal dibawahnya kini kehilangan kendali. Namun kamu tidak akan membiarkan itu terjadi begitu saja. Setelah memakai make up dan bedak yang tebal, kamu menggunakan KTP milik {0} untuk menjadi Kabareskrim (Wolf Cub).  Temanmu (jika ada) adalah: {1}</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Keluarga Mafia</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Pihak Ketiga</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Kesatuan Polisi</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Koperasi Ciduk</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Persekutuan Hedon</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Skuad Nekad</value>
   </string>
 </strings>
