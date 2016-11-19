@@ -2782,6 +2782,7 @@ namespace Werewolf_Node
                                 harlot.DiedLastNight = true;
                                 harlot.DiedByVisitingKiller = true;
                                 harlot.KilledByRole = IRole.SerialKiller;
+                                DBKill(target, harlot, KillMthd.VisitKiller);
                                 Send(GetLocaleString("HarlotFuckKiller", target.GetName()), harlot.Id);
                                 break;
                             default:
