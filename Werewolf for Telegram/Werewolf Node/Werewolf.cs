@@ -1523,8 +1523,14 @@ namespace Werewolf_Node
                         //notify other wolves
                         p.PlayerRole = rm.OriginalRole;
                         if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.WildChild || rm.OriginalRole == IRole.Traitor || rm.OriginalRole == IRole.Cursed)
+                        {
+                          //if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.Cursed)
+                            if (rm.OriginalRole == IRole.ApprenticeSeer)     //if cursed turned wolf before dying, should DG turn cursed or directly wolf? use the above line if DG should turn cursed
+                                if (rm.PlayerRole != IRole.Wolf)
+                                    p.PlayerRole = rm.PlayerRole;
                             if (rm.PlayerRole != IRole.Cultist)
                                 p.PlayerRole = rm.PlayerRole;
+                        }
                         p.ChangedRolesCount++;
                         switch (p.PlayerRole)
                         {
