@@ -2086,6 +2086,7 @@ namespace Werewolf_Node
                     Send(msg, p.Id);
                 }
             }
+            CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
             if (CheckForGameEnd()) return;
             var nightTime = (DbGroup.NightTime ?? Settings.TimeNight);
             if (GameDay == 1)
