@@ -741,6 +741,16 @@ namespace Werewolf_Node
                 {
                     var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
                     SendWithQueue(msg);
+                    
+                    if (Players.All(x => x.CurrentQuestion.QType == QuestionType.Lynch))
+                        player.FirstStone++;
+                    else
+                        player.FirstStone = 0;
+
+                    if (player.FirstStone == 5)
+                    {
+                        AddAchievement(player, Achievements.FirstStone);
+                    }
                 }
                 Program.MessagesSent++;
                 ReplyToCallback(query,
