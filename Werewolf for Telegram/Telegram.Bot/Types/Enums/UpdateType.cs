@@ -24,5 +24,11 @@ namespace Telegram.Bot.Types.Enums
 
         [EnumMember(Value = "edited_message")]
         EditedMessage,
+
+        [EnumMember(Value = "channel_post")]
+        ChannelPost,
+
+        [EnumMember(Value = "edited_channel_post")]
+        EditedChannelPost,
     }
 }
