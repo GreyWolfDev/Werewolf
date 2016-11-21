@@ -1485,6 +1485,12 @@ namespace Werewolf_Node
                 loversNotify = Players.Where(x => x.InLove).ToList();
             }
 
+            foreach (var lover in loversNotify)
+            {
+                if (lover.SpeedDating)
+                    AddAchievement(lover, Achievements.OnlineDating);
+            }
+
             Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
             Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
         }
@@ -1497,6 +1503,7 @@ namespace Werewolf_Node
             Console.ForegroundColor = ConsoleColor.Gray;
             if (lover == null) return null;
             lover.InLove = true;
+            lover.SpeedDating = true;
             if (existing == null) return lover;
             existing.LoverId = lover.Id;
             lover.LoverId = existing.Id;

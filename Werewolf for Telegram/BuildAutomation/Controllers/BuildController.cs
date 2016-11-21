@@ -72,7 +72,13 @@ namespace BuildAutomation.Controllers
                 {
                     var build = JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
                     string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
-                    var msg = obj.message.markdown + "\n";
+                    var detail = obj.detailedMessage.markdown;
+                    if (detail.Contains("\r\n+ Process 'msbuild.exe'"))
+                    {
+                        detail = detail.Substring(0, detail.IndexOf("\r\n+ Process 'msbuild.exe'"));
+                    }
+                    detail = detail.Replace("\r\n+ ", "\r\n");
+                    var msg = detail + "\n";
                     var urlPre = "https://github.com/parabola949/Werewolf/commit/";
                     msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion})";
                     if (build.resource.result == "succeeded")
