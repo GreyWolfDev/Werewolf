@@ -609,7 +609,10 @@ namespace Werewolf_Node
 
                 if (args[2] == "-1")
                 {
-                    player.Choice = -1;
+                    if (player.CurrentQuestion.QType == QuestionType.Kill2)
+                        player.Choice2 = -1;
+                    else
+                        player.Choice = -1;
                     Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted") + " - Skip");
