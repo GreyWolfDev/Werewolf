@@ -887,17 +887,6 @@
             The error code.
             </value>
         </member>
-        <member name="M:Telegram.Bot.Helpers.Extensions.FromUnixTime(System.Int64)">
-            <summary>
-              Convert a long into a DateTime
-            </summary>
-        </member>
-        <member name="M:Telegram.Bot.Helpers.Extensions.ToUnixTime(System.DateTime)">
-            <summary>
-              Convert a DateTime into a long
-            </summary>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
-        </member>
         <member name="T:Telegram.Bot.Types.ApiResponse`1">
             <summary>
             The Api Response
@@ -1486,6 +1475,16 @@
             </summary>
         </member>
         <member name="P:Telegram.Bot.Types.Update.EditedMessage">
+            <summary>
+            Optional. New version of a message that is known to the bot and was edited
+            </summary>
+        </member>
+        <member name="P:Telegram.Bot.Types.Update.EditedChannelPost">
+            <summary>
+            Optional. New version of a message that is known to the bot and was edited
+            </summary>
+        </member>
+        <member name="P:Telegram.Bot.Types.Update.ChannelPost">
             <summary>
             Optional. New version of a message that is known to the bot and was edited
             </summary>
