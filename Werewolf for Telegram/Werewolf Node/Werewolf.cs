@@ -625,7 +625,7 @@ namespace Werewolf_Node
 
                 if (player.PlayerRole == IRole.ClumsyGuy && player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
-                    if (Program.R.Next(50) < 100)
+                    if (Program.R.Next(100) < 50)
                     {
                         //pick a random target
                         player.Choice = ChooseRandomPlayerId(player, false);
