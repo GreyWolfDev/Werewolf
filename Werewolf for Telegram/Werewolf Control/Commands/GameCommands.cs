@@ -153,8 +153,43 @@ namespace Werewolf_Control
             {
                 Send(GetLocaleString("NoGame", GetLanguage(id)), id);
             }
+        }
 
-
+        [Command(Trigger = "extend", Blockable = true, InGroupOnly = true)]
+        public static void Extend(Update update, string[] args)
+        {
+            var id = update.Message.Chat.Id;
+            //check nodes to see if player is in a game
+            var node = GetPlayerNode(update.Message.From.Id);
+            var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+            if (game != null || node != null)
+            {
+                //try grabbing the game again...
+                if (node != null)
+                {
+                    game =
+                        node.Games.FirstOrDefault(
+                            x => x.Users.Contains(update.Message.From.Id));
+                    if ((game?.Users.Contains(update.Message.From.Id) ?? false) || UpdateHelper.IsGroupAdmin(update))
+                    {
+                        int seconds;
+                        seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
+                        if (seconds < 0)
+                            Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
+                        game?.ExtendTime(update.Message.From.Id, seconds);
+                        return;
+                    }
+                }
+                else
+                {
+                    //there is a game, but this player is not in it
+                    Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
+                }
+            }
+            else
+            {
+                Send(GetLocaleString("NoGame", GetLanguage(id)), id);
+            }
         }
     }
 }

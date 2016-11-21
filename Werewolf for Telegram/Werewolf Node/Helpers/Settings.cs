@@ -144,7 +144,9 @@ namespace Werewolf_Node
             AlphaWolfConversionChance = 100,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            MaxJoinTime = 600,
+            ExtendMaxValue = 300;
 
 
 

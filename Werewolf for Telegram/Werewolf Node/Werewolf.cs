@@ -21,7 +21,8 @@ namespace Werewolf_Node
     class Werewolf : IDisposable
     {
         public long ChatId;
-        public int GameDay, GameId;
+        public int GameDay, GameId, 
+            SecondsToAdd = 0;
         public List<IPlayer> Players = new List<IPlayer>();
         public bool IsRunning,
             IsJoining = true,
@@ -222,6 +223,25 @@ namespace Werewolf_Node
                     if (i == Settings.GameJoinTime - 10)
                     {
                         SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
+                    }
+                    if (SecondsToAdd != 0)
+                    {
+                        if (Math.Abs(SecondsToAdd) > Settings.ExtendMaxValue)
+                            SecondsToAdd = Settings.ExtendMaxValue * SecondsToAdd / Math.Abs(SecondsToAdd);
+                        i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
+                        var msg = "";
+                        var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
+                        if (SecondsToAdd > 0)
+                             msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
+                        else
+                        {
+                            SecondsToAdd = -SecondsToAdd;
+                            msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
+                        }
+                        if (Settings.GameJoinTime > i)
+                            SendWithQueue(msg);
+
+                        SecondsToAdd = 0;
                     }
                     Thread.Sleep(1000);
                 }
@@ -1772,7 +1792,22 @@ namespace Werewolf_Node
         {
             KillTimer = true;
         }
-
+        public void ExtendTime(long id, int seconds)
+        {
+            if (!IsJoining) return;
+            var p = Players.FirstOrDefault(x => x.TeleUser.Id == id);
+            if (p != null)
+            {
+                if (p.HasExtended)
+                {
+                    SendWithQueue(GetLocaleString("CantExtend"));
+                    return;
+                }
+                SecondsToAdd = seconds;
+                p.HasExtended = true;
+            }
+            return;
+        }
         private void LynchCycle()
         {
             if (!IsRunning) return;

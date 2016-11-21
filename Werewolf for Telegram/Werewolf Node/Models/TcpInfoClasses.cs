@@ -112,4 +112,12 @@ namespace Werewolf_Node.Models
         public string JType { get; set; } = "GameKillInfo";
         public long GroupId { get; set; }
     }
+
+    public class ExtendTimeInfo
+    {
+        public string JType { get; set; } = "ExtendTimeInfo";
+        public long GroupId { get; set; }
+        public long User { get; set; }
+        public int Seconds { get; set; }
+    }
 }
