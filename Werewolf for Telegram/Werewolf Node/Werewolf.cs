@@ -1792,13 +1792,13 @@ namespace Werewolf_Node
         {
             KillTimer = true;
         }
-        public void ExtendTime(long id, int seconds)
+        public void ExtendTime(long id, bool admin, int seconds)
         {
             if (!IsJoining) return;
             var p = Players.FirstOrDefault(x => x.TeleUser.Id == id);
             if (p != null)
             {
-                if (p.HasExtended)
+                if (p.HasExtended && !admin)
                 {
                     SendWithQueue(GetLocaleString("CantExtend"));
                     return;

@@ -122,6 +122,7 @@ namespace Werewolf_Control.Models
         public string JType { get; set; } = "ExtendTimeInfo";
         public long GroupId { get; set; }
         public long User { get; set; }
+        public bool Admin { get; set; }
         public int Seconds { get; set; }
     }
 }
