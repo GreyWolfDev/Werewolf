@@ -996,12 +996,37 @@ namespace Werewolf_Node
                         break;
                     case IRole.WolfCub:
                     case IRole.AlphaWolf: //don't add more wolves, just replace
-                        rolesToAssign.Add(role);
-                        rolesToAssign.Remove(IRole.Wolf);
+                        if (rolesToAssign.Remove(IRole.Wolf))
+                            rolesToAssign.Add(role);
                         break;
                     default:
                         rolesToAssign.Add(role);
                         break;
+                }
+            }
+            
+            //we want the possibility to have normal wolves too!
+            if (!rolesToAssign.Contains(IRole.Wolf))
+            {
+                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+                var wolftoadd = possiblewolves[Program.R.Next(3)];
+
+                if (rolesToAssign.Remove(IRole.AlphaWolf))
+                    rolesToAssign.Add(wolftoadd);
+                //else throw an Exception? it should never happen that rolesToAssign does not contain both Alpha Wolf and Wolf, but...
+
+                if (playerCount >= 10) //there was WolfCub too, since IRole.AlphaWolf < IRole.WolfCub
+                {
+                    //note that at this point we might have two WolfCubs. However, we are removing one, and if the other wolf was a cub, we're not readding it.
+                    if (rolesToAssign.Remove(IRole.WolfCub))
+                    {
+                        //replace the wolftoadd with a Wolf in the possiblewolves, to keep probability consistency
+                        possiblewolves.Remove(wolftoadd);
+                        possiblewolves.Add(IRole.Wolf);
+
+                        rolesToAssign.Add(possiblewolves[Program.R.Next(3)]); //actually replace the wolf
+                    }
+                    //else throw an Exception?
                 }
             }
 
