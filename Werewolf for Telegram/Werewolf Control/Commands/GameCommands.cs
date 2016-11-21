@@ -198,7 +198,7 @@ namespace Werewolf_Control
                         seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
                         if (seconds < 0)
                             Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
-                        game?.ExtendTime(update.Message.From.Id, seconds);
+                        game?.ExtendTime(update.Message.From.Id, UpdateHelper.IsGroupAdmin(update), seconds);
                         return;
                     }
                 }
