@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using Database;
 using Werewolf_Control.Handler;
@@ -20,21 +21,29 @@ namespace Werewolf_Control
         private static bool _writingInfo = false;
         internal static PerformanceCounter CpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         internal static float AvgCpuTime;
-        private static List<float> CpuTimes = new List<float>();
-        private static List<long> MessagesProcessed = new List<long>();
-        private static long _previousMessages;
-        internal static float MessagePerSecond;
+        ///private static List<float> CpuTimes = new List<float>();
+        internal static List<long> MessagesReceived = new List<long>();
+        internal static List<long> MessagesProcessed = new List<long>();
+        internal static List<long> MessagesSent = new List<long>();
+        private static long _previousMessages, _previousMessagesTx, _previousMessagesRx;
+        internal static float MessagePxPerSecond, MessageRxPerSecond, MessageTxPerSecond;
+        internal static int NodeMessagesSent = 0;
+        private static System.Timers.Timer _timer;
+        public static int MaxGames;
+        public static DateTime MaxTime = DateTime.MinValue;
+        public static bool MaintMode = false;
         static void Main(string[] args)
         {
 #if !DEBUG
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
                 //drop the error to log file and exit
-                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "error.log"), true))
+                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
+                    sw.WriteLine(DateTime.Now);
                     sw.WriteLine(e.Message);
-                    sw.WriteLine(e.StackTrace);
+                    sw.WriteLine(e.StackTrace + "\n");
                     if (eventArgs.IsTerminating)
                         Environment.Exit(5);
                 }
@@ -46,18 +55,78 @@ namespace Werewolf_Control
             string version = fvi.FileVersion;
             Console.Title = $"Werewolf Moderator {version}";
 
+
+            //Make sure another instance isn't already running
+            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
+            {
+                Environment.Exit(2);
+            }
+
+
+            var updateid = "";
+            //attempt to get id from update
+            if (args.Length > 0)
+            {
+                updateid = args[0];
+            }
+
             //Initialize the TCP connections
             TCP.Initialize();
             //Let the nodes reconnect
             Thread.Sleep(1000);
 
+            //initialize EF before we start receiving
+            using (var db = new WWContext())
+            {
+                var count = db.GlobalBans.Count();
+            }
+
             //start up the bot
-            new Thread(Bot.Initialize).Start();
+            new Thread(() => Bot.Initialize(updateid)).Start();
             new Thread(NodeMonitor).Start();
-            new Thread(CpuMonitor).Start();
-            new Thread(MessageMonitor).Start();
+            //new Thread(CpuMonitor).Start();
+            new Thread(UpdateHandler.SpamDetection).Start();
+            new Thread(UpdateHandler.BanMonitor).Start();
+            //new Thread(MessageMonitor).Start();
+            _timer = new System.Timers.Timer();
+            _timer.Elapsed += new ElapsedEventHandler(TimerOnTick);
+            _timer.Interval = 1000;
+            _timer.Enabled = true;
             //now pause the main thread to let everything else run
             Thread.Sleep(-1);
+        }
+
+
+
+        private static void TimerOnTick(object sender, EventArgs eventArgs)
+        {
+            try
+            {
+                var newMessages = Bot.MessagesProcessed - _previousMessages;
+                _previousMessages = Bot.MessagesProcessed;
+                MessagesProcessed.Insert(0, newMessages);
+                if (MessagesProcessed.Count > 60)
+                    MessagesProcessed.RemoveAt(60);
+                MessagePxPerSecond = MessagesProcessed.Max();
+
+                newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
+                _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
+                MessagesSent.Insert(0, newMessages);
+                if (MessagesSent.Count > 60)
+                    MessagesSent.RemoveAt(60);
+                MessageTxPerSecond = MessagesSent.Max();
+
+                newMessages = Bot.MessagesReceived - _previousMessagesRx;
+                _previousMessagesRx = Bot.MessagesReceived;
+                MessagesReceived.Insert(0, newMessages);
+                if (MessagesReceived.Count > 60)
+                    MessagesReceived.RemoveAt(60);
+                MessageRxPerSecond = MessagesProcessed.Max();
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         internal static string GetVersion()
@@ -71,24 +140,24 @@ namespace Werewolf_Control
 
         public static void Log(string s, bool error = false)
         {
-            while (_writingInfo)
-                Thread.Sleep(50);
-            Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
-            if (Console.CursorTop >= 30)
-                Console.CursorTop = 19;
-            Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
-            Console.WriteLine(s);
-            try
-            {
-                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
-                {
-                    sw.WriteLine($"{DateTime.Now} - {s}");
-                }
-            }
-            catch
-            {
-                // ignored
-            }
+            //while (_writingInfo)
+            //    Thread.Sleep(50);
+            //Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
+            //if (Console.CursorTop >= 30)
+            //    Console.CursorTop = 19;
+            //Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
+            //Console.WriteLine(s);
+            //try
+            //{
+            //    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
+            //    {
+            //        sw.WriteLine($"{DateTime.Now} - {s}");
+            //    }
+            //}
+            //catch
+            //{
+            //    // ignored
+            //}
         }
 
         private static void MessageMonitor()
@@ -97,12 +166,19 @@ namespace Werewolf_Control
             {
                 try
                 {
-                    var newMessages = Bot.MessagesReceived - _previousMessages;
-                    _previousMessages = Bot.MessagesReceived;
+                    var newMessages = Bot.MessagesProcessed - _previousMessages;
+                    _previousMessages = Bot.MessagesProcessed;
                     MessagesProcessed.Insert(0, newMessages);
                     if (MessagesProcessed.Count > 10)
                         MessagesProcessed.RemoveAt(10);
-                    MessagePerSecond = (float)MessagesProcessed.Average()/10;
+                    MessagePxPerSecond = (float)MessagesProcessed.Average() / 10;
+
+                    newMessages = (Bot.MessagesSent + NodeMessagesSent) - _previousMessagesTx;
+                    _previousMessagesTx = (Bot.MessagesSent + NodeMessagesSent);
+                    MessagesSent.Insert(0, newMessages);
+                    if (MessagesSent.Count > 10)
+                        MessagesSent.RemoveAt(10);
+                    MessageTxPerSecond = (float)MessagesSent.Average() / 10;
                 }
                 catch
                 {
@@ -113,71 +189,109 @@ namespace Werewolf_Control
             }
         }
 
-        private static void CpuMonitor()
-        {
-            while (Running)
-            {
-                try
-                {
-                    CpuTimes.Insert(0, CpuCounter.NextValue());
-                    if (CpuTimes.Count > 10)
-                        CpuTimes.RemoveAt(10);
-                    AvgCpuTime = CpuTimes.Average();
-                    
-                }
-                catch
-                {
-                    // ignored
-                }
+        //private static void CpuMonitor()
+        //{
+        //    while (Running)
+        //    {
+        //        try
+        //        {
+        //            CpuTimes.Insert(0, CpuCounter.NextValue());
+        //            if (CpuTimes.Count > 10)
+        //                CpuTimes.RemoveAt(10);
+        //            AvgCpuTime = CpuTimes.Average();
 
-                Thread.Sleep(250);
-            }
-        }
+        //        }
+        //        catch
+        //        {
+        //            // ignored
+        //        }
+
+        //        Thread.Sleep(1000);
+        //    }
+        //}
 
         private static void NodeMonitor()
         {
             //wait a bit to allow nodes to register
-            Thread.Sleep(6000);
+            Thread.Sleep(5000);
+            new Task(Updater.MonitorUpdates).Start();
             while (Running)
             {
                 try
                 {
+
                     var Nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
+                    NodeMessagesSent = Nodes.Sum(x => x.MessagesSent);
                     var CurrentPlayers = Nodes.Sum(x => x.CurrentPlayers);
                     var CurrentGames = Nodes.Sum(x => x.CurrentGames);
                     var TotalPlayers = Nodes.Sum(x => x.TotalPlayers);
                     var TotalGames = Nodes.Sum(x => x.TotalGames);
-                    var NumThreads = Process.GetCurrentProcess().Threads.Count;
+                    //var NumThreads = Process.GetCurrentProcess().Threads.Count;
                     var Uptime = DateTime.UtcNow - Bot.StartTime;
-                    var MessagesRx = Bot.MessagesReceived;
+                    var MessagesRx = Bot.MessagesProcessed;
                     var CommandsRx = Bot.CommandsReceived;
+                    var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
 
+                    if (CurrentGames > MaxGames)
+                    {
+                        MaxGames = CurrentGames;
+                        MaxTime = DateTime.Now;
+                    }
+                    //Threads: {NumThreads}\t
                     var msg =
                         $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Threads: {NumThreads}\tUptime: {Uptime}\nMessages: {MessagesRx}\tCommands: {CommandsRx}\n\n";
+                        $"Uptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessagePxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
+                        $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
 
-                    msg = Nodes.Aggregate(msg, (current, n) => current + $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
 
-                    for (var i = 0; i < 12 - Nodes.Count; i++)
+                    try
+                    {
+                        msg = Nodes.Aggregate(msg,
+                            (current, n) =>
+                                current +
+                                $"{(n.ShuttingDown ? "X " : "  ")}{n.ClientId} - {n.Version} - Games: {n.Games.Count}\t\n");
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+
+                    for (var i = 0; i < 12; i++)
                         msg += new string(' ', Console.WindowWidth);
+
+                    //we don't need this anymore, but keeping code just in case
+                    //try
+                    //{
+                    //    var top = UpdateHandler.UserMessages.OrderByDescending(x => x.Value.Messages.Count()).Take(10);
+                    //    msg += "\nSPAM DETECTION\n" +
+                    //           top.Aggregate("", (a, b) => a + b.Key + ":\t" + b.Value.Messages.Count() + "\t\n");
+                    //    msg += new string(' ', Console.WindowWidth);
+                    //}
+                    //catch
+                    //{
+                    //    // ignored
+                    //}
 
 
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
-                    var ypos = Math.Max(Console.CursorTop, 19);
-                    if (ypos >= 30)
-                        ypos = 19;
+                    var ypos = Math.Max(Console.CursorTop, 30);
+                    if (ypos >= 60)
+                        ypos = 30;
                     Console.CursorTop = 0;
                     var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
-
+                    //Console.Clear();
                     //write the info
                     Console.WriteLine(msg);
                     //put the cursor back;
                     Console.CursorTop = ypos;
                     Console.CursorLeft = xpos;
                     _writingInfo = false;
+
+
+#if !DEBUG
 
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
@@ -186,17 +300,21 @@ namespace Werewolf_Control
                         Nodes.First().ShutDown();
                     }
 
-                    if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
+                    if (!MaintMode)
                     {
-                        NewNode();
-                        Thread.Sleep(5000); //give the node time to register
-                    }
+                        if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
+                        {
+                            NewNode();
+                            Thread.Sleep(5000); //give the node time to register
+                        }
 
-                    if (Nodes.All(x => x.ShuttingDown)) //replace nodes
-                    {
-                        NewNode();
-                        Thread.Sleep(5000); //give the node time to register
+                        if (Nodes.All(x => x.ShuttingDown)) //replace nodes
+                        {
+                            NewNode();
+                            Thread.Sleep(5000); //give the node time to register
+                        }
                     }
+#endif
                 }
                 finally
                 {

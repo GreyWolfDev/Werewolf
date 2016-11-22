@@ -10,9 +10,10 @@ using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
-
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
 {
     public static partial class Commands
@@ -24,12 +25,26 @@ namespace Werewolf_Control
 
         private static void StartGame(bool chaos, Update update)
         {
-            if (update.Message.Chat.Title == null)
+            if (update.Message.Chat.Type == ChatType.Private)
             {
                 //PM....  can't do that here
-                Bot.Send("You must start a game from within a group chat!", update.Message.Chat.Id);
+                Send(GetLocaleString("StartFromGroup", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
                 return;
             }
+
+            //-1001052326089,
+#if BETA
+            var auth = new[]
+            {
+                 -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730
+            ,-1001059273036, -1001090101991,  -1001066860506, -1001060843091, -1001080774621, -1001036952250, -1001082421542
+            };
+            if (!auth.Contains(update.Message.Chat.Id) && update.Message.From.Id != UpdateHelper.Para)
+            {
+                Bot.Api.LeaveChat(update.Message.Chat.Id);
+                return;
+            }
+#endif
             Group grp;
             using (var db = new WWContext())
             {
@@ -42,6 +57,12 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+                if (!String.IsNullOrEmpty(update.Message.Chat.Username))
+                    grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
+                else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
+                {
+                    grp.GroupLink = null;
+                }
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
@@ -59,7 +80,7 @@ namespace Werewolf_Control
                         //player is already in a game, and alive
                         Send(
                             GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                game.ChatGroup.ToBold() ), update.Message.Chat.Id);
+                                game.ChatGroup.ToBold()), update.Message.Chat.Id);
                         return;
                     }
                 }
@@ -79,12 +100,15 @@ namespace Werewolf_Control
                 using (var db = new WWContext())
                 {
                     var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
+                    var groupName = update.Message.Chat.Title.ToBold();
+                    if (update.Message.Chat.Username != null)
+                        groupName += $" @{update.Message.Chat.Username}";
+                    else if (grp.GroupLink != null)
+                        groupName = $"<a href=\"{grp.GroupLink}\">{update.Message.Chat.Title}</a>";
                     foreach (var n in notify)
                     {
-                        var groupName = update.Message.Chat.Title.ToBold();
-                        if (update.Message.Chat.Username != null)
-                            groupName += $" @{update.Message.Chat.Username}";
-                        Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
+                        if (n.UserId != update.Message.From.Id)
+                            Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
                         Thread.Sleep(100);
                     }
 
@@ -95,13 +119,14 @@ namespace Werewolf_Control
             }
             else
             {
-                Send("There are no nodes online right now, please try again in a few seconds", update.Message.Chat.Id);
+                Send(GetLocaleString("NoNodes", grp.Language), update.Message.Chat.Id);
+
             }
         }
 
-        internal static void Send(string message, long id, bool clearKeyboard = false, ReplyKeyboardMarkup customMenu = null)
+        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
         {
-            Bot.Send(message, id, clearKeyboard, customMenu);
+            return await Bot.Send(message, id, clearKeyboard, customMenu);
         }
 
         private static string GetLocaleString(string key, string language, params object[] args)
@@ -116,8 +141,8 @@ namespace Werewolf_Control
             if (strings == null)
             {
                 //fallback to English
-                var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
-                strings = efile.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                
+                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
             }
             var values = strings.Descendants("value");
             var choice = Bot.R.Next(values.Count());
@@ -147,6 +172,13 @@ namespace Werewolf_Control
             };
         }
 
+        internal static void RequestPM(long groupid)
+        {
+            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + Bot.Me.Username};
+            Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
+                customMenu: new InlineKeyboardMarkup(new[] {button}));
+        }
+
         private static Node GetPlayerNode(int id)
         {
             var node = Bot.Nodes.ToList().FirstOrDefault(n => n.Games.Any(g => g.Users.Contains(id)));
@@ -172,13 +204,105 @@ namespace Werewolf_Control
         /// </summary>
         /// <param name="id">The ID of the group</param>
         /// <returns></returns>
-        private static string GetLanguage(long id)
+        public static string GetLanguage(long id)
         {
             using (var db = new WWContext())
             {
+                Player p = null;
                 var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
+                if (grp == null)
+                    p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (p != null && String.IsNullOrEmpty(p.Language))
+                {
+                    p.Language = "English";
+                    db.SaveChanges();
+                }
+                return grp?.Language ?? p?.Language ?? "English";
+            }
+        }
+
+        /// <summary>
+        /// Get language for a player
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static string GetLanguage(int id)
+        {
+            using (var db = new WWContext())
+            {
+                var grp = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (String.IsNullOrEmpty(grp?.Language) && grp != null)
+                {
+                    grp.Language = "English";
+                    db.SaveChanges();
+                }
                 return grp?.Language ?? "English";
             }
+        }
+
+        public static string GetLanguageName(string baseName)
+        {
+            var files = Directory.GetFiles(Bot.LanguageDirectory);
+            XDocument doc;
+            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == baseName);
+            {
+                doc = XDocument.Load(file);
+            }
+            var langNode = doc.Descendants("language").First();
+            return $"{langNode.Attribute("base").Value}"; // - {langNode.Attribute("variant").Value}
+        }
+
+        internal static string GetAbout(Update update, string[] args)
+        {
+            var language = GetLanguage(update.Message.From.Id);
+            var files = Directory.GetFiles(Bot.LanguageDirectory);
+            XDocument doc;
+            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+            {
+                doc = XDocument.Load(file);
+            }
+            var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+            if (strings == null)
+            {
+                var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
+                strings =
+                    efile.Descendants("string")
+                        .FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+            }
+            if (strings == null)
+                return null;
+            var values = strings.Descendants("value");
+            var choice = Bot.R.Next(values.Count());
+            var selected = values.ElementAt(choice);
+            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+        }
+
+        public static void KickChatMember(long chatid, int userid)
+        {
+            var status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+
+            if (status == ChatMemberStatus.Administrator) //ignore admins
+                return;
+            //kick
+            Bot.Api.KickChatMember(chatid, userid);
+            //get their status
+            status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            while (status == ChatMemberStatus.Member) //loop
+            {
+                //wait for database to report status is kicked.
+                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+                Thread.Sleep(500);
+            }
+            //status is now kicked (as it should be)
+            
+            while (status != ChatMemberStatus.Left) //unban until status is left
+            {
+                Bot.Api.UnbanChatMember(chatid, userid);
+                Thread.Sleep(500);
+                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            }
+            //yay unbanned
+            
         }
     }
 }

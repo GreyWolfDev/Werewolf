@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+   Created by / Criado por:
+       André Silveira (@Toalha) - Ajuda por: Dan (@vergonha)
+	   (Última edição: 21/08/2016 por @Toalha)
+-->
+<strings>
+  <language name="Português (Guerra)" base="Português" variant="Guerra"/>
+  <string key="NotInGame">
+    <value>Você não parece estar em um jogo agora...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>O soldado {0} iniciou uma nova guerra! Use /join para se alistar.</value>
+    <value>Uma nova guerra foi iniciada pelo soldado {0}! Use /join para se alistar!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>O soldado {0} começou uma guerra caótica. Use /join para se alistar.</value>
+    <value>Uma nova guerra caótica foi iniciado pelo soldado {0}! Use /join para se alistar!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Você não pode se alistar agora! A guerra já começou. Use /nextgame para receber uma mensagem no privado quando uma nova guerra for iniciada!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Você já está na guerra, soldado!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto restando para enviar o /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} segundos restando para enviar o /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Quantidade mínima de soldados não foi atingida, cancelando a partida! Nosso país saiu como perdedor.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>A guerra começou. Preste atenção a todos os movimentos e cuidado para não morrer! Boa sorte. - Aguarde enquanto eu uso o radar para detectar os movimentos inimigos.</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>O soldado {0} está banido(a) por tentar explorar um erro (não são permitidos nomes iniciados por /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>Soldado {0}, Sentido! Mude seu nome se quiser entrar na partida.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sinto muito, o número máximo de soldados foi atingido!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} se juntou à guerra. {1} jogadores, {2} mínimo, {3} máximo</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\nSentido, soldado {0}! Clique no botão abaixo ou aqui: ({1}), depois clique em Start. Enquanto não fizer isso, eu não vou poder te falar sua patente.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Você não pode fugir! VOCÊ ESTÁ MORTO(A)! Volte para sua cova... eita.</value>
+  </string>
+  <string key="Flee">
+    <value>O soldado {0} fugiu aterrorizado!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} soldados restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Ei, não te perguntei nada ainda!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Você não parece estar jogando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Eu não consegui encontrar um(a) jogador(a) com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Essa resposta não é válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} votou para explodir {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} votou para matar {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>O soldado {0} não votou por duas noites seguidas! O general achou que ele era um infiltrado, e mandou matá-lo. De repente, {0} cai duro no chão. \n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>O exército terrorista te pagou um bom suborno para que você ajude ele, e você aceitou o dinheiro. Agora você é um terrorista! Seu traidor.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Opção aceita</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nO Hacker é {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} era o Hacker. Como aprendiz, você pega seu notebook e se torna o novo Hacker.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} era um aprendiz e agora tomou o lugar de {1} como o novo Hacker.</value>
+  </string>
+  <string key="SeerSees">
+    <value>Após longas linhas de código, você invade a database do governo e descobre que {0} é {1}! Você poderia ter descoberto mais coisas, se o firewall não tivesse te desconectado.</value>
+  </string>
+  <string key="AskLynch">
+    <value>Quem você gostaria de matar?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Quem você gostaria de bisbilhotar?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Em quem você gostaria de atirar um míssel? {0} míssel(is) restantes</value>
+  </string>
+  <string key="AskVisit">
+    <value>Você entra no seu caça e se pergunta: Quem você gostaria de seguir?</value>
+  </string>
+  <string key="AskSee">
+    <value>Quem você gostaria de hackear?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Quem você gostaria de proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>Quem você gostaria de explodir?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Quem você gostaria de caçar?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Quem será seu grande amigo?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Quem você gostaria de converter para a nova ordem?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Lembre-se de discutir com {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Você é o bisbilhoteiro, e joga pelo exército. Durante o dia, você escolhe uma pessoa pra bisbilhotar entre as frestas na parede. No entanto, ao fazer isso, você pode ser descoberto pelos terroristas! (40% de chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Você está doente, mas ninguém sabe disso! Se um terrorista te matar, ele vai ser contaminado pela sua doença e vai ficar um dia sem matar ninguém!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Você é o segurança! Pago pelo governo, todos os dias você pode escolher alguém para proteger. Mas cuidado, pois se você for proteger um terrorista, ele pode te matar!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Você é o Atirador de Mísseis! Todos os dias, você pode escolher alguém para atirar! Você só tem dois mísseis, então use-os com sabedoria! Mas cuidado. Quando você atirar, todos vão escutar a explosão! (Óbvio :/)</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Você é o Piloto do Caça! Todas as noites, você faz um vôo noturno e segue uma pessoa de sua escolha para analizar seus movimentos! Mas cuidado. Se você seguir um terrorista, ele tem os contatinhos dele!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Os terroristas te confiaram uma missão: deixar seu legado em pé! Caso todos os terroristas morram, você vai se transformar em um.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Você é um terrorista! Devoto ao islamismo, seu objetivo é matar todos os que se recusam a se converter a sua religião.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Você é o Hacker! Logo após de ter descoberto uma brecha nos servidores do governo, todas as noites você pode o invadir para saber o papel de alguém, antes que o firewall te desconecte! Não se esqueça de se conectar a uma VPN antes.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Você é o Homem-bomba, seu time é você mesmo!  Se você for morto, você ganha automaticamente, sozinho.</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Você é um Amigo Leal Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em terrorista, como forma de vingança.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Você é o Representante do Hacker, você saberá quem é o verdadeiro hacker.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Você é o Aprendiz de Hacker. Caso o Hacker morra, você tomará seu lugar como Hacker. Empolgante, não?</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Você é um agente da Nova Ordem. Vocês são um grupo de protestantes, que acham que deveriam assumir o poder... (de uma forma bruta). Durante a noite, você poderá escolher alguém para converter à Nova ordem. Se todos os jogadores restantes ao final do jogo forem da Nova Ordem, ela vence!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >A Nova Ordem está infiltrada no exército tentando converter todo mundo, e você foi incumbido de proteger o exército.  Durante a noite você poderá escolher um(a) jogador(a).  Se ele(a) for da Nova Ordem, ele(a) morre.  Caso a Nova Ordem tente te converter, o membro mais recente morre. Você é o Agente de Controle.</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      A noite se aproxima, e os soldados (e alguns possíveis terroristas) se reúnem para decidir quem será morto! Todos tem {0} segundos para votar.
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >Agora está de dia! Você tem {0} segundos para apresentar suas queixas, fazer suas defesas ou se pronunciar sobre algo.</value>
+  </string>
+  <string key="NightTime" >
+    <value >Agora está de noite. Se passou mais um dia estressante morrendo e matando (e sobrevivendo)! Vocês tem {0} segundos para usar suas ações.</value>
+  </string>
+  <string key="LynchKill" >
+    <value >Os soldados votaram, e o General contabilizou os votos. O general então anuncia um nome. "{0}, se levante!". Sem dizer nada, {0} se levantou. Então o General puxou o gatilho e... {0} está morto(a). {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Sem uma decisão em mãos, os soldados voltam para seus dormitórios. Alguns murmuravam palavrões. Outros, apenas ficaram calados.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Alguma coisa está cheirando mal, ninguém votou!  Ninguém será morto hoje.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele(a) havia morrido, com a seguinte mensagem em suas mãos: "Bisbilhotar demais dá nisso!". {0} era o Bisbilhoteiro.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele(a) havia morrido, com a seguinte mensagem em suas mãos: "Você pode até proteger os outros mas quem irá te proteger?". {0} era o Segurança.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele(a) havia morrido, com um buraco em sua testa. {0} era o Atirador de Mísseis.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido, sem mensagens. Apenas um mouse no cu de {0}. {0} era o Hacker.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido, e que o corpo dele estava no Necrotério para ser exâminado. Parece que, quem matou ele se deu mau porque {0} era o Doente.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido, sem mensagens. Apenas um mouse da Hello Kitty no cu e um pedaço do que um dia foi o notebook da Barbie. {0} era o Hacker Desatualizado.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, sem notícia dele. O Agente de Controle então se pronuncia: "{0} era um Agente da Nova Ordem, e agora está morto. A menos que você queira que um fantasma dele responda a chamada!"</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Os soldados acordam marchando para o pátio central, e com um suspiro de alívio, se preparam para mais um dia de guerra sabendo que todos responderam a chamada!</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Você foi capturado pelos terroristas! Prestes a ser morto, eles discutem baixo e depois lhe convidam a fazer parte do grupo terrorista. Evitando ser morto, você aceita na hora! Agora você é um terrorista.</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Seu(s) parceiro(s) terrorista(s): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >O soldado {0} estava prestes a ser morto,  mas como ele era um cagão, vocês o convidaram a ser um terrorista para não matar o pobre coitado e ele aceitou! Dêem boas vindas ao novo terrorista.</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Ah não, os terroristas te mataram.</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Ah não! {0} estava doente! Agora você está doente e não vai poder atacar amanhã, a fim de se tratar!</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Você tentou proteger um terrorista, e como forma de agradecimento, ele te matou! (Se eu fosse você, iria puxar o pé dele a noite!)</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Você salvou a vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >Você tentou proteger a vida de {0}, mas ele não foi atacado. De qualquer jeito, você vai receber seu salário por isso!</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Você foi proteger {0}, mas quando foi o visitar, ele não estava em seu dormitório!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >O segurança que você contratou te protegeu de um possível ataque terrorista, e por conta disso, ele recebeu um bônus!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >O piloto do caça-aéreo estava de folga, e decidiu relaxar em seu dormitório. Um péssimo dia para isso, pois {0} foi morto pelos terroristas!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >Estranho... {0} não estava em casa! Parece que não vai ter nenhuma explosão hoje.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Você decidiu seguir {0} pelos ares em seu caça, mas ele fez uma ligação e em poucos segundos, você vê um míssel indo em sua direção! Suas manobras evasivas não foram o suficiente, porque você está morto(a)!</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} decidiu dar uma volta pelos ares na noite errada, porque um míssel explodiu ele! {0} era o Piloto do Caça.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >O(a) piloto(a) {0} estava seguindo {1} quando vê um terrorista matando {1}! O terrorista rapidamente saca o telefone e liga para alguém. Quando {0} menos espera, vê um míssel em sua direção e... {0} foi explodido por um míssel.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >Você vê que {0} não é um terrorista, já que você não foi explodido.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Estava de noite, você estava voltando do refeitório quando percebe um caça voando sobre você. Parece que o piloto estava te seguindo! Você rapidamente tenta se esconder e despistar o piloto. Seria embaraçoso se ele soubesse que você bate punheta.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Você estava fazendo suas orações, quando percebe que {0} estava te bisbilhotando atrás de uma pedra! {0} é o bisbilhoteiro.</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Sua bisbilhotada provou que {0} é {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Parece que {0} não gostou que {1} o seguisse em seu caça! {0} logo saca sua arma e dá um tiro certeiro em uma das turbinas do caça e ele cai e explode no chão. O General não vai ficar nada feliz com isso!</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >De repente, os soldados escutam uma explosão.  Os soldados se viram para ver {0} segurando seu RPG, próximo a {1}. {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >O terrorista venceu!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >Os terroristas venceram!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >Os soldados  venceram!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Vocês decidiram matar o Homem-bomba. Antes de morrer, ele aperta sua cintura e... O Homem-bomba venceu.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jogadores restantes, papéis e lado:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0} votou para converter {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} foi enviado(a) para converter {1}... entretanto, ele(a) era o Agente de Controle! {0} está morto(a)!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} foi em seu dormitório na noite passada, pronto(a) para te converter....  mas você o(a) atravessou com sua faca.  Um membro da Nova Ordem está morto... {1} restante(s)!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Você foi convertido(a) e agora é um membro da Nova Ordem.  Durante a noite, você poderá tentar converter outros jogadores.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Membros da Nova Ordem: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} se juntou à Nova Ordem!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} foi enviado(a) para converter {1}... mas ninguém estava no dormitório!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Todos os terroristas morreram e as únicas pessoas sobreviventes pertencem à Nova Ordem...  A Nova Ordem venceu! Preparem-se para uma possível ditadura militar.</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Você foi averiguar {0}, mas ele(a) já estava morto(a)!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Você invade o dormitório de {0} e descobre que ele(a) estava rezando para algum deus desconhecido...  Você rapidamente corta a garganta de {0} com sua espada e acaba de vez com um membro da Nova Ordem.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Você invade a casa de {0} mas não há nenhum sinal de Nova Ordem.  Ele(a) não faz parte da Nova Ordem, então você volta para seu dormitório.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>O grande amigo de vida de {0} acabou de morrer!  Em seu ataque de fúria, ele(a) se tornou um terrorista!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0}, seu melhor amigo, foi morto(a)! Num ataque de fúria, você se torna um terrorista! Seus novos companheiros são: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>um Soldado 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>o Doente 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>o Piloto do caça 💋</value>
+  </string>
+  <string key="Seer">
+    <value>o Hacker 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>o Infiltrado 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>o Segurança 👼</value>
+  </string>
+  <string key="Detective">
+    <value>o Bisbilhoteiro 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>um Terrorista 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>o Soldado cagão 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>o Atirador de Mísseis 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>o Homem-bomba 👺</value>
+  </string>
+  <string key="Fool">
+    <value>o(a) Hacker desatualizado 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>o Amigo leal 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>o Representante do Hacker 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>o Aprendiz de Hacker 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>um membro da Nova ordem 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>o Agente de Controle 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Fugiu</value>
+  </string>
+  <string key="Dead">
+    <value>💀 MORTO(A)</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Vivo(a)</value>
+  </string>
+   <string key="PlayersAlive">
+    <value>Soldados vivos</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>um Cabo 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Você é um Cabo. Recebeu uma promoção recentemente, e agora luta em grupo. Caso outros cabos forem promovidos, você saberá quem são. Caso contrário, você é um cabo sozinho.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele(a) havia morrido. Talvez, os soldados estivessem com inveja da promoção do Cabo {0}</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Os cabos são: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>O membro mais recente da Nova ordem corre para o dormitório de {0} para fazer o trabalho sujo e convertê-lo (a), mas encontra uma bagunça e muito sangue espalhados pelo chão... o alvo morreu!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Um dos terroristas se dirige ao dormitório de {0}, mas quando entra, encontra um homem alto e parrudo o encarando. Antes que pudesse revidar, o homem deu um soco tão forte que o terrorista caiu no chão, desmaiado. Então, o segurança o leva para fora do dormitório, sem saber que o terrorista é o alvo.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} foi enviado(a) para fazer o trabalho sujo, mas as crenças de {1} eram fortes de mais para serem corrompidas. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, um(a) jogador(a) com nome {0} já se juntou à partida.  Por favor mude seu nome para poder entrar no jogo.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Você estava seguindo {0} em seu caça, quando viu que ele estava fazendo uma oração à alguém...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. O que tenha matado ele, não parecia um terrorista.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Estranho... {0} não apareceu no treinamento de cabos esta manhã...</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Você tenta fugir, mas o general não deixa! Deixe de ser um covarde e lute por seu país, soldado!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>está morto(a)</value>
+  </string>
+    <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} foi adicionado(a) na lista de admins. Você pode agora usar /config para alterar as configurações do jogo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Você já está em uma partida! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Múltiplos jogos foram iniciados ao mesmo tempo. Fechando os extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Seu grupo está na fila.  Posição: {0} de {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Desculpe, estou prestes a iniciar uma pequena pausa para manutenção, você não pode iniciar um jogo agora.\nEsperando {0} jogos terminarem...\nVá em @werewolfdev para mais informações (em inglês)</value>
+  </string>
+  <string key="MaxGames">
+    <value>Desculpe, o número máximo de jogos simultâneos foi atingido ({0}).  \nPosição na fila: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} é um grupo preferencial e pulou a fila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Não há nenhuma partida ativa no momento. Inicie uma nova guerra normal com /startgame ou caótica com /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Somente um administrador(a) pode usar este comando.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Após este jogo, estarei desligando o bot brevemente para manutenção.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Após este jogo, estarei desligando o bot brevemente para uma atualização (automatizada).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>ID do usuário não encontrado.  Verifique se você enviou o comando como resposta.</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} já é um(a) adminsitrador(a)!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} não é um(a) administrador(a)!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} foi removido da lista de administradores.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Idioma alterado para {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Não tem hacker!</value>
+  </string>
+  <string key="TimesUp">
+	<value>Tempo esgotado!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Você é o General. Você tem dois filhos na guerra, que se amam muito. Caso um deles morrer, o outro vai se matar em desespero. Mas você pode escolher quem serão seus filhos.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Você é um Substituto. Você é uma pessoa que pode assumir o papel de qualquer um, caso essa pessoa morra.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Você é o Caçador(a)! Seu revolver é o seu amante e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para matar. E se os Terroristas te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Você é o Louco. Após ver os efeitos da guerra, você enlouqueceu, e quer matar todos para que não haja mais uma guerra. Caso você tenha matado todos, você vencerá.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Recentemente, você descobriu que {0} é seu irmão! Não é muita surpresa, já que vocês eram melhores amigos muito antes disso acontecer, mas isso só firmou ainda mais sua amizade. Caso {0} morra, você irá se matar para se juntar a ele no mundo dos mortos, e vice-versa.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Os soldados escolheram te matar. Seja rápido, antes que o general termine seu discurso e dê um belo tiro na sua cabeça.</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} tenta alcançar sua pistola enquanto o nó aperta, mas seus dedos estão cansados e antes de alcançar o coldre seu pescoço estala no meio de todos, anunciando sua morte...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} saca seu revolver, e aponta para a multidão... Seus olhos de atirador tentam decidir quem ele vai levar com ele. Mas ele aceita seu fim, sozinho...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Com o nó em torno do pescoço, {0} saca seu revolver e, rápido como o bote de uma cobra, atira em {1}! "Hasta la vista, baby..." diz o caçador para {1}, que cai duro no chão. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Você foi ferido mortalmente! Com seu último suspiro, você pode levar alguém com você... Sejá rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} recebeu um ferimento profundo, tanto que ele não conseguiu nem mesmo sacar sua arma, caindo duro no chão...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0}, calmo como se o sangue saindo de sua barriga não fosse nada, decide não dar seu último tiro, aceitando seu destino...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>{0} cai no chão, ferido mortalmente... Mas antes de morrer, ele puxa sua pistola e dá um tiro certeiro em {1}, que cai duro no chão, com um novo orifício na testa. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} entra de fininho na casa de {1}. Assim que entra, ouve uma voz sinistra "Que os jogos começem"! {1} aparece de repente com uma tesoura e começa a cortar {0} criando um lindo retalho para sua coleção. Antes de morrer, {1} diz a {0} "Você ia morrer de qualquer jeito!". {0} está morto(a) D:</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>POW! POW! POW! A aldeia ouve o pipoco a noite! O terrorista atacou a pessoa errada, o caçador não iria embora sozinho, levou {0} (um terrorista) junto com ele.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>O terrorista tentou atacar a pessoa errada a noite passada! O Caçador sabe se proteger muito bem e deixou um presentinho para os soldados, o corpo de {0}!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>O terrorista tentou atacar a pessoa errada noite passada! {0} é econtrado morto, quase dá pra sentir pena dele! Louco deve ter ficado feliz com isso..</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o General pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. O louco se divertiu noite passada. {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Você foi jogar um joguinho com {0}. Mas chegando lá o Segurança acabou com sua diversão! Sem brincadeiras essa noite...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>A Nova Ordem manda {0} para converter {1}. Chegando lá {0} é recebido com uma bala bem no meio dos córneo! {0} tá morta...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>A Nova Ordem manda {0} para converter {1}. Chegando lá {0} descobre que era melhor ter ficado em casa rezando. Seu corpo é encontrado aberto na rua, mas com os orgãos revirados. {0} está morta...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Você tentou proteger a pessoa errada. O Louco te convida para brincar com ele, um tipo de brincadeira que você com certeza não gosta. O tipo de brincadeira que você morre no final...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Você entra em seu caça, já sabendo que vai perseguir {0}, mas você não acha ele... pelo menos onde você queria achar, porque ele pulou de trás do banco e cortou sua garganta com uma tesoura. Então, {0} pega o paraquedas de emergência e ejeta do caça...</value>
+  </string>
+  <string key="DGToMason">
+    <value>O Substituto {0} agora se tornou um Cabo, assim como você!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} morreu, e você foi chamado para assumir o papel de {0} como cabo.  Seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>O Substituto {0} se transformou em um membro da Nova Ordem.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} morreu, e você teve que substituir seu papel como um agente da Nova Ordem. Seus novos companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>O Substituto {0} se tornou um terrorista, mais um para o bando!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} morreu, e você se transformou em um terrorista. Seu novo bando é: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>O único sobrevivente foi o Louco! Depois de ter percebido o que ele fez, ele acabou se suicidando mas como na guerra é o ultimo vivo que vence, ele venceu!</value>
+  </string>
+  <string key="AskKill">
+    <value>Quem você quer matar essa noite?</value>
+  </string>
+  <string key="LoverDied">
+    <value>{0} levou um tiro no peito durante a guerra e seu irmão {1}, foi correndo em sua direção. Chorando pela morte de seu irmão, que estava sob seus braços, {1} leva um tiro na testa e cai morto no chão. Os dois vão viver no mesmo mundo para sempre. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value> Quem você escolherá para substituir?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Quem será seus filhos? Escolha seu primeiro filho.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Agora, escolha seu segundo filho.</value>
+  </string>
+  <string key="Hunter">
+    <value>o Caçador 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>o General 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>o Louco 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>o Substituto 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Recentemente, você descobriu que {0} é seu irmão! Não é muita surpresa, já que vocês eram melhores amigos muito antes disso acontecer, mas isso só firmou ainda mais sua amizade. Caso seu irmão morra, você irá se matar para se juntar a ele no mundo dos mortos, e vice-versa. Se no final vocês forem os unicos vivos, vocês vencem.</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Você se tornou a Amigo Leal. Seu melhor amigo é {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Os irmãos venceram. Agora, restou eles num lugar deserto.</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Quando acordam, vocês encontram {0} largado no meio da praça, parecendo uma peneira por causa dos tiros. Parece que alguém visitou o caçador e se deu mal! {1}</value>
+  </string>
+
+  <string key="CultAttempt">
+    <value>Alguém bateu na sua porta a noite, "Olá, você tem um minuto para ouvir a palavra da Nova Ordem?" Você fecha a porta na cara deles, sua fé é mais forte!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Você já está na lista de espera para {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Você foi adicionado à lista de espera para {0}. Mandarei uma mensagem para você quando o próximo jogo começar.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Um novo jogo vai começar em {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>A manhã chega ao distrito, e somente duas pessoas estão de pé. {0} olha para {1}, um sorriso sinistro abre em sua face, ele puxa a faca e brinca com {1}, que agora está morto. Que jogo louco!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos no distrito morreram, ninguém ganhou a partida. A não ser que alguém vire um zumbi.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para uma brincadeira.  {1} rápido como o trovão saca sua arma e atira em {0}. {0}, com seu último suspiro, joga sua faca em {1}. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Você não decidiu a tempo, então o bot escolheu por você: {0}</value>
+  </string>
+  <string key="Won">
+
+    <value>Ganhou</value>
+  </string>
+  <string key="Lost">
+
+    <value>Perdeu</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>O soldado {0} não votou e foi morto por isso {1} vezes nas últimas 24 horas.</value>
+   o err</string>
+	
+<!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
+  <string key="AboutVG">
+    <value>Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Você é o Hacker! Logo após de ter descoberto uma brecha nos servidores do governo, todas as noites você pode o invadir para saber o papel de alguém, antes que o firewall te desconecte! Não se esqueça de se conectar a uma VPN antes.</value>
+  </string>
+  <string key="AboutWw">
+    <value>Você é um terrorista! Devoto ao islamismo, seu objetivo é matar todos os que se recusam a se converter a sua religião.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Você é o Piloto do Caça! Todas as noites, você faz um vôo noturno e segue uma pessoa de sua escolha para analizar seus movimentos! Mas cuidado. Se você seguir um terrorista, ele tem os contatinhos dele!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Você está doente, mas ninguém sabe disso! Se um terrorista te matar, ele vai ser contaminado pela sua doença e vai ficar um dia sem matar ninguém!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Parabéns, você é o Soldado! Seu objetivo é matar os Terroristas, a Nova Ordem, e qualquer outra ameaça! Todas as noites, você pode votar para matar alguém, então, use seu voto com sabedoria.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Os terroristas te confiaram uma missão: deixar seu legado em pé! Caso todos os terroristas morram, você vai se transformar em um.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Você é o segurança! Pago pelo governo, todos os dias você pode escolher alguém para proteger. Mas cuidado, pois se você for proteger um terrorista, ele pode te matar!</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Você é o bisbilhoteiro, e joga pelo exército. Durante o dia, você escolhe uma pessoa pra bisbilhotar entre as frestas na parede. No entanto, ao fazer isso, você pode ser descoberto pelos terroristas! (40% de chance)</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Você é o Atirador de Mísseis! Todos os dias, você pode escolher alguém para atirar! Você só tem dois mísseis, então use-os com sabedoria! Mas cuidado. Quando você atirar, todos vão escutar a explosão! (Óbvio :/)</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Você é o Homem-bomba, seu time é você mesmo!  Se você for morto, você ganha automaticamente, sozinho.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Você é o Hacker! Logo após de ter descoberto uma brecha nos servidores do governo, todas as noites você pode o invadir para saber o papel de alguém, antes que o firewall te desconecte! Não se esqueça de se conectar a uma VPN antes.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Você é um agente da Nova Ordem. Vocês são um grupo de protestantes, que acham que deveriam assumir o poder... (de uma forma bruta). Durante a noite, você poderá escolher alguém para converter à Nova ordem. Se todos os jogadores restantes ao final do jogo forem da Nova Ordem, ela vence!</value>
+  </string>
+  <string key="AboutCH">
+    <value>A Nova Ordem está infiltrada no exército tentando converter todo mundo, e você foi incumbido de proteger o exército.  Durante a noite você poderá escolher um(a) jogador(a).  Se ele(a) for da Nova Ordem, ele(a) morre.  Caso a Nova Ordem tente te converter, o membro mais recente morre. Você é o Agente de Controle.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Você é um Amigo Leal Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em terrorista, como forma de vingança.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Você é o Aprendiz de Hacker. Caso o Hacker morra, você tomará seu lugar como Hacker. Empolgante, não?</value>
+  </string>
+  <string key="AboutBH">
+    <value>Você é o Representante do Hacker, você saberá quem é o verdadeiro hacker.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Você é um Cabo. Recebeu uma promoção recentemente, e agora luta em grupo. Caso outros cabos forem promovidos, você saberá quem são. Caso contrário, você é um cabo sozinho.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+     Você é um Substituto. Você é uma pessoa que pode assumir o papel de qualquer um, caso essa pessoa morra.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Você é o General. Você tem dois filhos na guerra, que se amam muito. Caso um deles morrer, o outro vai se matar em desespero. Mas você pode escolher quem serão seus filhos.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Você é o Caçador(a)! Seu revolver é o seu amante e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para matar. E se os Terroristas te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Você é o Louco. Após ver os efeitos da guerra, você enlouqueceu, e quer matar todos para que não haja mais uma guerra. Caso você tenha matado todos, você vencerá.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para é o desenvolvedor desse jogo, e ele gosta de latir pras pessoas. Talvez ele tenha ficado muito tempo com os Lobos... Mexer com os lobos não é uma idéia muito boa, né?</value>
+  </string>
+  <string key="EndTime">
+    <value>Duração do jogo: {0}</value>
+  </string>
+ 
+ 
+    <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>{0}º dia</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Alguma coisa deu errado, e esse nodo desligou :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Eu te enviei uma mensagem no privado</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor me envie uma mensagem no privado para eu conseguir te enviar mensagens: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Obrigado por me ativar! Agora eu posso te enviar mensagens privadas.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Você precisa usar o comando smite como resposta ao usuário que quer aniquilar</value>
+  </string>
+  <string key="WhatToDo">
+    <value>O que você quer fazer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Você precisa estar em um grupo para se juntar a uma partida nele!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Você precisa começar uma partida dentro de um grupo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo de processamento da mensagem: {0}\nUso de CPU atual: {1}%\nMensagens por segundo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Que língua?\nAtual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Que variante?\nAtual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma definido como {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Pegar que arquivo de idioma?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Não há nodos ligados no momento, por favor tente novamente dentro de alguns segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Você precisa acionar esse comando em um grupo</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Você não é um administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>Você não é o Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sim</value>
+  </string>
+  <string key="No">
+    <value>Não</value>
+  </string>
+  <string key="Allow">
+    <value>Permitir</value>
+  </string>
+  <string key="Disallow">
+    <value>Não permitir</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Não mostrar</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Apenas Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Apenas Caos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Escolha do jogador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Não mostrar nenhum</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar apenas os de jogadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar os de todos os jogadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose # editem isso quando der pra traduzir o "not"# -->
+    <value>Você quer permitir fugas após o início de uma partida?\nLembre-se que jogadores sempre poderão fugir antes do início da partida!\nAtual: Jogadores {0} podem fugir.</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
+    <value>{0} não estão permitidos a sair após a guerra começar.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Que quantidade de jogadores você gostaria de definir como a máxima?\nAtual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Número máximo de jogadores definido como {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrar ou não os papéis dos jogadores quando morrerem?\nAtual: {0}</value>
+  </string>
+  <!-- # editem isso quando der pra traduzir o shown/hidden # -->
+  <string key="ShowRolesDeathA">
+    <value>Papéis dos jogadores serão {0} quando morrerem.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Qual modo de jogo estará ativo no grupo?\nAtual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de jogo definido como {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Como você quer que os papéis de jogadores sejam revelados ao fim do jogo?\nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Revelação dos papéis definida como: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Escolha a duração base (em segundos) do dia.   Ela ainda será modificada de acordo com o número de jogadores.\nO tempo mínimo adicionado de acordo com os jogadores é de 60 segundos.  Configuração padrão: {0}\nAtual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duração base do dia definida como {0} segundos</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Escolha a duração (em segundos) da noite. Configuração Padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duração da noite definida como {0} segundos</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Escolha a duração (em segundos) da votação para matar. Configuração padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duração da votação para matar definida como {0} segundos</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Permitir o Hacker desatualizado como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Existência do Hacker desatualizado definida como: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Permitir o Homem-bomba como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Existência do Homem-bomba definida como: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Permitir a Nova ordem como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Existência da Nova ordem definida como: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Obrigado e tenha um bom jogo!</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Você quer procurar um grupo jogando em que idioma?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aqui estão os grupos jogando em {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor me mande start no privado para eu poder te enviar mensagens.</value>
+  </string>
+  
+  <!--New strings updated 21/08/16 -->
+
+  <string key="PlayerNoPM">
+    <value>{0} não iniciou o bot, e foi removido(a) do jogo!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aqui está a lista mais recente de soldados</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Não fui capaz de obter a lista de jogadores, você tem certeza de que a guerra já começou?</value>
+  </string>
+  <string key="YouJoined">
+    <value>Você se juntou à guerra em {0}</value>
+  </string>
+  
+  <!-- Atualização 4.0 -->
+  
+  <string key="RoleInfoMayor">
+    <value>Você é o Marechal. Seu voto durante o linchamento contará duas vezes, uma vez que você se revelou. Você faz parte do time do Exército.</value>
+  </string>
+
+  <string key="RoleInfoPrince">
+    <value>Você é o Pobre Coitado. Faz parte do exército, mas na hora de morrer chora tanto que todos tem dó de você e acabam não te matando.</value>
+  </string>
+
+  <string key="RoleInfoClumsyGuy">
+    <value>Você é o Soldado Trapalhão. Você vai tentar votar, mas vai acabar se enrolando todo e haverá 50% de chance de você votar na pessoa errada.</value>
+  </string>
+
+  <string key="RoleInfoSorcerer">
+    <value>Você é o Hacker de Contrato. Contratado pelos terroristas, seu único papel é descobrir quem são os terroristas para ajudar eles e quem é o hacker do exército. Você ganha somente se os terroristas ganharem.</value>
+  </string>
+
+  <string key="RoleInfoBlacksmith">
+    <value>Você é o Plantador de Minas. Seu único objetivo é plantar as minas em volta do exército para que não o invadam. Mas você tem um número limitado de minas, que só vão dar pra um dia.</value>
+  </string>
+
+  <string key="RoleInfoAlphaWolf">
+    <value>Você é o Terrorista Lider. Sempre que tentar matar alguém, você vai avaliar se a pessoa merece entrar para o time dos terroristas. Há uma chance de 20% de ela valer a pena para seu time.</value>
+  </string>
+
+  <string key="RoleInfoWolfCub">
+    <value>Você é o Terrorista Jr. Adorado por todos, você é muito prestativo para o caos. Se você morrer, os terroristas vão se enfurecer e haverá dois ataques de uma só vez.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Os soldados votaram, e o General contabilizou os votos. O general então anuncia um nome. "{0}, se levante!". Antes que pudessem reagir, {0} caiu em prantos, e todos ficaram comovidos com isso. Um dos soldados avisa então que {0} não oferece riscos ao exército, acompanhado de provas. Então o General envergonhado, decide encerrar a votação.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Você acessa uma base de dados adquirida na Deep Web para ver o que {0} é, mas lá não consta nada sobre {0}. Ele provavelmente não é um terrorista ou vidente.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>Todos os soldados estavam descançando, quando de repente o Marechal {0} vai ao pátio; o silêncio ficou. Então, ele foi andando em direção ao general, que após algumas falas avisa "De agora em diante, os votos do Marechal {0} valerão por dois"</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clique em "Entrar no pátio" quando estiver pronto para falar com o General.</value>
+  </string>
+  <string key="Reveal">
+    <value>Entrar no pátio</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Você quer plantar as minas hoje, impedindo que os terroristas ataquem?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Enquanto o resto do exército debate sobre o que está acontecendo, {0} anda por aí plantando as minas dele no chão. Pelo menos por enquanto, o exército estará segura de ataques terroristas.</value>
+  </string>
+  <string key="Mayor">
+    <value>o Marechal 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>o Pobre Coitado 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>o Hacker de Contrato 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>o Soldado Trapalhão 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>o Plantador de Minas ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>o Lider Terrorista ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>o Terrorista Jr. 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Os terroristas começaram a se aproximar de {0} até que pararam. {1}, o lider dos terroristas diz em voz grossa "Junte-se a nós ou não tenha a vida poupada". Então {0} aceita, e todos voltam para suas bases. {0} vai se juntar aos terroristas amanhã de noite.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Os terroristas começaram a se aproximar de você até que pararam. Então o lider dos terroristas diz em voz grossa "Junte-se a nós ou não tenha a vida poupada". Você, sem pensar duas vezes, aceita e todos voltam para suas bases. Você vai virar um terrorista amanhã de noite.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>O sol se põe, e você escapa silenciosamente do exército para se juntar aos terroristas.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Você é o Marechal, pessoa de cargo mais importante no exército. Quando quiser, você pode falar com o general para que possa ter seus votos duas vezes mais poderoso na hora de matar alguém.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>O Pobre Coitado é uma pessoa do bem. Sempre que for escolhido pra morrer, todos terão piedade de sua vida. Assim, ele só pode ser morto pelos terroristas.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>O Hacker de Contrato é um hacker que tem como objetivo descobrir quem são os terroristas para ajudá-los e o hacker do exército.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Você é o Soldado Trapalhão. Acho que não deveriam aceitar desastrados para o exército... Sempre que você votar, há 50% de chance de votar em outra pessoa.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Você é o Plantador de Minas. Seu unico (e importante) objetivo é plantar minas em volta do castelo para que não haja ataques por uma noite. Mas cuidado, pois te forneceram um número limitado de minas que só vão durar para uma noite.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Você é o Lider dos Terroristas. Na hora de matar alguém, você avalia se a pessoa tem as condições necessárias para entrar no seu time. Ela tem 20% de chance de ser aceita.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Você é o Terrorista Jr. Você é o xodó do lider, e eu acho que se te matassem ele não ia deixar barato. Acho que se v... OLHA COMO VOCÊ É FOFO *-*</value>
+  </string>
+</strings>

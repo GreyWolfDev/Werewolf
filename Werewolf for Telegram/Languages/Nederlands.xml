@@ -1,5 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- THIS VERSION IS UP TO DATE AS OF 2016-05-14 20:49MDST -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- THIS VERSION IS UP TO DATE AS OF 2016-07-18 20:49MDST -->
+<!-- About commands are still missing -->
+<!--- Last update: 2016-07-20 fixed typos, vakmannen are now Vrijmetselaars -->
+<!--- Last update: 2016-08-21 amor is nu Cupido, /rolelist vertaald, fixed typos -->
+<!--- Last update: 2016-11-04 Update 4.0 (onderaan) toegevoegd. Cult is nu Sekte (cult hunter ook vertaald). Meerdere grammaticale fouten verbeterd, interpunctie, vertalingen en wat zinnen herschreven om ze beter te laten lopen. -->
+<!--- Last update: 2016-11-06 Fout in encoding hersteld. Smileys opnieuw toegevoegd. Nog een paar taalfouten eruit gehaald. -->
+
 <strings>
   <language name="Nederlands" base="Nederlands" variant=""/>
   <string key="NotInGame">
@@ -7,20 +13,21 @@
   </string>
   <string key="PlayerStartedGame">
     <value>{0} heeft een spel gestart! Typ /join om mee te doen.... en waarschijnlijk sterven :P</value>
-    <value>Een niew spel is gestart door {0}! Typ /join om opgevreten te worden!</value>
+    <value>Een nieuw spel is gestart door {0}! Typ /join om opgevreten te worden!</value>
   </string>
   <string key="PlayerStartedChaosGame">
     <value>{0} heeft een chaosspel gestart! Typ /join om mee te doen.... en waarschijnlijk sterven :P</value>
-    <value>Een niew chaosspel is gestart door {0}! Typ /join om opgevreten te worden!</value>
+    <value>Een nieuw chaosspel is gestart door {0}! Typ /join om opgevreten te worden!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Je kan nu niet meedoen! Het spel loopt namelijk al.</value>
   </string>
   <string key="AlreadyJoined">
     <value>Je speelt al mee!</value>
+    <value>Je speelt al mee, Suffie!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>Nog een minuut voor het spel begint, typ /join</value>
+    <value>Nog een minuut voor het spel begint, typ /join.</value>
   </string>
   <string key="SecondsLeftToJoin">
     <value>Nog {0} seconden voor het spel begint, typ /join</value>
@@ -47,7 +54,7 @@
     <value>{0} stuur me alstublieft een PM (@{1}) met /start, ik heb geen record van je, dus kan ik je niet terug PMen. Om dit te spelen, moet ik dat kunnen.</value>
   </string>
   <string key="DeadFlee">
-    <value>Je kan niet vluchten! Je bent DOOD! Ga terug je graf in.... jezus christus.</value>
+    <value>Je kan niet vluchten! Je bent DOOD! Ga terug je graf in....</value>
   </string>
   <string key="Flee">
     <value>{0} is vol angst gevlucht!</value>
@@ -59,7 +66,7 @@
     <value>{0} spelers blijven over.</value>
   </string>
   <string key="DidntAsk">
-    <value>Hey ik heb je nog niks gevraagd!</value>
+    <value>Hey, ik heb je nog niks gevraagd!</value>
   </string>
   <string key="NotPlaying">
     <value>Het lijkt erop dat je niet aan het spelen bent...</value>
@@ -80,19 +87,19 @@
     <value>{0} heeft twee nachten op rij niet gestemd. Een hogere macht ziet dit als een ernstige overtreding, en {0} valt om, dood voordat ze de grond raken. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value>Verrader!!! Tijd om iedereen te laten zien wat je echt bent...</value>
+    <value>Verrader 🖕!!! Tijd om iedereen te laten zien wat je echt bent...</value>
   </string>
   <string key="ChoiceAccepted">
     <value>Stem geaccepteerd.</value>
   </string>
   <string key="BeholderSeer">
-    <value>\n{0} is de ziener.</value>
+    <value>\n{0} is de Ziener 👳.</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>{0} was de Ziener. Het lot valt nu op jouw, de Leerling, om hun plaats als Ziener over te nemen.</value>
+    <value>{0} was de Ziener 👳. Het lot valt nu op jou, de Leerling, om de plaats van Ziener in te nemen.</value>
   </string>
   <string key="BeholderNewSeer">
-    <value>{0} was een Leerling, en het lot valt op hun om {1}'s plaats over te nemen als de nieuwe Ziener.</value>
+    <value>{0} was de Leerling van de Ziener 🙇, en het lot valt op hun om {1}'s plaats over te nemen als de nieuwe Ziener 👳.</value>
   </string>
   <string key="SeerSees">
     <value>Je kijkt in je kristal, en je ziet dat {0} een {1} is!</value>
@@ -104,7 +111,7 @@
     <value>Wie wil je opsporen?</value>
   </string>
   <string key="AskShoot">
-    <value>Wie will je dood schieten? {0} kogel(s) over.</value>
+    <value>Wie wil je dood schieten? {0} kogel(s) over.</value>
   </string>
   <string key="AskVisit">
     <value>Wie wil je bezoeken?</value>
@@ -119,7 +126,7 @@
     <value>Wie wil je opeten?</value>
   </string>
   <string key="AskHunt">
-    <value>Wie wil je jagen?</value>
+    <value>Op wie wil je jagen?</value>
   </string>
   <string key="AskRoleModel">
     <value>Wie is je rolmodel?</value>
@@ -138,67 +145,67 @@
     <value> en </value>
   </string>
   <string key="RoleInfoCursed">
-    <value>Jij bent Vervloekt. Jij bent nu een burger, maar als de weerwolven je aanvallen, dan wordt je een wolf.</value>
+    <value>Jij bent Vervloekt 😾. Jij bent nu een Burger 👱, maar als de weerwolven je aanvallen, dan wordt je een weerwolf 🐺.</value>
   </string>
   <string key="RoleInfoDetective">
-    <value>Jij bent de Rechercheur. Je kunt overdag een speler opsporen, en dan zie je hun rol. Maar - let op! Er is een 40% kans dat de wolven je ontdekken!</value>
+    <value>Jij bent de Rechercheur 🕵. Je kunt overdag een speler opsporen, en dan zie je hun rol. Maar - let op! Er is een 40% kans dat de wolven je ontdekken!</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>Proficiat! Jij bent de Dronkeman. (en echt, da's geen verassing...)</value>
+    <value>Proficiat! Jij bent de Dronkenman 🍻. (En echt, da's geen verassing...)</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>Jij bent de Schutsengel. Je kan elke nacht iemand beschermen. Als je een wolf kiest, dan is er een 50% kans dat je de nacht niet zal overleven...</value>
+    <value>Jij bent de Beschermengel 👼. Je kan elke nacht iemand beschermen. Als jij een Wolf 🐺 uitkiest, dan is er 50% kans, dat je de nacht niet zal overleven...</value>
   </string>
   <string key="RoleInfoGunner">
-    <value>Jij bent een Konstabel. Je hebt twee kogels. Je kan overdag kiezen om een speler ter plekke te executeren. Iedereen zal de schoten horen, dus iedereen zal weten wie je bent. (dus geen wolf).</value>
+    <value>Jij bent de Konstabel 🔫. Je hebt twee kogels. Je kan overdag kiezen om een speler ter plekke te executeren. Iedereen zal de schoten horen, dus iedereen zal weten wie je bent (dus geen wolf).</value>
   </string>
   <string key="RoleInfoHarlot">
-    <value>Ah, slet! Jij bent de Hoer. Je werkt voornamelijk s'nachts (en voor niks... brrr), maar als voordeel kan je zien of ze niet een wolf zijn. Maar - als je toevallig een wolf tegenkomt, ofwel via directe visite, ofwel doordat ze toevallig in hetzelfde huis terechtkomen, dan had je thuis moeten blijven. Komt de wolf bij jouw thuis en je bent aan het werk? Effe mazzel!</value>
+    <value>Ah, slet! Jij bent de Hoer 💋. Je werkt voornamelijk 's nachts (en voor niks... brrr), maar als voordeel kan je zien of je klant wel of niet een wolf is. Maar - als je toevallig een Wolf 🐺 tegenkomt, ofwel via directe visite, ofwel doordat ze toevallig in hetzelfde huis als jij terechtkomen, dan had je beter thuis kunnen blijven. Komt de wolf bij jou thuis en je bent aan het werk? Effe mazzel!</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value>Verrader! Je bent een wolf, maar je zorgt ervoor dat niemand dat weet, te danken aan een drankje met monnikskap, ookwel bekend als wolfsbane. Als de andere wolven dood zijn, zal je je echte kant laten zien. Als de Ziener naar je kijkt, dan hangt het er maar om of ze je als een wolf kunnen plaatsen.</value>
+    <value>Verrader 🖕! Je bent een Wolf 🐺, maar je zorgt ervoor dat niemand dat weet, te danken aan een drankje met monnikskap, ook wel bekend als wolfswortel. Als de andere wolven dood zijn, zal je je echte kant laten zien. Als de Ziener 👳 naar je kijkt, dan hangt het er maar om of ze je als een wolf kunnen plaatsen.</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>XD JIJ BENT EEN WOLF!!! (knalfuif!) Je kan iedere nacht iemand opeten.</value>
+    <value>XD JIJ BENT EEN WOLF 🐺!!! (knalfuif!) Je kan iedere nacht iemand opeten.</value>
   </string>
   <string key="RoleInfoSeer" >
-    <value >Jij bent een Ziener. Je kan elke nacht in je kristal kijken en zien wie iemand is.</value>
+    <value>Jij bent de Ziener 👳. Je kan elke nacht in je kristal kijken en zien wie iemand is.</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >Jij bent maar een Burger, verdoemd tot het verbouwen van een veldje en het opegeten worden door wolven.</value>
+    <value>Jij bent maar een Burger 👱 , verdoemd tot het omploegen van veldjes en het opgegeten worden door wolven.</value>
   </string>
   <string key="RoleInfoTanner" >
-    <value >Jij bent de Looier! Als je opgehangen wordt, dan win je!</value>
+    <value>Jij bent de Looier! Als je opgehangen wordt, dan win je!</value>
   </string>
   <string key="RoleInfoWildChild" >
-    <value >Jij bent een Wild Kind - kies een speler als je rolmodel. Als ze sterven, dan neemt je wilde kant over en wordt je een weerwolf.</value>
+    <value>Jij bent het Wilde Kind 👶 - kies een speler als je rolmodel. Als ze sterven, dan neemt je wilde kant over en word je een Weerwolf 🐺.</value>
   </string>
   <string key="RoleInfoBeholder" >
-    <value >Jij bent de Aanschouwer. Alles wat je kan doen is zien wie de echte Ziener is - dat is de enige reden voor jouw bestaan.</value>
+    <value>Jij bent de Aanschouwer 👁. Het enige dat je kan doen is zien wie de echte Ziener 👳 is - dat is het enige doel in je leven.</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >Jij bent de Leerling van de Ziener. Als ze sterven, dan valt hun lot op je, en wordt jij de Ziener.</value>
+    <value >Jij bent de Leerling van de Ziener 🙇. Als ze sterven, dan valt hun lot op je, en wordt jij de Ziener 👳.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >Jij volgt de Heidense Orde, en elke nacht kan je kiezen om een dorpsbewoner te inwijden. Als iedereen Heidens is, dan winnen ze.</value>
+    <value >Bent lid van een mystieke Sekte, en elke nacht kan je kiezen om een dorpsbewoner te inwijden. Als iedereen lid van de Sekte is, dan winnen ze.</value>
   </string>
   <string key="RoleInfoCultistHunter" >
-    <value >Er is een Heidense Orde in het dorp, en jij brengt de waarheid naar alle Heidensen. Elke nacht kan je een speler bezoeken. Als ze Heidens zijn, dan sterven ze. Als de Orde je probeert te inwijden, dan laat je hen heel duidelijk weten dat je niet te grappen bent, door het executeren van hun nieuwste lid.</value>
+    <value >Er is een Sekte in het dorp , en jij brengt de waarheid naar alle Sekteleden. Elke nacht kan je een speler bezoeken. Als ze lid van de Sekte zijn, dan sterven ze. Als de Sekte je probeert te inwijden, dan laat je hen heel duidelijk weten dat je niet te grappen bent, door het executeren van hun nieuwste lid.</value>
   </string>
   <string key="LynchTime" >
     <value >
-      De zon schuift langzaam onder de horizon, en de dorpsbewoners beslissen wie opgehangen wordt...
+    de zon schuift langzaam onder de horizon, en de dorpsbewoners beslissen wie opgehangen wordt...
       Iedereen heeft nu {0} seconden om te stemmen!
     </value>
   </string>
   <string key="DayTime" >
-    <value >De zon schijnt hoog boven het dorp, het is een mooie dag. Iedereen heeft {0} seconden om te discussieren, te beschuldigen, en te verdedigen.</value>
-    <value >Het miezert, het is grijs, en het is koud... Een kutdag dus. Iedereen heeft {0} seconden om te discussieren, te beschuldigen, en te verdedigen.</value>
+    <value >De zon schijnt hoog boven het dorp, het is een mooie dag. Iedereen heeft {0} seconden om te discussiëren, te beschuldigen, en te verdedigen.</value>
+    <value >Het miezert, het is grijs, en het is koud... Een kutdag dus. Iedereen heeft {0} seconden om te discussiëren, te beschuldigen, en te verdedigen.</value>
   </string>
   <string key="NightTime" >
     <value >
-	  Er klinkt een triest gehuil ergens vandaan... Het is nacht. De dag was stressvol en iedereen is moe.
-      Nachtspelers, jullie hebben {0} seconden om jullie daden te plichten!</value>
+	Er klinkt een triest gehuil ergens vandaan... Het is nacht. De dag was stressvol en iedereen is moe.
+      Nachtspelers, jullie hebben {0} seconden om jullie daden te verrichten!</value>
   </string>
   <string key="LynchKill" >
     <value >Er is gestemd, misschien eerlijk, misschien ook niet... Maar de stemming was geldig, en {0} hangt van de galg te zwaaien. {1}</value>
@@ -207,49 +214,49 @@
     <value >Ah, shit. Geteld en geteld en geteld... En geen beslissing over wie wordt opgehangen. De menigte begint uit elkaar te stromen als iedereen langzaam naar huis slinkt.</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Uh, wat? Geen stemmen? Lees ik dat goed? Oké... Naar huis dan maar.</value>
+    <value >Uh, wat? Geen stemmen? Lees ik dat goed? Ok... Naar huis dan maar.</value>
   </string>
   <string key="DetectiveEaten" >
-    <value >De dorpelingen verzamelen zich voor de lange dag, maar {0} is er niet... Iemand loopt naar hun huis en valt flauw van de schok. {0} ligt over de railing, ingewanden overal verspreid, met een oud insigne in hun bek gedauwd.</value>
+    <value >De dorpelingen verzamelen zich voor de lange dag, maar {0} is er niet... Iemand loopt naar hun huis en valt flauw van de schok. {0} ligt over de railing, ingewanden overal verspreid, met een oud insigne in hun bek gedauwd. </value>
   </string>
   <string key="GuardianEaten" >
-    <value >Vogels fluiten, de zon schijnt, en {0} is bovenop de kerk gespeerd. Zoals ze in Amerika zeggen, 'business as usual'. De Schutsengel is dood.</value>
+    <value >Vogels fluiten, de zon schijnt, en {0} is bovenop de kerk gesperd. Zoals ze in Amerika zeggen, 'business as usual'. De Beschermengel 👼 is dood.</value>
   </string>
   <string key="GunnerEaten" >
-    <value >Als iedereen wakker wordt en naar het plein toewandelt, liggen er stukken metaal en hout, duidelijk van een geweer... Dan vingers... En verspreid over het plein ligt het lijk van {0}. Niet erg smakelijk, die stukken, tenminste niet voor een normale burger. Iemand kotst ervan. De Konstabel is dood.</value>
+    <value >Als iedereen wakker wordt en naar het plein toe wandelt, liggen er stukken metaal en hout, duidelijk van een geweer... Dan vingers... En verspreid over het plein ligt het lijk van {0}. Niet erg smakelijk, die stukken, tenminste niet voor een normale Burger 👱. Iemand kotst ervan. De Konstabel 🔫 is dood.</value>
   </string>
   <string key="SeerEaten" >
-    <value >Iedereen wordt langzaam wakker - en {0} wordt gevonden, zonder strot, losjes over een kristallen bal gebogen, Tarotkaarten besmeurd met bloed. De Ziener is dood.</value>
+    <value >Iedereen wordt langzaam wakker - en {0} wordt gevonden, zonder strot, losjes over een kristallen bal gebogen, Tarotkaarten besmeurd met bloed. De Ziener 👳 is dood.</value>
   </string>
   <string key="DrunkEaten" >
-    <value >Iemand roept brand - het café is in de fik!!! Nadat de brand geblust is, worden delen van een lijk gevonden. {0} ligt werkelijk overal door de as... Hier wat, daar wat...</value>
+    <value >Iemand roept brand - het caf� is in de fik!!! Nadat de brand geblust is, worden delen van een lijk gevonden. {0} ligt werkelijk overal door de as... Hier wat, daar wat...</value>
   </string>
   <string key="FoolEaten" >
-    <value >Iedereen wordt langzaam wakker - en {0} wordt gevonden, zonder strot, losjes over een kristallen bal gebogen, ...met een stel speelkaarten? Huh? Wat een Dwaas!</value>
+    <value >Iedereen wordt langzaam wakker - en {0} wordt gevonden, zonder strot, losjes over een kristallen bal gebogen, ...met een stel speelkaarten? Huh? Wat een Dwaas 🃏!</value>
   </string>
   <string key="DefaultEaten" >
     <value>Iedereen wordt langzaam wakker... maar wat riekt er daar? Het spoor wordt gevolgd tot een schuur, die vlug opengebroken wordt. Binnen ligt het lijk van {0}, half opgevreten. NOMNOMNOMNOM {1}</value>
   </string>
   <string key="HunterKilledCultist">
-    <value>Er komt een geurtje uit het hus van {0}...  een paar dorpelingen schoppen de deur open, om een lijk te vinden, uitgespreid in een vijfpuntig symbool, wat afgehakte tentakels ernaast... een Heidense is vermoord door de jager!</value>
+    <value>Er komt een geurtje uit het huis van {0}...een paar dorpelingen schoppen de deur open, om een lijk te vinden, uitgespreid in een vijfpuntig symbool, wat afgehakte tentakels ernaast... een Sektelid 👤 is vermoord door de Jager 🎯!</value>
   </string>
   <string key="NoAttack" >
-    <value >De dorpelingen stromen langzaam het plein op, vol vrees. Maar iedereen is er, en er klinkt een enkle zucht.</value>
+    <value >De dorpelingen stromen langzaam het plein op, vol vrees. Maar iedereen is er, en er klinkt een enkel zucht.</value>
   </string>
   <string key="CursedBitten" >
-    <value >De wolven hebben komen snuffelen... maar iets overkwam ze. Je hebt de aanval overleefd - maar je realizeert met een schok dat je voorpoten bedekt zijn met een vacht... je bent nu een wolf!</value>
+    <value >De wolven hebben komen snuffelen... maar iets overkwam ze. Je hebt de aanval overleefd - maar je realiseert met een schok dat je voorpoten bedekt zijn met een vacht... je bent nu een Wolf 🐺!</value>
   </string>
   <string key="WolfTeam">
     <value>Je roedel: {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
-    <value >{0} werdt gebeten... maar was vervloekt! Ze zijn nu een wolf! Proficiat op je roedel's niewste lid!</value>
+    <value >{0} werd gebeten... maar was Vervloekt 😾! {0} is nu ook een Weerwolf 🐺! Proficiat met jullie nieuwste roedellid!</value>
   </string>
   <string key="WolvesEatYou" >
-    <value >Ah fuck, je werdt aangevallen door de wolven, en je bent nu hun avondeten! NOMNOMNOMNOM</value>
+    <value >Ah fuck, je werd aangevallen door de wolven, en je bent nu hun avondeten! NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Oh nee! {0} was de dronkeman! Hun bloedalcohol was zo hoog dat je van hun vlees dronken geworden bent, en het vandaag en vannacht af moet slapen.</value>
+    <value >Oh nee! {0} was de Dronkenman 🍻! Hun bloedalcoholgehalte was zo hoog dat je van hun vlees dronken geworden bent, en het vandaag en vannacht af moet slapen.</value>
   </string>
   <string key="GuardWolf" >
     <value >Je hebt een wolf beschermd. Bijwerkingen betrekken maar zijn niet gelimiteerd tot het worden van hun lunch.</value>
@@ -264,31 +271,31 @@
     <value>Dat gevoel wanneer je {0} probeert te beschermen, maar ze zijn niet thuis. Fuck je leven...</value>
   </string>
   <string key="GuardSavedYou" >
-    <value >Een schutsengel heeft wacht over je gestaan, en de wolven hebben je niet kunnen opeten!</value>
+    <value >Een Beschermengel 👼 heeft wacht over je gestaan, en de wolven hebben je niet kunnen opeten!</value>
   </string>
   <string key="HarlotEaten" >
-    <value >De hoer heeft beslist om eens een nachtje thuis te blijven... En natuurlijk hadden de wolven andere plannen voor hun. {0} is wolvenvoer!</value>
+    <value >De Hoer 💋 heeft beslist om eens een nachtje thuis te blijven... En natuurlijk hadden de wolven andere plannen voor hun. {0} is wolvenvoer!</value>
   </string>
   <string key="HarlotNotHome" >
     <value >Vreemd... {0} ging toch niet werken vanavond? Dan maar hongeren...</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value >Je glipt het huis van {0} in om wat plezier te hebben... maar er staat alleen een wolf. In plaats van honger zie je lust op hun gezicht, en jullie hebben een erg ruwe nacht. Maar voordat je kan s'ochtends kan ontsnappen klemmen hun kaken rond je keel...</value>
+    <value >Je glipt het huis van {0} in om wat plezier te hebben... maar er staat alleen een Wolf 🐺. In plaats van honger zie je lust op hun gezicht, en jullie hebben een erg ruwe nacht. Maar voordat je kan s'ochtends kan ontsnappen klemmen hun kaken rond je keel...</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
-    <value >{0} is in het verkeerde huis geglipt! Ze hangen van de kerkdeur met een ijzeren staaf door hun lichaam, en hun strot is eruitgescheurd. Hoe triest... :(</value>
+    <value >{0} is in het verkeerde huis geglipt! Ze hangen van de kerkdeur met een ijzeren staaf door hun lichaam, en hun strot is eruit gescheurd. Hoe triest... :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
-    <value >{0} kruipt stilletjes het huis van {1} binnen, klaar om wat te doen over deze stress. Maar wat ze zien is een wolf die {1} als lunch heeft genomen! De wolf draait zich om... en springt op {0}! {0} is morsdood.</value>
+    <value >{0} kruipt stilletjes het huis van {1} binnen, klaar om wat te doen over deze stress. Maar wat ze zag is een Wolf 🐺 die {1} aan het verorberen is! De wolf draait zich om... en bespringt {0} (niet op de manier waarop ze normaliter besprongen wordt)! {0} is morsdood.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
-    <value >Je snapt dat {0} geen wolf kan zijn... Anders hoe hebben jullie de hele nacht in maanlicht liggen neuken?</value>
+    <value >Je snapt dat {0} geen wolf kan zijn... Anders hoe hebben jullie de hele nacht in maanlicht liggen neuken? </value>
   </string>
   <string key="HarlotVisitYou" >
-    <value >Het was donker en je was moe, dus je werdt verassen door de hoer, die stilletjes in je bed kruipt. Jullie neuken tot je allebei genoeg hebben, en ze verdwijnt stilletjes de nacht in...</value>
+    <value >Het was donker en je was moe, maar je werd verrast door de Hoer 💋, die stilletjes in je bed kruipt. Het is een nacht, die je normaal alleen in (porno)films ziet (KEDENG KEDENG). Jullie doen het tot je allebei genoeg hebben, en ze verdwijnt stilletjes de nacht in...</value>
   </string>
   <string key="DetectiveCaught" >
-    <value >Een geluid...? Daar! Bij het raam! Je opent het en kijkt om je heen, om {0} weg zien te glippen door de nacht.  Ze zijn de rechercheur!</value>
+    <value >Een geluid...? Daar! Bij het raam! Je opent het en kijkt om je heen, om {0} weg zien te glippen door de nacht.Ze zijn de Rechercheur 🕵!</value>
   </string>
   <string key="DetectiveSnoop" >
     <value >Je kijkt door {0}'s raam en... Je ziet dat ze {1} zijn!</value>
@@ -300,7 +307,7 @@
     <value >Plotseling schalt er een schot. Iedereen haast zich naar het geluid toe... en ziet {0} staan met een geweer gericht op de schedel van {1}, de loop nog trillend. {2}</value>
   </string>
   <string key="WolfWins" >
-    <value >De Weerwolf heeft gewonnen!</value>
+    <value >De Weerwolf 🐺 heeft gewonnen!</value>
   </string>
   <string key="WolvesWin" >
     <value >De Weerwolven hebben gewonnen!</value>
@@ -309,7 +316,7 @@
     <value >De Burgers hebben de wolven uitgeroeid... Da's nu effe een feestje waard!</value>
   </string>
   <string key="TannerWins" >
-    <value >Ah, shit. Het lijk what nu van de galg zwaait is dat van de Looier! Stom stom stom! Ze winnen!</value>
+    <value >Ah, shit. Het lijk wat nu van de galg zwaait is dat van de Looier 👺! Stom stom stom! Ze winnen!</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Overlevende spelers, rollen, en factie:</value>
@@ -318,145 +325,845 @@
     <value >{0} heeft gestemd om {1} in te wijden.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <value>{0} was gestuurd om het vuile werk te doen, namelijk {1} inwijden... maar ze waren de jager! {0} is in een ander leven!</value>
+    <value>{0} was gestuurd om het vuile werk te doen, namelijk {1} inwijden... maar het was de Sektejager 💂! {0} is in een ander leven!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <value>{0} kwam naar je huis, om je op het Heidense pad te stellen... maar in plaats daarvan hebben ze bloed op je jachtmes gekregen. Een Heidense is dood... en er blijven {1} over.</value>
+    <value>{0} kwam naar je huis, om je mee te laten doen aan de bloederig rituelen van de Sekte, maar je was goed voorbereid en nu kleeft hun bloed aan je jachtmes. Een Sektelid 👤 is dood... en er blijven {1} over.</value>
   </string>
   <string key="CultConvertYou">
-    <value>Jij bent op het Heidense pad gesteld! Elke nacht heb je een kans om een andere speler het licht te laten zien.</value>
+    <value>Jij bent toegetreden tot de Sekte! Vanaf nu houd je je 's nachts bezig met mysterieuze bloedrituelen en probeer je andere spelers te bekeren.</value>
   </string>
   <string key="CultTeam">
-    <value>Heidensen: {0}</value>
+    <value>Sekteleden: {0}</value>
   </string>
   <string key="CultJoin">
     <value>{0} heeft het licht gezien!</value>
   </string>
   <string key="CultVisitEmpty">
-    <value>{0} heeft geprobeerd om {1} op het Heidense pad te stellen... maar ze waren niet thuis!</value>
+    <value>{0} heeft geprobeerd om {1} te bekeren... maar ze waren niet thuis!</value>
   </string>
   <string key="CultWins" >
-    <value >Alle wolven zijn dood... maar de Heidense Orde heeft gewonnen! Iedereen is nu Heidens!</value>
+    <value >Alle wolven zijn dood... maar iedereen is nu lid van de Sekte! Om dit te vieren dansen zij vanavond bij nieuwe maan rond hun met bloed besmeurde altaar! </value>
   </string>
   <string key="HunterVisitDead">
     <value>Je hebt geprobeerd om {0} te jagen, maar het is moeilijk om een lijk te vermoorden...</value>
   </string>
   <string key="HunterFindCultist">
-    <value>Je slipt het huis van {0} binnen, jachtmes klaar, en ziet ze in een vijfpuntig symbool, bidden tot iemand, een paar tentakels eromheen aan het kronkelen... Het mes snelt zich over hun keel, en je laat ze zakken. Voor de zekerheid val je de tentakels ook aan.</value>
+    <value>Je slipt het huis van {0} binnen, jachtmes klaar, en ziet ze in een vijfpuntig symbool, biddend voor een altaar, waar een paar tentakels omheen kronkelen... Je mes snelt zich langs hun keel, en je laat ze zakken. Voor de zekerheid val je de tentakels ook aan. </value>
   </string>
   <string key="HunterFailedToFind">
-    <value>Je kruipt naar het huis van {0}, maar ze blijken uiterst normaal te zijn. Gelukkig, het mes blijft schoon...</value>
+    <value>Je sluipt het huis van {0} binnen, maar vindt geen spoor van mysterieuze activiteiten, duivelse symbolen of bebloede relikwie�n. Beetje saaie inrichting, eigenlijk. Gelukkig, je mes blijft schoon... </value>
   </string>
   <string key="WildChildToWolves">
-    <value>{0}'s rolmodel is vooral erg dood. In hun woede komt hun echte kant tevoorschijn - ze zijn een weerwolf!</value>
+    <value>{0}'s rolmodel is vooral erg dood. In hun woede komt hun echte kant tevoorschijn - ze zijn in een Weerwolf 🐺 veranderd!</value>
   </string>
   <string key="WildChildTransform">
-    <value>{0} is dood! In je woede merk je niet eens op dat een vacht zich over je lichaam heen snelt - je bent een weerwolf. Je roedel bestaat uit: {1}</value>
+    <value>{0} is dood! In je woede merk je niet eens op dat een vacht zich over je lichaam heen snelt - je bent een Weerwolf 🐺 geworden. Je roedel bestaat uit: {1}</value>
   </string>
   <string key="Villager">
-    <value>een Burger</value>
+    <value>een Burger 👱 </value>
   </string>
   <string key="Drunk">
-    <value>de Dronkeman</value>
+    <value>de Dronkenman 🍻 </value>
   </string>
   <string key="Harlot">
-    <value>de Hoer</value>
+    <value>de Hoer 💋 </value>
   </string>
   <string key="Seer">
-    <value>de Ziener</value>
+    <value>de Ziener 👳 </value>
   </string>
   <string key="Traitor">
-    <value>de Verrader</value>
+    <value>de Verrader 🖕 </value>
   </string>
   <string key="GuardianAngel">
-    <value>de Schutsengel</value>
+    <value>de Beschermengel 👼 </value>
   </string>
   <string key="Detective">
-    <value>de Rechercheur</value>
+    <value>de Rechercheur 🕵 </value>
   </string>
   <string key="Wolf">
-    <value>een Weerwolf</value>
+    <value>een Weerwolf 🐺 </value>
   </string>
   <string key="Cursed">
-    <value>Vervloekt</value>
+    <value>Vervloekt 😾 </value>
   </string>
   <string key="Gunner">
-    <value>de Konstabel</value>
+    <value>de Konstabel 🔫 </value>
   </string>
   <string key="Tanner">
-    <value>de Looier</value>
+    <value>de Looier 👺 </value>
   </string>
   <string key="Fool">
-    <value>de Dwaas</value>
+    <value>de Dwaas 🃏 </value>
   </string>
   <string key="WildChild">
-    <value>het Wild Kind</value>
+    <value>het Wilde Kind 👶 </value>
   </string>
   <string key="Beholder">
-    <value>de Aanschouwer</value>
+    <value>de Aanschouwer 👁 </value>
   </string>
   <string key="ApprenticeSeer">
-    <value>de Ziener's Leerling</value>
+    <value>de Leerling van de Ziener 🙇</value>
   </string>
   <string key="Cultist">
-    <value>een Heidense</value>
+    <value>een Sektelid 👤 </value>
   </string>
   <string key="CultistHunter">
-    <value>de Heidenjager</value>
+    <value>de Sektejager 💂 </value>
   </string>
   <string key="RanAway">
     <value>Gevlucht</value>
   </string>
   <string key="Dead">
-    <value>Dood</value>
+    <value>💀 Dood</value>
   </string>
   <string key="Alive">
-    <value>Levend</value>
+    <value>🙂  Levend</value>
   </string>
   <string key="PlayersAlive">
     <value>Levende Spelers</value>
   </string>
   <string key="Mason">
-    <value>een Vakman</value>
+    <value>een Vrijmetselaar 👷 </value>
   </string>
   <string key="RoleInfoMason">
-    <value>Jij bent een Vakman. Vakmannen vertellen elkaar dingen. Dus je kent andere vakmannen best wel goed, als ze er zijn. Je bent gewoon een burger die wat mensen kent.</value>
+    <value>Jij bent een Vrijmetselaar 👷. Vrijmetselaars vertellen elkaar dingen. Dus je kent andere Vrijmetselaars (als die er zijn)best wel goed. Je bent eigenlijk gewoon een Burger 👱 die wat mensen kent.</value>
   </string>
   <string key="MasonEaten">
-    <value>Als iedereen wakker wordt, wordt er een lijk dat half uit elkaar gerukt is ontdekt in de werkplaats van de timmerman. Overal bloed, overal houtsplinters... Een van de Vakmannen is gestorven! -- {0}</value>
-    <value>Het lijk van de smid is half geroosterd in hun smeedsvuur, en is verder uitgespreid door de werkplaats. Blijkbaar houden wolven toch van gekookt vlees. Een Vakmannen is dood! -- {0}</value>
+    <value>Als iedereen wakker wordt, wordt er half uit elkaar gerukt een lijk ontdekt in de werkplaats van de timmerman. Overal bloed, overal houtsplinter... Een van de Vrijmetselaars is gestorven! -- {0}</value>
+    <value>Het lijk van de bakker is half geroosterd in hun bakkersoven, en ledematen liggen verspreid door de bakkerij. Blijkbaar houden wolven ook van gebakken vlees. Een Vrijmetselaar 👷 is dood! -- {0}</value>
+	<value>Er klinkt een schreeuw. Iedereen haast zicht naar het huis van de architect. Daar ligt hij dan, zijn bureau bezaaid met bouwplannen, passers en ... de architect met doorgebeten keel. Een Vrijmetselaar 👷 is dood! -- {0}</value>
   </string>
   <string key="MasonTeam">
-    <value>  De vakmannen zijn: {0}</value>
+    <value>de Vrijmetselaars zijn: {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <value>Je niewste lid gaat naar het huisje van {0} om hun het licht te laten zien, maar als ze aankomen is het een ramp. Overal bloed, overal lichaamsdelen, en hier en daar wat plukjes wolvenvacht...</value>
+    <value>Je nieuwste lid gaat naar het huis van {0} om hen het licht te laten zien, maar als ze aankomen, treffen ze een bloedbad aan. Het lichaam van {0} ligt aan flarden gescheurd door de kamer en hier en daar liggen wat plukjes vacht ... </value>
   </string>
   <string key="GuardBlockedWolf">
-    <value>De roedel heeft beslist om eens bij {0} op visite te gaan...
-    ...maar er staat een donker figuur met een erg groot mes te wachten. Jullie vallen aan met al je macht, maar de schutsengel blijkt iedereen aan te kunnen. Met de staart tussen de poten trekken jullie snel terug.</value>
+    <value>De roedel heeft besloten om eens bij {0} op visite te gaan...
+  ...maar er staat een donker figuur met een erg groot zwaard te wachten. Jullie vallen aan met al je macht, maar de Beschermengel 👼 blijkt iedereen aan te kunnen. Met de staart tussen de poten trekken jullie je snel terug.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
-    <value>{0} was gemaand om {1} op het pad te zetten, maar hun geloof was te sterk. :(</value>
+    <value>{0} was erop uitgestuurd om {1} te bekeren, maar hun geloof was te sterk. :(</value>
   </string>
   <!-- new strings May 12 2016-->
   <string key="NameExists">
     <value>@{1}, een speler met de naam {0} speelt al mee. Verander je naam a.u.b.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Je bent het huis van {0} binnengeglipt voor wat plezier... maar als je je klaarmaakt om weg te gaan hoor je een onnatuurlijk geluid. Je kijkt een klein kamertje binnen, waar een kleine offering staat, een paar tentakels kronkelen eromheen, zachtjes aan het stralen. Je vraagt je maar af hoe het zou voelen om daar eens een nachtje mee door te brengen...</value>
+    <value>Je bent het huis van {0} binnengeglipt voor wat plezier... maar als je kleren weer bij elkaar zoekt, hoor je een onnatuurlijk geluid. Je kijkt een klein kamertje binnen en ziet een altaar, waar een onnatuurlijk licht vanaf komt. Een paar tentakels kronkelen eromheen. Je gaat terug naar huis en fantaseert over hoe het zou voelen om daar eens een nachtje mee door te brengen... </value>
   </string>
   <!-- new strings May 13 2016-->
   <string key="Was">
     <value>was</value>
   </string>
   <string key="GenericDeathNoReveal">
-    <value>Iedereen wordt wakker, behalve {0}. Ze zijn nergens te vinden. Iemand schopt hun deur in en schudt hun hoofd. {0} is niet meer.</value>
+    <value>Iedereen wordt wakker, behalve {0}, die nergens te vinden is. Iemand schopt hun deur in en schudt het hoofd. {0} is niet meer.</value>
   </string>
   <string key="MasonConverted">
-    <value>Vreemd... {0} kwam niet naar het café voor het gebruikelijke biertje met de rest van de vakmannen... O.o</value>
+    <value>Vreemd... {0} kwam niet naar het caf� voor het gebruikelijke biertje met de rest van de Vrijmetselaars... O.o</value>
   </string>
   <!-- UPDATED LAST ON 14 MAY 2016-->
+  <string key="FleeDisabled">
+    <value>Vluchten tijdens het spel mag niet van de admins!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>ging dood.</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} aan admin lijst toegevoegd. Gebruik /config om instellingen te veranderen.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Jij bent al in een spel! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Je groep is erin geslaagd om meerdere spellen te starten...de anderen spellen werden gestopt</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Je groep zit in de wachtrij. Positie: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, ik ga op pauze voor instandhouding, jij mag momenteel geen spel starten.\nIk wacht op het einde van {0} spellen...\nGa naar @werewolfdev voor meer informatie</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, het maximum aantal opvolgende spellen is bereikt({0}).\nPositie in wachtrij: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is een voorkeursgroep en heeft de wachtrij overgeslagen!</value>
+  </string>
+  <string key="NoGame">
+    <value>Er is geen spel aan het lopen. Typ /startgame of /startchaos om een nieuwe spel te starten</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Alleen admins mogen dit bevel gebruiken</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Na dit spel ga ik me stopzetten voor instandhouding</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Na dit spel ga ik doorstarten voor een bijwerking.</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null. Weet je zeker dat je op een bericht geantwoord hebt?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is al een admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is geen admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} werd verwijderd van de admin lijst.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Taal verandert naar {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Geen Ziener 👳!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Je tijd is voorbij!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Jij bent Cupido 🏹! Kies twee spelers, die verliefd worden op elkaar. Als een van die twee dood gaat, sterft de andere van verdriet!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Jij bent Dubbelganger 🎭! Kies een speler, als die sterft, erf je hun rol.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Jij bent de Jager 🎯! Jij slaapt niet heel rustig, en zal nooit zonder je wapen naar bed gaan. Als jij dood gaat, mag jij iemand kiezen, die je naar hel meeneemt. Als je door de wolven 🐺 opgevreten wordt, heb jij een kans om een van hen te doden, maar kan jij niemand kiezen om neer te schieten.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Jij bent de Seriemoordenaar 🔪. Kort geleden gevlucht uit het gekkenhuis. De stemmen in je hoofd bevelen je elke nacht iemand af te maken.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Je wordt geraakt door de pijl der liefde ❤️. {0}'s naam zal nooit uit je hart verdwijnen (hoe irritant!). Je doel is samen met {0} te overleven. Gaat een van jullie dood, dan sterft de ander van verdriet.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Het dorp heeft gekozen om je te lynchen! Dit is je laatste kans om iemand met je mee te nemen! Pak je geweer en schiet!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} pakt zijn geweer , maar sterft voor de trekker overgehaald kan worden. </value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} trekt zijn geweer , kijk naar de woedende menigte..... maar kan niet kiezen wie hij wil neerschieten.de jarer sterft, zonder iets te doen...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Als de strop rond {0}'s hoofd strakker wordt, trekt hij zijn geweer en richt op {1}! {1} sterft ter plaatse! {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Jij wordt vermoord! Dit zijn je laatste momenten, en jij hebt de kans om iemand neer te schieten.... wees snel!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Neergeschoten worden was te veel voor {0}, dus hij kon zijn geweer niet pakken en sterft, zonder zich nog een keer te bewegen.....</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} ligt op de grond, en blaast zijn laatste adem uit, zonder te beslissen wie met hem moet sterven...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Terwijl {0} op de grond valt trekt hij zijn geweer en schiet op {1}, die nog eventjes verrast kijkt en dan ook neerstort. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} gaat naar {1}'s huis, doet de deur open en wordt begroet door een gestoorde Seriemoordenaar 🔪!!! {0}'s lever is nu het avondeten van {1}, met een lekker biertje erbij!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>De wolven wilden vannacht de Jager 🎯 opvreten, maar de Jager kon een van hen afmaken voordat hij stierf! {0} 🐺 ging dood.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>De Wolf 🐺 wilde vannacht de Jager 🎯 opeten, maar de Jager was sneller! {0} is niet meer onder de levenden!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>De wolven 🐺 hadden zin in een leuke middernachtsnack, maar in de koelkast was een gestoorde psychopaat! {0} is niet meer onder ons!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0} was lekker rustig aan het slapen, maar zal nu nooit meer ontwaken! De dorpelingen verzamelen zich in het midden van het dorp, daar ligt het lichaam van {0} en tien meter verder zijn hoofd... De Seriemoordenaar 🔪 was vannacht weer bezig! (Kan iemand even CSI bellen?){1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Op je weg naar {0}'s huis word je geblindeerd door het felle licht van een Beschermengel 👼!! Droevig ga jij weer naar huis, vannacht mag jij niemand vermoorden :( </value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>De Sekte stuurde {0} om {1} te bekeren, maar nog voordat {0} de wervingsfolder uit zijn binnenzak kon trekken, had de Jageral zijn geweer geladen. KABLAM! R.I.P. {0}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>De Sekte leerde vannacht, dat {1) de voorkeur geeft aan eigen rituelen. {0} is dood, zijn lichaam net een speldenkussen: meer messen dan vlees.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Jij hebt geprobeerd de Seriemoordenaar 🔪 te beschermen, als dank heeft hij je jouw vleugels afgesneden. Je zult nooit meer kunnen vliegen en sterft van verdriet.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>{0} houdt wel van een beetje BDSM, maar jullie zijn vergeten een stopwoord af te spreken. "Dit was geen goed idee," denk je nog, terwijl hij het touw om je nek steeds strakker trekt... :O R.I.P. </value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>De Dubbelganger 🎭 {0} is lid geworden van jullie genootschap!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Het dorp ziet de lichaam van {0} dood in het midden van het dorp liggen, blijkbaar wilde {0} de seriemordenaar verblijen vannacht :/.</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ging dood, je bent nu een Vrijmetselaar 👷! Je collega's (als zij bestaan) zijn: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Dubbelganger 🎭 {0} is bekeerd tot jullie Sekte! Feestje!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ging dood en jij verandert in een Sektelid 👤! Je collega's (als zij bestaan) zijn: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>De Dubbelganger 🎭 {0} is nu een weerwolf 🐺, net zoals jij!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ging dood en jij verandert in een weerwolf 🐺! De roedel bestaat uit: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>De enige overblijvende persoon is de Seriemoordenaar 🔪. Ze wint!</value>
+  </string>
+  <string key="AskKill">
+    <value>Wie wil jij vannacht afmaken?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Met de laatste ademhaling van {0} valt {1} naast hem neer en huilt. Zij weet zeker dat zij niet zonder {0} ❤️ kan leven, en stort zich van een brug. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Wie wil je worden als hij doodgaat?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Wie wil jij dat de Geliefden ❤️ zijn? Kies de eerste speler.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Wie wil jij dat de Geliefden ❤️ zijn? Kies de tweede	speler.</value>
+  </string>
+  <string key="Hunter">
+    <value>de Jager 🎯 </value>
+  </string>
+  <string key="Cupid">
+    <value>Cupido 🏹 </value>
+  </string>
+  <string key="SerialKiller">
+    <value>de Seriemoordenaar 🔪</value>
+  </string>
+  <string key="Doppelg�nger">
+    <value>de Dubbelganger 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Cupido's pijl 🏹 heeft je geraakt! Je houdt heel erg van {0}❤️! Maar let op! Als hij sterft, kun jij niet verder leven. Als jullie allebei overleven, winnen jullie!</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Je wordt het Wilde Kind 👶. Je rolmodel is {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Ware liefde eindigt nooit! De Geliefden ❤️ winnen!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>In het midden van het stadsplein, vinden jullie de lichaam van {0}, vol met kogels! Blijkbaar heeft hij geprobeerd de Jager 🎯 te verrassen! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Een gast met een capuchon heeft geprobeerd om je te bekeren, maar je geloof was te sterk!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Jij zit al te wachten op een nieuw spel in {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Jij wordt aan de wachtrij voor {0} toegevoegd. Ik stuur je een PB wanneer het volgende speel start! </value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Een nieuwe spel start in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>De zon komt op en de twee overblijvende dorpelingen verlaten hun huizen. {0} kijkt naar {1}, lacht heel hard, trekt zijn mes uit en vermoordt {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Iedereen in het dorp is dood. Er zijn geen winners, behalve de wilde dieren :/</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Als de zon opkomt lopen {0} en {1} het dorpsplein op. {0} trekt zijn mes en stort zich op {1}. {1} trekt een pistool uit zijn tas een schiet op {0}'s gezicht. Ze sterven allebei, er is geen winnaar...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Je hebt niet op tijd gekozen, dus de bot koos voor jou: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Winner</value>
+  </string>
+  <string key="Lost">
+    <value>Verliezer</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>{0} werd verwijderd omdat ie {1} keer in de laatste 24 uur niet heeft gestemd.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Je bent een Burger 👱! Je rol is eenvoudig - probeer om te overleven! Iedere dag mag jij een iemand kiezen om te lynchen.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Je bent de Ziener 👳! Je mag tijdens de nacht een andere speler bekijken, zonder dat die het doorheeft. Je weet dan wat zijn/haar rol is.</value>
+  </string>
+  <string key="AboutWw">
+    <value>weerwolf 🐺 zijn is leuk! Tijdens de nacht mag je een van je medespelers opeten (koekje erbij?). Maar tijdens de dag moet je je van je beste kant laten zien om niet gelyncht te worden! Let op: Als je de Dronkenman 🍻 opeet kan je door je kater de volgende nacht niemand aanvallen. Als je de Vervloekte 😾 opeet, wordt ie ook een weerwolf 🐺.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Je bent de Hoer 💋 (sletje!) - elk nacht mag jij een speler 'bezoeken'. Als hij geen Wolf 🐺 of Seriemoordenaar 🔪 is gaan jullie veel lol met elkaar hebben. Anders gaat ie je vermoorden :/ Als de wolven jou met een ander speler in bed vinden, gaan ze jullie als een sandwich eten. :P Als de wolven jou uitkiezen om te eten, terwijl je bij iemand anders in bed ligt, heb je geluk!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Proost! Je voert een gelukkig en eenvoudig leven, dat bestaat uit zo lang mogelijk in het caf� te blijven zitten en te drinken tot falen. Jij drinkt zo veel dat zelfs de wolven dronken van je bloed worden, als ze je opeten. Zij mogen dan in de volgende nacht niemand aanvallen. Jij bent een ware held dus! Daar drinken we er eentje op! </value>
+  </string>
+  <string key="AboutCursed">
+    <value>Die Vervloekte Burgers! Jij hield nooit van hen, en je wacht alleen op de kans om een weerwolf 🐺 te worden. Als je wordt aangevallen door de wolven, wordt jij er ook een! </value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Jij bent een Verrader 🖕! Jij bent eigenlijk een Burger 👱, maar als de laatste wolf dood gaat, zou je wel de kans aanpakken om ook eens mensenvlees te proeven. Je wordt dan een Wolf 🐺! Let op: De Ziener 👳 heeft een 50% kans om je als een weerwolf 🐺 te zien als je dit nog niet bent.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Jij bent de Beschermengel 👼. Elke nacht kan jij je Godgegeven krachten gebruiken om een ander speler te beveiligen. Maar let op - als je een Wolf 🐺 probeert te beschermen is er 50% kans dat jij sterft. Als je de Seriemoordenaar 🔪 beschermt ga jij sowieso dood. Niet doen dus!</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Als Rechercheur 🕵 ben jij wantrouwig van aard. Ze kunnen wel zeggen dat ze Burger 👱 zijn, maar liever ga je zelf op pad om de waarheid uit te vinden. Onderzoek elke dag iemand om er achter te komen wie ze nou echt zijn. Maar pas op voor de wolven! Zij hebben 40% kans om je tijdens je werk te betrappen!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Gerechtigheid? Als Konstabel 🔫 komt die voort uit een wapen. Overdag kan je een speler, die je verdenkt, neerschieten. Iedereen in het dorp ziet het gebeuren en weet dan dat jij de Konstabel bent. Jij hebt twee kogels.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>De Looier 👺 is een luie masochist en daarbovenop ook nog eens depressief. Je wil het liefst dood, maar wil niet de hand aan jezelf slaan. Dat laat je het liefst aan de Burgers over. Je wint alleen als het dorp jou lyncht.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Wat een Dwaas 🃏 ben je, als je denkt dat je eigenlijk de Ziener 👳 bent! Je kiest iemand uit om diens rol te bekijken, maar je krijgt willekeurige rollen te zien. Soms klopt het, maar dat is een kwestie van toeval.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Je doel is het om iedereen - behalve de wolven 🐺, de Seriemoordenaar 🔪 en de Sektejager 💂 - tot je Sekte te bekeren. Als dat lukt winnen jullie! (Spelers die bekeerd worden verliezen hun oorspronkelijke rol).</value>
+  </string>
+  <string key="AboutCH">
+    <value>Sektes zijn de reden voor al kwaad in deze wereld. Daarom jaag je op hen! Iedere nacht kan jij iemand bezoeken. Wanneer je een Sektelid 👤 vindt, doodt je hem. Als de Sekteleden proberen om jou te bekeren, doodt je hun nieuwste lid.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Het Wilde Kind 👶 heeft een persoon in zijn leven, die heel belangrijk voor hem is. Als dit rolmodel sterft, wordt het kind in zijn woede een weerwolf 🐺!</value>
+  </string>
+  <string key="AboutAppS">
+    <value> Jij bent maar een Burger 👱, maar als je leraar, de Ziener, sterft wordt jij de nieuwe Ziener 👳!</value>
+  </string>
+  <string key="AboutBH">
+    <value>De Aanschouwer 👁 weet meteen wie de Ziener 👳 is.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Vrijmetselaars kennen elkaar, maar anders zijn ze gewone Burgers.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+   De dood van een medespeler is voor de Dubbelganger 🎭 juist het begin van het spel. Hij neemt dan namelijk de rol van zijn rolmodel over.
+	 Als Dubbelganger 🎭 moet je - behalve als jij een van de Geliefden ❤️ bent - van rol veranderen om te winnen!
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Liefde is krachtig! Cupido 🏹 kan twee spelers (of zichzelf en een andere speler) kiezen, die verliefd ❤️ op elkaar worden.
+	  Hun doel is om samen te overleven. Sterft een van hen, dan sterft de ander ook.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Sommige mensen denken dat de Jager 🎯 een Amerikaanse Redneck is, want hij heeft altijd een wapen op zak. Als je hem lyncht kan hij uit wraak gaan schieten!
+	  Tijdens de nacht ligt zijn wapen onder zijn kussen, hij heeft de kans om een weerwolf 🐺 te doden, als de roedel naar zijn huis komt!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Het gekkenhuis uit en de wijde wereld in! Nu moet je nog even lekker de rest van het dorp afmaken om te winnen. Je wint alleen als je de laatste overlevende speler bent, maar je kan iedereen doden, en de wolven kunnen je niet opeten. </value>
+  </string>
+  <string key="AboutPara">
+    <value>Para heeft de wereld deze bot gegeven... niets zal ooit meer zijn hoe het was.</value>
+  </string>
+  <string key="EndTime">
+    <value>Het spel duurde: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Dag {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Iets ging mis en dit knooppunt is uitgeschakeld</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ik heb jou een PB gestuurd</value>
+  </string>
+  <string key="StartPM">
+    <value>Stuur me alsjeblieft een PB, zodat ik je je rol kan vertellen: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Bedankt! Nu kan ik je ook een PB sturen</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Je moet antwoorden op de gebruiker die jij wil verwijderen</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Wat wil jij doen?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Jij moet vanuit een groep een spel toetreden</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Jij moet vanuit een groep een spel starten!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tijd die telegram nodig had om me het bericht te sturen: {0}\nActuele CPU belasting: {1}%\nBerichten per seconde: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Welke taal?\nActueel: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Welke variant?\nActueel: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Taal verandert naar {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Welke taal wil jij halen?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Actueel zijn er geen knooppunten online. probeer het alsjeblieft in een paar seconden weer</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Jij moet dit commando in een groep uitvoeren</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Jij bent geen god! (Global Admin)</value>
+  </string>
+  <string key="NotPara">
+    <value>Jij bent Para niet!</value>
+  </string>
+  <string key="Yes">
+    <value>Ja</value>
+  </string>
+  <string key="No">
+    <value>Nee</value>
+  </string>
+  <string key="Allow">
+    <value>Toestaan</value>
+  </string>
+  <string key="Disallow">
+    <value>Niet toestaan</value>
+  </string>
+  <string key="Show">
+    <value>Tonen</value>
+  </string>
+  <string key="Hide">
+    <value>verbergen</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Alleen normaal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Alleen Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Speler keuze</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Geen rollen tonen</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Alleen de rollen van levende spelers tonen</value>
+  </string>
+  <string key="ShowAll">
+    <value>Alle rollen tonen</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Annuleren</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.This is on purpose -->
+    <value>Wil jij vluchten nadat het spel begon toelaten?\nLet op: voor begin van het spel mogen spelers nog steeds vluchten!\nActueel: Spelers mogen {0}vluchten</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}. This is on purpose -->
+    <value>Spelers mogen {0}vluchten na start van het spel</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Hoeveel mensen mogen maximaal meespelen?\nActueel: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maximaal aantal van spelers is nu {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Op dood rollen tonen of verbergen?\nActueel: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Rollen worden {0} op dood.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Welke spelwijze gaat deze groep zijn?\nActueel: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Speelwijze verandert naar {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Hoe wil jij dat op spel einde de rollen getond worden?\nActueel: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Rollen aan het einde tonen is nu: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Kies de basistijd (in seconden) die een dag zou duren. Dit gaat veranderen afhankelijk van de aantal aan spelers.\nEr worden minimaal 60 seconden aan toegevoegd. Standaardinstelling: {0}\nActueel: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Basis tijd voor een dag verandert naar: {0}</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Kies de tijd (in seconden) die een nacht zou duren. Standaardinstelling: {0}\nActueel: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duur vaan een nacht verandert naar {0} seconden</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Kies de tijd (in seconden) voor de lynch verkiezingen. Standaardinstelling: {0}\nActueel: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch verkiezingen tijd is nu {0} seconden</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Dwaas 🃏 toestaan?\nActueel: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Dwaas 🃏 is nu: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Looier 👺 toestaan?\nActueel: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Looier 👺 is nu: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Sekte toestaan?\nActueel: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Sekte is nu: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Bedankt, fijne dag! :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Jij bent op zoek naar in groep in welke taal?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Hier zijn de groepen voor {0}:</value>
+  </string>
+  <string key="Members">
+    <value>leden</value>
+  </string>
+   <string key="StartMe">
+    <value>Start me alsjeblieft, zodat ik je jouw rol kan vertellen.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} heeft de bot niet gestart en werd verwijderd uit het spel!</value>
+  </string>
+  <string key="LatestList">
+    <value>Hier is de laatste lijst</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Ik kon de laatste lijst niet vinden</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Je speelt nu mee in {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Je bent de Burgemeester 🎖. Je stem telt dubbel bij het lynchen, maar pas op het moment dat je jezelf bekend hebt gemaakt.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Je bent je saaie, verwende leventje als Prins 👑 ontvlucht en doet je voor als Burger 👱. Pas op het moment, dat het dorp je probeert te lynchen, wordt duidelijk wie je echt bent! De lynch gaat dan uiteraard niet door, want wie wil er nou blauw bloed aan zijn handen?</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Jij bent de Kluns. Twee linkerhanden en ook nog eens dikke vingers. Als jij probeert te stemmen, gaat het de helft van de keren mis en stem je per ongeluk op iemand anders! Nu maar hopen, dat ze het je vergeven, want je hoort nog steeds bij de Burgers!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Jij bent de Tovenaar 🔮, een bondgenoot van de wolven. 's Nachts gebruik je je zwarte magie om ofwel de wolven 🐺, ofwel de Ziener 👳 op te sporen. Met deze informatie kun je de Burgers verslaan!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Jij bent de Smid ⚒. Overdag zwoeg je boven het gloeiendhete vuur in je smidse. Op een plankje heb je een klein beetje zilverpoeder verzameld, wat je overdag kunt rondstrooien. Wanneer je dit doet, kunnen de wolven de daaropvolgende nacht niet op jacht. Je hebt echter maar genoeg poeder om dit 1x te doen!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Jij bent de Roedelleider ⚡️, het alfamannetje van de wolven 🐺. Als jij 's nachts iemand bijt, dan heeft je slachtoffer 20% kans om ook een weerwolf te worden!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Jij bent het Welpje 🐶. De andere wolven houden van je en proberen je te beschermen. Ook al zie je er wollig en knuffelbaar uit, je bent net zo gevaarlijk als je familie! 's Nachts doe je net zo hard mee met de roedel. Als je overdag gelyncht wordt, worden de andere wolven razend en nemen ze wraak door de nacht erop TWEE mensen aan te vallen! Niet dat dat jou iets helpt... Je bent dan nog steeds dood. Ahhhh....
+</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Het dorp maakt zich klaar om {0} te lynchen, maar hij roept uit: "Stop! Ik ben de Prins 👑! Aanschouw het koninklijke zegel op mijn ring! Lynch mij, en mijn vader, de koning, zal jullie straffen door het hele dorp plat te branden!" De Burgers kijken een beetje schaapachtig in het rond en besluiten dan maar terug naar huis te gaan.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Je bekijkt de levenskracht van {0}, maar het beeld is troebel.... Je kunt niet zien wat ze precies zijn, maar zeker is, dat het geen Wolf 🐺 of Ziener 👳 is.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} doet een stap naar voren en doet zijn Ambtsketting om. {0} is de Burgemeester 🎖. Vanaf nu telt zijn stem bij het lynchen dubbel. Sja... als je een beetje opgelet had bij de lokale verkiezingen, dan had je dit kunnen weten, natuurlijk...</value>
+  </string>
+  <string key="AskMayor">
+    <value>Druk op "Bekendmaken" als je zover bent, om je rol als Burgemeester 🎖 bekend te maken. </value>
+  </string>
+  <string key="Reveal">
+    <value>Bekendmaken</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Wil je vandaag je laatste beetje zilverpoeder uitstrooien, zodat de wolven 🐺 vannacht niet kunnen aanvallen?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Terwijl de rest van het dorp aan het discussieren is, zien ze ineens {0} rondlopen en zilverpoeder uitstrooien over de grond. Ah fijn! Vannacht kunnen de wolven 🐺 in elk geval niemand aanvallen!</value>
+  </string>
+  <string key="Mayor">
+    <value>de Burgemeester 🎖 </value>
+  </string>
+  <string key="Prince">
+    <value>de Prins 👑 </value>
+  </string>
+  <string key="Sorcerer">
+    <value>de Tovenaar 🔮 </value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>de Kluns </value>
+  </string>
+  <string key="Blacksmith">
+    <value>de Smid ⚒ </value>
+  </string>
+  <string key="AlphaWolf">
+    <value>de Roedelleider ⚡️ </value>
+  </string>
+  <string key="WolfCub">
+    <value>het Welpje 🐶 </value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>De wolven maken zich klaar om {0} aan te vallen, maar Roedelleider ⚡️ {1} houdt iedereen tegen. {1} vertelt de roedel, dat {0} niet zal sterven vannacht, maar in de roedel opgenomen moet worden. {0} wordt wel gebeten, maar de infectie van de beet zorgt er voor, dat hij vanaf morgennacht ook een weerwolf 🐺 zal zijn.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Je werd aangevallen door de wolven! Maar de Roedelleider ⚡️ ziet potentie in jou en besloot je te laten leven. Je verbergt de geinfecteerde wolvenbeet voor de Burgers. vanaf morgennacht ben jij ook een Wolf 🐺!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>De nacht valt... Je voelt een vreemde, prikkelende sensatie over je hele lichaam. Je rent naar de spiegel en ziet een gruwelijke transformatie plaatsvinden! Harige oren, een spitse snuit, vlijmscherpe tanden... WROW! Je bent een weerwolf 🐺! En je hebt HONGER!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>De Burgemeester 🎖 is maar een simpele Burger 👱, totdat hij zijn rol bekendmaakt. Vanaf dat moment is hij dubbel zo machtig! Nou ja... bij het lynchen dan. Zijn stem telt namelijk dubbel. Gebruik deze macht om het dorp te ontdoen van alle duistere figuren, die er rondwaren!
+</value>
+  </string>
+  <string key="AboutPrince">
+    <value>De Prins 👑 heeft een strategische rol in het dorp. Hij kan niet gelyncht worden. Zijn rol wordt pas onthuld op het moment dat het dorp hem voor het eerst probeert te lynchen. De Prins kan alleen 's nachts gedood worden, of door de Jager 🎯.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>De Tovenaar 🔮 kan, net als de Ziener 👳, 's nachts naar iemand kijken. Hij ziet dan of deze persoon een Wolf 🐺 is, de Ziener 👳 of geen van beide. De Tovenaar gebruikt zijn kracht om de wolven te helpen winnen, want dan wint hij zelf ook!</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>De Kluns  bedoelt het allemaal goed, maar faalt nogal in de uitvoering. Als je op iemand stemt, heb he 50% kans, dat het lukt en 50% kans dat je op een willekeurig ander persoon stemt. Sjongejonge zeg... Knuppel... </value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Jij bent de Smid ⚒. Normaliter smeedt je hooivorken, ploegen en ander materiaal waar de Burgers hun dagelijkse ding mee kunnen doen. Af en toe eens een serie messen voor die ene vreemde gast in het dorp... Oh, en natuurlijk een mooie set zilveren ringen voor de Geliefden! \nVan de laatste keer heb je nog wat zilverpoeder over... Wie weet? Misschien zorgt het er wel voor dat *de wolven niet kunnen aanvallen* als je wat rondstrooit?
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Jij bent de Roedelleider ⚡️, de Eerste Vervloekte. Het Begin van het Kwaad. Zolang jij nog leeft, heeft het nachtelijke slachtoffer van de roedel 20% kans om niet te sterven, maar in plaats daarvan ook weerwolf 🐺 te worden. Maar alleen als de roedel ook daadwerkelijk diegene aanvalt, die jij aanwees.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Awwwww, wat een schattig klein wolfje! /nAhum... Wat wilde ik zeggen? Oja: Jij bent het Welpje 🐶 en als.... Oh je bent gewoon onweerstaanbaar! Kom eens hier! _aai aai aai_ Ik denk, dat als iemand het zou wagen jou te doden, dat de wolven dan TWEE slachtoffers zouden maken. Je bent gewoon zo cute!</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Village Team</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Wolf Team</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeam">
+    <value>Cult Team</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Tanner Team</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>Dorp Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutraal Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Wolf Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>SM Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Sekte Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Looier Team</value>
+  </string>
 </strings>

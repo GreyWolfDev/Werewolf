@@ -592,7 +592,7 @@
     <value>Vous vous faufilez dans la maison de {0} et commencez à vous amuser un peu. Tout est parfait, jusqu'à ce qu'il sorte un grand couteau. Un nouveau jeu sexuel ? Il semblerait plutôt qu'il veuille vous assassiner. Vous mourrez dans d'atroces souffrances... dommage, vos charmes seront regrettés dans le village.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>Ne vous inquiétez pas de cette corde pour le moment.</value>
+    <value>{0} voulait s'amuser un peu cette nuit... mais est tombée sur un tueur psychopathe au lieu de cela! {0} est morte... - {0}</value>
   </string>
   <string key="DGToMason">
     <value>Le Döppelganger {0} est maintenant un franc-maçon comme vous !</value>
@@ -683,5 +683,402 @@
   </string>
   <string key="Lost">
     <value>Défaite</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>{0} a été tué pour n'avoir pas voté {1} fois durant les dernières 24 heures.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Votre rôle est simple : tentez de survivre. Tous les jours, vous aurez une chance de lyncher le loup.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Vous êtes la voyante. Toutes les nuits, vous pouvez choisir de révéler le rôle d'un des joueurs. Mais prudence ! Si vous annoncez aux autres que vous êtes la voyante, les loups voudront vous tuer !</value>
+  </string>
+  <string key="AboutWw">
+    <value>Que la fête commence ! Vous êtes un loup garou. Toutes les nuits vous pourrez choisir d'attaquer et dévorer un joueur. A noter que si vous attaquez l'alcoolique, vous deviendrez ivre et devrez passer une nuit de repos avec un mal de crâne épouvantable. Si vous attaquez le maudit, il deviendra loup, et rejoindra votre meute. Youpi !</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Vous êtes la catin du village, toutes les nuits, vous pourrez rendre visite à un autre joueur pour lui vendre vos charmes. S'il s'agit d'un loup, vous serez tuée, si non, vous serez prévenue de l'innocence de votre partenaire. Si votre client est pris pour cible par les loups, ils vous dévoreront également... A l'inverse, si vous êtes de sortie et que les loups ont décidé de se rendre chez vous, vous survivrez !</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Espèce d'alcoolique ! Vous n'êtes qu'un villageois, totalement imbibé d'alcool. Si un loup vous dévore, il aura un sacré mal de crâne et ne pourra pas attaquer la nuit suivante.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Vous êtes maudit ! Pour le moment vous n'êtes qu'un villageois ordinaire... mais si les loups vous dévorent, vous rejoindrez leurs rangs !</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sale traître ! Si vous survivez assez longtemps et que tous les loups viennent à mourir, vous en deviendrez un et pourrez dévorer vos anciens camarades !!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Vous êtes l'ange gardien. Toutes les nuits, choisissez un être à protéger. Mais attention, si vous choisissez de protéger un loup, vous avez 50% de chances d'en mourir !</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Vous êtes le détective... Durant la journée, vous aurez la chance de pouvoir enquêter sur un joueur. Soyez prudent... Il y a 40% de chances que les loups garous soient informés de votre rôle.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Vous êtes le chasseur, vous possédez deux balles d'argent. Pendant la journée, vous pourrez choisir d'abattre un autre joueur. Cependant tous les joueurs vous entendront, et connaîtront votre rôle. Vous n'avez que deux balles... faites en bon usage !</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Le rôle du tanneur est très simple : son but est d'être lynché. S'il y parvient, il gagne immédiatement et tous les autres joueurs perdent.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Le fou pense être voyant. Mais lorsqu'il dévoile le rôle d'un joueur, il est informé d'un rôle au hasard.</value>
+  </string>
+  <string key="AboutCult">
+    <value>En tant que cultiste, votre but est de convertir tous les autres joueurs (à part les loups) à votre culte. Si tous les joueurs vivants à la fin de la partie font partie du culte, les cultistes gagnent.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Votre job est de traquer les cultistes. S'ils tentent de vous convertir, leur membre le plus récent mourra. De plus, chaque nuit, vous pourrez traquer un joueur et s'il est cultiste, vous le tuerez.</value>
+  </string>
+  <string key="AboutWC">
+    <value>L'enfant sauvage choisit un autre joueur en début de partie, qui sera son idole. S'il venait à mourir, l'enfant sauvage entrerait dans une rage incontrôlable et deviendrait un loup garou...</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Pour le moment, vous n'êtes qu'un simple villageois. Mais si la voyante venait à mourir, vous prendriez sa place.</value>
+  </string>
+  <string key="AboutBH">
+    <value>En tant que Tyrannoeil, vous serez prévenu de l'identité du véritable voyant (mais pas de celle du fou). Vous saurez également s'il n'y a pas de voyant.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Le rôle des franc-maçons est très simple : ce sont de simples villageois à ceci près qu'ils savent qui est également franc-maçon.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Vos ancêtres étaient capable de se metamorphoser en quelqu'un d'autre... Vous n'avez pas cette capacité, mais vous pouvez choisir un joueur en début de partie. S'il vient à mourir, vous prendrez son rôle.
+      Remarque: S'il était converti au culte, vous recevrez son rôle initial. Toutes les autres règles normales s'appliquent : si vous devenez l'enfant sauvage dont le modèle est mort, vous serez loup. S'il n'est pas mort, vous aurez ce même modèle.
+      Les cultistes ne peuvent convertir un Doppelgänger qui n'a pas encore repris un rôle. Si le Doppelgänger n'est pas devenu quelqu'un d'autre à la fin de la partie, il perd sauf s'il est l'un des deux amoureux.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Il y a de l'amour dans l'air ! En tant que Cupidon, vous pouvez choisir deux joueurs en début de partie. Ils tomberont éperduement amoureux ! Si l'un des deux meurt, l'autre mourra de chagrin. :(
+      Remarque : Les amoureux savent qui est leur âme soeur mais pas son rôle. S'ils sont les deux derniers survivants, ils gagnent, mais si l'un des deux survit et qu'ils sont d'équipes différentes (ex : loup et franc-maçon), ils gagneront également. 
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Vous êtes la gachette folle ! Le fusiller est un peu paranoïaque, et peut tuer ses visiteurs nocturnes. Si les loups vous attaquent, vous avez une chance d'en abattre un. Si vous mourrez, vous aurez la possibilité de tuer un autre joueur.
+      Remarque: Contre un loup seul le fusiller a 30% de chance de l'abattre et survivre. Ajoutez 20% par loup supplémentaire, mais dans ce cas, vous ne survivrez pas.
+      Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir. S'ils échouent vous aurez 50% de chance de tuer l'un d'entre eux !
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Cette asile était sympathique, mais rien ne vaut la liberté. Vous êtes à présent prêt à tuer de nouveau !! Le céréales killer est un joueur solitaire... et gagne s'il est le dernier en vie (sauf amoureux). Vous pouvez tuer tous les joueurs : loups, chasseur, fusiller, ange gardien... Si les loups vous attaquent vous en tuerez un au hasard et survivrez.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para est un développeur completement décalé, qui aime aboyer sur les gens. Peut-être a-t-il traîné trop longtemps avec des loups garous... Quelle mauvaise idée !</value>
+  </string>
+  <string key="EndTime">
+    <value>Durée du jeu: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Jour {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Une erreur est survenue inopinément.</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Je vous ai envoyé un MP</value>
+  </string>
+  <string key="StartPM">
+    <value>Envoyez moi un message pour que je puisse vous écrire : @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Merci de m'avoir démarré ! Je peux maintenant vous écrire en privé.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Vous devez répondre au joueur que vous voulez smite.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Que voulez-vous faire ?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Vous devez rejoindre la partie à partir d'un groupe de conversation !</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Vous devez lancer une partie à partir d'un groupe de conversation !</value>
+  </string>
+  <string key="PingInfo">
+    <value>Temps de réponse: {0}\nUsage CPU actuel: {1}%\nMessages par seconde: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Quelle langue ?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Quelle variante ?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language choisi : {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quel fichier language obtenir ?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Pas de nodes online pour le moment, réessayez dans quelques secondes.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Vous devez utiliser cette commande dans un groupe.</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Vous n'êtes pas admin général...</value>
+  </string>
+  <string key="NotPara">
+    <value>Vous n'êtes pas Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Oui</value>
+  </string>
+  <string key="No">
+    <value>Non</value>
+  </string>
+  <string key="Allow">
+    <value>Autoriser</value>
+  </string>
+  <string key="Disallow">
+    <value>Refuser</value>
+  </string>
+  <string key="Show">
+    <value>Montrer</value>
+  </string>
+  <string key="Hide">
+    <value>Cacher</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal seulement</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos seulement</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Choix de joueur</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>N'en montrer aucun</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Montrer seulement les joueurs en vie</value>
+  </string>
+  <string key="ShowAll">
+    <value>Montrer tous les joueurs</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Annuler</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Voulez vous autoriser la fuite après le démarrage de la partie ??\nRemarque: les joueurs peuvent toujours fuir pendant la phase de préparation de partie.\nActuellement : les joueurs peuvent {0}fuir</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Les joueurs sont {0}autorisés à fuir après le début de la partie.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Combien de joueurs au maximum voulez vous autoriser?\nActuel: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Nombre maximum de joueurs choisi : {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Montrer ou cacher les roles des morts ?\nActuel: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Les rôles seront {0} à la mort du joueur.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Quel sera le mode de jeu ?\nActuel: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Mode de jeu choisi {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Comment voulez-vous montrer les rôles en fin de patie ?\nActuel: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles montrés en fin de partie : {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choisissez la durée en secondes d'une journée. Cette durée sera variable en fonction du nombre de joueurs.\nTemps minimum ajouté : 60 secondes.  Durée par défaut : {0}\nActuel : {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value> Durée de base d'une journée fixée à {0} secondes</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choisissez la durée en secondes d'une nuit. Durée par défaut: {0}\nActuel:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Durée d'une nuit fixée à {0} secondes</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choisissez la durée en secondes du temps de vote pour lyncher un joueur. Durée par défaut: {0}\nActuel:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Durée du vote de lynchage : {0} secondes</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Autoriser le rôle du fou ?\nActuel: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Rôle du fou: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+      <value>Autoriser le rôle du Tanneur ?\nActuel: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Rôle du fou: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Autoriser le rôle de cultiste ?\nActuel: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Rôle de cultiste : {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Merci, passez une bonne journée ! :)</value>
+   </string>
+  <string key="WhatLangGroup">
+    <value>Dans quelle langue voulez-vous que ce groupe joue ?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Voici les groupes pour {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membres</value>
+  </string>
+  <string key="StartMe">
+    <value>Merci de me démarrer (start) pour que je puisse vous contacter en privé</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} n'a pas démarré le bot, et a donc été expulsé de la partie !</value>
+  </string>
+  <string key="LatestList">
+    <value>Voici la liste la plus récente</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Impossible d'obtenir la liste</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Vous avez rejoint la partie avec succès dans {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Temps de réponse au ping: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Vous êtes le maire du village. Pendant le vote pour le lynchage, votre voix compte double une fois que votre rôle est révélé. Vous êtes du côté des villageois.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Vous êtes le Prince. Secrètement, pour combattre l'ennui et la routine, vous donnez du piment à votre vie en passant la journée avec les paysans. S'ils essayent de vous lyncher, ils se rendront compte de leur erreur, et reviendront sur leur décision. Personne ne sera lynché.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Vous êtes le Maladroit. Espèce d'empoté... Vous essayerez de voter, mais vous aurez 50% de chance que votre vote devienne pour quelqu'un d'autre. Vous êtes du côté des villageois, mais quel boulet tout de même...</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Vous êtes la Sorcière, vous préférez vous allier au créatures de la nuit plutôt qu'aux faibles humains. La nuit, vous utiliserez votre pouvoir pour trouver les loups ou la voyante. Vous gagnerez si les loups gagnent. Aidez les donc à zigouiller tous les villageois !...</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Vous êtes le Forgeron, vous travaillez le métal à votre forge. Vous possédez une petite quantité d'argent, suffisemment pour empêcher les loups d'attaquer pendant une nuit. Pendant la journée, vous pourrez donc choisir de réduire l'argent en poudre et de le disperser autour du village. En dehors de cette capacité, vous êtes un simple villageois.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Vous êtes le Loup Alpha, le chef de meute. Votre morsure est à l'origine de la malédiction qui transforme les humains en loups garous. Toutes les nuits, vous choisirez un humain à attaquer et dévorer, mais tant que vous êtes en vie, votre proie a 20% de chance de se transformer en loup et rejoindre votre meute.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Vous êtes le louveteau. Vous êtes trop mignon et votre meute vous adore. Comme tous les autres loups, vous pourrez choisir d'attaquer un villageois chaque nuit. Mais si par malheur vous êtes tué, votre meute entrera dans une rage folle, et attaquera deux victimes la nuit suivante. Cela ne vous ramènera pas à la vie, mais vous serez vengé.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Alors que les villageois se décident à lyncher {0}, celui-ci les stoppe. "Hé non ! Je suis le prince, regardez, cet anneau avec le sceau du roi le prouve ! Toutes les nuits, je suis surveillé par mes serviteurs, alors si j'étais un monstre nocturne, ça se saurait !". Les villageois, se sentant un peu idiots, libèrent le prince et rentrent chez eux penauds.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Vous tentez d'observer {0}, mais les esprits obscurs ne parviennent pas à vous révéler qui il est. Une seule chose est sûre, il n'est ni loup, ni voyant.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} s'avance au milieu des villageois, et sortant de sa poche le décret municipal pour preuve, se présente comme étant le maire de la ville. A partir de maintenant, les votes de {0} lors du lynchage comptent double.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Cliquez sur "Révéler" si vous vous sentez prêt à révéler que vous êtes le maire du village.</value>
+  </string>
+  <string key="Reveal">
+    <value>Révéler</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Voulez-vous répandre l'argent aujourd'hui, pour empêcher les loups d'attaquer cette nuit ?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Alors que les villageois débatent au sujet des récents évènements, ils remarquent {0}, le forgeron, faisant le tour du village et répandant de la poudre d'argent un peu partout sur le sol. Le village sera protégé cette nuit contre les attaques des loups...</value>
+  </string>
+  <string key="Mayor">
+    <value>le Maire 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>le Prince 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>la Sorcière 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>le Maladroit 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>le Forgeron ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>le Loup Alpha ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>le Louveteau 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Alors que les loups s'apprêtent à attaquer {0}, {1} les arrête, grâce à son autorité de Loup Alpha. Il décide que {0} doit rejoindre la meute plutôt que mourir. D'une morsure il l'infecte, et laisse le poison se répandre en lui. La nuit prochaine, il deviendra un loup...</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Vous avez été attaqué par les loups, mais le Loup Alpha vous a choisi. Au lieu de vous tuer, il vous a simplement mordu... vous deviendrez un loup garou la nuit prochaine!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Le soleil se couche, et vous ressentez une sensation étrange. Tout votre corps se transforme. Vous vous couvrez de fourrure, des griffes et des crocs vous poussent... vous êtes maintenant un loup garou !</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The prince is a key role in the Villagers Team's strategy. Once it gets lynched, his role as Prince is revealed, and he survives. However, this can only happen once: if the village insist lynching him, he will die.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old seer ? Well now, it has it's Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Vous êtes le Maladroit. Peut-être que vous n'auriez pas du traîner avec l'alcoolique hier soir. Ou bien regarder l'éclipse sans lunettes ? A moins que ce ne soit le jus de citron du rince-doigts que vous vous êtes mis dans les yeux, pensant que c'était un innocent mouchoir ? Bon, résultat, vous n'y voyez vraiment rien. Pas sûr que vous puissiez voter pour la personne que vous voulez réellement lyncher. (Vous avez 50 % de chance de voter aléatoirement pour une autre personne)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Vous êtes le Forgeron. Au fil des ans, aucune lame, aucune épée, aucune arme de votre fabrication ne vous a apporté autant de satisfaction que les lames d'argent que vous avaient commandé les elfes.\nVous pourriez bien avoir encore un peu de limaille d'argent en stock... Qui sait ? Cela pourrait peut-être *empêcher les loups d'attaquer cette nuit* ? 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Vous êtes le Loup Alpha, l'origine de la malédiction, le fléau initial. Tant que vous êtes en vie, le repas de la meute a 20% de chances de devenir l'un des votres.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Ooooooh quel adorable petit Louveteau !! Hum hum... Je disais donc. Vous êtes le louveteau et vous..... roh et puis zut. Vous êtes trop mignon. Si vous mourrez, le reste de la meute pourra zigouiller deux victimes au lieu d'une. Vous êtes trop chou pour mourir. </value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} est mort, et vous devenez le Loup Alpha.  Vos alliés, s'il en est, sont: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} est mort, et vous vous transformez en Louveteau. Vos alliés, s'il en est, sont: {1}</value>
   </string>
 </strings>

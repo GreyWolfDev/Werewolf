@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Telegram.Bot.Types;
 
 namespace Werewolf_Node.Models
@@ -23,6 +24,8 @@ namespace Werewolf_Node.Models
         /// Choice of the player they want to use their ability on
         /// </summary>
         public int Choice { get; set; } = 0;
+
+        public int Choice2 { get; set; } = 0;
 
         /// <summary>
         /// Whooops! you died...
@@ -65,9 +68,10 @@ namespace Werewolf_Node.Models
         public bool HasDayAction { get; set; } = false;
         public int DayCult { get; set; } = 0;
         public int RoleModel { get; set; } = 0;
-        public bool DiedFromWolf { get; set; } = false;
-        public bool DiedFromKiller { get; set; } = false;
-        public bool DiedFromHunter { get; set; } = false;
+        public IRole KilledByRole { get; set; }
+        public bool DiedByVisitingKiller { get; set; } = false;
+        public bool DiedByVisitingVictim { get; set; } = false;
+        public bool WasSavedLastNight { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public IRole OriginalRole { get; set; }
@@ -77,16 +81,44 @@ namespace Werewolf_Node.Models
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
 
+        public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;
 
         public int Id;
 
         public QuestionAsked CurrentQuestion { get; set; }
+
+
+        #region Achievement Related Stuff
+
+        public bool HasBeenVoted { get; set; } = false;
+        public bool HasStayedHome { get; set; } = false;
+        public bool HasRepeatedVisit { get; set; } = false;
+        public HashSet<int> PlayersVisited { get; set; } = new HashSet<int>();
+        public int ChangedRolesCount { get; set; } = 0;
+        public int FirstToLynchCount { get; set; } = 0;
+        public bool BulletHitVillager { get; set; } = false;
+        public int FoundBadRolesRowCount { get; set; } = 0;
+        public int FoolCorrectSeeCount { get; set; } = 0;
+        public int SerialKilledWolvesCount { get; set; } = 0;
+        public bool PackHunter { get; set; } = false;
+        public bool LastShotWasSKWolf { get; set; } = false;
+        public bool DoubleKillEnding { get; set; } = false;
+        public bool Bitten { get; set; }
+        public List<int> CorrectSnooped { get; set; } = new List<int>();
+        public bool SpeedDating { get; set; } = false;
+        public int FirstStone { get; set; } = 0;
+        
+        #endregion
+
     }
+    
 
     public enum IRole
     {
-        Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller
+        Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller,
+        //new roles
+        Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince
     }
 
     public enum ITeam

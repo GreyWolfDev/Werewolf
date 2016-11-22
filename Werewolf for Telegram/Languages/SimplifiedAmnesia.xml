@@ -45,7 +45,7 @@
     <value>【{0}】加入了这场游戏。\n已有 {1} 人参加（最少 {2} 人，最多 {3} 人）。</value>
   </string>
   <string key="PMTheBot">
-    <value>【{0}】， 请立即点 {1}，按 start。如果你不这样做，我就无法告诉你在游戏中的角色了~</value>
+    <value>【{0}】， 请立即点 {1}，按 start。如果你不这样做，就没法加入游戏了~</value>
   </string>
   <string key="DeadFlee">
     <value>你无法逃走，因为你已经死了！ 回墓地好好躺着吧……</value>
@@ -302,7 +302,7 @@
     <value>#狼人胜！</value>
   </string>
   <string key="VillageWins" >
-    <value>#村民胜！ 所有狼人都已消失！</value>
+    <value>#村民胜！</value>
   </string>
   <string key="TannerWins" >
     <value>糟糕！你们把皮匠处决掉了！他轻轻松松就赢了！ #皮匠胜</value>
@@ -422,7 +422,7 @@
     <value>奇怪……你突然想不起来自己是谁了。</value>
   </string>
   <string key="MasonEaten">
-    <value>一大早，村民们在一堆石头中发现一具残破不堪满身血迹的尸体。村里的一名砖瓦工死了！ -- {0}</value>
+    <value>一大早，村民们在一堆石头中发现一具残破不堪满身血迹的尸体。村里的一名砖瓦工死了！ -- 【{0}】</value>
   </string>
   <string key="MasonTeam">
     <value>>你记得【{0}】这名字，却不知道你自己是谁。</value>
@@ -598,7 +598,7 @@
     <value>你走进了变态杀人魔【{0}】的家，然后被他杀掉了，你才想起来你是妓女！</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!</value>
+    <value>don't worry about this string for now! - {0}</value>
   </string>
   <string key="DGToMason">
     <value>你记得【{0}】这名字，却不知道你自己是谁。</value>
@@ -681,5 +681,294 @@
   </string>
   <string key="SKHunterEnd" isgif="true">
     <value>曙光乍现，【{0}】和【{1}】走进小镇，忽然【{0}】拔出了匕首，跳到【{1}】身上，把匕首狠狠刺入【{1}】胸部的同时，【{1}】也反应迅敏地拔出枪，对着【{0}】的脸就是一枪，把【{0}】的头打爆了。\n【{1}】也好不到哪儿去，匕首已经刺穿了他的心脏……最后两人都死了……</value>
+  </string>
+     <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>你因为没作出选择而随机选择了 【{0}】</value>
+  </string>
+  <string key="Won">
+    <value>胜利</value>
+  </string>
+  <string key="Lost">
+    <value>失败</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>【{0}】在最近24小时的游戏中因为没有投票已经被处决了{1}次。</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>你不过是一介村民，靠耕田自给自足度日的普通人。每天有一次机会通过投票处决一个人（有可能是狼人）。</value>
+  </string>
+  <string key="AboutSeer">
+    <value>你是先知。每当夜深人静时，你就可以预知其中一个玩家的身份。除非你希望被狼人杀掉，不要暴露你的身份！</value>
+  </string>
+  <string key="AboutWw">
+    <value>你是狼人！每晚你都可以大开杀戒！不过如果你咬到了酒鬼，你会因为醉酒而在下回合无法行动。如果你咬到了被诅咒的人，他也会变成狼人，准备好欢迎你的新队友吧！</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>你是妓女。你可以在晚上去其他人的家里谋取生计，顺便看看他们是不是狼人。不过，如果你刚好去的是狼人家，或者与狼人共处一室（去了狼人想吃掉的人的家里），你就会被狼人吃掉。如果你刚好外出而狼人要杀掉你的话，你可以逃过一劫。（因为你不在家）还有，偶尔你会隐隐约约看到邪教徒的祭坛。</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>你是个酒鬼，除此之外你和村民没什么区别。不过如果狼人杀了你，明晚他就杀不了别人，因为他也醉了。</value>
+  </string>
+  <string key="AboutCursed">
+    <value>你是被诅咒的人。现在你还是村民，但当狼人咬你之后，你就会变成狼人。准备好加入杀戮了么？</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>你是叛徒。此刻你还是村民，如果所有狼人都死了，你就会成为狼人。转而向你曾经的队友展开屠杀！不过作为叛徒，先知也有可能会把你当成真的狼人。</value>
+  </string>
+  <string key="AboutGA">
+    <value>你是守护天使。每当夜幕降临，你可以保护一名玩家免受生命威胁。但是，如果你保护了狼人，你有一半的几率会死。</value>
+  </string>
+  <string key="AboutDetective">
+    <value>你是一名侦探。你可以在白天调查一名玩家的身份，不过要小心的选择调查的目标！调查时，狼人们有40%的机率会发现你是侦探。</value>
+  </string>
+  <string key="AboutGunner">
+    <value>你是枪手，拥有两颗子弹。你可以在白天射杀一名玩家。不过在你射出第一枪以后，所有人都会看到你开枪杀人。</value>
+  </string>
+  <string key="AboutTanner">
+    <value>你是皮匠。你的赢法非常简单：只要你被村民处决，你就是本场游戏的赢家。</value>
+  </string>
+  <string key="AboutFool">
+    <value>你认为你是先知，但可惜你不是。当你去看他人的身份时，bot会随便告知你，比如你想看狼人的身份，bot却说他是守护天使。</value>
+  </string>
+  <string key="AboutCult">
+    <value>你是邪教徒。你可以在晚上施洗一名玩家（除了狼人），让他们成为你的一员。如果所有玩家都失掉了原来的身份受洗成邪教徒，邪教徒就赢了。</value>
+  </string>
+  <string key="AboutCH">
+    <value>作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是邪教徒，他就会死。如果有人想施洗你，最新加入的那位邪教徒就会死于非命。</value>
+  </string>
+  <string key="AboutWC">
+    <value>你是孤儿。可以选择一名玩家当你的偶像。但如果你的偶像死亡，你会变成狼人。</value>
+  </string>
+  <string key="AboutAppS">
+    <value>你是先知学徒，一旦真正的先知死亡，你就会继承他们的使命，不过在这之前你还是个学徒（普通人）。</value>
+  </string>
+  <string key="AboutBH">
+    <value>你是旁观者，你知道谁是真正的先知（不是傻瓜，真的）。除此之外，你就是个普通人。</value>
+  </string>
+  <string key="AboutMason">
+    <value>你是砖瓦工。如有其他砖瓦工同伴，你也会知道他们是谁。除此之外你就跟普通村民一样。不过如果同伴没来参加聚会，你就会知道他的身份变了，极有可能被洗成了邪教徒。
+</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      你是替身。据传你的祖先是变形女，可以任意变形，而你继承了一部分的能力。选择一名玩家，当该玩家死后，你将接替他们的角色。
+      如果你选择的角色在受洗成邪教徒后死亡，你会接替他原有的角色。如果选的是是孤儿，他和偶像死了，你会变成狼人。如果孤儿死了，但他的偶像没死，你会继承孤儿的身份和他的偶像；你在变身前不会被洗成邪教徒，但变身后可以被洗。如果到最后都没有变形，那你就输了（除了你和另外一人是情侣）。
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      你是丘比特。只穿着胖次，带着一弓两箭就被送到了地球。你可以用箭射中两个玩家让他们成为情侣。他们会知道对方却不知对方的身份。如果一方死去，另一方伤心之下，会自杀殉情。 如果情侣活到最后，情侣就会赢。（无论双方处于的阵营）
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      你是小镇的猎人。来福枪不在手上你就睡不踏实。如果你死了，你可以选择一名玩家和你陪葬。如果你被狼人咬了，那你有机会把这个狼人杀死，但却不能再选择杀死其他人。
+      如果其他人去你家，他们有可能因为你发疯而被你杀死；如果狼人来杀你，你有机会杀死他；你死前可以杀死一人跟你陪葬。
+      狼人去你家的时候你杀他们的几率按游戏里的狼人数目而定：一只狼=30%，两只狼=50%，三只狼=70%，如此类推。（但是如果你遇上不止一只狼，你有机会杀死其中一只，却会因为不敌群狼而死。如果邪教徒来传教，他们有50%失败。一旦他们失败，你就有50%机会杀死他们中的一个。
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>
+      你是变态杀人魔。最近刚从精神病院逃出来，想要杀死全镇的人。你可以杀任何人，就算狼人来杀你，你也会活着杀死其中一个。唯一的胜出方法是成为最后一个存活的玩家。（和某人成为情侣并取胜以外）</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para 也许最近和狼人共处的时间太长了于是开始喜欢对人嚎叫了……果然和狼人待的太久不是个好主意。😂</value>
+  </string>
+  <string key="EndTime">
+    <value>游戏进行了：{0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>第{0}天</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>发生了错误，然后此节点已经关闭 :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>已通过私聊发送了详细信息</value>
+  </string>
+  <string key="StartPM">
+    <value>为了能收到机器人的消息请先私聊 @werewolfbot 发送一个 /start 。</value>
+  </string>
+  <string key="PMTrue">
+    <value>很好！我已经可以私聊你了😃</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>你需要回复你想赶走的玩家这个命令。</value>
+  </string>
+  <string key="WhatToDo">
+    <value>你想做什么?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>只能从群聊中加入游戏🙄</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>只能从群聊中开始游戏🙄</value>
+  </string>
+  <string key="PingInfo">
+    <value>从 Telegram 收到消息的时间: {0}\n当前负载: {1}%\n每秒传送的消息数量: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>选择一种语言。\n当前是 “{0}”</value>
+  </string>
+  <string key="WhatVariant">
+    <value>选择一种语言变体。\n当前是 “{0}”</value>
+  </string>
+  <string key="LangSet">
+    <value>“{0} 是现在使用的语言。”</value>
+  </string>
+  <string key="GetLang">
+    <value>要下载哪个语言的文件?</value>
+  </string>
+  <string key="NoNodes">
+    <value>现在没有可用的节点，等会儿再来吧🌚</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>只能从群聊中运行这个指令🙄</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>你不是全局管理员...</value>
+  </string>
+  <string key="NotPara">
+    <value>你不是 Para!</value>
+  </string>
+  <string key="Yes">
+    <value>是</value>
+  </string>
+  <string key="No">
+    <value>否</value>
+  </string>
+  <string key="Allow">
+    <value>允许</value>
+  </string>
+  <string key="Disallow">
+    <value>不允许</value>
+  </string>
+  <string key="Show">
+    <value>显示</value>
+  </string>
+  <string key="Hide">
+    <value>隐藏</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>普通模式</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>混乱模式</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>由玩家选择</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>不显示</value>
+  </string>
+  <string key="ShowLiving">
+    <value>只显示幸存玩家</value>
+  </string>
+  <string key="ShowAll">
+    <value>显示所有玩家</value>
+  </string>
+
+  <string key="Cancel">
+    <value>取消</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>是否允许游戏中逃跑?\n提示：玩家总是可以在游戏开始前逃跑。\n游戏中允许逃跑的状态为： {0}（不是 not 即表示允许）</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>游戏中允许逃跑的状态为： {0}。</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>最大玩家数量?\n当前是: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>现在最大玩家上限为{0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>是否在玩家死亡时显示角色?\n当前是: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>现在玩家死亡后{0}角色.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>游戏模式?\n当前是: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>现在的游戏模式是{0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>是否在游戏结束时显示角色?\n当前是: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>现在游戏结束后{0}角色</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>设置白天的基准时间（按秒计，会根据玩家的数量增加适量的基数，最少为60秒）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>把白天的基准时间设置成了 {0} 秒</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>设置夜晚的时间（按秒计）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>把夜晚的时间设置成了 {0} 秒</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>设置投票阶段的时间（按秒计）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>把投票阶段的时间设置成了 {0} 秒</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>允许游戏中出现傻瓜?\n当前是：{0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>现在游戏中{0}出现傻瓜</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>允许游戏中出现皮匠?\n当前是：{0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>现在游戏中{0}出现皮匠</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>允许游戏中出现邪教徒?\n当前是：{0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>现在游戏中{0}出现邪教徒</value>
+  </string>
+  <string key="ThankYou">
+    <value>设置已完成，祝玩的开心 :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>你希望以哪个语言玩游戏?</value>
+  </string>
+  <string key="HereIsList">
+    <value>语言为{0}的群组有:</value>
+  </string>
+  <string key="Members">
+    <value>人</value>
+  </string>
+  <string key="StartMe">
+    <value>为了能收到机器人的消息请先私聊 bot 发送一个 /start 。</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>一道晴天霹雳，正想逃走的【{0}】被雷劈死了~\n 玩家【{0}】因为没能启动机器人而离开了游戏。 </value>
+  </string>
+  <string key="LatestList">
+    <value>目前的玩家列表</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>没能获得玩家列表 _(:з」∠)_</value>
   </string>
 </strings>

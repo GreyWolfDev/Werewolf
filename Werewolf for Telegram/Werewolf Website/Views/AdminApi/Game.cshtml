@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using Werewolf_Website.Models
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <!--
+            PANEL CLASSES:
+                panel-default
+                panel-danger
+                panel-warning
+                panel-info
+                panel-success
+
+            INFO: 	panel collapse - stored on user localStorage (handled by app.js _panels() function).
+                    All pannels should have an unique ID or the panel collapse status will not be stored!
+        -->
+        <div id="panel-2" class="panel panel-default">
+            <div class="panel-heading">
+                <span class="title elipsis">
+                    <strong>PLAYER LIST</strong> <!-- panel title -->
+                </span>
+            </div>
+
+            <!-- panel content -->
+            <div class="panel-body">
+
+                <!-- tabs content -->
+
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered" id="playersTable">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Dead</th>
+                            <th>Choice</th>
+                            <th>Votes</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <a class="size-12" href="#">
+                        <i class="fa fa-arrow-right text-muted"></i>
+                    </a>
+
+                </div>
+
+
+
+            </div>
+            <!-- /tabs content -->
+
+        </div>
+        <!-- /panel content -->
+
+    </div>
+    <!-- /PANEL -->
+
+</div>
+
+
+
+
+
+
+<script>
+    var nodeId = '@ViewBag.ClientId';
+    var grpId = '@ViewBag.GroupId';
+    $(document)
+        .ready(function () {
+            console.log('setting interval');
+            setInterval(updateNodeInfo,1000);
+        });
+
+
+    updateNodeInfo = function() {
+        var t = $('#playersTable');
+        console.log('getting updates');
+        $.ajax({
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: {clientid: nodeId, groupid: grpId},
+            url: '/AdminApi/GetGameInfo',
+            error: function(error) {
+
+            },
+            success: function(d) {
+                console.log(d);
+                $("#playersTable tbody tr").remove();
+
+                $.each(d.Players,
+                    function(index, value) {
+                        addRow(t, value.Id, value.Name, value.PlayerRole, value.IsDead, value.Choice, value.Votes);
+                    });
+            }
+        });
+    };
+
+    addRow = function (table, id, name, role, dead, choice, votes) {
+        console.log(dead);
+        var ded = "Yes";
+        if (dead === false) {
+            ded = "No";
+        }
+        table.find('tbody')
+            .append($('<tr>')
+                .append($('<td>').append(id))
+                .append($('<td>').append(name))
+                .append($('<td>').append(role))
+                .append($('<td>').append(ded))
+                .append($('<td>').append(choice))
+                .append($('<td>').append(votes)));
+        //.append($('<td>').append("<a href='/AdminApi/Game/" + grpid + "' class='btn btn-default btn-xs btn-block'>View</a>")));
+    }
+
+</script>

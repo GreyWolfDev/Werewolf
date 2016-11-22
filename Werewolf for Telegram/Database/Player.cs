@@ -17,8 +17,6 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Player()
         {
-            this.Actions = new HashSet<Action>();
-            this.Actions1 = new HashSet<Action>();
             this.GameKills = new HashSet<GameKill>();
             this.GameKills1 = new HashSet<GameKill>();
             this.GamePlayers = new HashSet<GamePlayer>();
@@ -34,11 +32,13 @@ namespace Database
         public Nullable<bool> HasPM { get; set; }
         public string BanReason { get; set; }
         public string ImageFile { get; set; }
+        public string Language { get; set; }
+        public Nullable<int> TempBanCount { get; set; }
+        public Nullable<bool> HasPM2 { get; set; }
+        public Nullable<bool> HasDebugPM { get; set; }
+        public Nullable<long> Achievements { get; set; }
+        public string WebUserId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Actions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Actions1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameKill> GameKills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

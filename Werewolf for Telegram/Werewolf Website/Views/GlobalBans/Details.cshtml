@@ -1,0 +1,67 @@
+﻿@model Database.GlobalBan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GlobalBan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TelegramId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelegramId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expires)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expires)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BannedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BannedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BanDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BanDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

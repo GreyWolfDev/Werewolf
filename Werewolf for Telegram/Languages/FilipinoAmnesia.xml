@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Filipino Amnesia mode by @arbeanstok translated from EnglishAmnesia by @ayylimao-->
+<!-- Best played with Show roles after death -->
+<!-- Released 09/09/16 -->
+<!-- Line 105 Detective with 2 in head AskDetect-->
+<strings>
+  <language name="Filipino (Amnesia Mode)" base="Filipino" variant="Amnesia Mode"/>
+  <string key="NotInGame">
+	<value>Nakalimutan mo na agad? Hindi ka pa kasali sa laro!</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+	<value>Si {0} ay nagsimula ng laro! Gamitin ang /join para makasali! Sa sobrang saya mo makakalimutan mo na pangalan mo!</value>
+    <value>Isang bagong laro ang sinimulan ni {0}! Gamitin ang /join para makain ng makakalimuting mga wuff!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+	<value>Si {0} ay nagsimula ng magulong laro! Gamitin ang /join para makisali sa kalituhan!</value>
+    <value>Isang bagong magulong laro ang sinimulan ni {0}! Gamitin ang /join para mamatay ng biglaan!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+	<value>Nakalimutan mong sumali bago mag-umpisa ang laro! Gamitin ang /nextgame at i-p-pm kita pag may mag-uumpisang laro na ulit para hindi mo na makalimutan!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Kasali ka na kaya! Nakalimutan mo na ba?</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto nalang para sumali! Wag kalimutan gamitin ang /join para makasali!</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} segundo nalang para sumali. Gamitin ang /join para sumali.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Nakalimutan ng lahat sumali! Kulang tayo ng players. Mamaya nalang pag naalala na nila.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Magsisimula na ang laro. Nagbibigay na ako ng roles. May kakaibang nangyayari sa baranggay! Sa di malamang dahilan, nakalimutan ng lahat kung sino sila! (Ang roles ay hindi malalaman ng players)</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>Nakalimutan mo na ba? May kapangalan ka dito na {0}, Palitan mo nalang pangalan mo para makasali.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Pasensya ka na. Puno na ang bus. Subok ka nalang ulit sumali /nextgame.</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>Nakalimutan ni {0} kung sino siya! {1} na ang nakakalimot, {2} hangang {3} lang ang pwede sumali.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>{0}, Wag mo kalimutan i-PM si bot! Pindutin ang button sa baba o kaya: {1}, tapos pindustin ang start. Hanggat di mo ginagawa yan di ka pwede sumali.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Nakalimutan mong nakalimutan mong huminga kanina? Ano ba yan.</value>
+  </string>
+  <string key="Flee">
+    <value>Kinalimutan na ni {0} ang pamilya and barkada niya. Nakalimutan na din niya umuwi! Naligaw na siya.</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>Nakalimot na si {0}, pero siya ang {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} na ulyanin nalang ang natitira.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>You don't even know who you are but you already want to do something? Take a breath! I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Nakalimutan mo na agad? Di mo pwede gawin yan hanggat di ka naglalaro!</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Nakalimutan mo na ata kung sino talaga pinag-uusapan natin... Wala naman akong kilalang player na ganyan ang pangalan!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Did you forget how to play too? This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>Si {0} ay bumoto para may gawing kababalaghan kay {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>Si {0} ay binoto si {1} para i-lynch</value>
+  </string>
+  <string key="IdleKill">
+    <value>Si {0} ay nakalimutang bumoto ng dalawang magkasunod na gabi (realtalk to). Pati tuloy pag hinga niya nakalimutan niya na. Ayun deds. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Nagbago ang role mo. Ano na kaya? Hm...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Natanggap ang pinili mo.</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nDi mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>Patay na si {0}! Nagbago na ang role mo. Ano na kaya? Hm...</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>Dahan-dahan mong nakakalimutan ang isang pangalan... Ano nga ulit yun? {1}? Tapos may iba kang naaalala. Si {0}!</value>
+  </string>
+  <string key="SeerSees">
+    <value>Di mo man maalala kung sino ka, alam mo naman na si {0} ay {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Sino ang gusto mo i-lynch</value>
+  </string>
+  <string key="AskDetect">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino? At bakit nakatatak sa isip mo ang 2?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino? At bakit nakatatak sa isip mo ang {0}?</value>
+  </string>
+  <string key="AskVisit">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskSee">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskEat">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Pag-usapan niyo ni {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> at </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Hindi mo maalala kung sino at ano ka? Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag umaga!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Hindi mo maalala kung sino at ano ka? Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag umaga!</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Hindi mo maalala kung sino at ano ka. Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>Hindi mo maalala kung sino at ano ka. Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>Hindi mo maalala kung sino at ano ka. Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Hindi mo maalala kung sino at ano ka. Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Hindi mo maalala kung sino at ano ka. Bakit kaya?</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="LynchTime" >
+    <value>
+	  Palubog na ang araw, nagkita-kita ang mga villagers kung sino ang... di na magigising bukas
+      Lahat ay may {0} para bumoto!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value>Umaga na. Lahat ay may {0} segundo para subukang alamin ang role nila, magkwentuhan, chika chika, basta yun.</value>
+  </string>
+  <string key="NightTime" >
+    <value>Lumubog na ang araw. Umuwi na ang lahat para matulog, umaasang pag gising nila naaalala na nila ulit ang lahat. Mga may night activity, meron kayong {0} segundo para kumilos!</value>
+  </string>
+  <string key="LynchKill" >
+    <value>Nakapagdesisyon na ang mga villagers. Umaasang tama ang desisyon nila. Patay na si {0}. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Dahil hindi sila magkasundo, umuwi nalang silang lahat para matulog...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Mukang nakalimot ang lahat bumoto! Walang magigising ang lahat bukas ng umaga...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>Nagkita-kita ang mga villagers sa umaga pero hindi nila nakita si {0}. Pinuntahan nila siya sa bahay at nakita nila ang bangkay niya. Habang hinahanap nila ang salarin, nakakita sila ng dalawang chapa ng pulis. Bakit kaya dalawa?</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>Umaga na ng makita ng lahat ang bangkay sa harap ng simbahan. May pakpak ito pero bali bali. Si {0} ay patay na.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>Umaga na, maraming tambay ang nakapansin ng nagkalat ang mga bala ng baril, mga piraso ng paa, at ilang daliri... Nagulat ang lahat nang sa Fountain sa tapat ng barangay hall, nakita nila ang katawan ni {0}, kinain ng werewolf. Wala na kayong gunner.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value>Umaga na nang makita ng mga tambay ang gutay-gutay na katawan ni {0} sa harap ng isang mesa na may Ouija Board at Tarot Cards. Patay na si Madam Auring.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value>Nagising ang lahat sa amoy ng nasusunog na alak at kahoy... Nasusunog ang kaisa-isang bar sa barangay!!! Matapos mapatay ang apoy, nakita nila ang katawan ni {0} sunog na sunog at may mga kagat.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value>Umaga na nang makita ng mga tambay and gutay-gutay na katawan ni {0} sa harap ng isang mesa na may Snakes and Ladders at may hawak na... Pokemon Cards? Isa siyang FOOL!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>Nagising ang mga tambay dahil sa masangsang na amoy. Sinundan nila ang amoy, para makita si {0}. Patay na. {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Nagising ang mga tambay dahil sa masangsang na amoy na galing sa bahay ni {0}... Pumasok sila sa bahay at nakita nila ang katawan niya sa harap ng gawa-gawang altar... Isang kulto ang napatay ng hunter!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Nagkita-kita ang mga tambay ng umaga para magchismisan. Complete attendance and barkada. Mukang walang inatake kagabi.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>Nagbago ang role mo. Ano na kaya? Hm...</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Hindi mo maalala kung sino at ano ka. Pero naaalala mo si {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>Sa mga pangalan na nasa isip mo, may bago kang naalala: {0}!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Naku! Kinain ka na ng wolves. NOMNOMNOMNOM</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>Pumunta ka sa bahay ng wuff! Nakain ka na...</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Walang tao sa bahay ni {0}!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>May nangyari ba kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>Nakalimutan ng Harlot kagabi. Nakain tuloy si {0} ng mga wuffs!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>Walang tao sa bahay ni {0}!</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>Wuff si {0}! Nakain ka na...</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>Nagkamali ng bahay na binisita si {0}! Nakita ang bangkay niya sa tapat ng pinto ng simbahan...</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>Pumunta si {0} sa bahay ni {1} para sa saglit na kaligayahan. Pero naabutan niyang kinakain ng wuff si {1}! Nakita si {0} ng wuff at siya naman ang kinain nito. Patay na si {0}</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>May nangyari ba kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0} ay ang Detective 🕵!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>Di mo man maalala kung sino ka, alam mo naman na si {0} ay {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>Isang malakas na putok na baril ang narinig ng lahat. Pinuntahan ng mga villager ang pinanggalingan ng putok at nakita nila si {0} nakatutok pa ang baril sa ulo ng bangkay ni {1}. Si {1} ay ang Harlot 💋</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>Isang malakas na putok na baril ang narinig ng lahat. Pinuntahan ng mga villager ang pinanggalingan ng putok at nakita nila si {0} nakatutok pa ang baril sa ulo ng bangkay ni {1}. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>Nanalo ang mga wuff!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>Nanalo ang mga wuff!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>Nanalo ang mga villagers! Namatay na ang lahat ng kalaban nila!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Hala! Bakit niyo ni-lynch yung tanner! Panalo na tuloy siya!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Bigla nalang naalala ng mga survivors ang lahat! Ang mga role nila ay:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value>Si {0} ay bumoto para may gawing kababalaghan kay {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>Pumunta si {0} sa bahay ni {1} patay na siya ngayon!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>Patay na si {0}! Nakatatak sa isip mo ang {1}</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Nagbago ang role mo. Ano na kaya? Hm...</value>
+  </string>
+  <string key="CultTeam">
+    <value>Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>Sa mga pangalan na nasa isip mo, may bago kang naalala: {0}!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>Pumunta si {0} sa bahay ni {1}. Pero walang tao!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Hindi man nila maalala sila nalang ang natitira. Panalo ang Cult!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Patay na si {0}!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>Sa mga pangalan na nasa isip mo, may bago kang naalala: {0}!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>Patay na si {0}! Nagbago ang role mo. Ano na kaya? Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>isang Villager 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>ang Drunk 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>ang Harlot 💋</value>
+  </string>
+  <string key="Seer">
+    <value>a Seer 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>ang Traitor 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>ang Guardian Angel 👼</value>
+  </string>
+  <string key="Detective">
+    <value>ang Detective 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>isang Werewolf 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>ang Cursed 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>ang Gunner 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>ang Tanner 👺</value>
+  </string>
+  <string key="Fool">
+    <value>ang Fool 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>ang Wild Child 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>ang Beholder 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>ang Apprentice Seer 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>isang Cultist 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>ang Cultist Hunter 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Naligaw</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Deds</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Buhay pa</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Ulyaning Buhay</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>isang Mason 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Hindi mo maalala kung sino at ano ka? Bakit kaya?</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Pag gising ng lahat, nakita nila ang katawan ni {0} sa ibabaw ng batuhan. Isa sa mga Mason ang namatay!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>Patay na si {0}!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Pumunta si {0} sa bahay ni {1} pero hindi niya naalala kung anong nangyari nang gabing yun.</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, may player na {0} din ang pangalan ang nakasali na. Palitan ang pangalan upang makasali.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Di mo man maalala kung sino ka, alam mo na si {0} ay isang Cultist 👤!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>ay</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Nagkita-kita ang mga Tambay ng umaga para magchismisan pero nagtaka sila at wala si {0} siya pa naman ang supplier ng mga chika. Pumunta sila sa bahay niya at nakita nila si {0} na gutay-gutay ang katawan.</value>
+    <value>Paggising ng mga Tambay, nagulat sila nang makita ang katawan ni {0} sa kalsada. Walang makitang bakas ng wolf or serial killer sakanya. Paano kaya siya namatay?</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Dahan-dahan mong nakakalimutan ang isang pangalan... {0} ba yun? Teka, ano nga ulit iniisip mo?</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Walang iwanan hanggat di tayo nakakaalala baka di ka na makauwi! Dinisable ng admin ang pagflee kapag nag-umpisa na ang laro!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>ay patay na</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Nakalimutan mo na ba? Kasali ka na sa laro! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games... Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Your group is currently in the queue. Don't worry, it won't be forgotten! Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>Nakalimutan mo nanaman? Wala pang nag-uumpisang laro! Mag-umpisa ng laro gamit ang /startgame o magulong laro gamit ang /startchaos.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Hindi ka admin. Wag mong ipilit di mo to pwede gawin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null. Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} is already an admin, remember?</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} is not an admin, remember?</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} removed from admin list.</value>
+  </string>
+  <!-- HERE! EDIT HERE! is this message used when setting to or from amnesia? ayylmao ~> Yes Amber it is. arbeanstok -->
+  <string key="LanguageSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+	<value> </value>
+  </string>
+  <string key="TimesUp">
+	<value>Nakalimutan mo bang pumili? Wala ka ng oras!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0}</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Napagdesisyunan ng Villagers na di ka na magigising bukas! Bago mo makalimutan ang lahat, kinuha mo ang baril mo at pwede ka magsama ng isa pang mamamatay! Sino ang gusto mo isama? Mayroon ka lang 30 segundo para pumili!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>Unang nakalimutan ni {0} na may baril siya kaya wala siyang naisama hanggang sa nakalimutan na din niya huminga.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+	<value>Unang nakalimutan ni {0} na may baril siya kaya wala siyang naisama hanggang sa nakalimutan na din niya huminga.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+	<value>Bago nakalimutan ni {0} na may baril siya ay kinuha na niya ito at itinutok kay {1} hanggang sa nakalimutan na din niya huminga. Natumba si {1} patay. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Sugatan ka na! Huling pagkakataon mo na! Bago ka mamatay may pagkakataon kang barilin ang isang player. Sino ang gusto mo isama sa hukay?</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>Unang nakalimutan ni {0} na may baril siya kaya wala siyang naisama hanggang sa nakalimutan na din niya huminga.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>Unang nakalimutan ni {0} na may baril siya kaya wala siyang naisama hanggang sa nakalimutan na din niya huminga.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>Bago nakalimutan ni {0} na may baril siya ay kinuha na niya ito at itinutok kay {1} hanggang sa nakalimutan na din niya huminga. Natumba si {1} patay. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>Pumunta si {0} sa bahay ni {1}. Patay na siya ngayon!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>Sinubukan ng mga wuffs na mag-midnight snack pero napalaban sila! Namatay si {0} sa gitna ng laban.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Sinubukan ng mga wuffs na mag-midnight snack pero napalaban sila! Namatay si {0} sa gitna ng laban.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Sinubukan ng mga wuffs na mag-midnight snack pero napalaban sila! Namatay si {0} sa gitna ng laban.</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Akala ni {0} ay payapa na ang kanyang gabi ngunit nagkamali siya. Umaga na nang makita ng mga villager ang katawan ni {0} na namatay sa di malamang dahilan kagabi. {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>Pumunta si {0} sa bahay ni {1}. Patay na siya ngayon!</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>Pumunta si {0} sa bahay ni {1}. Patay na siya ngayon!</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Bahay ng Serial Killer ang pinuntahan mo. Patay ka na ngayon.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Si {0} ay ang serial killer. Patay ka na ngayon.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now! - {0}</value>
+  </string>
+  <string key="DGToMason">
+    <value>Sa mga pangalan na nasa isip mo, may bago kang naalala: {0}!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>Patay na si {0}! Nagbago ang role mo. Ano na kaya?  Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>Sa mga pangalan na nasa isip mo, may bago kang naalala: {0}!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>Patay na si {0}! Nagbago ang role mo. Ano na kaya?  Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>Sa mga pangalan na nasa isip mo, may bago kang naalala: {0}!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>Patay na si {0}! Nagbago ang role mo. Ano na kaya?  Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Serial Killer ang natitirang buhay! Panalo ang Serial Killer!</value>
+  </string>
+  <string key="AskKill">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="LoverDied">
+    <value>Nang malaman ni {1} na namatay na si {0} nadrepress siya ng todo at nagsuicide nalang. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Alam mo na may dapat gagawin ka sa isang tao, pero kanino?</value>
+  </string>
+  <string key="Hunter">
+    <value>ang Hunter 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Cupid 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>ang Serial Killer 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>ang  Doppelgänger 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0}</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Nagbago ang role mo. Ano na kaya?  Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>#MAYFOREVER Nanalo ang lovers!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Nakita ng lahat ang bangkay ni {0} na tadtad ng bala. Mukang sinubukan nilang bisitahin ang hunter kagabi! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>May nangyari ba kagabi? Hindi mo maalala...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Nakalimutan mo nanaman ba? Nasa waiting list ka na ng {0}!</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Nasa waiting list ka na ng {0}. Wag kang mag-alala di kita kakalimutan i-PM pag may mag uumpisa ng bagong laro.(Di tulad ng mga 'friends' mo na naalala ka lang pag may kaylangan sila sayo)</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>May mag-uumpisa nang laro sa {0}! Wag kalimutang sumali!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Umaga na at nagkita ang dalawang natitirang buhay na villager. Nakita ni {1} na nakatingin sakanya si {0} na may malaking ngiti sa muka at may hawak na itak. Nilapitan siya nito at pinagtataga.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Namatay na lahat ng tao sa baranggay. Walang nanalo. So sad :(</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Umaga na at nagkita ang dalawang natitirang buhay na villager. Inilabas ni {0} ang kanyang itak at sinugod si {1}. Si {1} naman ay inilabas ang baril niya at binaril si {0}. Patay silang dalawa. Namatay na lahat ng tao sa baranggay. Walang nanalo. So sad :(</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>Nakalimutan mong pumili kaya si bot na ang pumili para sayo: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Panalo</value>
+  </string>
+  <string key="Lost">
+    <value>Talo</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Si {0} ay nakalimutang bumoto at namatay na dahil sa hindi pagboto ng {1} beses sa loob ng 24 oras.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>
+	Every player is a villager, able to vote every day to try and lynch the village's enemies (or their own...), but some people are nothing other than villagers! In that case, they won't have any actions for the whole game (other than the lynch vote), and their deaths will only make a difference as another number.
+	
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>
+	The Seer may choose a player every night, and will find out their role once morning comes. Careful when revealing what you've found out to others, though: lots of people in the villager want a Seer dead... Trust no one, not even yourself: you may be the fool! (/aboutfool) When looking at the Traitor, there's a 50% chance of seeing them as either a villager or a wolf.
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutWw">
+    <value>
+	 Every night, all wolves in the pack vote to decide who to attack. Not all players should be attacked, though!
+	 The newest wolf in a pack will be killed if the Serial Killer is attacked, and may be killed if the target is the Hunter (30% chance for a sole wolf to die - and not be able to kill the Hunter! - and an additional 20% chance for the newest wolf to die for each additional wolf in the pack!)
+	 All wolves will get drunk if they attack the Village Drunk, and won't be able to do any actions the next night!
+	 <!--EDIT HERE HERE what are roles that won't be home? ayylmao-->The Harlot probably won't be home, so the night will be wasted if you try to attack them!
+	 Good news, though: if you attack the cursed, they will become a wolf along with you! If you kill a Wild Child's rolemodel, they will also become a wolf!
+	 
+	 NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutHarlot">
+    <!-- hunter! ayylmao -->
+	<value>
+	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a cultist, the harlot has a 50% chance of finding out their role!
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>
+	The Drunk is just like a villager... Except when they're killed by wolves! Then the wolves will become drunk too, and unable to attack on the next night!
+	
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>
+	The Cursed is just like a villager... Until they're attacked by the wolves! Then they become a wolf as well, and join the pack!
+	
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>
+	The Traitor is just like a villager... Until all wolves die! Then they take over the mantle and become a werewolf, ready to attack the villagers! When the Seer looks at the Traitor, there's a 50% chance of the traitor appearing as either a villager or a wolf.</value>
+	
+	NO ACTIONS, until their role changes!
+  </string>
+  <string key="AboutGA">
+    <value><!--what's the chance for SK to kill GA? 50% wolf ayylmao-->
+	The Guardian Angel can choose one player each night to protect from attacks, either from wolves or the Serial Killer. However, if they choose to protect one of those they should protect from, they may be killed!
+	
+	NIGHT ACTIONS, every night!
+	</value>
+  </string>
+  <string key="AboutDetective">
+    <value>
+	Every day, the Detective can choose a player to investigate, and will find out what their role is. There is a 40% chance the werewolves will see the Detective investigating someone, though!
+	
+	DAY ACTIONS, every day!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>
+	During the day, the Gunner will be given the chance to shoot (and kill!) another player. The whole village will know who did it, so they will (probably) not lynch the Gunner, knowing they're on the villagers' side! There are only two bullets on their gun, though...</value>
+	
+	DAY ACTIONS, but it can only be used twice!
+  </string>
+  <string key="AboutTanner">
+    <value>
+	The Tanner is just like a villager... But if they're lynched, they win the game!
+	
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutFool">
+    <value>
+	The Fool has no way of knowing they aren't actually the Seer... When choosing a player to find out their role, they will instead get told a random role out of all roles of alive players.
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutCult">
+  <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
+    <value>
+	Every night, all cultists in the cult vote to decide who to convert. The cult wins when every single alive player is a cultist. It's not that simple to convert players, though!
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutCH">
+    <value>
+	The Cultist Hunter has a single job: kill all cultists. Every night, they get to visit a player, who won't feel anything... unless they are a cultist, in which case, the Cultist Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutWC">
+    <value>
+	The Wild Child chooses a player as their rolemodel during the first night of the game. Once their role model dies, the Wild Child becomes a werewolf!
+	
+	FIRST NIGHT ACTION, then none until their role changes!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>
+	The Apprentice Seer is just like a villager... Until the Seer dies, in which case, they will become the new Seer!
+	
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutBH">
+    <value>
+	The Beholder is just like a villager, but, if there's a Seer in the game, they will be told their name. If the Seer dies and the Apprentice Seer and/or the Doppelgänger become Seer, the Beholder will also be told!
+	
+	NO ACTIONS, but they do get information!</value>
+  </string>
+  <string key="AboutMason">
+    <value>
+	A mason is just like a villager, except they will always know who the other masons are! If a mason is converted to the cult, all other masons will be told!
+	
+	NO ACTIONS, but they do get information!</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a cultist until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
+      
+	  FIRST NIGHT ACTION, then none until their role changes!
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      The Cupid will choose two players at the start of the game and make them fall in love with each other. If one of them dies, the other will die of sorrow... If one of them is on the winning team at the end of the game, both will be winners! If the only players left standing are the Lovers, they will be the winners! The Cupid can choose themselves as one of the Lovers.
+	  
+	  FIRST NIGHT ACTIONS, then none!
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a cultist will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
+	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
+	  
+	  NO ACTIONS, until they die!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>
+	The Serial Killer can choose a player every night to attack and kill. They win if they're the last one alive! There's no one that can't be killed by the Serial Killer, and visiting their house isn't a good idea, since everyone who tries will die... Serial Killers can only be killed by being lynched or shot (by the Gunner or the Hunter).
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutPara">
+    <value>
+	Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.
+	
+	ACTIONS AT EVERY TIME OF THE DAY... Para is busy!</value>
+  </string>
+  <string key="EndTime">
+    <value>Tagal ng laro: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occurred, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>May pinadala ako sayong PM</value>
+  </string>
+  <string key="StartPM">
+    <value>I-PM mo ko para ma-PM kita: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Nakalimutan mo na? Kaylangan mo replyan yung player na gusto mo i-smite!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Anong gusto mong mangyari?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Reply process time: {0}\nPakialam ko sa inyo: {1}%\nMessages per second: {2}\nPasensya ko sa mga user na nagsspam kay bot kaya nagllag: 0</value>
+  </string>
+  <string key="WhatLang">
+    <value>Nooo! Don't change the language out of Amnesia! What language do you want now?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Are you really changing out of Amnesia? So meeeean... What variant do you want?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file? I won't let you get it if it's not for improving Amnesia... (just kidding, go ahead!)</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Did you forget? You must run this command in a group!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para! How can you forget something like that!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any (oh come on!)</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would you like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death? Amnesia gets really hard with hidden roles!\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be? Chaos is more fun with Amnesia!\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+    <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please don't forget to start me so I can PM you!</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} forgot to start the bot, and has been removed from the game!</value>
+  </string>
+    <string key="LatestList">
+    <value>Nakalimutan mo nanaman ba kung sino pa buhay? Oh eto yun list!</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Nakalimutan ko na yung playerlist. Mamaya mo nalang itanong pag nagstart na yung laro. Maaalala ko rin yun mamaya.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Nakasali ka na sa laro sa {0}! Wag kalimutang maglaro ah!</value>
+  </string>
+</strings>

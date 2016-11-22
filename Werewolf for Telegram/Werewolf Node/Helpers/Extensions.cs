@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
+using Database;
 using Werewolf_Node.Models;
 
 namespace Werewolf_Node.Helpers
@@ -51,6 +53,98 @@ namespace Werewolf_Node.Helpers
                 return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name.FormatHTML()}</a>";
 
             return player.Name.ToBold();
+        }
+
+        public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)
+        {
+            return players?.Where(x => !x.IsDead);
+        }
+
+        public static IEnumerable<IPlayer> GetPlayersForTeam(this IEnumerable<IPlayer> players, ITeam team, bool aliveOnly = true, IPlayer exceptPlayer = null)
+        {
+            return players?.Where(x => x.Team == team && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
+        }
+
+        public static IPlayer GetPlayerForRole(this IEnumerable<IPlayer> players, IRole role, bool aliveOnly = true, IPlayer exceptPlayer = null)
+        {
+            return players?.FirstOrDefault(x => x.PlayerRole == role && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
+        }
+
+        public static IEnumerable<IPlayer> GetPlayersForRoles(this IEnumerable<IPlayer> players, IRole[] roles,
+            bool aliveOnly = true, IPlayer exceptPlayer = null)
+        {
+            return players?.Where(x => roles.Contains(x.PlayerRole) && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
+        }
+
+
+        public static int GetStrength(this IRole role, List<IRole> allRoles)
+        {
+            IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf };
+            IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller };
+            switch (role)
+            {
+                case IRole.Villager:
+                    return 1;
+                case IRole.Drunk:
+                    return 3;
+                case IRole.Harlot:
+                    return 6;
+                case IRole.Seer:
+                    return 7;
+                case IRole.Traitor:
+                    return 0;
+                case IRole.GuardianAngel:
+                    return 7;
+                case IRole.Detective:
+                    return 6;
+                case IRole.Wolf:
+                    return 10;
+                case IRole.Cursed:
+                    return 1 - allRoles.Count(x => WolfRoles.Contains(x)) / 2; //vg, or worse
+                case IRole.Gunner:
+                    return 6;
+                case IRole.Tanner:
+                    return allRoles.Count / 2;
+                case IRole.Fool:
+                    return 3;
+                case IRole.WildChild:
+                    return 1;
+                case IRole.Beholder:
+                    return 2 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0); //only good if seer is present!
+                case IRole.ApprenticeSeer:
+                    return 6;
+                case IRole.Cultist:
+                    return 10 + allRoles.Count(x => !nonConvertibleRoles.Contains(x));
+                case IRole.CultistHunter:
+                    return allRoles.Count(x => x == IRole.Cultist) == 0 ? 1 : 7;
+                case IRole.Mason:
+                    return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3 ; //strength in numbers
+                case IRole.Doppelgänger:
+                    return 2;
+                case IRole.Cupid:
+                    return 2;
+                case IRole.Hunter:
+                    return 6;
+                case IRole.SerialKiller:
+                    return 15;
+                case IRole.Sorcerer:
+                    return 2;
+                case IRole.AlphaWolf:
+                    return 12;
+                case IRole.WolfCub:
+                    return 12;
+                case IRole.Blacksmith:
+                    return 5;
+                case IRole.ClumsyGuy:
+                    return -1;
+                case IRole.Mayor:
+                    return 4;
+                case IRole.Prince:
+                    return 3;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(role), role, null);
+            }
+
         }
     }
 }

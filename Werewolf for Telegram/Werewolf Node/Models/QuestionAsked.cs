@@ -22,6 +22,9 @@
         HunterKill,
         SerialKill,
         Lover1,
-        Lover2
+        Lover2,
+        Mayor,
+        SpreadSilver,
+        Kill2
     }
 }

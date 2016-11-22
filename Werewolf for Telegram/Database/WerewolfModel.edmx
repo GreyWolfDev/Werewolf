@@ -5,23 +5,90 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="werewolfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Action">
+        <EntityType Name="BotStatus">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GameId" Type="int" Nullable="false" />
-          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
-          <Property Name="InitiatorId" Type="int" Nullable="false" />
-          <Property Name="ReceiverId" Type="int" Nullable="false" />
-          <Property Name="ActionTaken" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="BotName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BotStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BotLink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContestTerms">
+          <Key>
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="AgreedTerms" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GlobalBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Expires" Type="datetime" Nullable="false" />
+          <Property Name="BannedBy" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BanDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="DailyCount">
           <Key>
@@ -118,6 +185,9 @@
           <Property Name="DisableFlee" Type="bit" />
           <Property Name="CreatedBy" Type="nvarchar(max)" />
           <Property Name="ImageFile" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="GroupLink" Type="nvarchar(max)" />
+          <Property Name="MemberCount" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -177,6 +247,12 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="HasPM" Type="bit" />
           <Property Name="BanReason" Type="nvarchar(max)" />
           <Property Name="ImageFile" Type="nvarchar(max)" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="TempBanCount" Type="int" />
+          <Property Name="HasPM2" Type="bit" />
+          <Property Name="HasDebugPM" Type="bit" />
+          <Property Name="Achievements" Type="bigint" />
+          <Property Name="WebUserId" Type="nvarchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -193,6 +269,19 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="MostCommonRolePercent" Type="int" Nullable="false" />
           <Property Name="GamesSurvived" Type="int" Nullable="false" />
           <Property Name="LastRun" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_InactivePlayersMain">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="last" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -233,6 +322,21 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="GroupId" Type="bigint" Nullable="false" />
           <Property Name="Language" Type="nvarchar(max)" />
           <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="GroupLink" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_PublicGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="MemberCount" Type="int" />
+          <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -254,39 +358,59 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="UserName" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK_Action_Game">
-          <End Role="Game" Type="Self.Game" Multiplicity="1" />
-          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Game">
+            <Principal Role="AspNetUsers">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Action">
-              <PropertyRef Name="GameId" />
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Action_Initiator">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Player">
+            <Principal Role="AspNetUsers">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Action">
-              <PropertyRef Name="InitiatorId" />
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Action_Receiver">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Player">
+            <Principal Role="AspNetRoles">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Action">
-              <PropertyRef Name="ReceiverId" />
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -422,8 +546,15 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Parameter Name="pid" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
-          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BotStatus" EntityType="Self.BotStatus" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="ContestTerms" EntityType="Self.ContestTerms" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="GlobalBan" EntityType="Self.GlobalBan" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DailyCount" EntityType="Self.DailyCount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameKill" EntityType="Self.GameKill" Schema="dbo" store:Type="Tables" />
@@ -445,6 +576,14 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [NotifyGame].[UserId] AS [UserId], 
     [NotifyGame].[GroupId] AS [GroupId]
     FROM [dbo].[NotifyGame] AS [NotifyGame]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_InactivePlayersMain" EntityType="Self.v_InactivePlayersMain" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_InactivePlayersMain].[Id] AS [Id], 
+    [v_InactivePlayersMain].[Name] AS [Name], 
+    [v_InactivePlayersMain].[TelegramId] AS [TelegramId], 
+    [v_InactivePlayersMain].[last] AS [last]
+    FROM [db_owner].[v_InactivePlayersMain] AS [v_InactivePlayersMain]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_NonDefaultGroups" EntityType="Self.v_NonDefaultGroups" store:Type="Views" store:Schema="db_owner">
             <DefiningQuery>SELECT 
@@ -474,8 +613,19 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [v_PreferredGroups].[Name] AS [Name], 
     [v_PreferredGroups].[GroupId] AS [GroupId], 
     [v_PreferredGroups].[Language] AS [Language], 
-    [v_PreferredGroups].[UserName] AS [UserName]
+    [v_PreferredGroups].[UserName] AS [UserName], 
+    [v_PreferredGroups].[Description] AS [Description], 
+    [v_PreferredGroups].[GroupLink] AS [GroupLink]
     FROM [db_owner].[v_PreferredGroups] AS [v_PreferredGroups]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_PublicGroups" EntityType="Self.v_PublicGroups" store:Type="Views" store:Schema="db_owner">
+            <DefiningQuery>SELECT 
+    [v_PublicGroups].[Id] AS [Id], 
+    [v_PublicGroups].[Name] AS [Name], 
+    [v_PublicGroups].[Language] AS [Language], 
+    [v_PublicGroups].[MemberCount] AS [MemberCount], 
+    [v_PublicGroups].[GroupLink] AS [GroupLink]
+    FROM [db_owner].[v_PublicGroups] AS [v_PublicGroups]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_WaitList" EntityType="Self.v_WaitList" store:Type="Views" store:Schema="db_owner">
             <DefiningQuery>SELECT 
@@ -490,17 +640,21 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [v_IdleKill24HoursMain].[UserName] AS [UserName]
     FROM [dbo].[v_IdleKill24HoursMain] AS [v_IdleKill24HoursMain]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_Action_Game" Association="Self.FK_Action_Game">
-            <End Role="Game" EntitySet="Game" />
-            <End Role="Action" EntitySet="Action" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
           </AssociationSet>
-          <AssociationSet Name="FK_Action_Initiator" Association="Self.FK_Action_Initiator">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="Action" EntitySet="Action" />
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
           </AssociationSet>
-          <AssociationSet Name="FK_Action_Receiver" Association="Self.FK_Action_Receiver">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="Action" EntitySet="Action" />
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
           <AssociationSet Name="FK_Game_Group" Association="Self.FK_Game_Group">
             <End Role="Group" EntitySet="Group" />
@@ -539,21 +693,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="werewolfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Action">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GameId" Type="Int32" Nullable="false" />
-          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="InitiatorId" Type="Int32" Nullable="false" />
-          <Property Name="ReceiverId" Type="Int32" Nullable="false" />
-          <Property Name="ActionTaken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Day" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Game" Relationship="Self.FK_Action_Game" FromRole="Action" ToRole="Game" />
-          <NavigationProperty Name="Player" Relationship="Self.FK_Action_Initiator" FromRole="Action" ToRole="Player" />
-          <NavigationProperty Name="Player1" Relationship="Self.FK_Action_Receiver" FromRole="Action" ToRole="Player" />
-        </EntityType>
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="UserId" />
@@ -571,7 +710,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="TimeEnded" Type="DateTime" Precision="3" />
           <Property Name="Winner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GrpId" Type="Int32" />
-          <NavigationProperty Name="Actions" Relationship="Self.FK_Action_Game" FromRole="Game" ToRole="Action" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Game_Group" FromRole="Game" ToRole="Group" />
           <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Game" FromRole="Game" ToRole="GameKill" />
           <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -631,6 +769,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <NavigationProperty Name="Games" Relationship="Self.FK_Game_Group" FromRole="Group" ToRole="Game" />
           <NavigationProperty Name="Players" Relationship="Self.GroupAdmin" FromRole="Group" ToRole="Player" />
           <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemberCount" Type="Int32" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -652,13 +793,17 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="BannedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HasPM" Type="Boolean" />
           <Property Name="BanReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Actions" Relationship="Self.FK_Action_Initiator" FromRole="Player" ToRole="Action" />
-          <NavigationProperty Name="Actions1" Relationship="Self.FK_Action_Receiver" FromRole="Player" ToRole="Action" />
           <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Killer" FromRole="Player" ToRole="GameKill" />
           <NavigationProperty Name="GameKills1" Relationship="Self.FK_GameKill_Victim" FromRole="Player" ToRole="GameKill" />
           <NavigationProperty Name="GamePlayers" Relationship="Self.FK_GamePlayer_Player" FromRole="Player" ToRole="GamePlayer" />
           <NavigationProperty Name="Groups" Relationship="Self.GroupAdmin" FromRole="Player" ToRole="Group" />
           <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TempBanCount" Type="Int32" />
+          <Property Name="HasPM2" Type="Boolean" />
+          <Property Name="HasDebugPM" Type="Boolean" />
+          <Property Name="Achievements" Type="Int64" />
+          <Property Name="WebUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -703,6 +848,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="GroupId" Type="Int64" Nullable="false" />
           <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="v_WaitList">
           <Key>
@@ -712,42 +859,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Expr1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Action_Game">
-          <End Role="Game" Type="Self.Game" Multiplicity="1" />
-          <End Role="Action" Type="Self.Action" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Game">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Action">
-              <PropertyRef Name="GameId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Action_Initiator">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="Action" Type="Self.Action" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Action">
-              <PropertyRef Name="InitiatorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Action_Receiver">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="Action" Type="Self.Action" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Action">
-              <PropertyRef Name="ReceiverId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Game_Group">
           <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
           <End Role="Game" Type="Self.Game" Multiplicity="*" />
@@ -825,7 +936,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <End Role="Player" Type="Self.Player" Multiplicity="*" />
         </Association>
         <EntityContainer Name="WWContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Actions" EntityType="Self.Action" />
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Games" EntityType="Self.Game" />
           <EntitySet Name="GameKills" EntityType="Self.GameKill" />
@@ -837,18 +947,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="v_NonDefaultGroups" EntityType="Self.v_NonDefaultGroups" />
           <EntitySet Name="v_PreferredGroups" EntityType="Self.v_PreferredGroups" />
           <EntitySet Name="v_WaitList" EntityType="Self.v_WaitList" />
-          <AssociationSet Name="FK_Action_Game" Association="Self.FK_Action_Game">
-            <End Role="Game" EntitySet="Games" />
-            <End Role="Action" EntitySet="Actions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Action_Initiator" Association="Self.FK_Action_Initiator">
-            <End Role="Player" EntitySet="Players" />
-            <End Role="Action" EntitySet="Actions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Action_Receiver" Association="Self.FK_Action_Receiver">
-            <End Role="Player" EntitySet="Players" />
-            <End Role="Action" EntitySet="Actions" />
-          </AssociationSet>
           <AssociationSet Name="FK_Game_Group" Association="Self.FK_Game_Group">
             <End Role="Group" EntitySet="Groups" />
             <End Role="Game" EntitySet="Games" />
@@ -915,8 +1013,29 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <FunctionImport Name="getDailyCounts" ReturnType="Collection(werewolfModel.getDailyCounts_Result)" />
           <EntitySet Name="v_IdleKill24HoursMain" EntityType="werewolfModel.v_IdleKill24HoursMain" />
           <FunctionImport Name="GetIdleKills24Hours" ReturnType="Collection(Int32)">
-            <Parameter Name="userid" Mode="In" Type="Int32" />
+          <Parameter Name="userid" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="v_PublicGroups" EntityType="werewolfModel.v_PublicGroups" />
+          <EntitySet Name="GlobalBans" EntityType="werewolfModel.GlobalBan" />
+          <EntitySet Name="v_InactivePlayersMain" EntityType="werewolfModel.v_InactivePlayersMain" />
+          <EntitySet Name="BotStatus" EntityType="werewolfModel.BotStatu" />
+          <EntitySet Name="ContestTerms" EntityType="werewolfModel.ContestTerm" />
+          <EntitySet Name="AspNetRoles" EntityType="werewolfModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="werewolfModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="werewolfModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="werewolfModel.AspNetUser" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="werewolfModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="werewolfModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="werewolfModel.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1095,25 +1214,143 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="v_PublicGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemberCount" Type="Int32" />
+          <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GlobalBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expires" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BannedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BanDate" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_InactivePlayersMain">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="last" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BotStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BotStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BotLink" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ContestTerm">
+          <Key>
+            <PropertyRef Name="TelegramId" />
+          </Key>
+          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="AgreedTerms" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="werewolfModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="werewolfModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="werewolfModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="werewolfModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="werewolfModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetRoles" Relationship="werewolfModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="werewolfModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="werewolfModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="werewolfModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="werewolfModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="werewolfModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="werewolfModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="werewolfModelStoreContainer" CdmEntityContainer="WWContext">
-          <EntitySetMapping Name="Actions">
-            <EntityTypeMapping TypeName="werewolfModel.Action">
-              <MappingFragment StoreEntitySet="Action">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="GameId" ColumnName="GameId" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="InitiatorId" ColumnName="InitiatorId" />
-                <ScalarProperty Name="ReceiverId" ColumnName="ReceiverId" />
-                <ScalarProperty Name="ActionTaken" ColumnName="ActionTaken" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Admins">
             <EntityTypeMapping TypeName="werewolfModel.Admin">
               <MappingFragment StoreEntitySet="Admin">
@@ -1163,6 +1400,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="MemberCount" ColumnName="MemberCount" />
+                <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1198,6 +1438,12 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="WebUserId" ColumnName="WebUserId" />
+                <ScalarProperty Name="Achievements" ColumnName="Achievements" />
+                <ScalarProperty Name="HasDebugPM" ColumnName="HasDebugPM" />
+                <ScalarProperty Name="HasPM2" ColumnName="HasPM2" />
+                <ScalarProperty Name="TempBanCount" ColumnName="TempBanCount" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
                 <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
@@ -1245,6 +1491,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="v_PreferredGroups">
             <EntityTypeMapping TypeName="werewolfModel.v_PreferredGroups">
               <MappingFragment StoreEntitySet="v_PreferredGroups">
+                <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="GroupId" ColumnName="GroupId" />
@@ -1476,6 +1724,111 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GetIdleKills24Hours" FunctionName="werewolfModel.Store.GetIdleKills24Hours" />
+          <EntitySetMapping Name="v_PublicGroups">
+            <EntityTypeMapping TypeName="werewolfModel.v_PublicGroups">
+              <MappingFragment StoreEntitySet="v_PublicGroups">
+                <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />
+                <ScalarProperty Name="MemberCount" ColumnName="MemberCount" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GlobalBans">
+            <EntityTypeMapping TypeName="werewolfModel.GlobalBan">
+              <MappingFragment StoreEntitySet="GlobalBan">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BanDate" ColumnName="BanDate" />
+                <ScalarProperty Name="BannedBy" ColumnName="BannedBy" />
+                <ScalarProperty Name="Expires" ColumnName="Expires" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_InactivePlayersMain">
+            <EntityTypeMapping TypeName="werewolfModel.v_InactivePlayersMain">
+              <MappingFragment StoreEntitySet="v_InactivePlayersMain">
+                <ScalarProperty Name="last" ColumnName="last" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BotStatus">
+            <EntityTypeMapping TypeName="werewolfModel.BotStatu">
+              <MappingFragment StoreEntitySet="BotStatus">
+                <ScalarProperty Name="BotLink" ColumnName="BotLink" />
+                <ScalarProperty Name="BotStatus" ColumnName="BotStatus" />
+                <ScalarProperty Name="BotName" ColumnName="BotName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContestTerms">
+            <EntityTypeMapping TypeName="werewolfModel.ContestTerm">
+              <MappingFragment StoreEntitySet="ContestTerms">
+                <ScalarProperty Name="AgreedTerms" ColumnName="AgreedTerms" />
+                <ScalarProperty Name="TelegramId" ColumnName="TelegramId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="werewolfModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="werewolfModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="werewolfModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="werewolfModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="werewolfModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

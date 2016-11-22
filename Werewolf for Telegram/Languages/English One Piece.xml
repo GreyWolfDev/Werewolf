@@ -1,0 +1,1117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="English (One Piece)" base="English" variant="One Piece" owner="icemeh"/>
+  <string key="NotInGame">
+    <value>You don't appear to be in any games right now...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a game! Use /join to get in on the fun journey towards the search for world’s ultimate treasure, One Piece... and probably die :P</value>
+    <value>A new game has been started by {0}! Use /join to get on the Adventure to the end of the world!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a chaos game! Use /join to get in on the fun journey towards the search for world’s ultimate treasure, One Piece... and probably die :P</value>
+    <value>A new chaos game has been started by {0}! Use /join to get on the Adventure to the end of the world!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>You can't join now! The game is already running.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>You've already joined!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute left to /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Not enough players, cancelling game!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Game is starting, please wait while I assign roles and update the database.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, please change your name to join</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, max player limit has been reached!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  You may not join the game until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't run away! YOU'RE NOW THE FODDER LOCKED DEEP INSIDE THE LOCKER OF DAVY JONES! You think you can escape hell? Jeez, come to your senses and get back inside!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has fled in terror!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} players remain.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be playing...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a player by that name!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to capture and execute {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to feed {1} to Davy Jones’ locker.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} has not voted for 2 nights in a row. The forces of Akuma have judged this as a terrible crime, and {0} suddenly falls down down down, all the way into David Jones’ locker. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>You treacherous and lowly pirate!!! You are now an ally of Marines vowing to take down fellow nakamas zzzzz...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nYou just found out that your love interest Robin is {0}. You’ve just vowed to protect them to the ends of the world from fellow pirates and marines, as they go around sneaking upon fellow players to detect any threat for the pirate community.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>You have found {0}'s frozen body on the deck! You have now vowed to avenge Robin and takes over her role to detect any threat to the pirate community. Oh, and also the new love interest of Sanji, the ero-cook.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>You notice {0} looking grimly at {1}'s frozen body lying over the deck, and immediately decides to change your love interest to {0} to prevent heartbreak. {0} is now your new love interest.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see {0} is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to be fed to Davy Jones’ locker?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to sneak upon using your Suuuuuuuper Spy-glass?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>You have {0} shot(s) left to take down an opponent. Which opponent do you want to take down using your Firebird star (Hi no Tori boshi)? </value>
+  </string>
+  <string key="AskVisit">
+    <value>Who do you want to steal?</value>
+  </string>
+  <string key="AskSee">
+    <value>Who do you want to sneak upon?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Which (probably dying) life do you want to save?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to capture and execute?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Your shiny katana “Wado Ichimonji” is out to take on its prey. Who do you want to slash with the powerful ‘San bya ku ro ku jyu Pound Ho’?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Which pirate do you think kidnapped you?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to brainwash to join Team Yonkou?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>As Jango 😾, you are now a pirate at this time. But if the marines choose to capture or execute you, you will plead them to allow you to join them as Marine (and of course, hypnotize them to make them agree). Need help? > /aboutCursed</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are the world’s greatest Cyborg, Fraaaanky🕵. During the day, you may use your Suuuuuuuper Spy-glass to reveal their role. However - in doing so, your role could be revealed to the marines! (40% chance). Need help? > /aboutDetective</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>As soul king, ful of bones Brook 🍻, you literally offer your heart and soul for the pirate community! (and really, everyone knows it...). Need help? > /aboutDrunk</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are the ship’s only doctor, Chopper 👼. Each night, you may choose a player to save their life. However, if you choose a marine to save, there is a 50% chance you will be captured and executed. Need help? > /aboutGA</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are the master sniper, the Sogeking (Usopp) 🔫. You have the best Kabuto (Slingshot) there ever has been made, but only two shots to take down an opponent. During the day, you may choose to shoot another player. Everyone will hear the shots, and know you are the legendary Sogeking (and not a marine). Need help? > /aboutGunner</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Nami 💋, You burglar cat! You are the tricky thief, and you always got your hands full trying to steal from fellow pirates. During the night, you may choose to visit a fellow pirate’s ship, to try and steal their valuables (and to confirm that they are not marines). However--if you visit a marine, or visit someone captured by the marine, you will be captured as well. If you do go out to steal though, and the marine tries to capture you at your ship, you will survive. Need help? > /aboutHarlot</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>For now, as a Shichibukai 🖕, you are a pirate, but once all the marines are exterminated, you will become a marine yourself, trying to take down the fellow nakama pirates. If the sneaky seer (Robin) sneaks up on you, you may or may not be identified as a marine. Need help? > /aboutTraitor</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>YOU ARE THE MARINE 🐺!! Haters of pirate. Absolute justice (絶対的正義) must be practiced! Choose any pirate to capture each night! Need help? > /aboutWW</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You are Robin 👳, user of Flower-Flower Fruit. Each night, you are able to cast Ojos Fleur on any pirate to check on their true identity. Need help? > /aboutSeer</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >You are a nameless measly pirate 👱, doomed to spend your days mopping the ship deck and doing the menial labour for your ship captain. Need help? > NO HELP FOR YOU</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are Shirahoshi 👺, THE POSEIDON. If you get fed to Davy Jones’ Locker, you win automatically! Nobody dare throw away Poseidon to Davy Jones, duh! As all the seakings will devour the Four Blues, Grand Line and Red Line. Need help? > /aboutTanner</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Poor Coby 👶, you got kidnapped by a pirate!!! Oh no! Once the pirate that kidnaps you got caught or killed. You will join the marines and swear to bring all those darned pirates to justice! Need help? > /aboutWC</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are Sanji 👁, the ero-cook -- you will be on the constant lookout for your love interest, which so happens to be the Robin. You will be told who the (real) Robin is - that is your only function. It is upto you as to how you’re going protect you love interest, from fellow pirates and marines. Need help? > /aboutBH</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You are Vivi 🙇, the Apprentice seer, a replacement for (real) Robin. If the (real) Robin dies, you will be able to eat the Flower-Flower Fruit and gain the skill of Ojos Fleur. Need help? > /aboutAppS</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >You are from the team of the mighty Yonkou 👤. Every night, you may choose a player to brainwash them to join Team Yonkou. If all remaining living players at the end are part of Team Yonkou, you win. Need help? > /aboutCult</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >You are our very own future Pirate King Monkey D. Luffy 💂, trying to take on every pirate from Team Yonkou from brainwashing others! Each night, choose a player. If they are from Team Yonkou, they die. If the Team Yonkou tries to brainwash you, the team's newest member dies from the wrath of your Gomu Gomu no Kong Gun. Need help? > /aboutCH</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Dusk draws near, and the pirates gather to decide who is to be fed to Davy Jone’s locker this evening... Everyone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >It is now day time. All of you have {0} seconds to make your accusations, defenses, or just Keep Calm and Sing the Bink’s sake song to your heart’s content, for you don’t know when the marines will target you.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Night has fallen. Everyone heads to their respective ships, weary after another stressful day. Night players: you have {0} seconds use your actions!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >The pirates have cast their votes, amid doubts and suspicions to offer {0} as a sacrifice to Davy Jones Locker. {0} is walking down the plank and plop~ Down the water they go. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Unable to come up with a proper decision on who to sacrifice to Davy Jones, the pirate gang returns to their respective ships for the night, frustrated....</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Something is fishy, for no one voted!  Are you sure there are no Marines around? Oh well, no food for Davy Jones. </value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Suuuuuuuper~ Franky 🕵 shot a beam of laser to the marines.. =======0 But the marines are too overpowering and {0} is unable to fight them all. 94,000,000 Beli super pirate is down.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Marines found our cute Chopper 👼! Do you think they will let the 100 Beli cotton lover go? NO! The marines doesn’t care about your bounty! The 100 Beli {0} is down.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >Everyone wakes up to hear loud gunshots and shouts from the deck. When they rush to see what happened, the Master Sniper Sogeking 🔫 is missing and they notice a marine ship far away – with {0}, the Sogeking captured, probably sent in exile to the top-secret prison, a place worse than Impel down. And the marine ship just vanished into thin air. You can no longer pursue your beloved sniper and {0}, the 200,000,000 Beli super sniper is no more! </value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >As everyone comes out of their cabins, they find {0} (Robin 👳) to be frozen to sleep! And they realize it’s from those damn marines’ Ice-ice fruit – Aokiji!!! No matter how much the pirates try, she can’t be woken. Your 130,000,000 Beli beauty is no more!</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Everyone wakes up from the dream of Brook 🍻, the Soul King’s soul-wracking song from a distance, except….. It is not a dream anymore. Your 83,000,000 Beli rock singer has been captured by the marines! During the capture, {0} unleashed Nemuriuta Flanc which made the marines unable to capture any pirate the next night!</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >As the sun rises above the ship, the pirates find a thoroughly burned Buggy the Clown 🃏  i.e. {0} (those ruthless marines!!), but with a stolen fake map to Captain John’s treasure/ the corpse of {0}, the fake Robin 🃏 fully burned to a crisp (those ruthless marines!!), but with her mask off (as if we couldn’t recognize that she wasn’t the real Robin) WHAT A FOOL! Poor buggy, sibei sad</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Early morning as News Coo drop a set of newspaper on the deck. Breaking news!!! {0} is captured by the marine! Famous pirate is still unable to run away from the marines. {1} </value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>A nearby ship has been completely submerged with black flames all around – when pirates try to have a closer look it is one of the Yonkou’s 👤 -- {0}'s ship (Shock?!?)... One of the Yonkous has just been completely devastated by our very own future Pirate King Monkey D. Luffy 💂!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >The pirates gather the next morning around the shipping dock, to sighs of relief - it appears there was no attack by Marines the previous night.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >As you wander around the Grand Line, a marine ship appeared! You decided to run away but… you saw Captain “Black Cage” Hina. Mesmerised by her beauty, you drop the idea of running and you join the marines instead.</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your marine counterpart(s): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} was mesmerised by Hina and decided to join the marines! Congrats on your new teammate!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Oh no! The marines have found, captured and sent you to the world’s darkest prison there ever is (even worse than Impel down – of which the location is unknown to non-marines). Sayonaraaa!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >Geez! {0} was the second best swordsman there ever was, in Straw hat pirate ship! You think you can take him down all by yourself, don’t you? Too bad, Brook sacrificed himself to buy more time for strawhat pirates and their ship is now nowhere to be seen. Seems like you have to sail one more night to catch up with those pirates....</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >You tried to revive a ungrateful marine! The marine has captured you.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >You have saved {0}'s life (as always)! You are the best doctor there ever is! (Of course, Chopper can’t stop blushing)</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} didn’t have any severe injuries and is completely safe, so you didn't do much of anything.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>You went to heal {0}, but they weren't on the ship!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Chopper the pirate doctor was spending his night healing you from the deadly wounds you receive from the marines. Thank him! </value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Oh no, Nami the burglar cat chose the wrong ship to steal. {0} has been captured by the marines!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Odd... {0} was not at the ship! That tip on the pirate you received, was not legit, apparently...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >You slip into {0}'s ship to have your little pleasure by stealing some valuables, only to be confronted by the marine vice admiral. You are captured.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >>{0} slipped into the wrong ship last night! The jewels that the burglar cat wore, are found pinned to the city’s shipping dock as a warning to all pirates… And Nami is nowhere to be found!! how sad :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >>{0} slips into {1}'s ship, ready to have a little fun by stealing the forbidden treasures. Instead, {0} finds the marine vice admiral fighting {1}! The vice admiral quickly turns around towards {0} and shackles Nami... {0} is nearly as good as dead.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >You see {0} is not a marine, as you see them all boozing around, while singing Bink’s sake all night long! You silently steal a few million Beli and slip back into your ship! You naughty cat!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night you wake up to see someone stealing your treasure. They saw you clearly and gestures you not to make any noise, for they carry the scary clima-tact and you see the lightning clouds right above you… You silently slip back to sleep, making no noise… Shhhhh </value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >You caught {0} snooping about! That must be the Suuuuuuuuper Ultra-Spy Franky!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Your snooping has shown you that {0} is {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >{1} ask for a new Clima Tact from {0}. As Usopp pass Nami the Clima Tact, it seems weird. Never did Nami thought that the new Clima Tact’s powerful jet dial might malfunction. The deadly impact from the century-old jet dial sends her flying off to sea. Boohoo, our beloved cat burglar is nowhere to be found :(</value> 
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >HI NO TORI BOSHI! A massive phoenix was seen across the sky. {0} has shot {1}, without a doubt! Usopp.Never.Misses.Target....EVER. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >The marine has won!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >The marines have won!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >The pirates have won!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Oh no! You sacrificed the Poseidon! All the Sea Kings unleash their wrath and sink all the islands in Grand Line, not forgetting the Red Line as well.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living players, roles, and team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} has voted to recruit {1} into Team Yonkou as the pirate is strong and worthy of our title.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} was sent to recruit {1} into Yonkou... however, that person turns out to be none other than…. the future pirate king! Noone dares to oppose THE pirate king (even if it’s in the future). {0} is dead!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} came to your ship last night, ready to recruit you into Yonkou.... But little did they know, your goal is Pirate King, not just Yonkou. Threatening your crew’s life if you don’t join them, you didn’t hesitate to bring them down in the name of protecting your nakama.  {1} remain!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>The Yonkou has recruit you to their order! You are now a part of Yonkou, the strongest pirate of the sea. Every other night, you and your team can recruit more strong pirates into Yonkou.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Yonkou - Members: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} has joined the Yonkou!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} was sent to recruit {1}... but their ship is not found!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >All the marines have died, and the only people left standing have all been recruited to join Yonkou..  The Yonkous has won!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>You went to battle {0}, but they are already dead!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>You go into {0}'s ship and find them plotting to kill your nakamas. You quickly go gear fourth and execute your Gomu-gomu no Kong Gun to remove any threat to your nakama.</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>You go to {0}'s ship, but it looks like they’re all friendly pirates. Importantly, you notice that they are having a pirate party!!! You make friends with them, enjoying the nicely cooked meat and pretty much convinced that {0} and you’ve both just become honorary nakamas.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}'s kidnapper just died! Overjoyed by this happy news (Yayyy, can’t wait for that freedom), {0} rushed to join the marines to take down those pirate rats!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} has died! While savoring that long lost freedom, you have immediately joined the marines and vowed to bring down all pirates! Your new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>a Pirate 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Brook, the Soul King 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Nami, the burglar cat 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Robin, the sneaky seer 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Shichibukai 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Chopper, the Pirate Doctor 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Franky, the Suuuuper Spy 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>The Marine 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Jango the Hypnotist 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Sogeking (Usopp), the Master Sniper 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Shirahoshi, the Poseidon 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Buggy the Fool 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Coby, the Wild Kid 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Sanji, the Ero-Cook 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Vivi, the Apprentice Seer 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Team Yonkou 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Monkey D. Luffy, the future pirate king 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Swam away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Locked in Davy Jones’ locker</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Sailing through Grand line</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Players Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Baroque Works 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are an undercover agent of Baroque works 👷 (a pirate organization). And of course, if there are fellow agents, you will recognize them right away. Otherwise, you are just a normal pirate. Need help? > /aboutMason</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>As everyone rises, they find the body of {0} floating over the sea, a pool of red (OMG is that blood?!?) surrounded by the body. One of the Baroque Works agent has died!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The masons are: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Your newest member heads over to {0}'s ship to recruit them to join Yonkou, but instead finds the ship a complete wreck, blood everywhere, and bits and pieces of marine uniform scattered around...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>The marine fleet heads to {0}'s ship to capture them, but they meet a cute little soft toy (Or is it?). Oh wait, suddenly the soft toy turns into gigantic monster berserkly destroying all your fleet. From the tip from a navy minion, you understand that the very monster that is attacking your ship is Chopper and you stand no chance against him, for he has used the Rumble ball. Chopper, the savior angel fights each marine off, and you head back defeated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>You send {0} to try to brainwash {1} to make them believe into your ideals, however their haki (will power) was too strong, and you were unable to brainwash them :( GG….</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>You slipped into {0}'s ship to bring out the kleptomaniac in you and have some fun stealing things... But as you entered, you hear a scared voice of a servant who is preparing for the dinner of Big Mom (i.e. A human sacrifice - WTFFFF, cos no candy). Shortly later, you hear a thunderous laugh “MAMAMAMMAMAMA” from far away. You decide not to mess up with a Yonkou without reinforcements. You quietly slip away from the ship.</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the ship to find the remains of {0}.</value>
+    <value>As the pirates gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Odd.... {0} didn't show up for the Baroque Works meeting this morning... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Swimming away while the game is running has been disabled by the group admin! No way for you to swim away amid all those freaking Sea Kings!!!!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>is killed by a better and stronger pirate!</value>
+  </string>
+
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No sneaky seer!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You are one of the Worst Generation pirate, Trafalgar D. Water Law 🏹. Using your Ope Ope no Mi, you are able to cast Personality Transplant Surgery (only one chance) and swap the heart between two pirates and the swapped hearts belongs to them for eternity, as you have no plans to swap them back. If one of them dies, the other one dies of sorrow for their own heart is dead.. Need help? > /aboutCupid</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are the Bentham, alias Mr. 2 Bon Kurei 🎭, previously an agent from Baroque works. With the Mane Mane no Mi (Imitation devil fruit) you could choose any form you wanted. However for this game, you can only choose one person to imitate. Choose a player, when that player is dead / captured, you will take on their role.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Although you’re called Pirate Hunter, Zoro 🎯 after joining Strawhat pirates, you’ve chosen to hunt only the bad guys (upto your own judgement). You do not sleep well, and you would never go to bed without your katana. If you die, you can choose someone else to kill. If you are captured, you have a chance to take a Marine down, but will not be able to choose a player to kill.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are the Blackbeard, Marshall D. Teach 🔪. You are extremely power hungry and greedy, and your goal is to become the most powerful pirate on earth. Your hobby is to collect all the devil fruits -- so you don’t hesitate to kill people in a moment’s notice. Every night, you visit one player to kill them and collect their devil fruit to your collection.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>You have been struck by Law-e. {0}'s memory will never fade in your heart, for both of your hearts have just been swapped. Your goal is for both of you to survive. If one of you dies, the other one will die out of sorrow, for their own heart is gone forever.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The pirates have chosen to feed you to Davy Jones’ Locker! I mean how could they, right? This is your last chance, choose to slash someone as you go down and make your mark as the world’s best swordsman during your last breath!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} fumbles for their katana as they were being pushed to Davy Jones, only to notice the katanas are with a cunning pirate who had his eyes on the O wazamono (named) blades. Zoro eyes their sword for one last time, falls to their death down all the way to haunt Davy Jones now.....Your pirate hunter is no more!</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} whips out their Santoryuu swords (triple swords) and looks at the pirates... and cannot make a decision on who to shoot. They fall into the Davy Jones locker willingly, with no regrets, for they’ve had the best pirate crew and adventures ever...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>As the Davy Jones locker comes closer and closer, {0} whips out a katana, takes aim, and slashes {1} as the floor drops out! {1} falls over, together with  {0}.  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You've been shot brutally in dark! In your last moments, you have the chance to slash someone... make it quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>The blow to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>As {0} lays there, earnestly looking out for their crewmates for one last farewell before they’re off to the new adventure in Davy Jones locker, they can't decide who to shoot... and just voluntarily jumps down.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Dying, {0} falls to the sea.... but not without grasping their katana, and firing upon {1}, who gets slashed that cuts them into two equally split halves. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} sneaks over to {1}'s ship, pops open the door, and is immediately greeted by a crazed maniac with darkness surrounded by him!!! Run, for this is the fearful “Yami-Yami no mi (Darkness devil fruit), only you cannot run away!!!!! {1} makes gesture and {0} gets gravitated into the darkness forever gone. Whereas Blackbeard like a maniac, has been cackling the entire time - ZEHAHAHAHAHAHA! {0} is dead D:</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>The marines tried to capture the pirate hunter last night, but the hunter was able to take one down with them as he was exiled to the ruthless prison from where noone has ever escaped! {0} has died (Now ded, Ex-Marine)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>The marine tried to attack the pirate hunter last night, but the master swordsman was able to take the marine {0} effortlessly!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The marine were only looking forward to have fun hunting down a pirate with some bounty, but were instead by a crazed ruthless pirate, none other than Blackbeard! {0} was killed in the fight!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>It seemed a quiet enough night for {0}, but they were wrong.  The pirates gather in the morning to find a dark corpse of {0}, that seem to have been engulfed by darkness....  The blackbeard has struck again! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You tried to collect {0}'s devil fruit for your collection, but you were fought off by the guardian angel! No kill for you tonight...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The Yonkou sends {0} to try to convert {1}, but instead a body flies out of one of the ships and {0}'s body comes flying out, with one clean slash and blood all over! {0} is dead....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The Yonkou sends {0} to try to convert {1}, but instead a {0}'s dark body comes back in a parcel, as a warning! HOW RUTHLESS CAN BLACKBEARD GET! {0} is dead....</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You tried to help the worst ever pirate - the blackbeard, but using his gravity and secret technique, he got hold of your human human fruit. But he is already human?! Or a devil trying to be human? Nevertheless, after losing your fruit, u no longer be able to move...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>You slip into {0}'s ship, and start having a little stealing party all for yourself.  All seems great until {0} you hear a villainous laugh “ZEHAHAHAHAHA, you dare steal THE blackbeard! You have guts, woman”! But it was a short conversation, for he has already killed you with the Yami-Yami no Mi.. You have died....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now! - {0}</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Bon Kurei, the doppelganger {0} has now joined the Baroque works (again, for fun)!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} has died, and you are invited to join Baroque works as a secret agent. Your teammate agents (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Bon Kurei, {0} has now joined Team Yonkou (Say what?!)!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you join team yonkou for protection. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Bon Kurei {0} has now join the marine, just like you!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you go and join the marine. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>The only person left standing is the Blackbeard! They have won and the world has come to an end!</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to kill tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>With {0}'s dying breath, {1} rushes over and falls, crying for their own heart has stopped. They cannot stand the loss of their lovely heart, and go fall down into the sea. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Who do you want to become if they die/captured?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who do you want to swap the hearts? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>The second pirate to swap the heart? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>Zoro, the Pirate Hunter 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Trafalgar D. Water Law 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Marshall D. Teach, Blackbeard 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value> Bon Kurei, Mr. 2 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Law has just striked you both with his “人格移植手術 Jinkaku Ishoku Shujutsu” AKA the Personality transplant surgery (on top of swapping your hearts)! Your bodies and hearts are now aligned with {0}! If they die, you will die too. If you both make it to the end, you will both win.</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You are Coby, the wild young pirate. Who do you think kidnapped you? {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>All those efforts just to survive with the swapped hearts, have finally paid off! The accidental couple wins!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>In the street near the shipping dock, everyone finds the body of {0}, multiple slashes to the body.  Looks like they tried to sneak up on the Pirate Hunter! How foolish! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A hooded figure tried to convert you to Team Yonkou, but your haki (willpower) was too strong for them to handle</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new game is starting in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Morning comes, and the remaining two pirates walk out to the town’s shipping dock. {0} takes a look at {1}, gets a big grin on their face, with darkness shrouding their hands, pulling {1} into his darkness.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Everyone in the ship has died...  there's nothing but bodies left.  No one wins this round, except the vultures...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>As the sun rises, {0} and {1} walk out into the village. {0} discloses their Yami-yami no mi’s darkness fruit powers, and tries to pull {1} into the darkness. {1} pulls out his katana and fires a “Sanbyakurokuju pound ho” into {0}'s face as {0} lands, plunging {1} into darkness. Both are dead, the pirate ship is empty, there is no winner...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to make a choice, so the forces of Akuma has chosen for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Player {0} has been judged to be fed to Davy Jones, for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to sacrifice the marines to Davy Jones Locker.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Sneaky Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the sneaky seer, the marines will try to capture you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You old sleuth. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the seer is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people. Maybe he's been messing with marines too long....Messing with marines is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds. Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for sacrificial voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow Buggy/Fake Robin as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Buggy/Fake Robin as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow Shirahoshi as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Shirahoshi as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow Team Yonkou as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Team Yonkou as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+</strings>

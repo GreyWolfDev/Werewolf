@@ -24,6 +24,7 @@ namespace Werewolf_Control.Models
         public TimeSpan Uptime { get; set; }
         public HashSet<GameInfo> Games { get; set; } = new HashSet<GameInfo>();
         public string Version { get; set; }
+        public int MessagesSent { get; set; }
 
         public void StartGame(Update update, bool chaos = false)
         {
@@ -58,16 +59,28 @@ namespace Werewolf_Control.Models
             this.Broadcast(info);
         }
 
-        public void ShutDown()
+        public void ShutDown(bool kill = false)
         {
             ShuttingDown = true;
-            this.Broadcast(JsonConvert.SerializeObject(new UpdateNodeInfo()));
+            this.Broadcast(JsonConvert.SerializeObject(new UpdateNodeInfo() {Kill = kill}));
         }
 
         public void SendReply(CallbackQuery query)
         {
             var info = JsonConvert.SerializeObject(new CallbackInfo {Query = query});
             this.Broadcast(info);
+        }
+
+        public GameInfo GetGameInfo(GetGameInfo ggi)
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<GameInfo>(this.WriteLineAndGetReply(JsonConvert.SerializeObject(ggi)).MessageString);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

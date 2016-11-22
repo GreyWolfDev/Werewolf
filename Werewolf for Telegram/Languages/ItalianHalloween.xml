@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currently updated by @MatteoIlGrande. Ask me for anything, thanks -->
+<!-- Last updated on 31 October 2016 (We Love Halloween) -->
+<strings>
+  <language name="Italiano Halloween" base="Italiano" variant="Halloween"/>
+  <string key="NotInGame">
+    <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} ha iniziato il gioco! Usa /join per entrare nel Villaggio di Halloween, e unirti al bagno di sangue :P</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} ha iniziato una partita caos! Usa /join per entrare nel Villaggio di Halloween e divertirti.. E probabilmente morire :P</value>
+    <value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Il villaggio di Halloween sta venendo attaccato! Non si accettano nuovi cittadini</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Ti sei già unito!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per usare /join ...</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>Ancora {0} secondi per usare /join ...</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Ah, non ci sono abbastanza mostri. Cancello la partita!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Una nuova partita sta iniziando nel Villaggio di Halloween! Vi mando i ruoli e le scelte in privato!</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di mostri!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>Benvenuto {0} nel villaggio di Halloween!\nPopolazione attuale:{1}\nNon può esserci un villaggio con meno di {2} mostri,\ne questo villaggio ha al massimo {3} tane.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Pazzo, non puoi scappare! SEI MORTO!  Torna a marcire nella fossa....</value>
+  </string>
+  <string key="Flee">
+    <value>Che fosse un villaggio troppo mostruoso? {0} deve averlo pensato, visto che è fuggito nel terrore!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>\n{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Sono rimasti solo {0} mostri in vita.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey, non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non mi pare tu stia giocando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare un giocatore tramite questo nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} vota per attaccare {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} vuole che sia messo al rogo {1} </value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} si comporta in modo strano, visto che è il secondo giorno consecutivo che non vuole nessuno bruciato vivo al rogo. Tutti sospettano delle intenzioni di {0}, che fugge dal Villaggio, miseramente.\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Con malincuore, scopri che tutte le tue creazioni sono state distrutte. Pieno di rabbia, ti trasformi in un Lupo Mannaro.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nIl tuo maestro 👳 è {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>Sei il successore di {0}. Sei appena diventato la nuova Strega👳!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} era il successore di {1} ed è ora la nuova Strega👳!</value>
+  </string>
+  <string key="SeerSees">
+    <value>Dopo una lunga notte di incantesimi e pozioni, la tua magia finalmente funziona, e ti fa vedere che l'anima di {0}, è di {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi bruciare al rogo?</value>
+  </string>
+  <string key="AskDetect">
+    <value>A chi vuoi lanciare una forte magia rivelatrice di anime?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Di chi credi che la città di Halloween stia sperando la morte? {0} desideri rimanenti</value>
+  </string>
+  <string key="AskVisit">
+    <value>Chi vuoi nutrire?</value>
+  </string>
+  <string key="AskSee">
+    <value>Su chi vuoi usare una magia rivelatrice di anime?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi attaccare?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Sei pronto con i tuoi paletti di legno di frassino. Chi vuoi visitare, e in caso fossero vampiri, piantarglieli dritti nel cuore per assicurare una morte sicura?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Chi è il tuo maestro?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Di chi volete bere il sangue, stanotte?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Sii sicuro di discutere con {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei un Mezzosangue 😾! Sembri identico ai tuoi compagni demoniaci e riesci a vivere tranquillamente in città..Il problema è che il tuo sangue è più vulnerabile alle maledizioni. Sia i Lupi Mannari che i Vampiri possono trasformarti in un loro alleato!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei uno Stregone 🕵! Facevi parte della congrega in città, ed eri considerato uno dei più potenti mai conosciuti.. Ma i tuoi avversari, gelosi dei tuoi poteri, ti hanno cacciato ingiustamente... Puoi comunque usare le magie di rivelazione dell'anime che hai imparato nella tua congrega ma... non allo stesso momento. Le streghe dormono durante il giorno, quindi è il momento perfetto per usare i tuoi poteri e liberare la città dai malvagi! Sii prudente, però.. Di giorno, potresti esser notato e sentito dai lupi, che hanno un udito molto sviluppato.. 40% di probabilità!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei un Leprecauno 🍻! Spendi il giorno... e la notte... a fare quello che ti riesce meglio: bere fino ad ubriacarti! Ciò ti causa un forte tasso alcolemico, che, mentre ai vampiri non cambia molto, nel caso di attacchi da parte dei lupi, li renderai ubriachi e incapaci di attaccare il giorno dopo!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei il Gargoyle 👼! La chiesa in cui vivevi è stata distrutta dai demoni, e onestamente non sai dove abitare (e chi proteggere) ora... Ogni notte, potrai scegliere una tana da proteggere, ma stai attento! Alcuni mostri sono territoriali e potrebbero non gradire la tua presenza..</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei il Genio della lampada 🔫! Molto tempo fa, hai promesso tre desideri di morte alla città. Solo due sono rimasti, e ti devi sbrigare a esaudirli, prima che la città diventi fantasma!</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Sei la Succube 💋! Ogni notte, andrai nella tana di qualcuno e a sfamarlo, che suona magnifico ma se il mostro non è molto aperto a visitatori, mangerà te!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei il Lupo Demone! Nessuno lo sa - o forse lo sospettano - ma sei tu il demone che ha iniziato il tutto, creando i lupi nel passato. Tutto andò benissimo finchè iniziarono a diventare violenti... Se tutte le tue creazioni muoiono, ti arrabbierai a tal punto di diventare uno di loro! Le magie notturne non funzionano così bene su di te, quindi le streghe potrebbero vederti sia come un demone comune o come lupo...</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei un Lupo Mannaro 🐺! In passato viveri tranquillamente con gli altri mostri in città, ma di recente i Lupi Mannari sono diventati più forti e violenti.... Talmente forti che, ogni notte, scegli(erete) un altro mostro da sbranare miseramente!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Sei la Strega 👳! La guida della congrega della città, e l'unica ammessa a usare magie per la lettura dell'anima. Queste magie richiedono tempo, però, quindi ci metterai una notte intera per scoprire il ruolo di un altro mostro!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Sei un Demone 👱! Questo sembra super magnifico, tranne che in questa città sei solo un cittadino comune... Tranquillo, però, sei comunque un Demone!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Sei la Fenice 👺! Molto forte nel passato, ma ora che sei quasi nel punto di morte non riesci nemmeno ad accumulare abbastanza fuoco per rinascere.... Fortunatamente, sembra che ogni sera, viene bruciato qualcuno al rogo... Se vieni bruciato, le fiamme ti faranno rinascere, a costo della vita degli altri abitanti del villaggio di Halloween!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Sei Cerbero 👶! Sarai felice finchè il tuo maestro sarà in vita... Se morirà, però, il tuo dolore e la tua rabbia diventerà talmente grande che ti trasformerai in un lupo mannaro!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Sei il Famiglio della Strega 👁! Hai giurato fedeltà alla strega, e sei quindi il più fidato compagno della strega. Ovviamente, sei anche un simbolo di potere: solo il capo della congrega ha un famiglio, quindi chiunque non è il tuo maestro e si finge strega è un folle.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Sei l'apprendista Strega 🙇! Avendo studiato magie sotto la guida della congrega per anni, sei il legittimo successore se la Strega attuale morisse!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Sei un Vampiro 👤! Ogni notte, tu e il tuo clan sceglierete una persona da attaccare, ma non lo ucciderete! Il tuo clan ha una regole di non uccidere, quindi il peggio che potreste fare è bere il sangue della povera vittima... E se questo li trasformasse in vampiri.. Che male c'è? L'unione fa la forza!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Sei un Dampiro 💂! Figlio di un vampiro e un umano, sei accettato dalla comunità come mostro, ma non hai intenzione di vivere pacificamente qui! Hai un conto in sospeso con i vampiri e, ogni notte, armato di aglio e paletti di frassino, nella tana di un mostro, e se sarà un vampiro, lo ucciderai!</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Gli ultimi raggi di luce stanno finalmente andando via, ma ora è il tempo di creare una nuova fonte di luce prima che l'oscurità prenda il sopravvento... Una pira è stata preparata, e tutti i mostri dovranno decidere chi bruciare in esso!
+      Solo {0} secondi prima che il rogo inizi!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Purtroppo, tutto ciò che è bello deve finire, e il sole è tornato un'altra volta per opprimere gli abitanti... Pochi mostri possono agire durante questi {0} secondi escluso il parlare.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Tutta la luce è finalmente sparita, e ora gli abitanti sono ora liberi di fare quello che vogliono per {0} secondi!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Dopo i voti di tutti, la maggioranza dei cittadini ha deciso chi bruciare al rogo. {0} è morto in una pira di cenere e fiamme. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >I cittadini hanno provato e riprovato a decidere chi bruciare, ma non sono riusciti a farlo prima che il fuoco si spegnesse...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Sembra che nessuno voglia bruciare i loro vicini! Le fiamme si son spente senza prendere nessuna vita con loro...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Stranamente, nessuno vide {0} questa mattina. Qualcuno lo cercò nella sua tana, ma tra i calderoni e i tomi magici, potè trovare solo sangue e pezzi di carne... Comunque, i contenuti della tana bastarono a capire che fosse lo Stregone🕵!</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Appena i primi raggi di sole apparirono in cielo, tutti poterono vedere i pezzi di roccia sparsi ovunque per la città, ovviamente appartenenti a {0}, il Gargoyle 👼.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >{0} è scomparso dalla circolazione, e non c'è niente che può spiegare la sua scomparsa, oltre a una lampada rotta...</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >La congrega è in lutto... I pettegolezzi girano velocemente a tutta la città, e subito tutti sanno che {0}, il precedente capo della congrega di Streghe👳, fu trovato quasi irriconoscibile nella sua tana la notte scorsa.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Le monete sparse ovunque a terra sono velocemente raccolte dal primo che le vede, finchè un mostro intelligente si accorge che creano una scia. Seguendole per cercare la fonte, trovano un boccale rovesciato vicino a un corpo minuscolo verde coperto di oro, sangue e birra... Non è un miscuglio meraviglioso? {0} è morto, ma un mostro fortunato ha avuto un buon pasto!</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Circondato da burattini e con un cappello da Strega, il corpo di {0} è stato trovato da un demone che spesso gli portava cibo. Grazie ai pettegolezzi, tutta la città sa che {0} si credeva il capo di una grande e importante congrega..</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>L'odore inconfondibile di sangue si diffonde per tutta la città. Tutti i demoni vagano fino a trovare una buona colazione con il cadavere di {0}. Demoni più avidi entrano nella tana di {0} per fregare tutto ciò di valore e scoprire nel processo che {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>La tana di {0} è sommersa di acqua santa! Chi farebbe una cosa del genere? Nessuno sa chi è stato, ma si dice che un Dampiro vaghi per la città, sterminando i vampiri nella stessa maniera..</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Il mattino arriva, e sembra come che l'ultima notte è stata tranquilla... Tutti i cittadini, frenetici di sapere chi fosse morto questa volta, son rimasti delusi a scoprire che nessuno è morto...</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Sei stato attaccato violentemente dai lupi frenetici la notte scorsa.. Dopo averti abbandonato e considerato morto, il dolore che sentivi non faceva altro che aumentare... Non hai idea di quanto tempo sei rimasto a terra, sofferente, ma appena alzato, ti sei reso conto di esserti trasformato in un lupo mannaro tu stesso!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>I tuoi compagni sono {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >Vi siete divertiti un sacco a casa di {0} l'ultima notte... E, ore dopo ciò, avete sentito l'ululato di un altro lupo. Sembra che abbiate un compagno in più!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Hai lottato con onore per difenderti dall'attacco dei lupi nel cuore della notte, ma è stato tutto inutile. Sei morto!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Questa notte hai avuto un bel banchetto! Hai gustato carne intrisa di alcol! {0} era il Leprecauno! Ora sei talmente sazio e ubriaco, che non potrai attaccare la prossima notte...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Hai speso secoli a proteggere la chiesa dalle minacce esterne, e mai avresti potuto pensare che l'attacco potesse venire dalle spalle! Hai protetto un lupo mannaro, che ti ha aggredito alle spalle...</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >La battaglia che hai combattuto questa notte era una di quelle per cui sei nato, e trionfante torni a casa sapendo di aver salvato la vita di {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >Questa notte davanti la tana di {0} è stata molto tranquilla, una silenzio rassicurante per il tuo cuore di pietra.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Hai deciso di proteggere la tana di {0} da qualsiasi minaccia esterna, ma è stato tutto vano, visto che la tana era vuota...</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Sei stato svegliato da rumori fuori la tua casa.. Affacciandoti, vedi il Gargoyle👼 lottare con qualcuno. Dopo avergli augurato buona fortuna, torni dentro la tua tana, sentendoti più sicuro che mai!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >A quanto pare la succube non ha avuto voglia di visitare nessuno questa notte... I lupi, triste di questa decisione, sono andati a casa di {0} per trovarla personalmente!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >Sei andato di soppiatto nella tana di {0} per attaccarlo, ma nessuno era a casa! Cosa starà facendo {0} nel cuore della notte?</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Hai fatto visita a {0} per divertirti un po', ma ti sei trovata davanti una bella sorpresa. Dopo il rapporto, ti sbrana completamente..</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} ha scelto la vittima sbagliata questa notte! Solo le ali della Succube 💋 sono rimaste, buttate a terra come un ricordo lontano...</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >Sembra che {1} era davvero troppo invitante come vittima, che più mostri hanno deciso di andarlo a trovare questa notte..  Ovviamente i lupi hanno vinto, e hanno sbranato sia {1}, che la Succube💋 {0}.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >L'ultima notte a casa di {0} è stata magnifica, e ora sai per certo che non è un lupo!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >In piena notte, vieni svegliato dalla succube piena di passione! Anche se non lo dirai a nessuno, è stata una notte magnifica.. E se oggi ti senti molto più debole, rilassati: è il prezzo da pagare!</value>
+  </string>
+  <string key="DetectiveCaught" >
+
+    <value >Grazie al tuo udito sviluppato, senti {0} che recita alcuni sortilegi.. Sembra che {0} sia uno Stregone🕵!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+
+    <value >Dopo molti sortilegi potenti, riesci a scoprire che l'anima di {0} è {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+
+    <value >La voce di {0} riecheggia in tutto il villaggio di Halloween! Il desiderio di morte della Succube💋 è stato esaudito.\n{1} è morta</value>
+  </string>
+  <string key="DefaultShot" >
+
+    <value >La voce di {0} riecheggia in tutto il villaggio di Halloween! Il desiderio di morte di {1} è stato esaudito.\n{2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value >Un singolo lupo si è dimostrato più forte del villaggio di Halloween di mostri!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>I mostri hanno fatto del loro meglio, ma la forza dei lupi è stata inarrestabile!</value>
+  </string>
+  <string key="VillageWins" >
+  <value>Il villaggio di mostri ha resistito a tutte le oscure presenze! Il villaggio di Halloween è sopravvissuto!</value>
+  </string>
+  <string key="TannerWins" >
+
+    <value >Appena il corpo viene messo sul fuoco, esso cresce sempre di più, fino a consumare tutto il villaggio di Halloween! L'unica cosa rimasta è la Fenice, rinata!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+
+    <value>Questi sono i valorosi sopravvissuti al bagno di sangue del villaggio di Halloween!</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0} vota per attaccare {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+
+    <value>Siete andati tutti a casa di {1}, pronto per lo snack notturno.. Ma esso si è rivelato un allenato cacciatore di Vampiri! {0} è stato ucciso nello scontro!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+
+    <value>Ti svegli nel cuore della notte, percependo la presenza di vampiri vicino. Presto, tutti i vampiri del posto si riuniscono fuori casa tua. Armato di paletto di frassino, colpisci {0} dritto nel cuore, uccidendolo. {1} vampiri sono rimasti in città!</value>
+  </string>
+  <string key="CultConvertYou">
+
+    <value>Vieni svegliati nel cuore della notte da un prurito nel collo, poi un altro e un altro ancora.. Alla fine della notte, non ti accorgi più della mancanza di sangue, e il clan ti accoglie come uno di loro!</value>
+  </string>
+  <string key="CultTeam">
+    <value>Vampiri: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} è stato un magnifico spuntino, e adesso, un tuo compagno!</value>
+  </string>
+  <string key="CultVisitEmpty">
+
+    <value>Fate visita a {1}, ma la casa era vuota! {0}, il membro più recente, non fa che lamentarsi di sete di sangue!</value>
+  </string>
+  <string key="CultWins" >
+
+    <value >Tutti le minacce sono sparite, ma tutti i sopravvissuti fanno ora parte del clan di vampiri! I vampiri hanno vinto!</value>
+  </string>
+  <string key="HunterVisitDead">
+
+    <value>Hai visitato {0}, pronto a lottare, ma era già morto!</value>
+  </string>
+  <string key="HunterFindCultist">
+
+    <value>Fai visita alla casa di {0}, e cerchi prove della sua appartenenza al clan di vampiri. Ti basta entrare, che {0} ti salta addosso, assetato di sangue.. Lottate tutta la notte, ma alla fine torni tranquillo a casa, sapendo che il Villaggio di Halloween ha un vampiro in meno.</value>
+  </string>
+  <string key="HunterFailedToFind">
+
+    <value>Hai fatto visita alla casa di {0}, ma non avuto prove che lo associassero ai vampiri. Perciò te ne ritorni tranquillo a casa...</value>
+  </string>
+  <string key="WildChildToWolves">
+
+    <value>Il maestro di {0} è morto! La sua rabbia è talmente elevata che si trasforma in un lupo! Dai il benvenuto al tuo nuovo compagno {0}!</value>
+  </string>
+  <string key="WildChildTransform">
+
+    <value>{0} è morto! Colpito da una crisi di rabbia, ti senti trasformare in un lupo! I tuoi nuovi alleati sono: {1}</value>
+  </string>
+
+  <string key="Villager">
+    <value>un Demone👱</value>
+  </string>
+  <string key="Drunk">
+    <value>il Leprecauno🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>la Succube💋</value>
+  </string>
+  <string key="Seer">
+    <value>la Strega👳 </value>
+  </string>
+  <string key="Traitor">
+    <value>Il Lupo Demone🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Gargoyle👼</value>
+  </string>
+  <string key="Detective">
+    <value>lo Stregone🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>un Lupo Mannaro🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>il Mezzosangue😾</value>
+  </string>
+  <string key="Gunner">
+    <value>il Genio🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>la Fenice👺</value>
+  </string>
+  <string key="Fool">
+    <value>il Folle🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Cerbero👶</value>
+  </string>
+  <string key="Beholder">
+    <value>il Famiglio👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>l'Apprendista Strega🙇 </value>
+  </string>
+  <string key="Cultist">
+    <value>un Vampiro👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>il Dampiro💂</value>
+  </string>  
+ <string key="RanAway">
+    <value>👻 Fuggito</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Morto</value>
+  </string>
+  <string key="Alive">
+    <value>👹 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Mostri in vita</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Alieno 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+
+    <value>C'è una grande indagine che va avanti tra gli umani. Tu sei uno degli Alieni👷 fortunati che resta tranquillo in sede e gestisce le segnalazioni. Di solito, restate nella navicella, ma visto che gli umani sono molto sospettosi, avete una base temporanea nel villaggio di Halloween, dove i mostri vi accolgono come ospiti onorari. </value>
+  </string>
+  <string key="MasonEaten">
+
+    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e le gambe staccate a suon di morsi! Uno dei Massoni👷 è morto!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>\nGli altri alieni sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+
+    <value>Vi recate nella tana di {0} per banchettare, ma sentite rumori di lotta provenire da lì... Ve ne andate senza cena, stanotte</value>
+  </string>
+  <string key="GuardBlockedWolf">
+
+    <value>Ti introduci nella casa di {0} per sbranarlo, ma il Gargoyle👼 proteggeva l'ingresso, senza possibilità di entrata. Dopo una dura lotta, torni a casa, sconfitto.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Andate a casa di {0} per un bello snack notturno, e anche {1}, il membro più nuovo e goloso, se ne torna sazio a casa. Siete riusciti a mantenerlo vivo, quindi potrete ripassare, se volete</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+
+    <value>{1}, un giocatore con il nome di {0} e' gia' entrato. Per favore cambia il tuo nome per partecipare. </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+
+    <value>Ti rechi a casa di {0} per divertirti un po'... Ma durante il rapporto, ti morde violentemente... Quel morso ti ha fatto veramente male... </value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+
+
+    <value>Tutti si svegliano la mattina, e si accorgono che {0} non si trova in giro... Nessuno riuscì a trovarlo, quindi si suppone sia morto.</value>
+    <value>Il sole non è nemmeno sorto completamente che tutti sanno che {0} è morto, visto che un amico di un amico ha visto il suo corpo senza vita, in giro..</value>
+  </string>
+  <string key="MasonConverted">
+
+    <value>Hai aspettato tutta la notte per il resoconto di {0}, ma non si è nemmeno fatto vivo? Sai che non è morto perchè il giorno dopo lo vedi in giro, ricoperto di sangue.. che gli sarà successo?</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+
+    <value>Che razza di mostro codardo sei? I mostri non fuggono!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>e' morto</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+
+    <value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Sei gia' nella partita! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+
+    <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
+  </string>
+  <string key="GroupQueue">
+
+    <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @werewolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames">
+
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+
+    <value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+
+    <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo un admin del gruppo può usare questo comando. Togli il bot e rimettilo, ti rendera' admin.</value>
+  </string>
+  <string key="ShuttingDown">
+
+    <value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+
+    <value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento(automatizzato).</value>
+  </string>
+  <string key="NullIdAdmin">
+
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} E' gia' un admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} Non e' un admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} E' stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Lingua settata su {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Non c'è la Strega!</value>
+  </string>
+  <string key="TimesUp">
+	<value>È scaduto il tempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+
+    <value>Sei la Fata dell'Amore🏹! Sei carina, sei romantica, sei pronta a fare qualche Marachella! I tuoi poteri sono limitati, ma con un po' di impegno, riuscirai a collegare le anime di due mostri.. Si sentiranno felici a vicenda, ma moriranno in caso di morte del partner!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+
+    <value>Sei un Mutaforma🎭! Dato tutti i recenti attacchi e casini nel villaggio, ti hanno imposto una regola: Non usare i tuoi poteri per trasformarti in qualcuno del villaggio.. Non hanno specificato dei morti, però!</value>
+  </string>
+  <string key="RoleInfoHunter">
+
+    <value>Sei uno Yeti🎯! Non ti importa molto degli affari del villaggio, e la tua tana è lontana rispetto alle altre. Se però qualcuno venisse a disturbarti, potrebbe pentirsene.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+
+    <value>Sei il Chupacabra 🔪. Mentre gli altri mostri osano solo mangiare carne morta, a te piace fresca, ancora viva.. Sei così furtivo che la maggior parte non si accorgerà nemmeno della tua presenza, finchè non sarà troppo tardi...</value>
+  </string>
+  <string key="CupidChosen">
+
+    <value>All'improvviso, ti inizi a chiedere cosa starà facendo {0}. Non riesci a levartelo dalla testa! Sei colpito da un grande desiderio, quasi un bisogno, di vedere {0} felice, e non riesci nemmeno cosa potrebbe succedere se morisse. Che sia questo.... l'Amore?</value>
+  </string>
+  <string key="HunterLynchedChoice">
+
+    <value>Il villaggio ti ha messo al rogo! Nell'istante che il tuo pelo inizia a prendere fuoco, la disperazione della morte prende il sopravvento, e riesci a liberarti dalle corde! Sei ancora in fiamme, e quindi non sopravviverai a lungo, quindi su chi vuoi scaraventarti contro per vendetta?</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+
+    <value>{0} con la sua ira riesce a liberarsi dalle corde che lo legavano al rogo, ma il fuoco riesce a divorarlo prima che lui possa avventarsi su qualcuno..</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+
+    <value>{0}, infuocato, riesce a liberarsi dalle corde, ma non desidera la morte di nessuno, quindi si arrende al suo triste destino e brucia completamente.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+
+    <value>{0}, infuocato, riesce a liberarsi dalle corde, nello stupore generale degli altri mostri. {1} è terrificato da ciò, e infatti {0} si avventa su di lui. Ciò che segue è una morte sanguinosa, seguita da quella dello Yeti, consumato dalle fiamme.{2}</value>
+  </string>
+  <string key="HunterShotChoice">
+
+    <value>Stai per morire! La tua forza ti sta lentamente abbandonando, ma ne hai ancora per vendicarti su qualcuno.. Ma su chi?</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+
+    <value>Le ferite su {0} erano veramente troppo gravi e {0} cade a terra, senza nemmeno ululare di dolore prima di soccombere...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+
+    <value>{0}, invece di vendicarsi su qualcuno, cerca di sopravvivere, inutilmente...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+
+    <value>{0} sta per morire dissanguato, ma con tutte le sue energie si scaraventa su {1} con tutta la forza rimanente, portandolo con sè. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+
+    <value>Vi intrufolate nella casa di {1}, pronti a succhiargli il sangue. Ma sembra che {1} voglia fare lo stesso con voi! Nella confusione, scappate a gambe levate, ma {0} è stato ucciso!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+
+    <value>I lupi hanno provato ad attaccare lo Yeti la scorsa notte, ma lo Yeti si è difeso ed è riuscito a uccidere il lupo🐺 {0}!</value>
+  </string>
+  <string key="HunterShotWolf">
+
+    <value>Un lupo solitario voleva banchettare con il corpo dello Yeti la scorsa notte, ma lo Yeti si è ben difeso, uccidendo il lupo🐺 {0}!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+
+    <value>I lupi hanno provato ad avere uno snack notturno, ma sono stati invece sorpresi da Chupacabra 🔪, più violento di loro! {0} è stato ucciso nello scontro!</value>
+  </string>
+  <string key="DefaultKilled">
+
+    <value>Nel mattino, tutti notano l'assenza di {0}! Vanno quindi a vedere nella sua tana, e trovano il suo corpo prosciugato completamente del suo sangue! I vampiri non uccidono, quindi è sicuramente opera del Chupacabra 🔪! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+
+    <value>Sei andato davanti alla tana di {0}, ma un Gargoyle👼 ti ha impedito di entrare e di nutrirti di {0}! Dopo un lungo scontro te ne torni a casa, sconfitto...</value>
+  </string>
+  <string key="CultConvertHunter">
+
+    <value>I vampiri vanno a casa di {1}, per banchettare sul suo corpo! Ma {1}, un grosso Yeti, si difende uccidendo {0}. Gli altri vampiri scappano, in preda al panico....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+
+    <value>Vi intrufolate nella casa di {1}, pronti a succhiargli il sangue. Ma sembra che {1} voglia fare lo stesso con voi! Nella confusione, scappate a gambe levate, ma {0} è stato ucciso!</value>
+  </string>
+  <string key="GuardKiller">
+
+    <value>Hai speso secoli a proteggere la chiesa dalle minacce esterne, e mai avresti potuto pensare che l'attacco potesse venire dalle spalle! Hai dato le spalle al Chupacabra, un grave errore!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+
+    <value>Sei sgattaiolato nella casa di {0}, ma prima di poterti nutrire di lui, è lui che si nutre di te.. {0} era il Chupacabra 🔪!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now! - {0}</value>
+  </string>
+  <string key="DGToMason">
+
+    <value>Il Mutaforma🎭 {0} è ora diventato un Alieno, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+
+    <value>{0} è morto, e tu ti trasformi in un Alieno.  I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+
+    <value>Il Mutaforma🎭 {0} è ora diventato un Vampiro, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+
+    <value>{0} è morto, e tu ti trasformi in un Vampiro. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+
+    <value>Il Mutaforma🎭 {0} è ora diventato un Lupo, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+
+    <value>{0} è morto, e tu ti trasformi in un Lupo. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+
+    <value>L'ultima persona in vita è il terribile Chupacabra🔪! Ha vinto</value>
+  </string>
+  <string key="AskKill">
+
+    <value>Di chi vuoi nutrirti, stanotte?</value>
+  </string>
+  <string key="LoverDied">
+
+    <value>{0} muore di una causa ovvia, ciò che non si riesce a spiegare è {1}, morto esattamente allo stesso momento. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+
+    <value>A chi vuoi rubare il ruolo, appena muore?</value>
+  </string>
+  <string key="AskCupid1">
+
+    <value>Chi vuoi che siano gli innamorati? Scegli il primo giocatore</value>
+  </string>
+  <string key="AskCupid2">
+
+    <value>Chi vuoi che siano gli innamorati? Scegli il secondo giocatore</value>
+  </string>
+  <string key="Hunter">
+    <value>Lo Yeti🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>La fata dell'Amore🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Il Chupacabra🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>il Mutaforma🎭</value>
+  </string>
+  <string key="CupidChosen">
+
+    <value>All'improvviso, ti inizi a chiedere cosa starà facendo {0}. Non riesci a levartelo dalla testa! Sei colpito da un grande desiderio, quasi un bisogno, di vedere {0} felice, e non riesci nemmeno cosa potrebbe succedere se morisse. Che sia questo.... l'Amore?</value>
+  </string>
+  <string key="NewWCRoleModel">
+
+    <value>Sei diventato Cerbero. Il tuo maestro è {0}</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Al centro della piazza centrale, viene ritrovato il corpo di {0}, ucciso violentemente! Sembra che lui abbia provato a visitare lo Yeti! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>L'ultima notte i vampiri ti hanno visitato, prosciugandoti gran parte del tuo sangue. Fortunatamente, non ti sei trasformato in uno di loro!</value>
+  </string>
+  <string key="LoversWin">
+  <value>Nemmeno la fata dell'Amore poteva prevedere un finale così! Gli innamorati sono sopravvissuti, e che coppia singolare! Congratulazioni agli innamorati!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Solo due mostri son rimasti in vita.. No aspeta.. {0} salta addosso a {1}, uccidendolo all'istante! Solo il Chupacabra è rimasto in vita, sazio e più malefico che mai!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Il villaggio di Halloween è diventata una città fantasma! Nessun mostro è rimasto vivo dopo il bagno di sangue di Halloween!</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Mostri nel villaggio.. Cos'è più forte, un Chupacabra o uno Yeti? La lotta tra {0} e {1} è una di quelle da non dimenticare, ma non ci fu nessun sopravvissuto in grado di raccontarla ai posteri...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Stai già aspettando la prossima partita su {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa in {0}. Ti contatterò appena ci saranno altri bagni di sangue in arrivo. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Un nuovo bagno di sangue sta per iniziare su {0}</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi la strega, con un rapido sortilegio, ti ha scelto {0}</value>
+  </string>
+    <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+    <string key="IdleCount">
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di linciare i lupi! Vota con attenzione!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei il veggente. Ogni notte, potrai scegliere un giocatore e conoscere il loro ruolo. Svelati saggiamente: Se dici di essere il veggente, i lupi proveranno a mangiarti! Nota: Potresti non essere Veggente ma Folle, che vede ruoli casuali (anche veri) ma in partita. Se ti scrive l'Osservatore, saprai di essere il vero Veggente.\nTraditore🖕: Lo si può scrutare come Lupo🐺 o come Contadino👱 (50% e 50%)</value>
+  </string>
+  <string key="AboutWw">
+    <value>Ogni notte, potrai decidere di mangiare qualcuno e di giorno dovrai confondere gli altri e non farti linciare! Se almeno la metà dei giocatori in partita sono lupi, la partita finisce e vincete. \n Nota: Se attacchi l'ubriaco, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se attacchi il maledetto, diventerà un lupo come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Come prostituta, avrai la possibilità di "visitare" altri giocari ogni notte. Se non sono lupi(o killer) te lo dirà (perchè sopravviverai!). Nel caso sfortunato in cui tu visitassi un lupo(o serial killer), verrai ucciso. Se visiti il giocatore che i lupi stanno sbranando, verrete uccisi insieme. Però, se scegli un giocatore, e i lupi scelgono di venire a casa tua, sopravviverai! Non eri a casa, dopotutto...</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei solo un ubriacone! Da ubriaco, sei come un normale villico. Ma se venissi sbranato la notte dai lupi, tutto il tuo alcol nel sangue li farà ubriacare e dovranno stare fermi una notte.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Come maledetto, sei come un normale villico... finchè i lupi non cercano di sbranarti. Se venissero a casa tua, dopo il morso diventerai un lupo come loro! Nota: Finchè i lupi non ti mangiano, la tua fazione è con i contadini, e vincerai con loro nel caso tutti i lupi morissero.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei un bastardo traditore. Se riesci a sopravvivere a lungo e riuscire a uccidere tutti i lupi, ti trasformerai in un lupo, pronto a uccidere i vecchi alleati contadini di notte! Nota: Finchè non ti trasformi, il tuo team è con i villici. Ti conviene quindi cercare di uccidere i lupi. Se il veggente ti scrutasse, Potrebbe identificarti sia come Lupo🐺, sia come Contadino👱.(50% e 50%)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei l'Angelo Custode! Ogni notte, potrai proteggere un giocatore. Stai attento alle tue scelte però, se scegliessi un lupo, avrai il 50% di probabilità di essere mangiato. Se scegliessi il killer, verrai accoltellato alle spalle senza accortertene (100% probabilità)</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Tu vecchio volpone.. Di giorno, avrai l'occasione di investigare gli altri giocatori. Usa questo saggiamente però, visto che c'è il 40% di probabilità che i lupi ti vedano investigare</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Come Artigliere, avrai due proiettili d'argento all'inizio del gioco. Di giorno, avrai l'occasione di sparare ad un'altro giocatore. Dopo lo sparo, tutti sapranno il tuo ruolo! Stai attento però, hai solo 2 proiettili e i lupi vorranno sicuramente mangiarti, se ti sveli!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Il Conciatore! Il suo obiettivo è semplice: Farsi Linciare. Se il conciatore riesce a farsi linciare. VINCE. Tutti gli altri perdono. Nota: Se non riesce a farsi linciare: perde. Non vince con i contadini</value>
+  </string>
+  <string key="AboutFool">
+    <value>un povero Folle che crede di essere il Veggente.... Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Come Satanista, il tuo obiettivo è convertire tutti gli altri giocatori (tranne i lupi) Al tuo culto. Se a fine partita, tutti i giocatori sono Satanisti, Vincono. \n Probabilità di convertire i seguenti ruoli: \n Mutaforma🎭: 0% Finchè rimane Mutaforma🎭, è impossibile da convertire \n Veggente 40% Il veggente è il più difficile da convertire \n Angelo 60% Nota: Se protegge qualcuno, non lo troverai in casa \n Maledetto 60% \n Investigatore 70% \n Prostituta 70% Come l'angelo, se non è casa, non potrete convertirla \n Cacciatore 50% Avrai il 50% di convertire il cacciatore. Se fallite, C'è il 50% che vi spari.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Il tuo lavoro è estirpare i Satanisti. Se ti visitano, ucciderai il loro ultimo membro e saprai quanti satanisti sono rimasti. Ogni notte potrai visitare un giocatore: Se sono satanisti, li ucciderai. Sennò, tornerai a casa, come se nulla fosse successo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Come Bimbo Ribelle, Alla prima notte, sceglierai il tuo genitore. Se morisse, ti trasformerai in un lupo. Nota: Finchè non ti trasformi, vincerai con i contadini, nel caso tutti i lupi morissero.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Per ora, sei un normale villico. Nel caso il Veggente morisse, ti trasformerai nel suo sostituto. Nota: Se sei in partita, implica che c'è un vero "Veggente" in partita.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Ti verrà detto chi è il veggente (quello vero, non il folle). Se morisse e il Mutaforma🎭 oppure l'Apprendista Veggente prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi veggente e rivelare i ruoli al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Il ruolo dei Massoni è semplice: sanno chi sono gli altri Massoni dato che partecipano a delle riunioni segrete del villaggio. Se sono da soli, sono semplici villici.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Puoi scegliere un giocatore a inizio partita, erediti il suo ruolo \n Nota: Se il giocatore viene convertito ai satanisti, prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se erano bimbi ribelli e il loro modello è morto, diventerai un lupo. Sennò, erediterai il loro modello.\nI satanisti non possono convertire il Mutaforma🎭 (ma possono dopo che il Mutaforma🎭 cambia ruolo) E - Il Mutaforma🎭 NON può vincere a meno che si sono trasformati. Se a fine partita, il Mutaforma🎭 non si è trasformato, perde (eccezione: amante).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>A Inizio partita, sceglie due giocatori. Dopo diventa a tutti gli effetti un normale villico. Questi due diventeranno follemente innamorati e se uno dei due muore, l'altro morirà. Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendemente dal loro ruolo. Se gli amanti sono di due team diversi(esempio: lupo + villico), e un team vince (esempio: lupi), anche l'amante (esempio:villico) vince. \n TL;DR Se tutti e due gli amanti sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Un tipo vendicativo, col grilletto pronto. Quando gli altri ti visitano, potrebbero trovarsi morti, visto che la paranoia ti possiede e tu gli spari. \nSe I lupi ti attaccano, hai una chance di ucciderne uno di loro. Sennò, avrai la chance di sparare a qualcuno alla tua morte.\nNota: Per gli attacchi dei lupi, la probabilità inizia al 30%. Se c'è un lupo, il cacciatore ha il 30% di probabilità di ucciderlo (e sopravvivere. Per ogni lupo in più, la probabilità aumenta del 20% (2 Lupi= 50%, 3= 70%). Cionostante - se ci sono molti lupi, mentre potresti ucciderne uno, verrai lo stesso accerchiato e ucciso.	\nSe I satanisti provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Il serial killer è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo giocatore vivo (eccezione: amanti). Come serial killer, puoi uccidere CHIUNQUE: Lupi, cacciatori, artiglieri, angeli, qualunque cosa. Se I lupi provano ad attaccarti, ne ucciderai uno di loro (random) e sopravviverai.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i lupi troppo a lungo...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata del massacro: {0}</value>
+	</string>
+	<!--New strings, July the 8th -->
+
+  <string key="Day">
+<!--0 - Day -->
+    <value>Giorno {0}</value>:)
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato, boohoo!</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nPercentuale CPU usata: {1}%\nMessaggi per secondo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Indietro</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>È {0}fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostra o nascondi i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere il Folle in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Folle come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere il Conciatore in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Conciatore come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Satanisti in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Satanista come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, Abbi una bella giornata :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   </strings>

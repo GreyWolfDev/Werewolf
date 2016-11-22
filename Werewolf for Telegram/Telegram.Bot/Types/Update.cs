@@ -34,6 +34,18 @@ namespace Telegram.Bot.Types
         public Message EditedMessage { get; internal set; }
 
         /// <summary>
+        /// Optional. New version of a message that is known to the bot and was edited
+        /// </summary>
+        [JsonProperty("edited_channel_post", Required = Required.Default)]
+        public Message EditedChannelPost { get; internal set; }
+
+        /// <summary>
+        /// Optional. New version of a message that is known to the bot and was edited
+        /// </summary>
+        [JsonProperty("channel_post", Required = Required.Default)]
+        public Message ChannelPost { get; internal set; }
+
+        /// <summary>
         /// Optional. New incoming inline query
         /// </summary>
         [JsonProperty("inline_query", Required = Required.Default)]
@@ -61,7 +73,8 @@ namespace Telegram.Bot.Types
                 if (ChosenInlineResult != null) return UpdateType.ChosenInlineResultUpdate;
                 if (CallbackQuery != null)      return UpdateType.CallbackQueryUpdate;
                 if (EditedMessage != null)      return UpdateType.EditedMessage;
-
+                if (EditedChannelPost != null)  return UpdateType.EditedChannelPost;
+                if (ChannelPost != null)        return UpdateType.ChannelPost;
                 throw new ArgumentOutOfRangeException();
             }
         }

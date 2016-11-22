@@ -1,0 +1,220 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>@ViewBag.BotName</h2>
+
+
+
+<div class="table-responsive">
+    <table class="table table-bordered nomargin" id="statusTable">
+
+        <tbody></tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered" id="bot1NodeTable">
+        <thead>
+        <tr>
+            <th>Node Id</th>
+            <th>Games</th>
+            <th>Version</th>
+            <th>Shutting Down</th>
+            <th>Uptime</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <a class="size-12" href="#">
+        <i class="fa fa-arrow-right text-muted"></i>
+        Stuff
+    </a>
+
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="elipsis">
+                    <strong>Traffic</strong>
+                </span>
+            </div>
+            <div class="panel-body">
+                <canvas class="chartjs" id="bot1Chart" style="width: 100%; height: 300px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+<script>
+    count = 30;
+    
+    updateData = function() {
+        $.ajax({
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: { botname: '@ViewBag.BotName' },
+            url: '/AdminApi/GetBotStatus',
+            error: function(error) {
+
+            },
+            success: function(d) {
+                count++;
+                $("#statusTable tbody tr").remove();
+                var t = $("#statusTable");
+                addRow(t, "Uptime", d.Uptime, "");
+                addRow(t, "Current Games", d.NumGames, "");
+                addRow(t, "Current Players", d.NumPlayers, "");
+                addRow(t, "Status", d.Status, "");
+                addRow(t, "Max Games", d.MaxGames);
+                addRow(t, "Max Game Time", d.MaxGamesTime);
+                addRow(t, "IP", d.IP + ":" + d.Port);
+
+                //update charts
+                var labels = bot1Data["labels"];
+                var dataSetA = bot1Data["datasets"][0]["data"];
+                var dataSetB = bot1Data["datasets"][1]["data"];
+                var dataSetC = bot1Data["datasets"][2]["data"];
+                labels.push(count.toString());
+                labels.shift();
+                var newDataA = d.MessagesPerSecondIn;
+                var newDataB = d.MessagesPerSecondOut;
+                var newDataC = d.MessagesProcPerSecond;
+                dataSetA.push(newDataA);
+                dataSetB.push(newDataB);
+                dataSetC.push(newDataC);
+                dataSetA.shift();
+                dataSetB.shift();
+                dataSetC.shift();
+
+                bot1Chart.update(ctx1, chart1Options);
+
+                //update node list
+                //update table
+                $("#bot1NodeTable tbody tr").remove();
+                $.each(d.Nodes,
+                    function(index, value) {
+                        addNode($('#bot1NodeTable'),
+                            value.ClientId,
+                            value.CurrentGames,
+                            value.Version,
+                            value.ShuttingDown,
+                            value.Uptime,
+                            d.IP,
+                            d.Port);
+                    });
+            }
+        });
+    };
+
+
+    addRow = function (table, col1, col2, col3) {
+        table.find('tbody')
+            .append($('<tr>')
+                .append($('<td>').append(col1))
+                .append($('<td>').append(col2))
+                .append($('<td>').append(col3)));
+
+    }
+
+    addNode = function (table, nodeid, games, version, shutDown, uptime, ip, port) {
+        var shuttingDown = '';
+        
+        if (shutDown === true) {
+            shuttingDown = '<i class="fa fa-times-circle" style="color: red;"></i>';
+        }
+
+        var body = table.find('tbody')
+            .append($('<tr>')
+                .append($('<td>').append(nodeid))
+                .append($('<td>').append(games))
+                .append($('<td>').append(version))
+                .append($('<td>').append(shuttingDown))
+                .append($('<td>').append(uptime))
+                .append($('<td>')
+                    .append("<a href='/AdminApi/Node?id=" +
+                        nodeid +
+                        "' class='btn btn-default btn-xs btn-block'>View</a>"))
+                .append($('<td>')
+                    .append("<button type='button' class='btn btn-danger btn-xs btn-block' onclick='stopNode(\"" + nodeid + "\", \"" + ip + "\"," + port + ")'>Stop</button>")));
+    }
+
+    bot1Data = {
+        labels: [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "1",
+            "2", "3", "4", "5", "6", "7", "8", "9", "10"
+        ],
+        datasets: [
+            {
+                label: "Msgs Rx / Sec",
+                backgroundColor: "rgba(15, 15, 228,0.2)",
+                strokeColor: "rgba(15, 15, 228,1)",
+                pointColor: "rgba(15, 15, 228,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+                label: "Msgs Tx / Sec",
+                backgroundColor: "rgba(228, 228, 15,0.2)",
+                strokeColor: "rgba(228, 228, 15,1)",
+                pointColor: "rgba(228, 228, 15,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+                label: "Msgs Proc / Sec",
+                backgroundColor: "rgba(122, 228, 15,0.2)",
+                strokeColor: "rgba(122, 228, 15,1)",
+                pointColor: "rgba(122, 228, 15,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }
+        ]
+    };
+
+    chart1Options = {
+        type: 'line',
+        data: bot1Data,
+        options:
+        {
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: 'rgb(255, 99, 132)'
+                }
+            },
+            scales:
+            {
+                xAxes: [
+                    {
+                        display: false
+                    }
+                ]
+            }
+        },
+        animation: false
+    };
+
+    $(document)
+        .ready(function() {
+            ctx1 = document.getElementById("bot1Chart").getContext("2d");
+            bot1Chart = new Chart(ctx1, chart1Options);
+            setInterval(updateData, 1000);
+        });
+</script>

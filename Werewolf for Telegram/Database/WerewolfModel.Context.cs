@@ -6,7 +6,7 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using Microsoft.Win32;
 namespace Database
 {
     using System;
@@ -18,8 +18,9 @@ namespace Database
     public partial class WWContext : DbContext
     {
         public WWContext()
-            : base(Internal.Default.DBConnectionString)
+            : base(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf").GetValue("BotConnectionString").ToString())
         {
+            //test
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -27,7 +28,6 @@ namespace Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Action> Actions { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<GameKill> GameKills { get; set; }
@@ -44,6 +44,15 @@ namespace Database
         public virtual DbSet<GroupStat> GroupStats { get; set; }
         public virtual DbSet<DailyCount> DailyCounts { get; set; }
         public virtual DbSet<v_IdleKill24HoursMain> v_IdleKill24HoursMain { get; set; }
+        public virtual DbSet<v_PublicGroups> v_PublicGroups { get; set; }
+        public virtual DbSet<GlobalBan> GlobalBans { get; set; }
+        public virtual DbSet<v_InactivePlayersMain> v_InactivePlayersMain { get; set; }
+        public virtual DbSet<BotStatu> BotStatus { get; set; }
+        public virtual DbSet<ContestTerm> ContestTerms { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {

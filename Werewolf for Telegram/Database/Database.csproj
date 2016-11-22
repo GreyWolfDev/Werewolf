@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Database</RootNamespace>
     <AssemblyName>Database</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +29,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2|AnyCPU'">
+    <OutputPath>bin\Release 2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Beta\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -51,10 +70,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action.cs">
+    <Compile Include="Achievements.cs" />
+    <Compile Include="Admin.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs">
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BotStatu.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContestTerm.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DailyCount.cs">
@@ -76,6 +111,9 @@
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="getRoles_Result.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalBan.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GlobalDay1Death_Result.cs">
@@ -135,14 +173,10 @@
     <Compile Include="GroupSurvivor_Result1.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Internal.Designer.cs">
-      <DependentUpon>Internal.settings</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="KillMethod.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelExtensions\AspNetUser.cs" />
     <Compile Include="NotifyGame.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
@@ -162,13 +196,20 @@
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegHelper.cs" />
     <Compile Include="v_IdleKill24HoursMain.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_InactivePlayersMain.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="v_NonDefaultGroups.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="v_PreferredGroups.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_PublicGroups.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="v_WaitList.cs">
@@ -192,15 +233,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Internal.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Internal.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
     <EntityDeploy Include="WerewolfModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WerewolfModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="packages.config" />
     <None Include="WerewolfModel.edmx.diagram">
       <DependentUpon>WerewolfModel.edmx</DependentUpon>
     </None>

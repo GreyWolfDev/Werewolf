@@ -18,6 +18,7 @@ namespace Werewolf_Node.Models
         public HashSet<GameInfo> Games { get; set; } = new HashSet<GameInfo>();
         public string Version { get; set; }
         public bool ShuttingDown { get; set; }
+        public int MessagesSent { get; set; }
 
     }
 
@@ -79,6 +80,7 @@ namespace Werewolf_Node.Models
     public class UpdateNodeInfo
     {
         public string JType { get; set; } = "UpdateNodeInfo";
+        public bool Kill { get; set; } = false;
     }
 
     public class LoadLangInfo
@@ -103,6 +105,11 @@ namespace Werewolf_Node.Models
     public class SkipVoteInfo
     {
         public string JType { get; set; } = "SkipVoteInfo";
+        public long GroupId { get; set; }
+    }
+    public class GameKillInfo
+    {
+        public string JType { get; set; } = "GameKillInfo";
         public long GroupId { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
 	<language name="Italiano - NSFW"
 			base="Italiano"
@@ -7,30 +7,30 @@
 		<value>Ma cosa ti fumi? Non sei neanche in partita.</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} ha cominciato una partita... usate /join se volete diventare asociali anche voi!</value>
+		<value>{0} ha cominciato una partita… usate /join se volete diventare asociali anche voi!</value>
 		<value>Una nuova partita è stata iniziata da {0}! Ma non avevi nient'altro da fare? Usate /join lo stesso però :P</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
-		<value>{0} Ha iniziato una partita caos! Usa /join per unirti(è caos, quindi non si capirá un cazzo)</value>
+		<value>{0} Ha iniziato una partita caos! Usa /join per unirti!\n(È caos, quindi non si capirà un cazzo)</value>
 		<value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
 	</string>
 	<string key="NoJoinGameRunning">
-		<value>La partita è ancora in corso, ora siediti, piangi e aspetta.</value>
+		<value>La partita è ancora in corso: ora siediti, piangi e aspetta.</value>
 	</string>
 	<string key="AlreadyJoined">
-		<value>OH non insistere! Sei giá dentro!</value>
+		<value>Oh, non insistere! Sei già dentro!</value>
 	</string>
 	<string key="MinuteLeftToJoin">
-		<value>Ancora 1 minuto per usare /join ...</value>
+		<value>Ancora 1 minuto per usare /join…</value>
 	</string>
 	<string key="SecondsLeftToJoin">
-		<value>Ancora {0} secondi per usare /join ...</value>
+		<value>Ancora {0} secondi per usare /join…</value>
 	</string>
 	<string key="NotEnoughPlayers">
-		<value>Ah, tutti cagasotto, non siamo abbastanza. Cancello sta partita vah..</value>
+		<value>Ah, tutti cagasotto, non siamo abbastanza. Cancello 'sta partita vah…</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>Eh? cosa? Ah sta iniziando la partita! si arrivo...</value>
+		<value>Eh? Cosa? Ah sta iniziando la partita! Sì, arrivo…</value>
 	</string>
 	<string key="BannedForExploit">
 		<value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
@@ -42,13 +42,16 @@
 		<value>Siamo pieni! Prendi il ticket!</value>
 	</string>
 	<string key="PlayerJoined">
-		<value>{0} si è unito. {1} giocatori, {2} minimo, {3} massimo</value>
+		<value>{0} si è unito. {1} giocatori ({2} minimo, {3} massimo).</value>
 	</string>
 	<string key="PMTheBot">
-		<value>\n{0} per favore scrivimi in privato (@{1}) con /start, dobbiamo fare le cose zozze :) </value>
+	    <!-- 0 - Player name -->
+		<!-- 1 - bot username -->
+		<value>{0} per favore clicca sul pulsante qui sotto e startami così posso inviarti il tuo ruolo. Non potrai joinare finché non l'avrai fatto.
+      {0}, capiamoci, se non vuoi morire prima di giocare, clicca su {1} o sul pulsante qui sotto, e fai /start. Fatto questo sarai pronto anche tu a fare cose zozze con me :)</value>
 	</string>
 	<string key="DeadFlee">
-		<value>Pazzo, non puoi scappare! SEI MORTO!  Torna a marcire nella fossa....</value>
+		<value>Pazzo, non puoi scappare! SEI MORTO!\nTornatene a marcire nella fossa…</value>
 	</string>
 	<string key="Flee">
 		<value>{0} si è cagato sotto!</value>
@@ -60,10 +63,10 @@
 		<value>Rimangono {0} giocatori.</value>
 	</string>
 	<string key="DidntAsk">
-		<value>Che vuoi? Non ti ho chiesto niente.</value>
+		<value>Che vuoi? Non ti ho chiesto niente!</value>
 	</string>
 	<string key="NotPlaying">
-		<value>che vuoi? Non stai giocando!</value>
+		<value>Che vuoi? Non stai giocando!</value>
 	</string>
 	<string key="NoPlayerName">
 		<value>Non esiste nessuno con questo nome, fuma di meno.</value>
@@ -72,7 +75,7 @@
 		<value>Questa non è una risposta valida!</value>
 	</string>
 	<string key="WolfVotedKill">
-		<value>{0} vota per mangiare {1}</value>
+		<value>{0} vuole mangiare {1}</value>
 	</string>
 	<string key="PlayerVotedLynch">
 		<value>{0} vota per linciare {1}</value>
@@ -81,7 +84,7 @@
 		<value>{0} non ha votato per due notti consecutive. Gli admin non l'hanno presa molto bene e il banhammer si è abbattuto sul suo corpo, distruggendolo in mille pezzi. È morto. \n{1}</value>
 	</string>
 	<string key="TraitorTurnWolf">
-		<value>Traditore infame per te solo le lame! Sei un lupo ora!</value>
+		<value>Traditore infame per te solo le lame! Ora sei un lupo!</value>
 	</string>
 	<string key="ChoiceAccepted">
 		<value>Scelta accettata</value>
@@ -90,7 +93,7 @@
 		<value>\nIl il veggente è {0}</value>
 	</string>
 	<string key="ApprenticeNowSeer">
-		<value>{0} era il Veggente. E siccome sei stronzo, prendi il suo posto</value>
+		<value>{0} era il Veggente. E siccome sei stronzo, prendi il suo posto.</value>
 	</string>
 	<string key="BeholderNewSeer">
 		<value>{0} era uno stronzo. {1}, il veggente, è morto e gli ha fottuto il posto.</value>
@@ -102,10 +105,10 @@
 		<value>Chi vuoi linciare?</value>
 	</string>
 	<string key="AskDetect">
-		<value>Di chi vuoi carpire il ruolo?</value>
+		<value>Chi vuoi stalkerare oggi?</value>
 	</string>
 	<string key="AskShoot">
-		<value>A chi vuoi sparare? Mi raccomando, mira alla testa! {0} proiettili rimanenti</value>
+		<value>A chi vuoi sparare? Mi raccomando, mira alla testa!\n{0} proiettili rimanenti.</value>
 	</string>
 	<string key="AskVisit">
 		<value>Chi vuoi scopare questa notte?</value>
@@ -135,55 +138,56 @@
 		<value> e </value>
 	</string>
 	<string key="RoleInfoCursed">
-		<value>Sei il maledetto. Per adesso zappa la vigna. Ma se i lupi dovessero venire per la gangbang ti unirai a loro</value>
+		<value>Sei il maledetto. Per adesso zappa la vigna. Ma se i lupi dovessero venire per la gangbang ti unirai a loro.</value>
 	</string>
 	<string key="RoleInfoDetective">
-		<value>Sei l'investigatore. Ogni giorno hai la possibilitá di farti i cazzi degli altri, li potrai stalkerare e potrai scoprire i loro ruoli. Ma la tua identità non è al sicuro - sappiamo tutti che se non ti fai i cazzi tuoi non campi 100 anni! I lupi ti potrebbero beccare..</value>
+		<value>Sei l'investigatore. Ogni giorno hai la possibilità di farti i cazzi degli altri, li potrai stalkerare e potrai scoprire i loro ruoli. Ma la tua identità non è al sicuro - sappiamo tutti che se non ti fai i cazzi tuoi non campi 100 anni! I lupi ti potrebbero beccare…</value>
 	</string>
 	<string key="RoleInfoDrunk">
 		<value>Congratulazioni! Sei un ubriacone! Ora offrimi da bere :)</value>
 	</string>
 	<string key="RoleInfoGuardianAngel">
-		<value>Sei l'angelo custode. Ogni notte, puoi scegliere un giocatore da proteggere e salvare.  Occhio a non scegliere un lupo, altrimenti hai una possibilità su due di rimanerci secco.</value>
+		<value>Sei l'angelo custode. Ogni notte, puoi scegliere un giocatore da proteggere e salvare. Occhio a non scegliere un lupo, altrimenti hai una possibilità su due di rimanerci secco.</value>
 	</string>
 	<string key="RoleInfoGunner">
-		<value>Sei l'artigliere. Hai soltanto due colpi però. Maledetto boss del primo livello... Ogni giorno potrai sparare qualcuno. Mi raccomando: Mira alla testa!</value>
+		<value>Sei l'artigliere. Hai soltanto due colpi però. Maledetto boss del primo livello… Ogni giorno potrai sparare qualcuno. Mi raccomando: mira alla testa!</value>
 	</string>
 	<string key="RoleInfoHarlot">
-		<value>Puttana! Il lavoro migliore che ci sia probabilmente.. Ogni notte lavorerai a domicilio per qualcuno, vi divertirete un casino ad imitare le scene di 50 Sfumature... :) Però il lupo non può mangiarti se ti cerca a casa! Tanto stai a battere...</value>
+		<value>Puttana! Il lavoro migliore che ci sia probabilmente… Ogni notte lavorerai a domicilio per qualcuno, vi divertirete un casino ad imitare le scene di 50 Sfumature… :) Attenta a non scegliere un lupo o la sua vittima o finirai sbranata anche tu! Però il lupo non può mangiarti se ti cerca a casa! Tanto stai a battere…</value>
 	</string>
 	<string key="RoleInfoTraitor">
 		<value>Traditore infame per te solo le lame! Quando tutti i lupi muoiono avrai l'occasione di fottere tutti diventando lupo a tua volta. Se il veggente dovesse farsi i cazzi tuoi, potresti essere visto come lupo o contadino, dipende come mi gira.</value>
 	</string>
 	<string key="RoleInfoWolf">
-		<value>SEI UN LUPO! Che carino... Scegli chi mangiare ogni notte, buon appetito.</value>
+		<value>SEI UN LUPO! Che carino… Scegli chi mangiare ogni notte, buon appetito.</value>
 	</string>
 	<string key="RoleInfoSeer" >
-		<value >Sei il il veggente, ogni notte, grazie agli addestramenti del saggio cinchiullee sei capace di vedere nella mente delle persone, e scoprire i loro ruoli. Porta onore al maestro, e non farti scoprire!</value>
+		<value >Sei il il veggente, ogni notte, grazie agli addestramenti del saggio Cinchiullee sei capace di vedere nella mente delle persone, e scoprire i loro ruoli. Porta onore al maestro, e non farti scoprire!</value>
 	</string>
 	<string key="RoleInfoVillager" >
 		<value >Sei un inutile contadino destinato a zappare la vigna e rubare barbabietole. Renditi utile linciando le persone giuste magari.</value>
 	</string>
 	<string key="RoleInfoTanner" >
-		<value >Masochista!! Ami farti del male... Quando i lupi ti mangiano sei felice... Quando ti sparano sei felice... Ma farsi linciare È DIVINO HAHAHAHAH fatti linciare, vincerai e tutti perderanno! </value>
+		<value >Masochista! Ami farti del male… Quando i lupi ti mangiano sei felice… Quando ti sparano sei felice… Ma farsi linciare È DIVINO AHAHAHAHAH!!! Fatti linciare, vincerai e tutti perderanno! </value>
 	</string>
 	<string key="RoleInfoWildChild" >
-		<value >Sei un becchino schifoso. Scegli a chi augurare la morte. Se quella persona morirá, diventerai un lupo. Vado a toccarmi le palle...</value>
+		<value >Sei un becchino schifoso. Scegli a chi augurare la morte. Se quella persona morirà, diventerai un lupo. Vado a toccarmi le palle…</value>
 	</string>
 	<string key="RoleInfoBeholder" >
-		<value >Sei l'osservatore, ti verrà detto chi è il (vero) Veggente. Tutto qui.</value>
+		<value >Sei l'osservatore, ti verrà detto chi è il (vero) Veggente. Niente di che.</value>
 	</string>
 	<string key="RoleInfoApprenticeSeer" >
-		<value >Sei l'apprendista Veggente, ma comunemente detto stronzo, perchè approfitti della morte del veggente prendendogli il posto! che cattiveria!</value>
+		<value >Sei l'apprendista Veggente, ma comunemente detto stronzo, perché approfitti della morte del veggente prendendogli il posto! Che cattiveria!</value>
 	</string>
 	<string key="RoleInfoCultist" >
-		<value >W Satana. Devi convertire tutti. Attenzione però, se provate a convertire un cacciatore potrebbe squartarvi in pochi secondi...</value>
+		<value >W Satana. Devi convertire tutti. Attenzione però, se provate a convertire un cacciatore potrebbe squartarvi in pochi secondi…</value>
 	</string>
 	<string key="RoleInfoCultistHunter" >
-		<value >Sei il cacciatore di satanisti!  Ogni notte, puoi scegliere un giocatore.  Se è un membro della setta, allora muore.  Ah, se un satanista prova a convertirti, l'ultimo membro arruolato dalla setta muore.</value>
+		<value >Sei il cacciatore di satanisti!  Ogni notte, puoi scegliere un giocatore. Se è un membro della setta, allora morirà. Ah, se un satanista prova a convertirti, l'ultimo membro arruolato dalla setta morirà e scoprirai quanti altri satanisti si annidano nel tuo villaggio.</value>
 	</string>
 	<string key="LynchTime" >
-		<value> Il crepuscolo si avvicina inesorabile. Con i lupi che stanno ancora banchettando e i satanisti che stanno pregando, e lo sconforto.. Vabbeh insomma dovete linciarvi
+	   <!-- 0 - number of seconds -->
+		<value> Il crepuscolo si avvicina inesorabile. Con i lupi che stanno ancora banchettando e i satanisti che stanno pregando e lo sconforto… Vabbeh, insomma dovete linciarvi!
 			Ognuno ha {0} secondi per votare!
 		</value>
 	</string>
@@ -191,48 +195,50 @@
 		<value >Il sole è sorto. Avete {0} secondi per scannarvi e insultarvi.</value>
 	</string>
 	<string key="NightTime" >
-		<value >Il buio è calato. Tutti ritornano nelle proprie case con la speranza che una puttanella arrivi per migliorare la giornata..  Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+		<value >Il buio è calato. Tutti ritornano nelle proprie case con la speranza che una puttanella arrivi per migliorare la giornata…  Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
 	</string>
 	<string key="LynchKill" >
-		<value >Gli abitanti del villaggio hanno gettato i loro voti, tra dubbi e sospetti. {0} è morto.\n{1}</value>
+		<value >Gli abitanti del villaggio hanno gettato i loro voti tra dubbi e sospetti. {0} è morto.\n{1}</value>
+		<value >Avete votato e linciato. {0} è morto.\n{1}</value>
 	</string>
 	<string key="LynchTie" >
-		<value >Talmente sono cretini questi villici che non sanno mettersi d'accordo su chi linciare...</value>
+		<value >Talmente sono cretini questi villici che non sanno mettersi d'accordo su chi linciare…</value>
 	</string>
 	<string key="NoLynchVotes" >
-		<value >Nessuno ha votato... Scansafatiche</value>
+		<value >Nessuno ha votato… Scansafatiche!</value>
 	</string>
 	<string key="DetectiveEaten" >
-		<value >Gli abitanti del villaggio si riuniscono la mattina, ma {0} manca all'appello. fissato alla sua porta c'era scritto: CHI SI FA I CAZZI SUOI CAMPA 100 ANNI entrano in casa per trovare {0} sventrato malamente. </value>
+		<value >Gli abitanti del villaggio si riuniscono la mattina, ma {0} manca all'appello. Fissato alla sua porta c'è un foglio con scritto: CHI SI FA I CAZZI SUOI CAMPA 100 ANNI. Entrano in casa per trovare {0} sventrato malamente. </value>
 	</string>
 	<string key="GuardianEaten" >
 		<value >Si leva il sole, e per la disperazione di tutti, impalato sulla croce della chiesa c'è {0}, l'Angelo Custode. Rip piccolo angelo.</value>
 	</string>
 	<string key="GunnerEaten" >
-		<value >Nella piazza centrale si può scorgere la sagoma di un uomo che sembra essersi suicidato. {0} è a terra ed ha la sua pistola ancora puntata in testa... Ma è ovvio che non è un suicidio, quei 350 morsi di lupo non penso se li sia fatti da solo. Bel tentativo di simulare un suicidio.</value>
+		<value >Nella piazza centrale si può scorgere la sagoma di un uomo che sembra essersi suicidato. {0} è a terra ed ha la sua pistola ancora puntata in testa… Ma è ovvio che non è un suicidio, quei 350 morsi di lupo non penso se li sia fatti da solo. Bel tentativo di simulare un suicidio.</value>
 	</string>
 	<string key="SeerEaten" >
-		<value >Gli insegnamenti di cinchiullee non sono bastati per proteggere il veggente. {0} è morto, assieme a lui la tavoletta ouijia e l'oracolo di Frenapath..</value>
+		<value >Gli insegnamenti di Cinchiullee non sono bastati per proteggere il veggente. {0} è morto, assieme a lui la tavoletta Ouija e l'oracolo di Frenapath…</value>
 	</string>
 	<string key="DrunkEaten" >
-		<value >NO! La taverna è in fiamme! *Corre a spegnere l'incendio* ah ma io non sto giocando... Ehm: I villici domato l'inferno scoprono i resti di {0} ormai carbonizzato. Però ha ancora il suo whisky in mano, bravo. Insegna agli angeli come si beve.</value>
+		<value >NO! La taverna è in fiamme! *Corre a spegnere l'incendio* ah ma io non sto giocando… Ehm! I villici domato l'inferno scoprono i resti di {0} ormai carbonizzato. Però ha ancora il suo whisky in mano, bravo. Insegna agli angeli come si beve.</value>
 	</string>
 	<string key="FoolEaten" >
-		<value >Talmente tanto urlava parole senza senso per la cittá, che il lupo si è rotto i coglioni e ha deciso di uccidere {0}, E finalmente! </value>
+		<value >Talmente tanto urlava parole senza senso per la città, che il lupo si è rotto i coglioni e ha deciso di uccidere {0}. E finalmente! </value>
 	</string>
 	<string key="DefaultEaten" >
-		<value>Qualcuno manca all'appello.. infatti è {0}! Viene ritrovato poi nella fontana della piazza centrale, con le budella intrecciate su se stesso. Anche se sembrerebbe salsiccia.. \n{1}</value>
-		<value>{0} era uscito per farsi una passeggiata, se ne è approfittato per comprare qualcosa dal venditore ambulante, ha pisciato in un albero.. poi.. Ah giá! {0} è stato sbranato. Il corpo viene ritrovato per strada da un passate, che racconta averlo trovato "per caso"\n{1}..</value>
-		<value>Non ce la faccio più.. È triste ogni volta dire agli altri che muore gente! un giorno uno viene sbranato, un altro giorno un satanista viene ucciso, un tizio viene ucciso a caso dall'artigliere.. Non ne posso più di dare notizie negative! ho bisogno di uno psicologo... Ah comunque {0} è morto, giusto per dirvelo.\n{1}</value>
+		<value>Qualcuno manca all'appello… Il cadavere di {0} viene ritrovato poi nella fontana della piazza centrale con le budella intrecciate su se stesse.\n{1}</value>
+		<value>{0} era uscito per farsi una passeggiata, se ne è approfittato per comprare qualcosa dal venditore ambulante, ha pisciato su un albero… poi… Ah già! {0} è stato sbranato. Il corpo viene ritrovato per strada da un passate, che racconta averlo trovato “per caso”\n{1}…</value>
+		<value>Non ce la faccio più… È triste ogni volta dire agli altri che muore gente! Un giorno uno viene sbranato, un altro giorno un satanista viene ucciso, un tizio viene ucciso a caso dall'artigliere… Non ne posso più di dare notizie negative! Ho bisogno di uno psicologo… Ah comunque {0} è morto, giusto per dirvelo.\n{1}</value>
+		<value>Sembrava una notte di amore e dolci sogni… fino a quando i poveri resti di {0} non sono stati trovati nel suo letto.\n{1}</value>
 	</string>
 	<string key="HunterKilledCultist">
-		<value>{0} viene ritrovato morto con una decina di ferite da taglio. Accanto a lui, le figure di Satana, Giuda e Lucifero. È stato quindi il cacciatore di satanisti. Però è bravo con quella spada, Kirito guarda e impara!</value>
+		<value>{0} viene ritrovato morto con una decina di ferite da taglio. Accanto a lui le figure di Satana, Giuda e Lucifero. È stato quindi il cacciatore di satanisti. Però è bravo con quella spada, Kirito guarda e impara!</value>
 	</string>
 	<string key="NoAttack" >
-		<value >Questa notte è stata tranquilla.. I lupi si sono presi una pausa, nessuna vittima.</value>
+		<value >Questa notte è stata tranquilla… I lupi si sono presi una pausa, nessuna vittima.</value>
 	</string>
 	<string key="CursedBitten" >
-		<value >I lupi sono passati a casa tua armati di artigli e lubrificanti per penetrarti. Tuttavia eri maledetto, e ti unisci a loro. Sei ora un lupo.</value>
+		<value >I lupi sono passati a casa tua armati di artigli e lubrificanti per penetrarti. Tuttavia eri maledetto, e ti unisci a loro. Ora sei un lupo!</value>
 	</string>
 	<string key="WolfTeam">
 		<value>Ecco gli altri lupi: {0}</value>
@@ -241,58 +247,62 @@
 		<value >Volevi fottere {0} ma hai scoperto che era maledetto. Ora è un lupo.</value>
 	</string>
 	<string key="WolvesEatYou" >
-		<value >Ups,i lupi sono venuti a casa tua, e mi sa che il lato B non ce l'hai più... Morto.</value>
+		<value >Oops, i lupi sono venuti a casa tua e mi sa che il lato B non ce l'hai più… Morto.</value>
+		<value >Speravi in una notte tranquilla in compagnia di una tisanina e la coperta con le maniche… invece sono passati a trovarti i lupi e ora sei morto.</value>
 	</string>
 	<string key="WolvesEatDrunk" >
-		<value >{0} era ubriaco, e volevi divertirti un po quindi prima di ucciderlo ti sei aggregato alla bevuta.. Finchè dopo un po l'hai mangiato brutalmente. Ora direi che un giorno a casa lo dovresti passare.. È brutto il dopo sbronza.</value>
+		<value >{0} era ubriaco e volevi divertirti un po quindi prima di ucciderlo ti sei aggregato alla bevuta… Finché dopo un po' l'hai mangiato brutalmente. Ora direi che un giorno a casa lo dovresti passare… È brutto il dopo-sbronza.</value>
 	</string>
 	<string key="GuardWolf" >
-		<value >Hai protetto un lupo, cazzo fai! Lui ti ha ovviamente ringraziato con qualche morso qua e la.</value>
+		<value >Hai protetto un lupo, cazzo fai! Lui ti ha ovviamente ringraziato con qualche morso qua e là.</value>
 	</string>
 	<string key="GuardSaved" >
-		<value >Hai salvato la vita di {0}! Allora qualcosa la sai fare..</value>
+		<value >Hai salvato la vita di {0}! Allora qualcosa la sai fare!</value>
 	</string>
 	<string key="GuardNoAttack" >
-		<value >{0} non è stato attaccato dai lupi, quindi sei stato inutile.. INUTILE..</value>
+		<value >{0} non è stato attaccato dai lupi, quindi sei stato inutile. INUTILE!</value>
 	</string>
 	<string key="GuardEmptyHouse">
 		<value>Hai deciso di proteggere {0}, ma non era a casa! Non servi mai a un cazzo!</value>
 	</string>
 	<string key="GuardSavedYou" >
-		<value >Sei stato protetto dall'angelo custode, che ha scacciato i lupi!</value>
+		<value >Sei stato protetto dall'angelo custode che ha scacciato i cattivi!</value>
 	</string>
 	<string key="HarlotEaten" >
-		<value >La puttanella si è presa le ferie nel giorno sbagliato. {0} è stata massacrata dai lupi, dopo essere stata ovviamente violentata (infatti non aveva opposto resistenza all'inizio)</value>
+		<value >La puttanella si è presa le ferie nel giorno sbagliato. {0} è stata massacrata dai lupi dopo essere stata ovviamente violentata (non aveva opposto resistenza all'inizio).</value>
 	</string>
 	<string key="HarlotNotHome" >
-		<value >{0} non era a casa.. Lo sai che hai bisogno della prenotazione!</value>
+		<value >{0} non era a casa… Lo sai che hai bisogno della prenotazione!</value>
 	</string>
 	<string key="HarlotFuckWolf" >
-		<value >Fai visita a {0} pronta a battere e divertirti. Infatti ti diverti un mondo! Mai visto qualcuno più energico di lui... Infatti a lavoro finito ti sbrana.. Era un lupo... Peccato però, se non fosse stato un lupo avresti fatto sicuramente ritorno..</value>
+		<value >Fai visita a {0} pronta a battere e divertirti. Infatti ti diverti un mondo! Mai visto qualcuno più energico di lui… e a lavoro finito ti sbrana. Era un lupo. Bè, almeno ti sei divertita!</value>
 	</string>
 	<string key="HarlotFuckedWolfPublic" >
-		<value >{0} Voleva divertirsi anche questa notte, infatti si è divertita parecchio, ha stampato nel suo volto un sorriso perverso. Il lupo ovviamente quando se l'è ritrovata davanti non poteva dire di no, dopo l'ha sbranata lo stesso</value>
+		<value >{0} voleva divertirsi questa notte ma ha scelto la casa sbagliata. Il suo cliente per la notte dopo la bella scopata ha pensato di rifocillarsi sbranandola.</value>
 	</string>
 	<string key="HarlotFuckedVictimPublic" >
-		<value >{0} ha fatto visita a {1}, pronta a riscuotere il solito incasso serale, ma un lupo stava sbranando {1}! Fulmineo, il lupo si gira verso {0} pronto a fargli comprendere com'è l'anale. {0} è morta.</value>
+		<value >{0} va a casa di {1} pronta a riscuotere il solito incasso serale ma trova un lupo intento a sbranarlo! Fulmineo, il lupo si gira verso {0} pronto a farle comprendere com'è l'anale. \n{0} è morta.</value>
 	</string>
 	<string key="HarlotVisitNonWolf" >
-		<value >Sai che {0} non è un lupo, dopo aver scopato per tutta la notte ci credo!</value>
+		<value >Sai che {0} non è un lupo. E dopo averlo scopato per tutta la notte ti credo!</value>
 	</string>
 	<string key="HarlotVisitYou" >
-		<value >Luce soffusa e qualche candela, ti svegli con la puttanella di fronte a te con le gambe ben che aperte. Ti fiondi verso di lei e vi divertite per tutta la notte.. Poi fingi uno svenimento per evitare il conto. </value>
+		<value >Luce soffusa e qualche candela… ti svegli con la puttanella di fronte a te con le gambe bene aperte. Ti fiondi verso di lei e vi divertite per tutta la notte… Poi fingi uno svenimento per evitare il conto. </value>
 	</string>
 	<string key="DetectiveCaught" >
 		<value >Hai beccato {0} che non si faceva i cazzi suoi. Fai capire all'investigatore chi comanda.</value>
 	</string>
 	<string key="DetectiveSnoop" >
-		<value >Le tue indagini(si fa per dire) hanno rivelato che {0} era {1}!</value>
+		<value >I tuoi pedinamenti hanno rivelato che {0} era {1}!</value>
 	</string>
 	<string key="HarlotShot" >
-		<value >Sembra che una notte con la prostituta abbia giovato a {0}! L'artigliere ha avuto la sua vendetta. {1} è morto</value>
+		<value >Sembra che una notte con la prostituta abbia giovato a {0}! L'artigliere ha avuto la sua vendetta. {1} è morto.</value>
 	</string>
 	<string key="DefaultShot" >
-		<value>Nel pieno della giornata si sentono in lontananza uno sparo, e dopo di esso delle voci tipo "omg mom get the kameraa" e "ohhh trickshot", trovano {0} che ancora esulta, e {1} morto a terra con una pallottola in fronte, bravo artigliere. \n{2}</value>
+	    <!-- 0 - Gunner's name -->
+		<!-- 1 - target name -->
+		<!-- 2 - Target's revealed name ( Target was a role) -->
+		<value>Nel pieno della giornata si sente in lontananza uno sparo seguito da delle voci che dicono "omg mom get the kameraa" e "ohhh trickshot". Trovano {0} che ancora esulta e {1} morto a terra con una pallottola in fronte, bravo artigliere. \n{2}</value>
 	</string>
 	<string key="WolfWins" >
 		<value >Il lupo ha vinto!</value>
@@ -301,25 +311,25 @@
 		<value >I lupi hanno vinto!</value>
 	</string>
 	<string key="VillageWins" >
-		<value >Il popolo plebeo ha vinto! Tutti i lupi sono morti....</value>
+		<value >Il popolo plebeo ha vinto!</value>
 	</string>
 	<string key="TannerWins" >
-		<value >Il masochista ha goduto fin troppo, avete perso. il masochista ha vinto!</value>
+		<value >Il masochista ha goduto fin troppo, avete perso. Il masochista ha vinto!</value>
 	</string>
 	<string key="RemainingPlayersEnd">
-		<value>Giocatori rimasti vivi, ruolo, e fazione:</value>
+		<value>Giocatori rimasti vivi, ruolo e fazione:</value>
 	</string>
 	<string key="CultistVotedConvert" >
 		<value >{0} vota per convertire {1}</value>
 	</string>
 	<string key="CultConvertCultHunter">
-		<value>{0} armato di pentagono e statuette è andato a convertire {1}... ma era il cacciatore di satanisti, game over. {0} è morto.</value>
+		<value>{0} armato di pentacolo e statuette è andato a convertire {1}… ma era il cacciatore di satanisti. {0} è morto, game over.</value>
 	</string>
 	<string key="CultHunterKilledCultVisit">
-		<value>{0} è passato a casa tua pronto a convertirti ai satanisti. EH! VOLEVA! velocemente lo affetti per bene con la tua spada. Sta sera patè di satanisti.{1}</value>
+		<value>{0} è passato a casa tua pronto a convertirti al satanism. EH! VOLEVA! Velocemente lo affetti per bene con la tua spada. Stasera patè di satanisti!{1}</value>
 	</string>
 	<string key="CultConvertYou">
-		<value>W SATANA! Ti hanno convertito ai satanisti. Unisciti a loro e convertili tutti. Gotta catch'em all!</value>
+		<value>W SATANA! I satanisti ti hanno convertito! Unisciti a loro e convertili tutti. Gotta catch'em all!</value>
 	</string>
 	<string key="CultTeam">
 		<value>Satanisti: {0}</value>
@@ -331,77 +341,77 @@
 		<value>{0} era andato a casa di {1} per convertirlo. EH! VOLEVA! Nessuno era in casa.</value>
 	</string>
 	<string key="CultWins" >
-		<value >I lupi sono morti.. ma Satana ha regnato su di noi. Vince la setta. W SATANA</value>
+		<value >I lupi sono morti… ma Satana ha regnato su di noi. Vince la setta. W SATANA</value>
 	</string>
 	<string key="HunterVisitDead">
-		<value>Hai dato la caccia a {0}, ma era già morto!</value>
+		<value>Hai dato la caccia a {0} ma elo hai trovato già morto!</value>
 	</string>
 	<string key="HunterFindCultist">
-		<value>Bussi allegramente alla porta di {0} e all'apertura della porta lo trovi con la statuetta ancora in mano e dietro di lui, l'altare con il pentagono. La tua spada non perdona. Sta sera patè di satanisti</value>
+		<value>Bussi allegramente alla porta di {0} e all'apertura della porta lo trovi con la statuetta ancora in mano e dietro di lui l'altare con il pentacolo. La tua spada non perdona. Stasera patè di satanisti!</value>
 	</string>
 	<string key="HunterFailedToFind">
-		<value>Hai fatto visita alla casa di {0}, ma nessuna traccia di riti satanici. Oggi niente patè..</value>
+		<value>Hai fatto visita alla casa di {0} ma nessuna traccia di riti satanici. Oggi niente patè…</value>
 	</string>
 	<string key="WildChildToWolves">
-		<value>{0} aveva augurato la morte ad una persona.. E quella persona è morta!
-			il becchino è ora un lupo! Yippie! Ora vado a toccarmi le palle..</value>
+		<value>{0} aveva augurato la morte ad una persona e quella persona è morta!
+			Il becchino è ora un lupo! Yippie! Ora vado a toccarmi le palle…</value>
 	</string>
 	<string key="WildChildTransform">
 		<value>{0} è morto! Sei diventato un lupo! I tuoi nuovi alleati sono: {1}</value>
 	</string>
 	<string key="Villager">
-		<value>un Contadino👱</value>
+		<value>un Contadino 👱</value>
 	</string>
 	<string key="Drunk">
-		<value>l'Ubriaco🍻</value>
+		<value>l'Ubriaco 🍻</value>
 	</string>
 	<string key="Harlot">
-		<value>la Puttanella💋</value>
+		<value>la Puttanella 💋</value>
 	</string>
 	<string key="Seer">
-		<value>il Veggente👳 </value>
+		<value>il Veggente 👳 </value>
 	</string>
 	<string key="Traitor">
-		<value>il Traditore🖕</value>
+		<value>il Traditore 🖕</value>
 	</string>
 	<string key="GuardianAngel">
-		<value>l'Angelo Custode👼</value>
+		<value>l'Angelo Custode 👼</value>
 	</string>
 	<string key="Detective">
-		<value>l'Investigatore🕵</value>
+		<value>l'Investigatore 🕵</value>
 	</string>
 	<string key="Wolf">
-		<value>un Lupo🐺</value>
+		<value>un Lupo 🐺</value>
 	</string>
 	<string key="Cursed">
-		<value>il Maledetto😾</value>
+		<value>il Maledetto 😾</value>
 	</string>
 	<string key="Gunner">
-		<value>l'Artigliere🔫</value>
+		<value>l'Artigliere 🔫</value>
 	</string>
 	<string key="Tanner">
-		<value>il Masochista👺</value>
+		<value>il Masochista 👺</value>
 	</string>
 	<string key="Fool">
-		<value>il Folle🃏</value>
+		<value>il Folle 🃏</value>
 	</string>
 	<string key="WildChild">
-		<value>il Becchino⚰</value>
+		<value>il Becchino 👶</value>
 	</string>
 	<string key="Beholder">
-		<value>l'Osservatore👁</value>
+		<value>l'Osservatore 👁</value>
 	</string>
 	<string key="ApprenticeSeer">
-		<value>Il Veggente stronzo🙇 </value>
+		<value>Il Veggente Stronzo 🙇 </value>
 	</string>
 	<string key="Cultist">
-		<value>il Satanista👤</value>
+		<value>il Satanista 👤</value>
 	</string>
 	<string key="CultistHunter">
-		<value>il Cacciatore di Satanisti💂</value>
+		<value>il Cacciatore di Satanisti 💂</value>
 	</string>  
 	<string key="RanAway">
-		<value>Si è cagato addosso</value>
+		<value>💩 Si è cagato addosso</value>
 	</string>
 	<string key="Dead">
 		<value>💀 Morto</value>
@@ -410,27 +420,27 @@
 		<value>🙂 In vita</value>
 	</string>
 	<string key="PlayersAlive">
-		<value>Giocatori in vita(per poco)</value>
+		<value>Giocatori in vita (per poco):</value>
 	</string>
 	<!-- New strings 4 MAY 2016-->
 	<string key="Mason">
-		<value>Un muratore👷</value>
+		<value>un Massone 👷</value>
 	</string>
 	<string key="RoleInfoMason">
-		<value>Sei un muratore. Sai chi sono gli altri muratori, nulla di speciale. Ehi, che ti aspettavi?</value>
+		<value>Sei un Massone. Quindi conosci l'identità degli altri Massoni come te.</value>
 	</string>
 	<string key="MasonEaten">
-		<value>Al risveglio dei contadini, trovano un corpo sepolto in una pila di pietre e mattoni, e sangue schizzato ovunque, e nella radio ancora la canzone "Bob aggiustatutto, lui riparerá.." Uno dei vostri muratori e' morto.. Niente più case dove dormire. -- {0}</value>
+		<value>Al risveglio dei contadini, trovano un corpo sporco di sangue con la testa ancora coperta da un cappuccio nero con il sangue schizzato dalle feritoie per gli occhi… ah, no. Il corpo non si trovava assieme alla testa… era poco distante a formare un compasso con le gambe. - {0}</value>
 	</string>
 	<string key="MasonTeam">
-		<value>  Gli altri muratori sono: {0}</value>
+		<value>  Gli altri Massoni sono: {0}</value>
 	</string>
 	<!-- new strings May 6 2016-->
 	<string key="CultTargetDead">
-		<value>Il vostro membro piu' nuovo si reca a casa di {0} per convertirlo, ma trova invece una casa mal messa, sangue ovunque, e ciuffi di peli di lupo sparsi per il corridoio...</value>
+		<value>Il vostro membro più nuovo si reca a casa di {0} per convertirlo, ma trova invece una casa malmessa, sangue ovunque e ciuffi di peli di lupo sparsi per il corridoio…</value>
 	</string>
 	<string key="GuardBlockedWolf">
-		<value>Vai a casa di {0} armato di bavaglino pronto per mangiare. Entri dentro e.. EH! VOLEVI! C'era l'angelo li davanti. Combattete finchè vi rendete conto che siete ridicoli facendo "pew pew" con le mani emulando delle pistole. Vi stringete la mano e vi allontanate.</value>
+		<value>Vai a casa di {0} armato di bavaglino pronto per mangiare. Entri e… EH! VOLEVI! C'era l'angelo lì davanti. Combattete finché vi rendete conto che siete ridicoli facendo "pew pew" con le mani emulando delle pistole. Vi stringete la mano e vi allontanate.</value>
 	</string>
 	<!-- new strings May 9 2016-->
 	<string key="CultUnableToConvert">
@@ -438,237 +448,225 @@
 	</string>
 	<!-- new string May 12 2016-->
 	<string key="NameExists">
-		<value>@{1}, un giocatore con il nome di {0} e' gia' entrato. Per favore cambia il tuo nome per partecipare. </value>
+	    <!-- 0 - target's name -->
+		<!-- 1 - name -->
+		<value>@{1}, un giocatore con il nome {0} ti ha battuto sul tempo. Se vuoi partecipare cambia il tuo nome. </value>
 	</string>
 	<string key="HarlotDiscoverCult">
-		<value> Vai a casa di {0} pronto a sbattertelo per benino. Vi divertite tutta la nottata ma durante l'atto non riuscivi a distogliere lo sguardo da quell'altare.. All'angolo della casa.. Con le statuette di Satana... Sapere che stavi scopando un discepolo di Satana tuttavia ti ha eccitata di più.</value>
+		<value> Vai a casa di {0} pronto a sbattertelo per benino. Vi divertite tutta la nottata ma durante l'atto non riuscivi a distogliere lo sguardo da quell'altare all'angolo della casa… Con le statuette di Satana… Sapere che stavi scopando un discepolo di Satana tuttavia ti ha eccitata di più.</value>
 	</string>
 	<!-- new string May 13 2016-->
 	<string key="Was">
 		<value>era</value>
 	</string>
 	<string key="GenericDeathNoReveal">
-		<value>Tutti si svegliano la mattina, e si accorgono che {0} non si trova in giro... Controllano la sua casa per poi trovare i resti di {0}.</value>
-		<value>I contadini si svegliano al sorgere del sole, per poi trovare i resti di {0}, morto in qualche modo la scorsa notte....</value>
+		<value>Tutti si svegliano la mattina e si accorgono che {0} non si trova in giro… Controllano la sua casa per poi trovare i resti di {0}.</value>
+		<value>I contadini si svegliano al sorgere del sole, per poi trovare i resti di {0} morto in qualche modo la scorsa notte.</value>
 	</string>
 	<string key="MasonConverted">
-		<value>eccheccazzo. {0} non è venuto. Avrá sicuramente timbrato il biglietto ed è scappato. Mannaia sti assenteisti!</value>
+		<value>Eccheccazzo. {0} non è venuto alla riunione. Avrà sicuramente timbrato il biglietto per poi scappare. Mannaia 'sti assenteisti!</value>
 	</string>
 	<!-- new string May 16 2016-->
 	<string key="FleeDisabled">
 		<value>I cagasotto non sono ammessi! Ritorna a giocare sacco di merda!</value>
 	</string>
-	<value>Non fuggire! torna in guerra soldato! HO DETTO VAI IN GUERRA E MUORICII!</value>
+	<value>Non fuggire! Torna in guerra soldato! HO DETTO VAI IN GUERRA E MUORICII!</value>
 	<string key="IsDead"> <!-- used when gunner shoots a player -->
-		<value>e' morto</value>
+		<value>è morto</value>
 	</string>
-
 	<!-- MORE STRINGS May 16, 2016 -->
 	<string key="AdminAdded">
-		<value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+		<value>{0} È diventato admin. Usa /config per cambiare le impostazioni del gruppo.</value>
 	</string>
 	<string key="AlreadyInGame">
-		<value>EH! VOLEVI! Sei gia' in un altra partita! ({0})</value>
+		<value>EH! VOLEVI! Sei già in un altra partita! ({0})</value>
 	</string>
 	<string key="MultipleGames">
-		<value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
+		<value>Il tuo gruppo è stato settato per far cominciare più partite… Uccisioni extra!</value>
 	</string>
 	<string key="GroupQueue">
-		<value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+		<value>Il gruppo è attualmente in lista d'attesa. Posizione: {0}/{1}</value>
 	</string>
 	<string key="MaintBreak">
-		<value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @werewolfdev per altre informazioni.</value>
+		<value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire… Controlla @werewolfdev per altre informazioni.</value>
 	</string>
 	<string key="MaxGames">
-		<value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+		<value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1}/{1}</value>
 	</string>
 	<string key="SkipQueue">
-		<value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+		<value>{0} è un gruppo ufficiale ed ha saltato la lista d'attesa!</value>
 	</string>
 	<string key="NoGame">
-		<value>EH! GUARDA CHE FACCIA! Non ci sono partite in corso. Usa /startgame o /startchaos per aprirne una...
+		<value>EH! GUARDA CHE FACCIA! Non ci sono partite in corso. Usa /startgame o /startchaos per avviarne una…
 
-			Non se l'aspettava.. Non se l'aspettava..
+			Non se l'aspettava… Non se l'aspettava…
 		</value>
 	</string>
 	<string key="GroupAdminOnly">
 		<value>Solo un admin con il banhammer power può usare questo comando.</value>
 	</string>
 	<string key="ShuttingDown">
-		<value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
+		<value>Dopo questa partita mi spegnerò per una manutenzione. Godetevela!</value>
 	</string>
 	<string key="ShuttingDownUpdate">
-		<value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento(automatizzato).</value>
+		<value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
 	</string>
 	<string key="NullIdAdmin">
-		<value>UserId non valido.  Sei sicuro di aver mandato questo comando come risposta?</value>
+		<value>UserId non valido. Sei sicuro di aver mandato questo comando come risposta?</value>
 	</string>
 	<string key="AlreadyAdmin">
-		<value>{0} E' gia' un admin!</value>
+		<value>{0} è già un admin!</value>
 	</string>
 	<string key="NotAdmin">
 		<value>{0} Non ha il potere del banhammer!</value>
 	</string>
 	<string key="AdminRemoved">
-		<value>{0} E' stato rimosso dalla lista degli admin.</value>
+		<value>{0} è stato rimosso dalla lista degli admin.</value>
 	</string>
 	<string key="LanguageSet">
 		<value>Lingua settata su {0}</value>
 	</string>
 	<string key="NoSeer">
 		<value>Non ci sono veggenti. Ah!</value>
+		<value>Sei inutile, non c'è nessun veggente.</value>
 	</string>
 	<string key="TimesUp">
-		<value>Tempo scaduto! Mia nonna era più veloce..</value>
+		<value>Tempo scaduto! Mia nonna era più veloce…</value>
 	</string>
 	<!--  new strings june 10 2016  -->
 	<string key="RoleInfoCupid">
-		<value>
-			Cupido! Non avevi un cazzo da fare quindi ti sei messo a lanciare frecce e far innamorare persone. Scegli due persone e rendili amanti, quando uno dei due amanti muore, l'altro si suiciderá. (Mi sa molto da Romeo e Giuletta sta cosa)
-		</value>
+		<value>Cupido! Non avevi un cazzo da fare quindi ti sei messo a tirare frecce e far innamorare persone. Scegli due persone e rendile amanti: quando uno dei due amanti muore, l'altro si suiciderà.\n(Mi sa molto di Romeo e Giulietta 'sta cosa)</value>
 	</string>
 	<string key="RoleInfoDoppelganger">
-		<value>
-			Sei il Dopplegänger. La leggenda più figa che esista. Sei tipo un Ditto! Scegli una persona. Alla sua morte, assumerai il suo ruolo. Che figata!
-		</value>
+		<value>Sei il Dopplegänger. La leggenda più figa che esista. Sei tipo un Ditto! Scegli una persona, alla sua morte assumerai il suo ruolo. Che figata!</value>
 	</string>
 	<string key="RoleInfoHunter">
-		<value>
-			Il cacciatore urbano.. Ahh! Così affezzionato alla tua pistola.. Ma sei comunque molto solitario(Asociale!) E chiunque venga a farti visita se la dovrá vedere con te. Che siano lupi, satanisti o la puttanella non ce n'è per nessuno! Li ucciderai senza pietá! E se verrai linciato, hai pochissimo tempo prima di morire per estrarre la tua pistola ed uccidere qualcuno.. Per vendicarti.. Si...
-		</value>
+		<value>Il cacciatore urbano… Ahh! Così affezionato alla tua pistola… Ma sei comunque molto solitario (asociale!). Chi verrà a farti visita se la dovrà vedere con te. Che siano lupi o satanisti non ce n'è per nessuno! Li ucciderai senza pietà! E se verrai linciato avrai pochissimo tempo prima di morire per estrarre la tua pistola ed uccidere qualcuno… Per vendicarti… Sì…</value>
 	</string>
 	<string key="RoleInfoSerialKiller">
-		<value>
-			Sei il serial killer, fuggito dal manicomio. Ogni notte puoi uccidere qualcuno, e potrai aggiungere i loro corpi alla tua collezione.. Siiiii *sbava*..
-			Sarai contento appena tutti moriranno!
-		</value>
+		<value>Sei il serial killer, fuggito dal manicomio. Ogni notte puoi uccidere qualcuno per aggiungere i suo corpo alla tua collezione… Sìììì!! *sbava*
+			Sarai contento appena tutti moriranno!</value>
 	</string>
 	<string key="CupidChosen">
-		<value>
-			Cupido ti ha maledetto. Ti ha fatto innamorare di {0} (condoglianze) Il vostro obiettivo è sopravvivere, insieme.*scena commovente* Se uno di voi due muore, l'altro si suiciderá dalla disperazione.
-		</value>
+		<value>	Cupido ha scoccato le sue frecce colpendo te e {0}! Ora siete follemente innamorati e non potete più vivere l'uno senza l'altro! Dovete vincere insieme! Se uno dei due muore… l'altro cadrà in depressione e si suiciderà!</value>
 	</string>
 	<string key="HunterLynchedChoice">
-		<value>
-			Quei luridi bastardi villici ti hanno preso! Presto sfodera la tua pistola e uccidi qualcuno prima che te la tolgano! VELOCE CAZZO!
-		</value>
+		<value>Quei luridi bastardi villici ti hanno preso! Presto sfodera la tua pistola e uccidi qualcuno prima che te la tolgano! VELOCE CAZZO!</value>
 	</string>
 	<string key="HunterNoChoiceLynched">
-		<value>
-			{0} Voleva estrarre la sua pistola dalla fodera e fare i botti prima di morire ma non ha fatto in tempo, i villici gliel'hanno fottuta prima che potesse fare danni. Poi lo lasciano cadere in un burrone. Che triste fine.
-		</value>
+		<value>{0} Voleva estrarre la sua pistola dalla fodera e fare i botti prima di morire ma non ha fatto in tempo, i villici gliel'hanno fottuta prima che potesse fare danni. Poi lo lasciano cadere in un burrone. Che triste fine.</value>
 	</string>
 	<string key="HunterSkipChoiceLynched">
 		<value>
-			{0} Esce la pistola e punta la folla che gli corre contro per uccidere qualcuno prima di morire...  Ma è talmente rincoglionito che non spara, viene quindi linciato.
+			{0} Estrae la pistola e punta la folla che gli corre contro per uccidere qualcuno prima di morire…  Ma non sa chi scegliere e rinuncia. Viene quindi linciato.
 		</value>
 	</string>
 	<string key="HunterKilledFinalLynched">
 		<value>
-			{0} Si dimena dalla folla e allunga le mani per tenerle a bada tipo jurassic park.. estrae la pistola e punta {1}! Lui per tutta risposta dice: "Aspett-" Morto. Un proiettile gli ha forato il cervello.
-			{2}
+			{0} Si dimena dalla folla e allunga le mani per tenerle a bada tipo Jurassic World… estrae la pistola e punta {1}! Lui per tutta risposta dice: “Aspett-” Morto.\nUn proiettile gli ha forato il cervello. {2}
 		</value>
 	</string>
 	<string key="HunterShotChoice">
 		<value>
-			Qualcuno ti ha puntato la pistola! Rispondi anche te sparando a qualcuno! VELOCEE!
-		</value>
+		Stai per morire! Nei tuoi ultimi istanti di vita hai l'occasione di sparare a qualcuno… Sbrigati!
+  		</value>
 	</string>
 	<string key="HunterNoChoiceShot">
 		<value>
-			Un colpo ha raggiunto {0}, talmente rapido che lui non ha potuto mettere la mano sulla pistola per poter rispondere. Mazza che sfiga
+		{0} è morto prima che se ne accorgesse e potesse mettere mano alla pistola per poter rispondere. Mazza che sfiga!
 		</value>
 	</string>
 	<string key="HunterSkipChoiceShot">
 		<value>
-			{0} Impannolinato di paura, alza le mani e si rifiuta di rispondere alla provocazione della pistola puntata su di lui. Ah-ah! morto.
+			Impannolinato di paura {0} alza le mani e si rifiuta di vendicare uccidendo qualcuno. Ah-ah! morto.
 		</value>
 	</string>
 	<string key="HunterKilledFinalShot">
 		<value>
-			Un proiettile colpisce {0} nel petto. Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
+		{0} è per terra, in fin di vita… Cazzo, è messo malissimo ma fa in tempo ad estrarre la pistola e a sparare a {1} prima di morire brutalmente.\n{2}
 		</value>
 	</string>
 	<string key="CultConvertSerialKiller">
 		<value>
-			{0} come al solito armato di statuette di Satana si è recato a casa di {1}. Si intrufola dentro fin quando un fottutissimo pazzo assassino accoltella 39 volte {0}. Alla fine, esporta tutti gli organi di {0} per appenderli al fuoco e mangiarseli come kebab. {0} è morto.. 
+			{0} come al solito armato di statuette di Satana si è recato a casa di {1}. Si intrufola dentro fin quando un fottutissimo pazzo assassino lo accoltella 39 volte. Alla fine {1} esporta tutti gli organi di {0} per appenderli al fuoco e mangiarseli come kebab. {0} è morto.
 		</value>
 	</string>
 	<string key="HunterShotWolfMulti">
 		<value>
-			I lupi hanno tentato (inconsci del pericolo!) di uccidere il cacciatore urbano..
-			Non ha avuto il tempo di aprir bocca, il cacciatore pianta 4 proiettili in testa ad uno dei lupi, facendo fuggire gli altri. Poi lo squarta per bene. Stasera kebab di lupo! {0} è stato brutalmente ucciso.
+			<!-- 0 - target's name -->
+			I lupi hanno tentato (inconsci del pericolo!) di uccidere il cacciatore urbano che è riuscito a portare uno di loro con sè nella tomba. {0} è morto (lupo).
 		</value>
 	</string>
 	<string key="HunterShotWolf">
 		<value>
-			Un lupo ha tentato di mangiare il cacciatore urbano.. DA SOLO! AHAHAH! È risaputo che il cacciatore urbano è il discendente di Chuck Norris, infatti con qualche calcio rotante il lupo non ha avuto scampo. {0} è morto.
+			Un lupo ha tentato di mangiare il cacciatore urbano DA SOLO! AHAHAH! È risaputo che il cacciatore urbano è discendente di Chuck Norris: infatti con qualche calcio rotante il lupo non ha avuto scampo. {0} è morto.
 		</value>
 	</string>
 	<string key="SerialKillerKilledWolf">
 		<value>
-			I lupi stavano facendo il loro classico banchetto serale.. Quando alla festa si aggiunge un pazzo maniaco! Estrae un coltello dalla giacca per aggredire alle spalle uno dei lupi! Il sangue lo ha poi bevuto, e con la pelle ci ha fatto una maestosa pelliccia. {0} è morto.
+			I lupi stavano facendo il loro classico banchetto serale quando alla festa si aggiunge un pazzo maniaco! Estrae un coltello dalla giacca per aggredire alle spalle uno dei lupi! Il sangue lo ha poi bevuto e con la pelle ci ha fatto una maestosa pelliccia. {0} è morto.
 		</value>
 	</string>
 	<string key="DefaultKilled">
-		<value>
-			{0} Stava guardando la TV come al solito questa sera, ma a un certo punto un assassino entra in casa sfondando la porta e lo uccide! il corpo di {0} è stato trovato con i bulbi oculari tirati fuori dalle cavitá, messe in bocca, e la lingua tagliata in due messa nelle cavitá oculari. Il serial killer ha colpito ancora! {1}
-		</value>
+		<value>{0} stava guardando la TV come al solito questa sera, ma a un certo punto un assassino entra in casa sfondando la porta e lo uccide! il corpo di {0} è stato trovato con i bulbi oculari tirati fuori dalle cavità e messi in bocca; e la lingua tagliata in due messa nelle cavità oculari. Il serial killer ha colpito ancora! {1}</value>
+		<value> {0} non immaginava che quella sarebbe stata la sua ultima notte: un feroce killer lo ha seguito e brutalmente mutilato lasciandolo a morire sul ciglio della strada. {1}</value>
 	</string>
 	<string key="GuardBlockedKiller">
-		<value>
-			Eh! volevi aggiungere {0} alla collezione dei cadaveri ma ti si para l'angelo custode davanti. Ti sale il folle in testa che neanche Yuno in modalità yandere può tenerti testa. Provi ad accoltellarlo ma è troppo rapido, non riesci. Finchè ti stanchi e te ne ritorni al manicomio per riposarti. Non ce l'hai fatta.
-		</value>
+		<value>Eh! Volevi aggiungere {0} alla collezione dei cadaveri ma ti si para l'angelo custode davanti. Ti sale il folle in testa che neanche Yuno in modalità yandere può tenerti testa. Provi ad accoltellarlo ma è troppo rapido, non riesci. Finché ti stanchi e te ne ritorni al manicomio per riposarti. Non ce l'hai fatta. DANNATO ANGELO!</value>
 	</string>
 	<string key="CultConvertHunter">
+	  <!-- 0 - Youngest Cultist's name -->
+      <!-- 1 - target's name -->
 		<value>
-			La setta spedisce {0} a convertire {1}.
-			Osservate da lontano l'operazione ma ad un certo punto si sentono due colpi di pistola, e il corpo di {0} volare dalla finestra. È morto.
+			Spedite {0} a convertire {1}.
+			Osservate da lontano l'operazione ma ad un certo punto sentite due colpi di pistola e vedete il corpo di {0} volare dalla finestra. È morto.
 		</value>
 	</string>
 	<string key="CultConvertSerialKiller">
+	    <!-- 0 - Youngest Cultist's name -->
+        <!-- 1 - target's name -->
 		<value>
-			La setta spedisce {0} a convertire {1}.
-			gli altri osservano da lontano e si sentono delle grida malate provenire da quella casa.. {0} fugge via ma {1} lo insegue e con un placcaggio da 5 stelle lo getta a terra, per poi accoltellarlo. È fottutamente psicopatico.
+			Spedite {0} a convertire {1}.
+			Mentre osservate da lontano sentite delle grida malate provenire da quella casa. {0} fugge via ma {1} lo insegue e con un placcaggio da 5 stelle lo getta a terra per poi accoltellarlo.\n{1} è un fottuto psicopatico.
 		</value>
 	</string>
 	<string key="GuardKiller">
 		<value>
-			Hai protetto il serial killer, cazzo fai! Lui ti ha ringraziato accoltellandoti 89 volte, strappandoti le ali e mangiandoti gli occhi.
+			Hai protetto il serial killer, cazzo fai??? Lui ti ha ringraziato accoltellandoti 89 volte, strappandoti le ali e mangiandoti gli occhi.
 		</value>
 	</string>
 	<string key="HarlotFuckKiller">
 		<value>
-			Ti rechi a casa di {0} pronta a scopartelo per bene. Tutto fila liscio(letteralmente) fin quando, ad un certo punto, {0} estrae un coltello e... Si... Ti accoltella proprio li...
+			Ti rechi a casa di {0} pronta a scopartelo per bene. Tutto fila liscio (letteralmente) fin quando, ad un certo punto, {0} estrae un coltello e… Sì… Ti accoltella proprio lì…
 			Per poi ucciderti. Per poi abusare di te dopo la tua morte. Necrofilia portami via.
 		</value>
 	</string>
 	<string key="HarlotFuckKillerPublic">
-		<value>don't worry about this string for now!</value>
+		<value>Il villaggio si sveglia per trovare il corpo di {0} con i genitali brutalmente taglizzati. {0} è morto.</value>
 	</string>
 	<string key="DGToMason">
 		<value>
-			Il sosia {0} si è trasformato in un muratore, ora hai un nuovo compagno di maroni.
+			Il sosia {0} si è trasformato in un Massone, ora hai un nuovo compagno tra gli Illuminati.
 		</value>
 	</string>
 	<string key="DGTransformToMason">
 		<value>
-			{0} È morto. Ora sei un muratore, gli altri muratori sono: {1}
+			{0} È morto. Ora sei un Massone, gli altri Massoni sono: {1}
 		</value>
 	</string>
 	<string key="DGToCult">
 		<value>
-			il sosia {0} si è trasformato in un satanista. Ora hai un nuovo compagno con cui scambiare le figurine di Satana.
+			Il sosia {0} si è trasformato in un satanista. Ora hai un nuovo compagno con cui scambiare le figurine di Satana.
 		</value>
 	</string>
 	<string key="DGTransformToCult">
 		<value>
-			{0} è morto. Ora sei un satanista. Gli altri satanisti sono: {1}
+			{0} è morto. Ora sei un satanista. W SATANA! Gli altri satanisti sono: {1}
 		</value>
 	</string>
 	<string key="DGToWolf">
 		<value>
-			il sosia {0} si è trasformato in un lupo. Ora hai un nuovo compagno di mangiata.
+			Il sosia {0} si è trasformato in un lupo. Ora hai un nuovo compagno di mangiata!
 		</value>
 	</string>
 	<string key="DGTransformToWolf">
@@ -678,77 +676,499 @@
 	</string>
 	<string key="SerialKillerWins">
 		<value>
-			è rimasto soltanto il serial killer! SIII MAHUAHAHAHAHAHAH
+			È rimasto soltanto il serial killer! SÌÌÌ! MAHUAHAHAHAHAHAH!!!
 		</value>
 	</string>
 	<string key="AskKill">
 		<value>Chi vuoi assassinare?</value>
 	</string>
 	<string key="LoverDied">
-		<value>
-			La morte di {0} ha colpito molto la sua anima gemella. {1} entra in depressione ed arriva a far uso di droghe e alcol(facendosi aiutare dall'ubriacone)
-			alla fine, muore per overdose per aver mischiato meth, Jack Daniel's e qualche altro oppiaceo sconosciuto. {2}
-		</value>
+	    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+		<value>La morte di {0} ha colpito molto la sua anima gemella. {1} entra in depressione ed arriva a far uso di droghe e alcol. Alla fine, muore per overdose dopo aver mischiato meth, Jack Daniel's e qualche altro oppiaceo sconosciuto. {2}</value>
 	</string>
 	<string key="AskDoppelganger">
 		<value>Chi vuoi copiare alla sua morte?</value>
 	</string>
 	<string key="AskCupid1">
-		<value>
-			Fai innamorare due persone, scegli la prima.
-		</value>
+		<value>			Fai innamorare due persone, scegli la prima:</value>
 	</string>
 	<string key="AskCupid2">
-		<value>
-			bravo bimbo! ora scegli la seconda persona.
-		</value>
+		<value>			Bravo bimbo! ora scegli la seconda persona:</value>
 	</string>
 	<string key="Hunter">
 		<value>il Cacciatore Urbano 🎯</value>
 	</string>
 	<string key="Cupid">
-		<value>Cupido🏹 </value>
+		<value>Cupido 🏹</value>
 	</string>
 	<string key="SerialKiller">
-		<value>il Serial Killer🔪</value>
+		<value>il Serial Killer 🔪</value>
 	</string>
 	<string key="Doppelgänger">
-		<value>il Sosia🎭</value>
-	</string>
-	<string key="CupidChosen">
-		<value>
-			Cupido ha scoccato le sue frecce(non aveva altro da fare..) su di te e {0}! ora siete follemente innamorati. Dovete vincere insieme.. Se uno dei due muore.. l'altro cadrá in depressione
-		</value>
+		<value>il Sosia 🎭</value>
 	</string>
 	<string key="NewWCRoleModel">
-		<value>Ora sei il becchino. Hai augurato la morte a {0}</value>
+		<value>Ora sei il becchino. Alla morte di {0} diventerai lupo!</value>
 	</string>
-	 <string key="LoversWin">
+    <string key="LoversWin">
 <value>Gli amanti hanno vinto! È tempo di festeggiare con una bella scopata!</value>
+<value>Omnia Vincit Amor. Alla faccia di contadini, lupi e assassini vincono gli amanti!</value>
 </string>
-<string key="HunterKilledVisiter">
-    <value>Viene ritrovato nel cassonetto della spazzatura {0} che si ritrova più buchi di uno scolapasta. Ha provato a fare visita al cacciatore urbano! Lo sanno tutti che il cacciatore è asociale.. {1}</value>
+    <string key="HunterKilledVisiter">
+    <value>Viene ritrovato nel cassonetto della spazzatura {0} che si ritrova più buchi di uno scolapasta. Ha provato a fare visita al cacciatore urbano! Lo sanno tutti che il cacciatore è un asociale… {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>Un figuro incappucciato bussa in casa tua raccondanti qualcosa, voleva portarti con te, saranno sicuramente testimoni di Geova.. o Satanisti.. Che sono più o meno la stessa cosa. Comunque non ci sono riusciti perchè sei figo</value>
+    <value>Un figuro incappucciato bussa in casa tua raccondanti qualcosa, voleva portarti con te, saranno sicuramente testimoni di Geova… o Satanisti… Che sono più o meno la stessa cosa. Comunque non ci sono riusciti perché sei figo.</value>
   </string>
   <string key="SerialKillerWinsOverpower">
-    <value>Dopo una lite a scuola, {0} e {1}, decidono di "incontrarsi" fuori. Ma {1} muore nel giro di due nanosecondi trafitto dalla swordburst. Il serial killer ha vinto. se ne va lasciando un esplosione alle sue spalle, con degli occhiali thug life e l'inizio della sigla di CSI: "YEAAAAAAAAAAHH"</value>
+    <value>Dopo una lite a scuola, {0} e {1}, decidono di “incontrarsi” fuori. Ma {1} muore nel giro di due nanosecondi trafitto dalla swordburst. Il serial killer ha vinto. Se ne va lasciando un esplosione alle sue spalle, con degli occhiali thug life e l'inizio della sigla di CSI: "YEAAAAAAAAAAHH!"</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Tutti sono morti, adesso passerò il resto della mia vita ad osservare questo avvoltoio... Ma quanto è figo?</value>
+    <value>Tutti sono morti, nessuno ha vinto e io passerò il resto della mia vita ad osservare questo avvoltoio… Ma quanto è figo?</value>
   </string>
   <string key="SKHunterEnd">
-    <value>Il sole sorge e.. Immaginatevi una scena da duello Far West. Da un lato {0} e dall'altro {1} Tra cespugli volanti e un'ubriacone a caso, entrambi sono pronti a sparare, con le telecamere che fanno gli zoom nei loro occhi. {1} è il primo a muoversi, sfodera la pistola e comincia a sparare mentre {0} con il suo coltello devia i proiettili mentre con l'altra mano lancia dei piccoli coltellini da lancio. Alla fine {1} viene trafitto da un coltello e mentre {0} se ne va popo fiero, {1} riesce a sparargli in piena nuca. Entrambi sono morti.... Che duello...
+    <value>Il sole sorge e… Immaginatevi una scena da duello Far West: da un lato {0} e dall'altro {1}. Tra cespugli rotolanti e un'ubriacone a caso, entrambi sono pronti a sparare, con le telecamere che fanno gli zoom nei loro occhi. {1} è il primo a muoversi, sfodera la pistola e comincia a sparare. {0} con il suo coltello devia i proiettili mentre con l'altra mano lancia dei piccoli coltellini da lancio. Alla fine {1} viene trafitto da un coltello e mentre {0} se ne va popo fiero {1} riesce a sparargli in piena nuca. Entrambi sono morti… Che duello…
     Sicuramente ha vinto lo sport.</value>
   </string>
   <string key="AlreadyOnWaitList">
-    <value>Non vedi che sto dormendo?.. Sei giá nella lista d'attesa per {0}</value>
+    <value>Non vedi che sto dormendo? Sei già nella lista d'attesa per {0}.</value>
   </string>
   <string key="AddedToWaitList">
-    <value>Sei stato messo nella lista d'attesa su {0}. Ora vado a dormire.. Ti scrivo appena una nuova partit.... *ronf*</value>
+    <value>Sei stato messo nella lista d'attesa su {0}. Ora vado a dormire. Ti scrivo appena una nuova partit… *ronf*</value>
   </string>
   <string key="NotifyNewGame">
-    <value>SVEGLIAAA su {0} è cominciata una partitaaaaa </value>
+    <value>SVEGLIAAA! Su {0} è cominciata una partitaaaaa! </value>
   </string>
+    <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi il bot ha augurato la morte a {0} per te.</value>
+  </string>
+    <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+    <string key="IdleCount">
+	<!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di linciare i lupi! Vota con attenzione!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei il veggente. Ogni notte, potrai scegliere un giocatore e conoscere il loro ruolo. Svelati saggiamente: se dici di essere il veggente, i lupi proveranno a mangiarti!\nNota: Potresti non essere Veggente ma Folle, che vede ruoli in partita ma a caso. Se ti scrive l'Osservatore, saprai di essere il vero Veggente.\nTraditore 🖕: Lo puoi scrutare come Lupo 🐺 o come Contadino 👱 (50% e 50%). Stai attento!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Ogni notte, potrai decidere di mangiare qualcuno e di giorno dovrai confondere gli altri e non farti linciare! Se almeno la metà dei giocatori in partita sono lupi, la partita finisce e vincete. \n Nota: Se attacchi l'ubriaco, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se attacchi il maledetto, diventerà un lupo come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Come prostituta avrai la possibilità di "visitare" altri giocari ogni notte. Se passerai la notte con un membro inerme del villaggio lo scoprirai, hai anche una probabilità su due di scoprire se chi ti sbatti è un seguace di Satana. Nel caso sfortunato in cui tu visitassi un lupo (o serial killer) verrai uccisa. Se visiti il giocatore che i lupi stanno sbranando, verrete uccisi insieme. Però, se scegli un giocatore, e i lupi scelgono di venire a casa tua, sopravviverai! Non eri a casa, dopotutto…</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei solo un ubriacone! Da ubriaco, sei come un normale villico. Ma se venissi sbranato la notte dai lupi, tutto il tuo alcol nel sangue li farà ubriacare e dovranno stare fermi una notte.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Come maledetto, sei come un normale villico… finché i lupi non cercano di sbranarti. Se venissero a casa tua, dopo il morso diventerai un lupo come loro! Nota: finché i lupi non ti mangiano, la tua fazione è con i contadini e vincerai con loro nel caso tutti i lupi morissero.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei un bastardo traditore. Se riesci a sopravvivere a lungo e riuscire a uccidere tutti i lupi, ti trasformerai in un lupo, pronto a uccidere i vecchi alleati contadini di notte! Nota: Finchè non ti trasformi, il tuo team è con i villici. Ti conviene quindi cercare di uccidere i lupi. Se il veggente ti scrutasse, Potrebbe identificarti sia come Lupo 🐺, sia come Contadino 👱.(50% e 50%)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei l'Angelo Custode! Ogni notte, potrai proteggere un giocatore. Stai attento alle tue scelte però, se scegliessi un lupo, avrai il 50% di probabilità di essere mangiato. Se scegliessi il killer, verrai accoltellato alle spalle senza accorgertene (100% probabilità)</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Tu, vecchio volpone… Di giorno, avrai l'occasione di investigare gli altri giocatori. Ma stai attento! C'è il 40% di probabilità che i lupi ti scoprano!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Come Artigliere, avrai due proiettili d'argento all'inizio del gioco. Di giorno, avrai l'occasione di sparare ad un'altro giocatore. Dopo lo sparo, tutti sapranno il tuo ruolo! Stai attento però, hai solo 2 proiettili e i lupi vorranno sicuramente mangiarti, se ti sveli!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Il Conciatore! Il suo obiettivo è semplice: farsi Linciare. Se il conciatore riesce a farsi linciare VINCE e utti gli altri perdono. Nota: Se non riesce a farsi linciare: perde. Non vince con i contadini.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Un povero Folle che crede di essere il Veggente… Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Come Satanista, il tuo obiettivo è convertire tutti gli altri giocatori (tranne i lupi e il killer che non si possono convertire) al tuo culto. Se a fine partita, tutti i giocatori sono Satanisti, vincono. \n Probabilità di convertire i seguenti ruoli: \n Sosia: 0% Finchè rimane sosia, è impossibile da convertire \n Veggente 40% Il veggente è il più difficile da convertire \n Angelo 60% Nota: Se protegge qualcuno, non lo troverai in casa \n Maledetto 60% \n Investigatore 70% \n Prostituta 70% Come l'angelo, se non è casa, non potrete convertirla \n Cacciatore 50% Avrai il 50% di convertire il cacciatore. Se fallite, C'è il 50% che vi spari.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Il tuo lavoro è estirpare i Satanisti. Se ti visitano, ucciderai il loro ultimo membro e saprai quanti satanisti sono rimasti. Ogni notte potrai visitare un giocatore: Se sono satanisti, li ucciderai. Sennò, tornerai a casa, come se nulla fosse successo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Come Becchino, Alla prima notte, sceglierai il tuo genitore. Se morisse, ti trasformerai in un lupo. Nota: Finchè non ti trasformi, vincerai con i contadini nel caso tutti i lupi morissero.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Per ora, sei un normale villico. Nel caso il Veggente morisse, ti trasformerai nel suo sostituto. Nota: Se sei in partita, implica che c'è un vero "Veggente" in partita.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Ti verrà detto chi è il veggente (quello vero, non il folle). Se morisse e il Sosia oppure l'Apprendista Veggente prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi veggente e rivelare i ruoli al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Il ruolo dei Massoni è semplice: sanno chi sono gli altri Massoni dato che partecipano a delle riunioni segrete del villaggio. Se sono da soli, sono semplici villici.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Puoi scegliere un giocatore a inizio partita, erediti il suo ruolo \n Nota: Se il giocatore viene convertito ai satanisti, prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se erano bimbi ribelli e il loro modello è morto, diventerai un lupo. Sennò, erediterai il loro modello.\nI satanisti non possono convertire il Sosia (ma possono dopo che il sosia cambia ruolo) E - Il sosia NON può vincere a meno di non essersi trasformato. Se a fine partita, il Sosia non si è trasformato, perde (eccezione: amante).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>A Inizio partita, sceglie due giocatori. Dopo diventa a tutti gli effetti un normale villico. Questi due diventeranno follemente innamorati e se uno dei due muore, l'altro morirà. Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendemente dal loro ruolo. Se gli amanti sono di due team diversi (esempio: lupo + villico), e un team vince (esempio: lupi), anche l'amante (esempio: villico) vince. \n TL;DR Se tutti e due gli amanti sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Un tipo vendicativo, col grilletto pronto. quando gli altri ti visitano, potrebbero trovarsi morti, visto che la paranoia ti possiede e tu gli spari. \nSe I lupi ti attaccano, hai una chance di ucciderne uno di loro. Sennò, avrai la chance di sparare a qualcuno alla tua morte.\nNota: Per gli attacchi dei lupi, la probabilità inizia al 30%. Se c'è un lupo, il cacciatore ha il 30% di probabilità di ucciderlo (e sopravvivere. Per ogni lupo in più, la probabilità aumenta del 20% (2 Lupi= 50%, 3= 70%). Cionostante - se ci sono molti lupi, mentre potresti ucciderne uno, verrai lo stesso accerchiato e ucciso.	\nSe I satanisti provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Il serial killer è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo giocatore vivo (eccezione: amanti). Come serial killer, puoi uccidere CHIUNQUE: Lupi, cacciatori, artiglieri, angeli, qualunque cosa. Se I lupi provano ad attaccarti hanno solo il 20% di probabilità di riuscirci.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone. Forse è stato a contatto con i lupi troppo a lungo…</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della partita: {0}</value>
+	</string>
+	<!--New strings, July the 8th -->
+
+  <string key="Day">
+<!--0 - Day -->
+    <value>Giorno {0}</value>:)
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato.</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nPercentuale CPU usata: {1}%\nMessaggi per secondo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale…</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  
+  <string key="Cancel">
+    <value>Indietro</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>È {0} fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostra o nascondi i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere il Folle in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Folle come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere il Conciatore in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Conciatore come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Satanisti in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Satanista come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, abbi una bella giornata! :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato.</value>
+  </string> 
+  <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile ⬆</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Sei il VIP! Sei in vacanza in incognito in questo paesello sperduto dove nessuno ti conosce e pieno di mostri e assassini. Se deciderai di rivelare il tuo ruolo e vantarti della tua celebrità il tuo voto varrà doppio (dopotutto sei una Very Importan Person).</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Ti eri stufato della tua vita da Principe tra cortigiane e champagne così hai deciso di scendere tra il popolo per spassartela con contadine e bere birra. Ma se il popolo dovesse decidere di linciarti farai loro vedere chi comanda e annullerai l'esecuzione! Peccato che questo trucco non funzioni più di una volta…</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei il Fattone. Anni passati a sperimentare droghe ti hanno lascianto un pochino svanito… tu ci provi a linciare la persona giusta ma i draghi volanti rendono tutto così confuso…</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei il Furry: adori i lupi, ami i lupi, il tuo sogno è un villaggio di lupi! Per scoprire chi è lupo di notte sgattaioli fuori casa e ti metti a spiare alla finestra di qualcuno per vedere se di notte si trasformano nei tuoi amatissimi lupi o se fanno strani riti per trovare i tuoi alleati pellicciosi.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei lo Spacciatore. Hai diverse polveri interessanti nascoste nel materasso ma la migliore è una droga talmente forte da stordire perfino i lupi! Non ne hai moltissima, sufficiente appena a fermarli  per una notte, quando vuoi durante il giorno puoi decidere di lasciarne un po' in giro per il paese ma tutti ti vedranno e sapranno che sei un buon pusher.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei il Lupo Capo, il lupo originario! Ogni notte chi scegli di attaccare ha il 20% di possibilità di venire infettato dalla tua bava mannara e trasformarsi a sua volta in lupo!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei il Cucciolotto, il lupo più piccolo e tenero del branco. Sei pucciosissimo e tutti i lupi ti amano! Se tu dovessi morire la notte successiva i lupi onoreranno la tua morte uccidendo ben due persone in tua memoria.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Mentre il villaggio inizia ad preparare la forca per {0} lui dice “Oh, ma che fate! Io sono il Principe! E ve lo dimostrerò! Ho la voglia a forma di corona sulla chiappa destra, come tutti nella mia dinastia!” si gira e abbassa i pantaloni e sì, eccola lì, alla luce delle torce la voglia a forma di corona… la folla trovandosi il regal sedere in faccia scoppia a ridere e se ne torna a casa, ma non senza aver scattato qualche foto ricordo.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Sbirci dalla finestra di {0} ma non riesci a capire che cosa sta facendo esattamente. Comunque non è né lupo né veggente… niente di interessante…</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} sale su una panchina, si schiarisce la voce ed estrae una copia di Novella 2000 con la sua faccia in copertina! “IO” grida, “SONO UN VIP”!\nEffettivamente è una Very Important Person e ora il suo voto vale doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca “Sborona” quando vuoi far vedere a tutti che sei un vero VIP.</value>
+  </string>
+  <string key="Reveal">
+    <value>Sborona</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vuoi spargere in giro la droga per stordire i lupi stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre il resto del villaggio discute in piazza si nota {0} che gironzola con fare sospetto spargendo in giro una strana polverina. È la droga più potente che ha! Quella in grado di stordire perfino i lupi!\n(I lupi la prossima notte non potranno attaccare.)</value>
+  </string>
+  <string key="Mayor">
+    <value>il VIP 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>il Principe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>il Furry 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>il Fattone 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>lo Spacciatore ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>il Lupo Capo ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>il Cucciolotto 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Mentre il branco si accinge a pasteggiare con {0}, il Capo {1} ferma tutti e dà una bella morsicata alla vittima. {1} dice “La mia bava mannara dovrebbe bastare a far unire {0} alla gang, domani notte verrà a caccia con noi!”</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Questa notte i lupi sono passati da te per uno spuntino ma il Capo ha provato particolarmente gusto a sbranarti… E sei stato fortunato! La sua bava ti ha infettato e domani notte andrai a caccia con il resto del branco!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Col scendere della notte senti un formicolio sul tutta la pelle e mentre ti gratti il braccio lo scopri coperto da una folta peluria che diventa pelliccia sotto i tuoi occhi! Sei un LUPO!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Come VIP sei un normale cittadino… nessuno ti conosce, nessuno ti considera… almeno fino a quando stufo di essere ignorato farai vedere a tutti la copertina della tua ultima intervista. Da quel momento in poi il tuo voto varrà doppio. Stai attento a non sbagliare!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il principe è un ruolo importante per il villaggio. Quando viene linciato la prima volta sopravvive ed il suo ruolo viene rivelato a tutti.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei un fanatico dei lupi, li sogni e li ami e vuoi che ci sia almeno un lupo per ogni umano. Di notte sbirci nelle case per cercare i tuoi amati lupi e il pericolossimo veggente.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei il Fattone, passi le giornate tra fumo e acidi… sai che c'è quacosa di brutto nel paese e sai che ogni sera ti costringono a votare per giustiziare i cattivi… se solo tu non fossi così in aria magari saresti sicuro di votare la perona giusta… (hai il 50% di probabilità di votare diversamente da quello che intendi)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Sei lo Spacciatore, rifornisci tutto il paese ma non incontri mai i tuoi clienti, loro ti lasciano i soldi nel solito posto e tu ci lasci la roba. Tra le varie sostanze che gestisci c'è anche una polvere piuttosto potente che se sparsa in giro stordisce anche i lupi. Peccato che tu ne abbia abbastanza solo per la una notte.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Sei il Capo Lupo, il lupo originario. Da te discendono tutti i lupi del mondo! La tua bava ha il potere di infettare le tue vittime e trasformarle in lupi come te! Sfortunatamente anche tu hai la tua età e non funziona più come una volta, ormai riesci a trasformare la tua vittima solo nel 20% dei casi.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Ma che lupacchiotto ADORABILE! Sei pucciossimo con la tua pelliccetta morbidosa e le zannette bianche bianche! Sei la mascotte del branco tutti ti adorano ma quei brutti cattivi del villaggio non si faranno alcuno scrupolo ad ucciderti! E quando tu morirai i tuoi compagni lupi ti vendicheranno uccidendo ben DUE VOLTE in una sola notte.</value>
+  </string>
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto ora gli fotti il posto e diventi Lupo Capo! Gli altri lupi (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} era il Cucciolotto. Ora è morto e il branco ti accoglie come nuova mascotte! I tuoi compagni sono: {1}</value>
+  </string>
+
+
+  <string key="VillageTeam">
+    <value>Team Patate</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Neutro</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Zanne</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team Satanisti</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Masochista</value>
+  </string>
+  
+    <string key="VillageTeamEnd">
+    <value>Team Patate</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutro</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Zanne</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Killer</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Satanisti</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Masochista</value>
+  </string>
+
 </strings>

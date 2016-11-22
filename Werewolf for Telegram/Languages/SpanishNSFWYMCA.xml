@@ -5,10 +5,12 @@
     <value>¡Marichocho! No estás en ninguna partida.</value>
   </string>
   <string key="PlayerStartedGame">
+    <!-- 0 - Player name -->
     <value>¡*{0}* ha comenzado las jornadas! Usa /join para curarte esa homosexualidad que tienes… [Ninguna marica será asesinada ni curada en esta aventura de ficción, sodomizada sí, me temo].</value>
     <value>¡{0} os ha convocado para que dejéis de ser tan depravados! ¡Usa /join para comenzar tu camino hacia la heterosexualidad!</value>
   </string>
   <string key="PlayerStartedChaosGame">
+    <!-- 0 - Player name -->
    <value>¡{0} ha empezado una partida caótica! Usa /join para unirte y curarte esa homosexualidad que tienes…</value>
    <value>¡Se ha iniciado una nueva partida caótica por {0}! ¡Usa /join para comenzar tu camino hacia la heterosexualidad!</value>
  </string>
@@ -22,6 +24,7 @@
     <value>1 minuto restante para apuntarse a las jornadas con /join</value>
   </string>
   <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
     <value>{0} segundos para curarte la homosexualidad con /join</value>
   </string>
   <string key="NotEnoughPlayers">
@@ -418,7 +421,7 @@
     <value>Formas parte de un trío de maricas. Habéis decidido empezar terapia antigay porque estáis cansadas de tener que explicar que os va la DP. Si coincides en la casa con otro del trimonio, sabrás quién es; si no, eres como una marica arrepentida más.</value>
   </string>
   <string key="MasonEaten">
-    <value>Cuando vais a desayunar os encontráis todos una nota en la puerta del comedor: “¡No puedo seguir con esta farsa! ¡Quiero seguir practicando la doble penetración! Espero que pronto entréis en razón y os unáis a mí.” Parece que uno de los del trimonio ha flaqueado y se ha ido para volver a su antigua vida depravada. [Un masón ha sido eliminado]. -- {0}</value>
+    <value>Cuando vais a desayunar os encontráis todos una nota de {0} en la puerta del comedor: “¡No puedo seguir con esta farsa! ¡Quiero seguir practicando la doble penetración! Espero que pronto entréis en razón y os unáis a mí.” Parece que uno de los del trimonio ha flaqueado y se ha ido para volver a su antigua vida depravada. [Un masón ha sido eliminado].</value>
   </string>
   <string key="MasonTeam">
     <value>Los del trimonio son: {0}</value>
@@ -582,7 +585,7 @@
     <value>Te cuelas en la habitación de {0} con una Interviú para hablar sobre las tetas de Ylenia e intentar meterle mano. No habéis pasado ni la primera página y la viciosa ya te ha ensartado varias veces... ¡y las que te quedan! De hecho te saca a pollazos hasta la puerta de la casa.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>¡Te han pillado con el culo sin atrincherar!</value>
+    <value>¡Te han pillado con el culo sin atrincherar! - {0}</value>
   </string>
   <string key="DGToMason">
     <value>La Moderna (doble) {0} se ha convertido al Trimonio, ¡como tú!</value>
@@ -661,5 +664,287 @@
   </string>
    <string key="SKHunterEnd">
     <value>Solos en la casa, {0} y {1} se enfrentan cara a cara en el salón. {0} consigue controlar a {1} pero justo en el momento en que la va a penetrar, {1}  gracias a sus clases de zumba y danza del vientre, consigue meterle un dildo que estaba tirado por el suelo en el culo a la viciosa. Así en esta situación en la que cualquier movimiento acaba en penetración, ambos participantes deciden abandonar. </value>
+  </string>
+    <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the seer is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A masons job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time for Telegram to send message to me: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: Players can {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Players will {0}be allowed to flee after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
   </string>
 </strings>

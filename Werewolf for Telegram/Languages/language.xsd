@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<xs:schema
+  id="language"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://tempuri.org/language.xsd"
+  xmlns="http://tempuri.org/language.xsd"
+  xmlns:mstns="http://tempuri.org/language.xsd">
+  <xs:element name="strings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="language">
+          <xs:complexType>
+            <xs:attribute name="name" type="xs:string"></xs:attribute>
+            <xs:attribute name="base" type="xs:string"></xs:attribute>
+            <xs:attribute name="variant" type="xs:string"></xs:attribute>
+            <xs:attribute name="owner" type="xs:string"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="string" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="value" maxOccurs="unbounded" type="xs:string"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="key" type="xs:string"></xs:attribute>
+            <xs:attribute name="isgif" type="xs:string"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

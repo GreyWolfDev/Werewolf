@@ -1,0 +1,1225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="English (Pokémon)" base="English" variant="Pokémon" owner="icemeh"/>
+  <string key="NotInGame">
+    <value>You don't appear to be in any Pokémon league right now...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>[Normal]{0} has woke up Professor Oak! Use /join to receive your Pokémon!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+	<value>[Chaos]Doctor Fuji has been awaken by {0}! Use /join to receive one of the many wild selection of Pokémons!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>You can't join now! The Pokémons are already assigned!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>You are already queuing up for your Pokémon!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute left to /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Not enough trainers, cancelling the Pokémon League!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Pokémon League is starting, please wait while you get your Pokémon.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, please change your name to join</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, max trainer limit has been reached!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current trainers -->
+    <!-- 2 - Minimum trainers -->
+    <!-- 3 - Maximum trainers -->
+    <value>{0} has joined the game.\nCurrently we have {1} trainers, we need at least {2} trainers to start the Pokémon League, max of {3}. /join now!</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Please click the start button below or click {1} so you can recieve your Pokémon. You may not join the Pokémon League until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't release your Pokémon, your Pokémon already fainted! </value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has release his/her Pokémon back to the wild!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} is with {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of trainers -->
+    <value>{0} trainers remain.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be playing...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a player by that name!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to start a Pokémon battle with {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to send {1}'s Pokémon back to the wild.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} has not voted for 2 nights in a row. {1} thought that the trainer is not good enough and abandoned them!</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Team Rocket 🐺 had lost all their members, its now your time to bring Team Rocket back to their glory!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nThe owner of Alakazam 👳 is {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0}'s Alakazam have fainted! Your Kadabra has gained enough experience and it evolved to Alakazam! </value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>As {1}'s Alakazam fainted, {0}'s Kadabra have evolved to Alakazam 👳!</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see that trainer {0} is with {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Which trainer's Pokémon do you want to release back to the wild?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to send your Raticate to snoop on?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Whose Pokémon should Snorlax use Hyper Beam on?? You have {0} PP left.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Which trainer do you want to be friend with?</value>
+  </string>
+  <string key="AskSee">
+    <value>Which trainer should Alakazam cast his Foresight on?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Which trainer should Mr. Mime cast Barrier on?</value>
+  </string>
+  <string key="AskEat">
+    <value>Time for Team Rocket to choose a trainer to battle! Which trainer do you want to do battle with?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Which trainer do you think owns a clone Mewtwo for Mew to cleanse?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Which trainer is your beloved senpai?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Which trainer do you want to hire into cone factory to clone more Mewtwo?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You own a Pidgeot 😾! But you always wanted to join Team Rocket (their legendary birds are stronger than your bird xD), if they come to you, you will abandon your Pidgeot to join Team Rocket.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You own a Raticate 🕵, you can send Raticate to check any trainer's Pokémon with a chance of letting the Team Rocket find out.(40% chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>You own a Butterfree 🍻, you can ask Butterfree to cast sleeping powder on Team Rocket if they attach you.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You own a Mr. Mime 👼. You may choose a trainer to cast Barrier to protect the trainer. However, if you choose to cast on Team Rocket, there is a 50% chance that you will lose the Pokémon battle.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You own a Snorlax 🔫. Snorlax have 2 PP of Hyper Beam. You may choose to Hyper Beam another trainer's Pokémon. Everyone will see the beam and know you have a Snorlax. (Well, at least not Team Rocket).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You own a Jigglypuff 💋! Jigglypuff likes to make friends and every night, you may choose a trainer for Jigglypuff to befriend. However, if you visit Team Rocket or trainer who are battling with Team Rocket, Jigglypuff will faint. If you do send Jigglypuff out, Team Rocket is unable to battle you.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>You own a Weezing 🖕! For now, you are a good trainer, but when Team Rocket falls, you will take over Team Rocket! If Alakazam cast foresight on you, you may or may not be identified as a Team Rocket member.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>YOU ARE WITH TEAM ROCKET 🐺!!! You can choose a trainer to battle every day.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You own a Alakazam 👳! Every day, you can ask Alakazam to cast foresight and check the Pokémon that the trainer owns.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >You own a Magikarp 👱. =( You can't win any Pokémon battle. Splashing till the end of time!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You own a Tauros 👺. You will win when you are able to set it free to the wild and destroy the Pokémon world!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You own a Meowth 👶. Choose a senpai you look up to. If he lose in a Pokémon Battle, you will lose all hope and join the Team Rocket.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You own a Abra 👁. Abra can only detect who is the trainer of Alakazam - that is Abra's only skill.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You own a Kadabra 🙇. When Alakazam fainted, your Kadabra will evolve!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >You are with the cloning organisation which clones Mewtwo 👤. Every day, you may choose a trainer and try to hire him into the team to clone Mewtwo. If all the remainding Pokémons are all Mewtwo. Your evil org. wins.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >You stumbled into a Mew 💂! Mew needs your help to cleanse all cloned Mewtwo.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>The time is now! Time to send a Pokémon back to the wild because the trainer are too weak to handle them!
+Everyone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Hmm hmm~ All of the trainers have {0} seconds to see which trainers are not worthy to stick with their Pokémon.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Its battle time! Choose a Pokémon to battle! or increase the happiness with your Pokémon. You have {0} seconds!!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >The trainers have cast their votes, and think that {0} is not worthy for {1}.</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Unable to come up with a proper decision on which Pokémon to set free, all trainers went back to train their Pokémons.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >All trainers are good enough for their Pokémon. No votes at all!</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Raticate fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Raticate fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Raticate fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Raticate fainted.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Mr. Mime 👼 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Mr. Mime 👼 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Mr. Mime 👼 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Mr. Mime 👼 fainted.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Snorlax fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Snorlax fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Snorlax fainted.</value>
+    <value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Snorlax fainted.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Alakazam 👳 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Alakazam 👳 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Alakazam 👳 fainted.</value>
+    <value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Alakazam 👳 fainted.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {0}'s Butterfree 🍻 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Butterfree 🍻 fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {0}'s Butterfree 🍻 fainted.</value>
+    <value >Team Rocket have found {0}. Team Rocket sent out Articuno, Zapdos and Moltres!!! The legendary birds used Ancient Power. {0}'s Butterfree 🍻 fainted.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Mind Reader. {0}'s Alakazam have been revealed to be a Psyduck in disguise! {0} was misguided!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+	<value >Team Rocket have found {0}. Team Rocket sent out Zapdos! Zapdos used Zap Cannon. {1} fainted.</value>
+	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {1} fainted.</value>
+    <value>Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {1} fainted.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Mew have found out a cloned Mewtwo! Mew released the cloned Mewtwo from {0}.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >There's no Pokémon Battle in the last hour.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >You have been approached by Team Rocket, you decided to abandon your Pidgeot and join them!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your Team Rocket mate(s): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} joined Team Rocket! Congrats on your new teammate!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Team Rocket have found you and initiated a Pokémon Battle. Sadly, you lost. =(</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >{0}'s Butterfree casted sleeping powder on you and you slept through the next battle timing.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Mr. Mime tried to cast Barrier on the Team Rocket but their Zapdos used Zap Cannon and your Mr. Mime fainted.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >Mr Mime casted Barrier on {0}'s Pokémon and successfully evaded a Pokémon Battle!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0}'s Pokémon was not attacked, so you didn't do much of anything.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Mr. Mime went to help {0}'s Pokémon, but unable to find it!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Mr. Mime cast Barrier on your Pokémon and able to evade a Pokémon Battle!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff chose the wrong Pokémon to befriend. {0}'s Jigglypuff has been attacked by the Team Rocket!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Odd... {0}'s Pokémon was not around! You cant befriend them.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff went to befriend {0}'s Pokémon but only to be attacked by Team Rocket! Jigglypuff fainted.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >{0}'s Jigglypuff chose the wrong Pokémon to befriend! Jigglypuff fainted after a Pokémon battle with the legendary birds.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0}'s Jigglypuff tried to befriend {1}'s Pokémon. Instead, Jigglypuff finds Team Rocket battling with {1}'s Pokémon! Moltres used Heat Wave. {0}'s Jigglypuff fainted.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >Jigglypuff have befriend {0}'s Pokémon as they are not with Team Rocket. Jigglypuff returns happily.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Jigglypuff came to befriend your Pokémon and you see that they have fun playing together.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >You caught {0}'s Raticate snooping about! Its time to bring it down!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Your Raticate told you that {0} is with {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Suddenly, a Hyper Beam brigtness light up the whole town. {0} has ordered Snorlax 🔫 to use Hyper Beam on {1}'s Jigglypuff. Jigglypuff fainted.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Suddenly, a Hyper Beam brigtness light up the whole town. {0} has ordered Snorlax 🔫 to use Hyper Beam on {1} and {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >Team Rocket has won!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >Team Rocket have won!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >The trainers have won!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Oh no! You release Tauros 👺 back to the wild and they destroyed the whole town.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living trainers, Pokémons, and team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} has voted to hire {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0}'s Mewtwo was sent to lure {1} into the team... However, he/she own a Mew! {0} lost his Mewtwo and was sacked!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} came to you with a cloned Mewtwo trying to hire you into their evil clone factory. Mew release Mewtwo from {0}!! {1} members of the clone factory remain!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Clone factory member has come to you and lure you to join their team with a cloned Mewtwo. You abandoned your Pokémon and choose the Mewtwo. It's now your job to lure more trainers into the team.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Clone factory members: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} has joined the team!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} and Mewtwo was sent to lure {1}... but no one was home!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Team Rocket has fallen but the remainding trainers are all with the clone factory! Clone factory with their clone Mewtwo has won!!!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Mew went to look for {0}'s Pokémon, but they are already fainted!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Mew went to look for {0} and found out that he/she owned a cloned Mewtwo! Mew release Mewtwo from {0}!</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>Mew went to look for {0} and found out that he/she owned normal Pokémon! Mew was relief and returned peacefully.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}'s senpai had just lost a Pokémon Battle! {0} lost all hopes and joined the Team Rocket!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} has lost a Pokémon Battle! Losing all hope, you chose to join Team Rocket! Your new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>Magikarp 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Butterfree 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Jigglypuff 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Alakazam 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Weezing 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Mr. Mime 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Raticate 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Team Rocket 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Pidgeot 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Snorlax 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Tauros 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Psyduck 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Meowth 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Abra 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Kadabra 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Mewtwo 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Mew 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Ran away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Fainted</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Alive</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Trainers Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Pikachu 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You owned a Pikachu 👷 and you know which trainers are in the Pikachu club.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {0}'s Pikachu fainted</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The Pikachu club members are: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Your newest member heads over to {0} and try to lure them into the team with Mewtwo. But you found out their Pokémon have just fainted and lose all motivation to have another Pokémon.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Team Rocket head over to {0} and challenge him to a Pokémon battle. Mr. Mime came out of nowhere and cast Barrier, You are unable to fight with them and back off..</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>You send {0} and his/her Mewtwo to try to lure {1}, however their boding with their Pokémon was too strong, and they don't want to join your team. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Jigglypuff heads over to {0} and tries to befriend his/her Pokémon to realise that its a cloned Mewtwo! Jigglypuff hurried back in shock.</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>'s</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>{0}'s Pokémon fainted. No one knows why~</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Odd.... {0} didn't bring his Pikachu for the Pikachu club meeting this morning... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>fainted</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No Alakazam 👳!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You owned a Haunter 🏹. You can choose two trainers Pokémon and cast Destiny Bond for both Pokémon. When one Pokémon fainted, the other follows.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You owned a Ditto 🎭. Choose a trainer. When his/her Pokémon fainted, Ditto can Transform into the trainer's Pokémon and join their team if they have one.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You owned a Gengar 🎯. A pro trainer you are. You may win the battle against Team Rocket and also cast a move before Gengar run away or lose the battle.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are the Pokémon Master that owns a Dragonite 🔪. Your goal is to win all Pokémon Battle and be the best there ever was.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Destiny Bond is casted on your Pokémon! If {0}'s Pokémon lose a Pokémon battle and fainted, your Pokémon will faint too!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The town has chosen to release your Gengar! Give your last command to Gengar for a last Pokémon battle before it is released!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} command Gengar to cast Shadow Punch but too late, Gengar have been release into the wild and fainted.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} choose not to give his last command to Gengar. Gengar have been release into the wild and fainted.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Before Gengar is release to the wild, {0} command Gengar to cast Shadow Punch! Gengar used Shadow Punch! {2} fainted and {1} blackout.</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Gengar is being release back to the wild! Give him your last command for a last Pokémon Battle with another trainer!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>{0}'s Gengar fainted before he/she is able to give any command to his Pokémon.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} delayed his command for a while. Knowing that he will lose the battle, didn't give any command to Gengar</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>{0} command Gengar to cast Curse! While Gengar fainted, {1} was sad as {2} fainted along with him.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} ordered Mewtwo to attack {1}! However, not knowing the other trainer's strength and Pokémon. Dragonite appeared! Dragonite used Outrage! Mewtwo fainted.</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Team Rocket had tried to fight a Pokémon Battle with Gengar! However, {0}'s experience is not strong enough and lost the battle.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Team Rocket had tried to fight a Pokémon Battle with Gengar! However, {0}'s experience is not strong enough and lost the battle.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Team Rocket had tried to fight a Pokémon Battle with Dragonite! However, Dragonite was too powerful and {0} lost the battle even tho Team Rocket have 3 legendary birds. What a shame!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>The Pokémon master is running around initiating battles with his Dragonite! Unfortunately, he found {0}! {0} lost miserably with his {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You and Dragonite head over to {0} and challenge him to a Pokémon battle. Mr. Mime came out of nowhere and cast Barrier, they are gone.. You didn't get your battle.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Team Rocket sends {0} to try to lure {1} into the team, but instead {1} was angry and ask Gengar to initiate a Pokémon battle! {0} lost with his/her Mewtwo fainted.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Team Rocket sends {0} to try to lure {1} into the team, but instead {1} was angry and ask Dragonite to initiate a Pokémon battle! {0} lost with his/her Mewtwo fainted.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Mr. Mime tried to cast Barrier on Dragonite but Dragonite casted Outrage on Mr. Mime before that! Mr. Mime fainted.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Jigglypuff went to {0} wanting to befriend the trainer's Pokémon. Little did Jigglypuff know that {0} is hungry for battle. Jigglypuff lost the battle and fainted.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Jigglypuff went to the wrong Pokémon to befriend! {0}'s Jigglypuff fainted after a fierce battle with the Dragonite.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>{0}'s Ditto has now transform into Pikachu and joined the club!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0}'s Pikachu has fainted, and Ditto transform into Pikachu.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>{0}'s Ditto has now transform into Mewtwo and joined the team!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}'s Mewtwo has fainted, and Ditto transform into Mewtwo.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>{0}'s Ditto has now transform into one of the legendary birds and joined the team!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}'s Pokémon has fainted, and Ditto transform into one of the legendary birds.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>You have won all Pokémon battle, You are the true Pokémon MASTER!!!</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to battle with tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>With {0}'s Pokémon fainted, {1} was shocked as {2} also fainted as they are both casted with Destiny Bond.</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Which trainer's Pokémon do you want Ditto to transform if they fainted?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Whose Pokémon do you want Haunter to cast Destiny Bond on? Choose the first trainer.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Whose Pokémon do you want Haunter to cast Destiny Bond on? Choose the second trainer.</value>
+  </string>
+  <string key="Hunter">
+    <value>Gengar 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Haunter 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Dragonite 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Ditto 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Your Pokémon is being casted Destiny Bond with {0}'s Pokémon by Haunter. If his/her Pokémon fainted, so will yours!</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Your Ditto have transform into Meowth 👶.  You senpai is {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Erm, i haven't think of this yet.!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Gengar found a Pokémon and Gengar used Shadow Punch! {1} fainted. Trainer is {0}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Clone factory member tries to lure you with Mewtwo, but your bond with your Pokémon is too strong.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new game is starting in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>{0} with his/her Dragonite, initiate a final Pokémon battle. However, {1}'s Pokémon is unable to win that overwhelming power of the Dragonite. {0} won the final battle. </value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>None of the trainers are left..</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>The final Pokémon Battle between {0} and {1}. {0} send out Dragonite and {1} send out Gengar. Gengar casted Destiny Bond on both himself and Dragonite! While Dragonite use the final blow~, both Pokémon fainted. =_= </value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to choose a senpai, so the moderator has chosen for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>{0}'s Pokémon has been released to the wild for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow trainers. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You old sleuth. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a cultist, it is your goal to convert all other trainers (except wolves) to your cult. If at the end of the game, all living trainers are cultist - the cult wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the seer is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two trainers at the start of the game. These two trainers will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living trainers</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all trainers</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: trainers can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many trainers would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max trainers set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of trainers.\nMinimum time added based on trainers is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for freeing voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Freeing voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow Psyduck as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Psyduck as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow Tauros as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tauros as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow Mewtwo as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Mewtwo as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the Pokémon League in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>You are the Mayor of Pokémon City! With your Bulbasaur🎖. Once you reveal youself, you have 2 votes on releasing of the Pokémon.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You owned a royal Ninetails👑. The trainers are unable to release your Pokémon to the wild, if they do so, you will reveal your Ninetails and ignore the releasing.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You owned a Slowpoke🤕. Due to Slowpoke's ability, as it's trainer, you are also affected! Oh no! During voting, you may vote the wrong person!!! </value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You owned a Jynx🔮. Jynx have the ability to sniff out Alakazam and the Team Rocket. As you always hated trainers stronger than you, you are allied with the Team Rocket.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You owned a Vileplume⚒! Vileplume have a PP of Stun Spore to stop Team Rocket from coming at night!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are Giovanni, the boss of Team Rocket and you owned a Rhydon⚡️. Using your highly charismatic skill, you are able to convince a trainer to join the Team Rocket at a 20% chance.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the staff of Rocket Game Corner and you own a Porygon🐶!(Worth 9999C) If your Pokémon got defeated or release, Team Rocket will get furious and attack 2 trainers the next night!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the town begins to release {0}, they say “Wait! I have the royal Ninetails that is protecting the Pokémon Town!” Trainers regreted their decision and leave Ninetails with his trainer.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to look at {0}, but can't quite make out what Pokémon they are holding.  They are not Team Rocket or Alakazam however...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} steps forward and show his kawaii little Bulbasaur, declaring himself as the Mayor of Pokémon Town.  From now on, {0}'s votes will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as the Mayor</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to spread the Stun Spore today, disabling the Team Rocket tonight?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>As the rest of the town debating on which Pokémon should be set free, they suddenly notice {0} commanding his Vileplume to spread Stun Spore all around. This will stop the Team Rocket from making trouble tonight.</value>
+  </string>
+  <string key="Mayor">
+    <value>Bulbasaur🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Ninetails👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Jynx🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Slowpoke🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Vileplume⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Rhydon⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Porygon🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the Team Rocket attack {0}, {1},Giovanni stops everyone.  {1} convince {0} to join the Team Rocket and he will have a legendary bird to himself.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>You were attacked by Team Rocket, but Giovanni thinks you are valuable trainer. Under his influence, you were invited to join Team Rocket.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>As you walked into the Team Rocket's HQ, you were given the chance to choose one of the legendary bird. You are part of Team Rocket now!!!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The prince is a key role in the Villagers Team's strategy. Once it gets lynched, his role as Prince is revealed, and he survives. He then can only be killed at night, or by hunter.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old seer ? Well now, it has it's Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfeast. You can't see a damn thing. Can you even vote for the person you want to ? (You have 50% chances to vote for someone random)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are the Alpha Wolf, the origin of the curse, the bane of banes. While you are alive, the Pack's meal has 20% chances to join your ranks if the victim is the one you voted for.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, i'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
+  </string>
+  
+</strings>
