@@ -742,7 +742,7 @@ namespace Werewolf_Node
                     var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
                     SendWithQueue(msg);
                     
-                    if (Players.Where(x => !x.IsDead).All(x => x.CurrentQuestion.QType == QuestionType.Lynch))
+                    if (Players.Where(x => !x.IsDead).All(x => x.CurrentQuestion?.QType == QuestionType.Lynch))
                         player.FirstStone++;
                     else
                         player.FirstStone = 0;

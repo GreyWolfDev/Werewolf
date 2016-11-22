@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Database</RootNamespace>
     <AssemblyName>Database</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -232,11 +233,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
     <EntityDeploy Include="WerewolfModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WerewolfModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="packages.config" />
     <None Include="WerewolfModel.edmx.diagram">
       <DependentUpon>WerewolfModel.edmx</DependentUpon>
     </None>
