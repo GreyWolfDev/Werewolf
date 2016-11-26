@@ -2945,7 +2945,7 @@ namespace Werewolf_Node
                             possibleRoles[0] = IRole.Wolf;
 
                         //check if it's accurate
-                        if (possibleRoles[0] == target.PlayerRole)
+                        if (possibleRoles[0] == target.PlayerRole || (possibleRoles[0] == IRole.Wolf && WolfRoles.Contains(target.PlayerRole)))
                             fool.FoolCorrectSeeCount++;
                         
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(possibleRoles[0])), fool.Id);
