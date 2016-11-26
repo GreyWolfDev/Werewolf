@@ -3113,6 +3113,8 @@ namespace Werewolf_Node
                                         case IRole.SerialKiller:
                                             if (p.DiedByVisitingKiller)
                                                 msg = GetLocaleString("HarlotFuckKillerPublic", p.GetName());
+                                            else if (p.DiedByVisitingVictim)
+                                                msg = GetLocaleString("HarlotFuckedKilledPublic", p.GetName(), Players.FirstOrDefault(x => x.Id == p.RoleModel).GetName());
                                             else
                                                 msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
                                             break;
