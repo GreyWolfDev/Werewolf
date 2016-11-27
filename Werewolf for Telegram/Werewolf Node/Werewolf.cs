@@ -2560,7 +2560,7 @@ namespace Werewolf_Node
                         DBAction(c, cchoice, "Convert");
                     }
                 }
-                var votechoice = voteCult.Where(x => x.Choice != 0 && x.Choice != 1);
+                var votechoice = voteCult.Where(x => x.Choice != 0 && x.Choice != -1);
                 int choice = 0;
                 if (votechoice.Any())
                 {
@@ -2742,7 +2742,7 @@ namespace Werewolf_Node
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
                                 case IRole.WolfCub:
-                                    if (voteWolves.Any(x => x.Choice != 0 && x.Choice != 1)) //did wolves go eating?
+                                    if (voteWolves.Any(x => x.Choice != 0 && x.Choice != -1 && x.Choice2 != 0 && x.Choice2 != -1)) //did wolves go eating?
                                         foreach (var c in voteCult)
                                         {
                                             Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
