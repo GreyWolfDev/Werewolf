@@ -1756,9 +1756,6 @@ namespace Werewolf_Node
         private void BitePlayer(IPlayer target, IEnumerable<IPlayer> voteWolves, string alpha)
         {
             target.Bitten = true;
-            if (target.PlayerRole == IRole.Mason)
-                foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != target.Id))
-                    Send(GetLocaleString("MasonConverted", target.GetName()), m.Id);
             foreach (var wolf in voteWolves)
                 Send(
                     GetLocaleString("PlayerBittenWolves", target.GetName(),
@@ -2133,8 +2130,12 @@ namespace Werewolf_Node
                         var andStr = $" {GetLocaleString("And").Trim()} ";
                         msg += GetLocaleString("WolfTeam", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
                     }
-
                     Send(msg, p.Id);
+
+                    if (p.PlayerRole == IRole.Mason)
+                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
+                            Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
+
                 }
             }
             CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
