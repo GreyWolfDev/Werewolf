@@ -4091,8 +4091,8 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.WelcomeToAsylum;
                         if (!ach.HasFlag(Achievements.AlzheimerPatient) && Language.Contains("Amnesia"))
                             newAch = newAch | Achievements.AlzheimerPatient;
-                        if (!ach.HasFlag(Achievements.OHAIDER) && Players.Any(x => x.TeleUser.Id == Program.Para))
-                            newAch = newAch | Achievements.OHAIDER;
+                        //if (!ach.HasFlag(Achievements.OHAIDER) && Players.Any(x => x.TeleUser.Id == Program.Para))
+                        //    newAch = newAch | Achievements.OHAIDER;
                         if (!ach.HasFlag(Achievements.SpyVsSpy) && DbGroup.ShowRoles == false)
                             newAch = newAch | Achievements.SpyVsSpy;
                         if (!ach.HasFlag(Achievements.NoIdeaWhat) && DbGroup.ShowRoles == false && Language.Contains("Amnesia"))
