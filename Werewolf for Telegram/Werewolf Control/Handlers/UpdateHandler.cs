@@ -550,7 +550,7 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "ohai")
                     {
                         bool dontUpdate = args[1] == "no";
-                        Bot.ReplyToCallback(query,"Processing...");
+                        Bot.ReplyToCallback(query, "Processing...");
                         if (query.From.Id == UpdateHelper.Para)
                         {
                             if (dontUpdate)
@@ -560,53 +560,59 @@ namespace Werewolf_Control.Handler
                             }
                             //update ohaider achievement
                             var userid = int.Parse(args[2]);
-                            using (var db = new WWContext())
-                            {
-                                try
-                                {
-                                    var para = db.Players.FirstOrDefault(x => x.Id == userid);
-                                    
-                                    //get all the players Para has played with
-                                    var players = (from g in db.Games
-                                                   join gp in db.GamePlayers on g.Id equals gp.GameId
-                                                   join gp2 in db.GamePlayers on g.Id equals gp2.GameId
-                                                   join pl in db.Players on gp2.PlayerId equals pl.Id
-                                                   where gp.PlayerId == para.Id
-                                                   select pl).Distinct();
 
-                                    //figure out which players don't have the achievement
-                                    
-                                    //update the message
-                                    var ohaimsg =
-                                        $"Found {players.Count()} players that have earned OHAIDER.";
-                                    Bot.Edit(query, ohaimsg);
-                                    var count = 0;
-                                    foreach (var player in players)
+
+                            try
+                            {
+                                var para = DB.Players.FirstOrDefault(x => x.Id == userid);
+
+                                //get all the players Para has played with
+                                var players = (from g in DB.Games
+                                               join gp in DB.GamePlayers on g.Id equals gp.GameId
+                                               join gp2 in DB.GamePlayers on g.Id equals gp2.GameId
+                                               join pl in DB.Players on gp2.PlayerId equals pl.Id
+                                               where gp.PlayerId == para.Id
+                                               select pl).Distinct();
+
+                                //figure out which players don't have the achievement
+
+                                //update the message
+                                var ohaimsg = $"Found {players.Count()} players that have earned OHAIDER.";
+                                Bot.Edit(query, ohaimsg);
+                                var count = 0;
+                                foreach (var player in players)
+                                {
+                                    //add the achievement
+                                    if (player.Achievements == null)
+                                        player.Achievements = 0;
+                                    var ach = (Achievements)player.Achievements;
+                                    if (ach.HasFlag(Achievements.OHAIDER)) continue;
+                                    count++;
+                                    var a = Achievements.OHAIDER;
+                                    player.Achievements = (long)(ach | a);
+                                    //log these ids, just in case....
+                                    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ohaider.log"), true))
                                     {
-                                        //add the achievement
-                                        if (player.Achievements == null)
-                                            player.Achievements = 0;
-                                        var ach = (Achievements)player.Achievements;
-                                        if (ach.HasFlag(Achievements.OHAIDER)) continue;
-                                        count++;
-                                        var a = Achievements.OHAIDER;
-                                        player.Achievements = (long)(ach | a);
-                                        db.SaveChanges();
-                                        Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
-                                        Thread.Sleep(200);
+                                        sw.WriteLine(player.Id);
                                     }
-                                    ohaimsg += $"\nAchievement added to {count} players\nFinished";
-                                    Bot.Edit(query, ohaimsg);
+                                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.TelegramId);
+                                    Thread.Sleep(200);
                                 }
-                                catch(AggregateException e)
-                                {
-                                    Send(e.InnerExceptions.First().Message, query.From.Id);
-                                }
-                                catch(Exception e)
-                                {
-                                    Send(e.Message, query.From.Id);
-                                }
+                                DB.SaveChanges();
+                                ohaimsg += $"\nAchievement added to {count} players\nFinished";
+                                Bot.Edit(query, ohaimsg);
                             }
+                            catch (AggregateException e)
+                            {
+                                Send(e.InnerExceptions.First().Message, query.From.Id);
+                            }
+                            catch (Exception e)
+                            {
+                                while (e.InnerException != null)
+                                    e = e.InnerException;
+                                Send(e.Message, query.From.Id);
+                            }
+
                         }
                         else
                         {

@@ -283,6 +283,9 @@ namespace Werewolf_Control
                 //check for arguments then
                 if (int.TryParse(param[0], out id))
                     achIndex = 1;
+                else if (int.TryParse(param[1], out id))
+                    achIndex = 0;
+
             }
 
 
@@ -305,7 +308,7 @@ namespace Werewolf_Control
                             ach = ach | a;
                             p.Achievements = (long)ach;
                             db.SaveChanges();
-                            Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.Id);
+                            Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
                             Send($"Achievement {a} unlocked for {p.Name}", u.Message.Chat.Id);
                         }
                     }
