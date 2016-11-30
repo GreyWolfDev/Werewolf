@@ -316,5 +316,56 @@ namespace Werewolf_Control
             }
 
         }
+
+        [Command(Trigger ="restore", GlobalAdminOnly =true)]
+        public static void RestoreAccount(Update u, string[] args)
+        {
+            var score = 100;
+            var result = "";
+            int oldid, newid;
+            var param = args[1].Split(' ');
+            if (!int.TryParse(param[0], out oldid) || !int.TryParse(param[1], out newid))
+            {
+                //fail
+                Send("usage: /restore <oldid> <newid>", u.Message.Chat.Id);
+                return;
+            }
+            
+            using (var db = new WWContext())
+            {
+                var oldP = db.Players.FirstOrDefault(x => x.TelegramId == oldid);
+                var newP = db.Players.FirstOrDefault(x => x.TelegramId == newid);
+
+                if (oldP == null || newP == null)
+                {
+                    Send("Account not found in database", u.Message.Chat.Id);
+                    return;
+                }
+                if (db.GlobalBans.Any(x => x.TelegramId == oldid))
+                {
+                    Send("Old account was global banned!", u.Message.Chat.Id);
+                    return;
+                }
+                if (oldid > newid || oldP.Id > newP.Id)
+                {
+                    score -= 30;
+                    result += "Old account given is newer than new account\n";
+                }
+                
+                if (oldP.GamePlayers.Max(x => x.GameId) > newP.GamePlayers.Min(x => x.GameId))
+                {
+                    score -= 30;
+                    result += "Account games overlap - old account has played a game since new account started\n";
+                }
+                //TODO Check groups played on old account vs new account
+
+                //TODO check names (username) likeness
+
+                //TODO check languages set
+
+                //TODO Send a result with the score, and buttons to approve or deny the account restore
+                Send($"{result}Accuracy score: {score}%", u.Message.Chat.Id);
+            }
+        }
     }
 }
