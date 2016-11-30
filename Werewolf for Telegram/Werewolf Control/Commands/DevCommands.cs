@@ -1065,13 +1065,13 @@ namespace Werewolf_Control
                     Send("You must run this command in PM!!", u.Message.Chat.Id);
                     return;
                 }
-#if !DEBUG
-                if (Bot.Me.Username != "werewolfbot")
-                {
-                    Send("Please run this command on @werewolfbot only", u.Message.Chat.Id);
-                    return;
-                }
-#endif
+//#if !DEBUG
+//                if (Bot.Me.Username != "werewolfbot")
+//                {
+//                    Send("Please run this command on @werewolfbot only", u.Message.Chat.Id);
+//                    return;
+//                }
+//#endif
                 int id = 0;
                 if (int.TryParse(args[1], out id))
                 {
