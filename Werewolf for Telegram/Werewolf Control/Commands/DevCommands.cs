@@ -1055,6 +1055,55 @@ namespace Werewolf_Control
             }
         }
 
+        [Attributes.Command(Trigger = "ohaider", DevOnly = true)]
+        public static void OHaiDer(Update u, string[] args)
+        {
+            try
+            {
+                if (u.Message.Chat.Type != ChatType.Private)
+                {
+                    Send("You must run this command in PM!!", u.Message.Chat.Id);
+                    return;
+                }
+#if !DEBUG
+                if (Bot.Me.Username != "werewolfbot")
+                {
+                    Send("Please run this command on @werewolfbot only", u.Message.Chat.Id);
+                    return;
+                }
+#endif
+                int id = 0;
+                if (int.TryParse(args[1], out id))
+                {
+                    //get the user from the database
+                    using (var ww = new WWContext())
+                    {
+                        var user = ww.Players.FirstOrDefault(x => x.TelegramId == id);
+                        if (user != null)
+                        {
+                            //create a menu for this
+                            var buttons = new[] {new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id),new InlineKeyboardButton("No", "ohai|no") };
+                            Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
+                                customMenu: new InlineKeyboardMarkup(buttons));
+                        }
+                        else
+                        {
+                            Send("Unable to find player account with that id", u.Message.Chat.Id);
+                        }
+                    }
+                }
+                else
+                {
+                    Send("Invalid ID", u.Message.Chat.Id);
+                }
+            }
+            catch (Exception e)
+            {
+                Send("Unable to update OHAIDER: " + e.Message, u.Message.Chat.Id);
+            }
+
+        }
+
         [Attributes.Command(Trigger = "clearlogs", DevOnly = true)]
         public static void ClearLogs(Update u, string[] args)
         {

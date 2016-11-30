@@ -20,7 +20,6 @@ namespace Database
         public WWContext()
             : base(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf").GetValue("BotConnectionString").ToString())
         {
-            //test
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

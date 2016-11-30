@@ -483,7 +483,7 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        
+
 
 
         /// <summary>
@@ -547,6 +547,72 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
                         }
                     }
+                    if (args[0] == "ohai")
+                    {
+                        bool dontUpdate = args[1] == "no";
+                        Bot.ReplyToCallback(query,"Processing...");
+                        if (query.From.Id == UpdateHelper.Para)
+                        {
+                            if (dontUpdate)
+                            {
+                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            //update ohaider achievement
+                            var userid = int.Parse(args[2]);
+                            using (var db = new WWContext())
+                            {
+                                try
+                                {
+                                    var para = db.Players.FirstOrDefault(x => x.Id == userid);
+                                    
+                                    //get all the players Para has played with
+                                    var players = (from g in db.Games
+                                                   join gp in db.GamePlayers on g.Id equals gp.GameId
+                                                   join gp2 in db.GamePlayers on g.Id equals gp2.GameId
+                                                   join pl in db.Players on gp2.PlayerId equals pl.Id
+                                                   where gp.PlayerId == para.Id
+                                                   select pl).Distinct();
+
+                                    //figure out which players don't have the achievement
+                                    
+                                    //update the message
+                                    var ohaimsg =
+                                        $"Found {players.Count()} players that have earned OHAIDER.";
+                                    Bot.Edit(query, ohaimsg);
+                                    var count = 0;
+                                    foreach (var player in players)
+                                    {
+                                        //add the achievement
+                                        if (player.Achievements == null)
+                                            player.Achievements = 0;
+                                        var ach = (Achievements)player.Achievements;
+                                        if (ach.HasFlag(Achievements.OHAIDER)) continue;
+                                        count++;
+                                        var a = Achievements.OHAIDER;
+                                        player.Achievements = (long)(ach | a);
+                                        db.SaveChanges();
+                                        Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
+                                        Thread.Sleep(200);
+                                    }
+                                    ohaimsg += $"\nAchievement added to {count} players\nFinished";
+                                    Bot.Edit(query, ohaimsg);
+                                }
+                                catch(AggregateException e)
+                                {
+                                    Send(e.InnerExceptions.First().Message, query.From.Id);
+                                }
+                                catch(Exception e)
+                                {
+                                    Send(e.Message, query.From.Id);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Bot.Edit(query, "You aren't Para! Go Away!!");
+                        }
+                    }
                     InlineKeyboardMarkup menu;
                     Group grp;
                     Player p = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
@@ -595,7 +661,7 @@ namespace Werewolf_Control.Handler
                             if (args[3] == "null")
                             {
                                 //get status
-                                menu = new InlineKeyboardMarkup(new[] { "Normal", "Overloaded", "Recovering", "API Bug", "Offline", "Maintenance" }.Select(x => new [] { new InlineKeyboardButton(x, $"status|{groupid}|{choice}|{x}")}).ToArray());
+                                menu = new InlineKeyboardMarkup(new[] { "Normal", "Overloaded", "Recovering", "API Bug", "Offline", "Maintenance" }.Select(x => new[] { new InlineKeyboardButton(x, $"status|{groupid}|{choice}|{x}") }).ToArray());
                                 Bot.ReplyToCallback(query, "Set status to?", replyMarkup: menu);
                             }
                             else
@@ -1060,7 +1126,7 @@ namespace Werewolf_Control.Handler
             return Bot.Send(message, id, clearKeyboard, customMenu, parseMode);
         }
 
-        
+
 
 
         internal static string GetLocaleString(string key, string language, params object[] args)

@@ -415,7 +415,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Game_Group">
-          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Game" Type="Self.Game" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Group">
@@ -427,7 +429,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GameKill_Game">
-          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Game">
@@ -439,7 +443,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GameKill_Killer">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -451,7 +457,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GameKill_KillMethod">
-          <End Role="KillMethod" Type="Self.KillMethod" Multiplicity="1" />
+          <End Role="KillMethod" Type="Self.KillMethod" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KillMethod">
@@ -462,20 +470,22 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GameKill_Victim">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="GameKill" Type="Self.GameKill" Multiplicity="*" />
+        <Association Name="FK_GamePlayer_Game">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GamePlayer" Type="Self.GamePlayer" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Player">
+            <Principal Role="Game">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="GameKill">
-              <PropertyRef Name="VictimId" />
+            <Dependent Role="GamePlayer">
+              <PropertyRef Name="GameId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GamePlayer_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GamePlayer" Type="Self.GamePlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -487,7 +497,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GroupAdmin_Group">
-          <End Role="Group" Type="Self.Group" Multiplicity="1" />
+          <End Role="Group" Type="Self.Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GroupAdmin" Type="Self.GroupAdmin" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Group">
@@ -499,7 +511,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GroupAdmin_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GroupAdmin" Type="Self.GroupAdmin" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -672,9 +686,9 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <End Role="KillMethod" EntitySet="KillMethod" />
             <End Role="GameKill" EntitySet="GameKill" />
           </AssociationSet>
-          <AssociationSet Name="FK_GameKill_Victim" Association="Self.FK_GameKill_Victim">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="GameKill" EntitySet="GameKill" />
+          <AssociationSet Name="FK_GamePlayer_Game" Association="Self.FK_GamePlayer_Game">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="GamePlayer" EntitySet="GamePlayer" />
           </AssociationSet>
           <AssociationSet Name="FK_GamePlayer_Player" Association="Self.FK_GamePlayer_Player">
             <End Role="Player" EntitySet="Player" />
@@ -713,6 +727,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <NavigationProperty Name="Group" Relationship="Self.FK_Game_Group" FromRole="Game" ToRole="Group" />
           <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Game" FromRole="Game" ToRole="GameKill" />
           <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GamePlayers" Relationship="werewolfModel.FK_GamePlayer_Game" FromRole="Game" ToRole="GamePlayer" />
         </EntityType>
         <EntityType Name="GameKill">
           <Key>
@@ -741,6 +756,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Won" Type="Boolean" Nullable="false" />
           <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Player" Relationship="Self.FK_GamePlayer_Player" FromRole="GamePlayer" ToRole="Player" />
+          <NavigationProperty Name="Game" Relationship="werewolfModel.FK_GamePlayer_Game" FromRole="GamePlayer" ToRole="Game" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -1035,6 +1051,10 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <AssociationSet Name="AspNetUserRoles" Association="werewolfModel.AspNetUserRoles">
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GamePlayer_Game" Association="werewolfModel.FK_GamePlayer_Game">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="GamePlayer" EntitySet="GamePlayers" />
           </AssociationSet>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
@@ -1344,6 +1364,18 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         <Association Name="AspNetUserRoles">
           <End Type="werewolfModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="werewolfModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_GamePlayer_Game">
+          <End Type="werewolfModel.Game" Role="Game" Multiplicity="1" />
+          <End Type="werewolfModel.GamePlayer" Role="GamePlayer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GamePlayer">
+              <PropertyRef Name="GameId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
