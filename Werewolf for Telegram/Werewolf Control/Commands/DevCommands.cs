@@ -682,11 +682,9 @@ namespace Werewolf_Control
             }
         }
 
-        [Attributes.Command(Trigger = "permban", DevOnly = true)]
+        [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-
-
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
