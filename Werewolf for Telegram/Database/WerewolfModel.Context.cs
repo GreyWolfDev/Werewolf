@@ -167,5 +167,18 @@ namespace Database
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetIdleKills24Hours", useridParameter);
         }
+    
+        public virtual int RestoreAccount(Nullable<int> oldTGId, Nullable<int> newTGId)
+        {
+            var oldTGIdParameter = oldTGId.HasValue ?
+                new ObjectParameter("oldTGId", oldTGId) :
+                new ObjectParameter("oldTGId", typeof(int));
+    
+            var newTGIdParameter = newTGId.HasValue ?
+                new ObjectParameter("newTGId", newTGId) :
+                new ObjectParameter("newTGId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RestoreAccount", oldTGIdParameter, newTGIdParameter);
+        }
     }
 }

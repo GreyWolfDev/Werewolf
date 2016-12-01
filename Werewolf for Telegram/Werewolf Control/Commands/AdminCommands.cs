@@ -174,7 +174,7 @@ namespace Werewolf_Control
                     {
                         // ignored
                     }
-                    
+
                     var str = $"{id} ({user?.User.FirstName})";
                     reply += GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id), str, idles);
                     reply += "\n";
@@ -249,7 +249,7 @@ namespace Werewolf_Control
                 while (m.ReplyToMessage != null)
                     m = m.ReplyToMessage;
                 //check for forwarded message
-               
+
                 id = m.From.Id;
                 if (m.ForwardFrom != null)
                     id = m.ForwardFrom.Id;
@@ -317,7 +317,7 @@ namespace Werewolf_Control
 
         }
 
-        [Command(Trigger ="restore", GlobalAdminOnly =true)]
+        [Command(Trigger = "restore", GlobalAdminOnly = true)]
         public static void RestoreAccount(Update u, string[] args)
         {
             var score = 100;
@@ -330,7 +330,7 @@ namespace Werewolf_Control
                 Send("usage: /restore <oldid> <newid>", u.Message.Chat.Id);
                 return;
             }
-            
+
             using (var db = new WWContext())
             {
                 var oldP = db.Players.FirstOrDefault(x => x.TelegramId == oldid);
@@ -351,21 +351,57 @@ namespace Werewolf_Control
                     score -= 30;
                     result += "Old account given is newer than new account\n";
                 }
-                
+
                 if (oldP.GamePlayers.Max(x => x.GameId) > newP.GamePlayers.Min(x => x.GameId))
                 {
                     score -= 30;
                     result += "Account games overlap - old account has played a game since new account started\n";
                 }
                 //TODO Check groups played on old account vs new account
+                var oldGrp = (from grp in db.Groups
+                              join g in db.Games on grp.Id equals g.GrpId
+                              join gp in db.GamePlayers on g.Id equals gp.GameId
+                              where gp.PlayerId == oldP.Id
+                              select grp).Distinct();
+
+                var newGrp = (from grp in db.Groups
+                              join g in db.Games on grp.Id equals g.GrpId
+                              join gp in db.GamePlayers on g.Id equals gp.GameId
+                              where gp.PlayerId == newP.Id
+                              select grp).Distinct();
+
+                //compare groups
+                var total = newGrp.Count();
+                var likeness = newGrp.Count(x => oldGrp.Any(g => g.Id == x.Id));
+                var groupLike = ((likeness * 100) / total);
+                score -= 20 - ((groupLike * 20) / 100);
+                result += $"Percent of new groups that were in old account: {groupLike}%\n";
 
                 //TODO check names (username) likeness
+                var undist = ComputeLevenshtein(oldP.UserName, newP.UserName);
+                var dndist = ComputeLevenshtein(oldP.Name, newP.Name);
+
+
+                if (undist == 0) dndist = 0;
+                else
+                {
+                    score -= (undist + dndist) / 2;
+                    result += $"\nLevenshtein Distince:\nUsernames: {undist}\nDisplay name: {dndist}\n\n";
+                }
+
 
                 //TODO check languages set
+                if (oldP.Language != newP.Language)
+                {
+                    score -= 10;
+                    result += "Account languages are set differently\n";
+                }
 
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
-                Send($"{result}Accuracy score: {score}%", u.Message.Chat.Id);
+                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Yes",$"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardButton("No","restore|no") }));
             }
         }
+
+
     }
 }

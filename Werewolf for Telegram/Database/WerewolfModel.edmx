@@ -559,6 +559,10 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         <Function Name="PlayerRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pid" Type="int" Mode="In" />
         </Function>
+        <Function Name="RestoreAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="oldTGId" Type="int" Mode="In" />
+          <Parameter Name="newTGId" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
           <EntitySet Name="BotStatus" EntityType="Self.BotStatus" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="ContestTerms" EntityType="Self.ContestTerms" Schema="db_owner" store:Type="Tables" />
@@ -1056,6 +1060,10 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <End Role="Game" EntitySet="Games" />
             <End Role="GamePlayer" EntitySet="GamePlayers" />
           </AssociationSet>
+          <FunctionImport Name="RestoreAccount">
+            <Parameter Name="oldTGId" Mode="In" Type="Int32" />
+            <Parameter Name="newTGId" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1861,6 +1869,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="RestoreAccount" FunctionName="werewolfModel.Store.RestoreAccount" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
