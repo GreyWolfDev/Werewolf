@@ -617,24 +617,31 @@ namespace Werewolf_Control.Handler
                         }
                         else
                         {
-                            Bot.Edit(query, "You aren't Para! Go Away!!");
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
                         }
                         return;
                     }
                     if (args[0] == "restore")
                     {
-                        Bot.ReplyToCallback(query, "Processing...");
-                        if (args[1] == "no")
+                        if (query.From.Id == UpdateHelper.Para)
                         {
-                            Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
-                            return;
+                            Bot.ReplyToCallback(query, "Processing...");
+                            if (args[1] == "no")
+                            {
+                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            var oldid = int.Parse(args[1]);
+                            var newid = int.Parse(args[2]);
+                            var result = DB.RestoreAccount(oldid, newid);
+                            var oldname = DB.Players.FirstOrDefault(x => x.TelegramId == oldid)?.Name;
+                            var newname = DB.Players.FirstOrDefault(x => x.TelegramId == newid)?.Name;
+                            Bot.Edit(query, $"Restored stats from {oldname} to {newname}");
                         }
-                        var oldid = int.Parse(args[1]);
-                        var newid = int.Parse(args[2]);
-                        var result = DB.RestoreAccount(oldid, newid);
-                        var oldname = DB.Players.FirstOrDefault(x => x.TelegramId == oldid)?.Name;
-                        var newname = DB.Players.FirstOrDefault(x => x.TelegramId == newid)?.Name;
-                        Bot.Edit(query, $"Restored stats from {oldname} to {newname}");
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
                     }
                     InlineKeyboardMarkup menu;
                     Group grp;
