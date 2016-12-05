@@ -3077,7 +3077,7 @@ namespace Werewolf_Node
                                 case IRole.Seer:
                                 case IRole.Sorcerer:
                                 case IRole.WildChild:
-                                    msg = GetLocaleString(Enum.GetName(typeof(IRole), (int)p.PlayerRole) + "Eaten", p.GetName());
+                                    msg = GetLocaleString(p.PlayerRole.ToString() + "Eaten", p.GetName());
                                     break;
                                 case IRole.GuardianAngel:
                                     msg = GetLocaleString("GuardianEaten", p.GetName());
@@ -3101,7 +3101,7 @@ namespace Werewolf_Node
                                 case IRole.Mayor:
                                 case IRole.Prince:
                                 case IRole.Seer:
-                                    msg = GetLocaleString(Enum.GetName(typeof(IRole), (int)p.PlayerRole) + "Killed", p.GetName());
+                                    msg = GetLocaleString(p.PlayerRole.ToString() + "Killed", p.GetName());
                                     break;
 
                                 case IRole.Hunter:
