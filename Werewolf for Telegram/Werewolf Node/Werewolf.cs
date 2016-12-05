@@ -3041,37 +3041,19 @@ namespace Werewolf_Node
                             switch (p.PlayerRole)
                             {
                                 case IRole.ApprenticeSeer:
-                                    msg = GetLocaleString("AppSeerEaten", p.GetName());
-                                    break;
                                 case IRole.Detective:
-                                    msg = GetLocaleString("DetectiveEaten", p.GetName());
-                                    break;
                                 case IRole.Drunk:
-                                    msg = GetLocaleString("DrunkEaten", p.GetName());
-                                    break;
                                 case IRole.Fool:
-                                    msg = GetLocaleString("FoolEaten", p.GetName());
-                                    break;
                                 case IRole.Gunner:
-                                    msg = GetLocaleString("GunnerEaten", p.GetName());
-                                    break;
                                 case IRole.Harlot:
-                                    msg = GetLocaleString("HarlotEaten", p.GetName());
+                                case IRole.Mason:
+                                case IRole.Seer:
+                                case IRole.Sorcerer:
+                                case IRole.WildChild:
+                                    msg = GetLocaleString(Enum.GetName(typeof(IRole), (int)p.PlayerRole) + "Eaten", p.GetName());
                                     break;
                                 case IRole.GuardianAngel:
                                     msg = GetLocaleString("GuardianEaten", p.GetName());
-                                    break;
-                                case IRole.Mason:
-                                    msg = GetLocaleString("MasonEaten", p.GetName());
-                                    break;
-                                case IRole.Seer:
-                                    msg = GetLocaleString("SeerEaten", p.GetName());
-                                    break;
-                                case IRole.Sorcerer:
-                                    msg = GetLocaleString("SorcererEaten", p.GetName());
-                                    break;
-                                case IRole.WildChild:
-                                    msg = GetLocaleString("WildChildEaten", p.GetName());
                                     break;
                                 default:
                                     msg = GetLocaleString("DefaultEaten", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
@@ -3084,37 +3066,22 @@ namespace Werewolf_Node
                             switch (p.PlayerRole)
                             {
                                 case IRole.Blacksmith:
-                                    msg = GetLocaleString("BlacksmithKilled", p.GetName());
-                                    break;
                                 case IRole.Cultist:
-                                    msg = GetLocaleString("CultistKilled", p.GetName());
-                                    break;
                                 case IRole.Cupid:
-                                    msg = GetLocaleString("CupidKilled", p.GetName());
-                                    break;
                                 case IRole.Drunk:
-                                    msg = GetLocaleString("DrunkKilled", p.GetName());
-                                    break;
                                 case IRole.GuardianAngel:
-                                    msg = GetLocaleString("GuardianKilled", p.GetName());
-                                    break;
                                 case IRole.Gunner:
-                                    msg = GetLocaleString("GunnerKilled", p.GetName());
+                                case IRole.Mayor:
+                                case IRole.Prince:
+                                case IRole.Seer:
+                                    msg = GetLocaleString(Enum.GetName(typeof(IRole), (int)p.PlayerRole) + "Killed", p.GetName());
                                     break;
+
                                 case IRole.Hunter:
                                     msg = null;
                                     SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
                                         $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}"));
                                     HunterFinalShot(p, KillMthd.SerialKilled);
-                                    break;
-                                case IRole.Mayor:
-                                    msg = GetLocaleString("MayorKilled", p.GetName());
-                                    break;
-                                case IRole.Prince:
-                                    msg = GetLocaleString("PrinceKilled", p.GetName());
-                                    break;
-                                case IRole.Seer:
-                                    msg = GetLocaleString("SeerKilled", p.GetName());
                                     break;
                                 default:
                                     msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
