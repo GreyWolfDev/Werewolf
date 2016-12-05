@@ -79,7 +79,7 @@ namespace Werewolf_Control
                     {
                         //player is already in a game, and alive
                         Send(
-                            GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                            GetLocaleString("AlreadyInGame", grp?.Language ?? "English",
                                 game.ChatGroup.ToBold()), update.Message.Chat.Id);
                         return;
                     }
