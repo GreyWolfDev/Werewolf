@@ -1031,19 +1031,19 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "day":
-                            buttons.Add(new InlineKeyboardButton("30", $"setday|{groupid}|30"));
-                            buttons.Add(new InlineKeyboardButton("60", $"setday|{groupid}|60"));
-                            buttons.Add(new InlineKeyboardButton("90", $"setday|{groupid}|90"));
-                            buttons.Add(new InlineKeyboardButton("120", $"setday|{groupid}|120"));
+                            buttons.Add(new InlineKeyboardButton("90", $"setday|{groupid}|30"));
+                            buttons.Add(new InlineKeyboardButton("120", $"setday|{groupid}|60"));
+                            buttons.Add(new InlineKeyboardButton("150", $"setday|{groupid}|90"));
+                            buttons.Add(new InlineKeyboardButton("180", $"setday|{groupid}|120"));
                             buttons.Add(new InlineKeyboardButton(Cancel, $"setday|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("SetDayTimeQ", language, Settings.TimeDay, grp.DayTime ?? Settings.TimeDay),
+                                GetLocaleString("SetDayTimeQ", language, Settings.TimeDay + 60, grp.DayTime ?? Settings.TimeDay + 60),
                                 replyMarkup: menu);
                             break;
                         case "setday":
                             grp.DayTime = int.Parse(choice);
-                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("SetDayTimeA", language, choice));
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("SetDayTimeA", language, choice + 60));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
