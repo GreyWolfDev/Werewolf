@@ -3265,9 +3265,22 @@ namespace Werewolf_Node
                 return DoGameEnd(ITeam.Wolf);
             }
 
-            //is everyone left a cultist?
-            if (Players != null && Players.Where(x => !x.IsDead).All(x => x.Team == ITeam.Cult))
+            //do cultists outnumber the villagers?
+            if (Players != null && Players.Count(x => !x.IsDead && x.Team == ITeam.Cult) >= Players.Count(x => !x.IsDead && x.Team != ITeam.Cult)
+                && Players.Where(x => !x.IsDead).All(x => !new[] { IRole.Wolf, IRole.SerialKiller, IRole.Gunner, IRole.Hunter, IRole.Traitor, IRole.CultistHunter, IRole.WildChild, IRole.Tanner }.Contains(x.PlayerRole)))
+            {
+                //auto convert other players to cult
+                foreach (var p in Players.Where(x => !x.IsDead && x.Team != ITeam.Cult))
+                {
+                    p.OriginalRole = p.PlayerRole;
+                    p.PlayerRole = IRole.Cultist;
+                    p.Team = ITeam.Cult;
+                    p.HasDayAction = false;
+                    p.HasNightAction = true;
+                    p.DayCult = GameDay;
+                }
                 return DoGameEnd(ITeam.Cult);
+            }
 
 
             if (Players != null && Players.Count(x => !x.IsDead) == 2)
