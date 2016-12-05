@@ -2653,6 +2653,30 @@ namespace Werewolf_Node
                                         Send(GetLocaleString("CultAttempt"), target.Id);
                                     }
                                     break;
+                                case IRole.Sorcerer:
+                                    if (Program.R.Next(100) < Settings.SorcererConversionChance)
+                                        ConvertToCult(target, voteCult);
+                                    else
+                                    {
+                                        foreach (var c in voteCult)
+                                        {
+                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
+                                        }
+                                        Send(GetLocaleString("CultAttempt"), target.Id);
+                                    }
+                                    break;
+                                case IRole.Blacksmith:
+                                    if (Program.R.Next(100) < Settings.BlacksmithConversionChance)
+                                        ConvertToCult(target, voteCult);
+                                    else
+                                    {
+                                        foreach (var c in voteCult)
+                                        {
+                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
+                                        }
+                                        Send(GetLocaleString("CultAttempt"), target.Id);
+                                    }
+                                    break;
                                 case IRole.GuardianAngel:
                                     if (target.Choice == 0 || target.Choice == -1) // stayed home
                                     {
@@ -2727,6 +2751,9 @@ namespace Werewolf_Node
                                         //Send(GetLocaleString("CultAttempt"), target.Id);
                                     }
                                     break;
+                                    
+                                //TODO: Decide conversion chances for Prince and Mayor!!
+
                                 case IRole.Mason:
                                     //notify other masons....
                                     ConvertToCult(target, voteCult);
