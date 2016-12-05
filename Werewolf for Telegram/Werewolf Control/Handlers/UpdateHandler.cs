@@ -343,7 +343,7 @@ namespace Werewolf_Control.Handler
                                                 : "اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         return;
                                     }
-                                    if (command.DevOnly && update.Message.From.Id != UpdateHelper.Para)
+                                    if (command.DevOnly & !UpdateHelper.Devs.Contains(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("NotPara", GetLanguage(id)), id);
                                         return;
@@ -356,7 +356,7 @@ namespace Werewolf_Control.Handler
                                             return;
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != UpdateHelper.Para & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) & !UpdateHelper.Devs.Contains(update.Message.From.Id) & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
                                         return;
@@ -384,7 +384,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.VoiceMessage:
                             break;
                         case MessageType.DocumentMessage:
-                            if (update.Message.From.Id == UpdateHelper.Para && SendGifIds)
+                            if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                             {
                                 var doc = update.Message.Document;
                                 Send(doc.FileId, update.Message.Chat.Id);
@@ -532,7 +532,7 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "update")
                     {
                         bool dontUpdate = args[1] == "no";
-                        if (query.From.Id == UpdateHelper.Para)
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
                         {
                             if (dontUpdate)
                             {
@@ -552,7 +552,7 @@ namespace Werewolf_Control.Handler
                     {
                         bool dontUpdate = args[1] == "no";
                         Bot.ReplyToCallback(query, "Processing...");
-                        if (query.From.Id == UpdateHelper.Para)
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
                         {
                             if (dontUpdate)
                             {
@@ -623,7 +623,7 @@ namespace Werewolf_Control.Handler
                     }
                     if (args[0] == "restore")
                     {
-                        if (query.From.Id == UpdateHelper.Para)
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, "Processing...");
                             if (args[1] == "no")
@@ -677,7 +677,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     if (!nonCommandsList.Contains(command.ToLower()))
-                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) && query.From.Id != UpdateHelper.Para && !UpdateHelper.IsGlobalAdmin(query.From.Id))
+                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) & !UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, GetLocaleString("GroupAdminOnly", language), false);
                             return;
