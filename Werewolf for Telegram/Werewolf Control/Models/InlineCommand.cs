@@ -56,13 +56,13 @@ namespace Werewolf_Control.Models
                 var count = ach.GetUniqueFlags().Count();
                 
                 Content = String.IsNullOrWhiteSpace(u.Username) ? $"{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}" : $"<a href=\"https://telegram.me/{u.Username}\">{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}</a>";
-                Content += $"\n{count} Achievements Unlocked!\n" +
-                           $"{won} Games won ({won*100/gamesPlayed}%)\n" +
-                           $"{lost} Games lost ({lost*100/gamesPlayed}%)\n" +
-                           $"{survived} Games survived ({survived*100/gamesPlayed}%)\n" +
-                           $"{gamesPlayed} Total Games\n" +
-                           $"{killed?.times} times I've gleefully killed {killed?.Name.FormatHTML()}\n" +
-                           $"{killedby?.times} times I've been slaughtered by {killedby?.Name.FormatHTML()}";
+                Content += $"\n{count.Pad()}Achievements Unlocked!\n" +
+                           $"{won.Pad()}Games won ({won*100/gamesPlayed}%)\n" +
+                           $"{lost.Pad()}Games lost ({lost*100/gamesPlayed}%)\n" +
+                           $"{survived.Pad()}Games survived ({survived*100/gamesPlayed}%)\n" +
+                           $"{gamesPlayed.Pad()}Total Games\n" +
+                           $"<code>{killed?.times}</code>\ttimes I've gleefully killed {killed?.Name.FormatHTML()}\n" +
+                           $"<code>{killedby?.times}</code>\ttimes I've been slaughtered by {killedby?.Name.FormatHTML()}";
             }
         }
     }
