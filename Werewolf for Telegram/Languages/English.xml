@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
   <language name="English" base="English" variant="Normal" owner="Para949"/>
-  <string key="NotInGame">
+  <string key="NotInGame" deprecated="true">
     <value>You don't appear to be in any games right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
@@ -14,10 +14,10 @@
     <value>{0} has started a chaos game! Use /join to get in on the fun... and probably die :P</value>
     <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
   </string>
-  <string key="NoJoinGameRunning">
+  <string key="NoJoinGameRunning" deprecated="true">
     <value>You can't join now! The game is already running.</value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>You've already joined!</value>
   </string>
   <string key="MinuteLeftToJoin">
@@ -33,7 +33,7 @@
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
   </string>
-  <string key="BannedForExploit">
+  <string key="BannedForExploit" deprecated="true">
     <!-- 0 - Player name -->
     <value>{0} is banned for attempting an exploit (no names starting with /)</value>
   </string>
@@ -72,7 +72,7 @@
     <!-- 0 - Number of players -->
     <value>{0} players remain.</value>
   </string>
-  <string key="DidntAsk">
+  <string key="DidntAsk" deprecated="true">
     <value>Hey I didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
@@ -81,7 +81,7 @@
   <string key="NoPlayerName">
     <value>I can't find a player by that name!</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>This answer is not valid!</value>
   </string>
   <string key="WolfVotedKill">
@@ -414,8 +414,8 @@
     <!-- 0 - target name -->
     <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil cultist.</value>
   </string>
-  <!-- 0 - target name -->
   <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
     <value>You go to {0}'s house, but there is no mysterious chanting. You return home, convinced that {0} is not a cultist.</value>
   </string>
   <string key="WildChildToWolves">
@@ -555,7 +555,7 @@
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
+  <string key="AdminAdded" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} added to admin list. Use /config to change group settings.</value>
   </string>
@@ -563,24 +563,24 @@
     <!-- 0 - target's name -->
     <value>You are already in a game! ({0})</value>
   </string>
-  <string key="MultipleGames">
+  <string key="MultipleGames" deprecated="true">
     <value>Your group has managed to start multiple games...  Killing extras.</value>
   </string>
-  <string key="GroupQueue">
+  <string key="GroupQueue" deprecated="true">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
     <value>Your group is currently in the queue.  Position: {0} / {1}</value>
   </string>
-  <string key="MaintBreak">
+  <string key="MaintBreak" deprecated="true">
     <!-- 0 - target's name -->
     <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
   </string>
-  <string key="MaxGames">
+  <string key="MaxGames" deprecated="true">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
     <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
   </string>
-  <string key="SkipQueue">
+  <string key="SkipQueue" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
@@ -590,28 +590,28 @@
   <string key="GroupAdminOnly">
     <value>Only a group admin can run this command.</value>
   </string>
-  <string key="ShuttingDown">
+  <string key="ShuttingDown" deprecated="true">
     <value>After this game, I am shutting down for maintenance.</value>
   </string>
-  <string key="ShuttingDownUpdate">
+  <string key="ShuttingDownUpdate" deprecated="true">
     <value>After this game, I am shutting down momentarily for an update (automated).</value>
   </string>
-  <string key="NullIdAdmin">
+  <string key="NullIdAdmin" deprecated="true">
     <value>UserId was null.  Are you sure you sent this as a reply?</value>
   </string>
-  <string key="AlreadyAdmin">
+  <string key="AlreadyAdmin" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is already an admin!</value>
   </string>
-  <string key="NotAdmin">
+  <string key="NotAdmin" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is not an admin!</value>
   </string>
-  <string key="AdminRemoved">
+  <string key="AdminRemoved" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} removed from admin list.</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <!-- 0 - language's name -->
     <value>Language set to {0}</value>
   </string>
@@ -636,7 +636,7 @@
   </string>
   <string key="CupidChosen">
     <value>You have been struck by love. {0}'s memory will never fade in your heart. If one of you dies, the other one will die out of sorrow. If one of you wins, the other one wins too.</value>
-	<value>Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If one of you two wins, you will both win.</value>
+    <value>Cupid's arrow has struck you! You are madly in love with {0}! If they die, you will die too. If one of you two wins, you will both win.</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>The village has chosen to hang you! This is your last chance, choose to shoot someone as you go down!</value>
@@ -670,9 +670,6 @@
     <!-- 2 - target's role -->
     <value>Dying, {0} falls to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
-  </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
     <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as he died! {0} has died (wolf)</value>
@@ -702,6 +699,7 @@
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
     <value>The cult sends {0} to try to convert {1}, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
   </string>
   <string key="GuardKiller">
     <value>You tried to guard the serial killer, but they came out and stabbed you 89 times! You are dead....</value>
@@ -928,13 +926,13 @@
   <string key="SentPrivate">
     <value>I have sent you a PM</value>
   </string>
-  <string key="StartPM">
+  <string key="StartPM" deprecated="true">
     <value>Please send me a pm so I can PM you: @werewolfbot</value>
   </string>
-  <string key="PMTrue">
+  <string key="PMTrue" deprecated="true">
     <value>Thanks for starting me! I can PM you now.</value>
   </string>
-  <string key="MustReplySmite">
+  <string key="MustReplySmite" deprecated="true">
     <value>You must reply to the user you want to smite</value>
   </string>
   <string key="WhatToDo">
@@ -1223,20 +1221,19 @@
     <value>{0} has died, and you transform into a Wolf Cub.  Your teammates (if any) are: {1}</value>
   </string>
   
-  <!-- Keep this for now until bots update-->
-  <string key="VillageTeam">
+  <string key="VillageTeam" deprecated="true">
     <value>Village Team</value>
   </string>
-  <string key="NeutralTeam">
+  <string key="NeutralTeam" deprecated="true">
     <value>Neutral Team</value>
   </string>
-  <string key="SerialKillerTeam">
+  <string key="SerialKillerTeam" deprecated="true">
     <value>SK Team</value>
   </string>
-  <string key="CultTeam">
+  <string key="CultTeam" deprecated="true">
     <value>Cult Team</value>
   </string>
-  <string key="TannerTeam">
+  <string key="TannerTeam" deprecated="true">
     <value>Tanner Team</value>
   </string>
   
