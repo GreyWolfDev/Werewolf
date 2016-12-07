@@ -15,6 +15,8 @@ using Database;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineQueryResults;
+using Telegram.Bot.Types.InputMessageContents;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
@@ -1233,6 +1235,38 @@ namespace Werewolf_Control.Handler
 
             var menu = new InlineKeyboardMarkup(twoMenu.ToArray());
             return menu;
+        }
+
+
+        
+        public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)
+        {
+            
+            var commands = new InlineCommand[]
+            {
+                new StatsInlineCommand(e.InlineQuery.From),
+            };
+            var q = e.InlineQuery;
+            List<InlineCommand> choices;
+            if (String.IsNullOrWhiteSpace(q.Query))
+            {
+                //show all commands available
+                choices = commands.ToList();
+            }
+            else
+            {
+                //let's figure out what they wanted
+                var com = q.Query;
+                choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
+            }
+
+            Bot.Api.AnswerInlineQuery(q.Id, choices.Select(c => new InlineQueryResultArticle()
+            {
+                Description = c.Description, Id = c.Command, Title = c.Command, InputMessageContent = new InputTextMessageContent
+                {
+                    DisableWebPagePreview = true, MessageText = c.Content, ParseMode = ParseMode.Html
+                }
+            }).Cast<InlineQueryResult>().ToArray(), 0, true);
         }
     }
 }
