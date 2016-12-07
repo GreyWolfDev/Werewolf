@@ -435,9 +435,10 @@ namespace Werewolf_Control.Helpers
                 var values = file.Doc.Descendants("string")
                         .FirstOrDefault(x => x.Attribute("key").Value == key)?
                         .Descendants("value");
-                if (values == null && !deprecated)
+                if (values == null)
                 {
-                    fileErrors.Add(new LanguageError(fileName, key, $"Values missing"));
+                    if (!deprecated)
+                        fileErrors.Add(new LanguageError(fileName, key, $"Values missing"));
                     continue;
                 }
                 //check master string for {#} values
