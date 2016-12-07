@@ -570,7 +570,7 @@ namespace Werewolf_Node
 
                 if (player == null) return;
 
-                if (player.PlayerRole == IRole.Mayor && args[2] == "reveal")
+                if (player.PlayerRole == IRole.Mayor && args[2] == "reveal" && player.HasUsedAbility == false)
                 {
                     player.HasUsedAbility = true;
                     SendWithQueue(GetLocaleString("MayorReveal", player.GetName()));
@@ -581,6 +581,8 @@ namespace Werewolf_Node
 
                     return;
                 }
+                else if (player.PlayerRole == IRole.Mayor && args[2] == "reveal" && player.HasUsedAbility == true)
+                    return;
 
                 if (player.PlayerRole == IRole.Blacksmith && player.CurrentQuestion.QType == QuestionType.SpreadSilver)
                 {
