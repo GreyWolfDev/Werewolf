@@ -27,11 +27,6 @@ namespace Werewolf_Control.Models
         }
     }
 
-    public class ConfigInlineCommand : InlineCommand
-    {
-        public ConfigInlineCommand()
-    }
-
     public class StatsInlineCommand : InlineCommand
     {
         public StatsInlineCommand(User u)
