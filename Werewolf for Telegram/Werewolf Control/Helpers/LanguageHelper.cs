@@ -306,7 +306,7 @@ namespace Werewolf_Control.Helpers
             var dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CultConvertSerialKiller");
             if (dup > 1)
             {
-                newFileErrors.Add(new LanguageError(newFileName, "CultConvertSerialKiller", "CultConvertHunter duplication.", ErrorLevel.Info));
+                newFileErrors.Add(new LanguageError(newFileName, "CultConvertSerialKiller", "CultConvertSerialKiller duplication.", ErrorLevel.Info));
             }
             dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CupidChosen");
             if (dup > 1)
@@ -364,11 +364,6 @@ namespace Werewolf_Control.Helpers
 
             //send the validation result
             var result = $"NEW FILE\n*{newFile.FileName}.xml - ({newFile.Name})*" + Environment.NewLine;
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.Info))
-            {
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
-                result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
-            }
             if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
             {
                 result += "_Errors:_\n";
@@ -378,6 +373,13 @@ namespace Werewolf_Control.Helpers
             {
                 result += "_Missing Values:_\n";
                 result = newFileErrors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+            }
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.Info))
+            {
+                result += "_Warning:_\n";
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
+                //next line is there because ErrorLevel.Info is used only to check for duplicated strings. if we use ErrorLevel.Info for other things, this probably should be changed.
+                result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
             }
             if (newFileErrors.Count == 0)
             {
