@@ -291,74 +291,32 @@ namespace Werewolf_Control.Helpers
             var curFileErorrs = new List<LanguageError>();
             //first, let's load up the English file, which is our master file
             var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
-            var masterStrings = master.Descendants("string");
-
             var newFileName = Path.GetFileNameWithoutExtension(newFilePath);
-
             var newFile = new LangFile(newFilePath);
+
             //first check the language node
 
             //now test the length
-
             var lentest = $"setlang|-1001049529775|{newFile.Base}|{newFile.Variant}|v";
             var lencount = Encoding.UTF8.GetByteCount(lentest);
             if (lencount > 64)
                 newFileErrors.Add(new LanguageError(newFileName, "language node", "base and variant are too long. (*38 utf8 byte max*)", ErrorLevel.Error));
 
-            //check for CultConvertHunter duplication
-            var dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CultConvertHunter");
+            //check for CultConvertSerialKiller & CupidChosen duplication
+            var dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CultConvertSerialKiller");
             if (dup > 1)
             {
-                newFileErrors.Add(new LanguageError(newFileName, "CultConvertHunter", "CultConvertHunter duplication.  First instance should be renamed to CultConvertCultHunter.  Please use /getlang to get the latest version (which has this fixed)", ErrorLevel.Error));
+                newFileErrors.Add(new LanguageError(newFileName, "CultConvertSerialKiller", "CultConvertHunter duplication.", ErrorLevel.Info));
             }
-            foreach (var str in masterStrings)
+            dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CupidChosen");
+            if (dup > 1)
             {
-                var key = str.Attribute("key").Value;
-                var isgif = str.Attributes().Any(x => x.Name == "isgif");
-                //get the english string
-                //get the locale values
-                var masterString = GetLocaleString(key, master);
-                var values = newFile.Doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key)?.Descendants("value");
-                if (values == null)
-                {
-                    newFileErrors.Add(new LanguageError(newFileName, key, $"Values missing"));
-                    continue;
-                }
-                //check master string for {#} values
-                int vars = 0;
-                if (masterString.Contains("{0}"))
-                    vars = 1;
-                if (masterString.Contains("{1}"))
-                    vars = 2;
-                if (masterString.Contains("{2}"))
-                    vars = 3;
-                if (masterString.Contains("{3}"))
-                    vars = 4;
-                if (masterString.Contains("{4}"))
-                    vars = 5;
-
-                foreach (var value in values)
-                {
-                    for (int i = 0; i <= 5 - 1; i++)
-                    {
-                        if (!value.Value.Contains("{" + i + "}") && vars - 1 >= i)
-                        {
-                            //missing a value....
-                            newFileErrors.Add(new LanguageError(newFileName, key, "Missing {" + i + "}", ErrorLevel.Error));
-                        }
-                        else if (value.Value.Contains("{" + i + "}") && vars - 1 < i)
-                        {
-                            newFileErrors.Add(new LanguageError(newFileName, key, "Extra {" + i + "}", ErrorLevel.Error));
-                        }
-                    }
-
-                    if (isgif && value.Value.Length > 200)
-                    {
-                        newFileErrors.Add(new LanguageError(newFileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
-                    }
-
-                }
+                newFileErrors.Add(new LanguageError(newFileName, "CupidChosen", "CupidChosen duplication.", ErrorLevel.Info));
             }
+
+            //get the errors in it
+            GetFileErrors(newFile, newFileErrors, master);
+
 
             //need to get the current file
 
@@ -399,58 +357,18 @@ namespace Werewolf_Control.Helpers
                 {
                     newFileErrors.Add(new LanguageError(curFileName, "Language Node", $"Mismatched Variant! {newFile.Variant} - {lang.Variant}", ErrorLevel.Error));
                 }
-                
-                foreach (var str in masterStrings)
-                {
-                    var key = str.Attribute("key").Value;
-                    var isgif = str.Attributes().Any(x => x.Name == "isgif");
-                    //get the english string
-                    //get the locale values
-                    var masterString = GetLocaleString(key, master);
-                    var values = lang.Doc.Descendants("string")
-                            .FirstOrDefault(x => x.Attribute("key").Value == key)?
-                            .Descendants("value");
-                    if (values == null)
-                    {
-                        curFileErorrs.Add(new LanguageError(curFileName, key, $"Values missing"));
-                        continue;
-                    }
-                    //check master string for {#} values
-                    int vars = 0;
-                    if (masterString.Contains("{0}"))
-                        vars = 1;
-                    if (masterString.Contains("{1}"))
-                        vars = 2;
-                    if (masterString.Contains("{2}"))
-                        vars = 3;
-                    if (masterString.Contains("{3}"))
-                        vars = 4;
-                    if (masterString.Contains("{4}"))
-                        vars = 5;
 
-                    foreach (var value in values)
-                    {
-                        for (int i = 0; i <= 5 - 1; i++)
-                        {
-                            if (!value.Value.Contains("{" + i + "}") && vars - 1 >= i)
-                            {
-                                //missing a value....
-                                curFileErorrs.Add(new LanguageError(curFileName, key, "Missing {" + i + "}", ErrorLevel.Error));
-                            }
-                            else if (value.Value.Contains("{" + i + "}") && vars - 1 < i)
-                            {
-                                curFileErorrs.Add(new LanguageError(curFileName, key, "Extra {" + i + "}", ErrorLevel.Error));
-                            }
-                        }
-
-                        if (isgif && value.Value.Length > 200)
-                        {
-                            newFileErrors.Add(new LanguageError(newFileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
-                        }
-                    }
-                }
+                //get the errors in it
+                GetFileErrors(lang, curFileErorrs, master);
             }
+
+            //send the validation result
             var result = $"NEW FILE\n*{newFile.FileName}.xml - ({newFile.Name})*" + Environment.NewLine;
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.Info))
+            {
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
+                result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
+            }
             if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
             {
                 result += "_Errors:_\n";
@@ -482,6 +400,8 @@ namespace Werewolf_Control.Helpers
             }
             Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
             Thread.Sleep(500);
+
+
             if (newFileErrors.All(x => x.Level != ErrorLevel.Error))
             {
                 //load up each file and get the names
@@ -497,6 +417,62 @@ namespace Werewolf_Control.Helpers
             else
             {
                 Bot.Api.SendTextMessage(id, "Errors present, cannot upload.", replyToMessageId: msgID);
+            }
+        }
+
+        private static void GetFileErrors(LangFile file, List<LanguageError> fileErrors, XDocument master)
+        {
+            var fileName = file.FileName;
+            var masterStrings = master.Descendants("string");
+            foreach (var str in masterStrings)
+            {
+                var key = str.Attribute("key").Value;
+                var isgif = str.Attributes().Any(x => x.Name == "isgif");
+                var deprecated = str.Attributes().Any(x => x.Name == "deprecated");
+                //get the english string
+                //get the locale values
+                var masterString = GetLocaleString(key, master);
+                var values = file.Doc.Descendants("string")
+                        .FirstOrDefault(x => x.Attribute("key").Value == key)?
+                        .Descendants("value");
+                if (values == null && !deprecated)
+                {
+                    fileErrors.Add(new LanguageError(fileName, key, $"Values missing"));
+                    continue;
+                }
+                //check master string for {#} values
+                int vars = 0;
+                if (masterString.Contains("{0}"))
+                    vars = 1;
+                if (masterString.Contains("{1}"))
+                    vars = 2;
+                if (masterString.Contains("{2}"))
+                    vars = 3;
+                if (masterString.Contains("{3}"))
+                    vars = 4;
+                if (masterString.Contains("{4}"))
+                    vars = 5;
+
+                foreach (var value in values)
+                {
+                    for (int i = 0; i <= 5 - 1; i++)
+                    {
+                        if (!value.Value.Contains("{" + i + "}") && vars - 1 >= i)
+                        {
+                            //missing a value....
+                            fileErrors.Add(new LanguageError(fileName, key, "Missing {" + i + "}", ErrorLevel.Error));
+                        }
+                        else if (value.Value.Contains("{" + i + "}") && vars - 1 < i)
+                        {
+                            fileErrors.Add(new LanguageError(fileName, key, "Extra {" + i + "}", ErrorLevel.Error));
+                        }
+                    }
+
+                    if (isgif && value.Value.Length > 200)
+                    {
+                        fileErrors.Add(new LanguageError(fileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
+                    }
+                }
             }
         }
 
@@ -551,7 +527,7 @@ namespace Werewolf_Control.Helpers
 //#elif RELEASE2
 //            msg += $"File copied to bot 2\n";
 //#endif
-            Bot.Api.EditMessageText(id, msgId, msg);
+            //Bot.Api.EditMessageText(id, msgId, msg);
 //#if RELEASE
 //            copyToPath = copyToPath.Replace("Werewolf 3.0", "Werewolf 3.0 Clone");
 //            System.IO.File.Copy(newFilePath, copyToPath, true);
@@ -563,7 +539,7 @@ namespace Werewolf_Control.Helpers
             System.IO.File.Delete(newFilePath);
             msg += $"File copied to git directory\n";
 
-            Bot.Api.EditMessageText(id, msgId, msg);
+            //Bot.Api.EditMessageText(id, msgId, msg);
             //msg += $"Committing changes to repo...\n";
             //try
             //{
