@@ -2118,6 +2118,10 @@ namespace Werewolf_Node
                 p.DiedLastNight = false;
                 if (p.Bitten & !p.IsDead)
                 {
+                    if (p.PlayerRole == IRole.Mason)
+                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
+                            Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
+
                     p.Bitten = false;
                     p.PlayerRole = IRole.Wolf;
                     p.Team = ITeam.Wolf;
@@ -2133,11 +2137,7 @@ namespace Werewolf_Node
                         msg += GetLocaleString("WolfTeam", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
                     }
                     Send(msg, p.Id);
-
-                    if (p.PlayerRole == IRole.Mason)
-                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
-                            Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
-
+                    
                 }
             }
             CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
