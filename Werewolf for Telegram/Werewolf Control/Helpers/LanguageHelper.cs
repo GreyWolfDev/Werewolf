@@ -70,11 +70,11 @@ namespace Werewolf_Control.Helpers
                 var langNode = langfile.Doc.Descendants("language").First();
                 if (langNode.Attributes().All(x => x.Name != "base"))
                 {
-                    errors.Add(new LanguageError(fileName, "language node", "base attribute is missing", ErrorLevel.Error));
+                    errors.Add(new LanguageError(fileName, "*Language Node*", "Base is missing", ErrorLevel.Error));
                 }
                 if (langNode.Attributes().All(x => x.Name != "variant"))
                 {
-                    errors.Add(new LanguageError(fileName, "language node", "variant attribute is missing", ErrorLevel.Error));
+                    errors.Add(new LanguageError(fileName, "*Language Node", "Variant is missing", ErrorLevel.Error));
                 }
 
                 //now test the length
@@ -116,22 +116,17 @@ namespace Werewolf_Control.Helpers
             var langNode = langfile.Doc.Descendants("language").First();
             if (langNode.Attributes().All(x => x.Name != "base"))
             {
-                errors.Add(new LanguageError(fileName, "language node", "base attribute is missing", ErrorLevel.Error));
+                errors.Add(new LanguageError(fileName, "*Language Node*", "Base is missing", ErrorLevel.Error));
             }
             if (langNode.Attributes().All(x => x.Name != "variant"))
             {
-                errors.Add(new LanguageError(fileName, "language node", "variant attribute is missing", ErrorLevel.Error));
+                errors.Add(new LanguageError(fileName, "*Language Node*", "Variant is missing", ErrorLevel.Error));
             }
 
             //now test the length
             if (langNode.Attributes().Any(x => x.Name == "base") &&
                 langNode.Attributes().Any(x => x.Name == "variant"))
-            {
-                var test = $"setlang|-1001049529775|{langNode.Attribute("base").Value}|{langNode.Attribute("variant").Value}|v";
-                var count = Encoding.UTF8.GetByteCount(test);
-                if (count > 64)
-                    errors.Add(new LanguageError(fileName, "language node", "base and variant are too long. (*38 utf8 byte max*)", ErrorLevel.Error));
-            }
+                TestLength(langfile, errors);
 
             //get the errors
             GetFileErrors(langfile, errors, master);
@@ -245,8 +240,8 @@ namespace Werewolf_Control.Helpers
                 //load up each file and get the names
                 var buttons = new[]
                 {
-                    new InlineKeyboardButton($"New - ({newFileName})", $"upload|{id}|{newFileName}"),
-                    new InlineKeyboardButton("Current", $"upload|{id}|current")
+                    new InlineKeyboardButton($"New - ({newFileName}.xml)", $"upload|{id}|{newFileName}"),
+                    new InlineKeyboardButton($"Old - ({curFileName}.xml)", $"upload|{id}|current")
                 };
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
                 Bot.Api.SendTextMessage(id, "Which file do you want to keep?", replyToMessageId: msgID,
@@ -452,13 +447,15 @@ namespace Werewolf_Control.Helpers
             if (curFile != null)
             {
                 result += "\n\n";
-                result += $"CURRENT FILE\n*{curFile.FileName}.xml - ({curFile.Name})*\n";
+                result += $"OLD FILE\n*{curFile.FileName}.xml - ({curFile.Name})*\n";
                 result +=
                     $"Errors: {curFileErrors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {curFileErrors.Count(x => x.Level == ErrorLevel.MissingString)}";
             }
             else
             {
-                result += "\n\n*No current file, this is a new language*";
+                result += "\n\n*No old file, this is a new language*";
+                result += "\nPlease double check the filename, and the language name, base and variant, as you won't be able to change them.";
+                result += $"\n_Name:_ {newFile.Name}";
                 result += $"\n_Base:_ {newFile.Base}";
                 if (!Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).Any(x => x.Base == newFile.Base))
                     result += " *(NEW)*";
