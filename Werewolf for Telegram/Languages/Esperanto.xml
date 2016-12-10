@@ -26,7 +26,7 @@
     <value>{0} sekundoj restas por aliĝi per /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>La nombro de la aliĝintoj ne sufiĉas. La partio estos nuligita.\n\nKlaku sur /nextgame por esti sciigota kiam la sekva partio komenciĝos, aŭ komencu vi mem alian per /startgame (normalan) aŭ /startchaos (ĥaosan).</value>
+    <value>La nombro de la aliĝintoj ne sufiĉas. La partio estos nuligita.\nKlaku sur /nextgame por esti sciigota kiam la sekva partio komenciĝos, aŭ komencu vi mem alian per /startgame.</value>
   </string>
   <string key="StartingGameWait">
     <value>La partio komenciĝas!</value>
@@ -559,6 +559,7 @@
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} ŝtele iras ĉe {1}, malfermas la pordon, sed subite renkontas maniulon kun tranĉilo!! {1}, kriante, ŝovas la tranĉilon en la organojn de {0} laŭ alfabeta ordo. {0} mortis.</value>
+    <value>La sektanoj sendas {0} por sektanigi {1}, sed subite la korpo de {0} aperas antaŭ la pordo, kun tranĉiloj enŝovitaj! Kia maniulo! {0} mortis.</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>La lupoj provis ataki la ĉasiston, sed li, mortante, sukcesis sterni unu el ili! 🐺 {0} mortis.</value>
@@ -577,9 +578,6 @@
   </string>
   <string key="CultConvertHunter">
     <value>La sektanoj sendas {0} por sektanigi {1}, sed aŭdeblas laŭta pafo kaj oni vidas la korpon de {0} elflugi el fenestro! {0} mortis.</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-    <value>La sektanoj sendas {0} por sektanigi {1}, sed subite la korpo de {0} aperas antaŭ la pordo, kun tranĉiloj enŝovitaj! Kia maniulo! {0} mortis.</value>
   </string>
   <string key="GuardKiller">
     <value>Vi provis gardi la murdiston, sed li tranĉile vundis vin 89 fojojn! Vi mortis.</value>
@@ -692,11 +690,11 @@
   </value>
   </string>
   <string key="AboutWw">
-    <value>🐺 LUPO (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Ĉiunokte ili elektas kune, per voĉo, unu ludanton kaj iras ĉe li por mangi lin.\n\n• Rimarko: Lupoj neniam estas pli ol 1/6 de la ludantoj.\n• Rimarkindaj okazoj:\n  - Se ili elektas la ebriulon, ili ebriiĝas kaj ne povos ataki je la sekva nokto.\n  - Se ili elektas la malbeniton, li iĝas lupo.\n  - Se ili elektas la maldeculon, ili manĝas lin nur se la maldeculo restis hejme. Tamen, se ili elektas la saman ludanton ol la maldeculo, ili manĝas ambaŭ.\n  - Se ili elektas ĉasiston, li certe mortos, sed ankaŭ havos probablon mortigi unu lupon (hazarde). Tiu probablo estas 10% + (20% × nombro de lupoj).\n  - Se ili elektas murdiston, ili manĝas lin nur je 20% probablo. Aliokaze, la murdisto murdas unu el ili (hazarde).
+    <value>🐺 LUPO (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Ĉiunokte ili elektas kune, per voĉo, unu ludanton kaj iras ĉe li por mangi lin.\n\n• Rimarko: Lupoj neniam estas pli ol 1/5 de la ludantoj.\n• Rimarkindaj okazoj:\n  - Se ili elektas la ebriulon, ili ebriiĝas kaj ne povos ataki je la sekva nokto.\n  - Se ili elektas la malbeniton, li iĝas lupo.\n  - Se ili elektas la maldeculon, ili manĝas lin nur se la maldeculo restis hejme. Tamen, se ili elektas la saman ludanton ol la maldeculo, ili manĝas ambaŭ.\n  - Se ili elektas ĉasiston, li certe mortos, sed ankaŭ havos probablon mortigi unu lupon (hazarde). Tiu probablo estas 10% + (20% × nombro de lupoj).\n  - Se ili elektas murdiston, ili manĝas lin nur je 20% probablo. Aliokaze, la murdisto murdas unu el ili (hazarde).
   </value>
   </string>
   <string key="AboutHarlot">
-    <value>💋 MALDECULO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Ĉiunokte li iras ĉe elektita ludanto por... amuziĝi, kaj kontroli ke li ne estas malbonulo. Tamen, se tiu estas lupo, manĝato de lupo, aŭ murdisto, li mortas.\n\n• Rimarkindaj okazoj:\n  - Se la vizitato estas sektano, je 50% probablo li vidos strangan altaron en la domo...\n• Strategiaj konsiloj: Estus bone se maldeculo diras private al certigata bonulo kiun li vizitos, tiel ke, se li mortas pro esti elektinta lupon, bonuloj scias kiun linĉi. Tamen, ne diru tion publike, alikaze lupoj iros ĉe vizitato kaj manĝos ambaŭ!</value>
+    <value>💋 MALDECULO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Ĉiunokte li iras ĉe elektita ludanto por... amuziĝi, kaj kontroli ke li ne estas malbonulo. Tamen, se tiu estas lupo, murdisto, aŭ mortigato de unu el ili, li mortas.\n\n• Rimarkindaj okazoj:\n  - Se la vizitato estas sektano, je 50% probablo li vidos strangan altaron en la domo...\n• Strategiaj konsiloj: Estus bone se maldeculo diras private al certigata bonulo kiun li vizitos, tiel ke, se li mortas pro esti elektinta lupon, bonuloj scias kiun linĉi. Tamen, ne diru tion publike, alikaze lupoj iros ĉe vizitato kaj manĝos ambaŭ!</value>
   </string>
   <string key="AboutDrunk">
     <value>🍻 EBRIULO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Se lupoj mangas lin, ili ebriiĝas kaj ne povas ataki je la sekva nokto.</value>
@@ -705,7 +703,7 @@
     <value>😾 MALBENITO (Vilaĝa/Lupa teamo)\n\n• Celo:\n  - Kiel vilaĝano: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n  - Kiel lupo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Komence de la partio, li estas normala vilaĝano. Tamen, se lupoj manĝas lin, li iĝas lupo.</value>
   </string>
   <string key="AboutTraitor">
-    <value>🖕 FIULO (Vilaĝa/Lupa teamo)\n\n• Celo:\n  - Kiam li estas vilaĝano: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n  - Kiam li estas lupo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Komence de la partio, li estas normala vilaĝano. Tamen, kiam ĉiuj lupoj mortas, li iĝas lupo.\n\n• Rimarko: La divenisto vidas lian rolon kiel vilaĝano aŭ lupo je 50% probablo.</value>
+    <value>🖕 FIULO (Vilaĝa/Lupa teamo)\n\n• Celo:\n  - Kiam li estas vilaĝano: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n  - Kiam li estas lupo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Komence de la partio, li estas normala vilaĝano. Tamen, kiam ĉiuj lupoj mortas, li iĝas lupo.\n\n• Rimarko: La divenisto vidas lian rolon kiel vilaĝano aŭ lupo, je 50% probablo.</value>
   </string>
   <string key="AboutGA">
     <value>👼 GARDANĜELO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Ĉiunokte povas elekti ludanton por gardi de lupoj kaj murdisto.\n\n• Rimarkindaj okazoj:\n  - Se li elektas lupon, li estas mortigita je 50% probablo.\n  - Se li elektas murdiston, li certe mortas.</value>
@@ -720,10 +718,10 @@
     <value>👺 MASKULO (Maskula teamo)\n\n• Celo: Esti linĉata.\n• Priskribo: Li volas esti linĉata, kaj tial maskas sin kiel lupo.\n\n• Rimarko: Se li ne estas linĉata, li malvenkas.</value>
   </string>
   <string key="AboutFool">
-    <value>🃏 FRENEZULO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Li ne scias esti frenezulo, kaj kredas esti divenisto, sed roloj kiujn ili divenas estas hazardaj.\n\n• Rimarko 1: Ĉar roloj kiujn li divenas estas hazardaj, tial ili povas esti eĉ ĝustaj!\n• Rimarko 2: Frenezulo ne estas tute senutila! La roloj kiuj li divenas estas elektita el la vivantaj ludantoj. Do se li divenas rolon, certe iu ludanto havas ĝin!\n• Rimarko 3: Metodo por kontroli ke vi ne estas frenezulo estas diveni dufoje la rolon de unu ludanto. Se vi estas frenezulo, verŝajne vi vidos ĝin malsama. Plie, se vi vidas iun kiel fiulo, certe vi estas frenezulo (la divenisto vidas lin kiel lupo aŭ vilaĝanon).</value>
+    <value>🃏 FRENEZULO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Li ne scias esti frenezulo, kaj kredas esti divenisto, sed roloj kiujn ili divenas estas hazardaj.\n\n• Rimarko 1: Ĉar roloj kiujn li divenas estas hazardaj, tial ili povas esti eĉ ĝustaj!\n• Rimarko 2: Frenezulo ne estas tute senutila! La roloj kiuj li divenas estas elektita el la vivantaj ludantoj. Do se li divenas rolon, certe iu ludanto havas ĝin!\n• Rimarko 3: Metodo por kontroli ke vi ne estas frenezulo estas diveni dufoje la rolon de unu ludanto. Se vi estas frenezulo, verŝajne vi vidos ĝin malsama. Plie, se vi vidas iun kiel fiulo, certe vi estas frenezulo (la divenisto vidas lin kiel lupon aŭ vilaĝanon).</value>
   </string>
   <string key="AboutCult">
-    <value>👤 SEKTANO (Sekta teamo)\n\n• Celo: Sektanigi ĉiujn vivantajn ludantojn.\n• Priskribo: Ĉiunokte sektanoj elektas kune, per voĉo, unu ludanton kaj iras ĉe li por sektanigi lin.\n\n• Rimarkindaj okazoj:\n  - Se ili elektas la sektoĉasiston, aŭ la murdiston, li mortigos la lastan aniĝinton.\n  - Se ili elektas la ĉasiston, kaj ne sukcesas sektanigi lin, li mortigos la lastan aniĝinton je 50% probablo.\n  - Se ili elektas masoniston, la aliaj masonistoj ekscios lian sektaniĝon.\n- Probabloj de aniĝo al sekto:\n     Divenisto: 40%\n     Malbenito: 60%\n     Maldeculo: 70% (nur se restas hejme)\n     Gardanĝelo: 60% (nur se restas hejme)\n     Detektivo: 70%\n     Ĉasisto: 50%\n     Nesektanigeblaj roloj: Lupoj (ne estas hejme), Sektoĉasisto (vd. supren), Doppelgänger, Murdisto (vd. supren).\n     Ĉiuj ceteraj certe aniĝas al sekto: Vilaĝano, Ebriulo, Observanto, Pafisto, Fiulo, Divenista ĉeflernanto, Kolera infano, Frenezulo, Masonisto, Kupido, Vilaĝestro, Princo, Sorĉisto, Forĝisto, Misemulo.</value>
+    <value>👤 SEKTANO (Sekta teamo)\n\n• Celo: Sektanigi ĉiujn vivantajn ludantojn.\n• Priskribo: Ĉiunokte sektanoj elektas kune, per voĉo, unu ludanton kaj iras ĉe li por sektanigi lin.\n\n• Rimarkindaj okazoj:\n  - Se ili elektas la sektoĉasiston, aŭ la murdiston, li mortigos la lastan aniĝinton. Tio ankaŭ okazas se ili elektas lupon kaj la lupoj restis hejme.\n  - Se ili elektas la ĉasiston, kaj ne sukcesas sektanigi lin, li mortigos la lastan aniĝinton je 50% probablo.\n  - Se ili elektas masoniston, la aliaj masonistoj ekscios lian sektaniĝon.\n- Probabloj de aniĝo al sekto:\n     Divenisto: 40%\n     Malbenito: 60%\n     Maldeculo: 70% (nur se restas hejme)\n     Gardanĝelo: 60% (nur se restas hejme)\n     Detektivo: 70%\n     Ĉasisto: 50%\n     Nesektanigeblaj roloj: Lupoj (ne estas hejme), Sektoĉasisto (vd. supren), Doppelgänger, Murdisto (vd. supren).\n     Ĉiuj ceteraj certe aniĝas al sekto: Vilaĝano, Ebriulo, Observanto, Pafisto, Fiulo, Divenista ĉeflernanto, Kolera infano, Frenezulo, Masonisto, Kupido, Vilaĝestro, Princo, Sorĉisto, Forĝisto, Misemulo.</value>
   </string>
   <string key="AboutCH">
     <value>💂 SEKTOĈASISTO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Ĉiunokte, li elektas ludanton kaj mortigas lin se li estas sektano.\n\n• Rimarkindaj okazoj:\n  - Se sektano provas sektanigi lin, li mortigos lin.\n  - Se li iras ĉe murdisto, li estas murdata.</value>
@@ -732,7 +730,7 @@
     <value>👶 KOLERA INFANO (Vilaĝa/Lupa teamo)\n\n• Celo:\n  - Kiel vilaĝano: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n  - Kiel lupo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Komence de la partio, li elektas sian modelon, kaj unue estas normala vilaĝano. Se lia modelo mortos, li koleriĝos kaj iĝos lupo.</value>
   </string>
   <string key="AboutAppS">
-    <value>🙇 DIVENISTA ĈEFLERNANTO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Komence de la partio, li estas normala vilaĝano. Kiam la divenisto mortas, li iĝos nova divenisto.</value>
+    <value>🙇 DIVENISTA ĈEFLERNANTO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Komence de la partio, li estas normala vilaĝano. Kiam la divenisto mortas, aŭ iĝas lupo aŭ sektano, li iĝos nova divenisto.</value>
   </string>
   <string key="AboutBH">
     <value>👁 OBSERVANTO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Komence de la partio, li estas sciigata pri kiu estas la divenisto (vera, kaj ne frenezula). Krom tio, li estas normala vilaĝano.\n\n• Rimarko: Observanto ankaŭ ekscios kiam la divenista ĉeflernanto, aŭ la Doppelgänger, iĝos divenisto.\n• Strategiaj konsiloj: Ĉar verŝajne divenisto ne diros sian rolon, kaj ne parolos pri liaj divenoj (alikaze malbonuloj volus mortigi lin), estus bone se vi parolus kun li private, kaj dirus al aliuloj publike kion li diris al vi, sen diri lian nomon.</value>
@@ -741,7 +739,7 @@
     <value>👷 MASONISTO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Komence de la partio, li estas sciigata pri kiuj estas la aliaj masonistoj (povas esti ĝis 3 masonistoj entute).\n\n• Rimarko: Se masonisto iĝos sektano aŭ lupo, ĉiuj aliaj masonistoj ekscios.\n• Strategiaj konsiloj: Masonistoj multe utilas ĉar ili povas senkulpigi sin reciproke, kaj pravigas unu la alian.</value>
   </string>
   <string key="AboutDG">
-    <value>🎭 DOPPELGÄNGER (Neŭtrala teamo)\n\n• Celo: Aliformiĝi en alian rolon kaj venki per sia nova rolo.\n• Priskribo: Komence de la partio, li elektas ludanton. Kiam tiu mortos, li prenos lian rolon. Doppelgänger ne povas venki se li ne aliformiĝas.</value>
+    <value>🎭 DOPPELGÄNGER (Neŭtrala teamo)\n\n• Celo: Aliformiĝi en alian rolon kaj venki per sia nova rolo.\n• Priskribo: Komence de la partio, li elektas ludanton. Kiam tiu mortos, aŭ iĝos lupo aŭ sektano, li prenos lian rolon. Doppelgänger ne povas venki se li ne aliformiĝas.</value>
   </string>
   <string key="AboutCupid">
     <value>🏹 KUPIDO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Komence de la partio, li elektas du ludantojn por ke ili amu sin reciproke. Se unu el ili mortos, ankaŭ la alia mortas pro sufero. Ili konservas siajn rolojn; tamen, se unu el ili venkas, ankaŭ la alia venkas. Plie, ili havas specialan movbildon se ili estas la lastaj du supervivantoj: tio igas ĉiujn aliajn malvenki.</value>
@@ -750,7 +748,7 @@
     <value>🎯 ĈASISTO (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Kiam li mortas, li elektas ludanton por pafi.\n\n• Rimarkindaj okazoj:\n  - Se lupoj manĝas lin, li ne povas elekti, sed li mortigos unu (hazardan) lupon je iu probablo. Tiu probablo estas 10% + 20% × (nombro de lupoj).  Alivorte: 1 lupo -> 30%; 2 lupoj -> 50%, 3 lupoj -> 70%, 4 lupoj -> 90%, 5+ lupoj -> 100%.\n  - Se sektanoj ne sukcesas konverti lin, li havos 50% probablo mortigi la lastan aniĝinton al sekto.\n  - Se li kaj murdisto estas la lastaj supervivantoj... mojosaj aferoj okazas :)</value>
   </string>
   <string key="AboutSK">
-    <value>🔪 MURDISTO (Murdista teamo)\n\n• Celo: Mortigi ĉiujn aliajn ludantojn.\n• Priskribo: Ĉiunokte li povas elekti ludanton (ian ajn) por murdi. Plie, li murdas ĉiun, kiu vizitas lin.\n\n• Rimarkindaj okazoj:\n  - Se li kaj ĉasisto estas la lastaj supervivantoj... mojosaj aferoj okazas :)</value>
+    <value>🔪 MURDISTO (Murdista teamo)\n\n• Celo: Mortigi ĉiujn aliajn ludantojn.\n• Priskribo: Ĉiunokte li povas elekti ludanton (ian ajn) por murdi. Plie, li murdas ĉiun, kiu vizitas lin.\n\n• Rimarkindaj okazoj:\n  - Se li elektas la maldeculon, malsame ol lupoj, li ĉiam murdas la maldeculon, eĉ se tiu ne restis hejme.\n  - Se li kaj la ĉasisto estas la lastaj supervivantoj... mojosaj aferoj okazas :)</value>
   </string>
   <string key="AboutPara">
     <value>Para estas la kreinto de la roboto :) Danku lin pro tio, ke vi povas ludi!</value>
@@ -924,7 +922,7 @@
     <value>PRINCO 👑 (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Kiam li unue estas linĉata, li supervivas. Tamen, se li denove estas linĉata, li mortas.</value>
   </string>
   <string key="AboutSorcerer">
-    <value>SORĈISTO 🔮 (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Li ne scias kiuj estas la lupoj. Dumnokte, li povas vidi ĉu ludanto estas Lupo, aŭ Divenisto.\n\n• Strategiaj konsiloj: La sorĉisto estas helpa por lupoj. Post ke li trovis lupon, li povas paroli private kun li, kaj diri al li kiu estas la divenisto, por ke la lupoj manĝu lin.</value>
+    <value>SORĈISTO 🔮 (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Li ne scias kiuj estas la lupoj. Dumnokte, li povas vidi ĉu ludanto estas lupo, aŭ divenisto.\n\n• Strategiaj konsiloj: La sorĉisto estas helpa por lupoj. Post ke li trovis lupon, li povas paroli private kun li, kaj diri al li kiu estas la divenisto, por ke la lupoj manĝu lin.</value>
   </string>
   <string key="AboutClumsy">
     <value>MISEMULO 🤕 (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Estas 50% probablo, ke liaj voĉoj estas ŝanĝataj al alia hazarda ludanto.</value>
@@ -933,7 +931,7 @@
     <value>FORĜISTO ⚒ (Vilaĝa teamo)\n\n• Celo: Linĉi ĉiujn malbonulojn (lupojn, sektanojn, murdiston).\n• Priskribo: Li povas, dumtage kaj nur unufoje dum la tuta partio, dissemi arĝentan polvon kiun malebligas al la lupoj ataki la sekvan nokton.</value>
   </string>
   <string key="AboutAlphaWolf">
-    <value>LUPESTRO ⚡️ (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Li estas speciala lupo. Se li vivas, kaj la lupoj iun mortigas, estas 20% probablo, ke la viktimo ne vere mortos, sed iĝos lupo la sekvan nokton.</value>
+    <value>LUPESTRO ⚡️ (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Li estas speciala lupo. Se li vivas, kaj la lupoj iun elektas, je 20% probablo la elektito ne vere mortos, sed iĝos lupo la sekvan nokton.</value>
   </string>
   <string key="AboutWolfCub">
     <value>LUPIDO 🐶 (Lupa teamo)\n\n• Celo: Fari, ke lupoj estu duono de la supervivantoj.\n• Priskribo: Li estas speciala lupo. Se li mortas, la aliaj lupoj atakos dufoje la sekvan nokton.</value>
@@ -942,8 +940,6 @@
     <value>{0} mortis, kaj vi aliformiĝas en lupestron. Viaj teamanoj, se ili ekzistas, estas: {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
-    <!-- 0 - target's name -->
-    <!-- 1 - teammates's name -->
     <value>{0} mortis, kaj vi aliformiĝas en lupidon. Viaj teamanoj, se ili ekzistas, estas: {1}</value>
   </string>
 
