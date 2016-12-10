@@ -106,11 +106,12 @@ namespace Werewolf_Node.Models
         public bool DoubleKillEnding { get; set; } = false;
         public bool Bitten { get; set; }
         public List<int> CorrectSnooped { get; set; } = new List<int>();
+        public bool SpeedDating { get; set; } = false;
+        public int FirstStone { get; set; } = 0;
         
-    }
-
         #endregion
 
+    }
     
 
     public enum IRole

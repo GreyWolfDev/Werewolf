@@ -389,137 +389,162 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
-            //get parameters
-            string[] parms = null;
-            try
+            //send OHAIDER announcement
+            using (var sr = new StreamReader(Path.Combine(Bot.RootDirectory, "..\\Logs\\ohaider.log")))
             {
-                parms = args[1].Split(' ');
-            }
-            catch
-            {
-            }
-            if (parms == null || parms.Length != 2)
-            {
-                Send("!test <attempts per game> <games to create per player level>", update.Message.Chat.Id);
-                return;
-
-            }
-            var attemptCount = int.Parse(parms[0]);
-            var tries = int.Parse(parms[1]);
-            BalancedAttempts = new Dictionary<int, List<BalancedGameAttempt>>();
-            for (var count = 5; count <= 35; count++)
-            {
-                var balancedGameAttempts = new List<BalancedGameAttempt>();
-                var success = 0;
-                var totalAttempts = 0;
-                for (var i = 0; i < tries; i++)
+                using (var db = new WWContext())
                 {
-
-                    var balanced = false;
-
-                    List<IRole> rolesToAssign = new List<IRole>();
-                    int villageStrength = 0, enemyStrength = 0;
-                    var attempts = 0;
-                    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
-                    while (!balanced)
+                    var a = Achievements.OHAIDER;
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        attempts++;
-                        if (attempts >= attemptCount)
-                            break;
-
-                        //determine which roles should be assigned
-                        rolesToAssign = GetRoleList(count);
-                        rolesToAssign.Shuffle();
-                        rolesToAssign = rolesToAssign.Take(count).ToList();
-
-
-
-                        //let's fix some roles that should or shouldn't be there...
-
-                        //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
-                        if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
-                            !rolesToAssign.Any(x => WolfRoles.Contains(x)))
+                        int id;
+                        if (int.TryParse(line, out id))
                         {
-                            var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
-                            rolesToAssign[towolf] = WolfRoles[0]; //choose randomly from WolfRoles
+                            //get player
+                            var p = db.Players.FirstOrDefault(x => x.Id == id);
+                            if (p != null)
+                            {
+                                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
+                            }
                         }
-
-                        //appseer without seer -> seer
-                        if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
-                        {
-                            //substitute with seer
-                            var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
-                            rolesToAssign[apps] = IRole.Seer;
-                        }
-
-                        //cult without CH -> add CH
-                        if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
-                        {
-                            //just pick a vg, and turn them to CH
-                            var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-                            rolesToAssign[vg] = IRole.CultistHunter;
-                        }
-
-
-                        //make sure that we have at least two teams
-                        if (
-                            rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                            && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
-                        )
-                            balanced = true;
-                        //else, redo role assignment. better to rely on randomness, than trying to fix it
-
-                        //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
-
-                        villageStrength =
-                            rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-                        enemyStrength =
-                            rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-
-                        //check balance
-                        var varianceAllowed = (count / 4) + 1;
-                        balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-
-
-
+                        
                     }
-
-                    totalAttempts += attempts;
-                    if (balanced)
-                        success++;
-                    balancedGameAttempts.Add(new BalancedGameAttempt { AttemptsMade = attempts, Balanced = balanced });
                 }
-
-                BalancedAttempts.Add(count, balancedGameAttempts);
-                //var msg = $"Attempts: {attempts}\n";
-                //if (balanced)
-                //{
-                //    msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
-                //    msg +=
-                //        $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
-                //    msg +=
-                //        $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
-                //}
-                //else
-                //{
-                //    msg += "Unbalanced :(";
-                //}
-
             }
 
-            //calculate totals
-            var totalPass = BalancedAttempts.Sum(x => x.Value.Count(v => v.Balanced));
-            var totalGames = BalancedAttempts.Sum(x => x.Value.Count);
-            var avgAttempts = (BalancedAttempts.Sum(x => x.Value.Sum(v => v.AttemptsMade))) / totalGames;
+
+            //IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+            ////get parameters
+            //string[] parms = null;
+            //try
+            //{
+            //    parms = args[1].Split(' ');
+            //}
+            //catch
+            //{
+            //}
+            //if (parms == null || parms.Length != 2)
+            //{
+            //    Send("!test <attempts per game> <games to create per player level>", update.Message.Chat.Id);
+            //    return;
+
+            //}
+            //var attemptCount = int.Parse(parms[0]);
+            //var tries = int.Parse(parms[1]);
+            //BalancedAttempts = new Dictionary<int, List<BalancedGameAttempt>>();
+            //for (var count = 5; count <= 35; count++)
+            //{
+            //    var balancedGameAttempts = new List<BalancedGameAttempt>();
+            //    var success = 0;
+            //    var totalAttempts = 0;
+            //    for (var i = 0; i < tries; i++)
+            //    {
+
+            //        var balanced = false;
+
+            //        List<IRole> rolesToAssign = new List<IRole>();
+            //        int villageStrength = 0, enemyStrength = 0;
+            //        var attempts = 0;
+            //        var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+            //        while (!balanced)
+            //        {
+            //            attempts++;
+            //            if (attempts >= attemptCount)
+            //                break;
+
+            //            //determine which roles should be assigned
+            //            rolesToAssign = GetRoleList(count);
+            //            rolesToAssign.Shuffle();
+            //            rolesToAssign = rolesToAssign.Take(count).ToList();
 
 
 
-            //calculate success rates per player size
-            var msg = BalancedAttempts.Aggregate($"Number of games attempted: {totalGames}\nNumber of games per player count: {tries}\nNumber of attempts per game: {attemptCount}\nNumber of balanced games: {totalPass}\nAverage attempts: {avgAttempts}\n", (current, gameSet) => current + $"{gameSet.Key}: {(gameSet.Value.Count(x => x.Balanced) * 100) / tries}% pass\n");
+            //            //let's fix some roles that should or shouldn't be there...
+
+            //            //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
+            //            if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
+            //                !rolesToAssign.Any(x => WolfRoles.Contains(x)))
+            //            {
+            //                var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
+            //                rolesToAssign[towolf] = WolfRoles[0]; //choose randomly from WolfRoles
+            //            }
+
+            //            //appseer without seer -> seer
+            //            if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
+            //            {
+            //                //substitute with seer
+            //                var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
+            //                rolesToAssign[apps] = IRole.Seer;
+            //            }
+
+            //            //cult without CH -> add CH
+            //            if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
+            //            {
+            //                //just pick a vg, and turn them to CH
+            //                var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+            //                rolesToAssign[vg] = IRole.CultistHunter;
+            //            }
 
 
-            Send(msg, update.Message.Chat.Id);
+            //            //make sure that we have at least two teams
+            //            if (
+            //                rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
+            //                && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
+            //            )
+            //                balanced = true;
+            //            //else, redo role assignment. better to rely on randomness, than trying to fix it
+
+            //            //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
+
+            //            villageStrength =
+            //                rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+            //            enemyStrength =
+            //                rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+
+            //            //check balance
+            //            var varianceAllowed = (count / 4) + 1;
+            //            balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+
+            //        }
+
+            //        totalAttempts += attempts;
+            //        if (balanced)
+            //            success++;
+            //        balancedGameAttempts.Add(new BalancedGameAttempt { AttemptsMade = attempts, Balanced = balanced });
+            //    }
+
+            //    BalancedAttempts.Add(count, balancedGameAttempts);
+            //    //var msg = $"Attempts: {attempts}\n";
+            //    //if (balanced)
+            //    //{
+            //    //    msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+            //    //    msg +=
+            //    //        $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
+            //    //    msg +=
+            //    //        $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
+            //    //}
+            //    //else
+            //    //{
+            //    //    msg += "Unbalanced :(";
+            //    //}
+
+            //}
+
+            ////calculate totals
+            //var totalPass = BalancedAttempts.Sum(x => x.Value.Count(v => v.Balanced));
+            //var totalGames = BalancedAttempts.Sum(x => x.Value.Count);
+            //var avgAttempts = (BalancedAttempts.Sum(x => x.Value.Sum(v => v.AttemptsMade))) / totalGames;
+
+
+
+            ////calculate success rates per player size
+            //var msg = BalancedAttempts.Aggregate($"Number of games attempted: {totalGames}\nNumber of games per player count: {tries}\nNumber of attempts per game: {attemptCount}\nNumber of balanced games: {totalPass}\nAverage attempts: {avgAttempts}\n", (current, gameSet) => current + $"{gameSet.Key}: {(gameSet.Value.Count(x => x.Balanced) * 100) / tries}% pass\n");
+
+
+            //Send(msg, update.Message.Chat.Id);
         }
 
         [Attributes.Command(Trigger = "sql", DevOnly = true)]
@@ -657,11 +682,9 @@ namespace Werewolf_Control
             }
         }
 
-        [Attributes.Command(Trigger = "permban", DevOnly = true)]
+        [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-
-
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
@@ -1053,6 +1076,55 @@ namespace Werewolf_Control
                     Send($"Group {grp.Name} removed from /grouplist", u.Message.Chat.Id);
                 }
             }
+        }
+
+        [Attributes.Command(Trigger = "ohaider", DevOnly = true)]
+        public static void OHaiDer(Update u, string[] args)
+        {
+            try
+            {
+                if (u.Message.Chat.Type != ChatType.Private)
+                {
+                    Send("You must run this command in PM!!", u.Message.Chat.Id);
+                    return;
+                }
+//#if !DEBUG
+//                if (Bot.Me.Username != "werewolfbot")
+//                {
+//                    Send("Please run this command on @werewolfbot only", u.Message.Chat.Id);
+//                    return;
+//                }
+//#endif
+                int id = 0;
+                if (int.TryParse(args[1], out id))
+                {
+                    //get the user from the database
+                    using (var ww = new WWContext())
+                    {
+                        var user = ww.Players.FirstOrDefault(x => x.TelegramId == id);
+                        if (user != null)
+                        {
+                            //create a menu for this
+                            var buttons = new[] {new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id),new InlineKeyboardButton("No", "ohai|no") };
+                            Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
+                                customMenu: new InlineKeyboardMarkup(buttons));
+                        }
+                        else
+                        {
+                            Send("Unable to find player account with that id", u.Message.Chat.Id);
+                        }
+                    }
+                }
+                else
+                {
+                    Send("Invalid ID", u.Message.Chat.Id);
+                }
+            }
+            catch (Exception e)
+            {
+                Send("Unable to update OHAIDER: " + e.Message, u.Message.Chat.Id);
+            }
+
         }
 
         [Attributes.Command(Trigger = "clearlogs", DevOnly = true)]

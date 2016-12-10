@@ -93,7 +93,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-
+            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
             Api.UpdateReceived += UpdateHandler.UpdateReceived;
             Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
             Api.ReceiveError += ApiOnReceiveError;

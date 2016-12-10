@@ -112,5 +112,10 @@ namespace Werewolf_Control.Helpers
             }
 
         }
+
+        public static string Pad(this int val)
+        {
+            return "<code>" + val.ToString().PadRight(5) + "</code>";
+        }
     }
 }
