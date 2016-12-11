@@ -82,8 +82,14 @@ namespace Werewolf_Control.Helpers
                 result += $"*{file}*\n";
                 result +=
                     $"_Missing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == file)}_\n";
+                if (errors.Any(x => x.Level == ErrorLevel.Info))
+                {
+                    result += "_Duplicated Strings: _";
+                    result = errors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                }
                 if (errors.Any(x => x.File == file && x.Level == ErrorLevel.Error))
                     result = errors.Where(x => x.File == file && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n\n");
+                
             }
             Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
             result =
@@ -120,6 +126,11 @@ namespace Werewolf_Control.Helpers
             {
                 result += "_Missing Values:_\n";
                 result = errors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+            }
+            if (errors.Any(x => x.Level == ErrorLevel.Info))
+            {
+                result += "\n_Duplicated Strings:_\n";
+                result = errors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
             }
             result += "\n";
             //Program.Send(result, id);
@@ -167,18 +178,6 @@ namespace Werewolf_Control.Helpers
                 //problem....
                 newFileErrors.Add(new LanguageError(newFile.FileName, "*Language Node*",
                     $"ERROR: The following file partially matches the same language node. Please check the file name, and the language name, base and variant. Aborting.\n\n*{error.FileName}.xml*\n_Name:_{error.Name}\n_Base:_{error.Base}\n_Variant:_{error.Variant}", ErrorLevel.Error));
-            }
-
-            //check for CultConvertSerialKiller & CupidChosen duplication
-            var dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CultConvertSerialKiller");
-            if (dup > 1)
-            {
-                newFileErrors.Add(new LanguageError(newFile.FileName, "CultConvertSerialKiller", "CultConvertSerialKiller duplication", ErrorLevel.Info));
-            }
-            dup = newFile.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CupidChosen");
-            if (dup > 1)
-            {
-                newFileErrors.Add(new LanguageError(newFile.FileName, "CupidChosen", "CupidChosen duplication", ErrorLevel.Info));
             }
 
             //get the errors in it
@@ -480,6 +479,15 @@ namespace Werewolf_Control.Helpers
         {
             var fileName = file.FileName;
             var masterStrings = master.Descendants("string");
+
+            //check for CultConvertSerialKiller & CupidChosen duplication
+            var dup = file.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CultConvertSerialKiller");
+            if (dup > 1)
+                fileErrors.Add(new LanguageError(file.FileName, "CultConvertSerialKiller", "CultConvertSerialKiller duplication", ErrorLevel.Info));
+            dup = file.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CupidChosen");
+            if (dup > 1)
+                fileErrors.Add(new LanguageError(file.FileName, "CupidChosen", "CupidChosen duplication", ErrorLevel.Info));
+
             foreach (var str in masterStrings)
             {
                 var key = str.Attribute("key").Value;
