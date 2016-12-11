@@ -370,26 +370,39 @@ namespace Werewolf_Control.Helpers
 
         public static void SendFile(long id, string choice)
         {
-            var langOptions =
-                                Directory.GetFiles(Bot.LanguageDirectory)
-                                    .Select(
-                                        x =>
-                                            new
-                                            {
-                                                Name =
-                                                    XDocument.Load(x)
-                                                        .Descendants("language")
-                                                        .First()
-                                                        .Attribute("name")
-                                                        .Value,
-                                                FilePath = x,
-                                                FileName = Path.GetFileName(x)
-                                            });
+            var langOptions = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
             Bot.Api.SendDocument(id, new FileToSend(option.FileName, fs));
         }
+        
+        internal static void SendBase(string choice, long id)
+        {
+            try
+            {
+                var path = Path.Combine(Bot.LanguageDirectory, $"\\BaseZips\\{choice}.zip"); //where the zipfile will be stored
+                if (File.Exists(path))
+                    File.Delete(path);
 
+                //create our zip file
+                var zip = ZipFile.Open(path, ZipArchiveMode.Create);
+
+                var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == choice); //get the base
+                foreach (var lang in langs)
+                    zip.CreateEntryFromFile(Path.Combine(Bot.LanguageDirectory, $"{lang.FileName}.xml"), $"{lang.FileName}.xml", CompressionLevel.Optimal); //add the langs to the zipfile
+
+                //now send the zip file
+                var fs = new FileStream(path, FileMode.Open);
+                Bot.Api.SendDocument(id, new FileToSend($"{choice}.zip", fs));
+
+                //uncomment following line if you don't want to store those zipfiles
+                //File.Delete(path);
+            }
+            catch (Exception e)
+            {
+                Bot.Api.SendTextMessage(id, e.Message);
+            }
+        }
 
         #region Helpers
 
@@ -519,6 +532,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
         }
+
 
         #endregion
     }

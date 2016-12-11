@@ -762,9 +762,16 @@ namespace Werewolf_Control.Handler
                             {
                                 Bot.ReplyToCallback(query, "One moment...");
                                 LanguageHelper.SendAllFiles(query.Message.Chat.Id);
+                                return;
                             }
 
-                            //ok, if base we need to check for variants....
+                            if (args[4] != "base" && args[3] == "All")
+                            {
+                                Bot.ReplyToCallback(query, "One moment...");
+                                LanguageHelper.SendBase(choice, query.Message.Chat.Id);
+                                return;
+                            }
+                            
                             menu = new InlineKeyboardMarkup();
                             var glang = SelectLanguage(command, args, ref menu);
                             if (glang == null)
@@ -819,7 +826,7 @@ namespace Werewolf_Control.Handler
                             break;
                         case "setlang":
                             menu = new InlineKeyboardMarkup();
-                            var slang = SelectLanguage(command, args, ref menu);
+                            var slang = SelectLanguage(command, args, ref menu, false);
                             if (slang == null)
                             {
                                 buttons.Clear();
@@ -1093,7 +1100,7 @@ namespace Werewolf_Control.Handler
         }
 
         
-        internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu)
+        internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu, bool addAllbutton = true)
         {
             var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
             var isBase = args[4] == "base";
@@ -1104,6 +1111,8 @@ namespace Werewolf_Control.Handler
                 {
                     var buttons = new List<InlineKeyboardButton>();
                     buttons.AddRange(variants.Select(x => new InlineKeyboardButton(x.Variant, $"{command}|{args[1]}|{x.Base}|{x.Variant}|v")));
+                    if (addAllbutton)
+                        buttons.Insert(0, new InlineKeyboardButton("All", $"{command}|{args[1]}|{args[2]}|All|v"));
 
                     var twoMenu = new List<InlineKeyboardButton[]>();
                     for (var i = 0; i < buttons.Count; i++)
