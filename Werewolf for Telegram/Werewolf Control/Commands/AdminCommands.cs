@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -116,20 +117,59 @@ namespace Werewolf_Control
         [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
         public static void ValidateLangs(Update update, string[] args)
         {
-            var langs = Directory.GetFiles(Bot.LanguageDirectory)
-                                                        .Select(x => XDocument.Load(x)
-                                                                    .Descendants("language")
-                                                                    .First()
-                                                                    .Attribute("name")
-                                                                    .Value
-                                                        ).ToList();
-            langs.Insert(0, "All");
+            //var langs = Directory.GetFiles(Bot.LanguageDirectory)
+            //                                            .Select(x => XDocument.Load(x)
+            //                                                        .Descendants("language")
+            //                                                        .First()
+            //                                                        .Attribute("name")
+            //                                                        .Value
+            //                                            ).ToList();
+            //langs.Insert(0, "All");
 
-            var buttons =
-                langs.Select(x => new[] { new InlineKeyboardButton(x, $"validate|{update.Message.Chat.Id}|{x}") }).ToArray();
-            var menu = new InlineKeyboardMarkup(buttons.ToArray());
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
-                replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+            //var buttons =
+            //    langs.Select(x => new[] { new InlineKeyboardButton(x, $"validate|{update.Message.Chat.Id}|{x}") }).ToArray();
+            //var menu = new InlineKeyboardMarkup(buttons.ToArray());
+            //Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+            //    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+
+
+            var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
+
+
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
+            buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
+
+            var baseMenu = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                if (buttons.Count - 1 == i)
+                {
+                    baseMenu.Add(new[] { buttons[i] });
+                }
+                else
+                    baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                i++;
+            }
+
+            var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
+            try
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+                    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+            }
+            catch (AggregateException e)
+            {
+                foreach (var ex in e.InnerExceptions)
+                {
+                    var x = ex as ApiRequestException;
+
+                    Send(x.Message, update.Message.Chat.Id);
+                }
+            }
+            catch (ApiRequestException ex)
+            {
+                Send(ex.Message, update.Message.Chat.Id);
+            }
         }
 
 

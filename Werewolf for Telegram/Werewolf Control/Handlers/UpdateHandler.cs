@@ -742,24 +742,20 @@ namespace Werewolf_Control.Handler
                                 LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
                             }
+
+                            menu = new InlineKeyboardMarkup();
+                            var vlang = SelectLanguage(command, args, ref menu);
+                            if (vlang == null)
+                            {
+                                buttons.Clear();
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice),
+                                       replyMarkup: menu);
+                                return;
+                            }
+
                             //var menu = new ReplyKeyboardHide { HideKeyboard = true, Selective = true };
                             //Bot.SendTextMessage(id, "", replyToMessageId: update.Message.MessageId, replyMarkup: menu);
-                            var langOptions =
-                                Directory.GetFiles(Bot.LanguageDirectory)
-                                    .Select(
-                                        x =>
-                                            new
-                                            {
-                                                Name =
-                                                    XDocument.Load(x)
-                                                        .Descendants("language")
-                                                        .First()
-                                                        .Attribute("name")
-                                                        .Value,
-                                                FilePath = x
-                                            });
-                            var option = langOptions.First(x => x.Name == choice);
-                            LanguageHelper.ValidateLanguageFile(query.Message.Chat.Id, option.FilePath, query.Message.MessageId);
+                            LanguageHelper.ValidateLanguageFile(query.Message.Chat.Id, vlang.FilePath, query.Message.MessageId);
                             return;
                         case "getlang":
                             if (choice == "All")
@@ -767,51 +763,19 @@ namespace Werewolf_Control.Handler
                                 Bot.ReplyToCallback(query, "One moment...");
                                 LanguageHelper.SendAllFiles(query.Message.Chat.Id);
                             }
-                            else
+
+                            //ok, if base we need to check for variants....
+                            menu = new InlineKeyboardMarkup();
+                            var glang = SelectLanguage(command, args, ref menu);
+                            if (glang == null)
                             {
-                                //first, is this the base or variant?
-                                var isBaseG = args[4] == "base";
-                                var glangs =
-                                    Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
-                                var glang = glangs.First(x => x.Base == choice);
-
-                                //ok, if base we need to check for variants....
-                                if (isBaseG)
-                                {
-                                    var variants = glangs.Where(x => x.Base == choice).ToList();
-                                    if (variants.Count() > 1)
-                                    {
-                                        buttons.Clear();
-                                        buttons.AddRange(variants.Select(x => new InlineKeyboardButton(x.Variant, $"getlang|{groupid}|{x.Base}|{x.Variant}|v")));
-
-                                        var twoMenu = new List<InlineKeyboardButton[]>();
-                                        for (var i = 0; i < buttons.Count; i++)
-                                        {
-                                            if (buttons.Count - 1 == i)
-                                            {
-                                                twoMenu.Add(new[] { buttons[i] });
-                                            }
-                                            else
-                                                twoMenu.Add(new[] { buttons[i], buttons[i + 1] });
-                                            i++;
-                                        }
-
-                                        menu = new InlineKeyboardMarkup(twoMenu.ToArray());
-
-                                        Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, " "),
-                                            replyMarkup: menu);
-                                        return;
-                                    }
-                                    //only one variant, move along
-                                }
-                                else
-                                {
-                                    glang = glangs.First(x => x.Base == choice && x.Variant == args[3]);
-                                }
-                                var name = glang.Name;
-                                Bot.ReplyToCallback(query, "One moment...");
-                                LanguageHelper.SendFile(query.Message.Chat.Id, name);
+                                buttons.Clear();
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice),
+                                       replyMarkup: menu);
+                                return;
                             }
+                            Bot.ReplyToCallback(query, "One moment...");
+                            LanguageHelper.SendFile(query.Message.Chat.Id, glang.Name);
                             break;
                         case "upload":
                             Console.WriteLine(choice);
@@ -854,71 +818,41 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, GetLocaleString("WhatLang", language, curLang.Base), replyMarkup: menu);
                             break;
                         case "setlang":
-                            //first, is this the base or variant?
-                            var isBase = args[4] == "base";
-                            //ok, they picked a language, let's set it.
-                            var validlangs =
-                                Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
-                            //ok, if base we need to check for variants....
-                            var lang = validlangs.First(x => x.Base == choice);
-                            if (isBase)
+                            menu = new InlineKeyboardMarkup();
+                            var slang = SelectLanguage(command, args, ref menu);
+                            if (slang == null)
                             {
-                                var variants = validlangs.Where(x => x.Base == choice).ToList();
-                                if (variants.Count() > 1)
-                                {
-                                    buttons.Clear();
-                                    buttons.AddRange(variants.Select(x => new InlineKeyboardButton(x.Variant, $"setlang|{groupid}|{x.Base}|{x.Variant}|v")));
-
-                                    var twoMenu = new List<InlineKeyboardButton[]>();
-                                    for (var i = 0; i < buttons.Count; i++)
-                                    {
-                                        if (buttons.Count - 1 == i)
-                                        {
-                                            twoMenu.Add(new[] { buttons[i] });
-                                        }
-                                        else
-                                            twoMenu.Add(new[] { buttons[i], buttons[i + 1] });
-                                        i++;
-                                    }
-
-                                    menu = new InlineKeyboardMarkup(twoMenu.ToArray());
-
-                                    var curVariant = validlangs.First(x => x.FileName == (grp?.Language ?? p.Language));
-                                    Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, curVariant.Variant),
-                                        replyMarkup: menu);
-                                    return;
-                                }
-                                //only one variant, move along
+                                buttons.Clear();
+                                var curLangfilePath = Directory.GetFiles(Bot.LanguageDirectory).First(x => Path.GetFileNameWithoutExtension(x) == (grp?.Language ?? p.Language));
+                                var curVariant = new LangFile(curLangfilePath).Variant;
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, curVariant),
+                                    replyMarkup: menu);
+                                return;
                             }
-                            else
-                            {
-                                lang = validlangs.First(x => x.Base == choice && x.Variant == args[3]);
-                            }
-
 
                             if (
                                 Directory.GetFiles(Bot.LanguageDirectory)
                                     .Any(
                                         x =>
-                                            String.Equals(Path.GetFileNameWithoutExtension(x), lang.FileName,
+                                            String.Equals(Path.GetFileNameWithoutExtension(x), slang.FileName,
                                                 StringComparison.InvariantCultureIgnoreCase)))
                             {
                                 //now get the group
                                 if (grp != null)
                                 {
-                                    grp.Language = lang.FileName;
+                                    grp.Language = slang.FileName;
                                     //check for any games running
                                     var ig = GetGroupNodeAndGame(groupid);
 
-                                    ig?.LoadLanguage(lang.FileName);
+                                    ig?.LoadLanguage(slang.FileName);
                                     menu = GetConfigMenu(groupid);
-                                    Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("LangSet", language, lang.Base + (String.IsNullOrWhiteSpace(lang.Variant) ? "" : ": " + lang.Variant)));
+                                    Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
                                     Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
                                 }
                                 if (p != null)
                                 {
-                                    p.Language = lang.FileName;
-                                    Bot.ReplyToCallback(query, GetLocaleString("LangSet", language, lang.Base + (String.IsNullOrWhiteSpace(lang.Variant) ? "" : ": " + lang.Variant)));
+                                    p.Language = slang.FileName;
+                                    Bot.ReplyToCallback(query, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
                                 }
                             }
                             DB.SaveChanges();
@@ -1158,7 +1092,42 @@ namespace Werewolf_Control.Handler
             return Bot.Send(message, id, clearKeyboard, customMenu, parseMode);
         }
 
+        
+        internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu)
+        {
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+            var isBase = args[4] == "base";
+            if (isBase)
+            {
+                var variants = langs.Where(x => x.Base == args[2]).ToList();
+                if (variants.Count() > 1)
+                {
+                    var buttons = new List<InlineKeyboardButton>();
+                    buttons.AddRange(variants.Select(x => new InlineKeyboardButton(x.Variant, $"{command}|{args[1]}|{x.Base}|{x.Variant}|v")));
 
+                    var twoMenu = new List<InlineKeyboardButton[]>();
+                    for (var i = 0; i < buttons.Count; i++)
+                    {
+                        if (buttons.Count - 1 == i)
+                        {
+                            twoMenu.Add(new[] { buttons[i] });
+                        }
+                        else
+                            twoMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                        i++;
+                    }
+                    menu = new InlineKeyboardMarkup(twoMenu.ToArray());
+
+                    return null;
+                }
+                else                
+                    return variants.First(); 
+            }
+            else
+            {
+                return langs.First(x => x.Base == args[2] && x.Variant == args[3]);
+            }
+        }
 
 
         internal static string GetLocaleString(string key, string language, params object[] args)
