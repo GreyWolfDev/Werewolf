@@ -54,26 +54,25 @@ namespace Werewolf_Control.Helpers
             return _langFiles;
         }
 
-        public static void ValidateFiles(long id, int msgId)
+        public static void ValidateFiles(long id, int msgId, string choice = null)
         {
             var errors = new List<LanguageError>();
 
             //first, let's load up the English file, which is our master file
             var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
 
-            foreach (var file in Directory.GetFiles(Bot.LanguageDirectory).Where(x => !x.EndsWith("English.xml")))
-            {
-                var langfile = new LangFile(file);
+            foreach (var langfile in Directory.GetFiles(Bot.LanguageDirectory).Where(x => !x.EndsWith("English.xml")).Select(x => new LangFile(x)))
+                if (langfile.Base == choice || choice == null)
+                {
+                    //first check the language node
+                    CheckLanguageNode(langfile, errors);
 
-                //first check the language node
-                CheckLanguageNode(langfile, errors);
+                    //test the length
+                    TestLength(langfile, errors);
 
-                //test the length
-                TestLength(langfile, errors);
-
-                //get the file errors
-                GetFileErrors(langfile, errors, master);
-            }
+                    //get the file errors
+                    GetFileErrors(langfile, errors, master);
+                }
 
             //now pack up the errors and send
             var result = "";

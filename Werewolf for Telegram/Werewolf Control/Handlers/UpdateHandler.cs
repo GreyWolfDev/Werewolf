@@ -743,6 +743,12 @@ namespace Werewolf_Control.Handler
                                 return;
                             }
 
+                            if (args[4] != "base" && args[3] == "All")
+                            {
+                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId, choice);
+                                return;
+                            }
+
                             menu = new InlineKeyboardMarkup();
                             var vlang = SelectLanguage(command, args, ref menu);
                             if (vlang == null)

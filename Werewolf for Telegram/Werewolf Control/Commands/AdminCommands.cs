@@ -137,7 +137,7 @@ namespace Werewolf_Control
 
 
             List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
-            buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
+            //buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
