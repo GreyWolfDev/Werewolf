@@ -293,62 +293,9 @@ namespace Werewolf_Control.Helpers
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += $"File copied to git directory\n";
-
-            //Bot.Api.EditMessageText(id, msgId, msg);
-            //msg += $"Committing changes to repo...\n";
-            //try
-            //{
-            //    var p = new Process
-            //    {
-            //        StartInfo =
-            //        {
-            //            FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
-            //            Arguments = $"\"Updating {fileName} from Telegram ***NO_CI***\"",
-            //            WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
-            //            UseShellExecute = false,
-            //            RedirectStandardOutput = true,
-            //            RedirectStandardError = true,
-            //            CreateNoWindow = true
-            //        }
-            //    };
-            //    p.Start();
-            //    var output = "";
-            //    while (!p.StandardOutput.EndOfStream)
-            //        output += p.StandardOutput.ReadLine() + Environment.NewLine;
-            //    while (!p.StandardError.EndOfStream)
-            //        output += p.StandardError.ReadLine() + Environment.NewLine;
-
-            //    //validate the output
-            //    if (output.Contains("failed"))
-            //    {
-            //        msg += $"*Failed to commit file.  See control output for information*";
-            //        Console.WriteLine(output);
-            //    }
-            //    else if (output.Contains("nothing to commit"))
-            //    {
-            //        msg += $"*File not committed, matches existing file.*";
-            //    }
-            //    else
-            //    {
-            //        //try to grab the commit
-            //        var regex = new Regex("(\\[master .*])");
-            //        var match = regex.Match(output);
-            //        var commit = "";
-            //        if (match.Success)
-            //        {
-            //            commit = match.Value.Replace("[master ", "").Replace("]", "");
-            //        }
-            //        msg += $"File committed successfully. {(String.IsNullOrEmpty(commit) ? "" : $"[{commit}](https://github.com/parabola949/Werewolf/commit/{commit})")}";
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    msg += e.Message;
-            //}
-
             msg += "* Operation complete.*";
 
-             Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Markdown);
+            Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Markdown);
         }
 
         public static void SendAllFiles(long id)

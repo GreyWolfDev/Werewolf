@@ -20,6 +20,7 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
 using File = System.IO.File;
+using System.Text.RegularExpressions;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -1213,6 +1214,63 @@ namespace Werewolf_Control
             Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
         }
 
+
+        [Attributes.Command(Trigger = "commitlangs", DevOnly = true)]
+        public static void CommitLangs(Update u, string[] args)
+        {
+            var msg = "";
+            try
+            {
+                var p = new Process
+                {
+                    StartInfo =
+                    {
+                        FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
+                        Arguments = $"\"Syncing langfiles from Telegram ***NO_CI***\"",
+                        WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
+                    }
+                };
+                p.Start();
+                var output = "";
+                while (!p.StandardOutput.EndOfStream)
+                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
+                while (!p.StandardError.EndOfStream)
+                    output += p.StandardError.ReadLine() + Environment.NewLine;
+
+                //validate the output
+                if (output.Contains("failed"))
+                {
+                    msg += $"Failed to commit files. See control output for information";
+                    Console.WriteLine(output);
+                }
+                else if (output.Contains("nothing to commit"))
+                {
+                    msg += $"Nothing to commit.";
+                }
+                else
+                {
+                    //try to grab the commit
+                    var regex = new Regex("(\\[master .*])");
+                    var match = regex.Match(output);
+                    var commit = "";
+                    if (match.Success)
+                    {
+                        commit = match.Value.Replace("[master ", "").Replace("]", "");
+                    }
+                    msg += $"Files committed successfully. {(String.IsNullOrEmpty(commit) ? "" : $"[{commit}](https://github.com/GreyWuffGames/Werewolf/commit/{commit})")}";
+                }
+            }
+            catch (Exception e)
+            {
+                msg += e.Message;
+            }
+
+            Send(msg, u.Message.Chat.Id);
+        }
 
     }
 
