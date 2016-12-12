@@ -2254,7 +2254,8 @@ namespace Werewolf_Node
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
-                        if (ga?.Choice == target.Id)
+                        if (ga?.Choice == target.Id && 
+                            !(target.PlayerRole == IRole.Harlot && (target.Choice == 0 || target.Choice == -1))) //doesn't apply to harlot not home
                         {
                             foreach (var wolf in voteWolves)
                                 Send(GetLocaleString("GuardBlockedWolf", target.GetName()), wolf.Id);
