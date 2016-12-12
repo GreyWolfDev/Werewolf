@@ -1185,6 +1185,34 @@ namespace Werewolf_Control
 
         }
 
+        [Attributes.Command(Trigger = "movelang", DevOnly = true)]
+        public static void MoveLang(Update u, string[] args)
+        {
+            //TODO:
+            //1. Ask for the langfile to move
+            //2. Ask for new filename and langnode
+            //3. Create the new langfile automagically
+
+            var command = args.Skip(1).Aggregate("", (a, b) => a + " " + b);
+            var oldfilename = command.Substring(0, command.IndexOf(".xml"));
+            var newfilename = command.Substring(command.IndexOf(".xml") + 5, command.Length - 4);
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+            var oldlang = langs.FirstOrDefault(x => x.FileName == oldfilename);
+            var newlang = langs.FirstOrDefault(x => x.FileName == newfilename);
+            if (oldlang == null || newlang == null)
+            {
+                Send("No langfile found. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id);
+                return;
+            }
+            
+            string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n\n";
+            msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n\n";
+            msg += "*Are you sure?*";
+
+            var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
+            Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
+        }
+
 
     }
 

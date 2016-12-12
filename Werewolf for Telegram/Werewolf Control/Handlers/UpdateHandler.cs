@@ -645,6 +645,55 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
                         }
                     }
+                    if (args[0] == "movelang")
+                    {
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            Bot.ReplyToCallback(query, "Processing...");
+                            if (args[1] == "no")
+                            {
+                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                return;
+                            }
+
+                            var oldfilename = args[2];
+                            var newfilename = args[3];
+                            int grpcount = 0, plcount = 0;
+                            
+                            var groups = (from g in DB.Groups where g.Language == oldfilename select g).ToList();
+                            var players = (from pl in DB.Players where pl.Language == oldfilename select pl).ToList();
+
+                            foreach (var g in groups)
+                            {
+                                g.Language = newfilename;
+                                grpcount++;
+                            }
+                            foreach (var pl in players)
+                            {
+                                pl.Language = newfilename;
+                                plcount++;
+                            }
+                            DB.SaveChanges();
+                            var msg = $"Groups: {grpcount}\nPlayers: {plcount}\n*Total rows changed: {grpcount + plcount}*";
+                            Bot.Edit(query, msg);
+
+                            try
+                            {
+                                System.IO.File.Delete(Path.Combine(Bot.LanguageDirectory, oldfilename + ".xml"));
+                                msg += $"\n\nSuccessfully deleted {oldfilename}.xml";
+                            }
+                            catch (Exception e)
+                            {
+                                msg += $"\n\n*Error: *";
+                                msg += e.Message;
+                            }
+                            Bot.Edit(query, msg);
+                        }
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
+                    }
                     InlineKeyboardMarkup menu;
                     Group grp;
                     Player p = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
