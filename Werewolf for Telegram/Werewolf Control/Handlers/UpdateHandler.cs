@@ -15,6 +15,8 @@ using Database;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineQueryResults;
+using Telegram.Bot.Types.InputMessageContents;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
@@ -343,7 +345,7 @@ namespace Werewolf_Control.Handler
                                                 : "اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         return;
                                     }
-                                    if (command.DevOnly && update.Message.From.Id != UpdateHelper.Para)
+                                    if (command.DevOnly & !UpdateHelper.Devs.Contains(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("NotPara", GetLanguage(id)), id);
                                         return;
@@ -356,7 +358,7 @@ namespace Werewolf_Control.Handler
                                             return;
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) && update.Message.From.Id != UpdateHelper.Para & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) & !UpdateHelper.Devs.Contains(update.Message.From.Id) & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
                                         return;
@@ -384,7 +386,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.VoiceMessage:
                             break;
                         case MessageType.DocumentMessage:
-                            if (update.Message.From.Id == UpdateHelper.Para && SendGifIds)
+                            if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                             {
                                 var doc = update.Message.Document;
                                 Send(doc.FileId, update.Message.Chat.Id);
@@ -483,7 +485,7 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        
+
 
 
         /// <summary>
@@ -532,7 +534,7 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "update")
                     {
                         bool dontUpdate = args[1] == "no";
-                        if (query.From.Id == UpdateHelper.Para)
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
                         {
                             if (dontUpdate)
                             {
@@ -541,6 +543,102 @@ namespace Werewolf_Control.Handler
                             }
                             //start the update process
                             Updater.DoUpdate(query);
+                        }
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
+                        return;
+                    }
+                    if (args[0] == "ohai")
+                    {
+                        bool dontUpdate = args[1] == "no";
+                        Bot.ReplyToCallback(query, "Processing...");
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            if (dontUpdate)
+                            {
+                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            //update ohaider achievement
+                            var userid = int.Parse(args[2]);
+
+
+                            try
+                            {
+                                var para = DB.Players.FirstOrDefault(x => x.Id == userid);
+
+                                //get all the players Para has played with
+                                var players = (from g in DB.Games
+                                               join gp in DB.GamePlayers on g.Id equals gp.GameId
+                                               join gp2 in DB.GamePlayers on g.Id equals gp2.GameId
+                                               join pl in DB.Players on gp2.PlayerId equals pl.Id
+                                               where gp.PlayerId == para.Id
+                                               select pl).Distinct();
+
+                                //figure out which players don't have the achievement
+
+                                //update the message
+                                var ohaimsg = $"Found {players.Count()} players that have earned OHAIDER.";
+                                Bot.Edit(query, ohaimsg);
+                                var count = 0;
+                                foreach (var player in players)
+                                {
+                                    //add the achievement
+                                    if (player.Achievements == null)
+                                        player.Achievements = 0;
+                                    var ach = (Achievements)player.Achievements;
+                                    if (ach.HasFlag(Achievements.OHAIDER)) continue;
+                                    count++;
+                                    var a = Achievements.OHAIDER;
+                                    player.Achievements = (long)(ach | a);
+                                    //log these ids, just in case....
+                                    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ohaider.log"), true))
+                                    {
+                                        sw.WriteLine(player.Id);
+                                    }
+                                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.TelegramId);
+                                    Thread.Sleep(200);
+                                }
+                                DB.SaveChanges();
+                                ohaimsg += $"\nAchievement added to {count} players\nFinished";
+                                Bot.Edit(query, ohaimsg);
+                            }
+                            catch (AggregateException e)
+                            {
+                                Send(e.InnerExceptions.First().Message, query.From.Id);
+                            }
+                            catch (Exception e)
+                            {
+                                while (e.InnerException != null)
+                                    e = e.InnerException;
+                                Send(e.Message, query.From.Id);
+                            }
+
+                        }
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
+                        return;
+                    }
+                    if (args[0] == "restore")
+                    {
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            Bot.ReplyToCallback(query, "Processing...");
+                            if (args[1] == "no")
+                            {
+                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            var oldid = int.Parse(args[1]);
+                            var newid = int.Parse(args[2]);
+                            var result = DB.RestoreAccount(oldid, newid);
+                            var oldname = DB.Players.FirstOrDefault(x => x.TelegramId == oldid)?.Name;
+                            var newname = DB.Players.FirstOrDefault(x => x.TelegramId == newid)?.Name;
+                            Bot.Edit(query, $"Restored stats from {oldname} to {newname}");
                         }
                         else
                         {
@@ -581,7 +679,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     if (!nonCommandsList.Contains(command.ToLower()))
-                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) && query.From.Id != UpdateHelper.Para && !UpdateHelper.IsGlobalAdmin(query.From.Id))
+                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) & !UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, GetLocaleString("GroupAdminOnly", language), false);
                             return;
@@ -595,7 +693,7 @@ namespace Werewolf_Control.Handler
                             if (args[3] == "null")
                             {
                                 //get status
-                                menu = new InlineKeyboardMarkup(new[] { "Normal", "Overloaded", "Recovering", "API Bug", "Offline", "Maintenance" }.Select(x => new [] { new InlineKeyboardButton(x, $"status|{groupid}|{choice}|{x}")}).ToArray());
+                                menu = new InlineKeyboardMarkup(new[] { "Normal", "Overloaded", "Recovering", "API Bug", "Offline", "Maintenance" }.Select(x => new[] { new InlineKeyboardButton(x, $"status|{groupid}|{choice}|{x}") }).ToArray());
                                 Bot.ReplyToCallback(query, "Set status to?", replyMarkup: menu);
                             }
                             else
@@ -935,19 +1033,19 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "day":
-                            buttons.Add(new InlineKeyboardButton("30", $"setday|{groupid}|30"));
-                            buttons.Add(new InlineKeyboardButton("60", $"setday|{groupid}|60"));
-                            buttons.Add(new InlineKeyboardButton("90", $"setday|{groupid}|90"));
-                            buttons.Add(new InlineKeyboardButton("120", $"setday|{groupid}|120"));
+                            buttons.Add(new InlineKeyboardButton("90", $"setday|{groupid}|30"));
+                            buttons.Add(new InlineKeyboardButton("120", $"setday|{groupid}|60"));
+                            buttons.Add(new InlineKeyboardButton("150", $"setday|{groupid}|90"));
+                            buttons.Add(new InlineKeyboardButton("180", $"setday|{groupid}|120"));
                             buttons.Add(new InlineKeyboardButton(Cancel, $"setday|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("SetDayTimeQ", language, Settings.TimeDay, grp.DayTime ?? Settings.TimeDay),
+                                GetLocaleString("SetDayTimeQ", language, Settings.TimeDay + 60, grp.DayTime ?? Settings.TimeDay + 60),
                                 replyMarkup: menu);
                             break;
                         case "setday":
                             grp.DayTime = int.Parse(choice);
-                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("SetDayTimeA", language, choice));
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("SetDayTimeA", language, choice + 60));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
@@ -1060,7 +1158,7 @@ namespace Werewolf_Control.Handler
             return Bot.Send(message, id, clearKeyboard, customMenu, parseMode);
         }
 
-        
+
 
 
         internal static string GetLocaleString(string key, string language, params object[] args)
@@ -1137,6 +1235,38 @@ namespace Werewolf_Control.Handler
 
             var menu = new InlineKeyboardMarkup(twoMenu.ToArray());
             return menu;
+        }
+
+
+        
+        public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)
+        {
+            
+            var commands = new InlineCommand[]
+            {
+                new StatsInlineCommand(e.InlineQuery.From),
+            };
+            var q = e.InlineQuery;
+            List<InlineCommand> choices;
+            if (String.IsNullOrWhiteSpace(q.Query))
+            {
+                //show all commands available
+                choices = commands.ToList();
+            }
+            else
+            {
+                //let's figure out what they wanted
+                var com = q.Query;
+                choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
+            }
+
+            Bot.Api.AnswerInlineQuery(q.Id, choices.Select(c => new InlineQueryResultArticle()
+            {
+                Description = c.Description, Id = c.Command, Title = c.Command, InputMessageContent = new InputTextMessageContent
+                {
+                    DisableWebPagePreview = true, MessageText = c.Content, ParseMode = ParseMode.Html
+                }
+            }).Cast<InlineQueryResult>().ToArray(), 0, true);
         }
     }
 }

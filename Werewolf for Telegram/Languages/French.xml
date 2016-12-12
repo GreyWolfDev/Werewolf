@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- Version 1.01 may the 15th -->
+<!-- Version 1.02 December 06th -->
 <!-- Translator 1 : Pierre de Brosses @CloneMMDDCVII ; Translator 2 : Kapryss [ENL BE] Brussels ♥️ @KapryssBoobzCulee-->
 <strings>
   <language name="Français" base="Français" variant=""/>
@@ -144,7 +144,7 @@
     <value>Vous buvez... Pour oublier que vous avez honte.... Que vous avez honte de boire. Vous êtes l'alcoolique du village, et ce n'est un secret pour personne.</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>Vos êtes un ange guardien, envoyé des cieux pour rétablir la lumière et protéger les âmes pures. Chaque nuit, vous pouvez choisir une personne à protéger, un être pur. Cepandant, si vous choisissez de protéger un Loup, vous aurez une chance sur deux d'en mourir.</value>
+    <value>Vous êtes un ange guardien, envoyé des cieux pour rétablir la lumière et protéger les âmes pures. Chaque nuit, vous pouvez choisir une personne à protéger, un être pur. Cependant, si vous choisissez de protéger un Loup, vous aurez une chance sur deux d'en mourir.</value>
   </string>
   <string key="RoleInfoGunner">
     <value>Vous êtes le chasseur, vous avez deux cartouches... Durant la journée, vous pouvez choisir de tirer sur une personne de votre choix. Tous les villageois vous entendront, et sauront donc que vous n'êtes pas un loup.</value>
@@ -592,7 +592,7 @@
     <value>Vous vous faufilez dans la maison de {0} et commencez à vous amuser un peu. Tout est parfait, jusqu'à ce qu'il sorte un grand couteau. Un nouveau jeu sexuel ? Il semblerait plutôt qu'il veuille vous assassiner. Vous mourrez dans d'atroces souffrances... dommage, vos charmes seront regrettés dans le village.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>{0} voulait s'amuser un peu cette nuit... mais est tombée sur un tueur psychopathe au lieu de cela! {0} est morte... - {0}</value>
+    <value>{0} voulait s'amuser un peu cette nuit... mais est tombée sur un tueur psychopathe au lieu de cela! {0} est morte...</value>
   </string>
   <string key="DGToMason">
     <value>Le Döppelganger {0} est maintenant un franc-maçon comme vous !</value>
@@ -1080,5 +1080,107 @@
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
     <value>{0} est mort, et vous vous transformez en Louveteau. Vos alliés, s'il en est, sont: {1}</value>
+  </string>
+  
+  <!-- Keep this for now until bots update-->
+  <string key="VillageTeam">
+    <value>Equipe des villageois</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Equipe neutre</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Equipe Céréales Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Equipe Cultiste</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Equipe tanneur</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Equipe des villageois</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equipe neutre</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equipe des loups</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equipe Céréales Killer</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equipe Cultiste</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equipe tanneur</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Les cultistes envoient {0} convertir {1}, mais au lieu de ça ils voient la tête de {0} voler par la fenêtre... Ils n'en croient pas leurs yeux... {0} est mort...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} se faufile dans la maison de {1} afin d'y passer une nuit chaude et passionnée... Mais elle l'y trouve découpant les doigts de pied d'un cadavre avec une précision chirurgicale. Le céréales killer décide alors de combler {0}, avant de l'ajouter à sa collection de victimes.</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Les villageois se réveillent et découvrent {0}, tête manquante, tenant dans sa main un tarot de mauvaise facture et un manuel de voyance. L'apprenti voyant est mort.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Il semblerait que {0}, le forgeron, soit extrêmement malchanceux. Cinq couteaux de sa propre armurerie sont plantés dans son corps, le punaisant contre le mur... Le céréales killer semble avoir agrandi sa collection d'organes...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} est retrouvé poignardé avec un chandelier.. Le céréales killer semble n'avoir que faire de la religion ! {0} était un Cultiste.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Le jour se lève et les villageois découvrent le coeur brisé {0} alias Cupidon, dépecé par un psycopathe collectionneur de doigts de pieds...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Les villageois se rendent chez {0} pour l'apéro, mais ne retrouvent chez lui qu'un grand couteau et un foie complètement cyrrhosé. Il semblerait que des années d'alcoolisme aient sauvé son foie du céréales killer. Le reste en revanche...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} aurait en théorie pu vaincre le céréales killer, mais il semblerait qu'il en soit advenu autrement. {0} est mort.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value> {0} semble s'être réellement assoupi cette nuit ! Un coup de feu a été entendu, et on l'a retrouvé avec un trou dans la tête, et un doigt de pied manquant. Le céréales killer a encore frappé....</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Au meurtre ! {0} le maire est retrouvé poignardé, gisant sur son bureau sur des documents officiels. Il s'agit clairement d'un coup du céréales killer.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Les cloches sonnent ce matin, et les gardes enquêtent sur la disparition du prince {0}. Aucun indice n'est retrouvé, on soupçonne un coup du sérial killer...</value>
+    <value>Les gardes royaux se sont permit une petite sieste... Les restes princiers de {0} sont retrouvés dispersés en plusieurs endroits du palais. Le céréales killer s'est bien amusé...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Les villageois se réveillent et retrouvent le cadavre de {0}, criblé de coups de couteau. Bizarrement, il lui manque un doigt de pied... {0} était le voyant.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Une fanfare de cris de corbeaux retentit sur le village... Les loups ont fait une erreur, et tué une alliée. La sorcière {0} est morte.</value>
+    <value>Des cris retentissent dans la nuit. "Je suis votre alliée bande de stupides sacs à puces !". Au matin les villageois découvrent le corps sans vie de {0}, la sorcière, à moitié dévoré.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Miam miam miam ! Les loups se sont régalés de l'enfant sauvage {0}, dont il ne reste qu'un tout petit squelette. Les villageois se demandent tout de même si les loups ont eu un peu de scrupules...</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Les villageois se réveillent et retrouvent le corps de {0}, l'inquisiteur, démembré et répandu sur la grand place. Morale de l'histoire : ne pas déranger le céréales killer !</value>
+    <value>Le corps de {0}, l'inquisiteur, est retrouvé au milieu du village, découpé en morceaux. Ce n'était pas une bonne idée d'aller voir le céréales killer... Au moins, on sait qu'il n'est pas cultiste !</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Les loups ont fait une bonne action cette nuit, en dévorant le cultiste {0}. Il a été converti en délicieux repas... cuisson ? Saignant !</value>
+    <value>Les cultistes ont fait face à l'innatendu cette nuit. Leur plus jeune membre a rendu visite à un loup, qui l'a trouvé fort apétissant. Malheureusement pour {0}, les loups ne sont pas très interessés pour rejoindre la secte à la mode.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Les cultistes souhaitaient agrandir leur confrérie, mais ils ont échoué. {0} est retrouvé mort, criblé de coups de couteaux. Mmmhh.... Le céréales killer ne semble pas intéressé par la religion.</value>
+    <value>Cette nuit, les cultistes ont trouvé encore plus fou qu'eux ! Leur membre le plus jeune, parti convertir le céréales killer, n'est jamais revenu. Repose en paix, {0}.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Cette nuit, {0} était sensé sauver le village des tueurs, mais il a mal choisi son protégé. Il est retrouvé mort avec un postit "je sais me protéger tout seul, merci"...</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} a voulu protéger un loup la nuit dernière. {0} est retrouvé mort empalé sur la croix de l'église... il a visiblement servi d'en-cas à une bestiole poilue...</value>
   </string>
 </strings>

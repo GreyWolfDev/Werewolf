@@ -51,7 +51,7 @@ namespace Werewolf_Control
                     return;
                 }
                 //check nodes to see if player is in a game
-
+                var node = GetPlayerNode(update.Message.From.Id);
                 var game = GetGroupNodeAndGame(update.Message.Chat.Id);
                 if (game == null)
                 {
@@ -63,7 +63,29 @@ namespace Werewolf_Control
                     Thread.Sleep(50);
                     game = GetGroupNodeAndGame(update.Message.Chat.Id);
                 }
-                game?.AddPlayer(update);
+
+                if (game != null || node != null)
+                {
+                    //try grabbing the game again...
+                    if (game == null)
+                        game = node.Games.FirstOrDefault(x => x.Users.Contains(update.Message.From.Id));
+                    if (game?.Users.Contains(update.Message.From.Id) ?? false)
+                    {
+                        if (game.GroupId != update.Message.Chat.Id)
+                        {
+                            //player is already in a game, and alive
+                            var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
+                            Send(GetLocaleString("AlreadyInGame", grp?.Language ?? "English", game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                            return;
+                        }
+                    }
+
+                    //player is not in game, they need to join, if they can
+                    game?.AddPlayer(update);
+                    if (game == null)
+                        Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
+                    return;
+                }
                 if (game == null)
                 {
                     var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);

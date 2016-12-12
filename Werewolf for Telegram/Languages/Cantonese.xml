@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 15/11/2016 by @jeffffc
+    LAST UPDATE 08/12/2016 by @jeffffc
+    08/12:  Minor Fixes about 07/12 (CultConvertSerialKiller + CupidChosen)
+    05/12:  Added bunch of strings dated 05/12 and "SetDayTimeQ"
+    29/11:  Added "HarlotFuckedKilledPublic"
+    21/11:  Added "CultConvertWolf" string
     15/11:  TeamEnd Strings fixes
     11/11:  Updated "HarlotFuckKillerPublic"
     09/11:  Added 6 team strings
@@ -547,6 +551,7 @@
   </string>
   <string key="CupidChosen">
     <value>你已跌入愛河。你另一半係 【{0}】，記住李安納度迪卡比奧曾經講過，You Jump, I Jump。你另一半死左，你都會死。</value>
+    <value>邱比特嘅箭射中左你! 你愛上左 【{0}】! 你地兩個一係一齊生存到最後，一係就同歸於盡。</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>條村班友仔選中左你，你死前有得射死一個人去拉佢陪葬。</value>
@@ -573,7 +578,7 @@
     <value>子彈穿過 【{0}】 嘅身體， 【{0}】 拎出佢對手槍，對住 【{1}】 開左一槍，子彈係 【{1}】 兩條眼眉中穿過。\n【{2}】</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>【{0}】 偷偷潛入左 【{1}】屋企，見到有人一早已經係度等緊佢，有個癲佬拎住一把鋒利嘅匕首一野吉左落去佢條大動脈上面， 【{1}】 再用匕首係 【{0}】 身上面寫上「我愛綠毛蟲」五個字。\n【{0}】 失血過多而死 D:</value>
+    <value>邪教會員派出 【{0}】 去 【{1}】 屋企傳教，點知 【{0}】條屍係窗口飛左落街，身上面d刀痕多到10隻手指都數唔晒! 條友係唔係有病?\n【{0}】 已死....</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>班狼人琴晚去左獵人屋企，英勇嘅獵人成功搵其中一條狼陪葬。\n【{0}】 已死 (狼人)</value>
@@ -592,9 +597,6 @@
   </string>
   <string key="CultConvertHunter">
     <value>邪教會員派出 【{0}】 去 【{1}】 屋企傳教，行先真係死先，屋企面無啦啦有槍聲， 【{0}】條屍係窗口飛左落街。\n【{0}】 已死....</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-    <value>邪教會員派出 【{0}】 去 【{1}】 屋企傳教，點知 【{0}】條屍係窗口飛左落街，身上面d刀痕多到10隻手指都數唔晒! 條友係唔係有病?\n【{0}】 已死....</value>
   </string>
   <string key="GuardKiller">
     <value>你諗住去保護連環殺手，但係他就係你身上面吉左89刀...你死了...</value>
@@ -652,9 +654,6 @@
   </string>
   <string key="Doppelgänger">
     <value>分身 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <value>邱比特嘅箭射中左你! 你愛上左 【{0}】! 你地兩個一係一齊生存到最後，一係就同歸於盡。</value>
   </string>
   <string key="NewWCRoleModel">
     <value>你係新野仔! 你隻 '替死鬼'係 【{0}】</value>
@@ -911,7 +910,7 @@
     <value>遊戲結束時，將會{0}玩家身份</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>請設定日頭嘅基本時間。實際時間會根據玩家數量調整，每次調整至少增加六十秒。預設時間︰{0} 秒\n當前設定︰{1} 秒</value>
+    <value>請設定日頭嘅基本時間。實際時間會根據玩家數量調整。預設時間︰{0} 秒\n當前設定︰{1} 秒</value>
   </string>
   <string key="SetDayTimeA">
     <value>基本日頭時間設定為 {0} 秒</value>
@@ -1125,5 +1124,64 @@
   </string>
   <string key="TannerTeamEnd">
     <value>皮匠陣營</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>邪教會員派出【{0}】 去【{1}】屋企傳教，點知下一秒就見到【{0}】個頭俾人咬甩左飛左出黎！\n【{0}】 已死....</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <value>【{0}】 去左 【{1}】 間屋諗住強姦佢。點知佢見到個痴線佬劏開左【{1}】個身玩緊佢啲內臟! 身為連環殺手當然唔會放過 【{0}】，【{0}】個心臟就咁就俾人割左黎做收藏。</value>
+  </string>
+
+  <!--New Death Strings 05 Nov-->
+  <string key="ApprenticeSeerEaten">
+    <value>日出喇! 【{0}】尋晚用佢既二手顯靈板練習緊預知未來既時候俾狼咬死左。\n【學徒先知】 已死。</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>村中既鐵匠【{0}】今晚真係行衰運，一天光成班村民就發現佢既頭同四肢分別俾五把佢自己鑄造嘅銀劍插左佢張工作枱上面。唔通而家連環殺手除左收集人體器官之外仲順便集佢既殺人工具??</value>
+  </string>
+  <string key="CultistKilled">
+    <value>一朝早村民就係邪教教會張神枱上面發現【{0}】俾人用個燭台插死左。邪教會員【{0}】死左。</value>
+  </string>
+  <string key="CupidKilled">
+    <value>天光喇...村民好傷心，佢地發現【{0}】條屍攤左係廣場中間，但係佢個心臟唔知去左邊...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>一天光成班村民正打算去讚下酒鬼【{0}】尋晚支Lafite好好飲，點知係佢屋企發現佢條屍，側邊係佢既兩粒腎同一把斷左既刀仔。酒鬼果然唔係浪得虛名，佢飲酒飲到對腎硬到連連殺都搞佢地唔掂...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>平時守護天使【{0}】係負責守護呢條村唔會俾連環殺手亂殺人既...但諷刺既係...佢守護唔到自己既性命...我地為守天【{0}】默哀一分鐘...</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>似乎尋晚槍手【{0}】掛住恰眼訓，唔小心俾連環殺手搶左佢把槍黎玩... 一朝早村民就發現佢俾人爆頭同插左幾刀...</value>
+  </string>
+  <string key="MayorKilled">
+    <value>我地敬愛既村長【{0}】尋晚本身係村公所通宵處理村務，點知一大朝村民就發現佢條屍俾連殺用刀仔插住係佢張書枱...村長將佢困左係青山咁多年，似乎連殺終於黎報復...</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>一朝早成班皇室士兵就列隊係村入面調查王子【{0}】失蹤既原因，不過睇怕王子都係凶多吉少，俾逍遙法外既連環殺手殺左啦...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>今朝班村民起身盲就見到【{0}】嘅屍體由頭到腳趾被切開，屍身好完整，但無左個腦...就好似恥笑緊成條村都冇腦咁...先知【{0}】死左...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>尋晚半夜三更大家都聽到有人大聲嗌:「我係你地同伴黎架喎!!」今朝大家就發現【{0}】既屍體同埋佢既水晶球攤左係村既中間...似乎失去理智既狼群連自己既隊友都食埋...巫師【{0}】死左。</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>陰公囉... 村民一大朝就發現瘦弱既野仔【{0}】俾狼咬到得番棚骨...究竟班狼係咪真係咁冇良心連細路都照食落肚呢...</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>尋晚邪教殺手【{0}】明明諗住去滅教，點知原來佢去左搵連環殺手。村民一起身就見到【{0}】條屍攤左係村口...大家記住唔好再嘗試去搵連殺喇...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>正當難得今晚狼群想留係屋企抖下，偏偏邪教就揀左去其中一隻狼間屋度到傳教! 既然有人送上門狼就當然唔客氣啦。邪教新丁【{0}】就咁就俾狼咬死左啦。</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>邪教尋晚興致勃勃咁去到一間屋度傳教，點知原來去錯左連環殺手屋企。村民一起身就發現邪教新丁【{0}】條屍俾人斬碎撒左係村口。</value>
+    </string>
+  <string key="GAGuardedKiller">
+    <value>守護天使【{0}】尋晚繼續盡忠職守咁守護呢條村，點知佢尋晚好守唔守竟然去左守護連環殺手! 村民一大朝就發現左佢條屍，隔黎仲有張紙，上面有一行用血寫既字:「其實...我比你更識保護自己...」</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <value>守護天使【{0}】尋晚繼續盡忠職守咁守護呢條村，點知佢尋晚好守唔守竟然去左守護其中一隻狼! 狼群梗係唔會放過免費送上門既食物啦!</value>
   </string>
 </strings>

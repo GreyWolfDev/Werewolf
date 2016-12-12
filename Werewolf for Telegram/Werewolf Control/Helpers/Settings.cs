@@ -123,6 +123,8 @@ namespace Werewolf_Control.Helpers
             DetectiveConversionChance = 70,
             CursedConversionChance = 60,
             HarlotConversionChance = 70,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
             HarlotDiscoverCultChance = 50,
             ChanceDetectiveCaught = 40,
 
@@ -151,6 +153,8 @@ namespace Werewolf_Control.Helpers
             DetectiveConversionChance = 70,
             CursedConversionChance = 60,
             HarlotConversionChance = 70,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
             HarlotDiscoverCultChance = 50,
             ChanceDetectiveCaught = 40,
 #endif

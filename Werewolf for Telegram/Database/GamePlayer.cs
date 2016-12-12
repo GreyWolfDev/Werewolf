@@ -22,5 +22,6 @@ namespace Database
         public string Role { get; set; }
     
         public virtual Player Player { get; set; }
+        public virtual Game Game { get; set; }
     }
 }

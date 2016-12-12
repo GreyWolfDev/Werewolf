@@ -39,7 +39,7 @@ namespace Werewolf_Control
                  -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730
             ,-1001059273036, -1001090101991,  -1001066860506, -1001060843091, -1001080774621, -1001036952250, -1001082421542
             };
-            if (!auth.Contains(update.Message.Chat.Id) && update.Message.From.Id != UpdateHelper.Para)
+            if (!auth.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
                 Bot.Api.LeaveChat(update.Message.Chat.Id);
                 return;
@@ -79,7 +79,7 @@ namespace Werewolf_Control
                     {
                         //player is already in a game, and alive
                         Send(
-                            GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                            GetLocaleString("AlreadyInGame", grp?.Language ?? "English",
                                 game.ChatGroup.ToBold()), update.Message.Chat.Id);
                         return;
                     }
@@ -303,6 +303,42 @@ namespace Werewolf_Control
             }
             //yay unbanned
             
+        }
+
+        public static int ComputeLevenshtein(string s, string t)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                if (string.IsNullOrEmpty(t))
+                    return 0;
+                return t.Length;
+            }
+
+            if (string.IsNullOrEmpty(t))
+            {
+                return s.Length;
+            }
+
+            int n = s.Length;
+            int m = t.Length;
+            int[,] d = new int[n + 1, m + 1];
+
+            // initialize the top and right of the table to 0, 1, 2, ...
+            for (int i = 0; i <= n; d[i, 0] = i++) ;
+            for (int j = 1; j <= m; d[0, j] = j++) ;
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= m; j++)
+                {
+                    int cost = (t[j - 1] == s[i - 1]) ? 0 : 1;
+                    int min1 = d[i - 1, j] + 1;
+                    int min2 = d[i, j - 1] + 1;
+                    int min3 = d[i - 1, j - 1] + cost;
+                    d[i, j] = Math.Min(Math.Min(min1, min2), min3);
+                }
+            }
+            return d[n, m];
         }
     }
 }

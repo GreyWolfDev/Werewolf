@@ -20,7 +20,6 @@ namespace Database
         public WWContext()
             : base(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf").GetValue("BotConnectionString").ToString())
         {
-            //test
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -167,6 +166,19 @@ namespace Database
                 new ObjectParameter("userid", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetIdleKills24Hours", useridParameter);
+        }
+    
+        public virtual int RestoreAccount(Nullable<int> oldTGId, Nullable<int> newTGId)
+        {
+            var oldTGIdParameter = oldTGId.HasValue ?
+                new ObjectParameter("oldTGId", oldTGId) :
+                new ObjectParameter("oldTGId", typeof(int));
+    
+            var newTGIdParameter = newTGId.HasValue ?
+                new ObjectParameter("newTGId", newTGId) :
+                new ObjectParameter("newTGId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RestoreAccount", oldTGIdParameter, newTGIdParameter);
         }
     }
 }

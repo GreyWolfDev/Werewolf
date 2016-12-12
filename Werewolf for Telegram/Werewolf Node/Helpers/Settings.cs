@@ -106,6 +106,8 @@ namespace Werewolf_Node
             HunterKillWolfChanceBase = 30,
             SerialKillerConversionChance = 20,
             AlphaWolfConversionChance = 20,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
 #else
              PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
@@ -142,6 +144,8 @@ namespace Werewolf_Node
             HunterKillWolfChanceBase = 30,
             SerialKillerConversionChance = 20,
             AlphaWolfConversionChance = 100,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
 #endif
 
             GameJoinTime = 180,
