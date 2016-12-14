@@ -173,6 +173,9 @@
     <Compile Include="GroupSurvivor_Result1.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ImageLanguage.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Internal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -257,6 +260,7 @@
       <DependentUpon>WerewolfModel.edmx</DependentUpon>
       <LastGenOutput>WerewolfModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="WerewolfModel.edmx.sql" />
     <Content Include="WerewolfModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WerewolfModel.edmx</DependentUpon>
