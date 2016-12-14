@@ -113,6 +113,36 @@ namespace Werewolf_Control
             }
         }
 
+        [Command(Trigger = "uploadgif", GlobalAdminOnly = true)]
+        public static void UploadGif(Update update, string[] args)
+        {
+            try
+            {
+                var id = update.Message.Chat.Id;
+                List<InlineKeyboardButton> buttons = Enum.GetNames(typeof(ImageKeys)).OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"gif|{update.Message.From.Id}|{x}")).ToList();
+
+                var baseMenu = new List<InlineKeyboardButton[]>();
+                for (var i = 0; i < buttons.Count; i++)
+                {
+                    if (buttons.Count - 1 == i)
+                    {
+                        baseMenu.Add(new[] { buttons[i] });
+                    }
+                    else
+                        baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                    i++;
+                }
+
+                var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
+                Bot.Api.SendTextMessage(update.Message.From.Id, "Qual GIF gostaria de configurar?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
+                replyMarkup: menu);
+            }
+            catch (Exception e)
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+            }
+        }
+
         [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
         public static void ValidateLangs(Update update, string[] args)
         {

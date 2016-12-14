@@ -35,6 +35,7 @@ namespace Werewolf_Control.Handler
         internal static List<GlobalBan> BanList = new List<GlobalBan>();
 
         internal static bool SendGifIds = false;
+        internal static Dictionary<int, ImageLanguage> ActualUploadGif = new Dictionary<int, ImageLanguage>();
         public static void UpdateReceived(object sender, UpdateEventArgs e)
         {
             new Task(() => { HandleUpdate(e.Update); }).Start();
@@ -389,7 +390,23 @@ namespace Werewolf_Control.Handler
                             if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                             {
                                 var doc = update.Message.Document;
-                                Send(doc.FileId, update.Message.Chat.Id);
+                                var image = ActualUploadGif?[update.Message.From.Id];
+                                ActualUploadGif[update.Message.From.Id] = null;
+
+                                if (image==null)
+                                {
+                                    Send(doc.FileId, update.Message.Chat.Id);
+                                }
+                                else //Started to send gif using command uploadGif
+                                {
+                                    image.ImageId = doc.FileId;
+                                    using (var DB = new WWContext())
+                                    {
+                                        DB.ImageLanguages.Add(image);
+                                        DB.SaveChanges();
+                                    }
+                                }
+                                
                             }
                             break;
                         case MessageType.StickerMessage:
@@ -508,7 +525,7 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done", "gif" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
@@ -660,7 +677,7 @@ namespace Werewolf_Control.Handler
                     groupid = long.Parse(args[1]);
 
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status" && args[0] != "gif")
                         return;
                     if (grp == null)
                     {
@@ -952,6 +969,12 @@ namespace Werewolf_Control.Handler
                         //        GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                         //    DB.SaveChanges();
                         //    break;
+                        case "gif":
+                            var image = new ImageLanguage() { ImageKey = args[2], LanguageVariant = language };
+                            SendGifIds = true;
+                            ActualUploadGif[Int32.Parse(args[1])] = image;
+                            Bot.ReplyToCallback(query, "OK, agora me envie o GIF.");
+                            break;
                         case "flee":
                             buttons.Add(new InlineKeyboardButton(Yes, $"setflee|{groupid}|enable"));
                             buttons.Add(new InlineKeyboardButton(No, $"setflee|{groupid}|disable"));

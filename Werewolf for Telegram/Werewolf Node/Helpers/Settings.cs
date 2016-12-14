@@ -11,7 +11,7 @@ namespace Werewolf_Node
 
 #endif
 #if DEBUG
-        public static int Port = 9049;
+        public static int Port = 9050;
 #elif RELEASE
         public static int Port = 9050;
 #elif RELEASE2
@@ -32,7 +32,10 @@ namespace Werewolf_Node
         internal static List<string> TannerWin = new List<string> { "BQADBAADQwgAAuQaZAcjXuF_tkE3JwI", "BQADBAAD_gMAAtgaZAf2YeVX6mXnUQI" };
         internal static List<string> CultWins = new List<string> { "BQADBAADWAMAAosYZAcuRvZYBpQmXwI", "BQADBAADHwsAAgUYZAcUTEIahD8XSQI" };
         internal static List<string> SerialKillerWins = new List<string> { "BQADBAADdQMAAsEcZAd7skaRqoWKzQI", "BQADBAADmgMAArgcZAdPyqayfRT6bQI", "BQADBAADOAQAAqUXZAeeuV5vjRd6QAI", "BQADBAADKwMAAsQZZAfwd2_EAeeOTgI" };
-        internal static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeHmbRRzioXXQI", "BQADBAADYAMAAkMdZAfR4qo8c95FGgI" };
+        internal static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeHmbRRzioXXQI", "BQADBAADYAMAAkMdZAfR4qo8c95FGgI" 
+        internal static List<string> HunterKilledCultist = new List<string> { "BQADBAADNAMAAkcbZAfo06zarRzNXgI" };
+        internal static List<string> HunterKilledFinalShot = new List<string> { "BQADAQADuAADoS3DCeya0e_BqwABvgI" };
+        internal static List<string> RoleInfoDrunk = new List<string> { "BQADAQADwgADoS3DCblBCwQZU6nUAg", "BQADAQADvQADoS3DCQ2MVePhv534Ag" };
 #elif RELEASE
         public static List<string> VillagerDieImages = new List<string> { "BQADAQADxAADoS3DCdQQVQvY7D5AAg", "BQADAQADwwADoS3DCTpmy3l5AtSkAg" };
         public static List<string> WolfWin = new List<string> { "BQADAQADvwADE9RmCoit7eO5VNvFAg" };
@@ -60,6 +63,9 @@ namespace Werewolf_Node
         public static List<string> CultWins = new List<string> { "BQADBAADWAMAAosYZAfwfixffVnZywI", "BQADBAADHwsAAgUYZAfm4J7Dr5HpJQI" };
         public static List<string> SerialKillerWins = new List<string> { "BQADBAADdQMAAsEcZAf2I8Sj2kPcNQI", "BQADBAADmgMAArgcZAebNN10T84w9AI", "BQADBAADKwMAAsQZZAflRhJNO_knQAI", "BQADBAADOAQAAqUXZAcKgmVLwfIHvAI" };
         public static List<string> LoversWin = new List<string> { "BQADBAADYAMAAkMdZAf0_rs89KCyDAI", "BQADBAAD8hUAAhYYZAcV2T0l7f-lJQI" };
+        public static List<string> HunterKilledCultist = new List<string> { "BQADBAADNAMAAkcbZAfo06zarRzNXgI" };
+        public static List<string> HunterKilledFinalShot = new List<string> { "BQADAQADuAADoS3DCeya0e_BqwABvgI" };
+        public static List<string> RoleInfoDrunk = new List<string> { "BQADAQADwgADoS3DCblBCwQZU6nUAg", "BQADAQADvQADoS3DCQ2MVePhv534Ag" };
 #endif
 
         public static int

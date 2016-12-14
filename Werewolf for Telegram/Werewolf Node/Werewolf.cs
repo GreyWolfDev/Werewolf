@@ -83,7 +83,8 @@ namespace Werewolf_Node
                     AddPlayer(u);
                 }
                 SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
-                    GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame));
+                    GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame)
+                    /*GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame)*/ );
                 new Thread(GameTimer).Start();
 
             }
@@ -1335,7 +1336,7 @@ namespace Werewolf_Node
                 switch (role)
                 {
                     case IRole.Drunk:
-                        return GetRandomImage(Settings.RoleInfoDrunk);
+                        return GetImageLanguage(ImageKeys.RoleInfoDrunk);
                     default:
                         return null;
                 }
@@ -2350,7 +2351,7 @@ namespace Werewolf_Node
                                         target.TimeDied = DateTime.Now;
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
-                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                            GetImageLanguage(ImageKeys.VillagerDieImages), target.Id);
                                         foreach (var w in voteWolves)
                                         {
                                             Send(GetLocaleString("WolvesEatDrunk", target.GetName()), w.Id);
@@ -2386,7 +2387,7 @@ namespace Werewolf_Node
                                                 else
                                                 {
                                                     SendGif(GetLocaleString("WolvesEatYou"),
-                                                        GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                        GetImageLanguage(ImageKeys.VillagerDieImages), target.Id);
                                                     DBKill(voteWolves, target, KillMthd.Eat);
                                                     target.KilledByRole = IRole.Wolf;
                                                     target.IsDead = true;
@@ -2413,7 +2414,7 @@ namespace Werewolf_Node
                                         else
                                         {
                                             SendGif(GetLocaleString("WolvesEatYou"),
-                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                GetImageLanguage(ImageKeys.VillagerDieImages), target.Id);
                                             DBKill(voteWolves, target, KillMthd.Eat);
                                             target.KilledByRole = IRole.Wolf;
                                             target.IsDead = true;
@@ -2460,7 +2461,7 @@ namespace Werewolf_Node
                                             target.DiedLastNight = true;
                                             DBKill(voteWolves, target, KillMthd.Eat);
                                             SendGif(GetLocaleString("WolvesEatYou"),
-                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                GetImageLanguage(ImageKeys.VillagerDieImages), target.Id);
                                         }
                                     }
                                     break;
@@ -2477,7 +2478,7 @@ namespace Werewolf_Node
                                         target.DiedLastNight = true;
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
-                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                            GetImageLanguage(ImageKeys.VillagerDieImages), target.Id);
                                     }
                                     break;
                             }
@@ -3162,7 +3163,7 @@ namespace Werewolf_Node
                                     {
                                         case IRole.CultistHunter:
                                             msg = GetLocaleString("HunterKilledCultist", p.GetName());
-                                            gif = GetRandomImage(Settings.HunterKilledCultist);
+                                            gif = GetImageLanguage(ImageKeys.HunterKilledCultist);
                                             break;
                                         case IRole.Hunter:
                                             msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
@@ -3387,7 +3388,7 @@ namespace Werewolf_Node
                     case ITeam.NoOne:
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
-                        SendWithQueue(msg, GetRandomImage(Settings.NoWinner));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.NoWinner));
                         break;
 
                     case ITeam.Wolf:
@@ -3395,24 +3396,24 @@ namespace Werewolf_Node
                         {
                             msg += GetLocaleString("WolvesWin");
                             game.Winner = "Wolves";
-                            SendWithQueue(msg, GetRandomImage(Settings.WolvesWin));
+                            SendWithQueue(msg, GetImageLanguage(ImageKeys.WolvesWin));
                         }
                         else
                         {
                             msg += GetLocaleString("WolfWins");
                             game.Winner = "Wolf";
-                            SendWithQueue(msg, GetRandomImage(Settings.WolfWin));
+                            SendWithQueue(msg, GetImageLanguage(ImageKeys.WolfWin));
                         }
                         break;
                     case ITeam.Tanner:
                         msg += GetLocaleString("TannerWins");
                         game.Winner = "Tanner";
-                        SendWithQueue(msg, GetRandomImage(Settings.TannerWin));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.TannerWin));
                         break;
                     case ITeam.Cult:
                         msg += GetLocaleString("CultWins");
                         game.Winner = "Cult";
-                        SendWithQueue(msg, GetRandomImage(Settings.CultWins)); //, GetRandomImage(Program.VillagersWin));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.CultWins)); //, GetRandomImage(Program.VillagersWin));
                         break;
                     case ITeam.SerialKiller:
                         if (Players.Count(x => !x.IsDead) > 1)
@@ -3430,12 +3431,12 @@ namespace Werewolf_Node
                         }
                         msg += GetLocaleString("SerialKillerWins");
                         game.Winner = "SerialKiller";
-                        SendWithQueue(msg, GetRandomImage(Settings.SerialKillerWins));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.SerialKillerWins));
                         break;
                     case ITeam.Lovers:
                         msg += GetLocaleString("LoversWin");
                         game.Winner = "Lovers";
-                        SendWithQueue(msg, GetRandomImage(Settings.LoversWin));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.LoversWin));
                         break;
                     case ITeam.SKHunter:
                         var skhunter = Players.Where(x => !x.IsDead);
@@ -3458,12 +3459,12 @@ namespace Werewolf_Node
                                 SendWithQueue(GetLocaleString("SKHunterEnd", skh.GetName(), hunter.GetName()));
                             }
                         }
-                        SendWithQueue(msg, GetRandomImage(Settings.NoWinner));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.NoWinner));
                         break;
                     default: //village
                         msg += GetLocaleString("VillageWins");
                         game.Winner = "Village";
-                        SendWithQueue(msg, GetRandomImage(Settings.VillagersWin));
+                        SendWithQueue(msg, GetImageLanguage(ImageKeys.VillagersWin));
                         break;
                 }
                 db.SaveChanges();
@@ -3816,6 +3817,47 @@ namespace Werewolf_Node
             return input[Program.R.Next(0, input.Count)];
         }
 
+        /// <summary>
+        /// Gets the matching language string and formats it with parameters
+        /// </summary>
+        /// <param name="key">The Key of the string needed</param>
+        private string GetImageLanguage(ImageKeys key)
+        {
+            try
+            {
+                using (var db = new WWContext())
+                {
+                    var values = db.ImageLanguages.Where(x => x.LanguageVariant.Equals(Locale.Language) && x.ImageKey.Equals(key.ToString())).Select(x => x.ImageId).ToList();
+
+                    //.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
+                    //        Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
+                    if (values != null)
+                    {
+                        var choice = Program.R.Next(values.Count());
+                        return values.ElementAt(choice);
+                    }
+                    else
+                    {
+                        throw new Exception($"Error getting image {key}");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                try
+                {
+                    //try the default image to be sure
+                    var field = typeof(Settings).GetField(key.ToString());
+                    var list = field.GetValue(null) as List<string>;
+                    return GetRandomImage(list);
+                }
+                catch
+                {
+                    throw new Exception($"Error getting image {key} ",e);
+                }
+            }
+        }
+
         public void SkipVote()
         {
             foreach (var p in Players.Where(x => x.Choice == 0))
@@ -3864,7 +3906,7 @@ namespace Werewolf_Node
                     if (killed != null)
                     {
                         SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"),
-                            GetRandomImage(Settings.HunterKilledFinalShot));
+                            GetImageLanguage(ImageKeys.HunterKilledFinalShot));
                         killed.IsDead = true;
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
