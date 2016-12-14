@@ -830,7 +830,18 @@ namespace Werewolf_Control.Handler
                             break;
                         case "lang":
                             //load up each file and get the names
-                            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+                            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x =>
+                            {
+                                try
+                                {
+                                    return new LangFile(x);
+                                }
+                                catch(Exception e)
+                                {
+                                    Console.WriteLine("Fail to create LangFile: " + x + e);
+                                    return null;
+                                }
+                            }).ToList();
 
                             buttons.Clear();
                             buttons.AddRange(langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"setlang|{groupid}|{x}|null|base")));
@@ -1142,6 +1153,8 @@ namespace Werewolf_Control.Handler
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
+                    
                     Bot.ReplyToCallback(query, ex.Message, false, true);
                 }
             }

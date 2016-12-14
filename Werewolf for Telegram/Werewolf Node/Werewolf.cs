@@ -1272,10 +1272,11 @@ namespace Werewolf_Node
             {
                 if (p?.PlayerRole == null) continue;
                 var msg = GetRoleInfo(p.PlayerRole);
+                var gif = GetRoleGif(p.PlayerRole);
                 try
                 {
                     // ReSharper disable once UnusedVariable
-                    var result = Program.Send(msg, p.Id, true).Result;
+                    var result = gif==null ? Program.Send(msg, p.Id, true).Result : Program.Bot.SendDocument(p.Id, gif, msg, replyMarkup: new ReplyKeyboardHide { HideKeyboard = true }).Result;
                 }
                 catch (AggregateException) //is this really only because of the message not being able to be sent? and should it really smite the player? maybe send some message to Para...
                 {
@@ -1325,6 +1326,25 @@ namespace Werewolf_Node
                 Send("Error in get role info: \n" + e.Message + "\n" + e.StackTrace, Program.ErrorGroup);
             }
             return "";
+        }
+
+        private string GetRoleGif(IRole role)
+        {
+            try
+            {
+                switch (role)
+                {
+                    case IRole.Drunk:
+                        return GetRandomImage(Settings.RoleInfoDrunk);
+                    default:
+                        return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Send("Error in get gif: \n" + e.Message + "\n" + e.StackTrace, Program.ErrorGroup);
+            }
+            return null;
         }
 
         public void CheckRoleChanges()
@@ -3059,6 +3079,7 @@ namespace Werewolf_Node
                 foreach (var p in Players.Where(x => x.DiedLastNight))
                 {
                     var msg = "";
+                    string gif = null;
                     if (secret)
                     {
                         SendWithQueue(GetLocaleString("GenericDeathNoReveal", p.GetName()));
@@ -3141,6 +3162,7 @@ namespace Werewolf_Node
                                     {
                                         case IRole.CultistHunter:
                                             msg = GetLocaleString("HunterKilledCultist", p.GetName());
+                                            gif = GetRandomImage(Settings.HunterKilledCultist);
                                             break;
                                         case IRole.Hunter:
                                             msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
@@ -3180,7 +3202,7 @@ namespace Werewolf_Node
                         }
                     }
                     if (!String.IsNullOrEmpty(msg))
-                        SendWithQueue(msg);
+                        SendWithQueue(msg, gif);
                     if (p.InLove)
                         KillLover(p);
                 }
@@ -3841,7 +3863,8 @@ namespace Werewolf_Node
                     var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                     if (killed != null)
                     {
-                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
+                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"),
+                            GetRandomImage(Settings.HunterKilledFinalShot));
                         killed.IsDead = true;
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
