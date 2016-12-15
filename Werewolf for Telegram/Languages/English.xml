@@ -1258,6 +1258,9 @@
   <string key="CultConvertWolf">
     <value>The cult sends {0} to try to convert {1}, but instead {0}'s Head comes flying out of the Window... Wonder why they thought it was inedible! {0} is dead...</value>
   </string>
+  
+
+
   <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
     <!--{0} = Harlot name, {1} = SK's victim name-->
     <value>{0} slips into {1}'s house, ready for a night of passion, only to find a mysterious stranger surgically removing {1}'s innards! The serial killer decides to satisfy {0} before adding a slutty heart to their collection!</value>
@@ -1320,5 +1323,20 @@
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>{0} tried to guard a wolf last night. The town woke up to find only the wings of {0} hung on the church cross. Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes.</value>
+  </string>
+
+    <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the joining time more than once!</value>
   </string>
 </strings>

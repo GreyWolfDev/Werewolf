@@ -217,6 +217,11 @@ namespace Werewolf_Node
                                 };
                                 message.Reply(JsonConvert.SerializeObject(gi));
                                 break;
+                            case "ExtendTimeInfo":
+                                var eti = JsonConvert.DeserializeObject<ExtendTimeInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == eti.GroupId);
+                                game?.ExtendTime(eti.User, eti.Admin, eti.Seconds);
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;

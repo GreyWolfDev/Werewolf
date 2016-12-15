@@ -148,7 +148,9 @@ namespace Werewolf_Node
             BlacksmithConversionChance = 75,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            MaxJoinTime = 600,
+            ExtendMaxValue = 300;
 
 
 
