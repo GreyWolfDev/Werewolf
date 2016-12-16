@@ -28,7 +28,8 @@ namespace Werewolf_Node
             KillTimer,
             IsInitializing,
             MessageQueueing = true,
-            Chaos, WolfCubKilled;
+            Chaos, WolfCubKilled,
+            NoOneCastLynch;
         private readonly InlineKeyboardMarkup _requestPMButton;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
@@ -744,8 +745,11 @@ namespace Werewolf_Node
                     var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
                     SendWithQueue(msg);
                     
-                    if (Players.Where(x => !x.IsDead).All(x => x.CurrentQuestion?.QType == QuestionType.Lynch))
+                    if (NoOneCastLynch)
+                    {
                         player.FirstStone++;
+                        NoOneCastLynch = false;
+                    }
                     else
                         player.FirstStone = 0;
 
@@ -3481,6 +3485,7 @@ namespace Werewolf_Node
         {
             if (Players == null)
                 return;
+            NoOneCastLynch = true;
             foreach (var player in Players.Where(x => !x.IsDead).OrderBy(x => x.Name))
             {
                 player.CurrentQuestion = null;
