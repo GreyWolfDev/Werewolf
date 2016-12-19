@@ -3,9 +3,9 @@
    Translated by / Traduzido por:
        Lucas Montuano (@montuano) e Guto Cristino (@guto_xtino)
    Currently being translated by / Atualmente sendo traduzido por:
-		Dan (@vergonha), Danilo (@daniloosoo), Eric Romero (@ericromeero), Gabriel Borjoize (@Borjoize), jR750Ac (@jr750ac), Mocha (@MochaKH), Nical(@Nical), Pug (@Capitalista), Saah (@ayylimao), @jr750ac e Nicholas Alexandre (@Nical) 
+		Dan (@vergonha), Danilo (@daniloosoo), Eric Romero (@ericromeero), Gabriel Borjoize (@Borjoize), jR750Ac (@jr750ac), Mocha (@MochaKH), Nical(@Nical), Pug (@Capitalista), Saah (@ayylimao), @jr750ac, Shelder (sats_sjrp) e Nicholas Alexandre (@Nical) 
 		Team leaders: @ayylimao, @Borjoize
-	   (Última edição: 05/12/2016, por @Nical e @ayylimao)
+	   (Última edição: 09/12/2016, por @sats_sjrp)
 -->
 <strings>
   <language name="Português (Brasil)" base="Português" variant="Brasil"/>
@@ -168,7 +168,7 @@
     <value >Você é a Vidente, seu papel é guiar a Aldeia na empreitada contra os Lobos.  Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque os Lobos estão loucos pra devorar você!</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >Você é um simples aldeão, condenado a passar seus dias arando o campo esprando para ser devorado pelos Lobos, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar pra forca, use seu voto com sabedoria!</value>
+    <value >Você é um simples aldeão, condenado a passar seus dias arando o campo esperando para ser devorado pelos Lobos, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar pra forca, use seu voto com sabedoria!</value>
   </string>
   <string key="RoleInfoTanner" >
     <value >Você é o Suicida, seu time é você mesmo!  Se você for pra forca, você ganha automaticamente, sozinho. Seu egoista!</value>
@@ -183,7 +183,7 @@
     <value >Você é a Aprendiz de Vidente, e joga pela Aldeia.  Caso a verdadeira Vidente morra, você tomará seu lugar como Vidente.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >Você é um agente da Seita.  Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem da Seita, ela vence!</value>
+    <value >Você é um Agente da Seita.  Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem da Seita, ela vence!</value>
   </string>
   <string key="RoleInfoCultistHunter" >
     <value >A Seita está na sua Aldeia tentando converter todo mundo, e você, o Inquisidor, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir.  Se ele(a) for da Seita, ele(a) morre.  Caso a Seita tente te converter, o membro mais recente morre.</value>
@@ -276,10 +276,10 @@
     <value >Você dormiu na casa de {0} para se divertir um pouco mas descobriu tarde demais que ele(a) era um lobo.  Você está morto(a).</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
-    <value >{0} dormiu na casa errada noite passada! Seu corpo, antes safado e divertido, foi encontrado pregado cruelmente na porta da igreja...  que triste :(</value>
+    <value >{0} dormiu na casa de um lobo na noite passada! Seu corpo, antes safado e divertido, foi encontrado jogado na porta da igreja com marcas de mordida...  que triste :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
-    <value >{0} foi dormir na casa de {1}, pronto(a) para ter um pouco de diversão e aliviar a tensão.  Entretanto, ele(a) encontrou um lobo devorando {1}!  O lobo se vira rapidamente em direção a {0} e....  {0} está morta.</value>
+    <value >{0} foi dormir na casa de {1}, pronto(a) para ter um pouco de diversão e aliviar a tensão.  Entretanto, ele(a) encontrou um lobo devorando {1}!  O lobo se vira rapidamente em direção a {0} e....  {0} está morto(a)!.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <value >Você percebe que {0} não é um lobo, já que vocês fizeram um sexo gostoso e selvagem a noite toda!</value>
@@ -294,10 +294,10 @@
     <value >Sua bisbilhotada provou que {0} é {1}</value>
   </string>
   <string key="HarlotShot" >
-    <value >Parece que {0} não gostou da noite com a cortesã! A atiradora ficou louca e se vingou. {1} está morto(a).</value>
+    <value >Parece que {0} não gosta de safadeza! A atiradora ficou louca e se vingou. {1}, que era a Cortesã, está morto(a).</value>
   </string>
   <string key="DefaultShot" >
-    <value >De repente, um tiro é disparado.  Os aldeões se viram para ver {0} de pé em cima do corpo de {1}, com a arma ainda apontada para a cabeça e os miolos espalhados.  {2}.</value>
+    <value >De repente, um tiro é disparado.  Os aldeões se viram para ver {0}  de pé em cima do corpo de {1}, com a espingarda ainda apontada para a cabeça e os miolos espalhados no meio da praça!  {2}.</value>
   </string>
   <string key="WolfWins" isgif="true" >
     <value >O lobo venceu!</value>
@@ -339,10 +339,10 @@
     <value >Todos os lobos morreram e as únicas pessoas sobreviventes pertencem à Seita..  A Seita venceu! A SEITA QUE DÓI MENOS!</value>
   </string>
   <string key="HunterVisitDead">
-    <value>Você foi inquirir {0}, mas chegando lá só encontrou seu corpo sem vida!</value>
+    <value>Você foi inquirir {0}, mas alguém foi mais rapido que você e matou ele(a)!</value>
   </string>
   <string key="HunterFindCultist">
-    <value>Você invade a casa de {0} e vê as marcas sa Seita nas paredes, você sabe o que fazer... Depois das torturas, ele se confessa, e você sabe muito bem como expurgar os pecados desse tipo: Com a morte!</value>
+    <value>Você invade a casa de {0} e vê as marcas da Seita nas paredes, você sabe o que fazer... Depois das torturas, ele se confessa, e você sabe muito bem como expurgar os pecados desse tipo: Com a morte!</value>
   </string>
   <string key="HunterFailedToFind">
     <value>Você invade a casa de {0} mas não há nenhum sinal da Seita.  Ele(a) não faz parte da Seita... Ainda...</value>
@@ -440,7 +440,7 @@
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
-    <value>{0} foi enviado(a) para fazer o trabalho sujo, mas as crenças de {1} eram fortes de mais para serem corrompidas. :(</value>
+    <value>{0} foi enviado(a) para fazer o trabalho sujo, mas as crenças de {1} eram fortes de mais para serem corrompidas e ele(a) bate a porta na sua cara :(</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
@@ -461,7 +461,7 @@
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
-    <value>Você tenta fugir mas os rumores de que há lobisomens fizeram com que administradores fechassem as saídas para os lobos não fugirem! Boa sorte com isso!</value>
+    <value>Você tenta fugir mas os rumores de que há lobisomens fizeram com que administradores fechassem as saídas para os aldeões não fugissem! Boa sorte com isso!</value>
   </string>
   <string key="IsDead"> <!-- used when gunner shoots a player -->
     <value>Está morta!</value>
@@ -536,6 +536,7 @@
   </string>
   <string key="CupidChosen">
     <value>Você foi atingido(a) pela flecha do amor. A memória de {0} nunca deixará seu coração. Seu objetivo é que os dois sobrevivam. Se um de vocês morrer o outro irá até o mundo dos mortos para que ambos continuem juntos.</value>
+	<value>A flecha do cupido acertou seu coração! Você está apaixonado por {0}!  Se ele(a) morre, você morre também. No final, se ambos estiverem vivos, vocês vencem.</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>A aldeia resolveu enforcar você! É a sua última chance de dar uso para seu querido três oitão!</value>
@@ -561,9 +562,6 @@
   <string key="HunterKilledFinalShot">
     <value>{0} cai no chão, ferido mortalmente... Mas antes de morrer, ele puxa sua pistola e dá um tiro certeiro em {1}, que cai duro no chão, com um novo orifício na testa. {2}</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} entra de fininho na casa de {1}. Assim que entra, ouve uma voz sinistra "Que os jogos começem"! {1} aparece de repente com uma tesoura e começa a cortar {0} criando um lindo retalho para sua coleção. {0} está morta D:</value>
-  </string>
   <string key="HunterShotWolfMulti">
     <value>POW! POW! POW! A aldeia ouve o pipoco a noite! Os lobos atacaram a pessoa errada, o Caçador não iria embora sozinho, levou {0} (um lobo) junto com ele.</value>
   </string>
@@ -584,6 +582,7 @@
   </string>
   <string key="CultConvertSerialKiller">
     <value>A Seita manda {0} para converter {1}. Chegando lá {0} descobre que era melhor ter ficado em casa rezando. Seu corpo é encontrado aberto na rua, mas com os orgãos revirados. {0} está morta...</value>
+	<value>{0} entra de fininho na casa de {1}. Assim que entra, ouve uma voz sinistra "Que os jogos começem"! {1} aparece de repente com uma tesoura e começa a cortar {0} criando um lindo retalho para sua coleção. {0} está morta D:</value>
   </string>
   <string key="GuardKiller">
     <value>Você tentou proteger a pessoa errada. O Serial Killer te convida para brincar com ele, um tipo de brincadeira que você com certeza não gosta. O tipo de brincadeira que você morre no final...</value>
@@ -592,7 +591,7 @@
     <value>Você dormiu na casa de {0} para se divertir um pouco. Mas essa noite só {0} vai se divertir, com você, enquanto ele esfaqueia seu corpo. Você morreu, mas se te serve de consolo, ele pareceu se divertir muito essa noite...</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>{0} don't worry about this string for now!</value>
+    <value>Parece que o Serial Killer não queria ter uma noite de sacanagens! {0} foi encontrado(a) na porta de sua casa morto(a) com as mãos e os pés amarrados.</value>
   </string>
   <string key="DGToMason">
     <value>O Doppelganger {0} agora se tornou um Maçom, assim como você!</value>
@@ -641,9 +640,6 @@
   </string>
   <string key="Doppelgänger">
     <value>a Doppelgänger 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <value>A flecha do cupido acertou seu coração! Você está apaixonado por {0}!  Se ele(a) morre, você morre também. No final, se ambos estiverem vivos, vocês vencem.</value>
   </string>
   <string key="NewWCRoleModel">
     <value>Você se tornou a Criança Rebelde.  Seu modelo exemplar é {0}</value>
@@ -1002,7 +998,7 @@
     <value>Você é o Filhote de Lobo, adorado por sua matilha. Como outros lobos, você vai escolher um aldeão para atacar e matar todas as noites. Se acontecer de você ser morto, sua matilha verá seu corpo no chão, e, ensandecida, vingará sua morte, atacando duas pessoas na noite seguinte. </value>
   </string>
   <string key="PrinceLynched">
-    <value>A aldeia se prepara para enforcar {0}, que grita, "Esperem! Eu sou o Príncipe. Esse anel real, com o selo do rei, prova isso. Toda noite eu estou rodeado de criados, então não posso ser um inimigo." Se sentindo tolos, os aldeões vão para suas casas dormir com o rabo entre as pernas.</value>
+    <value>A aldeia se prepara para enforcar {0}, que grita, "Esperem! Esperem! Eu sou o Príncipe! Esse anel real, com o selo do rei, prova isso. Toda noite eu estou rodeado de criados, então não posso ser um inimigo." Se sentindo tolos, os aldeões vão para suas casas dormir com o rabo entre as pernas.</value>
   </string>
   <string key="SorcererOther">
     <value>Você tenta ver {0}, mas não consegue entender direito o que ele é. Tudo o que sabe é que ele não é vidente nem lobo...</value>
@@ -1074,7 +1070,7 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
     </value>
   </string>
   <string key="AboutWolfCub">
-    <value>Mas que fofinho! Pequenino lobinho! _cuti cuti_ Eu não resisto à sua fofura! Eu acho que se te matassem, eu daria aos lobos duas vitimas. Você é fofinho demais para morrer. Não quero nunca deixar de te acariciar-</value>
+    <value>Mas que fofinho! Pequenino lobinho! Cuti cuti! Eu não resisto à sua fofura! Eu acho que se te matassem, eu daria aos lobos duas vitimas. Você é fofinho demais para morrer. Não quero nunca deixar de te acariciar-</value>
   </string>
 
  <!-- new strings 06 nov-->
@@ -1145,22 +1141,22 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
     <value>Os aldeões ficam de coração partido ao encontrar {0}, o Cupido, morto. Estranho o fato de seu coração estar faltando, obviamente obra do Serial Killer.</value>
   </string>
   <string key="DrunkKilled">
-    <value>{0}, o Bêbado teve o seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Obviamente mais uma brincadeira do Serial Killer que deve ter adorado seu novo drink. </value>
+    <value>{0}, o Bêbado teve o seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Obviamente mais uma brincadeira do Serial Killer que deve ter adorado seu novo drink! </value>
   </string>
   <string key="GuardianAngelKilled">
     <value>{0} é encontrado com grandes fendas onde antes houveram suas asas. {0}, o Anjo Guardião, está morto, e a noite agora é mais sombria.</value>
   </string>
   <string key="GunnerKilled">
-    <value>Na calada da noite vocês ouvem um tiro na casa de {0}, a Atiradora! Seus sonhos são tormentosos depois de encontra-la com um buraco na testa, e a arma embaralhada em suas entranhas, mais uma vítima do Serial Killer.</value>
+    <value>Na calada da noite, a aldeia escuta um tiro na casa de {0}, a Atiradora! Seus sonhos são tormentosos depois de encontra-lá com um buraco na testa, e a arma embaralhada em suas entranhas, mais uma vítima do Serial Killer.</value>
   </string>
   <string key="MayorKilled">
     <value>Houve um terrível assassinato! {0}, o Prefeito foi encontrado assado com uma maçã na boca! O Serial Killer finalmente conseguiu vingança pelos anos preso no hospício.</value>
   </string>
   <string key="PrinceKilled">
-    <value>O sino toca por toda a Aldeia antes do nascer do sol. Os soldados do Rei estão em todo lugar investigando a morte de {0}, o Príncipe. E nenhuma pista foi encontrada ainda, além do chapéu de bobo da corte na cabeça decepada do Principe, com a assintaura em sangue "Serial Killer" na parede.</value>
+    <value>O sino toca por toda a Aldeia antes do nascer do sol. Os soldados do Rei estão em todo lugar investigando a morte de {0}, o Príncipe. E nenhuma pista foi encontrada ainda, além do chapéu de bobo da corte na cabeça decepada do Principe, com um recado em sangue do Serial Killer na parede.</value>
   </string>
   <string key="SeerKilled">
-    <value>A Aldeia acorda para ver o corpo de {0}, a Vidente, morta. No lugar de seu cérebro, uma bola de cristal. O Serial Killer é assustador!</value>
+    <value>A Aldeia acorda para ver o corpo de {0}, a Vidente, morta. No lugar de seu cérebro, uma bola de cristal. O Serial Killer é realmente assustador!</value>
   </string>
   <string key="SorcererEaten">
     <value>O som de uivos tristes podem ser ouvidos pela Aldeia. Parece que um erro foi cometido e os Lobos mataram um aliado. A Feiticeira {0} está morta.</value>
@@ -1178,9 +1174,9 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
     <value>Ontem a noite a Seita decidiu visitar a única pessoa mais estranha do que eles, o Serial Killer, e por causa disso, os órgãos de {0} serviram para a criação de uma nova obra de arte.</value>
   </string>
   <string key="GAGuardedKiller">
-    <value>{0} tentou proteger o Serial Killer ontem a noite. A Aldeia acordou e encontrou apenas as asas de {0} pregadas na parede da igreja.</value>
+    <value>{0} tentou proteger o Serial Killer ontem a noite. A Aldeia acordou e encontrou apenas as asas de {0} pregadas na parede da igreja cheias de sangue!.</value>
   </string>
   <string key="GAGuardedWolf">
-    <value>{0} tentou proteger um Lobo ontem a noite. A Aldeia acordou e apenas encontrou o corpo de {0} e suas penas, ensanguentadas no chão da igreja.</value>
+    <value>{0} tentou proteger um Lobo ontem a noite. A Aldeia acordou e apenas encontrou o corpo de {0} e suas penas, ensanguentadas no chão da Igreja.</value>
   </string>
 </strings>
