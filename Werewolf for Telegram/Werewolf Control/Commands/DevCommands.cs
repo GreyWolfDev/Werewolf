@@ -20,6 +20,7 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
 using File = System.IO.File;
+using System.Text.RegularExpressions;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -1185,6 +1186,91 @@ namespace Werewolf_Control
 
         }
 
+        [Attributes.Command(Trigger = "movelang", DevOnly = true)]
+        public static void MoveLang(Update u, string[] args)
+        {
+            //TODO:
+            //1. Ask for the langfile to move
+            //2. Ask for new filename and langnode
+            //3. Create the new langfile automagically
+
+            var command = args.Skip(1).Aggregate("", (a, b) => a + " " + b);
+            var oldfilename = command.Substring(0, command.IndexOf(".xml"));
+            var newfilename = command.Substring(command.IndexOf(".xml") + 5, command.Length - 4);
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+            var oldlang = langs.FirstOrDefault(x => x.FileName == oldfilename);
+            var newlang = langs.FirstOrDefault(x => x.FileName == newfilename);
+            if (oldlang == null || newlang == null)
+            {
+                Send("No langfile found. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id);
+                return;
+            }
+            
+            string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n\n";
+            msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n\n";
+            msg += "*Are you sure?*";
+
+            var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
+            Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
+        }
+
+
+        [Attributes.Command(Trigger = "commitlangs", DevOnly = true)]
+        public static void CommitLangs(Update u, string[] args)
+        {
+            var msg = "";
+            try
+            {
+                var p = new Process
+                {
+                    StartInfo =
+                    {
+                        FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
+                        Arguments = $"\"Syncing langfiles from Telegram ***NO_CI***\"",
+                        WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
+                    }
+                };
+                p.Start();
+                var output = "";
+                while (!p.StandardOutput.EndOfStream)
+                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
+                while (!p.StandardError.EndOfStream)
+                    output += p.StandardError.ReadLine() + Environment.NewLine;
+
+                //validate the output
+                if (output.Contains("failed"))
+                {
+                    msg += $"Failed to commit files. See control output for information";
+                    Console.WriteLine(output);
+                }
+                else if (output.Contains("nothing to commit"))
+                {
+                    msg += $"Nothing to commit.";
+                }
+                else
+                {
+                    //try to grab the commit
+                    var regex = new Regex("(\\[master .*])");
+                    var match = regex.Match(output);
+                    var commit = "";
+                    if (match.Success)
+                    {
+                        commit = match.Value.Replace("[master ", "").Replace("]", "");
+                    }
+                    msg += $"Files committed successfully. {(String.IsNullOrEmpty(commit) ? "" : $"[{commit}](https://github.com/GreyWuffGames/Werewolf/commit/{commit})")}";
+                }
+            }
+            catch (Exception e)
+            {
+                msg += e.Message;
+            }
+
+            Send(msg, u.Message.Chat.Id);
+        }
 
     }
 
