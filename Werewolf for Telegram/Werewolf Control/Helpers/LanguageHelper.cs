@@ -79,15 +79,15 @@ namespace Werewolf_Control.Helpers
             foreach (var file in errors.Select(x => x.File).Distinct().ToList())
             {
                 result += $"*{file}*\n";
-                result +=
-                    $"_Missing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == file)}_\n";
                 if (errors.Any(x => x.Level == ErrorLevel.Info))
                 {
                     result += "_Duplicated Strings: _";
-                    result = errors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                    result = errors.Where(x => x.File == file && x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
                 }
+                result += $"_Missing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == file)}_\n";
                 if (errors.Any(x => x.File == file && x.Level == ErrorLevel.Error))
-                    result = errors.Where(x => x.File == file && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n\n");
+                    result = errors.Where(x => x.File == file && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
+                result += "\n";
                 
             }
             Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
@@ -318,14 +318,19 @@ namespace Werewolf_Control.Helpers
             var langOptions = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
-            Bot.Api.SendDocument(id, new FileToSend(option.FileName, fs));
+            Bot.Api.SendDocument(id, new FileToSend(option.FileName + ".xml", fs));
         }
         
         internal static void SendBase(string choice, long id)
         {
             try
             {
-                var path = Path.Combine(Bot.LanguageDirectory, $"\\BaseZips\\{choice}.zip"); //where the zipfile will be stored
+                //I'll delete these lines when the paths are there, just because. They are ugly.
+                var zipdirectory = Path.Combine(Bot.LanguageDirectory, "BaseZips");
+                if (!Directory.Exists(zipdirectory))
+                    Directory.CreateDirectory(zipdirectory);
+
+                var path = Path.Combine(Bot.LanguageDirectory, $"BaseZips\\{choice}.zip"); //where the zipfile will be stored
                 if (File.Exists(path))
                     File.Delete(path);
 
