@@ -1274,12 +1274,17 @@ namespace Werewolf_Control.Handler
         
         public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)
         {
-            
+            new Task(() => { HandleInlineQuery(e.InlineQuery); }).Start();
+        }
+        
+        internal static void HandleInlineQuery(InlineQuery q)
+        {
+
             var commands = new InlineCommand[]
             {
-                new StatsInlineCommand(e.InlineQuery.From),
+                new StatsInlineCommand(q.From),
             };
-            var q = e.InlineQuery;
+            
             List<InlineCommand> choices;
             if (String.IsNullOrWhiteSpace(q.Query))
             {
@@ -1295,9 +1300,14 @@ namespace Werewolf_Control.Handler
 
             Bot.Api.AnswerInlineQuery(q.Id, choices.Select(c => new InlineQueryResultArticle()
             {
-                Description = c.Description, Id = c.Command, Title = c.Command, InputMessageContent = new InputTextMessageContent
+                Description = c.Description,
+                Id = c.Command,
+                Title = c.Command,
+                InputMessageContent = new InputTextMessageContent
                 {
-                    DisableWebPagePreview = true, MessageText = c.Content, ParseMode = ParseMode.Html
+                    DisableWebPagePreview = true,
+                    MessageText = c.Content,
+                    ParseMode = ParseMode.Html
                 }
             }).Cast<InlineQueryResult>().ToArray(), 0, true);
         }
