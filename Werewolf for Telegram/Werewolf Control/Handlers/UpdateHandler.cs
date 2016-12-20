@@ -221,7 +221,7 @@ namespace Werewolf_Control.Handler
                     return; //toss it
 
                 var id = update.Message.Chat.Id;
-
+                
 #if DEBUG
                 //if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
                 //{
@@ -373,8 +373,13 @@ namespace Werewolf_Control.Handler
                                         AddCount(update.Message.From.Id, update.Message.Text);
                                     command.Method.Invoke(update, args);
                                 }
+                                
 
                                 #endregion
+                            }
+                            else if (update.Message.Chat.Type == ChatType.Private && update.Message?.ReplyToMessage?.Text == "Please reply to this message with your Telegram authorization code" && update.Message.From.Id == UpdateHelper.Devs[0])
+                            {
+                                CLI.AuthCode = update.Message.Text;
                             }
                             break;
                         case MessageType.PhotoMessage:
