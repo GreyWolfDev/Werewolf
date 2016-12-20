@@ -1114,16 +1114,20 @@ namespace Werewolf_Control
             //1. Ask for the langfile to move
             //2. Ask for new filename and langnode
             //3. Create the new langfile automagically
-
-            var command = args.Skip(1).Aggregate("", (a, b) => a + " " + b);
-            var oldfilename = new Regex(@"([\s\S]*).xml ([\s\S]*).xml").Match(command).Captures[0].Value;
-            var newfilename = new Regex(@"([\s\S]*).xml ([\s\S]*).xml").Match(command).Captures[1].Value;
+            var match = new Regex(@"([\s\S]*).xml ([\s\S]*).xml").Match(args[1]);
+            if (!match.Success || match.Captures.Count != 2)
+            {
+                Send("Fail. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id);
+                return;
+            }
+            var oldfilename = match.Captures[0].Value;
+            var newfilename = match.Captures[1].Value;
             var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
             var oldlang = langs.FirstOrDefault(x => x.FileName == oldfilename);
             var newlang = langs.FirstOrDefault(x => x.FileName == newfilename);
             if (oldlang == null || newlang == null)
             {
-                Send("No langfile found. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id);
+                Send("No langfile found. Make sure those langfiles exist!", u.Message.Chat.Id);
                 return;
             }
             
