@@ -18,6 +18,10 @@ namespace Werewolf_Control.Helpers
         TannerWin, 
         CultWins, 
         SerialKillerWins,
-        LoversWin
+        LoversWin,
+        HunterKilledCultist,
+        HunterKilledFinalShot,
+        RoleInfoDrunk,
+        BlacksmithSpreadSilver
     }
 }

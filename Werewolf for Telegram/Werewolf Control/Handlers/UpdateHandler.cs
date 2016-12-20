@@ -404,6 +404,9 @@ namespace Werewolf_Control.Handler
                                     {
                                         DB.ImageLanguages.Add(image);
                                         DB.SaveChanges();
+                                        var menu = UpdateHandler.GetConfigGifMenu(id);
+                                        Bot.Api.SendTextMessage(id, $"GIF adicionado para '{image.ImageKey.ToString()}'! Para qual ação gostaria de configurar o GIF agora?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
+                                        replyMarkup: menu);
                                     }
                                 }
                                 
@@ -677,7 +680,7 @@ namespace Werewolf_Control.Handler
                     groupid = long.Parse(args[1]);
 
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status" && args[0] != "gif")
+                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status" && args[0] != "gif" && args[0] != "setgif" && args[0] != "removegif" && args[0] != "done")
                         return;
                     if (grp == null)
                     {
@@ -970,10 +973,79 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "gif":
+                            buttons.Add(new InlineKeyboardButton("Adicionar GIF", $"setgif|{query.From.Id}|add"));
                             var image = new ImageLanguage() { ImageKey = args[2], LanguageVariant = language };
                             SendGifIds = true;
                             ActualUploadGif[Int32.Parse(args[1])] = image;
-                            Bot.ReplyToCallback(query, "OK, agora me envie o GIF.");
+                            List<String> values = DB.ImageLanguages.Where(x => x.LanguageVariant.Equals(image.LanguageVariant) && x.ImageKey.Equals(image.ImageKey.ToString())).Select(x => x.ImageId).ToList();
+                            if (values.Count<=0)
+                            {
+                                //try the default image to be sure
+                                var field = typeof(Settings).GetField(image.ImageKey.ToString());
+                                values = field.GetValue(null) as List<string>;
+                            }
+                            if(values.Count>0)
+                            {
+                                Bot.ReplyToCallback(query, "Aqui estão os gifs configurados atualmente para essa key:");
+                                foreach (var g in values)
+                                {
+                                    try
+                                    {
+                                        var r = Bot.Api.SendDocument(query.Message.Chat.Id, g, g).Result;
+                                    }
+                                    catch (AggregateException e)
+                                    {
+                                        Send(g + " - " + e.InnerExceptions.FirstOrDefault()?.Message, query.Message.Chat.Id);
+                                    }
+                                }
+                                buttons.Add(new InlineKeyboardButton("Remover GIF", $"setgif|{query.From.Id}|remove|{image.ImageKey.ToString()}"));
+                            }
+                            buttons.Add(new InlineKeyboardButton("Voltar", $"setgif|{query.From.Id}|back"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            if(values.Count>0)
+                            {
+                                Send("O que deseja fazer?", query.Message.Chat.Id, customMenu: menu);
+                            }
+                            else
+                            {
+                                Bot.ReplyToCallback(query, "O que deseja fazer?", replyMarkup: menu);
+                            }
+                            break;
+                        case "setgif":
+                            if(choice.Equals("add"))
+                            {
+                                Bot.ReplyToCallback(query, "OK, agora me envie o GIF.");
+                            }
+                            else if(choice.Equals("remove"))
+                            {
+                                image = new ImageLanguage() { ImageKey = args[3], LanguageVariant = language };
+                                values = DB.ImageLanguages.Where(x => x.LanguageVariant.Equals(image.LanguageVariant) && x.ImageKey.Equals(image.ImageKey.ToString())).Select(x => x.ImageId).ToList();
+
+                                if(values.Count>0)
+                                {
+                                    foreach (var g in values)
+                                    {
+                                        buttons.Add(new InlineKeyboardButton(g, $"removegif|{query.From.Id}|{g}|{image.ImageKey.ToString()}"));
+                                    }
+
+                                    menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                                    Bot.ReplyToCallback(query, "Qual GIF gostaria de remover?", replyMarkup: menu);
+                                }
+                                else
+                                {
+                                    Bot.ReplyToCallback(query, "Impossível remover esse GIF! Para qual ação você gostaria de configurar os GIF's agora?", replyMarkup: GetConfigGifMenu(query.From.Id));
+                                }
+                            }
+                            else
+                            {
+                                Bot.ReplyToCallback(query, "Qual GIF você gostaria de configurar ?", replyMarkup: GetConfigGifMenu(query.From.Id));
+                            }
+                            break;
+                        case "removegif":
+                            image = new ImageLanguage() { ImageKey = args[3], LanguageVariant = language };
+                            DB.ImageLanguages.RemoveRange(DB.ImageLanguages.Where(x => x.LanguageVariant.Equals(image.LanguageVariant) && x.ImageId.Equals(choice) && x.ImageKey.Equals(image.ImageKey.ToString())));
+                            DB.SaveChanges();
+                            Bot.ReplyToCallback(query, "Qual GIF você gostaria de configurar ?", replyMarkup: GetConfigGifMenu(query.From.Id));
                             break;
                         case "flee":
                             buttons.Add(new InlineKeyboardButton(Yes, $"setflee|{groupid}|enable"));
@@ -1273,8 +1345,29 @@ namespace Werewolf_Control.Handler
             return menu;
         }
 
+        internal static InlineKeyboardMarkup GetConfigGifMenu(long id)
+        {
+            List<InlineKeyboardButton> buttons = Enum.GetNames(typeof(ImageKeys)).OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"gif|{id}|{x}")).ToList();
+            buttons.Add(new InlineKeyboardButton("Done", $"done|{id}"));
 
-        
+            var baseMenu = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                if (buttons.Count - 1 == i)
+                {
+                    baseMenu.Add(new[] { buttons[i] });
+                }
+                else
+                    baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                i++;
+            }
+
+            var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
+            return menu;
+        }
+
+
+
         public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)
         {
             

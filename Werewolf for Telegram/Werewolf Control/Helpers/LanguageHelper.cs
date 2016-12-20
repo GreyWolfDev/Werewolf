@@ -311,10 +311,10 @@ namespace Werewolf_Control.Helpers
 //            msg += $"File copied to bot 2\n";
 //            Bot.Api.EditMessageText(id, msgId, msg);
 //#endif
-            var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
-            File.Copy(newFilePath, gitPath, true);
-            System.IO.File.Delete(newFilePath);
-            msg += $"File copied to git directory\n";
+            //var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
+            //File.Copy(newFilePath, gitPath, true);
+            //System.IO.File.Delete(newFilePath);
+            //msg += $"File copied to git directory\n";
 
             //Bot.Api.EditMessageText(id, msgId, msg);
             //msg += $"Committing changes to repo...\n";
