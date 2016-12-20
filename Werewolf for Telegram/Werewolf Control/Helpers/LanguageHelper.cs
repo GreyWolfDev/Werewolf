@@ -27,6 +27,7 @@ namespace Werewolf_Control.Helpers
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public XDocument Doc { get; set; }
+        public DateTime LatestUpdate { get; }
 
         public LangFile(string path)
         {
@@ -36,6 +37,7 @@ namespace Werewolf_Control.Helpers
             Variant = Doc.Descendants("language").First().Attribute("variant")?.Value;
             FilePath = path;
             FileName = Path.GetFileNameWithoutExtension(path);
+            LatestUpdate = File.GetLastWriteTimeUtc(path);
         }
     }
     public static class LanguageHelper
@@ -76,23 +78,24 @@ namespace Werewolf_Control.Helpers
 
             //now pack up the errors and send
             var result = "";
-            foreach (var file in errors.Select(x => x.File).Distinct().ToList())
+            foreach (var file in errors.Select(x => new LangFile(Path.Combine(Bot.LanguageDirectory, $"{x.File}.xml"))).Distinct().ToList())
             {
-                result += $"*{file}*\n";
+                result += $"*{file.FileName}.xml* (Last updated: {file.LatestUpdate.ToString("MMM dd")})\n";
                 if (errors.Any(x => x.Level == ErrorLevel.Info))
                 {
                     result += "_Duplicated Strings: _";
-                    result = errors.Where(x => x.File == file && x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                    result = errors.Where(x => x.File == file.FileName && x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
                 }
-                result += $"_Missing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == file)}_\n";
-                if (errors.Any(x => x.File == file && x.Level == ErrorLevel.Error))
-                    result = errors.Where(x => x.File == file && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
+                result += $"_Missing strings:_ {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == file.FileName)}\n";
+                if (errors.Any(x => x.File == file.FileName && x.Level == ErrorLevel.Error))
+                    result = errors.Where(x => x.File == file.FileName && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
                 result += "\n";
                 
             }
             Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
-            result =
-                $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
+            var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).OrderBy(x => x.LatestUpdate);
+            result = $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
+            result += $"\nMost recently updated file: {sortedfiles.Last().FileName}.xml ({sortedfiles.Last().LatestUpdate.ToString("MMM dd")})\nLeast recently updated file: {sortedfiles.First().FileName}.xml ({sortedfiles.First().LatestUpdate.ToString("MMM dd")})";
 
             Bot.Api.EditMessageText(id, msgId, result, parseMode: ParseMode.Markdown);
         }
@@ -115,7 +118,7 @@ namespace Werewolf_Control.Helpers
             GetFileErrors(langfile, errors, master);
             
             //send the result
-            var result = $"*{langfile.FileName}*" + Environment.NewLine;
+            var result = $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})" + Environment.NewLine;
             if (errors.Any(x => x.Level == ErrorLevel.Error))
             {
                 result += "_Errors:_\n";
@@ -186,7 +189,6 @@ namespace Werewolf_Control.Helpers
             //need to get the current file
             var curFile = langs.FirstOrDefault(x => x.Name == newFile.Name);
             var curFileErrors = new List<LanguageError>();
-            var curFileName = curFile?.FileName;
 
             if (curFile != null)
             {
@@ -325,11 +327,6 @@ namespace Werewolf_Control.Helpers
         {
             try
             {
-                //I'll delete these lines when the paths are there, just because. They are ugly.
-                var zipdirectory = Path.Combine(Bot.LanguageDirectory, "BaseZips");
-                if (!Directory.Exists(zipdirectory))
-                    Directory.CreateDirectory(zipdirectory);
-
                 var path = Path.Combine(Bot.LanguageDirectory, $"BaseZips\\{choice}.zip"); //where the zipfile will be stored
                 if (File.Exists(path))
                     File.Delete(path);
@@ -400,7 +397,7 @@ namespace Werewolf_Control.Helpers
             if (curFile != null)
             {
                 result += "\n\n";
-                result += $"OLD FILE\n*{curFile.FileName}.xml - ({curFile.Name})*\n";
+                result += $"OLD FILE (Last updated: {curFile.LatestUpdate.ToString("MMM dd")})\n*{curFile.FileName}.xml - ({curFile.Name})*\n";
                 result +=
                     $"Errors: {curFileErrors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {curFileErrors.Count(x => x.Level == ErrorLevel.MissingString)}";
             }
@@ -428,7 +425,6 @@ namespace Werewolf_Control.Helpers
 
         private static void GetFileErrors(LangFile file, List<LanguageError> fileErrors, XDocument master)
         {
-            var fileName = file.FileName;
             var masterStrings = master.Descendants("string");
 
             //check for CultConvertSerialKiller & CupidChosen duplication
@@ -453,7 +449,7 @@ namespace Werewolf_Control.Helpers
                 if (values == null)
                 {
                     if (!deprecated)
-                        fileErrors.Add(new LanguageError(fileName, key, $"Values missing"));
+                        fileErrors.Add(new LanguageError(file.FileName, key, $"Values missing"));
                     continue;
                 }
                 //check master string for {#} values
@@ -476,17 +472,17 @@ namespace Werewolf_Control.Helpers
                         if (!value.Value.Contains("{" + i + "}") && vars - 1 >= i)
                         {
                             //missing a value....
-                            fileErrors.Add(new LanguageError(fileName, key, "Missing {" + i + "}", ErrorLevel.Error));
+                            fileErrors.Add(new LanguageError(file.FileName, key, "Missing {" + i + "}", ErrorLevel.Error));
                         }
                         else if (value.Value.Contains("{" + i + "}") && vars - 1 < i)
                         {
-                            fileErrors.Add(new LanguageError(fileName, key, "Extra {" + i + "}", ErrorLevel.Error));
+                            fileErrors.Add(new LanguageError(file.FileName, key, "Extra {" + i + "}", ErrorLevel.Error));
                         }
                     }
 
                     if (isgif && value.Value.Length > 200)
                     {
-                        fileErrors.Add(new LanguageError(fileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
+                        fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
                     }
                 }
             }
