@@ -332,12 +332,12 @@ namespace Werewolf_Control.Helpers
                     File.Delete(path);
 
                 //create our zip file
-                var zip = ZipFile.Open(path, ZipArchiveMode.Create);
-
-                var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == choice); //get the base
-                foreach (var lang in langs)
-                    zip.CreateEntryFromFile(Path.Combine(Bot.LanguageDirectory, $"{lang.FileName}.xml"), $"{lang.FileName}.xml", CompressionLevel.Optimal); //add the langs to the zipfile
-
+                using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
+                {
+                    var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == choice); //get the base
+                    foreach (var lang in langs)
+                        zip.CreateEntryFromFile(Path.Combine(Bot.LanguageDirectory, $"{lang.FileName}.xml"), $"{lang.FileName}.xml", CompressionLevel.Optimal); //add the langs to the zipfile
+                }
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
                 Bot.Api.SendDocument(id, new FileToSend($"{choice}.zip", fs));

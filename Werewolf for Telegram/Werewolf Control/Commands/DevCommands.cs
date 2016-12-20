@@ -1012,7 +1012,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
         public static void Preferred(Update update, string[] args)
         {
-            if (String.IsNullOrEmpty(args[1]))
+            if (args.Length < 2)
             {
                 Send("Usage: /preferred <link|username|groupid> [Y|N]\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id);
                 return;
@@ -1020,12 +1020,11 @@ namespace Werewolf_Control
             var group = args[1].Split(' ').First();
             var choice = args[1].Split(' ').Skip(1).FirstOrDefault();
             long groupid = 0;
-            long.TryParse(group, out groupid);
             var islink = group.Contains("http");
-            if (!islink) //must be username...
+            if (!long.TryParse(group, out groupid) && !islink) //must be username...
             {
                 group = group.TrimStart('@');
-                if (!new Regex(@"^\w$").IsMatch(group))
+                if (!new Regex(@"^\w*$").IsMatch(group))
                 {
                     Send("Invalid id, link or username.", update.Message.Chat.Id);
                     return;
@@ -1197,10 +1196,10 @@ namespace Werewolf_Control
             
             string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n\n";
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n\n";
-            msg += "*Are you sure?*";
+            Send(msg, u.Message.Chat.Id);
 
             var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
-            Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
+            Send("Are you sure?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
         }
 
 
