@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -20,7 +21,6 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
 using File = System.IO.File;
-using System.Text.RegularExpressions;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -1009,40 +1009,57 @@ namespace Werewolf_Control
             return;
         }
 
-        [Attributes.Command(Trigger = "disapproved", GlobalAdminOnly = true)]
-        public static void Disapproved(Update update, string[] args)
-        //NOTE: Since the "Preferred" column is not used anymore, it is used here to mark groups as disapproved instead of creating a new "Disapproved" column.
+        [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
+        public static void Preferred(Update update, string[] args)
         {
             if (String.IsNullOrEmpty(args[1]))
             {
-                Send("Usage: /disapproved <link> [Y|N]\n\nTells if a group is disapproved (can't be on grouplist). If Y or N is specified, disapproves / approves the group", update.Message.Chat.Id);
+                Send("Usage: /preferred <link|username|groupid> [Y|N]\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id);
                 return;
             }
-            var link = args[1].Split(' ').First();
-            var choice = args[1].Split(' ').Skip(1).First();
+            var group = args[1].Split(' ').First();
+            var choice = args[1].Split(' ').Skip(1).FirstOrDefault();
+            long groupid = 0;
+            long.TryParse(group, out groupid);
+            var islink = group.Contains("http");
+            if (!islink) //must be username...
+            {
+                group = group.TrimStart('@');
+                if (!new Regex(@"^\w$").IsMatch(group))
+                {
+                    Send("Invalid id, link or username.", update.Message.Chat.Id);
+                    return;
+                }
+            }
             using (var db = new WWContext())
             {
-                var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+                Database.Group grp = null;
+                if (islink)
+                    grp = db.Groups.FirstOrDefault(x => x.GroupLink == group);
+                else if (groupid != 0)
+                    grp = db.Groups.FirstOrDefault(x => x.GroupId == groupid);
+                else //must be username...?
+                    grp = db.Groups.FirstOrDefault(x => x.UserName == group);
                 if (grp != null)
                 {
+                    var msg = "";
                     if (choice.ToUpper() == "Y" || choice.ToUpper() == "N")
                     {
-                        bool disapproved = (choice.ToUpper() == "Y");
-                        grp.Preferred = disapproved;
+                        bool preferred = (choice.ToUpper() == "Y");
+                        grp.Preferred = preferred;
                         db.SaveChanges();
-                        var msg = disapproved ? $"{grp.Name} won't appear on grouplist anymore" : $"{grp.Name} will now be able to appear on grouplist";
-                        Send(msg, update.Message.Chat.Id);
+                        msg = preferred ? $"{grp.Name} will now be able to appear on grouplist" : $"{grp.Name} won't appear on grouplist anymore";
                     }
                     else
                     {
-                        var msg = grp.Name +
-                            (grp.Preferred == true ? " can't " : " can ") +
+                        msg = grp.Name +
+                            (grp.Preferred == true ? " can " : " can't ") +
                             "appear on grouplist";
-                        Send(msg, update.Message.Chat.Id);
                     }
+                    Send(msg, update.Message.Chat.Id);
                 }
                 else
-                    Send("Couldn't find the group, so it is likely not to be in the grouplist.", update.Message.Chat.Id);
+                    Send("Couldn't find the group in the database, so it is likely not to be in the grouplist.", update.Message.Chat.Id);
                 return;
             }
         }
