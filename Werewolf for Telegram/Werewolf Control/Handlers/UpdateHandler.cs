@@ -916,7 +916,7 @@ namespace Werewolf_Control.Handler
                                     Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
                                     Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
                                 }
-                                if (p != null)
+                                else if (p != null)
                                 {
                                     p.Language = slang.FileName;
                                     Bot.ReplyToCallback(query, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
