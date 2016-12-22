@@ -15,12 +15,13 @@ namespace Werewolf_Node.Helpers
         NoWinner,
         StartGame,
         StartChaosGame,
-        TannerWin, 
-        CultWins, 
+        TannerWin,
+        CultWins,
         SerialKillerWins,
         LoversWin,
+        HunterKilledCultist,
         HunterKilledFinalShot,
         RoleInfoDrunk,
-        HunterKilledCultist
+        BlacksmithSpreadSilver
     }
 }

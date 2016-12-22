@@ -387,7 +387,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.VoiceMessage:
                             break;
                         case MessageType.DocumentMessage:
-                            if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
+                            if (UpdateHelper.IsGlobalAdmin(update.Message.From.Id) && SendGifIds)
                             {
                                 var doc = update.Message.Document;
                                 var image = ActualUploadGif?[update.Message.From.Id];

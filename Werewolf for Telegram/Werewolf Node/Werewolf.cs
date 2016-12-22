@@ -197,6 +197,7 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
+                var chancesToJoin = 5;
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -222,7 +223,15 @@ namespace Werewolf_Node
                     }
                     if (i == Settings.GameJoinTime - 10)
                     {
-                        SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
+                        if (chancesToJoin > 0 && Players.Count < Settings.MinPlayers)
+                        {
+                            SendWithQueue($"O Tribunal Vivo não quer suspender a guerra! Mais 30 segundos para os heróis se alinharem! Chances restantes: {chancesToJoin--}");
+                            i -= 29;
+                        }
+                        else
+                        {
+                            SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
+                        }
                     }
                     Thread.Sleep(1000);
                 }
@@ -591,7 +600,7 @@ namespace Werewolf_Node
                     {
                         player.HasUsedAbility = true;
                         _silverSpread = true;
-                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()));
+                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName(), GetImageLanguage(ImageKeys.BlacksmithSpreadSilver)));
                     }
 
                     ReplyToCallback(query,
