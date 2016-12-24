@@ -1012,9 +1012,9 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
         public static void Preferred(Update update, string[] args)
         {
-            if (args.Length < 2)
+            if (String.IsNullOrEmpty(args[1]))
             {
-                Send("Usage: /preferred <link|username|groupid> [Y|N]\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id);
+                Bot.Send("Usage: /preferred <link|username|groupid> [Y|N]\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
                 return;
             }
             var group = args[1].Split(' ').First();
@@ -1042,7 +1042,7 @@ namespace Werewolf_Control
                 if (grp != null)
                 {
                     var msg = "";
-                    if (choice.ToUpper() == "Y" || choice.ToUpper() == "N")
+                    if (choice?.ToUpper() == "Y" || choice?.ToUpper() == "N")
                     {
                         bool preferred = (choice.ToUpper() == "Y");
                         grp.Preferred = preferred;
@@ -1177,15 +1177,15 @@ namespace Werewolf_Control
             //1. Ask for the langfile to move
             //2. Ask for new filename and langnode
             //3. Create the new langfile automagically
-            var match = new Regex(@"([\s\S]*).xml ([\s\S]*).xml").Match(args[1]);
-            if (!match.Success || match.Captures.Count != 2)
+            var match = new Regex(@"([\s\S]*).xml ([\s\S]*).xml").Match(args[1] ?? "");
+            if (!match.Success || match.Groups.Count != 3)
             {
-                Send("Fail. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id);
+                Bot.Send("Fail. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id, parseMode: ParseMode.Markdown);
                 return;
             }
-            var oldfilename = match.Captures[0].Value;
-            var newfilename = match.Captures[1].Value;
-            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+            var oldfilename = match.Groups[1].Value;
+            var newfilename = match.Groups[2].Value;
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Where(x => x.EndsWith(".xml")).Select(x => new LangFile(x)).ToList();
             var oldlang = langs.FirstOrDefault(x => x.FileName == oldfilename);
             var newlang = langs.FirstOrDefault(x => x.FileName == newfilename);
             if (oldlang == null || newlang == null)
@@ -1196,10 +1196,10 @@ namespace Werewolf_Control
             
             string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n\n";
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n\n";
-            Send(msg, u.Message.Chat.Id);
+            msg += "Are you sure?";
 
             var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
-            Send("Are you sure?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
+            Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 
 
@@ -1257,7 +1257,7 @@ namespace Werewolf_Control
                 msg += e.Message;
             }
 
-            Send(msg, u.Message.Chat.Id);
+            Bot.Send(msg, u.Message.Chat.Id, parseMode: ParseMode.Markdown);
         }
 
     }
