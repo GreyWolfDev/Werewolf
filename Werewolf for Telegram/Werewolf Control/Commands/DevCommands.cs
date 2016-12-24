@@ -1014,7 +1014,7 @@ namespace Werewolf_Control
         {
             if (String.IsNullOrEmpty(args[1]))
             {
-                Bot.Send("Usage: /preferred <link|username|groupid> [Y|N]\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
+                Bot.Send("Usage: `/preferred <link|username|groupid> [Y|N]`\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
                 return;
             }
             var group = args[1].Split(' ').First();

@@ -78,22 +78,23 @@ namespace Werewolf_Control.Helpers
 
             //now pack up the errors and send
             var result = "";
-            foreach (var file in errors.Select(x => new LangFile(Path.Combine(Bot.LanguageDirectory, $"{x.File}.xml"))).Distinct().ToList())
+            foreach (var file in errors.Select(x => x.File).Distinct().ToList())
             {
-                result += $"*{file.FileName}.xml* (Last updated: {file.LatestUpdate.ToString("MMM dd")})\n";
+                var langfile = new LangFile(Path.Combine(Bot.LanguageDirectory, $"{file}.xml"));
+                result += $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})\n";
                 if (errors.Any(x => x.Level == ErrorLevel.Info))
                 {
                     result += "_Duplicated Strings: _";
-                    result = errors.Where(x => x.File == file.FileName && x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
                 }
-                result += $"_Missing strings:_ {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == file.FileName)}\n";
-                if (errors.Any(x => x.File == file.FileName && x.Level == ErrorLevel.Error))
-                    result = errors.Where(x => x.File == file.FileName && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
+                result += $"_Missing strings:_ {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == langfile.FileName)}\n";
+                if (errors.Any(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error))
+                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
                 result += "\n";
                 
             }
             Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
-            var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).OrderBy(x => x.LatestUpdate);
+            var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == (choice ?? x.Base)).OrderBy(x => x.LatestUpdate);
             result = $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
             result += $"\nMost recently updated file: {sortedfiles.Last().FileName}.xml ({sortedfiles.Last().LatestUpdate.ToString("MMM dd")})\nLeast recently updated file: {sortedfiles.First().FileName}.xml ({sortedfiles.First().LatestUpdate.ToString("MMM dd")})";
 
