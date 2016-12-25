@@ -3285,7 +3285,7 @@ namespace Werewolf_Node
                         return DoGameEnd(ITeam.SerialKiller);
                     //cult outnumbers, win
                     else
-                        foreach (var p in Players.Where((x.PlayerRole != IRole.Doppelgänger & !x.IsDead)) //auto convert teamVG + sorcerer to cult when 1v1 cult
+                        foreach (var p in Players.Where((x => x.PlayerRole != IRole.Doppelgänger & !x.IsDead)) //auto convert teamVG + sorcerer to cult when 1v1 cult
                         {
                             p.OriginalRole = p.PlayerRole;
                             p.PlayerRole = IRole.Cultist;
