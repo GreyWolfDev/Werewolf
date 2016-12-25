@@ -3,6 +3,9 @@
 <!-- Version 1.00: Created proudly by Donavan, Holypanda, Kylor, Darryl, Klinsmann, Kopi, Ian and Cyril! Moral support and vetting from Jayjay, Kaykay and Risa! -->
 <!-- Version 1.01: Edited "serial killer" from KUMAR to Pontianak. Also language changes. -->
 <!-- Version 1.02: Multiple values for many common strings. Adding a bit of variety. -->
+<!-- Version 1.03: new strings.-->
+<!-- Version 1.04: new death strings in line with the english.xml file.-->
+<!-- This will be updated in tandem with the English language pack as far as possible. -->
 <!-- If you would like to contribute to this language pack for more Singaporean flavour, please contact @donavancheah to see how it can be infused into the pack! -->
 <strings>
   <language name="English - Singapore" base="English" variant="Singapore Version"/>
@@ -221,7 +224,7 @@
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
-      Dusk draws near, and the residents gather to decide who they are chasing away this evening...
+      Dusk draws near, and the residents gather to decide who they are chasing away this evening.
       Everyone now has {0} seconds to vote!
     </value>
   </string>
@@ -300,7 +303,8 @@
     <value >{0} was visited... but admitted to her illegal deeds! You felt that he would make a great HDB agent (wolf)! Congratulations on your new colleague!</value>
   </string>
   <string key="WolvesEatYou" isgif="false" >
-    <value >Oh no! The HDB agents (wolves) have evicted you!</value>
+    <value>Oh no! The HDB agents (wolves) have evicted you!</value>
+    <value>Unlucky day for you! The HDB agents (wolves) have evicted you!</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
@@ -387,10 +391,10 @@
     <value>All the pesky HDB agents have been dealt with! The residents have won and can continue their illegal enterprises!</value>
   </string>
   <string key="TannerWins" isgif="false" >
-    <value >Oh no! You chased the Attention Seeker out! HardwareZone and EDMW are now full of conspiracy articles such as paranormal spottings, plunging the value of the HDB flat!</value>
+    <value>Oh no! You chased the Attention Seeker out! HardwareZone and EDMW are now full of conspiracy articles such as paranormal spottings, plunging the value of the HDB flat!</value>
   </string>
   <string key="RemainingPlayersEnd">
-    <value>Remaining players in the estate, roles, and team:</value>
+    <value>Remaining players in the flat, roles, and team:</value>
   </string>
   <string key="CultistVotedConvert" >
     <!-- 0 - Voter's name -->
@@ -400,7 +404,7 @@
   <string key="CultConvertCultHunter">
     <!-- 0 - Yougest Cultist (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} was sent to do your dirty work, and recruit {1}, but they were the fake CPIB agent! RUN! Gosh, we lost {0} to the "CPIB"!</value>
+    <value>{0} was provided a pig's head, the negotiation forms, and went to recruit {1}, but they were the fake CPIB agent! RUN! Gosh, we lost {0} to the "CPIB"!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
@@ -502,7 +506,7 @@
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
-    <value>Ran away</value>
+    <value>离家出走 (Ran Away From Home)</value>
   </string>
   <string key="Dead">
     <value>😭 No Longer Living Here</value>
@@ -565,7 +569,7 @@
   </string>
   <string key="MasonConverted">
     <!-- 0 - mason's name -->
-    <value>Odd.... {0} didn't show up for the daily gossip session. O.o</value>
+    <value>{0} didn't show up for the daily gossip session. How strange...</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -1263,4 +1267,84 @@
   <string key="TannerTeam">
     <value>The Attention Seeking Team</value>
   </string>
+  <string key="VillageTeamEnd">
+    <value>Team Residents</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>The ones who don't give a damn!</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>The HDB Agents</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>The PONTIANAK Team!</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>The Money-Lending Members</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>The Attention Seeking Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The money-lending members send {0} to try to convert {1}, but {0} was immediately flashed an eviction notice for such daring illegal money-lending! {0} has been evicted!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} offered laksa to {1} last night, only to be met with {1} packing their bags! {1} convinced {0} of the existence of the pontianak, quickly convincing {0} to leave this HDB flat immediately!</value>
+  </string>
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>It appears {0}'s computer science skills can no longer be put to the test. The HDB agents found his twiddling with automated DDoS scripts, evicting the Rogue Computer Science student immediately.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>{0}'s superstitions have come true. She predicted last night the Pontianak would eventually find her, and she was right. The Superstitious Auntie has been scared out of her wits, and has decided to pack her bags.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>The Pontianak has claimed a new victim! {0} tried to go around hanging pigs' heads and spraying O$P$, only to be spooked by the Pontianak!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The Pontianak has robbed the HDB flat of "love", frightening the Matchmaking Auntie, {0}, out of her wits! No more matchmakers in the HDB flat; time for singles to wait till they are 35 before getting their own BTO!</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Weird... {0} was enjoying his Tiger Beer when a loud scream was suddenly heard. Apparently the Pontianak has come visiting, spooked him out of his wits, and no amount of alcohol would make him forget the Pontianak! He hastily fled the HDB flat.</value>
+    <value>{0} was enjoying a hearty shot of Kavalan (from the Duty Free store) when the Pontianak sobered him up. The drunkard is now leaving the HDB flat for good, scarred at how no amount of whisky can make him ever forget the psychological trauma.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally have handled the Pontianak just fine, except that she was out of words tonight. Even as a 啰哩啰嗦 (Long-winded) auntie, {0} decided to cut the crap and just leave this scary HDB flat.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was not doing guard duty right last night! All the HDB residents had found was a trail of urine, an abandoned SAR-21 and a few bullet holes, as if the Pontianak had succeeded in spooking the shady NSF, just like the stories he had heard while in Pulau Tekong.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Being frightened in his dreams from a Pontianak was not what {0} signed up for. Self-declared lawyers have no recourse against the... paranormal.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>The Pontianak has struck again! {0}, the Obese, was conjured an image of horror beyond compare, sending him rolling down the stairs and leaving the HDB flat for good!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The Hacktivist, {0}, was working on the latest botnet when the Pontianak decided to pay a visit... all that was known was that there were some strange screen flickers...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>The stock market speculator, {0}, was found to have been evicted last night. They would have made a good tag team with the HDB agents, if they had known!</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>What's with the heartlessness of the HDB agents, evicting the orphan, {0}! They could have employed {0} into their ranks!</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>The fakery of the Fake Corrupt Practices Investigation Bureau Officer, {0}, was exposed. Visiting an apparition last night was so traumatising he had got his just desserts for scaring people with the law. Never visit the Pontianak, especially at night!</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>The HDB agents were doing some OT and admin work at home when {0}, the newest Money-Lending Member, foolishly hung a pig's head at the HDB agents' homes. The arrest and eviction that followed was faster than lightning could strike.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>A pig's head would have scared a human, but {0} learnt it would not scare the Pontianak. The tables have turned, and {0} cut all ties with the Money-Lending Members and quietly disappeared, in the dark of the night.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>The 啰哩啰嗦 (Long-winded) auntie, {0}, asked for trouble! How could she ever win an argument against a ghost? All that was left was a note outside {0}'s door that read, "I scare far more than your words ever can!"</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>The 啰哩啰嗦 (Long-winded) auntie, {0}, visited the HDB agents last night. She squabbled with them, raised her voice, and was evicted for "noise pollution" and "disruption to the good order of the HDB estate".</value>
+  </string>
+
 </strings>

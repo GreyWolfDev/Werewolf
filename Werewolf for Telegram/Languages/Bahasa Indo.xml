@@ -659,7 +659,7 @@
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>Kamu adalah Cupid 💘. Malaikat kecil dari surga yang hanya memakai celana dalam dan sayap mungil, dengan panah asmaramu kamu bisa memilih sepasang kekasih yang dimabuk asmara dan tak terpisah oleh waktu. Jika salah satu pilihanmu mati, kekasihnya akan meninggal karena kesedihan.</value>
+    <value>Kamu adalah Cupid 🏹. Malaikat kecil dari surga yang hanya memakai celana dalam dan sayap mungil, dengan panah asmaramu kamu bisa memilih sepasang kekasih yang dimabuk asmara dan tak terpisah oleh waktu. Jika salah satu pilihanmu mati, kekasihnya akan meninggal karena kesedihan.</value>
   </string>
   <string key="RoleInfoDoppelganger">
     <value>Kamu adalah Doppelgänger 🎭. Menurut legenda kamu dapat berwujud menjadi siapa pun dengan kekuatan yang hampir sama seperti pilihanmu. Jika pilihanmu mati, kamu akan menggantikan peran pemain tersebut.</value>
@@ -709,9 +709,6 @@
     <!-- 2 - target's role -->
     <value> {0} tertatih memegang dadanya yang penuh bercak darah lalu terjatuh ke tanah. Dengan sisa hidupnya, Hunter 🎯 tersenyum mengarahkan senapannya ke arah kerumunan dan menembak {1}. {2}</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value> {0} membawa formulir pendaftaran ke rumah {1} dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba {1} menghunus pisau berkali-kali ke dada dan perut {0} hingga akhirnya dikuliti hidup-hidup dan dijadikan salah satu koleksinya. {0} telah mati oleh Serial Killer 🔪 </value>
-  </string>
   <string key="HunterShotWolfMulti">
 	<!-- 0 - target's name -->
     <value>Kawanan Serigala menyerang Hunter 🎯, tetapi Ia sempat menembak ke salah satu Serigala 🐺. Akhirnya, {0} tewas seketika!</value>
@@ -753,7 +750,7 @@
     <value>Perlahan kamu masuk ke rumah {0} berniat kelon enak sama dia. Awalnya, terlihat baik baik saja sampai {0} mengeluarkan pisau dan mulai menusukmu 300 kali dan tertawa layaknya seorang Maniak!! Kamu mati dengan menggenaskan.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>{0} mencoba untuk mencari kelon enak semalaman. Tiba-tiba, sang maniak muncul tiba-tiba!! {0} mati dengan penuh luka dan tusukan. Badannya tergeletak di pinggir jalan. - {0}</value>
+    <value>{0} mencoba untuk mencari kelon enak semalaman. Tiba-tiba, sang maniak muncul tiba-tiba!! {0} mati dengan penuh luka dan tusukan. Badannya tergeletak di pinggir jalan.</value>
   </string>
   <string key="DGToMason">
 	<!-- 0 - target's name -->
@@ -809,17 +806,13 @@
     <value>Hunter 🎯</value>
   </string>
   <string key="Cupid">
-    <value>Cupid 💘</value>
+    <value>Cupid 🏹</value>
   </string>
   <string key="SerialKiller">
     <value>Serial Killer 🔪</value>
   </string>
   <string key="Doppelgänger">
     <value>Doppelgänger 🎭</value>
-  </string>
-  <string key="CupidChosen">
-	<!-- 0 - lover's name -->
-    <value>Panah asmara Cupid mengenai hatimu, KAMU GAK JOMBLO LAGI!! Pasanganmu adalah {0} !  Tapi kalau pasanganmu mati, kamu pun akan mati, Romantis banget! Kalau kalian berdua bertahan sampai akhir, kalianlah pemenangnya.</value>
   </string>
   <string key="NewWCRoleModel">
 	<!-- 0 - target's name -->
@@ -1248,6 +1241,105 @@
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
     <value>{0} telah mati, dan kamu berubah menjadi Anak serigala (wolfcub)  Team serigalamu adalah: {1}</value>
+  </string>
+  <!-- Keep this for now until bots update-->
+  <string key="VillageTeam">
+    <value>Tim Warga Desa</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Tim Netral</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Tim Serial Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Tim Pemuja Kerang (Cultist)</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Tim Tanner</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Tim Warga Desa</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Tim Netral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Tim Serigala</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Tim Serial Killer</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Tim Pemuja Kerang (Cultist)</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Tim Tanner</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Kelompok Pemuja Kerang sepakat mengirim {0} untuk memberikan formulir ke {1}. Astaga! Warga melihat kepala {0} terlempar keluar dari jendela! TIDAK! {0} tewas seketika sambil menggenggam formulir.</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic">
+    <value>{0} menyelinap ke rumah {1} dengan perasaan yang sudah tak dapat dibendung lagi, membayangkan yang akan terjadi bersama {1}. Namun, Serial killer memutuskan untuk memuaskan {0} terlebih dahulu sebelum menjadikannya koleksi cantik di rumahnya!</value>
+  </string>
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Warga terbangun menemukan jenazah {0} tercabik-cabik di lantai dengan kembang menyan yang berhamburan di sekujur tubuhnya. Murid Penerawang mati ketika berlatih menyembur air kumur menyan. Sedih. </value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Asrataga, {0} seorang Pandai Besi ⚒ sedang sial. Dia mati kelilipan bubuk besi saat pertarungan melawan serangan bertubi-tubi dari Si Serial Killer. Yalord, {0} akhirnya mati.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Warga menemukan bau tak sedap dari rumah {0}. Ia ditemukan tak bernyawa tanpa hidung. Serial Killer telah beraksi lagi! {0} adalah Pemuja Kerang 👤.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Karena baper nggak dijodohin oleh cupid, {0} alias Cupid 🏹 dibunuh oleh seseorang karena terbakar cemburu dengan panah di kepala. Ah cupid sih asal jodohin, mati deh. </value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Dahla, ini sudah takdir bagi {0} untuk mati. Untung saja {0} mati bukan karena mabuk 🍺, tapi karena Serial Killer ingin mengoleksi organ tubuhmu di rumahnya. </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Tampaknya, {0} sudah lelah melawan Serial Killer. Guardian Angel 👼 kehilangan kekuatan supernya malam ini. {0} telah mati, sayapnya diambil oleh Serial Killer untuk dijadikan koleksi museum.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Perkelahian antara {0} dan Serial Killer terjadi tadi malam! Tanpa perlu berlama-lama lagi, Serial Killer berhasil melucuti pistol si Penembak 🔫 dan jenazahnya digantung di ruang koleksi. </value>
+  </string>
+  <string key="MayorKilled">
+    <value>TELAH DITEMUKAN! Jenazah {0}, si kepala desa 🎖 digantung di balai desa dekat pohon pisang, deretan paling kiri urutan ke lima belas. Ini aksi balas dendam Serial Killer, karena kepala desa telah mengurungnya di penjara setahun lalu!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Tukang sayur keliling sudah ramai dikerubuti ibu-ibu desa. Beberapa warga sudah terlihat mencangkul sawah. Namun, pangeran tidak terlihat pagi ini. Lalu seorang warga berteriak histeris! Ditemukan, jenazah {0} berada di sumur. Tampaknya, Pangeran 👑 telah menjadi korban Serial Killer.</value>
+    <value>Terdengar kabar bahwa {0} telah hilang semalam. Warga desa sibuk mencari pangeran 👑 kesayangan mereka. Akhirnya {0} ditemukan tertusuk pisau dengan jari-jari yang telah terpotong. Serial Killer telah mengincar cincin di tangan pangeran menjadikannya hiasan.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Warga terbangun mendengar teriakan para gadis desa pagi ini. Sungguh kejam, {0} ditemukan tak berkepala lagi. Serial Killer telah membunuh {0}, sang penerawang 👳.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Serigala berkumpul malam tadi! Mendengar suara auman, membuat mereka yakin untuk menikmati santap malam mereka. Sayangnya, mereka membunuh {0}, sang penyihir 🔮.</value>
+    <value>Pagi ini, warga desa berkerumun di pinggir sawah. Mereka melihat pecahan bola kristal di sebelah jasad {0}, sang penyihir 🔮. Sungguh tega, serigala menjadikannya santapan.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Serigala berkumpul semalam, menghabiskan waktu untuk berpesta dan menyantap {0}, dan hanya tulang-tulang yang tersisa! Warga terheran-heran untuk mencari tahu, siapa korban teror tadi malam. Sudah dipastikan, dia adalah Wild Child 👶.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Warga desa sedang berkabung. Mereka menemukan {0} seorang Cultist Hunter 💂, menjadi korban keji seorang pembunuh malam tadi. Apalah jadinya warga desa micin ini ketika kehilangan pembasmi Pemuja Kerang? Sedih.</value>
+    <value>Jenazah {0} Cultist Hunter 💂, ditemukan di tengah lapangan dengan pedang tertancap di leher. Sepertinya Ia telah salah mencurigai seseorang, bukan Pemuja Kerang yang ia datangi, namun Serial Killer!</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Tadi malam {0} sedang menjalankan tugasnya. Ia pergi ke salah satu rumah seseorang untuk menghasut mereka agar bergabung ke perkumpulan Pemuja Kerang 👤. Sayang sekali, merasa program dietnya terganggu, Serigala membunuh {0} dan memakannya! Serigala gagal diet.</value>
+    <value>Semalam, semua serigala sepakat berkumpul di rumah untuk bersantai. Namun, kedatangan {0} yang tiba-tiba mengganggu mereka. Serigala berkata kepada {0}, "Maaf kami sedang tidak tertarik pada kerang raksasa."</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Merasa sangat percaya diri {0}, seorang Pemuja Kerang 👤 berkunjung ke rumah seseorang semalam. Pagi ini ia ditemukan tewas tak bernyawa dengan sobekan formulir di sekitar tubuhnya. Serial Killer sepertinya tidak tertarik pada kegiatan pemujaan ini.</value>
+    <value>Kelompok Pemuja Kerang (cultist) 👤 mengirim anggotanya untuk pergi ke rumah seseorang malam tadi. Tanpa mereka tahu, {0} dikirim ke rumah Serial Killer hanya untuk dijadikan kesenangan keji sang pembunuh.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Sebagai Guardian Angel 👼,{0} bertugas untuk menjaga warga dari serangan pembunuh. Namun, kekuatan {0} telah hilang! Tidak! Tanpa membuang waktu, Serial Killer segera membunuhnya!</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} berusaha melindungi serigala semalam. Warga desa menyadari bahwa sayap {0} telah digantung di jemuran tetangga. Jelas, beginilah rasanya melindungi orang yang salah. Serigala baru saja mendapatkan santapan istimewa!</value>
   </string>
 </strings>
 

@@ -28,7 +28,7 @@
     <value>📣 Kurang {0} detik meneh kanggo /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>😔 Wah nyebahi...\nSing melu dolanan kurang, cobo diundang meneh kancane!</value><value>😔 Weehhh....\nsido main rak? iki meh main opo arep bayar listrik? golek konco meneh ngana..</value><value>😔 Heeee....\nYok'opo seh? Sido dulinan ora kon?</value>
+    <value>😔 Wah nyebahi...\nSing melu dolanan kurang, cobo diundang meneh kancane!</value><value>😔 Weehhh....\nsido main rak? iki meh main opo arep bayar listrik? golek konco meneh ngana..</value><value>😔 Heeee....\nYok'opo seh? Sido dulinan gak kon?</value>
   </string>
   <string key="StartingGameWait">
     <value>⌛️ Mbreng gedumbreng dumbreng (iki suworo drum ceritane)...\nDolanan wis dimulai. cek PM.</value><value>⌛️ Piye? Wis siap durung?...\nDolanan wis dimulai. cek PM.</value>
@@ -264,11 +264,11 @@
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
     <!-- 1 - victim role -->
-    <value>🌄 Kukuruyukkk... \nPas Warga ndeso podo tangi isuk, ning ketoke ono sing ra beres. kabeh do kroso mambu anyir. sakwise digoleki ambune kui makbenduduk Warga nemokake jasad {0} ajur mumur digrawut-grawut ning kandang babi, ndase ilang. NYAMNYAMNYAM {1}</value><value>🌄 Kukuruyukkk... \nSi {0} wis mati dipangan Serigala. KAPOK! {1}</value>
+    <value>🌄 Kukuruyukkk... \nPas Warga ndeso podo tangi isuk, ning ketoke ono sing ra beres. kabeh do kroso mambu anyir. sakwise digoleki ambune kui makbenduduk Warga nemokake jasad {0} ajur mumur digrawut-grawut ning kandang babi, ndase ilang. NYAMNYAMNYAM {1}</value><value>🌄 Kukuruyukkk... \nIsuk-isuk ono berita seko yu Juminten sing bar kuliah teko Wosingten, yen kroso mambu anyir ning cerak omahe.\nJebule kuwi mambu mayit e si {0} sing wis mati dipangan Serigala! {1}</value>
   </string>
   <string key="HunterKilledCultist">
     <!-- 0 - victim name -->
-    <value>📰 Ujug-ujug ono berita seko yu Juminten sing bar kuliah teko Wosingten, tonggone {0}, yen si Cultist 👤 {0} wis mati dipanah karo Cultist Hunter 💂.</value>
+    <value>📰 Ujug-ujug ono berita seko yu Juminten sing bar kuliah teko Wosingten, yen si Cultist 👤 {0} wis mati dipanah karo Cultist Hunter 💂.</value>
   </string>
   <string key="NoAttack" >
     <value>🌄 Kukuruyukkk... \nWarga ndeso isuk-isuk wis podo kumpul nang Alun-alun lan jumlahe lengkap - Owalah, ternyata ra ono sing dipangan Serigala mau bengi.</value>
@@ -670,9 +670,6 @@
     <!-- 2 - target's role -->
     <value>Si {0} wis keno peluru, njut ngambruk nang ngisor.... tapi karo gegem bedil e wonge banjur nembak genti si {1} lan mati. {2}</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>Si {0} 👤 mlipir nang ngomahe {1} ben direkrut, wonge dibukake lawang, nanging ujug-ujug kaget amarga nang ngarepe ono wong stres ngacungke peso 🔪!!! {1} pesone banjur ditusuke nang dadane si {0}, ditusuk ping akeh banget nganti mati! {0} wis modyar.</value>
-  </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
     <value>Serigala nyobo arep mangan Hunter mau bengi, nanging Hunter iso sempet nembak salah siji Serigala mau. Si {0} banjur modyar (Serigala 🐺)</value>
@@ -702,6 +699,7 @@
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
     <value>Cultist 👤 ngutus si {0} nggo ngrekrut {1}, nanging bar kuwi krungu suworo jeritan, sisa jasade {0} sumebar metu seko jendelo, akeh bekas tusukan nang awake! PANCEN WONG EDAN! {0} wis modyar....</value>
+	<value>Si {0} 👤 mlipir nang ngomahe {1} ben direkrut, wonge dibukake lawang, nanging ujug-ujug kaget amarga nang ngarepe ono wong stres ngacungke peso 🔪!!! {1} pesone banjur ditusuke nang dadane si {0}, ditusuk ping akeh banget nganti mati! {0} wis modyar.</value>
   </string>
   <string key="GuardKiller">
     <value>Kowe nyoba ngelindungi si Serial Killer 🔪, tapi wonge malah bales nusuk kowe ping 69! Serial killer ra duwe roso terimakasih, Kowe modyar....</value>
@@ -1223,15 +1221,11 @@
     <value>{0} wes mati, njuk saiki kowe dadi Anakan Serigala 🐶. Konco-koncomu (nek ono) yaiku: {1}</value>
   </string>
     
-  <!-- Keep this for now until bots update-->
   <string key="VillageTeam">
     <value>Tim Warga Ndeso</value>
   </string>
   <string key="NeutralTeam">
     <value>Tim Netral</value>
-  </string>
-  <string key="WolfTeam">
-    <value>Tim Serigala</value>
   </string>
   <string key="SerialKillerTeam">
     <value>Tim SK</value>
@@ -1260,5 +1254,71 @@
   </string>
   <string key="TannerTeamEnd">
     <value>Tim Tanner</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Cultist 👤 ngirim {0} nggo ngrekrut si {1},SEMPRUL sing direkrut jebule Serigala!\nWarga ndeso malah weruh ndase {0} mencelat metu seko jendelo... Kabeh do bingung ngopo kok iso ngono kuwi!\n{0} wis modyar...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} nyobo mlipir ning omahe {1} arep mancik sayang. Weladalah Jebule kuwi omahe Serial Killer 🔪. \nSerial Killer 🔪 banjur ngodel-odel wetenge si {0}, dijupuk jantunge kaggo koleksi pribadine!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>🌄 Kukuruyukkk... \nWarga ndeso bar tangi nemokake {0} mati ning cerak tungku kemenyan, ndas e ilang. Murid Seer 🙇 wis modyar.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Ketoke omahe {0} si Pandhe Wesi ⚒, lagi keno alangan. Ono 5 peso tumancep ning awake {0}, ning tangan, sikil lan ndase dituncepke ono ing mejo kerjane. Kok organ tubuh e ora digowo nggo koleksi ya?\nMungkin Serial Killer 🔪 gur pengen nambah koleksi senjata sing selanjute nggo mateni kowe. iyoo kowe...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Si {0} ditemokake ketusuk wesi wadah lilin ning tempat semedi. Serial Killer 🔪 beraksi meneh tanpo pandang bulu! {0} ki jebule Cultist 👤.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Isuk-isuk warga ndeso nemokke jenasah {0} Si Mak Comblang a.k.a. Cupid 🏹 mati kejiret busur panah e dewe. Mesakke, sopo hayo seng mateni?</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Mambu ciu karo lapen neng omah e {0}, Jebul de'e drunk 🍻 alias Cah Mendeman, omahe diacak-acak njuk wong e dipateni karo serial killer 🔪 nganti awakke biru. Nanging ketok e ciune ora diombe karo Serial Killer e 🔪.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} 👼 bar gelut karo serial killer 🔪, nanging mergo durung madhang de'e kesel njuk kalah. {0} kuwi sakjane Guardian Angel 👼, tur ra pati angel kanggo serial killer 🔪 mateni de'e.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Pas lagi enak-enak turu, Serial Killer 🔪 njupuk bedhil e Tukang Bedhil nggo mbedhil {0}, Tukang Bedhil 🔫 wes mati keno pelurune dewe amergo Serial Killer 🔪.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Makjegagik! Lurah 🎖 {0} wis mati neng ngarepan kantor kelurahan sanding gerobak mie ayam! Iki mesti panggaweane serial killer 🔪, udu bakul mie ayam!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Warga ndeso berkabung ngibarke gendero setengah mateng, eh setengah tiang, {0} si Pangeran 👑 turu saklawase mergo dipateni serial killer 🔪. Raono seng ngerti sopo pelakune, ancen serial killer e 🔪 lunyu banget og.</value>
+    <value>Ajudan pribadine {0} keturon kabeh mergo gendam offline. Warga ndeso nemokake jasad {0} neng dalan anyar kulon terminal, iki mesti gaweane serial killer 🔪, mergo nusuk e nganggo piso roti seng ono bekas selai kacang. Pangeran 👑 wes mati.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Warga ndeso nemokake jenasah {0} 👳, sikil e nganti misah karo sirah, rambut e botak sebelah. Nanging jenasah e ora mambu, tetep wangi kembang tujuh rupa karo minyak nyong-nyong. Jebul {0} kuwi Seer 👳.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Iki Kesalahan iki! TMT buoss, temen makan temen. {0} si Penyihir 🔮 mati dipangan koncone dewe 🐺, mesakke yo, tur kepiye meneh mergo kahanan e ngono.</value>
+    <value>Para Serigala 🐺 krungu arwah {0} si Penyihir 🔮 muni, "Aku ra nyongko, kowe tego karo konco, jarene konco kentel, uripku mbok sleding tekel". Mergo luwe konco yo dipangan 🐺, njuk sorcerer e mati..</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NYAMNYAMNYAM! Krungu wolf 🐺 ngunthal mau bengi, jebul seng diunthal kuwi wild child, awak e {0} wes kari belung e tok! Warga ndeso do rasan-rasan, kok yo serigalane tego mangan cah cilik seng ora nduwe duso, durung deng udu ora.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Warga ndeso tangi isuk-isuk nemokke jasad {0} si Cultist Hunter 💂. Niat golek kutil jebul salah marani, seng diparani malah Serial Killer 🔪!</value>
+    <value>Jasad e {0} si Cultist Hunter 💂 ditemokke warga ndeso ambyar neng kidul rel, dikiro ketubruk kreto jebul Cultist Hunter 💂 e marani Serial Killer 🔪. Dikiro serial killer e kutilan opo yo...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Serigalane 🐺 wes kadung kesel ameh metu, jebul {0} 👤 teko gowo formulir, niat ngerekrut malah ketemu serigala keluwen. Sikil e {0} 👤 seng diconvert dadi sayur sop, ngaterke panganan gratis kanggo serigala 🐺!</value>
+    <value>Cultist 👤 nyobo ngerekrut uwong mau bengi. Niat ngerekrut seng ditekani malah omah e Serigala 🐺, ketepakan serigalane memeng metu, keluwen, njuk {0} dipangan masio rodo kecut sithik. Mesakke {0} 👤, Serigalane 🐺 ra gelem melu dadi Cultist.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Cultist 👤 wes niat apik ngerekrut Serial Killer ben nduwe konco. Nanging de'e lewih seneng dewean, njuk {0} si cultist 👤 dipateni karo serial killer! Anggota cultist 👤 kelong siji.</value>
+    <value>Mau bengi Cultist 👤 meh nyobo ngerekrut uwong, jebul seng direkrut kuwi serial killer, njuk cultist 👤 e malah didadekke pajangan neng taman kuto, {0} si cultist 👤 anyaran wes mati.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>Niat e {0} 👼 wes apik ameh nyelametke wrga ndeso seko Serial Killer 🔪, nanging {0} malah salah milih uwong! Ono tulisan, "aku wes iso njogo uripku dewe, kowe rasah kuatir, aku mung njaluk ginjalmu nggo tuku lamborjini". Guardian Angel 👼 salah mlebu neng omah e Serial Killer 🔪.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <value>{0} 👼 nyobo nyelametke wolf mau bengi, ancen rangerti diuntung wes diselametke malah nyokot. Warga ndeso ndelok sayap-sayap patah e {0} nggantung neng bangjo prapatan ring road. Penak toh serigalane enthuk Guardian Angel 👼 gratisan.</value>
   </string>
 </strings>

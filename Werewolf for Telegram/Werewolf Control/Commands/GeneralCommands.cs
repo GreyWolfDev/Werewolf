@@ -355,12 +355,11 @@ namespace Werewolf_Control
                 i++;
             }
 
-            var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
+            var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
             try
             {
-                var result =
-                    Bot.Api.SendTextMessage(update.Message.Chat.Id, GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
-                        replyToMessageId: update.Message.MessageId, replyMarkup: gmenu).Result;
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
+                    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
             }
             catch (AggregateException e)
             {

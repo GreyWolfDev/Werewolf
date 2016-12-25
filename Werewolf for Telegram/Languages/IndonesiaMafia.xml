@@ -560,9 +560,6 @@
   <string key="RoleInfoSerialKiller">
     <value>Kamu adalah si Tukang Ciduk (Serial Killer) 🔪. Kamu merasa kota ini harus dibersihkan dari segala pengotor, baik itu mafia, polisi atau persekutuan yang tidak jelas. Setiap malam kamu menciduk orang dari rumahnya, menghilangkan kabar mereka dari kota ini!</value>
   </string>
-  <string key="CupidChosen">
-    <value>Kamu berpasangan dengan {0}. Sebagai dua sejoli, kamu tidak akan terpisahkan baik dalam penjara maupun dalam pengasingan.</value>
-  </string>
   <string key="HunterLynchedChoice">
     <value>Seluruh kota memilih untuk mengusir kamu dari kota ini! Rumah siapa yang akan merasakan dendammu??</value>
   </string>
@@ -586,9 +583,6 @@
   </string>
   <string key="HunterKilledFinalShot">
     <value>{0} meninggalkan kota ini dengan malu. Namun ia tidak pergi tanpa meninggalkan hadiah bagi kota ini. Tampaknya rumah si {1} telah rata dengan laut. Tanpa tempat tinggal, {1} pergi dari kota ini. {2}</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} pergi untuk mengajak {1} kedalam persekutuan hedon, namun tidak terdengar lagi kabarnya! Seakan-akan dia telah diciduk dari muka bumi ini.</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>Para polisi mencoba menyergap rumah sang Kontraktor (Hunter). Tapi sebelum polisi berhasil masuk kedalam rumahnya, seorang polisi terkena perangkap berlogo ACNE, sehingga harus dirawat dirumah sakit! {0} diopname.</value>
@@ -1037,7 +1031,7 @@
 	<value>Sementara para warga berdebat, {0} membangun satu menara pengawas di satu sudut kota. Untuk malam ini saja, para Polisi tidak dapat melakukan penyerbuan, karena mereka harus mencari jalan lain diluar pengawasan menara pengawas.</value>
   </string>
   <string key="Mayor">
-    <value>Boss Bawahan (Mayor) 🎖</value>
+    <value>Bawahan Boss (Mayor) 🎖</value>
   </string>
   <string key="Prince">
 	<value>Sang Anak Godfather (Prince) 👑</value>
@@ -1067,7 +1061,7 @@
     <value>Kamu menatap lembaran dokumen diatas mejamu. Pidato sang Kepala Polisi berdengung di pikiranmu. Meskipun wajahmu masi menyimpan bimbang dan keraguan, kamu memantapkan hati dan berangkat bertemu dengan sang Kepala Polisi. Kini kamu adalah anggota Polisi (Werewolf) !</value>
   </string>
   <string key="AboutMayor">
-    <value>Kamu adalah sang Boss Bawahan (Mayor). Sebelum kamu menunjukan jati dirimu, para warga Fairview menganggapmu hanya sebagai perajurit mafia rendahan.  Namun jika para warga mengetahui kamu adalah Bawahan Boss (Mayor), maka suara dan pendapatmu memiliki bobot dua kali lipat dari biasanya (vote pada siang hari dihitung sebagai dua).</value>
+    <value>Kamu adalah sang Bawahan Boss (Mayor). Sebelum kamu menunjukan jati dirimu, para warga Fairview menganggapmu hanya sebagai perajurit mafia rendahan.  Namun jika para warga mengetahui kamu adalah Bawahan Boss (Mayor), maka suara dan pendapatmu memiliki bobot dua kali lipat dari biasanya (vote pada siang hari dihitung sebagai dua).</value>
   </string>
   <string key="AboutPrince">
     <value>Sang Anak Godfather (Prince), pewaris tahta keluarga mafia Fairview. Meskipun begitu, ia ingin memulai karir mafinya dari bawah, seperti para pendahulunya. Jika sampai para warga memutuskan untuk mengusir dia dari kota ini, dia akan melepaskan samarannya sehingga pada siang itu tidak ada yang terusir dari Fairview. Namun para warga dapat mengusirnya lagi, jika mereka mau.</value>
@@ -1116,5 +1110,66 @@
   </string>
   <string key="TannerTeamEnd">
     <value>Skuad Nekad</value>
+  </string>
+   <string key="CultConvertWolf">
+    <value>Persekutuan Hedon mengirim {0} untuk mengajak {1} bergabung. Namun bukannya menambah anggota baru, {0} ditangkap oleh Polisi (Werewolf)!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+	<value>Berita Kepada Kota! Ditugaskan untuk mengantar sebuah barang, {0} beranjak menuju rumah {1}. Sesampainya di rumah {1} diberikan semua barangnya, kepada penghuni rumah, kepada sebuah gayung, kepada orang yang memegang gayung. Tetapi semua diam, tetapi semua bisu, tinggal {0} sendiri terpaku menatap si Tukang Ciduk! Barangkali di luar bumi ada jawabnya, mengapa {0} dan {1} tiada lagi di muka bumi.</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+	<value>Surat Kabar Tunai! Bisnis rumah jagal kini sedang meroket setelah ditangkapnya {0} sang Pemilik Rumah Jagal (Apprentice Seer) semalam. Rumah jagal yang banyak dicari adalah yang tidak mencurigakan, memiliki ruang bawah tanah yang kedap suara, udara, dan cahaya.</value>
+  </string>
+  <string key="BlacksmithKilled">
+	<value>Berita Utama! {0} sang Pengawas (Blacksmith) telah ditemukan menghilang dari kediamannya. Setelah penyidikan lebih lanjut ditemukan gayung misterius diantara perkakas bekas milik {0}. Tampaknya si Tukang Ciduk telah beraksi kembali!</value>
+  </string>
+  <string key="CultistKilled">
+	<value>Apa Berita Fairview! {0}, seorang anggota Persekutuan Hedon (Cultist) telah dinyatakan hilang secara misterius. Semalam terdengar sebuah keributan dari kediaman milik {0}, dan setelah dilakukan penyelidikan, ditemukan sebuah gayung bekas serta surat hutang piutang milik {0}.</value>
+  </string>
+  <string key="CupidKilled">
+	<value>Berita Utama! Sebuah gayung misterius ditemukan di rumah seorang Petugas Catatan Sipil (Cupid). Anehnya sang pemilik rumah, {0}, tidak ditemukan dimanapun.</value>
+  </string>
+  <string key="DrunkKilled">
+	<value>Politik Satu! {0}, seorang Koruptor (Drunk) telah menghilang dari Fairview. Para warga bersukacita berusaha mencari tahu siapa pelakunya. Hanya sebuah gayung misterius yang tertinggal di kediaman sang Koruptor (Drunk).</value>
+  </string>
+  <string key="GuardianAngelKilled">
+	<value>Teras Fairview! Dikabarkan gerbang di rumah seorang Penjaga Gerbang (Guardian Angel), {0}, telah hilang secara misterius beserta sang Penjaga Gerbang itu sendiri. Sebuah gayung misterius tertinggal di tempat yang dulunya adalah gerbang rumah.</value>
+  </string>
+  <string key="GunnerKilled">
+	<value>Sebaran Orang Hilang! Dicari seorang Reporter (Gunner) bernama {0}. Terakhir diketahui, sang Reporter berada rumahnya sedang meneliti tentang perdagangan gayung ilegal. Bila ada yang mengetahui keberadaannya mohon segera mengabarkan kepada stasiun berita Udik News.</value>
+  </string>
+  <string key="MayorKilled">
+	<value>Warta Mafia! Sang Godfather telah bertitah agar para warga Fairview untuk berwaspada karena hilangnya {0}, sang Bawahan Boss (Mayor). Sebuah gayung misterius ditemukan di kediaman {0}, sang Bawahan Boss, indikasi adanya serangan dari sang Tukang Ciduk.</value>
+  </string>
+  <string key="PrinceKilled">
+	<value>Warta Mafia! Kode merah! Seluruh warga Fairview diwajibkan untuk memperhatikan DPO terbaru! {0}, Sang Anak Godfather (Prince) telah menghilang dari Fairview! Gayung milik Tukang Ciduk ditemukan didalam kediamannya.</value>
+  </string>
+  <string key="SeerKilled">
+	<value>Berita Utama! Telah hilang seorang bernama {0}, terakhir kali terlihat sedang mencabuti bulu angsa di belakang rumahnya. Dikabarkan bahwa {0} adalah seorang Penyiksa (Seer). Sebuah gayung misterius juga ditemukan di atas tumpukan bulu angsa di kediaman {0}.</value>
+  </string>
+  <string key="SorcererEaten">
+	<value>Berita Pecah! {0}, yang dikabarkan sebagai seorang Informan (Sorcerer), diketahui telah ditangkap oleh kesatuan Polisi dalam penyerbuan semalam. Ketika ditanya atas dasar apa penangkapan tersebut, para polisi menolak untuk menjawab. Namun menurut salah satu narasumber kami, penangkapan tersebut terjadi akibat adanya salah informasi. Kami masi menunggu klarifikasi lanjutan.</value>
+  </string>
+  <string key="WildChildEaten">
+	<value>Kata Fairview! Sebuah penyerbuan terjadi di kota Fairview semalam. Polisi telah menangkap {0} meskipun dia adalah seorang Idealis (Wild Child). Kesatuan Polisi menolak untuk memberikan keterangan lebih lanjut.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+	<value>Koran Tunai! Penyelidikan seorang Petugas Pajak (Cultist Hunter), tentang isu adanya penimbunan suplai gayung misterius, berujung naas. {0} kini tidak lagi diketahui kabarnya dan ditemukan menghilang dari Fairview.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<value>Fairview Pos! Seorang anggota Persekutuan Hedon (Cultist) bernama {0} dikabarkan menghampiri seorang seorang polisi untuk diajak berfoya-foya. Namun karena {0} masih memiliki hutang, maka dia ditahan untuk pembayaran lebih lanjut.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+	<value>Suara Faiview! Seorang anggota Persekutuan Hedon (Cultist) bernama {0} dinyatakan menghilang dari Fairview setelah menghampiri seorang kolektor gayung untuk mengajak berhura-hura.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+	<value>Fairview Payungan! Dicari seorang Penjaga Gerbang (Guardian Angel) bernama {0}. Terkahir kali terlihat berdiri di depan gerbang terbuat dari gayung.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+	<value>Fairview Pembaharuan! Para polisi berhasil menangkap {0} yang merupakan seorang Penjaga Gerbang (Guardian Angel). {0} ditangkap karena menjaga gerbang depan rumah seorang polisi tanpa injin.</value>
   </string>
 </strings>

@@ -39,7 +39,7 @@ namespace Werewolf_Control
                  -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730
             ,-1001059273036, -1001090101991,  -1001066860506, -1001060843091, -1001080774621, -1001036952250, -1001082421542
             };
-            if (!auth.Contains(update.Message.Chat.Id) && update.Message.From.Id != UpdateHelper.Para)
+            if (!auth.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
                 Bot.Api.LeaveChat(update.Message.Chat.Id);
                 return;
@@ -79,7 +79,7 @@ namespace Werewolf_Control
                     {
                         //player is already in a game, and alive
                         Send(
-                            GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                            GetLocaleString("AlreadyInGame", grp?.Language ?? "English",
                                 game.ChatGroup.ToBold()), update.Message.Chat.Id);
                         return;
                     }

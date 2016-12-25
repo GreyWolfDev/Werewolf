@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -116,20 +117,59 @@ namespace Werewolf_Control
         [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
         public static void ValidateLangs(Update update, string[] args)
         {
-            var langs = Directory.GetFiles(Bot.LanguageDirectory)
-                                                        .Select(x => XDocument.Load(x)
-                                                                    .Descendants("language")
-                                                                    .First()
-                                                                    .Attribute("name")
-                                                                    .Value
-                                                        ).ToList();
-            langs.Insert(0, "All");
+            //var langs = Directory.GetFiles(Bot.LanguageDirectory)
+            //                                            .Select(x => XDocument.Load(x)
+            //                                                        .Descendants("language")
+            //                                                        .First()
+            //                                                        .Attribute("name")
+            //                                                        .Value
+            //                                            ).ToList();
+            //langs.Insert(0, "All");
 
-            var buttons =
-                langs.Select(x => new[] { new InlineKeyboardButton(x, $"validate|{update.Message.Chat.Id}|{x}") }).ToArray();
-            var menu = new InlineKeyboardMarkup(buttons.ToArray());
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
-                replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+            //var buttons =
+            //    langs.Select(x => new[] { new InlineKeyboardButton(x, $"validate|{update.Message.Chat.Id}|{x}") }).ToArray();
+            //var menu = new InlineKeyboardMarkup(buttons.ToArray());
+            //Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+            //    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+
+
+            var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
+
+
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
+            //buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
+
+            var baseMenu = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                if (buttons.Count - 1 == i)
+                {
+                    baseMenu.Add(new[] { buttons[i] });
+                }
+                else
+                    baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                i++;
+            }
+
+            var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
+            try
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+                    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+            }
+            catch (AggregateException e)
+            {
+                foreach (var ex in e.InnerExceptions)
+                {
+                    var x = ex as ApiRequestException;
+
+                    Send(x.Message, update.Message.Chat.Id);
+                }
+            }
+            catch (ApiRequestException ex)
+            {
+                Send(ex.Message, update.Message.Chat.Id);
+            }
         }
 
 
@@ -310,6 +350,88 @@ namespace Werewolf_Control
                             db.SaveChanges();
                             Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
                             Send($"Achievement {a} unlocked for {p.Name}", u.Message.Chat.Id);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        [Command(Trigger = "remach", DevOnly = true)]
+        public static void RemAchievement(Update u, string[] args)
+        {
+            //get the user to add the achievement to
+            //first, try by reply
+            var id = 0;
+            var achIndex = 0;
+            var param = args[1].Split(' ');
+            if (u.Message.ReplyToMessage != null)
+            {
+                var m = u.Message.ReplyToMessage;
+                while (m.ReplyToMessage != null)
+                    m = m.ReplyToMessage;
+                //check for forwarded message
+
+                id = m.From.Id;
+                if (m.ForwardFrom != null)
+                    id = m.ForwardFrom.Id;
+            }
+            else
+            {
+                //ok, check for a user mention
+                var e = u.Message.Entities?.FirstOrDefault();
+                if (e != null)
+                {
+                    switch (e.Type)
+                    {
+                        case MessageEntityType.Mention:
+                            //get user
+                            var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
+                            using (var db = new WWContext())
+                            {
+                                id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
+                            }
+                            break;
+                        case MessageEntityType.TextMention:
+                            id = e.User.Id;
+                            break;
+                    }
+                    achIndex = 1;
+                }
+            }
+
+            if (id == 0)
+            {
+                //check for arguments then
+                if (int.TryParse(param[0], out id))
+                    achIndex = 1;
+                else if (int.TryParse(param[1], out id))
+                    achIndex = 0;
+
+            }
+
+
+            if (id != 0)
+            {
+                //try to get the achievement
+                Achievements a;
+                if (Enum.TryParse(param[achIndex], out a))
+                {
+                    //get the player from database
+                    using (var db = new WWContext())
+                    {
+                        var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                        if (p != null)
+                        {
+                            if (p.Achievements == null)
+                                p.Achievements = 0;
+                            var ach = (Achievements)p.Achievements;
+                            if (!ach.HasFlag(a)) return; //no point making another db call if they already have it
+                            ach &= ~a;
+                            p.Achievements = (long)ach;
+                            db.SaveChanges();
+                            
+                            Send($"Achievement {a} removed from {p.Name}", u.Message.Chat.Id);
                         }
                     }
                 }

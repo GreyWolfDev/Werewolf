@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Amnesia mode by Amber (@ayylimao)! Play with role reveal after death off to have some serious fun lol
 Last update: 09/08/2016 by @ayylimao
 Traditional Chinese Translated by @meowmeoww, @Cojad.
 -->
 <strings>
-  <language name="正體中文(失憶模式)" base="正體中文" variant="失憶模式" owner="@meowmeoww" version="2016-09-19"/>
+  <language name="正體中文(失憶模式)" base="正體中文" variant="失憶模式" owner="@meowmeoww" version="2016-12-16"/>
   <string key="NotInGame">
     <value>你是不是忘了甚麼? 你好像連遊戲也沒有加入...... </value>
   </string>
@@ -606,9 +606,6 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="CultConvertHunter">
     <value>{0} 昨晚去了 {1} 的家, 沒想到這樣就死了. </value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} 昨晚去了 {1} 的家, 沒想到這樣就死了. </value>
-  </string>
   <string key="GuardKiller">
     <value>患上失憶症的你竟胡亂闖進殺人魔的地方, 他在你身上慢慢的用利刀劃上一條又一條的傷痕; 看著傷口一滴滴流出來的血, 他竟然還咧嘴大笑...... </value>
   </string>
@@ -616,7 +613,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
     <value>你跑到 {0} 的家裡, 與他一夜纏綿過後, 他突然拿著匕首向你大笑三聲, 先把你的耳朵割下來, 接下來到鼻子, 然後到你的手指...... 最後, 他剖開你的肚子, 拿出你的腎臟, 不是拿去賣掉, 而是整個放進他的口裡......</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now!(這? ? ? ) - {0}</value>
+    <value>{0} 昨晚本想找點樂子... 但她竟遇上了一個瘋狂殺人魔! {0} 已經死了...</value>
   </string>
   <string key="DGToMason">
     <value>突然,  {0} 的名字在你腦海中閃過! </value>
@@ -665,9 +662,6 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   </string>
   <string key="Doppelgänger">
     <value>模仿者 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <value>你雖然仍然想不起自己的身份, 但你記起 {1} 是很重要的人! </value>
   </string>
   <string key="NewWCRoleModel">
     <value>你的身份好像有些轉變, 你到底現在又是甚麼呢?  \n你雖然仍然想不起自己的身份, 但你記起 {0} 是很重要的人! </value>
@@ -1003,5 +997,217 @@ GuardEmptyHouse*
   <string key="YouJoined">
   <value>你已經成為 {0} 裡的村民, 不要忘記去把狼人找出來!</value>
   <value>你從夢中醒來, 發現自己身處 {0} , 可是, 你是誰啊?</value>
+  </string>
+  <!-- 10/14 New Strings -->
+  <string key="Ping2">
+    <value>ping 訊息發送費時: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>糟糕! 你竟然忘記自己的身份!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>糟糕! 你竟然忘記自己的身份!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>糟糕! 你竟然忘記自己的身份!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>糟糕! 你竟然忘記自己的身份! 但你想起晚上有些事情要處理. </value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>糟糕! 你竟然忘記自己的身份!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>糟糕! 你竟然忘記自己的身份! 但你想起晚上有些事情要處理. </value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>糟糕! 你竟然忘記自己的身份! 但你想起晚上有些事情要處理. </value>
+  </string>
+  <string key="PrinceLynched">
+    <value>就當村民要處決 {0} 時, 赫然發現他手上的皇家戒指, 這是大家才發現他是王子! 可憐的王子患上失憶症後, 也忘卻自己的身份. 身為貴族的他, 大家都深信他不可能是邪惡的一方. 最後, 村民在羞愧中草草度過了這個愚蠢的夜晚.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>你昨晚在 {0} 的家做了甚麼呢? 看來你自己也忘了. </value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} 走出眾人之間, 出示了來自官方的證明文件證明了他是這個村莊的村長. 從現在該開始, {0} 的票將被視為兩票.</value>
+  </string>
+  <string key="AskMayor">
+    <value>當大家進行討論時, 你摸了一下你的口袋, 發現了一張卡片, 你要拿出來嗎?</value>
+    <value>當大家進行討論時, 你摸了一下你的口袋, 發現了一些東西, 你要拿出來嗎?</value>
+   </string>
+  <string key="Reveal">
+    <value>拿出來!</value>
+  </string>
+  <string key="SpreadDust">
+    <value>當大家進行討論時, 你摸了一下你的口袋, 發現了一些東西, 你要拿出來嗎?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>正當大家在激烈的辯論時, 發現 {0} 正在村莊周圍撒著閃亮的銀渣, 看來至少今天晚上村民可以安心免於狼群的攻擊好好睡一覺了(今晚狼人將無法做任何行動)</value>
+  </string>
+  <string key="Mayor">
+    <value>村長 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>王子 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>巫師 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>蠢蛋 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>鐵匠 ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>狼王 ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>幼狼 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>你昨晚在 {0} 的家做了甚麼呢? 看來你自己也忘了. \n你雖然忘記自己是誰, 但你記得 {1} 是很重要的人! </value>
+  </string>
+  <string key="PlayerBitten">
+    <value>你昨晚在家做了甚麼呢? 看來你自己也忘了. </value>
+  </string>
+  <string key="BittenTurned">
+    <value>你的身份好像有些轉變, 你到底現在又是甚麼呢? </value>
+  </string>
+  <string key="AboutMayor">
+    <value>身為村民, 你想當然爾是村民的一份子, 當你揭露了你的真實身份, 你的意見將會受到村名的重視, 換言之在處決投票時, 你的一票將等於兩票, 善用你的權利去帶領你的村民吧!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>王子在村民陣營策略扮演著關鍵性的角色. 一旦王子被處決, 王子的身份將會揭開, 並活下來. 但是也表示這只會發生一次, 如果村民依然再次選擇處決王子, 那王子將會被處決而死.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>你是否記得那位老先知呢? 現在狼人陣營也有了對抗先知的能力了, 巫師將成為狼群的先知, 不過巫師只能知道一個人是狼還是先知, 狼人的勝利也就是巫師的勝利.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>你是個蠢蛋, 或許當初不應該在早餐喝下那麼多酒, 你的眼睛該死的啥都看不清了. 你還能投票給你想要處決的人嗎? (你有一半的機率投錯要處決的村民而不是你心中所想的那位)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>你是鐵匠. 經年累月下來, 你平常打造的刀劍沒有一件能夠讓你滿意, 唯獨精靈們拜託你打造的銀匕首令你自豪.\n你似乎還留有些許的當時殘餘些許銀渣, 那些銀渣或許能夠阻止狼群的行動一個夜晚也說不定呢. 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>你是狼王, 一切詛咒的來源, 萬惡之源. 當你活著的時候, 狼群狩獵時有, 獵物有 20% 機會成為狼群的一份子</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>多麼可愛的一隻小狼阿, 咕唧咕唧(搔癢~), 咳....我是想說你這個小狼崽子, 如果有人膽敢殺了你, 我將不介意讓狼群們大開殺戒一晚兩個獵物的. 這麼可愛的傢伙如果死了我該去搔癢你這小傢伙呢?</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你腦海中泛現出某些看來是很重要的人: {1} </value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>因為 {0} 的死, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n你雖然仍然想不起自己的身份, 但你腦海中泛現出某些看來是很重要的人: {1} </value>
+  </string>
+
+  <string key="VillageTeam" deprecated="true">
+    <value>村民陣營</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>中立陣營</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>殺人魔陣營</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>邪教陣營</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>皮匠陣營</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>村民陣營</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>中立陣營</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>狼人陣營</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>殺人魔陣營</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>邪教陣營</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>皮匠陣營</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>邪教派出了 {0} 去對 {1} 宣教, 但 {0} 的腦袋竟然飛出了窗外... 或許殺人魔也在想這傢伙腦袋有問題不可吃吧!😑\n{0} 已死!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} 偷偷溜進了 {1} 的房子, 準備好迎接整夜的激情, 卻看到一個詭異的傢伙正在手術似的取出 {1} 的內臟! 轉身看到 {0} 的殺人魔決定先與妓女來場激烈的翻雲覆雨後, 再把蕩婦的鮮紅的心臟納入他的珍貴收藏!</value>
+  </string>
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>村民醒來後發現頭顱不見的 {0} 倒臥在一塊老舊的占卜板前似乎生前正在練習占卜.\n先知學徒已死!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>難以辨識的屍體, 應該是小鎮的鐵匠 {0} 吧! 他肯定是非常的不幸! 五把鐵匠才打造出來的新刀子, 此時卻是穿過鐵匠四肢與頭部把鐵匠給釘在了工作台上. 昨晚殺人魔肯定是想要順便在他的內臟收藏旁邊增添一組武器收藏吧...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} 被發現在被燭台給刺穿而死在聖桌上. 殺人魔再度行動了, 不管是什麼種族, 語言, 宗教都可能成為他的目標! {0} 是邪教徒!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>隔日早晨, 村民痛心的發現邱比特 {0} 被從頭到腳分成兩半, 再仔細看了一下內臟都還在唯獨缺了...心臟?!</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>村民本來想要去找 {0} 暢飲幾杯軒尼斯白蘭地, 但卻發現 {0} 家中只剩下一把損壞的刀子與肝臟, 看來多年飲酒造成硬如鋼鐵的肝臟令殺人魔也感到棘手吧🤔...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} 通常總能成功的一次又一次擊退殺人魔的攻擊來保護村民, 但諷刺的是守護天使光環卻未能保護他自己. {0} 已死!</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>看來昨晚 {0} 睡夢時被殺人魔抓到疏於防備的空擋. 昨夜的一聲驚天槍響, 現場留下卻是槍手屍體, 頭上的彈孔與身上的刀痕, 顯然殺人魔又再次得手了!</value>
+  </string>
+  <string key="MayorKilled">
+    <value>暗殺! 昨晚在辦公室內忙碌的村長 {0} 被發現遭殺人魔用刀子釘在他的辦公桌上, 這肯定是殺人魔來報仇村長帶給他的數年空白人生的仇了!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>黎明前警鈴響徹村莊四處, 武裝的皇家護衛在村莊四處街頭找尋失蹤的王子 {0}. 什麼都沒有發現, 但是也出現有個殺人魔最近脫逃目前不知去向的謠言...</value>
+    <value>{0} 的護衛被發現昨晚打瞌睡, 皇室王子 {0} 的遺骸被發現散落在大宅的四處, 就算是皇家的血脈也未能阻止殺人魔的刀子分毫.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>村民醒來發現 {0} 殘破的屍體, 從頭到腳分離, 刀痕劃遍每寸皮膚肌肉. 奇怪的是大腦卻被精密從頭顱內抽出, 這是否暗示著小鎮已失去了他們的智者領導呢? {0} 是先知.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>悲戚的狼嚎聲響撤了村莊, 狼群犯了一個錯... 誤殺了與他們聯盟的巫師. 巫師 {0} 已死.</value>
+    <value>"我不是你們的敵人阿~~~" 一聲悚然的慘叫在昨夜中傳出, 村民們隔日清早發現一具殘破的屍體旁邊還有一顆屬於 {0} 的破碎魔法球 🔮. 飢餓戰勝了同盟啊...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>嗷嗚~~~~! 昨夜的狼嚎聲猶在耳祭. 孤兒 {0} 昨晚被狼人給盯上了. 眾人只見一副縮小版的骨骸散落地面, 村民們不禁心想狼人對手無縛雞之力的孤兒下手時可曾感到一絲愧疚感嗎?</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>村民早上醒來只見鎮公所前邪教獵人 {0} 的屍體變成數截的放在公所前的一個推車內. 教訓: 千萬別去拜訪殺人魔的家!</value>
+    <value>邪教獵人 {0} 被整齊的切割成數百塊大小一致的屍塊陳列在市中心廣場上. 去試探殺人魔是否為邪教徒顯然不是個好主意...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>本來今晚狼人本來不打算出門狩獵乖乖在家, 一個倒楣的邪教徒 {0} 試圖去說服狼人入教, 當獵物自己送上了狼人的門前, 狼人們可不會知道什麼叫做拒絕, 喜滋滋的將門前的獵物變成的今晚的大餐...真是不請自來的美味啊!</value>
+    <value>邪教徒昨晚遇到了意料之外麻煩, 他們的新成員 {0} 很不幸地去拜訪了一個決定留在家中的狼人, 狼人發現上門的傢伙皮白肉嫩非常的美味可開心了! 至於什麼真主阿里, 狼人是一點興趣都沒有...</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>邪教徒們本以為他們即再添一位新成員, 但他們錯了, {0} 被切成肉泥般棄置在中心廣場, 一把刀還插在他們的"聖"書上, 似乎在宣告著誰的信仰才是勝利?</value>
+    <value>昨晚, 邪教徒試圖去洗腦小鎮內比他們都還要瘋的傢伙, 他們的新成員 {0} 被派去向殺人魔宣教, 殺人魔又多了一個掛在中心廣場的器官藝術品.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>今晚 {0} 本來應該守護村民的免於殺人魔, 但看來守護天使的光環已經消散, 翅膀被殺人魔給割去, 旁邊一張紙條寫著: "我比你更懂得保護自己!"</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} 昨天居然去保護一個狼人, 一早村民們只見守護天使的翅膀被掛在十架上, 顯然狼人們又享受了一頓上帝額外"免費送門上府"的美食.</value>
   </string>
 </strings>
