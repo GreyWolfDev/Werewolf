@@ -3284,6 +3284,16 @@ namespace Werewolf_Node
                     if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
                         return DoGameEnd(ITeam.SerialKiller);
                     //cult outnumbers, win
+                    else
+                        foreach (var p in Players.Where((x => x.PlayerRole != IRole.Doppelgänger & !x.IsDead)) //auto convert teamVG + sorcerer to cult when 1v1 cult
+                        {
+                            p.OriginalRole = p.PlayerRole;
+                            p.PlayerRole = IRole.Cultist;
+                            p.Team = ITeam.Cult;
+                            p.HasDayAction = false;
+                            p.HasNightAction = true;
+                            p.DayCult = GameDay;
+                        }
                     return DoGameEnd(ITeam.Cult);
                 }
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
