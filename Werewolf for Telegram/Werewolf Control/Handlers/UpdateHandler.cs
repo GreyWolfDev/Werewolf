@@ -387,11 +387,12 @@ namespace Werewolf_Control.Handler
                         case MessageType.VoiceMessage:
                             break;
                         case MessageType.DocumentMessage:
-                            if (UpdateHelper.IsGlobalAdmin(update.Message.From.Id) && SendGifIds)
+                            if (UpdateHelper.IsGlobalAdmin(update.Message.From.Id) && SendGifIds && update.Message.Chat.Type.Equals(ChatType.Private))
                             {
                                 var doc = update.Message.Document;
                                 var image = ActualUploadGif?[update.Message.From.Id];
                                 ActualUploadGif[update.Message.From.Id] = null;
+                                SendGifIds = false;
 
                                 if (image==null)
                                 {
@@ -405,7 +406,7 @@ namespace Werewolf_Control.Handler
                                         DB.ImageLanguages.Add(image);
                                         DB.SaveChanges();
                                         var menu = UpdateHandler.GetConfigGifMenu(id);
-                                        Bot.Api.SendTextMessage(id, $"GIF adicionado para '{image.ImageKey.ToString()}'! Para qual ação gostaria de configurar o GIF agora?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
+                                        Bot.Api.SendTextMessage(id, $"GIF adicionado para '{image.ImageKey.ToString()}' na língua '{image.LanguageVariant}'! Para qual ação gostaria de configurar o GIF agora?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
                                         replyMarkup: menu);
                                     }
                                 }
