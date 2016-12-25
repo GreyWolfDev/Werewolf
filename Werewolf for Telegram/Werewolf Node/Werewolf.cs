@@ -600,7 +600,7 @@ namespace Werewolf_Node
                     {
                         player.HasUsedAbility = true;
                         _silverSpread = true;
-                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName(), GetImageLanguage(ImageKeys.BlacksmithSpreadSilver)));
+                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()), GetImageLanguage(ImageKeys.BlacksmithSpreadSilver));
                     }
 
                     ReplyToCallback(query,
