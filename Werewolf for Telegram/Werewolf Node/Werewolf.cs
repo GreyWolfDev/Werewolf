@@ -28,7 +28,8 @@ namespace Werewolf_Node
             KillTimer,
             IsInitializing,
             MessageQueueing = true,
-            Chaos, WolfCubKilled;
+            Chaos, WolfCubKilled,
+            NoOneCastLynch;
         private readonly InlineKeyboardMarkup _requestPMButton;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
@@ -754,8 +755,11 @@ namespace Werewolf_Node
                     var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
                     SendWithQueue(msg);
                     
-                    if (Players.Where(x => !x.IsDead).All(x => x.CurrentQuestion?.QType == QuestionType.Lynch))
+                    if (NoOneCastLynch)
+                    {
                         player.FirstStone++;
+                        NoOneCastLynch = false;
+                    }
                     else
                         player.FirstStone = 0;
 
@@ -3312,6 +3316,16 @@ namespace Werewolf_Node
                     if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
                         return DoGameEnd(ITeam.SerialKiller);
                     //cult outnumbers, win
+                    else
+                        foreach (var p in Players.Where((x => x.PlayerRole != IRole.Doppelgänger & !x.IsDead)) //auto convert teamVG + sorcerer to cult when 1v1 cult
+                        {
+                            p.OriginalRole = p.PlayerRole;
+                            p.PlayerRole = IRole.Cultist;
+                            p.Team = ITeam.Cult;
+                            p.HasDayAction = false;
+                            p.HasNightAction = true;
+                            p.DayCult = GameDay;
+                        }
                     return DoGameEnd(ITeam.Cult);
                 }
                 if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
@@ -3513,6 +3527,7 @@ namespace Werewolf_Node
         {
             if (Players == null)
                 return;
+            NoOneCastLynch = true;
             foreach (var player in Players.Where(x => !x.IsDead).OrderBy(x => x.Name))
             {
                 player.CurrentQuestion = null;

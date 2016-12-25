@@ -84,6 +84,7 @@ namespace Werewolf_Control
             //start up the bot
             new Thread(() => Bot.Initialize(updateid)).Start();
             new Thread(NodeMonitor).Start();
+            
             //new Thread(CpuMonitor).Start();
             new Thread(UpdateHandler.SpamDetection).Start();
             new Thread(UpdateHandler.BanMonitor).Start();
