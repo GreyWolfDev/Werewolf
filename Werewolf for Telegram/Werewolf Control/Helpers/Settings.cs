@@ -54,7 +54,7 @@ namespace Werewolf_Control.Helpers
         public static List<string> VillagerDieImages = new List<string> { "BQADAQADxAADoS3DCdQQVQvY7D5AAg", "BQADAQADwwADoS3DCTpmy3l5AtSkAg" };
         public static List<string> WolfWin = new List<string> { "BQADAQADvwADE9RmCoit7eO5VNvFAg" };
         public static List<string> WolvesWin = new List<string> { "BQADBAADlRMAArsYZAdnzPICOHPdhAI" };
-        public static List<string> VillagersWin = new List<string> { "BQADAwADgwADdBexB2K0cDWari8QAg", "BQADAQAD_wADcsVuDy8Un_hN5fq2Ag" };
+        public static List<string> VillagersWin = new List<string> { "BQADAQAD_wADcsVuDy8Un_hN5fq2Ag" };
         public static List<string> NoWinner = new List<string> { "BQADAQADVgIAAnNuIAmdYdeZhXDPbwI" };
         public static List<string> StartGame = new List<string> { "BQADBAADIhwAAncZZAfLEvtcLlK1GwI", "BQADAQADUQIAAnNuIAkTy4a7JPqNWQI", "BQADAQADuwADoS3DCTL_K1-Ob144Ag" };
         public static List<string> StartChaosGame = new List<string> { "BQADAQADlwMAAhRvVApHz0mgdD3qiwI" };
@@ -103,7 +103,7 @@ namespace Werewolf_Control.Helpers
 #if DEBUG
             MinPlayers = 1,
 #else
-            MinPlayers = 3,
+            MinPlayers = 5,
 #endif
             MaxPlayers = 35,
             TimeDay = 60,

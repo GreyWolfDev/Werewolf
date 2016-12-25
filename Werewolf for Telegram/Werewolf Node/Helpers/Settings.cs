@@ -40,7 +40,7 @@ namespace Werewolf_Node
         public static List<string> VillagerDieImages = new List<string> { "BQADAQADxAADoS3DCdQQVQvY7D5AAg", "BQADAQADwwADoS3DCTpmy3l5AtSkAg" };
         public static List<string> WolfWin = new List<string> { "BQADAQADvwADE9RmCoit7eO5VNvFAg" };
         public static List<string> WolvesWin = new List<string> { "BQADBAADlRMAArsYZAdnzPICOHPdhAI" };
-        public static List<string> VillagersWin = new List<string> { "BQADAwADgwADdBexB2K0cDWari8QAg", "BQADAQAD_wADcsVuDy8Un_hN5fq2Ag" };
+        public static List<string> VillagersWin = new List<string> { "BQADAQAD_wADcsVuDy8Un_hN5fq2Ag" };
         public static List<string> NoWinner = new List<string> { "BQADAQADVgIAAnNuIAmdYdeZhXDPbwI" };
         public static List<string> StartGame = new List<string> { "BQADBAADIhwAAncZZAfLEvtcLlK1GwI", "BQADAQADUQIAAnNuIAkTy4a7JPqNWQI", "BQADAQADuwADoS3DCTL_K1-Ob144Ag" };
         public static List<string> StartChaosGame = new List<string> { "BQADAQADlwMAAhRvVApHz0mgdD3qiwI" };
@@ -51,6 +51,7 @@ namespace Werewolf_Node
         public static List<string> HunterKilledCultist = new List<string> { "BQADBAADNAMAAkcbZAfo06zarRzNXgI" };
         public static List<string> HunterKilledFinalShot = new List<string> { "BQADAQADuAADoS3DCeya0e_BqwABvgI" };
         public static List<string> RoleInfoDrunk = new List<string> { "BQADAQADwgADoS3DCblBCwQZU6nUAg", "BQADAQADvQADoS3DCQ2MVePhv534Ag" };
+        public static List<string> BlacksmithSpreadSilver = new List<string> { "BQADAQADvQADE9RmCkDe5CxjDqCeAg" };
 #else
         public static List<string> VillagerDieImages = new List<string> { "BQADAwADggADdBexBxVNNy-rt--bAg", "BQADBAADWAMAAt4cZAfbY0WobzNPwAI", "BQADBAADKgMAAoMbZAc7Ldme4T3DKQI" };
         public static List<string> WolfWin = new List<string> { "BQADAwADgQADdBexBzrFBt-CBlhbAg", "BQADAwADgAADdBexB88vVl1RuLb3Ag" };
@@ -73,7 +74,7 @@ namespace Werewolf_Node
             MinPlayers = 1,
             
 #else
-            MinPlayers = 3,
+            MinPlayers = 5,
 #endif
             MaxPlayers = 35,
             TimeDay = 60,
