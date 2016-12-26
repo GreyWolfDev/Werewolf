@@ -2904,7 +2904,7 @@ namespace Werewolf_Node
             #region Seer / Fool
 
             //let the seer know
-            var seers = Players.Where(x => x.PlayerRole == IRole.Seer & !x.IsDead);
+            var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
             if (seers.Any())
             {
                 foreach (var seer in seers)
@@ -2913,62 +2913,55 @@ namespace Werewolf_Node
                     if (target != null)
                     {
                         DBAction(seer, target, "See");
-                    }
-                    if (!seer.IsDead && seer.Choice != 0 && seer.Choice != -1)
-                    {
-                        if (target != null)
-                        {
-                            var role = target.PlayerRole;
-                            switch (role)
-                            {
-                                case IRole.Beholder:
-                                    AddAchievement(seer, Achievements.ShouldHaveKnown);
-                                    break;
-                                case IRole.Traitor:
-                                    role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
-                                    break;
-                                case IRole.WolfCub: //seer doesn't see wolf type
-                                case IRole.AlphaWolf:
-                                    role = IRole.Wolf;
-                                    break;
-                            }
-                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
-                        }
-                    }
-                }
-            }
-            var sorcerer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer & !x.IsDead);
-            if (sorcerer != null)
-            {
-                if (sorcerer.Choice != 0 && sorcerer.Choice != -1)
-                {
-                    var target = Players.FirstOrDefault(x => x.Id == sorcerer.Choice);
-                    if (target != null)
-                    {
-                        DBAction(sorcerer, target, "See");
                         var role = target.PlayerRole;
                         switch (role)
                         {
+                            case IRole.Beholder:
+                                AddAchievement(seer, Achievements.ShouldHaveKnown);
+                                break;
+                            case IRole.Traitor:
+                                role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
+                                break;
+                            case IRole.WolfCub: //seer doesn't see wolf type
                             case IRole.AlphaWolf:
-                            case IRole.Wolf:
-                            case IRole.WolfCub:
-                                Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(IRole.Wolf)), sorcerer.Id);
-                                break;
-                            case IRole.Seer:
-                                Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), sorcerer.Id);
-                                break;
-                            default:
-                                Send(GetLocaleString("SorcererOther", target.GetName()), sorcerer.Id);
+                                role = IRole.Wolf;
                                 break;
                         }
+                        Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                     }
                 }
             }
-            var fool = Players.FirstOrDefault(x => x.PlayerRole == IRole.Fool & !x.IsDead);
-            if (fool != null)
-                if (!fool.IsDead && fool.Choice != 0 && fool.Choice != -1)
+            var sorcerer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer && !x.IsDead);
+            if (sorcerer != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == sorcerer.Choice);
+                if (target != null)
                 {
-                    var target = Players.FirstOrDefault(x => x.Id == fool.Choice);
+                    DBAction(sorcerer, target, "See");
+                    var role = target.PlayerRole;
+                    switch (role)
+                    {
+                        case IRole.AlphaWolf:
+                        case IRole.Wolf:
+                        case IRole.WolfCub:
+                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(IRole.Wolf)), sorcerer.Id);
+                            break;
+                        case IRole.Seer:
+                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), sorcerer.Id);
+                            break;
+                        default:
+                            Send(GetLocaleString("SorcererOther", target.GetName()), sorcerer.Id);
+                            break;
+                    }
+                }
+                
+            }
+            var fool = Players.FirstOrDefault(x => x.PlayerRole == IRole.Fool && !x.IsDead);
+            if (fool != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == fool.Choice);
+                if (target != null)
+                {
                     var possibleRoles = Players.Where(x => !x.IsDead && x.Id != fool.Id && x.PlayerRole != IRole.Seer).Select(x => x.PlayerRole).ToList();
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
@@ -2980,12 +2973,20 @@ namespace Werewolf_Node
                             possibleRoles[0] = IRole.Wolf;
 
                         //check if it's accurate
-                        if (possibleRoles[0] == target.PlayerRole || (possibleRoles[0] == IRole.Wolf && WolfRoles.Contains(target.PlayerRole)))
-                            fool.FoolCorrectSeeCount++;
-                        
+                        try
+                        {
+                            if (possibleRoles[0] == target.PlayerRole || (possibleRoles[0] == IRole.Wolf && WolfRoles.Contains(target.PlayerRole)))
+                                fool.FoolCorrectSeeCount++;
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(possibleRoles[0])), fool.Id);
                     }
                 }
+            }
 
             #endregion
 
