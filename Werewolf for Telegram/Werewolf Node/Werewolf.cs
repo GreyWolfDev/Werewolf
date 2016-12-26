@@ -2112,7 +2112,6 @@ namespace Werewolf_Node
             //FUN!
             Time = GameTime.Night;
             var nightStart = DateTime.Now;
-            if (CheckForGameEnd()) return;
             foreach (var p in Players)
             {
                 p.Choice = 0;
@@ -3225,6 +3224,23 @@ namespace Werewolf_Node
                 return true;
             if (!IsRunning) return true;
             var alivePlayers = Players.Where(x => !x.IsDead);
+
+            //first of all, check for traitor!
+            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole)))
+            {
+                var traitor = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Traitor);
+                if (traitor != null)
+                {
+                    //traitor turns wolf!
+                    traitor.PlayerRole = IRole.Wolf;
+                    traitor.Team = ITeam.Wolf;
+                    traitor.HasDayAction = false;
+                    traitor.HasNightAction = true;
+                    traitor.ChangedRolesCount++;
+                    Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
+                }
+            }
+
             switch (alivePlayers?.Count())
             {
                 case 0:
@@ -3311,26 +3327,11 @@ namespace Werewolf_Node
                 }
                 return DoGameEnd(ITeam.Wolf);
             }
-            
-            //are all wolves dead?
-            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole)))
-            {
-                var traitor = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Traitor);
-                if (traitor != null)
-                {
-                    //traitor turns wolf!
-                    traitor.PlayerRole = IRole.Wolf;
-                    traitor.Team = ITeam.Wolf;
-                    traitor.HasDayAction = false;
-                    traitor.HasNightAction = true;
-                    traitor.ChangedRolesCount++;
-                    Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
-                }
-                else if (alivePlayers.All(x => x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //this check is actually useless...
-                    //no wolf, no cult, no SK... VG wins!
-                    return DoGameEnd(ITeam.Village);
-            }
-            
+
+            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //checks for cult and SK are actually useless...
+                //no wolf, no cult, no SK... VG wins!
+                return DoGameEnd(ITeam.Village);
+
 
             return false;
         }
