@@ -22,6 +22,7 @@ namespace Werewolf_Node.Helpers
         HunterKilledCultist,
         HunterKilledFinalShot,
         RoleInfoDrunk,
-        BlacksmithSpreadSilver
+        BlacksmithSpreadSilver,
+        HarlotVisitYou
     }
 }
