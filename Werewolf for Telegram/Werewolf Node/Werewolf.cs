@@ -198,7 +198,6 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
-                var chancesToJoin = 5;
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -216,7 +215,14 @@ namespace Werewolf_Node
 
                     if (i == Settings.GameJoinTime - 60)
                     {
-                        SendWithQueue(GetLocaleString("MinuteLeftToJoin"));
+                        if (Players.Count < Settings.MinPlayers)
+                        {
+                            i -= 60;
+                        }
+                        else
+                        {
+                            SendWithQueue(GetLocaleString("MinuteLeftToJoin"));
+                        }
                     }
                     if (i == Settings.GameJoinTime - 30)
                     {
@@ -224,15 +230,7 @@ namespace Werewolf_Node
                     }
                     if (i == Settings.GameJoinTime - 10)
                     {
-                        if (chancesToJoin > 0 && Players.Count < Settings.MinPlayers)
-                        {
-                            SendWithQueue($"O Tribunal Vivo não quer suspender a guerra! Mais 30 segundos para os heróis se alinharem! Chances restantes: {chancesToJoin--}");
-                            i -= 29;
-                        }
-                        else
-                        {
-                            SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
-                        }
+                        SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
                     }
                     Thread.Sleep(1000);
                 }
@@ -601,7 +599,8 @@ namespace Werewolf_Node
                     {
                         player.HasUsedAbility = true;
                         _silverSpread = true;
-                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()), GetImageLanguage(ImageKeys.BlacksmithSpreadSilver));
+                        SendWithQueue(null, GetImageLanguage(ImageKeys.BlacksmithSpreadSilver));
+                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()));
                     }
 
                     ReplyToCallback(query,
@@ -2921,7 +2920,13 @@ namespace Werewolf_Node
                                             GetLocaleString("HarlotVisitNonWolf", target.GetName()),
                                         harlot.Id);
                                     if (!target.IsDead)
+                                    {
                                         Send(GetLocaleString("HarlotVisitYou"), target.Id);
+                                        var gif = GetImageLanguage(ImageKeys.HarlotVisitYou);
+                                        if(gif!=null)
+                                            SendGif(null, gif, target.Id);
+                                    }
+
                                 }
                                 break;
                         }
@@ -3216,7 +3221,10 @@ namespace Werewolf_Node
                         }
                     }
                     if (!String.IsNullOrEmpty(msg))
-                        SendWithQueue(msg, gif);
+                    {
+                        if(!String.IsNullOrEmpty(gif)) SendWithQueue(null, gif);
+                        SendWithQueue(msg);
+                    }
                     if (p.InLove)
                         KillLover(p);
                 }
@@ -3929,8 +3937,9 @@ namespace Werewolf_Node
                     var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                     if (killed != null)
                     {
-                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"),
-                            GetImageLanguage(ImageKeys.HunterKilledFinalShot));
+                        SendWithQueue(null, GetImageLanguage(ImageKeys.HunterKilledFinalShot));
+                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
+                        
                         killed.IsDead = true;
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
