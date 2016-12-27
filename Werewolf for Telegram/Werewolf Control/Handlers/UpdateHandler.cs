@@ -679,7 +679,7 @@ namespace Werewolf_Control.Handler
                                 plcount++;
                             }
                             DB.SaveChanges();
-                            var msg = $"Groups: {grpcount}\nPlayers: {plcount}\n*Total rows changed: {grpcount + plcount}*";
+                            var msg = $"Groups changed: {grpcount}\nPlayers changed: {plcount}\n<b>Total rows changed: {grpcount + plcount}</b>";
                             Bot.Edit(query, msg);
 
                             try
