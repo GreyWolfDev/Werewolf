@@ -71,7 +71,7 @@ namespace Werewolf_Control.Helpers
 
         public static void DoUpdate(CallbackQuery query)
         {
-            var msg = "Beginning file moving...";
+            var msg = "Beginning file moving...\ndata: " + query.Data;
             var updateType = query.Data.Split('|')[1];
             try
             {
