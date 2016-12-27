@@ -343,6 +343,9 @@ namespace Werewolf_Node
             Connect();
             while (Running)
             {
+                if ((DateTime.Now - StartupTime).Hours > 10)
+                    IsShuttingDown = true;
+
                 var infoGathered = false;
 
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
