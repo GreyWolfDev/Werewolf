@@ -3256,6 +3256,8 @@ namespace Werewolf_Node
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
                     {
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Hunter);
+                        if (other == null)
+                            return DoGameEnd(ITeam.Village);
                         if (other.PlayerRole == IRole.SerialKiller)
                             return DoGameEnd(ITeam.SKHunter);
                         if (WolfRoles.Contains(other.PlayerRole))
@@ -3282,6 +3284,8 @@ namespace Werewolf_Node
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Cultist))
                     {
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Cultist);
+                        if (other == null) //two cults
+                            DoGameEnd(ITeam.Cult);
                         switch (other.PlayerRole)
                         {
                             case IRole.Wolf:
