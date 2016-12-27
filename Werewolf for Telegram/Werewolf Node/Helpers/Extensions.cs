@@ -48,11 +48,11 @@ namespace Werewolf_Node.Helpers
         public static string GetName(this IPlayer player, bool menu = false)
         {
             if (menu)
-                return player.Name;
+                return player.Name.FormatHTML();
             if (!String.IsNullOrEmpty(player.TeleUser.Username))
                 return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name.FormatHTML()}</a>";
 
-            return player.Name.ToBold();
+            return player.Name.FormatHTML().ToBold();
         }
 
         public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)
