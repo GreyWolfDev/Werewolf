@@ -38,35 +38,18 @@ namespace BuildAutomation.Controllers
                     var buildKey = ConfigurationManager.AppSettings.Get("VSTSBuildId");
                     if (obj.subscriptionId == releaseKey) //can't have random people triggering this!
                     {
+                        //what was released
+                        var beta = obj.resource.environment.name.Contains("Beta");
+                        var node = obj.resource.environment.name.Contains("Node");
 
+                        
 
                         var msg = obj.detailedMessage.markdown;
                         InlineKeyboardMarkup menu = null;
                         if (obj.resource.environment.status == "succeeded")
                         {
                             msg += "\nDo you want me to copy the files and update?";
-                            menu = new InlineKeyboardMarkup(new[]
-                            {
-                                new[]
-                                {
-                                    new InlineKeyboardButton("Beta - Control", "update|betacontrol"),
-                                    new InlineKeyboardButton("All - Control", "update|allcontrol"),
-                                },
-                                new[]
-                                {
-                                    new InlineKeyboardButton("Beta - Nodes", "update|betanodes"),
-                                    new InlineKeyboardButton("All - Nodes", "update|allnodes"),
-                                },
-                                new[]
-                                {
-                                    new InlineKeyboardButton("Beta - Both", "update|betaboth"),
-                                    new InlineKeyboardButton("All - Both", "update|allboth")
-                                },
-                                new[]
-                                {
-                                    new InlineKeyboardButton("Do Nothing", "update|no"),
-                                }
-                            });
+                            menu = new InlineKeyboardMarkup(new [] {new InlineKeyboardButton("Yes", $"update|{(beta?"beta":"release")}{(node?"node":"control")}"), new InlineKeyboardButton("No", "update|no") });
                         }
 
                         
@@ -86,7 +69,7 @@ namespace BuildAutomation.Controllers
                         var msg = detail + "\n";
                         var urlPre = "https://github.com/parabola949/Werewolf/commit/";
                         msg +=
-                            $"Build triggered by commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion})";
+                            $"Built with commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion}) as latest";
                         if (build.resource.result == "succeeded")
                             msg += "\nRelease is now being created, you will be notified when it is completed.";
                         
