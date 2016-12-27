@@ -35,6 +35,14 @@ namespace Werewolf_Control.Helpers
             //},
         };
 
+
+        public static void DoBuild(CallbackQuery query)
+        {
+            var msg = $"Beginning build (but not really, because it isn't coded yet!)\nCallback data: {query.Data}";
+            Bot.ReplyToCallback(query, msg);
+        }
+
+
         public static void DoUpdate(CallbackQuery query)
         {
             var msg = "Beginning file moving...";
@@ -65,8 +73,8 @@ namespace Werewolf_Control.Helpers
                 {
                     if (updateType.StartsWith("beta") && b.BuildName != "Beta")
                         continue; //if beta update, don't update release
-                    if (updateType.StartsWith("release") && b.BuildName != "Release")
-                        continue; //if release update, don't update beta
+
+                    //update types can contain 'node', 'control', or 'both'
 
                     if (!updateType.Contains("node")) //if nodes only, don't update control
                     {

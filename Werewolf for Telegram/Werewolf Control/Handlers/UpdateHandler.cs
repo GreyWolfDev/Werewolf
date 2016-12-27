@@ -563,6 +563,25 @@ namespace Werewolf_Control.Handler
                         }
                         return;
                     }
+                    if (args[0] == "build")
+                    {
+                        bool dontUpdate = args[1] == "no";
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            if (dontUpdate)
+                            {
+                                Bot.ReplyToCallback(query, "Okay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            //start the update process
+                            Updater.DoBuild(query);
+                        }
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
+                        return;
+                    }
                     if (args[0] == "ohai")
                     {
                         bool dontUpdate = args[1] == "no";

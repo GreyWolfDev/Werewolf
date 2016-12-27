@@ -26,6 +26,7 @@ namespace BuildAutomation.Controllers
 
         public void Post()
         {
+            string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
             try
             {
                 var body = Request.Content.ReadAsStringAsync().Result;
@@ -36,7 +37,7 @@ namespace BuildAutomation.Controllers
                     var buildKey = ConfigurationManager.AppSettings.Get("VSTSBuildId");
                     if (obj.subscriptionId == releaseKey) //can't have random people triggering this!
                     {
-                        string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+
 
                         var msg = obj.detailedMessage.markdown;
                         InlineKeyboardMarkup menu = null;
@@ -74,7 +75,7 @@ namespace BuildAutomation.Controllers
                     if (obj.subscriptionId == buildKey)
                     {
                         var build = JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
-                        string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+
                         var detail = obj.detailedMessage.markdown;
                         if (detail.Contains("\r\n+ Process 'msbuild.exe'"))
                         {
@@ -95,6 +96,13 @@ namespace BuildAutomation.Controllers
                 {
                     //github
                     var push = JsonConvert.DeserializeObject<PushEvent>(body);
+                    var msg =
+                        $"🔨 {push.commits.Length} new commit{(push.commits.Length > 1 ? "s" : "")} to {push.repository.name}:{push._ref}\n\n";
+                    msg = push.commits.Aggregate(msg,
+                        (current, a) => current + $"<a href='{a.url}'>{a.id.Substring(0, 7)}</a>: {a.message} ({a.author.username})\n");
+                    var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+
+
                     string path = HttpContext.Current.Server.MapPath("~/App_Data/github.json");
                     using (var sw = new StreamWriter(path))
                     {
@@ -102,6 +110,76 @@ namespace BuildAutomation.Controllers
                             sw.WriteLine($"Commit by: {c.committer.username}\nMessage: {c.message}\n");
                         sw.WriteLine(body);
                     }
+
+                    //check what was built
+                    var beta = push._ref.Contains("beta"); //beta or master - refs/head/<branch>
+                    //now check if control was changed
+                    var control =
+                        push.commits.Any(
+                            x => x.modified.Union(x.added).Union(x.removed).Any(c => c.Contains("Werewolf Control")));
+                    var node =
+                        push.commits.Any(
+                            x => x.modified.Union(x.added).Union(x.removed).Any(c => c.Contains("Werewolf Node")));
+
+                    if (!control && !node) //nothing to build
+                    {
+                        bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Html);
+                        return;
+                    }
+
+
+
+                    var none = new InlineKeyboardButton("No", "build|no");
+                    var yes = "Yes";
+                    var betaControl = new InlineKeyboardButton(yes, "build|betacontrol");
+                    var betaNode = new InlineKeyboardButton(yes, "build|betanode");
+                    var betaBoth = new InlineKeyboardButton(yes, "build|betaboth");
+
+                    var releaseControl = new InlineKeyboardButton(yes, "build|releasecontrol");
+                    var releaseNode = new InlineKeyboardButton(yes, "build|releasenode");
+                    var releaseBoth = new InlineKeyboardButton(yes, "build|releaseboth");
+                    InlineKeyboardMarkup menu;
+
+                    msg += "\nThis commit contains changes to ";
+                    if (beta)
+                    {
+                        if (control && node)
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { betaBoth, none });
+                            msg += "Control and Node";
+                        }
+                        else if (control)
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { betaControl, none });
+                            msg += "Control only";
+                        }
+                        else
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { betaNode, none });
+                            msg += "Node only";
+                        }
+                    }
+                    else
+                    {
+                        if (control && node)
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { releaseBoth, none });
+                            msg += "Control and Node";
+                        }
+                        else if (control)
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { releaseControl, none });
+                            msg += "Control only";
+                        }
+                        else
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { releaseNode, none });
+                            msg += "Node only";
+                        }
+                    }
+                    msg += $", on {(beta ? "Beta" : "Release")}\n";
+                    msg += "Do you want to build?";
+                    bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Html);
                 }
             }
             catch (Exception e)
