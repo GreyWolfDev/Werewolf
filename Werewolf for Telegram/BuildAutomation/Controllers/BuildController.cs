@@ -98,7 +98,7 @@ namespace BuildAutomation.Controllers
                     //github
                     var push = JsonConvert.DeserializeObject<PushEvent>(body);
                     var msg =
-                        $"🔨 {push.commits.Length} new commit{(push.commits.Length > 1 ? "s" : "")} to {push.repository.name}:{push._ref}\n\n";
+                        $"🔨 <a href='{push.compare}'>{push.commits.Length} new commit{(push.commits.Length > 1 ? "s" : "")} to {push.repository.name}:{push._ref}</a>\n\n";
                     msg = push.commits.Aggregate(msg,
                         (current, a) => current + $"<a href='{a.url}'>{a.id.Substring(0, 7)}</a>: {a.message} ({a.author.username})\n");
                     
