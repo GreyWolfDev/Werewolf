@@ -23,10 +23,11 @@ namespace BuildAutomation.Controllers
 {
     public class BuildController : ApiController
     {
-
-        public void Post()
+        [HttpPost]
+        public HttpResponseMessage Post()
         {
             string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+            var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
             try
             {
                 var body = Request.Content.ReadAsStringAsync().Result;
@@ -68,7 +69,7 @@ namespace BuildAutomation.Controllers
                             });
                         }
 
-                        var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                        
                         bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
                     }
 
@@ -88,7 +89,7 @@ namespace BuildAutomation.Controllers
                             $"Build triggered by commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion})";
                         if (build.resource.result == "succeeded")
                             msg += "\nRelease is now being created, you will be notified when it is completed.";
-                        var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                        
                         bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Markdown);
                     }
                 }
@@ -100,16 +101,17 @@ namespace BuildAutomation.Controllers
                         $"🔨 {push.commits.Length} new commit{(push.commits.Length > 1 ? "s" : "")} to {push.repository.name}:{push._ref}\n\n";
                     msg = push.commits.Aggregate(msg,
                         (current, a) => current + $"<a href='{a.url}'>{a.id.Substring(0, 7)}</a>: {a.message} ({a.author.username})\n");
-                    var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                    
 
+                   
 
-                    string path = HttpContext.Current.Server.MapPath("~/App_Data/github.json");
-                    using (var sw = new StreamWriter(path))
-                    {
-                        foreach (var c in push.commits)
-                            sw.WriteLine($"Commit by: {c.committer.username}\nMessage: {c.message}\n");
-                        sw.WriteLine(body);
-                    }
+                    //string path = HttpContext.Current.Server.MapPath("~/App_Data/github.json");
+                    //using (var sw = new StreamWriter(path))
+                    //{
+                    //    foreach (var c in push.commits)
+                    //        sw.WriteLine($"Commit by: {c.committer.username}\nMessage: {c.message}\n");
+                    //    sw.WriteLine(body);
+                    //}
 
                     //check what was built
                     var beta = push._ref.Contains("beta"); //beta or master - refs/head/<branch>
@@ -123,8 +125,8 @@ namespace BuildAutomation.Controllers
 
                     if (!control && !node) //nothing to build
                     {
-                        bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Html);
-                        return;
+                        bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Html, disableWebPagePreview: true);
+                        return Request.CreateResponse(HttpStatusCode.OK);
                     }
 
 
@@ -179,14 +181,24 @@ namespace BuildAutomation.Controllers
                     }
                     msg += $", on {(beta ? "Beta" : "Release")}\n";
                     msg += "Do you want to build?";
-                    bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Html);
+                    bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
+                    
                 }
+
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception e)
             {
-                string path = HttpContext.Current.Server.MapPath("~/App_Data/error.log");
-                StreamWriter writer = new StreamWriter(path);
-                writer.WriteLine(e.Message);
+                //string path = HttpContext.Current.Server.MapPath("~/App_Data/error");
+                while (e.InnerException != null)
+                    e = e.InnerException;
+                bot.SendTextMessage(-1001077134233, e.Message + "\n" + e.StackTrace);
+                //using (var sw = new StreamWriter(path))
+                //{
+                //    sw.WriteLine(e.Message);
+                //    sw.Flush();
+                //}
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
 
 
