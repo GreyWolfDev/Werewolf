@@ -272,7 +272,7 @@ namespace Werewolf_Node
         internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null)
         {
             MessagesSent++;
-            message = message.FormatHTML();
+            //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
