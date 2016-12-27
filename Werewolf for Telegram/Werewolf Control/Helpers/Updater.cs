@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Database;
 using Microsoft.TeamFoundation.Build.WebApi;
@@ -53,17 +54,17 @@ namespace Werewolf_Control.Helpers
             var env = beta ? "Beta" : "Release";
             //var what = control ? node ? "Both" : "Control" : "Node";
             if (control)
-                definitions.Add($"\n{env} Control");
+                definitions.Add($"{env} Control");
             if (node)
-                definitions.Add($"\n{env} Node");
+                definitions.Add($"{env} Node");
 
             msg = definitions.Aggregate(msg, (current, a) => current + "\n" + a);
-            Bot.Edit(query, msg);
+            Thread.Sleep(500);
 
+            Bot.Edit(query, msg);
+            Thread.Sleep(500);
             //now let's actually kick off that build
-            var uName = RegHelper.GetRegValue("VSTSUsername");
-            var pass = RegHelper.GetRegValue("VSTSPassword");
-            msg = definitions.Aggregate(msg, (current, def) => current + ("\n" + QueueBuild(uName, pass, def).Result));
+            msg = definitions.Aggregate(msg, (current, def) => current + ("\n" + QueueBuild(def).Result));
             Bot.Edit(query, msg);
         }
 
@@ -183,12 +184,12 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        static async Task<string> QueueBuild(string userName, string password, string buildDefinitionName)
+        static async Task<string> QueueBuild(string buildDefinitionName)
         {
             try
             {
                 var url = "https://parabola949.VisualStudio.com/DefaultCollection/";
-                var build = new BuildHttpClient(new Uri(url), new VssBasicCredential(userName, password));
+                var build = new BuildHttpClient(new Uri(url), new VssCredentials(new VssBasicCredential("", RegHelper.GetRegValue("VSTSToken"))));
 
                 // First we get project's GUID and buildDefinition's ID.
                 // Get the list of build definitions.
