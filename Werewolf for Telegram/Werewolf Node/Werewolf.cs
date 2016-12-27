@@ -3696,7 +3696,7 @@ namespace Werewolf_Node
                             if (others.Any())
                             {
                                 var andStr = $" {GetLocaleString("And").Trim()} ";
-                                msg += GetLocaleString("DiscussWith", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
+                                msg += GetLocaleString("DiscussWith", others.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
                             }
                             qtype = QuestionType.Kill;
                         }
@@ -3712,7 +3712,7 @@ namespace Werewolf_Node
                             if (otherCults.Any())
                             {
                                 var andStr = GetLocaleString("And");
-                                msg += GetLocaleString("DiscussWith", otherCults.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
+                                msg += GetLocaleString("DiscussWith", otherCults.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
                             }
                             qtype = QuestionType.Convert;
                         }
