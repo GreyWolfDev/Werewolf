@@ -27,12 +27,12 @@ namespace Werewolf_Control.Helpers
                 BuildName = "Release",
                 ControlExeName = "Werewolf Control"
             },
-            new BuildConfiguration
-            {
-                BotDirSuffix = "Bot 2",
-                BuildName = "Release 2",
-                ControlExeName = "Werewolf Control 2"
-            },
+            //new BuildConfiguration
+            //{
+            //    BotDirSuffix = "Bot 2",
+            //    BuildName = "Release 2",
+            //    ControlExeName = "Werewolf Control 2"
+            //},
         };
 
         public static void DoUpdate(CallbackQuery query)
