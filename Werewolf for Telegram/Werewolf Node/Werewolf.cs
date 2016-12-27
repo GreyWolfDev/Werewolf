@@ -3285,7 +3285,7 @@ namespace Werewolf_Node
                     {
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Cultist);
                         if (other == null) //two cults
-                            DoGameEnd(ITeam.Cult);
+                            return DoGameEnd(ITeam.Cult);
                         switch (other.PlayerRole)
                         {
                             case IRole.Wolf:
