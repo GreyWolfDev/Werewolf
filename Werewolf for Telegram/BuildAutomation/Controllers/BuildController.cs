@@ -28,63 +28,80 @@ namespace BuildAutomation.Controllers
         {
             try
             {
-                var obj = JsonConvert.DeserializeObject<ReleaseEvent>(Request.Content.ReadAsStringAsync().Result);
-                var releaseKey = ConfigurationManager.AppSettings.Get("VSTSReleaseId");
-                var buildKey = ConfigurationManager.AppSettings.Get("VSTSBuildId");
-                if (obj.subscriptionId == releaseKey) //can't have random people triggering this!
+                var body = Request.Content.ReadAsStringAsync().Result;
+                var obj = JsonConvert.DeserializeObject<ReleaseEvent>(body);
+                if (obj?.subscriptionId != null)
                 {
-                    string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
-
-                    var msg = obj.detailedMessage.markdown;
-                    InlineKeyboardMarkup menu = null;
-                    if (obj.resource.environment.status == "succeeded")
+                    var releaseKey = ConfigurationManager.AppSettings.Get("VSTSReleaseId");
+                    var buildKey = ConfigurationManager.AppSettings.Get("VSTSBuildId");
+                    if (obj.subscriptionId == releaseKey) //can't have random people triggering this!
                     {
-                        msg += "\nDo you want me to copy the files and update?";
-                        menu = new InlineKeyboardMarkup(new[]
+                        string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+
+                        var msg = obj.detailedMessage.markdown;
+                        InlineKeyboardMarkup menu = null;
+                        if (obj.resource.environment.status == "succeeded")
                         {
-                            new []
+                            msg += "\nDo you want me to copy the files and update?";
+                            menu = new InlineKeyboardMarkup(new[]
                             {
-                                new InlineKeyboardButton("Beta - Control", "update|betacontrol"),
-                                new InlineKeyboardButton("All - Control", "update|allcontrol"),
-                            },
-                            new []
-                            {
-                                new InlineKeyboardButton("Beta - Nodes", "update|betanodes"),
-                                new InlineKeyboardButton("All - Nodes", "update|allnodes"),
-                            },
-                            new []
-                            {
-                                new InlineKeyboardButton("Beta - Both", "update|betaboth"),
-                                new InlineKeyboardButton("All - Both", "update|allboth")
-                            },
-                            new []
-                            {
-                                new InlineKeyboardButton("Do Nothing", "update|no"),
-                            }
-                        });
+                                new[]
+                                {
+                                    new InlineKeyboardButton("Beta - Control", "update|betacontrol"),
+                                    new InlineKeyboardButton("All - Control", "update|allcontrol"),
+                                },
+                                new[]
+                                {
+                                    new InlineKeyboardButton("Beta - Nodes", "update|betanodes"),
+                                    new InlineKeyboardButton("All - Nodes", "update|allnodes"),
+                                },
+                                new[]
+                                {
+                                    new InlineKeyboardButton("Beta - Both", "update|betaboth"),
+                                    new InlineKeyboardButton("All - Both", "update|allboth")
+                                },
+                                new[]
+                                {
+                                    new InlineKeyboardButton("Do Nothing", "update|no"),
+                                }
+                            });
+                        }
+
+                        var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                        bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
                     }
 
-                    var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
-                    bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
-                }
-
-                if (obj.subscriptionId == buildKey)
-                {
-                    var build = JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
-                    string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
-                    var detail = obj.detailedMessage.markdown;
-                    if (detail.Contains("\r\n+ Process 'msbuild.exe'"))
+                    if (obj.subscriptionId == buildKey)
                     {
-                        detail = detail.Substring(0, detail.IndexOf("\r\n+ Process 'msbuild.exe'"));
+                        var build = JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
+                        string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+                        var detail = obj.detailedMessage.markdown;
+                        if (detail.Contains("\r\n+ Process 'msbuild.exe'"))
+                        {
+                            detail = detail.Substring(0, detail.IndexOf("\r\n+ Process 'msbuild.exe'"));
+                        }
+                        detail = detail.Replace("\r\n+ ", "\r\n");
+                        var msg = detail + "\n";
+                        var urlPre = "https://github.com/parabola949/Werewolf/commit/";
+                        msg +=
+                            $"Build triggered by commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion})";
+                        if (build.resource.result == "succeeded")
+                            msg += "\nRelease is now being created, you will be notified when it is completed.";
+                        var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+                        bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Markdown);
                     }
-                    detail = detail.Replace("\r\n+ ", "\r\n");
-                    var msg = detail + "\n";
-                    var urlPre = "https://github.com/parabola949/Werewolf/commit/";
-                    msg += $"Build triggered by commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion})";
-                    if (build.resource.result == "succeeded")
-                        msg += "\nRelease is now being created, you will be notified when it is completed.";
-                    var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
-                    bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Markdown);
+                }
+                else
+                {
+                    //github
+                    var push = JsonConvert.DeserializeObject<PushEvent>(body);
+                    string path = HttpContext.Current.Server.MapPath("~/App_Data/github.json");
+                    using (var sw = new StreamWriter(path))
+                    {
+                        foreach (var c in push.commits)
+                            sw.WriteLine($"Commit by: {c.committer.username}\nMessage: {c.message}\n");
+                        sw.WriteLine(body);
+                    }
                 }
             }
             catch (Exception e)

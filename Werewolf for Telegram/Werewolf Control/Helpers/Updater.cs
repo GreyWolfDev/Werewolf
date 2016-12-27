@@ -65,8 +65,10 @@ namespace Werewolf_Control.Helpers
                 {
                     if (updateType.StartsWith("beta") && b.BuildName != "Beta")
                         continue; //if beta update, don't update release
+                    if (updateType.StartsWith("release") && b.BuildName != "Release")
+                        continue; //if release update, don't update beta
 
-                    if (!updateType.Contains("nodes")) //if nodes only, don't update control
+                    if (!updateType.Contains("node")) //if nodes only, don't update control
                     {
                         foreach (
                             var file in
