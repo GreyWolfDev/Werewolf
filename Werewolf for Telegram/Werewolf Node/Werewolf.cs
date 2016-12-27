@@ -3250,10 +3250,10 @@ namespace Werewolf_Node
                     return alivePlayers.FirstOrDefault() != null && DoGameEnd(alivePlayers.FirstOrDefault().Team);
                 case 2:
                     //check for lovers
-                    if (alivePlayers.All(x => x.InLove))
+                    if (alivePlayers != null && alivePlayers.All(x => x.InLove))
                         return DoGameEnd(ITeam.Lovers);
                     //check for Hunter + SK / Wolf
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
+                    if (alivePlayers != null && alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
                     {
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Hunter);
                         if (other == null)
@@ -3278,10 +3278,10 @@ namespace Werewolf_Node
                         }
                     }
                     //check for SK
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.SerialKiller))
+                    if (alivePlayers != null && alivePlayers.Any(x => x.PlayerRole == IRole.SerialKiller))
                         return DoGameEnd(ITeam.SerialKiller);
                     //check for cult
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Cultist))
+                    if (alivePlayers != null && alivePlayers.Any(x => x.PlayerRole == IRole.Cultist))
                     {
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Cultist);
                         if (other == null) //two cults
@@ -3313,15 +3313,15 @@ namespace Werewolf_Node
             }
 
 
-            if (alivePlayers.Any(x => x.Team == ITeam.SerialKiller)) //there is still SK alive, do nothing (surely more than two players)
+            if (alivePlayers != null && alivePlayers.Any(x => x.Team == ITeam.SerialKiller)) //there is still SK alive, do nothing (surely more than two players)
                 return false;
 
             //is everyone left a cultist?
-            if (alivePlayers.All(x => x.Team == ITeam.Cult))
+            if (alivePlayers != null && alivePlayers.All(x => x.Team == ITeam.Cult))
                 return DoGameEnd(ITeam.Cult);
 
             //do the wolves outnumber the others?
-            if (alivePlayers.Count(x => WolfRoles.Contains(x.PlayerRole)) >= alivePlayers.Count(x => !WolfRoles.Contains(x.PlayerRole)))
+            if (alivePlayers != null && alivePlayers.Count(x => WolfRoles.Contains(x.PlayerRole)) >= alivePlayers.Count(x => !WolfRoles.Contains(x.PlayerRole)))
             {
                 if (alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
                 {
@@ -3333,7 +3333,7 @@ namespace Werewolf_Node
                 return DoGameEnd(ITeam.Wolf);
             }
 
-            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //checks for cult and SK are actually useless...
+            if (alivePlayers != null && alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //checks for cult and SK are actually useless...
                 //no wolf, no cult, no SK... VG wins!
                 return DoGameEnd(ITeam.Village);
 
