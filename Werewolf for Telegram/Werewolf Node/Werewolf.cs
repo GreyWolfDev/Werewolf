@@ -2141,7 +2141,6 @@ namespace Werewolf_Node
             //FUN!
             Time = GameTime.Night;
             var nightStart = DateTime.Now;
-            if (CheckForGameEnd()) return;
             foreach (var p in Players)
             {
                 p.Choice = 0;
@@ -2939,7 +2938,7 @@ namespace Werewolf_Node
             #region Seer / Fool
 
             //let the seer know
-            var seers = Players.Where(x => x.PlayerRole == IRole.Seer & !x.IsDead);
+            var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
             if (seers.Any())
             {
                 foreach (var seer in seers)
@@ -2948,62 +2947,55 @@ namespace Werewolf_Node
                     if (target != null)
                     {
                         DBAction(seer, target, "See");
-                    }
-                    if (!seer.IsDead && seer.Choice != 0 && seer.Choice != -1)
-                    {
-                        if (target != null)
-                        {
-                            var role = target.PlayerRole;
-                            switch (role)
-                            {
-                                case IRole.Beholder:
-                                    AddAchievement(seer, Achievements.ShouldHaveKnown);
-                                    break;
-                                case IRole.Traitor:
-                                    role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
-                                    break;
-                                case IRole.WolfCub: //seer doesn't see wolf type
-                                case IRole.AlphaWolf:
-                                    role = IRole.Wolf;
-                                    break;
-                            }
-                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
-                        }
-                    }
-                }
-            }
-            var sorcerer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer & !x.IsDead);
-            if (sorcerer != null)
-            {
-                if (sorcerer.Choice != 0 && sorcerer.Choice != -1)
-                {
-                    var target = Players.FirstOrDefault(x => x.Id == sorcerer.Choice);
-                    if (target != null)
-                    {
-                        DBAction(sorcerer, target, "See");
                         var role = target.PlayerRole;
                         switch (role)
                         {
+                            case IRole.Beholder:
+                                AddAchievement(seer, Achievements.ShouldHaveKnown);
+                                break;
+                            case IRole.Traitor:
+                                role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
+                                break;
+                            case IRole.WolfCub: //seer doesn't see wolf type
                             case IRole.AlphaWolf:
-                            case IRole.Wolf:
-                            case IRole.WolfCub:
-                                Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(IRole.Wolf)), sorcerer.Id);
-                                break;
-                            case IRole.Seer:
-                                Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), sorcerer.Id);
-                                break;
-                            default:
-                                Send(GetLocaleString("SorcererOther", target.GetName()), sorcerer.Id);
+                                role = IRole.Wolf;
                                 break;
                         }
+                        Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                     }
                 }
             }
-            var fool = Players.FirstOrDefault(x => x.PlayerRole == IRole.Fool & !x.IsDead);
-            if (fool != null)
-                if (!fool.IsDead && fool.Choice != 0 && fool.Choice != -1)
+            var sorcerer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer && !x.IsDead);
+            if (sorcerer != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == sorcerer.Choice);
+                if (target != null)
                 {
-                    var target = Players.FirstOrDefault(x => x.Id == fool.Choice);
+                    DBAction(sorcerer, target, "See");
+                    var role = target.PlayerRole;
+                    switch (role)
+                    {
+                        case IRole.AlphaWolf:
+                        case IRole.Wolf:
+                        case IRole.WolfCub:
+                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(IRole.Wolf)), sorcerer.Id);
+                            break;
+                        case IRole.Seer:
+                            Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), sorcerer.Id);
+                            break;
+                        default:
+                            Send(GetLocaleString("SorcererOther", target.GetName()), sorcerer.Id);
+                            break;
+                    }
+                }
+                
+            }
+            var fool = Players.FirstOrDefault(x => x.PlayerRole == IRole.Fool && !x.IsDead);
+            if (fool != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == fool.Choice);
+                if (target != null)
+                {
                     var possibleRoles = Players.Where(x => !x.IsDead && x.Id != fool.Id && x.PlayerRole != IRole.Seer).Select(x => x.PlayerRole).ToList();
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
@@ -3015,12 +3007,20 @@ namespace Werewolf_Node
                             possibleRoles[0] = IRole.Wolf;
 
                         //check if it's accurate
-                        if (possibleRoles[0] == target.PlayerRole || (possibleRoles[0] == IRole.Wolf && WolfRoles.Contains(target.PlayerRole)))
-                            fool.FoolCorrectSeeCount++;
-                        
+                        try
+                        {
+                            if (possibleRoles[0] == target.PlayerRole || (possibleRoles[0] == IRole.Wolf && WolfRoles.Contains(target.PlayerRole)))
+                                fool.FoolCorrectSeeCount++;
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(possibleRoles[0])), fool.Id);
                     }
                 }
+            }
 
             #endregion
 
@@ -3264,18 +3264,15 @@ namespace Werewolf_Node
             if (Players == null)
                 return true;
             if (!IsRunning) return true;
-            if (Players.All(x => x.IsDead))
-                return DoGameEnd(ITeam.NoOne);
-            if (Players.Where(x => !x.IsDead).All(x => x.InLove) && Players.Count(x => !x.IsDead) == 2)
+            var alivePlayers = Players.Where(x => !x.IsDead);
+
+            //first of all, check for traitor!
+            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole)))
             {
-                return DoGameEnd(ITeam.Lovers);
-            }
-            //are all wolves dead?
-            if (Players != null && Players.Where(x => WolfRoles.Contains(x.PlayerRole)).All(x => x.IsDead))
-            {
-                var traitor = Players.FirstOrDefault(x => x.PlayerRole == IRole.Traitor & !x.IsDead);
+                var traitor = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Traitor);
                 if (traitor != null)
                 {
+                    //traitor turns wolf!
                     traitor.PlayerRole = IRole.Wolf;
                     traitor.Team = ITeam.Wolf;
                     traitor.HasDayAction = false;
@@ -3283,75 +3280,104 @@ namespace Werewolf_Node
                     traitor.ChangedRolesCount++;
                     Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
                 }
-                else if (Players.Count(x => x.PlayerRole == IRole.Cultist & !x.IsDead) == 0 && Players.Count(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller) == 0)
-                {
-                    return DoGameEnd(ITeam.Village);
-                }
             }
-            //do the wolves outnumber the villagers? (1:1 ratio)
-            if ((Players != null &&
-                Players.Count(x => (x.Team != ITeam.Wolf || x.PlayerRole == IRole.Sorcerer) && !x.IsDead)  //alive non-wolves
-                    <= Players.Count(x => x.Team == ITeam.Wolf && x.PlayerRole != IRole.Sorcerer && !x.IsDead)) //alive wolves
-                && Players.Where(x => !x.IsDead).All(x => x.PlayerRole != IRole.SerialKiller) //there's no SK alive
-                   )
+
+            switch (alivePlayers?.Count())
             {
-                if (Players.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0 & !x.IsDead))
+                case 0:
+                    return DoGameEnd(ITeam.NoOne);
+                case 1:
+                    return alivePlayers.FirstOrDefault() != null && DoGameEnd(alivePlayers.FirstOrDefault().Team);
+                case 2:
+                    //check for lovers
+                    if (alivePlayers.All(x => x.InLove))
+                        return DoGameEnd(ITeam.Lovers);
+                    //check for Hunter + SK / Wolf
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
+                    {
+                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Hunter);
+                        if (other == null)
+                            return DoGameEnd(ITeam.Village);
+                        if (other.PlayerRole == IRole.SerialKiller)
+                            return DoGameEnd(ITeam.SKHunter);
+                        if (WolfRoles.Contains(other.PlayerRole))
+                        {
+                            var hunter = alivePlayers.First(x => x.PlayerRole == IRole.Hunter);
+                            if (Program.R.Next(100) < Settings.HunterKillWolfChanceBase)
+                            {
+                                SendWithQueue(GetLocaleString("HunterKillsWolfEnd", hunter.GetName(), other.GetName()));
+                                DBKill(hunter, other, KillMthd.HunterShot);
+                                return DoGameEnd(ITeam.Village);
+                            }
+                            else
+                            {
+                                SendWithQueue(GetLocaleString("WolfKillsHunterEnd", hunter.GetName(), other.GetName()));
+                                DBKill(other, hunter, KillMthd.Eat);
+                                return DoGameEnd(ITeam.Wolf);
+                            }
+                        }
+                    }
+                    //check for SK
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.SerialKiller))
+                        return DoGameEnd(ITeam.SerialKiller);
+                    //check for cult
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Cultist))
+                    {
+                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Cultist);
+                        if (other == null) //two cults
+                            DoGameEnd(ITeam.Cult);
+                        switch (other.PlayerRole)
+                        {
+                            case IRole.Wolf:
+                            case IRole.WolfCub:
+                            case IRole.AlphaWolf:
+                                return DoGameEnd(ITeam.Wolf);
+                            case IRole.CultistHunter:
+                                var cultist = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Cultist);
+                                SendWithQueue(GetLocaleString("CHKillsCultistEnd", cultist.GetName(), other.GetName()));
+                                DBKill(other, cultist, KillMthd.Hunt);
+                                return DoGameEnd(ITeam.Village);
+                            default:
+                                //autoconvert the other
+                                if (other.PlayerRole != IRole.Doppelgänger)
+                                {
+                                    other.PlayerRole = IRole.Cultist;
+                                    other.Team = ITeam.Cult;
+                                }
+                                return DoGameEnd(ITeam.Cult);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+
+            if (alivePlayers.Any(x => x.Team == ITeam.SerialKiller)) //there is still SK alive, do nothing (surely more than two players)
+                return false;
+
+            //is everyone left a cultist?
+            if (alivePlayers.All(x => x.Team == ITeam.Cult))
+                return DoGameEnd(ITeam.Cult);
+
+            //do the wolves outnumber the others?
+            if (alivePlayers.Count(x => WolfRoles.Contains(x.PlayerRole)) >= alivePlayers.Count(x => !WolfRoles.Contains(x.PlayerRole)))
+            {
+                if (alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
                 {
                     // do nothing, gunner is alive
-                    foreach (var p in Players.Where(x => x.Team == ITeam.Village & !x.IsDead))
+                    foreach (var p in alivePlayers.Where(x => x.Team == ITeam.Village))
                         AddAchievement(p, Achievements.GunnerSaves);
-
                     return false;
-                }
-                if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Wolf & x.Drunk) && Players.Count(x => x.IsDead) > 2) //what the hell was my logic here....  damn myself for not commenting this line. why would it matter if 2 players ARE dead?
-                {
-                    //do nothing
-                    // ^ why? Commenting next line out until we find out
-                    //return false;
                 }
                 return DoGameEnd(ITeam.Wolf);
             }
 
-            //is everyone left a cultist?
-            if (Players != null && Players.Where(x => !x.IsDead).All(x => x.Team == ITeam.Cult))
-                return DoGameEnd(ITeam.Cult);
+            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //checks for cult and SK are actually useless...
+                //no wolf, no cult, no SK... VG wins!
+                return DoGameEnd(ITeam.Village);
 
 
-            if (Players != null && Players.Count(x => !x.IsDead) == 2)
-            {
-                if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Cultist) & !Players.Any(x => !x.IsDead && x.PlayerRole == IRole.CultistHunter) & !Players.Any(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)))
-                {
-                    if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
-                        return DoGameEnd(ITeam.SerialKiller);
-                    //cult outnumbers, win
-                    else
-                        foreach (var p in Players.Where((x => x.PlayerRole != IRole.Doppelgänger & !x.IsDead)) //auto convert teamVG + sorcerer to cult when 1v1 cult
-                        {
-                            p.OriginalRole = p.PlayerRole;
-                            p.PlayerRole = IRole.Cultist;
-                            p.Team = ITeam.Cult;
-                            p.HasDayAction = false;
-                            p.HasNightAction = true;
-                            p.DayCult = GameDay;
-                        }
-                    return DoGameEnd(ITeam.Cult);
-                }
-                if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.SerialKiller))
-                {
-                    //check for hunter
-                    if (Players.Any(x => !x.IsDead && x.PlayerRole == IRole.Hunter))
-                    {
-                        return DoGameEnd(ITeam.SKHunter);
-                    }
-                    return DoGameEnd(ITeam.SerialKiller);
-                }
-            }
-
-            if (Players != null && Players.Count(x => !x.IsDead) == 1)
-            {
-                var firstOrDefault = Players.FirstOrDefault(x => !x.IsDead);
-                return firstOrDefault != null && DoGameEnd(firstOrDefault.Team);
-            }
             return false;
         }
 

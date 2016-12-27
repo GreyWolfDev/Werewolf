@@ -27,42 +27,36 @@ namespace Werewolf_Control
             //    return;
             //}
 
+            //check for reply
+            if (u.Message.ReplyToMessage != null)
+                //smite sender
+                Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(u.Message.ReplyToMessage.From.Id);
+
             //get the names to smite
-
-
-
-
-            if (UpdateHelper.IsGroupAdmin(u))
+            foreach (var e in u.Message.Entities)
             {
-                foreach (var e in u.Message.Entities)
+                switch (e.Type)
                 {
-                    switch (e.Type)
-                    {
-                        case MessageEntityType.Mention:
-                            //get user
-                            var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
-                            using (var db = new WWContext())
-                            {
-                                var id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
-                                if (id != 0)
-                                    Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(id);
-                            }
-                            break;
-                        case MessageEntityType.TextMention:
-                            Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(e.User.Id);
-                            break;
-                    }
-
-
+                    case MessageEntityType.Mention:
+                        //get user
+                        var username = u.Message.Text.Substring(e.Offset + 1, e.Length - 1);
+                        using (var db = new WWContext())
+                        {
+                            var id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
+                            if (id != 0)
+                                Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(id);
+                        }
+                        break;
+                    case MessageEntityType.TextMention:
+                        Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(e.User.Id);
+                        break;
                 }
-
-                var did = 0;
-                if (int.TryParse(args[1], out did))
-                {
-                    Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(did);
-                }
-
             }
+
+            var did = 0;
+            if (int.TryParse(args[1], out did))
+                Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(did);
+                
         }
 
         [Command(Trigger = "config", GroupAdminOnly = true, InGroupOnly = true)]
