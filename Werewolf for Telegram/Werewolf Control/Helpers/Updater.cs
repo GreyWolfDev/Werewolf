@@ -41,7 +41,7 @@ namespace Werewolf_Control.Helpers
 
         public static void DoBuild(CallbackQuery query)
         {
-            var msg = query.Message + $"\n\nBeginning build...\n";
+            var msg = query.Message.Text + $"\n\nBeginning build...\n";
             Bot.ReplyToCallback(query, msg);
             //determine what we are building
             var updateType = query.Data.Split('|')[1];
@@ -71,7 +71,7 @@ namespace Werewolf_Control.Helpers
 
         public static void DoUpdate(CallbackQuery query)
         {
-            var msg = query.Message + "\n\nBeginning file moving...";
+            var msg = query.Message.Text + "\n\nBeginning file moving...";
             var updateType = query.Data.Split('|')[1];
             try
             {
