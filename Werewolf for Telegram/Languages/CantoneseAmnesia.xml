@@ -289,7 +289,7 @@
     <value>大家一出門口，見到周圍都係子彈、手指同腳指……跟住你地仲發現【{0}】條屍浮咗係村中心個噴泉度，原來你地個槍手已經被狼人殺咗。</value>
   </string>
   <string key="SeerEaten" >
-    <value>村民一覺醒來，發現【{0}】死咗係佢張神枱同副塔羅牌隔離。\n【先知 🔮】皮已收。</value>
+    <value>村民一覺醒來，發現【{0}】死咗係佢張神枱同副塔羅牌隔離。\n【先知 👳】皮已收。</value>
   </string>
   <string key="DrunkEaten" >
     <value>大家一起身就聞到一陣燶味……原來酒吧着咗火！你地好辛苦救熄咗場火之後，見到疑似係【{0}】嘅手手腳腳……</value>
@@ -478,10 +478,10 @@
     <value>學徒先知 🙇</value>
   </string>
   <string key="Cultist">
-    <value>邪教魔徒 ⚰</value>
+    <value>邪教魔徒 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>驅魔人 ⚜</value>
+    <value>驅魔人 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -525,7 +525,7 @@
     <value>@{1}，你個名同 {0} 撞咗。請你改咗名先入村。</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>雖然你唔知自己係乜水，但至少你知道【{0}】係邪教魔徒 ⚰！</value>
+    <value>雖然你唔知自己係乜水，但至少你知道【{0}】係邪教魔徒 👤！</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -1214,5 +1214,59 @@
   </string>
   <string key="HarlotFuckedKilledPublic">
     <value>【{0}】入左【{1}】間屋想同佢大戰三百六十回合。點知佢見到個痴線佬劏開左【{1}】個身玩緊佢啲內臟！連環殺手當然唔放過【{0}】嗰兩粒腎啦，【{0}】嗰對腎腎從此冰鮮喺連環殺手嘅雪櫃入面。</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>村民起身，發現到【{0}】條屍伏喺塊二手顯靈板上面。未滿師就死嗱咗，連頭都甩鬼埋，【學徒先知 🙇】皮已收。</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>睇嚟【{0}】尋晚都幾唔好彩。被人釘咗喺張工作台上面。佢嘅頭、雙手同雙腳，俾五把新鑄嘅刀，釘到實一實。鐵匠間屋成個武器庫咁，好可能除左兩粒腎之外，連環殺手仲拎咗啲新玩具返去慢慢玩……【鐵匠 ⚒】皮已收。</value>
+  </string>
+  <string key="CultistKilled">
+    <value>【{0}】死咗喺個黑闇祭壇度，身上佈滿幾百個窿，心臟位置仲插住一支蠟蠋臺，應該係俾人用蠟蠋臺無限穿插至死。又一個被連環殺手殺嘅受害人，無分語言、膚色同宗教，全部都係連環殺手嘅獵物。【邪教魔徒 👤】皮已收。</value>
+  </string>
+  <string key="CupidKilled">
+    <value>第二朝，村民見到愛神嘅象徵－－【{0}】嘅屍體散落喺村中央，決定全村默哀三秒鐘，葬返佢條屍。不過佢地搵咗好耐都搵唔到佢對腎……【邱比特 🏹】皮已收。</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>成班村民諗住去試下【{0}】屋企，試下佢支陳年五糧液。點知去到佢屋企，見到佢條屍被人劏開咗，成地都係內臟。隔離有把刀插實咗係塊石頭上面，睇清楚啲，原來嗰舊唔係石頭，係佢飲酒飲出嚟嘅硬化肝……【酒鬼 🍻】皮已收。</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>正路嚟講，【{0}】咁堅揪，就冇理由會輸俾連環殺手條仆街嘅。可惜佢尋晚講咗句粗口，搞到咩特異功能都冇晒，連環殺手輕輕鬆鬆就殺人兼偷腎，快快樂樂返歸。【守護天使 👼】皮已收。</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>尋晚【{0}】站崗嗰陣，趁無人見到，偷懶瞓着咗。誓估唔到，一瞓就醒唔返。今朝一早，村民見到佢條屍攤咗係村口，俾人爆咗頭兼偷埋腎。呢個故事教訓我地，返工千祈咪偷懶，唔係會死得好慘㗎。【槍手 🔫】皮已收。</value>
+  </string>
+  <string key="MayorKilled">
+    <value>突發！【{0}】尋晚係寓所俾人行刺，從背口插咗三刀。睇嚟連環殺手都頂唔順條友仔成日搞屎棍，搞到民不聊生，於是忍唔住隊冧咗佢。【人大委員 🎖】皮已收。</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>尋晚班御前守衛去咗蒲通宵，今朝返到嚟見到【{0}】個頭插實咗係屋企道門度。現場無任何線索留低，睇嚟兇手係個熟練嘅殺人犯……【王子 👑】皮已收。</value>
+  </string>
+  <string key="SeerKilled">
+    <value>村民起身見到成條村都係【{0}】嘅五臟六腑。雖然話呢條村成日都有人死，村民都見慣不怪。但係有一件事令村民都十分疑惑，就係散落係村中央嘅腦，竟然閃閃發光。【先知 👳】皮已收。</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>「豬隊友啊～豬隊友啊～」尋晚半夜有把咒怨咁嘅聲不斷重複呢句嘢，不過班愚民一於懶理，大被冚天光。起身飲早茶嘅時候發現【{0}】冇嚟到，原來佢尋晚已經被狼食咗。【巫師 🔮】皮已收。</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>嚼嚼嚼嚼嚼！尋晚班狼開餐開到成條村都聽到。可能好似乳鴿咁，未成年嘅人類都好食啲、嫩滑啲。唔知佢地食嘅同時會唔覺得內疚呢，【{0}】咁精靈可愛都捨得食……【野仔 👶】皮已收。</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>天一光，村民就發現左【{0}】條屍散修修咁，浸咗係村個水池入面。睇真啲，原來條頸掛住辟邪用嘅十字架同大蒜，隔離仲有把用嚟斬妖除魔嘅黑刀。未殺邪教魔徒，先輸兩粒腎，真係無陰公。【驅魔人 💂】皮已收。</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>唔知係咪拜神拜到腦裝屎，尋晚【{0}】拎住嗰邪神像入咗間狼屋度，仲指住其中一隻狼講「比利卡比利那那，撲撲利那比比路多」。本來班狼都未夠鐘嗌肚餓嘅，見有筍野送上門，轉個頭就將條傻仔咬到血肉模糊。【邪教魔徒 👤】皮已收。</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>尋晚【{0}】諗住捉人返總部，舉行神聖傳教儀式，點知捉錯癲佬，傳唔到教不特止，仲賠埋條命出去。結果伏屍喺黑暗祭壇前面，變成一條無咗兩粒腎嘅鹹魚。【邪教魔徒 👤】皮已收。</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>天一光，村民發現教堂門口一地羽毛，本來拍晒心口話要拯救世界嘅【{0}】連自己對腎都保唔撚住，留低嘅就只有一條穿左兩個大窿既乾屍。【守護天使 👼】皮已收。</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>唉呀呀，尋晚【{0}】懵撚閉閉咁走咗去保護隻狼。村民朝早一起身，見到佢對翼鳩下鳩下咁吊左喺教堂個十字架上面，睇黎班狼尋晚又食左餐飽飯。【守護天使 👼】皮已收。</value>
   </string>
 </strings>

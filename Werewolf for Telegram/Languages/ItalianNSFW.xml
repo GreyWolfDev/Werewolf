@@ -1174,13 +1174,10 @@
 	<string key="TannerTeamEnd">
 	<value>Team Masochista</value>
 	</string>
-
-
 	<string key="CultConvertWolf">
 	<value>Decidete di convertire {1} ed inviate {0} per la missione ma nemmeno un minuto dopo che è entrato in casa la sua testa esce volando dalla finestra. {0} è morto.</value>
 	</string>
-    
-    <string key="HarlotFuckedKilledPublic">
+    <string key="HarlotFuckedKilledPublic"><!-- used when Harlot visit's SK's victim, and dies -->
     <value>{0} era andata a casa di {1} per una notte di passione ed una notte di passione ha avuto. Mentre era bendata e legata al letto un individuo è entrato e ha fatto a pezzi {1} per poi abusare di {0} e ucciderla. Dite no al bondage, ragazzi.</value>
     </string>
 
@@ -1230,10 +1227,25 @@
   <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
     <value>Povero {0}. Aveva deciso di dare la sua anima a Satana e sperava di poterne recuperare un'altra per lui questa notte. Ma ha scelto la casa sbagliata e si è trovato davanti un pazzo senz'anima che gli ha strappato il cuore dal petto facendogli incontrare il suo amato Satana anzitempo.</value>
   </string>
-  <string key="GAGuardedKiller">
+  <string key="GAGuardedKiller"><!-- used when GA guards SK -->
     <value>{0} era un buon angelo ma la strada per l'Inferno è lastricata di buone intenzioni. La sue intenzione la notte scorsa è stata quella di proteggere il killer e non è andata a finire tanto bene… sembra che il killer si sapesse proteggere da solo e non abbia apprezzato la compagnia del Custode. Rip piccolo angelo.</value>
   </string>
-  <string key="GAGuardedWolf">
+  <string key="GAGuardedWolf"><!-- used when GA guards a wolf -->
     <value>Dicono che gli angeli sappiano di pollo e la notte scorsa un un fortunato lupo ha avuto modo di provarlo di persona quando {0} (che sperava di fare la sua buona azione quotidiana) lo ha scelto come persona da custodire. “Era un buon angelo” ha scritto il lupo in un biglietto legato all'aureola non commestibile ritrovata in piazza. Rip piccolo angelo.</value>
+  </string>
+  
+  <!--DEC 26: 1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} è ormai l'unico umano rimasto in paese, solo con il suo fucile. {0} non ha più nessuno da mangiare! Affamato si avventa su {1} ma si trova il suo fucile puntato sul muso. {1} ride mentre tira il grilletto. L'ultimo lupo è morto, il villaggio ha vinto!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} stava ripulendo il suo fucile quando {0} ormai a corto di prede lo ha attaccato. La mani nude del Cacciatore non sono bastate contro gli artigli del lupo, di lui rimangono solo brandelli.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} si trovano faccia a faccia sulla piazza. Il Satanista estrae i pentacoli ed iniza lanciarli come shuriken ma {1} è troppo veloce! Si avvicina a {0} ed estrae con calma la katana. Tremante {0} si aggrappa alla sua statuetta di Satana e la usa per farsi scudo. Inutilmente, dato che la katana di {1} la taglia sia lui che la statua come se fossero fatti di burro.</value>
   </string>
 </strings>
