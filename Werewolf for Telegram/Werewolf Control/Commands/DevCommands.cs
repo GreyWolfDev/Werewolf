@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -20,7 +21,6 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
 using File = System.IO.File;
-using System.Text.RegularExpressions;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -593,16 +593,7 @@ namespace Werewolf_Control
         {
             Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
-
-        [Attributes.Command(Trigger = "leavegroup", DevOnly = true)]
-        public static void LeaveGroup(Update update, string[] args)
-        {
-            Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", long.Parse(args[1]))
-                .ContinueWith((result) =>
-                {
-                    Bot.Api.LeaveChat(args[1]);
-                });
-        }
+        
 
         [Attributes.Command(Trigger = "clearcount", DevOnly = true)]
         public static void ClearCount(Update u, string[] args)
@@ -852,27 +843,25 @@ namespace Werewolf_Control
         {
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 //now, check the json file
-                var json = new StreamReader("c:\\bot\\users.json").ReadToEnd();
-                var users = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-                sw.WriteLine($"Beginning json kick process.  Found {users.Count} users json file");
-                Send($"Beginning json kick process.  Found {users.Count} users in json file", u.Message.Chat.Id);
+                var timeStarted = DateTime.Now;
+                Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
+                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                if (channel == null) return;
+                var users = channel.Users.Select(x => x.id).ToList();
+                Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
                 var i = 0;
                 var removed = 0;
                 using (var db = new WWContext())
-                    foreach (var user in users)
+                    foreach (var id in users)
                     {
                         i++;
                         sw.Flush();
                         sw.Write($"\n{i}: ");
                         try
                         {
-                            var id = int.Parse(user.Key);
-                            var time = DateTime.Parse(user.Value);
-                            if (time >= DateTime.Now.AddDays(-14)) //two weeks
-                                continue;
-
+                           
                             //check their status first, so we don't make db calls for someone not even in the chat.
                             var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
                             if (status != ChatMemberStatus.Member)
@@ -958,84 +947,7 @@ namespace Werewolf_Control
 
                     }
 
-                //fun times ahead!
-                //get our list of inactive users
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                List<v_InactivePlayersMain> inactive;
-                using (var db = new WWContext())
-                {
-                    inactive = db.v_InactivePlayersMain.OrderByDescending(x => x.last).ToList();
-                }
-                Send($"Checking {inactive.Count} users from database. {removed} from json file", u.Message.Chat.Id);
-                var timeStarted = DateTime.Now;
-
-                sw.WriteLine($"Beginning kick process.  Found {inactive.Count} users in database");
-                i = 0;
-                foreach (var p in inactive)
-                {
-                    i++;
-                    sw.Write($"\n{i}: ");
-                    try
-                    {
-                        //first, check if the user is in the group
-                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                        sw.Write($"{status}");
-                        if (status != ChatMemberStatus.Member) //user is not in group, skip
-                            continue;
-                        //kick
-                        Bot.Api.KickChatMember(Settings.PrimaryChatId, p.TelegramId);
-                        removed++;
-                        sw.Write($" | Removed ({p.Name})");
-                        //get their status
-                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                        while (status == ChatMemberStatus.Member) //loop
-                        {
-                            //wait for database to report status is kicked.
-                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                            Thread.Sleep(500);
-                        }
-                        //status is now kicked (as it should be)
-                        var attempts = 0;
-                        sw.Write(" | Unbanning-");
-                        while (status != ChatMemberStatus.Left) //unban until status is left
-                        {
-                            attempts++;
-                            sw.Write($" {status} ");
-                            sw.Flush();
-                            Bot.Api.UnbanChatMember(Settings.PrimaryChatId, p.TelegramId);
-                            Thread.Sleep(500);
-                            status = Bot.Api.GetChatMember(Settings.PrimaryChatId, p.TelegramId).Result.Status;
-                        }
-                        //yay unbanned
-                        sw.Write($" | Unbanned ({attempts} attempts)");
-                        //let them know
-                        Send(
-                            "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
-                            p.TelegramId);
-                    }
-                    catch (AggregateException ex)
-                    {
-                        var e = ex.InnerExceptions.First();
-                        if (e.Message.Contains("User not found"))
-                            sw.Write($"Not Found - {p.Name}");
-                        else if (e.Message.Contains("USER_ID_INVALID"))
-                            sw.Write($"Account Closed - {p.Name}");
-                        else
-                        {
-                            sw.Write(e.Message);
-                            //sw.WriteLine(e.StackTrace);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        sw.WriteLine(e.Message);
-                        sw.WriteLine(e.StackTrace);
-                        // ignored
-                    }
-                    sw.Flush();
-                    //sleep 4 seconds to avoid API rate limiting
-                    Thread.Sleep(100);
-                }
+               
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Send(
                     $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.Now - timeStarted}",
@@ -1047,35 +959,107 @@ namespace Werewolf_Control
             }
         }
 
-        [Attributes.Command(Trigger = "remgrp", GlobalAdminOnly = true)]
-        public static void RemGrp(Update u, string[] args)
+        
+
+        [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]
+        public static void LeaveGroup(Update update, string[] args)
         {
-            var link = args[1];
-            if (String.IsNullOrEmpty(link))
+            if (String.IsNullOrEmpty(args[1]))
             {
-                Send("Use /remgrp <link>", u.Message.Chat.Id);
+                Send("Use /leavegroup <id|link>", update.Message.Chat.Id);
                 return;
             }
-            //grouplink should be the argument
+            var grpid = (long) 0;
+            var grpname = "";
+            //check for id, else we hope it's a link..
+            if (!long.TryParse(args[1], out grpid))
+            {
+                var link = args[1];
+                using (var db = new WWContext())
+                {
+                    var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+                    if (grp != null)
+                    {
+                        grpid = grp.GroupId;
+                        grpname = grp.Name;
+                    }
+                }
+            }
+            if (grpid != 0)
+            {
+                try
+                {
+                    Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", grpid)
+                        .ContinueWith((result) =>
+                        {
+                            Bot.Api.LeaveChat(grpid);
+                        });
+                }
+                catch (Exception e)
+                {
+                    Send("An error occurred.\n" + e.Message, update.Message.Chat.Id);
+                    return;
+                }
+                var msg = "Bot successfully left from group";
+                msg += String.IsNullOrEmpty(grpname) ? $" {grpname}." : ".";
+                Send(msg, update.Message.Chat.Id);
+            }
+            else
+                Send("Couldn't find the group. Is the id/link valid?", update.Message.Chat.Id);
+            return;
+        }
+
+        [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
+        public static void Preferred(Update update, string[] args)
+        {
+            if (String.IsNullOrEmpty(args[1]))
+            {
+                Bot.Send("Usage: `/preferred <link|username|groupid> [Y|N]`\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
+                return;
+            }
+            var group = args[1].Split(' ').First();
+            var choice = args[1].Split(' ').Skip(1).FirstOrDefault();
+            long groupid = 0;
+            var islink = group.Contains("http");
+            if (!long.TryParse(group, out groupid) && !islink) //must be username...
+            {
+                group = group.TrimStart('@');
+                if (!new Regex(@"^\w*$").IsMatch(group))
+                {
+                    Send("Invalid id, link or username.", update.Message.Chat.Id);
+                    return;
+                }
+            }
             using (var db = new WWContext())
             {
-                var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+                Database.Group grp = null;
+                if (islink)
+                    grp = db.Groups.FirstOrDefault(x => x.GroupLink == group);
+                else if (groupid != 0)
+                    grp = db.Groups.FirstOrDefault(x => x.GroupId == groupid);
+                else //must be username...?
+                    grp = db.Groups.FirstOrDefault(x => x.UserName == group);
                 if (grp != null)
                 {
-
-                    try
+                    var msg = "";
+                    if (choice?.ToUpper() == "Y" || choice?.ToUpper() == "N")
                     {
-                        var result = Bot.Api.LeaveChat(grp.GroupId).Result;
-                        Send($"Bot removed from group: " + result, u.Message.Chat.Id);
+                        bool preferred = (choice.ToUpper() == "Y");
+                        grp.Preferred = preferred;
+                        db.SaveChanges();
+                        msg = preferred ? $"{grp.Name} will now be able to appear on grouplist" : $"{grp.Name} won't appear on grouplist anymore";
                     }
-                    catch
+                    else
                     {
-
+                        msg = grp.Name +
+                            (grp.Preferred == true ? " can " : " can't ") +
+                            "appear on grouplist";
                     }
-                    grp.GroupLink = null;
-                    db.SaveChanges();
-                    Send($"Group {grp.Name} removed from /grouplist", u.Message.Chat.Id);
+                    Send(msg, update.Message.Chat.Id);
                 }
+                else
+                    Send("Couldn't find the group in the database, so it is likely not to be in the grouplist.", update.Message.Chat.Id);
+                return;
             }
         }
 
@@ -1193,25 +1177,29 @@ namespace Werewolf_Control
             //1. Ask for the langfile to move
             //2. Ask for new filename and langnode
             //3. Create the new langfile automagically
-
-            var command = args.Skip(1).Aggregate("", (a, b) => a + " " + b);
-            var oldfilename = command.Substring(0, command.IndexOf(".xml"));
-            var newfilename = command.Substring(command.IndexOf(".xml") + 5, command.Length - 4);
-            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+            var match = new Regex(@"([\s\S]*).xml ([\s\S]*).xml").Match(args[1] ?? "");
+            if (!match.Success || match.Groups.Count != 3)
+            {
+                Bot.Send("Fail. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id, parseMode: ParseMode.Markdown);
+                return;
+            }
+            var oldfilename = match.Groups[1].Value;
+            var newfilename = match.Groups[2].Value;
+            var langs = Directory.GetFiles(Bot.LanguageDirectory).Where(x => x.EndsWith(".xml")).Select(x => new LangFile(x)).ToList();
             var oldlang = langs.FirstOrDefault(x => x.FileName == oldfilename);
             var newlang = langs.FirstOrDefault(x => x.FileName == newfilename);
             if (oldlang == null || newlang == null)
             {
-                Send("No langfile found. Use !movelang <oldfilename>.xml <newfilename>.xml", u.Message.Chat.Id);
+                Send("No langfile found. Make sure those langfiles exist!", u.Message.Chat.Id);
                 return;
             }
             
-            string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n\n";
-            msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n\n";
-            msg += "*Are you sure?*";
+            string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n_Last updated:_ {oldlang.LatestUpdate.ToString("MMM dd")}\n\n";
+            msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
+            msg += "Are you sure?";
 
             var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
-            Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons));
+            Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 
 
@@ -1269,7 +1257,7 @@ namespace Werewolf_Control
                 msg += e.Message;
             }
 
-            Send(msg, u.Message.Chat.Id);
+            Bot.Send(msg, u.Message.Chat.Id, parseMode: ParseMode.Markdown);
         }
 
     }

@@ -15,6 +15,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Models;
+using Werewolf_Node.Helpers;
 using Message = TcpFramework.Message;
 
 namespace Werewolf_Node
@@ -271,6 +272,7 @@ namespace Werewolf_Node
         internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null)
         {
             MessagesSent++;
+            //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
@@ -341,6 +343,9 @@ namespace Werewolf_Node
             Connect();
             while (Running)
             {
+                if ((DateTime.Now - StartupTime).Hours > 10)
+                    IsShuttingDown = true;
+
                 var infoGathered = false;
 
                 if (Games == null || (IsShuttingDown && Games.Count == 0))

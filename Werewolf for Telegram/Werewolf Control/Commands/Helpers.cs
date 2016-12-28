@@ -45,6 +45,18 @@ namespace Werewolf_Control
                 return;
             }
 #endif
+
+#if RELEASE2
+
+            //retiring bot 2
+            Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+            Thread.Sleep(1000);
+            Bot.Api.LeaveChat(update.Message.Chat.Id);
+            
+            return;
+
+#endif
+
             Group grp;
             using (var db = new WWContext())
             {

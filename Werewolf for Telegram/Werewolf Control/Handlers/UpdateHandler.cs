@@ -221,7 +221,7 @@ namespace Werewolf_Control.Handler
                     return; //toss it
 
                 var id = update.Message.Chat.Id;
-
+                
 #if DEBUG
                 //if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
                 //{
@@ -337,6 +337,14 @@ namespace Werewolf_Control.Handler
                                                 StringComparison.InvariantCultureIgnoreCase));
                                 if (command != null)
                                 {
+#if RELEASE2
+                                    Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+                                    if (update.Message.Chat.Type != ChatType.Private)
+                                    {
+                                        Thread.Sleep(1000);
+                                        Bot.Api.LeaveChat(update.Message.Chat.Id);
+                                    }
+#endif
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
@@ -373,8 +381,13 @@ namespace Werewolf_Control.Handler
                                         AddCount(update.Message.From.Id, update.Message.Text);
                                     command.Method.Invoke(update, args);
                                 }
+                                
 
                                 #endregion
+                            }
+                            else if (update.Message.Chat.Type == ChatType.Private && update.Message?.ReplyToMessage?.Text == "Please reply to this message with your Telegram authorization code" && update.Message.From.Id == UpdateHelper.Devs[0])
+                            {
+                                CLI.AuthCode = update.Message.Text;
                             }
                             break;
                         case MessageType.PhotoMessage:
@@ -538,11 +551,30 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.ReplyToCallback(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.ReplyToCallback(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //start the update process
                             Updater.DoUpdate(query);
+                        }
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
+                        return;
+                    }
+                    if (args[0] == "build")
+                    {
+                        bool dontUpdate = args[1] == "no";
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            if (dontUpdate)
+                            {
+                                Bot.ReplyToCallback(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            //start the update process
+                            Updater.DoBuild(query);
                         }
                         else
                         {
@@ -558,7 +590,7 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.Edit(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //update ohaider achievement
@@ -674,7 +706,7 @@ namespace Werewolf_Control.Handler
                                 plcount++;
                             }
                             DB.SaveChanges();
-                            var msg = $"Groups: {grpcount}\nPlayers: {plcount}\n*Total rows changed: {grpcount + plcount}*";
+                            var msg = $"Groups changed: {grpcount}\nPlayers changed: {plcount}\n<b>Total rows changed: {grpcount + plcount}</b>";
                             Bot.Edit(query, msg);
 
                             try
@@ -911,7 +943,7 @@ namespace Werewolf_Control.Handler
                                     Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
                                     Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
                                 }
-                                if (p != null)
+                                else if (p != null)
                                 {
                                     p.Language = slang.FileName;
                                     Bot.ReplyToCallback(query, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
@@ -1036,7 +1068,7 @@ namespace Werewolf_Control.Handler
                             buttons.Add(new InlineKeyboardButton(Cancel, $"setday|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("SetDayTimeQ", language, Settings.TimeDay + 60, grp.DayTime ?? Settings.TimeDay + 60),
+                                GetLocaleString("SetDayTimeQ", language, Settings.TimeDay + 60, (grp.DayTime ?? Settings.TimeDay) + 60),
                                 replyMarkup: menu);
                             break;
                         case "setday":
