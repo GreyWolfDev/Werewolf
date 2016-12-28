@@ -551,7 +551,7 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.ReplyToCallback(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.ReplyToCallback(query, query.Message + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //start the update process
@@ -570,7 +570,7 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.ReplyToCallback(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.ReplyToCallback(query, query.Message + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //start the update process
@@ -590,7 +590,7 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.Edit(query, query.Message + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //update ohaider achievement

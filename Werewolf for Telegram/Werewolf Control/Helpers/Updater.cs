@@ -41,7 +41,7 @@ namespace Werewolf_Control.Helpers
 
         public static void DoBuild(CallbackQuery query)
         {
-            var msg = $"Beginning build...\n";
+            var msg = query.Message + $"\n\nBeginning build...\n";
             Bot.ReplyToCallback(query, msg);
             //determine what we are building
             var updateType = query.Data.Split('|')[1];
@@ -71,7 +71,7 @@ namespace Werewolf_Control.Helpers
 
         public static void DoUpdate(CallbackQuery query)
         {
-            var msg = "Beginning file moving...";
+            var msg = query.Message + "\n\nBeginning file moving...";
             var updateType = query.Data.Split('|')[1];
             try
             {
@@ -97,11 +97,8 @@ namespace Werewolf_Control.Helpers
                 //stage the control files in the update folder
                 foreach (var b in Builds)
                 {
-                    if (updateType.StartsWith("beta") && b.BuildName != "Beta")
-                        continue; //if beta update, don't update release
-
+                    if (!updateType.StartsWith(b.BuildName.ToLower())) continue;
                     //update types can contain 'node', 'control', or 'both'
-
                     if (!updateType.Contains("node")) //if nodes only, don't update control
                     {
                         foreach (
