@@ -40,6 +40,7 @@ namespace Werewolf_Node
         private bool _playerListChanged = true, _silverSpread;
         private DateTime _timeStarted;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+        public List<long> HaveExtended = new List<long>();
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -1818,13 +1819,13 @@ namespace Werewolf_Node
             var p = Players.FirstOrDefault(x => x.TeleUser.Id == id);
             if (p != null)
             {
-                if (p.HasExtended && !admin)
+                if (HaveExtended.Contains(p.TeleUser.Id) && !admin)
                 {
                     SendWithQueue(GetLocaleString("CantExtend"));
                     return;
                 }
                 SecondsToAdd = seconds;
-                p.HasExtended = true;
+                HaveExtended.Add(p.TeleUser.Id);
             }
             return;
         }

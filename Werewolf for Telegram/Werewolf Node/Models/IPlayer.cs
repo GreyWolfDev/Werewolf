@@ -61,7 +61,6 @@ namespace Werewolf_Node.Models
         /// Indicates whether user has PM'd the bot.  this is required by telegram.
         /// </summary>
         public bool HasPM { get; set; } = false;
-        public bool HasExtended { get; set; } = false;
 
         public bool Fled { get; set; } = false;
         public ITeam Team { get; set; } = ITeam.Village;
