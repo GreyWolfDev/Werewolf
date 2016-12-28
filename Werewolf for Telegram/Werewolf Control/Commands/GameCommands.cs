@@ -187,7 +187,7 @@ namespace Werewolf_Control
             if (game != null || node != null)
             {
                 //try grabbing the game again...
-                if (node != null)
+                if (node != null || UpdateHelper.IsGroupAdmin(update))
                 {
                     game =
                         node.Games.FirstOrDefault(
