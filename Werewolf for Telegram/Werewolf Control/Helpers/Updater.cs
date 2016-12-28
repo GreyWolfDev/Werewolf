@@ -99,7 +99,6 @@ namespace Werewolf_Control.Helpers
                 {
                     if (!updateType.StartsWith(b.BuildName.ToLower())) continue;
                     //update types can contain 'node', 'control', or 'both'
-
                     if (!updateType.Contains("node")) //if nodes only, don't update control
                     {
                         foreach (
