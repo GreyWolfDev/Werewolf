@@ -3301,12 +3301,14 @@ namespace Werewolf_Node
                             if (Program.R.Next(100) < Settings.HunterKillWolfChanceBase)
                             {
                                 SendWithQueue(GetLocaleString("HunterKillsWolfEnd", hunter.GetName(), other.GetName()));
+                                other.IsDead = true;
                                 DBKill(hunter, other, KillMthd.HunterShot);
                                 return DoGameEnd(ITeam.Village);
                             }
                             else
                             {
                                 SendWithQueue(GetLocaleString("WolfKillsHunterEnd", hunter.GetName(), other.GetName()));
+                                hunter.IsDead = true;
                                 DBKill(other, hunter, KillMthd.Eat);
                                 return DoGameEnd(ITeam.Wolf);
                             }
