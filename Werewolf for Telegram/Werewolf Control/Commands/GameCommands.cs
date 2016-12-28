@@ -196,7 +196,7 @@ namespace Werewolf_Control
                     {
                         int seconds;
                         seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
-                        if (seconds < 0)
+                        if (seconds < 0 && !UpdateHelper.IsGroupAdmin(update))
                             Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
                         else
                             game?.ExtendTime(update.Message.From.Id, UpdateHelper.IsGroupAdmin(update), seconds);
