@@ -1958,33 +1958,32 @@ namespace Werewolf_Node
                         if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
                             AddAchievement(lynched, Achievements.LackOfTrust);
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.ShowRoles == false ? "" : $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}"));
-                        if (lynched.PlayerRole == IRole.WolfCub)
-                        {
-                            WolfCubKilled = true;
-                        }
+                        
                         if (lynched.InLove)
                             KillLover(lynched);
-                        //update the database
-                        foreach (var pl in Players.Where(x => x.Choice == lynched.Id))
-                        {
-                            DBKill(pl, lynched, KillMthd.Lynch);
-                        }
-                        //add the 'kill'
-                        if (lynched.PlayerRole == IRole.Tanner)
-                        {
-                            //check for overkill
-                            if (Players.Where(x => !x.IsDead).All(x => x.Choice == lynched.Id))
-                                AddAchievement(lynched, Achievements.TannerOverkill);
-                            //end game
-                            DoGameEnd(ITeam.Tanner);
-                            return;
-                        }
-                        //need to do the hunter!
 
-                        if (lynched.PlayerRole == IRole.Hunter)
+                        //effects on game depending on the lynched's role
+                        switch (lynched.PlayerRole)
                         {
-                            HunterFinalShot(lynched, KillMthd.Lynch);
+                            case IRole.WolfCub:
+                                WolfCubKilled = true;
+                                break;
+                            case IRole.Tanner:
+                                //check for overkill
+                                if (Players.Where(x => !x.IsDead).All(x => x.Choice == lynched.Id))
+                                    AddAchievement(lynched, Achievements.TannerOverkill);
+                                //end game
+                                lynched.DiedLastNight = true; //store the tanner who should win (DG is too complicated to handle)
+                                DoGameEnd(ITeam.Tanner);
+                                return;
+                            case IRole.Hunter:
+                                HunterFinalShot(lynched, KillMthd.Lynch);
+                                break;
                         }
+                        
+                        //update the database
+                        DBKill(Players.Where(x => x.Choice == lynched.Id), lynched, KillMthd.Lynch);
+
                         CheckRoleChanges();
                     }
                 }
@@ -3411,17 +3410,10 @@ namespace Werewolf_Node
                         if (team == ITeam.SerialKiller && w.IsDead)
                             continue;
 
-                        //same with tanner, but this is a little trickier
-                        if (team == ITeam.Tanner && Players.Count(x => x.PlayerRole == IRole.Tanner) > 1)
-                        {
-                            //get the last tanner alive
-                            var lastTanner = Players.Where(x => x.PlayerRole == IRole.Tanner && x.IsDead).OrderByDescending(x => x.TimeDied).Select(x => x.Id).FirstOrDefault();
-                            //compare to this player
-                            if (w.Id != lastTanner)
-                                continue;
-                        }
-
-
+                        //the winning tanner is the only one with DiedLastNight == true
+                        if (team == ITeam.Tanner && !w.DiedLastNight)
+                            continue;
+                        
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
