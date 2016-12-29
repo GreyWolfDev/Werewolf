@@ -116,6 +116,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "broadcast", DevOnly = true)]
         public static void Broadcast(Update u, string[] args)
         {
+#if !BETA
             foreach (var n in Bot.Nodes.Select(x => x.Games.ToList()))
             {
                 foreach (var g in n)
@@ -123,6 +124,21 @@ namespace Werewolf_Control
                     Bot.Send(args[1], g.GroupId, parseMode: ParseMode.Markdown);
                 }
             }
+#else
+            foreach (var g in BetaGroups)
+            {
+                try
+                {
+                    Bot.Send(args[1], g, parseMode: ParseMode.Markdown);
+                }
+                catch (Exception e)
+                {
+                    while (e.InnerException != null)
+                        e = e.InnerException;
+                    Bot.Send("Couldn't send to " + g + ".\n"+ e.Message, UpdateHelper.Devs[1]);
+                }
+            }
+#endif
         }
 
         [Attributes.Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
