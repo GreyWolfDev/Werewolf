@@ -181,25 +181,32 @@ namespace Werewolf_Control
         public static void Extend(Update update, string[] args)
         {
             var id = update.Message.Chat.Id;
+            var isadmin = UpdateHelper.IsGroupAdmin(update) || UpdateHelper.IsGlobalAdmin(update.Message.From.Id);
             //check nodes to see if player is in a game
             var node = GetPlayerNode(update.Message.From.Id);
             var game = GetGroupNodeAndGame(update.Message.Chat.Id);
             if (game != null || node != null)
             {
                 //try grabbing the game again...
-                if (node != null || UpdateHelper.IsGroupAdmin(update))
+                if (node != null || isadmin)
                 {
                     game =
                         node.Games.FirstOrDefault(
                             x => x.GroupId == update.Message.Chat.Id);
-                    if ((game?.Users.Contains(update.Message.From.Id) ?? false) || UpdateHelper.IsGroupAdmin(update))
+                    if (isadmin || (game?.Users.Contains(update.Message.From.Id) ?? false))
                     {
                         int seconds;
                         seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
-                        if (seconds < 0 && !UpdateHelper.IsGroupAdmin(update))
+                        if (seconds < 0 && !isadmin)
                             Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
                         else
-                            game?.ExtendTime(update.Message.From.Id, UpdateHelper.IsGroupAdmin(update), seconds);
+                            using (var db = new WWContext())
+                            {
+                                if (isadmin || (db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id).AllowExtend ?? true)) //default value is true. if you change that, check MakeDefaultGroup and config menu!
+                                    game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
+                                else
+                                    Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
+                            }
                         return;
                     }
                 }
