@@ -180,6 +180,8 @@ namespace Werewolf_Control
         [Command(Trigger = "extend", Blockable = true, InGroupOnly = true)]
         public static void Extend(Update update, string[] args)
         {
+            // this method is a MESS...
+            
             var id = update.Message.Chat.Id;
             var isadmin = UpdateHelper.IsGroupAdmin(update) || UpdateHelper.IsGlobalAdmin(update.Message.From.Id);
             //check nodes to see if player is in a game
@@ -191,7 +193,7 @@ namespace Werewolf_Control
                 if (node != null || isadmin)
                 {
                     game =
-                        node.Games.FirstOrDefault(
+                        node?.Games.FirstOrDefault(
                             x => x.GroupId == update.Message.Chat.Id);
                     if (isadmin || (game?.Users.Contains(update.Message.From.Id) ?? false))
                     {
@@ -212,6 +214,7 @@ namespace Werewolf_Control
                 }
                 else
                 {
+                    
                     //there is a game, but this player is not in it
                     Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
                 }
