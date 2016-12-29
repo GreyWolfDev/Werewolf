@@ -204,7 +204,7 @@ namespace Werewolf_Control
                         else
                             using (var db = new WWContext())
                             {
-                                if (isadmin || (db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id).AllowExtend ?? true)) //default value is true. if you change that, check MakeDefaultGroup and config menu!
+                                if (isadmin || (db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id).AllowExtend ?? false)) //default value is false. if you change that, check MakeDefaultGroup and config menu!
                                     game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
                                 else
                                     Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
