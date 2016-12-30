@@ -129,13 +129,11 @@ namespace Werewolf_Control
             {
                 try
                 {
-                    Bot.Send(args[1], g, parseMode: ParseMode.Markdown);
+                    var success = Bot.Send(args[1], g, parseMode: ParseMode.Markdown).Result;
                 }
-                catch (Exception e)
+                catch (AggregateException e)
                 {
-                    while (e.InnerException != null)
-                        e = e.InnerException;
-                    Bot.Send("Couldn't send to " + g + ".\n"+ e.Message, UpdateHelper.Devs[1]);
+                    Bot.Send("Couldn't send to " + g + ".\n"+ e.InnerExceptions[0].Message, UpdateHelper.Devs[1]);
                 }
             }
 #endif
