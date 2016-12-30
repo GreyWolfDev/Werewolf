@@ -1997,6 +1997,8 @@ namespace Werewolf_Node
                 {
                     SendWithQueue(GetLocaleString("NoLynchVotes"));
                 }
+
+                if (CheckForGameEnd(true)) return;
             }
             catch (Exception ex)
             {
@@ -2145,6 +2147,7 @@ namespace Werewolf_Node
             //FUN!
             Time = GameTime.Night;
             var nightStart = DateTime.Now;
+            if (CheckForGameEnd(true)) return;
             foreach (var p in Players)
             {
                 p.Choice = 0;
@@ -3252,7 +3255,7 @@ namespace Werewolf_Node
 
         }
 
-        private bool CheckForGameEnd()
+        private bool CheckForGameEnd(bool checkbitten = false)
         {
             if (Players == null)
                 return true;
@@ -3263,7 +3266,7 @@ namespace Werewolf_Node
             if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole)))
             {
                 var traitor = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Traitor);
-                if (traitor != null)
+                if (traitor != null && (!checkbitten || alivePlayers.All(x => !x.Bitten))) //traitor should not turn wolf if bitten is about to turn
                 {
                     //traitor turns wolf!
                     traitor.PlayerRole = IRole.Wolf;
