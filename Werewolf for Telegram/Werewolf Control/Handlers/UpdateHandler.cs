@@ -104,7 +104,7 @@ namespace Werewolf_Control.Handler
 
                         //now refresh the list
                         var list = db.GlobalBans.ToList();
-#if RELEASE2
+#if RELEASE
                         for (var i = list.Count - 1; i >= 0; i--)
                         {
                             if (list[i].Expires > DateTime.Now) continue;
