@@ -184,7 +184,8 @@ namespace Werewolf_Control
                 DisableFlee = false,
                 MaxPlayers = 35,
                 CreatedBy = createdBy,
-                AllowExtend = false
+                AllowExtend = false,
+                MaxExtend = 60
             };
         }
 

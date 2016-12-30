@@ -180,49 +180,74 @@ namespace Werewolf_Control
         [Command(Trigger = "extend", Blockable = true, InGroupOnly = true)]
         public static void Extend(Update update, string[] args)
         {
-            // this method is a MESS...
-            
             var id = update.Message.Chat.Id;
             var isadmin = UpdateHelper.IsGroupAdmin(update) || UpdateHelper.IsGlobalAdmin(update.Message.From.Id);
             //check nodes to see if player is in a game
             var node = GetPlayerNode(update.Message.From.Id);
             var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-            if (game != null || node != null)
-            {
-                //try grabbing the game again...
-                if (node != null || isadmin)
-                {
-                    game =
-                        node?.Games.FirstOrDefault(
-                            x => x.GroupId == update.Message.Chat.Id);
-                    if (isadmin || (game?.Users.Contains(update.Message.From.Id) ?? false))
-                    {
-                        int seconds;
-                        seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
-                        if (seconds < 0 && !isadmin)
-                            Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
-                        else
-                            using (var db = new WWContext())
-                            {
-                                if (isadmin || (db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id).AllowExtend ?? false)) //default value is false. if you change that, check MakeDefaultGroup and config menu!
-                                    game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
-                                else
-                                    Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
-                            }
-                        return;
-                    }
-                }
-                else
-                {
-                    
-                    //there is a game, but this player is not in it
-                    Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
-                }
-            }
-            else
-            {
+            
+
+            if (game == null) //if this doesn't work, you'll have to get the game as node.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id) in the second else if block
                 Send(GetLocaleString("NoGame", GetLanguage(id)), id);
+            else if (game != null && node == null && !isadmin) //there is a game, but this player is not in it
+                Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
+            else if (game != null && (node != null || isadmin)) //player is in the game, or is an admin
+            {
+                int seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
+                if (seconds < 0 && !isadmin)
+                    Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
+                else
+                    using (var db = new WWContext())
+                    {
+                        var grp = db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
+                        if (isadmin || (grp.AllowExtend ?? false))
+                        {
+                            int maxextend = grp.MaxExtend ?? Settings.MaxExtend;
+                            seconds = Math.Abs(seconds) > maxextend ? maxextend * Math.Sign(seconds) : seconds ;
+                            game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
+                        }
+                        else
+                            Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
+                    }
+                return;
             }
+
+            //if (game != null || node != null)
+            //{
+            //    //try grabbing the game again...
+            //    if (node != null || isadmin)
+            //    {
+            //        game =
+            //            node?.Games.FirstOrDefault(
+            //                x => x.GroupId == update.Message.Chat.Id);
+            //        if (isadmin || (game?.Users.Contains(update.Message.From.Id) ?? false))
+            //        {
+            //            int seconds;
+            //            seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
+            //            if (seconds < 0 && !isadmin)
+            //                Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
+            //            else
+            //                using (var db = new WWContext())
+            //                {
+            //                    if (isadmin || (db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id).AllowExtend ?? false)) //default value is false. if you change that, check MakeDefaultGroup and config menu!
+            //                        game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
+            //                    else
+            //                        Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
+            //                }
+            //            return;
+            //        }
+            //    }
+            //    else
+            //    {
+                    
+            //        //there is a game, but this player is not in it
+            //        Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
+            //    }
+            //}
+            //else
+            //{
+            //    Send(GetLocaleString("NoGame", GetLanguage(id)), id);
+            //}
         }
     }
 }

@@ -1177,6 +1177,24 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
                             break;
+                        case "maxextend":
+                            buttons.Add(new InlineKeyboardButton("60", $"maxextend|{groupid}|60"));
+                            buttons.Add(new InlineKeyboardButton("120", $"maxextend|{groupid}|120"));
+                            buttons.Add(new InlineKeyboardButton("180", $"maxextend|{groupid}|180"));
+                            buttons.Add(new InlineKeyboardButton("240", $"maxextend|{groupid}|240"));
+                            buttons.Add(new InlineKeyboardButton("300", $"maxextend|{groupid}|300"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"maxextend|{groupid}|cancel"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("MaxExtendQ", language, Settings.MaxExtend, grp.MaxExtend ?? Settings.MaxExtend), replyMarkup: menu);
+                            break;
+                        case "setmaxextend":
+                            grp.MaxExtend = int.Parse(choice);
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("MaxExtendA", language, choice));
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                            DB.SaveChanges();
+                            break;
                         case "done":
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("ThankYou", language));
@@ -1295,6 +1313,7 @@ namespace Werewolf_Control.Handler
             buttons.Add(new InlineKeyboardButton("Allow Fleeing", $"flee|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Extending Timer", $"extend|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Max Players", $"maxplayer|{id}"));
+            buttons.Add(new InlineKeyboardButton("Set Max Extend Time", $"maxextend|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Day Timer", $"day|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Lynch Timer", $"lynch|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Night Timer", $"night|{id}"));

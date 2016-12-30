@@ -218,18 +218,16 @@ namespace Werewolf_Node
                     {
                         SendWithQueue(GetLocaleString("MinuteLeftToJoin"));
                     }
-                    if (i == Settings.GameJoinTime - 30)
+                    else if (i == Settings.GameJoinTime - 30)
                     {
                         SendWithQueue(GetLocaleString("SecondsLeftToJoin", "30".ToBold()));
                     }
-                    if (i == Settings.GameJoinTime - 10)
+                    else if (i == Settings.GameJoinTime - 10)
                     {
                         SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
                     }
                     if (SecondsToAdd != 0)
                     {
-                        if (Math.Abs(SecondsToAdd) > Settings.ExtendMaxValue)
-                            SecondsToAdd = Settings.ExtendMaxValue * SecondsToAdd / Math.Abs(SecondsToAdd);
                         i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
                         var msg = "";
                         var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
