@@ -1787,7 +1787,7 @@ namespace Werewolf_Node
                         alpha), wolf.Id);
         }
 
-        private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult)
+        private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
         {
             target.OriginalRole = target.PlayerRole;
             target.PlayerRole = IRole.Cultist;
@@ -2270,23 +2270,30 @@ namespace Werewolf_Node
                 //    }
                 //}
                 var votechoice = voteWolves.Where(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1));
+
+                List<int> choices = new List<int>();
+
                 foreach (var w in votechoice)
                 {
-                    var p = Players.Where(x => x.Id == w.Choice || x.Id == w.Choice2);
+                    var p = Players.Where(x => x.Id == w.Choice);
                     foreach (var pl in p)
                         pl.Votes++;
                 }
-                List<int> choices = new List<int>();
-                if (votechoice.Any())
-                {
-                    var chosen = Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).ToList();
+                choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
+                foreach (var p in Players)
+                    p.Votes = 0;
 
-                    if (chosen.Count > 1 && WolfCubKilled)
-                        choices = chosen.Take(2).Select(x => x.Id).ToList();
-                    else
-                        choices = chosen.Take(1).Select(x => x.Id).ToList();
+                if (WolfCubKilled)
+                {
+                    foreach (var w in votechoice)
+                    {
+                        var p = Players.Where(x => x.Id == w.Choice2 && x.Id != choices[0]);
+                        foreach (var pl in p)
+                            pl.Votes++;
+                    }
+                    choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
                 }
-                
+
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
@@ -2372,7 +2379,11 @@ namespace Werewolf_Node
                                             GetRandomImage(Settings.VillagerDieImages), target.Id);
                                         foreach (var w in voteWolves)
                                         {
-                                            Send(GetLocaleString("WolvesEatDrunk", target.GetName()), w.Id);
+                                            var secondvictim = Players.FirstOrDefault(x => x.Id == choices[1]);
+                                            Send(
+                                                target != (secondvictim ?? target) ? //if the drunk is the first victim out of two, they block the second one. let's tell wolves
+                                                GetLocaleString("WolvesEatDrunkBlockSecondKill", target.GetName(), secondvictim.GetName()) : 
+                                                GetLocaleString("WolvesEatDrunk", target.GetName()), w.Id);
                                             w.Drunk = true;
                                         }
                                     }
