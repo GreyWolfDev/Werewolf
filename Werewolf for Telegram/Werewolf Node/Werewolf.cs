@@ -1789,16 +1789,31 @@ namespace Werewolf_Node
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
         {
-            target.OriginalRole = target.PlayerRole;
-            target.PlayerRole = IRole.Cultist;
-            target.Team = ITeam.Cult;
-            target.HasDayAction = false;
-            target.HasNightAction = true;
-            target.DayCult = GameDay;
-            Send(GetLocaleString("CultConvertYou"), target.Id);
-            Send(GetLocaleString("CultTeam", voteCult.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), target.Id);
-            foreach (var c in voteCult)
-                Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
+            if (Program.R.Next(100) < chance)
+            {
+                if (target.PlayerRole == IRole.Harlot)
+                    foreach (var c in voteCult)
+                        AddAchievement(c, Achievements.DontStayHome);
+
+                target.OriginalRole = target.PlayerRole;
+                target.PlayerRole = IRole.Cultist;
+                target.Team = ITeam.Cult;
+                target.HasDayAction = false;
+                target.HasNightAction = true;
+                target.DayCult = GameDay;
+                Send(GetLocaleString("CultConvertYou"), target.Id);
+                Send(GetLocaleString("CultTeam", voteCult.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), target.Id);
+                foreach (var c in voteCult)
+                    Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
+            }
+            else
+            {
+                foreach (var c in voteCult)
+                {
+                    Send(GetLocaleString("CultUnableToConvert", voteCult.OrderByDescending(x => x.DayCult).First().GetName(), target.GetName()), c.Id);
+                }
+                Send(GetLocaleString("CultAttempt"), target.Id);
+            }
         }
 
 
@@ -2694,140 +2709,22 @@ namespace Werewolf_Node
                                     }
                                     Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), voteCult.Count()), target.Id);
                                     break;
-                                case IRole.Seer:
-                                    if (Program.R.Next(100) < Settings.SeerConversionChance)
-                                        ConvertToCult(target, voteCult);
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                case IRole.Sorcerer:
-                                    if (Program.R.Next(100) < Settings.SorcererConversionChance)
-                                        ConvertToCult(target, voteCult);
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                case IRole.Blacksmith:
-                                    if (Program.R.Next(100) < Settings.BlacksmithConversionChance)
-                                        ConvertToCult(target, voteCult);
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                case IRole.GuardianAngel:
-                                    if (target.Choice == 0 || target.Choice == -1) // stayed home
-                                    {
-                                        if (Program.R.Next(100) < Settings.GuardianAngelConversionChance)
-                                            ConvertToCult(target, voteCult);
-                                        else
-                                        {
-                                            foreach (var c in voteCult)
-                                            {
-                                                Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                            }
-                                            Send(GetLocaleString("CultAttempt"), target.Id);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        //Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                case IRole.Detective:
-                                    if (Program.R.Next(100) < Settings.DetectiveConversionChance)
-                                        ConvertToCult(target, voteCult);
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                case IRole.Cursed:
-                                    if (Program.R.Next(100) < Settings.CursedConversionChance)
-                                        ConvertToCult(target, voteCult);
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                case IRole.Harlot:
-                                    if (target.Choice == 0 || target.Choice == -1) // stayed home
-                                    {
-                                        if (Program.R.Next(100) < Settings.HarlotConversionChance)
-                                        {
-                                            ConvertToCult(target, voteCult);
-                                            foreach (var c in voteCult)
-                                                AddAchievement(c, Achievements.DontStayHome);
-                                        }
-                                        else
-                                        {
-                                            foreach (var c in voteCult)
-                                            {
-                                                Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                            }
-                                            Send(GetLocaleString("CultAttempt"), target.Id);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        foreach (var c in voteCult)
-                                        {
-                                            Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
-                                        }
-                                        //Send(GetLocaleString("CultAttempt"), target.Id);
-                                    }
-                                    break;
-                                    
-                                //TODO: Decide conversion chances for Prince and Mayor!!
-
                                 case IRole.Mason:
                                     //notify other masons....
                                     ConvertToCult(target, voteCult);
                                     foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead))
                                         Send(GetLocaleString("MasonConverted", target.GetName()), m.Id);
                                     break;
-                                case IRole.Doppelgänger:
-                                    foreach (var c in voteCult)
-                                    {
-                                        Send(GetLocaleString("CultUnableToConvert", newbie.GetName(), target.GetName()), c.Id);
-                                    }
-                                    Send(GetLocaleString("CultAttempt"), target.Id);
-                                    break;
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
                                 case IRole.WolfCub:
                                     if (voteWolves.Any(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1))) //did wolves go eating?
+                                    {
                                         foreach (var c in voteCult)
                                         {
                                             Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
                                         }
+                                    }
                                     else //stayed home!
                                     {
                                         //kill the newest cult member
@@ -2837,13 +2734,57 @@ namespace Werewolf_Node
                                         newbie.KilledByRole = IRole.Wolf;
                                         newbie.DiedByVisitingKiller = true;
                                         DBKill(target, newbie, KillMthd.Eat);
-                                        
+
                                         foreach (var c in voteCult)
                                         {
                                             Send(GetLocaleString("CultConvertWolf", newbie.GetName(), target.GetName()), c.Id);
                                         }
                                         Send(GetLocaleString("CultAttempt"), target.Id); //only notify if they were home
                                     }
+                                    break;
+                                case IRole.GuardianAngel:
+                                    if (target.Choice == 0 || target.Choice == -1) // stayed home
+                                        ConvertToCult(target, voteCult, Settings.GuardianAngelConversionChance);
+                                    else
+                                    {
+                                        foreach (var c in voteCult)
+                                            Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
+                                        //Send(GetLocaleString("CultAttempt"), target.Id);
+                                    }
+                                    break;
+                                case IRole.Harlot:
+                                    if (target.Choice == 0 || target.Choice == -1) // stayed home
+                                        ConvertToCult(target, voteCult, Settings.HarlotConversionChance);
+                                    else
+                                    {
+                                        foreach (var c in voteCult)
+                                            Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
+                                        //Send(GetLocaleString("CultAttempt"), target.Id);
+                                    }
+                                    break;
+                                case IRole.Seer:
+                                    ConvertToCult(target, voteCult, Settings.SeerConversionChance);
+                                    break;
+                                case IRole.Sorcerer:
+                                    ConvertToCult(target, voteCult, Settings.SorcererConversionChance);
+                                    break;
+                                case IRole.Blacksmith:
+                                    ConvertToCult(target, voteCult, Settings.BlacksmithConversionChance);
+                                    break;
+                                case IRole.Detective:
+                                    ConvertToCult(target, voteCult, Settings.DetectiveConversionChance);
+                                    break;
+                                case IRole.Cursed:
+                                    ConvertToCult(target, voteCult, Settings.CursedConversionChance);
+                                    break;
+                                case IRole.Prince:
+                                    ConvertToCult(target, voteCult); //TODO: Decide conversion chances for Prince and Mayor!!
+                                    break;
+                                case IRole.Mayor:
+                                    ConvertToCult(target, voteCult); //TODO: Decide conversion chances for Prince and Mayor!!
+                                    break;
+                                case IRole.Doppelgänger:
+                                    ConvertToCult(target, voteCult, 0);
                                     break;
                                 default:
                                     ConvertToCult(target, voteCult);
