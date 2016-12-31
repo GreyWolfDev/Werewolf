@@ -2288,6 +2288,7 @@ namespace Werewolf_Node
 
                 List<int> choices = new List<int>();
 
+                //choice1
                 foreach (var w in votechoice)
                 {
                     var p = Players.Where(x => x.Id == w.Choice);
@@ -2295,19 +2296,18 @@ namespace Werewolf_Node
                         pl.Votes++;
                 }
                 choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
+
+                
+                //choice2 (will be 0 if wolfcub wasn't killed)
                 foreach (var p in Players)
                     p.Votes = 0;
-
-                if (WolfCubKilled)
+                foreach (var w in votechoice)
                 {
-                    foreach (var w in votechoice)
-                    {
-                        var p = Players.Where(x => x.Id == w.Choice2 && x.Id != choices[0]);
-                        foreach (var pl in p)
-                            pl.Votes++;
-                    }
-                    choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
+                    var p = Players.Where(x => x.Id == w.Choice2 && x.Id != choices[0]);
+                    foreach (var pl in p)
+                        pl.Votes++;
                 }
+                choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
 
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
