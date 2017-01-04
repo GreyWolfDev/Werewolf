@@ -980,15 +980,15 @@ namespace Werewolf_Control.Handler
                             SendGifIds = true;
                             ActualUploadGif[Int32.Parse(args[1])] = image;
                             List<String> values = DB.ImageLanguages.Where(x => x.LanguageVariant.Equals(image.LanguageVariant) && x.ImageKey.Equals(image.ImageKey.ToString())).Select(x => x.ImageId).ToList();
-                            if (values.Count<=0)
-                            {
-                                //try the default image to be sure
-                                var field = typeof(Settings).GetField(image.ImageKey.ToString());
-                                values = field.GetValue(null) as List<string>;
-                            }
+                            //if (values.Count<=0)
+                            //{
+                            //    //try the default image to be sure
+                            //    var field = typeof(Settings).GetField(image.ImageKey.ToString());
+                            //    values = field.GetValue(null) as List<string>;
+                            //}
                             if(values.Count>0)
                             {
-                                Bot.ReplyToCallback(query, "Aqui estão os gifs configurados atualmente para essa key:");
+                                Bot.ReplyToCallback(query, $"Aqui estão os gifs configurados atualmente para a key {image.ImageKey.ToString()}:");
                                 foreach (var g in values)
                                 {
                                     try
