@@ -21,8 +21,20 @@ namespace Werewolf_Node.Helpers
         LoversWin,
         HunterKilledCultist,
         HunterKilledFinalShot,
-        RoleInfoDrunk,
         BlacksmithSpreadSilver,
-        HarlotVisitYou
+        HarlotVisitYou,
+        RoleInfoDrunk,
+        RoleInfoHunter,
+        RoleInfoTraitor,
+        RoleInfoCursed,
+        RoleInfoBlacksmith,
+        RoleInfoCultistHunter,
+        RoleInfoGunner,
+        RoleInfoHarlot,
+        RoleInfoDetective,
+        RoleInfoMayor,
+        RoleInfoClumsyGuy,
+        RoleInfoSorcerer,
+        RoleInfoApprenticeSeer
     }
 }

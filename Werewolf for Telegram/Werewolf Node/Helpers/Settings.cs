@@ -37,21 +37,21 @@ namespace Werewolf_Node
         internal static List<string> HunterKilledFinalShot = new List<string> { "BQADAQADuAADoS3DCeya0e_BqwABvgI" };
         internal static List<string> RoleInfoDrunk = new List<string> { "BQADAQADwgADoS3DCblBCwQZU6nUAg", "BQADAQADvQADoS3DCQ2MVePhv534Ag" };
 #elif RELEASE
-        public static List<string> VillagerDieImages = new List<string> { "BQADAQADxAADoS3DCdQQVQvY7D5AAg", "BQADAQADwwADoS3DCTpmy3l5AtSkAg" };
-        public static List<string> WolfWin = new List<string> { "BQADAQADvwADE9RmCoit7eO5VNvFAg" };
-        public static List<string> WolvesWin = new List<string> { "BQADBAADlRMAArsYZAdnzPICOHPdhAI" };
-        public static List<string> VillagersWin = new List<string> { "BQADAQAD_wADcsVuDy8Un_hN5fq2Ag" };
-        public static List<string> NoWinner = new List<string> { "BQADAQADVgIAAnNuIAmdYdeZhXDPbwI" };
-        public static List<string> StartGame = new List<string> { "BQADBAADIhwAAncZZAfLEvtcLlK1GwI", "BQADAQADUQIAAnNuIAkTy4a7JPqNWQI", "BQADAQADuwADoS3DCTL_K1-Ob144Ag" };
-        public static List<string> StartChaosGame = new List<string> { "BQADAQADlwMAAhRvVApHz0mgdD3qiwI" };
-        public static List<string> TannerWin = new List<string> { "BQADBAADsS0AAh8dZAfVCdfENLy1xAI" };
-        public static List<string> CultWins = new List<string> { "BQADAQADuQADoS3DCZwn_mHFFt6OAg" };
-        public static List<string> SerialKillerWins = new List<string> { "BQADAQADTQIAAnNuIAkf6mzBYeIZFwI" };
-        public static List<string> LoversWin = new List<string> { "BQADAQADTgIAAnNuIAlJPgvUG4QnXQI", "BQADAQADSgIAAnNuIAnDBRHTCwTnxAI", "BQADAQADVAIAAnNuIAmK4s25_Iw3pwI" };
-        public static List<string> HunterKilledCultist = new List<string> { "BQADBAADNAMAAkcbZAfo06zarRzNXgI" };
-        public static List<string> HunterKilledFinalShot = new List<string> { "BQADAQADuAADoS3DCeya0e_BqwABvgI" };
-        public static List<string> RoleInfoDrunk = new List<string> { "BQADAQADwgADoS3DCblBCwQZU6nUAg", "BQADAQADvQADoS3DCQ2MVePhv534Ag" };
-        public static List<string> BlacksmithSpreadSilver = new List<string> { "BQADAQADvQADE9RmCkDe5CxjDqCeAg" };
+        public static List<string> VillagerDieImages = new List<string> { };
+        public static List<string> WolfWin = new List<string> { };
+        public static List<string> WolvesWin = new List<string> { };
+        public static List<string> VillagersWin = new List<string> { };
+        public static List<string> NoWinner = new List<string> { };
+        public static List<string> StartGame = new List<string> { };
+        public static List<string> StartChaosGame = new List<string> { };
+        public static List<string> TannerWin = new List<string> { };
+        public static List<string> CultWins = new List<string> { };
+        public static List<string> SerialKillerWins = new List<string> { };
+        public static List<string> LoversWin = new List<string> { };
+        public static List<string> HunterKilledCultist = new List<string> { };
+        public static List<string> HunterKilledFinalShot = new List<string> { };
+        public static List<string> RoleInfoDrunk = new List<string> { };
+        public static List<string> BlacksmithSpreadSilver = new List<string> { };
         public static List<string> HarlotVisitYou = new List<string> { };
 #else
         public static List<string> VillagerDieImages = new List<string> { "BQADAwADggADdBexBxVNNy-rt--bAg", "BQADBAADWAMAAt4cZAfbY0WobzNPwAI", "BQADBAADKgMAAoMbZAc7Ldme4T3DKQI" };
