@@ -57,17 +57,17 @@ namespace Werewolf_Control.Models
                     var killedby = db.PlayerMostKilledBy(u.Id).FirstOrDefault();
                     var ach = (Achievements) (p.Achievements ?? 0);
                     var count = ach.GetUniqueFlags().Count();
-
+                    
                     Content = String.IsNullOrWhiteSpace(u.Username)
-                        ? $"{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}"
-                        : $"<a href=\"https://telegram.me/{u.Username}\">{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}</a>";
-                    Content += $"\n{count.Pad()}Achievements Unlocked!\n" +
-                               $"{won.Pad()}Games won ({won*100/gamesPlayed}%)\n" +
-                               $"{lost.Pad()}Games lost ({lost*100/gamesPlayed}%)\n" +
-                               $"{survived.Pad()}Games survived ({survived*100/gamesPlayed}%)\n" +
-                               $"{gamesPlayed.Pad()}Total Games\n" +
-                               $"<code>{killed?.times}</code>\ttimes I've gleefully killed {killed?.Name.FormatHTML()}\n" +
-                               $"<code>{killedby?.times}</code>\ttimes I've been slaughted by {killedby?.Name.FormatHTML()}";
+                        ? $"{u.FirstName.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}"
+                        : $"<a href=\"https://telegram.me/{u.Username}\">{u.FirstName.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}</a>";
+                    Content += $"\n{count.Pad()} {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n" +
+                               $"{won.Pad()} {Commands.GetLocaleString("GamesWon", p.Language)} ({won*100/gamesPlayed}%)\n" +
+                               $"{lost.Pad()} {Commands.GetLocaleString("GamesLost", p.Language)} ({lost*100/gamesPlayed}%)\n" +
+                               $"{survived.Pad()} {Commands.GetLocaleString("GamesSurvived", p.Language)} ({survived*100/gamesPlayed}%)\n" +
+                               $"{gamesPlayed.Pad()} {Commands.GetLocaleString("TotalGames", p.Language)} \n" +
+                               $"<code>{killed?.times}</code>\t{Commands.GetLocaleString("TimesKilled", p.Language)} {killed?.Name.FormatHTML()}\n" +
+                               $"<code>{killedby?.times}</code>\t{Commands.GetLocaleString("TimesKilledBy", p.Language)} {killedby?.Name.FormatHTML()}";
                 }
             }
             catch (Exception e)
