@@ -277,18 +277,18 @@ namespace Werewolf_Control
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
-                    var ypos = Math.Max(Console.CursorTop, 30);
-                    if (ypos >= 60)
-                        ypos = 30;
+                    //var ypos = Math.Max(Console.CursorTop, 30);
+                    //if (ypos >= 60)
+                    //    ypos = 30;
                     Console.CursorTop = 0;
-                    var xpos = Console.CursorLeft;
+                    //var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
                     //Console.Clear();
                     //write the info
                     Console.WriteLine(msg);
                     //put the cursor back;
-                    Console.CursorTop = ypos;
-                    Console.CursorLeft = xpos;
+                    //Console.CursorTop = ypos;
+                    //Console.CursorLeft = xpos;
                     _writingInfo = false;
 
 
