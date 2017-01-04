@@ -257,8 +257,8 @@ namespace Werewolf_Control
                         // ignored
                     }
 
-                    for (var i = 0; i < 12; i++)
-                        msg += new string(' ', Console.WindowWidth);
+                    //for (var i = 0; i < 12; i++)
+                    //    msg += new string(' ', Console.WindowWidth);
 
                     //we don't need this anymore, but keeping code just in case
                     //try
