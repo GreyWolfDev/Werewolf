@@ -855,6 +855,11 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
         public static void CleanMain(Update u, string[] args)
         {
+            var skip = 0;
+            if (args.Length > 0)
+                int.TryParse(args[1], out skip);
+            if (skip > 0)
+                Send($"Skipping the first {skip} users", u.Message.Chat.Id);
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
