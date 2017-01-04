@@ -4,8 +4,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Database;
+using Microsoft.TeamFoundation.Build.WebApi;
+using Microsoft.VisualStudio.Services.Common;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
@@ -27,17 +30,48 @@ namespace Werewolf_Control.Helpers
                 BuildName = "Release",
                 ControlExeName = "Werewolf Control"
             },
-            new BuildConfiguration
-            {
-                BotDirSuffix = "Bot 2",
-                BuildName = "Release 2",
-                ControlExeName = "Werewolf Control 2"
-            },
+            //new BuildConfiguration
+            //{
+            //    BotDirSuffix = "Bot 2",
+            //    BuildName = "Release 2",
+            //    ControlExeName = "Werewolf Control 2"
+            //},
         };
+
+
+        public static void DoBuild(CallbackQuery query)
+        {
+            var msg = query.Message.Text + $"\n\nBeginning build...\n";
+            Bot.ReplyToCallback(query, msg);
+            //determine what we are building
+            var updateType = query.Data.Split('|')[1];
+            var beta = updateType.StartsWith("beta");
+            var control = !updateType.Contains("node");
+            var node = !updateType.Contains("control");
+
+            msg += "Build Definition(s) to Use:";
+            var definitions = new List<string>();
+            var env = beta ? "Beta" : "Release";
+            //var what = control ? node ? "Both" : "Control" : "Node";
+            if (control)
+                definitions.Add($"{env} Control");
+            if (node)
+                definitions.Add($"{env} Node");
+
+            msg = definitions.Aggregate(msg, (current, a) => current + "\n" + a);
+            Thread.Sleep(500);
+
+            Bot.Edit(query, msg);
+            Thread.Sleep(500);
+            //now let's actually kick off that build
+            msg = definitions.Aggregate(msg, (current, def) => current + ("\n" + QueueBuild(def).Result));
+            Bot.Edit(query, msg);
+        }
+
 
         public static void DoUpdate(CallbackQuery query)
         {
-            var msg = "Beginning file moving...";
+            var msg = query.Message.Text + "\n\nBeginning file moving...";
             var updateType = query.Data.Split('|')[1];
             try
             {
@@ -63,10 +97,9 @@ namespace Werewolf_Control.Helpers
                 //stage the control files in the update folder
                 foreach (var b in Builds)
                 {
-                    if (updateType.StartsWith("beta") && b.BuildName != "Beta")
-                        continue; //if beta update, don't update release
-
-                    if (!updateType.Contains("nodes")) //if nodes only, don't update control
+                    if (!updateType.StartsWith(b.BuildName.ToLower())) continue;
+                    //update types can contain 'node', 'control', or 'both'
+                    if (!updateType.Contains("node")) //if nodes only, don't update control
                     {
                         foreach (
                             var file in
@@ -146,6 +179,44 @@ namespace Werewolf_Control.Helpers
                 Bot.ReplyToCallback(query, msg + "\n" + e.Message);
             }
         }
+
+
+        static async Task<string> QueueBuild(string buildDefinitionName)
+        {
+            try
+            {
+                var url = "https://parabola949.VisualStudio.com/DefaultCollection/";
+                var build = new BuildHttpClient(new Uri(url), new VssCredentials(new VssBasicCredential("", RegHelper.GetRegValue("VSTSToken"))));
+
+                // First we get project's GUID and buildDefinition's ID.
+                // Get the list of build definitions.
+                var definitions = await build.GetDefinitionsAsync(project: "Werewolf");
+
+                // Get the specified name of build definition.
+                var target = definitions.First(d => d.Name == buildDefinitionName);
+
+                // Build class has many properties, hoqever we can set only these properties.
+                //ref: https://www.visualstudio.com/integrate/api/build/builds#queueabuild
+                //In this nuget librari, we should set Project property.
+                //It requires project's GUID, so we're compelled to get GUID by API.
+                var res = await build.QueueBuildAsync(new Build
+                {
+                    Definition = new DefinitionReference
+                    {
+                        Id = target.Id
+                    },
+                    Project = target.Project
+                });
+                return $"Queued build with id: {res.Id}";
+            }
+            catch (Exception e)
+            {
+                while (e.InnerException != null)
+                    e = e.InnerException;
+                return $"{e.Message}\n{e.StackTrace}";
+            }
+        }
+
 
         internal static async void MonitorUpdates()
         {

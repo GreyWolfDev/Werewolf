@@ -18,6 +18,14 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+#if BETA
+        internal static long[] BetaGroups = new[]
+            {
+                 -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730
+            ,-1001059273036, -1001090101991,  -1001066860506, -1001060843091, -1001080774621, -1001036952250, -1001082421542
+            };
+#endif
+
         private static Player GetDBPlayer(int id, WWContext db)
         {
             return db.Players.FirstOrDefault(x => x.TelegramId == id);
@@ -34,12 +42,7 @@ namespace Werewolf_Control
 
             //-1001052326089,
 #if BETA
-            var auth = new[]
-            {
-                 -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730
-            ,-1001059273036, -1001090101991,  -1001066860506, -1001060843091, -1001080774621, -1001036952250, -1001082421542
-            };
-            if (!auth.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
+            if (!BetaGroups.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
                 Bot.Api.LeaveChat(update.Message.Chat.Id);
                 return;
@@ -50,6 +53,9 @@ namespace Werewolf_Control
 
             //retiring bot 2
             Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+            Thread.Sleep(1000);
+            Bot.Api.LeaveChat(update.Message.Chat.Id);
+            
             return;
 
 #endif
@@ -177,7 +183,8 @@ namespace Werewolf_Control
                 AllowCult = true,
                 DisableFlee = false,
                 MaxPlayers = 35,
-                CreatedBy = createdBy
+                CreatedBy = createdBy,
+                AllowExtend = false
             };
         }
 

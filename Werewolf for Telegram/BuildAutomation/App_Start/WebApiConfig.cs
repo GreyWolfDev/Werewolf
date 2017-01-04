@@ -20,7 +20,7 @@ namespace BuildAutomation
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.InitializeReceiveGitHubWebHooks();
+            //config.InitializeReceiveGitHubWebHooks();
         }
     }
 }

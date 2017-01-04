@@ -651,6 +651,7 @@
   </string>
   <string key="CupidChosen">
 	<value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {0}</value>
+	<value>Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>Das Dorf hat gewählt, dich zu lynchen! Dies ist deine letzte Chance, wähle jemanden, den du erschießt, während du stirbst!</value>
@@ -718,9 +719,6 @@
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultists name -->
     <!-- 1 - targets name -->
-	<value>{0} ging zu {1}s Haus und starb dort!</value>
-  </string>
-  <string key="CultConvertSerialKiller">
 	<value>{0} ging zu {1}s Haus und starb dort!</value>
   </string>
   <string key="GuardKiller">
@@ -793,10 +791,6 @@
   </string>
   <string key="Doppelgänger">
     <value>der Doppelgänger 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <!-- 0 - lovers name -->
-    <value>Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - targets name -->
@@ -1070,7 +1064,7 @@
     <value>Rollenverteilung am Ende wie folgt: {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Lege die Basiszeit (in Sekunden) für den Tag fest. Dies kann allerdings immer noch anhand der Spielerzahl angepasst werden. \nMinimaldauer dafür ist 60 Sekunden. Standardeinstellung: {0}\nAktuell: {1}</value>
+    <value>Lege die Basiszeit (in Sekunden) für den Tag fest. Dies kann allerdings immer noch anhand der Spielerzahl angepasst werden. \nStandardeinstellung: {0}\nAktuell: {1}</value>
   </string>
   <string key="SetDayTimeA">
     <value>Basiszeit für den Tag beträgt nun {0} Sekunden.</value>
@@ -1284,5 +1278,75 @@
   </string>
   <string key="CultConvertWolf">
     <value>Irgendetwas ist mit {0} passiert, weil ihr {1} gewählt habt... langsam vergisst du {0}s Namen.</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <value>{0} schlüpft in das Haus von {1}, bereit für eine Nacht voller Hingabe 💋, nur um eine im Gegenlicht des Kerzenlichts furchteinflößend anmutende Gestalt zu entdecken, die auf dem Bett kniet und beschäftigt wirkt. Erst auf dem zweiten Blick wird klar, dass diese Person gerade die Innereien von {1} durchwühlt! Durch ein Geräusch auf {0} aufmerksam gemacht, entscheidet sich der Serienmörder 🔪, heute zwei Lebern seiner Sammlung hinzuzufügen.</value>
+  </string>
+  
+  <!-- New Death Strings 05 Nov -->
+  <string key="ApprenticeSeerEaten">
+    <value>Als das Dorf erwacht, findet man {0} tödlich verletzt über einem zweitklassigen Ouija-Brett liegen. Anscheindend hat er versucht, Wahrsagerei zu üben. Darüber hat er wohl den Kopf verloren! 🐺 Der Seherlehrling 🙇 ist tot.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Am frühen Morgen hört man einen Schrei, der aus der Werkstatt des Schmieds ⚒ kommt. Man hat {0} gefunden, der mit fünf seiner eigenen, aus rostfreiem Stahl gefertigten Messern an seine Werkbank genagelt wurde. 🔪 Das ist noch Qualität, die überzeugt! \nDennoch... Diese Messer will wohl niemand mehr benutzen, um Rohkost für die nächste Gartenparty zu schnibbeln.</value>
+    <value>Sieht so aus als wäre {0}, der örtliche Schmied ⚒, diese Nacht vom Pech verfolgt worden. Er hat anscheinend eine Nachtschicht einlegen wollen... Man findet ihn mit durchgeschlitzter Kehle 🔪 in einer Ecke, doch abgesehen davon wirkt die Werkstatt erstaunlich leer... Anscheinend hat der Serienmörder heute nicht nur seine Organsammlung erweitert!</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Ihr findet {0}, der mit einem Kerzenleuchter seines eigenen Altars 👤 erstochen wurde (ein eahrhaft kultiges Verbrechen). Dass der Serienmörder 🔪 sich weder um Herkunft, Berufung noch Religion seiner Opfer kümmert, war euch bereits bekannt, aber warum er diese Nacht kein Messer dabei hatte, ist doch äußerst rätselhaft...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Die Liebe ist tot... Oder zumindest ihr Stellvertreter auf Erden 🏹: obwohl {0} seinen Bogen noch in der Hand hält, konnte er damit nichts gegen den übermächtigen Serienmörder 🔪 ausrichten. Seltsamerweise wurde das Herz sauber herausgetrennt... Ist es etwa das, was diesem Verrückten all die Jahre gefehlt hat?!</value>
+    <value>Schon als sie aufwachen, fühlen sich alle Dorfbewohner irgendwie lieblos. Zuerst hält man es für Einbildung, doch dann findet man Amor 🏹, von Kopf bis Fuß aufgeschlitzt, vor der Kirche... Aus irgendeinem Grund fehlt {0} auch das Herz. 🔪</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Hand aufs Herz: eigentlich würde natürlich keiner von euch um diese Tageszeit schon mit dem Trinken anfangen. Aber einer Einladung muss man auch Folge leisten. Dass euch bei {0} niemand öffnet, wundert keinen, vermutlich ist der Trunkenbold schon - oder noch? - zu besoffen, um euer Klopfen zu hören. Drinnen seht ihr jedoch, wie falsch ihr damit lagt... Der Betrunkene 🍻 liegt reglos am Boden, in seinen feinsten Sonntagsklamotten. Daneben... kein schöner Anblick: eine ramponierte Leber, die wohl selbst dem Serienmörder 🔪 nicht gemundet hat. </value>
+    <value>Die Dorfbewohner hatten gehofft, mit {0} mal wieder so richtig schön einen saufen gehen zu können, doch alles was sie im Haus des Dauerbetrunkenen 🍻 fanden, waren ein zerbrochenes Messer und eine steinharte Leber, die offensichtlich durch jahrelangen Alkoholkonsum nicht einmal mehr dem Serienmörder 🔪 mundete...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Üblicherweise hätte {0} den Serienmörder 🔪 ohne Probleme abwehren können, jedoch verließ ihn seine Kraft in dieser Nacht plötzlich... Ob das wohl daran lag, dass er so egoistisch für sich selbst kämpfte? Was für ein Jammer... Der Schutzengel 👼 ist tot.</value>
+    <value>An einem normalen Tag wäre {0} definitiv in der Lage gewesen, dem Serienmörder 🔪 die Stirn zu bieten. Es gleicht Ironie, dass der Schein des Schutzengels 👼 erlosch, während er über einen anderen wachte...</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Anscheinend hat da jemand ein kleines Schläfchen gehalten... welch fataler Fehler. Man hört zwar einen Schuss 🔫, doch am nächsten Morgen findet man nur den Körper von {0}, dem die Kugel im Kopf steckt - und komischerweise fehlt ihm ebenso der rechte Zeigefinger... Wie es aussieht, wollte der Serienmörder 🔪 dem Schützen noch eine letzte Lektion erteilen!</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Ein hinterhältiger Anschlag! {0} liegt ermordet auf seinem Schreibtisch... Vielleicht wollte der Serienmörder 🔪 sich für all die Jahre im Waisenhaus rächen, vielleicht hasst er aber auch einfach nur Politiker 🎖 und ihre Wahlversprechen. Das wird man wohl nie herausfinden.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Lautes Glockengeläut weckt die Dorfbewohner früh am Morgen auf. Während die Meisten sich noch verschlafen die Augen reiben, macht sich die königliche Palastwache bereits auf die Suche nach dem verschwundenen Prinzen 👑 {0}. Trotz angestrengter Suche wird er nicht gefunden, aber das Gerücht geht um, dass ein Serienmörder 🔪 sein Unwesen treibt...</value>
+    <value>Die königlichen Wachen sind letzte Nacht offensichtlich eingeschlafen. Man findet {0}, den Prinzen 👑, überall im Schloss verteilt, in gleichmäßig großen Stücken. Nur ein Körperteil fehlt: seine royale Leber... 🔪</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Das Dorf erwacht, um einen grauenerregenden Fund zu machen: {0} liegt, von Kopf bis Fuß aufgeschnitten 🔪, nebst seinen herausgetrennten Organen in seinem Wohnzimmer, ein Deck Tarotkarten 👳 noch in der Hand. Seltsamerweise fehlt der Kopf, als wollte sich der Serienmörder über den Verlust einer der klügsten Köpfe lustig machen...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Früh am Morgen erklingt plötzlich ein seltener Ton: klagendes Geheul! 🐺 Ein unverzeihliches Missgeschick ist geschehen: die Wölfe haben ihren eigenen Verbündeten gefressen. {0}, der Zauberer 🔮 ist tot.</value>
+    <value>Verzweifelte Schreie haben vergangene Nacht so manchem Bürger den Schlaf geraubt... Immer wieder hörte man "Ich bin euer Verbündeter! Ich gehöre zu euch!" Als sich am nächsten Morgen endlich der erste Bürger hinaustraut, findet er nur abgenagten Knochen und einen zerschmetterten lilafarbenen Kristall... Nach einigem Überlegen erkennt man in den Scherben den heißgeliebten Talisman von {0}. Hunger schlägt Freundschaft... 🐺 Der Zauberer 🔮 musste das auf die harte Tour lernen.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Diese Nacht gab es für die Wölfe besonders zartes Kinderfleisch 👶 von {0}. Es muss ihnen wohl gut geschmeckt haben, denn übrig blieb nur ein Miniaturskelett. Ob Werwölfe 🐺 wohl Schuldgefühle haben können...?</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+	<!-- used when CH visits SK -->
+    <value>Als das Dorf erwacht, findet man {0}, den Kultjäger 💂 zerstückelt in einer Kiste vor dem Rathaus. Es scheint keine besonders gute Idee, nachts den Serienmörder 🔪 zu besuchen und ihn über seine Spiritualität auszufragen...</value>
+    <value>Der Körper von {0}, dem Kultjäger 💂 wurde bis zur Unkenntlichkeit verstümmelt auf dem Altar der Kirche gefunden. Den Serienmörder 🔪 für einen Kultisten zu halten war eindeutig sein letzter Fehler...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+	<!-- used when Cultists convert the wolves, only if wolves stayed home -->
+	<!-- <value>The cult ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining the new religious movement.</value> -->
+    <value>Eigentlich wollten die Wölfe 🐺 letzte Nacht ja fasten (wie vorbildlich!) - aber wer kann schon der Versuchung einer Lieferung frei Haus widerstehen?! Richtig: niemand. Das musste {0} am eigenen Leib erfahren, auch sein Glaube konnte den Kultisten 👤 nicht vor den scharfen Zähnen der Wölfe beschützen...</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+	<!-- used when Cultists convert the SK -->
+    <!-- <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a cultist, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value> -->
+    <value>Was für ein Fehler... Der Kult 👤 hat letzte Nacht die einzige Person im Dorf besucht, die noch verrückter ist als jedes seiner Mitglieder. Dafür können alle Bewohner heute ein abstraktes Kunstwerk, bestehend aus den zerstückelten Organen des verstorbenen {0}, vor dem Rathaus bestaunen. Vielleicht nicht jedermanns Geschmack... aber der Serienmörder 🔪 hat seinen ganz eigenen Sinn für Ästhetik.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- <value>It was supposed to be a night where {0} would save the village from the killers, but {0}'s halo was extinguished and wings sliced by the serial killer! Left was a note, "I could protect myself better than you can."</value> -->
+    <value>Eigentlich sollte {0} das Dorf in dieser Nacht vor dem Bösen bewahren, stattdessen wurden jedoch seine Flügel 👼 gestutzt! Neben seiner Leiche findet man einen Zettel mit der Aufschrift: "Ich konnte mich eben besser verteidigen... 🔪"</value>
+  </string>
+  <string key="GAGuardedWolf">
+  <!-- Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes. -->
+    <value>Euer Schutzengel 👼, {0}, hat gestern Nacht versucht, einen Wolf 🐺 zu beschützen. Am Morgen findet ihr nur die Flügel, aufgehängt am Ziffernblatt der Uhr - irgendwie ein verstörender Anblick...</value>
   </string>
 </strings>

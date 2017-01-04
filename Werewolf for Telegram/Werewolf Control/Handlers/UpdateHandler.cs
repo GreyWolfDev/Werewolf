@@ -105,7 +105,7 @@ namespace Werewolf_Control.Handler
 
                         //now refresh the list
                         var list = db.GlobalBans.ToList();
-#if RELEASE2
+#if RELEASE
                         for (var i = list.Count - 1; i >= 0; i--)
                         {
                             if (list[i].Expires > DateTime.Now) continue;
@@ -338,6 +338,14 @@ namespace Werewolf_Control.Handler
                                                 StringComparison.InvariantCultureIgnoreCase));
                                 if (command != null)
                                 {
+#if RELEASE2
+                                    Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+                                    if (update.Message.Chat.Type != ChatType.Private)
+                                    {
+                                        Thread.Sleep(1000);
+                                        Bot.Api.LeaveChat(update.Message.Chat.Id);
+                                    }
+#endif
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
@@ -564,11 +572,30 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.ReplyToCallback(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.ReplyToCallback(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //start the update process
                             Updater.DoUpdate(query);
+                        }
+                        else
+                        {
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                        }
+                        return;
+                    }
+                    if (args[0] == "build")
+                    {
+                        bool dontUpdate = args[1] == "no";
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            if (dontUpdate)
+                            {
+                                Bot.ReplyToCallback(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
+                                return;
+                            }
+                            //start the update process
+                            Updater.DoBuild(query);
                         }
                         else
                         {
@@ -584,7 +611,7 @@ namespace Werewolf_Control.Handler
                         {
                             if (dontUpdate)
                             {
-                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.Edit(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
                             //update ohaider achievement
@@ -700,7 +727,7 @@ namespace Werewolf_Control.Handler
                                 plcount++;
                             }
                             DB.SaveChanges();
-                            var msg = $"Groups: {grpcount}\nPlayers: {plcount}\n*Total rows changed: {grpcount + plcount}*";
+                            var msg = $"Groups changed: {grpcount}\nPlayers changed: {plcount}\n<b>Total rows changed: {grpcount + plcount}</b>";
                             Bot.Edit(query, msg);
 
                             try
@@ -1242,6 +1269,21 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
                             break;
+                        case "extend":
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Allow", language), $"setextend|{groupid}|true"));
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Disallow", language), $"setextend|{groupid}|false"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setextend|{groupid}|cancel"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("AllowExtendQ", language, grp.AllowExtend == true ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)), replyMarkup: menu);
+                            break;
+                        case "setextend":
+                            grp.AllowExtend = (choice == "true");
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("AllowExtendA", language, grp.AllowExtend == true ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)));
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                            DB.SaveChanges();
+                            break;
                         case "done":
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("ThankYou", language));
@@ -1356,11 +1398,12 @@ namespace Werewolf_Control.Handler
             //base menu
             //buttons.Add(new InlineKeyboardButton("Show Online Message", $"online|{id}"));
             buttons.Add(new InlineKeyboardButton("Change Language", $"lang|{id}"));
+            buttons.Add(new InlineKeyboardButton("Change Game Mode", $"mode|{id}"));
             buttons.Add(new InlineKeyboardButton("Show Roles On Death", $"roles|{id}"));
             buttons.Add(new InlineKeyboardButton("Show Roles At Game End", $"endroles|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Fleeing", $"flee|{id}"));
+            buttons.Add(new InlineKeyboardButton("Allow Extending Timer", $"extend|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Max Players", $"maxplayer|{id}"));
-            buttons.Add(new InlineKeyboardButton("Change Game Mode", $"mode|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Day Timer", $"day|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Lynch Timer", $"lynch|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Night Timer", $"night|{id}"));

@@ -246,14 +246,14 @@
   </string>
   <string key="LynchTie" >
     <value>It looks like the gossip was in vain; nobody was chased away tonight! Everyone still has a flat!</value>
-    <value>NATO (No action, talk only) SIA! Can't even decide who to evict? Everyone goes home, feeling pissed that the "chao betrayer" hasn't been fished out.</value>
+    <value>NATO (No action, talk only) SIA! We can't even decide who to evict? Everyone goes home, feeling pissed that the "betrayer" hasn't been fished out.</value>
   </string>
   <string key="NoLynchVotes" >
     <value >Something is fishy, for no one voted! No angry aunties chasing the scum of the HDB block out!</value>
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
-    <value>Where's {0}? They find {0}'s drone smashed on the covered walkway, with traces of an eviction notice for illegal flying.</value>
+    <value>The residents wake up to find {0}'s drone smashed on the covered walkway, with traces of an eviction notice for illegal flying.</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
@@ -273,7 +273,7 @@
   </string>
   <string key="FoolEaten" >
     <!-- 0 - victim name -->
-    <value>The residents wakes up to the smell of burning plastic, only to see the unit of {0} burnt down from an electrical overload ! The stupid script kiddie (fool) DDoS-ed himself while the HDB agents were visiting! The HDB agents quickly evicted him on counts of misconduct.</value>
+    <value>The residents wakes up to the smell of burning plastic, only to see the unit of {0} burnt down from an electrical overload! The stupid script kiddie (fool) DDoS-ed himself while the HDB agents were visiting! The HDB agents quickly evicted him on counts of misconduct.</value>
   </string>
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
@@ -289,6 +289,7 @@
   <string key="NoAttack" >
     <value>The residents gather the next morning at the void deck, to sighs of relief - it appears there no one lost their home. Praise the HDB for their magnanimity.</value>
     <value>HENG ARH! (Lucky us!) Nobody seems to have been evicted last night.</value>
+    <value>It appears that no one was evicted last night. Please praise the Father, the Son and the Holy Goh.</value>
     <value>Someone volunteers to perform a headcount. Everyone seems to be present, which is good. Maybe the estate isn't so spooky after all, considering how this place is well-known for "mysterious" evictions.</value>
   </string>
   <string key="CursedBitten" >
@@ -305,6 +306,7 @@
   <string key="WolvesEatYou" isgif="false" >
     <value>Oh no! The HDB agents (wolves) have evicted you!</value>
     <value>Unlucky day for you! The HDB agents (wolves) have evicted you!</value>
+    <value>KNOCK KNOCK!! The HDB agents (wolves) have come to evict you!</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
@@ -325,16 +327,16 @@
     <!-- 0 - player name -->
     <value>You visited {0}, but perhaps they were out!</value>
   </string>
-  <string key="GuardSavedYou" >
+  <string key="GuardSavedYou">
     <value>A 啰哩啰嗦 (long-winded) Auntie (Guardian Angel) squabbled with the HDB agents (wolves) without you opening the door! All you heard was an unrecognisable string of "colourful" words. Who cares? As long as you can keep your flat, you're happy!</value>
   </string>
-  <string key="HarlotEaten" >
+  <string key="HarlotEaten">
     <!-- 0 - player name -->
     <value>The makcik (harlot) chose the wrong night to QC her laksa cauldron! The HDB agents have discovered her illegal business! {0} has been evicted!</value>
   </string>
-  <string key="HarlotNotHome" >
+  <string key="HarlotNotHome">
     <!-- 0 - player name -->
-    <value>Odd... {0} was not home! How to evict someone who is not at home?</value>
+    <value>Odd... {0} was not home! How do you evict someone who is not at home?</value>
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
@@ -660,10 +662,11 @@
     <value>You are the tape-recording auntie (hunter 🎯). Everyone fears talking to you because they don't know whose scandal may be exposed, and so no one really likes talking to this auntie. Even the MLM fears you for fear that they will be exposed. If an HDB agent comes by, there is a chance she will dig out sordid information on Tor on the number of mistresses the HDB agent has in JB, causing the HDB agent himself to leave in shame!</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>You are the PONTIANAK!!! (serial killer 🔪) Everyone else is human, but humans fear ghosts! Every night, you may scare someone! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!t</value>
+    <value>You are the PONTIANAK!!! (serial killer 🔪) Everyone else is human, but humans fear ghosts! Every night, you may scare someone, forcing them to leave immediately (co-existence isn't possible)! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!</value>
   </string>
   <string key="CupidChosen">
     <value>You have been forced by your parents to wed. {0} is even worse than Patricia Mok or Mark Lee, but you accept that you need to get a BTO after all. Your goal is for both of you to survive. If one of you disappears (dies, gets evicted, gets scared out of your wits, chased away), the other one will no longer be eligible for a BTO under age 35, and hence commit suicide (even if illegal).</value>
+ 	<value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block 💔, but if both of you make it to the end, you have the entire block to yourself!</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>The residents has chosen to chase you away! This is your last chance, choose to expose someone's scandal and be chased away together!</value>
@@ -699,15 +702,18 @@
     <value>Dying, {0} falls to the ground.... but not without exposing the dirty secrets of {1}, who the residents than chased out as well! {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
+  	<!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
     <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by the Pontianak!!! {1} frightens {0} so badly {0} swore to leave the HDB estate with immediate effect! D:</value>
+ 	<value>The MLM sends {0} to try to recruit {1}, but the Pontianak scared {0}! {0} dropped his pig's head, ran for his sanity, and moved out the next morning!</value>
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>The HDB agents (wolves) tried to evict the scandalous auntie (hunter) last night, but a government conspiracy about the HDB was being exposed! {0} has been selected as the scapegoat to be the "less than honourable" public servant.</value>
+    <value>The HDB agents (wolves) tried to evict the tape-recording auntie (hunter) last night, but a government conspiracy about the HDB was being exposed! {0} has been selected as the scapegoat to be the "less than honourable" public servant.</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
-    <value>The HDB agents (wolves) tried to evict the scandalous auntie (hunter) last night, but the HDB agent, {0}, was counter-exposed for adultery. The HDB agent had to leave in double shame.</value>
+    <value>The HDB agents (wolves) tried to evict the tape-recording auntie (hunter) last night, but the HDB agent, {0}, was counter-exposed for adultery. The HDB agent had to leave in double shame.</value>
   </string>t
   <string key="SerialKillerKilledWolf">
     <value>The HDB agents (wolves) had hoped to evict someone from their flat, but were instead greeted by Pontianak!!! {0} was the the front man, and turned pale upon seeing the abomination. He decided to tell his boss he would change job the next day and move out!</value>
@@ -715,31 +721,26 @@
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>The middle of the night did not go by silently! A strange shout from {0} meant only one thing: the pontianak has struck again! Strangely {0} did not try to move out even earlier, but {0} had already left the HDB estate by morning. {1}.</value>
+    <value>The middle of the night did not go by silently! A strange shout from {0} meant only one thing: the Pontianak has struck again! Strangely {0} did not try to move out even earlier, but {0} had already left the HDB estate by morning. {1}.</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
-    <value>You tried to scare {0}, but the 啰哩啰嗦 (Long-winded) auntie droned on and on... even after you had long drifted away.</value>
+    <value>You tried to scare {0}, but the 啰哩啰嗦 (Long-winded) auntie droned on and on... even after you had long drifted away. One-on-one is fine, but two humans to a ghost wasn't quite what you expected.</value>
   </string>
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
     <value>The cult sends {0} to try to recruit {1}, but TNP reported of the MLM the next morning and {0} left due to shame.</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to recruit {1}, but the Pontianak scared {0}! {0} dropped his pig's head, ran for his sanity, and moved out the next morning!</value>
-  </string>
   <string key="GuardKiller">
-    <value>You tried to defend the ghost (you really think that was a good idea?), but the Pontianak opened the door! Finally you were at a loss of words, and quickly went to pack your belongings, leaving this haunted HDB block!!</value>
+    <value>You tried to defend the ghost (you really think that was a good idea?), but the Pontianak opened the door! Fearing for your sanity, you fled, packed your belongings and left the haunted HDB block!!</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
-    <value>You tried to sell laksa to {0}, but a Pontianak greeted you at the door. Dropping your bowl, you hurriedly flee with your giant cauldron. PONTIANAK IS TRUE!</value>
+    <value>You tried to sell laksa to {0}, but the Pontianak greeted you at the door. Dropping your bowl, you hurriedly flee with your giant cauldron. PONTIANAK IS TRUE!</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>The estate notices a white makcik with laksa all over her. Apparently she visited the Pontianak last night. {0} will leave the estate by morning.</value>
+    <value>The estate noticed the spillage of laksa all over makcik's house last night. Apparently she visited the Pontianak and was so frightened out of her wits that she went mad. {0} had silently left.</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -757,7 +758,7 @@
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has disappeared from the estate, and you pick up a can of red paint and illegal wads of cash after raiding his flat. Your fellow MLM (if any) are: {1}</value>
+    <value>{0} has disappeared from the estate. You quickly burgle their flat, arming yourself with a can of red paint and illegal cash. Your fellow MLM (if any) are: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -802,10 +803,6 @@
   <string key="Doppelgänger">
     <value>the Imitator (the Doppelgänger) 🎭</value>
   </string>
-  <string key="CupidChosen">
-    <!-- 0 - lover's name -->
-    <value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block 💔, but if both of you make it to the end, you have the entire block to yourself!</value>
-  </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
     <value>You have become the Intern. You watch {0}, in the hope that he or she does not fall to the HDB agents! However, you will be quick to turn your internship contract permanent if he or she gets evicted!</value>
@@ -816,7 +813,7 @@
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
     <!-- 1 - role -->
-    <value>At the playground below, multiple copies of TNP featured a scandal on {0}. Looks like they tried to talk to the tape-recording auntie last night! {1}</value>
+    <value>Multiple copies of TNP featuring a scandal on {0} was found at the playground. Looks like the tape-recording auntie did not take to their nonsense kindly! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>A MLM tried to sell you a pyramid scheme with a pig's head, but you knew better not to believe in such snake oil. After all, trusting in the ah long (loanshark) is tantamount to giving up your life!</value>
@@ -1073,7 +1070,7 @@
     <value>Roles shown at end set to: {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds. Default setting: {0}\nCurrent: {1}</value>
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
   </string>
   <string key="SetDayTimeA">
     <value>Base day time set to {0} seconds</value>

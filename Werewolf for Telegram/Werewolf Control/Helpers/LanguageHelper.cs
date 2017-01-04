@@ -381,7 +381,8 @@ namespace Werewolf_Control.Helpers
         {
             try
             {
-                var path = Path.Combine(Bot.LanguageDirectory, $"BaseZips\\{choice}.zip"); //where the zipfile will be stored
+                var zipname = new Regex("[^a-zA-Z0-9]").Replace(choice, "_"); //get rid of non-alphanumeric characters which can cause trouble
+                var path = Path.Combine(Bot.LanguageDirectory, $"BaseZips\\{zipname}.zip"); //where the zipfile will be stored
                 if (File.Exists(path))
                     File.Delete(path);
 
@@ -394,7 +395,7 @@ namespace Werewolf_Control.Helpers
                 }
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocument(id, new FileToSend($"{choice}.zip", fs));
+                Bot.Api.SendDocument(id, new FileToSend($"{zipname}.zip", fs));
 
                 //uncomment following line if you don't want to store those zipfiles
                 //File.Delete(path);

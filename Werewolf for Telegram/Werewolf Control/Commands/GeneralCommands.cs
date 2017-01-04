@@ -81,7 +81,7 @@ namespace Werewolf_Control
             using (var db = new WWContext())
             {
                 var msg =
-                    db.BotStatus.ToList().Select(x => $"{x.BotName} (@{x.BotLink}): {x.BotStatus}").ToList()
+                    db.BotStatus.ToList().Select(x => $"{x.BotName} (@{x.BotLink}):{(x.BotName == "Bot 2" ? "RETIRED" : x.BotStatus)} ").ToList()
                         .Aggregate((a, b) => a + "\n" + b);
                 Send(msg, u.Message.Chat.Id);
             }

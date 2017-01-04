@@ -292,7 +292,6 @@ namespace Werewolf_Control
                     _writingInfo = false;
 
 
-#if !DEBUG
 
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
@@ -300,7 +299,7 @@ namespace Werewolf_Control
                         //we have too many nodes running, kill one.
                         Nodes.First().ShutDown();
                     }
-
+                    
                     if (!MaintMode)
                     {
                         if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
@@ -315,7 +314,6 @@ namespace Werewolf_Control
                             Thread.Sleep(5000); //give the node time to register
                         }
                     }
-#endif
                 }
                 finally
                 {

@@ -116,6 +116,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "broadcast", DevOnly = true)]
         public static void Broadcast(Update u, string[] args)
         {
+#if !BETA
             foreach (var n in Bot.Nodes.Select(x => x.Games.ToList()))
             {
                 foreach (var g in n)
@@ -123,6 +124,21 @@ namespace Werewolf_Control
                     Bot.Send(args[1], g.GroupId, parseMode: ParseMode.Markdown);
                 }
             }
+#else
+            foreach (var g in BetaGroups)
+            {
+                try
+                {
+                    Bot.Send(args[1], g, parseMode: ParseMode.Markdown);
+                }
+                catch (Exception e)
+                {
+                    while (e.InnerException != null)
+                        e = e.InnerException;
+                    Bot.Send("Couldn't send to " + g + ".\n"+ e.Message, UpdateHelper.Devs[1]);
+                }
+            }
+#endif
         }
 
         [Attributes.Command(Trigger = "killgame", GlobalAdminOnly = true, InGroupOnly = true)]
@@ -1194,8 +1210,8 @@ namespace Werewolf_Control
                 return;
             }
             
-            string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n\n";
-            msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n\n";
+            string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n_Last updated:_ {oldlang.LatestUpdate.ToString("MMM dd")}\n\n";
+            msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
 
             var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
@@ -1206,7 +1222,8 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "commitlangs", DevOnly = true)]
         public static void CommitLangs(Update u, string[] args)
         {
-            var msg = "";
+            var msg = "Processing...";
+            var msgid = Send(msg, u.Message.Chat.Id).Result.MessageId;
             try
             {
                 var p = new Process
@@ -1214,7 +1231,7 @@ namespace Werewolf_Control
                     StartInfo =
                     {
                         FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
-                        Arguments = $"\"Syncing langfiles from Telegram ***NO_CI***\"",
+                        Arguments = $"\"Syncing langfiles from Telegram\"",
                         WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
                         UseShellExecute = false,
                         RedirectStandardOutput = true,
@@ -1222,22 +1239,29 @@ namespace Werewolf_Control
                         CreateNoWindow = true
                     }
                 };
+
                 p.Start();
+                msg += "\nStarted the process. Reading output from git...";
+                Bot.Edit(u.Message.Chat.Id, msgid, msg);
+
                 var output = "";
                 while (!p.StandardOutput.EndOfStream)
                     output += p.StandardOutput.ReadLine() + Environment.NewLine;
                 while (!p.StandardError.EndOfStream)
                     output += p.StandardError.ReadLine() + Environment.NewLine;
 
+                msg += "\nValidating the output...";
+                Bot.Edit(u.Message.Chat.Id, msgid, msg);
+
                 //validate the output
                 if (output.Contains("failed"))
                 {
-                    msg += $"Failed to commit files. See control output for information";
+                    msg += "\n<b>Failed to commit files. See control output for information</b>";
                     Console.WriteLine(output);
                 }
                 else if (output.Contains("nothing to commit"))
                 {
-                    msg += $"Nothing to commit.";
+                    msg += "\n<b>Nothing to commit.</b>";
                 }
                 else
                 {
@@ -1249,7 +1273,7 @@ namespace Werewolf_Control
                     {
                         commit = match.Value.Replace("[master ", "").Replace("]", "");
                     }
-                    msg += $"Files committed successfully. {(String.IsNullOrEmpty(commit) ? "" : $"[{commit}](https://github.com/GreyWuffGames/Werewolf/commit/{commit})")}";
+                    msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
                 }
             }
             catch (Exception e)
@@ -1257,7 +1281,7 @@ namespace Werewolf_Control
                 msg += e.Message;
             }
 
-            Bot.Send(msg, u.Message.Chat.Id, parseMode: ParseMode.Markdown);
+            Bot.Send(msg, u.Message.Chat.Id);
         }
 
     }
