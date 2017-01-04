@@ -404,28 +404,30 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //send OHAIDER announcement
-            using (var sr = new StreamReader(Path.Combine(Bot.RootDirectory, "..\\Logs\\ohaider.log")))
+            //getting sample data
+            using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\sample.txt")))
             {
-                using (var db = new WWContext())
+                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                if (channel == null) return;
+                var users = channel.Users.Skip(1000).ToList();
+                sw.WriteLine("User ID | Chat ID | Result");
+                foreach (var u in users)
                 {
-                    var a = Achievements.OHAIDER;
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
+                    sw.Flush();
+                    var id = u.id;
+                    sw.Write($"{id}|{Settings.PrimaryChatId}|");
+                    try
                     {
-                        int id;
-                        if (int.TryParse(line, out id))
-                        {
-                            //get player
-                            var p = db.Players.FirstOrDefault(x => x.Id == id);
-                            if (p != null)
-                            {
-                                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
-                            }
-                        }
-                        
+                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                        sw.WriteLine(status);
                     }
+                    catch (AggregateException e)
+                    {
+                        sw.WriteLine(e.InnerExceptions[0].Message);
+                    }
+                    Thread.Sleep(500);
                 }
+                sw.Flush();
             }
 
 
@@ -607,7 +609,7 @@ namespace Werewolf_Control
         {
             Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
-        
+
 
         [Attributes.Command(Trigger = "clearcount", DevOnly = true)]
         public static void ClearCount(Update u, string[] args)
@@ -907,7 +909,7 @@ namespace Werewolf_Control
                             //get latest game player, check within 2 weeks
                             var gp =
                                 p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId),
-                                        x => x.GameId, y => y.Id, (gamePlayer, game) => new {game.TimeStarted, game.Id})
+                                        x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id })
                                     .OrderByDescending(x => x.Id)
                                     .FirstOrDefault();
                             var lastPlayed = DateTime.MinValue;
@@ -929,12 +931,25 @@ namespace Werewolf_Control
                                 Bot.Api.KickChatMember(Settings.PrimaryChatId, id);
                                 removed++;
                                 sw.Write($"Removed ({p?.Name ?? id.ToString()})");
+
                                 //get their status
-                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+
                                 while (status == ChatMemberStatus.Member) //loop
                                 {
                                     //wait for database to report status is kicked.
-                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    try
+                                    {
+                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    }
+                                    catch (AggregateException e)
+                                    {
+                                        if (e.InnerExceptions[0].Message.Contains("User not found"))
+                                        {
+                                            status = ChatMemberStatus.Kicked;
+                                        }
+                                        else
+                                            throw;
+                                    }
                                     Thread.Sleep(500);
                                 }
                                 //status is now kicked (as it should be)
@@ -947,14 +962,24 @@ namespace Werewolf_Control
                                     sw.Flush();
                                     Bot.Api.UnbanChatMember(Settings.PrimaryChatId, id);
                                     Thread.Sleep(500);
-                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    try
+                                    {
+                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    }
+                                    catch (AggregateException e)
+                                    {
+                                        if (e.InnerExceptions[0].Message.Contains("User not found"))
+                                        {
+                                            status = ChatMemberStatus.Left;
+                                        }
+                                        else
+                                            throw;
+                                    }
                                 }
                                 //yay unbanned
                                 sw.Write($"|Unbanned({attempts} attempts)");
                                 //let them know
-                                Send(
-                                    "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
-                                    id);
+                                Send("You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!", id);
                             }
                             catch (AggregateException ex)
                             {
@@ -993,7 +1018,7 @@ namespace Werewolf_Control
 
                     }
 
-               
+
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Send(
                     $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.Now - timeStarted}",
@@ -1005,7 +1030,7 @@ namespace Werewolf_Control
             }
         }
 
-        
+
 
         [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]
         public static void LeaveGroup(Update update, string[] args)
@@ -1015,7 +1040,7 @@ namespace Werewolf_Control
                 Send("Use /leavegroup <id|link>", update.Message.Chat.Id);
                 return;
             }
-            var grpid = (long) 0;
+            var grpid = (long)0;
             var grpname = "";
             //check for id, else we hope it's a link..
             if (!long.TryParse(args[1], out grpid))
@@ -1119,13 +1144,13 @@ namespace Werewolf_Control
                     Send("You must run this command in PM!!", u.Message.Chat.Id);
                     return;
                 }
-//#if !DEBUG
-//                if (Bot.Me.Username != "werewolfbot")
-//                {
-//                    Send("Please run this command on @werewolfbot only", u.Message.Chat.Id);
-//                    return;
-//                }
-//#endif
+                //#if !DEBUG
+                //                if (Bot.Me.Username != "werewolfbot")
+                //                {
+                //                    Send("Please run this command on @werewolfbot only", u.Message.Chat.Id);
+                //                    return;
+                //                }
+                //#endif
                 int id = 0;
                 if (int.TryParse(args[1], out id))
                 {
@@ -1136,7 +1161,7 @@ namespace Werewolf_Control
                         if (user != null)
                         {
                             //create a menu for this
-                            var buttons = new[] {new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id),new InlineKeyboardButton("No", "ohai|no") };
+                            var buttons = new[] { new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardButton("No", "ohai|no") };
                             Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
                                 customMenu: new InlineKeyboardMarkup(buttons));
                         }
@@ -1239,7 +1264,7 @@ namespace Werewolf_Control
                 Send("No langfile found. Make sure those langfiles exist!", u.Message.Chat.Id);
                 return;
             }
-            
+
             string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n_Last updated:_ {oldlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
