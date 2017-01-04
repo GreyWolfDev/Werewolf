@@ -1288,8 +1288,23 @@ namespace Werewolf_Node
                 var gif = GetRoleGif(p.PlayerRole);
                 try
                 {
+                    if (gif != null)
+                    {
+                        if (msg.Length > 200)
+                        {
+                            Program.Bot.SendDocument(p.Id, gif);
+                            Program.Send(msg, p.Id, true);
+                        }
+                        else
+                        {
+                            Program.Bot.SendDocument(p.Id, gif, msg, replyMarkup: new ReplyKeyboardHide { HideKeyboard = true });
+                        }
+                    }
                     // ReSharper disable once UnusedVariable
-                    var result = gif==null ? Program.Send(msg, p.Id, true).Result : Program.Bot.SendDocument(p.Id, gif, msg, replyMarkup: new ReplyKeyboardHide { HideKeyboard = true }).Result;
+                    else
+                    {
+                        Program.Send(msg, p.Id, true);
+                    }
                 }
                 catch (AggregateException) //is this really only because of the message not being able to be sent? and should it really smite the player? maybe send some message to Para...
                 {
@@ -1349,6 +1364,30 @@ namespace Werewolf_Node
                 {
                     case IRole.Drunk:
                         return GetImageLanguage(ImageKeys.RoleInfoDrunk);
+                    case IRole.Hunter:
+                        return GetImageLanguage(ImageKeys.RoleInfoHunter);
+                    case IRole.Traitor:
+                        return GetImageLanguage(ImageKeys.RoleInfoTraitor);
+                    case IRole.Cursed:
+                        return GetImageLanguage(ImageKeys.RoleInfoCursed);
+                    case IRole.Blacksmith:
+                        return GetImageLanguage(ImageKeys.RoleInfoBlacksmith);
+                    case IRole.CultistHunter:
+                        return GetImageLanguage(ImageKeys.RoleInfoCultistHunter);
+                    case IRole.Gunner:
+                        return GetImageLanguage(ImageKeys.RoleInfoGunner);
+                    case IRole.Harlot:
+                        return GetImageLanguage(ImageKeys.RoleInfoHarlot);
+                    case IRole.Detective:
+                        return GetImageLanguage(ImageKeys.RoleInfoDetective);
+                    case IRole.Mayor:
+                        return GetImageLanguage(ImageKeys.RoleInfoMayor);
+                    case IRole.ClumsyGuy:
+                        return GetImageLanguage(ImageKeys.RoleInfoClumsyGuy);
+                    case IRole.Sorcerer:
+                        return GetImageLanguage(ImageKeys.RoleInfoSorcerer);
+                    case IRole.ApprenticeSeer:
+                        return GetImageLanguage(ImageKeys.RoleInfoApprenticeSeer);
                     default:
                         return null;
                 }
@@ -3886,9 +3925,7 @@ namespace Werewolf_Node
                 using (var db = new WWContext())
                 {
                     var values = db.ImageLanguages.Where(x => x.LanguageVariant.Equals(Locale.Language) && x.ImageKey.Equals(key.ToString())).Select(x => x.ImageId).ToList();
-
-                    //.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
-                    //        Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
+                    
                     if (values != null)
                     {
                         var choice = Program.R.Next(values.Count());
