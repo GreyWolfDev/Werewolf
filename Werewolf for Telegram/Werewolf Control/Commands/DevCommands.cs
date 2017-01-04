@@ -863,31 +863,52 @@ namespace Werewolf_Control
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
                 var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
                 if (channel == null) return;
-                var users = channel.Users.Select(x => x.id).ToList();
+                var users = channel.Users.ToList();
                 Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
                 var i = 0;
                 var removed = 0;
                 using (var db = new WWContext())
-                    foreach (var id in users)
+                    foreach (var usr in users)
                     {
+                        var id = usr.id;
                         i++;
                         sw.Flush();
-                        sw.Write($"\n{i}: ");
+                        sw.Write($"\n{i}|{id}|{usr.deleted}|");
+
                         try
                         {
-                           
-                            //check their status first, so we don't make db calls for someone not even in the chat.
-                            var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                            ChatMemberStatus status;
+                            try
+                            {
+                                //check their status first, so we don't make db calls for someone not even in the chat.
+                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                            }
+                            catch (AggregateException e)
+                            {
+                                if (e.InnerExceptions[0].Message.Contains("User not found"))
+                                {
+                                    sw.Write("NF|");
+                                    status = ChatMemberStatus.Member;
+                                }
+                                else
+                                    throw;
+                            }
+
                             if (status != ChatMemberStatus.Member)
                                 continue;
-
                             //get the last time they played a game
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
 
                             //get latest game player, check within 2 weeks
-                            var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id }).OrderByDescending(x => x.Id).FirstOrDefault();
+                            var gp =
+                                p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId),
+                                        x => x.GameId, y => y.Id, (gamePlayer, game) => new {game.TimeStarted, game.Id})
+                                    .OrderByDescending(x => x.Id)
+                                    .FirstOrDefault();
+                            var lastPlayed = DateTime.MinValue;
                             if (gp != null)
                             {
+                                lastPlayed = gp.TimeStarted.Value;
                                 if (gp.TimeStarted >= DateTime.Now.AddDays(-14))
                                     continue;
                             }
@@ -896,13 +917,13 @@ namespace Werewolf_Control
                             try
                             {
                                 //first, check if the user is in the group
-                                sw.Write($"{status}");
+                                //sw.Write($"{status}");
                                 if (status != ChatMemberStatus.Member) //user is not in group, skip
                                     continue;
                                 //kick
                                 Bot.Api.KickChatMember(Settings.PrimaryChatId, id);
                                 removed++;
-                                sw.Write($" | Removed ({p?.Name ?? id.ToString()})");
+                                sw.Write($"Removed ({p?.Name ?? id.ToString()})");
                                 //get their status
                                 status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
                                 while (status == ChatMemberStatus.Member) //loop
@@ -913,18 +934,18 @@ namespace Werewolf_Control
                                 }
                                 //status is now kicked (as it should be)
                                 var attempts = 0;
-                                sw.Write(" | Unbanning-");
+                                sw.Write("|Unbanning-");
                                 while (status != ChatMemberStatus.Left) //unban until status is left
                                 {
                                     attempts++;
-                                    sw.Write($" {status} ");
+                                    sw.Write($"{status}");
                                     sw.Flush();
                                     Bot.Api.UnbanChatMember(Settings.PrimaryChatId, id);
                                     Thread.Sleep(500);
                                     status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
                                 }
                                 //yay unbanned
-                                sw.Write($" | Unbanned ({attempts} attempts)");
+                                sw.Write($"|Unbanned({attempts} attempts)");
                                 //let them know
                                 Send(
                                     "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
@@ -954,9 +975,15 @@ namespace Werewolf_Control
                             Thread.Sleep(100);
 
                         }
-                        catch
+                        catch (AggregateException e)
                         {
-                            // ignored
+                            sw.Write(e.InnerExceptions[0].Message);
+                        }
+                        catch (Exception e)
+                        {
+                            while (e.InnerException != null)
+                                e = e.InnerException;
+                            sw.Write($"{e.Message}");
                         }
 
                     }
