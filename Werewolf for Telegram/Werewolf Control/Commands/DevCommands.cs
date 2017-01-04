@@ -868,7 +868,7 @@ namespace Werewolf_Control
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
                 var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
                 if (channel == null) return;
-                var users = channel.Users.ToList();
+                var users = channel.Users.Skip(skip).ToList();
                 Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
                 var i = 0;
                 var removed = 0;
