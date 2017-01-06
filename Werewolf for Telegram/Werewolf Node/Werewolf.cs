@@ -200,6 +200,7 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
+                var minutesTolerance = 30;
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -217,9 +218,10 @@ namespace Werewolf_Node
 
                     if (i == Settings.GameJoinTime - 60)
                     {
-                        if (Players.Count < Settings.MinPlayers)
+                        if (Players.Count < Settings.MinPlayers && minutesTolerance>0)
                         {
                             i -= 60;
+                            minutesTolerance--;
                         }
                         else
                         {
@@ -2191,13 +2193,16 @@ namespace Werewolf_Node
                     switch (check.PlayerRole)
                     {
                         case IRole.Harlot:
+                            SendGif(null, GetImageLanguage(ImageKeys.HarlotShot));
                             SendWithQueue(DbGroup.ShowRoles != false ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()) : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
                             break;
                         case IRole.Hunter:
+                            SendGif(null, GetImageLanguage(ImageKeys.GunnerShotHunter));
                             SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(check.PlayerRole)} {GetLocaleString("IsDead")}"));
                             HunterFinalShot(check, KillMthd.Shoot);
                             break;
                         default:
+                            SendGif(null, GetImageLanguage(ImageKeys.DefaultShot));
                             SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), DbGroup.ShowRoles == false ? "" : $"{GetDescription(check.PlayerRole)} {GetLocaleString("IsDead")}"));
                             break;
                     }

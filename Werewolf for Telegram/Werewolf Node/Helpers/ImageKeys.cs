@@ -35,6 +35,9 @@ namespace Werewolf_Node.Helpers
         RoleInfoMayor,
         RoleInfoClumsyGuy,
         RoleInfoSorcerer,
-        RoleInfoApprenticeSeer
+        RoleInfoApprenticeSeer,
+        HarlotShot,
+        DefaultShot,
+        GunnerShotHunter
     }
 }

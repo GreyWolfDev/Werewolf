@@ -35,6 +35,9 @@ namespace Werewolf_Control.Helpers
         RoleInfoMayor,
         RoleInfoClumsyGuy,
         RoleInfoSorcerer,
-        RoleInfoApprenticeSeer
+        RoleInfoApprenticeSeer,
+        HarlotShot,
+        DefaultShot,
+        GunnerShotHunter
     }
 }
