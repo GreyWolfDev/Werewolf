@@ -41,7 +41,7 @@ namespace Werewolf_Control
         [Command(Trigger = "join", Blockable = true, InGroupOnly = true)]
         public static void Join(Update update, string[] args)
         {
-            var id = update.Message.Chat.Id;
+           var id = update.Message.Chat.Id;
             using (var db = new WWContext())
             {
                 if (update.Message.Chat.Type == ChatType.Private)
@@ -140,7 +140,23 @@ namespace Werewolf_Control
             }
             else
             {
-                game.ShowPlayers();
+                if(game.State.Equals(Models.GameState.Joining))
+                {
+                    using (var db = new WWContext())
+                    {
+                        string msg;
+                        if (game.Users.Count == 1) msg = "Apenas 1 jogador deu /join até agora:\n";
+                        else msg = $"{game.Users.Count} jogadores deram /join:\n";
+
+                        var user = db.Players.Where(p => game.Users.Contains(p.TelegramId)).AsEnumerable();
+                        msg += user.Aggregate("", (current, p) => current + ($"{p.Name.ToBold()} (@{p.UserName})\n"));
+                        Send(msg, id);
+                    }
+                }
+                else
+                {
+                    game.ShowPlayers();
+                }
             }
 
         }
