@@ -200,7 +200,7 @@ namespace Werewolf_Control
                                 UserName = usr.Username,
                                 Name = (usr.FirstName + " " + usr.LastName).Trim(),
                                 TelegramId = usr.Id,
-                                Language = "English"
+                                Language = "PortugueseMarvel"
                             };
                             db.Players.Add(p);
                             db.SaveChanges();
@@ -383,71 +383,96 @@ namespace Werewolf_Control
             //if (update.Message.Chat.Type != ChatType.Private)
             //    reply += $"[Group Stats](www.tgwerewolf.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
             //reply += $"[Player Stats](www.tgwerewolf.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
+            Bot.Api.SendTextMessage(u.Message.Chat.Id, "#stats");
+            //if (u.Message.ReplyToMessage != null)
+            //{
+            //    var m = u.Message.ReplyToMessage;
+            //    while (m.ReplyToMessage != null)
+            //        m = m.ReplyToMessage;
+            //    //check for forwarded message
+            //    var name = m.From.FirstName;
+            //    var id = m.From.Id;
+            //    if (m.ForwardFrom != null)
+            //    {
+            //        id = m.ForwardFrom.Id;
+            //        name = m.ForwardFrom.FirstName;
+            //    }
+            //    var buttons = new List<InlineKeyboardButton[]>
+            //    {
+            //        new[]
+            //        {
+            //        new InlineKeyboardButton
+            //        {
+            //            Text = $"{name} Stats",
+            //            Url = "http://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats"
+            //        }
+            //    }
 
-            if (u.Message.ReplyToMessage != null)
+            //    };
+            //    var menu = new InlineKeyboardMarkup(buttons.ToArray());
+            //    Bot.Api.SendTextMessage(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+            //}
+            //else
+            //{
+
+
+            //    //change this to buttons
+            //    var buttons = new List<InlineKeyboardButton[]>
+            //    {
+            //        new[]
+            //        {
+            //            new InlineKeyboardButton
+            //            {
+            //                Text = "Global Stats",
+            //                Url = "http://www.tgwerewolf.com/Stats?referrer=stats"
+            //            }
+            //        }
+            //    };
+            //    if (u.Message.Chat.Type != ChatType.Private)
+            //        buttons.Add(new[]
+            //        {
+            //            new InlineKeyboardButton
+            //            {
+            //                Text = $"{u.Message.Chat.Title} Stats",
+            //                Url = "http://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats"
+            //            }
+            //        });
+            //    buttons.Add(new[]
+            //    {
+            //        new InlineKeyboardButton
+            //        {
+            //            Text = $"{u.Message.From.FirstName} Stats",
+            //            Url = "http://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats"
+            //        }
+            //    });
+            //    var menu = new InlineKeyboardMarkup(buttons.ToArray());
+            //    Bot.Api.SendTextMessage(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+            //}
+        }
+
+        [Command(Trigger = "conquistas")]
+        public static void Conquistas(Update update, string[] args)
+        {
+            Player p = null;
+            var Content = "";
+            using (var db = new WWContext())
             {
-                var m = u.Message.ReplyToMessage;
-                while (m.ReplyToMessage != null)
-                    m = m.ReplyToMessage;
-                //check for forwarded message
-                var name = m.From.FirstName;
-                var id = m.From.Id;
-                if (m.ForwardFrom != null)
+                p = db.Players.FirstOrDefault(x => x.TelegramId == update.Message.From.Id);
+
+                if (p == null)
                 {
-                    id = m.ForwardFrom.Id;
-                    name = m.ForwardFrom.FirstName;
+                    return;
                 }
-                var buttons = new List<InlineKeyboardButton[]>
-                {
-                    new[]
-                    {
-                    new InlineKeyboardButton
-                    {
-                        Text = $"{name} Stats",
-                        Url = "http://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats"
-                    }
-                }
-
-                };
-                var menu = new InlineKeyboardMarkup(buttons.ToArray());
-                Bot.Api.SendTextMessage(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+                //find the player
+                var ach = (Achievements)(p.Achievements ?? 0);
+                var count = ach.GetUniqueFlags().Count();
+                Content += $"\n{count} {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n";
+                foreach (var a in ach.GetUniqueFlags())
+                    Content += $"\t• {a.GetName().ToBold()}\n<i>{a.GetDescription()}.</i>\n";
             }
-            else
-            {
-
-
-                //change this to buttons
-                var buttons = new List<InlineKeyboardButton[]>
-                {
-                    new[]
-                    {
-                        new InlineKeyboardButton
-                        {
-                            Text = "Global Stats",
-                            Url = "http://www.tgwerewolf.com/Stats?referrer=stats"
-                        }
-                    }
-                };
-                if (u.Message.Chat.Type != ChatType.Private)
-                    buttons.Add(new[]
-                    {
-                        new InlineKeyboardButton
-                        {
-                            Text = $"{u.Message.Chat.Title} Stats",
-                            Url = "http://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats"
-                        }
-                    });
-                buttons.Add(new[]
-                {
-                    new InlineKeyboardButton
-                    {
-                        Text = $"{u.Message.From.FirstName} Stats",
-                        Url = "http://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats"
-                    }
-                });
-                var menu = new InlineKeyboardMarkup(buttons.ToArray());
-                Bot.Api.SendTextMessage(u.Message.Chat.Id, "Stats", replyMarkup: menu);
-            }
+            Bot.Api.SendTextMessage(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
+            if (update.Message.Chat.Type != ChatType.Private)
+                Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
         }
     }
 }
