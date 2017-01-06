@@ -392,7 +392,7 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         case MessageType.PhotoMessage:
-                            break;
+                             break;
                         case MessageType.AudioMessage:
                             break;
                         case MessageType.VideoMessage:
@@ -1460,7 +1460,7 @@ namespace Werewolf_Control.Handler
 
             var commands = new InlineCommand[]
             {
-                new StatsInlineCommand(q.From),
+                new StatsInlineCommand(q.From), new KillsInlineCommand(q.From), new KilledByInlineCommand(q.From),
             };
             
             List<InlineCommand> choices;
