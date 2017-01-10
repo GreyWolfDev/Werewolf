@@ -3217,15 +3217,19 @@ namespace Werewolf_Node
             if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole)))
             {
                 var traitor = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Traitor);
-                if (traitor != null && (!checkbitten || alivePlayers.All(x => !x.Bitten))) //traitor should not turn wolf if bitten is about to turn
+                if (traitor != null)
                 {
-                    //traitor turns wolf!
-                    traitor.PlayerRole = IRole.Wolf;
-                    traitor.Team = ITeam.Wolf;
-                    traitor.HasDayAction = false;
-                    traitor.HasNightAction = true;
-                    traitor.ChangedRolesCount++;
-                    Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
+                    if (!checkbitten || alivePlayers.All(x => !x.Bitten)) //traitor should not turn wolf if bitten is about to turn
+                    {
+                        //traitor turns wolf!
+                        traitor.PlayerRole = IRole.Wolf;
+                        traitor.Team = ITeam.Wolf;
+                        traitor.HasDayAction = false;
+                        traitor.HasNightAction = true;
+                        traitor.ChangedRolesCount++;
+                        Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
+                    }
+                    else return false; //bitten is turning wolf! game doesn't end
                 }
             }
 
