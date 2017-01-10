@@ -38,6 +38,16 @@ namespace Werewolf_Node.Helpers
         RoleInfoApprenticeSeer,
         HarlotShot,
         DefaultShot,
-        GunnerShotHunter
+        GunnerShotHunter,
+        RoleInfoGuardianAngel,
+        RoleInfoSerialKiller,
+        RoleInfoWildChild,
+        RoleInfoMason,
+        RoleInfoWolf,
+        GuardSavedYou,
+        WildChildTransform,
+        SerialKillerKilledWolf,
+        SerialKillerKilledCH,
+        CultConvertKillerPublic
     }
 }

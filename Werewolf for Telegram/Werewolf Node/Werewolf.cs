@@ -1411,6 +1411,16 @@ namespace Werewolf_Node
                         return GetImageLanguage(ImageKeys.RoleInfoSorcerer);
                     case IRole.ApprenticeSeer:
                         return GetImageLanguage(ImageKeys.RoleInfoApprenticeSeer);
+                    case IRole.GuardianAngel:
+                        return GetImageLanguage(ImageKeys.RoleInfoGuardianAngel);
+                    case IRole.SerialKiller:
+                        return GetImageLanguage(ImageKeys.RoleInfoSerialKiller);
+                    case IRole.WildChild:
+                        return GetImageLanguage(ImageKeys.RoleInfoWildChild);
+                    case IRole.Mason:
+                        return GetImageLanguage(ImageKeys.RoleInfoMason);
+                    case IRole.Wolf:
+                        return GetImageLanguage(ImageKeys.RoleInfoWolf);
                     default:
                         return null;
                 }
@@ -1641,6 +1651,7 @@ namespace Werewolf_Node
                         wc.ChangedRolesCount++;
                         wc.HasNightAction = true;
                         wc.HasDayAction = false;
+                        SendGif(null, GetImageLanguage(ImageKeys.WildChildTransform), wc.Id);
                         Send(GetLocaleString("WildChildTransform", rm.GetName(), teammates), wc.Id);
                     }
                 }
@@ -3116,6 +3127,7 @@ namespace Werewolf_Node
                     if (save.WasSavedLastNight)
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
+                        SendGif(null, GetImageLanguage(ImageKeys.GuardSavedYou), save.Id);
                         Send(GetLocaleString("GuardSavedYou"), save.Id);
                     }
                     else if (save.DiedLastNight)
@@ -3248,12 +3260,18 @@ namespace Werewolf_Node
                                     if (p.PlayerRole == IRole.WolfCub)
                                         WolfCubKilled = true;
                                     if (p.KilledByRole == IRole.SerialKiller)
+                                    {
                                         msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
+                                        gif = GetImageLanguage(ImageKeys.SerialKillerKilledWolf);
+                                    }
                                     else //died from hunter
                                         msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName()) + $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}";
                                     break;
                                 case IRole.CultistHunter: //killed by sk
-                                    msg = GetLocaleString("SerialKillerKilledCH", p.GetName());
+                                    {
+                                        msg = GetLocaleString("SerialKillerKilledCH", p.GetName());
+                                        gif = GetImageLanguage(ImageKeys.SerialKillerKilledCH);
+                                    }
                                     break;
                                 case IRole.Cultist:
                                     switch (p.KilledByRole)
@@ -3269,7 +3287,10 @@ namespace Werewolf_Node
                                             msg = GetLocaleString("CultConvertWolfPublic", p.GetName());
                                             break;
                                         case IRole.SerialKiller:
-                                            msg = GetLocaleString("CultConvertKillerPublic", p.GetName());
+                                            {
+                                                msg = GetLocaleString("CultConvertKillerPublic", p.GetName());
+                                                gif = GetImageLanguage(ImageKeys.CultConvertKillerPublic);
+                                            }
                                             break;
                                     }
                                     break;
