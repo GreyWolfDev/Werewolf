@@ -3170,7 +3170,7 @@ namespace Werewolf_Node
                                     if (p.KilledByRole == IRole.SerialKiller)
                                         msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
                                     else //died from hunter
-                                        msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName()) + $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}";
+                                        msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName()) + " " + GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole));
                                     break;
                                 case IRole.CultistHunter: //killed by sk
                                     msg = GetLocaleString("SerialKillerKilledCH", p.GetName());
