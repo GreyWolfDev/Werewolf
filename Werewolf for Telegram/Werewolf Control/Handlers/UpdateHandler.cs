@@ -1439,9 +1439,13 @@ namespace Werewolf_Control.Handler
                 {
                     baseMenu.Add(new[] { buttons[i] });
                 }
-                else
+                else if (buttons.Count - 2 == i)
+                {
                     baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
-                i++;
+                }
+                else
+                    baseMenu.Add(new[] { buttons[i], buttons[i + 1], buttons[i + 2] });
+                i +=2;
             }
 
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
@@ -1460,7 +1464,7 @@ namespace Werewolf_Control.Handler
 
             var commands = new InlineCommand[]
             {
-                new StatsInlineCommand(q.From), new KillsInlineCommand(q.From), new KilledByInlineCommand(q.From),
+                new StatsInlineCommand(q.From), new KillsInlineCommand(q.From), new KilledByInlineCommand(q.From), new RolesInlineCommand(q.From), new TypesOfDeathInlineCommand(q.From)
             };
             
             List<InlineCommand> choices;

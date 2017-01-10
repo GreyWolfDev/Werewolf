@@ -32,7 +32,7 @@ namespace Werewolf_Control.Models
         public StatsInlineCommand(User u)
         {
 
-            Description = "Get personal stats";
+            Description = "Obtem estatísticas pessoais";
             Command = "stats";
             try
             {
@@ -81,7 +81,7 @@ namespace Werewolf_Control.Models
     {
         public KillsInlineCommand(User u)
         {
-            Description = "Obtem lista dos 5 jogadores que você mais matou";
+            Description = "Obtem os 5 jogadores que você mais matou";
             Command = "kills";
             try
             {
@@ -98,7 +98,7 @@ namespace Werewolf_Control.Models
                     }
 
                     var killed = db.PlayerMostKilled(u.Id).AsEnumerable();
-                    Content += $"\nTop 5 Jogadores que eu mais matei:\n";
+                    Content += $"\n5 jogadores que eu mais matei:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -116,7 +116,7 @@ namespace Werewolf_Control.Models
     {
         public KilledByInlineCommand(User u)
         {
-            Description = "Obtem lista dos 5 jogadores que mais te mataram";
+            Description = "Obtem os 5 jogadores que mais te mataram";
             Command = "killedby";
             try
             {
@@ -133,7 +133,7 @@ namespace Werewolf_Control.Models
                     }
 
                     var killed = db.PlayerMostKilledBy(u.Id).AsEnumerable();
-                    Content += $"\nTop 5 Jogadores que mais me mataram:\n";
+                    Content += $"\n5 jogadores que mais me mataram:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -143,6 +143,83 @@ namespace Werewolf_Control.Models
             catch (Exception e)
             {
                 Content = "Unable to load kills: " + e.Message;
+            }
+        }
+    }
+
+    public class RolesInlineCommand : InlineCommand
+    {
+        public RolesInlineCommand(User u)
+        {
+            Description = "Obtem os 5 papéis que você mais jogou";
+            Command = "roles";
+            try
+            {
+                using (var db = new WWContext())
+                {
+                    Content = "";
+                    //find the player
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                    if (p == null)
+                    {
+                        //remove the command
+                        Command = "";
+                        return;
+                    }
+
+                    var roleInfo = db.PlayerRoles(u.Id).ToList().OrderByDescending(x => x.times).Take(5);
+                    Content += $"\n5 papéis que eu mais joguei:\n";
+                    foreach (var a in roleInfo)
+                    {
+                        var role = Commands.GetLocaleString(a.role, p.Language);
+                        Content += $"{a.times?.Pad()} {role.ToBold()}\n";
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Content = "Unable to load roles: " + e.Message;
+            }
+        }
+    }
+
+    public class TypesOfDeathInlineCommand : InlineCommand
+    {
+        public TypesOfDeathInlineCommand(User u)
+        {
+            Description = "Obtem os 5 tipos de morte que você mais teve";
+            Command = "deaths";
+            try
+            {
+                using (var db = new WWContext())
+                {
+                    Content = "";
+                    //find the player
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                    if (p == null)
+                    {
+                        //remove the command
+                        Command = "";
+                        return;
+                    }
+
+                    var roleInfo = (from gk in db.GameKills
+                                    join pla in db.Players on gk.VictimId equals pla.Id
+                                    where pla.TelegramId == p.TelegramId
+                                    where gk.KillMethodId != 0
+                                    group gk by gk.KillMethodId).OrderByDescending(x => x.Count()).Take(5);
+
+                    Content += $"\n5 tipos de mortes que eu mais tive:\n";
+                    foreach (var a in roleInfo)
+                    {
+                        var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
+                        Content += $"{a.Count().Pad()} {killMethod.ToBold()}\n";
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Content = "Unable to load kill methods: " + e.Message;
             }
         }
     }
