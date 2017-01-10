@@ -383,7 +383,9 @@ namespace Werewolf_Control
             //if (update.Message.Chat.Type != ChatType.Private)
             //    reply += $"[Group Stats](www.tgwerewolf.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
             //reply += $"[Player Stats](www.tgwerewolf.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
-            Bot.Api.SendTextMessage(u.Message.Chat.Id, "#stats");
+
+            Bot.Api.SendPhoto(u.Message.Chat.Id, "AgADAQADkdUxG9tS9wFjV189xLDOYW705y8ABKUOCQdNzMe8cDECAAEC", replyToMessageId: u.Message.MessageId);
+            //Bot.Api.SendTextMessage(u.Message.Chat.Id, "#stats");
             //if (u.Message.ReplyToMessage != null)
             //{
             //    var m = u.Message.ReplyToMessage;
