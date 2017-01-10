@@ -296,9 +296,61 @@ namespace Werewolf_Control.Helpers
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += $"File copied to git directory\n";
-            msg += "* Operation complete.*";
+            if (newFilePath.EndsWith("English.xml"))
+            {
+                var p = new Process
+                {
+                    StartInfo =
+                    {
+                        FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
+                        Arguments = $"\"Syncing langfiles from Telegram (English.xml update)\"",
+                        WorkingDirectory = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
+                    }
+                };
 
-            Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Markdown);
+                p.Start();
+                msg += "Started the committing process. Reading output from git...";
+                Bot.Edit(id, msgId, msg);
+
+                var output = "";
+                while (!p.StandardOutput.EndOfStream)
+                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
+                while (!p.StandardError.EndOfStream)
+                    output += p.StandardError.ReadLine() + Environment.NewLine;
+
+                msg += "\nValidating the output...";
+                Bot.Edit(id, msgId, msg);
+
+                //validate the output
+                if (output.Contains("failed"))
+                {
+                    msg += "\n<b>Failed</b> to commit files. See control output for information";
+                    Console.WriteLine(output);
+                }
+                else if (output.Contains("nothing to commit"))
+                {
+                    msg += "\nNothing to commit.";
+                }
+                else
+                {
+                    //try to grab the commit
+                    var regex = new Regex("(\\[master .*])");
+                    var match = regex.Match(output);
+                    var commit = "";
+                    if (match.Success)
+                    {
+                        commit = match.Value.Replace("[master ", "").Replace("]", "");
+                    }
+                    msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
+                }
+            }
+            msg += "\n<b>Operation complete.</b>";
+
+            Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Html);
         }
 
         public static void SendAllFiles(long id)

@@ -838,13 +838,13 @@
     <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
   </string>
   <string key="AboutWw">
-    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill!\nNote: If you attack the cursed, they will become a wolf like yourself! Hooray friends!\nIf you attack the drunk, you yourself will become drunk, and will be unable to do the next attack as you sleep off your hangover! (Usually, this means you can't attack the following night, but if the Wolf Cub was killed and the Drunk was your first choice, you won't be able to kill the second player, an you will still be able to attack the following night.) </value>
   </string>
   <string key="AboutHarlot">
     <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
   </string>
   <string key="AboutDrunk">
-    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next kill, as they are drunk off your insanely high BAC.</value>
   </string>
   <string key="AboutCursed">
     <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
@@ -1360,5 +1360,14 @@
     <!--{0} = "Allow" / "Disallow" string-->
     <value>{0} players to extend join time</value>
   </string>
-  
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was a drunk! Now you are drunk, and can't attack {1}...</value>
+  </string>
 </strings>
