@@ -1178,12 +1178,12 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "maxextend":
-                            buttons.Add(new InlineKeyboardButton("60", $"maxextend|{groupid}|60"));
-                            buttons.Add(new InlineKeyboardButton("120", $"maxextend|{groupid}|120"));
-                            buttons.Add(new InlineKeyboardButton("180", $"maxextend|{groupid}|180"));
-                            buttons.Add(new InlineKeyboardButton("240", $"maxextend|{groupid}|240"));
-                            buttons.Add(new InlineKeyboardButton("300", $"maxextend|{groupid}|300"));
-                            buttons.Add(new InlineKeyboardButton(Cancel, $"maxextend|{groupid}|cancel"));
+                            buttons.Add(new InlineKeyboardButton("60", $"setmaxextend|{groupid}|60"));
+                            buttons.Add(new InlineKeyboardButton("120", $"setmaxextend|{groupid}|120"));
+                            buttons.Add(new InlineKeyboardButton("180", $"setmaxextend|{groupid}|180"));
+                            buttons.Add(new InlineKeyboardButton("240", $"setmaxextend|{groupid}|240"));
+                            buttons.Add(new InlineKeyboardButton("300", $"setmaxextend|{groupid}|300"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setmaxextend|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("MaxExtendQ", language, Settings.MaxExtend, grp.MaxExtend ?? Settings.MaxExtend), replyMarkup: menu);
