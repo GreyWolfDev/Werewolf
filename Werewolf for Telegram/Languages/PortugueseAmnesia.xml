@@ -1,21 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Modo amnésia feito e "traduzido" por Saah (@ayylimao), usando as traduções do modo normal feitas por Lucas Montuano (@montuano) e Guto Cristino (@guto_xtino)!
-Melhor jogar com o reveal role after death ON, senão fica difícil demais, mas vai na fé. Última edição em 04/11/2016 -->
+Melhor jogar com o reveal role after death ON, senão fica difícil demais, mas vai na fé. Última edição em 23/01/2017 -->
 <strings>
   <language name="Português (Modo Amnésia)" base="Português" variant="Modo Amnésia"/>
   <string key="NotInGame">
-    <value>Você não parece estar em um jogo agora...</value>
+    <value>Você não está em nenhum jogo no momento, lembra?</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} iniciou uma nova partida! Use /join para entrar na brincadeira.... e provavelmente ser morto :P</value>
-    <value>Uma nova partida foi iniciada por {0}! Use /join para ser devorado(a)!</value>
+    <value>{0} iniciou uma nova partida! Use /join para se divertir tanto que você vai até esquecer quem é!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} deu a loka e começou um jogo caótico. Use /join para começar a diversão... e provavelmente morrer :P</value>
-    <value>Um novo jogo caótico foi iniciado por {0}! Use /join para entrar nessa loucura!</value>
+    <value>Um novo jogo caótico foi iniciado por {0}! Use /join para ser morto por acidente!</value>
   </string>
   <string key="NoJoinGameRunning">
-    <value>Você não pode entrar agora! O jogo já começou. Use /nextgame para receber uma mensagem no privado quando uma nova partida for iniciada!</value>
+    <value>Você esqueceu de entrar antes do jogo começar! Use /nextgame para receber uma mensagem no privado quando uma nova partida for iniciada!</value>
   </string>
   <string key="AlreadyJoined">
     <value>Você já está na partida!</value>
@@ -243,7 +241,7 @@ Melhor jogar com o reveal role after death ON, senão fica difícil demais, mas 
     <value >Ah não!  Os lobos te devoraram. NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Ah não! {0} estava bêbado(a)!  Agora você está bêbado(a) e não poderá atacar na próxima noite...</value>
+    <value >Alguma coisa aconteceu na casa de {0} ontem à noite? Você não consegue lembrar...</value>
   </string>
   <string key="GuardWolf" >
     <value >Você foi para a casa de um lobo, e ele te devorou!</value>
@@ -587,7 +585,7 @@ Melhor jogar com o reveal role after death ON, senão fica difícil demais, mas 
     <value>{0} era o Assassino em Série! Você morreu.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now! - {0}</value>
+    <value>Parece que o Serial Killer não queria ter uma noite de sacanagens! {0} foi encontrado(a) na porta de sua casa morto(a) com as mãos e os pés amarrados.</value>
   </string>
   <string key="DGToMason">
     <value>Dentre os nomes na sua mente, um novo aparece: {0}!</value>
@@ -1068,5 +1066,159 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
   </string>
   <string key="AboutWolfCub">
     <value>Mas que fofinho! Pequenino lobinho! _cuti cuti_ Eu não resisto à sua fofura! Eu acho que se te matassem, eu daria aos lobos duas vitimas. Você é fofinho demais para morrer. Não quero nunca deixar de te acariciar-</value>
+  </string>
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu! Seu papel mudou, mas do que, e para o quê?  Você pode não lembrar quem é, mas pelo menos lembra de alguém importante: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu! Seu papel mudou, mas do que, e para o quê?  Você pode não lembrar quem é, mas pelo menos lembra de alguém importante: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Time da Aldeia</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Time Neutro</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Time Lobo</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Time Serial Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Time da Seita</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Time Suicida</value>
+  </string>
+  - <string key="VillageTeamEnd">
+  <value>Time da Aldeia</value> 
+  </string>
+- <string key="NeutralTeamEnd">
+  <value>Time Neutro</value> 
+  </string>
+- <string key="WolfTeamEnd">
+  <value>Time Lobo</value> 
+  </string>
+- <string key="SerialKillerTeamEnd">
+  <value>Time Serial Killer</value> 
+  </string>
+- <string key="CultTeamEnd">
+  <value>Time da Seita</value> 
+  </string>
+- <string key="TannerTeamEnd">
+  <value>Time Suicida</value> 
+  </string>
+  - <string key="CultConvertWolf">
+  <value>{0} foi para a casa de {1} e morreu!</value> 
+  </string>
+ <string key="HarlotFuckedKilledPublic">
+    <value>{0} vai até a casa de {1}, pronta para uma noite de romance, somente para encontrar um estranho removendo cirurgicamente os órgãos de {1}! O Serial Killer decidiu obrigar {0} a se juntar à brincadeira, mas não foi nada divertido...</value>
+  </string>
+  
+  <!--New Death Strings 05 Nov-->
+  <string key="ApprenticeSeerEaten">
+    <value>A aldeia acorda e encontra o corpo do Aprendiz de Vidente todo ensaguentado, seu mestre sentirá sua falta. {0} morreu!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, o Ferreiro, é bem azarado. Cinco espadas foram encontradas atravessadas no seu peito. E diversas armas desapareceram, o Serial Killer fez a festa!</value>
+  </string>
+  <string key="CultistKilled">
+    <value>De manhã todos encontram {0} empalado em um candelabro. O Serial Killer não se importa com religião, todos são brinquedinhos para ele! A Seita vai sentir falta de {0}...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Os aldeões ficam de coração partido ao encontrar {0}, o Cupido, morto. Estranho o fato de seu coração estar faltando, obviamente obra do Serial Killer.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0}, o Bêbado teve o seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Obviamente mais uma brincadeira do Serial Killer que deve ter adorado seu novo drink! </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} é encontrado com grandes fendas onde antes houveram suas asas. {0}, o Anjo Guardião, está morto, e a noite agora é mais sombria.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Na calada da noite, a aldeia escuta um tiro na casa de {0}, a Atiradora! Seus sonhos são tormentosos depois de encontra-lá com um buraco na testa, e a arma embaralhada em suas entranhas, mais uma vítima do Serial Killer.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Houve um terrível assassinato! {0}, o Prefeito foi encontrado assado com uma maçã na boca! O Serial Killer finalmente conseguiu vingança pelos anos preso no hospício.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>O sino toca por toda a Aldeia antes do nascer do sol. Os soldados do Rei estão em todo lugar investigando a morte de {0}, o Príncipe. E nenhuma pista foi encontrada ainda, além do chapéu de bobo da corte na cabeça decepada do Principe, com um recado em sangue do Serial Killer na parede.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>A Aldeia acorda para ver o corpo de {0}, a Vidente, morta. No lugar de seu cérebro, uma bola de cristal. O Serial Killer é realmente assustador!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>O som de uivos tristes podem ser ouvidos pela Aldeia. Parece que um erro foi cometido e os Lobos mataram um aliado. A Feiticeira {0} está morta.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Nada tão doce e macio quanto a carne de uma criança. {0}, a Criança Rebelde morreu, e o que sobrou foi apenas uma pilha de óssos infantis! Que crueldade!</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>A Aldeia acordou essa manhã só para encontrar um corpo torturado e morto na praça. {0}, o Inquisidor, visitou a pessoa errada. O Serial Killer utilizou todas as ferramentas de tortura do Inquisidor, ao mesmo tempo.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Péssima escolha da Seita ao visitar um Lobo que decidiu ficar em casa durante a noite. {0} está morto, foi convertido em uma bela refeição pros Lobos, que não são muito interessados em movimentos religiosos.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Ontem a noite a Seita decidiu visitar a única pessoa mais estranha do que eles, o Serial Killer, e por causa disso, os órgãos de {0} serviram para a criação de uma nova obra de arte.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>{0} tentou proteger o Serial Killer ontem a noite. A Aldeia acordou e encontrou apenas as asas de {0} pregadas na parede da igreja cheias de sangue!.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <value>{0} tentou proteger um Lobo ontem a noite. A Aldeia acordou e apenas encontrou o corpo de {0} e suas penas, ensanguentadas no chão da Igreja.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabendo que {0} ainda está vivo, {1} tenta comer ele na calada da noite, mas ele não sabia que {0} estava esperando {1} com seu revólver engatilhado. O que restou de {1} foi sua carcaça, que foi usado como enfeite. O Caçador matou o último Lobo!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} viu que {0} ainda estava dormindo, então, aproveitou o momento para matá-lo. O que restou do Caçador foi só a mão dele perto do revólver. Parece que {0} tentou se defender, mas, foi muito tarde.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>Vendo um simbolo estranho rodeando o pescoço de {0}, {1} já se da conta que {0} é um membro da seita. Então, {0} tira sua espada pela última vez e mutila {1} matando-o (a). Agora a vila está salva da contaminação da seita.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo de entrada para o jogo extendido em {0} segundos!\n{1} restantes para o /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>*Tempo de entrada para o jogo reduzido em {0} segundo(s)*/n{1} restantes para o /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Apenas os administradores podem extender o tempo mais de uma vez!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Os jogadores podem extender o tempo?\nCurrent: {0} extender/nNota: Os admins sempre poderão extender</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} os jogadores podem extender tempo de join </value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo máximo para extender o jogo foi para {0} segundos. </value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Alguma coisa aconteceu na casa de {0} ontem à noite? Você não consegue lembrar...\n\nAlguma coisa aconteceu na casa de {1} ontem à noite? Você não consegue lembrar...</value>
   </string>
 </strings>

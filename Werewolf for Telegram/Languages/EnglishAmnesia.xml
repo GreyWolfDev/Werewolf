@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- Amnesia mode by Amber (@ayylimao)! Play with role reveal after death off to have some serious fun lol 
-Last update: 09/09/2016 by @ayylimao -->
+<!-- Amnesia mode by Amber (@ayylimao)!
+Last update: 30/12/2016 by @ayylimao -->
 <strings>
   <language name="English (Amnesia Mode)" base="English" variant="Amnesia Mode"/>
   <string key="NotInGame">
@@ -579,17 +579,11 @@ Last update: 09/09/2016 by @ayylimao -->
   <string key="CultConvertHunter">
     <value>{0} went to {1}'s house and is now dead!</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} went to {1}'s house and is now dead!</value>
-  </string>
   <string key="GuardKiller">
     <value>You went to the serial killer's house! You were killed.</value>
   </string>
   <string key="HarlotFuckKiller">
     <value>{0} was the serial killer! You were killed.</value>
-  </string>
-  <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now! - {0}</value>
   </string>
   <string key="DGToMason">
     <value>Amidst the names in your head, a new one appears: {0}!</value>
@@ -638,9 +632,6 @@ Last update: 09/09/2016 by @ayylimao -->
   </string>
   <string key="Doppelgänger">
     <value>the Doppelgänger 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <value>You may not remember who you are, but you do remember someone important: {0}</value>
   </string>
   <string key="NewWCRoleModel">
     <value>Your role changed, but from what, and to what?  You may not remember who you are, but you do remember someone important: {0}</value>
@@ -706,6 +697,7 @@ Last update: 09/09/2016 by @ayylimao -->
 	 All wolves will get drunk if they attack the Village Drunk, and won't be able to do any actions the next night!
 	 <!--EDIT HERE HERE what are roles that won't be home? ayylmao-->The Harlot probably won't be home, so the night will be wasted if you try to attack them!
 	 Good news, though: if you attack the cursed, they will become a wolf along with you! If you kill a Wild Child's rolemodel, they will also become a wolf!
+	 \nIf you attack the drunk, you yourself will become drunk, and will be unable to do the next attack as you sleep off your hangover! (Usually, this means you can't attack the following night, but if the Wolf Cub was killed and the Drunk was your first choice, you won't be able to kill the second player, and you will still be able to attack the following night.)
 	 
 	 NIGHT ACTIONS, every night!</value>
   </string>
@@ -718,7 +710,7 @@ Last update: 09/09/2016 by @ayylimao -->
   </string>
   <string key="AboutDrunk">
     <value>
-	The Drunk is just like a villager... Except when they're killed by wolves! Then the wolves will become drunk too, and unable to attack on the next night!
+	The Drunk is just like a villager... Except when they're killed by wolves! Then the wolves will become drunk too, and unable to attack next time!
 	
 	NO ACTIONS, ever!</value>
   </string>
@@ -870,7 +862,7 @@ Last update: 09/09/2016 by @ayylimao -->
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Reply process time: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}\nPatience for people who spam commands when the bot is lagging: 0, always.</value>
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
   </string>
   <string key="WhatLang">
     <value>Nooo! Don't change the language out of Amnesia! If you really want to break my heart, what language do you want now?\nCurrent: {0}</value>
@@ -1079,7 +1071,7 @@ Last update: 09/09/2016 by @ayylimao -->
     <value>You know you should be doing something, but does it need to be today?</value>
   </string>
   <string key="BlacksmithSpreadSilver">
-    <value>As the rest of the village debates over the events, they suddenly notice {0} wandering around spreading silver across the grounds.  For now, at least, the village will be safe from wolf attacks. (Wolves are disabled tonight)</value>
+    <value>As the rest of the village debates over the events, they suddenly notice {0} wandering around spreading silver across the grounds. For now, at least, the village will be safe from wolf attacks. (Wolves are disabled tonight)</value>
   </string>
   <string key="Mayor">
     <value>the Mayor 🎖</value>
@@ -1128,10 +1120,168 @@ Last update: 09/09/2016 by @ayylimao -->
     </value>
   </string>
   <string key="AboutAlphaWolf">
-    <value>You are the Alpha Wolf, the origin of the curse, the bane of banes. While you are alive, the Pack's meal has 20% chances to join your ranks if the victim is the one you voted for.
+    <value>You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
     </value>
   </string>
   <string key="AboutWolfCub">
     <value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, i'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
+  </string>
+  
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is dead! Your role changed, but from what, and to what?  You may not remember who you are, but you do remember someone important: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is dead! Your role changed, but from what, and to what?  You may not remember who you are, but you do remember someone important: {1}</value>
+  </string>
+  
+  <string key="VillageTeam" deprecated="true">
+    <value>Village Team</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Neutral Team</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Cult Team</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Tanner Team</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Village Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Wolf Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Cult Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Tanner Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>{0} went to {1}'s house and is now dead!</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} slips into {1}'s house, ready for a night of passion, only to find a mysterious stranger surgically removing {1}'s innards! The serial killer decides to satisfy {0} before adding a slutty heart to their collection!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>The villagers awake to find {0} hunched over a second-hand Ouija board while practising fortune-telling, with head missing. The Apprentice Seer is dead.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Seems like {0}, the resident blacksmith, must have been extremely unlucky. Five knives, fresh from {0}'s armory, were found plunged into his hands, feet and head, and pinned to the craftsman's table last night. Maybe the serial killer was hoping to expand his weapon collection alongside his organ one...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} was found stabbed to death with a candlestick by their altar. The serial killer has struck again, regardless of race, language or religion! {0} was a Cultist.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The next morning, the villagers were heartbroken to find {0} a.k.a. Cupid split from head to toe. Strangely the heart was missing...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>The villagers had hoped to meet {0} to compliment his Martell, but all they found in {0}'s home was a broken knife and liver. All those years of drinking led to a liver so hard that even the Serial Killer probably does not fancy it...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally have managed to fight off the serial killer, but it was an irony that the Guardian Angel's halo has extinguished. {0} is dead.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was caught napping last night! A gunshot was heard last night, but all there was was the remains of a gunner, with a bullet hole to the head and a stab to the torso. Clearly the serial killer has won.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Assassination! {0} the mayor was found pinned with a knife on the table while working overnight at the mayor office! Clearly it's the serial killer exacting revenge for the asylum robbing him of years of his life!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Bells ring across the village before the sunrise, as armed guards flood the streets investigating the disappearance of Prince {0}. No clues were discovered, but it is suspected that there is a Serial Killer on the loose...</value>
+    <value>{0}'s guards were caught napping last night. The royal remains of {0} were found, hung in various parts of the palace, having fallen prey to the knife. No amount of princely blood would deter a serial killer's blade.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The villagers wake up to a rotting corpse of {0}, split from head to toe, stabs all over. Strangely the brain was carefully extricated, as if it was a premonition that the village has lost their top brains. {0} was the Seer.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>The sound of mournful howls can be heard across the village. A mistake has been made. The wolves have killed one of their own. The Sorcerer {0} is dead.</value>
+    <value>Cries of "I'm your ally!" were heard last night. All the villagers found next morning were an exhumed body and smashed mystical ball, belonging to {0}, the sorcerer. Hunger trumps comradeship...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! The wolves were heard last night, eating up a tender Wild Child, {0}, leaving behind only a reduced-size skeleton! The village wondered if the wolves felt any guilt tearing apart the defenceless child.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>The villagers wake up in the morning, only to find the severed body parts of {0}, the Cultist Hunter, in a cart placed in full view outside the town hall. Lesson learnt: don't visit the serial killer!</value>
+    <value>The body of {0}, the Cultist Hunter, was found in the middle of town, albeit cut precisely into a hundred pieces. Checking if the Serial Killer was a cultist does not seem to be a good idea...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>While it seemed that the wolves decided to stay good for once, punishing {0}, a cultist that decided to court trouble with the wolves, proved too difficult to resist. {0}'s head was converted to a fine supper, delivered to the wolves' doorsteps!</value>
+    <value>The cult ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining the new religious movement.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a cultist, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value>
+    <value>Last night, the cult tried to convert the one person in the village crazier than they are. Their newest member tried to convert the Serial Killer, and the Serial Killer made a new piece of art in the town square of {0}'s internal organs.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>It was supposed to be a night where {0} would save the village from the killers, but {0}'s halo was extinguished and wings sliced by the serial killer! Left was a note, "I could protect myself better than you can."</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} tried to guard a wolf last night. The town woke up to find only the wings of {0} hung on the church cross. Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} tries to eat {0} up, but {0}'s military training and paranoia proves too much to handle! All there is left is a carcass with two shots to the torso and the last man standing: the victorious hunter for the village!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the hunter, adorned with parallel slashes to the face.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} walk out in daylight. Seeing a shimmering cross worn around {0}'s neck, the righteous {1} draws their sword for the final time, putting an end to the twisted learnings of the cult that have contaminated the village.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to /join, don't forget about it!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to /join, don't forget about it!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Did you forget you already extended the time? Only group admins can do it multiple times!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+    <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Did something happen at {0}'s house last night? You can't seem to remember...\nDid something happen at {1}'s house last night? You can't seem to remember...</value>
+  </string>
+    <string key="HarlotFuckKillerPublic">
+    <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
   </string>
 </strings>
