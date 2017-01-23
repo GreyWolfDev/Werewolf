@@ -159,6 +159,7 @@ namespace Werewolf_Control.Helpers
             ChanceDetectiveCaught = 40,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            MaxExtend = 60;
     }
 }

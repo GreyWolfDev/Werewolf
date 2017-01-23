@@ -104,7 +104,7 @@ namespace Werewolf_Control.Handler
 
                         //now refresh the list
                         var list = db.GlobalBans.ToList();
-#if RELEASE2
+#if RELEASE
                         for (var i = list.Count - 1; i >= 0; i--)
                         {
                             if (list[i].Expires > DateTime.Now) continue;
@@ -1162,6 +1162,39 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
                             break;
+                        case "extend":
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Allow", language), $"setextend|{groupid}|true"));
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Disallow", language), $"setextend|{groupid}|false"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setextend|{groupid}|cancel"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("AllowExtendQ", language, grp.AllowExtend == true ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)), replyMarkup: menu);
+                            break;
+                        case "setextend":
+                            grp.AllowExtend = (choice == "true");
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("AllowExtendA", language, grp.AllowExtend == true ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)));
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                            DB.SaveChanges();
+                            break;
+                        case "maxextend":
+                            buttons.Add(new InlineKeyboardButton("60", $"setmaxextend|{groupid}|60"));
+                            buttons.Add(new InlineKeyboardButton("120", $"setmaxextend|{groupid}|120"));
+                            buttons.Add(new InlineKeyboardButton("180", $"setmaxextend|{groupid}|180"));
+                            buttons.Add(new InlineKeyboardButton("240", $"setmaxextend|{groupid}|240"));
+                            buttons.Add(new InlineKeyboardButton("300", $"setmaxextend|{groupid}|300"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setmaxextend|{groupid}|cancel"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("MaxExtendQ", language, Settings.MaxExtend, grp.MaxExtend ?? Settings.MaxExtend), replyMarkup: menu);
+                            break;
+                        case "setmaxextend":
+                            grp.MaxExtend = int.Parse(choice);
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("MaxExtendA", language, choice));
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                            DB.SaveChanges();
+                            break;
                         case "done":
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("ThankYou", language));
@@ -1274,11 +1307,13 @@ namespace Werewolf_Control.Handler
             //base menu
             //buttons.Add(new InlineKeyboardButton("Show Online Message", $"online|{id}"));
             buttons.Add(new InlineKeyboardButton("Change Language", $"lang|{id}"));
+            buttons.Add(new InlineKeyboardButton("Change Game Mode", $"mode|{id}"));
             buttons.Add(new InlineKeyboardButton("Show Roles On Death", $"roles|{id}"));
             buttons.Add(new InlineKeyboardButton("Show Roles At Game End", $"endroles|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Fleeing", $"flee|{id}"));
+            buttons.Add(new InlineKeyboardButton("Allow Extending Timer", $"extend|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Max Players", $"maxplayer|{id}"));
-            buttons.Add(new InlineKeyboardButton("Change Game Mode", $"mode|{id}"));
+            buttons.Add(new InlineKeyboardButton("Set Max Extend Time", $"maxextend|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Day Timer", $"day|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Lynch Timer", $"lynch|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Night Timer", $"night|{id}"));

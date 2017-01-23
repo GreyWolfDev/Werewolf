@@ -62,7 +62,7 @@ namespace Werewolf_Node
         public static int
 #if DEBUG
             MinPlayers = 1,
-            
+
 #else
             MinPlayers = 5,
 #endif
@@ -148,7 +148,8 @@ namespace Werewolf_Node
             BlacksmithConversionChance = 75,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            MaxJoinTime = 300;
 
 
 

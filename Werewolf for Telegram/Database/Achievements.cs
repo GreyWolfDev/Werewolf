@@ -62,7 +62,7 @@ namespace Database
         DoubleShifter = 4194304,
         [Display(Name="Hey Man, Nice Shot"), Description("As the hunter, use your dying shot to kill a wolf or serial killer")]
         HeyManNiceShot = 8388608,
-        [Display(Name= "That's Why You Don't Stay Home"), Description("As a wolf or cultist, killer or convert a harlot that stayed home")]
+        [Display(Name= "That's Why You Don't Stay Home"), Description("As a wolf or cultist, kill or convert a harlot that stayed home")]
         DontStayHome = 16777216,
         [Display(Name="Double Vision"), Description("Be one of two seers at the same time")]
         DoubleVision = 33554432,
