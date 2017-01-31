@@ -798,13 +798,13 @@ namespace Werewolf_Control.Handler
                                 var reply = groups.Take(5).Aggregate("",
                                     (current, g) =>
                                         current +
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                                 Thread.Sleep(500);
                                 reply = groups.Skip(5).Aggregate("",
                                     (current, g) =>
                                         current +
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
                             else
@@ -812,7 +812,7 @@ namespace Werewolf_Control.Handler
                                 var reply = groups.Aggregate("",
                                     (current, g) =>
                                         current +
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
                             break;
