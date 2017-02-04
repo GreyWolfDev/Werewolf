@@ -1248,4 +1248,38 @@
     <!--{0} = last cultist's name, {1} = CH's name -->
     <value>{1} e {0} si trovano faccia a faccia sulla piazza. Il Satanista estrae i pentacoli ed iniza lanciarli come shuriken ma {1} è troppo veloce! Si avvicina a {0} ed estrae con calma la katana. Tremante {0} si aggrappa alla sua statuetta di Satana e la usa per farsi scudo. Inutilmente, dato che la katana di {1} la taglia sia lui che la statua come se fossero fatti di burro.</value>
   </string>
-</strings>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo aumentato di {0} secondi!\nNe hai ancora {1} per fare /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo ridotto di {0} secondi!\nNe hai ancora {1}per fare /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Eh, no, solo gli admin possono prolungare il tempo più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai giocatori di estendere il tempo di join?\nAttuale: {0}\nAttenzione: gli admin potranno sempre prolungare il tempo o ridurlo.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Prolungamento tempo per i non-admin: {0}</value>
+  </string>
+    <string key="MaxExtendQ">
+    <value>Scegli il numero massimo di secondi che possono essere aggiunti al tempo di join.\nDefault: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo di prolungamento massimo: {0} secondi</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era sbronzo! Ora sei sbronzissimo anche tu e non puoi più attaccare {1}…</value>
+  </string>
+
+  </strings>

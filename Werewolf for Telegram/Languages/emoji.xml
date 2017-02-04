@@ -1167,4 +1167,52 @@
   <string key="GAGuardedWolf">
     <value>{0} 👼🚶➡🐺🔙🌃... 👱👱👱🔎👼 {0} 👈💀.</value>
   </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} 💭 {0} 🙂, {1} 🍝 {0}, ⚠ {0} 🎯 {1}❕ {0} 🏆 ❕!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} 💭 {0} 🙂, {1} 🍝 {0}, {0} 🚫🎯. {1} 🏆❕</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} ➕ {0} 🚶🚶, {1} 👀 {0} ➡👤, {1} 💂☠{0}❕ {1} 🏆❕</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>🕒 ➕ {0} ⏱❕\n{1} 🕒 /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>🕒 ➖ {0} ⏱❕\n{1} 🕒 /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>⛔❕🔨 🚫❕</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>😱❕ {0} ➡🍺❕ 👇🚫☠{1}...</value>
+  </string>
 </strings>

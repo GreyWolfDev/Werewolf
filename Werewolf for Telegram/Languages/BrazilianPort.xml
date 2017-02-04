@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
    Translated by / Traduzido por:
        Lucas Montuano (@montuano) e Guto Cristino (@guto_xtino)
    Currently being translated by / Atualmente sendo traduzido por:
 		Dan (@vergonha), Danilo (@daniloosoo), Eric Romero (@ericromeero), Gabriel Borjoize (@Borjoize), jR750Ac (@jr750ac), Mocha (@MochaKH), Nical(@Nical), Pug (@Capitalista), Saah (@ayylimao), @jr750ac, Shelder (sats_sjrp) e Nicholas Alexandre (@Nical) 
 		Team leaders: @ayylimao, @Borjoize
-	   (Última edição: 09/12/2016, por @sats_sjrp)
+	   (Última edição: 07/01/2017 por @UmReal)
 -->
 <strings>
   <language name="Português (Brasil)" base="Português" variant="Brasil"/>
@@ -569,7 +569,7 @@
     <value>O lobo tentou atacar a pessoa errada a noite passada! O Caçador sabe se proteger muito bem e deixou um presentinho pra aldeia, o corpo de {0}!</value>
   </string>
   <string key="SerialKillerKilledWolf">
-    <value>Os lobos tentaram atacar a pessoa errada noite passada! {0} é econtrado sem sua pele pendurado na forca, quase dá pra sentir pena do lobo! O Serial Killer ganhou um novo casaco de peles.</value>
+    <value>Os lobos tentaram atacar a pessoa errada noite passada! {0} é encontrado sem sua pele pendurado na forca, quase dá pra sentir pena do lobo! O Serial Killer ganhou um novo casaco de peles.</value>
   </string>
   <string key="DefaultKilled">
     <value>Pareceu uma noite normal, mas onde está {0}? Os aldeões se reúnem na casa de {0}, e encontram seu corpo na banheira cheia de sangue com seus orgãos boiando... O Serial Killer se divertiu essa noite... {1}</value>
@@ -1178,5 +1178,53 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
   </string>
   <string key="GAGuardedWolf">
     <value>{0} tentou proteger um Lobo ontem a noite. A Aldeia acordou e apenas encontrou o corpo de {0} e suas penas, ensanguentadas no chão da Igreja.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabendo que {0} ainda está vivo, {1} tenta comer ele na calada da noite, mas ele não sabia que {0} estava esperando {1} com seu revólver engatilhado. O que restou de {1} foi sua carcaça, que foi usado como enfeite. O Caçador matou o último Lobo!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} viu que {0} ainda estava dormindo, então, aproveitou o momento para matá-lo. O que restou do Caçador foi só a mão dele perto do revólver. Parece que {0} tentou se defender, mas, foi muito tarde.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>Vendo um simbolo estranho rodeando o pescoço de {0}, {1} já se da conta que {0} é um membro da seita. Então, {0} tira sua espada pela última vez e mutila {1} matando-o (a). Agora a vila está salva da contaminação da seita.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo de entrada para o jogo extendido em {0} segundos!\n{1} restantes para o /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>*Tempo de entrada para o jogo reduzido em {0} segundo(s)*/n{1} restantes para o /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Apenas os administradores podem extender o tempo mais de uma vez!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Os jogadores podem extender o tempo?\nCurrent: {0} extender/nNota: Os admins sempre poderão extender</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} os jogadores podem extender tempo de join </value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo máximo para extender o jogo foi para {0} segundos. </value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Ah não! {0} era o bêbado! Agora você está bêbado e não poderá atacar {1}...</value>
   </string>
 </strings>

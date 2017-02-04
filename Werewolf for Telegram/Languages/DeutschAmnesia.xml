@@ -440,7 +440,7 @@
   <string key="WildChildTransform">
     <!-- 0 - roles name -->
     <!-- 0 - teamates names -->
-    <value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter -->
   <string key="Villager">
@@ -739,7 +739,7 @@
   <string key="DGTransformToMason">
     <!-- 0 - dead masons name -->
     <!-- 1 - mason colleguess name -->
-    <value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
   </string>
   <string key="DGToCult">
     <!-- 0 - new cultists name -->
@@ -748,7 +748,7 @@
   <string key="DGTransformToCult">
     <!-- 0 - roles name -->
     <!-- 1 - teammatess name -->
-    <value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DGs name -->
@@ -757,7 +757,7 @@
   <string key="DGTransformToWolf">
     <!-- 0 - targets name -->
     <!-- 1 - teammatess name -->
-    <value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
   </string>
   <string key="SerialKillerWins">
     <value>Die einzig lebende Person, die verbleibt, ist der Serienmörder! Er hat gewonnen!</value>
@@ -1232,12 +1232,12 @@
   <string key="DGTransformToAlpha">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-	<value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+	<value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
 	<!-- 0 - target's name -->
 	<!-- 1 - teammates's name -->
-	<value>Durch {0}s tot hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an Jemand anderes: {1}</value>
+	<value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
   </string>
   <string key="VillageTeam">
     <value>Team Dorftrottel</value>
@@ -1348,5 +1348,56 @@
   <string key="GAGuardedWolf">
   <!-- Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes. -->
     <value>Euer Schutzengel 👼, {0}, hat gestern Nacht versucht, einen Wolf 🐺 zu beschützen. Am Morgen findet ihr nur die Flügel, aufgehängt am Ziffernblatt der Uhr - irgendwie ein verstörender Anblick...</value>
+  </string>
+  
+   <!--DEC 26: 1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+	<value>{1} sah sich schon als glücklichen Gewinner, hatte aber nicht mit damit gerechnet, dass {0}, der komische alte Kauz, seine Drohungen tatsächlich wahr machen würde: die Reporterin des überregionalen Käseblatts findet am nächsten Morgen den Jäger 🎯, der stolz als einziger Überlebender neben dem getöteten Wolf 🐺 steht. Er hat sich außerdem gerade selbst zum Bürgermeister gewählt und will das Dorf nun in Eigenregie führen.</value>
+    <value>Im Wissen, dass nur noch {0} übrig war, versuchte {1} diesen aufzufressen, aber gegen militärisches Training und die jahrelange Paranoia des Jägers 🎯 kam der Werwolf 🐺 nicht im Geringsten an. Mit zwei präzisen Schüssen ist sein Leben verwirkt, und die letzte Person, die jetzt noch übrig ist ist, sichert dem Dorf den Sieg. Ein Hoch auf den Jäger!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+	<value>Aus gutem Grund hat {1} sich den Jäger 🎯 bis zuletzt aufgespart: mit seinem Gewehr ist er schon eine einschüchternde Erscheinung, doch scharfe Werwolfklauen sind schließlich auch eine nicht zu unterschätzende Waffe. Mit seiner gesammelten Erfahrung 🐺 war der arme {0} mit seiner Büchse allerdings chancenlos: mit seinem Tod stirbt der letzte menschliche Bewohner des Dorfes...</value>
+    <value>Was ein schlauer Wolf. 🐺 Obwohl {0} die längeste Zeit überaus wachsam war, hat jener es doch geschafft, ihn in einem unaufmerksamen Moment zu erwischen. Den letzten Dorfbewohner zu töten war dann keine schwere Aufgabe mehr für {1} und alles was jetzt von {0}, dem Jäger 🎯, noch übrig bleibt, ist sein Kopf, geziert mit zwei langen Kratzern.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+	<value>Auch wenn dem Dorf nur noch zwei Personen geblieben sind, freut sich {1} auf die Aussicht, in dieser Nacht dem Kult entgültig den Garaus zu machen, obgleich die letzte andere überlebende Person im Dorf ein Kultist sein mag oder nicht - die Gewissheit zählt. In gewohnter Montur und Manier ist das Vorhaben für den Kultistenjäger 💂 kein Problem, den Job erledigt er immerhin jede Nacht. Und tatsächlich wird er fündig! Ein schimmerndes Kreuz, das sich auf einem Tisch im Eingang des Hauses von {0} befindet, verrät eindeutig, dass hier ein Kultist 👤 hausen muss. Doch fehlt jede Spur des Enttarten. Hinter ein großen Vase vor dem Haus versteckt, wartet {1} auf den erst am Morgen zurückkehrenden Kultisten. Was dieser in der Nacht getrieben hat, lässt {1} zwar erschaudern, kann ihn aber nicht daran hindern, sich von hinten zu nähern und das Dorf um eine weitere Person zu dezimieren.</value>
+    <value>{1} und {0} laufen gemeinsam auf das Zentrum des Dorfes zu. Als {0} plötzlich beginnt, von seinem Kult 👤 zu erzählen, zögert der Andere nicht lange und erhebt sein Schwert ein letztes Mal, auf dass die falsche Lehre des Kultes dem Dorf nie wieder schaden könne. Der Kultistenjäger 💂 schwört, das Dorf auch weiterhin vor fremden und unheimlichen Kulturen zu verteidigen - auch wenn er so wohl auf lange Zeit der einzige Bewohner bleiben wird...</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Die Zeit, um beizutreten, wurde um {0} Sekunden erhöht.\nJetzt habt ihr noch {1} Sekunden, um beizutreten!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Die Zeit, um beizutreten, wurde um {0} Sekunden verringert.\n{1} verbleiben, um dem Spiel beizutreten!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Nur Gruppenadmins können die Zeit mehr als einmal pro Spiel erhöhen.</value>
+	
+  </string>  
+    <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Dürfen Spieler die Zeit, um beizutreten, erhöhen?\nAktuell: {0}\nBeachte: Admins können die Zeit immer erhöhen</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Spieler dürfen die Zeit erhöhen.\nNeue Einstellung: {0}</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Wie viele Sekunden darf der /extend-Befehl bei einem Aufruf maximal hinzufügen?\nStandard: {0}\nAktuell: {1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Die maximale /extend-Zeit ist jetzt {0} Sekunden.</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Irgendwas ist letzte Nacht passiert, du erinnerst dich aber nur an zwei Namen: {0} und {1}</value>
   </string>
 </strings>
