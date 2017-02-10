@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- maintained with love by @Laceygirl and @DingensX ♥ | contributed by @Stella211, @BlackPika, @Olfi1 and @Olgabrezel // version 02.01.2017 -->
+<!-- maintained with love by @Laceygirl and @DingensX ♥ | contributed by @syscaller, @Stella211, @BlackPika, @Olfi1 and @Olgabrezel - originally translated by @Gressl // version 30.01.2017 -->
 <!-- RIP Hauptmann. We miss you. * 05.11.2016 † 06.11.2016 -->
 
 <strings>
@@ -415,7 +415,7 @@
   </string>
   <string key="WolvesEatYou" >
     <value>Oh nein! Die Wölfe haben dich gefressen. NOMNOMNOMNOM</value>
-	<value>Wie es sich wohl anfühlt, seines Lebens beraubt zu werden, obwohl man noch so viel vorhat? Na davon kannst du jetzt ein Lied singen... du wurdest von den Wölfen gefressen!</value>
+	<value>Wie es sich wohl anfühlt, seines Lebens beraubt zu werden, obwohl man noch so viel vorhatte? Na davon kannst du jetzt ein Lied singen... du wurdest von den Wölfen gefressen!</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
@@ -650,14 +650,16 @@
     <value>ein Freimaurer 👷</value>
   </string>
   <string key="RoleInfoMason">
-	<value>Du bist ein Freimaurer 👷. Die Leute glauben zwar, du wärst Maurer von Beruf, aber das ist alles nur Teil deiner Tarnung. Wenn du nicht gerade über deinen Büchern sitzt und Verschwörungstheorien ausarbeitest, übst du auch gerne mittelalterlichen Schwertkampf und spielst historische Schlachten nach - wenn du tatsächlich Gleichgesinnte findest, natürlich auch liebend gern gemeinsam. So weißt du, wer die anderen Freimaurer sind und erfährst genauso, wenn einer von ihnen vom Kult bekehrt wird.</value>
+	<value>Du bist ein Freimaurer 👷. Die Leute glauben zwar, du wärst Maurer von Beruf, aber das ist alles nur Teil deiner Tarnung. Wenn du nicht gerade über deinen Büchern sitzt und Verschwörungstheorien ausarbeitest, übst du auch gerne mittelalterlichen Schwertkampf und spielst historische Schlachten nach - wenn du tatsächlich Gleichgesinnte findest, natürlich auch liebend gern gemeinsam. So weißt du, wer die anderen Freimaurer sind und erfährst genauso, wenn einer von ihnen abtrünnig wird.</value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
     <value>Als die Sonne aufging, konnte man den Körper von {0} blutverschmiert auf einem Fels liegen sehen. Der Tote hatte ein Freimaurerabzeichen 👷 in seiner Westentasche.</value>
   </string>
   <string key="MasonTeam">
-    <value>Pass nur auf, dass du deine neuen Freunde nicht eines Tages anprangerst. Zur Erinnerung, hier ist die Mitgliederliste: {0}</value>
+  <!-- combined with RoleInfoMason -->
+  <!-- leave the space! -->
+    <value> Pass nur auf, dass du deine neuen Freunde nicht eines Tages anprangerst. Zur Erinnerung, hier ist die Mitgliederliste: {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
@@ -875,7 +877,7 @@
   <string key="HarlotFuckKillerPublic">
 	<!-- 0 - harlot's name -->
     <value>Am nächsten Morgen findet ihr den Körper von {0}, das hübsche Gesicht schrecklich entstellt durch zahlreiche Messerstiche... 🔪 und ein kleines, eingeritztes Herz unter der Brust. Was das wohl zu bedeuten hat? 💋 Alles, an das ihr euch erinnert, ist ein Kommentar von gestern. Sie wollte des nachts jemanden besuchen... doch wen?</value>
-	<value>Als die Sonne aufgeht, versammeln sich alle Dorfbewohner auf dem Dorfplatz. Entgeistert starren sie auf den Anblick, der sich ihnen bietet: eine Leiche, zu viele Stichwunden 🔪, um sie zählen zu können. Erst dann fällt ihnen auf, dass {0}, die Hure, fehlt... Wen sie wohl diese Nacht besucht hat?</value>
+	<value>Als die Sonne aufgeht, versammeln sich alle Dorfbewohner auf dem Dorfplatz. Entgeistert starren sie auf den Anblick, der sich ihnen bietet: eine Leiche, zu viele Stichwunden 🔪, um sie zählen zu können. Erst dann fällt ihnen auf, dass {0}, die Hure 💋, fehlt... Wen sie wohl diese Nacht besucht hat?</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -1480,7 +1482,7 @@
     <value>Das Dorf erwacht, um einen grauenerregenden Fund zu machen: {0} liegt, von Kopf bis Fuß aufgeschnitten 🔪, nebst seinen herausgetrennten Organen in seinem Wohnzimmer, ein Deck Tarotkarten 👳 noch in der Hand. Seltsamerweise fehlt der Kopf, als wollte sich der Serienmörder über den Verlust einer der klügsten Köpfe lustig machen...</value>
   </string>
   <string key="SorcererEaten">
-    <value>Früh am Morgen erklingt plötzlich ein seltener Ton: klagendes Geheul! 🐺 Ein unverzeihliches Missgeschick ist geschehen: die Wölfe haben ihren eigenen Verbündeten gefressen. {0}, der Zauberer 🔮 ist tot.</value>
+    <value>Früh am Morgen erklingt plötzlich ein seltener Ton: klagendes Geheul! 🐺 Ein unverzeihliches Missgeschick ist geschehen: die Wölfe haben ihren eigenen Verbündeten gefressen. {0}, der Zauberer 🔮, ist tot.</value>
     <value>Verzweifelte Schreie haben vergangene Nacht so manchem Bürger den Schlaf geraubt... Immer wieder hörte man "Ich bin euer Verbündeter! Ich gehöre zu euch!" Als sich am nächsten Morgen endlich der erste Bürger hinaustraut, findet er nur abgenagten Knochen und einen zerschmetterten lilafarbenen Kristall... Nach einigem Überlegen erkennt man in den Scherben den heißgeliebten Talisman von {0}. Hunger schlägt Freundschaft... 🐺 Der Zauberer 🔮 musste das auf die harte Tour lernen.</value>
   </string>
   <string key="WildChildEaten">
@@ -1509,7 +1511,7 @@
   </string>
   <string key="GAGuardedWolf">
     <value>Euer Schutzengel 👼, {0}, hat gestern Nacht versucht, einen Wolf 🐺 zu beschützen. Am Morgen findet ihr nur die Flügel, aufgehängt am Ziffernblatt der Uhr - irgendwie ein verstörender Anblick...</value>
-    <value>Wer würde sich schon über kostenlosen Lieferservice - ob bestellt oder nicht - beschweren? Wohl kaum jemand. Die Wölfe 🐺 ließen sich durch den göttlichen Boten allerdings nicht gnädig stimmen, im Geenteil, sie sahen {0} viel mehr als hervorragendes Nachtmahl an. Heute Morgen findet man nur noch die Knochen des Schutzengels 👼, fein säuberlich eingewickelt in sein heiliges Gewand, das aus irgendeinem Grund nicht von bBlutbefleckt ist...</value>
+    <value>Wer würde sich schon über kostenlosen Lieferservice - ob bestellt oder nicht - beschweren? Wohl kaum jemand. Die Wölfe 🐺 ließen sich durch den göttlichen Boten allerdings nicht gnädig stimmen, im Gegenteil, sie sahen {0} viel mehr als hervorragendes Nachtmahl an. Heute Morgen findet man nur noch die Knochen des Schutzengels 👼, fein säuberlich eingewickelt in sein heiliges Gewand, das aus irgendeinem Grund nicht von blutbefleckt ist...</value>
   </string>
   
    <!--DEC 26: 1vs1 finales-->

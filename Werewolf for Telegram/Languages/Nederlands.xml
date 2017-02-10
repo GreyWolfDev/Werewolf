@@ -7,7 +7,7 @@
 <!--- Last update: 2016-11-06 Fout in encoding hersteld. Smileys opnieuw toegevoegd. Nog een paar taalfouten eruit gehaald. -->
 
 <strings>
-  <language name="Nederlands" base="Nederlands" variant=""/>
+  <language name="Nederlands" base="Nederlands" variant="Normal"/>
   <string key="NotInGame">
     <value>Je bent nu niet aan het spelen...</value>
   </string>
@@ -184,7 +184,7 @@
     <value>Jij bent de Aanschouwer 👁. Het enige dat je kan doen is zien wie de echte Ziener 👳 is - dat is het enige doel in je leven.</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >Jij bent de Leerling van de Ziener 🙇. Als ze sterven, dan valt hun lot op je, en wordt jij de Ziener 👳.</value>
+    <value >Jij bent de Leerling van de Ziener 🙇. Als hij sterft, dan valt hun lot op je, en word jij de Ziener 👳.</value>
   </string>
   <string key="RoleInfoCultist" >
     <value >Bent lid van een mystieke Sekte, en elke nacht kan je kiezen om een dorpsbewoner te inwijden. Als iedereen lid van de Sekte is, dan winnen ze.</value>
@@ -621,7 +621,7 @@
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>De Sekte leerde vannacht, dat {1) de voorkeur geeft aan eigen rituelen. {0} is dood, zijn lichaam net een speldenkussen: meer messen dan vlees.</value>
+    <value>De Sekte leerde vannacht, dat {1} de voorkeur geeft aan eigen rituelen. {0} is dood, zijn lichaam net een speldenkussen: meer messen dan vlees.</value>
   </string>
   <string key="GuardKiller">
     <value>Jij hebt geprobeerd de Seriemoordenaar 🔪 te beschermen, als dank heeft hij je jouw vleugels afgesneden. Je zult nooit meer kunnen vliegen en sterft van verdriet.</value>
@@ -898,10 +898,10 @@
     <value>Nee</value>
   </string>
   <string key="Allow">
-    <value>Toestaan</value>
+    <value>Toegestaan</value>
   </string>
   <string key="Disallow">
-    <value>Niet toestaan</value>
+    <value>Niet toegestaan</value>
   </string>
   <string key="Show">
     <value>Tonen</value>
@@ -1171,5 +1171,71 @@
 De Burgemeester {0} hangt aan de muur van zijn vergaderkamer met een 🔪 als punaise. Het is duidelijk de seriemoordenaar heeft wraak genomen voor zijn jarenlange opsluiting in de TBS kliniek</value>
 <value>De Burgemeester {0} hangt aan de muur van zijn vergaderkamer met een 🔪 als punaise. Justitie twijfelt tussen een werkongeval of de seriemoordenaar die wraak heeft genomen voor zijn jarenlange opsluiting in de TBS-kliniek.</value>
 <value>MOORDAANSLAG! De burgemeester {0} hangt aan de muur van zijn vergaderkamer met een 🔪 als punaise. Het is duidelijk de seriemoordenaar heeft wraak genomen voor zijn jarenlange opsluiting in de tbs kliniek</value>
+  </string>
+  <string key="Ping2">
+    <value>Tijd om ping bericht te versturen: {0}</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is vermoord, jouw transformatie naar Roedelleider ⚡️ vindt plaats. Team 🐺 (als je niet alleen bent) bestaat uit: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is vermoord, je transformeerde in de wolf pup 🐶
+      Team 🐺 (als je niet alleen bent) bestaat uit: {1}</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>De Sekte stuurt {0} om {1} te bekeren, helaas in plaats daarvan vliegt het hoofd van {0} uit het raam.... Goh, waarom vonden de wolven 🐺 dit oneetbaar?
+{0} is overleden.</value>
+  </string>
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tijd om mee te doen verlengd met {0} seconden.\nNog {1} seconden om mee te doen, gebruik /join!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tijd om mee te doen verkort met {0} seconden.\nNog {1} seconden om mee te doen, gebruik /join!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Alleen de admins kunnen de tijd meer dan 1 keer per ronde verlengen!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Het geluid van rouwend gejank wordt gehoord door de hele stad.  De wolven🐺 hebben een fout gemaakt.  Ze hebben één van hun eigen kant vermoord. De toevenaar {0} 🔮 is dood.</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Wetende dat {0} de enige/enigste overlevende dorpeling is, besluit {1} om {0} op te eten. Maar {0}'s rigide militaire en PTSS paranoia blijkt te veel voor {1} 🐺. Alles wat er over is een rokend karkas met 2 kogels recht in het ♥️. De jager 🎯 is de laatst staande en kraait nu VICTORIE!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Terwijl {0} twijfelend en paranoïde om zich heen staarde, zoekt {1} het tijdstip uit waarbij {0} bijna in dommeld. Het vermoorden van de laatste dorpeling is een appeltje, eitje klus voor {1}🐺. Alles wat er over blijft van {0}🎯 is een gemutileerd lichaam met mooie parallelle krassen over zijn gezicht.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Het zou een nacht moeten zijn geweest waarin {0} het dorp zou redden van de moordenaars, maar de halo van {0} is gedoofd en de vleugels👼 afgerukt door de seriemoordenaar!🔪 Alleen een briefje bleef achter:  "ik kon mezelf beter beschermen dan jij ooit zou kunnen".</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{0} en {1} komen buiten in het ochtendlicht. {1} ziet een kruisje schitteren om de nek van {0}, de rechtschapen {1} trekt zijn zwaard om voor de laatste keer af te rekenen met de verdraaide denkbeelden van de sekte die het dorp vervuilden.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Het lijkt dat dorpssmid {0} ⚒erg onfortuinlijk is. Met vijf net door {0} gesmede messen in zijn handpalmen, voeten en voorhoofd, wordt hij aan zijn werkbank genageld gevonden. Mogelijk wilde de seriemoordenaar 🔪 naast zijn orgaancollectie ook zijn wapenarsenaal uitbreiden...</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>In het dorp worden alle alarm klokken voor dag en dauw geluid, terwijl gewapende wachten, lopend door de straten de verdwijning van prins {0} onderzoeken. Er worden geen aanwijzingen gevonden, maar de verdenking bestaat dat er een seriemoordenaar op vrije voeten is...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>De Kreet "ik ben je bondgenoot " werd vannacht gehoord. Alles wat het dorp de volgende ochtend vond, was een aangevreten lichaam en een gebroken magische bol. Deze behoorde toe aan {0} de Tovenaar 🔮. Een gevulde maag is belangrijker dan vriendschap...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! De wolven hadden zin in een heerlijk mals stukje vlees en kozen het Wilde Kind, {0}, uit als halpje. Het enige wat overbleef was een mini-geraamte. Het dorp vraagt zich af of de wolven enige vorm van schuldgevoel hebben na het eten van een weerloos kind.</value>
+<value>OMNOMNOMNOM!  De wolven🐺 zijn vannacht gehoord,  terwijl ze een Wild Kind 👶 {0} op aten,  waarbij ze alleen een skelet overhielden. Het dorp vraagt zich af of de wolven enige schuld voelde voor het verscheuren van het kind.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Schijnbaar was {0} vannacht betrapt tijdens een dutje! Iemand had een geweer af horen gaan, maar wat er gevonden wordt Is het lijk van de konstabel 🔫. De seriemoordenaar 🔪 heeft hem door het hoofd geschoten en in het hart gestoken... Het is overduidelijk dat hij gewonnen heeft!</value>
   </string>
 </strings>
