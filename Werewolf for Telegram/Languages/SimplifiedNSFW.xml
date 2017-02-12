@@ -1172,4 +1172,48 @@
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>昨晚【{0}】试图保护了……一只狼。他把自己都搭上了。【守护天使 👼】被吃掉了。</value>
   </string>
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>半夜，【{0}】拿着枪准备跑出去练枪法，却看见【{1}】正在大嚼特嚼……于是猎人熟练的关保险、上膛、瞄准。啪~【狼人🐺】被打死了。</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>半夜，【{0}】躲在屋子里，摩挲着他的宝贝枪，这是时【{1}】偷偷跑了进来，一口咬到了心神不定的猎人的喉咙……【猎人🎯】死的好惨啊。</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>清晨，【{0}】跑出来进行例行朝拜，正好撞上【{1}】，于是被他“驱魔”了。【邪教徒👤】死了。</value>
+  </string>
+
+   <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>现在又多了【{0}】秒时间！\n还有【{1}】秒可以/join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>剩余加入时间减少了【{0}】秒！\n只剩【{1}】秒可以/join</value>
+  </string>
+  <string key="CantExtend">
+    <value>总是改时间，你烦不烦啊！</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>是否允许玩家修改加入时间？\n当前设置：【{0}】\n注意：管理员无论什么情况下都能改。</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>【{0}】所有玩家更改加入时间</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>你希望每次 /extend 最多更改多长的时间呢？\n预设是【{0}】秒\n当前设置是【{1}】秒</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>每次用 /extend 更改加入时间的秒数已设置为【{0}】秒。</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>你吃了【{0}】，然后被他血液里浓郁的乙醇放倒，没法去吃【{1}】了！</value>
+  </string>
 </strings>
