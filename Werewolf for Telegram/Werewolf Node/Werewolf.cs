@@ -761,8 +761,11 @@ namespace Werewolf_Node
 
                 if (player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
-                    var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
-                    SendWithQueue(msg);
+                    if (DbGroup.EnableSecretLynch == false)
+                    {
+                        var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
+                        SendWithQueue(msg);
+                    }
                     
                     if (NoOneCastLynch)
                     {

@@ -188,7 +188,8 @@ namespace Werewolf_Control
                 MaxPlayers = 35,
                 CreatedBy = createdBy,
                 AllowExtend = false,
-                MaxExtend = 60
+                MaxExtend = 60,
+                EnableSecretLynch = false
             };
         }
 
