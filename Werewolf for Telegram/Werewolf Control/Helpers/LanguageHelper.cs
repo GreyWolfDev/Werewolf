@@ -362,7 +362,15 @@ namespace Werewolf_Control.Helpers
             {
                 File.Delete(path);
             }
-            ZipFile.CreateFromDirectory(Bot.LanguageDirectory, path);
+
+            //create our zip file
+            using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
+            {
+                var langs = Directory.GetFiles(Bot.LanguageDirectory);
+                foreach (var lang in langs)
+                    zip.CreateEntryFromFile(lang, lang, CompressionLevel.Optimal); //add the langs to the zipfile
+            }
+            
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
             Bot.Api.SendDocument(id, new FileToSend("languages.zip", fs));
@@ -395,9 +403,7 @@ namespace Werewolf_Control.Helpers
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
                 Bot.Api.SendDocument(id, new FileToSend($"{zipname}.zip", fs));
-
-                //uncomment following line if you don't want to store those zipfiles
-                //File.Delete(path);
+                
             }
             catch (Exception e)
             {
