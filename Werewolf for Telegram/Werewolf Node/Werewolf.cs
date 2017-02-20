@@ -3238,7 +3238,11 @@ namespace Werewolf_Node
                 case 0:
                     return DoGameEnd(ITeam.NoOne);
                 case 1:
-                    return alivePlayers.FirstOrDefault() != null && DoGameEnd(alivePlayers.FirstOrDefault().Team);
+                    var p = alivePlayers.FirstOrDefault();
+                    if (p.PlayerRole == IRole.Tanner)
+                        return DoGameEnd(ITeam.NoOne);
+                    else
+                        return DoGameEnd(ITeam.Village);
                 case 2:
                     //check for lovers
                     if (alivePlayers.All(x => x.InLove))
