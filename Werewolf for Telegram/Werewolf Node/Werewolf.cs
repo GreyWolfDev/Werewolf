@@ -2085,7 +2085,7 @@ namespace Werewolf_Node
                 //first off, chance to tell wolves
                 if (Program.R.Next(100) < Settings.ChanceDetectiveCaught)
                 {
-                    foreach (var w in Players.Where(x => !x.IsDead && x.PlayerRole == IRole.Wolf))
+                    foreach (var w in Players.Where(x => !x.IsDead && (x.PlayerRole == IRole.Wolf || x.PlayerRole == IRole.AlphaWolf || x.PlayerRole == IRole.WolfCub)))
                     {
                         Send(GetLocaleString("DetectiveCaught", $"{detect.GetName()}"), w.Id);
                     }
