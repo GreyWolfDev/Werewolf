@@ -50,8 +50,8 @@ namespace Werewolf_Control.Helpers
         }
         internal delegate void ChatCommandMethod(Update u, string[] args);
         internal static List<Command> Commands = new List<Command>();
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
-        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
+        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\TempLanguageFiles"));
         public static void Initialize(string updateid = null)
         {
 
