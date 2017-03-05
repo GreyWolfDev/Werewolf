@@ -31,7 +31,7 @@ namespace Werewolf_Control.Models
     {
         public StatsInlineCommand(User u)
         {
-            Program.Log("Trying to find stats");
+
             Description = "Get personal stats";
             Command = "stats";
             try
@@ -47,25 +47,16 @@ namespace Werewolf_Control.Models
                         Command = "";
                         return;
                     }
-                    Program.Log("From User: " + p.Name);
+
                     var gamesPlayed = p.GamePlayers.Count();
-                    Program.Log("Games Played");
                     var won = p.GamePlayers.Count(x => x.Won);
-                    Program.Log("Games Won");
                     var lost = gamesPlayed - won;
-                    Program.Log("Games Lost");
                     var survived = p.GamePlayers.Count(x => x.Survived);
-                    Program.Log("Games Survived");
                     var roleInfo = db.PlayerRoles(u.Id).ToList();
-                    Program.Log("roleInfo");
                     var killed = db.PlayerMostKilled(u.Id).FirstOrDefault();
-                    Program.Log("Killed");
                     var killedby = db.PlayerMostKilledBy(u.Id).FirstOrDefault();
-                    Program.Log("Killed by");
                     var ach = (Achievements) (p.Achievements ?? 0);
-                    Program.Log("Achievements");
                     var count = ach.GetUniqueFlags().Count();
-                    Program.Log("Achievements Count");
 
                     Content = String.IsNullOrWhiteSpace(u.Username)
                         ? $"{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}"
@@ -77,12 +68,10 @@ namespace Werewolf_Control.Models
                                $"{gamesPlayed.Pad()}Total Games\n" +
                                $"<code>{killed?.times}</code>\ttimes I've gleefully killed {killed?.Name.FormatHTML()}\n" +
                                $"<code>{killedby?.times}</code>\ttimes I've been slaughted by {killedby?.Name.FormatHTML()}";
-                    Program.Log("Content: " + Content);
                 }
             }
             catch (Exception e)
             {
-                Program.Log("Fehler: " + e.Message);
                 Content = "Unable to load stats: " + e.Message;
             }
         }

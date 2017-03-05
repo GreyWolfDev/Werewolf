@@ -141,24 +141,24 @@ namespace Werewolf_Control
 
         public static void Log(string s, bool error = false)
         {
-            while (_writingInfo)
-                Thread.Sleep(50);
-            Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
-            if (Console.CursorTop >= 30)
-                Console.CursorTop = 19;
-            Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
-            Console.WriteLine(s);
-            try
-            {
-                using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
-                {
-                    sw.WriteLine($"{DateTime.Now} - {s}");
-                }
-            }
-            catch
-            {
-                // ignored
-            }
+            //while (_writingInfo)
+            //    Thread.Sleep(50);
+            //Console.CursorTop = Math.Max(Console.CursorTop, 6 + Bot.Nodes.Count + 1);
+            //if (Console.CursorTop >= 30)
+            //    Console.CursorTop = 19;
+            //Console.ForegroundColor = error ? ConsoleColor.Red : ConsoleColor.Gray;
+            //Console.WriteLine(s);
+            //try
+            //{
+            //    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
+            //    {
+            //        sw.WriteLine($"{DateTime.Now} - {s}");
+            //    }
+            //}
+            //catch
+            //{
+            //    // ignored
+            //}
         }
 
         private static void MessageMonitor()
