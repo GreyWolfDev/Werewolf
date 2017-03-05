@@ -48,17 +48,17 @@ namespace Werewolf_Control.Helpers
         public static List<string> SerialKillerWins = new List<string> { "BQADBAADdQMAAsEcZAd7skaRqoWKzQI", "BQADBAADmgMAArgcZAdPyqayfRT6bQI", "BQADBAADOAQAAqUXZAeeuV5vjRd6QAI", "BQADBAADKwMAAsQZZAfwd2_EAeeOTgI" };
         public static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeHmbRRzioXXQI", "BQADBAADYAMAAkMdZAfR4qo8c95FGgI" };
 #elif RELEASE
-        public static List<string> VillagerDieImages = new List<string> { "BQADAwADggADdBexB2aZTAMpXRGUAg", "BQADBAADKgMAAoMbZAfmSqOE1YY-9wI", "BQADBAADWAMAAt4cZAe6rGbV3KvLggI" };
-        public static List<string> WolfWin = new List<string> { "BQADAwADgAADdBexB015e-EU6O9CAg", "BQADAwADgQADdBexB9ksBD5NOWQvAg" };
-        public static List<string> WolvesWin = new List<string> { "BQADBAADlwMAAtgaZAfCK5MVLj27CwI", "BQADBAADcAMAAn8ZZAe0Xjey6zCmQwI" };
-        public static List<string> VillagersWin = new List<string> { "BQADAwADgwADdBexB2K0cDWari8QAg" };
-        public static List<string> NoWinner = new List<string> { "BQADBAAD8QgAAqIeZAeufUVx9eT3SgI", "BQADBAADuAMAAlUXZAfNGmq-KVN_0AI" };
-        public static List<string> StartGame = new List<string> { "BQADAwADhAADdBexB3lX1nJOQOdEAg", "BQADBAADwg0AAu0XZAcUNBLuEjnBhgI" };
-        public static List<string> StartChaosGame = new List<string> { "BQADBAAD7wYAAgcYZAei_MiVQcRUIAI", "BQADBAAD_wcAAiUYZAeV5N-hkeMW0QI" };
-        public static List<string> TannerWin = new List<string> { "BQADBAADQwgAAuQaZAcWZKq6Zm4NJAI", "BQADBAAD_gMAAtgaZAeJOVus4yf3RAI" };
-        public static List<string> CultWins = new List<string> { "BQADBAADWAMAAosYZAf5H-sYZ53nMwI", "BQADBAADHwsAAgUYZAeDkYYi5N3cIgI" };
-        public static List<string> SerialKillerWins = new List<string> { "BQADBAADKwMAAsQZZAf4t254zcOVdgI", "BQADBAADOAQAAqUXZAdnNEO6TaxtnQI", "BQADBAADdQMAAsEcZAfkYMOxn9xzBAI", "BQADBAADmgMAArgcZAfW46sJoTg9VQI" };
-        public static List<string> LoversWin = new List<string> { "BQADBAAD8hUAAhYYZAeSI-kDTlm6QAI", "BQADBAADYAMAAkMdZAesBzPWN8zN3QI" };
+        public static List<string> VillagerDieImages = new List<string> { "CgADBAADiy8AAhEdZAf-k3MOF4KRBgI", "CgADBAADdjMAAroaZAdyAWpXybYiIQI", "CgADBAADegMAAm4dZAdSXQ9kmRsuzAI" };
+        public static List<string> WolfWin = new List<string> { "CgADBAADymAAAl4YZAfFdJXxc3DEVQI", "CgADBAADbgMAAjYXZAcl1gwXqfFASgI", "CgADBAADWSEAAjkZZAfPqRtqSVMHVQI" };
+        public static List<string> WolvesWin = new List<string> { "CgADBAADVhgAAioeZAcTV1iaCMWIKgI", "CgADBAAD8RoAAugcZAd96kQVCI3QaQI" };
+        public static List<string> VillagersWin = new List<string> { "CgADBAAD4GUAAiMZZAfmjSIVrUiUGAI", "CgADBAADpBgAAoseZAfNilKqc6jDfQI" };
+        public static List<string> NoWinner = new List<string> { "CgADBAADFisAAtEbZAcuQJBcLn0xdwI" };
+        public static List<string> StartGame = new List<string> { "CgADAgADAgADP4MRSfR9s2DJb4EnAg", "CgADBAADlgMAAjseZAeHuFFORfp4ngI"};
+        public static List<string> StartChaosGame = new List<string> { "CgADAgADAgADP4MRSfR9s2DJb4EnAg", "CgADBAADlgMAAjseZAeHuFFORfp4ngI", "CgADBAADPwMAAuQXZAdzAAFRMd2bgxUC"};
+        public static List<string> TannerWin = new List<string> { "CgADBAADk2MAAk8YZAd-MmAs-KfRYwI", "CgADBAADiBgAArUbZAd5ILA8FDtYVQI" };
+        public static List<string> CultWins = new List<string> { "CgADBAADC2IAAnUYZAcPQeurHX9VwgI", "CgADBAADuWUAAkkXZAeu4O96BLI4eQI" };
+        public static List<string> SerialKillerWins = new List<string> { "CgADBAADthcAAosZZAf10VuGO_4tsgI", "CgADBAAD8SoAAuIXZAf58CivX0RCWgI" };
+        public static List<string> LoversWin = new List<string> { "CgADBAADQgkAApUcZAcyzqpnIDCG_AI", "CgADBAAD0wMAAs8XZAfTibPxzK6PuQI" };
 #else
         public static List<string> VillagerDieImages = new List<string> { "BQADAwADggADdBexBxVNNy-rt--bAg", "BQADBAADWAMAAt4cZAfbY0WobzNPwAI", "BQADBAADKgMAAoMbZAc7Ldme4T3DKQI" };
         public static List<string> WolfWin = new List<string> { "BQADAwADgQADdBexBzrFBt-CBlhbAg", "BQADAwADgAADdBexB88vVl1RuLb3Ag" };
@@ -73,9 +73,9 @@ namespace Werewolf_Control.Helpers
         public static List<string> LoversWin = new List<string> { "BQADBAADYAMAAkMdZAf0_rs89KCyDAI", "BQADBAAD8hUAAhYYZAcV2T0l7f-lJQI" };
 #endif
 
-        /// <summary>
-        /// How many games are allowed for any given node
-        /// </summary>
+            /// <summary>
+            /// How many games are allowed for any given node
+            /// </summary>
         public static int MaxGamesPerNode = 60;
 
         /// <summary>

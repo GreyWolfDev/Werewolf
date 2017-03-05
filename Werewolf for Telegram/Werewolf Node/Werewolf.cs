@@ -275,6 +275,8 @@ namespace Werewolf_Node
                         GrpId = int.Parse(DbGroup.Id.ToString()),
                         Mode = Chaos ? "Chaos" : "Normal"
                     };
+                    
+                    db.SaveChanges();
                     db.Games.Add(game);
                     db.SaveChanges();
 
@@ -292,6 +294,8 @@ namespace Werewolf_Node
 
                         p.Language = dbp.Language;
 
+                        db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE UserId = {p.Id} and GroupId = {ChatId}");
+                        db.SaveChanges();
                         var gamePlayer = new GamePlayer
                         {
                             GameId = game.Id,
