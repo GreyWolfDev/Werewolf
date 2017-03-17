@@ -6,32 +6,32 @@
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! Use /join to get in on the fun... and probably die :P</value>
-    <value>A new game has been started by {0}! Use /join to get eaten!</value>
+    <value>{0} has started a game! Wish the bot a happy birthday (it was created on 18.03.2016) and /join!</value>
+    <value>A new game has been started by {0}! Use /join to join Werewolfbot's birthday party!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a chaos game! Use /join to get in on the fun... and probably die :P</value>
-    <value>A new chaos game has been started by {0}! Use /join to get eaten!</value>
+    <value>{0} has started a chaos game! Wish the bot a happy birthday (it was created on 18.03.2016) and /join!</value>
+    <value>A new chaos game has been started by {0}! Use /join to join Werewolfbot's chaotic birthday party!</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
-    <value>You can't join now! The game is already running.</value>
+    <value>You can't join now! The birthday party is already running.</value>
   </string>
   <string key="AlreadyJoined" deprecated="true">
     <value>You've already joined!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join</value>
+    <value>1 minute left to /join the bot's birthday party!</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} seconds left to /join</value>
+    <value>{0} seconds left to /join the bot's birthday party!</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Not enough players, cancelling game!</value>
+    <value>Not enough guests, the party is aborted! :(</value>
   </string>
   <string key="StartingGameWait">
-    <value>Game is starting, please wait while I assign roles and update the database.</value>
+    <value>THE PARTY IS STARTING! Please give the bot a second to find the right clothes to wear.</value>
   </string>
   <string key="BannedForExploit" deprecated="true">
     <!-- 0 - Player name -->
@@ -49,7 +49,7 @@
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+    <value>{0} has joined the party! Hey! {1} guests, {2} minimum, {3} max</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
@@ -61,7 +61,7 @@
   </string>
   <string key="Flee">
     <!-- 0 - Player name -->
-    <value>{0} has fled in terror!</value>
+    <value>{0} ran away from the birthday party! Werewolfbot won't be happy!</value>
   </string>
   <string key="PlayerRoleWas">
     <!-- 0 - Player name -->
@@ -76,7 +76,7 @@
     <value>Hey I didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
-    <value>You don't seem to be playing...</value>
+    <value>You don't seem to be in the birthday party...</value>
   </string>
   <string key="NoPlayerName">
     <value>I can't find a player by that name!</value>
@@ -97,7 +97,7 @@
   <string key="IdleKill">
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value>{0} has not voted for 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
+    <value>{0} has not appeared at the lynching for 2 days in a row. Werewolfbot saw this, felt very sad about it :( and chose to kill this bad guest. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>You traitor!!! You are now the wolf...</value>
@@ -214,28 +214,28 @@
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
-      Dusk draws near, and the villagers gather to decide who they are lynching this evening...
+      Dusk draws near, and the party guests all come to lynch dinner, to choose one person who will leave the party...
       Everyone now has {0} seconds to vote!
     </value>
   </string>
   <string key="DayTime" >
     <!-- 0 - number of seconds -->
-    <value >It is now day time.  All of you have {0} seconds to make your accusations, defenses, or just talk.</value>
+    <value >It is now day time.  All of you have {0} seconds to make your accusations, defenses, or just talk. And don't forget to wish Werewolfbot a happy birthday!</value>
   </string>
   <string key="NightTime" >
     <!-- 0 - number of seconds -->
-    <value >Night has fallen.  Everyone heads to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
+    <value >Night has fallen.  Everyone heads to bed, weary after the long party.  Night players: you have {0} seconds use your actions!</value>
   </string>
   <string key="LynchKill" >
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value >The villagers have cast their votes, amid doubts and suspicions. {0} is dead. {1}</value>
+    <value >The villagers have cast their votes, amid doubts and suspicions. Werewolfbot has approved, {0} is dead. {1}</value>
   </string>
   <string key="LynchTie" >
-    <value >Unable to come up with a proper decision on who to lynch, the mob returns to their homes for the night, frustrated...</value>
+    <value >Unable to come up with a proper decision on who to lynch, the mob returns to their homes for the night, frustrated... Werewolfbot is happy tho, his party kept its size for today!</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Something is fishy, for no one voted!  No lynch mob tonight...</value>
+    <value >Werewolfbot is sad. He feels ignored. It is his first birthday, and noone has come to vote. No player is lynched today...</value>
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
@@ -271,7 +271,7 @@
     <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar. A cultist has been killed by the cult hunter!</value>
   </string>
   <string key="NoAttack" >
-    <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
+    <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night. Everyone is happy and goes on having a great party with Werewolfbot!</value>
   </string>
   <string key="CursedBitten" >
     <value >You have been killed by the wolves.  As you were cursed, you have now become a wolf!</value>
@@ -289,7 +289,7 @@
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >Oh no! {0} was a drunk! Now you are drunk, and can't attack tomorrow night...</value>
+    <value >Oh no! {0} was a drunk! Now you are drunk, and can't attack tomorrow night... Well, maybe you are also drunk because of the party...</value>
   </string>
   <string key="GuardWolf" >
     <value >You tried to guard a wolf! The wolf has eaten you.</value>
@@ -315,7 +315,7 @@
   </string>
   <string key="HarlotNotHome" >
     <!-- 0 - player name -->
-    <value >Odd... {0} was not home! No dinner for you...</value>
+    <value >Odd... {0} was not home! No dinner for you... But the dinner at the party is big enough! You won't starve ;)</value>
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
@@ -358,19 +358,19 @@
     <value >Suddenly, a shot rings out.  The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
   </string>
   <string key="WolfWins" isgif="true" >
-    <value >The werewolf has won!</value>
+    <value >The werewolf has won! Congrats, nommer, from Werewolfbot!</value>
   </string>
   <string key="WolvesWin" isgif="true" >
-    <value >The werewolves have won!</value>
+    <value >The werewolves have won! Congrats, nommers, from Werewolfbot!</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value >The villagers have won!</value>
+    <value >The villagers have won! Congrats, lowlies, from Werewolfbot!</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value >Oh no! You lynched the Tanner! The Tanner wins the game, silly.</value>
+    <value >Oh no! You lynched the Tanner! The Tanner wins the game, silly. Tanner: Congrats from Werewolfbot!</value>
   </string>
   <string key="RemainingPlayersEnd">
-    <value>Remaining living players, roles, and team:</value>
+    <value>Werewolfbot is proud of having moderated such a cool party!\n\nRemaining living players, roles, and team:</value>
   </string>
   <string key="CultistVotedConvert" >
     <!-- 0 - Voter's name -->
@@ -429,7 +429,7 @@
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
-  <string key="Villager">
+<string key="Villager">
     <value>a Villager 👱</value>
   </string>
   <string key="Drunk">
@@ -482,7 +482,7 @@
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
-    <value>Ran away</value>
+    <value>scared of parties</value>
   </string>
   <string key="Dead">
     <value>💀 Dead</value>
@@ -491,7 +491,7 @@
     <value>🙂 Alive</value>
   </string>
   <string key="PlayersAlive">
-    <value>Players Alive</value>
+    <value>Party Guests Alive</value>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
@@ -526,7 +526,7 @@
   <string key="NameExists">
     <!-- 0 - target's name -->
     <!-- 1 - name -->
-    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join. Werewolfbot could mess up about you!</value>
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
@@ -547,7 +547,7 @@
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
-    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+    <value>Neither group admins nor Werewolfbot like people running away from the party! You stay!</value>
   </string>
   <string key="IsDead">
     <!-- used when gunner shoots a player -->
@@ -585,10 +585,10 @@
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
   <string key="NoGame">
-    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+    <value>There is no party going on at the moment!  Start a new one with /startgame or /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Only a group admin can run this command.</value>
+    <value>Werewolfbot doesn't like you to have that much influence at his birthday party! This is a group admin only command!</value>
   </string>
   <string key="ShuttingDown" deprecated="true">
     <value>After this game, I am shutting down for maintenance.</value>
@@ -796,7 +796,7 @@
   </string>
   <string key="NotifyNewGame">
     <!-- 0 - target's name -->
-    <value>A new game is starting in {0}</value>
+    <value>A new birthday party is starting in {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
     <!-- 0 - SK's name -->
@@ -804,12 +804,12 @@
     <value>Morning comes, and the remaining two villagers walk out to the town square.  {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Everyone in the village has died...  there's nothing but bodies left.  No one wins this round, except the vultures...</value>
+    <value>Everyone in the village has died...  there's nothing but bodies left.  No one wins this round, except the vultures... Werewolfbot is sad: noone is left to have a party with him :(</value>
   </string>
   <string key="SKHunterEnd">
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
-    <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the village is empty, there is no winner...</value>
+    <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the only one left on the party is Werewolfbot, there is no winner...</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
@@ -909,10 +909,10 @@
     <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
   </string>
   <string key="AboutPara">
-    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+    <value>Para is a great developer who created Werewolfbot! The exact date when he created it was the 18.03.2016!</value>
   </string>
   <string key="EndTime">
-    <value>Game Length: {0}</value>
+    <value>Party Length: {0}</value>
   </string>
   <!--New strings, July the 8th -->
 
@@ -1081,7 +1081,7 @@
     <value>Cult as a role set to: {0}</value>
   </string>
   <string key="ThankYou">
-    <value>Thank you, have a good day :)</value>
+    <value>Thank you, have a good day :) Enjoy my birthday! :D</value>
   </string>
   <string key="WhatLangGroup">
     <value>What language do you want to look for a group to play in?</value>
@@ -1132,11 +1132,10 @@
     <value>You are the Alpha Wolf; the source of the scourge. Your bite is the cause of the curse that turns humans into werewolves. Each night, you will choose a human to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into a werewolf.</value>
   </string>
   <string key="RoleInfoWolfCub">
-    <value>You are the Wolf Cub; adored by your wolf pack. Like other wolves, you will choose a villager to attack and kill every night. If you happen to be killed, your wolf pack will fly into a rage and attack two people the next night. You’ll still be dead though.</value>
+    <value>You are the Wolf Cub; adored by your wolf pack. Like other wolves, you will choose a villager to attack and kill every night. If you happen to be killed, your wolf pack will fly into a rage and attack two people the next night. You'll still be dead though.</value>
   </string>
   <string key="PrinceLynched">
-    <value>As the village begins to lynch {0}, they say “Wait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil.” Feeling foolish, the villagers sheepishly retire for the night.</value>
-  </string>
+    <value>As the village begins to lynch {0}, they say "Wait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil." Feeling foolish, the villagers sheepishly retire for the night.</value>  </string>
   <string key="SorcererOther">
     <value>You try to look at {0}, but can't quite make out what they are.  They are not a wolf or seer however...</value>
   </string>
@@ -1326,28 +1325,28 @@
   <!--1vs1 finales-->
   <string key="HunterKillsWolfEnd">
     <!--{0} = hunter's name, {1} = wolf's name-->
-    <value>Knowing only {0} was left, {1} tries to eat {0} up, but {0}'s military training and paranoia proves too much to handle! All there is left is a carcass with two shots to the torso and the last man standing: the victorious hunter for the village!
+    <value>Knowing only {0} was left, {1} tries to eat {0} up, but {0}'s military training and paranoia proves too much to handle! All there is left is a carcass with two shots to the torso and the last man standing: the victorious hunter for the village! Congrats by Werewolfbot!
     </value>
   </string>
   <string key="WolfKillsHunterEnd">
     <!--{0} = hunter's name, {1} = wolf's name-->
-    <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the hunter, adorned with parallel slashes to the face.</value>
+    <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the hunter, adorned with parallel slashes to the face. Congrats by Werewolfbot</value>
   </string>
   <string key="CHKillsCultistEnd">
     <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>{1} and {0} walk out in daylight. Seeing a shimmering cross worn around {0}'s neck, the righteous {1} draws their sword for the final time, putting an end to the twisted learnings of the cult that have contaminated the village.</value>
+    <value>{1} and {0} walk out in daylight. Seeing a shimmering cross worn around {0}'s neck, the righteous {1} draws their sword for the final time, putting an end to the twisted learnings of the cult that have contaminated the village. Congrats by Werewolfbot!</value>
   </string>
   
   <!-- Extend time -->
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Join time extended by {0} seconds!\n{1} left to /join</value>
+    <value>Join time extended by {0} seconds!\n{1} left to /join the great party!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Join time decreased by {0} seconds!\n{1} left to /join</value>
+     <value>Join time decreased by {0} seconds!\n{1} left to /join the great party</value>
   </string>
   <string key="CantExtend">
     <value>Only group admins can extend the time more than once!</value>
