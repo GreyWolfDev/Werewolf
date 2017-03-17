@@ -4,7 +4,7 @@
 	<language name="Italiano - NSFW"
 			base="Italiano"
 			variant="NSFW"/>
-	<string key="NotInGame">
+	<string key="NotInGame" deprecated="true">
 		<value>Ma cosa ti fumi? Non sei neanche in partita.</value>
 	</string>
 	<string key="PlayerStartedGame">
@@ -15,18 +15,20 @@
 		<value>{0} Ha iniziato una partita caos! Usa /join per unirti!\n(È caos, quindi non si capirà un cazzo)</value>
 		<value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
 	</string>
-	<string key="NoJoinGameRunning">
+	<string key="NoJoinGameRunning" deprecated="true">
 		<value>La partita è ancora in corso: ora siediti, piangi e aspetta.</value>
 	</string>
-	<string key="AlreadyJoined">
+	<string key="AlreadyJoined" deprecated="true">
 		<value>Oh, non insistere! Sei già dentro!</value>
 	</string>
 	<string key="MinuteLeftToJoin">
 		<value>Ancora 1 minuto per usare /join…</value>
 		<value>Manca un minuto alla carneficina. Fate /join!</value>
+		<value>Mancano 60 secondi! /join now!</value>
 	</string>
 	<string key="SecondsLeftToJoin">
 		<value>Ancora {0} secondi per usare /join…</value>
+		<value>Mancano {0} all'inizio! Ultima chance per fare /join!</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>Ah, tutti cagasotto, non siamo abbastanza. Cancello 'sta partita vah…</value>
@@ -35,17 +37,19 @@
 		<value>Eh? Cosa? Ah, sta iniziando la partita! Sì, arrivo…</value>
 		<value>Pronti a morire? </value>
 	</string>
-	<string key="BannedForExploit">
+	<string key="BannedForExploit" deprecated="true">
 		<value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi).</value>
 	</string>
 	<string key="ChangeNameToJoin">
 		<value>{0}, devi cambiare nome. Quello che hai adesso non mi piace.</value>
+		<value>{0}, questo tuo nome non va affatto bene… se vuoi giocare lo devi cambiare.</value>
 	</string>
 	<string key="PlayerLimitReached">
 		<value>Siamo pieni! Prendi il ticket!</value>
 	</string>
 	<string key="PlayerJoined">
 		<value>{0} si è unito. {1} potenziali vittime su {3} ({2} minimo, {3} massimo).</value>
+		<value>{0} vuole divertirsi! Siamo in {1} su minimo {2} e massimo {3}.</value>
 	</string>
 	<string key="PMTheBot">
 		<!-- 0 - Player name -->
@@ -57,14 +61,18 @@
 	</string>
 	<string key="Flee">
 		<value>{0} si è cagato sotto!</value>
+		<value>Sembra che {0} non abbia le palle per giocare… Codardo!</value>
 	</string>
 	<string key="PlayerRoleWas">
 		<value>\n{0} era {1}</value>
+		<value>\nAddio, {0}, ci mancherà {1}.</value>
+		<value>\nRIP {0}. Faremo senza {1}.</value>
 	</string>
 	<string key="CountPlayersRemain">
 		<value>Rimangono {0} giocatori.</value>
+		<value>Restiamo in {0} per la festa!</value>
 	</string>
-	<string key="DidntAsk">
+	<string key="DidntAsk" deprecated="true">
 		<value>Che vuoi? Non ti ho chiesto niente!</value>
 	</string>
 	<string key="NotPlaying">
@@ -73,7 +81,7 @@
 	<string key="NoPlayerName">
 		<value>Non esiste nessuno con questo nome, fuma di meno.</value>
 	</string>
-	<string key="AnswerNonValid">
+	<string key="AnswerNonValid" deprecated="true">
 		<value>Questa non è una risposta valida!</value>
 	</string>
 	<string key="WolfVotedKill">
@@ -92,7 +100,7 @@
 		<value>Scelta accettata</value>
 	</string>
 	<string key="BeholderSeer">
-		<value>\nIl il veggente è {0}</value>
+		<value>\nIl veggente è {0}.</value>
 	</string>
 	<string key="ApprenticeNowSeer">
 		<value>{0} era il Veggente. E siccome sei stronzo, prendi il suo posto.</value>
@@ -114,6 +122,8 @@
 	</string>
 	<string key="AskVisit">
 		<value>Chi vuoi scopare questa notte?</value>
+		<value>Chi ti vuoi sbattere questa notte?</value>
+		<value>Nel letto di quale fortunato salterai questa notte?</value>
 	</string>
 	<string key="AskSee">
 		<value>Chi vuoi scrutare?</value>
@@ -131,7 +141,7 @@
 		<value>A chi auguri la morte?</value>
 	</string>
 	<string key="AskConvert">
-		<value>Chi vuoi convertire al tuo culto?</value>
+		<value>Chi vuoi convertire al tuo satanismo?</value>
 	</string>
 	<string key="DiscussWith"><!--Leave the leading spaces here please-->
 		<value>  Sii sicuro di discutere con {0}</value>
@@ -480,25 +490,25 @@
 		<value>è morto</value>
 	</string>
 	<!-- MORE STRINGS May 16, 2016 -->
-	<string key="AdminAdded">
+	<string key="AdminAdded" deprecated="true">
 		<value>{0} È diventato admin. Usa /config per cambiare le impostazioni del gruppo.</value>
 	</string>
 	<string key="AlreadyInGame">
 		<value>EH! VOLEVI! Sei già in un altra partita! ({0})</value>
 	</string>
-	<string key="MultipleGames">
+	<string key="MultipleGames" deprecated="true">
 		<value>Il tuo gruppo è stato settato per far cominciare più partite… Uccisioni extra!</value>
 	</string>
-	<string key="GroupQueue">
+	<string key="GroupQueue" deprecated="true">
 		<value>Il gruppo è attualmente in lista d'attesa. Posizione: {0}/{1}</value>
 	</string>
-	<string key="MaintBreak">
+	<string key="MaintBreak" deprecated="true">
 		<value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire… Controlla @werewolfdev per altre informazioni.</value>
 	</string>
-	<string key="MaxGames">
+	<string key="MaxGames" deprecated="true">
 		<value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1}/{1}</value>
 	</string>
-	<string key="SkipQueue">
+	<string key="SkipQueue" deprecated="true">
 		<value>{0} è un gruppo ufficiale ed ha saltato la lista d'attesa!</value>
 	</string>
 	<string key="NoGame">
@@ -510,25 +520,25 @@
 	<string key="GroupAdminOnly">
 		<value>Solo un admin con il banhammer power può usare questo comando.</value>
 	</string>
-	<string key="ShuttingDown">
+	<string key="ShuttingDown" deprecated="true">
 		<value>Dopo questa partita mi spegnerò per una manutenzione. Godetevela!</value>
 	</string>
-	<string key="ShuttingDownUpdate">
+	<string key="ShuttingDownUpdate" deprecated="true">
 		<value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
 	</string>
-	<string key="NullIdAdmin">
+	<string key="NullIdAdmin" deprecated="true">
 		<value>UserId non valido. Sei sicuro di aver mandato questo comando come risposta?</value>
 	</string>
-	<string key="AlreadyAdmin">
+	<string key="AlreadyAdmin" deprecated="true">
 		<value>{0} è già un admin!</value>
 	</string>
-	<string key="NotAdmin">
+	<string key="NotAdmin" deprecated="true">
 		<value>{0} Non ha il potere del banhammer!</value>
 	</string>
-	<string key="AdminRemoved">
+	<string key="AdminRemoved" deprecated="true">
 		<value>{0} è stato rimosso dalla lista degli admin.</value>
 	</string>
-	<string key="LanguageSet">
+	<string key="LanguageSet" deprecated="true">
 		<value>Lingua settata su {0}</value>
 	</string>
 	<string key="NoSeer">
@@ -844,13 +854,13 @@
 	<string key="SentPrivate">
 	<value>Ti ho scritto in privato.</value>
 	</string>
-	<string key="StartPM">
+	<string key="StartPM" deprecated="true">
 	<value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
 	</string> 
-	<string key="PMTrue">
+	<string key="PMTrue" deprecated="true">
 	<value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
 	</string>
-	<string key="MustReplySmite">
+	<string key="MustReplySmite" deprecated="true">
 	<value>Devi rispondere all'utente che vuoi cacciare!</value>
 	</string>
 	<string key="WhatToDo">
@@ -1137,22 +1147,19 @@
 	</string>
 
 
-	<string key="VillageTeam">
+	<string key="VillageTeam" deprecated="true">
 	<value>Team Patate</value>
 	</string>
-	<string key="NeutralTeam">
+	<string key="NeutralTeam" deprecated="true">
 	<value>Neutro</value>
 	</string>
-	<string key="WolfTeam">
-	<value>Team Zanne</value>
-	</string>
-	<string key="SerialKillerTeam">
+	<string key="SerialKillerTeam" deprecated="true">
 	<value>Team Killer</value>
 	</string>
-	<string key="CultTeam">
+	<string key="CultTeam" deprecated="true">
 	<value>Team Satanisti</value>
 	</string>
-	<string key="TannerTeam">
+	<string key="TannerTeam" deprecated="true">
 	<value>Team Masochista</value>
 	</string>
 

@@ -6,13 +6,13 @@
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} بدء اللعب استخدمة علامة /join للانضمام</value>
+    <value>{0} بدأ اللعب. اضغط /join للانضمام</value>
     <value>تم بدء اللعب بواسطة {0}! استخدم /join للانضمام</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} بدء اللعب استخدمة علامة /join للانضمام</value>
-    <value>تم بدء اللعب على نمط الفوضى بواسطة  {0}! استخدم /join للانضمام</value>
+    <value>{0} بدأ اللعب. استخدم علامة /join للانضمام</value>
+    <value>تم بدء اللعب على النمط العشوائي بواسطة  {0}! استخدم /join للانضمام</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>لا يمكنك الانضمام الآن. انتظر حتى بداية اللعبة القادمة.</value>
@@ -49,7 +49,7 @@
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>{0} انضم للعب. {1} لاعبين, {2} أقل عدد للاعبين, {3} أكبر عدد للاعبين</value>
+    <value>{0} انضم للعب.\n {1} لاعبين جاهزين للعب\n أقل عدد لبدء اللعب هو {2} لاعبين \n أكثر عدد لاعبين يمكنهم اللعب هو {3}\n</value>
   </string>
   <string key="PMTheBot">
     <!-- 0 - Player name -->
@@ -228,7 +228,7 @@
   <string key="LynchKill" >
     <!-- 0 - player name -->
     <!-- 1 - player role -->
-    <value > لقد اتخذ القرويين قرارهم باعدام {0} {1}</value>
+    <value > لقد اتخذ القرويين قرارهم باعدام {0} ال{1}.</value>
   </string>
   <string key="LynchTie" >
     <value > لم يتفق أهل القرية على من يجب إعدامه. و أنتهى اليوم بدون إعدام أي أحد.</value>
@@ -356,7 +356,7 @@
     <!-- 0 - Gunner's name -->
     <!-- 1 - target name -->
     <!-- 2 - Target's revealed name ( Target was a role) -->
-    <value > فجأة تردد صدى طلق ناري و عندما هرع أهل القرية إلى مكان الصوت وجدوا {0} يقف بجوار جثة {1}مصوبا بنقديقته إلى رأسه. {2}</value>
+    <value > فجأة تردد صدى طلق ناري و عندما هرع أهل القرية إلى مكان الصوت وجدوا {0} يقف بجوار جثة {1} مصوبا بندقيته إلى رأسه. {2}</value>
   </string>
   <string key="WolfWins" isgif="true" >
     <value >فاز المستذئب!</value>
@@ -406,429 +406,432 @@
     <value>{0} تم ارساله ليقوم بتبشير {1} و لكنه لم يعثر على أحد بالمنزل!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists..  The cult has won!</value>
+    <value >كل الذئاب ماتوا و كل الأحياء الباقين قد تم تحويلهم إلى مبشرين. فاز المبشرين!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
-    <value>You went to hunt {0}, but they are already dead!</value>
+    <value> ذهبت لتقتل {0}, ولكنك وجدته ميتاً بالفعل!</value>
   </string>
   <string key="HunterFindCultist">
     <!-- 0 - target name -->
-    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil cultist.</value>
+    <value>ذهبت لمنزل {0}و قتلت المبشر الشرير!</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
-    <value>You go to {0}'s house, but there is no mysterious chanting. You return home, convinced that {0} is not a cultist.</value>
+    <value>ذهبت إلى منزل{0} و اكتشتفت أن {0} ليس مبشر.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
-    <value>{0}'s role model just died!  In their rage, they have become a werewolf!</value>
+    <value>قدوة {0} مات فتحول في ثورة غضبه إلى ذئب</value>
   </string>
   <string key="WildChildTransform">
     <!-- 0 - role's name -->
     <!-- 0 - teamate's names -->
-    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1}</value>
+    <value>
+	{0} مات و بسبب ثورة غضبك تحولت إلى ذئب ... زميلك الجديد هو  {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
-    <value>a Villager 👱</value>
+    <value>قروي 👱</value>
   </string>
   <string key="Drunk">
-    <value>the Drunk 🍻</value>
+    <value>السكران 🍻</value>
   </string>
   <string key="Harlot">
-    <value>the Harlot 💋</value>
+    <value>الزوارة 💋</value>
   </string>
   <string key="Seer">
-    <value>the Seer 👳</value>
+    <value>العراف 👳</value>
   </string>
   <string key="Traitor">
-    <value>the Traitor 🖕</value>
+    <value>الخائن 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>the Guardian Angel 👼</value>
+    <value>الملاك الحارس 👼</value>
   </string>
   <string key="Detective">
-    <value>the Detective 🕵</value>
+    <value>المحقق 🕵</value>
   </string>
   <string key="Wolf">
-    <value>a Werewolf 🐺</value>
+    <value>ذئب 🐺</value>
   </string>
   <string key="Cursed">
-    <value>the Cursed 😾</value>
+    <value>الملعون 😾</value>
   </string>
   <string key="Gunner">
-    <value>the Gunner 🔫</value>
+    <value>الصياد 🔫</value>
   </string>
   <string key="Tanner">
-    <value>the Tanner 👺</value>
+    <value>الدباغ 👺</value>
   </string>
   <string key="Fool">
-    <value>the Fool 🃏</value>
+    <value>الغبي 🃏</value>
   </string>
   <string key="WildChild">
-    <value>the Wild Child 👶</value>
+    <value>الطفل المسعور 👶</value>
   </string>
   <string key="Beholder">
-    <value>the Beholder 👁</value>
+    <value>المراقب 👁</value>
   </string>
   <string key="ApprenticeSeer">
-    <value>the Apprentice Seer 🙇</value>
+    <value>تلميذ العراف 🙇</value>
   </string>
   <string key="Cultist">
-    <value>a Cultist 👤</value>
+    <value>المبشر 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>the Cultist Hunter 💂</value>
+    <value>صياد المبشر 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
-    <value>Ran away</value>
+    <value>هرب</value>
   </string>
   <string key="Dead">
-    <value>💀 Dead</value>
+    <value>💀 ميت</value>
   </string>
   <string key="Alive">
-    <value>🙂 Alive</value>
+    <value>🙂 حي</value>
   </string>
   <string key="PlayersAlive">
-    <value>Players Alive</value>
+    <value>اللاعبين الأحياء</value>
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>a Mason 👷</value>
+    <value>بناء 👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value>You are a Mason.  If there are any other masons, you will know who they are.  Otherwise, you are a villager.</value>
+    <value> أنت بناء, يمكنك أن تعرف البنائين الآخرين إن وجدوا.</value>
   </string>
   <string key="MasonEaten">
     <!-- 0 - dead man's name -->
-    <value>As everyone rises, they find the body of {0} shoved into a pile of stone, blood splattered everywhere.  One of your masons has died!</value>
+    <value> عندما استيقظ الجميع وجدوا جثة{0} مدفونة تحت الحجارة و الدماء في كل مكان. لقد مات أحد البنائين!</value>
   </string>
   <string key="MasonTeam">
-    <value>  The masons are: {0}</value>
+    <value>  البنائون هم : {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
     <!-- 0 - Youngest cultists name -->
-    <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
+    <value> العضو الجديد يتجه إلى بيت {0} ليحوله و لكن وجد أن البيت في حالة فوضى و الدماء في كل مكان و بعضاً من شعر الذئب على عتبة الباب...</value>
   </string>
   <string key="GuardBlockedWolf">
     <!-- 0 - target's name -->
-    <value>The pack heads to {0}'s house to eat them, but they are met by a tall dark figure, armed to the teeth. The Guardian Angel fights everyone off, and you head back defeated.</value>
+    <value> القطيع اتجه إلى بيت {0} ليأكلوه و لكنهم وجدوا الملاك الحارس بانتظارهم فقاتلهم و رجع القطيع خاسرين.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
     <!-- 0 - newest  -->
     <!-- 1 - target's name -->
-    <value>You send {0} to try to convert {1}, however their belief was too strong, and you were unable to convert them :(</value>
+    <value> أرسلت {0} ليحاول تحويل {1} و لكنكم لم تستطيعوا تحويله</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
     <!-- 0 - target's name -->
     <!-- 1 - name -->
-    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+    <value> 
+	@{1},شخص آخر باسم {0} انضم بالفعل. غير اسمك رجاءاً لتتكمن من الانضمام</value>
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, you happen to notice a strange altar, poorly hidden off in a side room, with a strange glowing coming from it...</value>
+    <value> زرت {0}و لاحظت ما يثبت أنه من جماعة المبشرين.</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
-    <value>was</value>
+    <value>كان</value>
   </string>
   <string key="GenericDeathNoReveal">
     <!-- 0 - Dead's name -->
-    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the house to find the remains of {0}.</value>
-    <value>As the villagers gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
+    <value> استقيظ الجميع في الصباح و لاحظوا أن {0} غير موجود. تفقدوا المنزل و جدوا بقايا جثة {0}.</value>
+    <value> اجتمع أهل القرية مع شروق الشمس ليجدوا بقايا جثة {0}و الذي مات الليلة السابقة.</value>
   </string>
   <string key="MasonConverted">
     <!-- 0 - mason's name -->
-    <value>Odd.... {0} didn't show up for the masons meeting this morning... O.o</value>
+    <value> شيء غريب. لم يحظر {0} اجتماع البنائون هذا الصباح.</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
-    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+    <value> المغادرة أثناء اللعب تم حظره بواسطة أدمن القروب!</value>
   </string>
   <string key="IsDead">
     <!-- used when gunner shoots a player -->
-    <value>is dead</value>
+    <value>ميت</value>
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
   <string key="AdminAdded">
     <!-- 0 - target's name -->
-    <value>{0} added to admin list. Use /config to change group settings.</value>
+    <value>
+	{0} تم اضافته إلى قائمة الأدمن.استخدم /config لتغيير اعدادات القروب.</value>
   </string>
   <string key="AlreadyInGame">
     <!-- 0 - target's name -->
-    <value>You are already in a game! ({0})</value>
+    <value>أنت منضم سابقاً إلى اللعب! ({0})</value>
   </string>
   <string key="MultipleGames">
-    <value>Your group has managed to start multiple games...  Killing extras.</value>
+    <value> تمكن قروبك من بدء عدة جولات ... يتم قتل الاضافيين...</value>
   </string>
   <string key="GroupQueue">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
-    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+    <value> قروبك حالياً بانتظار دوره. الموقع : {0} / {1}</value>
   </string>
   <string key="MaintBreak">
     <!-- 0 - target's name -->
-    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+    <value> معذرة. أنا على وشك القيام بوقفة صيانة قصيرة. لن يمكنك البدء باللعب الآن. بانتظار نهاية{0} لعبات..\n اذهب إلى @werewolfdev لمزيد من التفاصيل</value>
   </string>
   <string key="MaxGames">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
-    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+    <value> المعذرة. وصل عدد الألعاب اللمكن تشغيلها في نفس الوقت إلى الحد المسموع به({0}).  \nموقع القروب في الدور: {1} / {1}</value>
   </string>
   <string key="SkipQueue">
     <!-- 0 - target's name -->
-    <value>{0} is a preferred group, and has skipped the queue!</value>
+    <value>	{0}  هو القروب المفضل و قد تخطى الدور!</value>
   </string>
   <string key="NoGame">
-    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+    <value>لا يوجد لعبة قيد التشغيل. ابدأ لعبة جديدة بواسطة /startgame أو اللعب بنظام الفوضى عن طريق /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Only a group admin can run this command.</value>
+    <value> فقط أدمن القروب بإمكانه استخدام هذا الأمر.</value>
   </string>
   <string key="ShuttingDown">
-    <value>After this game, I am shutting down for maintenance.</value>
+    <value> بعد هذه الجولة سأتوقف عن العمل من أجل القيام باجراءات الصيانة.</value>
   </string>
   <string key="ShuttingDownUpdate">
-    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+    <value> بعد هذه الجولة سأتوقف عن العمل للحظة للتحديث.</value>
   </string>
   <string key="NullIdAdmin">
-    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+    <value>لا يوجد رقم مستخد. هل أنت متأكد أنك أرسلت هذا كرد؟</value>
   </string>
   <string key="AlreadyAdmin">
     <!-- 0 - target's name -->
-    <value>{0} is already an admin!</value>
+    <value>{0} أدمن من الأساس!</value>
   </string>
   <string key="NotAdmin">
     <!-- 0 - target's name -->
-    <value>{0} is not an admin!</value>
+    <value>{0} ليس أدمن!</value>
   </string>
   <string key="AdminRemoved">
     <!-- 0 - target's name -->
-    <value>{0} removed from admin list.</value>
+    <value>{0} أزيل من قائمة الأدمن.</value>
   </string>
   <string key="LanguageSet">
     <!-- 0 - language's name -->
-    <value>Language set to {0}</value>
+    <value>تم ضبط اللغة على {0}</value>
   </string>
   <string key="NoSeer">
-    <value>No seer!</value>
+    <value>لا يوجد عراف!</value>
   </string>
   <string key="TimesUp">
-    <value>Time's up!</value>
+    <value>انتهى الوقت!</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>You are Cupid. Sent to Earth with only underpants, a bow and two arrows, you get to choose two players to love each other for eternity. If one of them dies, the other one dies of sorrow.</value>
+    <value> أنت كيوبد. يمكنك أن تختار لاعبين ليحبوا بعضهما حباً أبدياً. إذا مات أحدهما سيموت اللاعب الآخر من الحزن عليه.</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>You are a Doppelgänger. Legend has it that your ancestors were metamorphs, and could choose any form they wanted. You have inherited some of their capacities. Choose a player, when that player dies, you will take on their role.</value>
+    <value> أنت المتحول. لديك القدرة على التحول إلى أشخاص آخرين. في بداية اللعب أختر أحد اللاعبين و عندما يموت فستخذ دوره.</value>
   </string>
   <string key="RoleInfoHunter">
-    <value>You are the town Hunter. You do not sleep well, and you would never go to bed without your rifle. If you die, you can choose someone else to kill. If you are eaten, you have a chance to take a werewolf down, but will not be able to choose a player to kill.</value>
+    <value> أنت قناص القرية. لا تنام بشكل جيد و لا تذهب إلى السرير بدون بندقيتك. لو تم قتلك فسوف تختار لاعب آخر لتقتله. لو تم أكلك فسيكون لديك الفرصة لقتل أحد الذئاب و لكن لن يمكن أن تختار لاعب لتقتله.</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>You are the serial killer. Recently escaped from the local asylum, your goal is for everyone else to die. Every night, you can add a player's body to your collection.</value>
+    <value> أنت السفاح. هربت مؤخراً المصح العقلي. هدفك أن تقتل الجميع. كل ليلة بإمكانك أن تضيف جثة أحد اللاعبين إلى مجموعة الجثث التي لديك!</value>
   </string>
   <string key="CupidChosen">
-    <value>You have been struck by love. {0}'s memory will never fade in your heart. If one of you dies, the other one will die out of sorrow. If one of you wins, the other one wins too.</value>
-	<value>Cupids arrow has struck you! You are madly in love with {0}!  If they die, you will die too.  If one of you two wins, you will both win.</value>
+    <value> لقد نزل على قلبك الحب. ذكرى {0} لن تزول من قلبك أبداً. لو مات أحدكما فسيموت الآخر من الحزن. لو فاز أحدكما فسيفوز الآخر.</value>
+	<value> لقد أصابك سهم كيوبد أنت تحب {0} بجنون. لو مات فستموت أنت أيضا. لو فاز أحدكما فستفوزون أنت الأثنان معاً!</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>The village has chosen to hang you! This is your last chance, choose to shoot someone as you go down!</value>
+    <value> أهل القرية قرروا شنقك. هذه آخر فرصة لك. أختر أحد الأشخاص لتطلق عليه النار بينما هم يشنقونك!</value>
   </string>
   <string key="HunterNoChoiceLynched">
-    <value>{0} fumbles for their pistol as the noose tightens, but cannot get it in time, and falls to their death with a loud snap of their neck...</value>
+    <value> لم يستطع القناص {0} أن يصل لبندقيته في الوقت المناسب فمات...</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} whips out their pistol and looks at the crowd... and cannot make a decision on who to shoot. They fall to their death, accepting their fate...</value>
+    <value>أخرج {0} مسدسه و نظر إلى أهل القرية المجتمعين و لم يستطع أن يقرر على من يطلق النار. فمات و تقبل مصيره المحتوم..</value>
   </string>
   <string key="HunterKilledFinalLynched">
     <!-- 0 - hunter's name -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>As the noose tightens, {0} whips out a pistol, takes aim, and shoots {1} as the floor drops out! {1} falls over, dead.  {2}</value>
+    <value> أخرج {0} مسدسه و أطلق النار على {1}. سقط {1} صريعاً و كان هو ال{2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>You've been murdered!  In your last moments, you have the chance to shoot someone... make it quick!</value>
+    <value>لقد تم قتلك. في لحظاتك الأخير لديك الفرصة لاطلاق النار على أحد ما .... اختر أحد ما بسرعة!</value>
   </string>
   <string key="HunterNoChoiceShot">
     <!-- 0 - target's name -->
-    <value>The blow to {0} was too much, so much that they couldn't even reach for their sidearm, as they lay in a pool of blood...</value>
+    <value> الضربة كانت قاتلة بالنسبة ل{0} لدرجة أنه لم يتمكن من اخراج السلاح من جيبه فسقط ميتاً في بركة من الدماء..</value>
   </string>
   <string key="HunterSkipChoiceShot">
     <!-- 0 - hunter's name -->
-    <value>As {0} lays there, gasping for their final breaths, they can't decide who to shoot... and accept their fate.</value>
+    <value> لم يتمكن {0} تحديد من سيقتل قبل أن يموت. فتقبل مصيره و مات دون أن يقتل أحد.</value>
   </string>
   <string key="HunterKilledFinalShot">
     <!-- 0 - hunter -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>Dying, {0} falls to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+    <value> بينما هو يحتضر، سقط {0} أرضا و هو ما زال يمسك بسلاحه، و أطلق النار على {1} فأصابه بين عينيه و كان هوال{2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
+    <value> تسلسل {0} إلى منزل {1} ففتح الباب فجأة و خرج المجرم المختل عقلياً {1} بسكين و طعن {0}بها عدة مرات. {0} مات.</value>
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as he died! {0} has died (wolf)</value>
+    <value> الذئاب حاولت مهاجمة القناص و لكن القناص تمكن من قتل {0} و هو يحتضر واكتشف أنه ذئب.</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
-    <value>The wolf tried to attack the hunter last night, but the hunter was able to take the wolf {0} down with their rifle!</value>
+    <value>الذئب حاول مهاجمة القناص ليلة البارحة. و لكن القناص تمكن من قتل الذئب {0} ببندقيته!</value>
   </string>
   <string key="SerialKillerKilledWolf">
-    <value>The wolves attempted to have a nice late night snack, but were instead greeted by a crazed murderer! {0} was killed in the fight!</value>
+    <value>الذئاب حاولت الاستمتاع بأكل أحد القرويين و لكنهم تفاجأوا بأنه قاتل مجنون وقتل منهم {0}أثناء محاولتهم الهجوم عليه!</value>
   </string>
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>It seemed a quiet enough night for {0}, but they were wrong.  The villagers gather in the morning to find {0} split from head to toe, but oddly the liver was missing...  The serial killer has struck again! {1}</value>
+    <value> كانت تبدوا ليلة هادئة ل{0} و لكن هذا لم يكن صحيحاً. اجتمع أهل القرية في الصباح ليجدواأن {0} تم تقطيعه ارباً و كان هو ال{1} . لقد ظهر السفاح من جديد!</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
-    <value>You tried to collect {0}'s body for your collection, but you were fought off by the guardian angel! No kill for you tonight...</value>
+    <value>لقد حاولت أن تقتل {0} و لكن الملاك الحارس حماه و قاتلك بشراسة فلم تتمكن من قتله...</value>
   </string>
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
+    <value> المبشرين أرسلوا {0} ليحول {1} إلى جماعتهم. ولكنه قتله ببندقيته. {0}مات. {0}مات....</value>
   </string>
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
+    <value>المبشرين أرسلوا {0} ليحول {1} إلى جماعتهم. و لكن {0}  خرج من بيته مطعوناً بالسكاكين في كل جزء من جسده.{0} مات....</value>
   </string>
   <string key="GuardKiller">
-    <value>You tried to guard the serial killer, but they came out and stabbed you 89 times! You are dead....</value>
+    <value> لقد حاولت حماية السفاح فطعنك 89 طعنة. لقد قتلك و مت....</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
-    <value>You slip into {0}'s house, and start having a little fun.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac!  You have died....</value>
+    <value> ذهبت إلى منزل {0} فأخرج {0} سكينا و أخذ يطعنك بها و هو يضحك كالمجنون. لقد مت...</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
+    <value> أهل القرية رأوا جثة {0} و بها الكثير من الطعنات مرمية في وسط القرية. {0} مات.</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
-    <value>The doppelganger {0} has now become a mason, just like you!</value>
+    <value> المتحول {0} تحول إلى بناء مثلك!</value>
   </string>
   <string key="DGTransformToMason">
     <!-- 0 - dead mason's name -->
     <!-- 1 - mason collegues's name -->
-    <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
+    <value>{0} مات. و تحولت أنت إلى بناء. زملائك البنائون (إن وجدوا) هم : {1}</value>
   </string>
   <string key="DGToCult">
     <!-- 0 - new cultist's name -->
-    <value>The doppelganger {0} has now become a cultist, just like you!</value>
+    <value>المتحول {0} تحول الآن إلى مبشر مثلك!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into a cultist.  Your teammates (if any) are: {1}</value>
+    <value>{0} مات. و تحولت أنت إلى مبشر. زملائك المبشرون (إن وجدوا) هم : {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
-    <value>The doppelganger {0} has now become a wolf, just like you!</value>
+    <value> المتحول {0} تحول إلى ذئب مثلك!</value>
   </string>
   <string key="DGTransformToWolf">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into a wolf.  Your teammates (if any) are: {1}</value>
+    <value>{0} مات. وتحولت أنت إلى مستذئب. زملائك المستذئبين (إن وجدوا) هم : {1}</value>
   </string>
   <string key="SerialKillerWins" isgif="true">
-    <value>The only person left standing is the serial killer! They have won!</value>
+    <value>الشخص الحي الباقي هو السفاح. لقد فاز السفاح!</value>
   </string>
   <string key="AskKill">
-    <value>Who do you want to kill tonight?</value>
+    <value>ترغب في قتل من هذه الليلة؟</value>
   </string>
   <string key="LoverDied">
     <!-- 0 - dead's name -->
     <!-- 1 - lover's name -->
     <!-- 2 - roles -->
-    <value>With {0}'s dying breath, {1} rushes over and falls, crying.  They cannot stand the loss of their loved one, and shoot themselves with the nearest pistol they can find. {2}</value>
+    <value>على أنفاس {0}الأخيرة، جاء {1} مسرعاً و هو يبكي ألماً. و لأنه لا يتحمل فراقه أخذ أقرب سلاح و أطلق على نفسه النار و مات. {2}</value>
   </string>
   <string key="AskDoppelganger">
-    <value>Who do you want to become if they die?</value>
+    <value>من هو الشخص الذي ترغب في التحول إلى دوره إذا مات؟</value>
   </string>
   <string key="AskCupid1">
-    <value>Who do you want the lovers to be? Choose the first player</value>
+    <value>من تريد أن يكون الحبيبين؟ اختر اللاعب الأول :</value>
   </string>
   <string key="AskCupid2">
-    <value>Who do you want the lovers to be? Choose the second player</value>
+    <value>من تريد أن يكون الحبيبين؟ اختر اللاعب الثاني:</value>
   </string>
   <string key="Hunter">
-    <value>the Hunter 🎯</value>
+    <value>القناص 🎯</value>
   </string>
   <string key="Cupid">
-    <value>Cupid 🏹</value>
+    <value>كيوبد 🏹</value>
   </string>
   <string key="SerialKiller">
-    <value>the Serial Killer 🔪</value>
+    <value>السفاح 🔪</value>
   </string>
   <string key="Doppelgänger">
-    <value>the Doppelgänger 🎭</value>
+    <value>المتحول 🎭</value>
   </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
-    <value>You have become the wild child.  You role model is {0}</value>
+    <value>أنت الطفل المسعور. قدوتك هو {0}</value>
   </string>
   <string key="LoversWin">
-    <value>True love endures! The lovers have won!</value>
+    <value>الحب الصادق يدوم. الحبيبين فازوا!</value>
   </string>
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
     <!-- 1 - role -->
-    <value>In the middle of the town square, everyone finds the body of {0}, multiple shots to the body.  Looks like they tried to sneak up on the Hunter! {1}</value>
+    <value>في وسط القرية وجد القرويين جثة {0} و بها عدة طلقات نارية. يبدوا أنه حاول التسلسل إلى منزل القناص! لقد كان {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>A hooded figure tried to convert you to their cult, but your faith was too strong</value>
+    <value>لقد حاول أحدهم أن يحولك إلى جماعتهم. و لكنه لم يتمكن من ذلك.</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
-    <value>You are already on the wait list for {0}</value>
+    <value>أنت مازلت على قائمة الانتظار ل{0}</value>
   </string>
   <string key="AddedToWaitList">
     <!-- 0 - target's name -->
-    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+    <value>تم إضافتك لقائمة الانتظار ل{0} سأخبرك عندما تبدأ الجولة القادمة.\n لما لا تتصفح المتجر بينما أنت تنتظر؟ https://teespring.com/stores/werewolf-for-telegram</value>
   </string>
   <string key="NotifyNewGame">
     <!-- 0 - target's name -->
-    <value>A new game is starting in {0}</value>
+    <value>تم بدء جولة جديدة{0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
     <!-- 0 - SK's name -->
     <!-- 1 - target's name -->
-    <value>Morning comes, and the remaining two villagers walk out to the town square.  {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out.</value>
+    <value> جاء الصباح و القرويان الباقيان خرجا يمشيان في القرية. {0} نظر إلى {1} و ابتسم ابتسامة مخيفة ثم أخذ يطعن {1} حتى مات.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Everyone in the village has died...  there's nothing but bodies left.  No one wins this round, except the vultures...</value>
+    <value>جميع من القرية ماتوا. لم يبقى إلا الجثث. لم يفز أحد في هذا الجولة.</value>
   </string>
   <string key="SKHunterEnd">
     <!-- 0 - SK's name -->
     <!-- 1 - Hunter's name -->
-    <value>As the sun rises, {0} and {1} walk out into the village.  {0} pulls out their knife, and jumps at {1}.  {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}.  Both are dead, the village is empty, there is no winner...</value>
+    <value>مع شروق الشمس. {0} و {1} خرجوا للتمشية في القرية.  {0} أخرج سكينه و طعن بها  {1}.  {1} أخرج مسدسه و أطلق النار على وجه  {0}. {0} طعن {1} بسكينه. كلاهما مات. لم يبقى أحد في القرية و لم يفز أحد.</value>
   </string>
   <string key="RoleModelChosen">
     <!-- 0 - target's name -->
-    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+    <value>	لم تقم بالاختيار، لذلك تم اتخاذ القرار عنك آليا {0}</value>
   </string>
   <string key="Won">
-    <value>Won</value>
+    <value>فاز</value>
   </string>
   <string key="Lost">
-    <value>Lost</value>
+    <value>خسر</value>
   </string>
   <string key="IdleCount">
     <!-- 0 - player's name -->
     <!-- 1 - idle count -->
-    <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+    <value> اللاعب {0} تم قتل لأنه لم يصوت {1} مرة خلال ال24 ساعة الماضية.</value>
   </string>
   <!--New strings 7th of July-->
   <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
@@ -836,310 +839,326 @@
   Caporegime 👷\nYou are a caporegime blah blah
   -->
   <string key="AboutVG">
-    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+    <value>دورك بسيط . حاول أنك تبقى حي لنهاية اللعبة. كل يوم سيكون عندك فرصة أنك تصوت لاعدام المستذئب. إذا مات كل المستذئبين و السفاح تفوز مجموعة القرويين.</value>
   </string>
   <string key="AboutSeer">
-    <value>You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!</value>
+    <value>كل ليلة تختار أحد اللاعبين لتعرف دوره. إحذر! إذا عرف المستذئبين أنك العراف فسيحاولون قتلك!</value>
   </string>
   <string key="AboutWw">
-    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+    <value>أنت راح تستمتع! كل يوم راح تحاول أنك تخدع اللاعبين الثانيين. كل ليلة راح تختار لاعب تقتله.
+ملاحظات : 
+1- لو قتلت السكران فسوف تصبح أنت سكران كذلك و لن تستطيع الهجوم على أحد في الليلة التالية. 
+2- لو قتلت الملعون فسوف يتحول إلى مستذئب مثلك و ينضم لفريق المستذئبين.</value>
   </string>
   <string key="AboutHarlot">
-    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+    <value>سيكون عندك فرصة لزيارة قروي آخر كل ليلة. إذا كان هو الذئب فسيقتلك. و إن لم يكن الذئب فستعيش. و إذا زرت الشخص الذي سيقتله الذئب في تلك الليلة فستقتل أنت أيضا. و لكن، إذا قرر الذئب قتلك و كنت في زيارة لأحد القرويين فلن يستطيع الذئب قتلك لأنك خارج المنزل.</value>
   </string>
   <string key="AboutDrunk">
-    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+    <value>أيها السكران الوغد. أنت مجرد قروي سكران و لكن إذا قتلتك الذئاب فستتأثر بسكرتك و تسكر هي أيضا و لن يمكنها أن تفعل أي شيء في الليلة التالية ( المستذئب لن يقتل أحد في الليلة التالية).</value>
   </string>
   <string key="AboutCursed">
-    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+    <value>أنت قروي عادي إلى أن تقتلك الذئاب. عندما يقتلونك فستتحول إلى ذئب مثلهم و تقتل قروي كل ليلة.</value>
   </string>
   <string key="AboutTraitor">
-    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+    <value>أيها الوغد الخائن. لو مات كل الذئاب و أنت ما زلت حياً فستتحول إلى مستذئب و تقتل زملائك السابقين!</value>
   </string>
   <string key="AboutGA">
-    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+    <value>أنت الملاك الحارس. كل ليلة يمكنك أن تختار شخصا لتحرسه. كن حذرا على كل حال فإذا اخترت أن تحرس الذئب فهناك احتمال 50% أن يقتلك.</value>
   </string>
   <string key="AboutDetective">
-    <value>You old sleuth. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+    <value>كل يوم ستكون لديك الفرصة للتحقيق في دور لاعب آخر. استخدم هذا الأمر بحذر لأنه يوجد احتمال 40% أن المستذئبين سيكتشفونك!</value>
   </string>
   <string key="AboutGunner">
-    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+    <value>لديك رصاصتين في بداية اللعبة. كل يوم سيكون عندك فرصة لقتل لاعب آخر. عندما تقتله سيعرف الكل أنك الصياد. كن حذرا فأنت لا تملك سوى رصاصيتن!</value>
   </string>
   <string key="AboutTanner">
-    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+    <value>هدفك بسيط. دعهم يصوتون لاعدامك. إذا تم التصويت لاعدام الدباغ فسيفوز الدباغ و يخسر البقية.</value>
   </string>
   <string key="AboutFool">
-    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+    <value>يتم اخبار الغبي بأنه العراف. عندما يختار أن يعرف دور لاعب آخر فإنه يعطى معلومة عشوائية (دوراً عشوائيا).</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>هدفك هو أن تحول الناس إلى معتقدك ما عدا المستذئبين. إذا كان كل اللاعبين الأحياء عند نهاية اللعبة على معتقدك تفوزون.</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>وظيفتك أن تدمر مجموعة المبشر. إذا هاجمك أتباعه فسيموت آخر عضو إنضم لهم. كل ليلة يمكنك أن تختار لاعب لتقتله إذا كان المبشر فسيموتون.</value>
   </string>
   <string key="AboutWC">
-    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+    <value>في بداية اللعبة تختار قدوتك. إذا مات قدوتك فستتحول إلى مستذئب.</value>
   </string>
   <string key="AboutAppS">
-    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+    <value>أنت قروي عادي. و لكن عندما يموت العراف فأنت تصبح العراف.</value>
   </string>
   <string key="AboutBH">
-    <value>You will be told who the seer is (the real one, not the fool)</value>
+    <value>سيتم اخبارك من هو العراف ( العراف الحقيقي و ليس الغبي).</value>
   </string>
   <string key="AboutMason">
-    <value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+    <value>دور البناء بسيط. يمكنه معرفة البنائين الآخرين مباشرة. و إلا فهم مجرد قرويين.</value>
   </string>
   <string key="AboutDG">
     <value>
-      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
-      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
-      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
-    </value>
+	أجدادك كان لديهم القدرة على التحول إلى آخرين بينما أنت ليس لديك هذه القدرة بشكل كامل. يمكنك أن تختار أحد اللاعبين في بداية اللعبة. إذا مات ذلك اللاعب فستكون أنت مثله.
+
+ملاحظة : لو تم تحويل اللاعب بواسطة المبشر فسوف تأخذ دوره الأساسي. كل الأمور الأخرى تتم أيضاً. فلو كان اللاعب الآخر هو الطفل المسعور و مات قدوته فستتحول إلى ذئب و إلا فسوف تخذ دور قدوته.
+
+المبشرين لا يستطيعون تحويلك لمعتقدهم إلا إذا كنت تحولت إلى دور آخر. 
+
+لا يستطيع المتحول الفوز بدور المتحول. لا بد له أن يتحول إلى دور آخر ليمكن الفوز. لو أن اللعبة انتهت و أنت في دور المتحول ستخسر إلا إن كنت محبا ( مربوط بالحب مع شخ آخر).</value>
   </string>
   <string key="AboutCupid">
     <value>
-      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
-      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if at least one of the lovers was on the winning team, they both win together.
-    </value>
+	ستختار لاعبين في بداية اللعبة. هذين اللاعبين سيكونون مغرمين ببعضهما. لو مات أحدهما يموت الآخر من الحزن.
+
+ملاحظة : المحبين سيعرفون أحبابهم و لكنهم لن يعرفوا أدوارهم. إذا لم يتبقى في القرية إلا المحبين فسيفوز المحبين بغض النظر عن فرقهم (فريق القرويين و فريق المستذئبين). 
+
+لو كان كل محب في فريق و كان أحد الفريقين فائزاً و الفريق الآخر لم يبقى منه إلا المحب الآخر فسيفوز المحب الآخر مع الفريق الفائز.</value>
   </string>
   <string key="AboutHunter">
-    <value>
-      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
-      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
-      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    <value>أنت لاعب انتقامي مستعد للتصرف بعنف. عندما يزورك الآخرون قد يموتون لأنك متريب فتطلق النار عليهم. إذا هاجمك الذئاب فلديك الفرصة في قتل أحد الذهم لتموتا سوياً و إلا فإنك إن مت فسيكون لديك الفرص لاطلاق النار على أحدهم ليموت.
+
+ملاحظة : بالنسبة لهجوم الذئاب نسبة الاحتمالية تبدأ من 30%. لو كان ذئباً واحداً القناص لديه فرصة بنسبة 30% لقتل الذئب و النجاة. و لكل ذئب إضافي أضف 20% ( ذئبان = 50% ، 3 ذئاب = 70% إلخ).
+
+على كل حال إذا كان هناك عدة ذئاب فعلى الرغم من أنك قد تقتل أحدهم لكنهم سيكونون أكثر منك عدداً و يقتلونك.
+
+إذا المبشرين حاولوا تحويلك فلديهم فرصة بنسبة 50% أن يفشلوا. إذا فشلوا فسيكون لديك فرصة 50% أن تقتل واحداً منهم!
     </value>
   </string>
   <string key="AboutSK">
-    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+    <value>أنت لاعب وحيد ( لست في جماعة مثل القرويين أو المستذئبين).
+ تفوز إذا قتلت الجميع ما عدا (الحبيب/الحبيبة).  تستطيع قتل أي شخص (ذئاب، قناصين، صيادين، الملاك الحارس، الجميع). إذا حاول الذئاب مهاجمتك ستقتل واحداً منهم عشوائياً و ستعيش.</value>
   </string>
   <string key="AboutPara">
-    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+    <value> بارا هو مبرمج يحب أن ينبح على الناس. قد يكون تعامل مع المستذئبين لمدة طويلة. الاحتكاك بالمستذئبين فكرة سيئة جداً.</value>
   </string>
   <string key="EndTime">
-    <value>Game Length: {0}</value>
+    <value>اللعبة استغرقت: {0}</value>
   </string>
   <!--New strings, July the 8th -->
 
   <string key="Day">
     <!--0 - Day -->
-    <value>Day {0}</value>
+    <value>اليوم {0}</value>
   </string>
   <string key="NodeShutsDown">
-    <value>An error has occured, and this node has shut down :/</value>
+    <value>حصل خلل، تم إغلاق هذا ال Node :/</value>
   </string>
   <string key="SentPrivate">
-    <value>I have sent you a PM</value>
+    <value>لقد راسلتك على الخاص</value>
   </string>
   <string key="StartPM">
-    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+    <value>راسلني على الخاص لأتمكن من مراسلتك : @werewolfbot</value>
   </string>
   <string key="PMTrue">
-    <value>Thanks for starting me! I can PM you now.</value>
+    <value>شكراً لك لأنك شغلتني. يمكنني مراسلتك على الخاص الآن.</value>
   </string>
   <string key="MustReplySmite">
-    <value>You must reply to the user you want to smite</value>
+    <value>لا بد أن ترد على الشخص الذي تريد أن تعمل له smite</value>
   </string>
   <string key="WhatToDo">
-    <value>What would you like to do?</value>
+    <value>ماذا تود أن تفعل؟</value>
   </string>
   <string key="JoinFromGroup">
-    <value>You must join a game from within a group chat!</value>
+    <value>لابد أن تنضم للعب من داخل القروب!</value>
   </string>
   <string key="StartFromGroup">
-    <value>You must start a game from within a group chat!</value>
+    <value>لابد أن تبدأ اللعب من داخل القروب!</value>
   </string>
   <string key="PingInfo">
-    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>
+	الوقت المستغرق لاستقبال رسالة البنق: {0}\nمقدار استخدام المعالج الحالي: {1}%\nرسالة كل ثانية: {2}</value>
   </string>
   <string key="WhatLang">
-    <value>What Language?\nCurrent: {0}</value>
+    <value>أي لغة ؟\الحالية: {0}</value>
   </string>
   <string key="WhatVariant">
-    <value>What Variant?\nCurrent: {0}</value>
+    <value>أي نسخة ؟\الحالية: {0}</value>
   </string>
   <string key="LangSet">
-    <value>Language set to {0}</value>
+    <value>تم ضبط اللغة على {0}</value>
   </string>
   <string key="GetLang">
-    <value>Get which language file?</value>
+    <value>الحصول على ملف أي لغة؟</value>
   </string>
   <string key="NoNodes">
-    <value>There are no nodes online right now, please try again in a few seconds</value>
+    <value>لا يوجد Nodes أون لاين الآن، الرجاء المحاولة بعد بضع ثواني</value>
   </string>
   <string key="GroupCommandOnly">
-    <value>You must run this command in a group</value>
+    <value>لابد أن تنفذ هذا الأمر داخل القروب.</value>
   </string>
   <string key="NotGlobalAdmin">
-    <value>You aren't a global admin...</value>
+    <value>أنت لست global admin...</value>
   </string>
   <string key="NotPara">
-    <value>You aren't Para!</value>
+    <value>أنت لست بارا!</value>
   </string>
   <string key="Yes">
-    <value>Yes</value>
+    <value>نعم</value>
   </string>
   <string key="No">
-    <value>No</value>
+    <value>لا</value>
   </string>
   <string key="Allow">
-    <value>Allow</value>
+    <value>اسمح</value>
   </string>
   <string key="Disallow">
-    <value>Disallow</value>
+    <value>لا تسمح</value>
   </string>
   <string key="Show">
-    <value>Show</value>
+    <value>أعرض</value>
   </string>
   <string key="Hide">
-    <value>Hide</value>
+    <value>اخفي</value>
   </string>
   <!-- Game Mode Choices-->
   <string key="NormalOnly">
-    <value>Normal Only</value>
+    <value>عادي فقط</value>
   </string>
   <string key="ChaosOnly">
-    <value>Chaos Only</value>
+    <value>عشوائي فقط</value>
   </string>
   <string key="PlayerChoice">
-    <value>Player Choice</value>
+    <value>خيار اللاعب</value>
   </string>
 
   <!-- Show Roles on End Game -->
   <string key="ShowNone">
-    <value>Don't show any</value>
+    <value>لا تعرض أي شيء</value>
   </string>
   <string key="ShowLiving">
-    <value>Show only living players</value>
+    <value>اعرض اللاعبين الأحياء فقط</value>
   </string>
   <string key="ShowAll">
-    <value>Show all players</value>
+    <value>اعرض جميع اللاعبين</value>
   </string>
 
   <string key="Cancel">
-    <value>Cancel</value>
+    <value>الغ</value>
   </string>
   <string key="AllowFleeQ">
-    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+    <value>هل ترغب بتمكين الهروب بعد بدء اللعب؟\n
+	ملاحظة: اللاعبين بإمكانهم الهروب في وقت الانضمام\nحاليا: {0} الهروب</value>
   </string>
   <string key="AllowFleeA">
-    <value>{0} fleeing after game start</value>
+    <value>{0} الهروب أثناء اللعب</value>
   </string>
   <string key="MaxPlayersQ">
-    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+    <value>
+	كم أقصى عدد للعبين ترغب؟\nحالياً: {0}</value>
   </string>
   <string key="MaxPlayersA">
-    <value>Max players set to {0}</value>
+    <value>تم ضبط أقصى عدد للاعبين على {0}</value>
   </string>
   <string key="ShowRolesDeathQ">
-    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+    <value>اعرض أو اخفي أدوار اللاعبين عند موتهم\nحالياً: {0}</value>
   </string>
   <string key="ShowRolesDeathA">
-    <value>Roles will be {0} on death.</value>
+    <value>الأدوار سوف تكون على وضع {0} عند موت اللاعبين.</value>
   </string>
   <string key="GameModeQ">
-    <value>What game mode will the group be?\nCurrent: {0}</value>
+    <value>ما هو وضع اللعب للقروب؟ \nحالياً: {0}</value>
   </string>
   <string key="GameModeA">
-    <value>Game mode set to {0}</value>
+    <value>تم وضع اللعب على نمط {0}</value>
   </string>
   <string key="ShowRolesEndQ">
-    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+    <value>كيف ترغب أن تعرض الأدوار في النهاية؟\nحالياً: {0}</value>
   </string>
   <string key="ShowRolesEndA">
-    <value>Roles shown at end set to: {0}</value>
+    <value>تم ضبط عرض اللاعبين في نهاية اللعبة على : {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+    <value>اختر الوقت الذي سيمثل وقت النهار (بالثواني). سيتم على كل حال تغيير الوقت بناءاً على عدد اللاعبين الموجودين.\nأقل وقت يضاف بناءاً على عدد اللاعبين هو  60 ثانية.  الاعدادات الافتراضية. : {0}\nحالياً: {1}</value>
   </string>
   <string key="SetDayTimeA">
-    <value>Base day time set to {0} seconds</value>
+    <value>تم ضبط توقيت اليوم على  {0} ثانية</value>
   </string>
   <string key="SetNightTimeQ">
-    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+    <value>اختر الوقت بالثواني لوقت الليل. الاعدادات الافتراضية هي : {0}\nحالياً:{1}</value>
   </string>
   <string key="SetNightTimeA">
-    <value>Night time set to {0} seconds</value>
+    <value>تم ضبط توقيت الليل إلى {0} ثانية</value>
   </string>
   <string key="SetLynchTimeQ">
-    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+    <value>اختر توقيت التصويت على الاعدام ( بالثواني ). الاعدادات الافتراضية هي : {0}\nحالياً:{1}</value>
   </string>
   <string key="SetLynchTimeA">
-    <value>Lynch voting time set to {0} seconds</value>
+    <value>تم ضبط توقيت التصويت للاعدام على {0} ثانية</value>
   </string>
   <string key="AllowFoolQ">
-    <value>Allow fool as a role option?\nCurrent: {0}</value>
+    <value>اسمح بادراج دور الغبي من ضمن الأدوار؟\nحالياً: {0}</value>
   </string>
   <string key="AllowFoolA">
-    <value>Fool as a role set to: {0}</value>
+    <value>وضع السماح لدور الغبي ليكون من ضمن الأدوار هو : {0}</value>
   </string>
   <string key="AllowTannerQ">
-    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+    <value>اسمح بادراج دور الدباغ من ضمن الأدوار؟\nحالياً: {0}</value>
   </string>
   <string key="AllowTannerA">
-    <value>Tanner as a role set to: {0}</value>
+    <value>وضع السماح لدور الدباغ ليكون من ضمن الأدوار هو: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Allow cult as a role option?\nCurrent: {0}</value>
+    <value>اسمح بادراج دور المبشر من ضمن الأدوار؟\nحالياً: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Cult as a role set to: {0}</value>
+    <value>وضع السماح لدور المبشر ليكون من ضمن الأدوار هو : {0}</value>
   </string>
   <string key="ThankYou">
-    <value>Thank you, have a good day :)</value>
+    <value>شكراً لك ... استمتع بيومك.</value>
   </string>
   <string key="WhatLangGroup">
-    <value>What language do you want to look for a group to play in?</value>
+    <value>ما هي اللغة التي تود أن تكون مستخدمة في القروبات التي ترغب أن تبحث عنها؟</value>
   </string>
   <string key="HereIsList">
-    <value>Here are the groups for {0}:</value>
+    <value>هاهي القروبات ل {0}:</value>
   </string>
   <string key="Members">
-    <value>Members</value>
+    <value>الأعضاء</value>
   </string>
   <string key="StartMe">
-    <value>Please start me so I can PM you</value>
+    <value>الرجاء تشغيلي لأتمكن من مراسلتك على الخاص</value>
   </string>
   <string key="PlayerNoPM">
-    <value>{0} failed to start the bot, and has been removed from the game!</value>
+    <value>	{0} لم تتمكن من تشغيل البوت و لذلك تم ازالتك من اللعبة!</value>
   </string>
   <string key="LatestList">
-    <value>Here is the latest list</value>
+    <value>هذه هي آخر التحديثات للقائمة</value>
   </string>
   <string key="UnableToGetList">
-    <value>Unable to get latest list</value>
+    <value>لا يمكنني الحصول على آخر التحديثات للقائمة.</value>
   </string>
   <string key="YouJoined">
     <!-- 0 - Group Name -->
-    <value>You have successfully joined the game in {0}</value>
+    <value>
+	لقد انضممت للعب في {0}</value>
   </string>
   <string key="Ping2">
-    <value>Time to send ping message: {0}</value>
+    <value>الوقت المستغرق لارسال البنق: {0}</value>
   </string>
   
   <!-- Update 4.0-->
   <string key="RoleInfoMayor">
-    <value>You are the Mayor. Your vote during the lynching will count twice, once you have revealed yourself. You are on the village team</value>
+    <value>أنت العمدة. صوتك سيكون عن صوتين وقت التصويت، عندما تكشف نفسك ستكون من فريق القرويين!</value>
   </string>
   <string key="RoleInfoPrince">
-    <value>You are secretly the Prince, escaping from your boring, pampered life by spending the day with these peasants. If they try to lynch you, they realize their error, and no one will be lynched.</value>
+    <value>أنت الأمير.عندما يتم التصويت ضد الأمير يتم الكشف عن دوره و يبقى حياً. و لكن هذا يحدث مرة واحدة فقط و إذا أصرت القرية على إعدامه فسوف يموت.</value>
   </string>
   <string key="RoleInfoClumsyGuy">
-    <value>You are the Clumsy Guy: You’ll try to vote, but there is a 50% chance you’ll vote for someone else other than you intended instead. You’re still on the village team though.</value>
+    <value>أنت الأهبل. عندما تقوم بالتصويت فهناك احتمال بنسبة 50% أنك ستصوت لشخص آخر غير الذي كنت تنوي التصويت عليه. و لكنك من ضمن فريق القرويين.</value>
   </string>
   <string key="RoleInfoSorcerer">
-    <value>You are the Sorcerer, allying yourself with creatures of the night rather than villagers. At night you will use your power to find the wolves or the Seer. You win only if the wolves win. Enjoy helping snuff out those miserable villagers.</value>
+    <value>أنت الساحر.هل تتذكر العراف؟ الساحر هو العراف لفريق المستذئبين؟ بامكانك معرفة إن كان اللاعب ذئب أو عراف فقط و سيفوز الساحر عندما تفوز الذئاب.</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value>You are the Blacksmith: the metalworker of the village. You have a small amount of silver, enough to prevent the wolves from attacking for one night. During the day, you can choose to powder it and spread it around the village. Other than that, you are just a villager.</value>
+    <value>أنت الحداد. لديك بعض غبار الفضة الذي قد يمنع الذئاب من القتل خلال الليل. (بإمكانك استخدام غبار الفضة مرة واحدة فقط).</value>
   </string>
   <string key="RoleInfoAlphaWolf">
-    <value>You are the Alpha Wolf; the source of the scourge. Your bite is the cause of the curse that turns humans into werewolves. Each night, you will choose a human to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into a werewolf.</value>
+    <value>أنت مصدر اللعنة (لعنة المستذئب). إذا كنت حياً فهناك احتمال بنسبة 20% أن أي قروي يموت على يد الذئاب فإنه سيعود للحياة مستذئباً.</value>
   </string>
   <string key="RoleInfoWolfCub">
-    <value>You are the Wolf Cub; adored by your wolf pack. Like other wolves, you will choose a villager to attack and kill every night. If you happen to be killed, your wolf pack will fly into a rage and attack two people the next night. You’ll still be dead though.</value>
+    <value>أنت جرو ذئب إذا تم قتلك فإن الذئاب ستقتل اثنان من القرويين.</value>
   </string>
   <string key="PrinceLynched">
-    <value>As the village begins to lynch {0}, they say “Wait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil.” Feeling foolish, the villagers sheepishly retire for the night.</value>
+    <value>	As the village begins to lynch {0}, they say “Wait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil.” Feeling foolish, the villagers sheepishly retire for the night.</value>
   </string>
   <string key="SorcererOther">
     <value>You try to look at {0}, but can't quite make out what they are.  They are not a wolf or seer however...</value>
