@@ -216,6 +216,7 @@ namespace Werewolf_Node
                                     ChatGroup = g.ChatGroup,
                                     GroupId = g.ChatId,
                                     NodeId = ClientId,
+                                    Guid = g.Guid,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
                                     Players = new HashSet<IPlayer>(g.Players??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
@@ -403,6 +404,7 @@ namespace Werewolf_Node
                             ChatGroup = g.ChatGroup,
                             GroupId = g.ChatId,
                             NodeId = ClientId,
+                            Guid = g.Guid,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                             Users = g.Players != null ? new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)) : new HashSet<int>(),
                             PlayerCount = g.Players?.Count ?? 0

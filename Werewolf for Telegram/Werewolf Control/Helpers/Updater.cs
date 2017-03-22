@@ -199,18 +199,26 @@ namespace Werewolf_Control.Helpers
                 //ref: https://www.visualstudio.com/integrate/api/build/builds#queueabuild
                 //In this nuget librari, we should set Project property.
                 //It requires project's GUID, so we're compelled to get GUID by API.
-                var res = await build.QueueBuildAsync(new Build
+                try
                 {
-                    Definition = new DefinitionReference
+                    var res = await build.QueueBuildAsync(new Build
                     {
-                        Id = target.Id
-                    },
-                    Project = target.Project
-                });
-                return $"Queued build with id: {res.Id}";
+                        Definition = new DefinitionReference
+                        {
+                            Id = target.Id
+                        },
+                        Project = target.Project
+                    });
+                    return $"Queued build with id: {res.Id}";
+                }
+                catch(VssServiceException e)
+                {
+                    return $"{e.Message}";
+                }
             }
             catch (Exception e)
             {
+                var t = e.GetType();
                 while (e.InnerException != null)
                     e = e.InnerException;
                 return $"{e.Message}\n{e.StackTrace}";

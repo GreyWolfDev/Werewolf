@@ -31,7 +31,7 @@ namespace Werewolf_Node
             MessageQueueing = true,
             Chaos, WolfCubKilled,
             NoOneCastLynch;
-        public Guid Guid = new Guid();
+        public Guid Guid = Guid.NewGuid();
         private readonly InlineKeyboardMarkup _requestPMButton;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
@@ -257,6 +257,7 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
+                Program.Bot.EditMessageCaption(ChatId, _joinMsgId, " ", null);
                 IsJoining = false;
                 IsInitializing = true;
 
@@ -3833,7 +3834,7 @@ namespace Werewolf_Node
                 {
                     _playerListChanged = true;
                     Players.Remove(p);
-                    SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
+                    //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
         }
