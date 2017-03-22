@@ -127,7 +127,7 @@ namespace Werewolf_Control
                     {
                         if (n.UserId != update.Message.From.Id)
                             Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
-                        Thread.Sleep(100);
+                        Thread.Sleep(500);
                     }
 
                     //just to be sure...
