@@ -4106,7 +4106,7 @@ namespace Werewolf_Node
                     WolfCubKilled = true;
                 p.TimeDied = DateTime.Now;
             }
-            //maybe we should CheckRoleChanges(); here?
+            CheckRoleChanges();
             if (p?.PlayerRole == IRole.Hunter)
             {
                 HunterFinalShot(p, KillMthd.LoverDied);
