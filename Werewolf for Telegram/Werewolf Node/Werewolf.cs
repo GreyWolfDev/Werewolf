@@ -854,6 +854,7 @@ namespace Werewolf_Node
                 if (_requestPlayerListUpdate)
                 {
                     SendPlayerList(true);
+                    _requestPlayerListUpdate = false;
                 }
                 final = "";
                 bool requestPM = false;
