@@ -288,6 +288,8 @@ namespace Werewolf_Node
                         GrpId = int.Parse(DbGroup.Id.ToString()),
                         Mode = Chaos ? "Chaos" : "Normal"
                     };
+                    
+                    db.SaveChanges();
                     db.Games.Add(game);
                     db.SaveChanges();
 
@@ -305,6 +307,8 @@ namespace Werewolf_Node
 
                         p.Language = dbp.Language;
 
+                        db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE UserId = {p.Id} and GroupId = {ChatId}");
+                        db.SaveChanges();
                         var gamePlayer = new GamePlayer
                         {
                             GameId = game.Id,
@@ -2111,7 +2115,7 @@ namespace Werewolf_Node
                 //first off, chance to tell wolves
                 if (Program.R.Next(100) < Settings.ChanceDetectiveCaught)
                 {
-                    foreach (var w in Players.Where(x => !x.IsDead && x.PlayerRole == IRole.Wolf))
+                    foreach (var w in Players.Where(x => !x.IsDead && (x.PlayerRole == IRole.Wolf || x.PlayerRole == IRole.AlphaWolf || x.PlayerRole == IRole.WolfCub)))
                     {
                         Send(GetLocaleString("DetectiveCaught", $"{detect.GetName()}"), w.Id);
                     }

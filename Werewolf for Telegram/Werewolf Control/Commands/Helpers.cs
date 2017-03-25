@@ -131,7 +131,7 @@ namespace Werewolf_Control
                     }
 
                     //just to be sure...
-                    db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
+                    //db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
                     db.SaveChanges();
                 }
             }
