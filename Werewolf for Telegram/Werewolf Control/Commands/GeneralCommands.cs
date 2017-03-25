@@ -228,23 +228,16 @@ namespace Werewolf_Control
                         }
                         else
                         {
-                            var uid = args[1];
-
-
-                            
-                            
-
-                            //check the database for that user
+                            //try to get the guid of the game they want to join
+                            Guid g;
+                            if (Guid.TryParse(args[1], out g))
                             {
-                                var aspuser = db.AspNetUsers.Find(uid);
-                                
-                                //we have the asp user, let's find the player
-                                var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
-                                if (user == null)
-                                    return;
-                                user.WebUserId = uid; //linked!
-                                db.SaveChanges();
-                                Send($"Your telegram account is now linked to your web account - {aspuser.Email}", u.Message.From.Id);
+                                //try to find the game they want to join
+                                var lang = GetLanguage(u.Message.From.Id);
+
+                                var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
+                                if (game == null) return;
+                                game.AddPlayer(u);
                             }
                         }
                     }

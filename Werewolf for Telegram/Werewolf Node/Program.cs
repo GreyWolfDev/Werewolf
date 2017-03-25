@@ -42,7 +42,11 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
+#if DEBUG
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
+#else
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+#endif
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         internal static XDocument English;
         internal static int MessagesSent = 0;
@@ -212,6 +216,7 @@ namespace Werewolf_Node
                                     ChatGroup = g.ChatGroup,
                                     GroupId = g.ChatId,
                                     NodeId = ClientId,
+                                    Guid = g.Guid,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
                                     Players = new HashSet<IPlayer>(g.Players??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
@@ -399,6 +404,7 @@ namespace Werewolf_Node
                             ChatGroup = g.ChatGroup,
                             GroupId = g.ChatId,
                             NodeId = ClientId,
+                            Guid = g.Guid,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                             Users = g.Players != null ? new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)) : new HashSet<int>(),
                             PlayerCount = g.Players?.Count ?? 0

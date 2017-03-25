@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+<!-- Changelog: 
+	Organiza essa bagaça rapá!
+	
+	Adicionei Strings novas que tavam faltando nessa parada.
+	Segue o baile.
+
+
+
+	Strings novas - 11/03/2017 -> @igorfeiden
+	-->
+
 <strings>
   <language name="CidadeDeDeus" base="Português" variant="CidadeDeDeus" owner="@So1Real e @Sats_srjp"/>
   <string key="NotInGame">
@@ -588,7 +601,7 @@
     <value>Não tá rolando nada na CDD agora.  Bora fretar uma van com /startgame ou começar uma guerra com /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Only a group admin can run this command.</value>
+    <value>Tu tá de sacanagem com a minha cara? Tu é ninguém aqui, mete o pé.</value>
   </string>
   <string key="ShuttingDown">
     <value>After this game, I am shutting down for maintenance.</value>
@@ -1316,4 +1329,54 @@
   <string key="GAGuardedWolf">
     <value>{0} tentou proteger um traficante ontem a noite. A comunidade acordou e apenas encontrou o corpo de {0} e uma bibilia em seu peito .</value>
   </string>
-  </strings>
+
+  <!--Strings novas que tavam faltando -->
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>A parada ficou séria. Sobrou só {0} e {1} na CDD. {1} tentou tomar a boca de {0}, mas o Cenoura tava ligado no movimento! {1} só teve tempo de falar "Na cara não, chefe", mas já era. Velório estragado.
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>A parada ficou séria. Sobrou só {0} e {1} na CDD. Como o Bené não tava em lugar nenhum, os traficantes passaram o Cenoura sem dó. Perdeu, rapá.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>Com a CDD quase vazia, {1} anda pelas ruas. Ele vê num beco {0}, o último moleque da Caixa Baixa. {1} enche {0} de tapa na cara, pega a arma dele e descarrega nos cornos do moleque. Esse aí foi pro sal.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tem mais gente pra entrar na van ainda! A chefia mandou marcar um 10. O piloto vai esperar mais {0} segundos.\n{1} sobrando pra dar /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>O piloto nao quer saber de papo. O tiroteio vai começar e ele nao vai esperar nem {0} segundos.\n{1} sobrando pra juntar no /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Tu tá de sacanagem? Volta pro seu canto na van senão vamo te apresentar o micro-ondas.\nSó os Alemão pode segurar a van mais de uma vez.</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Se fodeu! A fumaça na casa de {0} te deixou viajando! Vai poder passar ninguém, mané.\n {1}...</value>
+  </string>
+</strings>
+

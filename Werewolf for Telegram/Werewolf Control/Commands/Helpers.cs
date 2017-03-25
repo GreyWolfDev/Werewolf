@@ -25,7 +25,7 @@ namespace Werewolf_Control
                 -1001062784541, -1001030085238,
                 -1001052793672, -1001066860506, -1001038785894,
                 -1001094614730, -1001066860506,
-                -1001080774621, -1001036952250, -1001082421542
+                -1001080774621, -1001036952250, -1001082421542, -1001073943101, -1001071193124
             };
 #endif
 
@@ -127,11 +127,11 @@ namespace Werewolf_Control
                     {
                         if (n.UserId != update.Message.From.Id)
                             Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
-                        Thread.Sleep(100);
+                        Thread.Sleep(500);
                     }
 
                     //just to be sure...
-                    db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
+                    //db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
                     db.SaveChanges();
                 }
             }

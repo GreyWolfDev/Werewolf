@@ -13,6 +13,7 @@ namespace Werewolf_Control.Models
     {
         public HashSet<int> Users { get; set; } = new HashSet<int>();
         public long GroupId { get; set; }
+        public Guid Guid { get; set; }
         public string Language { get; set; }
         public string ChatGroup { get; set; }
         public GameState State { get; set; }
@@ -24,9 +25,10 @@ namespace Werewolf_Control.Models
         {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;
-            var g = n.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
-            g?.Users.Add(update.Message.From.Id);
-            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GroupId = update.Message.Chat.Id });
+            //var g = n.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
+            //g?.
+            Users.Add(update.Message.From.Id);
+            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GroupId = GroupId });
             n.Broadcast(json);
         }
 
