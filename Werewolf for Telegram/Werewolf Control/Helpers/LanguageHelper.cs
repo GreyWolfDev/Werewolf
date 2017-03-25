@@ -184,7 +184,7 @@ namespace Werewolf_Control.Helpers
             }
             
             //check whether variant is empty
-            if (newFile.Variant == "" || newFile.Variant == " ") newFileErrors.Add(new LanguageError(newFile.FileName, "*Language Node*",
+            if (IsNullOrWhiteSpace(newFile.Variant)) newFileErrors.Add(new LanguageError(newFile.FileName, "*Language Node*",
 					$"ERROR: The variant mustn't be empty! Please set a variant for the file in the <language> tag! Aborting.\n\n*{error.FileName}.xml*\n_Name:_{error.Name}\n_Base:_{error.Base}\n_Variant:_{error.Variant}", ErrorLevel.Error));
 
             //get the errors in it
