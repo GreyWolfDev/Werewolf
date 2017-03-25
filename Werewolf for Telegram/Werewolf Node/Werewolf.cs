@@ -3268,7 +3268,7 @@ namespace Werewolf_Node
                     if (p.PlayerRole == IRole.Tanner)
                         return DoGameEnd(ITeam.NoOne);
                     else
-                        return DoGameEnd(ITeam.Village);
+                        return DoGameEnd(p.Team);
                 case 2:
                     //check for lovers
                     if (alivePlayers.All(x => x.InLove))
