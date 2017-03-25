@@ -348,20 +348,12 @@ namespace Werewolf_Control.Handler
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
-                                        switch(id)
-										{
-											case Settings.SupportChatId:
-												Send("No games in support chat!", id);
-												break;
-											
-											case Settings.PersianSupportChatId:
-												Send("اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
-												break;
-												
-											case Settings.TranslationChatId:
-												Send("No games in translation group!", id);
-												break;
-										}
+				    if (id == Settings.SupportChatId) 
+						Send("No games in support chat!", id);
+                                    else if (id == Settings.PersianSupportChatId)
+                                                Send("اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
+                                    else if (id == Settings.TranslationChatId)
+						Send("No games in translation group!", id);
                                         return;
                                     }
                                     if (command.DevOnly & !UpdateHelper.Devs.Contains(update.Message.From.Id))

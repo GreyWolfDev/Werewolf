@@ -22,6 +22,7 @@ namespace Werewolf_Node
 {
     class Program
     {
+        
         internal static SimpleTcpClient Client;
         internal static Guid ClientId;
         internal static bool Running = true;
