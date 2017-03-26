@@ -307,7 +307,6 @@ namespace Werewolf_Node
 
                         p.Language = dbp.Language;
 
-                        db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE UserId = {p.Id} and GroupId = {ChatId}");
                         db.SaveChanges();
                         var gamePlayer = new GamePlayer
                         {
@@ -320,12 +319,10 @@ namespace Werewolf_Node
 
                         //new Task(() => { ImageHelper.GetUserImage(p.TeleUser.Id); }).Start();
                     }
-                }
 
-                using (var db = new WWContext())
-                {
-                    GameId =
-                        db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
+                    GameId = db.Games.Where(x => x.GroupId == ChatId).OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0;
+
+                    db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {ChatId}");
                 }
                 IsInitializing = false;
 
