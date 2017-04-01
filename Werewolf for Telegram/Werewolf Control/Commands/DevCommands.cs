@@ -1096,7 +1096,7 @@ namespace Werewolf_Control
 //                    return;
 //                }
 //#endif
-                int id = 0;
+                int id = 163786145;
                 if (int.TryParse(args[1], out id))
                 {
                     //get the user from the database

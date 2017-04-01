@@ -81,7 +81,7 @@ namespace Werewolf_Control.Models
     {
         public KillsInlineCommand(User u)
         {
-            Description = "Obtem os 5 jogadores que você mais matou";
+            Description = "Obtem os jogadores que você mais matou";
             Command = "kills";
             try
             {
@@ -98,7 +98,7 @@ namespace Werewolf_Control.Models
                     }
 
                     var killed = db.PlayerMostKilled(u.Id).AsEnumerable();
-                    Content += $"\n5 jogadores que eu mais matei:\n";
+                    Content += $"\nJogadores que eu mais matei:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -116,7 +116,7 @@ namespace Werewolf_Control.Models
     {
         public KilledByInlineCommand(User u)
         {
-            Description = "Obtem os 5 jogadores que mais te mataram";
+            Description = "Obtem os jogadores que mais te mataram";
             Command = "killedby";
             try
             {
@@ -133,7 +133,7 @@ namespace Werewolf_Control.Models
                     }
 
                     var killed = db.PlayerMostKilledBy(u.Id).AsEnumerable();
-                    Content += $"\n5 jogadores que mais me mataram:\n";
+                    Content += $"\nJogadores que mais me mataram:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -151,7 +151,7 @@ namespace Werewolf_Control.Models
     {
         public RolesInlineCommand(User u)
         {
-            Description = "Obtem os 5 papéis que você mais jogou";
+            Description = "Obtem os papéis que você mais jogou";
             Command = "roles";
             try
             {
@@ -167,12 +167,13 @@ namespace Werewolf_Control.Models
                         return;
                     }
 
+                    var totalRoles = db.PlayerRoles(u.Id).Sum(x => x.times);
                     var roleInfo = db.PlayerRoles(u.Id).ToList().OrderByDescending(x => x.times).Take(5);
-                    Content += $"\n5 papéis que eu mais joguei:\n";
+                    Content += $"\nPapéis que eu mais joguei:\n";
                     foreach (var a in roleInfo)
                     {
                         var role = Commands.GetLocaleString(a.role, p.Language);
-                        Content += $"{a.times?.Pad()} {role.ToBold()}\n";
+                        Content += $"<code>{a.times.ToString().PadLeft(3)} ({(((double)a.times/(double)totalRoles)*100.0).ToString("#0.0").PadLeft(4)}%)</code> {role.ToBold()}\n";
                     }
                 }
             }
@@ -187,7 +188,7 @@ namespace Werewolf_Control.Models
     {
         public TypesOfDeathInlineCommand(User u)
         {
-            Description = "Obtem os 5 tipos de morte que você mais teve";
+            Description = "Obtem os tipos de morte que você mais teve";
             Command = "deaths";
             try
             {
@@ -202,18 +203,19 @@ namespace Werewolf_Control.Models
                         Command = "";
                         return;
                     }
+                    var deaths = (from gk in db.GameKills
+                                  join pla in db.Players on gk.VictimId equals pla.Id
+                                  where pla.TelegramId == p.TelegramId
+                                  where gk.KillMethodId != 0
+                                  group gk by gk.KillMethodId);
+                    var totalDeaths = deaths.Sum(x => x.Count());
+                    var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
 
-                    var roleInfo = (from gk in db.GameKills
-                                    join pla in db.Players on gk.VictimId equals pla.Id
-                                    where pla.TelegramId == p.TelegramId
-                                    where gk.KillMethodId != 0
-                                    group gk by gk.KillMethodId).OrderByDescending(x => x.Count()).Take(5);
-
-                    Content += $"\n5 tipos de mortes que eu mais tive:\n";
-                    foreach (var a in roleInfo)
+                    Content += $"\nTipos de mortes que eu mais tive:\n";
+                    foreach (var a in deathInfo)
                     {
                         var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
-                        Content += $"{a.Count().Pad()} {killMethod.ToBold()}\n";
+                        Content += $"<code>{a.Count().ToString().PadLeft(4)} ({((double)(a.Count()/(double)totalDeaths)*100.0).ToString("#0.0").PadLeft(4)}%)</code> {killMethod.ToBold()}\n";
                     }
                 }
             }
