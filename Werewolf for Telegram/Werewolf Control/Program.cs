@@ -257,8 +257,8 @@ namespace Werewolf_Control
                         // ignored
                     }
 
-                    for (var i = 0; i < 12; i++)
-                        msg += new string(' ', Console.WindowWidth);
+                    //for (var i = 0; i < 12; i++)
+                    //    msg += new string(' ', Console.WindowWidth);
 
                     //we don't need this anymore, but keeping code just in case
                     //try
@@ -277,22 +277,22 @@ namespace Werewolf_Control
                     //now dump all this to the console
                     //first get our current caret position
                     _writingInfo = true;
-                    var ypos = Math.Max(Console.CursorTop, 30);
-                    if (ypos >= 60)
-                        ypos = 30;
+                    //var ypos = Math.Max(Console.CursorTop, 30);
+                    //if (ypos >= 60)
+                    //    ypos = 30;
                     Console.CursorTop = 0;
-                    var xpos = Console.CursorLeft;
+                    //var xpos = Console.CursorLeft;
                     Console.CursorLeft = 0;
                     //Console.Clear();
                     //write the info
                     Console.WriteLine(msg);
                     //put the cursor back;
-                    Console.CursorTop = ypos;
-                    Console.CursorLeft = xpos;
+                    //Console.CursorTop = ypos;
+                    //Console.CursorLeft = xpos;
                     _writingInfo = false;
 
 
-
+#if !DEBUG
                     //now, let's manage our nodes.
                     if (Nodes.All(x => x.Games.Count <= Settings.ShutDownNodesAt & !x.ShuttingDown) && Nodes.Count > 1)
                     {
@@ -314,6 +314,7 @@ namespace Werewolf_Control
                             Thread.Sleep(5000); //give the node time to register
                         }
                     }
+#endif
                 }
                 finally
                 {

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2016-12-15"/>
+  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-01-03"/>
   <!--
-  12/20
-    HunterKilledFinalShot is updated with no bullet description
-    Removed extra words, various sentence polished
+  01/03
+    增加 獵人/狼 1對1死法 Added Hunter/ww 1vs1 finale
+    增加 邪教獵人/邪教 1對1死法 Added CH/Cult 1vs1 finale
+    增加 延長時間指令及相關翻譯 Added extending
+    優化 狼人/狼王的少部分描述翻譯 Optimized ww/alpha description
   12/15
     Various Typos fixed
   12/14
@@ -353,7 +355,7 @@
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
-    <value>你溜進了 {0} 的家床上與他做愛做正high的時候, 突然發現他竟是狼人. 你還來不及反應, 就什麼都不知道了...</value>
+    <value>你溜進了 {0} 的家為與他做愛做的事情, 突然你發現他是狼人. 最後, 你被他吃掉了.</value>
     <value>你今晚來到 {0} 的家為與他共度春宵, 正當你們越來越興奮時, 你覺得他的呼吸聲越來越重, 你轉頭看向他, 天啊!!居然是一個狼頭, 狼嘴一張就往你的脖子咬去...</value>
     <value>你看上了 {0} 的強健的體魄, 於是今晚你悄悄進了他的家為想與他共度春宵, 哪知你才脫去他身上的衣服, 就發現他的指甲越來越長, 變成狼一般的爪子, 嘴巴那對犬齒在此時向著你的脖子輕咬, 你以為狼人為因為你的美色而捨不得吃你, 正當你這麼想的時候, 你頸子已被那排銳利的牙齒咬穿...</value>
   </string>
@@ -716,8 +718,8 @@
     <!-- 0 - hunter -->
     <!-- 1 - target's name -->
     <!-- 2 - target's role -->
-    <value>{0} 身軀頹然倒下, 臨死之際, {0} 抽出了他的手槍對著 {1} 射出, 只見子彈居然射進了 {1} 的眉心...第二具身軀也跟著倒下了...\n{2}</value>
-    <value>{0} 臨死之前抽出了隨身不離的手槍對著 {1} 射出, 子彈沒入了 {1} 的眉心, 啥都來不及反應的就爆頭倒下了, 回頭只見 {0} 哈哈哈三聲大笑後, 前傾倒下後再也沒了動靜, 村民們許久都不敢接近那獵人屍體.\n{2}</value>
+    <value>子彈穿越了 {0} 的身體, 隨著身軀的倒下, 臨死之際, {0} 抽出了他的手槍對著 {1} 射出, 只見子彈居然射進了 {1} 的眉心...第二具身軀也跟著倒下了...\n{2}</value>
+    <value>子彈穿越了 {0} 的身體, 手掌摸著身上那個彈口, 皺了一下眉頭, 只見他抽出了手槍對著 {1} 射出, 子彈沒入了 {1} 的眉心, 啥都來不及反應的就爆頭倒下了, 回頭只見 {0} 哈哈哈三聲大笑後, 前傾倒下後再也沒了動靜, 村民們許久都不敢接近那獵人屍體.\n{2}</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>狼群昨晚來到的獵人的家, 雖然獵人死了但也殺了一個夥伴!\n{0} 已死 (狼人)</value>
@@ -898,13 +900,13 @@
     <value>你每天晚上可以透過水晶球看見一個人的真實身分, 小心你的身分, 如果你暴露了, 狼人會嘗試去殺你.</value>
   </string>
   <string key="AboutWw">
-    <value>你可開心了! 每天你要欺騙其他玩家證明你的清白, 每晚你可以去殺死其中一個其他玩家, 但是如果你殺了酒鬼, 你下一晚會醉到無法出去殺人, 如果你咬了受詛咒的人, 那他將會變成你狼群中的新成員.</value>
+    <value>你可開心了! 每天你要欺騙其他玩家證明你的清白, 每晚你可以去殺死其中一個其他玩家, 如果你咬了受詛咒的人, 那他將會變成你狼群中的新成員, 但是如果你殺了酒鬼, 你下一晚會醉到無法出去殺人(通常這代表當晚你失去攻擊的機會, 但如果當天發生幼狼死亡的事件, 那麼你只是少了第二次攻擊的事件)</value>
   </string>
   <string key="AboutHarlot">
     <value>身為一個妓女(你這蕩婦)你每晚都可以選擇訪問一個玩家來滿足你的欲求不滿. 如果他不是狼, 那你會活下來, 如果你爬上狼人的床, 你會在高潮中死去. 如果你爬上一個被狼人光顧的玩家家, 那你也會被一起吃掉. 但如果你當晚出去享樂狼人找上了你, 那你會因此逃過一劫(因為你不在家阿).\nPS. 最新版本中, 你有50%的機會發現你的枕邊人是邪教徒.</value>
   </string>
   <string key="AboutDrunk">
-    <value>你這個醉漢! 身為一個酒鬼, 你依然是個村民, 你唯一的作用就是在被狼人吃掉時用你那高的嚇死人的血液酒精濃度讓那隻狼隔天醉得不能殺人.</value>
+    <value>你這個醉漢! 身為一個酒鬼, 你依然是個村民, 你唯一的作用就是在被狼人吃掉時用你那高的嚇死人的血液酒精濃度讓那狼人們下次殺人行動醉得不能殺人.</value>
   </string>
   <string key="AboutCursed">
     <value>身為一個不詳之人, 你暫時只是個普通村民, 直到有隻狼咬了你, 你成為了他們最新的成員.開始了夜晚的狩獵遊戲.</value>
@@ -1189,7 +1191,7 @@
     <value>你是巫師, 選擇與黑暗生物聯盟而放棄了村民. 每晚你將使用你的能力去幫狼群找出先知, 狼人勝利也就是你的勝利, 享受著一步一步滅絕可憐村民的樂趣.</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value>你是鐵匠; 村民們的打鐵技師. 你擁有一點點銀礦渣收藏, 僅夠灑在村莊周圍, 使村莊免受狼群的攻擊一個夜晚, 除此之外, 你就只是普通的村民了.</value>
+    <value>你是鐵匠; 村民們的打鐵技師. 你擁有一點點銀礦渣收藏, 僅夠灑在莊裝周圍, 使村莊免受狼群的攻擊一個夜晚, 除此之外, 你就只是普通的村民了.</value>
   </string>
   <string key="RoleInfoAlphaWolf">
     <value>你是狼王, 狼人的始祖, 一切禍害的源頭. 你的狼吻使被詛咒的人變成狼人, 每晚你選擇一個對象來大開殺戒, 只要你活著, 被你咬死的傢伙就有20%機會也變為狼人.</value>
@@ -1207,7 +1209,7 @@
     <value>{0} 走出眾人之間, 出示了來自官方的證明文件證明了他是這個村莊的村長. 從現在該開始, {0} 的票將被視為兩票.</value>
   </string>
   <string key="AskMayor">
-    <value>當你準備好告訴大家你就是村長, 點下 "揭露" 按鈕.</value>
+    <value>點下 "揭露" 按鈕, 當你準備好告訴大家你就是村長.</value>
   </string>
   <string key="Reveal">
     <value>揭露</value>
@@ -1216,7 +1218,7 @@
     <value>你是否要在今天將銀渣灑在村莊四周讓狼人今晚無法有任何行動呢?</value>
   </string>
   <string key="BlacksmithSpreadSilver">
-    <value>正當大家在激烈的辯論時, 有村民發現 {0} 正在村莊周圍撒著閃亮的銀渣, 看來至少今天晚上村民可以安心免於狼群的攻擊好好睡一覺了(今晚狼人將無法做任何行動)</value>
+    <value>正當大家在激烈的辯論著的時候, 大家發現 {0} 正在村莊周圍撒著閃亮的銀渣, 看來至少今天晚上村民可以安心免於狼群的攻擊好好睡一覺了(今晚狼人將無法做任何行動)</value>
   </string>
   <string key="Mayor">
     <value>村長 🎖</value>
@@ -1249,7 +1251,7 @@
     <value>夜晚降臨, 你感到一種莫名的感覺, 你的身體因為轉變而感到劇痛... 你成為狼人了!</value>
   </string>
   <string key="AboutMayor">
-    <value>身為村長, 你想當然爾是村民的一份子, 當你揭露了你的真實身份, 你的意見將會受到村民的重視, 換言之在處決投票時, 你的一票將等於兩票, 用你的身份與智慧去帶領你的村民吧!</value>
+    <value>身為村民, 你想當然爾是村民的一份子, 當你揭露了你的真實身份, 你的意見將會受到村名的重視, 換言之在處決投票時, 你的一票將等於兩票, 善用你的權利去帶領你的村民吧!</value>
   </string>
   <string key="AboutPrince">
     <value>王子在村民陣營策略扮演著關鍵性的角色. 一旦王子被處決, 王子的身份將會揭開, 並活下來. 但是也表示這只會發生一次, 如果村民依然再次選擇處決王子, 那王子將會被處決而死.</value>
@@ -1265,7 +1267,7 @@
     </value>
   </string>
   <string key="AboutAlphaWolf">
-    <value>你是狼王, 一切詛咒的來源, 萬惡之源. 當你活著的時候, 狼群狩獵時, 獵物有 20% 機會成為狼群的一份子</value>
+    <value>你是狼王, 一切詛咒的來源, 萬惡之源. 當你活著的時候, 狼群狩獵時有, 獵物有 20% 機會成為狼群的一份子</value>
   </string>
   <string key="AboutWolfCub">
     <value>多麼可愛的一隻小狼阿, 咕唧咕唧(搔癢~), 咳....我是想說你這個小狼崽子, 如果有人膽敢殺了你, 我將不介意讓狼群們大開殺戒一晚兩個獵物的. 這麼可愛的傢伙如果死了我該去搔癢你這小傢伙呢?</value>
@@ -1352,7 +1354,7 @@
   </string>
   <string key="PrinceKilled">
     <value>黎明前警鈴響徹村莊四處, 武裝的皇家護衛在村莊四處街頭找尋失蹤的王子 {0}. 什麼都沒有發現, 但是也出現有個殺人魔最近脫逃目前不知去向的謠言...</value>
-    <value>{0} 的護衛被昨晚打瞌睡, 王子 {0} 的遺骸被發現散落在大宅的四處, 就算是皇家的血脈也未能阻止殺人魔的刀子分毫.</value>
+    <value>{0} 的護衛被發現昨晚打瞌睡, 皇室王子 {0} 的遺骸被發現散落在大宅的四處, 就算是皇家的血脈也未能阻止殺人魔的刀子分毫.</value>
   </string>
   <string key="SeerKilled">
     <value>村民醒來發現 {0} 殘破的屍體, 從頭到腳分離, 刀痕劃遍每寸皮膚肌肉. 奇怪的是大腦卻被精密從頭顱內抽出, 這是否暗示著小鎮已失去了他們的智者領導呢? {0} 是先知.</value>
@@ -1381,5 +1383,51 @@
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>{0} 昨天居然去保護一個狼人, 一早村民們只見守護天使的翅膀被掛在十架上, 顯然狼人們又享受了一頓上帝額外"免費送門上府"的美食.</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>知道只剩下 {0} 的 {1} 準備大開葷戒, 但 {0} 軍人退伍的訓練及近乎偏執的個性可不是隨便說說而已! 最後的結局倒下的獸軀上兩個明顯的彈孔, 以及依然站得穩穩的的獵人! 村民戰勝了!!!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>知道只剩下 {0} 的 {1} 靜靜的等待 {0} 戒心放到最低, 獵殺最後一民村名的行動顯然對 {1} 一點也不費心, 最後留在地上的是那具殘破的屍體, 數道平行的爪痕張揚的印在獵人那不甘心的臉上.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} 與 {0} 在太陽下來到了鎮上廣場. 看到 {0} 頸上的十字架發出反射光芒, 正直的 {1} 最後一次把抽出了他的匕首, 將污染扭曲這村子心靈的邪教給畫下了句點。</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>加入時間延長 {0} 秒!\n剩餘可加入 /join 的時間是 {1} !</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>加入時間減少 {0} 秒!\n剩餘可加入 /join 的時間是 {1} !</value>
+  </string>
+  <string key="CantExtend">
+    <value>很抱歉只有群組管理員才能夠多次延長時間!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>是否允許玩家延長加入時間?\n目前: {0} 延長加入時間\n注意: 管理者不受此限制, 只要遊戲未開始都可以隨時反覆延長時間.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} 玩家延長加入的時間!</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>選擇玩家單次可延長的時間的長度\n預設設定是: {0}\n現在設定是: {1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>最多可延長 {0} 秒!</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>喔不! {0} 是個酒鬼! 你們也醉了, 無法攻擊 {1} 了...</value>
   </string>
 </strings>

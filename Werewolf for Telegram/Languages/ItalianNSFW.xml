@@ -8,7 +8,7 @@
 		<value>Ma cosa ti fumi? Non sei neanche in partita.</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} ha cominciato una partita… usate /join se volete diventare asociali anche voi!</value>
+		<value>{0} ha avviato una partita… usate /join se volete diventare asociali anche voi!</value>
 		<value>Una nuova partita è stata iniziata da {0}! Ma non avevi nient'altro da fare? Perdete tempo anche voi facendo /join :P</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
@@ -32,7 +32,7 @@
 		<value>Ah, tutti cagasotto, non siamo abbastanza. Cancello 'sta partita vah…</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>Eh? Cosa? Ah sta iniziando la partita! Sì, arrivo…</value>
+		<value>Eh? Cosa? Ah, sta iniziando la partita! Sì, arrivo…</value>
 		<value>Pronti a morire? </value>
 	</string>
 	<string key="BannedForExploit">
@@ -1217,6 +1217,7 @@
   </string>
   <string key="WildChildEaten">
     <value>Povero becchino… aveva augurato la morte a qualcuno ed invece i lupi hanno ucciso lui… {0} è morto.</value>
+	<value>Per tutto il paese si sentono i rintocchi delle campane a morto… chi seppellirà i cadaveri che vanno accumulandosi? {0} era il becchino.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Il Cacciatore di Satanisti ha scelto la persona sbagliata da controllare questa notte. Anziché un “pacifico” satanista intento nella sua preghiera alternativa si è trovato di fronte un pazzo psicopatico che gli ha strappato la katana di mano e l'ha usata per tagliarlo in due. {0} è morto.</value>
@@ -1248,4 +1249,38 @@
     <!--{0} = last cultist's name, {1} = CH's name -->
     <value>{1} e {0} si trovano faccia a faccia sulla piazza. Il Satanista estrae i pentacoli ed iniza lanciarli come shuriken ma {1} è troppo veloce! Si avvicina a {0} ed estrae con calma la katana. Tremante {0} si aggrappa alla sua statuetta di Satana e la usa per farsi scudo. Inutilmente, dato che la katana di {1} la taglia sia lui che la statua come se fossero fatti di burro.</value>
   </string>
-</strings>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo aumentato di {0} secondi!\nNe hai ancora {1} per fare /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo ridotto di {0} secondi!\nNe hai ancora {1}per fare /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Eh, no, solo gli admin possono prolungare il tempo più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai giocatori di estendere il tempo di join?\nAttuale: {0}\nAttenzione: gli admin potranno sempre prolungare il tempo o ridurlo.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Prolungamento tempo per i non-admin: {0}</value>
+  </string>
+    <string key="MaxExtendQ">
+    <value>Scegli il numero massimo di secondi che possono essere aggiunti al tempo di join.\nDefault: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo di prolungamento massimo: {0} secondi</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era sbronzo! Ora sei sbronzissimo anche tu e non puoi più attaccare {1}…</value>
+  </string>
+
+  </strings>

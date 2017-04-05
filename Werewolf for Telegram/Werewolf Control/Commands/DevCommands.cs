@@ -129,13 +129,11 @@ namespace Werewolf_Control
             {
                 try
                 {
-                    Bot.Send(args[1], g, parseMode: ParseMode.Markdown);
+                    var success = Bot.Send(args[1], g, parseMode: ParseMode.Markdown).Result;
                 }
-                catch (Exception e)
+                catch (AggregateException e)
                 {
-                    while (e.InnerException != null)
-                        e = e.InnerException;
-                    Bot.Send("Couldn't send to " + g + ".\n"+ e.Message, UpdateHelper.Devs[1]);
+                    Bot.Send("Couldn't send to " + g + ".\n"+ e.InnerExceptions[0].Message, UpdateHelper.Devs[1]);
                 }
             }
 #endif
@@ -406,28 +404,30 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //send OHAIDER announcement
-            using (var sr = new StreamReader(Path.Combine(Bot.RootDirectory, "..\\Logs\\ohaider.log")))
+            //getting sample data
+            using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\sample.txt")))
             {
-                using (var db = new WWContext())
+                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                if (channel == null) return;
+                var users = channel.Users.Skip(1000).ToList();
+                sw.WriteLine("User ID | Chat ID | Result");
+                foreach (var u in users)
                 {
-                    var a = Achievements.OHAIDER;
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
+                    sw.Flush();
+                    var id = u.id;
+                    sw.Write($"{id}|{Settings.PrimaryChatId}|");
+                    try
                     {
-                        int id;
-                        if (int.TryParse(line, out id))
-                        {
-                            //get player
-                            var p = db.Players.FirstOrDefault(x => x.Id == id);
-                            if (p != null)
-                            {
-                                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
-                            }
-                        }
-                        
+                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                        sw.WriteLine(status);
                     }
+                    catch (AggregateException e)
+                    {
+                        sw.WriteLine(e.InnerExceptions[0].Message);
+                    }
+                    Thread.Sleep(500);
                 }
+                sw.Flush();
             }
 
 
@@ -609,7 +609,7 @@ namespace Werewolf_Control
         {
             Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
         }
-        
+
 
         [Attributes.Command(Trigger = "clearcount", DevOnly = true)]
         public static void ClearCount(Update u, string[] args)
@@ -857,6 +857,11 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
         public static void CleanMain(Update u, string[] args)
         {
+            var skip = 0;
+            if (args.Length > 0)
+                int.TryParse(args[1], out skip);
+            if (skip > 0)
+                Send($"Skipping the first {skip} users", u.Message.Chat.Id);
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -865,31 +870,52 @@ namespace Werewolf_Control
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
                 var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
                 if (channel == null) return;
-                var users = channel.Users.Select(x => x.id).ToList();
+                var users = channel.Users.Skip(skip).ToList();
                 Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
                 var i = 0;
                 var removed = 0;
                 using (var db = new WWContext())
-                    foreach (var id in users)
+                    foreach (var usr in users)
                     {
+                        var id = usr.id;
                         i++;
                         sw.Flush();
-                        sw.Write($"\n{i}: ");
+                        sw.Write($"\n{i}|{id}|{usr.deleted}|");
+
                         try
                         {
-                           
-                            //check their status first, so we don't make db calls for someone not even in the chat.
-                            var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                            ChatMemberStatus status;
+                            try
+                            {
+                                //check their status first, so we don't make db calls for someone not even in the chat.
+                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                            }
+                            catch (AggregateException e)
+                            {
+                                if (e.InnerExceptions[0].Message.Contains("User not found"))
+                                {
+                                    sw.Write("NF|");
+                                    status = ChatMemberStatus.Member;
+                                }
+                                else
+                                    throw;
+                            }
+
                             if (status != ChatMemberStatus.Member)
                                 continue;
-
                             //get the last time they played a game
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
 
                             //get latest game player, check within 2 weeks
-                            var gp = p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId), x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id }).OrderByDescending(x => x.Id).FirstOrDefault();
+                            var gp =
+                                p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId),
+                                        x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id })
+                                    .OrderByDescending(x => x.Id)
+                                    .FirstOrDefault();
+                            var lastPlayed = DateTime.MinValue;
                             if (gp != null)
                             {
+                                lastPlayed = gp.TimeStarted.Value;
                                 if (gp.TimeStarted >= DateTime.Now.AddDays(-14))
                                     continue;
                             }
@@ -898,39 +924,62 @@ namespace Werewolf_Control
                             try
                             {
                                 //first, check if the user is in the group
-                                sw.Write($"{status}");
+                                //sw.Write($"{status}");
                                 if (status != ChatMemberStatus.Member) //user is not in group, skip
                                     continue;
                                 //kick
                                 Bot.Api.KickChatMember(Settings.PrimaryChatId, id);
                                 removed++;
-                                sw.Write($" | Removed ({p?.Name ?? id.ToString()})");
+                                sw.Write($"Removed ({p?.Name ?? id.ToString()})");
+
                                 //get their status
-                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+
                                 while (status == ChatMemberStatus.Member) //loop
                                 {
                                     //wait for database to report status is kicked.
-                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    try
+                                    {
+                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    }
+                                    catch (AggregateException e)
+                                    {
+                                        if (e.InnerExceptions[0].Message.Contains("User not found"))
+                                        {
+                                            status = ChatMemberStatus.Kicked;
+                                        }
+                                        else
+                                            throw;
+                                    }
                                     Thread.Sleep(500);
                                 }
                                 //status is now kicked (as it should be)
                                 var attempts = 0;
-                                sw.Write(" | Unbanning-");
+                                sw.Write("|Unbanning-");
                                 while (status != ChatMemberStatus.Left) //unban until status is left
                                 {
                                     attempts++;
-                                    sw.Write($" {status} ");
+                                    sw.Write($"{status}");
                                     sw.Flush();
                                     Bot.Api.UnbanChatMember(Settings.PrimaryChatId, id);
                                     Thread.Sleep(500);
-                                    status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    try
+                                    {
+                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                    }
+                                    catch (AggregateException e)
+                                    {
+                                        if (e.InnerExceptions[0].Message.Contains("User not found"))
+                                        {
+                                            status = ChatMemberStatus.Left;
+                                        }
+                                        else
+                                            throw;
+                                    }
                                 }
                                 //yay unbanned
-                                sw.Write($" | Unbanned ({attempts} attempts)");
+                                sw.Write($"|Unbanned({attempts} attempts)");
                                 //let them know
-                                Send(
-                                    "You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!",
-                                    id);
+                                Send("You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!", id);
                             }
                             catch (AggregateException ex)
                             {
@@ -956,14 +1005,20 @@ namespace Werewolf_Control
                             Thread.Sleep(100);
 
                         }
-                        catch
+                        catch (AggregateException e)
                         {
-                            // ignored
+                            sw.Write(e.InnerExceptions[0].Message);
+                        }
+                        catch (Exception e)
+                        {
+                            while (e.InnerException != null)
+                                e = e.InnerException;
+                            sw.Write($"{e.Message}");
                         }
 
                     }
 
-               
+
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Send(
                     $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.Now - timeStarted}",
@@ -975,7 +1030,7 @@ namespace Werewolf_Control
             }
         }
 
-        
+
 
         [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]
         public static void LeaveGroup(Update update, string[] args)
@@ -985,7 +1040,7 @@ namespace Werewolf_Control
                 Send("Use /leavegroup <id|link>", update.Message.Chat.Id);
                 return;
             }
-            var grpid = (long) 0;
+            var grpid = (long)0;
             var grpname = "";
             //check for id, else we hope it's a link..
             if (!long.TryParse(args[1], out grpid))
@@ -1106,7 +1161,7 @@ namespace Werewolf_Control
                         if (user != null)
                         {
                             //create a menu for this
-                            var buttons = new[] {new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id),new InlineKeyboardButton("No", "ohai|no") };
+                            var buttons = new[] { new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardButton("No", "ohai|no") };
                             Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
                                 customMenu: new InlineKeyboardMarkup(buttons));
                         }
@@ -1209,7 +1264,7 @@ namespace Werewolf_Control
                 Send("No langfile found. Make sure those langfiles exist!", u.Message.Chat.Id);
                 return;
             }
-            
+
             string msg = $"OLD FILE\n_Name:_ {oldlang.Name}\n_Base:_ {oldlang.Base}\n_Variant:_ {oldlang.Variant}\n_Last updated:_ {oldlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
@@ -1281,7 +1336,7 @@ namespace Werewolf_Control
                 msg += e.Message;
             }
 
-            Bot.Send(msg, u.Message.Chat.Id);
+            Bot.Edit(u.Message.Chat.Id, msgid, msg);
         }
 
     }

@@ -6,6 +6,7 @@
      DECEMBER 8 2016 - Adding new death strings. Fixing some old messages
      DECEMBER 9 2016 - Removing CultConvertSerialKiller duplication.
      DECEMBER 26 2016 - Adding some new strings
+     DECEMBER 28 2016 - More new strings!
 
 
 
@@ -1359,6 +1360,19 @@ HarlotFuckedKilledPublic -->
     <value>{1} and {0} walk out in daylight. No use in trying to hide, {0} leaps towards {1}. Eileen, the Crow smiles behind her crow mask, and ready her blades. It was quick and painless for {0}. Eileen hunted down the last of them. Great job!</value>
   </string>
   
-<!-- RESERVED FOR FUTURE USE -->
+ <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to /join . The hunt MUST happen!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to /join . Slow hunters take no part in the hunt.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only the Great Ones can extend the time more than once! Stop that humiliating behavior.</value>
+  </string>
 
 </strings>

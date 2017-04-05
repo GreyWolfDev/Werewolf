@@ -27,7 +27,8 @@ namespace Werewolf_Control.Helpers
             {
                 if (client == null)
                     await Initialize();
-                
+
+                if (client.IsUserAuthorized()) return true;
                 var phone = RegHelper.GetRegValue("paraphone");
                 var hash = await client.SendCodeRequestAsync(phone);
                 await Bot.Send($"Registering bot with phone {phone}, hash code {hash}", UpdateHelper.Devs[0]);

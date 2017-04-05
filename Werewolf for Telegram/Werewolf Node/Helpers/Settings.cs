@@ -73,7 +73,7 @@ namespace Werewolf_Node
         public static int
 #if DEBUG
             MinPlayers = 1,
-            
+
 #else
             MinPlayers = 5,
 #endif
@@ -160,8 +160,7 @@ namespace Werewolf_Node
 #endif
 
             GameJoinTime = 180,
-            MaxJoinTime = 600,
-            ExtendMaxValue = 300;
+            MaxJoinTime = 300;
 
 
 

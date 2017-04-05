@@ -5,6 +5,7 @@
 <!-- Version 1.02: Multiple values for many common strings. Adding a bit of variety. -->
 <!-- Version 1.03: new strings.-->
 <!-- Version 1.04: new death strings in line with the english.xml file.-->
+<!-- Version 1.1: a new bot exists for the SG pack; you can use @WWSGPack_Bot. -->
 <!-- This will be updated in tandem with the English language pack as far as possible. -->
 <!-- If you would like to contribute to this language pack for more Singaporean flavour, please contact @donavancheah to see how it can be infused into the pack! -->
 <strings>
@@ -14,7 +15,7 @@
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! Use /join to buy a HDB flat, and probably be chased out! :P</value>
+    <value>{0} has started a game! Use /join to buy a HDB flat, and probably be chased out!</value>
     <value>A new BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
@@ -665,11 +666,11 @@
     <value>You are the PONTIANAK!!! (serial killer 🔪) Everyone else is human, but humans fear ghosts! Every night, you may scare someone, forcing them to leave immediately (co-existence isn't possible)! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!</value>
   </string>
   <string key="CupidChosen">
-    <value>You have been forced by your parents to wed. {0} is even worse than Patricia Mok or Mark Lee, but you accept that you need to get a BTO after all. Your goal is for both of you to survive. If one of you disappears (dies, gets evicted, gets scared out of your wits, chased away), the other one will no longer be eligible for a BTO under age 35, and hence commit suicide (even if illegal).</value>
+    <value>You have been forced by your parents to wed. {0} is worse than Patricia Mok or Mark Lee, but you accept that you need to get a BTO after all. Your goal is for both of you to survive. If one of you disappears (gets evicted, gets scared out of your wits, chased away), the other one will no longer be eligible for a BTO under age 35, and hence elope with you (even if illegal).</value>
  	<value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block 💔, but if both of you make it to the end, you have the entire block to yourself!</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>The residents has chosen to chase you away! This is your last chance, choose to expose someone's scandal and be chased away together!</value>
+    <value>The residents has chosen to chase you away! This is your last chance; choose to expose someone's scandal and be chased away together!</value>
   </string>
   <string key="HunterNoChoiceLynched">
     <value>{0} fumbles for her iPhone containing scandals of everyone, but cannot get it in time, and was chased away with a broomstick.</value>
@@ -1343,5 +1344,53 @@
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>The 啰哩啰嗦 (Long-winded) auntie, {0}, visited the HDB agents last night. She squabbled with them, raised her voice, and was evicted for "noise pollution" and "disruption to the good order of the HDB estate".</value>
   </string>
+  
+    <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} tries to evict {0}, but {0} released a sex scandal, embarrassing the HDB agent, {1}. The tape-recording auntie stands proud of her accomplishment at ridding the estate of the pesky law enforcers!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} chose an opportune time to evict {0}, where she had no access to her tapes! The HDB agent stands alone, in full control of the estate!</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} were the only ones left eating breakfast at the hawker centre, where {1} busted {0}'s illegal money-lending scheme! All that is left is the fake Corrupt Practices and Investigation Bureau officer!</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>BTO period extended by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>BTO period decreased by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend BTO time?\nCurrent: {0} extending\nNote: Admins will always be able to extend!</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+    <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to BTO joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time for BTO set to {0} seconds</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was a drunkard! Dealing with the drunkard proved far too troublesome; your agents could not evict {1}!</value>
+  </string>
+
 
 </strings>

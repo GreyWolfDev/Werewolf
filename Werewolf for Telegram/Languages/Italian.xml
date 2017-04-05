@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Currently updated by @MatteoIlGrande. Ask me for anything, thanks -->
-<!-- Last updated on 9 November 2016, after 4.0 was released -->
+<!-- Last updated on 10 January 2017 -->
 <strings>
   <language name="Italiano - Standard" base="Italiano" variant="Standard" owner="MatteoIlGrande"/>
   <string key="NotInGame">
@@ -547,7 +547,8 @@
   </string>
   <string key="CupidChosen">
     <value>Hai avuto un colpo di fulmine. La memoria di {0} non svanirà mai dal tuo cuore. Il tuo obiettivo è rimanere entrambi vivi. Se uno di voi due muore, l'altro morirà di dispiacere.</value>
-  </string>
+    <value>La freccia di Cupido ti ha colpito! Ti sei innamorato perdutamente con {0}!  Se muore, condividerai il suo destino.  Se riuscite a sopravvivere fino alla fine, sarete entrambi vincitori.</value>
+ </string>
   <string key="HunterLynchedChoice">
     <value>Il villaggio ha deciso di impiccarti! Questa è la tua ultima possibilità, scegli qualcuno da uccidere come ultimo desiderio!</value>
   </string>
@@ -574,7 +575,8 @@
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} si intrufola nella casa di {1}, apre la porta, e viene immediatamente accolto da un maniaco pazzo con un coltello!!! {1} immerge profondamente il coltello negli organi di {0} in ordine alfabetico, sghignazzando tutto il tempo! {0} è morto D:</value>
-  </string>
+    <value>I satanisti mandano {0} per convertire {1}, ma invece il corpo di {0} esce volando dalla finestra con coltelli conficcati in ogni parte del corpo! CHE PSICOPATICO! {0} è morto....</value>
+ </string>
   <string key="HunterShotWolfMulti">
     <value>I lupi hanno provato ad attaccare il cacciatore la scorsa notte, ma il cacciatore è riuscito a portarne uno con sé nella tomba! {0} è morto (Lupo🐺) </value>
   </string>
@@ -592,9 +594,6 @@
   </string>
   <string key="CultConvertHunter">
     <value>I satanisti mandano {0} per convertire {1}, ma invece un colpo suona rumoroso e il corpo di {0} esce dalla finestra volando! {0} è morto....</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-    <value>I satanisti mandano {0} per convertire {1}, ma invece il corpo di {0} esce volando dalla finestra con coltelli conficcati in ogni parte del corpo! CHE PSICOPATICO! {0} è morto....</value>
   </string>
   <string key="GuardKiller">
     <value>Hai provato a proteggere il serial killer, ma invece lui è uscito e ti ha pugnalato 89 volte! Sei morto....</value>
@@ -653,9 +652,6 @@
   </string>
   <string key="Doppelgänger">
     <value>il Sosia🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <value>La freccia di Cupido ti ha colpito! Ti sei innamorato perdutamente con {0}!  Se muore, condividerai il suo destino.  Se riuscite a sopravvivere fino alla fine, sarete entrambi vincitori.</value>
   </string>
   <string key="NewWCRoleModel">
     <value>Sei diventato il Bimbo Ribelle. Il tuo modello è {0}</value>
@@ -1029,7 +1025,7 @@
     <value>il Cucciolo di Lupo 🐶</value>
   </string>
   <string key="PlayerBittenWolves">
-    <value>Appena i lupi attaccano {0}, il Lupo Alfa {1} prega tutti di fermarsi. {1} confessa che {0} dovrebbe unirsi ai lupi invece di morire, così il branco se ne va, lasciando la vittima con la loro infezione. Diverrà un lupo domani notte!</value>
+    <value>Appena i lupi attaccano {0}, il Lupo Alfa {1} prega tutti di fermarsi. {1} confessa che {0} dovrebbe unirsi ai lupi invece di morire, così il branco se ne va, lasciando la vittima infetta. Diverrà un lupo domani notte!</value>
   </string>
   <string key="PlayerBitten">
     <value>Sei stato attaccato dai lupi, ma il Lupo Alfa ti ha scelto. Invece di essere ucciso, sei stato infettato... e diverrai un lupo, la prossima notte!</value>
@@ -1127,7 +1123,7 @@
     <value>Il mattino seguente, i villici furono affranti a trovare {0}, cioè Cupido, tagliato dalla testa ai piedi. Stranamente il cuore non era presente...</value>
   </string>
   <string key="DrunkKilled">
-    <value>I villici speravano di incontrare {0} per complimentarsi del suo talento, ma tutto quello che trovarono in casa di {0} fu un coltello rotto e il suo fegato. Sembra che ubriacarsi tutti questi anni abbia indurito il suo fegato a tal punto che nemmeno al Serial Killer interessi...</value>
+    <value>I villici speravano di incontrare il campione di bevute {0}, ma {0} fu trovato morto nella propria casa, preso alla sprovvista mentre si ubriacava di notte fonda... Sembra che al Serial Killer non piacciano gli ubriaconi che non fanno nulla tutto il giorno!</value>
   </string>
   <string key="GuardianAngelKilled">
     <value>{0} può normalmente difendersi contro il Serial Killer, ma ironicamente l'aureola dell'Angelo Custode si spense. {0} è morto.</value>
@@ -1150,24 +1146,72 @@
     <value>Grida di "Sono vostro alleato!" furono sentite in tutto il villaggio l'ultima notte. Tutto quello che trovarono i villici il mattino seguente furono le ossa e una sfera di cristallo distrutta, appartenente a {0}, lo Stregone 🔮. Sembra che lo stregone sia stato scambiato per il veggente...</value>
   </string>
   <string key="WildChildEaten">
-    <value>NOMNOMNOMNOM! I lupi si sono sentiti per tutto il villaggio mangiare un povero Bimbo Ribelle {0} indifeso, lasciando di lui solo uno scheletro di dimensioni ridotte. L'intero villaggio si stupisce della crueltà dei lupi che hanno divorato il bimbo indifeso.</value>
+    <value>NOMNOMNOMNOM! I lupi si sono sentiti per tutto il villaggio attaccare il povero Bimbo {0} indifeso, lasciando di lui solo uno scheletro di dimensioni ridotte. L'intero villaggio si stupisce della crudeltà dei lupi...</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>I villici si svegliano la mattina, solo per trovare il corpo tagliato a pezzi di {0}, il Cacciatore di Satanisti, in un carro appena fuori il centro della città.. Lezione imparata: non visitare il Serial Killer!</value>
     <value>Il corpo di {0}, il Cacciatore di Satanisti, è stato trovato nel centro della città, tagliato precisamente in cento pezzi. Controllare se il Serial Killer fosse un satanista non sembra una buona idea..</value>
   </string>
   <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>Mentre sembrava una notte tranquilla, visto che i lupi hanno deciso di rimanere a casa, L'unico sfortunato è stato {0}, un satanista che ha provato a convertire un lupo. La testa di {0} è stata convertita in una buona cena a domicilio!</value>
+    <value>Sembrava una notte tranquilla, visto che i lupi hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un satanista che ha provato a convertire un lupo. La testa di {0} è stata trasformata in una buona cena a domicilio!</value>
     <value>I satanisti hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato divorato dal lupo che ha visitato. Sfortunatamente per {0}, i lupi non hanno interesse a far parte della loro setta.</value>
   </string>
   <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>I satanisti pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un satanista, è stato tritato e messo nella piazza centrale! Vicino ad esso, il loro "sacro" libro è stato trovato infilzato da un coltello, come ad indicare quale religione è dominante.</value>
+    <value>I satanisti pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un satanista è stato trovato tritato nella piazza centrale! Vicino ad esso, il suo "sacro" libro è stato trovato infilzato da parte a parte da un coltello, come ad indicare quale religione è la dominante.</value>
     <value>L'ultima notte, i satanisti hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a convertire il Serial Killer, e il Serial Killer ha creato una nuova scultura di arte moderna, nella piazza della città, con gli organi interni di {0}.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
-    <value>Doveva essere una notte tranquilla dove {0} proteggesse il villaggio dai killer, ma l'aureola di {0} si è misteriosamente spenta e le ali brutalmente tagliate via dal Serial Killer! Vicino al corpo, una nota "Posso proteggermi meglio di te."</value>
+    <value>Doveva essere una notte tranquilla dove {0} facesse il suo lavoro da protettore della città, ma l'aureola di {0} si è misteriosamente spenta e le ali brutalmente tagliate via dal Serial Killer! Vicino al corpo, una nota "Posso proteggermi meglio di te". Qualcuno ha provato a proteggere il killer, questa notte.</value>
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>{0} ha provato a proteggere un lupo questa notte. Si trovano le ali di {0} inchiodate sulla croce della chiesa. Chiaramente i lupi hanno avuto un pasto extra mandato da dio, gratis, nelle loro case.</value>
+  </string>
+  
+  
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a sbranare {0}, ma l'addestramento di {0} si rivela efficace contro il malcapitato lupo! Tutto quello che rimane ormai è la carcassa del lupo con due colpi nel cranio e il cacciatore del Villaggio.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a sbranare {0} quando {0} meno se l'aspettava, riuscendolo a cogliere impreparato. Mangiare l'ultimo contadino sembrò una passeggiata per {1}, che banchettò sul corpo ancora fresco di {0}, l'ex Cacciatore.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo il Pentacolo che {0} indossava sul collo, il virtuoso {1} tira fuori la propria spada, terminando una volta per tutte queste sette che hanno contaminato il villaggio.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} prolungare il times ai giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era un Ubriaco! Ora sei ubriaco, e non potrai attaccare {1}...</value>
   </string>
    </strings>
