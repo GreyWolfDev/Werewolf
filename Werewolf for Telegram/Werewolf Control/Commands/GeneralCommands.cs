@@ -56,7 +56,7 @@ namespace Werewolf_Control
         [Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
-            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Quer ajudar a manter o Werewolf Zion online? Por favor, doe para fernando.tbarros@gmail.com através do PayPal.\n\nDoações servem para cobrir os custos de manutenção dos servidores. Como nosso bot é uma modificação do bot original feito pela GreyWolf, 20% das doações serão direcionadas para a doação oficial deles como forma de reconhecimento e incentivo pelo desenvolvimento do bot original. Para mais informações, visitar Werewolf Zion Suporte (@WerewolfZionSuporte).", parseMode: ParseMode.Html);
+            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Quer ajudar a manter o Werewolf Zion online? Por favor, doe para fernando.tbarros@gmail.com através do PayPal.\n\nDoações servem para cobrir os custos de manutenção dos servidores. \nComo nosso bot é uma modificação do bot original feito pela GreyWolf, 20% das doações serão direcionadas para a doação oficial deles como forma de reconhecimento e incentivo pelo desenvolvimento do bot original. \nPara mais informações, visitar [Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte).", parseMode: ParseMode.Markdown);
         }
 
         [Command(Trigger = "changelog")]
