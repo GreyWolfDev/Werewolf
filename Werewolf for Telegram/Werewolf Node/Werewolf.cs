@@ -200,7 +200,7 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
-                var minutesTolerance = 10;
+                var minutesTolerance = 20;
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -817,7 +817,15 @@ namespace Werewolf_Node
 #if (DEBUG)
             Send(text, id);
 #else
-            Program.Bot.SendDocument(id, image, text);
+           if (image != null)
+            {
+                Program.Bot.SendDocument(id, image, text);
+            }
+            // ReSharper disable once UnusedVariable
+            else
+            {
+                Send(text, id);
+            }
 #endif
         }
 
@@ -3942,14 +3950,15 @@ namespace Werewolf_Node
                 {
                     var values = db.ImageLanguages.Where(x => x.LanguageVariant.Equals(Locale.Language) && x.ImageKey.Equals(key.ToString())).Select(x => x.ImageId).ToList();
                     
-                    if (values != null)
+                    if (values != null && values.Count>0)
                     {
                         var choice = Program.R.Next(values.Count());
                         return values.ElementAt(choice);
                     }
                     else
                     {
-                        throw new Exception($"Error getting image {key}");
+                        return null;
+                        //throw new Exception($"Error getting image {key}");
                     }
                 }
             }
@@ -3964,7 +3973,8 @@ namespace Werewolf_Node
                 }
                 catch
                 {
-                    throw new Exception($"Error getting image {key} ",e);
+                    return null;
+                    //throw new Exception($"Error getting image {key} ",e);
                 }
             }
         }

@@ -42,7 +42,7 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
                                                         parseMode: ParseMode.Markdown);
         }
 
@@ -56,13 +56,13 @@ namespace Werewolf_Control
         [Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
-            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Want to help keep werewolf online? Please donate to info@tgwerewolf.com through PayPal.\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @werewolfsupport", parseMode: ParseMode.Html);
+            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Quer ajudar a manter o Werewolf Zion online? Por favor, doe para fernando.tbarros@gmail.com através do PayPal.\n\nDoações servem para cobrir os custos de manutenção dos servidores. Como nosso bot é uma modificação do bot original feito pela GreyWolf, 20% das doações serão direcionadas para a doação oficial deles como forma de reconhecimento e incentivo pelo desenvolvimento do bot original. Para mais informações, visitar Werewolf Zion Suporte (@WerewolfZionSuporte).", parseMode: ParseMode.Html);
         }
 
         [Command(Trigger = "changelog")]
         public static void ChangeLog(Update update, string[] args)
         {
-            Send("Changelog moved to <a href=\"www.tgwerewolf.com/#changes?referrer=changelog\">here</a>\nAlso check out the dev channel @werewolfdev", update.Message.Chat.Id);
+            Send("Changelog https://github.com/FernandoTBarros/Werewolf/commits/master", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "runinfo")]
@@ -218,22 +218,17 @@ namespace Werewolf_Control
 
                         if (String.IsNullOrEmpty(args[1]))
                         {
-                            var msg = $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf." +
-                                      $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
-                                      $"\nFor role information, use /rolelist." +
-                                      $"\nIf you want to set your default language, use /setlang." +
-                                      $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
-                                      $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
+                            var msg = $"Olá! Sou @{Bot.Me.Username}, e gerencio jogos de Werewolf." +
+                                      $"\nJunte-se ao grupo principal @BRMarvelWW, ou para encontrar um grupo para jogar, você pode usar /grouplist." +
+                                      $"\nPara informações de papéis, use /rolelist." +
+                                      $"\nSe quer definir sua língua principal, use /setlang." +
+                                      $"\nSe tiver alguma dúvida ou pergunta venha até Werewolf Zion Suporte (@WerewolfZionSuporte)!";
                             Bot.Send(msg,u.Message.Chat.Id);
                         }
                         else
                         {
                             var uid = args[1];
-
-
                             
-                            
-
                             //check the database for that user
                             {
                                 var aspuser = db.AspNetUsers.Find(uid);
