@@ -349,7 +349,7 @@ namespace Werewolf_Control.Handler
                                     if (block && command.Blockable)
                                     {
                                         if (id == Settings.SupportChatId)
-                                            Send("No games in support chat!", id);
+                                            Send("No games in support chat!\nIf you want to play, find a group in the /grouplist.", id);
                                         else if (id == Settings.PersianSupportChatId)
                                             Send("اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         else if (id == Settings.TranslationChatId)
