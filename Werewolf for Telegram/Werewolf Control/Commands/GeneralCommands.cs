@@ -233,10 +233,17 @@ namespace Werewolf_Control
                             if (Guid.TryParse(args[1], out g))
                             {
                                 //try to find the game they want to join
-                                var lang = GetLanguage(u.Message.From.Id);
+                                //var lang = GetLanguage(u.Message.From.Id);
 
                                 var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
                                 if (game == null) return;
+                                //make sure they are member
+                                var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                                if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                                {
+                                    Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
+                                    return;
+                                }
                                 game.AddPlayer(u);
                             }
                         }
