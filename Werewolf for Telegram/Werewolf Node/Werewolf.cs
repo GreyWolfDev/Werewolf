@@ -1950,7 +1950,7 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
-                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName(), idles24 + 1)));
+                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>", idles24 + 1)));
 
                     //if hunter has died from AFK, too bad....
                     p.IsDead = true;
