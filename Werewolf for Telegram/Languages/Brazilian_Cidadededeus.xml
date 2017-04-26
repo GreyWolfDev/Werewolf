@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<strings>
-  <language name="CidadeDeDeus" base="Português" variant="CidadeDeDeus" owner="@So1Real e @Sats_srjp"/>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <language name="CidadeDeDeus" base="Português" variant="CidadeDeDeus" owner="@So1Real e @Sats_srjp" />
   <string key="NotInGame">
     <value>Parece que tu não é morador da Cidade de Deus...</value>
   </string>
-  <string key="PlayerStartedGame" isgif="true">
-    <!-- 0 - Player name -->
+  <string key="PlayerStartedGame">
     <value>{0} começou um jogo novo! Dá /join aí pra pegar a van pra Cidade de Deus!</value>
     <value>Ih, vai ter baile na casa de {0}! Dá /join e torce pra não dar ruim!</value>
   </string>
-  <string key="PlayerStartedChaosGame" isgif="true">
-    <!-- 0 - Player name -->
+  <string key="PlayerStartedChaosGame">
     <value>{0} começou um tiroteio! Bora /join pra entrar nesse caos!</value>
     <value>{0} botou a pipa no ar! Se adianta no /join logo antes que o caos comece!</value>
   </string>
@@ -24,7 +22,6 @@
     <value>Falta um minuto pra van sair!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <!-- 0 - remaining seconds (number) -->
     <value> O piloto vai contar até {0}! </value>
   </string>
   <string key="NotEnoughPlayers">
@@ -34,42 +31,30 @@
     <value>Vai começar o baile, marca um dez que eu já te dou o desenrolo...</value>
   </string>
   <string key="BannedForExploit">
-    <!-- 0 - Player name -->
     <value>{0} foi pego sendo x9! (no names starting with /)</value>
   </string>
   <string key="ChangeNameToJoin">
-    <!-- 0 - Player name -->
     <value>{0}, muda teu nome aí pra gente seguir.</value>
   </string>
   <string key="PlayerLimitReached">
     <value>Foi mal aí, nego, tá lotado já.</value>
   </string>
   <string key="PlayerJoined">
-    <!-- 0 - Player name -->
-    <!-- 1 - current players -->
-    <!-- 2 - Minimum players -->
-    <!-- 3 - Maximum players -->
     <value>{0} entrou na van! {1} dentro, {2} pra poder sair, cabe até {3}</value>
   </string>
   <string key="PMTheBot">
-    <!-- 0 - Player name -->
-    <!-- 1 - bot username -->
     <value>{0} clica aqui: @{1}, e aí tu clica start.  Se tu não fizer, não posso te passar os desenrolo. </value>
   </string>
   <string key="DeadFlee">
     <value> Como tu quer dizer que vai fugir com a boca toda cheia de formiga? </value>
   </string>
   <string key="Flee">
-    <!-- 0 - Player name -->
     <value>{0} arregou!</value>
   </string>
   <string key="PlayerRoleWas">
-    <!-- 0 - Player name -->
-    <!-- 1 - Player role -->
     <value>{0} era {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <!-- 0 - Number of players -->
     <value> Agora só falta {0}.</value>
   </string>
   <string key="DidntAsk">
@@ -85,18 +70,12 @@
     <value>Encheu o cu de maconha e tá falando merda.</value>
   </string>
   <string key="WolfVotedKill">
-    <!-- 0 - wolf teammate name -->
-    <!-- 1 - Victim name -->
     <value>{0} tá querendo cobrar {1}</value>
   </string>
   <string key="PlayerVotedLynch">
-    <!-- 0 - Voter name -->
-    <!-- 1 - Target name -->
     <value>{0} votou pra passar {1}</value>
   </string>
   <string key="IdleKill">
-    <!-- 0 - player name -->
-    <!-- 1 - player role -->
     <value>{0} não votou por duas noites seguidas. Pelo que parece, {0} preferiu morrer a ser x9. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
@@ -106,21 +85,15 @@
     <value>Formô, neguim.</value>
   </string>
   <string key="BeholderSeer">
-    <!-- 0 - seer name -->
     <value>\n{0} é o Paraíba!</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <!-- 0 - seer name -->
     <value>{0} era o Paraíba. Sem ele por perto tu é o maior fofoqueiro da Cidade de Deus!</value>
   </string>
   <string key="BeholderNewSeer">
-    <!-- 0 - apprentice name -->
-    <!-- 1 - seer name -->
     <value>{0} também conhecido como Paraíba Jr. tomou o posto de {1} como Paraíba.</value>
   </string>
   <string key="SeerSees">
-    <!-- 0 - player name -->
-    <!-- 1 - player role -->
     <value>Tu ouviu dizer que {0} é {1}!</value>
   </string>
   <string key="AskLynch">
@@ -130,7 +103,6 @@
     <value>De quem tu quer tirar foto?</value>
   </string>
   <string key="AskShoot">
-    <!-- 0 - bullet count -->
     <value>Em quem tu quer sentar a azeitona? {0} bala(s) no tambor.</value>
   </string>
   <string key="AskVisit">
@@ -155,12 +127,9 @@
     <value>Quem tu vai chamar pra Caixa Baixa?</value>
   </string>
   <string key="DiscussWith">
-    <!--Leave the leading spaces here please-->
-    <!-- 0 - teammate names -->
     <value>  Discute com teus parceiro aí {0}</value>
   </string>
   <string key="And">
-    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> e </value>
   </string>
   <string key="RoleInfoCursed">
@@ -187,248 +156,195 @@
   <string key="RoleInfoWolf">
     <value>Tu é o Traficante. A boca é tua! Toda noite tu pode escolher cobrar alguém.</value>
   </string>
-  <string key="RoleInfoSeer" >
-    <value >Tu é o Paraíba, o maior X9 da CDD. Toda noite tu pode ouvir as fofocas sobre alguém e saber qualé a dele.</value>
+  <string key="RoleInfoSeer">
+    <value>Tu é o Paraíba, o maior X9 da CDD. Toda noite tu pode ouvir as fofocas sobre alguém e saber qualé a dele.</value>
   </string>
-  <string key="RoleInfoVillager" >
-    <value >Tu é um Trabalhador. Honesto e matando um leão por dia. Fé em Deus que a vida vai melhorar.</value>
+  <string key="RoleInfoVillager">
+    <value>Tu é um Trabalhador. Honesto e matando um leão por dia. Fé em Deus que a vida vai melhorar.</value>
   </string>
-  <string key="RoleInfoTanner" >
-    <value >Tu é o Secretário de Segurança do Rio de Janeiro! Se te passarem, tu ganha!</value>
+  <string key="RoleInfoTanner">
+    <value>Tu é o Secretário de Segurança do Rio de Janeiro! Se te passarem, tu ganha!</value>
   </string>
-  <string key="RoleInfoWildChild" >
-    <value >Tu é o Otto! Escolhe aí um morador pra ser teu pai - se ele morrer, tu entra pra vida do tráfico.</value>
+  <string key="RoleInfoWildChild">
+    <value>Tu é o Otto! Escolhe aí um morador pra ser teu pai - se ele morrer, tu entra pra vida do tráfico.</value>
   </string>
-  <string key="RoleInfoBeholder" >
-    <value >Tu é o Polícia. Se o Paraíba estiver na Cidade de Deus, tu vai saber.</value>
+  <string key="RoleInfoBeholder">
+    <value>Tu é o Polícia. Se o Paraíba estiver na Cidade de Deus, tu vai saber.</value>
   </string>
-  <string key="RoleInfoApprenticeSeer" >
-    <value >Tu é o Filho do Paraíba. Se o Paraíba morrer, tu se torna o novo Paraíba.</value>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Tu é o Filho do Paraíba. Se o Paraíba morrer, tu se torna o novo Paraíba.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >Tu é um Moleque da Caixa Baixa.  Toda noite tu pode chegar pra alguém e chamar pra tua gangue. Se no final todos os moradores vivos forem da Caixa Baixa, a Caixa Baixa ganha!</value>
+  <string key="RoleInfoCultist">
+    <value>Tu é um Moleque da Caixa Baixa.  Toda noite tu pode chegar pra alguém e chamar pra tua gangue. Se no final todos os moradores vivos forem da Caixa Baixa, a Caixa Baixa ganha!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value > Tu é o Neguinho, ex-gerente da Boca dos Apês. Os moleques da Caixa Baixa tão ficando perigosos demais. Toda noite tu pode procurar um dos moleques na casa de algum morador. Se tu encontrar, o moleque morre. Se os moleques chegarem pra tu tentando te chamar pra Caixa Baixa, tu passa um dos moleques na hora.</value>
+  <string key="RoleInfoCultistHunter">
+    <value> Tu é o Neguinho, ex-gerente da Boca dos Apês. Os moleques da Caixa Baixa tão ficando perigosos demais. Toda noite tu pode procurar um dos moleques na casa de algum morador. Se tu encontrar, o moleque morre. Se os moleques chegarem pra tu tentando te chamar pra Caixa Baixa, tu passa um dos moleques na hora.</value>
   </string>
-  <string key="LynchTime" >
-    <!-- 0 - number of seconds -->
+  <string key="LynchTime">
     <value>
       O dia acaba na Cidade de Deus... os moradores honestos tão cada dia mais putos com o domínio do tráfico...
       Agora geral tem {0} segundos pra votar!
     </value>
   </string>
-  <string key="DayTime" >
-    <!-- 0 - number of seconds -->
-    <value >Amanhece na Cidade de Deus! A fofoca corre solta. Vocês tem {0} segundos pra colocar o papo em dia. </value>
+  <string key="DayTime">
+    <value>Amanhece na Cidade de Deus! A fofoca corre solta. Vocês tem {0} segundos pra colocar o papo em dia. </value>
   </string>
-  <string key="NightTime" >
-    <!-- 0 - number of seconds -->
-    <value >Cai a noite. Os moradores voltam pra casa, sem a certeza de um novo dia na Cidade de Deus. Quem não usa a noite pra descansar tem {0} segundos pra agir. </value>
+  <string key="NightTime">
+    <value>Cai a noite. Os moradores voltam pra casa, sem a certeza de um novo dia na Cidade de Deus. Quem não usa a noite pra descansar tem {0} segundos pra agir. </value>
   </string>
-  <string key="LynchKill" >
-    <!-- 0 - player name -->
-    <!-- 1 - player role -->
-    <value >Os moradores votaram e decidiram. {0} morreu. {1}</value>
+  <string key="LynchKill">
+    <value>Os moradores votaram e decidiram. {0} morreu. {1}</value>
   </string>
-  <string key="LynchTie" >
-    <value >Parece que deu ruim e não deixaram matar ninguém. O pessoal volta pra casa achando que deram mole pra caralho...</value>
+  <string key="LynchTie">
+    <value>Parece que deu ruim e não deixaram matar ninguém. O pessoal volta pra casa achando que deram mole pra caralho...</value>
   </string>
-  <string key="NoLynchVotes" >
-    <value >Ialá, ninguém votou? Qual foi?</value>
+  <string key="NoLynchVotes">
+    <value>Ialá, ninguém votou? Qual foi?</value>
   </string>
-  <string key="DetectiveEaten" >
-    <!-- 0 - victim name -->
-    <value >A favela acorda, mas ninguém sabe cadê {0}.  Eles vão até a casa e encontram {0} sem as mãos, com a câmera no lugar da cabeça. Adeus, Buscapé.</value>
+  <string key="DetectiveEaten">
+    <value>A favela acorda, mas ninguém sabe cadê {0}.  Eles vão até a casa e encontram {0} sem as mãos, com a câmera no lugar da cabeça. Adeus, Buscapé.</value>
   </string>
-  <string key="GuardianEaten" >
-    <!-- 0 - victim name -->
-    <value >A manhã vem, e escutam um grito horrorizado. Na porta da Igreja está {0}, o Alicate, sufocado com a própria bíblia. </value>
+  <string key="GuardianEaten">
+    <value>A manhã vem, e escutam um grito horrorizado. Na porta da Igreja está {0}, o Alicate, sufocado com a própria bíblia. </value>
   </string>
-  <string key="GunnerEaten" >
-    <!-- 0 - victim name -->
-    <value >O pessoal acorda para um dia excelente... até encontrarem  a arma descarregada de {0}, que se encontra completamente carbonizado dentro de uma pilha de pneus queimados. Mané Galinha está morto!</value>
+  <string key="GunnerEaten">
+    <value>O pessoal acorda para um dia excelente... até encontrarem  a arma descarregada de {0}, que se encontra completamente carbonizado dentro de uma pilha de pneus queimados. Mané Galinha está morto!</value>
   </string>
-  <string key="SeerEaten" >
-    <!-- 0 - victim name -->
-    <value >Os trabalhadores acordam e encontram {0} jogado na rua, com a boca cheia de terra. Mataram o Paraíba! Pensando bem, ele mereceu. X9 do caralho.</value>
+  <string key="SeerEaten">
+    <value>Os trabalhadores acordam e encontram {0} jogado na rua, com a boca cheia de terra. Mataram o Paraíba! Pensando bem, ele mereceu. X9 do caralho.</value>
   </string>
-  <string key="DrunkEaten" >
-    <!-- 0 - victim name -->
-    <value >Puta merda, que cheiro é esse? O barraco de {0} tá pegando fogo! E lá dentro estava o Maconheiro, junto de mais de três quilos de maconha...</value>
+  <string key="DrunkEaten">
+    <value>Puta merda, que cheiro é esse? O barraco de {0} tá pegando fogo! E lá dentro estava o Maconheiro, junto de mais de três quilos de maconha...</value>
   </string>
-  <string key="FoolEaten" >
-    <!-- 0 - victim name -->
-    <value >Nasce o sol na Cidade de Deus... E lá na entrada da favela está {0} sem os membros. Todo mundo o conhecia, mas ninguém ficou triste. Era um caôzeiro da porra.   </value>
+  <string key="FoolEaten">
+    <value>Nasce o sol na Cidade de Deus... E lá na entrada da favela está {0} sem os membros. Todo mundo o conhecia, mas ninguém ficou triste. Era um caôzeiro da porra.   </value>
   </string>
-  <string key="DefaultEaten" >
-    <!-- 0 - victim name -->
-    <!-- 1 - victim role -->
+  <string key="DefaultEaten">
     <value>Todo mundo acorda pra trabalhar e escuta o som de choro e raiva de alguns moradores. Aparentemente {0} se tornou mais uma vítima da violência carioca. {1}</value>
   </string>
   <string key="HunterKilledCultist">
-    <!-- 0 - victim name -->
     <value>Tem um cheiro ruim vindo da casa de {0}... A galera vai atrás e descobre o corpo de um moleque da Caixa Baixa! Parece que o Neguinho não vai deixar ninguém dominar a favela de novo!</value>
   </string>
-  <string key="NoAttack" >
-    <value >A favela amanhece feliz e ensolarada. Não teve tiroteio, ninguém morreu, só alegria.</value>
+  <string key="NoAttack">
+    <value>A favela amanhece feliz e ensolarada. Não teve tiroteio, ninguém morreu, só alegria.</value>
   </string>
-  <string key="CursedBitten" >
-    <value >Os traficantes vieram te cobrar. Tu não tem um puto no bolso então agora tu é um deles.</value>
+  <string key="CursedBitten">
+    <value>Os traficantes vieram te cobrar. Tu não tem um puto no bolso então agora tu é um deles.</value>
   </string>
   <string key="WolfTeam">
-    <!-- 0 - teammate names -->
     <value>Outros traficante(s): {0}</value>
   </string>
-  <string key="CursedBittenToWolves" >
-    <!-- 0 - victim name -->
-    <value >Tu foi cobrar {0}, aquele viciado que te devia uma grana... agora ele é traficante junto contigo!</value>
+  <string key="CursedBittenToWolves">
+    <value>Tu foi cobrar {0}, aquele viciado que te devia uma grana... agora ele é traficante junto contigo!</value>
   </string>
-  <string key="WolvesEatYou" isgif="true" >
-    <value >Ih, já era pra tu. Tchau e bença.</value>
+  <string key="WolvesEatYou">
+    <value>Ih, já era pra tu. Tchau e bença.</value>
   </string>
-  <string key="WolvesEatDrunk" >
-    <!-- 0 - victim name -->
-    <value >Puta merda, tu botou fogo na casa do maconheiro! A maconha toda do {0} tá no ar e tu não vai conseguir agir na próxima noite. </value>
+  <string key="WolvesEatDrunk">
+    <value>Puta merda, tu botou fogo na casa do maconheiro! A maconha toda do {0} tá no ar e tu não vai conseguir agir na próxima noite. </value>
   </string>
-  <string key="GuardWolf" >
-    <value >Tu rezou pra salvar um traficante! Péssima escolha. Vai lá com papai do céu.</value>
+  <string key="GuardWolf">
+    <value>Tu rezou pra salvar um traficante! Péssima escolha. Vai lá com papai do céu.</value>
   </string>
-  <string key="GuardSaved" >
-    <!-- 0 - saved player name -->
-    <value >Tua prece pra salvar a vida de {0} deu certo! Deus é pai!</value>
+  <string key="GuardSaved">
+    <value>Tua prece pra salvar a vida de {0} deu certo! Deus é pai!</value>
   </string>
-  <string key="GuardNoAttack" >
-    <!-- 0 - player name -->
-    <value > Tu rezou por {0}, mas ele tava fora da mira do tráfico. Deus é grande!</value>
+  <string key="GuardNoAttack">
+    <value> Tu rezou por {0}, mas ele tava fora da mira do tráfico. Deus é grande!</value>
   </string>
   <string key="GuardEmptyHouse">
-    <!-- 0 - player name -->
     <value>Você tentou pregar pra {0}, mas não tinha ninguém em casa!</value>
   </string>
-  <string key="GuardSavedYou" >
-    <value >Teu santo é forte! A prece de alguém impediu que o traficante te passasse!</value>
+  <string key="GuardSavedYou">
+    <value>Teu santo é forte! A prece de alguém impediu que o traficante te passasse!</value>
   </string>
-  <string key="HarlotEaten" >
-    <!-- 0 - player name -->
-    <value >Bené resolveu xavecar a mina errada. {0} tomou um só na testa pra ficar esperto e não mexer com a mulher dos outros.</value>
+  <string key="HarlotEaten">
+    <value>Bené resolveu xavecar a mina errada. {0} tomou um só na testa pra ficar esperto e não mexer com a mulher dos outros.</value>
   </string>
-  <string key="HarlotNotHome" >
-    <!-- 0 - player name -->
-    <value >Ih {0} não tava em casa. Hoje tu não vai matar ninguém.</value>
+  <string key="HarlotNotHome">
+    <value>Ih {0} não tava em casa. Hoje tu não vai matar ninguém.</value>
   </string>
-  <string key="HarlotFuckWolf" >
-    <!-- 0 - player name -->
-    <value >Tu resolveu dar uma ideia na mina de {0}... mas não sabia que era traficante. Já era pra tu.</value>
+  <string key="HarlotFuckWolf">
+    <value>Tu resolveu dar uma ideia na mina de {0}... mas não sabia que era traficante. Já era pra tu.</value>
   </string>
-  <string key="HarlotFuckedWolfPublic" >
-    <!-- 0 - player name -->
-    <value > A bandidagem tem um recado urgente pra dar pra vocês... {0} bota ovo quando balança a bundinha no baile! </value>
+  <string key="HarlotFuckedWolfPublic">
+    <value> A bandidagem tem um recado urgente pra dar pra vocês... {0} bota ovo quando balança a bundinha no baile! </value>
   </string>
-  <string key="HarlotFuckedVictimPublic" >
-    <!-- 0 - harlot name -->
-    <!-- 1 - victim name -->
-    <value >{0} resolveu dar uma ideia em {1}... mas não viu que {1} já tava sendo cobrado por um traficante!  O traficante percebe que {0} viu demais e atira...  {0} já era.</value>
+  <string key="HarlotFuckedVictimPublic">
+    <value>{0} resolveu dar uma ideia em {1}... mas não viu que {1} já tava sendo cobrado por um traficante!  O traficante percebe que {0} viu demais e atira...  {0} já era.</value>
   </string>
-  <string key="HarlotVisitNonWolf" >
-    <!-- 0 - target name -->
-    <value >Bem, parece que {0} não é do tráfico, porque a sua noite com {0} foi quente! </value>
+  <string key="HarlotVisitNonWolf">
+    <value>Bem, parece que {0} não é do tráfico, porque a sua noite com {0} foi quente! </value>
   </string>
-  <string key="HarlotVisitYou" >
-    <value >Tava meio escuro no baile, mas a voz de Bené te arrepiou todo. Ah, moleque, hoje tem. </value>
+  <string key="HarlotVisitYou">
+    <value>Tava meio escuro no baile, mas a voz de Bené te arrepiou todo. Ah, moleque, hoje tem. </value>
   </string>
-  <string key="DetectiveCaught" >
-    <!-- 0 - detective name -->
-    <value >Tu viu {0} andando tirando fotos de alguém! É o Buscapé!</value>
+  <string key="DetectiveCaught">
+    <value>Tu viu {0} andando tirando fotos de alguém! É o Buscapé!</value>
   </string>
-  <string key="DetectiveSnoop" >
-    <!-- 0 - target name -->
-    <!-- 1 - target role -->
-    <value >Tuas fotos mostram que {0} é {1}</value>
+  <string key="DetectiveSnoop">
+    <value>Tuas fotos mostram que {0} é {1}</value>
   </string>
-  <string key="HarlotShot" >
-    <!-- 0 - gunner's name -->
-    <!-- 1 - Harlot's name -->
-    <value >Parece que {0} não curtiu tanto o jeito que Bené chegou! {1} tá morto.</value>
+  <string key="HarlotShot">
+    <value>Parece que {0} não curtiu tanto o jeito que Bené chegou! {1} tá morto.</value>
   </string>
-  <string key="DefaultShot" >
-    <!-- 0 - Gunner's name -->
-    <!-- 1 - target name -->
-    <!-- 2 - Target's revealed name ( Target was a role) -->
-    <value >Barulho de tiro! Os moradores correm e vêem {0} em pé com uma arma na mão na frente do corpo de {1}, que tem um buraco na testa. {2}</value>
+  <string key="DefaultShot">
+    <value>Barulho de tiro! Os moradores correm e vêem {0} em pé com uma arma na mão na frente do corpo de {1}, que tem um buraco na testa. {2}</value>
   </string>
-  <string key="WolfWins" isgif="true" >
-    <value >Zé Pequeno dominou a Cidade de Deus!</value>
+  <string key="WolfWins">
+    <value>Zé Pequeno dominou a Cidade de Deus!</value>
   </string>
-  <string key="WolvesWin" isgif="true" >
-    <value > O tráfico dominou a Cidade de Deus!</value>
+  <string key="WolvesWin">
+    <value> O tráfico dominou a Cidade de Deus!</value>
   </string>
-  <string key="VillageWins" isgif="true" >
-    <value >A Cidade de Deus amanhece sem traficantes e em paz!</value>
+  <string key="VillageWins">
+    <value>A Cidade de Deus amanhece sem traficantes e em paz!</value>
   </string>
-  <string key="TannerWins" isgif="true" >
-    <value >Vocês lincharam o Secretário de Segurança do Rio de Janeiro! Agora o governo tem uma desculpa pra bombardear a Cidade de Deus! Olha o que vocês fizeram!</value>
+  <string key="TannerWins">
+    <value>Vocês lincharam o Secretário de Segurança do Rio de Janeiro! Agora o governo tem uma desculpa pra bombardear a Cidade de Deus! Olha o que vocês fizeram!</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Se liga em quem ganhou, e o que cada um era:</value>
   </string>
-  <string key="CultistVotedConvert" >
-    <!-- 0 - Voter's name -->
-    <!-- 1 - target name -->
-    <value >{0} votou em chamar {1} pra Caixa Baixa.</value>
+  <string key="CultistVotedConvert">
+    <value>{0} votou em chamar {1} pra Caixa Baixa.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
     <value>{0} foi mandado pra tentar chamar {1} pra Caixa Baixa... mas porra! Era o Neguinho! {0} morreu!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
     <value>{0} veio pra tua casa tentando de chamar pra Caixa Baixa... filho da puta! Tu atirou no moleque. Agora só falta {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>Agora tu é um moleque da Caixa Baixa! A cada noite tu pode chamar alguém pra tua gangue.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
     <value>Caixa Baixa: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
     <value>{0} é o novo moleque da Caixa Baixa!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
-    <!-- 1 - target name -->
     <value>{0} foi atrás de {1} pra falar sobre a Caixa Baixa... mas não tinha ninguém em casa!</value>
   </string>
-  <string key="CultWins" isgif="true">
-    <value >Todos os traficantes morreram... sem o tráfico para atrapalhar, a Caixa Baixa assume o domínio da Cidade de Deus!</value>
+  <string key="CultWins">
+    <value>Todos os traficantes morreram... sem o tráfico para atrapalhar, a Caixa Baixa assume o domínio da Cidade de Deus!</value>
   </string>
   <string key="HunterVisitDead">
-    <!-- 0 - target name -->
     <value>Você foi atrás de {0}, mas alguém já passou antes!</value>
   </string>
   <string key="HunterFindCultist">
-    <!-- 0 - target name -->
     <value>Você vai pra casa de {0} e vê um moleque brincando com uma arma. Você toma a arma e atira. A Caixa Baixa tem um membro a menos.</value>
   </string>
-  <!-- 0 - target name -->
   <string key="HunterFailedToFind">
     <value>Você vai pra casa de {0}, mas tá tudo silencioso e todo mundo dormindo. Ninguém da Caixa Baixa nessa casa.</value>
   </string>
   <string key="WildChildToWolves">
-    <!-- 0 - Werechild's name -->
     <value>Mataram o pai de {0}! Fudeu, agora temos um novo traficante por aí.</value>
   </string>
   <string key="WildChildTransform">
-    <!-- 0 - role's name -->
-    <!-- 0 - teamate's names -->
     <value>{0} morreu! Pra vingar a morte do teu pai, tu se torna um traficante. Os outros são {1}. Quando essa guerra acabar, eles já eram.</value>
   </string>
- <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
-  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>um trabalhador 👱</value>
   </string>
@@ -480,7 +396,6 @@
   <string key="CultistHunter">
     <value>o Neguinho 💂</value>
   </string>
-  <!-- These are for the player list -->
   <string key="RanAway">
     <value>Arregão</value>
   </string>
@@ -493,7 +408,6 @@
   <string key="PlayersAlive">
     <value>Sobreviventes</value>
   </string>
-  <!-- New strings 4 MAY 2016-->
   <string key="Mason">
     <value>um Jornalista Infiltrado 👷</value>
   </string>
@@ -501,94 +415,68 @@
     <value>Tu é um Jornalista Infiltrado.  Se tiver mais algum jornalista, tu vai saber. Caso contrário, aja como um trabalhador. Deixa quieto.</value>
   </string>
   <string key="MasonEaten">
-    <!-- 0 - dead man's name -->
     <value>Quando o pessoal acorda, encontram {0} dentro de um saco preto. Um dos jornalistas morreu!</value>
   </string>
   <string key="MasonTeam">
     <value>  Esses penetras são: {0}</value>
   </string>
-  <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
     <value>Tu manda alguém pra casa de {0} pra chamar pra Caixa Baixa... mas o que tu encontra é só uma perna. Os traficantes chegaram antes de tu.</value>
   </string>
   <string key="GuardBlockedWolf">
-    <!-- 0 - target's name -->
     <value>O bando vai pra casa de {0} pra passar ele, mas no meio do caminho alguém se pergunta se isso é mesmo certo. A prece de alguém fez o pessoal mudar de ideia.</value>
   </string>
-  <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
-    <!-- 0 - newest  -->
-    <!-- 1 - target's name -->
     <value>Você manda {0} chamar {1} pra Caixa Baixa, mas ele achou que eram só um grupo de moleques e foi embora. Filho da puta!</value>
   </string>
-  <!-- new string May 12 2016-->
   <string key="NameExists">
-    <!-- 0 - target's name -->
-    <!-- 1 - name -->
     <value>@{1}, um jogador com o apelido {0} já tá na Cidade de Deus. Troca ele pra nóis não confundir.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <!-- 0 - target's name -->
     <value>Vocês trocam uma ideia esperta e acaba indo pra casa de {0}... mas quando tu vai embora, tu encontra um pedaço de papel com nome e número de um dos moleques da Caixa Baixa... eu hein.</value>
   </string>
-  <!-- new string May 13 2016-->
   <string key="Was">
     <value>era</value>
   </string>
   <string key="GenericDeathNoReveal">
-    <!-- 0 - Dead's name -->
     <value>A favela acorda e percebe que {0} não apareceu. Vão até a casa de {0} e acham seu corpo, todo furado de balas.</value>
     <value>O dia amanhece na Cidade de Deus e todos estão bolados com a morte repentina de {0}! Porra!</value>
   </string>
   <string key="MasonConverted">
-    <!-- 0 - mason's name -->
     <value>Ialá, {0} não apareceu pra reunião dos jornalistas.</value>
   </string>
-  <!-- new string May 16 2016-->
   <string key="FleeDisabled">
     <value>O dono do grupo mandou avisar que NINGUÉM vai sair da Cidade de Deus, tá entendendo?</value>
   </string>
   <string key="IsDead">
-    <!-- used when gunner shoots a player -->
     <value>morreu!</value>
   </string>
-
-  <!-- MORE STRINGS May 16, 2016 -->
   <string key="AdminAdded">
-    <!-- 0 - target's name -->
     <value>{0} added to admin list. Use /config to change group settings.</value>
   </string>
   <string key="AlreadyInGame">
-    <!-- 0 - target's name -->
     <value>Você já vai pro baile neguim! ({0})</value>
   </string>
   <string key="MultipleGames">
     <value>Your group has managed to start multiple games...  Killing extras.</value>
   </string>
   <string key="GroupQueue">
-    <!-- 0 - target's name -->
-    <!-- 1 - target's name -->
     <value>Your group is currently in the queue.  Position: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <!-- 0 - target's name -->
     <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
   </string>
   <string key="MaxGames">
-    <!-- 0 - target's name -->
-    <!-- 1 - target's name -->
     <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
   </string>
   <string key="SkipQueue">
-    <!-- 0 - target's name -->
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
   <string key="NoGame">
     <value>Não tá rolando nada na CDD agora.  Bora fretar uma van com /startgame ou começar uma guerra com /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Only a group admin can run this command.</value>
+    <value>Tu tá de sacanagem com a minha cara? Tu é ninguém aqui, mete o pé.</value>
   </string>
   <string key="ShuttingDown">
     <value>After this game, I am shutting down for maintenance.</value>
@@ -600,19 +488,15 @@
     <value>UserId was null.  Are you sure you sent this as a reply?</value>
   </string>
   <string key="AlreadyAdmin">
-    <!-- 0 - target's name -->
     <value>{0} is already an admin!</value>
   </string>
   <string key="NotAdmin">
-    <!-- 0 - target's name -->
     <value>{0} is not an admin!</value>
   </string>
   <string key="AdminRemoved">
-    <!-- 0 - target's name -->
     <value>{0} removed from admin list.</value>
   </string>
   <string key="LanguageSet">
-    <!-- 0 - language's name -->
     <value>Language set to {0}</value>
   </string>
   <string key="NoSeer">
@@ -621,7 +505,6 @@
   <string key="TimesUp">
     <value>Perdeu tua chance!</value>
   </string>
-  <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
     <value>Tu é o Funkeiro! Você conhece todo mundo da Cidade de Deus e pode escolher apresentar duas pessoas. Esses dois vão tar tão na fita um do outro que se um morrer, o outro vai morrer de desgosto.</value>
   </string>
@@ -636,8 +519,8 @@
   </string>
   <string key="CupidChosen">
     <value>Antes de tu chegar na CDD, o funkeiro te apresentou a {0}. E agora tu tá amarrado demais pra viver sem. Fiquem de olho um no outro.</value>
-	<value>O funkeiro botou {0} na tua fita! Tu tá pagando paixão pra caralho. Se o outro morrer, tu morre também. Mas sobrevivendo no final os dois ganham.</value>
-   </string>
+    <value>O funkeiro botou {0} na tua fita! Tu tá pagando paixão pra caralho. Se o outro morrer, tu morre também. Mas sobrevivendo no final os dois ganham.</value>
+  </string>
   <string key="HunterLynchedChoice">
     <value>Porra, Cenoura, a casa caiu! Rápido, escolhe alguém pra tu levar junto contigo pro inferno!</value>
   </string>
@@ -648,56 +531,39 @@
     <value>{0} parece que aceitou o fim, porque nem resistiu nem nada. Mais fácil pra todo mundo.</value>
   </string>
   <string key="HunterKilledFinalLynched">
-    <!-- 0 - hunter's name -->
-    <!-- 1 - target's name -->
-    <!-- 2 - target's role -->
     <value>Enquanto a galera junta, {0} rapidamente saca um revólver e mete uma bala no meio dos cornos de {1}! {1} morre na hora. {2}</value>
   </string>
   <string key="HunterShotChoice">
     <value>Caralho, atiraram em tu! Rápido, tu pode atirar em alguém também!</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <!-- 0 - target's name -->
     <value>O tiro pegou {0} pelas costas, não dando nem chance de reagir.</value>
   </string>
   <string key="HunterSkipChoiceShot">
-    <!-- 0 - hunter's name -->
     <value>{0} não entendeu nada, e morre sem atirar em ninguém.</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <!-- 0 - hunter -->
-    <!-- 1 - target's name -->
-    <!-- 2 - target's role -->
     <value>{0} toma um tiro, mas não dá mole e atira de volta em {1}, que já cai sem vida no chão. {2}</value>
   </string>
   <string key="HunterShotWolfMulti">
-    <!-- 0 - target's name -->
     <value>Os traficantes tentaram passar o Cenoura, mas parece que um deles morreu na tentativa! {0} já era!</value>
   </string>
   <string key="HunterShotWolf">
-    <!-- 0 - target's name -->
     <value>O traficante tentou passar o Cenoura, mas ele foi mais rápido e meteu um só no peito de {0}!</value>
   </string>
   <string key="SerialKillerKilledWolf">
     <value>Os traficantes tentaram ver qualé a desse novo morador da Cidade de Deus... mas porra, era o Cabeleira! {0} morreu no fogo cruzado!</value>
   </string>
   <string key="DefaultKilled">
-    <!-- 0 - target's name -->
-    <!-- 1 - target's role -->
     <value>Era só mais uma noite de baile pra {0}, até encontrar um fantasma na volta pra casa. {0} foi encontrado baleado perto de casa. Isso é coisa do Cabeleira! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
-    <!-- 0 - target's name -->
     <value>Tu tentou puxar {0} pro inferno também, mas as preces do Alicate te seguraram!</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - target's name -->
     <value>A Caixa Baixa manda {0} ir atrás de {1}, mas Cenoura não dá mole e o corpo de {0} sai voando pela janela, depois de um tiro de .12. {0} já era.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - target's name -->
     <value>A Caixa Baixa manda {0} ir atrás de {1}, mas o corpo de {0} cai com os tiros do revólver do Cabeleira! {0} já era.</value>
     <value>{0} chega na casa de {1} mas não esperava encontrar o Cabeleira! {1} atira na cabeça de {0} antes que possa fugir. {0} já era!</value>
   </string>
@@ -705,49 +571,36 @@
     <value>Tu tentou rezar pela alma do Cabeleira, mas ele ainda te vê como um traidor do Trio Ternura. Já era, Alicate.</value>
   </string>
   <string key="HarlotFuckKiller">
-    <!-- 0 - target's name -->
     <value>Tu passa uma ideia pra {0}, mas não tinha a menor ideia de quem era. {0} atira três vezes. Cabeleira é homem de uma mulher só, e ela se chama Berenice.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>Os moradores vêem o corpo de {0} no chao! O bené foi morto pelo Serial Killer!</value>
   </string>
   <string key="DGToMason">
-    <!-- 0 - target's name -->
     <value>O Paulista {0} agora é jornalista também!</value>
   </string>
   <string key="DGTransformToMason">
-    <!-- 0 - dead mason's name -->
-    <!-- 1 - mason collegues's name -->
     <value>{0} morreu, e tu assumiu a reportagem dele pro jornal.  Os outros jornalistas (se tiver) são: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
     <value>O Paulista {0} agora é membro da Caixa Baixa!</value>
   </string>
   <string key="DGTransformToCult">
-    <!-- 0 - role's name -->
-    <!-- 1 - teammates's name -->
     <value>{0} morreu, e tu agora é membro da Caixa Baixa. Teus parceiros (se tu tiver algum) são: {1}</value>
   </string>
   <string key="DGToWolf">
-    <!-- 0 - DG's name -->
     <value>O Paulista {0} virou traficante que nem tu!</value>
   </string>
   <string key="DGTransformToWolf">
-    <!-- 0 - target's name -->
-    <!-- 1 - teammates's name -->
     <value>{0} morreu, e tu tomou a boca dele. Teus traficantes (se tu tiver) são: {1}</value>
   </string>
-  <string key="SerialKillerWins" isgif="true">
+  <string key="SerialKillerWins">
     <value>Não sobrou uma alma na Cidade de Deus. Quer dizer, só a do Cabeleira. Ele ganhou!</value>
   </string>
   <string key="AskKill">
     <value>Quem tu quer passar agora?</value>
   </string>
   <string key="LoverDied">
-    <!-- 0 - dead's name -->
-    <!-- 1 - lover's name -->
-    <!-- 2 - roles -->
     <value>Com a morte de {0}, {1} fica triste demais. Pega a arma que tem guardada no armário de dá um tiro na própria cabeça. Que vacilo. {2}</value>
   </string>
   <string key="AskDoppelganger">
@@ -772,47 +625,36 @@
     <value>o Paulista 🎭</value>
   </string>
   <string key="NewWCRoleModel">
-    <!-- 0 - target's name -->
     <value>Tu se tornou o Otto. Teu pai agora é {0}</value>
   </string>
   <string key="LoversWin">
     <value>Esse negócio de violência não tá com nada, eles são hippie de coração, Paz e amor. O casal ganhou!</value>
   </string>
   <string key="HunterKilledVisiter">
-    <!-- 0 - target's name -->
-    <!-- 1 - role -->
     <value>No meio da CDD tá o corpo de {0}, todo furado. Parece que alguém tentou passar o Cenoura! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>Um moleque da Caixa Baixa veio falar contigo, mas tu sabe que eles enchem o cu de maconha e só falam merda.</value>
   </string>
   <string key="AlreadyOnWaitList">
-    <!-- 0 - target's name -->
     <value>Você agora está na lista do próximo baile {0}</value>
   </string>
   <string key="AddedToWaitList">
-    <!-- 0 - target's name -->
     <value>Você agora está na lista do proximo baile {0}.  Eu vou te convidar quando o proximo baile começar! </value>
   </string>
   <string key="NotifyNewGame">
-    <!-- 0 - target's name -->
     <value>Uma van indo pro baile está para partir em {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
-    <!-- 0 - SK's name -->
-    <!-- 1 - target's name -->
     <value>A manhã chega e só tem duas pessoas na Cidade de Deus. {0} olha {1}, saca a arma e atira. {1} morre na hora.</value>
   </string>
-  <string key="NoWinner" isgif="true">
+  <string key="NoWinner">
     <value>Todo mundo morreu na Cidade de Deus. O dia vai embora triste e a CDD encerra sua história.</value>
   </string>
   <string key="SKHunterEnd">
-    <!-- 0 - SK's name -->
-    <!-- 1 - Hunter's name -->
     <value>O sol nasce e só {0} e {1} estão vivos na Cidade de Deus.  {0} saca o revólver e atira em {1}.  {1} é rápido e saca a espingarda, explodindo a fuça de {0}. {0} cai no chão, já sem vida. {1} sorri por um momento, mas sente a dor no peito, olha pra baixo e vê o buraco. {1} cai no chão, o último sobrevivente na Cidade de Deus acaba de morrer. Ninguém ganhou.</value>
   </string>
   <string key="RoleModelChosen">
-    <!-- 0 - target's name -->
     <value>Tu demorou pra caralho então escolhi pra tu, ó: {0}</value>
   </string>
   <string key="Won">
@@ -822,16 +664,8 @@
     <value>Perdeu</value>
   </string>
   <string key="IdleCount">
-    <!-- 0 - player's name -->
-    <!-- 1 - idle count -->
     <value>Player {0} morreu por não votar {1} vezes nas últimas 24 horas. Vacilão morre cedo.</value>
   </string>
-  <!--New strings 7th of July-->
-  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
-  For example in Mafia, AboutMason would be:
-  Caporegime 👷\nYou are a caporegime blah blah
-  -->
-  
   <string key="AboutVG">
     <value>Você é um simples aldeão, condenado a passar seus dias arando o campo esprando para ser devorado pelos Lobos, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar pra forca, use seu voto com sabedoria!</value>
   </string>
@@ -910,10 +744,7 @@
   <string key="EndTime">
     <value>Duração do jogo: {0}</value>
   </string>
-  <!--New strings, July the 8th -->
-
   <string key="Day">
-    <!--0 - Day -->
     <value>{0}º Dia de baile</value>
   </string>
   <string key="NodeShutsDown">
@@ -985,7 +816,6 @@
   <string key="Hide">
     <value>Hide</value>
   </string>
-  <!-- Game Mode Choices-->
   <string key="NormalOnly">
     <value>Normal Only</value>
   </string>
@@ -995,8 +825,6 @@
   <string key="PlayerChoice">
     <value>Player Choice</value>
   </string>
-
-  <!-- Show Roles on End Game -->
   <string key="ShowNone">
     <value>Don't show any</value>
   </string>
@@ -1006,7 +834,6 @@
   <string key="ShowAll">
     <value>Show all players</value>
   </string>
-
   <string key="Cancel">
     <value>Cancel</value>
   </string>
@@ -1101,19 +928,16 @@
     <value>Unable to get latest list</value>
   </string>
   <string key="YouJoined">
-    <!-- 0 - Group Name -->
     <value>Aí parça, senta logo que o trem vai ferver em {0}</value>
   </string>
   <string key="Ping2">
     <value>Time to send ping message: {0}</value>
   </string>
-  
-  <!-- Update 4.0-->
   <string key="RoleInfoMayor">
     <value>Você é o Presidente da Associação do Moradores. Seu voto durante o enforcamento contará duas vezes, uma vez que você se revelou. Você faz parte da comunidade.</value>
   </string>
   <string key="RoleInfoPrince">
-    <value>Você é secretamente o Mauricinha de Copacabana, escapando de sua vida aborrecida e mimada passando o dia com esses favelados. Se eles tentarem enforcá-lo, perceberão seu erro, e ninguém será enforcado.</value>
+    <value>Você é secretamente o Mauricinho de Copacabana, escapando de sua vida aborrecida e mimada passando o dia com esses favelados. Se eles tentarem enforcá-lo, perceberão seu erro, e ninguém será enforcado.</value>
   </string>
   <string key="RoleInfoClumsyGuy">
     <value>Você é o Loucão do Baile: Você vai tentar votar, mas há uma chance de 50% de votar em outra pessoa do que você pretendia. Mesmo assim, você está no time da comunidade.</value>
@@ -1204,67 +1028,54 @@
   <string key="AboutWolfCub">
     <value>Mas que filhinho mais querido, se alguem quiser te passar, levo dois, meu filhinho e herdeiro do tráfico!</value>
   </string>
-  
-  <!-- new strings 06 nov-->
   <string key="DGTransformToAlpha">
-    <!-- 0 - target's name -->
-    <!-- 1 - teammates's name -->
     <value>{0} morreu, e você se transformou no Dono da Boca.  Os seus companheiros (se houver) são: {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
-    <!-- 0 - target's name -->
-    <!-- 1 - teammates's name -->
     <value>{0} morreu, e você se transformou no Aviãozinho. Os seus companheiros (se houver) são: {1}</value>
   </string>
-  
-  <!-- Keep this for now until bots update-->
- <string key="VillageTeam">
+  <string key="VillageTeam">
     <value>Time da Aldeia</value>
   </string>
   <string key="NeutralTeam">
     <value>Time Neutro</value>
   </string>
   <string key="WolfTeam">
-    <value>Time Lobo</value>
+    <value>Time Lobo {0}</value>
   </string>
   <string key="SerialKillerTeam">
     <value>Time Serial Killer</value>
   </string>
   <string key="CultTeam">
-    <value>Time da Seita</value>
+    <value>Time da Seita {0}</value>
   </string>
   <string key="TannerTeam">
     <value>Time Suicida</value>
   </string>
-  
   <string key="VillageTeamEnd">
-  <value>Time da Aldeia</value> 
+    <value>Time da Aldeia</value>
   </string>
-- <string key="NeutralTeamEnd">
-  <value>Time Neutro</value> 
+  <string key="NeutralTeamEnd">
+    <value>Time Neutro</value>
   </string>
-- <string key="WolfTeamEnd">
-  <value>Time Lobo</value> 
+  <string key="WolfTeamEnd">
+    <value>Time Lobo</value>
   </string>
-- <string key="SerialKillerTeamEnd">
-  <value>Time Serial Killer</value> 
+  <string key="SerialKillerTeamEnd">
+    <value>Time Serial Killer</value>
   </string>
-- <string key="CultTeamEnd">
-  <value>Time da Seita</value> 
+  <string key="CultTeamEnd">
+    <value>Time da Seita</value>
   </string>
-- <string key="TannerTeamEnd">
-  <value>Time Suicida</value> 
+  <string key="TannerTeamEnd">
+    <value>Time Suicida</value>
   </string>
   <string key="CultConvertWolf">
     <value>O caixa branca {0} tentou converter {1}, mas {0} acabou morrendo... Affz, vocês tentaram converter um Traficante. {0} está morto...</value>
   </string>
-
   <string key="HarlotFuckedKilledPublic">
     <value>{0} entra para casa de {1} pronto pra mais uma noite quente no barracão. Chegando lá, o Cabeleira acabou se divertindo nesse lance de sadomasoquismo e matou {0}! </value>
   </string>
-  
-  
-  <!--New Death Strings 05 Nov-->
   <string key="ApprenticeSeerEaten">
     <value>Os moradores acordaram assustados encontrando o corpo de {0} jogado em cima de um tabuleiro ouija comprado no Mercadão de Madureira, sem a sua cabeça. O filho do Paraíba está morto.</value>
   </string>
@@ -1301,13 +1112,13 @@
   <string key="WildChildEaten">
     <value>Os traficantes nao tem dó nem piedade e mataram o Otto, o garoto que atirou em seu pai em um assalto em banco. {0}, o Otto, morreu! Mas também né, Otto pra que atirar em seu pai?! Agora vamos ver se encontrará ele no inferno!</value>
   </string>
-  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+  <string key="SerialKillerKilledCH">
     <value>A comunidade acorda assustada encontrando o corpo de Neguinho com os braços amarrados. {0} visitou a pessoa errada. O Cabeleira utilizou todas as armas do Neguinho, ao mesmo tempo.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic">
     <value>Péssima escolha da Caixa Branca ao querer chamar para sua gangue um traficante que estava em casa. {0} foi encontrado esfaqueado em frente a Sede dos Caixa Branca.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic">
     <value>Ontem a noite os Caixa Branca quiseram chamar para sua gangue o Cabeleira, e por causa disso, os órgãos de {0} foram encontrados sendo vendidos na feira livre de Domingo</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1316,4 +1127,41 @@
   <string key="GAGuardedWolf">
     <value>{0} tentou proteger um traficante ontem a noite. A comunidade acordou e apenas encontrou o corpo de {0} e uma bibilia em seu peito .</value>
   </string>
-  </strings>
+  <string key="HunterKillsWolfEnd">
+    <value>A parada ficou séria. Sobrou só {0} e {1} na CDD. {1} tentou tomar a boca de {0}, mas o Cenoura tava ligado no movimento! {1} só teve tempo de falar "Na cara não, chefe", mas já era. Velório estragado.
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <value>A parada ficou séria. Sobrou só {0} e {1} na CDD. Como o Bené não tava em lugar nenhum, os traficantes passaram o Cenoura sem dó. Perdeu, rapá.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <value>Com a CDD quase vazia, {1} anda pelas ruas. Ele vê num beco {0}, o último moleque da Caixa Baixa. {1} enche {0} de tapa na cara, pega a arma dele e descarrega nos cornos do moleque. Esse aí foi pro sal.</value>
+  </string>
+  <string key="SecondsAdded">
+    <value>Tem mais gente pra entrar na van ainda! A chefia mandou marcar um 10. O piloto vai esperar mais {0} segundos.\n{1} sobrando pra dar /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <value>O piloto nao quer saber de papo. O tiroteio vai começar e ele nao vai esperar nem {0} segundos.\n{1} sobrando pra juntar no /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Tu tá de sacanagem? Volta pro seu canto na van senão vamo te apresentar o micro-ondas.\nSó os Alemão pode segurar a van mais de uma vez.</value>
+  </string>
+  <string key="AllowExtendQ">
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Se fodeu! A fumaça na casa de {0} te deixou viajando! Vai poder passar ninguém, mané.\n {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+</strings>

@@ -28,13 +28,14 @@ namespace Werewolf_Control.Helpers
 
 
         public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
-        public static long PersianSupportChatId = -1001059174638;
-        public static long MainChatId = -1001049529775; //Beta group
-        public static long SupportChatId = -1001060486754; //@werewolfsupport
-        public static long PrimaryChatId = -1001030085238; //@werewolfgame
-        public static string DevChannelId = "@werewolfdev"; //@werewolfdev
-        public static long VeteranChatId = -1001094614730;
-        public static string VeteranChatLink = "werewolfvets";
+        public static readonly long PersianSupportChatId = -1001059174638;
+        public static readonly long MainChatId = -1001049529775; //Beta group
+        public static readonly long SupportChatId = -1001060486754; //@werewolfsupport
+        public static readonly long PrimaryChatId = -1001030085238; //@werewolfgame
+        public static readonly string DevChannelId = "@werewolfdev"; //@werewolfdev
+        public static readonly long VeteranChatId = -1001094614730;
+        public static readonly string VeteranChatLink = "werewolfvets";
+        public static readonly long TranslationChatId = -1001074012132;
 #if RELEASE2
         public static List<string> VillagerDieImages = new List<string> { };
         public static List<string> WolfWin = new List<string> { };

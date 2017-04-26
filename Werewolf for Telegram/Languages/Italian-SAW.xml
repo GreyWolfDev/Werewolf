@@ -640,10 +640,6 @@ variant="SAW MODE"/>
 
     <value>Quale miglior modo di far capire alla gente quanto vale la propria vita? Quanto in realtà ci teniamo piuttosto che sperperarla in pigrizia e inutilità? Farle vedere la morte in faccia. TU SEI JIGSAW E TU REDIMERAI IL PIANETA DA QUESTE PERSONE! Urge un'alta purificazione, ed è per questo che hai creato questo Gioco...</value>
   </string>
-  <string key="CupidChosen">
-
-    <value>Il prete ha dato ascolto alle vostre preghiere, {0} ora è diventato tuo coniuge. Vi siete accordati che se uno dei due morirà, l'altro seguirà la stessa sorte. Tu e il tuo amore forse riuscirete a vincere, e scommetto che Jigsaw ne sarà soddisfatto...</value>
-  </string>
   <string key="HunterLynchedChoice">
 
     <value>Quei dannati bastardi vogliono ucciderti! Presto, spara a qualcuno!</value>
@@ -703,10 +699,6 @@ variant="SAW MODE"/>
   <string key="CultConvertHunter">
 
     <value>L'Associazione manda {0} per assumere {1} nell'Associazione, ma all'improvviso un colpo suona rumoroso e il corpo di {0} stramazza a terra accanto alla porta della cella di Will Hunt... {0} è morto....</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-
-    <value>L'Associazione aveva mandato {0} ad assumere un nuovo adepto, {1}... Ma non sapevano che in realtà lo stavano mandando nella tana del leone. Il suo cadavere mutilato appare sullo schermo dei monitor tra i sospiri di disapprovazione, la maschera di Jigsaw che copre minacciosa il volto del povero illuso...</value>
   </string>
   <string key="GuardKiller">
 
@@ -1303,5 +1295,52 @@ variant="SAW MODE"/>
   </string>
   <string key="GAGuardedWolf">
     <value>Gli SPEG non hanno apprezzato la visita del Medico questa volta, probabilmente la parcella era troppo salata... Il suo cadavere è fatto a pezzi e irriconoscibile, solo uno stereoscopio sfuggito alla carneficina lascia intuire la sua professione... {0} è morto...</value>
+  </string>
+    
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mentre la Roulette si ferma per l'ultima volta, {0} e {1} si guardano compiaciuti del lavoro svolto. {0} si toglie la maschera dal volto e dice:"È stato un esperimento assolutamente perfetto. Le cavie hanno seguito il copione alla perfezione e scommetto che questo show sarà tra i più apprezzati nella storia della Televisione.". {1} lo fissa perplesso, non sapeva che tutto sarebbe stato trasmesso in diretta, ma annuisce e ai accinge ad uscire dalla Roulette. "Ah no," lo interrompe Jigsaw "non possono esserci due vincitori...", e detto così, sotto gli occhi preoccupati, strabuzzati e terrorizzati di {1}, estrae una pistola dalla cintola, e con calma gli spara sul cranio. Sembra un pistolero mentre soffia sulla canna con soddisfazione, poi, dirigendosi verso l'uscita dice:"Taglia l'ultima parte"...</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{0} aspetta tremante nella sua cella, le mani sudate avvinghiate al calcio della pistola, aspettando {1} per accogliere quel dannato SPEG come andava fatto. {0} si accinge ad entrare nella cella per finire il lavoro, e nota di sfuggita dalle telecamere che Will Hunt lo sta aspettando con la pistola in pugno. Ridacchando fra sé e sè, {1} lancia una delle chiavi appese alla cinta davanti alla porta della cella di {0}, che spara in preda al panico. "Molto furbo", pensa sarcastico {1}, poi si avvicina quasi noncurante e, staccata una granata dalla cintura, la lancia nella cella. Si tappa le orecchie per qualche secondo ed infine si allontana fischiettando, contento di aver finito un'altra giornata di lavoro...</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{0} ci mette pochi secondi a rendersi conto dell'accaduto. Jigsaw esce trionfante dalla sua cella, e comincia a ridere... {0} emette un urlo lancinante mentre Jigsaw lo inchioda al muro. "L'esperimento alla fine ha avuto successo, amico mio..." dice con una nota di divertimento nella voce "Gli esseri umani non sono più attaccati alla propria vita come una volta...". Jigsaw estrae il coltello e tappa la bocca a {0}, che lo fissa implorante... "Perciò avrò modo di insegnarlo loro un'altra volta..." Jigsaw si toglie la maschera rivelando il volto di {1}, sorridente. La lama scivola liscia e recide la carotide in poco tempo. {1} esce dalla Roulette sorridendo nonostante l'esperimento sia fallito...</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Smettila di premere comandi che sai che non funzionano...</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai Giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} prolungare il times ai giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>{0} era il Dinamitardo... Ora sei ferito e non potrai attaccare {1}...</value>
   </string>
 </strings>
