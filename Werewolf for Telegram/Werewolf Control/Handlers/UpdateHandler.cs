@@ -753,6 +753,7 @@ namespace Werewolf_Control.Handler
                     InlineKeyboardMarkup menu;
                     Group grp;
                     Player p = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
+                    Guid guid;
                     List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
                     long groupid = 0;
                     if (args[0] == "vote")
@@ -1308,6 +1309,43 @@ namespace Werewolf_Control.Handler
                         case "done":
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("ThankYou", language));
+                            break;
+                        case "joinButton":
+                            //try to get the guid of the game they want to join
+                            if (Guid.TryParse(args[2], out guid))
+                            {
+                                //try to find the game they want to join
+                                //var lang = GetLanguage(u.Message.From.Id);
+
+                                Bot.ReplyToCallback(query, "Entrando...");
+                                var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == guid)).FirstOrDefault();
+                                if (game == null) return;
+                                //make sure they are member
+                                var status = Bot.Api.GetChatMember(game.GroupId, query.From.Id).Result.Status;
+                                if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                                {
+                                    Bot.Send(GetLocaleString("NotMember", GetLanguage(query.From.Id), game.ChatGroup.ToBold()), query.From.Id);
+                                    return;
+                                }
+                                game.AddPlayer(query.From);
+                            }
+                            break;
+                        case "fleeButton":
+                            if (Guid.TryParse(args[2], out guid))
+                            {
+                                //try to find the game they want to flee
+                                Bot.ReplyToCallback(query, "Saindo...");
+                                var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == guid)).FirstOrDefault();
+                                if (game == null) return;
+                                //make sure they are member
+                                var status = Bot.Api.GetChatMember(game.GroupId, query.From.Id).Result.Status;
+                                if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                                {
+                                    Bot.Send(GetLocaleString("NotMember", GetLanguage(query.From.Id), game.ChatGroup.ToBold()), query.From.Id);
+                                    return;
+                                }
+                                game.RemovePlayer(query.From);
+                            }
                             break;
                     }
                 }

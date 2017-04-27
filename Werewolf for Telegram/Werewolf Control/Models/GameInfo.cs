@@ -23,12 +23,15 @@ namespace Werewolf_Control.Models
 
         public void AddPlayer(Update update)
         {
+            AddPlayer(update.Message.From);
+        }
+
+        public void AddPlayer(User user)
+        {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;
-            //var g = n.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
-            //g?.
-            Users.Add(update.Message.From.Id);
-            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GroupId = GroupId });
+            Users.Add(user.Id);
+            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = user, GroupId = GroupId });
             n.Broadcast(json);
         }
 
@@ -48,11 +51,16 @@ namespace Werewolf_Control.Models
 
         public void RemovePlayer(Update update)
         {
+            RemovePlayer(update.Message.From);
+        }
+
+        public void RemovePlayer(User user)
+        {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;
 
-            Users.Remove(update.Message.From.Id);
-            var json = JsonConvert.SerializeObject(new PlayerFleeInfo { User = update.Message.From, GroupId = update.Message.Chat.Id });
+            Users.Remove(user.Id);
+            var json = JsonConvert.SerializeObject(new PlayerFleeInfo { User = user, GroupId = GroupId });
             n.Broadcast(json);
         }
 

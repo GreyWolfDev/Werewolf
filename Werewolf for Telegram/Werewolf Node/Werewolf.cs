@@ -88,20 +88,18 @@ namespace Werewolf_Node
                     AddPlayer(u);
                 }
 
-		//SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
-                //    GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame)
-                //    /*GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame)*/ );
+		        //SendGif(GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName),
+                //  GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame)
+                // /*GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame)*/ );
 
                 //create our button
                 var menu = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url=$"https://t.me/{Program.Me.Username}?start={Guid}"}
-                });//
-#if DEBUG
-                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
-#else
-                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
-#endif
+                    new InlineKeyboardButton(GetLocaleString("JoinButton"),  $"joinButton|{DbGroup.GroupId}|{Guid}"),
+                    new InlineKeyboardButton("Sair",  $"fleeButton|{DbGroup.GroupId}|{Guid}")
+                });
+
+                _joinMsgId = Program.Bot.SendDocument(chatid, GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame), GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
 
                 new Thread(GameTimer).Start();
 
@@ -579,6 +577,7 @@ namespace Werewolf_Node
                 }
                 else if (IsJoining & !IsInitializing)// really, should never be both joining and initializing but....
                 {
+                    _requestPlayerListUpdate = true;
                     Players.Remove(p);
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
