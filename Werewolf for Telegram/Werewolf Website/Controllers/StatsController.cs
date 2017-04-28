@@ -61,9 +61,8 @@ namespace Werewolf_Web.Controllers
         #region Stats
 
         [HttpGet]
-        public JsonResult GlobalStats()
+        public JsonResult GlobalStats(bool json=false)
         {
-            var statReply = "";
             using (var DB = new WWContext())
             {
                 var stat = DB.GlobalStats.First();
@@ -71,21 +70,35 @@ namespace Werewolf_Web.Controllers
                 var day1lynchlink = $"<a href='/Stats/Player/{stat.MostLynchedFirstDayId}'>{stat.MostLynchedFirstDay}</a>";
                 var day1dielink = $"<a href='/Stats/Player/{stat.MostKilledFirstDayId}'>{stat.MostKilledFirstDay}</a>";
                 var survivorlink = $"<a href='/Stats/Player/{stat.BestSurvivorId}'>{stat.BestSurvivor}</a>";
-                statReply = "<table class=\"table table-hover\"><tbody>" +
-                    $"<tr><td>Games played total</td><td><b>{stat.GamesPlayed}</b></td></tr>" +
-                    $"<tr><td>Total player deaths</td><td><b>{stat.PlayersKilled}</b></td></tr>" +
-                    $"<tr><td>Total player survivals</td><td><b>{stat.PlayersSurvived}</b></td></tr>" +
-                    $"<tr><td>Total players in database</td><td><b>{stat.TotalPlayers}</b></td></tr>" +
-                    $"<tr><td>Total groups in database</td><td><b>{stat.TotalGroups}</b></td></tr>" +
-                    $"<tr><td>Most likely to die first night</td><td><b>{night1dielink}</td><td>{stat.MostKilledFirstPercent}%</b></td></tr>" +
-                    $"<tr><td>Most likely to get lynched first day</td><td><b>{day1lynchlink}</td><td>{stat.MostLynchedFirstPercent}%</b></td></tr>" +
-                    $"<tr><td>Most likely to die first 24 hours</td><td><b>{day1dielink}</td><td>{stat.MostKilledFirstDayPercent}%</b></td></tr>" +
-                    $"<tr><td>Best survivor</td><td><b>{survivorlink}</td><td>{stat.BestSurvivorPercent}%</b></td></tr>" +
-                    $"<tr><td>Last time global stats calculated</td><td><b>{stat.LastRun} (Central US)</b></td></tr>" +
-                    "</tbody></table>";
-
+                if (!json)
+                {
+                    var statReply = "<table class=\"table table-hover\"><tbody>" +
+                        $"<tr><td>Games played total</td><td><b>{stat.GamesPlayed}</b></td></tr>" +
+                        $"<tr><td>Total player deaths</td><td><b>{stat.PlayersKilled}</b></td></tr>" +
+                        $"<tr><td>Total player survivals</td><td><b>{stat.PlayersSurvived}</b></td></tr>" +
+                        $"<tr><td>Total players in database</td><td><b>{stat.TotalPlayers}</b></td></tr>" +
+                        $"<tr><td>Total groups in database</td><td><b>{stat.TotalGroups}</b></td></tr>" +
+                        $"<tr><td>Most likely to die first night</td><td><b>{night1dielink}</td><td>{stat.MostKilledFirstPercent}%</b></td></tr>" +
+                        $"<tr><td>Most likely to get lynched first day</td><td><b>{day1lynchlink}</td><td>{stat.MostLynchedFirstPercent}%</b></td></tr>" +
+                        $"<tr><td>Most likely to die first 24 hours</td><td><b>{day1dielink}</td><td>{stat.MostKilledFirstDayPercent}%</b></td></tr>" +
+                        $"<tr><td>Best survivor</td><td><b>{survivorlink}</td><td>{stat.BestSurvivorPercent}%</b></td></tr>" +
+                        $"<tr><td>Last time global stats calculated</td><td><b>{stat.LastRun} (Central US)</b></td></tr>" +
+                        "</tbody></table>";
+                    return Json(statReply, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    var statReply = new { gamesPlayed = stat.GamesPlayed, playersKilled = stat.PlayersKilled, playersSurvived = stat.PlayersSurvived,
+                        totalPlayers = stat.TotalPlayers, totalGroups = stat.TotalGroups,
+                        mostKilledFirstNight = new { name = stat.MostKilledFirstNight, id = stat.MostKilledFirstNightId, link = night1dielink, percent = stat.MostKilledFirstPercent },
+                        mostLynchedFirstDay = new { name = stat.MostLynchedFirstDay, id = stat.MostLynchedFirstDayId, link = day1lynchlink, percent = stat.MostLynchedFirstPercent },
+                        mostKilledFirstDay = new { name = stat.MostKilledFirstDay, id = stat.MostKilledFirstDayId, link = day1dielink, percent = stat.MostKilledFirstDayPercent },
+                        bestSurvivor = new { name = stat.BestSurvivor, id = stat.BestSurvivorId, link = survivorlink, percent = stat.BestSurvivorPercent },
+                        lastCalculated = stat.LastRun.ToString()
+                    };
+                    return Json(statReply, JsonRequestBehavior.AllowGet);
+                }
             }
-            return Json(statReply, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
