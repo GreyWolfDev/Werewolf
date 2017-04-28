@@ -228,7 +228,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerAchievements(int pid)
+        public JsonResult PlayerAchievements(int pid, bool json=false)
         {
             using (var DB = new WWContext())
             {
@@ -240,11 +240,21 @@ namespace Werewolf_Web.Controllers
                 if (p.Achievements == null)
                     p.Achievements = 0;
                 var ach = (Achievements)p.Achievements;
-                var reply = "<br/><table class=\"table table-hover\"><tbody>";
-                foreach (var a in ach.GetUniqueFlags())
-                    reply += "<tr><td><b>" + a.GetName() + "</b></td><td>" + a.GetDescription() + "</td></tr>";
-                reply += "</tbody></table>";
-                return Json(reply, JsonRequestBehavior.AllowGet);
+                if (!json)
+                {
+                    var reply = "<br/><table class=\"table table-hover\"><tbody>";
+                    foreach (var a in ach.GetUniqueFlags())
+                        reply += "<tr><td><b>" + a.GetName() + "</b></td><td>" + a.GetDescription() + "</td></tr>";
+                    reply += "</tbody></table>";
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    List<object> reply = new List<object>();
+                    foreach (var a in ach.GetUniqueFlags())
+                        reply.Add(new { name = a.GetName(), description = a.GetDescription() });
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+                }
             }
         }
 
