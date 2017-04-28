@@ -461,14 +461,15 @@ namespace Werewolf_Node
                 if (IsInitializing || !IsJoining) return;
                 //add player
                 Players.Add(p);
-                Send(GetLocaleString("YouJoined", ChatGroup), p.Id);
+                //Send(GetLocaleString("YouJoined", ChatGroup), p.Id);
 
                 //if (!notify) return;
 
-                //var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
-                //    DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
+               // var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
+               //     DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
 
-                //bool sendPM = false;
+                bool sendPM = false;
+                var msg = "";
 
                 using (var db = new WWContext())
                 {
@@ -504,29 +505,39 @@ namespace Werewolf_Node
                     db.SaveChanges();
 
                     var botname = "@" + Program.Me.Username;
+#if RELEASE
+                    if (user.HasPM != true)		
+#elif RELEASE2
+                    if (user.HasPM2 != true)		
+#elif DEBUG
+                    if (false)
+#endif
+                    {
+                        msg = GetLocaleString("PMTheBot", p.GetName(), botname);
+                        sendPM = true;
+                    }
                 }
 
                 //now, attempt to PM the player
                 try
                 {
                     // ReSharper disable once UnusedVariable
-                    //var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
+                    var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
                 }
                 catch (Exception)
                 {
-                    //var botname = "@" + Program.Me.Username;
-                    //if (!sendPM)
-                    //    msg = GetLocaleString("PMTheBot", p.GetName(), botname);
-                    ////unable to PM
-                    //sendPM = true;
+                    var botname = "@" + Program.Me.Username;
+                    if (!sendPM)
+                        msg = GetLocaleString("PMTheBot", p.GetName(), botname);
+                    //unable to PM
+                    sendPM = true;
                 }
-
-                //SendWithQueue(msg, requestPM: sendPM);
-
-                //if (sendPM) //don't allow them to join
-                //{
-                //    Players.Remove(p);
-                //}
+                
+                if (sendPM) //don't allow them to join
+                {
+                    SendWithQueue(msg, requestPM: sendPM);
+                    Players.Remove(p);
+                }
                 _requestPlayerListUpdate = true;
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
@@ -560,7 +571,7 @@ namespace Werewolf_Node
                     return;
                 }
 
-                SendWithQueue(GetLocaleString("Flee", p.GetName()));
+                //SendWithQueue(GetLocaleString("Flee", p.GetName()));
                 if (IsRunning)
                 {
                     //kill the player
@@ -579,7 +590,7 @@ namespace Werewolf_Node
                 {
                     _requestPlayerListUpdate = true;
                     Players.Remove(p);
-                    SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
+                    //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
             catch (Exception e)
@@ -587,9 +598,9 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-        #endregion
+#endregion
 
-        #region Communications
+                    #region Communications
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -1043,9 +1054,9 @@ namespace Werewolf_Node
             LastPlayersOutput = DateTime.Now;
             Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), replyToMessageId: _playerListId);
         }
-        #endregion
+                    #endregion
 
-        #region Roles
+                    #region Roles
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();
@@ -1936,9 +1947,9 @@ namespace Werewolf_Node
 
 
 
-        #endregion
+                    #endregion
 
-        #region Cycles
+                    #region Cycles
 
         public void ForceStart()
         {
@@ -2381,7 +2392,7 @@ namespace Werewolf_Node
              * GA
              */
 
-            #region Wolf Night
+                    #region Wolf Night
 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
 
@@ -2656,9 +2667,9 @@ namespace Werewolf_Node
                 }
             }
             WolfCubKilled = false;
-            #endregion
+                    #endregion
 
-            #region Serial Killer Night
+                    #region Serial Killer Night
 
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
@@ -2688,12 +2699,12 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+                    #endregion
 
             if (Players == null)
                 return;
 
-            #region Cult Hunter Night
+                    #region Cult Hunter Night
 
             //cult hunter
             var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
@@ -2733,9 +2744,9 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+                    #endregion
 
-            #region Cult Night
+                    #region Cult Night
 
             //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
@@ -2926,7 +2937,7 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+                    #endregion
 
             if (Players == null)
             {
@@ -2934,7 +2945,7 @@ namespace Werewolf_Node
                 return;
             }
 
-            #region Harlot Night
+                    #region Harlot Night
 
             //let the harlot know
             var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
@@ -3013,9 +3024,9 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+                    #endregion
 
-            #region Seer / Fool
+                    #region Seer / Fool
 
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
@@ -3102,9 +3113,9 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+                    #endregion
 
-            #region GA Night
+                    #region GA Night
 
             if (ga != null)
             {
@@ -3166,11 +3177,11 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+                    #endregion
 
             CheckRoleChanges();
 
-            #region Night Death Notifications to Group
+                    #region Night Death Notifications to Group
 
 
             var secret = DbGroup.ShowRoles == false;
@@ -3331,7 +3342,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("NoAttack"));
             }
 
-            #endregion
+                    #endregion
 
             if (CheckForGameEnd()) return;
 
@@ -3648,9 +3659,9 @@ namespace Werewolf_Node
             }
         }
 
-        #endregion
+                    #endregion
 
-        #region Send Menus
+                    #region Send Menus
 
         private void SendLynchMenu()
         {
@@ -3915,9 +3926,9 @@ namespace Werewolf_Node
             _silverSpread = false;
         }
 
-        #endregion
+                    #endregion
 
-        #region Helpers
+                    #region Helpers
 
         public void FleePlayer(int banid)
         {
@@ -4151,9 +4162,9 @@ namespace Werewolf_Node
         }
 
 
-        #endregion
+                    #endregion
 
-        #region Database Helpers
+                    #region Database Helpers
 
         // ReSharper disable UnusedParameter.Local
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
@@ -4444,6 +4455,6 @@ namespace Werewolf_Node
             }
         }
 
-        #endregion
+                    #endregion
     }
 }
