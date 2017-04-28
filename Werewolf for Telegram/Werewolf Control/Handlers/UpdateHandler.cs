@@ -545,7 +545,7 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done", "gif", "joinButton", "fleeButton" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done", "gif", "joinbutton", "fleebutton" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
