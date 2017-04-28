@@ -1336,7 +1336,7 @@ namespace Werewolf_Control
                 msg += e.Message;
             }
 
-            Bot.Send(msg, u.Message.Chat.Id);
+            Bot.Edit(u.Message.Chat.Id, msgid, msg);
         }
 
     }
