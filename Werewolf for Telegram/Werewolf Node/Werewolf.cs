@@ -3267,10 +3267,8 @@ namespace Werewolf_Node
                     return DoGameEnd(ITeam.NoOne);
                 case 1:
                     var p = alivePlayers.FirstOrDefault();
-                    if (p.PlayerRole == IRole.Tanner)
+                    if (p.PlayerRole == IRole.Tanner || p.PlayerRole == IRole.Sorcerer)
                         return DoGameEnd(ITeam.NoOne);
-                    else if (p.PlayerRole == IRole.Sorcerer)
-                        return DoGameEnd(ITeam.Village); //a sorcerer does no harm to the village
                     else
                         return DoGameEnd(p.Team);
                 case 2:

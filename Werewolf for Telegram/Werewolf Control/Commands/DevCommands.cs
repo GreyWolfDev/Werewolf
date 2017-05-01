@@ -1273,6 +1273,38 @@ namespace Werewolf_Control
             Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 
+        [Attributes.Command(Trigger = "resetlink", GlobalAdminOnly = true)]
+        public static void ResetLink(Update u, string[] args)
+        {
+            var link = args[1];
+            if (String.IsNullOrEmpty(link))
+            {
+                Send("Use /resetlink <link|id>. This will reset the link of the group, without affecting the Preferred status.", u.Message.Chat.Id);
+            }
+            else
+            {
+                using (var db = new WWContext())
+                {
+                    Database.Group grp;
+                    long id;
+                    if (long.TryParse(link, out id))
+                        grp = db.Groups.FirstOrDefault(x => x.Id == id);
+                    else
+                        grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
+
+                    if (grp == null)
+                        Send($"Group not found.", u.Message.Chat.Id);
+                    else
+                    {
+                        grp.GroupLink = null;
+                        db.SaveChanges();
+                        Send($"The link for {grp.Name} has been reset.", u.Message.Chat.Id);
+                    }
+                }
+            }
+            return;
+        }
+
 
         [Attributes.Command(Trigger = "commitlangs", DevOnly = true)]
         public static void CommitLangs(Update u, string[] args)
