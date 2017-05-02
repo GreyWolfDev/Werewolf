@@ -3047,10 +3047,10 @@ namespace Werewolf_Node
                             case IRole.Traitor:
                                 role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
                                 break;
-                            case IRole.WolfCub: //seer doesn't see wolf type
-                            case IRole.AlphaWolf:
-                                role = IRole.Wolf;
-                                break;
+                            //case IRole.WolfCub: //seer doesn't see wolf type
+                            //case IRole.AlphaWolf:
+                            //    role = IRole.Wolf;
+                            //    break;
                         }
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
                     }
