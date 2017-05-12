@@ -68,7 +68,7 @@ namespace Werewolf_Node
                     }
                     try
                     {
-                        var memberCount = Program.Bot.GetChatMembersCount(chatid).Result;
+                        var memberCount = Program.Api.GetChatMembersCount(chatid).Result;
                         DbGroup.MemberCount = memberCount;
                         db.SaveChanges();
                     }
@@ -806,7 +806,7 @@ namespace Werewolf_Node
 #if (DEBUG)
             Send(text, id);
 #else
-            Program.Bot.SendDocument(id, image, text);
+            Program.Api.SendDocument(id, image, text);
 #endif
         }
 
@@ -992,7 +992,7 @@ namespace Werewolf_Node
         {
             if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
             LastPlayersOutput = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0?"LatestList": "UnableToGetList"), replyToMessageId: _playerListId);
+            Program.Api.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0?"LatestList": "UnableToGetList"), replyToMessageId: _playerListId);
         }
         #endregion
 
@@ -1873,7 +1873,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0)
                         {
                             Program.MessagesSent++;
-                            Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Api.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -2063,7 +2063,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor)
                         {
                             Program.MessagesSent++;
-                            Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Api.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -2229,7 +2229,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0)
                         {
                             Program.MessagesSent++;
-                            Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Api.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -3494,7 +3494,7 @@ namespace Werewolf_Node
                     msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
-                //Program.Bot.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
+                //Program.Api.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
 
                 Thread.Sleep(10000);
@@ -3945,7 +3945,7 @@ namespace Werewolf_Node
         internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
         {
             //first answer the callback
-            Program.Bot.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
+            Program.Api.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
             //edit the original message
             if (edit)
                 Edit(query, text, replyMarkup);
@@ -3959,7 +3959,7 @@ namespace Werewolf_Node
         internal static Task<Telegram.Bot.Types.Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
         {
             Program.MessagesSent++;
-            return Program.Bot.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
+            return Program.Api.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
         }
 
 

@@ -26,7 +26,7 @@ namespace Werewolf_Node
         internal static Guid ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
-        internal static Client Bot;
+        internal static Client Api;
         internal static User Me;
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
@@ -42,8 +42,8 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
-        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(Directory.GetParent(RootDirectory).Parent.FullName, @"Languages"));
+        internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(Directory.GetParent(RootDirectory).Parent.FullName, @"TempLanguageFiles"));
         internal static XDocument English;
         internal static int MessagesSent = 0;
         static void Main(string[] args)
@@ -52,7 +52,7 @@ namespace Werewolf_Node
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
                 var ex = eventArgs.ExceptionObject as Exception;
-                using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\NodeFatalError.log"), true))
+                using (var sw = new StreamWriter(Path.Combine(Directory.GetParent(RootDirectory).FullName, "Logs", "NodeFatalError.log"), true))
                 {
 
                     sw.WriteLine($"{DateTime.Now} - {Version} - {ex.Message}");
@@ -66,8 +66,9 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
+            Console.WriteLine("Loading English");
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
-
+            Console.WriteLine("Getting API key from registry");
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
@@ -81,9 +82,13 @@ namespace Werewolf_Node
 #elif BETA
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
-            Bot = new Client(APIToken, Path.Combine(RootDirectory, "..\\Logs"));
-            Me = Bot.GetMe().Result;
+            Console.WriteLine("Creating Api Instance");
+            Api = new Client(APIToken, Path.Combine(Directory.GetParent(RootDirectory).FullName, "Logs"));
+            Console.WriteLine("Getting bot name");
+            Me = Api.GetMe().Result;
+            Console.WriteLine("Got: " + Me.FirstName);
             ClientId = Guid.NewGuid();
+            Console.WriteLine("Starting TCP Keep Alive Thread");
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
             Thread.Sleep(-1);
@@ -112,7 +117,7 @@ namespace Werewolf_Node
                     }
                     catch (Exception e)
                     {
-                        //Bot.SendTextMessage(Settings.MainChatId, e.Message);
+                        //Api.SendTextMessage(Settings.MainChatId, e.Message);
                         continue;
                     }
                     Werewolf game;
@@ -282,15 +287,15 @@ namespace Werewolf_Node
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                return await Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)
             {
-                return await Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else
             {
-                return await Bot.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
         }
 
