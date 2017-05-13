@@ -573,33 +573,34 @@ namespace Werewolf_Control
             }
             using (var db = new WWContext())
             {
-                var sql = args[1];
                 var conn = db.Database.Connection;
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 string raw = "";
                 using (var comm = conn.CreateCommand())
                 {
-                    comm.CommandText = sql;
-                    var reader = comm.ExecuteReader();
-                    var result = "";
-                    if (reader.HasRows)
+                    var queries = args[1].Split(';');
+                    foreach (var sql in queries)
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
-                            raw += reader.GetName(i) + " - ";
-                        result += raw + Environment.NewLine;
-                        raw = "";
-                        while (reader.Read())
+                        comm.CommandText = sql;
+                        var reader = comm.ExecuteReader();
+                        var result = "";
+                        if (reader.HasRows)
                         {
                             for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                raw += reader[i] + " - ";
-                            }
+                                raw += reader.GetName(i) + (i == reader.FieldCount - 1 ? "" : " - ");
                             result += raw + Environment.NewLine;
                             raw = "";
+                            while (reader.Read())
+                            {
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                    raw += reader[i] + (i == reader.FieldCount - 1 ? "" : " - ");
+                                result += raw + Environment.NewLine;
+                                raw = "";
+                            }
                         }
+                        Send(result + (reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected")), u.Message.Chat.Id);
                     }
-                    Send(result + reader.RecordsAffected + " records affected", u.Message.Chat.Id);
                 }
             }
         }
