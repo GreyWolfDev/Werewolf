@@ -32,6 +32,7 @@ namespace Werewolf_Control
         public static int MaxGames;
         public static DateTime MaxTime = DateTime.MinValue;
         public static bool MaintMode = false;
+        
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -215,7 +216,9 @@ namespace Werewolf_Control
         {
             //wait a bit to allow nodes to register
             Thread.Sleep(5000);
+#if !DEBUG
             new Task(Updater.MonitorUpdates).Start();
+#endif
             while (Running)
             {
                 try

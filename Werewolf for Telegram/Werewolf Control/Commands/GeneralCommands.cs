@@ -42,8 +42,11 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
-                                                        parseMode: ParseMode.Markdown);
+            if (args.Length == 1) //only send the message if there is no extra args (otherwise it's more likely for other bots)
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
+                                                            parseMode: ParseMode.Markdown);
+            }
         }
 
         [Command(Trigger = "chatid")]
@@ -228,23 +231,23 @@ namespace Werewolf_Control
                         }
                         else
                         {
-                            var uid = args[1];
-
-
-                            
-                            
-
-                            //check the database for that user
+                            //try to get the guid of the game they want to join
+                            Guid g;
+                            if (Guid.TryParse(args[1], out g))
                             {
-                                var aspuser = db.AspNetUsers.Find(uid);
-                                
-                                //we have the asp user, let's find the player
-                                var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
-                                if (user == null)
+                                //try to find the game they want to join
+                                //var lang = GetLanguage(u.Message.From.Id);
+
+                                var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
+                                if (game == null) return;
+                                //make sure they are member
+                                var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                                if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                                {
+                                    Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
                                     return;
-                                user.WebUserId = uid; //linked!
-                                db.SaveChanges();
-                                Send($"Your telegram account is now linked to your web account - {aspuser.Email}", u.Message.From.Id);
+                                }
+                                game.AddPlayer(u);
                             }
                         }
                     }
