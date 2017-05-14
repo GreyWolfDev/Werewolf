@@ -33,6 +33,16 @@
           <Property Name="BanDate" Type="datetime" />
           <Property Name="Name" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="UserId" />
@@ -190,9 +200,11 @@
           <Property Name="MemberCount" Type="int" />
           <Property Name="AllowExtend" Type="bit" />
           <Property Name="MaxExtend" Type="int" />
+          <Property Name="EnableSecretLynch" Type="bit" />
+          <Property Name="BetaPoints" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.GroupAdmin'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="GroupAdmin">
           <Key>
             <PropertyRef Name="GroupId" />
@@ -226,8 +238,8 @@ warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary k
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.NotifyGame'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="NotifyGame">
           <Key>
             <PropertyRef Name="UserId" />
@@ -272,8 +284,8 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="GamesSurvived" Type="int" Nullable="false" />
           <Property Name="LastRun" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_InactivePlayersMain'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="v_InactivePlayersMain">
           <Key>
             <PropertyRef Name="Id" />
@@ -285,8 +297,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not 
           <Property Name="TelegramId" Type="int" Nullable="false" />
           <Property Name="last" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_NonDefaultGroups'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="v_NonDefaultGroups">
           <Key>
             <PropertyRef Name="Name" />
@@ -311,8 +323,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not hav
           <Property Name="Preferred" Type="bit" />
           <Property Name="GroupId" Type="bigint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_PreferredGroups'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="v_PreferredGroups">
           <Key>
             <PropertyRef Name="Id" />
@@ -327,8 +339,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_PublicGroups'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="v_PublicGroups">
           <Key>
             <PropertyRef Name="Id" />
@@ -340,8 +352,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a 
           <Property Name="MemberCount" Type="int" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_WaitList'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="v_WaitList">
           <Key>
             <PropertyRef Name="Name" />
@@ -350,8 +362,8 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.v_IdleKill24HoursMain'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="v_IdleKill24HoursMain">
           <Key>
             <PropertyRef Name="Name" />
@@ -569,6 +581,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="BotStatus" EntityType="Self.BotStatus" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="ContestTerms" EntityType="Self.ContestTerms" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="GlobalBan" EntityType="Self.GlobalBan" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
@@ -796,6 +809,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="MemberCount" Type="Int32" />
           <Property Name="AllowExtend" Type="Boolean" />
           <Property Name="MaxExtend" Type="Int32" />
+          <Property Name="EnableSecretLynch" Type="Boolean" />
+          <Property Name="BetaPoints" Type="Int32" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -1068,6 +1083,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <Parameter Name="oldTGId" Mode="In" Type="Int32" />
             <Parameter Name="newTGId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="C__MigrationHistory" EntityType="werewolfModel.C__MigrationHistory" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1389,6 +1405,16 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1444,6 +1470,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="BetaPoints" ColumnName="BetaPoints" />
+                <ScalarProperty Name="EnableSecretLynch" ColumnName="EnableSecretLynch" />
                 <ScalarProperty Name="MaxExtend" ColumnName="MaxExtend" />
                 <ScalarProperty Name="AllowExtend" ColumnName="AllowExtend" />
                 <ScalarProperty Name="MemberCount" ColumnName="MemberCount" />
@@ -1876,6 +1904,16 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             </EndProperty>
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="RestoreAccount" FunctionName="werewolfModel.Store.RestoreAccount" />
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="werewolfModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
