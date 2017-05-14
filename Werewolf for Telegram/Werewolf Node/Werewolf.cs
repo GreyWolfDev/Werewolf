@@ -3129,11 +3129,11 @@ namespace Werewolf_Node
                                 case IRole.Hunter:
                                     msg = null;
                                     SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
-                                        $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}"));
+                                        $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                                     HunterFinalShot(p, KillMthd.SerialKilled);
                                     break;
                                 default:
-                                    msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                    msg = GetLocaleString("DefaultKilled", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                                     break;
                             }
                         }
@@ -4104,7 +4104,7 @@ namespace Werewolf_Node
                     WolfCubKilled = true;
                 p.TimeDied = DateTime.Now;
             }
-            //maybe we should CheckRoleChanges(); here?
+            CheckRoleChanges();
             if (p?.PlayerRole == IRole.Hunter)
             {
                 HunterFinalShot(p, KillMthd.LoverDied);
