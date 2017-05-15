@@ -1,0 +1,1406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!---->
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <language name="Português (Divas Pop)" base="Português" variant="Divas Pop" />
+  <string key="NotInGame">
+    <value>Você não parece estar em um show agora...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <!-- 0 - Player name -->-->
+    <value>{0} iniciou uma nova era! Use /join para entrar no album... e provavelmente fracassar.</value>
+    <value>Uma nova performance foi iniciada por {0}! Use /join para assistir!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <!-- 0 - Player name -->-->
+    <value>{0} deu a loka e começou uma era caótica. Use /join para começar as colaborações... e provavelmente fracassar.</value>
+    <value>Um nova performance caótica foi iniciada por {0}! Use /join para entrar nessa loucura!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Você não pode entrar agora! O show já começou. Use /nextgame para receber uma mensagem no privado quando uma nova performance for iniciada!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Você já está na pista premium, amore!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Falta um minuto pro show começar!  Dê /join para se juntar à performance.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->-->
+    <value>A música já vai começar em {0}! Dê /join para se juntar à performance.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Quantidade mínima de cantoras não foi atingida, cancelando a apresentação! Você estaá feliz, Katy Perry?</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>A performance vai começar, por favor aguarde enquanto eu distribuo as colaborações e atualizo o iTunes.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->-->
+    <value>{0} está banido(a) por tentar explorar um erro (não são permitidos nomes iniciados por /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->-->
+    <value>{0}, por favor mude seu nome para entrar na partida</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sinto muito, o número máximo de feats foi atingido!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->-->
+    <!-- 1 - current players -->-->
+    <!-- 2 - Minimum players -->-->
+    <!-- 3 - Maximum players -->-->
+    <value>{0} se juntou à performance. A apresentação já vai começar, amore! {1} cantoras, {2} mínimo, {3} máximo</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->-->
+    <!-- 1 - bot username -->-->
+    <value>\n{0} por favor, me envie uma mensagem no privado ({1}) e clique start, pois você ainda não está registrado.  Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Você não pode parar a carreira! VOCÊ ESTÁ FRACASSADA!  Volte para sua cova.... E aceite seu flop.</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->-->
+    <value>{0} fracassou no debut!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->-->
+    <!-- 1 - Player role -->-->
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->-->
+    <value>{0} cantoras  restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Ei, não te perguntei nada ainda!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Você não parece estar performando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Eu não consegui encontrar uma cantora com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Essa resposta não é válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->-->
+    <!-- 1 - Victim name -->-->
+    <value>{0} votou para fracassar {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->-->
+    <!-- 1 - Target name -->-->
+    <value>{0} votou para tirar {1} da Hot 100</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->-->
+    <!-- 1 - player role -->-->
+    <value>{0} não votou por 2 noites seguidas.  As gravadoras encaram isso como um afronte terrível e então {0} cai de repente (assim como Michael Jackson), morto(a).\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Zayn!!! Agora você é uma sedenta...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Opção aceita, amore</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->-->
+    <value>\nA Rihanna é {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->-->
+    <value>{0} era a Rihanna. Como aprendiz, você pega seus clipes e se torna a nova Rihanna.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->-->
+    <!-- 1 - seer name -->-->
+    <value>{0} era a Tinashe e agora tomou o lugar de {1} como a nova Rihanna.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->-->
+    <!-- 1 - player role -->-->
+    <value>Você vê que {0} é {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Quem você gostaria de mandar para fora da Hot 100?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Quem você gostaria de investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->-->
+    <value>Em quem você gostaria de atirar? {0} bala(s) restantes</value>
+  </string>
+  <string key="AskVisit">
+    <value>A quem você gostaria de fazer uma visitinha?</value>
+  </string>
+  <string key="AskSee">
+    <value>Quem você gostaria de ver?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Quem você gostaria de proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>Quem você gostaria de fracassar?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Quem você gostaria de mandar um diss?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Quem será seu grande exemplo?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Quem você gostaria de converter para o Squad?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->-->
+    <!-- 0 - teammate names -->-->
+    <value>  Lembre-se de compor com {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value> Você é a Nicki Minaj. Por enquanto você é uma Katy Perry, mas se você por atacada pelas sedentas, você se tornará uma sedenta também.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value> Você é a Adele, e joga pela Billboard. Durante o dia, você pode escolher uma cantora para investigar e descobrir suas polêmicas.  No entanto, ao fazer isso, você pode ser descoberto pelas sedentas!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value> Parabéns, você é a Miley Cyrus! Você chapa demais, mas joga pela Billboard. Se as sedentas te devorarem, elas vão ficar chapadas e não vão conseguir atacar ninguém na noite seguinte!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value> Você é o Christina Aguilera, e seu papel é proteger a Billboard. Durante a noite, você pode escolher uma cantora para gritar pra espantar as sedentas. Porém, se você escolher uma sedenta, pode acontecer o pior.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value> Bang bang, você é a Lady Gaga.  Você possui 2 balas para ajudar a Billboard.  Durante o dia, você pode atirar em alguma diva. Todo mundo ouvirá Bad Romance e saberão que você é a Lady Gaga. </value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value> Safada! Você é a Taylor Swift, a mais rodada da Billboard. Durante a noite, você poderá escolher alguém para fazer uma visitinha, e descobrir se a pessoa é ou não uma sedenta. Porém, se você visitar uma sedenta, ou alguém que está sendo fracassado  pelas sedentas, você irá morrer.  Se você visitar alguém e as sedentas tentarem te matar na sua casa, você irá hitar (já que não estava lá).</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value> Traíííííra!! Você é o Zayn! Por enquanto, você é uma Katy Perry, mas assim que todos as sedentas estiverem mortas, você se transformará na Lily Allen.  Se a Rihanna vir você, você pode ou não ser identificado(a) por ela como uma sedenta.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value> VOCÊ É A LILY ALLEN!! Bom pra você! Durante a noite você pode escolher alguém para fracassar, junto com seu time, as sedentas.</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Você é a Rihanna, seu papel é guiar a Billboard na empreitada contra as sedentas.  Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque as rivais estão loucas pra fracassar você!</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value> Você é uma simples Katy Perry, condenada a passar seus dias esperando mijos do Dr. Luke, frustrar os fãs e esperas ser flopado pelas sedentas, suas inimigas. Uma vez por dia você pode votar em alguém pra mandar pra fora da Billboard, use seu voto com sabedoria! </value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value> Você é a Lana Del Rey, seu time é você mesma!  Se você for pra votação, começa a tocar Dark Daradise e você ganha automaticamente, sozinha. Sua egoista!</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value> Você é o Justin Bieber! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em um sedento na Billboard.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value> Você é a Sia, você saberá quem é a verdadeira Rihanna (e não o Mark Ronson). Use isso para ajudar seu time, a Billboard!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Você é a Tinashe, aprendiz de Rihanna e vive na Billboard.  Caso a Rihanna fracasse, você tomará seu lugar como ícone.</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>Você é a Cut-Throat. Durante a noite, você poderá escolher alguém para converter ao Squad de Taylor Swift e participar de Bad Blood. Se todos as divas restantes ao final do show forem do Squad, vocês vencem!</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value> O Squad de Taylor Swift está na Billboard tentando converter todo mundo, e você, o Kanye West, deve proteger o mundo pop!  Durante a noite você poderá escolher alguém para escrever um diss.  Se ele(a) for do Squad, ele(a) morre.  Caso o Squad tente te converter, o membro mais recente morre. </value>
+  </string>
+  <string key="LynchTime">
+    <!-- 0 - number of seconds -->-->
+    <value>
+      A noite se aproxima e as cantoras se reúnem para decidir quem irá fracassar na Billboard... Aqui não, Jay-Z!
+      Todo mundo tem agora {0} segundos para votar!
+    </value>
+  </string>
+  <string key="DayTime">
+    <!-- 0 - number of seconds -->-->
+    <value>Amanheceu na Billboard, amore. Tá na hora de levantar dessa cama e ir pro estúdio, fracassada. Bon Appétit aqui não! Vocês têm agora {0} segundos para fazer suas acusações / defesas / discutir e se livrar daquele feat ruim.</value>
+    <value>Mais uma vez o sol nasce no mundo pop. Os preparativos para os comebacks estão por vir enquanto algumas divas estão apenas de olho no Grammy... Vocês tem agora {0} segundos para fazer suas colaborações, criar polêmicas e xingar muito no twitter. </value>
+    <value>Amanheceu na Billboard! Já checou o iTunes hoje? Então corre e se prepara porque vocês têm {0} segundos para utilizar suas ações!</value>
+  </string>
+  <string key="NightTime">
+    <!-- 0 - number of seconds -->-->
+    <value>Caiu a noite, pode entrar performance.  Todas vão pra After Party depois do evento.  Divas: vocês têm {0} segundos para usar suas ações!</value>
+    <value>Mais uma noite na Billboard, dia de Met Gala, amore! Prepare seu vestido e o celular escondido para aquela selfie proibida! Mas não vá pensando que você está tirando férias do iTunes... Vocês tem {0} segundos para utilizar suas ações!</value>
+    <value>O Coachella vai começar, amore! Vocês tem {0} segundos para performar sem pagar mico ou desafinar.... (ainda bem que aldeão não performa né mores, coitada da Katy)</value>
+  </string>
+  <string key="LynchKill">
+    <!-- 0 - player name -->-->
+    <!-- 1 - player role -->-->
+    <value>As  cantoras votaram, em meio a dúvidas e suspeitas. {0} está fracassada e fora da Billboard. Bon Appétit, baby! {1}</value>
+    <value>As  cantoras votaram, em meio a dúvidas e suspeitas. {0} está fracassada e fora da Billboard. Flopou mais que Mo Bounce! {1}</value>
+    <value>As  cantoras votaram, em meio a dúvidas e suspeitas. {0} está fracassada e fora da Billboard. Parabéns pelo feat com o Migos, amore! {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Incapazes de chegar a uma decisão final sobre quem mandar para fora da Billboard, as colaborações revoltadas retornam para seus estúdios, frustradas...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Alguém está aprontando um comeback, ninguém votou!  Ninguém será mandando para fora da Billboard hoje.....</value>
+  </string>
+  <string key="DetectiveEaten">
+    <!-- 0 - victim name -->-->
+    <value> As divas se reúnem durante a manhã, mas ninguém consegue achar {0} entre elas.  Elas correm para o estúdio e encontram {0} despedaçada, com um microfone enfiado em sua goela. {0} Era a Adele! </value>
+  </string>
+  <string key="GuardianEaten">
+    <!-- 0 - victim name -->-->
+    <value> A manhã chega e, para a surpresa de todos, no top 200 da Billboard estava a música de {0}, a Christina Aguileira, sem vida! (e fracassada, amore)</value>
+  </string>
+  <string key="GunnerEaten">
+    <!-- 0 - victim name -->-->
+    <value>Todos saem de casa e então encontram pedaços de uma espingarda despedaçada... em seguida escutam John Wayne... o chapéu rosa...  e então no deserto de Perfect Illusion, o corpo de {0}, morto(a) pelas sedentas.  Vocês perderam a Lady Gaga!</value>
+  </string>
+  <string key="SeerEaten">
+    <!-- 0 - victim name -->-->
+    <value>As cantoras chegam para ensaiar ao amanhecer e encontram pedaços do que um dia foi {0} em cima de uma mesa com maconha e Needed Me tocando ao fundo.  A Rihanna está morta.</value>
+  </string>
+  <string key="DrunkEaten">
+    <!-- 0 - victim name -->-->
+    <value>Todas se chocam com um forte cheiro de maconha e We Can’t Stop tocando altissimo...  O estúdio está pegando fogo!!!!  Após apagar o incêndio, os restos de {0} são encontrados, tostadinhos.... Parabéns, Miley Cyrus.</value>
+  </string>
+  <string key="FoolEaten">
+    <!-- 0 - victim name -->-->
+    <value> À medida que os ensaios começam, as divas encontram {0} deitado em cima de uma mesa, mas com o mijo de.... Pitbull? HAHAHAHAH QUE TROUXA! Tá feliz, Bruno Mars?</value>
+  </string>
+  <string key="DefaultEaten">
+    <!-- 0 - victim name -->-->
+    <!-- 1 - victim role -->-->
+    <value> À medida que todos saem do estúdio de manhã, sentem um cheiro horrível.  Eles seguem o cheiro para encontrar {0} esquartejado(a) na portaria.  TÁ FELIZ, SEDENTA? {1}</value>
+    <value>Amanheceu na Billboard, mas um estúdio continua sombrio. Todos notam a ausência de {0} e começam a procurar por ela... Então encontram, despedaçada, a {1} em meio ao cenário do clipe de Bon Appétit, o banquete das sedentas.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->-->
+    <value>Um enorme fedor esta sendo exalado pelo estúdio de {0}... As divas decidem então entrar lá e encontram Famous tocando no último volume, um corpo, seus posters de Taylor Swift rasgados e os boletos incendiados deixam bem claro que houve... Um membro do Squad de Taylor Swift foi torturado e morto pelo Kanye West!</value>
+    <value>Uma enorme confusão acontece no backstage do Grammy, todas as divas correm para ver o que está acontecendo quando encontram {0}, um membro do Squad de Taylor Swift, morto ao som de Famous! Parece que o Kanye West não dá descanso para ninguém.</value>
+  </string>
+  <string key="NoAttack">
+    <value>As divas se juntam no centro da Billboard durante a manhã e dão um suspiro de alívio - parece que não houve nenhum fracasso na última noite.</value>
+    <value>As divas se juntam no topo do iTunes contentes e bem sucedidas, parece que ninguém ficou no vermelho essa noite! Aqui não, fracasso.</value>
+    <value>O topo da Billboard continua intacto, sem nenhum fracasso, as divas amanhecem aliviadas e correndo do flop!</value>
+  </string>
+  <string key="CursedBitten">
+    <value>Você foi atacado(a) pelas sedentas.  Por ser a Nicki Minaj sempre  em busca de feat, você se tornou uma sedenta!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->-->
+    <value>Sua(s) colaboração(s) sedenta(s) pelo top5: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <!-- 0 - victim name -->-->
+    <value>{0} foi chamada para o fracasso.... Mas era a Nicki Minaj e se tornou uma sedenta! Parabéns pelo seu novo feat!</value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>Ah não!  As sedentas te floparam.  TÁ FELIZ KATY PERRY? PARABÉNS PELA LADEIRADA!</value>
+    <value>A era Bon Appétit chegou para você! AS SEDENTAS TE FRACASSARAM.... Agradeça a Katy Perry, amore!</value>
+    <value>TÁ FELIZ, AMORE? VOCÊ FRACASSOU E LADEROU NA BILLBOARD, PARABÉNS!</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <!-- 0 - victim name -->-->
+    <value>Ah não! {0} estava chapada!  Agora você está bem high e não poderá atacar na próxima noite... Parabéns Miley Cyrus.</value>
+  </string>
+  <string key="GuardWolf">
+    <value>Você tentou proteger uma sedenta essa noite!  A sedenta te fracassou!</value>
+  </string>
+  <string key="GuardSaved">
+    <!-- 0 - saved player name -->-->
+    <value>Você salvou o hit de {0}!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <!-- 0 - player name -->-->
+    <value>{0} não foi fracassado(a), então você não fez nada muito útil. Dessa vez.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->-->
+    <value>Você foi proteger {0}, mas ele(a) não estava em casa!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Uma diva estava cuidando de você na noite passada e espantou as sedentas! Bom pra você, amore!</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->-->
+    <value>A Taylor Swift escolheu um péssimo dia para largar os machos e ficar em estúdio.  {0} foi devorado(a) pelas sedentas!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->-->
+    <value>Estranho... {0} não estava em casa!  Sem feat pra você hoje, amoré!</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <!-- 0 - player name -->-->
+    <value>Você dormiu na casa de {0} para se divertir um pouco mas descobriu tarde demais que ele(a) era uma sedenta.  Você está morto(a).</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <!-- 0 - player name -->-->
+    <value>{0} dormiu na casa de uma sedenta na noite passada! Seu corpo, antes magro e privilegiado, foi encontrado jogado na porta da Billboard...  Que horror!</value>
+    <value>Mais uma vez, {0} foi em busca de composições para o novo àlbum, assim procurando sua nova inspiração: o ex porém dessa vez a sedenta a encontrou e o fracasso foi real. Tá feliz, Squad? O cativeiro acabou.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <!-- 0 - harlot name -->-->
+    <!-- 1 - victim name -->-->
+    <value>{0} foi dormir na casa de {1}, pronta para ter um novo repertório para o novo álbum e voltar a mídia com mais um ex.  Entretanto, ela encontrou uma sedenta gravando um feat com  {1}!  A sedenta se vira rapidamente em direção a {0} e....  {0} está morta!</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <!-- 0 - target name -->-->
+    <value>Você percebe que {0} não é uma sedenta, já que vocês fizeram um sexo gostoso e selvagem a noite toda!</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>No meio da noite alguém bate na sua porta e diz que quer seu corpo para uma nova polêmica. Estava muito escuro para você ver quem era, mas você estava na seca e precisando de umazinha. Assim, topou, e no fim a pessoa acabou saindo de fininho enquanto você dormia.</value>
+  </string>
+  <string key="DetectiveCaught">
+    <!-- 0 - detective name -->-->
+    <value>Você flagrou {0} xeretando por aí! Ela é a Adele!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <!-- 0 - target name -->-->
+    <!-- 1 - target role -->-->
+    <value>Sua bisbilhotada provou que {0} é {1}</value>
+  </string>
+  <string key="HarlotShot">
+    <!-- 0 - gunner's name -->-->
+    <!-- 1 - Harlot's name -->-->
+    <value>Parece que {0} não gosta de safadeza! A Lady Gaga ficou louca e se vingou. {1}, que era a Taylor Swift, está morta.</value>
+  </string>
+  <string key="DefaultShot">
+    <!-- 0 - Gunner's name -->-->
+    <!-- 1 - target name -->-->
+    <!-- 2 - Target's revealed name ( Target was a role) -->-->
+    <value>De repente, um tiro é disparado.  As divas começam a escutar Bad Romance e correm para ver {0}  de pé em cima do corpo de {1}, com a espingarda ainda apontada para a cabeça e os miolos espalhados no meio do estúdio!  {2}.</value>
+    <value>EVERY JOHN IS JUST THE SAME I'M SO SICK OF THEIR CITY GAMES.... Parece que {0} acordou cansada das quedas nos charts, e então um tiro é desparado e ouvido por toda a Billboard, todas as divas correm para ver {0} com a arma ainda apontada para cabeça de {1}! {2}</value>
+  </string>
+  <string key="WolfWins">
+    <value>A sedenta venceu!</value>
+  </string>
+  <string key="WolvesWin">
+    <value>As sedentas venceram!</value>
+  </string>
+  <string key="VillageWins">
+    <value>As divas venceram! Todas as sedentas morreram....</value>
+  </string>
+  <string key="TannerWins">
+    <value>Ah não! Vocês enforcaram a Lana Del Rey!  Ela morreu na performance e hitou sozinha, suas antas!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Cantoras restantes e lado:</value>
+  </string>
+  <string key="CultistVotedConvert">
+    <!-- 0 - Voter's name -->-->
+    <!-- 1 - target name -->-->
+    <value>{0} votou para converter {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->-->
+    <!-- 1 - CultHunter's name -->-->
+    <value>{0} foi enviado(a) para fazer o trabalho sujo e converter {1}... Entretanto, ele era o Kanye West, e tinha uma câmara de tortura especial pra o Squad! {0} está morto(a)!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->-->
+    <!-- 1 - Number of cultists left -->-->
+    <value>{0} foi à sua casa na noite passada, pronto(a) para te converter....  Mas você tinha uma câmara de tortura à base de lives da Selena Gomez só pra esse tipo de gente. Um membro do Squad está morto... {1} restante(s)!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Você foi convertido(a) e agora é um membro do Squad de Taylor Swift! Durante a noite, você poderá tentar converter outras cantoras.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->-->
+    <value>Membros do Squad de Taylor Swift: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->-->
+    <value>{0} se juntou ao Squad de Taylor Swift!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->-->
+    <!-- 1 - target name -->-->
+    <value>{0} foi enviado(a) para fazer o trabalho sujo e converter {1}... Mas ninguém estava no estúdio!</value>
+  </string>
+  <string key="CultWins">
+    <value>Todos as sedentas morreram e as únicas pessoas sobreviventes pertencem ao Squad de Taylor Swift...  O Squad venceu! PARABÉNS TAYLOR SWIFT, VOCÊ ESTÁ FELIZ?</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->-->
+    <value>Você foi escrever o diss para {0}, mas alguém foi mais rapido que você e fracassou ele(a)!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->-->
+    <value>Você invade a casa de {0} e vê os posters de Taylor Swift nas paredes, você sabe o que fazer... Depois das torturas ao som de All Day, ele se confessa, e você sabe muito bem como acabar com essa graça: Com a morte!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->-->
+    <value>Você invade a casa de {0} mas não há nenhum sinal do Squad.  Ele(a) não faz parte do Squad de Taylor Swift... Ainda...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->-->
+    <value>O grande exemplo de vida de {0} acabou de morrer! Em seu ataque de fúria, ele se tornou um sedento!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->-->
+    <!-- 0 - teamate's names -->-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <value>{0} foi morta! Num ataque de fúria, você se torna umsedento! Suas novas colaborações são: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>uma Katy Perry 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>a Miley Cyrus 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>a Taylor Swift 💋</value>
+  </string>
+  <string key="Seer">
+    <value>a Rihanna 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>o Zayn 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>a Christina Aguileira 👼</value>
+  </string>
+  <string key="Detective">
+    <value>a Adele 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>a Lily Allen 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>a Nicki Minaj 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>a Lady Gaga 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>a Lana Del Rey 👺</value>
+  </string>
+  <string key="Fool">
+    <value>o Mark Ronson 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>o Justin Bieber  👶</value>
+  </string>
+  <string key="Beholder">
+    <value>a Sia 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>a Tinashe 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>um membro do Squad 👤</value>
+  </string>
+  <string key="CultistHunter">
+  <!-- These are for the player list -->-->
+  <!-- These are for the player list -->
+    <value>o Kanye West 💂</value>
+  </string>
+  <string key="RanAway">
+    <value>Fugiu</value>
+  </string>
+  <string key="Dead">
+    <value>💀 MORTA</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Vivo(a)</value>
+  </string>
+  <string key="PlayersAlive">
+  <!-- New strings 4 MAY 2016-->-->
+  <!-- New strings 4 MAY 2016-->
+    <value>Cantoras vivas</value>
+  </string>
+  <string key="Mason">
+    <value>a Selena Gomez 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Você é a Selena Gomez, e participa de uma sociedade secreta que tenta ganhar seguidores no Instagram.  Se houver outras como você, você saberá quem são.  Caso contrário, você será uma simples katy perry. </value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->-->
+    <value>À medida que todas saem do estúdio, o corpo de {0} é encontrado numa sala local, com um iPhone, InstaLikes e F4F. A Selena Gomez está morta.</value>
+  </string>
+  <string key="MasonTeam">
+  <!-- new strings May 6 2016-->-->
+  <!-- new strings May 6 2016-->
+    <value>  As exs do Justin Bieber são são: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->-->
+    <value>O membro mais recente do Squad corre para a casa de {0} para fazer o trabalho sujo e convertê-lo(a), mas encontra uma bagunça, looks rasgados e prêmios quebrados... Seu alvo fracassou!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->-->
+  <!-- new strings May 9 2016-->-->
+  <!-- new strings May 9 2016-->
+    <value>As sedentas se dirigem à casa de {0}, para tramar mais um fracasso, mas lá dá de cara com uma criatura alta, elevada e cercada por luz, armada com uma voz estrondosa. A Christina Aguileira dá um berro em defesa do alvo e, após uma luta ao som dos mais variados hits, o lado faminto sai derrotado e foge para casa.</value>
+  </string>
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->-->
+    <!-- 1 - target's name -->-->
+  <!-- new string May 12 2016-->-->
+  <!-- new string May 12 2016-->
+    <value>{0} foi enviado(a) para fazer o trabalho sujo, mas  {1} era amigo de Kanye West e manda você se foder. Aqui não, mercenária. Vai enfiar o boleto em outra pessoa, amore!</value>
+  </string>
+  <string key="NameExists">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - name -->-->
+    <value>@{1}, um(a) jogador(a) com nome {0} já se juntou à partida. Por favor mude seu nome para poder entrar no jogo.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->-->
+  <!-- new string May 13 2016-->-->
+  <!-- new string May 13 2016-->
+    <value>Você dormiu na casa de {0} para se divertir um pouco, mas enquanto saia você notou através de uma porta semiaberta um estranho altar com fotos suas dentro de um quarto ao som de Bad Blood....</value>
+  </string>
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->-->
+    <value>À medida que as performances acabam e o show termina, as divas percebem a ausência de {0}... Quando checam seu camarim, encontram seu corpo sem vida.</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->-->
+  <!-- new string May 16 2016-->-->
+  <!-- new string May 16 2016-->
+    <value>Estranho.... {0} não curtiu suas fotos de volta e não comentou “LINDAAAAA” no seu post.</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Amore, desiste! Você vai tentar engavetar esse projeto fracassado, mas o seus haters não vão deixar! Atura o flop nos Charts e volta pro estúdio.</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->-->
+  <!-- MORE STRINGS May 16, 2016 -->-->
+    <!-- MORE STRINGS May 16, 2016 -->
+    <value>Está morta!</value>
+  </string>
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->-->
+    <value>{0} foi adicionado(a) na lista de admins. Você pode agora usar /config para alterar as configurações do jogo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->-->
+    <value>Você já está em um show! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Múltiplos jogos foram iniciados ao mesmo tempo. Fechando os extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - target's name -->-->
+    <value>Seu grupo está na fila.  Posição: {0} de {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->-->
+    <value>Desculpe, estou prestes a iniciar uma pequena pausa para manutenção, você não pode iniciar um jogo agora.\nEsperando {0} jogos terminarem...\nVá em @werewolfdev para mais informações (em inglês)</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - target's name -->-->
+    <value>Desculpe, o número máximo de jogos simultâneos foi atingido ({0}).  \nPosição na fila: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->-->
+    <value>{0} é um grupo preferencial e pulou a fila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Não há nenhuma performance acontecendo no momento. Inicie um novo festival: normal com /startgame ou caótico com /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Somente um administrador(a) pode usar este comando.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Após este jogo, estarei desligando o bot brevemente para manutenção.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Após este jogo, estarei desligando o bot brevemente para uma atualização (automatizada).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>ID do usuário não encontrado.  Verifique se você enviou o comando como resposta.</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->-->
+    <value>{0} já é um(a) adminsitrador(a)!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->-->
+    <value>{0} não é um(a) administrador(a)!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->-->
+    <value>{0} foi removido da lista de administradores.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->-->
+    <value>Idioma alterado para {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>A Rihanna tirou férias!</value>
+  </string>
+  <string key="TimesUp">
+  <!-- new strings june 10 2016 -->-->
+  <!-- new strings june 10 2016 -->
+    <value>O tempo acabou e choca a todos. </value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>Você é a Mariah Carey. Enviado a Billboard com um arco e duas flechas, você pode escolher duas divas que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois amantes, você pode voltar ao seu papel como Katy Perry.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Você é a Iggy Azalea. A Lenda diz que seus ancestrais eram metamorfos, e podiam copiar qualquer diva que quisessem! Escolha um jogador e quando o mesmo morrer, você plagiará suas músicas se tornando ele na Bilboard.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Você é a Shakira! Seu #1 é o sua arma e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para flopar. E se as sedentas te visitarem a noite, você não é alguém que fracassaria sozinha, mas no escuro, você não consegue escolher quem flopar. </value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Você é a Beyoncé. Seu time é você mesmo e as outras divas não são mais que seus brinquedinhos. Toda noite você pode escolher alguma diva para assassinar e adicionar para sua coleção de corpos. Você quer, Jay-Z?</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Você foi atingido(a) pela flecha do amor. A baladinha de {0} nunca deixará seu coração. Seu objetivo é que os dois hitem. Se um de vocês fracassarem o outro irá junto!</value>
+    <value>A flecha da Mariah Carey acertou seu coração! Você está apaixonado por {0}!  Se ele(a) fracassar, você fracassa também. No final, se ambos estiverem no topo da Billboard, vocês vencem.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>As divas resolveram fracassar você! É a sua última chance de dar uso para seu querido #1!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} tenta começar a cantar enquanto cai de posição, mas seus quadris estão cansados e antes de alcançar sua nota alta, cai no fracasso, anunciando sua morte...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} saca seu fracasso, e aponta para as cantoras... Seus olhos de fuzileira tentam decidir quem ela vai levar com ela. Mas ela aceita seu fim, sozinha...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->-->
+    <!-- 1 - target's name -->-->
+    <!-- 2 - target's role -->-->
+    <value>Com posição baixíssima na Billboard, {0} começa a performar e, rápido como o bote de uma cobra, arrasta {1} com ela! "Hasta la vista, baby..." diz a Shakira para {1} que cai dura no chão. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Você foi fracassada mortalmente! Com seu ultimo show você pode levar alguém com você... Sejá rápida!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->-->
+    <value>{0} recebeu uma música muito ruim, tanto que ela não conseguiu nem mesmo ouvir por inteira ou mesmo cantar, já surda, caiu no chão...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->-->
+    <value>{0}, calma como se as criticas não fossem nada, decide não lançar sua última bomba, aceitando seu destino...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->-->
+    <!-- 1 - target's name -->-->
+    <!-- 2 - target's role -->-->
+    <value>{0} cai no chão, ferida mortalmente... Mas antes de fracassar, ela acessa seu iTunes e lança uma bomba com a participação de {1}, que cai duro no chão com o flop do feat. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->-->
+    <value>TIRO! PORRADA! E BOMBA!  As divas escutam La Tortura altíssimo durante noite! As sedentas tentaram flopar a pessoa errada, a Shakira não iria flopa sozinha, levou {0} (uma sedenta) junto com ela.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->-->
+    <value>Lily Allen tentou colaborar com a pessoa errada a noite passada! A Shakira sabe se proteger muito bem de álbuns ruins e deixou um presentinho pra Billboard, o corpo de {0}!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>As sedentas tentaram atacar a pessoa errada noite passada! {0} é encontrado sem suas composições, prêmios e demos secretas... quase dá pra sentir pena da sedenta! A Beyoncé já está na produção do próximo álbum.</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - target's role -->-->
+    <value>Pareceu uma noite de performance normal, mas onde está {0}? As divas se reúnem do lado de fora do festival atrás de {0}, e encontram o seu avião caído, seus prêmios e composições foram roubados... A Beyoncé se divertiu essa noite! {1}</value>
+    <value>Parece uma noite pacifica no mundo dos charts.... Até que a queda de {0} Hot 100 é vista! Todas saem em busca de {0}, a {1}, para informar o fracasso, quando encontram o seu avião caído com o Lemonade por toda parte... A Beyoncé se divertiu mais uma vez!</value>
+    <value>Todas sentem falta de {0} nos charts, que está sumida do topo do iTunes tem dias... Decidem então ir até o estúdio de {1} para checar o fracasso quando encontram a mesma vestidas com roupas da Ivy Park e... MORTA! A Beyoncé não tem limites, sádica!</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->-->
+    <value>Você foi assassinar {0}. Mas chegando lá a Christina Aguileira deu um berro estrondoso! Sem derrubar aviões essa noite...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->-->
+    <!-- 1 - target's name -->-->
+    <value>O Squad de Taylor Swift manda {0} para converter {1}. Chegando lá {0} é recebida com uma dança mortal ao som de La Tortura! {0} tá morta...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->-->
+    <!-- 1 - target's name -->-->
+    <value>O Squad de Taylor Swift manda {0} para converter {1}. Chegando lá {0} descobre que era melhor ter ficado no estúdio sem pegar aviões. Seu corpo é encontrado sem seus pertences. {0} está morta...</value>
+    <value>{0} entra de fininho na casa de {1}. Assim que entra, ouve uma voz sinistra "oooohhhh Jay-Z"! {1} aparece de repente com uma tesoura e começa a cortar {0} criando um lindo retalho para sua coleção. {0} está morta.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Você tentou proteger a pessoa errada. A Beyoncé te convida para dar uma volta de avião, um tipo de role que você com certeza não gosta. Enquanto ela pede para o motorista subir a divisória por favor você acaba morrendo...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->-->
+    <value>Você dormiu na casa de {0} para se divertir um pouco. Mas essa noite só {0} vai se divertir, com você, enquanto ela esfaqueia seu corpo. Você morreu, mas se te serve de consolo, ela pareceu se divertir muito essa noite...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Parece que a Beyoncé não queria ter uma noite de sacanagens! Já ouviram o Lemonade? Aqui não, traição! {0} foi encontrado(a) na porta de seu estúdio morta com as mãos e os pés amarrados.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->-->
+    <value>a Iggy Azalea {0} agora se tornou a Selena Gomez, assim como você!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->-->
+    <!-- 1 - mason collegues's name -->-->
+    <value>{0} morreu, e você agora é a Selena Gomez.  Seus insta seguidores (se houver) são: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->-->
+    <value>A Iggy Azalea{0} se transformou em um membro do Squad de Taylor Swift. Obriga logo a participar do clipe de Bad Blood!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->-->
+    <!-- 1 - teammates's name -->-->
+    <value>{0} morreu, aceita que você entrou para o Squad de Taylor Swift. Seus amigos escravizados (se houver) são: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->-->
+    <value>A Iggy Azalea {0} se tornou uma sedenta, mais um para os charts!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - teammates's name -->-->
+    <value>{0} morreu, e você se transformou em uma sedenta, AUUUUU!!!  Suas novas colaborações são: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>O único sobrevivente foi a Beyoncé! Vocês esperavam, o que amores? A única que hita é ela, não adianta negar! Agora vai ouvir o Lemonade!</value>
+  </string>
+  <string key="AskKill">
+    <value>Quem você quer fracassar essa noite?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->-->
+    <!-- 1 - lover's name -->-->
+    <!-- 2 - roles -->-->
+    <value>{0} dá seu último suspiro escutando We Belong Together com seu amado, {1}, que segura seu corpo de joelhos. {1} não aguenta a dor, aceita o fracasso e com uma faca, se mata na frente de todos... Casal que fracassa unido, permanece unido. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value> Quem você escolherá para se transformar?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Quem será o casal? Escolha o primeiro amante.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Quem será o casal? Escolha o segundo amante.</value>
+  </string>
+  <string key="Hunter">
+    <value>a Shakira 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>a Mariah Carey 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>a Beyoncé 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>a Iggy Azalea  🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->-->
+    <value>Você se tornou o Justin Bieber.  Seu modelo exemplar é {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Os amantes hitaram! Queriam o que né? O que Mariah Carey uniu ao som de We Belong Together nenhum chart separa!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - role -->-->
+    <value>Quando acordam, vocês encontram {0} morta no meio do palco ao de Beautiful Liar. Parece que alguém visitou a Shakira e se deu mal! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Alguém bateu na sua porta a noite, "Olá, você tem um minuto para ouvir o 1989? Aceitamos cartão de crédito, cheque e boleto bancário." Você manda tomar no cu e diz que está entrando em contato com Kanye West e fecha a porta na cara, mas você se esqueceu de olhar o rosto dele!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->-->
+    <value>Você já está na lista de espera para {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->-->
+    <value>Você foi adicionado à lista de espera para {0}. Mandarei uma mensagem para você quando o próximo jogo começar.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->-->
+    <value>Um novo Festival vai começar em {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->-->
+    <!-- 1 - target's name -->-->
+    <value>A manhã chega na Billboard, e somente duas pessoas estão de pé. {0} olha para {1}, um sorriso sinistro e começa a cantar DON'T HURT YOURSELF, ela puxa a faca e brinca com {1}, que agora está morta.</value>
+  </string>
+  <string key="NoWinner">
+    <value>Todos na Billboard fracassam... Ninguém hitou nessa partida... TÁ FELIZ KATY PERRY? INFECTOU TODO MUNDO! PARABÉNS.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->-->
+    <!-- 1 - Hunter's name -->-->
+    <value>A Billboard atualiza os dados, {0} e {1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para uma colaboração.  {1} rápida como o uma Chantaje saca suas demos e grita bem alto “AQUI NÃO, JAY-Z” no ouvido de {0}. {0}, com seu último suspiro, joga seu avião em {1}. Ambas fracassaram, o dia acaba e não houve nenhum hit para contar história...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->-->
+    <value>Caralho, tu é lerda, hein amoré? Você não decidiu a tempo, então o bot escolheu por você: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Hitou</value>
+  </string>
+  <string key="Lost">
+    <value>Fracassou</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->-->
+    <!-- 1 - idle count -->-->
+  <!--New strings 7th of July-->-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.-->
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+<!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
+    <value>A diva {0} esqueceu voto em churrasco por isso amargou no pop {1} vezes nas últimas 24 horas.</value>
+  </string>
+  <string key="AboutVG">
+    <value>Você é uma simples Katy Perry, condenada a passar seus dias esperando mijos do Dr. Luke, frustrar os fãs e esperas ser flopado pelas sedentas, suas inimigas. Uma vez por dia você pode votar em alguém pra mandar pra fora da Billboard, use seu voto com sabedoria!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Você é a Rihanna, seu papel é guiar a Billboard na empreitada contra as sedentas.  Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque as rivais estão loucas pra fracassar você!!</value>
+  </string>
+  <string key="AboutWw">
+    <value>VOCÊ É A LILY ALLEN!! Bom pra você! Durante a noite você pode escolher alguém para fracassar, junto com seu time, as sedentas.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value> Safada! Você é a Taylor Swift, a mais rodada da Billboard. Durante a noite, você poderá escolher alguém para fazer uma visitinha, e descobrir se a pessoa é ou não uma sedenta. Porém, se você visitar uma sedenta, ou alguém que está sendo fracassado  pelas sedentas, você irá morrer.  Se você visitar alguém e as sedentas tentarem te matar na sua casa, você irá hitar (já que não estava lá).</value>
+  </string>
+  <string key="AboutDrunk">
+    <value> Parabéns, você é a Miley Cyrus! Você chapa demais, mas joga pela Billboard. Se as sedentas te devorarem, elas vão ficar chapadas e não vão conseguir atacar ninguém na noite seguinte!</value>
+  </string>
+  <string key="AboutCursed">
+    <value> Você é a Nicki Minaj. Por enquanto você é uma katy perry, mas se você por atacado pelas sedentas, você se tornará uma sedenta também. </value>
+  </string>
+  <string key="AboutTraitor">
+    <value> Traíííííra!! Você é o Zayn! Por enquanto, você é uma Katy Perry, mas assim que todos as sedentas estiverem mortas, você se transformará na Lily Allen.  Se a Rihanna vir você, você pode ou não ser identificado(a) por ela como uma sedenta.</value>
+  </string>
+  <string key="AboutGA">
+    <value> Você é o Christina Aguilera, e seu papel é proteger a Billboard. Durante a noite, você pode escolher uma cantora para gritar pra espantar as sedentas. Porém, se você escolher uma sedenta, pode acontecer o pior. </value>
+  </string>
+  <string key="AboutDetective">
+    <value> Você é a Adele, e joga pela Billboard. Durante o dia, você pode escolher uma cantora para investigar e descobrir suas polêmicas.  No entanto, ao fazer isso, você pode ser descoberto pelas sedentas!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>HERE WE GO, você é a Lady Gaga.  Você possui 2 balas para ajudar a Billboard.  Durante o dia, você pode atirar em alguma diva. Todo mundo ouvirá Bad Romance ou John Wayne e saberão que você é a Lady Gaga.</value>
+  </string>
+  <string key="AboutTanner">
+    <value> Você é a Lana Del Rey, seu time é você mesma!  Se você for pra votação, começa a tocar Dark Daradise e você ganha automaticamente, sozinha. Sua egoista!</value>
+  </string>
+  <string key="AboutFool">
+    <value>Ele é o Mark Ronson! TROUXA.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Você é a Cut-Throat. Durante a noite, você poderá escolher alguém para converter ao Squad de Taylor Swift e participar de Bad Blood. Se todos as divas restantes ao final do show forem do Squad, vocês vencem!</value>
+  </string>
+  <string key="AboutCH">
+    <value> O Squad de Taylor Swift está na Billboard tentando converter todo mundo, e você, o Kanye West, deve proteger o mundo pop!  Durante a noite você poderá escolher alguém para escrever um diss.  Se ele(a) for do Squad, ele(a) morre.  Caso o Squad tente te converter, o membro mais recente morre.</value>
+  </string>
+  <string key="AboutWC">
+    <value> Você é o Justin Bieber! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em um sedento na Billboard.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Você é a Tinashe, aprendiz de Rihanna e vive na Billboard.  Caso a Rihanna fracasse, você tomará seu lugar como ícone.</value>
+  </string>
+  <string key="AboutBH">
+    <value> Você é a Sia, você saberá quem é a verdadeira Rihanna (e não o Mark Ronson). Use isso para ajudar seu time, a Billboard! </value>
+  </string>
+  <string key="AboutMason">
+    <value>Você é a Selena Gomez, e participa de uma sociedade secreta que tenta ganhar seguidores no Instagram.  Se houver outras como você, você saberá quem são.  Caso contrário, você será uma simples katy perry.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Você é a Iggy Azalea. A Lenda diz que seus ancestrais eram metamorfos, e podiam copiar qualquer diva que quisessem! Escolha um jogador e quando o mesmo morrer, você plagiará suas músicas se tornando ele na Bilboard.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>Você é a Mariah Carey. Enviado a Billboard com um arco e duas flechas, você pode escolher duas divas que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois amantes, você pode voltar ao seu papel como Katy Perry.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>Você é a Shakira! Seu #1 é o sua arma e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para flopar. E se as sedentas te visitarem a noite, você não é alguém que fracassaria sozinha, mas no escuro, você não consegue escolher quem flopar.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Você é a Beyoncé. Seu time é você mesmo e as outras divas não são mais que seus brinquedinhos. Toda noite você pode escolher alguma diva para assassinar e adicionar para sua coleção de corpos. Você quer, Jay-Z?</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para é o desenvolvedor desse jogo, e ele gosta de lançar bomba pras pessoas. Talvez ele tenha ficado muito tempo com as sedentas... Mexer com as sedentas não é uma idéia muito boa, né?</value>
+  </string>
+  <string key="EndTime">
+  <!--New strings, July the 8th -->-->
+    <!--New strings, July the 8th -->
+    <value>Duração do show: {0}</value>
+  </string>
+  <string key="Day">
+    <!--0 - Day -->-->
+    <!--0 - Day -->
+    <value>{0}º dia</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Alguma coisa deu errado, e esse nodo desligou.</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Eu te enviei uma mensagem no privado</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor me envie uma mensagem no privado para eu conseguir te enviar mensagens: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Obrigado por me ativar! Agora eu posso te enviar mensagens privadas.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Você precisa usar o comando smite como resposta ao usuário que quer aniquilar</value>
+  </string>
+  <string key="WhatToDo">
+    <value>O que você quer fazer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Você precisa estar em um grupo para se juntar a uma partida nele!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Você precisa começar uma partida dentro de um grupo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo de processamento da mensagem: {0}\nUso de CPU atual: {1}%\nMensagens por segundo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Que língua?\nAtual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Que variante?\nAtual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma definido como {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Pegar que arquivo de idioma?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Não há nodos ligados no momento, por favor tente novamente dentro de alguns segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Você precisa acionar esse comando em um grupo</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Você não é um administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>Você não é o Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sim</value>
+  </string>
+  <string key="No">
+    <value>Não</value>
+  </string>
+  <string key="Allow">
+    <value>Permitir</value>
+  </string>
+  <string key="Disallow">
+    <value>Não permitir</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+  <!-- Game Mode Choices-->-->
+  <!-- Game Mode Choices-->
+    <value>Não mostrar</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Apenas Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Apenas Caos</value>
+  </string>
+  <string key="PlayerChoice">
+  <!-- Show Roles on End Game -->-->
+  <!-- Show Roles on End Game -->
+    <value>Escolha do jogador</value>
+  </string>
+  <string key="ShowNone">
+    <value>Não mostrar nenhum</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar apenas os de jogadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar os de todos os jogadores</value>
+  </string>
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose # editem isso quando der pra traduzir o "not"# -->
+    <value>Você quer permitir fugas após o início de uma partida?\nLembre-se que jogadores sempre poderão fugir antes do início da partida!\nAtual: Players can {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
+    <value>Players will {0}be allowed to flee after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Que quantidade de jogadores você gostaria de definir como a máxima?\nAtual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Número máximo de jogadores definido como {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+  <!-- # editem isso quando der pra traduzir o shown/hidden # -->
+    <value>Mostrar ou não os papéis dos jogadores quando morrerem?\nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Papéis dos jogadores serão {0} quando morrerem.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Qual modo de jogo estará ativo no grupo?\nAtual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de jogo definido como {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Como você quer que os papéis de jogadores sejam revelados ao fim do jogo?\nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Revelação dos papéis definida como: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Escolha a duração base (em segundos) do dia.   Ela ainda será modificada de acordo com o número de jogadores.\nO tempo mínimo adicionado de acordo com os jogadores é de 60 segundos.  Configuração padrão: {0}\nAtual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duração base do dia definida como {0} segundos</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Escolha a duração (em segundos) da noite. Configuração Padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duração da noite definida como {0} segundos</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Escolha a duração (em segundos) da votação do enforcamento. Configuração padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duração da votação do enforcamento definida como {0} segundos</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Permitir o Trouxa como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Existência do Trouxa definida como: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Permitir o Suicida como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Existência do Suicida definida como: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Permitir a Seita como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Existência da Seita definida como: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Obrigado e tenha um bom jogo!</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Você quer procurar um grupo jogando em que idioma?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aqui estão os grupos jogando em {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor me mande start no privado para eu poder te enviar mensagens.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} não iniciou o bot, e foi removido(a) do jogo!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aqui está a lista mais recente de jogadores</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Não fui capaz de obter a lista de jogadores, você tem certeza de que o jogo já começou?</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->-->
+    <value>Você se juntou à partida em {0}</value>
+  </string>
+  <string key="Ping2">
+  <!-- Update 4.0-->-->
+  <!-- Update 4.0-->
+    <value>Tempo até o envio da mensagem de ping: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Você é a Kylie Minogue. Seu voto durante a hot 100 contará duas vezes, uma vez que você se revelou. Você faz parte do time Billboard.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Você é secretamente a Britney Spears, escapando de sua vida aborrecida e mimada passando o dia com essas divas. Se elas tentarem te tirar da hot 100, perceberão seu erro, e ninguém será flopado.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Você é a Demi Lovato: Você vai tentar votar, mas há uma chance de 50% de votar em outra pessoa do que você pretendia. Mesmo assim, você está no time Billboard.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Você é a Lorde, e se junta às sedentas, ao invés das divas da Billboard. À noite, você usará seu poder para encontrar as divas ou a Rihanna. Você ganha somente se as sedentas ganharem. Desfrute de ajudar a exterminar essas miseráveis divas. </value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Você é o Kesha. Durante os anos, nenhuma #1, nem stream, te deu tanta satisfação quanto os 16 prêmios que a Billboard te encomendou. Você ainda tem algum resíduo de pó premiado que pode ser espalhado pela Billboard para prevenir as sedentas... Fora isso, você é apenas um fracassada. </value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Você é a Madonna, a origem de todo o pop. Seu feat é a causa da maldição que transforma humanos em divas sedentas. Cada noite, você vai escolher um humano para atacar e matar, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de se transformar em uma sedentinha.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Você é a Ariana Grande, adorada pelas sedentas. Como outras sedentas, você vai escolher uma diva para atacar e fracassar todas as noites. Se acontecer de você ser morta, suas colaborações verá seu corpo no chão, e, ensandecida, vingará sua morte, atacando duas pessoas na noite seguinte.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>A Billboard se prepara para fracassar {0}, que grita, "OOPS! I DID IT AGAIN!" e começa a performar no meio da votação. Se sentindo inutéis por votarem na Princesinha do Pop, as divas vão para seus estúdios gravar música com o rabo entre as pernas.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Você tenta ver {0}, mas não consegue entender direito o que ele é. Tudo o que sabe é que ele não é a Rihanna, nem sedenta...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} dá um passo à frente e mostra os vídeos da Aphrodite Les Folies, declarando o comeback com o próximo álbum. De agora em diante, os votos de {0} para enforcar alguém serão contados duas vezes.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clique em "Revelar" quando estiver pronto para se revelar como o Kylie Minogue.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Você quer espalhar o pó dos prêmios hoje, impedindo as sedentas de fracassar alguém essa noite?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Enquanto o resto das divas debatem no Twitter sobre o que está rolando nos charts, {0} anda por aí espalhando pó de prêmios pelo chão ao som de Tik Tok! Pelo menos por enquanto, as divas estarão seguras do fracasso provocado pelas sedentas.</value>
+  </string>
+  <string key="Mayor">
+    <value>a Kylie Minogue 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>a Britney Spears 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>a Lorde 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>a Demi Lovato 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>o Kesha ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>a Madonna ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>a Ariana Grande 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As sedentas começaram a retirar as músicas de {0} da rádio, mas, de repente, {1}, a Madonna, manda todos pararem. Ela diz as sedentas que {0} deveria se juntar a eles ao invés de flopar, então todos voltam ao seus estúdios, deixando sua vítima com demos para as colaborações. {0} vai virar uma sedenta amanhã de noite. O feat vem...</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Você foi atacado pelas sedentas, mas a Madonna te escolheu. Ao invés de flopar, você ganhou um feat... e vai virar uma sedenta amanhã de noite no lançamento da música!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>O sol se põe, e você começa a vazar as músicas das divas... Agora você é uma sedenta!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como Kylie Minogue, você é uma cantora comum, até se revelar e lançar o Aphrodite. Então você poderá ter o seu voto contado duas vezes na hora de mandar alguém para fora da Billboard (ou seja, o seu voto é duas vezes mais poderoso que qualquer um). Use o seu poder sabiamente para ajudar o Time da Billboard.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>A Britney é uma parte importante do mundo pop. Assim que tentam fracassarem a mesma, seu papel de Princesinha do pop é revelado, e ela irá sobreviver. Assim, só poderá ser morta durante a noite, ou pela Shakira.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Você se lembra do ícone Rihanna? Bem, agora as sedentas tem uma, e é a Lorde. Ela pode apenas 'ver' as sedentas e a Rihanna, e é do time das sedentas.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Você é a Demi Lovato: Você vai tentar votar, mas há uma chance de 50% de votar em outra pessoa do que você pretendia. Mesmo assim, você está no time Billboard.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Você é o Kesha. Durante os anos, nenhuma #1, nem stream, te deu tanta satisfação quanto os 16 prêmios que a Billboard te encomendou. Você ainda tem algum resíduo de pó premiado que pode ser espalhado pela Billboard para prevenir as sedentas... Fora isso, você é apenas um fracassada. 
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Você é a Madonna, a origem de todo o pop. Seu feat é a causa da maldição que transforma humanos em divas sedentas. Cada noite, você vai escolher um humano para atacar e matar, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de se transformar em uma sedentinha.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+  <!-- new strings 06 nov-->-->
+ <!-- new strings 06 nov-->
+    <value>Você é a Ariana Grande, adorada pelas sedentas. Como outras sedentas, você vai escolher uma diva para atacar e fracassar todas as noites. Se acontecer de você ser morta, suas colaborações verá seu corpo no chão, e, ensandecida, vingará sua morte, atacando duas pessoas na noite seguinte.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - teammates's name -->-->
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou em Madonna.  As suas seguidoras (se houver) são: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->-->
+    <!-- 1 - teammates's name -->-->
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou em Ariana Grande.  As suas amigas perigosas (se houver) são: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Time da Billboard</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Time Neutro</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->-->
+    <value>Time Sedenta: {0}</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Beyhive</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->-->
+    <value>Swifties: {0}</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Pacto Suicida</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Time da Billboard</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Time Neutro</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Time Sedenta</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Beyhive</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Swifties</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Pacto Suicida</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>O Squad de Taylor Swift envia {0} para tentar converter {1}, mas em vez disso, a sua conta bancária é blqueada. {0} está morto...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!--{0} = Harlot name, {1} = SK's victim name-->-->
+  <!--New Death Strings 05 DEC-->-->
+  <!--New Death Strings 05 Nov-->
+    <value>{0} vai até a casa de {1}, pronta para uma noite de romance, somente para encontrar Jay-Z limpando o corpo de {1} pronto para o abate! A Beyoncé decidiu obrigar {0} a se juntar ao assassinato, mas não foi nada divertido...</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>Os shows começam, e as divas encontram o corpo de Tinashe todo em chamas ao som de Flame, Rihanna sentirá sua falta. {0} morreu!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, a Kesha, é bem azarada! Tentou mais uma vez voltar para a industria da música mas foi parada por Beyoncé, que além de assassinar, fez questão de roubar as últimas composições da mesma! A Mafia Carter não tem limites.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>De manhã todos encontram {0} ensanguentada ao meio de posters da Taylor Swift. A Beyoncé não paga boleto e toda diva é bem-vinda para sua diversão! O Squad de Taylor Swift sentir falta de {0}...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Os aldeões ficam de coração partido ao encontrar {0}, a Mariah Carey, morta. Estranho o fato de seu coração estar faltando, obviamente obra da Beyoncé.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0}, a Miley Cyrus aprontou e teve seu corpo queimado em meio a tanta maconha. Obviamente mais uma brincadeira da Beyoncé que deve ter adorado a fumaça! </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} é encontrado com grandes fendas onde antes houveram suas cordas vocais. {0}, A Christina Aguileira, está morta, e a noite agora é mais sombria.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Na calada da noite, a Billboard escuta Million Reasons de {0}, a Lady Gaga! Seus sonhos são tormentosos depois de encontra-lá com um buraco na testa, e a arma embaralhada em suas entranhas e o chapéu rosa completamente ensanguentado, com "TELEPHONE PT 2" escrito na parede, mais uma vítima da Beyoncé!</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Houve um terrível assassinato! {0}, a Kylie Minogue foi encontrada em um avião caído no meio da Europa! A Beyoncé finalmente conseguiu vingança pelo prêmio de melhor palco da Aphrodite Les Folies. Você quer, Formation Tour?</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Toxic começa a tocar no vôo quando Britney Spears está gravando o clipe. Os atores estão ensiando quando {0}, a Britney, percebe uma turbulência estranha e de repente o avião caí sem explicações! Nenhuma pista foi encontrada ainda, além de um cartão com nome de Jay-Z. Parece que a Beyoncé fez o trabalho direito desta vez.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>A Billboard acorda para ver o corpo de {0}, a Rihanna, morta. No lugar de seu cérebro, colocaram sua testa que havia sido removida antes. A Beyoncé é realmente assustadora!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>O som de Green Light é ouvido por toda Billboard. Parece que um erro foi cometido pelas sedentas e mataram uma colaboração. A Lorde, {0}, está morta.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>IS IT TOO LATE NOW TO SAY SORRY?! Nada melhor do que fracassar um jovem revoltado. {0}, o Justin Bieber morreu, e o que sobrou foram vários álbuns ruins sem nenhum prêmio! Que crueldade!</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <value>O fracasso de The Life of Pablo na Billboard é permanente! {0}, o Kanye West, escreveu o diss a pessoa errada. A Beyoncé o convidou para sua casa e ele nunca mais saiu... Tá feliz, Jay-Z?</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <value>Péssima escolha do Squad de Taylor Swift ao visitar uma sedenta que decidiu ficar em casa durante a noite. {0} está morta, foi convertido em um belo feat. para as sedentas, que não são muito interessados em músicas sem conceito.</value>
+    <value>Mais uma vez o Squad de Taylor Swift se meteu onde não devia. A {0}, membro da seita, tentou converter uma sedenta noite passada! E flopou feio, flopou rude e agora está morta como a carreira de Christina Aguileira.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <value>Ontem a noite o Squad de Taylor Swift decidiu visitar a única pessoa mais estranha do que elas mesmas, a Beyoncé, e por causa disso, o cobrador do boleto, {0}, serviu para ser escravizado e morto por Beyoncé para trabalhar na Ivy Park.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>{0} tentou proteger a Beyoncé ontem a noite. Beyoncé disse que não precisa de mijo para hitar, e Christina Aguileira foi assassinada.</value>
+  </string>
+  <string key="GAGuardedWolf">
+  <!--1vs1 finales-->-->
+  <!--1vs1 finales-->
+    <value>{0} tentou proteger uma sedenta ontem a noite. O grito saiu pela culatra e a Christina Aguileira está agora morta.</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->-->
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabendo que {0} ainda está viva, {1} tenta fracassar ela na calada da noite, mas não sabia que {0} estava esperando {1} com seu revólver engatilhado. O que restou de {1} foi seu microfone. Lady Gaga matou o última Lily Allen!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->-->
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} viu que {0} ainda estava dormindo, então, aproveitou o momento para vazar suas músicas e fazer o fracasso acontecer. O que restou da Shakira foi só o Maluma.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->-->
+  <!-- Extend time -->-->
+    <!--{0} = last cultist's name, {1} = CH's name -->
+  <!-- Extend time -->
+    <value>Vendo {0} cantarolar Bad Blood aos cantos do estúdio, {1} já se dá conta que {0} é um membro do Squad de Taylor Swift. Então, {1} coloca para tocar seu seu feat com Kanye West pela última vez e mutila {0} matando-a. Agora a Billboard está salva da contaminação do Squad.</value>
+  </string>
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->-->
+    <!-- 1 - Total seconds remaining -->-->
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>MUDARAM A FILA! CORRE BELIEBER! Tempo para entrada do show estendido em {0} segundo(s), \n{1} restantes para o /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->-->
+    <!-- 1 - Total seconds remaining -->-->
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value> Tempo de entrada para o jogo reduzido em {0} segundo(s).\n{1} restantes para o /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Apenas os administradores podem extender o tempo mais de uma vez!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->-->
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Os jogadores podem extender o tempo?\nAtual: {0} extender\nNota: Os admins sempre poderão extender</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->-->
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} os jogadores podem extender tempo de join </value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo máximo para extender o jogo foi para {0} segundos. </value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Ah não! {0} era a MileY Cyrus! Agora você está chiapada e não poderá atacar {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+</strings>

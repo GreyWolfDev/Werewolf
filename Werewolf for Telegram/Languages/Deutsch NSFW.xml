@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- strings since july have now been translated by @me_el_nino, @tpsounds and @pethor  | created by @falko17, contributed by @syscaller (former @bootmgr) // version 20.04.2017 -->
+<!-- strings since july have now been translated by @me_el_nino, @tpsounds and @pethor  | created by @falko17, contributed by @syscaller (former @bootmgr) // version 15.05.2017 -->
 <strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <language name="Deutsch (NSFW)" base="Deutsch" variant="NSFW" />
   <string key="NotInGame">
@@ -10,7 +10,7 @@
     <value>{0} dachte es ist mal wieder an der Zeit ein neues normales Spiel auszurufen. Folge seinem Ruf indem du den /join Befehl nutzt.</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>Chaos-Modus! Nutze /join, um {0} zu retten...</value>
+    <value>Chaos-Modus! Nutze /join, um {0} zu fressen...</value>
     <value>{0} hat eine neue Chaos-Runde ausgerufen, jetzt liegt es an dir Ordnung reinzubringen. Tritt jetzt schnell mit /join dem Spiel bei, bevor alles verloren ist.</value>
   </string>
   <string key="NoJoinGameRunning">
@@ -34,7 +34,7 @@
     <value>Spiel startet...</value>
     <value>So mögen die Spiele beginnen ...</value>
     <value>Haltet euch fest, eine neue Runde startet in wenigen Augenblicken.</value>
-    <value>Es ist soweit eine neue runde Werwolf startet jeden Augenblick *Hype*.</value>
+    <value>Es ist soweit, eine neue Runde Werwolf startet jeden Augenblick *Hype*.</value>
   </string>
   <string key="BannedForExploit">
     <value>{0} ist gebannt. Grund: Ausnutzung eines Programmfehlers.</value>
@@ -60,12 +60,11 @@
   </string>
   <string key="Flee">
     <value>{0} bekam Schiss!</value>
-    <value>{0} hat das Bett vollgepisst und zog deshalb aus!</value>
     <value>{0} konnte die Dummheit der anderen Mitspieler nicht mehr ertragen, und brachte sich selbst um!</value>
     <value>{0} hatte nicht mehr genügend Zeit für ein Spiel und musste deswegen fliehen.</value>
   </string>
   <string key="PlayerRoleWas">
-    <value>{0} war {1} gewesen</value>
+    <value>{0} war {1}</value>
   </string>
   <string key="CountPlayersRemain">
     <value>{0} Spieler verbleibend</value>
@@ -119,7 +118,7 @@
     <value>{0} der alte Knacker hat wohl zu tief in die Glaskugel geschaut. Hoffentlich passiert dir das nicht auch.</value>
     <value>{0} war Seher, wurde aber getötet. Jetzt ist deine Chance gekommen die Runde trotzdem noch zu retten. Viel Erfolg dabei :)</value>
   </string>
-  <string key="BeholderNewSeer">
+  <string key="BeholderNewSeer"> <!--TODO: wer ist 0 und wer ist 1? Korrigieren.-->
     <value>{0} war ein Lehrling, und tritt jetzt trotz fehlender Erfahrung in die Fußstapfen von {1} 👳. </value>
     <value>Da {1} jetzt tot ist, nimmt sein überaus eifriger Lehrling {0} dessen Platz als Seher 👳 ein. </value>
     <value>{1}'s Gelegenheit ist gekommen um zu zeigen was er/sie gelernt hat 👳. {0} starb, beweise, dass sein Tod nicht umsonst war.</value>
@@ -143,7 +142,7 @@
   </string>
   <string key="AskShoot">
     <value>Wen willst du erschießen? {0} Kugeln verbleibend.</value>
-    <value>Du hast also immer noch Schüsse übrig? Na gut, wer soll deine heutige Wahl werden? ({0} Versuche hast du noch!)</value>
+    <value>Du hast also immer noch Kugeln übrig? Na gut, wer soll deine heutige Wahl werden? ({0} Versuche hast du noch!)</value>
   </string>
   <string key="AskVisit">
     <value>Mit wem willst du heute 69 ausprobieren?</value>
@@ -153,10 +152,10 @@
     <value>Wer darf dir heute deine Jungfräulichkeit nehmen? Wähle mit Bedacht, die verliert man immerhin nur einmal :P</value>
   </string>
   <string key="AskSee">
-    <value>Wessen Karte willst du sehen?</value>
+    <value>Wessen Berufung willst du erfahren?</value>
     <value>Wessen Ahnen willst du heute um Rat fragen?</value>
     <value>Wen willst du über die Glaskugel beobachten?</value>
-    <value>Für wen willst du heute deine Seherkarten befragen?</value>
+    <value>Für wen willst du heute deine Karten befragen?</value>
   </string>
   <string key="AskGuard">
     <value>Wen willst du beschützen?</value>
@@ -200,7 +199,7 @@
   </string>
   <string key="RoleInfoGuardianAngel">
     <value>Du bist der Engel 👼. Jede Nacht kannst du einen Spieler beschützen. Wenn du einen Wolf erwischt, wirst du mit 50% Warscheinlichkeit sterben.</value>
-    <value>Du bist der Engel. In jeder Nacht kannst du jemanden vor dem Tod beschützen. Aber Vorsicht, triffst du dabei auf den Wolf besteht eine 50% hohe Wahrscheinlichkeit, dass du dabei draufgehst.</value>
+    <value>Du bist der Engel 👼. In jeder Nacht kannst du jemanden vor dem Tod beschützen. Aber Vorsicht, triffst du dabei auf den Wolf besteht eine 50% hohe Wahrscheinlichkeit, dass du dabei draufgehst.</value>
   </string>
   <string key="RoleInfoGunner">
     <value>Du bist der Schütze 🔫. Du hast genau 2 Kugeln als Munition. Während des Tages kannst du einen anderen Spieler erschießen. Der Schuss ist aber so laut, dass ihn jeder hört. Alle wissen, dass du der Schütze bist.</value>
@@ -212,7 +211,7 @@
     <value>Du bist der Verräter 🖕! Du bist jetzt zwar ein Dorfbewohner, aber falls alle Werwölfe tot sind, verwandelst du dich in einen. Der Seher könnte dich als Wolf oder als Dorfbewohner identifizieren.</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>Du bist ein Werwolf 🐺!! Jede Nacht darfst du jemanden umbringen.</value>
+    <value>Du bist ein Werwolf 🐺! Jede Nacht darfst du jemanden umbringen.</value>
   </string>
   <string key="RoleInfoSeer">
     <value>Du bist der Seher 👳. Du kannst dir jede Nacht die Rolle eines Spielers ansehen.</value>
@@ -261,7 +260,7 @@
     <value>Es erschien heute niemand zur Wahl! Es gab keine Toten</value>
   </string>
   <string key="DetectiveEaten">
-    <value>Die Dorfbewohner treffen sich am Morgen, aber {0} ist nicht dabei. Sie gehen zum Haus, um {0} ausgeweidet vorzufinden, mit einem alten Abzeichen in seinen Hals geschoben...</value>
+    <value>Die Dorfbewohner treffen sich am Morgen, aber {0} ist nicht dabei. Sie gehen zum Haus, um {0} ausgeweidet vorzufinden, der Hals mit messerscharfen Krallen 🐺 zerfetzt. An der Kleidung erkennt man ein blutverschmiertes Abzeichen 🕵. Ein schauriger Anblick...</value>
   </string>
   <string key="GuardianEaten">
     <value>Die Dorfbewohner sehen {0}, den Engel 👼,  von rasiermesserscharfen Zähnen 🐺 zerfetzt, neben der Kirche liegen.</value>
@@ -269,21 +268,21 @@
     <value>Was ist das für ein schrecklicher Geruch aus dem Dorfbrunnen? Ein Blick hinab in die Tiefe ... Das Wasser bedeckt mit Engelsfedern 👼 und der Kübel gefüllt mit den Innereien von {0}. Der Wolf 🐺 wollte sich wohl etwas für später aufheben.</value>
   </string>
   <string key="GunnerEaten">
-    <value>Nachdem jeder aus seinen Häusern zurückkehrt, sehen die Bewohner Teile einer Schrotflinte 🔫 herum liegen... Dann Beine.. Dann Finger. Schwimmend im Stadtbrunnen ist der Körper von {0}, getötet von einem Werwolf 🐺. Ihr habt euren Schützen verloren.</value>
+    <value>Nachdem jeder aus seinen Häusern zurückkehrt, sehen die Bewohner Teile einer Schrotflinte 🔫 herum liegen... Dann Beine.. Dann Finger. Schwimmend im Stadtbrunnen finden sie den restlichen Körper von {0}, getötet von einem Werwolf 🐺. Ihr habt euren Schützen verloren.</value>
     <value>{0}s Körper hängt aufgespießt am Laternenpfahl. Ein silberner Revolver 🔫  schimmert aus dem zerfetzten Brustkorb der Leiche ... Ein Werwolf 🐺 hatte wohl Spaß mit ihm.</value>
   </string>
   <string key="SeerEaten">
-    <value>Die Sonne geht auf. Das Dorf erwacht, man findet die Überreste von {0} über einem Ouija Brett und Seher-Karten verteilt. Der Seher 👳 ist Tot.</value>
+    <value>Die Sonne geht auf. Das Dorf erwacht und man findet die Überreste von {0} über einem Ouija Brett und Seher-Karten verteilt. Am Eingang des Hauses konnte man Wolfshaare 🐺 finden. Der Seher 👳 ist Tot.</value>
   </string>
   <string key="DrunkEaten">
-    <value>Jeder erwacht zu dem Geruch von brennendem Alkohol ... Die Kneipe 🍻 brennt!!!! Nachdem das Feuer gelöscht wurde, fand man Überreste von {0}, von messerscharfen Zähnen auseinandergerissen....</value>
-    <value>{0}'s allgegenwärtige Schnapsflasche 🍻 wurde am nächsten Morgen im Gestrüpp nahe der Taverne gefunden. Die dazugehörige Leiche lag von scharfen Zähnen aufgerissen nicht weit davon entfernt.</value>
+    <value>Jeder erwacht zu dem Geruch von brennendem Alkohol ... Die Kneipe 🍻 brennt! Nachdem das Feuer gelöscht wurde, fand man Überreste von {0}, von messerscharfen Zähnen 🐺 auseinandergerissen....</value>
+    <value>{0}'s allgegenwärtige Schnapsflasche 🍻 wurde am nächsten Morgen im Gestrüpp nahe der Taverne gefunden. Die dazugehörige Leiche lag von scharfen Krallen 🐺 aufgerissen nicht weit davon entfernt.</value>
   </string>
   <string key="FoolEaten">
-    <value>Als die Sonne über das Dorf stieg, fanden sie {0} über einem Ouija Brett sitzend, aber mit einem Deck aus.... Spielkarten??? WAS FÜR EIN NARR 🃏!</value>
+    <value>Als die Sonne über dem Dorf erneut aufstieg, fanden die Bewohner erst seinen Kopf, dann {0}'s Eingeweide 🐺 über einem Ouija Brett verteilt, zusammen mit einem Deck aus.... Spielkarten? WAS FÜR EIN NARR 🃏!</value>
   </string>
   <string key="DefaultEaten">
-    <value>Als jeder aufwachte, bemerkten sie einen schrecklichen Gestank. Sie folgten dem Geruch und fanden {0}, auseinandergenommen im Schweinestall, Kopflos. MampfMampfMampf\n{1}</value>
+    <value>Als die Dorfbewohner aufwachten, bemerkten sie einen schrecklichen Gestank. Sie folgten dem faulen Geruch und fanden {0}, auseinandergenommen im Schweinestall, kopflos. Nomnomnomnom 🐺\n{1}</value>
   </string>
   <string key="HunterKilledCultist">
     <value>Ein bemerkbarer Gestank kommt aus {0}'s Haus... Das Dorf besichtigte es und fand einen Körper vor einem dunklen Altar liegend... Ein Kultist 👤 getötet von einem Jäger!</value>
@@ -333,10 +332,10 @@
     <value>Mmmh ... wie {0} gefühlvoll mit der Zunge leckt ... Mmmh ... uh.. uh.. Aaaaaaaah! Blutverströmt musst du feststellen, dass {0} nicht nur sprichwörtlich Hunger 🐺 auf dein Fleisch hatte.</value>
   </string>
   <string key="HarlotFuckedWolfPublic">
-    <value>{0} wollte letzte Nacht wohl mit den falschen ... ähm ... Wesen Spaß haben. Oder war es nur ein tragischer Unfall? Auf jeden Fall wurde sie ein wenig zu hart durchgenommen 💋! Ihre zerfetzten Überreste findet man am Morgen im gesamten Dorf verteilt... wie schade :(</value>
+    <value>{0} wollte letzte Nacht wohl mit den falschen ... ähm ... Wesen 🐺 Spaß haben. Oder war es nur ein tragischer Unfall? Auf jeden Fall wurde sie ein wenig zu hart durchgenommen 💋! Ihre zerfetzten Überreste findet man am Morgen im gesamten Dorf verteilt... wie schade :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic">
-    <value>{0} schlüpfte in {1}'s Haus, bereit um für eine Nacht eine Sklavin zu sein 💋 und Stress abzubauen. Jedoch überraschte sie einen Werewolf dabei, {1} mit seinem Schwanz zu erwürgen! Plötzlich wand sich der Werwolf zu {0} und zerstörte ihren ledernen Hintern.  {0} ist tot.</value>
+    <value>{0} schlüpfte in {1}'s Haus, bereit für eine Nacht eine Sklavin zu sein 💋 und Stress abzubauen. Aber sie überraschte einen Werwolf 🐺 dabei, {1} mit seinem Schwanz zu erwürgen! Sofort wand sich der Werwolf zu {0} und zerstörte ihren hübschen Hintern.  {0} ist tot.</value>
   </string>
   <string key="HarlotVisitNonWolf">
     <value>Du siehst, dass {0} kein Wolf ist, da {0} dich mit seinem, wie manche sagen würden, adäquaten Penis die ganze Nacht lang gefickt hat 💋!</value>
@@ -351,10 +350,11 @@
     <value>Deine Schnüfflerei brachte heraus, dass {0} {1} ist</value>
   </string>
   <string key="HarlotShot">
-    <value>Es sieht aus, als würde {0} glücklich von einer Nacht mit der Hure zurückkommen. Aber was ist das? Ich glaube ihr solltet euch alle testen lassen, die Schlampe hat AIDS! Der Schütze nahm sich seine Rache nach einem letzten Ritt. {1} ist tot.</value>
+    <value>Vom Markt hört man lautes Geschrei, es streiten sich {0} und {1}. Die herbei eilenden Dorfbewohner bekommen noch Gesprächsfetzen mit, es geht um nicht erbrachte Dienstleistungen und Vertragsbruch. Anscheinend möchte {1} auch heute nicht anal entjungfert werden. Plötzlich zieht {0} 🔫 eine Pistole und erschießt {1}. Schade um den Hintern, die Hure 💋 ist tot.</value>
+	<value>Um die Mittagsstunde hört man im Dorf plötzlich einen hallenden Schuss. Die ersten herbei eilenden Bewohner entdecken {0}, den Schützen 🔫, über der Leiche der Hure {1} 💋. Er murmelt unzusammenhängend etwas von Treue und Liebe und verschwindet kurze Zeit später im Gedränge der Schaulustigen.</value>
   </string>
   <string key="DefaultShot">
-    <value>Plötzlich bemerkte man einen Schuss 🔫. Das Dorf sah sich um, um {0} über {1}'s Körper stehen zu sehen, die Kanone immer noch in der Hand. {2}</value>
+    <value>Plötzlich bemerkte man einen Schuss 🔫. Das Dorf sah sich um, um {0} über {1}'s Körper stehen zu sehen, die rauchende Kanone immer noch in der Hand. {2}</value>
   </string>
   <string key="WolfWins">
     <value>Der Werwolf hat gewonnen!</value>
@@ -480,13 +480,13 @@
     <value>Du bist ein Freimaurer 👷. Falls es noch andere Freimaurer geben sollte, wirst du das erfahren. Sonst verhältst du dich wie ein ganz normaler Dorfbewohner.</value>
   </string>
   <string key="MasonEaten">
-    <value>Als die Sonne aufging, konnte man einen Körper blutverschmiert auf einem Fels liegen sehen. {0}, einer eurer Freimaurer 👷 ist tot!</value>
+    <value>Als die Sonne aufging, konnte man einen Körper blutverschmiert 🐺 auf einem Fels liegen sehen. {0}, einer eurer Freimaurer 👷 ist tot!</value>
   </string>
   <string key="MasonTeam">
     <value>Mitglieder im Club der Freimaurer: {0}</value>
   </string>
   <string key="CultTargetDead">
-    <value>Euer neuestes Mitglied lief zu {0}'s Haus um ihn zu bekehren, aber das Haus war vollkommen zerstört, überall Blut, und Spuren eines Wolfsfells vor der Türe...</value>
+    <value>Euer neuestes Mitglied lief zu {0}'s Haus um ihn zu bekehren, aber das Haus war vollkommen zerstört, überall Blut, und Spuren eines Wolfsfells 🐺 vor der Türe...</value>
   </string>
   <string key="GuardBlockedWolf">
     <value>Das Rudel lief zu {0}'s Haus um ihn zu essen, aber ihr bemerkt eine große dunkle Gestalt, bis zu den Zähnen bewaffnet. Der Schutzengel 👼 wehrte euch alle ab und ihr kehrt besiegt zurück.</value>
@@ -508,7 +508,7 @@
     <value>Als die Bürger am nächsten Morgen aufwachten, fanden sie die Leiche von {0}, welcher durch scheinbar mysteriöse Umstände verstarb ...</value>
   </string>
   <string key="MasonConverted">
-    <value>Merkwürdig.... {0} kam diesmal nicht zur Versammlung der Freimaurer welche jeden Morgen stattfindet.... O.o</value>
+    <value>Merkwürdig.... {0} kam diesmal nicht zur Versammlung der Freimaurer, welche jeden Morgen stattfindet.... O.o</value>
   </string>
   <string key="FleeDisabled">
     <value>Das Fliehen während eines laufenden Spiels wurde vom Gruppenadmin deaktiviert!</value>
@@ -612,16 +612,16 @@
     <value>Während die Kugel {0} durchbohrt, fällt er zu Boden.... aber nicht ohne nach seiner Pistole 🎯 zu greifen und {1} abzuschießen, welchen die Kugel direkt zwischen seine Augen trifft. {2}</value>
   </string>
   <string key="HunterShotWolfMulti">
-    <value>Die Wölfe 🐺 haben zwar letzte Nacht den Jäger 🎯 getötet, aber der Jäger konnte noch jemanden mit in den Tod reißen! {0} ist gestorben (Wolf)</value>
+    <value>Die Wölfe 🐺 haben letzte Nacht den Jäger 🎯 angegriffen, aber der Jäger war schneller mit der Flinte und erschoss die Angreifer {0}!</value>
   </string>
   <string key="HunterShotWolf">
-    <value>Die Wölfe 🐺 haben zwar letzte Nacht den Jäger 🎯 getötet, aber der Jäger konnte noch den Wolf {0} mit seinem Gewehr erschießen!</value>
+    <value>Die Wölfe 🐺 haben letzte Nacht den Jäger 🎯 angegriffen, aber der Jäger war schneller mit der Flinte und erschoss noch den Wolf {0}!</value>
   </string>
   <string key="SerialKillerKilledWolf">
     <value>Die Wölfe 🐺 haben versucht ein Abendmahl zu nehmen, aber trafen stattdessen einen verrückten Mörder 🔪! {0} wurde im Kampf getötet!</value>
   </string>
   <string key="DefaultKilled">
-    <value>Die Dorfbewohner versammeln sich am nächsten Morgen, nur um  {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, und merkwürdigerweise fehlt die Leber.....  Der Serienmörder 🔪 hat wieder zugeschlagen! {1}</value>
+    <value>Die Dorfbewohner versammeln sich am nächsten Morgen, nur um  {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, und merkwürdigerweise fehlt die Leber.....  Der Serienmörder 🔪 hat wieder zugeschlagen, {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <value>Du hast versucht {0}'s Körper in deine Sammlung aufzunehmen, wurdest aber vom Schutzengel 👼 abgewehrt! Keine Tötung für dich diese Nacht....</value>
@@ -640,22 +640,22 @@
     <value>Du schlüpfst in {0}'s Haus und ziehst dich nackt aus.  Alles scheint gut zu gehen, bis {0} ein Messer enthüllt und auf deine Leber einsticht 🔪!  Du bist gestorben....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>{0} die Hure hat sich diese Nacht für den falschen Stecher 🔪 entschieden. Oder ist da nur ein extremes Liebesspiel aus dem Ruder gelaufen? Jedenfalls findet der Rest des Dorfes sie am nächsten Morgen ohne Leber wieder...</value>
+    <value>{0} die Hure 💋 hat sich diese Nacht für den falschen Stecher 🔪 entschieden. Oder ist da nur ein extremes Liebesspiel aus dem Ruder gelaufen? Jedenfalls findet der Rest des Dorfes sie am nächsten Morgen ohne Leber wieder...</value>
   </string>
   <string key="DGToMason">
-    <value>Der Doppelgänger 🎭 {0} ist jetzt ein Freimaurer, genau wie du!</value>
+    <value>Der Doppelgänger 🎭 {0} ist jetzt ein Freimaurer 👷, genau wie du!</value>
   </string>
   <string key="DGTransformToMason">
     <value>{0} ist gestorben, und du verwandelst dich in einen Freimaurer 👷.  Deine Kameraden sind (falls überhaupt): {1}</value>
   </string>
   <string key="DGToCult">
-    <value>Der Doppelgänger 🎭 {0} ist zum Kultisten geworden, genau wie du!</value>
+    <value>Der Doppelgänger 🎭 {0} ist zum Kultisten 👤 geworden, genau wie du!</value>
   </string>
   <string key="DGTransformToCult">
     <value>{0} ist gestorben, und du verwandelst dich in einen Kultisten 👤.  Deine Brüder und Schwestern sind (falls überhaupt): {1}</value>
   </string>
   <string key="DGToWolf">
-    <value>Der Doppelgänger 🎭 {0} ist jetzt ein Wolf, genau wie du!</value>
+    <value>Der Doppelgänger 🎭 {0} ist jetzt ein Wolf 🐺, genau wie du!</value>
   </string>
   <string key="DGTransformToWolf">
     <value>{0} ist gestorben, und du verwandelst dich in einen Wolf 🐺.  Deine Kollegen sind (falls überhaupt): {1}</value>
@@ -671,10 +671,10 @@
     <value>Wen willst du heute aufschlitzen?</value>
   </string>
   <string key="LoverDied">
-    <value>Mit {0}'s sterbendem Atemzug eilt {1} vorbei und fällt zu Boden, weinend.  Er kann den Tod seiner Geliebten ❤️ nicht ertragen und erschießt sich mit der nächsten Waffe, die er finden kann. {2}</value>
+    <value>Mit {0}'s letztem Atemzug eilt {1} herbei und stürzt weinend zu Boden.  Der Tod der Geliebten ❤️ ist unerträglich, {1} erschießt sich mit der nächsten Waffe, die zu finden ist. {2}</value>
   </string>
   <string key="AskDoppelganger">
-    <value>Wer möchtest du werden wenn du stirbst?</value>
+    <value>Wessen Doppelgänger möchtest Du werden, wenn die Person stirbt?</value>
   </string>
   <string key="AskCupid1">
     <value>Wer sollen die Liebenden ❤️ sein? Wähle den ersten Spieler</value>
@@ -716,7 +716,7 @@
     <value>Ein neues Spiel startet in {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
-    <value>Der Morgen bricht an und die verbleibenen beiden Dorfbewohner gehen nach draußen zum Dorfplatz. {0} wirft einen Blick auf {1} grinst breit, zieht dann sein Messer 🔪 und sticht {1} mit hämischen Lachen ab.</value>
+    <value>Der Morgen bricht an und die verbleibenen beiden Dorfbewohner gehen nach draußen zum Dorfplatz. {0} wirft einen Blick auf {1} grinst breit, zieht dann ein Messer 🔪 und sticht {1} mit hämischen Lachen ab.</value>
   </string>
   <string key="NoWinner">
     <value>Jeder im Dorf starb....  die blutigen Körper liegen überall herum.  Niemand gewann die Runde...</value>
@@ -758,7 +758,7 @@
     <value>Du bist ein verräterischer Bastard. Wenn du lange genug überlebst bis alle Wölfe sterben, wirst du selber einer, bereit deine ehemaligen Teamkameraden nachts zu töten!</value>
   </string>
   <string key="AboutGA">
-    <value>Du bist der Schutzengel! Jede Nacht darfst du einen Spieler beschützen. Sei aber vorsichtig - falls du einen Werwolf aussuchst, gibt es eine 50%ige Chance dass du stirbst.</value>
+    <value>Du bist der Schutzengel! 👼 Jede Nacht darfst du einen Spieler beschützen. Sei aber vorsichtig - falls du einen Werwolf aussuchst, gibt es eine 50%ige Chance dass du stirbst.</value>
   </string>
   <string key="AboutDetective">
     <value>Du alter Schnüffler... Jeden Tag hast du die Möglichkeit einen anderen Spieler zu untersuchen. Sei aber vorsichtig, mit einer 40%igen Chance wirst du dabei von den Werwölfen entdeckt!</value>
@@ -1004,7 +1004,7 @@
     <value>Neueste Spielerliste nicht gefunden.</value>
   </string>
   <string key="YouJoined">
-    <value>Hast du es auch endlich geschafft? Du bist einem Spiel in {0} beigetreten.</value>
+    <value>Du bist einem Spiel in {0} beigetreten.</value>
   </string>
   <string key="Ping2">
     <value>Zeit zum Senden der Ping Nachricht: {0}</value>
@@ -1022,7 +1022,7 @@
     <value>Du bist der Zauberer. 🔮\nDu willst den Wölfen helfen und dieses elendige Dorf endgültig auslöschen. Nachts darfst du schauen, ob eine Person ein Wolf oder der Seher ist. Für mehr reichen deine miserablen Zauberkenntnisse leider nicht. Versehentlich fressen können dich die Wölfe allerdings schon, auch wenn du versuchst ihnen zu helfen. Du gewinnst und verlierst zusammen mit den Wölfen.</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value>Du bist der Schmied. ⚒\nDu hast noch etwas Silber übrig um diese räudigen Werwölfe eine Nacht lang außer Gefecht zu setzen. Wenn du das Silber auslegst, bekommt dasganze Dorf das mit und die Werwölfe werden dich umso mehr hassen.</value>
+    <value>Du bist der Schmied. ⚒\nDu hast noch etwas Silber übrig um diese räudigen Werwölfe eine Nacht lang außer Gefecht zu setzen. Wenn du das Silber auslegst, bekommt das ganze Dorf das mit und die Werwölfe werden dich umso mehr hassen.</value>
   </string>
   <string key="RoleInfoAlphaWolf">
     <value>Du bist der Rudelführer. 🐺⚡️\nAls Chef des Rudels hast du die Macht, neue Mitglieder ins Rudel aufzunehmen. Solange du lebst wird euer Opfer mit 20% Chance auch zu einem Werwolf.</value>
@@ -1135,7 +1135,7 @@
     <value>{0} kam zu Besuch in {1}'s Haus, bereit für eine wilde Nacht 💋 , nur um einen mysteriösen Fremden vorzufinden, der gerade {1}'s Innereien fein säuberlich zerlegt! Der Serienmörder 🔪 entscheidet sich dazu, sich erstmal mit {0} zu befriedigen, bevor er das Herz der Hure seiner Sammlung hinzufügt! {0} und {1} starben durch den Serienmörder.</value>
   </string>
   <string key="ApprenticeSeerEaten">
-    <value>Die Dorfbewohner wachen auf, nur um {0} vorzufinden, wie er gebeugt mit fehlendem Kopf über einem Ouija-Brett hängt. Er wurde wohl gefressen 🐺 , während er das Wahrsagen üben wollte. Der Seherlehrling 🙇‍♂️ ist tot.</value>
+    <value>Die Dorfbewohner wachen auf, nur um {0} vorzufinden, wie er gebeugt mit fehlendem Kopf über einem Ouija-Brett hängt. Er wurde wohl gefressen 🐺 , während er das Wahrsagen üben wollte. Der Seherlehrling 🙇‍ ist tot.</value>
   </string>
   <string key="BlacksmithKilled">
     <value>Es sieht so aus, als hätte {0}, der ansässige Schmied ⚒ , letzte Nacht viel Pech gehabt. Fünf Messer, frisch geschmiedet von {0}'s Hammer, wurden in seinen Händen, Füßen und seinem Kopf gefunden, außerdem fand man ihn an die Werkbank des Handwerkers geheftet vor. Vielleicht hatte der Serienmörder 🔪 gehofft seine Waffensammlung neben seinen Organen noch erweitern zu können...</value>
@@ -1156,14 +1156,14 @@
     <value>Es sieht so aus, als wäre {0} dabei erwischt worden, wie er letzte Nacht ein kleines Nickerchen gehalten hatte! Ein Schuss konnte letzte Nacht gehört werden, aber alles was übrig blieb, waren die Überreste des Schützen 🔫 , mit einem Einschussloch im Kopf und mehreren Stichen im Rumpf. Der Serienmörder 🔪 hatte hier die Überhand gewonnen.</value>
   </string>
   <string key="MayorKilled">
-    <value>Aufruhr, Panik, Ermordung! {0} der Bürgermeister 🎖️ wurde mit einem Messer im Rücken vorgefunden. Er wurde wohl überrascht, während er über Nacht in seinem Büro gearbeitet hatte! Das muss die Rache des Serienmörders dafür gewesen sein, dass man ihm viele Jahre seines Lebens genommen hatte, in dem man ihn in die Psychiatrie eingesperrt hatte!</value>
+    <value>Aufruhr, Panik, Ermordung! {0} der Bürgermeister 🎖️ wurde mit einem Messer im Rücken vorgefunden. Er wurde wohl überrascht, während er über Nacht in seinem Büro gearbeitet hatte! Das muss die Rache des Serienmörders 🔪 dafür gewesen sein, dass man ihm viele Jahre seines Lebens genommen hatte, in dem man ihn in die Psychiatrie eingesperrt hatte!</value>
   </string>
   <string key="PrinceKilled">
     <value>Glocken läuten überall im Dorf noch bevor die Sonne aufgeht, als bewaffnete Wachen die Straßen nach dem Verschwinden des Prinzen 👑 {0} absuchen. Keine Hinweise konnten entdeckt werden, aber es wird vermutet, dass sich ein Serienmörder 🔪 auf der Flucht befindet...</value>
     <value>{0}'s Wachen wurden ertappt, wie sie letzte Nacht ein Nickerchen hielten. Die sterblichen adligen 👑 Überreste von {0} wurden gefunden, dem Messer des Serienmörders 🔪 zum Opfer gefallen. Keine Palastwache, egal wie groß konnte den Serienmörder davon abhalten adliges Blut zu vergießen.</value>
   </string>
   <string key="SeerKilled">
-    <value>Die Dorfbewohner wachen zu einer verrottenden Leiche von {0} auf, von Kopf bis Fuß zerteilt, mit Stichwunden übersät. Seltsamerweise wurde das Gehirn vorsichtig entnommen, als wäre es eine Vorahnung, dass das Dorf einen seiner wichtigsten Bewohner verloren hat. {0} war der Seher 👳‍♂️.</value>
+    <value>Die Dorfbewohner wachen zu einer verrottenden Leiche von {0} auf, von Kopf bis Fuß zerteilt, mit Stichwunden 🔪 übersät. Seltsamerweise wurde das Gehirn vorsichtig entnommen, als wäre es eine Vorahnung, dass das Dorf einen seiner wichtigsten Bewohner verloren hat. {0} war der Seher 👳‍.</value>
   </string>
   <string key="SorcererEaten">
     <value>Der Klang von traurigem Gejaule kann durch das ganze Dorf gehört werden. Es wurde ein schwerer Fehler begangen. Die Wölfe 🐺 haben jemanden aus ihren eigenen Reihen gefressen. Der Zauberer 🔮 {0} wurde tot aufgefunden.</value>
@@ -1188,7 +1188,7 @@
     <value>Es sollte eine Nacht werden, wo {0} das Dorf vor dem Serienmörder 🔪 schützen sollte, aber {0}'s Heiligenschein 👼 konnte nicht helfen und seine Flügel wurden vom Serienmörder gestutzt! Übrig blieb lediglich eine Notiz mit der Aufschrift: "Ich konnte mich selbst besser beschützen, als du dich."</value>
   </string>
   <string key="GAGuardedWolf">
-    <value>{0} versuchte letzte Nacht einen Wolf 🐺 zu beschützen. Das Dorf wacht auf, nur um die herausgerissenen Flügel von {0} aufgehängt an dem heiligen Kreuz der Kirche zu finden. {0} war der Schutzengel 👼. Die Wölfe hatten diese Nacht eine extra Mahlzeit, die von Gott kostenlos frei Haus gebracht wurde.</value>
+    <value>{0} versuchte letzte Nacht einen Wolf 🐺 zu beschützen. Das Dorf wacht auf, nur um die herausgerissenen Flügel von {0} aufgehängt an dem heiligen Kreuz der Kirche zu finden. {0} war der Schutzengel 👼. Die Wölfe hatten diese Nacht eine extra Mahlzeit, die von Gott frei Haus geliefert wurde.</value>
   </string>
   <string key="HunterKillsWolfEnd">
     <value>Mit dem Wissen, dass nur noch {0} übrig geblieben sein kann, versuchte {1} {0} aufzufressen 🐺 , aber das militärische Training und die Paranoia von {0} waren wohl leider zu viel für den Wolf! Alles was übrig bleibt ist nur noch ein toter Körper mit zwei Schüssen am Rumpf und dem Sieger aus diesem Duell: Dem glorreichen Jäger 🎯 des Dorfes.</value>
@@ -1226,5 +1226,8 @@
   <string key="JoinButton">
     <value>Ein neues NSFW Spiel wurde soeben gestartet. Tippe oder klicke auf /join um dem Spiel jetzt beizutreten.</value>
     <value>Es ist mal wieder an der Zeit für eine neue Runde Werwolf NSFW. Tritt jetzt mit dem /join Befehl dem Spiel bei.</value>
+  </string>
+  <string key="NotMember">
+    <value>Hey Du! Komm erstmal in die Gruppe {0} und lass uns da weiter reden. So kannst Du dem Spiel zumindest nicht beitreten.</value>
   </string>
 </strings>
