@@ -1950,7 +1950,7 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
-                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName(), idles24 + 1)));
+                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>", idles24 + 1)));
 
                     //if hunter has died from AFK, too bad....
                     p.IsDead = true;
@@ -3129,11 +3129,11 @@ namespace Werewolf_Node
                                 case IRole.Hunter:
                                     msg = null;
                                     SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
-                                        $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}"));
+                                        $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                                     HunterFinalShot(p, KillMthd.SerialKilled);
                                     break;
                                 default:
-                                    msg = GetLocaleString("DefaultKilled", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
+                                    msg = GetLocaleString("DefaultKilled", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                                     break;
                             }
                         }
@@ -3267,7 +3267,7 @@ namespace Werewolf_Node
                     return DoGameEnd(ITeam.NoOne);
                 case 1:
                     var p = alivePlayers.FirstOrDefault();
-                    if (p.PlayerRole == IRole.Tanner)
+                    if (p.PlayerRole == IRole.Tanner || p.PlayerRole == IRole.Sorcerer)
                         return DoGameEnd(ITeam.NoOne);
                     else
                         return DoGameEnd(p.Team);
@@ -4104,7 +4104,7 @@ namespace Werewolf_Node
                     WolfCubKilled = true;
                 p.TimeDied = DateTime.Now;
             }
-            //maybe we should CheckRoleChanges(); here?
+            CheckRoleChanges();
             if (p?.PlayerRole == IRole.Hunter)
             {
                 HunterFinalShot(p, KillMthd.LoverDied);
