@@ -108,7 +108,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "getstatus", GlobalAdminOnly = true)]
+        [Command(Trigger = "getban", GlobalAdminOnly = true)]
         public static void GetUserStatus(Update u, string[] a)
         {
             using (var db = new WWContext())
@@ -129,9 +129,11 @@ namespace Werewolf_Control
                         status += String.Format("Ban expiration: <b>{0:%d} days, {0:%h} hours, {0:%m} minutes</b>", expire);
                     }
                 }
+                else
+                    status = "Not banned (in Werewolf)";
                 var firstSeen = p.GamePlayers?.OrderBy(x => x.GameId).FirstOrDefault()?.Game?.TimeStarted;
                 
-                Bot.Api.SendTextMessage(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {ban}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz") ??"Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessage(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ??"Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
             }
 
         }

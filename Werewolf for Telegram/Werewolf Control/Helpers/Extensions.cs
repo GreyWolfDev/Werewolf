@@ -121,10 +121,21 @@ namespace Werewolf_Control.Helpers
             return "<code>" + val.ToString().PadRight(5) + "</code>";
         }
 
+        public static string[] GetParameters(this Message m)
+        {
+            var input = m.Text;
+            if (String.IsNullOrEmpty(input)) return new[] { "", "" };
+            // ReSharper disable StringIndexOfIsCultureSpecific.1  -- It's a space, I don't care about culture.
+            var result = input.Contains(" ") ? new[] { input.Substring(1, input.IndexOf(" ")).Trim(), input.Substring(input.IndexOf(" ") + 1) } : new[] { input.Substring(1).Trim(), null };
+            result[0] = result[0].Replace("@" + Bot.Me.Username, "");
+            return result;
+        }
+
         public static Player GetTarget(this Update u, WWContext db)
         {
             var message = u.Message;
-            var args = message.Text;
+            var args = message.GetParameters()[1];
+
             var sourceUser = message.GetBasePlayer(db);
             if (message == null) return sourceUser;
             if (message?.ReplyToMessage != null)
