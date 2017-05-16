@@ -201,7 +201,6 @@
           <Property Name="AllowExtend" Type="bit" />
           <Property Name="MaxExtend" Type="int" />
           <Property Name="EnableSecretLynch" Type="bit" />
-          <Property Name="BetaPoints" Type="int" />
         </EntityType>
         <!--Errori trovati durante la generazione:
 avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.GroupAdmin'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
@@ -810,7 +809,6 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="AllowExtend" Type="Boolean" />
           <Property Name="MaxExtend" Type="Int32" />
           <Property Name="EnableSecretLynch" Type="Boolean" />
-          <Property Name="BetaPoints" Type="Int32" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -1470,7 +1468,6 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
-                <ScalarProperty Name="BetaPoints" ColumnName="BetaPoints" />
                 <ScalarProperty Name="EnableSecretLynch" ColumnName="EnableSecretLynch" />
                 <ScalarProperty Name="MaxExtend" ColumnName="MaxExtend" />
                 <ScalarProperty Name="AllowExtend" ColumnName="AllowExtend" />
