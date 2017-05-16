@@ -1328,14 +1328,20 @@ namespace Werewolf_Node
                     // ReSharper disable once UnusedVariable
                     var result = Program.Send(msg, p.Id, true).Result;
                 }
-                catch (AggregateException) //is this really only because of the message not being able to be sent? and should it really smite the player? maybe send some message to Para...
-                {
-                    SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
-                    FleePlayer(p.TeleUser.Id);
-                }
                 catch (NullReferenceException ex)
                 {
                     Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                }
+                catch (Exception e)
+                {
+                    //SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
+                    //FleePlayer(p.TeleUser.Id);
+                    while (e.InnerException != null)
+                    {
+                        Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
+                        e = e.InnerException;
+                    }
+
                 }
                 Thread.Sleep(50);
             }
