@@ -3133,7 +3133,7 @@ namespace Werewolf_Node
                                     HunterFinalShot(p, KillMthd.SerialKilled);
                                     break;
                                 default:
-                                    msg = GetLocaleString("DefaultKilled", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
+                                    msg = GetLocaleString("DefaultKilled", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
                             }
                         }
