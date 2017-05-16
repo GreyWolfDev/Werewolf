@@ -166,11 +166,9 @@ namespace Werewolf_Control.Helpers
                 id = textmention.User.Id;
             }
             Player result = null;
-            if (!String.IsNullOrEmpty(username))
+            if (!String.IsNullOrEmpty(username) && id == 0)
                 result = db.Players.FirstOrDefault(
-                    x =>
-                        String.Equals(x.UserName, username,
-                            StringComparison.InvariantCultureIgnoreCase));
+                    x => username.Equals(x.UserName, StringComparison.InvariantCultureIgnoreCase));
             else if (id != 0)
                 result = db.Players.FirstOrDefault(x => x.TelegramId == id);
             else
