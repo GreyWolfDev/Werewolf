@@ -248,15 +248,18 @@ namespace Werewolf_Control
                                 if (game == null)
                                     //try again a couple times
                                     game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                //make sure they are member
-                                var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
-                                if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                                if (game != null)
                                 {
-                                    Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
-                                    return;
+                                    //make sure they are member
+                                    var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                                    if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                                    {
+                                        Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
+                                        return;
+                                    }
+                                    else
+                                        game?.AddPlayer(u);
                                 }
-                                else
-                                    game?.AddPlayer(u);
                             }
                         }
                     }
