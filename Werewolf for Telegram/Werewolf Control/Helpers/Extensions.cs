@@ -153,6 +153,12 @@ namespace Werewolf_Control.Helpers
             var textmention = message?.Entities.FirstOrDefault(x => x.Type == MessageEntityType.TextMention);
             var id = 0;
             var username = "";
+            if (!String.IsNullOrEmpty(args))
+            {
+                if (!int.TryParse(args, out id))
+                    username = args;
+            }
+            
             if (mention != null)
                 username = message.Text.Substring(mention.Offset + 1, mention.Length - 1);
             else if (textmention != null)
@@ -171,7 +177,7 @@ namespace Werewolf_Control.Helpers
                 result = db.Players.FirstOrDefault(
                         x =>
                             String.Equals(x.TelegramId.ToString(), args, StringComparison.InvariantCultureIgnoreCase) ||
-                            String.Equals(x.UserName, args.Replace("@", ""), StringComparison.InvariantCultureIgnoreCase));
+                            String.Equals(x.UserName?? "", args.Replace("@", ""), StringComparison.InvariantCultureIgnoreCase));
             return result ?? sourceUser;
         }
 
