@@ -1040,6 +1040,7 @@ namespace Werewolf_Node
 
         public void ShowJoinButton()
         {
+            if (!IsJoining) return;
             if (!((DateTime.Now - LastJoinButtonShowed).TotalSeconds > (15))) return;
             LastJoinButtonShowed = DateTime.Now;
             Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), replyToMessageId: _joinMsgId);
