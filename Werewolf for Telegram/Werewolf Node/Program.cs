@@ -352,8 +352,7 @@ namespace Werewolf_Node
         public static void KeepAlive()
         {
             string ver = Version.FileVersion;
-
-
+            
             Connect();
             while (Running)
             {
