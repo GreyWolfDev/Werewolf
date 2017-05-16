@@ -260,6 +260,10 @@ namespace Werewolf_Control
                                     else
                                         game?.AddPlayer(u);
                                 }
+                                else
+                                {
+                                    Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username}) didn't find game with guid {g.ToString()}", 133748469);
+                                }
                             }
                         }
                     }
