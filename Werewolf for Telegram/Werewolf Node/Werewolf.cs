@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
@@ -237,11 +238,11 @@ namespace Werewolf_Node
                     }
                     else if (i == Settings.GameJoinTime - 30)
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), replyToMessageId: _joinMsgId);
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
                     }
                     else if (i == Settings.GameJoinTime - 10)
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), replyToMessageId: _joinMsgId);
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
                     }
                     if (SecondsToAdd != 0)
                     {
@@ -256,7 +257,7 @@ namespace Werewolf_Node
                             msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
                         }
                         if (Settings.GameJoinTime > i)
-                            Program.Bot.SendTextMessage(ChatId, msg, replyToMessageId: _joinMsgId);
+                            Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
 
                         SecondsToAdd = 0;
                     }
@@ -861,7 +862,7 @@ namespace Werewolf_Node
                 final = "";
                 bool requestPM = false;
                 bool byteMax = false;
-                bool pList = false, join = false;
+                bool pList = false;
                 var i = 0;
                 while (_messageQueue.Count > 0 & !byteMax)
                 {
