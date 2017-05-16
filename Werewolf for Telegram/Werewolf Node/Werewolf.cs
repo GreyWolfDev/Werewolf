@@ -496,19 +496,19 @@ namespace Werewolf_Node
                 }
 
                 //now, attempt to PM the player
-                try
-                {
+                //try
+                //{
                     // ReSharper disable once UnusedVariable
                     //var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
-                }
-                catch (Exception)
-                {
+                //}
+                //catch (Exception)
+                //{
                     //var botname = "@" + Program.Me.Username;
                     //if (!sendPM)
                     //    msg = GetLocaleString("PMTheBot", p.GetName(), botname);
                     ////unable to PM
                     //sendPM = true;
-                }
+                //}
 
                 //SendWithQueue(msg, requestPM: sendPM);
 
@@ -1950,7 +1950,7 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
-                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>", idles24 + 1)));
+                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
 
                     //if hunter has died from AFK, too bad....
                     p.IsDead = true;
@@ -3836,6 +3836,7 @@ namespace Werewolf_Node
                 {
                     _playerListChanged = true;
                     Players.Remove(p);
+                    _requestPlayerListUpdate = true;
                     //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
