@@ -599,7 +599,7 @@ namespace Werewolf_Control
                                 raw = "";
                             }
                         }
-                        result = reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected");
+                        result += reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected");
                         result = String.IsNullOrEmpty(result) ? "Nothing found" : result;
                         Send(result, u.Message.Chat.Id);
                     }
