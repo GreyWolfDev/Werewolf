@@ -202,8 +202,8 @@
           <Property Name="MaxExtend" Type="int" />
           <Property Name="EnableSecretLynch" Type="bit" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.GroupAdmin'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="GroupAdmin">
           <Key>
             <PropertyRef Name="GroupId" />
@@ -237,8 +237,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.NotifyGame'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="NotifyGame">
           <Key>
             <PropertyRef Name="UserId" />
@@ -283,8 +283,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="GamesSurvived" Type="int" Nullable="false" />
           <Property Name="LastRun" Type="datetime" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_InactivePlayersMain'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_InactivePlayersMain">
           <Key>
             <PropertyRef Name="Id" />
@@ -296,8 +296,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="TelegramId" Type="int" Nullable="false" />
           <Property Name="last" Type="datetime" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_NonDefaultGroups'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_NonDefaultGroups">
           <Key>
             <PropertyRef Name="Name" />
@@ -322,8 +322,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="Preferred" Type="bit" />
           <Property Name="GroupId" Type="bigint" Nullable="false" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_PreferredGroups'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_PreferredGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_PreferredGroups">
           <Key>
             <PropertyRef Name="Id" />
@@ -338,8 +338,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_PublicGroups'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_PublicGroups">
           <Key>
             <PropertyRef Name="Id" />
@@ -351,8 +351,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="MemberCount" Type="int" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.db_owner.v_WaitList'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
           <Key>
             <PropertyRef Name="Name" />
@@ -361,8 +361,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'we
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'werewolf.dbo.v_IdleKill24HoursMain'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_IdleKill24HoursMain">
           <Key>
             <PropertyRef Name="Name" />

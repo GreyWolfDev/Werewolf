@@ -10,10 +10,13 @@
 namespace Database
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class GlobalDay1Lynch_Result
+    public partial class C__MigrationHistory
     {
-        public Nullable<int> pct { get; set; }
-        public int victimid { get; set; }
+        public string MigrationId { get; set; }
+        public string ContextKey { get; set; }
+        public byte[] Model { get; set; }
+        public string ProductVersion { get; set; }
     }
 }
