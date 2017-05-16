@@ -460,12 +460,7 @@ namespace Werewolf_Node
                 if (IsInitializing || !IsJoining) return;
                 //add player
                 Players.Add(p);
-                var grp = "";
-                if (DbGroup.GroupLink != null)
-                    grp = $"<a href\"{DbGroup.GroupLink}\">" + ChatGroup + "</a>";
-                else
-                    grp = ChatGroup;
-                Send(GetLocaleString("YouJoined", grp), p.Id);
+                Send(GetLocaleString("YouJoined", ChatGroup), p.Id);
 
                 //if (!notify) return;
 
@@ -887,7 +882,7 @@ namespace Werewolf_Node
                         if (_playerListId == 0)
                             _playerListId = Send(m.Msg).Result.MessageId;
                         else
-                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
+                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, Telegram.Bot.Types.Enums.ParseMode.Html, disableWebPagePreview: true);
                         continue;
                     }
 
@@ -3863,6 +3858,7 @@ namespace Werewolf_Node
                 }
                 else if (IsJoining)
                 {
+                    _playerListChanged = true;
                     Players.Remove(p);
                     _requestPlayerListUpdate = true;
                     //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
