@@ -6,15 +6,12 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using Telegram.Bot.Types.ReplyMarkups;
-using Werewolf_Control.Handler;
 using File = System.IO.File;
 
 namespace Werewolf_Control.Helpers
@@ -135,6 +132,11 @@ namespace Werewolf_Control.Helpers
                 result += "\n_Duplicated Strings:_\n";
                 result = errors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
             }
+            if (errors.Any(x=> x.Level == ErrorLevel.FatalError))
+            {
+                result += "\n*Fatal errors:*\n";
+                result = errors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n");
+            }
             result += "\n";
             //Program.Send(result, id);
             Thread.Sleep(500);
@@ -180,7 +182,7 @@ namespace Werewolf_Control.Helpers
             {
                 //problem....
                 newFileErrors.Add(new LanguageError(newFile.FileName, "*Language Node*",
-                    $"ERROR: The following file partially matches the same language node. Please check the file name, and the language name, base and variant. Aborting.\n\n*{error.FileName}.xml*\n_Name:_{error.Name}\n_Base:_{error.Base}\n_Variant:_{error.Variant}", ErrorLevel.Error));
+                    $"ERROR: The following file partially matches the same language node. Please check the file name, and the language name, base and variant. Aborting.\n\n*{error.FileName}.xml*\n_Name:_{error.Name}\n_Base:_{error.Base}\n_Variant:_{error.Variant}", ErrorLevel.FatalError));
             }
 
             //get the errors in it
@@ -215,7 +217,7 @@ namespace Werewolf_Control.Helpers
             Thread.Sleep(500);
 
 
-            if (newFileErrors.All(x => x.Level != ErrorLevel.Error))
+            if (newFileErrors.All(x => x.Level != ErrorLevel.FatalError))
             {
                 //load up each file and get the names
                 var buttons = new[]
@@ -229,7 +231,7 @@ namespace Werewolf_Control.Helpers
             }
             else
             {
-                Bot.Api.SendTextMessage(id, "Errors present, cannot upload.", replyToMessageId: msgID);
+                Bot.Api.SendTextMessage(id, "Fatal errors present, cannot upload.", replyToMessageId: msgID);
             }
         }
 
@@ -422,12 +424,13 @@ namespace Werewolf_Control.Helpers
 
         private static void CheckLanguageNode(LangFile langfile, List<LanguageError> errors)
         {
-            if (langfile.Name == null)
-                errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Language name is missing", ErrorLevel.Error));
-            if (langfile.Base == null)
-                errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Base is missing", ErrorLevel.Error));
-            if (langfile.Variant == null)
-                errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Variant is missing", ErrorLevel.Error));
+            
+            if (String.IsNullOrWhiteSpace(langfile.Name))
+                errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Language name is missing", ErrorLevel.FatalError));
+            if (String.IsNullOrWhiteSpace(langfile.Base))
+                errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Base is missing", ErrorLevel.FatalError));
+            if (String.IsNullOrWhiteSpace(langfile.Variant))
+                errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Variant is missing", ErrorLevel.FatalError));
         }
 
         private static string OutputResult(LangFile newFile, List<LanguageError> newFileErrors, LangFile curFile, List<LanguageError> curFileErrors)
@@ -449,6 +452,11 @@ namespace Werewolf_Control.Helpers
                 result = newFileErrors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
                 //next line is there because ErrorLevel.Info is used only to check for duplicated strings. if we use ErrorLevel.Info for other things, this probably should be changed.
                 result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
+            }
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
+            {
+                result += "\n*Fatal errors:*\n";
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
             }
             if (newFileErrors.Count == 0)
             {
@@ -480,7 +488,7 @@ namespace Werewolf_Control.Helpers
             var test = $"setlang|-1001049529775|{file.Base ?? ""}|{file.Variant ?? ""}|v";
             var count = Encoding.UTF8.GetByteCount(test);
             if (count > 64)
-                fileErrors.Add(new LanguageError(file.FileName, "*Language Node*", "Base and variant are too long. (*38 utf8 byte max*)", ErrorLevel.Error));
+                fileErrors.Add(new LanguageError(file.FileName, "*Language Node*", "Base and variant are too long. (*38 utf8 byte max*)", ErrorLevel.FatalError));
         }
 
         private static void GetFileErrors(LangFile file, List<LanguageError> fileErrors, XDocument master)
@@ -542,7 +550,7 @@ namespace Werewolf_Control.Helpers
 
                     if (isgif && value.Value.Length > 200)
                     {
-                        fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.Error));
+                        fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.FatalError));
                     }
                 }
             }
@@ -570,6 +578,6 @@ namespace Werewolf_Control.Helpers
 
     public enum ErrorLevel
     {
-        Info, MissingString, Error
+        Info, MissingString, Error, FatalError
     }
 }
