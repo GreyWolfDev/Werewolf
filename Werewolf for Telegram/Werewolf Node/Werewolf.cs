@@ -44,6 +44,7 @@ namespace Werewolf_Node
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
         private int _joinMsgId;
+        private DateTime LastJoinButtonShowed = DateTime.MinValue;
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -1031,6 +1032,8 @@ namespace Werewolf_Node
 
         public void ShowJoinButton()
         {
+            if (!((DateTime.Now - LastJoinButtonShowed).TotalSeconds > (15))) return;
+            LastJoinButtonShowed = DateTime.Now;
             Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), replyToMessageId: _joinMsgId);
         }
         #endregion
