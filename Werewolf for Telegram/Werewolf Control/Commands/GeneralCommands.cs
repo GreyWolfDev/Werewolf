@@ -239,7 +239,15 @@ namespace Werewolf_Control
                                 //var lang = GetLanguage(u.Message.From.Id);
 
                                 var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                if (game == null) return;
+                                if (game == null)
+                                    //try again a couple times
+                                    game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
+                                if (game == null)
+                                    //try again a couple times
+                                    game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
+                                if (game == null)
+                                    //try again a couple times
+                                    game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
                                 //make sure they are member
                                 var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
                                 if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
@@ -248,7 +256,7 @@ namespace Werewolf_Control
                                     return;
                                 }
                                 else
-                                    game.AddPlayer(u);
+                                    game?.AddPlayer(u);
                             }
                         }
                     }
