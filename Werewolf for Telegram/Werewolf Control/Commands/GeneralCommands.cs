@@ -247,7 +247,8 @@ namespace Werewolf_Control
                                     Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
                                     return;
                                 }
-                                game.AddPlayer(u);
+                                else
+                                    game.AddPlayer(u);
                             }
                         }
                     }

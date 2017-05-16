@@ -44,6 +44,7 @@ namespace Werewolf_Node
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
         private int _joinMsgId;
+        private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
         #region Constructor
         /// <summary>
@@ -94,11 +95,12 @@ namespace Werewolf_Node
                 var menu = new InlineKeyboardMarkup(new[]
                 {
                     new InlineKeyboardButton(GetLocaleString("JoinButton")){Url=$"https://t.me/{Program.Me.Username}?start={Guid}"}
-                });//
+                });
+                FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
-                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: menu).Result.MessageId;
 #else
-                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: menu).Result.MessageId;
 #endif
 
                 new Thread(GameTimer).Start();
@@ -166,13 +168,13 @@ namespace Werewolf_Node
                 {
                     var values = strings.Descendants("value");
                     var choice = Program.R.Next(values.Count());
-                    var selected = values.ElementAt(choice);
+                    var selected = values.ElementAt(choice).Value;
 
                     //disable bluetexting /join!
-                    if (selected.Value.Contains("/join"))
+                    if (selected.ToLower().Contains("/join"))
                         throw new Exception("/join found in the string, using the English file.");
 
-                    return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+                    return String.Format(selected.FormatHTML(), args).Replace("\\n", Environment.NewLine);
                 }
                 else
                 {
@@ -265,7 +267,7 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
-                Program.Bot.EditMessageCaption(ChatId, _joinMsgId, " ", null);
+                Program.Bot.EditMessageCaption(ChatId, _joinMsgId, FirstMessage, null);
                 IsJoining = false;
                 IsInitializing = true;
 
