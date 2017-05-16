@@ -227,6 +227,11 @@ namespace Werewolf_Node
                                 game = Games.FirstOrDefault(x => x.ChatId == eti.GroupId);
                                 game?.ExtendTime(eti.User, eti.Admin, eti.Seconds);
                                 break;
+                            case "JoinButtonRequestInfo":
+                                var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
+                                game?.ShowJoinButton();
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;

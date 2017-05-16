@@ -93,6 +93,13 @@ namespace Werewolf_Control.Models
             var json = JsonConvert.SerializeObject(new ExtendTimeInfo() { GroupId = GroupId , Admin = admin, User = id, Seconds = seconds});
             n?.Broadcast(json);
         }
+
+        public void ShowJoinButton()
+        {
+            var json = JsonConvert.SerializeObject(new JoinButtonRequestInfo { GroupId = GroupId });
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            n?.Broadcast(json);
+        }
     }
 
     public enum GameState

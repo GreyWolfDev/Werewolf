@@ -165,6 +165,11 @@ namespace Werewolf_Node
                     var values = strings.Descendants("value");
                     var choice = Program.R.Next(values.Count());
                     var selected = values.ElementAt(choice);
+
+                    //disable bluetexting /join!
+                    if (selected.Value.Contains("/join"))
+                        throw new Exception("/join found in the string, using the English file.");
+
                     return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
                 }
                 else
@@ -228,15 +233,15 @@ namespace Werewolf_Node
 
                     if (i == Settings.GameJoinTime - 60)
                     {
-                        SendWithQueue(GetLocaleString("MinuteLeftToJoin"));
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), replyToMessageId: _joinMsgId);
                     }
                     else if (i == Settings.GameJoinTime - 30)
                     {
-                        SendWithQueue(GetLocaleString("SecondsLeftToJoin", "30".ToBold()));
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), replyToMessageId: _joinMsgId);
                     }
                     else if (i == Settings.GameJoinTime - 10)
                     {
-                        SendWithQueue(GetLocaleString("SecondsLeftToJoin", "10".ToBold()));
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), replyToMessageId: _joinMsgId);
                     }
                     if (SecondsToAdd != 0)
                     {
@@ -251,7 +256,7 @@ namespace Werewolf_Node
                             msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
                         }
                         if (Settings.GameJoinTime > i)
-                            SendWithQueue(msg);
+                            Program.Bot.SendTextMessage(ChatId, msg, replyToMessageId: _joinMsgId);
 
                         SecondsToAdd = 0;
                     }
@@ -1021,6 +1026,11 @@ namespace Werewolf_Node
             if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
             LastPlayersOutput = DateTime.Now;
             Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), replyToMessageId: _playerListId);
+        }
+
+        public void ShowJoinButton()
+        {
+            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), replyToMessageId: _joinMsgId);
         }
         #endregion
 
