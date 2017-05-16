@@ -118,7 +118,7 @@ namespace Werewolf_Control
                 var status = "";
                 if (ban != null)
                 {
-                    status = $"Banned for: {ban.Reason}\nBy: {ban.BannedBy} on {ban.BanDate}\n";
+                    status = $"<b>Banned for: {ban.Reason}</b>\nBy: {ban.BannedBy} on {ban.BanDate?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper()}\n";
                     var expire = (ban.Expires - DateTime.Now);
                     if (expire > TimeSpan.FromDays(365))
                     {
