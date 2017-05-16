@@ -599,8 +599,9 @@ namespace Werewolf_Control
                                 raw = "";
                             }
                         }
+                        result = reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected");
                         result = String.IsNullOrEmpty(result) ? "Nothing found" : result;
-                        Send(result + (reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected")), u.Message.Chat.Id);
+                        Send(result, u.Message.Chat.Id);
                     }
                 }
             }
