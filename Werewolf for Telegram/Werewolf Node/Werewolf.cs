@@ -2605,6 +2605,12 @@ namespace Werewolf_Node
                                         target.IsDead = true;
                                         target.TimeDied = DateTime.Now;
                                         target.DiedLastNight = true;
+                                        // If wolf ate their sorcerer...
+                                        if (target.PlayerRole == IRole.Sorcerer)
+                                        {
+                                            foreach (var w in voteWolves)
+                                                AddAchievement(w, Achievements.NoSorcery)
+                                        }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
                                             GetRandomImage(Settings.VillagerDieImages), target.Id);
