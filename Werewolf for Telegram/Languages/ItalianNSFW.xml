@@ -4,48 +4,52 @@
 	<language name="Italiano - NSFW"
 			base="Italiano"
 			variant="NSFW"/>
-	<string key="NotInGame">
+	<string key="NotInGame" deprecated="true">
 		<value>Ma cosa ti fumi? Non sei neanche in partita.</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} ha cominciato una partita… usate /join se volete diventare asociali anche voi!</value>
+		<value>{0} ha avviato una partita… usate /join se volete diventare asociali anche voi!</value>
 		<value>Una nuova partita è stata iniziata da {0}! Ma non avevi nient'altro da fare? Perdete tempo anche voi facendo /join :P</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
 		<value>{0} Ha iniziato una partita caos! Usa /join per unirti!\n(È caos, quindi non si capirà un cazzo)</value>
 		<value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
 	</string>
-	<string key="NoJoinGameRunning">
+	<string key="NoJoinGameRunning" deprecated="true">
 		<value>La partita è ancora in corso: ora siediti, piangi e aspetta.</value>
 	</string>
-	<string key="AlreadyJoined">
+	<string key="AlreadyJoined" deprecated="true">
 		<value>Oh, non insistere! Sei già dentro!</value>
 	</string>
 	<string key="MinuteLeftToJoin">
 		<value>Ancora 1 minuto per usare /join…</value>
 		<value>Manca un minuto alla carneficina. Fate /join!</value>
+		<value>Mancano 60 secondi! /join now!</value>
 	</string>
 	<string key="SecondsLeftToJoin">
 		<value>Ancora {0} secondi per usare /join…</value>
+		<value>Mancano {0} all'inizio! Ultima chance per fare /join!</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>Ah, tutti cagasotto, non siamo abbastanza. Cancello 'sta partita vah…</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>Eh? Cosa? Ah sta iniziando la partita! Sì, arrivo…</value>
+		<value>Eh? Cosa? Ah, sta iniziando la partita! Sì, arrivo…</value>
 		<value>Pronti a morire? </value>
 	</string>
-	<string key="BannedForExploit">
+	<string key="BannedForExploit" deprecated="true">
 		<value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi).</value>
 	</string>
 	<string key="ChangeNameToJoin">
 		<value>{0}, devi cambiare nome. Quello che hai adesso non mi piace.</value>
+		<value>{0}, questo tuo nome non va affatto bene… se vuoi giocare lo devi cambiare.</value>
 	</string>
 	<string key="PlayerLimitReached">
 		<value>Siamo pieni! Prendi il ticket!</value>
 	</string>
 	<string key="PlayerJoined">
 		<value>{0} si è unito. {1} potenziali vittime su {3} ({2} minimo, {3} massimo).</value>
+		<value>{0} vuole divertirsi! Siamo in {1} su minimo {2} e massimo {3}.</value>
 	</string>
 	<string key="PMTheBot">
 		<!-- 0 - Player name -->
@@ -57,14 +61,19 @@
 	</string>
 	<string key="Flee">
 		<value>{0} si è cagato sotto!</value>
+		<value>Sembra che {0} non abbia le palle per giocare… Codardo!</value>
+		<value>Sembra che {0} non abbia le palle di giocare… Codardo!</value>
 	</string>
 	<string key="PlayerRoleWas">
 		<value>\n{0} era {1}</value>
+		<value>\nAddio, {0}, ci mancherà {1}.</value>
+		<value>\nRIP {0}. Faremo senza {1}.</value>
 	</string>
 	<string key="CountPlayersRemain">
 		<value>Rimangono {0} giocatori.</value>
+		<value>Restiamo in {0} per la festa!</value>
 	</string>
-	<string key="DidntAsk">
+	<string key="DidntAsk" deprecated="true">
 		<value>Che vuoi? Non ti ho chiesto niente!</value>
 	</string>
 	<string key="NotPlaying">
@@ -73,7 +82,7 @@
 	<string key="NoPlayerName">
 		<value>Non esiste nessuno con questo nome, fuma di meno.</value>
 	</string>
-	<string key="AnswerNonValid">
+	<string key="AnswerNonValid" deprecated="true">
 		<value>Questa non è una risposta valida!</value>
 	</string>
 	<string key="WolfVotedKill">
@@ -92,7 +101,7 @@
 		<value>Scelta accettata</value>
 	</string>
 	<string key="BeholderSeer">
-		<value>\nIl il veggente è {0}</value>
+		<value>\nIl veggente è {0}.</value>
 	</string>
 	<string key="ApprenticeNowSeer">
 		<value>{0} era il Veggente. E siccome sei stronzo, prendi il suo posto.</value>
@@ -114,6 +123,8 @@
 	</string>
 	<string key="AskVisit">
 		<value>Chi vuoi scopare questa notte?</value>
+		<value>Chi ti vuoi sbattere questa notte?</value>
+		<value>Nel letto di quale fortunato salterai questa notte?</value>
 	</string>
 	<string key="AskSee">
 		<value>Chi vuoi scrutare?</value>
@@ -131,7 +142,7 @@
 		<value>A chi auguri la morte?</value>
 	</string>
 	<string key="AskConvert">
-		<value>Chi vuoi convertire al tuo culto?</value>
+		<value>Chi vuoi convertire al tuo satanismo?</value>
 	</string>
 	<string key="DiscussWith"><!--Leave the leading spaces here please-->
 		<value>  Sii sicuro di discutere con {0}</value>
@@ -216,10 +227,10 @@
 		<value >Si leva il sole, e per la disperazione di tutti, impalato sulla croce della chiesa c'è {0}, l'Angelo Custode. Rip piccolo angelo.</value>
 	</string>
 	<string key="GunnerEaten" >
-		<value >Nella piazza centrale si può scorgere la sagoma di un uomo che sembra essersi suicidato. {0} è a terra ed ha la sua pistola ancora puntata in testa… Ma è ovvio che non è un suicidio, quei 350 morsi di lupo non penso se li sia fatti da solo. Bel tentativo di simulare un suicidio.</value>
+		<value>Nella piazza centrale si può scorgere la sagoma di un uomo che sembra essersi suicidato. {0} è a terra ed ha la sua pistola ancora puntata in testa… Ma è ovvio che non è un suicidio, quei 350 morsi di lupo non penso se li sia fatti da solo. Bel tentativo di simulare un suicidio.</value>
 	</string>
 	<string key="SeerEaten" >
-		<value >Gli insegnamenti di Cinchiullee non sono bastati per proteggere il veggente. {0} è morto, assieme a lui la tavoletta Ouija e l'oracolo di Frenapath…</value>
+		<value>Gli insegnamenti di Cinchiullee non sono bastati per proteggere il veggente. {0} è morto, assieme a lui la tavoletta Ouija e l'oracolo di Frenapath…</value>
 	</string>
 	<string key="DrunkEaten" >
 		<value >NO! La taverna è in fiamme! *Corre a spegnere l'incendio* ah ma io non sto giocando… Ehm! I villici domato l'inferno scoprono i resti di {0} ormai carbonizzato. Però ha ancora il suo whisky in mano, bravo. Insegna agli angeli come si beve.</value>
@@ -240,7 +251,7 @@
 		<value >Questa notte è stata tranquilla… I lupi si sono presi una pausa, nessuna vittima.</value>
 	</string>
 	<string key="CursedBitten" >
-		<value >I lupi sono passati a casa tua armati di artigli e lubrificanti per penetrarti. Tuttavia eri maledetto, e ti unisci a loro. Ora sei un lupo!</value>
+		<value >I lupi sono passati a casa tua armati di artigli e lubrificanti per penetrarti. Tuttavia eri maledetto e ti unisci a loro. Ora sei un lupo!</value>
 	</string>
 	<string key="WolfTeam">
 		<value>Ecco gli altri lupi: {0}</value>
@@ -467,6 +478,7 @@
 	<string key="GenericDeathNoReveal">
 		<value>Tutti si svegliano la mattina e si accorgono che {0} non si trova in giro… Controllano la sua casa per poi trovare i resti di {0}.</value>
 		<value>I contadini si svegliano al sorgere del sole, per poi trovare i resti di {0} morto in qualche modo la scorsa notte.</value>
+		<value>Ogni mattina in Africa una gazzella si sveglia e sa che dovrà correre più veloce del leone se vuole sopravvivere.\nOgni mattina in Africa un leone si sveglia e sa che dovrà correre più veloce della gazzella se vuole sopravvivere.\nNon importa se {0} fosse un leone o una gazzella, quello che conta è che questa mattina si è svegliato morto.</value>
 	</string>
 	<string key="MasonConverted">
 		<value>Eccheccazzo. {0} non è venuto alla riunione. Avrà sicuramente timbrato il biglietto per poi scappare. Mannaia 'sti assenteisti!</value>
@@ -480,25 +492,25 @@
 		<value>è morto</value>
 	</string>
 	<!-- MORE STRINGS May 16, 2016 -->
-	<string key="AdminAdded">
+	<string key="AdminAdded" deprecated="true">
 		<value>{0} È diventato admin. Usa /config per cambiare le impostazioni del gruppo.</value>
 	</string>
 	<string key="AlreadyInGame">
 		<value>EH! VOLEVI! Sei già in un altra partita! ({0})</value>
 	</string>
-	<string key="MultipleGames">
+	<string key="MultipleGames" deprecated="true">
 		<value>Il tuo gruppo è stato settato per far cominciare più partite… Uccisioni extra!</value>
 	</string>
-	<string key="GroupQueue">
+	<string key="GroupQueue" deprecated="true">
 		<value>Il gruppo è attualmente in lista d'attesa. Posizione: {0}/{1}</value>
 	</string>
-	<string key="MaintBreak">
+	<string key="MaintBreak" deprecated="true">
 		<value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire… Controlla @werewolfdev per altre informazioni.</value>
 	</string>
-	<string key="MaxGames">
+	<string key="MaxGames" deprecated="true">
 		<value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1}/{1}</value>
 	</string>
-	<string key="SkipQueue">
+	<string key="SkipQueue" deprecated="true">
 		<value>{0} è un gruppo ufficiale ed ha saltato la lista d'attesa!</value>
 	</string>
 	<string key="NoGame">
@@ -510,25 +522,25 @@
 	<string key="GroupAdminOnly">
 		<value>Solo un admin con il banhammer power può usare questo comando.</value>
 	</string>
-	<string key="ShuttingDown">
+	<string key="ShuttingDown" deprecated="true">
 		<value>Dopo questa partita mi spegnerò per una manutenzione. Godetevela!</value>
 	</string>
-	<string key="ShuttingDownUpdate">
+	<string key="ShuttingDownUpdate" deprecated="true">
 		<value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
 	</string>
-	<string key="NullIdAdmin">
+	<string key="NullIdAdmin" deprecated="true">
 		<value>UserId non valido. Sei sicuro di aver mandato questo comando come risposta?</value>
 	</string>
-	<string key="AlreadyAdmin">
+	<string key="AlreadyAdmin" deprecated="true">
 		<value>{0} è già un admin!</value>
 	</string>
-	<string key="NotAdmin">
+	<string key="NotAdmin" deprecated="true">
 		<value>{0} Non ha il potere del banhammer!</value>
 	</string>
-	<string key="AdminRemoved">
+	<string key="AdminRemoved" deprecated="true">
 		<value>{0} è stato rimosso dalla lista degli admin.</value>
 	</string>
-	<string key="LanguageSet">
+	<string key="LanguageSet" deprecated="true">
 		<value>Lingua settata su {0}</value>
 	</string>
 	<string key="NoSeer">
@@ -543,7 +555,7 @@
 		<value>Cupido! Non avevi un cazzo da fare quindi ti sei messo a tirare frecce e far innamorare persone. Scegli due persone e rendile amanti: quando uno dei due amanti muore, l'altro si suiciderà.\n(Mi sa molto di Romeo e Giulietta 'sta cosa)</value>
 	</string>
 	<string key="RoleInfoDoppelganger">
-		<value>Sei il Dopplegänger. La leggenda più figa che esista. Sei tipo un Ditto! Scegli una persona, alla sua morte assumerai il suo ruolo. Che figata!</value>
+		<value>Sei il Doppelgänger. La leggenda più figa che esista. Sei tipo un Ditto! Scegli una persona, alla sua morte assumerai il suo ruolo. Che figata!</value>
 	</string>
 	<string key="RoleInfoHunter">
 		<value>Il cacciatore urbano… Ahh! Così affezionato alla tua pistola… Ma sei comunque molto solitario (asociale!). Chi verrà a farti visita se la dovrà vedere con te. Che siano lupi o satanisti non ce n'è per nessuno! Li ucciderai senza pietà! E se verrai linciato avrai pochissimo tempo prima di morire per estrarre la tua pistola ed uccidere qualcuno… Per vendicarti… Sì…</value>
@@ -844,13 +856,13 @@
 	<string key="SentPrivate">
 	<value>Ti ho scritto in privato.</value>
 	</string>
-	<string key="StartPM">
+	<string key="StartPM" deprecated="true">
 	<value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
 	</string> 
-	<string key="PMTrue">
+	<string key="PMTrue" deprecated="true">
 	<value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
 	</string>
-	<string key="MustReplySmite">
+	<string key="MustReplySmite" deprecated="true">
 	<value>Devi rispondere all'utente che vuoi cacciare!</value>
 	</string>
 	<string key="WhatToDo">
@@ -1137,22 +1149,19 @@
 	</string>
 
 
-	<string key="VillageTeam">
+	<string key="VillageTeam" deprecated="true">
 	<value>Team Patate</value>
 	</string>
-	<string key="NeutralTeam">
+	<string key="NeutralTeam" deprecated="true">
 	<value>Neutro</value>
 	</string>
-	<string key="WolfTeam">
-	<value>Team Zanne</value>
-	</string>
-	<string key="SerialKillerTeam">
+	<string key="SerialKillerTeam" deprecated="true">
 	<value>Team Killer</value>
 	</string>
-	<string key="CultTeam">
+	<string key="CultTeam" deprecated="true">
 	<value>Team Satanisti</value>
 	</string>
-	<string key="TannerTeam">
+	<string key="TannerTeam" deprecated="true">
 	<value>Team Masochista</value>
 	</string>
 
@@ -1210,13 +1219,14 @@
     <value>È un giorno di lutto per il paese, i resti di {0} (rampollo della casata reale) vengono ritrovati dietro la taverna dove soleva dilettarsi con le cameriere. La taverna resterà chiusa per tutto il giorno in segno di rispetto per la morte del Principe. </value>
   </string>
   <string key="SeerKilled">
-    <value>Ahinoi! Il Vegente è morto! Sembra che il killer si sia dilettato nel rimuovere il cervello del povero {0}. Ora chi ci farà l'oroscopo?</value>
+    <value>Ahinoi! Il Veggente è morto! Sembra che il killer si sia dilettato nel rimuovere il cervello del povero {0}. Ora chi ci farà l'oroscopo?</value>
   </string>
   <string key="SorcererEaten">
     <value>“MA IO VI AMO!!!” Questo il grido che si è sentito durante la notte. Il furry non è sopravvissuto ai lupi ma sicuramente si è goduto la notte in loro compagnia. {0} è morto.</value>
   </string>
   <string key="WildChildEaten">
     <value>Povero becchino… aveva augurato la morte a qualcuno ed invece i lupi hanno ucciso lui… {0} è morto.</value>
+	<value>Per tutto il paese si sentono i rintocchi delle campane a morto… chi seppellirà i cadaveri che vanno accumulandosi? {0} era il becchino.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Il Cacciatore di Satanisti ha scelto la persona sbagliata da controllare questa notte. Anziché un “pacifico” satanista intento nella sua preghiera alternativa si è trovato di fronte un pazzo psicopatico che gli ha strappato la katana di mano e l'ha usata per tagliarlo in due. {0} è morto.</value>
@@ -1281,5 +1291,11 @@
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Oh no! {0} era sbronzo! Ora sei sbronzissimo anche tu e non puoi più attaccare {1}…</value>
   </string>
-
+  
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
   </strings>

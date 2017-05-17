@@ -125,4 +125,11 @@ namespace Werewolf_Control.Models
         public bool Admin { get; set; }
         public int Seconds { get; set; }
     }
+
+    public class JoinButtonRequestInfo
+    {
+        public string JType { get; set; } = "JoinButtonRequestInfo";
+        public long GroupId { get; set; }
+    }
+
 }

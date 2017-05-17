@@ -73,15 +73,22 @@ namespace Werewolf_Control
                     {
                         if (game.GroupId != update.Message.Chat.Id)
                         {
-                            //player is already in a game, and alive
+                            //player is already in a game (in another group), and alive
                             var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
                             Send(GetLocaleString("AlreadyInGame", grp?.Language ?? "English", game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                            return;
+                        }
+                        else
+                        {
+                            //do nothing, player is in the game, in that group, they are just being spammy
                             return;
                         }
                     }
 
                     //player is not in game, they need to join, if they can
-                    game?.AddPlayer(update);
+                    //game?.AddPlayer(update);
+
+                    game?.ShowJoinButton();
                     if (game == null)
                         Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
                     return;
