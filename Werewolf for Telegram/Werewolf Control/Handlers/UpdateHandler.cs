@@ -1311,7 +1311,7 @@ namespace Werewolf_Control.Handler
                 AllowCult = true,
                 DisableFlee = false,
                 MaxPlayers = 35,
-                EnableSecretLynch = true,
+                EnableSecretLynch = false,
                 CreatedBy = createdBy
             };
         }
