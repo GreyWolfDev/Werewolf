@@ -794,6 +794,11 @@ namespace Werewolf_Node
                         var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
                         SendWithQueue(msg);
                     }
+                    else
+                    {
+                        var msg = GetLocaleString("PlayerVoteCounts", Players.Count(x => !x.IsDead && x.Choice != 0), Players.Count(x => !x.IsDead));
+                        SendWithQueue(msg);
+                    }
                     
                     if (NoOneCastLynch)
                     {
@@ -1247,8 +1252,8 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.WolfCub;
-                rolesToAssign[1] = IRole.WolfCub;
+                //rolesToAssign[0] = IRole.WolfCub;
+                //rolesToAssign[1] = IRole.WolfCub;
                 //rolesToAssign[2] = IRole.AlphaWolf;
                 //rolesToAssign[3] = IRole.WolfCub;
                 //if (rolesToAssign.Count >= 5)

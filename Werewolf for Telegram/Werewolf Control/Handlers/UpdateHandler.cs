@@ -1155,11 +1155,11 @@ namespace Werewolf_Control.Handler
                             buttons.Add(new InlineKeyboardButton(Cancel, $"setsecretlynch|{groupid}|cancel"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("EnableSecretLynchQ", language, grp.EnableSecretLynch == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
+                                GetLocaleString("EnableSecretLynchQ", language, grp.EnableSecretLynch != true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
                             break;
                         case "setsecretlynch":
                             grp.EnableSecretLynch = (choice == "true");
-                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("EnableSecretLynchA", language, grp.EnableSecretLynch == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("EnableSecretLynchA", language, grp.EnableSecretLynch != true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
