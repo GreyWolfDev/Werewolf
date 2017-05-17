@@ -91,10 +91,11 @@ namespace Werewolf_Node
                     //AddPlayer(u);
                 }
 
+                var deeplink = $"{Program.ClientId.ToString("N")}{Guid.ToString("N")}";
                 //create our button
                 var menu = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url=$"https://t.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}"}
+                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://t.me/{Program.Me.Username}?start=" + deeplink }
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
