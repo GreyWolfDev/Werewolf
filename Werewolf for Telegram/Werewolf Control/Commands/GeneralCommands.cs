@@ -189,27 +189,25 @@ namespace Werewolf_Control
         [Command(Trigger = "start")]
         public static void Start(Update u, string[] args)
         {
-            if (u.Message.Chat.Type == ChatType.Private)
+            if (u.Message.Chat.Type == ChatType.Private && u.Message.From != null)
             {
-                if (u.Message.From != null)
+                using (var db = new WWContext())
                 {
-                    using (var db = new WWContext())
+                    var p = GetDBPlayer(u.Message.From.Id, db);
+                    if (p == null)
                     {
-                        var p = GetDBPlayer(u.Message.From.Id, db);
-                        if (p == null)
+                        var usr = u.Message.From;
+                        p = new Player
                         {
-                            var usr = u.Message.From;
-                            p = new Player
-                            {
-                                UserName = usr.Username,
-                                Name = (usr.FirstName + " " + usr.LastName).Trim(),
-                                TelegramId = usr.Id,
-                                Language = "English"
-                            };
-                            db.Players.Add(p);
-                            db.SaveChanges();
-                            p = GetDBPlayer(u.Message.From.Id, db);
-                        }
+                            UserName = usr.Username,
+                            Name = (usr.FirstName + " " + usr.LastName).Trim(),
+                            TelegramId = usr.Id,
+                            Language = "English"
+                        };
+                        db.Players.Add(p);
+                        db.SaveChanges();
+                        p = GetDBPlayer(u.Message.From.Id, db);
+                    }
 #if RELEASE
                         p.HasPM = true;
 #elif RELEASE2
@@ -217,54 +215,61 @@ namespace Werewolf_Control
 #elif BETA
                         p.HasDebugPM = true;
 #endif
-                        db.SaveChanges();
+                    db.SaveChanges();
 
-                        if (String.IsNullOrEmpty(args[1]))
+                    if (String.IsNullOrEmpty(args[1]))
+                    {
+                        var msg = $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf." +
+                                  $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
+                                  $"\nFor role information, use /rolelist." +
+                                  $"\nIf you want to set your default language, use /setlang." +
+                                  $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
+                                  $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
+                        Bot.Send(msg, u.Message.Chat.Id);
+                    }
+                    else
+                    {
+                        var nodeid = args[1].Split('|').First();
+                        var gameid = args[1].Split('|').Skip(1).First();
+                        //try to get the guid of the game they want to join
+                        Guid g, n;
+                        if (Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g))
                         {
-                            var msg = $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf." +
-                                      $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
-                                      $"\nFor role information, use /rolelist." +
-                                      $"\nIf you want to set your default language, use /setlang." +
-                                      $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
-                                      $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
-                            Bot.Send(msg,u.Message.Chat.Id);
-                        }
-                        else
-                        {
-                            //try to get the guid of the game they want to join
-                            Guid g;
-                            if (Guid.TryParse(args[1], out g))
+                            //first get the node where to search for the game
+                            var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
+                            if (node == null)
+                                node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
+                            if (node == null)
+                                node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
+                            if (node == null)
                             {
-                                //try to find the game they want to join
-                                //var lang = GetLanguage(u.Message.From.Id);
-
-                                var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                if (game == null)
-                                    //try again a couple times
-                                    game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                if (game == null)
-                                    //try again a couple times
-                                    game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                if (game == null)
-                                    //try again a couple times
-                                    game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                if (game != null)
-                                {
-                                    //make sure they are member
-                                    var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
-                                    if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
-                                    {
-                                        Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
-                                        return;
-                                    }
-                                    else
-                                        game?.AddPlayer(u);
-                                }
-                                else
-                                {
-                                    Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username}) didn't find game with guid {g.ToString()}", 133748469);
-                                }
+                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", 133748469);
+                                return;
                             }
+
+                            //we have the node, get the game
+                            var game = node.Games.FirstOrDefault(x => x.Guid == g);
+                            if (game == null)
+                                game = node.Games.FirstOrDefault(x => x.Guid == g);
+                            if (game == null)
+                                game = node.Games.FirstOrDefault(x => x.Guid == g);
+                            if (game == null)
+                            {
+                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", 133748469);
+                                return;
+                            }
+                            
+                            //ok we got the game, now join 
+                            //make sure they are member
+                            var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                            if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                            {
+                                Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
+                                return;
+                            }
+
+                            game.AddPlayer(u);
+                            return;
                         }
                     }
                 }

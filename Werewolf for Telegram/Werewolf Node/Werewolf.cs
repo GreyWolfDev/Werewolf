@@ -94,7 +94,7 @@ namespace Werewolf_Node
                 //create our button
                 var menu = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url=$"https://t.me/{Program.Me.Username}?start={Guid}"}
+                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url=$"https://t.me/{Program.Me.Username}?start={Program.ClientId}|{Guid}"}
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
