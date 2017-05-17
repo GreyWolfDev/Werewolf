@@ -2223,7 +2223,7 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
                 p.Votes = 0;
                 p.DiedLastNight = false;
-                if (p.Bitten & !p.IsDead)
+                if (p.Bitten && !p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                 {
                     if (p.PlayerRole == IRole.Mason)
                         foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
