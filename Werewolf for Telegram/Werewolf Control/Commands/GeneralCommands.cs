@@ -229,8 +229,8 @@ namespace Werewolf_Control
                     }
                     else
                     {
-                        var nodeid = args[1].Split('|').First();
-                        var gameid = args[1].Split('|').Skip(1).First();
+                        var nodeid = args[1].Split('_').First();
+                        var gameid = args[1].Split('_').Skip(1).First();
                         //try to get the guid of the game they want to join
                         Guid g, n;
                         if (Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g))
