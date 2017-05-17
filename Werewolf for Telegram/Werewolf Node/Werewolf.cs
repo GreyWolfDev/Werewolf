@@ -2377,7 +2377,8 @@ namespace Werewolf_Node
                         pl.Votes++;
                 }
                 choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
-
+                int tonightEatCount = 0;
+                
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
@@ -2602,12 +2603,19 @@ namespace Werewolf_Node
                                     break;
                             }
                         }
+                        tonightEatCount++;
                     }
                     else
                     {
                         //no choice
                     }
                 }
+                if (tonightEatCount == 2)
+                {
+                    var cub = Players.FirstOrDefault(x => x.PlayerRole == IRole.WolfCub & x.IsDead);
+                    AddAchievement(cub, Achievements.IHelped);
+                }
+                tonightEatCount = 0;
             }
             WolfCubKilled = false;
             #endregion
