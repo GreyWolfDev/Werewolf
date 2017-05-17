@@ -115,7 +115,9 @@ namespace Database
         [Display(Name="OH SHI-"), Description("Kill your lover on the first night")]
         OhShi = 562949953421312,
         [Display(Name="Veteran"), Description("Play 500 games.  You can now join @werewolfvets")]
-        Veteran = 1125899906842624
+        Veteran = 1125899906842624,
+        [Display(Name="No Sorcery!"), Description("As a wolf, kill your sorcerer")]
+        NoSorcery = 2251799813685248
     }
 
     public static class Extensions
