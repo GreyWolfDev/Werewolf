@@ -125,7 +125,9 @@ namespace Database
         [Display(Name="Wuffie-Cult"), Description("As the alpha wolf, successfully convert at least 3 victims into wolves")]
         WuffieCult = 18014398509481984,
         [Display(Name="Did you guard yourself?"), Description("As the guardian angel, survive after 3 tries guarding an unattacked wolf")]
-        DidYouGuardYourself = 36028797018963968
+        DidYouGuardYourself = 36028797018963968,
+        [Display(Name="Spoiled Rich Brat"), Description("As the prince, still gets lynched even after revealing your identity")]
+        SpoiledRichBrat = 72057594037927936
     }
 
     public static class Extensions
