@@ -3119,6 +3119,7 @@ namespace Werewolf_Node
                             else if (!save.WasSavedLastNight && !save.DiedLastNight)
                             //only send if GA survived and wolf wasn't attacked
                             {
+                                ga.GAGuardWolfCount++;
                                 Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             }
                             break;
@@ -4348,6 +4349,8 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.ImNotDrunk;
                         if (!ach.HasFlag(Achievements.WuffieCult) && player.PlayerRole == IRole.AlphaWolf && player.AlphaConvertCount >= 3)
                             newAch = newAch | Achievements.WuffieCult;
+                        if (!ach.HasFlag(Achievements.DidYouGuardYourself) && player.PlayerRole == IRole.GuardianAngel && player.GAGuardWolfCount >= 3)
+                            newAch = newAch | Achievements.DidYouGuardYourself;
 
                         //now save
                         p.Achievements = (long)(ach | newAch);
