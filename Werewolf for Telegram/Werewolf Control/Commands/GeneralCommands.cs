@@ -236,26 +236,26 @@ namespace Werewolf_Control
                         if (Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g))
                         {
                             //first get the node where to search for the game
-                            var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
+                            var node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
                             if (node == null)
-                                node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
+                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
                             if (node == null)
-                                node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
+                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
                             if (node == null)
                             {
-                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", 133748469);
+                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", -1001098399855);
                                 return;
                             }
 
                             //we have the node, get the game
-                            var game = node.Games.FirstOrDefault(x => x.Guid == g);
+                            var game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
                             if (game == null)
-                                game = node.Games.FirstOrDefault(x => x.Guid == g);
+                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
                             if (game == null)
-                                game = node.Games.FirstOrDefault(x => x.Guid == g);
+                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
                             if (game == null)
                             {
-                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", 133748469);
+                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", -1001098399855);
                                 return;
                             }
                             

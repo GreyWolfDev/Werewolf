@@ -47,6 +47,7 @@ namespace Werewolf_Node
         private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
         private InlineKeyboardMarkup _joinButton;
+        private List<int> _joinButtons = new List<int>();
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -238,18 +239,29 @@ namespace Werewolf_Node
                         i = Math.Min(i, Math.Max(120, i - 30));
                         count = Players.Count;
                     }
-
-                    if (i == Settings.GameJoinTime - 60)
+                    try
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+                        Telegram.Bot.Types.Message r = null;
+                        if (i == Settings.GameJoinTime - 60)
+                        {
+                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                        }
+                        else if (i == Settings.GameJoinTime - 30)
+                        {
+                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                        }
+                        else if (i == Settings.GameJoinTime - 10)
+                        {
+                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                        }
+                        if (r != null)
+                        {
+                            _joinButtons.Add(r.MessageId);
+                        }
                     }
-                    else if (i == Settings.GameJoinTime - 30)
+                    catch
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton);
-                    }
-                    else if (i == Settings.GameJoinTime - 10)
-                    {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+                        // ignored
                     }
                     if (SecondsToAdd != 0)
                     {
@@ -274,8 +286,8 @@ namespace Werewolf_Node
                 IsJoining = false;
                 IsInitializing = true;
 
-                Thread.Sleep(5000); //wait for last second joins
-
+                Thread.Sleep(2000); //wait for last second joins
+                CleanupButtons();
                 //check we have enough players...
                 if (Players.Count < Settings.MinPlayers)
                 {
@@ -1037,12 +1049,21 @@ namespace Werewolf_Node
             Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
         }
 
-        public void ShowJoinButton()
+        public async void ShowJoinButton()
         {
             if (!IsJoining) return;
             if (!((DateTime.Now - LastJoinButtonShowed).TotalSeconds > (15))) return;
             LastJoinButtonShowed = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+            try
+            {
+                var r = await Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+                _joinButtons.Add(r.MessageId);
+            }
+            catch
+            {
+                // ignored
+            }
+
         }
         #endregion
 
@@ -3829,7 +3850,14 @@ namespace Werewolf_Node
         #endregion
 
         #region Helpers
-
+        public void CleanupButtons()
+        {
+            foreach (var id in _joinButtons)
+            {
+                Program.Bot.DeleteMessage(ChatId, id);
+                Thread.Sleep(500);
+            }
+        }
         public void FleePlayer(int banid)
         {
             if (IsInitializing)
