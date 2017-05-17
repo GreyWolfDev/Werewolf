@@ -123,7 +123,9 @@ namespace Database
         [Display(Name="I'M NOT DRUN-- *BURPPP*"), Description("As the clumsy guy, have at least 3 correct lynches by the end of the game")]
         ImNotDrunk = 9007199254740992,
         [Display(Name="Wuffie-Cult"), Description("As the alpha wolf, successfully convert at least 3 victims into wolves")]
-        WuffieCult = 18014398509481984
+        WuffieCult = 18014398509481984,
+        [Display(Name="Did you guard yourself?"), Description("As the guardian angel, survive after 3 tries guarding an unattacked wolf")]
+        DidYouGuardYourself = 36028797018963968
     }
 
     public static class Extensions

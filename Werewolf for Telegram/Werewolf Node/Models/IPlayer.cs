@@ -111,6 +111,7 @@ namespace Werewolf_Node.Models
         public int CHHuntedCultCount { get; set; } = 0;
         public int ClumsyCorrectLynchCount { get; set; } = 0;
         public int AlphaConvertCount { get; set; } = 0;
+        public int GAGuardWolfCount { get; set; } = 0;
 
         #endregion
 
