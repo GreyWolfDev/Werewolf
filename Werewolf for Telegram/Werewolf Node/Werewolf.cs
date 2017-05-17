@@ -2067,6 +2067,10 @@ namespace Werewolf_Node
                             AddAchievement(lynched, Achievements.LackOfTrust);
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.ShowRoles == false ? "" : $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}"));
 
+                        //if prince already revealed and still gets lynched, grant achievement
+                        if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility == true)
+                            AddAchievement(lynched, Achievements.SpoiledRichBrat);
+
                         if (lynched.InLove)
                             KillLover(lynched);
 
