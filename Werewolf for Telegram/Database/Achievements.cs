@@ -119,7 +119,9 @@ namespace Database
         [Display(Name="No Sorcery!"), Description("As a wolf, kill your sorcerer")]
         NoSorcery = 2251799813685248,
         [Display(Name="Cultest Tracker"), Description("As the cultist hunter, kill at least 3 cultists in one game")]
-        CultistTracker = 4503599627370496
+        CultistTracker = 4503599627370496,
+        [Display(Name="I'M NOT DRUN-- *BURPPP*"), Description("As the clumsy guy, have at least 3 correct lynches by the end of the game")]
+        ImNotDrunk = 9007199254740992
     }
 
     public static class Extensions

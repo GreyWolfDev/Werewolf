@@ -680,7 +680,16 @@ namespace Werewolf_Node
                     if (Program.R.Next(100) < 50)
                     {
                         //pick a random target
-                        player.Choice = ChooseRandomPlayerId(player, false);
+                        var ClumsyRandomChoice = ChooseRandomPlayerId(player, false);
+                        //if after random, still correct lynch, add correct lynch count
+                        if (player.Choice == ClumsyRandomChoice)
+                            player.ClumsyCorrectLynchCount++;
+                        player.Choice = ClumsyRandomChoice;
+                    }
+                    else
+                    {
+                        //clumsy is not clumsy, add correct lynch count
+                        player.ClumsyCorrectLynchCount++;
                     }
                 }
 
@@ -4333,6 +4342,8 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.SerialSamaritan;
                         if (!ach.HasFlag(Achievements.CultistTracker) && player.PlayerRole == IRole.CultistHunter && player.CHHuntedCultCount >= 3)
                             newAch = newAch | Achievements.CultistTracker;
+                        if (!ach.HasFlag(Achievements.ImNotDrunk) && player.PlayerRole == IRole.ClumsyGuy && player.ClumsyCorrectLynchCount >= 3)
+                            newAch = newAch | Achievements.ImNotDrunk;
 
                         //now save
                         p.Achievements = (long)(ach | newAch);

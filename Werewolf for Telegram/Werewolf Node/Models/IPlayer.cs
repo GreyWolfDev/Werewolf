@@ -109,6 +109,7 @@ namespace Werewolf_Node.Models
         public bool SpeedDating { get; set; } = false;
         public int FirstStone { get; set; } = 0;
         public int CHHuntedCultCount { get; set; } = 0;
+        public int ClumsyCorrectLynchCount { get; set; } = 0;
 
         #endregion
 
