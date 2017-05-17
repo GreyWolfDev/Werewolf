@@ -108,7 +108,8 @@ namespace Werewolf_Node.Models
         public List<int> CorrectSnooped { get; set; } = new List<int>();
         public bool SpeedDating { get; set; } = false;
         public int FirstStone { get; set; } = 0;
-        
+        public int CHHuntedCultCount { get; set; } = 0;
+
         #endregion
 
     }
