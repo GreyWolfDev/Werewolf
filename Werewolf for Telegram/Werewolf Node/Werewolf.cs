@@ -88,7 +88,7 @@ namespace Werewolf_Node
                     LoadLanguage(DbGroup.Language);
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
-                    AddPlayer(u);
+                    //AddPlayer(u);
                 }
 
                 //create our button
