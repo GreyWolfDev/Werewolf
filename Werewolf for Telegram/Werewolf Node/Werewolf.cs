@@ -89,6 +89,7 @@ namespace Werewolf_Node
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
                     //AddPlayer(u);
+                    SendPlayerList(true);
                 }
 
                 var deeplink = $"{Program.ClientId.ToString("N")}{Guid.ToString("N")}";
