@@ -2243,6 +2243,8 @@ namespace Werewolf_Node
                     p.HasNightAction = true;
                     p.RoleModel = 0;
                     p.ChangedRolesCount++;  //add count for double-shifter achv after converting to wolf
+                    var alpha = Players.FirstOrDefault(x => x.PlayerRole == IRole.AlphaWolf);
+                    alpha.AlphaConvertCount++;
                     var msg = GetLocaleString("BittenTurned") + "\n";
                     var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p).Where(x => !x.IsDead).ToList();
                     if (others.Any())
@@ -4294,6 +4296,8 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.CultistTracker;
                         if (!ach.HasFlag(Achievements.ImNotDrunk) && player.PlayerRole == IRole.ClumsyGuy && player.ClumsyCorrectLynchCount >= 3)
                             newAch = newAch | Achievements.ImNotDrunk;
+                        if (!ach.HasFlag(Achievements.WuffieCult) && player.PlayerRole == IRole.AlphaWolf && player.AlphaConvertCount >= 3)
+                            newAch = newAch | Achievements.WuffieCult;
 
                         //now save
                         p.Achievements = (long)(ach | newAch);
