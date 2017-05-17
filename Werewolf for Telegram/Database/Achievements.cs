@@ -130,6 +130,8 @@ namespace Database
         SpoiledRichBrat = 72057594037927936,
         [Display(Name="Three Little Wolves and a Big Bad Pig"), Description("As the sorcerer, survive a game with three or more alive wolves")]
         ThreeLittleWolves = 144115188075855872,
+        [Display(Name = "President"), Description("As the mayor, successfully cast 3 lynch votes after revealing")]
+        President = 288230376151711744
     }
 
     public static class Extensions
