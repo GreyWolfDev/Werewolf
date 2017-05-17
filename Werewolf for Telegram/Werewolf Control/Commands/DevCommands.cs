@@ -56,6 +56,26 @@ namespace Werewolf_Control
             }
         }
 
+        [Attributes.Command(Trigger ="bangroup", DevOnly =true)]
+        public static void BanGroup(Update u, string[] args)
+        {
+            long groupid = 0;
+            if (long.TryParse(args[1], out groupid))
+            {
+                using (var db = new WWContext())
+                {
+                    var g = db.Groups.FirstOrDefault(x => x.GroupId == groupid);
+                    if (g != null)
+                    {
+                        g.CreatedBy = "BAN";
+                        db.SaveChanges();
+                        Bot.Api.LeaveChat(groupid);
+                        Send($"{g.Name} has been banned.", u.Message.Chat.Id);
+                    }
+                }
+            }
+        }
+
         [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
         public static void Maintenenace(Update u, string[] args)
         {

@@ -52,6 +52,7 @@ namespace Werewolf_Control
                 return;
             }
 #endif
+    
 
 #if RELEASE2
 
@@ -76,6 +77,11 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+                if (grp.CreatedBy == "BAN")
+                {
+                    Bot.Api.LeaveChat(grp.GroupId);
+                    return;
+                }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
