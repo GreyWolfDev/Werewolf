@@ -2609,7 +2609,7 @@ namespace Werewolf_Node
                                         if (target.PlayerRole == IRole.Sorcerer)
                                         {
                                             foreach (var w in voteWolves)
-                                                AddAchievement(w, Achievements.NoSorcery)
+                                                AddAchievement(w, Achievements.NoSorcery);
                                         }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
@@ -2694,6 +2694,7 @@ namespace Werewolf_Node
                         hunted.TimeDied = DateTime.Now;
                         hunted.DiedLastNight = true;
                         hunted.KilledByRole = IRole.CultistHunter;
+                        hunter.CHHuntedCultCount++;
                         DBKill(hunter, hunted, KillMthd.Hunt);
                     }
                     else
@@ -4330,6 +4331,8 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.CultCon;
                         if (!ach.HasFlag(Achievements.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
                             newAch = newAch | Achievements.SerialSamaritan;
+                        if (!ach.HasFlag(Achievements.CultistTracker) && player.PlayerRole == IRole.CultistHunter && player.CHHuntedCultCount >= 3)
+                            newAch = newAch | Achievements.CultistTracker;
 
                         //now save
                         p.Achievements = (long)(ach | newAch);

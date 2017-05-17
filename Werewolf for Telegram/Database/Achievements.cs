@@ -117,7 +117,9 @@ namespace Database
         [Display(Name="Veteran"), Description("Play 500 games.  You can now join @werewolfvets")]
         Veteran = 1125899906842624,
         [Display(Name="No Sorcery!"), Description("As a wolf, kill your sorcerer")]
-        NoSorcery = 2251799813685248
+        NoSorcery = 2251799813685248,
+        [Display(Name="Cultest Tracker"), Description("As the cultist hunter, kill at least 3 cultists in one game")]
+        CultistTracker = 4503599627370496
     }
 
     public static class Extensions
