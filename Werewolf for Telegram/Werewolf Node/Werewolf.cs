@@ -3870,6 +3870,15 @@ namespace Werewolf_Node
         public void Kill()
         {
             //forces game to exit
+            try
+            {
+                if (IsJoining) //try to remove the joining button...
+                    Program.Bot.EditMessageCaption(ChatId, _joinMsgId, "", null);
+            }
+            catch
+            {
+                //ignored
+            }
             Send("Game removed");
             Program.RemoveGame(this);
         }
