@@ -240,7 +240,7 @@ namespace Werewolf_Node
 
                     if (i == Settings.GameJoinTime - 60)
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), replyToMessageId: _joinMsgId);
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
                     }
                     else if (i == Settings.GameJoinTime - 30)
                     {
@@ -884,7 +884,7 @@ namespace Werewolf_Node
                         if (_playerListId == 0)
                             _playerListId = Send(m.Msg).Result.MessageId;
                         else
-                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, Telegram.Bot.Types.Enums.ParseMode.Html, disableWebPagePreview: true);
+                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
                         continue;
                     }
 
@@ -1032,7 +1032,7 @@ namespace Werewolf_Node
         {
             if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
             LastPlayersOutput = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), replyToMessageId: _playerListId);
+            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
         }
 
         public void ShowJoinButton()
@@ -1040,7 +1040,7 @@ namespace Werewolf_Node
             if (!IsJoining) return;
             if (!((DateTime.Now - LastJoinButtonShowed).TotalSeconds > (15))) return;
             LastJoinButtonShowed = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), replyToMessageId: _joinMsgId);
+            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
         }
         #endregion
 
