@@ -46,6 +46,7 @@ namespace Werewolf_Node
         private int _joinMsgId;
         private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
+        private InlineKeyboardMarkup _joinButton;
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -94,15 +95,15 @@ namespace Werewolf_Node
 
                 var deeplink = $"{Program.ClientId.ToString("N")}{Guid.ToString("N")}";
                 //create our button
-                var menu = new InlineKeyboardMarkup(new[]
+                _joinButton = new InlineKeyboardMarkup(new[]
                 {
                     new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://t.me/{Program.Me.Username}?start=" + deeplink }
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
-                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: menu).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
-                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: menu).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #endif
 
                 new Thread(GameTimer).Start();
@@ -240,15 +241,15 @@ namespace Werewolf_Node
 
                     if (i == Settings.GameJoinTime - 60)
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
                     }
                     else if (i == Settings.GameJoinTime - 30)
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton);
                     }
                     else if (i == Settings.GameJoinTime - 10)
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
+                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton);
                     }
                     if (SecondsToAdd != 0)
                     {
@@ -579,6 +580,7 @@ namespace Werewolf_Node
                 else if (IsJoining & !IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
+                    _requestPlayerListUpdate = true;
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -1040,7 +1042,7 @@ namespace Werewolf_Node
             if (!IsJoining) return;
             if (!((DateTime.Now - LastJoinButtonShowed).TotalSeconds > (15))) return;
             LastJoinButtonShowed = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
+            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
         }
         #endregion
 

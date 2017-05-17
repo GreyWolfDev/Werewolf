@@ -73,9 +73,14 @@ namespace Werewolf_Control
                     {
                         if (game.GroupId != update.Message.Chat.Id)
                         {
-                            //player is already in a game, and alive
+                            //player is already in a game (in another group), and alive
                             var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
                             Send(GetLocaleString("AlreadyInGame", grp?.Language ?? "English", game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                            return;
+                        }
+                        else
+                        {
+                            //do nothing, player is in the game, in that group, they are just being spammy
                             return;
                         }
                     }
