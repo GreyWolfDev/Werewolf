@@ -127,7 +127,9 @@ namespace Database
         [Display(Name="Did you guard yourself?"), Description("As the guardian angel, survive after 3 tries guarding an unattacked wolf")]
         DidYouGuardYourself = 36028797018963968,
         [Display(Name="Spoiled Rich Brat"), Description("As the prince, still gets lynched even after revealing your identity")]
-        SpoiledRichBrat = 72057594037927936
+        SpoiledRichBrat = 72057594037927936,
+        [Display(Name="Three Little Wolves and a Big Bad Pig"), Description("As the sorcerer, survive a game with three or more alive wolves")]
+        ThreeLittleWolves = 144115188075855872,
     }
 
     public static class Extensions
