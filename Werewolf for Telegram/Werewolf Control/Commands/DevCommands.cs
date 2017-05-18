@@ -597,10 +597,11 @@ namespace Werewolf_Control
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 string raw = "";
-                using (var comm = conn.CreateCommand())
+
+                var queries = args[1].Split(';');
+                foreach (var sql in queries)
                 {
-                    var queries = args[1].Split(';');
-                    foreach (var sql in queries)
+                    using (var comm = conn.CreateCommand())
                     {
                         comm.CommandText = sql;
                         var reader = comm.ExecuteReader();
