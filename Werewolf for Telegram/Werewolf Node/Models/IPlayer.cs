@@ -113,6 +113,8 @@ namespace Werewolf_Node.Models
         public int AlphaConvertCount { get; set; } = 0;
         public int GAGuardWolfCount { get; set; } = 0;
         public int MayorLynchAfterRevealCount { get; set; } = 0;
+        public int BeingVisitedSameNightCount { get; set; } = 0;
+        public bool BusyNight { get; set; } = false;
 
         #endregion
 
