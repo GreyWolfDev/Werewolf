@@ -85,9 +85,7 @@ namespace Werewolf_Control
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
-                {
                     grp.GroupLink = null;
-                }
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
@@ -368,6 +366,18 @@ namespace Werewolf_Control
                 }
             }
             return d[n, m];
+        }
+
+        public static Database.Group GetGroup(string str, WWContext db)
+        {
+            //try with id
+            if (int.TryParse(str, out int id))
+                return db.Groups.FirstOrDefault(x => x.GroupId == id);
+            //try with username
+            if (str.StartsWith("@"))
+                return db.Groups.FirstOrDefault(x => x.UserName == str.TrimStart('@'));
+            //hope str is a link, filter out public groups and compare only the hashes
+            return db.Groups.FirstOrDefault(x => x.GroupLink.Contains("joinchat") && x.GroupLink.Substring(x.GroupLink.Length - 22) == str.Substring(str.Length - 22));
         }
     }
 }
