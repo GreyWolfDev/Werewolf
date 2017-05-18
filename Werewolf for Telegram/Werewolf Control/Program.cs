@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
 using Database;
-using Microsoft.Win32;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 
@@ -35,7 +34,6 @@ namespace Werewolf_Control
         public static bool MaintMode = false;
         static void Main(string[] args)
         {
-            Console.Clear();
 #if !DEBUG
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
@@ -76,23 +74,19 @@ namespace Werewolf_Control
             TCP.Initialize();
             //Let the nodes reconnect
             Thread.Sleep(1000);
-            Console.WriteLine("Initializing EF");
 
             //initialize EF before we start receiving
             using (var db = new WWContext())
             {
                 var count = db.GlobalBans.Count();
             }
-            Console.WriteLine("Initilize Bot");
+
             //start up the bot
             new Thread(() => Bot.Initialize(updateid)).Start();
-            Console.WriteLine("Start Node Monitor");
             new Thread(NodeMonitor).Start();
             
             //new Thread(CpuMonitor).Start();
-            Console.WriteLine("Start Spam Detection");
             new Thread(UpdateHandler.SpamDetection).Start();
-            Console.WriteLine("Start Ban Monitor");
             new Thread(UpdateHandler.BanMonitor).Start();
             //new Thread(MessageMonitor).Start();
             _timer = new System.Timers.Timer();
@@ -142,7 +136,7 @@ namespace Werewolf_Control
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.FileVersion;
             DateTime dt = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Local).AddDays(fvi.ProductBuildPart).AddSeconds(fvi.ProductPrivatePart * 2).ToLocalTime();
-            return "Current Version: " + version + Environment.NewLine + "Build time: " + dt + " (Central)" + Environment.NewLine + "OS: " + Environment.OSVersion;
+            return "Current Version: " + version + Environment.NewLine + "Build time: " + dt + " (Central)";
         }
 
         public static void Log(string s, bool error = false)

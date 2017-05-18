@@ -217,11 +217,11 @@ namespace Telegram.Bot
 
                     try
                     {
-                        //using (var s = new StreamWriter(LogPath, true))
-                        //{
-                        //    s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                        //    s.Flush();
-                        //}
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                            s.Flush();
+                        }
                     }
                     finally
                     {
@@ -240,11 +240,11 @@ namespace Telegram.Bot
                     SetStatus(Status.Error);
                     try
                     {
-                        //using (var s = new StreamWriter(LogPath, true))
-                        //{
-                        //    s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        //    s.Flush();
-                        //}
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
                     }
                     finally
                     {
@@ -257,11 +257,11 @@ namespace Telegram.Bot
                     SetStatus(Status.Error);
                     try
                     {
-                        //using (var s = new StreamWriter(LogPath, true))
-                        //{
-                        //    s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        //    s.Flush();
-                        //}
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
                     }
                     finally
                     {
@@ -277,11 +277,11 @@ namespace Telegram.Bot
                         e = e.InnerException;
                     try
                     {
-                        //using (var s = new StreamWriter(LogPath, true))
-                        //{
-                        //    s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                        //    s.Flush();
-                        //}
+                        using (var s = new StreamWriter(LogPath, true))
+                        {
+                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.Flush();
+                        }
                     }
                     finally
                     {

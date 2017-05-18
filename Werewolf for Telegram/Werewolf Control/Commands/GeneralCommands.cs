@@ -20,29 +20,16 @@ namespace Werewolf_Control
         [Command(Trigger = "ping")]
         public static void Ping(Update update, string[] args)
         {
-            Console.Clear();
-            try
-            {
-                var ts = DateTime.UtcNow - update.Message.Date;
-                var send = DateTime.UtcNow;
-                var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
-                    Program.AvgCpuTime.ToString("F0"),
-                    $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
-                message +=
-                    $"\nIN last min: {Program.MessagesReceived.Sum()}\nOUT last min: {Program.MessagesSent.Sum()}";
-                var result = Bot.Send(message, update.Message.Chat.Id).Result;
-                ts = DateTime.UtcNow - send;
-                message += "\n" + GetLocaleString("Ping2", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}");
-                result = Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message).Result;
-            }
-            catch (AggregateException e)
-            {
-                Bot.Send(e.InnerExceptions[0].Message, update.Message.From.Id);
-            }
-            catch (Exception e)
-            {
-                Bot.Send(e.Message, update.Message.From.Id);
-            }
+            var ts = DateTime.UtcNow - update.Message.Date;
+            var send = DateTime.UtcNow;
+            var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
+                Program.AvgCpuTime.ToString("F0"),
+                $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
+            message += $"\nIN last min: {Program.MessagesReceived.Sum()}\nOUT last min: {Program.MessagesSent.Sum()}";
+            var result = Bot.Send(message, update.Message.Chat.Id).Result;
+            ts = DateTime.UtcNow - send;
+            message += "\n" + GetLocaleString("Ping2", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}");
+            Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message);
 
         }
 #if (BETA || DEBUG)
