@@ -56,6 +56,26 @@ namespace Werewolf_Control
             }
         }
 
+        [Attributes.Command(Trigger ="bangroup", DevOnly =true)]
+        public static void BanGroup(Update u, string[] args)
+        {
+            long groupid = 0;
+            if (long.TryParse(args[1], out groupid))
+            {
+                using (var db = new WWContext())
+                {
+                    var g = db.Groups.FirstOrDefault(x => x.GroupId == groupid);
+                    if (g != null)
+                    {
+                        g.CreatedBy = "BAN";
+                        db.SaveChanges();
+                        Bot.Api.LeaveChat(groupid);
+                        Send($"{g.Name} has been banned.", u.Message.Chat.Id);
+                    }
+                }
+            }
+        }
+
         [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
         public static void Maintenenace(Update u, string[] args)
         {
@@ -573,33 +593,37 @@ namespace Werewolf_Control
             }
             using (var db = new WWContext())
             {
-                var sql = args[1];
                 var conn = db.Database.Connection;
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 string raw = "";
-                using (var comm = conn.CreateCommand())
+
+                var queries = args[1].Split(';');
+                foreach (var sql in queries)
                 {
-                    comm.CommandText = sql;
-                    var reader = comm.ExecuteReader();
-                    var result = "";
-                    if (reader.HasRows)
+                    using (var comm = conn.CreateCommand())
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
-                            raw += reader.GetName(i) + " - ";
-                        result += raw + Environment.NewLine;
-                        raw = "";
-                        while (reader.Read())
+                        comm.CommandText = sql;
+                        var reader = comm.ExecuteReader();
+                        var result = "";
+                        if (reader.HasRows)
                         {
                             for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                raw += reader[i] + " - ";
-                            }
+                                raw += reader.GetName(i) + (i == reader.FieldCount - 1 ? "" : " - ");
                             result += raw + Environment.NewLine;
                             raw = "";
+                            while (reader.Read())
+                            {
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                    raw += reader[i] + (i == reader.FieldCount - 1 ? "" : " - ");
+                                result += raw + Environment.NewLine;
+                                raw = "";
+                            }
                         }
+                        result += reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected");
+                        result = String.IsNullOrEmpty(result) ? "Nothing found" : result;
+                        Send(result, u.Message.Chat.Id);
                     }
-                    Send(result + reader.RecordsAffected + " records affected", u.Message.Chat.Id);
                 }
             }
         }
@@ -1037,25 +1061,17 @@ namespace Werewolf_Control
         {
             if (String.IsNullOrEmpty(args[1]))
             {
-                Send("Use /leavegroup <id|link>", update.Message.Chat.Id);
+                Send("Use /leavegroup <id|link|username>", update.Message.Chat.Id);
                 return;
             }
-            var grpid = (long)0;
-            var grpname = "";
-            //check for id, else we hope it's a link..
-            if (!long.TryParse(args[1], out grpid))
-            {
-                var link = args[1];
-                using (var db = new WWContext())
-                {
-                    var grp = db.Groups.FirstOrDefault(x => x.GroupLink == link);
-                    if (grp != null)
-                    {
-                        grpid = grp.GroupId;
-                        grpname = grp.Name;
-                    }
-                }
-            }
+            
+            Database.Group grp;
+            using (var db = new WWContext())
+                grp = GetGroup(args[1], db);
+            var grpid = grp?.GroupId ?? (long)0;
+            var grpname = grp?.Name ?? "";
+
+
             if (grpid != 0)
             {
                 try
@@ -1090,26 +1106,9 @@ namespace Werewolf_Control
             }
             var group = args[1].Split(' ').First();
             var choice = args[1].Split(' ').Skip(1).FirstOrDefault();
-            long groupid = 0;
-            var islink = group.Contains("http");
-            if (!long.TryParse(group, out groupid) && !islink) //must be username...
-            {
-                group = group.TrimStart('@');
-                if (!new Regex(@"^\w*$").IsMatch(group))
-                {
-                    Send("Invalid id, link or username.", update.Message.Chat.Id);
-                    return;
-                }
-            }
             using (var db = new WWContext())
             {
-                Database.Group grp = null;
-                if (islink)
-                    grp = db.Groups.FirstOrDefault(x => x.GroupLink == group);
-                else if (groupid != 0)
-                    grp = db.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                else //must be username...?
-                    grp = db.Groups.FirstOrDefault(x => x.UserName == group);
+                Database.Group grp = GetGroup(group, db);
                 if (grp != null)
                 {
                     var msg = "";
@@ -1118,7 +1117,8 @@ namespace Werewolf_Control
                         bool preferred = (choice.ToUpper() == "Y");
                         grp.Preferred = preferred;
                         db.SaveChanges();
-                        msg = preferred ? $"{grp.Name} will now be able to appear on grouplist" : $"{grp.Name} won't appear on grouplist anymore";
+                        msg = String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>")
+                            + (preferred ? " will now be able to appear on grouplist" : " won't appear on grouplist anymore");
                     }
                     else
                     {
@@ -1271,6 +1271,33 @@ namespace Werewolf_Control
 
             var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
             Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
+        }
+
+        [Attributes.Command(Trigger = "resetlink", GlobalAdminOnly = true)]
+        public static void ResetLink(Update u, string[] args)
+        {
+            var link = args[1];
+            if (String.IsNullOrEmpty(link))
+            {
+                Send("Use /resetlink <link|id|username>. This will reset the link of the group, without affecting the Preferred status.", u.Message.Chat.Id);
+            }
+            else
+            {
+                using (var db = new WWContext())
+                {
+                    Database.Group grp = GetGroup(link, db);
+
+                    if (grp == null)
+                        Send($"Group not found.", u.Message.Chat.Id);
+                    else
+                    {
+                        grp.GroupLink = null;
+                        db.SaveChanges();
+                        Send($"The link for {grp.Name} has been reset.", u.Message.Chat.Id);
+                    }
+                }
+            }
+            return;
         }
 
 

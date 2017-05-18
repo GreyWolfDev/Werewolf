@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
@@ -56,7 +56,7 @@ namespace Werewolf_Control
             var did = 0;
             if (int.TryParse(args[1], out did))
                 Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(did);
-                
+
         }
 
         [Command(Trigger = "config", GroupAdminOnly = true, InGroupOnly = true)]
@@ -106,6 +106,36 @@ namespace Werewolf_Control
             {
                 Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
             }
+        }
+
+        [Command(Trigger = "getban", GlobalAdminOnly = true)]
+        public static void GetUserStatus(Update u, string[] a)
+        {
+            using (var db = new WWContext())
+            {
+                var p = u.GetTarget(db);
+                var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == p.TelegramId);
+                var status = "";
+                if (ban != null)
+                {
+                    status = $"<b>Banned for: {ban.Reason}</b>\nBy: {ban.BannedBy} on {ban.BanDate?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper()}\n";
+                    var expire = (ban.Expires - DateTime.Now);
+                    if (expire > TimeSpan.FromDays(365))
+                    {
+                        status += "<b>Perm Ban</b>";
+                    }
+                    else
+                    {
+                        status += String.Format("Ban expiration: <b>{0:%d} days, {0:%h} hours, {0:%m} minutes</b>", expire);
+                    }
+                }
+                else
+                    status = "Not banned (in Werewolf)";
+                var firstSeen = p.GamePlayers?.OrderBy(x => x.GameId).FirstOrDefault()?.Game?.TimeStarted;
+                
+                Bot.Api.SendTextMessage(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ??"Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
+            }
+
         }
 
         [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
@@ -253,7 +283,7 @@ namespace Werewolf_Control
             }
 
             var link = args[1].Trim();
-            if (!link.Contains("telegram.me/joinchat"))
+            if (!Regex.IsMatch(link, @"^(https?:\/\/)?t(elegram)?\.(me|dog)\/joinchat\/([a-zA-Z0-9_\-]+)$"))
             {
                 Send("This is an invalid telegram join link.", update.Message.Chat.Id);
                 return;
@@ -424,7 +454,7 @@ namespace Werewolf_Control
                             ach &= ~a;
                             p.Achievements = (long)ach;
                             db.SaveChanges();
-                            
+
                             Send($"Achievement {a} removed from {p.Name}", u.Message.Chat.Id);
                         }
                     }
@@ -514,7 +544,7 @@ namespace Werewolf_Control
                 }
 
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
-                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Yes",$"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardButton("No","restore|no") }));
+                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardButton("No", "restore|no") }));
             }
         }
 

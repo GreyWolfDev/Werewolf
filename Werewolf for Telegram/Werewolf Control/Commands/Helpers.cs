@@ -25,7 +25,8 @@ namespace Werewolf_Control
                 -1001062784541, -1001030085238,
                 -1001052793672, -1001066860506, -1001038785894,
                 -1001094614730, -1001066860506,
-                -1001080774621, -1001036952250, -1001082421542
+                -1001080774621, -1001036952250, -1001082421542, -1001073943101, -1001071193124,
+                -1001094155678
             };
 #endif
 
@@ -51,6 +52,7 @@ namespace Werewolf_Control
                 return;
             }
 #endif
+    
 
 #if RELEASE2
 
@@ -75,12 +77,15 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+                if (grp.CreatedBy == "BAN")
+                {
+                    Bot.Api.LeaveChat(grp.GroupId);
+                    return;
+                }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
-                {
                     grp.GroupLink = null;
-                }
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
@@ -104,7 +109,8 @@ namespace Werewolf_Control
                 }
 
                 //player is not in game, they need to join, if they can
-                game?.AddPlayer(update);
+                //game?.AddPlayer(update);
+                game?.ShowJoinButton();
                 if (game == null)
                     Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
                 return;
@@ -127,11 +133,11 @@ namespace Werewolf_Control
                     {
                         if (n.UserId != update.Message.From.Id)
                             Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
-                        Thread.Sleep(100);
+                        Thread.Sleep(500);
                     }
 
                     //just to be sure...
-                    db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
+                    //db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
                     db.SaveChanges();
                 }
             }
@@ -188,7 +194,8 @@ namespace Werewolf_Control
                 MaxPlayers = 35,
                 CreatedBy = createdBy,
                 AllowExtend = false,
-                MaxExtend = 60
+                MaxExtend = 60,
+                EnableSecretLynch = false
             };
         }
 
@@ -359,6 +366,18 @@ namespace Werewolf_Control
                 }
             }
             return d[n, m];
+        }
+
+        public static Database.Group GetGroup(string str, WWContext db)
+        {
+            //try with id
+            if (int.TryParse(str, out int id))
+                return db.Groups.FirstOrDefault(x => x.GroupId == id);
+            //try with username
+            if (str.StartsWith("@"))
+                return db.Groups.FirstOrDefault(x => x.UserName == str.TrimStart('@'));
+            //hope str is a link, filter out public groups and compare only the hashes
+            return db.Groups.FirstOrDefault(x => x.GroupLink.Contains("joinchat") && x.GroupLink.Substring(x.GroupLink.Length - 22) == str.Substring(str.Length - 22));
         }
     }
 }
