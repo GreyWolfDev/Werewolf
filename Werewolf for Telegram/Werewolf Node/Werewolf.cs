@@ -475,7 +475,8 @@ namespace Werewolf_Node
                 if (IsInitializing || !IsJoining) return;
                 //add player
                 Players.Add(p);
-                Send(GetLocaleString("YouJoined", ChatGroup), p.Id);
+                var groupname = String.IsNullOrWhiteSpace(DbGroup.GroupLink) ? ChatGroup : $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup.FormatHTML()}</a>";
+                Send(GetLocaleString("YouJoined", groupname), p.Id);
 
                 //if (!notify) return;
 
