@@ -2,19 +2,19 @@
 <!-- Expert mode by Saah (@ayylimao)! Translated to Cantonese by Firewood (@Firewood_LoKi). Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 29/11/2016 by @jeffffc
-    29/11:  Added "HarlotFuckedKilledPublic"
-    21/11:  Added "CultConvertWolf" string
-    15/11:  TeamEnd Strings fixes
-    09/11:  Added 6 team strings
-    07/11:  Added: "DGTransformToAlpha" and "DGTransformToWolfCub" strings
+    LAST UPDATE 18/05/2016 by @Firewood_Loki
+    18/05:  Added Section: Extend, Join, Secret Vote
+            Deleted Duplicate String: "CultConvertSerialKiller", "CupidChosen"
+    29/11:  Added String: "HarlotFuckedKilledPublic"
+    21/11:  Added String: "CultConvertWolf"
+    15/11:  Fixed String: "TeamEnd"
+    09/11:  Added String: 6 team strings
+    07/11:  Added String: "DGTransformToAlpha", "DGTransformToWolfCub"
     04/11:  Added ww4.0 translations
             Credits to 中大狼人群組 and @WWFSbot
-    15/10:  minor fixes on below strings
-    14/10:  amendments on "aboutww" "aboutapps" "ABOUTSK"
-    14/10:  amendments on "ApprenticeNowSeer"
-    04/10:  added "Ping2" string
-    29/09:  abouthunter: No one wins [only with SK but not wolves]
+    15/10:  Fixed String: "aboutww", "aboutapps", "ABOUTSK", "ApprenticeNowSeer"
+    04/10:  Added String: "Ping2"
+    29/09:  Added String: "abouthunter(No one wins, only with SK but not wolves)"
 -->
 <strings>
   <language name="廣東話（失憶版）" base="廣東話" variant="失憶版"/>
@@ -557,7 +557,7 @@
     <value>你地開得太多遊戲啦，咁准咁貪心。現刪除多餘的遊戲。</value>
   </string>
   <string key="GroupQueue">
-    <value>群組已在列隊中。目前順位︰{0} / {1}</value>
+    <value>群組已在佇列中。目前順位︰{0} / {1}</value>
   </string>
   <string key="MaintBreak">
     <value>抱歉，我現正要下線更新，從現在開始不能啟動遊戲。\n正在等徒 {0} 場遊戲結束……\n更多資訊請至 @werewolfdev 。</value>
@@ -672,9 +672,6 @@
   <string key="CultConvertHunter">
     <value>【{0}】去咗【{1}】屋企，跟住死咗！</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>【{0}】去咗【{1}】屋企，跟住死咗！</value>
-  </string>
   <string key="GuardKiller">
     <value>做乜傻豬豬走去連環殺手屋企啊？你死咗啦！腎都冇埋！</value>
   </string>
@@ -731,9 +728,6 @@
   </string>
   <string key="Doppelgänger">
     <value>分身 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <value>雖然你唔記得自己係邊個，但係【{0}】似乎係好重要嘅人。</value>
   </string>
   <string key="NewWCRoleModel">
     <value>你個身份變咗喎，但係究竟由咩變做咩呢？雖然你唔記得自己係邊個，但係【{0}】似乎係好重要嘅人。</value>
@@ -1059,7 +1053,7 @@
     <value>你已經成功喺 {0} 報名玩狼啦😏</value>
   </string>
   <string key="Ping2">
-    <value>傳送Ping訊息所需時間: {0}</value>
+    <value>訊息延遲: {0} ms</value>
   </string>
 
       <!-- Update 4.0-->
@@ -1350,7 +1344,30 @@
     <value>冇人識你啊！群都未加入就想 /join！問下管理員點解你仲未係【{0}】嘅群組成員啦！</value>
   </string>
   <string key="JoinByButton">
-      <value>試下唔好打指令，撳制參加遊戲。</value>
-      <value>今次我地唔好打指令，試下撳制參加遊戲。</value>
-    </string>
+    <value>試下唔好打指令，撳制參加遊戲。</value>
+    <value>今次我地唔好打指令，試下撳制參加遊戲。</value>
+  </string>
+
+  <!-- Secret Vote -->
+  <string key="PlayerVoteCounts">
+    <!-- {0} = Player Name; {1} = Number of Votes -->
+    <value>【{0}】已經投左票，依家票箱有 {1} 票。</value>
+    <value>【{0}】落左佢份口供啦，依家票箱有 {1} 票。</value>
+    <value>【{0}】已經估到邊個係狼邊個係人，依家票箱有 {1} 票。</value>
+    <value>【{0}】投左邪惡嘅一票，依家票箱有 {1} 票。</value>
+    <value>【{0}】投左神聖嘅一票，依家票箱有 {1} 票。</value>
+    <value>【{0}】都落左柯打，依家票箱有 {1} 票。</value>
+    <value>連【{0}】呢個白痴都投埋票，依家票箱有 {1} 票。</value>
+    <value>原來【{0}】呢條弱智都識投票，依家票箱有 {1} 票。</value>
+    <value>【{0}】喺旅遊巴落車出嚟投票，依家票箱有 {1} 票。</value>
+    <value>【{0}】話佢投左又靚又大波嘅二號，依家票箱有 {1} 票。</value>
+    <value>花痴【{0}】揀左高大威猛嘅一號做佢目標，依家票箱有 {1} 票。</value>
+    <value>自以為是的【{0}】覺得揀三號先係正確嘅選擇，依家票箱有 {1} 票。</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>啓用暗票？\n當前設定：{0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>已將暗票設定為：{0}</value>
+  </string>
 </strings>
