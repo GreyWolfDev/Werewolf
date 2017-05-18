@@ -2237,6 +2237,7 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
                 p.Votes = 0;
                 p.DiedLastNight = false;
+                p.BeingVisitedSameNightCount = 0;
                 if (p.Bitten & !p.IsDead)
                 {
                     if (p.PlayerRole == IRole.Mason)
@@ -2385,6 +2386,8 @@ namespace Werewolf_Node
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        //Visited Count, by wolf
+                        target.BeingVisitedSameNightCount++;
                         if (ga?.Choice == target.Id &&
                             !(target.PlayerRole == IRole.Harlot && (target.Choice == 0 || target.Choice == -1))) //doesn't apply to harlot not home
                         {
@@ -2629,11 +2632,13 @@ namespace Werewolf_Node
                 var skilled = Players.FirstOrDefault(x => x.Id == sk.Choice && !x.IsDead);
                 if (skilled != null)
                 {
+                    //Visited Count, by SK
+                    skilled.BeingVisitedSameNightCount++;
                     if (ga?.Choice == skilled.Id)
                     {
                         Send(GetLocaleString("GuardBlockedKiller", skilled.GetName()), sk.Id);
                         skilled.WasSavedLastNight = true;
-                        DBKill(sk, skilled, KillMthd.SerialKilled);
+                        skilled.BeingVisitedSameNightCount++;
                     }
                     else
                     {
@@ -2665,6 +2670,8 @@ namespace Werewolf_Node
                 if (hunted != null)
                 {
                     DBAction(hunter, hunted, "Hunt");
+                    //Visited Count, by CH
+                    hunted.BeingVisitedSameNightCount++;
                     if (hunted.PlayerRole == IRole.SerialKiller)
                     {
                         //awwwwww CH gets popped
@@ -2725,6 +2732,8 @@ namespace Werewolf_Node
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        //Visited Count, by Cult
+                        target.BeingVisitedSameNightCount++;
                         if (!target.IsDead)
                         {
                             var newbie = voteCult.OrderByDescending(x => x.DayCult).First();
@@ -2921,6 +2930,8 @@ namespace Werewolf_Node
                 {
                     if (target != null)
                     {
+                        //Visited Count, by Harlot
+                        target.BeingVisitedSameNightCount++;
                         switch (target.PlayerRole)
                         {
                             case IRole.Wolf:
@@ -3071,6 +3082,8 @@ namespace Werewolf_Node
                     //if (save != null)
                     //    DBAction(ga, save, "Guard");
 
+                    //Visited Count, by GA
+                    save.BeingVisitedSameNightCount++;
                     if (save.WasSavedLastNight)
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
@@ -3275,6 +3288,14 @@ namespace Werewolf_Node
             }
 
             #endregion
+
+            foreach (var p in Players)
+            {
+                if (p.BeingVisitedSameNightCount >= 3)
+                    p.BusyNight = true;
+                //reset visited count
+                p.BeingVisitedSameNightCount = 0;
+            }
 
             if (CheckForGameEnd()) return;
 
@@ -4320,6 +4341,8 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.ThreeLittleWolves;
                         if (!ach.HasFlag(Achievements.President) && player.PlayerRole == IRole.Mayor && player.MayorLynchAfterRevealCount >= 3)
                             newAch = newAch | Achievements.President;
+                        if (!ach.HasFlag(Achievements.ItWasABusyNight) && player.BusyNight)
+                            newAch = newAch | Achievements.ItWasABusyNight;
 
                         //now save
                         p.Achievements = (long)(ach | newAch);
