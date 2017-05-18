@@ -396,11 +396,11 @@ namespace Werewolf_Node
             }
             catch (Exception ex)
             {
-                while (ex.InnerException != null)
+                do
                 {
                     Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
                     ex = ex.InnerException;
-                }
+                } while (ex != null);
                 Send("Something just went terribly wrong, I had to cancel the game....\n" + ex.Message);
 #if DEBUG
                 Send(ex.StackTrace);
@@ -1388,11 +1388,11 @@ namespace Werewolf_Node
                 {
                     //SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
                     //FleePlayer(p.TeleUser.Id);
-                    while (e.InnerException != null)
+                    do
                     {
                         Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
                         e = e.InnerException;
-                    }
+                    } while (e != null); 
 
                 }
                 Thread.Sleep(50);
