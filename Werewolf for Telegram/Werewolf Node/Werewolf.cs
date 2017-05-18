@@ -101,11 +101,11 @@ namespace Werewolf_Node
                     new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://t.me/{Program.Me.Username}?start=" + deeplink }
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
-#if DEBUG
-                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-#else
+//#if DEBUG
+//                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+//#else
                 _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-#endif
+//#endif
 
                 new Thread(GameTimer).Start();
 
@@ -680,7 +680,13 @@ namespace Werewolf_Node
                     if (Program.R.Next(100) < 50)
                     {
                         //pick a random target
-                        player.Choice = ChooseRandomPlayerId(player, false);
+                        var clumsy = ChooseRandomPlayerId(player, false);
+                        if (clumsy == player.Choice) player.ClumsyCorrectLynchCount++;
+                        player.Choice = clumsy;
+                    }
+                    else
+                    {
+                        player.ClumsyCorrectLynchCount++;
                     }
                 }
 
@@ -1987,7 +1993,10 @@ namespace Werewolf_Node
                         target.HasBeenVoted = true;
                         target.Votes++;
                         if (p.PlayerRole == IRole.Mayor && p.HasUsedAbility) //Mayor counts twice
+                        {
+                            p.MayorLynchAfterRevealCount++;
                             target.Votes++;
+                        }
                         DBAction(p, target, "Lynch");
                     }
                     p.NonVote = 0;
@@ -2056,6 +2065,8 @@ namespace Werewolf_Node
                         lynched.TimeDied = DateTime.Now;
                         if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
                             AddAchievement(lynched, Achievements.LackOfTrust);
+                        if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
+                            AddAchievement(lynched, Achievements.SpoiledRichBrat);
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.ShowRoles == false ? "" : $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}"));
 
                         if (lynched.InLove)
@@ -2255,6 +2266,7 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
                 p.Votes = 0;
                 p.DiedLastNight = false;
+                p.BeingVisitedSameNightCount = 0;
                 if (p.Bitten && !p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                 {
                     if (p.PlayerRole == IRole.Mason)
@@ -2275,6 +2287,8 @@ namespace Werewolf_Node
                         var andStr = $" {GetLocaleString("And").Trim()} ";
                         msg += GetLocaleString("WolfTeam", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
                     }
+                    Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
+
                     Send(msg, p.Id);
 
                 }
@@ -2393,13 +2407,14 @@ namespace Werewolf_Node
                         pl.Votes++;
                 }
                 choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
-
+                int eatCount = 0;
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        target.BeingVisitedSameNightCount++;
                         if (ga?.Choice == target.Id &&
                             !(target.PlayerRole == IRole.Harlot && (target.Choice == 0 || target.Choice == -1))) //doesn't apply to harlot not home
                         {
@@ -2605,6 +2620,11 @@ namespace Werewolf_Node
                                         target.IsDead = true;
                                         target.TimeDied = DateTime.Now;
                                         target.DiedLastNight = true;
+                                        if (target.PlayerRole == IRole.Sorcerer)
+                                        {
+                                            foreach (var w in voteWolves)
+                                                AddAchievement(w, Achievements.NoSorcery);
+                                        }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
                                             GetRandomImage(Settings.VillagerDieImages), target.Id);
@@ -2612,12 +2632,20 @@ namespace Werewolf_Node
                                     break;
                             }
                         }
+                        eatCount++;
                     }
                     else
                     {
                         //no choice
                     }
                 }
+                if (eatCount == 2)
+                {
+                    var cub = Players.GetPlayerForRole(IRole.WolfCub, false);
+                    if (cub != null)
+                        AddAchievement(cub, Achievements.IHelped);
+                }
+                eatCount = 0;
             }
             WolfCubKilled = false;
             #endregion
