@@ -225,7 +225,7 @@ namespace Werewolf_Control
         {
             long groupid = 0;
             string groupname = "";
-            if (update.Message.Chat.Type == ChatType.Group)
+            if (update.Message.Chat.Id < 0) //it's a group
             {
                 groupid = update.Message.Chat.Id;
                 groupname = update.Message.Chat.Title;
