@@ -397,16 +397,13 @@ namespace Werewolf_Node
             }
             catch (Exception ex)
             {
-                do
-                {
-                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
-                    ex = ex.InnerException;
-                } while (ex != null);
+                LogAllExceptions(ex);
                 Send("Something just went terribly wrong, I had to cancel the game....\n" + ex.Message);
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                //this would be a duplicate
+                //Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
 #endif
 
             }
@@ -1055,7 +1052,7 @@ namespace Werewolf_Node
             }
             catch (Exception ex)
             {
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                LogException(ex);
             }
         }
 
@@ -1296,7 +1293,7 @@ namespace Werewolf_Node
             catch (Exception ex)
             {
                 Send($"Error while assigning roles: {ex.Message}\nPlease start a new game");
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                LogException(ex);
                 Thread.Sleep(1000);
                 Program.RemoveGame(this);
             }
@@ -1388,20 +1385,13 @@ namespace Werewolf_Node
                     // ReSharper disable once UnusedVariable
                     var result = Program.Send(msg, p.Id, true).Result;
                 }
-                catch (NullReferenceException ex)
+                catch (AggregateException ae)
                 {
-                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                    LogException(ae);
                 }
                 catch (Exception e)
                 {
-                    //SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
-                    //FleePlayer(p.TeleUser.Id);
-                    do
-                    {
-                        Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
-                        e = e.InnerException;
-                    } while (e != null);
-
+                    LogAllExceptions(e);
                 }
                 Thread.Sleep(50);
             }
@@ -2113,9 +2103,8 @@ namespace Werewolf_Node
 
                 if (CheckForGameEnd(true)) return;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                var e = ex;
                 while (e.InnerException != null)
                     e = e.InnerException;
 
@@ -2124,7 +2113,7 @@ namespace Werewolf_Node
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                LogException(e);
 #endif
                 Program.RemoveGame(this);
             }
@@ -4108,6 +4097,26 @@ namespace Werewolf_Node
             return Program.Bot.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
         }
 
+        internal void LogException(AggregateException ae)
+        {
+            foreach (var e in ae.InnerExceptions)
+                LogAllExceptions(e);
+        }
+
+        internal void LogAllExceptions(Exception e)
+        {
+            do
+            {
+                LogException(e);
+                e = e.InnerException;
+            } while (e != null); 
+            return;
+        }
+
+        internal void LogException(Exception e)
+        {
+            Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
+        }
 
         #endregion
 
