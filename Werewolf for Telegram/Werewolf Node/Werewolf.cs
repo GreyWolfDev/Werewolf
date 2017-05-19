@@ -2112,7 +2112,7 @@ namespace Werewolf_Node
 
                 Send("Oh no, something went wrong :( Error report is being sent to the developers\n" + e.Message);
 #if DEBUG
-                Send(ex.StackTrace);
+                Send(e.StackTrace);
 #else
                 LogException(e);
 #endif
