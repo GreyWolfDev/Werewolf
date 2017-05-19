@@ -379,7 +379,7 @@ namespace Werewolf_Control
         public static Database.Group GetGroup(string str, WWContext db)
         {
             //try with id
-            if (int.TryParse(str, out int id))
+            if (long.TryParse(str, out long id))
                 return db.Groups.FirstOrDefault(x => x.GroupId == id);
             //try with username
             if (str.StartsWith("@"))
