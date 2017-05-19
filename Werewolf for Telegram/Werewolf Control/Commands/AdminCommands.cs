@@ -296,7 +296,7 @@ namespace Werewolf_Control
                 db.SaveChanges();
             }
 
-            Send($"Your group will be listed as: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
+            Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "addach", DevOnly = true)]
