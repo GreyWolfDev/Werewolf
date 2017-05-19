@@ -79,10 +79,10 @@ namespace Werewolf_Control.Helpers
             {
                 var langfile = new LangFile(Path.Combine(Bot.LanguageDirectory, $"{file}.xml"));
                 result += $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})\n";
-                if (errors.Any(x => x.Level == ErrorLevel.Info))
+                if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
                 {
                     result += "_Duplicated Strings: _";
-                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
                 }
                 result += $"_Missing strings:_ {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == langfile.FileName)}\n";
                 if (errors.Any(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error))
@@ -127,10 +127,10 @@ namespace Werewolf_Control.Helpers
                 result += "_Missing Values:_\n";
                 result = errors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
-            if (errors.Any(x => x.Level == ErrorLevel.Info))
+            if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
             {
                 result += "\n_Duplicated Strings:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
+                result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
             }
             if (errors.Any(x=> x.Level == ErrorLevel.FatalError))
             {
@@ -446,12 +446,17 @@ namespace Werewolf_Control.Helpers
                 result += "_Missing Values:_\n";
                 result = newFileErrors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.Info))
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.DuplicatedString))
             {
                 result += "\n_Warning:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.Info).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
-                //next line is there because ErrorLevel.Info is used only to check for duplicated strings. if we use ErrorLevel.Info for other things, this probably should be changed.
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
                 result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
+            }
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.JoinLink))
+            {
+                result += "\n_Join commands detected:_\n";
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                result += "These strings won't be used, and will fall back to English, until you remove `/join` from them.\n\n";
             }
             if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
             {
@@ -498,10 +503,10 @@ namespace Werewolf_Control.Helpers
             //check for CultConvertSerialKiller & CupidChosen duplication
             var dup = file.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CultConvertSerialKiller");
             if (dup > 1)
-                fileErrors.Add(new LanguageError(file.FileName, "CultConvertSerialKiller", "CultConvertSerialKiller duplication", ErrorLevel.Info));
+                fileErrors.Add(new LanguageError(file.FileName, "CultConvertSerialKiller", "CultConvertSerialKiller duplication", ErrorLevel.DuplicatedString));
             dup = file.Doc.Descendants("string").Count(x => x.Attribute("key").Value == "CupidChosen");
             if (dup > 1)
-                fileErrors.Add(new LanguageError(file.FileName, "CupidChosen", "CupidChosen duplication", ErrorLevel.Info));
+                fileErrors.Add(new LanguageError(file.FileName, "CupidChosen", "CupidChosen duplication", ErrorLevel.DuplicatedString));
 
             foreach (var str in masterStrings)
             {
@@ -552,6 +557,9 @@ namespace Werewolf_Control.Helpers
                     {
                         fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.FatalError));
                     }
+
+                    if (value.Value.ToLower().Contains("/join"))
+                        fileErrors.Add(new LanguageError(file.FileName, key, "", ErrorLevel.JoinLink));
                 }
             }
         }
@@ -578,6 +586,6 @@ namespace Werewolf_Control.Helpers
 
     public enum ErrorLevel
     {
-        Info, MissingString, Error, FatalError
+        DuplicatedString, MissingString, Error, FatalError, JoinLink
     }
 }
