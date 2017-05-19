@@ -109,7 +109,7 @@ namespace Werewolf_Node
                 #endif
 
                 //let's keep this on for a while, then we will delete it
-                SendWithQueue(GetLocaleString("NoAutoJoin", u.Username ?? u.FirstName.ToBold()));
+                SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
                 new Thread(GameTimer).Start();
 
             }
