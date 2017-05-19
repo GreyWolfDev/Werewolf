@@ -1123,7 +1123,7 @@ namespace Werewolf_Control
                     else
                     {
                         msg = (String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>"))
-                            + (grp.Preferred ? " can " : " can't ") + "appear on grouplist";
+                            + (grp.Preferred == true ? " can " : " can't ") + "appear on grouplist";
                     }
                     Send(msg, update.Message.Chat.Id);
                 }
