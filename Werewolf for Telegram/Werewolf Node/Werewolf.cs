@@ -276,7 +276,7 @@ namespace Werewolf_Node
                             msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
                         }
                         if (Settings.GameJoinTime > i)
-                            Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
+                            Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyMarkup: _joinButton);
 
                         SecondsToAdd = 0;
                     }
