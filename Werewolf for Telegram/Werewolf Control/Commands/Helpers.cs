@@ -377,7 +377,7 @@ namespace Werewolf_Control
             if (str.StartsWith("@"))
                 return db.Groups.FirstOrDefault(x => x.UserName == str.Substring(1));
             //hope str is a link, filter out public groups and compare only the hashes
-            return db.Groups.FirstOrDefault(x => x.GroupLink.Contains("joinchat") && (x.GroupLink.Substring(x.GroupLink.Length - 22) == str.Substring(str.Length - 22)));
+            return db.Groups.FirstOrDefault(x => x.GroupLink.Substring(x.GroupLink.LastIndexOf("me/")) == str.Substring(str.LastIndexOf("me/")));
         }
     }
 }
