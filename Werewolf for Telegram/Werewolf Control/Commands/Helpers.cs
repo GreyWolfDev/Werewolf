@@ -377,7 +377,8 @@ namespace Werewolf_Control
             if (str.StartsWith("@"))
                 return db.Groups.FirstOrDefault(x => x.UserName == str.Substring(1));
             //hope str is a link, and compare the hash part
-            return db.Groups.FirstOrDefault(x => x.GroupLink.EndsWith(str.Substring(str.LastIndexOf("me/"))));
+            var hash = str.Substring(str.LastIndexOf("me/")); //dummy variable becase LINQ to Entity doesn't like it.
+            return db.Groups.FirstOrDefault(x => x.GroupLink.EndsWith(hash));
         }
     }
 }
