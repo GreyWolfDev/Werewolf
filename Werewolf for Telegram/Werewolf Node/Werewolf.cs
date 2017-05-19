@@ -198,7 +198,6 @@ namespace Werewolf_Node
                     {
                         var choice = Program.R.Next(values.Count());
                         var selected = values.ElementAt(choice).Value;
-                        selected = selected.Replace("/join", "join").Replace("/Join", "Join");
                         // ReSharper disable once AssignNullToNotNullAttribute
                         return String.Format(selected.FormatHTML(), args).Replace("\\n", Environment.NewLine);
                     }

@@ -153,25 +153,33 @@ namespace Werewolf_Control
             return await Bot.Send(message, id, clearKeyboard, customMenu);
         }
 
+
+
         private static string GetLocaleString(string key, string language, params object[] args)
         {
-            var files = Directory.GetFiles(Bot.LanguageDirectory);
-            XDocument doc;
-            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+            try
             {
-                doc = XDocument.Load(file);
+                var files = Directory.GetFiles(Bot.LanguageDirectory);
+                XDocument doc;
+                var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                {
+                    doc = XDocument.Load(file);
+                }
+                var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
+                    Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var values = strings.Descendants("value");
+                var choice = Bot.R.Next(values.Count());
+                var selected = values.ElementAt(choice);
+                return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
-            if (strings == null)
+            catch
             {
-                //fallback to English
-                
-                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var values = strings.Descendants("value");
+                var choice = Bot.R.Next(values.Count());
+                var selected = values.ElementAt(choice);
+                return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            var values = strings.Descendants("value");
-            var choice = Bot.R.Next(values.Count());
-            var selected = values.ElementAt(choice);
-            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
