@@ -135,12 +135,12 @@ namespace Werewolf_Control.Helpers
             if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
             {
                 result += "\n_Duplicated Strings:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
+                result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
             }
             if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
             {
                 result += "\n_Join commands:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
+                result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
             }
             if (errors.Any(x=> x.Level == ErrorLevel.FatalError))
             {
