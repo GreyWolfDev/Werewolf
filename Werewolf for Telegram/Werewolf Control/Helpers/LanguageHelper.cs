@@ -84,6 +84,11 @@ namespace Werewolf_Control.Helpers
                     result += "_Duplicated Strings: _";
                     result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
                 }
+                if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
+                {
+                    result += "_Join commands: _";
+                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                }
                 result += $"_Missing strings:_ {errors.Count(x => x.Level == ErrorLevel.MissingString && x.File == langfile.FileName)}\n";
                 if (errors.Any(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error))
                     result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
@@ -131,6 +136,11 @@ namespace Werewolf_Control.Helpers
             {
                 result += "\n_Duplicated Strings:_\n";
                 result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
+            }
+            if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
+            {
+                result += "\n_Join commands:_\n";
+                result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ');
             }
             if (errors.Any(x=> x.Level == ErrorLevel.FatalError))
             {
@@ -455,7 +465,7 @@ namespace Werewolf_Control.Helpers
             if (newFileErrors.Any(x => x.Level == ErrorLevel.JoinLink))
             {
                 result += "\n_Join commands detected:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
                 result += "These strings won't be used, and will fall back to English, until you remove `/join` from them.\n\n";
             }
             if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
