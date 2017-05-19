@@ -6,12 +6,12 @@
     <value>Ŝajnas, ke vi ne ludas nune...</value>
   </string>
   <string key="PlayerStartedGame">
-    <value>{0} komencis novan partion! Partoprenu la amuzadon per /join... kaj vi verŝajne mortos :P</value>
-    <value>Novan partion komencis {0}! Uzu /join por esti manĝota!</value>
+    <value>{0} komencis novan partion! Partoprenu la amuzadon klakante sube... kaj vi verŝajne mortos :P</value>
+    <value>Novan partion komencis {0}! Klaku sube por esti manĝota!</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>{0} komencis novan ĥaosan partion! Partoprenu la konfuzon per /join kaj vi certe mortos :PP</value>
-    <value>Novan ĥaosan partion komencis {0}! Uzu /join por esti manĝota!</value>
+    <value>{0} komencis novan ĥaosan partion! Partoprenu la konfuzon klakante sube kaj vi certe mortos :PP</value>
+    <value>Novan ĥaosan partion komencis {0}! Klaku sube por esti manĝota!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Vi ne povas aliĝi nun! La partio jam komenciĝis.\nKlaku sur /nextgame por esti sciigota kiam la sekva partio komenciĝos.</value>
@@ -20,10 +20,10 @@
     <value>Vi jam aliĝis!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minuto restas por aliĝi per /join</value>
+    <value>1 minuto restas por aliĝi</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} sekundoj restas por aliĝi per /join</value>
+    <value>{0} sekundoj restas por aliĝi</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>La nombro de la aliĝintoj ne sufiĉas. La partio estos nuligita.\nKlaku sur /nextgame por esti sciigota kiam la sekva partio komenciĝos, aŭ komencu vi mem alian per /startgame.</value>
@@ -1048,12 +1048,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>La aliĝa tempo plilongiĝis je {0} sekundoj!\n{1} restas por aliĝi per /join</value>
+    <value>La aliĝa tempo plilongiĝis je {0} sekundoj!\n{1} restas por aliĝi</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>La aliĝa tempo plimallongiĝis je {0} sekundoj!\n{1} restas por aliĝi per /join</value>
+     <value>La aliĝa tempo plimallongiĝis je {0} sekundoj!\n{1} restas por aliĝi</value>
   </string>
   <string key="CantExtend">
     <value>Nur grupadministrantoj povas plilongigi la tempon pli ol unufoje!</value>
@@ -1067,6 +1067,12 @@
   </string>
   <string key="NotMember">
     <value>Vi ne povas aliĝi ĉi tiun partion ĉar ŝajnas ke vi ne estas membro de {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Bonvolu uzi la suban butonon por aliĝi, anstataŭ la komandojn.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} el {1} ludantoj voĉis.</value>
   </string>
 
 
@@ -1195,5 +1201,11 @@
   </string>
   <string key="MaxExtendA">
     <value>Maximum extending time set to {0} seconds</value>
+  </string>
+ <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
   </string>
 </strings>

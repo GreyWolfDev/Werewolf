@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
     LAST UPDATE 01/01/2017 by @jeffffc
+    19/05:  Update language node details, updates for 4.2
     01/01:  Added: "HunterKillsWolfEnd", "WolfKillsHunterEnd", "CHKillsCultistEnd", "SecondsAdded", "SecondsRemoved", "CantExtend", "AllowExtendQ", "AllowExtendA", "MaxExtendQ", "MaxExtendA", "WolvesEatDrunkBlockSecondKill"
     01/01:  Amended "AboutAlphaWolf", "AboutDrunk"
     08/12:  Minor Fixes about 07/12 (CultConvertSerialKiller + CupidChosen)
@@ -22,17 +23,17 @@
     29/09:  added "PlayerNoPM" "LatestList" "UnableToGetList" "YouJoined" strings
 -->
 <strings>
-  <language name="廣東話" base="廣東話" variant="Normal" owner="hkgworm"/>
+  <language name="廣東話" base="廣東話" variant="Normal" owner="hkgworm" code="zh-yue" isDefault="true"/>
   <string key="NotInGame">
     <value>你仲未加入任何遊戲</value>
   </string>
   <string key="PlayerStartedGame">
-    <value>【{0}】 唔小心開始左 『正常版』 新遊戲!\n打 /join 加入，同埋準備受死啦 :P</value>
-    <value>有條粉腸叫 【{0}】 開始左 『正常版』 新遊戲!\n打 /join 準備受死啦!</value>
+    <value>【{0}】 唔小心開始左 『正常版』 新遊戲!\n撳制加入遊戲同埋準備受死啦 :P</value>
+    <value>有條粉腸叫 【{0}】 開始左 『正常版』 新遊戲!\n撳制加入遊戲準備受死啦!</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>【{0}】 唔小心開始左個 『混亂版』 新遊戲!\n打 /join 加入，同埋準備受死啦 :P</value>
-    <value>有條粉腸叫 【{0}】 開始左 『混亂版』 新遊戲!\n打 /join 準備受死啦!</value>
+    <value>【{0}】 唔小心開始左個 『混亂版』 新遊戲!\n撳制加入遊戲同埋準備受死啦 :P</value>
+    <value>有條粉腸叫 【{0}】 開始左 『混亂版』 新遊戲!\n撳制加入遊戲準備受死啦!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>遊戲開始左，你乖乖地等下一場吧啦!</value>
@@ -41,10 +42,10 @@
     <value>你已經加入遊戲!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>仲有 1 分鐘開始，打 /join 加入</value>
+    <value>仲有 1 分鐘開始，撳制加入遊戲!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>仲有 {0} 秒開始，打 /join 加入</value>
+    <value>仲有 {0} 秒開始，撳制加入遊戲!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>唔夠玩家，遊戲已取消!</value>
@@ -1203,12 +1204,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>加入時間增加左【{0}】秒。\n仲有【{1}】可以 /join</value>
+    <value>加入時間增加左【{0}】秒。\n仲有【{1}】可以撳制加入遊戲</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>加入時間減少左【{0}】秒。\n仲有【{1}】可以 /join</value>
+     <value>加入時間減少左【{0}】秒。\n仲有【{1}】可以撳制加入遊戲</value>
   </string>
   <string key="CantExtend">
     <value>只有管理員可以更改加入時間多過一次!</value>
@@ -1229,5 +1230,23 @@
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Oh no! 【{0}】係醉酒佬! 岩岩食完個醉酒佬搞到你都醉埋，而家你食唔到【{1}】喇...</value>
+  </string>
+  <string key="JoinButton">
+    <value>加入遊戲</value>
+  </string>
+  <string key="NotMember">
+    <value>你唔係 【{0}】 嘅成員，唔可以加入佢地嘅遊戲架喎!</value>
+  </string>
+  <string key="JoinByButton">
+    <value>而家改左唔用 command, 請你撳制啦!</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>【{1}】 位玩家之中有 【{0}】 位投左票。</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>開啟不記名投票嗎?\n當前設定︰【{0}】</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>不記名投票已經設定為: 【{0}】</value>
   </string>
 </strings>

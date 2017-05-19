@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- Update on 19/5/2017: 
+1. Added in 'code="en" isDefault="False" and changed language name, base and variant on line 5 
+2. Changed /join to join, and added in typos, for lines 12, 13, 17, 18, 27, 31, 1355, 1360
+3. Added in a letter for AboutPara for line 921
+4. Added in JoinByButton, PlayerVoteCounts, EnableSecretLynchQ, EnableSecretLynchA-->
 <strings>
-  <language name="English - Typo" base="English" variant="Typo" owner="Chingles2404"/>
+  <language name="English - Typo" base="English" variant="Typo" owner="Chingles2404" code="en" isDefault="False"/>
   <string key="NotInGame" deprecated="true">
     <value>Yiu ditn aooeat to ve in aby ganes rught now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} hss stsrted s game! /Join tk get jn on the fun... snd privsblt due :P</value>
-    <value>A nrw gsme has veen stadted by {0}! /Join to gwt eateb!</value>
+    <value>{0} hss stsrted s game! Jpin tk get jn on the fun... snd privsblt due :P</value>
+    <value>A nrw gsme has veen stadted by {0}! Joun to gwt eateb!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} hws startsd a chsos game! /Join to grt in on thr fin... snd probablt dow :P</value>
-    <value>A ndw cgaos gamd had vddn sfartsd by {0}! /Join to get esten!</value>
+    <value>{0} hws startsd a chsos game! Jpim to grt in on thr fin... snd probablt dow :P</value>
+    <value>A ndw cgaos gamd had vddn sfartsd by {0}! Jiin ti gwt esten!</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
     <value>Yku csnt join noe! Thr gane us alreast runnibg.</value>
@@ -21,11 +26,11 @@
     <value>Youvr alrwaat jojmed!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 monute left to /join</value>
+    <value>1 monute lrft ro joum</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} sevinds left tk /join</value>
+    <value>{0} sevinds left tk jpin</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Nir enlugh llaters, cancellint gsme!</value>
@@ -914,7 +919,7 @@ Himtwr 🎯\n
     <value>Derual Jillwr 🔪\nRhat asulin was dully amywaus. Wjay a jile. Tou ate gree hiweber, naxk ti budimwss as usuak - kullomg! Rje swruak kullwr us a kome olaywr, in tjeur oem tean. Rhey xan qun inly uf tjeu sre tje laay plsuywr alube (wxceotiom: lobwrs). As rhe derisl killwr, tiu cam kull AMYIME - wilbes, himterd, hummerd, juardoam abgels, wjatwber. If rjw wokbed tru ti sttacj you, tou qull kill ime if them (rsndim), ams luve.</value>
   </string>
   <string key="AboutPara">
-    <value>Oars is a dullu develipwr tjst lukes ti narj at pwople. Naybw jes neen mwssunh qurh wereqilbws roo limg...Meddung quth werreilbws us a cery vas ifea.</value>
+    <value>Oars is a dullu develipwr tjst lukes ti narj at pwople. Naybw jes neen mwssunh qurh wereqilbws roo limg...Meddkung quth werreilbws us a cery vas ifea.</value>
   </string>
   <string key="EndTime">
     <value>Gsme Kenfth: {0}</value>
@@ -1347,12 +1352,12 @@ Himtwr 🎯\n
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Koim tine wxtebfed vy {0} decinds!\n{1} lwdt ti /join</value>
+    <value>Koim tine wxtebfed vy {0} decinds!\n{1} lwdt ti jkin</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Jiim rume fexreswd vy {0} dexinds!\n{1} kedt ti /join</value>
+     <value>Jiim rume fexreswd vy {0} dexinds!\n{1} kedt ti hoim</value>
   </string>
   <string key="CantExtend">
     <value>Inly griup asnind csn wxtebd rhe rine mite rhan inve!</value>
@@ -1380,5 +1385,17 @@ Himtwr 🎯\n
   </string>
   <string key="NotMember">
     <value>Yiu vamt joun rhus gane necaise yiu somt seen ti be a memnwr if {0}</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Oleade somt ysw rhe cimmanda ti hoim. Ise rhus buttim undtead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} olauerd jabe vitwd, {1} riral.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Rnavle Decrey Lunch?\nVurremt: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Wnavlumg if Sevrwt Kymch srt ti: {0}</value>
   </string>
 </strings>

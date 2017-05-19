@@ -19,7 +19,7 @@ Private system strings ("I have sent you a PM", all system strings that get chan
 Deprecated strings (only there so your file will pass through validation with no errors - no need to touch these strings) -->
 <!-- LAST UPDATED: 17/01/2016 (DD/MM/YYYY), WolvesEatDrunkBlockSecondKill -->
 <strings>
-	<language name="Bahasa Melayu Dunia Zi bun" base="Bahasa Melayu" variant="Dunia Zi bun" owner="@mad_muhammad @knightingale293 @vforvendettas @@janganserumak @skykillerz"/>
+	<language name="Bahasa Melayu Dunia Zi bun" base="Bahasa Melayu" variant="Dunia Zi bun" owner="@mad_muhammad @knightingale293 @vforvendettas @Plissjanganserumak @skyzkillerz" code="my" isDefault="false"/>
 	<!-- Roles -->
 	<!-- Do NOT change the emojis, even if you are translating werewolf in a non-standard mode! -->
 	<string key="Villager">
@@ -426,7 +426,8 @@ Deprecated strings (only there so your file will pass through validation with no
 	<!-- Time strings -->
 	<string key="LynchTime">
 		<!-- 0 - number of seconds -->
-		<value>🌥 Hari telah senja, solat maghrib telah didirikan, semua masyarakat berkumpul di balai negeri untuk bermesyuarat bagi membincangkan siapa yang bakal dihukum malam ini. Kadang memang perlu berkorban untuk menghukum pesalah. \nAntum semuanya mempunyai masa selama {0} saat untuk memilih!</value>
+		<value>🌥 Hari telah senja, solat maghrib telah didirikan, semua masyarakat berkumpul di balai negeri untuk bermesyuarat bagi membincangkan siapa yang bakal dihukum malam ini.
+	\nAntum semuanya mempunyai masa selama {0} saat untuk memilih!</value>
 		<value>🌥 Hari telah senja, masyarakat berkumpul di balai negeri selepas solat maghrib untuk membincangkan siapa yang bakal dikorbankan. Antum semuanya mempunyai masa selama {0} saat untuk memilih!</value>
 	</string>
 	<string key="DayTime">
@@ -642,8 +643,8 @@ Deprecated strings (only there so your file will pass through validation with no
 	</string>
 	<string key="HarlotVisitYou">
 		<value>Astaghfirullah, diri antum selekeh sangat, ada sesuatu yang antum lakukan semalam. Rupanya ada yang menemani antum semalam 💕💕💕. Bawalah bertaubat, Mak Nyah pun antum mahu layan :D
-        \n"RABBANA ZHALAMNA ANFUSANA WAILLAM TAGHFIRLANA WATARHAMNA LANA KUNANNA MINAL KHASIRIIN".
-		Cuba-cubalah antum memohon keampunan kepada Yang Maha Kuasa.</value>
+    \n"RABBANA ZHALAMNA ANFUSANA WAILLAM TAGHFIRLANA WATARHAMNA LANA KUNANNA MINAL KHASIRIIN".
+	\nCuba-cubalah antum memohon keampunan kepada Yang Maha Kuasa.</value>
 	</string>
 	<string key="PlayerBitten">
 		<value>Antum diserang oleh serigala, tetapi Ketua Serigala telah memilih antum. Antum tidak terbunuh tetapi antum bakal menjadi serigala pada keesokan hari!</value>
@@ -815,12 +816,13 @@ Deprecated strings (only there so your file will pass through validation with no
 	<string key="LynchKill">
 		<!-- 0 - player name -->
 		<!-- 1 - player role -->
-		<value>🔥 "Innalillahi wa inna ilaihi raji'uun". Setelah bersatunya keputusan kamu semua, salah satu saudara antum telah pulang ka rahmatullah,{0} ialah {1} mati direjam.</value>
-		<value>🔥 "... Wa amruhum syuura baynahum . . ." (Q. S. Asy Syura (42) : 38)
-		"... dan urusan mereka diputuskan dengan musyawarah antara mereka." \n{0} digantung di bawah pokok kelapa menggunakan tali rapiah.
-		Role : {1}</value>
-		<value>🔥 "... wasyawirhum fil amri ..." (Q.S. Ali Imran (3) : 159). \nKeputusan masyarakat telah dibuat hasil dari perbincangan, {0} disuruh membersihkan rumah semua warga kampung tanpa makan dan minum sehingga meninggal.
-		Role : {1}</value>
+		<value>🔥"Innalillahi wa inna ilaihi raji'uun". Setelah bersatunya keputusan kamu semua, salah satu saudara antum, {0} telah pulang ke rahmatullah.
+	{1}, beliau telah mati direjam.</value>
+		<value>🔥"...Wa amruhum syuura baynahum . . ." (Q. S. Asy Syura (42) : 38)
+	"...dan urusan mereka diputuskan dengan musyawarah antara mereka." \n{0} digantung di bawah pokok kelapa menggunakan tali rapiah.
+	Role:{1}</value>
+		<value>🔥"... wasyawirhum fil amri ..." (Q.S. Ali Imran (3) : 159). \nKeputusan masyarakat telah dibuat hasil dari perbincangan, {0} disuruh membersihkan rumah semua warga kampung tanpa makan dan minum sehingga meninggal.
+	Role : {1}</value>
 	</string>
 	<string key="HunterKilledFinalLynched">
 		<!-- 0 - hunter's name -->
@@ -889,7 +891,8 @@ Deprecated strings (only there so your file will pass through validation with no
 		<value>🌤 Ngeri, hari telah pagi dan antum melihat ada saudara Antum yang mati. Darah disana sini,di sepanjang jalan. {0} meninggal dunia, NomNom!
         Role: {1}</value>
 		<value>🌤 "Tiap-tiap yang berjiwa akan merasakan mati. Kemudian hanya kepada Kami kamu dikembalikan" [Q.S. Al Ankabut (29) : 57] \n{1} meninggal dunia dengan cara yang tidak wajar, ada gigi serigala tertinggal di perut {0}.</value>
-		<value>🌤 "Kami telah menentukan kematian di antara kamu...." [al Waqi'ah (56) : 60] \n{0} mati dimakan Serigala.. {1} telah pulang ka Rahmatullah.</value>
+		<value>🌤 "Kami telah menentukan kematian di antara kamu...." [al Waqi'ah (56) : 60]
+	\n{0} mati dimakan Serigala.. {1} telah pulang ke Rahmatullah.</value>
 	</string>
 	<string key="HunterKilledCultist">
 		<!-- 0 - victim name -->
@@ -904,7 +907,9 @@ Deprecated strings (only there so your file will pass through validation with no
 		<!-- 2 - roles -->
 		<value>{0} mati dipangkuan {1}. Tak sanggup menyendiri lagi, {1} meminum racun tikus untuk membunuh diri..💔 {2} mati kerana patah hati dan berputus asa dengan hidupnya.\n“Tiada suatu bencana pun yang menimpa di bumi dan (tidak pula) pada dirimu sendiri melainkan telah tertulis dalam kitab (Lauhul Mahfuzh) sebelum Kami menciptakannya. Sesungguhnya yang demikian itu adatelah mudah bagi Allah. (Kami jelaskan yang demikian itu) supaya kamu jangan berduka cita terhadap apa yang luput dari kamu, dan supaya kamu jangan terlalu gembira terhadap apa yang diberikan-Nya kepadamu. Dan Allah tidak menyukai setiap orang yang sombong lagi membanggakan diri” [Q.S. Al Hadid: 22-23]
         </value>
-		<value>♫Bayang bayangan rindu♫, {0} mati dipangkuan {1}. Air mata menitik di pipinya, dan hari pun hujan. {0} meninggal dipanah petir.💔 {2} \n“Boleh jadi kamu membenci sesuatu padahal ia amat baik bagimu dan boleh jadi pula kamu menyukai sesuatu padahal ia amat buruk bagimu. Allah mengetahui sedang kamu tidak mengetahui.” (Al-Baqarah: 216) </value>
+		<value>♫Bayang bayangan rindu♫,
+	{0} mati dipangkuan {1}. Air mata menitik di pipinya, dan hari pun hujan. {1} mati dipanah petir.
+	💔{2} \n“Boleh jadi kamu membenci sesuatu padahal ia amat baik bagimu dan boleh jadi pula kamu menyukai sesuatu padahal ia amat buruk bagimu. Allah mengetahui sedang kamu tidak mengetahui.” (Al-Baqarah: 216) </value>
 		<value>{1} telah putus asa, tidak bermakna hidupnya kalau tidak ada {0}.\n“ …dan janganlah kamu berputus asa dari rahmat Allah. Sesungguhnya tiada berputus asa dari rahmat Allah melainkan kaum yang kafir” (Yusuf : 12)\n{2} meninggal dunia.</value>
 	</string>
 	<string key="HarlotFuckedWolfPublic">
@@ -915,7 +920,7 @@ Deprecated strings (only there so your file will pass through validation with no
 	<string key="HarlotFuckedVictimPublic">
 		<!-- 0 - harlot name -->
 		<!-- 1 - victim name -->
-		<value>{0} menyelinap masuk ke rumah {1} untuk bersukaria 👄. Tapi pada saat itu, serigala sedang memakan {1} didalam rumahnya. Disebabkan serigala terlalu lapar dan tidak ingin meninggalkan seorang pun saksi, {0} mati dimakan serigala tersebut.\nAllah telah manyediakan jalannya, “Dan nikahkanlah orang-orang yang sendiri ( bujangan ) di antara kalian dan orang-orang shaleh diantara para hamba sahayamu yang laki-laki dan perempuan..." [Q.S. An Nuur (24) : 32]</value>
+		<value>{0} menyelinap masuk ke rumah {1} untuk bersukaria 👄. Tapi pada saat itu, serigala sedang memakan {1} didalam rumahnya. Disebabkan serigala terlalu lapar dan tidak ingin meninggalkan seorang pun saksi, {0} turut mati dimakan serigala tersebut.</value>
 	</string>
 	<string key="HarlotFuckKillerPublic">
 		<value>Masyarakat negeri menjumpai mayat {0}, terlekat di pokok pisang. {0} telah mati.</value>
@@ -1061,20 +1066,20 @@ Deprecated strings (only there so your file will pass through validation with no
 	</string>
 	<string key="PlayerStartedGame" isgif="true">
 		<!-- 0 - Player name -->
-		<value>📣 {0} telah memulakan permainan (NORMAL)! Jom bergabung bersama kami di Dunia Zi'bun dengan klik /join. Baca BasmAllah dulu ye.</value>
-		<value>📣 Alhamdulillah! Permainan (NORMAL) telah dimulakan oleh {0}! Baca Bismillah, tekan /join untuk bergabung bersama kami di Dunia Zi'bun.</value>
+		<value>📣 {0} telah memulakan permainan (NORMAL)! Jom bergabung bersama kami di Dunia Zi'bun dengan klik butang "Masuk". Baca BasmAllah dulu ye.</value>
+		<value>📣 Alhamdulillah! Permainan (NORMAL) telah dimulakan oleh {0}! Baca Bismillah, tekan butang "Masuk" untuk bergabung bersama kami di Dunia Zi'bun.</value>
 	</string>
 	<string key="PlayerStartedChaosGame" isgif="true">
 		<!-- 0 - Player name -->
-		<value>📣 {0} telah memulakan permainan(CHAOS)! baca BasmAllah, tekan /join untuk bergabung. 😈</value>
-		<value>📣 Yuhuuu! Permainan (CHAOS) telah dimulakan oleh {0} ! Tekan /join untuk bergabung, jangan lupa baca Bismillah yaa ikhwahfillah. 😈</value>
+		<value>📣 {0} telah memulakan permainan(CHAOS)! baca BasmAllah, tekan butang "Masuk" untuk bergabung. 😈</value>
+		<value>📣 Yuhuuu! Permainan (CHAOS) telah dimulakan oleh {0} ! Tekan butang "Masuk" untuk bergabung, jangan lupa baca Bismillah yaa ikhwahfillah. 😈</value>
 	</string>
 	<string key="MinuteLeftToJoin">
-		<value>📣 Seminit lagi untuk /join, siap-siap ye, yaa ikhwah fillah.</value>
+		<value>📣 Seminit lagi untuk bergabung, siap-siap ye, yaa ikhwah fillah.</value>
 	</string>
 	<string key="SecondsLeftToJoin">
 		<!-- 0 - remaining seconds (number) -->
-		<value>📣 {0} saat lagi untuk /join, jangan lupa baca BasmAllah.</value>
+		<value>📣 {0} saat lagi untuk bergabung, jangan lupa baca BasmAllah.</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>SubhanAllah, ini je ke yang ade ? Tak dapat nak main, ana sebagai bot tak boleh buat apa. Mungkin yang lain masih sibuk.</value>
@@ -1123,7 +1128,7 @@ Deprecated strings (only there so your file will pass through validation with no
 		<value>Antum kemana?, jangan menghilangkan diri, antum tak boleh lari dari apa yang antum telah mulakan.</value>
 	</string>
 	<string key="NoGame">
-		<value>tiada permainan.  Mulakan Permainan dengan /startgame atau buat huru hara dengan /startchaos, Jangan lupa baca Basmallah</value>
+		<value>Tiada permainan.  Mulakan Permainan dengan /startgame atau buat huru hara dengan /startchaos, Jangan lupa baca Basmallah</value>
 	</string>
 	<string key="GroupAdminOnly">
 		<value>Admin Group je boleh guna command ni.</value>
@@ -1143,7 +1148,7 @@ Deprecated strings (only there so your file will pass through validation with no
 	</string>
 	<string key="AddedToWaitList">
 		<!-- 0 - target's name -->
-		<value>Antum telah meminta ana untuk mengingatkan antum jika terdapat permainan baru di Group {0}. Ana akan memberikan notifikasi untuk mengingatkan antum bila ada permainan baru, jangan lupa baca basmAllah sebelum /join</value>
+		<value>Antum telah meminta ana untuk mengingatkan antum jika terdapat permainan baru di Group {0}. Ana akan memberikan notifikasi untuk mengingatkan antum bila ada permainan baru, jangan lupa baca basmallah sebelum menyertai</value>
 	</string>
 	<string key="NotifyNewGame">
 		<!-- 0 - target's name -->
@@ -1177,12 +1182,12 @@ Deprecated strings (only there so your file will pass through validation with no
 	<string key="SecondsAdded">
 		<!-- 0 - Seconds added by /extend command -->
 		<!-- 1 - Total seconds remaining -->
-		<value>Masa permainan dilanjutkan {0} saat!\n{1} tinggal untuk /join</value>
+		<value>Masa permainan dilanjutkan {0} saat!\n{1} tinggal untuk sertai</value>
 	</string>
 	<string key="SecondsRemoved">
 		<!-- 0 - Seconds removed by /extend command -->
 		<!-- 1 - Total seconds remaining -->
-		<value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk /join</value>
+		<value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk bergabung</value>
 	</string>
 	<string key="CantExtend">
 		<value>Hanya admin group boleh melanjutkan masa lebih dari sekali! Sabar ya, boleh cuba seru admin untuk pertolongan</value>
@@ -1455,13 +1460,22 @@ Deprecated strings (only there so your file will pass through validation with no
 		<value>Tanner Team</value>
 	</string>
 	<string key="JoinButton">
-		<value>Sertai</value>
+		<value>Masuk</value>
 	</string>
 	<string key="NotMember">
 		<value>Anda tidak boleh menyertai permainan ini kerana anda bukan dalam kumpulan {0}.</value>
 	</string>
 	<string key="JoinByButton">
-		<value>Sila jangan gunakan command untuk join. Gunakan butang ini.</value> 
+		<value>Sila jangan gunakan command join. Gunakan butang ini.</value> 
 	</string>
+	<string key="PlayerVoteCounts">
+    <value>{0} pemain telah mengundi untuk menghukum bunuh, Jumlah pemain {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
 
 </strings>

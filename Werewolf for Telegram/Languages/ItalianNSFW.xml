@@ -3,17 +3,19 @@
 <strings>
 	<language name="Italiano - NSFW"
 			base="Italiano"
-			variant="NSFW"/>
+			variant="NSFW"
+			code="it"
+			isDefault="false"/>
 	<string key="NotInGame" deprecated="true">
 		<value>Ma cosa ti fumi? Non sei neanche in partita.</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} ha avviato una partita… usate /join se volete diventare asociali anche voi!</value>
-		<value>Una nuova partita è stata iniziata da {0}! Ma non avevi nient'altro da fare? Perdete tempo anche voi facendo /join :P</value>
+		<value>{0} ha avviato una partita… cliccate Join se volete diventare asociali anche voi!</value>
+		<value>Una nuova partita è stata iniziata da {0}! Ma non avevi nient'altro da fare? Perdete tempo anche voi cliccando Join :P</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
-		<value>{0} Ha iniziato una partita caos! Usa /join per unirti!\n(È caos, quindi non si capirà un cazzo)</value>
-		<value>Una nuova partita caos è stata iniziata da {0}! Usa /join per farti mangiare!</value>
+		<value>{0} Ha iniziato una partita caos! Clicca su Join per unirti!\n(È caos, quindi non si capirà un cazzo)</value>
+		<value>Una nuova partita caos è stata iniziata da {0}! Clicca su Join per farti mangiare!</value>
 	</string>
 	<string key="NoJoinGameRunning" deprecated="true">
 		<value>La partita è ancora in corso: ora siediti, piangi e aspetta.</value>
@@ -22,13 +24,13 @@
 		<value>Oh, non insistere! Sei già dentro!</value>
 	</string>
 	<string key="MinuteLeftToJoin">
-		<value>Ancora 1 minuto per usare /join…</value>
-		<value>Manca un minuto alla carneficina. Fate /join!</value>
-		<value>Mancano 60 secondi! /join now!</value>
+		<value>Ancora 1 minuto…</value>
+		<value>Manca un minuto alla carneficina!</value>
+		<value>Mancano 60 secondi!</value>
 	</string>
 	<string key="SecondsLeftToJoin">
-		<value>Ancora {0} secondi per usare /join…</value>
-		<value>Mancano {0} all'inizio! Ultima chance per fare /join!</value>
+		<value>Ancora {0} secondi per cliccare Join!</value>
+		<value>Mancano {0} all'inizio! Ultima chance!</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>Ah, tutti cagasotto, non siamo abbastanza. Cancello 'sta partita vah…</value>
@@ -1263,12 +1265,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Tempo aumentato di {0} secondi!\nNe hai ancora {1} per fare /join</value>
+    <value>Tempo aumentato di {0} secondi!\nNe hai ancora {1} per joinare.</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Tempo ridotto di {0} secondi!\nNe hai ancora {1}per fare /join</value>
+     <value>Tempo ridotto di {0} secondi!\nNe hai ancora {1} per joinare.</value>
   </string>
   <string key="CantExtend">
     <value>Eh, no, solo gli admin possono prolungare il tempo più di una volta!</value>
@@ -1298,4 +1300,16 @@
   <string key="NotMember">
     <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
   </string>
+    <string key="JoinByButton">
+    <value>Ehi, non spammare comandi per joinare. Usa questo bottone, invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
   </strings>

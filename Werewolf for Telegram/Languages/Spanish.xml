@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Español (España)" base="Español" variant="España"/>
+  <language name="Español (España)" base="Español" variant="España" code="es" isDefault="true"/>
   <string key="NotInGame">
     <value>No parece que estés en una partida ahora mismo...</value>
   </string>
   <string key="PlayerStartedGame">
     <!-- 0 - Player name -->
-    <value>¡{0} ha empezado una partida! Usa /join para unirte a la diversión… ¡y probablemente morir!</value>
-    <value>¡{0} ha iniciado una nueva partida! ¡Usa /join para ser comido!</value>
+    <value>¡{0} ha empezado una partida! Pulsa el botón para unirte a la diversión… ¡y probablemente morir!</value>
+    <value>¡{0} ha iniciado una nueva partida! ¡Pulsa el botón para ser comido!</value>
   </string>
   <string key="PlayerStartedChaosGame">
    <!-- 0 - Player name -->
-   <value>¡{0} ha empezado una partida caótica! Usa /join para unirte a la diversión… y probablemente morir :P</value>
-   <value>¡{0} ha iniciado una nueva partida caótica! ¡Usa /join para ser comido!</value>
+   <value>¡{0} ha empezado una partida caótica! Pulsa el botón para unirte a la diversión… y probablemente morir :P</value>
+   <value>¡{0} ha iniciado una nueva partida caótica! ¡Pulsa el botón para ser comido!</value>
  </string>
   <string key="NoJoinGameRunning">
     <value>¡No te puedes unir ahora! La partida ya ha comenzado.</value>
@@ -21,11 +21,11 @@
     <value>¡Ya te has unido!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>Queda 1 minuto para unirse con /join.</value>
+    <value>Queda 1 minuto para unirse.</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>Quedan {0} segundos para unirse con /join.</value>
+    <value>Quedan {0} segundos para unirse.</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>¡No hay suficientes jugadores, se cancela el juego!</value>
@@ -1371,6 +1371,21 @@
     <value>¡Oh, no! {0} era la borracha, y, al comérosla, os ha provocado una intoxicación que os impide actuar la siguiente noche {1}.</value>
   </string>
     <string key="JoinButton"><!-- this is for a button, no markdown or html -->
-    <value>Me uno</value>
+    <value>¡Palante!</value>
+  </string>
+    <string key="NotMember">
+    <value>No puedes unirte al juego porque parece que no pertecenes a {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>¡A ver cuántas veces tendré que repetir esto! Dejad de usar join, ahora hay un botón que lo sustituye. Superadlo ya.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jugadores han votado, {1} en total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>¿Activar linchamientos secretos?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>La activación de linchamientos secretos está: {0}</value>
   </string>
 </strings>
