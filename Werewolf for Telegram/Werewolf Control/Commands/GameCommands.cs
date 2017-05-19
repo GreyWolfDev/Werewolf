@@ -218,43 +218,37 @@ namespace Werewolf_Control
                     }
                 return;
             }
+        }
 
-            //if (game != null || node != null)
-            //{
-            //    //try grabbing the game again...
-            //    if (node != null || isadmin)
-            //    {
-            //        game =
-            //            node?.Games.FirstOrDefault(
-            //                x => x.GroupId == update.Message.Chat.Id);
-            //        if (isadmin || (game?.Users.Contains(update.Message.From.Id) ?? false))
-            //        {
-            //            int seconds;
-            //            seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
-            //            if (seconds < 0 && !isadmin)
-            //                Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
-            //            else
-            //                using (var db = new WWContext())
-            //                {
-            //                    if (isadmin || (db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id).AllowExtend ?? false)) //default value is false. if you change that, check MakeDefaultGroup and config menu!
-            //                        game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
-            //                    else
-            //                        Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
-            //                }
-            //            return;
-            //        }
-            //    }
-            //    else
-            //    {
-                    
-            //        //there is a game, but this player is not in it
-            //        Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
-            //    }
-            //}
-            //else
-            //{
-            //    Send(GetLocaleString("NoGame", GetLanguage(id)), id);
-            //}
+        [Command(Trigger = "stopwaiting", Blockable = true)]
+        public static void StopWaiting(Update update, string[] args)
+        {
+            long groupid = 0;
+            string groupname = "";
+            if (update.Message.Chat.Type == ChatType.Group)
+            {
+                groupid = update.Message.Chat.Id;
+                groupname = update.Message.Chat.Title;
+            }
+            else if (args.Length >= 2) {
+                using (var db = new WWContext())
+                {
+                    var grp = GetGroup(args[1], db);
+                    groupid = grp?.GroupId ?? 0;
+                    groupname = grp?.Name ?? "";
+                }
+            }
+
+            if (groupid == 0)
+            {
+                Send(GetLocaleString("GroupNotFound", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                return;
+            }
+
+            using (var db = new WWContext())
+                db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {update.Message.From.Id}");
+
+            Send(GetLocaleString("DeletedFromWaitList", GetLanguage(update.Message.From.Id), groupname.ToBold()), update.Message.Chat.Id);
         }
     }
 }
