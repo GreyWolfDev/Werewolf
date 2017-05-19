@@ -99,7 +99,7 @@ namespace Werewolf_Node
                 //create our button
                 _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://t.me/{Program.Me.Username}?start=" + deeplink }
+                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://telegram.me/{Program.Me.Username}?start=" + deeplink }
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
                 #if DEBUG
