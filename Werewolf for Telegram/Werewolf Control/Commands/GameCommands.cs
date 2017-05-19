@@ -230,7 +230,7 @@ namespace Werewolf_Control
                 groupid = update.Message.Chat.Id;
                 groupname = update.Message.Chat.Title;
             }
-            else if (args.Length >= 2) {
+            else if (args.Length >= 2 && !String.IsNullOrEmpty(args[1])) {
                 using (var db = new WWContext())
                 {
                     var grp = GetGroup(args[1], db);

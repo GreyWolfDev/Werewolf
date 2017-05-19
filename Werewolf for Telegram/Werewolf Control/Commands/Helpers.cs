@@ -265,13 +265,13 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
-                var grp = db.Players.FirstOrDefault(x => x.TelegramId == id);
-                if (String.IsNullOrEmpty(grp?.Language) && grp != null)
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (String.IsNullOrEmpty(p?.Language) && p != null)
                 {
-                    grp.Language = "English";
+                    p.Language = "English";
                     db.SaveChanges();
                 }
-                return grp?.Language ?? "English";
+                return p?.Language ?? "English";
             }
         }
 
@@ -385,7 +385,9 @@ namespace Werewolf_Control
             if (str.StartsWith("@"))
                 return db.Groups.FirstOrDefault(x => x.UserName == str.Substring(1));
             //hope str is a link, and compare the hash part
-            var hash = str.Substring(str.LastIndexOf("me/")); //dummy variable becase LINQ to Entity doesn't like it.
+            var index = str.LastIndexOf("me/");
+            if (index == -1) return null;
+            var hash = str.Substring(index); //dummy variable becase LINQ to Entity doesn't like it.
             return db.Groups.FirstOrDefault(x => x.GroupLink.EndsWith(hash));
         }
     }
