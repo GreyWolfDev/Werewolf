@@ -48,6 +48,7 @@ namespace Werewolf_Node
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
         private InlineKeyboardMarkup _joinButton;
         private List<int> _joinButtons = new List<int>();
+
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
