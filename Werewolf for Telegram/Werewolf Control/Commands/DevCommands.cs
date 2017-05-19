@@ -1117,7 +1117,7 @@ namespace Werewolf_Control
                         bool preferred = (choice.ToUpper() == "Y");
                         grp.Preferred = preferred;
                         db.SaveChanges();
-                        msg = String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>")
+                        msg = (String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>"))
                             + (preferred ? " will now be able to appear on grouplist" : " won't appear on grouplist anymore");
                     }
                     else

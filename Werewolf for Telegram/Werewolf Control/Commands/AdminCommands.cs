@@ -283,7 +283,7 @@ namespace Werewolf_Control
             }
 
             var link = args[1].Trim();
-            if (!Regex.IsMatch(link, @"^(https?:\/\/)?t(elegram)?\.(me|dog)\/joinchat\/([a-zA-Z0-9_\-]+)$"))
+            if (!Regex.IsMatch(link, @"^(https?:\/\/)?t(elegram)?\.me\/joinchat\/([a-zA-Z0-9_\-]+)$"))
             {
                 Send("This is an invalid telegram join link.", update.Message.Chat.Id);
                 return;
