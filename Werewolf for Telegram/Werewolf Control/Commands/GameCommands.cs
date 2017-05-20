@@ -248,7 +248,7 @@ namespace Werewolf_Control
             using (var db = new WWContext())
                 db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {update.Message.From.Id}");
 
-            Send(GetLocaleString("DeletedFromWaitList", GetLanguage(update.Message.From.Id), groupname.ToBold()), update.Message.Chat.Id);
+            Send(GetLocaleString("DeletedFromWaitList", GetLanguage(update.Message.From.Id), groupname.ToBold()), update.Message.From.Id);
         }
     }
 }
