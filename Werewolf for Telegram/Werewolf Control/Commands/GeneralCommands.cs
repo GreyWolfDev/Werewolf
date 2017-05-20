@@ -319,20 +319,19 @@ namespace Werewolf_Control
                         }
                     }
                 }
-
+                var button = new InlineKeyboardMarkup(new[] {
+                        new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
+                    });
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
                     Send(GetLocaleString("AlreadyOnWaitList", grp.Language, grp.Name.ToBold()),
-                        update.Message.From.Id);
+                        update.Message.From.Id, customMenu: button);
                 }
                 else
                 {
                     db.Database.ExecuteSqlCommand(
                         $"INSERT INTO NotifyGame VALUES ({update.Message.From.Id}, {id})");
                     db.SaveChanges();
-                    var button = new InlineKeyboardMarkup(new[] {
-                        new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
-                    });
                     Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id, customMenu: button);
                 }
