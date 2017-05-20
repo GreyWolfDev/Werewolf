@@ -817,7 +817,7 @@ namespace Werewolf_Control.Handler
                         case "stopwaiting":
                             using (var db = new WWContext())
                                 db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
-                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", language, grp.Name));
+                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", grp.Language, grp.Name));
                             break;
                         case "validate":
                             //choice = args[1];
