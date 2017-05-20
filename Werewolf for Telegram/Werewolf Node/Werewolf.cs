@@ -2657,7 +2657,6 @@ namespace Werewolf_Node
                         Send(GetLocaleString("GuardBlockedKiller", skilled.GetName()), sk.Id);
                         skilled.WasSavedLastNight = true;
                         DBKill(sk, skilled, KillMthd.SerialKilled);
-                        skilled.BeingVisitedSameNightCount++;
                     }
                     else
                     {
