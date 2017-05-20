@@ -48,6 +48,7 @@ namespace Werewolf_Node
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
         private InlineKeyboardMarkup _joinButton;
         private List<int> _joinButtons = new List<int>();
+        private int _playerListId = 0;
 
         #region Constructor
         /// <summary>
@@ -900,11 +901,9 @@ namespace Werewolf_Node
                 bool byteMax = false;
                 bool pList = false;
                 var i = 0;
-                while (_messageQueue.Count > 0 & !byteMax)
+                while (_messageQueue.Count > 0 && !byteMax)
                 {
-
-
-
+                    
                     i++;
                     var m = _messageQueue.Peek();
 
@@ -957,7 +956,7 @@ namespace Werewolf_Node
                         else
                         {
                             _messageQueue.Dequeue(); //remove the message, we are sending it.
-                            final += m.Msg + Environment.NewLine;
+                            final += m.Msg + Environment.NewLine + Environment.NewLine;
                             if (m.RequestPM)
                                 requestPM = true;
                             if (m.PlayerList)
@@ -1018,7 +1017,6 @@ namespace Werewolf_Node
                 Send(final);
         }
 
-        private int _playerListId;
 
         private void SendPlayerList(bool joining = false)
         {
