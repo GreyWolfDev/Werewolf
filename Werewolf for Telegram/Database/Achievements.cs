@@ -118,7 +118,7 @@ namespace Database
         Veteran = 1125899906842624,
         [Display(Name = "No Sorcery!"), Description("As a wolf, kill your sorcerer")]
         NoSorcery = 2251799813685248,
-        [Display(Name = "Cultest Tracker"), Description("As the cultist hunter, kill at least 3 cultists in one game")]
+        [Display(Name = "Cultist Tracker"), Description("As the cultist hunter, kill at least 3 cultists in one game")]
         CultistTracker = 4503599627370496,
         [Display(Name = "I'M NOT DRUN-- *BURPPP*"), Description("As the clumsy guy, have at least 3 correct lynches by the end of the game")]
         ImNotDrunk = 9007199254740992,
@@ -134,7 +134,7 @@ namespace Database
         President = 288230376151711744,
         [Display(Name = "I Helped!"), Description("As a wolf cub, the alive pack has 2 successful eat attempts after you die")]
         IHelped = 576460752303423488,
-        [Display(Name = "It Aas a Busy Night!"), Description("During the same night, got visited by 3 or more different visiting roles")]
+        [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visiting roles")]
         ItWasABusyNight = 1152921504606846976
     } // MAX VALUE: 9223372036854775807
       //            
