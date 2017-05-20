@@ -334,7 +334,7 @@ namespace Werewolf_Control
                         new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
                     });
                     Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
-                        update.Message.From.Id);
+                        update.Message.From.Id, customMenu: button);
                 }
             }
         }
