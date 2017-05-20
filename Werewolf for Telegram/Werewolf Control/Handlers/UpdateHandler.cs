@@ -819,6 +819,11 @@ namespace Werewolf_Control.Handler
                                 Send(reply, query.Message.Chat.Id);
                             }
                             break;
+                        case "stopwaiting":
+                            using (var db = new WWContext())
+                                db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
+                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", language, grp.Name.ToBold()));
+                            break;
                         case "validate":
                             //choice = args[1];
                             if (choice == "All")

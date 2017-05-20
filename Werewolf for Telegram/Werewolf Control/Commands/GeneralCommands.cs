@@ -330,6 +330,9 @@ namespace Werewolf_Control
                     db.Database.ExecuteSqlCommand(
                         $"INSERT INTO NotifyGame VALUES ({update.Message.From.Id}, {id})");
                     db.SaveChanges();
+                    var button = new InlineKeyboardMarkup(new[] {
+                        new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
+                    });
                     Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id);
                 }
