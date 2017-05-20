@@ -256,6 +256,24 @@ namespace Werewolf_Node
                         {
                             r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
                         }
+
+                        if (SecondsToAdd != 0)
+                        {
+                            i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
+                            var msg = "";
+                            var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
+                            if (SecondsToAdd > 0)
+                                msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
+                            else
+                            {
+                                SecondsToAdd = -SecondsToAdd;
+                                msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
+                            }
+                            if (Settings.GameJoinTime > i)
+                                r = Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+
+                            SecondsToAdd = 0;
+                        }
                         if (r != null)
                         {
                             _joinButtons.Add(r.MessageId);
@@ -264,23 +282,6 @@ namespace Werewolf_Node
                     catch
                     {
                         // ignored
-                    }
-                    if (SecondsToAdd != 0)
-                    {
-                        i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
-                        var msg = "";
-                        var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
-                        if (SecondsToAdd > 0)
-                            msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
-                        else
-                        {
-                            SecondsToAdd = -SecondsToAdd;
-                            msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
-                        }
-                        if (Settings.GameJoinTime > i)
-                            Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyMarkup: _joinButton);
-
-                        SecondsToAdd = 0;
                     }
                     Thread.Sleep(1000);
                 }
