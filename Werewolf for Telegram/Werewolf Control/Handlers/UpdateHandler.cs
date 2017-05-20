@@ -1,17 +1,12 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Windows.Forms.Design;
-using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
-using Database;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -822,7 +817,7 @@ namespace Werewolf_Control.Handler
                         case "stopwaiting":
                             using (var db = new WWContext())
                                 db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
-                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", language, grp.Name.ToBold()));
+                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", language, grp.Name));
                             break;
                         case "validate":
                             //choice = args[1];
