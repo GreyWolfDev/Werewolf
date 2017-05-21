@@ -93,7 +93,6 @@ namespace Werewolf_Node
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
                     //AddPlayer(u);
-                    SendPlayerList(true);
                 }
 
                 var deeplink = $"{Program.ClientId.ToString("N")}{Guid.ToString("N")}";
@@ -108,9 +107,12 @@ namespace Werewolf_Node
                 #else
                 _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 #endif
-
+                
                 //let's keep this on for a while, then we will delete it
                 SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
+
+                SendPlayerList(true);
+
                 new Thread(GameTimer).Start();
 
             }
@@ -911,7 +913,16 @@ namespace Werewolf_Node
                     {
                         _messageQueue.Dequeue();
                         if (_playerListId == 0)
-                            _playerListId = Send(m.Msg).Result.MessageId;
+                        {
+                            try
+                            {
+                                _playerListId = Send(m.Msg).Result.MessageId;
+                            }
+                            catch
+                            {
+                                //ignored
+                            }
+                        }
                         else
                             Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
                         continue;
@@ -1020,7 +1031,7 @@ namespace Werewolf_Node
 
         private void SendPlayerList(bool joining = false)
         {
-            if (!_playerListChanged & !joining) return;
+            if (!_playerListChanged && !joining) return;
             if (Players == null) return;
             try
             {
