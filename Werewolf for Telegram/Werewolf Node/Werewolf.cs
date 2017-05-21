@@ -231,7 +231,7 @@ namespace Werewolf_Node
                 //start with the joining time
                 var count = Players.Count;
                 int secondsElapsed = 0;
-                var notifiedPlayers = new List<IPlayer>();
+                var notifiedPlayers = new List<int>();
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -248,12 +248,11 @@ namespace Werewolf_Node
                         i = Math.Min(i, Math.Max(120, i - 30));
                         count = Players.Count;
                     }
-
-                    secondsElapsed++;
-                    if (secondsElapsed == 30) //every 30 seconds, tell in group who have joined
+                    
+                    if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x)).Aggregate("", (cur, p) => cur + ", " + p.GetName())));
-                        notifiedPlayers = Players;
+                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')));
+                        notifiedPlayers = Players.Select(x => x.Id).ToList();
                         secondsElapsed = 0;
                     }
 
