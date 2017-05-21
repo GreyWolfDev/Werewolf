@@ -1066,13 +1066,13 @@ Deprecated strings (only there so your file will pass through validation with no
 	</string>
 	<string key="PlayerStartedGame" isgif="true">
 		<!-- 0 - Player name -->
-		<value>📣 {0} telah memulakan permainan (NORMAL)! Jom bergabung bersama kami di Dunia Zi'bun dengan klik butang "Masuk". Baca BasmAllah dulu ye.</value>
-		<value>📣 Alhamdulillah! Permainan (NORMAL) telah dimulakan oleh {0}! Baca Bismillah, tekan butang "Masuk" untuk bergabung bersama kami di Dunia Zi'bun.</value>
+		<value>📣 {0} telah memulakan permainan (NORMAL)! Jom bergabung bersama kami di Dunia Zi'bun dengan klik butang <b>MASUK</b>. Baca BasmAllah dulu ye.</value>
+		<value>📣 Alhamdulillah! Permainan (NORMAL) telah dimulakan oleh {0}! Baca Bismillah, tekan butang <b>MASUK</b> untuk bergabung bersama kami di Dunia Zi'bun.</value>
 	</string>
 	<string key="PlayerStartedChaosGame" isgif="true">
 		<!-- 0 - Player name -->
-		<value>📣 {0} telah memulakan permainan(CHAOS)! baca BasmAllah, tekan butang "Masuk" untuk bergabung. 😈</value>
-		<value>📣 Yuhuuu! Permainan (CHAOS) telah dimulakan oleh {0} ! Tekan butang "Masuk" untuk bergabung, jangan lupa baca Bismillah yaa ikhwahfillah. 😈</value>
+		<value>📣 {0} telah memulakan permainan(CHAOS)! baca BasmAllah, tekan butang <b>MASUK</b> untuk bergabung. 😈</value>
+		<value>📣 Yuhuuu! Permainan (CHAOS) telah dimulakan oleh {0} ! Tekan butang <b>MASUK</b> untuk bergabung, jangan lupa baca Bismillah yaa ikhwahfillah. 😈</value>
 	</string>
 	<string key="MinuteLeftToJoin">
 		<value>📣 Seminit lagi untuk bergabung, siap-siap ye, yaa ikhwah fillah.</value>
@@ -1209,7 +1209,7 @@ Deprecated strings (only there so your file will pass through validation with no
 		<value>Time to send ping message: {0}</value>
 	</string>
 	<string key="PingInfo">
-		<value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+		<value>Time to receive ping message: {0}\nMessages per second: {1}</value>
 	</string>
 	<string key="GroupCommandOnly">
 		<value>You must run this command in a group</value>
@@ -1477,5 +1477,13 @@ Deprecated strings (only there so your file will pass through validation with no
   <string key="EnableSecretLynchA">
     <value>Enabling of secret Lynch set to: {0}</value>
   </string>
-
+  <string key="NoAutoJoin">
+    <value>{0}, Peringatan! anda juga perlu menyertai melalui butang <b>MASUK</b> semula.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
 </strings>
