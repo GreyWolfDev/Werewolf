@@ -537,16 +537,9 @@ namespace Werewolf_Control.Helpers
                 }
                 //check master string for {#} values
                 int vars = 0;
-                if (masterString.Contains("{0}"))
-                    vars = 1;
-                if (masterString.Contains("{1}"))
-                    vars = 2;
-                if (masterString.Contains("{2}"))
-                    vars = 3;
-                if (masterString.Contains("{3}"))
-                    vars = 4;
-                if (masterString.Contains("{4}"))
-                    vars = 5;
+                for (int i = 0; i < 5; i++)
+                    if (masterString.Contains("{" + i + "}"))
+                        vars = i + 1;
 
                 foreach (var value in values)
                 {
@@ -568,7 +561,7 @@ namespace Werewolf_Control.Helpers
                         fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.FatalError));
                     }
 
-                    if (value.Value.ToLower().Contains("/join"))
+                    if (value.Value.ToLower().Contains("/join") && !fileErrors.Any(x => x.File == file.FileName && x.Key == key && x.Level == ErrorLevel.JoinLink))
                         fileErrors.Add(new LanguageError(file.FileName, key, "", ErrorLevel.JoinLink));
                 }
             }
