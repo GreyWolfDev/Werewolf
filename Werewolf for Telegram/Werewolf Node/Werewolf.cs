@@ -22,8 +22,8 @@ namespace Werewolf_Node
     class Werewolf : IDisposable
     {
         public long ChatId;
-        public int GameDay, GameId,
-            SecondsToAdd = 0;
+        public int GameDay, GameId;
+        private int _secondsToAdd = 0;
         public List<IPlayer> Players = new List<IPlayer>();
         public bool IsRunning,
             IsJoining = true,
@@ -230,52 +230,63 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
+                int secondsElapsed = 0;
+                var notifiedPlayers = new List<IPlayer>();
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
                         return;
-                    if (KillTimer)
+
+                    if (KillTimer) //forcestart
                     {
                         KillTimer = false;
                         break;
                     }
-                    if (count != Players.Count)
+
+                    if (count != Players.Count) //if a player joined, add time
                     {
                         i = Math.Min(i, Math.Max(120, i - 30));
                         count = Players.Count;
                     }
+
+                    secondsElapsed++;
+                    if (secondsElapsed == 30) //every 30 seconds, tell in group who have joined
+                    {
+                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x)).Aggregate("", (cur, p) => cur + ", " + p.GetName())));
+                        notifiedPlayers = Players;
+                        secondsElapsed = 0;
+                    }
+
                     try
                     {
                         Telegram.Bot.Types.Message r = null;
-                        if (i == Settings.GameJoinTime - 60)
-                        {
-                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
-                        }
-                        else if (i == Settings.GameJoinTime - 30)
-                        {
-                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
-                        }
-                        else if (i == Settings.GameJoinTime - 10)
-                        {
-                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
-                        }
 
-                        if (SecondsToAdd != 0)
+                        var importantSeconds = new[] { 10, 30, 60 }; //notify when time is running out
+                        foreach (var s in importantSeconds)
                         {
-                            i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
-                            var msg = "";
-                            var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
-                            if (SecondsToAdd > 0)
-                                msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
-                            else
+                            if (i == Settings.GameJoinTime - s)
                             {
-                                SecondsToAdd = -SecondsToAdd;
-                                msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
+                                var str = s == 60 ? GetLocaleString("MinuteLeftToJoin") : GetLocaleString("SecondsLeftToJoin", s.ToString().ToBold());
+                                r = Program.Bot.SendTextMessage(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                                break;
                             }
-                            if (Settings.GameJoinTime > i)
-                                r = Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                        }
 
-                            SecondsToAdd = 0;
+                        if (_secondsToAdd != 0)
+                        {
+                            i = Math.Max(i - _secondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
+
+                            if (Settings.GameJoinTime > i)
+                                r = Program.Bot.SendTextMessage(
+                                    ChatId, 
+                                    GetLocaleString(
+                                        _secondsToAdd > 0 ? "SecondsAdded" : "SecondsRemoved", 
+                                        Math.Abs(_secondsToAdd).ToString().ToBold(), 
+                                        TimeSpan.FromSeconds(Settings.GameJoinTime - i).ToString(@"mm\:ss").ToBold()
+                                    ), parseMode: ParseMode.Html, replyMarkup: _joinButton
+                                ).Result;
+
+                            _secondsToAdd = 0;
                         }
                         if (r != null)
                         {
@@ -1931,7 +1942,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("CantExtend"));
                     return;
                 }
-                SecondsToAdd = seconds;
+                _secondsToAdd = seconds;
                 HaveExtended.Add(p.TeleUser.Id);
             }
             return;
