@@ -6,15 +6,15 @@
     <value>Schon vergessen? Du bist keinem Spiel beigetreten!</value>
   </string>
   <string key="PlayerStartedGame">
-    <value>{0} startete ein neues Spiel! Nutze /join, um beizutreten und alle Erinnerungen zu verlieren.</value>
-    <value>Ein neues Spiel wurde von {0} gestartet! Nutze /join, um von sehr vergesslichen Wölfen gefressen zu werden!</value>
-    <value>{0} hat... äh... irgendwas gemacht. Ich glaube, du solltest /join benutzen.</value>
+    <value>{0} startete ein neues Spiel! Nutze den Join-Knopf, um beizutreten und alle Erinnerungen zu verlieren.</value>
+    <value>Ein neues Spiel wurde von {0} gestartet! Nutze den Join-Knopf, um von sehr vergesslichen Wölfen gefressen zu werden!</value>
+    <value>{0} hat... äh... irgendwas gemacht. Ich glaube, du solltest den Join-Knopf benutzen.</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>{0} startete ein neues Chaos-Spiel! Nutze /join, um komplett verwirrt zu werden.</value>
-    <value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze /join, um von vollkommen verwirrten Mitspieler getötet zu werden!</value>
-    <value>{0} hat irgendwas gemacht... Im dOrf brIChT chAoS AUs!</value>
-    <value>{0} steht auf dem Marktplatz und heult wie ein Wolf... was ist denn da los? Ach ja, ein Chaos-Spiel! /join, aber schnell!</value>
+    <value>{0} startete ein neues Chaos-Spiel! Nutze den Join-Knopf, um komplett verwirrt zu werden.</value>
+    <value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze den Join-Knopf, um von vollkommen verwirrten Mitspieler getötet zu werden!</value>
+    <value>{0} hat irgendwas gemacht... Im Dorf bricht Chaos aus!</value>
+    <value>{0} steht auf dem Marktplatz und heult wie ein Wolf... was ist denn da los? Ach ja, ein Chaos-Spiel! Nutze den Join-Knopf, aber schnell!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Das Spiel läuft bereits, schon vergessen? Schreibe /nextgame, wenn ich dich beim nächsten Spielstart benachrichtigen soll.</value>
@@ -1022,7 +1022,7 @@
     <value>Du kannst ein Spiel nur in einer Gruppe starten.</value>
   </string>
   <string key="PingInfo">
-    <value>Reaktionszeit von Telegram: {0}\nAktuelle CPU-Auslastung: {1}%\nNachrichten pro Sekunde: {2}</value>
+    <value>Reaktionszeit von Telegram: {0}\nNachrichten pro Sekunde: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Welche Sprache?\nAktuell: {0}</value>
@@ -1467,5 +1467,9 @@
   </string>
   <string key="DeletedFromWaitList">
     <value>Was, ich soll dich nicht mehr für {0} erinnern? Oh, die Gruppe hätte ich sowieso fast vergessen...</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} vergessliche Dorfbewohner haben das Dorf in den letzten 30 Sekunden betreten.</value>
   </string>
 </strings>

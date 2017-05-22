@@ -1012,20 +1012,20 @@ Deprecated strings (only there so your file will pass through validation with no
     </string>
     <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} telah memulakan permainan! Gunakan /join untuk menyertai permainan dan mungkin mati :P</value>
-    <value>Satu permainan baru telah dimulakan oleh {0}! Gunakan /join untuk masuk dalam kampung misteri!</value>
+    <value>{0} telah memulakan permainan! Gunakan SERTAI untuk menyertai permainan dan mungkin mati :P</value>
+    <value>Satu permainan baru telah dimulakan oleh {0}! Gunakan SERTAI untuk masuk dalam kampung misteri!</value>
     </string>
     <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} telah memulakan permainan huru hara! Gunakan /join untuk menyertai permainan dan mungkin mati :P</value>
-    <value>Satu permainan huru-hara baru telah dimulakan oleh {0}! Gunakan /join untuk masuk dalam kampung misteri</value>
+    <value>{0} telah memulakan permainan huru hara! Gunakan SERTAI untuk menyertai permainan dan mungkin mati :P</value>
+    <value>Satu permainan huru-hara baru telah dimulakan oleh {0}! Gunakan SERTAI untuk masuk dalam kampung misteri</value>
     </string>
     <string key="MinuteLeftToJoin">
-    <value>1 minit untuk /join</value>
+    <value>1 minit untuk SERTAI</value>
     </string>
     <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} saat tinggal untuk /join</value>
+    <value>{0} saat tinggal untuk SERTAI</value>
     </string>
     <string key="NotEnoughPlayers">
     <value>Pemain tidak mencukupi membatalkan permainan!</value>
@@ -1125,12 +1125,12 @@ Deprecated strings (only there so your file will pass through validation with no
     <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Masa permainan di tambah {0} saat!\n{1} tinggal untuk /join</value>
+    <value>Masa permainan di tambah {0} saat!\n{1} tinggal untuk SERTAI</value>
     </string>
     <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk /join</value>
+     <value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk SERTAI</value>
     </string>
     <string key="CantExtend">
     <value>Hanya admin group boleh memanjangkan masa melebihi sekali!</value>
@@ -1154,7 +1154,7 @@ Deprecated strings (only there so your file will pass through validation with no
 		<value>Time to send ping message: {0}</value>
 	  </string>
 	  <string key="PingInfo">
-		<value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+		<value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%</value>
 	  </string>
 	  <string key="GroupCommandOnly">
 		<value>You must run this command in a group</value>
@@ -1424,4 +1424,17 @@ Deprecated strings (only there so your file will pass through validation with no
 	  <string key="EnableSecretLynchA">
 	    <value>Membenarkan undian rahsia ditetapkan ke: {0}</value>
 	  </string>
+	  <string key="NoAutoJoin">
+    <value>{0}, anda juga perlu klik SERTAI.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Tidak menjumpai kumpulan. Sila jalankan command ini, dalam kumpulan yang anda tunggukan.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Anda telah dipadam daripada senarai {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} telah menyertai permainan 30 saat yang lalu.</value>
+  </string>
 </strings>
