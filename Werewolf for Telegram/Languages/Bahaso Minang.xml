@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Bahaso Minang" base="Indonesia" variant="Bahaso Minang" owner="Efzet"/>
+  <language name="Bahaso Minang" base="Indonesia" variant="Bahaso Minang" owner="Efzet" code="id" isDefault="true"/>
   <string key="NotInGame" deprecated="true">
     <value>Sanak alun gabuang di game ko lai, jan lupo gabuang di game barikuiknyo yo :)</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>📣 {0} alah mulai pamainan (NORMAL)! bagabuang takan /join</value>
-    <value>📣 Yeyeye! Pamainan (NORMAL) alah dimulai dek {0}! takan /join untuak bagabuang.</value>
+    <value>📣 {0} alah mulai pamainan (NORMAL)! bagabuang takan tombol nan alah disadioan untuk sato main.</value>
+    <value>📣 Yeyeye! Pamainan (NORMAL) alah dimulai dek {0}! takan tombol nan alah disadioan untuk sato main.</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>📣 TENG TEREEENG! {0} alah mulai pamainan (CHAOS)! capeklah /join sanak, janganlah mengemat-ngemat juga lagi, haha! ⚔</value>
-    <value>📣 HAKONYO! Pamainan (CHAOS) alah dimulai dek {0}! capeklah /join sanak, ajak kawan-kawan tadi! ⚔</value>
-    <value>📣 TELOLET! Capeklah kito main sanak, {0} alah mamulai pamainan (CHAOS). ajak kawan-kawan tadi /join ! ⚔</value>
-    <value>📣 NTPZ! Kito kawanan lah {0} main (CHAOS) sanak, peklah /join ⚔</value>
+    <value>📣 TENG TEREEENG! {0} alah mulai pamainan (CHAOS)! capeklah takan tombol nan alah disadioan untuk sato main, janganlah mengemat-ngemat juga lagi, haha! ⚔</value>
+    <value>📣 HAKONYO! Pamainan (CHAOS) alah dimulai dek {0}! capeklah takan tombol nan alah disadioan untuk sato main, ajak kawan-kawan tadi! ⚔</value>
+    <value>📣 TELOLET! Capeklah kito main sanak, {0} alah mamulai pamainan (CHAOS). ajak kawan-kawan tadi join ! ⚔</value>
+    <value>📣 NTPZ! Kito kawanan lah {0} main (CHAOS) sanak, peklah takan tombol nan alah disadioan untuk sato main ⚔</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
     <value>Sanak talambek! pamainan sadang balangsuang. Takan /nextgame supayo dak ketinggalan.</value>
@@ -23,10 +23,10 @@
 	<value>Sanak alah bagabuang di pamainan, Tunggu se dulu yo.⌛️</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>📣 saminik lai untuak /join</value>
+    <value>📣 saminik lai untuak join. Capek lah takan tombol tu sanak!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>📣 {0} datiak lai untuak /join</value>
+    <value>📣 {0} datiak lai untuak join</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Sagiko se nan join nyo? Ma yang lain ko?? Usah denai digantuang indak bataliii ♫♫ </value>
@@ -994,7 +994,7 @@ LALOK 😌</value>
     <value>Ndeeh.. Sanak mulai pamainan dalam grup laah -_-</value>
   </string>
   <string key="PingInfo">
-    <value>Wakatu Respon Server: {0}\Current CPU Usage: {1}%\Messages per second: {2}</value>
+    <value>Wakatu Respon Server: {0}\Messages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Bahaso apo nan Sanak nio pakai?\Current: {0}</value>
@@ -1377,13 +1377,13 @@ LALOK 😌</value>
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Wakatu join ditambah {0} datiak!\njadi {1} capeklah /join</value>
-    <value>Wakatu join ditambah {0} datiak!\njadi {1} capeklah /join CTN!</value>
+    <value>Wakatu join ditambah {0} datiak!\njadi {1} capeklah join</value>
+    <value>Wakatu join ditambah {0} datiak!\njadi {1} capeklah join CTN!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Wakatu join dikurangi {0} datiak!\njadi {1} capeklah /join</value>
+     <value>Wakatu join dikurangi {0} datiak!\njadi {1} capeklah join</value>
   </string>
   <string key="CantExtend">
     <value>Lah tu, sio-sio se usaho sanaknyo 😔</value>
@@ -1405,6 +1405,38 @@ LALOK 😌</value>
 
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Onde mandeh! {0} adolah Pamabuak! Kini sanak lah teler dan indak bisa mamakan {1}...</value>
+  </string>
+
+  <string key="JoinButton">
+    <value>Sato Ciek</value>
+  </string>
+  <string key="NotMember">
+    <value>Sanak bantuaknyo dak member grup {0}. Co join grup lu.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Tolong jan mada yo sanak! Itu alah diagiah tombol untuak join.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} alah mamiliah, {1} total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Iduikan Anok-anok piliah?\nKini: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Iduikan anok-anok piliah di jadian ka: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, tolong ingek. Wak kini join pakai tombol lai.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Grup dak sobok. Jalanan command ko di grup.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sanak alah ndak ado di daftar tunggu untuak {0} lai.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} alah bagabuang dalam 30 datiak terakhir.</value>
   </string>
 
 </strings>

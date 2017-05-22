@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Persian Normal" base="فارسی" variant="[[نسخه اصلی]]" owner="Pouria007"/>
+  <language name="Persian Normal" base="فارسی" variant="[[نسخه اصلی]]" owner="Pouria007" code="fa" isDefault="true"/>
   <string key="NotInGame">
     <value>حاجی تو که توی بازی نیستی!</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>بچه ها {0} یه بازی ساخته، دکمه /join رو بزنین تا وارد بازی بشین</value>
-    <value>بچه ها {0} یه بازی ساخته، دکمه /join رو بزنین تا وارد بازی بشین
-📢 @WerewolfIRAN</value>
+    <value>بچه ها {0} یه بازی ساخته، دکمه join رو بزنین تا وارد بازی بشین</value>
+    <value>بچه ها {0} یه بازی ساخته، دکمه join رو بزنین تا وارد بازی بشین
+📢 </value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>یه بازی با حالت آشوب  توسط {0} ساخته شده. /join رو بزن تا وارد بازی بشی</value>
-    <value>یه بازی با حالت آشوب  توسط {0} ساخته شده. /join رو بزن تا وارد بازی بشی</value>
+    <value>یه بازی با حالت آشوب  توسط {0} ساخته شده. join رو بزن تا وارد بازی بشی</value>
+    <value>یه بازی با حالت آشوب  توسط {0} ساخته شده. join رو بزن تا وارد بازی بشی</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>دیر اومدی خیلی دیره جای دیگه دل اسیره!</value>
@@ -944,13 +944,13 @@
     <value>میخوای چیکار کنی؟</value>
   </string>
   <string key="JoinFromGroup">
-    <value>باید توی گروه بزنی جوین</value>
+    <value>باید توی گروه جوین بزنی دوست عزیز!</value>
   </string>
   <string key="StartFromGroup">
     <value>باید بازی رو توی گروه استارت کنی</value>
   </string>
   <string key="PingInfo">
-    <value>زمان پاسخدهی: {0}\n مصرف سی پی یو: {1}%\n پیام بر ثانیه: {2}</value>
+    <value>زمان پاسخ دهی : {0}\nپیام در ثانیه : {1}</value>
   </string>
   <string key="WhatLang">
     <value>چه زبانی رو میخوای انتخاب کنی؟ \nزبان فعلی: {0}</value>
@@ -1367,4 +1367,34 @@
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>اوه اوه! {0} مست بوده! و حالا شما نمیتونید حمله کنید {1}...</value>
   </string>
+<string key="JoinButton">
+    <value>وارد شوید !</value>
+  </string>
+  <string key="NotMember">
+    <value>شما نمیتوانید وارد بازی شوید چرا که شما ممبر نیستید {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>از دستور join استفاده نفرمایید روی دکمه کلیک کنید .</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} تعداد بازیکنان, {1} میزان.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, توجه داشته باش که شما وارد بازی شدید توسط زدن دکمه زیر بنر بازی.</value>
+  </string>
+    <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>متاسفانه گروه یافت نشد . این دستور را در داخل گروهای بازی بزنید.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>شما از لیست انتظار پاک شدید {0}.</value>
+  </string>
+  
+  
 </strings>
+ 

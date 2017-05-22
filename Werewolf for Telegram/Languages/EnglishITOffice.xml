@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Done by Firewood (@Firewood_Loki) -->
+<!--
+	==UPDATE LOG==
+	LAST UPDATE 19/05/2017 by @Firewood_Loki
+	19/05/17	- Completed Langfile, Started Testing
+	18/05/17	- Completed Setting of this Variant
+
+	==Setting Info==
+	Guidelines: http://telegra.ph/Werewolfs-Prog-05-17
+	Lunch = Time to Eat / Kill
+	Afternoon = Time to discuss, Detective, Gunner
+	Next Day Morning = Time to vote
+-->
+<strings>
+	<language name="English (IT Office)" base="English" variant="IT Office" owner="Firewood_Loki" code="en"/>
+	<string key="NotInGame" deprecated="true">
+		<value>You are not in any game right now...</value>
+	</string>
+	<string key="PlayerStartedGame" isgif="true">
+		<value>{0} has started a Normal Werewolf with Programmer Setting.\nJoin and see if you could survive in the company!</value>
+	</string>
+	<string key="PlayerStartedChaosGame" isgif="true">
+		<value>{0} has started a Chaos Werewolf with Programmer Setting.\nJoin and see if you could survive in the company!</value>
+	</string>
+	<string key="NoJoinGameRunning" deprecated="true">
+		<value>You are late! Try joining the /nextgame earlier.</value>
+	</string>
+	<string key="AlreadyJoined" deprecated="true">
+		<value>You are already in game.</value>
+	</string>
+	<string key="MinuteLeftToJoin">
+		<value>Game starts in 1 minutes, join quick!</value>
+	</string>
+	<string key="SecondsLeftToJoin">
+		<value>Game starts in {0} seconds, join now!</value>
+	</string>
+	<string key="NotEnoughPlayers">
+		<value>Not enough workers, failed to form a proper company!\nMaybe you can check the /grouplist and join the others.</value>
+	</string>
+	<string key="StartingGameWait">
+		<value>You are working for an IT Company, which is experiencing a downsize. The Seniors Assholes are blaming others to secure their place. Kick them off and save the company!</value>
+	</string>
+	<string key="BannedForExploit" deprecated="true">
+		<value>Cheater {0} has been banned for attempting an exploit (no names starting with /).</value>
+	</string>
+	<string key="ChangeNameToJoin">
+		<value>{0} please change your name before joining.</value>
+	</string>
+	<string key="PlayerLimitReached">
+		<value>We are no longer recruiting. We already have too much workers here!</value>
+	</string>
+	<string key="PlayerJoined">
+		<value>{0} has joined the company. We have {1} workers now. We need at least {2} to form a company, and we {3} are more than enough for us.</value>
+	</string>
+	<string key="PMTheBot">
+		<value>{0}, please start the bot {1} if you want to join the game.</value>
+	</string>
+	<string key="DeadFlee">
+		<value>We do not accept your resignation.</value>
+	</string>
+	<string key="Flee">
+		<value>Coward {0} connot handle the stress from work. So he left.</value>
+	</string>
+	<string key="PlayerRoleWas">
+		<value>{0} was {1}.</value>
+	</string>
+	<string key="CountPlayersRemain">
+		<value>{0} players remain.</value>
+	</string>
+	<string key="DidntAsk" deprecated="true">
+		<value>I gotcha, but I wasn't asking...</value>
+	</string>
+	<string key="NotPlaying">
+		<value>You are not in the company!</value>
+	</string>
+	<string key="NoPlayerName">
+		<value>I do not remember such a worker.</value>
+	</string>
+	<string key="AnswerNonValid" deprecated="true">
+		<value>The one you picked was gone.</value>
+	</string>
+	<string key="WolfVotedKill">
+		<value>{0} wanted to planted {1} a surprise.</value>
+	</string>
+	<string key="PlayerVotedLynch">
+		<value>{0} suspected {1} is the shit Senior coder here.</value>
+	</string>
+	<string key="IdleKill">
+		<value>{0} didn't give his opinions twice in a row. I guess he's no different from a dead person.\n{1}</value>
+	</string>
+	<string key="TraitorTurnWolf">
+		<value>As a Popcorn Lover, you really hate the boredom here as all the Seniors died. So you ask youself: What not become one if you do want to watch the world burns? You are a Senior Asshole now!</value>
+	</string>
+	<string key="ChoiceAccepted">
+		<value>Gotcha!</value>
+	</string>
+	<string key="BeholderSeer">
+		<value>\n{0} is the real Department Manager, who could peek anyone's profile at lunch.</value>
+	</string>
+	<string key="ApprenticeNowSeer">
+		<value>Finally, {0} is gone, and you are no longer a Department Trainee, but a Department Manager. You may access other's appraisal reports at lunch.</value>
+	</string>
+	<string key="BeholderNewSeer">
+		<value>Finally, {0} has graduated from the trainee program, filling {1}'s place as the new Department Manager.</value>
+	</string>
+	<string key="SeerSees">
+		<value>Through peeking at the appraisal report, you know {0} is {1}.</value>
+	</string>
+	<string key="AskLynch">
+		<value>Who do you think is the Senior Asshole here?</value>
+	</string>
+	<string key="AskDetect">
+		<value>Whose work you would like to check?</value>
+	</string>
+	<string key="AskShoot">
+		<value>You want the board to fire who? You can name {0} more.</value>
+	</string>
+	<string key="AskVisit">
+		<value>Who do you want to sneak?</value>
+	</string>
+	<string key="AskSee">
+		<value>Whose appraisal report has kept you interested?</value>
+	</string>
+	<string key="AskGuard">
+		<value>Whose computer need your protection?</value>
+	</string>
+	<string key="AskEat">
+		<value>Who would you like to plant? Name it and kick him out of the office!</value>
+	</string>
+	<string key="AskHunt">
+		<value>Who do you think is using JAVA in their works?</value>
+	</string>
+	<string key="AskRoleModel">
+		<value>You want who to be your dedicated tutor, leading your through the internship?</value>
+	</string>
+	<string key="AskConvert">
+		<value>JAVA IS THE BEST! You want to share the best thing with who?</value>
+	</string>
+	<string key="DiscussWith"><!--Leave the leading spaces here please-->
+		<value>Your friends {0} would like to discuss with you!</value>
+	</string>
+	<string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+		<value> and </value>
+	</string>
+	<string key="RoleInfoCursed">
+		<value>You are the Bootlicker 😾 and you always monitor and protect your computer from any threats. Even at lunch, you will check the status of your computer with youe mobile. When anyone is doing anything to your computer, you will notice at the very second and take your action! If the Seniors really is planting things to you computer, you will lick the boot of the Seniors hard, until they allow you to join their plan.</value>
+	</string>
+	<string key="RoleInfoDetective">
+		<value>You are the Performance Evaluator 🕵. You can connect to others' computer and check their work in the afternoon, and you will know who is good and who is bad. Warning: The Seniors may notice the abnormality in the company network.</value>
+	</string>
+	<string key="RoleInfoDrunk">
+		<value>You are Suicidal 🍻, you have achieved nothing in your life but your job. When you are planted and fired, you'll probrably jump out of the company's window. The Seniors Assholes may feel guilty and shocked for a while. They will then halt their evil plan on the next day.</value>
+	</string>
+	<string key="RoleInfoGuardianAngel">
+		<value>You are the Security Supervisor 👼. You can access other's computer at lunch, to maintain their computer and probrably do some upgrades too. When you are maintaining the computer, no others could do evil things on it.</value>
+	</string>
+	<string key="RoleInfoGunner">
+		<value>You are the Most Trusted Employee 🔫 by the board. Say the names and the board will fire them for you. You have two chances.</value>
+	</string>
+	<string key="RoleInfoHarlot">
+		<value>You disgusting Stalker 💋. You stalk and you know things. You work on notebook and you record your stalking experience with it. Careful: Don't stalk the wrong people, or you are doomed.</value>
+	</string>
+	<string key="RoleInfoTraitor">
+		<value>As a Popcorn Lover 🖕, you enjoy drama, and dramatic life attracts you even more. When all the seniors are gone and the world is filled with peace? That's definitely a hell made of boredom. So you decided to lit the world and watch it burns.</value>
+	</string>
+	<string key="RoleInfoWolf">
+		<value>Congrats, you are the Senior Asshole 🐺 that everyone hates. Working hard maybe good for the company, but who cares about the company anyway? You are the Senior, do whatever you want and blame the shits on the others, as written in the book "How To Be Truly Sucessful Volume 2".</value>
+	</string>
+	<string key="RoleInfoSeer">
+		<value>You are the Department Manager 👳. You want to make the company great again, keeping the good workers and fire the bad shits. Good news is that, you can access one appraisal report of others every lunch.</value>
+	</string>
+	<string key="RoleInfoVillager">
+		<value>You are a Programmer 👱. Work hard, before getting fired.</value>
+	</string>
+	<string key="RoleInfoTanner">
+		<value>You are the Boss 👺, if anyone blame you for anything, they are all screwed.</value>
+	</string>
+	<string key="RoleInfoWildChild">
+		<value>You are the Intern 👶. Pick someone as your dedicated tutor. If he is fired, you will go riot and look for vengeance.</value>
+	</string>
+	<string key="RoleInfoBeholder">
+		<value>You are the Secretary 👁. You take minutes and send emails, so you know who is the real Department Manager.</value>
+	</string>
+	<string key="RoleInfoApprenticeSeer">
+		<value>You are the Management Trainee 🙇. You will eventually become a Department Manager when the time comes.</value>
+	</string>
+	<string key="RoleInfoCultist">
+		<value>You are the JAVA Enthusiast 👤! JAVA is the best, so lets the world know. Warning: Haters gonna hate.</value>
+	</string>
+	<string key="RoleInfoCultistHunter">
+		<value>You are the JAVA Destroyer 💂. You have a dream that one day no one would use JAVA for coding. You believe JAVA users exist in the company and they are the true cause of company's struggle. You shall check others' computer at lunch, and report if you find one.</value>
+	</string>
+	<string key="LynchTime">
+		<!-- Next Day Morning-->
+		<value>After a thoughtful night, you should have guessed who are the Seniors Assholes.\n\nYou have {0} seconds to vote them out.</value>
+	</string>
+	<string key="DayTime">
+		<value>Time to get off!\n\nYou have {0} seconds to make your accusations and defenses.\n\n</value>
+	</string>
+	<string key="NightTime">
+		<value>It's lunch time! Grab some food and fill your starving stomach! Please enjoy your lunch, as it might be the last lunch you would have in this company 😜\n\nFor those who are busy at lunch: You have {0} seconds to act.</value>
+	</string>
+	<string key="LynchKill">
+		<value>The workers have shown their hatred towards {0}, farewell my friend.\n{1}</value>
+	</string>
+	<string key="LynchTie">
+		<value>Looks like you could not make a clear decision. Let's forget about this round.</value>
+	</string>
+	<string key="NoLynchVotes">
+		<value>No one has accused anyone. Nothing happens.</value>
+	</string>
+	<string key="DetectiveEaten">
+		<value>{0}'s codes have been revealed. Shit codes everywhere, and he didn't even get the file name right! How could you evaluate others' work if you are doing the wrong things youself?\nThe Performance Evaluator 🕵 is fired.</value>
+	</string>
+	<string key="GuardianEaten">
+		<value>{0}'s codes are projected in the conference room. Is he putting Trojans in our projects? Who could have thought our Security Supervisor is the biggest threat in our company?\nThe Security Supervisor 👼 is fired.</value>
+	</string>
+	<string key="GunnerEaten">
+		<value>The model employee of the company, they said. Obviously {0}'s codes was not done by himself. Proves are here showing that he was just copying others' codes without crediting. What a shame!\nThe Most Trusted Employee 🔫 is fired.</value>
+	</string>
+	<string key="SeerEaten">
+		<value>A secret deal has been found in the drawer of {0}'s room. He was selling our confidential documents to the competitors! What a traitor!?\nThe Department Manager 👳 is fired.</value>
+	</string>
+	<string key="DrunkEaten">
+		<value>We all know {0} is not a good programer, but we still underestimated how bad he really is. Spelling mistakes could be found everywhere in his works, even mispelling FALSE as LEAFS!\nThe Suicidal 🍻 is fired.\n\n\nBang! Securities downstair just discover his body on the ground floor...</value>
+	</string>
+	<string key="FoolEaten">
+		<value>{0} was caught saving the confidentials of our workers to a private drive, trying to carry the classified information out of the company. Leaking information is a serious crime especially in a IT Company!\n The HR Bitch is fired.</value>
+	</string>
+	<string key="DefaultEaten">
+		<value>Copies of {0}'s poor works are distributed in everyone's hand. I hope no one would commit these mistakes every again.\n{1}</value>
+	</string>
+	<string key="HunterKilledCultist">
+		<value>{0} is a JAVA Enthusiast, using JAVA in all his works, causing lags in our servers! Glad that the JAVA Destroyer has him spotted.</value>
+	</string>
+	<string key="NoAttack">
+		<value>Everyone is working hard in the company. No potential threat is spotted today.</value>
+	</string>
+	<string key="CursedBitten">
+		<value>You tired hard confronting the Seniors and securing your place in the company. You are now promoted as a Senior!</value>
+	</string>
+	<string key="WolfTeam">
+		<value>These are your Senior friend(s): {0}</value>
+	</string>
+	<string key="CursedBittenToWolves">
+		<value>You do enjoy {0}'s speech, and decided to include him in your plan!</value>
+	</string>
+	<string key="WolvesEatYou" isgif="true">
+		<value>You did work hard, but you are planted by the Seniors Assholes! Now the board sees you as a dobe and decided to fire you...</value>
+	</string>
+	<string key="WolvesEatDrunk">
+		<value>Who would ever thought, {0} could commit suicide just becuase he lose a job? Maybe you should think twice before excuting your evil plan.</value>
+	</string>
+	<string key="GuardWolf">
+		<value>You accidentally supervised the Seniors and they planted you instead. Being nice does not secure a happy ending...</value>
+	</string>
+	<string key="GuardSaved">
+		<value>You sucessfully saved {0} from actual threats!</value>
+	</string>
+	<string key="GuardNoAttack">
+		<value>You did great on maintaining {0}'s computer, but no actaul threat was found during lunch.</value>
+	</string>
+	<string key="GuardEmptyHouse">
+		<value>You tried to access {0} computer, but it was locked!</value>
+	</string>
+	<string key="GuardSavedYou">
+		<value>The Security Supervisor has located some threats from the Seniors! Be careful!</value>
+	</string>
+	<string key="HarlotEaten">
+		<value>Disgusting! {0}'s notebook has stored many personal information of others.\nThe Stalker 💋 is fired.</value>
+	</string>
+	<string key="HarlotNotHome">
+		<value>You could not connect to {0}'s computer...</value>
+	</string>
+	<string key="HarlotFuckWolf">
+		<value>Told you not to stalk the wrong person, for example {0}. YOU ARE DOOMED!</value>
+	</string>
+	<string key="HarlotFuckedWolfPublic">
+		<value>{0} stalked the Seniors at lunch. What a disgusting move!\nThe Stalker 💋 is fired.</value>
+	</string>
+	<string key="HarlotFuckedVictimPublic">
+		<value>{0} sneaked in {1} room, trying to copy {1} personal files. Luckily, {0}'s weird action was caught by our Seniors.\nThe Stalker 💋 is fired.</value>
+	</string>
+	<string key="HarlotVisitNonWolf">
+		<value>You want to know others'secret, but you don't want to exchange with yours. You stalked behind {0} and listened carefully from his mouth. You even record it with your phone...</value>
+		<value>You are a curious person. You sneaked in {0}'s room, trying to find his darkest secret. You found some tapes in the computer and you kept a copy in your notebook.</value>
+	</string>
+	<string key="HarlotVisitYou">
+		<value>You felt someone was looking you during lunch, but you couldn't find who...</value>
+		<value>When you were back from lunch, you noticed some documents on your desk were moved...</value>
+	</string>
+	<string key="DetectiveCaught">
+		<value>You noticed weird connections comming from {0}'s computer. That must be the Performance Evaluator!</value>
+	</string>
+	<string key="DetectiveSnoop">
+		<value>After browsing the computer of {0}, you guess he is probably the {1}.</value>
+	</string>
+	<string key="HarlotShot">
+		<value>{1} was stalking {0} and {0} do not like it. So he reported {1}'s disgusting action to the board and have him fired.\nThe Stalker 💋 is fired.</value>
+	</string>
+	<string key="DefaultShot">
+		<value>{0} has been hating {1} since they met. Today, {0} was annoyed by {1} again, and he wanted to put a stop on that. So {0} make the board have him fired.\n{2}</value>
+	</string>
+	<string key="WolfWins" isgif="true">
+		<value>The Senior has fired all the others but himself! ALL HAIL THE ASSHOLES!</value>
+	</string>
+	<string key="WolvesWin" isgif="true">
+		<value>The Seniors have fired all the others but themselves! ALL HAIL THE ASSHOLES!</value>
+	</string>
+	<string key="VillageWins" isgif="true">
+		<value>The Workers have all the Seniors fired and guard the company from all evil beings! They have made the company great again!</value>
+	</string>
+	<string key="TannerWins" isgif="true">
+		<value>Shit! You just blamed the BOSS for all the mess! He was hugely disappointed and he rather start a new business than work with you retarded.</value>
+	</string>
+	<string key="RemainingPlayersEnd">
+		<value>Remaining Workers, title, and team:</value>
+	</string>
+	<string key="CultistVotedConvert">
+		<value>{0} wants to share the joy of JAVA with {1}.</value>
+	</string>
+	<string key="CultConvertCultHunter">
+		<value>{0} was promoting JAVA to {1}, which is a JAVA hater! He was reported and fired!</value>
+	</string>
+	<string key="CultHunterKilledCultVisit">
+		<value>{0} wanted you to use JAVA, ridiculous! You reported him for justice! You senses there are {1} more people using JAVA.</value>
+	</string>
+	<string key="CultConvertYou">
+		<value>You have finally discovered the joy of using JAVA! You can't wait to share it with others every lunch!</value>
+	</string>
+	<string key="CultTeam">
+		<value>These are your JAVA friends: {0}</value>
+	</string>
+	<string key="CultJoin">
+		<value>{0} have decided to use JAVA in the rest of his life.</value>
+	</string>
+	<string key="CultVisitEmpty">
+		<value>{0} tried to find {1}, but he could not locate {1}.</value>
+	</string>
+	<string key="CultWins" isgif="true">
+		<value>Although the Seniors are gone, everyone in the company is using JAVA now. I guess the company is stuggling even more than before...</value>
+	</string>
+	<string key="HunterVisitDead">
+		<value>{0} will be fired anyway.</value>
+	</string>
+	<string key="HunterFindCultist">
+		<value>You were checking {0}'s work, and you saw JAVA codes everywhere. You reported to board and make sure he is fired.</value>
+	</string>
+	<string key="HunterFailedToFind">
+		<value>You are glad that {0} was not using JAVA at all.</value>
+	</string>
+	<string key="WildChildToWolves">
+		<value>The dedicated tutor of {0} was fired. The intern now wants vengence.</value>
+	</string>
+	<string key="WildChildTransform">
+		<value>You tutor {0} was fired. You are looking for vengence and these people have prepared a plan for you: {1}</value>
+	</string>
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<string key="Villager">
+		<value>Programmer 👱</value>
+	</string>
+	<string key="Drunk">
+		<value>Suicidal 🍻</value>
+	</string>
+	<string key="Harlot">
+		<value>Stalker 💋</value>
+	</string>
+	<string key="Seer">
+		<value>Department Manager 👳</value>
+	</string>
+	<string key="Traitor">
+		<value>Popcorn Lover 🖕</value>
+	</string>
+	<string key="GuardianAngel">
+		<value>Security Supervisor 👼</value>
+	</string>
+	<string key="Detective">
+		<value>Performance Evaluator 🕵</value>
+	</string>
+	<string key="Wolf">
+		<value>Senior Asshole 🐺</value>
+	</string>
+	<string key="Cursed">
+		<value>Bootlicker 😾</value>
+	</string>
+	<string key="Gunner">
+		<value>Most Trusted Employee 🔫</value>
+	</string>
+	<string key="Tanner">
+		<value>BOSS 👺</value>
+	</string>
+	<string key="Fool">
+		<value>Stupid HR Bitch 🃏</value>
+	</string>
+	<string key="WildChild">
+		<value>Intern 👶</value>
+	</string>
+	<string key="Beholder">
+		<value>Secretary 👁</value>
+	</string>
+	<string key="ApprenticeSeer">
+		<value>Management Trainee 🙇</value>
+	</string>
+	<string key="Cultist">
+		<value>JAVA Enthusiast 👤</value>
+	</string>
+	<string key="CultistHunter">
+		<value>JAVA Destroyer 💂</value>
+	</string>
+	<!-- These are for the player list -->
+	<string key="RanAway">
+		<value>🚀 Resigned</value>
+	</string>
+	<string key="Dead">
+		<value>💀 Fired</value>
+	</string>
+	<string key="Alive">
+		<value>🙂 Working</value>
+	</string>
+	<string key="PlayersAlive">
+		<value>Remaining Workers:</value>
+	</string>
+	<!-- New strings 4 MAY 2016-->
+	<string key="Mason">
+		<value>Pizza Brother 👷</value>
+	</string>
+	<string key="RoleInfoMason">
+		<value>You are one of the Pizza Brothers 👷. You love pizza and you always go to Dominic's for lunch, with your Pizza Brothers!</value>
+	</string>
+	<string key="MasonEaten">
+		<value>Yuck! {0}'s codes is pinned on the board. It is full of errors, and also Pizza... Disgusting! No wonder he got fired.\n The Pizza Brother 👷 is fired.</value>
+	</string>
+	<string key="MasonTeam">
+		<value>Your Pizza Brothers: {0}</value>
+	</string>
+	<!-- new strings May 6 2016-->
+	<string key="CultTargetDead">
+		<value>{0} will be fired. It will be meaningless to promote JAVA to him.</value>
+	</string>
+	<string key="GuardBlockedWolf">
+		<value>You tried to access {0}'s files, but the Security Superviosr was maintaining his computer. The computer was disconnected from the network and you just wasted a lunch.</value>
+	</string>
+	<!-- new strings May 9 2016-->
+	<string key="CultUnableToConvert">
+		<value>{0} tried hard in persuading {1} for JAVA, but {1} is not clever enough to understand the joy of using JAVA.</value>
+	</string>
+	<!-- new string May 12 2016-->
+	<string key="NameExists">
+		<value>@{1}, your name was used by {0}. Please change your name before entering the company.</value>
+	</string>
+	<string key="HarlotDiscoverCult">
+		<value>You sneaked in {0}'s room and discover he was using JAVA. He is a JAVA Enthusiast!</value>
+	</string>
+	<!-- new string May 13 2016-->
+	<string key="Was">
+		<value>was</value>
+	</string>
+	<string key="GenericDeathNoReveal">
+		<value>{0} is fired. Orders from the board.</value>
+	</string>
+	<string key="MasonConverted">
+		<value>{0} is not coming Dominic's...Has he betrayed the taste of Pizza?</value>
+	</string>
+	<!-- new string May 16 2016-->
+	<string key="FleeDisabled">
+		<value>Resignation not allowed! Said the board!</value>
+	</string>
+	<string key="IsDead"> <!-- used when gunner shoots a player -->
+		<value>is fired 💀</value>
+	</string>
+
+	<!-- MORE STRINGS May 16, 2016 -->
+	<string key="AdminAdded" deprecated="true">
+		<value>{0} is a admin now. Use /config to adjust game setting.</value>
+	</string>
+	<string key="AlreadyInGame">
+		<value>You are already playing at {0}. Don't be greedy.</value>
+	</string>
+	<string key="MultipleGames" deprecated="true">
+		<value>Too many games are running. Some are meant to be stopped.</value>
+	</string>
+	<string key="GroupQueue" deprecated="true">
+		<value>Your group is currently in the queue.  Position: {0} / {1}</value>
+	</string>
+	<string key="MaintBreak" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+	</string>
+	<string key="MaxGames" deprecated="true">
+		<!-- 0 - target's name -->
+		<!-- 1 - target's name -->
+		<value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+	</string>
+	<string key="SkipQueue" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} is a preferred group, and has skipped the queue!</value>
+	</string>
+	<string key="NoGame">
+		<value>There is no company recruiting. Maybe you could /startgame to initiate a normal company, or /startchaos to initiate a choas company.</value>
+	</string>
+	<string key="GroupAdminOnly">
+		<value>Only group admins could execute the command.</value>
+	</string>
+	<string key="ShuttingDown" deprecated="true">
+		<value>After this game, I am shutting down for maintenance.</value>
+	</string>
+	<string key="ShuttingDownUpdate" deprecated="true">
+		<value>After this game, I am shutting down momentarily for an update (automated).</value>
+	</string>
+	<string key="NullIdAdmin" deprecated="true">
+		<value>UserId was null.  Are you sure you sent this as a reply?</value>
+	</string>
+	<string key="AlreadyAdmin" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} is already an admin!</value>
+	</string>
+	<string key="NotAdmin" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} is not an admin!</value>
+	</string>
+	<string key="AdminRemoved" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} removed from admin list.</value>
+	</string>
+	<string key="LanguageSet" deprecated="true">
+		<!-- 0 - language's name -->
+		<value>Language set to {0}</value>
+	</string>
+	<string key="NoSeer">
+		<value>We don't have a Department Head yet. Recruiting.</value>
+	</string>
+	<string key="TimesUp">
+		<value>Time's up</value>
+	</string>
+	<!-- new strings june 10 2016 -->
+	<string key="RoleInfoCupid">
+		<value>You are the Project Manager 🏹. For some reasons, you believe 1+1 is greater than 2. You made 2 programmers a permanent team, they shall take care of each other, and share the consequences together.</value>
+	</string>
+	<string key="RoleInfoDoppelganger">
+		<value>You are the Freelancer 🎭. You can choose to share anyone's workload. If he is fired, you will inherit his position in the company.</value>
+	</string>
+	<string key="RoleInfoHunter">
+		<value>You are the Blackmail Master 🎯. You hold many secrets, especially the dark secrets. You may reveal some of the secrets when you are triggered.</value>
+	</string>
+	<string key="RoleInfoSerialKiller">
+		<value>You are the Virus Spreader 🔪. Spread some seeds and let it grow. You knock someone's computer down and they are doomed.</value>
+	</string>
+	<string key="CupidChosen">
+		<value>The Project Manager thinks working with {0} will be good for you!</value>
+	</string>
+	<string key="HunterLynchedChoice">
+		<value>They suspected you are the shits coder in the company, but you're not. They tried to have you fired and you are triggered! You decided to reveal some secrets and drag someone down with you! Who will you choose?</value>
+	</string>
+	<string key="HunterNoChoiceLynched">
+		<value>{0} says a name without giving the deatils. Nothing surprising is revealed.</value>
+	</string>
+	<string key="HunterSkipChoiceLynched">
+		<value>{0} decided to take the secrets with him. He will not say anything before he leave.</value>
+	</string>
+	<string key="HunterKilledFinalLynched">
+		<value>{0} is triggered and decided to drag somebody down with him. He chooses you, {1}. Your affairs with all the cleaning ladies in building are revealed with photos. The board was shocked, and decided to fire {1}, in order to protect company's reputation. {1} is fired.\n{2}</value>
+	</string>
+	<string key="HunterShotChoice">
+		<value>You know you will be fired with all the "evidences" planted. Why not act a little more evil before leaving?</value>
+	</string>
+	<string key="HunterNoChoiceShot">
+		<value>At the end, the {0} did not revealed any secrets without purpose. Guess the Blackmail Master has his own code of moral too.</value>
+	</string>
+	<string key="HunterSkipChoiceShot">
+		<value>{0} knows he was planted by the Seniors, and he was not triggered. The Blackmail Master decided to save the secrets for future, but not reveal them here, dragging peopele down with him meaninglessly.</value>
+	</string>
+	<string key="HunterKilledFinalShot">
+		<value>{0} revealed the darkest secrets of {1} before leaving. Turns out {1} was a Justin Bieber fanboy. Yuck, disgusting!\n【{2}】</value>
+	</string>
+	<string key="CultConvertSerialKiller">
+		<value>{0} was sharing his JAVA works to {1} via his computer, then {0}'s computer was infected by virus! All his files are either missing or returning error! He is doomed.</value>
+	</string>
+	<string key="HunterShotWolfMulti">
+		<value>The Blackmail Master noticed the Seniors was planting him. Although he could not stopped the planting, he identified one of them was {0} and revealed his disgustuing dark secrets to the board.\nThe Seniors Asshole 🐺 is fired.</value>
+	</string>
+	<string key="HunterShotWolf">
+		<value>The Blackmail Master noticed the Seniors was planting him. He blocked their access and identified one of Seniors was {0}! So he revealed the name with the related disgustuing dark secrets to the board.\nThe Seniors Asshole 🐺 is fired.</value>
+	</string>
+	<string key="SerialKillerKilledWolf">
+		<value>{0} was trying to plant something on the computer of the Virus Spreader. At the moment he granted the access of it, his own computer was infected by the virus.\n The Senior Asshole 🐺 is fired.</value>
+	</string>
+	<string key="DefaultKilled">
+		<value>{0}'s computer was formatted becuase of virus, losing all the progress of his handling projects. The board cannot accept such a mistake and fired him.\n{1}</value>
+	</string>
+	<string key="GuardBlockedKiller">
+		<value>You was trying to infect {0}'s computer with your new invented virus DragonSlayerV2, but you noticed the Security Superviosr was blocking the gateway. You just wasted your valuable lunch time trying to hack a disconnected computer.</value>
+	</string>
+	<string key="CultConvertHunter">
+		<value>{0} annoyed {1} when he talked too much about JAVA. {1} reported his darkest secrets to the board and make him disappear from the company.</value>
+	</string>
+	<string key="GuardKiller">
+		<value>You tried to maintain the computer of the Virus Spreader, and you are now doomed by twenty sneaky virus from his computer.</value>
+	</string>
+	<string key="HarlotFuckKiller">
+		<value>You sneaked in {0}'s room and tried to steal some personal file from his computer, but what you have stolen were only virus...</value>
+	</string>
+	<string key="HarlotFuckKillerPublic">
+		<value>{0} sneaked in the wrong room and copied the wrong files. His computer is now doomed because of virus.</value>
+	</string>
+	<string key="DGToMason">
+		<value>{0} has joined the Pizza Brothers Club. Hurray!</value>
+	</string>
+	<string key="DGTransformToMason">
+		<value>{0} leaved the company and now you take his seat in Dominic's, these are your friends: {1}</value>
+	</string>
+	<string key="DGToCult">
+		<value>{0} become a JAVA Enthusiast!</value>
+	</string>
+	<string key="DGTransformToCult">
+		<value>{0} leaved the company and now you would promote JAVA for him, these are your frineds: {1}</value>
+	</string>
+	<string key="DGToWolf">
+		<value>{0} is now a Senior Asshole</value>
+	</string>
+	<string key="DGTransformToWolf">
+		<value>{0} leaved and you take his place as a Senior Asshole, these are your evil partners: {1}</value>
+	</string>
+	<string key="SerialKillerWins" isgif="true">
+		<value>Virus is what remained in the company. The Virus Spreader has sucessfully destroyed the company! ALL HAIL THE VIRUS!</value>
+	</string>
+	<string key="AskKill">
+		<value>You want to spread virus on whose computer?</value>
+	</string>
+	<string key="LoverDied">
+		<value>{0}'s actions has brought him the consequences, and {1} has his fault too because he didn't stop {0} from doing bad. {1} needed to take the consequences as well.\n【{2}】</value>
+	</string>
+	<string key="AskDoppelganger">
+		<value>Whose workload you would like to share?</value>
+	</string>
+	<string key="AskCupid1">
+		<value>Who should work in a team rather than alone in your opinion?</value>
+	</string>
+	<string key="AskCupid2">
+		<value>Who should he work with?</value>
+	</string>
+	<string key="Hunter">
+		<value>Blackmail Master 🎯</value>
+	</string>
+	<string key="Cupid">
+		<value>Project Manger 🏹</value>
+	</string>
+	<string key="SerialKiller">
+		<value>Virus Spreader 🔪</value>
+	</string>
+	<string key="Doppelgänger">
+		<value>Freelancer 🎭</value>
+	</string>
+	<string key="NewWCRoleModel">
+		<value>You have been upgraded as an intership, and {0} is your dedicated tutor.</value>
+	</string>
+	<string key="LoversWin">
+		<value>A team that trust is a team that triumphs! Teamwork is always the key to sucess.</value>
+	</string>
+	<string key="HunterKilledVisiter">
+		<value>The board ordered to fire {0} because of his unacceptable habits.\n【{1}】</value>
+	</string>
+	<string key="CultAttempt">
+		<value>Some one was trying to introduce his favourtie JAVA to you, but you have refused to believe him.</value>
+	</string>
+	<string key="AlreadyOnWaitList">
+		<!-- 0 - target's name -->
+		<value>You are already on the wait list for {0}.</value>
+	</string>
+	<string key="AddedToWaitList">
+		<!-- 0 - target's name -->
+		<value>You have been added to the wait list for {0}. I will PM you when the next game is starting.</value>
+	</string>
+	<string key="NotifyNewGame">
+		<!-- 0 - target's name -->
+		<value>A new game is starting in {0}. Join now if you can!</value>
+	</string>
+	<string key="SerialKillerWinsOverpower">
+		<!-- 0 - SK's name -->
+		<!-- 1 - target's name -->
+		<value>No one could stop the spreading of {0}'s virus now. The Virus Spreader forcefully plug his USB driver to {1}'s computer, deleting all his files and doomed {1}'s fate.</value>
+	</string>
+	<string key="NoWinner" isgif="true">
+		<value>Weird... The company have no workers now. All the workers have been fired. I guess the board might need to do all the things on their own...</value>
+	</string>
+	<string key="SKHunterEnd">
+		<!-- 0 - SK's name -->
+		<!-- 1 - Hunter's name -->
+		<value>No one could stop the spreading of {0}'s virus now. The Virus Spreader forcefully plugs his USB driver to {1}'s computer, deleting all his files and doomed {1}'s fate, but he doesn't know his fate is doomed too. {1} takes all the photo related to {0} in his blackmail database, and sends them all to the board. Both man are fired by the board.</value>
+	</string>
+	<string key="RoleModelChosen">
+		<value>You failed to make your call, so this is my call: {0}</value>
+	</string>
+	<string key="Won">
+		<value>Won</value>
+	</string>
+	<string key="Lost">
+		<value>Lost</value>
+	</string>
+	<string key="IdleCount">
+		<value>{0} skipped voting twice in a row. I have fired this idle worker for you.\n{1}</value>
+	</string>
+	<!--New strings 7th of July-->
+	<string key="AboutVG">
+		<value>Villagers can only vote in the morning.</value>
+	</string>
+	<string key="AboutSeer">
+		<value>You want to make the company great again, keeping the good worker and fire the bad one. Good news is that, you can access the appraisal of everyone else, and you can check one at lunch.</value>
+	</string>
+	<string key="AboutWw">
+		<value>You are just a normal programmer. You don't want to be fired, or least, be the last one. Planting others is the best way to stay til the end.</value>
+	</string>
+	<string key="AboutHarlot">
+		<value>You disgusting Stalker. You stalk and know things. Careful: Don't be caught by the Seniors, or you will be doomed.</value>
+	</string>
+	<string key="AboutDrunk">
+		<value>You are Suicidal, you have achieved nothing in your life but your job. When you are planted and fired, you'll probrably jump out of the company's window. The Seniors Assholes may feel guilty and shocked for a while. They will then halt their evil plan on the next day.</value>
+	</string>
+	<string key="AboutCursed">
+		<value>You are the Bootlicker and you always monitor and protect your computer from any threats. Even at lunch, you will check the status of your computer with youe mobile. When anyone is doing anything to your computer, you will notice at the very second and take your action! If the Seniors really is planting things to you computer, you will lick the boot of the Seniors hard, until they allow you to join their plan.</value>
+	</string>
+	<string key="AboutTraitor">
+		<value>You are the Popcorn Lover. You enjoy drama, and dramatic life attracts you even more. When all the seniors are gone and the world is filled with peace? That's definitely a hell made of boredom. So you decided to lit the world and watch it burns.</value>
+	</string>
+	<string key="AboutGA">
+		<value>You are the Security Supervisor. You can access other's computer at lunch, to maintain their computer and probrably do some upgrades too. When you are maintaining the computer, no others could do evil things on it.</value>
+	</string>
+	<string key="AboutDetective">
+		<value>You are the Performance Evaluator. You can connect to others' computer and check their work in the morning, and you will know who is good and who is bad. Warning: The Seniors may notice the abnormality in the company network.</value>
+	</string>
+	<string key="AboutGunner">
+		<value>You are the Most Trusted Employee by the board. Say the names and the board will fire them for you. You have two chances.</value>
+	</string>
+	<string key="AboutTanner">
+		<value>You are the Boss, if anyone blame you for anything, they are all screwed.</value>
+	</string>
+	<string key="AboutFool">
+		<value>You are the HR Bitch, but you preceive yourself as the Department Manager. You want make the company great again, keeping the good worker and fire the bad one. Good news is that, you can access the appraisal of everyone else, and you can check one at lunch. Warning: You are not so good at reading hand-writing.</value>
+	</string>
+	<string key="AboutCult">
+		<value>You are the JAVA Enthusiast. JAVA is the best, so lets the world know. Warning: Haters gonna hate.</value>
+	</string>
+	<string key="AboutCH">
+		<value>As the JAVA Destroyer, you have a dream that one day no one would use JAVA for coding. You believe JAVA users exist in the company and they are the true cause of company's struggle. You shall check others' computer at lunch, and report if you find one.</value>
+	</string>
+	<string key="AboutWC">
+		<value>You are the Intern. Pick someone as your dedicated tutor. If he is fired, you go riot and look for vengeance.</value>
+	</string>
+	<string key="AboutAppS">
+		<value>You are the Management Trainee. You will eventually become a Department Manager when the time comes.</value>
+	</string>
+	<string key="AboutBH">
+		<value>You are the Secretary. You take minutes and send emails, so you know who is the real Department Manager.</value>
+	</string>
+	<string key="AboutMason">
+		<value>Yay, pizza lover! You are one of the Pizza Brothers. You will always go to Dominic's for lunch, with all the pizza lovers in your company.</value>
+	</string>
+	<string key="AboutDG">
+		<value>
+			You are the Freelancer. You can share the workload of someone, learn his way of doing things, and inherit his position if when he is gone.
+		</value>
+	</string>
+	<string key="AboutCupid">
+		<value>
+			You are the Project Manager. For some reasons, you believe 1+1 is greater than 2. You made 2 programmers a permanent team, they shall take care of each other, and share the consequences together.
+		</value>
+	</string>
+	<string key="AboutHunter">
+		<value>
+			You are the Blackmail Master. You hold many secrets, darker one especially. Threatening others often returns in your favour.
+		</value>
+	</string>
+	<string key="AboutSK">
+		<value>You are the Virus Spreader. Spread some seeds and let it grow. You knock someone's computer down and they are doomed.</value>
+	</string>
+	<string key="AboutPara">
+		<value>Para is the dog in your company. Be careful. He bites.</value>
+	</string>
+	<string key="EndTime">
+		<value>Game Legnth: {0}\n/startgame to form another company\n/startchaos to form a choas company</value>
+	</string>
+	<!--New strings, July the 8th -->
+
+	<string key="Day">
+		<!--0 - Day -->
+		<value>Day {0}</value>
+	</string>
+	<string key="NodeShutsDown">
+		<value>An error has occured, and this node has shut down :/</value>
+	</string>
+	<string key="SentPrivate">
+		<value>I have sent you a PM</value>
+	</string>
+	<string key="StartPM" deprecated="true">
+		<value>Please send me a pm so I can PM you: @werewolfbot</value>
+	</string>
+	<string key="PMTrue" deprecated="true">
+		<value>Thanks for starting me! I can PM you now.</value>
+	</string>
+	<string key="MustReplySmite" deprecated="true">
+		<value>You must reply to the user you want to smite</value>
+	</string>
+	<string key="WhatToDo">
+		<value>What would you like to do?</value>
+	</string>
+	<string key="JoinFromGroup">
+		<value>You must join a game from within a group chat!</value>
+	</string>
+	<string key="StartFromGroup">
+		<value>You must start a game from within a group chat!</value>
+	</string>
+	<string key="PingInfo">
+		<value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+	</string>
+	<string key="WhatLang">
+		<value>What Language?\nCurrent: {0}</value>
+	</string>
+	<string key="WhatVariant">
+		<value>What Variant?\nCurrent: {0}</value>
+	</string>
+	<string key="LangSet">
+		<value>Language set to {0}</value>
+	</string>
+	<string key="GetLang">
+		<value>Get which language file?</value>
+	</string>
+	<string key="NoNodes">
+		<value>There are no nodes online right now, please try again in a few seconds</value>
+	</string>
+	<string key="GroupCommandOnly">
+		<value>You must run this command in a group</value>
+	</string>
+	<string key="NotGlobalAdmin">
+		<value>You aren't a global admin...</value>
+	</string>
+	<string key="NotPara">
+		<value>You aren't Para!</value>
+	</string>
+	<string key="Yes">
+		<value>Yes</value>
+	</string>
+	<string key="No">
+		<value>No</value>
+	</string>
+	<string key="Allow">
+		<value>Allow</value>
+	</string>
+	<string key="Disallow">
+		<value>Disallow</value>
+	</string>
+	<string key="Show">
+		<value>Show</value>
+	</string>
+	<string key="Hide">
+		<value>Hide</value>
+	</string>
+	<!-- Game Mode Choices-->
+	<string key="NormalOnly">
+		<value>Normal Only</value>
+	</string>
+	<string key="ChaosOnly">
+		<value>Chaos Only</value>
+	</string>
+	<string key="PlayerChoice">
+		<value>Player's Choice</value>
+	</string>
+
+	<!-- Show Roles on End Game -->
+	<string key="ShowNone">
+		<value>Don't show any</value>
+	</string>
+	<string key="ShowLiving">
+		<value>Show only living players</value>
+	</string>
+	<string key="ShowAll">
+		<value>Show all players</value>
+	</string>
+
+	<string key="Cancel">
+		<value>Cancel</value>
+	</string>
+	<string key="AllowFleeQ">
+		<value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+	</string>
+	<string key="AllowFleeA">
+		<value>{0} fleeing after game start</value>
+	</string>
+	<string key="MaxPlayersQ">
+		<value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+	</string>
+	<string key="MaxPlayersA">
+		<value>Max players set to {0}</value>
+	</string>
+	<string key="ShowRolesDeathQ">
+		<value>Show or Hide roles on death?\nCurrent: {0}</value>
+	</string>
+	<string key="ShowRolesDeathA">
+		<value>Roles will be {0} on death.</value>
+	</string>
+	<string key="GameModeQ">
+		<value>What game mode will the group be?\nCurrent: {0}</value>
+	</string>
+	<string key="GameModeA">
+		<value>Game mode set to {0}</value>
+	</string>
+	<string key="ShowRolesEndQ">
+		<value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+	</string>
+	<string key="ShowRolesEndA">
+		<value>Roles shown at end set to: {0}</value>
+	</string>
+	<string key="SetDayTimeQ">
+		<value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+	</string>
+	<string key="SetDayTimeA">
+		<value>Base day time set to {0} seconds</value>
+	</string>
+	<string key="SetNightTimeQ">
+		<value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="SetNightTimeA">
+		<value>Night time set to {0} seconds</value>
+	</string>
+	<string key="SetLynchTimeQ">
+		<value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="SetLynchTimeA">
+		<value>Lynch voting time set to {0} seconds</value>
+	</string>
+	<string key="AllowFoolQ">
+		<value>Allow fool as a role option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowFoolA">
+		<value>Fool as a role set to: {0}</value>
+	</string>
+	<string key="AllowTannerQ">
+		<value>Allow tanner as a role option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowTannerA">
+		<value>Tanner as a role set to: {0}</value>
+	</string>
+	<string key="AllowCultQ">
+		<value>Allow cult as a role option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowCultA">
+		<value>Cult as a role set to: {0}</value>
+	</string>
+	<string key="ThankYou">
+		<value>Thank you, have a good day :)</value>
+	</string>
+	<string key="WhatLangGroup">
+		<value>What language do you want to look for a group to play in?</value>
+	</string>
+	<string key="HereIsList">
+		<value>Here are the groups for {0}:</value>
+	</string>
+	<string key="Members">
+		<value>Members</value>
+	</string>
+	<string key="StartMe">
+		<value>Please start me so I can PM you</value>
+	</string>
+	<string key="PlayerNoPM">
+		<value>{0} failed to start the bot, and has been removed from the game!</value>
+	</string>
+	<string key="LatestList">
+		<value>Here is the latest list</value>
+	</string>
+	<string key="UnableToGetList">
+		<value>Unable to get latest list</value>
+	</string>
+	<string key="YouJoined">
+		<!-- 0 - Group Name -->
+		<value>You have successfully joined the game in {0}</value>
+	</string>
+	<string key="Ping2">
+		<value>Time to send ping message: {0}</value>
+	</string>
+
+	<!-- Update 4.0-->
+	<string key="RoleInfoMayor">
+		<value>You are the Silver Tongue 🎖. You are smart, or at least you look smart. With your persuasive mouth, you are much more influential than others.</value>
+	</string>
+	<string key="RoleInfoPrince">
+		<value>You are the Son of the BOSS 👑. You lucky shit! Your dad will save you from being suspected for once.</value>
+	</string>
+	<string key="RoleInfoClumsyGuy">
+		<value>You are good, at coding at least, but not names remembering. Last time, you mistook Peter as Mary...You are the Social Idiots 🤕.</value>
+	</string>
+	<string key="RoleInfoSorcerer">
+		<value>You are the Gossiper 🔮. You gossips and you know things. You can gossip about someone every lunch. You may identify who is Department Manager and Seniors based on the inforamtion you collected. You are on Seniors'team.</value>
+	</string>
+	<string key="RoleInfoBlacksmith">
+		<value>You are the Socialite ⚒. You love parties. You may hold a party at lunch and everyone gotta stay in the pantry.</value>
+	</string>
+	<string key="RoleInfoAlphaWolf">
+		<value>You are the Senior Promoter ⚡️. You may promote the victims if you thinks he is a potential asshole.</value>
+	</string>
+	<string key="RoleInfoWolfCub">
+		<value>You are the Senior Associate 🐶. You helped the Seniors a lot. They will revenge for you when you are gone.</value>
+	</string>
+	<string key="PrinceLynched">
+		<value>Although {0} is indeed shit at coding, the board decided not to fire him. They offered {0} one more chance as he is the Son of the BOSS.</value>
+	</string>
+	<string key="SorcererOther">
+		<value>{0} is not Seniors nor Department Manager.</value>
+	</string>
+	<string key="MayorReveal">
+		<value>"Everybody should listen to me" said the Silver Tongue {0} "There is only one truth, and that is..." From now on, {0}'s votes will count twice.</value>
+	</string>
+	<string key="AskMayor">
+		<value>Click "Persuade" if you want to be listened with respect.</value>
+	</string>
+	<string key="Reveal">
+		<value>Persuade</value>
+	</string>
+	<string key="SpreadDust">
+		<value>Do you want to call the party today?</value>
+	</string>
+	<string key="BlacksmithSpreadSilver">
+		<value>{0} the Socialite calls everyone for party! Everyone must stay in the company and eat the chocolate cake she prepared. The Seniors cannot plant any with visions everywhere.</value>
+	</string>
+	<string key="Mayor">
+		<value>Silver Tongue 🎖</value>
+	</string>
+	<string key="Prince">
+		<value>Son of the BOSS 👑</value>
+	</string>
+	<string key="Sorcerer">
+		<value>Gossiper 🔮</value>
+	</string>
+	<string key="ClumsyGuy">
+		<value>Social Idiots 🤕</value>
+	</string>
+	<string key="Blacksmith">
+		<value>Socialite ⚒</value>
+	</string>
+	<string key="AlphaWolf">
+		<value>Senior Promoter ⚡️</value>
+	</string>
+	<string key="WolfCub">
+		<value>Senior Associate 🐶</value>
+	</string>
+	<string key="PlayerBittenWolves">
+		<value>{1} stopped everyone from planting {0}. "{0} would make a nice asshole" said the Senior Promoter. Instead of planting him, you invited him to joine your evil plan via texts.</value>
+	</string>
+	<string key="PlayerBitten">
+		<value>When you are out for lunch, you received text from the Seniors. Instead of being planted, they invited you to join their plan...</value>
+	</string>
+	<string key="BittenTurned">
+		<value>Starting from today, you are one of the Seniors Assholes!</value>
+	</string>
+	<string key="AboutMayor">
+		<value>You are the Silver Tongue. You are smart, or at least you look smart. With your persuasive mouth, you are much more influential than others.</value>
+	</string>
+	<string key="AboutPrince">
+		<value>You are the Son of the BOSS. You lucky shit! Your dad will save you from being suspected for once.</value>
+	</string>
+	<string key="AboutSorcerer">
+		<value>You are the Gossiper. You gossips and you know things. You can gossip about someone every lunch. You may identify who is Department Manager and Seniors based on the inforamtion you collected. You are on Seniors' team.</value>
+	</string>
+	<string key="AboutClumsy">
+		<value>You are good, at coding at least, but not names remembering. Last time, you mistook Peter as Mary...You are the Social Idiots.</value>
+	</string>
+	<string key="AboutBlacksmith">
+		<value>You are the Socialite. You love parties. You may hold a party at lunch and everyone gotta stay in the pantry.</value>
+	</string>
+	<string key="AboutAlphaWolf">
+		<value>You are the Senior Promoter. You may promote the victims if you thinks he is a potential asshole.</value>
+	</string>
+	<string key="AboutWolfCub">
+		<value>You are the Senior Associate. You helped the Seniors a lot. They will revenge for you when you are gone.</value>
+	</string>
+
+	<!-- new strings 06 nov-->
+
+	<string key="DGTransformToAlpha">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} leaved the company and you are now the Senior Promoter, these are your fellow Seniors: {1}</value>
+	</string>
+	<string key="DGTransformToWolfCub">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} leaved the company and you are now the Senior Associate, these are your beloved Seniors: {1}</value>
+	</string>
+
+	<!-- Keep this for now until bots update-->
+
+	<string key="VillageTeam" deprecated="true">
+		<value>Team Profit</value>
+	</string>
+	<string key="NeutralTeam" deprecated="true">
+		<value>Team Neutral</value>
+	</string>
+	<string key="WolfTeam" deprecated="true">
+		<value>Team Seniors</value>
+	</string>
+	<string key="SerialKillerTeam" deprecated="true">
+		<value>Team Virus</value>
+	</string>
+	<string key="CultTeam" deprecated="true">
+		<value>Team JAVA</value>
+	</string>
+	<string key="TannerTeam" deprecated="true">
+		<value>Team BOSS</value>
+	</string>    
+	<string key="VillageTeamEnd">
+		<value>Team Profit</value>
+	</string>
+	<string key="NeutralTeamEnd">
+		<value>Team Neutral</value>
+	</string>
+	<string key="WolfTeamEnd">
+		<value>Team Seniors</value>
+	</string>
+	<string key="SerialKillerTeamEnd">
+		<value>Team Virus</value>
+	</string>
+	<string key="CultTeamEnd">
+		<value>Team JAVA</value>
+	</string>
+	<string key="TannerTeamEnd">
+		<value>Team BOSS</value>
+	</string>
+	<string key="CultConvertWolf">
+		<value>{0} went to introduce JAVA to {1}, but {1} was one of the Seniors and planted him instead!</value>
+	</string>
+	<string key="HarlotFuckedKilledPublic">
+		<value>{0} sneaked in {1}'s room and connceted his computer with {1}'s. Unfortunately the Seniors was planting something on {1}'s computer, and {0}'s works was affected as well as they shared the same network. The board now believe both {0} and {1} are shit coders and fired them both.</value>
+	</string>
+
+	<!--New Death Strings 05 DEC-->
+	<string key="ApprenticeSeerEaten">
+		<value>{0} was found using cracked versions of software at work. What a dangerous move! This may lead the company to lawsuit! The board decieded to fire {0} before it is not too late.\nThe Management Trainee 🙇 is fired.</value>
+	</string>
+	<string key="BlacksmithKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Socialite ⚒ is fired.</value>
+	</string>
+	<string key="CultistKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe JAVA Enthusiast 👤 is fired.</value>
+	</string>
+	<string key="CupidKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Projoect Manager 🏹 is fired.</value>
+	</string>
+	<string key="DrunkKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Suicidal 🍻 is fired.</value>
+	</string>
+	<string key="GuardianAngelKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Security Supervisor 👼 is fired.</value>
+	</string>
+	<string key="GunnerKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Most Trusted Employee 🔫 is fired.</value>
+	</string>
+	<string key="MayorKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Silve Tongue 🎖 is fired.</value>
+	</string>
+	<string key="PrinceKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Son of the BOSS 👑 is fired.</value>
+	</string>
+	<string key="SeerKilled">
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Department Manager 👳 is fired.</value>
+	</string>
+	<string key="SorcererEaten">
+		<value>{0} was found using cracked versions of software at work. What a dangerous move! This may lead the company to lawsuit! The board decieded to fire {0} before it is not too late.\nThe Gossiper 🔮 is fired.</value>
+	</string>
+	<string key="WildChildEaten">
+		<value>{0} was found using cracked versions of software at work. What a dangerous move! This may lead the company to lawsuit! The board decieded to fire {0} before it is not too late.\nThe Intern 👶 is fired.</value>
+	</string>
+	<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe JAVA Destoryer 💂 is fired.</value>
+	</string>
+	<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<value>{0} was sharing the joy of JAVA to a Senior, but the Seniors took him as a volunteer to be planted...\nThe JAVA Enthusiast 👤 is fired.</value>
+	</string>
+	<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+		<value>{0} was sharing the joy of JAVA to someone, and then his computer was infected by several virus, deleting all his works from the world.\nThe JAVA Enthusiast 👤 is fired.</value>
+	</string>
+	<string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+		<value>{0} was maintaining the computer of a Senior, but the Seniors took him as a volunteer to be planted...\nThe Security Supervisor 👼 is fired.</value>
+	</string>
+	<string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+		<value>{0} was maintaining the computer of someone, and then his computer was infected by several virus, deleting all his works from the world.\nThe Security Supervisor 👼 is fired.</value>
+	</string>
+
+
+	<!--1vs1 finales-->
+	<string key="HunterKillsWolfEnd">
+		<!--{0} = hunter's name, {1} = wolf's name-->
+		<value>Before {1} starts planting {0}, the Blackmail Master has discover {1}'s identity and send his darkest secrets to everyone in the board. The first one will always be the winner!
+		</value>
+	</string>
+	<string key="WolfKillsHunterEnd">
+		<!--{0} = hunter's name, {1} = wolf's name-->
+		<value>{0} thinks all the evils in the company are already gone. He is not aware of {1}'s identity, and shuts down all the protection in his computer, giving the Senior a chance to plant him.</value>
+	</string>
+	<string key="CHKillsCultistEnd">
+		<!--{0} = last cultist's name, {1} = CH's name -->
+		<value>In a company with only two people remaining, the JAVA Enthusiast has only one thing to do. {0} starts prmoting JAVA to the last person in the company, hoping he will understand the joy of using JAVA. Sad for him, {1} is the JAVA Destroyer. The ending of the story has already been written...\nThe JAVA Enthusiast 👤 is fired.</value>
+	</string>
+
+	<!-- Extend time -->
+	<string key="SecondsAdded">
+		<!-- 0 - Seconds added by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>Join time extended by {0} seconds!\n{1} left to join</value>
+	</string>
+	<string key="SecondsRemoved">
+		<!-- 0 - Seconds removed by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>Join time decreased by {0} seconds!\n{1} left to join</value>
+	</string>
+	<string key="CantExtend">
+		<value>Only group admins can extend the time more than once!</value>
+	</string>
+	<string key="AllowExtendQ">
+		<!--{0} = "Allow" / "Disallow" string-->
+		<value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+	</string>
+	<string key="AllowExtendA">
+		<!--{0} = "Allow" / "Disallow" string-->
+		<value>{0} players to extend join time</value>
+	</string>
+	<string key="MaxExtendQ">
+		<value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="MaxExtendA">
+		<value>Maximum extending time set to {0} seconds</value>
+	</string>
+	<string key="WolvesEatDrunkBlockSecondKill">
+		<value>{0} commited suicide because of you! Should you continue with plan? You think you should at least take a day to consider that. Forget about the plan for {1}.</value>
+	</string>
+
+	<!-- Join, Secret Vote -->
+	<string key="JoinButton">
+		<value>Join</value>
+	</string>
+	<string key="NotMember">
+		<value>You can't join this game because you don't seem to be a member of {0}.</value>
+	</string>
+	<string key="JoinByButton">
+		<value>Please don't use the commands to join. Use this button instead.</value>
+	</string>
+	<string key="PlayerVoteCounts">
+		<value>{0} players have voted, {1} total.</value>
+	</string>
+	<string key="EnableSecretLynchQ">
+		<value>Enable Secret Lynch?\nCurrent: {0}</value>
+	</string>
+	<string key="EnableSecretLynchA">
+		<value>Enabling of secret Lynch set to: {0}</value>
+	</string>
+	<string key="NoAutoJoin">
+		<value>{0}, please remember that you will have to join with the button as well.</value>
+	</string>
+	<string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+		<value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+	</string>
+	<string key="DeletedFromWaitList">
+		<value>You have been deleted from the wait list for {0}.</value>
+	</string>
+	<string key="HaveJoined">
+		<!-- {0} = list of people who have joined -->
+		<value>{0} joined the game in the last 30 seconds.</value>
+	</string>
+</strings>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-01-03"/>
+  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-05-19" code="zh-Hant-TW"/>
   <!--
   01/03
     增加 獵人/狼 1對1死法 Added Hunter/ww 1vs1 finale
@@ -34,15 +34,15 @@
   </string>
   <string key="PlayerStartedGame">
     <!-- 0 - Player name -->
-    <value>{0} 已經啟動了一場遊戲! 輸入指令 /join 來參加這場獵殺盛宴...不排除有忽然死亡的可能 :P</value>
-    <value>{0} 已經啟動了一場遊戲! 輸入指令 /join 來參加這場智力測驗...不排除有暴民出現的可能 :P</value>
-    <value>{0} 已開始一場新遊戲! 利用指令 /join 來被吃掉吧!</value>
+    <value>{0} 已經啟動了一場遊戲! 按下 加入遊戲 按鈕 來參加這場獵殺盛宴...不排除有忽然死亡的可能 :P</value>
+    <value>{0} 已經啟動了一場遊戲! 按下 加入遊戲 按鈕 來參加這場智力測驗...不排除有暴民出現的可能 :P</value>
+    <value>{0} 已開始一場新遊戲! 按下 加入遊戲 按鈕 來被吃掉吧!</value>
   </string>
   <string key="PlayerStartedChaosGame">
     <!-- 0 - Player name -->
-    <value>{0} 已經啟動了混亂模式! 輸入 /join 來成為暴民... 或許混亂比起秩序更適合現實 :P</value>
-    <value>{0} 已經啟動了混亂模式! 輸入 /join 來成為殺人魔... 或許你有殺手的天賦喔!</value>
-    <value>在 {0} 的帶領下, 混亂模式正式啟動! 輸入 /join , 恐慌將會全面進場!</value>
+    <value>{0} 已經啟動了混亂模式! 按下 加入遊戲 按鈕 來成為暴民... 或許混亂比起秩序更適合現實 :P</value>
+    <value>{0} 已經啟動了混亂模式! 按下 加入遊戲 按鈕 來成為殺人魔... 或許你有殺手的天賦喔!</value>
+    <value>在 {0} 的帶領下, 混亂模式正式啟動! 按下 加入遊戲 按鈕 , 恐慌將會全面進場!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>不能加入已經開始的遊戲! 使用 /nextgame 指令來接收下一局開始的通知吧?</value>
@@ -752,7 +752,7 @@
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
-    <value>邪教徒派出了 {0} 去受洗 {1}, 但是只聽見一聲槍響, {0} 的身軀最後從窗戶中飛出來...\n{0} 死了!</value>
+    <value>邪教徒派出了 {0} 去施洗 {1}, 但是只聽見一聲槍響, {0} 的身軀最後從窗戶中飛出來...\n{0} 死了!</value>
   </string>
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Cultist's name -->
@@ -762,6 +762,9 @@
   </string>
   <string key="GuardKiller">
     <value>你試圖去保護連續殺人魔, 但他卻走出來在你身上劃出了了七七四十九道口子. 你死了...</value>
+    <value>你試圖去保護連續殺人魔, 但他卻在你的懷抱中一刀插進你的心臟，然後掏了出來，放進你快沒意識的口中。你最後看到的是他把從你身上割下來的翅膀燒烤，哼唱着~燒雞翅，我最喜歡吃...</value>
+    <value>你試圖去保護連續殺人魔, 但他卻悄悄地走來
+在你身上斬獲雙翼，又在你身上刻劃出九千九百九十九道花紋，留下不可消逝的印記...看著他微一微笑，揮灑自己的衣䄂，後悔的你死了...</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - SK's name -->
@@ -1395,7 +1398,7 @@
   </string>
   <string key="CHKillsCultistEnd">
     <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>{1} 與 {0} 在太陽下來到了鎮上廣場. 看到 {0} 頸上的十字架發出反射光芒, 正直的 {1} 最後一次把抽出了他的匕首, 將污染扭曲這村子心靈的邪教給畫下了句點。</value>
+    <value>{1} 與 {0} 在太陽下來到了鎮上廣場. 看到 {0} 頸上的十字架反射的詭異光芒, {1} 抽出了他的匕首揮出了最後一刀, 將污染扭曲這村子心靈的邪教給畫下了句點。</value>
   </string>
 
   <!-- Extend time -->
@@ -1426,8 +1429,27 @@
   <string key="MaxExtendA">
     <value>最多可延長 {0} 秒!</value>
   </string>
-
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>喔不! {0} 是個酒鬼! 你們也醉了, 無法攻擊 {1} 了...</value>
+  </string>
+
+  <!--4.2 New Strings 19 MAY-->
+  <string key="JoinButton">
+    <value>加入遊戲</value>
+  </string>
+  <string key="NotMember">
+    <value>你不能加入這個遊戲, 因為你並不是這個群組 {0} 的成員.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>請不要使用指令加入, 請改用 加入遊戲 按鈕.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>總票數 {1}, 目前已有 {0} 票完成投票.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>是否使用秘密投票?\n目前: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>已設定: 使用秘密投票設定為: {0}</value>
   </string>
 </strings>

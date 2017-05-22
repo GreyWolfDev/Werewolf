@@ -6,13 +6,13 @@
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} telah memulakan permainan! Gunakan /join untuk menyertai keseronokan.... dan untuk dimakan :P</value>
-    <value>Permainan baru telah dimulakan oleh {0}! Gunakan /join untuk mulai dan mungkin dimakan :p !</value>
+    <value>{0} telah memulakan permainan! Gunakan  untuk menyertai keseronokan.... dan untuk dimakan :P</value>
+    <value>Permainan baru telah dimulakan oleh {0}! Gunakan  untuk mulai dan mungkin dimakan :p !</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} telah memulakan permainan huru-hara! Gunakan /join untuk menyertai keseronokan .... dan untuk dimakan serta mati :P</value>
-    <value>Permainan huru-hara baru telah dimulakan oleh {0}! Gunakan /join untuk dimakan!</value>
+    <value>{0} telah memulakan permainan huru-hara! Gunakan  untuk menyertai keseronokan .... dan untuk dimakan serta mati :P</value>
+    <value>Permainan huru-hara baru telah dimulakan oleh {0}! Gunakan untuk dimakan!</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
     <value>Anda tidak boleh menyertai sekarang! Permainan sudah berjalan.</value>
@@ -21,11 +21,11 @@
     <value>Anda telah menyertai</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minit untuk /join</value>
+    <value>1 minit untuk </value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} saat yang tinggal untuk /join</value>
+    <value>{0} saat yang tinggal untuk </value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Pemain tidak mencukupi,  permainan dibatalkan!</value>
@@ -946,7 +946,7 @@ Nota: Para adalah pembuat bot ini.</value>
     <value>Anda mesti memulakan permainan dari dalam kumpulan!</value>
   </string>
   <string key="PingInfo">
-    <value>Masa yang diperlukan oleh Telegram untuk menghantar mesej kepada saya: {0}\nCurrent CPU Usage: {1}%\nMesej per saat: {2}</value>
+    <value>Masa yang diperlukan oleh Telegram untuk menghantar mesej kepada saya: {0}\nMesej per saat: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Bahasa apa?\nCurrent: {0}</value>
@@ -1337,12 +1337,12 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Masa dilanjutkan {0} saat!\n{1} tinggal untuk /join</value>
+    <value>Masa dilanjutkan {0} saat!\n{1} tinggal untuk </value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Masa untuk sertai {0} saat!\n{1} tinggal /join</value>
+    <value>Masa untuk sertai {0} saat!\n{1} tinggal </value>
   </string>
   <string key="CantExtend">
     <value>Hanya admin group boleh lanjutkan masa melebihi sekali!</value>
@@ -1363,5 +1363,36 @@ Nota: Para adalah pembuat bot ini.</value>
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Oh tidak! {0} sedang mabuk, tidak boleh menyerang {1}....</value>
+  </string>
+   <string key="JoinButton">
+    <value>Sertai</value>
+  </string>
+  <string key="NotMember">
+    <value>Anda tidak boleh menyertai permainan ini kerana anda bukanlah ahli dalam {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Mohon tidak lagi menggunakan arahan join. Guna button ini .</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} pemain telah mengundi, {1} jumlah.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Membenarkan undian rahsia?\nSekarang: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Membenarkan undian rahsia ditetapkan kepada: {0}</value>
+  </string>
+   <string key="NoAutoJoin">
+    <value>{0}, perlu ingat anda juga perlu guna button sertai.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Tidak menjumpai kumpulan. Sila jalankan command ini, dalam kumpulan yang anda tunggukan.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Anda telah dipadam daripada senarai {0}.</value>
+  </string>
+    <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} telah menyertai permainan dalam 30 saat yang lalu.</value>
   </string>
 </strings>
