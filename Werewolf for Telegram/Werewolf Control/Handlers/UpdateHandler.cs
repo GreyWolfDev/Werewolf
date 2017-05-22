@@ -1,17 +1,12 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Windows.Forms.Design;
-using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
-using Database;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -524,7 +519,7 @@ namespace Werewolf_Control.Handler
             return node;
         }
 
-        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done" };
+        private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done", "stopwaiting" };
 
         public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
         {
@@ -818,6 +813,11 @@ namespace Werewolf_Control.Handler
                                         $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
+                            break;
+                        case "stopwaiting":
+                            using (var db = new WWContext())
+                                db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
+                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", grp.Language, grp.Name));
                             break;
                         case "validate":
                             //choice = args[1];
@@ -1127,7 +1127,6 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("AllowFoolQ", language, grp.AllowFool == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
                             break;
                         case "setfool":
-
                             grp.AllowFool = (choice == "true");
                             Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("AllowFoolA", language, grp.AllowFool == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
                             Bot.ReplyToCallback(query,
@@ -1143,9 +1142,24 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("AllowTannerQ", language, grp.AllowTanner == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
                             break;
                         case "settanner":
-
                             grp.AllowTanner = (choice == "true");
                             Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("AllowTannerA", language, grp.AllowTanner == false ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                            DB.SaveChanges();
+                            break;
+
+                        case "secretlynch":
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Allow", language), $"setsecretlynch|{groupid}|true"));
+                            buttons.Add(new InlineKeyboardButton(GetLocaleString("Disallow", language), $"setsecretlynch|{groupid}|false"));
+                            buttons.Add(new InlineKeyboardButton(Cancel, $"setsecretlynch|{groupid}|cancel"));
+                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                            Bot.ReplyToCallback(query,
+                                GetLocaleString("EnableSecretLynchQ", language, grp.EnableSecretLynch != true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)), replyMarkup: menu);
+                            break;
+                        case "setsecretlynch":
+                            grp.EnableSecretLynch = (choice == "true");
+                            Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString("EnableSecretLynchA", language, grp.EnableSecretLynch != true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
@@ -1300,6 +1314,7 @@ namespace Werewolf_Control.Handler
                 AllowCult = true,
                 DisableFlee = false,
                 MaxPlayers = 35,
+                EnableSecretLynch = false,
                 CreatedBy = createdBy
             };
         }
@@ -1323,6 +1338,7 @@ namespace Werewolf_Control.Handler
             buttons.Add(new InlineKeyboardButton("Allow Fool", $"fool|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Tanner", $"tanner|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Cult", $"cult|{id}"));
+            buttons.Add(new InlineKeyboardButton("Enable Secret Lynch", $"secretlynch|{id}"));
             buttons.Add(new InlineKeyboardButton("Done", $"done|{id}"));
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)

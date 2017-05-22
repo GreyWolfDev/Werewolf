@@ -9,6 +9,7 @@
     01/02 show won at game end, and resuming roles, used ufe0f instead of "..."
     02/02 put back the role emoji
 	12/02 used u2063 instead of ufe0f, edited LatestList
+	22/05 added JoinButton, NotMember, JoinByButton, EnableSecretLynchQ, EnableSecretLynchA, PlayerVoteCounts, NoAutoJoin, GroupNotFound, DeletedFromWaitList, edited PingInfo
 -->
 <strings>
   <language name="Super Amnesia" base="Special" variant="SuperAmnesia" owner="ssittt" code="en" isDefault="false"/>
@@ -16,10 +17,10 @@
     <value>⁣</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} /join</value>
+    <value>{0}</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} /join</value>
+    <value>{0}</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>/nextgame</value>
@@ -28,10 +29,10 @@
     <value>⁣</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 /join</value>
+    <value>1</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} /join</value>
+    <value>{0}</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>/startgame\n/startchaos</value>
@@ -806,7 +807,7 @@
     <value>Start from group</value>
   </string>
   <string key="PingInfo">
-    <value>Time to ping {0}\nCPU {1}%\nMps {2}</value>
+    <value>Time to ping {0}\nMps {1}</value>
   </string>
   <string key="WhatLang">
     <value>Current: {0}</value>
@@ -1203,12 +1204,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>+{0}s\n{1} left /join</value>
+    <value>+{0}s\n{1} left</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>-{0}s\n{1} left /join</value>
+    <value>-{0}s\n{1} left</value>
   </string>
   <string key="CantExtend">
     <value>Can't extend</value>
@@ -1232,6 +1233,37 @@
     <value>{1}\n{0}</value>
   </string>
     <string key="HarlotFuckKillerPublic">
+    <value>{0}</value>
+  </string>
+  <string key="JoinButton">
+    <value>⁣</value>
+  </string>
+  <string key="NotMember">
+    <value>{0}</value>
+  </string>
+  <string key="JoinByButton">
+    <value>⁣</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0}\n{1}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>⁣</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>{0}</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
     <value>{0}</value>
   </string>
 </strings>

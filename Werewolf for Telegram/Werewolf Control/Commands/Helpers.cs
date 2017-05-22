@@ -52,6 +52,7 @@ namespace Werewolf_Control
                 return;
             }
 #endif
+    
 
 #if RELEASE2
 
@@ -76,12 +77,15 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+                if (grp.CreatedBy == "BAN")
+                {
+                    Bot.Api.LeaveChat(grp.GroupId);
+                    return;
+                }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
-                {
                     grp.GroupLink = null;
-                }
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
@@ -149,25 +153,33 @@ namespace Werewolf_Control
             return await Bot.Send(message, id, clearKeyboard, customMenu);
         }
 
+
+
         private static string GetLocaleString(string key, string language, params object[] args)
         {
-            var files = Directory.GetFiles(Bot.LanguageDirectory);
-            XDocument doc;
-            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+            try
             {
-                doc = XDocument.Load(file);
+                var files = Directory.GetFiles(Bot.LanguageDirectory);
+                XDocument doc;
+                var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                {
+                    doc = XDocument.Load(file);
+                }
+                var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
+                    Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var values = strings.Descendants("value");
+                var choice = Bot.R.Next(values.Count());
+                var selected = values.ElementAt(choice);
+                return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
-            if (strings == null)
+            catch
             {
-                //fallback to English
-                
-                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var values = strings.Descendants("value");
+                var choice = Bot.R.Next(values.Count());
+                var selected = values.ElementAt(choice);
+                return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            var values = strings.Descendants("value");
-            var choice = Bot.R.Next(values.Count());
-            var selected = values.ElementAt(choice);
-            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
@@ -190,7 +202,8 @@ namespace Werewolf_Control
                 MaxPlayers = 35,
                 CreatedBy = createdBy,
                 AllowExtend = false,
-                MaxExtend = 60
+                MaxExtend = 60,
+                EnableSecretLynch = false
             };
         }
 
@@ -252,13 +265,13 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
-                var grp = db.Players.FirstOrDefault(x => x.TelegramId == id);
-                if (String.IsNullOrEmpty(grp?.Language) && grp != null)
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (String.IsNullOrEmpty(p?.Language) && p != null)
                 {
-                    grp.Language = "English";
+                    p.Language = "English";
                     db.SaveChanges();
                 }
-                return grp?.Language ?? "English";
+                return p?.Language ?? "English";
             }
         }
 
@@ -361,6 +374,21 @@ namespace Werewolf_Control
                 }
             }
             return d[n, m];
+        }
+
+        public static Database.Group GetGroup(string str, WWContext db)
+        {
+            //try with id
+            if (long.TryParse(str, out long id))
+                return db.Groups.FirstOrDefault(x => x.GroupId == id);
+            //try with username
+            if (str.StartsWith("@"))
+                return db.Groups.FirstOrDefault(x => x.UserName == str.Substring(1));
+            //hope str is a link, and compare the hash part
+            var index = str.LastIndexOf("me/");
+            if (index == -1) return null;
+            var hash = str.Substring(index); //dummy variable becase LINQ to Entity doesn't like it.
+            return db.Groups.FirstOrDefault(x => x.GroupLink.EndsWith(hash));
         }
     }
 }

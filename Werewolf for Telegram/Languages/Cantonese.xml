@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 01/01/2017 by @jeffffc
+    LAST UPDATE 22/052017 by @jeffffc
+    22/05:  Added "NoAutoJoin" "GroupNotFound" "DeletedFromWaitList" "HaveJoined"
     19/05:  Update language node details, updates for 4.2
     01/01:  Added: "HunterKillsWolfEnd", "WolfKillsHunterEnd", "CHKillsCultistEnd", "SecondsAdded", "SecondsRemoved", "CantExtend", "AllowExtendQ", "AllowExtendA", "MaxExtendQ", "MaxExtendA", "WolvesEatDrunkBlockSecondKill"
     01/01:  Amended "AboutAlphaWolf", "AboutDrunk"
@@ -811,7 +812,7 @@
     <value>你一定要喺一個群組入面先可以開新遊戲架喎！</value>
   </string>
   <string key="PingInfo">
-    <value>回應處理時間︰{0}\n現時 CPU 用量︰{1}%\n每秒接收訊息︰{2}</value>
+    <value>回應處理時間︰{0}\n每秒接收訊息︰{1}</value>
   </string>
   <string key="WhatLang">
     <value>想轉用咩語言？\n而家用緊︰ {0}</value>
@@ -1248,5 +1249,18 @@
   </string>
   <string key="EnableSecretLynchA">
     <value>不記名投票已經設定為: 【{0}】</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0} 記住你都要另外撳制加入遊戲喎!</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>搵唔倒群組... 請你喺群組入面用, 或者喺指令後面加群組連結/ID/username</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>你唔想再等... 本身喺 {0} 排緊隊，而家唔排喇!</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} 喺過去 30 秒加入左遊戲。</value>
   </string>
 </strings>

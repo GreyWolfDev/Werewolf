@@ -22,8 +22,8 @@ namespace Werewolf_Node
     class Werewolf : IDisposable
     {
         public long ChatId;
-        public int GameDay, GameId,
-            SecondsToAdd = 0;
+        public int GameDay, GameId;
+        private int _secondsToAdd = 0;
         public List<IPlayer> Players = new List<IPlayer>();
         public bool IsRunning,
             IsJoining = true,
@@ -44,7 +44,12 @@ namespace Werewolf_Node
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
         private int _joinMsgId;
+        private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
+        private InlineKeyboardMarkup _joinButton;
+        private List<int> _joinButtons = new List<int>();
+        private int _playerListId = 0;
+
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -87,19 +92,26 @@ namespace Werewolf_Node
                     LoadLanguage(DbGroup.Language);
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
-                    AddPlayer(u);
+                    //AddPlayer(u);
                 }
 
+                var deeplink = $"{Program.ClientId.ToString("N")}{Guid.ToString("N")}";
                 //create our button
-                var menu = new InlineKeyboardMarkup(new[]
+                _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url=$"https://t.me/{Program.Me.Username}?start={Guid}"}
-                });//
-#if DEBUG
-                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
-#else
-                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName), replyMarkup: menu).Result.MessageId;
-#endif
+                    new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://telegram.me/{Program.Me.Username}?start=" + deeplink }
+                });
+                FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
+                #if DEBUG
+                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                #else
+                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                #endif
+                
+                //let's keep this on for a while, then we will delete it
+                SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
+
+                SendPlayerList(true);
 
                 new Thread(GameTimer).Start();
 
@@ -166,13 +178,13 @@ namespace Werewolf_Node
                 {
                     var values = strings.Descendants("value");
                     var choice = Program.R.Next(values.Count());
-                    var selected = values.ElementAt(choice);
+                    var selected = values.ElementAt(choice).Value;
 
                     //disable bluetexting /join!
-                    if (selected.Value.Contains("/join"))
+                    if (selected.ToLower().Contains("/join"))
                         throw new Exception("/join found in the string, using the English file.");
 
-                    return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+                    return String.Format(selected.FormatHTML(), args).Replace("\\n", Environment.NewLine);
                 }
                 else
                 {
@@ -191,7 +203,6 @@ namespace Werewolf_Node
                     {
                         var choice = Program.R.Next(values.Count());
                         var selected = values.ElementAt(choice).Value;
-                        selected = selected.Replace("/join", "join").Replace("/Join", "Join");
                         // ReSharper disable once AssignNullToNotNullAttribute
                         return String.Format(selected.FormatHTML(), args).Replace("\\n", Environment.NewLine);
                     }
@@ -219,58 +230,80 @@ namespace Werewolf_Node
                 //Send($"{Settings.GameJoinTime} seconds to join!");
                 //start with the joining time
                 var count = Players.Count;
+                int secondsElapsed = 0;
+                var notifiedPlayers = new List<int>();
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
                         return;
-                    if (KillTimer)
+
+                    if (KillTimer) //forcestart
                     {
                         KillTimer = false;
                         break;
                     }
-                    if (count != Players.Count)
+
+                    if (count != Players.Count) //if a player joined, add time
                     {
                         i = Math.Min(i, Math.Max(120, i - 30));
                         count = Players.Count;
                     }
+                    
+                    if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
+                    {
+                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')));
+                        notifiedPlayers = Players.Select(x => x.Id).ToList();
+                        secondsElapsed = 0;
+                    }
 
-                    if (i == Settings.GameJoinTime - 60)
+                    try
                     {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("MinuteLeftToJoin"), replyToMessageId: _joinMsgId);
-                    }
-                    else if (i == Settings.GameJoinTime - 30)
-                    {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "30".ToBold()), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
-                    }
-                    else if (i == Settings.GameJoinTime - 10)
-                    {
-                        Program.Bot.SendTextMessage(ChatId, GetLocaleString("SecondsLeftToJoin", "10".ToBold()), parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
-                    }
-                    if (SecondsToAdd != 0)
-                    {
-                        i = Math.Max(i - SecondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
-                        var msg = "";
-                        var remaining = TimeSpan.FromSeconds(Settings.GameJoinTime - i);
-                        if (SecondsToAdd > 0)
-                            msg = GetLocaleString("SecondsAdded", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
-                        else
+                        Telegram.Bot.Types.Message r = null;
+
+                        var importantSeconds = new[] { 10, 30, 60 }; //notify when time is running out
+                        foreach (var s in importantSeconds)
                         {
-                            SecondsToAdd = -SecondsToAdd;
-                            msg = GetLocaleString("SecondsRemoved", SecondsToAdd.ToString().ToBold(), remaining.ToString(@"mm\:ss").ToBold());
+                            if (i == Settings.GameJoinTime - s)
+                            {
+                                var str = s == 60 ? GetLocaleString("MinuteLeftToJoin") : GetLocaleString("SecondsLeftToJoin", s.ToString().ToBold());
+                                r = Program.Bot.SendTextMessage(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                                break;
+                            }
                         }
-                        if (Settings.GameJoinTime > i)
-                            Program.Bot.SendTextMessage(ChatId, msg, parseMode: ParseMode.Html, replyToMessageId: _joinMsgId);
 
-                        SecondsToAdd = 0;
+                        if (_secondsToAdd != 0)
+                        {
+                            i = Math.Max(i - _secondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
+
+                            if (Settings.GameJoinTime > i)
+                                r = Program.Bot.SendTextMessage(
+                                    ChatId, 
+                                    GetLocaleString(
+                                        _secondsToAdd > 0 ? "SecondsAdded" : "SecondsRemoved", 
+                                        Math.Abs(_secondsToAdd).ToString().ToBold(), 
+                                        TimeSpan.FromSeconds(Settings.GameJoinTime - i).ToString(@"mm\:ss").ToBold()
+                                    ), parseMode: ParseMode.Html, replyMarkup: _joinButton
+                                ).Result;
+
+                            _secondsToAdd = 0;
+                        }
+                        if (r != null)
+                        {
+                            _joinButtons.Add(r.MessageId);
+                        }
+                    }
+                    catch
+                    {
+                        // ignored
                     }
                     Thread.Sleep(1000);
                 }
-                Program.Bot.EditMessageCaption(ChatId, _joinMsgId, " ", null);
+                Program.Bot.EditMessageCaption(ChatId, _joinMsgId, FirstMessage, null);
                 IsJoining = false;
                 IsInitializing = true;
 
-                Thread.Sleep(5000); //wait for last second joins
-
+                Thread.Sleep(2000); //wait for last second joins
+                CleanupButtons();
                 //check we have enough players...
                 if (Players.Count < Settings.MinPlayers)
                 {
@@ -296,7 +329,7 @@ namespace Werewolf_Node
                         GrpId = int.Parse(DbGroup.Id.ToString()),
                         Mode = Chaos ? "Chaos" : "Normal"
                     };
-                    
+
                     db.SaveChanges();
                     db.Games.Add(game);
                     db.SaveChanges();
@@ -379,16 +412,13 @@ namespace Werewolf_Node
             }
             catch (Exception ex)
             {
-                while (ex.InnerException != null)
-                {
-                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
-                    ex = ex.InnerException;
-                }
+                LogAllExceptions(ex);
                 Send("Something just went terribly wrong, I had to cancel the game....\n" + ex.Message);
 #if DEBUG
                 Send(ex.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                //this would be a duplicate
+                //Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
 #endif
 
             }
@@ -458,7 +488,8 @@ namespace Werewolf_Node
                 if (IsInitializing || !IsJoining) return;
                 //add player
                 Players.Add(p);
-                Send(GetLocaleString("YouJoined", ChatGroup), p.Id);
+                var groupname = String.IsNullOrWhiteSpace(DbGroup.GroupLink) ? ChatGroup : $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup.FormatHTML()}</a>";
+                Send(GetLocaleString("YouJoined", groupname), p.Id);
 
                 //if (!notify) return;
 
@@ -506,16 +537,16 @@ namespace Werewolf_Node
                 //now, attempt to PM the player
                 //try
                 //{
-                    // ReSharper disable once UnusedVariable
-                    //var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
+                // ReSharper disable once UnusedVariable
+                //var result = Send(GetLocaleString("YouJoined", ChatGroup.FormatHTML()), u.Id).Result;
                 //}
                 //catch (Exception)
                 //{
-                    //var botname = "@" + Program.Me.Username;
-                    //if (!sendPM)
-                    //    msg = GetLocaleString("PMTheBot", p.GetName(), botname);
-                    ////unable to PM
-                    //sendPM = true;
+                //var botname = "@" + Program.Me.Username;
+                //if (!sendPM)
+                //    msg = GetLocaleString("PMTheBot", p.GetName(), botname);
+                ////unable to PM
+                //sendPM = true;
                 //}
 
                 //SendWithQueue(msg, requestPM: sendPM);
@@ -575,6 +606,7 @@ namespace Werewolf_Node
                 else if (IsJoining & !IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
+                    _requestPlayerListUpdate = true;
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -662,7 +694,13 @@ namespace Werewolf_Node
                     if (Program.R.Next(100) < 50)
                     {
                         //pick a random target
-                        player.Choice = ChooseRandomPlayerId(player, false);
+                        var clumsy = ChooseRandomPlayerId(player, false);
+                        if (clumsy == player.Choice) player.ClumsyCorrectLynchCount++;
+                        player.Choice = clumsy;
+                    }
+                    else
+                    {
+                        player.ClumsyCorrectLynchCount++;
                     }
                 }
 
@@ -770,8 +808,17 @@ namespace Werewolf_Node
 
                 if (player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
-                    var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
-                    SendWithQueue(msg);
+
+                    if (DbGroup.EnableSecretLynch != true)
+                    {
+                        var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
+                        SendWithQueue(msg);
+                    }
+                    else
+                    {
+                        var msg = GetLocaleString("PlayerVoteCounts", Players.Count(x => !x.IsDead && x.Choice != 0), Players.Count(x => !x.IsDead));
+                        SendWithQueue(msg);
+                    }
 
                     if (NoOneCastLynch)
                     {
@@ -866,11 +913,9 @@ namespace Werewolf_Node
                 bool byteMax = false;
                 bool pList = false;
                 var i = 0;
-                while (_messageQueue.Count > 0 & !byteMax)
+                while (_messageQueue.Count > 0 && !byteMax)
                 {
-
-
-
+                    
                     i++;
                     var m = _messageQueue.Peek();
 
@@ -878,9 +923,18 @@ namespace Werewolf_Node
                     {
                         _messageQueue.Dequeue();
                         if (_playerListId == 0)
-                            _playerListId = Send(m.Msg).Result.MessageId;
+                        {
+                            try
+                            {
+                                _playerListId = Send(m.Msg).Result.MessageId;
+                            }
+                            catch
+                            {
+                                //ignored
+                            }
+                        }
                         else
-                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, Telegram.Bot.Types.Enums.ParseMode.Html, disableWebPagePreview: true);
+                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
                         continue;
                     }
 
@@ -923,7 +977,7 @@ namespace Werewolf_Node
                         else
                         {
                             _messageQueue.Dequeue(); //remove the message, we are sending it.
-                            final += m.Msg + Environment.NewLine;
+                            final += m.Msg + Environment.NewLine + Environment.NewLine;
                             if (m.RequestPM)
                                 requestPM = true;
                             if (m.PlayerList)
@@ -984,11 +1038,10 @@ namespace Werewolf_Node
                 Send(final);
         }
 
-        private int _playerListId;
 
         private void SendPlayerList(bool joining = false)
         {
-            if (!_playerListChanged & !joining) return;
+            if (!_playerListChanged && !joining) return;
             if (Players == null) return;
             try
             {
@@ -1020,7 +1073,7 @@ namespace Werewolf_Node
             }
             catch (Exception ex)
             {
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                LogException(ex);
             }
         }
 
@@ -1028,14 +1081,24 @@ namespace Werewolf_Node
         {
             if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
             LastPlayersOutput = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), replyToMessageId: _playerListId);
+            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
         }
 
-        public void ShowJoinButton()
+        public async void ShowJoinButton()
         {
+            if (!IsJoining) return;
             if (!((DateTime.Now - LastJoinButtonShowed).TotalSeconds > (15))) return;
             LastJoinButtonShowed = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), replyToMessageId: _joinMsgId);
+            try
+            {
+                var r = await Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+                _joinButtons.Add(r.MessageId);
+            }
+            catch
+            {
+                // ignored
+            }
+
         }
         #endregion
 
@@ -1215,8 +1278,8 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.WolfCub;
-                rolesToAssign[1] = IRole.WolfCub;
+                //rolesToAssign[0] = IRole.WolfCub;
+                //rolesToAssign[1] = IRole.WolfCub;
                 //rolesToAssign[2] = IRole.AlphaWolf;
                 //rolesToAssign[3] = IRole.WolfCub;
                 //if (rolesToAssign.Count >= 5)
@@ -1251,7 +1314,7 @@ namespace Werewolf_Node
             catch (Exception ex)
             {
                 Send($"Error while assigning roles: {ex.Message}\nPlease start a new game");
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                LogException(ex);
                 Thread.Sleep(1000);
                 Program.RemoveGame(this);
             }
@@ -1343,20 +1406,13 @@ namespace Werewolf_Node
                     // ReSharper disable once UnusedVariable
                     var result = Program.Send(msg, p.Id, true).Result;
                 }
-                catch (NullReferenceException ex)
+                catch (AggregateException ae)
                 {
-                    Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                    LogException(ae);
                 }
                 catch (Exception e)
                 {
-                    //SendWithQueue(GetLocaleString("PlayerNoPM", p.GetName()));
-                    //FleePlayer(p.TeleUser.Id);
-                    while (e.InnerException != null)
-                    {
-                        Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
-                        e = e.InnerException;
-                    }
-
+                    LogAllExceptions(e);
                 }
                 Thread.Sleep(50);
             }
@@ -1885,7 +1941,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("CantExtend"));
                     return;
                 }
-                SecondsToAdd = seconds;
+                _secondsToAdd = seconds;
                 HaveExtended.Add(p.TeleUser.Id);
             }
             return;
@@ -1950,7 +2006,10 @@ namespace Werewolf_Node
                         target.HasBeenVoted = true;
                         target.Votes++;
                         if (p.PlayerRole == IRole.Mayor && p.HasUsedAbility) //Mayor counts twice
+                        {
+                            p.MayorLynchAfterRevealCount++;
                             target.Votes++;
+                        }
                         DBAction(p, target, "Lynch");
                     }
                     p.NonVote = 0;
@@ -2019,6 +2078,8 @@ namespace Werewolf_Node
                         lynched.TimeDied = DateTime.Now;
                         if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
                             AddAchievement(lynched, Achievements.LackOfTrust);
+                        if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
+                            AddAchievement(lynched, Achievements.SpoiledRichBrat);
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.ShowRoles == false ? "" : $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}"));
 
                         if (lynched.InLove)
@@ -2063,18 +2124,17 @@ namespace Werewolf_Node
 
                 if (CheckForGameEnd(true)) return;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                var e = ex;
                 while (e.InnerException != null)
                     e = e.InnerException;
 
 
                 Send("Oh no, something went wrong :( Error report is being sent to the developers\n" + e.Message);
 #if DEBUG
-                Send(ex.StackTrace);
+                Send(e.StackTrace);
 #else
-                Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
+                LogException(e);
 #endif
                 Program.RemoveGame(this);
             }
@@ -2218,7 +2278,8 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
                 p.Votes = 0;
                 p.DiedLastNight = false;
-                if (p.Bitten & !p.IsDead)
+                p.BeingVisitedSameNightCount = 0;
+                if (p.Bitten && !p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                 {
                     if (p.PlayerRole == IRole.Mason)
                         foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
@@ -2238,6 +2299,8 @@ namespace Werewolf_Node
                         var andStr = $" {GetLocaleString("And").Trim()} ";
                         msg += GetLocaleString("WolfTeam", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
                     }
+                    Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
+
                     Send(msg, p.Id);
 
                 }
@@ -2356,13 +2419,14 @@ namespace Werewolf_Node
                         pl.Votes++;
                 }
                 choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
-
+                int eatCount = 0;
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        target.BeingVisitedSameNightCount++;
                         if (ga?.Choice == target.Id &&
                             !(target.PlayerRole == IRole.Harlot && (target.Choice == 0 || target.Choice == -1))) //doesn't apply to harlot not home
                         {
@@ -2568,6 +2632,11 @@ namespace Werewolf_Node
                                         target.IsDead = true;
                                         target.TimeDied = DateTime.Now;
                                         target.DiedLastNight = true;
+                                        if (target.PlayerRole == IRole.Sorcerer)
+                                        {
+                                            foreach (var w in voteWolves)
+                                                AddAchievement(w, Achievements.NoSorcery);
+                                        }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
                                             GetRandomImage(Settings.VillagerDieImages), target.Id);
@@ -2575,12 +2644,20 @@ namespace Werewolf_Node
                                     break;
                             }
                         }
+                        eatCount++;
                     }
                     else
                     {
                         //no choice
                     }
                 }
+                if (eatCount == 2)
+                {
+                    var cub = Players.GetPlayerForRole(IRole.WolfCub, false);
+                    if (cub != null)
+                        AddAchievement(cub, Achievements.IHelped);
+                }
+                eatCount = 0;
             }
             WolfCubKilled = false;
             #endregion
@@ -2594,6 +2671,7 @@ namespace Werewolf_Node
                 var skilled = Players.FirstOrDefault(x => x.Id == sk.Choice && !x.IsDead);
                 if (skilled != null)
                 {
+                    skilled.BeingVisitedSameNightCount++;
                     if (ga?.Choice == skilled.Id)
                     {
                         Send(GetLocaleString("GuardBlockedKiller", skilled.GetName()), sk.Id);
@@ -2629,6 +2707,7 @@ namespace Werewolf_Node
                 var hunted = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                 if (hunted != null)
                 {
+                    hunted.BeingVisitedSameNightCount++;
                     DBAction(hunter, hunted, "Hunt");
                     if (hunted.PlayerRole == IRole.SerialKiller)
                     {
@@ -2650,6 +2729,7 @@ namespace Werewolf_Node
                         hunted.IsDead = true;
                         hunted.TimeDied = DateTime.Now;
                         hunted.DiedLastNight = true;
+                        hunter.CHHuntedCultCount++;
                         hunted.KilledByRole = IRole.CultistHunter;
                         DBKill(hunter, hunted, KillMthd.Hunt);
                     }
@@ -2689,6 +2769,7 @@ namespace Werewolf_Node
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        target.BeingVisitedSameNightCount++;
                         if (!target.IsDead)
                         {
                             var newbie = voteCult.OrderByDescending(x => x.DayCult).First();
@@ -2870,6 +2951,7 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == harlot.Choice);
                 if (target != null)
                 {
+
                     DBAction(harlot, target, "Fuck");
                     if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
                         harlot.HasRepeatedVisit = true;
@@ -2885,6 +2967,7 @@ namespace Werewolf_Node
                 {
                     if (target != null)
                     {
+                        target.BeingVisitedSameNightCount++;
                         switch (target.PlayerRole)
                         {
                             case IRole.Wolf:
@@ -3034,7 +3117,7 @@ namespace Werewolf_Node
                 {
                     //if (save != null)
                     //    DBAction(ga, save, "Guard");
-
+                    save.BeingVisitedSameNightCount++;
                     if (save.WasSavedLastNight)
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
@@ -3065,6 +3148,7 @@ namespace Werewolf_Node
                             //only send if GA survived and wolf wasn't attacked
                             {
                                 Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
+                                ga.GAGuardWolfCount++;
                             }
                             break;
                         case IRole.SerialKiller:
@@ -3247,10 +3331,15 @@ namespace Werewolf_Node
                 p.DiedLastNight = false;
                 p.Choice = 0;
                 p.Votes = 0;
+                if (p.BeingVisitedSameNightCount >= 3)
+                {
+                    p.BusyNight = true;
+                }
                 if (p.Bitten & !p.IsDead)
                 {
                     Send(GetLocaleString("PlayerBitten"), p.Id);
                 }
+                p.BeingVisitedSameNightCount = 0;
             }
 
         }
@@ -3822,7 +3911,14 @@ namespace Werewolf_Node
         #endregion
 
         #region Helpers
-
+        public void CleanupButtons()
+        {
+            foreach (var id in _joinButtons)
+            {
+                Program.Bot.DeleteMessage(ChatId, id);
+                Thread.Sleep(500);
+            }
+        }
         public void FleePlayer(int banid)
         {
             if (IsInitializing)
@@ -3866,6 +3962,15 @@ namespace Werewolf_Node
         public void Kill()
         {
             //forces game to exit
+            try
+            {
+                if (IsJoining) //try to remove the joining button...
+                    Program.Bot.EditMessageCaption(ChatId, _joinMsgId, "", null);
+            }
+            catch
+            {
+                //ignored
+            }
             Send("Game removed");
             Program.RemoveGame(this);
         }
@@ -4012,6 +4117,26 @@ namespace Werewolf_Node
             return Program.Bot.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
         }
 
+        internal void LogException(AggregateException ae)
+        {
+            foreach (var e in ae.InnerExceptions)
+                LogAllExceptions(e);
+        }
+
+        internal void LogAllExceptions(Exception e)
+        {
+            do
+            {
+                LogException(e);
+                e = e.InnerException;
+            } while (e != null); 
+            return;
+        }
+
+        internal void LogException(Exception e)
+        {
+            Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
+        }
 
         #endregion
 
@@ -4271,6 +4396,20 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.CultCon;
                         if (!ach.HasFlag(Achievements.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
                             newAch = newAch | Achievements.SerialSamaritan;
+                        if (!ach.HasFlag(Achievements.CultistTracker) && player.PlayerRole == IRole.CultistHunter && player.CHHuntedCultCount >= 3)
+                            newAch = newAch | Achievements.CultistTracker;
+                        if (!ach.HasFlag(Achievements.ImNotDrunk) && player.PlayerRole == IRole.ClumsyGuy && player.ClumsyCorrectLynchCount >= 3)
+                            newAch = newAch | Achievements.ImNotDrunk;
+                        if (!ach.HasFlag(Achievements.WuffieCult) && player.PlayerRole == IRole.AlphaWolf && player.AlphaConvertCount >= 3)
+                            newAch = newAch | Achievements.WuffieCult;
+                        if (!ach.HasFlag(Achievements.DidYouGuardYourself) && player.PlayerRole == IRole.GuardianAngel && player.GAGuardWolfCount >= 3)
+                            newAch = newAch | Achievements.DidYouGuardYourself;
+                        if (!ach.HasFlag(Achievements.ThreeLittleWolves) && player.PlayerRole == IRole.Sorcerer && Players.GetPlayersForRoles(WolfRoles, true).Count() >= 3)
+                            newAch = newAch | Achievements.ThreeLittleWolves;
+                        if (!ach.HasFlag(Achievements.President) && player.PlayerRole == IRole.Mayor && player.MayorLynchAfterRevealCount >= 3)
+                            newAch = newAch | Achievements.President;
+                        if (!ach.HasFlag(Achievements.ItWasABusyNight) && player.BusyNight)
+                            newAch = newAch | Achievements.ItWasABusyNight;
 
                         //now save
                         p.Achievements = (long)(ach | newAch);

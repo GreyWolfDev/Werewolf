@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
@@ -283,7 +283,7 @@ namespace Werewolf_Control
             }
 
             var link = args[1].Trim();
-            if (!link.Contains("telegram.me/joinchat"))
+            if (!Regex.IsMatch(link, @"^(https?:\/\/)?t(elegram)?\.me\/joinchat\/([a-zA-Z0-9_\-]+)$"))
             {
                 Send("This is an invalid telegram join link.", update.Message.Chat.Id);
                 return;
@@ -296,7 +296,7 @@ namespace Werewolf_Control
                 db.SaveChanges();
             }
 
-            Send($"Your group will be listed as: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
+            Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "addach", DevOnly = true)]
