@@ -10,11 +10,22 @@ namespace Database
     [Flags]
     public enum GroupConfig : long
     {
+        //Group settings are now as simple as adding an enum to this list.  No more database schema changes.
         None = 0,
         [Editable(true), Question("tanner"), DefaultValue(true)]
         AllowTanner = 1,
+        [Editable(true), Question("fool"), DefaultValue(true)]
+        AllowFool = 2,
+        [Editable(true), Question("cult"), DefaultValue(true)]
+        AllowCult = 4,
         [Editable(true), Question("secretlynch", SettingQuestion.YesNo), DefaultValue(false)]
-        EnableSecretLynch = 2,
+        EnableSecretLynch = 8,
+        [Editable(true), Question("randommode", SettingQuestion.YesNo), DefaultValue(false)] //WAIT WHAT IS THIS? Shhhhhhhhh
+        RandomMode = 16,
+        [Editable(true), Question("extend"), DefaultValue(false)]
+        AllowExtend = 32,
+        [Editable(true), Question("roles", SettingQuestion.YesNo), DefaultValue(true)]
+        ShowRolesDeath = 64,
     }
 
     public enum SettingQuestion
@@ -49,7 +60,7 @@ namespace Database
         {
             var fi = value.GetType().GetField(value.ToString());
             var dA = fi.GetCustomAttribute(typeof(EditableAttribute)) as EditableAttribute;
-            return dA.AllowEdit;
+            return dA?.AllowEdit ?? false;
         }
         public static QuestionAttribute GetInfo(this GroupConfig value)
         {
