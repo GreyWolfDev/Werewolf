@@ -1336,9 +1336,14 @@ namespace Werewolf_Control.Handler
             buttons.Add(new InlineKeyboardButton("Set Lynch Timer", $"lynch|{id}"));
             buttons.Add(new InlineKeyboardButton("Set Night Timer", $"night|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Fool", $"fool|{id}"));
-            buttons.Add(new InlineKeyboardButton("Allow Tanner", $"tanner|{id}"));
+            //buttons.Add(new InlineKeyboardButton("Allow Tanner", $"tanner|{id}"));
             buttons.Add(new InlineKeyboardButton("Allow Cult", $"cult|{id}"));
             buttons.Add(new InlineKeyboardButton("Enable Secret Lynch", $"secretlynch|{id}"));
+            foreach (var flag in Enum.GetValues(typeof(GroupConfig)))
+            {
+                
+            }
+
             buttons.Add(new InlineKeyboardButton("Done", $"done|{id}"));
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)

@@ -10,11 +10,10 @@ namespace Database
     [Flags]
     public enum GroupConfig : long
     {
-        [Description("No group options have been configured")]
         None = 0,
-        [Editable(true), Question, DefaultValue(true)]
+        [Editable(true), Question("tanner"), DefaultValue(true)]
         AllowTanner = 1,
-        [Editable(true), Question(SettingQuestion.YesNo), DefaultValue(false)]
+        [Editable(true), Question("secretlynch", SettingQuestion.YesNo), DefaultValue(false)]
         EnableSecretLynch = 2,
     }
 
@@ -33,35 +32,42 @@ namespace Database
         /// NOTE: This will also be used for the translation file.  Property will be the key for the button option, add A or Q for the answer and question asked.
         /// </summary>
         public SettingQuestion Question { get; set; }
-        public QuestionAttribute(SettingQuestion Question = SettingQuestion.AllowDisallow) { }
+        /// <summary>
+        /// Used internally as part of the callback button data
+        /// </summary>
+        public string ShortName { get; set; }
+        public QuestionAttribute(string shortName, SettingQuestion question = SettingQuestion.AllowDisallow)
+        {
+            Question = question;
+            ShortName = shortName;
+        }
     }
 
     public static class GroupExtensions
     {
-        public static string GetDescription(this GroupConfig value)
+        public static bool IsEditable(this GroupConfig value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-
-            DescriptionAttribute[] attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(
-                typeof(DescriptionAttribute),
-                false);
-
-            if (attributes != null &&
-                attributes.Length > 0)
-                return attributes[0].Description;
-            else
-                return value.ToString();
+            var fi = value.GetType().GetField(value.ToString());
+            var dA = fi.GetCustomAttribute(typeof(EditableAttribute)) as EditableAttribute;
+            return dA.AllowEdit;
         }
-        public static string GetName(this GroupConfig value)
+        public static QuestionAttribute GetInfo(this GroupConfig value)
         {
             var fieldInfo = value.GetType().GetField(value.ToString());
 
-            var descriptionAttributes = fieldInfo.GetCustomAttributes(
-                typeof(DisplayAttribute), false) as DisplayAttribute[];
+            var qA = fieldInfo.GetCustomAttributes(
+                typeof(QuestionAttribute), false) as QuestionAttribute[];
 
-            if (descriptionAttributes == null) return string.Empty;
-            return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
+            if (qA == null) return null;
+            return (qA.Length > 0) ? qA[0] : null;
+        }
+
+        public static bool GetDefaultValue(this GroupConfig value)
+        {
+            var fi = value.GetType().GetField(value.ToString());
+            var dA = fi.GetCustomAttribute(typeof(DefaultValueAttribute)) as DefaultValueAttribute;
+            if (dA?.Value == null) return false;
+            return ((bool)dA.Value);
         }
 
         public static IEnumerable<GroupConfig> GetUniqueSettings(this Enum flags)
