@@ -139,7 +139,7 @@ namespace Database
     } // MAX VALUE: 9223372036854775807
       //            
 
-    public static class Extensions
+    public static partial class Extensions
     {
         public static string GetDescription(this Achievements value)
         {
