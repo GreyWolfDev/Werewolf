@@ -10,14 +10,14 @@ namespace Database
     {
         public bool? ShowRolesDeath
         {
-            get => ShowRoles;
-            set => ShowRoles = value;
+            get { return ShowRoles; }
+            set { ShowRoles = value; }
         }
 
         public bool? AllowFlee
         {
-            get => DisableFlee == false;
-            set => DisableFlee = !value;
+            get { return DisableFlee == false; }
+            set { DisableFlee = !value; }
         }
         //TODO: add properties which grab the flag enum
         public void UpdateFlags()
