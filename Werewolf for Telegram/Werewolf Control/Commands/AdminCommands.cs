@@ -77,6 +77,7 @@ namespace Werewolf_Control
                 grp.BotInGroup = true;
                 grp.UserName = update.Message.Chat.Username;
                 grp.Name = update.Message.Chat.Title;
+                grp.UpdateFlags();
                 db.SaveChanges();
             }
 

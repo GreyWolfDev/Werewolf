@@ -26,6 +26,12 @@ namespace Database
         AllowExtend = 32,
         [Editable(true), Question("roles", SettingQuestion.YesNo), DefaultValue(true)]
         ShowRolesDeath = 64,
+        [Editable(true), Question("flee"), DefaultValue(true)]
+        AllowFlee = 128,
+
+
+        //this is a flag that will be set on ALL groups indicating we need to update the settings
+        Update = 4611686018427387904
     }
 
     public enum SettingQuestion
@@ -80,6 +86,8 @@ namespace Database
             if (dA?.Value == null) return false;
             return ((bool)dA.Value);
         }
+
+
 
         public static IEnumerable<GroupConfig> GetUniqueSettings(this Enum flags)
         {

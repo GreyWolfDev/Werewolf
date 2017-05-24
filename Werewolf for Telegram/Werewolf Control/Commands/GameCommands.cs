@@ -207,7 +207,7 @@ namespace Werewolf_Control
                     using (var db = new WWContext())
                     {
                         var grp = db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
-                        if (isadmin || (grp.AllowExtend ?? false))
+                        if (isadmin || (grp.HasFlag(GroupConfig.AllowExtend)))
                         {
                             int maxextend = grp.MaxExtend ?? Settings.MaxExtend;
                             seconds = Math.Abs(seconds) > maxextend ? maxextend * Math.Sign(seconds) : seconds ;

@@ -770,6 +770,7 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, GetLocaleString("GroupAdminOnly", language), false);
                             return;
                         }
+                    grp?.UpdateFlags();
                     var Yes = GetLocaleString("Yes", language);
                     var No = GetLocaleString("No", language);
                     var Cancel = GetLocaleString("Cancel", language);
@@ -979,25 +980,25 @@ namespace Werewolf_Control.Handler
                         //        GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                         //    DB.SaveChanges();
                         //    break;
-                        case "flee":
-                            buttons.Add(new InlineKeyboardButton(Yes, $"setflee|{groupid}|enable"));
-                            buttons.Add(new InlineKeyboardButton(No, $"setflee|{groupid}|disable"));
-                            buttons.Add(new InlineKeyboardButton(Cancel, $"setflee|{groupid}|cancel"));
-                            menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
-                            Bot.ReplyToCallback(query,
-                                GetLocaleString("AllowFleeQ", language, grp.DisableFlee == false ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)),
-                                replyMarkup: menu);
-                            break;
-                        case "setflee":
+                        //case "flee":
+                        //    buttons.Add(new InlineKeyboardButton(Yes, $"setflee|{groupid}|enable"));
+                        //    buttons.Add(new InlineKeyboardButton(No, $"setflee|{groupid}|disable"));
+                        //    buttons.Add(new InlineKeyboardButton(Cancel, $"setflee|{groupid}|cancel"));
+                        //    menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
+                        //    Bot.ReplyToCallback(query,
+                        //        GetLocaleString("AllowFleeQ", language, grp.DisableFlee == false ? GetLocaleString("Allow", language) : GetLocaleString("Disallow", language)),
+                        //        replyMarkup: menu);
+                        //    break;
+                        //case "setflee":
 
-                            grp.DisableFlee = (choice == "disable"); //also an issue.  this is reversed, it should have been EnableFlee.
-                            //Para - Stop coding drunk.  It's bad.
-                            Bot.Api.AnswerCallbackQuery(query.Id,
-                                   GetLocaleString("AllowFleeA", language, grp.DisableFlee == true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
-                            Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
-                            DB.SaveChanges();
-                            break;
+                        //    grp.DisableFlee = (choice == "disable"); //also an issue.  this is reversed, it should have been EnableFlee.
+                        //    //Para - Stop coding drunk.  It's bad.
+                        //    Bot.Api.AnswerCallbackQuery(query.Id,
+                        //           GetLocaleString("AllowFleeA", language, grp.DisableFlee == true ? GetLocaleString("Disallow", language) : GetLocaleString("Allow", language)));
+                        //    Bot.ReplyToCallback(query,
+                        //        GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                        //    DB.SaveChanges();
+                        //    break;
                         case "maxplayer":
                             buttons.Add(new InlineKeyboardButton("10", $"setmaxplayer|{groupid}|10"));
                             buttons.Add(new InlineKeyboardButton("15", $"setmaxplayer|{groupid}|15"));
@@ -1396,7 +1397,8 @@ namespace Werewolf_Control.Handler
                 DisableFlee = false,
                 MaxPlayers = 35,
                 EnableSecretLynch = false,
-                CreatedBy = createdBy
+                CreatedBy = createdBy,
+                Flags = (long)GroupConfig.Update
             };
         }
 

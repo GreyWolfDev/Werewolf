@@ -79,13 +79,15 @@ namespace Werewolf_Node
                     {
                         var memberCount = Program.Bot.GetChatMembersCount(chatid).Result;
                         DbGroup.MemberCount = memberCount;
+                        
                         db.SaveChanges();
                     }
                     catch
                     {
                         // ignored
                     }
-
+                    DbGroup.UpdateFlags();
+                    db.SaveChanges();
                     //decide if chaos or not
                     Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
 
@@ -575,7 +577,7 @@ namespace Werewolf_Node
             try
             {
                 if (IsInitializing) throw new Exception("Cannot flee while game is initializing.  Try again once game is done starting.");
-                if (DbGroup.DisableFlee == true && !IsJoining && IsRunning)
+                if (!DbGroup.HasFlag(GroupConfig.AllowFlee) && !IsJoining && IsRunning)
                 {
                     SendWithQueue(GetLocaleString("FleeDisabled"));
                     return;
@@ -595,7 +597,7 @@ namespace Werewolf_Node
                     p.IsDead = true;
                     p.TimeDied = DateTime.Now;
                     p.Fled = true;
-                    if (DbGroup.ShowRoles != false)
+                    if (DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
                         SendWithQueue(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
 
                     CheckRoleChanges();
@@ -809,7 +811,7 @@ namespace Werewolf_Node
                 if (player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
 
-                    if (DbGroup.EnableSecretLynch != true)
+                    if (DbGroup.HasFlag(GroupConfig.EnableSecretLynch))
                     {
                         var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
                         SendWithQueue(msg);
@@ -1063,7 +1065,7 @@ namespace Werewolf_Node
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
-                                        ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.ShowRoles != false ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                                        ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         _playerListChanged = false;
                     }
@@ -1209,8 +1211,8 @@ namespace Werewolf_Node
 
 
                     //determine which roles should be assigned
-                    rolesToAssign = GetRoleList(count, DbGroup.AllowCult != false, DbGroup.AllowTanner != false,
-                        DbGroup.AllowFool != false);
+                    rolesToAssign = GetRoleList(count, DbGroup.HasFlag(GroupConfig.AllowCult), DbGroup.HasFlag(GroupConfig.AllowTanner),
+                        DbGroup.HasFlag(GroupConfig.AllowFool));
                     rolesToAssign.Shuffle();
                     rolesToAssign = rolesToAssign.Take(count).ToList();
 
@@ -2030,7 +2032,7 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
-                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
+                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n" : "") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
 
                     //if hunter has died from AFK, too bad....
                     p.IsDead = true;
@@ -2080,7 +2082,7 @@ namespace Werewolf_Node
                             AddAchievement(lynched, Achievements.LackOfTrust);
                         if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
                             AddAchievement(lynched, Achievements.SpoiledRichBrat);
-                        SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.ShowRoles == false ? "" : $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}"));
+                        SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ?$"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
                         if (lynched.InLove)
                             KillLover(lynched);
@@ -2246,14 +2248,14 @@ namespace Werewolf_Node
                     switch (check.PlayerRole)
                     {
                         case IRole.Harlot:
-                            SendWithQueue(DbGroup.ShowRoles != false ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()) : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
+                            SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()) : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
                             break;
                         case IRole.Hunter:
-                            SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), DbGroup.ShowRoles == false ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
                             HunterFinalShot(check, KillMthd.Shoot);
                             break;
                         default:
-                            SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), DbGroup.ShowRoles == false ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
                             break;
                     }
                     //check if dead was in love
@@ -3177,7 +3179,7 @@ namespace Werewolf_Node
             #region Night Death Notifications to Group
 
 
-            var secret = DbGroup.ShowRoles == false;
+            var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
             if (Players.Any(x => x.DiedLastNight))
             {
                 foreach (var p in Players.Where(x => x.DiedLastNight))
@@ -3941,7 +3943,7 @@ namespace Werewolf_Node
                     p.IsDead = true;
                     p.TimeDied = DateTime.Now;
                     p.Fled = true;
-                    if (DbGroup.ShowRoles != false)
+                    if (DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
                         SendWithQueue(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
                     CheckRoleChanges();
 
@@ -4027,7 +4029,7 @@ namespace Werewolf_Node
                     var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                     if (killed != null)
                     {
-                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), DbGroup.ShowRoles == false ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
+                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
                         killed.IsDead = true;
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
@@ -4244,7 +4246,7 @@ namespace Werewolf_Node
             var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
             if (p != null)
             {
-                SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), DbGroup.ShowRoles == false ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
+                SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                 DBKill(victim, p, KillMthd.LoverDied);
                 p.IsDead = true;
                 if (p.PlayerRole == IRole.WolfCub)
@@ -4354,9 +4356,9 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.AlzheimerPatient;
                         //if (!ach.HasFlag(Achievements.OHAIDER) && Players.Any(x => x.TeleUser.Id == Program.Para))
                         //    newAch = newAch | Achievements.OHAIDER;
-                        if (!ach.HasFlag(Achievements.SpyVsSpy) && DbGroup.ShowRoles == false)
+                        if (!ach.HasFlag(Achievements.SpyVsSpy) & !DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
                             newAch = newAch | Achievements.SpyVsSpy;
-                        if (!ach.HasFlag(Achievements.NoIdeaWhat) && DbGroup.ShowRoles == false && Language.Contains("Amnesia"))
+                        if (!ach.HasFlag(Achievements.NoIdeaWhat) & !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) && Language.Contains("Amnesia"))
                             newAch = newAch | Achievements.NoIdeaWhat;
                         if (!ach.HasFlag(Achievements.Enochlophobia) && Players.Count == 35)
                             newAch = newAch | Achievements.Enochlophobia;

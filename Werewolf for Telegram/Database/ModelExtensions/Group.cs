@@ -13,9 +13,68 @@ namespace Database
             get => ShowRoles;
             set => ShowRoles = value;
         }
-        //TODO: add properties which grab the flag enum
 
-        //TODO: add method to update 'Flags' with the groups settings from before
-        //TODO: null out the previous settings, forcing Flags to be used
+        public bool? AllowFlee
+        {
+            get => DisableFlee == false;
+            set => DisableFlee = !value;
+        }
+        //TODO: add properties which grab the flag enum
+        public void UpdateFlags()
+        {
+            if (Flags == null)
+            {
+                Flags = 0;
+            }
+            if (!HasFlag(GroupConfig.Update)) //special flag indicating group needs to be updated.
+                return;
+            RemoveFlag(GroupConfig.Update);
+            foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>().Where(x => x.IsEditable()))
+            {
+                try
+                {
+                    if ((bool?)GetType().GetProperty(flag.ToString()).GetValue(this) == true)
+                        AddFlag(flag);
+                    //check if the setting wasn't set before.
+                    if (GetType().GetProperty(flag.ToString()).GetValue(this) == null)
+                    {
+                        //check the default
+                        if (flag.GetDefaultValue())
+                            AddFlag(flag);
+                    }
+                    //GetType().GetProperty(flag.ToString()).SetValue(this, null);
+                }
+                catch (NullReferenceException)
+                {
+                    //property doesn't exist, ignore
+                }
+            }
+
+            
+            RemoveFlag(GroupConfig.Update);
+        }
+
+        public bool HasFlag(GroupConfig flag)
+        {
+            if (Flags == null) Flags = 0;
+            var f = (GroupConfig)Flags;
+            return f.HasFlag(flag);
+        }
+
+        public void AddFlag(GroupConfig flag)
+        {
+            if (Flags == null) Flags = 0;
+            var f = (GroupConfig)Flags;
+            f = f | flag;
+            Flags = (long)f;
+        }
+
+        public void RemoveFlag(GroupConfig flag)
+        {
+            if (Flags == null) Flags = 0;
+            var f = (GroupConfig)Flags;
+            f &= ~flag;
+            Flags = (long)f;
+        }
     }
 }

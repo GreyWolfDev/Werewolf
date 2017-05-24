@@ -83,7 +83,7 @@ namespace Werewolf_Node
 #if BETA || DEBUG
             var aToken = key.GetValue("BotanBetaAPI").ToString();
 #else
-            var aToken = Helpers.RegHelper.GetRegValue("BotanReleaseAPI");
+            var aToken = key.GetValue("BotanReleaseAPI").ToString();
 #endif
             Analytics = new BotanIO.Api.Botan(aToken);
 
