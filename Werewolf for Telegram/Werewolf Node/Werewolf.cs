@@ -49,6 +49,9 @@ namespace Werewolf_Node
         private InlineKeyboardMarkup _joinButton;
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
+        public bool RandomMode = false;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch;
+        public string ShowRolesEnd;
 
         #region Constructor
         /// <summary>
@@ -87,9 +90,38 @@ namespace Werewolf_Node
                         // ignored
                     }
                     DbGroup.UpdateFlags();
+                    RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
                     db.SaveChanges();
-                    //decide if chaos or not
-                    Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
+                    if (RandomMode)
+                    {
+                        Chaos = Program.R.Next(100) < 50;
+                        AllowTanner = Program.R.Next(100) < 50;
+                        AllowFool = Program.R.Next(100) < 50;
+                        AllowCult = Program.R.Next(100) < 50;
+                        SecretLynch = Program.R.Next(100) < 50;
+                        ShowRolesOnDeath = Program.R.Next(100) < 50;
+                        var r = Program.R.Next(100);
+                        if (r < 33)
+                            ShowRolesEnd = "None";
+                        else if (r < 67)
+                            ShowRolesEnd = "Living";
+                        else
+                            ShowRolesEnd = "All";
+
+                    }
+                    else
+                    {
+                        //decide if chaos or not
+                        Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
+                        ShowRolesEnd = DbGroup.ShowRolesEnd;
+                        AllowTanner = DbGroup.HasFlag(GroupConfig.AllowTanner);
+                        AllowFool = DbGroup.HasFlag(GroupConfig.AllowFool);
+                        AllowCult = DbGroup.HasFlag(GroupConfig.AllowCult);
+                        SecretLynch = DbGroup.HasFlag(GroupConfig.EnableSecretLynch);
+                        ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
+                    }
+                    
+
 
                     LoadLanguage(DbGroup.Language);
 
@@ -112,7 +144,6 @@ namespace Werewolf_Node
 
                 //let's keep this on for a while, then we will delete it
                 SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
-
                 SendPlayerList(true);
 
                 new Thread(GameTimer).Start();
