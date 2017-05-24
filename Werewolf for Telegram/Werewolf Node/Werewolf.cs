@@ -102,12 +102,12 @@ namespace Werewolf_Node
                     new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://telegram.me/{Program.Me.Username}?start=" + deeplink }
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
-                #if DEBUG
+#if DEBUG
                 _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-                #else
+#else
                 _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-                #endif
-                
+#endif
+
                 //let's keep this on for a while, then we will delete it
                 SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
 
@@ -248,7 +248,7 @@ namespace Werewolf_Node
                         i = Math.Min(i, Math.Max(120, i - 30));
                         count = Players.Count;
                     }
-                    
+
                     if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
                         SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')));
@@ -277,10 +277,10 @@ namespace Werewolf_Node
 
                             if (Settings.GameJoinTime > i)
                                 r = Program.Bot.SendTextMessage(
-                                    ChatId, 
+                                    ChatId,
                                     GetLocaleString(
-                                        _secondsToAdd > 0 ? "SecondsAdded" : "SecondsRemoved", 
-                                        Math.Abs(_secondsToAdd).ToString().ToBold(), 
+                                        _secondsToAdd > 0 ? "SecondsAdded" : "SecondsRemoved",
+                                        Math.Abs(_secondsToAdd).ToString().ToBold(),
                                         TimeSpan.FromSeconds(Settings.GameJoinTime - i).ToString(@"mm\:ss").ToBold()
                                     ), parseMode: ParseMode.Html, replyMarkup: _joinButton
                                 ).Result;
@@ -314,7 +314,7 @@ namespace Werewolf_Node
                 }
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
-
+                Program.Analytics.TrackAsync("gamestart", new { players = Players, playerCount = Players.Count(), mode = Chaos ? "Chaos" : "Normal" }, "0");
                 IsRunning = true;
                 AssignRoles();
                 //create new game for database
@@ -915,7 +915,7 @@ namespace Werewolf_Node
                 var i = 0;
                 while (_messageQueue.Count > 0 && !byteMax)
                 {
-                    
+
                     i++;
                     var m = _messageQueue.Peek();
 
@@ -3634,7 +3634,7 @@ namespace Werewolf_Node
                 SendWithQueue(msg);
                 //Program.Bot.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
-
+                Program.Analytics.TrackAsync("gameend", new { winner = team.ToString(), groupid = ChatId, mode = Chaos ? "Chaos" : "Normal", size = Players.Count() }, "0");
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
@@ -4129,7 +4129,7 @@ namespace Werewolf_Node
             {
                 LogException(e);
                 e = e.InnerException;
-            } while (e != null); 
+            } while (e != null);
             return;
         }
 

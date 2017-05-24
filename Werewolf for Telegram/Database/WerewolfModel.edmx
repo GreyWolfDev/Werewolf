@@ -202,6 +202,7 @@
           <Property Name="MaxExtend" Type="int" />
           <Property Name="EnableSecretLynch" Type="bit" />
           <Property Name="RandomModes" Type="bit" />
+          <Property Name="Flags" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -810,6 +811,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="AllowExtend" Type="Boolean" />
           <Property Name="MaxExtend" Type="Int32" />
           <Property Name="EnableSecretLynch" Type="Boolean" />
+          <Property Name="Flags" Type="Int64" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -1469,6 +1471,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Groups">
             <EntityTypeMapping TypeName="werewolfModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
                 <ScalarProperty Name="EnableSecretLynch" ColumnName="EnableSecretLynch" />
                 <ScalarProperty Name="MaxExtend" ColumnName="MaxExtend" />
                 <ScalarProperty Name="AllowExtend" ColumnName="AllowExtend" />

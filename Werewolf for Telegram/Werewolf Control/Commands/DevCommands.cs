@@ -590,6 +590,7 @@ namespace Werewolf_Control
             if (args.Length == 1)
             {
                 Send("You must enter a sql command...", u.Message.Chat.Id);
+                return;
             }
             using (var db = new WWContext())
             {
@@ -615,13 +616,13 @@ namespace Werewolf_Control
                             while (reader.Read())
                             {
                                 for (int i = 0; i < reader.FieldCount; i++)
-                                    raw += reader[i] + (i == reader.FieldCount - 1 ? "" : " - ");
+                                    raw += (reader.IsDBNull(i) ? "<i>NULL</i>" : reader[i] ) + (i == reader.FieldCount - 1 ? "" : " - ");
                                 result += raw + Environment.NewLine;
                                 raw = "";
                             }
                         }
                         result += reader.RecordsAffected == -1 ? "" : (reader.RecordsAffected + " records affected");
-                        result = String.IsNullOrEmpty(result) ? "Nothing found" : result;
+                        result = !String.IsNullOrEmpty(result) ? result : (sql.ToLower().StartsWith("select") ? "Nothing found" : "Done.");
                         Send(result, u.Message.Chat.Id);
                     }
                 }
