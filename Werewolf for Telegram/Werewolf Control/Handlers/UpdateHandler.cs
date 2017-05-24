@@ -211,13 +211,14 @@ namespace Werewolf_Control.Handler
         {
             {
                 Bot.MessagesProcessed++;
-
+                if (update.Message == null) return;
+                Program.Analytics.TrackAsync("message", update.Message, update.Message.From.Id.ToString());
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
 
                 var id = update.Message.Chat.Id;
-                
+
 #if DEBUG
                 //if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
                 //{
@@ -302,7 +303,8 @@ namespace Werewolf_Control.Handler
                                     AddCount(update.Message.From.Id, update.Message.Text);
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
-
+                                //command is args[0]
+                                Program.Analytics.TrackAsync("/" + args[0], new { groupid = update.Message.Chat.Id, user = update.Message.From }, update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
                                     var reply = Commands.GetAbout(update, args);
@@ -380,7 +382,7 @@ namespace Werewolf_Control.Handler
                                         AddCount(update.Message.From.Id, update.Message.Text);
                                     command.Method.Invoke(update, args);
                                 }
-                                
+
 
                                 #endregion
                             }
@@ -420,6 +422,7 @@ namespace Werewolf_Control.Handler
                                 {
                                     if (m.LeftChatMember.Id == Bot.Me.Id)
                                     {
+                                        Program.Analytics.TrackAsync("botremoved", m, m.From?.Id.ToString() ?? "0");
                                         //removed from group
                                         var grps = DB.Groups.Where(x => x.GroupId == id);
                                         if (!grps.Any())
@@ -442,6 +445,7 @@ namespace Werewolf_Control.Handler
                                 }
                                 if (m.NewChatMember?.Id == Bot.Me.Id)
                                 {
+                                    Program.Analytics.TrackAsync("botadded", m, m.From?.Id.ToString() ?? "0");
                                     //added to a group
                                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
                                     if (grp == null)
@@ -531,6 +535,7 @@ namespace Werewolf_Control.Handler
         internal static void HandleCallback(CallbackQuery query)
         {
             Bot.MessagesProcessed++;
+            Program.Analytics.TrackAsync("callback", query, query.From.Id.ToString());
             //Bot.CommandsReceived++;
             using (var DB = new WWContext())
             {
@@ -543,6 +548,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     string[] args = query.Data.Split('|');
+                    Program.Analytics.TrackAsync($"cb:{args[0]}", new { args = args }, query.From.Id.ToString());
                     if (args[0] == "update")
                     {
                         bool dontUpdate = args[1] == "no";
@@ -690,7 +696,7 @@ namespace Werewolf_Control.Handler
                             var oldfilename = args[2];
                             var newfilename = args[3];
                             int grpcount = 0, plcount = 0;
-                            
+
                             var groups = (from g in DB.Groups where g.Language == oldfilename select g).ToList();
                             var players = (from pl in DB.Players where pl.Language == oldfilename select pl).ToList();
 
@@ -738,7 +744,7 @@ namespace Werewolf_Control.Handler
                     }
 
                     groupid = long.Parse(args[1]);
-
+                    
                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
                     if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status")
                         return;
@@ -862,7 +868,7 @@ namespace Werewolf_Control.Handler
                                 LanguageHelper.SendBase(choice, query.Message.Chat.Id);
                                 return;
                             }
-                            
+
                             menu = new InlineKeyboardMarkup();
                             var glang = SelectLanguage(command, args, ref menu);
                             if (glang == null)
@@ -1023,7 +1029,7 @@ namespace Werewolf_Control.Handler
                         //        replyMarkup: menu);
                         //    break;
                         //case "setroles":
-                            
+
                         //    grp.ShowRoles = (choice == "show");
                         //    Bot.Api.AnswerCallbackQuery(query.Id,
                         //        GetLocaleString("ShowRolesDeathA", language, grp.ShowRoles == false ? "hidden" : "shown"));
@@ -1244,20 +1250,20 @@ namespace Werewolf_Control.Handler
                                     neg = "Hide";
                                     break;
                             }
-                            
+
                             if (command.StartsWith("set"))
                             {
                                 var current = choice == "true";
                                 //get the flags.
                                 var flagLong = grp.Flags ?? 0;
-                                var flags = (GroupConfig) flagLong; // i think that's right....
+                                var flags = (GroupConfig)flagLong; // i think that's right....
 
                                 if (current)
                                     flags = flags | chosen;
                                 else
                                     flags = flags & ~chosen;
 
-                                grp.Flags = (long) flags;
+                                grp.Flags = (long)flags;
                                 command = command.Substring(3);
                                 Bot.Api.AnswerCallbackQuery(query.Id, GetLocaleString($"{chosen.ToString()}A", language, current ? GetLocaleString(pos, language) : GetLocaleString(neg, language)));
                                 Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
@@ -1265,16 +1271,16 @@ namespace Werewolf_Control.Handler
                             }
                             else
                             {
-                                
+
                                 buttons.Add(new InlineKeyboardButton(GetLocaleString(pos, language), $"set{command}|{groupid}|true"));
                                 buttons.Add(new InlineKeyboardButton(GetLocaleString(neg, language), $"set{command}|{groupid}|false"));
                                 buttons.Add(new InlineKeyboardButton(Cancel, $"set{command}|{groupid}|cancel"));
 
-                                menu = new InlineKeyboardMarkup(buttons.Select(x => new[] {x}).ToArray());
+                                menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                                 var current = chosen.GetDefaultValue();
                                 if (grp.Flags != null)
                                 {
-                                    current = ((GroupConfig) grp.Flags).HasFlag(chosen);
+                                    current = ((GroupConfig)grp.Flags).HasFlag(chosen);
                                 }
                                 Bot.ReplyToCallback(query,
                                     GetLocaleString(chosen + "Q", language, current
@@ -1303,7 +1309,7 @@ namespace Werewolf_Control.Handler
             return Bot.Send(message, id, clearKeyboard, customMenu, parseMode);
         }
 
-        
+
         internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu, bool addAllbutton = true)
         {
             var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
@@ -1333,8 +1339,8 @@ namespace Werewolf_Control.Handler
 
                     return null;
                 }
-                else                
-                    return variants.First(); 
+                else
+                    return variants.First();
             }
             else
             {
@@ -1368,7 +1374,7 @@ namespace Werewolf_Control.Handler
             {
                 return "";
             }
-            
+
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
@@ -1439,12 +1445,12 @@ namespace Werewolf_Control.Handler
         }
 
 
-        
+
         public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)
         {
             new Task(() => { HandleInlineQuery(e.InlineQuery); }).Start();
         }
-        
+
         internal static void HandleInlineQuery(InlineQuery q)
         {
 
@@ -1452,7 +1458,7 @@ namespace Werewolf_Control.Handler
             {
                 new StatsInlineCommand(q.From),
             };
-            
+
             List<InlineCommand> choices;
             if (String.IsNullOrWhiteSpace(q.Query))
             {
@@ -1465,7 +1471,7 @@ namespace Werewolf_Control.Handler
                 var com = q.Query;
                 choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
             }
-
+            Program.Analytics.TrackAsync("inline", q, q.From.Id.ToString());
             Bot.Api.AnswerInlineQuery(q.Id, choices.Select(c => new InlineQueryResultArticle()
             {
                 Description = c.Description,

@@ -41,6 +41,7 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
+        internal static BotanIO.Api.Botan Analytics;
 #if DEBUG
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
 #else
@@ -71,10 +72,21 @@ namespace Werewolf_Node
             };
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
+
+
+
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                         .OpenSubKey("SOFTWARE\\Werewolf");
+
+#if BETA || DEBUG
+            var aToken = key.GetValue("BotanBetaAPI").ToString();
+#else
+            var aToken = Helpers.RegHelper.GetRegValue("BotanReleaseAPI");
+#endif
+            Analytics = new BotanIO.Api.Botan(aToken);
+
 #if DEBUG
             APIToken = key.GetValue("DebugAPI").ToString();
 #elif RELEASE

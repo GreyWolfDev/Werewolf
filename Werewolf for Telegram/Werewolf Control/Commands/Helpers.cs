@@ -120,6 +120,7 @@ namespace Werewolf_Control
             if (node != null)
             {
                 node.StartGame(update, chaos);
+                Program.Analytics.TrackAsync("creategame", new { chaos = chaos, groupid = update.Message.Chat.Id }, update.Message.From.Id.ToString());
                 //notify waiting players
                 using (var db = new WWContext())
                 {
