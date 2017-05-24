@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
    Translated Originally by / Traduzido Originalmente por:
        Lucas Montuano (@montuano) e Guto Cristino (@guto_xtino)
@@ -13,18 +13,18 @@
 <strings>
   <language name="Brazilian (Marvel)" base="Português" variant="Marvel"/>
    <string key="PlayerStartedGame" isgif="true">
-    <value>Os Vilões estão à solta! {0} convoca a todos para a luta, use /join para ir à guerra!</value>
-    <value>Tá na hora do pau! {0} desafia a todos para uma guerra sem fim. Use /join para se juntar!</value>
+    <value>Os Vilões estão à solta! {0} convoca a todos para a luta, clique em Entrar para ir à guerra!</value>
+    <value>Tá na hora do pau! {0} desafia a todos para uma guerra sem fim. Clique em Entrar para se juntar!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} anuncia a chegada do Apocalipse. Use /join para tentar impedir seus planos malignos de destruição da Terra, ou falhe miseravelmente perante seu poder!</value>
-    <value>Avante Vingadores! O Capitão América precisa de você! {0} já está pronto(a) para a guerra! Use /join para salvar o multiverso!</value>
+    <value>{0} anuncia a chegada do Apocalipse. Clique em Entrar para tentar impedir seus planos malignos de destruição da Terra, ou falhe miseravelmente perante seu poder!</value>
+    <value>Avante Vingadores! O Capitão América precisa de você! {0} já está pronto(a) para a guerra! Clique em Entrar para salvar o multiverso!</value>
   </string>
       <string key="MinuteLeftToJoin">
-    <value>1 minuto restando para enviar o /join</value>
+    <value>1 minuto restando para a batalha começar.</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} segundos restando para enviar o /join</value>
+    <value>{0} segundos restando para a batalha começar.</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Quantidade mínima de heróis não foi atingida. O Tribunal Vivo intercede e suspende a guerra!</value>
@@ -737,7 +737,7 @@
     <value>Você precisa começar uma partida dentro de um grupo!</value>
   </string>
   <string key="PingInfo">
-    <value>Tempo de processamento da mensagem: {0}\nUso de CPU atual: {1}%\nMensagens por segundo: {2}</value>
+    <value>Tempo de processamento da mensagem: {0}\nMensagens por segundo: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Que língua?\nAtual: {0}</value>
@@ -1125,12 +1125,12 @@
 <string key="SecondsAdded">
 <!-- 0 - Seconds added by /extend command -->
 <!-- 1 - Total seconds remaining -->
-<value>Tempo para juntar-se a batalha estendido em {0} segundos!\n{1} restando para o /join</value>
+<value>Tempo para juntar-se a batalha estendido em {0} segundos!\n{1} restando para o início da batalha.</value>
 </string>
 <string key="SecondsRemoved">
 <!-- 0 - Seconds removed by /extend command -->
 <!-- 1 - Total seconds remaining -->
-<value>Tempo para juntar-se a batalha reduzido em {0} segundos!\n{1} restando para o /join</value>
+<value>Tempo para juntar-se a batalha reduzido em {0} segundos!\n{1} restando para o início da batalha.</value>
 </string>
 <string key="CantExtend">
 <value>Apenas os administradores podem estender o tempo mais de uma vez!</value>
@@ -1173,5 +1173,38 @@
   </string>
   <string key="TimesKilledBy">
    <value>vezes eu fui injustamente morto por</value>
+  </string>
+	
+	  <!--New Commands by GreyWolf since March 2017-->
+  <string key="JoinButton">
+    <value>Entrar</value>
+  </string>
+  <string key="NotMember">
+    <value>Você não pode entrar nessa batalha porque você não é membro do {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Por favor, não use o comando join. Para entrar em uma batalha, use o botão abaixo.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jogadores votaram, {1} total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Permitir ataque secreto?\nAtual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Ataque secreto definido como: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, lembre-se que você também terá que usar o botão para se juntar à batalha.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Não foi possível encontrar esse grupo. Por favor, use este comando no grupo que deseja parar de esperar ou adicione o link, o ID ou o nome de usuário do grupo após o comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Você foi excluído da lista de espera em {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} entrou na batalha nos últimos 30 segundos.</value>
   </string>
 </strings>

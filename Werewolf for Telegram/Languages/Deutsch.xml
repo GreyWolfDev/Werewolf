@@ -9,18 +9,18 @@
   </string>
   <string key="PlayerStartedGame" isgif="true">
 	<!-- 0 - Player name -->
-	<value>{0} startete ein neues Spiel! Nutze /join, um beizutreten... und vermutlich zu sterben :P</value>
-	<value>Ein neues Spiel wurde von {0} gestartet! Nutze /join, um gegessen zu werden!</value>
-	<value>Nachdem {0} etwas gerufen hat, bricht zwar kein Chaos aus, ein neues Spiel startet aber trotzdem. Mit /join kannst du diesem beitreten.</value>
-	<value>{0} entschied, dass es mal wieder Zeit für ein Spiel ist. Mit /join kannst du dabei sein!</value>
-	<value>Ob bereit oder nicht: {0} startete ein neues Spiel! Mit /join bist auch du mittendrin!</value>
+	<value>{0} startete ein neues Spiel! Nutze den Join Knopf, um beizutreten... und vermutlich zu sterben :P</value>
+	<value>Ein neues Spiel wurde von {0} gestartet! Nutze den Join Knopf, um gegessen zu werden!</value>
+	<value>Nachdem {0} etwas gerufen hat, bricht zwar kein Chaos aus, ein neues Spiel startet aber trotzdem. Mit dem Join Knopf kannst du diesem beitreten.</value>
+	<value>{0} entschied, dass es mal wieder Zeit für ein Spiel ist. Mit dem Join Knopf kannst du dabei sein!</value>
+	<value>Ob bereit oder nicht: {0} startete ein neues Spiel! Mit dem Join Knopf bist auch du mittendrin!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
 	<!-- 0 - Player name -->
-	<value>{0} startete ein neues Chaos-Spiel! Nutze /join, um beizutreten... und vermutlich zu sterben :P</value>
-	<value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze /join, um gegessen zu werden!</value>
-	<value>{0} ruft etwas... und plötzlich bricht Chaos im Dorf aus :O Nutze /join, um mitzumischen!</value>
-	<value>Was ist denn hier los, keine Ordnung mehr im Dorf?! Finde mit /join heraus, wer an dem Chaos schuld ist! Und hör auf {0} anzustarren, alleine gewinnt man keine Schlachten.</value>
+	<value>{0} startete ein neues Chaos-Spiel! Nutze den Join Knopf, um beizutreten... und vermutlich zu sterben :P</value>
+	<value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze den Join Knopf, um gegessen zu werden!</value>
+	<value>{0} ruft etwas... und plötzlich bricht Chaos im Dorf aus :O Nutze den Join Knopf, um mitzumischen!</value>
+	<value>Was ist denn hier los, keine Ordnung mehr im Dorf?! Finde mit dem Join Knopf heraus, wer an dem Chaos schuld ist! Und hör auf {0} anzustarren, alleine gewinnt man keine Schlachten.</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
 	<value>Du kannst gerade nicht beitreten! Das Spiel läuft bereits.</value>
@@ -1128,7 +1128,7 @@
 	<value>Du kannst ein Spiel nur in einer Gruppe starten.</value>
   </string>
   <string key="PingInfo">
-	<value>Reaktionszeit von Telegram: {0}\nAktuelle CPU-Auslastung: {1}%\nNachrichten pro Sekunde: {2}</value>
+	<value>Reaktionszeit von Telegram: {0}\nNachrichten pro Sekunde: {1}</value>
   </string>
   <string key="WhatLang">
 	<value>Welche Sprache?\nAktuell: {0}</value>
@@ -1565,5 +1565,28 @@
 
   <string key="JoinByButton">
     <value>Das Beitreten von Spielen über den Join Befehl ist nicht länger möglich, klicke auf den Knopf "Join" und dann auf "Starten", um dem Spiel beizutreten.</value>
+  </string>
+  
+  <string key="PlayerVoteCounts">
+    <value>{0} Spieler haban gewählt, {1} Spieler gesamt.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Geheimes Lynchen aktivieren?\nMomentan: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Aktivierung des geheimen Lnychens ist jetzt: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, bitte denke daran, dass du ebenfalls über den Join Knopf joinen musst.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Gruppe konnte nicht gefunden werden. Führe diesen Befehl entweder in der entsprechenden Gruppe aus, oder füge die Gruppen ID, den Link oder den Benutzernamen an.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Du wurdest von der Warteliste für {0} entfernt.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sind in den letzten 30 Sekunden gejoined.</value>
   </string>
 </strings>

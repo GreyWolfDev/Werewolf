@@ -2,17 +2,17 @@
 <!-- Furry Amnesia mode by Josh (@CrapKnight)!
 Last update: 24/03/2017 by @CrapKnight -->
 <strings>
-  <language name="English (Furry Amnesia Mode)" base="English" variant="Furry Amnesia Mode"/>
+  <language name="English (Furry Amnesia Mode)" base="English" variant="Furry Amnesia Mode" code ="en"/>
   <string key="NotInGame">
     <value>Did you forget? You're not in any games at the moment!</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} has started a game! Use /join to have so much fun you'll even forget what you are!</value>
-    <value>A new game has been started by {0}! Use /join to get eaten by amnesiac wolves!</value>
+    <value>{0} has started a game! Use my special join button to have so much fun you'll even forget what you are!</value>
+    <value>A new game has been started by {0}! Use my big flashy join button  to get eaten by amnesiac wolves!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} has started a chaos game! Use /join to take part in the confusion!</value>
-    <value>A new chaos game has been started by {0}! Use /join to get killed by accident!</value>
+    <value>{0} has started a chaos game! Use my special join button to take part in the confusion!</value>
+    <value>A new chaos game has been started by {0}! Use my big flashy join button to get killed by accident!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Sorry, You're going to have to wait in line, and watch patiently until this round is done.</value>
@@ -21,10 +21,10 @@ Last update: 24/03/2017 by @CrapKnight -->
     <value>You're already here! You can't be here twice you sill fuzzball</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join, don't forget about it!</value>
+    <value>1 minute left to join, don't forget about it!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} seconds left to /join</value>
+    <value>{0} seconds left to join, come on click that button.. quick</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Everyone forgot about this group... We didn't reach 5 players, cancelling game!</value>
@@ -865,7 +865,7 @@ Last update: 24/03/2017 by @CrapKnight -->
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Time to receive ping message: {0}%\nMessages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>What da! Don't change the language out of Furry Amnesia! meh... what language do you want now?\nCurrent: {0}</value>
@@ -1263,12 +1263,12 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Join time extended by {0} seconds!\n{1} left to /join, don't forget about it!</value>
+    <value>Join time extended by {0} seconds!\n{1} left to join, don't forget about it!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Join time decreased by {0} seconds!\n{1} left to /join, don't forget about it!</value>
+     <value>Join time decreased by {0} seconds!\n{1} left to join, click that join button before the time runs out.. quick</value>
   </string>
   <string key="CantExtend">
     <value>Did you forget you already extended the time? Only group admins can do it multiple times!</value>
@@ -1281,10 +1281,48 @@ Last update: 24/03/2017 by @CrapKnight -->
     <!--{0} = "Allow" / "Disallow" string-->
     <value>{0} players to extend join time</value>
   </string>
+    <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
     <string key="WolvesEatDrunkBlockSecondKill">
     <value>Did something happen at {0}'s house last night? You can't seem to remember...\nDid something happen at {1}'s house last night? You can't seem to remember...</value>
   </string>
     <string key="HarlotFuckKillerPublic">
     <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+    <value>Click me to Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this big flashy button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch? (this is gonna be fun, Promise!)\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, thanks for starting me up please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} joined the game in the last 30 seconds.</value>
   </string>
 </strings>
