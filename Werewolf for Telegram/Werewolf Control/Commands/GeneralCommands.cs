@@ -225,64 +225,60 @@ namespace Werewolf_Control
                                   $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
                                   $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
                         Bot.Send(msg, u.Message.Chat.Id);
+                        return;
                     }
-                    else
+
+                    //okay, they are joining a game.
+
+                    var nodeid = args[1].Substring(0, 32);
+                    var gameid = args[1].Substring(32);
+
+                    //try to get the guid of the game they want to join
+                    Guid g, n;
+                    if (!(Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g)))
+                        return;
+
+                    //first get the node where to search for the game
+                    Models.Node node = null;
+                    for (var i = 0; i < 3; i++)
                     {
-                        var nodeid = args[1].Substring(0, 32);
-                        var gameid = args[1].Substring(32);
-                        //try to get the guid of the game they want to join
-                        Guid g, n;
-                        if (Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g))
-                        {
-                            //first get the node where to search for the game
-                            var node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-                            if (node == null)
-                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-                            if (node == null)
-                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-                            if (node == null)
-                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-                            if (node == null)
-                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-                            if (node == null)
-                                node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-//                            if (node == null)
-//                            {
-//                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", -1001098399855);
-//                                return;
-//                            }
-
-                            //we have the node, get the game
-                            var game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-                            if (game == null)
-                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-                            if (game == null)
-                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-                            if (game == null)
-                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-                            if (game == null)
-                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-                            if (game == null)
-                                game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-//                            if (game == null)
-//                            {
-//                                Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", -1001098399855);
-//                                return;
-//                            }
-                            
-                            //ok we got the game, now join 
-                            //make sure they are member
-                            var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
-                            if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
-                            {
-                                Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
-                                return;
-                            }
-
-                            game.AddPlayer(u);
-                            return;
-                        }
+                        node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
+                        if (node != null) break;
                     }
+                    if (node == null)
+                    {
+                        //log it
+                        //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", -1001098399855);
+                        return;
+                    }
+
+                    //we have the node, get the game
+                    Models.GameInfo game = null;
+                    for (var i = 0; i < 5; i++)
+                    {
+                        game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
+                        if (game != null) break;
+                    }
+                    if (game == null)
+                    {
+                        //log it
+                        //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", -1001098399855);
+                        return;
+                    }
+
+                    //ok we got the game, now join 
+                    //make sure they are member
+                    var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                    if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                    {
+                        Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
+                        return;
+                    }
+
+                    game.AddPlayer(u);
+                    return;
+
+
                 }
             }
         }
@@ -304,21 +300,15 @@ namespace Werewolf_Control
                 //check nodes to see if player is in a game
                 //node = GetPlayerNode(update.Message.From.Id);
                 var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                if (game != null)
+                if (game != null && (game?.Users.Contains(update.Message.From.Id) ?? false) && game?.GroupId != update.Message.Chat.Id)
                 {
-
-                    if (game?.Users.Contains(update.Message.From.Id) ?? false)
-                    {
-                        if (game?.GroupId != update.Message.Chat.Id)
-                        {
-                            //player is already in a game, and alive
-                            Send(
-                                GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                    game.ChatGroup.ToBold()), update.Message.Chat.Id);
-                            return;
-                        }
-                    }
+                    //player is already in a game, and alive
+                    Send(
+                        GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                            game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                    return;
                 }
+
                 var button = new InlineKeyboardMarkup(new[] {
                         new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
                     });
@@ -341,43 +331,8 @@ namespace Werewolf_Control
         [Command(Trigger = "getlang")]
         public static void GetLang(Update update, string[] args)
         {
-            //var glangs = Directory.GetFiles(Bot.LanguageDirectory)
-            //                                            .Select(x => XDocument.Load(x)
-            //                                                        .Descendants("language")
-            //                                                        .First()
-            //                                                        .Attribute("name")
-            //                                                        .Value
-            //                                            ).ToList();
-            //glangs.Insert(0, "All");
-
-            //foreach (var lang in glangs)
-            //{
-            //    var test =
-            //        $"getlang|-1001049529775|" + lang;
-            //    var count = Encoding.UTF8.GetByteCount(test);
-            //    if (count > 64)
-            //    {
-            //        Send("Problem with " + lang + ": name is too long!", update.Message.Chat.Id);
-            //    }
-            //}
-            //var gbuttons = glangs.Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.Chat.Id}|{x}")).ToList();
-            //var baseMenu = new List<InlineKeyboardButton[]>();
-            //for (var i = 0; i < gbuttons.Count; i++)
-            //{
-            //    if (gbuttons.Count - 1 == i)
-            //    {
-            //        baseMenu.Add(new[] { gbuttons[i] });
-            //    }
-            //    else
-            //        baseMenu.Add(new[] { gbuttons[i], gbuttons[i + 1] });
-            //    i++;
-            //}
-
-            //var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
-
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
-
-
+            
             List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
             buttons.Insert(0, new InlineKeyboardButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
 
