@@ -21,11 +21,11 @@
     </string>
     <string key="PlayerStartedGame" isgif="true">
         <!-- 0 - Player name -->
-        <value>各位訓練師注意啦,我地有個新活動：挑戰4天王，詳情請看Pin Message。【{0}】喺鯉魚門村開始咗一場寵物小精靈大賽，各地嘅訓練員們仲唔快啲同自己心愛嘅小精靈一齊作戰？(利申：有火箭兵團等壞人入侵，本會恕不負責)\n\n快啲撳 /join 報名參加，一決高下啦</value>
+        <value>【{0}】喺鯉魚門村開始咗一場寵物小精靈大賽，各地嘅訓練員們仲唔快啲同自己心愛嘅小精靈一齊作戰？(利申：有火箭兵團等壞人入侵，本會恕不負責)\n\n快啲撳參加大賽按鈕報名參加，一決高下啦</value>
     </string>
     <string key="PlayerStartedChaosGame" isgif="true">
         <!-- 0 - Player name -->
-        <value>各位訓練師注意啦,我地有個新活動：挑戰4天王，詳情請看Pin Message。【{0}】喺鯉魚門村開始咗一場寵物小精靈大亂鬥，各地嘅訓練員們仲唔快啲帶埋小精靈加入戰陣？(利申：今次角色身份難以估計，正邪難分，本會都唔知點負責)\n \n快啲撳 /join 報名參加，打到七彩啦！</value>
+        <value>【{0}】喺鯉魚門村開始咗一場寵物小精靈大亂鬥，各地嘅訓練員們仲唔快啲帶埋小精靈加入戰陣？(利申：今次角色身份難以估計，正邪難分，本會都唔知點負責)\n \n快啲撳參加大賽按鈕報名參加，打到七彩啦！</value>
     </string>
     <string key="NoJoinGameRunning">
         <value>有無搞錯呀？有卡洛斯地區冠軍卡露乃嘅指導，都要遲到，我決定取消你既比賽資格，仲唔彈番去你既觀眾席。</value>
@@ -37,11 +37,11 @@
         <value>你已經拿到下次參與寵物小精靈聯盟賽嘅資格了，請耐心等待下一場對決嘅開始。</value>
     </string>
     <string key="MinuteLeftToJoin">
-        <value>比賽仲有一分鐘開始，快D /join 搶番隻小精靈做訓練員啦。</value>
+        <value>比賽仲有一分鐘開始，快D使用報名大賽按鈕搶番隻小精靈做訓練員啦。</value>
     </string>
     <string key="SecondsLeftToJoin">
         <!--0 - remaining seconds (number) -->
-        <value>比賽仲有【{0}】秒就開始，快D /join 搶番一隻小精靈做訓練員啦。</value>
+        <value>比賽仲有【{0}】秒就開始，快D使用報名大賽按鈕搶番一隻小精靈做訓練員啦。</value>
     </string>
     <string key="NotEnoughPlayers">
         <value>好唔好彩嘅係，呢個時間冇咩人願意參加比賽，你得閒就返去練強D自己隻小精靈先翻黎啦。</value>
@@ -65,7 +65,7 @@
         <!-- 1 - current trainers -->
         <!-- 2 - Minimum trainers -->
         <!-- 3 - Maximum trainers -->
-        <value>【{0}】已加入/混入比賽。依家有【{1}】個參賽者，起碼要【{2}】個人先可以開始比賽，最多可以有 【{3}】 個人一齊比賽。/join 加入/混入啦！</value>
+        <value>【{0}】已加入/混入比賽。依家有【{1}】個參賽者，起碼要【{2}】個人先可以開始比賽，最多可以有 【{3}】 個人一齊比賽。想參賽就按參加大賽加入/混入啦！</value>
     </string>
     <string key="PMTheBot">
         <!-- 0 - Player name -->
@@ -990,7 +990,7 @@
         <value>你只能喺群組開始遊戲。!</value>
     </string>
     <string key="PingInfo">
-        <value>回應處理時間︰【{0}】\n現時 CPU 用量︰【{1}】%\n每秒接收訊息︰【{2}】</value>
+        <value>每【{0}】秒接收【{1}】訊息</value>
     </string>
     <string key="WhatLang">
         <value>想轉去咩語言？\n當前語言︰【{0}】</value>
@@ -1383,12 +1383,12 @@
     <string key="SecondsAdded">
         <!-- 0 - Seconds added by /extend command -->
         <!-- 1 - Total seconds remaining -->
-        <value>等待時間已經被延長了【{0} 】秒!\n 現在等待的時間還剩下【{1}】秒，快D /join 參加比賽啦！</value>
+        <value>等待時間已經被延長了【{0} 】秒!\n 現在等待的時間還剩下【{1}】秒，快D撳參加大賽按鈕啦！</value>
     </string>
     <string key="SecondsRemoved">
         <!-- 0 - Seconds removed by /extend command -->
         <!-- 1 - Total seconds remaining -->
-        <value>等待時間已經被減少了【{0} 】秒!\n 現在等待的時間還剩下【{1}】秒，快D /join 參加比賽啦！</value>
+        <value>等待時間已經被減少了【{0} 】秒!\n 現在等待的時間還剩下【{1}】秒，快D撳參加大賽按鈕啦！</value>
     </string>
     <string key="CantExtend">
         <value>只有Admin才能延長或減少遊戲等待開始的時間。</value>
@@ -1410,4 +1410,35 @@
     <string key="WolvesEatDrunkBlockSecondKill">
         <value>你被熱情如火的【{0}】包到實晒，成個人已經冇曬力氣，攤係張床度直接訓到天光，無法出門去抓【{1}】的小精靈。</value>
     </string>
+     <string key="JoinButton">
+    <value>參加大賽</value>
+  </string>
+  <string key="NotMember">
+    <value>你不能參加寵物小精靈大賽因為你不是這個群【{0}】的會員.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>請不要使用join Command來報名參加寵物小精靈大賽，請使用本會提供的參加大賽按鈕來報名吧。</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0}個訓練師已經作出他們的選擇了,場上還有 {1} 個訓練師.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>是否使用秘密投票?\n 現在: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>你成功將秘密投票的選項調整至：{0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>訓練師{0}, 請使用本會提供參加大賽的按鈕。</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>找不到群組，請在你想停止等待的群組裡使用這個指令或者加鏈接，Telegram ID 或者你的用戶名在指令旁邊。</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>你已經成功在 {0}秒內取消參加寵物小精靈大賽.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} 在最後30秒時報名加入了寵物小精靈大賽。</value>
+  </string>
 </strings>

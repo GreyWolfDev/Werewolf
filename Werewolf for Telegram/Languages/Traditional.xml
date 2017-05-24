@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-05-19" code="zh-Hant-TW"/>
+  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-05-24" code="zh-Hant-TW"/>
   <!--
-  01/03
+  05/24
+    修正 HaveJoined Fixed by @meowmeoww
+  05/19
+    v4.2 追加更新
+    增加 GuardSaved Add desc by @Tamhk
+  05/19
+    v4.2 更新
+    增加 GuardKiller Add desc by @Fong0000 @Tamhk
+    優化 CHKillsCultistEnd Optimized by @Blueyukina
+  2007/01/03
     增加 獵人/狼 1對1死法 Added Hunter/ww 1vs1 finale
     增加 邪教獵人/邪教 1對1死法 Added CH/Cult 1vs1 finale
     增加 延長時間指令及相關翻譯 Added extending
@@ -51,11 +60,11 @@
     <value>你已經在這場遊戲中了!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>剩餘一分鐘 /join</value>
+    <value>剩餘一分鐘 加入遊戲</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>剩餘 {0} 秒 /join</value>
+    <value>剩餘 {0} 秒 加入遊戲</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>玩家人數不足, 遊戲已取消.</value>
@@ -331,6 +340,8 @@
     <!-- 0 - saved player name -->
     <value>你保住了 {0} 的性命!</value>
     <value>經過了一番惡鬥後, 你憑藉著你那過人的反應擊退了來襲的傢伙, 回頭卻見 {0} 睡的正香呢...@#%^*</value>
+    <!-- by @Tamhk -->
+    <value>夜裡潔白無瑕的彎月下，在 {0} 的家門前，有一道漆黑的暗影衝刺沉睡的 {0}! 為了可憐的 {0}，你燃燒你神聖的血脈擊退黑影! 看著正在發一場美夢的 {0} ，你微笑地離開...</value>
   </string>
   <string key="GuardNoAttack" >
     <!-- 0 - player name -->
@@ -357,6 +368,7 @@
     <!-- 0 - player name -->
     <value>你溜進了 {0} 的家為與他做愛做的事情, 突然你發現他是狼人. 最後, 你被他吃掉了.</value>
     <value>你今晚來到 {0} 的家為與他共度春宵, 正當你們越來越興奮時, 你覺得他的呼吸聲越來越重, 你轉頭看向他, 天啊!!居然是一個狼頭, 狼嘴一張就往你的脖子咬去...</value>
+
     <value>你看上了 {0} 的強健的體魄, 於是今晚你悄悄進了他的家為想與他共度春宵, 哪知你才脫去他身上的衣服, 就發現他的指甲越來越長, 變成狼一般的爪子, 嘴巴那對犬齒在此時向著你的脖子輕咬, 你以為狼人為因為你的美色而捨不得吃你, 正當你這麼想的時候, 你頸子已被那排銳利的牙齒咬穿...</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
@@ -762,7 +774,9 @@
   </string>
   <string key="GuardKiller">
     <value>你試圖去保護連續殺人魔, 但他卻走出來在你身上劃出了了七七四十九道口子. 你死了...</value>
+    <!-- by @Fong0000 -->
     <value>你試圖去保護連續殺人魔, 但他卻在你的懷抱中一刀插進你的心臟，然後掏了出來，放進你快沒意識的口中。你最後看到的是他把從你身上割下來的翅膀燒烤，哼唱着~燒雞翅，我最喜歡吃...</value>
+    <!-- by @Tamhk -->
     <value>你試圖去保護連續殺人魔, 但他卻悄悄地走來
 在你身上斬獲雙翼，又在你身上刻劃出九千九百九十九道花紋，留下不可消逝的印記...看著他微一微笑，揮灑自己的衣䄂，後悔的你死了...</value>
   </string>
@@ -1000,13 +1014,13 @@
     <value>你想做什麼?</value>
   </string>
   <string key="JoinFromGroup">
-    <value>加入遊戲(/joingame)只能在 群組(Group) 中進行</value>
+    <value>加入遊戲 只能在 群組(Group) 中進行</value>
   </string>
   <string key="StartFromGroup">
     <value>開始遊戲(/stargame /startchaos)只能在 群組(Group) 中進行</value>
   </string>
   <string key="PingInfo">
-    <value>訊息從Telegram伺服器傳給我費時: {0}\n目前CPU使用率: {1}\n每秒鐘處理訊息數: {2}</value>
+    <value>訊息從Telegram伺服器傳給我費時: {0}\n每秒鐘處理訊息數: {1}</value>
   </string>
   <string key="WhatLang">
     <value>哪個語系?\n目前: {0}</value>
@@ -1398,6 +1412,7 @@
   </string>
   <string key="CHKillsCultistEnd">
     <!--{0} = last cultist's name, {1} = CH's name -->
+    <!-- Optimized by @Blueyukina -->
     <value>{1} 與 {0} 在太陽下來到了鎮上廣場. 看到 {0} 頸上的十字架反射的詭異光芒, {1} 抽出了他的匕首揮出了最後一刀, 將污染扭曲這村子心靈的邪教給畫下了句點。</value>
   </string>
 
@@ -1405,12 +1420,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>加入時間延長 {0} 秒!\n剩餘可加入 /join 的時間是 {1} !</value>
+    <value>加入時間延長 {0} 秒!\n剩餘可 加入遊戲 的時間是 {1} !</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>加入時間減少 {0} 秒!\n剩餘可加入 /join 的時間是 {1} !</value>
+     <value>加入時間減少 {0} 秒!\n剩餘可加入 加入遊戲 的時間是 {1} !</value>
   </string>
   <string key="CantExtend">
     <value>很抱歉只有群組管理員才能夠多次延長時間!</value>
@@ -1451,5 +1466,19 @@
   </string>
   <string key="EnableSecretLynchA">
     <value>已設定: 使用秘密投票設定為: {0}</value>
+  </string>
+  <!--4.2 New Strings 23 MAY-->
+  <string key="NoAutoJoin">
+    <value>{0} , 請記得開遊戲的你也需要按 加入遊戲 按鈕喔!</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>你要停止哪個群組的遊戲開始通知? 請在該群組下此指令, 或是在指令後方加上群組連結/群組id.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>你已經從 {0} 群組中的等待通知移除.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>在剛剛的30秒中 {0} 加入遊戲了!</value>
   </string>
 </strings>
