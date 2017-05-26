@@ -1323,6 +1323,19 @@ namespace Telegram.Bot
             return SendWebRequest<bool>("unbanChatMember", parameters);
         }
 
+        public Task<bool> DeleteMessage(long chatid, int msgid) => DeleteMessage(chatid.ToString(), msgid);
+
+        public Task<bool> DeleteMessage(string chatid, int msgid)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                {"chat_id", chatid },
+                {"message_id", msgid }
+            };
+
+            return SendWebRequest<bool>("deleteMessage", parameters);
+        }
+
         #endregion
 
         #region API Methods - Download Content

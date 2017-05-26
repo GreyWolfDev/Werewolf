@@ -14,7 +14,7 @@ namespace Werewolf_Website.Helpers
         public static void Start()
         {
             new Thread(MonitorBot1Status).Start();
-            new Thread(MonitorBot2Status).Start();
+            //new Thread(MonitorBot2Status).Start();
             new Thread(MonitorBetaBotStatus).Start();
 #if DEBUG
             //new Thread(MonitorDebugBotStatus).Start();
@@ -107,14 +107,13 @@ namespace Werewolf_Website.Helpers
             }
         }
 
-        public static List<string> GetStatus
-            => new List<string> {_bot1Stat.Status, _bot2Stat.Status, _betaBotStat.Status};
+        public static List<string> GetStatus => new List<string> {_bot1Stat?.Status, _betaBotStat?.Status};
 
         public static List<StatusResponseInfo> GetStatusResponses => new List<StatusResponseInfo>
         {
             _betaBotStat,
             _bot1Stat,
-            _bot2Stat,
+            //_bot2Stat,
 #if DEBUG
             //_debugBotStat
 #endif

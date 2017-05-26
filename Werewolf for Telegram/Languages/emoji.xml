@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Emoji" base="Emoji" variant="English" owner="ayylimao"/>
+  <language name="Emoji Normal" base="Special" variant="Emoji Normal" owner="ayylimao" code="en" isDefault="false"/>
   <string key="NotInGame">
     <value>👇❌🎮❗️</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} 🆕🎮❗️ /join 👇🎮</value>
-    <value>{0} 🆕🎮❗️ /join 👇🍝</value>
+    <value>{0} 🆕🎮❗️ Join 👇🎮</value>
+    <value>{0} 🆕🎮❗️ Join 👇🍝</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} 🆕🌘🎮❗️ /join 👇🎮</value>
-    <value>{0} 🆕🌘🎮❗️ /join 👇🍝</value>
+    <value>{0} 🆕🌘🎮❗️ Join 👇🎮</value>
+    <value>{0} 🆕🌘🎮❗️ Join 👇🍝</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>👇❌🎮❗️🎮🔛❗️/nextgame 👇📢🆕🎮❗️</value>
@@ -796,7 +796,7 @@
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>What Language?\nCurrent: {0}</value>
@@ -1213,6 +1213,35 @@
   </string>
 
   <string key="WolvesEatDrunkBlockSecondKill">
-    <value>😱❕ {0} ➡🍺❕ 👇🚫☠{1}...</value>
+    <value>😱❕ {0} ➡??❕ 👇🚫☠{1}...</value>
+  </string>
+  
+  <string key="JoinButton">
+    <value>🎮❗</value>
+  </string>
+  <string key="JoinByButton">
+    <value>🚫/.join, 👇</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} 🙋, {1} 👱.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, 👇🚫🎮❕</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>🚫💬👇❕ {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} 🚶🎮⬅3⃣0⃣⏱.</value>
   </string>
 </strings>

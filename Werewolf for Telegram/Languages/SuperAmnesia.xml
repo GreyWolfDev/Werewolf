@@ -4,13 +4,14 @@
     LAST UPDATE 31/01/2017 by @ssittt
     31/01 fixing the null strings to "..."
     01/02 editing show roles on death and what seer, det and sorc see
-    01/02 show won at game end, and resuming roles, used variation selector instead of "..."
+    01/02 show won at game end, and resuming roles, used ufe0f instead of "..."
     02/02 put back the role emoji
+	12/02 used u2063 instead of ufe0f, edited LatestList
 -->
 <strings>
   <language name="English (Super Amnesia Mode)" base="English" variant="SuperAmnesia" owner="ssittt"/>
   <string key="NotInGame">
-    <value>?!</value>
+    <value>⁣</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <value>{0} /join</value>
@@ -22,7 +23,7 @@
     <value>/nextgame</value>
   </string>
   <string key="AlreadyJoined">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>1 /join</value>
@@ -31,16 +32,16 @@
     <value>{0} /join</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>x\n/startgame\n/startchaos</value>
+    <value>/startgame\n/startchaos</value>
   </string>
   <string key="StartingGameWait">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="BannedForExploit">
     <value>{0} x/</value>
   </string>
   <string key="ChangeNameToJoin">
-    <value>{0} &lt;--??</value>
+    <value>{0} &lt;--?</value>
   </string>
   <string key="PlayerLimitReached">
     <value>/nextgame!</value>
@@ -52,28 +53,28 @@
     <value>{0} PM {1}</value>
   </string>
   <string key="DeadFlee">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="Flee">
     <value>{0}!</value>
   </string>
   <string key="PlayerRoleWas">
-    <value>{0}{1}</value>
+    <value>{0} {1}</value>
   </string>
   <string key="CountPlayersRemain">
     <value>{0}</value>
   </string>
   <string key="DidntAsk">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="NotPlaying">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="NoPlayerName">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AnswerNonValid">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="WolfVotedKill">
     <value>{0}\n{1}</value>
@@ -88,10 +89,10 @@
     <value>{1}\n{0}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="ChoiceAccepted">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="BeholderSeer">
     <value>{0}</value>
@@ -107,34 +108,34 @@
     <value>{0}{1}</value>
   </string>
   <string key="AskLynch">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskDetect">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskShoot">
     <value>{0}</value>
   </string>
   <string key="AskVisit">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskSee">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskGuard">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskEat">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskHunt">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskRoleModel">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskConvert">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="DiscussWith"><!--Leave the leading spaces here please-->
     <value>\n{0}</value>
@@ -143,70 +144,70 @@
     <value>\n</value>
   </string>
   <string key="RoleInfoCursed">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoDetective">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>...</value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoGunner">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoHarlot">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoWolf">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoSeer">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoVillager">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoTanner">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoWildChild">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoBeholder">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoApprenticeSeer">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoCultist">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoCultistHunter">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="LynchTime">
-    <value>{0}!</value>
+    <value>{0}</value>
   </string>
   <string key="DayTime">
-    <value>{0}!</value>
+    <value>{0}</value>
   </string>
   <string key="NightTime">
-    <value>{0}!</value>
+    <value>{0}</value>
   </string>
   <string key="LynchKill">
     <value>{0}\n{1}</value>
   </string>
   <string key="LynchTie">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="NoLynchVotes">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="DetectiveEaten">
     <value>{0}</value>
@@ -233,10 +234,10 @@
     <value>{0}</value>
   </string>
   <string key="NoAttack">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="CursedBitten">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="WolfTeam">
     <value>{0}</value>
@@ -245,13 +246,13 @@
     <value>{0}</value>
   </string>
   <string key="WolvesEatYou" isgif="true">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="WolvesEatDrunk">
     <value>{0}</value>
   </string>
   <string key="GuardWolf" >
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="GuardSaved" >
     <value>{0}</value>
@@ -263,7 +264,7 @@
     <value>{0}</value>
   </string>
   <string key="GuardSavedYou">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="HarlotEaten">
     <value>{0}</value>
@@ -285,7 +286,7 @@
     <value>{0}</value>
   </string>
   <string key="HarlotVisitYou">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="DetectiveCaught">
     <value>{0}</value>
@@ -314,7 +315,7 @@
     <value>/startgame\n/startchaos</value>
   </string>
   <string key="RemainingPlayersEnd">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="CultistVotedConvert" >
     <value>{0}\n{1}</value>
@@ -329,7 +330,7 @@
     <value>{1}\n{0}</value>
   </string>
   <string key="CultConvertYou">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="CultTeam">
     <value>{0}</value>
@@ -414,7 +415,7 @@
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="Dead">
     <value></value>
@@ -430,7 +431,7 @@
     <value>👷</value>
   </string>
   <string key="RoleInfoMason">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="MasonEaten">
     <value>{0}</value>
@@ -459,7 +460,7 @@
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="GenericDeathNoReveal">
     <value>{0}</value>
@@ -469,10 +470,10 @@
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="IsDead"> <!-- used when gunner shoots a player -->
-    <value></value>
+    <value>⁣</value>
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
@@ -483,7 +484,7 @@
     <value>{0}</value>
   </string>
   <string key="MultipleGames">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="GroupQueue">
     <value>Group queue {0} / {1}</value>
@@ -501,7 +502,7 @@
     <value>/startgame\n/startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="ShuttingDown">
     <value>Maintenance.</value>
@@ -526,29 +527,29 @@
     <value>Set to {0}</value>
   </string>
   <string key="NoSeer">
-	<value></value>
+	<value></value>
   </string>
   <string key="TimesUp">
-	<value></value>
+	<value>⁣</value>
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoHunter">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="CupidChosen">
     <value>{0}</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="HunterNoChoiceLynched">
     <value>{0}</value>
@@ -561,7 +562,7 @@
     <value>{1}\n{0}\n{2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="HunterNoChoiceShot">
     <value>{0}</value>
@@ -597,7 +598,7 @@
     <value>{1}\n{0}</value>
   </string>
   <string key="GuardKiller">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="HarlotFuckKiller">
     <value>{0}</value>
@@ -624,20 +625,20 @@
     <value>/startgame\n/startchaos</value>
   </string>
   <string key="AskKill">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="LoverDied">
     <value>{0}\n{1}\n{2}</value>
     <value>{1}\n{0}\n{2}</value>
   </string>
   <string key="AskDoppelganger">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskCupid1">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AskCupid2">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="Hunter">
     <value>🎯</value>
@@ -662,7 +663,7 @@
     <value>{1}\n{0}</value>
   </string>
   <string key="CultAttempt">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AlreadyOnWaitList">
     <value>{0}</value>
@@ -700,71 +701,70 @@
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutSeer">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutWw">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutHarlot">
-    <!-- hunter! ayylmao -->
-	<value></value>
+	<value>⁣</value>
   </string>
   <string key="AboutDrunk">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutCursed">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutTraitor">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutGA">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutDetective">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutGunner">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutTanner">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutFool">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutCult">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutCH">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutWC">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutAppS">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutBH">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutMason">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutDG">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutCupid">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutHunter">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutSK">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutPara">
     <value>
@@ -831,10 +831,10 @@
     <value>Para!</value>
   </string>
   <string key="Yes">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="No">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="Allow">
     <value>Allow</value>
@@ -942,7 +942,7 @@
     <value>Set to: {0}</value>
   </string>
   <string key="ThankYou">
-    <value></value>
+    <value>⁣</value>
   </string>
     <string key="WhatLangGroup">
     <value>What lang group?</value>
@@ -960,10 +960,10 @@
     <value>{0} no PM</value>
   </string>
     <string key="LatestList">
-    <value></value>
+    <value>.</value>
   </string>
   <string key="UnableToGetList">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="YouJoined">
     <!-- 0 - Group Name -->
@@ -974,25 +974,25 @@
   </string>
    <!-- Update 4.0-->
   <string key="RoleInfoMayor">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoPrince">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoClumsyGuy">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoSorcerer">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoAlphaWolf">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="RoleInfoWolfCub">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="PrinceLynched">
     <value>{0}</value>
@@ -1004,13 +1004,13 @@
     <value>{0}</value>
   </string>
   <string key="AskMayor">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="Reveal">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="SpreadDust">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="BlacksmithSpreadSilver">
     <value>{0}</value>
@@ -1040,31 +1040,31 @@
     <value>{0}\n{1}</value>
   </string>
   <string key="PlayerBitten">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="BittenTurned">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutMayor">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutPrince">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutSorcerer">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutClumsy">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutBlacksmith">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutAlphaWolf">
-    <value></value>
+    <value>⁣</value>
   </string>
   <string key="AboutWolfCub">
-    <value></value>
+    <value>⁣</value>
   </string>
   
   <!-- new strings 06 nov-->

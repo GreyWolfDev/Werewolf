@@ -5,7 +5,7 @@
        Dan (@vergonha), Danilo (@daniloosoo), Eric Romero (@ericromeero), Gabriel Borjoize (@Borjoize), jR750Ac (@jr750ac), Mocha (@MochaKH), Nical(@Nical), Pug (@Capitalista) e Saah (@ayylimao)
 		Team leaders: @ayylimao, @Borjoize
    Mod created in 15/11/2016 by / Mod criado em 15/11/2016 e mantido atualmente por:
-	   @Faberoso, @nildera, @fklopper, @istella, @Aphelion_bot e @Fernando0
+	   @Faberoso, @nildera, @fklopper, @SallyMustang, @Aphelion_bot e @Fernando0
     Official Telegram Group / Grupo Oficial Telegram: @MarvelWerewolfBrasil
     GitHub for issues or suggestions: https://github.com/FernandoTBarros/MarvelZionWW
 -->
@@ -13,18 +13,18 @@
 <strings>
   <language name="Brazilian (Marvel)" base="Português" variant="Marvel"/>
    <string key="PlayerStartedGame" isgif="true">
-    <value>Os Vilões estão à solta! {0} convoca a todos para a luta, use /join para ir à guerra!</value>
-    <value>Tá na hora do pau! {0} desafia a todos para uma guerra sem fim. Use /join para se juntar!</value>
+    <value>Os Vilões estão à solta! {0} convoca a todos para a luta, clique em Entrar para ir à guerra!</value>
+    <value>Tá na hora do pau! {0} desafia a todos para uma guerra sem fim. Clique em Entrar para se juntar!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} anuncia a chegada do Apocalipse. Use /join para tentar impedir seus planos malignos de destruição da Terra, ou falhe miseravelmente perante seu poder!</value>
-    <value>Avante Vingadores! O Capitão América precisa de você! {0} já está pronto(a) para a guerra! Use /join para salvar o multiverso!</value>
+    <value>{0} anuncia a chegada do Apocalipse. Clique em Entrar para tentar impedir seus planos malignos de destruição da Terra, ou falhe miseravelmente perante seu poder!</value>
+    <value>Avante Vingadores! O Capitão América precisa de você! {0} já está pronto(a) para a guerra! Clique em Entrar para salvar o multiverso!</value>
   </string>
       <string key="MinuteLeftToJoin">
-    <value>1 minuto restando para enviar o /join</value>
+    <value>1 minuto restando para a batalha começar.</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} segundos restando para enviar o /join</value>
+    <value>{0} segundos restando para a batalha começar.</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Quantidade mínima de heróis não foi atingida. O Tribunal Vivo intercede e suspende a guerra!</value>
@@ -137,7 +137,7 @@
     <value>Você é o Tony Stark, o baladeiro beberrão! Você tem bafo de cachaça, mas joga com os Heróis. Se os Cavaleiros te atacarem, eles não resistirão à sua festinha e acabarão de ressaca até a próxima noite.</value>
   </string>
   <string key="RoleInfoGuardianAngel">
-    <value>Você é o Arcanjo, e seu papel é proteger a cidade. Durante a noite, você pode escolher um(a) jogador(a) para proteger. Porém, se você escolher um Cavaleiro do Apocalipse, pode acontecer o pior...</value>
+    <value>"Com grandes poderes, vem grandes responsabilidades!" Você é o Homem-Aranha, responsável pela proteção da cidade. Durante a noite, você pode escolher um(a) jogador(a) para proteger usando seu escudo de teias. Porém, se você escolher um Cavaleiro do Apocalipse, terá 50% de chance de não sair mais de lá com vida!</value>
   </string>
   <string key="RoleInfoGunner">
     <value>CHIMICHANGAS! Você é o Deadpool!  Você possui 2 balas para ajudar os heróis.  Durante o dia, você pode atirar em alguém. Todo mundo ouvirá os disparos e saberão que você é o mercenário tagarela.</value>
@@ -161,7 +161,7 @@
     <value >Você é o Nitro, o homem explosivo!  Se você for atacado pela maioria, você irá se vingar explodindo a tudo e a todos!</value>
   </string>
   <string key="RoleInfoWildChild" >
-    <value >Você é o Holocausto, o rebelde! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, seu ódio irá te consumir e você se tornará um Cavaleiro do Apocalipse.</value>
+    <value >Você é o Bruce Banner! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, seu ódio irá te consumir e você se tornará o incrível Hulk. Sabido da sua vulnerabilidade psicológica enquanto na pele do Golias Esmeralda, o Apocalipse irá controlar sua mente enfraquecida e você será um de seus cavaleiros!</value>
   </string>
   <string key="RoleInfoBeholder" >
     <value >Você é o Vigia, você saberá quem é o verdadeiro Telepata (e não a Mística). Use isso para ajudar seu time, os Heróis!</value>
@@ -200,7 +200,7 @@
     <value >Os heróis se reúnem durante a manhã, mas ninguém consegue achar {0} entre eles. Eles correm para seu apartamento e encontram somente um par de luvas velhas manchadas de sangue. OH NÃO, JESSICA JONES já ERA!</value>
   </string>
   <string key="GuardianEaten" >
-    <value >A manhã chega, os heróis avistam penas e sangue espalhados pelo chão, as asas de {0}, o Arcanjo, foram arrancadas e ele está morto.</value>
+    <value >A manhã chega, os heróis avistam teias e sangue espalhados pelo chão, os lançadores de teia de {0}, o Homem-Aranha, foram arrancados e ele está morto.</value>
   </string>
   <string key="GunnerEaten" >
     <value >Todos saem de casa e encontram duas pistolas caídas no chão... em seguida pernas... então dedos...  e flutuando no chafariz da praça, o corpo de {0}, despedaçado pelos Cavaleiros do Apocalipse. É, parece que o fator de cura do Deadpool não foi o bastante desta vez...</value>
@@ -215,7 +215,7 @@
     <value >À medida que o sol se levanta sobre a cidade, os Heróis encontram {0}, A Mística, que após uma crise de amnésia assumiu a forma do Professor X e acreditava ser o próprio, mas tudo nao passava de um terrível engano. Segundos antes de morrer ela recobrara a memória, suas últimas palavras foram: "NUNCA PENSEI QUE IA SER OTÁRIA, FUI OTÁRIA"</value>
   </string>
   <string key="DefaultEaten" >
-    <value>Enquanto os heróis se preparam para a próxima batalha, recebem a triste notícia de que {0} foi uma vítima dos Cavaleiros do Apocalipse. "AH NÃO! VAMOS NOS VINGAR!" {1}</value>
+    <value>Enquanto os heróis se preparam para a próxima batalha, recebem a triste notícia de que {0} foi uma vítima dos Cavaleiros do Apocalipse. "TUM! SOC! POW!" {1}</value>
   </string>
   <string key="HunterKilledCultist">
     <value>{0} estava na base secreta da Hydra, quando de repente um objeto metálico quebra as vidraças e o gosto de sangue e vibranium sobe pela sua garganta, um membro da Hydra foi morto pelo Capitão América!</value>
@@ -239,7 +239,7 @@
     <value >Ah não! {0} estava bêbado(a)!  Agora você está bêbado(a) e não poderá atacar na próxima noite...</value>
   </string>
   <string key="GuardWolf" >
-    <value >Você tentou proteger um Cavaleiro!  Ele arranca suas asas e você está morto!</value>
+    <value >Você tentou proteger um Cavaleiro!  Ele arranca seus lançadores de teia e você está morto!</value>
   </string>
   <string key="GuardSaved" >
     <value >Você salvou a vida de {0}!</value>
@@ -251,7 +251,7 @@
     <value>Você tentou proteger {0}, mas ele(a) não estava em casa!</value>
   </string>
   <string key="GuardSavedYou" >
-    <value >O Arcanjo estava cuidando de você na noite passada e espantou os cavaleiros! Que bênção!</value>
+    <value >O Homem-Aranha pressentiu a chegada dos cavaleiros com o sentido-aranha e conseguiu te salvar essa noite! Ao sair ele disse: "Se alguém precisa de ajuda e você pode ajudar, tem a obrigação de fazer isso."</value>
   </string>
   <string key="HarlotEaten">
     <value >A Viúva Negra escolheu um péssimo dia para tirar folga e ficar em casa. {0} foi dizimada pelos cavaleiros!</value>
@@ -335,10 +335,10 @@
     <value>Você invade a casa de {0} mas não há nenhum sinal da Hydra.  Ele(a) não faz parte da Hydra... Ainda...</value>
   </string>
   <string key="WildChildToWolves">
-    <value>O grande exemplo de vida de {0} acabou de morrer! Em seu ataque de fúria, ele(a) se tornou um Cavaleiro do Apocalipse!</value>
+    <value>O grande exemplo de vida de {0} acabou de morrer! Em seu ataque de fúria, ele(a) se tornou o incrível Hulk, o Apocalipse se aproveita do momento de vulnerabilidade do herói e o seduz, o Hulk agora é um Cavaleiro do Apocalipse </value>
   </string>
   <string key="WildChildTransform">
-    <value>{0} foi morto(a)! Num ataque de fúria, você se torna um Cavaleiro do Apocalipse! Seus novos companheiros são: {1}</value>
+    <value>{0} foi morto(a)! Num ataque de fúria, você se torna o incrível Hulk! Porém a voz do Apocalipse ecoa em sua mente, você está sob o controle do Apocalipse agora, se tornando um de seus Cavaleiros! Seus novos companheiros são: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="Villager">
@@ -357,7 +357,7 @@
     <value>Loki Laufeyson 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>Arcanjo 👼</value>
+    <value>Homem-Aranha 👼</value>
   </string>
   <string key="Detective">
     <value>Jessica Jones 🕵</value>
@@ -378,7 +378,7 @@
     <value>Mística 🃏</value>
   </string>
   <string key="WildChild">
-    <value>Holocausto 👶</value>
+    <value>Bruce Banner 👶</value>
   </string>
   <string key="Beholder">
     <value>Vigia 👁</value>
@@ -423,7 +423,7 @@
     <value>O membro mais recente da Hydra corre para a casa de {0} para fazer o trabalho sujo e convertê-lo(a), mas encontra uma bagunça, muito sangue e pedacinhos... Seu alvo foi assassinado!</value>
   </string>
   <string key="GuardBlockedWolf">
-    <value>Os Cavaleiros se dirigem à casa de {0}, para o ataque, mas se deparam com um ser de asas angelicais . O Arcanjo sai em defesa do alvo e, após uma luta ao som das espadas celestiais os cavaleiros fogem da batalha diante da forma divina.</value>
+    <value>Os Cavaleiros se dirigem à casa de {0}, para o ataque, mas se deparam com o cabeça de teia que estava na espreita. O Homem-Aranha sai em defesa do alvo e, após uma luta ao som dos seus lançadores de teia e socos os cavaleiros fogem da batalha diante do aracnídeo.</value>
   </string>
   <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
@@ -474,7 +474,7 @@
     <value>Você é a Encantor. A Encantadora de mentes, você pode escolher dois jogadores que serão enfeitiçados para toda eternidade com a ilusão de que são dois amantes. Se um deles morrer, o outro morrerá de tristeza. Depois de escolher os enfeitiçados, você pode voltar ao seu papel como Herói.</value>
   </string>
   <string key="RoleInfoDoppelganger">
-    <value>Você é a Mímica. Com suas habilidades de clonagem você poderá escolher um personagem no qual se transformar. Escolha de qual personagem, após a morte do escolhido você tomará o seu lugar.</value>
+    <value>Você é a Mímica. Com suas habilidades de clonagem você poderá escolher um personagem no qual se transformar. Escolha de qual jogador você deseja copiar forma e poderes, após a morte do escolhido você tomará o seu lugar. Para vencer o jogo você deverá assumir o papel do jogador escolhido, e vencer juntamente com seu time, caso isto não ocorra você perderá.</value>
   </string>
   <string key="RoleInfoHunter">
     <value>Você é o Gavião Arqueiro! Seu arco e flechas combinados com seus olhos de gavião são mortais! Se você morrer, pode escolher alguém para matar. E se os cavaleiros te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.</value>
@@ -519,7 +519,7 @@
     <value>Pareceu uma noite normal, mas onde está {0}? Os heróis se reúnem na casa de {0}, e encontram um cigarro ainda aceso e um corpo com um furo de bala na testa, O Justiceiro puniu mais uma vítima... {1}</value>
   </string>
   <string key="GuardBlockedKiller">
-    <value>Você foi jogar um joguinho com {0}. Mas chegando lá o Arcanjo acabou com sua diversão! Não será hoje que você estourará seus miolos...</value>
+    <value>Você foi jogar um joguinho com {0}. Mas chegando lá o Homem-Aranha acabou com sua diversão! Não será hoje que você estourará seus miolos...</value>
   </string>
   <string key="CultConvertHunter">
     <value>A Hydra manda {0} para converter {1}. Chegando lá {0} é recebido com uma flecha no meio do peito! {0} tá morta...</value>
@@ -532,7 +532,7 @@
     <value>Você tentou proteger a pessoa errada. O Justiceiro te convida para brincar com ele, um tipo de brincadeira que você com certeza não gosta. O tipo de brincadeira que você morre no final...</value>
   </string>
   <string key="HarlotFuckKiller">
-    <value>Você dormiu na casa de {0} para coletar informações. Mas essa noite só {0} vai se divertir, com você, enquanto ele esfaqueia seu corpo. Você morreu, mas se te serve de consolo, ele pareceu se divertir muito essa noite...</value>
+    <value>Você dormiu na casa de {0} para coletar informações. Mas essa noite só {0} vai se divertir com você, enquanto esfaqueia seu corpo. Você morreu, mas se te serve de consolo ele(a) pareceu se divertir muito essa noite...</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value> Os heróis encontram o corpo de {0} com sua boca costurada e ferimentos de bala, parece que a Viúva Negra foi calada de uma vez por todas!</value>
@@ -590,13 +590,13 @@
     <value>Você foi enfeitiçado(a) pela Encantor. A memória de {0} nunca deixará seu coração. Seu objetivo é que os dois sobrevivam. Se um de vocês morrer o outro irá até o mundo dos mortos para que ambos continuem juntos.</value>
   </string>
   <string key="NewWCRoleModel">
-    <value>Você se tornou o Holocausto. Seu modelo exemplar é {0}</value>
+    <value>Você se tornou o Bruce Banner. Seu modelo exemplar é {0}</value>
   </string>
   <string key="LoversWin">
     <value>Os amantes venceram! Queriam o que né? O Amor sempre vence!</value>
   </string>
   <string key="HunterKilledVisiter">
-    <value>Quando acordam, vocês encontram {0} largado no meio da praça, parecendo uma peneira por causa dos tiros. Parece que alguém visitou o Deadpool e se deu mal! {1}</value>
+    <value>Quando acordam, vocês encontram {0} largado no meio da praça, parecendo uma peneira por causa das flechadas recebidas. Parece que alguém visitou o Gavião Arqueiro e se deu mal! {1}</value>
   </string>
 
   <string key="CultAttempt">
@@ -615,10 +615,10 @@
     <value>A manhã chega à cidade, e somente duas pessoas estão de pé após a batalha caótica {0} olha para {1}, um sorriso sinistro abre em sua face, ele saca sua espingarda e desfigura o rosto de {1}, que agora está morto.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Todos na cidade morreram... Ninguém venceu essa partida... A não ser, talvez, os urubus.</value>
+    <value>Todos na cidade morreram... Ninguém venceu essa batalha... Deixando a Terra livre para o Galactus devorar.</value>
   </string>
   <string key="SKHunterEnd">
-    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima silenciosamente e aponta sua arma para a cabeça de {1}, e diz que o jogo está terminado e a justiça foi feita.  {1} por sua vez saca rápidamente uma flecha e enfia na garganta {0}. {0}, enfia sua faca no peito do Gavião Arqueiro, joga suas armas no chão e sua vida se esvai com um sorriso no rosto. {1}. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
+    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima silenciosamente e aponta sua arma para a cabeça de {1}, e diz que o jogo está terminado, sua punição foi aplicada.  {1} por sua vez, saca rapidamente uma flecha e enfia na garganta de {0}. {1}, enfia sua faca no peito do Gavião Arqueiro, joga suas armas no chão e sua vida se esvai com um sorriso no rosto. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
   </string>
     <string key="RoleModelChosen">
     <value>Você não decidiu a tempo, então o bot escolheu por você: {0}</value>
@@ -659,7 +659,7 @@
     <value>Você é o Loki Laufeyson! Por enquanto você é um herói, mas assim que todos os cavaleiros do apocalipse estiverem mortos, você se juntará a causa do Apocalipse se tornando um cavaleiro. Só Telepata poderá identificar você como um cavaleiro ou não.</value>
   </string>
   <string key="AboutGA">
-    <value>Você é o Arcanjo, e seu papel é proteger os heróis. Durante a noite, você pode escolher um(a) jogador(a) para proteger.  Porém, se você escolher um cavaleiro, pode acontecer o pior.</value>
+    <value>Você é o Homem-Aranha, e seu papel é proteger os heróis. Durante a noite, você pode escolher um(a) jogador(a) para proteger.  Porém, se você escolher um cavaleiro, há 50% de chance de ser morto.</value>
   </string>
   <string key="AboutDetective">
     <value>Você é a Jessica Jones, e joga com os heróis. Durante o dia, você pode escolher uma pessoa para investigar e descobrir seu papel.  No entanto, ao fazer isso, você pode ser desmascarada pelos cavaleiros do apocalipse! (40% de chance)</value>
@@ -680,7 +680,7 @@
     <value>A Hydra vaga pela cidade recrutando novos membros para sua causa maligna, e você o Capitão América deve proteger a cidade!  Durante a noite você poderá escolher alguém para interrogar.  Se ele(a) for da Hydra, ele(a) morre.  Caso a Hydra tente te recrutar, o membro mais recente morre.</value>
   </string>
   <string key="AboutWC">
-    <value>Você é o Holocausto! Escolha alguém para ser o seu 'Exemplo' - se ele morrer, revoltado você irá aderir a causa maléfica do Apocalipse tornando-se um de seus Cavaleiros.</value>
+    <value>Você é o Bruce Banner! Escolha alguém para ser o seu 'Exemplo'. Se ele morrer, você ficará revoltado, e será facilmente controlado pelos poderes do Apocalipse se tornando um de seus Cavaleiros.</value>
   </string>
   <string key="AboutAppS">
     <value>Você é a Jean Grey, e joga com os heróis.  Caso o verdadeiro Telepata morra, você tomará sua posição de diretor do Instituto Xavier.</value>
@@ -737,7 +737,7 @@
     <value>Você precisa começar uma partida dentro de um grupo!</value>
   </string>
   <string key="PingInfo">
-    <value>Tempo de processamento da mensagem: {0}\nUso de CPU atual: {1}%\nMensagens por segundo: {2}</value>
+    <value>Tempo de processamento da mensagem: {0}\nMensagens por segundo: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Que língua?\nAtual: {0}</value>
@@ -1073,7 +1073,7 @@
 <value>{0}, o Tony Stark, se esforçou para proteger a torre Stark porém suas defesas tecnológicas não foram o suficiente. O reator Ark foi arrancado violentamente de seu peito. O Justiceiro faz mais uma vítima, levando uma garrafa de um bom e velho Whisky para celebrar. </value>
   </string>
   <string key="GuardianAngelKilled">
-    <value>{0} é encontrado com grandes fendas onde antes houveram suas asas. {0}, o Arcanjo, está morto, e a noite agora é mais sombria.</value>
+    <value>{0} é encontrado sem seus lançadores de teia, com sinais de que foram arrancados a força. {0}, as teias nos prédios de Nova York não podem mais ser vistas, o Homem-Aranha está morto! </value>
   </string>
   <string key="GunnerKilled">
     <value>No silêncio da noite, são escutados os sons de uma briga na casa de {0}, os heróis encontram o Deadpool já sem vida! Seus sonhos são tormentosos depois de encontrá-lo decapitado, e a arma embaralhada em suas entranhas, mais uma vítima do Justiceiro.</value>
@@ -1091,7 +1091,7 @@
     <value>Os urros de ódio podem ser ouvidos em todas as partes. Parece que um erro foi cometido e os Cavaleiros mataram um aliado.{0} a Feiticeira Escarlate está morta.</value>
   </string>
   <string key="WildChildEaten">
-    <value>MUHAHAHAHA! Nada é tão bom quanto o derramamento de sangue. {0}, o Holocausto morreu, e o que sobrou foi apenas um cadáver jogado nas ruas da cidade!</value>
+    <value>MUHAHAHAHA! Nada é tão bom quanto o derramamento de sangue. {0}, o Bruce Banner morreu, e o que sobrou foi apenas um cadáver jogado nas ruas da cidade!</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>A Cidade acordou essa manhã só para encontrar um corpo enrolado na bandeira americana no meio da cidade. {0}, o Capitão América, visitou a pessoa errada. O Justiceiro utilizou o escudo de vibranium para multilar seu corpo, assim dando fim ao herói patriota.</value>
@@ -1103,10 +1103,10 @@
     <value>Ontem a noite a Hydra decidiu visitar o pior idealista, o Justiceiro, cansado de ouvir as palavras de {0}, o justiceiro resolve silenciá-lo(a) de uma vez por todas.</value>
   </string>
   <string key="GAGuardedKiller">
-    <value>{0} tentou proteger o Justiceiro ontem a noite. A cidade acordou e encontrou apenas as asas ensanguentadas de {0} pregadas na parede da igreja.</value>
+    <value>{0} tentou proteger o Justiceiro ontem a noite. A cidade acordou e encontrou os lançadores de teias de {0} destruídos perto da casa da Tia May.</value>
   </string>
   <string key="GAGuardedWolf">
-   <value>{0} tentou proteger um Cavaleiro do Apocalipse ontem a noite. A cidade acordou e apenas encontrou o corpo de {0} mutilado com os restos do que um dia foram suas asas, parece que os dias de guarda do Arcanjo acabaram.</value>
+   <value>{0} tentou proteger um Cavaleiro do Apocalipse ontem a noite. A cidade acordou e apenas encontrou o corpo de {0} mutilado com os restos do seu velho uniforme rasgado, parece que os dias de guarda do Homem-Aranha chegaram ao fim! </value>
   </string>
   <!--DEC 26: 1vs1 finales-->
   <string key="HunterKillsWolfEnd">
@@ -1120,5 +1120,91 @@
   <string key="CHKillsCultistEnd">
   <!--{0} = last cultist's name, {1} = CH's name -->
    <value>{1} e {0} caminham em direção ao outro. Avistando uma caveira com tentáculos no ombro de {0}, o justo {1} lança seu escudo pela última vez, colocando um fim a causa maléfica da Hydra que contaminava a cidade.</value>
+  </string>
+<!-- Extend time -->
+<string key="SecondsAdded">
+<!-- 0 - Seconds added by /extend command -->
+<!-- 1 - Total seconds remaining -->
+<value>Tempo para juntar-se a batalha estendido em {0} segundos!\n{1} restando para o início da batalha.</value>
+</string>
+<string key="SecondsRemoved">
+<!-- 0 - Seconds removed by /extend command -->
+<!-- 1 - Total seconds remaining -->
+<value>Tempo para juntar-se a batalha reduzido em {0} segundos!\n{1} restando para o início da batalha.</value>
+</string>
+<string key="CantExtend">
+<value>Apenas os administradores podem estender o tempo mais de uma vez!</value>
+</string>
+<string key="AllowExtendQ">
+<!--{0} = "Allow" / "Disallow" string-->
+<value>Permitir jogadores estender o tempo de início?\nAtual: {0} estender\nNota: Admins sempre poderão extender o tempo</value>
+</string>
+<string key="AllowExtendA">
+<!--{0} = "Allow" / "Disallow" string-->
+<value>{0} jogadores estender o tempo de início</value>
+</string>
+<string key="MaxExtendQ">
+<value>Escolha o tempo máximo em segundos que poderão ser adicionados ao tempo de início por um único /extend comando.\nConfiguração padrão: {0}\nAtual:{1}</value>
+</string>
+<string key="MaxExtendA">
+<value>Tempo máximo de estender: {0} segundos</value>
+</string>
+<string key="WolvesEatDrunkBlockSecondKill">
+<value>Oh não! Você atacou {0} o Tony Stark! Ele te prendeu com suas armadilhas tecnológicas e você não poderá atacar esta noite! {1}...</value>
+</string>
+	  <!--New InlineStats Strings 30/12-->
+  <string key="AchievementsUnlocked">
+   <value>Conquistas realizadas!</value>
+  </string>
+  <string key="GamesWon">
+   <value>Batalhas vencidas</value>
+  </string>
+  <string key="GamesLost">
+   <value>Batalhas perdidas</value>
+  </string>
+  <string key="GamesSurvived">
+   <value>Batalhas sobrevividas</value>
+  </string>
+  <string key="TotalGames">
+   <value>Total de batalhas</value>
+  </string>
+  <string key="TimesKilled">
+   <value>vezes eu prazerosamente eliminei</value>
+  </string>
+  <string key="TimesKilledBy">
+   <value>vezes eu fui injustamente morto por</value>
+  </string>
+	
+	  <!--New Commands by GreyWolf since March 2017-->
+  <string key="JoinButton">
+    <value>Entrar</value>
+  </string>
+  <string key="NotMember">
+    <value>Você não pode entrar nessa batalha porque você não é membro do {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Por favor, não use o comando join. Para entrar em uma batalha, use o botão abaixo.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jogadores votaram, {1} total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Permitir ataque secreto?\nAtual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Ataque secreto definido como: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, lembre-se que você também terá que usar o botão para se juntar à batalha.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Não foi possível encontrar esse grupo. Por favor, use este comando no grupo que deseja parar de esperar ou adicione o link, o ID ou o nome de usuário do grupo após o comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Você foi excluído da lista de espera em {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} entrou na batalha nos últimos 30 segundos.</value>
   </string>
 </strings>

@@ -2,17 +2,18 @@
 <!-- It's Mafia vs Cops ver 1.3 by @NoxCaelis, Felicia, and @dhansck! Mafia's the goodies, by the way. Brought to Italian by @MatteoIlGrande and updated by @AvZm42-->
 <!-- Last updated on 7 February 2017 -->
 <strings>
-  <language name="Italiano (Mafia)" base="Italiano" variant="Mafia"/>
+  <language name="Italiano (Mafia)" base="Italiano" variant="Mafia"	code="it"
+			isDefault="false"/>
   <string key="NotInGame" deprecated="true">
     <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} ha iniziato una partita! usa /join per entrare nella città, e munirti della tua mitraglietta.</value>
-    <value>Una nuova partita è stata iniziata da {0}! Usa /join per entrare nell'azione, stile Mafia!</value>
+    <value>{0} ha iniziato una partita! Clicca su Join per entrare nella città, e munirti della tua mitraglietta.</value>
+    <value>Una nuova partita è stata iniziata da {0}! Clicca Join per entrare nell'azione, stile Mafia!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} ha iniziato una partita Chaos! usa /join per entrare nella città, e munirti della tua mitraglietta</value>
-    <value>Una nuova partita Chaos è stata iniziata da {0}! Usa /join per entrare nell'azione, stile Mafia!</value>
+    <value>{0} ha iniziato una partita Chaos! Clicca Join per entrare nella città, e munirti della tua mitraglietta!</value>
+    <value>Una nuova partita Chaos è stata iniziata da {0}! Clicca su Join per entrare nell'azione, stile Mafia!</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
     <value>Non puoi unirti ora! La partita è ancora in corso!</value>
@@ -21,10 +22,10 @@
     <value>Ti sei già unito!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minuto rimanente per usare /join</value>
+    <value>1 minuto rimanente!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>Ancora {0} secondi per usare /join</value>
+    <value>Ancora {0} secondi!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Ah, non siamo abbastanza. Cancello la partita!</value>
@@ -785,7 +786,7 @@
     <value>Puoi cominciare una partita solo dentro un gruppo!</value>
   </string>
   <string key="PingInfo">
-    <value>Tempo di Risposta: {0}\nPercentuale CPU usata: {1}%\nMessaggi per secondo: {2}</value>
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Che lingua?\nAttuale: {0}</value>
@@ -963,7 +964,7 @@
 	<value>Sei l'Erede Mafioso (Principe) 👑. Lavorando insieme come coordinatori dei fronti criminali di Fairview, il Padrino ti dà tutto ciò di cui hai bisogno. Il che include una... "generosa donazione" alla Città di Fairview se dovesse accaderti qualcosa pubblicamente. Comunque, a causa degli Agenti Federali che sorvegliano attentamente la città, il Padrino potrà tirare fuori dai guai solo una volta. Non può in nessun caso rischiare che rintraccino il suo conto corrente svizzero, nemmeno per il primogenito della Famiglia.</value>
   </string>
   <string key="RoleInfoClumsyGuy">
-	<value>Sei il Professore Distratto (Ragazzo Goffo) 🤕! La Mafia potrà anche avere bisogno delle tue invenzioni sui nuovi modi per uccidere la polizia e a te potranno anche servire i fondi per comprare il plutonio necessario per la tua automobile, ma non potrai fare a meno di dimenticare che il municipio è alla sinistra dell'università. No, non da quella parte, la tua sinistra. L'ALTRA SINISTRA!/n /nOh be', almeno la tua probabilità di votare giusto è 50-50.</value>
+	<value>Sei il Professore Distratto (Ragazzo Goffo) 🤕! La Mafia potrà anche avere bisogno delle tue invenzioni sui nuovi modi per uccidere la polizia e a te potranno anche servire i fondi per comprare il plutonio necessario per la tua automobile, ma non potrai fare a meno di dimenticare che il municipio è alla sinistra dell'università. No, non da quella parte, la tua sinistra. L'ALTRA SINISTRA!\nOh be', almeno la tua probabilità di votare giusto è 50-50.</value>
   </string>
   <string key="RoleInfoSorcerer">
 	<value>Sei l'Informatore (Stregone) 🔮. Usando il tuo malizioso charm, nessuno scampa alla tua eloquenza e talento notturno. Sai tutto quello che ti serve per ricavare informazioni da una donna e tutti qui hanno almeno una parente in città. Questa città è praticamente perfetta per mettere in pratica i tuoi talenti e, allo stesso tempo, ottenere un po' di soldi. Informazioni sul Torturatore (Veggente) 👳 sono ben ripagate e puoi chiedere protazione se trovi un Poliziotto (Lupo). Gli altri non sono degni della tua attenzione.</value>
@@ -978,14 +979,14 @@
 	<value>Sei la Recluta 🐶. Ti sei appena diplomato all'accademia, sei audace e temerario, fiero e leale allo stesso tempo, seguirai la pattuglia ad ogni blitz fino alla fine dei tempi. Essendo l'orgoglio della pattuglia, se per caso tu divessi venire esiliato o rapito, la polizia perlustrerà la citta e farà due raid la notte successiva.</value>
   </string>
   <string key="PrinceLynched">
-	<value>I voti indicano che {0} deve essere esiliato quando qualcuno interviene. Quest'uomo misterioso si avvicina al Giudice con una curiosa busta gialla, piuttosto spessa. TDopo di che il Giudice annuncia: “A causa di circostanze impreviste, il voto di oggi è annullato. Nessuno verrà esiliato!”
-	{0} deve essere l'Erede Mafioso 👑! Chi altro più comprare il Sindaco?" mormora qualcuno dietro di te.</value>
+	<value>I voti indicano che {0} deve essere esiliato quando qualcuno interviene. Quest'uomo misterioso si avvicina al Giudice con una curiosa busta gialla, piuttosto spessa. Dopo di che il Giudice annuncia: “A causa di circostanze impreviste, il voto di oggi è annullato. Nessuno verrà esiliato!”
+	“{0} deve essere l'Erede Mafioso 👑! Chi altro potrebbe comprare il Sindaco?" mormora qualcuno dietro di te.</value>
   </string>
   <string key="SorcererOther">
 	<value>Cerchi di scoprire chi è {0} ma scopri solo che non è né un Poliziotto né il Torturatore.</value>
   </string>
   <string key="MayorReveal">
-	<value>{0} fa un passo avanti portandosi al centro della folla infila una mano nella tasca del suo completom tira fuori un anello con sigillo da Luogotenente e lo indossa sul mignolo. “Il Luogotentente 🎖!” Da ora in poi il voto di {0} per l'esilio conterà per due.</value>
+	<value>{0} fa un passo avanti portandosi al centro della folla infila una mano nella tasca del suo completo, ne estrae un anello con sigillo da Luogotenente e lo indossa sul mignolo. “Il Luogotentente 🎖!” Da ora in poi il voto di {0} per l'esilio conterà per due.</value>
   </string>
   <string key="AskMayor">
 	<value> Clicca “Mostrati” quando vuoi giurare fedeltà al Padrino in quanto suo Luogotenente.</value>
@@ -1128,10 +1129,10 @@
 	<value>Il giornale è appena uscito! Il celebre playboy {0} è stato arrestato per molestie sessuali a minori. Nonostante fosse un loro Informatore 🔮 la polizia ha fatto il suo dovere e lo ha portato al fresco.</value>
   </string>
   <string key="WildChildEaten">
-    <value>Il giornale è appena uscito! La polizia ha trovato un {0} a scrivere sul muro della stazione “GIVE PEACE A CHANCE”. Credere nella natura umana non sarà un crimine ma il vandalismo lo è eccome. Cosa direbbe sua madre? Il giovane Idealista 👶 è stato arrestato.</value>
+    <value>Il giornale è appena uscito! La polizia ha trovato {0} a scrivere sul muro della stazione “GIVE PEACE A CHANCE”. Credere nella natura umana non sarà un crimine ma il vandalismo lo è eccome. Cosa direbbe sua madre? Il giovane Idealista 👶 è stato arrestato.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. {0}, il rispettabilissimo Agente Riscossore ha cercato di far pagare le tasse al Rapitore Seriale ed è stato rapito. </value>
+    <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. {0}, il rispettabilissimo Agente Riscossore ha cercato di far pagare le tasse al Rapitore Seriale ed è stato fatto sparire. </value>
 	</string>
   <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
     <value>Il giornale è appena uscito! {0} ha provato a convertire al culto di Geova un poliziotto ed è stato arrestato per aver evaso le tasse!</value>
@@ -1166,23 +1167,23 @@
 -<string key="SecondsAdded">
 <!-- 0 - Seconds added by /extend command -->
 <!-- 1 - Total seconds remaining -->
-<value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+<value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per joinare!</value>
 </string>
 -<string key="SecondsRemoved">
 <!-- 0 - Seconds removed by /extend command -->
 <!-- 1 - Total seconds remaining -->
-<value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+<value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per joinare.</value>
 </string>
 -<string key="CantExtend">
-<value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+<value>Solo gli admin del gruppo possono prolungare il tempo più di una volta!</value>
 </string>
 -<string key="AllowExtendQ">
 <!--{0} = "Allow" / "Disallow" string-->
-<value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+<value>Permettere ai giocatori di prolungare il tempo?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
 </string>
--<string key="AllowExtendA">
+-<string key="AllowExtendA">					
 <!--{0} = "Allow" / "Disallow" string-->
-<value>{0} prolungare il times ai giocatori</value>
+<value>{0} prolungare il tempo ai giocatori</value>
 </string>
 -<string key="MaxExtendQ">
 <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
@@ -1194,4 +1195,23 @@
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Oh no! {0} era il Politico Corrotto! Siete costretti a saltare il raid da {1} e rientrare alla Centrale per riempire un mucchio di scartoffie.</value>
   </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+    <string key="JoinByButton">
+    <value>Per favore, non usare comandi per joinare. Usa questo bottone, invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+  
   </strings>

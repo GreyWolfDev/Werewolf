@@ -1,40 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- WEREWOLF FOR TELEGRAM: SINGAPORE (PUBLIC HOUSING) Language Pack. Learn more about Singapore from our language pack and the little references we have put in, for laughs! -->
-<!-- Version 1.00: Created proudly by Donavan, Holypanda, Kylor, Darryl, Klinsmann, Kopi, Ian and Cyril! Moral support and vetting from Jayjay, Kaykay and Risa! -->
-<!-- Version 1.01: Edited "serial killer" from KUMAR to Pontianak. Also language changes. -->
-<!-- Version 1.02: Multiple values for many common strings. Adding a bit of variety. -->
-<!-- Version 1.03: new strings.-->
-<!-- Version 1.04: new death strings in line with the english.xml file.-->
-<!-- Version 1.1: a new bot exists for the SG pack; you can use @WWSGPack_Bot. -->
 <!-- This will be updated in tandem with the English language pack as far as possible. -->
 <!-- If you would like to contribute to this language pack for more Singaporean flavour, please contact @donavancheah to see how it can be infused into the pack! -->
 <strings>
-  <language name="English - Singapore" base="English" variant="Singapore Version"/>
-  <string key="NotInGame">
+  <language name="English - Singapore" base="English" variant="Singapore Version" code="en"/>
+  <string key="NotInGame" deprecated="true">
     <value>You don't appear to be in any HDB flats right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! Use /join to buy a HDB flat, and probably be chased out!</value>
-    <value>A new BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
+    <value>{0} has started a game! Buy a HDB flat, and probably be chased out!</value>
+    <value>A new BTO exercise has been started by {0}! Buy a HDB flat now!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a chaos game! Use /join to buy a HDB flat. and probably be chased out! :P</value>
-    <value>A new chaotic BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
+    <value>{0} has started a chaos game! Buy a HDB flat. and probably be chased out! :P</value>
+    <value>A new chaotic BTO exercise has been started by {0}! Buy a HDB flat now!</value>
   </string>
-  <string key="NoJoinGameRunning">
+  <string key="NoJoinGameRunning" deprecated="true">
     <value>You can't join now! Next round of build-to-order (BTO) flats, please! </value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>You've already joined the queue!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join</value>
+    <value>1 minute left to join the BTO queue!</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} seconds left to /join</value>
+    <value>{0} seconds left to join the BTO queue!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Not enough players, cancelling BTO exercise!</value>
@@ -42,7 +36,7 @@
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
   </string>
-  <string key="BannedForExploit">
+  <string key="BannedForExploit" deprecated="true">
     <!-- 0 - Player name -->
     <value>{0} is banned for attempting an exploit (no names starting with /)</value>
   </string>
@@ -81,7 +75,7 @@
     <!-- 0 - Number of players -->
     <value>{0} residents remain.</value>
   </string>
-  <string key="DidntAsk">
+  <string key="DidntAsk" deprecated="true">
     <value>Hey I didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
@@ -90,7 +84,7 @@
   <string key="NoPlayerName">
     <value>I can't find a resident by that name!</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>This answer is not valid!</value>
   </string>
   <string key="WolfVotedKill">
@@ -107,6 +101,7 @@
     <!-- 0 - player name -->
     <!-- 1 - player role -->
     <value>{0} was so busy {0} forgot to vote two nights in a row. Apparently, {0} has made it rich, and {0}'s would be moving to a condominium tomorrow! The rest of the residents glare at him with jealous stares. {1}</value>
+    <value>{0} refused to vote two nights in a row. The residents decide to preach the importance of exercising the right to vote, before chasing {0} away. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>You jealous resident!!! You are now the HDB agent.</value>
@@ -226,7 +221,11 @@
     <!-- 0 - number of seconds -->
     <value>
       Dusk draws near, and the residents gather to decide who they are chasing away this evening.
-      Everyone now has {0} seconds to vote!
+      Everyone now has {0} seconds to vote! Remember, voting is compulsory in this country!
+    </value>
+    <value>
+      As dusk draws near, the residents decide who they should chase away this evening.
+      Everyone now has {0} seconds to vote! Remember, voting is compulsory in this country!
     </value>
   </string>
   <string key="DayTime" >
@@ -258,15 +257,16 @@
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
-    <value >Morning comes, strangely abandoned along the roadside with her marketing trolley is {0}, the 啰哩啰嗦 (Long-winded) Auntie (Guardian Angel). The HDB agents must have evicted her, and all she had left was her one week's worth of groceries.</value>
+    <value> Morning comes, strangely abandoned along the roadside with her marketing trolley is {0}, the 啰哩啰嗦 (Long-winded) Auntie (Guardian Angel). The HDB agents must have evicted her, and all she had left was her one week's worth of groceries.</value>
   </string>
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
-    <value >Morning comes, only to reveal an eviction notice and an SAF notice charging the shady NSF (gunner), {0}, in court, for his smuggling enterprise! {0} has been evicted!</value>
+    <value>Morning comes, only to reveal an eviction notice and an SAF notice charging the shady NSF (gunner), {0}, in court, for his smuggling enterprise! {0} has been evicted!</value>
   </string>
   <string key="SeerEaten" >
     <!-- 0 - victim name -->
-    <value >Night-time comes, and a notice was pasted at {0}'s door. The Hacktivist (seer) was caught working over-time! Some wire tappers and an old monitor were left in the bulk refuse chute, testament that he was being evicted.</value>
+    <value>Morning comes, and a notice was pasted at {0}'s door. The Hacktivist (seer) was caught working over-time! Some wire tappers and an old monitor were left in the bulk refuse chute, testament that he was being evicted.</value>
+    <value>The advisory reads: {0} has been evicted for installing malware on the HDB servers. Looks like there is no way to further inflate the value of their HDB flat anymore.</value>
   </string>
   <string key="DrunkEaten" >
     <!-- 0 - victim name -->
@@ -311,18 +311,18 @@
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >Oh no! {0} was a drunkard (drunk)! Evicting him took far longer than expected because his house was a fire hazard! You must re-visit his house tomorrow night just to clear the crates of Tiger Beer he was trying to resell!</value>
+    <value>Oh no! {0} was a drunkard (drunk)! Evicting him took far longer than expected because his house was a fire hazard! Double effort was required, hindering you from evicting another unfortunate soul!</value>
   </string>
   <string key="GuardWolf" >
-    <value >You tried to defend an HDB agent's (wolf's) "business"! Of course it was legal, and you were running the illegal business! You have been evicted.</value>
+    <value>You tried to defend an HDB agent's (wolf's) "business"! Of course it was legal, and you were running the illegal business! You have been evicted.</value>
   </string>
   <string key="GuardSaved" >
     <!-- 0 - saved player name -->
-    <value >You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (serial killer)!</value>
+    <value>You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (serial killer)!</value>
   </string>
   <string key="GuardNoAttack" >
     <!-- 0 - player name -->
-    <value >No one wanted to evict {0}, wasting your precious time when you could have been coaching your daughter for the PSLE.</value>
+    <value>No one wanted to evict {0}, wasting your precious time when you could have been coaching your daughter for the PSLE.</value>
   </string>
   <string key="GuardEmptyHouse">
     <!-- 0 - player name -->
@@ -432,6 +432,7 @@
   </string>
   <string key="CultWins" isgif="true">
     <value>All the HDB agents have been busted, and the only people left standing are all Money-Lending Members! The MLM has won!</value>
+    <value>All that is left in this estate are Money-Lending Members! No more pesky HDB agents or "do-gooder" residents! The MLM has won!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -585,7 +586,7 @@
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
+  <string key="AdminAdded" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} added to admin list. Use /config to change group settings.</value>
   </string>
@@ -593,24 +594,24 @@
     <!-- 0 - target's name -->
     <value>You are already in a BTO exercise! ({0})</value>
   </string>
-  <string key="MultipleGames">
+  <string key="MultipleGames" deprecated="true">
     <value>Your group has managed to do extra BTOs. Killing extras.</value>
   </string>
-  <string key="GroupQueue">
+  <string key="GroupQueue" deprecated="true">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
     <value>Your group is currently in the queue. Position: {0} / {1}</value>
   </string>
-  <string key="MaintBreak">
+  <string key="MaintBreak" deprecated="true">
     <!-- 0 - target's name -->
     <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
   </string>
-  <string key="MaxGames">
+  <string key="MaxGames" deprecated="true">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
     <value>Sorry, max concurrent games has been reached ({0}). \nPosition in queue: {1} / {1}</value>
   </string>
-  <string key="SkipQueue">
+  <string key="SkipQueue" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
@@ -620,28 +621,28 @@
   <string key="GroupAdminOnly">
     <value>Only a group admin can run this command.</value>
   </string>
-  <string key="ShuttingDown">
+  <string key="ShuttingDown" deprecated="true">
     <value>After this game, I am shutting down for maintenance.</value>
   </string>
-  <string key="ShuttingDownUpdate">
+  <string key="ShuttingDownUpdate" deprecated="true">
     <value>After this game, I am shutting down momentarily for an update (automated).</value>
   </string>
-  <string key="NullIdAdmin">
+  <string key="NullIdAdmin" deprecated="true">
     <value>UserId was null. Are you sure you sent this as a reply?</value>
   </string>
-  <string key="AlreadyAdmin">
+  <string key="AlreadyAdmin" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is already an admin!</value>
   </string>
-  <string key="NotAdmin">
+  <string key="NotAdmin" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is not an admin!</value>
   </string>
-  <string key="AdminRemoved">
+  <string key="AdminRemoved" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} removed from admin list.</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <!-- 0 - language's name -->
     <value>Language set to {0}</value>
   </string>
@@ -952,13 +953,13 @@
   <string key="SentPrivate">
     <value>I have sent you a PM</value>
   </string>
-  <string key="StartPM">
+  <string key="StartPM" deprecated="true">
     <value>Please send me a pm so I can PM you: @werewolfbot</value>
   </string>
-  <string key="PMTrue">
+  <string key="PMTrue" deprecated="true">
     <value>Thanks for starting me! I can PM you now.</value>
   </string>
-  <string key="MustReplySmite">
+  <string key="MustReplySmite" deprecated="true">
     <value>You must reply to the user you want to smite</value>
   </string>
   <string key="WhatToDo">
@@ -1363,12 +1364,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>BTO period extended by {0} seconds!\n{1} left to /join</value>
+    <value>BTO period extended by {0} seconds!\n{1} left for the BTO!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>BTO period decreased by {0} seconds!\n{1} left to /join</value>
+     <value>BTO period decreased by {0} seconds!\n{1} left for the BTO!</value>
   </string>
   <string key="CantExtend">
     <value>Only group admins can extend the time more than once!</value>
@@ -1391,6 +1392,23 @@
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Oh no! {0} was a drunkard! Dealing with the drunkard proved far too troublesome; your agents could not evict {1}!</value>
   </string>
-
-
+  <string key="JoinButton"><!-- this is for a button, no markdown or html -->
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join the BTO exercise. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total. (Reminder from the Elections Department: Voting is secret. Voting is also compulsory.)</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  
 </strings>

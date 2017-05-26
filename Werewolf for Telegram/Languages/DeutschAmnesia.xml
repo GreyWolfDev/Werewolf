@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- created by @ayylimao, translated by @syscaller at first, now maintained by @Olfi01 // version 3.2.2017 --> 
-<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" />
+<!-- created by @ayylimao, translated by @syscaller at first, now maintained by @Olfi01 // version 3.2.2017 --> 
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" code="de" />
   <string key="NotInGame">
     <value>Schon vergessen? Du bist keinem Spiel beigetreten!</value>
   </string>
   <string key="PlayerStartedGame">
-    <value>{0} startete ein neues Spiel! Nutze /join, um beizutreten und alle Erinnerungen zu verlieren.</value>
-    <value>Ein neues Spiel wurde von {0} gestartet! Nutze /join, um von sehr vergesslichen Wölfen gefressen zu werden!</value>
-    <value>{0} hat... äh... irgendwas gemacht. Ich glaube, du solltest /join benutzen.</value>
+    <value>{0} startete ein neues Spiel! Nutze den Join-Knopf, um beizutreten und alle Erinnerungen zu verlieren.</value>
+    <value>Ein neues Spiel wurde von {0} gestartet! Nutze den Join-Knopf, um von sehr vergesslichen Wölfen gefressen zu werden!</value>
+    <value>{0} hat... äh... irgendwas gemacht. Ich glaube, du solltest den Join-Knopf benutzen.</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>{0} startete ein neues Chaos-Spiel! Nutze /join, um komplett verwirrt zu werden.</value>
-    <value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze /join, um von vollkommen verwirrten Mitspieler getötet zu werden!</value>
-    <value>{0} hat irgendwas gemacht... Im dOrf brIChT chAoS AUs!</value>
+    <value>{0} startete ein neues Chaos-Spiel! Nutze den Join-Knopf, um komplett verwirrt zu werden.</value>
+    <value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze den Join-Knopf, um von vollkommen verwirrten Mitspieler getötet zu werden!</value>
+    <value>{0} hat irgendwas gemacht... Im Dorf bricht Chaos aus!</value>
+    <value>{0} steht auf dem Marktplatz und heult wie ein Wolf... was ist denn da los? Ach ja, ein Chaos-Spiel! Nutze den Join-Knopf, aber schnell!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Das Spiel läuft bereits, schon vergessen? Schreibe /nextgame, wenn ich dich beim nächsten Spielstart benachrichtigen soll.</value>
@@ -1021,7 +1023,7 @@
     <value>Du kannst ein Spiel nur in einer Gruppe starten.</value>
   </string>
   <string key="PingInfo">
-    <value>Reaktionszeit von Telegram: {0}\nAktuelle CPU-Auslastung: {1}%\nNachrichten pro Sekunde: {2}</value>
+    <value>Reaktionszeit von Telegram: {0}\nNachrichten pro Sekunde: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Welche Sprache?\nAktuell: {0}</value>
@@ -1269,7 +1271,7 @@
     <value>der Wolfswelpe 🐶</value>
   </string>
   <string key="PlayerBittenWolves">
-    <value>Ist letzte Nacht irgendetwas bei {0}s Haus passiert? Du kannst dich nicht erinnern... \nDu erinnerst dich vielleicht nicht, wer du bist, aber du erinnerst dich an jemand Wichtigen: {1}</value>
+    <value>Ist letzte Nacht irgendetwas bei {0}s Haus passiert? Du kannst dich nicht erinnern... \nIrgendwas hat {1} damit zu tun.</value>
   </string>
   <string key="PlayerBitten">
     <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
@@ -1438,5 +1440,37 @@
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Irgendwas ist letzte Nacht passiert, du erinnerst dich aber nur an zwei Namen: {0} und {1}</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Hey Du! Komm erstmal in die Gruppe {0} und lass uns da weiter reden. So kannst Du dem Spiel zumindest nicht beitreten.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Der Befehl zum joinen funktioniert nicht mehr, schon vergessen? Benutze bitte den Knopf!</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} vergessliche Dorfbewohner haben abgestimmt, {1} insgesamt </value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Geheimes Lynchen anschalten?\nMomentan: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Geheimes Lynchen eingestellt auf: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, vergiss nicht, auch dem Spiel beizutreten, /startgame reicht nicht mehr!</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Konnte die Gruppe nicht finden. Bitte verwende diesen Befehl in der Gruppe, die du meinst, oder füge eine ID, einen Link oder einen Chatnamen hinzu.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Was, ich soll dich nicht mehr für {0} erinnern? Oh, die Gruppe hätte ich sowieso fast vergessen...</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- {0} = list of people who have joined -->
+    <value>{0} vergessliche Dorfbewohner haben das Dorf in den letzten 30 Sekunden betreten.</value>
   </string>
 </strings>

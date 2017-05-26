@@ -92,6 +92,9 @@
     <Compile Include="ContestTerm.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>WerewolfModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DailyCount.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
@@ -146,6 +149,7 @@
     <Compile Include="Group.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GroupConfig.cs" />
     <Compile Include="GroupDay1Death_Result.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
@@ -177,6 +181,7 @@
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelExtensions\AspNetUser.cs" />
+    <Compile Include="ModelExtensions\Group.cs" />
     <Compile Include="NotifyGame.cs">
       <DependentUpon>WerewolfModel.tt</DependentUpon>
     </Compile>
