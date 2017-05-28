@@ -33,16 +33,8 @@ namespace Werewolf_Web.Controllers
             return View();
         }
 
-        public ActionResult Player(int id, bool json=false)
+        public ActionResult Player(int id)
         {
-            if (json)
-            {
-                using (var DB = new WWContext())
-                {
-                    var user = DB.Players.FirstOrDefault(x => x.TelegramId == id);
-                    return Json(user);
-                }
-            }
             ViewBag.Id = id;
             using (var DB = new WWContext())
             {
@@ -176,7 +168,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerStats(int pid, bool json = false)
+        public JsonResult PlayerStats(int pid)
         {
             using (var DB = new WWContext())
             {
@@ -194,36 +186,20 @@ namespace Werewolf_Web.Controllers
                 var killedby = DB.PlayerMostKilledBy(pid).FirstOrDefault();
                 var killedlink = killed != null ? $"<a href='../Player/{killed.TelegramId}'>{killed.Name}</a>" : "No kills?";
                 var killedbylink = killedby != null ? $"<a href='../Player/{killedby.TelegramId}'>{killedby.Name}</a>" : "Not killed?";
-                if (!json)
-                {
-
-                    var reply =
-                        "<table class=\"table table-hover\"><tbody>" +
-                        $"<tr><td>Games played total</td><td><b>{gamesPlayed}</b></td></tr>" +
-                        $"<tr><td>Games won</td><td><b>{won}</td><td>{(won * 100 / gamesPlayed)}%</b></td></tr>" +
-                        $"<tr><td>Games lost</td><td><b>{lost}</td><td>{(lost * 100 / gamesPlayed)}%</b></td></tr>" +
-                        $"<tr><td>Games survived</td><td><b>{survived}</td><td>{(survived * 100 / gamesPlayed)}%</b></td></tr>" +
-                        $"<tr><td>Most common role</td><td><b>{roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?"}</td><td>{roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.times ?? 0} times</b></td></tr>" +
-                        $"<tr><td>Most killed</td><td><b>{killedlink}</td><td>{killed.times} times</b></td></tr>" +
-                        $"<tr><td>Most killed by</td><td><b>{killedbylink}</td><td>{killedby.times} times</b></td></tr>" +
-                        "</tbody></table>";
-                    return Json(reply, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    var reply = new { gamesPlayed = gamesPlayed,
-                        won = new { total = won, percent = won * 100 / gamesPlayed },
-                        lost = new { total = lost, percent = lost * 100 / gamesPlayed },
-                        survived = new { total = survived, percent = survived * 100 / gamesPlayed },
-                        mostCommonRole = roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?",
-                        mostKilled = new { name = killed.Name, id = killed.TelegramId, link = killedlink, times = killed.times },
-                        mostKilledBy = new { name = killedby.Name, id = killedby.TelegramId, link = killedbylink, times = killed.times },
-                        achievements = p.Achievements
-                    };
-                    return Json(reply, JsonRequestBehavior.AllowGet);
-                }
+                var reply =
+                    "<table class=\"table table-hover\"><tbody>" +
+                    $"<tr><td>Games played total</td><td><b>{gamesPlayed}</b></td></tr>" +
+                    $"<tr><td>Games won</td><td><b>{won}</td><td>{(won * 100 / gamesPlayed)}%</b></td></tr>" +
+                    $"<tr><td>Games lost</td><td><b>{lost}</td><td>{(lost * 100 / gamesPlayed)}%</b></td></tr>" +
+                    $"<tr><td>Games survived</td><td><b>{survived}</td><td>{(survived * 100 / gamesPlayed)}%</b></td></tr>" +
+                    $"<tr><td>Most common role</td><td><b>{roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?"}</td><td>{roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.times ?? 0} times</b></td></tr>" +
+                    $"<tr><td>Most killed</td><td><b>{killedlink}</td><td>{killed.times} times</b></td></tr>" +
+                    $"<tr><td>Most killed by</td><td><b>{killedbylink}</td><td>{killedby.times} times</b></td></tr>" +
+                    "</tbody></table>";
 
 
+
+                return Json(reply, JsonRequestBehavior.AllowGet);
             }
         }
 
