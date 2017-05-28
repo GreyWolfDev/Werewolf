@@ -284,7 +284,7 @@ namespace Werewolf_Node
 
                     if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + " " + p.Id + ", ").TrimEnd(',', ' ')));
+                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')));
                         notifiedPlayers = Players.Select(x => x.Id).ToList();
                         secondsElapsed = 0;
                     }
