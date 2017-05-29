@@ -18,7 +18,7 @@ namespace Database
     public partial class WWContext : DbContext
     {
         public WWContext()
-            : base(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf").GetValue("BotConnectionString").ToString())
+            : base(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf").GetValue("ProductionAPI").ToString())
         {
         }
     
