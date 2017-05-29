@@ -183,11 +183,11 @@ namespace Werewolf_Control.Helpers
 
             //check uniqueness
             var error = langs.FirstOrDefault(x =>
-                    (x.FileName == newFile.FileName && x.Name != newFile.Name) //check for matching filename and mismatching name
+                    (x.FileName.ToLower() == newFile.FileName.ToLower() && x.Name != newFile.Name) //check for matching filename and mismatching name
                     || (x.Name == newFile.Name && (x.Base != newFile.Base || x.Variant != newFile.Variant)) //check for same name and mismatching base-variant
                     || (x.Base == newFile.Base && x.Variant == newFile.Variant && x.FileName != newFile.FileName) //check for same base-variant and mismatching filename
                     //if we want to have the possibility to rename the file, change previous line with FileName -> Name
-                    );
+            );
             if (error != null)
             {
                 //problem....
