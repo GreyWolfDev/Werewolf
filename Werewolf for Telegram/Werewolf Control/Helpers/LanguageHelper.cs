@@ -194,6 +194,10 @@ namespace Werewolf_Control.Helpers
                 newFileErrors.Add(new LanguageError(newFile.FileName, "*Language Node*",
                     $"ERROR: The following file partially matches the same language node. Please check the file name, and the language name, base and variant. Aborting.\n\n*{error.FileName}.xml*\n_Name:_{error.Name}\n_Base:_{error.Base}\n_Variant:_{error.Variant}", ErrorLevel.FatalError));
             }
+            
+            //make sure that the variant isn't empty
+            if (newFile.Variant == "" || newFile.Variant == " ") newFileErrors.Add(new LanguageError(newFile.FileName, "*Language Node*",
+					$"ERROR: The variant mustn't be empty! Please set a variant for the file in the <language> tag! Aborting.\n\n*{error.FileName}.xml*\n_Name:_{error.Name}\n_Base:_{error.Base}\n_Variant:_{error.Variant}", ErrorLevel.Error));
 
             //get the errors in it
             GetFileErrors(newFile, newFileErrors, master);
