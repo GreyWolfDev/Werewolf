@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Indonesia (Mode Amnesia)" base="Indonesia" variant="Amnesia Mode"/>
+  <language name="Indonesia (Mode Amnesia)" base="Indonesia" variant="Amnesia Mode" code="id" isDefault="false"/>
   <string key="NotInGame">
     <value>Kamu belum bergabung di permainan ini</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>📣 {0} telah memulai permainan (NORMAL)! Ketik /join untuk bergabung.</value>
-    <value>📣 Permainan (NORMAL) telah dimulai oleh {0}! Ketik /join untuk bergabung.</value>
+    <value>📣 {0} telah memulai permainan (NORMAL)! Tekan join untuk bergabung.</value>
+    <value>📣 Permainan (NORMAL) telah dimulai oleh {0}! Tekan join untuk bergabung.</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>📣 {0} telah memulai permainan (CHAOS)! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
-    <value>📣 Permainan (CHAOS) telah dimulai oleh {0}! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
+    <value>📣 {0} telah memulai permainan (CHAOS)! Tekan join untuk bergabung dan bunuh semua warga desa! 😈</value>
+    <value>📣 Permainan (CHAOS) telah dimulai oleh {0}! Tekan join untuk bergabung dan bunuh semua warga desa! 😈</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Kamu terlambat! Permainan sedang berlangsung. Tunggu permainan selanjutnya ("`o´)-σ.</value>
@@ -19,10 +19,10 @@
     <value>Kamu sudah ikut bermain! Jangan joan-join mulu! Bikin bingung aja! Peper upil nih (‾-ƪ‾)( ‾-‾)-σ••••</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 menit lagi untuk /join</value>
+    <value>1 menit lagi untuk join</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} detik lagi untuk /join</value>
+    <value>{0} detik lagi untuk join</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Tidak cukup pemain! Permainan dibatalkan! panggil teman-temanmu \('o')-σ.</value>
@@ -681,9 +681,6 @@
 	<value>Ingatan tentang dirimu mulai melemah akibat teralalu banyak mengkonsumsi micin. Mungkinkah dirimu seorang Guardian Angel 👼?</value>
 	<value>Ingatan tentang dirimu mulai melemah akibat teralalu banyak mengkonsumsi micin. Mungkinkah dirimu seorang Serial Killer 🔪?</value>
   </string>
-  <string key="CupidChosen">
-    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: {0}</value>
-  </string>
   <string key="HunterLynchedChoice">
     <value>Warga desa memilih untuk mengeksekusimu! Inilah kesempatan terakhir untuk memilih siapa yang kamu bawa menemanimu ke akhirat!</value>
   </string>
@@ -764,9 +761,6 @@
     <value>Apa yang terjadi di rumah {0} tadi malam? Sepertinya kamu tidak ingat apapun...</value>
   </string>
   <string key="CultConvertHunter">
-    <value>{0} membawa formulir pendaftaran ke rumah {1} dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba {1} menghunus pisau berkali-kali ke dada dan perut {0} hingga mati</value>
-  </string>
-  <string key="CultConvertSerialKiller">
     <value>{0} membawa formulir pendaftaran ke rumah {1} dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba {1} menghunus pisau berkali-kali ke dada dan perut {0} hingga mati</value>
   </string>
   <string key="GuardKiller">
@@ -850,7 +844,7 @@
 	ಠ_ಠ</value>
   </string>
   <string key="AddedToWaitList">
-    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk /join .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
+    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk bergabung .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
   </string>
   <string key="NotifyNewGame">
     <value>Permainan baru akan dimulai dalam {0}</value>
@@ -997,7 +991,7 @@
     <value>Kamu harus memulai permainan dalam grup!</value>
   </string>
   <string key="PingInfo">
-    <value>Waktu Respon Server: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Waktu Respon Server: {0}\nMessages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Bahasa apa yang akan kamu pilih?\nCurrent: {0}</value>
@@ -1385,5 +1379,103 @@
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>{0} berusaha melindungi serigala semalam. Warga desa menyadari bahwa sayap {0} telah digantung di jemuran tetangga. Jelas, beginilah rasanya melindungi orang yang salah. Serigala baru saja mendapatkan santapan istimewa!</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya {0} yang tersisa, {1} mencoba untuk memangsa {0}, namun {0} pernah menjalani wajib militer dan agak paranoid yang membuatnya sulit untuk dihadapi! Yang menentukan adalah dua peluru yang ditembakkan ke arah dada dan seorang pemenang telah muncul: pemburu telah menjadi pahlawan desa.
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya {0} yang tersisa, {1} mencoba untuk menyerang {0} disaat pertahanannya paling lemah. Menyingkirkan warga desa terakhir bukanlah hal yang sulit untuk {1}, yang tersisa hanyalah tubuh yang termutilasi milik {1} sang pemburu diberkahi hadiah bekas cakaran di wajahnya</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} dan {0} berjalan beriringan di siang bolong, melihat liontin yang berkilauan yang ada di leher {0}, dia yang berjalan di jalan yang benar {1} mengangkat pedang untuk terakhir kalinya, mengakhiri ajaran sesat pemuja kerang yang telah mengotori desa.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Waktu untuk bergabung bertambah {0} detik!\n{1} detik tersisa</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Waktu untuk bergabung berkurang {0} detik!\n{1} detik tersisa</value>
+  </string>
+  <string key="CantExtend">
+    <value>Hanya admin grup yang dapat menambah waktu lebih dari satu kali!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Tidak! {0} adalah seorang pemabuk! Sekarang kamu tidak dapat menyerang {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Kamu tidak bisa bergabung dalam game, karena kamu bukan anggora dari {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Jangan gunakan command untuk bergabung. Gunakan Tombol</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} dari {1} pemain telah memvoting</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0} kamu perlu join juga ya.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Tidak dapat menemukan grup. Gunakan command ini di grup yang kamu ingin berhenti menunggu, atau tambahkan link, id atau username dibelakang command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Kamu telah dihapus dalam daftar tunggu {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} telah bergabung dalam game pada 30 detik terakhir.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
   </string>
 </strings>

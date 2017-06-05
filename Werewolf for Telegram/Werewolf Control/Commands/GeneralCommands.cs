@@ -23,7 +23,6 @@ namespace Werewolf_Control
             var ts = DateTime.UtcNow - update.Message.Date;
             var send = DateTime.UtcNow;
             var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
-                Program.AvgCpuTime.ToString("F0"),
                 $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
             message += $"\nIN last min: {Program.MessagesReceived.Sum()}\nOUT last min: {Program.MessagesSent.Sum()}";
             var result = Bot.Send(message, update.Message.Chat.Id).Result;
@@ -42,8 +41,11 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
+            if (args.Length == 1) //only send the message if there is no extra args (otherwise it's more likely for other bots)
+            {
+                Bot.Api.SendTextMessage(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
                                                         parseMode: ParseMode.Markdown);
+            }
         }
 
         [Command(Trigger = "chatid")]
@@ -186,67 +188,96 @@ namespace Werewolf_Control
         [Command(Trigger = "start")]
         public static void Start(Update u, string[] args)
         {
-            if (u.Message.Chat.Type == ChatType.Private)
+            if (u.Message.Chat.Type == ChatType.Private && u.Message.From != null)
             {
-                if (u.Message.From != null)
+                using (var db = new WWContext())
                 {
-                    using (var db = new WWContext())
+                    var p = GetDBPlayer(u.Message.From.Id, db);
+                    if (p == null)
                     {
-                        var p = GetDBPlayer(u.Message.From.Id, db);
-                        if (p == null)
+                        var usr = u.Message.From;
+                        p = new Player
                         {
-                            var usr = u.Message.From;
-                            p = new Player
-                            {
-                                UserName = usr.Username,
-                                Name = (usr.FirstName + " " + usr.LastName).Trim(),
-                                TelegramId = usr.Id,
-                                Language = "PortugueseMarvel"
-                            };
-                            db.Players.Add(p);
-                            db.SaveChanges();
-                            p = GetDBPlayer(u.Message.From.Id, db);
-                        }
+                            UserName = usr.Username,
+                            Name = (usr.FirstName + " " + usr.LastName).Trim(),
+                            TelegramId = usr.Id,
+                            Language = "English"
+                        };
+                        db.Players.Add(p);
+                        db.SaveChanges();
+                        p = GetDBPlayer(u.Message.From.Id, db);
+                    }
 #if RELEASE
                         p.HasPM = true;
 #elif RELEASE2
                         p.HasPM2 = true;
-#elif BETA
+#elif BETA || DEBUG
                         p.HasDebugPM = true;
 #endif
-                        db.SaveChanges();
+                    db.SaveChanges();
 
-                        if (String.IsNullOrEmpty(args[1]))
-                        {
-                            var msg = $"Olá! Sou @{Bot.Me.Username}, e gerencio jogos de Werewolf." +
+                    if (String.IsNullOrEmpty(args[1]))
+                    {
+                        var msg = $"Olá! Sou @{Bot.Me.Username}, e gerencio jogos de Werewolf." +
                                       $"\nJunte-se ao grupo principal @BRMarvelWW, ou para encontrar um grupo para jogar, você pode usar /grouplist." +
                                       $"\nPara informações de papéis, use /rolelist." +
                                       $"\nSe quer definir sua língua principal, use /setlang." +
                                       $"\nSe tiver alguma dúvida ou pergunta venha até Werewolf Zion Suporte (@WerewolfZionSuporte)!";
-                            Bot.Send(msg,u.Message.Chat.Id);
-                        }
-                        else
-                        {
-                            //try to get the guid of the game they want to join
-                            Guid g;
-                            if (Guid.TryParse(args[1], out g))
-                            {
-                                //try to find the game they want to join
-                                //var lang = GetLanguage(u.Message.From.Id);
-
-                                var game = Bot.Nodes.Select(x => x.Games.FirstOrDefault(y => y.Guid == g)).FirstOrDefault();
-                                if (game == null) return;
-                                //make sure they are member
-                                var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
-                                if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
-                                {
-                                    Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
-                                    return;
-                                }
-                                game.AddPlayer(u);
-                            }
-                        }
+                        Bot.Send(msg, u.Message.Chat.Id);
+                        return;
                     }
+
+                    //okay, they are joining a game.
+
+                    var nodeid = args[1].Substring(0, 32);
+                    var gameid = args[1].Substring(32);
+
+                    //try to get the guid of the game they want to join
+                    Guid g, n;
+                    if (!(Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g)))
+                        return;
+
+                    //first get the node where to search for the game
+                    Models.Node node = null;
+                    for (var i = 0; i < 3; i++)
+                    {
+                        node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
+                        if (node != null) break;
+                    }
+                    if (node == null)
+                    {
+                        //log it
+                        //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", -1001098399855);
+                        return;
+                    }
+
+                    //we have the node, get the game
+                    Models.GameInfo game = null;
+                    for (var i = 0; i < 5; i++)
+                    {
+                        game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
+                        if (game != null) break;
+                    }
+                    if (game == null)
+                    {
+                        //log it
+                        //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", -1001098399855);
+                        return;
+                    }
+
+                    //ok we got the game, now join 
+                    //make sure they are member
+                    var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                    if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                    {
+                        Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
+                        return;
+                    }
+
+                    game.AddPlayer(u);
+                    return;
+
+
                 }
             }
         }
@@ -268,26 +299,22 @@ namespace Werewolf_Control
                 //check nodes to see if player is in a game
                 //node = GetPlayerNode(update.Message.From.Id);
                 var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                if (game != null)
+                if (game != null && (game?.Users.Contains(update.Message.From.Id) ?? false) && game?.GroupId != update.Message.Chat.Id)
                 {
-
-                    if (game?.Users.Contains(update.Message.From.Id) ?? false)
-                    {
-                        if (game?.GroupId != update.Message.Chat.Id)
-                        {
-                            //player is already in a game, and alive
-                            Send(
-                                GetLocaleString("AlreadyInGame", grp.Language ?? "English",
-                                    game.ChatGroup.ToBold()), update.Message.Chat.Id);
-                            return;
-                        }
-                    }
+                    //player is already in a game, and alive
+                    Send(
+                        GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                            game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                    return;
                 }
 
+                var button = new InlineKeyboardMarkup(new[] {
+                        new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
+                    });
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
                     Send(GetLocaleString("AlreadyOnWaitList", grp.Language, grp.Name.ToBold()),
-                        update.Message.From.Id);
+                        update.Message.From.Id, customMenu: button);
                 }
                 else
                 {
@@ -295,7 +322,7 @@ namespace Werewolf_Control
                         $"INSERT INTO NotifyGame VALUES ({update.Message.From.Id}, {id})");
                     db.SaveChanges();
                     Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
-                        update.Message.From.Id);
+                        update.Message.From.Id, customMenu: button);
                 }
             }
         }
@@ -303,43 +330,8 @@ namespace Werewolf_Control
         [Command(Trigger = "getlang")]
         public static void GetLang(Update update, string[] args)
         {
-            //var glangs = Directory.GetFiles(Bot.LanguageDirectory)
-            //                                            .Select(x => XDocument.Load(x)
-            //                                                        .Descendants("language")
-            //                                                        .First()
-            //                                                        .Attribute("name")
-            //                                                        .Value
-            //                                            ).ToList();
-            //glangs.Insert(0, "All");
-
-            //foreach (var lang in glangs)
-            //{
-            //    var test =
-            //        $"getlang|-1001049529775|" + lang;
-            //    var count = Encoding.UTF8.GetByteCount(test);
-            //    if (count > 64)
-            //    {
-            //        Send("Problem with " + lang + ": name is too long!", update.Message.Chat.Id);
-            //    }
-            //}
-            //var gbuttons = glangs.Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.Chat.Id}|{x}")).ToList();
-            //var baseMenu = new List<InlineKeyboardButton[]>();
-            //for (var i = 0; i < gbuttons.Count; i++)
-            //{
-            //    if (gbuttons.Count - 1 == i)
-            //    {
-            //        baseMenu.Add(new[] { gbuttons[i] });
-            //    }
-            //    else
-            //        baseMenu.Add(new[] { gbuttons[i], gbuttons[i + 1] });
-            //    i++;
-            //}
-
-            //var gmenu = new InlineKeyboardMarkup(baseMenu.ToArray());
-
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
-
-
+            
             List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
             buttons.Insert(0, new InlineKeyboardButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
 
