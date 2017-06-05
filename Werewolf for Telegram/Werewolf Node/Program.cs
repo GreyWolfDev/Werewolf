@@ -15,7 +15,6 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Models;
-using Werewolf_Node.Helpers;
 using Message = TcpFramework.Message;
 
 namespace Werewolf_Node
@@ -43,8 +42,9 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
+        internal static BotanIO.Api.Botan Analytics;
 #if DEBUG
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
 #else
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
 #endif
@@ -73,10 +73,21 @@ namespace Werewolf_Node
             };
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
+
+
+
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                         .OpenSubKey("SOFTWARE\\Werewolf");
+
+#if BETA || DEBUG || false
+            var aToken = key.GetValue("BotanBetaAPI").ToString();
+#else
+            var aToken = key.GetValue("BotanReleaseAPI").ToString();
+#endif
+            Analytics = new BotanIO.Api.Botan(aToken);
+
 #if DEBUG
             APIToken = key.GetValue("DebugAPI").ToString();
 #elif RELEASE
@@ -229,6 +240,11 @@ namespace Werewolf_Node
                                 game = Games.FirstOrDefault(x => x.ChatId == eti.GroupId);
                                 game?.ExtendTime(eti.User, eti.Admin, eti.Seconds);
                                 break;
+                            case "JoinButtonRequestInfo":
+                                var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
+                                game?.ShowJoinButton();
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;
@@ -349,8 +365,7 @@ namespace Werewolf_Node
         public static void KeepAlive()
         {
             string ver = Version.FileVersion;
-
-
+            
             Connect();
             while (Running)
             {

@@ -20,7 +20,7 @@ namespace Database
         WelcomeToAsylum = 2,
         [Display(Name= "Paciente com Alzheimer"), Description("Jogue uma partida no modo amnésia")]
         AlzheimerPatient = 4,
-        [Display(Name="VOSE É DESTRUIDORA MESMO EIN BICHA!"), Description("Jogue uma partida com o @Fernando0")]
+        [Display(Name="VOCÊ É DESTRUIDORA MESMO EIN BICHA!?"), Description("Jogue uma partida com o @Fernando0")]
         OHAIDER = 8,
         [Display(Name="Espião vs Espião"), Description("Jogue uma partida no modo secreto (sem papéis revelados)")]
         SpyVsSpy = 16,
@@ -115,10 +115,31 @@ namespace Database
         [Display(Name="OH MERD-"), Description("Mate seu amante na primeira noite")]
         OhShi = 562949953421312,
         [Display(Name="Veterano"), Description("Jogue 500 partidas. Agora você pode jogar no @werewolfbrvets")]
-        Veteran = 1125899906842624
-    }
+        Veteran = 1125899906842624,
+	    [Display(Name = "Sem feiticeira;"), Description("Mate a feiticeira sendo um lobo")]
+        NoSorcery = 2251799813685248,
+        [Display(Name = "Exterminador de seita"), Description("Como inquisidor, torture 3 membros da seita em uma partida")]
+        CultistTracker = 4503599627370496,
+        [Display(Name = "EU NÃO SOU UM IDI...EITA!"), Description("Como desajeitado, vote corretamente pelo menos 3 vezes até o fim do jogo")]
+        ImNotDrunk = 9007199254740992,
+        [Display(Name = "Alfa de respeito"), Description("Como um lobo alfa, converta pelo menos 3 vítimas em lobos")]
+        WuffieCult = 18014398509481984,
+        [Display(Name = "Como você se protegeu?"), Description("Como anjo, sobreviva após proteger um lobo que não foi atacado três vezes")]
+        DidYouGuardYourself = 36028797018963968,
+        [Display(Name = "Riquinho Mimado"), Description("Como príncipe, seja linchado mesmo após ter sua identidade revelada")]
+        SpoiledRichBrat = 72057594037927936,
+        [Display(Name = "Os três lobinhos e o porco mau"), Description("Como feiticeira, sobreviva a uma partida com três ou mais lobos vivos")]
+        ThreeLittleWolves = 144115188075855872,
+        [Display(Name = "O maioral"), Description("Como prefeito, vote com sucesso pelo menos três vezes após se revelar")]
+        President = 288230376151711744,
+        [Display(Name = "Eu ajudei!"), Description("Seja o filhote de lobo e ajude o seu bando a devorar duas vítimas após sua morte")]
+        IHelped = 576460752303423488,
+        [Display(Name = "Foi uma noite agitada!"), Description("Em uma mesma noite, seja visitado por três ou mais pessoas com papeis diferentes")]
+        ItWasABusyNight = 1152921504606846976
+    } // MAX VALUE: 9223372036854775807
+      //            
 
-    public static class Extensions
+    public static partial class Extensions
     {
         public static string GetDescription(this Achievements value)
         {

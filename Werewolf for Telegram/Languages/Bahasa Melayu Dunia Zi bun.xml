@@ -1,0 +1,1493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Welcome to the ordered english file! The strings here are ordered by where they're used instead of when they were added, so this file is ideal for people who're starting to make a new variant! Please remember to change the language name, base, and variant, and, once your variant is done, check the "Last updated" of this file and either look at the translators channel's changelog starting from the date there, or check the English.xml file to see if there are any strings after the one mentioned.
+
+INDEX
+Roles (not the /rolelist command, but a list of roles)
+RoleInfos (the strings sent to a player's PM saying what role they are)
+AboutRoles (the role explanations given in /rolelist)
+Role changes (public and private)
+Teammmates ("Your pack mates are:" etc)
+Time strings (day/night/lynching time has come!)
+Game ends ("The werewolves have won!" etc)
+Choice strings (strings asking a player to choose something)
+Private consequence strings (strings sent to a player's PM telling them what happened with their actions)
+Public consequence strings (strings sent to a group saying what happened with a player's actions)
+Private death strings (strings sent to player PMs after a certain player is killed)
+Public death strings (strings sent to the group once a player is killed)
+Group system strings ("{0} started a game!", "You're not a global admin!", all system strings that get changed with /config)
+Private system strings ("I have sent you a PM", all system strings that get changed with /setlang)
+Deprecated strings (only there so your file will pass through validation with no errors - no need to touch these strings) -->
+<!-- LAST UPDATED: 17/01/2016 (DD/MM/YYYY), WolvesEatDrunkBlockSecondKill -->
+<strings>
+	<language name="Bahasa Melayu Dunia Zi bun" base="Bahasa Melayu" variant="Dunia Zi bun" owner="@mad_muhammad @knightingale293 @vforvendettas @Plissjanganserumak @skyzkillerz" code="my" isDefault="false"/>
+	<!-- Roles -->
+	<!-- Do NOT change the emojis, even if you are translating werewolf in a non-standard mode! -->
+	<string key="Villager">
+		<value>Masyarakat Negeri 👱</value>
+	</string>
+	<string key="Drunk">
+		<value>Kaki Botol 🍻</value>
+	</string>
+	<string key="Harlot">
+		<value>Mak Nyah 💋</value>
+	</string>
+	<string key="Seer">
+		<value>Peramal(Seer) 👳</value>
+	</string>
+	<string key="Traitor">
+		<value>Pengkhianat 🖕</value>
+	</string>
+	<string key="GuardianAngel">
+		<value>JPAM(GA) 👼</value>
+	</string>
+	<string key="Detective">
+		<value>Detektif 🕵</value>
+	</string>
+	<string key="Wolf">
+		<value>Serigala 🐺</value>
+	</string>
+	<string key="Cursed">
+		<value>Disumpah 😾</value>
+	</string>
+	<string key="Gunner">
+		<value>Penembak 🔫</value>
+	</string>
+	<string key="Tanner">
+		<value>Penipu 👺</value>
+	</string>
+	<string key="Fool">
+		<value>Si Luncai 🃏</value>
+	</string>
+	<string key="WildChild">
+		<value>Bro Hijau-HULK 👶</value>
+	</string>
+	<string key="Beholder">
+		<value>Pemegang Skrol 👁</value>
+	</string>
+	<string key="ApprenticeSeer">
+		<value>Murid Peramal 🙇</value>
+	</string>
+	<string key="Cultist">
+		<value>Ahli Syiah 👤</value>
+	</string>
+	<string key="CultistHunter">
+		<value>JAIS 💂</value>
+	</string>
+	<string key="Mason">
+		<value>Buruh 👷</value>
+	</string>
+	<string key="Hunter">
+		<value>Pemburu 🎯</value>
+	</string>
+	<string key="Cupid">
+		<value>Tok Kadi 🏹</value>
+	</string>
+	<string key="SerialKiller">
+		<value>Pembunuh Bersiri 🔪</value>
+	</string>
+	<string key="Doppelgänger">
+		<value>Si Peniru 🎭</value>
+	</string>
+	<string key="Mayor">
+		<value>Menteri 🎖</value>
+	</string>
+	<string key="Prince">
+		<value>Tengku Muda 👑</value>
+	</string>
+	<string key="Sorcerer">
+		<value>Ahli Sihir 🔮</value>
+	</string>
+	<string key="ClumsyGuy">
+		<value>Si Gelabah 🤕</value>
+	</string>
+	<string key="Blacksmith">
+		<value>Ustaz Tukang Pagar ⚒</value>
+	</string>
+	<string key="AlphaWolf">
+		<value>Ketua Serigala ⚡️</value>
+	</string>
+	<string key="WolfCub">
+		<value>Anak Serigala 🐶</value>
+	</string>
+	<!-- These are for the player list -->
+	<string key="RanAway">
+		<value>Hilang</value>
+	</string>
+	<string key="Dead">
+		<value>💀 Mati</value>
+	</string>
+	<string key="Alive">
+		<value>🙂 Hidup</value>
+	</string>
+	<string key="Won">
+		<value>Menang</value>
+	</string>
+	<string key="Lost">
+		<value>Kalah</value>
+	</string>
+	<string key="VillageTeamEnd">
+		<value>Masyarakat Negeri</value>
+	</string>
+	<string key="NeutralTeamEnd">
+		<value>Neutral</value>
+	</string>
+	<string key="WolfTeamEnd">
+		<value>Kawanan Serigala</value>
+	</string>
+	<string key="SerialKillerTeamEnd">
+		<value>Pembunuh Bersiri</value>
+	</string>
+	<string key="CultTeamEnd">
+		<value>Ahli Syiah</value>
+	</string>
+	<string key="TannerTeamEnd">
+		<value>Si Penipu</value>
+	</string>
+	<string key="PlayersAlive">
+		<value>Pemain yang masih hidup</value>
+	</string>
+	<!-- RoleInfos -->
+	<string key="RoleInfoCursed">
+		<value>Terkutuk! Antum telah disumpah 😾, kini Antum masih rakyat biasa, tapi bila digigit serigala Antum akan menjadi serigala.</value>
+	</string>
+	<string key="RoleInfoDetective">
+		<value>Antum bertugas sebagai detektif 🕵, Antum hebat mengumpul info. Orang yang Antum siasat boleh Antum buka segala rahsianya. Tapi elok-elok. 40% risiko kemungkinan serigala akan sedar bahawa antum sedang menyiasat.</value>
+	</string>
+	<string key="RoleInfoDrunk">
+		<value>Astaghfirullah, Antum tu Kaki Botol 🍻, Pemabuk yang asyik serabut memikirkan hutang yang bertimbun untuk dibayar. Jelaslah disebut didalam al Qur'an, “Hai orang-orang yang beriman, sesungguhnya (meminum) khamar, berjudi, (berkorban untuk) berhala, mengundi nasib dengan anak panah, adalah termasuk perbuatan syaitan. Maka jauhilah perbuatan-perbuatan itu agar kamu mendapat keberuntungan. Sesungguhnya syaitan itu bermaksud hendak menimbulkan permusuhan dan kebencian di antara kamu lantaran (meminum) khamar dan berjudi itu, dan menghalangi kamu dari mengingat Allah dan sembahyang; maka berhentilah kamu (dari mengerjakan pekerjaan itu).” [al Maidah (5) : 90-91]. \nTaubatlah Antum, disebabkan mabuknya Antum serigala juga ikut mabuk pabila memakan Antum.</value>
+		<value>Na'udzubillah, "Mereka bertanya kepadamu tentang khamar dan judi. Katakanlah: “Pada keduanya terdapat dosa yang besar dan beberapa manfaat bagi manusia, tetapi dosa keduanya lebih besar dari manfaatnya . . . .” [Q. S. al Baqarah (2) : 219]. \nAntum Kaki Botol 🍻 yang telah ketagih benar sehingga serigala juga ikut mabuk pabila memakan Antum. </value>
+	</string>
+	<string key="RoleInfoGuardianAngel">
+		<value>Antum ialah pegawai JPAM 👼. Tugas Antum setiap malam ialah melindungi 1 pemain dari serangan orang-orang jahat. Tapi kalau Antum tidak sengaja melindungi serigala, 50% kemungkinan Antum akan dimakan.</value>
+	</string>
+	<string key="RoleInfoGunner">
+		<value>Antum Si Penembak 🔫, tapi peluru perak Antum ada dua je. Jangan sampai Antum salah pilih, nak ingatkan Antum sikit. \n"Dan barangsiapa yang membunuh seorang mu'min dengan sengaja maka balasannya ialah Neraka Jahannam" (Q.S. An-nisa (4) : 93).\n Usahakan agar tembakan Antum tu kena serigala, kerana Antum telah susah payah membali peluru perak menggunakan baki-baki terakhir duit simpanan Antum.</value>
+	</string>
+	<string key="RoleInfoHarlot">
+		<value>Na'udzubillah, 💋 Antum tu Mak Nyah. "Dan janganlah kamu mendekati zina, sesungguhnya zina adalah perbuatan keji dan jalan yang buruk." (Q.R. Al israa' (17 : 32)). Taubatlah sebelum terlambat. \nAntum memang boleh menyelinap ke rumah pelanggan secara senyap, kadang Antum memerhati ada yang asing di rumah yang Antum ziarahi, tapi jika pelanggan Antum ialah serigala atau sedang dimakan serigala Antum akan terkorban, taubat belum sempat lagi.</value>
+	</string>
+	<string key="RoleInfoTraitor">
+		<value>Pengkhianat! 🖕 Na'udzubillah, “ Wa annAllaha laa yahdi kaidal kha~iniin” (Q.S. Yusuf (12) : 52). Antum tu pengkhianat yang menjadi serigala apabila semua serigala telah mati. Kadang Peramal (Seer) melihat Antum sebagai rakyat biasa dan kadang boleh jadi dilihat sebagai serigala.</value>
+	</string>
+	<string key="RoleInfoWolf">
+		<value>Antum SERIGALA!! 🐺 Antum membunuh orang setiap malam untuk pesta BBQ bersama kawan Antum. Na'udzubillah, ngeri kerja Antum. Membunuh adalah dilarang, [an Nisa (4) : 93], Antum itu memakan orang, jadi tidak halal tu, ingat yaa ikhwahfillah.</value>
+	</string>
+	<string key="RoleInfoSeer">
+		<value>Antum ialah Peramal (Seer) 👳. Menggunakan jampi-jampi, Antum melihat peranan seorang pemain lain setiap malam. MasyaAllah, selebihnya Antum serahkan kepada Yang Maha Esa.</value>
+	</string>
+	<string key="RoleInfoVillager">
+		<value>Antum hanya masyarakat negeri biasa sahaja 👱, Hina, lemah, tidak boleh buat apa-apa, asyik menjadi mangsa fitnah, semoga panjang umurlah hendaknya. Lebih baik Antum memperbanyakkan ibadah dan tawakkal selagi mampu.</value>
+	</string>
+	<string key="RoleInfoTanner">
+		<value>MashaAllah.. sungguh hebat Antum bermadah, Antum ialah Penipu (Tanner) 👺 antum suka menghasut, dan suka menimbulkan hura-hara supaya masyarakat menggantung Antum. Kalau Antum dijatuhkan hukuman, Antum menang.</value>
+	</string>
+	<string key="RoleInfoWildChild">
+		<value>Mashaallah, Antum itu Bro Hijau-Hulk (Wild Child) 👶, seorang yang baik pada awalnya, tapi tidak apabila Antum telah marah. Antum tiada matlamat hidup, dan hanya mengikut idola Antum. Kalau idola Antum mati, Antum menjadi liar, Antum menggila hingga berubah menjadi serigala.</value>
+	</string>
+	<string key="RoleInfoBeholder">
+		<value>Antum Pemegang Skrol 👁, Antum tahu siapa Peramal (Seer) sebenar, antum orang penting untuk membezakan seer dengan fool, jangan lupa maklumkan sahabat peramal antum itu. Harusnya Antum bawa peramal tu, suruh dia minta petunjuk dari Yang Maha Kuasa, solat untuk minta perlindungan dari orang-orang jahat.</value>
+	</string>
+	<string key="RoleInfoApprenticeSeer">
+		<value>Antum Murid Peramal (Apprentice) 🙇. Kalau peramal sedia ada meninggal, Antum wajib menggantikan tempatnya.</value>
+	</string>
+	<string key="RoleInfoCultist">
+		<value>Antum Ahli Syiah 👲, penganut aliran sesat di dalam negeri, Antum menang kalau semua rakyat negeri telah menjadi ahli sealiran dengan Antum. Sesatt!!</value>
+	</string>
+	<string key="RoleInfoCultistHunter">
+		<value>Nampaknya ada penganut aliran sesat yang menyerang, Antum Pegawai JAIS 💂. Tugas antum membanteras aliran yang akan menyimpangkan akidah masyarakat negeri.Jangan sampai masyarakat terjerumus dalam kesesatan itu. Basmi sampah-sampah itu, sekaligus Antum berdakwah pada mereka bahawa Allah Tuhan Yang Maha Esa.</value>
+	</string>
+	<string key="RoleInfoMason">
+		<value>Antum tu Buruh, 👷 masyarakat negeri yang tidak punya kekuatan apa-apa selain tahu siapa rakan-rakan buruh Antum, pandai-pandai la Antum ya.</value>
+	</string>
+	<string key="RoleInfoCupid">
+		<value>Antum tu Tok Kadi 💘. Tugas antum menyatukan 2 insan. Pilih 2 orang (diri antum pun boleh) untuk antum jodohkan. Mati seorang mati juga yang keduanya, serupa Romeo dan Juliet kisahnya.</value>
+	</string>
+	<string key="RoleInfoDoppelganger">
+		<value>Antum tu si Peniru (Doppelgänger) 🎭, Copycat. Orang yang antum pilih akan antum tiru rolenya kalau orang itu telah meninggal.</value>
+	</string>
+	<string key="RoleInfoHunter">
+		<value>Antum tu Pemburu 🎯, Tidur antum gelisah terus, oleh itu antum bersiap sedia dengan senapang di samping antum. Siapa yang cari pasal dengan antum, antum tembak, kalau dimakan serigala antum ada peluang untuk menembak salah satu kawanan Serigala itu.</value>
+	</string>
+	<string key="RoleInfoSerialKiller">
+		<value>Antum tu Pembunuh Bersiri 🔪, pembunuh yang tidak punya hati dan perasaan. Mangsa antum, antum patahkan tulangnya, antum putuskan jarinya, cincang tangannya. \nKetahuilah yaa ikhwahfillah, "Dan barangsiapa membunuh seorang Mukmin dengan sengaja, maka balasannya ialah Neraka jahannam. Ia kekal di dalamnya dan Allah murka kepadanya, dan mengutuknya serta menyediakan azab yang besar baginya."[an-Nisâ`(4) : 93]</value>
+	</string>
+	<string key="RoleInfoMayor">
+		<value>Antum tu Menteri🎖. Undian antum dikira dua kali tidak seperti masyarakat biasa yang lain apabila antum mendedahkan diri antum dihadapan masyarakat.</value>
+	</string>
+	<string key="RoleInfoPrince">
+		<value>Antum ialah Tengku Muda 👑 yang kacak lagi bergaya, antum bosan duduk di istana, oleh itu antum merayau di kalangan masyarakat biasa. Kelebihan antum, bila antum dituduh dan bakal dijatuhkan hukuman, antum tidak akan digantung sebab pengawal antum segera bertindak menunjukkan cincin tanda antum itu Tengku Muda dari istana, maka masyarakat negeri pun memohon maaf pada antum dan tidak jadi menghukum sesiapa pada hari itu.</value>
+	</string>
+	<string key="RoleInfoClumsyGuy">
+		<value>Antum sering digelar Si Gelabah🤕, disebabkan kecuaian yang antum selalu lakukan. Antum sama sahaja seperti masyarakat yang lain, cuma bila antum membuang undi antum sering salah buang dari apa yang antum mahu, antum cuma ada 50% peluang untuk membuang undi yang betul, tenangkan diri ya.</value>
+	</string>
+	<string key="RoleInfoSorcerer">
+		<value>Antum ialah Ahli Sihir🔮 yang berkawan rapat dengan kawanan serigala, kelebihan antum sama seperti peramal, cuma antum hanya mampu melihat serigala dan peramal sahaja. Bila antum tahu siapa peramal, antum segera memberi info pada rakan serigala antum, sebab antum hanya akan menang bila kawan serigala antum menang</value>
+	</string>
+	<string key="RoleInfoBlacksmith">
+		<value>Antum itu Ustaz Tukang Pagar ⚒, antum telah belajar ilmu perubatan islam bertahun-tahun,menggunakan ilmu antum, antum menyiram air bacaan dan garam disekeliling kampung untuk "memagar" kampung agar tidak diserang serigala, tapi sayang pagar itu cuma tahan untuk satu malam sahaja.</value>
+	</string>
+	<string key="RoleInfoAlphaWolf">
+		<value>Antum tu Ketua Serigala ⚡️. Seperti serigala biasa, antum memakan seorang masyarakat biasa pada tiap2 malam untuk dijadikan santapan antum, tetapi 20% dari gigitan antum boleh mengubah orang yang antum makan menjadi serigala selagi antum masih hidup.</value>
+	</string>
+	<string key="RoleInfoWolfCub">
+		<value>Antum tu Anak Serigala🐶 yang amat disayang oleh serigala-serigala yang lain. Antum juga sama seperti serigala yang lain, cuma bila antum mati, serigala-serigala yang lain akan menjadi amat marah lalu mereka akan membalas dendam atas kematian antum dengan memakan 2 orang masyarakat negeri.</value>
+	</string>
+	<string key="CupidChosen">
+		<value>Ehem, antum dah berpunya tuuuu, kalau antum meninggal, {0} sebagai pasangan antum akan mengikuti antum, begitu juga sebaliknya. Rasulullah s.a.w bersabda, Cintailah kekasihmu sewajarnnya, kerana boleh jadi suatu saat nanti ia akan menjadi orang yang kamu benci. Jangan melebih sangat antum dalam mencintai. Pertahankan cinta kamu, kalau kamu hidup hingga akhir, kamu berdua menang bersama.</value>
+		<value>Fiiwit♫♫ Antum tidak SINGLE lagi!! Pasangan Antum {0}! \n“Dan segala sesuatu Kami ciptakan berpasang-pasangan supaya kamu mengingat kebesaran Allah.” [Q.S. Adz Dzariyat (51) : 59] \nMati yang satu mati juga yang kedua, antum berkasih sayang kuat sangat. Menangkan Permainan dengan antum berdua hidup sehingga habis permainan.</value>
+		<value>Antum telah dijodohkan dengan {0}, mungkinkah dia pasangan yang Antum cari-cari selama ini. Semoga dapat lihat kalian berdua bersama hingga tamat permainan, Salam Kasih Sayang!</value>
+	</string>
+	<!-- AboutRoles -->
+	<!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+      For example in Mafia, AboutMason would be:
+      Caporegime 👷\nYou are a caporegime blah blah
+      -->
+	<string key="AboutVG">
+		<value>masyarakat negeri biasa, kerja sehari-hari berladang, bersawah, menternak. Siang kena fitnah, malam kena serang, banyakkan berdoa lah ya.</value>
+	</string>
+	<string key="AboutSeer">
+		<value>Peramal yang boleh meramal role Pemain lain, tapi sorang satu untuk satu malam.</value>
+	</string>
+	<string key="AboutWw">
+		<value>Serigala jadi-jadian yang makan orang lemah lagi tidak berdaya di malam hari.</value>
+	</string>
+	<string key="AboutHarlot">
+		<value>Mak Nyah(Harlot)    kerjanya berseronok setiap malam, laki orang pun dia kacau, tapi kalau kacau serigala atau pembunuh bersiri, memang matilah.</value>
+	</string>
+	<string key="AboutDrunk">
+		<value>Kaki Botol, ketagih betul dengan arak. Kalau Serigala makan dia, Serigala pun mabuk sampai tak boleh makan orang di malam esoknya.</value>
+	</string>
+	<string key="AboutCursed">
+		<value>Disumpah, masyarakat yang terkutuk, sebab dah disumpah. Dia akan berubah menjadi Serigala kalau digigit Serigala.</value>
+	</string>
+	<string key="AboutTraitor">
+		<value>Pengkhianat, kalau dia masih hidup, dia akan berubah menjadi serigala apabila semua serigala telah mati.</value>
+	</string>
+	<string key="AboutGA">
+		<value>Tugas sebagai pegawai JPAM (Guardian Angel) ialah melindungi orang yang dipiliahnya di setiap malam, tapi kalau orang yang dipiliahnya Serigala, 49,999% kemungkinan dia akan mati. </value>
+	</string>
+	<string key="AboutDetective">
+		<value>Menyelinap, bersembunyi, menyiasat untuk mendapatkan informasi untuk tahu role Pemain yang dia siasat. Tapi kalau yang disiasat ialah Serigala, kemungkinan Serigala akan tahu anda detektif.</value>
+	</string>
+	<string key="AboutGunner">
+		<value>Penembak(Gunner), punya 2 peluru perak khusus. Satu hari cuma boleh tembak sekali, bajet tiada, jimat-jimat lah.</value>
+	</string>
+	<string key="AboutTanner">
+		<value>Penipu(Tanner) : tukang tipu suka dirinya dituduh, perangainya buat sakit kepala. Kalau dihukum dia menang.</value>
+	</string>
+	<string key="AboutFool">
+		<value>Si Luncai(Fool), suka meramal dengan segala mantera,yakin sangat diri sendiri tu peramal padahal mimpi semata.</value>
+	</string>
+	<string key="AboutCult">
+		<value>Ahli Syiah (Cultist) si pengamal ajaran menyimpang. Tiap malam cuba menghasut seseorang dengan rasuah martabak untuk bersamanya. Menang kalau semua masyrakat yang tinggal telah jadi ahli Syiah.</value>
+	</string>
+	<string key="AboutCH">
+		<value>JAIS (Cultist Hunter), Pemburu ahli syiah, menjaga keamanan dan memastikan akidah masyarakat negeri tidk menyimpang. Tiap malam memilih seorang untuk diburu dn diperiksa bagi menghapuskan syiah dari berleluasa.</value>
+	</string>
+	<string key="AboutWC">
+		<value>Bro Hijau-HULK(Wild Child), budak liar yang tidak matang. Di awal permainan dia harus memilih seorang untuk dijadikan idola. Kalau idola tersebut mati, dia menggila, dan berubah menjadi serigala.</value>
+	</string>
+	<string key="AboutAppS">
+		<value>Murid Peramal (Apprentice Seer), murid peramal yang akan menggantikan peramal sedia ada kalau telah tiba ajalnya.</value>
+	</string>
+	<string key="AboutBH">
+		<value>Pemegang Amanah (Beholder), orang yang tahu siapa Seer sebenar dan mampu membezakan Fool serta Seer.</value>
+	</string>
+	<string key="AboutMason">
+		<value>Buruh hanya warga biasa, tetapi kelebihannya dia tahu siapa rakan-rakan buruh yang bersamanya.</value>
+	</string>
+	<string key="AboutDG">
+		<value>Si Peniru (Doppleganger), menduplikat/meniru role orang yang dia pilih di awal permainan setelah orang yang di pilih tu telah mati, jika tidak dia akan kekal menjadi dopple tanpa bertukar, dan jika tak bertukar dia tidak akn berpihak pada mana-mana pihak dan membuatkan dia kalah begitu sahaja.
+        </value>
+	</string>
+	<string key="AboutCupid">
+		<value>
+      Tok kadi, tugasnya menjodohkan orang, dan bukan setakat orang, jodohkan diri sendiri pun boleh. Kalau yang pasangan yang dia satukan meninggal salah seorang, yang lagi seorang turut meninggal sebab tak sanggup berpisah.
+        </value>
+	</string>
+	<string key="AboutHunter">
+		<value>Pemburu, siapa yang cari pasal dirumahnya, memang akan kena belasah takpun ditembaknya sekalipun dia sedang tidur. Ahli syiah 49,999% gagal menghasut/menariknya, tetapi boleh jadi berjaya juga.
+        </value>
+	</string>
+	<string key="AboutSK">
+		<value>Pembunuh Bersiri yang paling berbahaya, dia diam-diam hidup sendirian.. Kerjanya menyeksa mangsa, lepas tu letak tanda membuktikan itu hasil kerjanya dan menakutkan masyarakat negeri.</value>
+	</string>
+	<string key="AboutMayor">
+		<value>Menteri, dia hanya masyarakat biasa, sehinggalah dia menonjolkan diri sebagai menteri, sebarang undian yang dia lakukan akan dikira sebagai dua, dan bukan satu seperti masyarakat biasa.</value>
+	</string>
+	<string key="AboutPrince">
+		<value>Tengku Muda. Saat Tengku Muda di undi, peranan tengku tersebut akan dibongkarkan pada masyarakat, dan tengku pun selamat daripada digantung. Tetapi, ia hanya berlaku sekali sahaja, selepas itu, jika masyarakat mengundi dia, dia akan mati digantung.</value>
+	</string>
+	<string key="AboutSorcerer">
+		<value>Ahli Sihir. Ingatkah anda pada peramal(seer)? ya.. peramal yang berkemampuan untuk  melihat role orang lain. Nak ringkas, serigala juga ada peramal dia sendiri yakni si Ahli sihir, cuma dia hanya mampu melihat role Serigala dan Seer sahaja. Jumpa seer, amklumkan yang anda adalah rakan seperjuangan, jumpa seer, bagitau serigala untuk bunuh seer tersebut. Serigala menang, anda juga menang</value>
+	</string>
+	<string key="AboutClumsy">
+		<value>Si gelabah.Mungkin tiba masa untuk anda belajar menangkan diri dan cuba untuk lebi berhati-hati, kecuaian anda tidak dapat dikawal sehingga nak undi pun boleh salah, nak undi A tapi pergi undi B. Bolehkah anda mengundi betul? ya anda boleh, anda ada 50% kemungkinan untuk dapat undi yang betul seperti yang anda inginkan.</value>
+	</string>
+	<string key="AboutBlacksmith">
+		<value>Ustaz Tukang Pagar. Macam tak biasa dengan istilah "pagar". Dukun Pak ustaz yang merawat cara perubatan islam pasti guna istilah ni. Tiada senjata hanya berteman ilmu yang ada, bacaan doa dan jampi seranah serta beberapa bahan seperti air dan garam, anda boleh melindungi kampung dari diserang serigala, tapi hanya untuk satu malam sahaja.</value>
+	</string>
+	<string key="AboutAlphaWolf">
+		<value>Ketua Serigala. Tiap malam anda makan orang macam biasa, tapi kelebihan anda, 20% dari gigitan anda boleh menukar seseorang menjadi serigala, kalau berjaya, Tahniah, rakan baru lah jawabnya</value>
+	</string>
+	<string key="AboutWolfCub">
+		<value>Anak serigala. Alololo comeynye, aucak! macam aku cakap, comel. Aku rasa tiada siapa suka bila benda comel dihapuskan. Jadi bila anda mati, serigala yang lain naik angin dan nak makan 2 orang pada malam tersebut, biar masyarakat negeri tahu apa makna kehilangan, Anda terlalu comel untuk mati kot.</value>
+	</string>
+	<string key="AboutPara">
+		<value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+	</string>
+	<!-- Role changes -->
+	<string key="TraitorTurnWolf">
+		<value>Semua serigala telah mati, tiba-tiba mata Antum berubah merah, gigi Antum kuning, bulu-bulu tumbuh di badan Antum. Antum berubah menjadi SERIGALA! Auuuuuuuu!!</value>
+		<value>Semua serigala telah mati, dengan minda tak waras. Antum minum darah Serigala yang telah mati, kemudian Antum berubah menjadi Serigala!</value>
+	</string>
+	<string key="CursedBitten">
+		<value>Antum digigit serigala, tapi alhamdulillah antum tidak mati, malah antum telah menjadi serigala. Selamat bergabung!</value>
+	</string>
+	<string key="BittenTurned">
+		<value>Sewaktu malam tiba, antum merasa pelik, tubuh antum gatal-gatal, bila antum lihat, bulu mula tumbuh di tubuh antum, gigi antum terasa sakit, tumbuh taring... Antum berubah menjadi serigala!</value>
+	</string>
+	<string key="WildChildTransform">
+		<!-- 0 - role's name -->
+		<!-- 0 - teamate's names -->
+		<value>{0}, Idola antum telah mati! Antum frust lari ke hutan, bulu di badan Antum mulai tumbuh, mata merah gigi kuning, Antum berubah menjadi Serigala. Rakan Serigala Antum ialah: {1}</value>
+	</string>
+	<string key="ApprenticeNowSeer">
+		<!-- 0 - seer name -->
+		<value>{0} si peramal (Seer) 👳 telah mati. Sebagai murid peramal (Apprentice), Antum menggantikan tugasnya untuk kebaikan masyarakat kita.</value>
+	</string>
+	<string key="CultConvertYou">
+		<value>👤 Antum telah menjadi ahli Syiah!🐚 Lalala!!!. Setiap malam, Antum berusaha mengajak saudara yang lain untuk bersama antum. \nTapi antum harus ingat, “Dan (ingatlah) ketika Luqman berkata kepada anaknya, di waktu ia memberi pelajaran kepadanya: "Hai anakku, janganlah kamu mempersekutukan Allah, Sesungguhnya mempersekutukan (Allah) adalah benar-benar kezaliman yang besar".[Q.S. Luqman: 13]. Taubatlah sebelum terlambat.</value>
+	</string>
+	<string key="DGTransformToCult">
+		<!-- 0 - role's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} telah mati, Antum kini menjadi Ahli Syiah👤. Rakan sealiran antum: {1}.\nDari Abdullah ia berkata : Saya telah bertanya kepada Rasulullah saw.  dosa apakah yang lebih besar menurut Allah ? Beliau menjawab : “ Engkau menjadikan sekutu bagi Allah padahal Dialah yang menciptakanmu…” (HR. Bukhari dan Muslim )</value>
+	</string>
+	<string key="DGTransformToWolf">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} telah mati, Antum menjadi Serigala🐺. Rakan Antum: {1}</value>
+	</string>
+	<string key="DGTransformToMason">
+		<!-- 0 - dead mason's name -->
+		<!-- 1 - mason collegues's name -->
+		<value>{0} telah mati, Antum kini menjadi buruh👷. Rakan buruh Antum: {1}</value>
+	</string>
+	<string key="DGTransformToAlpha">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} telah mati, Antum kini berubah menjadi Ketua Serigala. Rakan antum(jika ada): {1}</value>
+	</string>
+	<string key="DGTransformToWolfCub">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} telah mati, Antum kini berubah menjadi Anak Serigala. Rakan antum(jika ada): {1}</value>
+	</string>
+	<string key="NewWCRoleModel">
+		<!-- 0 - target's name -->
+		<value>{0} telah mati, Antum telah menjadi Bro Hijau-HULK (Wild Child)👶.</value>
+	</string>
+	<!-- Teammmates -->
+	<string key="BeholderSeer">
+		<!-- 0 - seer name -->
+		<value>Peramal (Seer)👳 sebenar ialah {0}, antum jangan lupa beritahu beliau.</value>
+	</string>
+	<string key="NoSeer">
+		<value>Seer tidak ada, balik kampung katanya!</value>
+	</string>
+	<string key="WolfTeam">
+		<!-- 0 - teammate names -->
+		<value>Rakan Serigala Antum ialah: {0}</value>
+	</string>
+	<string key="CultTeam">
+		<!-- 0 - Number of cultists -->
+		<value>👤 Ahli Syiah: {0}</value>
+	</string>
+	<string key="MasonTeam">
+		<value>Rakan buruh: {0}</value>
+	</string>
+	<string key="DGToMason">
+		<!-- 0 - target's name -->
+		<value>Si Peniru {0} (Doppelganger) telah menjadi buruh sama macam Antum!</value>
+	</string>
+	<string key="DGToCult">
+		<!-- 0 - new cultist's name -->
+		<value>Si Peniru {0} (Doppelganger) kini telah menjadi Ahli Syiah sama macam Antum!</value>
+	</string>
+	<string key="DGToWolf">
+		<!-- 0 - DG's name -->
+		<value>Si Peniru {0} (Doppelganger) kini telah menjadi Serigala sama macam Antum!</value>
+	</string>
+	<string key="WildChildToWolves">
+		<!-- 0 - Werechild's name -->
+		<value>Idola {0} telah mati!  Dalam kemarahan beliau, dia telah menjadi serigala seperti antum!</value>
+	</string>
+	<!-- Time strings -->
+	<string key="LynchTime">
+		<!-- 0 - number of seconds -->
+		<value>🌥 Hari telah senja, solat maghrib telah didirikan, semua masyarakat berkumpul di balai negeri untuk bermesyuarat bagi membincangkan siapa yang bakal dihukum malam ini.
+	\nAntum semuanya mempunyai masa selama {0} saat untuk memilih!</value>
+		<value>🌥 Hari telah senja, masyarakat berkumpul di balai negeri selepas solat maghrib untuk membincangkan siapa yang bakal dikorbankan. Antum semuanya mempunyai masa selama {0} saat untuk memilih!</value>
+	</string>
+	<string key="DayTime">
+		<!-- 0 - number of seconds -->
+		<value>☀️ Siang menyengat, solat zuhur telah didirikan. 
+        \n“Hai orang-orang yang beriman, jika datang kepadamu orang fasik membawa suatu berita, maka periksalah dengan teliti, agar kamu tidak menimpakan suatu musibah kepada suatu kaum tanpa mengetahui keadaannya yang menyebabkan kamu menyesal atas perbuatanmu itu”. [Q.S. Al Hujurat(49) : 6].
+        \nJadi, elok-eloklah membuat keputusan dalam bermuafakat antum semua hanya ada {0} saat.
+        </value>
+		<value>☀️ Hari telah siang. Matahari pun menyinar.
+        \n“Sesungguhnya orang-orang yang menuduh wanita-wanita yang baik-baik, yang lengah lagi beriman (berbuat zina), mereka kena la’nat di dunia dan akhirat, dan bagi mereka adzab yang besar, pada hari (ketika) lidah, tangan, dan kaki mereka menjadi saksi atas mereka terhadap apa yang dahulu mereka kerjakan. Pada hari itu, Allah akan memberi mereka balasan yang setimpal menurut semestinya, dan tahulah mereka, bahwa Allah-lah Yang Benar, lagi Yang menjelaskan (segala sesuatu menurut hakikat yang sebenarnya)”. [Q.R. An Nur (24) 23-25].
+        \nFikir masak-masak dulu, siapa yang Antum akan undi. Risau salah orang, mudarat yang akan tiba.
+        \nMasyarakat negeri mempunyai {0} saat untuk membincangkan siapa yang akan dihukum..</value>
+	</string>
+	<string key="NightTime">
+		<!-- 0 - number of seconds -->
+		<value>🌙 Malam telah tiba, negeri semakin sunyi, lampu rumah telah banyak yang gelap, tapi bulan penuh masih lagi menerangi. Pemain malam bersiap untuk beraksi selama {0} saat.
+        \n"ALLAHUMMA INNII A'UUDZU BIKA MIN SYARRI MAA SHANA'TU WA MIN SYARRI KULLIDZII SYARRIN LA HAWLA WA LAA QUWWATA ILLAA BILLAAHI".
+        \nMasyarakat hanya mampu berdoa meminta pertolongan dari Tuhan Yang Maha Memberi Pertolongan.</value>
+		<value>"Bismika Allahumma ahya wa bismika amuut"
+        \n🌙 Hari telah malam, masa untuk mengistirehatkan diri yang penat, letih tidak bermaya. Tapi sebahagian orang ada yang menjalankan tugasnya di setiap malam seperti kebiasaan.
+        \nPemain malam, Antum ada {0} saat untuk menjalankan tugas Antum!</value>
+		<value>“Ketahuilah, hanya dengan mengingati Allah hati menjadi tenteram.”[QS. al-Ra’d (13) : 28], jangan lupa baca doa sebelum tidur agar sepanjang tidurmu Allah lindungi dari segala bahaya yang menanti, pemain malam {0} saat untuk beraksi.</value>
+	</string>
+	<string key="Day">
+		<!--0 - Day -->
+		<value>Hari {0}</value>
+	</string>
+	<!-- Game ends -->
+	<string key="WolfWins" isgif="true">
+		<value>SERIGALA telah MENANG! AUUUUUUUUU!!! 🐺</value>
+	</string>
+	<string key="WolvesWin" isgif="true">
+		<value>SERIGALA DAN RAKAN-RAKANNYA MENANG!!! AU AU AU AUUUUUUUU!! 🐺🐺</value>
+	</string>
+	<string key="VillageWins" isgif="true">
+		<value>👱 Alhamdulillah, masyarakat negeri MENANG, semua melakukan sujud syukur. Semua orang-orang jahat telah mati, Allahu Akbar!!</value>
+	</string>
+	<string key="TannerWins" isgif="true">
+		<value>Anda telah diperbodohkan. Tahniah!! Semuanya terkejut, terkena dengan Tanner si PENIPU! SI PENIPU MENANG! 👺</value>
+	</string>
+	<string key="CultWins" isgif="true">
+		<value>👤 Alhamdulillah semua serigala telah mati, tapi Na'udzubillah masyarakat yang tinggal telah menjadi ahli Syiah! AHLI SYIAH MENANG!</value>
+	</string>
+	<string key="SerialKillerWins" isgif="true">
+		<value>Innalillahi wainna ilaihi raji'uun \n🎉 Semua penduduk negeri telah mati dan menjadi koleksi di bilik Pembunuh Bersiri!! Pembunuh Bersiri Menang!!🔪</value>
+	</string>
+	<string key="LoversWin" isgif="true">
+		<value>🎉Kalau dah memang jodoh. Sapasang kekasih telah Menang! #CintaSuci \nSemoga berkekalan</value>
+	</string>
+	<string key="NoWinner" isgif="true">
+		<value>Semua penduduk negeri telah mati! Ana sebagai Moderator menang sendiri B-) kui kui kui</value>
+	</string>
+	<string key="RemainingPlayersEnd">
+		<value>Pemain yang tinggal, peranan, serta kumpulan:</value>
+	</string>
+	<string key="EndTime">
+		<value>Waktu permainan: {0}</value>
+	</string>
+	<!-- Choice strings -->
+	<string key="AskLynch">
+		<value>Siapakah yang Antum undi untuk dihukum bunuh? 🔥</value>
+	</string>
+	<string key="HunterLynchedChoice">
+		<value>"Allahumma inni as-aluka fi’lal khoirat wa tarkal munkarat wa hubbal masakin. Wa idza arad-ta bi ‘ibaadika fitnatan, faq-bidh-nii ilaika ghaira maf-tuun.."
+        \n"Ya Allah, aku memohon kepada-Mu taufiq untuk bisa mengamalkan semua kebaikan, meninggalkan semua kemungkaran, dan bisa mencintai orang miskin. Jika Engkau menghendaki untuk menimpakan ujian (fitnah) bagi hamba-hamba-Mu, maka wafatkanlah aku, tanpa terkena fitnah itu."
+        \nMasyarakat negeri memilih untuk menggantung Antum! Kejam bukan? Ambillah kesempatan terakhir untuk memilih siapa yang ingin Antum bawa mati bersama-sama Antum!</value>
+	</string>
+	<string key="HunterShotChoice">
+		<value>"...Allahumma inni a'udzubika minattarady walhadmi, walgharaqi, walharyq ..."
+		"Ya Allah, sesungguhnya aku berlindung kepada-Mu dari terjatuh dari tempat yang tinggi, dari tertimpa bangunan, dari tenggelam, dan dari terbakar."  (HR. al-Nasa’i no. 5531, dinilai shahih oleh Syaikh al-Albani).
+        \nAda yang menyerang Antum! Antum terjatuh ke tanah,tapi Antum masih punya peluang untuk menembak orang lain! CEPAT!!!</value>
+	</string>
+	<string key="AskMayor">
+		<value>Klik "Aku Menteri" bila antum ingin memaklumkan pada masyarakat negeri bahawa antum ialah Menteri</value>
+	</string>
+	<string key="Reveal">
+		<value>Aku Menteri</value>
+	</string>
+	<string key="SpreadDust">
+		<value>Adakah antum ingin "memagar" kampung? "Pagar" yang antum buat akan menghalang serigala dari menyerang pada malam esok.</value>
+	</string>
+	<string key="AskDetect">
+		<value>Siapakah yang antum ingin siasat?</value>
+	</string>
+	<string key="AskShoot">
+		<!-- 0 - bullet count -->
+		<value>Dengan lafaz BasmAllah, siapakah yang antum mahu tembak? Antum mempunyain{0} butir peluru, jimat sikit nak tembak tu, jangan terburu-buru...</value>
+	</string>
+	<string key="AskVisit">
+		<value>Astaghfirullah, siapa lagi yang antum mahu jadikan mangsa antum? sudah sudahlah maksiat tu👄</value>
+	</string>
+	<string key="AskSee">
+		<value>Dengan kelebihan antum, siapakah yang antum ingin lihat?</value>
+	</string>
+	<string key="AskGuard">
+		<value>Siapakah yang antum mahu jaga malam ini?</value>
+	</string>
+	<string key="AskEat">
+		<value>Dengan lafaz bismillah, siapa yang akan menjadi santapan antum hari ni?</value>
+	</string>
+	<string key="AskHunt">
+		<value>Siapa yang ingin Antum buru? Ayuh hapuskan mereka yang mampu menyesatkan saudara antum</value>
+	</string>
+	<string key="AskRoleModel">
+		<value>Siapa yang ingin Antum jadikan Idola hidup antum?</value>
+	</string>
+	<string key="AskKill">
+		<!-- for serial killer -->
+		<value>Astaghfirullah, Siapa yang ingin Antum bunuh malam ini?</value>
+	</string>
+	<string key="AskDoppelganger">
+		<value>Jika model ikutan yang antum pilih mati, antum akan brubah peranan dan mengambil peranan model ikutan yang antum pilih. Siapa yang Antum pilih untuk dijadikan model ikutan?</value>
+	</string>
+	<string key="AskCupid1">
+		<value>Siapa yang ingin Antum jadikan pasangan sehidup semati didalam permainan ini? Tapi tetap ingat, jodoh ditangan Tuhan.</value>
+	</string>
+	<string key="AskCupid2">
+		<value>Siapa pasangan yang ingin antum jodohkan untuk orang yang antum pilih tadi? Ingat ya, jodoh di tangan Tuhan.</value>
+	</string>
+	<string key="AskConvert">
+		<value>Siapa yang Antum ingin hasut untuk bersama dalam menganuti ajaran Syiah bersama Antum?</value>
+	</string>
+	<string key="DiscussWith">
+		<!--Leave the leading spaces here please-->
+		<!-- 0 - teammate names -->
+		<value>Pastikan antum berbincang dengan {0}</value>
+	</string>
+	<string key="And">
+		<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+		<value> dan </value>
+	</string>
+	<string key="WolfVotedKill">
+		<!-- 0 - wolf teammate name -->
+		<!-- 1 - Victim name -->
+		<value>{0} memilih memakan {1}, tapi sebelum tu baca BasmAllah dulu</value>
+		<value>{0} telah memilih untuk memakan {1}.</value>
+	</string>
+	<string key="CultistVotedConvert">
+		<!-- 0 - Voter's name -->
+		<!-- 1 - target name -->
+		<value>{0} telah memilih untuk menghasut {1}</value>
+	</string>
+	<string key="PlayerVotedLynch">
+		<!-- 0 - Voter name -->
+		<!-- 1 - Target name -->
+		<value>{0} memilih {1} untuk dihukum bunuh.</value>
+	</string>
+	<string key="ChoiceAccepted">
+		<value>Pilihan Antum diterima</value>
+		<value>Pilihan Antum telah diterima!</value>
+		<value>InsyaAllah, Antum telah buat keputusan yang terbaik😏</value>
+	</string>
+	<string key="TimesUp">
+		<value>Masa tamat, Antum terlambat untuk menjawab!</value>
+	</string>
+	<string key="RoleModelChosen">
+		<!-- 0 - target's name -->
+		<value>Antum sedang tidur? Bot telah buat pilihan untuk Antum: {0}</value>
+	</string>
+	<!-- Private consequence strings -->
+	<string key="SeerSees">
+		<!-- 0 - player name -->
+		<!-- 1 - player role -->
+		<value>Antum melihat {0} sebagai {1}!</value>
+	</string>
+	<string key="CursedBittenToWolves">
+		<!-- 0 - victim name -->
+		<value>{0} telah diSumpah, kini beliau telah menjadi Serigala selepas Antum mengigit beliau! Selamat,kini Antum punya kawan baru.</value>
+	</string>
+	<string key="PlayerBittenWolves">
+		<value>Sewaktu serigala menyerang {0}, {1} sebagai ketua serigala menghentikan yang lain dari membunuhnya, dan mencadangkan agar {0} menyertai mereka dan akan berubah sepenuhnya menjadi serigala pada keesokannya.</value>
+	</string>
+	<string key="WolvesEatDrunk">
+		<!-- 0 - victim name -->
+		<value>Astaghfirullahal'adziim!! Kiranya {0} ialah seorang Kaki Botol!!🍻 Antum berusaha balik ke rumah, tapi terkulai lemah kerana terlalu mabuk, nampaknya Antum harus berehat malam esok😞</value>
+	</string>
+	<string key="WolvesEatDrunkBlockSecondKill">
+		<value>Astaghfirullahal'adziim!! Kiranya {0} ialah seorang Kaki Botol!!🍻 Antum berusaha balik ke rumah, tapi terkulai lemah kerana terlalu mabuk, antum tidak boleh menyerang {1}😞</value>
+	</string>
+	<string key="GuardBlockedWolf">
+		<!-- 0 - target's name -->
+		<value>Serigala cuba menyerang {0} di rumahnya untuk dijadikan makanan malam ini, tetapi pegawai JPAM berkawal ketat disekeliling rumahnya. Tidak ingin berlawan dalam keadaan kelaparan, serigala membatalkan hasrat menyerang.</value>
+	</string>
+	<string key="DetectiveCaught">
+		<!-- 0 - detective name -->
+		<value>Antum dapat rasakan ada yang mengikut antum dari belakang, Nampaknya {0} sedang bersembunyi memantau antum, beliau adalah seorang detektif!🕵</value>
+	</string>
+	<string key="HarlotNotHome">
+		<!-- 0 - player name -->
+		<value>Pelik tapi benar, rumah {0} kosong tiada orang! Nampaknya berlaparlah antum malam ni 😞</value>
+	</string>
+	<string key="GuardSaved">
+		<!-- 0 - saved player name -->
+		<value>Antum berjaya melindungi {0} dari diserang orang jahat!
+        \n“Aku berlindung kepada Rabb yang menguasai subuh. Dari kejahatan makhluk-makhluknya. Dan dari kejahatan malam apabila telah gelap gulita. Dan dari kejahatan wanita tukang-tukang sihir yang menghembus pada buhul-buhul. Dan dari kejahatan orang yang dengki apabila ia dengki.” [QS Al Falaq: 1-5]😎</value>
+	</string>
+	<string key="GuardNoAttack">
+		<!-- 0 - player name -->
+		<value>Alhamdulillah, {0} tidak di serang semalam, Antum boleh tidur dan rehat lebih hari ini 💤.</value>
+	</string>
+	<string key="GuardEmptyHouse">
+		<!-- 0 - player name -->
+		<value>Antum pergi ke rumah {0}, tetapi beliau tidak ada di rumah!</value>
+	</string>
+	<string key="GuardBlockedKiller">
+		<!-- 0 - target's name -->
+		<value>Antum pergi ke rumah {0} untuk melengkapkan koleksi Antum, tapi malang tidak dapat ditolak, Antum bertemu pegawai JPAM berbaju besi, tubuhnya sasa. Antum merasa itu sasaran yang lebih hebat, tapi pisau antum patah oleh baju besinya, antum kalah. \n"Innamal a'malu binniyat, wainnama likulli amriinmanawa"
+		“Sesungguhnya setiap amalan tergantung pada niatnya. Dan setiap orang akan mendapatkan balasan sesuai dengan niatnya” (HR. Bukhāri dan Muslim)</value>
+	</string>
+	<string key="GuardSavedYou">
+		<value>"Sesungguhnya Allah menjadi Pelindung orang-orang yang beriman" [Q.S. Muhammad (47) : 11].
+        \nAtas rahmat Allah, Pegawai JPAM 👼 berhasil melindungi Antum semalam, segala latihan pertahanan mereka keluarkan untuk melindungi antum, kungfu, silat, jurus semua ada!</value>
+	</string>
+	<string key="HarlotVisitYou">
+		<value>Astaghfirullah, diri antum selekeh sangat, ada sesuatu yang antum lakukan semalam. Rupanya ada yang menemani antum semalam 💕💕💕. Bawalah bertaubat, Mak Nyah pun antum mahu layan :D
+    \n"RABBANA ZHALAMNA ANFUSANA WAILLAM TAGHFIRLANA WATARHAMNA LANA KUNANNA MINAL KHASIRIIN".
+	\nCuba-cubalah antum memohon keampunan kepada Yang Maha Kuasa.</value>
+	</string>
+	<string key="PlayerBitten">
+		<value>Antum diserang oleh serigala, tetapi Ketua Serigala telah memilih antum. Antum tidak terbunuh tetapi antum bakal menjadi serigala pada keesokan hari!</value>
+	</string>
+	<string key="CultAttempt">
+		<value>Antum melihat martabak dan Sate telah diletakkan di muka pintu rumah Antum, dan terdapat risalah mengenai ajaran Syiah padanya.</value>
+	</string>
+	<string key="HarlotVisitNonWolf">
+		<!-- 0 - target name -->
+		<value>Puas hati dengan layanan antum, {0} berasa amat gembira. Bila lah antum ingin bertaubat?, Sesungguhnya keimanan itu lebih nikmat dari apa yang antum lakukan sekarang, perlu antum tahu.</value>
+		<value>Diam-diam antum pergi ke rumah {0}, bersuka ria,membuang masa 💕. Bila antum akan mencari rezeki dengan cara yang halal? sesungguhnya telah  disediakan Allah jalannya untuk antum, agar terhindar dari bahaya dan murka dariNya.</value>
+	</string>
+	<string key="HarlotDiscoverCult">
+		<!-- 0 - target's name -->
+		<value>MasyaAllah, mohon ampun kepada Allah, Antum masih lagi dengan kerja terkutuk antum. Antum pergi ke rumah {0} untuk berseronok 👄. Ketika ingin pulang, antum ternampak tanda-tanda penganut Syiah di ruang ibadahnya.🐚</value>
+	</string>
+	<string key="DetectiveSnoop">
+		<!-- 0 - target name -->
+		<!-- 1 - target role -->
+		<value>Alhamdulillah!!! Penyelidikan Antum membuahkan hasil! {0} ialah {1}.</value>
+	</string>
+	<string key="CultJoin">
+		<!-- 0 - new cultist's name -->
+		<value>{0} telah bersama antum menjadi ahli Syiah!👤 </value>
+	</string>
+	<string key="CultVisitEmpty">
+		<!-- 0 - Newest cultist's name -->
+		<!-- 1 - target name -->
+		<value>{0} membawa apam balik berinti coklat kacang ke rumah {1}. Bila diketuk pintu rumahnya 3 kali, tiada yang hadir. Antum tinggalkan apam balik tersebut di muka pintu berserta risalah.</value>
+	</string>
+	<string key="CultUnableToConvert">
+		<!-- 0 - newest  -->
+		<!-- 1 - target's name -->
+		<value>{0} cuba menghasut {1} untuk turut bersamanya menjadi Ahli Syiah, namun imannya kuat, dan beliau merasa ajaran yang antum bawa tu menyimpang.</value>
+		<value>Antum menyuruh {0} untuk menghasut {1} bergabung, tapi beliau tolak segala hujah hasutan ajaran yang antum bawa dengan mengemukakan dalil-dalil menyangkal ajaran Syiah. {0} mengalah dengan {1} kerana ilmunya tinggi sangat.</value>
+	</string>
+	<string key="CultTargetDead">
+		<!-- 0 - Youngest cultists name -->
+		<value>Innalillahi wainna ilaihi raji'uun.
+        \nRumah {0} yang cuba antum kunjungi untuk antum ajak bersama-sama mengamal Syiah telah kosong. Nampaknya beliau telah dimakan serigala, dengan segera antum pergi dari rumah tersebut.</value>
+	</string>
+	<string key="HunterVisitDead">
+		<!-- 0 - target name -->
+		<value>💂 Antum pergi ke rumah {0}, tetapi beliau telah mati.</value>
+	</string>
+	<string key="HunterFailedToFind">
+		<!-- 0 - target name -->
+		<value>💂 Antum pergi ke rumah {0}, tiada yang asing/pelik nampaknya. Antum balik ke rumah tanpa rasa su'udzon.\n"Hai orang-orang yang beriman, jauhilah kebanyakan dari prasangka. Sesungguhnya sebagian dari prasangka itu adalah dosa.... [Q.S. Al Hujurat (49) : 12]</value>
+	</string>
+	<string key="MasonConverted">
+		<!-- 0 - mason's name -->
+		<value>Pelik... {0} tidak muncul ketika geng buruh berkumpul, apa yang telah jadi... Astaghfirullah, harus husnuzon.</value>
+	</string>
+	<string key="SorcererOther">
+		<value>Antum cuba melihat {0}, tapi tidak berhasil, antum tidak dapat memastikan sama ada dia adalah serigala ataupun peramal...</value>
+	</string>
+	<!-- Public consequence strings -->
+	<string key="HunterNoChoiceLynched">
+		<value>{0} dikejar masyarakat negeri hingga tak bertenaga. Memetik senapang tapi tidak sempat menembak, {0} diarak keliling kampung untuk digantung.</value>
+	</string>
+	<string key="HunterSkipChoiceLynched">
+		<value>{0} ditangkap, disyaki mencuri harta orang kampung setiap malam. Telah banyak hujah diberikan tidak ada yang percaya. {0} meninggal sambil tersenyum, menerima nasib mati di tangan masyarakat.</value>
+	</string>
+	<string key="HunterNoChoiceShot">
+		<!-- 0 - target's name -->
+		<value>Pemburu 🎯 tergelincir ketika melarikan diri, kepalanya terhantuk di batu, darah keluar banyak, {0} telah meninggal dunia di tempat tersebut.</value>
+	</string>
+	<string key="HunterSkipChoiceShot">
+		<!-- 0 - hunter's name -->
+		<value>Pemburu 🎯 terdesak, keliru, tertekan. {0} pasrah, tangannya basah oleh peluh, tidak sanggup untuk membawa kawan-kawannya mati bersama-sama beliau, Pemburu hanya meninggalkan amanah agar masyarakat negeri menjaga kedamaian negeri.</value>
+	</string>
+	<string key="PrinceLynched">
+		<value>Semasa masyarakat negeri ingin menghukum {0}, pengawal beliau datang dan berkata "Tunggu sebentar, beliau ialah Tengku Muda" sambil menunjukkan cincin tanda kerabat diraja.</value>
+	</string>
+	<string key="MayorReveal">
+		<value>{0} mengangkat tangan, melangkahkan kaki kehadapan dan bersuara "Aku Ialah Menteri Kalian" sambil menunjukkan surat kuasa beliau. \nMulai saat ini, setiap undian {0} dikira dua kali untuk setiap undi beliau.</value>
+	</string>
+	<string key="BlacksmithSpreadSilver">
+		<value>Semasa masyarakat negeri sedang bersembang dan bergurau senda antara satu sama lain untuk merapatkan silaturahim, mereka menyedari {0} sedang memercik air kehulu ke hilir dengan mulut berkumat kamit membaca sesuatu, kemudian beliau menaburkan garam pula. \nBeliau memaklumkan bahawa beliau telah memasang "pagar" disekeliling kampung, serigala tidak akan menyerang mereka pada esok malam.</value>
+	</string>
+	<!-- Private death strings -->
+	<string key="WolvesEatYou" isgif="true">
+		<value>LAAAAAA!! 🐺 Serigala telah memakan Antum. OmNomNom😯</value>
+		<value>Antum mencuba menelefon polis! Tapi sayang Antum tidak ada kredit. 🐺 Serigala telah memakan Antum. NyumNyum 😯</value>
+		<value>Antum berlari menyelamatkan diri, sempat lagi berlawan dengan memberi jurus silat harimau, tapi Antum kalah. 🐺 Serigala memakan Antum. (ᗒᗣᗕ)՞</value>
+	</string>
+	<string key="GuardWolf">
+		<value>Antum telah melindungi seseorang, tetapi sayang Antum mati dimakan orang tersebut kerana beliau ialah Serigala jadian yang kelaparan. Sesungguhnya hidup tak selalu indah \n"... dan boleh jadi (pula) kamu menyukai sesuatu, padahal ia amat buruk bagimu..." [Q.S.  Al Baqarah (2) : 216]. \nMasyarakat hanya mampu mengenang jasa-jasa baik antum dan mendoakan antum ☠.</value>
+	</string>
+	<string key="HarlotFuckWolf">
+		<!-- 0 - player name -->
+		<value>Antum pergi ke rumah {0} untuk bersukaria 👄, tapi Antum telah salah memilih. Antum mati dimakan orang tersebut yang merupakan serigala jadian ☠🔞. Antum harusnya bertaubat, sesungguhnya zina itu tidak elok, [Q.S. Al Isra' (17) : 32], lagi-lagi dengan berperwatakan lawan jantina, tapi kini antum telah terlambat.</value>
+	</string>
+	<string key="CultConvertWolf">
+		<value>Antum menghantar {0} dengan membawa roti canai untuk cuba menghasut {1}, tetapi kepala {0} terpelanting keluar lalu ke langit! {0} telah mati dimakan serigala...</value>
+	</string>
+	<string key="CultConvertCultHunter">
+		<!-- 0 - Yougest Cultist (killed)'s name' -->
+		<!-- 1 - CultHunter's name -->
+		<value>{0} cuba untuk menghasut {1} agar menyertai gerakan syiah antum, tetapi sayangnya {1} merupakan pegawai JAIS 💂. {0} ditegur agar bertaubat tapi beliau tidak mahu.\n"Hai anakku, dirikanlah shalat dan suruhlah (manusia) mengerjakan yang baik dan cegahlah (mereka) dari perbuatan yang mungkar dan bersabarlah terhadap apa yang menimpa kamu. Sesungguhnya yang demikian itu termasuk hal-hal yang diwajibkan (oleh Allah)." [Q.S. Luqman () : 17].\nPegawai JAIS telah mencuba mengajak ke jalan yang lurus, tapi dicemuh, {0} telah dijadikan makanan buaya.</value>
+	</string>
+	<string key="CultHunterKilledCultVisit">
+		<!-- 0 - Youngest Cultist's name -->
+		<!-- 1 - Number of cultists left -->
+		<value>Malam tadi {0} ke rumah Antum membawa apam balik berinti coklat kacang berserta pisang.. Antum ajak beliau mengaji sebentar, tapi cara mengajinya berbeza, antum sedar yang beliau ialah ahli Syiah. Antum kurung dia di dalam kolam berbuaya.. {1} ahli syiah yang tinggal!</value>
+	</string>
+	<string key="HunterFindCultist">
+		<!-- 0 - target name -->
+		<value>💂 Antum pergi ke rumah {0}, terdengar bacaan yang pelik!! 🐚 Antum menangkapnya lalu melemparnya ke dalam kolam berbuaya, Ahli Syiah mati seorang. 👤</value>
+	</string>
+	<string key="CultConvertHunter">
+		<!-- for hunter, not cultist hunter -->
+		<!-- 0 - Youngest Cultist's name -->
+		<!-- 1 - target's name -->
+		<value>{0} ke rumah {1} membawa martabak sebagai penarik untuk masuk ke kumpulannya, tapi, di rumah tersebut terdapat banyak ujiannya, kaki {0} terpijak paku, terhantuk kepalanya di dinding, terjatuh tersadung batu, ringkasnya banyaklah. 
+		{0} meninggal dihimpit pintu.</value>
+	</string>
+	<string key="CultConvertSerialKiller">
+		<!-- 0 - Youngest Cultist's name -->
+		<!-- 1 - target's name -->
+		<value> {0} ke rumah {1} membawa sate untuk menarik beliau menyertainya dalam aliran Syiah, {1} senyum ramah, {0} dibawa ke dalam, pintu ditutup. 
+		AAAAAAAA!!! Sate sebungkus tidak cukup untuk {1} , dicucuk-cucukkan lidi sate ke badan {0}, selepas itu {0} dibakar seperti daging sate.
+        Na'udzubillah</value>
+		<value>{0} cuba menyesatkan aqidah {1}, tetapi tidak diketahui bahawa orang tersebut ialah Pembunuh Bersiri.
+		\n“Sesungguhnya orang yang paling derhaka kepada Allah ada tiga: Orang yang membunuh di tanah haram, orang yang membunuh orang yang tidak membunuh, dan orang yang membunuh kerana balas dendam jahiliyyah" (HR. Ibnu Hibban)</value>
+	</string>
+	<string key="GuardKiller">
+		<value>Antum melindungi orang yang salah🔪. Niat elok antum dibalas dengan mata pisau ditikam di perut antum. Semoga antum diletakkan ditempat yang layak di sisiNya.
+        \nDulu orang-orang yahudi bersin di dekat Nabi shallAllahu ‘alaihi wa sallam, dengan harapan mereka mendapatkan doa nabi shallAllahu ‘alaihi wa sallam untuk orang bersin: “Semoga Allah merahmati kalian.” Namun doa yang diucapkan Nabi shallAllahu ‘alaihi wa sallam: “Semoga Allah memberikan petunjuk kepada kalian dan memperbaiki keadaan kalian.” (HR. Turmudzi 2739 dan dishahihkan al-Albani).
+        Jadi, do'akanlah saudara antum tu agar mendapat hidayah.</value>
+	</string>
+	<string key="HarlotFuckKiller">
+		<!-- 0 - target's name -->
+		<value>Na'udzubillahiminzhalik, niat yang tidak elok dibalas dengan balasan yang tidak elok. Hajat hati nak bermaksiat, yang dapat hanyalah musibah sebelum sempat bertaubat. Kepala dipaku, kaki dan tangan dipotong. Antum meninggal dibunuh {0} si Pembunuh Bersiri.</value>
+	</string>
+	<string key="BeholderNewSeer">
+		<!-- 0 - apprentice name -->
+		<!-- 1 - seer name -->
+		<value>{0} si murid peramal (Apprentice), kini telah menggantikan {1} sabagai Peramal 👳.</value>
+	</string>
+	<!-- Public death strings -->
+	<string key="NoAttack">
+		<value>🌤 Alhamdulillah, Shobahulkhair ♫♫ . Pagi telah tiba, semuanya berasa tenang, tidak ada yang diserang malam tadi.</value>
+		<value>🌤 Pagi telah tiba, tidak ada yang diserang malam tadi, namun masyarakat masih merasa curiga antara satu sama lain.</value>
+	</string>
+	<string key="LynchTie">
+		<value>Masyarakat gagal membuat keputusan yang tepat. Masyarakat pulang ke rumah masing-masing sambil marah-marah sendirian 😱</value>
+		<value>Masyarakat gagal membuat keputusan😨, Masyarakat balik ke rumah masing-masing untuk tadarus dan menunaikan solat istikharah.</value>
+	</string>
+	<string key="NoLynchVotes">
+		<value>Alhamdulillah, tidak ada yang memilih untuk digantung hari ini, masyarakat tidak mampu berfikir siapa yang harus dikorbankan disebabkan mereka tidak jelas siapa yang patut dihukum.</value>
+	</string>
+	<string key="Flee">
+		<!-- 0 - Player name -->
+		<value>Astaghfirullah, {0} melarikan diri kerana ketakutan👎 :(</value>
+		<value>{0} Hilang! mudah-mudahan Antum punya alasan yang boleh diterima😑</value>
+	</string>
+	<string key="IdleKill">
+		<!-- 0 - player name -->
+		<!-- 1 - player role -->
+		<value>☠ {0} menghilangkan diri 2 malam berturut-turut. Habis marah harimau peliharaannya tidak diberi makan, {0} mati dalam penyesalan. \n{1}</value>
+		<value>☠ {0} menghilang 2 malam berturut-turut. Katanya pergi mancari kurma, tapi tak balik-balik. \n{1} telah mati dihimpit pokok kurma.</value>
+		<value>☠ {0}menghilang 2 malam berturut-turut. Katanya pegi i'tiraf ke masjid, rupanya ajal menjemput ketika perjalanan ke masjid. Innalillahi wa Innalillahi raji'uun, mudah-mudahan beliau masuk ke syurga..\n{1} meninggal dunia</value>
+	</string>
+	<string key="Was">
+		<!-- used in the above string, inside the {1} (that {1} = playername + was + playerrole) -->
+		<value>ialah</value>
+	</string>
+	<string key="LynchKill">
+		<!-- 0 - player name -->
+		<!-- 1 - player role -->
+		<value>🔥"Innalillahi wa inna ilaihi raji'uun". Setelah bersatunya keputusan kamu semua, salah satu saudara antum, {0} telah pulang ke rahmatullah.
+	{1}, beliau telah mati direjam.</value>
+		<value>🔥"...Wa amruhum syuura baynahum . . ." (Q. S. Asy Syura (42) : 38)
+	"...dan urusan mereka diputuskan dengan musyawarah antara mereka." \n{0} digantung di bawah pokok kelapa menggunakan tali rapiah.
+	Role:{1}</value>
+		<value>🔥"... wasyawirhum fil amri ..." (Q.S. Ali Imran (3) : 159). \nKeputusan masyarakat telah dibuat hasil dari perbincangan, {0} disuruh membersihkan rumah semua warga kampung tanpa makan dan minum sehingga meninggal.
+	Role : {1}</value>
+	</string>
+	<string key="HunterKilledFinalLynched">
+		<!-- 0 - hunter's name -->
+		<!-- 1 - target's name -->
+		<!-- 2 - target's role -->
+		<value>Disebabkan tiada yang percaya pada beliau, diberi bukti pun tidak percaya. {0} marah benar, sebab beliau tidak salah apa-apa. Dipandang serong oleh masyarakat negeri, DOOM !! Hati {0} panas, lalu beliau menembak {1} sampai terjatuh bersimbah darah.
+		Role {1}: {2}</value>
+		<value>Sedang keadaan bertambah tegang, {0} mengeluarkan pistol dari sakunya dan menembak {1} tepat dikepala.
+		{1} terjatuh dan terbaring lalu meninggal. Beliau ialah {2}</value>
+	</string>
+	<string key="GenericDeathNoReveal">
+		<!-- 0 - Dead's name -->
+		<value>Shabahul khair masyarakat, hari yang indah tapi {0} tidak kelihatan. Nampaknya {0} mati di rumahnya, rumahnya berselerak.</value>
+		<value>Shabahunnur yaa ikhwah fillah. {0} tidak muncul-muncul lagi, ketika subuh berjemaah pun beliau tidak ada. Apabila diperiksa di rumahnya, kelihatan beliau mati dengan jasad terlantar di muka pintu rumahnya, rasanya beliau telah dimakan serigala ketika ingin pergi ke masjid subuh tadi.</value>
+		<value>Innalillahi wainna ilaihi raji'uun. Badan {0} habis luka disana sini digigit serigala.</value>
+	</string>
+	<string key="DetectiveEaten">
+		<!-- 0 - victim name -->
+		<value>🌤 masyarakat berkumpul di pagi hari kecuali {0}. Masyarakat pergi ke rumah {0} untuk melihat keadaannya, Innalillahi wa inna ilaihi raji'uun, fail siasatannya bertaburan, Detektif telah mati 🕵.</value>
+	</string>
+	<string key="GuardianEaten">
+		<!-- 0 - victim name -->
+		<value>🌤 Innalillahi, hari masih pagi, tapi musibah telah melanda negeri, kelihatan pakaian seragam biru serta lencana dikoyak-koyakkan. Tubuh {0} terlantar, pegawai JPAM meninggal dunia 👼.</value>
+		<value>🌤 Matahari terbit dipagi hari, Innalillahi wa Innalillahi wa innailaihi rajiu'uun, baju seragam biru dicarik-carik. Kelihatan pegawai JPAM telah meninggal dunia, tubuh {0} terlantar dipenuhi darah 👼.</value>
+	</string>
+	<string key="GunnerEaten">
+		<!-- 0 - victim name -->
+		<value>🌤 Masyarakat terkejut mendengar bunyi tembakan, pelurunya melayang tidak menentu, darah berlumuran dari tubuh si penembak, tangannya masih memegang senapang dalam keadaan mencuba melepaskan tembakan. Kita kehilangan, {0} Si Penembak 🔫.</value>
+	</string>
+	<string key="SeerEaten">
+		<!-- 0 - victim name -->
+		<value>🌤 Pagi itu bau kemenyan pekat sangat, satu kampung terhidu, sampai ke kampung sebelah. Dan bau itu datangnya dari rumah {0}.
+		Terkujur kaku bersama buku manteranya, Peramal (Seer) 👳 mati.</value>
+	</string>
+	<string key="DrunkEaten">
+		<!-- 0 - victim name -->
+		<value>🌤 ROOAAARRRRR!!! Rumah {0} terbakar. Serigala menyerang beliau di rumahnya dan membuat alkohol tumpah merata lalu terhasil letupan dari dapur gas. Tubuh {0} ditemui hangus, nasib si Kaki Botol 🍻.</value>
+		<value>🌤 Nampaknya di rumah {0} ada parti malam tadi, 2 botol alkohol ditemui di atas mejanya, dan kelihatan {0} siap minum-minum dengan serigala malam tadi, saat semua tetamu balik, tinggal mereka berdua yang tinggal, kelaparan... beliau mati dimakan serigala. Si Kaki Botol 🍻 mati.</value>
+	</string>
+	<string key="FoolEaten">
+		<!-- 0 - victim name -->
+		<value>🌤 Pagi telah tiba, bau kemenyan kuat dari rumah {0}. Terkulai mati di atas kad-kad ramalannya, masyarakat melihat si Luncai dengan kad-kadnya telah mati 🃏.</value>
+	</string>
+	<string key="HarlotEaten">
+		<!-- 0 - player name -->
+		<value>💋 Mak Nyah tidak beraksi malam ini, mungkin terlalu penat dan ingin berehat dirumah, tapi sayang beliau salah memilih malam. {0} mati dimakan Serigala yang datang kerumahnya.</value>
+	</string>
+	<string key="SorcererEaten">
+		<value>Bunyi ratapan kesedihan kedengaran diseluruh kawasan. Ahli Sihir {0} telah mati.</value>
+		<value>Tangisan "Aku sangat memuja dan menyerumu dengan ilmuku! Inikah balasanmu padaku?" kedengaran malam semalam. Semua penduduk kampung mendapati rumah Ahli Sihir {0} berselerakan tetapi orangnya telah tiada.</value>
+	</string>
+	<string key="WildChildEaten">
+		<value>ARGHH!!!! Bunyi menyeramkan kedengaran pada malam tadi. Semua mendapati bahawa {0} si Bro Hijau-HULK telah mati, beliau tidak mampu mempertahankan diri.</value>
+	</string>
+	<string key="MasonEaten">
+		<!-- 0 - dead man's name -->
+		<value>🌤 "Tidak ada suatu umat pun yang dapat mendahului ajalnya, dan tidak (pula) dapat mengundurkan(nya)." [Q.S. Al-Hijr (15) : 5].\nHari telah pagi, masyarakat negeri sibuk melihat mayat {0} di tong sampah penuh darah bercampur sisa bakso dan muntah kucing. Seorang rakan buruh mati!</value>
+	</string>
+	<string key="ApprenticeSeerEaten">
+		<value>Masyarakat negeri mencari {0} disemua tempat akhirnya mereka menemui beliau mati dalam keadaan mengerikan, kelihatan kesan gigitan serigala di seluruh tubuhnya, Murid Peramal mati sebelum sempat menamatkan pengajiannya.</value>
+	</string>
+	<string key="DefaultEaten">
+		<!-- 0 - victim name -->
+		<!-- 1 - victim role -->
+		<value>🌤 “Semua yang ada di bumi itu akan binasa. Dan (yang) tetap kekal Dzat Tuhanmu yang mempunyai kebesaran dan kemuliaan.” [Q.S. Ar-Rahmaan (55):26-27] \nMalang tidak berbau, mayat {0} terlantar di tengah kampung. OmNomNom! {1} telah mati.</value>
+		<value>🌤 Ngeri, hari telah pagi dan antum melihat ada saudara Antum yang mati. Darah disana sini,di sepanjang jalan. {0} meninggal dunia, NomNom!
+        Role: {1}</value>
+		<value>🌤 "Tiap-tiap yang berjiwa akan merasakan mati. Kemudian hanya kepada Kami kamu dikembalikan" [Q.S. Al Ankabut (29) : 57] \n{1} meninggal dunia dengan cara yang tidak wajar, ada gigi serigala tertinggal di perut {0}.</value>
+		<value>🌤 "Kami telah menentukan kematian di antara kamu...." [al Waqi'ah (56) : 60]
+	\n{0} mati dimakan Serigala.. {1} telah pulang ke Rahmatullah.</value>
+	</string>
+	<string key="HunterKilledCultist">
+		<!-- 0 - victim name -->
+		<value>Kecoh di rumah {0}, masyarakat memeriksa ke dalam rumah beliau dan menemui serban hitam berserta batu-batu yang dikatakan dari Tanah Karbala. Seorang ahli Syiah 👤 mati.
+		\nTelah disebutkan dalam al Quran, "Sesungguhnya Allah tidak akan mengampuni dosa syirik, dan Dia mengampuni segala dosa yang selain dari (syirik) itu, bagi siapa yang dikehendaki-Nya. Barangsiapa yang mempersekutukan Allah, Maka sungguh ia telah berbuat dosa yang besar."[Q.S. An-Nisaa (4) : 48).</value>
+		<value>“Dan siapakah yang lebih sesat daripada orang-orang yang menyembah sembahan-sembahan selain Allah yang tidak dapat memperkenankan (doa)nya sampai hari kiamat dan mereka lalai dari (memperhatikan) doa mereka ?” [Q.S. Al-Ahqaf (46) : 5].
+        \n{0} terlambat bertaubat, Innalillahi wa inna ilaihi raji'uun, ahli Syiah 👤 meninggal dunia.</value>
+	</string>
+	<string key="LoverDied">
+		<!-- 0 - dead's name -->
+		<!-- 1 - lover's name -->
+		<!-- 2 - roles -->
+		<value>{0} mati dipangkuan {1}. Tak sanggup menyendiri lagi, {1} meminum racun tikus untuk membunuh diri..💔 {2} mati kerana patah hati dan berputus asa dengan hidupnya.\n“Tiada suatu bencana pun yang menimpa di bumi dan (tidak pula) pada dirimu sendiri melainkan telah tertulis dalam kitab (Lauhul Mahfuzh) sebelum Kami menciptakannya. Sesungguhnya yang demikian itu adatelah mudah bagi Allah. (Kami jelaskan yang demikian itu) supaya kamu jangan berduka cita terhadap apa yang luput dari kamu, dan supaya kamu jangan terlalu gembira terhadap apa yang diberikan-Nya kepadamu. Dan Allah tidak menyukai setiap orang yang sombong lagi membanggakan diri” [Q.S. Al Hadid: 22-23]
+        </value>
+		<value>♫Bayang bayangan rindu♫,
+	{0} mati dipangkuan {1}. Air mata menitik di pipinya, dan hari pun hujan. {1} mati dipanah petir.
+	💔{2} \n“Boleh jadi kamu membenci sesuatu padahal ia amat baik bagimu dan boleh jadi pula kamu menyukai sesuatu padahal ia amat buruk bagimu. Allah mengetahui sedang kamu tidak mengetahui.” (Al-Baqarah: 216) </value>
+		<value>{1} telah putus asa, tidak bermakna hidupnya kalau tidak ada {0}.\n“ …dan janganlah kamu berputus asa dari rahmat Allah. Sesungguhnya tiada berputus asa dari rahmat Allah melainkan kaum yang kafir” (Yusuf : 12)\n{2} meninggal dunia.</value>
+	</string>
+	<string key="HarlotFuckedWolfPublic">
+		<!-- 0 - player name -->
+		<value>Nama {0} kini telah buruk di mata masyarakat disebabkan kerjanya menjadi Mak Nyah di malam hari, dan kini beliau telah mati.</value>
+		<value>Masyarakat negeri melihat {0} di muka pintu rumahnya dalam keadaan berlumuran darah dimakan serigala. Tidak menyangka meninggalnya dalam keadaan menyedihkan walaupun berkali-kali telah dipesan, doa untuknya 🔞</value>
+	</string>
+	<string key="HarlotFuckedVictimPublic">
+		<!-- 0 - harlot name -->
+		<!-- 1 - victim name -->
+		<value>{0} menyelinap masuk ke rumah {1} untuk bersukaria 👄. Tapi pada saat itu, serigala sedang memakan {1} didalam rumahnya. Disebabkan serigala terlalu lapar dan tidak ingin meninggalkan seorang pun saksi, {0} turut mati dimakan serigala tersebut.</value>
+	</string>
+	<string key="HarlotFuckKillerPublic">
+		<value>Masyarakat negeri menjumpai mayat {0}, terlekat di pokok pisang. {0} telah mati.</value>
+		<value>Na'udzubillahiminzhalik, niat yang tidak elok dibalas dengan balasan yang tidak elok. {0} meninggal dunia</value>
+	</string>
+	<string key="HarlotFuckedKilledPublic">
+		<!-- used when Harlot visit's SK's victim, and dies -->
+		<!--{0} = Harlot name, {1} = SK's victim name-->
+		<value>{0} menyelinap masuk ke rumah {1}, bersedia untuk berseronok dengan pembunuh bersiri yang sedang asyik membuang organ {1}! Pembunuh bersiri berhasrat untuk menakut-nakutkan sebelum membunuh {0}!</value>
+	</string>
+	<string key="HarlotShot">
+		<!-- 0 - gunner's name -->
+		<!-- 1 - Harlot's name -->
+		<value>Setelah ditipu disuatu ketika dahulu, bilamana si penembak jatuh hati terhadap seorang mak nyah yang disangka perempuan,{0} menyimpan dendam terhadap golongan Mak Nyah!💋 \nBAMM!! {1} meninggal ditembak tepat pada dadanya.</value>
+	</string>
+	<string key="DefaultShot">
+		<!-- 0 - Gunner's name -->
+		<!-- 1 - target name -->
+		<!-- 2 - Target's revealed name ( Target was a role) -->
+		<value>BANG!!💥 masyarakat melihat {0}🔫 berdiri di sebelah jasad {1}. Innalillahi wainna ilaihi raji'uun. Penembak puas berfikir dalam membuat keputusan untuk menembak.\n{2}.</value>
+	</string>
+	<string key="IsDead">
+		<!-- used when gunner shoots a player -->
+		<value>telah mati</value>
+	</string>
+	<string key="HunterKilledVisiter">
+		<!-- 0 - target's name -->
+		<!-- 1 - role -->
+		<value>Oleh sebab itu jangan cuba menghasut si Pemburu, {0} mati dibelasah si pemburu. 
+		Role: {1}</value>
+		<value>Masyarakat berkumpul di pusat balai negeri melihat {0} ({1}) telah mati dengan kecederaan ditembak tepat di kepala!\n"Ana ingatkan, jangan cuba cari pasal waktu ana sedang tidur ---Pemburu---!"</value>
+	</string>
+	<string key="HunterKilledFinalShot">
+		<!-- 0 - hunter -->
+		<!-- 1 - target's name -->
+		<!-- 2 - target's role -->
+		<value>(Beberapa minit sebelumnya)🎯 {0} memegang dadanya yang penuh darah, lalu jatuh ke tanah... \nDi saat-saat terakhir nyawanya, beliau senyum sambil menembak {1} .{2}</value>
+	</string>
+	<string key="HunterShotWolfMulti">
+		<!-- 0 - target's name -->
+		<value>Kawanan Serigala cuba menyerang Pemburu 🎯, dan beliau sempat menembak salah satu Serigala 🐺, {0} mati!
+        \n“Siapa saja yang terbunuh kerana membela agamanya maka ia syahid, siapa saja yang terbunuh kerana membela jiwanya maka ia syahid,   siapa saja yang terbunuh kerana membela hartanya maka ia syahid, dan siapa saja yang terbunuh kerana membela kehormatan keluarganya maka ia syahid” (HR. Abu Daus, at-Tirmidzi, an-Nasaiy, Ibnu Majah)
+		“Oleh sebab itu barang siapa yang menyerang kamu, maka seranglah ia, seimbang dengan serangannya terhadapmu. Bertaqwatelah kepada Allah dan ketauhilah, bahwa Allah beserta orang-orang yang bertaqwa”. (Q.S. Al Baqarah (2) : 194]</value>
+	</string>
+	<string key="HunterShotWolf">
+		<!-- 0 - target's name -->
+		<value>Serigala menyerang Pemburu semalam, dan beliau sempat menembak 🐺 {0}
+        \n“Oleh sebab itu barang siapa yang menyerang kamu, maka seranglah ia, seimbang dengan serangannya terhadapmu. Bertaqwalah kepada Allah dan ketauhilah, bahwa Allah beserta orang-orang yang bertaqwa”. (Q.S. (2) : 194)</value>
+		<value>Terdengar suara auman kencang semalam serentak dengan bunyi tembakan senapang, {0} 🐺 mati ditembak pemburu yang membela diri!
+        \n“Siapa saja yang terbunuh kerana membela agamanya maka ia syahid, siapa saja yang terbunuh kerana membela jiwanya maka ia syahid,   siapa saja yang terbunuh kerana membela hartanya maka ia syahid, dan siapa saja yang terbunuh kerana membela kehormatan keluarganya maka ia syahid” (HR. Abu Daus, at-Tirmidzi, an-Nasaiy, Ibnu Majah)</value>
+	</string>
+	<string key="SerialKillerKilledWolf">
+		<value>🐺 Serigala cuba memakan seseorang semalam, tetapi berhadapan pula dengan seorang yang psiko!! {0} tidak sempat melarikan diri, bulunya dicabut, telinganya dipotong, ususnya diambil, serigala mati dibunuh Pembunuh Bersiri 🔪!</value>
+	</string>
+	<string key="DefaultKilled">
+		<!-- 0 - target's name -->
+		<!-- 1 - target's role -->
+		<value>Negeri tenang dan damai malam tadi, tapi tidak bagi {0}! masyarakat melihat {0} terdampar, puluhan pisau tertanam di badannya! Pembunuh Bersiri Beraksi!! 🔪
+        \n “Dan barangsiapa yang membunuh seorang mukmin dengan sengaja maka balasannya ialah Neraka Jahannam, kekal ia di dalamnya dan Allah murka kepadanya, dan mengutukinya serta menyediakan azab yang besar baginya.” [Q.S. an-Nisa’ (4) : 93]
+        \n{1} meninggal dibunuh Pembunuh Bersiri</value>
+		<value>Pagi itu {0} terjaga, senang betul hati nya! Dia membuka pintu sambil menghirup udara pagi yang sejuk, tiba-tiba sakit dadanya, dia baru sedar jantung nya telah hilang! {0} telah meninggal!
+		Pembunuh Bersiri Beraksi Lagi!! 🔪 {1}
+        \n“Sesungguhnya orang yang paling durhaka kepada Allah ada tiga: Orang yang membunuh di tanah haram, orang yang membunuh orang yang tidak membunuh, dan orang yang membunuh kerana balas dendam jahiliyyah" (HR. Ibnu Hibban)</value>
+		<value>{0} tertidur di muka pintu masjid, nampaknya tidak tenang tidurnya, perutnya ditikam pisau yang banyak.
+		Pembunuh Bersiri menyerang!! 🔪 {1}
+        \n“Dan orang-orang yang menyakiti orang-orang mukmin laki-laki atau perempuan tanpa kesalahan yang mereka perbuat, maka sesungguhnya mereka telah memikul kebohongan dan dosa yang nyata” [Q.S. Al Ahzab (33) : 58]</value>
+	</string>
+	<string key="BlacksmithKilled">
+		<value>Nampaknya Peramal Perubatan {0}, tidak bernasib baik. Botol air dan garam bertaburan disamping jasad {0}. Nampaknya Pembunuh Bersiri tidak suka usaha perubatan sedemikian...</value>
+	</string>
+	<string key="CultistKilled">
+		<value>Mayat {0} dijumpai dengan risalah mengenai "Apa itu Syiah?". Pembunuh bersiri kembali, hidup ibarat tak bertuhan,membunuh orang tanpa belas kasihan dan tanpa fikiran, Seorang ahli syiah telah mati.</value>
+	</string>
+	<string key="CupidKilled">
+		<value>Masyarakat negeri mencari Tok Kadi bagi menyempurnakan majlis pernikahan salah seorang masyarakat negeri pada hari tersebut, tapi sayang mereka menemui {0} mati dibunuh dengan jarinya hilang satu. Masyarakat sedih atas kehilangan Tok Kadi negeri</value>
+	</string>
+	<string key="DrunkKilled">
+		<value>Selalunya {0} akan mula membuat kecoh dibalai raya pada pagi hari dalam keadaan mabuknya yang tiada henti,tapi pagi itu mereka menemui {0} dirumahnya dengan botol arak bersepah merata, Si Kaki Botol telah mati.</value>
+	</string>
+	<string key="GuardianAngelKilled">
+		<value>Oh Tidak!! Selalunya pegawai JPAM dapat berlawan dengan Pembunuh Bersiri, tetapi tidak pada malam itu, nampaknya Pegawai JPAM telah tertidur kepenatan, lalu Pembunuh Bersiri mengambil hal itu sebagai peluang keemasan untuknya beraksi, siap meninggalkan sekeping nota "Halanglah aku lagi jika boleh.. Muahaha". {0} telah mati.</value>
+	</string>
+	<string key="GunnerKilled">
+		<value>Nampaknya {0} si Penembak terlupa dimana beliau menyimpan pistol dan senapangnya, beliau mati ditikam berkali-kali dibahagian dada, jantungnya juga turut hilang. Innalillahi wa innailaihi raaji’uun</value>
+	</string>
+	<string key="MayorKilled">
+		<value>"Menteri Korup, BRIM ku tiada, Kos Sara hidup meningkat" \nitulah pesanan berdarah yang ditinggalkan di dinding pejabat Menteri {0}, kelihatan Pembunuh Bersiri merasa puas meluah amarahnya. {0} mati</value>
+	</string>
+	<string key="PrinceKilled">
+		<value>Tengku Muda {0} tidak bernasib baik pada malam itu, hajat ingin memakan Nasi Arab tidak kesampaian. Saat pengawalnya pergi mendapatkan Nasi Arab tersebut, Pembunuh Bersiri menyerang dengan menjadikan ketiadaan pengawal waktu itu satu kelebihan untuknya.</value>
+	</string>
+	<string key="SeerKilled">
+		<value>Seperti kebiasaan, si Peramal {0} pasti akan memaklumkan hasil ramalannya pada salah seorang rakan baiknya, tetapi tidak pada pagi itu. Rakannya mencari beliau dirumahnya dan mendapati sekujur badan tanpa kaki dipenuhi darah. Peramal telah mati. Al-Fatihah</value>
+	</string>
+	<string key="SerialKillerKilledCH">
+		<!--used when CH visits SK-->
+		<value>Pagi itu masyarakat menemui mayat {0} (Pegawai JAIS) dalam keadaan menyeramkan dengan tangan dan kaki dicincang, perut dibelah. Nampaknya Pembunuh Bersiri benar-benar tidak berminat dalam hal urusan agama. </value>
+	</string>
+	<string key="CultConvertWolfPublic">
+		<!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<value>Malam itu serigala berubah fikiran dan memilih untuk duduk di rumah dan berehat tetapi Ahli Syiah mencari musibah apabila datang ke rumah serigala. Tidak melepaskan peluang, serigala menganggap rezeki datang bergolek, serigala tersenyum pada awalnya dan mempersilakan {0} masuk ke rumahnya lalu beliau menutup pintu,seorang ahli syiah mati dimakan serigala</value>
+	</string>
+	<string key="CultConvertKillerPublic">
+		<!--used when Cultists convert the SK-->
+		<value>Ahli syiah bersemangat untuk menyebarkan alirannya pada masyarakat negeri, tapi sayang, malam semalam {0} telah memilih orang yang salah untuk dihasut. {0} disambut oleh Pembunuh Bersiri yang tidak berminat untuk mengikuti apa-apa kumpulan, aliran mahupun fahaman.Seorang Ahli Syiah mati.</value>
+	</string>
+	<string key="GAGuardedKiller">
+		<!-- used when GA guards SK -->
+		<value>Sebagai pegawai JPAM yang bertugas malam ini, {0} pergi untuk menjaga salah seorang masyarakat negeri,tetapi nampaknya {0} tersilap memilih orang pula, nilai baik beliau hanya sia-sia apabila disambut Pembunuh Bersiri yang Maniac.</value>
+	</string>
+	<string key="GAGuardedWolf">
+		<!-- used when GA guards a wolf -->
+		<value>{0} cuba untuk menjaga serigala semalam, dan keesokan harinya masyarakat negeri bangun dan mendapati {0} tergantung diatas pokok kelapa dengan pakaian seragam birunya. Terang lagi bersuluh beliau dibunuh serigala setelah melihat kesan gigitan pada badannya.</value>
+	</string>
+	<!--1vs1 finales-->
+	<string key="HunterKillsWolfEnd">
+		<!--{0} = hunter's name, {1} = wolf's name-->
+		<value>Mengetahui {0} ialah orang terakhir didalam negeri, {1} cuba untuk memakan {0}, tetapi berbekalkan ilmu yang {0} pelajari dari ayahnya sejak kecil dan latihan ketenteraan pada usia remajanya! Pemburu telah membawa kemenangan kepada masyarakat negeri apabila berjaya menewaskan {1} si serigala!</value>
+	</string>
+	<string key="WolfKillsHunterEnd">
+		<!--{0} = hunter's name, {1} = wolf's name-->
+		<value>Mengetahui {0} ialah orang terakhir didalam negeri, {1} cuba untuk memakan {0}, pada awalnya si pemburu berkeras melawan habis-habisan berbekalkan ilmu perthanan diri yang beliau pelajari, cuba untuk menembak serigala, tetapi sayang, pelurunya tiada. {0} mati ditewaskan serigala. </value>
+	</string>
+	<string key="CHKillsCultistEnd">
+		<!--{0} = last cultist's name, {1} = CH's name -->
+		<value>Pagi itu {1} dan {0} berjalan-jalan menghirup udara segar dipagi hari . Melihat risalah "Apa itu syiah?" dipoket {0}, {1} sebagai pegawai JAIS cuba mentarbiyah {0}. Degil, dan berkeras dengan fahamannya, {1} menangkap {0} lalu mengikatnya dan dihumban ke dalam sungai yang penuh buaya. {0} mati.</value>
+	</string>
+	<string key="SKHunterEnd">
+		<!-- 0 - SK's name -->
+		<!-- 1 - Hunter's name -->
+		<value>{0} melihat {1} sambil tersenyum, {0} berlari menikam dada {1}! Tindak balas yang cepat membuatkan {1} melepaskan tembakan ke perut {0}. \nBANG!! Kedua-duanya terjatuh lalu mati. Innalillahi wainna ilaihi raji'uun.</value>
+	</string>
+	<string key="SerialKillerWinsOverpower">
+		<!-- 0 - SK's name -->
+		<!-- 1 - target's name -->
+		<value>Pagi telah tiba, hari itu masyarakat negeri hanya tinggal dua orang sahaja. {0} melihat {1} dengan wajah senyum jahatnya, Innalillahi wainna ilaihi raji'uun, {1} disiksa sebelum dibunuh.</value>
+	</string>
+	<!-- Group system strings -->
+	<string key="PlayerRoleWas">
+		<!-- 0 - Player name -->
+		<!-- 1 - Player role -->
+		<value>{0} ialah {1}</value>
+	</string>
+	<string key="PlayerStartedGame" isgif="true">
+		<!-- 0 - Player name -->
+		<value>📣 {0} telah memulakan permainan (NORMAL)! Jom bergabung bersama kami di Dunia Zi'bun dengan klik butang <b>MASUK</b>. Baca BasmAllah dulu ye.</value>
+		<value>📣 Alhamdulillah! Permainan (NORMAL) telah dimulakan oleh {0}! Baca Bismillah, tekan butang <b>MASUK</b> untuk bergabung bersama kami di Dunia Zi'bun.</value>
+	</string>
+	<string key="PlayerStartedChaosGame" isgif="true">
+		<!-- 0 - Player name -->
+		<value>📣 {0} telah memulakan permainan(CHAOS)! baca BasmAllah, tekan butang <b>MASUK</b> untuk bergabung. 😈</value>
+		<value>📣 Yuhuuu! Permainan (CHAOS) telah dimulakan oleh {0} ! Tekan butang <b>MASUK</b> untuk bergabung, jangan lupa baca Bismillah yaa ikhwahfillah. 😈</value>
+	</string>
+	<string key="MinuteLeftToJoin">
+		<value>📣 Seminit lagi untuk bergabung, siap-siap ye, yaa ikhwah fillah.</value>
+	</string>
+	<string key="SecondsLeftToJoin">
+		<!-- 0 - remaining seconds (number) -->
+		<value>📣 {0} saat lagi untuk bergabung, jangan lupa baca BasmAllah.</value>
+	</string>
+	<string key="NotEnoughPlayers">
+		<value>SubhanAllah, ini je ke yang ade ? Tak dapat nak main, ana sebagai bot tak boleh buat apa. Mungkin yang lain masih sibuk.</value>
+		<value>Pemain kurang yaa ikhwah fillah.</value>
+	</string>
+	<string key="PlayerLimitReached">
+		<value>Afwan, pemain dah 35 orang, tunggu lepas permainan selesai dulu yaa.</value>
+		<value>Jumlah maksimum pemain (35 pemain) telah cukup, cuba lepas ni balik yaa.</value>
+	</string>
+	<string key="PlayerJoined">
+		<!-- 0 - Player name -->
+		<!-- 1 - current players -->
+		<!-- 2 - Minimum players -->
+		<!-- 3 - Maximum players -->
+		<value>{0} bergabung. {1} pemain, {2} minimum, {3} maksimum</value>
+	</string>
+	<string key="CountPlayersRemain">
+		<!-- 0 - Number of players -->
+		<value>{0} pemain yang tinggal.</value>
+	</string>
+	<string key="StartingGameWait">
+		<value>Sabar yaa ikhwah fillah, "Sesungguhnya Allah bersama orang-orang yang sabar", permainan akan bermula.</value>
+		<value>Bismillahirrahmanirrahiim, permainan bermula.</value>
+	</string>
+	<string key="ChangeNameToJoin">
+		<!-- 0 - Player name -->
+		<value>{0}, ganti nama Antum dulu yaa</value>
+	</string>
+	<string key="PMTheBot">
+		<!-- 0 - Player name -->
+		<!-- 1 - bot username -->
+		<value>{0}, supaya Antum boleh main, Tekan /start di PM bot ({1}). Nanti nak main, bot mesej antum selepas dah bergabung</value>
+	</string>
+	<string key="StartMe">
+		<value>PM ana, ana PM lah Antum nanti</value>
+	</string>
+	<string key="NotPlaying">
+		<value>Antum tidak ikut bermain.</value>
+	</string>
+	<string key="NameExists">
+		<!-- 0 - target's name -->
+		<!-- 1 - name -->
+		<value>【@{1}】, Terdapat pemain yang menggunakan nama {0} . Sila tukar nama Antum ya.</value>
+	</string>
+	<string key="FleeDisabled">
+		<value>Antum kemana?, jangan menghilangkan diri, antum tak boleh lari dari apa yang antum telah mulakan.</value>
+	</string>
+	<string key="NoGame">
+		<value>Tiada permainan.  Mulakan Permainan dengan /startgame atau buat huru hara dengan /startchaos, Jangan lupa baca Basmallah</value>
+	</string>
+	<string key="GroupAdminOnly">
+		<value>Admin Group je boleh guna command ni.</value>
+	</string>
+	<string key="AlreadyInGame">
+		<!-- 0 - target's name -->
+		<value>Antum telah bergabung di dalam permainan! ({0})</value>
+	</string>
+	<string key="IdleCount">
+		<!-- 0 - player's name -->
+		<!-- 1 - idle count -->
+		<value> \n{0} harus dibuang negeri kerana tidak mengundi {1} kali dalam 24 jam. Jangan cuba-cuba afk ye Antum sekalian.</value>
+	</string>
+	<string key="AlreadyOnWaitList">
+		<!-- 0 - target's name -->
+		<value>Antum telah meminta ana untuk mengingatkan antum sebentar tadi, dimohon antum untuk bersabar, "InnAllaha ma'ashabiriin", Tunggu sebentar yaa ikhwahfillah! {0}</value>
+	</string>
+	<string key="AddedToWaitList">
+		<!-- 0 - target's name -->
+		<value>Antum telah meminta ana untuk mengingatkan antum jika terdapat permainan baru di Group {0}. Ana akan memberikan notifikasi untuk mengingatkan antum bila ada permainan baru, jangan lupa baca basmallah sebelum menyertai</value>
+	</string>
+	<string key="NotifyNewGame">
+		<!-- 0 - target's name -->
+		<value>Permainan baru telah dimulakan di {0}</value>
+	</string>
+	<string key="NodeShutsDown">
+		<value>Error berlaku, dan node perlu di tutup :/</value>
+	</string>
+	<string key="NoNodes">
+		<value>Tiada nodes yang online saat ini, sila cuba sebentar lagi</value>
+	</string>
+	<string key="NotGlobalAdmin">
+		<value>Antum bukan admin global, sedarlah...</value>
+	</string>
+	<string key="NotPara">
+		<value>Anda bukan Para!Sila sedarkan diri dari bermimpi</value>
+	</string>
+	<string key="PlayerNoPM">
+		<value>{0} gagal mengaktifkan bot, antum telah dihapuskan dari game.</value>
+	</string>
+	<string key="LatestList">
+		<value>Ini senarai pemain terkini yang Antum minta</value>
+	</string>
+	<string key="UnableToGetList">
+		<value>Ana tidak dapat cari senarai terkini.</value>
+	</string>
+	<string key="YouJoined">
+		<!-- 0 - Group Name -->
+		<value>Antum telah menyertai permainan di group {0}, selamat bermain yaa, jangan lupa baca Bismillah</value>
+	</string>
+	<string key="SecondsAdded">
+		<!-- 0 - Seconds added by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>Masa permainan dilanjutkan {0} saat!\n{1} tinggal untuk sertai</value>
+	</string>
+	<string key="SecondsRemoved">
+		<!-- 0 - Seconds removed by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk bergabung</value>
+	</string>
+	<string key="CantExtend">
+		<value>Hanya admin group boleh melanjutkan masa lebih dari sekali! Sabar ya, boleh cuba seru admin untuk pertolongan</value>
+	</string>
+	<!-- Private system strings -->
+	<string key="SentPrivate">
+		<value>I have sent you a PM</value>
+	</string>
+	<string key="WhatLangGroup">
+		<value>What language do you want to look for a group to play in?</value>
+	</string>
+	<string key="HereIsList">
+		<value>Here are the groups for {0}:</value>
+	</string>
+	<string key="Members">
+		<value>Members</value>
+	</string>
+	<string key="Ping2">
+		<value>Time to send ping message: {0}</value>
+	</string>
+	<string key="PingInfo">
+		<value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+	</string>
+	<string key="GroupCommandOnly">
+		<value>You must run this command in a group</value>
+	</string>
+	<string key="GetLang">
+		<value>Get which language file?</value>
+	</string>
+	<string key="WhatToDo">
+		<value>What would you like to do?</value>
+	</string>
+	<string key="Cancel">
+		<value>Cancel</value>
+	</string>
+	<string key="WhatLang">
+		<value>What Language?\nCurrent: {0}</value>
+	</string>
+	<string key="WhatVariant">
+		<value>What Variant?\nCurrent: {0}</value>
+	</string>
+	<string key="LangSet">
+		<value>Language set to {0}</value>
+	</string>
+	<string key="Yes">
+		<value>Yes</value>
+	</string>
+	<string key="No">
+		<value>No</value>
+	</string>
+	<string key="Allow">
+		<value>Allow</value>
+	</string>
+	<string key="Disallow">
+		<value>Disallow</value>
+	</string>
+	<string key="Show">
+		<value>Show</value>
+	</string>
+	<string key="Hide">
+		<value>Hide</value>
+	</string>
+	<!-- Game Mode Choices-->
+	<string key="NormalOnly">
+		<value>Normal Only</value>
+	</string>
+	<string key="ChaosOnly">
+		<value>Chaos Only</value>
+	</string>
+	<string key="PlayerChoice">
+		<value>Player Choice</value>
+	</string>
+	<!-- Show Roles on End Game -->
+	<string key="ShowNone">
+		<value>Don't show any</value>
+	</string>
+	<string key="ShowLiving">
+		<value>Show only living players</value>
+	</string>
+	<string key="ShowAll">
+		<value>Show all players</value>
+	</string>
+	<string key="AllowFleeQ">
+		<value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+	</string>
+	<string key="AllowFleeA">
+		<value>{0} fleeing after game start</value>
+	</string>
+	<string key="MaxPlayersQ">
+		<value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+	</string>
+	<string key="MaxPlayersA">
+		<value>Max players set to {0}</value>
+	</string>
+	<string key="ShowRolesDeathQ">
+		<value>Show or Hide roles on death?\nCurrent: {0}</value>
+	</string>
+	<string key="ShowRolesDeathA">
+		<value>Roles will be {0} on death.</value>
+	</string>
+	<string key="GameModeQ">
+		<value>What game mode will the group be?\nCurrent: {0}</value>
+	</string>
+	<string key="GameModeA">
+		<value>Game mode set to {0}</value>
+	</string>
+	<string key="ShowRolesEndQ">
+		<value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+	</string>
+	<string key="ShowRolesEndA">
+		<value>Roles shown at end set to: {0}</value>
+	</string>
+	<string key="SetDayTimeQ">
+		<value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+	</string>
+	<string key="SetDayTimeA">
+		<value>Base day time set to {0} seconds</value>
+	</string>
+	<string key="SetNightTimeQ">
+		<value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="SetNightTimeA">
+		<value>Night time set to {0} seconds</value>
+	</string>
+	<string key="SetLynchTimeQ">
+		<value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="SetLynchTimeA">
+		<value>Lynch voting time set to {0} seconds</value>
+	</string>
+	<string key="AllowFoolQ">
+		<value>Allow fool as a role option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowFoolA">
+		<value>Fool as a role set to: {0}</value>
+	</string>
+	<string key="AllowTannerQ">
+		<value>Allow tanner as a role option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowTannerA">
+		<value>Tanner as a role set to: {0}</value>
+	</string>
+	<string key="AllowCultQ">
+		<value>Allow cult as a role option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowCultA">
+		<value>Cult as a role set to: {0}</value>
+	</string>
+	<string key="AllowExtendQ">
+		<!--{0} = "Allow" / "Disallow" string-->
+		<value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+	</string>
+	<string key="AllowExtendA">
+		<!--{0} = "Allow" / "Disallow" string-->
+		<value>{0} players to extend join time</value>
+	</string>
+	<string key="MaxExtendQ">
+		<value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="MaxExtendA">
+		<value>Maximum extending time set to {0} seconds</value>
+	</string>
+	<string key="ThankYou">
+		<value>Thank you, have a good day :)</value>
+	</string>
+	<!-- Deprecated strings (no need to modify!) -->
+	<string key="NotInGame" deprecated="true">
+		<value>You don't appear to be in any games right now...</value>
+	</string>
+	<string key="NoJoinGameRunning" deprecated="true">
+		<value>You can't join now! The game is already running.</value>
+	</string>
+	<string key="AlreadyJoined" deprecated="true">
+		<value>You've already joined!</value>
+	</string>
+	<string key="BannedForExploit" deprecated="true">
+		<!-- 0 - Player name -->
+		<value>{0} is banned for attempting an exploit (no names starting with /)</value>
+	</string>
+	<string key="DeadFlee">
+		<value>You can't run away! YOU'RE DEAD!  Get back in the ground... jeez!</value>
+	</string>
+	<string key="DidntAsk" deprecated="true">
+		<value>Hey I didn't ask you anything yet!</value>
+	</string>
+	<string key="NoPlayerName">
+		<value>I can't find a player by that name!</value>
+	</string>
+	<string key="AnswerNonValid" deprecated="true">
+		<value>This answer is not valid!</value>
+	</string>
+	<string key="AdminAdded" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} added to admin list. Use /config to change group settings.</value>
+	</string>
+	<string key="MultipleGames" deprecated="true">
+		<value>Your group has managed to start multiple games...  Killing extras.</value>
+	</string>
+	<string key="GroupQueue" deprecated="true">
+		<!-- 0 - target's name -->
+		<!-- 1 - target's name -->
+		<value>Your group is currently in the queue.  Position: {0} / {1}</value>
+	</string>
+	<string key="MaintBreak" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+	</string>
+	<string key="MaxGames" deprecated="true">
+		<!-- 0 - target's name -->
+		<!-- 1 - target's name -->
+		<value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+	</string>
+	<string key="SkipQueue" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} is a preferred group, and has skipped the queue!</value>
+	</string>
+	<string key="ShuttingDown" deprecated="true">
+		<value>After this game, I am shutting down for maintenance.</value>
+	</string>
+	<string key="ShuttingDownUpdate" deprecated="true">
+		<value>After this game, I am shutting down momentarily for an update (automated).</value>
+	</string>
+	<string key="NullIdAdmin" deprecated="true">
+		<value>UserId was null.  Are you sure you sent this as a reply?</value>
+	</string>
+	<string key="AlreadyAdmin" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} is already an admin!</value>
+	</string>
+	<string key="NotAdmin" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} is not an admin!</value>
+	</string>
+	<string key="AdminRemoved" deprecated="true">
+		<!-- 0 - target's name -->
+		<value>{0} removed from admin list.</value>
+	</string>
+	<string key="LanguageSet" deprecated="true">
+		<!-- 0 - language's name -->
+		<value>Language set to {0}</value>
+	</string>
+	<string key="StartPM" deprecated="true">
+		<value>Please send me a pm so I can PM you: @werewolfbot</value>
+	</string>
+	<string key="PMTrue" deprecated="true">
+		<value>Thanks for starting me! I can PM you now.</value>
+	</string>
+	<string key="MustReplySmite" deprecated="true">
+		<value>You must reply to the user you want to smite</value>
+	</string>
+	<string key="JoinFromGroup">
+		<value>You must join a game from within a group chat!</value>
+	</string>
+	<string key="StartFromGroup">
+		<value>You must start a game from within a group chat!</value>
+	</string>
+	<string key="VillageTeam" deprecated="true">
+		<value>Village Team</value>
+	</string>
+	<string key="NeutralTeam" deprecated="true">
+		<value>Neutral Team</value>
+	</string>
+	<string key="SerialKillerTeam" deprecated="true">
+		<value>SK Team</value>
+	</string>
+	<string key="CultTeam" deprecated="true">
+		<value>Cult Team</value>
+	</string>
+	<string key="TannerTeam" deprecated="true">
+		<value>Tanner Team</value>
+	</string>
+	<string key="JoinButton">
+		<value>Masuk</value>
+	</string>
+	<string key="NotMember">
+		<value>Anda tidak boleh menyertai permainan ini kerana anda bukan dalam kumpulan {0}.</value>
+	</string>
+	<string key="JoinByButton">
+		<value>Sila jangan gunakan command join. Gunakan butang ini.</value> 
+	</string>
+	<string key="PlayerVoteCounts">
+    <value>{0} pemain telah mengundi untuk menghukum bunuh, Jumlah pemain {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, Peringatan! anda juga perlu menyertai melalui butang <b>MASUK</b> semula.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} telah bergabung di dalam permainan 30 saat yang lalu.</value>
+  </string>
+</strings>

@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- Expert mode by Saah (@ayylimao)! Translated to Cantonese by Firewood (@Firewood_LoKi). Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Expert mode by Saah (@ayylimao)! Cantonese Translation by Firewood (@Firewood_Loki). Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
 <!--
-    ==UPDATE LOG==
-    LAST UPDATE 29/11/2016 by @jeffffc
-    29/11:  Added "HarlotFuckedKilledPublic"
-    21/11:  Added "CultConvertWolf" string
-    15/11:  TeamEnd Strings fixes
-    09/11:  Added 6 team strings
-    07/11:  Added: "DGTransformToAlpha" and "DGTransformToWolfCub" strings
-    04/11:  Added ww4.0 translations
-            Credits to 中大狼人群組 and @WWFSbot
-    15/10:  minor fixes on below strings
-    14/10:  amendments on "aboutww" "aboutapps" "ABOUTSK"
-    14/10:  amendments on "ApprenticeNowSeer"
-    04/10:  added "Ping2" string
-    29/09:  abouthunter: No one wins [only with SK but not wolves]
+  ==UPDATE LOG==
+  LAST UPDATE 18/05/2016 by @Firewood_Loki
+  18/05/17  - Added Section: Extend, Join, Secret Vote
+            - Deleted Duplicate String: "CultConvertSerialKiller", "CupidChosen"
+  29/11/16  - Added String: "HarlotFuckedKilledPublic"
+  21/11/16  - Added String: "CultConvertWolf"
+  15/11/16  - Fixed String: "TeamEnd"
+  09/11/16  - Added String: 6 team strings
+  07/11/16  - Added String: "DGTransformToAlpha", "DGTransformToWolfCub"
+  04/11/16  - Added ww4.0 translations
+            - Credits to 中大狼人群組 and @WWFSbot
+  15/10/16  - Fixed String: "aboutww", "aboutapps", "ABOUTSK", "ApprenticeNowSeer"
+  04/10/16  - Added String: "Ping2"
+  29/09/16  - Added String: "abouthunter(No one wins, only with SK but not wolves)"
 -->
 <strings>
-  <language name="廣東話（失憶版）" base="廣東話" variant="失憶版"/>
-  <string key="NotInGame">
+  <language name="廣東話（失憶版）" base="廣東話" variant="失憶版" owner="Firewood_Loki" code="zh-yue-hk"/>
+  <string key="NotInGame" deprecated="true">
     <value>你仲未加入遊戲喎傻仔！</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>有個賤人叫【{0}】開始咗個『正常版（失憶版）』新遊戲！\n打 /join 加入，準備失憶啦  :P</value>
-    <value>【{0}】求其開始咗個『正常版（失憶版）』新遊戲！\n打 /join 加入，等比人食啦！</value>
-    <value>超級好人嘅【{0}】幫大家開始咗個『正常版（失憶版）』新遊戲！\n打 /join 加入，一齊同月光玩遊戲啦！</value>
-    <value>【{0}】食飽飯冇事做，開始咗個『正常版（失憶版）』新遊戲！\n打 /join 加入，陪佢玩下啦！</value>
+    <value>有個賤人叫【{0}】開始咗個『正常版（失憶版）』新遊戲！\n撳制加入，準備失憶啦  :P</value>
+    <value>【{0}】求其開始咗個『正常版（失憶版）』新遊戲！\n撳制加入，等比人食啦！</value>
+    <value>超級好人嘅【{0}】幫大家開始咗個『正常版（失憶版）』新遊戲！\n撳制加入，一齊同月光玩遊戲啦！</value>
+    <value>【{0}】食飽飯冇事做，開始咗個『正常版（失憶版）』新遊戲！\n撳制加入，陪佢玩下啦！</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>有個賤人叫【{0}】開始咗個『混亂版（失憶版）』新遊戲！\n打 /join 加入，準備失憶啦  :P</value>
-    <value>【{0}】求其開始咗個『混亂版（失憶版）』新遊戲！\n打 /join 加入，等比人食啦！</value>
-    <value>超級好人嘅【{0}】幫大家開始咗個『混亂版（失憶版）』新遊戲！\n打 /join 加入，一齊同月光玩遊戲啦！</value>
-    <value>【{0}】食飽飯冇事做，開始咗個『混亂版（失憶版）』新遊戲！\n打 /join 加入，陪佢玩下啦！</value>
+    <value>有個賤人叫【{0}】開始咗個『混亂版（失憶版）』新遊戲！\n撳制加入，準備失憶啦  :P</value>
+    <value>【{0}】求其開始咗個『混亂版（失憶版）』新遊戲！\n撳制加入，等比人食啦！</value>
+    <value>超級好人嘅【{0}】幫大家開始咗個『混亂版（失憶版）』新遊戲！\n撳制加入，一齊同月光玩遊戲啦！</value>
+    <value>【{0}】食飽飯冇事做，開始咗個『混亂版（失憶版）』新遊戲！\n撳制加入，陪佢玩下啦！</value>
   </string>
-  <string key="NoJoinGameRunning">
+  <string key="NoJoinGameRunning" deprecated="true">
     <value>你嚟遲咗啦，遊戲早就開始咗啦！打定 /nextgame 等通知啦！</value>
     <value>遊戲開始咗啦，下鋪請早！打定 /nextgame 等通知啦！</value>
     <value>你唔好等到佛誕先過嚟？打定 /nextgame 等通知啦！</value>
@@ -42,7 +42,7 @@
     <value>連加入遊戲都慢過人，我睇死你都係一世廢村命架啦！打定 /nextgame 等通知啦！</value>
     <value>唉，依家啲後生，都冇次準時嘅，搵次早啲入嚟得唔得啊？打定 /nextgame 等通知啦！</value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>你已經喺個遊戲入面啦傻仔！乖，唔好亂撳制啦😉。</value>
     <value>你咪入咗囉，仲入😡仲入😡仲入😡仲入😡！再入斬手指架！</value>
     <value>入完又入，好好玩啊依家？再入信唔信我派個廢村比你做吖嗱😈！</value>
@@ -54,10 +54,10 @@
     <value>遊戲未開始，可以去 http://telegra.ph/%E7%8B%BC%E4%BA%BA-11-30 睇下失憶攻略。</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>仲有一分鐘開始，快啲 /join 啦！</value>
+    <value>仲有一分鐘開始，快啲加入啦！</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>仲有 {0} 秒開始，搶閘 /join 啦！</value>
+    <value>仲有 {0} 秒開始，搶閘入嚟啦！</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>唔夠人，依家宣布流會！\n如果唔夠人可以用 /grouplist 睇吓邊度有得玩😏</value>
@@ -69,7 +69,7 @@
   <string key="StartingGameWait">
     <value>遊戲依家開始，等我分派角色俾大家啦！咦，條村好似有啲古怪！因為某啲原因，冇人記得自己係邊個……（玩家將不能知道自己的身份，直至死亡！）</value>
   </string>
-  <string key="BannedForExploit">
+  <string key="BannedForExploit" deprecated="true">
     <value>【{0}】企圖利用漏洞進行遊戲，已被系統封鎖（你個名唔可以有『/』）</value>
   </string>
   <string key="ChangeNameToJoin">
@@ -105,7 +105,7 @@
   <string key="CountPlayersRemain">
     <value>仲有【{0}】個人玩緊。</value>
   </string>
-  <string key="DidntAsk">
+  <string key="DidntAsk" deprecated="true">
     <value>你連你係邊個都唔記得，竟然想搞人？瞓醒未啊，我都冇問你問題！</value>
   </string>
   <string key="NotPlaying">
@@ -114,7 +114,7 @@
   <string key="NoPlayerName">
     <value>你係邊個啊？無人識你啊。</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>你揀嘅嗰個答案已經唔存在啦……</value>
   </string>
   <string key="WolfVotedKill">
@@ -347,10 +347,10 @@
     <value>【{0}】有啲攰諗住休息一晚，喺屋企抖抖啦，點知比狼食咗！【妓女 💋】皮已收。</value>
   </string>
   <string key="HarlotNotHome" >
-    <value> 【{0}】唔喺屋企！</value>
+    <value>【{0}】唔喺屋企！</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value> 做咩傻豬豬去【{0}】間狼屋啊？你俾人食咗啦！係你死之前，你終於記得返你係邊個︰你係【妓女 💋】！</value>
+    <value>做咩傻豬豬去【{0}】間狼屋啊？你俾人食咗啦！係你死之前，你終於記得返你係邊個︰你係【妓女 💋】！</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <value>【{0}】尋晚入錯屋姦錯人！佢嘅內臟俾人用鐵支釘晒喺教堂道門度……陰功 :(</value>
@@ -378,16 +378,16 @@
     <value>突然傳來一響槍聲。村民發現【{0}】企咗係【{1}】條屍隔離，槍口仲篤住佢個頭。\n【{2}】</value>
   </string>
   <string key="WolfWins" isgif="true" >
-    <value>【狼人】贏咗！\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
+    <value>【狼人】贏咗！</value>
   </string>
   <string key="WolvesWin" isgif="true" >
-    <value>【狼群】贏咗！\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
+    <value>【狼群】贏咗！</value>
   </string>
   <string key="VillageWins" isgif="true" >
-    <value>【村民】贏咗，所有壞蛋死晒（狼、連環殺手、邪教魔徒），世界又再一次和平。\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
+    <value>【村民】贏咗，所有壞蛋死晒（狼、連環殺手、邪教魔徒），世界又再一次和平。</value>
   </string>
   <string key="TannerWins" isgif="true" >
-    <value>大鑊，你地投死咗【皮匠】！佢獨贏啦，哈哈哈哈！\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
+    <value>大鑊，你地投死咗【皮匠】！佢獨贏啦，哈哈哈哈！</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>生還玩家名單、身份同隊伍︰</value>
@@ -414,7 +414,7 @@
     <value>【{0}】去咗【{1}】屋企，但係屋企冇人！</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value>全部狼死晒，所有活人信晒邪教。【邪教魔徒】贏咗！\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
+    <value>全部狼死晒，所有活人信晒邪教。【邪教魔徒】贏咗！</value>
   </string>
   <string key="HunterVisitDead">
     <value>【{0}】已經死咗！</value>
@@ -547,25 +547,25 @@
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
+  <string key="AdminAdded" deprecated="true">
     <value>【{0}】已成為 Admin。使用 /config 嚟更改遊戲設定。</value>
   </string>
   <string key="AlreadyInGame">
     <value>你已經喺 {0} 玩緊啦，你都係等人開新遊戲啦。</value>
   </string>
-  <string key="MultipleGames">
+  <string key="MultipleGames" deprecated="true">
     <value>你地開得太多遊戲啦，咁准咁貪心。現刪除多餘的遊戲。</value>
   </string>
-  <string key="GroupQueue">
-    <value>群組已在列隊中。目前順位︰{0} / {1}</value>
+  <string key="GroupQueue" deprecated="true">
+    <value>群組已在佇列中。目前順位︰{0} / {1}</value>
   </string>
-  <string key="MaintBreak">
+  <string key="MaintBreak" deprecated="true">
     <value>抱歉，我現正要下線更新，從現在開始不能啟動遊戲。\n正在等徒 {0} 場遊戲結束……\n更多資訊請至 @werewolfdev 。</value>
   </string>
-  <string key="MaxGames">
+  <string key="MaxGames" deprecated="true">
     <value>抱歉，已達至最大遊戲群組數量（{0}）。目前順位︰{1} / {1}</value>
   </string>
-  <string key="SkipQueue">
+  <string key="SkipQueue" deprecated="true">
     <value>{0} 是官方群組，已跳過隊列。</value>
   </string>
   <string key="NoGame">
@@ -574,25 +574,25 @@
   <string key="GroupAdminOnly">
     <value>只有管理員可使用此指令。</value>
   </string>
-  <string key="ShuttingDown">
+  <string key="ShuttingDown" deprecated="true">
     <value>呢場遊戲一完，我就會下線維修。</value>
   </string>
-  <string key="ShuttingDownUpdate">
+  <string key="ShuttingDownUpdate" deprecated="true">
     <value>呢場遊戲一完，我就會下線更新（自動），請等幾分鐘。</value>
   </string>
-  <string key="NullIdAdmin">
+  <string key="NullIdAdmin" deprecated="true">
     <value>搵唔到指令對象。你確定你用回覆（reply）落指令？</value>
   </string>
-  <string key="AlreadyAdmin">
+  <string key="AlreadyAdmin" deprecated="true">
     <value>【{0}】已經係管理員！</value>
   </string>
-  <string key="NotAdmin">
+  <string key="NotAdmin" deprecated="true">
     <value>【{0}】唔係管理員！</value>
   </string>
-  <string key="AdminRemoved">
+  <string key="AdminRemoved" deprecated="true">
     <value>【{0}】唔再係管理員！</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <value>語言設定為 {0}。</value>
   </string>
   <string key="NoSeer">
@@ -672,9 +672,6 @@
   <string key="CultConvertHunter">
     <value>【{0}】去咗【{1}】屋企，跟住死咗！</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>【{0}】去咗【{1}】屋企，跟住死咗！</value>
-  </string>
   <string key="GuardKiller">
     <value>做乜傻豬豬走去連環殺手屋企啊？你死咗啦！腎都冇埋！</value>
   </string>
@@ -703,7 +700,7 @@
     <value>【{0}】死咗，搞到你個身份變咗喎，但係究竟由咩變做咩呢？雖然你唔記得自己係邊個，但係【{1}】似乎係好重要嘅人。</value>
   </string>
   <string key="SerialKillerWins" isgif="true">
-    <value>世上只係得返一個癲佬！\n【連環殺手】贏咗！\n/startgame 開個『正常版（失憶版）』\n/startchaos 開個『混亂版（失憶版）』</value>
+    <value>世上只係得返一個癲佬！\n【連環殺手】贏咗！</value>
   </string>
   <string key="AskKill">
     <value>你知道你應該求其搵個人搞下啲野，你對邊個有興趣？</value>
@@ -732,9 +729,6 @@
   <string key="Doppelgänger">
     <value>分身 🎭</value>
   </string>
-  <string key="CupidChosen">
-    <value>雖然你唔記得自己係邊個，但係【{0}】似乎係好重要嘅人。</value>
-  </string>
   <string key="NewWCRoleModel">
     <value>你個身份變咗喎，但係究竟由咩變做咩呢？雖然你唔記得自己係邊個，但係【{0}】似乎係好重要嘅人。</value>
   </string>
@@ -761,8 +755,8 @@
     <value>天一光，剩餘嘅兩個村民喺市中心嘅廣場散步。【{0}】望一望【{1}】，臉上露出一個邪惡無比嘅笑容。佢拎出一把匕首，手起刀落，將【{1}】一分為二。</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>呢條村嘅人已經死晒……除咗屍體之外，咩都冇。呢一場遊戲冇人贏，除咗嗰班鍾意食人肉嘅禿鷹。\n/startgame 開個『正常版（失憶版）』\n/startchaos 開個『混亂版（失憶版）』</value>
-    <value>呢條村嘅人已經死晒……世界和平👏🏻👏🏻 :D\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
+    <value>呢條村嘅人已經死晒……除咗屍體之外，咩都冇。呢一場遊戲冇人贏，除咗嗰班鍾意食人肉嘅禿鷹。</value>
+    <value>呢條村嘅人已經死晒……世界和平👏🏻👏🏻 :D</value>
   </string>
   <string key="SKHunterEnd">
     <value>天一光，【{0}】同【{1}】喺村入面迎頭相撞。【{0}】拎出佢把刀，撲向【{1}】。【{1}】都唔執輸，即刻拿出一把槍，射向【{0}】嘅頭殼。喺子彈穿過【{1}】嘅瞬間，【{0}】把刀都貫穿咗【{1}】嘅心臟。最後兩個人都死咗，喺呢條空蕩蕩嘅村莊，冇人贏……</value>
@@ -860,7 +854,7 @@
     <value>Para 係一個鍾意周圍吠嘅弱智程式員，可能佢實在搞狼人搞得太辛苦……</value>
   </string>
   <string key="EndTime">
-    <value>遊戲長度︰{0}</value>
+    <value>遊戲長度︰{0}\n/startgame 開個『正常版（失憶版）』新遊戲\n/startchaos 開個『混亂版（失憶版）』新遊戲</value>
   </string>
    <!--New strings, July the 8th -->
 
@@ -874,13 +868,13 @@
   <string key="SentPrivate">
     <value>我已經私底下話咗比你知（PM）。</value>
   </string>
-  <string key="StartPM">
+  <string key="StartPM" deprecated="true">
     <value>請你先啟動我 @werewolfbot ，我至可以同你講嘢。</value>
   </string>
-  <string key="PMTrue">
+  <string key="PMTrue" deprecated="true">
     <value>多謝你啟動我，我依家可以瘋狂同你傾計啦。</value>
   </string>
-  <string key="MustReplySmite">
+  <string key="MustReplySmite" deprecated="true">
     <value>請透過回覆 /smite 玩家。</value>
   </string>
   <string key="WhatToDo">
@@ -893,7 +887,7 @@
     <value>你只能喺群組開始遊戲。</value>
   </string>
   <string key="PingInfo">
-    <value>回應處理時間︰{0}\n現時 CPU 用量︰{1}%\n每秒接收訊息︰{2}</value>
+    <value>回應處理時間︰{0}\n每秒接收訊息︰{1}</value>
   </string>
   <string key="WhatLang">
     <value>想轉去咩語言？\n當前語言︰{0}</value>
@@ -1056,10 +1050,10 @@
   </string>
   <string key="YouJoined">
     <!-- 0 - Group Name -->
-    <value>你已經成功喺 {0} 報名玩狼啦😏</value>
+    <value>你已經成功喺【{0}】報名玩狼啦😏</value>
   </string>
   <string key="Ping2">
-    <value>傳送Ping訊息所需時間: {0}</value>
+    <value>訊息延遲: {0} ms</value>
   </string>
 
       <!-- Update 4.0-->
@@ -1172,22 +1166,22 @@
 
 <!-- Keep this for now until bots update-->
     
-  <string key="VillageTeam">
+  <string key="VillageTeam" deprecated="true">
     <value>村民陣營</value>
   </string>
-  <string key="NeutralTeam">
+  <string key="NeutralTeam" deprecated="true">
     <value>獨立陣營</value>
   </string>
-  <string key="WolfTeam">
+  <string key="WolfTeam" deprecated="true">
     <value>狼人陣營</value>
   </string>
-  <string key="SerialKillerTeam">
+  <string key="SerialKillerTeam" deprecated="true">
     <value>連殺陣營</value>
   </string>
-  <string key="CultTeam">
+  <string key="CultTeam" deprecated="true">
     <value>邪教陣營</value>
   </string>
-  <string key="TannerTeam">
+  <string key="TannerTeam" deprecated="true">
     <value>皮匠陣營</value>
   </string>
     
@@ -1268,5 +1262,125 @@
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>唉呀呀，尋晚【{0}】懵撚閉閉咁走咗去保護隻狼。村民朝早一起身，見到佢對翼鳩下鳩下咁吊左喺教堂個十字架上面，睇黎班狼尋晚又食左餐飽飯。【守護天使 👼】皮已收。</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>同平時一樣，【{0}】一到半晚就會忍唔住攞佢嗰支槍出黎玩，呢個時候【{1}】正諗住黎食撚左個死剩種之際，好彩平時睇得電視多，即刻轉身射個三分波，砰！到死嗰刻佢仲諗緊：「條撚樣幾時上彈架？」【狼人 🐺】皮已收。
+    </value>
+    <value>死剩最後一個村民【{0}】，【{1}】心諗今次仲唔啅硬你，佢張開血盤大口，一野撲上去。砰！倒地嘅竟然係【{1}】，「對唔住，我係獵人。」，【{0}】好撚型咁吹一吹佢支槍，槍管飄出一縷白煙。【狼人 🐺】皮已收。</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>正當全村死撚晒，得返失眠既【{0}】喺度戇戇鳩鳩咁玩佢碌炮，【{1}】靜雞雞咁潛入左佢屋企，睇準佢自high到完全失去戒心之際，一啖咬撚左佢個頭落黎，真係陰鳩公囉，明明有得射都射唔撚出【獵人 🎯】皮已收</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>清晨時分總係帶住少少嘅神秘，有兩個身影忽然喺教堂出面閃過，【{0}】正想拎個綠毛邪神令出黎開壇作法，【{1}】即刻喺底褲抽左當年明太祖賜落黎既尚方寶劍出嚟，大喝一句：「仲唔比我捉到你個死臭閪，仆街啦你！」劍光一閃，剩低既就得翻一地綠色血泊同條咸魚。【邪教魔徒 👤】皮已收。
+    </value>
+    <value>最後，全村死剩兩個人：一個信邪教信到上撚晒腦嘅邪教徒；同一個打死都唔會信教嘅驅魔人。【{0}】好希望將世上唯一嘅真神介紹比【{1}】，一講就講左三粒鐘。原本【{1}】見佢係自己以外嘅最後一個村民，都諗住放佢一馬。殊不知【{0}】實在係太撚煩，竟然無啦啦開口唱「Only You」，仲諗住唱到佢信為止，不勝其煩嘅【{1}】於是拎起佢把劍，一野插落佢把口到。「舒服晒。」【邪教魔徒 👤】皮已收。</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>依家加咗【{0} 秒】比你地班垃圾！要加入嘅就快啲撳制啦！\n倒數最後【{1}】。</value>
+    <value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【{0} 秒】你地！未加入嘅朋友要快手啦！手快有手慢冇架啦\n倒數最後【{1}】。</value>
+    <value>依家加咗【{0} 秒】比你地班垃圾！要加入嘅就快啲撳制啦！\n距離佛誕仲有【{1}】。</value>
+    <value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【{0} 秒】你地！未加入嘅朋友要快手啦！手快有手慢冇架啦\n距離佛誕仲有【{1}】。</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>依家減返【{0} 秒】！欲免向隅，撳制從速。\n倒數最後【{1}】。</value>
+    <value>為左懲罰手慢嘅人，本王決定減少大家【{0} 秒】嘅參加時間！要玩就快！\n倒數最後【{1}】。</value>
+    <value>今日時間就唔係好夠，唯有減少【{0} 秒】嘅參加時間，快啲開始，玩多幾鋪！埋黎睇埋黎玩啦！\n倒數最後【{1}】。</value>
+    <value>依家減返【{0} 秒】！欲免向隅，撳制從速。\n距離佛誕仲有【{1}】。</value>
+    <value>為左懲罰手慢嘅人，本王決定減少大家【{0} 秒】嘅參加時間！要玩就快！\n距離佛誕仲有【{1}】。</value>
+    <value>今日時間就唔係好夠，唯有減少【{0} 秒】嘅參加時間，快啲開始，玩多幾鋪！埋黎睇埋黎玩啦！\n距離佛誕仲有【{1}】。</value>
+  </string>
+  <string key="CantExtend">
+    <value>懵丙！得老總理可以改多過一次時間炸！</value>
+    <value>你以為你係邊個啊！時間你改㗎咩？傻瓜！傻瓜！傻瓜！</value>
+    <value>Come on james, 腦囟都未生埋學人改時間？學下人點上位做管理員先啦！</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>想唔想比唔係管理員嘅玩家更改加入時間？\n當前設定：【{0}】\n注意：管理員不受此限！</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>【{0}】所有玩家更改加入時間</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>你想用 /extend 嚟加幾多秒？\n預設為【{0} 秒】\n依家係【{1} 秒】</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>你以後每次用 /extend 就會延長【{0} 秒】！</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>到底尋晚【{1}】屋企有冇野發生呢？你好似都唔多記得……\n你腦海之中突然閃出一個新的名字，【{0}】！</value>
+  </string>
+
+  <!-- Join -->
+  <string key="JoinButton">
+    <value>加入</value>
+    <value>我不入地獄誰入地獄</value>
+    <value>點擊此處展開激情遊戲</value>
+    <value>地方的狼人需要村民</value>
+    <value>千祈唔好撳呢個制</value>
+    <value>真係唔好撳</value>
+    <value>撳啦好嗎</value>
+    <value>插入，狼人EXE，資料傳輸</value>
+    <value>又係時候開鋪新，撳我啦</value>
+    <value>盡情撳我啦</value>
+    <value>你睇我唔到</value>
+    <value>叫你撳就撳啦</value>
+    <value>撳啦，叫你啊</value>
+    <value>仲唔撳想等到幾時啊</value>
+  </string>
+  <string key="NotMember">
+    <value>冇人識你啊！群都未加入就想玩遊戲！問下管理員點解你仲未係【{0}】嘅群組成員啦！</value>
+  </string>
+  <string key="JoinByButton">
+    <value>試下唔好打指令，撳制參加遊戲。</value>
+    <value>今次我地唔好打指令，試下撳制參加遊戲。</value>
+  </string>
+
+  <!-- Secret Vote -->
+  <string key="PlayerVoteCounts">
+    <!-- {0} = New Votes; {1} = Total Votes -->
+    <value>收到 {0} 張新票，依家票箱有 {1} 票。</value>
+    <value>又有 {0} 個人落左口供啦，依家票箱有 {1} 票。</value>
+    <value>有 {0} 個人話已經估到邊個係狼人，依家票箱有 {1} 票。</value>
+    <value>又收到邪惡嘅 {0} 票，依家票箱有 {1} 票。</value>
+    <value>又收到神聖嘅 {0} 票，依家票箱有 {1} 票。</value>
+    <value>又多 {0} 個人落柯打，依家票箱有 {1} 票。</value>
+    <value>連呢 {0} 個白痴都投埋票，依家票箱有 {1} 票。</value>
+    <value>原來呢 {0} 條弱智都識投票，依家票箱有 {1} 票。</value>
+    <value>{0} 個廢老搭旅遊巴行嚟票站投票，依家票箱有 {1} 票。</value>
+    <value>調查顯示，有 {0} 個學生哥人投左又靚又大波嘅二號，依家票箱有 {1} 票。</value>
+    <value>調查顯示，有 {0} 個港女揀左高大威猛嘅一號做佢目標，依家票箱有 {1} 票。</value>
+    <value>調查顯示，有 {0} 個高收入人士覺得揀三號先係正確嘅選擇，依家票箱有 {1} 票。</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>啓用暗票？\n當前設定：{0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>已將暗票設定為：{0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>【{0}】，記住你唔撳制係冇得玩㗎。</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>搵唔到個群組喎，睇下你有冇打錯咗個 Group Link, Group id 或者 Group Username，又或者係你想停嗰個群組度打呢個指令。</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>你唔會再收到嚟自【{0}】嘅開場訊息。</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>喺過去嘅三十秒，呢幾條蛋散加入左遊戲：{0}</value>
   </string>
 </strings>
