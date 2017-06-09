@@ -32,14 +32,16 @@ namespace Werewolf_Control.Helpers
                 var phone = RegHelper.GetRegValue("paraphone");
                 var hash = await client.SendCodeRequestAsync(phone);
                 await Bot.Send($"Registering bot with phone {phone}, hash code {hash}", UpdateHelper.Devs[0]);
-                await Bot.Send("Please reply to this message with your Telegram authorization code", UpdateHelper.Devs[0]);
-                while (AuthCode == null)
+                await Bot.Send("Please put your Telegram authorization code in the registry as a string value \"authcode\"", UpdateHelper.Devs[0]);
+                var authCode = RegHelper.GetRegValue("authcode");
+                while (authCode == "0")
                 {
                     await Task.Delay(500);
+                    authCode = RegHelper.GetRegValue("authcode");
                 }
                 try
                 {
-                    var user = await client.MakeAuthAsync(phone, hash, AuthCode);
+                    var user = await client.MakeAuthAsync(phone, hash, authCode);
                     await Bot.Send($"Signed in as {user.first_name}", UpdateHelper.Devs[0]);
                 }
                 catch(Exception e)
