@@ -56,7 +56,7 @@ namespace Werewolf_Control.Helpers
         {
             if (! await AuthUser()) return null;
             var result = new ChannelInfo();
-            var dialogs = (TLDialogs)await client.GetUserDialogsAsync();
+            var dialogs = (TLDialogsSlice)await client.GetUserDialogsAsync();
             var main = dialogs.chats.lists.Where(c => c.GetType() == typeof(TLChannel))
                         .Cast<TLChannel>()
                         .FirstOrDefault(c => c.title == ("WereWuff - The Game"));
