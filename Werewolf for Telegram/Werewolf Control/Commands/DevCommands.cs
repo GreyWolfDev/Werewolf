@@ -902,6 +902,12 @@ namespace Werewolf_Control
                 {
                     Send(e.InnerExceptions[0].Message + "\n" + e.InnerExceptions[0].StackTrace, u.Message.Chat.Id);
                 }
+                catch (Exception e)
+                {
+                    while (e.InnerException != null)
+                        e = e.InnerException;
+                    Send(e.Message + "\n" + e.StackTrace, u.Message.Chat.Id);
+                }
                 if (channel == null) return;
                 var users = channel.Users.Skip(skip).ToList();
                 Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
