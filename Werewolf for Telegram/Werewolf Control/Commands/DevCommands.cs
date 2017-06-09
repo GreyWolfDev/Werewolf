@@ -427,7 +427,7 @@ namespace Werewolf_Control
             //getting sample data
             using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\sample.txt")))
             {
-                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                var channel = CLI.GetChatInfo("WereWuff - The Game", update.Message.Chat.Id).Result;
                 if (channel == null) return;
                 var users = channel.Users.Skip(1000).ToList();
                 sw.WriteLine("User ID | Chat ID | Result");
@@ -896,7 +896,7 @@ namespace Werewolf_Control
                 ChannelInfo channel = null;
                 try
                 {
-                    channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                    channel = CLI.GetChatInfo("WereWuff - The Game", u.Message.Chat.Id).Result;
                 }
                 catch (AggregateException e)
                 {
