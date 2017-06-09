@@ -893,7 +893,15 @@ namespace Werewolf_Control
                 //now, check the json file
                 var timeStarted = DateTime.Now;
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
-                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                ChannelInfo channel = null;
+                try
+                {
+                    channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                }
+                catch (AggregateException e)
+                {
+                    Send(e.InnerExceptions[0].Message + "\n" + e.InnerExceptions[0].StackTrace, u.Message.Chat.Id);
+                }
                 if (channel == null) return;
                 var users = channel.Users.Skip(skip).ToList();
                 Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
