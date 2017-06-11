@@ -41,11 +41,8 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            if (args.Length == 1) //only send the message if there is no extra args (otherwise it's more likely for other bots)
-            {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
+            Bot.Api.SendTextMessage(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
                                                         parseMode: ParseMode.Markdown);
-            }
         }
 
         [Command(Trigger = "chatid")]

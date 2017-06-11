@@ -109,8 +109,8 @@ namespace Werewolf_Control
                 }
 
                 //player is not in game, they need to join, if they can
-                //game?.AddPlayer(update);
-                game?.ShowJoinButton();
+                game?.AddPlayer(update);
+                //game?.ShowJoinButton();
                 if (game == null)
                     Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
                 return;
