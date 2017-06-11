@@ -1697,7 +1697,7 @@ namespace Telegram.Bot
             var error = "";
             using (var client = new HttpClient())
             {
-                client.Timeout = TimeSpan.FromSeconds(3);
+                client.Timeout = TimeSpan.FromSeconds(10);
                 ApiResponse<T> responseObject = null;
                 try
                 {
