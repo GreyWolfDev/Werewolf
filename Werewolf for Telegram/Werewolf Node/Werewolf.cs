@@ -267,6 +267,7 @@ namespace Werewolf_Node
                 var notifiedPlayers = new List<int>();
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
+                    Telegram.Bot.Types.Message r = null;
                     if (Players == null) //killed extra game
                         return;
 
@@ -276,23 +277,26 @@ namespace Werewolf_Node
                         break;
                     }
 
-                    if (count != Players.Count) //if a player joined, add time
+                    if (count < Players.Count) //if a player joined, add time
                     {
-                        i = Math.Min(i, Math.Max(120, i - 30));
-                        count = Players.Count;
+                        i = Math.Min(i, Math.Max(150, i - 30));
                     }
+                    count = Players.Count;
 
                     if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')));
+                        r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
+                        if (r != null)
+                        {
+                            _joinButtons.Add(r.MessageId);
+                            r = null;
+                        }
                         notifiedPlayers = Players.Select(x => x.Id).ToList();
                         secondsElapsed = 0;
                     }
 
                     try
                     {
-                        Telegram.Bot.Types.Message r = null;
-
                         var importantSeconds = new[] { 10, 30, 60 }; //notify when time is running out
                         foreach (var s in importantSeconds)
                         {
@@ -305,6 +309,7 @@ namespace Werewolf_Node
                                 }
                                 else
                                 {
+                                    CleanupButtons(true);
                                     var str = s == 60 ? GetLocaleString("MinuteLeftToJoin") : GetLocaleString("SecondsLeftToJoin", s.ToString().ToBold());
                                     r = Program.Bot.SendTextMessage(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
                                     break;
@@ -344,7 +349,7 @@ namespace Werewolf_Node
                 IsInitializing = true;
 
                 Thread.Sleep(2000); //wait for last second joins
-                CleanupButtons();
+                CleanupButtons(false);
                 //check we have enough players...
                 if (Players.Count < Settings.MinPlayers)
                 {
@@ -640,7 +645,7 @@ namespace Werewolf_Node
                     return;
                 }
 
-                //SendWithQueue(GetLocaleString("Flee", p.GetName()));
+                SendWithQueue(GetLocaleString("Flee", p.GetName()));
                 if (IsRunning)
                 {
                     //kill the player
@@ -4068,12 +4073,15 @@ namespace Werewolf_Node
         #endregion
 
         #region Helpers
-        public void CleanupButtons()
+        public void CleanupButtons(bool justRemoveButton)
         {
             foreach (var id in _joinButtons)
             {
-                Program.Bot.DeleteMessage(ChatId, id);
-                Thread.Sleep(500);
+                if(!justRemoveButton)
+                    Program.Bot.DeleteMessage(ChatId, id);
+                else
+                    Program.Bot.EditMessageReplyMarkup(ChatId, id, null);
+                Thread.Sleep(100);
             }
         }
         public void FleePlayer(int banid)
@@ -4122,7 +4130,10 @@ namespace Werewolf_Node
             try
             {
                 if (IsJoining) //try to remove the joining button...
+                {
                     Program.Bot.EditMessageReplyMarkup(ChatId, _joinMsgId, null);
+                    CleanupButtons(false);
+                }
             }
             catch
             {
