@@ -23,7 +23,7 @@ namespace Werewolf_Node
     {
         
         internal static SimpleTcpClient Client;
-        internal static Guid ClientId;
+        internal static int ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
         internal static Client Bot;
@@ -99,7 +99,7 @@ namespace Werewolf_Node
 #endif
             Bot = new Client(APIToken, Path.Combine(RootDirectory, "..\\Logs"));
             Me = Bot.GetMe().Result;
-            ClientId = Guid.NewGuid();
+            ClientId = R.Next(100000);
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
             Thread.Sleep(-1);
@@ -152,7 +152,12 @@ namespace Werewolf_Node
                                 }
                                 else
                                 {
-                                    game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title,
+                                    int guid;
+                                    do
+                                        guid = R.Next(100000);
+                                    while (Games.Any(x => x.Guid == guid));
+
+                                    game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title, guid,
                                         gsi.Chaos);
                                     Games.Add(game);
                                     GamesStarted++;
@@ -172,9 +177,10 @@ namespace Werewolf_Node
                             //    break;
                             case "CallbackInfo":
                                 var ci = JsonConvert.DeserializeObject<CallbackInfo>(msg);
-                                game =
-                                    Games.FirstOrDefault(
-                                        x => x.Players?.Any(p => p != null && !p.IsDead && p.TeleUser.Id == ci.Query.From.Id) ?? false);
+                                string[] args = ci.Query.Data.Split('|');
+                                game = Games.FirstOrDefault(x => x.Guid == int.Parse(args[2]));
+                                    //Games.FirstOrDefault(
+                                    //    x => x.Players?.Any(p => p != null && !p.IsDead && p.TeleUser.Id == ci.Query.From.Id) ?? false);
                                 game?.HandleReply(ci.Query);
                                 break;
                             case "PlayerListRequestInfo":

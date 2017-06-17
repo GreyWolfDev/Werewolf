@@ -14,7 +14,7 @@ namespace Werewolf_Control.Models
     {
         public TcpClient TcpClient { get; set; }
         public bool ShuttingDown { get; set; }
-        public Guid ClientId { get; set; }
+        public int ClientId { get; set; }
         public int CurrentGames { get; set; }
         public int TotalGames { get; set; }
         public int CurrentPlayers { get; set; }

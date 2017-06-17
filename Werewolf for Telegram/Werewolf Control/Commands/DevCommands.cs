@@ -173,7 +173,7 @@ namespace Werewolf_Control
             try
             {
                 var nodeid = args[1];
-                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == Guid.Parse(nodeid));
+                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == int.Parse(nodeid));
                 node?.ShutDown();
                 if (node != null)
                     Send($"Node {node.ClientId} will stop accepting games", u.Message.Chat.Id);
@@ -194,7 +194,7 @@ namespace Werewolf_Control
             try
             {
                 var nodeid = args[1];
-                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == Guid.Parse(nodeid));
+                var node = Bot.Nodes.FirstOrDefault(x => x.ClientId == int.Parse(nodeid));
                 node?.ShutDown(true);
                 if (node != null)
                     Send($"Node {node.ClientId} will shut down", u.Message.Chat.Id);

@@ -226,19 +226,22 @@ namespace Werewolf_Control
 
                     //okay, they are joining a game.
 
-                    var nodeid = args[1].Substring(0, 32);
-                    var gameid = args[1].Substring(32);
+                    string[] argsSplit = args[1].Split('&');
+                    
+                    var nodeid = argsSplit[0];
+                    var gameid = argsSplit[1];
 
                     //try to get the guid of the game they want to join
-                    Guid g, n;
-                    if (!(Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g)))
+                    int n,g;
+                    long gid = 0;
+                    if (!(int.TryParse(nodeid, out n) && int.TryParse(gameid, out g)))
                         return;
 
                     //first get the node where to search for the game
                     Models.Node node = null;
                     for (var i = 0; i < 3; i++)
                     {
-                        node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
+                        node = Bot.Nodes.FirstOrDefault(x => x.ClientId == n);
                         if (node != null) break;
                     }
                     if (node == null)
@@ -252,7 +255,7 @@ namespace Werewolf_Control
                     Models.GameInfo game = null;
                     for (var i = 0; i < 5; i++)
                     {
-                        game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
+                        game = node.Games.FirstOrDefault(x => x.Guid == g);
                         if (game != null) break;
                     }
                     if (game == null)
@@ -270,6 +273,22 @@ namespace Werewolf_Control
                         Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
                         return;
                     }
+
+                    //if (game?.Users.Contains(u.Message.From.Id) ?? false)
+                    //{
+                    //    if (game.GroupId != gid)
+                    //    {
+                    //        //player is already in a game (in another group), and alive
+                    //        var grp = db.Groups.FirstOrDefault(x => x.GroupId == gid);
+                    //        Send(GetLocaleString("AlreadyInGame", grp?.Language ?? "English", game.ChatGroup.ToBold()), gid);
+                    //        return;
+                    //    }
+                    //    else
+                    //    {
+                    //        //do nothing, player is in the game, in that group, they are just being spammy
+                    //        return;
+                    //    }
+                    //}
 
                     game.AddPlayer(u);
                     return;

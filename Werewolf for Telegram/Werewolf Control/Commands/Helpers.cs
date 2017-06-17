@@ -89,34 +89,34 @@ namespace Werewolf_Control
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
-            var node = GetPlayerNode(update.Message.From.Id);
+            //var node = GetPlayerNode(update.Message.From.Id);
             var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-            if (game != null || node != null)
+            if (game != null/* && node != null*/)
             {
                 //try grabbing the game again...
-                if (game == null)
-                    game = node.Games.FirstOrDefault(x => x.Users.Contains(update.Message.From.Id));
-                if (game?.Users.Contains(update.Message.From.Id) ?? false)
-                {
-                    if (game.GroupId != update.Message.Chat.Id)
-                    {
-                        //player is already in a game, and alive
-                        Send(
-                            GetLocaleString("AlreadyInGame", grp?.Language ?? "English",
-                                game.ChatGroup.ToBold()), update.Message.Chat.Id);
-                        return;
-                    }
-                }
+                //if (game == null)
+                //    game = node.Games.FirstOrDefault(x => x.Users.Contains(update.Message.From.Id));
+                //if (game?.Users.Contains(update.Message.From.Id) ?? false)
+                //{
+                //    if (game.GroupId != update.Message.Chat.Id)
+                //    {
+                //        //player is already in a game, and alive
+                //        Send(
+                //            GetLocaleString("AlreadyInGame", grp?.Language ?? "English",
+                //                game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                //        return;
+                //    }
+                //}
 
                 //player is not in game, they need to join, if they can
                 game?.AddPlayer(update);
                 //game?.ShowJoinButton();
                 if (game == null)
-                    Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
+                    Program.Log($"{update.Message.From.FirstName} tried to join a game on node {game.NodeId}, but game object was null", true);
                 return;
             }
             //no game found, start one
-            node = Bot.GetBestAvailableNode();
+            var node = Bot.GetBestAvailableNode();
             if (node != null)
             {
                 node.StartGame(update, chaos);

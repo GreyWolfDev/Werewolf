@@ -239,12 +239,20 @@ namespace Werewolf_Control.Helpers
                                 //validate the client
                                 if (cri.Secret == Settings.TcpSecret)
                                 {
-                                    //we can register
                                     var n = new Node {ClientId = cri.ClientId, TcpClient = message.TcpClient};
-                                    Bot.Nodes.Add(n);
-                                    Bot.NodeConnected(n);
-                                    //n.Broadcast("Registered");
-                                    Program.Log($"Client registered: {cri.ClientId}");
+                                    var idExists = Bot.Nodes.FirstOrDefault(x => x.ClientId == cri.ClientId);
+                                    if(idExists == null)
+                                    {
+                                        //we can register
+                                        Bot.Nodes.Add(n);
+                                        Bot.NodeConnected(n);
+                                        //n.Broadcast("Registered");
+                                        Program.Log($"Client registered: {cri.ClientId}");
+                                    }
+                                    else
+                                    {
+                                        n.ShutDown(true);
+                                    }
                                 }
                                 break;
                             case "NodeInfo":

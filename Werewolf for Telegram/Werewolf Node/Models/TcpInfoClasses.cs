@@ -7,7 +7,7 @@ namespace Werewolf_Node.Models
     public class NodeInfo
     {
         public string JType { get; set; } = "NodeInfo";
-        public Guid ClientId { get; set; }
+        public int ClientId { get; set; }
         public int CurrentGames { get; set; }
         public int TotalGames { get; set; }
         public int CurrentPlayers { get; set; }
@@ -25,7 +25,7 @@ namespace Werewolf_Node.Models
     public class ClientRegistrationInfo
     {
         public string JType { get; set; } = "ClientRegistrationInfo";
-        public Guid ClientId { get; set; }
+        public int ClientId { get; set; }
         public string Secret => Environment.MachineName.GetHashCode().ToString();
     }
 
