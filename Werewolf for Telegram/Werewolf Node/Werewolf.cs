@@ -284,7 +284,7 @@ namespace Werewolf_Node
 
                     if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')));
+                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + $" (ID: {p.TeleUser.Id}), ").TrimEnd(',', ' ')));
                         notifiedPlayers = Players.Select(x => x.Id).ToList();
                         secondsElapsed = 0;
                     }
@@ -3627,7 +3627,8 @@ namespace Werewolf_Node
 
             if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //checks for cult and SK are actually useless...
                 //no wolf, no cult, no SK... VG wins!
-                return DoGameEnd(ITeam.Village);
+                if (!checkbitten || alivePlayers.All(x => !x.Bitten)) //unless bitten is about to turn into a wolf
+                    return DoGameEnd(ITeam.Village);
 
 
             return false;
