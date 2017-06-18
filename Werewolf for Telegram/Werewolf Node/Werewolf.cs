@@ -3639,7 +3639,8 @@ namespace Werewolf_Node
 
             if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller)) //checks for cult and SK are actually useless...
                 //no wolf, no cult, no SK... VG wins!
-                return DoGameEnd(ITeam.Village);
+                if (!checkbitten || alivePlayers.All(x => !x.Bitten)) //unless bitten is about to turn into a wolf
+                    return DoGameEnd(ITeam.Village);
 
 
             return false;
