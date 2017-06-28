@@ -129,7 +129,7 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
 
-                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton")) { Url = $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}&{Guid}" } });
+                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton")) { Url = $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}" } });
                     AddPlayer(u);
                 }
 
