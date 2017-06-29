@@ -53,7 +53,6 @@ namespace Database
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<GroupPoint> GroupPoints { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {
