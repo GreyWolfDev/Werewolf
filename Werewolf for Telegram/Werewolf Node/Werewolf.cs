@@ -3493,10 +3493,17 @@ namespace Werewolf_Node
             {
                 if (alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
                 {
-                    // do nothing, gunner is alive
-                    foreach (var p in alivePlayers.Where(x => x.Team == ITeam.Village))
-                        AddAchievement(p, Achievements.GunnerSaves);
-                    return false;
+                    var wolves = alivePlayers.Where(x => WolfRoles.Contains(x.PlayerRole));
+                    var others = alivePlayers.Where(x => !WolfRoles.Contains(x.PlayerRole));
+                    // gunner makes the difference only if wolves are exactly as many as the others, or two wolves are in love and the gunner can kill two of them at once
+                    var gunnermakesthedifference = (wolves.Count() == others.Count()) || (wolves.Count() == others.Count() + 1 && wolves.Count(x => x.InLove) == 2);
+                    if (gunnermakesthedifference)
+                    {
+                        // do nothing, gunner can still make VGs win
+                        foreach (var p in alivePlayers.Where(x => x.Team == ITeam.Village))
+                            AddAchievement(p, Achievements.GunnerSaves);
+                        return false;
+                    }
                 }
                 return DoGameEnd(ITeam.Wolf);
             }
