@@ -55,6 +55,7 @@ namespace Database
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<GroupRanking> GroupRanking { get; set; }
         public virtual DbSet<RefreshDate> RefreshDate { get; set; }
+        public virtual DbSet<v_GroupRanking> v_GroupRanking { get; set; }
     
         public virtual ObjectResult<getPlayTime_Result> getPlayTime(Nullable<int> playerCount)
         {

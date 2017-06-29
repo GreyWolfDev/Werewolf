@@ -796,7 +796,11 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         case "groups":
+#if RELEASE
                             var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
+#else
+                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
+#endif
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice));
                             if (groups.Count() > 5)
                             {
@@ -804,13 +808,19 @@ namespace Werewolf_Control.Handler
                                 var reply = groups.Take(5).Aggregate("",
                                     (current, g) =>
                                         current +
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
+#if RELEASE
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n" +
+#endif
+                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                                 Thread.Sleep(500);
                                 reply = groups.Skip(5).Aggregate("",
                                     (current, g) =>
                                         current +
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
+#if RELEASE
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n" +
+#endif
+                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
                             else
@@ -818,7 +828,10 @@ namespace Werewolf_Control.Handler
                                 var reply = groups.Aggregate("",
                                     (current, g) =>
                                         current +
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
+#if RELEASE
+                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n" +
+#endif
+                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
                             break;
