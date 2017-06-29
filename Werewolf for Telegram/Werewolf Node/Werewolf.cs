@@ -3417,7 +3417,12 @@ namespace Werewolf_Node
                 case 2:
                     //check for lovers
                     if (alivePlayers.All(x => x.InLove))
-                        return DoGameEnd(ITeam.Lovers);
+                    {
+                        var lover1 = alivePlayers.FirstOrDefault(x => x.InLove);
+                        var lover2 = alivePlayers.FirstOrDefault(x => x.Id == lover1.LoverId);
+                        if (lover1.Team == lover2.Team) return DoGameEnd(lover1.Team); //if they're on the same team, let the others win too!
+                        else return DoGameEnd(ITeam.Lovers);
+                    }
                     //check for Hunter + SK / Wolf
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
                     {
