@@ -214,6 +214,18 @@ warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary k
           <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="PlayerId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="GroupRanking">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="Language" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="Language" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="PlayersCount" Type="int" />
+          <Property Name="MinutesPlayed" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LastRefresh" Type="date" />
+          <Property Name="Ranking" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
         <EntityType Name="GroupStats">
           <Key>
             <PropertyRef Name="Id" />
@@ -284,6 +296,13 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="MostCommonRolePercent" Type="int" Nullable="false" />
           <Property Name="GamesSurvived" Type="int" Nullable="false" />
           <Property Name="LastRun" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RefreshDate">
+          <Key>
+            <PropertyRef Name="Lock" />
+          </Key>
+          <Property Name="Lock" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Date" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -595,10 +614,12 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="GamePlayer" EntityType="Self.GamePlayer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GlobalStats" EntityType="Self.GlobalStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupRanking" EntityType="Self.GroupRanking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GroupStats" EntityType="Self.GroupStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KillMethod" EntityType="Self.KillMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlayerStats" EntityType="Self.PlayerStats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RefreshDate" EntityType="Self.RefreshDate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GroupAdmin" EntityType="Self.GroupAdmin" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [GroupAdmin].[GroupId] AS [GroupId], 
@@ -1085,6 +1106,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <Parameter Name="newTGId" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="C__MigrationHistory" EntityType="werewolfModel.C__MigrationHistory" />
+          <EntitySet Name="GroupRanking" EntityType="werewolfModel.GroupRanking" />
+          <EntitySet Name="RefreshDate" EntityType="werewolfModel.RefreshDate" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1415,6 +1438,25 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GroupRanking">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="Language" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PlayersCount" Type="Int32" />
+          <Property Name="MinutesPlayed" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LastRefresh" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="RefreshDate">
+          <Key>
+            <PropertyRef Name="Lock" />
+          </Key>
+          <Property Name="Lock" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1915,6 +1957,26 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="GroupRanking">
+            <EntityTypeMapping TypeName="werewolfModel.GroupRanking">
+              <MappingFragment StoreEntitySet="GroupRanking">
+                <ScalarProperty Name="LastRefresh" ColumnName="LastRefresh" />
+                <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+                <ScalarProperty Name="MinutesPlayed" ColumnName="MinutesPlayed" />
+                <ScalarProperty Name="PlayersCount" ColumnName="PlayersCount" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RefreshDate">
+            <EntityTypeMapping TypeName="werewolfModel.RefreshDate">
+              <MappingFragment StoreEntitySet="RefreshDate">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Lock" ColumnName="Lock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1929,7 +1991,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

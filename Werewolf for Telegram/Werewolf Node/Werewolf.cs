@@ -41,6 +41,7 @@ namespace Werewolf_Node
         public Group DbGroup;
         private bool _playerListChanged = true, _silverSpread;
         private DateTime _timeStarted;
+        private Nullable<TimeSpan> _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
         private int _joinMsgId;
@@ -125,6 +126,7 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
 
+                    
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Start Me") { Url = "telegram.me/" + Program.Me.Username } });
                     //AddPlayer(u);
                 }
@@ -3669,18 +3671,20 @@ namespace Werewolf_Node
                 }
                 if (game.TimeStarted.HasValue)
                 {
-                    var endGame = game.TimeEnded.Value - game.TimeStarted.Value;
-                    msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
+                    _timePlayed = game.TimeEnded.Value - game.TimeStarted.Value;
+                    msg += "\n" + GetLocaleString("EndTime", _timePlayed.Value.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
                 //Program.Bot.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
+                UpdateGroupRanking();
                 Program.Analytics.TrackAsync("gameend", new { winner = team.ToString(), groupid = ChatId, mode = Chaos ? "Chaos" : "Normal", size = Players.Count() }, "0");
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
             }
         }
+        
 
         #endregion
 
@@ -4464,6 +4468,46 @@ namespace Werewolf_Node
                         Send(msg, p.TelegramId);
                     }
                 }
+            }
+        }
+
+        private void UpdateGroupRanking()
+        {
+            using (var db = new WWContext())
+            {
+                var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
+                if (grpranking == null)
+                {
+                    grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = DateTime.Now.Date };
+                    db.GroupRanking.Add(grpranking);
+                }
+
+                var refreshdate = db.RefreshDate.FirstOrDefault().Date;
+                if (DateTime.Now.Date - refreshdate >= TimeSpan.FromDays(7))
+                {
+                    refreshdate = DateTime.Now.Date;
+                    db.RefreshDate.FirstOrDefault().Date = refreshdate;
+                }
+
+                if (grpranking.LastRefresh < refreshdate)
+                {
+                    var daysspan = (refreshdate - grpranking.LastRefresh).Value.Days; //well really this should be 7
+                    var avgplayersperday = (decimal)grpranking.PlayersCount.Value / daysspan;
+                    var playerfactor = -(decimal)0.05 * (avgplayersperday * avgplayersperday) + (decimal)2.5 * avgplayersperday - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
+                    var timefactor = grpranking.MinutesPlayed / (daysspan * 1440); //average minutes played per day / minutes in a day
+                    grpranking.Ranking = playerfactor + avgplayersperday * timefactor;
+                    grpranking.PlayersCount = 0;
+                    grpranking.MinutesPlayed = 0;
+                    grpranking.LastRefresh = refreshdate;
+                }
+                
+                if (_timePlayed.HasValue)
+                {
+                    grpranking.PlayersCount += Players.Count();
+                    grpranking.MinutesPlayed += (decimal)_timePlayed.Value.TotalMinutes;
+                }
+                
+                db.SaveChanges();
             }
         }
 
