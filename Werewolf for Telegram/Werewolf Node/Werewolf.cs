@@ -18,7 +18,6 @@ using Werewolf_Node.Models;
 
 namespace Werewolf_Node
 {
-
     class Werewolf : IDisposable
     {
         public long ChatId;
