@@ -226,7 +226,7 @@ namespace Werewolf_Control
 
                     //okay, they are joining a game.
 
-                    string[] argsSplit = args[1].Split('&');
+                    string[] argsSplit = args[1].Split('_');
                     
                     var nodeid = argsSplit[0];
                     var gameid = argsSplit[1];
