@@ -1648,24 +1648,33 @@ namespace Werewolf_Control.Handler
 
         internal static void HandleInlineQuery(InlineQuery q)
         {
-
-            var commands = new InlineCommand[]
+            var node = Commands.GetPlayerNode(q.From.Id);
+            List<InlineCommand> commands = new List<InlineCommand>();
+            if (node != null)
             {
-                new StatsInlineCommand(q.From), new KillsInlineCommand(q.From), new KilledByInlineCommand(q.From), new RolesInlineCommand(q.From), new TypesOfDeathInlineCommand(q.From)
-            };
-
-            List<InlineCommand> choices;
-            if (String.IsNullOrWhiteSpace(q.Query))
-            {
-                //show all commands available
-                choices = commands.ToList();
+                commands.Add(new InlineCommand("Proibido", "Não é permitido usar stats inline enquanto você estiver em um jogo!", "Sou desobediente e estou tentando usar stats inline enquanto estou jogando!"));
             }
             else
             {
-                //let's figure out what they wanted
-                var com = q.Query;
-                choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
+                commands.Add(new StatsInlineCommand(q));
+                commands.Add(new KillsInlineCommand(q));
+                commands.Add(new KilledByInlineCommand(q));
+                commands.Add(new RolesInlineCommand(q));
+                commands.Add(new TypesOfDeathInlineCommand(q));
             }
+
+            List<InlineCommand> choices;
+            //if (String.IsNullOrWhiteSpace(q.Query))
+            //{
+                //show all commands available
+                choices = commands.ToList();
+            //}
+            //else
+            //{
+            //    //let's figure out what they wanted
+            //    var com = q.Query;
+            //    choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
+            //}
             Program.Analytics.TrackAsync("inline", q, q.From.Id.ToString());
             Bot.Api.AnswerInlineQuery(q.Id, choices.Select(c => new InlineQueryResultArticle()
             {

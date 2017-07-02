@@ -216,7 +216,7 @@ namespace Werewolf_Control
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }
 
-        private static Node GetPlayerNode(int id)
+        internal static Node GetPlayerNode(int id)
         {
             var node = Bot.Nodes.ToList().FirstOrDefault(n => n.Games.Any(g => g.Users.Contains(id)));
             if (node == null)

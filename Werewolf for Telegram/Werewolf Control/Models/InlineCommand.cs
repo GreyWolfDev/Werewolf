@@ -15,10 +15,11 @@ namespace Werewolf_Control.Models
         public string Description { get; set; }
         public string Content { get; set; }
 
-        public InlineCommand(string command, string desc)
+        public InlineCommand(string command, string desc, string content)
         {
             Command = command;
             Description = desc;
+            Content = content;
         }
 
         public InlineCommand()
@@ -29,10 +30,10 @@ namespace Werewolf_Control.Models
 
     public class StatsInlineCommand : InlineCommand
     {
-        public StatsInlineCommand(User u)
+        public StatsInlineCommand(InlineQuery q)
         {
-
-            Description = "Obtem estatísticas pessoais";
+            User u = q.From;
+            Description = "Obtem estatísticas pessoais\n(Dica: Experimente digitar um @username para consultar seus stats!)";
             Command = "stats";
             try
             {
@@ -40,27 +41,43 @@ namespace Werewolf_Control.Models
                 {
                     Content = "";
                     //find the player
-                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
-                    if (p == null)
+                    Player p;
+                    if (String.IsNullOrWhiteSpace(q.Query))
                     {
-                        //remove the command
-                        Command = "";
-                        return;
+                        p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                        if (p == null)
+                        {
+                            //remove the command
+                            Command = "";
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
+                        if (p == null)
+                        {
+                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            return;
+                        }
+                        Description = $"Obtem estatísticas do jogador {p.Name}";
+                        Command += $" ({p.Name})";
                     }
 
                     var gamesPlayed = p.GamePlayers.Count();
                     var won = p.GamePlayers.Count(x => x.Won);
                     var lost = gamesPlayed - won;
                     var survived = p.GamePlayers.Count(x => x.Survived);
-                    var roleInfo = db.PlayerRoles(u.Id).ToList();
-                    var killed = db.PlayerMostKilled(u.Id).FirstOrDefault();
-                    var killedby = db.PlayerMostKilledBy(u.Id).FirstOrDefault();
+                    var roleInfo = db.PlayerRoles(p.TelegramId).ToList();
+                    var killed = db.PlayerMostKilled(p.TelegramId).FirstOrDefault();
+                    var killedby = db.PlayerMostKilledBy(p.TelegramId).FirstOrDefault();
                     var ach = (Achievements)(p.Achievements ?? 0);
                     var count = ach.GetUniqueFlags().Count();
 
-                    Content = String.IsNullOrWhiteSpace(u.Username)
-                        ? $"{u.FirstName.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}"
-                        : $"<a href=\"https://telegram.me/{u.Username}\">{u.FirstName.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}</a>";
+                    Content = String.IsNullOrWhiteSpace(p.UserName)
+                        ? $"{p.Name.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}"
+                        : $"<a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}</a>";
                     Content += $"\n{count.Pad()} {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n" +
                                $"{won.Pad()} {Commands.GetLocaleString("GamesWon", p.Language)} ({won * 100 / gamesPlayed}%)\n" +
                                $"{lost.Pad()} {Commands.GetLocaleString("GamesLost", p.Language)} ({lost * 100 / gamesPlayed}%)\n" +
@@ -79,9 +96,9 @@ namespace Werewolf_Control.Models
 
     public class KillsInlineCommand : InlineCommand
     {
-        public KillsInlineCommand(User u)
+        public KillsInlineCommand(InlineQuery q)
         {
-            Description = "Obtem os jogadores que você mais matou";
+            User u = q.From;
             Command = "kills";
             try
             {
@@ -89,16 +106,32 @@ namespace Werewolf_Control.Models
                 {
                     Content = "";
                     //find the player
-                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
-                    if (p == null)
+                    Player p;
+                    if (String.IsNullOrWhiteSpace(q.Query))
                     {
-                        //remove the command
-                        Command = "";
-                        return;
+                        p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                        if (p == null)
+                        {
+                            //remove the command
+                            Command = "";
+                            return;
+                        }
                     }
+                    else
+                    {
+                        p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
+                        if (p == null)
+                        {
+                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            return;
+                        }
+                        Command += $" ({p.Name})";
+                    }
+                    Description = $"Obtem os jogadores que {p.Name} mais matou";
 
-                    var killed = db.PlayerMostKilled(u.Id).AsEnumerable();
-                    Content += $"\nJogadores que eu mais matei:\n";
+                    var killed = db.PlayerMostKilled(p.TelegramId).AsEnumerable();
+                    Content += $"\nJogadores que <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> mais matou:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -114,9 +147,9 @@ namespace Werewolf_Control.Models
 
     public class KilledByInlineCommand : InlineCommand
     {
-        public KilledByInlineCommand(User u)
+        public KilledByInlineCommand(InlineQuery q)
         {
-            Description = "Obtem os jogadores que mais te mataram";
+            User u = q.From;
             Command = "killedby";
             try
             {
@@ -124,16 +157,32 @@ namespace Werewolf_Control.Models
                 {
                     Content = "";
                     //find the player
-                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
-                    if (p == null)
+                    Player p;
+                    if (String.IsNullOrWhiteSpace(q.Query))
                     {
-                        //remove the command
-                        Command = "";
-                        return;
+                        p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                        if (p == null)
+                        {
+                            //remove the command
+                            Command = "";
+                            return;
+                        }
                     }
+                    else
+                    {
+                        p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
+                        if (p == null)
+                        {
+                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            return;
+                        }
+                        Command += $" ({p.Name})";
+                    }
+                    Description = $"Obtem os jogadores que mais mataram {p.Name}";
 
-                    var killed = db.PlayerMostKilledBy(u.Id).AsEnumerable();
-                    Content += $"\nJogadores que mais me mataram:\n";
+                    var killed = db.PlayerMostKilledBy(p.TelegramId).AsEnumerable();
+                    Content += $"\nJogadores que mais mataram <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a>:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -149,9 +198,9 @@ namespace Werewolf_Control.Models
 
     public class RolesInlineCommand : InlineCommand
     {
-        public RolesInlineCommand(User u)
+        public RolesInlineCommand(InlineQuery q)
         {
-            Description = "Obtem os papéis que você mais jogou";
+            User u = q.From;
             Command = "roles";
             try
             {
@@ -159,17 +208,33 @@ namespace Werewolf_Control.Models
                 {
                     Content = "";
                     //find the player
-                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
-                    if (p == null)
+                    Player p;
+                    if (String.IsNullOrWhiteSpace(q.Query))
                     {
-                        //remove the command
-                        Command = "";
-                        return;
+                        p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                        if (p == null)
+                        {
+                            //remove the command
+                            Command = "";
+                            return;
+                        }
                     }
+                    else
+                    {
+                        p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
+                        if (p == null)
+                        {
+                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            return;
+                        }
+                        Command += $" ({p.Name})";
+                    }
+                    Description = $"Obtem os papéis que {p.Name} mais jogou";
 
-                    var totalRoles = db.PlayerRoles(u.Id).Sum(x => x.times);
-                    var roleInfo = db.PlayerRoles(u.Id).ToList().OrderByDescending(x => x.times).Take(5);
-                    Content += $"\nPapéis que eu mais joguei:\n";
+                    var totalRoles = db.PlayerRoles(p.TelegramId).Sum(x => x.times);
+                    var roleInfo = db.PlayerRoles(p.TelegramId).ToList().OrderByDescending(x => x.times).Take(5);
+                    Content += $"\nPapéis que <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> mais jogou:\n";
                     foreach (var a in roleInfo)
                     {
                         var role = Commands.GetLocaleString(a.role, p.Language);
@@ -186,9 +251,9 @@ namespace Werewolf_Control.Models
 
     public class TypesOfDeathInlineCommand : InlineCommand
     {
-        public TypesOfDeathInlineCommand(User u)
+        public TypesOfDeathInlineCommand(InlineQuery q)
         {
-            Description = "Obtem os tipos de morte que você mais teve";
+            User u = q.From;
             Command = "deaths";
             try
             {
@@ -196,13 +261,30 @@ namespace Werewolf_Control.Models
                 {
                     Content = "";
                     //find the player
-                    var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
-                    if (p == null)
+                    Player p;
+                    if (String.IsNullOrWhiteSpace(q.Query))
                     {
-                        //remove the command
-                        Command = "";
-                        return;
+                        p = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                        if (p == null)
+                        {
+                            //remove the command
+                            Command = "";
+                            return;
+                        }
                     }
+                    else
+                    {
+                        p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
+                        if (p == null)
+                        {
+                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            return;
+                        }
+                        Command += $" ({p.Name})";
+                    }
+                    Description = $"Obtem os tipos de morte que {p.Name} mais teve";
+
                     var deaths = (from gk in db.GameKills
                                   join pla in db.Players on gk.VictimId equals pla.Id
                                   where pla.TelegramId == p.TelegramId
@@ -211,7 +293,7 @@ namespace Werewolf_Control.Models
                     var totalDeaths = deaths.Sum(x => x.Count());
                     var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
 
-                    Content += $"\nTipos de mortes que eu mais tive:\n";
+                    Content += $"\nTipos de mortes que <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> mais teve:\n";
                     foreach (var a in deathInfo)
                     {
                         var killMethod = Enum.GetName(typeof(KillMthd), a.Key);

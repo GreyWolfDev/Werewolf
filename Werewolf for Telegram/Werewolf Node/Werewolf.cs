@@ -53,7 +53,7 @@ namespace Werewolf_Node
         public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch;
         public string ShowRolesEnd;
         private string _deeplink;
-        
+
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -125,8 +125,6 @@ namespace Werewolf_Node
                         ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
                     }
 
-
-
                     LoadLanguage(DbGroup.Language);
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton")) { Url = $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}&{Guid}" } });
@@ -143,12 +141,12 @@ namespace Werewolf_Node
                 try
                 {
                     _joinMsgId = Program.Bot.SendDocument(chatid, GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-}
+                }
                 catch (Exception)
                 {
                     _joinMsgId = Program.Bot.SendTextMessage(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
-                
+
                 //let's keep this on for a while, then we will delete it
                 //SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
                 SendPlayerList(true);
@@ -305,7 +303,7 @@ namespace Werewolf_Node
                         {
                             if (i == Settings.GameJoinTime - s)
                             {
-                                if (Players.Count < Settings.MinPlayers && minutesTolerance > 0)
+                                if (Players.Count > 0 && Players.Count < Settings.MinPlayers && minutesTolerance > 0)
                                 {
                                     i -= 60;
                                     minutesTolerance--;
@@ -584,7 +582,7 @@ namespace Werewolf_Node
 #if RELEASE
                     if (user.HasPM != true)		
 #elif RELEASE2
-                    if (user.HasPM2 != true)		
+                    if (user.HasPM2 != true)
 #elif DEBUG
                     if (user.HasDebugPM != true)
 #endif
@@ -927,7 +925,7 @@ namespace Werewolf_Node
 #if (DEBUG)
             Send(text, id);
 #else
-           if (image != null)
+            if (image != null)
             {
                 Program.Bot.SendDocument(id, image, text);
             }
@@ -4085,7 +4083,7 @@ namespace Werewolf_Node
         {
             foreach (var id in _joinButtons)
             {
-                if(!justRemoveButton)
+                if (!justRemoveButton)
                     Program.Bot.DeleteMessage(ChatId, id);
                 else
                     Program.Bot.EditMessageReplyMarkup(ChatId, id, null);

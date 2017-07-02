@@ -175,8 +175,8 @@ namespace Werewolf_Control
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
 
             var curLangFileName = GetLanguage(update.Message.From.Id);
-            var curLang = langs.First(x => x.FileName == curLangFileName);
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang.Base),
+            var curLang = langs.FirstOrDefault(x => x.FileName == curLangFileName);
+            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang?.Base),
                 replyMarkup: menu);
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
