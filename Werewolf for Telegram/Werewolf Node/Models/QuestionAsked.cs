@@ -25,6 +25,7 @@
         Lover2,
         Mayor,
         SpreadSilver,
+        ConfuseLynching,
         Kill2
     }
 }

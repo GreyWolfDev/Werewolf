@@ -74,7 +74,7 @@ namespace Werewolf_Node
 
         public static int
 #if DEBUG
-            MinPlayers = 1,
+            MinPlayers = 3,
 
 #else
             MinPlayers = 5,
@@ -121,8 +121,9 @@ namespace Werewolf_Node
             AlphaWolfConversionChance = 20,
             SorcererConversionChance = 40,
             BlacksmithConversionChance = 75,
+            PsychicMageConversionChance = 80,
 #else
-             PlayerCountSeerCursed = 6,
+            PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
             PlayerCountBeholderChance = 8,
             PlayerCountSecondWolf = 9,
@@ -159,6 +160,7 @@ namespace Werewolf_Node
             AlphaWolfConversionChance = 100,
             SorcererConversionChance = 40,
             BlacksmithConversionChance = 75,
+            PsychicMageConversionChance = 80,
 #endif
 
             GameJoinTime = 180,

@@ -39,7 +39,7 @@ namespace Werewolf_Node
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-        private bool _playerListChanged = true, _silverSpread;
+        private bool _playerListChanged = true, _silverSpread, _lynchConfused;
         private DateTime _timeStarted;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
@@ -723,6 +723,20 @@ namespace Werewolf_Node
                     return;
                 }
 
+                if (player.PlayerRole == IRole.PsychicMage && player.CurrentQuestion.QType == QuestionType.ConfuseLynching)
+                {
+                    if (choice == "yes")
+                    {
+                        player.HasUsedAbility = true;
+                        _lynchConfused = true;
+                    }
+
+                    ReplyToCallback(query,
+                        GetLocaleString("ChoiceAccepted"));
+                    player.CurrentQuestion = null;
+                    return;
+                }
+
                 if (player.CurrentQuestion == null)
                 {
                     return;
@@ -767,6 +781,15 @@ namespace Werewolf_Node
                     }
                 }
 
+                if (player.CurrentQuestion.QType == QuestionType.Lynch)
+                {
+                    if (_lynchConfused && player.PlayerRole != IRole.PsychicMage)
+                    {
+                        //pick a random target
+                        var random = ChooseRandomPlayerId(player, false);
+                        player.Choice = random;
+                    }
+                }
 
                 var target = Players.FirstOrDefault(x => player.CurrentQuestion.QType == QuestionType.Kill2 ? x.Id == player.Choice2 : x.Id == player.Choice);
                 if (target == null)
@@ -871,7 +894,6 @@ namespace Werewolf_Node
 
                 if (player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
-
                     if (!DbGroup.HasFlag(GroupConfig.EnableSecretLynch))
                     {
                         var msg = GetLocaleString("PlayerVotedLynch", player.GetName(), target.GetName());
@@ -1244,7 +1266,7 @@ namespace Werewolf_Node
 
             //add a couple more masons
             rolesToAssign.Add(IRole.Mason);
-            rolesToAssign.Add(IRole.Mason);
+            //rolesToAssign.Add(IRole.Mason);
             //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
             //same as it was before....
 
@@ -1349,7 +1371,7 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                //rolesToAssign[0] = IRole.WolfCub;
+                rolesToAssign[0] = IRole.PsychicMage;
                 //rolesToAssign[1] = IRole.WolfCub;
                 //rolesToAssign[2] = IRole.AlphaWolf;
                 //rolesToAssign[3] = IRole.WolfCub;
@@ -1457,6 +1479,11 @@ namespace Werewolf_Node
                         p.HasNightAction = true;
                         p.HasDayAction = false;
                         p.Team = ITeam.SerialKiller;
+                        break;
+                    case IRole.PsychicMage:
+                        p.Team = ITeam.Neutral;
+                        p.HasNightAction = false;
+                        p.HasDayAction = true;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -1930,7 +1957,6 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
                             break;
                         case IRole.GuardianAngel:
-
                             p.Team = ITeam.Village;
                             p.HasNightAction = true;
                             p.HasDayAction = false;
@@ -2013,6 +2039,12 @@ namespace Werewolf_Node
                             p.HasDayAction = false;
                             var choices = new[] { new[] { new InlineKeyboardButton(GetLocaleString("Reveal"), $"vote|{_deeplink}|reveal") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
+                            break;
+                        case IRole.PsychicMage:
+                            p.HasUsedAbility = false;
+                            p.Team = ITeam.Neutral;
+                            p.HasNightAction = false;
+                            p.HasDayAction = true;
                             break;
                         default:
                             throw new ArgumentOutOfRangeException();
@@ -2116,6 +2148,30 @@ namespace Werewolf_Node
                 {
                     try
                     {
+                        //if lynchConfused no one stays without vote
+                        if (_lynchConfused)
+                        {
+                            //pick a random target
+                            var random = ChooseRandomPlayerId(p, false);
+                            p.Choice = random;
+                            var target = Players.FirstOrDefault(x => x.Id == random);
+                            if (!DbGroup.HasFlag(GroupConfig.EnableSecretLynch))
+                            {
+                                var msg = GetLocaleString("PlayerVotedLynch", p.GetName(), target.GetName());
+                                SendWithQueue(msg);
+                            }
+                            else
+                            {
+                                var msg = GetLocaleString("PlayerVoteCounts", Players.Count(x => !x.IsDead && x.Choice != 0), Players.Count(x => !x.IsDead));
+                                SendWithQueue(msg);
+                            }
+                            if (p.CurrentQuestion.MessageId != 0)
+                            {
+                                Program.MessagesSent++;
+                                Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, 
+                                    GetLocaleString("ChoiceAccepted") + " - " + target.GetName(true));
+                            }
+                        }
                         if (p.CurrentQuestion.MessageId != 0)
                         {
                             Program.MessagesSent++;
@@ -2244,6 +2300,22 @@ namespace Werewolf_Node
                                 HunterFinalShot(lynched, KillMthd.Lynch);
                                 break;
                         }
+                        var psychicMage = Players.First(p => !p.IsDead && p.PlayerRole == IRole.PsychicMage);
+                        if(_lynchConfused && psychicMage!=null)
+                        {
+                            switch (lynched.Team)
+                            {
+                                case ITeam.Village:
+                                    psychicMage.Team = ITeam.Wolf;
+                                    Send(GetLocaleString("PsychicMageConvertedToWolves"), psychicMage.Id);
+                                    break;
+                                default:
+                                    Send(GetLocaleString("PsychicMageConvertedToVillage"), psychicMage.Id);
+                                    psychicMage.Team = ITeam.Village;
+                                    break;
+
+                            }
+                        }
 
                         //update the database
                         DBKill(Players.Where(x => x.Choice == lynched.Id), lynched, KillMthd.Lynch);
@@ -2257,12 +2329,19 @@ namespace Werewolf_Node
                     var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                     if (t != null)
                         AddAchievement(t, Achievements.SoClose);
+
+                    var psychicMage = Players.First(p => !p.IsDead && p.PlayerRole == IRole.PsychicMage);
+                    if (_lynchConfused && psychicMage != null)
+                    {
+                        //if tied, give the Mage another shot of confuse
+                        psychicMage.HasUsedAbility = false;
+                    }
                 }
                 else
                 {
                     SendWithQueue(GetLocaleString("NoLynchVotes"));
                 }
-
+                _lynchConfused = false;
                 if (CheckForGameEnd(true)) return;
             }
             catch (Exception e)
@@ -3049,6 +3128,9 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Cursed:
                                     ConvertToCult(target, voteCult, Settings.CursedConversionChance);
+                                    break;
+                                case IRole.PsychicMage:
+                                    ConvertToCult(target, voteCult, Settings.PsychicMageConversionChance);
                                     break;
                                 case IRole.Prince:
                                     ConvertToCult(target, voteCult); //TODO: Decide conversion chances for Prince and Mayor!!
@@ -3944,6 +4026,20 @@ namespace Werewolf_Node
                         SendMenu(choices, gunner, GetLocaleString("AskShoot", gunner.Bullet), QuestionType.Shoot);
                     }
                 }
+            }
+
+            var psychicMage = Players.FirstOrDefault(x => x.PlayerRole == IRole.PsychicMage & !x.IsDead & !x.HasUsedAbility);
+
+            if (psychicMage != null)
+            {
+                var choices = new[]
+                {
+                    new[]
+                    {
+                        new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|yes"), new InlineKeyboardButton(GetLocaleString("No"), $"vote|{_deeplink}|no")
+                    }
+                }.ToList();
+                SendMenu(choices, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
             }
         }
 
