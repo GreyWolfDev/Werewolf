@@ -1372,11 +1372,12 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 rolesToAssign[0] = IRole.PsychicMage;
-                //rolesToAssign[1] = IRole.WolfCub;
-                //rolesToAssign[2] = IRole.AlphaWolf;
+                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[2] = IRole.Wolf;
+                rolesToAssign[3] = IRole.Cupid;
                 //rolesToAssign[3] = IRole.WolfCub;
-                //if (rolesToAssign.Count >= 5)
-                //    rolesToAssign[4] = IRole.Villager;
+                if (rolesToAssign.Count >= 4)
+                    rolesToAssign[4] = IRole.Villager;
 #endif
 
 
@@ -2148,8 +2149,8 @@ namespace Werewolf_Node
                 {
                     try
                     {
-                        //if lynchConfused no one stays without vote
-                        if (_lynchConfused)
+                        //if lynchConfused no one stays without vote excepts the Mage
+                        if (_lynchConfused && p.PlayerRole != IRole.PsychicMage)
                         {
                             //pick a random target
                             var random = ChooseRandomPlayerId(p, false);
@@ -2279,6 +2280,23 @@ namespace Werewolf_Node
                             AddAchievement(lynched, Achievements.SpoiledRichBrat);
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
+                        var psychicMage = Players?.FirstOrDefault(p => !p.IsDead && p.PlayerRole == IRole.PsychicMage);
+                        if (_lynchConfused && psychicMage != null)
+                        {
+                            switch (lynched.Team)
+                            {
+                                case ITeam.Village:
+                                    psychicMage.Team = ITeam.Wolf;
+                                    Send(GetLocaleString("PsychicMageConvertedToWolves"), psychicMage.Id);
+                                    break;
+                                default:
+                                    Send(GetLocaleString("PsychicMageConvertedToVillage"), psychicMage.Id);
+                                    psychicMage.Team = ITeam.Village;
+                                    break;
+
+                            }
+                        }
+
                         if (lynched.InLove)
                             KillLover(lynched);
 
@@ -2299,22 +2317,6 @@ namespace Werewolf_Node
                             case IRole.Hunter:
                                 HunterFinalShot(lynched, KillMthd.Lynch);
                                 break;
-                        }
-                        var psychicMage = Players.First(p => !p.IsDead && p.PlayerRole == IRole.PsychicMage);
-                        if(_lynchConfused && psychicMage!=null)
-                        {
-                            switch (lynched.Team)
-                            {
-                                case ITeam.Village:
-                                    psychicMage.Team = ITeam.Wolf;
-                                    Send(GetLocaleString("PsychicMageConvertedToWolves"), psychicMage.Id);
-                                    break;
-                                default:
-                                    Send(GetLocaleString("PsychicMageConvertedToVillage"), psychicMage.Id);
-                                    psychicMage.Team = ITeam.Village;
-                                    break;
-
-                            }
                         }
 
                         //update the database
