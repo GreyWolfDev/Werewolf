@@ -46,6 +46,8 @@ namespace Werewolf_Control.Helpers
 
         public static int GetStrength(this IRole role, List<IRole> allRoles)
         {
+            IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf };
+            IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller, IRole.PsychicMage };
             switch (role)
             {
                 case IRole.Villager:
@@ -65,7 +67,7 @@ namespace Werewolf_Control.Helpers
                 case IRole.Wolf:
                     return 10;
                 case IRole.Cursed:
-                    return 6 - allRoles.Count(x => x == IRole.Wolf);
+                    return 1 - allRoles.Count(x => WolfRoles.Contains(x)) / 2; //vg, or worse
                 case IRole.Gunner:
                     return 6;
                 case IRole.Tanner:
@@ -73,19 +75,19 @@ namespace Werewolf_Control.Helpers
                 case IRole.Fool:
                     return 3;
                 case IRole.WildChild:
-                    return 2;
+                    return 1;
                 case IRole.Beholder:
                     return 2 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0); //only good if seer is present!
                 case IRole.ApprenticeSeer:
                     return 6;
                 case IRole.Cultist:
-                    return 12 + allRoles.Count(x => x == IRole.Villager);
+                    return 10 + allRoles.Count(x => !nonConvertibleRoles.Contains(x));
                 case IRole.CultistHunter:
-                    return 7;
+                    return allRoles.Count(x => x == IRole.Cultist) == 0 ? 1 : 7;
                 case IRole.Mason:
-                    return 3 + (allRoles.Count(x => x == IRole.Mason)); //strength in numbers
+                    return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 2; //strength in numbers
                 case IRole.Doppelgänger:
-                    return 4;
+                    return 2;
                 case IRole.Cupid:
                     return 2;
                 case IRole.Hunter:
@@ -97,13 +99,9 @@ namespace Werewolf_Control.Helpers
                 case IRole.AlphaWolf:
                     return 12;
                 case IRole.WolfCub:
-                    return 11;
+                    return 12;
                 case IRole.Blacksmith:
                     return 5;
-                case IRole.Preacher:
-                    return 4;
-                case IRole.Faithful:
-                    return 3;
                 case IRole.ClumsyGuy:
                     return -1;
                 case IRole.Mayor:
@@ -111,7 +109,7 @@ namespace Werewolf_Control.Helpers
                 case IRole.Prince:
                     return 3;
                 case IRole.PsychicMage:
-                    return 0;
+                    return 4;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

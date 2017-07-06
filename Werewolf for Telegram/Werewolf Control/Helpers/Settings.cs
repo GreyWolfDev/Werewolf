@@ -105,7 +105,7 @@ namespace Werewolf_Control.Helpers
 
         public static int
 #if DEBUG
-            MinPlayers = 1,
+            MinPlayers = 3,
 #else
             MinPlayers = 5,
 #endif

@@ -111,7 +111,6 @@ namespace Werewolf_Node
                             ShowRolesEnd = "Living";
                         else
                             ShowRolesEnd = "All";
-
                     }
                     else
                     {
@@ -129,6 +128,8 @@ namespace Werewolf_Node
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton")) { Url = $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}" } });
                     AddPlayer(u);
+
+                    NotifyPlayersNewGame(u);
                 }
 
                 //create our button
@@ -473,8 +474,42 @@ namespace Werewolf_Node
             {
                 Program.RemoveGame(this);
             }
-
         }
+
+        public void NotifyPlayersNewGame(User u)
+        {
+            try
+            {
+                //notify waiting players
+                using (var db = new WWContext())
+                {
+                    var notify = db.NotifyGames.Where(x => x.GroupId == ChatId).ToList();
+                    var groupName = ChatGroup.ToBold();
+                    if (DbGroup.UserName != null)
+                        groupName += $" @{DbGroup.UserName}";
+                    else if (DbGroup.GroupLink != null)
+                        groupName = $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup}</a>";
+                    var joinMenu = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}|notify") });
+                    foreach (var n in notify)
+                    {
+                        if (n.UserId != u.Id)
+                        {
+                            Send(GetLocaleString("NotifyNewGame", groupName), n.UserId, menu: joinMenu);
+                            Thread.Sleep(500);
+                        }
+                    }
+
+                    //just to be sure...
+                    db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {ChatId}");
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error in NotifyPlayersNewGame: {e.Message}");
+            }
+        }
+
         /// <summary>
         /// Add (Join) a player to the game
         /// </summary>
@@ -1150,13 +1185,32 @@ namespace Werewolf_Node
                     {
                         //Thread.Sleep(4500); //wait a moment before sending
                         LastPlayersOutput = DateTime.Now;
+                        IEnumerable<IPlayer> living = Players.GetLivingPlayers();
+                        var totalLive = living.Count();
+                        var totalDied = Players.Count - totalLive;
+
                         msg =
-                            $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n" +
-                            Players.OrderBy(x => x.TimeDied)
+                        $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n" +
+                        (totalDied > 0 ? $"{GetLocaleString("Dead")}:\n" : "") +
+                        Players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
-                                        ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                                        ($"{p.GetName()}: {((DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.OriginalRole == IRole.Doppelgänger && p.OriginalRole != p.PlayerRole ? "🎭" : "") + (p.InLove ? "❤️" : "") : "")) + (p.Fled ? GetLocaleString("RanAway") : "")}\n")) +
+                        (totalLive > 0 ? $"{GetLocaleString("Alive")}:\n" : "") +
+                        living.OrderBy(x => x.TimeDied)
+                                .Aggregate("",
+                                    (current, p) =>
+                                        current +
+                                        ($"{p.GetName()}\n"));
+
+                        //msg =
+                        //$"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n" +
+                        //    Players.OrderBy(x => x.TimeDied)
+                        //        .Aggregate("",
+                        //            (current, p) =>
+                        //                current +
+                        //                ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         _playerListChanged = false;
                     }
@@ -1335,6 +1389,14 @@ namespace Werewolf_Node
                         rolesToAssign[vg] = IRole.CultistHunter;
                     }
 
+                    //force PsychicMage at the beginning
+                    //if (!rolesToAssign.Contains(IRole.PsychicMage))
+                    //{
+                    //    //just pick a vg, and turn them to CH
+                    //    var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                    //    rolesToAssign[vg] = IRole.PsychicMage;
+                    //}
+
 
                     //make sure that we have at least two teams
                     if (
@@ -1371,13 +1433,13 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.PsychicMage;
-                rolesToAssign[1] = IRole.Doppelgänger;
-                rolesToAssign[2] = IRole.Wolf;
-                rolesToAssign[3] = IRole.Cupid;
+                //rolesToAssign[0] = IRole.PsychicMage;
+                //rolesToAssign[1] = IRole.Cupid;
+                //rolesToAssign[2] = IRole.Wolf;
+                //rolesToAssign[3] = IRole.Cupid;
                 //rolesToAssign[3] = IRole.WolfCub;
-                if (rolesToAssign.Count >= 4)
-                    rolesToAssign[4] = IRole.Villager;
+                //if (rolesToAssign.Count >= 4)
+                //    rolesToAssign[4] = IRole.Villager;
 #endif
 
 
@@ -1612,6 +1674,8 @@ namespace Werewolf_Node
                         return GetImageLanguage(ImageKeys.RoleInfoMason);
                     case IRole.Wolf:
                         return GetImageLanguage(ImageKeys.RoleInfoWolf);
+                    case IRole.PsychicMage:
+                        return GetImageLanguage(ImageKeys.RoleInfoPsychicMage);
                     default:
                         return null;
                 }
@@ -2332,7 +2396,7 @@ namespace Werewolf_Node
                     if (t != null)
                         AddAchievement(t, Achievements.SoClose);
 
-                    var psychicMage = Players.First(p => !p.IsDead && p.PlayerRole == IRole.PsychicMage);
+                    var psychicMage = Players?.FirstOrDefault(p => !p.IsDead && p.PlayerRole == IRole.PsychicMage);
                     if (_lynchConfused && psychicMage != null)
                     {
                         //if tied, give the Mage another shot of confuse
@@ -3626,7 +3690,7 @@ namespace Werewolf_Node
                     return DoGameEnd(ITeam.NoOne);
                 case 1:
                     var p = alivePlayers.FirstOrDefault();
-                    if (p.PlayerRole == IRole.Tanner)
+                    if (p.PlayerRole == IRole.Tanner || (p.PlayerRole == IRole.PsychicMage && p.Team == ITeam.Neutral))
                         return DoGameEnd(ITeam.NoOne);
                     else if (p.PlayerRole == IRole.Sorcerer)
                         return DoGameEnd(ITeam.Village); //a sorcerer does no harm to the village
@@ -3871,12 +3935,32 @@ namespace Werewolf_Node
                         msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}";
+                        if (Players.Count(x => !x.Won) > 0)
+                        {
+                            msg += $"\n{GetLocaleString("Lost")}:\n" +
+                            Players.Where(x => !x.Won).OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.OriginalRole == IRole.Doppelgänger && p.OriginalRole != p.PlayerRole ? "🎭" : "") + (p.InLove ? "❤️" : "")}\n"));
+                        }
+                        if (Players.Count(x => x.Won) > 0)
+                        {
+                            msg += $"\n{GetLocaleString("Won")}:\n" +
+                            Players.Where(x => x.Won).OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.OriginalRole == IRole.Doppelgänger && p.OriginalRole != p.PlayerRole ? "🎭" : "") + (p.InLove ? "❤️" : "")}\n"));
+                        }
                         break;
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
-                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
+                        msg += Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.OriginalRole == IRole.Doppelgänger && p.OriginalRole != p.PlayerRole ? "🎭" : "")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
+                        //case "None":
+                        //    msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}");
+                        //    break;
+                        //case "All":
+                        //    msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.OriginalRole == IRole.Doppelgänger && p.OriginalRole != p.PlayerRole ? "🎭" : "") + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
+                        //    break;
+                        //default:
+                        //    msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
+                        //    msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.OriginalRole == IRole.Doppelgänger && p.OriginalRole != p.PlayerRole ? "🎭" : "")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
+                        //    break;
                 }
                 if (game.TimeStarted.HasValue)
                 {

@@ -44,6 +44,7 @@ namespace Werewolf_Node.Helpers
         RoleInfoWildChild,
         RoleInfoMason,
         RoleInfoWolf,
+        RoleInfoPsychicMage,
         GuardSavedYou,
         WildChildTransform,
         SerialKillerKilledWolf,

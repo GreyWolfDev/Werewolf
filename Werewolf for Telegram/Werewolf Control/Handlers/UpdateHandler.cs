@@ -619,7 +619,7 @@ namespace Werewolf_Control.Handler
 
                         if (args[0] == "joinBtn")
                         {
-                            Bot.ReplyToCallback(query, "Joining...", false);
+                            Bot.ReplyToCallback(query, "Joining...", (args.Length > 3 && args[3] == "notify"));
                             game.AddPlayer(query.From);
                         }
                         else if (args[0] == "fleeBtn")

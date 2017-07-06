@@ -478,9 +478,35 @@ namespace Werewolf_Control
                 var count = ach.GetUniqueFlags().Count();
                 Content += $"\n{count} {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n";
                 foreach (var a in ach.GetUniqueFlags())
-                    Content += $"\t• {a.GetName().ToBold()}\n<i>{a.GetDescription()}.</i>\n";
+                    Content += $"\t✅ {a.GetName().ToBold()}\n<i>{a.GetDescription()}.</i>\n";
+                Content += "\n/conquistasBloqueadas";
+                Bot.Api.SendTextMessage(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
-            Bot.Api.SendTextMessage(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
+            if (update.Message.Chat.Type != ChatType.Private)
+                Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+        }
+
+        [Command(Trigger = "conquistasBloqueadas")]
+        public static void ConquistasBloqueadas(Update update, string[] args)
+        {
+            Player p = null;
+            var Content = "";
+            using (var db = new WWContext())
+            {
+                p = db.Players.FirstOrDefault(x => x.TelegramId == update.Message.From.Id);
+
+                if (p == null)
+                {
+                    return;
+                }
+                //find the player
+                var notach = (Achievements)~(Convert.ToUInt64((p.Achievements ?? 0)));
+                var count = notach.GetUniqueFlags().Count();
+                Content = $"\n{count} {Commands.GetLocaleString("AchievementsLocked", p.Language)}\n";
+                foreach (var a in notach.GetUniqueFlags())
+                    Content += $"\t❌ {a.GetName().ToBold()}\n<i>{a.GetDescription()}.</i>\n";
+                Bot.Api.SendTextMessage(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
+            }
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
         }
