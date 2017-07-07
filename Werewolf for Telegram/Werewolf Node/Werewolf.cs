@@ -287,14 +287,21 @@ namespace Werewolf_Node
 
                     if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
-                        r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
-                        if (r != null)
+                        try
                         {
-                            _joinButtons.Add(r.MessageId);
-                            r = null;
+                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
+                            if (r != null)
+                            {
+                                _joinButtons.Add(r.MessageId);
+                                r = null;
+                            }
+                            notifiedPlayers = Players.Select(x => x.Id).ToList();
+                            secondsElapsed = 0;
                         }
-                        notifiedPlayers = Players.Select(x => x.Id).ToList();
-                        secondsElapsed = 0;
+                        catch (Exception)
+                        {
+                            // ignored
+                        }
                     }
 
                     try
@@ -727,8 +734,8 @@ namespace Werewolf_Node
                 var player = Players.FirstOrDefault(x => x.Id == query.From.Id);
 
                 if (player == null) return;
-
-                if (player.PlayerRole == IRole.Mayor && choice == "reveal" && player.HasUsedAbility == false)
+                
+                if (player.PlayerRole == IRole.Mayor && !player.IsDead && choice == "reveal" && player.HasUsedAbility == false)
                 {
                     player.HasUsedAbility = true;
                     SendWithQueue(GetLocaleString("MayorReveal", player.GetName()));
@@ -739,7 +746,24 @@ namespace Werewolf_Node
 
                     return;
                 }
-                else if (player.PlayerRole == IRole.Mayor && choice == "reveal" && player.HasUsedAbility == true)
+                else if (player.PlayerRole == IRole.Mayor && !player.IsDead && choice == "reveal" && player.HasUsedAbility == true)
+                    return;
+
+                if (player.PlayerRole == IRole.PsychicMage && !player.IsDead && choice == "confuse" && player.HasUsedAbility == false)
+                {
+                    if (choice == "confuse")
+                    {
+                        player.HasUsedAbility = true;
+                        _lynchConfused = true;
+                    }
+
+                    Program.MessagesSent++;
+                    ReplyToCallback(query,
+                        GetLocaleString("ChoiceAccepted"));
+                    player.CurrentQuestion = null;
+                    return;
+                }
+                else if (player.PlayerRole == IRole.PsychicMage && !player.IsDead && choice == "confuse" && player.HasUsedAbility == true)
                     return;
 
                 if (player.PlayerRole == IRole.Blacksmith && player.CurrentQuestion.QType == QuestionType.SpreadSilver)
@@ -752,20 +776,7 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()));
                     }
 
-                    ReplyToCallback(query,
-                        GetLocaleString("ChoiceAccepted"));
-                    player.CurrentQuestion = null;
-                    return;
-                }
-
-                if (player.PlayerRole == IRole.PsychicMage && player.CurrentQuestion.QType == QuestionType.ConfuseLynching)
-                {
-                    if (choice == "yes")
-                    {
-                        player.HasUsedAbility = true;
-                        _lynchConfused = true;
-                    }
-
+                    Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted"));
                     player.CurrentQuestion = null;
@@ -821,8 +832,12 @@ namespace Werewolf_Node
                     if (_lynchConfused && player.PlayerRole != IRole.PsychicMage)
                     {
                         //pick a random target
-                        var random = ChooseRandomPlayerId(player, false);
-                        player.Choice = random;
+                        var random = ChooseRandomPlayer(player, false);
+                        if(random.PlayerRole == IRole.PsychicMage && Program.R.Next(100) < 50) //if random gets PsychicMage, 50% of chance to choose another random
+                        {
+                            random = ChooseRandomPlayer(player, false);
+                        }
+                        player.Choice = random.Id;
                     }
                 }
 
@@ -1274,6 +1289,10 @@ namespace Werewolf_Node
                         if (allowCult && playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.PsychicMage:
+                        if (playerCount >= 7)
+                            rolesToAssign.Add(role);
+                        break;
                     case IRole.Tanner:
                         if (allowTanner)
                             rolesToAssign.Add(role);
@@ -1366,10 +1385,10 @@ namespace Werewolf_Node
                     //let's fix some roles that should or shouldn't be there...
 
                     //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
-                    if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
+                    if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor) || rolesToAssign.Contains(IRole.PsychicMage)) &&
                         !rolesToAssign.Any(x => WolfRoles.Contains(x)))
                     {
-                        var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
+                        var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor || x == IRole.PsychicMage); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
                         rolesToAssign[towolf] = WolfRoles[Program.R.Next(3)]; //choose randomly from WolfRoles
                     }
 
@@ -1434,8 +1453,8 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 //rolesToAssign[0] = IRole.PsychicMage;
-                //rolesToAssign[1] = IRole.Cupid;
-                //rolesToAssign[2] = IRole.Wolf;
+                //rolesToAssign[1] = IRole.Mayor;
+                //rolesToAssign[1] = IRole.Wolf;
                 //rolesToAssign[3] = IRole.Cupid;
                 //rolesToAssign[3] = IRole.WolfCub;
                 //if (rolesToAssign.Count >= 4)
@@ -2401,6 +2420,15 @@ namespace Werewolf_Node
                     {
                         //if tied, give the Mage another shot of confuse
                         psychicMage.HasUsedAbility = false;
+
+                        var confuse = new[]
+                        {
+                            new[]
+                            {
+                                new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
+                            }
+                        }.ToList();
+                        SendMenu(confuse, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
                     }
                 }
                 else
@@ -2455,7 +2483,7 @@ namespace Werewolf_Node
                 {
                     try
                     {
-                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor)
+                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor && p.CurrentQuestion.QType != QuestionType.ConfuseLynching)
                         {
                             Program.MessagesSent++;
                             Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
@@ -3929,6 +3957,32 @@ namespace Werewolf_Node
                         break;
                 }
                 db.SaveChanges();
+
+
+                try
+                {
+                    foreach (var p in Players.Where(x => x.CurrentQuestion != null))
+                    {
+                        try
+                        {
+                            if (p.CurrentQuestion.MessageId != 0)
+                            {
+                                Program.MessagesSent++;
+                                Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            }
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+                        p.CurrentQuestion = null;
+                    }
+                }
+                catch
+                {
+                    // ignored
+                }
+
                 switch (DbGroup.ShowRolesEnd)
                 {
                     case "None":
@@ -4116,13 +4170,13 @@ namespace Werewolf_Node
 
             var psychicMage = Players.FirstOrDefault(x => x.PlayerRole == IRole.PsychicMage & !x.IsDead & !x.HasUsedAbility);
 
-            if (psychicMage != null)
+            if (psychicMage != null && GameDay == 1)
             {
                 var choices = new[]
                 {
                     new[]
                     {
-                        new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|yes"), new InlineKeyboardButton(GetLocaleString("No"), $"vote|{_deeplink}|no")
+                        new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
                     }
                 }.ToList();
                 SendMenu(choices, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
@@ -4461,6 +4515,16 @@ namespace Werewolf_Node
 
         private int ChooseRandomPlayerId(IPlayer exclude, bool all = true)
         {
+            var player = ChooseRandomPlayer(exclude, all);
+            if(player != null)
+            {
+                return player.Id;
+            }
+            return -1;
+        }
+
+        private IPlayer ChooseRandomPlayer(IPlayer exclude, bool all = true)
+        {
             try
             {
                 var possible = exclude != null ? Players.Where(x => x.Id != exclude.Id).ToList() : Players.ToList();
@@ -4468,7 +4532,7 @@ namespace Werewolf_Node
                     possible = possible.Where(x => !x.IsDead).ToList();
                 possible.Shuffle();
                 possible.Shuffle();
-                return possible[0].Id;
+                return possible[0];
             }
             catch (Exception ex)
             {
@@ -4476,7 +4540,7 @@ namespace Werewolf_Node
                 Console.WriteLine(ex.Message);
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Send("Unable to choose random player\n" + Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{ex.Message}\n{ex.StackTrace}", Program.ErrorGroup);
-                return -1;
+                return null;
             }
         }
 
