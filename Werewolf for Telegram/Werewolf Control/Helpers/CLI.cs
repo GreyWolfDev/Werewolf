@@ -18,7 +18,15 @@ namespace Werewolf_Control.Helpers
         public static Task Initialize(long id)
         {
             Commands.Send("Initializing client", id);
-            client = new TelegramClient(Int32.Parse(RegHelper.GetRegValue("appid")), RegHelper.GetRegValue("apihash"));
+            try
+            {
+                client = new TelegramClient(Int32.Parse(RegHelper.GetRegValue("appid")),
+                    RegHelper.GetRegValue("apihash"));
+            }
+            catch
+            {
+                
+            }
             return client.ConnectAsync();
         }
 

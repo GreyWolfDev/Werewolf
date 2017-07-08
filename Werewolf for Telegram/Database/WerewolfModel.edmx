@@ -280,6 +280,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="HasDebugPM" Type="bit" />
           <Property Name="Achievements" Type="bigint" />
           <Property Name="WebUserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="DonationLevel" Type="int" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -897,6 +898,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="HasDebugPM" Type="Boolean" />
           <Property Name="Achievements" Type="Int64" />
           <Property Name="WebUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DonationLevel" Type="Int32" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1605,6 +1607,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="DonationLevel" ColumnName="DonationLevel" />
                 <ScalarProperty Name="WebUserId" ColumnName="WebUserId" />
                 <ScalarProperty Name="Achievements" ColumnName="Achievements" />
                 <ScalarProperty Name="HasDebugPM" ColumnName="HasDebugPM" />
