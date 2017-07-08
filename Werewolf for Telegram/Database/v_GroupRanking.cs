@@ -23,5 +23,6 @@ namespace Database
         public string GroupLink { get; set; }
         public Nullable<System.DateTime> LastRefresh { get; set; }
         public string Name { get; set; }
+        public string GroupLanguage { get; set; }
     }
 }

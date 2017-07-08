@@ -312,12 +312,6 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="Date" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_BotInGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_BotInGroups">
-          <Property Name="Groups" Type="int" />
-          <Property Name="Has Bot?" Type="varchar" MaxLength="3" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_InactivePlayersMain">
           <Key>
@@ -330,12 +324,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not 
           <Property Name="TelegramId" Type="int" Nullable="false" />
           <Property Name="last" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_LanguageCounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_LanguageCounts">
-          <Property Name="Groups" Type="int" />
-          <Property Name="Language" Type="nvarchar(max)" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_NonDefaultGroups">
@@ -392,16 +380,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a 
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_SummaryTotals">
-          <Property Name="Players" Type="int" />
-          <Property Name="Games" Type="int" />
-          <Property Name="Groups" Type="int" />
-          <Property Name="Deaths" Type="int" />
-          <Property Name="Survivors" Type="int" />
-          <Property Name="Since" Type="datetime" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
           <Key>
@@ -411,14 +389,6 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="v_WinRatios">
-          <Property Name="Players" Type="int" />
-          <Property Name="Wins" Type="int" />
-          <Property Name="Team" Type="nvarchar" MaxLength="50" />
-          <Property Name="%" Type="numeric" Precision="26" Scale="12" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_GroupRanking">
@@ -430,13 +400,14 @@ warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a prima
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="TelegramId" Type="bigint" Nullable="false" />
-          <Property Name="Language" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Username" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
           <Property Name="Ranking" Type="decimal" Precision="18" Scale="0" />
           <Property Name="LastRefresh" Type="date" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GroupLanguage" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -764,7 +735,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [v_GroupRanking].[GroupLink] AS [GroupLink], 
     [v_GroupRanking].[Ranking] AS [Ranking], 
     [v_GroupRanking].[LastRefresh] AS [LastRefresh], 
-    [v_GroupRanking].[Name] AS [Name]
+    [v_GroupRanking].[Name] AS [Name], 
+    [v_GroupRanking].[GroupLanguage] AS [GroupLanguage]
     FROM [dbo].[v_GroupRanking] AS [v_GroupRanking]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_IdleKill24HoursMain" EntityType="Self.v_IdleKill24HoursMain" store:Type="Views" store:Schema="dbo">
@@ -1552,13 +1524,14 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="TelegramId" Type="Int64" Nullable="false" />
-          <Property Name="Language" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LastRefresh" Type="DateTime" Precision="0" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GroupLanguage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2086,6 +2059,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="v_GroupRanking">
             <EntityTypeMapping TypeName="werewolfModel.v_GroupRanking">
               <MappingFragment StoreEntitySet="v_GroupRanking">
+                <ScalarProperty Name="GroupLanguage" ColumnName="GroupLanguage" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="LastRefresh" ColumnName="LastRefresh" />
                 <ScalarProperty Name="GroupLink" ColumnName="GroupLink" />

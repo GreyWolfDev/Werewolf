@@ -67,7 +67,7 @@ namespace Werewolf_Control.Helpers
             {
                 //only refresh the list cache once every 20 minutes
                 using (var db = new WWContext())
-                    _list = db.v_GroupRanking.ToList();
+                    _list = unz.ToList();
                 _lastGet = DateTime.Now;
             }
             return _list;
@@ -80,7 +80,7 @@ namespace Werewolf_Control.Helpers
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages())
                 {
-                    if (GetAll().Any(x => x.Language == lang.FileName))
+                    if (GetAll().Any(x => (x.Language ?? x.GroupLanguage) == lang.FileName))
                     {
                         //load the language to get the base
                         if (!langs.Contains(lang.Base))
