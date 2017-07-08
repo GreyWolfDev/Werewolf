@@ -47,12 +47,26 @@ namespace Werewolf_Node.Helpers
 
         public static string GetName(this IPlayer player, bool menu = false)
         {
-            if (menu)
-                return player.Name;
-            if (!String.IsNullOrEmpty(player.TeleUser.Username))
-                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name.FormatHTML()}</a>";
+            var name = player.Name;
+            var end = name.Substring(name.Length - 3);
+            name = name.Substring(0, name.Length - 3);
+            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
+            if (player.DonationLevel >= 100)
+                end += " 🥇";
+            else if (player.DonationLevel >= 50)
+                end += " 🥈";
+            else if (player.DonationLevel >= 10)
+                end += " 🥉";
 
-            return player.Name.ToBold();
+            if (player.Founder)
+                end += "💎";
+            name += end;
+            if (menu)
+                return name;
+            if (!String.IsNullOrEmpty(player.TeleUser.Username))
+                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{name.FormatHTML()}</a>";
+
+            return name.ToBold();
         }
 
         public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)

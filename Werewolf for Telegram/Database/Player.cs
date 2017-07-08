@@ -39,6 +39,7 @@ namespace Database
         public Nullable<long> Achievements { get; set; }
         public string WebUserId { get; set; }
         public Nullable<int> DonationLevel { get; set; }
+        public Nullable<bool> Founder { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameKill> GameKills { get; set; }

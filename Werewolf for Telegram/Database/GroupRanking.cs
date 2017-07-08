@@ -20,5 +20,6 @@ namespace Database
         public Nullable<decimal> MinutesPlayed { get; set; }
         public Nullable<decimal> Ranking { get; set; }
         public Nullable<System.DateTime> LastRefresh { get; set; }
+        public int Id { get; set; }
     }
 }

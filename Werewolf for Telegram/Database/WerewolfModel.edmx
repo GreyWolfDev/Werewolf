@@ -214,17 +214,21 @@ warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary k
           <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="PlayerId" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'werewolf.dbo.GroupRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="GroupRanking">
           <Key>
             <PropertyRef Name="GroupId" />
+            <PropertyRef Name="Id" />
             <PropertyRef Name="Language" />
           </Key>
           <Property Name="GroupId" Type="int" Nullable="false" />
-          <Property Name="Language" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
           <Property Name="PlayersCount" Type="int" />
           <Property Name="MinutesPlayed" Type="decimal" Precision="18" Scale="0" />
           <Property Name="LastRefresh" Type="date" />
           <Property Name="Ranking" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="GroupStats">
           <Key>
@@ -281,6 +285,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="Achievements" Type="bigint" />
           <Property Name="WebUserId" Type="nvarchar" MaxLength="128" />
           <Property Name="DonationLevel" Type="int" />
+          <Property Name="Founder" Type="bit" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -387,10 +392,10 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
 warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_GroupRanking">
           <Key>
-            <PropertyRef Name="Id" />
             <PropertyRef Name="TelegramId" />
-            <PropertyRef Name="Language" />
             <PropertyRef Name="Name" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Language" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="TelegramId" Type="bigint" Nullable="false" />
@@ -634,7 +639,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="GamePlayer" EntityType="Self.GamePlayer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GlobalStats" EntityType="Self.GlobalStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GroupRanking" EntityType="Self.GroupRanking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GroupStats" EntityType="Self.GroupStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KillMethod" EntityType="Self.KillMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
@@ -645,6 +649,17 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [GroupAdmin].[GroupId] AS [GroupId], 
     [GroupAdmin].[PlayerId] AS [PlayerId]
     FROM [dbo].[GroupAdmin] AS [GroupAdmin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GroupRanking" EntityType="Self.GroupRanking" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GroupRanking].[GroupId] AS [GroupId], 
+    [GroupRanking].[Language] AS [Language], 
+    [GroupRanking].[PlayersCount] AS [PlayersCount], 
+    [GroupRanking].[MinutesPlayed] AS [MinutesPlayed], 
+    [GroupRanking].[LastRefresh] AS [LastRefresh], 
+    [GroupRanking].[Ranking] AS [Ranking], 
+    [GroupRanking].[Id] AS [Id]
+    FROM [dbo].[GroupRanking] AS [GroupRanking]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="NotifyGame" EntityType="Self.NotifyGame" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -899,6 +914,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Achievements" Type="Int64" />
           <Property Name="WebUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="DonationLevel" Type="Int32" />
+          <Property Name="Founder" Type="Boolean" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1478,13 +1494,15 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Key>
             <PropertyRef Name="GroupId" />
             <PropertyRef Name="Language" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="GroupId" Type="Int32" Nullable="false" />
-          <Property Name="Language" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PlayersCount" Type="Int32" />
           <Property Name="MinutesPlayed" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="LastRefresh" Type="DateTime" Precision="0" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="RefreshDate">
           <Key>
@@ -1607,6 +1625,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Founder" ColumnName="Founder" />
                 <ScalarProperty Name="DonationLevel" ColumnName="DonationLevel" />
                 <ScalarProperty Name="WebUserId" ColumnName="WebUserId" />
                 <ScalarProperty Name="Achievements" ColumnName="Achievements" />
@@ -2013,6 +2032,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="GroupRanking">
             <EntityTypeMapping TypeName="werewolfModel.GroupRanking">
               <MappingFragment StoreEntitySet="GroupRanking">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="LastRefresh" ColumnName="LastRefresh" />
                 <ScalarProperty Name="Ranking" ColumnName="Ranking" />
                 <ScalarProperty Name="MinutesPlayed" ColumnName="MinutesPlayed" />

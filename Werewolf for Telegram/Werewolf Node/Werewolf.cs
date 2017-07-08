@@ -547,7 +547,8 @@ namespace Werewolf_Node
                         };
                         db.Players.Add(user);
                     }
-
+                    p.DonationLevel = user.DonationLevel ?? 0;
+                    p.Founder = user.Founder ?? false;
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
 

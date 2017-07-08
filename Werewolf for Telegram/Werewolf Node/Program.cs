@@ -408,9 +408,16 @@ namespace Werewolf_Node
 
                     foreach (var g in games)
                     {
-                        if (g.Players == null)
+                        if (g?.Players == null)
                         {
-                            Games.Remove(g);
+                            try
+                            {
+                                Games.Remove(g);
+                            }
+                            catch
+                            {
+                                // ignored, it was already removed
+                            }
                             continue;
                         }
                         var gi = new GameInfo

@@ -67,7 +67,17 @@ namespace Werewolf_Control.Models
                                $"{survived.Pad()}Games survived ({survived*100/gamesPlayed}%)\n" +
                                $"{gamesPlayed.Pad()}Total Games\n" +
                                $"<code>{killed?.times}</code>\ttimes I've gleefully killed {killed?.Name.FormatHTML()}\n" +
-                               $"<code>{killedby?.times}</code>\ttimes I've been slaughted by {killedby?.Name.FormatHTML()}";
+                               $"<code>{killedby?.times}</code>\ttimes I've been slaughted by {killedby?.Name.FormatHTML()}\n";
+
+                    if ((p.DonationLevel??0) >= 100)
+                        Content += "Donation Level: 🥇";
+                    else if ((p.DonationLevel ?? 0) >= 50)
+                        Content += "Donation Level: 🥈";
+                    else if ((p.DonationLevel ?? 0) >= 10)
+                        Content += "Donation Level: 🥉";
+
+                    if (p.Founder??false)
+                        Content += "\n💎 FOUNDER STATUS! 💎\n<i>(This player donated at least $10USD before there was any reward for donating</i>";
                 }
             }
             catch (Exception e)
