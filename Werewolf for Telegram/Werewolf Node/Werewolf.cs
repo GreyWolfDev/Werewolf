@@ -36,7 +36,7 @@ namespace Werewolf_Node
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
         public string Language = "English SFW", ChatGroup;
-        public Locale Locale;
+        public Locale Locale; 
         public Group DbGroup;
         private bool _playerListChanged = true, _silverSpread;
         private DateTime _timeStarted;
