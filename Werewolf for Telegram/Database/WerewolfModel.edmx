@@ -286,6 +286,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="WebUserId" Type="nvarchar" MaxLength="128" />
           <Property Name="DonationLevel" Type="int" />
           <Property Name="Founder" Type="bit" />
+          <Property Name="CustomGifSet" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -311,6 +312,12 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="Date" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_BotInGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_BotInGroups">
+          <Property Name="Groups" Type="int" />
+          <Property Name="Has Bot?" Type="varchar" MaxLength="3" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_InactivePlayersMain">
           <Key>
@@ -323,6 +330,12 @@ warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not 
           <Property Name="TelegramId" Type="int" Nullable="false" />
           <Property Name="last" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_LanguageCounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_LanguageCounts">
+          <Property Name="Groups" Type="int" />
+          <Property Name="Language" Type="nvarchar(max)" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_NonDefaultGroups">
@@ -379,6 +392,16 @@ warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a 
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_SummaryTotals">
+          <Property Name="Players" Type="int" />
+          <Property Name="Games" Type="int" />
+          <Property Name="Groups" Type="int" />
+          <Property Name="Deaths" Type="int" />
+          <Property Name="Survivors" Type="int" />
+          <Property Name="Since" Type="datetime" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
           <Key>
@@ -388,6 +411,14 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_WinRatios">
+          <Property Name="Players" Type="int" />
+          <Property Name="Wins" Type="int" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" />
+          <Property Name="%" Type="numeric" Precision="26" Scale="12" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_GroupRanking">
@@ -915,6 +946,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="WebUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="DonationLevel" Type="Int32" />
           <Property Name="Founder" Type="Boolean" />
+          <Property Name="CustomGifSet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1625,6 +1657,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="CustomGifSet" ColumnName="CustomGifSet" />
                 <ScalarProperty Name="Founder" ColumnName="Founder" />
                 <ScalarProperty Name="DonationLevel" ColumnName="DonationLevel" />
                 <ScalarProperty Name="WebUserId" ColumnName="WebUserId" />
