@@ -67,7 +67,7 @@ namespace Werewolf_Control.Helpers
             {
                 //only refresh the list cache once every 20 minutes
                 using (var db = new WWContext())
-                    _list = unz.ToList();
+                    _list = db.v_GroupRanking.ToList();
                 _lastGet = DateTime.Now;
             }
             return _list;
