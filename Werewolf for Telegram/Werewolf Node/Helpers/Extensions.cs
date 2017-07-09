@@ -48,8 +48,9 @@ namespace Werewolf_Node.Helpers
         public static string GetName(this IPlayer player, bool menu = false)
         {
             var name = player.Name;
-            var end = name.Substring(name.Length - 3);
-            name = name.Substring(0, name.Length - 3);
+            
+            var end = name.Substring(name.Length - Math.Min(name.Length, 3));
+            name = name.Substring(0, Math.Max(name.Length - 3, 0));
             end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
             if (player.DonationLevel >= 100)
                 end += " 🥇";
@@ -57,7 +58,6 @@ namespace Werewolf_Node.Helpers
                 end += " 🥈";
             else if (player.DonationLevel >= 10)
                 end += " 🥉";
-
             if (player.Founder)
                 end += "💎";
             name += end;
