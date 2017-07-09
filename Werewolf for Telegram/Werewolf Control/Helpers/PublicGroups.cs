@@ -80,7 +80,7 @@ namespace Werewolf_Control.Helpers
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages())
                 {
-                    if (GetAll().Any(x => (x.Language ?? x.GroupLanguage) == lang.FileName))
+                    if (GetAll().Any(x => x.Language == lang.FileName))
                     {
                         //load the language to get the base
                         if (!langs.Contains(lang.Base))
@@ -98,7 +98,7 @@ namespace Werewolf_Control.Helpers
             var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
             foreach (var g in GetAll())
             {
-                if (langs.Any(x => x.FileName == (g.Language ?? g.GroupLanguage)))
+                if (langs.Any(x => x.FileName == g.Language))
                     yield return g;
             }
         }
