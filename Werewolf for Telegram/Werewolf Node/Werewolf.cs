@@ -4473,7 +4473,6 @@ namespace Werewolf_Node
 
         private void UpdateGroupRanking()
         {
-
             using (var db = new WWContext())
             {
                 var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
