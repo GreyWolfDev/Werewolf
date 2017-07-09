@@ -48,7 +48,7 @@ namespace Werewolf_Node.Helpers
         public static string GetName(this IPlayer player, bool menu = false)
         {
             var name = player.Name;
-            
+#if BETA
             var end = name.Substring(name.Length - Math.Min(name.Length, 3));
             name = name.Substring(0, Math.Max(name.Length - 3, 0));
             end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
@@ -61,6 +61,7 @@ namespace Werewolf_Node.Helpers
             if (player.Founder)
                 end += "💎";
             name += end;
+#endif
             if (menu)
                 return name;
             if (!String.IsNullOrEmpty(player.TeleUser.Username))
