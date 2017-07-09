@@ -214,21 +214,17 @@ warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary k
           <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="PlayerId" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'werewolf.dbo.GroupRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="GroupRanking">
           <Key>
             <PropertyRef Name="GroupId" />
-            <PropertyRef Name="Id" />
             <PropertyRef Name="Language" />
           </Key>
           <Property Name="GroupId" Type="int" Nullable="false" />
-          <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Language" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="PlayersCount" Type="int" />
           <Property Name="MinutesPlayed" Type="decimal" Precision="18" Scale="0" />
           <Property Name="LastRefresh" Type="date" />
           <Property Name="Ranking" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="GroupStats">
           <Key>
@@ -312,6 +308,12 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="Date" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_BotInGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_BotInGroups">
+          <Property Name="Groups" Type="int" />
+          <Property Name="Has Bot?" Type="varchar" MaxLength="3" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_InactivePlayersMain">
           <Key>
@@ -324,6 +326,12 @@ warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not 
           <Property Name="TelegramId" Type="int" Nullable="false" />
           <Property Name="last" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_LanguageCounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_LanguageCounts">
+          <Property Name="Groups" Type="int" />
+          <Property Name="Language" Type="nvarchar(max)" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_NonDefaultGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_NonDefaultGroups">
@@ -380,6 +388,16 @@ warning 6002: The table/view 'werewolf.db_owner.v_PublicGroups' does not have a 
           <Property Name="GroupLink" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_SummaryTotals' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_SummaryTotals">
+          <Property Name="Players" Type="int" />
+          <Property Name="Games" Type="int" />
+          <Property Name="Groups" Type="int" />
+          <Property Name="Deaths" Type="int" />
+          <Property Name="Survivors" Type="int" />
+          <Property Name="Since" Type="datetime" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_WaitList">
           <Key>
@@ -389,6 +407,14 @@ warning 6002: The table/view 'werewolf.db_owner.v_WaitList' does not have a prim
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expr1" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'werewolf.db_owner.v_WinRatios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_WinRatios">
+          <Property Name="Players" Type="int" />
+          <Property Name="Wins" Type="int" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" />
+          <Property Name="%" Type="numeric" Precision="26" Scale="12" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_GroupRanking">
@@ -641,6 +667,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="GamePlayer" EntityType="Self.GamePlayer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GlobalStats" EntityType="Self.GlobalStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupRanking" EntityType="Self.GroupRanking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GroupStats" EntityType="Self.GroupStats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KillMethod" EntityType="Self.KillMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
@@ -651,17 +678,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
     [GroupAdmin].[GroupId] AS [GroupId], 
     [GroupAdmin].[PlayerId] AS [PlayerId]
     FROM [dbo].[GroupAdmin] AS [GroupAdmin]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="GroupRanking" EntityType="Self.GroupRanking" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [GroupRanking].[GroupId] AS [GroupId], 
-    [GroupRanking].[Language] AS [Language], 
-    [GroupRanking].[PlayersCount] AS [PlayersCount], 
-    [GroupRanking].[MinutesPlayed] AS [MinutesPlayed], 
-    [GroupRanking].[LastRefresh] AS [LastRefresh], 
-    [GroupRanking].[Ranking] AS [Ranking], 
-    [GroupRanking].[Id] AS [Id]
-    FROM [dbo].[GroupRanking] AS [GroupRanking]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="NotifyGame" EntityType="Self.NotifyGame" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1498,15 +1514,13 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Key>
             <PropertyRef Name="GroupId" />
             <PropertyRef Name="Language" />
-            <PropertyRef Name="Id" />
           </Key>
           <Property Name="GroupId" Type="Int32" Nullable="false" />
-          <Property Name="Language" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
           <Property Name="PlayersCount" Type="Int32" />
           <Property Name="MinutesPlayed" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="LastRefresh" Type="DateTime" Precision="0" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="RefreshDate">
           <Key>
@@ -2038,7 +2052,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="GroupRanking">
             <EntityTypeMapping TypeName="werewolfModel.GroupRanking">
               <MappingFragment StoreEntitySet="GroupRanking">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="LastRefresh" ColumnName="LastRefresh" />
                 <ScalarProperty Name="Ranking" ColumnName="Ranking" />
                 <ScalarProperty Name="MinutesPlayed" ColumnName="MinutesPlayed" />
