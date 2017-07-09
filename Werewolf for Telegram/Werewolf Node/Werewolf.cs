@@ -4480,6 +4480,7 @@ namespace Werewolf_Node
                 {
                     grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = DateTime.Now.Date };
                     db.GroupRanking.Add(grpranking);
+                    db.SaveChanges();
                 }
 
                 var refreshdate = db.RefreshDate.FirstOrDefault().Date;
@@ -4487,6 +4488,7 @@ namespace Werewolf_Node
                 {
                     refreshdate = DateTime.Now.Date;
                     db.RefreshDate.FirstOrDefault().Date = refreshdate;
+                    db.SaveChanges();
                 }
 
                 if (grpranking.LastRefresh < refreshdate)
@@ -4500,12 +4502,14 @@ namespace Werewolf_Node
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = 0;
                     grpranking.LastRefresh = refreshdate;
+                    db.SaveChanges();
                 }
                 
                 if (_timePlayed.HasValue)
                 {
                     grpranking.PlayersCount += Players.Count();
                     grpranking.MinutesPlayed += (decimal)_timePlayed.Value.TotalMinutes;
+                    db.SaveChanges();
                 }
                 
                 db.SaveChanges();
