@@ -1482,8 +1482,6 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         </EntityType>
         <EntityType Name="GroupRanking">
           <Key>
-            <PropertyRef Name="GroupId" />
-            <PropertyRef Name="Language" />
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="GroupId" Type="Int32" Nullable="false" />
