@@ -67,21 +67,7 @@ namespace Werewolf_Control.Helpers
             {
                 //only refresh the list cache once every 20 minutes
                 using (var db = new WWContext())
-                {
-                    var view = db.v_GroupRanking;
-                    try
-                    {
-
-                        _list = view.ToList();
-                    }
-                    catch (Exception e)
-                    {
-                        var msg = e.Message;
-                        var src = e.Source;
-                        var er = e.StackTrace;
-                        var c = "ciao";
-                    }
-                }
+                    _list = db.v_GroupRanking.ToList();
                 _lastGet = DateTime.Now;
             }
             return _list;
@@ -112,7 +98,7 @@ namespace Werewolf_Control.Helpers
             var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
             foreach (var g in GetAll())
             {
-                if (langs.Any(x => x.FileName == g.Language))
+                if (langs.Any(x => x.FileName == (g.Language ?? g.GroupLanguage)))
                     yield return g;
             }
         }

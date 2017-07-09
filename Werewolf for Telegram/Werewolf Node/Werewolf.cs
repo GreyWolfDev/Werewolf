@@ -4484,7 +4484,7 @@ namespace Werewolf_Node
                 }
 
                 var refreshdate = db.RefreshDate.FirstOrDefault().Date;
-                if (DateTime.Now.Date - refreshdate >= TimeSpan.FromDays(2))
+                if (DateTime.Now.Date - refreshdate >= TimeSpan.FromDays(7))
                 {
                     refreshdate = DateTime.Now.Date;
                     db.RefreshDate.FirstOrDefault().Date = refreshdate;
