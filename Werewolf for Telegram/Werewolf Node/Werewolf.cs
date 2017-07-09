@@ -4500,7 +4500,7 @@ namespace Werewolf_Node
                     var timefactor = grpranking.MinutesPlayed / (daysspan * 1440); //average minutes played per day / minutes in a day
                     grpranking.Ranking = playerfactor + avgplayersperday * timefactor;
                     grpranking.PlayersCount = 0;
-                    grpranking.MinutesPlayed = 0;
+                    grpranking.MinutesPlayed = (decimal)0;
                     grpranking.LastRefresh = refreshdate;
                     db.SaveChanges();
                 }
