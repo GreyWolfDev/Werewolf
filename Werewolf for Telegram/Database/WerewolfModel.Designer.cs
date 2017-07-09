@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Justin\Source\Repos\Werewolf\Werewolf for Telegram\Database\WerewolfModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Git\Werewolf\Werewolf for Telegram\Database\WerewolfModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
