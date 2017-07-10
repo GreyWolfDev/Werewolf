@@ -4499,7 +4499,7 @@ namespace Werewolf_Node
                     var avgplayersperday = (decimal)grpranking.PlayersCount / daysspan;
                     var playerfactor = -(decimal)0.05 * (avgplayersperday * avgplayersperday) + (decimal)2.5 * avgplayersperday - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
                     var timefactor = grpranking.MinutesPlayed / (daysspan * 1440); //average minutes played per day / minutes in a day
-                    grpranking.Ranking = playerfactor + avgplayersperday * timefactor;
+                    grpranking.Ranking = Math.Round(playerfactor + avgplayersperday * timefactor, 10);
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = (decimal)0;
                     grpranking.LastRefresh = refreshdate;
@@ -4509,7 +4509,7 @@ namespace Werewolf_Node
                 if (_timePlayed.HasValue)
                 {
                     grpranking.PlayersCount += Players.Count();
-                    grpranking.MinutesPlayed += (decimal)_timePlayed.Value.TotalMinutes;
+                    grpranking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
                     db.SaveChanges();
                 }
                 
