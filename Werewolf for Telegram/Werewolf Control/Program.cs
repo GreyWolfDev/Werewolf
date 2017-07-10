@@ -15,6 +15,7 @@ using Werewolf_Control.Helpers;
 
 namespace Werewolf_Control
 {
+
     class Program
     {
         internal static bool Running = true;

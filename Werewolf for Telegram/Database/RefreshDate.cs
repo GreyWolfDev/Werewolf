@@ -15,6 +15,6 @@ namespace Database
     public partial class RefreshDate
     {
         public string Lock { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public System.DateTime Date { get; set; }
     }
 }

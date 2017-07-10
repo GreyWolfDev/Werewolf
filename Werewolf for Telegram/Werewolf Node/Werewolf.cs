@@ -4494,9 +4494,9 @@ namespace Werewolf_Node
                 
                 if (grpranking.LastRefresh < refreshdate)
                 {
-                    var daysspan = (refreshdate - grpranking.LastRefresh).Value.Days; //well really this should be 7
+                    var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
                     daysspan = daysspan == 0 ? 1 : daysspan;
-                    var avgplayersperday = (decimal)grpranking.PlayersCount.Value / daysspan;
+                    var avgplayersperday = (decimal)grpranking.PlayersCount / daysspan;
                     var playerfactor = -(decimal)0.05 * (avgplayersperday * avgplayersperday) + (decimal)2.5 * avgplayersperday - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
                     var timefactor = grpranking.MinutesPlayed / (daysspan * 1440); //average minutes played per day / minutes in a day
                     grpranking.Ranking = playerfactor + avgplayersperday * timefactor;
