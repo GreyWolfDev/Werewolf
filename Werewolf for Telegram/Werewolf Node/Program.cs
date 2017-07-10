@@ -19,6 +19,7 @@ using Message = TcpFramework.Message;
 
 namespace Werewolf_Node
 {
+
     class Program
     {
         internal static SimpleTcpClient Client;

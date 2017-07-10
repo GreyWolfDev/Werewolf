@@ -16,10 +16,10 @@ namespace Database
     {
         public int GroupId { get; set; }
         public string Language { get; set; }
-        public Nullable<int> PlayersCount { get; set; }
-        public Nullable<decimal> MinutesPlayed { get; set; }
+        public int PlayersCount { get; set; }
+        public decimal MinutesPlayed { get; set; }
         public Nullable<decimal> Ranking { get; set; }
-        public Nullable<System.DateTime> LastRefresh { get; set; }
+        public System.DateTime LastRefresh { get; set; }
         public int Id { get; set; }
     }
 }
