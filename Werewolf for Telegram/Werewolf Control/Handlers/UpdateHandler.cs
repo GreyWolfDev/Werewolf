@@ -801,6 +801,7 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         case "groups":
+#if !RELEASE
                             var variant = args[3];
                             if (variant == "null")
                             {
@@ -831,13 +832,16 @@ namespace Werewolf_Control.Handler
                                     break;
                                 }
                             }
+#endif
 
 #if RELEASE
                             var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
+                            var variantmsg = "";
 #else
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
+                            var variantmsg = args[3] == "all" ? "" : (" " + variant);
 #endif
-                            Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + (args[3] == "all" ? "" : (" " + variant))));
+                            Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
                             if (groups.Count() > 5)
                             {
                                 //need to split it
