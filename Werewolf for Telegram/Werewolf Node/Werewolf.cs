@@ -50,7 +50,7 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs;
         public string ShowRolesEnd;
 
         #region Constructor
@@ -90,6 +90,7 @@ namespace Werewolf_Node
                         // ignored
                     }
                     DbGroup.UpdateFlags();
+                    ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
                     db.SaveChanges();
                     if (RandomMode)
@@ -285,7 +286,7 @@ namespace Werewolf_Node
 
                     if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + $" (ID: {p.TeleUser.Id}), ").TrimEnd(',', ' ')));
+                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")));
                         notifiedPlayers = Players.Select(x => x.Id).ToList();
                         secondsElapsed = 0;
                     }

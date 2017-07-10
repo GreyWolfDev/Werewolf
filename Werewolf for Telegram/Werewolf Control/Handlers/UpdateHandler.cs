@@ -1244,7 +1244,7 @@ namespace Werewolf_Control.Handler
                             var chosen =
                                 settings.FirstOrDefault(
                                     x => x.GetInfo().ShortName == command || "set" + x.GetInfo().ShortName == command);
-                            if (chosen == null || chosen == GroupConfig.None) break; //always false? on a FirstOrDefault?....  I'll check later.
+                            if (chosen == GroupConfig.None) break; //always false? on a FirstOrDefault?....  I'll check later. //reny's answer: yep, enum's default is zero, ie GroupConfig.None
                             //TODO we need to call the database method to update the group flags based on current settings (also under TODO)
 
                             string pos = "", neg = "";

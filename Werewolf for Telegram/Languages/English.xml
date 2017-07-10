@@ -1398,7 +1398,8 @@
   </string>
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
-    <value>{0} joined the game in the last 30 seconds.</value>
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}joined the game in the last 30 seconds.</value>
   </string>
   <string key="AllowCult">
     <value>Allow Cult</value>
@@ -1423,5 +1424,14 @@
   </string>
   <string key="AllowFlee">
     <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
   </string>
 </strings>
