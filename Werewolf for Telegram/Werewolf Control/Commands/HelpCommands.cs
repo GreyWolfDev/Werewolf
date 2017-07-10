@@ -42,7 +42,7 @@ namespace Werewolf_Control
             //now determine what languages are available in public groups.
             var langs = PublicGroups.GetBaseLanguages();
             //create a menu out of this
-            List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"groups|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)

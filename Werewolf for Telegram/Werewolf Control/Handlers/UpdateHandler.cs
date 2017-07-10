@@ -801,12 +801,43 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         case "groups":
+                            var variant = args[3];
+                            if (variant == "null")
+                            {
+                                var variants = PublicGroups.GetVariants(choice);
+                                if (variants.Count() == 1)
+                                {
+                                    variant = variants.First();
+                                }
+                                else
+                                {
+                                    //create a menu out of this
+                                    buttons = new List<InlineKeyboardButton>() { new InlineKeyboardButton(GetLocaleString("All", language), $"groups|{query.From.Id}|{choice}|all") };
+                                    buttons.AddRange(variants.OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"groups|{query.From.Id}|{choice}|{x}")));
+
+                                    var variantMenu = new List<InlineKeyboardButton[]>();
+                                    for (var i = 0; i < buttons.Count; i++)
+                                    {
+                                        if (buttons.Count - 1 == i)
+                                        {
+                                            variantMenu.Add(new[] { buttons[i] });
+                                        }
+                                        else
+                                            variantMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                                        i++;
+                                    }
+
+                                    Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice), replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()));
+                                    break;
+                                }
+                            }
+
 #if RELEASE
                             var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
 #else
-                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
+                            var groups = PublicGroups.ForLanguage(choice, variant).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
 #endif
-                            Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice));
+                            Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + (args[3] == "all" ? "" : (" " + variant))));
                             if (groups.Count() > 5)
                             {
                                 //need to split it
@@ -839,6 +870,7 @@ namespace Werewolf_Control.Handler
                                         $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
+
                             break;
                         case "stopwaiting":
                             using (var db = new WWContext())

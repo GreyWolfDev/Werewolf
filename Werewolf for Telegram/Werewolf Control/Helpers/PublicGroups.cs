@@ -60,22 +60,25 @@ namespace Werewolf_Control.Helpers
 #else
         private static List<v_GroupRanking> _list;
         private static List<string> _langs;
-        private static DateTime _lastGet = DateTime.MinValue;
+        private static DateTime _lastGetAll = DateTime.MinValue, _lastGetBase = DateTime.MinValue;
+
+        private static Dictionary<string,List<string>> _variants = new Dictionary<string, List<string>>();
+        private static Dictionary<string, DateTime> _lastGetVariant = new Dictionary<string, DateTime>();
         internal static List<v_GroupRanking> GetAll()
         {
-            if (_lastGet < DateTime.Now.AddMinutes(-20))
+            if (_lastGetAll < DateTime.Now.AddMinutes(-20))
             {
                 //only refresh the list cache once every 20 minutes
                 using (var db = new WWContext())
                     _list = db.v_GroupRanking.ToList();
-                _lastGet = DateTime.Now;
+                _lastGetAll = DateTime.Now;
             }
             return _list;
         }
 
         internal static List<string> GetBaseLanguages()
         {
-            if (_lastGet < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+            if (_lastGetBase < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
             {
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages())
@@ -88,18 +91,50 @@ namespace Werewolf_Control.Helpers
                     }
                 }
                 _langs = langs;
-                _lastGet = DateTime.Now;
+                _lastGetBase = DateTime.Now;
             }
             return _langs;
         }
 
-        internal static IEnumerable<v_GroupRanking> ForLanguage(string baseLang)
+        internal static List<string> GetVariants(string baseLang)
         {
-            var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
-            foreach (var g in GetAll())
+            if (!_lastGetVariant.ContainsKey(baseLang) || _lastGetVariant[baseLang] < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
             {
-                if (langs.Any(x => x.FileName == g.Language))
-                    yield return g;
+                var langs = new List<string>();
+                foreach (var lang in LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang))
+                {
+                    if (GetAll().Any(x => x.Language == lang.FileName))
+                    {
+                        //load the language to get the variant
+                        if (!langs.Contains(lang.Variant))
+                            langs.Add(lang.Variant);
+                    }
+                }
+                _variants[baseLang] = langs;
+                _lastGetVariant[baseLang] = DateTime.Now;
+            }
+            return _variants[baseLang];
+        }
+        
+        internal static IEnumerable<v_GroupRanking> ForLanguage(string baseLang, string variant)
+        {
+            if (variant == "all")
+            {
+                var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
+                foreach (var g in GetAll())
+                {
+                    if (langs.Any(x => x.FileName == g.Language))
+                        yield return g;
+                }
+            }
+            else
+            {
+                var lang = LanguageHelper.GetAllLanguages().FirstOrDefault(x => x.Base == baseLang && x.Variant == variant);
+                foreach (var g in GetAll())
+                {
+                    if (lang.FileName == g.Language)
+                        yield return g;
+                }
             }
         }
 #endif
