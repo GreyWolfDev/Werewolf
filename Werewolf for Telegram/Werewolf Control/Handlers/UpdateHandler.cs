@@ -567,7 +567,7 @@ namespace Werewolf_Control.Handler
                         }
                         return;
                     }
-                    if (args[0] == "build")
+                    else if (args[0] == "build")
                     {
                         bool dontUpdate = args[1] == "no";
                         if (UpdateHelper.Devs.Contains(query.From.Id))
@@ -586,7 +586,7 @@ namespace Werewolf_Control.Handler
                         }
                         return;
                     }
-                    if (args[0] == "ohai")
+                    else if (args[0] == "ohai")
                     {
                         bool dontUpdate = args[1] == "no";
                         Bot.ReplyToCallback(query, "Processing...");
@@ -659,7 +659,7 @@ namespace Werewolf_Control.Handler
                         }
                         return;
                     }
-                    if (args[0] == "restore")
+                    else if (args[0] == "restore")
                     {
                         if (UpdateHelper.Devs.Contains(query.From.Id))
                         {
@@ -681,23 +681,24 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
                         }
                     }
-                    if (args[0] == "movelang")
+                    else if (args[0] == "movelang")
                     {
                         if (UpdateHelper.Devs.Contains(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, "Processing...");
                             if (args[1] == "no")
                             {
-                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
+                                Bot.Edit(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
                                 return;
                             }
 
                             var oldfilename = args[2];
                             var newfilename = args[3];
-                            int grpcount = 0, plcount = 0;
+                            int grpcount = 0, plcount = 0, grprcount = 0;
 
                             var groups = (from g in DB.Groups where g.Language == oldfilename select g).ToList();
                             var players = (from pl in DB.Players where pl.Language == oldfilename select pl).ToList();
+                            var grouprankings = (from gr in DB.GroupRanking where gr.Language == oldfilename select gr).ToList();
 
                             foreach (var g in groups)
                             {
@@ -709,9 +710,14 @@ namespace Werewolf_Control.Handler
                                 pl.Language = newfilename;
                                 plcount++;
                             }
+                            foreach (var gr in grouprankings)
+                            {
+                                gr.Language = newfilename;
+                                grprcount++;
+                            }
                             DB.SaveChanges();
-                            var msg = $"Groups changed: {grpcount}\nPlayers changed: {plcount}\n<b>Total rows changed: {grpcount + plcount}</b>";
-                            Bot.Edit(query, msg);
+                            var msg = $"Groups changed: {grpcount}\nPlayers changed: {plcount}\nTotal rows changed: {grpcount + plcount}";
+                            Bot.Edit(query, query.Message.Text + "\n\n" + msg);
 
                             try
                             {
