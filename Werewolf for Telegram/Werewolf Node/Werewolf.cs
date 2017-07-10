@@ -4475,14 +4475,6 @@ namespace Werewolf_Node
         {
             using (var db = new WWContext())
             {
-                var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
-                if (grpranking == null)
-                {
-                    grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = DateTime.Now.Date };
-                    db.GroupRanking.Add(grpranking);
-                    db.SaveChanges();
-                }
-
                 var refreshdate = db.RefreshDate.FirstOrDefault().Date;
                 if (DateTime.Now.Date - refreshdate >= TimeSpan.FromDays(7))
                 {
@@ -4491,6 +4483,14 @@ namespace Werewolf_Node
                     db.SaveChanges();
                 }
 
+                var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
+                if (grpranking == null)
+                {
+                    grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = refreshdate };
+                    db.GroupRanking.Add(grpranking);
+                    db.SaveChanges();
+                }
+                
                 if (grpranking.LastRefresh < refreshdate)
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Value.Days; //well really this should be 7
