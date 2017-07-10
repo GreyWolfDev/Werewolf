@@ -21,5 +21,6 @@ namespace Database
         public Nullable<decimal> Ranking { get; set; }
         public System.DateTime LastRefresh { get; set; }
         public int Id { get; set; }
+        public int GamesPlayed { get; set; }
     }
 }

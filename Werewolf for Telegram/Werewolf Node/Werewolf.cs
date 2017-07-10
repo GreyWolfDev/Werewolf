@@ -4492,14 +4492,14 @@ namespace Werewolf_Node
                     db.SaveChanges();
                 }
                 
-                if (grpranking.LastRefresh < refreshdate)
+                if (grpranking.LastRefresh < refreshdate && grpranking.GamesPlayed != 0) //games played should always be != 0, but you never know..
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
                     daysspan = daysspan == 0 ? 1 : daysspan;
-                    var avgplayersperday = (decimal)grpranking.PlayersCount / daysspan;
-                    var playerfactor = -(decimal)0.05 * (avgplayersperday * avgplayersperday) + (decimal)2.5 * avgplayersperday - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
+                    var avgplayerspergame = (decimal)grpranking.PlayersCount / grpranking.GamesPlayed; //this is between 0 and 35
+                    var playerfactor = -(decimal)0.05 * (avgplayerspergame * avgplayerspergame) + (decimal)2.5 * avgplayerspergame - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
                     var timefactor = grpranking.MinutesPlayed / (daysspan * 1440); //average minutes played per day / minutes in a day
-                    grpranking.Ranking = Math.Round(playerfactor + avgplayersperday * timefactor, 10);
+                    grpranking.Ranking = Math.Round(playerfactor + avgplayerspergame * timefactor, 10);
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = (decimal)0;
                     grpranking.LastRefresh = refreshdate;
@@ -4508,6 +4508,7 @@ namespace Werewolf_Node
                 
                 if (_timePlayed.HasValue)
                 {
+                    grpranking.GamesPlayed++;
                     grpranking.PlayersCount += Players.Count();
                     grpranking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
                     db.SaveChanges();
