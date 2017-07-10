@@ -121,10 +121,14 @@ namespace Werewolf_Control.Helpers
             if (variant == "all")
             {
                 var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
+                var groups = new List<v_GroupRanking>();
                 foreach (var g in GetAll())
                 {
-                    if (langs.Any(x => x.FileName == g.Language))
+                    if (langs.Any(x => x.FileName == g.Language) && !groups.Any(x => x.GroupId == g.GroupId))
+                    {
+                        groups.Add(g);
                         yield return g;
+                    }
                 }
             }
             else
