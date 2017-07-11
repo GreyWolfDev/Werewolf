@@ -1289,10 +1289,6 @@ namespace Werewolf_Node
                         if (allowCult && playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
-                    case IRole.PsychicMage:
-                        if (playerCount >= 7)
-                            rolesToAssign.Add(role);
-                        break;
                     case IRole.Tanner:
                         if (allowTanner)
                             rolesToAssign.Add(role);
@@ -1363,7 +1359,7 @@ namespace Werewolf_Node
 
                 var balanced = false;
                 var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.PsychicMage, IRole.Doppelgänger };
 
                 do
                 {
@@ -1420,7 +1416,8 @@ namespace Werewolf_Node
                     //make sure that we have at least two teams
                     if (
                         rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner
+                        && x != IRole.PsychicMage && x != IRole.Doppelgänger) //make sure we have at least one enemy
                     )
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it

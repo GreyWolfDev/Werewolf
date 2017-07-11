@@ -109,7 +109,7 @@ namespace Werewolf_Control.Helpers
                 case IRole.Prince:
                     return 3;
                 case IRole.PsychicMage:
-                    return 4;
+                    return 2;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

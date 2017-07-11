@@ -301,30 +301,24 @@ namespace Werewolf_Control
                 switch (role)
                 {
                     case IRole.Wolf:
-                    case IRole.Faithful: //never start a game with faithfuls.
                         break;
                     case IRole.CultistHunter:
-                    case IRole.Preacher:
                     case IRole.Cultist:
-                        if (allowCult != false && playerCount > 10)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.PsychicMage:
-                        if (playerCount > 7)
+                        if (allowCult && playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Tanner:
-                        if (allowTanner != false)
+                        if (allowTanner)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Fool:
-                        if (allowFool != false)
+                        if (allowFool)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.WolfCub:
                     case IRole.AlphaWolf: //don't add more wolves, just replace
-                        rolesToAssign.Add(role);
-                        rolesToAssign.Remove(IRole.Wolf);
+                        if (rolesToAssign.Remove(IRole.Wolf))
+                            rolesToAssign.Add(role);
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -339,7 +333,7 @@ namespace Werewolf_Control
             //same as it was before....
 
 
-            if (rolesToAssign.Any(x => x == IRole.CultistHunter || x == IRole.Preacher))
+            if (rolesToAssign.Any(x => x == IRole.CultistHunter))
             {
                 rolesToAssign.Add(IRole.Cultist);
                 rolesToAssign.Add(IRole.Cultist);
@@ -361,6 +355,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "createbalance", DevOnly = true)]
         public static void CreateBalancedGames(Update u, string[] args)
         {
+
             //get parameters
             int count = 0;
 
@@ -371,126 +366,140 @@ namespace Werewolf_Control
 
             }
 
-
-            List<IRole> rolesToAssign;
-            var balanced = false;
-            int villageStrength = 0, enemyStrength = 0;
-            var attempts = 0;
-            var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
-            var WolfRoles = new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
-
-            do
+            try
             {
-                attempts++;
-                if (attempts >= 500)
+                List<IRole> rolesToAssign = new List<IRole>();
+                var balanced = false;
+                int villageStrength = 0, enemyStrength = 0;
+                var attempts = 0;
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.PsychicMage, IRole.Doppelgänger };
+                var WolfRoles = new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+
+                while (!balanced)
                 {
-                    throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + count);
+                    attempts++;
+                    if (attempts >= 500)
+                        break;
+
+
+                    //determine which roles should be assigned
+                    rolesToAssign = GetRoleList(count);
+                    rolesToAssign.Shuffle();
+                    rolesToAssign = rolesToAssign.Take(count).ToList();
+
+
+
+                    //let's fix some roles that should or shouldn't be there...
+
+                    //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
+                    if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor) || rolesToAssign.Contains(IRole.PsychicMage)) &&
+                        !rolesToAssign.Any(x => WolfRoles.Contains(x)))
+                    {
+                        var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor || x == IRole.PsychicMage); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
+                        rolesToAssign[towolf] = WolfRoles[new Random().Next(3)]; //choose randomly from WolfRoles
+                    }
+
+                    //appseer without seer -> seer
+                    if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
+                    {
+                        //substitute with seer
+                        var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
+                        rolesToAssign[apps] = IRole.Seer;
+                    }
+
+                    //cult without CH -> add CH
+                    if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
+                    {
+                        //just pick a vg, and turn them to CH
+                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                        rolesToAssign[vg] = IRole.CultistHunter;
+                    }
+
+                    //make sure that we have at least two teams
+                    if (
+                        rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner
+                        && x != IRole.PsychicMage && x != IRole.Doppelgänger) //make sure we have at least one enemy
+                    )
+                        balanced = true;
+                    //else, redo role assignment. better to rely on randomness, than trying to fix it
+
+                    villageStrength =
+                        rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+                    enemyStrength =
+                        rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+
+                    //check balance
+                    var varianceAllowed = (count / 4) + 1;
+                    balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+                    if (!balanced && rolesToAssign.Contains(IRole.PsychicMage))
+                    {
+                       var msgp = $"PM Apareceu...\nTotal Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+                        msgp +=
+                            $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString() + " - " + x.GetStrength(rolesToAssign)).Aggregate((a, b) => a + "\n" + b)}\n\n";
+                        msgp +=
+                            $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString() + " - " + x.GetStrength(rolesToAssign)).Aggregate((a, b) => a + "\n" + b)}";
+
+                        Send(msgp, u.Message.Chat.Id);
+                    }
                 }
 
 
-                //determine which roles should be assigned
-                rolesToAssign = GetRoleList(count);
-                rolesToAssign.Shuffle();
-                rolesToAssign = rolesToAssign.Take(count).ToList();
+                //var balanced = false;
+
+                //List<IRole> rolesToAssign = new List<IRole>();
+                //int villageStrength = 0, enemyStrength = 0;
+                //var attempts = 0;
+                //var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+                //while (!balanced)
+                //{
+                //    attempts++;
+                //    if (attempts >= 200)
+                //        break;
+                //    rolesToAssign = GetRoleList(count);
+                //    rolesToAssign.Shuffle();
+                //    rolesToAssign = rolesToAssign.Take(count).ToList();
+                //    if (rolesToAssign.Contains(IRole.Sorcerer) &
+                //        !rolesToAssign.Any(x => new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub }.Contains(x)))
+                //        //can't have a sorcerer without wolves.  That's silly
+                //        continue;
+
+                //    //check the balance
+
+                //    villageStrength =
+                //    rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+                //    enemyStrength =
+                //        rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+
+                //    //check balance
+                //    var varianceAllowed = (count / 5) + 3;
+
+                //    balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+                //}
 
 
 
-                //let's fix some roles that should or shouldn't be there...
-
-                //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
-                if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
-                    !rolesToAssign.Any(x => WolfRoles.Contains(x)))
+                var msg = $"Attempts: {attempts}\n";
+                if (balanced)
                 {
-                    var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
-                    rolesToAssign[towolf] = WolfRoles[new Random().Next(3)]; //choose randomly from WolfRoles
+                    msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+                    msg +=
+                        $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString() + " - " + x.GetStrength(rolesToAssign)).Aggregate((a, b) => a + "\n" + b)}\n\n";
+                    msg +=
+                        $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString() + " - " + x.GetStrength(rolesToAssign)).Aggregate((a, b) => a + "\n" + b)}";
                 }
-
-                //appseer without seer -> seer
-                if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
+                else
                 {
-                    //substitute with seer
-                    var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
-                    rolesToAssign[apps] = IRole.Seer;
+                    msg += "Unbalanced :(";
                 }
-
-                //cult without CH -> add CH
-                if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
-                {
-                    //just pick a vg, and turn them to CH
-                    var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-                    rolesToAssign[vg] = IRole.CultistHunter;
-                }
-                
-                //make sure that we have at least two teams
-                if (
-                    rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                    && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
-                )
-                    balanced = true;
-                //else, redo role assignment. better to rely on randomness, than trying to fix it
-
-                villageStrength =
-                    rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-                enemyStrength =
-                    rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-
-                //check balance
-                var varianceAllowed = (count / 4) + 1;
-                balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-
-            } while (!balanced);
-
-
-            //var balanced = false;
-
-            //List<IRole> rolesToAssign = new List<IRole>();
-            //int villageStrength = 0, enemyStrength = 0;
-            //var attempts = 0;
-            //var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
-            //while (!balanced)
-            //{
-            //    attempts++;
-            //    if (attempts >= 200)
-            //        break;
-            //    rolesToAssign = GetRoleList(count);
-            //    rolesToAssign.Shuffle();
-            //    rolesToAssign = rolesToAssign.Take(count).ToList();
-            //    if (rolesToAssign.Contains(IRole.Sorcerer) &
-            //        !rolesToAssign.Any(x => new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub }.Contains(x)))
-            //        //can't have a sorcerer without wolves.  That's silly
-            //        continue;
-
-            //    //check the balance
-
-            //    villageStrength =
-            //    rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-            //    enemyStrength =
-            //        rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-
-            //    //check balance
-            //    var varianceAllowed = (count / 5) + 3;
-
-            //    balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-
-
-            //}
-
-
-
-            var msg = $"Attempts: {attempts}\n";
-            if (balanced)
-            {
-                msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
-                msg +=
-                    $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
-                msg +=
-                    $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
+                Send(msg, u.Message.Chat.Id);
             }
-            else
+            catch (global::System.Exception e)
             {
-                msg += "Unbalanced :(";
+                Send("Error creating balanced game: " + count + "\nException: " + e.Message, u.Message.Chat.Id);
             }
-            Send(msg, u.Message.Chat.Id);
         }
 
         [Attributes.Command(Trigger = "test", DevOnly = true)]
