@@ -15,7 +15,6 @@ using Werewolf_Control.Helpers;
 
 namespace Werewolf_Control
 {
-
     class Program
     {
         internal static bool Running = true;
@@ -234,7 +233,6 @@ namespace Werewolf_Control
             {
                 try
                 {
-
                     var Nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
                     NodeMessagesSent = Nodes.Sum(x => x.MessagesSent);
                     var CurrentPlayers = Nodes.Sum(x => x.CurrentPlayers);

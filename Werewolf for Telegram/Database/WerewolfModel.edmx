@@ -391,9 +391,7 @@ warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a prima
         <EntityType Name="v_GroupRanking">
           <Key>
             <PropertyRef Name="GroupId" />
-            <PropertyRef Name="TelegramId" />
-            
-            <PropertyRef Name="Name" />
+            <PropertyRef Name="Language" />
           </Key>
           <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="TelegramId" Type="bigint" Nullable="false" />
@@ -1504,8 +1502,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         <EntityType Name="v_GroupRanking">
           <Key>
             <PropertyRef Name="GroupId" />
-            <PropertyRef Name="TelegramId" />
-            <PropertyRef Name="Name" />
+            <PropertyRef Name="Language" />
           </Key>
           <Property Name="GroupId" Type="Int32" Nullable="false" />
           <Property Name="TelegramId" Type="Int64" Nullable="false" />
