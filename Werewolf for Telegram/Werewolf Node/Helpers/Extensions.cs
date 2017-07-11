@@ -55,6 +55,17 @@ namespace Werewolf_Node.Helpers
             return player.Name.ToBold();
         }
 
+        public static string GetFinalEmojis(this IPlayer p)
+        {
+            string emoji = "";
+            if (p.OriginalRole != p.PlayerRole)
+                emoji += p.OriginalRole.GetEmoji();
+            if (p.PlayerRole == IRole.PsychicMage && p.Team != ITeam.Neutral)
+                emoji += p.Team == ITeam.Village ? IRole.Villager.GetEmoji() : IRole.Wolf.GetEmoji();
+            emoji += p.InLove ? "❤️" : "";
+            return emoji;
+        }
+
         public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)
         {
             return players?.Where(x => !x.IsDead);
@@ -202,7 +213,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.WolfCub:
                     return "🐶";
                 case IRole.Blacksmith:
-                    return "⚒;
+                    return "⚒";
                 case IRole.ClumsyGuy:
                     return "🤕";
                 case IRole.Mayor:
