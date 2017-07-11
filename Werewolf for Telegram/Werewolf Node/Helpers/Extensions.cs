@@ -146,7 +146,74 @@ namespace Werewolf_Node.Helpers
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
-
+        }
+        public static string GetEmoji(this IRole role)
+        {
+            switch (role)
+            {
+                case IRole.Villager:
+                    return "👨";
+                case IRole.Drunk:
+                    return "🍻";
+                case IRole.Harlot:
+                    return "💋";
+                case IRole.Seer:
+                    return "👳";
+                case IRole.Traitor:
+                    return "🖕";
+                case IRole.GuardianAngel:
+                    return "👼";
+                case IRole.Detective:
+                    return "🕵️";
+                case IRole.Wolf:
+                    return "🐺";
+                case IRole.Cursed:
+                    return "😾";
+                case IRole.Gunner:
+                    return "🔫";
+                case IRole.Tanner:
+                    return "👺";
+                case IRole.Fool:
+                    return "🃏";
+                case IRole.WildChild:
+                    return "👶";
+                case IRole.Beholder:
+                    return "👁";
+                case IRole.ApprenticeSeer:
+                    return "🙇";
+                case IRole.Cultist:
+                    return "👤";
+                case IRole.CultistHunter:
+                    return "💂";
+                case IRole.Mason:
+                    return "👷";
+                case IRole.Doppelgänger:
+                    return "🎭";
+                case IRole.Cupid:
+                    return "🏹";
+                case IRole.Hunter:
+                    return "🎯";
+                case IRole.SerialKiller:
+                    return "🔪";
+                case IRole.Sorcerer:
+                    return "🔮";
+                case IRole.AlphaWolf:
+                    return "⚡️";
+                case IRole.WolfCub:
+                    return "🐶";
+                case IRole.Blacksmith:
+                    return "⚒;
+                case IRole.ClumsyGuy:
+                    return "🤕";
+                case IRole.Mayor:
+                    return "🎖";
+                case IRole.Prince:
+                    return "👑";
+                case IRole.PsychicMage:
+                    return "🌀";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(role), role, null);
+            }
         }
     }
 }
