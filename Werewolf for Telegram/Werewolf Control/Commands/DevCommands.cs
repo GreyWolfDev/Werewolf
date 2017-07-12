@@ -1117,36 +1117,37 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
         public static void Preferred(Update update, string[] args)
         {
+            var group = args[1];
             if (String.IsNullOrEmpty(args[1]))
             {
-                Bot.Send("Usage: `/preferred <link|username|groupid> [Y|N]`\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
+                Bot.Send("Usage: `/preferred <link|username|groupid>`", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
                 return;
             }
-            var group = args[1].Split(' ').First();
-            var choice = args[1].Split(' ').Skip(1).FirstOrDefault();
             using (var db = new WWContext())
             {
                 Database.Group grp = GetGroup(group, db);
-                if (grp != null)
-                {
-                    var msg = "";
-                    if (choice?.ToUpper() == "Y" || choice?.ToUpper() == "N")
-                    {
-                        bool preferred = (choice.ToUpper() == "Y");
-                        grp.Preferred = preferred;
-                        db.SaveChanges();
-                        msg = (String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>"))
-                            + (preferred ? " will now be able to appear on grouplist" : " won't appear on grouplist anymore");
-                    }
-                    else
-                    {
-                        msg = (String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>"))
-                            + (grp.Preferred == true ? " can " : " can't ") + "appear on grouplist";
-                    }
-                    Send(msg, update.Message.Chat.Id);
+                if (grp == null) {
+                    Send("Group not found.", update.Message.Chat.Id);
+                    return;
                 }
-                else
-                    Send("Couldn't find the group in the database, so it is likely not to be in the grouplist.", update.Message.Chat.Id);
+                //get the languages which they played, make a menu out of it
+                var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id).ToList();
+                var menu = rankings.Select(x => new[] {
+                        new InlineKeyboardButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
+                        new InlineKeyboardButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
+                    }).ToList();
+                //add a button at the beginning and at the end
+                menu.Insert(0, new[] {
+                    new InlineKeyboardButton("Global", $"preferred|{grp.GroupId}|null|info"),
+                    new InlineKeyboardButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                });
+                menu.Add(new[] { new InlineKeyboardButton("Done", "done") });
+                //send everything
+                Send(
+                    $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
+                    "\n\nSelect the languages under which the group is allowed to appear in grouplist.\nNote that the first option, if disabled, overrides all the others.", 
+                    update.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(menu.ToArray())
+                );
                 return;
             }
         }

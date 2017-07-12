@@ -548,65 +548,99 @@ namespace Werewolf_Control.Handler
                     }
                     string[] args = query.Data.Split('|');
                     Program.Analytics.TrackAsync($"cb:{args[0]}", new { args = args }, query.From.Id.ToString());
-                    if (args[0] == "update")
+                    
+                    
+                    //first off, if it's a game, send it to the node.
+                    if (args[0] == "vote")
                     {
-                        bool dontUpdate = args[1] == "no";
-                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
+                        node?.SendReply(query);
+                        return;
+                    }
+                    
+                    //declare objects
+                    InlineKeyboardMarkup menu;
+                    Group grp = null;
+                    List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
+
+                    //get group and player
+                    long groupid = 0;
+                    if (args.Length > 1 && long.TryParse(args[1], out groupid))
+                        grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
+                    Player p = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
+
+                    //some variable helpers
+                    var language = GetLanguage(p?.TelegramId ?? groupid);
+                    var command = args[0];
+                    var choice = "";
+                    if (args.Length > 2)
+                        choice = args[2];
+
+
+                    //check for permission
+                    if (new[] { "update", "build", "ohai", "restore", "movelang" }.Contains(command))
+                    {
+                        //dev only commands
+                        if (!UpdateHelper.Devs.Contains(query.From.Id))
                         {
-                            if (dontUpdate)
-                            {
-                                Bot.ReplyToCallback(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
-                                return;
-                            }
-                            //start the update process
+                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
+                            return;
+                        }
+                        Bot.ReplyToCallback(query, "Processing...", false);
+                        //args[1] is yes or no
+                        if (args[1] == "no")
+                        {
+                            Bot.Edit(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
+                            return;
+                        }
+                    }
+                    else if (new[] { "status", "validate", "upload" }.Contains(command))
+                    {
+                        //global admin only commands
+                        if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
+                        {
+                            Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false);
+                            return;
+                        }
+                    }
+                    else if (command == "setlang" && p == null)
+                        //requires a player
+                        return;
+                    else if (!new[] { "groups", "getlang", "done" }.Contains(command) && grp == null)
+                        //these commands don't require a group, and can go through. every other command requires a group
+                        return;
+
+
+                    //config helpers
+                    if (choice == "cancel")
+                    {
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                        return;
+                    }
+                    grp?.UpdateFlags();
+                    var Yes = GetLocaleString("Yes", language);
+                    var No = GetLocaleString("No", language);
+                    var Cancel = GetLocaleString("Cancel", language);
+                    
+                    switch (command)
+                    {
+                        #region Dev Commands
+                        case "update":
                             Updater.DoUpdate(query);
-                        }
-                        else
-                        {
-                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
-                        }
-                        return;
-                    }
-                    else if (args[0] == "build")
-                    {
-                        bool dontUpdate = args[1] == "no";
-                        if (UpdateHelper.Devs.Contains(query.From.Id))
-                        {
-                            if (dontUpdate)
-                            {
-                                Bot.ReplyToCallback(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
-                                return;
-                            }
-                            //start the update process
+                            return;
+                        case "build":
+                            //start the build process
                             Updater.DoBuild(query);
-                        }
-                        else
-                        {
-                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
-                        }
-                        return;
-                    }
-                    else if (args[0] == "ohai")
-                    {
-                        bool dontUpdate = args[1] == "no";
-                        Bot.ReplyToCallback(query, "Processing...");
-                        if (UpdateHelper.Devs.Contains(query.From.Id))
-                        {
-                            if (dontUpdate)
-                            {
-                                Bot.Edit(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
-                                return;
-                            }
+                            return;
+                        case "ohai":
                             //update ohaider achievement
                             var userid = int.Parse(args[2]);
-
-
                             try
                             {
                                 var para = DB.Players.FirstOrDefault(x => x.Id == userid);
 
                                 //get all the players Para has played with
-                                var players = (from g in DB.Games
+                                var ohaiplayers = (from g in DB.Games
                                                join gp in DB.GamePlayers on g.Id equals gp.GameId
                                                join gp2 in DB.GamePlayers on g.Id equals gp2.GameId
                                                join pl in DB.Players on gp2.PlayerId equals pl.Id
@@ -616,10 +650,10 @@ namespace Werewolf_Control.Handler
                                 //figure out which players don't have the achievement
 
                                 //update the message
-                                var ohaimsg = $"Found {players.Count()} players that have earned OHAIDER.";
+                                var ohaimsg = $"Found {ohaiplayers.Count()} players that have earned OHAIDER.";
                                 Bot.Edit(query, ohaimsg);
                                 var count = 0;
-                                foreach (var player in players)
+                                foreach (var player in ohaiplayers)
                                 {
                                     //add the achievement
                                     if (player.Achievements == null)
@@ -651,56 +685,25 @@ namespace Werewolf_Control.Handler
                                     e = e.InnerException;
                                 Send(e.Message, query.From.Id);
                             }
-
-                        }
-                        else
-                        {
-                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
-                        }
-                        return;
-                    }
-                    else if (args[0] == "restore")
-                    {
-                        if (UpdateHelper.Devs.Contains(query.From.Id))
-                        {
-                            Bot.ReplyToCallback(query, "Processing...");
-                            if (args[1] == "no")
-                            {
-                                Bot.Edit(query, "Okay, I won't do anything D: *sadface*");
-                                return;
-                            }
+                            return;
+                        case "restore":
                             var oldid = int.Parse(args[1]);
                             var newid = int.Parse(args[2]);
                             var result = DB.RestoreAccount(oldid, newid);
                             var oldname = DB.Players.FirstOrDefault(x => x.TelegramId == oldid)?.Name;
                             var newname = DB.Players.FirstOrDefault(x => x.TelegramId == newid)?.Name;
                             Bot.Edit(query, $"Restored stats from {oldname} to {newname}");
-                        }
-                        else
-                        {
-                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
-                        }
-                    }
-                    else if (args[0] == "movelang")
-                    {
-                        if (UpdateHelper.Devs.Contains(query.From.Id))
-                        {
-                            Bot.ReplyToCallback(query, "Processing...");
-                            if (args[1] == "no")
-                            {
-                                Bot.Edit(query, query.Message.Text + "\n\nOkay, I won't do anything D: *sadface*");
-                                return;
-                            }
-
+                            return;
+                        case "movelang":
                             var oldfilename = args[2];
                             var newfilename = args[3];
                             int grpcount = 0, plcount = 0, grprcount = 0;
 
-                            var groups = (from g in DB.Groups where g.Language == oldfilename select g).ToList();
+                            var groupsmoved = (from g in DB.Groups where g.Language == oldfilename select g).ToList();
                             var players = (from pl in DB.Players where pl.Language == oldfilename select pl).ToList();
                             var grouprankings = (from gr in DB.GroupRanking where gr.Language == oldfilename select gr).ToList();
 
-                            foreach (var g in groups)
+                            foreach (var g in groupsmoved)
                             {
                                 g.Language = newfilename;
                                 grpcount++;
@@ -717,8 +720,6 @@ namespace Werewolf_Control.Handler
                             }
                             DB.SaveChanges();
                             var msg = $"Groups changed: {grpcount}\nPlayers changed: {plcount}\nTotal rows changed: {grpcount + plcount}";
-                            Bot.Edit(query, query.Message.Text + "\n\n" + msg);
-
                             try
                             {
                                 System.IO.File.Delete(Path.Combine(Bot.LanguageDirectory, oldfilename + ".xml"));
@@ -729,58 +730,10 @@ namespace Werewolf_Control.Handler
                                 msg += $"\n\n*Error: *";
                                 msg += e.Message;
                             }
-                            Bot.Edit(query, msg);
-                        }
-                        else
-                        {
-                            Bot.ReplyToCallback(query, "You aren't Para! Go Away!!", false, true);
-                        }
-                    }
-                    InlineKeyboardMarkup menu;
-                    Group grp;
-                    Player p = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
-                    List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
-                    long groupid = 0;
-                    if (args[0] == "vote")
-                    {
-                        var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
-                        node?.SendReply(query);
-                        return;
-                    }
-
-                    groupid = long.Parse(args[1]);
-                    
-                    grp = DB.Groups.FirstOrDefault(x => x.GroupId == groupid);
-                    if (grp == null && args[0] != "getlang" && args[0] != "validate" && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups" && args[0] != "upload" && args[0] != "status")
-                        return;
-                    if (grp == null)
-                    {
-                        if (p == null && args[0] != "lang" && args[0] != "setlang" && args[0] != "groups") //why am i doing this????  TODO: update later to array contains...
+                            Bot.Edit(query, query.Message.Text + "\n\n" + msg);
                             return;
-                    }
-
-                    var language = GetLanguage(p?.TelegramId ?? grp.GroupId);
-                    var command = args[0];
-                    var choice = "";
-                    if (args.Length > 2)
-                        choice = args[2];
-                    if (choice == "cancel")
-                    {
-                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
-                        return;
-                    }
-                    if (!nonCommandsList.Contains(command.ToLower()))
-                        if (!UpdateHelper.IsGroupAdmin(query.From.Id, groupid) & !UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
-                        {
-                            Bot.ReplyToCallback(query, GetLocaleString("GroupAdminOnly", language), false);
-                            return;
-                        }
-                    grp?.UpdateFlags();
-                    var Yes = GetLocaleString("Yes", language);
-                    var No = GetLocaleString("No", language);
-                    var Cancel = GetLocaleString("Cancel", language);
-                    switch (command)
-                    {
+                        #endregion
+                        #region Global Admin Commands
                         case "status":
                             if (args[3] == "null")
                             {
@@ -800,6 +753,91 @@ namespace Werewolf_Control.Handler
                                 Bot.ReplyToCallback(query, "Status updated");
                             }
                             break;
+                        case "preferred":
+                            var grpid = grp.Id;
+                            var rankings = DB.GroupRanking.Where(x => x.GroupId == grpid).ToList();
+                            var lang = args[2];
+                            if (lang == "null") //preferred
+                            {
+                                if (args[3] == "toggle")
+                                    //toggle preferred
+                                    grp.Preferred = !(grp.Preferred ?? true);
+                                //say if they're preferred
+                                Bot.ReplyToCallback(query, "Global: " + (grp.Preferred == false ? "disabled" : "enabled"), false);
+                                if (args[3] == "info")
+                                    return;
+                            }
+                            else
+                            {
+                                //get the ranking
+                                var ranking = rankings.FirstOrDefault(x => x.Language == lang);
+                                if (args[3] == "toggle")
+                                    //toggle show
+                                    ranking.Show = !(ranking.Show ?? true);
+                                //say if they're shown
+                                Bot.ReplyToCallback(query, lang + ": " + (ranking.Show == false ? "disabled" : "enabled"), false);
+                                if (args[3] == "info")
+                                    return;
+                            }
+                            DB.SaveChanges();
+                            //make the menu
+                            var rows = rankings.Select(x => new[] {
+                                new InlineKeyboardButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
+                                new InlineKeyboardButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
+                            }).ToList();
+                            //add a button at the beginning and at the end
+                            rows.Insert(0, new[] {
+                                new InlineKeyboardButton("Global", $"preferred|{grp.GroupId}|null|info"),
+                                new InlineKeyboardButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                            });
+                            rows.Add(new[] { new InlineKeyboardButton("Done", "done") });
+                            //send everything
+                            Bot.ReplyToCallback(query,
+                                $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
+                                "\n\nSelect the languages under which the group is allowed to appear in grouplist.\nNote that the first option, if disabled, overrides all the others.",
+                                replyMarkup: new InlineKeyboardMarkup(rows.ToArray()),
+                                parsemode: ParseMode.Html
+                            );
+                            return;
+                        case "validate":
+                            //choice = args[1];
+                            if (choice == "All")
+                            {
+                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
+                            if (args[4] != "base" && args[3] == "All")
+                            {
+                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId, choice);
+                                return;
+                            }
+
+                            menu = new InlineKeyboardMarkup();
+                            var vlang = SelectLanguage(command, args, ref menu);
+                            if (vlang == null)
+                            {
+                                buttons.Clear();
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice),
+                                       replyMarkup: menu);
+                                return;
+                            }
+
+                            //var menu = new ReplyKeyboardHide { HideKeyboard = true, Selective = true };
+                            //Bot.SendTextMessage(id, "", replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+                            LanguageHelper.ValidateLanguageFile(query.Message.Chat.Id, vlang.FilePath, query.Message.MessageId);
+                            return;
+                        case "upload":
+                            Console.WriteLine(choice);
+                            if (choice == "current")
+                            {
+                                Bot.ReplyToCallback(query, "No action taken.");
+                                return;
+                            }
+                            Helpers.LanguageHelper.UseNewLanguageFile(choice, query.Message.Chat.Id, query.Message.MessageId);
+                            return;
+                        #endregion
+                        #region Other Commands
                         case "groups":
 #if !RELEASE
                             var variant = args[3];
@@ -876,39 +914,6 @@ namespace Werewolf_Control.Handler
                             }
 
                             break;
-                        case "stopwaiting":
-                            using (var db = new WWContext())
-                                db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
-                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", grp.Language, grp.Name));
-                            break;
-                        case "validate":
-                            //choice = args[1];
-                            if (choice == "All")
-                            {
-                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId);
-                                return;
-                            }
-
-                            if (args[4] != "base" && args[3] == "All")
-                            {
-                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId, choice);
-                                return;
-                            }
-
-                            menu = new InlineKeyboardMarkup();
-                            var vlang = SelectLanguage(command, args, ref menu);
-                            if (vlang == null)
-                            {
-                                buttons.Clear();
-                                Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice),
-                                       replyMarkup: menu);
-                                return;
-                            }
-
-                            //var menu = new ReplyKeyboardHide { HideKeyboard = true, Selective = true };
-                            //Bot.SendTextMessage(id, "", replyToMessageId: update.Message.MessageId, replyMarkup: menu);
-                            LanguageHelper.ValidateLanguageFile(query.Message.Chat.Id, vlang.FilePath, query.Message.MessageId);
-                            return;
                         case "getlang":
                             if (choice == "All")
                             {
@@ -936,21 +941,13 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, "One moment...");
                             LanguageHelper.SendFile(query.Message.Chat.Id, glang.Name);
                             break;
-                        case "upload":
-                            Console.WriteLine(choice);
-                            if (choice == "current")
-                            {
-                                Bot.ReplyToCallback(query, "No action taken.");
-                                return;
-                            }
-                            Helpers.LanguageHelper.UseNewLanguageFile(choice, query.Message.Chat.Id, query.Message.MessageId);
-                            return;
-
-                        case "vote":
-                            //send it back to the game;
-                            var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
-                            node?.SendReply(query);
+                        case "stopwaiting":
+                            using (var db = new WWContext())
+                                db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
+                            Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", grp.Language, grp.Name));
                             break;
+                        #endregion
+                        #region Config Commands
                         case "lang":
                             //load up each file and get the names
                             var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
@@ -1344,6 +1341,7 @@ namespace Werewolf_Control.Handler
                             }
 
                             break;
+                        #endregion
                     }
                 }
                 catch (Exception ex)
@@ -1483,7 +1481,7 @@ namespace Werewolf_Control.Handler
                 buttons.Add(new InlineKeyboardButton(GetLocaleString(flag.ToString(), GetLanguage(id)), $"{flag.GetInfo().ShortName}|{id}"));
             }
 
-            buttons.Add(new InlineKeyboardButton("Done", $"done|{id}"));
+            buttons.Add(new InlineKeyboardButton("Done", $"done"));
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
             {

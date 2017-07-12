@@ -17,12 +17,10 @@ namespace Database
         public int GroupId { get; set; }
         public long TelegramId { get; set; }
         public string Language { get; set; }
-        public string Username { get; set; }
         public string Description { get; set; }
         public string GroupLink { get; set; }
         public Nullable<decimal> Ranking { get; set; }
-        public Nullable<System.DateTime> LastRefresh { get; set; }
+        public System.DateTime LastRefresh { get; set; }
         public string Name { get; set; }
-        public string GroupLanguage { get; set; }
     }
 }

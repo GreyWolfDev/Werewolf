@@ -118,24 +118,24 @@ namespace Werewolf_Control.Helpers
             MessagesReceived += updatesReceivedEventArgs.UpdateCount;
         }
 
-        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
+        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
             //first answer the callback
             Bot.Api.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
             //edit the original message
             if (edit)
-                Edit(query, text, replyMarkup);
+                Edit(query, text, replyMarkup, parsemode);
         }
 
-        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null)
+        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
-            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup);
+            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup, parsemode);
         }
 
-        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
+        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
             Bot.MessagesSent++;
-            return Bot.Api.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
+            return Bot.Api.EditMessageText(id, msgId, text, parsemode, replyMarkup: replyMarkup);
         }
 
         private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)

@@ -22,5 +22,6 @@ namespace Database
         public System.DateTime LastRefresh { get; set; }
         public int Id { get; set; }
         public int GamesPlayed { get; set; }
+        public Nullable<bool> Show { get; set; }
     }
 }
