@@ -599,16 +599,27 @@ namespace Werewolf_Control.Handler
                         //global admin only commands
                         if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                         {
-                            Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false);
+                            Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);
                             return;
                         }
                     }
                     else if (command == "setlang" && p == null)
                         //requires a player
                         return;
-                    else if (!new[] { "groups", "getlang", "done" }.Contains(command) && grp == null)
-                        //these commands don't require a group, and can go through. every other command requires a group
-                        return;
+                    else if (!new[] { "groups", "getlang", "done" }.Contains(command))
+                    {
+                        //the commands in the array don't require a group. every other command requires a group
+                        if (grp == null)
+                            return;
+                        //among the remaining commands, only stopwaiting can be used by anyone. the other commands are config commands.
+                        if (command != "stopwaiting" && !UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id) && !UpdateHelper.IsGroupAdmin(query.From.Id, groupid))
+                        {
+                            Bot.ReplyToCallback(query, GetLocaleString("GroupAdminOnly", language), false, true);
+                            return;
+                        }
+                    }
+                    
+
 
 
                     //config helpers
