@@ -1207,7 +1207,7 @@ namespace Werewolf_Node
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
-                                        ($"{(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive"))} {p.GetName() + (p.IsDead ? ":" + GetDescription(p.PlayerRole) + p.GetFinalEmojis() : "")}\n"));
+                                        ($"{(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive"))} {p.GetName() + (p.IsDead ? ": " + GetDescription(p.PlayerRole) + p.GetFinalEmojis() : "")}\n"));
                                         //($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         _playerListChanged = false;

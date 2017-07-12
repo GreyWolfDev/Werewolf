@@ -28,7 +28,7 @@ namespace Database
         Explorer = 32,
         [Display(Name="Linguístico"), Description("Jogue no mínimo 2 partidas em 10 linguagens diferentes")]
         Linguist = 64,
-        [Display(Name="Eu não tenho idéia do que estou fazendo"), Description("Jogue uma partida no modo secreto/amnésia")]
+        [Display(Name="Eu não tenho ideia do que estou fazendo"), Description("Jogue uma partida no modo secreto/amnésia")]
         NoIdeaWhat = 128,
         [Display(Name="Enochlophobia"), Description("Jogue uma partida com 35 jogadores")]
         Enochlophobia = 256,
@@ -76,15 +76,15 @@ namespace Database
         BloodyNight = 536870912,
         [Display(Name="Trocar de lado funciona"), Description("Troque de papéis em uma partida, e vença")]
         ChangingSides = 1073741824,
-        [Display(Name="Amor proibído"), Description("Vença como casal Lobo / Aldeão (Aldeão, não time da aldeia)")]
+        [Display(Name="Amor proibido"), Description("Vença como casal Lobo / Aldeão (Aldeão, não time da aldeia)")]
         ForbiddenLove = 2147483648,
         [Display(Name="Desenvolvedor"), Description("Tenha um \"pull request\" aceito")]
         Developer = 4294967296,
         [Display(Name="A primeira pedra"), Description("Seja o primeiro a votar por 5 noites em uma única partida")]
         FirstStone = 8589934592,
-        [Display(Name= "Deadpool bom"), Description("Como o atirador, todas as suas balas acertaram um lobo, Serial Killer ou membro da seita")]
+        [Display(Name= "Atirador bom"), Description("Como o atirador, todas as suas balas acertaram um lobo, Serial Killer ou membro da seita")]
         SmartGunner = 17179869184,
-        [Display(Name="O conhecimento das ruas"), Description("Encontre um lobo, Serial Killer, ou membro da seita diferentes por 4 noites seguidas sendo a Jessica Jones")]
+        [Display(Name="O conhecimento das ruas"), Description("Encontre um lobo, Serial Killer, ou membro da seita diferentes por 4 noites seguidas sendo o Detetive")]
         Streetwise = 34359738368,
         [Display(Name="Encontro relâmpago"), Description("Deixe o bot escolher você como casal (Cupido falha ao escolher)")]
         OnlineDating = 68719476736,
@@ -98,7 +98,7 @@ namespace Database
         SelfLoving = 1099511627776,
         [Display(Name="Eu deveria ter dito algo"), Description("Como um lobo, você mata seu amante (a primeira noite não conta)")]
         ShouldveMentioned = 2199023255552,
-        [Display(Name="Suicída Excessivo"), Description("Como o Suicida, tenha todos os votos (menos o seu) contra você")]
+        [Display(Name="Suicida Excessivo"), Description("Como o Suicida, tenha todos os votos (menos o seu) contra você")]
         TannerOverkill = 4398046511104,
         [Display(Name="O Bom Samaritano"), Description("Como o Serial Killer, mate no mínimo 3 lobos em uma partida")]
         SerialSamaritan = 8796093022208,
@@ -134,7 +134,7 @@ namespace Database
         President = 288230376151711744,
         [Display(Name = "Eu ajudei!"), Description("Seja o filhote de lobo e ajude o seu bando a devorar duas vítimas após sua morte")]
         IHelped = 576460752303423488,
-        [Display(Name = "Foi uma noite agitada!"), Description("Em uma mesma noite, seja visitado por três ou mais pessoas com papeis diferentes")]
+        [Display(Name = "Foi uma noite agitada!"), Description("Em uma mesma noite, seja visitado por três ou mais pessoas com papéis diferentes")]
         ItWasABusyNight = 1152921504606846976
     } // MAX VALUE: 9223372036854775807
       //            
