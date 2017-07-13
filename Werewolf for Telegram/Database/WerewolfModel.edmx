@@ -221,9 +221,9 @@ warning 6002: The table/view 'werewolf.dbo.GroupAdmin' does not have a primary k
           <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="Language" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="PlayersCount" Type="int" Nullable="false" />
-          <Property Name="MinutesPlayed" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="MinutesPlayed" Type="decimal" Precision="18" Scale="10" Nullable="false" />
           <Property Name="LastRefresh" Type="datetime" Nullable="false" />
-          <Property Name="Ranking" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Ranking" Type="decimal" Precision="18" Scale="10" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GamesPlayed" Type="int" Nullable="false" />
           <Property Name="Show" Type="bit" />
@@ -1486,8 +1486,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="GroupId" Type="Int32" Nullable="false" />
           <Property Name="Language" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
           <Property Name="PlayersCount" Type="Int32" Nullable="false" />
-          <Property Name="MinutesPlayed" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MinutesPlayed" Type="Decimal" Precision="18" Scale="10" Nullable="false" />
+          <Property Name="Ranking" Type="Decimal" Precision="18" Scale="10" />
           <Property Name="LastRefresh" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GamesPlayed" Type="Int32" Nullable="false" />

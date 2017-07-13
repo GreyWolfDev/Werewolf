@@ -4496,14 +4496,15 @@ namespace Werewolf_Node
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
                     daysspan = daysspan == 0 ? 1 : daysspan;
-                    var avgplayerspergame = (decimal)grpranking.PlayersCount / grpranking.GamesPlayed; //this is between 0 and 35
-                    var playerfactor = -(decimal)0.05 * (avgplayerspergame * avgplayerspergame) + (decimal)2.5 * avgplayerspergame - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
+                    var avgplayerspergame = ((decimal)grpranking.PlayersCount) / grpranking.GamesPlayed; //this is between 0 and 35
+                    var playerfactor = -((decimal)0.05) * (avgplayerspergame * avgplayerspergame) + (decimal)2.5 * avgplayerspergame - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
                     var avgminutesperday = grpranking.MinutesPlayed / daysspan; //average minutes played per day
                     var timefactor = avgplayerspergame * (decimal)1.6 * avgminutesperday / 1440; //(avg minutes per day played by the avg player) / (15 h in minutes). 15h is approximately the time played per day by the most active groups.
                     var malus = (playerfactor - timefactor) * (playerfactor - timefactor) / 5; //give some malus if they played for little time with lots of people or vice versa. 
                     grpranking.Ranking = Math.Round(playerfactor + timefactor - malus, 10);
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = 0;
+                    grpranking.GamesPlayed = 0;
                     grpranking.LastRefresh = refreshdate;
                     db.SaveChanges();
                 }
