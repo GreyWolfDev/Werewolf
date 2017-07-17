@@ -97,7 +97,6 @@ namespace Werewolf_Control
                         g.GroupLink = null;
                     }
                 }
-
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
