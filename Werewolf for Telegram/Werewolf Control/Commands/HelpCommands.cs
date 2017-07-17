@@ -40,35 +40,42 @@ namespace Werewolf_Control
             //new method, fun times....
             //var groups = PublicGroups.GetAll();
             //now determine what languages are available in public groups.
-            var langs = PublicGroups.GetBaseLanguages();
-            //create a menu out of this
-            List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
-
-            var baseMenu = new List<InlineKeyboardButton[]>();
-            for (var i = 0; i < buttons.Count; i++)
-            {
-                if (buttons.Count - 1 == i)
-                {
-                    baseMenu.Add(new[] { buttons[i] });
-                }
-                else
-                    baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
-                i++;
-            }
-
-            var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
-
             try
             {
-                var result = Bot.Api.SendTextMessage(update.Message.From.Id,
-                    GetLocaleString("WhatLangGroup", GetLanguage(update.Message.From.Id)),
-                    replyMarkup: menu).Result;
-                if (update.Message.Chat.Type != ChatType.Private)
-                    Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                var langs = PublicGroups.GetBaseLanguages();
+                //create a menu out of this
+                List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
+
+                var baseMenu = new List<InlineKeyboardButton[]>();
+                for (var i = 0; i < buttons.Count; i++)
+                {
+                    if (buttons.Count - 1 == i)
+                    {
+                        baseMenu.Add(new[] { buttons[i] });
+                    }
+                    else
+                        baseMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                    i++;
+                }
+
+                var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
+
+                try
+                {
+                    var result = Bot.Api.SendTextMessage(update.Message.From.Id,
+                        GetLocaleString("WhatLangGroup", GetLanguage(update.Message.From.Id)),
+                        replyMarkup: menu).Result;
+                    if (update.Message.Chat.Type != ChatType.Private)
+                        Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                }
+                catch
+                {
+                    RequestPM(update.Message.Chat.Id);
+                }
             }
-            catch
+            catch (Exception e)
             {
-                RequestPM(update.Message.Chat.Id);
+                Send(e.Message + Environment.NewLine + e.StackTrace, 133748469);
             }
 
         }
