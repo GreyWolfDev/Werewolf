@@ -850,7 +850,6 @@ namespace Werewolf_Control.Handler
                         #endregion
                         #region Other Commands
                         case "groups":
-#if !RELEASE
                             var variant = args[3];
                             if (variant == "null")
                             {
@@ -881,15 +880,9 @@ namespace Werewolf_Control.Handler
                                     break;
                                 }
                             }
-#endif
-
-#if RELEASE
-                            var groups = PublicGroups.ForLanguage(choice).ToList().OrderByDescending(x => x.MemberCount).Take(10).ToList(); //top 10 groups, otherwise these lists will get LONG
-                            var variantmsg = "";
-#else
+                            
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
-#endif
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
                             if (groups.Count() > 5)
                             {
@@ -897,18 +890,12 @@ namespace Werewolf_Control.Handler
                                 var reply = groups.Take(5).Aggregate("",
                                     (current, g) =>
                                         current +
-#if RELEASE
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n" +
-#endif
                                         $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                                 Thread.Sleep(500);
                                 reply = groups.Skip(5).Aggregate("",
                                     (current, g) =>
                                         current +
-#if RELEASE
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n" +
-#endif
                                         $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
@@ -917,9 +904,6 @@ namespace Werewolf_Control.Handler
                                 var reply = groups.Aggregate("",
                                     (current, g) =>
                                         current +
-#if RELEASE
-                                        $"{(g.MemberCount?.ToString() ?? "Unknown")} {GetLocaleString("Members", language)}\n" +
-#endif
                                         $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
                                 Send(reply, query.Message.Chat.Id);
                             }
