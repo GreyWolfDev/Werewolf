@@ -603,9 +603,12 @@ namespace Werewolf_Control.Handler
                             return;
                         }
                     }
-                    else if (command == "setlang" && p == null)
+                    else if (command == "setlang")
+                    {
                         //requires a player
-                        return;
+                        if (p == null)
+                            return;
+                    }
                     else if (!new[] { "groups", "getlang", "done" }.Contains(command))
                     {
                         //the commands in the array don't require a group. every other command requires a group
