@@ -118,9 +118,8 @@ namespace Werewolf_Control.Helpers
         {
             if (variant == "all")
             {
-                var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang);
-                var groups = new List<int>();
-                foreach (var g in GetAll().GroupBy(x => x.GroupId).Select(x => x.OrderByDescending(y => y.Ranking).First()))
+                var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang).Select(x => x.FileName);
+                foreach (var g in GetAll().Where(x => langs.Contains(x.Language)).GroupBy(x => x.GroupId).Select(x => x.OrderByDescending(y => y.Ranking).First()))
                     yield return g;
             }
             else
