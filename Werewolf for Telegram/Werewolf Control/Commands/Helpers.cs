@@ -90,7 +90,7 @@ namespace Werewolf_Control
                 //remove usernames & links from the other groups that have the same username in the db
                 if (grp.UserName != null)
                 {
-                    var sameusername = db.Groups.Where(x => x.UserName == update.Message.Chat.Username && x.Id != update.Message.Chat.Id);
+                    var sameusername = db.Groups.Where(x => x.UserName == update.Message.Chat.Username && x.GroupId != update.Message.Chat.Id);
                     foreach (var g in sameusername)
                     {
                         g.UserName = null;
