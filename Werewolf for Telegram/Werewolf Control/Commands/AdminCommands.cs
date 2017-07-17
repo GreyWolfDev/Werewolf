@@ -260,7 +260,7 @@ namespace Werewolf_Control
                 db.SaveChanges();
             }
 
-            Send($"Your group link has been removed.  You will no longer appear on the /grouplist", u.Message.Chat.Id);
+            Send($"Your group link has been removed.", u.Message.Chat.Id);
         }
 
         [Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true)]
@@ -271,7 +271,7 @@ namespace Werewolf_Control
             //first, check if the group has a username
             if (!String.IsNullOrEmpty(update.Message.Chat.Username))
             {
-                Send($"You're group link has already been set to https://telegram.me/{update.Message.Chat.Username}",
+                Send($"Your group link has already been set to https://telegram.me/{update.Message.Chat.Username}",
                     update.Message.Chat.Id);
                 return;
             }
