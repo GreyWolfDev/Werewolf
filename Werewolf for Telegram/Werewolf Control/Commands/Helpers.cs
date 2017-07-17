@@ -86,6 +86,15 @@ namespace Werewolf_Control
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
                     grp.GroupLink = null;
+
+                //remove usernames & links from the other groups that have the same username in the db
+                var sameusername = db.Groups.Where(x => x.UserName == update.Message.Chat.Username && x.Id != update.Message.Chat.Id);
+                foreach (var g in sameusername)
+                {
+                    g.UserName = null;
+                    g.GroupLink = null;
+                }
+
                 db.SaveChanges();
             }
             //check nodes to see if player is in a game
