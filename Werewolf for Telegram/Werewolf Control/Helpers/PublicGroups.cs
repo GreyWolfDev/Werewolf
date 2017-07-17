@@ -56,7 +56,6 @@ namespace Werewolf_Control.Helpers
         //    }
         //}
         
-
         private static List<v_GroupRanking> _list;
         private static List<string> _langs;
         private static DateTime _lastGetAll = DateTime.MinValue, _lastGetBase = DateTime.MinValue;
