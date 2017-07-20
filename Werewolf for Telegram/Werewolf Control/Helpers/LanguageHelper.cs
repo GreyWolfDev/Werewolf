@@ -79,6 +79,12 @@ namespace Werewolf_Control.Helpers
             {
                 var langfile = new LangFile(Path.Combine(Bot.LanguageDirectory, $"{file}.xml"));
                 result += $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})\n";
+                if (errors.Any(x => x.Level == ErrorLevel.Ads))
+                {
+                    result += "*Ads detected:";
+                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Ads).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                    continue;
+                }
                 if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
                 {
                     result += "_Duplicated Strings: _";
@@ -122,30 +128,38 @@ namespace Werewolf_Control.Helpers
             
             //send the result
             var result = $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})" + Environment.NewLine;
-            if (errors.Any(x => x.Level == ErrorLevel.Error))
+            if (errors.Any(x => x.Level == ErrorLevel.Ads))
             {
-                result += "_Errors:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                result += "*ADS DETECTED*\n";
+                result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
-            if (errors.Any(x => x.Level == ErrorLevel.MissingString))
+            else
             {
-                result += "_Missing Values:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
-            }
-            if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
-            {
-                result += "\n_Duplicated Strings:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
-            }
-            if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
-            {
-                result += "\n_Join commands:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
-            }
-            if (errors.Any(x=> x.Level == ErrorLevel.FatalError))
-            {
-                result += "\n*Fatal errors:*\n";
-                result = errors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n");
+                if (errors.Any(x => x.Level == ErrorLevel.Error))
+                {
+                    result += "_Errors:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.MissingString))
+                {
+                    result += "_Missing Values:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
+                {
+                    result += "\n_Duplicated Strings:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
+                {
+                    result += "\n_Join commands:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.FatalError))
+                {
+                    result += "\n*Fatal errors:*\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n");
+                }
             }
             result += "\n";
             //Program.Send(result, id);
@@ -227,7 +241,7 @@ namespace Werewolf_Control.Helpers
             Thread.Sleep(500);
 
 
-            if (newFileErrors.All(x => x.Level != ErrorLevel.FatalError))
+            if (newFileErrors.All(x => x.Level != ErrorLevel.FatalError && x.Level != ErrorLevel.Ads))
             {
                 //load up each file and get the names
                 var buttons = new[]
@@ -446,36 +460,44 @@ namespace Werewolf_Control.Helpers
         private static string OutputResult(LangFile newFile, List<LanguageError> newFileErrors, LangFile curFile, List<LanguageError> curFileErrors)
         {
             var result = $"NEW FILE\n*{newFile.FileName}.xml - ({newFile.Name ?? ""})*" + Environment.NewLine;
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.Ads))
             {
-                result += "_Errors:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                result += "*ADS DETECTED*\n";
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.MissingString))
+            else
             {
-                result += "_Missing Values:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
-            }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.DuplicatedString))
-            {
-                result += "\n_Warning:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
-                result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
-            }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.JoinLink))
-            {
-                result += "\n_Join commands detected:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
-                result += "These strings won't be used, and will fall back to English, until you remove `/join` from them.\n\n";
-            }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
-            {
-                result += "\n*Fatal errors:*\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
-            }
-            if (newFileErrors.Count == 0)
-            {
-                result += "_No errors_\n";
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
+                {
+                    result += "_Errors:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.MissingString))
+                {
+                    result += "_Missing Values:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.DuplicatedString))
+                {
+                    result += "\n_Warning:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
+                    result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.JoinLink))
+                {
+                    result += "\n_Join commands detected:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                    result += "These strings won't be used, and will fall back to English, until you remove `/join` from them.\n\n";
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
+                {
+                    result += "\n*Fatal errors:*\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                }
+                if (newFileErrors.Count == 0)
+                {
+                    result += "_No errors_\n";
+                }
             }
             if (curFile != null)
             {
@@ -563,6 +585,11 @@ namespace Werewolf_Control.Helpers
 
                     if (value.Value.ToLower().Contains("/join") && !fileErrors.Any(x => x.File == file.FileName && x.Key == key && x.Level == ErrorLevel.JoinLink))
                         fileErrors.Add(new LanguageError(file.FileName, key, "", ErrorLevel.JoinLink));
+
+                    if (new Regex(@"((https?:\/\/)?t(elegram)?\.me\/joinchat\/([a-zA-Z0-9_\-]+))|( @(?!werewolfbot)(?!werewolfbetabot)(?!werewolfdev)(?!werewolfsupport)(?!para949)(?!greywolfdev)\w)", RegexOptions.IgnoreCase).IsMatch(value.Value))
+                    {
+                        fileErrors.Add(new LanguageError(file.FileName, key, "No usernames or links in the langfile!", ErrorLevel.Ads));
+                    }
                 }
             }
         }
@@ -589,6 +616,7 @@ namespace Werewolf_Control.Helpers
 
     public enum ErrorLevel
     {
-        DuplicatedString, MissingString, Error, FatalError, JoinLink
+        DuplicatedString, MissingString, Error, FatalError, JoinLink,
+        Ads
     }
 }
