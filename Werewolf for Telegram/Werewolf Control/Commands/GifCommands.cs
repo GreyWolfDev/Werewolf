@@ -63,6 +63,7 @@ namespace Werewolf_Control
         {
 #if BETA
             Bot.Send("Please use this command with @werewolfbot", u.Message.From.Id);
+            return;
 #endif
             //check player has access!
             using (var db = new WWContext())
