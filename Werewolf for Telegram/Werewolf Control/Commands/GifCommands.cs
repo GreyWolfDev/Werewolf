@@ -91,9 +91,27 @@ namespace Werewolf_Control
                     " - Others, at our discretion\n" +
                     "• I will send you a description of the image, to which you will reply (to the message) with the gif you want to use\n" +
                     "• At this time, custom gif packs ONLY work in @werewolfbot, NOT @werewolfbetabot\n" +
-                    "\n" +
+                    "\n\n" +
+                    "PLEASE NOTE: Changing any gifs will automatically removal the approval for your pack, and an admin will need to approve it again" +
                     "Let's begin! Select the situation you want to set a gif for",
                     replyMarkup: GetGifMenu(data));
+
+                var msg = "Current Approval Status:\n";
+                switch (data.Approved)
+                {
+                    case null:
+                        msg += "Pending";
+                        break;
+                    case true:
+                        var by = db.Players.FirstOrDefault(x => x.TelegramId == data.ApprovedBy);
+                        msg += "Approved By " + by.Name;
+                        break;
+                    case false:
+                        var dby = db.Players.FirstOrDefault(x => x.TelegramId == data.ApprovedBy);
+                        msg += "Disapproved By " + dby.Name + " for: " + data.DenyReason;
+                        break;
+                }
+                Bot.Send(msg, u.Message.From.Id);
             }
 
            
@@ -236,6 +254,8 @@ namespace Werewolf_Control
                         data.StartChaosGame = id;
                         break;   
                 }
+                data.Approved = null;
+                data.ApprovedBy = 0;
                 p.CustomGifSet = JsonConvert.SerializeObject(data);
                 db.SaveChanges();
                 Bot.Send("Got it! Any more?", m.From.Id, customMenu: GetGifMenu(data));

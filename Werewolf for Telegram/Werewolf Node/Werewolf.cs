@@ -118,7 +118,7 @@ namespace Werewolf_Node
                     if (player?.CustomGifSet != null)
                     {
                         var gifset = JsonConvert.DeserializeObject<CustomGifData>(player.CustomGifSet);
-                        if (gifset.Approved)
+                        if (gifset.Approved == true)
                         {
                             if (gifset.StartChaosGame != null)
                             {

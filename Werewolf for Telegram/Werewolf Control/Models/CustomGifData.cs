@@ -9,7 +9,8 @@ namespace Werewolf_Control.Models
     public class CustomGifData
     {
         public bool HasPurchased { get; set; }
-        public bool Approved { get; set; }
+        public bool? Approved { get; set; } = null;
+        public string DenyReason { get; set; }
         public bool NSFW { get; set; }
         public int ApprovedBy { get; set; }
         public string VillagerDieImage { get; set; }
