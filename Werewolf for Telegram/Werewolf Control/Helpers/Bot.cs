@@ -101,6 +101,7 @@ namespace Werewolf_Control.Helpers
             Api.OnUpdate += UpdateHandler.UpdateReceived;
             Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
             Api.OnReceiveError += ApiOnReceiveError;
+            Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             //Api. += ApiOnStatusChanged;
             //Api. += ApiOnUpdatesReceived;
             Me = Api.GetMeAsync().Result;
@@ -111,6 +112,11 @@ namespace Werewolf_Control.Helpers
             StartTime = DateTime.Now;
             //now we can start receiving
             Api.StartReceiving();
+        }
+
+        private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
+        {
+            throw new NotImplementedException();
         }
 
         private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)

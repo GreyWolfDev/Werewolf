@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InlineKeyboardButtons;
+using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -427,7 +428,8 @@ namespace Werewolf_Control
         public static void Test(Update update, string[] args)
         {
             var api = RegHelper.GetRegValue("DebugStripeTestAPI");
-
+            Bot.Api.SendInvoiceAsync(update.Message.Chat.Id, "Test Invoice", "Description", "somepayloadtest", api,
+                "startparam", "USD", new[] {new LabeledPrice() {Amount = 100, Label = "$1 Label"}});
         }
 
         [Attributes.Command(Trigger = "sql", DevOnly = true)]

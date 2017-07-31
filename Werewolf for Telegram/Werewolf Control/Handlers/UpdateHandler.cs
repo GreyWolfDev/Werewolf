@@ -13,6 +13,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.InlineQueryResults;
 using Telegram.Bot.Types.InputMessageContents;
+using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
@@ -213,6 +214,11 @@ namespace Werewolf_Control.Handler
             {
 
                 Bot.MessagesProcessed++;
+                if (update.PreCheckoutQuery != null)
+                {
+                    HandlePayment(update.PreCheckoutQuery);
+                    return;
+                }
                 if (update.Message == null) return;
                 Program.Analytics.TrackAsync("message", update.Message, update.Message.From.Id.ToString());
                 //ignore previous messages
@@ -503,7 +509,30 @@ namespace Werewolf_Control.Handler
             }
         }
 
-
+        private static void HandlePayment(PreCheckoutQuery q)
+        {
+            //get the amount paid
+            var amt = q.TotalAmount / 100;
+            var level = 0;
+            using (var db = new WWContext())
+            {
+                //get the player
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                if (p == null)
+                {
+                    //wtf??
+                    Bot.Send($"Successfully received ${amt} from you! YAY!\n\nHowever, we do not see any record of you in our database, so we can't record it.  Please message @ParaCode with this information, and a screenshot", q.From.Id);
+                    return;
+                }
+                if (p.DonationLevel == null)
+                    p.DonationLevel = 0;
+                p.DonationLevel += amt;
+                level = p.DonationLevel??0;
+                db.SaveChanges();
+                Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}", q.From.Id);
+            }
+            Bot.Api.AnswerPreCheckoutQueryAsync(q.Id, true);
+        }
 
 
         /// <summary>
