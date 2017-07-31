@@ -529,7 +529,7 @@ namespace Werewolf_Control.Handler
         {
             //get the amount paid
             var amt = q.TotalAmount / 100;
-
+            
             using (var db = new WWContext())
             {
                 //get the player

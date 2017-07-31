@@ -53,7 +53,7 @@ namespace Werewolf_Control
                 "You might also see this special badge: 💎\nThis is reserved for people who donated prior to there being any rewards for donating\n" +
                 "We also accept Bitcoin donations at: 13QvBKfAattcSxSsW274fbgnKU5ASpnK3A\n" +
                 "If you donate via PayPal or Bitcoin, you will need to contact @werewolfsupport to claim your prize.  If you donate via Telegram, it's automated, no need to contact an admin :)\n" +
-                "More information about the Custom Gif Packs: http://telegra.ph/Dont-Shoot-the-Messenger\n" +
+                "More information about the Custom Gif Packs: http://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-07-31\n" +
                 "How would you like to donate?",
                 replyMarkup: markup);
         }
