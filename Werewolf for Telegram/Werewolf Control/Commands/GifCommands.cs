@@ -70,18 +70,33 @@ namespace Werewolf_Control
             {
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
                 var json = p?.CustomGifSet;
-
+                if (p?.DonationLevel < 10)
+                {
+                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
+                    return;
+                }
+                //if (String.IsNullOrEmpty(json))
+                //{
+                //    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
+                //    return;
+                //}
+                CustomGifData data;
                 if (String.IsNullOrEmpty(json))
                 {
-                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
-                    return;
+                    data = new CustomGifData();
+                    data.HasPurchased = true;
+                    p.GifPurchased = true;
+                    p.CustomGifSet = JsonConvert.SerializeObject(data);
+                    db.SaveChanges();
                 }
-                var data = JsonConvert.DeserializeObject<CustomGifData>(json);
-                if (!data.HasPurchased)
-                {
-                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
-                    return;
-                }
+
+                else{ data = JsonConvert.DeserializeObject<CustomGifData>(json??"");}
+                //if (!data.HasPurchased)
+                //{
+                //    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
+                //    return;
+                //}
+                
                 Bot.Api.SendTextMessageAsync(u.Message.From.Id,
                     "Ready to build your custom gif pack? Great! Before we begin, a few notes you should be aware of:\n" +
                     "• Your pack will be submitted for approval.  An admin will check it, and once approved, you can start using it in games\n" +
