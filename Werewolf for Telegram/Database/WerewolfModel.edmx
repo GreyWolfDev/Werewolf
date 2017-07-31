@@ -285,6 +285,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
           <Property Name="DonationLevel" Type="int" />
           <Property Name="Founder" Type="bit" />
           <Property Name="CustomGifSet" Type="nvarchar(max)" />
+          <Property Name="GifPurchased" Type="bit" />
         </EntityType>
         <EntityType Name="PlayerStats">
           <Key>
@@ -904,6 +905,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="DonationLevel" Type="Int32" />
           <Property Name="Founder" Type="Boolean" />
           <Property Name="CustomGifSet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GifPurchased" Type="Boolean" />
         </EntityType>
         <EntityType Name="NotifyGame">
           <Key>
@@ -1611,6 +1613,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="werewolfModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="GifPurchased" ColumnName="GifPurchased" />
                 <ScalarProperty Name="CustomGifSet" ColumnName="CustomGifSet" />
                 <ScalarProperty Name="Founder" ColumnName="Founder" />
                 <ScalarProperty Name="DonationLevel" ColumnName="DonationLevel" />

@@ -406,6 +406,7 @@ namespace Werewolf_Control.Handler
                             {
                                 Commands.ValidateDonationAmount(update.Message);
                             }
+                            
                             break;
                         case MessageType.PhotoMessage:
                             break;
@@ -420,6 +421,13 @@ namespace Werewolf_Control.Handler
                             {
                                 var doc = update.Message.Document;
                                 Send(doc.FileId, update.Message.Chat.Id);
+                            }
+                            else if (update.Message.Chat.Type == ChatType.Private &&
+                                     (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
+                                     (update.Message?.ReplyToMessage?.Text?.Contains(
+                                          "Ok, send me the GIF you want to use for this situation, as a reply") ?? false))
+                            {
+                                Commands.AddGif(update.Message);
                             }
                             break;
                         case MessageType.StickerMessage:
@@ -548,22 +556,34 @@ namespace Werewolf_Control.Handler
 
                 Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", q.From.Id);
                 //check to see how many people have purchased gif packs
+
                 if (level > 10)
                 {
-                    CustomGifData data;
-                    var json = p.CustomGifSet;
-                    if (String.IsNullOrEmpty(json))
-                        data = new CustomGifData();
-                    else
-                        data = JsonConvert.DeserializeObject<CustomGifData>(json);
-                    if (!data.HasPurchased)
+                    var packs = db.Players.Count(x => x.GifPurchased == true);
+                    if (packs >= 100)
                     {
-                        Bot.Send("Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval", q.From.Id);
+                        //do nothing, they didn't unlock it.
                     }
-                    data.HasPurchased = true;
+                    else
+                    {
+                        p.GifPurchased = true;
+                        CustomGifData data;
+                        var json = p.CustomGifSet;
+                        if (String.IsNullOrEmpty(json))
+                            data = new CustomGifData();
+                        else
+                            data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                        if (!data.HasPurchased)
+                        {
+                            Bot.Send(
+                                "Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval",
+                                q.From.Id);
+                        }
+                        data.HasPurchased = true;
 
-                    json = JsonConvert.SerializeObject(data);
-                    p.CustomGifSet = json;
+                        json = JsonConvert.SerializeObject(data);
+                        p.CustomGifSet = json;
+                    }
                 }
                 db.SaveChanges();
             }
@@ -621,6 +641,18 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "donatetg")
                     {
                         Commands.GetDonationInfo(query);
+                        return;
+                    }
+
+                    if (args[0] == "cancel")
+                    {
+                        Bot.Api.DeleteMessageAsync(query.From.Id, query.Message.MessageId);
+                        return;
+                    }
+
+                    if (args[0] == "customgif")
+                    {
+                        Commands.RequestGif(query);
                         return;
                     }
 
