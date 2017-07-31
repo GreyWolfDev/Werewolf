@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -79,7 +80,7 @@ namespace Werewolf_Control
                 grp.BotInGroup = true;
                 if (grp.CreatedBy == "BAN")
                 {
-                    Bot.Api.LeaveChat(grp.GroupId);
+                    Bot.Api.LeaveChatAsync(grp.GroupId);
                     return;
                 }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
@@ -160,9 +161,9 @@ namespace Werewolf_Control
             }
         }
 
-        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
         {
-            return await Bot.Send(message, id, clearKeyboard, customMenu);
+            return Bot.Send(message, id, clearKeyboard, customMenu);
         }
 
 
@@ -222,7 +223,7 @@ namespace Werewolf_Control
 
         internal static void RequestPM(long groupid)
         {
-            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + Bot.Me.Username};
+            var button = new InlineKeyboardUrlButton("Start Me", "telegram.me/" + Bot.Me.Username);
             Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }
@@ -327,27 +328,27 @@ namespace Werewolf_Control
 
         public static void KickChatMember(long chatid, int userid)
         {
-            var status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            var status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
 
             if (status == ChatMemberStatus.Administrator) //ignore admins
                 return;
             //kick
-            Bot.Api.KickChatMember(chatid, userid);
+            Bot.Api.KickChatMemberAsync(chatid, userid);
             //get their status
-            status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
             while (status == ChatMemberStatus.Member) //loop
             {
                 //wait for database to report status is kicked.
-                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+                status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
                 Thread.Sleep(500);
             }
             //status is now kicked (as it should be)
             
             while (status != ChatMemberStatus.Left) //unban until status is left
             {
-                Bot.Api.UnbanChatMember(chatid, userid);
+                Bot.Api.UnbanChatMemberAsync(chatid, userid);
                 Thread.Sleep(500);
-                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+                status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
             }
             //yay unbanned
             

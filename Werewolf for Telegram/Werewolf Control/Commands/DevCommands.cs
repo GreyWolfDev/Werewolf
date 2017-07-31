@@ -15,6 +15,7 @@ using Database;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -44,7 +45,7 @@ namespace Werewolf_Control
                 {
                     try
                     {
-                        var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, name + " - " + g).Result;
+                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend(g), name + " - " + g).Result;
                     }
                     catch (AggregateException e)
                     {
@@ -69,7 +70,7 @@ namespace Werewolf_Control
                     {
                         g.CreatedBy = "BAN";
                         db.SaveChanges();
-                        Bot.Api.LeaveChat(groupid);
+                        Bot.Api.LeaveChatAsync(groupid);
                         Send($"{g.Name} has been banned.", u.Message.Chat.Id);
                     }
                 }
@@ -438,7 +439,7 @@ namespace Werewolf_Control
                     sw.Write($"{id}|{Settings.PrimaryChatId}|");
                     try
                     {
-                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                        var status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                         sw.WriteLine(status);
                     }
                     catch (AggregateException e)
@@ -676,9 +677,9 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
         {
-            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
+            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardCallbackButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
 
-            Bot.Api.SendTextMessage(u.Message.From.Id, "Which bot?",
+            Bot.Api.SendTextMessageAsync(u.Message.From.Id, "Which bot?",
                 replyMarkup: menu);
             if (u.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(u.Message.From.Id)), u.Message.Chat.Id);
@@ -930,7 +931,7 @@ namespace Werewolf_Control
                             try
                             {
                                 //check their status first, so we don't make db calls for someone not even in the chat.
-                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                             }
                             catch (AggregateException e)
                             {
@@ -970,7 +971,7 @@ namespace Werewolf_Control
                                 if (status != ChatMemberStatus.Member) //user is not in group, skip
                                     continue;
                                 //kick
-                                Bot.Api.KickChatMember(Settings.PrimaryChatId, id);
+                                Bot.Api.KickChatMemberAsync(Settings.PrimaryChatId, id);
                                 removed++;
                                 sw.Write($"Removed ({p?.Name ?? id.ToString()})");
 
@@ -981,7 +982,7 @@ namespace Werewolf_Control
                                     //wait for database to report status is kicked.
                                     try
                                     {
-                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                                     }
                                     catch (AggregateException e)
                                     {
@@ -1002,11 +1003,11 @@ namespace Werewolf_Control
                                     attempts++;
                                     sw.Write($"{status}");
                                     sw.Flush();
-                                    Bot.Api.UnbanChatMember(Settings.PrimaryChatId, id);
+                                    Bot.Api.UnbanChatMemberAsync(Settings.PrimaryChatId, id);
                                     Thread.Sleep(500);
                                     try
                                     {
-                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                                     }
                                     catch (AggregateException e)
                                     {
@@ -1097,7 +1098,7 @@ namespace Werewolf_Control
                     Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", grpid)
                         .ContinueWith((result) =>
                         {
-                            Bot.Api.LeaveChat(grpid);
+                            Bot.Api.LeaveChatAsync(grpid);
                         });
                 }
                 catch (Exception e)
@@ -1133,15 +1134,15 @@ namespace Werewolf_Control
                 //get the languages which they played, make a menu out of it
                 var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id).ToList();
                 var menu = rankings.Select(x => new[] {
-                        new InlineKeyboardButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
-                        new InlineKeyboardButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
+                        new InlineKeyboardCallbackButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
+                        new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
                     }).ToList();
                 //add a button at the beginning and at the end
                 menu.Insert(0, new[] {
-                    new InlineKeyboardButton("Global", $"preferred|{grp.GroupId}|null|info"),
-                    new InlineKeyboardButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                    new InlineKeyboardCallbackButton("Global", $"preferred|{grp.GroupId}|null|info"),
+                    new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
                 });
-                menu.Add(new[] { new InlineKeyboardButton("Done", "done") });
+                menu.Add(new[] { new InlineKeyboardCallbackButton("Done", "done") });
                 //send everything
                 Send(
                     $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
@@ -1179,7 +1180,7 @@ namespace Werewolf_Control
                         if (user != null)
                         {
                             //create a menu for this
-                            var buttons = new[] { new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardButton("No", "ohai|no") };
+                            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardCallbackButton("No", "ohai|no") };
                             Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
                                 customMenu: new InlineKeyboardMarkup(buttons));
                         }
@@ -1254,7 +1255,7 @@ namespace Werewolf_Control
             if (someFileExists)
             {
                 var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+                Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
             }
 
         }
@@ -1287,7 +1288,7 @@ namespace Werewolf_Control
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
 
-            var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
+            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardCallbackButton("No", $"movelang|no") };
             Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 

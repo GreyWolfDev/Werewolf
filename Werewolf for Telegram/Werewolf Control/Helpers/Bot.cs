@@ -24,10 +24,10 @@ namespace Werewolf_Control.Helpers
     {
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static Client Api;
+        public static TelegramBotClient Api;
 
         public static User Me;
-        public static DateTime StartTime = DateTime.UtcNow;
+        public static DateTime StartTime = DateTime.Now;
         public static bool Running = true;
         public static long CommandsReceived = 0;
         public static long MessagesProcessed = 0;
@@ -72,7 +72,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new Client(TelegramAPIKey, Path.Combine(RootDirectory, "..\\Logs"));
+            Api = new TelegramBotClient(TelegramAPIKey);
 
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
@@ -97,31 +97,36 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
-            Api.UpdateReceived += UpdateHandler.UpdateReceived;
-            Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
-            Api.ReceiveError += ApiOnReceiveError;
-            Api.StatusChanged += ApiOnStatusChanged;
-            Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Me = Api.GetMe().Result;
-
+            Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+            Api.OnUpdate += UpdateHandler.UpdateReceived;
+            Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+            Api.OnReceiveError += ApiOnReceiveError;
+            //Api. += ApiOnStatusChanged;
+            //Api. += ApiOnUpdatesReceived;
+            Me = Api.GetMeAsync().Result;
+            //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
-                Api.SendTextMessage(updateid, "Control updated\n" + Program.GetVersion());
-            StartTime = DateTime.UtcNow;
+                Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
+            StartTime = DateTime.Now;
             //now we can start receiving
             Api.StartReceiving();
         }
 
-        private static void ApiOnUpdatesReceived(object sender, UpdatesReceivedEventArgs updatesReceivedEventArgs)
+        private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
         {
-            MessagesReceived += updatesReceivedEventArgs.UpdateCount;
+            
+        }
+
+        private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)
+        {
+            //MessagesReceived += updateEventArgs.UpdateCount;
         }
 
         internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
             //first answer the callback
-            Bot.Api.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
+            Bot.Api.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
             //edit the original message
             if (edit)
                 Edit(query, text, replyMarkup, parsemode);
@@ -135,39 +140,39 @@ namespace Werewolf_Control.Helpers
         internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
             Bot.MessagesSent++;
-            return Bot.Api.EditMessageText(id, msgId, text, parsemode, replyMarkup: replyMarkup);
+            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, replyMarkup: replyMarkup);
         }
 
-        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
-        {
-            try
-            {
-                using (var db = new WWContext())
-                {
-                    var id =
-#if RELEASE
-                        1;
-#elif RELEASE2
-                    2;
-#elif BETA
-                    3;
-#else
-                    4;
-#endif
-                    if (id == 4) return;
-                    var b = db.BotStatus.Find(id);
-                    b.BotStatus = statusChangeEventArgs.Status.ToString();
-                    CurrentStatus = b.BotStatus;
-                    db.SaveChanges();
+//        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+//        {
+//            try
+//            {
+//                using (var db = new WWContext())
+//                {
+//                    var id =
+//#if RELEASE
+//                        1;
+//#elif RELEASE2
+//                    2;
+//#elif BETA
+//                    3;
+//#else
+//                    4;
+//#endif
+//                    if (id == 4) return;
+//                    var b = db.BotStatus.Find(id);
+//                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+//                    CurrentStatus = b.BotStatus;
+//                    db.SaveChanges();
                     
-                }
-            }
-            finally
-            {
+//                }
+//            }
+//            finally
+//            {
                 
-            }
+//            }
             
-        }
+//        }
 
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
@@ -197,7 +202,7 @@ namespace Werewolf_Control.Helpers
         public static void NodeConnected(Node n)
         {
 #if DEBUG
-            //Api.SendTextMessage(Settings.MainChatId, $"Node connected with guid {n.ClientId}");
+            //Api.SendTextMessageAsync(Settings.MainChatId, $"Node connected with guid {n.ClientId}");
 #endif
         }
 
@@ -205,7 +210,7 @@ namespace Werewolf_Control.Helpers
         public static void Disconnect(this Node n, bool notify = true)
         {
 #if DEBUG
-            //Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
+            //Api.SendTextMessageAsync(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
 #endif
             if (notify && n.Games.Count > 2)
                 foreach (var g in n.Games)
@@ -229,22 +234,22 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
         {
             MessagesSent++;
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                return await Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
+                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                return Api.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else if (customMenu != null)
             {
-                return await Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else
             {
-                return await Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(id, message, disableWebPagePreview: true, parseMode: parseMode);
             }
 
         }

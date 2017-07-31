@@ -29,7 +29,7 @@ namespace Werewolf_Control.Helpers
             //fire off admin request
             try
             {
-                var admin = Bot.Api.GetChatMember(group, user).Result;
+                var admin = Bot.Api.GetChatMemberAsync(group, user).Result;
                 return admin.Status == ChatMemberStatus.Administrator || admin.Status == ChatMemberStatus.Creator;
             }
             catch

@@ -9,6 +9,7 @@ using Database;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
@@ -82,7 +83,7 @@ namespace Werewolf_Control
             }
 
             var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id);
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)),
+            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)),
                 replyMarkup: menu);
         }
 
@@ -105,7 +106,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
             }
         }
 
@@ -134,7 +135,7 @@ namespace Werewolf_Control
                     status = "Not banned (in Werewolf)";
                 var firstSeen = p.GamePlayers?.OrderBy(x => x.GameId).FirstOrDefault()?.Game?.TimeStarted;
                 
-                Bot.Api.SendTextMessage(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ??"Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ??"Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
             }
 
         }
@@ -154,14 +155,14 @@ namespace Werewolf_Control
             //var buttons =
             //    langs.Select(x => new[] { new InlineKeyboardButton(x, $"validate|{update.Message.Chat.Id}|{x}") }).ToArray();
             //var menu = new InlineKeyboardMarkup(buttons.ToArray());
-            //Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+            //Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "Validate which language?",
             //    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
 
 
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
             //buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
@@ -179,7 +180,7 @@ namespace Werewolf_Control
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
             try
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "Validate which language?",
                     replyToMessageId: update.Message.MessageId, replyMarkup: menu);
             }
             catch (AggregateException e)
@@ -233,7 +234,7 @@ namespace Werewolf_Control
                     ChatMember user = null;
                     try
                     {
-                        user = Bot.Api.GetChatMember(update.Message.Chat.Id, id).Result;
+                        user = Bot.Api.GetChatMemberAsync(update.Message.Chat.Id, id).Result;
                     }
                     catch
                     {
@@ -545,7 +546,7 @@ namespace Werewolf_Control
                 }
 
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
-                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardButton("No", "restore|no") }));
+                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardCallbackButton("No", "restore|no") }));
             }
         }
 

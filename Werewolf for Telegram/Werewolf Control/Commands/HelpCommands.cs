@@ -13,6 +13,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 using System.Threading;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 
 namespace Werewolf_Control
 {
@@ -28,7 +29,7 @@ namespace Werewolf_Control
             //}
             //try
             //{
-            //    var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply, parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
+            //    var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id, reply, parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
             //    if (update.Message.Chat.Type != ChatType.Private)
             //        Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             //}
@@ -44,7 +45,7 @@ namespace Werewolf_Control
             {
                 var langs = PublicGroups.GetBaseLanguages();
                 //create a menu out of this
-                List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
+                List<InlineKeyboardCallbackButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
 
                 var baseMenu = new List<InlineKeyboardButton[]>();
                 for (var i = 0; i < buttons.Count; i++)
@@ -62,7 +63,7 @@ namespace Werewolf_Control
 
                 try
                 {
-                    var result = Bot.Api.SendTextMessage(update.Message.From.Id,
+                    var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id,
                         GetLocaleString("WhatLangGroup", GetLanguage(update.Message.From.Id)),
                         replyMarkup: menu).Result;
                     if (update.Message.Chat.Type != ChatType.Private)
@@ -99,7 +100,7 @@ namespace Werewolf_Control
             reply += "/aboutGA - Guardian Angel 👼\n";
             try
             {
-                var result = Bot.Api.SendTextMessage(update.Message.From.Id, reply).Result;
+                var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id, reply).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }
