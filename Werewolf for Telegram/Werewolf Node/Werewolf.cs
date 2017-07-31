@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -53,6 +54,18 @@ namespace Werewolf_Node
         public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs;
         public string ShowRolesEnd;
 
+        public List<string> VillagerDieImages,
+            WolfWin,
+            WolvesWin,
+            VillagersWin,
+            NoWinner,
+            StartGame,
+            StartChaosGame,
+            TannerWin,
+            CultWins,
+            SerialKillerWins,
+            LoversWin;
+
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -65,6 +78,18 @@ namespace Werewolf_Node
         {
             try
             {
+                VillagerDieImages = Settings.VillagerDieImages.ToList();
+                WolfWin = Settings.WolfWin.ToList();
+                WolvesWin = Settings.WolvesWin.ToList();
+                VillagersWin = Settings.VillagersWin.ToList();
+                NoWinner = Settings.NoWinner.ToList();
+                StartGame = Settings.StartGame.ToList();
+                StartChaosGame = Settings.StartChaosGame.ToList();
+                TannerWin = Settings.TannerWin.ToList();
+                CultWins = Settings.CultWins.ToList();
+                SerialKillerWins = Settings.SerialKillerWins.ToList();
+                LoversWin = Settings.LoversWin.ToList();
+
                 new Thread(GroupQueue).Start();
                 using (var db = new WWContext())
                 {
@@ -88,6 +113,24 @@ namespace Werewolf_Node
                     catch
                     {
                         // ignored
+                    }
+                    var player = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                    if (player?.CustomGifSet != null)
+                    {
+                        var gifset = JsonConvert.DeserializeObject<CustomGifData>(player.CustomGifSet);
+                        if (gifset.Approved)
+                        {
+                            if (gifset.StartChaosGame != null)
+                            {
+                                StartChaosGame.Clear();
+                                StartChaosGame.Add(gifset.StartChaosGame);
+                            }
+                            if (gifset.StartGame != null)
+                            {
+                                StartGame.Clear();
+                                StartGame.Add(gifset.StartGame);
+                            }
+                        }
                     }
                     DbGroup.UpdateFlags();
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
@@ -138,11 +181,11 @@ namespace Werewolf_Node
                     new InlineKeyboardButton(GetLocaleString("JoinButton")){Url = $"https://telegram.me/{Program.Me.Username}?start=" + deeplink }
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
-#if DEBUG
-                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-#else
-                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? Settings.StartChaosGame : Settings.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-#endif
+//#if DEBUG
+//                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+//#else
+                _joinMsgId = Program.Bot.SendDocument(chatid, GetRandomImage(Chaos ? StartChaosGame : StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+//#endif
 
                 //let's keep this on for a while, then we will delete it
                 SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
@@ -349,6 +392,36 @@ namespace Werewolf_Node
                 }
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
+
+
+                if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
+                {
+                    var cMsg = "Players with custom gif packs:\n";
+                    var customs = Players.Where(x => x.GifPack?.Approved ?? false);
+                    if (customs.Any(x => x.GifPack.CultWins != null))
+                        CultWins = customs.Select(x => x.GifPack.CultWins).ToList();
+                    if (customs.Any(x => x.GifPack.LoversWin != null))
+                        LoversWin = customs.Select(x => x.GifPack.LoversWin).ToList();
+                    if (customs.Any(x => x.GifPack.NoWinner != null))
+                        NoWinner = customs.Select(x => x.GifPack.NoWinner).ToList();
+                    if (customs.Any(x => x.GifPack.SerialKillerWins != null))
+                        SerialKillerWins = customs.Select(x => x.GifPack.SerialKillerWins).ToList();
+                    if (customs.Any(x => x.GifPack.TannerWin != null))
+                        TannerWin = customs.Select(x => x.GifPack.TannerWin).ToList();
+                    if (customs.Any(x => x.GifPack.VillagerDieImage != null))
+                        VillagerDieImages = customs.Select(x => x.GifPack.VillagerDieImage).ToList();
+                    if (customs.Any(x => x.GifPack.VillagersWin != null))
+                        VillagersWin = customs.Select(x => x.GifPack.VillagersWin).ToList();
+                    if (customs.Any(x => x.GifPack.WolfWin != null))
+                        WolfWin = customs.Select(x => x.GifPack.WolfWin).ToList();
+                    if (customs.Any(x => x.GifPack.WolvesWin != null))
+                        WolvesWin = customs.Select(x => x.GifPack.WolvesWin).ToList();
+                    foreach (var p in customs)
+                    {
+                        cMsg += p.GetName() + Environment.NewLine;
+                    }
+                    Send(cMsg);
+                }
                 Program.Analytics.TrackAsync("gamestart", new { players = Players, playerCount = Players.Count(), mode = Chaos ? "Chaos" : "Normal" }, "0");
                 IsRunning = true;
                 AssignRoles();
@@ -552,7 +625,8 @@ namespace Werewolf_Node
                     p.Founder = user.Founder ?? false;
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
-
+                    if (!String.IsNullOrEmpty(user.CustomGifSet))
+                        p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
                     if (user.Achievements == null)
                         user.Achievements = 0;
                     if (ChatId == Settings.VeteranChatId)
@@ -2539,7 +2613,7 @@ namespace Werewolf_Node
                                         target.TimeDied = DateTime.Now;
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
-                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                            GetRandomImage(VillagerDieImages), target.Id);
                                         foreach (var w in voteWolves)
                                         {
                                             var secondvictim = Players.FirstOrDefault(x => x.Id == choices[1]);
@@ -2579,7 +2653,7 @@ namespace Werewolf_Node
                                                 else
                                                 {
                                                     SendGif(GetLocaleString("WolvesEatYou"),
-                                                        GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                        GetRandomImage(VillagerDieImages), target.Id);
                                                     DBKill(voteWolves, target, KillMthd.Eat);
                                                     target.KilledByRole = IRole.Wolf;
                                                     target.IsDead = true;
@@ -2606,7 +2680,7 @@ namespace Werewolf_Node
                                         else
                                         {
                                             SendGif(GetLocaleString("WolvesEatYou"),
-                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                GetRandomImage(VillagerDieImages), target.Id);
                                             DBKill(voteWolves, target, KillMthd.Eat);
                                             target.KilledByRole = IRole.Wolf;
                                             target.IsDead = true;
@@ -2653,7 +2727,7 @@ namespace Werewolf_Node
                                             target.DiedLastNight = true;
                                             DBKill(voteWolves, target, KillMthd.Eat);
                                             SendGif(GetLocaleString("WolvesEatYou"),
-                                                GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                                GetRandomImage(VillagerDieImages), target.Id);
                                         }
                                     }
                                     break;
@@ -2675,7 +2749,7 @@ namespace Werewolf_Node
                                         }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
-                                            GetRandomImage(Settings.VillagerDieImages), target.Id);
+                                            GetRandomImage(VillagerDieImages), target.Id);
                                     }
                                     break;
                             }
@@ -3577,7 +3651,7 @@ namespace Werewolf_Node
                     case ITeam.NoOne:
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
-                        SendWithQueue(msg, GetRandomImage(Settings.NoWinner));
+                        SendWithQueue(msg, GetRandomImage(NoWinner));
                         break;
 
                     case ITeam.Wolf:
@@ -3585,24 +3659,24 @@ namespace Werewolf_Node
                         {
                             msg += GetLocaleString("WolvesWin");
                             game.Winner = "Wolves";
-                            SendWithQueue(msg, GetRandomImage(Settings.WolvesWin));
+                            SendWithQueue(msg, GetRandomImage(WolvesWin));
                         }
                         else
                         {
                             msg += GetLocaleString("WolfWins");
                             game.Winner = "Wolf";
-                            SendWithQueue(msg, GetRandomImage(Settings.WolfWin));
+                            SendWithQueue(msg, GetRandomImage(WolfWin));
                         }
                         break;
                     case ITeam.Tanner:
                         msg += GetLocaleString("TannerWins");
                         game.Winner = "Tanner";
-                        SendWithQueue(msg, GetRandomImage(Settings.TannerWin));
+                        SendWithQueue(msg, GetRandomImage(TannerWin));
                         break;
                     case ITeam.Cult:
                         msg += GetLocaleString("CultWins");
                         game.Winner = "Cult";
-                        SendWithQueue(msg, GetRandomImage(Settings.CultWins)); //, GetRandomImage(Program.VillagersWin));
+                        SendWithQueue(msg, GetRandomImage(CultWins)); //, GetRandomImage(Program.VillagersWin));
                         break;
                     case ITeam.SerialKiller:
                         if (Players.Count(x => !x.IsDead) > 1)
@@ -3620,12 +3694,12 @@ namespace Werewolf_Node
                         }
                         msg += GetLocaleString("SerialKillerWins");
                         game.Winner = "SerialKiller";
-                        SendWithQueue(msg, GetRandomImage(Settings.SerialKillerWins));
+                        SendWithQueue(msg, GetRandomImage(SerialKillerWins));
                         break;
                     case ITeam.Lovers:
                         msg += GetLocaleString("LoversWin");
                         game.Winner = "Lovers";
-                        SendWithQueue(msg, GetRandomImage(Settings.LoversWin));
+                        SendWithQueue(msg, GetRandomImage(LoversWin));
                         break;
                     case ITeam.SKHunter:
                         var skhunter = Players.Where(x => !x.IsDead);
@@ -3648,12 +3722,12 @@ namespace Werewolf_Node
                                 SendWithQueue(GetLocaleString("SKHunterEnd", skh.GetName(), hunter.GetName()));
                             }
                         }
-                        SendWithQueue(msg, GetRandomImage(Settings.NoWinner));
+                        SendWithQueue(msg, GetRandomImage(NoWinner));
                         break;
                     default: //village
                         msg += GetLocaleString("VillageWins");
                         game.Winner = "Village";
-                        SendWithQueue(msg, GetRandomImage(Settings.VillagersWin));
+                        SendWithQueue(msg, GetRandomImage(VillagersWin));
                         break;
                 }
                 db.SaveChanges();
