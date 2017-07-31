@@ -978,7 +978,7 @@ namespace Werewolf_Node
 #if (DEBUG)
             Send(text, id);
 #else
-            Program.Bot.SendDocument(id, image, text);
+            Program.Bot.SendDocumentAsync(id, new FileToSend(image), text);
 #endif
         }
 
