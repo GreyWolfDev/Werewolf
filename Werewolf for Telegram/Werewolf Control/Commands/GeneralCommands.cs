@@ -56,12 +56,6 @@ namespace Werewolf_Control
 
         }
 
-        [Command(Trigger = "donate")]
-        public static void Donate(Update u, string[] args)
-        {
-            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Want to help keep werewolf online? Please donate to:\n•PayPal: PayPal.me/greywolfdevelopment\n•Bitcoin: 13QvBKfAattcSxSsW274fbgnKU5ASpnK3A\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @werewolfsupport", ParseMode.Html, true);
-        }
-
         [Command(Trigger = "changelog")]
         public static void ChangeLog(Update update, string[] args)
         {
@@ -226,6 +220,12 @@ namespace Werewolf_Control
                                   $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
                                   $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
                         Bot.Send(msg, u.Message.Chat.Id);
+                        return;
+                    }
+
+                    if (args[1] == "donatetg")
+                    {
+                        GetDonationInfo(m: u.Message);
                         return;
                     }
 

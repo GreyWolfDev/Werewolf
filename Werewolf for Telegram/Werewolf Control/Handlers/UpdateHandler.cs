@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Newtonsoft.Json;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -398,6 +399,13 @@ namespace Werewolf_Control.Handler
                             {
                                 CLI.AuthCode = update.Message.Text;
                             }
+                            else if (update.Message.Chat.Type == ChatType.Private &&
+                                     (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
+                                     (update.Message?.ReplyToMessage?.Text?.Contains(
+                                         "Please enter a whole number, in US Dollars (USD)") ?? false))
+                            {
+                                Commands.ValidateDonationAmount(update.Message);
+                            }
                             break;
                         case MessageType.PhotoMessage:
                             break;
@@ -513,7 +521,7 @@ namespace Werewolf_Control.Handler
         {
             //get the amount paid
             var amt = q.TotalAmount / 100;
-            var level = 0;
+
             using (var db = new WWContext())
             {
                 //get the player
@@ -527,9 +535,37 @@ namespace Werewolf_Control.Handler
                 if (p.DonationLevel == null)
                     p.DonationLevel = 0;
                 p.DonationLevel += amt;
-                level = p.DonationLevel??0;
+                var level = p.DonationLevel ?? 0;
+                var badge = "";
+                if (level >= 100)
+                    badge += " 🥇";
+                else if (level >= 50)
+                    badge += " 🥈";
+                else if (level >= 10)
+                    badge += " 🥉";
+                if (p.Founder ?? false)
+                    badge += "💎";
+
+                Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", q.From.Id);
+                //check to see how many people have purchased gif packs
+                if (level > 10)
+                {
+                    CustomGifData data;
+                    var json = p.CustomGifSet;
+                    if (String.IsNullOrEmpty(json))
+                        data = new CustomGifData();
+                    else
+                        data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    if (!data.HasPurchased)
+                    {
+                        Bot.Send("Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval", q.From.Id);
+                    }
+                    data.HasPurchased = true;
+
+                    json = JsonConvert.SerializeObject(data);
+                    p.CustomGifSet = json;
+                }
                 db.SaveChanges();
-                Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}", q.From.Id);
             }
             Bot.Api.AnswerPreCheckoutQueryAsync(q.Id, true);
         }
@@ -581,8 +617,13 @@ namespace Werewolf_Control.Handler
                     }
                     string[] args = query.Data.Split('|');
                     Program.Analytics.TrackAsync($"cb:{args[0]}", new { args = args }, query.From.Id.ToString());
-                    
-                    
+
+                    if (args[0] == "donatetg")
+                    {
+                        Commands.GetDonationInfo(query);
+                        return;
+                    }
+
                     //first off, if it's a game, send it to the node.
                     if (args[0] == "vote")
                     {
@@ -590,7 +631,7 @@ namespace Werewolf_Control.Handler
                         node?.SendReply(query);
                         return;
                     }
-                    
+
                     //declare objects
                     InlineKeyboardMarkup menu;
                     Group grp = null;
@@ -654,7 +695,7 @@ namespace Werewolf_Control.Handler
                             return;
                         }
                     }
-                    
+
 
 
 
@@ -668,7 +709,7 @@ namespace Werewolf_Control.Handler
                     var Yes = GetLocaleString("Yes", language);
                     var No = GetLocaleString("No", language);
                     var Cancel = GetLocaleString("Cancel", language);
-                    
+
                     switch (command)
                     {
                         #region Dev Commands
@@ -688,11 +729,11 @@ namespace Werewolf_Control.Handler
 
                                 //get all the players Para has played with
                                 var ohaiplayers = (from g in DB.Games
-                                               join gp in DB.GamePlayers on g.Id equals gp.GameId
-                                               join gp2 in DB.GamePlayers on g.Id equals gp2.GameId
-                                               join pl in DB.Players on gp2.PlayerId equals pl.Id
-                                               where gp.PlayerId == para.Id
-                                               select pl).Distinct();
+                                                   join gp in DB.GamePlayers on g.Id equals gp.GameId
+                                                   join gp2 in DB.GamePlayers on g.Id equals gp2.GameId
+                                                   join pl in DB.Players on gp2.PlayerId equals pl.Id
+                                                   where gp.PlayerId == para.Id
+                                                   select pl).Distinct();
 
                                 //figure out which players don't have the achievement
 
@@ -916,7 +957,7 @@ namespace Werewolf_Control.Handler
                                     break;
                                 }
                             }
-                            
+
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
@@ -1372,7 +1413,7 @@ namespace Werewolf_Control.Handler
                             }
 
                             break;
-                        #endregion
+                            #endregion
                     }
                 }
                 catch (Exception ex)
