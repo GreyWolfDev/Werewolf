@@ -51,7 +51,7 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW;
         public string ShowRolesEnd;
 
         public List<string> VillagerDieImages,
@@ -164,7 +164,7 @@ namespace Werewolf_Node
                         SecretLynch = DbGroup.HasFlag(GroupConfig.EnableSecretLynch);
                         ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
                     }
-                    
+                    AllowNSFW = DbGroup.HasFlag(GroupConfig.AllowNSFW);
 
 
                     LoadLanguage(DbGroup.Language);
@@ -398,6 +398,8 @@ namespace Werewolf_Node
                 {
                     var cMsg = "Players with custom gif packs:\n";
                     var customs = Players.Where(x => x.GifPack?.Approved ?? false);
+                    if (!AllowNSFW)
+                        customs = customs.Where(x => !x.GifPack.NSFW);
                     if (customs.Any(x => x.GifPack.CultWins != null))
                         CultWins = customs.Select(x => x.GifPack.CultWins).ToList();
                     if (customs.Any(x => x.GifPack.LoversWin != null))
