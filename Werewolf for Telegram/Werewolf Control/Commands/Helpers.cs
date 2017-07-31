@@ -49,7 +49,7 @@ namespace Werewolf_Control
 #if BETA
             if (!BetaGroups.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
-                Bot.Api.LeaveChat(update.Message.Chat.Id);
+                Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
                 return;
             }
 #endif
