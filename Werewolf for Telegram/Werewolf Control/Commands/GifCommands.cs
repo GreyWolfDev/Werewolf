@@ -70,7 +70,7 @@ namespace Werewolf_Control
             {
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
                 var json = p?.CustomGifSet;
-                if (p?.DonationLevel < 10)
+                if ((p?.DonationLevel ?? 0) < 10)
                 {
                     Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
                     return;
