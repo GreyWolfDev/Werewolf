@@ -24,5 +24,6 @@ namespace Werewolf_Control.Models
         public string CultWins { get; set; }
         public string SerialKillerWins { get; set; }
         public string LoversWin { get; set; }
+        public bool ShowBadge { get; set; } = true;
     }
 }

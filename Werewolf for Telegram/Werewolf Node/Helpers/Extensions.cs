@@ -49,17 +49,20 @@ namespace Werewolf_Node.Helpers
         {
             var name = player.Name;
 
-            var end = name.Substring(name.Length - Math.Min(name.Length, 3));
-            name = name.Substring(0, Math.Max(name.Length - 3, 0));
+            var end = name.Substring(name.Length - Math.Min(name.Length, 5));
+            name = name.Substring(0, Math.Max(name.Length - 5, 0));
             end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
-            if (player.DonationLevel >= 100)
-                end += " 🥇";
-            else if (player.DonationLevel >= 50)
-                end += " 🥈";
-            else if (player.DonationLevel >= 10)
-                end += " 🥉";
-            if (player.Founder)
-                end += "💎";
+            if (player.GifPack.ShowBadge)
+            {
+                if (player.DonationLevel >= 100)
+                    end += " 🥇";
+                else if (player.DonationLevel >= 50)
+                    end += " 🥈";
+                else if (player.DonationLevel >= 10)
+                    end += " 🥉";
+                if (player.Founder)
+                    end += "💎";
+            }
             name += end;
 
             if (menu)

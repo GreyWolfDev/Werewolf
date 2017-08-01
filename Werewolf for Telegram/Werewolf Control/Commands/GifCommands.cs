@@ -41,7 +41,7 @@ namespace Werewolf_Control
                 var count = db.Players.Count(x => x.GifPurchased == true);
                 if (count < 100)
                     gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  ";
-                
+
             }
             Bot.Api.SendTextMessageAsync(u.Message.Chat.Id,
                 "Want to help keep Werewolf online?\n" +
@@ -75,11 +75,7 @@ namespace Werewolf_Control
                     Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
                     return;
                 }
-                //if (String.IsNullOrEmpty(json))
-                //{
-                //    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
-                //    return;
-                //}
+
                 CustomGifData data;
                 if (String.IsNullOrEmpty(json))
                 {
@@ -90,13 +86,13 @@ namespace Werewolf_Control
                     db.SaveChanges();
                 }
 
-                else{ data = JsonConvert.DeserializeObject<CustomGifData>(json??"");}
+                else { data = JsonConvert.DeserializeObject<CustomGifData>(json ?? ""); }
                 //if (!data.HasPurchased)
                 //{
                 //    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
                 //    return;
                 //}
-                
+
                 Bot.Api.SendTextMessageAsync(u.Message.From.Id,
                     "Ready to build your custom gif pack? Great! Before we begin, a few notes you should be aware of:\n" +
                     "• Your pack will be submitted for approval.  An admin will check it, and once approved, you can start using it in games\n" +
@@ -130,7 +126,7 @@ namespace Werewolf_Control
                 Bot.Send(msg, u.Message.From.Id);
             }
 
-           
+
         }
 
         public static InlineKeyboardMarkup GetGifMenu(CustomGifData d)
@@ -188,8 +184,10 @@ namespace Werewolf_Control
                 }
                 m.Buttons.Add(new InlineKeyboardCallbackButton(i, "customgif|" + i));
             }
+            m.Buttons.Add(new InlineKeyboardCallbackButton("Show Badge: " + (d.ShowBadge ? "✅" : "🚫"), "customgif|togglebadge"));
             m.Buttons.Add(new InlineKeyboardCallbackButton("Done for now", "cancel|cancel|cancel"));
             m.Buttons.Add(new InlineKeyboardCallbackButton("Submit for approval", "customgif|submit"));
+
             return m.CreateMarkupFromMenu();
         }
 
@@ -199,15 +197,29 @@ namespace Werewolf_Control
             var choice = q.Data.Split('|')[1].Split(' ')[0];
             if (choice == "submit")
             {
-                Bot.Send($"User {q.From.Id} has submitted a gif pack for approval", Settings.AdminChatId);
+                Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId);
                 Bot.Send("Your pack has been submitted for approval to the admin.  Please wait while we review.",
                     q.From.Id);
                 return;
             }
+            if (choice == "togglebadge")
+            {
+                using (var db = new WWContext())
+                {
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                    var json = p?.CustomGifSet;
+                    var data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    data.ShowBadge = !data.ShowBadge;
+                    p.CustomGifSet = JsonConvert.SerializeObject(data);
+                    db.SaveChanges();
+                    Bot.Send($"You badge will {(data.ShowBadge?"":"not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
+                    return;
+                }
+            }
             Bot.Api.SendTextMessageAsync(q.From.Id,
                 q.Data.Split('|')[1] + "\nOk, send me the GIF you want to use for this situation, as a reply\n" +
                 "#" + choice,
-                replyMarkup: new ForceReply() {Force = true});
+                replyMarkup: new ForceReply() { Force = true });
         }
 
         public static void AddGif(Message m)
@@ -268,7 +280,7 @@ namespace Werewolf_Control
                         break;
                     case "Chaos":
                         data.StartChaosGame = id;
-                        break;   
+                        break;
                 }
                 data.Approved = null;
                 data.ApprovedBy = 0;

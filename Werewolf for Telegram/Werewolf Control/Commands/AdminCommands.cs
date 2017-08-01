@@ -601,7 +601,7 @@ namespace Werewolf_Control
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Wins");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
