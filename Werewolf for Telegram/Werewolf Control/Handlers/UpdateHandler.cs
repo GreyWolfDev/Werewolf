@@ -406,7 +406,7 @@ namespace Werewolf_Control.Handler
                             {
                                 Commands.ValidateDonationAmount(update.Message);
                             }
-                            
+
                             break;
                         case MessageType.PhotoMessage:
                             break;
@@ -514,6 +514,12 @@ namespace Werewolf_Control.Handler
                             break;
                         case MessageType.SuccessfulPayment:
                             HandleSuccessfulPayment(update.Message);
+                            break;
+                        case MessageType.GameMessage:
+                            break;
+                        case MessageType.VideoNoteMessage:
+                            break;
+                        case MessageType.Invoice:
                             break;
                         default:
                             break;
