@@ -823,6 +823,7 @@ namespace Werewolf_Control.Handler
                                     tplayer.CustomGifSet = JsonConvert.SerializeObject(pack);
                                     DB.SaveChanges();
                                     Bot.Send(msg, query.Message.Chat.Id);
+                                    Bot.Send(msg, pid);
                                     Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
                                     break;
                                 case "approvensfw":
@@ -851,6 +852,7 @@ namespace Werewolf_Control.Handler
                                     tplayer.CustomGifSet = JsonConvert.SerializeObject(pack);
                                     DB.SaveChanges();
                                     Bot.Send(msg, query.Message.Chat.Id);
+                                    Bot.Send(msg, pid);
                                     Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
                                     break;
                             }

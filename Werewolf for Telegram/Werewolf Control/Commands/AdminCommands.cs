@@ -679,6 +679,7 @@ namespace Werewolf_Control
                     msg += "Approved By " + by.Name + "\nNSFW: " + pack.NSFW;
                     p.CustomGifSet = JsonConvert.SerializeObject(pack);
                     db.SaveChanges();
+                    Bot.Send(msg, pid);
                     Bot.Send(msg, u.Message.Chat.Id);
                 }
             }
@@ -728,6 +729,7 @@ namespace Werewolf_Control
                     msg += "Dispproved By " + by.Name + " for: " + pack.DenyReason;
                     p.CustomGifSet = JsonConvert.SerializeObject(pack);
                     db.SaveChanges();
+                    Bot.Send(msg, pid);
                     Bot.Send(msg, u.Message.Chat.Id);
                 }
             }
