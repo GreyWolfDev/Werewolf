@@ -738,6 +738,125 @@ namespace Werewolf_Control.Handler
                         node?.SendReply(query);
                         return;
                     }
+                    if (new[] { "reviewgifs", "approvesfw", "approvensfw" }.Contains(args[0]))
+                    {
+                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        {
+                            CustomGifData pack;
+                            Player by;
+                            string json;
+                            //get player target
+                            var pid = int.Parse(args[1]);
+                            var tplayer = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
+                            switch (args[0])
+                            {
+                                case "reviewgifs":
+                                    json = tplayer.CustomGifSet;
+                                    if (String.IsNullOrEmpty(json))
+                                    {
+                                        Send("User does not have a custom gif pack", query.Message.Chat.Id);
+                                        return;
+                                    }
+                                    if (query.Message.Chat.Type != ChatType.Private)
+                                        Send("I will send you the gifs in private", query.Message.Chat.Id);
+
+                                    pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                                    var id = query.From.Id;
+                                    Send($"Sending gifs for {pid}", id);
+                                    Thread.Sleep(1000);
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.CultWins), "Cult Wins");
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.LoversWin), "Lovers Win");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.NoWinner), "No Winner");
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolvesWin), "Wolf Pack Wins");
+                                    var msg = $"Approval Status: ";
+                                    switch (pack.Approved)
+                                    {
+                                        case null:
+                                            msg += "Pending";
+                                            break;
+                                        case true:
+                                            by = DB.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                                            msg += "Approved By " + by.Name;
+                                            break;
+                                        case false:
+                                            var dby = DB.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                                            msg += "Disapproved By " + dby.Name + " for: " + pack.DenyReason;
+                                            break;
+                                    }
+                                    Bot.Send(msg, id);
+                                    break;
+                                case "approvesfw":
+                                    var nsfw = false;
+                                    
+                                    if (tplayer == null)
+                                    {
+                                        Send("Id not found.", query.Message.Chat.Id);
+                                        return;
+                                    }
+                                    json = tplayer.CustomGifSet;
+                                    if (String.IsNullOrEmpty(json))
+                                    {
+                                        Send("User does not have a custom gif pack", query.Message.Chat.Id);
+                                        return;
+                                    }
+
+                                    pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                                    id = query.From.Id;
+                                    pack.Approved = true;
+                                    pack.ApprovedBy = id;
+                                    pack.NSFW = nsfw;
+                                    msg = $"Approval Status: ";
+                                    by = DB.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                                    msg += "Approved By " + by.Name + "\nNSFW: " + pack.NSFW;
+                                    tplayer.CustomGifSet = JsonConvert.SerializeObject(pack);
+                                    DB.SaveChanges();
+                                    Bot.Send(msg, query.Message.Chat.Id);
+                                    Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                                    break;
+                                case "approvensfw":
+                                    nsfw = true;
+
+                                    if (tplayer == null)
+                                    {
+                                        Send("Id not found.", query.Message.Chat.Id);
+                                        return;
+                                    }
+                                    json = tplayer.CustomGifSet;
+                                    if (String.IsNullOrEmpty(json))
+                                    {
+                                        Send("User does not have a custom gif pack", query.Message.Chat.Id);
+                                        return;
+                                    }
+
+                                    pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                                    id = query.From.Id;
+                                    pack.Approved = true;
+                                    pack.ApprovedBy = id;
+                                    pack.NSFW = nsfw;
+                                    msg = $"Approval Status: ";
+                                    by = DB.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                                    msg += "Approved By " + by.Name + "\nNSFW: " + pack.NSFW;
+                                    tplayer.CustomGifSet = JsonConvert.SerializeObject(pack);
+                                    DB.SaveChanges();
+                                    Bot.Send(msg, query.Message.Chat.Id);
+                                    Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                                    break;
+                            }
+                        }
+                        return;
+                    }
 
                     //declare objects
                     InlineKeyboardMarkup menu;

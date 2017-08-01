@@ -197,7 +197,12 @@ namespace Werewolf_Control
             var choice = q.Data.Split('|')[1].Split(' ')[0];
             if (choice == "submit")
             {
-                Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId);
+                var menu = new Menu(2);
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Review", "reviewgifs|" + q.From.Id));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", "cancel|cancel|cancel"));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
+                Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
                 Bot.Send("Your pack has been submitted for approval to the admin.  Please wait while we review.",
                     q.From.Id);
                 return;
@@ -212,7 +217,7 @@ namespace Werewolf_Control
                     data.ShowBadge = !data.ShowBadge;
                     p.CustomGifSet = JsonConvert.SerializeObject(data);
                     db.SaveChanges();
-                    Bot.Send($"You badge will {(data.ShowBadge?"":"not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
+                    Bot.Send($"You badge will {(data.ShowBadge ? "" : "not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
                     return;
                 }
             }
