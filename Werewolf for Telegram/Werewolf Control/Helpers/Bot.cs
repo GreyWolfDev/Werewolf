@@ -116,7 +116,7 @@ namespace Werewolf_Control.Helpers
 
         private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
