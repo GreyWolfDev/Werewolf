@@ -15,6 +15,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
+using System.Threading;
 
 namespace Werewolf_Control
 {
@@ -596,22 +597,22 @@ namespace Werewolf_Control
                     var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
                     var id = u.Message.From.Id;
                     Send($"Sending gifs for {pid}", id);
-                    Thread.sleep(1000);
+                    Thread.Sleep(1000);
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.CultWins), "Cult Wins");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.LoversWin), "Lovers Win");
-                    Thread.sleep(250);
+                    Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.NoWinner), "No Winner");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
-                    Thread.sleep(250);
+                    Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");                 
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");      
-                    Thread.sleep(250);
+                    Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
-                    Thread.sleep(250);
+                    Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
-                    Thread.sleep(250);
+                    Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolvesWin), "Wolf Pack Wins");
                     var msg = $"Approval Status: ";
                     switch (pack.Approved)
