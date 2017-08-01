@@ -554,6 +554,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "reviewgifs", GlobalAdminOnly = true, Blockable = true)]
         public static void ReviewGifs(Update u, string[] args)
         {
+#if !BETA
             using (var db = new WWContext())
             {
                 if (args[1] == null)
@@ -589,9 +590,6 @@ namespace Werewolf_Control
                         Send("User does not have a custom gif pack", u.Message.Chat.Id);
                         return;
                     }
-#if BETA
-                    Send("Please use this command with @werewolfbot", u.Message.Chat.Id);
-#endif
                     if (u.Message.Chat.Type != ChatType.Private)
                         Send("I will send you the gifs in private", u.Message.Chat.Id);
 
@@ -626,7 +624,7 @@ namespace Werewolf_Control
                     Bot.Send(msg, id);
                 }
             }
-
+#endif
         }
 
         [Attributes.Command(Trigger = "approvegifs", GlobalAdminOnly = true, Blockable = true)]
