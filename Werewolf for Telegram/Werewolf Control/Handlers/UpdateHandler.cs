@@ -512,8 +512,12 @@ namespace Werewolf_Control.Handler
                             break;
                         case MessageType.VenueMessage:
                             break;
+                        case MessageType.SuccessfulPayment:
+                            HandleSuccessfulPayment(update.Message);
+                            break;
                         default:
-                            throw new ArgumentOutOfRangeException();
+                            break;
+                            //throw new ArgumentOutOfRangeException();
                     }
                 }
 #if !DEBUG
@@ -525,19 +529,20 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        private static void HandlePayment(PreCheckoutQuery q)
+        private static void HandleSuccessfulPayment(Message message)
         {
+            var q = message.SuccessfulPayment;
             //get the amount paid
             var amt = q.TotalAmount / 100;
-            
+
             using (var db = new WWContext())
             {
                 //get the player
-                var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == message.From.Id);
                 if (p == null)
                 {
                     //wtf??
-                    Bot.Send($"Successfully received ${amt} from you! YAY!\n\nHowever, we do not see any record of you in our database, so we can't record it.  Please message @ParaCode with this information, and a screenshot", q.From.Id);
+                    Bot.Send($"Successfully received ${amt} from you! YAY!\n\nHowever, we do not see any record of you in our database, so we can't record it.  Please message @ParaCode with this information, and a screenshot", message.From.Id);
                     return;
                 }
                 if (p.DonationLevel == null)
@@ -554,7 +559,7 @@ namespace Werewolf_Control.Handler
                 if (p.Founder ?? false)
                     badge += "💎";
 
-                Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", q.From.Id);
+                Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", message.From.Id);
                 //check to see how many people have purchased gif packs
 
                 if (level > 10)
@@ -577,7 +582,7 @@ namespace Werewolf_Control.Handler
                         {
                             Bot.Send(
                                 "Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval",
-                                q.From.Id);
+                                message.From.Id);
                         }
                         data.HasPurchased = true;
 
@@ -587,6 +592,70 @@ namespace Werewolf_Control.Handler
                 }
                 db.SaveChanges();
             }
+        }
+
+        private static void HandlePayment(PreCheckoutQuery q)
+        {
+            ////get the amount paid
+            //var amt = q.TotalAmount / 100;
+            
+            //using (var db = new WWContext())
+            //{
+            //    //get the player
+            //    var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+            //    if (p == null)
+            //    {
+            //        //wtf??
+            //        Bot.Send($"Successfully received ${amt} from you! YAY!\n\nHowever, we do not see any record of you in our database, so we can't record it.  Please message @ParaCode with this information, and a screenshot", q.From.Id);
+            //        return;
+            //    }
+            //    if (p.DonationLevel == null)
+            //        p.DonationLevel = 0;
+            //    p.DonationLevel += amt;
+            //    var level = p.DonationLevel ?? 0;
+            //    var badge = "";
+            //    if (level >= 100)
+            //        badge += " 🥇";
+            //    else if (level >= 50)
+            //        badge += " 🥈";
+            //    else if (level >= 10)
+            //        badge += " 🥉";
+            //    if (p.Founder ?? false)
+            //        badge += "💎";
+
+            //    Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", q.From.Id);
+            //    //check to see how many people have purchased gif packs
+
+            //    if (level > 10)
+            //    {
+            //        var packs = db.Players.Count(x => x.GifPurchased == true);
+            //        if (packs >= 100)
+            //        {
+            //            //do nothing, they didn't unlock it.
+            //        }
+            //        else
+            //        {
+            //            p.GifPurchased = true;
+            //            CustomGifData data;
+            //            var json = p.CustomGifSet;
+            //            if (String.IsNullOrEmpty(json))
+            //                data = new CustomGifData();
+            //            else
+            //                data = JsonConvert.DeserializeObject<CustomGifData>(json);
+            //            if (!data.HasPurchased)
+            //            {
+            //                Bot.Send(
+            //                    "Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval",
+            //                    q.From.Id);
+            //            }
+            //            data.HasPurchased = true;
+
+            //            json = JsonConvert.SerializeObject(data);
+            //            p.CustomGifSet = json;
+            //        }
+            //    }
+            //    db.SaveChanges();
+            //}
             Bot.Api.AnswerPreCheckoutQueryAsync(q.Id, true);
         }
 

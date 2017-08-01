@@ -108,7 +108,7 @@ namespace Werewolf_Control
                     "• I will send you a description of the image, to which you will reply (to the message) with the gif you want to use\n" +
                     "• At this time, custom gif packs ONLY work in @werewolfbot, NOT @werewolfbetabot\n" +
                     "\n\n" +
-                    "PLEASE NOTE: Changing any gifs will automatically removal the approval for your pack, and an admin will need to approve it again" +
+                    "PLEASE NOTE: Changing any gifs will automatically remove the approval for your pack, and an admin will need to approve it again\n" +
                     "Let's begin! Select the situation you want to set a gif for",
                     replyMarkup: GetGifMenu(data));
 
