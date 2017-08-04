@@ -503,9 +503,14 @@ namespace Werewolf_Control.Handler
                                     var uid = m.NewChatMember.Id;
                                     //check that they are allowed to join.
                                     var p = DB.Players.FirstOrDefault(x => x.TelegramId == uid);
-                                    if ((p?.GamePlayers.Count ?? 0) >= 500) return;
+                                    var gamecount = p?.GamePlayers.Count ?? 0;
+                                    if (gamecount >= 500)
+                                    {
+                                        Send($"{m.NewChatMember.FirstName} has played {gamecount} games", m.Chat.Id);
+                                        return;
+                                    }
                                     //user has not reach veteran
-                                    Send($"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran", m.Chat.Id);
+                                    Send($"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran ({gamecount} games played, need 500)", m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
                             }
