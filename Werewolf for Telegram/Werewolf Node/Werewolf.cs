@@ -3760,6 +3760,14 @@ namespace Werewolf_Node
                 UpdateAchievements();
                 UpdateGroupRanking();
                 Program.Analytics.TrackAsync("gameend", new { winner = team.ToString(), groupid = ChatId, mode = Chaos ? "Chaos" : "Normal", size = Players.Count() }, "0");
+                if (ChatId == -1001094614730)
+                {
+                    foreach (var p in Players.Where(x => x.IsDead))
+                    {
+                        Program.Bot.RestrictChatMemberAsync(-1001094614730, p.Id, default(DateTime), true, true, true, true);
+                    }
+                }
+                
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
@@ -4352,6 +4360,23 @@ namespace Werewolf_Node
                 catch (Exception)
                 {
                     //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
+                }
+
+                try
+                {
+                    if (ChatId == -1001094614730) //vets group
+                    {
+                        //let's try this out, shall we?
+                        var status = Program.Bot.GetChatMemberAsync(-1001094614730, victim.Id).Result;
+                        if (status.Status != ChatMemberStatus.Administrator && status.Status != ChatMemberStatus.Creator)
+                        {
+                            Program.Bot.RestrictChatMemberAsync(-1001094614730, victim.Id, DateTime.Now.AddHours(1), false, false, false, false);
+                        }
+                    }
+                }
+                catch
+                {
+
                 }
             }
 
