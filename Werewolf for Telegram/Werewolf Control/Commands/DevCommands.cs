@@ -427,7 +427,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            Bot.Send(Updater.QueueBuild("Beta Node").Result, update.Message.Chat.Id);
+            GetLogs(update, args);
         }
 
         [Attributes.Command(Trigger = "sql", DevOnly = true)]
