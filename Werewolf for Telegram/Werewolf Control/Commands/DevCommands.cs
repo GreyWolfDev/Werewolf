@@ -427,9 +427,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            var api = RegHelper.GetRegValue("DebugStripeTestAPI");
-            Bot.Api.SendInvoiceAsync(update.Message.Chat.Id, "Test Invoice", "Description", "somepayloadtest", api,
-                "startparam", "USD", new[] {new LabeledPrice() {Amount = 100, Label = "$1 Label"}});
+            Bot.Send(Updater.QueueBuild("Beta Node").Result, update.Message.Chat.Id);
         }
 
         [Attributes.Command(Trigger = "sql", DevOnly = true)]

@@ -181,7 +181,7 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        static async Task<string> QueueBuild(string buildDefinitionName)
+        public static async Task<string> QueueBuild(string buildDefinitionName)
         {
             try
             {
