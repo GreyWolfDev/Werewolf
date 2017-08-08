@@ -38,7 +38,7 @@ namespace Werewolf_Node
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
         public string Language = "English SFW", ChatGroup;
-        public Locale Locale; 
+        public Locale Locale;
         public Group DbGroup;
         private bool _playerListChanged = true, _silverSpread;
         private DateTime _timeStarted;
@@ -108,7 +108,7 @@ namespace Werewolf_Node
                     {
                         var memberCount = Program.Bot.GetChatMembersCountAsync(chatid).Result;
                         DbGroup.MemberCount = memberCount;
-                        
+
                         db.SaveChanges();
                     }
                     catch
@@ -172,8 +172,8 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
 
-                    
-                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username ) });
+
+                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
 
@@ -184,11 +184,11 @@ namespace Werewolf_Node
                     new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://telegram.me/{Program.Me.Username}?start=" + deeplink)
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
-//#if DEBUG
-//                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-//#else
+                //#if DEBUG
+                //                _joinMsgId = Program.Bot.SendDocument(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                //#else
                 _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-//#endif
+                //#endif
 
                 //let's keep this on for a while, then we will delete it
                 SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
@@ -214,9 +214,9 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
+        #endregion
 
-#region Language Helpers
+        #region Language Helpers
         /// <summary>
         /// Caches the language file in the instance
         /// </summary>
@@ -298,9 +298,9 @@ namespace Werewolf_Node
                 }
             }
         }
-#endregion
+        #endregion
 
-#region Main bits
+        #region Main bits
         /// <summary>
         /// The main timer for the game
         /// </summary>
@@ -511,6 +511,8 @@ namespace Werewolf_Node
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
                 var msg = "";
+                if (ex.InnerException != null)
+                    msg += ex.InnerException.Message;
                 foreach (var ves in ex.EntityValidationErrors)
                 {
                     foreach (var ve in ves.ValidationErrors)
@@ -518,6 +520,8 @@ namespace Werewolf_Node
                         msg += $"{ves.Entry.Entity}:{ve.ErrorMessage}\n";
                     }
                 }
+
+
                 Send("Something just went terribly wrong, I had to cancel the game....");
                 Send(
                     Program.Version.FileVersion +
@@ -731,9 +735,9 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-#endregion
+        #endregion
 
-#region Communications
+        #region Communications
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -1216,9 +1220,9 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
+        #endregion
 
-#region Roles
+        #region Roles
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();
@@ -2038,9 +2042,9 @@ namespace Werewolf_Node
 
 
 
-#endregion
+        #endregion
 
-#region Cycles
+        #region Cycles
 
         public void ForceStart()
         {
@@ -2196,7 +2200,7 @@ namespace Werewolf_Node
                             AddAchievement(lynched, Achievements.LackOfTrust);
                         if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
                             AddAchievement(lynched, Achievements.SpoiledRichBrat);
-                        SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ?$"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
+                        SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
                         if (lynched.InLove)
                             KillLover(lynched);
@@ -2487,7 +2491,7 @@ namespace Werewolf_Node
              * GA
              */
 
-#region Wolf Night
+            #region Wolf Night
 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
 
@@ -2776,9 +2780,9 @@ namespace Werewolf_Node
                 eatCount = 0;
             }
             WolfCubKilled = false;
-#endregion
+            #endregion
 
-#region Serial Killer Night
+            #region Serial Killer Night
 
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
@@ -2809,12 +2813,12 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             if (Players == null)
                 return;
 
-#region Cult Hunter Night
+            #region Cult Hunter Night
 
             //cult hunter
             var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
@@ -2856,9 +2860,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region Cult Night
+            #region Cult Night
 
             //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
@@ -3050,7 +3054,7 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             if (Players == null)
             {
@@ -3058,7 +3062,7 @@ namespace Werewolf_Node
                 return;
             }
 
-#region Harlot Night
+            #region Harlot Night
 
             //let the harlot know
             var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
@@ -3133,9 +3137,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region Seer / Fool
+            #region Seer / Fool
 
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
@@ -3222,9 +3226,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region GA Night
+            #region GA Night
 
             if (ga != null)
             {
@@ -3286,11 +3290,11 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             CheckRoleChanges();
 
-#region Night Death Notifications to Group
+            #region Night Death Notifications to Group
 
 
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
@@ -3437,7 +3441,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("NoAttack"));
             }
 
-#endregion
+            #endregion
 
             if (CheckForGameEnd()) return;
 
@@ -3767,17 +3771,17 @@ namespace Werewolf_Node
                 //        Program.Bot.RestrictChatMemberAsync(-1001094614730, p.Id, default(DateTime), true, true, true, true);
                 //    }
                 //}
-                
+
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
             }
         }
-        
 
-#endregion
 
-#region Send Menus
+        #endregion
+
+        #region Send Menus
 
         private void SendLynchMenu()
         {
@@ -4042,9 +4046,9 @@ namespace Werewolf_Node
             _silverSpread = false;
         }
 
-#endregion
+        #endregion
 
-#region Helpers
+        #region Helpers
         public void CleanupButtons()
         {
             foreach (var id in _joinButtons)
@@ -4272,9 +4276,9 @@ namespace Werewolf_Node
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-#endregion
+        #endregion
 
-#region Database Helpers
+        #region Database Helpers
 
         // ReSharper disable UnusedParameter.Local
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
@@ -4596,7 +4600,7 @@ namespace Werewolf_Node
                     db.GroupRanking.Add(grpranking);
                     db.SaveChanges();
                 }
-                
+
                 if (grpranking.LastRefresh < refreshdate && grpranking.GamesPlayed != 0) //games played should always be != 0, but you never know..
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
@@ -4613,7 +4617,7 @@ namespace Werewolf_Node
                     grpranking.LastRefresh = refreshdate;
                     db.SaveChanges();
                 }
-                
+
                 if (_timePlayed.HasValue)
                 {
                     grpranking.GamesPlayed++;
@@ -4621,7 +4625,7 @@ namespace Werewolf_Node
                     grpranking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
                     db.SaveChanges();
                 }
-                
+
                 db.SaveChanges();
             }
         }
@@ -4645,6 +4649,6 @@ namespace Werewolf_Node
             }
         }
 
-#endregion
+        #endregion
     }
 }

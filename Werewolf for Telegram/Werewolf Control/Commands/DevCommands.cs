@@ -1076,33 +1076,39 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "getlogs", DevOnly = true)]
         public static void GetLogs(Update u, string[] args)
         {
-            var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
-
-            var path = LogPath + "errors.zip";
-            if (File.Exists(path))
+            try
             {
-                File.Delete(path);
-            }
-            var someFileExists = false;
-            using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
-            {
-                var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log" };
+                var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
 
-                foreach (var file in files)
+                var path = LogPath + "errors.zip";
+                if (File.Exists(path))
                 {
-                    var fp = LogPath + file;
-                    if (!File.Exists(fp)) continue;
-                    someFileExists = true;
-                    zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                    File.Delete(path);
+                }
+                var someFileExists = false;
+                using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
+                {
+                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log" };
+
+                    foreach (var file in files)
+                    {
+                        var fp = LogPath + file;
+                        if (!File.Exists(fp)) continue;
+                        someFileExists = true;
+                        zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                    }
+                }
+                //now send the file
+                if (someFileExists)
+                {
+                    var fs = new FileStream(path, FileMode.Open);
+                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
                 }
             }
-            //now send the file
-            if (someFileExists)
+            catch(Exception e)
             {
-                var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+                Bot.Send(e.Message, u.Message.Chat.Id);
             }
-
         }
 
         [Attributes.Command(Trigger = "movelang", DevOnly = true)]
