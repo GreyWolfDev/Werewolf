@@ -141,14 +141,21 @@ namespace ClearUpdates
                     var ticks = (endTime - startTime).Ticks;
                     ticks /= t.Count;
                     var avg = new TimeSpan(ticks);
-                    var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}");
+                    var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}\r\n");
+                    msg = t.Aggregate(msg, (a, b) => a + $"{b.Text}: {b.Date}\r\n");
+                    msg += "\r\n";
                     sw.WriteLine(msg);
                     Console.WriteLine(msg);
                     menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
             menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
+            
             Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
+            using (var fs = new FileStream("log.log", FileMode.Open))
+            {
+                var r = Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs)).Result;
+            }
         }
     }
 
