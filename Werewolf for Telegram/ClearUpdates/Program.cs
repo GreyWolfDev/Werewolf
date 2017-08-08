@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -78,8 +79,10 @@ namespace ClearUpdates
                 switch (m.Text.Replace("@wwcleanbot",""))
                 {
                     case "/clearqueue":
-                        if (m.Date < DateTime.Now.AddSeconds(-10))
+                        if (m.Date < DateTime.Now.AddSeconds(-1))
                             return;
+                        Console.WriteLine("Clearing Queue!");
+
                         Commands.Clear();
                         mQueue.Clear();
                         total = 0;
@@ -87,7 +90,9 @@ namespace ClearUpdates
                         var current = 0;
                         while (true)
                         {
-                            if ((total - current) < 1 && total != 0)
+                            foreach (var p in Process.GetProcessesByName("Werewolf Control"))
+                                p.Kill();
+                            if ((total - current) < 50 && total != 0)
                             {
                                 WWAPI.StopReceiving();
                                 Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
