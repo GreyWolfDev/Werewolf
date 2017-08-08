@@ -8,12 +8,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.InlineKeyboardButtons;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace ClearUpdates
 {
     class Program
     {
         static int total = 0;
+        static TelegramBotClient WWAPI;
+        static TelegramBotClient Api;
+        internal static int[] Devs = new[] { 129046388, 133748469, 125311351 };
+        static long DevGroup = -1001077134233;
         static void Main(string[] args)
         {
 
@@ -30,18 +36,75 @@ namespace ClearUpdates
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            var Api = new TelegramBotClient(TelegramAPIKey);
-            Api.OnUpdate += Api_OnUpdate;
+            WWAPI = new TelegramBotClient(TelegramAPIKey);
+            WWAPI.OnUpdate += WWAPI_OnUpdate;
+            var apikey = key.GetValue("QueueAPI").ToString();
+            Api = new TelegramBotClient(apikey);
+            Api.OnMessage += Api_OnMessage;
+            Api.OnCallbackQuery += Api_OnCallbackQuery;
             Api.StartReceiving();
-            while (true)
+            Thread.Sleep(-1);
+        }
+
+        private static void Api_OnCallbackQuery(object sender, Telegram.Bot.Args.CallbackQueryEventArgs e)
+        {
+            if (!Devs.Contains(e.CallbackQuery.From.Id))
+                return;
+            var q = e.CallbackQuery;
+            if (q.Data == "close")
             {
-                Console.WriteLine(total);
-                CheckMessages();
-                Thread.Sleep(1000);
+                Api.DeleteMessageAsync(DevGroup, q.Message.MessageId);
+                return;
+            }
+            var id = int.Parse(q.Data);
+            var user = q.From;
+            var t = Commands[id];
+            var startTime = t[0].Date;
+            var endTime = t[t.Count - 1].Date;
+            var ticks = (endTime - startTime).Ticks;
+            ticks /= t.Count;
+            var avg = new TimeSpan(ticks);
+            var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}\n");
+            msg = t.Aggregate(msg, (a, b) => a + $"{b.Text}: {b.Date}\n");
+            Api.SendTextMessageAsync(DevGroup, msg);
+            Api.AnswerCallbackQueryAsync(q.Id);
+        }
+
+        private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
+        {
+            var m = e.Message;
+            if (Devs.Contains(m.From.Id))
+            {
+                switch (m.Text.Replace("@wwcleanbot",""))
+                {
+                    case "/clearqueue":
+                        if (m.Date < DateTime.Now.AddSeconds(-10))
+                            return;
+                        Commands.Clear();
+                        mQueue.Clear();
+                        total = 0;
+                        WWAPI.StartReceiving();
+                        var current = 0;
+                        while (true)
+                        {
+                            if ((total - current) < 1 && total != 0)
+                            {
+                                WWAPI.StopReceiving();
+                                Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
+                                CheckMessages();
+                                break;
+                            }
+                            current = total;
+                            Thread.Sleep(1000);
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
-        private static void Api_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
+        private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
         {
             total++;
 
@@ -55,7 +118,7 @@ namespace ClearUpdates
 
         private static void CheckMessages()
         {
-            while (mQueue.Any())
+            for (int i = 0; i < Math.Min(100, mQueue.Count); i++)
             {
                 var m = mQueue.Dequeue();
 
@@ -66,27 +129,64 @@ namespace ClearUpdates
 
             }
 
-            var top = Commands.Where(x => x.Value.Count > 20).OrderByDescending(x => x.Value.Count).Select(x => x.Value).ToList();
-            foreach (var t in top)
+            var top = Commands.Where(x => x.Value.Count > 15).OrderByDescending(x => x.Value.Count).Select(x => x.Value).ToList();
+            var menu = new Menu(2);
+            using (var sw = new StreamWriter("log.log"))
             {
-                var user = t[0].From;
-                var startTime = t[0].Date;
-                var endTime = t[t.Count - 1].Date;
-                var ticks = (endTime - startTime).Ticks;
-                ticks /= t.Count;
-                var avg = new TimeSpan(ticks);
-                Log($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}");
+                foreach (var t in top)
+                {
+                    var user = t[0].From;
+                    var startTime = t[0].Date;
+                    var endTime = t[t.Count - 1].Date;
+                    var ticks = (endTime - startTime).Ticks;
+                    ticks /= t.Count;
+                    var avg = new TimeSpan(ticks);
+                    var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}");
+                    sw.WriteLine(msg);
+                    Console.WriteLine(msg);
+                    menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
+                }
             }
+            menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
+            Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
+        }
+    }
+
+    public class Menu
+    {
+        /// <summary>
+        /// The buttons you want in your menu
+        /// </summary>
+        public List<InlineKeyboardButton> Buttons { get; set; }
+        /// <summary>
+        /// How many columns.  Defaults to 1.
+        /// </summary>
+        public int Columns { get; set; }
+
+        public Menu(int col = 1, List<InlineKeyboardButton> buttons = null)
+        {
+            Buttons = buttons ?? new List<InlineKeyboardButton>();
+            Columns = Math.Max(col, 1);
         }
 
-        private static void Log(string s)
+        public InlineKeyboardMarkup CreateMarkupFromMenu()
         {
-            using (var sw = new StreamWriter("log.log", true))
+            var col = Columns - 1;
+            var final = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < Buttons.Count; i++)
             {
-                sw.WriteLine(s);
+                var row = new List<InlineKeyboardButton>();
+                do
+                {
+                    row.Add(Buttons[i]);
+                    i++;
+                    if (i == Buttons.Count) break;
+                } while (i % (col + 1) != 0);
+                i--;
+                final.Add(row.ToArray());
+                if (i == Buttons.Count) break;
             }
-
-            Console.WriteLine(s);
+            return new InlineKeyboardMarkup(final.ToArray());
         }
     }
 }
