@@ -244,6 +244,9 @@ namespace Werewolf_Node
                                 var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
                                 game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
                                 game?.ShowJoinButton();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine(jbri.GroupId);
+                                Console.ForegroundColor = ConsoleColor.Gray;
                                 break;
                             default:
                                 Console.WriteLine(msg);
