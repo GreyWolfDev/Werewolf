@@ -308,8 +308,7 @@ namespace Werewolf_Control.Handler
                                 {
                                     return;
                                 }
-                                //if (update.Message.Chat.Type == ChatType.Private)
-                                AddCount(update.Message.From.Id, update.Message);
+                           
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
@@ -319,6 +318,7 @@ namespace Werewolf_Control.Handler
                                     var reply = Commands.GetAbout(update, args);
                                     if (reply != null)
                                     {
+                                        AddCount(update.Message.From.Id, update.Message);
                                         try
                                         {
                                             var result = Send(reply, update.Message.From.Id).Result;
@@ -352,6 +352,7 @@ namespace Werewolf_Control.Handler
                                         Bot.Api.LeaveChat(update.Message.Chat.Id);
                                     }
 #endif
+                                    AddCount(update.Message.From.Id, update.Message);
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
@@ -387,8 +388,6 @@ namespace Werewolf_Control.Handler
                                         return;
                                     }
                                     Bot.CommandsReceived++;
-                                    if (update.Message.Chat.Type != ChatType.Private)
-                                        AddCount(update.Message.From.Id, update.Message.Text);
                                     command.Method.Invoke(update, args);
                                 }
 
@@ -609,7 +608,7 @@ namespace Werewolf_Control.Handler
         {
             ////get the amount paid
             //var amt = q.TotalAmount / 100;
-            
+
             //using (var db = new WWContext())
             //{
             //    //get the player
@@ -804,7 +803,7 @@ namespace Werewolf_Control.Handler
                                     break;
                                 case "approvesfw":
                                     var nsfw = false;
-                                    
+
                                     if (tplayer == null)
                                     {
                                         Send("Id not found.", query.Message.Chat.Id);
