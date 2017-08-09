@@ -39,13 +39,13 @@ namespace Werewolf_Control.Handler
             new Task(() => { HandleUpdate(e.Update); }).Start();
         }
 
-        private static void AddCount(int id, string command)
+        private static void AddCount(int id, Message m)
         {
             try
             {
                 if (!UserMessages.ContainsKey(id))
                     UserMessages.Add(id, new SpamDetector { Messages = new HashSet<UserMessage>() });
-                UserMessages[id].Messages.Add(new UserMessage(command));
+                UserMessages[id].Messages.Add(new UserMessage(m));
             }
             catch
             {
@@ -148,17 +148,17 @@ namespace Werewolf_Control.Handler
                             //    continue;
                             //}
                             //now count, notify if limit hit
-                            if (temp[key].Messages.Count() >= 20) // 20 in a minute
+                            if (temp[key].Messages.Count() >= 10) // 20 in a minute
                             {
                                 temp[key].Warns++;
-                                if (temp[key].Warns < 2 && temp[key].Messages.Count < 40)
+                                if (temp[key].Warns < 2 && temp[key].Messages.Count < 20)
                                 {
                                     Send($"Please do not spam me. Next time is automated ban.", key);
                                     //Send($"User {key} has been warned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
                                     //    Para);
                                     continue;
                                 }
-                                if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 40) & !temp[key].NotifiedAdmin)
+                                if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 20) & !temp[key].NotifiedAdmin)
                                 {
                                     //Send(
                                     //    $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
@@ -308,8 +308,8 @@ namespace Werewolf_Control.Handler
                                 {
                                     return;
                                 }
-                                if (update.Message.Chat.Type == ChatType.Private)
-                                    AddCount(update.Message.From.Id, update.Message.Text);
+                                //if (update.Message.Chat.Type == ChatType.Private)
+                                AddCount(update.Message.From.Id, update.Message);
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
