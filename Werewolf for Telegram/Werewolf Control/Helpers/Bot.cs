@@ -116,7 +116,15 @@ namespace Werewolf_Control.Helpers
 
         private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
         {
-            //throw new NotImplementedException();
+            if (!Api.IsReceiving)
+            {
+                Api.StartReceiving();
+            }
+            var e = receiveGeneralErrorEventArgs.Exception;
+            using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
+            {
+                sw.WriteLine($"{DateTime.Now} {e.Message} - {e.StackTrace}\n{e.Source}");
+            }
         }
 
         private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
