@@ -48,6 +48,7 @@ namespace Werewolf_Control.Helpers
                 return Path.GetDirectoryName(path);
             }
         }
+        internal static string LogDirectory = Path.Combine(RootDirectory, "..\\Logs\\");
         internal delegate void ChatCommandMethod(Update u, string[] args);
         internal static List<Command> Commands = new List<Command>();
 #if DEBUG
@@ -72,8 +73,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new TelegramBotClient(TelegramAPIKey);
-
+            Api = new TelegramBotClient(TelegramAPIKey, LogDirectory);
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //load the commands list

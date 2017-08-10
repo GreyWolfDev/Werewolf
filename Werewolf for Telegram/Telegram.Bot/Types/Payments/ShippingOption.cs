@@ -24,6 +24,6 @@ namespace Telegram.Bot.Types.Payments
         /// List of price portions
         /// </summary>
         [JsonProperty("prices")]
-        public LabeledPrice[] Prices { get; set; }
+        public LabeledPrice[] Prices { get; set; } 
     }
 }

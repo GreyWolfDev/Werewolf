@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5436A4DF-7B54-41D3-855F-AD3F516AE377}</ProjectGuid>
+    <ProjectGuid>{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Telegram.Bot</RootNamespace>
     <AssemblyName>Telegram.Bot</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,52 +29,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
-    <OutputPath>bin\Beta\</OutputPath>
-    <DefineConstants>TRACE;BETA</DefineConstants>
-    <Optimize>false</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -84,28 +49,38 @@
     <Compile Include="Args\InlineQueryEventArgs.cs" />
     <Compile Include="Args\MessageEventArgs.cs" />
     <Compile Include="Args\ReceiveErrorEventArgs.cs" />
+    <Compile Include="Args\ReceiveGeneralErrorEventArgs.cs" />
     <Compile Include="Args\StatusChangeEventArgs.cs" />
     <Compile Include="Args\UpdateEventArgs.cs" />
     <Compile Include="Args\UpdatesReceivedEventArgs.cs" />
-    <Compile Include="Client.cs" />
+    <Compile Include="Converters\ChatIdConverter.cs" />
+    <Compile Include="Converters\FileToSendConverter.cs" />
     <Compile Include="Converters\InlineQueryResultTypeConverter.cs" />
     <Compile Include="Converters\ParseModeConverter.cs" />
     <Compile Include="Converters\PhotoSizeConverter.cs" />
     <Compile Include="Converters\UnixDatetimeConverter.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
     <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="ITelegramBotClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelegramBotClient.cs" />
+    <Compile Include="Types\Animation.cs" />
     <Compile Include="Types\ApiResponse.cs" />
     <Compile Include="Types\Audio.cs" />
+    <Compile Include="Types\CallbackGame.cs" />
     <Compile Include="Types\CallbackQuery.cs" />
     <Compile Include="Types\Chat.cs" />
+    <Compile Include="Types\ChatId.cs" />
     <Compile Include="Types\ChatMember.cs" />
+    <Compile Include="Types\ChatPhoto.cs" />
     <Compile Include="Types\ChosenInlineResult.cs" />
     <Compile Include="Types\Contact.cs" />
     <Compile Include="Types\Document.cs" />
     <Compile Include="Types\Enums\ChatAction.cs" />
     <Compile Include="Types\Enums\ChatMemberStatus.cs" />
     <Compile Include="Types\Enums\ChatType.cs" />
+    <Compile Include="Types\Enums\FileType.cs" />
+    <Compile Include="Types\Enums\MaskPositionPoint.cs" />
     <Compile Include="Types\Enums\MessageEntityType.cs" />
     <Compile Include="Types\Enums\MessageType.cs" />
     <Compile Include="Types\Enums\ParseMode.cs" />
@@ -113,7 +88,15 @@
     <Compile Include="Types\Enums\UpdateType.cs" />
     <Compile Include="Types\File.cs" />
     <Compile Include="Types\FileToSend.cs" />
-    <Compile Include="Types\InlineKeyboardButton.cs" />
+    <Compile Include="Types\Game.cs" />
+    <Compile Include="Types\GameHighScore.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardButton.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardCallbackButton.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardCallbackGameButton.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardPayButton.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardSwitchCallbackQueryCurrentChatButton.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardSwitchInlineQueryButton.cs" />
+    <Compile Include="Types\InlineKeyboardButtons\InlineKeyboardUrlButton.cs" />
     <Compile Include="Types\InlineQuery.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResult.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResultArticle.cs" />
@@ -129,6 +112,7 @@
     <Compile Include="Types\InlineQueryResults\InlineQueryResultCachedVoice.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResultContact.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResultDocument.cs" />
+    <Compile Include="Types\InlineQueryResults\InlineQueryResultGame.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResultGif.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResultLocation.cs" />
     <Compile Include="Types\InlineQueryResults\InlineQueryResultMpeg4Gif.cs" />
@@ -145,27 +129,38 @@
     <Compile Include="Types\InputMessageContents\InputVenueMessageContent.cs" />
     <Compile Include="Types\KeyboardButton.cs" />
     <Compile Include="Types\Location.cs" />
+    <Compile Include="Types\MaskPosition.cs" />
     <Compile Include="Types\Message.cs" />
     <Compile Include="Types\MessageEntity.cs" />
+    <Compile Include="Types\Payments\Invoice.cs" />
+    <Compile Include="Types\Payments\LabeledPrice.cs" />
+    <Compile Include="Types\Payments\OrderInfo.cs" />
+    <Compile Include="Types\Payments\PreCheckoutQuery.cs" />
+    <Compile Include="Types\Payments\ShippingAddress.cs" />
+    <Compile Include="Types\Payments\ShippingOption.cs" />
+    <Compile Include="Types\Payments\ShippingQuery.cs" />
+    <Compile Include="Types\Payments\SuccessfulPayment.cs" />
     <Compile Include="Types\PhotoSize.cs" />
     <Compile Include="Types\ReplyMarkups\ForceReply.cs" />
     <Compile Include="Types\ReplyMarkups\InlineKeyboardMarkup.cs" />
     <Compile Include="Types\ReplyMarkups\IReplyMarkup.cs" />
-    <Compile Include="Types\ReplyMarkups\ReplyKeyboardHide.cs" />
     <Compile Include="Types\ReplyMarkups\ReplyKeyboardMarkup.cs" />
+    <Compile Include="Types\ReplyMarkups\ReplyKeyboardRemove.cs" />
     <Compile Include="Types\ReplyMarkups\ReplyMarkup.cs" />
+    <Compile Include="Types\ResponseParameters.cs" />
     <Compile Include="Types\Sticker.cs" />
+    <Compile Include="Types\StickerSet.cs" />
     <Compile Include="Types\Update.cs" />
     <Compile Include="Types\User.cs" />
     <Compile Include="Types\UserProfilePhotos.cs" />
     <Compile Include="Types\Venue.cs" />
     <Compile Include="Types\Video.cs" />
+    <Compile Include="Types\VideoNote.cs" />
     <Compile Include="Types\Voice.cs" />
+    <Compile Include="Types\WebhookInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

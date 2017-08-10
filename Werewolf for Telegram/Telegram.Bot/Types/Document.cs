@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Telegram.Bot.Converters;
 
 namespace Telegram.Bot.Types
 {
     /// <summary>
-    /// This object represents a general file (as opposed to photos and audio files).
+    /// This object represents a general file (as opposed to <see cref="PhotoSize"/> and <see cref="Audio"/> files).
     /// </summary>
     [JsonObject(MemberSerialization.OptIn)]
     public class Document : File
@@ -13,19 +12,18 @@ namespace Telegram.Bot.Types
         /// Document thumbnail as defined by sender
         /// </summary>
         [JsonProperty(PropertyName = "thumb", Required = Required.Default)]
-        [JsonConverter(typeof(PhotoSizeConverter))]
-        public PhotoSize Thumb { get; internal set; }
+        public PhotoSize Thumb { get; set; }
 
         /// <summary>
         /// Optional. Original filename as defined by sender
         /// </summary>
         [JsonProperty(PropertyName = "file_name", Required = Required.Default)]
-        public string FileName { get; internal set; }
+        public string FileName { get; set; }
 
         /// <summary>
         /// Optional. MIME type of the file as defined by sender
         /// </summary>
         [JsonProperty(PropertyName = "mime_type", Required = Required.Default)]
-        public string MimeType { get; internal set; }
+        public string MimeType { get; set; }
     }
 }

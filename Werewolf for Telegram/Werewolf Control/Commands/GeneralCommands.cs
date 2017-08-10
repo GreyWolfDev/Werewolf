@@ -67,7 +67,7 @@ namespace Werewolf_Control
         {
             var result = "*Run information*\n";
             result +=
-                $"Uptime: {DateTime.UtcNow - Bot.StartTime}\nConnected Nodes: {Bot.Nodes.Count}\n" +
+                $"Uptime: {DateTime.Now - Bot.StartTime}\nConnected Nodes: {Bot.Nodes.Count}\n" +
                 $"Current Games: {Bot.Nodes.Sum(x => x.CurrentGames)}\n" +
                 $"Current Players: {Bot.Nodes.Sum(x => x.CurrentPlayers)}";
             Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, result, parseMode: ParseMode.Markdown);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Telegram.Bot.Types;
@@ -7,7 +7,18 @@ namespace Telegram.Bot.Converters
 {
     internal class PhotoSizeConverter : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) => JObject.FromObject(value).WriteTo(writer);
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            var photoSize = (PhotoSize)value;
+            var jObj = new JObject
+            {
+                ["file_id"] = photoSize.FileId,
+                ["width"] = photoSize.Width,
+                ["height"] = photoSize.Height,
+                ["file_size"] = photoSize.FileSize,
+            };
+            jObj.WriteTo(writer);
+        }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
@@ -21,8 +32,6 @@ namespace Telegram.Bot.Converters
         }
 
         public override bool CanConvert(Type objectType)
-        {
-            return (typeof(PhotoSize) == objectType);
-        }
+            => typeof(PhotoSize) == objectType;
     }
 }
