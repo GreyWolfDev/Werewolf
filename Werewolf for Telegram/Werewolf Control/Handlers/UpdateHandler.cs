@@ -520,6 +520,38 @@ namespace Werewolf_Control.Handler
                                     Send($"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran ({gamecount} games played, need 500)", m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
+                                else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
+                                {
+                                    var uid = m.NewChatMember.Id;
+                                    //check that they are allowed to join.
+                                    var p = DB.Players.FirstOrDefault(x => x.TelegramId == uid);
+                                    var gamecount = p?.GamePlayers.Count ?? 0;
+                                    if (gamecount >= 500)
+                                    {
+                                        Send($"{m.NewChatMember.FirstName.FormatHTML()} has played {gamecount} games", m.Chat.Id);
+                                        return;
+                                    }
+                                    //user has not reach veteran
+                                    Send($"{m.NewChatMember.FirstName.FormatHTML()} removed, as they have not unlocked veteran ({gamecount} games played, need 500)", m.Chat.Id);
+                                    Commands.KickChatMember(Settings.VeteranChatId, uid);
+                                }
+                                else if (m.NewChatMember != null && m.Chat.Id == Settings.SupportChatId)
+                                {
+                                    var uid = m.NewChatMember.Id;
+                                    var p = DB.GlobalBans.FirstOrDefault(x => x.TelegramId == uid);
+                                    if (p != null)
+                                    {
+                                        var result = $"<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {p.Reason}\nBanned on: {p.BanDate}\nBanned by: {p.BannedBy}\n";
+                                        if (p.Expires < DateTime.Now.AddYears(5))
+                                        {
+                                            var expiry = (p.Expires - DateTime.Now);
+                                            result += $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
+                                        }
+                                        else
+                                            result += $"This ban is permanent.\n";
+                                        Send(result, m.Chat.Id);
+                                    }
+                                }
                             }
                             break;
                         case MessageType.VenueMessage:
