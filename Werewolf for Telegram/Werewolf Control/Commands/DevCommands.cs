@@ -1088,7 +1088,7 @@ namespace Werewolf_Control
                 var someFileExists = false;
                 using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
                 {
-                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log" };
+                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", $"getUpdates {DateTime.Now.ToString("MMM-dd-yyyy")}.log" };
 
                     foreach (var file in files)
                     {
