@@ -29,6 +29,9 @@ namespace Werewolf_Control.Helpers
             //fire off admin request
             try
             {
+                //check all admins
+                if (Bot.Api.GetChatAsync(group).Result.AllMembersAreAdministrators)
+                    return true;
                 var admin = Bot.Api.GetChatMemberAsync(group, user).Result;
                 return admin.Status == ChatMemberStatus.Administrator || admin.Status == ChatMemberStatus.Creator;
             }
