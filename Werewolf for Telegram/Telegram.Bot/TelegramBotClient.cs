@@ -34,7 +34,7 @@ namespace Telegram.Bot
         private const string BaseFileUrl = "https://api.telegram.org/file/bot";
         public string LogDirectory;
         private Status _status = Status.Normal;
-        private string LogPath => Path.Combine(LogDirectory, "getUpdates.log");
+        private string LogPath => Path.Combine(LogDirectory, $"getUpdates {DateTime.Now.ToString("MMM-dd-yyyy")}.log");
         private readonly string _token;
         private bool _invalidToken;
         private readonly HttpClient _httpClient;
