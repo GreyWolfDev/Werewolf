@@ -278,7 +278,7 @@ namespace Telegram.Bot
                     {
                         using (var s = new StreamWriter(LogPath, true))
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {updates.Length}");
                             s.Flush();
                         }
                     }
@@ -300,7 +300,7 @@ namespace Telegram.Bot
                     {
                         using (var s = new StreamWriter(LogPath, true))
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {e.Message}");
                             s.Flush();
                         }
                     }
@@ -317,7 +317,7 @@ namespace Telegram.Bot
                     {
                         using (var s = new StreamWriter(LogPath, true))
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {apiException.Message}");
+                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {apiException.Message}");
                             s.Flush();
                         }
                     }
@@ -334,7 +334,7 @@ namespace Telegram.Bot
                     {
                         using (var s = new StreamWriter(LogPath, true))
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {generalException.Message}");
+                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {generalException.Message}");
                             s.Flush();
                         }
                     }
