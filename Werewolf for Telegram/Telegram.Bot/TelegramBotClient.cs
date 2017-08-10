@@ -252,7 +252,7 @@ namespace Telegram.Bot
             var sw = new Stopwatch();
             while (!cancellationToken.IsCancellationRequested)
             {
-                var timeout = 2;// = Convert.ToInt32(Timeout.TotalSeconds);
+                var timeout = Convert.ToInt32(Timeout.TotalSeconds);
 
                 try
                 {
@@ -2069,9 +2069,9 @@ namespace Telegram.Bot
             var uri = new Uri(BaseUrl + _token + "/" + method);
             var error = "";
             
-            using (var client = new HttpClient())
+            //using (var client = new HttpClient())
             {
-                client.Timeout = TimeSpan.FromSeconds(3);
+                //client.Timeout = TimeSpan.FromSeconds(3);
                 ApiResponse<T> responseObject = null;
                 try
                 {
@@ -2081,7 +2081,7 @@ namespace Telegram.Bot
                     {
                         // Request with no parameters
 
-                        response = await client.GetAsync(uri, cancellationToken)
+                        response = await _httpClient.GetAsync(uri, cancellationToken)
                                                 .ConfigureAwait(false);
                     }
                     else if (parameters.Any(p => p.Value is FileToSend && ((FileToSend)p.Value).Type == FileType.Stream))
@@ -2104,7 +2104,7 @@ namespace Telegram.Bot
                                 }
                             }
 
-                            response = await client.PostAsync(uri, form, cancellationToken)
+                            response = await _httpClient.PostAsync(uri, form, cancellationToken)
                                                     .ConfigureAwait(false);
                         }
                     }
@@ -2116,7 +2116,7 @@ namespace Telegram.Bot
 
                         var httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
 
-                        response = await client.PostAsync(uri, httpContent, cancellationToken)
+                        response = await _httpClient.PostAsync(uri, httpContent, cancellationToken)
                                                 .ConfigureAwait(false);
                     }
 

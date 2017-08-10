@@ -74,6 +74,11 @@ namespace Werewolf_Control.Helpers
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
             Api = new TelegramBotClient(TelegramAPIKey, LogDirectory);
+#if !BETA
+            Api.Timeout = TimeSpan.FromSeconds(1.5);
+#else
+            Api.Timeout = TimeSpan.FromSeconds(20);
+#endif
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //load the commands list
@@ -110,6 +115,7 @@ namespace Werewolf_Control.Helpers
             if (!String.IsNullOrEmpty(updateid))
                 Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
             StartTime = DateTime.Now;
+            
             //now we can start receiving
             Api.StartReceiving();
         }
@@ -118,7 +124,7 @@ namespace Werewolf_Control.Helpers
         {
             if (!Api.IsReceiving)
             {
-                Api.StartReceiving();
+                Api.StartReceiving();// cancellationToken: new CancellationTokenSource(1000).Token);
             }
             var e = receiveGeneralErrorEventArgs.Exception;
             using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
