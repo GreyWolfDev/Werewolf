@@ -11,6 +11,7 @@ namespace Werewolf_Control.Models
     {
         public DateTime Time { get; set; }
         public string Command { get; set; }
+        public bool Replied { get; set; }
 
         public UserMessage(Message m)
         {

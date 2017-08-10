@@ -39,17 +39,24 @@ namespace Werewolf_Control.Handler
             new Task(() => { HandleUpdate(e.Update); }).Start();
         }
 
-        private static void AddCount(int id, Message m)
+        private static bool AddCount(int id, Message m)
         {
             try
             {
                 if (!UserMessages.ContainsKey(id))
                     UserMessages.Add(id, new SpamDetector { Messages = new HashSet<UserMessage>() });
-                UserMessages[id].Messages.Add(new UserMessage(m));
+                
+                var shouldReply = (UserMessages[id].Messages.Where(x => x.Replied).OrderByDescending(x => x.Time).FirstOrDefault()?.Time ?? DateTime.MinValue) <
+                       DateTime.Now.AddSeconds(-4);
+
+                UserMessages[id].Messages.Add(new UserMessage(m){Replied = shouldReply});
+                return !shouldReply;
+
             }
             catch
             {
                 // ignored
+                return false;
             }
         }
 
@@ -318,7 +325,8 @@ namespace Werewolf_Control.Handler
                                     var reply = Commands.GetAbout(update, args);
                                     if (reply != null)
                                     {
-                                        AddCount(update.Message.From.Id, update.Message);
+
+                                        if (AddCount(update.Message.From.Id, update.Message)) return;
                                         try
                                         {
                                             var result = Send(reply, update.Message.From.Id).Result;
@@ -336,7 +344,7 @@ namespace Werewolf_Control.Handler
 
                                 //check for the command
 
-                                #region More optimized code, but slow as hell
+                                #region More optimized code
 
                                 var command = Bot.Commands.FirstOrDefault(
                                         x =>
@@ -352,7 +360,7 @@ namespace Werewolf_Control.Handler
                                         Bot.Api.LeaveChat(update.Message.Chat.Id);
                                     }
 #endif
-                                    AddCount(update.Message.From.Id, update.Message);
+                                    if (AddCount(update.Message.From.Id, update.Message)) return;
                                     //check that we should run the command
                                     if (block && command.Blockable)
                                     {
