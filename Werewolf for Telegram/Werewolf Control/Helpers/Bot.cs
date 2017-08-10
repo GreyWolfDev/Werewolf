@@ -102,8 +102,8 @@ namespace Werewolf_Control.Helpers
             Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
             Api.OnReceiveError += ApiOnReceiveError;
             Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            //Api. += ApiOnStatusChanged;
-            //Api. += ApiOnUpdatesReceived;
+            Api.StatusChanged += ApiOnStatusChanged;
+            //Api.UpdatesReceived += ApiOnUpdatesReceived;
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
@@ -157,36 +157,36 @@ namespace Werewolf_Control.Helpers
             return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, replyMarkup: replyMarkup);
         }
 
-//        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
-//        {
-//            try
-//            {
-//                using (var db = new WWContext())
-//                {
-//                    var id =
-//#if RELEASE
-//                        1;
-//#elif RELEASE2
-//                    2;
-//#elif BETA
-//                    3;
-//#else
-//                    4;
-//#endif
-//                    if (id == 4) return;
-//                    var b = db.BotStatus.Find(id);
-//                    b.BotStatus = statusChangeEventArgs.Status.ToString();
-//                    CurrentStatus = b.BotStatus;
-//                    db.SaveChanges();
-                    
-//                }
-//            }
-//            finally
-//            {
-                
-//            }
-            
-//        }
+        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        {
+            try
+            {
+                using (var db = new WWContext())
+                {
+                    var id =
+#if RELEASE
+                        1;
+#elif RELEASE2
+                    2;
+#elif BETA
+                    3;
+#else
+                    4;
+#endif
+                    if (id == 4) return;
+                    var b = db.BotStatus.Find(id);
+                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+                    CurrentStatus = b.BotStatus;
+                    db.SaveChanges();
+
+                }
+            }
+            finally
+            {
+
+            }
+
+        }
 
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
