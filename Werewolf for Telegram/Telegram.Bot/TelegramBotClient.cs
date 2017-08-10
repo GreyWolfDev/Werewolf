@@ -2081,7 +2081,7 @@ namespace Telegram.Bot
                     {
                         // Request with no parameters
 
-                        response = await _httpClient.GetAsync(uri, cancellationToken)
+                        response = await client.GetAsync(uri, cancellationToken)
                                                 .ConfigureAwait(false);
                     }
                     else if (parameters.Any(p => p.Value is FileToSend && ((FileToSend)p.Value).Type == FileType.Stream))
@@ -2104,7 +2104,7 @@ namespace Telegram.Bot
                                 }
                             }
 
-                            response = await _httpClient.PostAsync(uri, form, cancellationToken)
+                            response = await client.PostAsync(uri, form, cancellationToken)
                                                     .ConfigureAwait(false);
                         }
                     }
@@ -2116,7 +2116,7 @@ namespace Telegram.Bot
 
                         var httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
 
-                        response = await _httpClient.PostAsync(uri, httpContent, cancellationToken)
+                        response = await client.PostAsync(uri, httpContent, cancellationToken)
                                                 .ConfigureAwait(false);
                     }
 
