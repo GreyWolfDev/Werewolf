@@ -1239,7 +1239,6 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "user", GlobalAdminOnly = true)]
         public static void User(Update u, string[] args)
         {
-#if !RELEASE
             using (var db = new WWContext())
             {
 
@@ -1280,7 +1279,6 @@ namespace Werewolf_Control
 
                 Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, result, ParseMode.Html);
             }
-#endif
         }
 
     }
