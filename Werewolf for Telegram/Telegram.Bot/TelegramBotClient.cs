@@ -260,7 +260,7 @@ namespace Telegram.Bot
                     sw.Start();
                     var updates =
                         await
-                        GetUpdatesAsync(MessageOffset, timeout: timeout, allowedUpdates: allowedUpdates, cancellationToken: cancellationToken)
+                        GetUpdatesAsync(MessageOffset, timeout: timeout, allowedUpdates: allowedUpdates, cancellationToken: new CancellationTokenSource(1500).Token)
                             .ConfigureAwait(false);
                     sw.Stop();
                     OnUpdatesReceived(new UpdatesReceivedEventArgs(updates.Length));
