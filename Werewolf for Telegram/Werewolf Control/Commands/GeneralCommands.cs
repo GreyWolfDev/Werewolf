@@ -81,7 +81,7 @@ namespace Werewolf_Control
                 var msg =
                     db.BotStatus.ToList().Where(x => x.BotName != "Bot 2").Select(x => $"[{x.BotName.Replace("Bot 1", "Moderator")}](https://t.me/{x.BotLink}): *{x.BotStatus}* ").ToList()
                         .Aggregate((a, b) => a + "\n" + b);
-                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, msg, ParseMode.Markdown);
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, msg, ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
 
