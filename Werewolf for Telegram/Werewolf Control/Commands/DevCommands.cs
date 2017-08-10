@@ -1272,7 +1272,7 @@ namespace Werewolf_Control
                     else
                         result += $"This ban is permanent.\n";
                 }
-                else if (spamBans == 0)
+                else if ((spamBans ?? 0) == 0)
                 {
                     result += "Player is clean, no werewolf bans on record.\n";
                 }
