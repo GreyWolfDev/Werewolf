@@ -1236,6 +1236,53 @@ namespace Werewolf_Control
             Bot.Edit(u.Message.Chat.Id, msgid, msg);
         }
 
+        [Attributes.Command(Trigger = "user", GlobalAdminOnly = true)]
+        public static void User(Update u, string[] args)
+        {
+#if !RELEASE
+            using (var db = new WWContext())
+            {
+
+                var t = u.GetTarget(db);
+                if (t == null)
+                {
+                    Send("Not Found", u.Message.Chat.Id);
+                    return;
+                }
+                var result = $"<b>{t.Name.FormatHTML()}</b>\n";
+                if (!String.IsNullOrEmpty(t.UserName))
+                    result += $"@{t.UserName}\n";
+                result += $"------------------\nGames Played: {t.GamePlayers.Count}\nLanguage: {t.Language.FormatHTML()}\nDonation Level: {t.DonationLevel??0}\n";
+                if (t.GamePlayers.Any())
+                    result += $"Played first game: {t.GamePlayers.OrderBy(x => x.Id).First().Game.TimeStarted}\n";
+                var spamBans = t.TempBanCount;
+                if (spamBans > 0)
+                {
+                    result += $"Player has been temp banned {t.TempBanCount} times\n";
+                }
+                //check if currently banned
+                var banned = db.GlobalBans.FirstOrDefault(x => x.TelegramId == t.TelegramId);
+                if (banned != null)
+                {
+                    result += $"\n------------------\n<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {banned.Reason}\nBanned on: {banned.BanDate}\nBanned by: {banned.BannedBy}\n";
+                    if (banned.Expires < DateTime.Now.AddYears(1))
+                    {
+                        var expiry = (banned.Expires - DateTime.Now);
+                        result += $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
+                    }
+                    else
+                        result += $"This ban is permanent.\n";
+                }
+                else if (spamBans == 0)
+                {
+                    result += "Player is clean, no werewolf bans on record.\n";
+                }
+
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, result, ParseMode.Html);
+            }
+#endif
+        }
+
     }
 
 
