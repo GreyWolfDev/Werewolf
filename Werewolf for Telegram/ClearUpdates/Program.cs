@@ -90,8 +90,8 @@ namespace ClearUpdates
                         var current = 0;
                         while (true)
                         {
-                            foreach (var p in Process.GetProcessesByName("Werewolf Control"))
-                                p.Kill();
+                            //foreach (var p in Process.GetProcessesByName("Werewolf Control"))
+                            //    p.Kill();
                             if ((total - current) < 50 && total != 0)
                             {
                                 WWAPI.StopReceiving();
@@ -153,9 +153,11 @@ namespace ClearUpdates
                     menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
-            menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
-            
-            Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
+            if (menu.Buttons.Count > 0)
+            {
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
+                Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
+            }
             using (var fs = new FileStream("log.log", FileMode.Open))
             {
                 var r = Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs)).Result;

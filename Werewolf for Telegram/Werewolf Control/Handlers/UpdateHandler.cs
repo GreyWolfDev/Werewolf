@@ -784,7 +784,7 @@ namespace Werewolf_Control.Handler
                     }
                     if (new[] { "reviewgifs", "approvesfw", "approvensfw" }.Contains(args[0]))
                     {
-                        if (UpdateHelper.Devs.Contains(query.From.Id))
+                        if (UpdateHelper.IsGlobalAdmin(query.From.Id))
                         {
                             CustomGifData pack;
                             Player by;
