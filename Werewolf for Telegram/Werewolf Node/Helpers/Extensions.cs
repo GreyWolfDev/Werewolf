@@ -52,7 +52,8 @@ namespace Werewolf_Node.Helpers
             var end = name.Substring(name.Length - Math.Min(name.Length, 5));
             name = name.Substring(0, Math.Max(name.Length - 5, 0));
             end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
-            if (player.GifPack?.ShowBadge ?? false)
+
+            if (player.GifPack?.ShowBadge ?? false || (player.GifPack == null && player.DonationLevel >= 10))
             {
                 if (player.DonationLevel >= 100)
                     end += " 🥇";
