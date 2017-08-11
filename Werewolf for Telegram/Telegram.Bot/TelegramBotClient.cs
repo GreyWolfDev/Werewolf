@@ -261,7 +261,7 @@ namespace Telegram.Bot
                     sw.Start();
                     var updates =
                         await
-                        GetUpdatesAsync(MessageOffset, timeout: timeout, allowedUpdates: allowedUpdates, cancellationToken: new CancellationTokenSource(1500).Token)
+                        GetUpdatesAsync(MessageOffset, timeout: timeout, allowedUpdates: allowedUpdates, cancellationToken: new CancellationTokenSource(3000).Token)
                             .ConfigureAwait(false);
                     sw.Stop();
                     OnUpdatesReceived(new UpdatesReceivedEventArgs(updates.Length));
@@ -2148,7 +2148,12 @@ namespace Telegram.Bot
                     {
                         using (var sw = new StreamWriter(ErrorPath, true))
                         {
-                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {e.Message}");
+                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
+                            if (parameters != null)
+                                foreach (var o in parameters)
+                                {
+                                    sw.WriteLine($"{o.Key}: {o.Value}");
+                                }
                             sw.Flush();
                         }
                     }
@@ -2166,10 +2171,11 @@ namespace Telegram.Bot
                         using (var sw = new StreamWriter(ErrorPath, true))
                         {
                             sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
-                            foreach (var o in parameters)
-                            {
-                                sw.WriteLine($"{o.Key}: {o.Value}");
-                            }
+                            if (parameters != null)
+                                foreach (var o in parameters)
+                                {
+                                    sw.WriteLine($"{o.Key}: {o.Value}");
+                                }
                             sw.Flush();
                         }
                     }
@@ -2187,7 +2193,12 @@ namespace Telegram.Bot
                     {
                         using (var sw = new StreamWriter(ErrorPath, true))
                         {
-                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {e.Message}");
+                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
+                            if (parameters != null)
+                                foreach (var o in parameters)
+                                {
+                                    sw.WriteLine($"{o.Key}: {o.Value}");
+                                }
                             sw.Flush();
                         }
                     }
