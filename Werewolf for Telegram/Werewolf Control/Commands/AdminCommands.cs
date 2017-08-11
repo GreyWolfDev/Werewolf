@@ -566,7 +566,7 @@ namespace Werewolf_Control
                     foreach (var p in packs)
                     {
                         var pack = JsonConvert.DeserializeObject<CustomGifData>(p.CustomGifSet);
-                        if (pack.Approved != null) continue;
+                        if (pack.Approved != null || !pack.Submitted) continue;
                         count++;
                         list += p.TelegramId + Environment.NewLine;
                         if (count == 10)
@@ -723,6 +723,7 @@ namespace Werewolf_Control
                     var id = u.Message.From.Id;
                     pack.Approved = false;
                     pack.ApprovedBy = id;
+                    pack.Submitted = false;
                     pack.DenyReason = reason;
                     var msg = $"Approval Status: ";
                     var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
