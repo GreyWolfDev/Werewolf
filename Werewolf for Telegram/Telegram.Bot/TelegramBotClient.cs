@@ -2146,15 +2146,18 @@ namespace Telegram.Bot
                 {
                     try
                     {
-                        using (var sw = new StreamWriter(ErrorPath, true))
+                        if (!(new[] { "answerCallbackQuery", "editMessageText" }.Contains(method)) &! e.Message.Contains("403"))
                         {
-                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
-                            if (parameters != null)
-                                foreach (var o in parameters)
-                                {
-                                    sw.WriteLine($"{o.Key}: {o.Value}");
-                                }
-                            sw.Flush();
+                            using (var sw = new StreamWriter(ErrorPath, true))
+                            {
+                                sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
+                                if (parameters != null)
+                                    foreach (var o in parameters)
+                                    {
+                                        sw.WriteLine($"{o.Key}: {o.Value}");
+                                    }
+                                sw.Flush();
+                            }
                         }
                     }
                     catch

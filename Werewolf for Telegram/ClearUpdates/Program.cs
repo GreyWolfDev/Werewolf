@@ -58,8 +58,8 @@ namespace ClearUpdates
                 return;
             }
             var id = int.Parse(q.Data);
-            var user = q.From;
             var t = Commands[id];
+            var user = t[0].From;
             var startTime = t[0].Date;
             var endTime = t[t.Count - 1].Date;
             var ticks = (endTime - startTime).Ticks;
@@ -112,7 +112,6 @@ namespace ClearUpdates
         private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
         {
             total++;
-
             if ((e.Update.Message?.Text ?? "").StartsWith("/"))
                 mQueue.Enqueue(e.Update.Message);
         }
