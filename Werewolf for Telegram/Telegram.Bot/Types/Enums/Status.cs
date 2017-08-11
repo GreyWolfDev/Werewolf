@@ -5,6 +5,7 @@
         Normal,
         Error,
         Recovering,
-        NotReceiving
+        NotReceiving,
+        RateLimited
     }
 }

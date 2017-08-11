@@ -35,6 +35,7 @@ namespace Telegram.Bot
         public string LogDirectory;
         private Status _status = Status.Normal;
         private string LogPath => Path.Combine(LogDirectory, $"getUpdates {DateTime.Now.ToString("MMM-dd-yyyy")}.log");
+        private string ErrorPath => Path.Combine(LogDirectory, $"apiSendErrors {DateTime.Now.ToString("MMM-dd-yyyy")}.log");
         private readonly string _token;
         private bool _invalidToken;
         private readonly HttpClient _httpClient;
@@ -306,7 +307,7 @@ namespace Telegram.Bot
                     }
                     finally
                     {
-                     
+
                     }
                 }
                 catch (ApiRequestException apiException)
@@ -363,6 +364,7 @@ namespace Telegram.Bot
                 OnUpdatesReceived(new UpdatesReceivedEventArgs(0));
             if (_status != status)
             {
+                if (_status == Status.RateLimited && status != Status.Normal) return;
                 _status = status;
                 OnStatusChanged(new StatusChangeEventArgs(status));
             }
@@ -2068,7 +2070,7 @@ namespace Telegram.Bot
 
             var uri = new Uri(BaseUrl + _token + "/" + method);
             var error = "";
-            
+
             //using (var client = new HttpClient())
             {
                 //client.Timeout = TimeSpan.FromSeconds(3);
@@ -2141,10 +2143,54 @@ namespace Telegram.Bot
                 }
                 catch (HttpRequestException e)
                     when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
-                { }
+                {
+                    try
+                    {
+                        using (var sw = new StreamWriter(ErrorPath, true))
+                        {
+                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {e.Message}");
+                            sw.Flush();
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                catch (HttpRequestException e) when (e.Message.Contains("429"))
+                {
+                    //rate limited
+                    SetStatus(Status.RateLimited);
+                    try
+                    {
+                        using (var sw = new StreamWriter(ErrorPath, true))
+                        {
+                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {e.Message}");
+                            sw.Flush();
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+
                 catch (Exception e)
                 {
                     error = e.Message;
+                    try
+                    {
+                        using (var sw = new StreamWriter(ErrorPath, true))
+                        {
+                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {e.Message}");
+                            sw.Flush();
+                        }
+                    }
+                    catch
+                    {
+
+                    }
                 }
 
                 if (responseObject == null)
