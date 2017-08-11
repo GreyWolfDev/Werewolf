@@ -2165,7 +2165,11 @@ namespace Telegram.Bot
                     {
                         using (var sw = new StreamWriter(ErrorPath, true))
                         {
-                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {e.Message}");
+                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
+                            foreach (var o in parameters)
+                            {
+                                sw.WriteLine($"{o.Key}: {o.Value}");
+                            }
                             sw.Flush();
                         }
                     }
