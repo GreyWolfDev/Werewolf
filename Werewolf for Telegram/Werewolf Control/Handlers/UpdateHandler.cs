@@ -817,7 +817,7 @@ namespace Werewolf_Control.Handler
                                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");
                                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
+                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Wins");
                                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
                                     Thread.Sleep(250);
                                     Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
