@@ -202,7 +202,6 @@ namespace Werewolf_Control
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
                     if (p != null)
                     {
-                        var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
                         var json = p?.CustomGifSet;
                         var data = JsonConvert.DeserializeObject<CustomGifData>(json);
                         data.Submitted = true;
