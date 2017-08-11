@@ -74,11 +74,11 @@ namespace Werewolf_Control.Helpers
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
             Api = new TelegramBotClient(TelegramAPIKey, LogDirectory);
-#if !BETA
-            Api.Timeout = TimeSpan.FromSeconds(1.5);
-#else
-            Api.Timeout = TimeSpan.FromSeconds(20);
-#endif
+//#if !BETA
+//            Api.Timeout = TimeSpan.FromSeconds(1.5);
+//#else
+//            Api.Timeout = TimeSpan.FromSeconds(20);
+//#endif
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //load the commands list
