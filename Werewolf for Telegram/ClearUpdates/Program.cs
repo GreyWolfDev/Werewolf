@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
+using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -37,14 +38,21 @@ namespace ClearUpdates
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            WWAPI = new TelegramBotClient(TelegramAPIKey);
+            WWAPI = new TelegramBotClient(TelegramAPIKey, "");
             WWAPI.OnUpdate += WWAPI_OnUpdate;
             var apikey = key.GetValue("QueueAPI").ToString();
-            Api = new TelegramBotClient(apikey);
+            Api = new TelegramBotClient(apikey, "");
             Api.OnMessage += Api_OnMessage;
+            Api.OnUpdate += ApiOnOnUpdate;
             Api.OnCallbackQuery += Api_OnCallbackQuery;
             Api.StartReceiving();
             Thread.Sleep(-1);
+        }
+
+        private static void ApiOnOnUpdate(object sender, UpdateEventArgs updateEventArgs)
+        {
+            Console.WriteLine(updateEventArgs.Update.Id);
+            Api.MessageOffset = updateEventArgs.Update.Id + 1;
         }
 
         private static void Api_OnCallbackQuery(object sender, Telegram.Bot.Args.CallbackQueryEventArgs e)
@@ -74,8 +82,10 @@ namespace ClearUpdates
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var m = e.Message;
+            
             if (Devs.Contains(m.From.Id))
             {
+                Console.WriteLine($"{m.MessageId} - {m.From.FirstName}: {m.Text}");
                 switch (m.Text.Replace("@wwcleanbot",""))
                 {
                     case "/clearqueue":
