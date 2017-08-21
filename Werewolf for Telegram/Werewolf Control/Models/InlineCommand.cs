@@ -74,11 +74,12 @@ namespace Werewolf_Control.Models
                     var killedby = db.PlayerMostKilledBy(p.TelegramId).FirstOrDefault();
                     var ach = (Achievements)(p.Achievements ?? 0);
                     var count = ach.GetUniqueFlags().Count();
+                    var totalAch = Enum.GetValues(typeof(Achievements)).Length;
 
                     Content = String.IsNullOrWhiteSpace(p.UserName)
                         ? $"{p.Name.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}"
                         : $"<a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}</a>";
-                    Content += $"\n{count.Pad()} {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n" +
+                    Content += $"\n<code>{(count+"/"+ totalAch).PadRight(5)}</code> {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n" +
                                $"{won.Pad()} {Commands.GetLocaleString("GamesWon", p.Language)} ({won * 100 / gamesPlayed}%)\n" +
                                $"{lost.Pad()} {Commands.GetLocaleString("GamesLost", p.Language)} ({lost * 100 / gamesPlayed}%)\n" +
                                $"{survived.Pad()} {Commands.GetLocaleString("GamesSurvived", p.Language)} ({survived * 100 / gamesPlayed}%)\n" +
