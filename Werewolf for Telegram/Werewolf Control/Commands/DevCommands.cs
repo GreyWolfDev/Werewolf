@@ -1158,7 +1158,7 @@ namespace Werewolf_Control
             {
                 try
                 {
-                    Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", grpid)
+                    Send("Equipe Zion disse que não posso moderar jogos para vocês mais, vocês são uma má influência! *batida de porta*", grpid)
                         .ContinueWith((result) =>
                         {
                             Bot.Api.LeaveChat(grpid);

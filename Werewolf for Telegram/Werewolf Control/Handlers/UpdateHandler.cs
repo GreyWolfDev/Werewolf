@@ -482,11 +482,12 @@ namespace Werewolf_Control.Handler
                                     DB.SaveChanges();
 
                                     var msg =
-                                        $"You've just added Werewolf Moderator!  Use /config (group admins) to configure group settings.   If you need assistance, join the [support channel](https://telegram.me/werewolfsupport)";
-                                    msg += Environment.NewLine +
-                                           "For updates on what is happening, join the dev channel @werewolfdev" +
-                                           Environment.NewLine +
-                                           "Full information is available on the [website](http://www.tgwerewolf.com)";
+                                        $"Oi, sou o Werewolf Zion Bot, moderador do jogo Werewolf. Use /config para configurar.";
+                                    msg +=
+                                    Environment.NewLine +
+                                    "Se não faz ideia do que esse bot faz, entre em [Werewolf Ajuda](https://t.me/WerewolfAjuda) e aprenda a jogar." +
+                                    Environment.NewLine +
+                                    "Se precisar de mais ajuda, entre em [Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte).";
                                     Send(msg, id, parseMode: ParseMode.Markdown);
 
 #if BETA
