@@ -10,7 +10,7 @@ namespace Werewolf_Control.Helpers
 {
     internal static class UpdateHelper
     {
-        internal static int[] Devs = new[] { 163786145 }; //129046388, 133748469, , 173305620 held, 153120371 nilton
+        internal static int[] Devs = new[] { 163786145 }; //129046388 para, 173305620 held, 153120371 nilton
         internal static bool IsGroupAdmin(Update update)
         {
             return IsGroupAdmin(update.Message.From.Id, update.Message.Chat.Id);

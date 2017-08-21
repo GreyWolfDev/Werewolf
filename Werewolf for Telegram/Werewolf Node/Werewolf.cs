@@ -760,7 +760,6 @@ namespace Werewolf_Node
                     Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted"));
-                    player.CurrentQuestion = null;
                     return;
                 }
                 else if (player.PlayerRole == IRole.PsychicMage && !player.IsDead && choice == "confuse" && player.HasUsedAbility == true)
@@ -841,7 +840,7 @@ namespace Werewolf_Node
                     }
                 }
 
-                var target = Players.FirstOrDefault(x => player.CurrentQuestion.QType == QuestionType.Kill2 ? x.Id == player.Choice2 : x.Id == player.Choice);
+                var target = Players.FirstOrDefault(x => !x.IsDead && (player.CurrentQuestion.QType == QuestionType.Kill2 ? x.Id == player.Choice2 : x.Id == player.Choice));
                 if (target == null)
                 {
                     Send(GetLocaleString("NoPlayerName"), query.From.Id);
@@ -1207,7 +1206,7 @@ namespace Werewolf_Node
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
-                                        ($"{(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive"))} {p.GetName() + (p.IsDead ? ": " + GetDescription(p.PlayerRole) + p.GetFinalEmojis() : "")}\n"));
+                                        ($"{(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive"))} {p.GetName() + (p.IsDead && DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? ": " + GetDescription(p.PlayerRole) + p.GetFinalEmojis() : "")}\n"));
                                         //($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         _playerListChanged = false;
@@ -1432,7 +1431,7 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                //rolesToAssign[0] = IRole.PsychicMage;
+                //rolesToAssign[0] = IRole.Tanner;
                 //rolesToAssign[1] = IRole.Gunner;
                 //rolesToAssign[2] = IRole.Wolf;
                 //rolesToAssign[3] = IRole.Cupid;
