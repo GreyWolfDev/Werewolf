@@ -119,12 +119,12 @@ namespace Werewolf_Control
             {
                 var id = update.Message.From.Id;
                 var menu = UpdateHandler.GetConfigGifMenu(id);
-                Bot.Api.SendTextMessage(update.Message.From.Id, "Para qual ação gostaria de configurar o GIF?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
+                Bot.Api.SendTextMessageAsync(update.Message.From.Id, "Para qual ação gostaria de configurar o GIF?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
                 replyMarkup: menu);
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
             }
         }
 

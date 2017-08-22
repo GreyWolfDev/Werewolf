@@ -56,7 +56,7 @@ namespace Werewolf_Control
         [Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
-            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Quer ajudar a manter o Werewolf Zion online? Por favor, doe para fernando.tbarros@gmail.com através do PayPal.\n\nDoações servem para cobrir os custos de manutenção dos servidores. \nComo nosso bot é uma modificação do bot original feito pela GreyWolf, 20% das doações serão direcionadas para a doação oficial deles como forma de reconhecimento e incentivo pelo desenvolvimento do bot original. \nPara mais informações, visitar [Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte).", parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Quer ajudar a manter o Werewolf Zion online? Por favor, doe para fernando.tbarros@gmail.com através do PayPal.\n\nDoações servem para cobrir os custos de manutenção dos servidores. \nComo nosso bot é uma modificação do bot original feito pela GreyWolf, 20% das doações serão direcionadas para a doação oficial deles como forma de reconhecimento e incentivo pelo desenvolvimento do bot original. \nPara mais informações, visitar [Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte).", parseMode: ParseMode.Markdown);
         }
 
         [Command(Trigger = "changelog")]
@@ -399,7 +399,7 @@ namespace Werewolf_Control
             //    reply += $"[Group Stats](www.tgwerewolf.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
             //reply += $"[Player Stats](www.tgwerewolf.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
 
-            Bot.Api.SendPhoto(u.Message.Chat.Id, "AgADAQADkdUxG9tS9wFjV189xLDOYW705y8ABKUOCQdNzMe8cDECAAEC", replyToMessageId: u.Message.MessageId);
+            Bot.Api.SendPhotoAsync(u.Message.Chat.Id, new FileToSend("AgADAQADkdUxG9tS9wFjV189xLDOYW705y8ABKUOCQdNzMe8cDECAAEC"), replyToMessageId: u.Message.MessageId);
             //Bot.Api.SendTextMessage(u.Message.Chat.Id, "#stats");
             //if (u.Message.ReplyToMessage != null)
             //{
@@ -487,7 +487,7 @@ namespace Werewolf_Control
                 foreach (var a in ach.GetUniqueFlags())
                     Content += $"\t✅ {a.GetName().ToBold()}\n<i>{a.GetDescription()}.</i>\n";
                 Content += "\n/conquistasBloqueadas";
-                Bot.Api.SendTextMessage(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessageAsync(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
@@ -512,7 +512,7 @@ namespace Werewolf_Control
                 Content = $"\n{count} {Commands.GetLocaleString("AchievementsLocked", p.Language)}\n";
                 foreach (var a in notach.GetUniqueFlags())
                     Content += $"\t❌ {a.GetName().ToBold()}\n<i>{a.GetDescription()}.</i>\n";
-                Bot.Api.SendTextMessage(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessageAsync(update.Message.From.Id, Content, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);

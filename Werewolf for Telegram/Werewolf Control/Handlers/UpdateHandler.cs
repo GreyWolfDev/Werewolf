@@ -444,7 +444,7 @@ namespace Werewolf_Control.Handler
                                         DB.ImageLanguages.Add(image);
                                         DB.SaveChanges();
                                         var menu = UpdateHandler.GetConfigGifMenu(id);
-                                        Bot.Api.SendTextMessage(id, $"GIF adicionado para '{image.ImageKey.ToString()}' na língua '{image.LanguageVariant}'! Para qual ação gostaria de configurar o GIF agora?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
+                                        Bot.Api.SendTextMessageAsync(id, $"GIF adicionado para '{image.ImageKey.ToString()}' na língua '{image.LanguageVariant}'! Para qual ação gostaria de configurar o GIF agora?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
                                         replyMarkup: menu);
                                     }
                                 }
@@ -778,7 +778,7 @@ namespace Werewolf_Control.Handler
                     }
                     string[] args = query.Data.Split('|');
                     Program.Analytics.TrackAsync($"cb:{args[0]}", new { args = args }, query.From.Id.ToString());
-		    if (args[0] == "joinBtn" || args[0] == "fleeBtn")
+		            if (args[0] == "joinBtn" || args[0] == "fleeBtn")
                     {
                         //okay, they are joining or leaving a game.
                         var nodeid = args[1];
@@ -818,7 +818,7 @@ namespace Werewolf_Control.Handler
                         }
 
                         //make sure they are member
-                        var status = Bot.Api.GetChatMember(game.GroupId, query.From.Id).Result.Status;
+                        var status = Bot.Api.GetChatMemberAsync(game.GroupId, query.From.Id).Result.Status;
                         if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
                         {
                             Bot.Send(GetLocaleString("NotMember", GetLanguage(query.From.Id), game.ChatGroup.ToBold()), query.From.Id);
@@ -1036,7 +1036,7 @@ namespace Werewolf_Control.Handler
                         if (p == null)
                             return;
                     }
-                    else if (!new[] { "groups", "getlang", "done" }.Contains(command))
+                    else if (!new[] { "groups", "getlang", "done", "gif", "setgif", "removegif" }.Contains(command))
                     {
                         //the commands in the array don't require a group. every other command requires a group
                         if (grp == null)
@@ -1468,7 +1468,7 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "gif":
-                            buttons.Add(new InlineKeyboardButton("Adicionar GIF", $"setgif|{query.From.Id}|add"));
+                            buttons.Add(new InlineKeyboardCallbackButton("Adicionar GIF", $"setgif|{query.From.Id}|add"));
                             var image = new ImageLanguage() { ImageKey = args[2], LanguageVariant = language };
                             SendGifIds = true;
                             ActualUploadGif[Int32.Parse(args[1])] = image;
@@ -1486,16 +1486,16 @@ namespace Werewolf_Control.Handler
                                 {
                                     try
                                     {
-                                        var r = Bot.Api.SendDocument(query.Message.Chat.Id, g, g).Result;
+                                        var r = Bot.Api.SendDocumentAsync(query.Message.Chat.Id, new FileToSend(g), g).Result;
                                     }
                                     catch (AggregateException e)
                                     {
                                         Send(g + " - " + e.InnerExceptions.FirstOrDefault()?.Message, query.Message.Chat.Id);
                                     }
                                 }
-                                buttons.Add(new InlineKeyboardButton("Remover GIF", $"setgif|{query.From.Id}|remove|{image.ImageKey.ToString()}"));
+                                buttons.Add(new InlineKeyboardCallbackButton("Remover GIF", $"setgif|{query.From.Id}|remove|{image.ImageKey.ToString()}"));
                             }
-                            buttons.Add(new InlineKeyboardButton("Voltar", $"setgif|{query.From.Id}|back"));
+                            buttons.Add(new InlineKeyboardCallbackButton("Voltar", $"setgif|{query.From.Id}|back"));
                             menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
                             if(values.Count>0)
                             {
@@ -1520,7 +1520,7 @@ namespace Werewolf_Control.Handler
                                 {
                                     foreach (var g in values)
                                     {
-                                        buttons.Add(new InlineKeyboardButton(g, $"removegif|{query.From.Id}|{g}|{image.ImageKey.ToString()}"));
+                                        buttons.Add(new InlineKeyboardCallbackButton(g, $"removegif|{query.From.Id}|{g}|{image.ImageKey.ToString()}"));
                                     }
 
                                     menu = new InlineKeyboardMarkup(buttons.Select(x => new[] { x }).ToArray());
@@ -1976,7 +1976,7 @@ namespace Werewolf_Control.Handler
             buttons.Add(new InlineKeyboardCallbackButton("Change Game Mode", $"mode|{id}"));
             //buttons.Add(new InlineKeyboardCallbackButton("Show Roles On Death", $"roles|{id}"));
             buttons.Add(new InlineKeyboardCallbackButton("Show Roles At Game End", $"endroles|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Allow Fleeing", $"flee|{id}")); //TODO add
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Fleeing", $"flee|{id}")); //TODO add
             //buttons.Add(new InlineKeyboardCallbackButton("Allow Extending Timer", $"extend|{id}"));
             buttons.Add(new InlineKeyboardCallbackButton("Set Max Players", $"maxplayer|{id}"));
             buttons.Add(new InlineKeyboardCallbackButton("Set Max Extend Time", $"maxextend|{id}"));
@@ -2013,8 +2013,8 @@ namespace Werewolf_Control.Handler
 
         internal static InlineKeyboardMarkup GetConfigGifMenu(long id)
         {
-            List<InlineKeyboardButton> buttons = Enum.GetNames(typeof(ImageKeys)).OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"gif|{id}|{x}")).ToList();
-            buttons.Add(new InlineKeyboardButton("Done", $"done|{id}"));
+            List<InlineKeyboardCallbackButton> buttons = Enum.GetNames(typeof(ImageKeys)).OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"gif|{id}|{x}")).ToList();
+            buttons.Add(new InlineKeyboardCallbackButton("Done", $"done|{id}"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)

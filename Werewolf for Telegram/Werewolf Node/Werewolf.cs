@@ -175,7 +175,7 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
 
-                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton")) { Url = $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}" } });
+                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton(GetLocaleString("JoinButton"), $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}") });
                     AddPlayer(u);
 
                     NotifyPlayersNewGame(u);
@@ -184,17 +184,17 @@ namespace Werewolf_Node
                 //create our button
                 _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}"),
-                    new InlineKeyboardButton("Sair",  $"fleeBtn|{_deeplink}")
+                    new InlineKeyboardCallbackButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}"),
+                    new InlineKeyboardCallbackButton("Sair",  $"fleeBtn|{_deeplink}")
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
                 try
                 {
-                    _joinMsgId = Program.Bot.SendDocumentAsync(chatid, GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                    _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend(GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
                 catch (Exception)
                 {
-                    _joinMsgId = Program.Bot.SendTextMessage(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                    _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
 
                 //let's keep this on for a while, then we will delete it
@@ -338,7 +338,7 @@ namespace Werewolf_Node
                     {
                         try
                         {
-                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
+                            r = Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
                             if (r != null)
                             {
                                 _joinButtons.Add(r.MessageId);
@@ -402,7 +402,7 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
-                Program.Bot.EditMessageReplyMarkup(ChatId, _joinMsgId, null);
+                Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
                 IsJoining = false;
                 IsInitializing = true;
 
@@ -582,7 +582,7 @@ namespace Werewolf_Node
                         groupName += $" @{DbGroup.UserName}";
                     else if (DbGroup.GroupLink != null)
                         groupName = $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup}</a>";
-                    var joinMenu = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}|notify") });
+                    var joinMenu = new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}|notify") });
                     foreach (var n in notify)
                     {
                         if (n.UserId != u.Id)
@@ -1655,12 +1655,12 @@ namespace Werewolf_Node
                     {
                         if (msg.Length > 200)
                         {
-                            Program.Bot.SendDocument(p.Id, gif);
+                            Program.Bot.SendDocumentAsync(p.Id, new FileToSend(gif));
                             Program.Send(msg, p.Id, true);
                         }
                         else
                         {
-                            Program.Bot.SendDocument(p.Id, gif, msg, replyMarkup: new ReplyKeyboardHide { HideKeyboard = true });
+                            Program.Bot.SendDocumentAsync(p.Id, new FileToSend(gif), msg, replyMarkup: new ReplyKeyboardRemove { RemoveKeyboard = true });
                         }
                     }
                     // ReSharper disable once UnusedVariable
@@ -2325,7 +2325,7 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 Program.MessagesSent++;
-                                Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, 
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, 
                                     GetLocaleString("ChoiceAccepted") + " - " + target.GetName(true));
                             }
                         }
@@ -2498,7 +2498,7 @@ namespace Werewolf_Node
                         {
                             new[]
                             {
-                                new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
+                                new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
                             }
                         }.ToList();
                         SendMenu(confuse, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
@@ -4046,7 +4046,7 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 Program.MessagesSent++;
-                                Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                             }
                         }
                         catch
@@ -4233,7 +4233,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{_deeplink}|yes"), new InlineKeyboardButton(GetLocaleString("No"), $"vote|{_deeplink}|no")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{_deeplink}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{_deeplink}|no")
                     }
                 }.ToList();
                 SendMenu(choices, blacksmith, GetLocaleString("SpreadDust"), QuestionType.SpreadSilver);
@@ -4410,7 +4410,7 @@ namespace Werewolf_Node
                 if (!justRemoveButton)
                     Program.Bot.DeleteMessageAsync(ChatId, id);
                 else
-                    Program.Bot.EditMessageReplyMarkup(ChatId, id, null);
+                    Program.Bot.EditMessageReplyMarkupAsync(ChatId, id, null);
                 Thread.Sleep(100);
             }
         }
@@ -4461,7 +4461,7 @@ namespace Werewolf_Node
             {
                 if (IsJoining) //try to remove the joining button...
                 {
-                    Program.Bot.EditMessageReplyMarkup(ChatId, _joinMsgId, null);
+                    Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
                     CleanupButtons(false);
                 }
             }

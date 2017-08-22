@@ -18,8 +18,8 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
-        [Attributes.Command(Trigger = "donate")]
-        public static void Donate(Update u, string[] args)
+        [Attributes.Command(Trigger = "donate2")]
+        public static void Donate2(Update u, string[] args)
         {
             //Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, 
             //    "Want to help keep Werewolf online? Please donate to:\n" +
