@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Database;
 using Telegram.Bot.Types;
 using Werewolf_Control.Helpers;
+using Newtonsoft.Json;
 
 namespace Werewolf_Control.Models
 {
@@ -86,6 +87,35 @@ namespace Werewolf_Control.Models
                                $"{gamesPlayed.Pad()} {Commands.GetLocaleString("TotalGames", p.Language)} \n" +
                                $"<code>{killed?.times}</code>\t{Commands.GetLocaleString("TimesKilled", p.Language)} {killed?.Name.FormatHTML()}\n" +
                                $"<code>{killedby?.times}</code>\t{Commands.GetLocaleString("TimesKilledBy", p.Language)} {killedby?.Name.FormatHTML()}";
+			
+		    var json = p.CustomGifSet;
+                    if (!String.IsNullOrEmpty(json))
+                    {
+                        var data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                        if (data.ShowBadge)
+                        {
+                            if ((p.DonationLevel ?? 0) >= 100)
+                                Content += "Donation Level: 🥇";
+                            else if ((p.DonationLevel ?? 0) >= 50)
+                                Content += "Donation Level: 🥈";
+                            else if ((p.DonationLevel ?? 0) >= 10)
+                                Content += "Donation Level: 🥉";
+                            if (p.Founder ?? false)
+                                Content += "\n💎 FOUNDER STATUS! 💎\n<i>(This player donated at least $10USD before there was any reward for donating</i>";
+                        }
+                    }
+                    else
+                    {
+                        if ((p.DonationLevel ?? 0) >= 100)
+                            Content += "Donation Level: 🥇";
+                        else if ((p.DonationLevel ?? 0) >= 50)
+                            Content += "Donation Level: 🥈";
+                        else if ((p.DonationLevel ?? 0) >= 10)
+                            Content += "Donation Level: 🥉";
+
+                        if (p.Founder ?? false)
+                            Content += "\n💎 FOUNDER STATUS! 💎\n<i>(This player donated at least $10USD before there was any reward for donating</i>";
+                    }
                 }
             }
             catch (Exception e)

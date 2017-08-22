@@ -7,8 +7,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
@@ -18,7 +20,6 @@ using Werewolf_Node.Models;
 
 namespace Werewolf_Node
 {
-
     class Werewolf : IDisposable
     {
         public long ChatId;
@@ -41,6 +42,7 @@ namespace Werewolf_Node
         public Group DbGroup;
         private bool _playerListChanged = true, _silverSpread, _lynchConfused;
         private DateTime _timeStarted;
+        private Nullable<TimeSpan> _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
         private int _joinMsgId;
@@ -50,9 +52,21 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW;
         public string ShowRolesEnd;
         private string _deeplink;
+
+        public List<string> VillagerDieImages,
+            WolfWin,
+            WolvesWin,
+            VillagersWin,
+            NoWinner,
+            StartGame,
+            StartChaosGame,
+            TannerWin,
+            CultWins,
+            SerialKillerWins,
+            LoversWin;
 
         #region Constructor
         /// <summary>
@@ -67,6 +81,18 @@ namespace Werewolf_Node
             try
             {
                 Guid = guid;
+                VillagerDieImages = Settings.VillagerDieImages.ToList();
+                WolfWin = Settings.WolfWin.ToList();
+                WolvesWin = Settings.WolvesWin.ToList();
+                VillagersWin = Settings.VillagersWin.ToList();
+                NoWinner = Settings.NoWinner.ToList();
+                StartGame = Settings.StartGame.ToList();
+                StartChaosGame = Settings.StartChaosGame.ToList();
+                TannerWin = Settings.TannerWin.ToList();
+                CultWins = Settings.CultWins.ToList();
+                SerialKillerWins = Settings.SerialKillerWins.ToList();
+                LoversWin = Settings.LoversWin.ToList();
+
                 new Thread(GroupQueue).Start();
                 _deeplink = $"{Program.ClientId}|{Guid}";
 
@@ -84,7 +110,7 @@ namespace Werewolf_Node
                     }
                     try
                     {
-                        var memberCount = Program.Bot.GetChatMembersCount(chatid).Result;
+                        var memberCount = Program.Bot.GetChatMembersCountAsync(chatid).Result;
                         DbGroup.MemberCount = memberCount;
 
                         db.SaveChanges();
@@ -93,7 +119,28 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
+#if !BETA
+                    var player = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                    if (player?.CustomGifSet != null)
+                    {
+                        var gifset = JsonConvert.DeserializeObject<CustomGifData>(player.CustomGifSet);
+                        if (gifset.Approved == true)
+                        {
+                            if (gifset.StartChaosGame != null)
+                            {
+                                StartChaosGame.Clear();
+                                StartChaosGame.Add(gifset.StartChaosGame);
+                            }
+                            if (gifset.StartGame != null)
+                            {
+                                StartGame.Clear();
+                                StartGame.Add(gifset.StartGame);
+                            }
+                        }
+                    }
+#endif
                     DbGroup.UpdateFlags();
+                    ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
                     db.SaveChanges();
                     if (RandomMode)
@@ -123,10 +170,12 @@ namespace Werewolf_Node
                         SecretLynch = DbGroup.HasFlag(GroupConfig.EnableSecretLynch);
                         ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
                     }
+                    AllowNSFW = DbGroup.HasFlag(GroupConfig.AllowNSFW);
+
 
                     LoadLanguage(DbGroup.Language);
 
-                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton")) { Url = $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}" } });
+                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton(GetLocaleString("JoinButton"), $"https://telegram.me/{Program.Me.Username}?start={Program.ClientId}_{Guid}") });
                     AddPlayer(u);
 
                     NotifyPlayersNewGame(u);
@@ -135,17 +184,17 @@ namespace Werewolf_Node
                 //create our button
                 _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}"),
-                    new InlineKeyboardButton("Sair",  $"fleeBtn|{_deeplink}")
+                    new InlineKeyboardCallbackButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}"),
+                    new InlineKeyboardCallbackButton("Sair",  $"fleeBtn|{_deeplink}")
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
                 try
                 {
-                    _joinMsgId = Program.Bot.SendDocument(chatid, GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                    _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend(GetImageLanguage(Chaos ? ImageKeys.StartChaosGame : ImageKeys.StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
                 catch (Exception)
                 {
-                    _joinMsgId = Program.Bot.SendTextMessage(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                    _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
 
                 //let's keep this on for a while, then we will delete it
@@ -172,9 +221,9 @@ namespace Werewolf_Node
             }
 
         }
-        #endregion
+#endregion
 
-        #region Language Helpers
+#region Language Helpers
         /// <summary>
         /// Caches the language file in the instance
         /// </summary>
@@ -251,9 +300,9 @@ namespace Werewolf_Node
                 }
             }
         }
-        #endregion
+#endregion
 
-        #region Main bits
+#region Main bits
         /// <summary>
         /// The main timer for the game
         /// </summary>
@@ -289,7 +338,7 @@ namespace Werewolf_Node
                     {
                         try
                         {
-                            r = Program.Bot.SendTextMessage(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + ", ").TrimEnd(',', ' ')), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
+                            r = Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")), parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
                             if (r != null)
                             {
                                 _joinButtons.Add(r.MessageId);
@@ -320,7 +369,7 @@ namespace Werewolf_Node
                                 {
                                     CleanupButtons(true);
                                     var str = s == 60 ? GetLocaleString("MinuteLeftToJoin") : GetLocaleString("SecondsLeftToJoin", s.ToString().ToBold());
-                                    r = Program.Bot.SendTextMessage(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                                    r = Program.Bot.SendTextMessageAsync(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
                                     break;
                                 }
                             }
@@ -331,7 +380,7 @@ namespace Werewolf_Node
                             i = Math.Max(i - _secondsToAdd, Settings.GameJoinTime - Settings.MaxJoinTime);
 
                             if (Settings.GameJoinTime > i)
-                                r = Program.Bot.SendTextMessage(
+                                r = Program.Bot.SendTextMessageAsync(
                                     ChatId,
                                     GetLocaleString(
                                         _secondsToAdd > 0 ? "SecondsAdded" : "SecondsRemoved",
@@ -353,7 +402,7 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
-                Program.Bot.EditMessageReplyMarkup(ChatId, _joinMsgId, null);
+                Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
                 IsJoining = false;
                 IsInitializing = true;
 
@@ -369,6 +418,39 @@ namespace Werewolf_Node
                 }
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
+
+#if !BETA
+                if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
+                {
+                    var cMsg = "Players with custom gif packs:\n";
+                    var customs = Players.Where(x => x.GifPack?.Approved ?? false);
+                    if (!AllowNSFW)
+                        customs = customs.Where(x => !x.GifPack.NSFW);
+                    if (customs.Any(x => x.GifPack.CultWins != null))
+                        CultWins = customs.Select(x => x.GifPack.CultWins).ToList();
+                    if (customs.Any(x => x.GifPack.LoversWin != null))
+                        LoversWin = customs.Select(x => x.GifPack.LoversWin).ToList();
+                    if (customs.Any(x => x.GifPack.NoWinner != null))
+                        NoWinner = customs.Select(x => x.GifPack.NoWinner).ToList();
+                    if (customs.Any(x => x.GifPack.SerialKillerWins != null))
+                        SerialKillerWins = customs.Select(x => x.GifPack.SerialKillerWins).ToList();
+                    if (customs.Any(x => x.GifPack.TannerWin != null))
+                        TannerWin = customs.Select(x => x.GifPack.TannerWin).ToList();
+                    if (customs.Any(x => x.GifPack.VillagerDieImage != null))
+                        VillagerDieImages = customs.Select(x => x.GifPack.VillagerDieImage).ToList();
+                    if (customs.Any(x => x.GifPack.VillagersWin != null))
+                        VillagersWin = customs.Select(x => x.GifPack.VillagersWin).ToList();
+                    if (customs.Any(x => x.GifPack.WolfWin != null))
+                        WolfWin = customs.Select(x => x.GifPack.WolfWin).ToList();
+                    if (customs.Any(x => x.GifPack.WolvesWin != null))
+                        WolvesWin = customs.Select(x => x.GifPack.WolvesWin).ToList();
+                    foreach (var p in customs)
+                    {
+                        cMsg += p.GetName() + Environment.NewLine;
+                    }
+                    Send(cMsg);
+                }
+#endif
                 Program.Analytics.TrackAsync("gamestart", new { players = Players, playerCount = Players.Count(), mode = Chaos ? "Chaos" : "Normal" }, "0");
                 IsRunning = true;
                 AssignRoles();
@@ -376,7 +458,7 @@ namespace Werewolf_Node
                 using (var db = new WWContext())
                 {
                     _timeStarted = DateTime.Now;
-                    var game = new Game
+                    var game = new Database.Game
                     {
                         GroupName = ChatGroup,
                         TimeStarted = _timeStarted,
@@ -452,6 +534,8 @@ namespace Werewolf_Node
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
                 var msg = "";
+                if (ex.InnerException != null)
+                    msg += ex.InnerException.Message;
                 foreach (var ves in ex.EntityValidationErrors)
                 {
                     foreach (var ve in ves.ValidationErrors)
@@ -459,6 +543,8 @@ namespace Werewolf_Node
                         msg += $"{ves.Entry.Entity}:{ve.ErrorMessage}\n";
                     }
                 }
+
+
                 Send("Something just went terribly wrong, I had to cancel the game....");
                 Send(
                     Program.Version.FileVersion +
@@ -496,7 +582,7 @@ namespace Werewolf_Node
                         groupName += $" @{DbGroup.UserName}";
                     else if (DbGroup.GroupLink != null)
                         groupName = $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup}</a>";
-                    var joinMenu = new InlineKeyboardMarkup(new[] { new InlineKeyboardButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}|notify") });
+                    var joinMenu = new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton(GetLocaleString("JoinButton"),  $"joinBtn|{_deeplink}|notify") });
                     foreach (var n in notify)
                     {
                         if (n.UserId != u.Id)
@@ -602,10 +688,12 @@ namespace Werewolf_Node
                         };
                         db.Players.Add(user);
                     }
-
+                    p.DonationLevel = user.DonationLevel ?? 0;
+                    p.Founder = user.Founder ?? false;
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
-
+                    if (!String.IsNullOrEmpty(user.CustomGifSet))
+                        p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
                     if (user.Achievements == null)
                         user.Achievements = 0;
                     if (ChatId == Settings.VeteranChatId)
@@ -717,9 +805,9 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-        #endregion
+#endregion
 
-        #region Communications
+#region Communications
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -870,8 +958,8 @@ namespace Werewolf_Node
                         var targets = Players.Where(x => !WolfRoles.Contains(x.PlayerRole) & !x.IsDead && x.Id != player.Choice).ToList();
                         var msg = GetLocaleString("AskEat");
                         var qtype = QuestionType.Kill2;
-                        var buttons = targets.Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
-                        buttons.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{_deeplink}|-1") });
+                        var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
+                        buttons.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{_deeplink}|-1") });
                         SendMenu(buttons, player, msg, qtype);
                         clearCurrent = false;
                     }
@@ -894,7 +982,7 @@ namespace Werewolf_Node
                         var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
                         var buttons =
                             secondChoices.Select(
-                                x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
+                                x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
                         player.Choice = 0;
                         Program.MessagesSent++;
                         ReplyToCallback(query,
@@ -998,7 +1086,7 @@ namespace Werewolf_Node
 #else
             if (image != null)
             {
-                Program.Bot.SendDocument(id, image, text);
+                Program.Bot.SendDocumentAsync(id, image, text);
             }
             // ReSharper disable once UnusedVariable
             else
@@ -1076,7 +1164,7 @@ namespace Werewolf_Node
                             }
                         }
                         else
-                            Program.Bot.EditMessageText(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
+                            Program.Bot.EditMessageTextAsync(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
                         continue;
                     }
 
@@ -1225,7 +1313,7 @@ namespace Werewolf_Node
         {
             if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
             LastPlayersOutput = DateTime.Now;
-            Program.Bot.SendTextMessage(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
+            Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
         }
 
         public async void ShowJoinButton()
@@ -1235,7 +1323,7 @@ namespace Werewolf_Node
             LastJoinButtonShowed = DateTime.Now;
             try
             {
-                var r = await Program.Bot.SendTextMessage(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+                var r = await Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
                 _joinButtons.Add(r.MessageId);
             }
             catch
@@ -1244,9 +1332,9 @@ namespace Werewolf_Node
             }
 
         }
-        #endregion
+#endregion
 
-        #region Roles
+#region Roles
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();
@@ -1567,12 +1655,12 @@ namespace Werewolf_Node
                     {
                         if (msg.Length > 200)
                         {
-                            Program.Bot.SendDocument(p.Id, gif);
+                            Program.Bot.SendDocumentAsync(p.Id, new FileToSend(gif));
                             Program.Send(msg, p.Id, true);
                         }
                         else
                         {
-                            Program.Bot.SendDocument(p.Id, gif, msg, replyMarkup: new ReplyKeyboardHide { HideKeyboard = true });
+                            Program.Bot.SendDocumentAsync(p.Id, new FileToSend(gif), msg, replyMarkup: new ReplyKeyboardRemove { RemoveKeyboard = true });
                         }
                     }
                     // ReSharper disable once UnusedVariable
@@ -2100,7 +2188,7 @@ namespace Werewolf_Node
                             p.Team = ITeam.Village;
                             p.HasNightAction = false;
                             p.HasDayAction = false;
-                            var choices = new[] { new[] { new InlineKeyboardButton(GetLocaleString("Reveal"), $"vote|{_deeplink}|reveal") } }.ToList();
+                            var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{_deeplink}|reveal") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
                             break;
                         case IRole.PsychicMage:
@@ -2158,9 +2246,9 @@ namespace Werewolf_Node
 
 
 
-        #endregion
+#endregion
 
-        #region Cycles
+#region Cycles
 
         public void ForceStart()
         {
@@ -2237,14 +2325,14 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 Program.MessagesSent++;
-                                Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, 
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, 
                                     GetLocaleString("ChoiceAccepted") + " - " + target.GetName(true));
                             }
                         }
                         if (p.CurrentQuestion.MessageId != 0)
                         {
                             Program.MessagesSent++;
-                            Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -2410,7 +2498,7 @@ namespace Werewolf_Node
                         {
                             new[]
                             {
-                                new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
+                                new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
                             }
                         }.ToList();
                         SendMenu(confuse, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
@@ -2471,7 +2559,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor && p.CurrentQuestion.QType != QuestionType.ConfuseLynching)
                         {
                             Program.MessagesSent++;
-                            Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -2643,7 +2731,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0)
                         {
                             Program.MessagesSent++;
-                            Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -2673,7 +2761,7 @@ namespace Werewolf_Node
              * GA
              */
 
-            #region Wolf Night
+#region Wolf Night
 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
 
@@ -2962,9 +3050,9 @@ namespace Werewolf_Node
                 eatCount = 0;
             }
             WolfCubKilled = false;
-            #endregion
+#endregion
 
-            #region Serial Killer Night
+#region Serial Killer Night
 
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
@@ -2995,12 +3083,12 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+#endregion
 
             if (Players == null)
                 return;
 
-            #region Cult Hunter Night
+#region Cult Hunter Night
 
             //cult hunter
             var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
@@ -3042,9 +3130,9 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+#endregion
 
-            #region Cult Night
+#region Cult Night
 
             //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
@@ -3239,7 +3327,7 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+#endregion
 
             if (Players == null)
             {
@@ -3247,7 +3335,7 @@ namespace Werewolf_Node
                 return;
             }
 
-            #region Harlot Night
+#region Harlot Night
 
             //let the harlot know
             var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
@@ -3328,9 +3416,9 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+#endregion
 
-            #region Seer / Fool
+#region Seer / Fool
 
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
@@ -3417,9 +3505,9 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+#endregion
 
-            #region GA Night
+#region GA Night
 
             if (ga != null)
             {
@@ -3482,11 +3570,11 @@ namespace Werewolf_Node
                 }
             }
 
-            #endregion
+#endregion
 
             CheckRoleChanges();
 
-            #region Night Death Notifications to Group
+#region Night Death Notifications to Group
 
 
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
@@ -3647,7 +3735,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("NoAttack"));
             }
 
-            #endregion
+#endregion
 
             if (CheckForGameEnd()) return;
 
@@ -3703,10 +3791,8 @@ namespace Werewolf_Node
                     return DoGameEnd(ITeam.NoOne);
                 case 1:
                     var p = alivePlayers.FirstOrDefault();
-                    if (p.PlayerRole == IRole.Tanner || (p.PlayerRole == IRole.PsychicMage && p.Team == ITeam.Neutral))
+                    if (p.PlayerRole == IRole.Tanner || p.PlayerRole == IRole.Sorcerer || (p.PlayerRole == IRole.PsychicMage && p.Team == ITeam.Neutral))
                         return DoGameEnd(ITeam.NoOne);
-                    else if (p.PlayerRole == IRole.Sorcerer)
-                        return DoGameEnd(ITeam.Village); //a sorcerer does no harm to the village
                     else
                         return DoGameEnd(p.Team);
                 case 2:
@@ -3788,10 +3874,17 @@ namespace Werewolf_Node
             {
                 if (alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
                 {
-                    // do nothing, gunner is alive
-                    foreach (var p in alivePlayers.Where(x => x.Team == ITeam.Village))
-                        AddAchievement(p, Achievements.GunnerSaves);
-                    return false;
+                    var wolves = alivePlayers.Where(x => WolfRoles.Contains(x.PlayerRole));
+                    var others = alivePlayers.Where(x => !WolfRoles.Contains(x.PlayerRole));
+                    // gunner makes the difference only if wolves are exactly as many as the others, or two wolves are in love and the gunner can kill two of them at once
+                    var gunnermakesthedifference = (wolves.Count() == others.Count()) || (wolves.Count() == others.Count() + 1 && wolves.Count(x => x.InLove) == 2);
+                    if (gunnermakesthedifference)
+                    {
+                        // do nothing, gunner can still make VGs win
+                        foreach (var p in alivePlayers.Where(x => x.Team == ITeam.Village))
+                            AddAchievement(p, Achievements.GunnerSaves);
+                        return false;
+                    }
                 }
                 return DoGameEnd(ITeam.Wolf);
             }
@@ -3814,7 +3907,7 @@ namespace Werewolf_Node
                 IsRunning = false;
                 var msg = "";
 
-                var game = db.Games.FirstOrDefault(x => x.Id == GameId) ?? new Game();
+                var game = db.Games.FirstOrDefault(x => x.Id == GameId) ?? new Database.Game();
                 game.TimeEnded = DateTime.Now;
 
                 if (team == ITeam.Lovers)
@@ -3953,7 +4046,7 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 Program.MessagesSent++;
-                                Program.Bot.EditMessageText(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                             }
                         }
                         catch
@@ -4003,22 +4096,32 @@ namespace Werewolf_Node
                 }
                 if (game.TimeStarted.HasValue)
                 {
-                    var endGame = game.TimeEnded.Value - game.TimeStarted.Value;
-                    msg += "\n" + GetLocaleString("EndTime", endGame.ToString(@"hh\:mm\:ss"));
+                    _timePlayed = game.TimeEnded.Value - game.TimeStarted.Value;
+                    msg += "\n" + GetLocaleString("EndTime", _timePlayed.Value.ToString(@"hh\:mm\:ss"));
                 }
                 SendWithQueue(msg);
                 //Program.Bot.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
+                UpdateGroupRanking();
                 Program.Analytics.TrackAsync("gameend", new { winner = team.ToString(), groupid = ChatId, mode = Chaos ? "Chaos" : "Normal", size = Players.Count() }, "0");
+                //if (ChatId == -1001094614730)
+                //{
+                //    foreach (var p in Players.Where(x => x.IsDead))
+                //    {
+                //        Program.Bot.RestrictChatMemberAsync(-1001094614730, p.Id, default(DateTime), true, true, true, true);
+                //    }
+                //}
+
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
             }
         }
 
-        #endregion
 
-        #region Send Menus
+#endregion
+
+#region Send Menus
 
         private void SendLynchMenu()
         {
@@ -4029,13 +4132,13 @@ namespace Werewolf_Node
             {
                 player.CurrentQuestion = null;
                 player.Choice = 0;
-                var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
+                var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
                 Thread.Sleep(100);
             }
         }
 
-        private void SendMenu(List<InlineKeyboardButton[]> choices, IPlayer to, string text, QuestionType qtype)
+        private void SendMenu(List<InlineKeyboardCallbackButton[]> choices, IPlayer to, string text, QuestionType qtype)
         {
             choices = choices.ToList();
             var skip = choices.FirstOrDefault(x => x[0].Text == "Skip");
@@ -4103,8 +4206,8 @@ namespace Werewolf_Node
                 var options = Players.Where(x => !x.IsDead && x.Id != detective.Id).ToList();
                 if (options.Any())
                 {
-                    var choices = options.Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
-                    choices.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{_deeplink}|-1") });
+                    var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
+                    choices.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{_deeplink}|-1") });
                     SendMenu(choices, detective, GetLocaleString("AskDetect"), QuestionType.Detect);
                 }
             }
@@ -4116,7 +4219,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardButton(GetLocaleString("Reveal"), $"vote|{_deeplink}|reveal")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{_deeplink}|reveal")
                     }
                 }.ToList();
                 SendMenu(choices, mayor, GetLocaleString("AskMayor"), QuestionType.Mayor);
@@ -4130,7 +4233,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|yes"), new InlineKeyboardButton(GetLocaleString("No"), $"vote|{_deeplink}|no")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{_deeplink}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{_deeplink}|no")
                     }
                 }.ToList();
                 SendMenu(choices, blacksmith, GetLocaleString("SpreadDust"), QuestionType.SpreadSilver);
@@ -4146,8 +4249,8 @@ namespace Werewolf_Node
                     var options = Players.Where(x => !x.IsDead && x.Id != gunner.Id).ToList();
                     if (options.Any())
                     {
-                        var choices = options.Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
-                        choices.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{_deeplink}|-1") });
+                        var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
+                        choices.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{_deeplink}|-1") });
                         SendMenu(choices, gunner, GetLocaleString("AskShoot", gunner.Bullet), QuestionType.Shoot);
                     }
                 }
@@ -4161,7 +4264,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{_deeplink}|confuse")
                     }
                 }.ToList();
                 SendMenu(choices, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
@@ -4278,9 +4381,9 @@ namespace Werewolf_Node
                     default:
                         continue;
                 }
-                var buttons = targets.Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
+                var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }).ToList();
                 if (player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid && player.PlayerRole != IRole.Doppelgänger)
-                    buttons.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{_deeplink}|-1") });
+                    buttons.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{_deeplink}|-1") });
 
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))
                 {
@@ -4297,7 +4400,7 @@ namespace Werewolf_Node
             _silverSpread = false;
         }
 
-        #endregion
+#endregion
 
         #region Helpers
         public void CleanupButtons(bool justRemoveButton)
@@ -4305,9 +4408,9 @@ namespace Werewolf_Node
             foreach (var id in _joinButtons)
             {
                 if (!justRemoveButton)
-                    Program.Bot.DeleteMessage(ChatId, id);
+                    Program.Bot.DeleteMessageAsync(ChatId, id);
                 else
-                    Program.Bot.EditMessageReplyMarkup(ChatId, id, null);
+                    Program.Bot.EditMessageReplyMarkupAsync(ChatId, id, null);
                 Thread.Sleep(100);
             }
         }
@@ -4358,7 +4461,7 @@ namespace Werewolf_Node
             {
                 if (IsJoining) //try to remove the joining button...
                 {
-                    Program.Bot.EditMessageReplyMarkup(ChatId, _joinMsgId, null);
+                    Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
                     CleanupButtons(false);
                 }
             }
@@ -4427,9 +4530,9 @@ namespace Werewolf_Node
             CheckRoleChanges();
 
             //send a menu to the hunter, asking who he wants to kill as he is hung....
-            var hunterChoices = new List<InlineKeyboardButton[]>();
-            hunterChoices.AddRange(Players.Where(x => !x.IsDead).Select(x => new[] { new InlineKeyboardButton(x.Name, $"vote|{_deeplink}|{x.Id}") }));
-            hunterChoices.Add(new[] { new InlineKeyboardButton("Skip", $"vote|{_deeplink}|-1") });
+            var hunterChoices = new List<InlineKeyboardCallbackButton[]>();
+            hunterChoices.AddRange(Players.Where(x => !x.IsDead).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{_deeplink}|{x.Id}") }));
+            hunterChoices.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{_deeplink}|-1") });
 
             //raise hunter from dead long enough to shoot
             hunter.IsDead = false;
@@ -4547,7 +4650,7 @@ namespace Werewolf_Node
         internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
         {
             //first answer the callback
-            Program.Bot.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
+            Program.Bot.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
             //edit the original message
             if (edit)
                 Edit(query, text, replyMarkup);
@@ -4561,7 +4664,7 @@ namespace Werewolf_Node
         internal static Task<Telegram.Bot.Types.Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
         {
             Program.MessagesSent++;
-            return Program.Bot.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
+            return Program.Bot.EditMessageTextAsync(id, msgId, text, replyMarkup: replyMarkup);
         }
 
         internal void LogException(AggregateException ae)
@@ -4585,9 +4688,9 @@ namespace Werewolf_Node
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-        #endregion
+#endregion
 
-        #region Database Helpers
+#region Database Helpers
 
         // ReSharper disable UnusedParameter.Local
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
@@ -4673,6 +4776,23 @@ namespace Werewolf_Node
                 catch (Exception)
                 {
                     //Log.WriteLine(e.Message + "\n" + e.StackTrace, LogLevel.Error, fileName: "error.log");
+                }
+
+                try
+                {
+                    //if (ChatId == -1001094614730) //vets group
+                    //{
+                    //    //let's try this out, shall we?
+                    //    var status = Program.Bot.GetChatMemberAsync(-1001094614730, victim.Id).Result;
+                    //    if (status.Status != ChatMemberStatus.Administrator && status.Status != ChatMemberStatus.Creator)
+                    //    {
+                    //        Program.Bot.RestrictChatMemberAsync(-1001094614730, victim.Id, DateTime.Now.AddHours(1), false, false, false, false);
+                    //    }
+                    //}
+                }
+                catch
+                {
+
                 }
             }
 
@@ -4873,6 +4993,55 @@ namespace Werewolf_Node
             }
         }
 
+        private void UpdateGroupRanking()
+        {
+            using (var db = new WWContext())
+            {
+                var refreshdate = db.RefreshDate.FirstOrDefault().Date;
+                if (DateTime.Now.Date - refreshdate >= TimeSpan.FromDays(7))
+                {
+                    refreshdate = DateTime.Now.Date;
+                    db.RefreshDate.FirstOrDefault().Date = refreshdate;
+                    db.SaveChanges();
+                }
+
+                var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
+                if (grpranking == null)
+                {
+                    grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = refreshdate };
+                    db.GroupRanking.Add(grpranking);
+                    db.SaveChanges();
+                }
+
+                if (grpranking.LastRefresh < refreshdate && grpranking.GamesPlayed != 0) //games played should always be != 0, but you never know..
+                {
+                    var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
+                    daysspan = daysspan == 0 ? 1 : daysspan;
+                    var avgplayerspergame = ((decimal)grpranking.PlayersCount) / grpranking.GamesPlayed; //this is between 0 and 35
+                    var playerfactor = -((decimal)0.05) * (avgplayerspergame * avgplayerspergame) + (decimal)2.5 * avgplayerspergame - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
+                    var avgminutesperday = grpranking.MinutesPlayed / daysspan; //average minutes played per day
+                    var timefactor = avgplayerspergame * (decimal)1.6 * avgminutesperday / 1440; //(avg minutes per day played by the avg player) / (15 h in minutes). 15h is approximately the time played per day by the most active groups.
+                    var malus = (playerfactor - timefactor) * (playerfactor - timefactor) / 5; //give some malus if they played for little time with lots of people or vice versa. 
+                    grpranking.Ranking = Math.Round(playerfactor + timefactor - malus, 10);
+                    grpranking.PlayersCount = 0;
+                    grpranking.MinutesPlayed = 0;
+                    grpranking.GamesPlayed = 0;
+                    grpranking.LastRefresh = refreshdate;
+                    db.SaveChanges();
+                }
+
+                if (_timePlayed.HasValue)
+                {
+                    grpranking.GamesPlayed++;
+                    grpranking.PlayersCount += Players.Count();
+                    grpranking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
+                    db.SaveChanges();
+                }
+
+                db.SaveChanges();
+            }
+        }
+
         private void AddAchievement(IPlayer player, Achievements a)
         {
             using (var db = new WWContext())
@@ -4892,6 +5061,6 @@ namespace Werewolf_Node
             }
         }
 
-        #endregion
+#endregion
     }
 }

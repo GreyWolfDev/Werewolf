@@ -6,19 +6,22 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Newtonsoft.Json;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
-using Werewolf_Control.Attributes;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
+using Werewolf_Control.Models;
+using System.Threading;
 
 namespace Werewolf_Control
 {
     public static partial class Commands
     {
-        [Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true)]
         public static void Smite(Update u, string[] args)
         {
             //if (u.Message.ReplyToMessage == null)
@@ -59,7 +62,7 @@ namespace Werewolf_Control
 
         }
 
-        [Command(Trigger = "config", GroupAdminOnly = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "config", GroupAdminOnly = true, InGroupOnly = true)]
         public static void Config(Update update, string[] args)
         {
             var id = update.Message.Chat.Id;
@@ -82,11 +85,11 @@ namespace Werewolf_Control
             }
 
             var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id);
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)),
+            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)),
                 replyMarkup: menu);
         }
 
-        [Command(Trigger = "uploadlang", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "uploadlang", GlobalAdminOnly = true)]
         public static void UploadLang(Update update, string[] args)
         {
             try
@@ -105,27 +108,27 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
             }
         }
 
-        [Command(Trigger = "uploadgif", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "uploadgif", GlobalAdminOnly = true)]
         public static void UploadGif(Update update, string[] args)
         {
             try
             {
                 var id = update.Message.From.Id;
                 var menu = UpdateHandler.GetConfigGifMenu(id);
-                Bot.Api.SendTextMessage(update.Message.From.Id, "Para qual ação gostaria de configurar o GIF?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
+                Bot.Api.SendTextMessageAsync(update.Message.From.Id, "Para qual ação gostaria de configurar o GIF?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
                 replyMarkup: menu);
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
             }
         }
 
-	[Command(Trigger = "getban", GlobalAdminOnly = true)]
+	[Attributes.Command(Trigger = "getban", GlobalAdminOnly = true)]
         public static void GetUserStatus(Update u, string[] a)
         {
             using (var db = new WWContext())
@@ -149,13 +152,13 @@ namespace Werewolf_Control
                 else
                     status = "Not banned (in Werewolf)";
                 var firstSeen = p.GamePlayers?.OrderBy(x => x.GameId).FirstOrDefault()?.Game?.TimeStarted;
-                
-                Bot.Api.SendTextMessage(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ??"Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
+
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ?? "Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
             }
 
         }
 
-        [Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
         public static void ValidateLangs(Update update, string[] args)
         {
             //var langs = Directory.GetFiles(Bot.LanguageDirectory)
@@ -170,14 +173,14 @@ namespace Werewolf_Control
             //var buttons =
             //    langs.Select(x => new[] { new InlineKeyboardButton(x, $"validate|{update.Message.Chat.Id}|{x}") }).ToArray();
             //var menu = new InlineKeyboardMarkup(buttons.ToArray());
-            //Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+            //Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "Validate which language?",
             //    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
 
 
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
             //buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
@@ -195,7 +198,7 @@ namespace Werewolf_Control
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
             try
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, "Validate which language?",
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "Validate which language?",
                     replyToMessageId: update.Message.MessageId, replyMarkup: menu);
             }
             catch (AggregateException e)
@@ -214,7 +217,7 @@ namespace Werewolf_Control
         }
 
 
-        [Command(Trigger = "getidles", GroupAdminOnly = true)]
+        [Attributes.Command(Trigger = "getidles", GroupAdminOnly = true)]
         public static void GetIdles(Update update, string[] args)
         {
             //check user ids and such
@@ -249,7 +252,7 @@ namespace Werewolf_Control
                     ChatMember user = null;
                     try
                     {
-                        user = Bot.Api.GetChatMember(update.Message.Chat.Id, id).Result;
+                        user = Bot.Api.GetChatMemberAsync(update.Message.Chat.Id, id).Result;
                     }
                     catch
                     {
@@ -265,7 +268,7 @@ namespace Werewolf_Control
             Send(reply, update.Message.Chat.Id);
         }
 
-        [Command(Trigger = "remlink", GroupAdminOnly = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "remlink", GroupAdminOnly = true, InGroupOnly = true)]
         public static void RemLink(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -276,10 +279,10 @@ namespace Werewolf_Control
                 db.SaveChanges();
             }
 
-            Send($"Your group link has been removed.  You will no longer appear on the /grouplist", u.Message.Chat.Id);
+            Send($"Your group link has been removed.", u.Message.Chat.Id);
         }
 
-        [Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true)]
         public static void SetLink(Update update, string[] args)
         {
             //args[1] should be the link
@@ -287,7 +290,7 @@ namespace Werewolf_Control
             //first, check if the group has a username
             if (!String.IsNullOrEmpty(update.Message.Chat.Username))
             {
-                Send($"You're group link has already been set to https://telegram.me/{update.Message.Chat.Username}",
+                Send($"Your group link has already been set to https://telegram.me/{update.Message.Chat.Username}",
                     update.Message.Chat.Id);
                 return;
             }
@@ -316,7 +319,7 @@ namespace Werewolf_Control
             Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
 
-        [Command(Trigger = "addach", DevOnly = true)]
+        [Attributes.Command(Trigger = "addach", DevOnly = true)]
         public static void AddAchievement(Update u, string[] args)
         {
             //get the user to add the achievement to
@@ -398,7 +401,7 @@ namespace Werewolf_Control
 
         }
 
-        [Command(Trigger = "remach", DevOnly = true)]
+        [Attributes.Command(Trigger = "remach", DevOnly = true)]
         public static void RemAchievement(Update u, string[] args)
         {
             //get the user to add the achievement to
@@ -480,7 +483,7 @@ namespace Werewolf_Control
 
         }
 
-        [Command(Trigger = "restore", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "restore", GlobalAdminOnly = true)]
         public static void RestoreAccount(Update u, string[] args)
         {
             var score = 100;
@@ -561,10 +564,193 @@ namespace Werewolf_Control
                 }
 
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
-                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardButton("No", "restore|no") }));
+                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardCallbackButton("No", "restore|no") }));
             }
         }
 
+        [Attributes.Command(Trigger = "reviewgifs", GlobalAdminOnly = true, Blockable = true)]
+        public static void ReviewGifs(Update u, string[] args)
+        {
+#if !BETA
+            using (var db = new WWContext())
+            {
+                if (args[1] == null)
+                {
+                    var packs = db.Players.Where(x => x.CustomGifSet != null).ToList();
+                    var count = 0;
+                    var list = "Pending Review:\n";
+                    foreach (var p in packs)
+                    {
+                        var pack = JsonConvert.DeserializeObject<CustomGifData>(p.CustomGifSet);
+                        if (pack.Approved != null || !pack.Submitted) continue;
+                        count++;
+                        list += p.TelegramId + Environment.NewLine;
+                        if (count == 10)
+                            break;
+                    }
+                    if (count == 0)
+                        list += "None!";
+                    Send(list, u.Message.Chat.Id);
+                }
+                else
+                {
+                    var pid = int.Parse(args[1]);
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
+                    if (p == null)
+                    {
+                        Send("Id not found.", u.Message.Chat.Id);
+                        return;
+                    }
+                    var json = p.CustomGifSet;
+                    if (String.IsNullOrEmpty(json))
+                    {
+                        Send("User does not have a custom gif pack", u.Message.Chat.Id);
+                        return;
+                    }
+                    if (u.Message.Chat.Type != ChatType.Private)
+                        Send("I will send you the gifs in private", u.Message.Chat.Id);
 
+                    var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    var id = u.Message.From.Id;
+                    Send($"Sending gifs for {pid}", id);
+                    Thread.Sleep(1000);
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.CultWins), "Cult Wins");
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.LoversWin), "Lovers Win");
+                    Thread.Sleep(250);
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.NoWinner), "No Winner");
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
+                    Thread.Sleep(250);
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");                 
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");      
+                    Thread.Sleep(250);
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
+                    Thread.Sleep(250);
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
+                    Thread.Sleep(250);
+                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolvesWin), "Wolf Pack Wins");
+                    var msg = $"Approval Status: ";
+                    switch (pack.Approved)
+                    {
+                        case null:
+                            msg += "Pending";
+                            break;
+                        case true:
+                            var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                            msg += "Approved By " + by.Name;
+                            break;
+                        case false:
+                            var dby = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                            msg += "Disapproved By " + dby.Name + " for: " + pack.DenyReason;
+                            break;
+                    }
+                    Bot.Send(msg, id);
+                }
+            }
+#endif
+        }
+
+        [Attributes.Command(Trigger = "approvegifs", GlobalAdminOnly = true, Blockable = true)]
+        public static void ApproveGifs(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                if (args[1] == null)
+                {
+                    Send("Please use /approvegifs <player id> <1|0 (nsfw)>", u.Message.Chat.Id);
+
+                }
+                else
+                {
+
+                    var parms = args[1].Split(' ');
+                    if (parms.Length == 1)
+                    {
+                        Send("Please use /approvegifs <player id> <1|0 (nsfw)>", u.Message.Chat.Id);
+                        return;
+                    }
+                    var pid = int.Parse(parms[0]);
+                    var nsfw = parms[1] == "1";
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
+                    if (p == null)
+                    {
+                        Send("Id not found.", u.Message.Chat.Id);
+                        return;
+                    }
+                    var json = p.CustomGifSet;
+                    if (String.IsNullOrEmpty(json))
+                    {
+                        Send("User does not have a custom gif pack", u.Message.Chat.Id);
+                        return;
+                    }
+
+                    var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    var id = u.Message.From.Id;
+                    pack.Approved = true;
+                    pack.ApprovedBy = id;
+                    pack.NSFW = nsfw;
+                    var msg = $"Approval Status: ";
+                    var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                    msg += "Approved By " + by.Name + "\nNSFW: " + pack.NSFW;
+                    p.CustomGifSet = JsonConvert.SerializeObject(pack);
+                    db.SaveChanges();
+                    Bot.Send(msg, pid);
+                    Bot.Send(msg, u.Message.Chat.Id);
+                }
+            }
+        }
+
+        [Attributes.Command(Trigger = "disapprovegifs", GlobalAdminOnly = true, Blockable = true)]
+        public static void DisapproveGifs(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                if (args[1] == null)
+                {
+                    Send("Please use /disapprovegifs <player id> <reason>", u.Message.Chat.Id);
+
+                }
+                else
+                {
+
+                    var parms = args[1].Split(' ');
+                    if (parms.Length == 1)
+                    {
+                        Send("Please use /disapprovegifs <player id> <reason>", u.Message.Chat.Id);
+                        return;
+                    }
+                    var pid = int.Parse(parms[0]);
+                    var reason = args[1].Replace(parms[0] + " ", "");
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
+                    if (p == null)
+                    {
+                        Send("Id not found.", u.Message.Chat.Id);
+                        return;
+                    }
+                    var json = p.CustomGifSet;
+                    if (String.IsNullOrEmpty(json))
+                    {
+                        Send("User does not have a custom gif pack", u.Message.Chat.Id);
+                        return;
+                    }
+
+                    var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    var id = u.Message.From.Id;
+                    pack.Approved = false;
+                    pack.ApprovedBy = id;
+                    pack.Submitted = false;
+                    pack.DenyReason = reason;
+                    var msg = $"Approval Status: ";
+                    var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
+                    msg += "Dispproved By " + by.Name + " for: " + pack.DenyReason;
+                    p.CustomGifSet = JsonConvert.SerializeObject(pack);
+                    db.SaveChanges();
+                    Bot.Send(msg, pid);
+                    Bot.Send(msg, u.Message.Chat.Id);
+                }
+            }
+
+        }
     }
 }

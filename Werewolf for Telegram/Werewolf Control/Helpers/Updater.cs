@@ -42,6 +42,7 @@ namespace Werewolf_Control.Helpers
         public static void DoBuild(CallbackQuery query)
         {
             var msg = query.Message.Text + $"\n\nBeginning build...\n";
+            
             Bot.ReplyToCallback(query, msg);
             //determine what we are building
             var updateType = query.Data.Split('|')[1];
@@ -181,7 +182,7 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        static async Task<string> QueueBuild(string buildDefinitionName)
+        public static async Task<string> QueueBuild(string buildDefinitionName)
         {
             try
             {

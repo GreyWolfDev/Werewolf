@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.25914.0
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5705B048-D74A-4451-8FB4-4C35B54C0D14}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,7 +28,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildAutomation", "BuildAut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot Watcher", "Bot Watcher\Bot Watcher.csproj", "{F1C275FB-A46D-491B-9D88-4A954F079B8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegram.Bot", "Telegram.Bot\Telegram.Bot.csproj", "{5436A4DF-7B54-41D3-855F-AD3F516AE377}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearUpdates", "ClearUpdates\ClearUpdates.csproj", "{803430A7-CF3C-49A2-B36F-767E82C27F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegram.Bot", "Telegram.Bot\Telegram.Bot.csproj", "{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -114,14 +116,22 @@ Global
 		{F1C275FB-A46D-491B-9D88-4A954F079B8E}.Release 2|Any CPU.Build.0 = Release|Any CPU
 		{F1C275FB-A46D-491B-9D88-4A954F079B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C275FB-A46D-491B-9D88-4A954F079B8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Beta|Any CPU.ActiveCfg = Beta|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Beta|Any CPU.Build.0 = Beta|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Release 2|Any CPU.ActiveCfg = Release|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Release 2|Any CPU.Build.0 = Release|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5436A4DF-7B54-41D3-855F-AD3F516AE377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Beta|Any CPU.ActiveCfg = Release|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Beta|Any CPU.Build.0 = Release|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Release 2|Any CPU.ActiveCfg = Release|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Release 2|Any CPU.Build.0 = Release|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803430A7-CF3C-49A2-B36F-767E82C27F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Beta|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Beta|Any CPU.Build.0 = Release|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Release 2|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Release 2|Any CPU.Build.0 = Release|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -51,7 +51,7 @@ namespace Database
             }
 
             
-            RemoveFlag(GroupConfig.Update);
+            //RemoveFlag(GroupConfig.Update);
         }
 
         public bool HasFlag(GroupConfig flag)

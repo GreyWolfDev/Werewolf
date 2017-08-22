@@ -28,6 +28,11 @@ namespace Database
         ShowRolesDeath = 64,
         [Editable(true), Question("flee"), DefaultValue(true)]
         AllowFlee = 128,
+        [Editable(true), Question("showid", SettingQuestion.ShowHide), DefaultValue(false)]
+        ShowIDs = 256,
+        [Editable(true), Question("allownsfw"), DefaultValue(false)]
+        AllowNSFW = 512,
+
 
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings

@@ -11,6 +11,7 @@ using System.Threading;
 using System.Xml.Linq;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using File = System.IO.File;
 
@@ -79,6 +80,12 @@ namespace Werewolf_Control.Helpers
             {
                 var langfile = new LangFile(Path.Combine(Bot.LanguageDirectory, $"{file}.xml"));
                 result += $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})\n";
+                if (errors.Any(x => x.Level == ErrorLevel.Ads))
+                {
+                    result += "*Ads detected:";
+                    result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Ads).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                    continue;
+                }
                 if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
                 {
                     result += "_Duplicated Strings: _";
@@ -95,12 +102,12 @@ namespace Werewolf_Control.Helpers
                 result += "\n";
                 
             }
-            Bot.Api.SendTextMessage(id, result, parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(id, result, parseMode: ParseMode.Markdown);
             var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == (choice ?? x.Base)).OrderBy(x => x.LatestUpdate);
             result = $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
             result += $"\nMost recently updated file: {sortedfiles.Last().FileName}.xml ({sortedfiles.Last().LatestUpdate.ToString("MMM dd")})\nLeast recently updated file: {sortedfiles.First().FileName}.xml ({sortedfiles.First().LatestUpdate.ToString("MMM dd")})";
 
-            Bot.Api.EditMessageText(id, msgId, result, parseMode: ParseMode.Markdown);
+            Bot.Api.EditMessageTextAsync(id, msgId, result, parseMode: ParseMode.Markdown);
         }
 
         public static void ValidateLanguageFile(long id, string filePath, int msgId)
@@ -122,42 +129,50 @@ namespace Werewolf_Control.Helpers
             
             //send the result
             var result = $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})" + Environment.NewLine;
-            if (errors.Any(x => x.Level == ErrorLevel.Error))
+            if (errors.Any(x => x.Level == ErrorLevel.Ads))
             {
-                result += "_Errors:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                result += "*ADS DETECTED*\n";
+                result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
-            if (errors.Any(x => x.Level == ErrorLevel.MissingString))
+            else
             {
-                result += "_Missing Values:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
-            }
-            if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
-            {
-                result += "\n_Duplicated Strings:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
-            }
-            if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
-            {
-                result += "\n_Join commands:_\n";
-                result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
-            }
-            if (errors.Any(x=> x.Level == ErrorLevel.FatalError))
-            {
-                result += "\n*Fatal errors:*\n";
-                result = errors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n");
+                if (errors.Any(x => x.Level == ErrorLevel.Error))
+                {
+                    result += "_Errors:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.MissingString))
+                {
+                    result += "_Missing Values:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.DuplicatedString))
+                {
+                    result += "\n_Duplicated Strings:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.JoinLink))
+                {
+                    result += "\n_Join commands:_\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + fileError.Key + ", ").TrimEnd(',', ' ') + "\n";
+                }
+                if (errors.Any(x => x.Level == ErrorLevel.FatalError))
+                {
+                    result += "\n*Fatal errors:*\n";
+                    result = errors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n");
+                }
             }
             result += "\n";
             //Program.Send(result, id);
             Thread.Sleep(500);
             result += $"*Validation complete*.\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
-            Bot.Api.EditMessageText(id, msgId, result, parseMode: ParseMode.Markdown);
+            Bot.Api.EditMessageTextAsync(id, msgId, result, parseMode: ParseMode.Markdown);
 
         }
 
         internal static void UploadFile(string fileid, long id, string newFileCorrectName, int msgID)
         {
-            var file = Bot.Api.GetFile(fileid).Result;
+            var file = Bot.Api.GetFileAsync(fileid).Result;
             var path = Directory.CreateDirectory(Bot.TempLanguageDirectory);
             //var fileName = file.FilePath.Substring(file.FilePath.LastIndexOf("/") + 1);
             var uri = $"https://api.telegram.org/file/bot{Bot.TelegramAPIKey}/{file.FilePath}";
@@ -223,25 +238,25 @@ namespace Werewolf_Control.Helpers
             }
 
             //send the validation result
-            Bot.Api.SendTextMessage(id, OutputResult(newFile, newFileErrors, curFile, curFileErrors), parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(id, OutputResult(newFile, newFileErrors, curFile, curFileErrors), parseMode: ParseMode.Markdown);
             Thread.Sleep(500);
 
 
-            if (newFileErrors.All(x => x.Level != ErrorLevel.FatalError))
+            if (newFileErrors.All(x => x.Level != ErrorLevel.FatalError && x.Level != ErrorLevel.Ads))
             {
                 //load up each file and get the names
                 var buttons = new[]
                 {
-                    new InlineKeyboardButton($"New", $"upload|{id}|{newFile.FileName}"),
-                    new InlineKeyboardButton($"Old", $"upload|{id}|current")
+                    new InlineKeyboardCallbackButton($"New", $"upload|{id}|{newFile.FileName}"),
+                    new InlineKeyboardCallbackButton($"Old", $"upload|{id}|current")
                 };
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
-                Bot.Api.SendTextMessage(id, "Which file do you want to keep?", replyToMessageId: msgID,
+                Bot.Api.SendTextMessageAsync(id, "Which file do you want to keep?", replyToMessageId: msgID,
                     replyMarkup: menu);
             }
             else
             {
-                Bot.Api.SendTextMessage(id, "Fatal errors present, cannot upload.", replyToMessageId: msgID);
+                Bot.Api.SendTextMessageAsync(id, "Fatal errors present, cannot upload.", replyToMessageId: msgID);
             }
         }
 
@@ -251,7 +266,7 @@ namespace Werewolf_Control.Helpers
         {
             var msg = "Moving file to production..\n";
             msg += "Checking paths for duplicate language file...\n";
-            Bot.Api.EditMessageText(id, msgId, msg);
+            Bot.Api.EditMessageTextAsync(id, msgId, msg);
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
             var langPath = Bot.LanguageDirectory;
@@ -284,7 +299,7 @@ namespace Werewolf_Control.Helpers
                 {
                     msg += $"Found duplicate language (matching base and variant) with filename {Path.GetFileNameWithoutExtension(lang.FilePath)}\n";
                     msg += "Aborting!";
-                    Bot.Api.EditMessageText(id, msgId, msg);
+                    Bot.Api.EditMessageTextAsync(id, msgId, msg);
                     return;
                 }
             }
@@ -297,12 +312,12 @@ namespace Werewolf_Control.Helpers
 //#elif RELEASE2
 //            msg += $"File copied to bot 2\n";
 //#endif
-            //Bot.Api.EditMessageText(id, msgId, msg);
+            //Bot.Api.EditMessageTextAsync(id, msgId, msg);
 //#if RELEASE
 //            copyToPath = copyToPath.Replace("Werewolf 3.0", "Werewolf 3.0 Clone");
 //            System.IO.File.Copy(newFilePath, copyToPath, true);
 //            msg += $"File copied to bot 2\n";
-//            Bot.Api.EditMessageText(id, msgId, msg);
+//            Bot.Api.EditMessageTextAsync(id, msgId, msg);
 //#endif
             //var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             //File.Copy(newFilePath, gitPath, true);
@@ -362,7 +377,7 @@ namespace Werewolf_Control.Helpers
             //}
             msg += "\n<b>Operation complete.</b>";
 
-            Bot.Api.EditMessageText(id, msgId, msg, parseMode: ParseMode.Html);
+            Bot.Api.EditMessageTextAsync(id, msgId, msg, parseMode: ParseMode.Html);
         }
 
         public static void SendAllFiles(long id)
@@ -385,7 +400,7 @@ namespace Werewolf_Control.Helpers
             
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendDocument(id, new FileToSend("languages.zip", fs));
+            Bot.Api.SendDocumentAsync(id, new FileToSend("languages.zip", fs));
         }
 
         public static void SendFile(long id, string choice)
@@ -393,7 +408,7 @@ namespace Werewolf_Control.Helpers
             var langOptions = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
-            Bot.Api.SendDocument(id, new FileToSend(option.FileName + ".xml", fs));
+            Bot.Api.SendDocumentAsync(id, new FileToSend(option.FileName + ".xml", fs));
         }
         
         internal static void SendBase(string choice, long id)
@@ -414,12 +429,12 @@ namespace Werewolf_Control.Helpers
                 }
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocument(id, new FileToSend($"{zipname}.zip", fs));
+                Bot.Api.SendDocumentAsync(id, new FileToSend($"{zipname}.zip", fs));
                 
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessage(id, e.Message);
+                Bot.Api.SendTextMessageAsync(id, e.Message);
             }
         }
 
@@ -446,36 +461,44 @@ namespace Werewolf_Control.Helpers
         private static string OutputResult(LangFile newFile, List<LanguageError> newFileErrors, LangFile curFile, List<LanguageError> curFileErrors)
         {
             var result = $"NEW FILE\n*{newFile.FileName}.xml - ({newFile.Name ?? ""})*" + Environment.NewLine;
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
+            if (newFileErrors.Any(x => x.Level == ErrorLevel.Ads))
             {
-                result += "_Errors:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                result += "*ADS DETECTED*\n";
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.MissingString))
+            else
             {
-                result += "_Missing Values:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
-            }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.DuplicatedString))
-            {
-                result += "\n_Warning:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
-                result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
-            }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.JoinLink))
-            {
-                result += "\n_Join commands detected:_\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
-                result += "These strings won't be used, and will fall back to English, until you remove `/join` from them.\n\n";
-            }
-            if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
-            {
-                result += "\n*Fatal errors:*\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
-            }
-            if (newFileErrors.Count == 0)
-            {
-                result += "_No errors_\n";
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.Error))
+                {
+                    result += "_Errors:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.MissingString))
+                {
+                    result += "_Missing Values:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.MissingString).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.DuplicatedString))
+                {
+                    result += "\n_Warning:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.DuplicatedString).Aggregate(result, (current, fileError) => current + $"{fileError.Message}\n");
+                    result += "The second instance of the string won't be used, unless you move one of the two values inside the other. Check the latest English file to see how this is fixed.\n\n";
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.JoinLink))
+                {
+                    result += "\n_Join commands detected:_\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.JoinLink).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                    result += "These strings won't be used, and will fall back to English, until you remove `/join` from them.\n\n";
+                }
+                if (newFileErrors.Any(x => x.Level == ErrorLevel.FatalError))
+                {
+                    result += "\n*Fatal errors:*\n";
+                    result = newFileErrors.Where(x => x.Level == ErrorLevel.FatalError).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n{fileError.Message}\n\n");
+                }
+                if (newFileErrors.Count == 0)
+                {
+                    result += "_No errors_\n";
+                }
             }
             if (curFile != null)
             {
@@ -589,6 +612,7 @@ namespace Werewolf_Control.Helpers
 
     public enum ErrorLevel
     {
-        DuplicatedString, MissingString, Error, FatalError, JoinLink
+        DuplicatedString, MissingString, Error, FatalError, JoinLink,
+        Ads
     }
 }

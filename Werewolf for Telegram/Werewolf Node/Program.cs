@@ -19,6 +19,7 @@ using Message = TcpFramework.Message;
 
 namespace Werewolf_Node
 {
+
     class Program
     {
         
@@ -26,7 +27,7 @@ namespace Werewolf_Node
         internal static int ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
-        internal static Client Bot;
+        internal static TelegramBotClient Bot;
         internal static User Me;
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
@@ -97,8 +98,8 @@ namespace Werewolf_Node
 #elif BETA
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
-            Bot = new Client(APIToken, Path.Combine(RootDirectory, "..\\Logs"));
-            Me = Bot.GetMe().Result;
+            Bot = new TelegramBotClient(APIToken);
+            Me = Bot.GetMeAsync().Result;
             ClientId = R.Next(100000);
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
@@ -250,6 +251,9 @@ namespace Werewolf_Node
                                 var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
                                 game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
                                 game?.ShowJoinButton();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine(jbri.GroupId);
+                                Console.ForegroundColor = ConsoleColor.Gray;
                                 break;
                             default:
                                 Console.WriteLine(msg);
@@ -309,16 +313,16 @@ namespace Werewolf_Node
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                return await Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)
             {
-                return await Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else
             {
-                return await Bot.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessageAsync(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
         }
 
@@ -415,9 +419,16 @@ namespace Werewolf_Node
 
                     foreach (var g in games)
                     {
-                        if (g.Players == null)
+                        if (g?.Players == null)
                         {
-                            Games.Remove(g);
+                            try
+                            {
+                                Games.Remove(g);
+                            }
+                            catch
+                            {
+                                // ignored, it was already removed
+                            }
                             continue;
                         }
                         var gi = new GameInfo

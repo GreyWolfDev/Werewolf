@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace Telegram.Bot.Types.InputMessageContents
 {
     /// <summary>
-    /// Represents the content of a venue message to be sent as the result of an inline query.
+    /// Represents the content of a <see cref="Venue"/> message to be sent as the result of an <see cref="InlineQuery"/>.
     /// </summary>
     [JsonObject(MemberSerialization.OptIn)]
     public class InputVenueMessageContent : InputMessageContent
@@ -35,7 +35,7 @@ namespace Telegram.Bot.Types.InputMessageContents
         /// <summary>
         /// Optional. Foursquare identifier of the venue, if known
         /// </summary>
-        [JsonProperty("foursquare_id", Required = Required.Default)]
+        [JsonProperty("foursquare_id", Required = Required.Default, DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
         public string FoursquareId { get; set; }
     }
 }

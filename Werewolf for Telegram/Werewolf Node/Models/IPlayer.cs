@@ -115,6 +115,9 @@ namespace Werewolf_Node.Models
         public int MayorLynchAfterRevealCount { get; set; } = 0;
         public int BeingVisitedSameNightCount { get; set; } = 0;
         public bool BusyNight { get; set; } = false;
+        public int DonationLevel { get; set; } = 0;
+        public bool Founder { get; set; } = false;
+        public CustomGifData GifPack { get; set; } = null;
 
         #endregion
 
