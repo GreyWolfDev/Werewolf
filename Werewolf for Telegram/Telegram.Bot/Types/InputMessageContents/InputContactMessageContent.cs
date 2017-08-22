@@ -1,9 +1,9 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Telegram.Bot.Types.InputMessageContents
 {
     /// <summary>
-    /// Represents the content of a contact message to be sent as the result of an <see cref="InlineQuery"/>.
+    /// Represents the content of a contact message to be sent as the result of an inline query.
     /// </summary>
     [JsonObject(MemberSerialization.OptIn)]
     public class InputContactMessageContent : InputMessageContent
@@ -23,7 +23,7 @@ namespace Telegram.Bot.Types.InputMessageContents
         /// <summary>
         /// Optional. Contact's last name
         /// </summary>
-        [JsonProperty("last_name", Required = Required.Default, DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [JsonProperty("last_name", Required = Required.Default)]
         public string LastName { get; set; }
     }
 }

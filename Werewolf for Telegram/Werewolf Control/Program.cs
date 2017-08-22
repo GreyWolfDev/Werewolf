@@ -42,7 +42,7 @@ namespace Werewolf_Control
                 using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
-                    sw.WriteLine(DateTime.Now);
+                    sw.WriteLine(DateTime.UtcNow);
                     sw.WriteLine(e.Message);
                     sw.WriteLine(e.StackTrace + "\n");
                     if (eventArgs.IsTerminating)
@@ -163,7 +163,7 @@ namespace Werewolf_Control
             //{
             //    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
             //    {
-            //        sw.WriteLine($"{DateTime.Now} - {s}");
+            //        sw.WriteLine($"{DateTime.UtcNow} - {s}");
             //    }
             //}
             //catch
@@ -240,7 +240,7 @@ namespace Werewolf_Control
                     var TotalPlayers = Nodes.Sum(x => x.TotalPlayers);
                     var TotalGames = Nodes.Sum(x => x.TotalGames);
                     //var NumThreads = Process.GetCurrentProcess().Threads.Count;
-                    var Uptime = DateTime.Now - Bot.StartTime;
+                    var Uptime = DateTime.UtcNow - Bot.StartTime;
                     var MessagesRx = Bot.MessagesProcessed;
                     var CommandsRx = Bot.CommandsReceived;
                     var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
@@ -248,7 +248,7 @@ namespace Werewolf_Control
                     if (CurrentGames > MaxGames)
                     {
                         MaxGames = CurrentGames;
-                        MaxTime = DateTime.Now;
+                        MaxTime = DateTime.UtcNow;
                     }
                     //Threads: {NumThreads}\t
                     var msg =

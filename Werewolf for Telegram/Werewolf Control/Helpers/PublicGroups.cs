@@ -16,19 +16,19 @@ namespace Werewolf_Control.Helpers
         //private static DateTime _lastGet = DateTime.MinValue;
         //internal static List<v_PublicGroups> GetAll()
         //{
-        //    if (_lastGet < DateTime.Now.AddMinutes(-20))
+        //    if (_lastGet < DateTime.UtcNow.AddMinutes(-20))
         //    {
         //        //only refresh the list cache once every 20 minutes
         //        using (var db = new WWContext())
         //            _list = db.v_PublicGroups.ToList();
-        //        _lastGet = DateTime.Now;
+        //        _lastGet = DateTime.UtcNow;
         //    }
         //    return _list;
         //}
 
         //internal static List<string> GetBaseLanguages()
         //{
-        //    if (_lastGet < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+        //    if (_lastGet < DateTime.UtcNow.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
         //    {
         //        var langs = new List<string>();
         //        foreach (var lang in LanguageHelper.GetAllLanguages())
@@ -41,7 +41,7 @@ namespace Werewolf_Control.Helpers
         //            }
         //        }
         //        _langs = langs;
-        //        _lastGet = DateTime.Now;
+        //        _lastGet = DateTime.UtcNow;
         //    }
         //    return _langs;
         //}
@@ -64,19 +64,19 @@ namespace Werewolf_Control.Helpers
         private static Dictionary<string, DateTime> _lastGetVariant = new Dictionary<string, DateTime>();
         internal static List<v_GroupRanking> GetAll()
         {
-            if (_lastGetAll < DateTime.Now.AddMinutes(-20))
+            if (_lastGetAll < DateTime.UtcNow.AddMinutes(-20))
             {
                 //only refresh the list cache once every 20 minutes
                 using (var db = new WWContext())
                     _list = db.v_GroupRanking.ToList();
-                _lastGetAll = DateTime.Now;
+                _lastGetAll = DateTime.UtcNow;
             }
             return _list;
         }
 
         internal static List<string> GetBaseLanguages()
         {
-            if (_lastGetBase < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+            if (_lastGetBase < DateTime.UtcNow.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
             {
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages())
@@ -89,14 +89,14 @@ namespace Werewolf_Control.Helpers
                     }
                 }
                 _langs = langs;
-                _lastGetBase = DateTime.Now;
+                _lastGetBase = DateTime.UtcNow;
             }
             return _langs;
         }
 
         internal static List<string> GetVariants(string baseLang)
         {
-            if (!_lastGetVariant.ContainsKey(baseLang) || _lastGetVariant[baseLang] < DateTime.Now.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+            if (!_lastGetVariant.ContainsKey(baseLang) || _lastGetVariant[baseLang] < DateTime.UtcNow.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
             {
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang))
@@ -109,7 +109,7 @@ namespace Werewolf_Control.Helpers
                     }
                 }
                 _variants[baseLang] = langs;
-                _lastGetVariant[baseLang] = DateTime.Now;
+                _lastGetVariant[baseLang] = DateTime.UtcNow;
             }
             return _variants[baseLang];
         }
