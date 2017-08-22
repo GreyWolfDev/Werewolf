@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -231,21 +232,21 @@ namespace Werewolf_Node
                                     Guid = g.Guid,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
-                                    Players = new HashSet<IPlayer>(g.Players?.Select(x => new IPlayer
+                                    Players = g.Players?.Select(x => new 
                                     {
-                                        Bitten = x.Bitten,
-                                        Bullet = x.Bullet,
-                                        Choice = x.Choice,
-                                        CurrentQuestion = x.CurrentQuestion,
-                                        DonationLevel = x.DonationLevel,
-                                        IsDead = x.IsDead,
-                                        Name = x.Name,
-                                        LoverId = x.LoverId,
-                                        PlayerRole = x.PlayerRole,
-                                        Team = x.Team,
-                                        Votes = x.Votes,
-                                        Id = x.Id
-                                    })??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
+                                        x.Bitten,
+                                        x.Bullet,
+                                        x.Choice,
+                                        x.CurrentQuestion,
+                                        x.DonationLevel,
+                                        x.IsDead,
+                                        x.Name,
+                                        x.LoverId,
+                                        x.PlayerRole,
+                                        x.Team,
+                                        x.Votes,
+                                        x.Id
+                                    })
                                 };
                                 message.Reply(JsonConvert.SerializeObject(gi));
                                 break;

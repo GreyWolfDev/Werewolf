@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Telegram.Bot.Types;
 
 namespace Werewolf_Node.Models
@@ -13,6 +15,7 @@ namespace Werewolf_Node.Models
         /// <summary>
         /// The players role
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public IRole PlayerRole { get; set; } = IRole.Villager;
 
         /// <summary>
@@ -63,17 +66,20 @@ namespace Werewolf_Node.Models
         public bool HasPM { get; set; } = false;
 
         public bool Fled { get; set; } = false;
+        [JsonConverter(typeof(StringEnumConverter))]
         public ITeam Team { get; set; } = ITeam.Village;
         public bool HasNightAction { get; set; } = false;
         public bool HasDayAction { get; set; } = false;
         public int DayCult { get; set; } = 0;
         public int RoleModel { get; set; } = 0;
+        [JsonConverter(typeof(StringEnumConverter))]
         public IRole KilledByRole { get; set; }
         public bool DiedByVisitingKiller { get; set; } = false;
         public bool DiedByVisitingVictim { get; set; } = false;
         public bool WasSavedLastNight { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
         public IRole OriginalRole { get; set; }
         public bool InLove { get; set; } = false;
         public int LoverId { get; set; } = 0;
@@ -85,7 +91,7 @@ namespace Werewolf_Node.Models
         public bool Won { get; set; } = false;
 
         public int Id;
-
+        [JsonConverter(typeof(StringEnumConverter))]
         public QuestionAsked CurrentQuestion { get; set; }
 
 

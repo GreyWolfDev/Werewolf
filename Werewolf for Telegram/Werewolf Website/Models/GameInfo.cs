@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Werewolf_Node.Models;
 
 namespace Werewolf_Website.Models
 {
