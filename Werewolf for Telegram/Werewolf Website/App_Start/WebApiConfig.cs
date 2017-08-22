@@ -22,7 +22,7 @@ namespace Werewolf_Website
             );
 
 
-            //new Thread(Helpers.StatusMonitor.Start).Start();
+            new Thread(Helpers.StatusMonitor.Start).Start();
         }
     }
 }

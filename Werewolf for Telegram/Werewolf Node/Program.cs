@@ -231,7 +231,21 @@ namespace Werewolf_Node
                                     Guid = g.Guid,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
-                                    Players = new HashSet<IPlayer>(g.Players??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
+                                    Players = new HashSet<IPlayer>(g.Players?.Select(x => new IPlayer
+                                    {
+                                        Bitten = x.Bitten,
+                                        Bullet = x.Bullet,
+                                        Choice = x.Choice,
+                                        CurrentQuestion = x.CurrentQuestion,
+                                        DonationLevel = x.DonationLevel,
+                                        IsDead = x.IsDead,
+                                        Name = x.Name,
+                                        LoverId = x.LoverId,
+                                        PlayerRole = x.PlayerRole,
+                                        Team = x.Team,
+                                        Votes = x.Votes,
+                                        Id = x.Id
+                                    })??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
                                 };
                                 message.Reply(JsonConvert.SerializeObject(gi));
                                 break;
