@@ -238,7 +238,7 @@ namespace Werewolf_Node
                                         Bitten = x.Bitten?"Yes":"No",
                                         x.Bullet,
                                         Choice = g.Players.FirstOrDefault(p => p.Id == x.Choice)?.Name,
-                                        CurrentQuestion = x.CurrentQuestion.QType.ToString(),
+                                        CurrentQuestion = x.CurrentQuestion?.QType.ToString(),
                                         x.DonationLevel,
                                         IsDead = x.IsDead?"Yes":"No",
                                         x.Name,
