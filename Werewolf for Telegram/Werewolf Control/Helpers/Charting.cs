@@ -43,7 +43,7 @@ namespace Werewolf_Control.Helpers
                             start = DateTime.Now.AddHours(-amount);
                             break;
                         default:
-                            Bot.Api.SendTextMessage(u.Message.Chat.Id, "Acceptable intervals are: hour(s), day(s), week(s)");
+                            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Acceptable intervals are: hour(s), day(s), week(s)");
                             break;
                     }
                 }
@@ -201,7 +201,7 @@ sum(count(x.Gameid)) over (partition by players) as Games
         private static void SendImage(string path, long id)
         {
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendPhoto(id, new FileToSend("chart.png", fs));
+            Bot.Api.SendPhotoAsync(id, new FileToSend("chart.png", fs));
         }
     }
 

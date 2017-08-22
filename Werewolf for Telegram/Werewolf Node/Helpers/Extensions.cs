@@ -47,12 +47,31 @@ namespace Werewolf_Node.Helpers
 
         public static string GetName(this IPlayer player, bool menu = false)
         {
-            if (menu)
-                return player.Name;
-            if (!String.IsNullOrEmpty(player.TeleUser.Username))
-                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name.FormatHTML()}</a>";
+            var name = player.Name;
 
-            return player.Name.ToBold();
+            var end = name.Substring(name.Length - Math.Min(name.Length, 5));
+            name = name.Substring(0, Math.Max(name.Length - 5, 0));
+            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
+
+            if (player.GifPack?.ShowBadge ?? false || (player.GifPack == null && player.DonationLevel >= 10))
+            {
+                if (player.DonationLevel >= 100)
+                    end += " 🥇";
+                else if (player.DonationLevel >= 50)
+                    end += " 🥈";
+                else if (player.DonationLevel >= 10)
+                    end += " 🥉";
+                if (player.Founder)
+                    end += "💎";
+            }
+            name += end;
+
+            if (menu)
+                return name;
+            if (!String.IsNullOrEmpty(player.TeleUser.Username))
+                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{name.FormatHTML()}</a>";
+
+            return name.ToBold();
         }
 
         public static string GetFinalEmojis(this IPlayer p)

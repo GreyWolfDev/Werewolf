@@ -15,31 +15,45 @@ namespace Werewolf_Control.Helpers
     {
         private static TelegramClient client;
         internal static string AuthCode = null;
-        public static Task Initialize()
+        public static Task Initialize(long id)
         {
-            client = new TelegramClient(Int32.Parse(RegHelper.GetRegValue("appid")), RegHelper.GetRegValue("apihash"));
+            Commands.Send("Initializing client", id);
+            try
+            {
+                client = new TelegramClient(Int32.Parse(RegHelper.GetRegValue("appid")),
+                    RegHelper.GetRegValue("apihash"));
+            }
+            catch
+            {
+                
+            }
             return client.ConnectAsync();
         }
 
-        private static async Task<bool> AuthUser()
+        private static async Task<bool> AuthUser(long groupId)
         {
+            
             if (client == null || !client.IsUserAuthorized())
             {
                 if (client == null)
-                    await Initialize();
+                    await Initialize(groupId);
 
                 if (client.IsUserAuthorized()) return true;
+                await Commands.Send("User is not logged in.", groupId);
                 var phone = RegHelper.GetRegValue("paraphone");
+                await Commands.Send("Sending code request using Paras phone number", groupId);
                 var hash = await client.SendCodeRequestAsync(phone);
                 await Bot.Send($"Registering bot with phone {phone}, hash code {hash}", UpdateHelper.Devs[0]);
-                await Bot.Send("Please reply to this message with your Telegram authorization code", UpdateHelper.Devs[0]);
-                while (AuthCode == null)
+                await Bot.Send("Please put your Telegram authorization code in the registry as a string value \"authcode\"", UpdateHelper.Devs[0]);
+                var authCode = RegHelper.GetRegValue("authcode");
+                while (authCode == "0")
                 {
                     await Task.Delay(500);
+                    authCode = RegHelper.GetRegValue("authcode");
                 }
                 try
                 {
-                    var user = await client.MakeAuthAsync(phone, hash, AuthCode);
+                    var user = await client.MakeAuthAsync(phone, hash, authCode);
                     await Bot.Send($"Signed in as {user.first_name}", UpdateHelper.Devs[0]);
                 }
                 catch(Exception e)
@@ -52,9 +66,9 @@ namespace Werewolf_Control.Helpers
             return true;
         }
 
-        public static async Task<ChannelInfo> GetChatInfo(string groupName)
+        public static async Task<ChannelInfo> GetChatInfo(string groupName, long groupId)
         {
-            if (! await AuthUser()) return null;
+            if (! await AuthUser(groupId)) return null;
             var result = new ChannelInfo();
             var dialogs = (TLDialogsSlice)await client.GetUserDialogsAsync();
             var main = dialogs.chats.lists.Where(c => c.GetType() == typeof(TLChannel))

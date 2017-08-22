@@ -9,6 +9,7 @@ using Database;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
@@ -20,15 +21,15 @@ namespace Werewolf_Control
         [Command(Trigger = "ping")]
         public static void Ping(Update update, string[] args)
         {
-            var ts = DateTime.UtcNow - update.Message.Date;
-            var send = DateTime.UtcNow;
+            var ts = DateTime.Now - update.Message.Date;
+            var send = DateTime.Now;
             var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
                 $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
             message += $"\nIN last min: {Program.MessagesReceived.Sum()}\nOUT last min: {Program.MessagesSent.Sum()}";
             var result = Bot.Send(message, update.Message.Chat.Id).Result;
-            ts = DateTime.UtcNow - send;
+            ts = DateTime.Now - send;
             message += "\n" + GetLocaleString("Ping2", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}");
-            Bot.Api.EditMessageText(update.Message.Chat.Id, result.MessageId, message);
+            Bot.Api.EditMessageTextAsync(update.Message.Chat.Id, result.MessageId, message);
 
         }
 #if (BETA || DEBUG)
@@ -41,7 +42,7 @@ namespace Werewolf_Control
         [Command(Trigger = "help")]
         public static void Help(Update update, string[] args)
         {
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
+            Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "\n/rolelist (não esqueça de setar /setlang primeiro!)\n[Werewolf Zion Suporte](http://telegram.me/WerewolfZionSuporte)\n[Versão Modificada desse Bot no GitHub](https://github.com/FernandoTBarros/Werewolf)",
                                                         parseMode: ParseMode.Markdown);
         }
 
@@ -69,10 +70,10 @@ namespace Werewolf_Control
         {
             var result = "*Run information*\n";
             result +=
-                $"Uptime: {DateTime.UtcNow - Bot.StartTime}\nConnected Nodes: {Bot.Nodes.Count}\n" +
+                $"Uptime: {DateTime.Now - Bot.StartTime}\nConnected Nodes: {Bot.Nodes.Count}\n" +
                 $"Current Games: {Bot.Nodes.Sum(x => x.CurrentGames)}\n" +
                 $"Current Players: {Bot.Nodes.Sum(x => x.CurrentPlayers)}";
-            Bot.Api.SendTextMessage(update.Message.Chat.Id, result, parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, result, parseMode: ParseMode.Markdown);
         }
 
         [Command(Trigger = "getstatus")]
@@ -81,9 +82,9 @@ namespace Werewolf_Control
             using (var db = new WWContext())
             {
                 var msg =
-                    db.BotStatus.ToList().Select(x => $"{x.BotName} (@{x.BotLink}):{(x.BotName == "Bot 2" ? "RETIRED" : x.BotStatus)} ").ToList()
+                    db.BotStatus.ToList().Where(x => x.BotName != "Bot 2").Select(x => $"[{x.BotName.Replace("Bot 1", "Moderator")}](https://t.me/{x.BotLink}): *{x.BotStatus}* ").ToList()
                         .Aggregate((a, b) => a + "\n" + b);
-                Send(msg, u.Message.Chat.Id);
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, msg, ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
 
@@ -158,7 +159,7 @@ namespace Werewolf_Control
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -176,7 +177,7 @@ namespace Werewolf_Control
 
             var curLangFileName = GetLanguage(update.Message.From.Id);
             var curLang = langs.FirstOrDefault(x => x.FileName == curLangFileName);
-            Bot.Api.SendTextMessage(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang?.Base),
+            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang?.Base),
                 replyMarkup: menu);
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
@@ -224,6 +225,12 @@ namespace Werewolf_Control
                         return;
                     }
 
+                    if (args[1] == "donatetg")
+                    {
+                        GetDonationInfo(m: u.Message);
+                        return;
+                    }
+
                     //okay, they are joining a game.
 
                     string[] argsSplit = args[1].Split('_');
@@ -267,7 +274,7 @@ namespace Werewolf_Control
 
                     //ok we got the game, now join 
                     //make sure they are member
-                    var status = Bot.Api.GetChatMember(game.GroupId, u.Message.From.Id).Result.Status;
+                    var status = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result.Status;
                     if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
                     {
                         Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
@@ -325,7 +332,7 @@ namespace Werewolf_Control
                 }
 
                 var button = new InlineKeyboardMarkup(new[] {
-                        new InlineKeyboardButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
                     });
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
@@ -347,9 +354,9 @@ namespace Werewolf_Control
         public static void GetLang(Update update, string[] args)
         {
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
-            
-            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
-            buttons.Insert(0, new InlineKeyboardButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
+
+            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            buttons.Insert(0, new InlineKeyboardCallbackButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -366,7 +373,7 @@ namespace Werewolf_Control
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
             try
             {
-                Bot.Api.SendTextMessage(update.Message.Chat.Id, GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
                     replyToMessageId: update.Message.MessageId, replyMarkup: menu);
             }
             catch (AggregateException e)

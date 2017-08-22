@@ -38,6 +38,10 @@ namespace Database
         public Nullable<bool> HasDebugPM { get; set; }
         public Nullable<long> Achievements { get; set; }
         public string WebUserId { get; set; }
+        public Nullable<int> DonationLevel { get; set; }
+        public Nullable<bool> Founder { get; set; }
+        public string CustomGifSet { get; set; }
+        public Nullable<bool> GifPurchased { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameKill> GameKills { get; set; }

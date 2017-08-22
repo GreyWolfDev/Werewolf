@@ -157,7 +157,7 @@ namespace Werewolf_Node
             HunterKillCultChance = 50,
             HunterKillWolfChanceBase = 30,
             SerialKillerConversionChance = 20,
-            AlphaWolfConversionChance = 100,
+            AlphaWolfConversionChance = 20,
             SorcererConversionChance = 40,
             BlacksmithConversionChance = 75,
             PsychicMageConversionChance = 20,

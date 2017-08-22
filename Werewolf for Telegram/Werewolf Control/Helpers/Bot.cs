@@ -24,10 +24,10 @@ namespace Werewolf_Control.Helpers
     {
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static Client Api;
+        public static TelegramBotClient Api;
 
         public static User Me;
-        public static DateTime StartTime = DateTime.UtcNow;
+        public static DateTime StartTime = DateTime.Now;
         public static bool Running = true;
         public static long CommandsReceived = 0;
         public static long MessagesProcessed = 0;
@@ -48,6 +48,7 @@ namespace Werewolf_Control.Helpers
                 return Path.GetDirectoryName(path);
             }
         }
+        internal static string LogDirectory = Path.Combine(RootDirectory, "..\\Logs\\");
         internal delegate void ChatCommandMethod(Update u, string[] args);
         internal static List<Command> Commands = new List<Command>();
 #if DEBUG
@@ -72,8 +73,12 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new Client(TelegramAPIKey, Path.Combine(RootDirectory, "..\\Logs"));
-
+            Api = new TelegramBotClient(TelegramAPIKey, LogDirectory);
+//#if !BETA
+//            Api.Timeout = TimeSpan.FromSeconds(1.5);
+//#else
+//            Api.Timeout = TimeSpan.FromSeconds(20);
+//#endif
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //load the commands list
@@ -97,45 +102,65 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
-            Api.UpdateReceived += UpdateHandler.UpdateReceived;
-            Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
-            Api.ReceiveError += ApiOnReceiveError;
+            Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+            Api.OnUpdate += UpdateHandler.UpdateReceived;
+            Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+            Api.OnReceiveError += ApiOnReceiveError;
+            Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             Api.StatusChanged += ApiOnStatusChanged;
-            Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Me = Api.GetMe().Result;
-
+            //Api.UpdatesReceived += ApiOnUpdatesReceived;
+            Me = Api.GetMeAsync().Result;
+            //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
-                Api.SendTextMessage(updateid, "Control updated\n" + Program.GetVersion());
-            StartTime = DateTime.UtcNow;
+                Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
+            StartTime = DateTime.Now;
+            
             //now we can start receiving
             Api.StartReceiving();
         }
 
-        private static void ApiOnUpdatesReceived(object sender, UpdatesReceivedEventArgs updatesReceivedEventArgs)
+        private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
         {
-            MessagesReceived += updatesReceivedEventArgs.UpdateCount;
+            if (!Api.IsReceiving)
+            {
+                Api.StartReceiving();// cancellationToken: new CancellationTokenSource(1000).Token);
+            }
+            var e = receiveGeneralErrorEventArgs.Exception;
+            using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
+            {
+                sw.WriteLine($"{DateTime.Now} {e.Message} - {e.StackTrace}\n{e.Source}");
+            }
         }
 
-        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
+        private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
+        {
+            
+        }
+
+        private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)
+        {
+            //MessagesReceived += updateEventArgs.UpdateCount;
+        }
+
+        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
             //first answer the callback
-            Bot.Api.AnswerCallbackQuery(query.Id, edit ? null : text, showAlert);
+            Bot.Api.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
             //edit the original message
             if (edit)
-                Edit(query, text, replyMarkup);
+                Edit(query, text, replyMarkup, parsemode);
         }
 
-        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null)
+        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
-            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup);
+            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup, parsemode);
         }
 
-        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
+        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
         {
             Bot.MessagesSent++;
-            return Bot.Api.EditMessageText(id, msgId, text, replyMarkup: replyMarkup);
+            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, replyMarkup: replyMarkup);
         }
 
         private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
@@ -159,14 +184,14 @@ namespace Werewolf_Control.Helpers
                     b.BotStatus = statusChangeEventArgs.Status.ToString();
                     CurrentStatus = b.BotStatus;
                     db.SaveChanges();
-                    
+
                 }
             }
             finally
             {
-                
+
             }
-            
+
         }
 
 
@@ -197,7 +222,7 @@ namespace Werewolf_Control.Helpers
         public static void NodeConnected(Node n)
         {
 #if DEBUG
-            //Api.SendTextMessage(Settings.MainChatId, $"Node connected with guid {n.ClientId}");
+            //Api.SendTextMessageAsync(Settings.MainChatId, $"Node connected with guid {n.ClientId}");
 #endif
         }
 
@@ -205,7 +230,7 @@ namespace Werewolf_Control.Helpers
         public static void Disconnect(this Node n, bool notify = true)
         {
 #if DEBUG
-            //Api.SendTextMessage(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
+            //Api.SendTextMessageAsync(Settings.MainChatId, $"Node disconnected with guid {n.ClientId}");
 #endif
             if (notify && n.Games.Count > 2)
                 foreach (var g in n.Games)
@@ -229,22 +254,22 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
         {
             MessagesSent++;
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                return await Api.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
+                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                return Api.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else if (customMenu != null)
             {
-                return await Api.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else
             {
-                return await Api.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(id, message, disableWebPagePreview: true, parseMode: parseMode);
             }
 
         }

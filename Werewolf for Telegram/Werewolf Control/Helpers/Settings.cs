@@ -36,6 +36,7 @@ namespace Werewolf_Control.Helpers
         public static readonly long VeteranChatId = -1001094614730;
         public static readonly string VeteranChatLink = "werewolfvets";
         public static readonly long TranslationChatId = -1001074012132;
+        public static readonly long AdminChatId = -1001094155678;
 #if RELEASE2
         public static List<string> VillagerDieImages = new List<string> { };
         public static List<string> WolfWin = new List<string> { };

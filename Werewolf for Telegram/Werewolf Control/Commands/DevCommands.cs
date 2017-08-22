@@ -15,12 +15,15 @@ using Database;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
+using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
 using File = System.IO.File;
+using RegHelper = Werewolf_Control.Helpers.RegHelper;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -44,7 +47,7 @@ namespace Werewolf_Control
                 {
                     try
                     {
-                        var r = Bot.Api.SendDocument(u.Message.Chat.Id, g, name + " - " + g).Result;
+                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend(g), name + " - " + g).Result;
                     }
                     catch (AggregateException e)
                     {
@@ -69,7 +72,7 @@ namespace Werewolf_Control
                     {
                         g.CreatedBy = "BAN";
                         db.SaveChanges();
-                        Bot.Api.LeaveChat(groupid);
+                        Bot.Api.LeaveChatAsync(groupid);
                         Send($"{g.Name} has been banned.", u.Message.Chat.Id);
                     }
                 }
@@ -505,164 +508,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            //getting sample data
-            using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\sample.txt")))
-            {
-                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
-                if (channel == null) return;
-                var users = channel.Users.Skip(1000).ToList();
-                sw.WriteLine("User ID | Chat ID | Result");
-                foreach (var u in users)
-                {
-                    sw.Flush();
-                    var id = u.id;
-                    sw.Write($"{id}|{Settings.PrimaryChatId}|");
-                    try
-                    {
-                        var status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
-                        sw.WriteLine(status);
-                    }
-                    catch (AggregateException e)
-                    {
-                        sw.WriteLine(e.InnerExceptions[0].Message);
-                    }
-                    Thread.Sleep(500);
-                }
-                sw.Flush();
-            }
-
-
-            //IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
-            ////get parameters
-            //string[] parms = null;
-            //try
-            //{
-            //    parms = args[1].Split(' ');
-            //}
-            //catch
-            //{
-            //}
-            //if (parms == null || parms.Length != 2)
-            //{
-            //    Send("!test <attempts per game> <games to create per player level>", update.Message.Chat.Id);
-            //    return;
-
-            //}
-            //var attemptCount = int.Parse(parms[0]);
-            //var tries = int.Parse(parms[1]);
-            //BalancedAttempts = new Dictionary<int, List<BalancedGameAttempt>>();
-            //for (var count = 5; count <= 35; count++)
-            //{
-            //    var balancedGameAttempts = new List<BalancedGameAttempt>();
-            //    var success = 0;
-            //    var totalAttempts = 0;
-            //    for (var i = 0; i < tries; i++)
-            //    {
-
-            //        var balanced = false;
-
-            //        List<IRole> rolesToAssign = new List<IRole>();
-            //        int villageStrength = 0, enemyStrength = 0;
-            //        var attempts = 0;
-            //        var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
-            //        while (!balanced)
-            //        {
-            //            attempts++;
-            //            if (attempts >= attemptCount)
-            //                break;
-
-            //            //determine which roles should be assigned
-            //            rolesToAssign = GetRoleList(count);
-            //            rolesToAssign.Shuffle();
-            //            rolesToAssign = rolesToAssign.Take(count).ToList();
-
-
-
-            //            //let's fix some roles that should or shouldn't be there...
-
-            //            //sorcerer or traitor, without wolves, are pointless. change one of them to wolf
-            //            if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor)) &&
-            //                !rolesToAssign.Any(x => WolfRoles.Contains(x)))
-            //            {
-            //                var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
-            //                rolesToAssign[towolf] = WolfRoles[0]; //choose randomly from WolfRoles
-            //            }
-
-            //            //appseer without seer -> seer
-            //            if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
-            //            {
-            //                //substitute with seer
-            //                var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
-            //                rolesToAssign[apps] = IRole.Seer;
-            //            }
-
-            //            //cult without CH -> add CH
-            //            if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
-            //            {
-            //                //just pick a vg, and turn them to CH
-            //                var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-            //                rolesToAssign[vg] = IRole.CultistHunter;
-            //            }
-
-
-            //            //make sure that we have at least two teams
-            //            if (
-            //                rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-            //                && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
-            //            )
-            //                balanced = true;
-            //            //else, redo role assignment. better to rely on randomness, than trying to fix it
-
-            //            //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
-
-            //            villageStrength =
-            //                rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-            //            enemyStrength =
-            //                rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-
-            //            //check balance
-            //            var varianceAllowed = (count / 4) + 1;
-            //            balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-
-
-
-            //        }
-
-            //        totalAttempts += attempts;
-            //        if (balanced)
-            //            success++;
-            //        balancedGameAttempts.Add(new BalancedGameAttempt { AttemptsMade = attempts, Balanced = balanced });
-            //    }
-
-            //    BalancedAttempts.Add(count, balancedGameAttempts);
-            //    //var msg = $"Attempts: {attempts}\n";
-            //    //if (balanced)
-            //    //{
-            //    //    msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
-            //    //    msg +=
-            //    //        $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
-            //    //    msg +=
-            //    //        $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
-            //    //}
-            //    //else
-            //    //{
-            //    //    msg += "Unbalanced :(";
-            //    //}
-
-            //}
-
-            ////calculate totals
-            //var totalPass = BalancedAttempts.Sum(x => x.Value.Count(v => v.Balanced));
-            //var totalGames = BalancedAttempts.Sum(x => x.Value.Count);
-            //var avgAttempts = (BalancedAttempts.Sum(x => x.Value.Sum(v => v.AttemptsMade))) / totalGames;
-
-
-
-            ////calculate success rates per player size
-            //var msg = BalancedAttempts.Aggregate($"Number of games attempted: {totalGames}\nNumber of games per player count: {tries}\nNumber of attempts per game: {attemptCount}\nNumber of balanced games: {totalPass}\nAverage attempts: {avgAttempts}\n", (current, gameSet) => current + $"{gameSet.Key}: {(gameSet.Value.Count(x => x.Balanced) * 100) / tries}% pass\n");
-
-
-            //Send(msg, update.Message.Chat.Id);
+            GetLogs(update, args);
         }
 
         [Attributes.Command(Trigger = "sql", DevOnly = true)]
@@ -757,9 +603,9 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
         {
-            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
+            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardCallbackButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
 
-            Bot.Api.SendTextMessage(u.Message.From.Id, "Which bot?",
+            Bot.Api.SendTextMessageAsync(u.Message.From.Id, "Which bot?",
                 replyMarkup: menu);
             if (u.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(u.Message.From.Id)), u.Message.Chat.Id);
@@ -799,6 +645,9 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
+#if BETA
+            return;
+#endif
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
@@ -974,7 +823,21 @@ namespace Werewolf_Control
                 //now, check the json file
                 var timeStarted = DateTime.Now;
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
-                var channel = CLI.GetChatInfo("WereWuff - The Game").Result;
+                ChannelInfo channel = null;
+                try
+                {
+                    channel = CLI.GetChatInfo("WereWuff - The Game", u.Message.Chat.Id).Result;
+                }
+                catch (AggregateException e)
+                {
+                    Send(e.InnerExceptions[0].Message + "\n" + e.InnerExceptions[0].StackTrace, u.Message.Chat.Id);
+                }
+                catch (Exception e)
+                {
+                    while (e.InnerException != null)
+                        e = e.InnerException;
+                    Send(e.Message + "\n" + e.StackTrace, u.Message.Chat.Id);
+                }
                 if (channel == null) return;
                 var users = channel.Users.Skip(skip).ToList();
                 Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
@@ -994,7 +857,7 @@ namespace Werewolf_Control
                             try
                             {
                                 //check their status first, so we don't make db calls for someone not even in the chat.
-                                status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                             }
                             catch (AggregateException e)
                             {
@@ -1034,7 +897,7 @@ namespace Werewolf_Control
                                 if (status != ChatMemberStatus.Member) //user is not in group, skip
                                     continue;
                                 //kick
-                                Bot.Api.KickChatMember(Settings.PrimaryChatId, id);
+                                Bot.Api.KickChatMemberAsync(Settings.PrimaryChatId, id);
                                 removed++;
                                 sw.Write($"Removed ({p?.Name ?? id.ToString()})");
 
@@ -1045,7 +908,7 @@ namespace Werewolf_Control
                                     //wait for database to report status is kicked.
                                     try
                                     {
-                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                                     }
                                     catch (AggregateException e)
                                     {
@@ -1066,11 +929,11 @@ namespace Werewolf_Control
                                     attempts++;
                                     sw.Write($"{status}");
                                     sw.Flush();
-                                    Bot.Api.UnbanChatMember(Settings.PrimaryChatId, id);
+                                    Bot.Api.UnbanChatMemberAsync(Settings.PrimaryChatId, id);
                                     Thread.Sleep(500);
                                     try
                                     {
-                                        status = Bot.Api.GetChatMember(Settings.PrimaryChatId, id).Result.Status;
+                                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
                                     }
                                     catch (AggregateException e)
                                     {
@@ -1161,7 +1024,7 @@ namespace Werewolf_Control
                     Send("Equipe Zion disse que não posso moderar jogos para vocês mais, vocês são uma má influência! *batida de porta*", grpid)
                         .ContinueWith((result) =>
                         {
-                            Bot.Api.LeaveChat(grpid);
+                            Bot.Api.LeaveChatAsync(grpid);
                         });
                 }
                 catch (Exception e)
@@ -1181,36 +1044,37 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
         public static void Preferred(Update update, string[] args)
         {
+            var group = args[1];
             if (String.IsNullOrEmpty(args[1]))
             {
-                Bot.Send("Usage: `/preferred <link|username|groupid> [Y|N]`\n\nTells if a group is preferred (approved on grouplist). If Y or N is specified, approves / disapproves the group", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
+                Bot.Send("Usage: `/preferred <link|username|groupid>`", update.Message.Chat.Id, parseMode: ParseMode.Markdown);
                 return;
             }
-            var group = args[1].Split(' ').First();
-            var choice = args[1].Split(' ').Skip(1).FirstOrDefault();
             using (var db = new WWContext())
             {
                 Database.Group grp = GetGroup(group, db);
-                if (grp != null)
-                {
-                    var msg = "";
-                    if (choice?.ToUpper() == "Y" || choice?.ToUpper() == "N")
-                    {
-                        bool preferred = (choice.ToUpper() == "Y");
-                        grp.Preferred = preferred;
-                        db.SaveChanges();
-                        msg = (String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>"))
-                            + (preferred ? " will now be able to appear on grouplist" : " won't appear on grouplist anymore");
-                    }
-                    else
-                    {
-                        msg = (String.IsNullOrWhiteSpace(grp.GroupLink) ? grp.Name : ($"<a href=\"{grp.GroupLink}\">{grp.Name}</a>"))
-                            + (grp.Preferred == true ? " can " : " can't ") + "appear on grouplist";
-                    }
-                    Send(msg, update.Message.Chat.Id);
+                if (grp == null) {
+                    Send("Group not found.", update.Message.Chat.Id);
+                    return;
                 }
-                else
-                    Send("Couldn't find the group in the database, so it is likely not to be in the grouplist.", update.Message.Chat.Id);
+                //get the languages which they played, make a menu out of it
+                var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id).ToList();
+                var menu = rankings.Select(x => new[] {
+                        new InlineKeyboardCallbackButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
+                        new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
+                    }).ToList();
+                //add a button at the beginning and at the end
+                menu.Insert(0, new[] {
+                    new InlineKeyboardCallbackButton("Global", $"preferred|{grp.GroupId}|null|info"),
+                    new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                });
+                menu.Add(new[] { new InlineKeyboardCallbackButton("Done", "done") });
+                //send everything
+                Send(
+                    $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
+                    "\n\nSelect the languages under which the group is allowed to appear in grouplist.\nNote that the first option, if disabled, overrides all the others.", 
+                    update.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(menu.ToArray())
+                );
                 return;
             }
         }
@@ -1242,7 +1106,7 @@ namespace Werewolf_Control
                         if (user != null)
                         {
                             //create a menu for this
-                            var buttons = new[] { new InlineKeyboardButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardButton("No", "ohai|no") };
+                            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardCallbackButton("No", "ohai|no") };
                             Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
                                 customMenu: new InlineKeyboardMarkup(buttons));
                         }
@@ -1293,33 +1157,39 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "getlogs", DevOnly = true)]
         public static void GetLogs(Update u, string[] args)
         {
-            var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
-
-            var path = LogPath + "errors.zip";
-            if (File.Exists(path))
+            try
             {
-                File.Delete(path);
-            }
-            var someFileExists = false;
-            using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
-            {
-                var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log" };
+                var LogPath = Path.Combine(Bot.RootDirectory, "..\\Logs\\");
 
-                foreach (var file in files)
+                var path = LogPath + "errors.zip";
+                if (File.Exists(path))
                 {
-                    var fp = LogPath + file;
-                    if (!File.Exists(fp)) continue;
-                    someFileExists = true;
-                    zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                    File.Delete(path);
+                }
+                var someFileExists = false;
+                using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
+                {
+                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", $"getUpdates {DateTime.Now.ToString("MMM-dd-yyyy")}.log" };
+
+                    foreach (var file in files)
+                    {
+                        var fp = LogPath + file;
+                        if (!File.Exists(fp)) continue;
+                        someFileExists = true;
+                        zip.CreateEntryFromFile(fp, file, CompressionLevel.Optimal);
+                    }
+                }
+                //now send the file
+                if (someFileExists)
+                {
+                    var fs = new FileStream(path, FileMode.Open);
+                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
                 }
             }
-            //now send the file
-            if (someFileExists)
+            catch(Exception e)
             {
-                var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocument(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+                Bot.Send(e.Message, u.Message.Chat.Id);
             }
-
         }
 
         [Attributes.Command(Trigger = "movelang", DevOnly = true)]
@@ -1350,7 +1220,7 @@ namespace Werewolf_Control
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
 
-            var buttons = new[] { new InlineKeyboardButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardButton("No", $"movelang|no") };
+            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardCallbackButton("No", $"movelang|no") };
             Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 
@@ -1445,6 +1315,51 @@ namespace Werewolf_Control
             }
 
             Bot.Edit(u.Message.Chat.Id, msgid, msg);
+        }
+
+        [Attributes.Command(Trigger = "user", GlobalAdminOnly = true)]
+        public static void User(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+
+                var t = u.GetTarget(db);
+                if (t == null)
+                {
+                    Send("Not Found", u.Message.Chat.Id);
+                    return;
+                }
+                var result = $"<b>{t.Name.FormatHTML()}</b>\n";
+                if (!String.IsNullOrEmpty(t.UserName))
+                    result += $"@{t.UserName}\n";
+                result += $"------------------\nGames Played: {t.GamePlayers.Count}\nLanguage: {t.Language.FormatHTML()}\nDonation Level: {t.DonationLevel??0}\n";
+                if (t.GamePlayers.Any())
+                    result += $"Played first game: {t.GamePlayers.OrderBy(x => x.Id).First().Game.TimeStarted}\n";
+                var spamBans = t.TempBanCount;
+                if (spamBans > 0)
+                {
+                    result += $"Player has been temp banned {t.TempBanCount} times\n";
+                }
+                //check if currently banned
+                var banned = db.GlobalBans.FirstOrDefault(x => x.TelegramId == t.TelegramId);
+                if (banned != null)
+                {
+                    result += $"\n------------------\n<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {banned.Reason}\nBanned on: {banned.BanDate}\nBanned by: {banned.BannedBy}\n";
+                    if (banned.Expires < DateTime.Now.AddYears(1))
+                    {
+                        var expiry = (banned.Expires - DateTime.Now);
+                        result += $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
+                    }
+                    else
+                        result += $"This ban is permanent.\n";
+                }
+                else if ((spamBans ?? 0) == 0)
+                {
+                    result += "Player is clean, no werewolf bans on record.\n";
+                }
+
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, result, ParseMode.Html);
+            }
         }
 
     }
