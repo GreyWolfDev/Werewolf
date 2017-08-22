@@ -21,7 +21,7 @@
         -->
         <div id="panel-2" class="panel panel-default">
             <div class="panel-heading">
-                <span class="title elipsis">
+                <span class="title elipsis" id="title">
                     <strong>PLAYER LIST</strong> <!-- panel title -->
                 </span>
             </div>
@@ -100,7 +100,7 @@
             success: function(d) {
                 console.log(d);
                 $("#playersTable tbody tr").remove();
-
+                $('#title').html(d.ChatGroup + " - " + d.Cycle + " - " + d.State);
                 $.each(d.Players,
                     function(index, value) {
                         addRow(t, value.Id, value.Name, value.PlayerRole, value.IsDead, value.Choice, value.Votes, value.CurrentQuestion, value.LoverId, value.DonationLevel);
@@ -111,17 +111,13 @@
     };
 
     addRow = function (table, id, name, role, dead, choice, votes, question, lover, donation) {
-        //console.log(dead);
-        var ded = "Yes";
-        if (dead === false) {
-            ded = "No";
-        }
+        
         table.find('tbody')
             .append($('<tr>')
                 .append($('<td>').append(id))
                 .append($('<td>').append(name))
                 .append($('<td>').append(role))
-                .append($('<td>').append(ded))
+                .append($('<td>').append(dead))
                 .append($('<td>').append(choice))
                 .append($('<td>').append(votes))
                 .append($('<td>').append(question))

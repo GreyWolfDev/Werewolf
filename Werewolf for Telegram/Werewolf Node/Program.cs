@@ -235,16 +235,16 @@ namespace Werewolf_Node
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
                                     Players = g.Players?.Select(x => new 
                                     {
-                                        x.Bitten,
+                                        Bitten = x.Bitten?"Yes":"No",
                                         x.Bullet,
-                                        x.Choice,
-                                        x.CurrentQuestion,
+                                        Choice = g.Players.FirstOrDefault(p => p.Id == x.Choice)?.Name,
+                                        CurrentQuestion = x.CurrentQuestion.QType.ToString(),
                                         x.DonationLevel,
-                                        x.IsDead,
+                                        IsDead = x.IsDead?"Yes":"No",
                                         x.Name,
-                                        x.LoverId,
-                                        x.PlayerRole,
-                                        x.Team,
+                                        LoverId = g.Players.FirstOrDefault(p => p.Id == x.LoverId)?.Name,
+                                        PlayerRole = x.PlayerRole.ToString(),
+                                        Team = x.Team.ToString(),
                                         x.Votes,
                                         x.Id
                                     })
