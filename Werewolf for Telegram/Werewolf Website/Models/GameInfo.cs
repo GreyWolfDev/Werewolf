@@ -16,13 +16,23 @@ namespace Werewolf_Website.Models
         public string ChatGroup { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
         public GameState State { get; set; }
-        public HashSet<IPlayer> Players { get; set; } = new HashSet<IPlayer>();
+        public IEnumerable<dynamic> Players { get; set; }
         public Guid NodeId { get; set; }
+        public int PlayerCount { get; set; }
         public string Error { get; set; }
         public string RawData { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public GameTime Cycle { get; set; }
     }
     public enum GameState
     {
         Joining, Running, Dead
+    }
+
+    public enum GameTime
+    {
+        Day,
+        Lynch,
+        Night
     }
 }
