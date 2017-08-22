@@ -39,10 +39,10 @@ namespace ClearUpdates
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            WWAPI = new TelegramBotClient(TelegramAPIKey, "");
+            WWAPI = new TelegramBotClient(TelegramAPIKey);
             WWAPI.OnUpdate += WWAPI_OnUpdate;
             var apikey = key.GetValue("QueueAPI").ToString();
-            Api = new TelegramBotClient(apikey, "");
+            Api = new TelegramBotClient(apikey);
             Api.OnMessage += Api_OnMessage;
             Api.OnUpdate += ApiOnOnUpdate;
             Api.OnCallbackQuery += Api_OnCallbackQuery;
@@ -153,8 +153,8 @@ namespace ClearUpdates
                 if ((total - current) < 50 && total != 0)
                 {
                     WWAPI.StopReceiving();
-                    Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
-                    CheckMessages();
+                    //Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
+                    //CheckMessages();
                     break;
                 }
                 current = total;
@@ -166,8 +166,8 @@ namespace ClearUpdates
         private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
         {
             total++;
-            if ((e.Update.Message?.Text ?? "").StartsWith("/"))
-                mQueue.Enqueue(e.Update.Message);
+            //if ((e.Update.Message?.Text ?? "").StartsWith("/"))
+            //    mQueue.Enqueue(e.Update.Message);
         }
 
         private static Dictionary<int, List<Message>> Commands = new Dictionary<int, List<Message>>();
