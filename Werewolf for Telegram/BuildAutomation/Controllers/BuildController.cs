@@ -25,6 +25,7 @@ namespace BuildAutomation.Controllers
 {
     public class BuildController : ApiController
     {
+        public long GroupId = -1001076212715;
         [HttpPost]
         public HttpResponseMessage Post()
         {
@@ -60,7 +61,7 @@ namespace BuildAutomation.Controllers
                         }
 
 
-                        bot.SendTextMessageAsync(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
+                        bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
                     }
 
                     if (obj.subscriptionId == buildKey)
@@ -81,7 +82,7 @@ namespace BuildAutomation.Controllers
                         if (build.resource.result == "succeeded")
                             msg += "\nRelease is now being created, you will be notified when it is completed.";
 
-                        bot.SendTextMessageAsync(-1001077134233, msg, parseMode: ParseMode.Markdown);
+                        bot.SendTextMessageAsync(GroupId, msg, parseMode: ParseMode.Markdown);
                     }
                 }
                 else
@@ -117,7 +118,7 @@ namespace BuildAutomation.Controllers
 
                     if (!control && !node) //nothing to build
                     {
-                        bot.SendTextMessageAsync(-1001077134233, msg, parseMode: ParseMode.Html,
+                        bot.SendTextMessageAsync(GroupId, msg, parseMode: ParseMode.Html,
                             disableWebPagePreview: true);
                         return Request.CreateResponse(HttpStatusCode.OK);
                     }
@@ -175,7 +176,7 @@ namespace BuildAutomation.Controllers
                     msg += $", on {(beta ? "Beta" : "Release")}\n";
                     msg += "Do you want to build?";
 
-                    var r = bot.SendTextMessageAsync(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Html,
+                    var r = bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Html,
                         disableWebPagePreview: true).Result;
 
 
@@ -188,7 +189,7 @@ namespace BuildAutomation.Controllers
                 var x = e.InnerExceptions[0];
                 while (x.InnerException != null)
                     x = x.InnerException;
-                bot.SendTextMessageAsync(-1001077134233, x.Message + "\n" + x.StackTrace);
+                bot.SendTextMessageAsync(GroupId, x.Message + "\n" + x.StackTrace);
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, x);
             }
             catch (ApiRequestException e)
@@ -197,7 +198,7 @@ namespace BuildAutomation.Controllers
                 var x = e.InnerException;
                 while (x?.InnerException != null)
                     x = x.InnerException;
-                bot.SendTextMessageAsync(-1001077134233, x?.Message + "\n" + x?.StackTrace);
+                bot.SendTextMessageAsync(GroupId, x?.Message + "\n" + x?.StackTrace);
                 return Request.CreateErrorResponse((HttpStatusCode)code, x);
             }
             catch (Exception e)
@@ -205,7 +206,7 @@ namespace BuildAutomation.Controllers
                 //string path = HttpContext.Current.Server.MapPath("~/App_Data/error");
                 while (e.InnerException != null)
                     e = e.InnerException;
-                bot.SendTextMessageAsync(-1001077134233, e.Message + "\n" + e.StackTrace);
+                bot.SendTextMessageAsync(GroupId, e.Message + "\n" + e.StackTrace);
                 //using (var sw = new StreamWriter(path))
                 //{
                 //    sw.WriteLine(e.Message);
