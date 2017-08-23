@@ -22,7 +22,7 @@ namespace ClearUpdates
         static TelegramBotClient WWAPI;
         static TelegramBotClient Api;
         internal static int[] Devs = new[] { 129046388, 133748469, 125311351 };
-        static long DevGroup = -1001077134233;
+        static long DevGroup = -1001076212715;
         static void Main(string[] args)
         {
 
@@ -154,7 +154,7 @@ namespace ClearUpdates
                 {
                     WWAPI.StopReceiving();
                     //Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
-                    //CheckMessages();
+                    CheckMessages();
                     break;
                 }
                 current = total;
@@ -166,8 +166,8 @@ namespace ClearUpdates
         private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
         {
             total++;
-            //if ((e.Update.Message?.Text ?? "").StartsWith("/"))
-            //    mQueue.Enqueue(e.Update.Message);
+            if ((e.Update.Message?.Text ?? "").StartsWith("/"))
+                mQueue.Enqueue(e.Update.Message);
         }
 
         private static Dictionary<int, List<Message>> Commands = new Dictionary<int, List<Message>>();
