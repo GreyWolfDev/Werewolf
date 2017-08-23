@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Telegram.Bot.Types.Payments
 {
-
     /// <summary>
     /// This object contains basic information about an invoice.
     /// </summary>
@@ -46,4 +40,3 @@ namespace Telegram.Bot.Types.Payments
         public int TotalAmount { get; set; }
     }
 }
-

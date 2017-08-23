@@ -25,5 +25,6 @@ namespace Werewolf_Control.Models
         public string SerialKillerWins { get; set; }
         public string LoversWin { get; set; }
         public bool ShowBadge { get; set; } = true;
+        public bool Submitted { get; set; }
     }
 }

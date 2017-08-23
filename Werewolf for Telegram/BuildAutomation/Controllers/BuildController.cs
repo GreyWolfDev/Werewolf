@@ -14,8 +14,10 @@ using BuildAutomation.Models.Release;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Task = System.Threading.Tasks.Task;
 
@@ -42,23 +44,29 @@ namespace BuildAutomation.Controllers
                         var beta = obj.resource.environment.name.Contains("Beta");
                         var node = obj.resource.environment.name.Contains("Node");
 
-                        
+
 
                         var msg = obj.detailedMessage.markdown;
                         InlineKeyboardMarkup menu = null;
                         if (obj.resource.environment.status == "succeeded")
                         {
                             msg += "\nDo you want me to copy the files and update?";
-                            menu = new InlineKeyboardMarkup(new [] {new InlineKeyboardButton("Yes", $"update|{(beta?"beta":"release")}{(node?"node":"control")}"), new InlineKeyboardButton("No", "update|no") });
+                            menu = new InlineKeyboardMarkup(new[]
+                            {
+                                new InlineKeyboardCallbackButton("Yes",
+                                    $"update|{(beta ? "beta" : "release")}{(node ? "node" : "control")}"),
+                                new InlineKeyboardCallbackButton("No", "update|no")
+                            });
                         }
 
-                        
-                        bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
+
+                        bot.SendTextMessageAsync(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Markdown);
                     }
 
                     if (obj.subscriptionId == buildKey)
                     {
-                        var build = JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
+                        var build =
+                            JsonConvert.DeserializeObject<BuildEvent>(Request.Content.ReadAsStringAsync().Result);
 
                         var detail = obj.detailedMessage.markdown;
                         if (detail.Contains("\r\n+ Process 'msbuild.exe'"))
@@ -72,8 +80,8 @@ namespace BuildAutomation.Controllers
                             $"Built with commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion}) as latest";
                         if (build.resource.result == "succeeded")
                             msg += "\nRelease is now being created, you will be notified when it is completed.";
-                        
-                        bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Markdown);
+
+                        bot.SendTextMessageAsync(-1001077134233, msg, parseMode: ParseMode.Markdown);
                     }
                 }
                 else
@@ -83,10 +91,11 @@ namespace BuildAutomation.Controllers
                     var msg =
                         $"🔨 <a href='{push.compare}'>{push.commits.Length} new commit{(push.commits.Length > 1 ? "s" : "")} to {push.repository.name}:{push._ref}</a>\n\n";
                     msg = push.commits.Aggregate(msg,
-                        (current, a) => current + $"<a href='{a.url}'>{a.id.Substring(0, 7)}</a>: {a.message} ({a.author.username})\n");
-                    
+                        (current, a) => current +
+                                        $"<a href='{a.url}'>{a.id.Substring(0, 7)}</a>: {a.message} ({a.author.username})\n");
 
-                   
+
+
 
                     //string path = HttpContext.Current.Server.MapPath("~/App_Data/github.json");
                     //using (var sw = new StreamWriter(path))
@@ -108,21 +117,22 @@ namespace BuildAutomation.Controllers
 
                     if (!control && !node) //nothing to build
                     {
-                        bot.SendTextMessage(-1001077134233, msg, parseMode: ParseMode.Html, disableWebPagePreview: true);
+                        bot.SendTextMessageAsync(-1001077134233, msg, parseMode: ParseMode.Html,
+                            disableWebPagePreview: true);
                         return Request.CreateResponse(HttpStatusCode.OK);
                     }
 
 
 
-                    var none = new InlineKeyboardButton("No", "build|no");
+                    var none = new InlineKeyboardCallbackButton("No", "build|no");
                     var yes = "Yes";
-                    var betaControl = new InlineKeyboardButton(yes, "build|betacontrol");
-                    var betaNode = new InlineKeyboardButton(yes, "build|betanode");
-                    var betaBoth = new InlineKeyboardButton(yes, "build|betaboth");
+                    var betaControl = new InlineKeyboardCallbackButton(yes, "build|betacontrol");
+                    var betaNode = new InlineKeyboardCallbackButton(yes, "build|betanode");
+                    var betaBoth = new InlineKeyboardCallbackButton(yes, "build|betaboth");
 
-                    var releaseControl = new InlineKeyboardButton(yes, "build|releasecontrol");
-                    var releaseNode = new InlineKeyboardButton(yes, "build|releasenode");
-                    var releaseBoth = new InlineKeyboardButton(yes, "build|releaseboth");
+                    var releaseControl = new InlineKeyboardCallbackButton(yes, "build|releasecontrol");
+                    var releaseNode = new InlineKeyboardCallbackButton(yes, "build|releasenode");
+                    var releaseBoth = new InlineKeyboardCallbackButton(yes, "build|releaseboth");
                     InlineKeyboardMarkup menu;
 
                     msg += "\nThis commit contains changes to ";
@@ -130,17 +140,17 @@ namespace BuildAutomation.Controllers
                     {
                         if (control && node)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { betaBoth, none });
+                            menu = new InlineKeyboardMarkup(new[] {betaBoth, none});
                             msg += "Control and Node";
                         }
                         else if (control)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { betaControl, none });
+                            menu = new InlineKeyboardMarkup(new[] {betaControl, none});
                             msg += "Control only";
                         }
                         else
                         {
-                            menu = new InlineKeyboardMarkup(new[] { betaNode, none });
+                            menu = new InlineKeyboardMarkup(new[] {betaNode, none});
                             msg += "Node only";
                         }
                     }
@@ -148,34 +158,54 @@ namespace BuildAutomation.Controllers
                     {
                         if (control && node)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { releaseBoth, none });
+                            menu = new InlineKeyboardMarkup(new[] {releaseBoth, none});
                             msg += "Control and Node";
                         }
                         else if (control)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { releaseControl, none });
+                            menu = new InlineKeyboardMarkup(new[] {releaseControl, none});
                             msg += "Control only";
                         }
                         else
                         {
-                            menu = new InlineKeyboardMarkup(new[] { releaseNode, none });
+                            menu = new InlineKeyboardMarkup(new[] {releaseNode, none});
                             msg += "Node only";
                         }
                     }
                     msg += $", on {(beta ? "Beta" : "Release")}\n";
                     msg += "Do you want to build?";
-                    bot.SendTextMessage(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
-                    
+
+                    var r = bot.SendTextMessageAsync(-1001077134233, msg, replyMarkup: menu, parseMode: ParseMode.Html,
+                        disableWebPagePreview: true).Result;
+
+
                 }
 
                 return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (AggregateException e)
+            {
+                var x = e.InnerExceptions[0];
+                while (x.InnerException != null)
+                    x = x.InnerException;
+                bot.SendTextMessageAsync(-1001077134233, x.Message + "\n" + x.StackTrace);
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, x);
+            }
+            catch (ApiRequestException e)
+            {
+                var code = e.ErrorCode;
+                var x = e.InnerException;
+                while (x?.InnerException != null)
+                    x = x.InnerException;
+                bot.SendTextMessageAsync(-1001077134233, x?.Message + "\n" + x?.StackTrace);
+                return Request.CreateErrorResponse((HttpStatusCode)code, x);
             }
             catch (Exception e)
             {
                 //string path = HttpContext.Current.Server.MapPath("~/App_Data/error");
                 while (e.InnerException != null)
                     e = e.InnerException;
-                bot.SendTextMessage(-1001077134233, e.Message + "\n" + e.StackTrace);
+                bot.SendTextMessageAsync(-1001077134233, e.Message + "\n" + e.StackTrace);
                 //using (var sw = new StreamWriter(path))
                 //{
                 //    sw.WriteLine(e.Message);
@@ -183,7 +213,7 @@ namespace BuildAutomation.Controllers
                 //}
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
-
+            
 
         }
     }

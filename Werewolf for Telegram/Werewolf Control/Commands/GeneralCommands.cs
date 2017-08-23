@@ -21,13 +21,13 @@ namespace Werewolf_Control
         [Command(Trigger = "ping")]
         public static void Ping(Update update, string[] args)
         {
-            var ts = DateTime.Now - update.Message.Date;
-            var send = DateTime.Now;
+            var ts = DateTime.UtcNow - update.Message.Date;
+            var send = DateTime.UtcNow;
             var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
                 $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
             message += $"\nIN last min: {Program.MessagesReceived.Sum()}\nOUT last min: {Program.MessagesSent.Sum()}";
             var result = Bot.Send(message, update.Message.Chat.Id).Result;
-            ts = DateTime.Now - send;
+            ts = DateTime.UtcNow - send;
             message += "\n" + GetLocaleString("Ping2", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}");
             Bot.Api.EditMessageTextAsync(update.Message.Chat.Id, result.MessageId, message);
 
@@ -79,9 +79,9 @@ namespace Werewolf_Control
             using (var db = new WWContext())
             {
                 var msg =
-                    db.BotStatus.ToList().Select(x => $"{x.BotName} (@{x.BotLink}):{(x.BotName == "Bot 2" ? "RETIRED" : x.BotStatus)} ").ToList()
+                    db.BotStatus.ToList().Where(x => x.BotName != "Bot 2").Select(x => $"[{x.BotName.Replace("Bot 1", "Moderator")}](https://t.me/{x.BotLink}): *{x.BotStatus}* ").ToList()
                         .Aggregate((a, b) => a + "\n" + b);
-                Send(msg, u.Message.Chat.Id);
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, msg, parseMode: ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
 

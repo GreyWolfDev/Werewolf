@@ -123,7 +123,7 @@ namespace Werewolf_Control
                 if (ban != null)
                 {
                     status = $"<b>Banned for: {ban.Reason}</b>\nBy: {ban.BannedBy} on {ban.BanDate?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper()}\n";
-                    var expire = (ban.Expires - DateTime.Now);
+                    var expire = (ban.Expires - DateTime.UtcNow);
                     if (expire > TimeSpan.FromDays(365))
                     {
                         status += "<b>Perm Ban</b>";
@@ -566,7 +566,7 @@ namespace Werewolf_Control
                     foreach (var p in packs)
                     {
                         var pack = JsonConvert.DeserializeObject<CustomGifData>(p.CustomGifSet);
-                        if (pack.Approved != null) continue;
+                        if (pack.Approved != null || !pack.Submitted) continue;
                         count++;
                         list += p.TelegramId + Environment.NewLine;
                         if (count == 10)
@@ -598,22 +598,22 @@ namespace Werewolf_Control
                     var id = u.Message.From.Id;
                     Send($"Sending gifs for {pid}", id);
                     Thread.Sleep(1000);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.CultWins), "Cult Wins");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.LoversWin), "Lovers Win");
+                    Bot.Api.SendDocumentAsync(id, pack.CultWins, "Cult Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.LoversWin, "Lovers Win");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.NoWinner), "No Winner");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.NoWinner, "No Winner");
+                    Bot.Api.SendDocumentAsync(id, pack.SerialKillerWins, "SK Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");                 
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");      
+                    Bot.Api.SendDocumentAsync(id, pack.StartChaosGame, "Chaos Start");                 
+                    Bot.Api.SendDocumentAsync(id, pack.StartGame, "Normal Start");      
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
+                    Bot.Api.SendDocumentAsync(id, pack.TannerWin, "Tanner Start");
+                    Bot.Api.SendDocumentAsync(id, pack.VillagerDieImage, "Villager Eaten");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.VillagersWin, "Village Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.WolfWin, "Single Wolf Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolvesWin), "Wolf Pack Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
                     var msg = $"Approval Status: ";
                     switch (pack.Approved)
                     {
@@ -633,6 +633,20 @@ namespace Werewolf_Control
                 }
             }
 #endif
+        }
+
+        [Attributes.Command(Trigger = "fi", GlobalAdminOnly = true)]
+        public static void FullInfo(Update u, string[] a)
+        {
+            //this is a combo ping and runinfo, with even more information
+            var ts = DateTime.UtcNow - u.Message.Date;
+            var send = DateTime.UtcNow;
+            var msg = "*Run information*\n" + Program.GetFullInfo();
+            msg += $"\n*Time to receive*: {ts:mm\\:ss\\.ff}";
+            var r = Bot.Send(msg, u.Message.Chat.Id, parseMode: ParseMode.Markdown).Result;
+            ts = DateTime.UtcNow - send;
+            msg += $"\n*Time to reply*: {ts:mm\\:ss\\.ff}";
+            Bot.Api.EditMessageTextAsync(u.Message.Chat.Id, r.MessageId, msg, parseMode: ParseMode.Markdown);
         }
 
         [Attributes.Command(Trigger = "approvegifs", GlobalAdminOnly = true, Blockable = true)]
@@ -723,6 +737,7 @@ namespace Werewolf_Control
                     var id = u.Message.From.Id;
                     pack.Approved = false;
                     pack.ApprovedBy = id;
+                    pack.Submitted = false;
                     pack.DenyReason = reason;
                     var msg = $"Approval Status: ";
                     var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);

@@ -24,10 +24,10 @@ namespace Werewolf_Control.Helpers
     {
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static TelegramBotClient Api;
+        public static Client Api;
 
         public static User Me;
-        public static DateTime StartTime = DateTime.Now;
+        public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
         public static long CommandsReceived = 0;
         public static long MessagesProcessed = 0;
@@ -48,6 +48,7 @@ namespace Werewolf_Control.Helpers
                 return Path.GetDirectoryName(path);
             }
         }
+        internal static string LogDirectory = Path.Combine(RootDirectory, "..\\Logs\\");
         internal delegate void ChatCommandMethod(Update u, string[] args);
         internal static List<Command> Commands = new List<Command>();
 #if DEBUG
@@ -72,8 +73,12 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new TelegramBotClient(TelegramAPIKey);
-
+            Api = new Client(TelegramAPIKey, LogDirectory);
+//#if !BETA
+//            Api.Timeout = TimeSpan.FromSeconds(1.5);
+//#else
+//            Api.Timeout = TimeSpan.FromSeconds(20);
+//#endif
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
             //load the commands list
@@ -97,35 +102,36 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
-            Api.OnUpdate += UpdateHandler.UpdateReceived;
-            Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
-            Api.OnReceiveError += ApiOnReceiveError;
-            Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            //Api. += ApiOnStatusChanged;
-            //Api. += ApiOnUpdatesReceived;
+            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
+            Api.UpdateReceived += UpdateHandler.UpdateReceived;
+            Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
+            Api.ReceiveError += ApiOnReceiveError;
+            //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+            Api.StatusChanged += ApiOnStatusChanged;
+            //Api.UpdatesReceived += ApiOnUpdatesReceived;
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
                 Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
-            StartTime = DateTime.Now;
+            StartTime = DateTime.UtcNow;
+            
             //now we can start receiving
             Api.StartReceiving();
         }
 
-        private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
-        {
-            if (!Api.IsReceiving)
-            {
-                Api.StartReceiving();
-            }
-            var e = receiveGeneralErrorEventArgs.Exception;
-            using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
-            {
-                sw.WriteLine($"{DateTime.Now} {e.Message} - {e.StackTrace}\n{e.Source}");
-            }
-        }
+        //private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
+        //{
+        //    if (!Api.IsReceiving)
+        //    {
+        //        Api.StartReceiving();// cancellationToken: new CancellationTokenSource(1000).Token);
+        //    }
+        //    var e = receiveGeneralErrorEventArgs.Exception;
+        //    using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
+        //    {
+        //        sw.WriteLine($"{DateTime.UtcNow} {e.Message} - {e.StackTrace}\n{e.Source}");
+        //    }
+        //}
 
         private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
         {
@@ -157,36 +163,36 @@ namespace Werewolf_Control.Helpers
             return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, replyMarkup: replyMarkup);
         }
 
-//        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
-//        {
-//            try
-//            {
-//                using (var db = new WWContext())
-//                {
-//                    var id =
-//#if RELEASE
-//                        1;
-//#elif RELEASE2
-//                    2;
-//#elif BETA
-//                    3;
-//#else
-//                    4;
-//#endif
-//                    if (id == 4) return;
-//                    var b = db.BotStatus.Find(id);
-//                    b.BotStatus = statusChangeEventArgs.Status.ToString();
-//                    CurrentStatus = b.BotStatus;
-//                    db.SaveChanges();
-                    
-//                }
-//            }
-//            finally
-//            {
-                
-//            }
-            
-//        }
+        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        {
+            try
+            {
+                using (var db = new WWContext())
+                {
+                    var id =
+#if RELEASE
+                        1;
+#elif RELEASE2
+                    2;
+#elif BETA
+                    3;
+#else
+                    4;
+#endif
+                    if (id == 4) return;
+                    var b = db.BotStatus.Find(id);
+                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+                    CurrentStatus = b.BotStatus;
+                    db.SaveChanges();
+
+                }
+            }
+            finally
+            {
+
+            }
+
+        }
 
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
@@ -198,7 +204,7 @@ namespace Werewolf_Control.Helpers
             var e = receiveErrorEventArgs.ApiRequestException;
             using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
             {
-                sw.WriteLine($"{DateTime.Now} {e.ErrorCode} - {e.Message}\n{e.Source}");
+                sw.WriteLine($"{DateTime.UtcNow} {e.ErrorCode} - {e.Message}\n{e.Source}");
             }
                 
         }
@@ -254,8 +260,8 @@ namespace Werewolf_Control.Helpers
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
-                return Api.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
+                //var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                return Api.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else if (customMenu != null)
             {

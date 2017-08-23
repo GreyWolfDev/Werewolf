@@ -42,7 +42,7 @@ namespace Werewolf_Control
                 using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
-                    sw.WriteLine(DateTime.Now);
+                    sw.WriteLine(DateTime.UtcNow);
                     sw.WriteLine(e.Message);
                     sw.WriteLine(e.StackTrace + "\n");
                     if (eventArgs.IsTerminating)
@@ -163,7 +163,7 @@ namespace Werewolf_Control
             //{
             //    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ControlLog.log"), true))
             //    {
-            //        sw.WriteLine($"{DateTime.Now} - {s}");
+            //        sw.WriteLine($"{DateTime.UtcNow} - {s}");
             //    }
             //}
             //catch
@@ -222,10 +222,56 @@ namespace Werewolf_Control
         //    }
         //}
 
+        internal static string GetFullInfo()
+        {
+            var nodes = Bot.Nodes.OrderBy(x => x.Version).ToList();
+            NodeMessagesSent = nodes.Sum(x => x.MessagesSent);
+            var currentPlayers = nodes.Sum(x => x.CurrentPlayers);
+            var currentGames = nodes.Sum(x => x.CurrentGames);
+            //var NumThreads = Process.GetCurrentProcess().Threads.Count;
+            var uptime = DateTime.UtcNow - Bot.StartTime;
+            var messagesRx = Bot.MessagesProcessed;
+            var commandsRx = Bot.CommandsReceived;
+            var messagesTx = nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
+
+            if (currentGames > MaxGames)
+            {
+                MaxGames = currentGames;
+                MaxTime = DateTime.UtcNow;
+            }
+            //Threads: {NumThreads}\t
+            var msg = 
+                $"`Uptime   : {uptime}`\n" +
+                $"`Nodes    : {nodes.Count}`\n" +
+                $"`Players  : {currentPlayers}`\n" +
+                $"`Games    : {currentGames}`\n" +
+                $"`Msgs Rx  : {messagesRx}`\n" +
+                $"`Cmds Rx  : {commandsRx}`\n" +
+                $"`Msgs Tx  : {messagesTx}`\n" +
+                $"`MPS (IN) : {MessagePxPerSecond}`\n" +
+                $"`MPS (OUT): {MessageTxPerSecond}`\n" +
+                $"`Max Games: {MaxGames} at {MaxTime.ToString("T")}`\n\n";
+
+
+            try
+            {
+                msg = nodes.Aggregate(msg,
+                    (current, n) =>
+                        current +
+                        $"`{(n.ShuttingDown ? "X " : "  ")}{n.ClientId}`\n`  {n.Version}` - *Games: {n.Games.Count}*\n");
+            }
+            catch
+            {
+                // ignored
+            }
+
+            return msg;
+        }
+
         private static void NodeMonitor()
         {
             //wait a bit to allow nodes to register
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 #if !DEBUG
             new Task(Updater.MonitorUpdates).Start();
 #endif
@@ -248,13 +294,17 @@ namespace Werewolf_Control
                     if (CurrentGames > MaxGames)
                     {
                         MaxGames = CurrentGames;
-                        MaxTime = DateTime.Now;
+                        MaxTime = DateTime.UtcNow;
                     }
                     //Threads: {NumThreads}\t
                     var msg =
-                        $"Connected Nodes: {Nodes.Count}  \nCurrent Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \nTotal Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
-                        $"Uptime: {Uptime}\nMessages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\nMessages Per Second (IN): {MessagePxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
-                        $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\n\n";
+                        $"Connected Nodes: {Nodes.Count}  \n" +
+                        $"Current Players: {CurrentPlayers}  \tCurrent Games: {CurrentGames}  \n" +
+                        //$"Total Players: {TotalPlayers}  \tTotal Games: {TotalGames}  \n" +
+                        $"Uptime: {Uptime}\n" +
+                        $"Messages Rx: {MessagesRx}\tCommands Rx: {CommandsRx}\tMessages Tx: {MessagesTx}\n" +
+                        $"Messages Per Second (IN): {MessagePxPerSecond}\tMessage Per Second (OUT): {MessageTxPerSecond}\t\n" +
+                        $"Max Games: {MaxGames} at {MaxTime.ToString("T")}\t\n\n";
 
 
                     try
@@ -268,6 +318,8 @@ namespace Werewolf_Control
                     {
                         // ignored
                     }
+                    msg += new string(' ', Console.WindowWidth);
+                    msg += Environment.NewLine + new string(' ', Console.WindowWidth);
 
                     //for (var i = 0; i < 12; i++)
                     //    msg += new string(' ', Console.WindowWidth);
@@ -311,7 +363,7 @@ namespace Werewolf_Control
                         //we have too many nodes running, kill one.
                         Nodes.First().ShutDown();
                     }
-                    
+
                     if (!MaintMode)
                     {
                         if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))

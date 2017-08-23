@@ -47,7 +47,7 @@ namespace Werewolf_Control
                 {
                     try
                     {
-                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend(g), name + " - " + g).Result;
+                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, g, name + " - " + g).Result;
                     }
                     catch (AggregateException e)
                     {
@@ -587,7 +587,7 @@ namespace Werewolf_Control
                                     Expires = (DateTime)SqlDateTime.MaxValue,
                                     Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                     TelegramId = player.TelegramId,
-                                    BanDate = DateTime.Now,
+                                    BanDate = DateTime.UtcNow,
                                     BannedBy = u.Message.From.FirstName,
                                     Name = player.Name
                                 };
@@ -612,7 +612,7 @@ namespace Werewolf_Control
                                     Expires = (DateTime)SqlDateTime.MaxValue,
                                     Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                     TelegramId = player.TelegramId,
-                                    BanDate = DateTime.Now,
+                                    BanDate = DateTime.UtcNow,
                                     BannedBy = u.Message.From.FirstName,
                                     Name = player.Name
                                 };
@@ -660,7 +660,7 @@ namespace Werewolf_Control
                                 Expires = (DateTime)SqlDateTime.MaxValue,
                                 Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                 TelegramId = player.TelegramId,
-                                BanDate = DateTime.Now,
+                                BanDate = DateTime.UtcNow,
                                 BannedBy = u.Message.From.FirstName,
                                 Name = player.Name
                             };
@@ -740,7 +740,7 @@ namespace Werewolf_Control
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 //now, check the json file
-                var timeStarted = DateTime.Now;
+                var timeStarted = DateTime.UtcNow;
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
                 ChannelInfo channel = null;
                 try
@@ -804,7 +804,7 @@ namespace Werewolf_Control
                             if (gp != null)
                             {
                                 lastPlayed = gp.TimeStarted.Value;
-                                if (gp.TimeStarted >= DateTime.Now.AddDays(-14))
+                                if (gp.TimeStarted >= DateTime.UtcNow.AddDays(-14))
                                     continue;
                             }
 
@@ -909,7 +909,7 @@ namespace Werewolf_Control
 
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Send(
-                    $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.Now - timeStarted}",
+                    $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.UtcNow - timeStarted}",
                     u.Message.Chat.Id);
 
 
@@ -1088,7 +1088,7 @@ namespace Werewolf_Control
                 var someFileExists = false;
                 using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
                 {
-                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log" };
+                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", $"getUpdates {DateTime.UtcNow.ToString("MMM-dd-yyyy")}.log" };
 
                     foreach (var file in files)
                     {
@@ -1234,6 +1234,51 @@ namespace Werewolf_Control
             }
 
             Bot.Edit(u.Message.Chat.Id, msgid, msg);
+        }
+
+        [Attributes.Command(Trigger = "user", GlobalAdminOnly = true)]
+        public static void User(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+
+                var t = u.GetTarget(db);
+                if (t == null)
+                {
+                    Send("Not Found", u.Message.Chat.Id);
+                    return;
+                }
+                var result = $"<b>{t.Name.FormatHTML()}</b>\n";
+                if (!String.IsNullOrEmpty(t.UserName))
+                    result += $"@{t.UserName}\n";
+                result += $"------------------\nGames Played: {t.GamePlayers.Count}\nLanguage: {t.Language.FormatHTML()}\nDonation Level: {t.DonationLevel??0}\n";
+                if (t.GamePlayers.Any())
+                    result += $"Played first game: {t.GamePlayers.OrderBy(x => x.Id).First().Game.TimeStarted}\n";
+                var spamBans = t.TempBanCount;
+                if (spamBans > 0)
+                {
+                    result += $"Player has been temp banned {t.TempBanCount} times\n";
+                }
+                //check if currently banned
+                var banned = db.GlobalBans.FirstOrDefault(x => x.TelegramId == t.TelegramId);
+                if (banned != null)
+                {
+                    result += $"\n------------------\n<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {banned.Reason}\nBanned on: {banned.BanDate}\nBanned by: {banned.BannedBy}\n";
+                    if (banned.Expires < DateTime.UtcNow.AddYears(1))
+                    {
+                        var expiry = (banned.Expires - DateTime.UtcNow);
+                        result += $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
+                    }
+                    else
+                        result += $"This ban is permanent.\n";
+                }
+                else if ((spamBans ?? 0) == 0)
+                {
+                    result += "Player is clean, no werewolf bans on record.\n";
+                }
+
+                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, result, parseMode: ParseMode.Html);
+            }
         }
 
     }

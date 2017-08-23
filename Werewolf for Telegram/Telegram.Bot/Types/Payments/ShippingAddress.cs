@@ -45,5 +45,3 @@ namespace Telegram.Bot.Types.Payments
         public string PostCode { get; set; }
     }
 }
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc.Terms Privacy Security Status Help

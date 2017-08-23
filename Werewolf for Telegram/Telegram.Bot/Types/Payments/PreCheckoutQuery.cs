@@ -3,11 +3,23 @@
 namespace Telegram.Bot.Types.Payments
 {
     /// <summary>
-    /// This object contains basic information about a successful payment.
+    /// This object contains information about an incoming pre-checkout query
     /// </summary>
     [JsonObject(MemberSerialization.OptIn)]
-    public class SuccessfulPayment
+    public class PreCheckoutQuery
     {
+        /// <summary>
+        /// Unique query identifier
+        /// </summary>
+        [JsonProperty("id", Required = Required.Always)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// User who sent the query
+        /// </summary>
+        [JsonProperty("from", Required = Required.Always)]
+        public User From { get; set; }
+
         /// <summary>
         /// Three-letter ISO 4217 currency code
         /// </summary>
@@ -37,17 +49,5 @@ namespace Telegram.Bot.Types.Payments
         /// </summary>
         [JsonProperty("order_info")]
         public OrderInfo OrderInfo { get; set; }
-
-        /// <summary>
-        /// Telegram payment identifier
-        /// </summary>
-        [JsonProperty("telegram_payment_charge_id", Required = Required.Always)]
-        public string TelegramPaymentChargeId { get; set; }
-
-        /// <summary>
-        /// Provider payment identifier
-        /// </summary>
-        [JsonProperty("provider_payment_charge_id", Required = Required.Always)]
-        public string ProviderPaymentChargeId { get; set; }
     }
 }

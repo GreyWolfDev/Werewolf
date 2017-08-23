@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +22,7 @@ namespace Werewolf_Node
 {
 
     class Program
-    {
+    {  
         internal static SimpleTcpClient Client;
         internal static Guid ClientId;
         internal static bool Running = true;
@@ -229,9 +230,24 @@ namespace Werewolf_Node
                                     GroupId = g.ChatId,
                                     NodeId = ClientId,
                                     Guid = g.Guid,
+                                    Cycle = g.Time,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
-                                    Players = new HashSet<IPlayer>(g.Players??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
+                                    Players = g.Players?.Select(x => new 
+                                    {
+                                        Bitten = x.Bitten?"Yes":"No",
+                                        x.Bullet,
+                                        Choice = g.Players.FirstOrDefault(p => p.Id == x.Choice)?.Name,
+                                        CurrentQuestion = x.CurrentQuestion?.QType.ToString(),
+                                        x.DonationLevel,
+                                        IsDead = x.IsDead?"Yes":"No",
+                                        x.Name,
+                                        LoverId = g.Players.FirstOrDefault(p => p.Id == x.LoverId)?.Name,
+                                        PlayerRole = x.PlayerRole.ToString(),
+                                        Team = x.Team.ToString(),
+                                        x.Votes,
+                                        x.Id
+                                    })
                                 };
                                 message.Reply(JsonConvert.SerializeObject(gi));
                                 break;

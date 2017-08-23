@@ -197,6 +197,18 @@ namespace Werewolf_Control
             var choice = q.Data.Split('|')[1].Split(' ')[0];
             if (choice == "submit")
             {
+                using (var db = new WWContext())
+                {
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                    if (p != null)
+                    {
+                        var json = p?.CustomGifSet;
+                        var data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                        data.Submitted = true;
+                        p.CustomGifSet = JsonConvert.SerializeObject(data);
+                        db.SaveChanges();
+                    }
+                }
                 var menu = new Menu(2);
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Review", "reviewgifs|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", "cancel|cancel|cancel"));
