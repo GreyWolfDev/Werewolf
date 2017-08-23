@@ -456,6 +456,8 @@ CREATE TABLE [dbo].[Group](
 	[MemberCount] [int] NULL,
 	[AllowExtend] [bit] NULL,
 	[MaxExtend] [int] NULL,
+	[EnableSecretLynch] [bit] NULL,
+	[Flags] [bigint] NULL,
  CONSTRAINT [PK_Group] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -547,6 +549,10 @@ CREATE TABLE [dbo].[Player](
 	[HasDebugPM] [bit] NULL,
 	[Achievements] [bigint] NULL,
 	[WebUserId] [nvarchar](128) NULL,
+	[DonationLevel] [int] NULL,
+	[Founder] [bit] NULL,
+	[CustomGifSet] [nvarchar](max) NULL,
+	[GifPurchased] [bit] NULL,
  CONSTRAINT [PK_Player] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
