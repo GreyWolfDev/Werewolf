@@ -45,7 +45,7 @@ namespace Werewolf_Node.Helpers
             return str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
         }
 
-        public static string GetName(this IPlayer player, bool menu = false)
+        public static string GetName(this IPlayer player, bool menu = false, bool dead = false)
         {
             var name = player.Name;
 
@@ -69,9 +69,10 @@ namespace Werewolf_Node.Helpers
             if (menu)
                 return name;
             //if (!String.IsNullOrEmpty(player.TeleUser.Username))
-            return $"<a href=\"tg://user?id={player.TeleUser.Id}\">{name.FormatHTML()}</a>";
+            if (!dead)
+                return $"<a href=\"tg://user?id={player.TeleUser.Id}\">{name.FormatHTML()}</a>";
 
-            //return name.ToBold();
+            return name.ToBold();
         }
 
         public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)

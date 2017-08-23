@@ -966,11 +966,11 @@ namespace Werewolf_Node
             }
         }
 
-        private Task<Telegram.Bot.Types.Message> Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null)
+        private Task<Telegram.Bot.Types.Message> Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null, bool notify = false)
         {
             if (id == 0)
                 id = ChatId;
-            return Program.Send(message, id, clearKeyboard, menu, game: this);
+            return Program.Send(message, id, clearKeyboard, menu, game: this, notify: notify);
         }
 
         private void SendGif(string text, string image, long id = 0)
@@ -1007,12 +1007,14 @@ namespace Werewolf_Node
             public bool RequestPM { get; }
             public bool PlayerList { get; set; }
             public bool Joining { get; set; } = false;
+            public bool Notify { get; set; }
 
-            public Message(string msg, string gifid = null, bool requestPM = false)
+            public Message(string msg, string gifid = null, bool requestPM = false, bool notify = false)
             {
                 Msg = msg;
                 GifId = gifid;
                 RequestPM = requestPM;
+                Notify = notify;
             }
         }
 
@@ -1127,7 +1129,7 @@ namespace Werewolf_Node
                             }
                         }
                         else
-                            Send(final);
+                            Send(final, notify: true);
                     }
 
                 }
@@ -1183,7 +1185,7 @@ namespace Werewolf_Node
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
-                                        ($"{p.GetName()}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                                        ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         _playerListChanged = false;
                     }
