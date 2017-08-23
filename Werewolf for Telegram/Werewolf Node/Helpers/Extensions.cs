@@ -67,10 +67,10 @@ namespace Werewolf_Node.Helpers
 
             if (menu)
                 return name;
-            if (!String.IsNullOrEmpty(player.TeleUser.Username))
-                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{name.FormatHTML()}</a>";
+            //if (!String.IsNullOrEmpty(player.TeleUser.Username))
+            return $"<a href=\"tg://user?id={player.TeleUser.Id}\">{name.FormatHTML()}</a>";
 
-            return name.ToBold();
+            //return name.ToBold();
         }
 
         public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)
