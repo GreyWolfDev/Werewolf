@@ -12,8 +12,9 @@ namespace Werewolf_Node.Models
         public string ChatGroup { get; set; }
         public GameState State { get; set; }
         public Guid NodeId { get; set; } = Program.ClientId;
-        public HashSet<IPlayer> Players { get; set; } = new HashSet<IPlayer>();
+        public IEnumerable<dynamic> Players { get; set; }
         public int PlayerCount { get; set; }
+        public Werewolf.GameTime Cycle { get; set; }
     }
 
     public enum GameState

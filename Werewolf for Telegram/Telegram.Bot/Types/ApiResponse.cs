@@ -12,31 +12,37 @@ namespace Telegram.Bot.Types
         /// <summary>
         /// Gets a value indicating whether the request was successful.
         /// </summary>
-        [JsonProperty("ok", Required = Required.Always)]
-        public bool Ok { get; set; }
+        /// <value>
+        ///   <c>true</c> if the request was successful and the result of the query can be found in the ‘result’ field, otherwise <c>false</c>.
+        /// </value>
+        [JsonProperty(PropertyName = "ok", Required = Required.Always)]
+        public bool Ok { get; internal set; }
 
         /// <summary>
         /// Gets the result object.
         /// </summary>
-        [JsonProperty("result", Required = Required.Default)]
-        public T ResultObject { get; set; }
+        /// <value>
+        /// The result object.
+        /// </value>
+        [JsonProperty(PropertyName = "result", Required = Required.Default)]
+        public T ResultObject { get; internal set; }
 
         /// <summary>
         /// Gets the error message.
         /// </summary>
-        [JsonProperty("description", Required = Required.Default)]
-        public string Message { get; set; }
+        /// <value>
+        /// The error message.
+        /// </value>
+        [JsonProperty(PropertyName = "description", Required = Required.Default)]
+        public string Message { get; internal set; }
 
         /// <summary>
         /// Gets the error code.
         /// </summary>
-        [JsonProperty("error_code", Required = Required.Default)]
-        public int Code { get; set; }
-
-        /// <summary>
-        /// Contains information about why a request was unsuccessful.
-        /// </summary>
-        [JsonProperty("parameters")]
-        public ResponseParameters Parameters { get; set; }
+        /// <value>
+        /// The error code.
+        /// </value>
+        [JsonProperty(PropertyName = "error_code", Required = Required.Default)]
+        public int Code { get; internal set; }
     }
 }

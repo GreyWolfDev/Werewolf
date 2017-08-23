@@ -24,10 +24,10 @@ namespace Werewolf_Control.Helpers
     {
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static TelegramBotClient Api;
+        public static Client Api;
 
         public static User Me;
-        public static DateTime StartTime = DateTime.Now;
+        public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
         public static long CommandsReceived = 0;
         public static long MessagesProcessed = 0;
@@ -73,7 +73,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new TelegramBotClient(TelegramAPIKey, LogDirectory);
+            Api = new Client(TelegramAPIKey, LogDirectory);
 //#if !BETA
 //            Api.Timeout = TimeSpan.FromSeconds(1.5);
 //#else
@@ -102,11 +102,11 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
-            Api.OnUpdate += UpdateHandler.UpdateReceived;
-            Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
-            Api.OnReceiveError += ApiOnReceiveError;
-            Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
+            Api.UpdateReceived += UpdateHandler.UpdateReceived;
+            Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
+            Api.ReceiveError += ApiOnReceiveError;
+            //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             Api.StatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
             Me = Api.GetMeAsync().Result;
@@ -114,24 +114,24 @@ namespace Werewolf_Control.Helpers
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
                 Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
-            StartTime = DateTime.Now;
+            StartTime = DateTime.UtcNow;
             
             //now we can start receiving
             Api.StartReceiving();
         }
 
-        private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
-        {
-            if (!Api.IsReceiving)
-            {
-                Api.StartReceiving();// cancellationToken: new CancellationTokenSource(1000).Token);
-            }
-            var e = receiveGeneralErrorEventArgs.Exception;
-            using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
-            {
-                sw.WriteLine($"{DateTime.Now} {e.Message} - {e.StackTrace}\n{e.Source}");
-            }
-        }
+        //private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
+        //{
+        //    if (!Api.IsReceiving)
+        //    {
+        //        Api.StartReceiving();// cancellationToken: new CancellationTokenSource(1000).Token);
+        //    }
+        //    var e = receiveGeneralErrorEventArgs.Exception;
+        //    using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
+        //    {
+        //        sw.WriteLine($"{DateTime.UtcNow} {e.Message} - {e.StackTrace}\n{e.Source}");
+        //    }
+        //}
 
         private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
         {
@@ -204,7 +204,7 @@ namespace Werewolf_Control.Helpers
             var e = receiveErrorEventArgs.ApiRequestException;
             using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
             {
-                sw.WriteLine($"{DateTime.Now} {e.ErrorCode} - {e.Message}\n{e.Source}");
+                sw.WriteLine($"{DateTime.UtcNow} {e.ErrorCode} - {e.Message}\n{e.Source}");
             }
                 
         }
@@ -260,8 +260,8 @@ namespace Werewolf_Control.Helpers
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
-                return Api.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
+                //var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                return Api.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else if (customMenu != null)
             {

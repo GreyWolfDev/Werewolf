@@ -47,7 +47,7 @@ namespace Werewolf_Control.Handler
                     UserMessages.Add(id, new SpamDetector { Messages = new HashSet<UserMessage>() });
                 
                 var shouldReply = (UserMessages[id].Messages.Where(x => x.Replied).OrderByDescending(x => x.Time).FirstOrDefault()?.Time ?? DateTime.MinValue) <
-                       DateTime.Now.AddSeconds(-4);
+                       DateTime.UtcNow.AddSeconds(-4);
 
                 UserMessages[id].Messages.Add(new UserMessage(m){Replied = shouldReply});
                 return !shouldReply;
@@ -78,7 +78,7 @@ namespace Werewolf_Control.Handler
                             if (p != null)
                                 p.TempBanCount = count; //update the count
 
-                            var expireTime = DateTime.Now;
+                            var expireTime = DateTime.UtcNow;
                             switch (count)
                             {
                                 case 1:
@@ -101,7 +101,7 @@ namespace Werewolf_Control.Handler
                                 Expires = expireTime,
                                 TelegramId = id,
                                 Reason = "Spam / Flood",
-                                BanDate = DateTime.Now,
+                                BanDate = DateTime.UtcNow,
                                 Name = name
                             });
                         }
@@ -113,7 +113,7 @@ namespace Werewolf_Control.Handler
 #if RELEASE
                         for (var i = list.Count - 1; i >= 0; i--)
                         {
-                            if (list[i].Expires > DateTime.Now) continue;
+                            if (list[i].Expires > DateTime.UtcNow) continue;
                             db.GlobalBans.Remove(db.GlobalBans.Find(list[i].Id));
                             list.RemoveAt(i);
                         }
@@ -146,7 +146,7 @@ namespace Werewolf_Control.Handler
                         try
                         {
                             //drop older messages (1 minute)
-                            temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
+                            temp[key].Messages.RemoveWhere(x => x.Time < DateTime.UtcNow.AddMinutes(-1));
 
                             //comment this out - if we remove it, it doesn't keep the warns
                             //if (temp[key].Messages.Count == 0)
@@ -542,9 +542,9 @@ namespace Werewolf_Control.Handler
                                     if (p != null)
                                     {
                                         var result = $"<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {p.Reason}\nBanned on: {p.BanDate}\nBanned by: {p.BannedBy}\n";
-                                        if (p.Expires < DateTime.Now.AddYears(5))
+                                        if (p.Expires < DateTime.UtcNow.AddYears(5))
                                         {
-                                            var expiry = (p.Expires - DateTime.Now);
+                                            var expiry = (p.Expires - DateTime.UtcNow);
                                             result += $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
                                         }
                                         else
@@ -808,22 +808,22 @@ namespace Werewolf_Control.Handler
                                     var id = query.From.Id;
                                     Send($"Sending gifs for {pid}", id);
                                     Thread.Sleep(1000);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.CultWins), "Cult Wins");
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.LoversWin), "Lovers Win");
+                                    Bot.Api.SendDocumentAsync(id, pack.CultWins, "Cult Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.LoversWin, "Lovers Win");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.NoWinner), "No Winner");
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.NoWinner, "No Winner");
+                                    Bot.Api.SendDocumentAsync(id, pack.SerialKillerWins, "SK Wins");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");
+                                    Bot.Api.SendDocumentAsync(id, pack.StartChaosGame, "Chaos Start");
+                                    Bot.Api.SendDocumentAsync(id, pack.StartGame, "Normal Start");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Wins");
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
+                                    Bot.Api.SendDocumentAsync(id, pack.TannerWin, "Tanner Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.VillagerDieImage, "Villager Eaten");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.VillagersWin, "Village Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.WolfWin, "Single Wolf Wins");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolvesWin), "Wolf Pack Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)
                                     {

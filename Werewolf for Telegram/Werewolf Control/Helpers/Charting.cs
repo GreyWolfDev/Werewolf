@@ -32,15 +32,15 @@ namespace Werewolf_Control.Helpers
                     {
                         case "weeks":
                         case "week":
-                            start = DateTime.Now.AddDays(-(amount * 7));
+                            start = DateTime.UtcNow.AddDays(-(amount * 7));
                             break;
                         case "day":
                         case "days":
-                            start = DateTime.Now.AddDays(-amount);
+                            start = DateTime.UtcNow.AddDays(-amount);
                             break;
                         case "hour":
                         case "hours":
-                            start = DateTime.Now.AddHours(-amount);
+                            start = DateTime.UtcNow.AddHours(-amount);
                             break;
                         default:
                             Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Acceptable intervals are: hour(s), day(s), week(s)");

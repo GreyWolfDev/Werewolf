@@ -1,6 +1,4 @@
-using System.ComponentModel;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Telegram.Bot.Types.InlineQueryResults
 {
@@ -28,14 +26,10 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// <summary>
         /// Optional. Contact's last name
         /// </summary>
-        [JsonProperty("last_name", Required = Required.Default, DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [JsonProperty("last_name", Required = Required.Default)]
         public string LastName { get; set; }
-
-        /// <summary>
-        /// Title of the result
-        /// </summary>
+        
         [JsonIgnore]
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public new string Title { get; set; }
     }
 }

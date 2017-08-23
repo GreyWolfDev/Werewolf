@@ -12,6 +12,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
+using Database;
 
 namespace ClearUpdates
 {
@@ -38,14 +39,15 @@ namespace ClearUpdates
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            WWAPI = new TelegramBotClient(TelegramAPIKey, "");
+            WWAPI = new TelegramBotClient(TelegramAPIKey);
             WWAPI.OnUpdate += WWAPI_OnUpdate;
             var apikey = key.GetValue("QueueAPI").ToString();
-            Api = new TelegramBotClient(apikey, "");
+            Api = new TelegramBotClient(apikey);
             Api.OnMessage += Api_OnMessage;
             Api.OnUpdate += ApiOnOnUpdate;
             Api.OnCallbackQuery += Api_OnCallbackQuery;
             Api.StartReceiving();
+            new Task(() => MonitorStatus()).Start();
             Thread.Sleep(-1);
         }
 
@@ -91,27 +93,7 @@ namespace ClearUpdates
                     case "/clearqueue":
                         if (m.Date < DateTime.Now.AddSeconds(-1))
                             return;
-                        Console.WriteLine("Clearing Queue!");
-
-                        Commands.Clear();
-                        mQueue.Clear();
-                        total = 0;
-                        WWAPI.StartReceiving();
-                        var current = 0;
-                        while (true)
-                        {
-                            //foreach (var p in Process.GetProcessesByName("Werewolf Control"))
-                            //    p.Kill();
-                            if ((total - current) < 50 && total != 0)
-                            {
-                                WWAPI.StopReceiving();
-                                Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
-                                CheckMessages();
-                                break;
-                            }
-                            current = total;
-                            Thread.Sleep(1000);
-                        }
+                        ClearQueue();
                         break;
                     default:
                         break;
@@ -119,11 +101,73 @@ namespace ClearUpdates
             }
         }
 
+        private static void MonitorStatus()
+        {
+            var dead = false;
+            var lastChange = DateTime.Now;
+            while (true)
+            {
+                using (var DB = new WWContext())
+                {
+                    var status = DB.BotStatus.First(x => x.Id == 1);
+                    if (status.BotStatus != "Normal")
+                    {
+                        if (!dead)
+                        {
+                            dead = true;
+                            lastChange = DateTime.Now;
+                            Console.WriteLine(lastChange + " - Detected issue.");
+                        }
+                        if ((DateTime.Now - lastChange) > TimeSpan.FromSeconds(3))
+                        {
+                            Console.WriteLine(DateTime.Now + " - Issue persisted, clearing.");
+                            ClearQueue();
+                            dead = false;
+                            lastChange = DateTime.Now;
+                        }
+                    }
+                    else
+                    {
+                        dead = false;
+                        lastChange = DateTime.Now;
+                    }
+                }
+                Console.WriteLine($"Dead: {dead} - {lastChange}");
+                Thread.Sleep(1000);
+            }
+        }
+
+        private static void ClearQueue()
+        {
+            Console.WriteLine("Clearing Queue!");
+
+            Commands.Clear();
+            mQueue.Clear();
+            total = 0;
+            WWAPI.StartReceiving();
+            var current = 0;
+            while (true)
+            {
+                //foreach (var p in Process.GetProcessesByName("Werewolf Control"))
+                //    p.Kill();
+                if ((total - current) < 50 && total != 0)
+                {
+                    WWAPI.StopReceiving();
+                    //Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
+                    //CheckMessages();
+                    break;
+                }
+                current = total;
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(1000);
+        }
+
         private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
         {
             total++;
-            if ((e.Update.Message?.Text ?? "").StartsWith("/"))
-                mQueue.Enqueue(e.Update.Message);
+            //if ((e.Update.Message?.Text ?? "").StartsWith("/"))
+            //    mQueue.Enqueue(e.Update.Message);
         }
 
         private static Dictionary<int, List<Message>> Commands = new Dictionary<int, List<Message>>();
@@ -170,7 +214,7 @@ namespace ClearUpdates
             }
             using (var fs = new FileStream("log.log", FileMode.Open))
             {
-                var r = Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs)).Result;
+                Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs));
             }
         }
     }

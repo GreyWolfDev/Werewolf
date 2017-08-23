@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Telegram.Bot.Types.Enums
@@ -124,6 +124,6 @@ namespace Telegram.Bot.Types.Enums
                 default:
                     throw new NotImplementedException();
             }
-        } 
+        }
     }
 }

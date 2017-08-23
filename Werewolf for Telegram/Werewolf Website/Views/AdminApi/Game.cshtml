@@ -21,7 +21,7 @@
         -->
         <div id="panel-2" class="panel panel-default">
             <div class="panel-heading">
-                <span class="title elipsis">
+                <span class="title elipsis" id="title">
                     <strong>PLAYER LIST</strong> <!-- panel title -->
                 </span>
             </div>
@@ -42,6 +42,9 @@
                             <th>Dead</th>
                             <th>Choice</th>
                             <th>Votes</th>
+                            <th>Question</th>
+                            <th>In Love</th>
+                            <th>Donations</th>
                         </tr>
                         </thead>
                         <tbody></tbody>
@@ -76,14 +79,15 @@
     var grpId = '@ViewBag.GroupId';
     $(document)
         .ready(function () {
-            console.log('setting interval');
-            setInterval(updateNodeInfo,1000);
+            updateNodeInfo();
+            //console.log('setting interval');
+            //setInterval(updateNodeInfo,2000);
         });
 
 
     updateNodeInfo = function() {
         var t = $('#playersTable');
-        console.log('getting updates');
+        //console.log('getting updates');
         $.ajax({
             type: "GET",
             contentType: 'application/json; charset=utf-8',
@@ -91,34 +95,34 @@
             data: {clientid: nodeId, groupid: grpId},
             url: '/AdminApi/GetGameInfo',
             error: function(error) {
-
+                updateNodeInfo();
             },
             success: function(d) {
                 console.log(d);
                 $("#playersTable tbody tr").remove();
-
+                $('#title').html(d.ChatGroup + " - " + d.Cycle + " - " + d.State);
                 $.each(d.Players,
                     function(index, value) {
-                        addRow(t, value.Id, value.Name, value.PlayerRole, value.IsDead, value.Choice, value.Votes);
+                        addRow(t, value.Id, value.Name, value.PlayerRole, value.IsDead, value.Choice, value.Votes, value.CurrentQuestion, value.LoverId, value.DonationLevel);
                     });
+                updateNodeInfo();
             }
         });
     };
 
-    addRow = function (table, id, name, role, dead, choice, votes) {
-        console.log(dead);
-        var ded = "Yes";
-        if (dead === false) {
-            ded = "No";
-        }
+    addRow = function (table, id, name, role, dead, choice, votes, question, lover, donation) {
+        
         table.find('tbody')
             .append($('<tr>')
                 .append($('<td>').append(id))
                 .append($('<td>').append(name))
                 .append($('<td>').append(role))
-                .append($('<td>').append(ded))
+                .append($('<td>').append(dead))
                 .append($('<td>').append(choice))
-                .append($('<td>').append(votes)));
+                .append($('<td>').append(votes))
+                .append($('<td>').append(question))
+                .append($('<td>').append(lover))
+                .append($('<td>').append(donation)));
         //.append($('<td>').append("<a href='/AdminApi/Game/" + grpid + "' class='btn btn-default btn-xs btn-block'>View</a>")));
     }
 

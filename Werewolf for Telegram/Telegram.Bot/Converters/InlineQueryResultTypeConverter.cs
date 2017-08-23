@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Newtonsoft.Json;
 using Telegram.Bot.Types.InlineQueryResults;
 
@@ -15,14 +15,18 @@ namespace Telegram.Bot.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
+            InlineQueryResultType resultType;
+
             var value = reader.Value.ToString().Replace("_", "");
 
-            Enum.TryParse(value, true, out InlineQueryResultType resultType);
+            Enum.TryParse(value, true, out resultType);
 
             return resultType;
         }
 
         public override bool CanConvert(Type objectType)
-            => objectType == typeof(InlineQueryResultType);
+        {
+            return objectType == typeof (InlineQueryResultType);
+        }
     }
 }

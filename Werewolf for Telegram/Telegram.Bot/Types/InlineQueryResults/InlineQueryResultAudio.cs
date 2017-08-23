@@ -1,6 +1,4 @@
-using System.ComponentModel;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Telegram.Bot.Types.InlineQueryResults
 {
@@ -25,34 +23,22 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// <summary>
         /// Optional. Performer
         /// </summary>
-        [JsonProperty("performer", Required = Required.Default, DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [JsonProperty("performer", Required = Required.Default)]
         public string Performer { get; set; }
 
         /// <summary>
         /// Optional. Audio duration in seconds
         /// </summary>
-        [JsonProperty("audio_duration", Required = Required.Always, DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [JsonProperty("audio_duration", Required = Required.Always)]
         public int Duration { get; set; }
 
-        /// <summary>
-        /// Optional. Url of the thumbnail for the result
-        /// </summary>
         [JsonIgnore]
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public new string ThumbUrl { get; set; }
 
-        /// <summary>
-        /// Optional. Thumbnail width
-        /// </summary>
         [JsonIgnore]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public new int ThumbWidth { get; set; }
+        public new string ThumbWidth { get; set; }
 
-        /// <summary>
-        /// Optional. Thumbnail height
-        /// </summary>
         [JsonIgnore]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public new int ThumbHeight { get; set; }
+        public new string ThumbHeight { get; set; }
     }
 }

@@ -20,7 +20,7 @@ using Werewolf_Node.Models;
 
 namespace Werewolf_Node
 {
-    class Werewolf : IDisposable
+    public class Werewolf : IDisposable
     {
         public long ChatId;
         public int GameDay, GameId;
@@ -4192,7 +4192,7 @@ namespace Werewolf_Node
             MessageQueueing = false;
         }
 
-        internal enum GameTime
+        public enum GameTime
         {
             Day,
             Lynch,
