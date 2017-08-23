@@ -196,6 +196,7 @@ namespace Werewolf_Node
                 {
                     _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
+                Program.Bot.PinChatMessageAsync(chatid, _joinMsgId, true);
 
                 //let's keep this on for a while, then we will delete it
                 //SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
