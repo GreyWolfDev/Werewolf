@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -23,6 +24,7 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using Werewolf_Control.Attributes;
 using File = System.IO.File;
+using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
@@ -59,7 +61,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Attributes.Command(Trigger ="bangroup", DevOnly =true)]
+        [Attributes.Command(Trigger = "bangroup", DevOnly = true)]
         public static void BanGroup(Update u, string[] args)
         {
             long groupid = 0;
@@ -427,7 +429,73 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
-            GetLogs(update, args);
+            using (var db = new WWContext())
+            {
+                Bot.Send("Please hold, searching....", update.Message.Chat.Id);
+
+                var groups = db.Groups.Where(x => x.Preferred != false && x.GroupLink != null && x.GroupId != -1001030085238)
+                    .Select(x => new PossibleGroup() { GroupId = x.GroupId, GroupLink = x.GroupLink, MemberCount = x.MemberCount ?? 0, Name = x.Name }).ToList();
+
+                var ofcSpells = new[] { "official", "offciail", "official", "oficial", "offical"};
+                var wuffSpells = new[] { "wolf", "wuff", "wulf", "lupus" };
+
+                for (var i = groups.Count - 1; i >= 0; i--)
+                {
+                    var g = groups[i];
+                    //check for official
+                    if (ofcSpells.Any(x => g.Name.Contains(x)))
+                    {
+                        if (wuffSpells.Any(x => g.Name.Contains(x)))
+                            continue;
+                    }
+                    groups.RemoveAt(i);
+
+                }
+
+                //groups = groups.Where(x => x.Name.Unidecode().IndexOf("Werewolf",StringComparison.InvariantCultureIgnoreCase) != -1).ToList();
+                if (groups.Any())
+                    Bot.Send(
+                        groups.Aggregate("Groups detected having variations of Werewolf and Official in name:\n",
+                            (a, b) => a + $"\n{b.OriginalName} - {b.GroupId} - {b.GroupLink}"), update.Message.Chat.Id);
+                else
+                    Bot.Send("No groups found with variations on Werewolf and Official in name.",
+                        update.Message.Chat.Id);
+
+
+            }
+        }
+
+        internal class PossibleGroup
+        {
+            private string _name;
+
+            public string Name
+            {
+                get => _name;
+                set
+                {
+                    OriginalName = value;
+                    _name = value.Unidecode().ToLower();
+                }
+            }
+            public string GroupLink { get; set; }
+            public string OriginalName { get; set; }
+            public long GroupId { get; set; }
+            public int MemberCount { get; set; }
+
+            public PossibleGroup(Group g)
+            {
+                Name = g.Name.Unidecode().ToLower();
+                OriginalName = g.Name;
+                GroupLink = g.GroupLink;
+                GroupId = g.GroupId;
+                MemberCount = g.MemberCount ?? 0;
+            }
+
+            public PossibleGroup()
+            {
+
+            }
         }
 
         [Attributes.Command(Trigger = "sql", DevOnly = true)]
@@ -462,7 +530,7 @@ namespace Werewolf_Control
                             while (reader.Read())
                             {
                                 for (int i = 0; i < reader.FieldCount; i++)
-                                    raw += (reader.IsDBNull(i) ? "<i>NULL</i>" : reader[i] ) + (i == reader.FieldCount - 1 ? "" : " - ");
+                                    raw += (reader.IsDBNull(i) ? "<i>NULL</i>" : reader[i]) + (i == reader.FieldCount - 1 ? "" : " - ");
                                 result += raw + Environment.NewLine;
                                 raw = "";
                             }
@@ -928,7 +996,7 @@ namespace Werewolf_Control
                 Send("Use /leavegroup <id|link|username>", update.Message.Chat.Id);
                 return;
             }
-            
+
             Database.Group grp;
             using (var db = new WWContext())
                 grp = GetGroup(args[1], db);
@@ -972,7 +1040,8 @@ namespace Werewolf_Control
             using (var db = new WWContext())
             {
                 Database.Group grp = GetGroup(group, db);
-                if (grp == null) {
+                if (grp == null)
+                {
                     Send("Group not found.", update.Message.Chat.Id);
                     return;
                 }
@@ -991,7 +1060,7 @@ namespace Werewolf_Control
                 //send everything
                 Send(
                     $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
-                    "\n\nSelect the languages under which the group is allowed to appear in grouplist.\nNote that the first option, if disabled, overrides all the others.", 
+                    "\n\nSelect the languages under which the group is allowed to appear in grouplist.\nNote that the first option, if disabled, overrides all the others.",
                     update.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(menu.ToArray())
                 );
                 return;
@@ -1105,7 +1174,7 @@ namespace Werewolf_Control
                     Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Bot.Send(e.Message, u.Message.Chat.Id);
             }
@@ -1251,7 +1320,7 @@ namespace Werewolf_Control
                 var result = $"<b>{t.Name.FormatHTML()}</b>\n";
                 if (!String.IsNullOrEmpty(t.UserName))
                     result += $"@{t.UserName}\n";
-                result += $"------------------\nGames Played: {t.GamePlayers.Count}\nLanguage: {t.Language.FormatHTML()}\nDonation Level: {t.DonationLevel??0}\n";
+                result += $"------------------\nGames Played: {t.GamePlayers.Count}\nLanguage: {t.Language.FormatHTML()}\nDonation Level: {t.DonationLevel ?? 0}\n";
                 if (t.GamePlayers.Any())
                     result += $"Played first game: {t.GamePlayers.OrderBy(x => x.Id).First().Game.TimeStarted}\n";
                 var spamBans = t.TempBanCount;
