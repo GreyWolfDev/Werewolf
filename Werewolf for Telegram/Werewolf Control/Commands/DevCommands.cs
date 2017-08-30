@@ -802,19 +802,15 @@ namespace Werewolf_Control
                     
                     using (var db = new WWContext())
                     {
-                        var player = db.Players.FirstOrDefault(x => x.TelegramId == id);
-                        if (player != null)
+                        var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == player.TelegramId);
+                        if (ban != null)
                         {
-                            var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == player.TelegramId);
-                            if (ban != null)
-                            {
-                                var localban = UpdateHandler.BanList.FirstOrDefault(x => x.Id == ban.Id);
-                                if (localban != null)
-                                    UpdateHandler.BanList.Remove(localban);
-                                db.GlobalBans.Remove(ban);
-                                db.SaveChanges();
-                                Send("User has been unbanned.", u.Message.Chat.Id);
-                            }
+                            var localban = UpdateHandler.BanList.FirstOrDefault(x => x.Id == ban.Id);
+                            if (localban != null)
+                                UpdateHandler.BanList.Remove(localban);
+                            db.GlobalBans.Remove(ban);
+                            db.SaveChanges();
+                            Send("User has been unbanned.", u.Message.Chat.Id);
                         }
                     }
                 }
