@@ -794,6 +794,27 @@ namespace Werewolf_Control
                         break;
                 }
             }
+            if (args.Count > 1 && !string.IsNullOrEmpty(args[1]))
+            {
+                foreach (var userid in args[1].Split(' '))
+                {
+                    if (!int.TryParse(userid, out int id)) continue;
+                    
+                    using (var db = new WWContext())
+                    {
+                        var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == id);
+                        if (ban != null)
+                        {
+                            var localban = UpdateHandler.BanList.FirstOrDefault(x => x.Id == ban.Id);
+                            if (localban != null)
+                                UpdateHandler.BanList.Remove(localban);
+                            db.GlobalBans.Remove(ban);
+                            db.SaveChanges();
+                            Send("User has been unbanned.", u.Message.Chat.Id);
+                        }
+                    }
+                }
+            }
         }
 
         [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]

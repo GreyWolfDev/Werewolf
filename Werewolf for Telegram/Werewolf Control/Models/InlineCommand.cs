@@ -83,7 +83,7 @@ namespace Werewolf_Control.Models
                             else if ((p.DonationLevel ?? 0) >= 10)
                                 Content += "Donation Level: 🥉";
                             if (p.Founder ?? false)
-                                Content += "\n💎 FOUNDER STATUS! 💎\n<i>(This player donated at least $10USD before there was any reward for donating</i>";
+                                Content += "\n💎 FOUNDER STATUS! 💎\n<i>(This player donated at least $10USD before there was any reward for donating)</i>";
                         }
                     }
                     else
