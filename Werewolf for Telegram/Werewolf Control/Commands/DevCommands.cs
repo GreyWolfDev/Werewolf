@@ -794,7 +794,7 @@ namespace Werewolf_Control
                         break;
                 }
             }
-            if (args.Count > 1 && !string.IsNullOrEmpty(args[1]))
+            if (args.Length > 1 && !string.IsNullOrEmpty(args[1]))
             {
                 foreach (var userid in args[1].Split(' '))
                 {
