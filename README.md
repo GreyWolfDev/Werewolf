@@ -40,11 +40,11 @@ To set up werewolf on a private server, follow these steps:
 
    | Directory | Contents |
    |-----------|---------:|
-   |`root\Control`|Control build|
-   |`root\Node 1`|Node build|
-   |`root\Node <#>`|Node updates can be added to a new Node folder.  Running `/replacenodes` in Telegram will tell the bot to automatically find the newest node (by build time) and run it|
-   |`root\Logs`|Node crash directory|
-   |`root\Languages`|Language xml files|
+   |`root\Instance Name\Control`|Control build|
+   |`root\Instance Name\Node 1`|Node build|
+   |`root\Instance Name\Node <#>`|Node updates can be added to a new Node folder.  Running `/replacenodes` in Telegram will tell the bot to automatically find the newest node (by build time) and run it|
+   |`root\Instance Name\Logs`|Logging directory|
+   |`root\Languages`|Language xml files - These files are shared by all instances of Werewolf|
 
    * Note - Once all nodes are running the newest version (Node 2 directory), the next time you update nodes, you can put the new files in Node 1 and `/replacenodes`.  Again, the bot will always take whichever node it finds that is the newest, as long as the directory has `Node` in the name.  **do not name any other directory in the root folder anything with `Node` in it**
 5. Fire up the bot!
