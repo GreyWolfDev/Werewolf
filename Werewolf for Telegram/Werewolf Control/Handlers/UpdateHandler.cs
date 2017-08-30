@@ -462,7 +462,14 @@ namespace Werewolf_Control.Handler
                             {
                                 id = update.Message.Chat.Id;
                                 var m = update.Message;
-
+                                if (m.MigrateFromChatId != 0)
+                                {
+                                    grp = DB.Groups.FirstOrDefault(x => x.GroupId == m.MigrateFromChatId);
+                                    if (grp == null) return;
+                                    grp.GroupId = m.Chat.Id;
+                                    DB.SaveChanges();
+                                    return;
+                                }
                                 if (m.LeftChatMember != null)
                                 {
                                     if (m.LeftChatMember.Id == Bot.Me.Id)
