@@ -802,7 +802,7 @@ namespace Werewolf_Control
                     
                     using (var db = new WWContext())
                     {
-                        var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == player.TelegramId);
+                        var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == id);
                         if (ban != null)
                         {
                             var localban = UpdateHandler.BanList.FirstOrDefault(x => x.Id == ban.Id);
