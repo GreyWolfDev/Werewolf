@@ -429,6 +429,11 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
+        }
+
+        [Attributes.Command(Trigger = "checkgroups", DevOnly = true)]
+        public static void CheckGroupList(Update update, string[] args)
+        {
             using (var db = new WWContext())
             {
                 Bot.Send("Please hold, searching....", update.Message.Chat.Id);

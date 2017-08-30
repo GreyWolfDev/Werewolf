@@ -311,15 +311,18 @@ namespace Werewolf_Control.Handler
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
 
-                                if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) || SpamBanList.Contains(update.Message?.From?.Id ?? 0))
+                                if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) ||
+                                    SpamBanList.Contains(update.Message?.From?.Id ?? 0))
                                 {
                                     return;
                                 }
-                           
+
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
-                                Program.Analytics.TrackAsync("/" + args[0], new { groupid = update.Message.Chat.Id, user = update.Message.From }, update.Message.From.Id.ToString());
+                                Program.Analytics.TrackAsync("/" + args[0],
+                                    new {groupid = update.Message.Chat.Id, user = update.Message.From},
+                                    update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
                                     var reply = Commands.GetAbout(update, args);
@@ -331,7 +334,9 @@ namespace Werewolf_Control.Handler
                                         {
                                             var result = Send(reply, update.Message.From.Id).Result;
                                             if (update.Message.Chat.Type != ChatType.Private)
-                                                Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                                                Send(
+                                                    GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)),
+                                                    update.Message.Chat.Id);
 
                                         }
                                         catch (Exception e)
@@ -347,9 +352,9 @@ namespace Werewolf_Control.Handler
                                 #region More optimized code
 
                                 var command = Bot.Commands.FirstOrDefault(
-                                        x =>
-                                            String.Equals(x.Trigger, args[0],
-                                                StringComparison.InvariantCultureIgnoreCase));
+                                    x =>
+                                        String.Equals(x.Trigger, args[0],
+                                            StringComparison.InvariantCultureIgnoreCase));
                                 if (command != null)
                                 {
 #if RELEASE2
@@ -365,7 +370,9 @@ namespace Werewolf_Control.Handler
                                     if (block && command.Blockable)
                                     {
                                         if (id == Settings.SupportChatId)
-                                            Send("No games in support chat!\nIf you want to play, find a group in the /grouplist.", id);
+                                            Send(
+                                                "No games in support chat!\nIf you want to play, find a group in the /grouplist.",
+                                                id);
                                         else if (id == Settings.PersianSupportChatId)
                                             Send("اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         else if (id == Settings.TranslationChatId)
@@ -385,9 +392,12 @@ namespace Werewolf_Control.Handler
                                             return;
                                         }
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) & !UpdateHelper.Devs.Contains(update.Message.From.Id) & !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
+                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) &
+                                        !UpdateHelper.Devs.Contains(update.Message.From.Id) &
+                                        !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                     {
-                                        Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)), id);
+                                        Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)),
+                                            id);
                                         return;
                                     }
                                     if (command.InGroupOnly & update.Message.Chat.Type == ChatType.Private)
@@ -402,14 +412,17 @@ namespace Werewolf_Control.Handler
 
                                 #endregion
                             }
-                            else if (update.Message.Chat.Type == ChatType.Private && update.Message?.ReplyToMessage?.Text == "Please reply to this message with your Telegram authorization code" && update.Message.From.Id == UpdateHelper.Devs[0])
+                            else if (update.Message.Chat.Type == ChatType.Private &&
+                                     update.Message?.ReplyToMessage?.Text ==
+                                     "Please reply to this message with your Telegram authorization code" &&
+                                     update.Message.From.Id == UpdateHelper.Devs[0])
                             {
                                 CLI.AuthCode = update.Message.Text;
                             }
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
-                                         "Please enter a whole number, in US Dollars (USD)") ?? false))
+                                          "Please enter a whole number, in US Dollars (USD)") ?? false))
                             {
                                 Commands.ValidateDonationAmount(update.Message);
                             }
@@ -432,7 +445,8 @@ namespace Werewolf_Control.Handler
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
-                                          "Ok, send me the GIF you want to use for this situation, as a reply") ?? false))
+                                          "Ok, send me the GIF you want to use for this situation, as a reply") ??
+                                      false))
                             {
                                 Commands.AddGif(update.Message);
                             }
@@ -517,7 +531,9 @@ namespace Werewolf_Control.Handler
                                         return;
                                     }
                                     //user has not reach veteran
-                                    Send($"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran ({gamecount} games played, need 500)", m.Chat.Id);
+                                    Send(
+                                        $"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran ({gamecount} games played, need 500)",
+                                        m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
                                 else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
@@ -528,11 +544,14 @@ namespace Werewolf_Control.Handler
                                     var gamecount = p?.GamePlayers.Count ?? 0;
                                     if (gamecount >= 500)
                                     {
-                                        Send($"{m.NewChatMember.FirstName.FormatHTML()} has played {gamecount} games", m.Chat.Id);
+                                        Send($"{m.NewChatMember.FirstName.FormatHTML()} has played {gamecount} games",
+                                            m.Chat.Id);
                                         return;
                                     }
                                     //user has not reach veteran
-                                    Send($"{m.NewChatMember.FirstName.FormatHTML()} removed, as they have not unlocked veteran ({gamecount} games played, need 500)", m.Chat.Id);
+                                    Send(
+                                        $"{m.NewChatMember.FirstName.FormatHTML()} removed, as they have not unlocked veteran ({gamecount} games played, need 500)",
+                                        m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
                                 else if (m.NewChatMember != null && m.Chat.Id == Settings.SupportChatId)
@@ -541,11 +560,13 @@ namespace Werewolf_Control.Handler
                                     var p = DB.GlobalBans.FirstOrDefault(x => x.TelegramId == uid);
                                     if (p != null)
                                     {
-                                        var result = $"<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {p.Reason}\nBanned on: {p.BanDate}\nBanned by: {p.BannedBy}\n";
+                                        var result =
+                                            $"<b>PLAYER IS CURRENTLY BANNED</b>\nReason: {p.Reason}\nBanned on: {p.BanDate}\nBanned by: {p.BannedBy}\n";
                                         if (p.Expires < DateTime.UtcNow.AddYears(5))
                                         {
                                             var expiry = (p.Expires - DateTime.UtcNow);
-                                            result += $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
+                                            result +=
+                                                $"Ban will be lifted in {expiry.Days} days, {expiry.Hours} hours, and {expiry.Minutes} minutes\n";
                                         }
                                         else
                                             result += $"This ban is permanent.\n";
@@ -567,13 +588,26 @@ namespace Werewolf_Control.Handler
                             break;
                         default:
                             break;
-                            //throw new ArgumentOutOfRangeException();
+                        //throw new ArgumentOutOfRangeException();
                     }
                 }
 #if !DEBUG
+                catch (AggregateException e)
+                {
+                    var ex = e.InnerExceptions[0];
+                    while (ex.InnerException != null)
+                        ex = ex.InnerException;
+
+                    Send(ex.Message, id);
+                    Send($"Error: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
+                }
                 catch (Exception ex)
                 {
+                    while (ex.InnerException != null)
+                        ex = ex.InnerException;
+
                     Send(ex.Message, id);
+                    Send($"Error: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
                 }
 #endif
             }

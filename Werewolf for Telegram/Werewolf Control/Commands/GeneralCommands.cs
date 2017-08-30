@@ -230,56 +230,97 @@ namespace Werewolf_Control
                     }
 
                     //okay, they are joining a game.
-
-                    var nodeid = args[1].Substring(0, 32);
-                    var gameid = args[1].Substring(32);
-
-                    //try to get the guid of the game they want to join
-                    Guid g, n;
-                    if (!(Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g)))
-                        return;
-
-                    //first get the node where to search for the game
+                    string nodeid = "";
+                    string gameid = "";
                     Models.Node node = null;
-                    for (var i = 0; i < 3; i++)
-                    {
-                        node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
-                        if (node != null) break;
-                    }
-                    if (node == null)
-                    {
-                        //log it
-                        //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", -1001098399855);
-                        return;
-                    }
-
-                    //we have the node, get the game
                     Models.GameInfo game = null;
-                    for (var i = 0; i < 5; i++)
+                    ChatMemberStatus status = ChatMemberStatus.Creator;
+                    try
                     {
-                        game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
-                        if (game != null) break;
-                    }
-                    if (game == null)
-                    {
-                        //log it
-                        //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", -1001098399855);
+                        nodeid = args[1].Substring(0, 32);
+                        gameid = args[1].Substring(32);
+
+                        //try to get the guid of the game they want to join
+                        Guid g, n;
+                        if (!(Guid.TryParse(nodeid, out n) && Guid.TryParse(gameid, out g)))
+                            return;
+
+                        //first get the node where to search for the game
+                        
+                        for (var i = 0; i < 3; i++)
+                        {
+                            node = Bot.Nodes.ToList().FirstOrDefault(x => x.ClientId == n);
+                            if (node != null) break;
+                        }
+                        if (node == null)
+                        {
+                            //log it
+                            //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) didn't find node with guid {n.ToString()} while attempting to play in {g.ToString()}", -1001098399855);
+                            return;
+                        }
+
+                        //we have the node, get the game
+                        
+                        for (var i = 0; i < 5; i++)
+                        {
+                            game = node.Games.ToList().FirstOrDefault(x => x.Guid == g);
+                            if (game != null) break;
+                        }
+                        if (game == null)
+                        {
+                            //log it
+                            //Bot.Send($"{u.Message.From.Id} (@{u.Message.From.Username ?? ""}) found node with guid {n.ToString()} but not the game {g.ToString()}", -1001098399855);
+                            return;
+                        }
+
+                        //ok we got the game, now join 
+                        //make sure they are member
+                        status = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result.Status;
+                        if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                        {
+                            Bot.Send(
+                                GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()),
+                                u.Message.Chat.Id);
+                            return;
+                        }
+
+                        game.AddPlayer(u);
                         return;
                     }
-
-                    //ok we got the game, now join 
-                    //make sure they are member
-                    var status = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result.Status;
-                    if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                    catch (AggregateException e)
                     {
-                        Bot.Send(GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()), u.Message.Chat.Id);
-                        return;
+                        var ex = e.InnerExceptions[0];
+                        while (ex.InnerException != null)
+                            ex = ex.InnerException;
+
+                        Send(ex.Message, u.Message.Chat.Id);
+                        Send($"Error in START:\n" +
+                             $"{u.Message.Text}\n" +
+                             $"Node: {nodeid}\n" +
+                             $"Game: {gameid}\n" +
+                             $"Found Node: {node?.ClientId}\n" +
+                             $"Found Game: {game?.Guid}\n" +
+                             $"Chat Member Status: {status}\n" +
+                             $"{ex.Message}\n{ex.StackTrace}",
+                            Settings.ErrorGroup);
+
                     }
+                    catch (Exception ex)
+                    {
+                        while (ex.InnerException != null)
+                            ex = ex.InnerException;
 
-                    game.AddPlayer(u);
-                    return;
-
-
+                        Send(ex.Message, u.Message.Chat.Id);
+                        Send($"Error in START:\n" +
+                             $"{u.Message.Text}\n" +
+                             $"Node: {nodeid}\n" +
+                             $"Game: {gameid}\n" +
+                             $"Found Node: {node?.ClientId}\n" +
+                             $"Found Game: {game?.Guid}\n" +
+                             $"Chat Member Status: {status}\n" +
+                             $"{ex.Message}\n{ex.StackTrace}",
+                            Settings.ErrorGroup);
+                    }
                 }
             }
         }
