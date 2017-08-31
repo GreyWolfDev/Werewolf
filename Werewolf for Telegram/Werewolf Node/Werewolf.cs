@@ -3675,18 +3675,19 @@ namespace Werewolf_Node
                         switch (alives.Count)
                         {
                             case 2: // Tanner and sorcerer, let first sorcerer, then tanner die.
-                                var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
-                                var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                                
-                                DBKill(sorc, sorc, KillMthd.Suicide);
-                                DBKill(tann, tann, KillMthd.Suicide);
-                                if (sorc != null)
+                                if (alives.Any(x => x.PlayerRole == IRole.Tanner) && alives.First(x => x.PlayerRole != IRole.Tanner).PlayerRole == IRole.Sorcerer)
                                 {
-                                    sorc.IsDead = true;
-                                    sorc.TimeDied = DateTime.Now;
+                                    var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
+                                    var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                                     
-                                    if (tann != null)
+                                    if (sorc != null && tann != null)
                                     {
+                                
+                                        DBKill(sorc, sorc, KillMthd.Suicide);
+                                        sorc.IsDead = true;
+                                        sorc.TimeDied = DateTime.Now;
+                                        
+                                        DBKill(tann, tann, KillMthd.Suicide);
                                         tann.IsDead = true;
                                         tann.TimeDied = DateTime.Now;
                                         
