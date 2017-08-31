@@ -3507,6 +3507,15 @@ namespace Werewolf_Node
                     //check for lovers
                     if (alivePlayers.All(x => x.InLove))
                         return DoGameEnd(ITeam.Lovers);
+                    //check for Tanner + Sorcerer
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Sorcerer))
+                    {
+                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Sorcerer);
+                        if (other != null && other.PlayerRole == IRole.Tanner)
+                        {
+                            return DoGameEnd(ITeam.Noone);
+                        }
+                    }
                     //check for Hunter + SK / Wolf
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
                     {
@@ -3661,6 +3670,64 @@ namespace Werewolf_Node
                 switch (team)
                 {
                     case ITeam.NoOne:
+                        var alives = Players.Where(x => !x.IsDead);
+                        var deathmessage = "";
+                        switch (alives.Count)
+                        {
+                            case 2: // Tanner and sorcerer, let first sorcerer, then tanner die.
+                                var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
+                                var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
+                                
+                                DBKill(sorc, sorc, KillMthd.Suicide);
+                                DBKill(tann, tann, KillMthd.Suicide);
+                                if (sorc != null)
+                                {
+                                    sorc.IsDead = true;
+                                    sorc.TimeDied = DateTime.Now;
+                                    
+                                    if (tann != null)
+                                    {
+                                        tann.IsDead = true;
+                                        tann.TimeDied = DateTime.Now;
+                                        
+                                        deathmessage = GetLocaleString("SorcererEnd", sorc.GetName()) + Environment.NewLine;
+                                        deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName());
+                                    }
+                                }
+                                break;
+                            
+                            case 1: // Tanner or sorcerer
+                                var lastone = alives.FirstOrDefault();
+                                if (lastone.PlayerRole == IRole.Tanner)
+                                {
+                                    DBKill(lastone, lastone, KillMthd.Suicide);
+                                    if (lastone != null)
+                                    {
+                                        lastone.IsDead = true;
+                                        lastone.TimeDied = DateTime.Now;
+                                        
+                                        deathmessage = GetLocaleString("TannerEnd", lastone.GetName());
+                                    }
+                                }
+                                else // Sorcerer
+                                {
+                                    DBKill(lastone, lastone, KillMthd.Suicide);
+                                    if (lastone != null)
+                                    {
+                                        lastone.IsDead = true;
+                                        lastone.TimeDied = DateTime.Now;
+                                        
+                                        deathmessage = GetLocaleString("SorcererEnd", lastone.GetName());
+                                    }
+                                }
+                                break;
+                                
+                            default:
+                                break;
+                        }
+                        
+                        if (!string.IsNullOrEmpty(deathmessage)) SendWithQueue(deathmessage);
+                        
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
                         SendWithQueue(msg, GetRandomImage(NoWinner));
