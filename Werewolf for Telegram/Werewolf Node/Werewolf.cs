@@ -2206,14 +2206,14 @@ namespace Werewolf_Node
                     // secret lynch vote results..
                     foreach (IPlayer p in Players)
                     {
-                        List<string> voterList = new List<string>();
-                        string voterNames = "";
                         if (p.Votes == 0)
                             continue; // no one voted this guy
                         else
                         {
                             if (SecretLynchShowVoters == true)
                             {
+                                List<string> voterList = new List<string>();
+                                string voterNames = "";
                                 foreach (KeyValuePair<IPlayer, int> pp in p.VotedBy)
                                 {
                                     voterList.Add(pp.Value > 1 ? $"{pp.Key.GetName()} ({pp.Value})" : pp.Key.GetName());
