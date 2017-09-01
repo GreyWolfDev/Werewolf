@@ -28,13 +28,16 @@ namespace Werewolf_Control.Helpers
 
 
         public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
-        public static long PersianSupportChatId = -1001059174638;
-        public static long MainChatId = -1001049529775; //Beta group
-        public static long SupportChatId = -1001060486754; //@werewolfsupport
-        public static long PrimaryChatId = -1001030085238; //@werewolfgame
-        public static string DevChannelId = "@werewolfdev"; //@werewolfdev
-        public static long VeteranChatId = -1001094614730;
-        public static string VeteranChatLink = "werewolfvets";
+        public static readonly long PersianSupportChatId = -1001059174638;
+        public static readonly long MainChatId = -1001049529775; //Beta group
+        public static readonly long SupportChatId = -1001060486754; //@werewolfsupport
+        public static readonly long PrimaryChatId = -1001030085238; //@werewolfgame
+        public static readonly string DevChannelId = "@werewolfdev"; //@werewolfdev
+        public static readonly long VeteranChatId = -1001094614730;
+        public static readonly string VeteranChatLink = "werewolfvets";
+        public static readonly long TranslationChatId = -1001074012132;
+        public static readonly long AdminChatId = -1001094155678;
+        public static readonly long ErrorGroup = -1001098399855;
 #if RELEASE2
         public static List<string> VillagerDieImages = new List<string> { "BQADAwAD2QEAAnQXsQeU2FMN-2D3GgI", "BQADAwADggADdBexB1_X0udQaRs7Ag", "BQADBAADWAMAAt4cZAcXTtE-UCQXxAI" }; //1
         public static List<string> WolfWin = new List<string> { "BQADAwADgQADdBexB5kx2CsSNDp2Ag", "BQADAwADgAADdBexBx7XahnW5XBsAg" };
@@ -123,6 +126,8 @@ namespace Werewolf_Control.Helpers
             DetectiveConversionChance = 70,
             CursedConversionChance = 60,
             HarlotConversionChance = 70,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
             HarlotDiscoverCultChance = 50,
             ChanceDetectiveCaught = 40,
 
@@ -151,10 +156,13 @@ namespace Werewolf_Control.Helpers
             DetectiveConversionChance = 70,
             CursedConversionChance = 60,
             HarlotConversionChance = 70,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
             HarlotDiscoverCultChance = 50,
             ChanceDetectiveCaught = 40,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            MaxExtend = 60;
     }
 }

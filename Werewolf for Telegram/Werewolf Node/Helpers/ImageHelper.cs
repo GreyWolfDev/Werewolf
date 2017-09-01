@@ -22,7 +22,7 @@ namespace Werewolf_Node.Helpers
                 {
                     try
                     {
-                        var photos = await Program.Bot.GetUserProfilePhotos(userid, limit: 1);
+                        var photos = await Program.Bot.GetUserProfilePhotosAsync(userid, limit: 1);
                         if (photos.Photos.Length == 0) return;//nada
                         var sizes = photos.Photos[0];
                         var id = "";
@@ -42,7 +42,7 @@ namespace Werewolf_Node.Helpers
 
                         Telegram.Bot.Types.File file;
 
-                        file = await Program.Bot.GetFile(id);
+                        file = await Program.Bot.GetFileAsync(id);
 
                         var photoPath = file.FilePath;
                         var fileName = photoPath.Substring(photoPath.LastIndexOf("/") + 1);

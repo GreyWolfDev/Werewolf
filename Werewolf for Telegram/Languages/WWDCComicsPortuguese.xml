@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+   Made by / Feito por:
+       Sandro Maia (@SandroSapiens)	
+  
+-->
+<strings>
+  <language name="BrPT DC Comics" base="Português" variant="DC Comics"/>
+  <string key="NotInGame">
+    <value>Você não parece estar em um jogo.</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} alertou que a Liga das Sombras está em Gotham! Use /join para entrar no conflito, cuidado para não morrer!</value>
+    <value>Um novo conflito foi iniciado por {0}! Use /join para ser morto(a)!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} começou um conflito caótico em Gotham! Use /join para acabar com o caos, ou quem sabe ajudar...</value>
+    <value>A liga das sombras foram avistados em gotham por {0}! O caos vai começar! Use /join para entrar nessa loucura!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Você não pode entrar na cidade agora! O conflito já começou. Use /nextgame para receber uma mensagem no privado quando uma nova partida for iniciada!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Você já está na cidade!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto restando para enviar o /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} segundos restando para enviar o /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Quantidade mínima de heróis e vilões não foi atingida, cancelando a partida!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>A partida está iniciando, por favor aguarde enquanto eu distribuo os papéis e atualizo o banco de dados.</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} está banido(a) por tentar explorar um erro (não são permitidos nomes iniciados por /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, por favor mude seu nome para entrar na partida</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sinto muito, o número máximo de heróis e vilões foi atingido!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} entrou na briga!! {1} jogadores, {2} mínimo, {3} máximo</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} por favor, me envie uma mensagem no privado ({1}) e clique start, pois você ainda não está registrado.  Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Gotham está um caos HAHAHAHAHA! É lindo. Aconselho que FIQUE e descubra o monstro em você.</value>
+  </string>
+  <string key="Flee">
+    <value>{0} fugiu... Mas as noites em Gotham não são para qualquer um mesmo.</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} jogadores restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Ei, não te perguntei nada ainda!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Você não parece estar jogando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Eu não consegui encontrar um(a) jogador(a) com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Essa resposta não é válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} votou para matar {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} votou para prender {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} não votou por 2 noites seguidas.  A policia julgou isso como um crime terrível e então, os policiais prendem {0} .\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Traidor!!! Agora você é um membro da Liga...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Opção aceita</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nA Oraculo é {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} era a Oraculo. Como prodigio, você vai para o batcomputador e se torna a nova Oraculo.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} era um jovem prodigio e agora tomou o lugar de {1} como a nova Oraculo.</value>
+  </string>
+  <string key="SeerSees">
+    <value>Você vê que {0} é {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Quem você gostaria de prender?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Quem você gostaria de investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Em quem você gostaria de atirar? {0} bala(s) restantes</value>
+  </string>
+  <string key="AskVisit">
+    <value>A quem você gostaria de fazer uma visitinha?</value>
+  </string>
+  <string key="AskSee">
+    <value>Quem você gostaria de ver?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Quem você gostaria de proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>Quem você gostaria de matar?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Quem você gostaria de inquirir?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Quem será seu grande exemplo?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Quem você gostaria de converter para os Lanternas Amarelos?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Lembre-se de discutir com {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Você é o Damian Wayne! Por enquanto você é um cidadão, mas se você for atacado pela Liga das Sombras, você se tornará um membro da Liga também.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Você é o Batman, e joga pela segurança de Gotham. Durante a noite, você pode escolher uma pessoa para investigar e descobrir seu papel. No entanto, ao fazer isso, A Liga das Sombras pode descobrir sua identidade secreta!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Parabéns, você é o Constantine! Você tem bafo de cachaça, mas joga por Gotham. Se a Liga das Sombras te pegar, eles vão ficar de ressaca e não vão conseguir atacar ninguém na noite seguinte!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Você é o Flash, e seu papel é proteger os cidadãos de Gotham. Durante a noite, você pode escolher alguém para proteger.  Porém, se você escolher um membro da Liga das Sombras, pode acontecer o pior.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Bang bang, você é o Deadshot.  Você possui 2 balas para ajudar Gotham.  Durante o dia, você pode atirar em alguém. Todo mundo ouvirá os tiros e saberão que você é o famoso Pistoleiro.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Você é a mulher gato, a aliada sexy de Gotham. Durante a noite, você poderá escolher alguém para fazer uma visitinha, e descobrir se a pessoa é ou não um membro da liga de Ra's Al Ghul.  Porém, se você visitar um deles, ou alguém que está sendo atacado(a) por eles, você irá morrer. Se você visitar alguém e a Liga tentar te matar na sua casa, você irá sobreviver (já que não estava lá).</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Traidor! Você é o Duas Caras! Por enquanto, você é só um cidadão, mas assim que todos a liga das sombras morrer, você se transformará em um membro da liga. Se a Oraculo vir você, você pode ou não ser identificado(a) por ela como um membro da liga.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Você é um membro da Liga das Sombras. Durante a noite você pode escolher alguém para matar junto com seu time.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Você é a Oraculo, seu papel é ajudar Gotham no conflito contra a Liga das Sombras.  Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque a liga esta louca pra matar você!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Você é só um cidadão de Gotham, condenado a passar seus dias vendendo produtos em sua loja, esperando para ser morto pela Liga das Sombras, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar para a prisão, use seu voto com sabedoria!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Você é o Coringa, seu time é você mesmo! Se você for para a prisão, você ganha automaticamente, sozinho. Seu egoísta!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Você é a Arlequina! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em lobisomem.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Você é o Alfred, você saberá quem é a verdadeira Oraculo (e não o Charada). Use isso para ajudar seu time, Gotham!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Você é um jovem prodigio, e joga por Gotham. Caso Oraculo morra, você tomará seu lugar como Oraculo.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Você é um membro dos Lanternas Amarelos.  Durante a noite, você poderá escolher alguém para converter aos Lanternas Amarelos. Se todos os jogadores restantes ao final do jogo forem dos Lanternas, vocês vencem!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Os Lanternas Amarelos está em Gotham tentando converter todo mundo, e você, o Hal Jordan, deve proteger Gotham!  Durante a noite você poderá escolher alguém para inquirir.  Se ele(a) for dos Lanternas Amarelos, ele(a) morre.  Caso eles tentem te converter, o membro mais recente morre.</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      A noite se aproxima e os cidadãos se reúnem para decidir quem irá para a prisão hoje...
+      Todo mundo tem agora {0} segundos para votar!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >Amanheceu em Gotham.  Vocês têm agora {0} segundos para fazer suas acusações / defesas / discutir.</value>
+  </string>
+  <string key="NightTime" >
+    <value >Caiu a noite.  Todos vão dormir bastante cansados após mais um dia bem estressante.  Jogadores: vocês têm {0} segundos para usar suas ações!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >Os cidadãos votaram, em meio a dúvidas e suspeitas. {0} está preso(a). {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Incapazes de chegar a uma decisão final sobre quem prender, a multidão revoltada retorna para suas casas com suas armas, frustrados...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Alguma coisa está cheirando mal, ninguém votou!  Ninguém será preso hoje.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >Os cidadãos se reúnem durante a manhã, mas ninguém consegue achar {0} entre eles.  Eles correm para sua casa e encontram {0} despedaçado, com um batarang enfiado em sua goela. {0} Era o Batman!</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >A manhã chega e, para a surpresa de todos, empalado no topo de uma casa, estava o corpo de {0}, o Flash.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >Todos saem de casa e então encontram pedaços de uma arma despedaçada... em seguida pernas... então dedos... e flutuando no chafariz da praça, o corpo de {0}, morto(a) pela liga. Vocês perderam o Deadshot.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >Os cidadãos acordam ao amanhecer e encontram pedaços do que um dia foi {0} , com peças de computador espalhadas pelo chão. Oraculo está morta.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >A liga das Sombras não conseguiu matar seu alvo essa noite. Mas, para a felicidade da liga e até mesmo de Ra's Al Ghul, Trigon resolveu dar uma ajudinha. Após uma noite de trovões e tremores, ao amanhecer, Gotham encontra o corpo deformado e sem vida de {0} , o Constantine.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >À medida que o sol se levanta sobre Gotham, os cidadãos encontram {0} deitado(a) em cima de uma mesa de magia, mas com cartas de.... Super Trunfo??? HAHAHAHAH QUE TROUXA!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>À medida que todos se levantam durante a manhã, sentem um cheiro horrível.  Eles seguem o cheiro para encontrar {0} esquartejado(a) no chiqueiro.  HAHAHAHAHA {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Um enorme fedor esta sendo exalado pela casa de {0}... Os cidadãos decidem então entrar lá e encontram um corpo, seus dentes espalhados no chão e agulhas embaixo das unhas deixam bem claro que houve... Um membro dos Lanternas Amarelos foi torturado e morto por Hal Jordan!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Os cidadãos se juntam no centro de Gotham durante a manhã e dão um suspiro de alívio - parece que não houve nenhum ataque na última noite.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Você foi atacado(a) pela liga.  Um deles convenceu você de ajudar os ataques de Ra's Al Ghul, você se tornou um membro da Liga das Sombras!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Seu(s) parceiro(s) da Liga das Sombras: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >{0} foi atacado(a).... Mas , ele(a) era o Damian Wayne, e se tornou um membro da Liga! Parabéns pelo seu novo companheiro!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Ah não! A Liga das Sombras te atacou. HAHAHAHAHAHA!!!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Ah não! {0} estava bêbado(a)!  Agora você está bêbado(a) e não poderá atacar na próxima noite...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Você tentou proteger um membro da liga das sombras! Ele te matou!</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Você salvou a vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >{0} não foi atacado(a), então você não fez nada muito útil. Dessa vez.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Você foi proteger {0}, mas ele(a) não estava em casa!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >O Flash estava cuidando de você na noite passada e lutou contra a Liga das Sombras!</value>
+  </string>
+  <string key="HarlotEaten">
+    <value >A Mulher Gato escolheu um péssimo dia para tirar folga e ficar em casa.  {0} foi morto(a) pela liga!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >Estranho... {0} não estava em casa!  Sem ninguém para matar hoje...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Você dormiu na casa de {0} para se divertir um pouco mas descobriu tarde demais que ele(a) era um membro da liga. Você está morto(a).</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} dormiu na casa errada noite passada! Seu corpo, antes safado e divertido, foi encontrado pregado cruelmente na porta de uma casa...  que triste :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >{0} foi dormir na casa de {1}, pronto(a) para ter um pouco de diversão e aliviar a tensão.  Entretanto, ele(a) encontrou um membro da Liga das Sombras matando {1}! Ele se vira rapidamente em direção a {0} e....  {0} está morta.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >Você percebe que {0} não é um membro da Liga, já que vocês fizeram um sexo gostoso e selvagem a noite toda!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >No meio da noite alguém bate na sua porta e diz que quer seu corpo. Estava muito escuro para você ver quem era, mas você estava na seca e precisando de umazinha. Assim, topou, e no fim a pessoa acabou saindo de fininho enquanto você dormia.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Você flagrou {0} xeretando por aí! Ele(a) é o Batman!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Sua investigação provou que {0} é {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Parece que {0} não gostou da noite com a cortesã! Deadshot ficou louco e se vingou. {1} está morto(a).</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >De repente, um tiro é disparado.  Os cidadãos se viram para ver {0} de pé em cima do corpo de {1}, com a arma ainda apontada para a cabeça e os miolos espalhados.  {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >Um membro da Liga das Sombras venceu!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >A Liga das Sombras venceu!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >Gotham  venceu! Todos da Liga das Sombras morreram....</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Ah não! Vocês prenderam o Coringa! Enquanto levavam ele, ele dá uma risada maléfica, deve estar tramando alguma coisa! Ele venceu o jogo, suas antas!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jogadores restantes, papéis e lado:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0} votou para converter {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} foi enviado(a) para fazer o trabalho sujo e converter {1}... Entretanto, ele era o Hal Jordan, e tinha uma câmara de tortura especial para os Lanternas Amarelos! {0} está morto(a)!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} foi à sua casa na noite passada, pronto(a) para te converter....  Mas você tinha uma câmara de tortura só pra esse tipo de gente. Um membro dos Lanternas Amarelos está morto... {1} restante(s)!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Você foi convertido(a) e agora é um membro dos Lanternas Amarelos.  Durante a noite, você poderá tentar converter outros cidadãos, heróis ou vilões.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Membros dos Lanternas Amarelos: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} se juntou aos Lanternas Amarelos!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} foi enviado(a) para fazer o trabalho sujo e converter {1}... Mas ninguém estava em casa!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Toda a Liga da Sombras morreu e as únicas pessoas sobreviventes pertencem aos Lanternas Amarelos...  Eles Venceram!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Você foi inquirir {0}, mas chegando lá só encontrou seu corpo sem vida!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Você invade a casa de {0} e vê as marcas dos Lanternas Amarelos nas paredes, você sabe o que fazer... Depois das torturas, ele se confessa, e você sabe muito bem como expurgar os pecados desse tipo: Com a morte!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Você invade a casa de {0} mas não há nenhum sinal dos Lanternas Amarelos.  Ele(a) não faz parte da Seita... Ainda...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>O grande exemplo de vida de {0} acabou de morrer! Em seu ataque de fúria, ele(a) se tornou um membro da liga!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} foi morto(a)! Num ataque de fúria, você se torna um membro da Liga! Seus novos companheiros são: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>um Cidadão de Gotham 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>o Constantine 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>a Mulher Gato 💋</value>
+  </string>
+  <string key="Seer">
+    <value>a Oraculo 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>o Duas Caras 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>o Flash 👼</value>
+  </string>
+  <string key="Detective">
+    <value>o Batman 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>um membro da Liga das Sombras 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>o Damian Wayne 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>o Deadshot 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>o Coringa 👺</value>
+  </string>
+  <string key="Fool">
+    <value>o Charada 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>a Arlequina 👶</value>
+
+  </string>
+  <string key="Beholder">
+    <value>o Alfred 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>o Garoto Prodigio 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>um Lanterna Amarelo 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>o Hal Jordan 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Fugiu</value>
+  </string>
+  <string key="Dead">
+    <value>💀 MORTO(A)</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Vivo(a)</value>
+  </string>
+   <string key="PlayersAlive">
+    <value>Jogadores vivos</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>um Titã 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Você é um Titã, e participa de um grupo de heróis iniciantes.  Se houver outros Titãs, você saberá quem são.  Caso contrário, você será o único Titã.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>À medida que todos se levantam durante a manhã, o corpo de {0} é encontrado morto, com um grande "T" em seu traje. Um dos Titãs está morto.</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Os Titãs são: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>O membro mais recente dos Lanternas Amarelos corre para a casa de {0} para fazer o trabalho sujo e convertê-lo(a), mas encontra uma bagunça, muito sangue e pedacinhos... Seu alvo estava morto!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>A liga se dirige à casa de {0}, para mais uma morte, mas lá dá de cara com uma pessoa alta, e extremamente rápida. O Flash sai em defesa do alvo e, após uma luta onde a liga não teve nenhuma chance, eles fogem para casa.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} foi enviado(a) para fazer o trabalho sujo, mas a energia de {1} era forte de mais para ser corrompida. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, um(a) jogador(a) com nome {0} já se juntou à partida. Por favor mude seu nome para poder entrar no jogo.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Você dormiu na casa de {0} para se divertir um pouco, mas enquanto saía você notou através de uma porta semiaberta uma estranha lanterna dentro de um quarto...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>À medida que todos se levantam e saem de casa durante a manhã, percebem a ausência de {0}... Quando checam sua casa, encontram seu corpo sem vida.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Estranho.... {0} não apareceu no templo dos Titãs esta manhã.... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Você tenta fugir mas os rumores de que há mais membros da Liga lá fora fizeram com que administradores fechassem as saídas para a Liga não ficar mais forte! Boa sorte com isso!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>Está morto(a)!</value>
+  </string>
+    <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} foi adicionado(a) na lista de admins. Você pode agora usar /config para alterar as configurações do jogo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Você já está em uma partida! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Múltiplos jogos foram iniciados ao mesmo tempo. Fechando os extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Seu grupo está na fila.  Posição: {0} de {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Desculpe, estou prestes a iniciar uma pequena pausa para manutenção, você não pode iniciar um jogo agora.\nEsperando {0} jogos terminarem...\nVá em @werewolfdev para mais informações (em inglês)</value>
+  </string>
+  <string key="MaxGames">
+    <value>Desculpe, o número máximo de jogos simultâneos foi atingido ({0}).  \nPosição na fila: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} é um grupo preferencial e pulou a fila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Não há nenhuma partida ativa no momento. Inicie um novo jogo normal com /startgame ou caótico com /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Somente um administrador(a) pode usar este comando.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Após este jogo, estarei desligando o bot brevemente para manutenção.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Após este jogo, estarei desligando o bot brevemente para uma atualização (automatizada).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>ID do usuário não encontrado.  Verifique se você enviou o comando como resposta.</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} já é um(a) adminsitrador(a)!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} não é um(a) administrador(a)!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} foi removido da lista de administradores.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Idioma alterado para {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Não tem Oraculo!</value>
+  </string>
+  <string key="TimesUp">
+	<value>Tempo esgotado!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Você é a Hera. Enviada à Gotham, com todo seu poder para conquistar e unir as pessoas, você pode escolher dois jogadores que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois amantes, você pode voltar ao seu papel como Cidadão.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Você é o Clayface. Você é completamente formado de barro, e pode assumir qualquer forma que quiser! Escolha um jogador, quando ele morrer você assumirá o papel dele no jogo.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Você é o Arqueiro Verde! Seu arco e flecha fazem parte de você, e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para matar. E se a Liga das Sombras te visitar a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Você é o Deathstroke. Seu time é você mesmo e os outros heróis e vilões não são mais que seus brinquedinhos. Toda noite você pode escolher um jogador para matar e adicionar para sua coleção de corpos.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Você foi atingido(a) pela magia do amor. A memória de {0} nunca deixará seu coração. Seu objetivo é que os dois sobrevivam. Se um de vocês morrer o outro irá até o mundo dos mortos para que ambos continuem juntos.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>A Gotham resolveu prender você! É a sua última chance de dar uso para seus poderes de Marte!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} tenta usar seus poderes, mas estava muito fraco e antes de conseguir, ele é atordoado e os policiais chegam, anunciando sua prisão...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} prepara seu arco e flecha, e se vira para a multidão... Seus olhos analisam um por um para decidir quem vai levar com ele. Mas ele aceita sua prisão...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Os policias estavam chegando, {0} prepara seu arco, e rapidamente, mata {1}! "Hasta la vista, baby..." diz o Arqueiro Verde, para {1} que cai duro no chão. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Você foi ferido mortalmente! Com seu último suspiro, você pode levar alguém com você... Sejá rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} recebeu um ferimento profundo, tanto que ele não conseguiu nem mesmo preparar seus poderes, caindo morto no chão...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0}, calmo como se o sangue saindo de sua barriga não fosse nada, decide não dar seus poderes, aceitando seu destino...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>{0} cai no chão, ferido mortalmente... Mas antes de morrer, ele prepara o arco, e o usa em {1}, que cai morto no chão. {2}</value>
+  </string>
+
+  <string key="HunterShotWolfMulti">
+    <value>Gotham ouviu gritos durante a noite! A Liga atacou a pessoa errada, o Arqueiro Verde não iria embora sozinho, levou {0} (um membro da liga) junto com ele.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Um membro da liga tentou atacar a pessoa errada a noite passada! O Arqueiro Verde sabe se proteger muito bem e deixou um presentinho pra Gotham, o corpo de {0}! </value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>A liga tentou atacar a pessoa errada noite passada! {0} é econtrado sem seus braços pendurado na forca, quase dá pra sentir pena do membro da Liga! O Deathstroke ganhou um novo par de braços.</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Pareceu uma noite normal, mas onde está {0}? Os cidadãos se reúnem na casa de {0}, e encontram seu corpo na banheira cheia de sangue com seus orgãos boiando... O Deathstroke se divertiu essa noite... {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Você foi jogar um joguinho com {0}. Mas chegando lá o Flash acabou com sua diversão! Sem brincadeiras essa noite...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>Os Lanternas Amarelos mandam {0} para converter {1}. Chegando lá, {0} foi surpreendido com uma flecha em sua cabeça, pelo jeito, mais uma vitima para o Arqueiro Verde! {0} tá morta...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>Os Lanternas Amarelos mandam {0} para converter {1}. Chegando lá {0} descobre que era melhor ter escolhido outra pessoa. Seu corpo é encontrado aberto na rua, mas com os orgãos revirados. {0} está morta...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Você tentou proteger a pessoa errada. O Deathstroke te convida para brincar com ele, um tipo de brincadeira que você com certeza não gosta. O tipo de brincadeira que você morre no final...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Você dormiu na casa de {0} para se divertir um pouco. Mas essa noite só {0} vai se divertir, com você, enquanto ele esfaqueia seu corpo. Você morreu, mas se te serve de consolo, ele pareceu se divertir muito essa noite...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Gotham amanhece sem {0} por perto! Vocês perderam a mulher gato.</value>
+  </string>
+  <string key="DGToMason">
+    <value>O Clayface {0} agora se tornou um Titã, assim como você!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} morreu, e você agora é um Titã.  Seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>O Clayface {0} se transformou em um membro dos Lanternas Amarelos.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} morreu, você entrou para os Lanternas Amarelos. Seus novos companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>O Clayface {0} se tornou um membro da Liga das Sombras, mais um para o time!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} morreu, e você se transformou em um membro da liga, HAHAHA!!!  Sua gangue é: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>O único sobrevivente foi o Deathstroke! Ele se divertiu muito com essa brincadeirinha, porque não existe diversão melhor que vencer, em especial quando isso envolve matar todos vocês!</value>
+  </string>
+  <string key="AskKill">
+    <value>Quem você quer matar essa noite?</value>
+  </string>
+  <string key="LoverDied">
+    <value>{0} dá seu último suspiro olhando no fundo dos olhos de seu amado(a), {1}, que segura seu corpo de joelhos. {1} não aguenta a dor, e, com uma faca, perfura o próprio coração... Eles ficarão juntos, mesmo no mundo dos mortos. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value> Quem você escolherá para se transformar?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Quem será o casal? Escolha o primeiro amante.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Quem será o casal? Escolha o segundo amante.</value>
+  </string>
+  <string key="Hunter">
+    <value>o Arqueiro Verde 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>a Hera 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>o Deathstroke 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>a Clayface 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Você se tornou a Arlequina. Seu modelo exemplar é {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Os amantes venceram! Queriam o que né? O Amor sempre vence!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Quando acordam, vocês encontram {0} largado no meio da praça, parecendo uma peneira por causa dos tiros. Parece que alguém visitou o Arqueiro Verde e se deu mal! {1}</value>
+  </string>
+
+  <string key="CultAttempt">
+    <value>Alguém bateu na sua porta a noite, "Olá, você tem um minuto para ouvir a palavra dos Lanternas Amarelos?" Você fecha a porta na cara deles, sua fé é mais forte, mas você se esqueceu de olhar o rosto dele!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Você já está na lista de espera para {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Você foi adicionado à lista de espera para {0}. Mandarei uma mensagem para você quando o próximo jogo começar.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Um novo jogo vai começar em {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>A manhã chega à Gotham, e somente duas pessoas estão de pé. {0} olha para {1}, um sorriso sinistro abre em sua face, ele puxa a sua arma e atira na testa de {1}, que agora se tornou mais um para a coleção.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos em Gotham morreram... Ninguém venceu essa partida... A não ser, talvez, os pinguins.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para uma brincadeira.  {1} rápido como o trovão saca sua arma e atira em {0}. {0}, com seu último suspiro, joga sua faca em {1}. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Você não decidiu a tempo, então o bot escolheu por você: {0}</value>
+  </string>
+  <string key="Won">
+
+    <value>Ganhou</value>
+  </string>
+  <string key="Lost">
+
+    <value>Perdeu</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>O jogador {0} não votou e foi morto por isso {1} vezes nas últimas 24 horas.</value>
+	</string>
+<!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
+  <string key="AboutVG">
+    <value>Você é um simples Cidadão de Gotham, condenado a passar seus dias vendendo seus produtos em sua loja, pronto para ser morto pela Liga das Sombras, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar para a prisão, use seu voto com sabedoria!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Você é a Oraculo, seu papel é guiar Gotham na briga contra a Liga das Sombras.  Durante a noite, você escolherá alguém para consultar nas cartas, e ter seu papel revelado a você. Se revele com cautela, porque a Liga esta louca para matar você!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Você é um membro da Liga das Sombras. Durante a noite você pode escolher alguém para matar, junto com seu time.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Você é a Mulher Gato, a aliada sexy de Gotham. Durante a noite, você poderá escolher alguém para fazer uma visitinha, e descobrir se a pessoa é ou não um membro da Liga das Sombras.  Porém, se você visitar um deles, ou alguém que está sendo atacado(a) por eles, você irá morrer. Se você visitar alguém e a Liga tentar te matar na sua casa, você irá sobreviver (já que não estava lá).</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Parabéns, você é o Constantine! Você tem bafo de cachaça, mas joga por Gotham. Se a Liga das Sombras te matar, eles vão ficar de ressaca e não vão conseguir atacar ninguém na noite seguinte!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Você é o Damian Wayne. Por enquanto você é um cidadão, mas se você por atacado pela Liga das Sombras, eles convencerão você, e você se tornará um membro da liga também.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Você é o Duas Caras! Por enquanto, você comete seus crimes apenas por hobby, e se a Gotham ganhar, você também ganha, mas assim que todos da Liga das Sombras morrerem, você se transformará em um membro da Liga.  Se a Oraculo ver você, você pode ou não ser identificado(a) por ela como um membro.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Você é o Flash, e seu papel é proteger os cidadãos de Gotham. Durante a noite, você pode escolher um(a) jogador(a) para proteger. Porém, se você escolher um membro da Liga das Sombras, pode acontecer o pior.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Você é o Batman! O detetive de Gotham. Antes das votações, você pode escolher uma pessoa para investigar e descobrir seu papel. No entanto, ao fazer isso, você pode ser descoberto pela Liga das Sombras! (40% de chance)</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Bang bang, você é o Deadshot.  Você possui 2 balas para ajudar Gotham.  Durante o dia, você pode atirar em um(a) jogador(a). Todo mundo ouvirá os tiros e saberão que você é o famoso Pistoleiro.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Você é o Coringa, seu time é você mesmo! Se você for para a prisão, Gotham perde, e você vencerá sozinho. Seu egoísta!</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Você é um Lanterna Amarelo.  Durante a noite, você poderá escolher alguém para converter ao seu grupo. Se todos os jogadores restantes ao final do jogo forem do seu grupo, vocês vencem!</value>
+  </string>
+  <string key="AboutCH">
+    <value>Os Lanternas Amarelos estam em Gotham tentando converter todo mundo, e você, o Hal Jordan deve defender Gotham!  Durante a noite você poderá escolher alguém para inquirir.  Se ele(a) for dos Lanternas Amarelos, ele(a) morre.  Caso eles tentem te converter, o membro mais recente morre.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Você é a Arlequina! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em um membro da Liga das Sombras.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Você é o Jovem Prodigio, e joga por Gotham. Caso a Oraculo morra, você tomará seu lugar como Oraculo.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Você é o Alfred, você saberá quem é a verdadeira Oraculo (e não o Charada). Use isso para ajudar seu time, Gotham!</value>
+  </string>
+  <string key="AboutMason">
+    <value>Você é um Titã, e participa de um grupo de heróis aprendizes.  Se houver outros Titãs, você saberá quem são.  Caso contrário, você será um simples cidadão.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+     Você é o Clayface. Você é feito de barro e pode assumir qualquer forma que quiser! Escolha um jogador, quando ele morrer você assumirá o papel dele no jogo.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Você é a Hera. Enviado à Gotham, com todo seu poder para atrair e unir pessoas, você pode escolher dois jogadores que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois amantes, você pode voltar ao seu papel como Cidadão.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Você é o Arqueiro Verde! Sempre com seu Arco e Flecha, está pronto para fazer justiça para Gotham! Se você morrer, pode escolher alguém para matar. E se a liga das sombras te visitar a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Você é o Deathstroke. Seu time é você mesmo e os outros heróis e vilões são apenas meros amadores para você. Toda noite você pode escolher um jogador para matar e adicionar para sua coleção de corpos.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para é o desenvolvedor desse jogo, e ele gosta de latir pras pessoas. Talvez ele tenha ficado muito tempo com os Lobos... Mexer com os lobos não é uma idéia muito boa, né?</value>
+  </string>
+  <string key="EndTime">
+    <value>Duração do jogo: {0}</value>
+  </string>
+ 
+ 
+    <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>{0}º dia</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Alguma coisa deu errado, e esse nodo desligou :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Eu te enviei uma mensagem no privado</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor me envie uma mensagem no privado para eu conseguir te enviar mensagens: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Obrigado por me ativar! Agora eu posso te enviar mensagens privadas.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Você precisa usar o comando smite como resposta ao usuário que quer aniquilar</value>
+  </string>
+  <string key="WhatToDo">
+    <value>O que você quer fazer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Você precisa estar em um grupo para se juntar a uma partida nele!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Você precisa começar uma partida dentro de um grupo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo de processamento da mensagem: {0}\nUso de CPU atual: {1}%\nMensagens por segundo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Que língua?\nAtual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Que variante?\nAtual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma definido como {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Pegar que arquivo de idioma?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Não há nodos ligados no momento, por favor tente novamente dentro de alguns segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Você precisa acionar esse comando em um grupo</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Você não é um administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>Você não é o Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sim</value>
+  </string>
+  <string key="No">
+    <value>Não</value>
+  </string>
+  <string key="Allow">
+    <value>Permitir</value>
+  </string>
+  <string key="Disallow">
+    <value>Não permitir</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Não mostrar</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Apenas Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Apenas Caos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Escolha do jogador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Não mostrar nenhum</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar apenas os de jogadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar os de todos os jogadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose # editem isso quando der pra traduzir o "not"# -->
+    <value>Você quer permitir fugas após o início de uma partida?\nLembre-se que jogadores sempre poderão fugir antes do início da partida!\nAtual: Players can {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
+    <value>Players will {0}be allowed to flee after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Que quantidade de jogadores você gostaria de definir como a máxima?\nAtual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Número máximo de jogadores definido como {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrar ou não os papéis dos jogadores quando morrerem?\nAtual: {0}</value>
+  </string>
+  <!-- # editem isso quando der pra traduzir o shown/hidden # -->
+  <string key="ShowRolesDeathA">
+    <value>Papéis dos jogadores serão {0} quando morrerem.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Qual modo de jogo estará ativo no grupo?\nAtual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de jogo definido como {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Como você quer que os papéis de jogadores sejam revelados ao fim do jogo?\nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Revelação dos papéis definida como: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Escolha a duração base (em segundos) do dia.   Ela ainda será modificada de acordo com o número de jogadores.\nO tempo mínimo adicionado de acordo com os jogadores é de 60 segundos.  Configuração padrão: {0}\nAtual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duração base do dia definida como {0} segundos</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Escolha a duração (em segundos) da noite. Configuração Padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duração da noite definida como {0} segundos</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Escolha a duração (em segundos) da votação do enforcamento. Configuração padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duração da votação do enforcamento definida como {0} segundos</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Permitir o Trouxa como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Existência do Trouxa definida como: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Permitir o Suicida (Coringa) como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Existência do Suicida (Coringa) definida como: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Permitir a Seita como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Existência da Seita definida como: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Obrigado e tenha um bom jogo!</value>
+  </string>
+   <string key="WhatLangGroup">
+    <value>Você quer procurar um grupo jogando em que idioma?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aqui estão os grupos jogando em {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor me mande start no privado para eu poder te enviar mensagens.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} não iniciou o bot, e foi removido(a) do jogo!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aqui está a lista mais recente de jogadores</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Não fui capaz de obter a lista de jogadores, você tem certeza de que o jogo já começou?</value>
+  </string>
+  <string key="YouJoined">
+    <value>Você se juntou à partida em {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo até o envio da mensagem de ping: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Você é o Comissário Gordon. Por ser o líder do setor policial de Gotham. Seu voto durante o julgamento contará duas vezes, uma vez que você se revelou. Você faz parte do time de Gotham.</value>
+  </string>
+
+  <string key="RoleInfoPrince">
+    <value>Você é o Aquaman, escapando de sua vida aborrecida e mimada cuidando de problemas bobos do oceano. Se Gotham tentar prede-lo, perceberão seu erro, e ninguém será preso.</value>
+  </string>
+
+  <string key="RoleInfoClumsyGuy">
+    <value>Você é o Mutano: Você vai tentar votar, mas há uma chance de 50% de votar em outra pessoa do que você pretendia. Mesmo assim, você está no time de Gotham .</value>
+  </string>
+
+  <string key="RoleInfoSorcerer">
+    <value>Você é a Magia, e se junta a Liga das Sombras, ao invés do time de Gotham. À noite, você usará seu poder para encontrar os a Liga ou a Oraculo. Você ganha somente se a Liga das Sombras ganhar. Desfrute de ajudar a exterminar esses miseráveis ​​cidadãos. </value>
+  </string>
+
+  <string key="RoleInfoBlacksmith">
+    <value>Você é o Asa Noturna: o defensor noturno de Gotham. Você tem uma quantidade significativa de armamentos, o suficiente para impedir a Liga das Sombras de atacar por uma noite. Durante o dia, você pode decidir se defenderá Gotham.</value>
+  </string>
+
+  <string key="RoleInfoAlphaWolf">
+    <value>Você é o Ra's Al Ghul, líder da Liga dos Assassinos. Seus ataques são a origem de todo esse conflito de Gotham. Cada noite, você vai escolher alguém para atacar e matar, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de se transformar em um membro da Liga. </value>
+  </string>
+
+  <string key="RoleInfoWolfCub">
+    <value>Você é a Talia al Ghul. Admirada por todos da Liga das Sombras. Como todos os outros, você vai escolher um cidadão para atacar e matar todas as noites. Se acontecer de você ser morto, sua liga verá seu corpo no chão, e, ensandecida, vingará sua morte, atacando duas pessoas na noite seguinte. </value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Gotham se prepara para prender {0}, que grita, "Esperem! Eu sou o Aquaman. Esse tridente, com o simbolo do reino dos mares, comprova isso. Toda noite eu estou rodeado de criados, então não posso ser um inimigo." Se sentindo tolos, os cidadãos vão para suas casas dormir com o rabo entre as pernas.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Você tenta ver {0}, mas não consegue entender direito o que ele é. Tudo o que sabe é que ele não é a Oraculo nem um membro da Liga das Sombras...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} dá um passo à frente e mostra o selo oficial de superintendencia da policia de Gotham, declarando que é ele o Comissario Gordon. De agora em diante, os votos de {0} para prender alguém serão contados duas vezes.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clique em "Revelar" quando estiver pronto para se revelar como o Comissario Gordon</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Você quer defender Gotham, impedindo a liga de Ra's Al Ghul de atacar essa noite?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Enquanto o resto de Gotham debate sobre o que está acontecendo, {0} declara que é o Asa Noturna e defenderá Gotham. Pelo menos por enquanto, Gotham estará segura de ataques da liga de Ra's Al Ghul.</value>
+  </string>
+  <string key="Mayor">
+    <value>o Comissario Gordon 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>o Aquaman 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>a Magia 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>o Mutano 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>o Asa Noturna ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>o Ra's Al Ghul ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>a Talia al Ghul 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>A liga das sombras foi atacar {0}, mas, de repente, {1}, o Ra's Al Ghul, manda todos pararem. Ele diz para a liga que {0} deveria se juntar a eles ao invés de morrer, então todos voltam às suas casas, deixando sua vítima lesionada. {0} decide se juntar ao grupo de Ra's Al Ghul, amanhã de noite ele se juntará à liga.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Você foi atacado pela Liga das sombras, mas o Ra's Al Ghul te escolheu. Ao invés de ser morto, você foi gravemente lesionado... e decide se juntar a Ra's Al Ghul, amanhã de noite se juntará à liga!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>O sol se põe, e você vê a liga de Ra's Al Ghul te esperando do lado de fora de sua casa, você sai e todos partem para o local de reunião. Agora você é um membro da Liga das Sombras!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como Comissario Gordon, você é um simples cidadão, até se revelar. Então você poderá ter o seu voto contado duas vezes na hora de prender alguém (ou seja, o seu voto é duas vezes mais poderoso que qualquer um). Use o seu poder sabiamente para ajudar Gotham.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>O Aquaman é uma parte importante de Gotham. Assim que tentam prendê-lo, seu papel de Aquaman é revelado, e ele poderá se defender. Assim, só poderá ser morto durante a noite, ou pelo Arqueiro Verde.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Você se lembra da boa e velha Oraculo? Bem, agora a Liga das Sombras tem uma, e é a Magia. Ela pode apenas 'ver' a liga e a Oraculo, e é do time de Ra's Al Ghul.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Você é o Mutano. Você não deveria ter comido tantas panquecas com seus amigos de manhã... Agora você não consegue enxergar nada. Será que você consegue votar na pessoa certa na hora de prender alguém? (Você tem 50% de votar na pessoa errada)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Você é o Asa Noturna. Durante os anos, sempre defendendo Gotham quando necessário, chegou a hora de você ser uma figura importante para a cidade.
+Talvez você ainda tenha algumas habilidades com suas armas. Quem sabe? Talvez ele até *previna que a liga possa atacar essa noite* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Você é o Ra's Al Ghul, a origem de todo esse conflito em Gotham, o líder. Quando vivo, a sua vítima tem 20% de chance de se juntar a gangue.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Talia al Ghul! A mais amada de toda a Liga, se você morresse, a raiva dos seus companheiros seria tanta que eles iriam matar 2 pessoas na próxima noite!!</value>
+  </string>
+
+ <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou em Ra's Al Ghul.  Os seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou em Talia al Ghul.  Os seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Time de Gotham</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Time Neutro</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Time de Ra's Al Ghul</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Time Deathstroke</value>
+  </string>
+  <string key="CultTeam">
+    <value>Time dos Lanternas Amarelos</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Time Coringa</value>
+  </string>
+  - <string key="VillageTeamEnd">
+  <value>Time de Gotham</value> 
+  </string>
+- <string key="NeutralTeamEnd">
+  <value>Time Neutro</value> 
+  </string>
+- <string key="WolfTeamEnd">
+  <value>Time de Ra's Al Ghul</value> 
+  </string>
+- <string key="SerialKillerTeamEnd">
+  <value>Time Deathstroke</value> 
+  </string>
+- <string key="CultTeamEnd">
+  <value>Time dos Lanternas Amarelos</value> 
+  </string>
+- <string key="TannerTeamEnd">
+  <value>Time Coringa</value> 
+  </string>
+  - <string key="CultConvertWolf">
+  <value>Os Lanternas Amarelos enviam {0} para tentar converter {1}, mas em vez disso, a sua cabeça é jogada pela janela. {0} está morto...</value> 
+  </string>
+ <string key="HarlotFuckedKilledPublic">
+    <value>{0} vai até a casa de {1}, pronta para uma noite de romance, somente para encontrar um estranho removendo cirurgicamente os órgãos de {1}! O Deathstroke decidiu obrigar {0} a se juntar à brincadeira, mas não foi nada divertido...</value>
+  </string>
+  
+  <!--New Death Strings 05 Nov-->
+  <string key="ApprenticeSeerEaten">
+    <value>Gotham acorda e encontra o corpo do Garoto Prodigio todo ensaguentado, seu mestre sentirá sua falta. {0} morreu!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, o Asa Noturna, é bem azarado. Cinco tiros marcavam o seu peito. E diversas armas desapareceram, o Deathstroke fez a festa!</value>
+  </string>
+  <string key="CultistKilled">
+    <value>De manhã todos encontram {0} empalado no topo de um prédio. O Deathstroke não se importa com a cor da lanterna, todos são amadores para ele! Os Lanternas Amarelos vão sentir falta de {0}...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Os cidadãos ficam de coração partido ao encontrar {0}, a Hera, morta. Estranho o fato do verde de seu corpo estar faltando, obviamente obra do Deathstroke.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0}, o Constantine teve o seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Obviamente mais uma brincadeira do Deathstroke que deve ter adorado seu novo drink. </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} é encontrado com pedaços de metal onde antes eram suas pernas. {0}, o Flash, está morto, e a noite agora é mais sombria.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Na calada da noite vocês ouvem um tiro na casa de {0}, o Deadshot! Seus sonhos são tormentosos depois de encontra-la com um buraco na testa, e a arma embaralhada em suas entranhas, mais uma vítima do Deathstroke.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Houve um terrível assassinato! {0}, o Comissario Gordon foi encontrado assado com uma maçã na boca! O Deathstroke finalmente conseguiu vingança pelos anos presos em Arkhan.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>O sino toca por toda a Gotham antes do nascer do sol. Os soldados do Rei das águas estão em todo lugar investigando a morte de {0}, o Aquaman. E nenhuma pista foi encontrada ainda, além do tridente na cabeça decepada do Aquaman, com a assintaura em sangue "Deathstroke" na parede.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Gotham acorda para ver o corpo de {0}, a Oraculo, morta. No lugar de seu cérebro, uma peça de computador. O Deathstroke é assustador!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Algumas pessoas parecem tristes. Parece que um erro foi cometido e a Liga matou um aliado. A Magia, {0} está morta.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>HAHAHAHAHA! {0}, Arlequina morreu, e o que sobrou foi apenas sua maquiagem e seu cabelo!</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Gotham acordou essa manhã só para encontrar um corpo torturado e morto na praça. {0}, o Hal Jordan, visitou a pessoa errada. O Deathstroke utilizou todas as ferramentas de tortura para o Lanterna Verde.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Péssima escolha dos Lanternas Amarelos ao visitar um membro da Liga das Sombras que decidiu ficar em casa durante a noite. {0} está morto, foi convertido em uma bela decoração para o templo da Liga das Sombras.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Ontem a noite os Lanternas Amarelos decidiram visitar a única pessoa mais estranha do que eles, o Deathstroke, e por causa disso, os órgãos de {0} serviram para a criação de uma nova obra de arte.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>{0} tentou proteger o Deathstroke ontem a noite. Gotham acordou e encontrou o corpo de {0} na parede de sua casa.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <value>{0} tentou proteger um membro da Liga ontem a noite. Gotham acordou e apenas encontrou o corpo de {0} e suas pernas, ensanguentadas no chão da sua casa.</value>
+  </string>
+
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Só restava {0} e um membro da Liga das Sombras de pé, {1} tentou matar {0}, mas {1} estava preparado para aquilo, logo o Arqueiro Verde se vira rapidamente e em um só movimento com seu arco, a Liga das Sombras havia sido aniquiada. 
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabendo que só restava {0}, {1} parte para a morte de {0}. Era o fim de {0}, o Arqueiro Verde.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} se encontraram ao amanhecer. Todos estavam mortos, então {1}, o Hal Jordan conseguiu identificar {0} como um membro dos Lanternas Amarelos, o tiro certeiro de {1} fez com que Gotham se livrasse imediamatamente do medo ao extremo.</value>
+  </string>
+</strings>

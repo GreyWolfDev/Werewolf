@@ -51,7 +51,7 @@ namespace Werewolf_Control
                     return;
                 }
                 //check nodes to see if player is in a game
-
+                var node = GetPlayerNode(update.Message.From.Id);
                 var game = GetGroupNodeAndGame(update.Message.Chat.Id);
                 if (game == null)
                 {
@@ -63,7 +63,36 @@ namespace Werewolf_Control
                     Thread.Sleep(50);
                     game = GetGroupNodeAndGame(update.Message.Chat.Id);
                 }
-                game?.AddPlayer(update);
+
+                if (game != null || node != null)
+                {
+                    //try grabbing the game again...
+                    if (game == null)
+                        game = node.Games.FirstOrDefault(x => x.Users.Contains(update.Message.From.Id));
+                    if (game?.Users.Contains(update.Message.From.Id) ?? false)
+                    {
+                        if (game.GroupId != update.Message.Chat.Id)
+                        {
+                            //player is already in a game (in another group), and alive
+                            var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
+                            Send(GetLocaleString("AlreadyInGame", grp?.Language ?? "English", game.ChatGroup.ToBold()), update.Message.Chat.Id);
+                            return;
+                        }
+                        else
+                        {
+                            //do nothing, player is in the game, in that group, they are just being spammy
+                            return;
+                        }
+                    }
+
+                    //player is not in game, they need to join, if they can
+                    //game?.AddPlayer(update);
+
+                    game?.ShowJoinButton();
+                    if (game == null)
+                        Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
+                    return;
+                }
                 if (game == null)
                 {
                     var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
@@ -153,8 +182,73 @@ namespace Werewolf_Control
             {
                 Send(GetLocaleString("NoGame", GetLanguage(id)), id);
             }
+        }
 
+        [Command(Trigger = "extend", Blockable = true, InGroupOnly = true)]
+        public static void Extend(Update update, string[] args)
+        {
+            var id = update.Message.Chat.Id;
+            var isadmin = UpdateHelper.IsGroupAdmin(update) || UpdateHelper.IsGlobalAdmin(update.Message.From.Id);
+            //check nodes to see if player is in a game
+            var node = GetPlayerNode(update.Message.From.Id);
+            var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+            
 
+            if (game == null) //if this doesn't work, you'll have to get the game as node.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id) in the second else if block
+                Send(GetLocaleString("NoGame", GetLanguage(id)), id);
+            else if (game != null && node == null && !isadmin) //there is a game, but this player is not in it
+                Send(GetLocaleString("NotPlaying", GetLanguage(id)), id);
+            else if (game != null && (node != null || isadmin)) //player is in the game, or is an admin
+            {
+                int seconds = int.TryParse(args[1], out seconds) ? seconds : 30;
+                if (seconds < 0 && !isadmin)
+                    Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id); //otherwise we're allowing people to /forcestart
+                else
+                    using (var db = new WWContext())
+                    {
+                        var grp = db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
+                        if (isadmin || (grp.HasFlag(GroupConfig.AllowExtend)))
+                        {
+                            int maxextend = grp.MaxExtend ?? Settings.MaxExtend;
+                            seconds = Math.Abs(seconds) > maxextend ? maxextend * Math.Sign(seconds) : seconds ;
+                            game?.ExtendTime(update.Message.From.Id, isadmin, seconds);
+                        }
+                        else
+                            Send(GetLocaleString("GroupAdminOnly", GetLanguage(id)), id);
+                    }
+                return;
+            }
+        }
+
+        [Command(Trigger = "stopwaiting", Blockable = true)]
+        public static void StopWaiting(Update update, string[] args)
+        {
+            long groupid = 0;
+            string groupname = "";
+            if (update.Message.Chat.Id < 0) //it's a group
+            {
+                groupid = update.Message.Chat.Id;
+                groupname = update.Message.Chat.Title;
+            }
+            else if (args.Length >= 2 && !String.IsNullOrEmpty(args[1])) {
+                using (var db = new WWContext())
+                {
+                    var grp = GetGroup(args[1], db);
+                    groupid = grp?.GroupId ?? 0;
+                    groupname = grp?.Name ?? "";
+                }
+            }
+
+            if (groupid == 0)
+            {
+                Send(GetLocaleString("GroupNotFound", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                return;
+            }
+
+            using (var db = new WWContext())
+                db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {update.Message.From.Id}");
+
+            Send(GetLocaleString("DeletedFromWaitList", GetLanguage(update.Message.From.Id), groupname.ToBold()), update.Message.From.Id);
         }
     }
 }

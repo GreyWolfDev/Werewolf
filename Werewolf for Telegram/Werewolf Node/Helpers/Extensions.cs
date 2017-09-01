@@ -45,14 +45,34 @@ namespace Werewolf_Node.Helpers
             return str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
         }
 
-        public static string GetName(this IPlayer player, bool menu = false)
+        public static string GetName(this IPlayer player, bool menu = false, bool dead = false)
         {
-            if (menu)
-                return player.Name;
-            if (!String.IsNullOrEmpty(player.TeleUser.Username))
-                return $"<a href=\"telegram.me/{player.TeleUser.Username}\">{player.Name.FormatHTML()}</a>";
+            var name = player.Name;
 
-            return player.Name.ToBold();
+            var end = name.Substring(name.Length - Math.Min(name.Length, 5));
+            name = name.Substring(0, Math.Max(name.Length - 5, 0));
+            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
+
+            if (player.GifPack?.ShowBadge ?? false || (player.GifPack == null && player.DonationLevel >= 10))
+            {
+                if (player.DonationLevel >= 100)
+                    end += " 🥇";
+                else if (player.DonationLevel >= 50)
+                    end += " 🥈";
+                else if (player.DonationLevel >= 10)
+                    end += " 🥉";
+                if (player.Founder)
+                    end += "💎";
+            }
+            name += end;
+
+            if (menu)
+                return name;
+            //if (!String.IsNullOrEmpty(player.TeleUser.Username))
+            if (!dead)
+                return $"<a href=\"tg://user?id={player.TeleUser.Id}\">{name.FormatHTML()}</a>";
+
+            return name.ToBold();
         }
 
         public static IEnumerable<IPlayer> GetLivingPlayers(this IEnumerable<IPlayer> players)

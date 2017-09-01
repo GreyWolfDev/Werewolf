@@ -1,36 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- WEREWOLF FOR TELEGRAM: SINGAPORE (PUBLIC HOUSING) Language Pack. Learn more about Singapore from our language pack and the little references we have put in, for laughs! -->
-<!-- Version 1.00: Created proudly by Donavan, Holypanda, Kylor, Darryl, Klinsmann, Kopi, Ian and Cyril! Moral support and vetting from Jayjay, Kaykay and Risa! -->
-<!-- Version 1.01: Edited "serial killer" from KUMAR to Pontianak. Also language changes. -->
-<!-- Version 1.02: Multiple values for many common strings. Adding a bit of variety. -->
+<!-- This will be updated in tandem with the English language pack as far as possible. -->
 <!-- If you would like to contribute to this language pack for more Singaporean flavour, please contact @donavancheah to see how it can be infused into the pack! -->
 <strings>
-  <language name="English - Singapore" base="English" variant="Singapore Version"/>
-  <string key="NotInGame">
+  <language name="English - Singapore" base="English" variant="Singapore Version" code="en"/>
+  <string key="NotInGame" deprecated="true">
     <value>You don't appear to be in any HDB flats right now...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a game! Use /join to buy a HDB flat, and probably be chased out! :P</value>
-    <value>A new BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
+    <value>{0} has started a game! Buy a HDB flat, and probably be chased out!</value>
+    <value>A new BTO exercise has been started by {0}! Buy a HDB flat now!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} has started a chaos game! Use /join to buy a HDB flat. and probably be chased out! :P</value>
-    <value>A new chaotic BTO exercise has been started by {0}! Use /join to buy a HDB flat!</value>
+    <value>{0} has started a chaos game! Buy a HDB flat. and probably be chased out! :P</value>
+    <value>A new chaotic BTO exercise has been started by {0}! Buy a HDB flat now!</value>
   </string>
-  <string key="NoJoinGameRunning">
+  <string key="NoJoinGameRunning" deprecated="true">
     <value>You can't join now! Next round of build-to-order (BTO) flats, please! </value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>You've already joined the queue!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join</value>
+    <value>1 minute left to join the BTO queue!</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} seconds left to /join</value>
+    <value>{0} seconds left to join the BTO queue!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Not enough players, cancelling BTO exercise!</value>
@@ -38,7 +36,7 @@
   <string key="StartingGameWait">
     <value>Game is starting, please wait while I assign roles and update the database.</value>
   </string>
-  <string key="BannedForExploit">
+  <string key="BannedForExploit" deprecated="true">
     <!-- 0 - Player name -->
     <value>{0} is banned for attempting an exploit (no names starting with /)</value>
   </string>
@@ -77,7 +75,7 @@
     <!-- 0 - Number of players -->
     <value>{0} residents remain.</value>
   </string>
-  <string key="DidntAsk">
+  <string key="DidntAsk" deprecated="true">
     <value>Hey I didn't ask you anything yet!</value>
   </string>
   <string key="NotPlaying">
@@ -86,7 +84,7 @@
   <string key="NoPlayerName">
     <value>I can't find a resident by that name!</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>This answer is not valid!</value>
   </string>
   <string key="WolfVotedKill">
@@ -103,6 +101,7 @@
     <!-- 0 - player name -->
     <!-- 1 - player role -->
     <value>{0} was so busy {0} forgot to vote two nights in a row. Apparently, {0} has made it rich, and {0}'s would be moving to a condominium tomorrow! The rest of the residents glare at him with jealous stares. {1}</value>
+    <value>{0} refused to vote two nights in a row. The residents decide to preach the importance of exercising the right to vote, before chasing {0} away. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>You jealous resident!!! You are now the HDB agent.</value>
@@ -221,8 +220,12 @@
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
     <value>
-      Dusk draws near, and the residents gather to decide who they are chasing away this evening...
-      Everyone now has {0} seconds to vote!
+      Dusk draws near, and the residents gather to decide who they are chasing away this evening.
+      Everyone now has {0} seconds to vote! Remember, voting is compulsory in this country!
+    </value>
+    <value>
+      As dusk draws near, the residents decide who they should chase away this evening.
+      Everyone now has {0} seconds to vote! Remember, voting is compulsory in this country!
     </value>
   </string>
   <string key="DayTime" >
@@ -243,26 +246,27 @@
   </string>
   <string key="LynchTie" >
     <value>It looks like the gossip was in vain; nobody was chased away tonight! Everyone still has a flat!</value>
-    <value>NATO (No action, talk only) SIA! Can't even decide who to evict? Everyone goes home, feeling pissed that the "chao betrayer" hasn't been fished out.</value>
+    <value>NATO (No action, talk only) SIA! We can't even decide who to evict? Everyone goes home, feeling pissed that the "betrayer" hasn't been fished out.</value>
   </string>
   <string key="NoLynchVotes" >
     <value >Something is fishy, for no one voted! No angry aunties chasing the scum of the HDB block out!</value>
   </string>
   <string key="DetectiveEaten" >
     <!-- 0 - victim name -->
-    <value>Where's {0}? They find {0}'s drone smashed on the covered walkway, with traces of an eviction notice for illegal flying.</value>
+    <value>The residents wake up to find {0}'s drone smashed on the covered walkway, with traces of an eviction notice for illegal flying.</value>
   </string>
   <string key="GuardianEaten" >
     <!-- 0 - victim name -->
-    <value >Morning comes, strangely abandoned along the roadside with her marketing trolley is {0}, the 啰哩啰嗦 (Long-winded) Auntie (Guardian Angel). The HDB agents must have evicted her, and all she had left was her one week's worth of groceries.</value>
+    <value> Morning comes, strangely abandoned along the roadside with her marketing trolley is {0}, the 啰哩啰嗦 (Long-winded) Auntie (Guardian Angel). The HDB agents must have evicted her, and all she had left was her one week's worth of groceries.</value>
   </string>
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
-    <value >Morning comes, only to reveal an eviction notice and an SAF notice charging the shady NSF (gunner), {0}, in court, for his smuggling enterprise! {0} has been evicted!</value>
+    <value>Morning comes, only to reveal an eviction notice and an SAF notice charging the shady NSF (gunner), {0}, in court, for his smuggling enterprise! {0} has been evicted!</value>
   </string>
   <string key="SeerEaten" >
     <!-- 0 - victim name -->
-    <value >Night-time comes, and a notice was pasted at {0}'s door. The Hacktivist (seer) was caught working over-time! Some wire tappers and an old monitor were left in the bulk refuse chute, testament that he was being evicted.</value>
+    <value>Morning comes, and a notice was pasted at {0}'s door. The Hacktivist (seer) was caught working over-time! Some wire tappers and an old monitor were left in the bulk refuse chute, testament that he was being evicted.</value>
+    <value>The advisory reads: {0} has been evicted for installing malware on the HDB servers. Looks like there is no way to further inflate the value of their HDB flat anymore.</value>
   </string>
   <string key="DrunkEaten" >
     <!-- 0 - victim name -->
@@ -270,7 +274,7 @@
   </string>
   <string key="FoolEaten" >
     <!-- 0 - victim name -->
-    <value>The residents wakes up to the smell of burning plastic, only to see the unit of {0} burnt down from an electrical overload ! The stupid script kiddie (fool) DDoS-ed himself while the HDB agents were visiting! The HDB agents quickly evicted him on counts of misconduct.</value>
+    <value>The residents wakes up to the smell of burning plastic, only to see the unit of {0} burnt down from an electrical overload! The stupid script kiddie (fool) DDoS-ed himself while the HDB agents were visiting! The HDB agents quickly evicted him on counts of misconduct.</value>
   </string>
   <string key="DefaultEaten" >
     <!-- 0 - victim name -->
@@ -286,6 +290,7 @@
   <string key="NoAttack" >
     <value>The residents gather the next morning at the void deck, to sighs of relief - it appears there no one lost their home. Praise the HDB for their magnanimity.</value>
     <value>HENG ARH! (Lucky us!) Nobody seems to have been evicted last night.</value>
+    <value>It appears that no one was evicted last night. Please praise the Father, the Son and the Holy Goh.</value>
     <value>Someone volunteers to perform a headcount. Everyone seems to be present, which is good. Maybe the estate isn't so spooky after all, considering how this place is well-known for "mysterious" evictions.</value>
   </string>
   <string key="CursedBitten" >
@@ -300,37 +305,39 @@
     <value >{0} was visited... but admitted to her illegal deeds! You felt that he would make a great HDB agent (wolf)! Congratulations on your new colleague!</value>
   </string>
   <string key="WolvesEatYou" isgif="false" >
-    <value >Oh no! The HDB agents (wolves) have evicted you!</value>
+    <value>Oh no! The HDB agents (wolves) have evicted you!</value>
+    <value>Unlucky day for you! The HDB agents (wolves) have evicted you!</value>
+    <value>KNOCK KNOCK!! The HDB agents (wolves) have come to evict you!</value>
   </string>
   <string key="WolvesEatDrunk" >
     <!-- 0 - victim name -->
-    <value >Oh no! {0} was a drunkard (drunk)! Evicting him took far longer than expected because his house was a fire hazard! You must re-visit his house tomorrow night just to clear the crates of Tiger Beer he was trying to resell!</value>
+    <value>Oh no! {0} was a drunkard (drunk)! Evicting him took far longer than expected because his house was a fire hazard! Double effort was required, hindering you from evicting another unfortunate soul!</value>
   </string>
   <string key="GuardWolf" >
-    <value >You tried to defend an HDB agent's (wolf's) "business"! Of course it was legal, and you were running the illegal business! You have been evicted.</value>
+    <value>You tried to defend an HDB agent's (wolf's) "business"! Of course it was legal, and you were running the illegal business! You have been evicted.</value>
   </string>
   <string key="GuardSaved" >
     <!-- 0 - saved player name -->
-    <value >You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (serial killer)!</value>
+    <value>You have defended {0}'s from the HDB agents (wolves) and/or Pontianak (serial killer)!</value>
   </string>
   <string key="GuardNoAttack" >
     <!-- 0 - player name -->
-    <value >No one wanted to evict {0}, wasting your precious time when you could have been coaching your daughter for the PSLE.</value>
+    <value>No one wanted to evict {0}, wasting your precious time when you could have been coaching your daughter for the PSLE.</value>
   </string>
   <string key="GuardEmptyHouse">
     <!-- 0 - player name -->
     <value>You visited {0}, but perhaps they were out!</value>
   </string>
-  <string key="GuardSavedYou" >
+  <string key="GuardSavedYou">
     <value>A 啰哩啰嗦 (long-winded) Auntie (Guardian Angel) squabbled with the HDB agents (wolves) without you opening the door! All you heard was an unrecognisable string of "colourful" words. Who cares? As long as you can keep your flat, you're happy!</value>
   </string>
-  <string key="HarlotEaten" >
+  <string key="HarlotEaten">
     <!-- 0 - player name -->
     <value>The makcik (harlot) chose the wrong night to QC her laksa cauldron! The HDB agents have discovered her illegal business! {0} has been evicted!</value>
   </string>
-  <string key="HarlotNotHome" >
+  <string key="HarlotNotHome">
     <!-- 0 - player name -->
-    <value>Odd... {0} was not home! How to evict someone who is not at home?</value>
+    <value>Odd... {0} was not home! How do you evict someone who is not at home?</value>
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
@@ -387,10 +394,10 @@
     <value>All the pesky HDB agents have been dealt with! The residents have won and can continue their illegal enterprises!</value>
   </string>
   <string key="TannerWins" isgif="false" >
-    <value >Oh no! You chased the Attention Seeker out! HardwareZone and EDMW are now full of conspiracy articles such as paranormal spottings, plunging the value of the HDB flat!</value>
+    <value>Oh no! You chased the Attention Seeker out! HardwareZone and EDMW are now full of conspiracy articles such as paranormal spottings, plunging the value of the HDB flat!</value>
   </string>
   <string key="RemainingPlayersEnd">
-    <value>Remaining players in the estate, roles, and team:</value>
+    <value>Remaining players in the flat, roles, and team:</value>
   </string>
   <string key="CultistVotedConvert" >
     <!-- 0 - Voter's name -->
@@ -400,7 +407,7 @@
   <string key="CultConvertCultHunter">
     <!-- 0 - Yougest Cultist (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} was sent to do your dirty work, and recruit {1}, but they were the fake CPIB agent! RUN! Gosh, we lost {0} to the "CPIB"!</value>
+    <value>{0} was provided a pig's head, the negotiation forms, and went to recruit {1}, but they were the fake CPIB agent! RUN! Gosh, we lost {0} to the "CPIB"!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
     <!-- 0 - Youngest Cultist's name -->
@@ -425,6 +432,7 @@
   </string>
   <string key="CultWins" isgif="true">
     <value>All the HDB agents have been busted, and the only people left standing are all Money-Lending Members! The MLM has won!</value>
+    <value>All that is left in this estate are Money-Lending Members! No more pesky HDB agents or "do-gooder" residents! The MLM has won!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -502,7 +510,7 @@
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
-    <value>Ran away</value>
+    <value>离家出走 (Ran Away From Home)</value>
   </string>
   <string key="Dead">
     <value>😭 No Longer Living Here</value>
@@ -565,7 +573,7 @@
   </string>
   <string key="MasonConverted">
     <!-- 0 - mason's name -->
-    <value>Odd.... {0} didn't show up for the daily gossip session. O.o</value>
+    <value>{0} didn't show up for the daily gossip session. How strange...</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -578,7 +586,7 @@
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
+  <string key="AdminAdded" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} added to admin list. Use /config to change group settings.</value>
   </string>
@@ -586,24 +594,24 @@
     <!-- 0 - target's name -->
     <value>You are already in a BTO exercise! ({0})</value>
   </string>
-  <string key="MultipleGames">
+  <string key="MultipleGames" deprecated="true">
     <value>Your group has managed to do extra BTOs. Killing extras.</value>
   </string>
-  <string key="GroupQueue">
+  <string key="GroupQueue" deprecated="true">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
     <value>Your group is currently in the queue. Position: {0} / {1}</value>
   </string>
-  <string key="MaintBreak">
+  <string key="MaintBreak" deprecated="true">
     <!-- 0 - target's name -->
     <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
   </string>
-  <string key="MaxGames">
+  <string key="MaxGames" deprecated="true">
     <!-- 0 - target's name -->
     <!-- 1 - target's name -->
     <value>Sorry, max concurrent games has been reached ({0}). \nPosition in queue: {1} / {1}</value>
   </string>
-  <string key="SkipQueue">
+  <string key="SkipQueue" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is a preferred group, and has skipped the queue!</value>
   </string>
@@ -613,28 +621,28 @@
   <string key="GroupAdminOnly">
     <value>Only a group admin can run this command.</value>
   </string>
-  <string key="ShuttingDown">
+  <string key="ShuttingDown" deprecated="true">
     <value>After this game, I am shutting down for maintenance.</value>
   </string>
-  <string key="ShuttingDownUpdate">
+  <string key="ShuttingDownUpdate" deprecated="true">
     <value>After this game, I am shutting down momentarily for an update (automated).</value>
   </string>
-  <string key="NullIdAdmin">
+  <string key="NullIdAdmin" deprecated="true">
     <value>UserId was null. Are you sure you sent this as a reply?</value>
   </string>
-  <string key="AlreadyAdmin">
+  <string key="AlreadyAdmin" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is already an admin!</value>
   </string>
-  <string key="NotAdmin">
+  <string key="NotAdmin" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} is not an admin!</value>
   </string>
-  <string key="AdminRemoved">
+  <string key="AdminRemoved" deprecated="true">
     <!-- 0 - target's name -->
     <value>{0} removed from admin list.</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <!-- 0 - language's name -->
     <value>Language set to {0}</value>
   </string>
@@ -656,13 +664,14 @@
     <value>You are the tape-recording auntie (hunter 🎯). Everyone fears talking to you because they don't know whose scandal may be exposed, and so no one really likes talking to this auntie. Even the MLM fears you for fear that they will be exposed. If an HDB agent comes by, there is a chance she will dig out sordid information on Tor on the number of mistresses the HDB agent has in JB, causing the HDB agent himself to leave in shame!</value>
   </string>
   <string key="RoleInfoSerialKiller">
-    <value>You are the PONTIANAK!!! (serial killer 🔪) Everyone else is human, but humans fear ghosts! Every night, you may scare someone! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!t</value>
+    <value>You are the PONTIANAK!!! (serial killer 🔪) Everyone else is human, but humans fear ghosts! Every night, you may scare someone, forcing them to leave immediately (co-existence isn't possible)! The only exception is if you encounter someone who is speaking to the rambly auntie, who will then turn on you and rant so much that you give up!</value>
   </string>
   <string key="CupidChosen">
-    <value>You have been forced by your parents to wed. {0} is even worse than Patricia Mok or Mark Lee, but you accept that you need to get a BTO after all. Your goal is for both of you to survive. If one of you disappears (dies, gets evicted, gets scared out of your wits, chased away), the other one will no longer be eligible for a BTO under age 35, and hence commit suicide (even if illegal).</value>
+    <value>You have been forced by your parents to wed. {0} is worse than Patricia Mok or Mark Lee, but you accept that you need to get a BTO after all. Your goal is for both of you to survive. If one of you disappears (gets evicted, gets scared out of your wits, chased away), the other one will no longer be eligible for a BTO under age 35, and hence elope with you (even if illegal).</value>
+ 	<value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block 💔, but if both of you make it to the end, you have the entire block to yourself!</value>
   </string>
   <string key="HunterLynchedChoice">
-    <value>The residents has chosen to chase you away! This is your last chance, choose to expose someone's scandal and be chased away together!</value>
+    <value>The residents has chosen to chase you away! This is your last chance; choose to expose someone's scandal and be chased away together!</value>
   </string>
   <string key="HunterNoChoiceLynched">
     <value>{0} fumbles for her iPhone containing scandals of everyone, but cannot get it in time, and was chased away with a broomstick.</value>
@@ -695,15 +704,18 @@
     <value>Dying, {0} falls to the ground.... but not without exposing the dirty secrets of {1}, who the residents than chased out as well! {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
+  	<!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
     <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by the Pontianak!!! {1} frightens {0} so badly {0} swore to leave the HDB estate with immediate effect! D:</value>
+ 	<value>The MLM sends {0} to try to recruit {1}, but the Pontianak scared {0}! {0} dropped his pig's head, ran for his sanity, and moved out the next morning!</value>
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>The HDB agents (wolves) tried to evict the scandalous auntie (hunter) last night, but a government conspiracy about the HDB was being exposed! {0} has been selected as the scapegoat to be the "less than honourable" public servant.</value>
+    <value>The HDB agents (wolves) tried to evict the tape-recording auntie (hunter) last night, but a government conspiracy about the HDB was being exposed! {0} has been selected as the scapegoat to be the "less than honourable" public servant.</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
-    <value>The HDB agents (wolves) tried to evict the scandalous auntie (hunter) last night, but the HDB agent, {0}, was counter-exposed for adultery. The HDB agent had to leave in double shame.</value>
+    <value>The HDB agents (wolves) tried to evict the tape-recording auntie (hunter) last night, but the HDB agent, {0}, was counter-exposed for adultery. The HDB agent had to leave in double shame.</value>
   </string>t
   <string key="SerialKillerKilledWolf">
     <value>The HDB agents (wolves) had hoped to evict someone from their flat, but were instead greeted by Pontianak!!! {0} was the the front man, and turned pale upon seeing the abomination. He decided to tell his boss he would change job the next day and move out!</value>
@@ -711,31 +723,26 @@
   <string key="DefaultKilled">
     <!-- 0 - target's name -->
     <!-- 1 - target's role -->
-    <value>The middle of the night did not go by silently! A strange shout from {0} meant only one thing: the pontianak has struck again! Strangely {0} did not try to move out even earlier, but {0} had already left the HDB estate by morning. {1}.</value>
+    <value>The middle of the night did not go by silently! A strange shout from {0} meant only one thing: the Pontianak has struck again! Strangely {0} did not try to move out even earlier, but {0} had already left the HDB estate by morning. {1}.</value>
   </string>
   <string key="GuardBlockedKiller">
     <!-- 0 - target's name -->
-    <value>You tried to scare {0}, but the 啰哩啰嗦 (Long-winded) auntie droned on and on... even after you had long drifted away.</value>
+    <value>You tried to scare {0}, but the 啰哩啰嗦 (Long-winded) auntie droned on and on... even after you had long drifted away. One-on-one is fine, but two humans to a ghost wasn't quite what you expected.</value>
   </string>
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Cultist's name -->
     <!-- 1 - target's name -->
     <value>The cult sends {0} to try to recruit {1}, but TNP reported of the MLM the next morning and {0} left due to shame.</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to recruit {1}, but the Pontianak scared {0}! {0} dropped his pig's head, ran for his sanity, and moved out the next morning!</value>
-  </string>
   <string key="GuardKiller">
-    <value>You tried to defend the ghost (you really think that was a good idea?), but the Pontianak opened the door! Finally you were at a loss of words, and quickly went to pack your belongings, leaving this haunted HDB block!!</value>
+    <value>You tried to defend the ghost (you really think that was a good idea?), but the Pontianak opened the door! Fearing for your sanity, you fled, packed your belongings and left the haunted HDB block!!</value>
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
-    <value>You tried to sell laksa to {0}, but a Pontianak greeted you at the door. Dropping your bowl, you hurriedly flee with your giant cauldron. PONTIANAK IS TRUE!</value>
+    <value>You tried to sell laksa to {0}, but the Pontianak greeted you at the door. Dropping your bowl, you hurriedly flee with your giant cauldron. PONTIANAK IS TRUE!</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>The estate notices a white makcik with laksa all over her. Apparently she visited the Pontianak last night. {0} will leave the estate by morning.</value>
+    <value>The estate noticed the spillage of laksa all over makcik's house last night. Apparently she visited the Pontianak and was so frightened out of her wits that she went mad. {0} had silently left.</value>
   </string>
   <string key="DGToMason">
     <!-- 0 - target's name -->
@@ -753,7 +760,7 @@
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has disappeared from the estate, and you pick up a can of red paint and illegal wads of cash after raiding his flat. Your fellow MLM (if any) are: {1}</value>
+    <value>{0} has disappeared from the estate. You quickly burgle their flat, arming yourself with a can of red paint and illegal cash. Your fellow MLM (if any) are: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -798,10 +805,6 @@
   <string key="Doppelgänger">
     <value>the Imitator (the Doppelgänger) 🎭</value>
   </string>
-  <string key="CupidChosen">
-    <!-- 0 - lover's name -->
-    <value>The curse of the forced marriage! Now you must buy a BTO with {0} or else the parents will eventually nag you to madness! If your other "loved" one disappears, you would rather flee the HDB block 💔, but if both of you make it to the end, you have the entire block to yourself!</value>
-  </string>
   <string key="NewWCRoleModel">
     <!-- 0 - target's name -->
     <value>You have become the Intern. You watch {0}, in the hope that he or she does not fall to the HDB agents! However, you will be quick to turn your internship contract permanent if he or she gets evicted!</value>
@@ -812,7 +815,7 @@
   <string key="HunterKilledVisiter">
     <!-- 0 - target's name -->
     <!-- 1 - role -->
-    <value>At the playground below, multiple copies of TNP featured a scandal on {0}. Looks like they tried to talk to the tape-recording auntie last night! {1}</value>
+    <value>Multiple copies of TNP featuring a scandal on {0} was found at the playground. Looks like the tape-recording auntie did not take to their nonsense kindly! {1}</value>
   </string>
   <string key="CultAttempt">
     <value>A MLM tried to sell you a pyramid scheme with a pig's head, but you knew better not to believe in such snake oil. After all, trusting in the ah long (loanshark) is tantamount to giving up your life!</value>
@@ -950,13 +953,13 @@
   <string key="SentPrivate">
     <value>I have sent you a PM</value>
   </string>
-  <string key="StartPM">
+  <string key="StartPM" deprecated="true">
     <value>Please send me a pm so I can PM you: @werewolfbot</value>
   </string>
-  <string key="PMTrue">
+  <string key="PMTrue" deprecated="true">
     <value>Thanks for starting me! I can PM you now.</value>
   </string>
-  <string key="MustReplySmite">
+  <string key="MustReplySmite" deprecated="true">
     <value>You must reply to the user you want to smite</value>
   </string>
   <string key="WhatToDo">
@@ -1069,7 +1072,7 @@
     <value>Roles shown at end set to: {0}</value>
   </string>
   <string key="SetDayTimeQ">
-    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds. Default setting: {0}\nCurrent: {1}</value>
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
   </string>
   <string key="SetDayTimeA">
     <value>Base day time set to {0} seconds</value>
@@ -1263,4 +1266,149 @@
   <string key="TannerTeam">
     <value>The Attention Seeking Team</value>
   </string>
+  <string key="VillageTeamEnd">
+    <value>Team Residents</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>The ones who don't give a damn!</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>The HDB Agents</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>The PONTIANAK Team!</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>The Money-Lending Members</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>The Attention Seeking Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The money-lending members send {0} to try to convert {1}, but {0} was immediately flashed an eviction notice for such daring illegal money-lending! {0} has been evicted!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} offered laksa to {1} last night, only to be met with {1} packing their bags! {1} convinced {0} of the existence of the pontianak, quickly convincing {0} to leave this HDB flat immediately!</value>
+  </string>
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>It appears {0}'s computer science skills can no longer be put to the test. The HDB agents found his twiddling with automated DDoS scripts, evicting the Rogue Computer Science student immediately.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>{0}'s superstitions have come true. She predicted last night the Pontianak would eventually find her, and she was right. The Superstitious Auntie has been scared out of her wits, and has decided to pack her bags.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>The Pontianak has claimed a new victim! {0} tried to go around hanging pigs' heads and spraying O$P$, only to be spooked by the Pontianak!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The Pontianak has robbed the HDB flat of "love", frightening the Matchmaking Auntie, {0}, out of her wits! No more matchmakers in the HDB flat; time for singles to wait till they are 35 before getting their own BTO!</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Weird... {0} was enjoying his Tiger Beer when a loud scream was suddenly heard. Apparently the Pontianak has come visiting, spooked him out of his wits, and no amount of alcohol would make him forget the Pontianak! He hastily fled the HDB flat.</value>
+    <value>{0} was enjoying a hearty shot of Kavalan (from the Duty Free store) when the Pontianak sobered him up. The drunkard is now leaving the HDB flat for good, scarred at how no amount of whisky can make him ever forget the psychological trauma.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally have handled the Pontianak just fine, except that she was out of words tonight. Even as a 啰哩啰嗦 (Long-winded) auntie, {0} decided to cut the crap and just leave this scary HDB flat.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was not doing guard duty right last night! All the HDB residents had found was a trail of urine, an abandoned SAR-21 and a few bullet holes, as if the Pontianak had succeeded in spooking the shady NSF, just like the stories he had heard while in Pulau Tekong.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Being frightened in his dreams from a Pontianak was not what {0} signed up for. Self-declared lawyers have no recourse against the... paranormal.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>The Pontianak has struck again! {0}, the Obese, was conjured an image of horror beyond compare, sending him rolling down the stairs and leaving the HDB flat for good!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The Hacktivist, {0}, was working on the latest botnet when the Pontianak decided to pay a visit... all that was known was that there were some strange screen flickers...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>The stock market speculator, {0}, was found to have been evicted last night. They would have made a good tag team with the HDB agents, if they had known!</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>What's with the heartlessness of the HDB agents, evicting the orphan, {0}! They could have employed {0} into their ranks!</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>The fakery of the Fake Corrupt Practices Investigation Bureau Officer, {0}, was exposed. Visiting an apparition last night was so traumatising he had got his just desserts for scaring people with the law. Never visit the Pontianak, especially at night!</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>The HDB agents were doing some OT and admin work at home when {0}, the newest Money-Lending Member, foolishly hung a pig's head at the HDB agents' homes. The arrest and eviction that followed was faster than lightning could strike.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>A pig's head would have scared a human, but {0} learnt it would not scare the Pontianak. The tables have turned, and {0} cut all ties with the Money-Lending Members and quietly disappeared, in the dark of the night.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>The 啰哩啰嗦 (Long-winded) auntie, {0}, asked for trouble! How could she ever win an argument against a ghost? All that was left was a note outside {0}'s door that read, "I scare far more than your words ever can!"</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>The 啰哩啰嗦 (Long-winded) auntie, {0}, visited the HDB agents last night. She squabbled with them, raised her voice, and was evicted for "noise pollution" and "disruption to the good order of the HDB estate".</value>
+  </string>
+  
+    <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} tries to evict {0}, but {0} released a sex scandal, embarrassing the HDB agent, {1}. The tape-recording auntie stands proud of her accomplishment at ridding the estate of the pesky law enforcers!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} chose an opportune time to evict {0}, where she had no access to her tapes! The HDB agent stands alone, in full control of the estate!</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} were the only ones left eating breakfast at the hawker centre, where {1} busted {0}'s illegal money-lending scheme! All that is left is the fake Corrupt Practices and Investigation Bureau officer!</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>BTO period extended by {0} seconds!\n{1} left for the BTO!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>BTO period decreased by {0} seconds!\n{1} left for the BTO!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend BTO time?\nCurrent: {0} extending\nNote: Admins will always be able to extend!</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+    <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to BTO joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time for BTO set to {0} seconds</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was a drunkard! Dealing with the drunkard proved far too troublesome; your agents could not evict {1}!</value>
+  </string>
+  <string key="JoinButton"><!-- this is for a button, no markdown or html -->
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join the BTO exercise. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total. (Reminder from the Elections Department: Voting is secret. Voting is also compulsory.)</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  
 </strings>

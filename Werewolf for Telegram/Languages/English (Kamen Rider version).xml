@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- WEREWOLF FOR TELEGRAM: Kamen Rider Language Pack. -->
+<strings>
+  <language name="English - Kamen Rider" base="English" variant="Kamen Rider"/>
+  <string key="NotInGame">
+    <value>You don't appear to be in any Rider fights now...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a Rider Taisen! SHABADOOBIE TOUCH /join TO HENSHIN! (and probably die.)</value>
+    <value>A new Rider Taisen has been started by {0}! SHABADOOBIE TOUCH /join TO HENSHIN!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a chaotic Rider Taisen! SHABADOOBIE TOUCH /join TO HENSHIN! (and probably die.)</value>
+    <value>A new chaotic Rider Taisen has been started by {0}! SHABADOOBIE TOUCH /join TO HENSHIN!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>You can't join now! Next round of Rider Taisen, please! </value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>You've already joined the queue!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute left to /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Not enough players, cancelling Rider Taisen!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Game is starting, please wait while I assign roles and update the database.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, please change your name to join the Rider Taisen!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, the Rider Taisen is already full!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} has gotten ready to HENSHIN! {1} in queue! Min. queue {2}, max. queue {3}.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role. You may not 
+
+HENSHIN! until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>No point fleeing; you've already exploded!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has self-destructed!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} Characters remain.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be in this Rider Taisen...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a Rider by that name!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to betray {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to Rider Kick {1}!.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} was so busy fighting grunts, he forgot to vote two fights in a row. {0} gets overwhelmed by grunts (what a loser!), and dies embarrassingly. {1}
+
+</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>You willingly induce a transformation into a Kaijin - finally, your dreams of being the strongest have come true. </value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nThe Cafe Owner is {0}.</value>
+    <value>\nAs far as you know, only {0} the Cafe Owner could have given legitimate information to the cast.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} was the Cafe Owner. Wanting to prove your rapport with the rest of the characters, you take over the cafe.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} has already learned how to make good coffee, and has now stepped up to fill 
+
+{1}'s place as the new Cafe Owner.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see {0} is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to Rider Kick?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Whose background info do you want to check?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Who do you want to shoot? {0} bullet(s) remain.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Who do you want to approach?</value>
+  </string>
+  <string key="AskSee">
+    <value>Whose information do you want to gather?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to give a rousing speech to?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you eliminate for Shocker?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who do you suspect of being a Shocker Grunt? Time to punch them!</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who’s your aniki?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to recruit as the newest Shocker Grunt?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value> Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith". again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are Kamen Rider Ryugen (cursed 😾). If Shocker ever threatens your existence, you will betray your Rider brethren and sell them out!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are Kamen Rider Lazer (detective 🕵). During the commercial break, you can conduct background checks on your fellow cast members. However, there is a 40% chance the Kaijin will notice you! </value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>You are Kamen Rider Dark Kabuto (drunk 🍻). If the Kaijin manage to eliminate you, you will go down in a blaze of glory, distracting them from rest of the cast with your heroic sacrifice!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are Kamen Rider Fourze (Guardian Angel 👼) - each commercial break, you give a cast member moral support with the power of friendship to withstand another assault from Shocker. However, if you try befriending a Kaijin, there is a 50% chance they will take you out for the hell of it.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are Kamen Rider Diend (gunner 🔫)! If you want to steal someone’s treasure, you can shoot them - but your Final Attack Ride sound effect and gaudy finisher reveals your location.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You are the Rider Girl (harlot 💋). You act really cute and let the Riders feel heroic, but if you behave that way to Shadowmoon or Kaijin, they will eliminate you for…. Reasons. If Shadowmoon or Kaijin look for you while you’re out with a Rider, they won’t snoop around because even Evil Has Standards, and nothing will happen to you. </value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>You are Kamen Rider Baron (traitor🖕). When nobody else can challenge your strength, you assume the identity of a Kaijin to assert your dominance on the world. Strength is everything! The Cafe Owner may identify you as a potential enemy, so beware!</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>YOU ARE A KAIJIN (WOLF 🐺)! Each episode, you can eliminate a cast member when they let their guard down. ALL FOR THE GLORY OF SHOCKER!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You are the Cafe Owner (seer 👳). Each episode, you may make small talk with other cast members and deduce their true identity.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>You are a Regular Human (Villager 👱), existing only to be the victims of Shocker.</value>
+    <value>You were hoping to be an actual character? Nah, you're really just a sad background cast member (Villager 👱). Too bad!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are Kamen Rider Ouja(tanner 👺). If the cast wants to pre-emptively take you out, you unleash Genocider and suck everyone into a black hole!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You are Kamen Rider Chalice (wild child 👶). You live as a Regular Human, but once you witness the death of the humans you’ve made friends with, you vow vengeance on humanity and embrace your Kaijin nature.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are the Part-time Cafe Worker (beholder 👁). You know who the real Cafe Owner is.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You are the Cafe Assistant (apprentice seer 🙇). Someday, if the Cafe Owner (seer) is gone, you must take over to maintain the Cafe so the Riders have somewhere to return to.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >You are a Shocker Grunt (Cultist 👤), concerned only with spreading the gospel of Shocker. Everyone else can be lured into the simple life of a Shocker Grunt except ambitious Kaijin and Shadowmoon - the more Grunts, the merrier!
+</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >You are Kamen Rider Accel (Cultist Hunter 💂). If Shocker Grunts try to convert you, the newest member (also the fall guy) will get arrested. Each episode, you may launch an investigation into any cast member, arresting them if they are a Shocker Grunt.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+The end of the episode draws near, and the cast gathers to decide who they are going to RIDER KICK!
+      Everyone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>It is now the commercial break. All of you have {0} seconds to take a pee break and discuss the events of the episode.</value>
+    <value>It is now the commercial break. All of you have {0} seconds to discuss potential spoilers and toy catalogues.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>The episode has begun. Everyone prepares for battle. Actual characters, you have {0} seconds to use your actions!</value>
+    <value>The episode has begun. Everyone readies for a fight, loading their weapons and charging their gimmicks. Actual characters, you have {0} seconds to use your actions!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>The cast has voted, amid doubts and suspicions. {0} has been RIDER KICKED AND EXPLODES! {1}</value>
+    <value>The cast has voted for their choice of candidate, {0}. {0} has been RIDER KICKED AND EXPLODES! {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>It looks like communications broke down like a regular Faiz episode; nobody was RIDER KICKED.
+
+</value>
+    <value>Just like Micchy, the entire cast mopes around and doesn’t really achieve anything this episode.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Something is fishy, for no one voted! Is Toei on holiday?
+</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>The cast members find {0} on the floor. It’s GAME OVER for Kamen Rider Lazer!.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Kamen Rider Fourze, {0}, has been eliminated by Shocker - there goes your moral support and friendship.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >Kamen Rider Diend, {0}, has had the Diend Driver stolen, and loses his only reason to live - he can’t steal from other dimensions anymore. </value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >The episode opens with a notice was pasted at {0}'s door. The Cafe got bought over by a dubious CEO of a large company, and Kaijin have conveniently wrecked the place… and the Owner as well.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>The cast sank to their knees, mourning the death of Kamen Rider Dark Kabuto, {0}. His heroic sacrifice will always be remembered.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>The cast hears a small scream, and find the remains of {0}’s cosplay outfits! The Ambitious Cosplayer made an outfit that was was a little too realistic, and got eliminated.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Everyone hears an explosion, and finds the smouldering remains of {0}.\n{1}</value>
+    <value>{0} puts up a fight, but Shocker has deemed {0} unfit for further experimentation, and eliminates him! \n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>The air is filled with traces of steam, jet exhaust and static electricity near {0}. A Shocker Grunt just got busted by Kamen Rider Accel!</value>
+    <value> {0} hears the sound of the Engine blade, shortly before he explodes. Despair was his goal, courtesy of Kamen Rider Accel</value>
+  </string>
+  <string key="NoAttack" >
+    <value>The cast gathers and sighs - it was yet another filler episode with absolutely no story or development.</value>
+    <value>Bad jokes, meaningless hijinks and extended commercial breaks - filler episode ahoy!.</value>
+    <value>The subbers seem to have taken a break - expect the next episode in a few days.</value>
+    <value>An important softball game has taken over the timeslot - see you next episode!.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>A Kaijin corners you, and just as it charges its hissatsu, you drop your weapon and plead for mercy, and promise to betray the cast like you betrayed your own brother in exchange for your own pathetic life.
+</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your fellow Kaijin: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} gets cornered, but promises to betray the cast in exchange for mercy. Say hello to the new member of Shocker!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="false" >
+    <value>You get hit by an attack out of nowhere, and feel yourself being dragged away by Shocker as you fade into unconsciousness.</value>
+    <value>Shocker agents grab you from behind, injecting you with a sedative. You’ve been eliminated!</value>
+    <value>You let down your guard! A CGI attack strikes you from behind, and you slump over, unconscious.</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >Oh no! {0} was Kamen Rider Dark Kabuto! He stood between you and the cast as they ran off, and you were forced to eliminate him before he gets in your way again.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >You tried to preach lessons of morality to a Kaijin, and got ripped to shreds.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >You raise {0}'s spirits, preventing him from falling into despair and giving in to Shocker’s attacks.</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} was perfectly fine, and you wasted precious screentime trying to cheer him up.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>You visited {0}, but he had better things to do that episode.</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Kamen Rider Fourze gives you a rousing speech, and you feel justice running through your veins - you have been renewed in spirit, and shake off Shocker’s attacks as if nothing happened.</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->
+    <value>The Rider Girl chose the wrong time to act cute, and got eliminated by Shocker. {0} got dragged away, kicking and screaming!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->
+    <value>{0} was out trying to get the attention of the rest of the cast, and you slink back into the shadows, waiting for the next episode to attack. Stupid fanservice.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>{0} tried to be kawaii to a Kaijin, who eliminated her out of sheer irritation.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>{0} tried to be kawaii to a Kaijin, and before anyone could do anything, the Kaijin threw her into the ocean which appears every time a dramatic fight happens near water.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>The Rider Girl skipped towards {1}, only to see a Kaijin blasting {1} when he lowerd his guard. Hearing the Rider Girl scream, the Kaijin shot {0} as well, and dragged them both away!</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value> {0} had a good time appealing to the male cast last episode. Pantsu for days!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>The Rider Girl filled you with so much joy, but spent so much of your hard-eared money at the Cafe that you forget everything that transpired once you double-checked your coffers.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>You saw Kamen Rider Lazer release his transformation - it’s {0}!</value>
+    <value>You hear {0}’s Gamer Driver announcing his transformation - BAKUSOU BIKE! He’s Kamen Rider Lazer!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>You take a look at {0}’s files, and discover he’s {1}.</value>
+    <value>You told a few white lies and got some information - {0} is actually {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>The Rider Girl caused {0} to miss out on some treasure - ain’t nobody got time fo’ dat! {1} got the brunt of Attack Ride: Blast!.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>ATTACK RIDE: BLAST! {0} stands over {1}'s body, the DiendDriver still smoking at the barrel. {2}</value>
+    <value>The DiendDriver lets loose a few shots, and {1} explodes! {0} rummages through the remains for loot, but finds none. What were you expecting, a new card? {2}</value>
+  </string>
+  <string key="WolfWins" isgif="false" >
+    <value>The Kaijin has completed his directive - Shocker can now conquer the world!</value>
+    <value>The Kaijin assumes its ultimate form, and the cast hasn’t been upgraded enough to withstand the onslaught!</value>
+  </string>
+  <string key="WolvesWin" isgif="false" >
+    <value>The Kaijin manage to gain the upper hand in a final assault, conquering the world for the glory of Shocker!</value>
+    <value>The Kaijin combine their powers into a humongous blast, defeating the entire cast, who conveniently happen to be standing in a group.</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>The cast put their hopes, dreams and emotions behind the forces of justice, and together they have eliminated the forces of evil!</value>
+  </string>
+  <string key="TannerWins" isgif="false" >
+    <value>The cast manages to piss Kamen Rider Ouja off, and he ruins everyone’s day by summoning Genocider - embrace despair in a black hole!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining players in the episode:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} has managed to convince {1} on the benefits of joining Shocker.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} approached {1}, only to get struck by a cleverly concealed Engine Blade. {0} got arrested by Kamen Rider Accel!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} approached you and felt the wrath of the Engine Blade; {1} remain! Clearly that Shocker Grunt was too new!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>You have joined the ranks of the Shocker Grunts. EEEEEE!</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Shocker Grunts: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} has become a Shocker Grunt!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} was sent to do your dirty work, and recruit {1}... but couldn’t find him.</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>All the Kaijin have been busted, and the only people left standing are all Shocker Grunts! Who’s the superior combatant now? EEEEEEEEE!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>On a lead, you wanted to arrest {0}, but all you find is a slightly singed black costume.</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>You locate {0} and throw your Engine Blade at him, knocking him out cold. Time for a raise!</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>You go to {0}’s last known location, but {0} has a strong alibi. Your handcuffs have to wait.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}'s friends are gone! In their desperation and anger, they fully embrace their nature as Kaijin!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 1 - teamate's names -->
+    <value>{0}, your human friends, are gone! To survive, you embrace your inner Kaijin, and are filled with tremendous hate Your 
+
+new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, 
+
+WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>a Regular Human (a Villager) 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Kamen Rider Dark Kabuto (the Drunk) 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>the Rider Girl (the Harlot) 💋</value>
+  </string>
+  <string key="Seer">
+    <value>the Cafe Owner (the Seer) 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Kamen Rider Baron(the Traitor) 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Kamen Rider Fourze (the Guardian Angel) 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Kamen Rider Lazer (the Detective) 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>a Kaijin (a Werewolf) 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Kamen Rider Ryugen (the Cursed) 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Kamen Rider Diend (the Gunner) 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Kamen Rider Ouja (the Tanner) 👺</value>
+  </string>
+  <string key="Fool">
+    <value>the Ambitious Cosplayer (the Fool) 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Kamen Rider Chalice (the Wild Child) 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>the Part-time Cafe Worker (the Beholder) 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>the Cafe Assistant (the Apprentice Seer) 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>a Shocker Grunt (MLM) (a Cultist) 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Kamen Rider Accel (the Cultist Hunter) 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Fled the show</value>
+  </string>
+  <string key="Dead">
+    <value>eliminated by Shocker</value>
+  </string>
+  <string key="Alive">
+    <value>A regular cast member</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Players Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Riotrooper 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a Riotrooper (a Mason) 👷. You band together with the rest of the Riotroopers (if there are, they will be stated) and attempt not to die, keeping a low profile. </value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>The cast members hear a tiny, almost unnoticeable explosion. {0}, one of the Riotroopers, has been taken out.. As usual. </value>
+    <value>{0}, a Riotrooper, explodes after being taken out from behind - basically the fate of every Riotrooper.</value>
+  </string>
+  <string key="MasonTeam">
+    <value> The other Riotroopers are: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Your newest Shocker Grunt approaches {0}’s last known location to recruit them, but instead finds the remnants of an intense battle.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>{0} is motivated by Kamen Rider Fourze, giving him enough strength to trudge through another episode despite his injuries.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>You send {0} to spread the good word of Shocker, but {1} was unconvinced.</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, a player with the name {0} has already joined the fight. Please change your name to 
+
+join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>You put on some make-up and skip towards {0}, sees him hastily tucking away a gimp mask. What’s going on desu?</value>
+    <value>As you end your giggling fit, you hear {0} drag his laughter with a “hehehEEEEEEEEEE!”. Normal people don’t laugh like that!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Everyone notices that {0} is not around. They search the entire episode, but only find {0}'s accessories.</value>
+    <value>As the cast gathers, they find {0} missing.</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>{0} didn't show up for the weekly Riotrooper support group. Weird..</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Abandoning the fight while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>is a goner.</value>
+    <value>has been looted and left for dead.</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a Rider Taisen! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple Rider Taisens. Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue. Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on 
+
+{0} games to end...\nGo to @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}). \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no Rider Taisen ongoing. Start a new Rider Taisen with /startgame or start a chaos Rider Taisen with 
+
+/startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null. Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No Cafe Owner!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+    <value>Too slow!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You are Kamen Rider Skull (cupid 🏹)! Choose 2 parties to inspire to take up the mantle of Kamen Rider W, the half-and-half Rider!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are the last Roidmude (doppelganger 🎭). You have learnt to imitate someone to blend in, and hopefully remain undiscovered to keep your species alive.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are Kamen Rider Decade (hunter 🎯). Everyone fears you because you have a little dirt on everyone’s powers. If anyone attacks or even approaches you, there is a chance you can take one of them down with you.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are Shadowmoon! (serial killer 🔪) You win when nothing’s left standing - Riders, humans and Kaijin alike. If Kaijin attack you, you’ll survive, taking one of them out in the process.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>You have been irrevocably inspired by Kamen Rider Skull. {0} is your half-and-half partner as Kamen Rider W. Your goal is for both of you to survive. If one of you 
+
+disappears, the other one will no longer be able to function, and is practically fresh meat for Shocker.</value>
+ 	<value>W-B-X! You have been inspired to become Kamen Rider W with {0}! If your partner disappears, you won’t be able to function at all, and Narumi Detective Agency will get shut down.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The cast has chosen to throw you under the bus! This is your last chance, use FinalAttackRide and take him down with you!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} fumbles for his FinalAttackRide cards, but got stabbed through the Decadriver. Whoops!.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} hesitates to land the final blow, and gets stabbed through the Decadriver anyway.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Just before Kamen Rider Decade gets Rider Kicked, {0} FinalAttackRides {1}, before both disappear in a fiery explosion. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You've been beaten within an inch of your life! Quick, pull out your FinalAttackRide!
+</value>
+    <value>You've been hit! With your dying breath, which form will you use to take someone down with you?</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>{0} gets stabbed through the Decadriver before he has a chance to retaliate.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>As {0} lays there, stabbed through the Decadriver, he looks forlornly at the cards in his hand, then explodes.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Dying, {0} falls to the ground.... And pulls a last-minute FinalAttackRide on {1}, who explodes alongside the crafty Kamen Rider Decade! {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+  	<!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>{0} creeps behind {1}, who anticipates the meeting and takes him out in a single punch.</value>
+ 	<value>The Shocker Grunts sends {0} to try to recruit {1}, but Shadowmoon reveals himself with a Rider Punch!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>The Kaijin try to catch Kamen Rider Decade unaware, but he retailiates! {0} was pushed to the front, bearing the brunt of a full FinalAttackRide!.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>The Kaijin, {0}, attempted to attack Kamen Rider Decade, but was countered by a timely FinalAttackRide and exploded!</value>
+  </string>t
+  <string key="SerialKillerKilledWolf">
+    <value>{0} the Kaijin approached an unsuspecting (or so he thought) victim from behind, only to get brutally beaten down. It was actually Shadowmoon!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0} screamed as he got attacked from behind, {1} exploding in a ball of fire. {0} stood absolutely no chance.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You tried to eliminate {0}, but he withstood your onslaught thanks to a rousing speech by Kamen Rider Fourze, and you slink away to fight another day..</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The Shocker Grunts send {0} to try to recruit {1}, but {0} didn’t even realise Kamen Rider Accel was waiting..</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You tried to give a speech to a Rider, but he revealed his true allegiance - he was secretly Shadowmoon! BOOM!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>You attempted to chat up {0}, but he turned around and punched you in the face.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>The Rider Girl, {0}, screamed so loudly the cast could hear her from a mile away - but when they got there, they could only find a singed spot on the floor and drag marks..</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>The Roidmude {0} has now become a Riotrooper, just like you!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} has disappeared, and you pick up his belt. Your Riotrooper comrade(s) (if any) is/are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>The Roidmude {0} has learnt the ways of Shocker Grunts, and will now spread the good word of Shocker.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has disappeared, and the Roidmude quietly takes his place. Your fellow Shocker Grunts (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>The Roidmude {0} has observed the destructive tendencies of the Kaijin, and have assumed their form as well.</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has been defeated. You quietly assume his form and plot your destructive rampage. Your fellow Kaijin (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>The only one left standing is Shadowmoon - nothing will stand in his way!</value>
+    <value>The cast lies mostly burning in a crater, and only Shadowmoon remains standing amongst the flames.</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to attack?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>With {0} ebbing away, {1} rushes over to resuscitate him, to no avail. {1} loses all hope and faith in what he thought was justice. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Who do you want to copy if they get eliminated or defeated?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who do you want to inspire to be half of Kamen Rider W? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who do you want to inspire to half of be Kamen Rider W? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>Kamen Rider Decade (the Hunter) 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Kamen Rider Skull (the Cupid) 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Shadowmoon (the Serial Killer) 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the Roidmude (the Doppelgänger) 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You have become Kamen Rider Chalice. You watch {0}, in the hope that he teaches you how to fully be human. If he gets eliminated, you’ll fully embrace your Kaijin nature.
+
+</value>
+  </string>
+  <string key="LoversWin">
+    <value>Everyone else is dead except Kamen Rider W! They’ll now rebuild the city from scratch, and make their mentor Narumi Sokichi proud.</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value> A slightly burnt card featuring the image of {0} was found on the ground. Looks like Kamen Rider Decade decided to take them out for the hell of it! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A Shocker Grunt attempted to preach to you about the glorious ambitions of Shocker, but their gimp suit turns you waaaaay off.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for the next Rider Taisen {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for the next Rider Taisen on {0}. I will PM you when the next game is 
+
+starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new Rider Taisen is starting in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>{0} meets {1}, and casually reveals his true form as Shadowmoon. {1} was swiftly defeated.</value>
+    <value>{1} realised that {0} was secretly Shadowmoon, but he was too late, and got swiftly Rider Punched in the face.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>The cast has all left, and only filler content and evil supporting characters remain.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>As the sun rises, {0} and {1} face off in The Quarry Where Every Important Battle Happens (you know, THAT quarry).. {0} tries to get the upper hand on {1}, but 
+
+{1} swiftly executes his Final Attack Ride, and swiftly defeats Shadowmoon.</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to make a choice, so your instinct has randomly chosen someone to make friends with : {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Behind the scenes, {0} was actually fired from the show due to a contractual dispute after not turning up {1} times in the past few episodes.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the 
+
+role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->a
+  <string key="AboutVG">
+    <value>You’re a Regular Human.\n \n(Villager) 👱! You exist only to be the victims of random Kaijin and Shadowmoon attacks or as a plot device. Enjoy your (mostly) meaningless existence!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You’re the head honcho of everyone’s favourite Cafe, \n \nThe Cafe Owner
+
+(Seer) 👳. To curry favour with you, cast members engage in deeper conversations that you’d like, but you gain valuable info that you can reveal, but that makes you a prime target for Kaijin and Shadowmoon.</value>
+  </string>
+  <string key="AboutWw">
+    <value>You’re a Kaijin\n \n (Werewolf) 
+
+🐺.\nThe main agents of Shocker, Kaijin wreak havoc on everyone and drive the plot..\nBut you’re not invincible - your only hope is to take out as many cast members as possible.. And hopefully conquer the world in the name of Shocker!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Kawaii desu! \n \nYou’re the Rider Girl (Harlot) 
+
+💋 that everyone loves!! \nYou act really cute in the hopes that people will give you attention, and they do!\nIf the Kaijin visits you while you are in someone else’s company, nothing will happen to you.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You were once evil, but have seen the light. \n \n Kamen Rider Dark Kabuto (Drunk) 🍻 attempts to atone for his previous misdeeds by doing good, and will valiantly fight to the death to distract other agents of Shocker should they attempt to take him out.!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Blood isn’t thicker than water. \n \nYou are Kamen Rider Ryugen BUDOU ARMS (Cursed) 😾. You pretend to be cheerful to gain the trust of the main cast and secretly hope to fit in, but won’t think twice about betraying them in order to survive..</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You hold dreams of being the strongest - you’re Kamen Rider Baron\n \nI (Traitor) 🖕. When nobody else can challenge your strength, you assume the identity of a Kaijin to assert your dominance on the world. Strength is everything! The Cafe Owner may identify you as a potential enemy, so beware!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are Kamen Rider Fourze (Guardian Angel) 👼. Each commercial break, you give a cast member moral support with the power of friendship to withstand another assault from Shocker. However, if you try befriending Shadowmoon, there is a 50% chance they will take you out for the hell of it.\n \n</value>
+  </string>
+  <string key="AboutDetective">
+    <value>BAKUSOU BIKE! \n \nSomething’s fishy, and we need someone to look into people’s files. Enter Kamen Rider Lazer (Detective) 🕵 ! Mistrust of almost everyone has led you to a life of lying and deceit, even though you’re doing your best to make their lives better.. Without them actually realising anything. Be careful though, snooping around may cause your identity to be revealed thanks to your gaudy, loud transformation.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Treasure? Where?\n \nAs Kamen Rider Diend (Gunner) 🔫, you’re able to blast people and take their treasure, all while ambiguously furthering the ploy. Save your ammo though, you only have two shots.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Your only aim is to piss everyone off - you’re Kamen Rider Ouja (Tanner) 👺. Normally you only go around being a general asshole to everyone, but once everyone decides to call you out on it, it’s time to call out your little Mirror Monster friend, Genocider. Say bye to the entire damn cast if that happens!.</value>
+  </string>
+  <string key="AboutFool">
+    <value>While there are deluded fanboys, you take it one step further.\n \nAs an ambitious cosplayer (Fool)🃏, you’ve pretty much convinced yourself that you’re part of the cast, with self-insertion fanfics and surprisingly immersive costumes.</value>
+  </string>
+  <string key="AboutCult">
+    <value>EEEEEEEEE!\n \nGimp suits and masks are your thing, you’re a Shocker Grunt (Cultist) 👤! Time to spread the good word of Shocker!.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Shocker incidents have been on the rise, and it’s time to take up the Engine Blade.\n \nAs Kamen Rider Accel (Cult Hunter) 💂, you arrest Shocker Grunts as and when you encounter them. HEN… SHIN!</value>
+  </string>
+  <string key="AboutWC">
+    <value>Are humans friends or food?\n \nYou’re Kamen Rider Chalice (Wild Child) 👶.  You live as a Regular Human, but once you witness the death of the humans you’ve made friends with, you vow vengeance on humanity and embrace your Kaijin nature.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>One coffee coming right up, Owner!\n 
+
+\nAs the Assistant Cafe Owner (Apprentice Seer) 🙇, you’re poised to take over the Cafe should the Cafe Owner go missing - but hey, who would wanna get rid of the old man, right?</value>
+  </string>
+  <string key="AboutBH">
+    <value>Earning minimum wage? Check. Dead-end job? Check..\n \nAs the Part-Time Cafe Worker, (Beholder) 👁 , you know who the real Cafe Owner is, but care little beyond that.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Riders, but not really. But yeah, Riders.\n \nAs a Riotrooper (Mason) 👷,
+
+You band together with the rest of the Riotroopers (if there are, they will be stated) and attempt not to die, keeping a low profile.  </value>
+  </string>
+  <string key="AboutDG">
+    <value>Keep your species alive!\n \nYou’re the Roimude (Doppelgänger) 🎭. You have learnt to imitate someone to blend in, and hopefully remain undiscovered.\nNote: If 
+
+the original cast member becomes a Shocker Grunt, they will take on their original role. All other normal rules 
+
+apply: If they were Kamen Rider Chalice and their friends are gone, the Roidmude will develop straight into a Kaijin. 
+
+Otherwise, they will inherit their friends.\nThe Shocker Grunts cannot convert you
+
+(but can after the you imitate someone else). Also - you can NOT win unless you have take over a 
+
+role. (exception: you’re half of Kamen Rider W).
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>Now, count up your sins!\n \nKamen Rider Skull 
+
+(Cupid) 🏹 can choose 2 parties to inspire to take up the mantle of Kamen Rider W, the half-and-half Rider!\n \nNote: The chosen ones will know who each other 
+
+is, but not be told their roles. If they are the last two alive, they win, regardless of teams. If they are on different teams (Kaijin + Shocker Grunts), and one team wins (Kaijin), the lover (Shocker Grunt) wins as well. 
+
+TL;DR if both are alive at the end, and at least one of them was on the winning team, they both win 
+
+together.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>You know every Rider’s powers, sometimes better than they know the powers themselves! \n \nYou are Kamen Rider Decade 
+
+(Hunter) 🎯. Everyone fears you because you have a little dirt on everyone’s powers. If anyone attacks or even approaches you, there is a chance you can take one of them down with you.\n \nNote: For Kaijin, the chance to take them out starts at 30%. If there is one Kaijin, you have a 30% chance to 
+
+defeat the Kaijin and survive. For each additional Kaijin, add 20% (2 Kaijins = 50%, 3 = 70%, 
+
+etc). However - if there are multiple Kaijins, the Kaijins will select one of their counterparts to be 
+
+the fall guy, and you will still be overwhelmed. \nIf a Shocker Grunt tries to recruit you, he has a 50% chance to fail. If they fail, you have a 50% chance to eliminate him.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>You’ve been modified heavily by Shocker in a gross imitation of a warrior of justice.. And you’re VERY unhappy about it. \n \nThe one and 
+
+only Shadowmoon (serial killer) 🔪 used to be human! Since gaining cyborg status, Shadowmoon has 
+
+decided to purify the world.. By destroying it! \n \nThey can win only if they are the last player (exception: They’re half of Kamen Rider W). If the Kaijins try to attack you, they have a four-in-five chance of losing the battle and getting eliminated!</value>
+  </string>
+  <string key="AboutPara">
+    <value>O HAI DER!</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow voluntary leaving of the cast once the game has started?\nNote: players can still 
+
+drop out from the Rider Taisen during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for commercial break time. This will still be modified based on number of 
+
+players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base commercial break time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for an episode. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Episode time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow Ambitious Cosplayer (fool) as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Ambitious Cosplayer (Fool) as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow Kamen Rider Ouja (tanner) as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Kamen Rider Ouja (Tanner) as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow Shocker Grunt (cult) as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Shocker Grunt (Cult) as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you.</value>
+  </string>n
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has had his HDB loan rejected! No flat!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>You are Kamen Rider Ichigo (Mayor 🎖). The most senior rider and possibly the most badass, your words carry extra weight with the cast..</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are Kamen Rider G (Prince 👑)!!! If the other cast members try to get rid of you, you remind them that you’re an unofficial Rider, and therefore not canon so they can’t do a thing. The agents of Shocker disagree, though, and will still attack you.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are Kamen Rider Scissors (Clumsy Guy 🤕). You’re a bumbling buffoon who gets abused by his own Mirror Monster, and half the time, you don’t really know who your real target is and blindly attack.. If you manage to, that is..</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are Kamen Rider Kaixa (Sorcerer 🔮), who prefers to be an asshole to everyone. Of course, that means siding with the Kaijin if you have to, just to be a bigger asshole. Keep a lookout for the Cafe Owner too, he’ll call you out on your assholery.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are Kamen Rider Odin (Blacksmith ⚒). You’re able to use your Time Vent to repeat an entire day, leaving the cast with their memories but forcing the agents of Shocker to backtrack for absolutely no reason.
+</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are the Great Leader of Shocker (Alpha Wolf ⚡)! Your powers enable you to eliminate anyone with the greatest of ease, but sometimes you feel an individual might make a good Kaijin, and you have a chance to convert him into the Rider’s latest enemy.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the Great Leader of Neo-Shocker (Wolf Cub 🐶). Slated to be the successor of the Great Leader of Shocker, you are considered so valuable that 
+
+all the Kaijins either look up to you because of your privilege, or are jealous because you didn’t have to work as hard. Once you are out of the picture, however, everyone would want to 
+
+start impressing the Great Leader for the next fast-track upgrade, so the Kaijins will work harder to 
+
+prove themselves!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the cast debates getting rid of {0}, they are reminded of his temporal existence and inability to influence any other plot besides that weird episode, and leave Kamen Rider G to his alcoholic tendencies.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to be an asshole to {0}, but {0} doesn’t react and reveal his true intentions and feelings and whatever else the plot demands. But you’re sure he’s not a Kaijin or Cafe Owner.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} steps forward and does an iconic henshin (ignore the dated CGI, please), and his aura of power as Kamen Rider Ichigo leaves many mouths agape. Sempai has noticed you all!
+
+From now on, {0}'s votes for Rider Kicking people will count twice.</value>
+    <value>{0} quickly brandishes his iconic belt, transforming amidst dated CGI and sound effects. He's actually Kamen Rider Ichigo! From now on, {0}'s votes 
+
+for Rider Kicking people will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as Kamen Rider Ichigo!</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to activate your time vent, resetting the entire day?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>As the rest of the cast mill about, they notice gold feathers falling. {0} activated his Time Vent, looping the entire day. Everyone still remembers what happened though, but agents of Shocker are unable to carry out their nefarious schemes.</value>
+  </string>
+  <string key="Mayor">
+    <value>Kamen Rider Ichigo (the Mayor) 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Kamen Rider G (the Prince) 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Kamen Rider Kaixa (the Sorcerer) 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Kamen Rider Scissors (the Clumsy Guy) 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Kamen Rider Odin (the Blacksmith) ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>the Great Leader of Shocker (the Alpha Wolf) ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>the Great Leader of Neo-Shocker (the Wolf Cub) 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the Kaijins converge on {0}, {1} stops everyone, being the Great Leader of Shocker. {1} sees potential in {0} and 
+
+provides {0} an illusion of choice to be converted into Kaijin. The experiment will be complete the next episode.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>You were nearly eliminated, but the Great Leader of Shocker saw potential in you. Instead of being eliminated, you have been converted into a Kaijin!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>You wake up on a surgical bed, and notice your new, malformed body. Welcome to the life of a Kaijin.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Your reputation as Kamen Rider Ichigo (mayor 🎖) gives your opinions weight, but when you’re not transformed, you look like another plump old man. Sometimes, that’s not really a bad thing, though. Reveal your identity when it’s time to pull your weight!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>You are Kamen Rider G (Prince 👑)! If the other cast members try to get rid of you, you remind them that you’re an unofficial Rider, and therefore not canon so they can’t do a thing. The agents of Shocker disagree, though, and will still attack you.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Kamen Rider Kaixa (Sorcerer 🔮) is *only* interested in being an asshole! who prefers to be an asshole to everyone. Of course, that means siding with the Kaijin if you have to, just to be a bigger asshole. Keep a lookout for the Cafe Owner too, he’ll call you out on your assholery.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are Kamen Rider Scissors (Clumsy 🤕). You’re a bumbling buffoon who gets abused by his own Mirror Monster, and half the time, you don’t really know who your real target is and blindly attack.. If you manage to, that is. (You have 50% chances to vote for someone random.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You’re Kamen Rider Odin (Blacksmith ⚒). You’re able to use your Time Vent to repeat an entire day, leaving the cast with their memories but forcing the agents of Shocker to backtrack for absolutely no reason.
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are the Great Leader of Shocker (Alpha Wolf ⚡), the one who started it all. Your powers enable you to eliminate anyone with the greatest of ease, but sometimes you feel an individual might make a good Kaijin, and you have a chance to convert him into the Rider’s latest enemy. (20% chance)
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>You are the Great Leader of Neo-Shocker (Wolf Cub 🐶). Slated to be the successor of the Great Leader of Shocker, you are considered so valuable that 
+
+all the Kaijins either look up to you because of your priviledge, or are jealous because you didn’t have to work as hard. Once you are out of the picture, however, everyone would want to 
+
+start impressing the Great Leader for the next fast-track upgrade, so the Kaijins will work harder to 
+
+prove themselves!</value>
+  </string>
+  
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has been eliminated, and you found, amidst the rubble, his remaining life-force! You quickly assert control 
+
+over your fellow Kaijin (if any) as the Great Leader of Shocker. They are: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has been eliminated, and you have asserted your dominance over the remnants of Shocker. Your fellow Kaijin(if any) are: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Rider</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>The ones who don't give a damn!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>The Kaijins</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Shadowmoon!</value>
+  </string>
+  <string key="CultTeam">
+    <value>The Shocker Grunts</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Kamen Rider Ouja</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Rider</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>The ones who don't give a damn!</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>The Kaijins</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Shadowmoon!</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>The Shocker Grunts</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Kamen Rider Ouja</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The Shocker Grunts send {0} to try to convert {1}, but {0} was struck in the face for his audacity at approaching a superior agent of Shocker! {0} has been destroyed!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} offered to go out with {1}, only to find {1} being attacked by Shadowmoon! {1} weakly tells {0} to run, and {0} leaves him to his doom, weeping ever so cutely.</value>
+  </string>
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>It appears {0} was caught in the crossfire in a Kaijin battle, and now the Cafe Owner has no more successor..</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>{0}'s machinations have come to an end - they’ve found your weak spot and punched you like Ryuki did, and you’re forced to erase your entire existence in shame.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} tried to convert Shadowmoon, and got dismissed with extreme prejudice (a Rider Punch to the face, to be specific). EEEEE!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Kamen Rider Skull, {0}, has been taken out by Shadowmoon. Kamen Rider W hangs his (their?) head in shame, and picks up Kamen Rider Skull’s damaged hat.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0} was attacked by Shadowmoon, and put up a hard fight.. But Shadowmoon was only toying with him to pass the time, and eliminated him once he got bored.</value>
+    <value>{0} took blow after blow from Shadowmoon, desperate to atone for his sins… but it was all in vain, and he exploded in a blaze of despair.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} was pre-emptively taken out by Shadowmoon before he could empower the cast to stand against evil.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was too busy looting to notice Shadowmoon! By the time Kamen Rider Diend fumbled for some cards, Shadowmoon already primed his Rider Punch, taking care of the sneaky thief for good..</value>
+  </string>
+  <string key="MayorKilled">
+    <value>{0} fought valiantly, but age caught up with the veteran rider, and he lost to the new and improved cyborg Rider from Shocker..</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Shadowmoon has struck again! {0}, Kamen Rider G, was reminded of his meaningless existence before he was hit by a well-timed Rider Punch that shattered his wine bottle, and he escaped back to his weird variety show from whence he came.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The Cafe Owner, {0}, was working on the latest coffee blend when he heard a noise behind him. Being a jolly old man, he was halfway through a “hello” when a devastating punch all but decapitated him.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Kamen Rider Kaixa, {0}, was found to have disintegrated into a pile of grey ash. He would have made a 
+
+good tag team with the Kaijins, if they had known!</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Oops! The Kaijin just took out a dormant member of their own kind, {0}! They could have employed 
+
+{0} into their ranks!</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Kamen Rider Accel, {0}, tried investigating Shadowmoon. As with all Neo-Heisei Riders, his reliance on finicky gadgets has been his undoing, and Shadowmoon gets the jump on him!</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed 
+
+home-->
+    <value>The Kaijins were milling about when {0}, the newest Shocker Grunt, 
+
+foolishly approached them. The subsequent beating was explodey and mildly entertaining.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>{0} quickly learnt the strength of Shadowmoon the hard way, as {0} lay battered on the ground, his last EEEEEEEE escaping his lips..</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Kamen Rider Fourze, {0}, pretty much asked for it! {0} attempted to convince Shadowmoon to use his powers for good, and got a swift punch to the face as a deadly reply.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>Kamen Rider Fourze, {0}, visited the Kaijins. Big mistake.</value>
+  </string>
+<!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} tries to attack {0}, but {0}'s powers as an official Mary Sue allow him to pre-empt the showdown and overpower the final Kaijin!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest - taking shitty polaroid pictures. Eliminating Kamen Rider Decade proved to be effortless for {1}, for all there remains {0}'s broken Decadriver.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} walk out in daylight. Seeing a gimp mask shoved unceremoniously into {0}'s backpack, the righteous Kamen Rider Accel, {1}, draws their Engine Blade, putting an end to the weird, slighty twisted life of the Shocker Grunt.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was Kamen Rider Dark Kabuto! Now you are busy trying to take him out, and can't attack {1}.</value>
+    </string>
+</strings>
+
+

@@ -20,7 +20,7 @@ namespace Database
         WelcomeToAsylum = 2,
         [Display(Name= "Alzheimer's Patient"), Description("Play a game with an amnesia language pack")]
         AlzheimerPatient = 4,
-        [Display(Name="O HAI DER!"), Description("Play a game with Para")]
+        [Display(Name="O HAI DER!"), Description("Play a game with Para's secret account (not @para949)")]
         OHAIDER = 8,
         [Display(Name="Spy vs Spy"), Description("Play a game in secret mode (no role reveal)")]
         SpyVsSpy = 16,
@@ -62,7 +62,7 @@ namespace Database
         DoubleShifter = 4194304,
         [Display(Name="Hey Man, Nice Shot"), Description("As the hunter, use your dying shot to kill a wolf or serial killer")]
         HeyManNiceShot = 8388608,
-        [Display(Name= "That's Why You Don't Stay Home"), Description("As a wolf or cultist, killer or convert a harlot that stayed home")]
+        [Display(Name= "That's Why You Don't Stay Home"), Description("As a wolf or cultist, kill or convert a harlot that stayed home")]
         DontStayHome = 16777216,
         [Display(Name="Double Vision"), Description("Be one of two seers at the same time")]
         DoubleVision = 33554432,
@@ -115,10 +115,31 @@ namespace Database
         [Display(Name="OH SHI-"), Description("Kill your lover on the first night")]
         OhShi = 562949953421312,
         [Display(Name="Veteran"), Description("Play 500 games.  You can now join @werewolfvets")]
-        Veteran = 1125899906842624
-    }
+        Veteran = 1125899906842624,
+        [Display(Name = "No Sorcery!"), Description("As a wolf, kill your sorcerer")]
+        NoSorcery = 2251799813685248,
+        [Display(Name = "Cultist Tracker"), Description("As the cultist hunter, kill at least 3 cultists in one game")]
+        CultistTracker = 4503599627370496,
+        [Display(Name = "I'M NOT DRUN-- *BURPPP*"), Description("As the clumsy guy, have at least 3 correct lynches by the end of the game")]
+        ImNotDrunk = 9007199254740992,
+        [Display(Name = "Wuffie-Cult"), Description("As the alpha wolf, successfully convert at least 3 victims into wolves")]
+        WuffieCult = 18014398509481984,
+        [Display(Name = "Did you guard yourself?"), Description("As the guardian angel, survive after 3 tries guarding an unattacked wolf")]
+        DidYouGuardYourself = 36028797018963968,
+        [Display(Name = "Spoiled Rich Brat"), Description("As the prince, still gets lynched even after revealing your identity")]
+        SpoiledRichBrat = 72057594037927936,
+        [Display(Name = "Three Little Wolves and a Big Bad Pig"), Description("As the sorcerer, survive a game with three or more alive wolves")]
+        ThreeLittleWolves = 144115188075855872,
+        [Display(Name = "President"), Description("As the mayor, successfully cast 3 lynch votes after revealing")]
+        President = 288230376151711744,
+        [Display(Name = "I Helped!"), Description("As a wolf cub, the alive pack has 2 successful eat attempts after you die")]
+        IHelped = 576460752303423488,
+        [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visiting roles")]
+        ItWasABusyNight = 1152921504606846976
+    } // MAX VALUE: 9223372036854775807
+      //            
 
-    public static class Extensions
+    public static partial class Extensions
     {
         public static string GetDescription(this Achievements value)
         {

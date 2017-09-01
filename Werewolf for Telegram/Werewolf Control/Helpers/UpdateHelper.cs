@@ -10,7 +10,13 @@ namespace Werewolf_Control.Helpers
 {
     internal static class UpdateHelper
     {
-        internal static int Para = 129046388;
+        internal static int[] Devs =
+        {
+            129046388,  //Para
+            133748469,  //reny
+            125311351,  //Daniel
+            295152997,  //Ludwig
+        };
         internal static bool IsGroupAdmin(Update update)
         {
             return IsGroupAdmin(update.Message.From.Id, update.Message.Chat.Id);
@@ -29,7 +35,10 @@ namespace Werewolf_Control.Helpers
             //fire off admin request
             try
             {
-                var admin = Bot.Api.GetChatMember(group, user).Result;
+                //check all admins
+                if (Bot.Api.GetChatAsync(group).Result.AllMembersAreAdministrators)
+                    return true;
+                var admin = Bot.Api.GetChatMemberAsync(group, user).Result;
                 return admin.Status == ChatMemberStatus.Administrator || admin.Status == ChatMemberStatus.Creator;
             }
             catch

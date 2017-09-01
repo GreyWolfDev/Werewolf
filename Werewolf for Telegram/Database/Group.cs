@@ -45,6 +45,10 @@ namespace Database
         public string Description { get; set; }
         public string GroupLink { get; set; }
         public Nullable<int> MemberCount { get; set; }
+        public Nullable<bool> AllowExtend { get; set; }
+        public Nullable<int> MaxExtend { get; set; }
+        public Nullable<bool> EnableSecretLynch { get; set; }
+        public Nullable<long> Flags { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Game> Games { get; set; }

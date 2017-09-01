@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    MOD CREATED BY @igorfeiden
+
+    EDIT HISTORY: 
+     DECEMBER 8 2016 - Adding new death strings. Fixing some old messages
+     DECEMBER 9 2016 - Removing CultConvertSerialKiller duplication.
+     DECEMBER 26 2016 - Adding some new strings
+     DECEMBER 28 2016 - More new strings!
+
+
+
+    FEEL FREE TO EDIT IT. IF YOU DO SO, JUST MESSAGE ME BEFORE UPLOADING =)
+
+    HAVE A NICE HUNT
+
+    - Edited using SUBLIME TEXT
+      Thanks guys <3
+-->
+<strings>
+  <language name="Bloodborne" base="English" variant="Bloodborne" owner="igorfeiden"/>
+  <string key="NotInGame">
+    <value>Hey you! Stay away. You're not part of this Hunt. It is too dangerous!</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a new Hunt! /join the Hunt to help stop the beasts... Or become one yourself!</value>
+    <value>A new hunt has been started by {0}! Use /join to get hunted!</value>
+    <value>{0} seems to have a bad case of Paleblood. {0}'s only hope lies in the cursed city of Yharnam. Use /join the take part on the hunt!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} brings bad omens! Use /join enter the blood moon hunt!</value>
+    <value>Embrace your beasthood! /join the hunt with {0}.</value>
+    <value>{0} has entered the carriage to the Cainhurst castle! /join now!</value>
+    <value>{0} points out that the great blood moon appeared! Use /join hunt down the most terrible beasts!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Poor you... The other hunters left you behind.\nUse /nextgame so this doesn't happen again.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>You've already joined the hunt!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>The hunt begins in 1 minute. /join to take part on it.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to /join the hunt</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>The few hunters tried to enter Yharnam to fight the beasts, but they weren't strong enough.\nNo hunt for you this time!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>The hunt is starting, please wait while the hunters choose their weapons.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting to commune with a Great One! (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, please change your name to join</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, there are too many hunters! Better luck next time.</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} has joined the hunt. {1} hunters, {2} minimum, {3} max.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>Oh,yes... Paleblood. Heh...\n{0}, you've come to the right place. Yharnam is the home of blood ministration. You need only unravel its mistery.\nBut where's an outsider like yourself to begin? First, you'll need a contract. PM {1} and start me.\n You may not join the hunt until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't run away, the great Moon Presence has trapped you inside Yharnam! Live the rest of your days as a mute messenger.</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has tried to flee, but has been caught! The hunt has no use for cowards, {0} will be punished with death.</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} hunters remain.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be hunting.</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a hunter by that name!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to kill {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to hunt {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} has not voted for 2 nights in a row. The great Moon Presence appeared and devoured {0}'s soul. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Accept your beasthood. You are now a ferocious beast, and will kill all the hunters!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nThe doll is {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} was the doll. As his/her newer "version", you step up to become the new doll, and will help guide the hunters.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>Since {1} died, you give life to {0}, your new Doll. {0} has now stepped up to fill {1}'s place.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see {0} is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to hunt?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to do research on?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Who do you want to shoot? {0} shots remain.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Who do you want to visit?</value>
+  </string>
+  <string key="AskSee">
+    <value>Who do you want to see?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to aid?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to kill?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who will you hunt down?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who is your role model?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to corrupt?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are the Aflicted Beggar. You still a normal person for now, but if the beasts choose to kill you, you will become a beast yourself.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are a Healing Church scholar. During the day, you may choose a player to do  research on, and it will reveal their role.  However - in doing so, your role could be revealed to the beasts! (40% chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>You are Sister Adella. You actually don't do anything more than spen your days and nights praying. But if the beasts find you, you will lock up the church doors. You will die, but the beasts will remain trapped inside for the next night.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are the Good Hunter. Each night, you will choose a player to aide. However, if you choose a beast, there is a 50% chance you will by their claws.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are Djura, the retired hunter.  You have two bullets on your blunderbuss.  During the day, you may choose to shoot another player. Everyone will hear it, and know your role.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You are the Arianna, the woman of pleasure. During the night, you may choose to visit another player (you know, to... "relax" from the hunt).\nHowever--if you visit a beast, or visit someone killed by them, you will also die.  If you do go to visit though, and the beasts tries to kill you at your home, you will survive (you weren't home, after all).</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Beasts all over the shop. They all will be one of them, sooner or later. You are Father Gascogne. Someday, you'll lose yourself to the blood lust and tur yourself into a beast. That will only happen if all the other beasts die, though. If the Doll looks to you, you may or may not be identified as a beast.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>YOU ARE A BEAST! Each night you can choose to kill someone.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You are the Plain Doll.  Each night, you may choose a player to 'see', and reveal their role to you.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >You are a hunter! You will help your fellow hunters. Kill all the beasts, and hope you can beat this nightmare.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are Mergo.  If you get hunted, you win automatically! Why?\nYou don't know, you're just a newborn baby. Go back to sleep, your nurse is taking good care of you. =)</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You are the Vengeful Hunter! Pick a player to be your close friend. If they die, you will become a beast and seek revenge!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are the Doll Maker. Since you creates and give them life, you know who the real doll is.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You are a brand new doll.  If the (real) Doll dies, you will take their place as the Doll.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >You are a corrupted hunter. Your lust for the blood and for the hunt transformed you into a dangerous enemy. It is your goal to corrupt all other hunters (except Beasts or Iosefka) to your group of crazed hunters. You'll win the game if at the end of it, all living players are corrupted.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>You are Eileen, the Crow. You are a member of a covenant that hunts down hunters that begin to go insane from bloodlust. If they try to corrupt you, you will kill their most recent member in the fight!</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Dusk draws near, and the hunters gather to decide their next target...\nEveryone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >The night and its terrors were long, and you have a brief glimpse of sun.  All of you have {0} seconds to make your accusations, defenses, or just find some rabid dogs to kill for blood echoes.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Night has fallen, and the hunters prepare for another bloody night. Night players: you have {0} seconds use your actions!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >The hunters decide to hunt {0}!\n{0} stands up and draw their weapons, ready to defend themselves. The fight is dirty, bloody and hard, but in the end... {0} didn't resist. Their true nature is revealed: {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Unable to come up with a proper decision, the hunters postpone the hunt until a consensus is reached. You all feel useless.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >You cowards, no one wants to face the hunt! The beasts will be glad.</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >The hunters gather, but {0} isn't among them. They quickly enter the Healing Church College, and the first thing that catches their attention, is {0}'s head on a corner. {0} died.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >As everyone gathers, they notice a shapeless bunch of meat right beside a strange bell. The victim's face is unrecognizable, but the ragged robes shows who the victim is: {0}, the Good Hunter.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >As the hunters gather, they find pieces of a cannon strewn about... a saw cleaver... then legs... then the body of {0}. At least, his/her upper body. You have lost your Djura.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >The hunters hear a cry and quickly follow it, only to find the disemboweled remains of {0} beside a gravestone. The Plain Doll is dead.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Strange sounds come from inside the church! It seems that {0} is preventing the beasts from leaving. It's a shame that she'll die in the process. At least, the beasts won't kill anyone tonight.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >The Old Yorkshop is burning! {0} is sitting on a corner, completely torn appart. The Abandoned Doll is dead, just like her fake sights.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>There is a fight somewhere. Everyone follows them, hoping to get there in time, but they fail... When you get there, you see {0} smashed into a pulp, murdered by beasts.\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>You all listen to a weak cry, and it's coming from {0}! No one seems to know what to do, when suddenly you see a blur of feathers. Eileen, the Crow shows up, Mercy Blades ready -telling everyone to stand down.\nDespite her blades' name, she is completely mercyless. In a matter of minutes, only Eileen remains alive. All covered in blood, she tells everyone to calm down, and carries {0} body away. {0}, a corrupted hunter, is now dead.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >No one died last night. Not a single hunter or beast. Is it a dream?</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >It is night, and suddenly the beasts show up! As you were a the Afflicted Beggar, something grows inside you. You have now become a beast!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your fellow beasts are: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >You try to kill {0}, but he/she were the Afflicted Beggar! You welcome your new teammate.</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Suddenly, wild beasts appear! You draw your Kirkhammer and get ready for a fight, but your strength isn't enough. The beasts kill you and bathe in your blood. Sweet dreams.</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >Oh no! {0} was the Sister Adella! She closed the church doors and now you can't seem to find a way out. At least you killed her for the trouble.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >You tried to help a beast! Unfortunately, this one was faster and stronger than you. As you try to reach the bell and teleport back, something grabs your arm. The last thing you remeber are sharp teeth.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >You head down to were {0} is, knowing that they're in trouble. You make it just in time to save {0}'s life and repel the beasts. Congratulations! You two share a blood vial to celebrate.</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} was not attacked, so you didn't do much of anything. Since you are there, you spend the rest of the night training your skills together.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>You went to guard {0}, but they weren't anywhere to be found! That certainly is strange...</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Suddenly, wild beasts appear! You draw your Kirkhammer and get ready for a fight, but your strength isn't enough. Just when you're sure you're gonna die, a Good Hunter shows up! He/she helps you to repel the beasts, and you survive to live another day. That was close!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Arianna chose the wrong night to stay home. {0} has been killed by the beasts! Adella always said that one day, God's punishment would come. No more fun nights for the hunters.</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >You all head down to kill {0}, but she Wasn't home! Better luck next time.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >You slip into {0}'s house for a little fun, only to find out that he/she is a beast. Adella always told you that punishment would come, and now is the time. You are dead.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >{0} slipped into the wrong house last night! {0}'s slutty remains are found on the streets, with no clothes on. That's sad, no more Arianna's blood for you.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress of the hunt. Instead, {0} finds a {1} fighting the beasts. Her knife puts up no resistance before the beasts claws, and in less than a second, {0} is dead.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >You see {0} is not a beast, as you got fucked good and hard all night long! You left early, leaving behind an ampoule of your blood as a gift.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night Arianna shows up and kisses you. You can't resist, and you too share a happy and warm night. She goes away and leaves behind an ampoule of her blood, wich you keep in a pocket close to your heart.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >{0} seems too interested in beasts! {0} must be the one that has been attending to the College! You can't afford to have someone knowing you're a beast, can you?</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Your sudies has shown you that {0} is {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Looks like {0} didn't like the night! {0} shoots {1}, claiming that it was harassment. {1} is dead.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Suddenly, a shot rings out.  The hunters turns to see {0} standing over {1}'s body, smoke coming out of the cannon, blood splattered everywhere. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >No hunter could resist your power, there is no hope for Yharnam. The beast has won!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >The beasts gather around the few last hunters, claws ready. It is quick, it is bloody and it is ugly. The fight is short, and the beasts feed on the hunters corpses. The beasts have won!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >NIGHTMARE SLAIN! The hunters can now rest, the beasts have been beaten.</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >As you hunt down Mergo, he cries. His nurse shows up to defend him! The fight again the nurse is bloody and difficult, and you all come out defeated. You are now lost in Mergo's Nightmare.\nFOREVER.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living players, roles, and team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} has voted to corrupt {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} was sent to corrupt {1}... You sent {0} to corrupt Eileen, the Crow?! {0} is dead, what have you done!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} came to your house last night, ready to corrupt you... Your Mercy Blades were thirsty anyway...\n A corrupted hunter is dead. {1} remain!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>The covenant of Corrupter Hunters reached you!  You are now corrupt, drunk from your bloodlust.  Every other night, you will have a chance to corrupt another player.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Cultists: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} has been corrupted!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} was sent to do your dirty work, and corrupt {1}... But {0} was anywhere to be found!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >All the beasts have died, and the only hunters have been corrupted! No one is now between you and the killing! Well played, covenant. Well played.</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>You went to hunt down {0}, but only found a body! {0} is dead, and you wasted your night.</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>{0} shows sings of clear madness. {0} lost themselves to the blood lust. Telling everyone else to stand down, you fight the crazed hunter and end his/her life. Everybody seems shocked while you drags {0}'s body away.</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>You after {0}, but there is no strange behaviour. You follow {0} from some distance, but quickly gives up. {0} hasn't been corrupted....\nFor now.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}'s friend just died!  In their rage and lust for revenge, they have become a blood-starved beast!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} has died! In your rage, you have become a beast! You now will seek revenge alongside your new teammates: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>a Hunter 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Sister Adella 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Arianna, woman of the night 💋</value>
+  </string>
+  <string key="Seer">
+    <value>the Plain Doll 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Father Gascogne 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>the Good Hunter 👼</value>
+  </string>
+  <string key="Detective">
+    <value>a Healing Church Scholar 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>a Beast 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>the Afflicted Beggar 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Djura, the Retired Hunter 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Mergo 👺</value>
+  </string>
+  <string key="Fool">
+    <value>the Abandoned Doll 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>the Vengeful Hunter 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>the Doll Maker 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>the Recent-made Doll 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>a Corrupted Hunter 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Eileen, the Crow 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>had his/her soul eaten.</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Dead</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Alive</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Players Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>a Messenger 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a Messenger.  If there are any other messengers, you will know who they are.  Otherwise, you will just aid the hunters.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>As everyone gathers, they find the body of {0} shoved into a gravestone.  You all lost a messenger!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The messengers are: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Your newest hunter heads over to where {0} is, only to find {0}'s remains. Someone got there first! You quickly retreat, better safe than sorry.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>The beasts head to where {0} is located. The fight seems easy, you know that {0}'s strenght isn't enough to stop you.\n{0} is almost dead, and the victory is certain, but a hunter suddenly shows up. He/she helps {0}, and they manage to fight you off. {0} survived. For now.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>You send {0} to try to corrupt {1}. {1}'s resolve is too powerful, and you aren't able do corrupt them. As you retreat, {1} says that you should never come again.\nYou doubt that they'll have the mental strength to ignore the lust for blood.</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, a hunter with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>You slipped into {0}'s house for a bit of fun... It wasn't that bad, but you notice something strange in {0}'s eyes. Where those the feared signs of corruption?</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Everyone gathers, and notices that {0} is not around...   After some search, they find the remains of {0}.</value>
+    <value>As the hunters gather for the hunt they find the remains of {0}, torn appart in the middle of the street.</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Odd.... {0} didn't show up to greet the hunters. What happened?</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>You can't leave Yharnam in the middle of a hunt! The city seems to have no way out. Good luck on finding one, coward!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>is dead</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} added to the Great Ones list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a hunt! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple hunts... Too much blood will make you drunk and corrupted! I'll cancel any other hunts.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to challenge the great Moon Presence of Maintenance, you can't start a hunt right now, it is too dangerous!.\nWaiting on {0} to end to end...\nGo to @werewolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent hunts has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no hunt going on.  Start a new hunt with /startgame or start a chaotic hunt with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a Great One can run this command.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is already a Great One!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is not a Great One!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} removed from Great Ones list.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No Dolls!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You are the Chapel Dweller. You will choose two hunters to defend your chapel. If one dies, the other will immediately seek revenge, and die in the process. If they survive together at the end, they will win.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are a Doppelgänger. Legend has it that your ancestors were metamorphs, and could choose any form they wanted. You have inherited some of their capacities. No one knows about you, so you can hunt safely for now. Choose a player, when that player dies, you will take on their role.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You Gherman, the First Hunter. You don't go anywhere without your scythe. If you get hunted and die, you will take someone with you. If the beasts try to kill you, you have a chance to randomly kill one of them.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are Iosefka. Actually, you're the EVIL Iosefka. Each night, you can chose a player to experiment on, killing them in the process. You can experiment on ANYONE.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>You have been chosen to guard the Oedon Chapel. Your companion is {0}. If one of you dies, the other one will seek revenge, and die in the process. If one of you wins, the other one wins too.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The hunters chose to hunt you! This is your last chance, join the hunt and kill somebody, quickly!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>"Tonight, Gherman joins the hunt", {0} says, and stands up from the weelchair. Fortunately, he was too slow. A shot rings out, and {0} sits back, dead.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>"Tonight, Gherman joins the hunt", {0} says, and stands up from the weelchair. {0} whips out their scythe and looks at the crowd... and cannot make a decision on who to kill. A shot rings out, and {0} drops the scythe. "The night, and the dream were long..." {0} says, just before vanishing.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>"Tonight, Gherman joins the hunt", {0} says, and stands up from the weelchair. A shot rings out, but {0} keeps coming. The closes person is {1}, and they can't hold Gherman's power! In a clean and single movement, {0} waves his/her scythe. {1}'s head flies away, while {0} laughs. They're both dead, but {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You've been murdered!  In your last moments you join the hunt, and have the chance to chop someone's head off... make it quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>"Tonight, Gherman joins the hunt", {0} says, and stands up from the weelchair. Fortunately, he was too slow. A shot rings out, and {0} sits back, dead. The blow to {0} was too much, so much that they couldn't even reach for their scythe, as they lay in a pool of blood...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>"The night, and the dream were long..." {0} says, and opens their arms, thankfully accepting their fate.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Dying, {0} falls to the ground.... but not without sending their scyte flying upon {1}, who was too slow. {1}'s head is separated from their body, and both fall dead. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>The beasts tried to attack Gherman night, but the he was too strong! Gherman dies, but he manages to kill {0} before his final breath. {0} was a beast, and is dead now.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>The beast tried to attack Gherman last night, but he was too strong! {0}, the last known beast, is now dead!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The beast headed to Iosefka's Clinic, believing they would prevail. But Iosefka's Augur of Ebrietas was too powerful! {0} is now dead from Iosefka's experiments.</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>It seemed a normal hunting night, but you are wrong.  There were someone hunted down by Iosefka instead! {0} isn't where they should be. Instead, the hunters find only a shattered blood vial... {0} is dead from Iosefka's experiments. {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You tried to hunt {0} for your experiments, but upon arriving, you found yourself dealing with two hunters instead! The Good Hunter helps {0} to defeat you, and you run for your life, hoping to catch {0} off-guard someday.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The crazed hunters sends {0} to try to corrupt {1}, but {0}'s head comes flying out of the window instead! {0} is dead.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You tried to Iosefka with her experiments, but you discovered too late that she is actually the EVIL Iosefka! Well, she manages to tangle you with her Threaded Cane, and tear you appart, limb by limb. As you get experimented on ALIVE, you pray for this nightmare to end soon. As you die, the last thing you listen to is her voice...\n"Oh, how exciting! I've never worked on a hunter before...".</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>You slip into {0}'s house, and start having a little fun.  All seems great until {0} pulls out a surgeon knife and slits your throat! You stumble on the ground while Iosefka walks toward you, laughing like a maniac. The last thing you hear before death embraces you, are footsteps...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>The can't seem to find {0} anywhere. Actually, no one will ever hear from {0} again. Iosefka has made another victim with her experiments.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>The doppelganger {0} has now become a messenger, just like you!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} has died, and you transform into a messenger.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>The doppelganger {0} has now become a crazed blood-drunk hunter, just like you!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a lusftul hunter.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>The doppelganger {0} has now become a beast, just like you!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a beast.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Iosefka step out of her clinic, cleansing a surgeon knife with a handkerchief. With a smile, she realizes that no one will be between her and her experiments anymore. Yharnam is now hers to rule.</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to experiment on(KILL :P) tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>With {0}'s dying breath, {1} rushes over to help their fellow Chapel protector. But heart is the enemy of wisdom, and {1} can't fight properly. Actually, the only thing that {1} can do is to get themselves killed. Sad, but no much. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Who do you want to become if they die?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who do you want your protectors to be? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who do you want your protectors to be? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>Gherman, the First Hunter 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Oedon Chapel Dweller 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Iosefka 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the Doppelgänger 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You have become the Vengeful Hunter.  You close friend is {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>There is nothing better than a good partner in hunts! Both the Chapel Protectors had whitstanded all the odds and have accmplished their mission. Another day rises in Yharnam, but they have no more nightmares.</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>In the middle of the town square, everyone finds the body of {0}. Their head is fallen some meters further.  Looks like they tried to sneak up on Gherman! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A hunter shows up in front of you. Erratic behaviour and strange-looking eyes dont leave room for mistakes, it's a crazed and blood-drunk hunter! You have no interest in being corrupted, so you draw your Ludwig's Holy Blade and starts fighting the figure. When the crazed hunter realizes how strong you are, they run away. You still tries one last shot, but misses. As they get away, you shout - telling them to never come back.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}.  I will PM you when the next hunt is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new hunt is starting in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Morning comes, and the remaining two hunters walk out to the town square.  {0} takes a look at {1}, gets a big grin on their face, pulls out a surgeon knife and repeating pistol, and runs toward {1}. {1} was not ready for this and try to resist, sidestepping and shooting. {0} uses her Augur of Ebrietas and hit {1}, who stumbles. Then, {0} uses A Call Beyond. The magic hits {1}, already weak. {1} died quickly, almost painless.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Another hunt ends on Yharnam. But this one has no winner. You have all been slain and failed...\nmiserably.\nMay all of you find your worth in the waking world.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>As the sun rises, {0} and {1} walk out into Yharnam.  {0} pulls out their surgeon knife, and jumps at {1}.  {1} pulls out a huge scythe, and swings it to defend themselves. {0} throws their knife and misses, but manages to dodge {1}'s hits. {1} is too quick, and jumps at {0}, and with a swift move, stabs {0} in the stomach. {0} holds {1} hands close to themselves, and with the other free hand, call one last time to Ebrietas. The tentacles pierce {1}'s head, and they die instantly. {0} managed to kill the First and Last hunter, but to what price? At least, {0} dies with a smile.\nBut both are dead, there is no winner. May you find rest on your endless dream....</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to make a choice, so the great Moon Presence has chosen for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>The great Moon Presence sees all, listens to all, and judges all. Player {0} didn't vote in the last two hunts, and the Moon Presence judges it as a terrible lack of respect. So it descends and eats {0}'s soul, and {0} is now dead. {0} did it {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>Your role is simple - hunt. Each day, you will have a chance to hunt down someone.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Plain Doll. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the Doll, the beasts will try to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack Adella, you will become locked into the church, and will be unable to attack the next night as you are trapped inside! If you attack the Afflicted Beggar, they will become a Beast like yourself! KILL THEM ALL!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the Arianna, women of Pleasure (you slut...) you will be given the chance to 'visit' another player each night. If they are not the beast, you will be told so (because you live!). If you visit a beast, you will be killed. If you visit the player the beasts have chosen to kill, you will be killed as well. However - If you are visiting a player, and the beasts choose to kill you, you will survive (you weren't home).</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You are Adella! If the beasts try to kill you, you will trap them inside the church before dying. At least they will be trapped there and you will prevent them from attack in the next night.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the Afflicted Beggar, you are a normal hunter... until the beasts kill you. Once they do, you will become a beast as well! Free to hunt in the night..... </value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard Father Gascogne is. If you survive long enough for all the beasts to die, you will become a werewolf blood-starved beast, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Good Hunter! Each night, you may choose a player to watch over and aid. Be careful however - if you choose to watch over a beast, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You are a simple scholar from the Healing Church College. Each day, you will have the chance to investigate/research on another player. Use this carefully however, for these is a 40% chance the beasts will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the the Retired Hunter Djura, you are given quicksilver bullets enough for only two shots. Each day, you will have the chance to shoot another player. Once you do, everyone will know who you are! Be careful though, you only have 2 shots!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Mergo's goal is simple: Get Lynched. If Mergo gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>The Abandoned Doll is told they are the real Plain Doll.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a corrupted hunter, it is your goal to corrupt all other players (except beasts) to your covenant. If at the end of the game, all living players are corrupted - the covenant wins!</value>
+  </string>
+  <string key="AboutCH">
+    <value>You are Eileen, the Crow! Your job is to hunt down the corrupted hunters! If the hunters tries to corrupt you, their newest member will die. Each night you may pick a player to hunt - if they are from the covenant, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your Close Friend. If they die, you become a beast and seek revenge!.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are just a recent-made Doll, disgiuised as a normal hunter. However, if the Doll dies, you will become the new Plain Doll!</value>
+  </string>
+  <string key="AboutBH">
+    <value>Since you make the dolls, you know who the real one is.</value>
+  </string>
+  <string key="AboutMason">
+    <value>A messenger's job is simple - they automatically know who the other messengers are. You should help the hunters!</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was corrupted, you will take on their original role. All other normal rules apply: If they were Vengeful Hunter and their role model died, you will become a beast. Otherwise, you will inherit their role model.
+      The corrupted hunters cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: fellow Chapel Protector)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      You are the Chapel Dweller. You will choose two hunters to defend your chapel. If one dies, the other will immediately seek revenge, and die in the process. If they survive together at the end, they will win.\n TL;DR if at least one of the protectors was on the winning team, they both win together.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      You are Gherman, the First Hunter. As the First Hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as you are crazy to join the hunt. If the beasts attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to decapitate someone as you die.
+      Note: For beast attacks, the chance starts at 30%. If there is one beast, the hunter has a 30% chance to kill the beast (and survive). For each additional beast, add 20% (2 beasts = 50%, 3 = 70%, etc). However - if there are multiple beasts, while you may kill one of them, you will still be outnumbered and killed.
+      If the covenant of corrupteds tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>You are Iosefka. Actually, you're the EVIL Iosefka. Each night, you can chose a player to experiment on, killing them in the process. You can experiment on ANYONE. I mean, A N Y O N E. KILL THEM ALL!\nNOTE: If the beasts try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people, while hunting them down!  Maybe he's been messing with werewolves and beasts too long....Messing with beasts and werewolves is a very bad idea. (especially with wuffs!)</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a great One!</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para! Have you grown insane?</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>You are the Old Hunter. Your vote during the hunting will count twice, once you have revealed yourself. You are on the hunters team!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are secretly the Annalise, the Queen of Vilebloods. If they try to hunt you, they will realize their error, and no one will be lynched. They will all bow before you instead. Long live the Vilebloods!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are a Blind Hunter: You’ll try to hunt, but there is a 50% chance you’ll vote for someone else other than you intended instead. You’re still on the hunters team though.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are the Brain Sucker, allying yourself with the beasts. At night you will shove your giant tentacle into someone's brain. You won't die, however. Your Insight sucking grants thema short amnesia, and they will never remember your visit! You win only if the beasts win. Enjoy sucking their minds! You will know if they are a beast or the Plain Doll.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are Valtr, Master of the League. You have a small covenant of hunters, big enough to guard the city and prevent the beasts from attacking for ONE night. During the day, you can choose to call your covenant. Other than that, you are just a normal hunter.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are The One Reborn; one of the sources of the scourge of the beasts. To you were given the power that turns people into vicious beasts. Each night, you will choose a hunter to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into a beast.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the Winter Lantern, and brings nothing less than TOTAL FRENZY. Like other beasts, you will choose a villager to attack and kill every night. If you happen to be killed, a mass frenzy will begin, and the beasts will be able to kill two hunters the next night. You’ll still be dead though.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the hunters head to hunt {0}, they say "Stop now! Bow before your queen". Annalise shows her true nature, and you can't help but respect the ancient Vilebloods. The hunters have no target this night.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You visit {0}'s brain and mind. They can't remember what happened, but you made a quite good snack. They are not a beast or the Plain Doll however...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0}, the Old Hunter steps forward and gathers all the other hunters. {0} explains old strategies and techniques, and as his respect and reputation among the hunters increases, {0}'s votes for hunting will count twice from now on.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as the Old Hunter</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>The covenant is impatient. They want to hunt down the beasts, but you ask them to stay calm, the time is yet to come.</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>There is some noise down the street, close to the lamp! You see {0} leading a small group of hunters. They present themselves as members of a hunters covenant, and are willing to help. They will patrol Yharnam streets , and will help the hunters. The beasts judge there is too dangerous to kill someone this night, so if they attack, all hunters will be ready.</value>
+  </string>
+  <string key="Mayor">tonight
+    <value>the Old Hunter 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Annalise, the Queen of Vilebloods 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>the Brain Sucker 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>the Blind Hunter 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Valtr, Master of the League ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>the One Reborn ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>the Winter Lantern 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the beasts attack {0}, {1} stops everyone.  {1} feels something, the scourge is growing and strong inside {0}. There is no need for proof, the beasts retreat as {0} is left alone, almost dead. {0} will suffer for only a day, and will be transformed into a beast next night.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>The beasts show up, and you're not ready. You try to fight, when something strange happens. One of the beasts seems to look directly into your eyes. You feel something strang growing inside you, and even being left almost dead, you begin to feel thirst for blood...\nToday, you suffer. Tomorrow, you kill as a new beast.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>As another hunt begins, you can't help but want more and more blood. You run away from your partners and hide, as a fire begins to burn inside you. You look at the moon for the last time as a human, and your body begins to change! Not only your body but your mind are now different.\nYou only see blood.\nYou only want blood.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As the Old Hunter, your voting counts twice. Reveal yourself wisely, as the beasts will probably target you after your reveal.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Annalise is the ghostly queen of the Vilebloods, a once powerful and proud covenant. Now you're just a shadow of your former self, but you must be respected, as a queen. If the hunters try to hunt you, you will reveal yourself as a queen, and survive. However, if they insist on hunting you... Well, you might end up dying.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>The Brain Sucker will help the beasts in order to find the Plain Doll. They will dwell into someone's brain and suck Insight, but they won't know who/what that player is. It will only be revealed if the 'sucked' player is a beast or the Doll.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the blind hunter. After all those hunts, a beast pierced your eyes, and you can't see properly. For this reason, you can't choose your targets properly, and is too proud to leave the hunt. When voting, you may get confused and vote for someone different than you originally intended. (You have a 50% chance to vote for someone random.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are Valtr, Master of the League. You have a small covenant of hunters, big enough to guard the city and prevent the beasts from attacking for ONE night. During the day, you can choose to call your covenant. Other than that, you are just a normal hunter.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are The One Reborn; one of the sources of the scourge of the beasts. To you were given the power that turns people into vicious beasts. Each night, you will choose a hunter to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into a beast.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>You are the Winter Lantern, and brings nothing less than TOTAL FRENZY. Like other beasts, you will choose a villager to attack and kill every night. If you happen to be killed, a mass frenzy will begin, and the beasts will be able to kill two hunters the next night. You’ll still be dead though.</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into the One Reborn.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a Winter Lantern.  Your teammates (if any) are: {1}</value>
+  </string>
+  
+  <!-- Keep this for now until bots update-->
+  <string key="VillageTeam">
+    <value>Hunters Team</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Neutral Team</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Iosefka's Team</value>
+  </string>
+  <string key="CultTeam">
+    <value>Corrupted Covenant Team</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Moon Presence Team</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Hunters Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Beasts Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Iosefka's Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Corrupted Covenant Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Moon Presence Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The covenant sends {0} to try to corrupt {1}, but instead... Well...\nLet's say that no one will ever hear again about {0}.\n{0} has been eaten by the beasts.</value>
+  </string>
+  <!--As reported by the bot Missing Values:
+HarlotFuckedKilledPublic -->
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+  <string key="HarlotFuckedKilledPublic">
+    <value>{0} slipped into the wrong house last night. Seems like {1} was being experimented on by Iosefka! {0}'s slutty remains will never be found. Iosefka has now a nwe test subject. That's sad, no more Arianna's blood for you.</value>
+  </string>
+
+  <!-- Strings added DEC 05 -->
+
+
+  <!--New Death Strings 05 DEC
+  {0} = the victim -->
+  <string key="ApprenticeSeerEaten">
+    <value>As the hunters gather, the Doll Maker cries in a corner. You all clearly see that his brand new Doll is now completely destroyed, beyond repair. Poor {0}. If they even had a chance to see anything...</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>There is a faint trail of blood leading inside a house. As the hunters investigate, they find a whole bunch of celestial emissaries. Valtr and his League of hunters were entirely murdered and experimented on by Iosefka! The hunters quickly dispatch from all of them, but the strongest is {0}. Now with {0} dead, the hunters know that no help will come...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>As the hunters gather, {0} isn't among them. Of course not! Iosefka has made another victim. But that's not all. In front of the Church is {0}'s head in a spike. The eyes leave no doubt that {0} was a crazed and corrupted hunter! Seems like Iosefka does a better job than Eileen...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>No one seems to mind that {0}, the Chapel Dweller, is missing. A strange being that Iosefka surely learned a lot about! No body is found. No blood. No sound made during the night. Iosefka passed even through the Church Guardians.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Shouts coming from inside the church! All hunters go there imediately, fearing for the worse. Sadly, they weren't fast enough. {0} a.k.a. Sister Adella is found crawling to the altar, while a pool of blood quickly spreads through the floor. When {0} stops moving, the hunters bury their Sister behind the church. {0} is dead, but at least won't be experimented on.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally have managed to help fight off the threats. Not this time, because {0} has proven useless. That's why your Good Hunter is now dead.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>The hunters hear a loud shot. Then a loud scream. Then, silence. As everybody hurries over to where {0} was, they already know what happened... {0} is now dead, and Iosefka ran away before you could catch her... No one listened to {0}'s last words.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>As the hunters search {0} to look for advice, no one seem to find the Old Hunter! Well, you should have known better... Iosefka has another test subject now. At least, {0} didn't die without a fight, and didn't lost themselves at the face of death.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Annalise found herself dealing with someone that was unrespecful. She couldn't tolerate this, and tried to use her magic to kill the unwanted guest. Sadly, {0} was visited by Iosefka, and is now dead. Look! Iosefka left something... There's a chunk of Queenly Flesh over the chair. The hunters hold on tho that, hoping to find the Altar of Despair soon...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The villagers wake up to a rotting corpse of {0}, split from head to toe, stabs all over. Strangely the brain was carefully extricated, as if it was a premonition that the village has lost their top brains. {0} was the Seer.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>No more brains for {0} to suck! The beasts decided to kill one of their own. I don't think they knew what they were doing....\nAnyway, the Brain Sucker is dead.</value>
+    <value>It seems that the beasts were annoyed by {0}'s sucking. The Brainsucker is found shredded in a street corner. Too bad. Not that the hunters care.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>The hunter were hunted last night! {0}, the Vengeful Hunter, is found ripped appart, limb by limb. The beasts have no use for despicable and petty hunters. {0} is dead, of course.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>There is a strange trail of crow feathers. The hunters follw them, and are greeted with a terrible sight! {0} tried to hunt the wrong person last night. There is only Eileen's head resting in the middle of a pool of blood. The rest of the body is missing, it's clear that Iosefka seeks more power to hunt hunters!</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>A faint smell of bad blood is in the air. The hunters follow it, only to find a corpse with crazed eyes staring at the sky. {0} was a corrupted hunter, and had bad luck: the beasts stayed in their lair this night. {0} thought it would be a good idea to corrupt them... Eileen's job becomes easier and easier.</value>
+    <value>Ain't this bad luck? Or maybe just silliness? {0}, a corrupted hunter, though it would be a good idea to corrupt a beast! If only they knew...\nOne less on Eileen's list. {0} is dead. (of course)</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Last night, the crazed-corrupted hunters tried to convert the one person in the village crazier than they are. It seems tht Iosefka enjoyed the visit, since that there is no sign of {0} anymore. Well, no one will ever hear from {0} again. Iosefka sends her regards.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>The Good Hunter followed the wrong call! When {0} got there, {0} only found Iosefka waiting from them. No one heard a thing. And no one will ever hear from {0} again.</value>
+    <value>Shots being fired, smashing sounds! All the hunters head to where the fight is happening. They get there in time just to see Iosefka running away. It's a shame no one saw her face... The hunters aren't able to help {0}. Your Good Hunter is now dead.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} tried to help a beast last night. Scattered through the main city square are some of {0}'s belongings. No one seems to find the body, it seems that the beasts feasted on {0}!</value>
+    <value>Something seems off. {0} is nowhere to be found! When the hunters finally get to the Good Hunter's bell, they find {0}'s corpse thrown over it. It is clear that the Good Hunter tried to help the wrong person last night! {0} is dead.</value>
+    <value>The beasts get ready for the night, and didn't expect help to come... In form of a hunter?!\n{0} tries to transform into a beast, but their body isn't strong enough, and {0} dies in the process.</value>
+  </string>
+    <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The covenant of crazed hunters sends {0} to try to corrupt {1}. No one will never hear about {0} again. Iosefka has made another victim with her experiments.</value>
+    <value>{0} goes over to corrupt {1}. You don't know wnat happened, but the last thing you hear is Iosefka's voice: "Shall we begin the experiments?"\nYou sent him to Iosefka's clinic! {0} is now dead from her experiments.</value>
+  </string>
+
+  <!--DEC 26: 1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} tried to kill {0}. The beast didn't expect Gherman to be so resilient! {0}’s scythe was too sharp and too quick. In less than one minute, {1}'s head is sent flying in the air. The last Beast is dead, and Gherman can rest in peace, nightmare slain.
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} went to kill {0}. When {1} gets there, they find Gherman taking a nap on their wheelchair, even sleep talking! The Beast had no mercy, and the First and last hunter is now dead.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} walk out in daylight. No use in trying to hide, {0} leaps towards {1}. Eileen, the Crow smiles behind her crow mask, and ready her blades. It was quick and painless for {0}. Eileen hunted down the last of them. Great job!</value>
+  </string>
+  
+ <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to /join . The hunt MUST happen!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to /join . Slow hunters take no part in the hunt.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only the Great Ones can extend the time more than once! Stop that humiliating behavior.</value>
+  </string>
+
+</strings>

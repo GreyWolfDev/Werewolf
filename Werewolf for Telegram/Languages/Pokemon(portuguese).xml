@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <!--  Translated by / Traduzido por:
+       Felipe Klopper (@fklopper) e Bruno Ricardo (@Brunsric)
+-->
+<strings>
+  <language name="Português (Pokémon)" base="Português" variant="Pokémon"/>
+    <value>Parece que você não está em uma Liga Pokémon agora...</value>
+  <string key="NotInGame">
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} acordou o Professor Carvalho! Use /join para receber seu Pokémon!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+	<value>Doutor Fuji foi acordado por {0}! Use /join para receber um dos muitos Pokémon selvagens!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Você não pode entrar agora! Os Pokémon já foram distribuidos!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Você já está esperando pelo seu Pokémon!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto restante para o /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} segundos restantes para /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Números de treinadores não suficiente para iniciar uma Liga Pokémon!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value> Liga Pokémon iniciando, por favor espere até receber o seu Pokémon.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} banido da Liga por não seguir as regras (não é permitido nomes iniciados por /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, por favor mude seu nome para /join </value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Número máximo de treinadores alcançado!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current trainers -->
+    <!-- 2 - Minimum trainers -->
+    <!-- 3 - Maximum trainers -->
+    <value>{0} entrou na Liga.\nAtualmente nós temos {1} treinadores inscritos, precisamos de {2} treinadores para iniciar uma Liga Pokémon. O máximo de inscrições é {3}. /join now!</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Por favor, clique no botão Start ou aqui {1} para que você possa receber seu Pokémon. Você não pode entrar numa Liga Pokémon antes de fazer isso.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Você não pode lançar seu Pokémon, ele já está desmaiado! </value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} lançou seu Pokémon de volta à selva!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} está com {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of trainers -->
+    <value>{0} treinadores restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey, ainda não te perguntei nada!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Você não parece estar inscrito na Liga Pokémon, aguarde a próxima Liga...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Não consigo encontrar um treinador com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Esta resposta não é válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} votou para iniciar uma batalha Pokémon com {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} votou para mandar o Pokémon de {1} de volta para a selva.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} não votou por 2 noites seguidas. {1} acha que ele não é um treinador bom o suficiente e os abandonou!</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Team Rocket 🐺 perdeu todos os seus membros,  agora é sua vez para trazer a Equipe Rocket de volta à sua glória! HORA DA ENCRENCA!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Escolha aceita.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nO dono do Alakazam 👳 é {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value> O Alakazam de {0} está desmaiado! Seu Kadabra ganhou XP suficiente e está evoluindo para um Alakazam! </value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>Como o Alakazam de {1} está desmaiado, o Kadabra de {0} evoluiu para um Alakazam 👳!</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value> Você vê que o treinador {0} está com {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Que treinador você quer mandar de volta pra floresta?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Para quem você quer mandar seu Raticate para bisbilhotar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Qual Pokémon você quer que seu Snorlax use Hyper Beam?? Você tem {0} PP restantes.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Que treinador você quer fazer amizade?</value>
+  </string>
+  <string key="AskSee">
+    <value>Em qual treinador o Alakazam deve usar o Foresight?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Em qual treinador o Mr. Mime deve usar o Barrier?</value>
+  </string>
+  <string key="AskEat">
+    <value>Vez da Equipe Rocket escolher um treinador para batalhar! Qual treinador você escolhe para uma batalha Pokémon?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Qual treinador você acha que possui um clone Mewtwo para Mew para limpar?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Qual treinador é o seu senpai?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Qual treinador você quer contratar para a fábrica e clonar Mewtwo?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Certifique-se de discutir com {0}.</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Você recebeu um Pidgeot 😾! Mas sempre quis entrar para a Equipe Rocket (as aves lendárias deles são tão fortes quando a sua), se eles vierem até você, você abandonará seu Pidgeot e se juntará à Equipe Rocket.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Você recebeu um Raticate 🕵! Você pode enviar o Raticate para olhar os Pokémon dos outros treinadores mas existe uma chance da Equipe Rocket descobrir.(40% de chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Você recebeu um Butterfree 🍻! Você pode usar o Sleeping Powder na Equipe Rocket se eles te prenderem.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Você recebeu um Mr. Mime 👼! Você pode escolher um treinador para usar Barrier para protegê-lo. Porém, se você escolher alguém da Equipe Rocket, há 50% de chances de você perder a batalha Pokémon.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Você recebeu um Snorlax 🔫! Snorlax tem 2 PP de Hyper Beam. Você pode escolher qualquer treinador Pokémon para atacar com o Hyper Beam. Todos ouvirão o ataque e saberão que você possui um Snorlax (Well, at least not Team Rocket).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Você recebeu uma Jigglypuff 💋! Jigglypuff gosta de fazer amigos todas as noites, você pode escolher um treinador para a Jigglypuff fazer amizade. Porém, se você visitar a Equipe Rocket ou algum treinador que batalha pela Equipe Rocket, Jigglypuff irá desmaiar. Se você mandar Jigglypuff sair à noite, a Equipe Rocket não poderá batalhar com você.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Você recebeu um Weezing 🖕! Por enquanto você é um treinador do bem, mas se a Equipe Rocket cair, você tomará o lugar dela! Se o Alakazam usar o Foresight em você, você pode ou não ser identificado como um membro da Equipe Rocket.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>PREPARE-SE PARA A ENCRENCA!! VOCÊ É DA EQUIPE ROCKET 🐺!!! Você pode escolher um treinador para batalhar todos os dias.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Você recebeu um Alakazam 👳! Todos os dias você pode usar o foresight e ver o Pokémon dos outros treinadores.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Você recebeu um Magikarp 👱. =( Você não pode ganhar uma batalha Pokémon. Você só sabe nadar! splash, splash. </value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Você recebeu um Tauros 👺. Você irá vencer quando seu Pokémon for mandado para a selva e destruir todo o mundo Pokémon!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Você recebeu um Meowth 👶. Escolha um senpai para admirá-lo. Se ele perder uma batalha Pokémon, você irá perder toda a esperança e se juntará à Equipe Rocket.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Você recebeu um Abra 👁. Abra pode apenas detectar quem é o treinador do Alakazam - é a ùnica habilidade do Abra.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Você recebeu um Kadabra 🙇. Quando o Alakazam estiver desmaiado, seu Kadabra evoluirá!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Você faz parte de uma organização que clona Mewtwo👤. Todos os dias, você pode escolher um treinador para contratar para sua organização e clonar Mewtwo. Se todos os Pokémon restantes forem Mewtwo. Sua organização do mal vence.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Você tropeçou em um Mew 💂! Mew precisa de ajuda para limpar todos os Mewtwo clonados</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>A hora é agora! Hora de mandar um Pokémon de volta para a selva porque seu treinador é muito fraco para lidar com ele!! Todos agora tem {0} segundos para votar!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Hmm hmm~ Todos os treinadores têm {0} segundos para ver quais treinadores não são dignos de ficar com seus Pokémon.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Que comece a batalha! Escolha um Pokémon para batalhar! Ou aumentar a felicidade com seu Pokémon. Vocês tem {0} segundos!!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Os treinadores já votaram! E acham que o treinador {0} não é bom o suficiente para {1}. {1} é mandado de volta para a selva. </value>
+  </string>
+  <string key="LynchTie" >
+    <value >Impossibilatos de chegar a um consenso de qual Pokémon deve ser liberto, todos os treinadores voltam a treinar seus Pokémon.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Todos os treinadores são muito bons. Não teve voto algum!</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. O Raticate 🕵 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. {0} Raticate 🕵 não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. O Raticate de 🕵 {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno, Zapdos e Moltres!!! As três aves lendárias usaram Ancient Power. O Raticate 🕵 de {0} não pode mais batalhar.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. O Mr. Mime 👼 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. O Mr. Mime 👼 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. O Mr. Mime 👼 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno, Zapdos e Moltres!!! As três aves lendárias usaram Ancient Power. O Mr. Mime 👼 de {0} não pode mais batalhar.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. O Snorlax 🔫 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. O Snorlax 🔫 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. O Snorlax de 🔫 {0} não pode mais batalhar.</value>
+    <value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno, Zapdos e Moltres!!!As três aves lendárias usaram Ancient Power. O Snorlax de {0} não pode mais batalhar.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. O Alakazam 👳 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. O Alakazam 👳 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. O Alakazam 👳 de {0} não pode mais batalhar.</value>
+    <value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno, Zapdos e Moltres!!! As três aves lendárias usaram Ancient Power. O Alakazam 👳 de {0} não pode mais batalhar.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. O Butterfree 🍻 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. O Butterfree 🍻 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. O Butterfree 🍻 de {0} não pode mais batalhar.</value>
+    <value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno, Zapdos e Moltres!!! As três aves lendárias usaram Ancient Power. O Butterfree 🍻 de {0} não pode mais batalhar.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Mind Reader. O Alakazam de {0} foi descoberto como um Psyduck disfarçado! {0} estava equivocado!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. {1} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. {1} não pode mais batalhar.</value>
+    <value>A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. {1} não pode mais batalhar.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Mew encontrou um Mewtwo clonado! Mew libertou o Mewtwo clonado de {0}.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Não há nenhuma Batalha Pokémon na ultima hora.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Você foi abordado pela Equipe Rocket, você decidiu abandonar seu Pidgeot e se juntar a eles! Seu maldito!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Seus companheiro(s) na Equipe Rocket são: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >Para proteger o mundo da devastção {0} se juntou à Equipe Rocket! Parabéns pelo seu novo companheiro de equipe! Encrenca em dobro!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >A Equipe Rocket encontrou você e iniciou uma Batalha Pokémon. Infelizmente, você perdeu. =(</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >O Butterfree de {0} usou sleeping powder(pó sonífero) em você e você dorme até a próxima batalha.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Mr. Mime tentou usar Barrier na Equipe Rocket mas o Zapdos deles usou Zap Cannon e seu Mr. Mime e não pode mais batalhar.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >Mr Mime usou Barrier no Pokémon de {0} e evadiu com sucesso de uma Batalha Pokémon!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >O Pokémon de {0} não foi atacado, então você não fez muita coisa.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Mr. Mime quis ajudar o Pokémon de {0}, mas não foi capaz de encontrá-lo!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Mr. Mime usou Barrier no seu Pokémon e ajudou a evadir de uma Batalha Pokémon!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff escolheu o Pokémon errado para ser amigo. O Jigglypuff de {0} foi atacado pela Equipe Rocket!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Estranho... O Pokémon de {0} não está por aqui. Você não pode fazer amizade com eles.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff quer ser amigo do Pokémon de {0} mas foi atacado pela Equipe Rocket! Jigglypuff não pode mais batalhar.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >O Jigglypuff de {0} escolheu o Pokémon errado para ser amigo! Jigglypuff não pode mais lutar depois de uma batalha Pokémon com uma ave lendária.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >O Jigglypuff de {0} tentou ser amigo do Pokémon de {1}. Em vez disso, Jigglypuff encontra a Equipe Rocket batalhando com o Pokémon de {1}! Moltres usou Heat Wave. Jigglypuff de {0} não pode mais batalhar.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >Jigglypuff quer ser amigo do Pokémon de {0}, como eles não estão com a Equipe Rocket, Jigglypuff retorna feliz e com um novo amigo.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >O Jigglypuff agora é amigo do seu Pokémon e você vê que eles estão brincando e felizes juntos.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >Você pegou o Raticate de {0} olhando por aí! É hora de atacá-lo!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Seu Raticate te disse que {0} está com {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >De repente, o brilho do Hyper Beam ilumina toda a cidade. {0} ordenou que Snorlax 🔫 usasse Hyper Beam no Jigglypuff de {1}. Jigglypuff não pode mais batalhar.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>De repente, o brilho do Hyper Beam ilumina toda a cidade. {0} ordenou que Snorlax 🔫 usasse Hyper Beam em {1} e {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>Equipe Rocket ganhou!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>Equipe Rocket ganhou!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>Os treinadores venceram!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Oh não! Vocês mandaram Tauros 👺 de volta para a selva e ele destruiu toda a cidade.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Treinadores vivos restantes, Pokémon e times:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} votou para contratar {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Youngest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>O Mewtwo de {0} foi enviado para lurar(convencer) {1} ... Porém, ele(ela) tem um Mew! {0} perdeu seu Mewtwo e foi despedido!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} veio até você com um Mewtwo clonado tentando te contratar para sua Fábrica de clones do Mal. Mew libertou Mewtwo de {0}!! Há apenas {1} trabalhadores na Fábrica!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Um Membro da Fábrica de Clones veio até você e convenceu você a se juntar ao time deles com um Mewtwo clonado. Você abandonou seu Pokémon e escolheu o Mewtwo. Agora o seu trabalho é usar lure(convencer) em mais treinadores para se juntar ao seu time.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Membros da Fábrica de Clones: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} foi contratado pela Fábrica!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} e Mewtwo foi mandado para lurar(converter) {1}... mas ninguém estava em casa!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >A Equipe Rocket foi derrotada mas todos os jogadores restantes são da fábrica de clones de Mewtwo! A Fábrica de Clones ganhou com o seu clone de Mewtwo ganhou!!!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Mew foi procurar o Pokémon de {0}, mas ele já não pode mais batalhar!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Mew foi procurar {0} e descobriu que ele(ela) possui un Mewtwo clonado! Mew libertou Mewtwo de {0}!</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>Mew foi procurar {0} e descobriu que ele(ela) possui um Pokémon normal! Mew ficou aliviado e retornou em paz para seu treinador.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>O senpai de {0} perdeu uma Batalha Pokémon! {0} perdeu as esperanças e se juntou à Equipe Rocket!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 1 - teamate's names -->
+    <value>{0} perdeu uma Batalha Pokémon! Perdendo toda a esperança, você resolve se juntar à Equipe Rocket! Seus companheiros são: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>o Magikarp 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>o Butterfree 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>o Jigglypuff 💋</value>
+  </string>
+  <string key="Seer">
+    <value>o Alakazam 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>o Weezing 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>o Mr. Mime 👼</value>
+  </string>
+  <string key="Detective">
+    <value>o Raticate 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>a Equipe Rocket 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>o Pidgeot 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>o Snorlax 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>o Tauros 👺</value>
+  </string>
+  <string key="Fool">
+    <value>o Psyduck 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>o Meowth 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>o Abra 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>o Kadabra 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>o Mewtwo 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>o Mew 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value> Fugiu </value>
+  </string>
+  <string key="Dead">
+    <value>💀 Não pode continuar na batalha</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Vivo</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Treinadores Vivos</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>um Pikachu 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Você tem um Pikachu 👷 e sabe que os treinadores estão no Pikachu Club.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. O Pikachu de {0} não pode mais batalhar</value>
+  </string>
+  <string key="MasonTeam">
+    <value> Os membros do Pikachu Club são: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Seu membro mais novo se dirigiu à {0} e tentou usar o Lure(convencer) {0} para se juntar à Fabrica com seu Mewtwo. Mas você descobriu que o Pokémon dele não pode mais batalhar e não tem mais motivação para ter outro Pokémon.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>A Equipe Rocket se dirigiu à {0} e o(a) desafiou a uma batalha Pokémon. Mr. Mime  Mr. Mime surgiu do nada e usou Barrier. Você está impossibilitado de lutar com eles e sai da batalha...</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Você enviou {0} e seu Mewtwo para tentar lurar(convencer) {1}, however their boding with their Pokémon was too strong, and they don't want to join your team. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, um treinador com o nome {0} já está inscrito. Por favor, mude seu nome para se inscrever na Liga. Após ter alterado seu nome clique aqui /join para completar sua inscrição </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Jigglypuff se dirigiu a {0} e tentou ser amigo do seu Pokémon e viu que é um Mewtwo clonado! Jigglypuff ficou chocado e voltou correndo.</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>'s</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>O Pokémon de {0} não pode mais batalhar. Ninguém sabe o motivo~</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Estranho.... {0} não trouxe seu Pikachu para o Pikachu Club Meeting esta manhã... 🤔</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fuga(Flee) foi desativado pelos Líderes de Ginásio enquanto uma Liga Pokémon está acontecendo!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value> Não pode mais batalhar </value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} à lista de Treinador de Ginásios. Use /config para fazer alterações no Ginásio.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Você já está inscrito na Liga ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Seu Ginásio foi configurado para iniciar vários jogos simultâneos... Matança extra.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Seu Ginásio está atualmente na fila  Posição: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Desculpe, estou para começar uma pequena pausa para manutenção, você não pode começar um jogo por enquanto.\nEsperando jogos de {0} para terminar...\nVá até @werewolfdev para mais informações.</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Desculpe, o número de jogos simultâneos foi alcançado ({0}).  \nPosição na fila: {0} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} é um grupo com preferência e furou a fila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Não há Ligas acontecendo agora. Para começar uma Liga Pokémon normal se inscreva em /startgame ou para começar uma Super Liga Pokémon, se inscreva em /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Somente um Líder de Ginásio pode usar esse comando.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Depois dessa Liga Pokémon, eu desligarei para manutenção.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Depois dessa Liga Pokémon, eu vou desligar por um momento pra uma atualização. (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId é nulo/falso. Tem certeza que voce enviou isso como uma resposta? </value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} já é um Líder do Ginásio!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} não é um Líder do Ginásio!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} foi removido da lista de Líder do Ginásio.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Idioma configurado é {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Não tem Alakazam 👳!</value>
+  </string>
+  <string key="TimesUp">
+    <value>O Tempo acabou!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Você tem um Haunter 🏹. Você pode escolher dois treinadores Pokémon e usar Destiny Bond para ambos os Pokémon. Quando um Pokémon não puder mais batalhar, o outro também não poderá mais.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Você tem um Ditto 🎭. Escolha um treinador. Quando seu Pokémon não puder mais batalhar, Ditto pode se transformar no Pokémon do treinador escolhido e se juntar ao seu time, se tiver um.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Você tem um Gengar 🎯. Você é um treinador profissional. Você pode ganhar uma batalha contra a Equipe Rocket e ainda usar um movimento antes do Gengar fugir ou perder uma batalha.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Você é o Mestre Pokémon que tem um Dragonite 🔪. Seu objetivo é vencer todas as Batalhas Pokémon e ser o melhor de todos.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Destiny Bond foi usado no seu Pokémon! Se o Pokémon de {0} perder uma Batalha Pokémon e não puder mais batalhar, o mesmo acontecerá com o seu Pokémon!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>A cidade escolheu libertar o seu Gengar! Use um último movimento para a última batalha Pokémon antes do seu Gengar ser libertado!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} mandou Gengar usar Shadow Punch mas foi tarde demais. Gengar foi libertado para a selva e não pode mais batalhar.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} escolheu não usar seu último comando com o Gengar. Gengar foi libertado para a selva e não pode mais batalhar.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Antes do Gengar ser libertado para a selva, {0} mandou Gengar usar Shadow Punch! Gengar usou Shadow Punch! {2} não pode mais batalhar e {1} apagou.</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Gengar será enviado de volta para a selva! Use um último comando ao seu Pokémon para uma última batalha Pokémon com outro treinador!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>O Gengar de {0} ficou imposibilitado de batalhar antes que {0} pudesse escolher algum comando para seu Pokémon.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} atrasou seu comando por um tempo. Sabendo que iria perder a batalha, {0} não deu comando algum para seu Gengar.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>{0} mandou Gengar usar Curse! Enquanto Gengar desmaiava, {1} estava triste como {2} e desmaiou junto com ele.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} ordenou que seu Mewtwo atacasse {1}! Porém, não da força do outro treinador e do seu Pokémon. Um Dragonite apareceu! Dragonite usou Outrage! Mewtwo não pode mais batalhar.</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>A Equipe Rocket tentou iniciar uma Batalha Pokémon contra Gengar! Porém, a experiência de {0} não era o suficiente para vencer e perdeu a batalha.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>A Equipe Rocket tentou iniciar uma Batalha Pokémon contra Gengar! Porém, a experiência de {0} não era o suficiente para vencer e perdeu a batalha.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+      <!-- 0 - target's name -->
+    <value>A Equipe Rocket tentou iniciar uma Batalha Pokémon contra Dragonite! Porém, o Dragonite é muito poderoso e {0} perdeu a batalha mesmo com a Equipe Rocket tendo 3 aves lendárias. Que Vergonha!!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Um Mestre Pokémon está por aí iniciando batalhas com seu Dragonite! Infelizmente, ele encontrou {0}! {0} perdeu miseravelmente com seu {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Você e seu Dragonite foram até {0} e o desafiou para uma batalha Pokémon. Mr. Mime surgiu do nada e usou Barrier, eles se foram... Você não conseguiu batalhar. Grr 😡</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>A Equipe Rocket enviou {0} para tentar convencer {1} a se juntar no seu time, mas {1} estava zangado e pediu a Gengar para iniciar uma batalha de Pokémon! {0} perdeu com seu Mewtwo desmaiado.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>A Equipe Rocket enviou {0} para tentar convencer {1} a se juntar no seu time, mas {1} estava zangado e pediu a Dragonite para iniciar uma batalha de Pokémon! {0} perdeu com seu Mewtwo desmaiado.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Mr. Mime tentou usar Barrier no Dragonite mas Dragonite usou Outrage no Mr. Mime antes disso! Mr. Mime não pode mais batalhar.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Jigglypuff foi até {0} querendo ser seu amigo do seu treinador Pokémon. Jigglypuff não fez nada e {0} está louco(a) por uma batalha. Jigglypuff perdeu a batalha e desmaiou.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Jigglypuff foi fazer amizade com o Pokémon errado! Jigglypuff de {0} desmaiou após uma batalha acirrada com o Dragonite.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>O Ditto de {0} se transformou em um Pikachu e se juntou ao Clube!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>O Pikachu de {0} desmaiou, e o Ditto se transformou em um Pikachu. Seus companheiros (se tiver) são: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>O Ditto de {0} se transformou em um Mewtwo e se juntou ao time da Fábrica!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>O Mewtwo de {0} desmaiou, e Ditto se transformou em um Mewtwo. Seus companheiros(se tiver) são: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>O Ditto de {0} se transformou em uma ave lendária e se juntou à Equipe Rocket!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>O Pokémon de {0} desmaiou, e Ditto se transformou em uma ave lendária.  Seus companheiros(se tiver) são: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Você venceu todas as batalhas Pokémon. Você é um verdadeiro MESTRE Pokémon!!!</value>
+  </string>
+  <string key="AskKill">
+    <value>Com quem você quer batalhar essa noite?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Com o Pokémon de {0} desmaiado, {1} ficou tão chocado quanto {2} e também desmaiou, já que ambos estavam com Destiny Bond.</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>O Pokémon de qual treinador você quer se transformar quando ele desmaiar? </value>
+  </string>
+  <string key="AskCupid1">
+    <value>O Pokémon de qual treinador você quer que Haunter use Destiny Bond? Escolha o primeiro treinador.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>O Pokémon de qual treinador você quer que Haunter use Destiny Bond? Escolha o segundo treinador.</value>
+  </string>
+  <string key="Hunter">
+    <value>Gengar 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Haunter 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Dragonite 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Ditto 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Destiny bond foi usado no seu Pokémon com o Pokémon de {0} pelo Haunter. Se o Pokémon dele/dela desmaiar, o seu também irá!</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Seu Ditto se transformou em um Meowth 👶.  Seu senpai é {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Err, eu não pensei nisso ainda.!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Gengar achou um Pokémon e Gengar usou Shadow Punch! {1} desmaiou. O treinador é {0}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>O membro da fábrica de clones tentou lurar você com Mewtwo, mas o vínculo com seu Pokémon é muito forte.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Você já está na lista de espera para {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Você entrou na lista de espera para {0}.  Irei te mandar mensagem no privado quando o próximo jogo iniciar.\nEnquanto espera, por que não passa pela loja? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Um novo jogo está começando em {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>{0} com seu Dragonite, iniciou uma batalha final. De qualquer forma, o Pokémon de {1} é incapaz de vencer essa esmagadora força do Dragonite. {0} ganhou a batalha final. </value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Nenhum jogador venceu..</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>A batalha final entre {0} e {1}. {0} lançou Dragonite e {1} lançou Gengar. Gengar castou Destiny Bond nele mesmo e Dragonite! Enquanto Dragonite usa o golpe final~, ambos desmaiaram. =_= </value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Você falhou em escolhar um senpai, então o moderador escolheu pra você: {0}</value>
+  </string>
+  <string key="Won">
+    <value> Ganhou </value>
+  </string>
+  <string key="Lost">
+    <value> Perdeu </value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value> O Pokémon de {0} foi mandado para a selva porque ninguém votou {1} vezes nas ultimas 24 horas.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Seu papel é simples - tente sobreviver. Cada dia, você vai ter uma chance de linchar o lobisomem.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Você é a Vidente. Neste papel, cada noite, Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque os Lobos estão loucos pra devorar você!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Você tem que se divertir! Cada dia, você irá tentar enganar seu companheiro treinador. Porém, cada noite, você irá ter que escolher um jogador para matar! Note:se você atacar o bêbado, você ficará bêbado, e será incapaz de atacar na próxima noite. Durma fora com sua ressaca! Se você atacar o amaldiçoado, eles irão se tornar um lobo como você! Hmmmmm!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Como a Cortesã você vai ter a chance de 'visitar' outro jogador em cada noite. Se eles não forem o lobo, você vai ser avisado (porque você vive!). Se você visitar um lobo, você vai ser morto(a). Se você visitar o jogador que os lobos escolheram matar, você vai ser morto também. De qualquer maneira - Se você visitar um jogador, e os lobos escolherem matar você, você vai sobreviver (você não estava em casa)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Você é o Bêbado, seu vagabundo! Com o bêbado, você continuará sendo um aldeão. MAS! se os lobos te matarem, eles irão ser desarmados para a próxima noite, conforme eles estão bêbados fora da sua insanidade alta, não poderão atacar ninguém .</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Você é o Amaldiçoado, você é um cidadão normal... Até os lobos matarem você. Uma vez que fizerem isso, você se tornará um lobo também! Livre para caçar na noite..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Você é o Traidor. Se você sobreviver tempo o suficiente para todos os lobos morrerem, você se tornará um lobo, pronto para matar seus companheiros de noite!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Você é o Anjo da Guardião! Cada noite, você pode escolher um jogador para cuidar. Seja cuidadoso - Se você escolher cuidar um lobo, tem 50% de chance de você ser morto.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Você é o velho Detetive. Cada dia, você terá a chance de investigar outro jogador. Entretanto, use com cuidado, Existe 40% de chance dos lobos detectarem você!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Um gatilho feliz somos nós, né? Como o atirador, será dado à você 2 balas de prata no começo do jogo. Cada dia, você terá a chance de atirar em outro jogador. Uma vez que você faça isso, todo mundo saberá que você é o atirador! Seja cuidadoso, você só tem 2 balas!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>A meta do suicida é simples: Ser linchado. Se o suicida for linchado, ele ganha. Todo mundo perde.</value>
+  </string>
+  <string key="AboutFool">
+    <value>O trouxa é avisado que é o vidente.... Quando ele escolhe para ver o papel de alguém à noite, ele recebe um papel aleatório como aviso.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Como um Membro da Seita, é a sua meta converter todos os outros treinadores (exceto lobos) para o sua Seita. Se no fim do jogo, todos os jogadores sobreviventes forem da Seita - A Seita vence vencem</value>
+  </string>
+  <string key="AboutCH">
+    <value>Seu trabalho é caçar os Membros da Seita. Se a Seita atacar você, o membro mais novo deles irá morrer. Cada noite você poderá pegar um jogador para ' caçar ' - Se eles forem da Seita, eles irão morrer.</value>
+  </string>
+  <string key="AboutWC">
+    <value>No início do jogo, você deve escolher alguem para ser seu Mestre. Se ele morrer, você se torna um lobisomem.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Por enquanto, você é só um aldeão. Porém, se a Vidente morrer, você se tornará a nova Vidente.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Você será avisado(a) quem é a verdadeira Vidente (não a Trouxa).</value>
+  </string>
+  <string key="AboutMason">
+    <value>O trabalho do maçom é simples - Eles automaticamente sabem quem são os outros maçons. Fora isso, você será apenas um aldeão comum.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Seus ancestrais tinham a habilidade de se transformar em outros... Enquanto você não tem suas habilidades completas, você pode escolher um jogador no início do jogo. Se o jogador morrer, você se transformará nele.
+      Nota: Se o jogador se tornar Membro da Seita, você se transformará no papel original dele (antes de ser d Seita). Todas as outras regras normais aplicam-se: Se eles forem a Criança Rebelde e seu Mestre morrerem, você se tornará lobo. De outra forma, você herdará seu Mestre.
+      A Seita não pode converter o Doppelgänger (mas pode depois do Doppelgänger ter seu papel alterado). Além disso - o Doppelgänger NÃO pode vencer a menos que ele tenha se transformado. Se no final do jogo, o Doppelgänger continuar o mesmo, ele perde (exceto: se for amante)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      O amor está no ar. Como Cupido, você irá escolher dois treinadores no início do jogo. Esses dois treinadores ficarão loucamente apaixonados! Se um deles morrer, o outro irá morrer de sofrimento :(
+      Nota: O casal saberá quem é o par deles, mas não saberão seu papel. Se os amantes forem os últimos a sobreviverem, eles vencem, independente do time deles. Se o casal for de times diferentes (Vila + Lobo), e um dos times ganhar(Lobo), o amante (Aldeão) ganha também. TL;DR se ambos os amantes estiverem vivos no final, e pelo menos um deles estava na equipe vencedora, ambos ganham juntos
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Um atirador feliz e vingativo. Como o Caçador, você tentará se proteger. Contudo, quando os outros jogadores vierem visitar você, eles podem encontrar-se morto, como sua paranóia se apodera e você atira. Se o lobo te atacar, você tem uma chance de levá-lo contigo. Caso contrário, se você morrer, você terá a chance de atirar em alguém quando você morrer.
+      Nota: Para um ataque de lobos, a chance é de 30%. Se tiver um lobo, o Caçador tem a chance de 30% de matar o lobo (e sobreviver). Para cada lobo adicional, 20% de chances são adicionadas (2 lobos = 50%, 3 = 70%, etc). Contudo - se houver vários lobos, enquanto você pode matar um deles, você ainda será superado em número e morto.
+      Se a Seita tentar te converter, eles tem 50% de chance de falhar. Se eles falharem, você tem 50% de chance de matá-los!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Aquele manicômio, era bobo de qualquer maneira. Que piada. Você está livre agora de qualquer maneira, de volta à ativa, ao seu negócio pessoal - matar! O serial killer é um jogador solo, é seu próprio time. Eles só vencem se for o último jogador vivo (exceto: os amantes). Como o serial killer, você pode matar QUALQUER UM- lobos, caçadores, atiradores, anjos da guarda, tanto faz. Se o lobo tentar te atacar, você matará um deles (aleatório) e viver.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para é o desenvolvedor do jogo e gosta de latir pros outros. Talvez ele esteja brincando com lobisomens por muito tempo... Brincar com lobisomens é uma péssima ideia.</value>
+  </string>
+  <string key="EndTime">
+    <value>Duração da Partida: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Dia {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Ocorreu um erro e esse modo foi desligado :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Te enviei uma mensagem no privado.</value>
+  </string>
+  <string key="StartPM">
+    <value>Me envie uma mensagem no privado para que eu possa ter enviar as mensagens lá.</value>
+  </string>
+  <string key="PMTrue">
+    <value>Obrigado por me iniciar, agora eu posso te enviar mensagens no privado.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Você deve responder o usuário que desejar dar smite.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>O que você gostaria de fazer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Você deve dar join em um grupo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Você deve começar o jogo em um grupo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo para receber a mensagem de ping: {0}\nUso de CPU Atual: {1}%\nMesagens por segundo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Qual idioma?\nAtual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Qual Variante?\nAtual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma configurado para {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Obter qual arquivo de idioma?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Esse comando deve ser feito em um grupo</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Você não é um administrador global... Procure um para resolver isso.</value>
+  </string>
+  <string key="NotPara">
+    <value>Você não é o Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sim</value>
+  </string>
+  <string key="No">
+    <value>Não</value>
+  </string>
+  <string key="Allow">
+    <value>Permitir</value>
+  </string>
+  <string key="Disallow">
+    <value>Não Permitir</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Esconder</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Somente Normal </value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Somente Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Escolha do jogador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Não mostrar nada</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar somente treinadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar todos os treinadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Permitir fuga depois do jogo iniciado?\nNota: treinadores ainda podem fugir durante a parte de inscrição (join) \nAtual: {0} fugas</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fuga depois do jogo começado</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quantos treinadores gostaria de definir como o máximo?\nAtual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maximo de treinadores definido para {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrar ou Esconder Pokémon quando morrer?\nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Pokémon {0} será mostrado na morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Qual modo de jogo o grupo terá?\nAtual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de jogo definido para {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Como você que os Pokémon sejam mostrados no final? \nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Pokémon mostrados no final da Liga: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Escolha um tempo base (em segundos) para a duração do dia.  Isto ainda será modificado com base no número de formadores.\nTempo base mínimo para treinadores se inscreverem é 60 segundos.  Padrão: {0}\nAtual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duração do dia: {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Escolha o tempo (em segundos) para duração da noite. Padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Tempo de duração da noite: {0} segundos</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Escolha o tempo (em segundos) para a votação. Padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Freeing voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Permitir Trouxa como opção jogável?\nAtual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Número de Trouxa como opção jogável: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Permitir Suicida como opção jogável?\nAtual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Número de Suicida como opção jogável: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Permitir Seita uma opção jogável?\nAtual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Número de Seita como opção jogável: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Obrigado, tenha um ótimo dia :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Qual idioma você está procurando para jogar?</value>
+  </string>
+  <string key="HereIsList">
+    <value> Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor me inicie para que eu possa te enviar mensagens no privado.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} não iniciou o bot e foi removido da Liga!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aqui está a última lista.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Não consigo mostrar a última lista. Tem certeza que já tem uma no jogo atual?</value>
+  </string> 
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Sua inscrição foi aceita na Liga Pokémon de {0}.</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo para a mensagem de ping: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Você é o Prefeito da Cidade Pokémon com seu Bulbasaur🎖. Uma vez que você se revelou, tem dois votos na votação para mandar o Pokémon de volta pra selva.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Você tem um Real Ninetails👑. Os treinadores não podem mandar seu Pokémon para a selva. Se eles fizerem isso, você revelará seu Ninetiles e a soltura será ingnorada.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Você tem um Slowpoke🤕. Devido ao jeito trapalhão do Slowpoke, você, treinador, também foi afetado. Ah não! Durante a votação, você pode acabar votando na pessoa errada!!! </value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Você tem uma Jynx🔮. Jynx tem a habilidade de farejar o Alakazam e a Equipe Rocket. Como você sempre odiou treinadores mais fortes que você, você é aliada da Equipe Rocket.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Você tem uma Vileplume⚒! Vileplume tem Pontos de Poder de Stun Spore para impedir que a Equipe Rocket venha à noite e arrume alguma encrenca!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Você é Giovanni, o Chefão da Equipe Rocket e tem um Rhydon⚡️. Usando sua habilidade altamente carismática, Você é capaz de convencer um treinador a se juntar à Equipe Rocket (20% de chance de conversão).</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Você é o funcionário da Rocket Game Corner e tem um Porygon🐶!(no valor de 9999C) Se seu Pokémon morrer ou ser liberto, a Equipe Rocket ficará furiosa e arrumará alguma encrenca com 2 treinadores na noite seguinte!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Como a cidade começa a libertar {0}, ele grita “ESPEREM! Eu tenho o Ninetails Real que está protegendo a Cidade Pokémon!” Os Treinadores lamentam sua decisão e deixam Ninetails com seu treinador.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Você tenta ver {0}, mas não consegue ver qual Pokémon ele(a) tem. Eles não são da Equipe Rocket ou Alakazam...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} dá um passo à frente e mostra seu pequeno e fofo Bulbasaur, declarando que é o Prefeito da Cidade Pokémon. De agora em diante, os votos de {0} contaram como dois.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clique em "Revelar" para se declarar como prefeito a hora que quiser</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Gostaria de espalhar Stun Spore hoje, impossibilitando a Equipe Rocket de arrumar encrenca esta noite?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Enquando o resto da cidade debate sobre qual Pokémon deve ser libertado, eles percebem que {0} está com seu Vileplume⚒ espalhando Stun Spore por todos os lados. Isto irá parar a Equipe Rocket de arrumar encrenca por uma noite.</value>
+  </string>
+  <string key="Mayor">
+    <value>Bulbasaur🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Ninetails👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Jynx🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Slowpoke🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Vileplume⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Rhydon⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Porygon🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Quando Equipe Rocket está arrumando encrenca com {0}, {1}, Giovanni para todos. {1} convence {0} a se juntar à Equipe Rocket e ele terá uma ave lendária.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>A Equipe Rocket estava arrumando encrenca contigo, mas Giovanni acha que você é um treinador muito valioso. Sob sua influência, você foi convidado para se juntar à Equipe Rocket.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Quando você entrou no QG da Equipe Rocket, teve a chance de escolher uma das aves lendárias. Você é parte da Equipe Rocket agora!!!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como Prefeito, você é um simples aldeão, até se revelar. Então você poderá ter o seu voto contado duas vezes na hora de enforcar alguém (ou seja, o seu voto é duas vezes mais poderoso que qualquer um). Use o seu poder sabiamente para ajudar o Time da Aldeia.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>O Príncipe é uma parte importante do Time da Aldeia. Assim que tentam enforcá-lo, seu papel de Príncipe é revelado, e ele irá sobreviver. Assim, só poderá ser morto durante a noite, ou por um caçador.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Você se lembra da boa e velha vidente? Bem, agora os Lobos tem uma, e é a Feiticeira. Ela pode apenas 'ver' os Lobos e Videntes, e é do time dos Lobos.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Você é o Desajeitado. Você não deveria ter bebido tanto de manhã. Agora você não consegue enxergar nada. Será que você consegue votar na pessoa certa na hora de enforcar alguém? (Você tem 50% de votar na pessoa errada)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Você é o Ferreiro. Durante os anos, nenhuma espada, nem lâmina, te deu tanta satisfação quanto a Lâmina Prateada que os duendes te encomendaram.
+Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele até *previna que os Lobos possam atacar essa noite* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Você é o lobo alfa, a origem da maldição, o chefão. Quando vivo, a sua vítima tem 20% de chance de se juntar ao bando, isso foi nela que você tinha votado.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Mas que fofinho! Pequenino lobinho! _cuti cuti_ Eu não resisto à sua fofura! Eu acho que se te matassem, eu daria aos lobos duas vitimas. Você é fofinho demais para morrer. Não quero nunca deixar de te acariciar-</value>
+  </string>
+ <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>O Ditto de {0} foi enviado para a selva, e se transformou em um Rhydon. Agora você faz parte da Equipe Rocket. Os seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>O Ditto de {0} foi enviado para a selva, e se transformou em um Porygon.  Os seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Time Magikarp</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Time Neutro</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Time da Equipe Rocket</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Time Dragonite</value>
+  </string>
+  <string key="CultTeam">
+    <value>Time Mewtwo</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Time Tauros</value>
+  </string>
+  - <string key="VillageTeamEnd">
+  <value>Time Magikarp</value> 
+  </string>
+- <string key="NeutralTeamEnd">
+  <value>Time Neutro</value> 
+  </string>
+- <string key="WolfTeamEnd">
+  <value>Time da Equipe Rocket</value> 
+  </string>
+- <string key="SerialKillerTeamEnd">
+  <value>Time Dragonite</value> 
+  </string>
+- <string key="CultTeamEnd">
+  <value>Time Mewtwo</value> 
+  </string>
+- <string key="TannerTeamEnd">
+  <value>Time Tauros</value> 
+  </string>
+  - <string key="CultConvertWolf">
+  <value>{0} envia um Mewtwo para tentar lurar(converter) {1}, mas em vez disso, seu Pokémon é libertado para a selva. O Pokémon de {0} está livre...</value> 
+  </string>
+ <string key="HarlotFuckedKilledPublic">
+    <value>{0} envia seu Jigglypuff até a casa de {1}, para fazer amizade com o Pokémon dele(a), mas parece que {1} estava em uma batalha no momento. O Dragonite com um único ataque derrota os dois Pokémon...</value>
+  </string>
+  
+  <!--New Death Strings 05 Nov-->
+  <string key="ApprenticeSeerEaten">
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Zapdos! Zapdos usou Zap Cannon. O Kadabra 🙇 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. O Kadabra 🙇 de {0} não pode mais batalhar.</value>
+	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. O Kadabra 🙇 de {0} não pode mais batalhar.</value>
+    <value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno, Zapdos e Moltres!!! As três aves lendárias usaram Ancient Power. O Kadabra 🙇 de {0} não pode mais batalhar.</value>
+   </string>
+<string key="BlacksmithKilled">
+<value>Parece que o Stun Spore do Vileplume de {0} não foi o bastante para evitar o ataque do poderoso Dragonite! o Dragonite usa seu Dragon Pulse e o Vileplume está fora de combate!.</value>
+</string>
+<string key="CultistKilled">
+<value>Os dias de clonagem do Mewtwo de {0} chegaram ao fim! O Poderoso Dragonite solta sua fúria do dragão, o Mewtwo desmaia, todos sentirão falta do Mewtwo de {0} na fábrica de clonagem...</value>
+</string>
+<string key="CupidKilled">
+<value>O Haunter de {0} foi atacado pelo Dragonite e já não pode mais usar seu Destiny Bound, Haunter está desclassificado da liga Pokémon.</value>
+</string>
+<string key="DrunkKilled">
+<value>Parece que o Sleeping Powder do Butterfree de {0} não foi suficiente para parar o Dragonite, usando seu Hyper Beam ele ataca diretamente o Butterfree que já não pode mais batalhar, Butterfree está fora da liga! </value>
+</string>
+<string key="GuardianAngelKilled">
+<value>o Mr. Mime de {0} tenta se defender usando Barrier! Porém não é o bastante para parar o poderoso arremesso císmico do Dragonite. o Mr. Mime de {0} é atirado violentamente contra o chão, e quando a poeira baixa podemos vê-lo desmaiado.</value>
+</string>
+<string key="GunnerKilled">
+<value>Enquanto o Snorlax de {0} descansava debaixo de uma árvore, eis que é visto o Dragonite desafiando-o para uma batalha, antes que o Snorlax pudesse usar seu Hyper Beam o Dragonite usa suas garras de dragão, o Snorlax desmaia e não pode continuar na liga Pokemón.</value>
+</string>
+<string key="MayorKilled">
+<value>{0} Batalha árduamente com seu Bulbasauro, Porém o Dragonite é muito poderoso e lança seu Dragon Breath! o Bulbasaur tenta se esquivar mas é acertado em cheio! Que batalha! o Bulbasaur desmaia e está fora da Liga Pokémon.</value>
+</string>
+<string key="PrinceKilled">
+<value>A Beleza do Ninetails de {0} parece não encantar os olhos do Dragonite, sem hesitar, o Dragonite usa seu ataque cauda de dragão contra o Ninetails antes que ele pudesse tomar qualquer ação defensiva, o Ninetails desmaia e está fora da liga!.</value>
+</string>
+<string key="SeerKilled">
+<value>O Alakazam de {0} não usou o Foresight rápido o suficiente para prever o Dragon Rage do Dragonite, que o acerta em cheio, sem chances de defesa! O Alakazam desmaia a vitória é do Dragonite!</value>
+</string>
+<string key="SorcererEaten">
+<value>Parece que a Equipe Rocket comete um terrível engano atacando um membro disfarçado, antes que pudessem notar o disfarce de {0} e sua Jynx o Wobbufet de Jéssie atinge em cheio o Pokémon aliado deixando-o incapaz de continuar na Liga Pokémon.</value>
+</string>
+<string key="WildChildEaten">
+<value>Em um momento de fúria por ter zombado de seus cabelos, Jéssie ordena que o Seviper ataque o Meowth de {0}, mas não dá conta da força do ataque! o Meowth desmaia e não pode continuar na Liga Pokémon</value>
+</string>
+<string key="SerialKillerKilledCH">
+<!--used when CH visits SK-->
+<value>A Fábrica de Clonagem comemóra o resultado da última batalha. {0} e seu Mew desafiaram o Dragonite para uma batalha, porém os esforços de Mew para derrotá-lo foram inúteis, o Mew está fora de batalha e não pode prosseguir na Liga.</value>
+</string>
+<string key="CultConvertWolfPublic">
+<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<value>A Fábrica de clonagem desafiou um membro da Equipe Rocket para a batalha! Porém após uma árdua luta {0} e um dos Mewtwo clonados não conseguiram superar o Pokémon da Equipe Rocket e está fora da Liga Pokémon.</value>
+</string>
+<string key="CultConvertKillerPublic">
+<!--used when Cultists convert the SK-->
+<value>Ontem a Fábrica de clonagem tentou clonar o Dragonite, porém o Dragonite superou fácilmente {0} e um dos clones do Mewtwo que não podem mais seguir o combate.</value>
+</string>
+<string key="GAGuardedKiller">
+<value>{0} e seu Mr. Mime tentaram usar Barrier para proteger o Dragonite, porém o Dragonite é um Pokémon orgulhoso e se ofendeu com a tentatica atacando o Mr. Mime que desmaia, Mr. Mime está fora de combate e não pode seguir na Liga Pokémon.</value>
+</string>
+<string key="GAGuardedWolf">
+<value>{0} manda o Mr. Mime proteger um membro da Equipe Rocket! Que terrível engano! {0} tem seu Mr. Mime roubado pela equipe rocket e devido ao sumiço de seu Pokémon, {0} está desclassificado da Liga Pokémon.</value>
+</string>
+<!--DEC 26: 1vs1 finales-->
+<string key="HunterKillsWolfEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+<value>{0} e {1} se preparam para as finais da Liga Pokémon! {1} ordena que seu Cacnia ataque o Gengar de {0} que esquiva e rápidamente revida com o ataque Shadow Ball! o Pokémon da Equipe Rocket desmaia, Gengar é o campeão da liga Pokémon!</value>
+</string>
+<string key="WolfKillsHunterEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+<value>A Equipe Rocket percebe que {0} não passou no Centro Pokémon e seu Gengar está debilitado, {1} envia o Wobbufet para atacar o Gengar de {0} que não consegue evitar o ataque, {1} comemora a vitória sobre o Gengar de {0}! a Equipe Rocket vence a Liga Pokémon!.</value>
+</string>
+<string key="CHKillsCultistEnd">
+<!--{0} = last cultist's name, {1} = CH's name -->
+<value>{1} e {0} se preparam para as finais! Percebendo que {0} possui um clone do Mewto, {1} ordena que seu Mew ataque o Pokémon rival, que não é páreo para os ataques do poderoso Pokémon, {1} e Mew vencem a Liga Pokémon! E os dias de Clonagem dos membros da Fábrica chegam ao fim!.</value>
+</string>
+<!-- Extend time -->
+<string key="SecondsAdded">
+<!-- 0 - Seconds added by /extend command -->
+<!-- 1 - Total seconds remaining -->
+<value>Tempo para juntar-se a liga estendido em {0} segundos!\n{1} restando para o /join</value>
+</string>
+<string key="SecondsRemoved">
+<!-- 0 - Seconds removed by /extend command -->
+<!-- 1 - Total seconds remaining -->
+<value>Tempo para juntar-se a liga reduzido em {0} segundos!\n{1} restando para o /join</value>
+</string>
+<string key="CantExtend">
+<value>Apenas os administradores podem estender o tempo mais de uma vez!</value>
+</string>
+<string key="AllowExtendQ">
+<!--{0} = "Allow" / "Disallow" string-->
+<value>Permitir jogadores estender o tempo de início?\nAtual: {0} estender\nNota: Admins sempre poderão extender o tempo</value>
+</string>
+<string key="AllowExtendA">
+<!--{0} = "Allow" / "Disallow" string-->
+<value>{0} jogadores estender o tempo de início</value>
+</string>
+<string key="MaxExtendQ">
+<value>Escolha o tempo máximo em segundos que poderão ser adicionados ao tempo de início por um único /extend comando.\nConfiguração padrão: {0}\nAtual:{1}</value>
+</string>
+<string key="MaxExtendA">
+<value>Tempo máximo de estender: {0} segundos</value>
+</string>
+<string key="WolvesEatDrunkBlockSecondKill">
+<value>Oh não! Você atacou o Butterfree de {0} Antes de desmaiar ele usa seu Sleep Powder e você não poderá atacar esta noite {1}...</value>
+</string>
+<!--New InlineStats Strings 30/12-->
+<string key="AchievementsUnlocked">
+<value>Conquistas realizadas!</value>
+</string>
+<string key="GamesWon">
+<value>Batalhas vencidas</value>
+</string>
+<string key="GamesLost">
+<value>Batalhas perdidas</value>
+</string>
+<string key="GamesSurvived">
+<value>Batalhas sobrevividas</value>
+</string>
+<string key="TotalGames">
+<value>Total de batalhas</value>
+</string>
+<string key="TimesKilled">
+<value>vezes eu prazerosamente eliminei</value>
+</string>
+<string key="TimesKilledBy">
+<value>vezes eu fui injustamente morto por</value>
+</string>
+</strings>

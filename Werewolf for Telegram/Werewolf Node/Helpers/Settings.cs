@@ -62,7 +62,7 @@ namespace Werewolf_Node
         public static int
 #if DEBUG
             MinPlayers = 1,
-            
+
 #else
             MinPlayers = 5,
 #endif
@@ -106,6 +106,8 @@ namespace Werewolf_Node
             HunterKillWolfChanceBase = 30,
             SerialKillerConversionChance = 20,
             AlphaWolfConversionChance = 20,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
 #else
              PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
@@ -141,10 +143,13 @@ namespace Werewolf_Node
             HunterKillCultChance = 50,
             HunterKillWolfChanceBase = 30,
             SerialKillerConversionChance = 20,
-            AlphaWolfConversionChance = 100,
+            AlphaWolfConversionChance = 20,
+            SorcererConversionChance = 40,
+            BlacksmithConversionChance = 75,
 #endif
 
-            GameJoinTime = 180;
+            GameJoinTime = 180,
+            MaxJoinTime = 300;
 
 
 

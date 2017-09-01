@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Indonesia (Mode Amnesia)" base="Indonesia" variant="Amnesia Mode"/>
+  <language name="Indonesia (Mode Amnesia)" base="Indonesia" variant="Amnesia Mode" code="id" isDefault="false"/>
   <string key="NotInGame">
     <value>Kamu belum bergabung di permainan ini</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>📣 {0} telah memulai permainan (NORMAL)! Ketik /join untuk bergabung.</value>
-    <value>📣 Permainan (NORMAL) telah dimulai oleh {0}! Ketik /join untuk bergabung.</value>
+    <value>📣 {0} telah memulai permainan (NORMAL)! Tekan join untuk bergabung.</value>
+    <value>📣 Permainan (NORMAL) telah dimulai oleh {0}! Tekan join untuk bergabung.</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>📣 {0} telah memulai permainan (CHAOS)! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
-    <value>📣 Permainan (CHAOS) telah dimulai oleh {0}! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
+    <value>📣 {0} telah memulai permainan (CHAOS)! Tekan join untuk bergabung dan bunuh semua warga desa! 😈</value>
+    <value>📣 Permainan (CHAOS) telah dimulai oleh {0}! Tekan join untuk bergabung dan bunuh semua warga desa! 😈</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Kamu terlambat! Permainan sedang berlangsung. Tunggu permainan selanjutnya ("`o´)-σ.</value>
@@ -19,10 +19,10 @@
     <value>Kamu sudah ikut bermain! Jangan joan-join mulu! Bikin bingung aja! Peper upil nih (‾-ƪ‾)( ‾-‾)-σ••••</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 menit lagi untuk /join</value>
+    <value>1 menit lagi untuk join</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} detik lagi untuk /join</value>
+    <value>{0} detik lagi untuk join</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Tidak cukup pemain! Permainan dibatalkan! panggil teman-temanmu \('o')-σ.</value>
@@ -681,9 +681,6 @@
 	<value>Ingatan tentang dirimu mulai melemah akibat teralalu banyak mengkonsumsi micin. Mungkinkah dirimu seorang Guardian Angel 👼?</value>
 	<value>Ingatan tentang dirimu mulai melemah akibat teralalu banyak mengkonsumsi micin. Mungkinkah dirimu seorang Serial Killer 🔪?</value>
   </string>
-  <string key="CupidChosen">
-    <value>Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: {0}</value>
-  </string>
   <string key="HunterLynchedChoice">
     <value>Warga desa memilih untuk mengeksekusimu! Inilah kesempatan terakhir untuk memilih siapa yang kamu bawa menemanimu ke akhirat!</value>
   </string>
@@ -766,9 +763,6 @@
   <string key="CultConvertHunter">
     <value>{0} membawa formulir pendaftaran ke rumah {1} dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba {1} menghunus pisau berkali-kali ke dada dan perut {0} hingga mati</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} membawa formulir pendaftaran ke rumah {1} dan disambut dengan hangat. Secangkir kopi tersaji dan tiba-tiba {1} menghunus pisau berkali-kali ke dada dan perut {0} hingga mati</value>
-  </string>
   <string key="GuardKiller">
     <value>Kamu mencoba melindungi Serial Killer 🔪. HIH... Dia malah keluar dengan tertawa dan menusukmu 89 kali!! Sayapmu telah dijadikan koleksi untuk hiasan kamarnya.</value>
   </string>
@@ -776,7 +770,7 @@
     <value>Perlahan kamu masuk ke rumah {0} berniat bobo-bobo ena sama dia, Semua terlihat baik baik saja sampai {0} keluarin pisau dan mulai menusukmu berkali kali sembari tertawa layaknya seorang Maniak!! Kamu mati dengan mengenaskan....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>{0} mencoba untuk mencari kelon enak semalaman. Tiba-tiba, sang maniak muncul tiba-tiba!! {0} mati dengan penuh luka dan tusukan. Badannya tergeletak di pinggir jalan. - {0}</value>
+    <value>{0} mencoba untuk mencari kelon enak semalaman. Tiba-tiba, sang maniak muncul tiba-tiba!! {0} mati dengan penuh luka dan tusukan. Badannya tergeletak di pinggir jalan.</value>
   </string>
   <string key="DGToMason">
     <value>Kamu mulai mengenal {0}!</value>
@@ -850,7 +844,7 @@
 	ಠ_ಠ</value>
   </string>
   <string key="AddedToWaitList">
-    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk /join .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
+    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk bergabung .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
   </string>
   <string key="NotifyNewGame">
     <value>Permainan baru akan dimulai dalam {0}</value>
@@ -997,7 +991,7 @@
     <value>Kamu harus memulai permainan dalam grup!</value>
   </string>
   <string key="PingInfo">
-    <value>Waktu Respon Server: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Waktu Respon Server: {0}\nMessages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Bahasa apa yang akan kamu pilih?\nCurrent: {0}</value>
@@ -1286,5 +1280,202 @@
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
     <value>{0} telah mati! Peranmu telah berubah, tapi dari apa ke apa? Mungkin kamu tidak mengingat siapa dirimu sebenarnya, tapi kamu mengingat orang yang penting: {1}.</value>
+  </string>
+  <!-- Keep this for now until bots update-->
+  <string key="VillageTeam">
+    <value>Tim Warga Desa</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Tim Netral</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Tim Serial Killer</value>
+  </string>
+  <string key="CultTeam">
+    <value>Tim Pemuja Kerang (Cultist)</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Tim Tanner</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Tim Warga Desa</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Tim Netral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Tim Serigala</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Tim Serial Killer</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Tim Pemuja Kerang (Cultist)</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Tim Tanner</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Kelompok Pemuja Kerang sepakat mengirim {0} untuk memberikan formulir ke {1}. Astaga! Warga melihat kepala {0} terlempar keluar dari jendela! TIDAK! {0} tewas seketika sambil menggenggam formulir.</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic">
+    <value>{0} menyelinap ke rumah {1} dengan perasaan yang sudah tak dapat dibendung lagi, membayangkan yang akan terjadi bersama {1}. Namun, Serial killer memutuskan untuk memuaskan {0} terlebih dahulu sebelum menjadikannya koleksi cantik di rumahnya!</value>
+  </string>
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Warga terbangun menemukan jenazah {0} tercabik-cabik di lantai dengan kembang menyan yang berhamburan di sekujur tubuhnya. Murid Penerawang mati ketika berlatih menyembur air kumur menyan. Sedih. </value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Asrataga, {0} seorang Pandai Besi ⚒ sedang sial. Dia mati kelilipan bubuk besi saat pertarungan melawan serangan bertubi-tubi dari Si Serial Killer. Yalord, {0} akhirnya mati.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Warga menemukan bau tak sedap dari rumah {0}. Ia ditemukan tak bernyawa tanpa hidung. Serial Killer telah beraksi lagi! {0} adalah Pemuja Kerang 👤.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Karena baper nggak dijodohin oleh cupid, {0} alias Cupid 🏹 dibunuh oleh seseorang karena terbakar cemburu dengan panah di kepala. Ah cupid sih asal jodohin, mati deh. </value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Dahla, ini sudah takdir bagi {0} untuk mati. Untung saja {0} mati bukan karena mabuk 🍺, tapi karena Serial Killer ingin mengoleksi organ tubuhmu di rumahnya. </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Tampaknya, {0} sudah lelah melawan Serial Killer. Guardian Angel 👼 kehilangan kekuatan supernya malam ini. {0} telah mati, sayapnya diambil oleh Serial Killer untuk dijadikan koleksi museum.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Perkelahian antara {0} dan Serial Killer terjadi tadi malam! Tanpa perlu berlama-lama lagi, Serial Killer berhasil melucuti pistol si Penembak 🔫 dan jenazahnya digantung di ruang koleksi. </value>
+  </string>
+  <string key="MayorKilled">
+    <value>TELAH DITEMUKAN! Jenazah {0}, si kepala desa 🎖 digantung di balai desa dekat pohon pisang, deretan paling kiri urutan ke lima belas. Ini aksi balas dendam Serial Killer, karena kepala desa telah mengurungnya di penjara setahun lalu!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Tukang sayur keliling sudah ramai dikerubuti ibu-ibu desa. Beberapa warga sudah terlihat mencangkul sawah. Namun, pangeran tidak terlihat pagi ini. Lalu seorang warga berteriak histeris! Ditemukan, jenazah {0} berada di sumur. Tampaknya, Pangeran 👑 telah menjadi korban Serial Killer.</value>
+    <value>Terdengar kabar bahwa {0} telah hilang semalam. Warga desa sibuk mencari pangeran 👑 kesayangan mereka. Akhirnya {0} ditemukan tertusuk pisau dengan jari-jari yang telah terpotong. Serial Killer telah mengincar cincin di tangan pangeran menjadikannya hiasan.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Warga terbangun mendengar teriakan para gadis desa pagi ini. Sungguh kejam, {0} ditemukan tak berkepala lagi. Serial Killer telah membunuh {0}, sang penerawang 👳.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Serigala berkumpul malam tadi! Mendengar suara auman, membuat mereka yakin untuk menikmati santap malam mereka. Sayangnya, mereka membunuh {0}, sang penyihir 🔮.</value>
+    <value>Pagi ini, warga desa berkerumun di pinggir sawah. Mereka melihat pecahan bola kristal di sebelah jasad {0}, sang penyihir 🔮. Sungguh tega, serigala menjadikannya santapan.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Serigala berkumpul semalam, menghabiskan waktu untuk berpesta dan menyantap {0}, dan hanya tulang-tulang yang tersisa! Warga terheran-heran untuk mencari tahu, siapa korban teror tadi malam. Sudah dipastikan, dia adalah Wild Child 👶.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Warga desa sedang berkabung. Mereka menemukan {0} seorang Cultist Hunter 💂, menjadi korban keji seorang pembunuh malam tadi. Apalah jadinya warga desa micin ini ketika kehilangan pembasmi Pemuja Kerang? Sedih.</value>
+    <value>Jenazah {0} Cultist Hunter 💂, ditemukan di tengah lapangan dengan pedang tertancap di leher. Sepertinya Ia telah salah mencurigai seseorang, bukan Pemuja Kerang yang ia datangi, namun Serial Killer!</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Tadi malam {0} sedang menjalankan tugasnya. Ia pergi ke salah satu rumah seseorang untuk menghasut mereka agar bergabung ke perkumpulan Pemuja Kerang 👤. Sayang sekali, merasa program dietnya terganggu, Serigala membunuh {0} dan memakannya! Serigala gagal diet.</value>
+    <value>Semalam, semua serigala sepakat berkumpul di rumah untuk bersantai. Namun, kedatangan {0} yang tiba-tiba mengganggu mereka. Serigala berkata kepada {0}, "Maaf kami sedang tidak tertarik pada kerang raksasa."</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Merasa sangat percaya diri {0}, seorang Pemuja Kerang 👤 berkunjung ke rumah seseorang semalam. Pagi ini ia ditemukan tewas tak bernyawa dengan sobekan formulir di sekitar tubuhnya. Serial Killer sepertinya tidak tertarik pada kegiatan pemujaan ini.</value>
+    <value>Kelompok Pemuja Kerang (cultist) 👤 mengirim anggotanya untuk pergi ke rumah seseorang malam tadi. Tanpa mereka tahu, {0} dikirim ke rumah Serial Killer hanya untuk dijadikan kesenangan keji sang pembunuh.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Sebagai Guardian Angel 👼,{0} bertugas untuk menjaga warga dari serangan pembunuh. Namun, kekuatan {0} telah hilang! Tidak! Tanpa membuang waktu, Serial Killer segera membunuhnya!</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} berusaha melindungi serigala semalam. Warga desa menyadari bahwa sayap {0} telah digantung di jemuran tetangga. Jelas, beginilah rasanya melindungi orang yang salah. Serigala baru saja mendapatkan santapan istimewa!</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya {0} yang tersisa, {1} mencoba untuk memangsa {0}, namun {0} pernah menjalani wajib militer dan agak paranoid yang membuatnya sulit untuk dihadapi! Yang menentukan adalah dua peluru yang ditembakkan ke arah dada dan seorang pemenang telah muncul: pemburu telah menjadi pahlawan desa.
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya {0} yang tersisa, {1} mencoba untuk menyerang {0} disaat pertahanannya paling lemah. Menyingkirkan warga desa terakhir bukanlah hal yang sulit untuk {1}, yang tersisa hanyalah tubuh yang termutilasi milik {1} sang pemburu diberkahi hadiah bekas cakaran di wajahnya</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} dan {0} berjalan beriringan di siang bolong, melihat liontin yang berkilauan yang ada di leher {0}, dia yang berjalan di jalan yang benar {1} mengangkat pedang untuk terakhir kalinya, mengakhiri ajaran sesat pemuja kerang yang telah mengotori desa.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Waktu untuk bergabung bertambah {0} detik!\n{1} detik tersisa</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Waktu untuk bergabung berkurang {0} detik!\n{1} detik tersisa</value>
+  </string>
+  <string key="CantExtend">
+    <value>Hanya admin grup yang dapat menambah waktu lebih dari satu kali!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Tidak! {0} adalah seorang pemabuk! Sekarang kamu tidak dapat menyerang {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Kamu tidak bisa bergabung dalam game, karena kamu bukan anggora dari {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Jangan gunakan command untuk bergabung. Gunakan Tombol</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} dari {1} pemain telah memvoting</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0} kamu perlu join juga ya.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Tidak dapat menemukan grup. Gunakan command ini di grup yang kamu ingin berhenti menunggu, atau tambahkan link, id atau username dibelakang command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Kamu telah dihapus dalam daftar tunggu {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} telah bergabung dalam game pada 30 detik terakhir.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
   </string>
 </strings>

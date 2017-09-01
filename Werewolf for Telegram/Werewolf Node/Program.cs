@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -19,13 +20,14 @@ using Message = TcpFramework.Message;
 
 namespace Werewolf_Node
 {
+
     class Program
-    {
+    {  
         internal static SimpleTcpClient Client;
         internal static Guid ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
-        internal static Client Bot;
+        internal static TelegramBotClient Bot;
         internal static User Me;
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
@@ -41,7 +43,12 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
+        internal static BotanIO.Api.Botan Analytics;
+#if DEBUG
+        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
+#else
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+#endif
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         internal static XDocument English;
         internal static int MessagesSent = 0;
@@ -67,10 +74,21 @@ namespace Werewolf_Node
             };
             English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
+
+
+
             //get api token from registry
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                         .OpenSubKey("SOFTWARE\\Werewolf");
+
+#if BETA || DEBUG
+            var aToken = key.GetValue("BotanBetaAPI").ToString();
+#else
+            var aToken = key.GetValue("BotanReleaseAPI").ToString();
+#endif
+            Analytics = new BotanIO.Api.Botan(aToken);
+
 #if DEBUG
             APIToken = key.GetValue("DebugAPI").ToString();
 #elif RELEASE
@@ -80,8 +98,8 @@ namespace Werewolf_Node
 #elif BETA
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
-            Bot = new Client(APIToken, Path.Combine(RootDirectory, "..\\Logs"));
-            Me = Bot.GetMe().Result;
+            Bot = new TelegramBotClient(APIToken);
+            Me = Bot.GetMeAsync().Result;
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
@@ -211,11 +229,40 @@ namespace Werewolf_Node
                                     ChatGroup = g.ChatGroup,
                                     GroupId = g.ChatId,
                                     NodeId = ClientId,
+                                    Guid = g.Guid,
+                                    Cycle = g.Time,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                                     Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
-                                    Players = new HashSet<IPlayer>(g.Players??new List<IPlayer>(new[]{new IPlayer {Name="Error"} }))
+                                    Players = g.Players?.Select(x => new 
+                                    {
+                                        Bitten = x.Bitten?"Yes":"No",
+                                        x.Bullet,
+                                        Choice = g.Players.FirstOrDefault(p => p.Id == x.Choice)?.Name,
+                                        CurrentQuestion = x.CurrentQuestion?.QType.ToString(),
+                                        x.DonationLevel,
+                                        IsDead = x.IsDead?"Yes":"No",
+                                        x.Name,
+                                        LoverId = g.Players.FirstOrDefault(p => p.Id == x.LoverId)?.Name,
+                                        PlayerRole = x.PlayerRole.ToString(),
+                                        Team = x.Team.ToString(),
+                                        x.Votes,
+                                        x.Id
+                                    })
                                 };
                                 message.Reply(JsonConvert.SerializeObject(gi));
+                                break;
+                            case "ExtendTimeInfo":
+                                var eti = JsonConvert.DeserializeObject<ExtendTimeInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == eti.GroupId);
+                                game?.ExtendTime(eti.User, eti.Admin, eti.Seconds);
+                                break;
+                            case "JoinButtonRequestInfo":
+                                var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
+                                game?.ShowJoinButton();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine(jbri.GroupId);
+                                Console.ForegroundColor = ConsoleColor.Gray;
                                 break;
                             default:
                                 Console.WriteLine(msg);
@@ -268,22 +315,23 @@ namespace Werewolf_Node
             }
         }
 
-        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null)
+        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false)
         {
             MessagesSent++;
+            //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardHide { HideKeyboard = true };
-                return await Bot.SendTextMessage(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else if (customMenu != null)
             {
-                return await Bot.SendTextMessage(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else
             {
-                return await Bot.SendTextMessage(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html);
+                return await Bot.SendTextMessageAsync(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
             }
         }
 
@@ -336,11 +384,13 @@ namespace Werewolf_Node
         public static void KeepAlive()
         {
             string ver = Version.FileVersion;
-
-
+            
             Connect();
             while (Running)
             {
+                if ((DateTime.Now - StartupTime).Hours > 10)
+                    IsShuttingDown = true;
+
                 var infoGathered = false;
 
                 if (Games == null || (IsShuttingDown && Games.Count == 0))
@@ -378,9 +428,16 @@ namespace Werewolf_Node
 
                     foreach (var g in games)
                     {
-                        if (g.Players == null)
+                        if (g?.Players == null)
                         {
-                            Games.Remove(g);
+                            try
+                            {
+                                Games.Remove(g);
+                            }
+                            catch
+                            {
+                                // ignored, it was already removed
+                            }
                             continue;
                         }
                         var gi = new GameInfo
@@ -389,6 +446,7 @@ namespace Werewolf_Node
                             ChatGroup = g.ChatGroup,
                             GroupId = g.ChatId,
                             NodeId = ClientId,
+                            Guid = g.Guid,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
                             Users = g.Players != null ? new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)) : new HashSet<int>(),
                             PlayerCount = g.Players?.Count ?? 0

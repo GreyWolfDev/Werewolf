@@ -18,6 +18,7 @@ namespace Database
         public Game()
         {
             this.GameKills = new HashSet<GameKill>();
+            this.GamePlayers = new HashSet<GamePlayer>();
         }
     
         public int Id { get; set; }
@@ -32,5 +33,7 @@ namespace Database
         public virtual Group Group { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameKill> GameKills { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GamePlayer> GamePlayers { get; set; }
     }
 }

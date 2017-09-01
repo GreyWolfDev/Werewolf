@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- It's Mafia vs Cops ver 1.3 by @NoxCaelis, Felicia, and @dhansck! Mafia's the goodies, by the way. Brought to Italian by @MatteoIlGrande -->
-<!-- Last updated on 18 August 2016 -->
+<!-- It's Mafia vs Cops ver 1.3 by @NoxCaelis, Felicia, and @dhansck! Mafia's the goodies, by the way. Brought to Italian by @MatteoIlGrande and updated by @AvZm42-->
+<!-- Last updated on 7 February 2017 -->
 <strings>
-  <language name="Italiano (Mafia)" base="Italiano" variant="Mafia"/>
-  <string key="NotInGame">
+  <language name="Italiano (Mafia)" base="Italiano" variant="Mafia"	code="it"
+			isDefault="false"/>
+  <string key="NotInGame" deprecated="true">
     <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} ha iniziato una partita! usa /join per entrare nella città, e munirti della tua mitraglietta.</value>
-    <value>Una nuova partita è stata iniziata da {0}! Usa /join per entrare nell'azione, stile Mafia!</value>
+    <value>{0} ha iniziato una partita! Clicca su Join per entrare nella città, e munirti della tua mitraglietta.</value>
+    <value>Una nuova partita è stata iniziata da {0}! Clicca Join per entrare nell'azione, stile Mafia!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} ha iniziato una partita Chaos! usa /join per entrare nella città, e munirti della tua mitraglietta</value>
-    <value>Una nuova partita Chaos è stata iniziata da {0}! Usa /join per entrare nell'azione, stile Mafia</value>
+    <value>{0} ha iniziato una partita Chaos! Clicca Join per entrare nella città, e munirti della tua mitraglietta!</value>
+    <value>Una nuova partita Chaos è stata iniziata da {0}! Clicca su Join per entrare nell'azione, stile Mafia!</value>
   </string>
-  <string key="NoJoinGameRunning">
+  <string key="NoJoinGameRunning" deprecated="true">
     <value>Non puoi unirti ora! La partita è ancora in corso!</value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>Ti sei già unito!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minuto rimanente per usare /join</value>
+    <value>1 minuto rimanente!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>Ancora {0} secondi per usare /join</value>
+    <value>Ancora {0} secondi!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Ah, non siamo abbastanza. Cancello la partita!</value>
@@ -32,7 +33,7 @@
   <string key="StartingGameWait">
     <value>Il gioco sta iniziando, aspettate qualche secondo mentre assegno i ruoli ed aggiorno il database.</value>
   </string>
-  <string key="BannedForExploit">
+  <string key="BannedForExploit" deprecated="true">
     <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
   </string>
   <string key="ChangeNameToJoin">
@@ -59,7 +60,7 @@
   <string key="CountPlayersRemain">
     <value>Rimangono {0} giocatori.</value>
   </string>
-  <string key="DidntAsk">
+  <string key="DidntAsk" deprecated="true">
     <value>Hey, non ti ho ancora chiesto nulla!</value>
   </string>
   <string key="NotPlaying">
@@ -68,7 +69,7 @@
   <string key="NoPlayerName">
     <value>Non trovo nessun giocatore con questo nome!</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>Questa risposta non è valida!</value>
   </string>
   <string key="WolfVotedKill">
@@ -141,7 +142,7 @@
     <value>Sei uno stalker (Detective) 🕵. Durante il giorno, puoi stalkerare un giocatore per rivelare il suo vero ruolo. Ma c'è un 40% di probabilità che i poliziotti ti notino!</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>Sei il politico corrotto (Ubriaco) 🍻! Sebbene tu sia corrotto, il villaggio ti onorerà una notte di lutto per te o la tua famiglia.</value>
+    <value>Sei il Politico Corrotto (Ubriaco) 🍻! Sebbene tu sia corrotto, il villaggio ti onorerà una notte di lutto per te o la tua famiglia.</value>
   </string>
   <string key="RoleInfoGuardianAngel">
     <value>Sei il buttafuori (Angelo custode) 👼. Ogni notte, puoi fare la guardia a una casa di un cittadino. Ma se scegli di fare il custode di una casa di poliziotti, c'è una probabilità del 50% di essere arrestato.</value>
@@ -150,7 +151,7 @@
     <value>Sei il paparazzo (Artigliere) 🔫! Non puoi resistere a un grande scoop. Infatti, i tuoi articoli da prima pagina potrebbero forzare chiunque ad andarsene dalla città, in preda alla vergogna.</value>
   </string>
   <string key="RoleInfoHarlot">
-    <value>Sei l'intermediario (Prostituta) 💋! Il tuo unico compito è di spedire la merce di conrabbando. Stai attento dai poliziotti, se ti vedono davanti alla loro casa o in quella in cui stanno facendo il blitz, Verrai arrestato. Non ti troveranno in casa, però. </value>
+    <value>Sei l'intermediario (Prostituta) 💋! Il tuo unico compito è di spedire la merce di contrabbando. Stai attento dai poliziotti, se ti vedono davanti alla loro casa o in quella in cui stanno facendo il blitz, Verrai arrestato. Non ti troveranno in casa, però. </value>
   </string>
   <string key="RoleInfoTraitor">
     <value>Sei il doppiogiochista (Traditore) 🖕. Mantieni un profilo basso per per nascondere la tua vera fazione, ma se tutti i tuoi amici poliziotti spariscono, tu finirai sicuramente il lavoro!</value>
@@ -262,7 +263,7 @@
     <value >Il buttafuori ha deciso di fare la guardia davanti casa tua l'altra notte, spaventando i poliziotti che volevano fare un blitz a casa tua.</value>
   </string>
   <string key="HarlotEaten" >
-    <value >Il giornale è appena uscito! Titolo: {0} resta a casa, pieno di armi e soldi contraffatti. {0} era l'intermediario 💋.</value>
+    <value >Il giornale è appena uscito! Titolo: {0} resta a casa, pieno di armi e soldi contraffatti. {0} era l'Intermediario 💋.</value>
   </string>
   <string key="HarlotNotHome" >
     <value >{0} non era a casa!</value>
@@ -398,7 +399,7 @@
     <value>un Testimone di Geova 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>l'agente Riscossore 💂</value>
+    <value>l'Agente Riscossore 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -449,7 +450,7 @@
     <value>era</value>
   </string>
   <string key="GenericDeathNoReveal">
-    <value>Il giornale è appena uscito! Sembra che {0} è stato visto andarsene dalla città l'ultima notte. Ti chiedi cosa possa essere successo.</value>
+    <value>Il giornale è appena uscito! Sembra che {0} sia stato visto andarsene dalla città l'ultima notte. Ti chiedi cosa possa essere successo.</value>
     <value>Il giornale è appena uscito! Sembra che la città sia tappezzata di post in ricerca di {0}, che non è stato visto da ieri notte.</value>
   </string>
   <string key="MasonConverted">
@@ -464,25 +465,25 @@
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
+  <string key="AdminAdded" deprecated="true">
     <value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
   </string>
   <string key="AlreadyInGame">
     <value>Sei gia' in una partita nel gruppo "{0}"</value>
   </string>
-  <string key="MultipleGames">
+  <string key="MultipleGames" deprecated="true">
     <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
   </string>
-  <string key="GroupQueue">
+  <string key="GroupQueue" deprecated="true">
     <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
   </string>
-  <string key="MaintBreak">
+  <string key="MaintBreak" deprecated="true">
     <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... \nControlla @werewolfdev per altre informazioni.</value>
   </string>
-  <string key="MaxGames">
+  <string key="MaxGames" deprecated="true">
     <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
   </string>
-  <string key="SkipQueue">
+  <string key="SkipQueue" deprecated="true">
     <value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
   </string>
   <string key="NoGame">
@@ -492,25 +493,25 @@
   <string key="GroupAdminOnly">
     <value>Solo un admin del gruppo può usare questo comando.</value>
   </string>
-  <string key="ShuttingDown">
+  <string key="ShuttingDown" deprecated="true">
     <value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
   </string>
-  <string key="ShuttingDownUpdate">
+  <string key="ShuttingDownUpdate" deprecated="true">
     <value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento(automatizzato).</value>
   </string>
-  <string key="NullIdAdmin">
+  <string key="NullIdAdmin" deprecated="true">
     <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
   </string>
-  <string key="AlreadyAdmin">
+  <string key="AlreadyAdmin" deprecated="true">
     <value>{0} è gia' un admin!</value>
   </string>
-  <string key="NotAdmin">
+  <string key="NotAdmin" deprecated="true">
     <value>{0} non è un admin.</value>
   </string>
-  <string key="AdminRemoved">
+  <string key="AdminRemoved" deprecated="true">
     <value>{0} rimosso dagli admin.</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <value>Lingua impostata su {0}</value>
   </string>
   <string key="NoSeer">
@@ -521,7 +522,7 @@
   </string>
   <!-- new strings june 10 2016 -->
   <string key="RoleInfoCupid">
-    <value>Sei il parroco (Cupido) 🏹, il testimone di un sacro matrimonio e amore eterno. Dopo il matrimonio, gli amanti non si separeranno, nè nella vergogna nè in prigione.</value>
+    <value>Sei il Parroco (Cupido) 🏹, il testimone di un sacro matrimonio e amore eterno. Dopo il matrimonio, gli amanti non si separeranno, nè nella vergogna nè in prigione.</value>
   </string>
   <string key="RoleInfoDoppelganger">
     <value>Sei il Ladro d'Identità (Sosia) 🎭. Da semplice ladruncolo, ti rendi conto di poter facilmente fregare i tuoi concittadini nel far credere che tu sia chiunque di cui tu abbia la cartà d'identità. Ovviamente, puoi fingerti qualcuno solo quando lui non è presente in città.</value>
@@ -531,9 +532,6 @@
   </string>
   <string key="RoleInfoSerialKiller">
     <value>Sei il Sequestratore Seriale (Serial Killer) 🔪. Rapire persone senza  chiedere riscatti, lo fai ogni notte solo per divertimento. Aggiungi una persona nelle tue prigioni e forse potrai aprire il tuo museo, più tardi!</value>
-  </string>
-  <string key="CupidChosen">
-    <value>Hai sposato {0} nella chiesa della città. Non lo abbandonerai, nè in salute nè in malattia.</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>La città ha deciso di esiliarti! A chi distruggerai la casa, pieno di rabbia?</value>
@@ -561,6 +559,7 @@
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} è andato a casa di {1}, ma non è stato più visto uscire. Sembra come fosse sparito dalla faccia della terra!</value>
+	<value>I testimoni di Geova mandano {0} a casa di {1}! {1} sembrava cordiale finchè costringe {0} a entrare nella cella frigorifera! {0} è sparito...</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>La polizia ha provato a fare un blitz a casa dell'Operaio Edile, ma prima di essere arrestato, riesce a far cadere un agente in una fossa e i suoi compagni lo portano in ospedale. {0} è incapacitato a continuare.</value>
@@ -580,9 +579,6 @@
   <string key="CultConvertHunter">
     <value>I testimoni di Geova mandano {0} a casa di {1}! Sfortunatamente, appena il campanello suona, una trappola risucchia {0}! {0} è sparito...</value>
   </string>
-  <string key="CultConvertSerialKiller">
-    <value>I testimoni di Geova mandano {0} a casa di {1}! {1} sembrava cordiale finchè costringe {0} a entrare nella cella frigorifera! {0} è sparito...</value>
-  </string>
   <string key="GuardKiller">
     <value>Ti metti a fare la guardia davanti alla casa del rapitore, ma dopo un profumo dolce e un colpo in testa, perdi i sensi. Sei stato rapito!</value>
   </string>
@@ -590,7 +586,7 @@
     <value>Porti delle sostanze chimiche a casa di {0}, ma lui ti mette un panno intinto di cloroformio nel naso e perdi i sensi! Ora capisci a che servivano quelle strane sostanze!</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>don't worry about this string for now! - {0}</value>
+    <value>Il giornale è appena uscito! Nella pagina 8:  Sparizione Misteriosa. Sembra che la notte scorsa {0} (noto contrabbandiere di Fairview) abbia fatto affari con la persona sbagliata…</value>
   </string>
   <string key="DGToMason">
     <value>Il ladro d'identità si fa vedere in un incontro con il Padrino! {0} è ora un Caporegime!</value>
@@ -642,6 +638,7 @@
   </string>
   <string key="CupidChosen">
     <value>Hai giurato amore eterno a {0}, nel bene e nel male, nella salute e nella malattia. Lo seguirai dovunque andrà, come una vera coppia dovrebbe fare.</value>
+	<value>Hai sposato {0} nella chiesa della città. Non lo abbandonerai, nè in salute nè in malattia.</value>
   </string>
   <string key="NewWCRoleModel">
     <value>Prendi l'identità di un Idealista 👶. Il tuo genitore è {0}.</value>
@@ -770,13 +767,13 @@
 <string key="SentPrivate">
     <value>Ti ho scritto in privato</value>
   </string>
-  <string key="StartPM">
+  <string key="StartPM" deprecated="true">
     <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
   </string> 
-  <string key="PMTrue">
+  <string key="PMTrue" deprecated="true">
     <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
   </string>
-  <string key="MustReplySmite">
+  <string key="MustReplySmite" deprecated="true">
     <value>Devi rispondere all'utente che vuoi cacciare!</value>
   </string>
   <string key="WhatToDo">
@@ -789,7 +786,7 @@
     <value>Puoi cominciare una partita solo dentro un gruppo!</value>
   </string>
   <string key="PingInfo">
-    <value>Tempo di Risposta: {0}\nPercentuale CPU usata: {1}%\nMessaggi per secondo: {2}</value>
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Che lingua?\nAttuale: {0}</value>
@@ -957,4 +954,264 @@
   <string key="Ping2">
     <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
   </string>
-</strings>
+
+    <!-- Update 4.0-->
+	
+  <string key="RoleInfoMayor">
+	<value>Il Consigliere ti consegna un messaggio di persona stanotte. “Ho un'offerta del Padrino che non dovresti rifiutare: entra nel Circolo come Luogotenente (Sindaco) 🎖”. Se tu dovessi accettare, giura la tua lealtà pubblicamente ed io assicurerò la tua sicurezza e ricchezza personalmente”. Il Consigliere ti dice anche come a gente di Fairview si rimetterà alla tua voce se accetti l'offerta valutando il tuo voto due volte migliore e potente degli altri.</value>
+  </string>
+  <string key="RoleInfoPrince">
+	<value>Sei l'Erede Mafioso (Principe) 👑. Lavorando insieme come coordinatori dei fronti criminali di Fairview, il Padrino ti dà tutto ciò di cui hai bisogno. Il che include una... "generosa donazione" alla Città di Fairview se dovesse accaderti qualcosa pubblicamente. Comunque, a causa degli Agenti Federali che sorvegliano attentamente la città, il Padrino potrà tirare fuori dai guai solo una volta. Non può in nessun caso rischiare che rintraccino il suo conto corrente svizzero, nemmeno per il primogenito della Famiglia.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+	<value>Sei il Professore Distratto (Ragazzo Goffo) 🤕! La Mafia potrà anche avere bisogno delle tue invenzioni sui nuovi modi per uccidere la polizia e a te potranno anche servire i fondi per comprare il plutonio necessario per la tua automobile, ma non potrai fare a meno di dimenticare che il municipio è alla sinistra dell'università. No, non da quella parte, la tua sinistra. L'ALTRA SINISTRA!\nOh be', almeno la tua probabilità di votare giusto è 50-50.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+	<value>Sei l'Informatore (Stregone) 🔮. Usando il tuo malizioso charm, nessuno scampa alla tua eloquenza e talento notturno. Sai tutto quello che ti serve per ricavare informazioni da una donna e tutti qui hanno almeno una parente in città. Questa città è praticamente perfetta per mettere in pratica i tuoi talenti e, allo stesso tempo, ottenere un po' di soldi. Informazioni sul Torturatore (Veggente) 👳 sono ben ripagate e puoi chiedere protazione se trovi un Poliziotto (Lupo). Gli altri non sono degni della tua attenzione.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+	<value>Sei il Delatore (Fabbro) ⚒. Tenendo gli occhi aperti e una rete di scugnizzi ricevi una bella sommetta per avvisare la Famiglia di ogni movimento della Polizia. Hai studiato una chiamata d'emergenza: se dovessi ritenere necessario il tuo utilizzo una notte la Famiglia verrà informata che la Polizia è in movimento e si nasconderà. I Poliziotti non saranno in grado di raggiungere i Mafiosi quella notte. Ma stai attento: le tue abilità dipendono dalla tua rete di scugnizzi che diventeranno il target della Polizia per quella notte.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+	<value>Saluti al Commissario di Polizia (Lupo Alpha) ⚡️ I tuoi ordini sono giusti e corretti. Il Sindaco di Fairview e i rappresentanti dei cittadini ti danno un ordine: Cattaurare questi mafiosi a tutti i costi! Ti è stato data l'autorità per commissionare una squadra d'assalto, e potrai arruolare chiunque al tuo team. Usando le tue abilità di negoziatore c'è il 20% che chi viene perquisito accetti la tua offerta e si unisca al Dipartimento di Polizia.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+	<value>Sei la Recluta 🐶. Ti sei appena diplomato all'accademia, sei audace e temerario, fiero e leale allo stesso tempo, seguirai la pattuglia ad ogni blitz fino alla fine dei tempi. Essendo l'orgoglio della pattuglia, se per caso tu divessi venire esiliato o rapito, la polizia perlustrerà la citta e farà due raid la notte successiva.</value>
+  </string>
+  <string key="PrinceLynched">
+	<value>I voti indicano che {0} deve essere esiliato quando qualcuno interviene. Quest'uomo misterioso si avvicina al Giudice con una curiosa busta gialla, piuttosto spessa. Dopo di che il Giudice annuncia: “A causa di circostanze impreviste, il voto di oggi è annullato. Nessuno verrà esiliato!”
+	“{0} deve essere l'Erede Mafioso 👑! Chi altro potrebbe comprare il Sindaco?" mormora qualcuno dietro di te.</value>
+  </string>
+  <string key="SorcererOther">
+	<value>Cerchi di scoprire chi è {0} ma scopri solo che non è né un Poliziotto né il Torturatore.</value>
+  </string>
+  <string key="MayorReveal">
+	<value>{0} fa un passo avanti portandosi al centro della folla infila una mano nella tasca del suo completo, ne estrae un anello con sigillo da Luogotenente e lo indossa sul mignolo. “Il Luogotentente 🎖!” Da ora in poi il voto di {0} per l'esilio conterà per due.</value>
+  </string>
+  <string key="AskMayor">
+	<value> Clicca “Mostrati” quando vuoi giurare fedeltà al Padrino in quanto suo Luogotenente.</value>
+  </string>
+  <string key="Reveal">
+	<value>Mostrati</value>
+  </string>
+  <string key="SpreadDust">
+	<value>Vuoi prepararti a segnalare l'emergenza per rendere inutili i raid della polizia stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+	<value>“Ricordatevi di coprire tutta la zona ad Est!” si sente dire {0} ad alcuni scugnizzi. Sembra che il Delatore sia al lavoro. La polizia non troverà altro che i ragazzini in giro stanotte.</value>
+	<value>“Ricordatevi di coprire Chinatown!” si sente dire {0} ad alcuni scugnizzi. Sembra che il Delatore sia al lavoro. La polizia non troverà altro che i ragazzini in giro stanotte.</value>
+	<value>“Ricordatevi di coprire il Locale!” si sente dire {0} ad alcuni scugnizzi. Sembra che il Delatore sia al lavoro. La polizia non troverà altro che i ragazzini in giro stanotte.</value>
+	<value>“Ricordatevi di coprire il Distretto!” si sente dire {0} ad alcuni scugnizzi. Sembra che il Delatore sia al lavoro. La polizia non troverà altro che i ragazzini in giro stanotte.</value>
+	  </string>
+  <string key="Mayor">
+	<value>il Luogotenente 🎖</value>
+  </string>
+  <string key="Prince">
+	<value>l'Erede Mafioso 👑</value>
+  </string>
+  <string key="Sorcerer">
+	<value>l'Informatore 🔮</value> 
+  </string>
+  <string key="ClumsyGuy">
+	<value>il Professore Distratto 🤕</value>
+  </string>
+  <string key="Blacksmith">
+	<value>il Delatore ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+	<value>il Commissario di Polizia ⚡️</value>
+  </string>
+  <string key="WolfCub">
+	<value>la Recluta 🐶</value> 
+  </string>
+  <string key="PlayerBittenWolves">
+	<value>Mentre la polizia inizia il raid a casa di {0}, il Commissario {1} richiama la squadra perché gli porto il sospetto. Dopo una lunga conversazione, intimidazioni e coercizioni, {1} dice alla squadra che {0} assisterà la Polizia ad iniziare da domani notte.</value>
+  </string>
+  <string key="PlayerBitten">
+	<value>C'è stata un'incursione a casa tua la scorsa notte ma il Commissario di Polizia in persona è riuscito a convincerti ad unirti alla Polizia come parte del aptteggiamento. Chiedi un giorno di tempo per prepararti e prometti di aiutarli a cominciare da domani notte.</value>
+	</string>
+  <string key="BittenTurned">
+    <value>Hai preparato tutto ed ora sei pronto ad unirti alla Squadra d'Assalto Antimafia della Polizia. Ora sei un Poliziotto.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Be', non si può distinguere il Luogotenente dal soldato, a meno che non decida di insossare quel brillante anello con il simbolo della Famiglia. Solo allora farà da portavoce per il Padrino durante il voto per decidere chi esiliare (significa che il suo voto vale due volte il voto di tutti gli altri).</value>
+  </string>
+  <string key="AboutPrince">
+    <value>In quanto Primogenito della Famiglia, una volta che il popolo decide di esiliarlo la sua copertura verrà svelata e la Mafia farà del suo meglio per cercare di placare loro ed il Padrino. Può rimanere nella City a meno che qualcuno dopo non decida di rapirlo di notte o gli facciano un'incursione a casa.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Ah, l'Informatore è il tipo che cerca sempre un modo per mettere fine alla Famiglia fornendo informazioni sul Torturatore alla Polizia. Comunque i suoi file contengono solo profili della Polizia e dei Torturatori.</value>
+	</string>
+  <string key="AboutClumsy">
+	<value>... Quel Professore Distratto continua a votare il tizio sbagliato. È come se il 50% dei suoi voti non corrispondano a quello che vuole.</value>
+	</string>
+  <string key="AboutBlacksmith">
+	<value>Sei il Delatore, la squadra di notifica. Per una volta durante il giorno puoi organizzare un posto di sorvegliamento in città. Quando la Polizia condurrà un raid quella notte, suonerai l'allame per fermare le incursioni. Dopo di quello sarai solo un umile soldato che si fa gli affari suoi.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+	<value>Saluti al Commissario di Polizia. I tuoi ordini sono giusti e corretti. Il tuo charme convincerà anche il più umile soldato della mavia ad unirsi alle forze della polizia. Finché tu sarai in città ogni volta che fare un incursione da qualcuno hanno il 20% di probabilità di seguirti arruolandosi nella Polizia.</value>
+	</string>
+  <string key="AboutWolfCub">
+	<value>Sei la Recluta 🐶. Ti sei appena diplomato all'accademia, sei audace e temerario, fiero e leale allo stesso tempo, seguirai la pattuglia ad ogni blitz fino alla fine dei tempi. Essendo l'orgoglio della pattuglia, se per caso tu divessi venire esiliato o rapito, la polizia perlustrerà la citta e farà due raid la notte successiva.</value>
+	</string>
+	  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} non è più in Città! Inizia a modificare i tuoi documenti, questo sarà il lavoro della tua vita! Commissario di Polizia! Immagina la paga! I tuo colleghi poliziotti (se ci sono) sono: {1}.</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} non è più in città! Inizi a modificare i tuoi documenti per venire accettato in quanto nuova Recluta della Polizia. I tuoi colleghi poliziotti (se ci sono) sono: {1}</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>La Mafia</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team neutro</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Il Dipartimento di Polizia di Fairview</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Squadra Rapitore</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>La Chiesa di Geova</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Squadra Pazzo Suicida</value>
+  </string>
+  
+  <string key="CultConvertWolf">
+    <value>{0} va a casa di {1} per offrirgli un piano di evasione delle tasse. Ma {1} è un poliziotto e lo arresta.</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>Il giornale è appena uscito! {0} (noto per intrattenere rapporti di affari con {1}) è scomparso insieme a lui! {0} era l'Intermediario 💋.</value>
+  </string>
+  
+  <!--New Death Strings 05 DEC-->
+  
+  <string key="ApprenticeSeerEaten">
+    <value>Il giornale è appena uscito! {0} noto Sadico 🙇 di Fairview è stato arrestato per possesso di video snuff.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Il giornale è appena uscito! A pagina 6:  Sparizione Misteriosa di {0}. Era il Delatore ⚒ Questa è opera del Sequestratore Seriale. </value>
+  </string>
+  <string key="CultistKilled">
+    <value>Il giornale è appena uscito! Nella pagina 10:  Sparizione Misteriosa di {0}. Di lui rimangono solo alcuni numeri della Torre di Guardia. {0} era un Testimone di Geova 👤 Questa è opera del Sequestratore Seriale. </value>
+  </string>
+  <string key="CupidKilled">
+    <value>Il giornale è appena uscito! Nella pagina 2:  Sparizione Misteriosa del Parroco di Fairview. Pare che {0} non tenesse per sè i segreti confidatigli durante confessione e sia stato rapito… è opera del Sequestratore Seriale. </value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Il giornale è appena uscito! Nella pagina 4:  Sparizione Misteriosa di {0}. Un ignoto si è introdotto nella villa e ha rapito il Politico Corrotto 🍻. Questa è opera del Sequestratore Seriale. </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Il giornale è appena uscito! Nella pagina 5:  Sparizione Misteriosa di {0}, noto Buttafuori 👼 di Fairview. Questa è opera del Sequestratore Seriale. </value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Il giornale è appena uscito! Nella pagina 6:  Sparizione Misteriosa di {0}, Paparazzo 🔫 del giornale stesso! Forse il Sequestratore Seriale non ha apprezzato suoi articoli scottanti? </value>
+  </string>
+  <string key="MayorKilled">
+    <value>Il giornale è appena uscito! Nella pagina 5:  Sparizione Misteriosa di {0}, Luogotenente 🎖 della Mafia! Di lui resta solo l'anello donatogli dal Padrino in persona! Questa è opera del Sequestratore Seriale. </value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Il giornale è appena uscito! Nella pagina 3:  Sparizione Misteriosa di {0}. Essere l'Erede Mafioso 👑 non ha offerto alcuna protezione contro il Sequestratore Seriale a questo rampollo della Famiglia.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Il giornale è appena uscito! Nella pagina 7:  Sparizione Misteriosa di {0}, il Torturatore 👳 è stato rapito dal Sequestratore Seriale!!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Il giornale è appena uscito! La polizia ha arrestato {0} ma c'è uno scoop! Sembra che {0} fosse un loro Informatore 🔮 e che l'arresto sia tutta una messa in scena volta ad allontanarlo dalla città dopo che la sua copertura era saltata…</value>
+	<value>Il giornale è appena uscito! Il celebre playboy {0} è stato arrestato per molestie sessuali a minori. Nonostante fosse un loro Informatore 🔮 la polizia ha fatto il suo dovere e lo ha portato al fresco.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Il giornale è appena uscito! La polizia ha trovato {0} a scrivere sul muro della stazione “GIVE PEACE A CHANCE”. Credere nella natura umana non sarà un crimine ma il vandalismo lo è eccome. Cosa direbbe sua madre? Il giovane Idealista 👶 è stato arrestato.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. {0}, il rispettabilissimo Agente Riscossore ha cercato di far pagare le tasse al Rapitore Seriale ed è stato fatto sparire. </value>
+	</string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Il giornale è appena uscito! {0} ha provato a convertire al culto di Geova un poliziotto ed è stato arrestato per aver evaso le tasse!</value>
+	</string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. Il testimone di Geova {0} ha provato a convertire il Sequestratore Seriale questa notte ed è scomparso nel nulla!</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. Il Buttafuori 👼 ha cercato di proteggere il Rapitore Seriale dalla polizia ma il suo prescelto non ha apprezzato la compagnia, {0} è stato sedato e fatto sparire!</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>Il giornale è appena uscito! {0} è stato trovato fuori dalla casa di un poliziotto ed è stato prontamente arrestato!</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Il giornale è appena uscito! {1} è andato a casa di {0} per arrestarlo ma {0} era pronto per l'assalto, l'ha fatto cadere in una trappola ed ora {1} è all'ospedale!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Il giornale è appena uscito! {1} ha fatto un bliz a casa di {0}. Fortunatamente il raid ha colto di sorpresa l'Operaio e non ha potuto fare nulla se non farsi arrestare.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>Il giornale è appena uscito! {1} ha arrestato l'ultimo dei Testimoni di Geova per aver usato il suo culto come scusa per evadere le tasse. {0} è stato imprigionato!</value>
+  </string>
+
+<!-- Extend time -->
+
+-<string key="SecondsAdded">
+<!-- 0 - Seconds added by /extend command -->
+<!-- 1 - Total seconds remaining -->
+<value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per joinare!</value>
+</string>
+-<string key="SecondsRemoved">
+<!-- 0 - Seconds removed by /extend command -->
+<!-- 1 - Total seconds remaining -->
+<value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per joinare.</value>
+</string>
+-<string key="CantExtend">
+<value>Solo gli admin del gruppo possono prolungare il tempo più di una volta!</value>
+</string>
+-<string key="AllowExtendQ">
+<!--{0} = "Allow" / "Disallow" string-->
+<value>Permettere ai giocatori di prolungare il tempo?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+</string>
+-<string key="AllowExtendA">					
+<!--{0} = "Allow" / "Disallow" string-->
+<value>{0} prolungare il tempo ai giocatori</value>
+</string>
+-<string key="MaxExtendQ">
+<value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+</string>
+-<string key="MaxExtendA">
+<value>Tempo limite per /extend impostato a {0} secondi</value>
+</string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era il Politico Corrotto! Siete costretti a saltare il raid da {1} e rientrare alla Centrale per riempire un mucchio di scartoffie.</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+    <string key="JoinByButton">
+    <value>Per favore, non usare comandi per joinare. Usa questo bottone, invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+  
+  </strings>

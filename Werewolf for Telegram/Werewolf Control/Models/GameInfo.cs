@@ -11,22 +11,32 @@ namespace Werewolf_Control.Models
 {
     public class GameInfo
     {
-        public HashSet<int> Users { get; set; } = new HashSet<int>();
+        public HashSet<int> Users { get; set; } = new HashSet<int>();  //update this to users alive
         public long GroupId { get; set; }
+        public Guid Guid { get; set; }
         public string Language { get; set; }
         public string ChatGroup { get; set; }
         public GameState State { get; set; }
-        public HashSet<IPlayer> Players { get; set; } = new HashSet<IPlayer>();
-        public int PlayerCount { get; set; }
         public Guid NodeId { get; set; }
+        public IEnumerable<dynamic> Players { get; set; }
+        public int PlayerCount { get; set; }
+        public GameTime Cycle { get; set; }
+
+        public enum GameTime
+        {
+            Day,
+            Lynch,
+            Night
+        }
 
         public void AddPlayer(Update update)
         {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;
-            var g = n.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
-            g?.Users.Add(update.Message.From.Id);
-            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GroupId = update.Message.Chat.Id });
+            //var g = n.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
+            //g?.
+            Users.Add(update.Message.From.Id);
+            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GroupId = GroupId });
             n.Broadcast(json);
         }
 
@@ -81,6 +91,21 @@ namespace Werewolf_Control.Models
         {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             var json = JsonConvert.SerializeObject(new GameKillInfo() { GroupId = GroupId });
+            n?.Broadcast(json);
+        }
+
+        public void ExtendTime(long id, bool admin, int seconds)
+        {
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            if (n == null) return;
+            var json = JsonConvert.SerializeObject(new ExtendTimeInfo() { GroupId = GroupId , Admin = admin, User = id, Seconds = seconds});
+            n?.Broadcast(json);
+        }
+
+        public void ShowJoinButton()
+        {
+            var json = JsonConvert.SerializeObject(new JoinButtonRequestInfo { GroupId = GroupId });
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             n?.Broadcast(json);
         }
     }

@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -18,6 +19,18 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+#if BETA
+        internal static long[] BetaGroups = new[]
+            {
+                -1001056839438, 
+                -1001062784541, -1001030085238,
+                -1001052793672, -1001066860506, -1001038785894,
+                -1001094614730, -1001066860506,
+                -1001080774621, -1001036952250, -1001082421542, -1001073943101, -1001071193124,
+                -1001094155678, -1001077134233
+            };
+#endif
+
         private static Player GetDBPlayer(int id, WWContext db)
         {
             return db.Players.FirstOrDefault(x => x.TelegramId == id);
@@ -34,17 +47,25 @@ namespace Werewolf_Control
 
             //-1001052326089,
 #if BETA
-            var auth = new[]
+            if (!BetaGroups.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
-                 -1001056839438, -1001090101991, -1001062784541, -1001030085238, -1001052793672, -1001030749788, -1001066860506, -1001038785894, -1001097027780, -171256030, -1001094614730
-            ,-1001059273036, -1001090101991,  -1001066860506, -1001060843091, -1001080774621, -1001036952250, -1001082421542
-            };
-            if (!auth.Contains(update.Message.Chat.Id) && update.Message.From.Id != UpdateHelper.Para)
-            {
-                Bot.Api.LeaveChat(update.Message.Chat.Id);
+                Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
                 return;
             }
 #endif
+    
+
+#if RELEASE2
+
+            //retiring bot 2
+            Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+            Thread.Sleep(1000);
+            Bot.Api.LeaveChat(update.Message.Chat.Id);
+            
+            return;
+
+#endif
+
             Group grp;
             using (var db = new WWContext())
             {
@@ -57,11 +78,25 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+                if (grp.CreatedBy == "BAN")
+                {
+                    Bot.Api.LeaveChatAsync(grp.GroupId);
+                    return;
+                }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
                 else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
-                {
                     grp.GroupLink = null;
+
+                //remove usernames & links from the other groups that have the same username in the db
+                if (grp.UserName != null)
+                {
+                    var sameusername = db.Groups.Where(x => x.UserName == update.Message.Chat.Username && x.GroupId != update.Message.Chat.Id);
+                    foreach (var g in sameusername)
+                    {
+                        g.UserName = null;
+                        g.GroupLink = null;
+                    }
                 }
                 db.SaveChanges();
             }
@@ -79,14 +114,15 @@ namespace Werewolf_Control
                     {
                         //player is already in a game, and alive
                         Send(
-                            GetLocaleString("AlreadyInGame", grp.Language ?? "English",
+                            GetLocaleString("AlreadyInGame", grp?.Language ?? "English",
                                 game.ChatGroup.ToBold()), update.Message.Chat.Id);
                         return;
                     }
                 }
 
                 //player is not in game, they need to join, if they can
-                game?.AddPlayer(update);
+                //game?.AddPlayer(update);
+                game?.ShowJoinButton();
                 if (game == null)
                     Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
                 return;
@@ -96,6 +132,7 @@ namespace Werewolf_Control
             if (node != null)
             {
                 node.StartGame(update, chaos);
+                Program.Analytics.TrackAsync("creategame", new { chaos = chaos, groupid = update.Message.Chat.Id }, update.Message.From.Id.ToString());
                 //notify waiting players
                 using (var db = new WWContext())
                 {
@@ -109,11 +146,11 @@ namespace Werewolf_Control
                     {
                         if (n.UserId != update.Message.From.Id)
                             Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
-                        Thread.Sleep(100);
+                        Thread.Sleep(500);
                     }
 
                     //just to be sure...
-                    db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
+                    //db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
                     db.SaveChanges();
                 }
             }
@@ -124,30 +161,38 @@ namespace Werewolf_Control
             }
         }
 
-        internal static async Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
         {
-            return await Bot.Send(message, id, clearKeyboard, customMenu);
+            return Bot.Send(message, id, clearKeyboard, customMenu);
         }
+
+
 
         private static string GetLocaleString(string key, string language, params object[] args)
         {
-            var files = Directory.GetFiles(Bot.LanguageDirectory);
-            XDocument doc;
-            var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+            try
             {
-                doc = XDocument.Load(file);
+                var files = Directory.GetFiles(Bot.LanguageDirectory);
+                XDocument doc;
+                var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                {
+                    doc = XDocument.Load(file);
+                }
+                var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key) ??
+                    Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var values = strings.Descendants("value");
+                var choice = Bot.R.Next(values.Count());
+                var selected = values.ElementAt(choice);
+                return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
-            if (strings == null)
+            catch
             {
-                //fallback to English
-                
-                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                var values = strings.Descendants("value");
+                var choice = Bot.R.Next(values.Count());
+                var selected = values.ElementAt(choice);
+                return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            var values = strings.Descendants("value");
-            var choice = Bot.R.Next(values.Count());
-            var selected = values.ElementAt(choice);
-            return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 
         internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
@@ -168,13 +213,17 @@ namespace Werewolf_Control
                 AllowCult = true,
                 DisableFlee = false,
                 MaxPlayers = 35,
-                CreatedBy = createdBy
+                CreatedBy = createdBy,
+                AllowExtend = false,
+                MaxExtend = 60,
+                EnableSecretLynch = false,
+                Flags = (long)GroupConfig.Update
             };
         }
 
         internal static void RequestPM(long groupid)
         {
-            var button = new InlineKeyboardButton("Start Me") {Url = "telegram.me/" + Bot.Me.Username};
+            var button = new InlineKeyboardUrlButton("Start Me", "telegram.me/" + Bot.Me.Username);
             Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }
@@ -230,13 +279,13 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
-                var grp = db.Players.FirstOrDefault(x => x.TelegramId == id);
-                if (String.IsNullOrEmpty(grp?.Language) && grp != null)
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (String.IsNullOrEmpty(p?.Language) && p != null)
                 {
-                    grp.Language = "English";
+                    p.Language = "English";
                     db.SaveChanges();
                 }
-                return grp?.Language ?? "English";
+                return p?.Language ?? "English";
             }
         }
 
@@ -279,30 +328,82 @@ namespace Werewolf_Control
 
         public static void KickChatMember(long chatid, int userid)
         {
-            var status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            var status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
 
             if (status == ChatMemberStatus.Administrator) //ignore admins
                 return;
             //kick
-            Bot.Api.KickChatMember(chatid, userid);
+            Bot.Api.KickChatMemberAsync(chatid, userid);
             //get their status
-            status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+            status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
             while (status == ChatMemberStatus.Member) //loop
             {
                 //wait for database to report status is kicked.
-                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+                status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
                 Thread.Sleep(500);
             }
             //status is now kicked (as it should be)
             
             while (status != ChatMemberStatus.Left) //unban until status is left
             {
-                Bot.Api.UnbanChatMember(chatid, userid);
+                Bot.Api.UnbanChatMemberAsync(chatid, userid);
                 Thread.Sleep(500);
-                status = Bot.Api.GetChatMember(chatid, userid).Result.Status;
+                status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
             }
             //yay unbanned
             
+        }
+
+        public static int ComputeLevenshtein(string s, string t)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                if (string.IsNullOrEmpty(t))
+                    return 0;
+                return t.Length;
+            }
+
+            if (string.IsNullOrEmpty(t))
+            {
+                return s.Length;
+            }
+
+            int n = s.Length;
+            int m = t.Length;
+            int[,] d = new int[n + 1, m + 1];
+
+            // initialize the top and right of the table to 0, 1, 2, ...
+            for (int i = 0; i <= n; d[i, 0] = i++) ;
+            for (int j = 1; j <= m; d[0, j] = j++) ;
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= m; j++)
+                {
+                    int cost = (t[j - 1] == s[i - 1]) ? 0 : 1;
+                    int min1 = d[i - 1, j] + 1;
+                    int min2 = d[i, j - 1] + 1;
+                    int min3 = d[i - 1, j - 1] + cost;
+                    d[i, j] = Math.Min(Math.Min(min1, min2), min3);
+                }
+            }
+            return d[n, m];
+        }
+
+        public static Database.Group GetGroup(string str, WWContext db)
+        {
+            //try with id
+            long id = 0;
+            if (long.TryParse(str, out id))
+                return db.Groups.FirstOrDefault(x => x.GroupId == id);
+            //try with username
+            if (str.StartsWith("@"))
+                return db.Groups.FirstOrDefault(x => x.UserName == str.Substring(1));
+            //hope str is a link, and compare the hash part
+            var index = str.LastIndexOf("me/");
+            if (index == -1) return null;
+            var hash = str.Substring(index); //dummy variable becase LINQ to Entity doesn't like it.
+            return db.Groups.FirstOrDefault(x => x.GroupLink.EndsWith(hash));
         }
     }
 }
