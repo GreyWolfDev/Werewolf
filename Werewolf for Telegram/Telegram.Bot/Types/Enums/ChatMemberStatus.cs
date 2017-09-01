@@ -21,5 +21,11 @@ namespace Telegram.Bot.Types.Enums
 
         [EnumMember(Value = "kicked")]
         Kicked,
+
+        /// <summary>
+        /// A <see cref="User"/> who is restricted in the <see cref="Chat"/>
+        /// </summary>
+        [EnumMember(Value = "restricted")]
+        Restricted
     }
 }
