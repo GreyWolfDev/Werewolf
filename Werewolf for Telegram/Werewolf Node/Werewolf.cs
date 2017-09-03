@@ -325,6 +325,8 @@ namespace Werewolf_Node
                         break;
                     }
 
+                    _requestPlayerListUpdate = true;
+
                     if (count != Players.Count) //if a player joined, add time
                     {
                         i = Math.Min(i, Math.Max(120, i - 30));
@@ -676,8 +678,7 @@ namespace Werewolf_Node
                 //{
                 //    Players.Remove(p);
                 //}
-                RequestPlayerListUpdate();
-
+                _playerListChanged = true;
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
 
@@ -728,7 +729,7 @@ namespace Werewolf_Node
                 else if (IsJoining && !IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
-                    RequestPlayerListUpdate();
+                    _playerListChanged = true;
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -1161,28 +1162,10 @@ namespace Werewolf_Node
             if (!String.IsNullOrEmpty(final))
                 Send(final);
         }
-
-        private void RequestPlayerListUpdate()
-        {
-           if (_requestingPlayerListUpdate)
-                return;
-           new Thread(() =>
-           {
-               _requestingPlayerListUpdate = true;
-               IPlayer[] currentplayers;
-               do
-               {
-                   currentplayers = Players.ToArray();
-                   Task.Delay(1000).Wait();
-               } while (currentplayers != Players.ToArray());
-               _requestPlayerListUpdate = true;
-               _requestingPlayerListUpdate = false;
-           }).Start();
-        }
-
+        
         private void SendPlayerList(bool joining = false)
         {
-            if (!_playerListChanged && !joining) return;
+            if (!_playerListChanged) return;
             if (Players == null) return;
             try
             {
@@ -1206,8 +1189,9 @@ namespace Werewolf_Node
                                         current +
                                         ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
-                        _playerListChanged = false;
+                       
                     }
+                    _playerListChanged = false;
                     SendWithQueue(new Message(msg) { PlayerList = true, Joining = joining });
 
                 }).Start();
@@ -4113,7 +4097,6 @@ namespace Werewolf_Node
                 {
                     _playerListChanged = true;
                     Players.Remove(p);
-                    RequestPlayerListUpdate();
                     //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -4436,7 +4419,6 @@ namespace Werewolf_Node
         }
 
         private bool _longHaulReached;
-        private bool _requestingPlayerListUpdate = false;
 
         private void CheckLongHaul()
         {
