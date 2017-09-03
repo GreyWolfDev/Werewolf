@@ -45,6 +45,7 @@ namespace Werewolf_Node
         private Nullable<TimeSpan> _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
+        private List<IPlayer> _joined = new List<IPlayer>(); 
         private int _joinMsgId;
         private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
@@ -312,7 +313,6 @@ namespace Werewolf_Node
                 //start with the joining time
                 var count = Players.Count;
                 int secondsElapsed = 0;
-                var notifiedPlayers = new List<int>();
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -330,10 +330,10 @@ namespace Werewolf_Node
                         count = Players.Count;
                     }
 
-                    if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
+                    if (secondsElapsed++ == 30 && _joined.Any()) //every 30 seconds, say in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")));
-                        notifiedPlayers = Players.Select(x => x.Id).ToList();
+                        SendWithQueue(GetLocaleString("HaveJoined", _joined.Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")));
+                        _joined.Clear();
                         secondsElapsed = 0;
                     }
 
@@ -606,6 +606,7 @@ namespace Werewolf_Node
                 if (IsInitializing || !IsJoining) return;
                 //add player
                 Players.Add(p);
+                _joined.Add(p);
                 var groupname = String.IsNullOrWhiteSpace(DbGroup.GroupLink) ? ChatGroup : $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup.FormatHTML()}</a>";
                 Send(GetLocaleString("YouJoined", groupname), p.Id);
 
@@ -4399,7 +4400,7 @@ namespace Werewolf_Node
 
         private void KillLover(IPlayer victim)
         {
-            var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
+            var p = Players.FirstOrDefault(x => x.Id == victim.LoverId && !x.IsDead);
             if (p != null)
             {
                 SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
