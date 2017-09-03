@@ -2658,11 +2658,12 @@ namespace Werewolf_Node
                                         {
                                             if (voteWolves.Count() > 1)
                                             {
-                                                if (bitten)
-                                                {
-                                                    BitePlayer(target, voteWolves, alpha);
-                                                }
-                                                else
+                                                //commented out: we don't want the hunter to be bitten if he shot.
+                                                //if (bitten)
+                                                //{
+                                                //    BitePlayer(target, voteWolves, alpha);
+                                                //}
+                                                //else
                                                 {
                                                     SendGif(GetLocaleString("WolvesEatYou"),
                                                         GetRandomImage(VillagerDieImages), target.Id);
