@@ -3682,8 +3682,6 @@ namespace Werewolf_Node
                                     
                                     if (sorc != null && tann != null)
                                     {
-                                
-                                        DBKill(sorc, sorc, KillMthd.Suicide);
                                         sorc.IsDead = true;
                                         sorc.TimeDied = DateTime.Now;
                                         
@@ -3699,21 +3697,17 @@ namespace Werewolf_Node
                             
                             case 1: // Tanner or sorcerer
                                 var lastone = alives.FirstOrDefault();
-                                if (lastone.PlayerRole == IRole.Tanner)
+                                if (lastone != null)
                                 {
-                                    DBKill(lastone, lastone, KillMthd.Suicide);
-                                    if (lastone != null)
+                                    if (lastone.PlayerRole == IRole.Tanner)
                                     {
+                                        DBKill(lastone, lastone, KillMthd.Suicide);
                                         lastone.IsDead = true;
                                         lastone.TimeDied = DateTime.Now;
                                         
                                         deathmessage = GetLocaleString("TannerEnd", lastone.GetName());
                                     }
-                                }
-                                else // Sorcerer
-                                {
-                                    DBKill(lastone, lastone, KillMthd.Suicide);
-                                    if (lastone != null)
+                                    else if (lastone.PlayerRole == IRole.Sorcerer)
                                     {
                                         lastone.IsDead = true;
                                         lastone.TimeDied = DateTime.Now;
