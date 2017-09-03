@@ -55,6 +55,7 @@ namespace Werewolf_Node
         public bool RandomMode = false;
         public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW;
         public string ShowRolesEnd;
+        private Task _joiningWatcher;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -173,7 +174,15 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
 
-
+                    _joiningWatcher = new Task(() =>
+                    {
+                        var currentplayers = _joined.ToArray();
+                        do
+                        {
+                            Thread.Sleep(1000);
+                        } while (currentplayers != _joined.ToArray());
+                        _requestPlayerListUpdate = true;
+                    });
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
@@ -676,7 +685,9 @@ namespace Werewolf_Node
                 //{
                 //    Players.Remove(p);
                 //}
-                _requestPlayerListUpdate = true;
+                if (_joiningWatcher.Status != TaskStatus.Running)
+                    _joiningWatcher.Start();
+
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
 
