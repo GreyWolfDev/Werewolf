@@ -56,8 +56,7 @@ namespace Werewolf_Control
                 }
             }
 
-            var did = 0;
-            if (int.TryParse(args[1], out did))
+            if (int.TryParse(args[1], out int did))
                 Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(did);
 
         }
@@ -208,8 +207,7 @@ namespace Werewolf_Control
             List<int> ids = new List<int>();
             foreach (var arg in args.Skip(1).FirstOrDefault()?.Split(' ') ?? new[] { "" })
             {
-                var id = 0;
-                if (int.TryParse(arg, out id))
+                if (int.TryParse(arg, out int id))
                 {
                     ids.Add(id);
                 }
@@ -360,8 +358,7 @@ namespace Werewolf_Control
             if (id != 0)
             {
                 //try to get the achievement
-                Achievements a;
-                if (Enum.TryParse(param[achIndex], out a))
+                if (Enum.TryParse(param[achIndex], out Achievements a))
                 {
                     //get the player from database
                     using (var db = new WWContext())
