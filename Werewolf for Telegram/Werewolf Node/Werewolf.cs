@@ -397,6 +397,7 @@ namespace Werewolf_Node
                 }
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
+                _playerListChanged = true;
 
 #if !BETA
                 if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
