@@ -1164,17 +1164,20 @@ namespace Werewolf_Node
 
         private void RequestPlayerListUpdate()
         {
-            if (_requestingPlayerListUpdate)
+           if (_requestingPlayerListUpdate)
                 return;
-            _requestingPlayerListUpdate = true;
-            IPlayer[] currentplayers;
-            do
-            {
-                currentplayers = Players.ToArray();
-                Task.Delay(1000).Wait();
-            } while (currentplayers != Players.ToArray());
-            _requestPlayerListUpdate = true;
-            _requestingPlayerListUpdate = false;
+           new Thread(() =>
+           {
+               _requestingPlayerListUpdate = true;
+               IPlayer[] currentplayers;
+               do
+               {
+                   currentplayers = Players.ToArray();
+                   Task.Delay(1000).Wait();
+               } while (currentplayers != Players.ToArray());
+               _requestPlayerListUpdate = true;
+               _requestingPlayerListUpdate = false;
+           }).Start();
         }
 
         private void SendPlayerList(bool joining = false)
