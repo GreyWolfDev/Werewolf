@@ -67,6 +67,7 @@ namespace Werewolf_Node
             SerialKillerWins,
             LoversWin;
 
+
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
