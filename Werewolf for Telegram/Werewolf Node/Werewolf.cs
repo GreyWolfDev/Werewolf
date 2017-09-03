@@ -176,11 +176,12 @@ namespace Werewolf_Node
 
                     _joiningWatcher = new Task(() =>
                     {
-                        var currentplayers = _joined.ToArray();
+                        IPlayer[] currentplayers;
                         do
                         {
-                            Thread.Sleep(1000);
-                        } while (currentplayers != _joined.ToArray());
+                            currentplayers = Players.ToArray();
+                            Task.Delay(1000).Wait();
+                        } while (currentplayers != Players.ToArray());
                         _requestPlayerListUpdate = true;
                     });
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username) });
@@ -339,11 +340,10 @@ namespace Werewolf_Node
                         count = Players.Count;
                     }
 
-                    if (secondsElapsed++ == 30 && _joined.Any()) //every 30 seconds, say in group who have joined
+                    if (secondsElapsed++ % 30 == 0 && _joined.Any()) //every 30 seconds, say in group who have joined
                     {
                         SendWithQueue(GetLocaleString("HaveJoined", _joined.Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")));
                         _joined.Clear();
-                        secondsElapsed = 0;
                     }
 
                     try
