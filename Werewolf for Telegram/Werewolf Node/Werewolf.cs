@@ -55,7 +55,6 @@ namespace Werewolf_Node
         public bool RandomMode = false;
         public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW;
         public string ShowRolesEnd;
-        private Task _joiningWatcher;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -173,17 +172,7 @@ namespace Werewolf_Node
 
 
                     LoadLanguage(DbGroup.Language);
-
-                    _joiningWatcher = new Task(() =>
-                    {
-                        IPlayer[] currentplayers;
-                        do
-                        {
-                            currentplayers = Players.ToArray();
-                            Task.Delay(1000).Wait();
-                        } while (currentplayers != Players.ToArray());
-                        _requestPlayerListUpdate = true;
-                    });
+                    
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
@@ -225,9 +214,11 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
 
-#region Language Helpers
+        
+        #endregion
+
+        #region Language Helpers
         /// <summary>
         /// Caches the language file in the instance
         /// </summary>
@@ -685,8 +676,7 @@ namespace Werewolf_Node
                 //{
                 //    Players.Remove(p);
                 //}
-                if (_joiningWatcher.Status != TaskStatus.Running)
-                    _joiningWatcher.Start();
+                RequestPlayerListUpdate();
 
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
@@ -735,10 +725,10 @@ namespace Werewolf_Node
                     DBKill(p, p, KillMthd.Flee);
                     CheckForGameEnd();
                 }
-                else if (IsJoining & !IsInitializing)// really, should never be both joining and initializing but....
+                else if (IsJoining && !IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
-                    _requestPlayerListUpdate = true;
+                    RequestPlayerListUpdate();
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -1172,6 +1162,20 @@ namespace Werewolf_Node
                 Send(final);
         }
 
+        private void RequestPlayerListUpdate()
+        {
+            if (_requestingPlayerListUpdate)
+                return;
+            _requestingPlayerListUpdate = true;
+            IPlayer[] currentplayers;
+            do
+            {
+                currentplayers = Players.ToArray();
+                Task.Delay(1000).Wait();
+            } while (currentplayers != Players.ToArray());
+            _requestPlayerListUpdate = true;
+            _requestingPlayerListUpdate = false;
+        }
 
         private void SendPlayerList(bool joining = false)
         {
@@ -4106,7 +4110,7 @@ namespace Werewolf_Node
                 {
                     _playerListChanged = true;
                     Players.Remove(p);
-                    _requestPlayerListUpdate = true;
+                    RequestPlayerListUpdate();
                     //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -4429,6 +4433,7 @@ namespace Werewolf_Node
         }
 
         private bool _longHaulReached;
+        private bool _requestingPlayerListUpdate = false;
 
         private void CheckLongHaul()
         {
