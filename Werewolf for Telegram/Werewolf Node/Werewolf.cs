@@ -3518,7 +3518,7 @@ namespace Werewolf_Node
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Sorcerer);
                         if (other != null && other.PlayerRole == IRole.Tanner)
                         {
-                            return DoGameEnd(ITeam.Noone);
+                            return DoGameEnd(ITeam.NoOne);
                         }
                     }
                     //check for Hunter + SK / Wolf
