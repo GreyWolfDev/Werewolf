@@ -539,7 +539,7 @@ namespace Werewolf_Control.Handler
                                     }
                                     //user has not reach veteran
                                     Send(
-                                        $"{m.NewChatMember.FirstName} removed, as they have not unlocked veteran ({gamecount} games played, need 500)",
+                                        $"{m.NewChatMember.FirstName} was removed, as they have not unlocked veteran ({gamecount} games played, need 500)",
                                         m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
