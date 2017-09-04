@@ -3677,7 +3677,7 @@ namespace Werewolf_Node
                     case ITeam.NoOne:
                         var alives = Players.Where(x => !x.IsDead);
                         var deathmessage = "";
-                        switch (alives.Count)
+                        switch (alives.Count())
                         {
                             case 2: // Tanner and sorcerer, let first sorcerer, then tanner die.
                                 if (alives.Any(x => x.PlayerRole == IRole.Tanner) && alives.First(x => x.PlayerRole != IRole.Tanner).PlayerRole == IRole.Sorcerer)
