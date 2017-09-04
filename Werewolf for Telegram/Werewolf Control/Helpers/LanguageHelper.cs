@@ -212,8 +212,7 @@ namespace Werewolf_Control.Helpers
 
             //get the errors in it
             GetFileErrors(newFile, newFileErrors, master);
-
-
+            
             //need to get the current file
             var curFile = langs.FirstOrDefault(x => x.Name == newFile.Name);
             var curFileErrors = new List<LanguageError>();
