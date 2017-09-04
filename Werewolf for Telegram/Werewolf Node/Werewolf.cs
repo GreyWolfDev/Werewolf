@@ -3713,10 +3713,7 @@ namespace Werewolf_Node
                                         deathmessage = GetLocaleString("TannerEnd", lastone.GetName());
                                     }
                                     else if (lastone.PlayerRole == IRole.Sorcerer)
-                                    {
-                                        lastone.IsDead = true;
-                                        lastone.TimeDied = DateTime.Now;
-                                        
+                                    {                                       
                                         deathmessage = GetLocaleString("SorcererEnd", lastone.GetName());
                                     }
                                 }
