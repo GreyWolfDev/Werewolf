@@ -3686,10 +3686,7 @@ namespace Werewolf_Node
                                     var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                                     
                                     if (sorc != null && tann != null)
-                                    {
-                                        sorc.IsDead = true;
-                                        sorc.TimeDied = DateTime.Now;
-                                        
+                                    {                                        
                                         DBKill(tann, tann, KillMthd.Suicide);
                                         tann.IsDead = true;
                                         tann.TimeDied = DateTime.Now;
