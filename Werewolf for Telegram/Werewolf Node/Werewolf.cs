@@ -3518,7 +3518,7 @@ namespace Werewolf_Node
                         var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Sorcerer);
                         if (other != null && other.PlayerRole == IRole.Tanner)
                         {
-                            return DoGameEnd(ITeam.Noone);
+                            return DoGameEnd(ITeam.NoOne);
                         }
                     }
                     //check for Hunter + SK / Wolf
@@ -3677,7 +3677,7 @@ namespace Werewolf_Node
                     case ITeam.NoOne:
                         var alives = Players.Where(x => !x.IsDead);
                         var deathmessage = "";
-                        switch (alives.Count)
+                        switch (alives.Count())
                         {
                             case 2: // Tanner and sorcerer, let first sorcerer, then tanner die.
                                 if (alives.Any(x => x.PlayerRole == IRole.Tanner) && alives.First(x => x.PlayerRole != IRole.Tanner).PlayerRole == IRole.Sorcerer)
