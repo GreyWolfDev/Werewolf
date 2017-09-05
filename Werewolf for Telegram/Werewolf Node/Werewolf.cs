@@ -899,7 +899,7 @@ namespace Werewolf_Node
                     player.Choice2 = int.Parse(choice);
                 else
                     player.Choice = int.Parse(choice);
-
+                
                 if (player.PlayerRole == IRole.ClumsyGuy && player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
                     if (Program.R.Next(100) < 50)
@@ -1029,6 +1029,42 @@ namespace Werewolf_Node
                     }
                 }
 
+                if (player.PlayerRole == IRole.Gunner && player.CurrentQuestion.QType == QuestionType.Shoot && player.HasUsedAbility == false)
+                {
+                    //kill them
+                    player.Bullet--;
+                    player.HasUsedAbility = true;
+                    target.IsDead = true;
+                    if (target.PlayerRole == IRole.WolfCub)
+                        WolfCubKilled = true;
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(target.PlayerRole))
+                        player.BulletHitVillager = true;
+                    target.TimeDied = DateTime.Now;
+                    //update database
+                    DBKill(player, target, KillMthd.Shoot);
+                    DBAction(player, target, "Shoot");
+                    switch (target.PlayerRole)
+                    {
+                        case IRole.Harlot:
+                            SendGif(null, GetImageLanguage(ImageKeys.HarlotShot));
+                            SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", player.GetName(), target.GetName()) : GetLocaleString("DefaultShot", player.GetName(), target.GetName(), ""));
+                            break;
+                        case IRole.Hunter:
+                            SendGif(null, GetImageLanguage(ImageKeys.GunnerShotHunter));
+                            SendWithQueue(GetLocaleString("DefaultShot", player.GetName(), target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"));
+                            HunterFinalShot(target, KillMthd.Shoot);
+                            break;
+                        default:
+                            SendGif(null, GetImageLanguage(ImageKeys.DefaultShot));
+                            SendWithQueue(GetLocaleString("DefaultShot", player.GetName(), target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"));
+                            break;
+                    }
+                    //check if dead was in love
+                    if (target.InLove)
+                        KillLover(target);
+                    CheckRoleChanges();
+                    CheckForGameEnd();
+                }
 
                 if (player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
@@ -1082,19 +1118,19 @@ namespace Werewolf_Node
             if (id == 0)
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
-#if (DEBUG)
-            Send(text, id);
-#else
+//#if (DEBUG)
+//            Send(text, id);
+//#else
             if (image != null)
             {
-                Program.Bot.SendDocumentAsync(id, image, text);
+                Program.Bot.SendDocumentAsync(id, new FileToSend(image), text);
             }
             // ReSharper disable once UnusedVariable
             else
             {
                 Send(text, id);
             }
-#endif
+//#endif
         }
 
         private void SendWithQueue(string text, string gif = null, bool requestPM = false)
@@ -1520,9 +1556,9 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                //rolesToAssign[0] = IRole.Tanner;
-                //rolesToAssign[1] = IRole.Gunner;
-                //rolesToAssign[2] = IRole.Wolf;
+                rolesToAssign[0] = IRole.Gunner;
+                rolesToAssign[1] = IRole.Villager;
+                rolesToAssign[2] = IRole.Wolf;
                 //rolesToAssign[3] = IRole.Cupid;
                 //rolesToAssign[3] = IRole.WolfCub;
                 //if (rolesToAssign.Count >= 4)
@@ -2613,45 +2649,45 @@ namespace Werewolf_Node
                 }
             }
 
-            var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
-            if (gunner != null)
-            {
-                var check = Players.FirstOrDefault(x => x.Id == gunner.Choice);
-                if (check != null)
-                {
-                    //kill them
-                    gunner.Bullet--;
-                    gunner.HasUsedAbility = true;
-                    check.IsDead = true;
-                    if (check.PlayerRole == IRole.WolfCub)
-                        WolfCubKilled = true;
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
-                        gunner.BulletHitVillager = true;
-                    check.TimeDied = DateTime.Now;
-                    //update database
-                    DBKill(gunner, check, KillMthd.Shoot);
-                    DBAction(gunner, check, "Shoot");
-                    switch (check.PlayerRole)
-                    {
-                        case IRole.Harlot:
-                            SendGif(null, GetImageLanguage(ImageKeys.HarlotShot));
-                            SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()) : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
-                            break;
-                        case IRole.Hunter:
-                            SendGif(null, GetImageLanguage(ImageKeys.GunnerShotHunter));
-                            SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
-                            HunterFinalShot(check, KillMthd.Shoot);
-                            break;
-                        default:
-                            SendGif(null, GetImageLanguage(ImageKeys.DefaultShot));
-                            SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
-                            break;
-                    }
-                    //check if dead was in love
-                    if (check.InLove)
-                        KillLover(check);
-                }
-            }
+            //var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            //if (gunner != null)
+            //{
+            //    var check = Players.FirstOrDefault(x => x.Id == gunner.Choice);
+            //    if (check != null)
+            //    {
+            //        //kill them
+            //        gunner.Bullet--;
+            //        gunner.HasUsedAbility = true;
+            //        check.IsDead = true;
+            //        if (check.PlayerRole == IRole.WolfCub)
+            //            WolfCubKilled = true;
+            //        if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+            //            gunner.BulletHitVillager = true;
+            //        check.TimeDied = DateTime.Now;
+            //        //update database
+            //        DBKill(gunner, check, KillMthd.Shoot);
+            //        DBAction(gunner, check, "Shoot");
+            //        switch (check.PlayerRole)
+            //        {
+            //            case IRole.Harlot:
+            //                SendGif(null, GetImageLanguage(ImageKeys.HarlotShot));
+            //                SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()) : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
+            //                break;
+            //            case IRole.Hunter:
+            //                SendGif(null, GetImageLanguage(ImageKeys.GunnerShotHunter));
+            //                SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+            //                HunterFinalShot(check, KillMthd.Shoot);
+            //                break;
+            //            default:
+            //                SendGif(null, GetImageLanguage(ImageKeys.DefaultShot));
+            //                SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+            //                break;
+            //        }
+            //        //check if dead was in love
+            //        if (check.InLove)
+            //            KillLover(check);
+            //    }
+            //}
             CheckRoleChanges();
         }
 
