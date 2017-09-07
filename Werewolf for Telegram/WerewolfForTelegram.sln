@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5705B048-D74A-4451-8FB4-4C35B54C0D14}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,6 +13,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WerewolfControl", "Werewolf Control\WerewolfControl.csproj", "{F2D299CD-68DB-4A67-B786-C486A4BCCEFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WerewolfNode", "Werewolf Node\WerewolfNode.csproj", "{07443B36-6D32-4333-A857-C0CF906096FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB} = {DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpFramework", "TcpFramework\TcpFramework.csproj", "{ACB86D9A-837C-4BB6-83FA-99FE4DC7D3E4}"
 EndProject
@@ -135,5 +138,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3CF6D40-4E4B-4614-8B8F-5A644619B806}
 	EndGlobalSection
 EndGlobal

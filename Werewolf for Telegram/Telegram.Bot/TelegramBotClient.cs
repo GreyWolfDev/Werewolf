@@ -21,7 +21,6 @@ using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 
 using File = Telegram.Bot.Types.File;
-using System.Diagnostics;
 
 namespace Telegram.Bot
 {
@@ -32,10 +31,7 @@ namespace Telegram.Bot
     {
         private const string BaseUrl = "https://api.telegram.org/bot";
         private const string BaseFileUrl = "https://api.telegram.org/file/bot";
-        public string LogDirectory;
-        private Status _status = Status.Normal;
-        private string LogPath => Path.Combine(LogDirectory, $"getUpdates {DateTime.Now.ToString("MMM-dd-yyyy")}.log");
-        private string ErrorPath => Path.Combine(LogDirectory, $"apiSendErrors {DateTime.Now.ToString("MMM-dd-yyyy")}.log");
+
         private readonly string _token;
         private bool _invalidToken;
         private readonly HttpClient _httpClient;
@@ -79,14 +75,7 @@ namespace Telegram.Bot
         #endregion Config Properties
 
         #region Events
-        protected virtual void OnUpdatesReceived(UpdatesReceivedEventArgs e)
-        {
-            UpdatesReceived?.Invoke(this, e);
-        }
-        protected virtual void OnStatusChanged(StatusChangeEventArgs e)
-        {
-            StatusChanged?.Invoke(this, e);
-        }
+
         /// <summary>
         /// Raises the <see cref="OnUpdate" />, <see cref="OnMessage"/>, <see cref="OnInlineQuery"/>, <see cref="OnInlineResultChosen"/> and <see cref="OnCallbackQuery"/> events.
         /// </summary>
@@ -123,16 +112,6 @@ namespace Telegram.Bot
         /// Occurs when an <see cref="Update"/> is received.
         /// </summary>
         public event EventHandler<UpdateEventArgs> OnUpdate;
-
-        /// <summary>
-        /// Fired when status has changed
-        /// </summary>
-        public event EventHandler<StatusChangeEventArgs> StatusChanged;
-
-        /// <summary>
-        /// Fired when updates have been received
-        /// </summary>
-        public event EventHandler<UpdatesReceivedEventArgs> UpdatesReceived;
 
         /// <summary>
         /// Occurs when a <see cref="Message"/> is received.
@@ -177,11 +156,11 @@ namespace Telegram.Bot
         /// <param name="token">API token</param>
         /// <param name="httpClient">A custom <see cref="HttpClient"/></param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invalid</exception>
-        public TelegramBotClient(string token, string logDir, HttpClient httpClient = null)
+        public TelegramBotClient(string token, HttpClient httpClient = null)
         {
             if (!Regex.IsMatch(token, @"^\d*:[\w\d-_]{35}$"))
                 throw new ArgumentException("Invalid token format", nameof(token));
-            LogDirectory = logDir;
+
             _token = token;
             _httpClient = httpClient ?? new HttpClient();
         }
@@ -250,99 +229,32 @@ namespace Telegram.Bot
         private async void ReceiveAsync(UpdateType[] allowedUpdates, CancellationToken cancellationToken = default(CancellationToken))
         {
             IsReceiving = true;
-            var sw = new Stopwatch();
+
             while (!cancellationToken.IsCancellationRequested)
             {
                 var timeout = Convert.ToInt32(Timeout.TotalSeconds);
 
                 try
                 {
-                    sw.Reset();
-                    sw.Start();
                     var updates =
                         await
-                        GetUpdatesAsync(MessageOffset, timeout: timeout, allowedUpdates: allowedUpdates, cancellationToken: new CancellationTokenSource(3000).Token)
+                        GetUpdatesAsync(MessageOffset, timeout: timeout, allowedUpdates: allowedUpdates, cancellationToken: cancellationToken)
                             .ConfigureAwait(false);
-                    sw.Stop();
-                    OnUpdatesReceived(new UpdatesReceivedEventArgs(updates.Length));
-                    if (updates.Length == 0)
-                    {
-                        SetStatus(Status.NotReceiving);
-                    }
-                    else if (updates.Length == 100)
-                    {
-                        SetStatus(Status.Recovering);
-                    }
-                    else SetStatus(Status.Normal);
 
-                    try
-                    {
-                        using (var s = new StreamWriter(LogPath, true))
-                        {
-                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                            s.Flush();
-                        }
-                    }
-                    finally
-                    {
-
-                    }
                     foreach (var update in updates)
                     {
                         OnUpdateReceived(new UpdateEventArgs(update));
                         MessageOffset = update.Id + 1;
                     }
                 }
-                catch (OperationCanceledException e)
-                {
-                    sw.Stop();
-                    SetStatus(Status.Error);
-                    try
-                    {
-                        using (var s = new StreamWriter(LogPath, true))
-                        {
-                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                            s.Flush();
-                        }
-                    }
-                    finally
-                    {
-
-                    }
-                }
+                catch (OperationCanceledException) { }
                 catch (ApiRequestException apiException)
                 {
-                    sw.Stop();
-                    SetStatus(Status.Error);
-                    try
-                    {
-                        using (var s = new StreamWriter(LogPath, true))
-                        {
-                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {apiException.Message}");
-                            s.Flush();
-                        }
-                    }
-                    finally
-                    {
-                        OnReceiveError?.Invoke(this, apiException);
-                    }
+                    OnReceiveError?.Invoke(this, apiException);
                 }
                 catch (Exception generalException)
                 {
-                    sw.Stop();
-                    SetStatus(Status.Error);
-                    try
-                    {
-                        using (var s = new StreamWriter(LogPath, true))
-                        {
-                            s.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {sw.Elapsed.ToString("g")} - {generalException.Message}");
-                            s.Flush();
-                        }
-                    }
-                    finally
-                    {
-                        OnReceiveGeneralError?.Invoke(this, generalException);
-                    }
+                    OnReceiveGeneralError?.Invoke(this, generalException);
                 }
             }
 
@@ -356,18 +268,6 @@ namespace Telegram.Bot
         public void StopReceiving()
         {
             _receivingCancellationTokenSource.Cancel();
-        }
-
-        internal void SetStatus(Status status)
-        {
-            if (status == Status.Error)
-                OnUpdatesReceived(new UpdatesReceivedEventArgs(0));
-            if (_status != status)
-            {
-                if (_status == Status.RateLimited && status != Status.Normal) return;
-                _status = status;
-                OnStatusChanged(new StatusChangeEventArgs(status));
-            }
         }
 
         #endregion Helpers
@@ -2069,156 +1969,92 @@ namespace Telegram.Bot
                 throw new ApiRequestException("Invalid token", 401);
 
             var uri = new Uri(BaseUrl + _token + "/" + method);
-            var error = "";
 
-            //using (var client = new HttpClient())
+            ApiResponse<T> responseObject = null;
+            try
             {
-                //client.Timeout = TimeSpan.FromSeconds(3);
-                ApiResponse<T> responseObject = null;
-                try
+                HttpResponseMessage response;
+
+                if (parameters == null || parameters.Count == 0)
                 {
-                    HttpResponseMessage response;
+                    // Request with no parameters
 
-                    if (parameters == null || parameters.Count == 0)
+                    response = await _httpClient.GetAsync(uri, cancellationToken)
+                                            .ConfigureAwait(false);
+                }
+                else if (parameters.Any(p => p.Value is FileToSend && ((FileToSend)p.Value).Type == FileType.Stream))
+                {
+                    // Request including a file
+
+                    using (var form = new MultipartFormDataContent())
                     {
-                        // Request with no parameters
+                        foreach (var parameter in parameters.Where(parameter => parameter.Value != null))
+                        {
+                            var content = ConvertParameterValue(parameter.Value);
 
-                        response = await _httpClient.GetAsync(uri, cancellationToken)
+                            if (parameter.Value is FileToSend)
+                            {
+                                var fts = (FileToSend)parameter.Value;
+                                content.Headers.Add("Content-Type", "application/octet-stream");
+                                string headerValue = $"form-data; name=\"{parameter.Key}\"; filename=\"{fts.Filename}\"";
+                                byte[] bytes = Encoding.UTF8.GetBytes(headerValue);
+                                headerValue = string.Join("", bytes.Select(b => (char)b));
+                                content.Headers.Add("Content-Disposition", headerValue);
+
+                                form.Add(content, parameter.Key, fts.Filename);
+                            }
+                            else
+                            {
+                                form.Add(content, parameter.Key);
+                            }
+                        }
+
+                        response = await _httpClient.PostAsync(uri, form, cancellationToken)
                                                 .ConfigureAwait(false);
                     }
-                    else if (parameters.Any(p => p.Value is FileToSend && ((FileToSend)p.Value).Type == FileType.Stream))
-                    {
-                        // Request including a file
+                }
+                else
+                {
+                    // Request with JSON data
 
-                        using (var form = new MultipartFormDataContent())
-                        {
-                            foreach (var parameter in parameters.Where(parameter => parameter.Value != null))
-                            {
-                                var content = ConvertParameterValue(parameter.Value);
+                    var payload = JsonConvert.SerializeObject(parameters, SerializerSettings);
 
-                                if (parameter.Value is FileToSend)
-                                {
-                                    form.Add(content, parameter.Key, ((FileToSend)parameter.Value).Filename);
-                                }
-                                else
-                                {
-                                    form.Add(content, parameter.Key);
-                                }
-                            }
+                    var httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
 
-                            response = await _httpClient.PostAsync(uri, form, cancellationToken)
+                    response = await _httpClient.PostAsync(uri, httpContent, cancellationToken)
+                                            .ConfigureAwait(false);
+                }
+
+                var responseString = await response.Content.ReadAsStringAsync()
                                                     .ConfigureAwait(false);
-                        }
-                    }
-                    else
-                    {
-                        // Request with JSON data
 
-                        var payload = JsonConvert.SerializeObject(parameters, SerializerSettings);
+                responseObject = JsonConvert.DeserializeObject<ApiResponse<T>>(responseString, SerializerSettings);
 
-                        var httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
-
-                        response = await _httpClient.PostAsync(uri, httpContent, cancellationToken)
-                                                .ConfigureAwait(false);
-                    }
-
-                    var responseString = await response.Content.ReadAsStringAsync()
-                                                        .ConfigureAwait(false);
-
-                    responseObject = JsonConvert.DeserializeObject<ApiResponse<T>>(responseString, SerializerSettings);
-
-                    response.EnsureSuccessStatusCode();
-                }
-                catch (HttpRequestException e) when (e.Message.Contains("401"))
-                {
-                    _invalidToken = true;
-                    throw new ApiRequestException("Invalid token", 401, e);
-                }
-                catch (TaskCanceledException e)
-                {
-                    if (cancellationToken.IsCancellationRequested)
-                        throw;
-
-                    throw new ApiRequestException("Request timed out", 408, e);
-                }
-                catch (HttpRequestException e)
-                    when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
-                {
-                    try
-                    {
-                        if (!(new[] { "answerCallbackQuery", "editMessageText" }.Contains(method)) &! e.Message.Contains("403"))
-                        {
-                            using (var sw = new StreamWriter(ErrorPath, true))
-                            {
-                                sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
-                                if (parameters != null)
-                                    foreach (var o in parameters)
-                                    {
-                                        sw.WriteLine($"{o.Key}: {o.Value}");
-                                    }
-                                sw.Flush();
-                            }
-                        }
-                    }
-                    catch
-                    {
-
-                    }
-                }
-                catch (HttpRequestException e) when (e.Message.Contains("429"))
-                {
-                    //rate limited
-                    SetStatus(Status.RateLimited);
-                    try
-                    {
-                        using (var sw = new StreamWriter(ErrorPath, true))
-                        {
-                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
-                            if (parameters != null)
-                                foreach (var o in parameters)
-                                {
-                                    sw.WriteLine($"{o.Key}: {o.Value}");
-                                }
-                            sw.Flush();
-                        }
-                    }
-                    catch
-                    {
-
-                    }
-
-                }
-
-                catch (Exception e)
-                {
-                    error = e.Message;
-                    try
-                    {
-                        using (var sw = new StreamWriter(ErrorPath, true))
-                        {
-                            sw.WriteLine($"{DateTime.Now.ToString("H:mm:ss")} - {method} - {e.Message}");
-                            if (parameters != null)
-                                foreach (var o in parameters)
-                                {
-                                    sw.WriteLine($"{o.Key}: {o.Value}");
-                                }
-                            sw.Flush();
-                        }
-                    }
-                    catch
-                    {
-
-                    }
-                }
-
-                if (responseObject == null)
-                    responseObject = new ApiResponse<T> { Ok = false, Message = "No response received: " + error };
-
-                if (!responseObject.Ok)
-                    throw ApiRequestException.FromApiResponse(responseObject);
-
-                return responseObject.ResultObject;
+                response.EnsureSuccessStatusCode();
             }
+            catch (HttpRequestException e) when (e.Message.Contains("401"))
+            {
+                _invalidToken = true;
+                throw new ApiRequestException("Invalid token", 401, e);
+            }
+            catch (TaskCanceledException e)
+            {
+                if (cancellationToken.IsCancellationRequested)
+                    throw;
+
+                throw new ApiRequestException("Request timed out", 408, e);
+            }
+            catch (HttpRequestException e)
+                when (e.Message.Contains("400") || e.Message.Contains("403") || e.Message.Contains("409"))
+            { }
+
+            if (responseObject == null)
+                responseObject = new ApiResponse<T> { Ok = false, Message = "No response received" };
+
+            if (!responseObject.Ok)
+                throw ApiRequestException.FromApiResponse(responseObject);
+
+            return responseObject.ResultObject;
         }
 
         private static HttpContent ConvertParameterValue(object value)

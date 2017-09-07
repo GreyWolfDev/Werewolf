@@ -38,10 +38,10 @@ namespace ClearUpdates
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            WWAPI = new TelegramBotClient(TelegramAPIKey, "");
+            WWAPI = new TelegramBotClient(TelegramAPIKey);
             WWAPI.OnUpdate += WWAPI_OnUpdate;
             var apikey = key.GetValue("QueueAPI").ToString();
-            Api = new TelegramBotClient(apikey, "");
+            Api = new TelegramBotClient(apikey);
             Api.OnMessage += Api_OnMessage;
             Api.OnUpdate += ApiOnOnUpdate;
             Api.OnCallbackQuery += Api_OnCallbackQuery;

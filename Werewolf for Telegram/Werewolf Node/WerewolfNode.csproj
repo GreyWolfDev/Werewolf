@@ -163,9 +163,6 @@
     <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
     </Reference>
-    <Reference Include="Telegram.Bot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telegram.Bot.Core.13.2.0\lib\netstandard1.1\Telegram.Bot.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Extensions.cs" />
@@ -204,6 +201,10 @@
     <ProjectReference Include="..\TcpFramework\TcpFramework.csproj">
       <Project>{acb86d9a-837c-4bb6-83fa-99fe4dc7d3e4}</Project>
       <Name>TcpFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Telegram.Bot\Telegram.Bot.csproj">
+      <Project>{DF9D604A-00F8-41D8-BF1E-61DB5ED74CCB}</Project>
+      <Name>Telegram.Bot</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

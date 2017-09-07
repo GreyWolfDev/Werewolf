@@ -73,7 +73,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new TelegramBotClient(TelegramAPIKey, LogDirectory);
+            Api = new TelegramBotClient(TelegramAPIKey);
             Api.Timeout = TimeSpan.FromSeconds(10);
             //#if !BETA
             //#else
@@ -107,7 +107,7 @@ namespace Werewolf_Control.Helpers
             Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
             Api.OnReceiveError += ApiOnReceiveError;
             Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            Api.StatusChanged += ApiOnStatusChanged;
+            //Api.StatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
