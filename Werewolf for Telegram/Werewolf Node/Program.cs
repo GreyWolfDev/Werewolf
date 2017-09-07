@@ -290,8 +290,17 @@ namespace Werewolf_Node
                 {
                     TotalPlayers += werewolf.Players.Count();
                 }
-                if (werewolf != null)
+                if (werewolf != null && werewolf.Players != null)
                 {
+                    if (werewolf.OriginalPinnedMsg != 0)
+                    {
+                        Bot.PinChatMessageAsync(werewolf.ChatId, werewolf.OriginalPinnedMsg, true);
+                    }
+                    if (werewolf.GameStatsMsg != 0)
+                    {
+                        Bot.DeleteMessageAsync(werewolf.ChatId, werewolf.GameStatsMsg);
+                    }
+
                     werewolf.MessageQueueing = false; // shut off the queue to be sure
                     Games.Remove(werewolf);
                     //kill the game completely

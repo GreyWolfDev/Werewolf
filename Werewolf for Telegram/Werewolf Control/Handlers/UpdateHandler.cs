@@ -1938,7 +1938,7 @@ namespace Werewolf_Control.Handler
             }
             catch (Exception e)
             {
-                return "";
+                return key;
             }
 
         }

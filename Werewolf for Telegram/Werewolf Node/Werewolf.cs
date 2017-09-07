@@ -55,6 +55,8 @@ namespace Werewolf_Node
         public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW;
         public string ShowRolesEnd;
         private string _deeplink;
+        public int OriginalPinnedMsg = 0;
+        public int GameStatsMsg = 0;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -196,7 +198,17 @@ namespace Werewolf_Node
                 {
                     _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
                 }
-                Program.Bot.PinChatMessageAsync(chatid, _joinMsgId, true);
+                UpdateGameStatsMsg(Settings.GameJoinTime);
+                if(DbGroup.HasFlag(GroupConfig.AllowPinMsg))
+                {
+                    Chat chat = Program.Bot.GetChatAsync(chatid).Result;
+                    if (chat.PinnedMessage != null)
+                    {
+                        OriginalPinnedMsg = chat.PinnedMessage.MessageId;
+                    }
+                    Program.Bot.PinChatMessageAsync(chatid, GameStatsMsg, true);
+                }
+
 
                 //let's keep this on for a while, then we will delete it
                 //SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
@@ -222,9 +234,42 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
 
-#region Language Helpers
+        private void UpdateGameStatsMsg(int time)
+        {
+            string strTime = TimeSpan.FromSeconds(time).ToString(@"mm\:ss").ToBold();
+            string msg = "";
+            if (IsJoining)
+            {
+                msg = $"⏳ {strTime} • 👤 {Players.Count}/{Settings.MaxPlayers} • 🎲 ";
+                msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
+            }
+            else
+            {
+                string iconTime = "";
+                switch(Time)
+                {
+                    case GameTime.Day: iconTime = "🏞"; break;
+                    case GameTime.Lynch: iconTime = "🌄"; break;
+                    case GameTime.Night: iconTime = "🌌"; break;
+                }
+                msg = $"{iconTime} {GameDay} • 👤  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
+                msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
+            }
+
+
+            if (GameStatsMsg != 0)
+            {
+                Program.Bot.EditMessageTextAsync(ChatId, GameStatsMsg, msg, ParseMode.Html);
+            }
+            else
+            {
+                GameStatsMsg = Program.Bot.SendTextMessageAsync(ChatId, msg, ParseMode.Html).Result.MessageId;
+            }
+        }
+        #endregion
+
+        #region Language Helpers
         /// <summary>
         /// Caches the language file in the instance
         /// </summary>
@@ -332,6 +377,7 @@ namespace Werewolf_Node
                     if (count < Players.Count) //if a player joined, add time
                     {
                         i = Math.Min(i, Math.Max(150, i - 30));
+                        UpdateGameStatsMsg(Settings.GameJoinTime - i + (minutesTolerance * 60));
                     }
                     count = Players.Count;
 
@@ -368,6 +414,7 @@ namespace Werewolf_Node
                                 }
                                 else
                                 {
+                                    minutesTolerance = 0;
                                     CleanupButtons(true);
                                     var str = s == 60 ? GetLocaleString("MinuteLeftToJoin") : GetLocaleString("SecondsLeftToJoin", s.ToString().ToBold());
                                     r = Program.Bot.SendTextMessageAsync(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
@@ -395,6 +442,11 @@ namespace Werewolf_Node
                         if (r != null)
                         {
                             _joinButtons.Add(r.MessageId);
+                        }
+
+                        if(i % 30 == 0)
+                        {
+                            UpdateGameStatsMsg(Settings.GameJoinTime - i + (minutesTolerance * 60));
                         }
                     }
                     catch
@@ -518,6 +570,7 @@ namespace Werewolf_Node
                 while (IsRunning)
                 {
                     GameDay++;
+                    UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
                     if (!IsRunning) break;
                     CheckRoleChanges();
                     CheckLongHaul();
@@ -2311,6 +2364,8 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Lynch;
+            UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
+
             if (Players == null) return;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
@@ -2568,6 +2623,7 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Day;
+            UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
 
             //see who died over night
             if (Players == null) return;
@@ -2696,6 +2752,7 @@ namespace Werewolf_Node
             if (!IsRunning) return;
             //FUN!
             Time = GameTime.Night;
+            UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
             var nightStart = DateTime.Now;
             if (CheckForGameEnd(true)) return;
             foreach (var p in Players)

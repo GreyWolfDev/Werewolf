@@ -32,6 +32,8 @@ namespace Database
         ShowIDs = 256,
         [Editable(true), Question("allownsfw"), DefaultValue(false)]
         AllowNSFW = 512,
+        [Editable(true), Question("allowpinmsg"), DefaultValue(true)]
+        AllowPinMsg = 1024,
 
 
 
