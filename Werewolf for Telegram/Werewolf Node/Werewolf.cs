@@ -2286,7 +2286,7 @@ namespace Werewolf_Node
 
             SendDayActions();
             //incremental sleep time for large players....
-            Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
+            Thread.Sleep(TimeSpan.FromSeconds((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd));
 
             if (!IsRunning) return;
             try
