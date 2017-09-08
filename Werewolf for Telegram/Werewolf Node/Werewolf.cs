@@ -3627,6 +3627,7 @@ namespace Werewolf_Node
                 //Log.WriteLine($"Doing game end.  IsRunning: {IsRunning}");
                 if (!IsRunning) return true;
                 IsRunning = false;
+                CheckLongHaul();
                 var msg = "";
 
                 var game = db.Games.FirstOrDefault(x => x.Id == GameId) ?? new Database.Game();
