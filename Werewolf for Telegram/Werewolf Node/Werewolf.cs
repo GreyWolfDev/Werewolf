@@ -2780,7 +2780,7 @@ namespace Werewolf_Node
                 }
                 if (eatCount == 2)
                 {
-                    var cub = Players.FirstOrDefault(x => x.OriginalRole == IRole.WolfCub & x.IsDead);
+                    var cub = Players.GetPlayersForRoles(new[] { IRole.WolfCub }, false).OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.IsDead);
                     if (cub != null)
                         AddAchievement(cub, Achievements.IHelped);
                 }
