@@ -87,6 +87,7 @@ namespace Werewolf_Node.Models
         public int Id;
 
         public QuestionAsked CurrentQuestion { get; set; }
+        public QuestionAsked ConfuseLynchQuestion { get; set; }
 
 
         #region Achievement Related Stuff

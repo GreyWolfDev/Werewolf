@@ -237,42 +237,49 @@ namespace Werewolf_Node
 
         public void UpdateGameStatsMsg(int time = 0)
         {
-            string strTime = "";
-            if (time > 0)
-                strTime = TimeSpan.FromSeconds(time).ToString(@"mm\:ss");
-            string msg = "";
-            if (IsJoining)
+            try
             {
-                msg = $"👥 {Players.Count}/{Settings.MaxPlayers} • ⏳ {strTime} • 🎲 ";
-                msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
-            }
-            else
-            {
-                strTime = (DateTime.Now - _timeStarted).ToString(@"mm\:ss");
-                string iconTime = "";
-                switch(Time)
+                string strTime = "";
+                if (time > 0)
+                    strTime = TimeSpan.FromSeconds(time).ToString(@"mm\:ss");
+                string msg = "";
+                if (IsJoining)
                 {
-                    case GameTime.Day: iconTime = "🏞"; break;
-                    case GameTime.Lynch: iconTime = "🌄"; break;
-                    case GameTime.Night: iconTime = "🌌"; break;
+                    msg = $"👥 {Players.Count}/{Settings.MaxPlayers} • ⏳ {strTime} • 🎲 ";
+                    msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
                 }
-                msg = $"{iconTime} {GameDay}º • 👥  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
-                msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
+                else
+                {
+                    strTime = (DateTime.Now - _timeStarted).ToString(@"mm\:ss");
+                    string iconTime = "";
+                    switch (Time)
+                    {
+                        case GameTime.Day: iconTime = "🏞"; break;
+                        case GameTime.Lynch: iconTime = "🌄"; break;
+                        case GameTime.Night: iconTime = "🌌"; break;
+                    }
+                    msg = $"{iconTime} {GameDay}º • 👥  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
+                    msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
 
+                }
+
+                if (time < 0) //end game
+                {
+                    msg = "🛑 " + msg.ToItalic();
+                }
+
+                if (GameStatsMsg != 0)
+                {
+                    Program.Bot.EditMessageTextAsync(ChatId, GameStatsMsg, msg, ParseMode.Html);
+                }
+                else
+                {
+                    GameStatsMsg = Program.Bot.SendTextMessageAsync(ChatId, msg, ParseMode.Html).Result.MessageId;
+                }
             }
-
-            if (time < 0) //end game
-             {
-                msg = "🛑 " + msg.ToItalic();
-            }
-
-            if (GameStatsMsg != 0)
+            catch (Exception)
             {
-                Program.Bot.EditMessageTextAsync(ChatId, GameStatsMsg, msg, ParseMode.Html);
-            }
-            else
-            {
-                GameStatsMsg = Program.Bot.SendTextMessageAsync(ChatId, msg, ParseMode.Html).Result.MessageId;
+                //don't do nothing
             }
         }
 
@@ -934,8 +941,7 @@ namespace Werewolf_Node
                     {
                         player.HasUsedAbility = true;
                         _silverSpread = true;
-                        SendWithQueue(null, GetImageLanguage(ImageKeys.BlacksmithSpreadSilver));
-                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()));
+                        SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()), GetImageLanguage(ImageKeys.BlacksmithSpreadSilver));
                     }
 
                     Program.MessagesSent++;
@@ -1120,17 +1126,14 @@ namespace Werewolf_Node
                     switch (target.PlayerRole)
                     {
                         case IRole.Harlot:
-                            SendGif(null, GetImageLanguage(ImageKeys.HarlotShot));
-                            SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", player.GetName(), target.GetName()) : GetLocaleString("DefaultShot", player.GetName(), target.GetName(), ""));
+                            SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", player.GetName(), target.GetName()) : GetLocaleString("DefaultShot", player.GetName(), target.GetName(), ""), GetImageLanguage(ImageKeys.HarlotShot));
                             break;
                         case IRole.Hunter:
-                            SendGif(null, GetImageLanguage(ImageKeys.GunnerShotHunter));
-                            SendWithQueue(GetLocaleString("DefaultShot", player.GetName(), target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"));
+                            SendWithQueue(GetLocaleString("DefaultShot", player.GetName(), target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"), GetImageLanguage(ImageKeys.GunnerShotHunter));
                             HunterFinalShot(target, KillMthd.Shoot);
                             break;
                         default:
-                            SendGif(null, GetImageLanguage(ImageKeys.DefaultShot));
-                            SendWithQueue(GetLocaleString("DefaultShot", player.GetName(), target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"));
+                            SendWithQueue(GetLocaleString("DefaultShot", player.GetName(), target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"), GetImageLanguage(ImageKeys.DefaultShot));
                             break;
                     }
                     //check if dead was in love
@@ -1197,7 +1200,15 @@ namespace Werewolf_Node
 //#else
             if (image != null)
             {
-                Program.Bot.SendDocumentAsync(id, new FileToSend(image), text);
+                if (text.Length > 200)
+                {
+                    Program.Bot.SendDocumentAsync(id, new FileToSend(image));
+                    Send(text, id);
+                }
+                else
+                {
+                    Program.Bot.SendDocumentAsync(id, new FileToSend(image), text ?? "");
+                }
             }
             // ReSharper disable once UnusedVariable
             else
@@ -1209,6 +1220,11 @@ namespace Werewolf_Node
 
         private void SendWithQueue(string text, string gif = null, bool requestPM = false)
         {
+            if (gif != null && text.Length > 200)
+            {
+                _messageQueue.Enqueue(new Message("", gif, requestPM));
+                gif = null;
+            }
             _messageQueue.Enqueue(new Message(text, gif, requestPM));
         }
 
@@ -1630,9 +1646,9 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Gunner;
-                rolesToAssign[1] = IRole.Villager;
-                rolesToAssign[2] = IRole.Wolf;
+                rolesToAssign[0] = IRole.PsychicMage;
+                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[2] = IRole.SerialKiller;
                 //rolesToAssign[3] = IRole.Cupid;
                 //rolesToAssign[3] = IRole.WolfCub;
                 //if (rolesToAssign.Count >= 4)
@@ -2103,8 +2119,7 @@ namespace Werewolf_Node
                         wc.ChangedRolesCount++;
                         wc.HasNightAction = true;
                         wc.HasDayAction = false;
-                        SendGif(null, GetImageLanguage(ImageKeys.WildChildTransform), wc.Id);
-                        Send(GetLocaleString("WildChildTransform", rm.GetName(), teammates), wc.Id);
+                        SendGif(GetLocaleString("WildChildTransform", rm.GetName(), teammates), GetImageLanguage(ImageKeys.WildChildTransform), wc.Id);
                     }
                 }
             }
@@ -2307,6 +2322,7 @@ namespace Werewolf_Node
                             p.Team = ITeam.Neutral;
                             p.HasNightAction = false;
                             p.HasDayAction = true;
+                            p.ConfuseLynchQuestion = null;
                             break;
                         default:
                             throw new ArgumentOutOfRangeException();
@@ -2615,6 +2631,7 @@ namespace Werewolf_Node
                             }
                         }.ToList();
                         SendMenu(confuse, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
+                        psychicMage.ConfuseLynchQuestion = psychicMage.CurrentQuestion;
                     }
                 }
                 else
@@ -2725,46 +2742,6 @@ namespace Werewolf_Node
                     }
                 }
             }
-
-            //var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
-            //if (gunner != null)
-            //{
-            //    var check = Players.FirstOrDefault(x => x.Id == gunner.Choice);
-            //    if (check != null)
-            //    {
-            //        //kill them
-            //        gunner.Bullet--;
-            //        gunner.HasUsedAbility = true;
-            //        check.IsDead = true;
-            //        if (check.PlayerRole == IRole.WolfCub)
-            //            WolfCubKilled = true;
-            //        if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
-            //            gunner.BulletHitVillager = true;
-            //        check.TimeDied = DateTime.Now;
-            //        //update database
-            //        DBKill(gunner, check, KillMthd.Shoot);
-            //        DBAction(gunner, check, "Shoot");
-            //        switch (check.PlayerRole)
-            //        {
-            //            case IRole.Harlot:
-            //                SendGif(null, GetImageLanguage(ImageKeys.HarlotShot));
-            //                SendWithQueue(DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? GetLocaleString("HarlotShot", gunner.GetName(), check.GetName()) : GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), ""));
-            //                break;
-            //            case IRole.Hunter:
-            //                SendGif(null, GetImageLanguage(ImageKeys.GunnerShotHunter));
-            //                SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
-            //                HunterFinalShot(check, KillMthd.Shoot);
-            //                break;
-            //            default:
-            //                SendGif(null, GetImageLanguage(ImageKeys.DefaultShot));
-            //                SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
-            //                break;
-            //        }
-            //        //check if dead was in love
-            //        if (check.InLove)
-            //            KillLover(check);
-            //    }
-            //}
             CheckRoleChanges();
         }
 
@@ -3518,10 +3495,7 @@ namespace Werewolf_Node
                                         harlot.Id);
                                     if (!target.IsDead)
                                     {
-                                        Send(GetLocaleString("HarlotVisitYou"), target.Id);
-                                        var gif = GetImageLanguage(ImageKeys.HarlotVisitYou);
-                                        if (gif != null)
-                                            SendGif(null, gif, target.Id);
+                                        SendGif(GetLocaleString("HarlotVisitYou"), GetImageLanguage(ImageKeys.HarlotVisitYou), target.Id);
                                     }
 
                                 }
@@ -3635,8 +3609,7 @@ namespace Werewolf_Node
                     if (save.WasSavedLastNight)
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
-                        SendGif(null, GetImageLanguage(ImageKeys.GuardSavedYou), save.Id);
-                        Send(GetLocaleString("GuardSavedYou"), save.Id);
+                        SendGif(GetLocaleString("GuardSavedYou"), GetImageLanguage(ImageKeys.GuardSavedYou), save.Id);
                     }
                     else if (save.DiedLastNight)
                     {
@@ -3831,8 +3804,7 @@ namespace Werewolf_Node
                     }
                     if (!String.IsNullOrEmpty(msg))
                     {
-                        if (!String.IsNullOrEmpty(gif)) SendWithQueue(null, gif);
-                        SendWithQueue(msg);
+                        SendWithQueue(msg, gif);
                     }
                     if (p.InLove)
                         KillLover(p);
@@ -4373,7 +4345,7 @@ namespace Werewolf_Node
 
             var psychicMage = Players.FirstOrDefault(x => x.PlayerRole == IRole.PsychicMage & !x.IsDead & !x.HasUsedAbility);
 
-            if (psychicMage != null && GameDay == 1)
+            if (psychicMage != null && psychicMage.ConfuseLynchQuestion==null)
             {
                 var choices = new[]
                 {
@@ -4383,6 +4355,7 @@ namespace Werewolf_Node
                     }
                 }.ToList();
                 SendMenu(choices, psychicMage, GetLocaleString("ConfuseLynching"), QuestionType.ConfuseLynching);
+                psychicMage.ConfuseLynchQuestion = psychicMage.CurrentQuestion;
             }
         }
 
@@ -4681,8 +4654,7 @@ namespace Werewolf_Node
                     var killed = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                     if (killed != null)
                     {
-                        SendWithQueue(null, GetImageLanguage(ImageKeys.HunterKilledFinalShot));
-                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
+                        SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"), GetImageLanguage(ImageKeys.HunterKilledFinalShot));
                         killed.IsDead = true;
                         if (killed.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
