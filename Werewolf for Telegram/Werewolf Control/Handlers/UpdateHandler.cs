@@ -443,7 +443,7 @@ namespace Werewolf_Control.Handler
                                     {
                                         DB.ImageLanguages.Add(image);
                                         DB.SaveChanges();
-                                        var menu = UpdateHandler.GetConfigGifMenu(id);
+                                        var menu = GetConfigGifMenu(id);
                                         Bot.Api.SendTextMessageAsync(id, $"GIF adicionado para '{image.ImageKey.ToString()}' na língua '{image.LanguageVariant}'! Para qual ação gostaria de configurar o GIF agora?", //GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)
                                         replyMarkup: menu);
                                     }
@@ -573,6 +573,11 @@ namespace Werewolf_Control.Handler
                                             result += $"This ban is permanent.\n";
                                         Send(result, m.Chat.Id);
                                     }
+                                }
+                                else if (m.PinnedMessage != null && m.From?.Id != Bot.Me.Id)
+                                {
+                                    var node = GetGroupNodeAndGame(m.PinnedMessage.Chat.Id);
+                                    node?.UpdateOriginalPinnedMsg(m.PinnedMessage.MessageId);
                                 }
                             }
                             break;

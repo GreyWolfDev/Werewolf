@@ -235,17 +235,20 @@ namespace Werewolf_Node
 
         }
 
-        private void UpdateGameStatsMsg(int time)
+        public void UpdateGameStatsMsg(int time = 0)
         {
-            string strTime = TimeSpan.FromSeconds(time).ToString(@"mm\:ss").ToBold();
+            string strTime = "";
+            if (time > 0)
+                strTime = TimeSpan.FromSeconds(time).ToString(@"mm\:ss");
             string msg = "";
             if (IsJoining)
             {
-                msg = $"⏳ {strTime} • 👤 {Players.Count}/{Settings.MaxPlayers} • 🎲 ";
+                msg = $"👥 {Players.Count}/{Settings.MaxPlayers} • ⏳ {strTime} • 🎲 ";
                 msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
             }
             else
             {
+                strTime = (DateTime.Now - _timeStarted).ToString(@"mm\:ss");
                 string iconTime = "";
                 switch(Time)
                 {
@@ -253,10 +256,15 @@ namespace Werewolf_Node
                     case GameTime.Lynch: iconTime = "🌄"; break;
                     case GameTime.Night: iconTime = "🌌"; break;
                 }
-                msg = $"{iconTime} {GameDay} • 👤  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
+                msg = $"{iconTime} {GameDay}º • 👥  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
                 msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
+
             }
 
+            if (time < 0) //end game
+             {
+                msg = "🛑 " + msg.ToItalic();
+            }
 
             if (GameStatsMsg != 0)
             {
@@ -265,6 +273,15 @@ namespace Werewolf_Node
             else
             {
                 GameStatsMsg = Program.Bot.SendTextMessageAsync(ChatId, msg, ParseMode.Html).Result.MessageId;
+            }
+        }
+
+        private void UpdateGameStatsMsgTimer()
+        {
+            while(IsRunning)
+            {
+                UpdateGameStatsMsg();
+                Thread.Sleep(15000);
             }
         }
         #endregion
@@ -377,6 +394,9 @@ namespace Werewolf_Node
                     if (count < Players.Count) //if a player joined, add time
                     {
                         i = Math.Min(i, Math.Max(150, i - 30));
+                    }
+                    if (count != Players.Count) //if a player joined or fled, update game stat msg
+                    {
                         UpdateGameStatsMsg(Settings.GameJoinTime - i + (minutesTolerance * 60));
                     }
                     count = Players.Count;
@@ -565,12 +585,13 @@ namespace Werewolf_Node
                 }
 
                 NotifyRoles();
+                new Thread(UpdateGameStatsMsgTimer).Start();
 
                 Time = GameTime.Night;
                 while (IsRunning)
                 {
                     GameDay++;
-                    UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
+                    UpdateGameStatsMsg();
                     if (!IsRunning) break;
                     CheckRoleChanges();
                     CheckLongHaul();
@@ -2364,7 +2385,7 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Lynch;
-            UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
+            UpdateGameStatsMsg();
 
             if (Players == null) return;
             foreach (var p in Players)
@@ -2623,7 +2644,7 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Day;
-            UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
+            UpdateGameStatsMsg();
 
             //see who died over night
             if (Players == null) return;
@@ -2752,7 +2773,7 @@ namespace Werewolf_Node
             if (!IsRunning) return;
             //FUN!
             Time = GameTime.Night;
-            UpdateGameStatsMsg((DateTime.Now - _timeStarted).Seconds);
+            UpdateGameStatsMsg();
             var nightStart = DateTime.Now;
             if (CheckForGameEnd(true)) return;
             foreach (var p in Players)

@@ -248,12 +248,24 @@ namespace Werewolf_Node
                                 game?.ExtendTime(eti.User, eti.Admin, eti.Seconds);
                                 break;
                             case "JoinButtonRequestInfo":
-                                var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
+                                var jbri = JsonConvert.DeserializeObject<JoinButtonRequestInfo>(msg);
                                 game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
                                 game?.ShowJoinButton();
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine(jbri.GroupId);
                                 Console.ForegroundColor = ConsoleColor.Gray;
+                                break;
+                            case "OriginalPinnedMsgUpdateInfo":
+                                var opmu = JsonConvert.DeserializeObject<OriginalPinnedMsgUpdateInfo>(msg);
+                                game = Games.FirstOrDefault(x => x.ChatId == opmu.GroupId);
+                                if(game?.OriginalPinnedMsg != 0)
+                                {
+                                    game.OriginalPinnedMsg = opmu.MessageId;
+                                    if(game.GameStatsMsg != 0)
+                                    {
+                                        Bot.PinChatMessageAsync(game.ChatId, game.GameStatsMsg, true);
+                                    }
+                                }
                                 break;
                             default:
                                 Console.WriteLine(msg);
@@ -292,13 +304,13 @@ namespace Werewolf_Node
                 }
                 if (werewolf != null && werewolf.Players != null)
                 {
+                    if (werewolf.GameStatsMsg != 0)
+                    {
+                        werewolf.UpdateGameStatsMsg(-1);
+                    }
                     if (werewolf.OriginalPinnedMsg != 0)
                     {
                         Bot.PinChatMessageAsync(werewolf.ChatId, werewolf.OriginalPinnedMsg, true);
-                    }
-                    if (werewolf.GameStatsMsg != 0)
-                    {
-                        Bot.DeleteMessageAsync(werewolf.ChatId, werewolf.GameStatsMsg);
                     }
 
                     werewolf.MessageQueueing = false; // shut off the queue to be sure

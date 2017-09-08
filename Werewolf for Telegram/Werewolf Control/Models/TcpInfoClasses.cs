@@ -132,4 +132,10 @@ namespace Werewolf_Control.Models
         public long GroupId { get; set; }
     }
 
+    public class OriginalPinnedMsgUpdateInfo
+    {
+        public string JType { get; set; } = "OriginalPinnedMsgUpdateInfo";
+        public long GroupId { get; set; }
+        public int MessageId { get; set; }
+    }
 }

@@ -121,4 +121,17 @@ namespace Werewolf_Node.Models
         public bool Admin { get; set; }
         public int Seconds { get; set; }
     }
+
+    public class JoinButtonRequestInfo
+    {
+        public string JType { get; set; } = "JoinButtonRequestInfo";
+        public long GroupId { get; set; }
+    }
+
+    public class OriginalPinnedMsgUpdateInfo
+    {
+        public string JType { get; set; } = "OriginalPinnedMsgUpdateInfo";
+        public long GroupId { get; set; }
+        public int MessageId { get; set; }
+    }
 }

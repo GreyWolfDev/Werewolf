@@ -108,6 +108,13 @@ namespace Werewolf_Control.Models
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             n?.Broadcast(json);
         }
+
+        public void UpdateOriginalPinnedMsg(int messageId)
+        {
+            var json = JsonConvert.SerializeObject(new OriginalPinnedMsgUpdateInfo { GroupId = GroupId, MessageId = messageId });
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            n?.Broadcast(json);
+        }
     }
 
     public enum GameState
