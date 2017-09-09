@@ -1646,8 +1646,8 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.PsychicMage;
-                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[0] = IRole.Gunner;
+                rolesToAssign[1] = IRole.Villager;
                 rolesToAssign[2] = IRole.SerialKiller;
                 //rolesToAssign[3] = IRole.Cupid;
                 //rolesToAssign[3] = IRole.WolfCub;
@@ -4333,6 +4333,7 @@ namespace Werewolf_Node
                 gunner.Choice = 0;
                 if (gunner.Bullet > 0)
                 {
+                    gunner.HasUsedAbility = false;
                     var options = Players.Where(x => !x.IsDead && x.Id != gunner.Id).ToList();
                     if (options.Any())
                     {
