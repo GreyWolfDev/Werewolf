@@ -57,6 +57,8 @@ namespace Werewolf_Node
         private string _deeplink;
         public int OriginalPinnedMsg = 0;
         public int GameStatsMsg = 0;
+        private int _cycleTime = 0;
+        private DateTime _lastEditedGameStatMsg = DateTime.MinValue;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -246,7 +248,7 @@ namespace Werewolf_Node
                 if (IsJoining)
                 {
                     msg = $"👥 {Players.Count}/{Settings.MaxPlayers} • ⏳ {strTime} • 🎲 ";
-                    msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
+                    msg += (Chaos ? "Chaos" : "Normal") + $" • 💬 {Language}";
                 }
                 else
                 {
@@ -258,14 +260,14 @@ namespace Werewolf_Node
                         case GameTime.Lynch: iconTime = "🌄"; break;
                         case GameTime.Night: iconTime = "🌌"; break;
                     }
-                    msg = $"{iconTime} {GameDay}º • 👥  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
-                    msg += (Chaos ? "Chaos" : "Normal") + $" • 🏳 {Language}";
+                    msg = (_cycleTime > 0 ? ("⏳ " + _cycleTime + "s • ") : "") + $"{iconTime} {GameDay}º • 👥  {Players.Count(x => !x.IsDead)}/{Players.Count} • ⏱ {strTime} • 🎲 ";
+                    msg += (Chaos ? "Chaos" : "Normal") + $" • 💬 {Language}";
 
                 }
 
                 if (time < 0) //end game
                 {
-                    msg = "🛑 " + msg.ToItalic();
+                    msg = "🏁 " + msg.ToItalic();
                 }
 
                 if (GameStatsMsg != 0)
@@ -276,6 +278,7 @@ namespace Werewolf_Node
                 {
                     GameStatsMsg = Program.Bot.SendTextMessageAsync(ChatId, msg, ParseMode.Html).Result.MessageId;
                 }
+                _lastEditedGameStatMsg = DateTime.Now;
             }
             catch (Exception)
             {
@@ -287,8 +290,11 @@ namespace Werewolf_Node
         {
             while(IsRunning)
             {
-                UpdateGameStatsMsg();
-                Thread.Sleep(15000);
+                if (DateTime.Now - _lastEditedGameStatMsg >= TimeSpan.FromSeconds(10))
+                {
+                    UpdateGameStatsMsg();
+                }
+                Thread.Sleep(Program.R.Next(10000, 15000));
             }
         }
         #endregion
@@ -2401,23 +2407,31 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Lynch;
-            UpdateGameStatsMsg();
 
             if (Players == null) return;
             foreach (var p in Players)
                 p.CurrentQuestion = null;
 
             if (CheckForGameEnd()) return;
-            SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
+            var lynchTime = DbGroup.LynchTime ?? Settings.TimeLynch;
+            _cycleTime = lynchTime;
+            UpdateGameStatsMsg();
+            SendWithQueue(GetLocaleString("LynchTime", _cycleTime.ToBold()));
             SendPlayerList();
-            if (_lynchConfused && !Players.Where(x => !x.IsDead).Any(x => x.PlayerRole == IRole.PsychicMage)) //remove confusion if PsychicMage died
+            if (_lynchConfused && Players.Where(x => x.PlayerRole == IRole.PsychicMage).All(x => x.IsDead)) //remove confusion if PsychicMage died
                 _lynchConfused = false;
             SendLynchMenu();
 
-            for (var i = 0; i < (DbGroup.LynchTime ?? Settings.TimeLynch); i++)
+            for (var i = 0; i < lynchTime; i++)
             {
                 Thread.Sleep(1000);
-                if (CheckForGameEnd()) return;
+                _cycleTime--;
+                if (Players == null)
+                {
+                    CheckForGameEnd();
+                    return;
+                }
+                //if (CheckForGameEnd()) return;
                 //check if all votes are cast
                 var livePlayers = Players.Where(x => !x.IsDead);
                 if (livePlayers.All(x => x.Choice != 0))
@@ -2661,7 +2675,6 @@ namespace Werewolf_Node
         {
             if (!IsRunning) return;
             Time = GameTime.Day;
-            UpdateGameStatsMsg();
 
             //see who died over night
             if (Players == null) return;
@@ -2672,13 +2685,26 @@ namespace Werewolf_Node
             Settings.TimeDay = 20;
             timeToAdd = 0;
 #endif
-            SendWithQueue(GetLocaleString("DayTime", ((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd).ToBold()));
+            //incremental sleep time for large players....
+            var dayTime = (DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd;
+            _cycleTime = dayTime;
+            UpdateGameStatsMsg();
+            SendWithQueue(GetLocaleString("DayTime", _cycleTime.ToBold()));
             SendWithQueue(GetLocaleString("Day", GameDay.ToBold()));
             SendPlayerList();
 
             SendDayActions();
-            //incremental sleep time for large players....
-            Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
+
+            for (var i = 0; i <= dayTime; i += 10)
+            {
+                Thread.Sleep(10000);
+                _cycleTime -= 10;
+                if (Players == null)
+                {
+                    CheckForGameEnd();
+                    return;
+                }
+            }
 
             if (!IsRunning) return;
             try
@@ -2750,7 +2776,6 @@ namespace Werewolf_Node
             if (!IsRunning) return;
             //FUN!
             Time = GameTime.Night;
-            UpdateGameStatsMsg();
             var nightStart = DateTime.Now;
             if (CheckForGameEnd(true)) return;
             foreach (var p in Players)
@@ -2793,7 +2818,8 @@ namespace Werewolf_Node
             if (GameDay == 1)
                 if (Players.Any(x => new[] { IRole.Cupid, IRole.Doppelgänger, IRole.WildChild }.Contains(x.PlayerRole)))
                     nightTime = Math.Max(nightTime, 120);
-
+            _cycleTime = nightTime;
+            UpdateGameStatsMsg();
             SendWithQueue(GetLocaleString("NightTime", nightTime.ToBold()));
             SendPlayerList();
             SendNightActions();
@@ -2803,6 +2829,7 @@ namespace Werewolf_Node
             for (var i = 0; i < nightTime; i++)
             {
                 Thread.Sleep(1000);
+                _cycleTime--;
                 if (Players == null)
                 {
                     CheckForGameEnd();

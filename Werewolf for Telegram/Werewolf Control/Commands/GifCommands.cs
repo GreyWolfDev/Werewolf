@@ -331,7 +331,7 @@ namespace Werewolf_Control
                 var api = RegHelper.GetRegValue("DebugStripeTestAPI");
 #elif BETA
                 var api = RegHelper.GetRegValue("BetaStripeProdAPI");
-#elif RELEASE
+#elif RELEASE || RELEASE2
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
                 Bot.Api.SendInvoiceAsync(m.From.Id, "Werewolf Donation", "Make a donation to Werewolf to help keep us online", "somepayloadtest", api,
