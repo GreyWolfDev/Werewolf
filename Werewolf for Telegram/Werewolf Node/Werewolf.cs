@@ -45,6 +45,7 @@ namespace Werewolf_Node
         private Nullable<TimeSpan> _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
         public List<long> HaveExtended = new List<long>();
+        private List<IPlayer> _joined = new List<IPlayer>(); 
         private int _joinMsgId;
         private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
@@ -66,7 +67,7 @@ namespace Werewolf_Node
             CultWins,
             SerialKillerWins,
             LoversWin;
-
+        
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -171,8 +172,7 @@ namespace Werewolf_Node
 
 
                     LoadLanguage(DbGroup.Language);
-
-
+                    
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
@@ -214,9 +214,11 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
 
-#region Language Helpers
+        
+        #endregion
+
+        #region Language Helpers
         /// <summary>
         /// Caches the language file in the instance
         /// </summary>
@@ -312,7 +314,6 @@ namespace Werewolf_Node
                 //start with the joining time
                 var count = Players.Count;
                 int secondsElapsed = 0;
-                var notifiedPlayers = new List<int>();
                 for (var i = 0; i < Settings.GameJoinTime; i++)
                 {
                     if (Players == null) //killed extra game
@@ -324,17 +325,18 @@ namespace Werewolf_Node
                         break;
                     }
 
+                    _requestPlayerListUpdate = true;
+
                     if (count != Players.Count) //if a player joined, add time
                     {
                         i = Math.Min(i, Math.Max(120, i - 30));
                         count = Players.Count;
                     }
 
-                    if (secondsElapsed++ == 30 && Players.Any(x => !notifiedPlayers.Contains(x.Id))) //every 30 seconds, tell in group who have joined
+                    if (secondsElapsed++ % 30 == 0 && _joined.Any()) //every 30 seconds, say in group who have joined
                     {
-                        SendWithQueue(GetLocaleString("HaveJoined", Players.Where(x => !notifiedPlayers.Contains(x.Id)).Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")));
-                        notifiedPlayers = Players.Select(x => x.Id).ToList();
-                        secondsElapsed = 0;
+                        SendWithQueue(GetLocaleString("HaveJoined", _joined.Aggregate("", (cur, p) => cur + p.GetName() + (ShowIDs ? $" (ID: <code>{p.TeleUser.Id}</code>)\n" : ", ")).TrimEnd(',', ' ') + (ShowIDs ? "" : " ")));
+                        _joined.Clear();
                     }
 
                     try
@@ -395,6 +397,7 @@ namespace Werewolf_Node
                 }
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
+                _playerListChanged = true;
 
 #if !BETA
                 if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
@@ -606,6 +609,7 @@ namespace Werewolf_Node
                 if (IsInitializing || !IsJoining) return;
                 //add player
                 Players.Add(p);
+                _joined.Add(p);
                 var groupname = String.IsNullOrWhiteSpace(DbGroup.GroupLink) ? ChatGroup : $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup.FormatHTML()}</a>";
                 Send(GetLocaleString("YouJoined", groupname), p.Id);
 
@@ -675,7 +679,7 @@ namespace Werewolf_Node
                 //{
                 //    Players.Remove(p);
                 //}
-                _requestPlayerListUpdate = true;
+                _playerListChanged = true;
                 if (Players.Count == (DbGroup.MaxPlayers ?? Settings.MaxPlayers))
                     KillTimer = true;
 
@@ -723,10 +727,10 @@ namespace Werewolf_Node
                     DBKill(p, p, KillMthd.Flee);
                     CheckForGameEnd();
                 }
-                else if (IsJoining & !IsInitializing)// really, should never be both joining and initializing but....
+                else if (IsJoining && !IsInitializing)// really, should never be both joining and initializing but....
                 {
                     Players.Remove(p);
-                    _requestPlayerListUpdate = true;
+                    _playerListChanged = true;
                     SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -1159,11 +1163,10 @@ namespace Werewolf_Node
             if (!String.IsNullOrEmpty(final))
                 Send(final);
         }
-
-
+        
         private void SendPlayerList(bool joining = false)
         {
-            if (!_playerListChanged && !joining) return;
+            if (!_playerListChanged) return;
             if (Players == null) return;
             try
             {
@@ -1187,8 +1190,9 @@ namespace Werewolf_Node
                                         current +
                                         ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
-                        _playerListChanged = false;
+                       
                     }
+                    _playerListChanged = false;
                     SendWithQueue(new Message(msg) { PlayerList = true, Joining = joining });
 
                 }).Start();
@@ -2282,7 +2286,7 @@ namespace Werewolf_Node
 
             SendDayActions();
             //incremental sleep time for large players....
-            Thread.Sleep(TimeSpan.FromSeconds((DbGroup.LynchTime ?? Settings.TimeLynch) + timeToAdd));
+            Thread.Sleep(TimeSpan.FromSeconds((DbGroup.DayTime ?? Settings.TimeDay) + timeToAdd));
 
             if (!IsRunning) return;
             try
@@ -2658,11 +2662,12 @@ namespace Werewolf_Node
                                         {
                                             if (voteWolves.Count() > 1)
                                             {
-                                                if (bitten)
-                                                {
-                                                    BitePlayer(target, voteWolves, alpha);
-                                                }
-                                                else
+                                                //commented out: we don't want the hunter to be bitten if he shot.
+                                                //if (bitten)
+                                                //{
+                                                //    BitePlayer(target, voteWolves, alpha);
+                                                //}
+                                                //else
                                                 {
                                                     SendGif(GetLocaleString("WolvesEatYou"),
                                                         GetRandomImage(VillagerDieImages), target.Id);
@@ -2775,7 +2780,7 @@ namespace Werewolf_Node
                 }
                 if (eatCount == 2)
                 {
-                    var cub = Players.GetPlayerForRole(IRole.WolfCub, false);
+                    var cub = Players.FirstOrDefault(x => x.OriginalRole == IRole.WolfCub & x.IsDead);
                     if (cub != null)
                         AddAchievement(cub, Achievements.IHelped);
                 }
@@ -3507,6 +3512,15 @@ namespace Werewolf_Node
                     //check for lovers
                     if (alivePlayers.All(x => x.InLove))
                         return DoGameEnd(ITeam.Lovers);
+                    //check for Tanner + Sorcerer
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Sorcerer))
+                    {
+                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Sorcerer);
+                        if (other != null && other.PlayerRole == IRole.Tanner)
+                        {
+                            return DoGameEnd(ITeam.NoOne);
+                        }
+                    }
                     //check for Hunter + SK / Wolf
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
                     {
@@ -3613,6 +3627,7 @@ namespace Werewolf_Node
                 //Log.WriteLine($"Doing game end.  IsRunning: {IsRunning}");
                 if (!IsRunning) return true;
                 IsRunning = false;
+                CheckLongHaul();
                 var msg = "";
 
                 var game = db.Games.FirstOrDefault(x => x.Id == GameId) ?? new Database.Game();
@@ -3661,6 +3676,53 @@ namespace Werewolf_Node
                 switch (team)
                 {
                     case ITeam.NoOne:
+                        var alives = Players.Where(x => !x.IsDead);
+                        var deathmessage = "";
+                        switch (alives.Count())
+                        {
+                            case 2: // Tanner and sorcerer, let first sorcerer, then tanner die.
+                                if (alives.Any(x => x.PlayerRole == IRole.Tanner) && alives.First(x => x.PlayerRole != IRole.Tanner).PlayerRole == IRole.Sorcerer)
+                                {
+                                    var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
+                                    var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
+                                    
+                                    if (sorc != null && tann != null)
+                                    {                                        
+                                        DBKill(tann, tann, KillMthd.Suicide);
+                                        tann.IsDead = true;
+                                        tann.TimeDied = DateTime.Now;
+                                        
+                                        deathmessage = GetLocaleString("SorcererEnd", sorc.GetName()) + Environment.NewLine;
+                                        deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName());
+                                    }
+                                }
+                                break;
+                            
+                            case 1: // Tanner or sorcerer
+                                var lastone = alives.FirstOrDefault();
+                                if (lastone != null)
+                                {
+                                    if (lastone.PlayerRole == IRole.Tanner)
+                                    {
+                                        DBKill(lastone, lastone, KillMthd.Suicide);
+                                        lastone.IsDead = true;
+                                        lastone.TimeDied = DateTime.Now;
+                                        
+                                        deathmessage = GetLocaleString("TannerEnd", lastone.GetName());
+                                    }
+                                    else if (lastone.PlayerRole == IRole.Sorcerer)
+                                    {                                       
+                                        deathmessage = GetLocaleString("SorcererEnd", lastone.GetName());
+                                    }
+                                }
+                                break;
+                                
+                            default:
+                                break;
+                        }
+                        
+                        if (!string.IsNullOrEmpty(deathmessage)) SendWithQueue(deathmessage);
+                        
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
                         SendWithQueue(msg, GetRandomImage(NoWinner));
@@ -4093,7 +4155,6 @@ namespace Werewolf_Node
                 {
                     _playerListChanged = true;
                     Players.Remove(p);
-                    _requestPlayerListUpdate = true;
                     //SendWithQueue(GetLocaleString("CountPlayersRemain", Players.Count.ToBold()));
                 }
             }
@@ -4398,7 +4459,7 @@ namespace Werewolf_Node
 
         private void KillLover(IPlayer victim)
         {
-            var p = Players.FirstOrDefault(x => x.Id == victim.LoverId & !x.IsDead);
+            var p = Players.FirstOrDefault(x => x.Id == victim.LoverId && !x.IsDead);
             if (p != null)
             {
                 SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));

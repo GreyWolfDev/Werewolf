@@ -416,4 +416,5 @@ namespace Werewolf_Control
         public string Path { get; set; }
         public Version Version { get; set; } = Version.Parse("0.0.0.0");
     }
+    
 }
