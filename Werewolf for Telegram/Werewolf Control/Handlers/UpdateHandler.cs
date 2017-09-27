@@ -713,7 +713,7 @@ namespace Werewolf_Control.Handler
             //        badge += " 🥉";
             //    if (p.Founder ?? false)
             //        badge += "💎";
-
+            //
             //    Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", q.From.Id);
             //    //check to see how many people have purchased gif packs
 
