@@ -281,6 +281,7 @@ namespace Werewolf_Control.Handler
                 //                    g.BotInGroup = false;
                 //                    g.UserName = update.Message.Chat.Username;
                 //                    g.Name = update.Message.Chat.Title;
+                //
                 //                }
                 //                db.SaveChanges();
                 //            }
