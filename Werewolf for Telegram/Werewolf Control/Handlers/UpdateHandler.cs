@@ -1242,8 +1242,7 @@ namespace Werewolf_Control.Handler
                         #region Other Commands
                         case "groups":
                             var variant = args[3];
-                            if (query.From.Id == 125311351)
-                                Send($"Arguments: {choice}", 125311351);
+
                             if (variant == "null")
                             {
                                 var variants = PublicGroups.GetVariants(choice);
@@ -1259,6 +1258,8 @@ namespace Werewolf_Control.Handler
                                     var playersGames = DB.Players.FirstOrDefault(x => x.TelegramId == query.Message.From.Id);
                                     var gamecount = playersGames?.GamePlayers.Count ?? 0;
                                     var message = "";
+                                    if (query.From.Id == 125311351)
+                                        Send($"Arguments: {choice} GameCount = {gamecount}", 125311351);
                                     if (gamecount >= 500 && choice.Equals("English"))
                                     {
                                         message = GetLocaleString("WhatVariantVets", language, choice);
