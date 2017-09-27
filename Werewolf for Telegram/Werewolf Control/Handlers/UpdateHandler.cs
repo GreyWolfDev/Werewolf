@@ -1242,6 +1242,8 @@ namespace Werewolf_Control.Handler
                         #region Other Commands
                         case "groups":
                             var variant = args[3];
+                            if (query.From.Id == 125311351)
+                                Send($"Arguments: {choice}", 125311351);
                             if (variant == "null")
                             {
                                 var variants = PublicGroups.GetVariants(choice);
