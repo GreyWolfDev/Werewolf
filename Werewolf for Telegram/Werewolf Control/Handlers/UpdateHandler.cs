@@ -1253,7 +1253,11 @@ namespace Werewolf_Control.Handler
                                     //create a menu out of this
                                     buttons = new List<InlineKeyboardButton>() { new InlineKeyboardCallbackButton(GetLocaleString("All", language), $"groups|{query.From.Id}|{choice}|all") };
                                     buttons.AddRange(variants.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{query.From.Id}|{choice}|{x}")));
-
+                                    var playersGames = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
+                                    var gamecount = playersGames?.GamePlayers.Count ?? 0;
+                                    var message = "";
+                                    if (query.From.Id == 125311351)
+                                        Send($"Arguments: {choice} GameCount = {gamecount}", 125311351);
                                     var variantMenu = new List<InlineKeyboardButton[]>();
                                     for (var i = 0; i < buttons.Count; i++)
                                     {
