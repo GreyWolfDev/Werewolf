@@ -1276,7 +1276,7 @@ namespace Werewolf_Control.Handler
                                         i++;
                                     }
 
-                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()));
+                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode:ParseMode.Html);
                                     break;
                                 }
                             }
