@@ -1256,8 +1256,14 @@ namespace Werewolf_Control.Handler
                                     var playersGames = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
                                     var gamecount = playersGames?.GamePlayers.Count ?? 0;
                                     var message = "";
-                                    if (query.From.Id == 125311351)
-                                        Send($"Arguments: {choice} GameCount = {gamecount}", 125311351);
+                                    if (gamecount >= 500 && choice.Equals("English"))
+                                    {
+                                        message = GetLocaleString("WhatVariantVets", language, choice);
+                                        message =
+                                            $"{message} <a href=\"{Settings.VeteranChatUrl}\">Werewolf Veterans</a>";
+                                    }
+                                    else
+                                        message = GetLocaleString("WhatVariant", language, choice);
                                     var variantMenu = new List<InlineKeyboardButton[]>();
                                     for (var i = 0; i < buttons.Count; i++)
                                     {
@@ -1270,7 +1276,7 @@ namespace Werewolf_Control.Handler
                                         i++;
                                     }
 
-                                    Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice), replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()));
+                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()));
                                     break;
                                 }
                             }
