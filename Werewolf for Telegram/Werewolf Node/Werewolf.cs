@@ -589,7 +589,7 @@ namespace Werewolf_Node
                 //        Send(GetLocaleString("BannedForExploit", p.Name));
                 //    }
                 //}
-                if (p.Name.StartsWith("/") || String.IsNullOrEmpty(p.Name) || p.Name.Trim().ToLower() == "skip")
+                if (p.Name.StartsWith("/") || String.IsNullOrEmpty(p.Name) || p.Name.Trim().ToLower() == "skip" || p.Name.Trim().ToLower() == GetLocaleString("Skip").ToLower())
                 {
                     SendWithQueue(GetLocaleString("ChangeNameToJoin",
                         String.IsNullOrWhiteSpace(u.Username) ? u.FirstName + " " + u.LastName : "@" + u.Username));
