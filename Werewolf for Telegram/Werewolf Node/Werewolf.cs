@@ -15,7 +15,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 
-// ReSharper disable PossibleMultipleEnumeration
+// ReSharper disable PossibleMultipleEnumeration warning
 #pragma warning disable 4014
 
 namespace Werewolf_Node
