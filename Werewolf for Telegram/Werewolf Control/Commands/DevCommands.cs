@@ -610,6 +610,8 @@ namespace Werewolf_Control
                         if (amt < 101)
                         {
                             p.DonationLevel += amt;
+                            if (p.DonationLevel >= 10)
+                                p.GifPurchased = true;
                             db.SaveChanges();
                             Send($"{p.Name} (@{p.UserName}) donation level is now {p.DonationLevel}", u.Message.Chat.Id);
                         }
