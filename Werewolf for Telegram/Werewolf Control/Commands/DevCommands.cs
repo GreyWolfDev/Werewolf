@@ -595,6 +595,9 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "adddonation", GlobalAdminOnly = true)]
         public static void AddDonation(Update u, string[] args)
         {
+#if BETA
+            return;
+#endif
             using (var db = new WWContext())
             {
                 var p = u.GetTarget(db);
