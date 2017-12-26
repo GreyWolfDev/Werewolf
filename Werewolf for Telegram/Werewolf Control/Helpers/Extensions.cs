@@ -136,7 +136,7 @@ namespace Werewolf_Control.Helpers
         public static Player GetTarget(this Update u, WWContext db)
         {
             var message = u.Message;
-            var args = message.GetParameters()[1];
+            var args = message.GetParameters()[1].Split(' ')[0];
 
             var sourceUser = message.GetBasePlayer(db);
             if (message == null) return sourceUser;
