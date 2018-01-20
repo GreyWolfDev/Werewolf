@@ -281,6 +281,7 @@ namespace Werewolf_Control.Handler
                 //                    g.BotInGroup = false;
                 //                    g.UserName = update.Message.Chat.Username;
                 //                    g.Name = update.Message.Chat.Title;
+                //
                 //                }
                 //                db.SaveChanges();
                 //            }
@@ -1241,6 +1242,7 @@ namespace Werewolf_Control.Handler
                         #region Other Commands
                         case "groups":
                             var variant = args[3];
+
                             if (variant == "null")
                             {
                                 var variants = PublicGroups.GetVariants(choice);
@@ -1253,7 +1255,17 @@ namespace Werewolf_Control.Handler
                                     //create a menu out of this
                                     buttons = new List<InlineKeyboardButton>() { new InlineKeyboardCallbackButton(GetLocaleString("All", language), $"groups|{query.From.Id}|{choice}|all") };
                                     buttons.AddRange(variants.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{query.From.Id}|{choice}|{x}")));
-
+                                    var playersGames = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
+                                    var gamecount = playersGames?.GamePlayers.Count ?? 0;
+                                    var message = "";
+                                    if (gamecount >= 500 && choice.Equals("English"))
+                                    {
+                                        message = GetLocaleString("WhatVariantVets", language, choice);
+                                        message =
+                                            $"{message} <a href=\"{Settings.VeteranChatUrl}\">Werewolf Veterans</a>";
+                                    }
+                                    else
+                                        message = GetLocaleString("WhatVariant", language, choice);
                                     var variantMenu = new List<InlineKeyboardButton[]>();
                                     for (var i = 0; i < buttons.Count; i++)
                                     {
@@ -1266,13 +1278,15 @@ namespace Werewolf_Control.Handler
                                         i++;
                                     }
 
-                                    Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, choice), replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()));
+                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode: ParseMode.Html);
                                     break;
                                 }
                             }
+                           
 
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
+                           
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
                             if (groups.Count() > 5)
                             {

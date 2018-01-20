@@ -592,6 +592,61 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
+        [Attributes.Command(Trigger = "adddonation", GlobalAdminOnly = true)]
+        public static void AddDonation(Update u, string[] args)
+        {
+            using (var db = new WWContext())
+            {
+                var p = u.GetTarget(db);
+                if (p != null && p.Id != u.Message.From.Id)
+                {
+                    if (p.DonationLevel == null)
+                        p.DonationLevel = 0;
+                    //get the amount to add
+                    var a = args[1].Split(' ');
+                    var amtStr = a[a.Length - 1];
+                    int amt;
+                    if (int.TryParse(amtStr, out amt))
+                    {
+                        if (amt < 101)
+                        {
+                            bool wasLocked = p.DonationLevel < 10;
+                            p.DonationLevel += amt;
+                            if (p.DonationLevel >= 10)
+                                p.GifPurchased = true;
+                            db.SaveChanges();
+                            Send($"{p.Name} (@{p.UserName}) donation level is now {p.DonationLevel}", u.Message.Chat.Id);
+                            var msg = "";
+                            if (wasLocked)
+                            {
+                                msg = "GIF Pack unlocked.  Your current donation level is " + p.DonationLevel;
+                            }
+                            else
+                            {
+                                msg = "Your donation level has been updated.  New level: " + p.DonationLevel;
+                            }
+                            try
+                            {
+                                var sent = Send(msg, p.TelegramId).Result;
+                                Send($"User was notified!", u.Message.Chat.Id);
+                            }
+                            catch
+                            {
+                                Send("Unable to notify user (this bot not started by the user).  Please reach out to them.", u.Message.Chat.Id);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Send($"Unable to parse donation amount: {amtStr}", u.Message.Chat.Id);
+                    }
+                }
+                else
+                    Send($"Unable to determine user to add donation level to.", u.Message.Chat.Id);
+
+            }
+        }
+
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
         {

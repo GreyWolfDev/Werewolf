@@ -35,14 +35,14 @@ namespace Werewolf_Control
             }
             menu.Buttons.Add(new InlineKeyboardUrlButton("PayPal", "https://PayPal.me/greywolfdevelopment"));
             var markup = menu.CreateMarkupFromMenu();
-            var gif = "Custom gif packs are not available at this time, watch the update channel for more news!  ";
-            using (var db = new WWContext())
-            {
-                var count = db.Players.Count(x => x.GifPurchased == true);
-                if (count < 100)
-                    gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  ";
+            var gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  "; //"Custom gif packs are not available at this time, watch the update channel for more news!  ";
+            //using (var db = new WWContext())
+            //{
+            //    var count = db.Players.Count(x => x.GifPurchased == true);
+            //    if (count < 100)
+            //        gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  ";
 
-            }
+            //}
             Bot.Api.SendTextMessageAsync(u.Message.Chat.Id,
                 "Want to help keep Werewolf online?\n" +
                 "We now offer some rewards for donating!\n" +
