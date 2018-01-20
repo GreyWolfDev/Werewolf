@@ -301,6 +301,7 @@ namespace Werewolf_Control
             Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
 
+#if !BETA
         [Attributes.Command(Trigger = "addach", DevOnly = true)]
         public static void AddAchievement(Update u, string[] args)
         {
@@ -552,7 +553,6 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "reviewgifs", GlobalAdminOnly = true, Blockable = true)]
         public static void ReviewGifs(Update u, string[] args)
         {
-#if !BETA
             using (var db = new WWContext())
             {
                 if (args[1] == null)
@@ -629,8 +629,8 @@ namespace Werewolf_Control
                     Bot.Send(msg, id);
                 }
             }
-#endif
         }
+#endif
 
         [Attributes.Command(Trigger = "fi", GlobalAdminOnly = true)]
         public static void FullInfo(Update u, string[] a)
@@ -646,6 +646,7 @@ namespace Werewolf_Control
             Bot.Api.EditMessageTextAsync(u.Message.Chat.Id, r.MessageId, msg, parseMode: ParseMode.Markdown);
         }
 
+#if !BETA
         [Attributes.Command(Trigger = "approvegifs", GlobalAdminOnly = true, Blockable = true)]
         public static void ApproveGifs(Update u, string[] args)
         {
@@ -747,5 +748,6 @@ namespace Werewolf_Control
             }
 
         }
+#endif
     }
 }
