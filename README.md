@@ -1,8 +1,8 @@
 # Werewolf for Telegram
 
-This is the main repo for Werewolf for Telegram.
+This is the main repository of Werewolf for Telegram.
 
-For language file updates, please submit the xml file on Telegram to the [support chat](http://telegram.me/werewolfsupport) and ask for assistance
+For language file updates, please submit the xml file on Telegram to the [support chat](http://t.me/greywolfsupport) and ask for assistance
 
 ### Visual Studio Team Services Continuous Integration		
 ![build status](https://parabola949.visualstudio.com/_apis/public/build/definitions/c0505bb4-b972-452b-88be-acdc00501797/2/badge)
@@ -16,7 +16,7 @@ For language file updates, please submit the xml file on Telegram to the [suppor
 
 To set up werewolf on a private server, follow these steps:
 
-1. Go to [BotFather](https://telegram.me/BotFather) and create a new bot.  Answer all of the questions it asks, and you will receive an API Token.
+1. Go to [BotFather](https://t.me/BotFather) and create a new bot.  Answer all of the questions it asks, and you will receive an API Token.
    * On your server, open regedit, and go to `HKLM\SOFTWARE\`, create a new Key named `Werewolf` (HKLM - HKEY_LOCAL_MACHINE)
    * In the new key create a new string value named `ProductionAPI`.  
    * Paste your API token here.
