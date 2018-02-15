@@ -497,7 +497,6 @@ namespace Werewolf_Control
             {
                 RequestPM(update.Message.Chat.Id);
             }
-            Send(reply, update.Message.Chat.Id);
         }
     }
 }
