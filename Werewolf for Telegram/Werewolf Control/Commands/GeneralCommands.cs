@@ -473,5 +473,31 @@ namespace Werewolf_Control
                 Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Stats", replyMarkup: menu);
             }
         }
+        
+        [Command(Trigger = "myidles")]
+        public static void MyIdles(Update update, string[] args)
+        {
+            var idles = 0;
+            
+            using (var db = new WWContext())
+            {
+                idles = db.GetIdleKills24Hours(update.Message.From.Id).FirstOrDefault() ?? 0;
+            }
+            
+            var str = $"{update.Message.From.Id} ({update.Message.From.FirstName})";
+            var reply = GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id), str, idles);
+            
+            try
+            {
+                var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id, reply).Result;
+                if (update.Message.Chat.Type != ChatType.Private)
+                    Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+            }
+            catch
+            {
+                RequestPM(update.Message.Chat.Id);
+            }
+            Send(reply, update.Message.Chat.Id);
+        }
     }
 }
