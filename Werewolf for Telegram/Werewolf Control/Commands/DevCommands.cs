@@ -592,10 +592,10 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
-#if !BETA
         [Attributes.Command(Trigger = "adddonation", GlobalAdminOnly = true)]
         public static void AddDonation(Update u, string[] args)
         {
+#if !BETA
             using (var db = new WWContext())
             {
                 var p = u.GetTarget(db);
@@ -646,8 +646,8 @@ namespace Werewolf_Control
                     Send($"Unable to determine user to add donation level to.", u.Message.Chat.Id);
 
             }
-        }
 #endif
+        }
 
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
@@ -691,10 +691,10 @@ namespace Werewolf_Control
             }
         }
 
-#if !BETA
         [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
+#if !BETA
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
@@ -800,12 +800,13 @@ namespace Werewolf_Control
                     }
                 }
             }
-
+#endif
         }
 
         [Attributes.Command(Trigger = "remban", GlobalAdminOnly = true)]
         public static void RemoveBan(Update u, string[] args)
         {
+#if !BETA
             var tosmite = new List<int>();
 
             foreach (var e in u.Message.Entities)
@@ -875,8 +876,8 @@ namespace Werewolf_Control
                     }
                 }
             }
-        }
 #endif
+        }
 
         [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
         public static void CleanMain(Update u, string[] args)
@@ -1110,10 +1111,10 @@ namespace Werewolf_Control
             return;
         }
 
-#if !BETA
         [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
         public static void Preferred(Update update, string[] args)
         {
+#if !BETA
             var group = args[1];
             if (String.IsNullOrEmpty(args[1]))
             {
@@ -1148,8 +1149,8 @@ namespace Werewolf_Control
                 );
                 return;
             }
-        }
 #endif
+        }
 
         [Attributes.Command(Trigger = "ohaider", DevOnly = true)]
         public static void OHaiDer(Update u, string[] args)
