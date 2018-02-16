@@ -446,7 +446,7 @@ namespace Werewolf_Control.Handler
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
-                                          "Ok, send me the GIF you want to use for this situation, as a reply") ??
+                                          "send me the GIF you want to use for this situation, as a reply") ??
                                       false))
                             {
                                 Commands.AddGif(update.Message);
