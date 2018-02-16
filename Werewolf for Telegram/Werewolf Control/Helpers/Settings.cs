@@ -35,6 +35,7 @@ namespace Werewolf_Control.Helpers
         public static readonly string DevChannelId = "@werewolfdev"; //@werewolfdev
         public static readonly long VeteranChatId = -1001094614730;
         public static readonly string VeteranChatLink = "werewolfvets";
+        public static readonly string VeteranChatUrl = $"https://t.me/{VeteranChatLink}";
         public static readonly long TranslationChatId = -1001074012132;
         public static readonly long AdminChatId = -1001094155678;
         public static readonly long ErrorGroup = -1001098399855;

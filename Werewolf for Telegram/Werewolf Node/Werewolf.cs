@@ -15,7 +15,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 
-// ReSharper disable PossibleMultipleEnumeration
+// ReSharper disable PossibleMultipleEnumeration warning
 #pragma warning disable 4014
 
 namespace Werewolf_Node
@@ -589,7 +589,7 @@ namespace Werewolf_Node
                 //        Send(GetLocaleString("BannedForExploit", p.Name));
                 //    }
                 //}
-                if (p.Name.StartsWith("/") || String.IsNullOrEmpty(p.Name) || p.Name.Trim().ToLower() == "skip")
+                if (p.Name.StartsWith("/") || String.IsNullOrEmpty(p.Name) || p.Name.Trim().ToLower() == "skip" || p.Name.Trim().ToLower() == GetLocaleString("Skip").ToLower())
                 {
                     SendWithQueue(GetLocaleString("ChangeNameToJoin",
                         String.IsNullOrWhiteSpace(u.Username) ? u.FirstName + " " + u.LastName : "@" + u.Username));
@@ -797,12 +797,14 @@ namespace Werewolf_Node
                 if (args[2] == "-1")
                 {
                     if (player.CurrentQuestion.QType == QuestionType.Kill2)
-                        player.Choice2 = -1;
+                        player.Choice2 = -1;           
                     else
                         player.Choice = -1;
+                    if (player.CurrentQuestion.QType == QuestionType.Lynch)
+                        player.Choice = -2;
                     Program.MessagesSent++;
                     ReplyToCallback(query,
-                        GetLocaleString("ChoiceAccepted") + " - Skip");
+                        GetLocaleString("ChoiceAccepted") + $" - {GetLocaleString("Skip")}");
                     player.CurrentQuestion = null;
                     return;
                 }
@@ -2140,7 +2142,7 @@ namespace Werewolf_Node
                     }
                     p.NonVote = 0;
                 }
-                else if (!p.IsDead)
+                else if (!p.IsDead && p.Choice != -2)
                 {
                     p.NonVote++;
                     if (p.NonVote < 2) continue;
@@ -3857,6 +3859,7 @@ namespace Werewolf_Node
                 player.CurrentQuestion = null;
                 player.Choice = 0;
                 var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId.ToString()}|{x.Id}") }).ToList();
+                choices.Add(new [] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId.ToString()}|skip") });
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
                 Thread.Sleep(100);
             }
