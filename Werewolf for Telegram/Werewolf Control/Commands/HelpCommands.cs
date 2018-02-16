@@ -22,6 +22,11 @@ namespace Werewolf_Control
         [Command(Trigger = "grouplist")]
         public static void GroupList(Update update, string[] args)
         {
+            // Disable the grouplist for now because it's not working
+            Send("The grouplist is not working and has been disabled for now, sorry!", update.Message.Chat.Id);
+            return;
+            
+            
             //var reply = "";
             //using (var db = new WWContext())
             //{

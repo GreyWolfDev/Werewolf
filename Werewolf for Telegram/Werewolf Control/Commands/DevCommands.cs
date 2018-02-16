@@ -592,6 +592,7 @@ namespace Werewolf_Control
             Send(reply, u.Message.Chat.Id);
         }
 
+#if !BETA
         [Attributes.Command(Trigger = "adddonation", GlobalAdminOnly = true)]
         public static void AddDonation(Update u, string[] args)
         {
@@ -646,6 +647,7 @@ namespace Werewolf_Control
 
             }
         }
+#endif
 
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
@@ -689,12 +691,10 @@ namespace Werewolf_Control
             }
         }
 
+#if !BETA
         [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-#if BETA
-            return;
-#endif
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
@@ -876,6 +876,7 @@ namespace Werewolf_Control
                 }
             }
         }
+#endif
 
         [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
         public static void CleanMain(Update u, string[] args)
@@ -1109,6 +1110,7 @@ namespace Werewolf_Control
             return;
         }
 
+#if !BETA
         [Attributes.Command(Trigger = "preferred", GlobalAdminOnly = true)]
         public static void Preferred(Update update, string[] args)
         {
@@ -1147,6 +1149,7 @@ namespace Werewolf_Control
                 return;
             }
         }
+#endif
 
         [Attributes.Command(Trigger = "ohaider", DevOnly = true)]
         public static void OHaiDer(Update u, string[] args)
