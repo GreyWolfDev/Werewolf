@@ -306,11 +306,7 @@ namespace Werewolf_Control
 
             Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
-<<<<<<< HEAD
 
-=======
-                                             
->>>>>>> 68aafc6... Fix beta disabled commands (1)
         [Attributes.Command(Trigger = "addach", DevOnly = true)]
         public static void AddAchievement(Update u, string[] args)
         {
@@ -762,11 +758,7 @@ namespace Werewolf_Control
                     Bot.Send(msg, u.Message.Chat.Id);
                 }
             }
-<<<<<<< HEAD
-
-=======
 #endif
->>>>>>> 68aafc6... Fix beta disabled commands (1)
         }
     }
 }

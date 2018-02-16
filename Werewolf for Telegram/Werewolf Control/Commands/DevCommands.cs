@@ -595,13 +595,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "adddonation", GlobalAdminOnly = true)]
         public static void AddDonation(Update u, string[] args)
         {
-<<<<<<< HEAD
-#if BETA
-            return;
-#endif
-=======
 #if !BETA
->>>>>>> dd5e2fd... Fix beta disabled commands (2)
             using (var db = new WWContext())
             {
                 var p = u.GetTarget(db);
@@ -652,10 +646,7 @@ namespace Werewolf_Control
                     Send($"Unable to determine user to add donation level to.", u.Message.Chat.Id);
 
             }
-<<<<<<< HEAD
-=======
 #endif
->>>>>>> dd5e2fd... Fix beta disabled commands (2)
         }
 
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
@@ -703,13 +694,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-<<<<<<< HEAD
-#if BETA
-            return;
-#endif
-=======
 #if !BETA
->>>>>>> dd5e2fd... Fix beta disabled commands (2)
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
@@ -891,10 +876,7 @@ namespace Werewolf_Control
                     }
                 }
             }
-<<<<<<< HEAD
-=======
 #endif
->>>>>>> dd5e2fd... Fix beta disabled commands (2)
         }
 
         [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
@@ -1167,10 +1149,7 @@ namespace Werewolf_Control
                 );
                 return;
             }
-<<<<<<< HEAD
-=======
 #endif
->>>>>>> dd5e2fd... Fix beta disabled commands (2)
         }
 
         [Attributes.Command(Trigger = "ohaider", DevOnly = true)]

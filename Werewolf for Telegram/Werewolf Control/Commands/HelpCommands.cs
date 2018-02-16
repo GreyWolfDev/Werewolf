@@ -22,10 +22,6 @@ namespace Werewolf_Control
         [Command(Trigger = "grouplist")]
         public static void GroupList(Update update, string[] args)
         {
-<<<<<<< HEAD
-=======
-            
->>>>>>> eeba671... Re-enable grouplist, disable persian grouplist
             //var reply = "";
             //using (var db = new WWContext())
             //{
