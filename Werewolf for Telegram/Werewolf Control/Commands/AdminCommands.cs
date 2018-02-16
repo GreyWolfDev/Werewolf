@@ -306,10 +306,15 @@ namespace Werewolf_Control
 
             Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
+<<<<<<< HEAD
 
+=======
+                                             
+>>>>>>> 68aafc6... Fix beta disabled commands (1)
         [Attributes.Command(Trigger = "addach", DevOnly = true)]
         public static void AddAchievement(Update u, string[] args)
         {
+#if !BETA
             //get the user to add the achievement to
             //first, try by reply
             var id = 0;
@@ -385,12 +390,13 @@ namespace Werewolf_Control
                     }
                 }
             }
-
+#endif
         }
 
         [Attributes.Command(Trigger = "remach", DevOnly = true)]
         public static void RemAchievement(Update u, string[] args)
         {
+#if !BETA
             //get the user to add the achievement to
             //first, try by reply
             var id = 0;
@@ -467,12 +473,13 @@ namespace Werewolf_Control
                     }
                 }
             }
-
+#endif
         }
 
         [Attributes.Command(Trigger = "restore", GlobalAdminOnly = true)]
         public static void RestoreAccount(Update u, string[] args)
         {
+#if !BETA
             var score = 100;
             var result = "";
             int oldid, newid;
@@ -553,6 +560,7 @@ namespace Werewolf_Control
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
                 Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardCallbackButton("No", "restore|no") }));
             }
+#endif
         }
 
         [Attributes.Command(Trigger = "reviewgifs", GlobalAdminOnly = true, Blockable = true)]
@@ -655,6 +663,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "approvegifs", GlobalAdminOnly = true, Blockable = true)]
         public static void ApproveGifs(Update u, string[] args)
         {
+#if !BETA
             using (var db = new WWContext())
             {
                 if (args[1] == null)
@@ -700,11 +709,13 @@ namespace Werewolf_Control
                     Bot.Send(msg, u.Message.Chat.Id);
                 }
             }
+#endif
         }
 
         [Attributes.Command(Trigger = "disapprovegifs", GlobalAdminOnly = true, Blockable = true)]
         public static void DisapproveGifs(Update u, string[] args)
         {
+#if !BETA
             using (var db = new WWContext())
             {
                 if (args[1] == null)
@@ -751,7 +762,11 @@ namespace Werewolf_Control
                     Bot.Send(msg, u.Message.Chat.Id);
                 }
             }
+<<<<<<< HEAD
 
+=======
+#endif
+>>>>>>> 68aafc6... Fix beta disabled commands (1)
         }
     }
 }
