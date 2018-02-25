@@ -21,7 +21,12 @@ namespace ClearUpdates
         static int total = 0;
         static TelegramBotClient WWAPI;
         static TelegramBotClient Api;
-        internal static int[] Devs = new[] { 129046388, 133748469, 125311351 };
+        internal static int[] Devs = new[] {
+            129046388, //Para
+            133748469, //reny
+            295152997, //Ludwig
+            106665913, //Jeff
+        };
         static long DevGroup = -1001077134233;
         static void Main(string[] args)
         {
