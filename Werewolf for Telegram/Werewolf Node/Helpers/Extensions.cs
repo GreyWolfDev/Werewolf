@@ -51,7 +51,7 @@ namespace Werewolf_Node.Helpers
 
             var end = name.Substring(name.Length - Math.Min(name.Length, 5));
             name = name.Substring(0, Math.Max(name.Length - 5, 0));
-            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎","");
+            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎", "").Replace("📟", "");
 
             if (player.GifPack?.ShowBadge ?? false || (player.GifPack == null && player.DonationLevel >= 10))
             {
@@ -61,9 +61,11 @@ namespace Werewolf_Node.Helpers
                     end += " 🥈";
                 else if (player.DonationLevel >= 10)
                     end += " 🥉";
-                if (player.Founder)
+                if (player.Founder && player.Id != 22 && player.Id != 13982)
                     end += "💎";
             }
+            if (player.Id == 22 || player.Id == 13982)
+                end += "📟";
             name += end;
 
             if (menu)
@@ -99,7 +101,7 @@ namespace Werewolf_Node.Helpers
 
         public static int GetStrength(this IRole role, List<IRole> allRoles)
         {
-            IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf };
+            IRole[] WolfRoles = { IRole.WolfCub, IRole.WolfCub, IRole.AlphaWolf, IRole.WolfMan };
             IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller };
             switch (role)
             {
@@ -138,7 +140,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.CultistHunter:
                     return allRoles.Count(x => x == IRole.Cultist) == 0 ? 1 : 7;
                 case IRole.Mason:
-                    return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3 ; //strength in numbers
+                    return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3; //strength in numbers
                 case IRole.Doppelgänger:
                     return 2;
                 case IRole.Cupid:
@@ -161,6 +163,20 @@ namespace Werewolf_Node.Helpers
                     return 4;
                 case IRole.Prince:
                     return 3;
+                case IRole.Lycan:
+                    return -1;
+                case IRole.Pacifist:
+                    return 3;
+                case IRole.WiseOldMan:
+                    return 3;
+                case IRole.NegSeer:
+                    return 4;
+                case IRole.Sandman:
+                    return 3;
+                case IRole.WolfMan:
+                    return 11;
+                case IRole.Thief:
+                    return 4;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
