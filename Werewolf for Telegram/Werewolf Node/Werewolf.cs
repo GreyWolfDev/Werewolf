@@ -43,7 +43,7 @@ namespace Werewolf_Node
         private bool _playerListChanged = true, _silverSpread;
         private DateTime _timeStarted;
         private Nullable<TimeSpan> _timePlayed = null;
-        public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+        public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.WolfMan };
         public List<long> HaveExtended = new List<long>();
         private List<IPlayer> _joined = new List<IPlayer>(); 
         private int _joinMsgId;
@@ -1263,6 +1263,7 @@ namespace Werewolf_Node
                         if (allowFool)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.WolfMan:
                     case IRole.WolfCub:
                     case IRole.AlphaWolf: //don't add more wolves, just replace
                         if (rolesToAssign.Remove(IRole.Wolf))
@@ -1277,8 +1278,8 @@ namespace Werewolf_Node
             //we want the possibility to have normal wolves too!
             if (!rolesToAssign.Contains(IRole.Wolf))
             {
-                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
-                var wolftoadd = possiblewolves[Program.R.Next(3)];
+                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.WolfMan };
+                var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
 
                 if (rolesToAssign.Remove(IRole.AlphaWolf))
                     rolesToAssign.Add(wolftoadd);
@@ -1325,7 +1326,7 @@ namespace Werewolf_Node
 
                 var balanced = false;
                 var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.WolfMan, IRole.Thief };
 
                 do
                 {
@@ -1351,7 +1352,7 @@ namespace Werewolf_Node
                         !rolesToAssign.Any(x => WolfRoles.Contains(x)))
                     {
                         var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
-                        rolesToAssign[towolf] = WolfRoles[Program.R.Next(3)]; //choose randomly from WolfRoles
+                        rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
 
                     //appseer without seer -> seer
@@ -1465,6 +1466,9 @@ namespace Werewolf_Node
                     case IRole.Mayor:
                     case IRole.ClumsyGuy:
                     case IRole.Prince:
+                    case IRole.Lycan:
+                    case IRole.Pacifist:
+                    case IRole.WiseOldMan:
                         p.HasDayAction = false;
                         p.HasNightAction = false;
                         p.Team = ITeam.Village;
@@ -1477,11 +1481,14 @@ namespace Werewolf_Node
                     case IRole.WildChild:
                     case IRole.Cupid:
                     case IRole.Blacksmith:
+                    case IRole.Sandman:
+                    case IRole.NegSeer:
                         p.Team = ITeam.Village;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
                         break;
                     case IRole.Doppelgänger:
+                    case IRole.Thief:
                         p.Team = ITeam.Neutral;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
@@ -1496,6 +1503,7 @@ namespace Werewolf_Node
                     case IRole.AlphaWolf:
                     case IRole.WolfCub:
                     case IRole.Wolf:
+                    case IRole.WolfMan:
                         p.Team = ITeam.Wolf;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
@@ -4715,6 +4723,6 @@ namespace Werewolf_Node
             }
         }
 
-#endregion
+        #endregion
     }
 }
