@@ -167,9 +167,9 @@ namespace Werewolf_Node.Helpers
                     return -1;
                 case IRole.Pacifist:
                     return 3;
-                case IRole.WiseOldMan:
+                case IRole.WiseElder:
                     return 3;
-                case IRole.NegSeer:
+                case IRole.Oracle:
                     return 4;
                 case IRole.Sandman:
                     return 3;

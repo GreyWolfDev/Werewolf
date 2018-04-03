@@ -1429,12 +1429,12 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                //rolesToAssign[0] = IRole.WolfCub;
-                //rolesToAssign[1] = IRole.WolfCub;
-                //rolesToAssign[2] = IRole.AlphaWolf;
-                //rolesToAssign[3] = IRole.WolfCub;
-                //if (rolesToAssign.Count >= 5)
-                //    rolesToAssign[4] = IRole.Villager;
+                rolesToAssign[0] = IRole.WolfMan;
+                rolesToAssign[1] = IRole.Seer;
+                rolesToAssign[2] = IRole.Sandman;
+                rolesToAssign[3] = IRole.Lycan;
+                if (rolesToAssign.Count >= 5)
+                    rolesToAssign[4] = IRole.Oracle;
 #endif
 
 
