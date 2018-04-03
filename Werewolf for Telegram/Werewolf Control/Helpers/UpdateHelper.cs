@@ -14,7 +14,7 @@ namespace Werewolf_Control.Helpers
         {
             129046388,  //Para
             133748469,  //reny
-            125311351,  //Daniel
+            142032675,  //Para 2
             295152997,  //Ludwig
         };
         internal static bool IsGroupAdmin(Update update)

@@ -32,11 +32,28 @@ namespace Database
         ShowIDs = 256,
         [Editable(true), Question("allownsfw"), DefaultValue(false)]
         AllowNSFW = 512,
-
+        [Editable(true), Question("allowthief"), DefaultValue(true)]
+        AllowThief = 1024,
+        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(true)]
+        ThiefFull = 2048,
 
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings
         Update = 4611686018427387904
+    }
+
+    public static class GroupDefaults
+    {
+        public static GroupConfig LoadDefaults()
+        {
+            GroupConfig result = GroupConfig.Update;
+            foreach (GroupConfig flag in Enum.GetValues(typeof(GroupConfig)))
+            {
+                if (flag.GetDefaultValue())
+                    result |= flag;
+            }
+            return result;
+        }
     }
 
     public enum SettingQuestion

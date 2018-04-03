@@ -502,7 +502,7 @@ namespace Werewolf_Control.Handler
                                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
                                     if (grp == null)
                                     {
-                                        grp = MakeDefaultGroup(id, update.Message.Chat.Title, "NewChatMember");
+                                        grp = Commands.MakeDefaultGroup(id, update.Message.Chat.Title, "NewChatMember");
                                         DB.Groups.Add(grp);
                                         DB.SaveChanges();
                                         grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
@@ -1825,29 +1825,29 @@ namespace Werewolf_Control.Handler
 
         }
 
-        internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
-        {
-            return new Group
-            {
-                GroupId = groupid,
-                Name = name,
-                Language = "English",
-                BotInGroup = true,
-                ShowRoles = true,
-                Mode = "Player",
-                DayTime = Settings.TimeDay,
-                LynchTime = Settings.TimeLynch,
-                NightTime = Settings.TimeNight,
-                AllowFool = true,
-                AllowTanner = true,
-                AllowCult = true,
-                DisableFlee = false,
-                MaxPlayers = 35,
-                EnableSecretLynch = false,
-                CreatedBy = createdBy,
-                Flags = (long)GroupConfig.Update
-            };
-        }
+        //internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
+        //{
+        //    return new Group
+        //    {
+        //        GroupId = groupid,
+        //        Name = name,
+        //        Language = "English",
+        //        BotInGroup = true,
+        //        ShowRoles = true,
+        //        Mode = "Player",
+        //        DayTime = Settings.TimeDay,
+        //        LynchTime = Settings.TimeLynch,
+        //        NightTime = Settings.TimeNight,
+        //        AllowFool = true,
+        //        AllowTanner = true,
+        //        AllowCult = true,
+        //        DisableFlee = false,
+        //        MaxPlayers = 35,
+        //        EnableSecretLynch = false,
+        //        CreatedBy = createdBy,
+        //        Flags = (long)(GroupConfig.Update | GroupConfig.ThiefFull | GroupConfig.AllowThief)
+        //    };
+        //}
 
         internal static InlineKeyboardMarkup GetConfigMenu(long id)
         {

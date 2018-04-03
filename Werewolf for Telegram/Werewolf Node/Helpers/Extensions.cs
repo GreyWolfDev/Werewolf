@@ -163,7 +163,7 @@ namespace Werewolf_Node.Helpers
                     return 4;
                 case IRole.Prince:
                     return 3;
-                case IRole.Lycan:
+                case IRole.WolfMan:
                     return -1;
                 case IRole.Pacifist:
                     return 3;
@@ -173,7 +173,7 @@ namespace Werewolf_Node.Helpers
                     return 4;
                 case IRole.Sandman:
                     return 3;
-                case IRole.WolfMan:
+                case IRole.Lycan:
                     return 11;
                 case IRole.Thief:
                     return 4;
