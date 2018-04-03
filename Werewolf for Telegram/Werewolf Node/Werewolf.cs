@@ -1490,7 +1490,7 @@ namespace Werewolf_Node
                     case IRole.Prince:
                     case IRole.WolfMan:
                     case IRole.Pacifist:
-                    case IRole.WiseOldMan:
+                    case IRole.WiseElder:
                         p.HasDayAction = false;
                         p.HasNightAction = false;
                         p.Team = ITeam.Village;
@@ -1504,7 +1504,7 @@ namespace Werewolf_Node
                     case IRole.Cupid:
                     case IRole.Blacksmith:
                     case IRole.Sandman:
-                    case IRole.NegSeer:
+                    case IRole.Oracle:
                         p.Team = ITeam.Village;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
@@ -1877,7 +1877,7 @@ namespace Werewolf_Node
                         case IRole.Prince:
                         case IRole.ClumsyGuy:
                         case IRole.WolfMan:
-                        case IRole.WiseOldMan:
+                        case IRole.WiseElder:
                             p.HasDayAction = false;
                             p.HasNightAction = false;
                             p.Team = ITeam.Village;
@@ -1937,7 +1937,7 @@ namespace Werewolf_Node
                         case IRole.Harlot:
                         case IRole.CultistHunter:
                         case IRole.GuardianAngel:
-                        case IRole.NegSeer:
+                        case IRole.Oracle:
                         case IRole.Sandman:
                             p.Team = ITeam.Village;
                             p.HasNightAction = true;
@@ -3294,7 +3294,7 @@ namespace Werewolf_Node
                 }
             }
 
-            var negSeer = Players.FirstOrDefault(x => x.PlayerRole == IRole.NegSeer && !x.IsDead);
+            var negSeer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Oracle && !x.IsDead);
             if (negSeer != null)
             {
                 var target = Players.FirstOrDefault(x => x.Id == negSeer.Choice);
