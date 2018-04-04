@@ -25,6 +25,7 @@
         Lover2,
         Mayor,
         SpreadSilver,
-        Kill2
+        Kill2,
+        Sandman
     }
 }
