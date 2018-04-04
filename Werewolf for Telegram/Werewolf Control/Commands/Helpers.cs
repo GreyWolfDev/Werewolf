@@ -217,7 +217,8 @@ namespace Werewolf_Control
                 AllowExtend = false,
                 MaxExtend = 60,
                 EnableSecretLynch = false,
-                Flags = (long)GroupConfig.Update
+                ShowRolesEnd = "All",
+                Flags = (long)(GroupDefaults.LoadDefaults())
             };
         }
 
