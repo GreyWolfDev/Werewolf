@@ -25,7 +25,7 @@ namespace BuildAutomation.Controllers
 {
     public class BuildController : ApiController
     {
-        public long GroupId = -1001076212715;
+        public long GroupId = -1001077134233;
         [HttpPost]
         public HttpResponseMessage Post()
         {
