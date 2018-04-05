@@ -139,7 +139,7 @@ namespace Werewolf_Control
             //reply += "/aboutWiseElder - Wise Elder 📚\n";
             reply = "/aboutSandman - Sandman 💤\n";
             reply += "/aboutOracle - Oracle 🌀\n";
-            reply += "/aboutWolfMan - Wolf Man 👱‍🌚\n";
+            reply += "/aboutWolfMan - Wolf Man 👱🌚\n";
             reply += "/aboutLycan - Lycan 🐺🌝\n";
             Send(reply, update.Message.From.Id);
         }
