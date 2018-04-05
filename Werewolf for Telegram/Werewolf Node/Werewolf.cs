@@ -3162,6 +3162,7 @@ namespace Werewolf_Node
                             case IRole.Wolf:
                             case IRole.AlphaWolf:
                             case IRole.WolfCub:
+                            case IRole.Lycan:
                                 harlot.IsDead = true;
                                 harlot.TimeDied = DateTime.Now;
                                 harlot.DiedLastNight = true;
