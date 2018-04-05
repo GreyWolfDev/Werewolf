@@ -3940,7 +3940,6 @@ namespace Werewolf_Node
                 player.CurrentQuestion = null;
                 player.Choice = 0;
                 var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId.ToString()}|{x.Id}") }).ToList();
-                choices.Add(new [] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId.ToString()}|skip") });
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
                 Thread.Sleep(100);
             }
