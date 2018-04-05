@@ -325,18 +325,19 @@ namespace Werewolf_Control.Handler
                                     update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
+                                    if (new[] { "Thief", "WiseElder", "Pacifist" }.Contains(args[0].Replace("about", ""))) return;
                                     var reply = Commands.GetAbout(update, args);
-                                    if (reply != null)
+                                    if (!String.IsNullOrEmpty(reply))
                                     {
 
                                         if (AddCount(update.Message.From.Id, update.Message)) return;
                                         try
                                         {
                                             var result = Send(reply, update.Message.From.Id).Result;
-                                            if (update.Message.Chat.Type != ChatType.Private)
-                                                Send(
-                                                    GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)),
-                                                    update.Message.Chat.Id);
+                                            //if (update.Message.Chat.Type != ChatType.Private)
+                                            //    Send(
+                                            //        GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)),
+                                            //        update.Message.Chat.Id);
 
                                         }
                                         catch (Exception e)
