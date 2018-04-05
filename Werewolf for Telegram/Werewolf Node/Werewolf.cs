@@ -1283,8 +1283,13 @@ namespace Werewolf_Node
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Thief:
-                        if (AllowThief)
-                            rolesToAssign.Add(role);
+                        //if (AllowThief)
+                            //rolesToAssign.Add(role);
+                        //not implemented
+                        break;
+                    case IRole.Pacifist:
+                    case IRole.WiseElder:
+                        //not programmed yet
                         break;
                     case IRole.Lycan:
                     case IRole.WolfCub:
@@ -4102,6 +4107,7 @@ namespace Werewolf_Node
                     case IRole.Fool:
                     case IRole.Seer:
                     case IRole.Sorcerer:
+                    case IRole.Oracle:
                         targets = targetBase.ToList();
                         msg = GetLocaleString("AskSee");
                         qtype = QuestionType.See;
@@ -4114,6 +4120,7 @@ namespace Werewolf_Node
                     case IRole.Wolf:
                     case IRole.AlphaWolf:
                     case IRole.WolfCub:
+                    case IRole.Lycan:
                         if (!_silverSpread)
                         {
                             targets = targetBase.Where(x => !WolfRoles.Contains(x.PlayerRole)).ToList();
