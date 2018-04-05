@@ -3345,6 +3345,7 @@ namespace Werewolf_Node
                         case IRole.AlphaWolf:
                         case IRole.WolfCub:
                         case IRole.Wolf:
+                        case IRole.Lycan:
                             if (Program.R.Next(100) > 50)
                             {
                                 ga.IsDead = true;
