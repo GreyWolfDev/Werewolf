@@ -61,10 +61,10 @@ namespace Werewolf_Node.Helpers
                     end += " 🥈";
                 else if (player.DonationLevel >= 10)
                     end += " 🥉";
-                if (player.Founder && player.Id != 22 && player.Id != 13982)
+                if (player.Founder && player.Id != 142032675 && player.Id != 129046388)
                     end += "💎";
             }
-            if (player.Id == 22 || player.Id == 13982)
+            if (player.Id == 142032675 || player.Id == 129046388)
                 end += "📟";
             name += end;
 

@@ -25,7 +25,7 @@ namespace BuildAutomation.Controllers
 {
     public class BuildController : ApiController
     {
-        public long GroupId = -1001076212715;
+        public long GroupId = -1001077134233;
         [HttpPost]
         public HttpResponseMessage Post()
         {
@@ -76,7 +76,7 @@ namespace BuildAutomation.Controllers
                         }
                         detail = detail.Replace("\r\n+ ", "\r\n");
                         var msg = detail + "\n";
-                        var urlPre = "https://github.com/parabola949/Werewolf/commit/";
+                        var urlPre = "https://github.com/GreyWolfDev/Werewolf/commit/";
                         msg +=
                             $"Built with commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion}) as latest";
                         if (build.resource.result == "succeeded")
