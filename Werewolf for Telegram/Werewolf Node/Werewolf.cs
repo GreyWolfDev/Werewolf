@@ -3108,6 +3108,12 @@ namespace Werewolf_Node
                                 case IRole.Doppelgänger:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
+                                case IRole.Oracle:
+                                    ConvertToCult(target, voteCult, Settings.OracleConversionChance);
+                                    break;
+                                case IRole.Sandman:
+                                    ConvertToCult(target, voteCult, Settings.SandmanConversionChance);
+                                    break;
                                 default:
                                     ConvertToCult(target, voteCult);
                                     break;
