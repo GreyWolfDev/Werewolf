@@ -3464,6 +3464,7 @@ namespace Werewolf_Node
                             {
                                 case IRole.WolfCub:
                                 case IRole.AlphaWolf:
+                                case IRole.Lycan:
                                 case IRole.Wolf: //sk and hunter can kill
                                     if (p.PlayerRole == IRole.WolfCub)
                                         WolfCubKilled = true;
