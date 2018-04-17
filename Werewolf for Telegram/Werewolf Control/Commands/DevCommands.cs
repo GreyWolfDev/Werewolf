@@ -293,63 +293,63 @@ namespace Werewolf_Control
             }
         }
 
-        private static List<IRole> GetRoleList(int playerCount, bool allowCult = true, bool allowTanner = true, bool allowFool = true)
-        {
-            var rolesToAssign = new List<IRole>();
-            //need to set the max wolves so game doesn't end immediately - 25% max wolf population
-            //25% was too much, max it at 5 wolves.
-            for (int i = 0; i < Math.Max(playerCount / 5, 1); i++)
-                rolesToAssign.Add(IRole.Wolf);
-            //add remaining roles to 'card pile'
-            foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
-            {
-                switch (role)
-                {
-                    case IRole.Wolf:
-                    case IRole.Faithful: //never start a game with faithfuls.
-                        break;
-                    case IRole.CultistHunter:
-                    case IRole.Preacher:
-                    case IRole.Cultist:
-                        if (allowCult != false && playerCount > 10)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.Tanner:
-                        if (allowTanner != false)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.Fool:
-                        if (allowFool != false)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.WolfCub:
-                    case IRole.AlphaWolf: //don't add more wolves, just replace
-                        rolesToAssign.Add(role);
-                        rolesToAssign.Remove(IRole.Wolf);
-                        break;
-                    default:
-                        rolesToAssign.Add(role);
-                        break;
-                }
-            }
+        //private static List<IRole> GetRoleList(int playerCount, bool allowCult = true, bool allowTanner = true, bool allowFool = true)
+        //{
+        //    var rolesToAssign = new List<IRole>();
+        //    //need to set the max wolves so game doesn't end immediately - 25% max wolf population
+        //    //25% was too much, max it at 5 wolves.
+        //    for (int i = 0; i < Math.Max(playerCount / 5, 1); i++)
+        //        rolesToAssign.Add(IRole.Wolf);
+        //    //add remaining roles to 'card pile'
+        //    foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
+        //    {
+        //        switch (role)
+        //        {
+        //            case IRole.Wolf:
+        //            case IRole.Faithful: //never start a game with faithfuls.
+        //                break;
+        //            case IRole.CultistHunter:
+        //            case IRole.Preacher:
+        //            case IRole.Cultist:
+        //                if (allowCult != false && playerCount > 10)
+        //                    rolesToAssign.Add(role);
+        //                break;
+        //            case IRole.Tanner:
+        //                if (allowTanner != false)
+        //                    rolesToAssign.Add(role);
+        //                break;
+        //            case IRole.Fool:
+        //                if (allowFool != false)
+        //                    rolesToAssign.Add(role);
+        //                break;
+        //            case IRole.WolfCub:
+        //            case IRole.AlphaWolf: //don't add more wolves, just replace
+        //                rolesToAssign.Add(role);
+        //                rolesToAssign.Remove(IRole.Wolf);
+        //                break;
+        //            default:
+        //                rolesToAssign.Add(role);
+        //                break;
+        //        }
+        //    }
 
-            //add a couple more masons
-            rolesToAssign.Add(IRole.Mason);
-            rolesToAssign.Add(IRole.Mason);
-            //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
-            //same as it was before....
+        //    //add a couple more masons
+        //    rolesToAssign.Add(IRole.Mason);
+        //    rolesToAssign.Add(IRole.Mason);
+        //    //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
+        //    //same as it was before....
 
 
-            if (rolesToAssign.Any(x => x == IRole.CultistHunter || x == IRole.Preacher))
-            {
-                rolesToAssign.Add(IRole.Cultist);
-                rolesToAssign.Add(IRole.Cultist);
-            }
-            //now fill rest of the slots with villagers (for large games)
-            for (int i = 0; i < playerCount / 4; i++)
-                rolesToAssign.Add(IRole.Villager);
-            return rolesToAssign;
-        }
+        //    if (rolesToAssign.Any(x => x == IRole.CultistHunter || x == IRole.Preacher))
+        //    {
+        //        rolesToAssign.Add(IRole.Cultist);
+        //        rolesToAssign.Add(IRole.Cultist);
+        //    }
+        //    //now fill rest of the slots with villagers (for large games)
+        //    for (int i = 0; i < playerCount / 4; i++)
+        //        rolesToAssign.Add(IRole.Villager);
+        //    return rolesToAssign;
+        //}
 
         public class BalancedGameAttempt
         {
@@ -359,72 +359,72 @@ namespace Werewolf_Control
 
         private static Dictionary<int, List<BalancedGameAttempt>> BalancedAttempts;
 
-        [Attributes.Command(Trigger = "createbalance", DevOnly = true)]
-        public static void CreateBalancedGames(Update u, string[] args)
-        {
-            //get parameters
-            int count = 0;
+        //[Attributes.Command(Trigger = "createbalance", DevOnly = true)]
+        //public static void CreateBalancedGames(Update u, string[] args)
+        //{
+        //    //get parameters
+        //    int count = 0;
 
-            if (!int.TryParse(args[1], out count))
-            {
-                Send("use !createbalance <playercount>", u.Message.Chat.Id);
-                return;
+        //    if (!int.TryParse(args[1], out count))
+        //    {
+        //        Send("use !createbalance <playercount>", u.Message.Chat.Id);
+        //        return;
 
-            }
-
-
-
-            var balanced = false;
-
-            List<IRole> rolesToAssign = new List<IRole>();
-            int villageStrength = 0, enemyStrength = 0;
-            var attempts = 0;
-            var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
-            while (!balanced)
-            {
-                attempts++;
-                if (attempts >= 200)
-                    break;
-                rolesToAssign = GetRoleList(count);
-                rolesToAssign.Shuffle();
-                rolesToAssign = rolesToAssign.Take(count).ToList();
-                if (rolesToAssign.Contains(IRole.Sorcerer) &
-                    !rolesToAssign.Any(x => new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub }.Contains(x)))
-                    //can't have a sorcerer without wolves.  That's silly
-                    continue;
-
-                //check the balance
-
-                villageStrength =
-                rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-                enemyStrength =
-                    rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-
-                //check balance
-                var varianceAllowed = (count / 5) + 3;
-
-                balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-
-
-            }
+        //    }
 
 
 
-            var msg = $"Attempts: {attempts}\n";
-            if (balanced)
-            {
-                msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
-                msg +=
-                    $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
-                msg +=
-                    $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
-            }
-            else
-            {
-                msg += "Unbalanced :(";
-            }
-            Send(msg, u.Message.Chat.Id);
-        }
+        //    var balanced = false;
+
+        //    List<IRole> rolesToAssign = new List<IRole>();
+        //    int villageStrength = 0, enemyStrength = 0;
+        //    var attempts = 0;
+        //    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+        //    while (!balanced)
+        //    {
+        //        attempts++;
+        //        if (attempts >= 200)
+        //            break;
+        //        rolesToAssign = GetRoleList(count);
+        //        rolesToAssign.Shuffle();
+        //        rolesToAssign = rolesToAssign.Take(count).ToList();
+        //        if (rolesToAssign.Contains(IRole.Sorcerer) &
+        //            !rolesToAssign.Any(x => new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub }.Contains(x)))
+        //            //can't have a sorcerer without wolves.  That's silly
+        //            continue;
+
+        //        //check the balance
+
+        //        villageStrength =
+        //        rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+        //        enemyStrength =
+        //            rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
+
+        //        //check balance
+        //        var varianceAllowed = (count / 5) + 3;
+
+        //        balanced = (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+        //    }
+
+
+
+        //    var msg = $"Attempts: {attempts}\n";
+        //    if (balanced)
+        //    {
+        //        msg += $"Total Village strength: {villageStrength}\nTotal Enemy strength: {enemyStrength}\n\n";
+        //        msg +=
+        //            $"Village team:\n{rolesToAssign.Where(x => !nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}\n\n";
+        //        msg +=
+        //            $"Enemy teams:\n{rolesToAssign.Where(x => nonVgRoles.Contains(x)).OrderBy(x => x).Select(x => x.ToString()).Aggregate((a, b) => a + "\n" + b)}";
+        //    }
+        //    else
+        //    {
+        //        msg += "Unbalanced :(";
+        //    }
+        //    Send(msg, u.Message.Chat.Id);
+        //}
 
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
@@ -441,7 +441,7 @@ namespace Werewolf_Control
                 var groups = db.Groups.Where(x => x.Preferred != false && x.GroupLink != null && x.GroupId != -1001030085238)
                     .Select(x => new PossibleGroup() { GroupId = x.GroupId, GroupLink = x.GroupLink, MemberCount = x.MemberCount ?? 0, Name = x.Name }).ToList();
 
-                var ofcSpells = new[] { "official", "offciail", "official", "oficial", "offical"};
+                var ofcSpells = new[] { "official", "offciail", "official", "oficial", "offical" };
                 var wuffSpells = new[] { "wolf", "wuff", "wulf", "lupus" };
 
                 for (var i = groups.Count - 1; i >= 0; i--)
@@ -860,7 +860,7 @@ namespace Werewolf_Control
                 foreach (var userid in args[1].Split(' '))
                 {
                     if (!int.TryParse(userid, out int id)) continue;
-                    
+
                     using (var db = new WWContext())
                     {
                         var ban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == id);

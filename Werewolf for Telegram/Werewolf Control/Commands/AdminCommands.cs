@@ -99,6 +99,12 @@ namespace Werewolf_Control
                     Send("Please reply to the file with /uploadlang", id);
                     return;
                 }
+                var filename = update.Message.ReplyToMessage.Document?.FileName;
+                if (string.IsNullOrEmpty(filename) || !filename.ToLower().EndsWith(".xml"))
+                {
+                    Send("The file must be an XML file! (*.xml)", id);
+                    return;
+                }
                 var fileid = update.Message.ReplyToMessage.Document?.FileId;
                 if (fileid != null)
                     LanguageHelper.UploadFile(fileid, id,

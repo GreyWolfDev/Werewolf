@@ -278,6 +278,8 @@ namespace Telegram.Bot
                         e = e.InnerException;
                     try
                     {
+                        var path = Path.GetDirectoryName(LogPath);
+                        Directory.CreateDirectory(path);
                         using (var s = new StreamWriter(LogPath, true))
                         {
                             s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
