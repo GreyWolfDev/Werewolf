@@ -3036,6 +3036,7 @@ namespace Werewolf_Node
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
                                 case IRole.WolfCub:
+                                case IRole.Lycan:
                                     if (voteWolves.Any(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1))) //did wolves go eating?
                                     {
                                         foreach (var c in voteCult)
