@@ -2497,6 +2497,7 @@ namespace Werewolf_Node
             if (_sandmanSleep)
             {
                 _sandmanSleep = false;
+                WolfCubKilled = false; //reset double kill
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
