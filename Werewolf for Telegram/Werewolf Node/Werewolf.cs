@@ -1261,14 +1261,22 @@ namespace Werewolf_Node
             var rolesToAssign = new List<IRole>();
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
             //25% was too much, max it at 5 wolves.
+            var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
+            var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
             for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
-                rolesToAssign.Add(IRole.Wolf);
+                rolesToAssign.Add(wolftoadd);
+                if (wolftoadd != IRole.Wolf)
+                    possiblewolves.Remove(wolftoadd);
+                wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
             //add remaining roles to 'card pile'
             foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
             {
                 switch (role)
                 {
                     case IRole.Wolf:
+                    case IRole.Lycan:
+                    case IRole.WolfCub:
+                    case IRole.AlphaWolf:
                         break;
                     case IRole.CultistHunter:
                     case IRole.Cultist:
@@ -1292,40 +1300,9 @@ namespace Werewolf_Node
                     case IRole.WiseElder:
                         //not programmed yet
                         break;
-                    case IRole.Lycan:
-                    case IRole.WolfCub:
-                    case IRole.AlphaWolf: //don't add more wolves, just replace
-                        if (rolesToAssign.Remove(IRole.Wolf))
-                            rolesToAssign.Add(role);
-                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
-                }
-            }
-
-            //we want the possibility to have normal wolves too!
-            if (!rolesToAssign.Contains(IRole.Wolf))
-            {
-                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
-                var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
-
-                if (rolesToAssign.Remove(IRole.AlphaWolf))
-                    rolesToAssign.Add(wolftoadd);
-                //else throw an Exception? it should never happen that rolesToAssign does not contain both Alpha Wolf and Wolf, but...
-
-                if (playerCount >= 10) //there was WolfCub too, since IRole.AlphaWolf < IRole.WolfCub
-                {
-                    //note that at this point we might have two WolfCubs. However, we are removing one, and if the other wolf was a cub, we're not readding it.
-                    if (rolesToAssign.Remove(IRole.WolfCub))
-                    {
-                        //replace the wolftoadd with a Wolf in the possiblewolves, to keep probability consistency
-                        possiblewolves.Remove(wolftoadd);
-                        possiblewolves.Add(IRole.Wolf);
-
-                        rolesToAssign.Add(possiblewolves[Program.R.Next(3)]); //actually replace the wolf
-                    }
-                    //else throw an Exception?
                 }
             }
 
