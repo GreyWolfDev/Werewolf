@@ -40,10 +40,10 @@ namespace Werewolf_Node
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-        private bool _playerListChanged = true, _silverSpread;
+        private bool _playerListChanged = true, _silverSpread, _sandmanSleep;
         private DateTime _timeStarted;
         private Nullable<TimeSpan> _timePlayed = null;
-        public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
+        public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
         public List<long> HaveExtended = new List<long>();
         private List<IPlayer> _joined = new List<IPlayer>(); 
         private int _joinMsgId;
@@ -53,7 +53,7 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull;
         public string ShowRolesEnd;
 
         public List<string> VillagerDieImages,
@@ -146,6 +146,8 @@ namespace Werewolf_Node
                         AllowTanner = Program.R.Next(100) < 50;
                         AllowFool = Program.R.Next(100) < 50;
                         AllowCult = Program.R.Next(100) < 50;
+                        AllowThief = Program.R.Next(100) < 50;
+                        ThiefFull = Program.R.Next(100) < 50;
                         SecretLynch = Program.R.Next(100) < 50;
                         ShowRolesOnDeath = Program.R.Next(100) < 50;
                         var r = Program.R.Next(100);
@@ -165,6 +167,8 @@ namespace Werewolf_Node
                         AllowTanner = DbGroup.HasFlag(GroupConfig.AllowTanner);
                         AllowFool = DbGroup.HasFlag(GroupConfig.AllowFool);
                         AllowCult = DbGroup.HasFlag(GroupConfig.AllowCult);
+                        AllowThief = DbGroup.HasFlag(GroupConfig.AllowThief);
+                        ThiefFull = DbGroup.HasFlag(GroupConfig.ThiefFull);
                         SecretLynch = DbGroup.HasFlag(GroupConfig.EnableSecretLynch);
                         ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
                     }
@@ -173,7 +177,7 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
                     
-                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://telegram.me/" + Program.Me.Username) });
+                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://t.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
 
@@ -181,7 +185,7 @@ namespace Werewolf_Node
                 //create our button
                 _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://telegram.me/{Program.Me.Username}?start=" + deeplink)
+                    new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=" + deeplink)
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
@@ -768,7 +772,7 @@ namespace Werewolf_Node
                 }
                 else if (player.PlayerRole == IRole.Mayor && args[2] == "reveal" && player.HasUsedAbility == true)
                     return;
-
+                
                 if (player.PlayerRole == IRole.Blacksmith && player.CurrentQuestion.QType == QuestionType.SpreadSilver)
                 {
                     if (args[2] == "yes")
@@ -776,6 +780,21 @@ namespace Werewolf_Node
                         player.HasUsedAbility = true;
                         _silverSpread = true;
                         SendWithQueue(GetLocaleString("BlacksmithSpreadSilver", player.GetName()));
+                    }
+
+                    ReplyToCallback(query,
+                        GetLocaleString("ChoiceAccepted"));
+                    player.CurrentQuestion = null;
+                    return;
+                }
+
+                if (player.PlayerRole == IRole.Sandman && player.CurrentQuestion.QType == QuestionType.Sandman)
+                {
+                    if (args[2] == "yes")
+                    {
+                        player.HasUsedAbility = true;
+                        _sandmanSleep = true;
+                        SendWithQueue(GetLocaleString("SandmanSleepAll", player.GetName()));
                     }
 
                     ReplyToCallback(query,
@@ -862,7 +881,7 @@ namespace Werewolf_Node
                         var msg = GetLocaleString("AskEat");
                         var qtype = QuestionType.Kill2;
                         var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                        buttons.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{Program.ClientId}|-1") });
+                        buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
                         SendMenu(buttons, player, msg, qtype);
                         clearCurrent = false;
                     }
@@ -951,8 +970,9 @@ namespace Werewolf_Node
                         player.FirstStone++;
                         NoOneCastLynch = false;
                     }
-                    else
-                        player.FirstStone = 0;
+                    //First Stone counter does not reset its value to 0
+                    //else
+                    //    player.FirstStone = 0;
 
                     if (player.FirstStone == 5)
                     {
@@ -1236,7 +1256,7 @@ namespace Werewolf_Node
             return GetLocaleString(en.ToString()).ToBold();
         }
 
-        private static List<IRole> GetRoleList(int playerCount, bool allowCult = true, bool allowTanner = true, bool allowFool = true)
+        private List<IRole> GetRoleList(int playerCount)
         {
             var rolesToAssign = new List<IRole>();
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
@@ -1252,17 +1272,27 @@ namespace Werewolf_Node
                         break;
                     case IRole.CultistHunter:
                     case IRole.Cultist:
-                        if (allowCult && playerCount > 10)
+                        if (AllowCult && playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Tanner:
-                        if (allowTanner)
+                        if (AllowTanner)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Fool:
-                        if (allowFool)
+                        if (AllowFool)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.Thief:
+                        //if (AllowThief)
+                            //rolesToAssign.Add(role);
+                        //not implemented
+                        break;
+                    case IRole.Pacifist:
+                    case IRole.WiseElder:
+                        //not programmed yet
+                        break;
+                    case IRole.Lycan:
                     case IRole.WolfCub:
                     case IRole.AlphaWolf: //don't add more wolves, just replace
                         if (rolesToAssign.Remove(IRole.Wolf))
@@ -1277,8 +1307,8 @@ namespace Werewolf_Node
             //we want the possibility to have normal wolves too!
             if (!rolesToAssign.Contains(IRole.Wolf))
             {
-                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub };
-                var wolftoadd = possiblewolves[Program.R.Next(3)];
+                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
+                var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
 
                 if (rolesToAssign.Remove(IRole.AlphaWolf))
                     rolesToAssign.Add(wolftoadd);
@@ -1325,7 +1355,7 @@ namespace Werewolf_Node
 
                 var balanced = false;
                 var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief };
 
                 do
                 {
@@ -1337,8 +1367,7 @@ namespace Werewolf_Node
 
 
                     //determine which roles should be assigned
-                    rolesToAssign = GetRoleList(count, DbGroup.HasFlag(GroupConfig.AllowCult), DbGroup.HasFlag(GroupConfig.AllowTanner),
-                        DbGroup.HasFlag(GroupConfig.AllowFool));
+                    rolesToAssign = GetRoleList(count);
                     rolesToAssign.Shuffle();
                     rolesToAssign = rolesToAssign.Take(count).ToList();
 
@@ -1351,7 +1380,7 @@ namespace Werewolf_Node
                         !rolesToAssign.Any(x => WolfRoles.Contains(x)))
                     {
                         var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
-                        rolesToAssign[towolf] = WolfRoles[Program.R.Next(3)]; //choose randomly from WolfRoles
+                        rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
 
                     //appseer without seer -> seer
@@ -1406,12 +1435,12 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                //rolesToAssign[0] = IRole.WolfCub;
-                //rolesToAssign[1] = IRole.WolfCub;
-                //rolesToAssign[2] = IRole.AlphaWolf;
-                //rolesToAssign[3] = IRole.WolfCub;
-                //if (rolesToAssign.Count >= 5)
-                //    rolesToAssign[4] = IRole.Villager;
+                rolesToAssign[0] = IRole.WolfMan;
+                rolesToAssign[1] = IRole.Seer;
+                rolesToAssign[2] = IRole.Sandman;
+                rolesToAssign[3] = IRole.Lycan;
+                if (rolesToAssign.Count >= 5)
+                    rolesToAssign[4] = IRole.Oracle;
 #endif
 
 
@@ -1465,6 +1494,9 @@ namespace Werewolf_Node
                     case IRole.Mayor:
                     case IRole.ClumsyGuy:
                     case IRole.Prince:
+                    case IRole.WolfMan:
+                    case IRole.Pacifist:
+                    case IRole.WiseElder:
                         p.HasDayAction = false;
                         p.HasNightAction = false;
                         p.Team = ITeam.Village;
@@ -1477,11 +1509,14 @@ namespace Werewolf_Node
                     case IRole.WildChild:
                     case IRole.Cupid:
                     case IRole.Blacksmith:
+                    case IRole.Sandman:
+                    case IRole.Oracle:
                         p.Team = ITeam.Village;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
                         break;
                     case IRole.Doppelgänger:
+                    case IRole.Thief:
                         p.Team = ITeam.Neutral;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
@@ -1496,6 +1531,7 @@ namespace Werewolf_Node
                     case IRole.AlphaWolf:
                     case IRole.WolfCub:
                     case IRole.Wolf:
+                    case IRole.Lycan:
                         p.Team = ITeam.Wolf;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
@@ -1834,7 +1870,7 @@ namespace Werewolf_Node
                     }
                     p.ChangedRolesCount++;
 
-                    if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild }.Contains(p.PlayerRole))
+                    if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan }.Contains(p.PlayerRole))
                     {
                         //tell them their new role
                         Send(GetRoleInfo(p.PlayerRole), p.Id);
@@ -1846,6 +1882,8 @@ namespace Werewolf_Node
                         case IRole.Drunk:
                         case IRole.Prince:
                         case IRole.ClumsyGuy:
+                        case IRole.WolfMan:
+                        case IRole.WiseElder:
                             p.HasDayAction = false;
                             p.HasNightAction = false;
                             p.Team = ITeam.Village;
@@ -1904,6 +1942,9 @@ namespace Werewolf_Node
                         case IRole.Fool:
                         case IRole.Harlot:
                         case IRole.CultistHunter:
+                        case IRole.GuardianAngel:
+                        case IRole.Oracle:
+                        case IRole.Sandman:
                             p.Team = ITeam.Village;
                             p.HasNightAction = true;
                             p.HasDayAction = false;
@@ -1915,12 +1956,6 @@ namespace Werewolf_Node
                             var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                             if (bh != null)
                                 Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
-                            break;
-                        case IRole.GuardianAngel:
-
-                            p.Team = ITeam.Village;
-                            p.HasNightAction = true;
-                            p.HasDayAction = false;
                             break;
                         case IRole.WildChild:
                             p.RoleModel = rm.RoleModel;
@@ -1946,6 +1981,7 @@ namespace Werewolf_Node
                         case IRole.AlphaWolf:
                         case IRole.WolfCub:
                         case IRole.Wolf:
+                        case IRole.Lycan:
                             p.Team = ITeam.Wolf;
                             p.HasNightAction = true;
                             p.HasDayAction = false;
@@ -1964,6 +2000,9 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Wolf:
                                     Send(GetLocaleString("DGTransformToWolf", rm.GetName(), teammates), p.Id);
+                                    break;
+                                case IRole.Lycan:
+                                    Send(GetLocaleString("DGTransformToLycan", rm.GetName(), teammates), p.Id);
                                     break;
                             }
                             break;
@@ -2001,11 +2040,14 @@ namespace Werewolf_Node
                             var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|reveal") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
                             break;
+                        case IRole.Thief:
+                            p.Team = ITeam.Neutral;
+                            p.HasNightAction = true;
+                            p.HasDayAction = false;
+                            break;
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
-
-
                 }
             }
         }
@@ -2017,6 +2059,20 @@ namespace Werewolf_Node
                 Send(
                     GetLocaleString("PlayerBittenWolves", target.GetName(),
                         alpha), wolf.Id);
+        }
+
+        private void StealRole(IPlayer target)
+        {
+            if (target.IsDead)
+            {
+                //sad for you....
+                Send(GetLocaleString("ThiefStealDead", target.GetName()));
+                return;
+            }
+            //TODO
+            //swap roles
+            //notify both players (notify team?)
+            //should a bitten player stay bitten? yes...
         }
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
@@ -2297,7 +2353,7 @@ namespace Werewolf_Node
                 {
                     try
                     {
-                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor)
+                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor && p.CurrentQuestion.QType != QuestionType.Sandman)
                         {
                             Program.MessagesSent++;
                             Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
@@ -2439,7 +2495,14 @@ namespace Werewolf_Node
             if (GameDay == 1)
                 if (Players.Any(x => new[] { IRole.Cupid, IRole.Doppelgänger, IRole.WildChild }.Contains(x.PlayerRole)))
                     nightTime = Math.Max(nightTime, 120);
-
+            if (_sandmanSleep)
+            {
+                _sandmanSleep = false;
+                _silverSpread = false; //reset blacksmith
+                WolfCubKilled = false; //reset double kill
+                SendWithQueue(GetLocaleString("SandmanNight"));
+                return;
+            }
             SendWithQueue(GetLocaleString("NightTime", nightTime.ToBold()));
             SendPlayerList();
             SendNightActions();
@@ -2976,6 +3039,7 @@ namespace Werewolf_Node
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
                                 case IRole.WolfCub:
+                                case IRole.Lycan:
                                     if (voteWolves.Any(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1))) //did wolves go eating?
                                     {
                                         foreach (var c in voteCult)
@@ -3044,6 +3108,12 @@ namespace Werewolf_Node
                                 case IRole.Doppelgänger:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
+                                case IRole.Oracle:
+                                    ConvertToCult(target, voteCult, Settings.OracleConversionChance);
+                                    break;
+                                case IRole.Sandman:
+                                    ConvertToCult(target, voteCult, Settings.SandmanConversionChance);
+                                    break;
                                 default:
                                     ConvertToCult(target, voteCult);
                                     break;
@@ -3102,6 +3172,7 @@ namespace Werewolf_Node
                             case IRole.Wolf:
                             case IRole.AlphaWolf:
                             case IRole.WolfCub:
+                            case IRole.Lycan:
                                 harlot.IsDead = true;
                                 harlot.TimeDied = DateTime.Now;
                                 harlot.DiedLastNight = true;
@@ -3171,7 +3242,11 @@ namespace Werewolf_Node
                                 break;
                             case IRole.WolfCub: //seer doesn't see wolf type
                             case IRole.AlphaWolf:
+                            case IRole.WolfMan: //poor wolf man, is just a villager!
                                 role = IRole.Wolf;
+                                break;
+                            case IRole.Lycan: //sneaky wuff
+                                role = IRole.Villager;
                                 break;
                         }
                         Send(GetLocaleString("SeerSees", target.GetName(), GetDescription(role)), seer.Id);
@@ -3235,9 +3310,26 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            var negSeer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Oracle && !x.IsDead);
+            if (negSeer != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == negSeer.Choice);
+                if (target != null)
+                {
+                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != negSeer.Id && x.PlayerRole != target.PlayerRole).Select(x => x.PlayerRole).ToList();
+                    possibleRoles.Shuffle();
+                    possibleRoles.Shuffle();
+                    if (possibleRoles.Any())
+                    {
+                        Send(GetLocaleString("NegSeerSees", target.GetName(), GetDescription(possibleRoles[0])), negSeer.Id);
+                    }
+                }
+            }
 
-#region GA Night
+
+            #endregion
+
+            #region GA Night
 
             if (ga != null)
             {
@@ -3263,6 +3355,7 @@ namespace Werewolf_Node
                         case IRole.AlphaWolf:
                         case IRole.WolfCub:
                         case IRole.Wolf:
+                        case IRole.Lycan:
                             if (Program.R.Next(100) > 50)
                             {
                                 ga.IsDead = true;
@@ -3378,6 +3471,7 @@ namespace Werewolf_Node
                             {
                                 case IRole.WolfCub:
                                 case IRole.AlphaWolf:
+                                case IRole.Lycan:
                                 case IRole.Wolf: //sk and hunter can kill
                                     if (p.PlayerRole == IRole.WolfCub)
                                         WolfCubKilled = true;
@@ -3859,7 +3953,7 @@ namespace Werewolf_Node
                 player.CurrentQuestion = null;
                 player.Choice = 0;
                 var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId.ToString()}|{x.Id}") }).ToList();
-                choices.Add(new [] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId.ToString()}|skip") });
+                //choices.Add(new [] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId.ToString()}|skip") });
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
                 Thread.Sleep(100);
             }
@@ -3868,7 +3962,7 @@ namespace Werewolf_Node
         private void SendMenu(List<InlineKeyboardCallbackButton[]> choices, IPlayer to, string text, QuestionType qtype)
         {
             choices = choices.ToList();
-            var skip = choices.FirstOrDefault(x => x[0].Text == "Skip");
+            var skip = choices.FirstOrDefault(x => x[0].Text == GetLocaleString("Skip"));
 
             if (skip != null)
             {
@@ -3934,7 +4028,7 @@ namespace Werewolf_Node
                 if (options.Any())
                 {
                     var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                    choices.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{Program.ClientId}|-1") });
+                    choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
                     SendMenu(choices, detective, GetLocaleString("AskDetect"), QuestionType.Detect);
                 }
             }
@@ -3950,6 +4044,19 @@ namespace Werewolf_Node
                     }
                 }.ToList();
                 SendMenu(choices, mayor, GetLocaleString("AskMayor"), QuestionType.Mayor);
+            }
+
+            var sandman = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sandman & !x.IsDead & !x.HasUsedAbility);
+            if (sandman != null)
+            {
+                var choices = new[]
+                {
+                    new[]
+                    {
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|no")
+                    }
+                }.ToList();
+                SendMenu(choices, sandman, GetLocaleString("AskSandman"), QuestionType.Sandman);
             }
 
             var blacksmith = Players.FirstOrDefault(x => x.PlayerRole == IRole.Blacksmith & !x.IsDead & !x.HasUsedAbility);
@@ -3977,7 +4084,7 @@ namespace Werewolf_Node
                     if (options.Any())
                     {
                         var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                        choices.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{Program.ClientId}|-1") });
+                        choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
                         SendMenu(choices, gunner, GetLocaleString("AskShoot", gunner.Bullet), QuestionType.Shoot);
                     }
                 }
@@ -4013,6 +4120,7 @@ namespace Werewolf_Node
                     case IRole.Fool:
                     case IRole.Seer:
                     case IRole.Sorcerer:
+                    case IRole.Oracle:
                         targets = targetBase.ToList();
                         msg = GetLocaleString("AskSee");
                         qtype = QuestionType.See;
@@ -4025,6 +4133,7 @@ namespace Werewolf_Node
                     case IRole.Wolf:
                     case IRole.AlphaWolf:
                     case IRole.WolfCub:
+                    case IRole.Lycan:
                         if (!_silverSpread)
                         {
                             targets = targetBase.Where(x => !WolfRoles.Contains(x.PlayerRole)).ToList();
@@ -4096,7 +4205,7 @@ namespace Werewolf_Node
                 }
                 var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
                 if (player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid && player.PlayerRole != IRole.Doppelgänger)
-                    buttons.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{Program.ClientId}|-1") });
+                    buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
 
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))
                 {
@@ -4197,7 +4306,7 @@ namespace Werewolf_Node
             //send a menu to the hunter, asking who he wants to kill as he is hung....
             var hunterChoices = new List<InlineKeyboardCallbackButton[]>();
             hunterChoices.AddRange(Players.Where(x => !x.IsDead).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }));
-            hunterChoices.Add(new[] { new InlineKeyboardCallbackButton("Skip", $"vote|{Program.ClientId}|-1") });
+            hunterChoices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
 
             //raise hunter from dead long enough to shoot
             hunter.IsDead = false;
@@ -4715,6 +4824,6 @@ namespace Werewolf_Node
             }
         }
 
-#endregion
+        #endregion
     }
 }

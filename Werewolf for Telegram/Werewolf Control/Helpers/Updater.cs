@@ -258,7 +258,7 @@ namespace Werewolf_Control.Helpers
                         
                         currentVersion = currentChoice.Version;
                         //alert dev group
-                        Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.", -1001076212715);
+                        Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.", -1001077134233);
                         //kill existing nodes
                         foreach (var node in Bot.Nodes)
                             node.ShutDown();
@@ -276,7 +276,7 @@ namespace Werewolf_Control.Helpers
                         await Task.Delay(5000);
                         //await Bot.Send($"New control found.  Updating.", -1001077134233);
                         //fire off the updater
-                        Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001076212715");
+                        Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
                         Bot.Running = false;
                         Program.Running = false;
                         Bot.Api.StopReceiving();
@@ -313,7 +313,7 @@ namespace Werewolf_Control.Helpers
 #if !DEBUG
             catch (Exception e)
             {
-                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001076212715, parseMode: ParseMode.Default);
+                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233, parseMode: ParseMode.Default);
             }
 #endif
         }
