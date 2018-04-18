@@ -1264,10 +1264,12 @@ namespace Werewolf_Node
             var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
             var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
             for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
+            {
                 rolesToAssign.Add(wolftoadd);
                 if (wolftoadd != IRole.Wolf)
                     possiblewolves.Remove(wolftoadd);
                 wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
+            }
             //add remaining roles to 'card pile'
             foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
             {
