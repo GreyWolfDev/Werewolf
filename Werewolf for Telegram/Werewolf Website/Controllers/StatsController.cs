@@ -241,7 +241,7 @@ namespace Werewolf_Web.Controllers
                         survived = new { total = survived, percent = survived * 100 / gamesPlayed },
                         mostCommonRole = roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?",
                         mostKilled = new { name = killed.Name, id = killed.TelegramId, link = killedlink, times = killed.times },
-                        mostKilledBy = new { name = killedby.Name, id = killedby.TelegramId, link = killedbylink, times = killed.times },
+                        mostKilledBy = new { name = killedby.Name, id = killedby.TelegramId, link = killedbylink, times = killedby.times },
                         achievements = p.Achievements
                     };
                     return Json(reply, JsonRequestBehavior.AllowGet);

@@ -262,6 +262,15 @@ namespace Werewolf_Control
 
                 var gifchoice = m.ReplyToMessage.Text;
                 gifchoice = gifchoice.Substring(gifchoice.IndexOf("#") + 1);
+				
+				if (m.Document.FileSize >= 1048576) // Maximum size is 1 MB
+				{
+					Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
+					"Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, 
+					replyMarkup: new ForceReply() { Force = true });
+					return;
+				}
+				
                 var id = m.Document.FileId;
                 switch (gifchoice)
                 {

@@ -326,18 +326,19 @@ namespace Werewolf_Control.Handler
                                     update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
+                                    if (new[] { "Thief", "WiseElder", "Pacifist" }.Contains(args[0].Replace("about", ""))) return;
                                     var reply = Commands.GetAbout(update, args);
-                                    if (reply != null)
+                                    if (!String.IsNullOrEmpty(reply))
                                     {
 
                                         if (AddCount(update.Message.From.Id, update.Message)) return;
                                         try
                                         {
                                             var result = Send(reply, update.Message.From.Id).Result;
-                                            if (update.Message.Chat.Type != ChatType.Private)
-                                                Send(
-                                                    GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)),
-                                                    update.Message.Chat.Id);
+                                            //if (update.Message.Chat.Type != ChatType.Private)
+                                            //    Send(
+                                            //        GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)),
+                                            //        update.Message.Chat.Id);
 
                                         }
                                         catch (Exception e)
@@ -446,7 +447,7 @@ namespace Werewolf_Control.Handler
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
-                                          "Ok, send me the GIF you want to use for this situation, as a reply") ??
+                                          "send me the GIF you want to use for this situation, as a reply") ??
                                       false))
                             {
                                 Commands.AddGif(update.Message);
@@ -503,7 +504,7 @@ namespace Werewolf_Control.Handler
                                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
                                     if (grp == null)
                                     {
-                                        grp = MakeDefaultGroup(id, update.Message.Chat.Title, "NewChatMember");
+                                        grp = Commands.MakeDefaultGroup(id, update.Message.Chat.Title, "NewChatMember");
                                         DB.Groups.Add(grp);
                                         DB.SaveChanges();
                                         grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
@@ -714,7 +715,7 @@ namespace Werewolf_Control.Handler
             //        badge += " 🥉";
             //    if (p.Founder ?? false)
             //        badge += "💎";
-
+            //
             //    Bot.Send($"Successfully received ${amt} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}", q.From.Id);
             //    //check to see how many people have purchased gif packs
 
@@ -1278,7 +1279,7 @@ namespace Werewolf_Control.Handler
                                         i++;
                                     }
 
-                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode: ParseMode.Html);
+                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode:ParseMode.Html);
                                     break;
                                 }
                             }
@@ -1349,7 +1350,7 @@ namespace Werewolf_Control.Handler
                         #region Config Commands
                         case "lang":
                             //load up each file and get the names
-                            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+                            var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
                             buttons.Clear();
                             buttons.AddRange(langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"setlang|{groupid}|{x}|null|base")));
@@ -1764,7 +1765,7 @@ namespace Werewolf_Control.Handler
 
         internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu, bool addAllbutton = true)
         {
-            var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).ToList();
+            var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
             var isBase = args[4] == "base";
             if (isBase)
             {
@@ -1829,29 +1830,29 @@ namespace Werewolf_Control.Handler
 
         }
 
-        internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
-        {
-            return new Group
-            {
-                GroupId = groupid,
-                Name = name,
-                Language = "English",
-                BotInGroup = true,
-                ShowRoles = true,
-                Mode = "Player",
-                DayTime = Settings.TimeDay,
-                LynchTime = Settings.TimeLynch,
-                NightTime = Settings.TimeNight,
-                AllowFool = true,
-                AllowTanner = true,
-                AllowCult = true,
-                DisableFlee = false,
-                MaxPlayers = 35,
-                EnableSecretLynch = false,
-                CreatedBy = createdBy,
-                Flags = (long)GroupConfig.Update
-            };
-        }
+        //internal static Group MakeDefaultGroup(long groupid, string name, string createdBy)
+        //{
+        //    return new Group
+        //    {
+        //        GroupId = groupid,
+        //        Name = name,
+        //        Language = "English",
+        //        BotInGroup = true,
+        //        ShowRoles = true,
+        //        Mode = "Player",
+        //        DayTime = Settings.TimeDay,
+        //        LynchTime = Settings.TimeLynch,
+        //        NightTime = Settings.TimeNight,
+        //        AllowFool = true,
+        //        AllowTanner = true,
+        //        AllowCult = true,
+        //        DisableFlee = false,
+        //        MaxPlayers = 35,
+        //        EnableSecretLynch = false,
+        //        CreatedBy = createdBy,
+        //        Flags = (long)(GroupConfig.Update | GroupConfig.ThiefFull | GroupConfig.AllowThief)
+        //    };
+        //}
 
         internal static InlineKeyboardMarkup GetConfigMenu(long id)
         {
