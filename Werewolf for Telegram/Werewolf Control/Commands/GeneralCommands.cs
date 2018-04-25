@@ -217,7 +217,7 @@ namespace Werewolf_Control
                                   $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
                                   $"\nFor role information, use /rolelist." +
                                   $"\nIf you want to set your default language, use /setlang." +
-                                  $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @werewolfdev for updates from the developer." +
+                                  $"\nBe sure to stop by <a href=\"https://telegram.me/greywolfsupport\">Grey Wolf Support</a> for any questions, and subscribe to @greywolfdev for updates from the developers." +
                                   $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
                         Bot.Send(msg, u.Message.Chat.Id);
                         return;

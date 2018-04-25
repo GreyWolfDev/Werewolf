@@ -23,9 +23,9 @@ namespace Werewolf_Control
         {
             //Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, 
             //    "Want to help keep Werewolf online? Please donate to:\n" +
-            //    "•PayPal: PayPal.me/greywolfdevelopment\n" +
+            //    "•PayPal: paypal.me/GreyWolfDevelopment\n" +
             //    "•Bitcoin: 13QvBKfAattcSxSsW274fbgnKU5ASpnK3A" +
-            //    "\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @werewolfsupport", ParseMode.Html, true);
+            //    "\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @greywolfsupport", ParseMode.Html, true);
             var menu = new Menu();
             if (u.Message.Chat.Type == ChatType.Private)
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Telegram", "donatetg"));
@@ -33,7 +33,7 @@ namespace Werewolf_Control
             {
                 menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/{Bot.Me.Username}?start=donatetg"));
             }
-            menu.Buttons.Add(new InlineKeyboardUrlButton("PayPal", "https://PayPal.me/greywolfdevelopment"));
+            menu.Buttons.Add(new InlineKeyboardUrlButton("PayPal", "https://www.paypal.me/GreyWolfDevelopment"));
             var markup = menu.CreateMarkupFromMenu();
             var gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  "; //"Custom gif packs are not available at this time, watch the update channel for more news!  ";
             //using (var db = new WWContext())
@@ -52,7 +52,7 @@ namespace Werewolf_Control
                 "•$100 USD: 🥇\n\n" +
                 "You might also see this special badge: 💎\nThis is reserved for people who donated prior to there being any rewards for donating\n" +
                 "We also accept Bitcoin donations at: 13QvBKfAattcSxSsW274fbgnKU5ASpnK3A\n" +
-                "If you donate via PayPal or Bitcoin, you will need to contact @werewolfsupport to claim your prize.  If you donate via Telegram, it's automated, no need to contact an admin :)\n" +
+                "If you donate via PayPal or Bitcoin, you will need to contact @greywolfsupport to claim your prize.  If you donate via Telegram, it's automated, no need to contact an admin :)\n" +
                 "More information about the Custom Gif Packs: http://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-07-31\n" +
                 "How would you like to donate?",
                 replyMarkup: markup);
@@ -72,7 +72,7 @@ namespace Werewolf_Control
                 var json = p?.CustomGifSet;
                 if ((p?.DonationLevel ?? 0) < 10)
                 {
-                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
+                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate to unlock it first.", u.Message.From.Id);
                     return;
                 }
 
@@ -89,7 +89,7 @@ namespace Werewolf_Control
                 else { data = JsonConvert.DeserializeObject<CustomGifData>(json ?? ""); }
                 //if (!data.HasPurchased)
                 //{
-                //    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", u.Message.From.Id);
+                //    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate to unlock it first.", u.Message.From.Id);
                 //    return;
                 //}
 
@@ -100,6 +100,7 @@ namespace Werewolf_Control
                     "• Gifs that will NOT be allowed:\n" +
                     " - Gifs containing brutal images\n" +
                     " - Gifs containing illegal content\n" +
+                    " - Gifs with a filesize larger than 1 Megabyte\n" +                         
                     " - Others, at our discretion\n" +
                     "• I will send you a description of the image, to which you will reply (to the message) with the gif you want to use\n" +
                     "• At this time, custom gif packs ONLY work in @werewolfbot, NOT @werewolfbetabot\n" +
@@ -215,7 +216,7 @@ namespace Werewolf_Control
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
                 Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
-                Bot.Send("Your pack has been submitted for approval to the admin.  Please wait while we review.",
+                Bot.Send("Your pack has been submitted for approval to a global admin.  Please wait while we review it.",
                     q.From.Id);
                 return;
             }
@@ -229,7 +230,7 @@ namespace Werewolf_Control
                     data.ShowBadge = !data.ShowBadge;
                     p.CustomGifSet = JsonConvert.SerializeObject(data);
                     db.SaveChanges();
-                    Bot.Send($"You badge will {(data.ShowBadge ? "" : "not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
+                    Bot.Send($"Your badge will {(data.ShowBadge ? "" : "not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
                     return;
                 }
             }
@@ -248,13 +249,13 @@ namespace Werewolf_Control
 
                 if (String.IsNullOrEmpty(json))
                 {
-                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", m.From.Id);
+                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate to unlock it first", m.From.Id);
                     return;
                 }
                 var data = JsonConvert.DeserializeObject<CustomGifData>(json);
                 if (!data.HasPurchased)
                 {
-                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", m.From.Id);
+                    Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate to unlock it first", m.From.Id);
                     return;
                 }
 
@@ -326,7 +327,7 @@ namespace Werewolf_Control
         {
             var menu = new Menu();
             Bot.Api.SendTextMessageAsync(q?.From.Id ?? m.From.Id,
-                "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
+                "How much would you like to donate?  Please enter a whole number, in US Dollar (USD), in reply to this message",
                 replyMarkup: new ForceReply { Force = true });
         }
 
@@ -343,14 +344,14 @@ namespace Werewolf_Control
 #elif RELEASE
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
-                Bot.Api.SendInvoiceAsync(m.From.Id, "Werewolf Donation", "Make a donation to Werewolf to help keep us online", "somepayloadtest", api,
+                Bot.Api.SendInvoiceAsync(m.From.Id, "Werewolf Donation", "Make a donation to Werewolf to help us keep it online", "somepayloadtest", api,
                     "startparam", "USD", new[] { new LabeledPrice() { Amount = amt * 100, Label = "Donation" } });
             }
             else
             {
                 Bot.Api.SendTextMessageAsync(m.From.Id,
                     "Invalid input.\n" +
-                    "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
+                    "How much would you like to donate?  Please enter a whole number, in US Dollar (USD), in reply to this message",
                     replyMarkup: new ForceReply { Force = true });
             }
 
