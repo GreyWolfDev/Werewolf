@@ -28,10 +28,14 @@ namespace Werewolf_Control
             //    "\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @werewolfsupport", ParseMode.Html, true);
             var menu = new Menu();
             if (u.Message.Chat.Type == ChatType.Private)
+#if RELEASE
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Telegram", "donatetg"));
+#else
+                menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
+#endif
             else
             {
-                menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/{Bot.Me.Username}?start=donatetg"));
+                menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
             }
             menu.Buttons.Add(new InlineKeyboardUrlButton("PayPal", "https://PayPal.me/greywolfdevelopment"));
             var markup = menu.CreateMarkupFromMenu();
@@ -51,8 +55,7 @@ namespace Werewolf_Control
                 "•$50 USD: 🥈\n" +
                 "•$100 USD: 🥇\n\n" +
                 "You might also see this special badge: 💎\nThis is reserved for people who donated prior to there being any rewards for donating\n" +
-                "We also accept Bitcoin donations at: 13QvBKfAattcSxSsW274fbgnKU5ASpnK3A\n" +
-                "If you donate via PayPal or Bitcoin, you will need to contact @werewolfsupport to claim your prize.  If you donate via Telegram, it's automated, no need to contact an admin :)\n" +
+                "If you donate via PayPal, you will need to contact @werewolfsupport to claim your prize.  If you donate via Telegram, it's automated, no need to contact an admin :)\n" +
                 "More information about the Custom Gif Packs: http://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-07-31\n" +
                 "How would you like to donate?",
                 replyMarkup: markup);
