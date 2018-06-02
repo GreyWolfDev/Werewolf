@@ -45,7 +45,7 @@ namespace Werewolf_Control
             if (args[1] == null) //only send the message if there is no extra args (otherwise it's more likely for other bots)
             {
                 Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/werewolfdev)",
-                                                            parseMode: ParseMode.Markdown);
+                                                            parseMode: ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
 
