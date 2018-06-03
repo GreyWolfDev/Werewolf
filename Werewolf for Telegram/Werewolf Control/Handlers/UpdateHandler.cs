@@ -1912,6 +1912,9 @@ namespace Werewolf_Control.Handler
             var commands = new InlineCommand[]
             {
                 new StatsInlineCommand(q.From),
+                new KillsInlineCommand(q),
+                new KilledByInlineCommand(q),
+                new TypesOfDeathInlineCommand(q),
             };
 
             List<InlineCommand> choices;
