@@ -257,9 +257,13 @@ namespace Werewolf_Control.Models
                                   join pla in db.Players on gk.VictimId equals pla.Id
                                   where pla.TelegramId == p.TelegramId
                                   where gk.KillMethodId != 0
-                                  group gk by gk.KillMethodId);
-                    var totalDeaths = deaths.Sum(x => x.Count());
-                    var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
+                                  group gk by new { kid = gk.KillMethodId, gid = gk.GameId, day = gk.Day });
+                    var temp = (from i in deaths
+                                group i by i.Key.kid);
+                    var totalDeaths = temp.Sum(x => x.Count());
+                    // var totalDeaths = deaths.Sum(x => x.Count());
+                    // var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
+                    var deathInfo = temp.OrderByDescending(x => x.Count()).Take(5);
 
                     if (p.UserName != null)
                         Content += $"\nTypes of deaths that <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> most had:\n";
