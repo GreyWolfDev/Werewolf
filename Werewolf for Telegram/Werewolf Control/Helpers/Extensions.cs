@@ -136,7 +136,6 @@ namespace Werewolf_Control.Helpers
         public static Player GetTarget(this Update u, WWContext db)
         {
             var message = u.Message;
-            var args = message.GetParameters()[1].Split(' ')[0];
 
             var sourceUser = message.GetBasePlayer(db);
             if (message == null) return sourceUser;
@@ -146,6 +145,11 @@ namespace Werewolf_Control.Helpers
                 var userid = m.ForwardFrom?.Id ?? m.From.Id;
                 return db.Players.FirstOrDefault(x => x.TelegramId == userid) ?? sourceUser;
             }
+
+            var args = message.GetParameters()[1];
+            if (args == null)
+                return sourceUser;
+            args = args.Split(' ')[0];
             if (String.IsNullOrWhiteSpace(args))
             {
                 return sourceUser;
