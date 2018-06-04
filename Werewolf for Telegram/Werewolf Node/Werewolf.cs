@@ -116,6 +116,7 @@ namespace Werewolf_Node
                     {
                         // ignored
                     }
+                    AllowNSFW = DbGroup.HasFlag(GroupConfig.AllowNSFW);
 #if !BETA
                     var player = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
                     if (player?.CustomGifSet != null)
@@ -123,15 +124,18 @@ namespace Werewolf_Node
                         var gifset = JsonConvert.DeserializeObject<CustomGifData>(player.CustomGifSet);
                         if (gifset.Approved == true)
                         {
-                            if (gifset.StartChaosGame != null)
+                            if (!(gifset.NSFW == true && !AllowNSFW))
                             {
-                                StartChaosGame.Clear();
-                                StartChaosGame.Add(gifset.StartChaosGame);
-                            }
-                            if (gifset.StartGame != null)
-                            {
-                                StartGame.Clear();
-                                StartGame.Add(gifset.StartGame);
+                                if (gifset.StartChaosGame != null)
+                                {
+                                    StartChaosGame.Clear();
+                                    StartChaosGame.Add(gifset.StartChaosGame);
+                                }
+                                if (gifset.StartGame != null)
+                                {
+                                    StartGame.Clear();
+                                    StartGame.Add(gifset.StartGame);
+                                }
                             }
                         }
                     }
@@ -172,7 +176,6 @@ namespace Werewolf_Node
                         SecretLynch = DbGroup.HasFlag(GroupConfig.EnableSecretLynch);
                         ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
                     }
-                    AllowNSFW = DbGroup.HasFlag(GroupConfig.AllowNSFW);
 
 
                     LoadLanguage(DbGroup.Language);
