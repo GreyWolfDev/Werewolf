@@ -70,7 +70,15 @@ namespace Werewolf_Control.Helpers
                 using (var db = new WWContext())
                 {
                     var lastUpdate = db.v_GroupRanking.Max(x => x.LastRefresh);
-                    _list = db.v_GroupRanking.Where(x => x.LastRefresh == lastUpdate).ToList();
+                    try
+                    {
+                        _list = db.v_GroupRanking.GroupBy(x => new { x.TelegramId, x.Name, x.Language, x.Ranking, x.LastRefresh })
+                            .SelectMany(x => x).ToList();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                 }
                 _lastGetAll = DateTime.UtcNow;
             }
@@ -122,7 +130,7 @@ namespace Werewolf_Control.Helpers
             if (variant == "all")
             {
                 var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang).Select(x => x.FileName);
-                foreach (var g in GetAll().Where(x => langs.Contains(x.Language)).GroupBy(x => x.GroupId).Select(x => x.OrderByDescending(y => y.Ranking).First()))
+                foreach (var g in GetAll().Where(x => langs.Contains(x.Language)).GroupBy(x => x.GroupId).Select(x => x.OrderByDescending(y => y.LastRefresh).ThenByDescending(y => y.Ranking).First()))
                     yield return g;
             }
             else

@@ -1285,7 +1285,7 @@ namespace Werewolf_Control.Handler
                             }
                            
 
-                            var groups = PublicGroups.ForLanguage(choice, variant).ToList().OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
+                            var groups = PublicGroups.ForLanguage(choice, variant).ToList().GroupBy(x => x.GroupId).Select(x => x.First()).OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
                            
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
