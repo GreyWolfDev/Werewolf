@@ -186,7 +186,7 @@ namespace Werewolf_Control.Helpers
         {
             try
             {
-                var url = "https://parabola949.VisualStudio.com/DefaultCollection/";
+                var url = "https://greywolfdev.visualstudio.com/DefaultCollection/";
                 var build = new BuildHttpClient(new Uri(url), new VssCredentials(new VssBasicCredential("", RegHelper.GetRegValue("VSTSToken"))));
 
                 // First we get project's GUID and buildDefinition's ID.
