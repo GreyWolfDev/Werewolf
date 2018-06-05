@@ -2403,7 +2403,7 @@ namespace Werewolf_Node
                     check.IsDead = true;
                     if (check.PlayerRole == IRole.WolfCub)
                         WolfCubKilled = true;
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan }.Contains(check.PlayerRole))
                         gunner.BulletHitVillager = true;
                     check.TimeDied = DateTime.Now;
                     //update database
