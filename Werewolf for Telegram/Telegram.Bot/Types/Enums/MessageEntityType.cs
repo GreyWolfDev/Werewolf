@@ -36,5 +36,8 @@ namespace Telegram.Bot.Types.Enums
 
         [EnumMember(Value = "text_mention")]
         TextMention,
+
+        [EnumMember(Value = "phone_number")]
+        PhoneNumber,
     }
 }
