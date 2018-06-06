@@ -39,5 +39,8 @@ namespace Telegram.Bot.Types.Enums
 
         [EnumMember(Value = "phone_number")]
         PhoneNumber,
+        
+        [EnumMember(Value = "cashtag")]
+        Cashtag,
     }
 }
