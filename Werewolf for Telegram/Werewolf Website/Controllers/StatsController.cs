@@ -251,6 +251,105 @@ namespace Werewolf_Web.Controllers
             }
         }
 
+		[HttpGet]
+        public JsonResult Kills(int pid, bool json=false)
+		{
+			using (var DB = new WWContext())
+			{
+				var p = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
+				if (p == null)
+                {
+                    return Json("", JsonRequestBehavior.AllowGet);
+                }
+				var killed = db.PlayerMostKilled(p.TelegramId).AsEnumerable().Take(5);
+				if (!json)
+                {
+					var reply = "<br/><table class=\"table table-hover\"><tbody>";
+					foreach (var a in killed)
+						reply += "<tr><td><b>" + a.Name + "</b></td><td>" + a.times + "</td></tr>";
+					reply += "</tbody></table>";
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+				}
+				else
+				{
+					List<object> reply = new List<object>();
+					foreach (var a in killed)
+						reply.Add(new { name = a.Name, times = a.times});
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+				}
+			}
+		}
+
+		[HttpGet]
+        public JsonResult KilledBy(int pid, bool json=false)
+		{
+			using (var DB = new WWContext())
+			{
+				var p = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
+				if (p == null)
+                {
+                    return Json("", JsonRequestBehavior.AllowGet);
+                }
+				var killed = DB.PlayerMostKilledBy(p.TelegramId).AsEnumerable().Take(5);
+				if (!json)
+                {
+					var reply = "<br/><table class=\"table table-hover\"><tbody>";
+					foreach (var a in killed)
+						reply += "<tr><td><b>" + a.Name + "</b></td><td>" + a.times + "</td></tr>";
+					reply += "</tbody></table>";
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+				}
+				else
+				{
+					List<object> reply = new List<object>();
+					foreach (var a in killed)
+						reply.Add(new { name = a.Name, times = a.times});
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+				}
+			}
+		}
+
+		[HttpGet]
+        public JsonResult Death(int pid, bool json=false)
+		{
+			using (var DB = new WWContext())
+			{
+				var p = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
+				if (p == null)
+                {
+                    return Json("", JsonRequestBehavior.AllowGet);
+                }
+				var deaths = (from gk in DB.GameKills
+                                  join pla in DB.Players on gk.VictimId equals pla.Id
+                                  where pla.TelegramId == p.TelegramId
+                                  where gk.KillMethodId != 0
+                                  group gk by new { kid = gk.KillMethodId, gid = gk.GameId, day = gk.Day });
+				var temp = (from i in deaths
+							group i by i.Key.kid);
+				var totalDeaths = temp.Sum(x => x.Count());
+				// var totalDeaths = deaths.Sum(x => x.Count());
+				// var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
+				var deathInfo = temp.OrderByDescending(x => x.Count()).Take(5);
+				if (!json)
+                {
+					var reply = "<br/><table class=\"table table-hover\"><tbody>";
+					foreach (var a in killed)
+						var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
+						reply += "<tr><td><b>" + killMethod + "</b></td><td>" + a.Count() / totalDeaths * 100.0 + "</td></tr>";
+					reply += "</tbody></table>";
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+				}
+				else
+				{
+					List<object> reply = new List<object>();
+					foreach (var a in killed)
+						var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
+						reply.Add(new { method = killMethod, percent = a.Count() / totalDeaths * 100});
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+				}
+			}
+		}
+		
         [HttpGet]
         public JsonResult PlayerAchievements(int pid, bool json=false)
         {
