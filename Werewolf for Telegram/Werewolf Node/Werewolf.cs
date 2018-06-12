@@ -2261,7 +2261,7 @@ namespace Werewolf_Node
                     teammates = "";
                     foreach (var w in Players.GetPlayersForRoles(WolfRoles, exceptPlayer: thief))
                     {
-                        Send(GetLocaleString("ThiefToWolf", $"{thief.GetName()}"), w.Id);
+                        Send(GetLocaleString("ThiefToWolf", target.GetName(), thief.GetName()), w.Id);
                         teammates += $"{w.GetName()}" + ", ";
                     }
                     Send(GetLocaleString("ThiefTransformNewTeammates", teammates), thief.Id);
