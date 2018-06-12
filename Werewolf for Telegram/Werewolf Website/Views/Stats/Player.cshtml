@@ -12,6 +12,26 @@
         <div id="groupStats" class="table-responsive">
             Loading...
         </div>
+        <div class="table-responsive">
+            <div style="width: 33%; float: left;" class="table-responsive">
+                <h3>You killed...</h3>
+                <div id="playerKills" class="table-responsive">
+                    Loading...
+                </div>
+            </div>
+            <div style="width: 33%; float: left;" class="table-responsive">
+                <h3>You were killed by:</h3>
+                <div id="playerKilledBy" class="table-responsive">
+                    Loading...
+                </div>
+            </div>
+            <div style="width: 33%; float: left;" class="table-responsive">
+                <h3>You died because of...</h3>
+                <div id="playerDeaths" class="table-responsive">
+                    Loading...
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
@@ -19,7 +39,6 @@
     <div class="box-static box-dark box-border-top padding-6">
         <div class="box-title margin-bottom-30">
             <h2 class="size-20">Player Achievements</h2>
-            <p>This section is still in beta, improvements are coming (including proper names / descriptions / icons)</p>
         </div>
         <div id="playerAchievement" class="table-responsive">
             Loading...
@@ -86,6 +105,51 @@
         },
         success: function (d) {
             $('#playerAchievement').html(d);
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: { pid: id },
+        url: '/Stats/PlayerKills/',
+        error: function (error) {
+            console.log(error);
+            $('#playerKills').html(error);
+        },
+        success: function (d) {
+            $('#playerKills').html(d);
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: { pid: id },
+        url: '/Stats/PlayerKilledBy/',
+        error: function (error) {
+            console.log(error);
+            $('#playerKilledBy').html(error);
+        },
+        success: function (d) {
+            $('#playerKilledBy').html(d);
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: { pid: id },
+        url: '/Stats/PlayerDeaths/',
+        error: function (error) {
+            console.log(error);
+            $('#playerDeaths').html(error);
+        },
+        success: function (d) {
+            $('#playerDeaths').html(d);
         }
     });
 
