@@ -88,7 +88,7 @@ namespace Werewolf_Control
                 replyMarkup: menu);
         }
 
-        [Attributes.Command(Trigger = "uploadlang", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "uploadlang", LangAdminOnly = true)]
         public static void UploadLang(Update update, string[] args)
         {
             try

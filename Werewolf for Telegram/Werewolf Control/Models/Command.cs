@@ -17,5 +17,6 @@ namespace Werewolf_Control.Models
         public bool Blockable { get; set; }
         public Bot.ChatCommandMethod Method { get; set; }
         public bool InGroupOnly { get; set; }
+        public bool LangAdminOnly { get; internal set; }
     }
 }

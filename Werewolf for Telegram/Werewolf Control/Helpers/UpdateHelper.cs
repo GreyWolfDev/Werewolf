@@ -18,6 +18,12 @@ namespace Werewolf_Control.Helpers
             295152997,  //Ludwig
             106665913,  //Jeff
         };
+
+        internal static int[] LangAdmins =
+        {
+            267376056,  //Florian
+        };
+
         internal static bool IsGroupAdmin(Update update)
         {
             return IsGroupAdmin(update.Message.From.Id, update.Message.Chat.Id);
@@ -29,6 +35,11 @@ namespace Werewolf_Control.Helpers
             {
                 return db.Admins.Any(x => x.UserId == id);
             }
+        }
+
+        internal static bool IsLangAdmin(int id)
+        {
+            return LangAdmins.Contains(id);
         }
 
         internal static bool IsGroupAdmin(int user, long group)

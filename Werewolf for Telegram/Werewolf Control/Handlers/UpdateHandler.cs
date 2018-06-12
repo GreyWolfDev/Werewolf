@@ -386,6 +386,14 @@ namespace Werewolf_Control.Handler
                                         Send(GetLocaleString("NotPara", GetLanguage(id)), id);
                                         return;
                                     }
+                                    if (command.LangAdminOnly)
+                                    {
+                                        if (!UpdateHelper.IsLangAdmin(update.Message.From.Id) && !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
+                                        {
+                                            Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
+                                            return;
+                                        }
+                                    }
                                     if (command.GlobalAdminOnly)
                                     {
                                         if (!UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
