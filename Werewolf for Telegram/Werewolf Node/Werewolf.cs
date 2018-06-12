@@ -1317,16 +1317,12 @@ namespace Werewolf_Node
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Thief:
-#if DEBUG
                         if (AllowThief)
                             rolesToAssign.Add(role);
-#endif
                         break;
                     case IRole.Pacifist:
                     case IRole.WiseElder:
-#if DEBUG
                         rolesToAssign.Add(role);
-#endif
                         break;
                     default:
                         rolesToAssign.Add(role);
