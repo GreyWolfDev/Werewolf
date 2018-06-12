@@ -603,18 +603,18 @@ namespace Werewolf_Node
                 //}
                 if (p.Name.StartsWith("/") || String.IsNullOrEmpty(p.Name) || p.Name.Trim().ToLower() == "skip" || p.Name.Trim().ToLower() == GetLocaleString("Skip").ToLower())
                 {
-                    SendWithQueue(GetLocaleString("ChangeNameToJoin",
-                        String.IsNullOrWhiteSpace(u.Username) ? u.FirstName + " " + u.LastName : "@" + u.Username));
+                    Send(GetLocaleString("ChangeNameToJoin",
+                        String.IsNullOrWhiteSpace(u.Username) ? u.FirstName + " " + u.LastName : "@" + u.Username), p.Id);
                     return;
                 }
                 if (Players.Any(x => x.Name == p.Name))
                 {
-                    SendWithQueue(GetLocaleString("NameExists", p.GetName(), p.TeleUser.Username));
+                    Send(GetLocaleString("NameExists", p.GetName(), p.TeleUser.Username), p.Id);
                     return;
                 }
                 if (Players.Count >= Settings.MaxPlayers)
                 {
-                    SendWithQueue(GetLocaleString("PlayerLimitReached"));
+                    Send(GetLocaleString("PlayerLimitReached"), p.Id);
                     return;
                 }
                 //check one more time
