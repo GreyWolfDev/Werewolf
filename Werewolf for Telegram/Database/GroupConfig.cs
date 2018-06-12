@@ -36,7 +36,11 @@ namespace Database
         AllowThief = 1024,
         [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(false)]
         ThiefFull = 2048,
-
+        [Editable(true), Question("secretlynchshowvotes", SettingQuestion.YesNo), DefaultValue(false)]
+        SecretLynchShowVotes = 4096,
+        [Editable(true), Question("secretlynchshowvoters", SettingQuestion.ShowHide), DefaultValue(false)]
+        SecretLynchShowVoters = 8192,
+        
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings
         Update = 4611686018427387904
