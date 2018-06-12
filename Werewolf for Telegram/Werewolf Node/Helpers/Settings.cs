@@ -110,6 +110,8 @@ namespace Werewolf_Node
             BlacksmithConversionChance = 75,
             OracleConversionChance = 50,
             SandmanConversionChance = 60,
+            WiseElderConversionChance = 30,
+            PacifistConversionChance = 80,
 #else
              PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
@@ -150,6 +152,8 @@ namespace Werewolf_Node
             BlacksmithConversionChance = 75,
             OracleConversionChance = 50,
             SandmanConversionChance = 60,
+            WiseElderConversionChance = 30,
+            PacifistConversionChance = 80,
 #endif
 
             GameJoinTime = 180,

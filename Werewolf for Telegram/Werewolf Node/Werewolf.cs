@@ -1351,6 +1351,7 @@ namespace Werewolf_Node
                 rolesToAssign.Add(IRole.Villager);
             return rolesToAssign;
         }
+
         private void AssignRoles()
         {
             try
@@ -1408,7 +1409,7 @@ namespace Werewolf_Node
                     //make sure that we have at least two teams
                     if (
                         rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner) //make sure we have at least one enemy
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner && x != IRole.Thief) //make sure we have at least one enemy
                     )
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it
@@ -3098,6 +3099,8 @@ namespace Werewolf_Node
                                         else
                                         {
                                             target.HasUsedAbility = true;
+                                            foreach (var wolf in voteWolves)
+                                                Send(GetLocaleString("WolvesTriedToEatWiseElder", target.GetName()), wolf.Id);
                                             Send(GetLocaleString("WolvesAteWiseElderPM"), target.Id);
                                         }
                                     }
@@ -3395,6 +3398,7 @@ namespace Werewolf_Node
                                     ConvertToCult(target, voteCult); //TODO: Decide conversion chances for Prince and Mayor!!
                                     break;
                                 case IRole.Doppelgänger:
+                                case IRole.Thief:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
                                 case IRole.Oracle:
@@ -3402,6 +3406,12 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Sandman:
                                     ConvertToCult(target, voteCult, Settings.SandmanConversionChance);
+                                    break;
+                                case IRole.WiseElder:
+                                    ConvertToCult(target, voteCult, Settings.WiseElderConversionChance);
+                                    break;
+                                case IRole.Pacifist:
+                                    ConvertToCult(target, voteCult, Settings.PacifistConversionChance);
                                     break;
                                 default:
                                     ConvertToCult(target, voteCult);
