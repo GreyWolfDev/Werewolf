@@ -144,7 +144,7 @@ namespace Werewolf_Node.Models
         Village, Cult, Wolf, Tanner,
         Neutral, SerialKiller, Lovers,
         SKHunter,
-        NoOne
+        NoOne, Thief
     }
 
     public enum KillMthd

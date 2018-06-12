@@ -26,6 +26,8 @@
         Mayor,
         SpreadSilver,
         Kill2,
-        Sandman
+        Sandman,
+        Pacifist,
+        Thief
     }
 }

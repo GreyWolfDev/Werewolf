@@ -34,7 +34,7 @@ namespace Database
         AllowNSFW = 512,
         [Editable(true), Question("allowthief"), DefaultValue(true)]
         AllowThief = 1024,
-        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(true)]
+        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(false)]
         ThiefFull = 2048,
 
 
