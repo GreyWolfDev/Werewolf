@@ -142,6 +142,9 @@ namespace Werewolf_Control
             reply += "/aboutOracle - Oracle 🌀\n";
             reply += "/aboutWolfMan - Wolf Man 👱‍🌚\n";
             reply += "/aboutLycan - Lycan 🐺🌝\n";
+            reply += "/aboutPacifist - Pacifist ☮️\n";
+            reply += "/aboutWiseElder - Wise Elder 📚\n";
+            reply += "/aboutThief - Thief 😈\n";
             Send(reply, update.Message.From.Id);
         }
     }
