@@ -2271,7 +2271,7 @@ namespace Werewolf_Node
                     teammates = "";
                     foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != thief.Id))
                     {
-                        Send(GetLocaleString("ThiefToCult", $"{thief.GetName()}"), w.Id);
+                        Send(GetLocaleString("ThiefToCult", target.GetName(), thief.GetName()), w.Id);
                         teammates += $"{w.GetName()}" + ", ";
                     }
                     Send(GetLocaleString("ThiefTransformNewTeammates", teammates), thief.Id);
