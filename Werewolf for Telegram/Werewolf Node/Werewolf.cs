@@ -2602,7 +2602,7 @@ namespace Werewolf_Node
                 {
                     try
                     {
-                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor && p.CurrentQuestion.QType != QuestionType.Sandman && p.CurrentQuestion.QType != QuestionType.Pacifist)
+                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor && p.CurrentQuestion.QType != QuestionType.Sandman)
                         {
                             Program.MessagesSent++;
                             Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
