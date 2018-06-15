@@ -3692,7 +3692,7 @@ namespace Werewolf_Node
 
             if (AllowThief)
             {
-                var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
+                var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
                 if (thief != null)
                 {
                     var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
