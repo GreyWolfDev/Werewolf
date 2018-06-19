@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-using Database;
 using Werewolf_Node.Models;
 
 namespace Werewolf_Node.Helpers

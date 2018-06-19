@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Database;
 using Telegram.Bot.Types;
 using Werewolf_Control.Helpers;
@@ -81,9 +78,9 @@ namespace Werewolf_Control.Models
                         ? $"{p.Name.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}"
                         : $"<a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}, {Commands.GetLocaleString(roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role, p.Language) ?? "Noob"}</a>";
                     Content += $"\n<code>{(count+"/"+ totalAch).PadRight(5)}</code> {Commands.GetLocaleString("AchievementsUnlocked", p.Language)}\n" +
-                               $"{won.Pad()} {Commands.GetLocaleString("GamesWon", p.Language)} ({won * 100 / gamesPlayed}%)\n" +
-                               $"{lost.Pad()} {Commands.GetLocaleString("GamesLost", p.Language)} ({lost * 100 / gamesPlayed}%)\n" +
-                               $"{survived.Pad()} {Commands.GetLocaleString("GamesSurvived", p.Language)} ({survived * 100 / gamesPlayed}%)\n" +
+                               $"{won.Pad()} {Commands.GetLocaleString("GamesWon", p.Language)} ({(((double)won / (double)gamesPlayed) * 100.0).ToString("#0.0")}%)\n" +
+                               $"{lost.Pad()} {Commands.GetLocaleString("GamesLost", p.Language)} ({(((double)lost / (double)gamesPlayed) * 100.0).ToString("#0.0")}%)\n" +
+                               $"{survived.Pad()} {Commands.GetLocaleString("GamesSurvived", p.Language)} ({(((double)survived / (double)gamesPlayed) * 100.0).ToString("#0.0")}%)\n" +
                                $"{gamesPlayed.Pad()} {Commands.GetLocaleString("TotalGames", p.Language)} \n" +
                                $"<code>{killed?.times}</code>\t{Commands.GetLocaleString("TimesKilled", p.Language)} {killed?.Name.FormatHTML()}\n" +
                                $"<code>{killedby?.times}</code>\t{Commands.GetLocaleString("TimesKilledBy", p.Language)} {killedby?.Name.FormatHTML()}";

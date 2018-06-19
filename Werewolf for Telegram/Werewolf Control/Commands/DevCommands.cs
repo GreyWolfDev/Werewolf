@@ -8,22 +8,15 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 using Database;
-using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
-using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
-using Werewolf_Control.Attributes;
 using File = System.IO.File;
-using RegHelper = Werewolf_Control.Helpers.RegHelper;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -47,7 +40,7 @@ namespace Werewolf_Control
                 {
                     try
                     {
-                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend(g), name + " - " + g).Result;
+                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, g, name + " - " + g).Result;
                     }
                     catch (AggregateException e)
                     {
@@ -353,8 +346,6 @@ namespace Werewolf_Control
             public int AttemptsMade { get; set; }
         }
 
-        private static Dictionary<int, List<BalancedGameAttempt>> BalancedAttempts;
-
         [Attributes.Command(Trigger = "createbalance", DevOnly = true)]
         public static void CreateBalancedGames(Update u, string[] args)
         {
@@ -581,7 +572,7 @@ namespace Werewolf_Control
             Send("You have been banned.  You may appeal your ban in @werewolfbanappeal", long.Parse(args[1]));
         }
 
-        [Attributes.Command(Trigger = "whois", DevOnly = true)]
+        [Attributes.Command(Trigger = "whois", GlobalAdminOnly = true)]
         public static void WhoIs(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -603,7 +594,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
         {
-            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardCallbackButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
+            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => InlineKeyboardButton.WithCallbackData(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
 
             Bot.Api.SendTextMessageAsync(u.Message.From.Id, "Which bot?",
                 replyMarkup: menu);
@@ -668,7 +659,7 @@ namespace Werewolf_Control
                                     Expires = (DateTime)SqlDateTime.MaxValue,
                                     Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                     TelegramId = player.TelegramId,
-                                    BanDate = DateTime.Now,
+                                    BanDate = DateTime.UtcNow,
                                     BannedBy = u.Message.From.FirstName,
                                     Name = player.Name
                                 };
@@ -693,7 +684,7 @@ namespace Werewolf_Control
                                     Expires = (DateTime)SqlDateTime.MaxValue,
                                     Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                     TelegramId = player.TelegramId,
-                                    BanDate = DateTime.Now,
+                                    BanDate = DateTime.UtcNow,
                                     BannedBy = u.Message.From.FirstName,
                                     Name = player.Name
                                 };
@@ -741,7 +732,7 @@ namespace Werewolf_Control
                                 Expires = (DateTime)SqlDateTime.MaxValue,
                                 Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
                                 TelegramId = player.TelegramId,
-                                BanDate = DateTime.Now,
+                                BanDate = DateTime.UtcNow,
                                 BannedBy = u.Message.From.FirstName,
                                 Name = player.Name
                             };
@@ -821,7 +812,7 @@ namespace Werewolf_Control
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 //now, check the json file
-                var timeStarted = DateTime.Now;
+                var timeStarted = DateTime.UtcNow;
                 Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
                 ChannelInfo channel = null;
                 try
@@ -885,7 +876,7 @@ namespace Werewolf_Control
                             if (gp != null)
                             {
                                 lastPlayed = gp.TimeStarted.Value;
-                                if (gp.TimeStarted >= DateTime.Now.AddDays(-14))
+                                if (gp.TimeStarted >= DateTime.UtcNow.AddDays(-14))
                                     continue;
                             }
 
@@ -990,7 +981,7 @@ namespace Werewolf_Control
 
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Send(
-                    $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.Now - timeStarted}",
+                    $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.UtcNow - timeStarted}",
                     u.Message.Chat.Id);
 
 
@@ -1060,15 +1051,15 @@ namespace Werewolf_Control
                 //get the languages which they played, make a menu out of it
                 var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id).ToList();
                 var menu = rankings.Select(x => new[] {
-                        new InlineKeyboardCallbackButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
-                        new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
+                        InlineKeyboardButton.WithCallbackData(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
+                        InlineKeyboardButton.WithCallbackData(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
                     }).ToList();
                 //add a button at the beginning and at the end
                 menu.Insert(0, new[] {
-                    new InlineKeyboardCallbackButton("Global", $"preferred|{grp.GroupId}|null|info"),
-                    new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                    InlineKeyboardButton.WithCallbackData("Global", $"preferred|{grp.GroupId}|null|info"),
+                    InlineKeyboardButton.WithCallbackData(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
                 });
-                menu.Add(new[] { new InlineKeyboardCallbackButton("Done", "done") });
+                menu.Add(new[] { InlineKeyboardButton.WithCallbackData("Done", "done") });
                 //send everything
                 Send(
                     $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
@@ -1106,7 +1097,7 @@ namespace Werewolf_Control
                         if (user != null)
                         {
                             //create a menu for this
-                            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardCallbackButton("No", "ohai|no") };
+                            var buttons = new[] { InlineKeyboardButton.WithCallbackData("Yes", "ohai|yes|" + user.Id), InlineKeyboardButton.WithCallbackData("No", "ohai|no") };
                             Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
                                 customMenu: new InlineKeyboardMarkup(buttons));
                         }
@@ -1169,7 +1160,7 @@ namespace Werewolf_Control
                 var someFileExists = false;
                 using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
                 {
-                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", $"getUpdates {DateTime.Now.ToString("MMM-dd-yyyy")}.log" };
+                    var files = new[] { "NodeFatalError.log", "error.log", "tcperror.log", "apireceiveerror.log", $"getUpdates {DateTime.UtcNow.ToString("MMM-dd-yyyy")}.log" };
 
                     foreach (var file in files)
                     {
@@ -1183,7 +1174,7 @@ namespace Werewolf_Control
                 if (someFileExists)
                 {
                     var fs = new FileStream(path, FileMode.Open);
-                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(fs, "erros.zip"));
                 }
             }
             catch(Exception e)
@@ -1220,7 +1211,7 @@ namespace Werewolf_Control
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
 
-            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardCallbackButton("No", $"movelang|no") };
+            var buttons = new[] { InlineKeyboardButton.WithCallbackData("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), InlineKeyboardButton.WithCallbackData("No", $"movelang|no") };
             Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 

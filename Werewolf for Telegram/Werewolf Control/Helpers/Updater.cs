@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Database;
 using Microsoft.TeamFoundation.Build.WebApi;
 using Microsoft.VisualStudio.Services.Common;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
 
 namespace Werewolf_Control.Helpers
 {
@@ -313,7 +311,7 @@ namespace Werewolf_Control.Helpers
 #if !DEBUG
             catch (Exception e)
             {
-                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233, parseMode: ParseMode.Default);
+                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233, parseMode: Telegram.Bot.Types.Enums.ParseMode.Default);
             }
 #endif
         }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Database;
 
 namespace StatsRotation
@@ -67,7 +62,7 @@ namespace StatsRotation
                     //    //Thread.Sleep(500);
                     //}
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }

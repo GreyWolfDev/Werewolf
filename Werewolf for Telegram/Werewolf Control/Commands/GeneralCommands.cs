@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
@@ -21,7 +17,7 @@ namespace Werewolf_Control
         [Command(Trigger = "ping")]
         public static void Ping(Update update, string[] args)
         {
-            var ts = DateTime.Now - update.Message.Date;
+            var ts = DateTime.UtcNow - update.Message.Date;
             var send = DateTime.Now;
             var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
                 $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
@@ -159,7 +155,7 @@ namespace Werewolf_Control
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -240,7 +236,6 @@ namespace Werewolf_Control
 
                     //try to get the guid of the game they want to join
                     int n,g;
-                    long gid = 0;
                     if (!(int.TryParse(nodeid, out n) && int.TryParse(gameid, out g)))
                         return;
 
@@ -332,7 +327,7 @@ namespace Werewolf_Control
                 }
 
                 var button = new InlineKeyboardMarkup(new[] {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
+                        InlineKeyboardButton.WithCallbackData(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
                     });
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
@@ -355,8 +350,8 @@ namespace Werewolf_Control
         {
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
-            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
-            buttons.Insert(0, new InlineKeyboardCallbackButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            buttons.Insert(0, InlineKeyboardButton.WithCallbackData("All", $"getlang|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -399,7 +394,7 @@ namespace Werewolf_Control
             //    reply += $"[Group Stats](www.tgwerewolf.com/Stats/Group/{update.Message.Chat.Id}) ({update.Message.Chat.Title})\n";
             //reply += $"[Player Stats](www.tgwerewolf.com/Stats/Player/{update.Message.From.Id}) ({update.Message.From.FirstName})";
 
-            Bot.Api.SendPhotoAsync(u.Message.Chat.Id, new FileToSend("AgADAQADkdUxG9tS9wFjV189xLDOYW705y8ABKUOCQdNzMe8cDECAAEC"), replyToMessageId: u.Message.MessageId);
+            Bot.Api.SendPhotoAsync(u.Message.Chat.Id, "AgADAQADkdUxG9tS9wFjV189xLDOYW705y8ABKUOCQdNzMe8cDECAAEC", replyToMessageId: u.Message.MessageId);
             //Bot.Api.SendTextMessage(u.Message.Chat.Id, "#stats");
             //if (u.Message.ReplyToMessage != null)
             //{

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -9,9 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
-using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using File = System.IO.File;
 
@@ -247,8 +244,8 @@ namespace Werewolf_Control.Helpers
                 //load up each file and get the names
                 var buttons = new[]
                 {
-                    new InlineKeyboardCallbackButton($"New", $"upload|{id}|{newFile.FileName}"),
-                    new InlineKeyboardCallbackButton($"Old", $"upload|{id}|current")
+                    InlineKeyboardButton.WithCallbackData($"New", $"upload|{id}|{newFile.FileName}"),
+                    InlineKeyboardButton.WithCallbackData($"Old", $"upload|{id}|current")
                 };
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
                 Bot.Api.SendTextMessageAsync(id, "Which file do you want to keep?", replyToMessageId: msgID,
@@ -400,7 +397,7 @@ namespace Werewolf_Control.Helpers
             
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new FileToSend("languages.zip", fs));
+            Bot.Api.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(fs, "languages.zip"));
         }
 
         public static void SendFile(long id, string choice)
@@ -408,7 +405,7 @@ namespace Werewolf_Control.Helpers
             var langOptions = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new FileToSend(option.FileName + ".xml", fs));
+            Bot.Api.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(fs, option.FileName + ".xml"));
         }
         
         internal static void SendBase(string choice, long id)
@@ -429,7 +426,7 @@ namespace Werewolf_Control.Helpers
                 }
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocumentAsync(id, new FileToSend($"{zipname}.zip", fs));
+                Bot.Api.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(fs, $"{zipname}.zip"));
                 
             }
             catch (Exception e)

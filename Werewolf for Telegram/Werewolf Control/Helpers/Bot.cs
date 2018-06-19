@@ -4,11 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Database;
 using Microsoft.Win32;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -74,7 +71,7 @@ namespace Werewolf_Control.Helpers
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
             Api = new TelegramBotClient(TelegramAPIKey);
-            Api.Timeout = TimeSpan.FromSeconds(10);
+            //Api.Timeout = TimeSpan.FromSeconds(10);
             //#if !BETA
             //#else
             //            Api.Timeout = TimeSpan.FromSeconds(20);
@@ -163,36 +160,36 @@ namespace Werewolf_Control.Helpers
             return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, replyMarkup: replyMarkup);
         }
 
-        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
-        {
-            try
-            {
-                using (var db = new WWContext())
-                {
-                    var id =
-#if RELEASE
-                        1;
-#elif RELEASE2
-                    2;
-#elif BETA
-                    3;
-#else
-                    4;
-#endif
-                    if (id == 4) return;
-                    var b = db.BotStatus.Find(id);
-                    b.BotStatus = statusChangeEventArgs.Status.ToString();
-                    CurrentStatus = b.BotStatus;
-                    db.SaveChanges();
+//        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+//        {
+//            try
+//            {
+//                using (var db = new WWContext())
+//                {
+//                    var id =
+//#if RELEASE
+//                        1;
+//#elif RELEASE2
+//                    2;
+//#elif BETA
+//                    3;
+//#else
+//                    4;
+//#endif
+//                    if (id == 4) return;
+//                    var b = db.BotStatus.Find(id);
+//                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+//                    CurrentStatus = b.BotStatus;
+//                    db.SaveChanges();
 
-                }
-            }
-            finally
-            {
+//                }
+//            }
+//            finally
+//            {
 
-            }
+//            }
 
-        }
+//        }
 
 
         private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
@@ -260,7 +257,7 @@ namespace Werewolf_Control.Helpers
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                var menu = new ReplyKeyboardRemove();
                 return Api.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: parseMode);
             }
             else if (customMenu != null)

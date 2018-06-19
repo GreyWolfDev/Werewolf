@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Database;
 using Newtonsoft.Json;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -95,7 +92,7 @@ namespace Werewolf_Control
             try
             {
                 var id = update.Message.Chat.Id;
-                if (update.Message.ReplyToMessage?.Type != MessageType.DocumentMessage)
+                if (update.Message.ReplyToMessage?.Type != MessageType.Document)
                 {
                     Send("Please reply to the file with /uploadlang", id);
                     return;
@@ -139,7 +136,7 @@ namespace Werewolf_Control
                 if (ban != null)
                 {
                     status = $"<b>Banned for: {ban.Reason}</b>\nBy: {ban.BannedBy} on {ban.BanDate?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper()}\n";
-                    var expire = (ban.Expires - DateTime.Now);
+                    var expire = (ban.Expires - DateTime.UtcNow);
                     if (expire > TimeSpan.FromDays(365))
                     {
                         status += "<b>Perm Ban</b>";
@@ -180,7 +177,7 @@ namespace Werewolf_Control
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
             //buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
@@ -564,7 +561,7 @@ namespace Werewolf_Control
                 }
 
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
-                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardCallbackButton("No", "restore|no") }));
+                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { InlineKeyboardButton.WithCallbackData("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), InlineKeyboardButton.WithCallbackData("No", "restore|no") }));
             }
         }
 
@@ -614,22 +611,22 @@ namespace Werewolf_Control
                     var id = u.Message.From.Id;
                     Send($"Sending gifs for {pid}", id);
                     Thread.Sleep(1000);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.CultWins), "Cult Wins");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.LoversWin), "Lovers Win");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.CultWins), "Cult Wins");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.LoversWin), "Lovers Win");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.NoWinner), "No Winner");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.SerialKillerWins), "SK Wins");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.NoWinner), "No Winner");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.SerialKillerWins), "SK Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartChaosGame), "Chaos Start");                 
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.StartGame), "Normal Start");      
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.StartChaosGame), "Chaos Start");                 
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.StartGame), "Normal Start");      
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.TannerWin), "Tanner Start");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagerDieImage), "Villager Eaten");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.TannerWin), "Tanner Start");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.VillagerDieImage), "Villager Eaten");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.VillagersWin), "Village Wins");
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolfWin), "Single Wolf Wins");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.VillagersWin), "Village Wins");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.WolfWin), "Single Wolf Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new FileToSend(pack.WolvesWin), "Wolf Pack Wins");
+                    Bot.Api.SendDocumentAsync(id, new InputMedia(pack.WolvesWin), "Wolf Pack Wins");
                     var msg = $"Approval Status: ";
                     switch (pack.Approved)
                     {

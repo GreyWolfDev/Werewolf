@@ -27,6 +27,8 @@ namespace Werewolf_Node
         internal static int ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
+        internal static Dictionary<Werewolf, String> IconGames = new Dictionary<Werewolf, String>();
+        internal static Queue<String> possibleIcons = new Queue<string>(new String[] {"⚪️","🔴","🔵","⚫️", "🔶","♠️","♣️","♥️","♦️","🔷","⬜️"});
         internal static TelegramBotClient Bot;
         internal static User Me;
         internal static Random R = new Random();
@@ -127,7 +129,7 @@ namespace Werewolf_Node
                         dynamic m = JsonConvert.DeserializeObject(msg);
                         t = m.JType?.ToString();
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         //Bot.SendTextMessage(Settings.MainChatId, e.Message);
                         continue;
@@ -312,6 +314,11 @@ namespace Werewolf_Node
                     {
                         Bot.PinChatMessageAsync(werewolf.ChatId, werewolf.OriginalPinnedMsg, true);
                     }
+                    if(IconGames.ContainsKey(werewolf))
+                    {
+                        possibleIcons.Enqueue(IconGames[werewolf]);
+                        IconGames.Remove(werewolf);
+                    }
 
                     werewolf.MessageQueueing = false; // shut off the queue to be sure
                     Games.Remove(werewolf);
@@ -327,14 +334,34 @@ namespace Werewolf_Node
             }
         }
 
-        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null)
+        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, IReplyMarkup customMenu = null, Werewolf game = null)
         {
+            try
+            {
+                //Tenta obter um identificador para quando player está em 2 jogos ao mesmo tempo
+                var gamesPlayer = Games.Where(g => g.Players.Any(p => p.TeleUser.Id == id)).ToList();
+                if (gamesPlayer.Count() > 1)
+                {
+                    var icon = "";
+                    if (IconGames.ContainsKey(game))
+                    {
+                        IconGames.TryGetValue(game, out icon);
+                    }
+                    else
+                    {
+                        icon = possibleIcons.Dequeue();
+                        IconGames.Add(game, icon);
+                    }
+                    message = icon + " " + message;
+                }
+            }
+            catch (Exception) {}
             MessagesSent++;
             //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                var menu = new ReplyKeyboardRemove();
                 return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html);
             }
             else if (customMenu != null)

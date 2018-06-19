@@ -4,8 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Database
 {
@@ -135,7 +133,9 @@ namespace Database
         [Display(Name = "Eu ajudei!"), Description("Seja o filhote de lobo e ajude o seu bando a devorar duas vítimas após sua morte")]
         IHelped = 576460752303423488,
         [Display(Name = "Foi uma noite agitada!"), Description("Em uma mesma noite, seja visitado por três ou mais pessoas com papéis diferentes")]
-        ItWasABusyNight = 1152921504606846976
+        ItWasABusyNight = 1152921504606846976,
+        [Display(Name = "Aqui se faz, aqui se paga."), Description("Como mago morra na forca por culpa de seu próprio poder")]
+        KilledByMyPower = 2305843009213693952
     } // MAX VALUE: 9223372036854775807
       //            
 

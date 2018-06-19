@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Werewolf_Control.Helpers;
@@ -77,7 +74,7 @@ namespace Werewolf_Control.Models
             {
                 return JsonConvert.DeserializeObject<GameInfo>(this.WriteLineAndGetReply(JsonConvert.SerializeObject(ggi)).MessageString);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }

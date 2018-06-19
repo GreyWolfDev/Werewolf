@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
-using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
@@ -98,7 +94,14 @@ namespace Werewolf_Control
                         g.GroupLink = null;
                     }
                 }
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch(Exception e)
+                {
+                    e.ToString();
+                }
             }
             //check nodes to see if player is in a game
             //var node = GetPlayerNode(update.Message.From.Id);
@@ -204,6 +207,7 @@ namespace Werewolf_Control
                 Language = "English",
                 BotInGroup = true,
                 ShowRoles = true,
+                ShowRolesEnd = "All",
                 Mode = "Player",
                 DayTime = Settings.TimeDay,
                 LynchTime = Settings.TimeLynch,
@@ -223,7 +227,7 @@ namespace Werewolf_Control
 
         internal static void RequestPM(long groupid)
         {
-            var button = new InlineKeyboardUrlButton("Start Me", "telegram.me/" + Bot.Me.Username);
+            var button = InlineKeyboardButton.WithUrl("Start Me", "telegram.me/" + Bot.Me.Username);
             Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }

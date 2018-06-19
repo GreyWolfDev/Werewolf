@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Database;
-using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 using System.Threading;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 
 namespace Werewolf_Control
 {
@@ -45,7 +38,7 @@ namespace Werewolf_Control
             {
                 var langs = PublicGroups.GetBaseLanguages();
                 //create a menu out of this
-                List<InlineKeyboardCallbackButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
+                List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
 
                 var baseMenu = new List<InlineKeyboardButton[]>();
                 for (var i = 0; i < buttons.Count; i++)
@@ -104,7 +97,7 @@ namespace Werewolf_Control
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 RequestPM(update.Message.Chat.Id);
                 return;
