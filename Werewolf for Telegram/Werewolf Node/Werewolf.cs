@@ -1288,6 +1288,7 @@ namespace Werewolf_Node
                 bool requestPM = false;
                 bool byteMax = false;
                 bool pList = false;
+                string playerListMsg = "";
                 var i = 0;
                 while (_messageQueue.Count > 0 && !byteMax)
                 {
@@ -1356,7 +1357,10 @@ namespace Werewolf_Node
                             if (m.RequestPM)
                                 requestPM = true;
                             if (m.PlayerList)
+                            {
                                 pList = true;
+                                playerListMsg = m.Msg;
+                            }
                         }
 
                     }
@@ -1385,7 +1389,7 @@ namespace Werewolf_Node
                             else
                             {
                                 Send(final);
-                                Program.Bot.EditMessageTextAsync(ChatId, _playerListId, final, ParseMode.Html, disableWebPagePreview: true);
+                                Program.Bot.EditMessageTextAsync(ChatId, _playerListId, playerListMsg, ParseMode.Html, disableWebPagePreview: true);
                             }
                             //try
                             //{
@@ -4189,7 +4193,7 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 Program.MessagesSent++;
-                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, "Game Over!");
                             }
                         }
                         catch
@@ -4242,7 +4246,7 @@ namespace Werewolf_Node
                     _timePlayed = game.TimeEnded.Value - game.TimeStarted.Value;
                     msg += "\n" + GetLocaleString("EndTime", _timePlayed.Value.ToString(@"hh\:mm\:ss"));
                 }
-                SendWithQueue(msg);
+                SendWithQueue(new Message(msg) { PlayerList = true });
                 //Program.Bot.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
                 UpdateGroupRanking();

@@ -543,7 +543,7 @@ namespace Werewolf_Control.Handler
                                         var p = DB.Players.FirstOrDefault(x => x.TelegramId == uid);
                                         var gamecount = p?.GamePlayers.Count() ?? 0;
                                         var wins = p?.GamePlayers.Count(x => x.Won) ?? 0;
-                                        if (gamecount >= 500 && wins/gamecount >= 0.5)
+                                        if (gamecount >= 500 && ((double)wins / (double)gamecount) >= 0.5)
                                         {
                                             Send($"{user.FirstName.FormatHTML()} jogou {gamecount} jogos e tem {(((double)wins / (double)gamecount) * 100.0).ToString("#0.0")}% de vitórias", ma.Chat.Id);
                                             return;
