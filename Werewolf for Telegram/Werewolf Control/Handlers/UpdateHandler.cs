@@ -145,7 +145,7 @@ namespace Werewolf_Control.Handler
                         try
                         {
                             //drop older messages (1 minute)
-                            temp[key].Messages.RemoveWhere(x => x.Time < DateTime.Now.AddMinutes(-1));
+                            temp[key].Messages.RemoveWhere(x => x.Time < DateTime.UtcNow.AddMinutes(-1));
 
                             //comment this out - if we remove it, it doesn't keep the warns
                             //if (temp[key].Messages.Count == 0)
@@ -166,9 +166,9 @@ namespace Werewolf_Control.Handler
                                 }
                                 if ((temp[key].Warns >= 3 || temp[key].Messages.Count >= 20) & !temp[key].NotifiedAdmin)
                                 {
-                                    //Send(
-                                    //    $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
-                                    //    Para);
+                                    Send(
+                                        $"User {key} has been banned for spamming: {temp[key].Warns}\n{temp[key].Messages.GroupBy(x => x.Command).Aggregate("", (a, b) => a + "\n" + b.Count() + " " + b.Key)}",
+                                        163786145);
                                     temp[key].NotifiedAdmin = true;
                                     //ban
                                     SpamBanList.Add(key);

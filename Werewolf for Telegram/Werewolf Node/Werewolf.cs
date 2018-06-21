@@ -4082,6 +4082,10 @@ namespace Werewolf_Node
                         if (team == ITeam.Tanner && !w.DiedLastNight)
                             continue;
 
+                        //if fled do not win
+                        if (w.Fled)
+                            continue;
+
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
@@ -4585,6 +4589,7 @@ namespace Werewolf_Node
                     p.IsDead = true;
                     p.TimeDied = DateTime.Now;
                     p.Fled = true;
+                    p.CurrentQuestion = null;
                     if (DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
                         SendWithQueue(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
                     CheckRoleChanges();
