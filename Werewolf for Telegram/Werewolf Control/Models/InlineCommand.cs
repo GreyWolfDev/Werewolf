@@ -55,8 +55,8 @@ namespace Werewolf_Control.Models
                         p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
                         if (p == null)
                         {
-                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
-                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Description = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
                             return;
                         }
                         Description = $"Obtem estatísticas do jogador {p.Name}";
@@ -150,8 +150,8 @@ namespace Werewolf_Control.Models
                         p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
                         if (p == null)
                         {
-                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
-                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Description = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
                             return;
                         }
                         Command += $" ({p.Name})";
@@ -201,8 +201,8 @@ namespace Werewolf_Control.Models
                         p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
                         if (p == null)
                         {
-                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
-                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Description = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
                             return;
                         }
                         Command += $" ({p.Name})";
@@ -252,8 +252,8 @@ namespace Werewolf_Control.Models
                         p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
                         if (p == null)
                         {
-                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
-                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Description = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
                             return;
                         }
                         Command += $" ({p.Name})";
@@ -305,8 +305,8 @@ namespace Werewolf_Control.Models
                         p = db.Players.FirstOrDefault(x => x.UserName.Equals(q.Query.Substring(1).Trim(), StringComparison.CurrentCultureIgnoreCase));
                         if (p == null)
                         {
-                            Description = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
-                            Content = $"Erro encontrando jogador com username {q.Query} para mostrar seus {Command}";
+                            Description = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
+                            Content = $"Nenhum jogador encontrado com username {q.Query} para mostrar seus {Command}";
                             return;
                         }
                         Command += $" ({p.Name})";
