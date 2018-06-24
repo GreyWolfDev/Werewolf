@@ -2619,45 +2619,8 @@ namespace Werewolf_Node
             {
                 // ignored
             }
-            //check detective
+            //check gunner
             if (Players == null) return;
-            var detect = Players.FirstOrDefault(x => x.PlayerRole == IRole.Detective & !x.IsDead && x.Choice != 0 && x.Choice != -1);
-            if (detect != null)
-            {
-                //first off, chance to tell wolves
-                if (Program.R.Next(100) < Settings.ChanceDetectiveCaught)
-                {
-                    IRole[] WolfRoles = new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
-                    foreach (var w in Players.Where(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)))
-                    {
-                        Send(GetLocaleString("DetectiveCaught", $"{detect.GetName()}"), w.Id);
-                    }
-                }
-
-                var check = Players.FirstOrDefault(x => x.Id == detect.Choice);
-                if (check != null)
-                {
-                    DBAction(detect, check, "Detect");
-                    Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
-
-                    //if snooped non-bad-roles:
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
-                        detect.CorrectSnooped.Clear();     //clear correct snoop list
-                    else
-                    {
-                        if (detect.CorrectSnooped.Contains(check.Id))     //check if it is a re-snoop of correct roles
-                            detect.CorrectSnooped.Clear();             //clear the correct snoop list
-                        detect.CorrectSnooped.Add(check.Id);              //add the current snoop to list
-
-                        //if snooped 4 times correct continously
-                        if (detect.CorrectSnooped.Count() >= 4)
-                        {
-                            AddAchievement(detect, Achievements.Streetwise);
-                            detect.CorrectSnooped.Clear();
-                        }
-                    }
-                }
-            }
 
             var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (gunner != null)
@@ -2704,7 +2667,46 @@ namespace Werewolf_Node
                         KillLover(check);
                 }
             }
-            CheckRoleChanges();
+
+            //check detective
+            var detect = Players.FirstOrDefault(x => x.PlayerRole == IRole.Detective & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            if (detect != null)
+            {
+                //first off, chance to tell wolves
+                if (Program.R.Next(100) < Settings.ChanceDetectiveCaught)
+                {
+                    IRole[] WolfRoles = new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
+                    foreach (var w in Players.Where(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)))
+                    {
+                        Send(GetLocaleString("DetectiveCaught", $"{detect.GetName()}"), w.Id);
+                    }
+                }
+
+                var check = Players.FirstOrDefault(x => x.Id == detect.Choice);
+                if (check != null)
+                {
+                    DBAction(detect, check, "Detect");
+                    Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
+
+                    //if snooped non-bad-roles:
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+                        detect.CorrectSnooped.Clear();     //clear correct snoop list
+                    else
+                    {
+                        if (detect.CorrectSnooped.Contains(check.Id))     //check if it is a re-snoop of correct roles
+                            detect.CorrectSnooped.Clear();             //clear the correct snoop list
+                        detect.CorrectSnooped.Add(check.Id);              //add the current snoop to list
+
+                        //if snooped 4 times correct continously
+                        if (detect.CorrectSnooped.Count() >= 4)
+                        {
+                            AddAchievement(detect, Achievements.Streetwise);
+                            detect.CorrectSnooped.Clear();
+                        }
+                    }
+                }
+            }
+            CheckRoleChanges(); // this stays after detective snooping so he still gets the "old" roles. Since he is using the game day for his snooping when the roles haven't changed yet
         }
 
         private void NightCycle()
