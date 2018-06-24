@@ -3640,6 +3640,7 @@ namespace Werewolf_Node
                             case IRole.Wolf:
                             case IRole.WolfCub:
                             case IRole.AlphaWolf:
+                            case IRole.Lycan:
                                 return DoGameEnd(ITeam.Wolf);
                             case IRole.CultistHunter:
                                 var cultist = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Cultist);
