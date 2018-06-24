@@ -621,6 +621,7 @@ namespace Werewolf_Control
                     Bot.Api.SendDocumentAsync(id, pack.WolfWin, "Single Wolf Wins");
                     Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
+                    Thread.Sleep(500);
                     var msg = $"Approval Status: ";
                     switch (pack.Approved)
                     {
@@ -696,6 +697,7 @@ namespace Werewolf_Control
                     pack.Approved = true;
                     pack.ApprovedBy = id;
                     pack.NSFW = nsfw;
+                    pack.Submitted = false;
                     var msg = $"Approval Status: ";
                     var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
                     msg += "Approved By " + by.Name + "\nNSFW: " + pack.NSFW;
