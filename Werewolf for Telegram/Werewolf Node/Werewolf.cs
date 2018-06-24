@@ -2727,6 +2727,10 @@ namespace Werewolf_Node
                         foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
                             Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
 
+                    else if (p.PlayerRole == IRole.Cultist)
+                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                            Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
+
                     p.Bitten = false;
                     p.PlayerRole = IRole.Wolf;
                     p.Team = ITeam.Wolf;
