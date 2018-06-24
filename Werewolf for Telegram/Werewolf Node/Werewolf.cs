@@ -2689,7 +2689,7 @@ namespace Werewolf_Node
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
 
                     //if snooped non-bad-roles:
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
                         detect.CorrectSnooped.Clear();     //clear correct snoop list
                     else
                     {
