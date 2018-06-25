@@ -1499,6 +1499,7 @@ namespace Werewolf_Node
                     case IRole.WolfMan:
                     case IRole.Pacifist:
                     case IRole.WiseElder:
+                    case IRole.Blacksmith:
                         p.HasDayAction = false;
                         p.HasNightAction = false;
                         p.Team = ITeam.Village;
@@ -1510,7 +1511,6 @@ namespace Werewolf_Node
                     case IRole.GuardianAngel:
                     case IRole.WildChild:
                     case IRole.Cupid:
-                    case IRole.Blacksmith:
                     case IRole.Sandman:
                     case IRole.Oracle:
                         p.Team = ITeam.Village;
@@ -1906,6 +1906,8 @@ namespace Werewolf_Node
                         case IRole.ClumsyGuy:
                         case IRole.WolfMan:
                         case IRole.WiseElder:
+                        case IRole.Pacifist:
+                        case IRole.Blacksmith:
                             p.HasDayAction = false;
                             p.HasNightAction = false;
                             p.Team = ITeam.Village;
@@ -1993,7 +1995,6 @@ namespace Werewolf_Node
                             p.HasDayAction = false;
                             break;
                         case IRole.Detective:
-                        case IRole.Blacksmith:
                         case IRole.Gunner:
                             p.Bullet = 2;
                             p.Team = ITeam.Village;
@@ -2095,8 +2096,15 @@ namespace Werewolf_Node
                 {
                     do
                     {
-                        var choiceid = ChooseRandomPlayerId(thief, false);
-                        target = Players.FirstOrDefault(x => x.Id == choiceid);
+                        try
+                        {
+                            var choiceid = ChooseRandomPlayerId(thief, false);
+                            target = Players.FirstOrDefault(x => x.Id == choiceid);
+                        }
+                        catch (Exception e)
+                        {
+                            LogAllExceptions(e);
+                        }
                     } while (target != null);
                     thief.Choice = target.Id;
                     Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
@@ -2126,6 +2134,7 @@ namespace Werewolf_Node
                 case IRole.Prince:
                 case IRole.Pacifist:
                 case IRole.WiseElder:
+                case IRole.Blacksmith:
                     thief.HasDayAction = false;
                     thief.HasNightAction = false;
                     thief.Team = ITeam.Village;
@@ -2138,7 +2147,6 @@ namespace Werewolf_Node
                 case IRole.GuardianAngel:
                 case IRole.WildChild:
                 case IRole.Cupid:
-                case IRole.Blacksmith:
                 case IRole.Sandman:
                 case IRole.Oracle:
                     thief.Team = ITeam.Village;
