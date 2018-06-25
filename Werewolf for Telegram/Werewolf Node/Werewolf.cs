@@ -2095,8 +2095,15 @@ namespace Werewolf_Node
                 {
                     do
                     {
-                        var choiceid = ChooseRandomPlayerId(thief, false);
-                        target = Players.FirstOrDefault(x => x.Id == choiceid);
+                        try
+                        {
+                            var choiceid = ChooseRandomPlayerId(thief, false);
+                            target = Players.FirstOrDefault(x => x.Id == choiceid);
+                        }
+                        catch (Exception e)
+                        {
+                            LogAllExceptions(e);
+                        }
                     } while (target != null);
                     thief.Choice = target.Id;
                     Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
