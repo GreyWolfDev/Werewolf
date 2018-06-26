@@ -2094,20 +2094,29 @@ namespace Werewolf_Node
                     return;
                 else
                 {
-                    do
+                    try
                     {
-                        try
+                        int tries = 0;
+                        do
                         {
-                            var choiceid = ChooseRandomPlayerId(thief, false);
-                            target = Players.FirstOrDefault(x => x.Id == choiceid);
-                        }
-                        catch (Exception e)
-                        {
-                            LogAllExceptions(e);
-                        }
-                    } while (target != null);
-                    thief.Choice = target.Id;
-                    Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
+                            tries++;
+                            try
+                            {
+                                var choiceid = ChooseRandomPlayerId(thief, false);
+                                target = Players.FirstOrDefault(x => x.Id == choiceid);
+                            }
+                            catch (Exception e)
+                            {
+                                LogAllExceptions(e);
+                            }
+                        } while (target != null && tries < 10);
+                        thief.Choice = target.Id;
+                        Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
+                    }
+                    catch (Exception e)
+                    {
+                        LogAllExceptions(e);
+                    }
                 }
             }
             //swap roles
