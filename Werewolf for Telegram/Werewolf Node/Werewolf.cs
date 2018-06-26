@@ -2116,6 +2116,8 @@ namespace Werewolf_Node
                     catch (Exception e)
                     {
                         LogAllExceptions(e);
+                        // just to make sure a target is chosen?
+                        target = Players.FirstOrDefault(x => !x.IsDead && x != thief);
                     }
                 }
             }
