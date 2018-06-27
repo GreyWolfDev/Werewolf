@@ -39,26 +39,8 @@ namespace Werewolf_Control
             }
             menu.Buttons.Add(new InlineKeyboardUrlButton("PayPal", "https://PayPal.me/greywolfdevelopment"));
             var markup = menu.CreateMarkupFromMenu();
-            var gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  "; //"Custom gif packs are not available at this time, watch the update channel for more news!  ";
-            //using (var db = new WWContext())
-            //{
-            //    var count = db.Players.Count(x => x.GifPurchased == true);
-            //    if (count < 100)
-            //        gif = "Donate $10USD or more to unlock a custom gif pack that you can choose.  ";
-
-            //}
-            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id,
-                "Want to help keep Werewolf online?\n" +
-                "We now offer some rewards for donating!\n" +
-                gif + "There are also donation badges you can get in game.  These badges are added to the end of your name in game, so everyone can see you donated!\n\n" +
-                "•$10 USD: 🥉\n" +
-                "•$50 USD: 🥈\n" +
-                "•$100 USD: 🥇\n\n" +
-                "You might also see this special badge: 💎\nThis is reserved for people who donated prior to there being any rewards for donating\n" +
-                "If you donate via PayPal, you will need to contact @werewolfsupport to claim your prize.  If you donate via Telegram, it's automated, no need to contact an admin :)\n" +
-                "More information about the Custom Gif Packs: http://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-07-31\n" +
-                "How would you like to donate?",
-                replyMarkup: markup);
+            var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate, and click <a href='https://t.me/greywolfsupport'>here to claim your reward if you donate via Paypal</a>!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
+            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, txt, replyMarkup: markup, parseMode: ParseMode.Html, disableWebPagePreview: true);
         }
 
         [Attributes.Command(Trigger = "customgif")]
