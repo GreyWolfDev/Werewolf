@@ -28,7 +28,7 @@ namespace Werewolf_Control.Helpers
 
 
         public static string TcpSecret => Environment.MachineName.GetHashCode().ToString();
-        public static readonly long PersianSupportChatId = -1001059174638;
+        public static readonly long PersianSupportChatId = -1001398432551;
         public static readonly long MainChatId = -1001049529775; //Beta group
         public static readonly long SupportChatId = -1001060486754; //@werewolfsupport
         public static readonly long PrimaryChatId = -1001268085464; //@werewolfgame
