@@ -994,10 +994,20 @@ namespace Werewolf_Control.Handler
                             return;
                         }
                     }
-                    else if (new[] { "status", "validate", "upload" }.Contains(command))
+                    else if (new[] { "status", "validate" }.Contains(command))
                     {
                         //global admin only commands
                         if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
+                        {
+                            Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);
+                            return;
+                        }
+                    }
+                    else if (command == "upload")
+                    {
+                        //language admin only commands
+                        if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id)
+                            && !UpdateHelper.IsLangAdmin(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);
                             return;
@@ -1241,6 +1251,8 @@ namespace Werewolf_Control.Handler
                             //Bot.SendTextMessageAsync(id, "", replyToMessageId: update.Message.MessageId, replyMarkup: menu);
                             LanguageHelper.ValidateLanguageFile(query.Message.Chat.Id, vlang.FilePath, query.Message.MessageId);
                             return;
+                        #endregion
+                        #region Language Admin Commands
                         case "upload":
                             Console.WriteLine(choice);
                             if (choice == "current")
