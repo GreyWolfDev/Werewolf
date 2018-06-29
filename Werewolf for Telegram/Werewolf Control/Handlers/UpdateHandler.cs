@@ -994,10 +994,19 @@ namespace Werewolf_Control.Handler
                             return;
                         }
                     }
-                    else if (new[] { "status", "validate", "upload" }.Contains(command))
+                    else if (command == "status")
                     {
                         //global admin only commands
                         if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
+                        {
+                            Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);
+                            return;
+                        }
+                    }
+                    else if (new[] { "validate", "upload" }.Contains(command))
+                    {
+                        //global admin only commands
+                        if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id) && !UpdateHelper.IsLangAdmin(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);
                             return;

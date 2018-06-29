@@ -147,7 +147,7 @@ namespace Werewolf_Control
 
         }
 
-        [Attributes.Command(Trigger = "validatelangs", GlobalAdminOnly = true)]
+        [Attributes.Command(Trigger = "validatelangs", LangAdminOnly = true)]
         public static void ValidateLangs(Update update, string[] args)
         {
             //var langs = Directory.GetFiles(Bot.LanguageDirectory)
