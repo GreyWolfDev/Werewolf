@@ -59,9 +59,7 @@ namespace Werewolf_Control.Models
                     var ach = (Achievements) (p.Achievements ?? 0);
                     var count = ach.GetUniqueFlags().Count();
 
-                    Content = String.IsNullOrWhiteSpace(u.Username)
-                        ? $"{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}"
-                        : $"<a href=\"https://telegram.me/{u.Username}\">{u.FirstName.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}</a>";
+                    Content = $"<a href='tg://user?id={p.TelegramId}'>{p.Name.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}</a>";
                     Content += $"\n{count.Pad()}Achievements Unlocked!\n" +
                                $"{won.Pad()}Games won ({won*100/gamesPlayed}%)\n" +
                                $"{lost.Pad()}Games lost ({lost*100/gamesPlayed}%)\n" +
@@ -131,10 +129,7 @@ namespace Werewolf_Control.Models
                     Description = $"Gets the players who {p.Name} most killed";
 
                     var killed = db.PlayerMostKilled(p.TelegramId).AsEnumerable().Take(5);
-                    if (p.UserName != null)
-                        Content += $"\nPlayers <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> most killed:\n";
-                    else
-                        Content += $"\nPlayers {p.Name.FormatHTML()} most killed:\n";
+                    Content += $"\nPlayers <a href='tg://user?id={p.TelegramId}'>{p.Name.FormatHTML()}</a> most killed:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -171,10 +166,7 @@ namespace Werewolf_Control.Models
                     Description = $"Get the players who killed {p.Name} the most";
 
                     var killed = db.PlayerMostKilledBy(p.TelegramId).AsEnumerable().Take(5);
-                    if (p.UserName != null)
-                        Content += $"\nPlayers who killed <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> most:\n";
-                    else
-                        Content += $"\nPlayers who killed {p.Name.FormatHTML()} most:\n";
+                    Content += $"\nPlayers who killed <a href='tg://user?id={p.TelegramId}'>{p.Name.FormatHTML()}</a> most:\n";
                     foreach (var a in killed)
                     {
                         Content += $"{a.times?.Pad()} {a.Name.ToBold()}\n";
@@ -265,10 +257,7 @@ namespace Werewolf_Control.Models
                     // var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
                     var deathInfo = temp.OrderByDescending(x => x.Count()).Take(5);
 
-                    if (p.UserName != null)
-                        Content += $"\nTypes of deaths that <a href=\"https://telegram.me/{p.UserName}\">{p.Name.FormatHTML()}</a> most had:\n";
-                    else
-                        Content += $"\nTypes of deaths that {p.Name.FormatHTML()} most had:\n";
+                    Content += $"\nTypes of deaths that <a href='tg://user?id={p.TelegramId}'>{p.Name.FormatHTML()}</a> most had:\n";
                     foreach (var a in deathInfo)
                     {
                         var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
