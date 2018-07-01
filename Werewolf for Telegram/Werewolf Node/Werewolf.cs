@@ -2403,6 +2403,7 @@ namespace Werewolf_Node
                             }
                         }
                         catch { } // ignored
+                        p.CurrentQuestion = null;
                     }
                     return;
                 }
