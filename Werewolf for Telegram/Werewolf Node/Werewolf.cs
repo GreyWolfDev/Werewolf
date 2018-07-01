@@ -45,7 +45,7 @@ namespace Werewolf_Node
         private Nullable<TimeSpan> _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
         public List<long> HaveExtended = new List<long>();
-        private List<IPlayer> _joined = new List<IPlayer>(); 
+        private List<IPlayer> _joined = new List<IPlayer>();
         private int _joinMsgId;
         private string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
@@ -68,7 +68,7 @@ namespace Werewolf_Node
             CultWins,
             SerialKillerWins,
             LoversWin;
-        
+
         #region Constructor
         /// <summary>
         /// Starts a new instance of a werewolf game
@@ -184,7 +184,7 @@ namespace Werewolf_Node
 
 
                     LoadLanguage(DbGroup.Language);
-                    
+
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://t.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
@@ -227,7 +227,7 @@ namespace Werewolf_Node
 
         }
 
-        
+
         #endregion
 
         #region Language Helpers
@@ -312,9 +312,9 @@ namespace Werewolf_Node
                 }
             }
         }
-#endregion
+        #endregion
 
-#region Main bits
+        #region Main bits
         /// <summary>
         /// The main timer for the game
         /// </summary>
@@ -751,9 +751,9 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-#endregion
+        #endregion
 
-#region Communications
+        #region Communications
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -780,7 +780,21 @@ namespace Werewolf_Node
                 }
                 else if (player.PlayerRole == IRole.Mayor && args[2] == "reveal" && player.HasUsedAbility == true)
                     return;
-                
+
+                if (player.PlayerRole == IRole.Pacifist && args[2] == "peace" && player.HasUsedAbility == false)
+                {
+                    player.HasUsedAbility = true;
+                    _pacifistUsed = true;
+                    SendWithQueue(GetLocaleString("PacifistNoLynch", player.GetName()));
+
+                    Program.MessagesSent++;
+                    ReplyToCallback(query,
+                        GetLocaleString("ChoiceAccepted"));
+                    return;
+                }
+                else if (player.PlayerRole == IRole.Pacifist && args[2] == "peace" && player.HasUsedAbility == true)
+                    return;
+
                 if (player.PlayerRole == IRole.Blacksmith && player.CurrentQuestion.QType == QuestionType.SpreadSilver)
                 {
                     if (args[2] == "yes")
@@ -811,21 +825,6 @@ namespace Werewolf_Node
                     return;
                 }
 
-                if (player.PlayerRole == IRole.Pacifist && player.CurrentQuestion.QType == QuestionType.Pacifist)
-                {
-                    if (args[2] == "yes")
-                    {
-                        player.HasUsedAbility = true;
-                        _pacifistUsed = true;
-                        SendWithQueue(GetLocaleString("PacifistNoLynch", player.GetName()));
-                    }
-
-                    ReplyToCallback(query,
-                        GetLocaleString("ChoiceAccepted"));
-                    player.CurrentQuestion = null;
-                    return;
-                }
-
                 if (player.CurrentQuestion == null)
                 {
                     return;
@@ -839,7 +838,7 @@ namespace Werewolf_Node
                 if (args[2] == "-1")
                 {
                     if (player.CurrentQuestion.QType == QuestionType.Kill2)
-                        player.Choice2 = -1;           
+                        player.Choice2 = -1;
                     else
                         player.Choice = -1;
                     if (player.CurrentQuestion.QType == QuestionType.Lynch)
@@ -1208,7 +1207,7 @@ namespace Werewolf_Node
             if (!String.IsNullOrEmpty(final))
                 Send(final);
         }
-        
+
         private void SendPlayerList(bool joining = false)
         {
             if (!_playerListChanged) return;
@@ -1235,7 +1234,7 @@ namespace Werewolf_Node
                                         current +
                                         ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                         //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
-                       
+
                     }
                     _playerListChanged = false;
                     SendWithQueue(new Message(msg) { PlayerList = true, Joining = joining });
@@ -1271,9 +1270,9 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
+        #endregion
 
-#region Roles
+        #region Roles
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();
@@ -1384,7 +1383,7 @@ namespace Werewolf_Node
                         var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor); //if there are both, the random order of rolesToAssign will choose for us which one to substitute
                         rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
-                    
+
                     //cult without CH -> add CH
                     if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
                     {
@@ -1437,10 +1436,10 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 rolesToAssign[0] = IRole.Wolf;
-                rolesToAssign[1] = IRole.Thief;
-                rolesToAssign[2] = IRole.Seer;
+                rolesToAssign[1] = IRole.Pacifist;
+                rolesToAssign[2] = IRole.Villager;
                 if (rolesToAssign.Count >= 4)
-                    rolesToAssign[3] = IRole.Fool;
+                    rolesToAssign[3] = IRole.Mason;
                 if (rolesToAssign.Count >= 5)
                     rolesToAssign[4] = IRole.Mason;
 #endif
@@ -1906,7 +1905,6 @@ namespace Werewolf_Node
                         case IRole.ClumsyGuy:
                         case IRole.WolfMan:
                         case IRole.WiseElder:
-                        case IRole.Pacifist:
                         case IRole.Blacksmith:
                             p.HasDayAction = false;
                             p.HasNightAction = false;
@@ -2062,6 +2060,14 @@ namespace Werewolf_Node
                             p.HasDayAction = false;
                             var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|reveal") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
+                            break;
+                        case IRole.Pacifist:
+                            p.HasUsedAbility = false;
+                            p.Team = ITeam.Village;
+                            p.HasNightAction = false;
+                            p.HasDayAction = false;
+                            choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|peace") } }.ToList();
+                            SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
                             break;
                         case IRole.Thief:
                             p.Team = ITeam.Thief;
@@ -2284,7 +2290,7 @@ namespace Werewolf_Node
                         teammates += $"{w.GetName()}" + ", ";
                     }
                     Send(GetLocaleString("ThiefTransformNewTeammates", teammates), thief.Id);
-                            
+
                     break;
                 case IRole.Cultist:
                     teammates = "";
@@ -2332,9 +2338,9 @@ namespace Werewolf_Node
 
 
 
-#endregion
+        #endregion
 
-#region Cycles
+        #region Cycles
 
         public void ForceStart()
         {
@@ -2370,7 +2376,7 @@ namespace Werewolf_Node
             if (CheckForGameEnd()) return;
             if (_pacifistUsed)
             {
-                Send(GetLocaleString("PacifistNoLynchNow"));
+                SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
                 _pacifistUsed = false;
                 return;
             }
@@ -2382,6 +2388,24 @@ namespace Werewolf_Node
             {
                 Thread.Sleep(1000);
                 if (CheckForGameEnd()) return;
+                if (_pacifistUsed)
+                {
+                    SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
+                    _pacifistUsed = false;
+                    foreach (var p in Players.Where(x => x.CurrentQuestion != null))
+                    {
+                        try
+                        {
+                            if (p.CurrentQuestion.MessageId != 0)
+                            {
+                                Program.MessagesSent++;
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("LynchPeaceTimeout"));
+                            }
+                        }
+                        catch { } // ignored
+                    }
+                    return;
+                }
                 //check if all votes are cast
                 var livePlayers = Players.Where(x => !x.IsDead);
                 if (livePlayers.All(x => x.Choice != 0))
@@ -2621,7 +2645,7 @@ namespace Werewolf_Node
                 {
                     try
                     {
-                        if (p.CurrentQuestion.MessageId != 0 && p.CurrentQuestion.QType != QuestionType.Mayor)
+                        if (p.CurrentQuestion.MessageId != 0 && !new[] { QuestionType.Mayor, QuestionType.Pacifist }.Contains(p.CurrentQuestion.QType))
                         {
                             Program.MessagesSent++;
                             Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
@@ -2850,7 +2874,7 @@ namespace Werewolf_Node
              * GA
              */
 
-#region Wolf Night
+            #region Wolf Night
 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
 
@@ -3165,9 +3189,9 @@ namespace Werewolf_Node
                 eatCount = 0;
             }
             WolfCubKilled = false;
-#endregion
+            #endregion
 
-#region Serial Killer Night
+            #region Serial Killer Night
 
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
@@ -3198,12 +3222,12 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             if (Players == null)
                 return;
 
-#region Cult Hunter Night
+            #region Cult Hunter Night
 
             //cult hunter
             var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
@@ -3245,9 +3269,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region Cult Night
+            #region Cult Night
 
             //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
@@ -3453,7 +3477,7 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             if (Players == null)
             {
@@ -3461,7 +3485,7 @@ namespace Werewolf_Node
                 return;
             }
 
-#region Harlot Night
+            #region Harlot Night
 
             //let the harlot know
             var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
@@ -3537,9 +3561,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region Seer / Fool
+            #region Seer / Fool
 
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
@@ -3712,7 +3736,7 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             CheckRoleChanges();
 
@@ -3737,7 +3761,7 @@ namespace Werewolf_Node
                 }
             }
 
-#region Night Death Notifications to Group
+            #region Night Death Notifications to Group
 
 
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
@@ -3885,7 +3909,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("NoAttack"));
             }
 
-#endregion
+            #endregion
 
             if (CheckForGameEnd()) return;
 
@@ -4122,19 +4146,19 @@ namespace Werewolf_Node
                         var deathmessage = "";
                         switch (alives.Count())
                         {
-                            case 2: 
+                            case 2:
                                 // Tanner and sorcerer/thief, let first sorcerer/thief, then tanner die.
                                 if (alives.Any(x => x.PlayerRole == IRole.Tanner) && new IRole[] { IRole.Sorcerer, IRole.Thief }.Contains(alives.First(x => x.PlayerRole != IRole.Tanner).PlayerRole))
                                 {
                                     var sorcOrThief = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer || x.PlayerRole == IRole.Thief);
                                     var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                                    
+
                                     if (sorcOrThief != null && tann != null)
-                                    {                                        
+                                    {
                                         DBKill(tann, tann, KillMthd.Suicide);
                                         tann.IsDead = true;
                                         tann.TimeDied = DateTime.Now;
-                                        
+
                                         deathmessage = GetLocaleString(sorcOrThief.PlayerRole == IRole.Sorcerer ? "SorcererEnd" : "ThiefEnd", sorcOrThief.GetName()) + Environment.NewLine;
                                         deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName());
                                     }
@@ -4151,9 +4175,9 @@ namespace Werewolf_Node
                                         deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                     }
                                 }
-                                
+
                                 break;
-                            
+
                             case 1: // Tanner or sorcerer or thief
                                 var lastone = alives.FirstOrDefault();
                                 if (lastone != null)
@@ -4163,11 +4187,11 @@ namespace Werewolf_Node
                                         DBKill(lastone, lastone, KillMthd.Suicide);
                                         lastone.IsDead = true;
                                         lastone.TimeDied = DateTime.Now;
-                                        
+
                                         deathmessage = GetLocaleString("TannerEnd", lastone.GetName());
                                     }
                                     else if (lastone.PlayerRole == IRole.Sorcerer)
-                                    {                                       
+                                    {
                                         deathmessage = GetLocaleString("SorcererEnd", lastone.GetName());
                                     }
                                     else if (lastone.PlayerRole == IRole.Thief)
@@ -4176,13 +4200,13 @@ namespace Werewolf_Node
                                     }
                                 }
                                 break;
-                                
+
                             default:
                                 break;
                         }
-                        
+
                         if (!string.IsNullOrEmpty(deathmessage)) SendWithQueue(deathmessage);
-                        
+
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
                         SendWithQueue(msg, GetRandomImage(NoWinner));
@@ -4303,9 +4327,9 @@ namespace Werewolf_Node
         }
 
 
-#endregion
+        #endregion
 
-#region Send Menus
+        #region Send Menus
 
         private void SendLynchMenu()
         {
@@ -4410,6 +4434,19 @@ namespace Werewolf_Node
                 SendMenu(choices, mayor, GetLocaleString("AskMayor"), QuestionType.Mayor);
             }
 
+            var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead);
+            if (pacifist != null && GameDay == 1)
+            {
+                var choices = new[]
+                {
+                    new[]
+                    {
+                        new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|peace")
+                    }
+                }.ToList();
+                SendMenu(choices, pacifist, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
+            }
+
             var sandman = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sandman & !x.IsDead & !x.HasUsedAbility);
             if (sandman != null)
             {
@@ -4421,19 +4458,6 @@ namespace Werewolf_Node
                     }
                 }.ToList();
                 SendMenu(choices, sandman, GetLocaleString("AskSandman"), QuestionType.Sandman);
-            }
-
-            var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead & !x.HasUsedAbility);
-            if (pacifist != null)
-            {
-                var choices = new[]
-                {
-                    new[]
-                    {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|no")
-                    }
-                }.ToList();
-                SendMenu(choices, pacifist, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
             }
 
             var blacksmith = Players.FirstOrDefault(x => x.PlayerRole == IRole.Blacksmith & !x.IsDead & !x.HasUsedAbility);
@@ -4608,9 +4632,9 @@ namespace Werewolf_Node
             _silverSpread = false;
         }
 
-#endregion
+        #endregion
 
-#region Helpers
+        #region Helpers
         public void CleanupButtons()
         {
             foreach (var id in _joinButtons)
@@ -4843,9 +4867,9 @@ namespace Werewolf_Node
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-#endregion
+        #endregion
 
-#region Database Helpers
+        #region Database Helpers
 
         // ReSharper disable UnusedParameter.Local
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
