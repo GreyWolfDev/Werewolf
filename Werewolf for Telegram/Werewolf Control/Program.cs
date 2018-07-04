@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using System.Threading;
@@ -33,6 +34,11 @@ namespace Werewolf_Control
         public static DateTime MaxTime = DateTime.MinValue;
         public static bool MaintMode = false;
         internal static BotanIO.Api.Botan Analytics;
+        internal static string XsollaLink = null;
+        internal static string XsollaApiId = null;
+        internal static string XsollaApiKey = null;
+        internal static int? xsollaProjId = 0;
+        internal static readonly HttpClient xsollaClient = new HttpClient();
         static void Main(string[] args)
         {
 #if !DEBUG
@@ -79,6 +85,12 @@ namespace Werewolf_Control
             var aToken = Helpers.RegHelper.GetRegValue("BotanReleaseAPI");
 #endif
             Analytics = new BotanIO.Api.Botan(aToken);
+
+            XsollaLink = Helpers.RegHelper.GetRegValue("XsollaLink");
+            XsollaApiId = Helpers.RegHelper.GetRegValue("XsollaApiId");
+            XsollaApiKey = Helpers.RegHelper.GetRegValue("XsollaApiKey");
+            try { xsollaProjId = int.Parse(Helpers.RegHelper.GetRegValue("XsollaProjId")); } catch { xsollaProjId = 0; }
+            xsollaClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"{XsollaApiId}:{XsollaApiKey}")));
 
             //Initialize the TCP connections
             TCP.Initialize();

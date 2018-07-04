@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Database;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InlineKeyboardButtons;
@@ -28,14 +31,19 @@ namespace Werewolf_Control
             //    "\n\nDonations help us pay to keep the expensive servers running and the game online. Every donation you make helps to keep us going for another month. For more information please contact @werewolfsupport", ParseMode.Html, true);
             var menu = new Menu();
             if (u.Message.Chat.Type == ChatType.Private)
+            {
 #if RELEASE
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Telegram", "donatetg"));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Xsolla", "xsolla"));
 #else
                 menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
+                menu.Buttons.Add(new InlineKeyboardUrlButton("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
 #endif
+            }
             else
             {
                 menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
+                menu.Buttons.Add(new InlineKeyboardUrlButton("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
             }
             menu.Buttons.Add(new InlineKeyboardUrlButton("PayPal", "https://PayPal.me/greywolfdevelopment"));
             var markup = menu.CreateMarkupFromMenu();
@@ -305,6 +313,52 @@ namespace Werewolf_Control
         public static void SubmitGifs(Update u, string[] args)
         {
 
+        }
+
+        public static string CreateXsollaJson(User from)
+        {
+            var data = new Models.Xsolla.XsollaData();
+            data.User.Id.Value = from.Id.ToString();
+            data.User.Name.Value = from.FirstName;
+            data.Settings.Currency = "USD";
+            data.Settings.Mode = "sandbox";
+            data.Settings.ProjectId = Program.xsollaProjId.Value;
+            data.Settings.Ui.Theme = "dark";
+            return JsonConvert.SerializeObject(data, new JsonSerializerSettings { ContractResolver = new DefaultContractResolver { NamingStrategy = new SnakeCaseNamingStrategy() } });
+        }
+
+        public static void LogException(Exception e, string reason, Chat chat)
+        {
+            Send($"=={reason}==\n\nChatId: {chat.Id}\n\n{e.Message}\n{e.StackTrace}", Helpers.Settings.ErrorGroup);
+        }
+
+        public static void GetXsollaLink(CallbackQuery q = null, Message m = null)
+        {
+            var from = q?.From ?? m?.From;
+            var txt = "";
+            InlineKeyboardMarkup markup = null;
+            try
+            {
+                var res = Program.xsollaClient.PostAsync(Program.XsollaLink, new StringContent(CreateXsollaJson(from), Encoding.UTF8, "application/json")).Result;
+                var token = JsonConvert.DeserializeObject<Dictionary<string, string>>(res.Content.ReadAsStringAsync().Result)["token"];
+                txt = $"Please click the button below to donate via Xsolla.\nPlease note that this link is ONLY for you and valid for 24 hours.";
+                markup = new InlineKeyboardMarkup(new InlineKeyboardButton[][] { new InlineKeyboardButton[] { new InlineKeyboardUrlButton("Donate Now!", $"https://tgwerewolf.com/donate/xsolla?uid={from.Id}&token={token}") } });
+            }
+            catch (Exception e)
+            {
+                txt = "Error Occurred. This incident has been reported to the devs. Please try again later or seek help at @werewolfsupport.";
+                LogException(e, "Xsolla", m.Chat);
+            }
+            
+
+            if (q != null)
+            {
+                Bot.Api.EditMessageTextAsync(q.Message.Chat.Id, q.Message.MessageId, txt, disableWebPagePreview: true, replyMarkup: markup);
+            }
+            else if (m != null)
+            {
+                Bot.Api.SendTextMessageAsync(from.Id, txt, disableWebPagePreview: true, replyMarkup: markup, replyToMessageId: m.MessageId);
+            }
         }
 
         public static void GetDonationInfo(CallbackQuery q = null, Message m = null)

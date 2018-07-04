@@ -814,6 +814,12 @@ namespace Werewolf_Control.Handler
                         return;
                     }
 
+                    if (args[0] == "xsolla")
+                    {
+                        Commands.GetXsollaLink(query);
+                        return;
+                    }
+
                     if (args[0] == "cancel")
                     {
                         Bot.Api.DeleteMessageAsync(query.From.Id, query.Message.MessageId);
