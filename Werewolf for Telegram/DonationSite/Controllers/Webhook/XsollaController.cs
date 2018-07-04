@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot;
 using Database;
+using DonationSite.Models;
 
 namespace DonationSite.Controllers.Webhook
 {
@@ -61,6 +62,57 @@ namespace DonationSite.Controllers.Webhook
                                 return CreateError(Request, "INVALID_USER");
                             }
                             return Request.CreateResponse(HttpStatusCode.OK);
+                        case "payment":
+                            var userid = int.Parse(obj?.user.id);
+                            var amount = (int)obj?.purchase?.checkout?.amount;
+                            var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
+                            if (p != null)
+                            {
+                                if (p.DonationLevel == null)
+                                    p.DonationLevel = 0;
+                                var oldLevel = p.DonationLevel;
+                                p.DonationLevel += amount;
+                                var level = p.DonationLevel ?? 0;
+                                var badge = "";
+                                if (level >= 100)
+                                    badge += " 🥇";
+                                else if (level >= 50)
+                                    badge += " 🥈";
+                                else if (level >= 10)
+                                    badge += " 🥉";
+                                if (p.Founder ?? false)
+                                    badge += "💎";
+
+                                bot.SendTextMessageAsync(userid, $"Successfully received ${amount} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}");
+                                //check to see how many people have purchased gif packs
+
+                                if (level > 10 && oldLevel < 10)
+                                {
+                                    p.GifPurchased = true;
+                                    CustomGifData data;
+                                    var json = p.CustomGifSet;
+                                    if (String.IsNullOrEmpty(json))
+                                        data = new CustomGifData();
+                                    else
+                                        data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                                    if (!data.HasPurchased)
+                                    {
+                                        bot.SendTextMessageAsync(userid,
+                                            "Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval");
+                                    }
+                                    data.HasPurchased = true;
+
+                                    json = JsonConvert.SerializeObject(data);
+                                    p.CustomGifSet = json;
+                                }
+                                db.SaveChanges();
+                            }
+                            else
+                            {
+                                return CreateError(Request, "INVALID_USER");
+                            }
+                            return Request.CreateResponse(HttpStatusCode.OK);
+
                         default:
                             return Request.CreateResponse(HttpStatusCode.OK);
                     }
