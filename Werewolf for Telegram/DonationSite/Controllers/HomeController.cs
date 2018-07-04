@@ -10,7 +10,7 @@ namespace DonationSite.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Donate";
 
             return View();
         }

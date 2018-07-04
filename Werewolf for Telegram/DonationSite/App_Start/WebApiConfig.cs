@@ -15,10 +15,12 @@ namespace DonationSite
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                name: "Webhook",
+                routeTemplate: "webhook/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
         }
     }
 }

@@ -1,0 +1,130 @@
+﻿using System;
+using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web.Http;
+using DonationSite.Models.Xsolla;
+using Newtonsoft.Json;
+using Telegram.Bot.Exceptions;
+using Telegram.Bot;
+using Database;
+
+namespace DonationSite.Controllers.Webhook
+{
+    public class XsollaController : ApiController
+    {
+        public static long LogGroupId = long.Parse(ConfigurationManager.AppSettings.Get("LogGroupId"));
+        private static string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
+        private static string XsollaProjectSecretKey = ConfigurationManager.AppSettings.Get("XsollaProjectSecretKey");
+        private static Client bot = new Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+        [HttpPost]
+        public HttpResponseMessage Post()
+        {
+            using (var db = new WWContext())
+            {
+                try
+                {
+                    var body = Request.Content.ReadAsStringAsync().Result;
+                    var header = Request.Headers.GetValues("Authorization").FirstOrDefault();
+                    header = header.Replace("Signature ", "");
+                    var check = body + XsollaProjectSecretKey;
+                    check = SHA1HashStringForUTF8String(check);
+                    if (check != header)
+                    {
+                        return CreateError(Request, "INVALID_SIGNATURE");
+                    }
+
+                    var obj = JsonConvert.DeserializeObject<XsollaEvent>(body);
+                    switch (obj?.notification_type)
+                    {
+                        case "user_validation":
+                            var userId = obj?.user.id;
+                            var id = 0;
+                            try
+                            {
+                                id = int.Parse(userId);
+                            }
+                            catch
+                            {
+                                return CreateError(Request, "INVALID_USER");
+                            }
+                            if (id == 0)
+                            {
+                                return CreateError(Request, "INVALID_USER");
+                            }
+                            if (!db.Players.Any(x => x.TelegramId == id))
+                            {
+                                return CreateError(Request, "INVALID_USER");
+                            }
+                            return Request.CreateResponse(HttpStatusCode.OK);
+                        default:
+                            return Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                }
+                catch (AggregateException e)
+                {
+                    var x = e.InnerExceptions[0];
+                    while (x.InnerException != null)
+                        x = x.InnerException;
+                    bot.SendTextMessageAsync(LogGroupId, x.Message + "\n" + x.StackTrace);
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, x);
+                }
+                catch (ApiRequestException e)
+                {
+                    var code = e.ErrorCode;
+                    var x = e.InnerException;
+                    while (x?.InnerException != null)
+                        x = x.InnerException;
+                    bot.SendTextMessageAsync(LogGroupId, x?.Message + "\n" + x?.StackTrace);
+                    return Request.CreateErrorResponse((HttpStatusCode)code, x);
+                }
+                catch (Exception e)
+                {
+                    //string path = HttpContext.Current.Server.MapPath("~/App_Data/error");
+                    while (e.InnerException != null)
+                        e = e.InnerException;
+                    bot.SendTextMessageAsync(LogGroupId, e.Message + "\n" + e.StackTrace);
+                    //using (var sw = new StreamWriter(path))
+                    //{
+                    //    sw.WriteLine(e.Message);
+                    //    sw.Flush();
+                    //}
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+                }
+            }
+
+        }
+
+        public static HttpResponseMessage CreateError(HttpRequestMessage Request, string reason)
+        {
+            var res = Request.CreateResponse(HttpStatusCode.Forbidden);
+            res.Content = new StringContent($"{{\"error\": {{\"code\": \"{reason}\"}}}}");
+            return res;
+        }
+
+        public static string SHA1HashStringForUTF8String(string s)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(s);
+
+            var sha1 = SHA1.Create();
+            byte[] hashBytes = sha1.ComputeHash(bytes);
+
+            return HexStringFromBytes(hashBytes);
+        }
+
+        public static string HexStringFromBytes(byte[] bytes)
+        {
+            var sb = new StringBuilder();
+            foreach (byte b in bytes)
+            {
+                var hex = b.ToString("x2");
+                sb.Append(hex);
+            }
+            return sb.ToString();
+        }
+    }
+}
