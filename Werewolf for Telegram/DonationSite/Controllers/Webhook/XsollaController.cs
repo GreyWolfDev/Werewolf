@@ -21,7 +21,7 @@ namespace DonationSite.Controllers.Webhook
         public static long LogGroupId = long.Parse(ConfigurationManager.AppSettings.Get("LogGroupId"));
         private static string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
         private static string XsollaProjectSecretKey = ConfigurationManager.AppSettings.Get("XsollaProjectSecretKey");
-        private static Client bot = new Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+        public static TelegramBotClient bot = new TelegramBotClient(TelegramAPIKey);
         [HttpPost]
         public HttpResponseMessage Post()
         {
@@ -64,7 +64,7 @@ namespace DonationSite.Controllers.Webhook
                             return Request.CreateResponse(HttpStatusCode.OK);
                         case "payment":
                             var userid = int.Parse(obj?.user.id);
-                            var amount = (int)obj?.purchase?.checkout?.amount;
+                            var amount = (int)obj?.purchase?.total?.amount;
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
                             if (p != null)
                             {
@@ -112,7 +112,12 @@ namespace DonationSite.Controllers.Webhook
                                 return CreateError(Request, "INVALID_USER");
                             }
                             return Request.CreateResponse(HttpStatusCode.OK);
-
+                        case "refund":
+                            userid = int.Parse(obj?.user.id);
+                            var reason = obj?.refund_details?.reason;
+                            amount = (int)obj?.purchase?.total?.amount;
+                            bot.SendTextMessageAsync(userid, $"Your donation did not pass through Xsolla because of: {reason}. If you have any questions please go to @werewolfsupport.");
+                            return Request.CreateResponse(HttpStatusCode.OK);
                         default:
                             return Request.CreateResponse(HttpStatusCode.OK);
                     }
@@ -136,15 +141,9 @@ namespace DonationSite.Controllers.Webhook
                 }
                 catch (Exception e)
                 {
-                    //string path = HttpContext.Current.Server.MapPath("~/App_Data/error");
                     while (e.InnerException != null)
                         e = e.InnerException;
                     bot.SendTextMessageAsync(LogGroupId, e.Message + "\n" + e.StackTrace);
-                    //using (var sw = new StreamWriter(path))
-                    //{
-                    //    sw.WriteLine(e.Message);
-                    //    sw.Flush();
-                    //}
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
                 }
             }
