@@ -3,16 +3,9 @@
 	Texto original traduzido por @Montuano e @guto_xtino
 	Atualmente sendo traduzido pelo grupo Tradutores WWBR
 		Team leaders: @ayylimao e @sats_sjrp
-			(Última edição: 19/05/2017 por @sats_sjrp e @ayylimao)
-			
-	Algum problema com a tradução? Por favor nos conte no grupo @errowwbr
--->
-<!--
-	TO DO
-		/abouts (vigia era aprediz)
-		parte da seita -> integrante da seita
-		fuzzies
-		hidden lynch
+			(Última edição: 14/04/2018 por @sats_sjrp)
+
+	Algum problema com a tradução? Contate alguém da equipe.
 -->
 <strings>
 <language name="Português (Brasil)" base="Português" variant="Brasil" code="pt-BR" isDefault="true"/>
@@ -20,14 +13,14 @@
 		<value>{0} iniciou uma partida. Clique no botão abaixo para entrar!</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
-		<value>{0} iniciou um jogo desbalanceado. Clique no botão para jogar e tente sair vivo!</value>
+		<value>{0} iniciou um jogo no modo Caos. Clique no botão para jogar e tente sobreviver!</value>
 		<value>{0} iniciou uma partida no modo caos. Clique no botão abaixo para entrar!</value>
 	</string>
 	<string key="MinuteLeftToJoin">
-		<value>Falta 1 minuto para o jogo começar, aperte o botão!</value>
+		<value>Falta 1 minuto para começarmos, aperte o botão se quiser jogar!</value>
 	</string>
 	<string key="SecondsLeftToJoin">
-		<value>Só mais {0} segundos para entrar no jogo, aperte o botão!</value>
+		<value>Resta(m) {0} segundo(s) para começar, aperte o botão se quiser jogar!</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>Quantidade mínima de pessoas não atingida. Partida cancelada!</value>
@@ -48,7 +41,7 @@
 		<value>{0}, me envie uma mensagem no privado ({1}) e clique start, ou não poderá jogar.</value>
 	</string>
 	<string key="Flee">
-		<value>{0} fugiu com medo!</value>
+		<value>{0} fugiu porque tem medo do lobo mau!</value>
 	</string>
 	<string key="PlayerRoleWas">
 		<value>{0} era {1}</value>
@@ -78,16 +71,16 @@
 		<value>{0} é Vidente!</value>
 	</string>
 	<string key="ApprenticeNowSeer">
-		<value>{0} era Vidente. Como Aprendiz, você pega sua bola de cristal e se torna Vidente.</value>
+		<value>{0} era Vidente, mas morreu. Depois de tanto tempo treinando como Aprendiz, finalmente chegou o momento de você se assumir como Vidente, pelo bem da Aldeia.</value>
 	</string>
 	<string key="BeholderNewSeer">
-		<value>{0} era Aprendiz e agora tomou o lugar de {1} como Vidente.</value>
+		<value>{0} tomou o lugar de {1} como Vidente.</value>
 	</string>
 	<string key="SeerSees">
 		<value>Você vê que {0} é {1}!</value>
 	</string>
 	<string key="AskLynch">
-		<value>Quem você gostaria de enforcar?</value>
+		<value>Quem você gostaria de mandar pra forca?</value>
 	</string>
 	<string key="AskDetect">
 		<value>Quem você vai investigar?</value>
@@ -114,7 +107,7 @@
 		<value>Em quem você irá se espelhar?</value>
 	</string>
 	<string key="AskConvert">
-		<value>Quem você quer juntar à Seita?</value>
+		<value>Quem você quer converter para a Seita?</value>
 	</string>
 	<string key="DiscussWith">
 		<value>Lembre-se de falar com {0}</value>
@@ -123,79 +116,80 @@
 		<value> e </value>
 	</string>
 	<string key="RoleInfoCursed">
-		<value>Você é Duas Caras 😾. Por enquanto você é do time da Aldeia, mas, se os Lobisomens forem em você, se tornará um Lobisomem. Saiba mais: /aboutcursed</value>
+		<value>Você é Infiel 😾, por conta disso os deuses te amaldiçoaram. Por enquanto você é do time da Aldeia, mas, se os Lobisomens forem em você, se tornará um Lobisomem. Saiba mais: /aboutCursed</value>
 	</string>
 	<string key="RoleInfoDetective">
-		<value>Você é Detetive 🕵️, e joga pela Aldeia. Durante o dia, você pode escolher uma pessoa para investigar e descobrir seu papel, mas cuidado! Os lobisomens tem 40% de chance de te ver investigando alguém! Saiba mais: /aboutdetective</value>
+		<value>Você é Detetive 🕵️, e joga pela Aldeia. Durante o dia, você pode escolher uma pessoa para investigar e descobrir seu papel. Mas tome cuidado, os lobisomens tem a chance de te descobrir! Saiba mais: /aboutDetective</value>
 	</string>
 	<string key="RoleInfoDrunk">
-		<value>Que Bebum 🍻! Você passa o dia inteiro no bar. Se os Lobisomens te devorarem, eles irão ficar bêbados e não conseguirão atacar na próxima noite. Você é da Aldeia. Saiba mais: /aboutdrunk</value>
+		<value>Que Bebum 🍻! Você passa a noite inteira no bar. Se os Lobisomens te devorarem, eles irão ficar bêbados e não conseguirão atacar na próxima noite. Você é da Aldeia. Saiba mais: /aboutDrunk</value>
 	</string>
 	<string key="RoleInfoGuardianAngel">
-		<value>Você é Anjo 👼, e seu papel é proteger a Aldeia. Durante a noite, você pode escolher alguém para proteger... Mas cuidado com quem protege, ou poderá ser morto pela pessoa escolhida! Saiba mais: /aboutGA</value>
+		<value>Você é Anjo da Guarda 👼, e seu papel é proteger a Aldeia. Durante a noite, você pode escolher alguém para proteger... Mas cuidado com quem protege, ninguém sabe quem espreita nessas noites perigosas, e você pode se dar mal! Saiba mais: /aboutGA</value>
 	</string>
 	<string key="RoleInfoGunner">
-		<value>Você é Vigilante 🔫, não aguenta mais o estado da Aldeia e quer fazer justiça com as próprias mãos. Você pode atirar em alguém durante o dia, mas todos vão saber que foi você! Saiba mais: /aboutGunner</value>
+		<value>A Aldeia clama por justiça! E você vai fazê-la com as próprias mãos, Vigilante 🔫. Depois de limpar seu antigo revolver, vê que só tem duas balas. Você pode atirar em alguém durante o dia, mas todos vão saber que foi você! Saiba mais: /aboutGunner</value>
 	</string>
 	<string key="RoleInfoHarlot">
-		<value>Você é Profissional do Sexo 💋. Durante a noite, você poderá escolher alguém para visitar, e descobrir se a pessoa está ou não do lado da aldeia. Afinal, se sobreviver a noite, é porque a pessoa escolhida não é Lobisomem nem Serial Killer! Você também tem uma chance de perceber se a pessoa é parte da Seita. Saiba mais: /aboutharlot</value>
+		<value>Você é Amante 💋. Durante a noite, você poderá escolher alguém para visitar, e descobrir se a pessoa está ou não do lado da Aldeia. Afinal, se sobreviver a noite, é porque a pessoa escolhida não é Lobisomem nem Serial Killer! Você também tem uma chance de perceber se a pessoa é parte da Seita. Saiba mais: /aboutHarlot</value>
 	</string>
 	<string key="RoleInfoTraitor">
-		<value>Você é Traíra 🖕! Por enquanto, você é da Aldeia, mas, se todos os Lobisomens morrerem, você se transformará, traindo as pessoas que confiavam em você. Videntes podem te ver como Reles Mortal ou como Lobisomem. Saiba mais: /abouttraitor</value>
+		<value>Você é Traíra 🖕! Por enquanto, você é da Aldeia, mas, se todos os Lobisomens morrerem, você se transformará, traindo as pessoas que confiavam em você. Videntes podem te ver como Aldeão ou como Lobisomem. Saiba mais: /aboutTraitor</value>
 	</string>
 	<string key="RoleInfoWolf">
-		<value>Você é Lobisomem 🐺, e pode se divertir bastante matando uma pessoa por noite com sua alcateia! Saiba mais: /aboutww</value>
+		<value>Você é Lobisomem 🐺, sempre com fome... E sede de sangue. A cada noite, você e sua alcateia poderão se divertir matando uma pessoa! Saiba mais: /aboutWW</value>
 	</string>
 	<string key="RoleInfoSeer">
-		<value>Você é Vidente 👳, e seu papel é guiar a Aldeia na luta para a sobrevivência. Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Saiba mais: /aboutseer</value>
+		<value>Você é Vidente 👳, e seu papel é guiar a Aldeia na luta para a sobrevivência. Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Saiba mais: /aboutSeer</value>
 	</string>
 	<string key="RoleInfoVillager">
-		<value>Você é um Reles Mortal 👱, condenado a passar seus dias sofrendo na aldeia pela violência e esperando ser a próxima vítima. Uma vez por dia você poderá​ votar em alguém pra mandar pra forca, use seu voto com sabedoria! Saiba mais: /aboutvg</value>
+		<value>Você é Aldeão 👱, condenado a passar seus dias sofrendo pela violência e esperando ser a próxima vítima. Uma vez por dia você poderá​ votar em alguém pra mandar pra forca, use seu voto com sabedoria! Saiba mais: /aboutVG</value>
 	</string>
 	<string key="RoleInfoTanner">
-		<value>Você é Suicida 👺, e seu único objetivo é ir pra forca. Se conseguir isso, você ganha o jogo e todo o resto perde! Saiba mais: /abouttanner</value>
+		<value>Você é Suicida 👺, e seu único objetivo é ir pra forca. Se conseguir isso, você ganha o jogo e todo o resto perde! Saiba mais: /aboutTanner</value>
 	</string>
 	<string key="RoleInfoWildChild">
-		<value>Você é uma Criança Rebelde 👶! Escolha uma pessoa para ser seu exemplo, e, quando ela morrer, você se transformará em lobisomem. Saiba mais: /aboutwc</value>
+		<value>Você é uma Criança Rebelde 👶! Escolha uma pessoa para ser seu exemplo, e, quando ela morrer, você se transformará em Lobisomem. Saiba mais: /aboutWC</value>
 	</string>
 	<string key="RoleInfoBeholder">
-		<value>Você é Vigia de Vidente 👁! Você sabe quem realmente é Vidente (e não Trouxa). Não se esqueça de falar com ele! Saiba mais: /aboutbh</value>
+		<value>Você é Confidente 👁! Você sabe quem realmente é Vidente (e não Trouxa), e por isso é a pessoa mais confiável para ouvir os segredos da Aldeia... Saiba mais: /aboutBH\n</value>
 	</string>
 	<string key="RoleInfoApprenticeSeer">
-		<value>Você é Aprendiz de Vidente 🙇, e joga pela Aldeia. Você só poderá virar Vidente de verdade após a morte do atual. Saiba mais: /aboutapps</value>
+		<value>Você é Aprendiz de Vidente 🙇, e joga pela Aldeia. Você ainda não tem permissão para usar a bola de cristal... Ainda. Vidente morreu, sua bola acendeu. Saiba mais: /aboutAppS</value>
 	</string>
 	<string key="RoleInfoCultist">
-		<value>Você faz parte da Seita 👤. Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem da Seita, ela vence! Saiba mais: /aboutcult</value>
+		<value>Você é Integrante da Seita 👤. Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem Integrantes, a Seita vence! Saiba mais: /aboutCult</value>
 	</string>
 	<string key="RoleInfoCultistHunter">
-		<value>A Seita está na sua Aldeia tentando converter todo mundo, e você, Agente da Inquisição 💂, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir. Se for da Seita, a pessoa morre. Caso a Seita tente te converter, o membro mais recente morre. Saiba mais: /aboutch</value>
+		<value>A Seita está tentando converter todo mundo, e você, Agente da Inquisição 💂, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir. Se for da Seita, a pessoa morre. Caso a Seita tente te converter, o membro mais recente morre. Mas cuidado: se você tentar inquirir um Serial Killer, quem morre é você! Saiba mais: /aboutCH</value>
 	</string>
 	<string key="LynchTime">
-		<value>O dia acaba e a aldeia se reúne para decidir quem morrerá enforcado hoje. Todo mundo tem {0} segundos para votar!</value>
+		<value>O dia acaba e a aldeia se reúne para decidir quem morrerá enforcado hoje. Todo mundo tem {0} segundos para votar!
+</value>
 	</string>
 	<string key="DayTime">
 		<value>O sol começa a surgir. Vocês têm {0} segundos para fazer suas ações ou discutir.</value>
 	</string>
 	<string key="NightTime">
-		<value>A noite chega. Alguns aldeões vão dormir, outros se preparam... Vocês têm {0} para fazer suas ações!</value>
+		<value>A noite chega. Alguns aldeões vão dormir, outros se preparam... Vocês têm {0} segundos para fazer suas ações!</value>
 	</string>
 	<string key="LynchKill">
-		<value>A aldeia votou, em meio a dúvidas e suspeitas, e enforcou {0}.\n{1}</value>
+		<value>A Aldeia votou, em meio a dúvidas e suspeitas, e enforcou {0}.\n{1}</value>
 	</string>
 	<string key="LynchTie">
-		<value>Como a aldeia é desorganizada, ninguém morreu. A multidão volta para suas casas com raiva...</value>
+		<value>Como a Aldeia é desorganizada, ninguém morreu. A multidão volta para suas casas com raiva...</value>
 	</string>
 	<string key="NoLynchVotes">
-		<value>A Aldeia esqueceu de matar alguém hoje. Todos estão vivos.</value>
+		<value>A Aldeia esqueceu de matar alguém hoje. Todos sobreviveram.</value>
 	</string>
 	<string key="DetectiveEaten">
-		<value>Procurando desesperadamente por {0}, os aldeões correm para sua casa e encontram seu corpo sem vida. Seu distintivo tem marcas de dentes...{0} era Detetive!</value>
+		<value>Procurando desesperadamente por {0}, os aldeões correm para sua casa e encontram seu corpo sem vida. Seu distintivo está enfiado na sua garganta, com marcas de mordida. NOMNOMNOMNOM</value>
 	</string>
 	<string key="GuardianEaten">
-		<value>A aldeia encontra o corpo sem vida de {0}, um Anjo da Guarda, na porta da igreja. As penas de suas asas estão manchadas de sangue...</value>
+		<value>A aldeia encontra o corpo sem vida de {0}, Anjo da Guarda, na porta da igreja. Seu corpo está com marcas de mordidas e suas asas estão encharcadas de sangue...</value>
 	</string>
 	<string key="GunnerEaten">
-		<value>Um rastro de pólvora leva a aldeia para o centro da vila. Lá, eles encontram o corpo de {0}, Vigilante, com marcas de mordidas e sem sua arma.</value>
+		<value>Um rastro de pólvora leva a Aldeia para o centro da vila. Lá, encontram o corpo de {0}, Vigilante, com marcas de mordidas e um tiro bem no meio de sua testa, mas não encontram seu revólver ...</value>
 	</string>
 	<string key="SeerEaten">
 		<value>Os aldeões acordam ao amanhecer e encontram {0} em cima de uma mesa de búzios e com cartas de tarô na sua boca. {0}, que era Vidente, morreu.</value>
@@ -204,31 +198,31 @@
 		<value>Todos acordam com um forte cheiro de álcool e madeira em chamas... O boteco está pegando fogo! Após apagar o incêndio, a aldeia encontra os restos mortais de {0} com marcas de mordida.</value>
 	</string>
 	<string key="FoolEaten">
-		<value>Os aldeões acordam e encontram {0} sem vida em cima de uma mesa. Ao seu lado tem uma bola de ""cristal""... da 25 de Março! Mas que Trouxa!</value>
+		<value>Os aldeões acordam e encontram a carcaça de {0}, sem muita carne nas pernas ou braços. Ao seu lado suas cartas de.... Super Trunfo das Meninas Super Poderosas??? HAHAHAHAH QUE TROUXA!</value>
 	</string>
 	<string key="DefaultEaten">
-		<value>A aldeia encontra o corpo sem vida de {0}, cheio de mordidas. {1}</value>
+		<value>NOMNOMNOMNOM Os aldeões se levantam de manhã com um forte chheiro e encontram o corpo de {0}, sem vida, jogado na porta de sua casa, cheio de mordidas e esquartejado. {1}</value>
 	</string>
 	<string key="HunterKilledCultist">
-		<value>Um aldeão olha para a casa de {0} e vê pinguins saindo pela janela. Chamando o resto da aldeia, entram e encontram o corpo de {0}, com marcas de tortura. Um membro da seita morreu!</value>
+		<value>Um aldeão olha para a casa de {0} e vê fumaça saindo pela janela. Chamando o resto da aldeia para prevenir um incêndio, entram e encontram o corpo de {0}, com marcas de tortura, rodeado por velas acesas caídas no chão. Um Integrante da Seita morreu!</value>
 	</string>
 	<string key="NoAttack">
-		<value>Amanhece o dia na aldeia. Todos respiram aliviados, pois ninguém morreu... ainda.</value>
+		<value>Amanhece o dia na Aldeia. Todos respiram aliviados, pois ninguém morreu... ainda.</value>
 	</string>
 	<string key="CursedBitten">
-		<value>Lobisomens te atacaram. Por ser Duas Caras, ao invés de morrer você virou um!</value>
+		<value>Lobisomens te atacaram. Por ser Infiel, ao invés de morrer você virou um!</value>
 	</string>
 	<string key="CursedBittenToWolves">
-		<value>Vocês atacaram {0} que, por ser Duas Caras, se juntou à alcateia ao invés de morrer!</value>
+		<value>Vocês atacaram {0} que, por ser Infiel, se juntou à alcateia ao invés de morrer!</value>
 	</string>
 	<string key="WolvesEatYou">
 		<value>NOMNOMNOMNOM Os Lobisomens te mataram!</value>
 	</string>
 	<string key="WolvesEatDrunk">
-		<value>Opa! {0} era Bebum! Agora você está embriagado e não poderá atacar na próxima noite...</value>
+		<value>Opa! {0} era Bebum! Agora você está vendo torto e não poderá atacar na próxima noite...</value>
 	</string>
 	<string key="GuardWolf">
-		<value>Que azar! Você protegeu um Lobisomem e ele te comeu!</value>
+		<value>Que azar! Você protegeu um Lobisomem, que te comeu!</value>
 	</string>
 	<string key="GuardSaved">
 		<value>Você salvou a vida de {0}!</value>
@@ -240,10 +234,10 @@
 		<value>Que estranho! Você protegeu a casa de {0}, mas ela estava vazia...</value>
 	</string>
 	<string key="GuardSavedYou">
-		<value>Um Anjo da Guarda estava com você na noite passada e espantou os Lobisomens! Que bênção! ❤️</value>
+		<value>Um Anjo da Guarda estava com você na noite passada e espantou os Lobisomens! Que bênção!  ❤️</value>
 	</string>
 	<string key="HarlotEaten">
-		<value>{0}, Profissional do Sexo, escolheu um péssimo dia para tirar folga e ficar em casa. Com isso acabou morrendo!</value>
+		<value>{0}, que era Amante, escolheu um péssimo dia para ficar em casa e descansar. Seu corpo, antes safado e cheio de amor, foi encontrado na praça, e as mordidas nele não eram de amor...</value>
 	</string>
 	<string key="HarlotNotHome">
 		<value>Ficou sem jantar hoje... {0} não estava em casa.</value>
@@ -252,28 +246,28 @@
 		<value>Você foi dormir na casa de {0}, mas descobriu que era um Lobisomem. Você morreu!</value>
 	</string>
 	<string key="HarlotFuckedWolfPublic">
-		<value>{0} dormiu na casa de um Lobisomem na noite passada! Seu corpo sem vida foi encontrado na porta de sua casa com marcas de mordida...</value>
+		<value>{0} dormiu na casa de um Lobisomem na noite passada! Suas noites de diversão e safadeza acabaram de uma forma bem trágica, e seu corpo é encontrado sem vida e com marcas de mordida.</value>
 	</string>
 	<string key="HarlotFuckedVictimPublic">
-		<value>{0} bateu na porta da casa de {1}, para oferecer seus serviços. Ninguém atendeu, mas o barulho chamou a atenção do Lobisomem que estava devorando {1}! {0} morreu...</value>
+		<value>{0} tentou ter uma noite picante com {1}, mas, quando entrou na casa, viu um Lobisomem matando {1}. {0} tentou sair correndo, mas o Lobisomem ataca rapidamente, e {0} acabou morrendo também...</value>
 	</string>
 	<string key="HarlotVisitNonWolf">
 		<value>Que noite boa! Você percebeu que {0} não era Lobisomem e nem Serial Killer, já que transaram a noite toda.</value>
 	</string>
 	<string key="HarlotVisitYou">
-		<value>Na madrugada, alguém bate na sua porta te oferecendo uma noite e tanto. Você não vê quem é, mas topa mesmo assim. A noite realmente foi boa, e você só percebeu ao acordar de manhã que a pessoa foi embora enquanto você dormia.</value>
+		<value>Na madrugada, alguém bate na sua porta te oferecendo uma noite e tanto. Você não vê quem é, mas topa mesmo assim. A noite realmente foi boa, mas, ao amanhacer descobre que a pessoa foi embora no meio da noite e  não consegue nem pegar o número para repetir a dose! </value>
 	</string>
 	<string key="DetectiveCaught">
-		<value>Você vê {0} na moita, observando a aldeia. Com certeza {0} é Detetive!</value>
+		<value>Você vê {0} na moita, observando a Aldeia. Com certeza {0} é Detetive!</value>
 	</string>
 	<string key="DetectiveSnoop">
 		<value>Sua bisbilhotada provou que {0} é {1}</value>
 	</string>
 	<string key="HarlotShot">
-		<value>A vila escuta um tiro vindo do centro da Aldeia. {0} matou {1} com um tiro bem no meio da cara. {1} era Profissional do Sexo 💋</value>
+		<value>Todos escutam um tiro vindo do centro da Aldeia. {0}, Vigilante, matou {1} com um tiro bem no meio da cara, parece que {0} não gosta de fazer amor! {1} era Amante 💋.</value>
 	</string>
 	<string key="DefaultShot">
-		<value>A vila escuta um tiro vindo do centro da Aldeia. {0} matou {1} com um tiro bem no meio da cara. {2}.</value>
+		<value>De repente, um tiro é disparado.  Os aldeões se viram para ver {0} de pé em cima do corpo de {1}, com a arma ainda apontada para a cabeça e os miolos espalhados.  {2}.</value>
 	</string>
 	<string key="WolfWins">
 		<value>O Lobisomem venceu!</value>
@@ -282,10 +276,10 @@
 		<value>Os lobisomens venceram!</value>
 	</string>
 	<string key="VillageWins">
-		<value>A aldeia venceu! Todas as ameaças à paz foram eliminadas.</value>
+		<value>A Aldeia venceu! Todas as ameaças à paz foram eliminadas.</value>
 	</string>
 	<string key="TannerWins">
-		<value>Idiotas! Mataram um Suicida, que ganhou esse jogo!</value>
+		<value>Seus burros! Mataram um Suicida, que ganhou esse jogo sozinho!</value>
 	</string>
 	<string key="RemainingPlayersEnd">
 		<value>Jogadores restantes, papéis e lado:</value>
@@ -294,10 +288,10 @@
 		<value>{0} votou para converter {1}</value>
 	</string>
 	<string key="CultConvertCultHunter">
-		<value>A Seita enviou {0} para fazer o trabalho sujo e converter {1}... Mas seu membro nunca voltou, porque {1} era Agente da Inquisição, e tinha uma câmara de tortura especial pra Seita!</value>
+		<value>A Seita enviou {0} para fazer o trabalho sujo e converter {1}... Mas seu integrante nunca voltou, porque {1} era Agente da Inquisição, e tinha uma câmara de tortura especial pra Seita!</value>
 	</string>
 	<string key="CultHunterKilledCultVisit">
-		<value>{0} foi à sua casa para te converter... Mas você tinha uma câmara de tortura só pra esse tipo de gente. Um integrante da Seita morreu! Ainda falta {1}.</value>
+		<value>{0} foi à sua casa para te converter... Mas você tinha uma câmara de tortura só pra esse tipo de gente. Um Integrante da Seita morreu! Ainda falta {1}.</value>
 	</string>
 	<string key="CultConvertYou">
 		<value>Agora você faz parte da Seita. Durante a noite, tentará espalhar a palavra da Seita na Aldeia.</value>
@@ -309,7 +303,7 @@
 		<value>{0} foi sorrateiramente tentar converter {1}... Mas não tinha ninguém em casa!</value>
 	</string>
 	<string key="CultWins">
-		<value>Os Lobisomens morreram e a Seita se espalhou pela Aldeia! A Seita ganhou!</value>
+		<value>Todos foram convertidos! A Seita venceu e a Aldeia se fu...</value>
 	</string>
 	<string key="HunterVisitDead">
 		<value>Quando você chegou na casa de {0}, notou que seu corpo já estava sem vida. Você chegou tarde.</value>
@@ -318,22 +312,22 @@
 		<value>Quando você chega na casa de {0}, ouve alguém rezando em uma outra língua. Entendendo que {0} faz parte da Seita, você acaba com sua vida!</value>
 	</string>
 	<string key="HunterFailedToFind">
-		<value>Quando você invade a casa de {0} nota que a Seita ainda não chegou lá. Ainda bem.</value>
+		<value>Quando você invade a casa de {0}, nota que a Seita ainda não chegou lá. Ainda bem.</value>
 	</string>
 	<string key="WildChildToWolves">
-		<value>A inspiração de {0} morreu! A criança se rebela tanto que vira lobisomem como você.</value>
+		<value>A inspiração de {0} morreu! A Criança se rebela tanto que vira Lobisomem como você.</value>
 	</string>
 	<string key="WildChildTransform">
-		<value>{0} morreu! Num ataque de fúria, você vira lobisomem! Seus novos companheiros são: {1}</value>
+		<value>{0} morreu! Num ataque de fúria, você vira Lobisomem! Seus novos companheiros são: {1}</value>
 	</string>
 	<string key="Villager">
-		<value>Reles Mortal 👱</value>
+		<value>Aldeão 👱</value>
 	</string>
 	<string key="Drunk">
 		<value>Bebum 🍻</value>
 	</string>
 	<string key="Harlot">
-		<value>Profissional do Sexo 💋</value>
+		<value>Amante 💋</value>
 	</string>
 	<string key="Seer">
 		<value>Vidente 👳</value>
@@ -351,7 +345,7 @@
 		<value>Lobisomem 🐺</value>
 	</string>
 	<string key="Cursed">
-		<value>Duas Caras 😾</value>
+		<value>Infiel 😾</value>
 	</string>
 	<string key="Gunner">
 		<value>Vigilante 🔫</value>
@@ -366,13 +360,13 @@
 		<value>Criança Rebelde 👶</value>
 	</string>
 	<string key="Beholder">
-		<value>Vigia de Vidente 👁</value>
+		<value>Confidente 👁</value>
 	</string>
 	<string key="ApprenticeSeer">
 		<value>Aprendiz de Vidente 🙇</value>
 	</string>
 	<string key="Cultist">
-		<value>parte da Seita 👤</value>
+		<value>Integrante da Seita 👤</value>
 	</string>
 	<string key="CultistHunter">
 		<value>Agente da Inquisição 💂</value>
@@ -384,7 +378,7 @@
 		<value>💀 Morreu</value>
 	</string>
 	<string key="Alive">
-		<value>🙂 Vivo</value>
+		<value>🙂 Sobrevivente</value>
 	</string>
 	<string key="PlayersAlive">
 		<value>Jogadores vivos:</value>
@@ -393,19 +387,19 @@
 		<value>Maçom 👷</value>
 	</string>
 	<string key="RoleInfoMason">
-		<value>Você é Maçom 👷, e participa de uma sociedade secreta que tenta ajudar a Aldeia.  Se houver outros maçons, você saberá quem são. Saiba mais: /aboutMason</value>
+		<value>Você é Maçom 👷, e participa de uma sociedade secreta que tenta ajudar a Aldeia. Se houver outros maçons, você saberá quem são. Saiba mais: /aboutMason</value>
 	</string>
 	<string key="MasonEaten">
-		<value>A maçonaria lamenta a morte de {0}, cujo corpo foi encontrado esta manhã.</value>
+		<value>O corpo de {0} é encontrado de manhã no templo da vila com um esquadro e um compasso enfiado na sua barriga. Um dos maçons morreu.</value>
 	</string>
 	<string key="MasonTeam">
 		<value>\nOs maçons são: {0}</value>
 	</string>
 	<string key="CultTargetDead">
-		<value>O membro mais novo da Seita bate na porta da casa de {0}, mas, olhando pela janela, vê seu corpo sem vida. Seu alvo morreu!</value>
+		<value>O integrante mais novo da Seita bate na porta da casa de {0}, mas, olhando pela janela, vê seu corpo sem vida. Seu alvo morreu!</value>
 	</string>
 	<string key="GuardBlockedWolf">
-		<value>A alcatéia se dirige à casa de {0} para o banquete, mas encontra na porta uma criatura cercada de luz e com uma espada. Um Anjo sai em defesa do seu alvo, e, após uma longa luta, vocês voltam pra casa com o rabo entre as pernas.</value>
+		<value>A alcateia se dirige à casa de {0} para o banquete, mas encontra na porta uma criatura celestial, cercada de luz e com uma espada. Um Anjo da Guarda sai em defesa do seu alvo, e, após uma longa luta cheia de músicas gospeis, vocês voltam pra casa com o rabo entre as pernas.</value>
 	</string>
 	<string key="CultUnableToConvert">
 		<value>{0} foi à casa de {1} para falar sobre a Seita, mas sua fé era forte demais para ser corrompida.</value>
@@ -423,7 +417,7 @@
 		<value>Quando o sol nasce, a Aldeia encontra o corpo sem vida de {0} jogado na praça.</value>
 	</string>
 	<string key="MasonConverted">
-		<value>Estranho... {0} não apareceu no templo maçônico hoje... 🤔</value>
+		<value>Estranho O.o ... {0} não apareceu no templo maçônico hoje... 🤔</value>
 	</string>
 	<string key="FleeDisabled">
 		<value>A opção de fugir durante uma partida foi desativada.</value>
@@ -450,70 +444,70 @@
 		<value>Você é Cupido 🏹. Sempre gostou de criar casais, mas só te restaram duas flechas, exatamente o suficiente para formar um casal. Você pode escolher dois jogadores que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza. Saiba mais: /aboutCupid</value>
 	</string>
 	<string key="RoleInfoDoppelganger">
-		<value>Você é Doppelgänger 🎭. Diz a lenda que seus ancestrais eram metamorfos, e podiam assumir qualquer forma que quisessem! Escolha um jogador, e quando ele morrer você assumirá o papel dele no jogo. Saiba mais: /aboutDG</value>
+		<value>Você é Doppelgänger 🎭. Diz a lenda que seus ancestrais eram metamorfos, e podiam assumir qualquer forma que quisessem! Escolha uma pessoa, e quando ela morrer você assumirá seu papel no jogo. Saiba mais: /aboutDG</value>
 	</string>
 	<string key="RoleInfoHunter">
-		<value>Você é Ex-militar 🎯. Nunca larga sua arma, inclusive dorme com ela, e com certeza ninguém nunca te pegará desprevinido. Quando morrer, poderá se vingar ou se defender com sua arma! Saiba mais: /aboutHunter</value>
+		<value>Você é Sentinela 🎯. Enquanto a Aldeia dorme, você fica de vigília, pois sabe que é de noite que as piores coisas acontecem. Sua confiável espingarda sempre está ao seu lado, e com certeza ninguém nunca te pegará de surpresa. Quando morrer, poderá se vingar ou se defender com um tiro! Saiba mais: /aboutHunter</value>
 	</string>
 	<string key="RoleInfoSerialKiller">
-		<value>Você é Serial Killer 🔪. Você é egoísta e joga sozinho. Toda noite você pode escolher um jogador para matar e adicionar à sua coleção de corpos. Saiba mais: /aboutSK</value>
+		<value>Você é Serial Killer 🔪. Como todo mundo, você gosta de guardar lembrancinhas das suas melhores experiências. Ou, no caso, guardar a orelha direita das pessoas que matou. Toda noite, você pode escolher uma pessoa para adicionar à coleção. Saiba mais: /aboutSK</value>
 	</string>
 	<string key="CupidChosen">
-		<value>Como o amor é lindo! A memória de {0} nunca deixará seu coração. Seu objetivo é que os dois sobrevivam. Se um de vocês morrer o outro irá até o mundo dos mortos para que ambos continuem juntos.</value>
+		<value>Como o amor é lindo! A memória de {0} nunca deixará seu coração. Seu objetivo é que os dois sobrevivam. Se um de vocês morrer, o outro irá até o mundo dos mortos para que ambos continuem juntos. Saiba mais: /aboutCupid</value>
 	</string>
 	<string key="HunterLynchedChoice">
 		<value>A aldeia vai te enforcar! Mas você ainda tem uma oportunidade de atirar em alguém.</value>
 	</string>
 	<string key="HunterNoChoiceLynched">
-		<value>{0} tenta pegar sua arma, mas seus dedos cansados a deixam cair...</value>
+		<value>{0} tenta pegar sua espingarda, mas seus dedos cansados a deixam cair...</value>
 	</string>
 	<string key="HunterSkipChoiceLynched">
-		<value>{0} pega sua arma, aponta para a multidão... Mas decide não atirar em ninguém antes de morrer.</value>
+		<value>{0} pega sua espingarda, aponta para a multidão... Mas decide não atirar em ninguém antes de morrer.</value>
 	</string>
 	<string key="HunterKilledFinalLynched">
-		<value>{0} pega sua arma, aponta pra cabeça de {1} e atira! Não deu nem tempo de sentir dor... {2}</value>
+		<value>{0} pega sua espingarda, aponta pra cabeça de {1} e atira! Não deu nem tempo de sentir dor... {2}</value>
 	</string>
 	<string key="HunterShotChoice">
 		<value>Te feriram mortalmente! Com seu último suspiro, você pode levar alguém com você, pense rápido!</value>
 	</string>
 	<string key="HunterNoChoiceShot">
-		<value>{0} cai sem vida, não podendo nem alcançar sua arma pra revidar...</value>
+		<value>{0} cai sem vida, não podendo nem alcançar sua espingarda pra revidar...</value>
 	</string>
 	<string key="HunterSkipChoiceShot">
-		<value>{0} decide não dar seu último tiro, aceitando seu destino...</value>
+		<value>{0} decide não dar seu último tiro, aceitando morrer sem levar ninguém...</value>
 	</string>
 	<string key="HunterKilledFinalShot">
-		<value>{0} cai no chão com um ferimento na barriga, mas saca sua arma e atira na testa de {1}, que morre na hora. {2}</value>
+		<value>{0} cai no chão com um ferimento na barriga, mas saca sua espingarda e atira na testa de {1}, que morre na hora. {2}</value>
 	</string>
 	<string key="HunterShotWolfMulti">
-		<value>A aldeia escuta tiros de noite! A vítima dos lobisomens era Ex-militar, e leva consigo {0}, um dos Lobisomens.</value>
+		<value>A aldeia escuta tiros de noite! A vítima dos lobisomens era Sentinela, e leva consigo {0}, um dos Lobisomens.</value>
 	</string>
 	<string key="HunterShotWolf">
-		<value>O corpo de {0} está jogado no meio da praça, sem vida. Ex-militares sabem se defender, até de lobisomens!</value>
+		<value>O corpo de {0} está jogado no meio da praça, seu focinho estraçalhado por um tiro. Foi uma péssima ideia atacar uma Sentinela...</value>
 	</string>
 	<string key="SerialKillerKilledWolf">
-		<value>Os Lobisomens tentaram atacar a pessoa errada noite passada! Aldeões encontraram {0} ao lado da forca e sem sua pele... Quase dá pra sentir pena! Um Serial Killer ganhou um novo casaco de peles.</value>
+		<value>Os Lobisomens tentaram atacar a pessoa errada noite passada! Aldeões encontraram {0} ao lado da forca, sem sua pele ou sua orelha direita. Alguém ganhou um casaco de peles...</value>
 	</string>
 	<string key="DefaultKilled">
-		<value>Pareceu uma manhã normal, mas onde está {0}? A vila se reúne na casa de {0} e encontra seu corpo na cama, com seus órgãos espalhados pelo quarto. Um Serial Killer se divertiu essa noite... {1}</value>
+		<value>Pareceu uma manhã normal, mas onde está {0}? A Aldeia se reúne na casa de {0} e encontra seu corpo na cama. Quase não dá pra perceber a orelha faltando, porque seus órgãos estão espalhados pelo quarto... {1}</value>
 	</string>
 	<string key="GuardBlockedKiller">
-		<value>Você queria brincar com {0}, mas um Anjo barrou sua entrada. Hoje você vai dormir sem brincar!</value>
+		<value>{0} com certeza teria sido uma ótima adição à sua coleção, mas infelizmente não foi hoje que isso aconteceu. Um Anjo da Guarda barrou sua entrada na casa, e não saiu de lá nem com reza braba...</value>
 	</string>
 	<string key="CultConvertHunter">
-		<value>A Seita manda {0} para converter {1}, que recebe sua visita a tiros! {0} morreu!</value>
+		<value>A Seita manda {0} para converter {1}, que estava de vigília e retribuiu as batidas na porta com tiros! {0} morreu!</value>
 	</string>
 	<string key="CultConvertSerialKiller">
-		<value>A Seita manda {0} para converter {1}. Chegando lá, {0} descobre que não foi uma boa ideia... Seu corpo é encontrado aberto e sem seus órgãos. {0} morreu!</value>
+		<value>A Seita manda {0} para converter {1}. Chegando lá, {0} descobre que não foi uma boa ideia... Seu corpo é encontrado aberto, sem os órgãos nem uma das orelhas. {0} morreu!</value>
 	</string>
 	<string key="GuardKiller">
-		<value>Você tentou proteger um Serial Killer... Que logo te convida para uma brincadeira que você com certeza não gosta, a que inclui sua morte!</value>
+		<value>Você ficou de guarda na frente da casa de um Serial Killer... Que se aproveitou do fato de você estar de costas pra porta. A notícia é boa é que a facada nas costas foi tão precisa que você quase não sentiu dor. A notícia ruim é que pelo jeito anjos também morrem...</value>
 	</string>
 	<string key="HarlotFuckKiller">
-		<value>Você entrou na casa de {0} para poder ter um pouco de prazer e ganhar o pão de cada dia, mas nenhum dos dois aconteceu nessa noite. {0} passa a faca lentamente no seu tórax enquanto você morre... Pelo menos alguém está se divertindo.</value>
+		<value>Você entrou na casa de {0} para poder ter um pouco de prazer, mas, como você não é masoquista, não foi dessa vez. A última coisa que você sentiu foi uma queimação na orelha, e não foi ninguém falando de você...</value>
 	</string>
 	<string key="HarlotFuckKillerPublic">
-		<value>Parece que o Serial Killer não queria ter uma noite de sacanagens! O corpo de {0} foi encontrado na porta de sua casa, com as mãos e os pés amarrados...</value>
+		<value>O prazer que um Serial Killer sente não vem das coisas mais normais. {0}, que tinha oferecido uma noite de prazer, infelizmente cumpriu o prometido, e seu corpo foi encontrado sem a orelha direita.</value>
 	</string>
 	<string key="DGToMason">
 		<value>{0}, que era Doppelgänger, agora se tornou Maçom, assim como você!</value>
@@ -522,37 +516,37 @@
 		<value>{0} morreu, e você agora é Maçom. Seus companheiros (se houver) são: {1}</value>
 	</string>
 	<string key="DGToCult">
-		<value>{0}, que era Doppelgänger, virou parte da Seita, assim como você!</value>
+		<value>{0}, que era Doppelgänger, virou Integrante da Seita, assim como você!</value>
 	</string>
 	<string key="DGTransformToCult">
-		<value>{0}, morreu, e você, seguindo seu exemplo, vira parte da Seita. Seus companheiros são: {1}</value>
+		<value>{0} morreu, e você, seguindo seu exemplo, vira Integrante da Seita. Seus companheiros (se houver) são: {1}</value>
 	</string>
 	<string key="DGToWolf">
-		<value>{0} era Doppelgänger e se virou Lobisomem. Mais um para a alcateia!</value>
+		<value>{0} era Doppelgänger e virou Lobisomem, assim como você!</value>
 	</string>
 	<string key="DGTransformToWolf">
-		<value>{0} era Lobisomem e morreu. Agora você é Lobisomem! Sua alcatéia é: {1}</value>
+		<value>{0} era Lobisomem e morreu. Agora você é Lobisomem! Sua alcateia é: {1}</value>
 	</string>
 	<string key="SerialKillerWins">
-		<value>Apenas uma pessoa sobreviveu... Um Serial Killer, que se divertiu muito com essa brincadeirinha! Pena que não tem ninguém para comemorar junto.</value>
+		<value>Apenas uma pessoa sobreviveu... Um Serial Killer, que comemora usando um colar feito com as orelhas que colecionou! Pena que não tem ninguém para comemorar junto.</value>
 	</string>
 	<string key="AskKill">
 		<value>Quem você gostaria de matar essa noite?</value>
 	</string>
 	<string key="LoverDied">
-		<value>{0} dá seu último suspiro olhando no fundo dos olhos de seu amor, {1}, que segura seu corpo de joelhos. {1} não aguenta a dor, e, com uma faca, perfura o próprio coração... Eles ficarão juntos, mesmo no mundo dos mortos. {2}</value>
+		<value>{0} dá seu último suspiro olhando no fundo dos olhos de seu amor, {1}, que segura seu corpo de joelhos. {1} não aguenta a dor, e, com uma faca, perfura o próprio coração... O casal ficará junto, mesmo no mundo dos mortos. {2}</value>
 	</string>
 	<string key="AskDoppelganger">
 		<value>Em quem você quer se transformar?</value>
 	</string>
 	<string key="AskCupid1">
-		<value>Quem será o casal? Escolha o primeiro amante.</value>
+		<value>Quem será o casal? Escolha a primeira pessoa.</value>
 	</string>
 	<string key="AskCupid2">
-		<value>Quem será o casal? Escolha o segundo amante.</value>
+		<value>Quem será o casal? Escolha a segunda pessoa.</value>
 	</string>
 	<string key="Hunter">
-		<value>Ex-militar 🎯</value>
+		<value>Sentinela 🎯</value>
 	</string>
 	<string key="Cupid">
 		<value>Cupido 🏹</value>
@@ -570,10 +564,10 @@
 		<value>Como o amor é lindo! O casal venceu!</value>
 	</string>
 	<string key="HunterKilledVisiter">
-		<value>A aldeia acorda e encontra o corpo baleado de {0} largado no meio da praça. Parece que alguém visitou um Ex-militar e se deu mal! {1}</value>
+		<value>Opa! Parece que {0} estava no lugar errado na hora errada. A Sentinela estava bem pistola noite passada, e pistola foi a última coisa que {0} viu após tentar espalhar a palavra da Seita. {1}</value>
 	</string>
 	<string key="CultAttempt">
-		<value>Durante a noite, você escuta batidas na sua porta. Quando a abre, um indivíduo de capuz pergunta: "Você gostaria de se tornar parte da Seita?" Você fecha a porta na cara dele. Sua fé é mais forte.</value>
+		<value>Durante a noite, você escuta batidas na sua porta. Quando a abre, um indivíduo de capuz pergunta: "Você gostaria de se tornar parte da Seita?" Você fecha a porta na cara da pessoa. Sua fé é mais forte.</value>
 	</string>
 	<string key="AlreadyOnWaitList">
 		<value>Você já está na lista de espera para {0}.</value>
@@ -606,70 +600,103 @@
 		<value>{0} não votou e morreu por isso {1} vezes nas últimas 24 horas.</value>
 	</string>
 	<string key="AboutVG">
-		<value>Você é um Reles Mortal, condenado a passar seus dias sofrendo na aldeia pela violência e esperando para virar comida de Lobisomens, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar pra forca, use seu voto com sabedoria!</value>
+		<value>Todos os papeis são habitantes da Aldeia, mas um real Aldeão 👱 é aquele que não tem absolutamente nada de especial. Eles dormem de noite, não fazem nada de dia, e votam na hora da forca do mesmo jeito que todos os outros papéis. Além disso, eles não tem nenhum jeito de provar para os outros que são apenas Habitantes da Aldeia... Seu objetivo mais importante é vencer o jogo do jeito mais puro possível: votando nas pessoas certas, não confiando nas erradas, e navegando todas as mentiras do jogo. Isso é, até que sejam mortos ou convertidos para a Seita.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutSeer">
-		<value>Você é Vidente, seu papel é guiar a Aldeia na luta contra o Mal.  Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque o lado sombrio quer te matar!</value>
+		<value>Videntes 👳 tem uma habilidade muito especial: cada noite, podem escolher uma pessoa e ver o papel dela. Isso é extremamente importante para o jogo, e Videntes são vitais para a vitória da Aldeia... Quando são mesmo Videntes, e não Trouxas 🃏 (/aboutFool).\n\nMas nem sempre Videntes estão certos! Ao ver o papel de um Traíra 🖕, Videntes tem 50% de chance de vê-lo como Lobisomem 🐺, e 50% de chance de vê-lo como Aldeão 👱. Ou seja, se alguém disser que é Vidente e viu Fulano como Traíra, é mentira! Lembre-se também de que papéis podem mudar. A pessoa que era Criança Rebelde na última noite já pode ter virado Lobisomem! Além disso, Videntes não sabem de que tipo um Lobisomem é. Tanto o Filhote de Lobisomem 🐶 quanto o Lobisomem Alfa ⚡️ são vistos apenas como Lobisomens.\n\nÀs vezes, um jogo pode ter um Vidente e um Confidente 👁 (/aboutBH). Nesse caso, o Confidente saberá quem é Vidente assim que o jogo começar! Um bom Confidente manda mensagem privada para o Vidente na hora, assegurando-o de que não é Trouxa. Um ótimo Confidente serve como porta-voz de um Vidente! Ao invés de arriscar a vida de um Vidente revelando seu papel à Aldeia, o Confidente pode revelar seu próprio papel e, a cada manhã, dizer à Aldeia o que o Vidente viu na noite passada.\n\nChances de conversão para a Seita 👥: 40%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutWw">
-		<value>Você é um Lobisomem! Durante a noite, poderá escolher alguém para tentar matar, junto com seu time.</value>
+		<value>De noite, todos os Lobisomens 🐺 da alcateia votam para decidir quem será a próxima vítima. Se der empate, uma das opções vai ser aleatoriamente escolhida pelo bot. Mas cuidado, nem todos os papéis devem ser atacados!\n\nQuando os Lobisomens atacarem...\n
+- Um Bebum 🍻, ficarão bêbados, e não poderão atacar a próxima vítima.\n
+- Uma pessoa sendo protegida por um Anjo da Guarda 👼, ninguém vai morrer.\n
+- Um Amante 💋 que visitou alguém, ele não estará em casa.\n
+- Uma Sentinela 🎯, e só houver um Lobisomem, ela tem 30% de chance de matar o Lobisomem e sobreviver.\n
+- Uma Sentinela 🎯, e houverem vários lobisomens, ela morre, mas pode levar um dos Lobisomens junto! A chance é de 50% com dois Lobisomens, 70% com três, 90% com quatro, e acima de quatro a chance é de 100% de um dos Lobisomens morrer.\n
+- Um Serial Killer 🔪, ele tem 80% de chance de matar um dos Lobisomens e sobreviver.\n
+- Um Infiel 😾, ao invés de morrer, ele se juntará aos Lobisomens!\n\n
+A notícia boa é que, se houver um Lobisomem Alfa ⚡️ (/aboutAlphaWolf) na sua alcateia, vocês tem a chance de transformar vítimas em Lobisomens. E, se um Filhote de Lobisomem 🐶 (/aboutWolfCub) morrer, vocês poderão atacar duas vezes na mesma noite!
+\n\nOs Lobisomens vencem quando forem pelo menos metade dos habitantes da aldeia, com exceções. Se só sobrar um Lobisomem e uma Sentinela 🎯, o Lobisomem tem 70% de chance de ganhar. Se só sobrar um Lobisomem e um Serial Killer 🔪, o Lobisomem perde. Se mais de um Lobisomem sobrar, mas um Vigilante 🔫 estiver vivo e com munição, o jogo ainda não vai acabar.
+\n\nChances de conversão para a Seita 👥: 0%, não estará em casa, e se estiver mata o Integrante mais novo.
+\n\nTime: Alcateia</value>
 	</string>
 	<string key="AboutHarlot">
-		<value>Quem diria, Profissional do Sexo? Membro sexy da vila. Durante a noite, você poderá escolher alguém para fazer uma visitinha, e descobrir se a pessoa é ou não do mal. Porém, se você visitar um Lobo ou o Serial Killer você morre. Se visitar alguém que está sendo atacado(a) pelos lobos, você irá morrer.  Se você visitar alguém e os lobos tentarem te matar na sua casa, você irá sobreviver (já que não estava lá).</value>
+		<value>Amantes 💋 vivem um jogo de roleta russa. Toda noite, um Amante pode escolher alguém para visitar e passar a noite transando com ele. Se a pessoa for Integrante da Seita 👤, ao voltar para casa, o Amante tem uma chance de 50% de perceber que a pessoa é da Seita. Se a pessoa visitada não foi Lobisomem 🐺 nem Serial Killer 🔪, o Amante saberá disso pelo simples fato de que passou a noite inteira com a pessoa. Mas, se a pessoa for atacada por Lobisomens ou um Serial Killer, o Amante morre junto com ela... A boa notícia é que, ao atacar a casa de um Amante, Lobisomens vão voltar de barriga vazia se o Amante tiver passado a noite fora. Já um Serial Killer, quando escolhe sua vítima, procura ela em todo lugar até conseguir matar... Se um Amante visitar um Lobisomem ou Serial Killer, ele morre. Como um Amante só descobre inimigos ao morrer, é sempre uma boa ideia falar para alguém em que casa vai.\n\nChances de conversão para a Seita 👥: 70%, apenas se estiver em casa\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutDrunk">
-		<value>Parabéns, você é Bebum! Ninguém mandou você ficar no boteco. Se os Lobisomens te devorarem, eles irão ficar de ressaca e não terá ataque na próxima noite.</value>
+		<value>Um Bebum 🍻 passa todas as suas noites no bar. Enquanto vivo, ele não é nada mais do que outro Aldeão, mas ele pode ser muito útil quando morrer... Lobisomens 🐺 que matam um Bebum acabam totalmente bêbados com o álcool em seu sangue, e não conseguem atacar a próxima vítima. Ou seja, ao morrer, um Bebum salva duas vidas: a de quem não foi vítima porque os Lobisomens decidiram atacar um Bebum, e a da próxima vítima, que viverá uma noite a mais. Infelizmente, ou felizmente, Serial Killers 🔪 não comem a carne de suas vítimas, e podem matar Bebuns sem ter medo de nada.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutCursed">
-		<value>Você é Duas Caras. Por enquanto você faz parte da vila, mas se você por atacado pelos Lobisomens, você se tornará um Lobisomem também.</value>
+		<value>Um Infiel 😾 foi amaldiçoado pelos deuses por não ter fé. A maldição é um tanto estranha: se um dia for atacado por Lobisomens 🐺 (/aboutWW), ao invés de morrer, um Infiel se tornará um deles. Parece mais uma bênção. Enquanto não se tornar um Lobisomem, um Infiel joga pela Aldeia, por mais que possa mudar de time no futuro.\n\nChances de conversão para a Seita 👥: 60%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutTraitor">
-		<value>Traíra! Por enquanto, você faz parte da Aldeia, mas quando todos os Lobisomens morrerem, você será um Lobisomem. Você poderá ser identificado como lobo, ou não.</value>
+		<value>Um Traíra 🖕 joga pela Aldeia... até chegar a hora de traí-la. Não tem pra que sujar as mão enquanto ainda houver Lobisomens 🐺 na Aldeia, mas, assim que o último Lobisomem morrer, a traição acontece, e o Traíra se transforma em Lobisomem. Se um Vidente 👳 tentar ver o papel de um Traíra, terá 50% de chance de vê-lo como Aldeão 👱 e 50% de chance de vê-lo como Lobisomem.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutGA">
-		<value>Você é Anjo da Guarda, e seu papel é proteger a Aldeia. Durante a noite, você pode escolher alguém para proteger.  Porém, se você escolher alguém errado, você morre.</value>
+		<value>Anjos da Guarda 👼 são os maiores protetores da Aldeia. Toda noite, um Anjo pode escolher a casa de uma pessoa para proteger. Se a casa for atacada, o Anjo a defende, e ninguém envolvido morre. Infelizmente, um Anjo não pode salvar alguém que visitou a casa de um Lobisomem 🐺 ou Serial Killer 🔪... E pior ainda: se um Lobisomem ou Serial Killer atacar um Anjo da Guarda, ele não consegue se defender, e morre. Se um Anjo da Guarda tentar proteger a casa de um Lobisomem, ele tem 50% de chance de ser morto. O engraçado é que, se não morrer, um Anjo da Guarda pode salvar a vida de um Lobisomem que foi atacado por um Serial Killer! Se o Anjo da Guarda tentar proteger a casa de um Serial Killer, ele morrerá.\n\nChances de conversão para a Seita 👥: 60%, apenas se estiver em casa\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutDetective">
-		<value>Você é Detetive, e joga pela Aldeia. Durante o dia, você pode escolher uma pessoa para investigar e descobrir seu papel.  No entanto, ao fazer isso, você pode ser descoberto pelos lobos! (40% de chance) </value>
+		<value>Um Detetive 🕵️ pode escolher uma pessoa por dia, e bisbilhotar a Aldeia para descobrir seu papel enquanto todos estão ocupados discutindo os acontecimentos. O lado bom é que o papel descoberto sempre estará certo... O lado ruim é que, não importa quem um Detetive esteja investigando, todo dia há uma chance de 40% de Lobisomens 🐺 perceberem o que ele está fazendo e descobrirem quem é o Detetive.\n\nChances de conversão para a Seita 👥: 70%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutGunner">
-		<value>Você é Vigilante e tem a disposição 2 balas! Durante o dia, você pode atirar em alguém. Todo mundo ouvirá seus tiros!</value>
+		<value>Um Vigilante 🔫 faz justiça com as próprias mãos, e todo dia tem a oportunidade de atirar em alguém... desde que ainda tenha munição. Vigilantes começam o jogo com duas balas, podendo atirar em uma pessoa a cada dia. A pessoa cai morta, e todos ouvem o barulho do tiro e descobrem quem atirou. Fora isso, um Vigilante pode salvar o jogo: se a maioria dos habitantes da Aldeia for Lobisomem 🐺, mas um Vigilante está vivo e ainda tem munição, o jogo ainda não termina.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutTanner">
-		<value>Você é o Suicida, egoísta! Seu time é você. Se você for pra forca, você ganha automaticamente</value>
+		<value>O objetivo de um Suicida 👺 é ser enforcado. Se for enforcado, o Suicida ganha o jogo e todos os outros jogadores perdem. Se não for enforcado até o fim do jogo, ou morrer de outro jeito, o Suicida perde. Ao invés de lutar pela Aldeia, um Suicida tem seu próprio time, e ganha sozinho. \n\nChances de conversão para a Seita 👥: 100%\n\nTime: Suicida</value>
 	</string>
 	<string key="AboutFool">
-		<value>É dito ao trouxa que ele é o vidente. Quando ele escolher ver a função de alguém, lhe será dado uma função aleatória.</value>
+		<value>Um Trouxa 🃏 acha que é Vidente 👳 (/aboutSeer), e até o bot fala isso pra ele... Mas os resultados das visões são aleatórios! Quando um Trouxa tenta ver o papel de uma pessoa, o papel visto é aleatório dentre todos os papéis atualmente no jogo. As exceções são que um Trouxa nunca vai ver ninguém como Vidente ou como Trouxa. Além disso, assim como Videntes, um Trouxa não sabe distinguir tipos diferentes de Lobisomem 🐺⚡️🐶.\n\nÉ sempre importante descobrir se você é um Vidente real ou apenas um Trouxa, e tem vários jeitos. O mais importante é que, se houve um Confidente 👁 no jogo, ele saberá quem é o Vidente real, e provavelmente vai enviar uma mensagem para ele. Confidentes não sabem quem é Trouxa, apenas quem é Vidente. Outro jeito de descobrir é vendo a mesma pessoa duas vezes, pois ambas vão ter um resultado aleatório. Se os dois papéis resultantes forem diferentes, e mudar de um para o outro for impossível, você já sabe que é Trouxa. O problema é que mesmo se os papéis forem iguais, ainda existe uma probabilidade de que você seja Trouxa, além de azarado. O último jeito é vendo o papel de uma pessoa antes dela morrer. Se você tiver essa sorte, e o papel visto for diferente do papel mostrado quando a pessoa morreu, já sabe que é Trouxa.\n\nMesmo se você for Trouxa, não é o fim do mundo! Trouxas também são importantes para a Aldeia... isso porque os papéis vistos podem não pertencer às pessoas que viu, mas com certeza pertencem a alguém no jogo. Por isso, Trouxas são indispensáveis para a Aldeia saber que inimigos tem, mesmo sem saber quem são. Além disso, Videntes enxergam um Traíra 🖕 como Lobisomem ou Aldeão 👱, mas Trouxas conseguem ver (a pessoa errada com) o papel de Traíra, sabendo assim que o papel existe no jogo.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutCult">
-		<value>Você faz parte da Seita.  Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem da Seita, ela vence!</value>
+		<value>O objetivo de um Integrante da Seita 👤 é converter todos os jogadores vivos à Seita 👥. Para isso, a cada noite os Integrantes da Seita votam para decidir quem vão converter naquela noite. Apenas o Integrante mais novo vai à casa da pessoa escolhida, e, assim, é ele que sofre as consequências de ter escolhido a pessoa errada. Alguns papéis são difíceis de converter, outros podem matar suas visitas...\n\n
+Chances de converter um papel para a Seita:\n
+Alquimista ⚒: 75%\n
+Amante 💋: 70% (se estiver em casa)\n
+Detetive 🕵️: 70%\n
+Anjo da Guarda 👼: 60% (se estiver em casa)\n
+Infiel 😾: 60%\n
+Sentinela 🎯: 50%\n
+Xamã 🔮: 40%\n
+Vidente 👳: 40%\n
+Doppelganger 🎭: 0% (antes de se transformar)\n\n
+Papéis que matam o Integrante mais novo:\n
+Sentinela 🎯: 25% de chance\n
+Serial Killer 🔪\n
+Agente da Inquisição 💂\n
+Lobisomem 🐺\n
+Lobisomem Alfa ⚡️\n
+Filhote de Lobisomem 🐶\n\n
+Todos os outros papéis (👷🍺👁🔫🖕🙇👶🃏🏹👺🎖👑🤕👱) têm 100% de chance de serem convertidos.\n\nTime: Seita</value>
 	</string>
 	<string key="AboutCH">
-		<value>A Seita está na sua Aldeia tentando converter todo mundo, e você, Agente da Inquisição, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir.  Se for da Seita, a pessoa morre.  Caso a Seita tente te converter, o membro mais recente morre. Mas, se você foi no Serial Killer, quem morre é você!</value>
+		<value>Sempre que um jogo tiver Seita 👥, também terá um Agente da Inquisição 💂. Seu objetivo é matar todos os Integrantes da Seita 👤, e, para isso, o Agente visita uma pessoa por noite para inquirir. Se a pessoa for Integrante da Seita, ela morre. Se a pessoa for Serial Killer 🔪, o Agente da Inquisição morre. Surpreendentemente, se a pessoa for Lobisomem 🐺, ninguém morre. Já se a Seita tentar converter um Agente da Inquisição, o Integrante mais novo morre.\n\nUm Agente da Inquisição visita pessoas depois dos Lobisomens e Serial Killers visitarem, mas antes da Seita converter alguém. Isso significa que, se um Agente da Inquisição visitar uma pessoa no mesmo dia que a Seita tentar convertê-la, a pessoa não morre, mas pode ter sido convertida.\n\nChances de conversão para a Seita 👥: 0%, e o Integrante mais novo morre.\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutWC">
-		<value>Você é Criança Rebelde! Escolha alguém para ser seu exemplo, e quando a pessoa morrer, você se transformará em lobisomem. </value>
+		<value>No começo do jogo, uma Criança Rebelde 👶 pode escolher uma pessoa para ser seu exemplo. Se a pessoa morrer, a Criança fica tão revoltada que vira Lobisomem 🐺. Enquanto seu exemplo estiver vivo, uma Criança Rebelde joga pela Aldeia.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutAppS">
-		<value>Você é Aprendiz de Vidente, e joga pela Aldeia. Você se torna vidente, quando ele morre.</value>
+		<value>Um Aprendiz de Vidente 🙇 ainda não tem permissão, experiência ou autoconfiança para usar sua bola de vidro para descobrir o papel de alguém. Apenas depois que seu mestre, um Vidente 👳, morrer, o Aprendiz, sem ter mais o que aprender, assume a posição de Vidente e começa a usar a bola de cristal de seu mestre para ver os papéis das pessoas. Quando um Aprendiz vira Vidente, um Confidente 👁 (se houver) é notificado com seu nome e o novo cargo.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutBH">
-		<value>Você é Vigia do Vidente! você saberá quem é o verdadeiro vidente (e não o trouxa). Não esqueça de falar com ele!</value>
+		<value>Um Confidente 👁 sabe quem é (e se há) Vidente 👳 (/aboutSeer) no jogo, recebendo uma mensagem no começo do jogo e outra no caso de um Aprendiz de Vidente 🙇 (/aboutAppSeer) virar Vidente. Confidentes não sabem quem é Trouxa 🃏 (/aboutFool) ou Aprendiz, apenas quem é ou virou Vidente.\n\nConfidentes têm um papel crucial na Aldeia, o de falar com um Vidente para assegurá-lo de que ele não é Trouxa. Um bom Confidente também ouve todas as visões de um Vidente, e as compartilha para a Aldeia como porta-voz do Vidente. Assim, a Aldeia fica sabendo dos papéis das pessoas sem colocar a vida do Vidente em risco.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutMason">
-		<value>Você é Maçom, e participa de uma sociedade secreta. Se houver outros maçons, você saberá quem são.</value>
+		<value>Um Maçom 👷 sozinho é a mesma coisa que um Aldeão 👱, mas, se houver mais de um Maçom no jogo, eles são cruciais para a vitória da Aldeia. Isso porque Maçons sabem quem são os outros Maçons... E sabem quando um deles deixa de ser Maçom. Se um dos Maçons for convertido para a Seita 👥, ou virar Lobisomem 🐺, os outros Maçons recebem uma mensagem os avisando, e, como jogam pela Aldeia, têm a responsabilidade de contar a todos qual deles mudou de time. Por causa disso, Maçons são as pessoas mais confiáveis do jogo, já que todos os Aldeões sabem que um Maçom ainda não foi convertido. O papel principal de um Maçom é pedir aos Aldeões para que o enviem mensagens falando qual é seu papel. Com essa informação em mãos, Maçons lideram e gerenciam a Aldeia, por se comunicarem com jogadores detentores de papéis importantes como Vidente 👳 ou Anjo da Guarda 👼. São eles que lideram uma votação para enforcar a pessoa certa, e também são eles que dizem aos papéis importantes o que devem fazer em cada noite. Quando a Aldeia tem Maçons habilidosos, sua vitória é quase certa.\n\n
+Converter um Maçom à Seita 👥 pode ser perda de tempo, já que a Aldeia saberá de manhã e provavelmente enforcará o ex-Maçom... Mas também pode ser importante para a vitória da Seita, porque, nos minutos enquanto não for enforcado, um Maçom pode compartilhar toda a informação que recebeu no jogo com os outros Integrantes da Seita 👤.\n\n
+Atacar um Maçom significa se livrar de quem está gerenciando a Aldeia. Por um lado, uma Aldeia sem líder fica mais fraca; por outro, os jogadores com papéis importantes continuarão fazendo suas ações, com ou sem alguém na liderança. Mas matar um Maçom ainda é arriscado, pois, se restar apenas um Maçom vivo, ele virará alvo da Seita, e toda a informação que possui será usada pelos outros Integrantes. Por isso, Lobisomens 🐺 e Serial Killers 🔪 sempre devem se perguntar: será que vale a pena se livrar de um Maçom se isso vai ajudar a Seita?\n\nMesmo com o perigo de um Maçom ser convertido, a Aldeia tem mais chance de ganhar se todos os papéis importantes falarem com os Maçons. Cuidado ao mentir para um Maçom, nunca se sabe quanta informação ele tem sobre o jogo, e talvez sua mentira seja óbvia...\n\nChances de conversão para a Seita 👥: 100%, mas os outros Maçons serão avisados.\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutDG">
-		<value>Você é um Doppelgänger. A Lenda diz que seus ancestrais eram metamorfos, e podiam assumir qualquer forma que quisessem! Escolha um jogador, quando ele morrer você assumirá o papel dele no jogo.</value>
+		<value>O objetivo de um Doppelgänger 🎭 é se transformar em alguém. No começo do jogo, um Doppelgänger pode escolher uma pessoa para ser seu exemplo. Quando ela morrer, o Doppelgänger se transforma no papel dela!\n\nNormalmente, um Doppelgänger se transforma no papel original de uma pessoa, ou seja, a infecção de um Lobisomem Alfa ⚡️ ou a conversão para a Seita 👥 não influenciam na hora de um Doppelgänger se transformar. A exceção é que, se o papel original for Infiel 😾, Traíra 🖕, ou Criança Rebelde 👶, e a pessoa tiver se transformado em Lobisomem 🐺 (mesmo se foi pela mordida de um Alfa), o Doppelgänger também se transformará em Lobisomem. Além disso, se o papel original da pessoa for Aprendiz de Vidente 🙇, e ela não tiver sido transformada em Lobisomem, um Doppelgänger pega o papel que ela tinha na hora da morte (ou seja, Aprendiz de Vidente, Vidente 👳, ou Integrante da Seita 👤).\n\nChances de conversão para a Seita 👥: 0% (se ainda não tiver se transformado)\n\nTime: Neutro. Um Doppelgänger ganha se tiver se transformado, e perde se morreu sem se transformar.</value>
 	</string>
 	<string key="AboutCupid">
-		<value>Você é Cupido. Enviado à Aldeia de fraldão, com um arco e duas flechas, você pode escolher dois jogadores que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza</value>
+		<value>Um Cupido 🏹 pode, durante a primeira noite do jogo, escolher duas pessoas para formar um Casal. Por mais que seja possível se escolher, é mais seguro formar o Casal com duas outras pessoas. Grupos diferentes podem ter regras diferentes em relação à lealdade de um Cupido, mas, segundo o jogo, sua lealdade é com a Aldeia e não com o Casal formado.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia
+\n\n
+Um Casal ❤️ continua com seus papéis originais, mas o amor muda tudo. Se um dos dois morrer, o outro não aguenta a dor de perder sua alma gêmea e morre junto. O lado bom é que se, no final do jogo, uma pessoa do Casal estiver no time vitorioso, a outra também ganha junto, independente do seu time. O Casal pode escolher pra que time vai jogar: o time de uma das pessoas, o time da outra, ou o próprio Casal (alguns grupos não autorizam jogar pelo Casal). Jogando pelo Casal, o objetivo final é serem os únicos sobreviventes da Aldeia. Quando isso acontece, o Casal ganha, todos os outros perdem, e o jogo acaba com um final especial!</value>
 	</string>
 	<string key="AboutHunter">
-		<value>Você é Ex-militar! Seu revólver lhe ajudará a sobreviver na aldeia. Quando você morrer, pode escolher alguém para matar. Se os Lobisomens te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar, e, se for atacado por um lobisomem, você tem 30% chance de matá-lo. Para cada outro lobo as chances aumentam em 20% (30% para um 50% para dois e assim em diante).</value>
+		<value>Uma Sentinela passa a noite de vigília, e não vai ser pega desprevenida por qualquer um. Além de poder se defender de Lobisomens e Cultistas, uma Sentinela pode vingar a própria morte atirando em alguém. Quando morrer por qualquer motivo que não seja o ataque de um Lobisomem, uma Sentinela tem a opção de escolher uma pessoa dentre todos os jogadores vivos para matar, e assim levar junto consigo.\n\nQuando uma Sentinela for atacada por um único Lobisomem, tem 30% de chance de matar o Lobisomem e, assim, sobreviver. Já quando for atacada por mais de um Lobisomem, a Sentinela com certeza morrerá, mas terá a chance de levar um dos Lobisomens consigo. Se forem dois Lobisomens, a chance é de 50%; se forem três, 70%; se forem 4, 90%; e, se forem mais do que quatro, um dos Lobisomens com certeza morrerá. Se a Sentinela morrer por causa do ataque de um Lobisomem, ela não poderá escolher uma pessoa para matar. Ao invés disso, o bot escolhe um dos Lobisomens para morrer.\n\nSe um Integrante da Seita tentar converter uma Sentinela, tem uma chance de 25% dela estar de mau humor e matar o Integrante da Seita.\n\nChances de conversão para a Seita 👥: 50%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutSK">
-		<value>Você é Serial Killer. Você é egoísta e joga sozinho. Toda noite você pode escolher um jogador para matar e adicionar para sua coleção de corpos.</value>
+		<value>Um Serial Killer é a pessoa mais perigosa da Aldeia. Seu único objetivo é matar todos da Aldeia, e, depois de escolher uma vítima, o único jeito dela sobreviver é sendo protegida por um Anjo da Guarda. Não tem ninguém que um Serial Killer não consiga pegar de surpresa, e ninguém que consiga se esconder pra se salvar. Além disso, se alguém fizer a tolice de visitar a casa de um Serial Killer, a pessoa morrerá. A única exceção é quando uma alcateia ataca um Serial Killer. Nesse caso, os Lobisomens tem 20% de chance de pegar o Serial Killer desprevenido e vencer a luta. Perigoso como um Serial Killer é, ao menos ele não tem aliados, e, como todo mundo, pode ser morto durante o dia.\n\nChances de conversão para a Seita 👥: 0% e mata o Integrante mais novo.\n\nTime: Serial Killer</value>
 	</string>
 	<string key="AboutPara">
 		<value>Para é o desenvolvedor desse jogo, e ele gosta de uivar pras pessoas. Talvez ele tenha ficado muito tempo com os Lobisomens... Mexer com os lobos não é uma idéia muito boa, né?</value>
@@ -694,11 +721,11 @@
 	</string>
 	<string key="WhatLang">
 		<value>Que língua?
-	Atual: {0}</value>
+Atual: {0}</value>
 	</string>
 	<string key="WhatVariant">
 		<value>Que variante?
-	Atual: {0}</value>
+Atual: {0}</value>
 	</string>
 	<string key="LangSet">
 		<value>Idioma definido como {0}</value>
@@ -759,81 +786,81 @@
 	</string>
 	<string key="AllowFleeQ">
 		<value>Você permitirá fugas após o início da partida?
-	Lembre-se, os jogadores sempre poderão sair durante o Join.
-	Atual: {0}</value>
+Lembre-se, os jogadores sempre poderão sair durante o Join.
+Atual: {0}</value>
 	</string>
 	<string key="AllowFleeA">
 		<value>{0}ei que jogadores fujam após o início da partida</value>
 	</string>
 	<string key="MaxPlayersQ">
 		<value>Que quantidade de jogadores você gostaria de definir como a máxima?
-	Atual: {0}</value>
+Atual: {0}</value>
 	</string>
 	<string key="MaxPlayersA">
 		<value>Número máximo de jogadores definido como {0}</value>
 	</string>
 	<string key="ShowRolesDeathQ">
-		<value>Mostrar ou não os papéis dos jogadores quando morrerem?
-	Atual: {0}</value>
+		<value>Mostrar os papéis dos jogadores quando morrerem (Ou seja, desativar o Modo Secreto)?
+Atual: {0}</value>
 	</string>
 	<string key="ShowRolesDeathA">
-		<value>{0}ei os papéis dos jogadores quando morrerem.</value>
+		<value>{0} mostrarei os papéis dos jogadores quando morrerem.</value>
 	</string>
 	<string key="GameModeQ">
 		<value>Qual modo de jogo estará ativo no grupo?
-	Atual: {0}</value>
+Atual: {0}</value>
 	</string>
 	<string key="GameModeA">
 		<value>Modo de jogo definido como {0}</value>
 	</string>
 	<string key="ShowRolesEndQ">
 		<value>Como você quer que os papéis de jogadores sejam revelados ao fim do jogo?
-	Atual: {0}</value>
+Atual: {0}</value>
 	</string>
 	<string key="ShowRolesEndA">
 		<value>Revelação dos papéis definida como: {0}</value>
 	</string>
 	<string key="SetDayTimeQ">
 		<value>Escolha a duração base (em segundos) do dia. Ela ainda será modificada de acordo com o número de jogadores.
-	Configuração padrão: {0}
-	Atual: {1}</value>
+Configuração padrão: {0}
+Atual: {1}</value>
 	</string>
 	<string key="SetDayTimeA">
 		<value>Duração base do dia definida como {0} segundos</value>
 	</string>
 	<string key="SetNightTimeQ">
 		<value>Escolha a duração (em segundos) da noite.
-	Configuração Padrão: {0}
-	Atual: {1}</value>
+Configuração Padrão: {0}
+Atual: {1}</value>
 	</string>
 	<string key="SetNightTimeA">
 		<value>Duração da noite definida como {0} segundos</value>
 	</string>
 	<string key="SetLynchTimeQ">
 		<value>Escolha a duração (em segundos) da votação do enforcamento.
-	Configuração padrão: {0}
-	Atual: {1}</value>
+Configuração padrão: {0}
+Atual: {1}</value>
 	</string>
 	<string key="SetLynchTimeA">
 		<value>Duração da votação do enforcamento definida como {0} segundos</value>
 	</string>
 	<string key="AllowFoolQ">
-		<value>Permitir o papel "Trouxa" em partidas?
-	Atual: {0}</value>
+		<value>Permitir o papel de Trouxa em partidas?
+Atual: {0}</value>
 	</string>
 	<string key="AllowFoolA">
 		<value>Existência de Trouxa definida como: {0}</value>
 	</string>
 	<string key="AllowTannerQ">
-		<value>Permitir o papel "Suicida" em partidas?
-	Atual: {0}</value>
+		<value>Permitir o papel de Suicida em partidas?
+Atual: {0}</value>
 	</string>
 	<string key="AllowTannerA">
 		<value>Existência de Suicida definida como: {0}</value>
 	</string>
 	<string key="AllowCultQ">
 		<value>Permitir a existência da Seita em partidas?
-	Atual: {0}</value>
+Atual: {0}</value>
 	</string>
 	<string key="AllowCultA">
 		<value>Existência da Seita definida como: {0}</value>
@@ -869,67 +896,67 @@
 		<value>Tempo até o envio da mensagem de ping: {0}</value>
 	</string>
 	<string key="RoleInfoMayor">
-		<value>Você é Chefe da Aldeia 🎖. Uma vez que você se revelar, seu voto será contado duas vezes. Você é da Aldeia. Saiba mais: /aboutMayor</value>
+		<value>Você é Xerife🎖. Como único policial da Aldeia, seu voto é confiável o suficiente para ser contado duas vezes... Depois que você revelar seu cargo, é claro. Saiba mais: /aboutMayor</value>
 	</string>
 	<string key="RoleInfoPrince">
-		<value>Você é secretamente da Realeza 👑, escapando de sua vida aborrecida e mimada passando o dia com esses camponeses. Se tentarem te enforcar, perceberão seu erro, e você sobreviverá. Saiba mais: /aboutPrince</value>
+		<value>Você é secretamente da Realeza 👑, e foge da sua vida aborrecida e mimada passando o dia com esses camponeses. Se tentarem te enforcar, perceberão seu erro, e você sobreviverá. Saiba mais: /aboutPrince</value>
 	</string>
 	<string key="RoleInfoClumsyGuy">
-		<value>Você é Idiota 🤕! Você fala uma coisa e faz outra, até quando vota em quem enforcar. Pelo menos metade das vezes você acerta. Mesmo atrapalhando ao invés de ajudar, você está no time da aldeia. Saiba mais: /aboutClumsy</value>
+		<value>Você é Sem-jeito 🤕! Votações precisam de mais precisão do que você tem, e metade das vezes você vota na pessoa errada. Mesmo atrapalhando ao invés de ajudar, você está no time da Aldeia. Saiba mais: /aboutClumsy</value>
 	</string>
 	<string key="RoleInfoSorcerer">
-		<value>Você é Ocultista 🔮, e se junta às criaturas da noite, ao invés dos aldeões. À noite, você usará seu poder para encontrar Lobisomens ou Vidente. Você ganha somente se os Lobisomens ganharem. Desfrute de ajudar a acabar com o bem. Saiba mais: /aboutSorcerer</value>
+		<value>Você é Xamã 🔮, e se junta às criaturas da noite, ao invés dos aldeões. À noite, você pode viajar para o mundo dos espíritos, e procurar por uma pessoa lá. Mas apenas Lobisomens ou Videntes tem uma presença forte no outro mundo... Você ganha somente se os Lobisomens ganharem. Saiba mais: /aboutSorcerer</value>
 	</string>
 	<string key="RoleInfoBlacksmith">
-		<value>Você é Ferragista ⚒, e trabalha com vários tipos de metais. Você tem uma pequena quantidade de prata, o suficiente para impedir os Lobisomens de atacarem por uma noite. Durante o dia, você poderá pegar seu pó de prata e espalhá-lo ao redor da aldeia. Saiba mais: /aboutBlacksmith</value>
+		<value>Você é Alquimista ⚒, e tem vários tipos de materiais e reagentes para usar em seus estudos. O mais importante no momento é o pó de prata, do qual você tem uma pequena quantidade, o suficiente para impedir Lobisomens de atacarem por uma noite. Saiba mais: /aboutBlacksmith</value>
 	</string>
 	<string key="RoleInfoAlphaWolf">
 		<value>Você é Lobisomem Alfa ⚡️, a origem da praga. Sua mordida é a causa da maldição que transforma humanos em lobisomens. Cada noite, você irá escolher alguém para atacar e matar, mas, enquanto você estiver na alcateia, sua vítima tem uma chance de 20% de virar Lobisomem. Saiba mais: /aboutAlphaWolf</value>
 	</string>
 	<string key="RoleInfoWolfCub">
-		<value>Você é Filhote 🐶, adorado por sua matilha. Como os outros Lobisomens, você irá escolher alguém para atacar e matar todas as noites. Se alguém te matar, sua matilha verá seu corpo no chão, e, com raiva, vingará sua morte, atacando duas vezes na noite seguinte. Saiba mais: /aboutWolfCub</value>
+		<value>Você é Filhote de Lobisomem 🐶, adorado por sua matilha. Como os outros Lobisomens, você irá escolher alguém para atacar e matar todas as noites. Se alguém te matar, sua matilha verá seu corpo no chão, e, com raiva, vingará sua morte, atacando duas vezes na noite seguinte. Saiba mais: /aboutWolfCub</value>
 	</string>
 	<string key="PrinceLynched">
-		<value>A aldeia se prepara para enforcar {0}, que grita, "Esperem! Esperem! Eu sou da Realeza! Esse anel real, com o selo do rei, prova isso. Criados me rodeiam toda noite, então eu não posso ser um inimigo." Se sentindo tolos, os aldeões vão para suas casas dormir com o rabo entre as pernas.</value>
+		<value>A aldeia se prepara para enforcar {0}, que grita, "Esperem! Esperem! Eu sou da Realeza! Este anel real, com o selo do rei, prova isso. Criados me rodeiam toda noite, então eu não posso ser um inimigo." Se sentindo tolos, os aldeões vão para suas casas dormir com o rabo entre as pernas.</value>
 	</string>
 	<string key="SorcererOther">
-		<value>Você tenta ver {0}, mas sua bola de cristal embaça e não consegue ver seu papel. Mas você sabe que {0} não é Vidente nem Lobisomem.</value>
+		<value>Você procura por {0} no mundo dos espíritos, mas sua presença lá é muito menor do que a de um Vidente ou Lobisomem seria.</value>
 	</string>
 	<string key="MayorReveal">
-		<value>{0} dá um passo à frente e mostra o selo oficial de Chefe da Aldeia. De agora em diante, os votos de {0} para enforcar alguém serão contados duas vezes.</value>
+		<value>{0} dá um passo à frente e mostra seu distintivo de Xerife. De agora em diante, os votos de {0} para enforcar alguém serão contados duas vezes.</value>
 	</string>
 	<string key="AskMayor">
-		<value>Você quer se revelar para a Aldeia como Chefe?</value>
+		<value>Você quer se revelar para a Aldeia como Xerife?</value>
 	</string>
 	<string key="Reveal">
 		<value>Revelar</value>
 	</string>
 	<string key="SpreadDust">
-		<value>Você pode impedir que os Lobisomens ataquem na próxima noite. Quer espalhar a prata agora?</value>
+		<value>Você pode impedir que os Lobisomens ataquem na próxima noite. Quer espalhar o pó de prata agora?</value>
 	</string>
 	<string key="BlacksmithSpreadSilver">
-		<value>Durante o dia, {0} espalha um pó especial que espanta os Lobisomens durante uma noite. Agora, a Aldeia respira um pouco mais aliviada.</value>
+		<value>As discussões pausam assim que a Aldeia percebe {0} espalhando pó de prata no chão. Com certeza é o suficiente para impedir Lobisomens de atacarem essa noite!</value>
 	</string>
 	<string key="Mayor">
-		<value>Chefe da Aldeia 🎖</value>
+		<value>Xerife 🎖</value>
 	</string>
 	<string key="Prince">
-		<value>da Realeza 👑</value>
+		<value>Realeza 👑</value>
 	</string>
 	<string key="Sorcerer">
-		<value>Ocultista 🔮</value>
+		<value>Xamã 🔮</value>
 	</string>
 	<string key="ClumsyGuy">
-		<value>Idiota 🤕</value>
+		<value>Sem-jeito 🤕</value>
 	</string>
 	<string key="Blacksmith">
-		<value>Ferragista ⚒</value>
+		<value>Alquimista ⚒</value>
 	</string>
 	<string key="AlphaWolf">
 		<value>Lobisomem Alfa ⚡️</value>
 	</string>
 	<string key="WolfCub">
-		<value>Filhote 🐶</value>
+		<value>Filhote de Lobisomem 🐶</value>
 	</string>
 	<string key="PlayerBittenWolves">
 		<value>Sua alcateia começa a atacar {0}, mas, de repente, {1} manda todos pararem. Com sua autoridade como Lobisomem Alfa, diz que decidiu que {0} se juntará à alcateia, e todos voltam para suas casas após morderem a vítima. Amanhã de noite, {0} se transformará em Lobisomem.</value>
@@ -941,31 +968,31 @@
 		<value>Você olha para o sol se pondo, e percebe que seu corpo se transforma. Agora você é Lobisomem!</value>
 	</string>
 	<string key="AboutMayor">
-		<value>Como Chefe da Aldeia, seus votos valem por dois após se revelar.</value>
+		<value>A Aldeia pode não ter uma força policial, mas pelo menos tem um Xerife 🎖. Como todos os outros papéis, no começo do jogo ninguém sabe quem é Xerife, mas todo dia antes da forca o jogador pode escolher ficar quieto ou revelar seu papel. Assim que se revelar, os votos de um Xerife passam a valer por dois, o que pode ser muito importante mais pro final do jogo, quando Lobisomens 🐺 ou a Seita 👥 começarem a tentar ganhar votações. Durante esses empates perigosos, o voto de um Xerife pode ser a diferença entre a vitória e a derrota. Mas se revelar cedo demais pode ser perigoso, transformando o Xerife em um alvo dos inimigos da Aldeia...\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutPrince">
-		<value>A Realeza é fundamental na equipe da Aldeia. Assim que ele for pra forca, ele será revelado e não morrerá. Ele só poderá ser morto durante a noite.</value>
+		<value>Viver em uma Aldeia perigosa por escolha própria pode ser uma péssima ideia, mas às vezes alguém da Realeza 👑 pode ser ingênuo ou desesperado o suficiente para procurar aventuras em todos os lugares errados. Durante o dia, a pessoa foge dos criados e guardas para vivenciar a vida rústica de uma verdadeira Aldeia... Mas depois de voltar para o castelo no final da tarde, um integrante da Realeza se rodeia de novo de empregados, aproveitando o conforto e segurança do próprio quarto. Com testemunhas de que não saiu da cama durante a noite, a pessoa pode se safar de um enforcamento ao se revelar... Depois de verem a prova de que a pessoa indo para a forca é da Realeza, os aldeões param tudo e se retiram sem enforcar ninguém... Mas apenas na primeira vez que tentarem enforcar a pessoa.\n\nPor mais seguro que seu quarto seja, uma pessoa da Realeza também não consegue escapar da determinação de um Serial Killer 🔪 de olho na presa. E não adianta de nada dormir em um quarto seguro se a volta para o castelo estiver totalmente desprotegida de ataques de Lobisomens 🐺...\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutSorcerer">
-		<value>Vidente Mal! Cada noite poderá escolher uma pessoa, e será revelado se ela é Vidente ou Lobisomem. Você é do time Alcatéia (Lobisomens)</value>
+		<value>Um Xamã 🔮 joga pela vitória dos Lobisomens 🐺, e não pela Aldeia. Ao invés de ver os papéis de alguém em uma bola de cristal, um Xamã vai ao mundo dos espíritos e procura por sua presença lá. A maioria das pessoas não tem nenhuma ligação forte com os espíritos, mas Lobisomens e Videntes 👳 (/aboutSeer) têm. Assim, a cada noite um Xamã só descobrirá se uma pessoa é Vidente, Lobisomem ou nenhum dos dois. Essa informação pode ser muito importante para a Alcateia, que vive temendo ser descoberta por um Vidente. Xamãs, assim como Videntes e Trouxas 🃏, não sabem distinguir dentre os tipos de Lobisomem 🐺⚡️🐶.\n\nChances de conversão para a Seita 👥: 40%\n\nTime: Alcateia</value>
 	</string>
 	<string key="AboutClumsy">
-		<value>Você é Idiota! Você é tão burro que fala uma coisa e faz outra, até quando vota em quem enforcar. Pelo menos metade das vezes você acerta. Mesmo atrapalhando ao invés de ajudar, você está no time da aldeia.</value>
+		<value>Um Sem-Jeito 🤕 é a mesma coisa que um Aldeão 👱, com o diferencial de que, a cada votação de enforcamento, um Sem-Jeito tem 50% de chance de votar em uma pessoa aleatória, ao invés da pessoa na qual o jogador clicou. Não votar não é uma boa opção, já que uma pessoa que não vota por dois enforcamentos seguidos é morta. Vale mais a pena ter uma pessoa que vota errado de vez em quando do que ter um Aldeão a menos.\n\nChances de conversão para a Seita 👥: 100%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutBlacksmith">
-		<value>Você é Ferragista, e trabalha com vários tipos de metais. Você tem uma pequena quantidade de prata, o suficiente para impedir os Lobisomens de atacarem por uma noite. Durante o dia, você poderá pegar seu pó da prata e espalhá-lo ao redor da aldeia.</value>
+		<value>Um Alquimista ⚒ tem todos os tipos de reagentes para fazer seus experimentos... Mas desde que a Aldeia ficou perigosa, tem algo mais importante a fazer do que procurar a Pedra Filosofal. Ao invés de passar os dias tentando transformar chumbo em ouro, a coisa mais inteligente é revirar seu laboratório procurando por cada miligrama de prata guardado. O que foi encontrado é exatamente o suficiente para espalhar pela Aldeia e impedir os Lobisomens 🐺 de atacarem por uma noite... É claro que, ao espalhar o pó de prata de dia, todos os aldeões vão perceber o altruísmo de proteger a Aldeia ao invés de apenas a sua casa, e saberão quem é Alquimista.\n\nChances de conversão para a Seita 👥: 75%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutAlphaWolf">
-		<value>Você é Lobisomem Alfa, a origem da praga. Sua mordida é a causa da maldição que transforma humanos em lobisomens. Cada noite, você irá escolher alguém para atacar e matar, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de se transformar em um lobisomem.</value>
+		<value>Um Lobisomem Alfa ⚡️ é um tipo especial de Lobisomem 🐺 (/aboutWW). Além de agir como qualquer outro, quando há um Alfa na alcateia, cada ataque bem sucedido terá uma chance de 20% de resultar na infecção da vítima, ao invés de sua morte. Se a vítima for infectada por um Alfa, ela sobreviverá mais um dia... E, na noite seguinte, se transformará em Lobisomem. Se o ataque não for bem sucedido (seja pela presença de um Anjo da Guarda, seja por autodefesa), a pessoa não tem chance nenhuma de se transformar em Lobisomem.\n\nAssim como Filhotes de Lobisomem 🐶 (/aboutWolfCub), um Lobisomem Alfa será visto por um Vidente 👳 ou Trouxa 🃏 apenas como "Lobisomem". Apenas um Detetive 🕵️ verá o papel real de um Lobisomem Alfa.\n\nChances de conversão para a Seita 👥: 0%, não estará em casa, e se estiver mata o Integrante mais novo.\n\nTime: Alcateia</value>
 	</string>
 	<string key="AboutWolfCub">
-		<value>Você é Filhote, adorado por sua matilha. Como os outros Lobisomens, você irá escolher alguém para atacar e matar todas as noites. Se acontecer de você ser morto, sua matilha verá seu corpo no chão, e, com raiva, vingará sua morte, atacando duas vezes na noite seguinte.</value>
+		<value>Um Filhote de Lobisomem 🐶 é um Lobisomem 🐺 (/aboutWW) como todos os outros... Tirando que, por ser filhote, é o membro mais amado e mimado da alcateia. Se morrer, o resto da alcateia (se houver) vai poder atacar duas vezes na noite seguinte, para vingar sua morte.\n\nAssim como Lobisomens Alfa ⚡️ (/aboutAlphaWolf), um Filhote de Lobisomem será visto por um Vidente 👳 ou Trouxa 🃏 apenas como "Lobisomem". Apenas um Detetive 🕵️ verá o papel real de um Filhote de Lobisomem.\n\nChances de conversão para a Seita 👥: 0%, não estará em casa, e se estiver mata o Integrante mais novo.\n\nTime: Alcateia</value>
 	</string>
 	<string key="DGTransformToAlpha">
 		<value>{0} morreu, e você se transformou em Lobisomem​ Alfa. Seus companheiros (se houver) são: {1}</value>
 	</string>
 	<string key="DGTransformToWolfCub">
-		<value>{0} morreu, e você se transformou em Filhote. Seus companheiros (se houver) são: {1}</value>
+		<value>{0} morreu, e você se transformou em Filhote de Lobisomem. Seus companheiros (se houver) são: {1}</value>
 	</string>
 	<string key="VillageTeamEnd">
 		<value>Aldeia</value>
@@ -977,7 +1004,7 @@
 		<value>Alcateia</value>
 	</string>
 	<string key="SerialKillerTeamEnd">
-		<value>Egoísta</value>
+		<value>Serial Killer</value>
 	</string>
 	<string key="CultTeamEnd">
 		<value>Seita</value>
@@ -986,92 +1013,92 @@
 		<value>Suicida</value>
 	</string>
 	<string key="CultConvertWolf">
-		<value>A seita envia {0} para tentar converter {1}, mas sua cabeça é jogada pela janela. {0} morreu!</value>
+		<value>A Seita envia {0} para tentar converter {1}, mas seus ossos descarnados são jogados pela janela. {0} morreu!</value>
 	</string>
 	<string key="HarlotFuckedKilledPublic">
 		<value>{0} vai até a casa de {1}, oferecendo uma noite de prazer, mas encontra alguém removendo cirurgicamente os órgãos de {1}! Tinha um Serial Killer na casa, e {0} não conseguiu escapar a tempo...</value>
 	</string>
 	<string key="ApprenticeSeerEaten">
-		<value>A Aldeia acorda e encontra o corpo sem vida de {0}, que era Aprendiz de Vidente, ao lado dos cacos de sua bola de cristal de segunda mão.</value>
+		<value>A Aldeia acorda e encontra o corpo ensanguentado e mordido de {0}, que era Aprendiz de Vidente, ao lado dos cacos de sua bola de vidro.</value>
 	</string>
 	<string key="BlacksmithKilled">
-		<value>{0} e um Serial Killer descobriram que bigornas não matam apenas se caírem em cima de alguém. O corpo de {0} é encontrado atravessado em sua própria bigorna...</value>
+		<value>{0} e um Serial Killer descobriram que bigornas não matam apenas se caírem em cima de alguém. O corpo de {0} é encontrado atravessado em sua própria bigorna e sem sua orelha direta...</value>
 	</string>
 	<string key="CultistKilled">
-		<value>Parece que Serial Killers não gostam de religião, visto que {0} está em cima de um candelabro sangrando... A Seita perdeu um membro.</value>
+		<value>Parece que Serial Killers não gostam de religião, visto que {0} está com uma vela no lugar de sua orelha direta e em cima de um candelabro, sangrando... A Seita perdeu um membro.</value>
 	</string>
 	<string key="CupidKilled">
-		<value>O amor na Vila acabou com a morte de {0}, que era Cupido. Parece que Serial Killers não gostam de romances...</value>
+		<value>O amor na Vila acabou com a morte de {0}, Cupido. Seu corpo é encontrado sem sua orelha direta, que foi arrancada com a sua flecha por um Serial Killer...</value>
 	</string>
 	<string key="DrunkKilled">
-		<value>{0}, que era Bebum, teve seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Obviamente mais uma brincadeira de Serial Killer!</value>
+		<value>{0}, que era Bebum, teve seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Sua orelha direita também foi retirada habilmente, mas vai saber onde ela está...</value>
 	</string>
 	<string key="GuardianAngelKilled">
-		<value>O corpo de {0} está jogado na porta da Igreja, sem vida... Nem asas, que entraram para a coleção de um Serial Killer. Sem um Anjo, a aldeia teme pela sua segurança.</value>
+		<value>A Aldeia teme pela sua segurança, visto que {0}, que era Anjo da Guarda, está sem vida na frente da igreja. Mais chocante do que a falta de uma de suas orelhas são suas asas, completamente depenadas. Algum Serial Killer acabou de ganhar um lindo boá!</value>
 	</string>
 	<string key="GunnerKilled">
-		<value>Nenhuma vigilância pode ser constante... Um tiro foi disparado na casa de {0}, mas, dessa vez, quem estava segurando a arma era Serial Killer. Não há mais justiça na Aldeia agora que seu Vigilante morreu.</value>
+		<value>Nenhuma vigilância pode ser constante... Tiros foram disparados​ na casa de {0}, mas, dessa vez, quem estava segurando a arma era Serial Killer. Um dos tiros arrancou sua orelha direta... Não há mais justiça na Aldeia agora que seu Vigilante morreu.</value>
 	</string>
 	<string key="MayorKilled">
-		<value>A Aldeia está sem líder! O corpo de {0} foi encontrado sem vida na porta de sua casa. Claramente foi uma façanha de Serial Killer.</value>
+		<value>A Aldeia está sem polícia! O corpo de {0} foi encontrado esquartejado e colocado na forma de uma estrela, parecida com seu distintivo de Xerife. A única quebra de simetria no arranjo está em suas orelhas, ou melhor, orelha, porque uma delas desapareceu...</value>
 	</string>
 	<string key="PrinceKilled">
-		<value>A segurança no palácio foi reforçada após a morte de {0}, que era da Realeza. Os criados ainda estão procurando algumas partes de seu corpo, esquartejado de forma meticulosa... Dizem que foi um Serial Killer.</value>
+		<value>A segurança no palácio foi reforçada após a morte de {0}, que era da Realeza. A falta de sua orelha direita deixa claro que foi trabalho de um Serial Killer, mas ainda não se sabe como o crime aconteceu.</value>
 	</string>
 	<string key="SeerKilled">
-		<value>A Aldeia acorda para ver o corpo de {0}, sem vida. No lugar de seu cérebro, há uma bola de cristal...</value>
+		<value>A Aldeia acorda para ver o corpo de {0}, sem vida. Parece que um Serial Killer fez a festa ali, arrancando sua orelha direta e colocando sua bola de cristal no lugar do seu cérebro.</value>
 	</string>
 	<string key="SorcererEaten">
-		<value>A alcateia chora pela própria burrice. Um erro foi cometido e os Lobisomens atacaram {0}, que era Ocultista.</value>
+		<value>A alcateia chora pela própria burrice. Um erro foi cometido, e durante o amanhecer encontram o corpo de {0}, que era Xamã, cheio de marcas de mordidas...</value>
 	</string>
 	<string key="WildChildEaten">
-		<value>Assassinos! Assassinos! A aldeia chora a morte de uma simples Criança​. Os Lobisomens mataram {0}. Que horror!</value>
+		<value>Assassinos! Assassinos! A aldeia encontra o corpo de uma Criança cheio de marcas de mordidas. Os Lobisomens mataram {0}. Que cruel!</value>
 	</string>
 	<string key="SerialKillerKilledCH">
-		<value>{0}, que era Agente da Inquisição, escolheu a pessoa errada para visitar. Seu corpo é encontrado sem vida e sem a orelha direita...</value>
+		<value>{0}, que era Agente da Inquisição, escolheu a pessoa errada para interrogar. Seu corpo é encontrado sem vida e sem a orelha direita...</value>
 	</string>
 	<string key="CultConvertWolfPublic">
-		<value>Péssima escolha da Seita ao visitar um Lobisomem que decidiu ficar em casa durante a noite. {0} virou uma bela refeição pros Lobisomens, que não são muito interessados em movimentos religiosos.</value>
+		<value>Péssima escolha da Seita visitar um Lobisomem que decidiu ficar em casa durante a noite. {0} virou uma bela refeição pros Lobisomens, que não se interessam muito por movimentos religiosos.</value>
 	</string>
 	<string key="CultConvertKillerPublic">
-		<value>A Seita fez uma péssima decisão ao tentar converter um Serial Killer. O corpo de {0} é encontrado com uma vela dentro de sua boca.</value>
+		<value>A Seita fez uma péssima decisão ao tentar converter um Serial Killer. O corpo de {0} é encontrado com uma vela dentro de sua boca e outra no que sobrou do ouvido...</value>
 	</string>
 	<string key="GAGuardedKiller">
-		<value>Tentando ajudar a Aldeia, um Anjo, {0}, tentou proteger um Serial Killer, mas não deu muito certo...</value>
+		<value>Tentando ajudar a Aldeia, um Anjo da Guarda, {0}, foi proteger um Serial Killer, e perdeu a vida, as penas, e a orelha direita.</value>
 	</string>
 	<string key="GAGuardedWolf">
-		<value>{0} tentou proteger um Lobisomem, mas foi feito de refeição por eles. Agora só encontraram o corpo sem vida...</value>
+		<value>{0} foi proteger um Lobisomem, que se interessou mais pela carne de Anjo do que pela proteção oferecida.</value>
 	</string>
 	<string key="HunterKillsWolfEnd">
-		<value>Apenas {0} e {1} sobreviveram, e {1} queria mudar isso... Na calada da noite, se dirigiu à casa de {0}, sem nem desconfiar que não seria fácil assim matar um Ex-militar. O que restou de {1} foi sua carcaça, que foi usada como enfeite. O último Lobisomem morreu!</value>
+		<value>Apenas {0} e {1} sobreviveram, e {1} queria mudar isso... Na calada da noite, se dirigiu à casa de {0} com a barriga roncando, sem nem desconfiar que a Sentinela estava de vigília. {1} caiu com cinco tiros de espingarda, afinal, quem conta as balas ao matar sua última ameaça?</value>
 	</string>
 	<string key="WolfKillsHunterEnd">
-		<value>Apenas {0} e {1} sobreviveram, e {1} queria mudar isso... Na calada da noite, se dirigiu à casa de {0}, que ainda estava dormindo. O que restou de {0} foi apenas sua mão, segurando um revólver.</value>
+		<value>Apenas {0} e {1} sobreviveram, e {0}, sabendo que corria perigo, tentou dormir por algumas horas antes da vigília noturna... Mas {1} não tinha mais motivos para se esconder, e atacou {0} antes mesmo do sol se pôr. A única coisa que sobrou de {0} foram os ossos...</value>
 	</string>
 	<string key="CHKillsCultistEnd">
-		<value>Vendo um símbolo estranho rodeando o pescoço de {0}, {1} já se dá conta que {0} faz parte da seita. Então, {1} tira sua espada pela última vez e a crava no peito de {0}. Agora a aldeia está salva da contaminação da seita.</value>
+		<value>Vendo um símbolo estranho rodeando o pescoço de {0}, {1} já se dá conta que {0} faz parte da Seita. Então, {1} tira sua espada pela última vez e a crava no peito de {0}. Agora a aldeia está salva da contaminação da Seita.</value>
 	</string>
 	<string key="SecondsAdded">
 		<value>O tempo de entrada foi estendido em {0} segundos! Agora restam {1} segundos para se juntar à partida!</value>
 	</string>
 	<string key="SecondsRemoved">
 		<value>Tempo de entrada para o jogo reduzido em {0} segundos.
-		{1} restantes para se juntar à partida.</value>
+{1} restantes para se juntar à partida.</value>
 	</string>
 	<string key="CantExtend">
 		<value>Somente os administradores podem estender o tempo mais de uma vez!</value>
 	</string>
 	<string key="AllowExtendQ">
 		<value>Os jogadores podem estender o tempo?
-	Atual: {0} estender
-	Nota: Os admins sempre poderão estender.</value>
+Atual: {0} estender
+Nota: Os admins sempre poderão estender.</value>
 	</string>
 	<string key="AllowExtendA">
-		<value>{0} aos jogadores estender o tempo para se juntar à partida</value>
+		<value>{0}ei aos jogadores estender o tempo para se juntar à partida</value>
 	</string>
 	<string key="MaxExtendQ">
-		<value>Escolha o número máximo de segundos para adicionar ao comando /extend. Padrão: {0}
-	Atual: {1}</value>
+		<value>Escolha o número máximo de segundos para adicionar pelo comando /extend. Padrão: {0}
+Atual: {1}</value>
 	</string>
 	<string key="MaxExtendA">
 		<value>Tempo máximo para estender o jogo foi mudado para {0} segundos.</value>
@@ -1092,15 +1119,15 @@
 		<value>{0} jogadores votaram, {1} total.</value>
 	</string>
 	<string key="EnableSecretLynchQ">
-		<value>Ativar o Enforcamento Secreto?\nAtual: {0}</value>
+		<value>Ativar votos secretos durante o enforcamento?\nAtual: {0}</value>
 	</string>
 	<string key="EnableSecretLynchA">
-		<value>Enforcamento secreto definido como: {0}</value>
+		<value>Votos secretos definidos como: {0}</value>
 	</string>
 	<string key="NoAutoJoin">
 		<value>{0}, lembre que você também deve entrar no jogo pelo botão.</value>
 	</string>
-	<string key="GroupNotFound"> 
+	<string key="GroupNotFound">
 		<value>Não foi possível encontrar o grupo. Execute esse comando no grupo do qual deseja sair da lista de espera, ou adicione o link, id ou username do grupo na frente do comando.</value>
 	</string>
 	<string key="DeletedFromWaitList">
@@ -1119,9 +1146,191 @@
 		<value>Você não pode fugir, pois já morreu.</value>
 	</string>
 	<string key="JoinFromGroup">
-		<value>You must join a game from within a group chat!</value>
+		<value>Você precisa entrar em um jogo a partir de um grupo!</value>
 	</string>
 	<string key="StartFromGroup">
-		<value>You must start a game from within a group chat!</value>
+		<value>Jogos devem ser começados dentro de um grupo!</value>
 	</string>
+	<string key="AllowFlee">
+		<value>Permitir Fugas</value>
+	</string>
+	<string key="ShowRolesDeath">
+		<value>Ativar Modo Secreto</value>
+	</string>
+	<string key="AllowExtend">
+		<value>Permitir Extensões</value>
+	</string>
+	<string key="RandomMode">
+		<value>Modo Aleatório</value>
+	</string>
+	<string key="EnableSecretLynch">
+		<value>Ativar Votos Secretos</value>
+	</string>
+	<string key="AllowFool">
+		<value>Permitir Trouxa</value>
+	</string>
+	<string key="AllowTanner">
+		<value>Permitir Suicida</value>
+	</string>
+	<string key="AllowCult">
+		<value>Permitir Seita</value>
+	</string>
+	<string key="HaveJoined">
+		<value>Mais gente se juntou à partida nesses últimos 30 segundos! Deem as boas vindas a {0}</value>
+	</string>
+	<string key="ShowIDs">
+		<value>Mostrar IDs</value>
+	</string>
+	<string key="ShowIDsQ">
+		<value>Mostrar as IDs numéricas de quem se junta à partida?\nAtual: {0}</value>
+	</string>
+	<string key="ShowIDsA">
+		<value>{0}ei IDs de quem se junta à partida.</value>
+	</string>
+	<string key="All">
+		<value>Todas</value>
+    <!-- used when searching for groups in all the variants -->
+    <value>Todos</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Habilitar o modo aleatório? \nQuando o modo aleatório está habilitado, Chaos, Enforcamento Secreto, Mostrar papeis quando morrerem e permitir Seita/ Trouxa/ Suicida serão determinados aleatoriamente toda vez que alguém iniciar um jogo. \nAtual: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>O modo aleatório foi configurado para {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>O modo aleatório foi configurado em:</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Permitir que os jogadores vejam gifs NSFW/+18?\nAtual: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} Gifs NSFW/+18 </value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>À medida que o sol começa a surgir no horizonte, {0} acorda e percebe a vila em silêncio. Logo, percebeu que todos haviam morrido, e {0}, anda até a Igreja e percebe que todos estão mortos. Seu sonho de ser enforcado pela vila morre naquela mesma hora, então, {0} pega sua corda e se pendura na entrada da Igreja com seu último sorrido no seu rosto.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} acorda depois de uma noite trabalhando e percebe que todos os Lobos estão mortos, alguns com suas cabeças cortadas. Com uma dor no coração e em prantos, {0} pega seus instrumentos de magia e sai da aldeia, partindo para um novo começo em uma vila muito distante dali.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Qual variante? \nAtual: {0} \nComo você jogou mais de 500 jogos, você também pode participar: </value>
+  </string>
+  <string key="Skip">
+	<value>Sair</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você foi transformado em um Lycan 🐺🌝. Seus parceiros, se tiver, são: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Você vê que {0} NÃO é {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Você quer adormecer os jogadores hoje?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Enquanto os aldeões conversam entre si, {0} sai andando para sua casa e começa a cantar uma melodia bem tranquila. Hoje à noite, todos irão ter um sono bem pesado e ninguém poderá usar suas ações noturnas</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Enquanto todos caminham para suas casa, os aldeões caem no meio do caminho por exaustão e dormem ali mesmo... </value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Permitir ladrão como uma opção?\nAtual: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Ladrão foi definido como:\nAtual: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Ladrão irá jogar todas as noites?\nAtual: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permitir Ladrão</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Ladrão no Jogo Completo</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Você é o Homem-Lobo 👱🌚, um humilde aldeão. Mas, como você passa a maior parte do tempo na floresta onde há lobos reais, o Vidente se confunde e pensa que você é um lobisomem! Coitado...</value>
+  </string>
+  <string key="WolfMan">
+    <value>O Homem-Lobo 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Você é um humilde aldeão, mas como você passa a maior parte do tempo na floresta onde há lobos reais, o Vidente se confunde e pensa que você é um lobisomem! Ah não...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Você é um Lycan 🐺🌝! O Lycan é um lobisomem, mas, quando o Vidente te ver, ficará confuso e você será visto como um aldeão! Legal, não?!</value>
+  </string>
+  <string key="Lycan">
+    <value>O Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>O Lycan é um lobisomem, mas quando o Vidente vê ele, irá aparecer como um aldeão</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Você é o Oráculo 🌀. Cada noite você poderá ver alguém, mas, você verá o que eles NÃO são. Você verá um papel de alguém no jogo que está vivo. Então, preste atenção, pois os papeis que serão mostrados são de jogadores vivos!</value>
+  </string>
+  <string key="Oracle">
+    <value>Oráculo 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>O Oráculo 🌀 será informado do papel que o jogador NÃO é. Os papéis mostrados a ele, são de jogadores vivos.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Você é o Cantarolador 💤, uma vez no jogo você poderá usar seu dom parar colocar todo mundo em um sono profundo que eles não poderão usar seu papel à noite.</value>
+  </string>
+  <string key="Sandman">
+    <value>Cantarolador 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Uma vez por jogo, o Controlador 💤, poderá usar seu papel para fazer adormecer as pessoas e elas não usarão seus papéis durante a noite.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>Pacifista  ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>Lobo Sensato 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>the Ladrão 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
 </strings>
+

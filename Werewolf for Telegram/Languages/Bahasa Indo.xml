@@ -5,15 +5,15 @@
   <string key="NotInGame">
     <value>Kamu belum bergabung di permainan ini</value>
   </string>
-  <string key="PlayerStartedGame">
+  <string key="PlayerStartedGame" isgif="true">
 	<!-- 0 - Player name -->
-    <value>📣 {0} telah memulai permainan (NORMAL)! Ketik /join untuk bergabung dan bersiaplah untuk dimakan.</value>
-    <value>📣 Permainan (NORMAL) telah dimulai oleh {0}! Ketik /join untuk bergabung dan pilih targetmu!</value>
+    <value>📣 {0} telah memulai permainan (NORMAL)! Bergabunglah dan siap-siap untuk dimakan.</value>
+    <value>📣 Permainan (NORMAL) telah dimulai oleh {0}! Bergabunglah dan pilih targetmu!</value>
   </string>
-  <string key="PlayerStartedChaosGame">
+  <string key="PlayerStartedChaosGame" isgif="true">
 	<!-- 0 - Player name -->
-    <value>📣 {0} telah memulai permainan (CHAOS)! Ketik /join untuk bergabung dan bunuh semua warga desa! 😈</value>
-    <value>📣 Permainan (CHAOS) telah dimulai oleh {0}! Ketik /join untuk bergabung dan mari berpesta! 🔥</value>
+    <value>📣 {0} telah memulai permainan (CHAOS)! Bergabunglah dan bunuh semua warga desa! 😈</value>
+    <value>📣 Permainan (CHAOS) telah dimulai oleh {0}! Bergabunglah dan mari berpesta! 🔥</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>("`o´)-σ Kamu terlambat! Permainan sedang berlangsung. Tunggu permainan selanjutnya.</value>
@@ -23,11 +23,12 @@
     <value>Kamu sudah ikut bermain, jangan joan join! Bikin bingung aja! Peper upil nih (‾-ƪ‾)( ‾-‾)-σ•••• </value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>📣 1 menit lagi untuk /join</value>
+    <value>📣 1 menit lagi untuk join</value>
+    <value>📣 1 menit lagi, ayo join!</value>
   </string>
   <string key="SecondsLeftToJoin">
 	<!-- 0 - remaining seconds (number) -->
-    <value>📣 {0} detik lagi untuk /join</value>
+    <value>📣 {0} detik lagi untuk join</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>┌("˘o˘)┐Jumlah pemain tidak cukup! Permainan dibatalkan! Panggil teman-temanmu!</value>
@@ -103,6 +104,7 @@
     <value>{0} telah menghilang 2 malam berturut-turut. Dewa marah, bumi gonjang ganjing, langit terbelah, dan {0} mati kelilipan kapal. {1}</value>
 	<value>{0} telah menghilang 2 malam berturut-turut. Warga panik sambil menunjuk sebuah piring terbang melintas di atas desa,{0} diculik Alien Tapir 👽. {1}</value>
 	<value>{0} telah menghilang 2 malam berturut-turut. Ternyata oh ternyata, {0} sudah dikutuk menjadi batu kristal 💎. {1}</value>
+	<value>{0} telah menghilang 2 malam berturut-turut. Ternyata, {0} overdosis sambal buatannya sendiri. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>Semua serigala telah mati, Selamat kamu sekarang menjadi SERIGALA 🐺!</value>
@@ -609,7 +611,7 @@
   </string>
   <string key="MaintBreak">
 	<!-- 0 - target's name -->
-    <value>Kami akan memulai maintenance, Anda tidak dapat memulai permainan untuk sementara. \nWaiting {0} games to end.\nGo Silakan ke @werewolfdev untuk informasi lainnya.</value>
+    <value>Kami akan memulai maintenance, Anda tidak dapat memulai permainan untuk sementara. \nWaiting {0} games to end.\nGo Silakan ke @greywolfdev untuk informasi lainnya.</value>
   </string>
   <string key="MaxGames">
 	<!-- 0 - target's name -->
@@ -838,7 +840,7 @@
   </string>
   <string key="AddedToWaitList">
 	<!-- 0 - target's name -->
-    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk /join .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
+    <value>Kamu telah memesan panggilan untuk Grup {0}. Jangan lupa untuk join .Kami akan memberi notifikasi ketika permainan berikutnya dimulai ​( ˘ з ˘).</value>
   </string>
   <string key="NotifyNewGame">
 	<!-- 0 - target's name -->
@@ -973,7 +975,7 @@
     <value>Kamu harus memulai permainan dalam grup!</value>
   </string>
   <string key="PingInfo">
-    <value>Waktu Respon Server: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Waktu untuk menerima ping pesan: {0}\nPesan per detik: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Bahasa apa yang akan kamu pilih?\nCurrent: {0}</value>
@@ -1106,6 +1108,12 @@
   <string key="AllowCultA">
     <value>Pilihan Cultist dalam Peran: {0}</value>
   </string>
+  <string key="EnableSecretLynchQ">
+    <value>Aktifkan Secret Lynch?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Mengaktifkan secret lynch menjadi: {0}</value>
+  </string>
   <string key="ThankYou">
     <value>Terima kasih, Selamat bermain :)</value>
   </string>
@@ -1113,7 +1121,7 @@
     <value>Bahasa apa yang ingin kamu gunakan untuk bermain dalam grup?</value>
   </string>
   <string key="HereIsList">
-    <value>Berikut daftar pemain{0}:</value>
+    <value>Berikut daftar group di {0}:</value>
   </string>
   <string key="Members">
     <value>anggota</value>
@@ -1340,6 +1348,258 @@
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
     <value>{0} berusaha melindungi serigala semalam. Warga desa menyadari bahwa sayap {0} telah digantung di jemuran tetangga. Jelas, beginilah rasanya melindungi orang yang salah. Serigala baru saja mendapatkan santapan istimewa!</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya tinggal {0} seorang, {1} mencoba untuk memakan {0}. Beruntungnya, {0} sangat terlatih karena pernah ikutan wamil, dengan cekatan dia dapat mengontrol ketakutannya dan membunuh serigala! Yang tersisa hanyalah mayat dengan dua luka tembak, dan dia yang masih hidup: Hunter 🎯 sang pemenang. MANCAB!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya tinggal {0} seorang, {1} menunggu si {0} lengah. Mudah bagi {1} si serigala untuk menghabisi si Hunter, yang tersisa tinggal mayat {0} yang dimutilasi oleh Serigala 🐺.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>Siang hari, {1} dan {0} berjalan keluar. melihat jimat yang dikenakan di leher {0}, Si {1} langsung mengayunkan pedangnya ke leher pemuja kerang, itulah hukuman pedih dari Cultist Hunter 💂 kepada kutil yang telah mencemari desa.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Waktu untuk ikut bermain diperpanjang {0} detik!\n{1} tersisa untuk Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Waktu untuk ikut bermain dikurangi {0} detik!\n{1} tersisa untuk Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Heh, cuma admin group yang bisa melakukan perpanjangan waktu lebih dari sekali!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Apakah kamu ingin pemain melakukan memperpanjang waktu join?\nPengaturan saat ini: {0}\nCatatan: Admin selalu bisa melakukan perpanjangan waktu join</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} ijinkan pemain untuk melakukan perpanjangan waktu</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Pilih waktu maksimal (detik) yang dapat ditambahkan dalam waktu join ketika melakukan perintah /extend.\nPengaturan bawaan: {0}\nPengaturan saat ini:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maksimal waktu join diperpanjang {0} detik</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh tidak! {0} adalah pemabuk (drunk 🍻)! Kamu ikutan mabuk, gak bisa nyerang {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join!</value>
+  </string>
+  <string key="NotMember">
+    <value>UCP? Kamu gak bisa ikutan main, kayaknya kamu bukan member dari {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Jangan pake command buat join, Sayang. Udah gak kekinian. Gunakan tombol di bawah.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} pemain telah memilih dari total {1} pemain.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, Harap diingat bahwa kamu juga harus bergabung menggunakan tombol.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Tidak dapat menemukan grup. Mohon jalankan command di group yang ingin kamu hentikan, atau tambahkan link, ID, username setelah command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Anda telah dihapus dari daftar tunggu di {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}bergabung dalam 30 detik terakhir.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Ijinkan Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Ijinkan Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Ijinkan Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Aktifkan Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Aktifkan Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Ijinkan Perpanjang Waktu</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Tampilkan Peran ketika mati</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Ijinkan Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Tampilkan ID ketika join</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Tampilkan ID telegram pemain ketika join?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Semua</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Ijinkan random mode?\nKetika random mode diijinkan, Chaos, Secret Lynch, Tampilkan Peran ketika mati, dan Ijinkan Cult / Fool / Tanner akan ditentukan secara acak setiap kali seseorang memulai permainan.\nPengaturan saat ini:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Pengaturan random mode diset menjadi: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Ijinkan Gif NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Ijinkan pemain untuk melihat Gif NSFW?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} Gif NSFW</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>🌤 Matahari mulai bersinar, {0} terbangun tanpa suara. Sadar tidak ada yang tersisa, {0} berjalan ke tengah desa. Mayat berserakan di seluruh desa, {0} bergeming. Impiannya untuk dituduh warga untuk menang telah hilang seperti hilangnya semua warga desa. Diambilnya seutas tali, mengalungkannya di leher, kemudian gantung diri.</value>
+    <value>🌤 {0} sendirian terbangun saat subuh. {0} merasa terhina atas kegagalannya sendiri, karena tidak bisa memenuhi hasrat dia untuk dibakar warga desa. {0} kemudian mengambil tali untuk menggantung dirinya sendiri.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>🌤 {0} membuka mata. Bukan hiruk pikuk desa yang ia dengar, melainkan keheningan. Ia menatap langit-langit suram, membiarkan kenyataan perlahan tenggelam. Semua orang meninggal. Serigala sudah mati. Dengan segan dalam hati. {0} kemudian beranjak, mengemasi barang-barangnya dan berjalan ke tepi desa. Air mata menetes, karena {0} teringat betapa dekatnya dia dan serigala menuju kemenangan. Saatnya memulai hidup baru, dengan babak baru. {0} lalu tergelincir ke dalam kegelapan hutan, jauh dari desa yang sepi.</value>
+    <value>🌤 {0} sudah berusaha, namun teman serigalanya terbaring tak bergerak tanpa nyawa. Karena semua serigala mati, tidak ada yang bisa menikmati kesuksesannya. {0} mengintip ke dalam bola kristal, dan diam-diam menghilang dalam kabut untuk mencari serigala baru, sekutu baru untuk melakukan kejahatan terhadap manusia.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Varian apa?\nPengaturan saat ini: {0}\nKarena kamu sudah main sebanyak 500 kali, kamu bisa gabung di: </value>
+  </string>
+  <string key="Skip">
+	<value>Lewati</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} telah mati dan kau berubah menjadi Lycan. Temanmu (jika ada) adalah: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Kamu melihat {0} bukanlah {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Apakah kamu akan membuat seluruh warga desa tertidur malam ini?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Saat warga sedang sibuk, {0} pulang ke rumah sambil bersenandung lagu merdu. Malam ini seluruh warga desa terlelap dan tidak melakukan aktifitas apa pun.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Saat semuanya pulang ke rumah, mereka langsung tertidur karena lelah dan kantuk yang luar biasa. Mereka bahkan tidak sempat naik ke kasurnya. Hoaaahmmm.. 💤 </value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Memasukkan thief sebagai pilihan peran?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief sebagai peran: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief dapat memakai aksinya tiap malam?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief bermain di setiap malam: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Mengijinkan Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Kamu seorang warga desa biasa, tapi karena hampir setiap saat berada di hutan di mana serigala bersembunyi, Seer akan kebingungan dan melihatmu sebagai Serigala! Waduh waduh....</value>
+  </string>
+  <string key="WolfMan">
+    <value>the WolfMan 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Seorang warga desa biasa, tapi karena hampir setiap saat berada di hutan di mana serigala bersembunyi, Seer akan kebingungan dan melihatnya sebagai Serigala! Waduh waduh....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Lycan!  Kamu adalah Serigala, tapi seer akan kebingungan dan melihatmu sebagai warga desa 🙂</value>
+  </string>
+  <string key="Lycan">
+    <value>Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Lycan adalah serigala, tapi akan tampak sebagai warga desa saat diterawang oleh Seer</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Kamu adalah oracle. Tiap malam kamu bisa memilih untuk menerawang seseorang, tapi kamu hanya akan melihat peran yang BUKAN peran orang tersebut. Kamu akan diberitahu peran yang masih hidup, jadi perhatikan role apa yang keluar di narasi, artinya role tersebut masih hidup.</value>
+  </string>
+  <string key="Oracle">
+    <value>Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Oracle akan diberitahu peran yang BUKAN peran orang tersebut, ia hanya diberitahu peran apa saja yang masih hidup. </value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Kamu adalah Sandman. Kamu dapat membuat seluruh warga tertidur hanya satu kali dalam permainan. Pemain malam hari tidak akan dapat menggunakan aktifitasnya.</value>
+  </string>
+  <string key="Sandman">
+    <value>Sandman 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Satu kali dalam permainan, Sandman dapat membuat seluruh warga tertidur sehingga pemain malam hari tidak dapat melakukan aktifitasnya.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
   </string>
 </strings>
 

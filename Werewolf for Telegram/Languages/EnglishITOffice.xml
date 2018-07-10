@@ -2,9 +2,15 @@
 <!-- Done by Firewood (@Firewood_Loki) -->
 <!--
 	==UPDATE LOG==
-	LAST UPDATE 19/05/2017 by @Firewood_Loki
+	LAST UPDATE 19/04/2018 by @Firewood_Loki
+	18/04/17	- Updated to WWv4.3
+	19/04/18	- Added String: TannerEnd, SorcererEnd
+	01/08/17	- Fixed String:"NoGame", "EndTime"
+	10/07/17  	- Added String: "RandomModeQ", "RandomModeA"
+	10/07/17	- Added String: "ShowIDs", "ShowIDsQ", "ShowIDsA"
+	25/05/17	- Added Section: Config
 	19/05/17	- Completed Langfile, Started Testing
-	18/05/17	- Completed Setting of this Variant
+	18/05/17	- Completed Setting of this Variant	
 
 	==Setting Info==
 	Guidelines: http://telegra.ph/Werewolfs-Prog-05-17
@@ -90,7 +96,7 @@
 		<value>{0} didn't give his opinions twice in a row. I guess he's no different from a dead person.\n{1}</value>
 	</string>
 	<string key="TraitorTurnWolf">
-		<value>As a Popcorn Lover, you really hate the boredom here as all the Seniors died. So you ask youself: What not become one if you do want to watch the world burns? You are a Senior Asshole now!</value>
+		<value>As a Popcorn Lover, you really hate the boredom here as all the Seniors died. So you ask youself: Why not become one if you do want to watch the world burns? You are a Senior Asshole now!</value>
 	</string>
 	<string key="ChoiceAccepted">
 		<value>Gotcha!</value>
@@ -144,7 +150,7 @@
 		<value> and </value>
 	</string>
 	<string key="RoleInfoCursed">
-		<value>You are the Bootlicker 😾 and you always monitor and protect your computer from any threats. Even at lunch, you will check the status of your computer with youe mobile. When anyone is doing anything to your computer, you will notice at the very second and take your action! If the Seniors really is planting things to you computer, you will lick the boot of the Seniors hard, until they allow you to join their plan.</value>
+		<value>You are the Bootlicker 😾 and you always monitor and protect your computer from any threats. Even at lunch, you will check the status of your computer with your mobile. When anyone is doing anything to your computer, you will notice it at every second and take your action! If the Seniors are really planting things to your computer, you will lick the boot of those Seniors hard, until they allow you to join their plan.</value>
 	</string>
 	<string key="RoleInfoDetective">
 		<value>You are the Performance Evaluator 🕵. You can connect to others' computer and check their work in the afternoon, and you will know who is good and who is bad. Warning: The Seniors may notice the abnormality in the company network.</value>
@@ -193,7 +199,7 @@
 	</string>
 	<string key="LynchTime">
 		<!-- Next Day Morning-->
-		<value>After a thoughtful night, you should have guessed who are the Seniors Assholes.\n\nYou have {0} seconds to vote them out.</value>
+		<value>After a thoughtful night, you should have guessed who of you are the Seniors Assholes.\n\nYou have {0} seconds to vote them out.</value>
 	</string>
 	<string key="DayTime">
 		<value>Time to get off!\n\nYou have {0} seconds to make your accusations and defenses.\n\n</value>
@@ -419,7 +425,7 @@
 		<value>🙂 Working</value>
 	</string>
 	<string key="PlayersAlive">
-		<value>Remaining Workers:</value>
+		<value>Remaining Workers</value>
 	</string>
 	<!-- New strings 4 MAY 2016-->
 	<string key="Mason">
@@ -485,7 +491,7 @@
 	</string>
 	<string key="MaintBreak" deprecated="true">
 		<!-- 0 - target's name -->
-		<value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+		<value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
 	</string>
 	<string key="MaxGames" deprecated="true">
 		<!-- 0 - target's name -->
@@ -497,7 +503,7 @@
 		<value>{0} is a preferred group, and has skipped the queue!</value>
 	</string>
 	<string key="NoGame">
-		<value>There is no company recruiting. Maybe you could /startgame to initiate a normal company, or /startchaos to initiate a choas company.</value>
+		<value>There is no company recruiting. Maybe you could /startgame to initiate a normal company, or /startchaos to initiate a chaos company.</value>
 	</string>
 	<string key="GroupAdminOnly">
 		<value>Only group admins could execute the command.</value>
@@ -586,7 +592,7 @@
 		<value>{0} was trying to plant something on the computer of the Virus Spreader. At the moment he granted the access of it, his own computer was infected by the virus.\n The Senior Asshole 🐺 is fired.</value>
 	</string>
 	<string key="DefaultKilled">
-		<value>{0}'s computer was formatted becuase of virus, losing all the progress of his handling projects. The board cannot accept such a mistake and fired him.\n{1}</value>
+		<value>{0}'s computer was formatted because of a virus, which made him losing all the progress of his handling projects. The board cannot accept such a mistake and fired him.\n{1}</value>
 	</string>
 	<string key="GuardBlockedKiller">
 		<value>You was trying to infect {0}'s computer with your new invented virus DragonSlayerV2, but you noticed the Security Superviosr was blocking the gateway. You just wasted your valuable lunch time trying to hack a disconnected computer.</value>
@@ -643,7 +649,7 @@
 		<value>Blackmail Master 🎯</value>
 	</string>
 	<string key="Cupid">
-		<value>Project Manger 🏹</value>
+		<value>Project Manager 🏹</value>
 	</string>
 	<string key="SerialKiller">
 		<value>Virus Spreader 🔪</value>
@@ -777,7 +783,7 @@
 		<value>Para is the dog in your company. Be careful. He bites.</value>
 	</string>
 	<string key="EndTime">
-		<value>Game Legnth: {0}\n/startgame to form another company\n/startchaos to form a choas company</value>
+		<value>Game Legnth: {0}\n/startgame to form another company\n/startchaos to form a chaos company</value>
 	</string>
 	<!--New strings, July the 8th -->
 
@@ -1263,4 +1269,181 @@
 		<!-- {0} = list of people who have joined -->
 		<value>{0} joined the game in the last 30 seconds.</value>
 	</string>
+	<string key="AllowCult">
+		<value>Allow JAVA Enthusiast 👤</value>
+	</string>
+	<string key="AllowTanner">
+		<value>Allow Boss 👺</value>
+	</string>
+	<string key="AllowFool">
+		<value>Allow Stupid HR Bitch 🃏</value>
+	</string>
+	<string key="EnableSecretLynch">
+		<value>Enable Secret Lynch</value>
+	</string>
+	<string key="RandomMode">
+		<value>Enable Random Mode</value>
+	</string>
+	<string key="AllowExtend">
+		<value>Allow Extending Timer</value>
+	</string>
+	<string key="ShowRolesDeath">
+		<value>Show Roles on Death</value>
+	</string>
+	<string key="AllowFlee">
+		<value>Allow Fleeing</value>
+	</string>
+	<string key="ShowIDs">
+		<value>Show IDs on joining</value>
+	</string>
+	<string key="ShowIDsQ">
+		<value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+	</string>
+	<string key="ShowIDsA">
+		<value>{0} IDs</value>
+	</string>
+	<string key="All">
+		<!-- used when searching for groups in all the variants -->
+		<value>All</value>
+	</string>
+	<string key="RandomModeQ">
+		<value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow JAVA Enthusiast / Stupid HR Bitch / Boss will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+	</string>
+	<string key="RandomModeA">
+		<value>Enabling of random mode set to: {0}</value>
+	</string>
+	<string key="AllowNSFW">
+		<value>Allow NSFW Gif Packs</value>
+	</string>
+	<string key="AllowNSFWQ">
+		<value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowNSFWA">
+		<value>{0} NSFW Gifs</value>
+	</string>
+	<string key="WhatVariantVets">
+		<value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: (Normal Version) </value>
+	</string>
+	<string key="Skip">
+		<value>Skip</value>
+	</string>
+	<string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Even the BOSS can be planted in this company. Serveral officers from different government departments arrived and took {0} for investigation. It seems that someone inside your company had contacted with multiple law enforcement agencies with fake sources.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Poor {0}, planted by the Seniors with "proof of damaging company reputation". You are now fired. Even tho you have taken the side of the Seniors, they have never perceived you as an insider. Your unstoppable tongue and annoying attitude are what they cannot stand with any longer. They obviously think that you should shut you mouth once and for all, leaving the whole company in quiet.</value>
+  </string>
+
+	<!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into the Junior Traitor. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>You see that {0} is NOT {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Would you like to "accidentally" mess up the power supply?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Just before lunch, our electrician {0} messed up our power supply. With no lights, everyone spend their lunch time outside the office. Except {0} needs to stay here to fix the circuit.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Everyone gets out for lunch, nothing could happen in this powerless office.</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>You are the Old Ass Junior. Although you are merely the most experienced junior, everyone perceived you as one of the Senior, based on how you are communicating with other innocent juniors...</value>
+  </string>
+  <string key="WolfMan">
+    <value>the Old Ass Junior 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are the Old Ass Junior. Although you are merely the most experienced junior, everyone perceived you as one of the Senior, based on how you are communicating with other innocent juniors...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>You are the Junior Traitor! Although you look innocents, you are secretly teamed with the Seniors and involved in their evil plans :)</value>
+  </string>
+  <string key="Lycan">
+    <value>the Junior Traitor 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>You are the Junior Traitor! Although you look innocents, you are secretly teamed with the Seniors and involved in their evil plans :)</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>You are the Office Watson. With your familiar skills of elementary deduction, at least you can have a good guess on what role people are NOT, with what you have observed during work :)</value>
+  </string>
+  <string key="Oracle">
+    <value>the Office Watson 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>You are the Office Watson. With your familiar skills of elementary deduction, at least you can have a good guess on what role people are NOT, with what you have observed during work :)</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>You are the electrician. Once per game, you may "accidentally" damage the power supply curcuit of the company, disable all the lights, forcing everyone to get out from the blacked office during lunch.</value>
+  </string>
+  <string key="Sandman">
+    <value>the Electrician 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>You are the electrician. Once per game, you may "accidentally" damage the power supply curcuit of the company, disable all the lights, forcing everyone to get out from the blacked office during lunch.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
 </strings>

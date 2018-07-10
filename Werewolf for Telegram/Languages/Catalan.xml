@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Català" base="Català" variant="Estàndard" owner="" code="ca"/>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ha començat una partida! Uneix-t'hi per divertir-te una estona... i probablement morir 😛</value>
+    <value>{0} ha començat una partida nova! Uneix-t'hi perquè et mengin!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ha començat una partida caòtica! Uneix-t'hi per divertir-te una estona... i probablement morir 😛</value>
+    <value>{0} ha començat una partida caòtica nova! Uneix-t'hi perquè et mengin!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Resta 1 minut per unir-s'hi.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Resten {0} segons per unir-s'hi.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>No hi ha prou jugadors, es cancel·la la partida!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Comença la partida, espereu mentre s'assignen els rols i s'actualitza la base de dades.</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, canvia de nom per unir-t'hi.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>S'ha arribat al nombre màxim de jugadors!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} s'ha unit a la partida. {1} jugadors, {2} mínim, {3} màxim.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Prem el botó Inicia de sota o obre'm una conversa a {1}, per poder enviar-te un missatge privat amb el teu rol. No podràs unir-te a la partida fins que no ho facis.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>No pots fugir! HAS MORT! Torna a terra... renoi!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} ha fugit cames ajudeu-me!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>Jugadors restants: {0}.</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Sembla que no estàs jugant...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>No s'ha trobat cap jugador amb aquest nom!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha votat cruspir-se {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votat linxar {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} no ha votat en dues nits consecutives. Les forces del bé ho han considerat un crim terrible, i de sobte {0} cau a terra, cadàver. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Tu, traïdor!!! Ara ets el llop...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Elecció acceptada.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nLa vident és {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era la vident. Com a aprenent, ara et converteixes en la nova vident.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} era l'aprenent, i ara ha passat a ocupar l'espai de {1} com a nova vident.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Has vist que {0} és {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Qui vols linxar?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Qui vols investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>A qui vols disparar? Bales restants: {0}.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Qui vols visitar?</value>
+  </string>
+  <string key="AskSee">
+    <value>De qui vols endevinar el rol?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Qui vols protegir?</value>
+  </string>
+  <string key="AskEat">
+    <value>Qui et vols cruspir?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Qui vols caçar?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Qui serà el teu mestre?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Qui vols convertir a la secta?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Assegura't de discutir-ho amb {0}.</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> i </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Ets el maleït. Ara mateix ets un vilatà, però si els llops decideixen matar-te, et convertiràs en un llop.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Ets el detectiu. Durant el dia, pots escollir un jugador per revelar el seu rol. Però si ho fas, pot ser que els llops descobreixin quin és el teu rol! (40% de probabilitats)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>L'enhorabona! Ets el borratxo del poble!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Ets l'àngel guardià. Cada nit pots escollir protegir un jugador. Però si esculls un llop, tens un 50% de probabilitats de morir.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Ets el justicier. Tens dues bales. Durant el dia, pots escollir disparar a un altre jugador. Tothom sentirà els trets, i sabrà que ets el justicier (i no un llop).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Ei, meuca! Ets la prostituta. Durant la nit, pots escollir visitar un altre jugador, per verificar que no és un llop. Però si visites un llop, o visites algú que és assassinat per un llop, moriràs. Però si surts de visita, i un llop intenta matar-te a casa teva, sobreviuràs.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Traïdor! Per ara, ets un vilatà, però quan morin tots els llops, et convertiràs en llop. Si la vident endevina qui ets, pot ser que t'identifiqui com a llop o pot ser que no.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>ETS UN LLOP! 🐺 (bé per tu). Cada nit pots escollir matar algú.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Ets la vident. Cada nit pots escollir endevinar el rol d'un jugador.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>Ets un miserable vilatà, condemnat a passar la resta dels teus dies llaurant el camp i sent menjat.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>Ets el suïcida. Si et linxen, guanyes automàticament!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>Ets el nen salvatge! Escull un jugador perquè sigui el teu mestre. Si mor, et convertiràs en llop.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Ets l'observador, sabràs qui és la vident (real). És la teva única funció.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Ets l'aprenent de vident. Si la vident (real) mor, ocuparàs el seu lloc com a vident.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>Ets un sectari. Cada nit pots escollir un jugador per convertir-lo a la secta. Si tots els jugadors vius al final de la partida són de la secta, guanyen.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>Ets el caçador de sectaris, i intentes evitar que la secta del poble converteixi tothom! Cada nit pots escollir un jugador. Si és sectari, mor. Si la secta intenta convertir-te, el membre més recent de la secta mor.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>S'acosta la nit, i els vilatans es reuneixen per decidir qui linxaran aquest vespre...\nTeniu {0} segons per votar!</value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>Ja és de dia. Teniu {0} segons per fer-vos acusacions, defensar-vos o simplement parlar.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>Ha caigut la nit. Tothom se'n va al llit, cansats després d'un altre dia estressant. Jugadors nocturns: teniu {0} segons per fer les vostres accions!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Els vilatans han emès els vots, entre dubtes i sospites. {0} ha mort. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Incapaços de prendre una decisió sobre qui linxar, els veïns se'n tornen a casa per passar la nit, frustrats...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Alguna cosa fa mala espina, ningú no ha votat! Aquesta nit els veïns no linxaran ningú...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>Els vilatans es reuneixen al matí, però no veuen {0}. S'acosten a casa seva, i troben {0} amb els budells per fora i amb una vella placa de detectiu clavada enmig del coll.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>Arriba l'alba, i per a la sorpresa de tothom, dalt de la creu de l'església hi apareix {0}, l'àngel guardià, empalat.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>Quan els veïns surten de casa, troben trossos d'una escopeta escampats... després, cames... després, dits... i llavors, el cos de {0}, surant a la font de la plaça de la vila, víctima de l'atac d'uns llops. Heu perdut el justicier.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>Els vilatans es desperten al matí, i troben les restes esbudellades de {0} sobre una taula de ouija i unes cartes del tarot. La vident és morta.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>Tothom es desperta amb l'olor d'alcohol i fusta cremada... el bar s'ha incendiat! Després d'apagar l'incendi, hi troben les restes de {0}, destrossades.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>El sol surt, i els vilatans troben el cos de {0} immòbil sobre una taula de ouija i una baralla de cartes de... Yu-Gi-Oh? QUIN BABAU!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Quan els veïns es lleven, senten una pudor horrible. Segueixen l'olor i troben {0} a trossos dins la cort de porcs, i el cap no hi és. NYAM, NYAM, NYAM, NYAM!\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Una forta pudor prové de la casa de {0}... els vilatans la inspeccionen i hi troben un cos davant d'un altar tenebrós. El caçador de sectaris ha mort un sectari!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Els vilatans es reuneixen el matí següent al centre de la vila, amb sospirs d'alleujament. Sembla que aquesta nit no hi ha hagut cap atac.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>Els llops t'han mossegat. Com que estaves maleït, ara t'has convertit en llop!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Altres llops: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value>Heu mossegat {0}... però era el maleït, i s'ha convertit en llop! Enhorabona, teniu un nou company d'equip!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Oh, no! Els llops se t'han cruspit. NYAM, NYAM, NYAM, NYAM!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>Oh, no! {0} era el borratxo! Ara aneu com una sopa, i no podreu atacar demà a la nit...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>Has intentat protegir un llop! El llop se t'ha cruspit.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value>Has salvat la vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value>Ningú no ha atacat {0}, així que no has fet res útil.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Has intentat protegir {0}, però no era a casa!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>Aquesta nit, un àngel guardià et protegia i ha lluitat per evitar que t'ataquessin!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value>La prostituta ha escollit una mala nit per romandre a casa. Els llops s'han cruspit {0}!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>Que estrany... {0} no era a casa! Avui no menjareu res...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>Et coles a la casa de {0} per gaudir d'una mica de diversió, però t'hi trobes un llop. Has mort.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>Aquesta nit, {0} s'ha colat a la casa equivocada! Troben les restes de la meuca {0} clavades a la porta de l'església amb una vara de ferro... que trist 😞</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} es cola a casa de {1} per tenir una mica de diversió i reduir l'estrès. En lloc d'això, {0} es troba un llop cruspint-se {1}! El llop es gira cap a {0} i salta... {0} ha mort.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value>Descobreixes que {0} no és un llop, ja que hi has cardat ben a gust durant tota la nit!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>Era una mica fosc, així que no hi veies gaire bé, però enmig de la nit t'has despertat i la prostituta estava cardant amb tu. Tots dos heu acabat i us heu retirat silenciosament...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>Has descobert que {0} tafanejava! Ha de ser el detectiu!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>En tafanejar, has descobert que {0} és {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Sembla que {0} va agafar una malaltia de transmissió sexual després d'una nit amb la prostituta! El justicier se n'ha venjat. {1} ha mort.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>De sobte, se sent un tret. Els vilatans es giren i veuen {0} sobre el cos de {1}, amb la pistola encara apuntant al cap. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>El llop ha guanyat!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>Els llops han guanyat!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>Els vilatans han guanyat!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Oh, no! Heu linxat el suïcida! El suïcida guanya la partida, rucs.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jugadors vius restants, rols i equip:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} ha votat convertir {1}.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} havia de fer la feina bruta, i convertir {1}... però era el caçador de sectaris! {0} ha mort!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} ha vingut a casa teva aquesta nit, amb la intenció de convertir-te... però l'has travessat amb l'espasa. Un sectari ha mort... restants: {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>T'han convertit a la secta! Ara ets sectari. Cada nit, tindràs l'oportunitat de convertir un altre jugador.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Sectaris: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} s'ha unit a la secta!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} havia de fer la feina bruta, i convertir {1}... però a casa no hi havia ningú!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Tots els llops han mort, i l'única gent que resta viva ha estat convertida a la secta... Ha guanyat la secta!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Has intentat caçar {0}, però ja havia mort!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Has anat a casa de {0} i estava resant davant de l'altar d'un déu desconegut. Ràpidament has travessat el malvat sectari amb la teva espasa.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Has anat a casa de {0}, però no se sent cap càntic misteriós. Te'n tornes a casa, convençut que {0} no és cap sectari.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>El mestre de {0} ha mort! Enrabiat, s'ha convertit en llop!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} ha mort! Enrabiat, t'has convertit en llop! Altres llops: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>un vilatà 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>el borratxo 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>la prostituta 💋</value>
+  </string>
+  <string key="Seer">
+    <value>la vident 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>el traïdor 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>l'àngel guardià 👼</value>
+  </string>
+  <string key="Detective">
+    <value>el detectiu 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>un llop 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>el maleït 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>el justicier 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>el suïcida 👺</value>
+  </string>
+  <string key="Fool">
+    <value>el babau 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>el nen salvatge 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>l'observador 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>l'aprenent de vident 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>un sectari 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>el caçador de sectaris 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>ha fugit</value>
+  </string>
+  <string key="Dead">
+    <value>💀 ha mort</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 viu</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Jugadors vius</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un maçó 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Ets un maçó. Si hi ha altres maçons, sabreu qui sou. Si no, ets un vilatà.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Tots els vilatans es lleven, i troben el cos de {0} enterrat en una pila de pedres, amb esquitxades de sang pertot arreu. Un dels maçons ha mort!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Els maçons són: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>El membre més recent de la secta mira de convertir {0} visitant casa seva, però es troba una autèntica ruïna, sang pertot arreu i pèls de llop al costat del portal...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>La llopada s'ha dirigit a la casa de {0} per cruspir-se'n el cos, però els rep una figura alta, fosca i armada fins a les dents. L'àngel guardià es defensa de tots i torneu derrotats.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Envieu {0} per intentar convertir {1}, però la fe d'aquesta persona era massa forta i no heu pogut convertir-la ☹️</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un jugador amb el nom {0} ja s'ha unit a la partida. Canvia de nom per unir-t'hi.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>T'has colat a la casa de {0} per divertir-te una mica... però quan ja te n'anaves, t'adones que hi ha un altar estrany, mal amagat en una habitació, que desprèn una brillantor sospitosa...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Quan tothom es desperta al matí, us adoneu que {0} no ha aparegut... Comproveu la seva casa i trobeu les restes de {0}.</value>
+    <value>En reunir-vos en sortir el sol, trobeu les restes de {0}, que ha mort aquesta nit passada...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Que estrany... {0} no ha vingut a la reunió de maçons d'aquest matí... 😯</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>L'administrador del grup ha desactivat l'opció de fugir mentre la partida és activa!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>ha mort</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Ja ets en una partida! ({0})</value>
+  </string>
+  <string key="NoGame">
+    <value>No hi ha cap partida activa. Comença una partida nova amb /startgame o comença una partida caòtica amb /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Només un administrador del grup pot fer servir aquesta ordre.</value>
+  </string>
+  <string key="NoSeer">
+    <value>No hi ha vident!</value>
+  </string>
+  <string key="TimesUp">
+    <value>S'ha acabat el temps!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Ets en Cupido. Enviat a la Terra només amb uns calçotets, un arc i dues fletxes, has d'escollir dos jugadors perquè s'estimin per tota l'eternitat. Si un d'ells mor, l'altre morirà de pena.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Ets el doppelgänger. Segons la llegenda, els teus avantpassats eren metamorfs i podien prendre la forma que volguessin. Tu has heretat algunes de les seves capacitats. Escull un jugador, i quan aquell jugador mori, prendràs el seu rol.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Ets el caçador de la vila. No dorms bé i sempre et fiques al llit amb l'escopeta. Si mors, pots escollir matar algú altre. Si se't mengen, tens una possibilitat de matar un llop, però no podràs matar ningú més.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Ets l'assassí en sèrie. Acabat d'escapar del manicomi, el teu objectiu és que la resta de jugadors morin. Cada nit pots afegir el cos d'un jugador a la teva col·lecció.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Has estat tocat per l'amor. Els records de {0} mai no s'esborraran del teu cor. Si un dels dos mor, l'altre morirà de pena. Si un dels dos guanya, tots dos guanyeu.</value>
+    <value>La fletxa d'en Cupido t'ha tocat! T'has enamorat bojament de {0}! Si un dels dos mor, l'altre morirà de pena. Si un dels dos guanya, tots dos guanyeu.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Els vilatans han escollit penjar-te! És la teva última oportunitat, escull algú per disparar-li abans que sigui massa tard!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} cerca la seva pistola quan el nus de la forca s'estreny, però no ho aconsegueix a temps, morint amb un fort esclafit del seu coll...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} treu la seva pistola i mira la multitud... però no pot decidir a qui disparar. Accepta el seu destí i mor a la forca...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Quan el nus de la forca s'estreny, {0} treu una pistola, apunta i dispara a {1} abans de morir! {1} cau immediatament a terra. Ha mort. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>T'han assassinat! En els teus darrers moments, tens l'oportunitat de disparar a algú... no perdis el temps!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Han ferit massa {0}, tant, que no ha pogut arribar a treure la seva pistola mentre jeia en un bassal de sang...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Mentre {0} jeu a terra, respirant amb dificultat... no pot decidir a qui disparar i accepta el seu destí.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Tot morint, {0} cau a terra... però no sense treure la seva pistola i disparar a {1}, que rep una bala just enmig dels ulls. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Els llops han intentat atacar el caçador aquesta nit, però el caçador ha pogut matar-ne un mentre moria! {0} ha mort (llop).</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>El llop ha intentat atacar el caçador aquesta nit, però el caçador ha pogut matar el llop {0} amb la seva escopeta!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Els llops volien esmorzar aquesta nit, però els ha rebuts un assassí boig! {0} ha mort en la lluita!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Semblava una nit prou tranquil·la per a {0}, però s'equivocava de ple. Els vilatans es troben al matí i descobreixen el cos de {0} partit per la meitat... Estranyament, no poden trobar-ne el fetge enlloc... L'assassí en sèrie ha tornat a actuar! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Has intentat afegir el cos de {0} a la teva col·lecció, però l'àngel guardià t'ho ha impedit! Aquesta nit no pots matar ningú...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>La secta envia {0} per intentar convertir {1}, però se sent un tret d'escopeta i el cos de {0} surt volant per la finestra! {0} ha mort...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>La secta envia {0} per intentar convertir {1}, però el cos de {0} surt volant per la finestra, ple de ganivets pertot arreu! QUIN PSICÒPATA! {0} ha mort...</value>
+    <value>{0} es cola a la casa de {1}, obre la porta i es troba immediatament amb un boig assassí amb un ganivet!!! {1} clava el ganivet en els òrgans de {0} seguint l'ordre alfabètic, rient com un boig! {0} ha mort... 😮</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Has intentat protegir l'assassí en sèrie, però t'ha apunyalat 89 cops! Has mort...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Et coles a la casa de {0} i comences a passar-t'ho bé. Tot sembla genial fins que {0} treu un ganivet i comença a apunyalar-te, rient com un boig! Has mort...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>El cos de {0} apareix a la plaça amb incomptables ferides d'arma blanca. {0} ha mort.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>El doppelgänger {0} s'ha convertit en un maçó, com tu!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ha mort, i tu et transformes en un maçó. Els teus companys (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>El doppelgänger {0} s'ha convertit en sectari, com tu!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha mort, i tu et transformes en sectari. Els teus companys (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>El doppelgänger {0} s'ha convertit en un llop, com tu!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha mort, i tu et transformes en un llop. Els teus companys (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>L'única persona viva és l'assassí en sèrie! Ha guanyat!</value>
+  </string>
+  <string key="AskKill">
+    <value>Qui vols matar aquesta nit?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Amb l'últim sospir de {0}, {1} corre i cau al seu costat, plorant. No pot suportar la pèrdua de la persona que estima i es dispara amb la primera pistola que troba. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>En qui et vols transformar si mor?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Qui vols que siguin els enamorats? Escull el primer jugador.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Qui vols que siguin els enamorats? Escull el segon jugador.</value>
+  </string>
+  <string key="Hunter">
+    <value>el caçador 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>en Cupido 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>l'assassí en sèrie 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>el doppelgänger 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>T'has convertit en el nen salvatge. El teu mestre és {0}.</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>El veritable amor resisteix! Els amants han guanyat!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Trobeu el cos de {0} al centre de la plaça de la vila, amb múltiples ferides de bala. Sembla que ha intentat entrar a la casa del caçador! Bé, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una figura encaputxada ha intentat convertir-te a la seva secta, però la teva fe és massa forta.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Ja ets a la llista d'espera per a {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Se t'ha afegit a la llista d'espera per a {0}. T'enviarem un missatge privat quan la següent partida comenci.\nMentre esperes, per què no visites la botiga? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Comença una nova partida a {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>El matí arriba i els dos vilatans que resten es troben a la plaça. {0} mira {1} amb un gran somriure, treu un ganivet i el clava a l'ull de {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Tots els vilatans han mort... no resten res més que cossos. Ningú guanya aquesta partida, excepte els voltors...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Quan surt el sol, {0} i {1} arriben a la plaça. {0} treu el seu ganivet i salta cap a {1}. {1} treu una pistola i dispara directament a la cara de {0}. {0} cau clavant el ganivet al pit de {1}. Tots dos moren, la vila és buida, no hi ha guanyador...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>No has escollit, així que el moderador ha escollit per tu: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Ha guanyat</value>
+  </string>
+  <string key="Lost">
+    <value>Ha perdut</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El jugador {0} ha mort per no votar {1} vegades en les darreres 24 hores.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>El teu rol és simple: intenta sobreviure. Cada dia tindràs una oportunitat de linxar un llop.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Ets la vident. Cada nit pots escollir un jugador i se't revelarà el seu rol. Vés amb compte: si els llops se n'assabenten, se't voldran cruspir!</value>
+  </string>
+  <string key="AboutWw">
+    <value>T'ho passaràs bé! Durant el dia has d'intentar enganyar la resta de vilatans. Però, durant la nit, escolliràs algú per matar-lo!\nNota: si ataqueu el maleït, es tornarà un llop com vosaltres! Visca!\nSi ataqueu el borratxo, no podreu atacar ningú durant la nit següent perquè estareu de ressaca! (Normalment, això vol dir que no podreu atacar la nit següent, però si el llobató ha estat assassinat i el borratxo era la teva primera opció, no podràs matar el segon jugador, i podràs continuar atacant la nit següent.)</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Com a prostituta (tros de meuca...), podràs 'visitar' algú cada nit. Si no és un llop, ho sabràs (perquè sobreviuràs!). Si visites un llop, moriràs. Si visites el jugador que els llops volen matar, també moriràs. Però si estàs visitant algú i els llops et volien matar, no et trobaran a casa i sobreviuràs!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Maleït alcohòlic! Com a borratxo, ets un simple vilatà. Però si els llops se't cruspeixen, quedaran fets una sopa a causa de la teva alta concentració d'alcohol a la sang, i no podran matar ningú durant la nit següent.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Com a maleït, ets un vilatà normal... fins que els llops et matin. Quan ho facin, et convertiràs en un llop com ells! Ara podràs començar a caçar durant la nit... 😂</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Ets un traïdor malparit. Si sobrevius fins que tots els llops morin, tu et convertiràs en un llop i podràs matar els teus antics companys durant la nit!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Ets l'àngel guardià! Cada nit pots escollir protegir un jugador. Vés amb compte: si esculls protegir un llop, hi ha un 50% de probabilitats que moris.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Ets un vell detectiu. Pots investigar un altre jugador cada dia. Vés amb compte: hi ha un 40% de probabilitats que els llops t'enxampin!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Ets dels de tret fàcil, eh? Com a justicier, se't donen dues bales de plata al començament de la partida. Cada dia podràs disparar a un altre jugador. Quan ho facis, tothom sabrà que ets el justicier! Vés amb compte, només tens dues bales!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>L'objectiu del suïcida és fàcil: vol aconseguir que el linxin. Si els vilatans linxen el suïcida, ell guanya i la resta perd. Així de simple.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Al babau se li diu que és la vident... quan escull un jugador durant la nit, se li diu un rol aleatori.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Com a sectari, el teu objectiu és convertir tots els altres jugadors (excepte els llops) a la secta. Si al final de la partida tots els jugadors vius són sectaris, la secta guanya.</value>
+  </string>
+  <string key="AboutCH">
+    <value>La teva feina és acabar amb la secta. Si la secta t'ataca, el seu membre més recent morirà. Cada nit pots 'caçar' un jugador: si és sectari, morirà.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Al començament de la partida escolliràs el teu mestre. Si mor, et convertiràs en un llop.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>De moment, ets un vilatà normal. Però si la vident mor, et convertiràs en la nova vident.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Sabràs qui és la vident (la de debò, no el babau).</value>
+  </string>
+  <string key="AboutMason">
+    <value>Els maçons són simples vilatans, però saben qui són la resta de maçons.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Els teus avantpassats tenien l'habilitat de transformar-se en altres... tot i que tu no tens totes les seves habilitats, pots triar un jugador al començament de la partida. Si aquest jugador mor, prendràs el seu rol.\nNota: si el jugador havia estat convertit a la secta, prendràs el seu rol original. La resta de regles s'apliquen: si era el nen salvatge i el seu mestre havia mort, et convertiràs en un llop; si no, heretaràs el seu mestre.\nLa secta no pot convertir el doppelgänger (però pot convertir-lo quan ja s'ha transformat). El doppelgänger ha de transformar-se per poder guanyar (excepte si està enamorat).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>L'amor està present. Com a Cupido, escolliràs dos jugadors al començament de la partida, que s'enamoraran bojament! Si un d'ells mor, l'altre morirà de pena 😢\nNota: els amants saben qui és l'altre, però no saben el seu rol. Si els dos amants són els últims dos jugadors, guanyen. Si els amants eren a equips diferents (vilatans + llops) i un equip guanya (llops), l'amant (vilatà) també guanya. En resum, si un dels dos amants és de l'equip guanyador, guanyen tots dos.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Un jugador venjatiu de tret fàcil, el caçador és una persona solitària. Si algú altre et visita, pot acabar mort, ja que la teva paranoia et domina i dispares. Si els llops t'ataquen, tens l'opció d'endur-te'n un amb tu. Si mors d'una altra manera, pots disparar a un altre jugador.\nNota: si un llop t'ataca, la probabilitat de matar-lo comença al 30%. Si hi ha un sol llop, el caçador té un 30% de probabilitats de matar el llop (i sobreviure). Per cada llop addicional, s'hi afegeix un 20% (2 llops = 50%, 3 = 70%, etcètera). Però si hi ha múltiples llops, encara que en matis un, moriràs igualment perquè et superen en nombre.\nSi la secta t'intenta convertir, hi ha un 50% de probabilitats que no ho aconsegueixi. Llavors, hi ha un 50% de probabilitats que en puguis matar un membre!</value>
+  </string>
+  <string key="AboutSK">
+    <value>El manicomi era de bojos... Vaja, quin acudit. Ara ets lliure, hora de tornar a la feina: matar! L'assassí en sèrie és un jugador solitari, té el seu propi equip. Només pot guanyar si és l'últim jugador viu (excepció: amants). Com a assassí en sèrie, pots matar QUALSEVOL personatge: llops, caçadors, justiciers, àngels guardians, qui sigui. Si els llops t'intenten matar, tu en mataràs un (aleatori) i sobreviuràs.</value>
+  </string>
+  <string key="AboutPara">
+    <value>En Para és un desenvolupador idiota a qui li agrada bordar a la gent. Potser ha estat massa temps amb els llops... Estar amb llops és molt mala idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Durada de la partida: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Dia {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>S'ha produït un error i aquest node s'ha aturat 😕</value>
+  </string>
+  <string key="SentPrivate">
+    <value>T'he enviat un missatge privat.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Què vols fer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Has d'unir-te a una partida des del xat d'un grup!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Has de començar una partida des del xat d'un grup!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Temps per rebre el missatge de ping: {0}\nMissatges per segon: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Quin idioma?\nActual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Quina variant?\nActual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma establert a {0}.</value>
+  </string>
+  <string key="GetLang">
+    <value>Quin fitxer d'idioma vols?</value>
+  </string>
+  <string key="NoNodes">
+    <value>No hi ha cap node en línia ara mateix, torna-ho a provar d'aquí a uns segons.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Has de fer servir aquesta ordre en un grup</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>No ets un administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>No ets en Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sí</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Permet</value>
+  </string>
+  <string key="Disallow">
+    <value>No permetis</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Amaga</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Només normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Només caòtic</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A elecció del jugador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>No en mostris cap</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra només els dels jugadors vius</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra els de tots els jugadors</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel·la</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Vols permetre fugir una vegada ha començat la partida?\nNota: els jugadors encara podran fugir durant la fase d'unir-s'hi.\nActual: {0} fugir</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fugir després de començar la partida.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quants jugadors vols definir com a màxim?\nActual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Màxim de jugadors definit a {0}.</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Vols mostrar o amagar els rols en morir?\nActual: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Els rols es {0} en morir.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Quin mode de joc ha de tenir el grup?\nActual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Mode de joc definit a {0}.</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Com vols que es mostrin els rols al final?\nActual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>'Mostra els rols al final' definit a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Escull el temps base (en segons) per al dia. Tot i això, es modificarà segons el nombre de jugadors.\nValor per defecte: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Temps base del dia definit a {0} segons.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Escull el temps (en segons) per a la nit. Valor per defecte: {0}\nActual:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Temps de la nit definit a {0} segons.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Escull el temps (en segons) per a les votacions de linxament. Valor per defecte: {0}\nActual:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Temps per a les votacions de linxament definit a {0} segons.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Vols permetre el babau com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Babau com a rol definit a: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Vols permetre el suïcida com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Suïcida com a rol definit a: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Vols permetre ser sectari com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Sectari com a rol definit a: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Vols activar el linxament secret?\nActual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Activació del linxament secret definit a: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Gràcies, que tinguis un bon dia :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>En quin idioma vols cercar un grup per jugar-hi?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aquests són els grups de {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membres</value>
+  </string>
+  <string key="StartMe">
+    <value>Obre'm conversa perquè et pugui enviar un missatge privat.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} no ha pogut obrir conversa amb el bot i se l'ha eliminat de la partida!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aquesta és la darrera llista.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>No s'ha pogut obtenir la darrera llista.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>T'has unit a la partida de {0}.</value>
+  </string>
+  <string key="Ping2">
+    <value>Temps per enviar un missatge de ping: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Ets el batlle. El teu vot durant el linxament val el doble, una vegada t'hagis revelat. Ets a l'equip dels vilatans.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Ets el príncep en secret, escapant-te de la teva vida avorrida i pomposa a palau, passant el dia amb els plebeus. Si intenten linxar-te, s'adonaran del seu error, i no es linxarà ningú.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Ets el maldestre. Intentaràs votar, però hi ha un 50% de probabilitats que votis per algú altre i no per qui volies. Ets a l'equip dels vilatans.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Ets la bruixa, la qual cosa fa que t'aliïs amb les criatures de la nit i no amb els vilatans. Durant la nit, faràs servir el teu poder per trobar els llops i la vident. Només guanyaràs si guanyen els llops. Gaudeix ajudant els llops a ensumar els miserables vilatans.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Ets el ferrer, el treballador del metall de la vila. Tens una petita quantitat de plata, suficient per evitar que els llops ataquin durant una nit. Durant el dia, pots escollir si convertir-la en pols i escampar-la al voltant de la vila. A part d'això, ets un vilatà normal.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Ets el llop alfa, l'origen de l'escabetxina. La teva mossegada és la causa de la maledicció que converteix els humans en llops. Cada nit escolliràs un humà a qui atacar i matar, però mentre siguis viu, la teva víctima té un 20% de probabilitats de convertir-se en llop.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Ets el llobató, adorat per la llopada. De la mateixa manera que els altres llops, cada nit escolliràs un vilatà a qui atacar i matar. Si et maten, la llopada entrarà en còlera i atacarà dues persones la nit següent. Però continuaràs estant mort.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Quan els vilatans comencen a linxar {0}, diu: “Espereu! Sóc el príncep. Aquest anell reial, amb el segell del rei, n'és una prova. Cada nit em rodejo de servents. Per tant, no puc ser malvat.” Sentint-se inútils, els vilatans es retiren a casa seva.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Intentes mirar {0}, però no veus clar qui pot ser. Però no és ni un llop ni la vident...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un pas endavant i mostra el segell oficial de batlle, declarant-se com a tal. A partir d'ara, els vots de {0} a l'hora de linxar valdran el doble.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Prem "Revela'm" quan vulguis revelar-te com a batlle.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revela'm</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vols escampar la plata avui, fent que ets llops no puguin atacar aquesta nit?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre la resta de vilatans debaten sobre els esdeveniments, s'adonen que {0} camina per la vila escampant plata per terra. Per ara, almenys, la vila no patirà atacs de llops. (Aquesta nit, els llops no poden atacar.)</value>
+  </string>
+  <string key="Mayor">
+    <value>el batlle 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>el príncep 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>la bruixa 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>el maldestre 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>el ferrer ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>el llop alfa ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>el llobató 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Mentre els llops ataquen {0}, {1} atura tothom, com a llop alfa que és. {1} diu a la llopada que {0} s'hauria d'unir a la llopada en lloc de morir, de manera que resta a mercè de la infecció. Es convertirà en llop demà a la nit.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>T'han atacat els llops, però el llop alfa t'ha escollit. En lloc de morir, t'han infectat... i et convertiràs en llop demà a la nit!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Mentre cau la nit, notes un estrany formigueig, el cos et fa mal i es comença a transformar... Ara ets un llop!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Com a batlle, ets un miserable vilatà, fins que et reveles. Llavors, els teus vots per als linxaments valen per dos (és a dir, el teu vot és el doble de poderós que els de la resta). Utilitza aquest poder sàviament per ajudar l'equip dels vilatans.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>El príncep és un rol clau a l'estratègia de l'equip dels vilatans. Quan es linxa el príncep, es descobreix el seu rol de príncep, i sobreviu. No obstant això, només pot passar una vegada: si els vilatans insisteixen a linxar-lo, morirà.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Recordes la vident? Bé, ara té la seva contrapartida a l'equip dels llops. La bruixa és la vident de la llopada. Només pot veure si algú és un llop o la vident, i guanya amb els llops.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Ets el maldestre. Potser no hauries d'haver pres tant d'alcohol per esmorzar. No veus res de res. Vols dir que pots votar per la persona que vols? (Tens un 50% de probabilitats de votar per algú aleatori.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Ets el ferrer. Al llarg dels anys, cap espasa ni cap navalla t'ha donat tanta satisfacció com les navalles de plata que et van demanar els elfs.\nPotser encara tens una mica de pols de plata. Qui sap? Pot ser que *eviti que els llops mengin aquesta nit* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Ets el llop alfa, l'origen de la maledicció, la font del desastre. Cada nit, hi ha un 20% de possibilitats que mosseguis el menjar de la teva llopada, i s'unirà a vosaltres en lloc de morir!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Quin llobató més bufóóó. _l'acarona_ -cof cof- Com deia, ets el llobató i _li cau el micròfon_ ...No m'hi puc resistir. Em sembla que si algú et matés, faria que els llops volguessin matar dues vegades. Ets massa bufó per morir-te. No podria tornar a acaronar-te.</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha mort, i et transformes en el llop alfa. Els teus companys (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha mort, i et transformes en el llobató. Els teus companys (si n'hi ha) són: {1}</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>Equip de vilatans</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equip neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equip dels llops</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equip de l'assassí en sèrie</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equip de la secta</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equip suïcida</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>La secta envia {0} per intentar convertir {1}, però en lloc d'això, el cap de {0} surt volant per la finestra... Em demano per què han pensat que no era comestible! {0} ha mort...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} es cola a la casa de {1}, preparant-se per a una nit de passió, però s'hi troba un desconegut misteriós traient quirúrgicament els òrgans de {1}! L'assassí en sèrie decideix satisfer {0} abans d'afegir un cor de meuca a la seva col·lecció!</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Els vilatans es desperten i troben {0} sobre una taula de ouija de segona mà. Sembla que hi practicava la vidència, però ara li falta el cap. L'aprenent de vident ha mort.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembla que {0}, el ferrer de la vila, ha tingut molt mala sort. Resulta que la nit passada, cinc ganivets nous de trinca, de l'armeria {0}, se li han clavat a les mans, als peus i al cap, i l'han clavat a la seva taula de treball. Potser l'assassí en sèrie volia expandir la seva col·lecció d'armes, a més de la d'òrgans...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Han trobat el cos de {0} apunyalat fins a la mort amb una espelma, al costat del seu altar. L'assassí en sèrie ha tornat a atacar, sense distingir per raça, llengua o religió! {0} era un sectari.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>L'endemà al matí, als vilatans se'ls va partir el cor en trobar {0}, que també rebia el sobrenom de Cupido, amb el cos partit per la meitat de dalt a baix. Curiosament, el cor no hi era...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Els vilatans esperaven trobar {0} per lloar la seva capacitat de beure, però a casa de {0} només hi van trobar un ganivet trencat i un fetge. Tants anys bevent havien fet que tingués un fetge tan dur que ni tan sols l'assassí en sèrie el volia...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Normalment, {0} hauria aconseguit lluitar contra l'assassí en sèrie, però és irònic que l'aurèola de l'àngel guardià s'hagi extingit. {0} ha mort.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembla que la nit passada, {0} dormia! Durant la nit, s'ha sentit un tret, però només hi havia les restes del justicier, amb un forat de bala enmig del cap, i una punyalada al tors. Queda clar que l'assassí en sèrie ha guanyat.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Hi ha hagut un assassinat! Han trobat {0}, el batlle, clavat a la taula amb un ganivet, mentre treballava a l'ajuntament a altes hores de la matinada! Queda clar que és l'assassí en sèrie, que cercava venjança per tots els anys de vida que li va prendre el manicomi!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Sonen campanes per tota la vila abans de la sortida del sol, mentre els guàrdies armats inunden els carrers investigant la desaparició del príncep, {0}. No n'han trobat cap pista, però se sospita que hi ha un assassí en sèrie...</value>
+    <value>Aquesta nit passada, els guàrdies de {0} dormien. Han trobat les restes reials de {0}, penjades en diverses parts del palau, víctimes dels ganivets. La sang reial no esquiva la dedicació de l'assassí en sèrie.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Els vilatans es desperten i troben el cos podrit de {0}, partit en dos de dalt a baix, ple de punyalades. Curiosament, algú n'ha extret el cervell amb cura, com si fos una indicació que la vila ha perdut el seu cervell més prodigiós. {0} era la vident.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Arreu de la vila se senten udols de tristesa. Hi ha hagut un error. Els llops n'han mort un dels seus. La bruixa {0} ha mort.</value>
+    <value>Aquesta nit s'han sentit crits de "Sóc la vostra aliada!". Aquest matí s'ha descobert un cos amb una bola de vidre trencada, que pertanyia a {0}, la bruixa. La gana supera la companyonia...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NYAM, NYAM, NYAM, NYAM! Aquesta nit s'han sentit els llops, que s'han cruspit el nen salvatge, {0}, ben tendret, deixant-ne només el seu petit esquelet! Els vilatans es demanaven si els llops no se sentien culpables de destrossar un nen indefens.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Els vilatans es desperten de bon matí, però troben desmembrades les parts del cos de {0}, el caçador de sectaris, en un carret de la compra ubicat enmig de la plaça de la vila. Lliçó apresa: no visitis l'assassí en sèrie!</value>
+    <value>El cos de {0}, el caçador de sectaris, ha aparegut enmig de la vila, però tallat en exactament cent trossos. No sembla bona idea comprovar si l'assassí en sèrie és un sectari...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Tot i que semblava que els llops havien decidit ser bons per una vegada, era difícil resistir-se a castigar {0}, un sectari que havia decidit cercar problemes amb els llops. El cap de {0} s'ha convertit en un bon sopar, amb lliurament al domicili dels llops!</value>
+    <value>Aquesta nit, la secta s'ha trobat problemes inesperats. El seu membre més nou ha tingut la mala sort de visitar un llop durant la nit en què els llops han decidit romandre a casa, i el llop ha trobat que {0} feia força bona pinta. Malauradament per a {0}, els llops no tenen gens d'interès a unir-se al nou moviment religiós.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>La secta pensava que tindria un nou membre entre les seves files, però s'equivocava! {0}, un sectari, ha aparegut aquest matí a trossos a la plaça de la vila! Curiosament, el seu llibre "sagrat" ha aparegut apunyalat amb un ganivet, com si fos una mostra de quina religió ha triomfat.</value>
+    <value>La nit passada, la secta ha intentat convertir l'única persona de la vila més boja que els seus membres. El seu membre més nou ha intentat convertir l'assassí en sèrie, i l'assassí en sèrie ha fet una nova obra d'art amb els òrgans de {0} a la plaça de la vila.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Se suposava que havia de ser una nit en què {0} salvaria la vila dels assassins, però l'aurèola de {0} ha estat extingida i les seves ales han estat tallades per l'assassí en sèrie! Enmig, una nota: "Puc protegir-me jo mateix millor del que pots fer-ho tu."</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>Aquesta nit, {0} ha intentat defensar un llop. La vila s'ha llevat i ha descobert només les ales de {0} penjades a la creu de l'església. Queda clar que els llops han tingut un àpat extra enviat pels déus, i de franc, a casa seva.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabent que només resta {0}, {1} intenta cruspir-se {0}, però la paranoia i l'entrenament militar de {0} resulta ser massa! Només resta un cos amb dos trets al tors i l'últim home dempeus: el caçador de la vila, victoriós!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabent que només resta {0}, {1} he escollit un moment en què la guàrdia de {0} era baixa. Eliminar l'últim vilatà ha estat fàcil per a {1}, per tant, l'únic que resta és el cos mutilat de {0}, el caçador, decorat amb esgarrapades paral·leles a la cara.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} i {0} caminen durant el dia. Veient una creu brillant al voltant del coll de {0}, l'honrat {1} treu l'espasa per últim cop, posant fi als rebuscats ensenyaments de la secta que han contaminat la vila.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El temps per unir-s'hi s'ha allargat {0} segons!\nEn resten {1} per unir-s'hi.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El temps per unir-s'hi s'ha escurçat {0} segons!\nEn resten {1} per unir-s'hi.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Només els administradors del grup poden allargar el temps més d'una vegada!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Vols permetre que els jugadors allarguin el temps per unir-s'hi?\nActual: {0} allargar\nNota: els administradors sempre el poden allargar.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} que els jugadors allarguin el temps per unir-s'hi.</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Escull el nombre màxim de segons que es poden afegir al temporitzador per unir-s'hi amb una sola ordre /extend.\nValor per defecte: {0}\nActual:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Temps màxim per afegir definit a {0} segons.</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh, no! {0} era el borratxo! Ara esteu borratxos, i no podeu atacar {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Uneix-t'hi</value>
+  </string>
+  <string key="NotMember">
+    <value>No et pots unir a aquesta partida perquè no sembles ser membre de {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>No facis servir les ordres per unir-t'hi. Fes servir aquest botó.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jugadors han votat, {1} en total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, recorda que també hauràs d'unir-t'hi fent servir el botó.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>No s'ha trobat el grup. Fes servir aquesta ordre al grup on vulguis deixar d'esperar, o afegeix un enllaç, identificador o nom d'usuari a l'ordre.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Se t'ha esborrat de la llista d'espera de {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>S'han unit a la partida en els darrers 30 segons: {0}</value>
+  </string>
+  <string key="AllowCult">
+    <value>Permet la secta</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permet el suïcida</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permet el babau</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Permet el linxament secret</value>
+  </string>
+  <string key="RandomMode">
+    <value>Activa el mode aleatori</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permet allargar el temporitzador</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra els rols en morir</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permet fugir</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra els identificadors en unir-s'hi</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Vols mostrar els identificadors dels jugadors quan s'uneixin a la partida?\nActual: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} els identificadors</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tots</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Vols activar el mode aleatori?\nQuan s'activa el mode aleatori, el joc caòtic, el linxament secret, mostrar els rols en morir, i permetre la secta / el babau / el suïcida s'escolliran aleatòriament cada vegada que algú comenci una partida.\nActual: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Activació del mode aleatori definida a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Permet els paquets de GIFs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Vols permetre que els jugadors tinguin paquets de GIFs NSFW?\nActual: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} els GIFs NSFW</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Quan el sol comença a brillar a la vila, {0} es desperta enmig del més absolut silenci. En adonar-se que ja no hi ha ningú, {0} camina i camina, fins que es troba en soledat enmig de la vila. {0} dóna un cop d'ull a tots els cadàvers escampats per la vila, i sospira. El seu somni de morir pel linxament dels vilatans ha mort, igual que la resta de vilatans. Estira les mans i toca la corda, que tantes vides ha segat, amb cura, abans de posar-se-la al voltant del coll i penjar-se lliurement, amb un trist somriure a la seva cara.</value>
+    <value>{0} es lleva a l'alba, en solitud. {0} veu que la seva vida ha estat un error, sent incapaç de fer que els vilatans satisfessin els seus desitjos masoquistes de patir un linxament fins a la mort. {0} agafa una corda i es penja, adonant-se que ningú pot fer realitat el seu somni, ja que ja no hi ha ningú.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} obre els ulls, però en lloc de sentir la remor de gent habitual de la vila, sent silenci. Mira fixament l'avorrit sostre, deixant que la realitat es faci evident a poc a poc. Tothom ha mort. Els llops han mort. Amb una punxada al cor, {0} s'aixeca, recull les coses i camina cap a l'extrem de la vila. A {0} li surt una llàgrima dels ulls quan recorda com de prop ha estat, juntament amb els llops, de la victòria. Però és hora de començar una nova vida i recollir les coses. {0} desapareix en la foscor del bosc, lluny de la tranquil·la vila.</value>
+    <value>Tot i els esforços de {0}, els amics llops de {0} romanen immòbils i sense vida. Encara que els llops han portat la victòria, no hi ha ningú amb qui assaborir l'èxit, ni cap vilatà viu de qui riure's. {0} mira de prop la bola de cristall, i desapareix silenciosament, en un núvol de boira, a la recerca de nous llops, nous aliats, i nous trucs per cometre nous crims contra la humanitat.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Quina variant?\nActual: {0}\nCom que has jugat més de 500 partides, també pots unir-te a: </value>
+  </string>
+  <string key="Skip">
+    <value>Omet</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha mort, i tu et transformes en el licàntrop. Els teus companys (si n'hi ha): {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Has vist que {0} NO és {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vols que aquesta nit tots els jugadors s'adormin?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre els vilatans parlen, {0} se'n torna a casa seva i comença a entonar una suau melodia. Aquesta nit, tothom dormirà molt profundament, i ningú podrà realitzar les seves accions nocturnes.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Tothom se'n va cap a casa, però estan tan exhaustos que tot just poden arribar al llit. S'adormen tan profundament, que ni tan sols recorden haver anat a dormir...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Vols permetre el lladre com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Lladre com a opció de rol definit a: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Vols que el lladre es pugui fer servir cada nit?\nActual: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Lladre cada nit definit a: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permet el lladre</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Partida completa del lladre</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Ets un miserable vilatà, però com que passes la major part del temps als boscos, on hi ha els llops de debò, la vident es confondrà i endevinarà que ets un llop! Oh, no...</value>
+  </string>
+  <string key="WolfMan">
+    <value>l'home llop 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Ets un miserable vilatà, però com que passes la major part del temps als boscos, on hi ha els llops de debò, la vident es confondrà i endevinarà que ets un llop! Oh, no...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Ets el licàntrop! Ets un llop, però la vident es confondrà i endevinarà que ets un vilatà 🙂</value>
+  </string>
+  <string key="Lycan">
+    <value>el licàntrop 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>El licàntrop és un llop, però la vident el veurà com si fos un vilatà.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Ets l'oracle. Cada nit pots escollir observar algú, però només podràs veure què NO és. El rol que se't dirà pertanyerà a algú altre del joc que encara és viu, de manera que para atenció al rol, ja que vol dir que qui el tingui, encara és viu 🙂</value>
+  </string>
+  <string key="Oracle">
+    <value>l'oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>L'oracle sabrà quin rol NO té algú, escollint entre rols que encara són vius a la partida.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Ets l'home de la sorra. Una vegada per partida, pots fer servir la màgia per adormir profundament tothom, de manera que no podran fer servir els seus rols durant la nit.</value>
+  </string>
+  <string key="Sandman">
+    <value>l'home de la sorra 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una vegada per partida, l'home de la sorra pot fer que tots els jugadors dormin tan profundament que no podran executar cap acció durant la nit.</value>
+  </string>
+
+  <!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>Ets el pacifista ☮️. Pots escollir si vols convèncer tothom de la vila perquè no es linxi ningú. Només pots fer-ho una vegada.</value>
+  </string>
+  <string key="Pacifist">
+    <value>el pacifista ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>El pacifista pot escollir si vol convèncer tothom de la vila perquè no es linxi ningú. Només pot fer-ho una vegada.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Ets l'ancià savi 📚. Pots sobreviure a un atac dels llops una vegada, però a la segona se't menjaran. Si el justicier o el caçador et maten amb les seves habilitats, perdran els poders a causa de la pena i passaran a ser un vilatà normal.</value>
+  </string>
+  <string key="WiseElder">
+    <value>l'ancià savi 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>L'ancià savi 📚 pot sobreviure a un atac dels llops una vegada, però a la segona se't menjaran. Si el justicier o el caçador et maten amb les seves habilitats, perdran els poders a causa de la pena i passaran a ser un vilatà normal.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>Ets el lladre 😈! Pots robar el rol d'un jugador durant la primera nit, i convertir-lo en un vilatà!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Ets el lladre 😈! Com que el mode [Lladre complet] està activat, tens un 50% de probabilitat de robar el rol d'un jugador durant cada nit. Si tens èxit, aquell jugador serà el nou lladre i continuarà els robatoris!</value>
+  </string>
+  <string key="Thief">
+    <value>el lladre 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Per defecte, el lladre 😈 pot robar el rol d'un jugador durant la primera nit, i convertir-lo en un vilatà.\nSi s'activa el mode [Lladre complet], té un 50% de probabilitat de robar el rol d'un jugador durant cada nit. Si té èxit, aquell jugador serà el nou lladre i continuarà els robatoris!</value>
+  </string>
+
+  <string key="AskPacifist">
+    <value>Vols fer que no es pugui linxar ningú aquesta nit?</value>
+  </string>
+  <string key="PacifistNoLynch">
+    <!-- {0} - Pacifist's name -->
+    <value>El pacifista ☮️, {0}, fa una profunda xerrada sobre l'amistat i la confiança davant de tota la vila. Emocionats per la seva xerrada, decideixen que avui no linxaran ningú!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>A causa de l'emotiva xerrada del pacifista ☮️, avui se saltarà la fase de linxament!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+    <!-- 0 - Wise Elder's name -->
+    <value>Heu intentat introduir-vos a la casa de {0}, però, malauradament, era l'ancià savi 📚! {0} ha evitat l'atac amb èxit, i per sort, no us ha reconegut.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Els llops t'han intentat menjar, però no has esdevingut l'ancià savi 📚 sent una presa fàcil per als intrusos! Has evitat l'atac amb èxit, però, malauradament, no has reconegut cap atacant.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+    <!-- {0} - Hunter's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>El caçador 🎯, {0}, ha disparat a l'ancià savi 📚, {1}. {0} es posa a plorar amb molta pena, penedint-se del seu error, i decideix deixar les seves habilitats de caçador. Ha mort com un simple vilatà 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+    <!-- {0} - Gunner's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>El justicier 🔫, {0}, ha disparat a l'ancià savi 📚, {1}. {0} es posa a plorar amb molta pena, penedint-se del seu error, i decideix desfer-se de la pistola, convertint-se en un simple vilatà 👱 amb un camp a conrear.</value>
+  </string>
+
+  <string key="ThiefStealFailed">
+    <!-- {0} - The name of the thief's target -->
+    <value>Has intentat robar el rol de {0}, però, malauradament, has fallat...</value>
+  </string>
+  <string key="ThiefStealDead">
+    <!-- {0} - The name of the thief's target -->
+    <value>Has intentat robar el rol de {0}, però {0} ja ha mort...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+    <!-- {0} - The new role -->
+    <value>T'han robat el rol! Ara ets {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+    <!-- {0} - The name of the thief's target -->
+    <!-- {1} - The new role -->
+    <value>Has robat satistactòriament el rol de {0}. Ara ets {1}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} ja no és el teu company, i {1} ara és un maçó, com tu!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Els teus companys (si n'hi ha) són: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} ja no és el teu company, i {1} ara és un sectari, com tu!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} ja no és el teu company, i {1} ara és un llop, com tu!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Els teus companys (si n'hi ha) són: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+    <!-- 0 - Thief's name -->
+    <value>Mentre {0} passeja per la vila, descobreix que ja no hi ha més rols divertits per robar. Se'n va ràpidament d'aquesta pobra vila a la recerca d'una altra vila on poder tornar a començar la seva gran carrera.</value>
+  </string>
+  <string key="ThiefStealChosen">
+    <!-- 0 - target's name -->
+    <value>L'objectiu del teu robatori ara és {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>A qui vols robar el rol?</value>
+  </string>
+
+  <string key="SecretLynchResultEach">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <!-- 2 - A list of players who voted {1} -->
+    <value>{0} vots han estat per a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+    <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Resultats del linxament d'avui:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <value>{0} vots han estat per a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Recompte de vots</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quan el linxament secret està activat, vols mostrar el recompte de vots al final del linxament?\nActual: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quan el linxament secret està activat, el recompte de vots al final del linxament: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Votants</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quan el linxament secret està activat i es mostra el recompte de vots, vols mostrar el nom dels votants de cada jugador votat?\nActual: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quan el linxament secret està activat i es mostra el recompte de vots, el nom dels votants de cada jugador: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Que estrany... En el moment en què comenceu a discutir qui convertir aquesta nit, us adoneu que {0} no hi és! Què li ha passat?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Pau!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>S'ha omès el linxament d'avui perquè el pacifista ha fet una xerrava emotiva!</value>
+  </string>
+</strings>
+

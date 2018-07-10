@@ -8,13 +8,13 @@
 		<value>Cosa hai fumato? Non sei neanche in partita... btw se hai roba buona passamela 😉</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} con fare sprezzante ha cominciato una partita. Usate /join per fargli capire chi comanda. </value>
-		<value>Una nuova partita è stata iniziata da {0}! Sarebbe quello che muore sempre al primo turno.\nUsate /join e non deludetelo.</value>
-		<value>Finalmente una nuova partita! {0} vuoi uccidere qualcuno, vero? Usate /join per ammazzarvi a vicenda. </value>
+		<value>{0} con fare sprezzante ha cominciato una partita. Cliccate Join per fargli capire chi comanda. </value>
+		<value>Una nuova partita è stata iniziata da {0}! Sarebbe quello che muore sempre al primo turno.\nCliccate Join e non deludetelo.</value>
+		<value>Finalmente una nuova partita! {0} vuoi uccidere qualcuno, vero? Cliccate Join per ammazzarvi a vicenda. </value>
 	</string>
 	<string key="PlayerStartedChaosGame">
-		<value>{0} ha iniziato una partita Chaos! Usa /join per unirti. Chaos è l'entità primigenia così indicata nella Teogonia di Esiodo (Wikipedia).</value>
-		<value>Una nuova partita Chaos è stata iniziata da {0}! Usa /join per dilaniarlo.\nE dopo ripulisci il pavimento.</value>
+		<value>{0} ha iniziato una partita Chaos! Clicca Join per unirti. Chaos è l'entità primigenia così indicata nella Teogonia di Esiodo (Wikipedia).</value>
+		<value>Una nuova partita Chaos è stata iniziata da {0}! Clicca Join per dilaniarlo.\nE dopo ripulisci il pavimento.</value>
 	</string>
 	<string key="NoJoinGameRunning">
 		<value>La partita è ancora in corso, perciò stai a cuccia, piangi e aspetta che termini l'agonia.</value>
@@ -24,10 +24,10 @@
 		<value>Ancora non l'hai capito? Stai già dentrooo. Vi prego, uccidetelo per primo.</value>
 	</string>
 	<string key="MinuteLeftToJoin">
-		<value>Ancora 1 minuto per usare /join.</value>
+		<value>Ancora 1 minuto per cliccare Join.</value>
 	</string>
 	<string key="SecondsLeftToJoin">
-		<value>Ancora {0} secondi per usare /join, veloce!</value>
+		<value>Ancora {0} secondi per cliccare Join, veloce!</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>Che gruppo inutile, non si trovano 5 col coraggio di joinare. Cancello la partita. 😒</value>
@@ -482,7 +482,7 @@
 		<value>Il gruppo è attualmente in lista d'attesa. Posizione:{0} / {1}</value>
 	</string>
 	<string key="MaintBreak">
-		<value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @werewolfdev per altre informazioni.</value>
+		<value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
 	</string>
 	<string key="MaxGames">
 		<value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
@@ -545,6 +545,9 @@
 		<value>
 			Cupido ti ha maledetto. Ti ha fatto innamorare di {0} (condoglianze) Il vostro obiettivo è sopravvivere, insieme.*scena commovente* Se uno di voi due muore, l'altro si suiciderà dalla disperazione.
 		</value>
+				<value>
+			Cupido ha scoccato le sue frecce su di te e {0} (non aveva altro da fare...)! Ora siete follemente innamorati. Dovete vincere insieme... Se uno dei due muore... l'altro cadrà in depressione
+		</value>
 	</string>
 	<string key="HunterLynchedChoice">
 		<value>
@@ -585,11 +588,7 @@
 			{0} è per terra, morente... Cazzo è messo malissimo ma fa in tempo ad estrarre la pistola e di sparare a {1} prima di morire brutalmente. {2}
 		</value>
 	</string>
-	<string key="CultConvertSerialKiller">
-		<value>
-			{0} come al solito armato di statuette di Satana si è recato a casa di {1}. Si intrufola dentro fin quando un fottutissimo pazzo assassino accoltella 39 volte {0}. Alla fine, esporta tutti gli organi di {0} per appenderli al fuoco e mangiarseli come kebab. \n{0} è morto ed era un Satanista👤
-		</value>
-	</string>
+
 	<string key="HunterShotWolfMulti">
 		<value>
 			I lupi hanno tentato (inconsci del pericolo!) di uccidere il cacciatore urbano..
@@ -625,6 +624,9 @@
 		<value>
 			La setta spedisce {0} a convertire {1}.
 			Gli altri osservano da lontano e si sentono delle grida malate provenire da quella casa.. {0} fugge via ma {1} lo insegue e con un placcaggio da 5 stelle lo getta a terra, per poi accoltellarlo. È fottutamente psicopatico.
+		</value>
+				<value>
+			{0} come al solito armato di statuette di Satana si è recato a casa di {1}. Si intrufola dentro fin quando un fottutissimo pazzo assassino accoltella 39 volte {0}. Alla fine, esporta tutti gli organi di {0} per appenderli al fuoco e mangiarseli come kebab. \n{0} è morto ed era un Satanista👤
 		</value>
 	</string>
 	<string key="GuardKiller">
@@ -707,11 +709,7 @@
 	<string key="Doppelgänger">
 		<value>il Sosia🎭</value>
 	</string>
-	<string key="CupidChosen">
-		<value>
-			Cupido ha scoccato le sue frecce su di te e {0} (non aveva altro da fare...)! Ora siete follemente innamorati. Dovete vincere insieme... Se uno dei due muore... l'altro cadrà in depressione
-		</value>
-	</string>
+
 	<string key="NewWCRoleModel">
 		<value>Ora sei il becchino. Hai augurato la morte a {0}, che culo!</value>
 	</string>
@@ -859,7 +857,7 @@
     <value>Puoi cominciare una partita solo dentro un gruppo!</value>
   </string>
   <string key="PingInfo">
-    <value>Tempo di risposta: {0}\nPercentuale CPU usata: {1}%\nTelegrammi per secondo: {2}</value>
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Che lingua?\nAttuale: {0}</value>

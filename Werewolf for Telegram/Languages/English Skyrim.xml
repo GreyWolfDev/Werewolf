@@ -1,0 +1,2152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?><!--
+  DISCLAIMER: READ HERE FIRST
+    MOD CREATED BY @igorfeiden
+    COMPANIONS: @Istella - That entered the Dark Brotherhood and just vanished from the face of Earth.
+
+    EDIT HISTORY: 
+     DECEMBER 12 2016 - Initial editions
+     DECEMBER 26 2016 - Adding extra strings
+     DECEMBER 29 2016 - Beginning the mod
+     JANUARY   9 2017 - Adding some MOAR stuff
+     March    13 2017 - Keep on working
+
+     January 25 2018 - Finishing this FINALLY >:(
+     May 28 2018 - Updating with new roles & stuff
+
+
+
+    FEEL FREE TO EDIT IT. IF YOU DO SO, JUST MESSAGE ME BEFORE UPLOADING =)
+
+    HAVE A NICE DAY
+
+    - Edited using SUBLIME TEXT
+      Thanks guys <3
+
+      PS: DO NOT EDIT STRINGS UNDER THE DEPRECATED TAG.
+      PSS: This mod's for you, my beloved [DESTRUCTION 100] skill
+-->
+<strings>
+    <language name="English Skyrim" base="English" owner="igorfeiden" variant="Skyrim" />
+    <string deprecated="true" key="NotInGame">
+        <value>You don't appear to be in any games right now...</value>
+    </string>
+    <string isgif="true" key="PlayerStartedGame">
+        <!-- 0 - Player name -->
+        <value>{0} comes to the village, talking about some dragons being revived... Join now!
+        </value>
+        <value>The graybeards voice has been heard! The dragonborn comes! Join {0} if you think that you too, can be a Dragonborn.
+        </value>
+        <value>Beware, beware, the Dragonborn comes! {0} is about to slay some dragons. Join them using the button!
+        </value>
+        <value>{0} used to be an adventurer like you. But then they took an arrow in the knee. Use the button to avoid more arrows!
+        </value>
+		
+    </string>
+    <string isgif="true" key="PlayerStartedChaosGame">
+        <!-- 0 - Player name -->
+        <value>Alduin is here! Join {0} in this insanity</value>
+        <value>Chaotic dragons on the loose! {0} invited you, so Join if you want.</value>
+		<value>There are people in this world that just want to see things burn. {0} Is one of these people.</value>
+		<value>The dragonborn comes! {0} wants you to kill them!</value>
+		<value>This is a chaos game! {0} invited you, so Join if you want.</value>
+		<value>Who are the dragons? Why are we here? What the hell is the "Dark Brotherhood"? {0} knows, maybe.</value>
+    </string>
+    <string deprecated="true" key="NoJoinGameRunning">
+        <value>You can't join now! The game is already running.</value>
+    </string>
+    <string deprecated="true" key="AlreadyJoined">
+        <value>You've already joined!</value>
+    </string>
+    <string key="MinuteLeftToJoin">
+        <value>1 minute left to join</value>
+    </string>
+    <string key="SecondsLeftToJoin">
+        <!-- 0 - remaining seconds (number) -->
+        <value>{0} seconds left to join</value>
+    </string>
+    <string key="NotEnoughPlayers">
+        <value>Not enough players, cancelling game!</value>
+		<value>Not enough players, the village is too deserted for a game to happen.</value>
+		<value>Less than 5 people is not enough to stop the dragons.</value>
+		<value>Less than 5? You're gonna need a bigger party!</value>
+		<value>I'd start the game if I could, but with less than 5 people, you're making my job harder than it is.</value>
+    </string>
+    <string key="StartingGameWait">
+        <value>It really is as the legends say. Beware, dragons! The Dragonborn comes. Each one of you will now recieve your roles.
+        </value>
+        <value>I will now tell secretly what your roles are. Be careful and slay all the dragons!
+        </value>
+		<value>I will send your roles in PM. May the Nine Divines guide us all.</value>
+		<value>I am currently deciding your fates. Check your PMs.</value>
+		<value>The most secret of secrets: your roles. They will be sent shortly.</value>
+    <value>The dragons are loose! Check your PM before they show up.</value>
+    </string>
+    <string deprecated="true" key="BannedForExploit">
+        <!-- 0 - Player name -->
+        <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+    </string>
+    <string key="ChangeNameToJoin">
+        <!-- 0 - Player name -->
+        <value>{0}, please change your name to join</value>
+    </string>
+    <string key="PlayerLimitReached">
+        <value>Sorry, max player limit has been reached!</value>
+    </string>
+    <string key="PlayerJoined">
+        <!-- 0 - Player name -->
+        <!-- 1 - current players -->
+        <!-- 2 - Minimum players -->
+        <!-- 3 - Maximum players -->
+        <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+    </string>
+    <string key="PMTheBot">
+        <!-- 0 - Player name -->
+        <!-- 1 - bot username -->
+        <value>{0} Please click the start button below or {1} and start me, so I can PM you your role. You may not join the game until you do.
+        </value>
+    </string>
+    <string key="DeadFlee">
+        <value>You can't run away! YOU'RE DEAD! Get back in the ground... jeez!</value>
+		<value>Once upon a time, there was a strong necromancer who could raise the dead. But he passed away long ago. Dead bodies don't walk (at least not in this langfile) so good luck on trying.</value>
+    </string>
+    <string key="Flee">
+        <!-- 0 - Player name -->
+        <value>{0} has fled in terror!</value>
+      <value>Look! The coward! {0} has fled!</value>
+      <value>{0} is too scared to continue!</value>
+      <value>{0} will not join the fight anymore.</value>
+    </string>
+    <string key="PlayerRoleWas">
+        <!-- 0 - Player name -->
+        <!-- 1 - Player role -->
+        <value>{0} was {1}</value>
+    </string>
+    <string key="CountPlayersRemain">
+        <!-- 0 - Number of players -->
+        <value>{0} remain.</value>
+    </string>
+    <string deprecated="true" key="DidntAsk">
+        <value>Hey I didn't ask you anything yet!</value>
+    </string>
+    <string key="NotPlaying">
+        <value>You don't seem to be playing...</value>
+    </string>
+    <string key="NoPlayerName">
+        <value>I can't find a player by that name!</value>
+    </string>
+    <string deprecated="true" key="AnswerNonValid">
+        <value>This answer is not valid!</value>
+    </string>
+    <string key="WolfVotedKill">
+        <!-- 0 - wolf teammate name -->
+        <!-- 1 - Victim name -->
+    <value>{0} has voted to destroy {1}.</value>
+		<value>{0} has voted to burn {1}.</value>
+		<value>{0} has voted to eat {1}.</value>
+    </string>
+    <string key="PlayerVotedLynch">
+        <!-- 0 - Voter name -->
+        <!-- 1 - Target name -->
+        <value>{0} has voted to hunt down {1}.</value>
+		<value>{0} claims {1} is a dragon!</value>
+		<value>{0} claims that {1} stole their food.</value>
+		<value>{0} used {1}'s forge without permission.</value>
+		<value>{0} comes out from {1}'s house claiming that there's a strange book inside!</value>
+		<value>{0} never liked {1} anyways.</value>
+		<value>{0} was {1}'s Thane, but now wants them just dead.</value>
+		<value>{0} says we should use {1} as fodder.</value>
+		<value>{1} has been accused of theft by {0}.</value>
+		<value>{0} has just been robbed by {1}!</value>
+		<value>{0} says {1} is a vampire.</value>
+		<value>{0} stares at {1}, trying to remember their username.</value>
+		<value>{0} says that {1} is actually igorfeiden, the creator of this langpack.</value>
+    </string>
+    <string key="IdleKill">
+        <!-- 0 - player name -->
+        <!-- 1 - player role -->
+        <value>{0} has not voted for 2 nights in a row. The Nine Divines have seen this as a terrible crime, and {0} suddenly falls, dead... {0} is now doomed to wander forever in the planes of Oblivion. {1}</value>
+		<value>{0} didn't show up to the lynching rally for 2 nights in a row. Since they are clearly a dragon, you all head to {0}'s house to kill them too. After the mob has killed {0}, they discover that {1}</value>
+		<value>{0} knew that one cannot stay as long as 2 nights away frmo the town. The town's ruler demanded that {0}'s belongings should be given to their lover, and now there's no place for {0} in this town anymore. {1}</value>
+		<value>If there's one rule in Skyrim, is this: Don't refrain from voting for 2 nights in a row. This is a crime! {0} paid with their life. {1}</value>
+		<value>The Elder Scroll proclaimed: DO NOT BE AFK FOR 2 NIGHTS IN A ROW. {0} challenged this rule and is now dead. {1}</value>
+		<value>No one can escape fate. {0} is (actually, was) a living proof of this. If you don't vote for 2 nights in a row, you WILL DIE. Not seven days, just two are enough. {1}</value>
+    </string>
+    <string key="TraitorTurnWolf">
+        <value>You traitor!!! You have now turned to the Dragons' side.</value>
+        <value>Being a human was too boring. Why not become a Dragon now?</value>
+		<value>The power of the Black Book was too strong. You decided to turn to the dragons side!</value>
+		<value>Those fool dragons are now dead. You will rule. You will kill them all.</value>
+		<value>There is no dead dragon. If a dragon is dead, then they are no real dragon. Show them how a true dragon is like!</value>
+		<value>You were lucky to survive this long. Use this opportunity to win the game as a Dragon now.</value>
+		<value>The last one remaining. You may have a hard task ahead, being a lone dragon.</value>
+		<value>The disguise worked, but now is your time to change into a true form. A DRAGON!</value>
+		<value>Not all humans can become a dragon. You are now a creature with immense power. Crush them!</value>		
+    </string>
+    <string key="ChoiceAccepted">
+        <value>Choice accepted.</value>
+		<value>Very well...</value>
+		<value>Your wish is an order.</value>
+		<value>I am your sword, and your shield.</value>
+		<value>As you wish, my Thane.</value>
+		<value>Lead the way!</value>
+		<value>I am at your command.</value>
+		<value>Right behind you.</value>
+		<value>If you say so.</value>
+		<value>FOR.... Whiterun?</value>
+		<value>[laughs in ancient languages]</value>
+		<value>I will obey.</value>
+		<value>Will do.</value>
+		<value>Very well.</value>
+		<value>I see.</value>
+		<value>I knew it.</value>
+		<value>I saw this coming from a long ago.</value>
+		<value>So it really is how the Elder Scrolls said it would happen.</value>
+		<value>Of course.</value>
+    </string>
+    <string key="BeholderSeer">
+        <!-- 0 - seer name -->
+        <value>\nYour walks to the top of the mountain show you that the Greybeard is {0}.</value>
+      <value>\nThe Greybeard, the sage is {0}.</value>
+      <value>\nYour friend Greybeard is {0}.</value>
+    </string>
+    <string key="ApprenticeNowSeer">
+        <!-- 0 - seer name -->
+        <value>{0} was the Greybeard. As the apprentice, you step up to become the new Greybeard.
+        </value>
+        <value>{0} was your tutor. Now with {0}'s death, you step up to become the new Greybeard.
+        </value>
+    </string>
+    <string key="BeholderNewSeer">
+        <!-- 0 - apprentice name -->
+        <!-- 1 - seer name -->
+        <value>After climbing the last steps toward the top of the mountain, you see {0} standing beside {1}'s corpse, prepairing them for the funeral. {0}, the apprentice, is now an official Greybeard.</value>
+    </string>
+    <string key="SeerSees">
+        <!-- 0 - player name -->
+        <!-- 1 - player role -->
+        <value>The Voice shows you that {0} is {1}!</value>
+      <value>The Voice is clear: {0} is {1}!</value>
+      <value>{0} is CLEARLY {1}!</value>
+      <value>{0} have a role to play in this battle. It is {1}!</value>
+    </string>
+    <string key="AskLynch">
+        <value>Who do you want to hunt down?</value>
+      <value>Who do you want to hunt and burn?</value>
+      <value>Who do you think deserves to die today?</value>
+      <value>Who will you blame?</value>
+      <value>Who are you lynching?</value>
+    </string>
+    <string key="AskDetect">
+        <value>Who do you want to investigate?</value>
+      <value>Choose someone to investigate:</value>
+      <value>Who's the subject of your current investigation?</value>
+      <value>While hiding from dragons, you choose to investigate:</value>
+      <value>Pick someone at random(or not, your call).</value>
+    </string>
+    <string key="AskShoot">
+        <!-- 0 - bullet count -->
+        <value>Who shall feel the power of your Thu'um? You can shout {0} more time(s).</value>
+        <value>Make your Voice be heard! You can shout {0} more time(s).</value>
+      <value>You have {0} more shout(s) before cooldown.</value>
+      <value>Be bold! You have {0} shout(s) remaining.</value>
+      <value>You have {0} more shout(s).</value>
+      <value>Don't forget your FUS RO DAH! You have {0} FUS RO DAH remaining..</value>
+    </string>
+    <string key="AskVisit">
+        <value>To whom will you deliver the next letter?</value>
+        <value>So many letters, and you've got to deliver them to everyone! Who gets it first?</value>
+      <value>Time to do your night job. Who gets the next letter?</value>
+      <value>Run, Forres... *cough* um...\nJust deliver your message.</value>
+      <value>You have only one message to deliver today. Pick one of the names below to receive it:</value>    
+    </string>
+    <string key="AskSee">
+        <value>You speak with the ancient Voice. Make someone reveal their secrets:</value>
+        <value>Your Thu'um a whisper... Choose someone to have their true aura revealed.</value>
+      <value>Roles are no secret when you have The Voice at your side. Choose someone.</value>
+      <value>You speak with power, and your words will reveal the role of one of them:</value>
+      <value>One more time, choose someone.</value>
+    </string>
+    <string key="AskGuard">
+        <value>Who do you want to follow?</value>
+      <value>Who do you want to protect?</value>
+      <value>Who do you want to guard?</value>
+      <value>Who do you want to bother?</value>
+      <value>Where are you going?</value>
+    </string>
+    <string key="AskEat">
+        <value>Who do you want to kill?</value>
+      <value>Who do you want to burn?</value>
+      <value>Who do you want to eat?</value>
+      <value>Who do you want to kidnap?</value>
+      <value>Whose blood will feed your powers tonight?</value>
+    </string>
+    <string key="AskHunt">
+        <value>Pick up your silver weapons! Who shall you hunt down tonight?</value>
+        <value>The night comes, and the vampires get stronger. Who do you suspect?</value>
+      <value>The vampires are restless. Who's your next target?</value>
+      <value>So you have someone in mind. Who's the vampire?</value>
+      <value>There are still vampires out there, you're sure. Pick someone to investigate:</value>
+      <value>No vampire will stand against you! Hunt one down:</value>
+    </string>
+    <string key="AskRoleModel">
+        <value>Who is your new mother/father?</value>
+        <value>Who adopted you?</value>
+    </string>
+    <string key="AskConvert">
+        <value>Who do you want to turn?</value>
+      <value>Who will become the next vampire?</value>
+      <value>Your turn. Pick someone to join the vampire ranks:</value>
+      <value>Who will be the next vampire?</value>
+      <value>Pick the next vampire:</value>
+    </string>
+    <string key="DiscussWith">
+        <!--Leave the leading spaces here please-->
+        <!-- 0 - teammate names -->
+        <value>Make sure you discuss with {0}</value>
+    </string>
+    <string key="And">
+        <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+        <value> and </value>
+    </string>
+    <string key="RoleInfoCursed">
+        <value>Dead Dragon(Cursed) -- You are a dead Dragon. You are harmless for now, but if the
+            dragons attack you, you will be revived! Back to the killing =)
+        </value>
+    </string>
+    <string key="RoleInfoDetective">
+        <value>Delphine(detective) -- Delphine is the last of the Blades, protectors of the Emperor. During The Great War, you evaded attempts at yout life several times, ultimately escaping the Thalmor and being stationed in Cyrodiil. You now returns to Skyrim, remaining alert to the surveillance of the Thalmor. You can research on someone everyday to have their role revealed.
+        </value>
+    </string>
+    <string key="RoleInfoDrunk">
+        <value>Sam Guevenne(DRUNK) -- You are Sam Guevenne, challenging everyone to your drinking challenges. BUT, this is not who you really are. You are actually the Daedric Lord Sanguine. If the dragons attack you, you will trap them in your dimension, and fight them off. You will end up dying, but at least they will be trapped for the next night.</value>
+    </string>
+    <string key="RoleInfoGuardianAngel">
+        <value>Lydia(Guardian Angel) -- Your Thane used a cheat code(damn cheaters) to dismiss you from your duties. Now you just help random people. Each night, you will choose someone to protect. If they're someone evil, however, you might end up dying.
+        </value>
+    </string>
+    <string key="RoleInfoGunner">
+        <value>Dragonborn(gunner) -- Dovahkiin, Dovahkiin, naal ok zin los vahriin,
+            Wah dein vokul mahfaeraak ahst vaal!
+            Ahrk fin norok paal graan fod nust hon zindro zaan,
+            Dovahkiin, fah hin kogaan mu draal!\n \n
+
+            Huzrah nu, kul do od, wah aan bok lingrah vod,
+            Ahrk fin tey, boziik fun, do fin gein!
+            Wo lost fron wah ney dov, ahrk fin reyliik do jul,
+            Voth aan suleyk wah ronit faal krein\n \n
+
+            Ahrk fin zul, rok drey kod, nau tol morokei frod,
+            Rul lot Taazokaan motaad voth kein!
+            Sahrot Thu'um, med aan tuz, vey zeim hokoron pah,
+            Ol fin Dovahkiin komeyt ok rein!\n \n
+
+            Dovahkiin, Dovahkiin, naal ok zin los vahriin,
+            Wah dein vokul mahfaeraak ahst vaal!
+            Ahrk fin norok paal graan fod nust hon zindro zaan,
+            Dovahkiin, fah hin kogaan mu draal!\n \n
+
+            Ahrk fin Kel lost prodah, do ved viing ko fin krah,
+            Tol fod zeymah win kein meyz fundein!
+            Alduin, feyn do jun, kruziik vokun staadnau,
+            Voth aan bahlok wah diivon fin lein!\n \n
+
+            Nuz aan sul, fent alok, fod fin vul dovah nok,
+            Fen kos nahlot mahfaeraak ahrk ruz!
+            Paaz Keizaal fen kos stin nol bein Alduin jot,
+            Dovahkiin kos fin saviik do muz!\n \n
+
+            Dovahkiin, Dovahkiin, naal ok zin los vahriin,
+            Wah dein vokul mahfaeraak ahst vaal!
+            Ahrk fin norok paal graan fod nust hon zindro zaan
+            Dovahkiin, fah hin kogaan mu draal!\n \n
+
+            just kidding. You may shout at someone and desintegrate them with your FUS RO DAH!
+            Everyone will knowthat you're the Dragonborn though.
+        </value>
+    </string>
+    <string key="RoleInfoHarlot">
+        <value>Messenger(Harlot) -- You have the most awesome job, which is............. Delivering letters! You will spend your nights delivering messages and letters n' shit. Careful, if  you pick a dragon you will die. (They're not interested in hooman messages anyways). Also, beware of the Dark Brotherhood... And the vampires. Actually, if you deliver something to a vampire, you have a chance of knowing their role.
+        </value>
+    </string>
+    <string key="RoleInfoTraitor">
+        <value>Miraak(Traitor!) -- For now, you team up with the rest of them. Once all dragons die, you will become one and continue the killing!
+        </value>
+    </string>
+    <string key="RoleInfoWolf">
+        <value>Dragon (Wolf) -- You are an ancient powerful being. Those mortals think they can rule overyour land, steal your loot, and even steal your language! Kill them all with your fiery breath.
+        </value>
+    </string>
+    <string key="RoleInfoSeer">
+        <value>Greybeard(Seer) -- Your Voide have the power to show the true nature of people. Each night, you will use your Thu'um to have someone's role revealed to you. Don't let the dragons know who you are!
+        </value>
+    </string>
+    <string key="RoleInfoVillager">
+        <value>Peasant(Villager) -- You're just a random peasant. Live your days being slaughtered by dragons and killed by random Thu'ums.
+        </value>
+    </string>
+    <string key="RoleInfoTanner">
+        <value>Chicken(Tanner) -- Have you ever tried to hurt a chicken in a Skyrim village? Seriously, don't try it. Also, if you get lynched, you win automatically. Pretty easy, huh?
+        </value>
+    </string>
+    <string key="RoleInfoWildChild">
+        <value>Lucia, the orphan(wild child) -- Choose a player to adopt you. If they die, you will offer your soul to Alduin, and become a dragon yourself!
+        </value>
+    </string>
+    <string key="RoleInfoBeholder">
+        <value>Klimmek(Beholder) -- You help the greybeards. You use to bring them food and supplies, so you will know who the true Greybeard is. That's pretty much it.
+        </value>
+    </string>
+    <string key="RoleInfoApprenticeSeer">
+        <value>Greybeards Apprentice(apprentice seer) -- As an apprentice, you learn the way of the Voice since young. If the Greybeard dies, you will become the new Greybeard, and Klimmek(the beholder) will know your true identity too..
+        </value>
+    </string>
+    <string key="RoleInfoCultist">
+        <value>Vampire(cultist) -- You are a Vampire! Once a normal human, you now are an immortal being that can, every night, choose a player to turn them into a vampire too! If all remaining living players at the end are vampires, they win. Watch out for the Dawnguard!
+        </value>
+    </string>
+    <string key="RoleInfoCultistHunter">
+        <value>Dawnguard Agent(Cultist Hunter) - The vampires think they can rule Skyrim. It is your job to stop them. Every night, you may choose a player to visit and see if they are a vampire(Off course they will die if they are). If the vampires try to convert you, you will survive and kill the youngest vampire.
+        </value>
+    </string>
+    <string key="LynchTime">
+        <!-- 0 - number of seconds -->
+        <value>
+            Dusk draws near, everyone gather to decide who they are burning this evening... Everyone now has {0} seconds to vote!
+        </value>
+      <value>{0} seconds remaining to choose someone to die!</value>
+      <value>Pitchforks and torches ready, the mob has {0} seconds to choose someone to burn!</value>
+      <value>Now you have just {0} seconds to vote! Who's dying today?</value>
+    </string>
+    <string key="DayTime">
+        <!-- 0 - number of seconds -->
+        <value>The night has passed. The day will last {0} seconds so use it wisely...</value>
+      <value>The terrors of the night are now silenced. The city comes back to life, and you have {0} seconds until this round ends.</value>
+      <value>Another day begins. It will last {0} seconds, use this time wisely.</value>
+    </string>
+    <string key="NightTime">
+        <!-- 0 - number of seconds -->
+        <value>Night has fallen. Everyone fear about the dragons. The inns begin their service, and there are rumors of vampires on the loose. Night players: you have {0} seconds use your actions!</value>
+      <value>Another night begins. The snow falls again, and the night players now will have {0} seconds to act.</value>
+      <value>It is night now. This cold, dark period will last for {0} seconds.</value>
+    </string>
+    <string key="LynchKill">
+        <!-- 0 - player name -->
+        <!-- 1 - player role -->
+        <value>The villagers have cast their votes.\n{0} tries to sneak out, and someone sees it. As they try to stop {0},a sword is drawn, a fight begins and at the end; {0} is dead. {1}</value>
+        <value>Suddenly, a stranger comes in.\nThe stranger raises his sword and shouts {0}'s name, accusing them of helping the dragons.\n"This is a lie!" {0} claims, but no one listens.\nThe mob dismembers {0}, mercilessly. {1}</value>
+      <value>{0} is the name. {0} doesn't even try to fight. {1}</value>
+    </string>
+    <string key="LynchTie">
+        <value>Suddenly, somebody shows up saying that a dragon is coming.\nEverybody rushes to the main street, but there is nothing there.\nThey even forget the lynching... It was actually a tie, but no one was there to count.
+        </value>
+        <value>A man start counting the votes, but the counting is interrupted by a loud cry.\nSomeone shouts "Kill! Kill the vampire!"\nThe mob searche for the creature, but night comes and they decide to head back to their own houses.</value>
+      <value>The peasants couldn't reach consensus, so you all postpone the lynching.</value>
+    </string>
+    <string key="NoLynchVotes">
+        <value>Before anyone votes, a waitress comes around with free beer for everyone. Everyone gets drunk and forget to vote!</value>
+      <value>T'was a cold day. No one ventured outside their homes, so no one voted.</value>
+      <value>I haven't created a pack full of funny lines just for you to forget the lynching phase!</value>
+    </string>
+    <string key="DetectiveEaten">
+        <!-- 0 - victim name -->
+        <value>Everyone gather in the morning, but no one sees {0}.\nA dragon is seen flying in the distance. When you follow it, you find {0}'s body burned down to the bones.\nDelphine is dead, maybe the Dragons are working with the Talmor?
+        </value>
+        <value>In the middle of the night, you all see {0}, A.K.A. Delphine, running to the town's gate to fight a dragon.\nThe fight lasts until dawn. Delphine ask you all for help, but you're too scared to move. The dragon hits {0} with its tail, breaking all her ribs instantly. Delphine crumbles, and the dragon burns her with its breath.\nDelphine is dead.\nWhile you all prepare for {0}'s burial, the Dragon flies away.
+        </value>
+    </string>
+    <string key="GuardianEaten">
+        <!-- 0 - victim name -->
+        <value>Morning comes, and there's a bloody battle axe sitting in the middle of the street. Just a little further, there is a burned boot with a leg still wearing it.\nSigns of fire and burned clothes shows that Lydia has been killed by a dragon last night. Poor {0}...
+        </value>
+        <value>Someone screams in an alley. The villagers follow the voice just to see Lydia being carried away by a dragon. The dragon then drops {0} from the sky. {0}  accept their death, and face it bravely. Lydia is dead.
+        </value>
+    </string>
+    <string key="GunnerEaten">
+        <!-- 0 - victim name -->
+        <value>An Unrelenting Force shout is heard. The dragonborn seems to be in trouble! {0} tries to fight off the dragons, but the shouts are all on cooldown! Your Dragonborn is now dead.
+        </value>
+        <value>As you are all beginning your daily activities, a dragon suddenly shows up!\nAs the Dragonborn, {0} automatically charge into battle. The battle is fierce, but the Dragonborn is just a mortal. Soon {0} forces end, and the dragon prevails. Your Dragonborn is dead, and the dragons just had a tasty meal.
+        </value>
+    </string>
+    <string key="SeerEaten">
+        <!-- 0 - victim name -->
+        <value>Everyone awake in the morning, to find the burned down remains of {0}. Only the gray beard is seen still attached to {0}'s face. Your have lost your Greybeard.
+        </value>
+        <value>It seems that even {0}'s powers weren't enough to stop a dragon! {0} is found completely burned down. Your Greybeard is dead.
+        </value>
+    </string>
+    <string key="DrunkEaten">
+        <!-- 0 - victim name -->
+        <value>Dragons once again approach, and everybody hear {0} mumbling in a strange language.\nIn the middle of the main street, Sam Guevene is transforming himself into... A DAEDRIC PRINCE?\nHe is totally surrounded by dragons, and then suddenly creates a huge portal that sucks himself and the dragons into it. The good old Sam is certainly dead.
+        </value>
+        <value>Good old Sam Guevene is nowhere to be found.\nWhen you ask the tavern owner about it, he says that Sam was actually the Daedric Prince {0}. The stranger says that {0} sucked themselves AND the dragons into a portal during a fight. {0} is dead, sure, but the dragons will be away for some time, at least.
+        </value>
+    </string>
+    <string key="FoolEaten">
+        <!-- 0 - victim name -->
+        <value>As the sun rises above the village, the villagers find the burned corpse of {0}, dressed in strange clothes. The remains of a lute are also there. He died claiming that he was a Greybeard, but {0} was only a foolish minstrel. How sad...
+        </value>
+        <value>{0}, the Minstrel, sang too much about the Dragonborn. The Dragons didn't like it! {0} is found dead in an alley, with clear signs of a dragon attack. {0} died believeing they were a Greybeard, but no one feels sorry for him.
+        </value>
+    </string>
+    <string key="DefaultEaten">
+        <!-- 0 - victim name -->
+        <!-- 1 - victim role -->
+        <value>The dragons wanted a quick snack! {0} was in the menu. {0} is dead, but no one finds the body. {1}
+        </value>
+        <value>It seemed a quiet night for {0}, but that changed fast. The dragons attacked {0} during the night! They easily torn {0} appart, and his/her death comes very quickly.\n{1}
+        </value>
+    </string>
+    <string key="HunterKilledCultist">
+        <!-- 0 - victim name -->
+        <!-- ACTUALLY,CH KILLING CULTIST -->
+        <value>Suddenly, {0} comes running to the city square, crying in pain.\n{0} crumbles to the ground, an arrow deep in their chest.\n{0} slowly turns into dust, and everybody knows that they were a vampire. This is clearly the Dawnguard's handywork! One less vampire to care about.
+        </value>
+        <value>There are sounds of fight coming from {0}'s house. In the next morning, there's an official Dawnguard sign in front of their house saying that {0} was a vampire and now has been... "Properly taken care of"</value>
+    </string>
+    <string key="NoAttack">
+        <value>No one died last night! Everyone feels safer, and it almost seems as the peace has been achieved at last.
+        </value>
+        <value>No one died last night. It seems that everyone is afraid from arrows in knees. Even the dragons!</value>
+    </string>
+    <string key="CursedBitten">
+        <value>You don't know if it has been centuries, ages or only days. Right beside you, there are other dragons. You now live once again!
+        </value>
+        <value>You once again feel the power through your bones. You rise from your grave, thanking your fellow dragons. You are alive now.
+        </value>
+    </string>
+    <string key="WolfTeam">
+        <!-- 0 - teammate names -->
+        <value>The other dragons are: {0}</value>
+    </string>
+    <string key="CursedBittenToWolves">
+        <!-- 0 - victim name -->
+        <value>You head to where {0} was buried. The bones are still there, so you all use your magic to revive them. Another dragon joins the fray.
+        </value>
+        <value>You head to where {0} is. All you find is an old burial site. So you all carefully revive your fellow dragon. Skyrim shall feel {0}'s fiery breath once again!
+        </value>
+    </string>
+    <string isgif="true" key="WolvesEatYou">
+        <value>Luck was not at your side. You have been found by a Dragon! Caught by surprise, you couldn't resist... You died.
+        </value>
+        <value>No amount of body armor is enough to protect someone from the full rage of a dragon. You are outnumbered and outpowered, and died quickly in the dragon's claws.
+        </value>
+        <value>
+			I feel sorry for you, I really do. But the dragons, don't. They use you as their midnight snack.
+        </value>
+		<value>The dragons ate you! Yes, they also have to eat. At least you were tasty.</value>
+		<value>The last thing you remember is fire. The dragons burned you. You died, how pitiful.</value>
+		<value>Say goodbye to your life, the dragons found you.</value>
+    </string>
+    <string key="WolvesEatDrunk">
+        <!-- 0 - victim name -->
+        <value>Oh no! {0} was more that it seemed to. You find yourself trapped in a strange dimension, and need to fight the dimension's creator in order to escape.
+        </value>
+        <value>You attacked one of the most powerful beings you've ever seen. {0} traps you in a strange dimension. It'll take some time before you can go back to yours.
+        </value>
+    </string>
+    <string key="GuardWolf">
+        <value>You tried to follow and help a dragon! The dragon killed you, because it had too much pride to accept help from a lower being like you.
+        </value>
+        <value>Dragons have no use for lower beings like you. Since you tried to help one of them, you became a snack.
+        </value>
+    </string>
+    <string key="GuardSaved">
+        <!-- 0 - saved player name -->
+        <value>You try to follow {0}, but you found them almost dead! Together you fought the threat off. You should be proud, you have saved {0}'s life!
+        </value>
+        <value>No matter what they say about you, you are a life saver. You prevented {0} from being killed!
+        </value>
+		<value>Gods bless you! When you went to meet {0}, they were fighting the dragons all this time! You join the fight and you two fend them off.</value>
+    </string>
+    <string key="GuardNoAttack">
+        <!-- 0 - player name -->
+        <value>The conversation with {0} was pleasing, it was a good night. You head back home with a bellyful of good mead.
+        </value>
+        <value>As you show up to {0}'s house, they offer you some food and wine. You both spend the night among stories and music.
+        </value>
+		<value>You went to guard {0}, but nothing interesting actually happened, so you head back home after a while.</value>
+    </string>
+    <string key="GuardEmptyHouse">
+        <!-- 0 - player name -->
+        <value>You went to {0}'s house, but they weren't home!</value>
+        <value>Looks like there was a feast somewhere, and you weren't invited. {0} weren't home, so you head back to wherever you came from.
+        </value>
+		<value>You went to meet {0}, but they were nowhere to be found.</value>
+    </string>
+    <string key="GuardSavedYou">
+        <value>You have been attacked, and would have died if Lydia weren't by your side. You should thank her!
+        </value>
+        <value>You hear strange sounds. When investigating, someone(or something) attacks you! Lydia arrives just in time to stop you from being murdered. That was close. Too close.
+        </value>
+    </string>
+    <string key="HarlotEaten">
+        <!-- 0 - player name -->
+        <value>The messenger tried to do their job, but visited a Dragon in the process! {0} won't be delivering any more messages from now on.
+        </value>
+        <value>Theres a burned body down the street. The smell of burned paper and ink doesn't leave any doubts. {0}, the messenger, has been killed by the dragons.
+        </value>
+    </string>
+    <string key="HarlotNotHome">
+        <!-- 0 - player name -->
+        <value>You try to find {0}, but they don't seem to be anywhere. You head back to your lair without killing anyone tonight.
+        </value>
+        <value>Where is {0}? You fly as high as you can but is unable to find them. You enjoy the fresh air of the night before returning to your lair.
+        </value>
+		<value>Sometimes you'd better go after someone that is surely at home. {0} wasn't and that means you'll sleep hungry tonight.</value>
+    </string>
+    <string key="HarlotFuckWolf">
+        <!-- 0 - player name -->
+        <value>You had only one last message to deliver. You approach {0} just to discover that they are a Dragon. You try to run but it's too late, you are dead.
+        </value>
+        <value>There's an urgent message for {0}. Unfortunately, {0} is a dragon, and kills you before you can react.
+        </value>
+    </string>
+    <string key="HarlotFuckedWolfPublic">
+        <!-- 0 - player name -->
+        <value>{0} tried to deliver a message to the wrong address! {0}'s remains are found burned down in some street.
+        </value>
+        <value>The letters are taking too long. When you go after {0}, you only find blood and bones. Letters and messages are scattered everywhere, the messenger is dead!
+        </value>
+		<value>{0}, the Messenger had ONE job: avoid dragons. The burned remains clearly show that they went straight into a dragon trap. Pathetic or pitiful?</value>
+    </string>
+    <string key="HarlotFuckedVictimPublic">
+        <!-- 0 - harlot name -->
+        <!-- 1 - victim name -->
+        <value>{0} had a letter to deliver to {1}. When {0} gets there, they find a dragon attacking {1}! The dragon quickly turns on {0} and opens their mouth... {0} is dead.
+        </value>
+        <value>{0} had a letter to deliver to {1}. Everything in order, {0} starts heading back home. A dragon appears and attacks {1}! {0} is also caught in the fire breath and dies instantly.
+        </value>
+		<value>{0} had a letter to deliver to {1}. {1} was just minding thei rown business.\nThe dragons, however, wer also minding theirs. They arrive at the perfect time that the Messenger and {1} were together, and the result is a Double Kill for the dragons.</value>
+    </string>
+    <string key="HarlotVisitNonWolf">
+        <!-- 0 - target name -->
+        <value>You deliver {0}'s letter and head back home for they day, no dragons on sight.
+        </value>
+        <value>You deliver {0}'s letter, the last of the day. You don't see any dragons, wich is a
+            good thing.
+        </value>
+		<value>Finally a peaceful night. You deliver letters, the dragons are nowhere to be found, the weather is good and your letter bag is now empty, {0}'s being the last one to be delivered. Tomorrow is a new day, though!</value>
+    </string>
+    <string key="HarlotVisitYou">
+        <value>You hear someone calling your name. It's the messenger with a letter. They say goodbye and leave, and you head back reading the letter: "COME JOIN THE DAWNGUARD AND
+HELP US STOPPING THE VAMPIRE THREAT."</value>
+        <value>You hear someone calling your name. It's the messenger with a letter. They say goodbye and leave, and you head back reading the letter. It says: "... WE KNOW." with a hand drawn below. You don't know what it means, but you keep it anyway.
+        </value>
+		<value>The messencger approaches you, says he has a letter to give you. You open it, and it is an invitation for some kind of art being shown somewhere.</value>
+    </string>
+    <string key="DetectiveCaught">
+        <!-- 0 - detective name -->
+        <value>{0} is asking asking too many questions around the village. You figure out that they must be Delphine!
+        </value>
+        <value>You see {0} talking about the dragonborn and the Blades. They must be Delphine!
+        </value>
+    </string>
+    <string key="DetectiveSnoop">
+        <!-- 0 - target name -->
+        <!-- 1 - target role -->
+        <value>The rumors say that {0} is {1}.</value>
+        <value>Someone tells tou that {0} is {1}. You verify that the information is true.</value>
+		<value>Your investigation skills are perctly precise! You learn that {0} is actually {1}</value>
+    </string>
+    <string key="HarlotShot">
+        <!-- 0 - gunner's name -->
+        <!-- 1 - Harlot's name -->
+        <value>Looks like {0} didn't like the letter.\n A *FUS RO DAH* later and {1} is dead.
+        </value>
+        <value>Looks like {1} as too inconvenient, so {0} tries to scare them off just for fun, but
+            {0} was too weak! {1} is dead.\n Cause of death: a weak *FUS*...
+        </value>
+		<value>The Dragonborn does not want to visit any art gallery! {0} shouts at {1}, sending the Messenger flying away.</value>
+    </string>
+    <string key="DefaultShot">
+        <!-- 0 - Gunner's name -->
+        <!-- 1 - target name -->
+        <!-- 2 - Target's revealed name ( Target was a role) -->
+        <value>*FUS RO DAH!*\n {0} is seen shouting to {1}. {1} hits a wall and breaks their neck with the strong impact. {2}
+        </value>
+        <value>*FUS RO DAH!*\n {0} is seen shouting to {1}. {1} goes flying over the city's walls, and falls with their head in a rock, blood and brains everywhere. {2}
+        </value>
+		<value>*FUS RO DAH!*\n {0} shouts, and {1} is seen being completely desintegrated by the shout.\n{2}</value>
+    </string>
+    <string isgif="true" key="WolfWins">
+        <value>The Dragon has won!</value>
+        <value>All hail the almighty dragon!</value>
+		<value>The dragons' dawn is near! The dragon wins!</value>
+    </string>
+    <string isgif="true" key="WolvesWin">
+        <value>The dragons have won!</value>
+        <value>NO Imperials, NO stormcloacks! The dragons will rule Skyrim now.</value>
+		<value>The cold climate of Skyrim will become melting hot under the dragons' fiery breaths,</value>
+    </string>
+    <string isgif="true" key="VillageWins">
+        <value>The villagers have won!</value>
+        <value>The villagers have won! Thanks to the nine divines.</value>
+		<value>The last threat is eliminated! The villagers finally can sleep at night.</value>
+    </string>
+    <string isgif="true" key="TannerWins">
+        <value>Oh no! You lynched the Chicken! Every NPC grabs a sword and lunges toward you. They
+            are too many, so you all lose.
+        </value>
+        <value>Oh no! You lynched the Chicken! Every NPC grabs a sword and lunges toward you. The
+            Chicken wins!
+        </value>
+		<value>When you turn agains the Chicken, all guards and NPCs charge at you.\nYou should consider better before lynching someone!</value>
+    </string>
+    <string key="RemainingPlayersEnd">
+        <value>Remaining living players, roles, and team:</value>
+    </string>
+    <string key="CultistVotedConvert">
+        <!-- 0 - Voter's name -->
+        <!-- 1 - target name -->
+        <value>{0} has voted to turn {1}</value>
+    </string>
+    <string key="CultConvertCultHunter">
+        <!-- 0 - Yougest Cultist (killed)'s name' -->
+        <!-- 1 - CultHunter's name -->
+        <value>{0} was sent to do your dirty work, and turn {1}... however, they were a Dawnguard! {0} is dead!
+        </value>
+        <value>{0} couldn't turn {1} into a vampire, for {1} had superior training in... KILLING VAMPIRES. {0} is dead!
+        </value>
+		<value>{0} had ONE job: turning the next player into a vampire, while avoiding {1}. What did they do? Went STRAIGHT into a trap.\nThey thought they were stronger than the Dawnguard, but the vampire dust sitting on the ground tells a clear message about the winner of that fight.</value>
+    </string>
+    <string key="CultHunterKilledCultVisit">
+        <!-- 0 - Youngest Cultist's name -->
+        <!-- 1 - Number of cultists left -->
+        <value>{0} came to your house last night, ready to turn you into a vampire.... but you shoved your silver sword right through their chest! A dragon is dead... {1} remain!
+        </value>
+        <value>{0} tried to use their foul tricks with you. It's a shame that you didn't fell for them! You quickly slay another vampire. It leaves only their {1} friend(s).
+        </value>
+    </string>
+    <string key="CultConvertYou">
+        <value>You were walking down the street and found a beautiful person, crying on the ground. You try to help them, just to discover that they are a vampire! You have been turned into one as well. Every other night, you will have a chance to turn another player into a vampire.
+        </value>
+        <value>You enter your house just to find a beautiful person crying in a corner. You try to help them, just to discover that they are a vampire! You have been turned into one as well. Every other night, you will have a chance to turn another player into a vampire.
+        </value>
+    </string>
+    <string key="CultTeam">
+        <!-- 0 - Number of cultists -->
+        <value>Vampires: {0}</value>
+    </string>
+    <string key="CultJoin">
+        <!-- 0 - new cultist's name -->
+        <value>{0} has been turned into a vampire!</value>
+        <value>There is a new vampire among you, and their name is {0}!</value>
+    </string>
+    <string key="CultVisitEmpty">
+        <!-- 0 - Newest cultist's name -->
+        <!-- 1 - target name -->
+        <value>{0} was sent to do your dirty work, and turn {1} into a vampire... but no one was home!
+        </value>
+        <value>{1} weren't home, so {0} returns to the vampires' mansion with nothing but hunger.
+        </value>
+    </string>
+    <string isgif="true" key="CultWins">
+        <value>All the dragons have died, and the only ones left standing have all been turned into vampires!\nThey won!</value>
+        <value>No one saw that coming. The vampires now rule over Skyrim!</value>
+      <value>The vampire covenant is now stringer than ever, and they will rule for a long time from now on.</value>
+    </string>
+    <string key="HunterVisitDead">
+        <!-- 0 - target name -->
+        <value>You went to hunt {0}, but they are already dead!</value>
+        <value>You went to hunt down {0}, but found only a corpse!</value>
+    </string>
+    <string key="HunterFindCultist">
+        <!-- 0 - target name -->
+        <value>You go into {0}'s house and find them with a little girl, almost biting her neck. Despicable vampires! You shoot your crossbow and hit the vampire in the head. You enter the home and dismember {0}, putting all pieces in a huge fire right in front of their home.
+        </value>
+        <value>You go into {0}'s house and find them with a little boy, almost biting his neck. Despicable vampires! You enter flying through the window and kicks the vampire in the face. You ready your crossbow and shoot the vampire in the chest. You use an axe to cut {0} in pieces, and burn the pieces in a huge fire..
+        </value>
+    </string>
+    <string key="HunterFailedToFind">
+        <!-- 0 - target name -->
+        <value>You go to {0}'s house, but there are no signs of vampires. You return home, convinced that {0} is not a vampire, for now...
+        </value>
+        <value>You go to {0}'s house, but there are some garlic in front of the house. Convinced that a vampire wouldn't live in that house, you head back home.
+        </value>
+		<value>You secretly peek into {0}'s window, and see them praying to the Divines. No Vampire prays to the Divines, so you leave {0} alone for now.</value>
+    </string>
+    <string key="WildChildToWolves">
+        <!-- 0 - Werechild's name -->
+        <value>{0}'s parents just died! In their rage, they have become a dragon!</value>
+        <value>{0}'s seemed too alone now that their parents died. They have become a dragon full of hate because of that!
+        </value>
+    </string>
+    <string key="WildChildTransform">
+        <!-- 0 - role's name -->
+        <!-- 0 - teamate's names -->
+        <value>{0} has died! In your rage, you have become a dragon! Your new teammates are: {1}
+        </value>
+        <value>{0}, your loved adopter has died! In your rage, you have become a dragon! Your fellow dragons are: {1}
+        </value>
+    </string>
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+    <string key="Villager">
+        <value>a peasant 👱</value>
+    </string>
+    <string key="Drunk">
+        <value>Sam Guevene 🍻</value>
+    </string>
+    <string key="Harlot">
+        <value>the Messenger 💋</value>
+    </string>
+    <string key="Seer">
+        <value>the Greybeard 👳</value>
+    </string>
+    <string key="Traitor">
+        <value>Miraak 🖕</value>
+    </string>
+    <string key="GuardianAngel">
+        <value>Lydia 👼</value>
+    </string>
+    <string key="Detective">
+        <value>Delphine 🕵</value>
+    </string>
+    <string key="Wolf">
+        <value>a Dragon 🐺</value>
+    </string>
+    <string key="Cursed">
+        <value>the Dead Dragon 😾</value>
+    </string>
+    <string key="Gunner">
+        <value>the Dragonborn 🔫</value>
+    </string>
+    <string key="Tanner">
+        <value>the Chicken 👺</value>
+    </string>
+    <string key="Fool">
+        <value>the Minstrel 🃏</value>
+    </string>
+    <string key="WildChild">
+        <value>Lucia, the Orphan 👶</value>
+    </string>
+    <string key="Beholder">
+        <value>Klimmek 👁</value>
+    </string>
+    <string key="ApprenticeSeer">
+        <value>the Apprentice Greybeard 🙇</value>
+    </string>
+    <string key="Cultist">
+        <value>a Vampire 👤</value>
+    </string>
+    <string key="CultistHunter">
+        <value>a Dawnguard 💂</value>
+    </string>
+    <!-- These are for the player list -->
+    <string key="RanAway">
+        <value>Ran away</value>
+    </string>
+    <string key="Dead">
+        <value>💀 Dead</value>
+    </string>
+    <string key="Alive">
+        <value>🙂 Alive</value>
+    </string>
+    <string key="PlayersAlive">
+        <value>Players Alive</value>
+    </string>
+    <!-- New strings 4 MAY 2016-->
+    <string key="Mason">
+        <value>a Companion 👷</value>
+    </string>
+    <string key="RoleInfoMason">
+        <value>You are a Companion. If there are any other companions, you will know who your brothers are. Otherwise, you are just a peasant. A Companion with no brothers is nothing.
+        </value>
+    </string>
+    <string key="MasonEaten">
+        <!-- 0 - dead man's name -->
+        <value>It seems that the Companions' strength was not enough to save {0} from their demise. The dragons made another victim!
+        </value>
+        <value>There is a fierce battle! {0}, a Companion, is fighting the dragons alone! No fellow Companions show up to help them, so the dragons quickly finish {0} with a fiery breath.
+        </value>
+    </string>
+    <string key="MasonTeam">
+        <value>The Companions are: {0}</value>
+        <value>Your fellow Companions are: {0}</value>
+    </string>
+    <string key="CultTargetDead">
+        <!-- 0 - Youngest cultists name -->
+        <value>Your newest member heads over to {0}'s house to bite and turn them, but instead finds the house a complete wreck, blood everywhere, and worse: there is a fire starting! The dragons were mercyless. Your youngest member quickly leaves the area.
+        </value>
+        <value>Your newest member heads over to {0}'s house to bite and turn them, but is confronted with nothing more than a burned down corpse.
+        </value>
+    </string>
+    <string key="GuardBlockedWolf">
+        <!-- 0 - target's name -->
+        <value>You all head to {0} is, but Lydia shows up in the perfect moment! You cannot defeat their forces together, so you head back to your lairs, defeated.
+        </value>
+        <value>As you try to attack {0}, you find that they are not alone. Lydia is with {0}, and her battle axe is too strong for you. Defeated, the dragons return to their burial sites.
+        </value>
+    </string>
+    <string key="CultUnableToConvert">
+        <!-- 0 - newest  -->
+        <!-- 1 - target's name -->
+        <value>You send {0} to try to turn {1}. When {0} gets there, however, they are being expected with silver weapons and torches! {1} doesn't want to join your group of vampires, so {0} heads back, defeated.
+        </value>
+        <value>You send {0} to try to turn {1}, but {0} didn't succeed. It seems that {1} resisted the incantation and attacked {0} with a silver sword! The newest member runs for their life.
+        </value>
+    </string>
+    <string key="NameExists">
+        <!-- 0 - target's name -->
+        <!-- 1 - name -->
+        <value>{1}, a player with the name {0} has already joined. Please change your name to join.
+        </value>
+    </string>
+    <string key="HarlotDiscoverCult">
+        <!-- 0 - target's name -->
+        <value>You went to deliver {0}'s letter. Everything went well, but you couldn't help but notice a strange hunger in their eyes...
+        </value>
+        <value>You went to deliver {0}'s letter. Everything went well, but you couldn't help but notice something strange in their mouth... Since when {0} has FANGS?
+        </value>
+    </string>
+    <!-- new string May 13 2016-->
+    <string key="Was">
+        <value>was</value>
+    </string>
+    <string key="GenericDeathNoReveal">
+        <!-- 0 - Dead's name -->
+        <value>Everyone wakes up in the morning, and notices that {0} is not around... They check the house to find the remains of {0}.
+        </value>
+        <value>As the villagers gather as the sun rises, they find the remains of {0}, who died somehow last night...
+        </value>
+        <value>The night has ended, and {0}'s life ended with it. The peasants wonder what happened with them.
+        </value>
+    </string>
+    <string key="MasonConverted">
+        <!-- 0 - mason's name -->
+        <value>Odd.... {0} didn't show up for the war table this morning...</value>
+        <value>You try to speak with {0} this morning, but somehow they seemed afraid of the torch's fire...
+        </value>
+    </string>
+    <!-- new string May 16 2016-->
+    <string key="FleeDisabled">
+        <value>You try to flee, but it seems that the dragons are everywhere! Fearing for your life, you decide to stay, even though you don't want...
+        </value>
+        <value>It seems that the gods don't like cowards! They commanded the admins to close the village's doors so no one could flee. Good luck with that!
+        </value>
+    </string>
+    <string key="IsDead">
+        <!-- used when gunner shoots a player -->
+        <value>has been FUS RO DAH'd.</value>
+        <value>is only ashes now.</value>
+        <value>had their body looted by the dragonborn.</value>
+    </string>
+
+    <!-- MORE STRINGS May 16, 2016 -->
+    <string deprecated="true" key="AdminAdded">
+        <!-- 0 - target's name -->
+        <value>{0} added to admin list. Use /config to change group settings.</value>
+    </string>
+    <string key="AlreadyInGame">
+        <!-- 0 - target's name -->
+        <value>You are already in a game! ({0})</value>
+    </string>
+    <string deprecated="true" key="MultipleGames">
+        <value>Your group has managed to start multiple games... Killing extras.</value>
+    </string>
+    <string deprecated="true" key="GroupQueue">
+        <!-- 0 - target's name -->
+        <!-- 1 - target's name -->
+        <value>Your group is currently in the queue. Position: {0} / {1}</value>
+    </string>
+    <string deprecated="true" key="MaintBreak">
+        <!-- 0 - target's name -->
+        <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information
+        </value>
+    </string>
+    <string deprecated="true" key="MaxGames">
+        <!-- 0 - target's name -->
+        <!-- 1 - target's name -->
+        <value>Sorry, max concurrent games has been reached ({0}). \nPosition in queue: {1} / {1}
+        </value>
+    </string>
+    <string deprecated="true" key="SkipQueue">
+        <!-- 0 - target's name -->
+        <value>{0} is a preferred group, and has skipped the queue!</value>
+    </string>
+    <string key="NoGame">
+        <value>There is no game running. Start a new game with /startgame or start a chaos game with /startchaos
+        </value>
+    </string>
+    <string key="GroupAdminOnly">
+        <value>You fool, you are not one of the Divines!</value>
+    </string>
+    <string deprecated="true" key="ShuttingDown">
+        <value>After this game, I am shutting down for maintenance.</value>
+    </string>
+    <string deprecated="true" key="ShuttingDownUpdate">
+        <value>After this game, I am shutting down momentarily for an update (automated).</value>
+    </string>
+    <string deprecated="true" key="NullIdAdmin">
+        <value>UserId was null. Are you sure you sent this as a reply?</value>
+    </string>
+    <string deprecated="true" key="AlreadyAdmin">
+        <!-- 0 - target's name -->
+        <value>{0} is already an admin!</value>
+    </string>
+    <string deprecated="true" key="NotAdmin">
+        <!-- 0 - target's name -->
+        <value>{0} is not an admin!</value>
+    </string>
+    <string deprecated="true" key="AdminRemoved">
+        <!-- 0 - target's name -->
+        <value>{0} removed from admin list.</value>
+    </string>
+    <string deprecated="true" key="LanguageSet">
+        <!-- 0 - language's name -->
+        <value>Language set to {0}</value>
+    </string>
+    <string key="NoSeer">
+        <value>No Greybeard!</value>
+        <value>Well, aren`t you lucky... There are no Greybeards around.</value>
+    </string>
+    <string key="TimesUp">
+        <value>Time's up!</value>
+    </string>
+    <!-- new strings june 10 2016 -->
+    <string key="RoleInfoCupid">
+        <value>(Cupid) You are the Priestess of Mara. You will tie two players' fates. When one dies, the powerful binding magic will kill the other one, or something like that.
+        </value>
+    </string>
+    <string key="RoleInfoDoppelganger">
+        <value>(Doppelgänger) Galathil, the Face Sculptor. You can transform in anyone, once they are dead. You will inherit their role and powers too. Be advised that you must transform in order to be in the winning team. Otherwise, you will just lose.
+        </value>
+    </string>
+    <string key="RoleInfoHunter">
+        <value>(Hunter) You are a Forsworn. You learned how to live near society, but you can't stand them. If a Dragon tries to kill you, your strength might just be enough to save yourself. Or you will die, but will take them with you. There is also a chance that you kill anyone that visits you, though. You REALLY cannot stand any of them.
+        </value>
+    </string>
+    <string key="RoleInfoSerialKiller">
+        <value>(serial killer) The Dark Brotherhood has arived in Skyrim, and you are their agent. Fulfill the Night Mother's contract: Kill every single one on this village, and send their souls to feed the Mother. Anyone who visits you will die, and you might even be able to kill a dragon if it attacks you. Don't let them know who you are.\nHail Sithis.
+        </value>
+    </string>
+    <string key="CupidChosen">
+        <value>This night, you dream of {0}. You feel drawn to them and you know they feel the same. You head to Mara's Temple and now you are married, together for life. And for death, because if they meet their demise, you will not be able to stand life as it is. You will kill yourself. But if only you survive at the end, you win.
+        </value>
+        <value>This night, you dream of {0}. You feel drawn to them and you know they feel the same. You head to Mara's Temple and now you are married, together for life. You swere at each other to live together forever, in this world or in the next. You both win alone if you survive until the end.
+        </value>
+    </string>
+    <string key="HunterLynchedChoice">
+        <value>Damn peasants! They try to kill you, but you are smarter. With only your fists, you consider who to attack before they catch you...
+        </value>
+        <value>Damn all of them! They approach you with violence in the eyes. You will have no mercy, then. The first one to die at your hands is...
+        </value>
+    </string>
+    <string key="HunterNoChoiceLynched">
+        <value>{0} madly shouts at everyone, and tries to grab the closest person, but is not fast enough. Suddenly, an arrow flies through the crowd, hitting {0} in the chest. The
+            Forsworn dies instantly.
+        </value>
+        <value>{0}, the Forsworn, tries to fight. They punch someone in the face, and try to steal their blade, but suddenly a long sword emerges from {0}'s chest, and they die in a huge pool of blood.
+        </value>
+    </string>
+    <string key="HunterSkipChoiceLynched">
+        <value>{0} looks to everyone, with clear signs of sadness. Clearly, that's not how the Forsworn wanted to die, but {0} accepts their fate. Guess {0} were not a true forsworn after all. Weaklings really deserve to die.
+        </value>
+        <value>As you try to kill {0}, they prove to be surprisingly faster. The Forsworn tries to escape, and run away from the city. Later, a guard tells everyone that {0} encountered a giant while fleeing, and was crushed instantly by its fists.
+        </value>
+    </string>
+    <string key="HunterKilledFinalLynched">
+        <!-- 0 - hunter's name -->
+        <!-- 1 - target's name -->
+        <!-- 2 - target's role -->
+        <value>The village gathers around {0}, but the Forsworn is too fast. {0} charges to {1}, stealing their blade, and decapitates {1} in a single and strong move. You manage to kill the Forsworn, but not to save {1}.\n {2}
+        </value>
+        <value>The village gathers around {0}, but the Forsworn is too fast. {0} charges to {1}, punching them in the face. Then, the Forsworn grabs {1}'s head, and break their neck. An arrow kills the forsworn quickly, and they let go of {1}'s dead body.\n {2}
+        </value>
+    </string>
+    <string key="HunterShotChoice">
+        <value>Someone attacked you! As you try to reach the town with the dagger still in your chest, you choose a person to kill in revenge:
+        </value>
+        <value>You have been attacked, and your wounds are fatal. Chose someone to be your companion into the grave:
+        </value>
+    </string>
+    <string key="HunterNoChoiceShot">
+        <!-- 0 - target's name -->
+        <value>{0} is visibly confused, but the confusion ends quickly. Theres a loud noise, and an arrow is suddenly seen emerging from the Forsworn's forehead. {0} is dead.
+        </value>
+        <value>{0} don't know what to do, and look around in despair. A sword emerges from their chest, piercing their heart. The forsworn is dead in a matter of seconds.
+        </value>
+    </string>
+    <string key="HunterSkipChoiceShot">
+        <!-- 0 - hunter's name -->
+        <value>As {0} lays there, gasping for their final breaths, they can't decide who to take revenge on... and accept their fate. A weakling that died acordingly.... Weak.
+        </value>
+        <value>{0} enters the village with a dagger in their chest. The Forsworn gives two steps past the front gate, then crumbles. The trail of blood is long, and becomes a pool. {0} dies in silence.
+        </value>
+    </string>
+    <string key="HunterKilledFinalShot">
+        <!-- 0 - hunter -->
+        <!-- 1 - target's name -->
+        <!-- 2 - target's role -->
+        <value>Dying, {0} falls to the ground.... but not without grasping their bone dagger, and throwing it on {1}'s throeat, who crumbles and dies in a large pool of blood. {2}
+        </value>
+        <value>Dying, {0} uses their final rage burst and runs at {1}, using the same dagger that killed them, to stab {1} multiple times. Unfortunately, {1} dies even before {0}. {2}
+        </value>
+    </string>
+    <string key="HunterShotWolfMulti">
+        <!-- 0 - target's name -->
+        <value>The dragons tried to feast on a Forsworn! The Forsworn's rage was so intense that they were able to kill one of the dragons! {0}, a dragon, is now dead.
+        </value>
+        <value>The dragons wanted a easy hunt, and attacked the Forsworn. They obviously underestimated the skill of those warriors, and {0} was left behind as the other dragons ran away. {0} managed to kill the forsworn, but didn't resist their own wounds.
+        </value>
+    </string>
+    <string key="HunterShotWolf">
+        <!-- 0 - target's name -->
+        <value>{0} the Dragon tried to kill the Forsworn. The powerful dragon underestimated the Forsworn's skills. To everyone's awe, the Forsworn fought the dragon, and survived. TheForsworn now has some new bonemade swords!</value>
+        <value>In the following morning, the Forsworn enters the village sporting a dragonbone-made sword! They boast about how {0} the dragon didn't put much of a fight. Knowing about the savagery of the Forsworn, some peasants even feel sory for the dragon.</value>
+    </string>
+    <string key="SerialKillerKilledWolf">
+        <value>In the morning, some peasants find a dead dragon right in front of the village gates! Only the bones remained, and there was a note attached to the {0} skull - A red hand painted in blood, and the saying: "Hail Sithis".
+        </value>
+        <value>The roaring of a dragon was heard las night, and then a subtle silence. No one was brave anough to leave their houses, but that dragon was actually {0}, killed by an agent of the Dark Brotherhood. The Night's Mother sigil was there at the morning.
+        </value>
+    </string>
+    <string key="DefaultKilled">
+        <!-- 0 - target's name -->
+        <!-- 1 - target's role -->
+        <value>It seemed a quiet enough night for {0}, but they were wrong. The stench coming from their houses is almost unbearable. Everyone finds {0} dead in an altar, with a hand painted in blood on the wall! The Dark Brotherhood killed another target. {1}
+        </value>
+        <value>There's a red hand painted in {0}'s door. They are found completely dismembered, with the heart and other organs displayed in a huge altar to the Night Mother. {1}\n\nHail Sithis.
+        </value>
+    </string>
+    <string key="GuardBlockedKiller">
+        <!-- 0 - target's name -->
+        <value>You tried to fullfill a part of your contract by killing {0}, but when you got there they were not aolne! Lydia was there to help them fight you, so you did a strategic retreat for tonight. Don't keep the Night Mother waiting.
+        </value>
+        <value>As you headed to {0}'s house, you knew something was wrong. And you were right! Lydia  was there, and she helped them to fight you. You retreat, apologizing mentally to the Night Mother. You will kill them all, in your own time.
+        </value>
+    </string>
+    <string key="CultConvertHunter">
+        <!-- 0 - Youngest Cultist's name -->
+        <!-- 1 - target's name -->
+        <value>The vampires sends {0} to try to convert {1}, but the Forsworn didn't want anything to do with your covenant of vampires... The Forsworn dismembered {0} and burned they body in a huge fire. No healing magic will safe your partner now...
+        </value>
+        <value>The vampires sends {0} to try to convert {1}, but the Forsworn didn't want anything to do with your covenant of vampires... The Forsworn dismembered {0}, burned they body in a huge fire, and used their bones to decorate their armor. No healing magic will safe your partner now...
+        </value>
+    </string>
+    <string key="CultConvertSerialKiller">
+        <!-- 0 - Youngest Cultist's name -->
+        <!-- 1 - target's name -->
+        <value>The vampires sends {0} to try to convert {1}, but it seems that the power of the Night Mother protected her agent! {0} never comes back, but a letter arrives instead: the Night Mother's sigil painted in the paper, using {0}'s blood as paint.
+        </value>
+        <value>You sent {0} to die. When they got there, {1}, the Dark Brotherhood agent, was expecting {0}. You will never hear from {0} again, as their clothes came back, painted with their onw blood with tne Night Mother's sigil on them.
+        </value>
+    </string>
+    <string key="GuardKiller">
+        <value>Bad choice. You didn't have a clue that the Dark Brotherhood was targeting you. When you got there, their agent instantly killed you.
+        </value>
+        <value>Bad choice. You don't get to help the Dark Brotherhood unless invited. The agent found your presence an insult, and tortured you to death.
+        </value>
+    </string>
+    <string key="HarlotFuckKiller">
+        <!-- 0 - target's name -->
+        <value>You had a message to deliver to {0}, a strange piece of paper. You didn't held yourself and gave it a look. It was a red hand painted in the parchment... You die even before knowing what's happening. THe parchment was your own death sentence, the cruel humor of the Dark Brotherhood won't shock you anymore.
+        </value>
+        <value>You had a message to deliver to {0}, it was supposed to be an easy job. But {0} works for the Dark Brotherhood, and had your name on the list. At least you died quickly.
+        </value>
+    </string>
+    <string key="HarlotFuckKillerPublic">
+        <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds, besides them is a piece of parchment with a red hand painted on it. {0} is dead.
+        </value>
+        <value>The village sees the messenger's body completely dismembered in the water fountain. There is an altar to the Night Mother with {0}'s heart upon it. {0} is dead.
+        </value>
+    </string>
+    <string key="DGToMason">
+        <!-- 0 - target's name -->
+        <value>The Face Sculptor {0} has now become a Companion, just like you!</value>
+        <value>With your former Companion dead, {0}, the Face Sculptor takes their place beside you.
+        </value>
+    </string>
+    <string key="DGTransformToMason">
+        <!-- 0 - dead mason's name -->
+        <!-- 1 - mason collegues's name -->
+        <value>{0} has died, and you transform yourself into a Companion. Your teammates (if any) are: {1}
+        </value>
+        <value>With the death of {0}, you transform yourself into a Companion. Your teammates (if any) are: {1}
+        </value>
+    </string>
+    <string key="DGToCult">
+        <!-- 0 - new cultist's name -->
+        <value>The Face Sculptor was bitten, and now {0} becomes a vampire, just like you!</value>
+        <value>With the death of your teammate, the Face Sculptor offers themselves to take your former partner's place. Now {0} becomes a vampire, just like you!
+        </value>
+    </string>
+    <string key="DGTransformToCult">
+        <!-- 0 - role's name -->
+        <!-- 1 - teammates's name -->
+        <value>{0} has died, and you transform into a Vampire, with the covenant's help. Your teammates (if any) are: {1}
+        </value>
+        <value>Your time has come. {0} has died, so you are transformed into a vampire by their dying hands. Your teammates (if any) are: {1}
+        </value>
+    </string>
+    <string key="DGToWolf">
+        <!-- 0 - DG's name -->
+        <value>The Face Sculptor {0} has now become a dragon, just like you!(Don't ask me how he did it, just accept it)
+        </value>
+    </string>
+    <string key="DGTransformToWolf">
+        <!-- 0 - target's name -->
+        <!-- 1 - teammates's name -->
+        <value>{0} has died, and you transform into a dragon. Your teammates (if any) are: {1}
+        </value>
+    </string>
+    <string isgif="true" key="SerialKillerWins">
+        <value>The Dark Brotherhood agent proved that the Night Mother's powers still endure. They have won!
+        </value>
+        <value>No one can stand against the Night Mother. The Dark Brotherhood have won, their agent fullfilled all contracts.
+        </value>
+    </string>
+    <string key="AskKill">
+        <value>Who do you want to kill tonight?</value>
+    </string>
+    <string key="LoverDied">
+        <!-- 0 - dead's name -->
+        <!-- 1 - lover's name -->
+        <!-- 2 - roles -->
+        <value>With {0}'s dying breath, {1} rushes over and falls, crying. They cannot stand the loss of their loved one, so they raise up their dagger and pierce it, accepting death. {2}
+        </value>
+        <value>With {0}'s dying breath, {1} rushes over and falls, crying. They cannot stand the loss of their loved one, so they kill themselves with the nearest dagger. May they be together in the afterlife. {2}
+        </value>
+    </string>
+    <string key="AskDoppelganger">
+        <value>Who do you want to become if they die?</value>
+    </string>
+    <string key="AskCupid1">
+        <value>Who do you want the lovers to be? Choose the first player</value>
+    </string>
+    <string key="AskCupid2">
+        <value>Who do you want the lovers to be? Choose the second player</value>
+    </string>
+    <string key="Hunter">
+        <value>the Forsworn 🎯</value>
+    </string>
+    <string key="Cupid">
+        <value>the Priestess of Mara 🏹</value>
+    </string>
+    <string key="SerialKiller">
+        <value>the Dark Brotherhood agent 🔪</value>
+    </string>
+    <string key="Doppelgänger">
+        <value>the Face Sculptor 🎭</value>
+    </string>
+    <string key="NewWCRoleModel">
+        <!-- 0 - target's name -->
+        <value>You took Lucia, The Orphan's place. You have been adopted by {0}</value>
+    </string>
+    <string key="LoversWin">
+        <value>True love endures! The lovers have won!</value>
+        <value>No one cas stand against the mighty power of love, not even dragons!</value>
+    </string>
+    <string key="HunterKilledVisiter">
+        <!-- 0 - target's name -->
+        <!-- 1 - role -->
+        <value>In the middle of the town square, everyone finds the body of {0}, but only the face is recognizable. They actually had been skinned by the Forsworn! The Dark Brotherhood had no luck this time! {1}
+        </value>
+        <value>{0} is found dead, blood all over. The Forsworn brags about how they killed a member of the Dark Brotherhood!\n\n{1}
+        </value>
+    </string>
+    <string key="CultAttempt">
+        <value>A hooded figure approached you in a corner, and tried to bite you! You quickly shove them away and run for your house.
+        </value>
+        <value>As you got close to your house, someone tried to grab you. You draw your sword and show them you can handle yourself. Whoever it was, they ran quickly away, impressed by your skills, I suppose.
+        </value>
+    </string>
+    <string key="AlreadyOnWaitList">
+        <!-- 0 - target's name -->
+        <value>You are already on the wait list for {0}</value>
+    </string>
+    <string key="AddedToWaitList">
+        <!-- 0 - target's name -->
+        <value>You have been added to the wait list for {0}. I will PM you when the next game is starting.\n** MOD CREATED BY igorfeiden **\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram
+        </value>
+    </string>
+    <string key="NotifyNewGame">
+        <!-- 0 - target's name -->
+        <value>A new game is starting in {0}</value>
+    </string>
+    <string key="SerialKillerWinsOverpower">
+        <!-- 0 - SK's name -->
+        <!-- 1 - target's name -->
+        <value>Morning comes, and the remaining two villagers walk out to the town square. {0} takes a look at {1}, and quickly takes {1} out while praying to the Night Mother.
+        </value>
+        <value>Morning comes, and {0} comes at {1}, with a grin on their face. {1} had witnessed the Dark Brotherhood. No one witness the Dark Brotherhood and lives to tell the story.
+        </value>
+    </string>
+    <string isgif="true" key="NoWinner">
+        <value>Everyone in the village has died... there's nothing but bodies left. No one wins this round, except the vultures...
+        </value>
+    </string>
+    <string key="SKHunterEnd">
+        <!-- 0 - SK's name -->
+        <!-- 1 - Hunter's name -->
+        <value>{0} and {1} walk into the village. {0} pulls out their knife, and jumps at {1}. {1} pulls out a pistol and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}. Both are dead.
+        </value>
+    </string>
+    <string key="RoleModelChosen">
+        <!-- 0 - target's name -->
+        <value>You failed to make a choice, so the elders chose for you: {0}</value>
+    </string>
+    <string key="Won">
+        <value>Won</value>
+    </string>
+    <string key="Lost">
+        <value>Lost</value>
+    </string>
+    <string key="IdleCount">
+        <!-- 0 - player's name -->
+        <!-- 1 - idle count -->
+        <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+    </string>
+    <!--New strings 7th of July-->
+    <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+    For example in Mafia, AboutMason would be:
+    Caporegime 👷\nYou are a caporegime blah blah
+    -->
+    <string key="AboutVG">
+        <value>Your role is simple - try to survive. Each day, you will have a chance to lynch someone. Choose wisely!
+        </value>
+    </string>
+    <string key="AboutSeer">
+        <value>You are the Greybeard. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!
+        </value>
+    </string>
+    <string key="AboutWw">
+        <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack Sam Guevene, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the Dead Dragon, they will become a DRAGON like yourself! Hooray friends!
+        </value>
+    </string>
+    <string key="AboutHarlot">
+        <value>As the Messenger, you will be given the chance to deliver messages to another player each night. If they are not evil, you will be told so (because you live!). If you visit a dragon etc., you will be killed. If you visit the player the dragons have chosen to kill, you will be killed as well. However - If you are visiting a player, and the dragons choose to kill you, you will survive since you weren't home. But fear for the Dark Brotherhood. They can kill you anywhere.
+        </value>
+    </string>
+    <string key="AboutDrunk">
+        <value>You drunken bastard! As the Sam, you are still just a villager. BUT! If the dragons kill you, they will become disabled for the next night, since you are secretly a Daedric prince and will fight them in your own dimension(but die anyway).
+        </value>
+    </string>
+    <string key="AboutCursed">
+        <value>As the cursed, you are a normal villager... until the dragons kill you. Then you discover you were actually a dragon, and will have new teammates.
+        </value>
+    </string>
+    <string key="AboutTraitor">
+        <value>You are a traitorous bastard. Miraak will take the place of the dragons if they all die. You can then kill everyone else!
+        </value>
+    </string>
+    <string key="AboutGA">
+        <value>You are Lydia! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a dragon, there is a 50% chance you will be killed.
+        </value>
+    </string>
+    <string key="AboutDetective">
+        <value>Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the dragons - and the Thalmor - will detect you!
+        </value>
+    </string>
+    <string key="AboutGunner">
+        <value>You are the dragonborn! But, you're still a newbie dragonborn. You can shout once a day only two times, and then every single one of your skill (which are: shouting) will be on permanent cooldown. And remember: you can't fast travel when enemies are nearby.
+        </value>
+    </string>
+    <string key="AboutTanner">
+        <value>The chicken's goal is simple: Get Lynched. If the Chicken gets lynched, everyone else gets chased by a furious mob and loses.
+        </value>
+    </string>
+    <string key="AboutFool">
+        <value>The minstrel Thinks they have a strong voice, but the only think you can do is to sing the dragonborn song and hope you can guess their roles right. You honestly believe you are a Greybeard though, but even Malukah sings better than you. (She actually sings MAJESTICALLY)
+        </value>
+    </string>
+    <string key="AboutCult">
+        <value>As a vampire, it is your goal to convert all other players (except dragons and of course, the Dark Brotherhood) to your covenant. If at the end of the game, all living players are vampires - you can rule the land!
+        </value>
+    </string>
+    <string key="AboutCH">
+        <value>Your job is to hunt the vampires. If the vampires attack you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a vampire, they will die.
+        </value>
+    </string>
+    <string key="AboutWC">
+        <value>At the beginning of the game, you will choose someone adopt you. If they die, you will be transformed into a dragon. Don't ask why, it's how magic works.
+        </value>
+    </string>
+    <string key="AboutAppS">
+        <value>For now, you are a normal peasant. However, if the Greybeard dies, you will become the new Greybeard, because the world NEEDS the Greybeards.
+        </value>
+    </string>
+    <string key="AboutBH">
+        <value>You will be told who the Greybeard is (the real one, not the minstrel)</value>
+    </string>
+    <string key="AboutMason">
+        <value>A Companion's job is simple (I don't think being a mercenary is simple, but...)- they automatically know who the other companions are. Otherwise, they are a simple villager. And oh, you don't get to transform into a wherewolf. Pretty sure it only happens in a different langpack 🤔
+        </value>
+    </string>
+    <string key="AboutDG">
+        <value> You mastered the face sculpting magic... You can pick a player at the start of the game. If that player dies, you will become what they were.  Note: If the player was converted to vampire, you will take on their original role. All other normal rules apply: If they were Lucia and their parents died, you will become a dragon. Otherwise, you will inherit their parents. The vampires cannot transform you (but can after the you switches roles). Also - the Face Sculptor can NOT win unless they have transformed. If at the end of the game, you are still, well, you; you lose (exception: lover)
+        </value>
+    </string>
+    <string key="AboutCupid">
+        <value> Love is in the air. As the priestess of Mara, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(\nNote: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams, and one team wins , the lover wins as well. TL;DR if at least one of the lovers was on the winning team, they both win together.
+        </value>
+    </string>
+    <string key="AboutHunter">
+        <value> A mad, vindictive player. As the forsworn, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your killing impulses are too strong. If the dragons attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die. Note: For dragon attacks, the chance starts at 30%. If there is one dragon, you have a 30% chance to kill them (and survive). For each additional baddie, add 20% (2 dragons = 50%, 3 = 70%, etc). However - if there are multiple dragons, while you may kill one of them, you will still be outnumbered and killed. If the vampires try to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+        </value>
+    </string>
+    <string key="AboutSK">
+        <value>The Night Mother sent you here to wipe them all. You are a lone player, on your own team. The Dark Brotherhood can win only if they are the last player alive (exception: lovers). As a skilled and cold serial killer, you can kill ANYONE - dragons, dragonborns, vampires, chickens, whatever. If the dragons try to attack you, you will kill one of them (random), and live. OP, huh?
+        </value>
+    </string>
+    <string key="AboutPara">
+        <value>Para is a silly developer that likes to bark at people. Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea. Also, some say he has dragon blood. Never heard of barking dragons, but still...
+        </value>
+    </string>
+    <string key="EndTime">
+        <value>Game Length: {0}</value>
+    </string>
+    <!--New strings, July the 8th -->
+
+    <string key="Day">
+        <!--0 - Day -->
+        <value>Day {0}</value>
+    </string>
+    <string key="NodeShutsDown">
+        <value>An error has occured, and this node has shut down :/</value>
+    </string>
+    <string key="SentPrivate">
+        <value>I have sent you a PM</value>
+    </string>
+    <string deprecated="true" key="StartPM">
+        <value>Please send me a pm so I can PM you: @werewolfbot</value>
+    </string>
+    <string deprecated="true" key="PMTrue">
+        <value>Thanks for starting me! I can PM you now.</value>
+    </string>
+    <string deprecated="true" key="MustReplySmite">
+        <value>You must reply to the user you want to smite</value>
+    </string>
+    <string key="WhatToDo">
+        <value>What would you like to do?</value>
+    </string>
+    <string key="JoinFromGroup">
+        <value>You must join a game from within a group chat!</value>
+    </string>
+    <string key="StartFromGroup">
+        <value>You must start a game from within a group chat!</value>
+    </string>
+    <string key="PingInfo">
+        <value>{0}ms. Other things written on the scroll: {1}</value>
+    </string>
+    <string key="WhatLang">
+        <value>What Language?\nCurrent: {0}</value>
+    </string>
+    <string key="WhatVariant">
+        <value>What Variant?\nCurrent: {0}</value>
+    </string>
+    <string key="LangSet">
+        <value>Language set to {0}</value>
+    </string>
+    <string key="GetLang">
+        <value>Get which language file?</value>
+    </string>
+    <string key="NoNodes">
+        <value>There are no nodes online right now, please try again in a few seconds</value>
+    </string>
+    <string key="GroupCommandOnly">
+        <value>You must run this command in a group</value>
+    </string>
+    <string key="NotGlobalAdmin">
+        <value>HAHAHA you fool. This magic is not for you to wield.</value>
+    </string>
+    <string key="NotPara">
+        <value>You aren't Para!</value>
+    </string>
+    <string key="Yes">
+        <value>Yes</value>
+    </string>
+    <string key="No">
+        <value>No</value>
+    </string>
+    <string key="Allow">
+        <value>Allow</value>
+    </string>
+    <string key="Disallow">
+        <value>Disallow</value>
+    </string>
+    <string key="Show">
+        <value>Show</value>
+    </string>
+    <string key="Hide">
+        <value>Hide</value>
+    </string>
+    <!-- Game Mode Choices-->
+    <string key="NormalOnly">
+        <value>Normal Only</value>
+    </string>
+    <string key="ChaosOnly">
+        <value>Chaos Only</value>
+    </string>
+    <string key="PlayerChoice">
+        <value>Player Choice</value>
+    </string>
+
+    <!-- Show Roles on End Game -->
+    <string key="ShowNone">
+        <value>Don't show any</value>
+    </string>
+    <string key="ShowLiving">
+        <value>Show only living players</value>
+    </string>
+    <string key="ShowAll">
+        <value>Show all players</value>
+    </string>
+
+    <string key="Cancel">
+        <value>Cancel</value>
+    </string>
+    <string key="AllowFleeQ">
+        <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee
+            during join phase\nCurrent: {0} fleeing
+        </value>
+    </string>
+    <string key="AllowFleeA">
+        <value>{0} fleeing after game start</value>
+    </string>
+    <string key="MaxPlayersQ">
+        <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+    </string>
+    <string key="MaxPlayersA">
+        <value>Max players set to {0}</value>
+    </string>
+    <string key="ShowRolesDeathQ">
+        <value>Show or Hide roles on death?\nCurrent: {0}</value>
+    </string>
+    <string key="ShowRolesDeathA">
+        <value>Roles will be {0} on death.</value>
+    </string>
+    <string key="GameModeQ">
+        <value>What game mode will the group be?\nCurrent: {0}</value>
+    </string>
+    <string key="GameModeA">
+        <value>Game mode set to {0}</value>
+    </string>
+    <string key="ShowRolesEndQ">
+        <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+    </string>
+    <string key="ShowRolesEndA">
+        <value>Roles shown at end set to: {0}</value>
+    </string>
+    <string key="SetDayTimeQ">
+        <value>Choose the base time (in seconds) for day time. This will still be modified based on
+            number of players.\nDefault setting: {0}\nCurrent: {1}
+        </value>
+    </string>
+    <string key="SetDayTimeA">
+        <value>Base day time set to {0} seconds</value>
+    </string>
+    <string key="SetNightTimeQ">
+        <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}
+        </value>
+    </string>
+    <string key="SetNightTimeA">
+        <value>Night time set to {0} seconds</value>
+    </string>
+    <string key="SetLynchTimeQ">
+        <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}
+        </value>
+    </string>
+    <string key="SetLynchTimeA">
+        <value>Lynch voting time set to {0} seconds</value>
+    </string>
+    <string key="AllowFoolQ">
+        <value>Allow Minstrel as a role option?\nCurrent: {0}</value>
+    </string>
+    <string key="AllowFoolA">
+        <value>Minstrel as a role set to: {0}</value>
+    </string>
+    <string key="AllowTannerQ">
+        <value>Allow CHICKEN as a role option?\nCurrent: {0}</value>
+    </string>
+    <string key="AllowTannerA">
+        <value>CHICKEN as a role set to: {0}</value>
+    </string>
+    <string key="AllowCultQ">
+        <value>Allow VAMPIRES as a role option?\nCurrent: {0}</value>
+    </string>
+    <string key="AllowCultA">
+        <value>VAMPIRES as a role set to: {0}</value>
+    </string>
+	  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+    <string key="ThankYou">
+        <value>Thank you, have a good day AND A GOOD DRAGON SLAYING :)</value>
+    </string>
+    <string key="WhatLangGroup">
+        <value>What language do you want to look for a group to play in?</value>
+    </string>
+    <string key="HereIsList">
+        <value>Here are the groups for {0}:</value>
+    </string>
+    <string key="Members">
+        <value>Members</value>
+    </string>
+    <string key="StartMe">
+        <value>Please start me so I can PM you</value>
+    </string>
+    <string key="PlayerNoPM">
+        <value>{0} failed to start the bot, and has been removed from the game!</value>
+    </string>
+    <string key="LatestList">
+        <value>Here is the latest list</value>
+    </string>
+    <string key="UnableToGetList">
+        <value>Unable to get latest list</value>
+    </string>
+    <string key="YouJoined">
+        <!-- 0 - Group Name -->
+        <value>You have successfully joined the game in {0}</value>
+    </string>
+    <string key="Ping2">
+        <value>Time to send ping message: {0}</value>
+    </string>
+
+    <!-- Update 4.0-->
+    <string key="RoleInfoMayor">
+        <value>You are General Tulius(Mayor). Since you represent the army of THE EMPIRE(from this galaxy, not a far, far away), your vote during the lynching will count twice, once you have revealed yourself. But, the dragons present much more danger than a bunch of Stormcloaks, so the orders are to slay them first.
+        </value>
+    </string>
+    <string key="RoleInfoPrince">
+        <value>You are Serana. But you are not a vampire anymore. The Cured Serana(Prince) now fights do protect the peasants from the dragons. You don't actually fight since you are recovering from your magic transformation back to being a human, so you are harmless. Can still vote, and if they choose to lynch you, then you can FOR ONCE convince them otherwise. After all, you are still recovering and couldn't hurt a fly.
+        </value>
+    </string>
+    <string key="RoleInfoClumsyGuy">
+        <value>"I would be a lot warmer and a lot happier with a bellyful of mead" you said. Well, you got your mead, but it impaired your hability to vote. Now, you are just a clumsy guy, trying to remember names to lynch, but sometimes you get a little bit confused.
+        </value>
+    </string>
+    <string key="RoleInfoSorcerer">
+        <value>You are the a Conjurer(Sorcerer). You decided to help the dragons, and they promised you a role if they wipe the other races out. Now, you will study eveyone, one night each, to find the greybeards and the dragons.\nYou are not interested in anyone else, so you'll know someone's role only if they are one of the two mentioned above. You win if the dragons win.
+        </value>
+    </string>
+    <string key="RoleInfoBlacksmith">
+        <value>You are Ulfric Stormcloak (Blacksmith). You won't free your land from the imperials if there's no land to free. The dragons are a threat to your loved Skyrim, so even if it means to work with the Imperials, then be it. You can call for your fellow Stormcloaks for help, but it will only happen once, since they will get arrested the next day. Use your authority wisely!
+        </value>
+    </string>
+    <string key="RoleInfoAlphaWolf">
+        <value>You are Alduin (Alpha Wolf). You are rising dead dragons, even creating new ones!
+            Your victims have a 20% chance of turning into a dragon when you attack them. Kill or
+            turn them all to bring the end of the world!
+        </value>
+    </string>
+    <string key="RoleInfoWolfCub">
+        <value>You are the Baby Dragon (Wolf Cub), that is still being properly raised. You are a miracle, not even Alduin himself believed that dragon eggs could still exist. For this reason, you are protected, but if you die, the dragons will fly into a rage and attack two people the next night. You’ll still be dead though.
+        </value>
+    </string>
+    <string key="PrinceLynched">
+        <value>As the village begins to lynch {0}, but Serana protests: “Wait! I am Serana. You all know I was a threat before, but I am not fully healed yet, so I couldn't even hur a fly if I wanted to.” The peasants consider Serana's words, and it is clear that she's talking the truth. The night comes with no corpses on the aisle.
+        </value>
+    </string>
+    <string key="SorcererOther">
+        <value>You try to look at {0}, but can't quite make out what they are. You could if you wanted to, but since they are nor Dragon or Greybeard, you have no interest in them.
+        </value>
+    </string>
+    <string key="MayorReveal">
+        <value>General Tulius, AKA {0}, summons every single living soul on the main square. As said so by the Emperor, {0}'s votes for lynching will count twice from now on.
+        </value>
+    </string>
+    <string key="AskMayor">
+        <value>Click "Reveal" whenever you are ready to reveal yourself as General Tulius</value>
+    </string>
+    <string key="Reveal">
+        <value>Reveal</value>
+    </string>
+    <string key="SpreadDust">
+        <value>Would you like to call your brothers-in-arms today?</value>
+    </string>
+    <string key="BlacksmithSpreadSilver">
+        <value>A loud sound comes from the gate. {0} is seen leading a group of Stormcloaks. They declare their business: protect the city from the dragons. As such, the Dragons will not be active this night. Unfortunately, the Imperials already declared that all Stormcloaks will be arrested tomorrow.
+        </value>
+    </string>
+    <string key="Mayor">
+        <value>General Tulius 🎖</value>
+    </string>
+    <string key="Prince">
+        <value>Serana, the Former Vampire 👑</value>
+    </string>
+    <string key="Sorcerer">
+        <value>the Conjurer 🔮</value>
+    </string>
+    <string key="ClumsyGuy">
+        <value>the Drunk guard 🤕</value>
+    </string>
+    <string key="Blacksmith">
+        <value>Ulfric Stormcloak ⚒</value>
+    </string>
+    <string key="AlphaWolf">
+        <value>Alduin ⚡️</value>
+    </string>
+    <string key="WolfCub">
+        <value>the Baby Dragon 🐶</value>
+    </string>
+    <string key="PlayerBittenWolves">
+        <value>The dragons sorround {0}, who accepts their death. When you ready your fiery breath, {1} stops everyone, since they are Alduin. {1} tells that {0} deserve better, and Alduin's magic begin to work. Tomorrow, another dragon will rise.
+        </value>
+    </string>
+    <string key="PlayerBitten">
+        <value>The dragons surround you. You fight hard, but it's clear that you willnnot prevail. Suddenly, Alduin turns to you, his words transformed into spells. Instead of being killed, you have been elevated.. and will become a dragon tomorrow night!
+        </value>
+    </string>
+    <string key="BittenTurned">
+        <value>As night falls, you feel a strange flow of magic through your body. Your skin transform into scales, your body becomes larger, and your arms turn into wings. Rise, Dragon. It is time for you to fly with us.
+        </value>
+    </string>
+    <string key="AboutMayor">
+        <value>As General Tulius, you are a lowly soldier, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.
+        </value>
+    </string>
+    <string key="AboutPrince">
+        <value>Serana has a key role in the Village Team's strategy. Once she gets lynched, their role is revealed, and they survive. However, this can only happen once: if the village insists on lynching them, they will die.
+        </value>
+    </string>
+    <string key="AboutSorcerer">
+        <value>Do you remember the good old Greybeard? Well now, it has its Dragon Team counterpart. The sorcerer is the Dragons own magic human wielder. They can only see if someone is Dragon or Greybeard, and they win with the Dragons.
+        </value>
+    </string>
+    <string key="AboutClumsy">
+        <value>You are the drunk guard. You drank so much that you spell the names all wrong, so you have a 50% chance to vote for someone random, not the person you actually wanted to lynch.
+        </value>
+    </string>
+    <string key="AboutBlacksmith">
+        <value>Ulfric can call upon his fellow stormcloaks to protect the city. They will be arrested though, and no stormcloak ever will trust you again. But I think it worths it.
+        </value>
+    </string>
+    <string key="AboutAlphaWolf">
+        <value>Alduin turns people into dragons. Every attacked player has a chance to join your team as another dragon. The chances are 20%.
+        </value>
+    </string>
+    <string key="AboutWolfCub">
+        <value>The baby dragons likes to kill like all dragons, but they will get revenge and kill two players whenever you die.
+        </value>
+    </string>
+
+    <!-- new strings 06 nov-->
+    <string key="DGTransformToAlpha">
+        <!-- 0 - target's name -->
+        <!-- 1 - teammates's name -->
+        <value>{0} has died, and you transform into an Alduin, taking their place. Your teammates (if any) are: {1}
+        </value>
+    </string>
+    <string key="DGTransformToWolfCub">
+        <!-- 0 - target's name -->
+        <!-- 1 - teammates's name -->
+        <value>{0} has died, and you take their place as the Baby Dragon. Your teammates (if any) are: {1}
+        </value>
+    </string>
+
+    <string deprecated="true" key="VillageTeam">
+        <value>Village Team</value>
+    </string>
+    <string deprecated="true" key="NeutralTeam">
+        <value>Neutral Team</value>
+    </string>
+    <string deprecated="true" key="SerialKillerTeam">
+        <value>SK Team</value>
+    </string>
+    <string deprecated="true" key="CultTeam">
+        <value>Cult Team</value>
+    </string>
+    <string deprecated="true" key="TannerTeam">
+        <value>Tanner Team</value>
+    </string>
+
+    <string key="VillageTeamEnd">
+        <value>Village Team</value>
+    </string>
+    <string key="NeutralTeamEnd">
+        <value>Neutral Team</value>
+    </string>
+    <string key="WolfTeamEnd">
+        <value>Dragon Team</value>
+    </string>
+    <string key="SerialKillerTeamEnd">
+        <value>Dark Brotherhood</value>
+    </string>
+    <string key="CultTeamEnd">
+        <value>Vampires</value>
+    </string>
+    <string key="TannerTeamEnd">
+        <value>Chicken</value>
+    </string>
+    <string key="CultConvertWolf">
+        <value>{0} heads off to try and turn {1}, but you all see as {0} runs away, on fire. LITERALLY. You can't turn dragons, now you know it (and I forgot to mention).
+        </value>
+    </string>
+    <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+        <!--{0} = Harlot name, {1} = SK's victim name-->
+        <value>{0} had a message to deliver to {1}. They found {1} dead instead, and just when {0} tried to run, they were killed by an arrow (not in the knee). Now the Dark Brotherhood made not only one, but two victims!
+        </value>
+    </string>
+
+
+    <!--New Death Strings 05 DEC-->
+    <string key="ApprenticeSeerEaten">
+        <value>{0} was found dead, piles of books on the Dragonborn scattered around. It's a shame, they would've been a fine Greybeard.
+        </value>
+    </string>
+    <string key="BlacksmithKilled">
+        <value>Seems like the Stormcloaks couldn't protect {0}. Their camp is found completely clean of bodies, weapons, horses and/or every sign of living people. The Dark Brotherhood left behind only {0}'s head to warn us.
+        </value>
+    </string>
+    <string key="CultistKilled">
+        <value>{0} was found with a wooden *thing* stabbed in their hearts. It seems that even the vampires cannot escape from the Night Mother! The Dark Brotherhood had struck again.
+        </value>
+    </string>
+    <string key="CupidKilled">
+        <value>{0}, the Pristess of Mara, was found dead in the altar. The Dark Brotherhhod does not believe in love of any kind, and now they sent their message.
+        </value>
+    </string>
+    <string key="DrunkKilled">
+        <value>The bard didn't see {0} at the tavern last night. Sam is nowhere to be found, but next to their house the mages told you that a magic PORTAL opened. GLaD that the dragons didn't attack last night, everyone says their thanks to Sam.\n **The tavern owner** is specially sad, you wonder why...
+        </value>
+    </string>
+    <string key="GuardianAngelKilled">
+        <value>{0} would normally have managed to fight the Drak Brotherhood, but not on their own.. {0} is dead, may Lydia find a true Thane to serve in the afterlife.
+        </value>
+    </string>
+    <string key="GunnerKilled">
+        <value>{0}, the Dragonborn, was too confident. The Night Mother asked for their blood, and Her agent did the job. You all wonder when the next Dragonborn will rise, since the last one is now dead.
+        </value>
+    </string>
+    <string key="MayorKilled">
+        <value>Assassination! The Dark Brotherhood has no respect for any Emperor. Gereal "{0}" Tulius, is found in a pool of their own blood! Who's gonna command the Imperial Army now?
+        </value>
+    </string>
+    <string key="PrinceKilled">
+        <value>Serana did't show up on her daily walks. Actually, {0} didn't show up anywhere. When looking for her, you find nothing. The only explanation possible is: The Dark Brotherhood. You all pray you are wrong, but...
+        </value>
+    </string>
+    <string key="SeerKilled">
+        <value>The greybeards are just fools. They let {0}, one of their leaders, be murdered in cold blood. The Dark Brotherhood has no use for old men and their old ways.
+        </value>
+    </string>
+    <string key="SorcererEaten">
+        <value>The dragons attacked someone last night. But they didn't brag about it while flying away this time. You soon find out that they killed one of their own. {0} is dead.
+        </value>
+    </string>
+    <string key="WildChildEaten">
+        <value>The dragons were searching for a snack, but they found only a child! It was a special child. Lucia, the orphan, AKA {0} had been carried away by the dragons, to serve as a quick snack.</value>
+    </string>
+    <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+        <value>The villagers wake up in the morning, only to find the severed body parts of {0}, a member of the Dawnguard, in a cart placed in full view outside the town hall. Lesson learnt: don't mistake the Dark Brotherhood for some small covenant of vampires!</value>
+        <value>The body of {0}, the capitain of he Dawnguard, was found in the middle of town, albeit cut precisely into a hundred pieces. Next time, the Dawnguard will leave the Dark Brotherhood alone.</value>
+    </string>
+    <string
+        key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+        <value>Something that does not happen very often: the dragons didn't attack. The vampires thought it would be a goo idea to hunt on their own, but you can't turn a dragon into a vampire! {0} is killed as an example.
+        </value>
+        <value>Vampires are not included in a dragon's diet. So, a dragon dropped {0}'s body in flames, in the middle of the town square!
+        </value>
+    </string>
+    <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+        <value>The vampires thought the Dark Brotherhood wasn't important, and tried to convert one of their ranks! Sadly for {0}, the vampires learned in the worst way that you can't turn a trained murderer into a vampire just like that.
+        </value>
+        <value>The Dark Brotherhood does not fear simple magics. A trained Serial Killer won't just turn into a vampire without fighting! {0} died, clearly overwhelmed by the killer's skill.
+        </value>
+    </string>
+    <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+        <value>It was supposed to be a night where {0} would save the village from the killers, but not even Lydia could escape from the Night Mother! Your guardian now lies dead.
+        </value>
+    </string>
+    <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+        <value>{0} tried to guard a dragon last night. The town woke up to find only the clothes of {0} hung on the city's gates. </value>
+    </string>
+
+    <!--DEC 26: 1vs1 finales-->
+    <string key="HunterKillsWolfEnd">
+        <!--{0} = hunter's name, {1} = wolf's name-->
+        <value>Knowing only {0} was left, {1} tried to eat {0} up, but {1}’s training and paranoia proved too much to handle! All there is left is a carcass with two arrows to the torso and the last man standing: the victorious Forsworn!
+        </value>
+    </string>
+    <string key="WolfKillsHunterEnd">
+        <!--{0} = hunter's name, {1} = wolf's name-->
+        <value>Knowing only {0} was left, {1} chose a time where {0}’s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the Forsworn, completely burned by fire.
+        </value>
+    </string>
+    <string key="CHKillsCultistEnd">
+        <!--{0} = last cultist's name, {1} = CH's name -->
+        <value>{1} and {0} walk out in daylight. Seeing the pale skin and hungry looks of {0}, the righteous {1} draws their huge crossbow and fire a shot perfctly in the center of {0}'s forehead. The vampires are finally slain!
+        </value>
+    </string>
+
+    <!-- Extend time -->
+    <string key="SecondsAdded">
+        <!-- 0 - Seconds added by /extend command -->
+        <!-- 1 - Total seconds remaining -->
+        <value>Join time extended by {0} seconds!\n{1} left to hit the button.</value>
+    </string>
+    <string key="SecondsRemoved">
+        <!-- 0 - Seconds removed by /extend command -->
+        <!-- 1 - Total seconds remaining -->
+        <value>Join time decreased by {0} seconds!\n{1} left to shout at the button below:</value>
+    </string>
+    <string key="CantExtend">
+        <value>Only group admins can extend the time more than once!</value>
+		<value>Fool! You, as a lesser one, can only extend one time.</value>
+		<value>The Extend power has been misused by you too much already!</value>
+    </string>
+
+    <string key="JoinButton"><!-- this is for a button, no markdown or html -->
+        <value>Join</value>
+		<value>Avoid an arrow in the knee</value>
+		<value>FUS RO DAH!</value>
+		<value>Kill it, kill the vampire!</value>
+		<value>Psst! Hail Sithis</value>
+		<value>Grab your wine here!</value>
+		<value>Help the Dragonborn</value>
+    </string>
+
+    <string key="AllowExtendQ">
+        <!--{0} = "Allow" / "Disallow" string-->
+        <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend
+        </value>
+    </string>
+    <string key="AllowExtendA">
+        <!--{0} = "Allow" / "Disallow" string-->
+        <value>{0} players to extend join time</value>
+    </string>
+    <string key="MaxExtendQ">
+        <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}
+        </value>
+    </string>
+    <string key="MaxExtendA">
+        <value>Maximum extending time set to {0} seconds</value>
+    </string>
+    <string key="WolvesEatDrunkBlockSecondKill">
+        <value>Oh no! {0} sent you to another dimension! You killed them, but are now trapped and can't attack {1}...</value>
+    </string>
+    <string key="JoinButton">
+        <value>Join</value>
+    </string>
+    <string key="NotMember">
+        <value>You can't join this game because you don't seem to be a member of {0}.</value>
+    </string>
+    <string key="JoinByButton">
+        <value>Please don't use the commands to join. Use this button instead.</value>
+		<value>Sometimes, searching for the join button takes too much time. Here it is.</value>
+		<value>Shout at this button to join.</value>
+		<value>Click on this button to win a free iron helmet!</value>
+		<value>Seriously, no one uses this command anymore. It is so... Oblivion-ish.</value>
+		<value>Your magic is not strong enough to join via commands. Shout at this button instead!</value>
+    </string>
+    <string key="PlayerVoteCounts">
+        <value>{0} players have voted, {1} total.</value>
+		<value>{0} had spoken. You are a total of {1} people.</value>
+		<value>{0} out of {1} citzens voted.</value>
+		<value>{0} out of {1} peasants voted.</value>
+		<value>{0} voted, and the dragons will have {1} as meal.</value>
+    </string>
+    <string key="NoAutoJoin">
+        <value>{0}, please remember that you will have to join with the button as well.</value>
+		<value>Magic does not work by itself. {0} better remember to hit the button too.</value>
+		<value>{0}, remember that the button is here.</value>
+		<value>Don't forget the buttonm, {0}!</value>
+		<value>{0}, The Elder Scrolls demand that any match creator must also hit the button.</value>
+		<value>{0}, get your free equipment hitting the button.</value>
+    </string>
+    <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+        <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.
+        </value>
+    </string>
+    <string key="DeletedFromWaitList">
+        <value>You have been deleted from the wait list for {0}.</value>
+    </string>
+    <string key="HaveJoined">
+        <!-- {0} = list of people who have joined -->
+        <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+        <value>{0}joined the game in the last 30 seconds.</value>
+    </string>
+    <string key="AllowCult">
+        <value>Allow Vampires</value>
+    </string>
+    <string key="AllowTanner">
+        <value>Allow Chickens</value>
+    </string>
+    <string key="AllowFool">
+        <value>Allow Minstrels</value>
+    </string>
+    <string key="EnableSecretLynch">
+        <value>Enable Secret Lynch</value>
+    </string>
+    <string key="RandomMode">
+        <value>Enable Random Mode</value>
+    </string>
+    <string key="AllowExtend">
+        <value>Allow Extending Timer</value>
+    </string>
+    <string key="ShowRolesDeath">
+        <value>Show Roles on Death</value>
+    </string>
+    <string key="AllowFlee">
+        <value>Allow Fleeing</value>
+    </string>
+    <string key="ShowIDs">
+        <value>Show IDs on joining</value>
+    </string>
+    <string key="ShowIDsQ">
+        <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+    </string>
+    <string key="ShowIDsA">
+        <value>{0} IDs</value>
+    </string>
+    <string key="All">
+        <!-- used when searching for groups in all the variants -->
+        <value>All</value>
+    </string>
+    <string key="RandomModeQ">
+        <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Vampires / Minstrel / Chicken will be randomly determined everytime someone starts a game.\nCurrent:{0}
+        </value>
+    </string>
+    <string key="RandomModeA">
+        <value>Enabling of random mode set to: {0}</value>
+    </string>
+    <string key="AllowNSFW">
+        <value>Allow NSFW Gif Packs</value>
+    </string>
+    <string key="AllowNSFWQ">
+        <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+    </string>
+    <string key="AllowNSFWA">
+        <value>{0} NSFW Gifs</value>
+    </string>
+    <string key="TannerEnd">
+        <!-- 0 - Tanner name -->
+        <value>As the sun starts to shine on the village, {0} wakes to the sound of silence. No one left to kill them, the Chicken just wanders around waiting for nothing at all.
+        </value>
+        <value>{0} wakes up at dawn, alone. That's it, just the Chicken survived.
+        </value>
+    </string>
+    <string key="SorcererEnd">
+        <!-- 0 - Sorcerer name -->
+        <value>{0} opens their eyes, but instead of hearing the usual bustle of the village, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The wolves were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the village.
+        </value>
+        <value>For all of {0}'s efforts, {0}'s dragon friends lay motionless and lifeless. Even if they have been brought victory, there is no one to savour the success with, neither are there any living villagers to mock at.
+        </value>
+    </string>
+    <string key="WhatVariantVets">
+        <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join:
+        </value>
+    </string>
+    <string key="Skip">
+        <value>Skip</value>
+    </string>
+
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into the A Dragon Cultist. Remember: you work for the dragons now. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>You see that {0} is NOT {1}!</value>
+    <value>{0} definetly has a role, but it is NOT {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Would you like to put all players to sleep tonight?</value>
+    <value>You are Azura. You command light and Darkness. Do you want them all to be trapped in their sleep?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>{0} suddenly starts to shine. As they true nature as Azura are revealed, {0} sends a powerful spell that forms a mist all around you. You head to your homes, because the night will be too dark, even for the dragons. Tonight, no one will be able to use their night actions. No one dars to question a Daedric Prince as powerful as Azura.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>You have commanded the Darkness. No light will exist this tonight. Not even from a fire. Not even from a spell. The world is completely shrouded in darkness.</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow Brynjolf, The Thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thieves guild to show up</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>You are a Dragon. BUT you fight for the good guys! You gave up on your Dovah actions, founded the Greybeards and now assist the Dragonborn. The problem is, all greybeards are newbies. You will appear as a Dragon(a hostile one) if they try to see your role!</value>
+  </string>
+  <string key="WolfMan">
+    <value>Paarthurnax 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a Dragon. BUT you fight for the good guys! You gave up on your Dovah actions, founded the Greybeards and now assist the Dragonborn. The problem is, all greybeards are newbies. You will appear as a Dragon(a hostile one) if they try to see your role!</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>You are the Dragon Cultist! You fight for the Dragons and serve them, but is seen as a normal human (or Villager) by the Greybeards. Convenient, isn't it?</value>
+  </string>
+  <string key="Lycan">
+    <value>the Dragon Cultist 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The Dragon Cultist works for the Dragons and kills just like them, but will appear to be a villager to the Greybeard(seer)</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>You are the Oracle.  Each night you can choose to look at someone, but you will only be able to see what they are NOT.  You will be given a role of someone else in the game that is still alive, so pay attention to what role is said, that means one is still alive :)</value>
+  </string>
+  <string key="Oracle">
+    <value>the Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>You are Azura. You have control over day and night. Once per game, you can use your magic to put everyone into such a deep sleep, they won't be able to use their role at night.</value>
+  </string>
+  <string key="Sandman">
+    <value>the Daedric Prince Azura 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Azura – A Prince who maintains/draws power from the balance of night and day, light and dark. Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>the Kajiit ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>Esbern, the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>Brynjolf, the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
+</strings>
+
+

@@ -1,0 +1,1602 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Harry Potter English" base="English" variant="Harry Potter" owner="Benjy(Bumper)" code="en"/>
+  <string key="NotInGame" deprecated="true">
+    <value>The classes in Hogwarts are not started yet. You can start one with /startgame or a chaotic year with /startchaos</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a new school year. Use / join to get on the Hogwarts Express ... and probably receive an Avada Kedavra.</value>
+    <value>A new school year has been started by {0}! Join to get haunted and killed!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a chaotic year in Hogwarts! Join to lose yourself in the corridors and die!</value>
+    <value>A new chaos game has been started by {0}! Join to lose yourself in the corridors and die!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>You missed the Hogwairts Express! The year has already started.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>You are in the Hogwarts Express already!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute left to Join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to Join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Few magicians went to Hogwarts, nothing special happened there that year. Classes are canceled!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>The school year at Hogwarts is beginning, please wait while I, the Sorting Hat distributed the papers</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} is expelled for attempting to explore forbidden parts at Hogwarts (names initiated by / are not allowed)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0} The Sorting Hat does not recognize you, please change your name to participate in the selection.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>I'm so sorry, the maximum number of magicians has been reached!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Please, send an owl for private ({1}) saying start, as it is not yet enrolled in Hogwarts. So that I can send you private owls, you must send me an owl you first.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can not run away! YOU ARE DEAD! Come back to your body, you, playful ghost. It seems like a joke... jeez!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has returned to home!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} remaining magicians in Hogwarts.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>It seems you have not gone to the Hogwarts Express ...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I have not been able to find a magician / witch with that name.</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to launch an Avada Kedavra to {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to send {1} to Azkaban.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} has not voted for 2 nights in a row.  The forces of good judged this as a thing of a tenebrous magician and then suddenly falls, dead. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>You traitor!!! Now you are a Death Eater! ...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nThe Professor of Divination is... {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} was the Professor of Divination. As Firenze, you take the cristal ball and you become the new Adivination Teacher.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} was Firenze, and has taken the cristal ball to fill {1}'s place as the new Professor od Divination! </value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see {0} is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to send to Azkaban?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to follow?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Who do you want to throw a Sectusempra? {0} spell (s) remain.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Who would you like to pay a visit to the bedroom?</value>
+  </string>
+  <string key="AskSee">
+    <value>Who do you want to see?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to protect?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to throw an Avada Kedavra?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who would you like to investigate with your Patronus?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who is your example to follow?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who would you like to kiss him to death and substitute for a Dementor?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are Dolores Umbrige, and you are cursed. For now you are a simple teacher of Hogwarts,
+but if you are tortured by the Death Eaters, you will receive the dark mark and become a Death Eater.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are the Hermione Granger, fighter of Hogwarts. During the day, you may choose a magician to follow them through the school and know what they are
+  However - in doing so, your role could be revealed to the Death Eaters! (40% chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Congrats! You are Horace Slughorn! You put potions in the wrong bottles and ended up drinking them.
+If the Death Eaters attack you, they will feel the effects of your potions and they will not be able to attack anyone the next night.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are Lily Potter, the defender of Hogwarts. Each night, you may choose a magician to protect. However, if you choose a Death Eater, there is a 50% chance you will die.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are Sirius Black. You have only two spells remaining. During the day, you may choose to throw a Sectusempra to another Magician. Everyone will hear the screams of agony and will know you are Sirius Black (not a Death Eater).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You Slut! You are Cho Chang. You are one of the most courted witches. During the night, you can choose someone to charm with the Viritaserum potion and discover if the magician is a Death Eater or not.However, if you try to charm a Death Eater, or someone who is being attacked by them, you die. If you love someone and the Death Eaters try to kill you in your bedroom, survive (since you were not there).</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>You are Peter Pettigrew, the great traitor! For now, you are an animagus living clandestinely like a mouse,
+but once all the Death Eaters are dead, you will reveal one of them.
+If the Divination Professor or Firenze looks at you, you may or may not be identified by them as a Death Eater.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>You are a DEATH EATER! Fantastic! During the night you can choose a magician or witch to torture and kill, along with your clan, the Death Eaters.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You are the Professor of Divination, your role is to guide Hogwarts in the war against the Death Eaters.
+During the night, you can choose someone to see, and have their lifes revealed to you. Look with caution, because the Death Eaters are crazy to kill you!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >You are a simple Wizard, condemned to spend your days studying spells waiting to be killed by the Death Eaters. Once a day you can vote for someone to send to Azkaban, use your vote wisely.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are Severus Snape! You are your own team! If you can make them to send you to Azkaban you win automatically. Be selfish!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You are Draco Malfoy! Pick a magician to be your example of life. - if they die, or they are sent to Azkaban, hate will dominate you and you will join the Death Eaters.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are Ron Weasley , you will know who the (real) Professor of Divination is. (and not Argus Filch)- that is your only function. Use this to help your team, Hogwarts!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You are Firenze, the apprentice Divination and a fighter of Hogwarts. If the Professor of Divination dies, you will take the cristal ball and you will be the new Professor of Divination.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >You are one of the Dementors. During the night, you can choose someone to kiss till death and replace it with a Dementor. If all the remaining players at the end of the game are replaced by Dementors, they expire!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >The Dementors are at Hogwarts trying to inhale all happiness and spread fear and sadness, and you, Remus Lupin, must defend the school! During the night you can use the patronus spell to investigate a Wizard. If he / she is a Dementor, he / she dies. If the dementors attack you, the weaker Dementor will die.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>The night approaches and the Magicians at Hogwarts meet to decide who will go to Azkaban today ... Everyone now has {0} seconds to vote!</value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>Dawn at Hogwarts. You now have {0} seconds to make your accusations / defenses / discuss.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>Night fell. Everyone goes to sleep quite tired after a very stressful day. Night magicians, you have {0} seconds to use your actions!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value > The mages and witches voted, amid doubts and suspicions. {0} was sent to Azkaban {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Unable to reach a final decision on who to send to Azkaban, the restless magicians return to their bedrooms, frustrated ...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Something stinks, nobody voted! No one will be sent to Azkaban today ...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>Students and teachers meet in the morning, but no one can find {0} among them. They run to her bedroom and find skinned, with a wand in their throat. {0} was Hermione Granger!</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>The morning arrives and, to everyone's surprise, impaled on the top of the Astronomy tower was the body of {0}, Lilian J. Potter, lifeless.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>All leave their rooms and then find a wand split in the middle ... then legs ... then fingers ... and floating in the lake of Hogwarts, the body of {0}, killed by the Death Eaters. They have killed Sirius Black.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>Students and teachers wake up with the news of {0} dead on top of a shell table, tarot cards scattered on the floor and the crystal ball lying in a corner of the room. The Divination Professor is dead.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>Everyone awakes with a strong smell of burning wood ... Horace Slughorn's office is burning! After extinguishing the fire, the remains of {0} are found, toasted and emaciated ...</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>As the sun rises over Hogwarts, students find {0} lying on top of a used table, WITH A SNOW SPHERE AND POKEMON LETTERS ???? HAHAHAHAHA THAT FOOLISH. {0} was the Argus Filch</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>As everyone gets up to do their daily tasks, they feel a horrible smell. They follow the smell to find {0} quartered in the forest, killed by a terrible forbidden spell. AVADA KEDAVRA.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>The bedroom of {0} is quite cold ... Students and teachers then decide to enter there and feel a void, as if there was no more happiness in the world ... Making it clear that Remus Lupine conjured his Patronus, filling the place of light and sending the Dementor back to Azkaban!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Students and teachers join the main hall during the morning and breathe a sigh of relief - there seems to have been no attack last night.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>You were attacked by the Death Eaters. For being cursed, you have become a Death Eater!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your Death Eater partner (s) are: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} has been attacked ... but she was Dolores Umbridge and she became a Death Eater! Congratulations for your new partner!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Oh no! The Death Eaters threw you the forbidden spell AVADA KEDAVRA!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>Oh no! {0} was a drunk! Now you are drunk, and can't attack tomorrow night...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >You tried to protect a Death Eater! The Death Eater gave you an Avada Kedavra!</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value>You have saved {0}'s life!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value>{0} was not attacked, so you did not do anything very useful. This time.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>You went to protect {0}, but they were not in their bedroom!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>Lily J. Potter was taking care of you last night and scared the Death Eaters! What a bless!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value>Cho Chang chose a lousy day to rest and stay in the bedroom. {0} She was attacked by the Death Eaters!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>Strange ... {0} was not in the bedroom! There's no kill for you today ...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>You went in the bedroom of {0} to kiss a little and discover some truths, but discovered too late that he was a Death Eater. You are dead.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>{0} went to the wrong bedroom last night! With a bottle of Veritaserum in his pocket, {0} was found ruthlessly nailed to the door of the Main Hall ... how sad :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} went to sleep at the house of {1}, ready to have some fun and discover truths. However, she found a Death Eater killing {1}! The Death Eater quickly turns to {0} and ... {0} is dead too.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value>You perceive that {0} is not a Death Eater, since your kisses convinced him to drink the potion and reveal the truth!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>In the middle of the night a Witch enters her bedroom and gives you something to drink in exchange for a kiss. You were very sleepy to recognize, but your voice was so sweet that you could not refuse to answer some questions. So, after the kiss, the witch goes back to where it came from.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>You have noticed {0} snooping around! {0} is Hermione Granger, the detective!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Your research proved that {0} is {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>It seems that {0} did not like being visited by Cho Chang! Sirius Black went crazy and took revenge. {1} is dead.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Suddenly, a spell is triggered. The students looked to see {0} standing on the body of {1}, with the wand still pointed towards the head. {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>The Death Eater has won!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>The Death Eaters have won!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>The magicians won! All the Death Eaters died ...</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Oh no! You have sent Severus Snape to Azkaban! He has won the game.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining players, roles and faction:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} has voted to kiss the death and replace {1} with a dementor.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} was sent to kiss the death and replace {1} for a Dementor ... However, he was Remus Lupin, and had a great way to ward off the Dementors! He returned to Azkaban.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} went to your office last night, ready to kiss the death and replace you ... But you had a great way to protect yourself. One of the Dementors returned to Azkaban ... {1} remaining (s)!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>You received the kiss of the death of a Dementor and was replaced by one of them. During the night, you can try to kiss them to death and replace other magicians ...</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Dementors: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} He received the kiss of death and was replaced by a Dementor!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} was sent to kiss the death and replace {1} ... But no one was in the bedroom.</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >All the Magicians died and the only survivors are the Dementors ... The Dementors won!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>You went to investigate {0}, but when you got there you found only the feelings of sadness and loneliness!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>You invade the {0} room and feel an air of sadness and depression instead. You know very well what to do on these occasions: invoke the Patronus enchantment.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>You enter the bedroom of {0} but do not feel empty and unhappy. {0} is not part of the Dementors ... Still ...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>The amazing life example of {0} has just died. In rage, he has become a Death Eater!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} was killed! In a fit of rage, you become a Death Eater! Your new partners are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>a Magician 👱</value>
+  </string>
+  <string key="Drunk">
+    <value> Horace Slughorn 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Cho Chang💋</value>
+  </string>
+  <string key="Seer">
+    <value>The Professor of Divination  👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Peter Pettigrew🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Lily J. Potter 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Hermione Granger 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>a Death Eater🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Dolores Umbrige 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Sirius Black 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Severus Snape 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Argus Filch 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Draco Malfoy 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Ron Weasley 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Firenze 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>a Dementor 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Remus Lupin💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Ran away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Dead</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Alive</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Players Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Dumbledore's army 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a member of the Dumbledore Army, a secret society of Magicians who came together to help Hogwarts against Death Eater attacks. If there are others from the Army, you will know his name. Otherwise, you will be a simple magician.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>As everyone gets up during the morning, {0} 's body is near the Room of Requirements, with his wand on his chest, broken in the middle and a notebook with some spells. One of the members of the Army has died.</value>
+  </string>
+  <string key="MasonTeam">
+    <value> Dumbledore's Army is formed by: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>The most recent member of the Dementors runs to the room of {0} to give the kiss of the death and to replace them by a Dementor, but it finds instead disorder, a lot of blood and pieces ... The objective has been assassinated!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>The Death Eaters go to the quarter of {0}, for the attack, but there they are with a high creature, elevated and surrounded by light, armed with a sword and a wand. Lily Potter comes out in defense of the target and, after a fight full of light effects, they return to their bedrooms defeated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>{0} has been sent to give the coup de grace and replace {1} for a Dementor, but their Patronus was too strong. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>{1} a wizard / witch with the name {0} has already joined the battle. Please change your name to enter Hogwarts.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>You went to the bedroom of {0} to kiss a little, but when you arrived you felt a feeling of emptiness, as if your soul left your body. On the return to the Room of Requirements you decide to eat a chocolate toad ...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>As they all get up and leave their rooms during the morning, they sense the absence of {0} ... When they check their bedroom, they find their body lifeless.</value>
+    <value>As the villagers gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>How strange ... {0} did not appear in the Room of Requirement this morning...</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>You try to escape, but you should know that this is not possible at Hogwarts. With the Death Eaters here, the exits are closed so NO ONE can run! Good luck with that!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>is dead</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is not a school year at Hogwarts at the moment. Start a new game with /startgame or start a chaos game with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a Director can use this command.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>ID of the student or teacher was not found. Make sure you have sent the command as an answer.</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is already a Director!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is not a Director!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} removed from Directors list.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>The Divination Professor is not in Hogwarts!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You are Luna Lovegood. Sent to Hogwarts with your spectrespecs glasses and the love potion of Amortentia. The first day you can chose two magicians to be loved for the entire school year. If one of them die, the other will die of sorrow. After joining two pigeons, you can go back to following your life as a simple Wizard.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are Nymphadora Tonks. A metamorphmagus, capable of modifying its own appearance without the use of spells or potions. Choose a magician and when he dies you assume the role of him at Hogwarts.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are Harry Potter! Your wand is your lover and you are with her all the time, you even sleeps with her. If you die, you can choose a magician to kill. And if the Death Eaters visit you at night, you are not someone who would accept to die without a fight, but in the darkness, you can not choose who to kill.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are Gellert Grindelwald. You are alone and the other magicians are nothing but your toys. Each night you can choose a player to launch an Avada Kedavra and add to your body collection.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Love is in the air!! You were bewitched The face of {0} does not leave your head. Your goal now is the survival of the two. If one of you is killed or sent to Azkaban, the other will accompany you, so that you can be together.</value>
+    <value>Cupid's arrow has struck you! You are madly in love with {0}! If they die, you will die too. If one of you two wins, you will both win.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Hogwarts decided to send you to Azkaban! It's your last chance to use your beloved wand!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} tries to reach his wand while he is judged, but his fingers are tired and before reaching it, he is sent to Azkabán ...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} pulls out his wand, and points to the crowd ... His shooter's eyes try to decide who he will take with him. But he accepts his end, alone ...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Upon arrival in Azkaban, {0} pulls out his wand and, Quick as a cobra, casts a spell on {1}! EXPELIARMUS...; says Harry Potter to {1}, he / she {2}, who falls lifeless on the ground.</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You were mortally wounded! With your last breath, you can take a magician with you ... Choose fast!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>{0} received a deep wound, so much that he could not even get his wand out, falling dead on the floor ...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0}, as if the blood coming out of his belly was nothing, he decides not to give his last spell, accepting his destiny ...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>{0} falls to the ground, mortally wounded ... But before dying, he pulls out his wand and gives it a precise spell on {1}, falling hard on the ground, with a mark on his forehead. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>AAAAH! AAAH! Hogwarts hears sounds of agony at night! The Death Eaters attacked the wrong person, Harry Potter did not leave alone, he took a Death Eater {0}, next to him.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>The Death Eater tried to attack the wrong person last night! Harry Potter knows how to protect himself very well and left a small gift to Hogwarts, the body of {0}!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The Death Eaters tried to attack the wrong person last night! {0} is without his clothes hanging on the wall, You can almost feel sorry for that Death Eater! Gellert Grindelwald won a new body for his collection.</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>It seems like a normal night, but where is {0}? Students gather in {0} 's room, and find their bodies in the bathtub full of blood with their bodies floating ... Gellert Grindelwald has had fun tonight ... {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You went to have a little fun with {0}. But getting there, Lily J. Potter ended your fun! No jokes that night ...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The Dementors command {0} to kiss till death and replace {1} with a Dementor. Arriving there {0} you are greeted with an Avada Kedavra well in the chest! {0} is dead...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value></value>
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You tried to protect the wrong magician. Gellert Grindelwald invites you to be the guinea pig of a terrible experiment. The kind of experiment that you die in the end ...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>You visited the bedroom of {0} to have a little fun. But that night only {0} is going to have fun with you, while he was throwing a Crucio on his body. You died, but if it's any consolation, you seemed to have a lot of fun tonight ...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>{0} visited the wrong bedroom, what was to be a night of kisses and fun turned into a terrifying night, Gellert Grindelwald had a lot of fun tonight.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>{0}, Nymphadora Tonks, now he has become a member of Dumbledore's Army, just like you!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>{0}, Nymphadora Tonks was replaced by a Dementor.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} dead, accepting your fate, you joined the dementors. Your new partners (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Nymphadora Tonks {0} became a Death Eater, one more for the clan!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a Death Eater! Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>The only survivor was Gellert Grindelwald! He has had a lot of fun with this joke, because there is no better fun to overcome, especially when that means killing all of you!</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to kill tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>{0} gives his last breath, looking into the back of his beloved's eyes, {1} who holds his body on his knees. {1} can not stand the pain, and with a wand throws an Avada Kedavra to himself... They will be together even in the world of the dead. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Who do you want to become if they die?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who do you want the lovers to be? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who do you want the lovers to be? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>Harry Potter🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Luna Lovegood🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Gellert Grindelwald🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Nymphadora Tonks🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You have become the Draco Malfoy. Your awesome life example is: {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>True love endures! That's what you wanted, right? Love always win!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>When they wake up, they find {0} dead in the middle of the Great Hall, totally emaciated due to the Sectumsempra. It seems that someone visited Harry Potter and it went wrong! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>In the middle of the night you feel a sadness, a void, as if your happiness was unburdening. You use your patronus, and you are protected.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Your application for the Hogwarts school was sent. We will let you know when a new school year begins!</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new year at Hogwarts is starting in {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>The morning arrives at Hogwarts and only two magicians stayed at the school. {0} looks at {1}, a sinister smile on his face, he removes his wand and throws a Crucio, playing with {1}, until he decides to use the third unforgivable curse on {1}, which is now dead.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Everyone at Hogwarts died ... No one won that Battle ... Unless, perhaps, the vultures.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>The sun rises on the horizon, {0} and {1} are the only survivors. {0} approaches smiling at {1}, and invites him to a joke. {1} Fast as thunder pulls out his wand and casts a deadly spell on {0}. {0}, with his last breath, use an Avada Kedavra in {1}. They both died, the day is over and there was no winner to tell the story ...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to make a choice, so the moderator has chosen your awesome life example for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>The magician {0} has been killed for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>You are a simple magician, condemned to spend his days studying / teaching at Hogwarts waiting to be killed by the Death Eaters, his enemies. Once a day you can vote for someone to send to Azkaban, use your vote wisely.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Professor of Divination, the Clairvoyant, your role is to guide Hogwarts in the crusade against the Death Eaters. During the night, you can choose someone to see, and have their lives revealed to you. Use your power with caution, because the Death Eaters are crazy to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>YOU ARE A DEATH EATER!! Great! During the night you can choose a magician to torture and kill, along with your clan, the Death Eaters.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>You slut...You are Cho Chang, one of the most courted witches of Hogwarts. During the night, you can choose someone to enchant with the Viritaserum potion and discover if the magician is a Death Eater or not.
+However, if you try to charm a Death Eater, or someone who is being attacked by them, you die. If you love someone and the Death Eaters try to kill you in your bedroom, survive (since you were not there).</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! Congratulations, you're Horace Slughorn! You put potions in the wrong bottles and ended up drinking them.
+If the Death Eaters attack you, they will feel the effects of your potions and they will not be able to attack anyone the next night.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>You are Dolores Umbrige, you have been cursed. For now you are a simple teacher of Hogwarts,
+but if you are tortured by the Death Eaters, you will receive the dark mark and become a Death Eater.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are Peter Pettigrew, the great traitor! For now, you are an animagus living clandestinely like a mouse,
+but once all the Death Eaters are dead, you will reveal one of them.
+If the Divination Professor or Firenze looks at you, you may or may not be identified by them as a Death Eater.</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are Lily J. Potter, and your role is to protect Hogwarts. During the night, you can choose a magician to protect, even if it means losing your life.
+However, if you protect a Death Eater, you may have a fate worse than death.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You are Hermione Granger, and fight for Hogwarts. During the day, you can choose a Wizard to follow him and discover what they are.
+However, by doing this, you can be discovered by the Death Eaters! (40%)</value>
+  </string>
+  <string key="AboutGunner">
+    <value>You are Sirius Black. You have 2 spells to help Hogwarts.
+During the day, you can throw a Sectumsempra to someone. Everyone will hear the cries of agony from the victim and they will know you are Sirius Black.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>You are Severus Snape, your team is you! If you go to Azkaban, you win automatically, alone. Be selfish!</value>
+  </string>
+  <string key="AboutFool">
+    <value>Argus Filch says he is a magician ... When he casts a spell, nothing happens.</value>
+  </string>
+  <string key="AboutCult">
+    <value>You are one of the Dementors. During the night, you can choose someone to kiss the death and replace it with a Dementor. If all the remaining players at the end of the game are replaced by Dementors, they expire!</value>
+  </string>
+  <string key="AboutCH">
+    <value>The Dementors are at Hogwarts trying to inhale all happiness and spread fear and sadness, and you, Remus Lupine, must defend the school! During the night you can use the patronus spell to investigate a Wizard. If he (it) is a Dementor, he / she dies. If the dementors attack you, the weaker Dementor will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>You are Draco Malfoy! Choose someone to be your awesome life example - if he / she dies or is sent to Azkaban, hatred will dominate you and you will join the Death Eaters.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>You are Firenze, the Apprentice of Divination, and fight for Hogwarts. If the divination teacher dies, he will take his place as Professor.</value>
+  </string>
+  <string key="AboutBH">
+    <value>You are Ron Weasley, you will know who is the true Professor of Divination (and not the Argus Filch). Use this to help your team, Hogwarts!</value>
+  </string>
+  <string key="AboutMason">
+    <value>You are a member of the Dumbledore Army, a secret society of Magicians who came together to help Hogwarts against Death Eater attacks. If there are others from the Army, you will know his name. Otherwise, you will be a simple magician.</value>
+  </string>
+  <string key="AboutDG">
+    <value>You are Nymphadora Tonks, a , capable of modifying your own appearance without the use of spells or potions. Choose a magician and when he dies you assume the role of him at Hogwarts.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if at least one of the lovers was on the winning team, they both win together.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>You are the Mayor. Your vote during the lynching will count twice, once you have revealed yourself. You are on the village team.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are secretly the Prince, escaping from your boring, pampered life by spending the day with these peasants. If they try to lynch you, they realize their error, and no one will be lynched.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are the Clumsy Guy: You’ll try to vote, but there is a 50% chance you’ll vote for someone else other than you intended instead. You’re still on the village team though.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are the Sorcerer, allying yourself with creatures of the night rather than villagers. At night you will use your power to find the wolves or the Seer. You win only if the wolves win. Enjoy helping snuff out those miserable villagers.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are the Blacksmith: the metalworker of the village. You have a small amount of silver, enough to prevent the wolves from attacking for one night. During the day, you can choose to powder it and spread it around the village. Other than that, you are just a villager.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are the Alpha Wolf; the source of the scourge. Your bite is the cause of the curse that turns humans into werewolves. Each night, you will choose a human to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into a werewolf.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the Wolf Cub; adored by your wolf pack. Like other wolves, you will choose a villager to attack and kill every night. If you happen to be killed, your wolf pack will fly into a rage and attack two people the next night. You’ll still be dead though.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the village begins to lynch {0}, they say “Wait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil.” Feeling foolish, the villagers sheepishly retire for the night.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to look at {0}, but can't quite make out what they are.  They are not a wolf or seer however...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} steps forward and presents the official seal of the Mayor, declaring themselves as such. From now on, {0}'s votes for lynching will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as the Mayor.</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to spread the silver today, disabling the wolves tonight?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>As the rest of the village debates over the events, they suddenly notice {0} wandering around spreading silver across the grounds. For now, at least, the village will be safe from wolf attacks. (Wolves are disabled tonight.)</value>
+  </string>
+  <string key="Mayor">
+    <value>the Mayor 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>the Prince 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>the Sorcerer 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>the Clumsy Guy 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>the Blacksmith ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>the Alpha Wolf ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>the Wolf Cub 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the wolves attack {0}, {1} stops everyone, being the Alpha Wolf. {1} tells the pack that {0} should join the pack instead of dying, so the pack leaves them to their infection.  They will become a werewolf tomorrow night.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>You were attacked by the wolves, but the Alpha Wolf chose you. Instead of being killed, you have been infected... and will become a wolf tomorrow night!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>As night falls, you feel a strange tingling, and your body aches as it begins to transform... You are now a werewolf!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The prince is a key role in the Village Team's strategy. Once the prince gets lynched, their role as Prince is revealed, and they survive. However, this can only happen once: if the village insists on lynching them, they will die.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old seer? Well now, it has its Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfast. You can't see a damn thing. Can you even vote for the person you want to? (You have a 50% chance to vote for someone random.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>
+      You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>
+      You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, I'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into an Alpha wolf. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a Wolf Cub. Your teammates (if any) are: {1}</value>
+  </string>
+
+  <string key="VillageTeam" deprecated="true">
+    <value>Village Team</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Neutral Team</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Cult Team</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Tanner Team</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>Village Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Wolf Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Cult Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Tanner Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The cult sends {0} to try to convert {1}, but instead {0}'s Head comes flying out of the Window... Wonder why they thought it was inedible! {0} is dead...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} slips into {1}'s house, ready for a night of passion, only to find a mysterious stranger surgically removing {1}'s innards! The serial killer decides to satisfy {0} before adding a slutty heart to their collection!</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>The villagers awake to find {0} hunched over a second-hand Ouija board while practising fortune-telling, with head missing. The Apprentice Seer is dead.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Seems like {0}, the resident blacksmith, must have been extremely unlucky. Five knives, fresh from {0}'s armory, were found plunged into his hands, feet and head, and pinned to the craftsman's table last night. Maybe the serial killer was hoping to expand his weapon collection alongside his organ one...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} was found stabbed to death with a candlestick by their altar. The serial killer has struck again, regardless of race, language or religion! {0} was a Cultist.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The next morning, the villagers were heartbroken to find {0} a.k.a. Cupid split from head to toe. Strangely the heart was missing...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>The villagers had hoped to meet {0} to compliment his Martell, but all they found in {0}'s home was a broken knife and liver. All those years of drinking led to a liver so hard that even the Serial Killer probably does not fancy it...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally have managed to fight off the serial killer, but it was an irony that the Guardian Angel's halo has extinguished. {0} is dead.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was caught napping last night! A gunshot was heard last night, but all there was was the remains of a gunner, with a bullet hole to the head and a stab to the torso. Clearly the serial killer has won.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Assassination! {0} the mayor was found pinned with a knife on the table while working overnight at the mayor office! Clearly it's the serial killer exacting revenge for the asylum robbing him of years of his life!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Bells ring across the village before the sunrise, as armed guards flood the streets investigating the disappearance of Prince {0}. No clues were discovered, but it is suspected that there is a Serial Killer on the loose...</value>
+    <value>{0}'s guards were caught napping last night. The royal remains of {0} were found, hung in various parts of the palace, having fallen prey to the knife. No amount of princely blood would deter a serial killer's blade.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The villagers wake up to a rotting corpse of {0}, split from head to toe, stabs all over. Strangely the brain was carefully extricated, as if it was a premonition that the village has lost their top brains. {0} was the Seer.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>The sound of mournful howls can be heard across the village. A mistake has been made. The wolves have killed one of their own. The Sorcerer {0} is dead.</value>
+    <value>Cries of "I'm your ally!" were heard last night. All the villagers found next morning were an exhumed body and smashed mystical ball, belonging to {0}, the sorcerer. Hunger trumps comradeship...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! The wolves were heard last night, eating up a tender Wild Child, {0}, leaving behind only a reduced-size skeleton! The village wondered if the wolves felt any guilt tearing apart the defenceless child.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>The villagers wake up in the morning, only to find the severed body parts of {0}, the Cultist Hunter, in a cart placed in full view outside the town hall. Lesson learnt: don't visit the serial killer!</value>
+    <value>The body of {0}, the Cultist Hunter, was found in the middle of town, albeit cut precisely into a hundred pieces. Checking if the Serial Killer was a cultist does not seem to be a good idea...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>While it seemed that the wolves decided to stay good for once, punishing {0}, a cultist that decided to court trouble with the wolves, proved too difficult to resist. {0}'s head was converted to a fine supper, delivered to the wolves' doorsteps!</value>
+    <value>The cult ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining the new religious movement.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a cultist, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value>
+    <value>Last night, the cult tried to convert the one person in the village crazier than they are. Their newest member tried to convert the Serial Killer, and the Serial Killer made a new piece of art in the town square of {0}'s internal organs.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>It was supposed to be a night where {0} would save the village from the killers, but {0}'s halo was extinguished and wings sliced by the serial killer! Left was a note, "I could protect myself better than you can."</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0} tried to guard a wolf last night. The town woke up to find only the wings of {0} hung on the church cross. Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>
+      Knowing only {0} was left, {1} tries to eat {0} up, but {0}'s military training and paranoia proves too much to handle! All there is left is a carcass with two shots to the torso and the last man standing: the victorious hunter for the village!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the hunter, adorned with parallel slashes to the face.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} walk out in daylight. Seeing a shimmering cross worn around {0}'s neck, the righteous {1} draws their sword for the final time, putting an end to the twisted learnings of the cult that have contaminated the village.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time decreased by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was a drunk! Now you are drunk, and can't attack {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}joined the game in the last 30 seconds.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>As the sun starts to shine on the village, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the village. Looking at the sight of the corpses strewn all across the village, {0} sighs. Their lifelong dream of being chosen to be lynched by the villagers is as dead as the villagers are. They reach out and touch the rope, that had taken many lives, tenderly, before slipping it around their neck and letting themselves hang freely, with a sad smile on their face.</value>
+    <value>{0} wakes up at dawn, alone. {0} sees how abject a failure they has been, not being able to get the village to satisfy their masochistic desires of being lynched to death. {0} grabs a rope and hangs himself, realising no one can accomplish their dream, since there is no one left.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} opens their eyes, but instead of hearing the usual bustle of the village, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The wolves were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the village. A tear slips from their eye, as {0} recalls how close they and their wolves were to victory. Alas, it was time to start a new life, with a new pack. {0} slips into the darkness of the forest, away from the quiet village.</value>
+    <value>For all of {0}'s efforts, {0}'s wolf friends lay motionless and lifeless. Even if the wolves have been brought victory, there is no one to savour the success with, neither are there any living villagers to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new wolves, new allies, and new treachery to commit new crimes against humanity.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into the Lycan. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>You see that {0} is NOT {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Would you like to put all players to sleep tonight?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>As the town talks, {0} goes back to their house and begins humming a soft melody.  Tonight, everyone will sleep very deeply, and no one will be able to use their night actions</value>
+  </string>
+  <string key="SandmanNight">
+    <value>As everyone heads home, they barely make it to their beds from exhaustion.  They all fall asleep so strongly, they don't even remember going to sleep...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+  <string key="WolfMan">
+    <value>the WolfMan 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>You are the lycan!  You are a wolf, but the seer will be confused and see you as a villager :)</value>
+  </string>
+  <string key="Lycan">
+    <value>the Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The lycan is a wolf, but will appear to be a villager to the seer</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>You are the Oracle.  Each night you can choose to look at someone, but you will only be able to see what they are NOT.  You will be given a role of someone else in the game that is still alive, so pay attention to what role is said, that means one is still alive :)</value>
+  </string>
+  <string key="Oracle">
+    <value>the Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>You are the sandman.  Once per game, you can use your magic to put everyone into such a deep sleep, they won't be able to use their role at night.</value>
+  </string>
+  <string key="Sandman">
+    <value>the Sandman 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
+</strings>

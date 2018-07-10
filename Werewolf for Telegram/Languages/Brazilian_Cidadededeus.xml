@@ -5,12 +5,12 @@
     <value>Parece que tu não é morador da Cidade de Deus...</value>
   </string>
   <string key="PlayerStartedGame">
-    <value>{0} começou um jogo novo! Dá /join aí pra pegar a van pra Cidade de Deus!</value>
+    <value>{0} começou um jogo novo! Clica aí no botão pra pegar a van pra Cidade de Deus!</value>
     <value>Ih, vai ter baile na casa de {0}! Clica nesse botão ou manda /join pra entrar na van</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>{0} começou um tiroteio! Clica em /join pra tu participar</value>
-    <value>{0} botou a pipa no ar! Se adianta no /join logo antes que o caos comece!</value>
+    <value>{0} começou um tiroteio! Clica no botão pra tu participar</value>
+    <value>{0} botou a pipa no ar! Se adianta e nao esquece de apertar o botão logo antes que o caos comece!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>Melhor não subir agora, tá tenso o negócio...</value>
@@ -464,7 +464,7 @@
     <value>Your group is currently in the queue.  Position: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
   </string>
   <string key="MaxGames">
     <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
@@ -1138,10 +1138,10 @@
     <value>Com a CDD quase vazia, {1} anda pelas ruas. Ele vê num beco {0}, o último moleque da Caixa Baixa. {1} enche {0} de tapa na cara, pega a arma dele e descarrega nos cornos do moleque. Esse aí foi pro sal.</value>
   </string>
   <string key="SecondsAdded">
-    <value>Tem mais gente pra entrar na van ainda! A chefia mandou marcar um 10. O piloto vai esperar mais {0} segundos.\n{1} sobrando pra dar /join</value>
+    <value>Tem mais gente pra entrar na van ainda! A chefia mandou marcar um 10. O piloto vai esperar mais {0} segundos.\n{1} sobrando pra clicar no botão</value>
   </string>
   <string key="SecondsRemoved">
-    <value>O piloto nao quer saber de papo. O tiroteio vai começar e ele nao vai esperar nem {0} segundos.\n{1} sobrando pra juntar no /join</value>
+    <value>O piloto nao quer saber de papo. O tiroteio vai começar e ele nao vai esperar nem {0} segundos.\n{1} sobrando pra juntar no baile e clicar no botão!</value>
   </string>
   <string key="CantExtend">
     <value>Tu tá de sacanagem? Volta pro seu canto na van senão vamo te apresentar o micro-ondas.\nSó os Alemão pode segurar a van mais de uma vez.</value>
@@ -1163,5 +1163,86 @@
   </string>
   <string key="JoinButton">
     <value> Clica aqui pra entrar no baile.</value>
+  </string>
+  <string key="NotMember">
+    <value>Você não pode entrar no jogo, pois não está no grupo {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Por favor, use o botão para entrar na partida ao invés do comando join.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} moradores votaram, {1} total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Ativar votos secretos durante o enforcamento?\nAtual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Votos secretos definidos como: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, lembre que você também deve entrar no baile pelo botão.</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Não foi possível encontrar o grupo. Execute esse comando no grupo do qual deseja sair da lista de espera, ou adicione o link, id ou username do grupo na frente do comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Você saiu da lista de espera do grupo {0}.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Os muleque da Caixa Branca são: {0}</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Os traficante é: {0}</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Erro: Não consigo encontrar um morador com esse nome.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Você não pode fugir, pois já morreu.</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Você precisa entrar em um jogo a partir de um grupo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Jogos devem ser começados dentro de um grupo!</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permitir Fugas</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Ativar Modo Secreto</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permitir Extensões</value>
+  </string>
+  <string key="RandomMode">
+    <value>Modo Aleatório</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Ativar Votos Secretos</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permitir Caôzero</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permitir o Secretário de Segurança do Rio de Janeiro </value>
+  </string>
+  <string key="AllowCult">
+    <value>Permitir Caixa Branca</value>
+  </string>
+  <string key="HaveJoined">
+    <value>Mais gente se juntou ao baile nesses últimos 30 segundos! Deem as boas vindas a{0}</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostrar IDs</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrar as IDs numéricas de quem se junta à partida?\nAtual: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0}ei IDs de quem se junta à partida.</value>
+  </string>
+  <string key="All">
+    <value>Todas</value>
   </string>
 </strings>

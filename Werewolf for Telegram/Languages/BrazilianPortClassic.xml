@@ -7,10 +7,13 @@
 		Team leaders: @ayylimao, @Borjoize
 	   
 	   Currently being translated by / Atualmente sendo traduzido por: Guto Cristino
-	   última edição: 22/05/2017
+	   última edição: 25/04/2018
 -->
 <strings>
   <language name="Português (Brasil Clássico)" base="Português" variant="Brasil Clássico" code="pt-BR" isDefault="true"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Você não parece estar em nenhum jogo neste momento...</value>
+  </string>
   <string key="PlayerStartedGame" isgif="true">
     <value>{0} iniciou uma nova partida! Aperte o botão para entrar na brincadeira... e provavelmente ser morto :P</value>
     <value>Uma nova partida foi iniciada por {0}! Clique no botão para ser devorado(a)!</value>
@@ -19,8 +22,14 @@
     <value>{0} deu a loka e começou um jogo caótico. Aperte o botão para começar a diversão... e provavelmente morrer :P</value>
     <value>Um novo jogo caótico foi iniciado por {0}! Use o botão para entrar nessa loucura!</value>
   </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Você não pode entrar agora! A partida já começou.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Você já se juntou à partida!</value>
+  </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minuto restando para apertar o botão!</value>
+    <value>1 minuto restante para apertar o botão!</value>
   </string>
   <string key="SecondsLeftToJoin">
     <value>{0} segundos restando para apertar o botão!</value>
@@ -30,6 +39,10 @@
   </string>
   <string key="StartingGameWait">
     <value>A partida está iniciando, por favor aguarde enquanto eu distribuo os papéis e atualizo o banco de dados.</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} foi banido(a) por tentar trapacear (nomes de jogadores não podem começar com barrinhas)</value>
   </string>
   <string key="ChangeNameToJoin">
     <value>{0}, por favor mude seu nome para entrar na partida</value>
@@ -41,7 +54,10 @@
     <value>{0} se juntou à partida. {1} jogadores, {2} mínimo, {3} máximo</value>
   </string>
   <string key="PMTheBot">
-    <value>\n{0} por favor, me envie uma mensagem no privado ({1}) e clique start, pois você ainda não está registrado.  Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
+    <value>\n{0} por favor, clique no botão "Começar" ou me envie uma mensagem no privado ({1}) e clique start, pois você ainda não está registrado.  Para que eu possa te enviar mensagens privadas, você deve me enviar uma mensagem primeiro.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>MORTO NÃO FOGE!!! Deita aí no chão e sossega... que coisa!</value>
   </string>
   <string key="Flee">
     <value>{0} fugiu aterrorizado(a)!</value>
@@ -50,10 +66,19 @@
     <value>{0} era {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>{0} jogadores restantes.</value>
+    <value>Restam {0} jogadores.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Não te perguntei nada ainda!</value>
   </string>
   <string key="NotPlaying">
     <value>Você não parece estar jogando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Não consigo encontrar um jogador com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Resposta inválida!</value>
   </string>
   <string key="WolfVotedKill">
     <value>{0} votou para devorar {1}</value>
@@ -439,6 +464,31 @@
     <value>Está morta!</value>
   </string>
     <!-- MORE STRINGS May 16, 2016 -->
+	<string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} foi adicionado(a) à lista de administradores. Use /config para mudar as configurações do grupo.</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Seu grupo conseguiu iniciar múltiplos jogos...</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Seu grupo agora está na fila.  Posição: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Desculpe, estou prestes a iniciar uma parada para manutenção, e você não pode começar um jogo agora.\nEsperando {0} jogos terminarem...\nAcesse @greywolfdev para mais informações</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Desculpe, o número máximo de jogos simultâneos foi atingido ({0}).  \nPosição na fila: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} é um grupo VIP, e cortou a fila!</value>
+  </string>
   <string key="AlreadyInGame">
     <value>Você já está em uma partida! ({0})</value>
   </string>
@@ -447,6 +497,31 @@
   </string>
   <string key="GroupAdminOnly">
     <value>Somente um administrador(a) pode usar este comando.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>Depois desta partida, estarei fechando pra balanço.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>Depois desta partida, desligarei temporariamente para uma atualização automática.</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>O ID do usuário não existe.  Tem certeza de que é essa a sua resposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} já é administrador!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} não é administrador!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} removido(a) da lista de administradores.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>O idioma {0} foi definido.</value>
   </string>
     <string key="NoSeer">
 	<value>Não tem vidente!</value>
@@ -468,7 +543,7 @@
     <value>Você é o Serial Killer. Seu time é você mesmo e os outros jogadores não são mais que seus brinquedinhos. Toda noite você pode escolher um jogador para matar e adicionar para sua coleção de corpos.</value>
   </string>
   <string key="CupidChosen">
-    <value>Você foi atingido(a) pela flecha do amor. A memória de {0} nunca deixará seu coração. Se um de vocês morrer, o outro irá até o mundo dos mortos para que ambos continuem juntos. No fim, se o time de um de vocês vencer, ambos vencem.</value>
+    <value>Você foi atingido(a) pela flecha do amor. A memória de {0} nunca deixará seu coração. Se um de vocês morrer, o outro irá até o mundo dos mortos para que ambos continuem juntos. Se o time de um de vocês vencer, ambos vencem. Mas, se ambos forem os únicos vivos no final da partida, o casal sai vitorioso e todos os demais jogadores são derrotados.</value>
   </string>
   <string key="HunterLynchedChoice">
     <value>A aldeia resolveu linchar você! É a sua última chance de usar seu querido três oitão!</value>
@@ -522,7 +597,7 @@
     <value>Você dormiu na casa de {0} para se divertir um pouco. Mas essa noite só {0} vai se divertir, com você, enquanto ele esfaqueia seu corpo. Você morreu, mas se te serve de consolo, ele pareceu se divertir muito essa noite...</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>Parece que o Serial Killer não queria ter uma noite de sacanagens! O corpo de {0} foi encontrado na porta de sua casa, com as mãos e os pés amarrados... pelo visto, o SK foi o único que se divertiu.</value>
+    <value>Parece que o Serial Killer não queria ter uma noite de sacanagem! O corpo de {0} foi encontrado na porta de sua casa, com as mãos e os pés amarrados... pelo visto, o SK foi o único que se divertiu.</value>
   </string>
   <string key="DGToMason">
     <value>A Doppelgänger {0} agora se tornou um Maçom, assim como você!</value>
@@ -675,17 +750,22 @@
   <string key="AboutDG">
     <value>
      Você é uma Doppelgänger. A Lenda diz que seus ancestrais eram metamorfos, e podiam assumir qualquer forma que quisessem! Escolha um jogador, quando ele morrer você assumirá o papel dele no jogo.
+	 ATENÇÃO: Se o jogador tiver sido convertido para a seita, você ainda receberá o papel original dele. Todas as outras regras comuns se aplicam: se ele era a Criança Rebelde e seu modelo já havia morrido, você se tornará um lobo. Caso contrário, você herdará o mesmo exemplo que ele havia escolhido.
+      A seita não pode converter a Doppelgänger (mas isso poderá acontecer após a Doppelgänger se transformar em outro personagem). Além disso, a Doppelgänger jamais vencerá se não tiver se transformado. Se, no fim da partida, a Doppelgänger ainda estiver em sua forma original, ela perde (exceção: se a Doppelgänger for flechada pelo cupido e o time do seu amor vencer).
     </value>
   </string>
   <string key="AboutCupid">
     <value>
       Você é o Cupido. Enviado à Aldeia de fraldão, com um arco e duas flechas, você pode escolher dois jogadores que irão se amar para toda eternidade. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois amantes, você pode voltar ao seu papel como Aldeão.
-    </value>
+    ATENÇÃO: Os amantes não serão informados sobre os personagens um do outro. Se os amantes forem os dois únicos vivos no fim, eles vencem, independentemente de seus papéis. Se os amantes estiverem em times diferentes (exemplo: lobos e aldeia, e um dos times vence (como o dos lobos), o amante (aldeão) vence junto. Ou seja, se pelo menos um dos amantes estiver no time vencedor, ambos vencem juntos.
+	</value>
   </string>
   <string key="AboutHunter">
     <value>
       Você é o Caçador(a)! Seu revolver é o seu amante e você está com ele o tempo todo, até dorme com ele! Se você morrer, pode escolher alguém para matar. E se os Lobos te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.
-    </value>
+      ATENÇÃO: em ataques de lobos, a chance de um lobo morrer começa em 30%. Se houver apenas um lobo, o Caçador tem 30% de chance de matá-o e sobreviver. Para cada lobo adicional, adicione 20% (2 lobos = 50%, 3 = 70%, etc). Entretanto, se houver mais de um lobo, apesar de você matar um deles, você ainda será devorado pelos demais.
+      Se a seita tentar te converter, ela tem 50% de chance de fracassar. E, se isso acontecer, você tem 50% de chance de matar um de seus membros!
+	</value>
   </string>
   <string key="AboutSK">
     <value>Você é o Serial Killer. Seu time é você mesmo e os outros jogadores não são mais que seus brinquedinhos. Toda noite você pode escolher um jogador para matar e adicionar para sua coleção de corpos.</value>
@@ -710,10 +790,9 @@
   <string key="SentPrivate">
     <value>Eu te enviei uma mensagem no privado</value>
   </string>
-  
   <string key="WhatToDo">
     <value>O que você quer fazer?</value>
-  </string>
+  </string>	
   <string key="PingInfo">
     <value>Tempo de processamento da mensagem: {0}\\nMensagens por segundo: {1}</value>
   </string>
@@ -868,6 +947,12 @@
   <string key="AllowCultA">
     <value>Existência da Seita definida como: {0}</value>
   </string>
+  <string key="EnableSecretLynchQ">
+    <value>Permitir voto secreto para linchar?:/nAtual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Permissão de voto secreto definida como: {0}</value>
+  </string>
   <string key="ThankYou">
     <value>Obrigado e tenha um bom jogo!</value>
   </string>
@@ -910,7 +995,7 @@
     <value>Seu sem noção, você é o Desajeitado: Você vai tentar votar, mas há uma chance de 50% de votar em outra pessoa em vez daquele em quem você pretendia. Mesmo assim, você está no time da aldeia .</value>
   </string>
   <string key="RoleInfoSorcerer">
-    <value>Não é feitiçaria, é tecnologia! Você é a Feiticeira, e se junta às criaturas da noite, ao invés dos aldeões. À noite, você usará seu poder para encontrar os lobos ou a Vidente. Você ganha somente se os lobos ganharem. Desfrute de ajudar a exterminar esses miseráveis ​​aldeões. </value>
+    <value>Você é a Feiticeira, e se junta às criaturas da noite, ao invés dos aldeões. À noite, você usará seu poder para encontrar os lobos ou a Vidente. Você ganha somente se os lobos ganharem. Desfrute de ajudar a exterminar esses miseráveis ​​aldeões. </value>
   </string>
   <string key="RoleInfoBlacksmith">
     <value>Você é o Ferreiro: o metalúrgico da aldeia. Você tem uma pequena quantidade de prata, o suficiente para impedir os lobos de atacar por uma noite. Durante o dia, você poderá fazer pó da prata e espalhá-lo ao redor da aldeia. Fora isso, você é apenas um aldeão. </value>
@@ -1132,12 +1217,6 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
   <string key="PlayerVoteCounts">
 	<value>{0} jogadores votaram, {1} total.</value>
   </string>
-  <string key="EnableSecretLynchQ">
-	<value>Ativar o Linchamento Secreto?\nAtual: {0}</value>
-  </string>
-  <string key="EnableSecretLynchA">
-	<value>Linchamento secreto definido como: {0}</value>
-  </string>
   <string key="NoAutoJoin">
 	<value>{0}, lembre que você também deve entrar no jogo pelo botão.</value>
   </string>
@@ -1147,14 +1226,15 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
   <string key="DeletedFromWaitList">
 	<value>Você saiu da lista de espera do grupo {0}.</value>
   </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>Quem se juntou à partida nos últimos 30 segundos: {0}.</value>
+  </string>
   <string key="CultTeam">
 	<value>Seus companheiros são: {0}</value>
   </string>
   <string key="WolfTeam">
 	<value>Sua alcateia é: {0}</value>
-  </string>
-  <string key="NoPlayerName">
-	<value>Erro: Não consigo encontrar um jogador com esse nome.</value>
   </string>
   <string key="DeadFlee">
 	<value>Você não pode fugir, pois já morreu.</value>
@@ -1165,9 +1245,194 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
   <string key="StartFromGroup">
 	<value>Você precisa estar dentro de um grupo para começar um jogo!</value>
 	</string>
-  <string key="HaveJoined">
-    <!-- {0} = list of people who have joined -->
-    <value>Quem se juntou à partida nos últimos 30 segundos: {0}. 
-	       Vem também, gente! </value>
+  <string key="StartPM">
+    <value>Por favor me envie uma mensagem no privado para eu conseguir te enviar mensagens: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Obrigado por me ativar! Agora eu posso te enviar mensagens privadas.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Você precisa usar o comando smite como resposta ao usuário que quer aniquilar</value>
+	</string>
+	  <string key="AllowCult">
+    <value>Permitir Seita</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permitir Suicida</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permitir Trouxa</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Ativar Linchamento Secreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Ativar Modo Aleatório</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permitir extensão de tempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostrar papéis após a morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permitir fugir da partida</value>
+  </string>
+   <string key="ShowIDs">
+    <value>Mostrar identidade ao entrar na partida</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrar a identidade dos jogadores quando eles se juntam à partida?\nAtual: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} identidades</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Todos</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Permitir modo aleatório?\nQuando o modo aleatório está ativado, o jogo caótico, o voto secreto para linchar, mostrar papéis após a morte, e permitir Seita / Trouxa / Suicida serão parâmetros aleatoriamente determinados cada vez que alguém começar uma nova partida.\nAtual:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>A permissão do modo aleatório está definida como: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Permitir pack de gifs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Permitir que os jogadores possuam pack de gifs NSFW?\nAtual: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} gifs NSFW</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Enquanto o sol começa a brilhar na aldeia, {0} acorda ao som do silêncio. Percebendo que não há mais ninguém, {0} anda e anda, até o centro da aldeia. Admirando a vista dos cadáveres destroçados por toda a aldeia, {0} suspira. Seu sonho de ser linchado(a) pelo vilarejo está tão morto quanto os próprios habitantes do lugar. Calmamente, ele(a) escolhe a corda, uma das armas que tiraram tantas vidas, e a enrola em seu pescoço, permitindo-se enforcar livremente, com um sorriso triste em seu rosto.</value>
+    <value>{0} acorda ao amanhecer, solitário(a). {0} percebe seu enorme fracasso, tendo sido incapaz de conseguir que a aldeia satisfizesse seu desejo masoquista de ser linchado. {0} pega uma corda e se enforca, já que não há mais ninguém para realizar seu sonho por ele(a).</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} abre seus olhos, mas em vez de ouvir a confusão usual na aldeia, ela só contempla o silêncio. Ela olha para o teto, deixando que a realidade lentamente invada sua mente. Todos morreram. Os lobos estão mortos. Angustiada, {0} se levanta, e arruma suas malas, antes de andar até os limites da vila. Lágrimas rolam sobre sua face, enquanto {0} se lembra do quão perto ela e seus lobos chegaram da vitória. Porém, era hora de começar uma nova vida, com uma nova matilha. {0} se esgueira pela escuridão da floresta, para longe da silenciosa aldeia.</value>
+    <value>Apesar de todo o esforço de {0}, todos os seus amigos lupinos estão estirados no chão, sem vida. Ainda que seu time tenha chegado à vitória, não há com quem saborear o seu gosto, ou sequer alguma pessoa do bem para ser humilhada pela derrota. {0} olha para sua bola de cristal, e desaparece silenciosamente em meio a um nevoeiro, em busca de novos lobos, novas alianças, e novas traições para cometer contra a humanidade.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Qual variante?\nAtual: {0}\nComo você já jogou mais de 500 partidas, você também pode se juntar a: </value>
+  </string>
+  <string key="Skip">
+    <value>Pular</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou na Lupina. Sua alcateia (se houver): {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Você vê que {0} NÃO É {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Você quer dar uma longa palestra esta noite?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Tentando ajudar com seu conhecimento, {0} decide dar uma palestra em que toda a vila está presente, tentando durante horas fingir interesse em milhares de textões contendo séculos de informações inúteis sobre lobos e lendas. Até que todos os espectadores acabam pegando no sono. Eles dormirão a noite inteira, e ninguém será capaz de realizar ações noturnas.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Todos vão para a casa após a palestra, mal conseguindo alcançar suas camas de tanto sono.  Eles caem em um sono tão pesado que nem se lembram mais do que assistiram...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Permitir a Ladra nas partidas?\nAtual: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Existência da Ladra definida como: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>A Ladra pode entrar em ação toda noite?\nAtual: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Ladra todas as noites: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permitir Ladra</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Ladra em todo o jogo:</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Você é o Homem-Lobo, um simples aldeão que foi criado por lobos na floresta durante sua infância. Em razão da aura do seu passado, a Vidente ficará confusa e o verá como um Lobisomem! Vixe...</value>
+  </string>
+  <string key="WolfMan">
+    <value>o Homem-Lobo! 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Você é o Homem-Lobo, um simples aldeão que foi criado por lobos na floresta durante sua infância. Em razão da aura do seu passado, a Vidente ficará confusa e pensará que você é um Lobisomem!</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Você é a Lupina, uma loba inteligentíssima que sabe se disfarçar bem!  Apesar de ser uma loba, a Vidente a enxergará como simples aldeã! :)</value>
+  </string>
+  <string key="Lycan">
+    <value>a Lupina 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>A Lupina é uma loba, mas parecerá ser uma simples aldeã aos olhos da Vidente.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Você é o Oráculo.  Toda noite você poderá usar seus poderes para investigar alguém, mas só será capaz de enxergar um personagem que essa pessoa NÃO é.  O papel que você sentirá pertence a alguém ainda vivo no jogo no momento em que você escolheu usar seu poder, então preste atenção ao papel que aparece, pois isso significa que alguém que está vivo o possui. :)</value>
+  </string>
+  <string key="Oracle">
+    <value>o Oráculo 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>O Oráculo saberá um papel que NÃO pertence à pessoa escolhida. O papel será dado aleatoriamente, selecionado entre aqueles que ainda estão vivos no jogo.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Você é o Palestrante.  Uma vez por partida, você pode compartilhar seus conhecimentos sobre lobos e tentar, finalmente, que as pessoas se interessem por sua palestra em vez de dormir. SPOILER: você falhará miseravelmente, e todos os habitantes da aldeia passarão a noite em um sono pesado após sua palestra, sendo incapazes de realizar qualquer ação noturna.</value>
+  </string>
+  <string key="Sandman">
+    <value>o Palestrante 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Uma vez por partida, o Palestrante pode induzir toda a aldeia ao sono, fazendo com que ninguém seja capaz de usar suas ações noturnas.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>o Pacifista ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value> o Ancião 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>a Ladra 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
   </string>
 </strings>

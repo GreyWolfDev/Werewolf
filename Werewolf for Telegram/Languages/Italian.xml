@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Currently updated by @MatteoIlGrande. Ask me for anything, thanks -->
-<!-- Last updated on 22 May 2017 -->
+<!-- Last updated on 12 September 2017 -->
 <strings>
   <language name="Italiano - Standard" base="Italiano" variant="Standard" owner="MatteoIlGrande" code="it" isDefault="true"/>
   <string key="NotInGame" deprecated="true">
@@ -10,11 +10,15 @@
     <value>{0} ha iniziato il gioco! Clicca Join per unirti al divertimento... e probabilmente morire :P</value>
     <value>Una nuova partita è stata iniziata da {0}! Clicca Join se hai intenzione di farti del male!</value>
 	<value>{0} ha appena iniziato una nuova partita! Sarai abbastanza coraggioso da cliccare Join?</value>
+    <value>{0} vuole iniziare un nuovo massacro! Riuscirai a uscirne vivo? Usa Join!</value>
+	<value>Una carneficina è stata iniziata da {0}. Vuoi partecipare? Clicca Join!</value>
   </string>
   <string key="PlayerStartedChaosGame">
     <value>{0} ha iniziato una partita caos! Clicca Join per entrare e divertirti... E probabilmente morire :P</value>
     <value>Una nuova partita caos è stata iniziata da {0}! Clicca Join per farti mangiare!</value>
 	<value>È stata iniziata una partita caos da {0}! Clicca Join per unirti alla mischia!</value>
+	<value>{0} vuole iniziare un massacro, stile caos! Clicca Join partecipare!</value>
+	<value>{0} ha appena iniziato una carneficina! Clicca Join se sei abbastanza coraggioso!</value>
   </string>
   <string key="NoJoinGameRunning" deprecated="true">
     <value>Non puoi unirti ora! La partita è già iniziata.</value>
@@ -25,18 +29,23 @@
   <string key="MinuteLeftToJoin">
     <value>Ancora 1 minuto per cliccare Join!</value>
     <value>Solo 60 secondi rimanenti per unirti! Clicca Join prima che sia troppo tardi!</value>
+    <value>Hai ancora un minuto per unirti! Clicca Join</value>
   </string>
   <string key="SecondsLeftToJoin">
     <value>Ancora {0} secondi per cliccare Join!</value>
     <value>La partita inizierà fra {0} secondi! Clicca Join per unirti! </value>
+    <value>Solo {0} secondi rimanenti per cliccare Join!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Ah, non siamo abbastanza. Cancello la partita!</value>
     <value>Non abbiamo raggiunto abbastanza giocatori! La partita è stata annullata.</value>
+    <value>Purtroppo non abbiamo raggiunto i giocatori minimi. La partita è stata cancellata.</value>
+    <value>Siamo troppo pochi! Riprova, dopotutto tentar non nuoce!</value>
   </string>
   <string key="StartingGameWait">
     <value>Il gioco sta iniziando, aspettate qualche secondo mentre assegno i ruoli ed aggiorno il database.</value>
     <value>La partita è iniziata! Vi sto assegnando i ruoli in privato. Buona fortuna a tutti!</value>
+    <value>Sto iniziando la partita! Controllate la chat privata per ricevere i vostri ruoli!</value>
   </string>
   <string key="BannedForExploit" deprecated="true">
     <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
@@ -58,6 +67,7 @@
   </string>
   <string key="Flee">
     <value>{0} ha ceduto al terrore!</value>
+    <value>{0} è fuggito!</value>
   </string>
   <string key="PlayerRoleWas">
     <value>\n{0} era {1}</value>
@@ -167,6 +177,7 @@
   </string>
   <string key="RoleInfoWolf">
     <value>SEI UN LUPO!!! Ogni notte potrai scegliere di uccidere qualcuno (buon divertimento)!</value>
+    <value>Sei un Lupo Mannaro! Di giorno sei una persona apparentemente normale, ma di notte ti trasformi e sbrani gente! Falli fuori tutti!</value>
     <value>Sei un malvagio Lupo Mannaro! Ogni notte potrai scegliere di uccidere qualcuno, e di giorno, depistare i contadini e non farti linciare! Buona fortuna!</value>
   </string>
   <string key="RoleInfoSeer" >
@@ -176,7 +187,9 @@
   <string key="RoleInfoVillager" >
     <value >Sei un villico, condannato a passare le tue giornate a zappare la terra (e ad essere mangiato).</value>
     <value >Sei un povero contadino, costretto a passare le tue giornate rimanenti a lavorare tutto il giorno e vedere morti dopo morti.. Dove vorresti fuggire, comunque?</value>
-  </string>
+    <value >In questo villaggio pieno di assassini e gente assai stramba, tu sei solo un contadino inutile.. Buona fortuna!</value>
+    <value >Purtroppo sei solo un contadino ordinario, senza nessun potere.. Che peccato...</value>
+	</string>
   <string key="RoleInfoTanner" >
     <value >Sei il conciatore. Ruolo odiato da molti, ma amato da altrettanti. Il tuo scopo è quello di farti linciare in qualsiasi modo possibile. Se ci riesci, tu vinci e tutti gli altri perdono!</value>
     <value >Sei il conciatore. Un ruolo molto controverso, siccome sei un contadino... ma vinci solo se ti fai linciare! Se ci riesci, vinci solo tu (e il tuo ipotetico amante) e tutti gli altri perdono! Divertente, vero? :P</value>	
@@ -205,13 +218,17 @@
 	</string>
   <string key="DayTime" >
     <value>Il sole è sorto. Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
+    <value>La notte è finita, e il sole è sorto. Avete esattamente {0} secondi per discutere su chi linciare.</value>
     <value>Con il sorgere del Sole, termina la notte. Ora tutti gli abitanti hanno {0} secondi per discutere sul da farsi.</value>
   </string>
   <string key="NightTime" >
     <value>Il buio è calato. Ognuno si dirige verso il proprio letto, stremato, al termine di un'altra giornata di duro lavoro. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
-  </string>
+    <value>Il sole è tramontato e la Luna è alta in cielo. Ognuno torna nella propria casa, esausto. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+	</string>
   <string key="LynchKill" >
     <value>Gli abitanti del villaggio hanno gettato i loro voti, tra dubbi e sospetti. {0} è morto.\n{1}</value>
+    <value>Dopo attente riflessioni, gli abitanti del villaggio hanno deciso che {0} sarà il linciato oggi.\n{1}</value>
+    <value>Il villaggio ha deciso, tra incertezze e paure. {0} sarà il linciato di oggi.\n{1}</value>
   </string>
   <string key="LynchTie" >
     <value>Incapaci di trovare un accordo su chi linciare, la folla torna frustrata alle proprie abitazioni, in attesa di un'altra notte d'ansia e sconforto...</value>
@@ -233,12 +250,15 @@
   </string>
   <string key="SeerEaten" >
     <value >E' l'alba ormai, i villici si svegliano e trovano i resti maciullati di {0}, assieme ad una tavola ouija ed un mazzo di tarocchi.  Il Veggente👳 è morto.</value>
-  </string>
+    <value >Svegliandosi, gli abitanti sentono una aria cupa e pesante. Vedono i resti di {0}, sotto una tavola ouija ed un mazzo di tarocchi.  Il Veggente👳 è morto.</value>
+	</string>
   <string key="DrunkEaten" >
-    <value >L'odore di alcool e legno che vanno a fuoco ha svegliato i villici... La taverna va a fuoco!!!! Dopo aver domato le fiamme, i resti di {0} vengono ritrovati, uno qua, uno là... l'Ubriaco è morto</value>
+    <value >L'odore di alcool e legno che vanno a fuoco ha svegliato i villici... La taverna va a fuoco!!!! Dopo aver domato le fiamme, i resti di {0} vengono ritrovati, uno qua, uno là... l'Ubriaco🍻 è morto</value>
+    <value >Il forte odore di bruciato misto all'alcool invade la città. Dentro la taverna di {0} vengono ritrovati i suoi resti ormai carbonizzati.\nl'Ubriaco🍻 è morto</value>
   </string>
   <string key="FoolEaten" >
     <value >Non appena il sole si leva sul villaggio, viene rinvenuto il corpo di {0} seduto sopra una tavola ouija, e con un mazzo di... carte da gioco??? CHE FOLLE!</value>
+    <value >Appena si fa giorno, viene ritrovato il corpo di {0} sopra a delle carte e con una tavolo ouija... giocattolo??? CHE FOLLE!</value>
   </string>
   <string key="DefaultEaten" >
     <value>Il mattino è giunto, e con lui un fetore che sa di tragedia.  Seguendo l'odore, i villici trovano {0} fatto a pezzi nel fienile, senza testa. NOMNOMNOMNOM\n{1}</value>
@@ -439,6 +459,8 @@
   </string>
   <string key="MasonEaten">
     <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e le gambe staccate a suon di morsi! Uno dei Massoni 👷 è morto!</value>
+    <value>Appena sorge il sole, si ritrovano i resti di {0}, sbranato dai lupi senza pietà. A quanto pare i suoi sogni di dominare il mondo finiscono qui. Uno dei Massoni 👷 è morto!</value>
+    <value>Nella piazza della città, si rinviene il corpo pieno di morsi di {0}, una figura sinistra incappucciata, immerso in lago di sangue. Uno dei Massoni 👷 è morto!</value>
   </string>
   <string key="MasonTeam">
     <value>  Gli altri Massoni sono: {0}</value>
@@ -491,7 +513,7 @@
     <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @werewolfdev per altre informazioni.</value>
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
   </string>
   <string key="MaxGames" deprecated="true">
     <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
@@ -503,7 +525,7 @@
     <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Solo un admin del gruppo può usare questo comando. Togli il bot e rimettilo, ti rendera' admin.</value>
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
   </string>
   <string key="ShuttingDown">
     <value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
@@ -860,7 +882,7 @@
     <value>Mostra tutti i giocatori</value>
   </string>
   <string key="Cancel">
-    <value>Indietro</value>
+    <value>Annulla</value>
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
@@ -877,7 +899,7 @@
     <value>Giocatori massimi impostati a {0}</value>
   </string>
   <string key="ShowRolesDeathQ">
-    <value>Mostra o nascondi i ruoli alla morte?\nAttualmente: {0}</value>
+    <value>Mostrare i ruoli alla morte?\nAttualmente: {0}</value>
   </string>
   <string key="ShowRolesDeathA">
     <value>I ruoli verranno {0} alla morte.</value>
@@ -1246,4 +1268,182 @@
     <!-- {0} = list of people who have joined -->
     <value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
   </string>
- </strings>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Linciaggi segreti, Mostrare Ruoli alla Morte, e Ammetti Satanisti / Folle / Conciatore verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Ammetti Gif Pack NSFW?</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Ammettere gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW {0}</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Appena il sole iniziò a splendere nel villaggio, {0} si svegliò nel silenzio più assoluto. Dopo aver realizzato che nessuno era rimasto, {0} camminò e camminò, fino a realizzare di esser rimasto l'unico in vita nell'intero villaggio. Alla vista dei cadaveri sparsi per tutto il villaggio, {0} sospirò. Il sogno della sua intera vita di esser linciato dal villaggio è morto come lo sono i villici. Raggiunse così e toccò la corda, che aveva portato via così tante vite, prima di attorcigliarla attorno al collo e lasciarsi andare impiccato, con un sorriso triste stampato in faccia.</value>
+    <value>{0} si svegliò all'alba, da solo. {0} vide quant'era un completo fallimento, non essendo stato in grado a indurre il villaggio a soddisfare il suo masochistico desiderio di venir linciato a morte. {0} prese una corda e si impiccò da solo, rendendosi conto che nessuno può realizzare il suo sogno, visto che nessuno era rimasto.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} aprì gli occhi, ma invece di sentire il solito trambusto del villaggio, ci fu un silenzio tombale. {0} osservò a lungo il triste soffitto, realizzando lentamente cos'era successo. Tutti erano morti. I lupi erano morti. Con una fitta al cuore, {0} si alzò, e iniziò a radunare la sua roba, prima di camminare fino al limitare del villaggio. Una lacrima scese dai suoi occhi, dopo che {0} pensò quanto vicino lui e i suoi compagni lupi furono alla vittoria. Ahimè, era tempo di iniziare una nuova vita, con un nuovo branco. {0} si gettò nell'oscurità della foresta, lontano dal silenzioso villaggio.</value>
+    <value>Nonostante tutti gli sforzi di {0}, i lupi amici di {0} giacevano per terra, immobili e senza vita. Anche se ai lupi fu portata vittoria, non era rimasto nessuno con cui gustare il sapore del trionfo, nè villici da deridere. {0} sbirciò nella sua palla di cristallo, e sparì silenziosamente, in una nuvola di fumo, in cerca di nuovi lupi, nuovi alleati, e nuovi tradimenti per commettere nuovi crimini contro l'umanità.</value>
+  </string>
+    <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in un Licantropo. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Hai visto che\n{0} NON era {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vorresti addormentare tutti stanotte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre il villaggio discute, {0} ritorna nella sua casa e inizia a fischiettare una dolce melodia. Questa notte, tutti dormiranno un sonno così profondo che non potranno svolgere le loro azioni notturne!</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Mentre tutti tornano a casa, a malapena riescono ad arrivare nel letto dalla stanchezza. Si addormentano tutti così profondamente che non si ricordano nemmeno di essere andati a dormire...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Ammettere il Ladro in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Ladro come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Il ladro potrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Il ladro potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti il ladro</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Ladro ammesso per tutta la partita</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei un semplice contadino, ma visto che trascorri la maggior parte del tuo tempo nei boschi insieme ai lupi, il Veggente si confonderà e ti vedrà come lupo.. Ops</value>
+  </string>
+  <string key="WolfMan">
+    <value>l'UomoLupo 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sei un semplice contadino, ma visto che trascorri la maggior parte del tuo tempo nei boschi insieme ai lupi, il Veggente si confonderà e ti vedrà come lupo.. Ops</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei il Licantropo! Sei un lupo mannaro da talmente tanto tempo che sembri esattamente come un contadino, e anche il Veggente ti vedrà come tale. Nota però che nemmeno lo stregone riuscirà ad identificarti!</value>
+  </string>
+  <string key="Lycan">
+    <value>il Licantropo 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>il Licantropo è un lupo, ma verrà visto contadino dal Veggente. Inoltre, lo stregone non lo vedrà come lupo.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei l'Oracolo. Ogni notte potrai scrutare qualcuno, e sapere quale ruolo NON è. Nota che i ruoli vengono presi da quelli presenti in partita, e quindi vedere un ruolo significa che ce n'è almeno uno vivo in partita.</value>
+  </string>
+  <string key="Oracle">
+    <value>l'Oracolo 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>l'Oracolo scruterà i giocatori per sapere quali ruoli NON sono, dai giocatori presenti in partita.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Sei Morfeo. Una volta per partita, potrai usare la tua magia che addormenterà tutti in un sonno così profondo, che non potranno svolgere le loro azioni notturne.</value>
+  </string>
+  <string key="Sandman">
+    <value>Morfeo 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una volta per partita, Morfeo addormenterà tutti i giocatori in partita, impedendogli di svolgere qualsiasi ruolo notturno.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>il Pacifista ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>il Saggio Vecchio 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>il Ladro 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
+</strings>

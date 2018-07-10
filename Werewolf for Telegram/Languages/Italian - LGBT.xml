@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currently updated by @HearMeRoar91. Ask me for anything, thanks -->
+<strings>
+  <language name="Italiano - LGBT" base="Italiano" variant="LGBT" owner="HearMeRoar91" code="it" isDefault="true"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Sembra che tu non stia andando a nessuna serata Gay in questo momento...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} ha organizzato una serata al GAYsha LGBT Disco! Clicca Join per unirti al divertimento... ma attento agli omofobi!</value>
+    <value>Una nuova serata è stata organizzata da {0}! Clicca Join se hai intenzione di darti alla pazza gioia!</value>
+	<value>{0} ha appena organizzato una nuova serata GAYsha LGBT Disco! Sarai abbastanza spregiudicato da cliccare Join?</value>
+    <value>{0} vuole andare ad un'altra festa Gay! Riuscirai a uscirne sobrio? Usa Join!</value>
+	<value>Una serata al GAYsha LGBT Disco è stata organizzata da {0}! Vuoi una prevendita? Clicca Join!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} ha organizzato una serata PAZZAH al GAYsha LGBT Disco! Clicca Join per unirti al divertimento... e magari trovare l'anima gemella!</value>
+    <value>Una nuova serata PAZZAH al GAYsha LGBT Disco è stata organizzata da {0}! Clicca Join se hai intenzione di farti del male!</value>
+	<value>{0} ha appena organizzato una nuova serata PAZZAH! Sarai abbastanza spregiudicato da cliccare Join?</value>
+	<value>{0} vuole andare ad un'altra festa PAZZAH! Riuscirai a uscirne sobrio? Usa Join!</value>
+	<value>Una serata PAZZAH al GAYsha LGBT Disco è stata organizzata da {0}! Vuoi una prevendita? Clicca Join!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Non puoi più entrare ora! La serata è già iniziata da un pezzo.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Apprezzo l'euforia, ma hai già la tua prevendita!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per metterti in lista, cliccando Join!</value>
+    <value>Solo 60 secondi rimanenti per entrare in lista! Clicca Join per non perderti questo fantastico evento!</value>
+    <value>Hai ancora un minuto per la prevendita! Clicca Join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>Ancora {0} secondi per cliccare Join!</value>
+    <value>La serata inizierà fra {0} secondi! Clicca Join per entrare! </value>
+    <value>Solo {0} secondi rimanenti per cliccare Join!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Ah, non siamo abbastanza, forse perché piove. Cancello la serata.</value>
+    <value>Siamo così pochi che non ci pago manco il boa della Drag Queen. La serata è stata annullata.</value>
+    <value>Se non fate passaparola, il locale resterà deserto. Ho annullato la serata.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>La serata sta iniziando, aspettate qualche secondo mentre il DJ prepara la musica ed io vi assegno i ruoli!</value>
+    <value>La serata è iniziata! Vi sto assegnando i ruoli in privato. Buon divertimento a tutti!</value>
+    <value>Sto iniziando la serata! Controllate la chat privata per ricevere i vostri ruoli. Vive l'amour!</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, per favore, cambia il tuo nome per poter entrare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace ma non c'entra più nessuno nel locale!!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} si è unito. {1}/{3} giocatori, {2} minimo.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} Benvenuto al GAYsha LGBT Disco. \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Ma sei pazzah? Sei già andato via dalla serata!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} ha preferito un gelatino al corso come i vecchi.</value>
+    <value>{0} ha scelto di passare una fantastica serata in balera.</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>\n{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Rimangono {0} partecipanti alla festa.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Ma chi ti ha chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Ma tu chi sei? Che cosa vuoi? Non stai giocando.</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare un giocatore tramite questo nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} vota per insultare {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} vota per scacciare {1}</value>
+  </string>
+  <string key="IdleKill">
+  <value>{0} non ha votato per due volte consecutive. Gli onesti partecipanti alla festa lo vedono come un atto ambiguo. {0} viene precauzionalmente allontanato dal GAYsha LGBT Disco.\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Tutti gli omofobi sono stati scacciati dalla serata, ma da buon Attivo Alfa non puoi permettere che il livello di testosterone aereo cali troppo. E ad alzarlo ci sei solo tu. DIVENTI UN OMOFOBO!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nLa GAYsha 👳 è {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>Hai trovato le memorie di {0}. Sei appena diventato la nuova GAYsha 👳!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} ha trovato le memorie di {1} ed è ora la nuova GAYsha 👳!</value>
+  </string>
+  <string key="SeerSees">
+    <value>Hai visto che\n{0} era {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi scacciare dalla serata?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Chi vuoi spiare?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Chi vuoi spaventare? {0} possibilità rimanenti</value>
+    <value>Sei sul piede di guerra. A chi vuoi dare una lezione? Ti rimangono solo {0} possibilità.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Con chi vuoi appartarti?</value>
+  </string>
+  <string key="AskSee">
+    <value>Di chi vuoi svelare gli oscuri segreti?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi difendere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi insultare?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Chi vuoi tormentare?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Chi è la tua fonte di ispirazione?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Quale pecorella smarrita vuoi convertire?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Sii sicuro di discutere con {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei L'Etero Curioso. Ti professi costantemente un amante del genere femminile ma, nel tuo profondo, non disdegni un'avventura diversa: per questo passi la tua giornata sulle app d'incontri gay. Sei buono, ma se gli omofobi si avvicineranno troppo a te, diventerai uno di loro.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei Il Riservato! Sei gay e cerchi ogni giorno sollazzo con altri ragazzi; però sei riservatissimo, non scambi foto e non vuoi che i tuoi amici etero sappiano che sei dell'altra sponda, muovendoti così agilmente tra i due mondi. Ogni giorno puoi scoprire il ruolo di uno dei giocatori. Ma fai attenzione, gli omofobi hanno il 40% di possibilità di guardarti il cellulare e scoprire cosa nascondi.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei La Palestrata! Hai un corpo statuario in cui dimora il delicatissimo spirito di una bottom. Se gli omofobi proveranno ad attaccarti tu te ne andrai via piangendo, ma non prima di avergli sferrato un gancio che impedirà loro di attaccare il turno successivo.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei L'Amica Frociarola! Nonostante tu sia etero, ti batti strenuamente in difesa dei tuoi amici gay, trasformandoti all'occorrenza in un imbattibile scaricatore di porto. Ad ogni turno puoi scegliere di proteggere qualcuno dall'attacco degli omofobi. Attenta però a non proteggere proprio un omofobo, altrimenti hai una possibilità su due che gli organizzatori se ne accorgano, mandandoti via.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei il Daddy! Adorato da folle di ragazzini impazziti che si strappano i vestiti solo pensando al tuo pelo, in realtà sei un preziosissimo alleato della comunità gay: sei un uomo adulto e tutto d'un pezzo che non ha paura di vedertela con degli sciocchi omofobi. Puoi far fuggire massimo 2 ragazzi a serata, cercando di scovare gli omofobi. Quando lo farai, però, tutti scopriranno da che parte stai.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Sei l'escort! Giovane e bellissimo, offri la tua prestanza per sollazzare i desideri degli uomini più facoltosi. Durante la serata potrai appartarti ogni turno con un ragazzo, verificando se sia omofobo o meno. Se vai con un omofobo o con la loro "vittima", verrai preso di mira anche tu e fuggirai in lacrime. Se gli omofobi scelgono di insultare te, non ti troveranno perché ti starai divertendo a destra e a manca!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei l'Attivo Alfa! Ti piace distinguere i ruoli con un grottesco paragone uomo-donna e affermi che la sola cosa che t'interessa è la faccia posteriore del medaglione. Sei gay, ma non vuoi alcun tipo di concorrenza: per questo vuoi mandar via tutti gli omofobi della serata. Se non rimangono più omofobi diventerai tu stesso un omofobo, mostrando quanto tutti gli altri gay siano meno uomini di te. La GAYsha può vederti gay o omofobo -50%
+</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei un Omofobo. Tutto ciò che conta nella tua triste vita è distruggere le esistenze altrui, specialmente dei tanto odiati gay che vivono - a tuo dire - in maniera indecorosa. </value>
+    <value>Sei un Omofobo! Di giorno rispettabile lavoratore, di notte sfoghi le tue frustrazioni ferendo nel profondo giovani gay in cerca di spensieratezza.</value>
+    <value>Sei un Omofobo! Ogni turno potrai insultare qualcuno facendolo scappare dalla serata. Stai attento a non farti scoprire però, altrimenti verrai scacciato!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Sei La GAYsha! Organizzatrice della serata e amante del pettegolezzo, hai annotato tutte le info su tutti nelle tue "Memorie di una Gaysha". Durante la serata puoi andare a conoscere i segreti di un giocatore a tua scelta.</value>
+    <value >Armata di kimono e ventaglio, sei La GAYsha! Ogni turno, potrai sapere tutto sul ruolo di un giocatore e scegliere se rivelarlo alle tue amicheh. Fai attenzione però, La GAYsha è il bersaglio preferito dagli omofobi!</value>
+	</string>
+  <string key="RoleInfoVillager" >
+    <value >Sei un comune Gay, condannato a passare le tue giornate ad alimentare catfight su Lady Gaga e Beyoncé.</value>
+    <value >Sei un povero ragazzo gay, costretto a passare le tue giornate a vedere i tuoi amici che si fidanzano mentre tu stai coi tuoi gatti.</value>
+    <value >In questa serata pieno di protagonisti e fashion icons, tu sei un normalissimo ragazzo gay. Divertiti!</value>
+	</string>
+  <string key="RoleInfoTanner" >
+    <value >Sei la Drama Queen! Profondamente affascinata in gioventù dal mondo emo, ti porti addosso gli strascichi dell'infanzia. Teatrale, insicura e leggermente pesante, se i tuoi amici gay dovessero linciarti attaccheresti una tale piazzata da far chiudere per sempre il locale. E in quel caso, ovviamente, avrai vinto tu e la tua implacabile sete di drama.</value>	
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Sei La Pazzah! Vivi nella tua instabilità emotiva e nei tuoi deliri di persecuzione, tenendoti alla larga dalle dinamiche del mondo gay. Puoi scegliere finalmente un amico del cuore ma, se questo fuggirà via, tu inizierai a sclerare senza ragione dando la colpa a tutti gli altri omosessuali. Diverrai così un omofobo.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Sei Il Fuorimoda! Ti piace rimanere nel giro ma sei un po' troppo agée, per cui non riesci mai a stare al passo coi tempi. Il tuo unico appiglio è La GAYsha, che ti aggiorna costantemente di ciò che ti accade intorno, per il resto sei pressoché invisibile. Sei l'unico a conoscere la vera identità della GAYsha e se questo se ne va (o il Bisex/il Twink prendessero il suo posto), sarai avvisato. </value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Sei Il Twink! Passi la tua intera giornata sui social gay alla scoperta di questo nuovo mondo e conosci praticamente tutto e tutti, ma non riesci ancora ad affermarti come pilastro della comunità, perché sei ancora sbarbatello e La GAYsha è ormai un'istituzione. Se La GAYsha dovesse andarsene, diventerai tu l'unico, vero detentore di tutti i segreti più reconditi.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Sei un Bigotto. Vivi nella convinzione di essere sempre nel giusto e il tuo imperativo morale è quello di ricondurre le pecorelle smarrite sulla retta via. Ad ogni serata puoi far visita ad un giocatore, convertendolo al buon cristianesimo. Se a fine serata rimarranno solo Bigotti, avrete vinto!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Sei Il Bestemmiatore! La tua vita è votata alla battaglia contro il bigottismo. Ad ogni turno puoi scegliere un giocatore: se è un Bigotto lo farai evaporare a suon di sproloqui anticlericali e fuggirà in lacrime dalla serata. Se un Bigotto prova a convertirti, l'ultimo membro arruolato dai Bigotti se ne andrà dalla festa e scoprirai quanti ne sono rimasti.</value>
+  </string>
+  <string key="LynchTime" >
+    <value>Dopo il tumulto iniziale, i ragazzi iniziano a mettere in ordine le idee su chi scacciare dalla festa...\nOgnuno ha {0} secondi per votare!</value>
+    <value>Ancora scossi dall'accaduto, tutti i presenti si mettono d'accordo su chi mandare via dalla serata...\nOgnuno ha {0} secondi per scegliere lo sfortunato!</value>
+	</string>
+  <string key="DayTime" >
+    <value>La musica si ferma. Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
+    <value>La festa sembra finita, davanti ad un tale deplorevole spettacolo. Avete esattamente {0} secondi per discutere su chi scacciare.</value>
+  </string>
+  <string key="NightTime" >
+    <value>Si ricomincia a ballare in pista come se non ci fosse un domani e la sorveglianza scarseggia... Disturbatori: avete {0} secondi per fare le vostre scelte!</value>
+    <value>Un drink e si torna alla ricerca dell'amore a ritmo di musica. E' il momento adatto per colpire. Disturbatori: avete {0} secondi per fare le vostre scelte!</value>
+	</string>
+  <string key="LynchKill" >
+    <value>I partecipanti alla serata, tra dubbi e sospetti, hanno deciso chi deve andarsene. {0} è Uscito.\n{1}</value>
+    <value>Dopo attente riflessioni, i partecipanti alla serata hanno deciso che {0} deve lasciare subito il GAYsha LGBT Disco.\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Incapaci di trovare un accordo su chi scacciare, i ragazzi tornano a ballare, sperando non si ripetano certi episodi...</value>
+    <value>I ragazzi non hanno le idee chiare. Chi sarà stato a disturbare la festa? Ci penseranno più in là...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Nessuno ha votato! Qualcosa mi puzza. Nessuno verrà scacciato.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>{0} fugge sconvolto dal locale. Alcuni testimoni dicono di aver sentito {0} sbraitare perché qualcuno ha fatto outing nei suoi confronti. Il Riservato è Uscito.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>Mentre tutti si divertono, si sente una voce femminile urlare come un'ossessa. {0}, La Frociarola, ha abbandonato il locale.</value>
+    <value>"I wanna scream and shout, and let it all out"... Ma ti giri e ti accorgi che manca la tua Britney. {0} La Frociarola, è stata insultata dagli omofobi ed ha abbandonato la serata.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>Mentre tutti bevono e pomiciano, si sente gridare "Vecchio, vecchio e pure cesso!!". Il clima si raggela e tutti, ovviamente, guardano {0} Il Daddy che, non riuscendo a reggere l'imbarazzo, fugge via in lacrime.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >La consolle si spegne e si sente un forte rumore di pale. Sul tetto c'è {0} La GAYsha che monta sul suo elicottero privato. Cosa le sarà successo? La GAYsha👳 è uscita.</value>
+    <value >Improvvisamente tutto si ferma e un videomessaggio viene proiettato sul palco: "Sono alla centrale, ti sto denunciando". E' {0} La GAYsha, offesissima per l'ingiuria subita.  La GAYsha👳 è Uscita.</value>
+	</string>
+  <string key="DrunkEaten" >
+    <value >La sicurezza accorre a sedare una rissa: è {0} La Palestrata che, con il volto rigato di lacrime, ha preso a pugni diversi omofobi. La Palestrata🍻 viene fatta allontanare.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >"Non ricordavo che la GAYsha fosse così brutta, sfigatah". Tutti si voltano e vedono {0} col vestito da GAYsha strappato che mostra una scarsissima fattura. GAYsha de che? CHE FALSAH!</value>
+    <value >La musica si ferma. Si vede scappare a piedi {0} La GAYsha... Ma aspetta, la GAYsha non scappa mai a piedi! E' solo UNA FALSAH!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>"Come vi permettete di offenderci così?? Basta!!!"  Si vede {0} allontanarsi stizzito dalla serata: deve essere stato insultato dagli omofobi\n{1}</value>
+    <value>I ragazzi pensavano di poter divertirsi tranquillamente sculettando su Single Ladies di Beyoncé, ma non è stato così per {0}, che è stato offeso dagli omofobi. Che venga fatta giustizia\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Si sentono grida riecheggiare sotto la voce della Cuccarini... ma aspetta, sono bestemmioni! Si vede un cartello del Family Day allontanarsi: è {0} scandalizzato dal linguaggio usato. Un Bigotto è stato scacciato dal Bestemmiatore!!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Per una volta procede tutto come previsto: si sculetta, ci si bacia, ci si diverte. Non è accaduto nessun episodio spiacevole!</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Sei stato offeso dagli omofobi. In qualità di Etero Curioso, ti sei difeso dimostrando di essere come loro. Sei diventato UN OMOFOBO!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Gli altri Omofobi sono: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >{0} è stato insultato....  ma si difende professandosi etero convinto ed ora è diventato un Omofobo! Date il benvenuto al nuovo arrivato!</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value >Oh no! Gli Omofobi hanno deciso di insultarti. Tu non ci stai davanti a tali ingiurie e abbandoni la serata.</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Oh no! {0} era La Palestrata!  Ti ha sferrato un gancio sul naso e ora sei costretto a stare fermo un turno.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Sciocca! Hai provato a proteggere un Omofobo che ha iniziato ad offendere i tuoi discutibili gusti in fatto di uomini e sostenendo che sei single per scelta altrui... Non puoi far altro che andartene in lacrime.</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Hai difeso {0} dagli Omofobi, che se ne tornano nel buio con la coda tra le gambe.</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >{0} non è stato attaccato dai Omofobi, quindi ti sei risparmiata di roderti il fegato.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Hai deciso di proteggere {0}, ma non sei riuscito a trovarlo! Chissà dov'era...</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Sei stato protetto dalla Frociarola, che ha fermato gli Omofobi e/o Il Playboy!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >L'Escort ha deciso di restare in pista da ballo proprio al momento sbagliato. Gli Omofobi trovano {0} e gli tirano addosso le uova! {0} fugge via. </value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >Strano... hai cercato ovunque ma non sei riuscito a trovare {0} ! Devi risparmiarti gli insulti per questa sera.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Sei andato da {0} per fare un po' di sano zumzum in bagno, ma ti sei trovato davanti una spiacevole sorpresa: era un Omofobo che, scandalizzato dalle tue avances, ti offende con parole irripetibili. Fuggi dalla serata.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} è andato a provarci con la persona sbagliata! Le offese nei suoi confronti vengono sentite persino con la musica a palla. L'Escort {0} fugge disperato.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >{0} ha preso {1} per mano, pronti ad appartarsi per divertirsi un po'. Ma nel bagno ha trovato un omofobo pronto ad aggredire {1} che scappa via! Allora l'Omofobo si gira verso {0} con intenti non del tutto benevoli... {0} fugge via dalla serata.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >Ora sai che {0} non è un Omofobo, visto che sembrava tutt'altro che schifato dalla tua virtù!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Con una mascherina sulla faccia e tanta fame, L'Escort si è avvicinato a te e ti ha portato in un posto appartato. Ovviamente non hai opposto resistenza e ti sei fatto sbattere fino allo sfinimento.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Hai beccato {0} mentre inciuciava su Romeo per scoprire cose. Direi che si tratta proprio del Riservato!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >I tuoi inciuci hanno rivelato che {0} era {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Sembra che un'avventura con L'Escort abbia giovato a {0}! Il Daddy ha avuto la sua vendetta. {1} è Uscito</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >Improvvisamente si sente gridare. I gay vanno a vedere cosa succede e trovano {0} soddisfatto davanti all'ingresso, mentre {1} fugge a gambe levate.\n{2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value >L'Omofobo ha vinto!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>Gli Omofobi hanno vinto!</value>
+  </string>
+  <string key="VillageWins" >
+  <value>I Gay hanno vinto! Tornano tranquilli a casa, contenti di aver fatto valere i propri diritti! Anche se ancora tanto c'è da combattere...</value>
+  </string>
+  <string key="TannerWins" >
+    <value >Tutto si ferma: un tizio sta urlando per i risultati del voto. Che errore, avete votato La Drama Queen! La GAYsha chiude la serata per evitare ulteriori danni. La Drama Queen ha vinto!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Giocatori rimasti, ruolo e fazione:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0} vota per convertire {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} è stato inviato a convertire {1}... ma era Il Bestemmiatore! {0} fugge via a gambe levate.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} è arrivato pronto a convertirti al buon cristianesimo...  ma l'hai spazzato via con un bestemmione! Un Bigotto è Uscito... {1} rimanenti!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>I Bigotti ti hanno convertito! Ora sei uno di loro. Ad ogni turno, avrai la possibilità di convertire un altra pecorella smarrita.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Bigotti: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} è diventato un Bigotto!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} è stato mandato a convertire {1}... ma non è riuscito a trovarlo!</value>
+  </string>
+  <string key="CultWins" >
+    <value >Tutti gli Omofobi se ne sono andati, ma la serata è diventata una manifestazione delle Sentinelle in Piedi... I Bigotti hanno vinto!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Hai cercato di scovare {0}, ma era già Uscito!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Vai da {0}, e lo cogli genuflesso, e non per esplicare attività ludiche... Sfoderi così la tua pungente dialettica volgare per mandare via un Bigotto.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Hai fatto visita a {0}, ma non hai notato nessun "Osanna-eh" né "Allelujalleluja". Non era un Bigotto, perciò te ne ritorni a ballare.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>L'amico del cuore di {0} è Uscito! E' incazzato e solo. Adesso è un Omofobo!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} è Uscito dalla serata e ti ha lasciato solo come tutti gli altri prima di lui. Sei diventato un arrabbiatissimo Omofobo! I tuoi nuovi alleati sono: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>un Gay 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>La Palestrata 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>L'Escort 💋</value>
+  </string>
+  <string key="Seer">
+    <value>La GAYsha 👳 </value>
+  </string>
+  <string key="Traitor">
+    <value>L'Attivo Alfa 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>La Frociarola 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Il Riservato 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>un Omofobo 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>L'Etero Curioso 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Il Daddy 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>La Drama Queen 👺</value>
+  </string>
+  <string key="Fool">
+    <value>La Falsah 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>La Pazzah 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Il Fuorimoda 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Il Twink 🙇 </value>
+  </string>
+  <string key="Cultist">
+    <value>Il Bigotto 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Il Bestemmiatore 💂</value>
+  </string>  
+ <string key="RanAway">
+    <value>👻 Ritirato</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Uscito</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In pista</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Giocatori alla serata</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Lobbista Gay 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Fai parte della segretissima e pericolosa lobby gay di cui tutti ipotizzano ma non riescono a provare l'esistenza. Fate la bella vita e diffondete indisturbati il Giender, ma per il resto siete normalissimi membri della comunità gay. L'unico privilegio che hai è conoscere l'identità degli altri membri della temibilissima lobby!</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Mentre tutti ballano, si vede {0} con il cappuccio nero in testa gridare al cellulare "lo farò presente a Kim Jong Un!" e si dirige fuori dal locale. Uno dei Lobbisti 👷 è Uscito!</value>
+    <value>In un angolo del locale si vede la sagoma di {0}, che se ne va sbraitando e lanciando i suoi soldi ai povery per la rabbia. Uno dei Lobbisti 👷 è Uscito!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Gli altri Lobbisti sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>L'ultimo convertito si reca da {0} per evangelizzare, ma appena lo raggiunge lo trova in lacrime che corre verso l'uscita...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Stai già pregustando l'umiliazione che infliggerai a {0} , ma appena apri bocca ti si para davanti una donzella animata da una furia animale. È La Frociarola! Ti conviene ritirarti, se non vuoi uscirne con le ossa spezzate.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Spedite {0} per convertire {1}, la sua componente anticristica è troppo alta. Non riuscite a convertirlo :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, un giocatore con il nome di {0} e' gia' entrato. Per favore cambia il tuo nome per partecipare. </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Sei andato da {0} e vi siete divertiti un botto... Ma quando gli hai tolto la maglietta hai notato che aveva appeso al collo un grosso crocifisso. Che sia in realtà un Bigotto?</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>La musica si spegne, e qualcuno si accorge che {0} non si trova in giro... I buttafuori affermano di averlo visto correre via {0}.</value>
+    <value>I Gay si guardano intorno: {0} è sparito, dev'essere uscito senza dire niente a nessuno...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Cavoli... {0} non si e' presentato alla riunione dei Lobbisti... O.o</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Ritirarsi mentre il gioco e' in corso è stato disabilitato dall'admin del gruppo!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>e' Uscito</value>
+  </string>
+  <string key="AdminAdded" deprecated="true">
+    <value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Sei gia' nella serata! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una serata Chaos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Dopo questa serata, mi spegnero' per una manutenzione.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Dopo questa serata, mi spegnero' momentaneamente per un aggiornamento (automatizzato).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} E' gia' un admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} Non e' un admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} E' stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <value>Lingua settata su {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Non c'è La GAYsha!</value>
+  </string>
+  <string key="TimesUp">
+	<value>È scaduto il tempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Sei Grindr! Tutti ti considerano una semplice app d'incontri al loro servizio, ma non sanno la verità: hai un'anima. Spingi i ragazzi a scriversi fra di loro in modi bizzarri e talvolta incomprensibili (a? p? Io MxM XL) che portano inspiegabilmente alla nascita di amori spesso lunghi poco più di una notte. Puoi scegliere di far innamorare due giocatori: se uno dei due lascerà la serata, l'altro lo seguirà per andare a celebrare l'ammòre.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei Il Bisex! Non avendo alcun tipo di preferenza sessuale, puoi fingere indifferentemente di essere gay o eterosessuale, persino diventare omofobo. Sceglierai un giocatore come idolo e, nel momento in cui questo lascerà la serata, assumerai il suo ruolo.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei La Complessata! Nonostante tu sia gay e la voglia di maschio che ti corroda dentro, sei titubante su tutto e non accetti assolutamente che qualcuno possa volere con te del sano divertimento né provare appena a sedurti. Farai scappare via qualunque gay ti visiti ed hai persino la possibilità di far scappare via un omofobo. Se verrai scacciato, prima di andare via potrai scegliere qualcuno con cui sfogare le tue frustrazioni che abbandonerà, estenuato, la serata insieme a te.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sei il Playboy! Bellissimo, scolpito ed esteticamente impeccabile, hai una stima di te che Veronica Ciccone levate. Tutti i gay, sapendo già che non li considereresti, dicono che non ti vorrebbero nemmeno toccare con un dito, ma in realtà sbavano al solo pensiero. Tu questo lo sai e, forte del tuo cuore di ghiaccio, farai fuori una persona ad ogni serata spezzando il cuore ai gay e distruggendo gli omofobi col tuo spropositato ego.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Hai avuto un colpo di fulmine sfogliando Grindr! L'immagine di profilo di {0} non svanirà mai dal tuo cuore. Il tuo obiettivo e di restare entrambi fino a fine serata, così da incontrarvi. Se {0} dovesse andarsene, lo seguirai immediatamente. </value>
+    <value>Ti sei innamorato perdutamente del profilo di {0} Su Grindr! Se se ne andrà, lo seguirai. Se arrivate insieme a fine serata, riuscirete a coronare il sogno di stare in intimità, vincendo la partita.</value>
+ </string>
+  <string key="HunterLynchedChoice">
+    <value>I ragazzi hanno deciso di scacciarti! Scegli un malcapitato con cui prendertela e sfogare le tue frustrazioni, obbligandolo ad abbandonare la serata per disperazione!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} cerca disperatamente qualcuno a cui stracciare le palle, ma non riesce a trovarlo abbastanza in fretta che i buttafuori lo... buttano fuori.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} si guarda intorno per trovare la sua vittima sacrificale ma... non riesce a trovare quello giusto.  Così, in un rarissimo sprazzo di lucidità, La Complessata abbandona la serata da sola.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Appena i ragazzi decidono di scacciare {0}, lui inizia a vomitare tutte le sue frustrazioni addosso a {1} subito prima che i buttafuori lo portassero via. {1} esce dalla serata, stremato e angosciato. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Hanno incolpato te. Sapevi che tutti ti odiavano. Lo sapevi e ora puoi solo vendicarti. Puoi scegliere qualcuno da portare all'esasperazione, che lascerà la serata come te.</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} è stato portato via prima di poter attaccare il suo pippone ad un malcapitato...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>Mentre {0} è divorato dai suoi complessi, non riesce a decidere su chi sfogarsi... quindi se ne va da solo, accettando la crudeltà della vita.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>Ormai logoratah dentro, {0} decide di andarsene... Ma non senza vomitare tutto ciò che ha dentro contro {1}, che si becca una valanga di negatività e decide di fuggire via. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} si dirige verso {1} per convertirlo ma non sa che quello che si troverà davanti è il PlayBoy. {1} gli dice "Guardati, fai più pena di Katy Perry che tenta di cantare".{0} esce traumatizzato dalla serata.</value>
+    <value>I Bigotti mandano {0} per convertire {1}, ma dopo due secondi vedono {0} fuggire di corsa dalla festa. Si dice che il Playboy lo abbia fatto sentire poraccissimo con un solo sguardo. {0} è Uscito...</value>
+ </string>
+  <string key="HunterShotWolfMulti">
+    <value>Gli Omofobi hanno provato ad insultare La Complessata, ma questa uscendo è riuscita ad ammorbare uno di loro in un solo istante! {0} è Uscito (Omofobo 🐺) </value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Gli Omofobi hanno provato ad insultare La Complessata, ma questa inizia a farfugliare robe talmente tragicomiche che l'Omofobo🐺 {0} la prega di restare, mentre se ne va lui, per non rischiare di incontrarla fuori.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Gli Omofobi hanno deciso di insultare un ragazzo, ma non sapevano che si sarebbero trovati davanti un Playboy narcisista! {0} è stato incenerito nello scontro verbale ed è uscito dalla serata!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>{0} sembrava divertirsi moltissimo, finché i suoi amici non notano la sua assenza. {0} se n'è andato, con l'orgoglio ferito ed il cuore spezzato. Questa non è opera di omofobi, ma del Playboy! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Hai provato ad aggiungere il cuoricino di {0} alla tua collezione di cuori infranti, ma ti sei scontrato con La Frociarola! E sai bene che se c'è lei, il tuo charme perde ogni valore. E' andata così.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>I Bigotti mandano {0} a convertire {1}, ma invece un bestemmione risuona rumoroso e {0} esce dalla serata piangendo! {0} è Uscito...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Povera Frociarola! Hai provato a proteggere il Playboy, ma invece lui ti ha guardato con disprezzo e ti ha chiamata "cessa"! Sei Uscita...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Ti sei fatto affascinare da {0} e iniziate ad avere un po' di divertimento. Tutto sembra andare alla grande finchè {0} non ti toglie l'intimo ed inizia a ridere rumorosamente. Te ne vai imbarazzatissimo.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Sembrava {0} si fosse divertito a farsi uno ogni 10 minuti. Peccato che abbia scelto il Playboy che, appena visto cosa nascondeva lì sotto, si è scompisciato dalle risate. {0} è uscito.</value>
+    <value>Appena finisce "I Will Survive", tutti si accorgono che l'Escort {0} sta fuggendo via in lacrime. Indiscrezioni dicono che ci abbia provato col Playboy, che ovviamente l'ha deriso mortalmente. {0} è uscito.</value>
+  </string>
+  <string key="DGToMason">
+    <value>Il Bisex {0} è ora diventato un Lobbista, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} è Uscito, e tu diventi un Lobbista. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>Il Bisex {0} è ora diventato un Bigotto, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} è Uscito, e tu ti trasformi in un Bigotto. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>Il Bisex {0} è ora diventato un Omofobo, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} è Uscito, e tu ti trasformi in un Omofobo. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>L'ultima persona rimasta alla serata è il Playboy che ha infranto tutti i cuori. Ha vinto!</value>
+  </string>
+  <string key="AskKill">
+    <value>A chi vuoi spezzare il cuore stavolta?</value>
+  </string>
+  <string key="LoverDied">
+    <value>Mentre {0} fugge via in lacrime, {1} accorre per capire cos'è successo. Non riesce a sopportare l'idea che lui se ne vada, buttando via un amore non ancora nato. Se ne va anche lui a coronare il suo sogno d'amore. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Di chi vuoi copiare il ruolo alla sua uscita?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Chi vuoi che siano gli innamorati? Scegli il primo profilo Grindr</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Chi vuoi che siano gli innamorati? Scegli il secondo profilo Grindr</value>
+  </string>
+  <string key="Hunter">
+    <value>La Complessata🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Grindr🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Il Playboy🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Il Bisex🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Sei diventato La Pazzah. Il tuo modello è {0}</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>ALl'uscita dal GAYsa LGBT Disco, si vede {0} in piena crisi di nervi. Sembra che abbia provato ad infastidire La Complessata. Che errore!! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Un losco figuro con un cartello del Family Day ha tentato di convertirti, ma il tuo livello di blasfemia era troppo elevato.</value>
+  </string>
+  <string key="LoversWin">
+  <value>Il vero amore trionfa, ma l'infatuazione su Grindr di più! Gli innamorati hanno vinto!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Ormai sono le 5:00 e gli unici due rimasti al locale si incontrano nella pista da ballo. {0} vede {1}, sorride beffardo, e gli dice "In confronto a te la De Lellis sembra la Montalcini". {1} è shockato. Il Playboy ha vinto tutto!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Il GAYsha LGBT disco è rimasto vuoto. Non c'è niente ad eccezione dei drink sulle scalette e di qualche condom negli angoletti. Nessuno ha vinto stasera.. A parte La GAYsha che ha incassato!</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Sono rimasti in due. {0} e {1} si incontrano davanti all'uscita. {0} sfodera una delle sue acidate più potenti contro {1}. Ma inaspettatamente, {1} abbraccia {0} e inizia a raccontargli tutti i suoi problemi. {0} è disperato, non può far altro che accompagnare fuori {1} e fuggire a gambe levate. Entrambi se ne sono andati, il GAYsha LGBT Disco resta desolato...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Sei giá in lista d'attesa per {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa per {0}. Ti contatterò appena una serata sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Una nuova serata al GAYsha LGBT disco sta per cominciare su {0}</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi il bot ti ha scelto {0}</value>
+  </string>
+    <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+    <string key="IdleCount">
+    <value>Il giocatore {0} è stato scacciato per non aver votato {1} volte. L'ignavia si paga.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Gay=Contadino. Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di scacciare gli Omofobi! Vota con attenzione!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei La GAYsha (=Veggente). Ogni turno, potrai scegliere un giocatore e conoscere il loro ruolo. Svelati saggiamente: Se dici di essere La GAYsha, gli Omofobi proveranno a mangiarti! Nota: Potresti non essere GAYsha ma solo una Falsah, che vede ruoli casuali. Se ti scrive Il Fuorimoda, saprai di essere il vero GAYsha.\nAttivo Alfa🖕: Lo si può scrutare come Omofobo🐺 o come Gay👱 (50% e 50%)</value>
+  </string>
+  <string key="AboutWw">
+    <value> Sei un Omofobo (=Lupo). Ogni turno potrai decidere di insultare qualcuno e poi dovrai confondere gli altri e non farti scacciare! Se almeno la metà dei giocatori in serata sono Omofobi, la serata finisce e vincete. \n Nota: Se attacchi La Palestrata, dovrai rimanere fermo un turno per riprenderti dal suo pugno! Se attacchi l' Etero Curioso, diventerà un Omofobo come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Sei L'Escort (=Prostituta), avrai la possibilità di "visitare" altri giocari ogni turno. Se non sono Omofobi(o Playboy) lo saprai. Nel caso sfortunato in cui tu visitassi un Omofobo(o il Playboy), te ne andrai dalla serata. Se visiti il giocatore che gli Omofobi stanno insultando, offenderanno anche te e ve ne andrete insieme. Però, se scegli un giocatore, e gli Omofobi scelgono di venire da te, sopravviverai! Non riusciranno a trovarti...</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei La Palestrata (=Ubriaco)! Sei come un normale gay. Ma se venissi attaccato dagli Omofobi, prima di andartene gli darai un bel pugno sul naso, costringendoli a stare fermi per un turno.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Come Etero Curioso (=Maledetto), sei come un ragazzo normale... finchè gli Omofobi non cercheranno di insultarti. Se venissero da te, per difenderti diventerai un Omofobo come loro! Nota: Finchè gli Omofobi non ti attaccano, la tua fazione è con i gay, e vincerai con loro nel caso tutti gli Omofobi fuggissero.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei L'Attivo Alfa (=Traditore). Se se ne vanno tutti gli Omofobi, ti trasformerai in un Omofobo, pronto a rivoltarti contro i tuoi vecchi alleati gay! Nota: Finchè non diventi Omofobo, il tuo team è con i gay. Ti conviene quindi cercare di mandare via gli Omofobi. Se la GAYsha ti scrutasse, potrebbe identificarti sia come Omofobo🐺, sia come Gay👱.(50% e 50%)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei La Frociarola (=Angelo Custode)! Ogni turno, potrai proteggere un giocatore. Stai attenta alle tue scelte però, se scegliessi un Omofobo, avrai il 50% di probabilità di essere mandata via. Se scegliessi il Playboy, verrai derisa tremendamente e mandata via (100% probabilità)</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Sei Il Riservato (=Investigatore). Mentre c'è quiete, avrai l'occasione di investigare gli altri giocatori. Usa questo saggiamente però, visto che c'è il 40% di probabilità che gli Omofobi ti vedano investigare su Romeo e scoprano su che sponda stai.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Come Daddy (=Artigliere), avrai due possibilità di sbroccare a qualcuno e scacciarlo. Mentre c'è quiete, avrai l'occasione di azzuffarti con un'altro giocatore, mandandolo via. Dopo la rissa, tutti sapranno il tuo ruolo! Stai attento però, hai solo 2 possibilità di risse: gli Omofobi vorranno sicuramente eliminarti, se ti sveli!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>La Drama Queen (Il Conciatore)! Il suo obiettivo è semplice: farti scacciare nelle votazioni. In questo modo sazierai la tua sete di drama e potrai fare un putiferio, facendo chiudere la serata e VINCENDO. Tutti gli altri perdono. Nota: Se non riesce a farsi scacciare: perde. Non vince con i GAY</value>
+  </string>
+  <string key="AboutFool">
+    <value>E' solo una Falsah (=Il folle) che finge di essere La GAYsha.... Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale presente in serata. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in serata. Se vede un ruolo, sarà in serata.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Come Bigotto (=Satanista), il tuo obiettivo è convertire tutti i Gay (non gli Omofobi, che ti somigliano) alla religione. Se a fine serata, tutti i giocatori sono Bigotti, Vincono. \n Probabilità di convertire i seguenti ruoli: \n Bisex: 0% Finchè rimane Bisex, è impossibile da convertire \n GAYsha 40% La GAYsha è il più difficile da convertire \n Frociarola 60% Nota: Se protegge qualcuno, non la troverai \n Etero Curioso 60% \n Riservato 70% \n Escort 70% Come La Frociarola, se è appartato con qualcuno, non potrete convertirlo \n Complessata 50% Avrai il 50% di convertire La Complessata. Se fallite, C'è il 50% che vi si appioppi e vi faccia fuggire.</value>
+  </string>
+  <string key="AboutCH">
+    <value> Bestemmiatore (=Cacciatore di Satanisti). Il tuo lavoro è estirpare i Bigotti. Se ti visitano, farai fuggire il loro ultimo membro e saprai quanti Bigotti sono rimasti. Ogni turno potrai visitare un giocatore: Se sono Bigotti, li manderai via. Sennò, tornerai a ballare, come se nulla fosse successo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Come Pazzah (=Bambino Ribelle), al primo turno, sceglierai il tuo amichetto del cuore (probabilmente non ricambiato). Se se ne andasse, diventerai in un Omofobo. Nota: Finchè non ti trasformi, vincerai con i Gay, nel caso tutti i Omofobi uscissero.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Il Twink (=Apprendista Veggente). Per ora, sei un normale ragazzo Gay. Nel caso La GAYsha morisse, diventerai suo sostituto. Nota: Se sei in serata, implica che c'è una vera "GAYsha" in serata.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Il Fuorimoda (=Osservatore). Ti verrà detto chi è La GAYsha (quello vero, non la Falsah). Se morisse e il Bisex oppure il Twink prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi GAYsha e rivelare i ruoli al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Il ruolo dei Lobbisti (=Massoni) è semplice: sanno chi sono gli altri Lobbisti dato che partecipano alle riunioni segrete per la guida del mondo. Se sono da soli, sono semplici Gay.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Il Bisex (=Sosia) può scegliere un giocatore a inizio serata, ed erediterà il suo ruolo se se ne va. \n Nota: Se il giocatore viene convertito dai Bigotti, prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se era una Pazzah e il suo modello è Uscito, diventerai un Omofobo. Sennò, erediterai il suo modello.\nI Bigotti non possono convertire il Bisex (ma possono dopo che il Bisex cambia ruolo) E - Il Bisex NON può vincere a meno che si sia trasformato. Se a fine serata, il Bisex non si è trasformato, perde (eccezione: amante).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Grindr (=Cupido) a inizio serata, sceglie due giocatori. Dopodiché, nonostante sia uno spirito dell'ammooore, si manifesta a tutti gli effetti un normale Gay. Questi due diventeranno follemente innamorati e se uno dei due se ne va, lo farà anche l'altro. Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due in serata, loro vincono, indipendemente dal loro ruolo. Se gli amanti sono di due team diversi(esempio: Omofobo + Gay), e un team vince (esempio: Omofobi), anche l'amante (esempio:Gay) vince. \n TL;DR Se tutti e due gli amanti sono nel locale a fine serata, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+  </string>
+  <string key="AboutHunter">
+    <value>La Complessata (=cacciatore) pensa che ce l'abbiano tutti con lui. Quando gli altri ti visitano, potrebbero essere costretti ad andarsene, visto che la paranoia ti possiede e gli ammorbi la vita. \nSe gli Omofobi ti attaccano, hai una chance di far scappare via uno di loro. Sennò, avrai la chance di far uscire qualcuno insieme a te.\nNota: Per gli attacchi degli Omofobi, la probabilità inizia al 30%. Se c'è un Omofobo, la Complessata ha il 30% di probabilità di mandarlo via (e rimanere in serata). Per ogni Omofobo in più, la probabilità aumenta del 20% (2 Omofobi= 50%, 3= 70%). Cionostante - se ci sono molti Omofobi, mentre potresti mandarne via uno, verrai lo stesso accerchiato e te ne andrai.	\nSe I Bigotti provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di mandarne via uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Il Playboy è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo a rimanere in serata (eccezione: amanti). Come Playboy sei indistruttibile, puoi mandare via CHIUNQUE: Omofobi, Complessate, Daddy, Frociarole, qualunque cosa. Se Gli Omofobi provano ad attaccarti, ne farai fuori uno di loro (random) e sopravviverai.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace insultare le persone.  Forse è stato a contatto con gli Omofobi troppo a lungo...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della serata: {0}</value>
+	</string>
+  <string key="Day">
+<!-- Day -->
+    <value>Momento di tranquillità {0}</value>:)
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in serata solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una serata solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori ancora alla serata</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco in serata?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>È {0} fuggire dopo l'inizio della serata</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostra o nascondi i ruoli all'uscita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} all'uscita.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della serata?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per i momenti di divertimento. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base dei momenti di divertimento impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare gli attacchi in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le attacchi dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere La Falsah in serata, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Falsah come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere La Drama Queen in serata, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Drama Queen come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Bigotti in serata, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Bigotto come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, Abbi una bella giornata :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Sei la divah, la gay influencer per eccellenza. Tutti sanno tutto di te e sei adorato dalle folle LGBT, anche se tu non degni nessuno nemmeno di un saluto. Ogni volta, durante la ricerca degli omofobi, il tuo voto varrà il doppio. Ma solo se ti sarai rivelato!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei segretamente La Drag Queen! Fiera animatrice di ogni serata gay che si rispetti, sei l'idolo delle folle durante l'esibizione, e un uomo normale negli altri momenti. Se i gay proveranno ad accusarti di omofobia, tu indosserai i tuoi abiti da Drag e tutti imploreranno il tuo perdono. Da quel momento però, tutti sapranno chi sei. Puoi farlo una sola volta!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei La Giovane Bottom! Ami sculettare furiosamente in pista e cerchi disperatamente di conquistare tutti i maschi più barbuti e dotati del cosmo. A te non frega niente di questa lotta tra fazioni, vuoi solo divertirti ed essere appagatah. Per questo durante il giorno, hai il 50% di possibilità di accusare di omofobia gente a caso, giusto perché devi farlo.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei la Timorata! Nonostante tu sia gay e lo sappia da molto tempo, continui a considerare sbagliato questo stile di vita fustigandoti quotidianamente con il cilicio e vivendo la tua quotidianità come un poco credibile eterosessuale. Sei amico degli omofobi e, durante la serata, hai la possibilità di sapere soltanto chi sono gli Omofobi e chi è La GAYsha, simbolo di una sessualità libera e tuo acerrimo nemico, che potrebbe rivelare a tutti chi sei veramente. </value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei La Lesbica! Paladina dei diritti delle minoranze e macchina da guerra nascosta in un elegante corpicino, sei la protettrice della comunità LGBT. Ogni sera puoi evitare che gli omofobi colpiscano, mettendoti a limonare con una tua amica all'ingresso del locale. In questo modo gli omofobi resteranno a sbavare su di voi, senza attaccare per un turno.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei L'Omofobo Sexy! Muscoloso, barbuto e incredibilmente diverso da Salvini, sei (sfortunatamente) il capo degli omofobi che ti idolatrano come loro mentore. Quando attaccherai durante una serata, avrai il 20% di possibilità di far diventare un gay, sopraffatto dalla tua bellezza, un omofobo.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei Il Piccolo Omofobo! Sei l'incarnazione di tutto ciò a cui gli omofobi tengono di più e che i gay non sono degni di avere: un bambino. Purtroppo sei stato cresciuto a pane e ignoranza, per cui durante le serate sei un omofobo a tutti gli effetti. Se però i gay dovessero linciarti, gli omofobi indinniati avranno la possibilità di colpire due volte la notte successiva.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena la maggioranza ha deciso che {0} deve andarsene, lui urla «CATTIVEH! Sono La Drag Queen! Ecco le mie scarpe, il mio boa e la mia parrucca. E questa è la mia borsa che non è Carpisa. Non posso essere malvagiah!» Sentendosi sciocchi, i gay tornano a ballare portando la Drag in trionfo.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Hai provato a rivelare l'identità di {0}, ma non riesci a capire... Sei però sicuro che non sia nè La GAYsha nè un Omofobo!</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un passo avanti e mostra a tutti la pagina Facebook della Divah, dichiarandosi come esperta di tendenze. Da ora in poi, i voti della Divah {0} per i linciaggio conteranno doppio, e gli altri MUTI.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca "Rivelati" appena ti senti pronto di rivelarti pubblicamente come La Divah</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vorresti pomiciare davanti all'entrata con la tua amica, rendendo gli Omofobi incapaci di attaccare?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre tutti si infuriano per decidere chi scacciare, la pragmatica {0} prende la sua amica ed inizia a pomiciare con lei davanti all'entrata. Per questo turno il villaggio sarà al sicuro dagli attacchi degli Omofobi.</value>
+  </string>
+  <string key="Mayor">
+    <value>La Divah 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>La Drag Queen 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>La Timorata 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>La Giovane Bottom 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>La Lesbica ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>L'Omofobo Sexy ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Il Piccolo Omofobo 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Appena gli Omofobi iniziano ad insultare {0}, il Omofobo Sexy {1} prega tutti di fermarsi. {1} crede  che {0} potrebbe essere molto utile agli Omofobi invece di insultarlo e farlo fuggire via. {0} rimane imbambolato tutto il tempo a guardare gli addominali del Sexy Omofobo, trovandolo convincente. Diverrà un Omofobo il prossimo turno!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Sei stato attaccato dagli Omofobi, ma l' Omofobo Sexy ti ha scelto. E tu a quei pettorali non hai saputo dire di no... Decidi che diventerai un Omofobo, il prossimo turno!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena si ferma la musica, senti improvvisamente delle frasi risuonarti nella testa... "Ho tanti amici gay, ma..." "I gay sono sensibili!" "La famiglia è uomo e donna!". Ora sei un Omofobo!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>La Divah (=sindaco) gay del web, qui in incognito. Se decide di mostrare pubblicamente il proprio profilo Facebook, tutti lo riconosceranno e il suo voto varrà doppio. Se venisse convertito ai Bigotti, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Il Drag Queen (=Principe) è un ruolo chiave nella strategia del team dei gay. La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e se ne va. Esce invece se viene insultato. Può essere linciato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei la Timorata (=Stregone), gay ma lo ritieni sbagliato, quindi ti schieri con gli omofobi. Questo ti permette di avere informazioni qua e là.  \nOgni turno puoi scoprire identità come La GAYsha, ma può vedere SOLO La GAYsha e Gli Omofobi. Vince con i Omofobi.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>La Giovane Passiva (=Ragazzo Goffo) è talmente distratta dai manzi che ha un 50% di probabilità che il bot cambi il suo voto di linciaggio a uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>La Lesbica (=Fabbro) ha passato gli anni a combattere le ingiustizie, sessiste e omofobe. Una volta durante la serata, può decidere nel momento di tranquillità di prendere una sua amica e pomiciare davanti all'entrata (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare gli Omofobi per un turno, che preferiranno guardare le donzelle scambiarsi effusioni.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Il Omofobo Sexy (=Lupo Alfa) è l'origine del male, la rovina delle rovine, quasi come Carpisa. Finché presente, ha il 20% di possibilità di convincere le sue vittime a diventare Omofobi (Se la vittima è stata votata anche da lui). Se diventeranno Omofobi, verranno informate in privato e si trasformeranno in Omofobi il turno successivo.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il Piccolo Omofobo (=Cucciolo di Lupo) è un normale Omofobo, e verrà visto come Omofobo dalla GAYsha. Ma se venisse scacciato, il turno seguente gli altri Omofobi insulteranno due persone, in preda alla rabbia.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è Uscito, e tu ti trasformi nell'Omofobo Sexy!  I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è Uscito, e tu ti trasformi in un Piccolo Omofobo.  I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Gay</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Omofobi</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Playboy</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team Bigotti</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Drama Queen</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Gay</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Omofobi</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Playboy</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Bigotti</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Drama Queen</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>I Bigotti hanno mandato {0} per provare a convertire {1}, ma in realtà si becca solo un sacco di offese omofobe. {0} è Uscito...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} ha fatto visita a {1}, pronto a concedersi un'oretta passione, ma appena lo trova vede che litiga con un bellissimo tipo che sta spezzando il cuore a {1}! Il Playboy decide allora di farlo un po' annusare a {0} di allontanarsi ridendo e spezzare il cuore anche a lui, che se ne va dalla serata.</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>I ragazzi vedono {0} che fugge via dimenticando il cellulare, su cui è aperta la pagina "Memorie di una GAYsha". Stava cercando di imparare! Il Twink🙇 è Uscito.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, la ragazza lesbica, sia stata insultata in maniera pesante, tanto da averle fatto perdere il suo pugno forte. {0} è uscita. </value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} fugge a gambe levate, in preda ad una delusione d'amore. Il Playboy ha colpito ancora, indipendentemente da orientamento sessuale e religione! {0} era un Bigotto👤.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>A poco a poco tutti i ragazzi si accorgono che {0}, cioè Grindr, è andato improvvisamente offline, diffondendo terrore fra tutti i gay. {0} è fuori dai giochi. </value>
+  </string>
+  <string key="DrunkKilled">
+    <value>I gay guardano la pista, sapendo di trovare sul cubo {0}, ma {0} non c'è. Alcuni dicono di aver visto La Palestrata fuggire via senza reagire ad un bellimbusto che le ha spezzato il cuore!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Anche La Frociarola ha subito l'incantesimo malvagio del Playboy. E anche lei è andata tristemente in bianco.  {0} è Uscita.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembra che a {0} sia successo qualcosa di incredibile! Proprio lui, così duro e sempre pronto a reagire, si trova pugnalato al cuore dalle parole di un bellissimo ragazzo conosciuto quella sera. Il Playboy continua a mettere su il suo cimitero di cuori.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>E' impossibile! Persino {0} La Divah piange. E' stato trovato in ginocchio, mentre guarda la sua pagina di Facebook superata da quella di un ragazzo chiaramente più bello. Ovviamente è stata la dimostrazione del Playboy che lui può superare la Divah in 10 minuti!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Si accendono le luci sul palco, ma la star che tutti attendono, La Drag Queen {0}, tarda ad apparire. Non si sa bene cosa possa esserle successo, si sospetta che ci sia lo zampino del Playboy...</value>
+    <value>Il camerino della Drag Queen viene trovato sottosopra. Gli abiti di scena di {0} vengono trovati sparsi per il GAYsha Disco, segno che se li sia strappati via correndo. Il Playboy ama vedere le sue vittime stracciarsi le vesti!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Sul maxischermo viene per errore mostrato {0} che piange disperato, sembra distrutto. Sullo sfondo, il kimono strappato e il ventaglio spezzato. Il Playboy non ha paura di niente, {0} era La GAYsha.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>"Lo so che è sbagliato, lo so!". Gli Omofobi hanno commesso un errore, decidendo di insultare uno dei loro più preziosi alleati. La Timorata 🔮 {0} è Uscito.</value>
+    <value>"Non sono La GAYsha!!" furono le ultime parole pronunciate da {0} prima di scappare in lacrime. Sembra che {0}, lo Timorata 🔮 sia stato scambiato per il GAYsha... E' fuori.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Si sente per tutta la discoteca gridare {0} come una Pazzah: dev'essere stato offeso mentre era in Mental Breakdown. {0} è uscito...</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Essere un rozzo bestemmiatore non vuol dire per forza essere insensibili al fascino maschile. {0}, il Bestemmiatore, è andato dal Playboy e c'è rimasto sotto. E' fuori dai giochi.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Sembrava un momento tranquillo, visto che gli Omofobi hanno deciso di non disturbare nessuno. Ma è andata male a {0}, un Bigotto che ha provato a convertire un Omofobo. La testa di {0} è in piena confusione su ciò che è giusto e cosa è sbagliato, e ha deciso di andarsene.</value>
+    <value>I Bigotti hanno incontrato un problema non previsto questo turno. Il loro membro più recente, mandato a fare proseliti, è stato verbalmente massacrato dall' Omofobo che ha visitato. Sfortunatamente per {0}, agli Omofobi non frega nulla della religione in questo momento.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>I Bigotti pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un Bigotto è andato via mentre si fustigava col cilicio! Si era innamorato del Playboy, cosa inammissibile per lui. {0} Scappa via.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>In seguito ad uno strano trambusto, {0} ha deciso di proteggere qualcuno dagli omofobi. Ma che errore di valutazione! {0} si innamora del suo protetto che finge di ricambiare, per poi dirle all'orecchio che somiglia ad una balena. Qualcuno ha provato a proteggere il Playboy, questo turno.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0}, che non brilla certo per perspicacia, ha provato a proteggere un Omofobo questo turno. Inutile dire che {0} sia stata offesa pesantemente in quanto paladina dei gay e costretta ad abbandonare la serata in preda ad un attacco di panico.</value>
+  </string>
+  
+  
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto alla serata, {1} prova ad avere uno scontro con {0}, ma il Daddy {0} non si fa sicuramente spaventare dalle parole di un Omofobo! Non fa in tempo a mostrare il petto villoso che già l'Omofobo corre via a gambe levate.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto alla serata, {1} prova ad avere uno scontro verbale con {0} quando {0} meno se l'aspettava, riuscendo a coglierlo in un momento di tristezza. A {1} non sembrò vero riuscire a colpire un duro come {0} così nel profondo. Il Daddy se ne va.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} sono rimasti soli. Vedendo il crocifisso che {0} indossava al collo, il blasfemo {1} tira fuori il proprio dizionario di bestemmie, debellando una volta per tutte questo bigottismo che stava contaminando il GAYsha LGBT disco.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} prolungare il times ai giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} La Palestrata! Ti ha mollato un pugno e ora non puoi attaccare {1}...</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla serata perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+	
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova serata, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sono entrati alla serata negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Includi i Bigotti</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Includi la Drama Queen</value>
+  </string>
+  <string key="AllowFool">
+    <value>Includi La Falsah</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita il voto segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita la modalità casuale</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Consenti di estendere tempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli all'uscita</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permetti ritirata</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostra IDs dei giocatiro mentre entrano alla serata?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Linciaggi segreti, Mostrare Ruoli all'uscita, e Ammetti Bigotti / Folle / Drama Queen verranno impostati automaticamente ogni volta che qualcuno inizierà una serata.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Ammetti Gif Pack NSFW?</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Ammettere gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW {0}</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>{0} si guarda intorno, accorgendosi che tutti se ne sono andati. La serata è stata chiusa per la sua scenata. Era proprio questo quello che desiderava? Ora che è solo, a chi rivolgerà i suoi patetici sproloqui? {0} è triste, e se ne va pensando a come fare per rendere la prossima sceneggiata più utile alla sua autostima.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Nonostante tutti gli sforzi di {0}, i suoi amici Omofobi avevano abbandonato la serata. Perché odiare se stesso, ora che non c'era nessuno a poter elogiare questo atteggiamento? Anche se gli Omofobi hanno mandato via tutti, non era rimasto nessuno con cui gustare il sapore del trionfo, nè altri gay da guardare con disprezzo per sentirsi migliore. A {0} non restò che mettersi in cerca di nuovi Omofobi, nuovi alleati, e nuove lotte per sentirsi un po' meglio con se stesso.</value>
+  </string>
+  
+    <string key="RoleInfoWolfMan">
+    <value>Sei un comune gay ma vieni visto dalla GAYSha come omofobo per via del tuo habitat naturale: il baretto, dove parli con amici di figa che non ha mai leccato. Ops...</value>
+  </string>
+  <string key="WolfMan">
+    <value>il Represso 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Il represso viene visto dalla GAYsha come un omofobo per via del suo habitat naturale: il baretto, dove parla con amici di figa che non ha mai leccato. Ops...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Sei il pappone! Sei un omofobo travestito da gay, tanto da confondere la GAYsha che ti vedrà come uno dei buoni. :)</value>
+  </string>
+  <string key="Lycan">
+    <value>il Pappone 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Si spaccia per un membro della comunità gay, tant'è che la GAYsha lo vedrà come uno dei buoni, ma dietro di lui si cela solo un omofobo pronto allo sfruttamento degli sculettoni in pista</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Sei la PR bionda. Sai vagamente chi potrebbe essere presente in sala grazie alle tue liste bioniche su smartphone, ma visto che hai mandato inviti anche a tua nonna in Groenlandia non hai idea precisamente di chi sia chi. Quando sceglierai di svelare il ruolo di qualcuno potrai solo vedere cosa NON è tra i ruoli dei partecipanti ancora in gioco. :)</value>
+  </string>
+  <string key="Oracle">
+    <value>la PR bionda 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>La PR bionda può vedere l'identità NON ricoperta da uno dei partecipanti, scegliendo da una lista dei ruoli ancora in gioco</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Sei la Drag molesta. Passi buona parte della serata a chiedere drink ai partecipanti, congestionando la pista e impedendo a tutti di fare qualcosa per un turno.</value>
+  </string>
+  <string key="Sandman">
+    <value>la Drag molesta 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Passa tutta la serata a chiedere drink ai partecipanti, congestionando la pista e impedendo a tutti di fare qualcosa per un turno</value>
+  </string>
+  
+</strings>

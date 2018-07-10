@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <language name="Bahasa Malayu" base="Bahasa Melayu" variant="Normal" owner="@asy4f @skyzkillerz @IllusionLight @NightcrawlerL"/>
+  <language name="Bahasa Malayu" base="Bahasa Melayu" variant="Normal" owner="@asy4f @skyzlangit @IllusionLight @NightcrawlerL"/>
   <string key="NotInGame" deprecated="true">
     <value>Anda kelihatan tidak berada dalam mana-mana permainan sekarang...</value>
   </string>
@@ -573,7 +573,7 @@
   </string>
   <string key="MaintBreak" deprecated="true">
     <!-- 0 - target's name -->
-    <value>Maaf, saya baru sahaja hendak memulakan penyelenggaraan kecil, anda tidak boleh memulakan permainan sekarang.\nMenunggu permainan {0} untuk berakhir...\n Pergi ke @werewolf untuk maklumat lanjut</value>
+    <value>Maaf, saya baru sahaja hendak memulakan penyelenggaraan kecil, anda tidak boleh memulakan permainan sekarang.\nMenunggu permainan {0} untuk berakhir...\n </value>
   </string>
   <string key="MaxGames" deprecated="true">
     <!-- 0 - target's name -->
@@ -792,7 +792,7 @@
   </string>
   <string key="AddedToWaitList">
     <!-- 0 - target's name -->
-    <value>Anda telah ditambah pada senarai tunggu {0}.  Daya akan PM anda apabila prmainan bermula.\nKetika and menunggu, apa kata cuba memeriksa laman web https://teespring.com/stores/werewolf-for-telegram</value>
+    <value>Anda telah ditambah pada senarai tunggu {0}.  Saya akan PM anda apabila prmainan bermula.\nKetika and menunggu, apa kata cuba memeriksa laman web https://teespring.com/stores/werewolf-for-telegram</value>
   </string>
   <string key="NotifyNewGame">
     <!-- 0 - target's name -->
@@ -1394,5 +1394,313 @@ Nota: Para adalah pembuat bot ini.</value>
     <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
     <value>{0} telah menyertai permainan dalam 30 saat yang lalu.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Membenarkan Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Membernarkan Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Membenarkan Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Membenarkan undian rahsia</value>
+  </string>
+  <string key="RandomMode">
+    <value>Membenarkan mod rawak</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Membenarkan untuk menambah masa</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Menunjukkan peranan sesudah mati</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Membenarkan melarikan diri</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Tunjuk IDs semasa menyertai permainan</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Tunjukkan IDs pemain semasa menyertai permainan?\nSekarang: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Semua</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Membenarkan NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Membenarkan players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Ketika matahari mula menyinari seluruh kampung, {0} bangun dalam kesunyian. Menyedari bahawa tiada seorang pun tertinggal, {0} berjalan dan terus berjalan hingga sampai ke tengah kawasan kampung. Memandang pada jasad mayat disekitar kampung, {0} mengeluh. Harapan untuk terpilih tidak dapat ditunaikan, dia mengambil tali dan gantung pada pokok sebelum tersenyum lebar.</value>
+    <value>{0} bangun pada waktu Subuh, keseorangan. {0} rasa kecewa kerana tidak berjaya membuatkan penduduk kampung memilih dirinya. {0} mengambil tali dan menggantung diri, menyedari bahawa tiada seorang pun yang mencapai impian mereka dan tiada sesiapapun yang tinggal.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} membuka mata mereka dan menyedari bahawa tidak lagi mendengar hiruk pikuk kampung seperti biasa. Mereka menatap siling yang suram, membiarkan realiti perlahan menenggelami mereka. Semua orang mati. Serigala mati. Dengan rasa sebak di hati, {0} bangkit, dan mengemas barang-barang , sebelum berjalan ke pinggir kampung. Air mata mengalir dari mata , kerana {0} teringat betapa dekat kepada kemenangan. Malangnya, sudah tiba masanya untuk memulakan kehidupan baru, dengan pek baru. {0} tergelincir ke dalam kegelapan hutan, jauh dari kampung yang tenang.</value>
+    <value>Untuk semua usaha yang dilakukan oleh {0}, kawan serigala iaitu {0} tidak bergerak dan tidak bermaya. Sekalipun serigala telah menghampiri kemenangan, tidak ada seorang pun yang dapat menikmati kejayaan itu, dan tidak ada penduduk yang masih hidup. {0} melihat bola kristal, dan senyap menghilang, dalam awan kabut, mencari serigala baru, sekutu baru, dan pengkhianatan baru untuk melakukan jenayah baru terhadap kemanusiaan.
+    </value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Anda hendak memilih variasi?\nSekarang: {0}\nSebab anda telah menyertai 500 permainan anda boleh menyertai: </value>
+  </string>
+  <string key="Skip">
+  <value>Skip</value>
+  </string>
+
+   <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} telah mati, dan anda berubah menjadi serigala jadian(Lycans). Ahli pasukan anda adalah(sekiranya ada): {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Anda nampak {0} bukan seorang {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Anda mahu menidurkan semua pemain pada malam ini?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Semasa penduduk kampung sedang bersembang kencang, {0} pulang ke rumah dan membaca jampi serapah yang mendayu-dayu.  Malam ini, semua akan tidur dengan nyenyak. Tiada sesiapa yang dapat melakukan peranan mereka pada malam ini</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Semua orang pulang ke rumah mereka. Mereka meletakkan kepala terus ke atas bantal, entah mengapa mereka rasa penat sekali. Mereka tidak menyangka akan tertidur...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Membenarkan peranan pencuri?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Peranan pencuri ditukarkan kepada: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Pencuri boleh memainkan peranan pada tiap malam?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Pencuri akan berperanan pada tiap malam: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Membenarkan pencuri</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Pemainan pencuri penuh</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Anda seorang penduduk kampung dan menghabiskan masa dalam hutan yang merupakan tempat tinggal serigala, peramal keliru sama ada anda merupakan serigala atau tidak, Peramal akan anggap anda sebagai serigala! Aduh...</value>
+  </string>
+  <string key="WolfMan">
+    <value>Orang Serigala 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Anda seorang penduduk kampung dan menghabiskan masa dalam hutan yang merupakan tempat tinggal serigala, peramal keliru sama ada anda merupakan serigala atau tidak, Peramal akan anggap anda sebagai serigala! Aduh...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Anda meruapakan serigala jadian(lycan)!  Anda merupakan serigala, peramal keliru dan nampak anda sebagai penduduk kampung :)</value>
+  </string>
+  <string key="Lycan">
+    <value>the Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Lycan merupakan serigala jadian, pada pandangan peramal dilihat sebagai penduduk kampung.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Anda merupakan Tok Dukun. Pada setiap malam, anda boleh memilih untuk melihat pemain lain dan nampak BUKAN PERANAN SEBENAR pemain itu. Anda akan diberikan peranan orang lain yang masih hidup. Berikan perhatian. :)</value>
+  </string>
+  <string key="Oracle">
+    <value>Tok Dukun 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Anda merupakan Tok Dukun. Pada setiap malam, anda boleh memilih untuk melihat pemain lain dan nampak BUKAN PERANAN SEBENAR pemain itu. Anda akan diberikan peranan orang lain yang masih hidup. Berikan perhatian. :)</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Anda merupakan seorang pemukau. Pada setiap permainan anda boleh memainkan peranan anda untuk memukau orang supaya tidur. Pemain lain tidak dapat memainkan peranan mereka pada malam itu.</value>
+  </string>
+  <string key="Sandman">
+    <value>Pemukau 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Anda merupakan seorang pemukau. Pada setiap permainan anda boleh memainkan peranan anda untuk memukau orang supaya tidur. Pemain lain tidak dapat memainkan peranan mereka pada malam itu.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>Pengaman ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>Orang Tua Bijak 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>Pencuri 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
+   <string key="AskPacifist">
+    <value>Tekan punat ini menyebabkan penduduk kampung tidak mengundi malam ini!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>Pengaman ☮️, {0}, berucap dengan penuh sendu sehingga menyebabkan penduduk kampung tak sanggup untuk mengundi pada malam ini.!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>kerana ucapan pengaman ☮️ , acara untuk menyingkirkan tidak berlaku pada malam ini!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Anda cuba mengganggu rumah {0} malangnya dia merupakan Orang Tua Bijak 📚! {0} berjaya mengelak serangan dan bernasib baik tiada sesiapa kenal anda.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Serigala cuba memakan anda tetapi anda tak menjadi orang tua bijak 📚 dan menyelamatkan anda! Malangnya anda tidak mengenali orang yang menyerang anda</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Pemburu 🎯, {0} menembak orang tua bijak 📚, {1}. {0} menangis kerana menyedari kesilapan yang mereka lakukan, membunuh penduduk kampung yang tidak berdosa.👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Penembak 🔫, {0} menembak orang tua bijak 📚, {1}. {0} menangis dengan kesilapan yang dilakukan, menyesal dan meninggalkan pistol lalu membuat keputusan untuk menjadi penduduk kampung biasa👱 .</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Anda cuba untuk mencuri peranan {0}, tetapi anda tidak berjaya...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Anda cuba untuk mencuri peranan {0}, tapi {0} sudah mati...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Peranan anda telah di curi! Anda adalah {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>Anda berjaya mencuri peranan {0}. Anda sekarang ialah {1}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} bukan lagi pasukan anda dan {1} telah menjadi buruh seperti anda!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Ahli pasukan anda: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} bukan lagi pasukan anda dan {1} telah menjadi pengamal ajaran sesat seperti anda!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} bukan lagi pasukan anda dan {1} telah menjadi serigala seperti anda!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Ahli pasukan anda adalah {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Semasa {0} berlegar di sekeliling kampung, dia mendapati bahawa tiada lagi peranan yang boleh di curi. Mereka meninggalkan kampung dan berpindah ke kampung lain untuk memulakan semula karier.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Anda target adalah {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Peranan manakah yang anda mahu curi?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} undian pada {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Keputusan penyingkiran hari ini:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} undian kepada {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Rahsia: Bilangan undi</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Pengundi</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <value>Pelik ketika anda berbincang untuk ajak orang menyertai ajaran anda, anda menyedari {0} tiada di sini! Apa yang berlaku pada mereka??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+  <value>Aman!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <value>Acara penyingkiran untuk hari ini ditangguhkan kerana ucapan pengaman!</value>
   </string>
 </strings>
