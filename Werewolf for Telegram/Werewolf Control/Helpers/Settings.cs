@@ -32,7 +32,7 @@ namespace Werewolf_Control.Helpers
         public static readonly long MainChatId = -1001049529775; //Beta group
         public static readonly long SupportChatId = -1001060486754; //@werewolfsupport
         public static readonly long PrimaryChatId = -1001268085464; //@werewolfgame
-        public static readonly string DevChannelId = "@werewolfdev"; //@werewolfdev
+        public static readonly string DevChannelId = "@greywolfdev"; //@greywolfdev
         public static readonly long VeteranChatId = -1001322721489;
         public static readonly string VeteranChatLink = "werewolfvets";
         public static readonly string VeteranChatUrl = $"https://t.me/{VeteranChatLink}";
