@@ -81,7 +81,7 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
-#if DEBUG
+#if BETA
                 if (grp.BetaGroup != true & !UpdateHelper.Devs.Contains(update.Message.From.Id))
                 {
                     Bot.Api.LeaveChatAsync(update.Message.Chat.Id);

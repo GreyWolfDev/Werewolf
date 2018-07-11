@@ -13,6 +13,7 @@ using Telegram.Bot.Exceptions;
 using Telegram.Bot;
 using Database;
 using DonationSite.Models;
+using System.Threading.Tasks;
 
 namespace DonationSite.Controllers.Webhook
 {
@@ -22,8 +23,9 @@ namespace DonationSite.Controllers.Webhook
         private static string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
         private static string XsollaProjectSecretKey = ConfigurationManager.AppSettings.Get("XsollaProjectSecretKey");
         public static TelegramBotClient bot = new TelegramBotClient(TelegramAPIKey);
+
         [HttpPost]
-        public HttpResponseMessage Post()
+        public async Task<HttpResponseMessage> Post()
         {
             using (var db = new WWContext())
             {
@@ -83,7 +85,7 @@ namespace DonationSite.Controllers.Webhook
                                 if (p.Founder ?? false)
                                     badge += "💎";
 
-                                bot.SendTextMessageAsync(userid, $"Successfully received ${amount} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}");
+                                await bot.SendTextMessageAsync(userid, $"Successfully received ${amount} from you! YAY!\nTotal Donated: ${level}\nCurrent Badge (ingame): {badge}");
                                 //check to see how many people have purchased gif packs
 
                                 if (level > 10 && oldLevel < 10)
@@ -97,7 +99,7 @@ namespace DonationSite.Controllers.Webhook
                                         data = JsonConvert.DeserializeObject<CustomGifData>(json);
                                     if (!data.HasPurchased)
                                     {
-                                        bot.SendTextMessageAsync(userid,
+                                        await bot.SendTextMessageAsync(userid,
                                             "Congratulations! You have unlocked Custom Gif Packs :)\nUse /customgif to build your pack, /submitgif to submit for approval");
                                     }
                                     data.HasPurchased = true;
@@ -116,7 +118,7 @@ namespace DonationSite.Controllers.Webhook
                             userid = int.Parse(obj?.user.id);
                             var reason = obj?.refund_details?.reason;
                             amount = (int)obj?.purchase?.total?.amount;
-                            bot.SendTextMessageAsync(userid, $"Your donation did not pass through Xsolla because of: {reason}. If you have any questions please go to @werewolfsupport.");
+                            await bot.SendTextMessageAsync(userid, $"Your donation did not pass through Xsolla because of: {reason}. If you have any questions please go to @werewolfsupport.");
                             return Request.CreateResponse(HttpStatusCode.OK);
                         default:
                             return Request.CreateResponse(HttpStatusCode.OK);
@@ -127,7 +129,7 @@ namespace DonationSite.Controllers.Webhook
                     var x = e.InnerExceptions[0];
                     while (x.InnerException != null)
                         x = x.InnerException;
-                    bot.SendTextMessageAsync(LogGroupId, x.Message + "\n" + x.StackTrace);
+                    await bot.SendTextMessageAsync(LogGroupId, x.Message + "\n" + x.StackTrace);
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, x);
                 }
                 catch (ApiRequestException e)
@@ -136,14 +138,14 @@ namespace DonationSite.Controllers.Webhook
                     var x = e.InnerException;
                     while (x?.InnerException != null)
                         x = x.InnerException;
-                    bot.SendTextMessageAsync(LogGroupId, x?.Message + "\n" + x?.StackTrace);
+                    await bot.SendTextMessageAsync(LogGroupId, x?.Message + "\n" + x?.StackTrace);
                     return Request.CreateErrorResponse((HttpStatusCode)code, x);
                 }
                 catch (Exception e)
                 {
                     while (e.InnerException != null)
                         e = e.InnerException;
-                    bot.SendTextMessageAsync(LogGroupId, e.Message + "\n" + e.StackTrace);
+                    await bot.SendTextMessageAsync(LogGroupId, e.Message + "\n" + e.StackTrace);
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
                 }
             }
