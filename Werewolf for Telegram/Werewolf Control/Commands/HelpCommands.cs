@@ -44,7 +44,7 @@ namespace Werewolf_Control
             //now determine what languages are available in public groups.
             try
             {
-                string[] disabledLangs = new string[] { "فارسی" }; // Language bases of which no grouplist is accessible
+                string[] disabledLangs = new string[] { /*"فارسی"*/ }; // Language bases of which no grouplist is accessible
                 var langs = PublicGroups.GetBaseLanguages().Where(x => !disabledLangs.Contains(x)); // do not fetch disabled langs
                 //create a menu out of this
                 List<InlineKeyboardCallbackButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
