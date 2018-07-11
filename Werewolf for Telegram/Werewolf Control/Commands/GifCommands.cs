@@ -323,7 +323,16 @@ namespace Werewolf_Control
             data.Settings.Currency = "USD";
             data.Settings.ProjectId = Program.xsollaProjId.Value;
             data.Settings.Ui.Theme = "dark";
-            return JsonConvert.SerializeObject(data, new JsonSerializerSettings { ContractResolver = new DefaultContractResolver { NamingStrategy = new SnakeCaseNamingStrategy() } });
+            var res = JsonConvert.SerializeObject(data,
+                new JsonSerializerSettings
+                {
+                    ContractResolver = new DefaultContractResolver
+                    {
+                        NamingStrategy = new SnakeCaseNamingStrategy()
+                    },
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+            return res;
         }
 
         public static void LogException(Exception e, string reason, Chat chat)
