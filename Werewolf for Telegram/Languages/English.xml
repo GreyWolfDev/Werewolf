@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
   <language name="English" base="English" variant="Normal" owner="Para949" code="en"/>
   <string key="NotInGame" deprecated="true">
@@ -573,7 +573,7 @@
   </string>
   <string key="MaintBreak" deprecated="true">
     <!-- 0 - target's name -->
-    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
   </string>
   <string key="MaxGames" deprecated="true">
     <!-- 0 - target's name -->
@@ -775,7 +775,7 @@
     <!-- 0 - target's name -->
     <value>You have become the wild child. You role model is {0}.</value>
   </string>
-  <string key="LoversWin">
+  <string key="LoversWin" isgif="true">
     <value>True love endures! The lovers have won!</value>
   </string>
   <string key="HunterKilledVisiter">
@@ -1562,35 +1562,164 @@
     <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
   </string>
 
-  <!-- NOT IMPLEMENTED YET -->
+<!-- NOT IMPLEMENTED YET -->
   <string key="RoleInfoPacifist">
-    <value></value>
+    <value>You are the Pacifist ☮️. You can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
   </string>
   <string key="Pacifist">
     <value>the Pacifist ☮️</value>
   </string>
   <string key="AboutPacifist">
-    <value></value>
+    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value></value>
+    <value>You are the Wise Elder 📚. You can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
   </string>
   <string key="WiseElder">
     <value>the Wise Elder 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
   </string>
 
   <string key="RoleInfoThief">
-    <value></value>
+    <value>You are the Thief 😈! You can steal a player's role on the first night and turn that player into a villager!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>You are the Thief 😈! Since the [Full Thief] mode is turned on, you get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
   </string>
   <string key="Thief">
     <value>the Thief 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>Hit this button when you want to make your heartfelt speech and stop the village from lynching the next time!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>The Pacifist ☮️, {0}, is making a heartfelt speech of friendship and trust in front of the village. Moved by their speech, there will be no lynching today!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Because of the Pacifist's ☮️ heartfelt speech, the lynch phase will be skipped today!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>You tried to intrude {0}'s home but unfortunately they were the Wise Elder 📚! {0} successfully thwart the attack, luckily they did not recognize any of you.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>The wolves tried to eat you, but you didn't become the Wise Elder 📚 by being easy to kill by an intruder! You successfully thwart the attack, but unfortunately you didn't recognize any attackers.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Hunter 🎯, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and swore off their Hunter abilities. He died a simple Villager 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Gunner 🔫, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and decided to scrap their gun, becoming a simple Villager👱 with a field to plow.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but {0} is already dead...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Your role got stolen! You are now {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>You successfully stole {0}'s role. You are now {1}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} is no longer your teammate and {1} has now become a mason, just like you!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Your theft target is now {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Whose role do you want to steal from?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votes went to {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>The lynch result for today:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votes went to {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Peace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
   </string>
 </strings>
-

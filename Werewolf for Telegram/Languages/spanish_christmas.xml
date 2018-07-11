@@ -1,0 +1,1517 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<strings>
+  <language name="Spanish Christmas" base="Español" variant="Navidad" owner="RukasuSD" code="es" />
+  <!-- @ZoldycKillua, @afkqueenrani, @fenrirwuff  ayudaron a crear el idioma original, @skollwolf es el creador original del idioma, @Tato_UwU y @Barquito me ayudaron con la traducción  -->
+  <!---Inicio de la lista de roles: 
+	Espíritu de la Navidad = Cazador de cultistas
+	Hombrecito de jengibre = Masón
+	El Cascanueces = Cazador
+	No Creyente = Cultista
+	Buddy el Elfo = Torpe
+	El Grinch = Veterano
+	Krampus = Asesino serial 
+	Jack Frost = Lobo Alfa 
+	Frosty el Hombre de Nieve = Lobezno
+	Hombre de Nieve = Lobo
+	Elfo = Aldeano
+	Santa Claus = Vidente
+	Frank Claus = Borracho	Mary Claus = Ramera	
+	Señorita Bastón de Caramelo = Traidor
+	Jack Skellington = Ángel de la Guarda	Santa secreto = Detective
+	Presuntuoso = Maldito
+	Pedro el negro = Justiciero
+	Relámpago = Wild Child
+	Señora Claus = Observador
+	Ayudante de Santa = Aprendiz de vidente
+	Santa del centro comercial = El Necio	El hombre del tiempo = El herrero
+	Anciano del invierno = Hechicera
+	Grýla = Principe
+	Rodolfo = Alcalde
+	Reno del amor = Cupido	Prancer = Doppelganger
+    Final de la lista de roles-->
+  <string key="NotInGame" deprecated="true">
+    <value>El delicioso chocolate caliente con malvaviscos está listo, pero parece que no estás ahí. Únete a esta partida ahora, antes de que comience.</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha preparado el trineo de Santa esta noche y Rodolfo está liderando! Únete para recibir regalos de Santa Claus, pero ten cuidado de no morir 😈</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha preparado el trineo caótico de Santa esta noche y Rodolfo está liderando! Únete para recibir regalos de Santa Claus, pero ten cuidado de no morir 😈</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>¡Tu chocolate caliente con malvaviscos aún no está servido! Ya hay una partida en marcha, no la interrumpa.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Tilín tilín, alguien parece estar impaciente. Ya eres miembro de esta partida, ten paciencia y bebe tu chocolate caliente con malvaviscos.</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Solo queda 1 minuto antes de que no puedas unirte a esta partida, únete ahora o pierde la oportunidad de recibir tus regalos.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} segundos quedan antes de que ya no puedas unirte a este juego, únase ahora o pierda la oportunidad de recibir sus regalos.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>¡Oh no! La Navidad fue cancelada este año porque no ayudaste a entregar regalos para la gente de todo el mundo.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>¡Es diciembre en el Polo Norte y casi llega la Navidad! ¡Es hora de acabar con los malvados Hombres de Nieve y Krampus que intentan evitar la Navidad! Espere un poco mientras se asignan los roles a los jugadores.</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} fue baneado por intentar un exploit (no usar nombres que comiencen con /). Es Navidad a nadie le gustan los jugadores tramposos.</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, por favor, cambie su nombre para unirse a este juego navideño.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Lo sentimos, ¡todos los cupos están ocupados! Tienes que esperar hasta que comience el próximo juego, pero no te preocupes, llegará tu turno.</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} se ha unido a la partida. {1} jugadores, {2} mínimo, {3} máximo</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} haz clic en el botón de iniciar o {1} y comienza, para que pueda enviarte tu rol por mensaje privado. No puedes unirte al juego hasta que lo hagas.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>¡No puedes escaparte! ¡Fuiste congelado hasta la muerte! Mientras esperas a que comience el próximo juego, puedes prepararte un chocolate caliente con malvaviscos para calentarte un poco.</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha huido por el miedo a los malvados Hombres de Nieve, Krampus y el temor de convertirse en un No Creyente!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} jugadores restantes.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>¡Oye, todavía no te he preguntado nada!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>No parece que estés jugando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>¡No pude encontrar un jugador con ese nombre!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>¡Esa respuesta no es válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha votado por congelar a {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votado por quemar a {1}.</value>
+    <value>{0} apunta y dispara a {1}.</value>
+    <value>¡{0} piensa que {1} no debería estar aquí!</value>
+    <value>{0} piensa que {1} es buen material para una fogata.</value>
+    <value>{0} busca tomar venganza contra {1}!</value>
+    <value>¡{0} piensa que {1} es una amenaza para la Navidad!</value>
+    <value>¡{0} piensa que {1} provoca indignación para la Navidad!</value>
+    <value>{0} dice, &quot;No hay regalo de Navidad para {1}&quot;;</value>
+    <value>¡{0} afirma que {1} ha congelado a algunos invitados!</value>
+    <value>¡{0} afirma haber presenciado a {1} recolectando algunos hígados!</value>
+    <value>¡{0} dice que {1} tiene las manos ensangrentadas!</value>
+    <value>{0} dice: &quot;¡Por Navidad, eliminemos a {1}&quot;</value>
+    <value>{0} intenta encender fuego a {1}.</value>
+    <value>{0} arroja un poco de leña a {1}.</value>
+    <value>{0} mira a {1} y enciende algunos fósforos.</value>
+    <value>¡{0} dice que {1} es un Hombre de Nieve disfrazado!</value>
+    <value>{0} dice que {1} había preparado la fiesta e ¡hizo vomitar a todos anoche!</value>
+    <value>¡{0} dice que {1} había preparado mal la fiesta e hizo que todos sufrieran de gastroenteritis anoche!</value>
+    <value>¡{0} dice que el pavo de Navidad preparado por {1} fue desagradable!</value>
+    <value>¡{0} dice que {1} casi quemó la casa de la fiesta!</value>
+    <value>¡{0} dice que {1} casi le mata en la última pelea de bolas de nieve!</value>
+    <value>¡{0} acusa a {1} de ser un pirómano!</value>
+    <value>¡{0} dice que {1} hizo un fuego amigo!</value>
+    <value>¡{0} ve a {1} sosteniendo un lanzallamas propiedad de otra persona!</value>
+    <value>{0} le encataria si {1} arde en fuego lentamente.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} no ha votado durante aproximadamente 2 días seguidos, por lo que de repente ha sido quemado. Deben continuar sin {1}.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Eras la Señorita Bastón de Caramelo 🍭 (🖕) pero ahora te convertiste en un Hombre de Nieve ☃️ (🐺)...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Ya has elegido. No hay vuelta atrás.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nSanta Claus 🎅🏻 (👳) es {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era Santa Claus 🎅🏻 (👳). Como Ayudante de Santa 👲 (🙇), subes para convertirte en Santa Claus 🎅🏻 (👳).</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} Era el Ayudante de Santa 👲 (🙇), y ahora sube para ocupar el lugar de {1} como Santa Claus 🎅🏻 (👳).</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>¡Ves que {0} es {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>¿A quién quieres quemar?</value>
+  </string>
+  <string key="AskDetect">
+    <value>¿A quién quieres comprobar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>¿A quién quieres derretir con tu lanzallamas? {0} llamarada(s) restantes.</value>
+  </string>
+  <string key="AskVisit">
+    <value>¿A quién quieres visitar?</value>
+  </string>
+  <string key="AskSee">
+    <value>¿A quién quieres ver?</value>
+  </string>
+  <string key="AskGuard">
+    <value>¿A quién quieres proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>¿A quién quieres congelar?</value>
+  </string>
+  <string key="AskHunt">
+    <value>¿A quién quieres cazar?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>¿Quién es tu guía a seguir?</value>
+  </string>
+  <string key="AskConvert">
+    <value>¿A quién quieres convertir en un No Creyente?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Asegúrate de discutirlo con {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> y </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>¡Eres Presuntuoso 💧 (😾)! Estás en el Equipo de Santa pero si un Hombre de Nieve o Jack Frost intentan congelarte, mágicamente te transformas en un Hombre de Nieve y te unirás al Equipo Frost.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Eres el Santa Secreto 🎁 (🕵️). Cada día, tendrás la oportunidad de descubrir secretamente su rol. Pero investigue con cuidado, ya que los Hombres de Nieve tienen un 40% de posibilidades de verte husmeando.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>¡Eres Frank Claus 👴🏻 (🍻), el hermano de Santa que se pone un poco salvaje con el ponche! Pero sigues siendo una parte leal del Equipo Santa. Si los Hombres de Nieve intentan congelarte, el alcohol en tu sangre comenzará a derretirlos y necesitarán descansar la noche siguiente.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Eres Jack Skellington 💀 (👼). Cada noche, eliges un jugador al que estás protegiendo contra los malvado Hombres de Nieve y Krampus. Sin embargo, si eliges proteger a un Hombre de Nieve o a Krampus, hay un 50% de probabilidad de que te congelen.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Eres Pedro el negro 💁🏿♂️ (🔫). Como eres el compañero de Santa, no eres amable con las personas que no les gusta la Navidad. Tienes dos oportunidades de dispararle a alguien con tu lanzallamas. Una vez que dispares, todos sabrán que estás del lado de Santa.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Eres Mary Claus 💃🏻 (💋). Como la hija entrometida de Santa se te dará la oportunidad de visitar a otro jugador cada noche. Si ese jugador no es uno de los Hombres de Nieve o Krampus, sobrevivirás a una cálida noche junto al fuego tomando chocolate caliente con malvaviscos, pero si visita un Hombre de Nieve te congelará. Si estás visitando a un jugador y los Hombres de Nieve eligen congelarte, no morirás porque no estás en casa.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Eres la Señorita Bastón de Caramelo 🍭 (🖕). ¡Oh, pequeña amante de Santa! Estás en el Equipo Santa... por ahora. Si vives lo suficiente para que mueran todos los Hombres de Nieve, te unirás al Equipo Frost y te convertirás en uno de ellos.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>¡Eres un malvado Hombre de Nieve ☃️ (🐺)! Tienes poco tiempo para vivir ya que se acerca el final del invierno, pero planeas causar caos antes de que te deshagas. Cada noche, elegirás un jugador y tratarás de congelarlo hasta la muerte. Pero ten cuidado, si tratas de congelar a Frank Claus, tus poderes se verán perjudicados. Sin embargo, si tratas de congelar a Presuntuoso, ¡Se unirán al Equipo Frost!</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>¡Eres Santa Claus 🎅🏻 (👳)!Intenta asegurarte de que la Navidad transcurra sin problemas. Cada noche tienes la capacidad de descubrir el verdadero papel de un jugador. No te reveles demasiado rápido, porque si los Hombres de Nieve te encuentran, intentarán congelarte.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Eres un Elfo 👱👩 (👱). ¡Estas condenado hacer juguetes hasta el día de Navidad! Cada día, tendrás la oportunidad de derretir un Hombre de Nieve.</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Eres el Grinch 🤢 (👺). Si te queman, ¡ganas automáticamente!</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Eres Relámpago 🐃 (👶), El reno loco y tonto. Al comienzo del juego, elegirás a tu mejor amigo. Si muere, te unirás a Equipo Frost.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Eres la señora Claus 🤶🏻 (👁). Puedes decir quién es Santa (el verdadero, no el tonto Santa del centro comercial que nadie realmente necesita).</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Eres el Ayudante de Santa 👲 (🙇). Estás en Team Santa. Pero si Santa muere, te convertirás en Santa.</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>Eres No Creyente 👻 (👤). Tu objetivo es convertir a todos los demás jugadores (excepto Hombres de Nieve y Krampus) en No Creyentes. Si al final del juego, todos los jugadores vivos son No Creyentes, todos ganas.</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value>Eres el Espíritu de Navidad 🎄 (💂) y tu trabajo es encontrar a los No Creyentes 👻 (👤). Si los No Creyentes intentan convertirte, su nuevo miembro morirá. Cada noche puedes elegir un jugador para cazar y si son No Creyentes, van a morir.</value>
+  </string>
+  <string key="LynchTime">
+    <!-- 0 - number of seconds -->
+    <value>El atardecer se acerca, y todos los ciudadanos del Polo Norte se unen para decidir quién será quemado esta noche... ¡Ahora todos tienen {0} segundos para votar!</value>
+  </string>
+  <string key="DayTime">
+    <!-- 0 - number of seconds -->
+    <value>Otra noche helada ha terminado. Se despiertan y se calientan al lado de sus chimeneas. Tienen {0} segundos para estar listos para el trabajo de hoy.</value>
+  </string>
+  <string key="NightTime">
+    <!-- 0 - number of seconds -->
+    <value>Se acerca otra noche estresante en el Polo Norte. El trabajo ha terminado por hoy, pero ya está por llegar un nuevo día. Descansen un poco para estar listos para el siguiente duro día de trabajo. Los roles nocturnos se están preparando para elegir a sus víctimas de hoy, tienen {0} segundos para eso.</value>
+  </string>
+  <string key="LynchKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Los ciudadanos del Polo Norte han emitido sus votos, en medio de dudas y sospechas. {0} ha sido quemado. {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Incapaces de llegar a una decisión correcta sobre a quién quemar, los ciudadanos regresan en la noche a sus hogares, frustrados...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Algo es sospechoso, ¡porque nadie votó! Es hora de irse a dormir...</value>
+  </string>
+  <string key="DetectiveEaten">
+    <!-- 0 - victim name -->
+    <value>Los ciudadanos del Polo Norte se reúnen en la mañana, pero no ven a {0}. Ellos caminan hacia la casa, para encontrar a {0} congelado, y con una media dentro de su garganta. El Santa secreto 🎁 (🕵️) está muerto.</value>
+  </string>
+  <string key="GuardianEaten">
+    <!-- 0 - victim name -->
+    <value>La mañana llega al Polo Norte, y para sorpresa de todos, {0} Jack Skellington 💀 (??) fue encontrado muerto de frío.</value>
+  </string>
+  <string key="GunnerEaten">
+    <!-- 0 - victim name -->
+    <value>Cuando todos salen de sus cabañas por la mañana, encuentran trozos de hielo del cuerpo de Pedro el negro ({0}) 💁🏿♂️ (🔫) esparcidos, congelados y aplastados por un ataque de los malvados Hombres de Nieve. Han perdido a Pedro el negro 🔫.</value>
+  </string>
+  <string key="SeerEaten">
+    <!-- 0 - victim name -->
+    <value>Los ciudadanos del Polo Norte se despiertan por la mañana para encontrar los restos destripados de {0} en la nieve. Santa Claus 🎅🏻 (👳) está muerto.</value>
+  </string>
+  <string key="DrunkEaten">
+    <!-- 0 - victim name -->
+    <value>Todo el mundo se despierta y reconoce el olor a ponche... ¡La cabina de Frank Claus 👴🏻 (🍻) está congelada! Después de que la cabina ha sido liberada del hielo, encuentran a {0} muerto dentro de ella.</value>
+  </string>
+  <string key="FoolEaten">
+    <!-- 0 - victim name -->
+    <value>Cuando el sol se eleva sobre el Polo Norte, los ciudadanos encuentran a {0} congelado en la nieve con regalos a su alrededor. Pero espera, esos no son en realidad los regalos para la gente de ahí. Están todos vacíos por dentro. El Santa del centro comercial 👳🏼 (🃏) murió.</value>
+  </string>
+  <string key="DefaultEaten">
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Todos se levantan por la mañana, y no escuchan nada de {0}. No tardan mucho en encontrar su cuerpo congelado en la nieve. {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Un hedor notable viene de la casa de {0}... Los ciudadanos inspeccionan para encontrar un cuerpo que yace frente a un letrero de Navidad. Un No Creyente 👻 (👤) ha sido asesinado por el Espíritu de Navidad🎄 (💂)!</value>
+  </string>
+  <string key="NoAttack">
+    <value>Los ciudadanos se reúnen a la mañana siguiente en el centro de la ciudad, dando un suspiro de alivio, parece que nadie fue congelado la noche anterior.</value>
+  </string>
+  <string key="CursedBitten">
+    <value>Has sido atacado por los malvados Hombres de Nieve ☃️ (🐺). ¡Como eras Presuntuoso 💧 (😾), ahora te has convertido en un Hombre de Nieve malvado!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Tus compañeros Hombres de Nieve: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <!-- 0 - victim name -->
+    <value>¡Intentaste congelar a {0}... pero era Presuntuoso, y ahora se ha convertido en un malvado Hombre de Nieve! ¡Felicitaciones ahora es tu nuevo compañero de equipo!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>¡Oh no! Los malvados Hombres de Nieve ☃️ (🐺) te congelaron hasta la muerte.</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <!-- 0 - victim name -->
+    <value>¡Oh no! ¡{0} era Frank Claus 👴🏻 (🍻)! Ahora no puedes congelar a nadie hasta la muerte mañana por la noche...</value>
+  </string>
+  <string key="GuardWolf">
+    <value>¡Intentaste proteger a un malvado Hombre de Nieve ☃️ (🐺)! El malvado Hombre de Nieve te ha congelado hasta la muerte.</value>
+  </string>
+  <string key="GuardSaved">
+    <!-- 0 - saved player name -->
+    <value>¡Has salvado la vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <!-- 0 - player name -->
+    <value>{0} no fue atacado, por lo que no tenías que salvarlo.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Fuiste a salvar a {0}, ¡pero no estaba en casa!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>¡Jack Skellington 💀 (👼) te estaba vigilando anoche y luchó contra un atacante!</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->
+    <value>Mary Claus 💃🏻 (💋) eligió la noche equivocada para quedarse en casa. {0} ha sido congelada hasta la muerte por los malvado Hombres de Nieve!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->
+    <value>¡{0} no estaba en casa! Ninguna víctima para congelar esta noche...</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <!-- 0 - player name -->
+    <value>Te escabulles en la casa de {0} por un chocolate caliente con malvaviscos, solo para ser confrontada por un malvado Hombre de Nieve. Has sido congelada hasta la muerte.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <!-- 0 - player name -->
+    <value>¡{0} se escabulló a la casa equivocada anoche! Los restos de {0} han sido encontrados congelados en la nieve... qué triste:(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} se desliza en la casa de {1}, lista para tomar un trago de chocolate caliente con malvaviscos para aliviar el estrés. ¡En cambio, {0} encuentra a un malvado Hombre de Nieve congelando a {1} hasta la muerte! El malvado Hombre de Nieve rápidamente gira en torno a {0} y también le congela... {0} hasta la muerte.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <!-- 0 - target name -->
+    <value>¡Compruebas que {0} no es un malvado Hombre de Nieve y disfrutaron juntos un chocolate caliente con malvaviscos durante toda la noche!</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Anoche, Mary Claus vino a traerte un poco de chocolate caliente con malvaviscos. Qué amable de su parte. Cuando terminaste de beberlo, Mary Claus te dejó con una sensación cálida en tu interior.</value>
+  </string>
+  <string key="DetectiveCaught">
+    <!-- 0 - detective name -->
+    <value>¡Detectas que {0} esta husmeando! ¡Ese debe ser el Santa Secreto!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Tu búsqueda ha demostrado que {0} es {1}.</value>
+  </string>
+  <string key="HarlotShot">
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>¡Parece que {0} no le gustó el chocolate caliente con malvaviscos de Mary Claus!. Pedro el Negro se vengó. {1} murio.</value>
+  </string>
+  <string key="DefaultShot">
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name (Target was a role) -->
+    <value>De repente, una llama brillante ilumina el cielo. Los ciudadanos se vuelven para ver a {0} de pie sobre el cuerpo de {1}, el lanzallamas aún sigue apuntado hacia ellos. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value>¡El Hombre de Nieve ha ganado y ha detenido con éxito la Navidad!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value>¡Los Hombres de Nieve han ganado y han detenido con éxito la Navidad!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value>¡Los ciudadanos del Polo Norte han ganado!</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value>¡Oh no! ¡Quemaron a El Grinch 🤢 (👺)! El Grinch gana el juego, estúpidos.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jugadores, roles y equipo vivientes restantes:</value>
+  </string>
+  <string key="CultistVotedConvert">
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} ha votado para convertir a {1} en un No Creyente</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Youngest Non-Believer (killed)'s name' -->
+    <!-- 1 - Spirit of Christmas' name -->
+    <value>{0} fue enviado para hacer su trabajo sucio, e intentó convertir a {1} en un No Creyente... sin embargo, ¡{1} es el Espíritu de Navidad. {0} está muerto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Non-Believer name -->
+    <!-- 1 - Number of Non-Believers left -->
+    <value>{0} llegó a tu casa anoche, listo para convertirte en un No Creyente... Los iluminaste tanto con tu fe en la Navidad que murio de eso. El No Creyente está muerto... {1} queda!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>¡Los No Creyentes 👻 (👤) te han convertido en su orden! Ahora eres un No Creyente también. Cada dos noches, tendrás la oportunidad de convertir a otro jugador en un No Creyente y así podran odiar la navidad para siempre.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>No Creyentes: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>¡{0} se ha unido a los No Creyentes 👻 (👤)!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} fue enviado para hacer su trabajo sucio, y convertir a {1} en un No Creyente... ¡Pero nadie estaba en casa!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Todos los Hombres de Nieve y Krampus murieron, y los ciudadanos que quedaron en pie se convirtieron a No Creyentes... ¡Los No Creyentes 👻 (👤) ganaron y destruyeron la fé en Navidad por completo!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Fuiste a cazar a {0}, ¡pero ya está congelado!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Fuiste a visitar a {0} para verificar su fe. Ves la casa descuidada y abandonada de {0} que se destaca desde lejos...</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Fuiste a visitar a {0} para verificar su fe. Ves la casa de {0} bien adornada y con luces muy brillantes. En tu mente, confías en que {0} cree en la Navidad.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>¡El Guia a seguir de {0} acaba de morir! En su furia, ¡Se ha convertido en un malvado Hombre de Nieve también!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} ha muerto! ¡En tu furia, te has convertido en un Hombre de Nieve! Tus nuevos compañeros de equipo son: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>Elfo 👱👩 (👱)</value>
+  </string>
+  <string key="Drunk">
+    <value>Frank Claus 👴🏻 (🍻)</value>
+  </string>
+  <string key="Harlot">
+    <value>Mary Claus 💃🏻 (💋)</value>
+  </string>
+  <string key="Seer">
+    <value>Santa Claus 🎅🏻 (👳)</value>
+  </string>
+  <string key="Traitor">
+    <value>Señorita Bastón de Caramelo 🍭 (🖕)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Jack Skellington 💀 (👼)</value>
+  </string>
+  <string key="Detective">
+    <value>Santa Secreto 🎁 (🕵️)</value>
+  </string>
+  <string key="Wolf">
+    <value>Hombre de Nieve ☃️ (🐺)</value>
+  </string>
+  <string key="Cursed">
+    <value>Presuntuoso 💧 (😾)</value>
+  </string>
+  <string key="Gunner">
+    <value>Pedro el Negro 💁🏿‍♂️ (🔫)</value>
+  </string>
+  <string key="Tanner">
+    <value>El Grinch 🤢 (👺)</value>
+  </string>
+  <string key="Fool">
+    <value>Santa del centro comercial 👳🏼 (🃏)</value>
+  </string>
+  <string key="WildChild">
+    <value>Relámpago 🐃 (👶)</value>
+  </string>
+  <string key="Beholder">
+    <value>Señora Claus 🤶🏻 (👁)</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Ayudante de Santa 👲 (🙇)</value>
+  </string>
+  <string key="Cultist">
+    <value>No Creyente 👻 (👤)</value>
+  </string>
+  <string key="CultistHunter">
+    <value>El Espiritu de la Navidad 🎄 (💂)</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Huyó</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Muerto</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Vivo</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Jugadores vivos</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Hombrecito de jengibre 🍞 (👷)</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Eres un Hombrecito de jengibre 🍞 (👷). Como son horneados en el mismo horno, sabes quiénes son los otros hombrecitos de jengibre.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Cuando todos se levantan, encuentran que el cuerpo de {0} congelado en la nieve profunda. ¡Uno de tus hombrecitos de jengibre 🍞 (👷) murió!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Los hombrecitos de jengibre 🍞 (👷) son: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Su miembro más reciente se dirige a la casa de {0} para convertirlo en No Creyente, pero en su lugar encuentra la casa en completa ruina, hielo en todas partes y algunos rastros de los malvados Hombres de Nieve fueron dejados allí como advertencia..</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Los Hombres de Nieve van a la casa de {0} para congelarlo, pero se encuentran con una figura alta, delgada y oscura, armado hasta los dientes. Jack Skellington 💀 (👼) lucha con todo, y regresas derrotado.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Envían a {0} con la orden de convertir a {1} en un No Creyente, sin embargo, su creencia en Navidad es demasiado fuerte y no pudo convertirlo en uno de los suyos. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un jugador con el mismo nombre {0} ya se ha unido. Por favor cambia tu nombre para unirte.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Vas a la casa de {0} para tomar chocolate caliente con malvaviscos... pero cuando te vas, notas un letrero de Navidad, mal escondido en una habitación lateral, con un resplandor verde proveniente de él... Te das cuenta de que {0} no cree en la navidad!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Todos se despiertan por la mañana y notan que {0} no está cerca... Revisan su casa solo para encontrar los restos de {0}.</value>
+    <value>Los ciudadanos se reúnen cuando sale el sol, y encuentran los restos de {0}, que murió de alguna manera anoche...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Qué extraño.... {0} no apareció para la reunión de Hombrecitos de jengibre esta mañana... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>¡Huir mientras el juego está en curso ha sido desactivado por el administrador del grupo!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>está muerto</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} agregado a la lista de administración. Use /config para cambiar la configuración del grupo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>¡Ya estás en un juego! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Tu grupo ha logrado iniciar varios juegos... Asesinato de extras.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Tu grupo está actualmente en espera. Posición: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Lo siento, estoy a punto de comenzar un breve descanso de mantenimiento, no puedes comenzar el juego en este momento.\nEsperando a {0} juegos para terminar... \nIngresa a @greywolfdev para obtener más información.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Lo sentimos, se han alcanzado los juegos simultáneos máximos ({0}). \nPosición en cola: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} es un grupo preferido y se ha saltado la cola</value>
+  </string>
+  <string key="NoGame">
+    <value>No hay juego en ejecución.  Comience un nuevo juego con /startgame ó un juego de caos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo un verdadero Santa Claus puede ejecutar este comando.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>Después de este juego, me cerraré por mantenimiento.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>Después de este juego, me voy a apagar momentáneamente para una actualización (automatizada).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId era nulo. ¿Estás seguro de que enviaste esto como respuesta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>¡{0} ya es un administrador!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>¡{0} no es un administrador!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} eliminado de la lista de administración.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Idioma configurado en {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No hay un Santa Claus! :(</value>
+  </string>
+  <string key="TimesUp">
+    <value>¡Se acabó el tiempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Tú eres el reno de amor 💘 (🏹). Elegirás dos jugadores al comienzo del juego. ¡Estos 2 jugadores estarán locamente enamorados! Si uno de ellos muere, el otro morirá de tristeza.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>¡Eres Prancer 🌟 (🎭)!. Tienes un poco de magia navideña adicional, que te permite convertirte en otros jugadores. Al comienzo del juego puedes elegir a otro jugador, y asumirás su rol si muere.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>¡Eres el Cascanueces 💂 (🎯)! Normalmente estarás pasando el tiempo ensayando para el ballet, pero hay locura en el Polo Norte. Si los Hombres de Nieve intentan congelarte, tienes la oportunidad de llevarte uno contigo. Si mueres de otra manera, tendrás la oportunidad de quemar a alguien cuando mueras.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Oh, eres Krampus 👹 (🔪), estas aquí para castigar a todos los niños que se portan mal. Estás en tu propio equipo. Cada noche, podrás elegir un jugador para matar. Si los Hombres de Nieve intentan congelarte, derretirás uno de ellos y vivirás.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Has sido tocado por el amor. La memoria de {0} nunca se desvanecerá en tu corazón. Si uno de ustedes muere, el otro morirá de tristeza. Si uno de ustedes gana, el otro también gana.</value>
+    <value>¡La flecha del Reno del Amor te ha tocado! ¡Estás locamente enamorado de {0}! Si muere, también morirás. Si uno de los dos gana, ambos ganarán.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>¡Los ciudadanos del Polo Norte han elegido quemarte! ¡Esta es tu última oportunidad, elige a alguien para matar mientras te derrites!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} busca su espada a medida que sube la temperatura, pero no puede encontrarla a tiempo, y se quema hasta la muerte.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} saca su espada y mira a la multitud... y no puede tomar una decisión sobre a quién matar. Para su desgracia arde hasta la muerte, aceptando su destino...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - Nutcrackers name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>A medida que la temperatura aumenta, {0} saca una espada, apunta y lo lanza a {1}! {1} cae y muere. Era: {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>¡Has sido asesinado! En tus últimos momentos, tienes la oportunidad de lanzar tu espada a alguien... ¡hazlo rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>El calor era demasiado para {0}, tanto que ni siquiera podía alcanzar su espada, ya que estaba rodeado en llamas...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - Nutcrackers name -->
+    <value>Cuando {0} yace allí, jadeando para su último aliento, no pueden decidir a quién lanzar su espada... y aceptar su destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - Nutcracker -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>En llamas, {0} cae al suelo... pero no sin agarrar su espada, y lanzarla a {1}, quien recibe un sablazo justo entre los ojos. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>¡Los malvados Hombres de Nieve intentaron atacar al Cascanueces 💂 (🎯) anoche, pero el Cascanueces fue capaz de derribar a uno de ellos cuando murió! {0} ha muerto (Hombre de Nieve)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Un malvado Hombre de Nieve intentó atacar al Cascanueces 💂 (🎯) anoche, ¡Pero el Cascanueces pudo derrotar al malvado Hombre de Nieve {0} con su espada!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Los malvados Hombres de Nieve intentaron congelar a alguien hasta la muerte, pero fueron recibidos por Krampus 👹 (🔪). ¡{0} fue asesinado en la pelea!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Parecía una noche lo suficientemente tranquila para {0}, pero estaban equivocados. Los ciudadanos del Polo Norte se reúnen en la mañana para encontrar {0} dividido de la cabeza a los pies, pero extrañamente faltaba el hígado... ¡Krampus 👹 (🔪) ha atacado de nuevo! {0} era {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>¡Intentó recolectar el hígado de {0} para su colección, pero Jack Skellington 💀 (👼) lo derrotó! No hay hígado para ti esta noche...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Non-Believers name -->
+    <!-- 1 - target's name -->
+    <value>Los No Creyentes enviaron a {0} para tratar de convertir a {1}, pero en su lugar suena una espada y el cuerpo de {0} sale picado por la ventana. {0} está muerto...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Non-Believers name -->
+    <!-- 1 - target's name -->
+    <value>Los No Creyentes 👻 (👤) enviaron a {0} fuera para tratar de convertir a {1} en uno de ellos, pero en su lugar el cuerpo de {0} sale volando por la ventana, con los cuchillos metidos en cada parte de su cuerpo. ¡QUÉ ES UN PSICÓPATA! {0} está muerto... usa /nextgame para recibir notificaciones cuando comience el próximo juego</value>
+    <value>{0} se escabulle a la casa de {1}, abre la puerta e inmediatamente es saludado por un maníaco loco con un cuchillo. {1} hunde el cuchillo profundamente en los órganos de {0} en orden alfabético, ¡Cacareando todo el tiempo! {0} está muerto. D: Use /nextgame para recibir notificaciones cuando comience el próximo juego</value>
+  </string>
+  <string key="GuardKiller">
+    <value>¡Intentaste proteger a Krampus 👹 (🔪), pero Krampus salió y te arrancó la cabeza! Estás muerto, pero puedes usar /nextgame para recibir notificaciones cuando comience el próximo juego....</value>
+  </string>
+  <string key="GuardKillerPublic">
+    <!-- 0 - target's name -->
+    <value>¡{0} intentó proteger a Krampus 👹 (🔪) anoche, pero debió haber pensado en protegerse a sí mismo. {0} era Jack Skellington 💀 (👼)</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Te deslizas en la casa de {0} para compartir un poco de chocolate caliente con malvaviscos. ¡Todo parece genial hasta que {0} saca un cuchillo y comienza a apuñalarte! Estás muerto, pero puedes usar /nextgame para recibir notificaciones cuando comience el próximo juego...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Parece que Mary Claus 💃🏻 (💋) intentó darle chocolate caliente con malvaviscos a Krampus 👹 (🔪). Los ciudadanos del Polo Norte ven el cuerpo de {0}, en la plaza pública con la cabeza arrancada.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>¡Prancer 🌟 (🎭) {0} ahora se ha convertido en un Hombrecito de Jengibre 🍞 (👷), igual que tú!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead Gingerbread Men name -->
+    <!-- 1 - Gingerbread Man partners name -->
+    <value>{0} ha muerto, y te transformas en un hombrecito de jengibre 🍞 (👷). Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>¡Prancer 🌟 (🎭) {0} ahora se ha convertido en un No Creyente 👻 (👤), como tú!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto, por lo que te transformas en un No Creyente 👻 (👤). Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - Prancers name -->
+    <value>Prancer 🌟 (🎭) {0} ahora se ha convertido en un malvado Hombre de Nieve ☃️ (🐺), ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto, por lo que te transformas en un malvado Hombre de Nieve ☃️ (🐺). Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>¡La única persona que queda en pie es Krampus 👹 (🔪)! ¡Por lo que guarda las partes cortadas en su saco y se lo lleva a las profundidades del infierno para devorarlos!</value>
+  </string>
+  <string key="AskKill">
+    <value>¿A quién quieres matar esta noche?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Con el último aliento de {0}, {1} se precipita y cae, llorando. No soporta la pérdida de su ser querido y se dispara con la pistola más cercana que puede encontrar. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>¿En quién quieres convertirte si muere?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>¿Quiénes quieres que sean los amantes? Elige el primer jugador</value>
+  </string>
+  <string key="AskCupid2">
+    <value>¿Quiénes quieres que sean los amantes? Elige el segundo jugador</value>
+  </string>
+  <string key="Hunter">
+    <value>El Cascanueces 💂 (🎯)</value>
+  </string>
+  <string key="Cupid">
+    <value>El Reno del Amor 💘 (🏹)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Krampus 👹 (🔪)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Prancer 🌟 (🎭)</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Ahora eres Relámpago 🐃 (👶). Tu guia a seguir es {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>¡El verdadero amor perdura! ¡Los amantes han ganado!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>En el medio del Polo Norte, todos encuentran a {0}, con múltiples sablazos en el cuerpo. Parece que trataron de acercarse sigilosamente al Cascanueces 💂 (🎯)! Bien hecho, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Un No Creyente 👻 (👤) intentó hacerte olvidar la Navidad, pero tu fe en Santa era demasiado fuerte para ellos.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Ya estás en la lista de espera para {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Usted ha sido agregado a la lista de espera por {0}. Voy a enviarte un MP cuando comience el próximo juego. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Un nuevo juego está comenzando en {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Es mañana del 25 de diciembre. Las dos últimas personas en el Polo Norte caminan hacia el centro de la ciudad. {0} echa un vistazo a {1}, se ríe de su risa malvada, saca un cuchillo y mata a {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos en el Polo Norte están muertos. La Navidad se cancela este año. No dude en comenzar un nuevo juego con /startgame o /startchaos cada vez que esté listo para ello.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Cuando el sol sale sobre las colinas nevadas, {0} y {1} salen al medio de la ciudad. {0} saca su cuchillo y mata a {1}. {1} saca espada y se la clava en la cara de {0}, hundiendo el cuchillo profundamente en {1}. Ambos están muertos. El Polo Norte está en silencio. No hay criaturas a la vista. Nadie gana este invierno, sólo queda nieve. Qué mal final, no dudes en comenzar un nuevo juego con /startgame o /startchaos, cuando estés listo para ello.</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Aww, no elegiste un mejor amigo. ¡Pero necesitas uno! No te preocupes, elegimos uno para ti: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Ganó</value>
+  </string>
+  <string key="Lost">
+    <value>Perdió</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El jugador {0} ha sido asesinado por no haber votado {1} veces en las últimas 24 horas.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>¡Eres un Elfo 👱👩 (👱)! Todo lo que quieres hacer es hacer juguetes y hacer felices a todos los niños en Navidad. Cada día, tendrás la oportunidad de destruir a un Hombre de Nieve.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>¡Eres Santa Claus 🎅🏻 (👳)! ¡Jo Jo Jo! Tu trabajo es asegurarse de que la Navidad transcurra sin problemas para todos los niños y niñas. Cada noche tienes la habilidad de encontrar quién es travieso o bueno. No te reveles, porque si los Hombre de Nieve te encuentran, intentarán congelarte.</value>
+  </string>
+  <string key="AboutWw">
+    <value>Eres un malvado Hombre de Nieve ☃️ (🐺)!Tienes poco tiempo de vida antes de que termine el invierno, pero planeas causar caos antes de que te derritas. Cada noche, elegirás un jugador para congelarlo hasta la muerte. Pero ten cuidado, si tratas de congelar a Frank Claus, tus poderes se verán perjudicados. ¡Si tratas de congelar a Presuntuoso, se unirán al Equipo Frost!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Eres Mary Claus 💃🏻 (💋). La hija curiosa de Santa Claus, se te dará la oportunidad de visitar a otro jugador cada noche. Si no es un Hombre de Nieve, disfrutará de una cálida noche junto al fuego tomando chocolate caliente con malvaviscos. Sin embargo, si visitas a un jugador y los Hombres de Nieve eligen congelarte, no morirás porque no estuviste en casa. Pero si visitas al jugador que es un Hombre de Nieve te congelará y morirás de frío.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Eres Frank Claus 👴🏻 (🍻). El hermano de Santa, tiendes a ponerte un poco salvaje con el ponche, pero todavía eres una parte leal del Equipo de Santa. Si los Hombres de Nieve intentan congelarte, se volverán achispados y se verán afectados por una noche.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Eres Presuntuoso 💧 (😾), el loco reno. Estás en Equipo de Santa, pero si un Hombre de Nieve intenta congelarte, lo aceptas y te transformas en uno tú mismo. Podrás unirte al Equipo Frost.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Eres La Señorita Bastón de Caramelo 🍭 (🖕). ¡Oh, pequeña y desagradable amante de Santa! Estás en el Equipo Santa... por ahora. Santa ha sido malo y no te ha devuelto las llamadas. Entonces puedes simplemente cambiar de lado. Si vives lo suficiente para que mueran todos los Hombres de Nieve, te unirás a Equipo Frost, lista para congelar a quien quieras.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Eres Jack Skellington, El Rey de la Oscuridad. Visitas el Polo Norte cada invierno después de Halloween para ayudar a Santa. Cada noche, eliges un jugador para protegerse de los malvados Hombres de Nieve. Tenga cuidado porque si elige proteger a uno de ellos, hay un 50% de probabilidades de que lo congelen.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Eres es el Santa Secreto 🎁 (🕵️). Siempre estás en algún lugar plantando regalos anónimos. Cada día, tendrás la oportunidad de descubrir secretamente un rol de jugador. Pero fisgonee con cuidado, ya que los Hombres de Nieve tienen un 40% de posibilidades de verlo dando regalos.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Eres Pedro el negro 💁🏿♂️ (🔫), uno de los amigos más antiguos de Santa. Como compañero de Santa Claus, no tomas amablemente a las personas que no les gusta la Navidad. Tienes dos oportunidades de dispararle a alguien que crees que es malo. Una vez que elija, todos sabrán que estás en el equipo de Santa.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Eres es el Grinch 🤢 (👺). Te molesta taaaaaaaaaaanto cualquier cosa relacionada a la Navidad. ¡Si la gente del Polo Norte vota para matarte, entonces robarás todos los regalos y la Navidad será cancelada!</value>
+  </string>
+  <string key="AboutFool">
+    <value>El Santa del centro comercial 👳🏼 (🃏) recibe el encargo de ser el verdadero Santa. Cuando elija ver el rol de alguien por la noche, se le dirá un rol aleatorio.</value>
+  </string>
+  <string key="AboutCult">
+    <value>¡El No Creyente 👻 (👤), y no crees en Santa Claus! Tu objetivo es convertir a todos los demás jugadores (excepto Hombres de Nieve) en No Creyentes. Si al final del juego, todos los jugadores vivos son No Creyentes, todos estos ganan.</value>
+  </string>
+  <string key="AboutCH">
+    <value>¡Eres el Espíritu de Navidad 🎄 (💂) y tu trabajo es encontrar a los No Creyentes que no creen en Santa Claus! Si los No Creyentes intentan convertirte, su nuevo miembro morirá. Cada noche puedes elegir un jugador para cazar y si no son creyentes, morirán.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Eres Relámpago 🐃 (👶), ese loco y tonto reno. Al comienzo de cada juego, elegirás a alguien para que sea tu mejor amigo. Si muere, estarás tan molesto y buscarás vengarte en el equipo Frost.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Eres es el Ayudante de Santa 👲 (🙇). Trabajas muy duro para Santa. Como eres tan leal, si Santa muere, te convertirás en el nuevo Santa.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Eres es la señora Claus 🤶🏻 (👁). Siempre estás detrás de la escena vigilando y horneando las mejores galletas del mundo. Como estás casada con Santa, puedes decir quién es Santa. (el verdadero, no ese tonto Santa del centro comercial)</value>
+  </string>
+  <string key="AboutMason">
+    <value>¡Eres un hombrecito de jengibre 🍞 (👷)! Pasas todos los días construyendo casas de jengibre para tu familia y estás en el Equipo de Santa. Si hay otros, los sabrá.</value>
+  </string>
+  <string key="AboutDG">
+    <value>¡Eres Prancer 🌟 (🎭)! Tienes un poco de magia navideña adicional en ti. Usted tiene la capacidad de convertirse en otros jugadores. Puedes elegir un jugador al comienzo del juego. Si ese jugador muere, serás lo fue.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>¡Eres el Reno del Amor 💘 (🏹), también conocido como Cupido! Elegirás dos jugadores al comienzo del juego. ¡Estos 2 jugadores estarán locamente enamorados! Si uno de ellos muere, el otro morirá de tristeza. </value>
+  </string>
+  <string key="AboutHunter">
+    <value>¡Eres el Cascanueces 💂 (🎯)! Normalmente estarías pasando el tiempo ensayando para el ballet, pero hay problemas en el Polo Norte. Si los Hombres de Nieve intentan congelarte, tienes la oportunidad de derribar a uno de ellos. Si mueres de otra forma, tendrás la oportunidad de dispararle a alguien cuando mueras.</value>
+  </string>
+  <string key="AboutSK">
+    <value>Oh, eres Krampus 👹 (🔪), estás aquí para castigar a todos los niños que se portan mal. Eres tu propio equipo por lo que haces sonar tus campanas y cadenas oxidadas. Cada noche, podrás elegir un jugador para matarlo. </value>
+  </string>
+  <string key="AboutPara">
+    <value>Para es un desarrollador tonto al que le gusta ladrar a la gente. Tal vez ha estado jugando con hombres lobo demasiado tiempo... Jugar con hombres lobo es una muy mala idea, pero oh no, Para se ha ido para siempre.</value>
+  </string>
+  <string key="EndTime">
+    <value>Duración del juego de Navidad: {0} Utilice /startgame o /startchaos para comenzar el siguiente juego.</value>
+  </string>
+  <!--New strings, July the 8th -->
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Día {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Se ha producido un error y este nodo se ha cerrado :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Te he enviado un mensaje privado </value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Por favor envíeme un MP para que pueda enviarte MP: @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Gracias por iniciarme! Puedo enviarte mensajes ahora.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>Debe responder al usuario que quiere darle smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>¿Qué te gustaría hacer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>¡Debes unirte a una partida dentro de un grupo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>¡Debes comenzar una partida dentro de un grupo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Es hora de recibir un mensaje de ping: {0}\nMensajes por segundo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>¿Qué idioma?\nActual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>¿Cual variante?\nActual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma configurado en {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>¿Qué archivo de idioma?</value>
+  </string>
+  <string key="NoNodes">
+    <value>No hay nodos en línea en este momento, intente de nuevo en unos segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Debe ejecutar este comando en un grupo</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>No eres un administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>¡No eres Para y nunca lo serás!</value>
+  </string>
+  <string key="Yes">
+    <value>Si</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Permitir</value>
+  </string>
+  <string key="Disallow">
+    <value>No permitir</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Esconder</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Solo Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Cáos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Elección del jugador</value>
+  </string>
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>No mostrar nada</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Sólo mostrar jugadores vivientes</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar a todos los jugadores</value>
+  </string>
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>¿Quieres permitir que huyam una vez que el juego ha comenzado?\nNota: los jugadores todavía pueden huir mientras se inicia la partida\nActualmente: {0} huyendo</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} huyendo después del inicio del juego</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>¿A cuántos jugadores le gustaría establecer el máximo?\nActual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Máximo número de jugadores configurado en {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>¿Mostrar u ocultar roles en el momento de la muerte?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Los roles serán {0} al morir.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>¿Qué modo de juego utilizará el grupo?\nActual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de juego configurado como {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>¿Cómo quieres que se muestren los roles al final?\nActual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Mostrar roles al final, establecido en: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Elija la hora base (en segundos) para el día. Esto todavía puede modificarse en función del número de jugadores.\nConfiguración predeterminada: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Hora base del día establecida en {0} segundos</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Elija el tiempo (en segundos) para la noche. Configuración predeterminada: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Noche ajustada en {0} segundos</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Elija el tiempo (en segundos) para la votación del linchamiento. Configuración predeterminada: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Tiempo de votación del linchamiento establecido en {0} segundos</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>¿Permitir No Creyente 👻 (👤) como una opción de rol? \nActual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Santa del centro comercial 👳🏼 (🃏) como rol: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>¿Permitir El Grinch 🤢 (👺) como un rol? \nActual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>El Grinch 🤢 (👺) como rol: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>¿Permitir a los No Creyentes 👻 (👤) como una opción de rol? \nActual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>No Creyentes 👻 (👤) como rol: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>¿Activar lichamiento secreto? \nActual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Habilitar lichamiento secreto establecido en: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Gracias por usarme, pasa una buena Navidad y disfruta de tu chocolate caliente con malvaviscos 🙂</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>¿En qué idioma quieres buscar un grupo?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aquí están los grupos para {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Ciudadanos</value>
+  </string>
+  <string key="StartMe">
+    <value>No olvides iniciarme para poder enviarte mensajes privados.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} no olvidés iniciar el bot y fue eliminado el juego porque si no me iniciaste, no puedo enviarte el rol en un mensaje privado.</value>
+  </string>
+  <string key="LatestList">
+    <value>Recibí la última lista de ciudadanos, aquí está la lista:</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>No pude recibir la última lista.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>El delicioso chocolate caliente con malvaviscos está listo y tú también. Ingresaste a un juego de Navidad en {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>tiempo de envió de un mensaje de ping: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>¡Eres el reno de nariz roja, Rodolfo 🦌 (🎖)! Una vez que reveles que tienes una nariz roja, tus votos contarán dos veces. Usa ese poder sabiamente para ayudar al equipo Santa!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Eres Grýla 😇 (👑). Si la gente del Polo Norte intenta matarte, se darán cuenta de que estaban equivocados. Sin embargo, si vuelve a suceder, morirás.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>¡Eres Buddy el Elfo 🍀 (🤕)! AMAS la Navidad. ¡Tanto es así, que no puedes pensar correctamente! Intentarás votar por alguien, pero hay un 50% de posibilidades de que votes por otra persona. ¡No puedes concentrarte!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Eres el Viejo Invierno 🌬 (🔮). Estas del lado del Equipo Frost. Usted tiene la capacidad de ver si alguien es un Hombre de Nieve o si es Santa. Usa tu papel sabiamente para ayudar al Equipo Frost a ganar.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>¡Eres el Meteorólogo 👨💼 (⚒)! Tienes la capacidad de provocar que un frente cálido atraviese el Polo Norte. Esto evita que los Hombres de Nieve congelen a alguien por una noche.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Eres Jack Frost 🌨 (⚡️), el Rey del Invierno. Todo lo que tocas se enfría. Al igual que tu secuaz de la nieve, puedes elegir un jugador para congelar. ¡Ya que eres el Rey, hay un 20% de posibilidades de que el jugador que congelas se una al Equipo Frost en lugar de morir congelado!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>¡Awwww eres Frosty el Hombre de Nieve ❄️ (🐶)! Eres el pequeño Hombre de Nieve más lindo y más frío del todo el Polo Norte con una linda nariz de botón. Puedes elegir un jugador para congelar todas las noches. Si alguien intenta matarte, tu equipo obtendrá 2 muertes. Pero todavía estarás muerto. :(</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Cuando la ciudad comienza a arder, se dan cuenta de que intentaron quemar a Grýla {0}, Eres la razón de la temporada. ¡Cómo se atreven, estupidos! Sintiéndose tontos, la gente del Polo Norte vuelve a casa.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Intenta mirar a través de su bola de nieve en {0}, pero no puede distinguir qué es a través de la ventisca. Pero sabes que no era un Hombre de Nieve o Santa Claus...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} grita a todo pulmón, y los ciudadanos del Polo Norte ven a Rodolfo 🦌 (🎖) en el pesebre. Rodolfo es quien dirige el trineo de Santa, por lo que los votos de {0} contarán el doble.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Haga clic en &quot;Gritar&quot; cuando quieras revelar, que eres Rodolfo, el reno de nariz roja.</value>
+  </string>
+  <string key="Reveal">
+    <value>Gritar</value>
+  </string>
+  <string key="SpreadDust">
+    <value>¿Te gustaría traer el frente cálido hoy, evitando que los Hombres de Nieve congelen a otros esta noche?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>¡NOTICIAS DE ÚLTIMA HORA! ¡{0} ha traído un frente cálido al Polo Norte! Disfruta un poco de clima cálido esta noche. Los Hombres de Nieve no pueden congelar a alguien la noche siguiente.</value>
+  </string>
+  <string key="Mayor">
+    <value>Rodolfo 🦌 (🎖)</value>
+  </string>
+  <string key="Prince">
+    <value>Grýla 😇 (👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Viejo Invierno 🌬 (🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Buddy El Elfo 🍀 (🤕)</value>
+  </string>
+  <string key="Blacksmith">
+    <value>El Meteorólogo 👨‍💼 (⚒)</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Jack Frost 🌨 (⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>Frosty el Hombre de Nieve ❄️ (🐶)</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>A medida que los Hombres comienzan a congelar a {0}, {1} detiene a todos, siendo Jack Frost 🌨 (⚡️), el Rey del Invierno. {1} le dice al equipo que {0} debería unirse a nosotros en lugar de morir congelado, por lo que el equipo le da una zanahoria por nariz y los deja en la nieve. {0} se convertirá en un Hombre de Nieve mañana por la noche.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Estabas a punto de ser congelado por los Hombres de Nieve, pero Jack Frost 🌨 (⚡️) te eligió. En lugar de congelarte, te transformarás en un Hombre de Nieve ☃️ (🐺) mañana por la noche.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Cuando llegó la noche, sentiste que te estabas poniendo tan frío de repente. Cuando te miras en el espejo y te das cuenta de que de repente eres un Hombre de Nieve ☃️ (🐺), te sorprendes cuán rápido y sin dolor sucedió la transformación.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>¡Eres el reno de nariz roja, Rodolfo 🦌 (🎖)! Una vez que grites, que tienes una nariz roja, tus votos contarán dos veces. ¡Usa ese poder sabiamente para ayudar al equipo Santa!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Eres Grýla 😇 (👑). Si la gente del Polo Norte intenta matarte, se darán cuenta de que estaban equivocados. Si vuelve a suceder, morirás.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Eres el Viejo Invierno 🌬 (🔮). Eres del Equipo de la Nieve. Tienes la capacidad de ver si alguien es un Hombre de Nieve o si es Santa. Usa tu papel sabiamente para ganar con tu equipo.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>¡Eres Buddy el Elfo 🍀 (🤕)! Te encanta la Navidad. ¡Tanto, que no puedes ver muy bien! Intentará votar por alguien, pero hay un 50% de posibilidades de que vote por otra persona. Oops.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>¡Eres el Meteorólogo 👨💼 (⚒)! Usted tiene la capacidad de predecir cuándo un frente cálido pasará por el Polo Norte. Esto evita que los Hombres de Nieve congelen a otros por una noche.
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Eres Jack Frost 🌨 (⚡️), el Rey del Invierno. Todo lo que tocas se convierte en frío. Al igual que tu secuaz de la nieve, puedes elegir un jugador para congelar. ¡Ya que eres el Rey, hay un 20% de posibilidades de que el jugador que congelas se una al Equipo Frost en lugar de congelarte!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>¡Awwww eres Frosty el Hombre de Nieve ❄️ (🐶)! Eres el Hombre de Nieve más lindo y más frío del todo el Polo Norte. Puedes elegir los jugadores que quieras congelar durante la noche. Si alguien intenta quemarte, el resto de tu equipo tendrá 2 oportunidades de congelar a alguien. Pero aún permanecerás quemado. :(</value>
+  </string>
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ya no está vivo, por lo que te estás transformando en Jack Frost 🌨 (⚡️). Tus compañeros de equipo, si hay alguno: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>&gt;{0} ya no está vivo, por lo que te estás transformando en Frosty Hombre de Nieve ☃️ (🐺). Tus compañeros de equipo, si hay alguno: {1}</value>
+  </string>
+  <string key="VillageTeam" deprecated="true">
+    <value>Equipo Santa</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Equipo Neutral</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>Equipo Krampus</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Equipo No Creyente</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Equipo Grinch</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Equipo Santa</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equipo Neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equipo Frost</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equipo Krampus</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equipo No Creyente</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equipo Grinch</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Los No Creyentes 👻 (👤) envían a {0} tratando de convertir a {1} en uno de ellos, pero {0} conoció a un Hombre de Nieve y murió congelado por ese Hombre de Nieve...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Mary Claus visit's Krampus's victim, and dies -->
+    <!--{0} = Mary Claus name, {1} = Krampus's victim name-->
+    <value>{0} se desliza en la casa de {1}, listo para compartir un poco de chocolate caliente con malvaviscos, ¡Solo para encontrar un demonio de cabra con cuernos que le quita la cabeza a {1}! ¡Krampus decide agregar {0} a su colección de niños traviesos!</value>
+  </string>
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>La gente del Polo Norte despierta para encontrar a {0} congelado. El Ayudante de Santa 👲 (🙇) está muerto.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, El Meteorólogo 👨💼 (⚒), no pudo haber predicho esto. Sus entrañas se encontraron por toda la nieve recién puesta. Tal vez a Krampus no le gustó el pronóstico.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} fue encontrado tumbado en la nieve profunda. ¡Krampus ha atacado de nuevo! ¡Adivina que no le importa si crees en Santa o no! {0} era un No Creyente 👻 (👤).</value>
+  </string>
+  <string key="CupidKilled">
+    <value>A la mañana siguiente, los ciudadanos del Polo Norte tuvieron el corazón roto al encontrar a {0}, El Reno del Amor 💘 (🏹), tirado en la nieve. Quizás Krampus tiene algo para los corazones de renos...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Los ciudadanos del Polo Norte van al bar y encuentran a {0} cortado en pedazos. Todos esos años de beber ponche no lo ayudaron a luchar contra Krampus.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} normalmente lucharía fácilmente contra Krampus, pero {0} estaba demasiado cansado para defenderse adecuadamente. {0} ha muerto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>¡Parece que {0} estaba durmiendo en el trabajo anoche! Se escuchó un sablazo anoche, pero todo lo que quedaba eran los restos de Pedro el negro 💁🏿‍♂️ (🔫), con un agujero de espada en la cabeza y una puñalada en el corazón. Krampus ha tomado otra víctima.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Es un día triste en el Polo Norte. ¡{0}, Rodolfo 🦌 (🎖), el reno de nariz roja, fue encontrado muerto en su establo! Krampus claramente no le importa si la nariz roja de Rodolfo se ilumina o no.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Grýla 😇 (👑)! ¡{0} fue encontrado asesinada en su pesebre! Claramente, a Krampus tampoco le importan las vidas de bebés inocentes. </value>
+    <value>{0} Grýla 😇 (👑) parte fueron arrojados alrededor de la nieve del Polo Norte. Claramente, a Krampus no le gustaban las partes de bebés.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>¡Los ciudadanos del Polo Norte se despiertan para ver un traje rojo y blanco con sangre por todas partes! {0} tenía puñaladas en todo su alegre vientre. Krampus ha atacado de nuevo. {0} fue el Santa Claus 🎅🏻 (👳).</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Una gran ventisca atraviesa el Polo Norte y los ciudadanos sabe que se ha cometido un error. Los Hombres de Nieve han congelado uno de los suyos. El Viejo Invierno 🌬 (🔮) {0} está muerto.</value>
+    <value>&quot;¡Estoy del lado de Frost!&quot; Se escuchó anoche. Todos los aldeanos encontraron a la mañana siguiente un viejo cuerpo y una bola de nieve rota, perteneciente a {0}, El Viejo Invierno 🌬 (🔮). Él fue congelado por uno de sus amigos, y yace frío en la nieve.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>¡Oh no! Relámpago 🐃 (👶) estaba vagando por los bosques del Polo Norte y tropezó con un Hombre de Nieve. ¡Puede haber querido un bocadillo y haberse comido la nariz del Hombre de Nieve! A los Hombres de Nieve no les gustó esto y lo congelaron {0}, dejando solo un carámbano de reno.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when Spirit visits Krampus-->
+    <value>Los ciudadanos del Polo Norte se despiertan por la mañana, solo para encontrar las partes separadas del cuerpo de {0}, era el Espíritu de Navidad 🎄 (💂),  en una carreta afuera de la casa de Rodolfo. Lección aprendida: ¡No visites Krampus!</value>
+    <value>El cuerpo de {0}, era el Espíritu de Navidad 🎄 (💂), se encontró en el centro de la ciudad, aunque cortado exactamente en cien pedazos. Comprobar si Krampus estaba creyendo en Navidad no parece ser la mejor idea que {0} tenía...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Non-Believers convert the Snowman, only if Snowman stayed at home-->
+    <value>Si bien parece que los Hombres de Nieve tomaron un descanso esta noche, los No Creyentes no salieron a hacer su trabajo y convirtieron a otro ciudadano del Polo Norte en un No Creyente, pero eso no fue solo un ciudadano como todos los demás, era un Hombre de Nieve. {0} trató de escapar lo más rápido posible, pero el aliento del Hombre de Nieve era más rápido y se anticipó a una muerte fría.</value>
+    <value>Los No Creyentes trabajaron arduamente anoche cuando enviaron a uno de ellos a convertir a otro ciudadano del Polo Norte. Mientras tanto, los Hombres de Nieve estaban perezosos esta noche y solo esperaban a su próxima víctima cuando alguien se acercaba a ellos. Nadie más que {0} fue esa víctima. Los No Creyentes restantes encuentran en la nieve su cadáver.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Non-Believers convert Krampus-->
+    <value>{0} uno de los No Creyentes pensó que podría alejar a otro ciudadano de la Navidad y la fe en él, pero oh no, llegaron a la casa equivocada y quedaron atrapados por Krampus. La próxima vez elige sabiamente antes de intentar convertir al ciudadano equivocado.</value>
+    <value>La última noche, los No Creyentes trataron de convertir a alguien en uno de ellos, pero no se dieron cuenta de que había alguien allí que odia la Navidad incluso más que ellos. {0} pagó ese error con la vida.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when Jack Skellington guards Krampus -->
+    <value>Se suponía que sería una noche en la que {0} salvaría a los ciudadanos del Polo Norte de Krampus y Los Hombres de Nieve, pero Krampus decidió que no necesitaba su protección.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when Jack Skellington guards a Snowman -->
+    <value>{0} trató de proteger a uno de los Hombres de Nieve la noche anterior para que no se derritiera, pero era una lástima que el Hombre de Nieve lo reconociera e hiciera su trabajo. Los ciudadanos del Polo Norte se despiertan para encontrar a {0} congelado. Esta vez fue una victoria para el Hombre de Nieve.</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = Nutcrackers name, {1} = Name of the Snowman-->
+    <value>{1} intentó congelar {0} en vano, pero {1} tuvo que descubrir que no tenía ninguna posibilidad contra el poder de {0}. El último Hombre de Nieve que queda se derritió y la Navidad se salvó. La entrega de los regalos de Navidad ya no está en peligro. \nUtilice /startgame o /startchaos para comenzar el siguiente juego y vuelva a probar suerte.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = Nutcrackers name, {1} = Name of the Snowman-->
+    <value>Como {0}, el último ciudadano restante del Polo Norte, trató de mantener en curso la entrega de los regalos de Navidad, {1}, un Hombre de Nieve, de repente apareció a la vuelta de la esquina y te congeló. Los crueles Hombres de Nieve destruyeron con éxito la Navidad.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last Non-Believers name, {1} = Spirit of Christmas' name -->
+    <value>{1} y {0} salen a la luz del día. Como {1} ve cómo {0} secretamente intenta destruir los regalos de Navidad para todas las personas de todo el mundo, lo alejan y dejan que {0} miren como la fe en Navidad nunca puede ser destruida. De nuevo, {1} ha demostrado que la Navidad siempre existirá. La Navidad se guardó, pero ¿qué es eso?, viene un nuevo hilo, use /startgame o /startchaos para descubrir más sobre él y cómo detener ese hilo.</value>
+  </string>
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Para prepararse mejor para la fiesta de Navidad, ¡el anfitrión retrasó el inicio en {0} segundos!\n {1} queda para unirse.</value>
+    <value>El anfitrión descubrió que algunos invitados están en camino y decidió esperar {0} segundos más para ellos.\n {1} para unirse.</value>
+    <value>¡Los hombrecitos de jengibre necesitan {0} segundos más para ser horneados! \n {1} para unirse.</value>
+    <value>Informes del meteorólogo de que la nieve cae más lento durante {0} segundos... \n {1} para unirse.</value>
+    <value>El avión que llega al Polo Norte se demora {0} segundos debido a la fuerte ventisca ❄️...\n {1}  queda para unirse.</value>
+    <value>&quot;¿Rodolfo con esa nariz tan brillante,\n no guiarás mi trineo está noche?&quot;\n ¡Santa Claus necesita {0} segundos más para que Rodolfo guíe su trineo!\n {1} para unirse.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Todos los invitados a la fiesta navideña llegaron y están muy impacientes. ¡La fiesta comenzará {0} segundos antes!\n {1} quedan para unirse.</value>
+    <value>¡La ventisca está aullando y un ejército de Hombres de Nieve se levanta de la nieve! ¡Decidimos comenzar a apagarlos {0} segundos antes!\n {1} queda para unirse.</value>
+    <value>¡El Santa Claus 🎅🏻 decidió comenzar a regalar regalos {0} segundos antes! \n {1} para unirse</value>
+    <value>¡El pavo navideño 🍗 está listo! ¡Todos están exagerando y el anfitrión decidió comenzar la fiesta {0} segundos antes!\n {1} quedan para unirse.</value>
+  </string>
+  <string key="CantExtend">
+    <value>¡Solo los administradores de grupo pueden extender el tiempo más de una vez!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>¿Permitir que los jugadores amplíen el tiempo para unirse?\nActual: {0} extendiendo\nNota: los administradores siempre podrán extender el tiempo</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} jugadores para ampliar el tiempo para unirse</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Elija la cantidad máxima de segundos que se pueden agregar al temporizador de unión mediante un comando /extend. \nConfiguración predeterminada: {0} \nActual: {1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tiempo máximo de extensión configurado en {0} segundos</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>¡Oh no! {0} fue Frank Claus 🍻! Ahora te emborrachaste con todo su ponche, y no puedes congelar {1}...</value>
+  </string>
+  <string key="JoinButton"><value>Vuela al Polo Norte ✈️</value><value>Únete a la fiesta de Navidad 🍗</value><value>Congela! 🌬</value><value>Deja que nieve~ ❄️</value><value>Decora 🎄</value><value>Intercambia 🎁</value><value>Canta villancicos 🎶</value><value>Canta himnos de Navidad 🎵</value><value>Pretende ser un buen niño 😙</value><value>Duerme para Santa 🎅🏻</value><value>Feliz Navidad 😄</value><value>Regala regalos como Santa 🎅🏻</value><value>Ayuda a organizar la fiesta de Navidad 😋</value><value>Jugar a la lucha de bolas de nieve</value><value>Construye algunos muñecos de nieve ⛄️</value><value>Disfruta de la vista de la aurora</value><value>Montar en el trineo de Santa Claus</value><value>Juega con Rodolfo 🦌</value><value>Sé testigo del nacimiento de Grýla 😇</value><value>Obten los beneficios de Navidad 🎄</value>
+	--&gt;
+  </string>
+  <string key="NotMember">
+    <value>No puedes unirte a este juego porque parece que no eres miembro de {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Por favor, no use los comandos para unirse. Use este botón en su lugar.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jugadores han votado, {1} en total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, recuerda que el chocolate caliente con malvaviscos no se prepara solo.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>No pude encontrar el grupo. Ejecute este comando en el grupo que desea dejar de esperar, o agregue el enlace, el ID o el nombre de usuario al lado del comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Decidiste no unirte a la próxima Fiesta de Navidad en {0} debido a la pesadez de tu trabajo.</value>
+    <value>Decidiste abandonar el premio de vuelo a {0} en el Polo Norte.</value>
+    <value>&quot;Triste, triste Navidad ~&quot; Se dio cuenta de que es mejor que pase su tristeza en casa en lugar de sentirse triste en la fiesta de Navidad y decidió no unirse a la próxima fiesta en {0}.</value>
+    <value>Está ocupado para otros eventos el día de Navidad y rechazó la invitación de {0} tristemente.</value>
+    <value>Se ha resfriado y no puede asistir a la fiesta de Navidad en {0}.</value>
+    <value>Planeaste conducir para asistir a la Nochebuena en {0}. Lamentablemente, su automóvil se averió cuando arrancó su motor.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>Llegó un trineo con {0}.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Permitir No Creyentes</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permitir El Grinch</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permitir Santa del centro comercial</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Habilitar modo aleatorio</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permitir extender el temporizador</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostrar roles cuando mueran</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permitir huir</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostrar identificaciones al unirse</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>¿Mostrar identificaciones de jugadores mientras se unen al juego? \nActual: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Todos</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>¿Habilita el modo aleatorio? \nCuando se habilita el modo aleatorio, Caos, Lichamiento Secreto, Mostrar roles en la muerte y Permitir culto / tonto / curtidor se determinarán al azar cada vez que alguien inicie un juego.\nActivo: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Habilitar del modo aleatorio establecido en: {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Permitir paquetes NSFW Gif</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>¿Permitir que los jugadores tengan paquetes NSFW gif?\nActual: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  <string key="TannerEnd">
+    <!-- 0 - The Grinchs name -->
+    <value>A medida que el sol sale en el Polo Norte, {0} se despierta con el sonido del silencio. Al darse cuenta de que no quedaba nadie, {0} camina y camina, hasta que se queda solo en medio del Polo Norte. Al mirar la vista de los cadáveres esparcidos por todo el Polo Norte, {0} suspira. El sueño de toda la vida de ser quemado por los ciudadanos del Polo Norte está tan muerto como los ciudadanos mismos. Extiende la mano y la acerca al fuego, que había tomado muchas vidas, y siente su calor. Camina hacia la fogata y se empieza a quemar con una sonrisa triste en la cara.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Old Man Winters name -->
+    <value>{0} abre sus ojos, pero en lugar de escuchar el bullicio habitual del Polo Norte, se encuentran con el silencio. Mira el techo lúgubre, dejando que la realidad se hunda lentamente. Todos estaban muertos. Los Hombres de Nieve se derritieron. Con una punzada en el corazón, {0} se levanta y empaca sus cosas antes de caminar hasta el borde del Polo Norte. Una lágrima se escapa de sus ojos, ya que {0} recuerda lo cerca que estaban ellos y sus Hombres de Nieve de la victoria. Por último, es hora de comenzar una nueva vida, con un nuevo equipo ahora. {0} se desliza en la oscuridad del bosque, dejando atrás al Polo Norte para siempre.</value>
+    <value>Por todos los esfuerzos de {0}, los amigos de {0} los Hombres de Nieve yacen inmóviles y sin vida en la nieve profunda. Incluso si los Hombres de Nieve han obtenido la victoria, no hay nadie con quien saborear el éxito, ni tampoco hay ciudadanos vivos para burlarse de ellos. {0} mira en la bola de cristal y desaparece silenciosamente, en una nube de niebla, en busca de nuevos Hombres de Nieve, nuevos aliados y nueva traición para cometer nuevos crímenes contra la humanidad y su fe en la Navidad.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>¿Qué variante? \nActual: {0} \nComo has jugado más de 500 juegos, también puedes unirte a:</value>
+  </string>
+  <string key="Skip">
+    <value>Omitir</value>
+  </string>
+</strings>

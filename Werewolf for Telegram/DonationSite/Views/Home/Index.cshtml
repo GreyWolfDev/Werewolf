@@ -1,0 +1,54 @@
+﻿
+<div class="jumbotron">
+    <h1>Donate</h1>
+    <p class="lead">Donate to keep the bots running, then get <b>Custom Gifs</b> and <b>Badges</b> as rewards!</p>
+    <p><a class="btn btn-info btn-lg" href="https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27">More Info &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card border-primary mb-4">
+            <div class="card-header">Credit/Debit Cards</div>
+            <div class="card-body">
+                <h4 class="card-title">Directly via Telegram</h4>
+                <p class="card-text">Donate directly via Telegram, no external websites/apps. Automatic verification and gif pack will be immediately given out!</p>
+                <a class="btn btn-outline-success" href="https://t.me/werewolfbot?start=donatetg">Donate now!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-primary mb-4">
+            <div class="card-header">Convenience Stores/Other cards</div>
+            <div class="card-body">
+                <h4 class="card-title">Xsolla</h4>
+                <p class="card-text">With the help of the <a href="https://xsolla.com">Xsolla Platform</a>, we now accept donations from countries where credit/debit cards are not popular.</p>
+                <a class="btn btn-outline-success" href="https://t.me/werewolfbot?start=xsolla">Get your genuine donation link!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-primary mb-4">
+            <div class="card-header">Paypal</div>
+            <div class="card-body">
+                <h4 class="card-title">Donate via Paypal</h4>
+                <p class="card-text">We also accept paypal donations, yet this need manual verification and thus may take some time. Remember to state your username/ID.</p>
+                <a class="btn btn-outline-success" href="https://paypal.me/greywolfdevelopment">Go to Paypal!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#" id="scroll" style="display: none;"><span></span></a>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#scroll').fadeIn();
+            } else {
+                $('#scroll').fadeOut();
+            }
+        });
+        $('#scroll').click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+    });
+</script>

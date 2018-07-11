@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-05-25" code="zh-Hant-TW"/>
+  <language name="正體中文" base="正體中文" variant="正體中文" owner="Cojad" version="2017-10-27" code="zh-Hant-TW"/>
   <!--
+  10/27
+    V4.2.6479 更新
+    增加巫師/皮匠結局 參考 中大版翻譯 @Tom_Werewuff
+    增加新設定 Skip/WhatVariantVets
+  08/23
+    V4.7 更新
+    修正相關 蠢蛋/村長/王子/狼王 等新角色的emoji空格問題, 部分標點未正確分隔問題. by @Tom_Werewuff
+    增加新設定 ShowIDs/All/Random mode/AllowNEFW
   05/25
     new strings for config
   05/24
@@ -45,15 +53,15 @@
   </string>
   <string key="PlayerStartedGame">
     <!-- 0 - Player name -->
-    <value>{0} 已經啟動了一場遊戲! 按下 加入遊戲 按鈕 來參加這場獵殺盛宴...不排除有忽然死亡的可能 :P</value>
-    <value>{0} 已經啟動了一場遊戲! 按下 加入遊戲 按鈕 來參加這場智力測驗...不排除有暴民出現的可能 :P</value>
-    <value>{0} 已開始一場新遊戲! 按下 加入遊戲 按鈕 來被吃掉吧!</value>
+    <value>{0} 已經啟動了一場遊戲! 按下 [加入遊戲] 按鈕 來參加這場獵殺盛宴...不排除有忽然死亡的可能😜</value>
+    <value>{0} 已經啟動了一場遊戲! 按下 [加入遊戲] 按鈕 來參加這場智力測驗...不排除有暴民出現的可能😜</value>
+    <value>{0} 已開始一場新遊戲! 按下 [加入遊戲] 按鈕 來被吃掉吧!</value>
   </string>
   <string key="PlayerStartedChaosGame">
     <!-- 0 - Player name -->
-    <value>{0} 已經啟動了混亂模式! 按下 加入遊戲 按鈕 來成為暴民... 或許混亂比起秩序更適合現實 :P</value>
-    <value>{0} 已經啟動了混亂模式! 按下 加入遊戲 按鈕 來成為殺人魔... 或許你有殺手的天賦喔!</value>
-    <value>在 {0} 的帶領下, 混亂模式正式啟動! 按下 加入遊戲 按鈕 , 恐慌將會全面進場!</value>
+    <value>{0} 已經啟動了混亂模式! 按下 [加入遊戲] 按鈕 來成為暴民... 或許混亂比起秩序更適合現實😜</value>
+    <value>{0} 已經啟動了混亂模式! 按下 [加入遊戲] 按鈕 來成為殺人魔... 或許你有殺手的天賦喔!</value>
+    <value>在 {0} 的帶領下, 混亂模式正式啟動! 按下 [加入遊戲] 按鈕, 恐慌將會全面進場!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>不能加入已經開始的遊戲! 使用 /nextgame 指令來接收下一局開始的通知吧?</value>
@@ -62,11 +70,11 @@
     <value>你已經在這場遊戲中了!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>剩餘一分鐘 加入遊戲</value>
+    <value>剩餘一分鐘 [加入遊戲]</value>
   </string>
   <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>剩餘 {0} 秒 加入遊戲</value>
+    <value>剩餘 {0} 秒 [加入遊戲]</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>玩家人數不足, 遊戲已取消.</value>
@@ -396,7 +404,7 @@
   <string key="DetectiveCaught" >
     <!-- 0 - detective name -->
     <value>你看到 {0} 正在鬼鬼祟祟的打探! 他是偵探.</value>
-    <value> {0} 正在一戶房子外行徑詭異東看西看, 阿!這傢伙是個偵探.</value>
+    <value> {0} 正在一戶房子外行徑詭異東看西看, 阿! 這傢伙是個偵探.</value>
   </string>
   <string key="DetectiveSnoop" >
     <!-- 0 - target name -->
@@ -426,7 +434,7 @@
     <value>#村民勝!</value>
   </string>
   <string key="TannerWins" >
-    <value>糟糕! 你們把皮匠處決掉! 他輕鬆的勝出了!  #皮匠勝</value>
+    <value>糟糕! 你們把皮匠處決掉! 他輕鬆的勝出了! #皮匠勝</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>餘下的玩家、角色與所屬團隊：</value>
@@ -634,7 +642,7 @@
   </string>
   <string key="MaintBreak">
     <!-- 0 - target's name -->
-    <value>抱歉準備更新中, 你目前不能啟動遊戲\n正在等待 {0} 場遊戲結束\n閱讀更多資訊請至 @werewolfdev</value>
+    <value>抱歉準備更新中, 你目前不能啟動遊戲\n正在等待 {0} 場遊戲結束\n閱讀更多資訊請至 @greywolfdev</value>
   </string>
   <string key="MaxGames">
     <!-- 0 - target's name -->
@@ -905,7 +913,7 @@
   <string key="IdleCount">
     <!-- 0 - player's name -->
     <!-- 1 - idle count -->
-    <value>玩家 {0} 因為過去24小時內, {1} 次未投票而被天譴了.</value>
+    <value>玩家 {0} 因為過去24小時內, {1} 次未投票而被天譴了.\n#IdleUser</value>
   </string>
   <!--New strings 7th of July-->
   <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
@@ -989,7 +997,7 @@
     <value>Para 是一個喜歡對人嚎叫的笨開發者, 或許是他跟狼人混在一起太久了... 看來跟狼人混在一起可不是什麼好主意.</value>
   </string>
   <string key="EndTime">
-    <value>遊戲歷時: {0}</value>
+    <value>遊戲歷時: {0}, 再來一局? /startgame</value>
   </string>
   <!--New strings, July the 8th -->
 
@@ -998,7 +1006,7 @@
     <value>第 {0} 日</value>
   </string>
   <string key="NodeShutsDown">
-    <value>喔, 出錯了! 本遊戲節點已經被強迫停止了. 😂\nPS. 系統會嘗試自行修復, 遊戲可能仍然可以進行.</value>
+    <value>喔, 出錯了! 本遊戲節點已經被強迫停止了😂.\nPS. 系統會嘗試自行修復, 遊戲可能仍然可以進行.</value>
   </string>
   <string key="SentPrivate">
     <value>我已經將資訊私訊給你了.</value>
@@ -1240,25 +1248,25 @@
     <value>正當大家在激烈的辯論著的時候, 大家發現 {0} 正在村莊周圍撒著閃亮的銀渣, 看來至少今天晚上村民可以安心免於狼群的攻擊好好睡一覺了(今晚狼人將無法做任何行動)</value>
   </string>
   <string key="Mayor">
-    <value>村長 🎖</value>
+    <value>村長🎖</value>
   </string>
   <string key="Prince">
-    <value>王子 👑</value>
+    <value>王子👑</value>
   </string>
   <string key="Sorcerer">
-    <value>巫師 🔮</value>
+    <value>巫師🔮</value>
   </string>
   <string key="ClumsyGuy">
-    <value>蠢蛋 🤕</value>
+    <value>蠢蛋🤕</value>
   </string>
   <string key="Blacksmith">
-    <value>鐵匠 ⚒</value>
+    <value>鐵匠⚒</value>
   </string>
   <string key="AlphaWolf">
-    <value>狼王 ⚡️</value>
+    <value>狼王⚡️</value>
   </string>
   <string key="WolfCub">
-    <value>幼狼 🐶</value>
+    <value>幼狼🐶</value>
   </string>
   <string key="PlayerBittenWolves">
     <value>正當狼群要四分五裂 {0} 之時, {1} 以狼王的身份阻止狼群. {1} 告訴眾狼: {0} 應該成為我們的一份子而不是這樣的死去. 狼人們於是離去, 只留下狼王完成他的詛咒之吻, 明晚他就會成為狼群的新成員了.</value>
@@ -1422,12 +1430,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>加入時間延長 {0} 秒!\n剩餘可 加入遊戲 的時間是 {1} !</value>
+    <value>加入時間延長 {0} 秒!\n剩餘可 [加入遊戲] 的時間是 {1} !</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>加入時間減少 {0} 秒!\n剩餘可加入 加入遊戲 的時間是 {1} !</value>
+     <value>加入時間減少 {0} 秒!\n剩餘可加入 [加入遊戲] 的時間是 {1} !</value>
   </string>
   <string key="CantExtend">
     <value>很抱歉只有群組管理員才能夠多次延長時間!</value>
@@ -1458,7 +1466,7 @@
     <value>你不能加入這個遊戲, 因為你並不是這個群組 {0} 的成員.</value>
   </string>
   <string key="JoinByButton">
-    <value>請不要使用指令加入, 請改用 加入遊戲 按鈕.</value>
+    <value>請不要使用指令加入, 請改用 [加入遊戲] 按鈕.</value>
   </string>
   <string key="PlayerVoteCounts">
     <value>總票數 {1}, 目前已有 {0} 票完成投票.</value>
@@ -1471,7 +1479,7 @@
   </string>
   <!--4.2 New Strings 23 MAY-->
   <string key="NoAutoJoin">
-    <value>{0} , 請記得開遊戲的你也需要按 加入遊戲 按鈕喔!</value>
+    <value>{0} , 請記得開遊戲的你也需要按 [加入遊戲] 按鈕喔!</value>
   </string>
   <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
     <value>你要停止哪個群組的遊戲開始通知? 請在該群組下此指令, 或是在指令後方加上群組連結/群組id.</value>
@@ -1481,7 +1489,8 @@
   </string>
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
-    <value>在剛剛的30秒中 {0} 加入遊戲了!</value>
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>在剛剛的30秒中, 加入遊戲的人有: {0}</value>
   </string>
   <string key="AllowCult">
     <value>允許邪教徒</value>
@@ -1503,5 +1512,163 @@
   </string>
   <string key="ShowRolesDeath">
     <value>死亡時顯示角色</value>
+  </string>
+  <string key="AllowFlee">
+    <value>允許遊戲中逃跑</value>
+  </string>
+  <string key="ShowIDs">
+    <value>當加入時顯示玩家 ID</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>加入遊戲時顯示玩家 ID?\n目前: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>啟動完全隨機遊戲模式?\n當完全隨機遊戲模式啟動時, 混亂, 秘密投票, 遊戲結束後角色顯示, 允許邪教徒/傻瓜/皮匠 將會每次開始遊戲時由系統隨機選擇.\n目前: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>使用完全隨機遊戲模式: {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>允許 18禁 GIF動圖包</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>允許玩家在遊戲中使用 18禁 GIF動圖包?\n目前: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} 18禁 GIF動圖包</value>
+  </string>
+  <!-- 09/10 New Strings -->
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>日光普照下, {0} 在寂靜下起床. 皮匠走到村莊的中央, 看着屍橫遍野的荒地長歎一聲. {0} 一生渴望被處決的夢想跟隨着滿地屍體埋葬在廣場的泥土之中了. {0} 摸着處刑台上的繩索傷心地, 大笑了好一會, 任由它吊死自己.</value>
+    <value>{0} 獨自在陽光下起床, 皮匠看到自己一直以來有多卑劣, 失敗: 沒法去達成自己被虐, 被處決的渴望. {0} 取來了一條繩索吊死自己, 覺悟了他是已村中的最後一人, 沒人能使他夢想成真.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>巫師 {0} 一早醒來張目望去, 但迎面而來的不是忙碌的村莊生活, 而是一片死寂. 巫師呆望著家中屋頂的梁柱, "村民們已再無一人倖存, 包括全狼人" 的事實逐漸清晰. 此情此景已成真, {0} 帶著心中沉痛收拾行囊, 向遠方離去, 在村莊盡頭處. {0} 回憶起與狼群死黨們如何功虧一簣就差這一點, 眼淚情不自禁地流下. 又嘆了一口氣, 是時候重新開始, 新身份, 新狼戰友. {0} 慢慢地走進森林中, 身影漸漸地從死寂的村莊掩沒.</value>
+    <value>儘管巫師 {0} 一生懸命的努力, 但他的狼群夥伴躺在地上, 一動不動. 即使巫師帶來了勝利, 但村中再沒狼人一起分享勝利, 也沒法恥笑踐踏任何村民. {0} 凝視着手中暗淡不再發出誘人紫光的水晶球, 獨自一人消失在那無盡迷霧中, 大步向那遙遠的天邊走去, 找尋新的狼群, 新的夥伴, 新的罪惡, 新的背叛. {0} 暗地裡發誓着: "人類一定會不得好死!!! 我要折磨所有的人們!!!"</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>你想玩哪種特殊版本?\n目前: {0}\n500 局遊戲成就已達成, 你可選擇加入: </value>
+  </string>
+  <string key="Skip">
+  <value>跳過</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} 已死, 你則化身為偽村民. 你的新隊友(如果有的話)是：{1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>經你掐指一算, 你算出來 {0} 這家伙應該不是 {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>你今晚想讓對村子施展催眠術嗎?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>當鎮上議論紛紛之時, {0} 回到家中哼起了一個輕柔但有著魔性旋律. 看來今晚大家都會睡得很沉, 沒有人在晚上還能做點什麽了.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>村民們拖著疲累的身軀返回家中, 所有人都陷入了一陣昏沉的倒去床上, 甚至忘了他們怎麽爬上床睡著的...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>是否允許 職業小偷 角色?\n目前: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>已設定: {0} 職業小偷角色</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>是否允許 職業小偷 角色持續全場輪流?\n目前: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>已設定: {0} 職業小偷 持續全場輪流</value>
+  </string>
+  <string key="AllowThief">
+    <value>允許 職業小偷</value>
+  </string>
+  <string key="ThiefFull">
+    <value>小偷全場輪流</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>你是個普通的下等的村民, 但因為你長期在有狼出沒森林中闖蕩生存, 所以先知甚至會把你誤認為狼人! 喔不...</value>
+  </string>
+  <string key="WolfMan">
+    <value>偽狼人 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>你是個普通的下等的村民, 但因為你長期在有狼出沒森林中闖蕩生存, 所以先知甚至會把你誤認為狼人! 喔不...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>你是偽村民, 你是個狼人, 但是你實在太像村民了, 連先知都看不清你的真面目把你當成他們的一夥呢. 😜</value>
+  </string>
+  <string key="Lycan">
+    <value>偽村民 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>偽村民是個狼人, 但他看起來就跟村民沒啥兩樣呢.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>你是半仙, 每天晚上你都可以使用掐指神算的技能, 但你只能算出來 (玩家) 不是 (還存活在存裝中的隨機腳色名). 所以注意你算出來的的角色, 那表示那個角色依然存活在村民之中. 😏</value>
+  </string>
+  <string key="Oracle">
+    <value>半仙 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>每天晚上可以跟先知一樣占卜, 但結果是 (玩家) 不是 (還存活在存裝中的隨機腳色名)</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>你是睡魔. 你可以在本次遊戲中使用一次你的魔力讓全村所有人熟睡, 當晚沒有任何人晚上可以行動.</value>
+  </string>
+  <string key="Sandman">
+    <value>睡魔 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>在遊戲內使用一次技能, 使全部玩家夜間熟睡無法使用任何夜間行動</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>無法投票, 但可以犧牲自己來抵擋來自槍手或獵人一擊.</value>
+  </string>
+  <string key="Pacifist">
+    <value>和事佬 ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>無法投票, 但可以犧牲自己來抵擋來自槍手或獵人一擊.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>如果狼類攻擊, 可以倖存一次攻擊. 第二吃就會被狼類吃掉. 如果村民陣營用特殊技能殺老賢者, 將會因為誤擊的過度悲傷而轉換為普通村民.</value>
+  </string>
+  <string key="WiseElder">
+    <value>老賢者 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>如果狼類攻擊, 可以倖存一次攻擊. 第二吃就會被狼類吃掉. 如果村民陣營用特殊技能殺老賢者, 將會因為誤擊的過度悲傷而轉換為普通村民.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>晚上選擇一個玩家 偷取其腳色, 這名玩家將會成為新的職業小偷, 並可於次晚 偷取 其他玩家腳色. 如果遊戲結束你還是小偷, 那你輸掉該局.</value>
+  </string>
+  <string key="Thief">
+    <value>職業小偷 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>晚上選擇一個玩家 偷取其腳色 , 這名玩家將會成為新的職業小偷, 並可於次晚 偷取 其他玩家腳色. 如果遊戲結束你還是小偷, 那你輸掉該局.</value>
   </string>
 </strings>

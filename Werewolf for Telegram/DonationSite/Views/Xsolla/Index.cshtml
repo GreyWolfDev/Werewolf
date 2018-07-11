@@ -1,0 +1,41 @@
+﻿<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card border-primary mb-6 text-center">
+            <div class="card-header">Donation via Xsolla</div>
+            <div class="card-body">
+                <h1 class="card-title">@ViewBag.CurrentUser.Name</h1>
+                <h6 class="card-subtitle text-muted">@ViewBag.CurrentUser.TelegramId</h6>
+                <p></p>
+                <p class="card-text">Please confirm your <b>Telegram ID</b> and your <b>recent Telegram Name</b> above.</p>
+                <button type="button" class="btn btn-primary" data-xpaystation-widget-open>Donate now!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    var options = {
+        access_token: getParameterByName("token"),
+        lightbox: {
+            height: "80%"
+        }
+    };
+    var s = document.createElement('script');
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "//static.xsolla.com/embed/paystation/1.0.7/widget.min.js";
+    s.addEventListener('load', function (e) {
+        XPayStationWidget.init(options);
+    }, false);
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(s);
+</script>

@@ -3,38 +3,30 @@
     ==UPDATE LOG==
     LAST UPDATE 30/01/2017 by @ssittt
     30/01 editing various strings, adding spaces between names
+    30/07 deleted /join commands, deprecated strings, added new strings
 -->
 <strings>
   <language name="廣東話(簡單版)" base="廣東話" variant="簡單版" owner="ssittt"/>
   <string key="NotInGame">
     <value>未入場</value>
   </string>
-  <string key="PlayerStartedGame">
-    <value>{0} 開左場 正常版 /join </value>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} 開左場 正常版</value>
   </string>
-  <string key="PlayerStartedChaosGame">
-    <value>{0} 開左場 混亂版 /join </value>
-  </string>
-  <string key="NoJoinGameRunning">
-    <value>開左場 請等</value>
-  </string>
-  <string key="AlreadyJoined">
-    <value>你已加入</value>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} 開左場 混亂版</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1分 /join</value>
+    <value>1分</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0}秒 /join</value>
+    <value>{0}秒</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>唔夠人\n/grouplist 搵谷</value>
   </string>
   <string key="StartingGameWait">
     <value>夠鐘 開場</value>
-  </string>
-  <string key="BannedForExploit">
-    <value>{0} 企圖利用漏洞 已被鎖(名唔可以有"/")</value>
   </string>
   <string key="ChangeNameToJoin">
     <value>{0} 改名先 再入場</value>
@@ -59,9 +51,6 @@
   </string>
   <string key="CountPlayersRemain">
     <value>得返{0}個</value>
-  </string>
-  <string key="DidntAsk">
-    <value>我無問你野</value>
   </string>
   <string key="NotPlaying">
     <value>你無入場</value>
@@ -238,7 +227,7 @@
   <string key="CursedBittenToWolves" >
     <value>{0} 係被詛咒😾 而家變左狼</value>
   </string>
-  <string key="WolvesEatYou" >
+  <string key="WolvesEatYou" isgif="true">
     <value>你俾狼食左</value>
   </string>
   <string key="WolvesEatDrunk" >
@@ -292,16 +281,16 @@
   <string key="DefaultShot" >
     <value>槍手 {0} 殺左 {1}\n{2}</value>
   </string>
-  <string key="WolfWins" >
+  <string key="WolfWins" isgif="true">
     <value>狼贏🐺\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
-  <string key="WolvesWin" >
+  <string key="WolvesWin" isgif="true">
     <value>狼贏🐺\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
-  <string key="VillageWins" >
+  <string key="VillageWins" isgif="true">
     <value>村贏👱\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
-  <string key="TannerWins" >
+  <string key="TannerWins" isgif="true">
     <value>皮贏👺\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
   <string key="RemainingPlayersEnd">
@@ -460,53 +449,14 @@
     <value>死左</value>
   </string>
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
-    <value>{0} 已成為admin\n/config 更改遊戲設定</value>
-  </string>
   <string key="AlreadyInGame">
     <value>你有場入左\n{0}</value>
-  </string>
-  <string key="MultipleGames">
-    <value>正刪除重複的遊戲</value>
-  </string>
-  <string key="GroupQueue">
-    <value>遊戲啟動排隊中\n目前順位\n{0}\n{1}</value>
-  </string>
-  <string key="MaintBreak">
-    <value>準備更新 無得開場\n正在等待{0}場遊戲結束\n@werewolfdev 更多資訊</value>
-  </string>
-  <string key="MaxGames">
-    <value>遊戲群組最大上限已滿\n{0}\n目前順位\n{1}</value>
-  </string>
-  <string key="SkipQueue">
-    <value>{0} 係官方群組 用緊VIP通道開場</value>
   </string>
   <string key="NoGame">
     <value>無人開場\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
   <string key="GroupAdminOnly">
     <value>你唔係admin</value>
-  </string>
-  <string key="ShuttingDown">
-    <value>玩埋呢場 停一停先</value>
-  </string>
-  <string key="ShuttingDownUpdate">
-    <value>玩埋呢場 停一停先</value>
-  </string>
-  <string key="NullIdAdmin">
-    <value>搵唔到使用者id</value>
-  </string>
-  <string key="AlreadyAdmin">
-    <value>{0} 已經係admin</value>
-  </string>
-  <string key="NotAdmin">
-    <value>{0} 唔係admin</value>
-  </string>
-  <string key="AdminRemoved">
-    <value>{0} 從admin名單中移除</value>
-  </string>
-  <string key="LanguageSet">
-    <value>語言設定為{0}</value>
   </string>
   <string key="NoSeer">
   <value>\n無先知👳</value>
@@ -558,13 +508,13 @@
     <value>{1} 係連殺 {0} 死左</value>
   </string>
   <string key="HunterShotWolfMulti">
-    <value>獵人殺左 {0}\n{0} 係 狼🐺 (狼搵獵人)</value>
+    <value>獵人殺左 {0}\n(狼搵獵人)</value>
   </string>
   <string key="HunterShotWolf">
-    <value>獵人殺左 {0}\n{0} 係 狼🐺 (狼搵獵人)</value>
+    <value>獵人殺左 {0}\n{0} (狼搵獵人)</value>
   </string>
   <string key="SerialKillerKilledWolf">
-    <value>連殺殺左 {0}\n{0} 係 狼🐺 (狼搵連殺)</value>
+    <value>連殺殺左 {0}\n{0} (狼搵連殺)</value>
   </string>
   <string key="DefaultKilled">
     <value>連殺殺左 {0}\n{1}</value>
@@ -602,7 +552,7 @@
   <string key="DGTransformToWolf">
     <value>{0} 死左 你變左狼\n狼友\n{1}</value>
   </string>
-  <string key="SerialKillerWins">
+  <string key="SerialKillerWins" isgif="true">
     <value>連殺贏🔪\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
   <string key="AskKill">
@@ -635,7 +585,7 @@
   <string key="NewWCRoleModel">
     <value>你係野仔👶\n你隻替死鬼係 {0}</value>
   </string>
-  <string key="LoversWin">
+  <string key="LoversWin" isgif="true">
     <value>情侶贏❤️\n/startgame 正常版\n/startchaos 混亂版</value>
   </string>
   <string key="HunterKilledVisiter">
@@ -764,15 +714,6 @@
   <string key="SentPrivate">
     <value>已PM</value>
   </string>
-  <string key="StartPM">
-    <value>請先PM @werewolfbot 講 /start</value>
-  </string>
-  <string key="PMTrue">
-    <value>我可以PM你啦</value>
-  </string>
-  <string key="MustReplySmite">
-    <value>請回覆一個玩家 /smite</value>
-  </string>
   <string key="WhatToDo">
     <value>做咩</value>
   </string>
@@ -783,7 +724,7 @@
     <value>你唔喺群組入面</value>
   </string>
   <string key="PingInfo">
-    <value>回應處理時間 {0}\nCPU用量 {1}%\n每秒接收訊息 {2}</value>
+    <value>回應處理時間 {0}\n每秒接收訊息 {1}</value>
   </string>
   <string key="WhatLang">
     <value>轉咩語言\n而家用緊{0}</value>
@@ -1062,26 +1003,7 @@
   </string>
 
 <!-- Keep this for now until bots update-->
-    
-  <string key="VillageTeam">
-    <value>村民陣營</value>
-  </string>
-  <string key="NeutralTeam">
-    <value>中間陣營</value>
-  </string>
-  <string key="WolfTeam">
-    <value>狼人陣營</value>
-  </string>
-  <string key="SerialKillerTeam">
-    <value>連殺陣營</value>
-  </string>
-  <string key="CultTeam">
-    <value>邪教陣營</value>
-  </string>
-  <string key="TannerTeam">
-    <value>皮匠陣營</value>
-  </string>
-    
+ 
   <string key="VillageTeamEnd">
     <value>村民陣營</value>
   </string>
@@ -1176,12 +1098,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>加時{0}秒\n仲有{1} /join</value>
+    <value>加時{0}秒\n仲有{1}</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>減時{0}秒\n仲有{1} /join</value>
+    <value>減時{0}秒\n仲有{1}</value>
   </string>
   <string key="CantExtend">
     <value>你唔係admin</value>
@@ -1202,5 +1124,78 @@
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>{0}係醉酒佬 你食唔到{1}</value>
+  </string>
+    <string key="JoinButton">
+    <value>入場</value>
+  </string>
+  <string key="NotMember">
+    <value>你唔係 {0} 既成員</value>
+  </string>
+  <string key="JoinByButton">
+    <value>請禁掣入場</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} / {1} 已投票</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0} 記得禁掣入場</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>搵唔到呢個群組</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>已取消 {0} 既報名</value>
+  </string>
+  <string key="HaveJoined">
+    <value>{0}入左場</value>
+  </string>
+    <string key="EnableSecretLynch">
+    <value>秘密投票</value>
+  </string>
+    <string key="EnableSecretLynchQ">
+    <value>秘密投票? 依家: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>秘密投票 {0}</value>
+  </string>
+  <string key="RandomMode">
+    <value>隨機</value>
+  </string>
+    <string key="RandomModeQ">
+    <value>隨機? 依家: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>隨機 {0}</value>
+  </string>
+    <string key="AllowCult">
+    <value>有邪</value>
+  </string>
+  <string key="AllowTanner">
+    <value>有皮</value>
+  </string>
+  <string key="AllowFool">
+    <value>有白痴</value>
+  </string>
+    <string key="AllowExtend">
+    <value>俾加時</value>
+  </string>
+    <string key="ShowRolesDeath">
+    <value>邊個死左</value>
+  </string>
+    <string key="AllowFlee">
+    <value>俾走</value>
+  </string>
+  <string key="ShowIDs">
+    <value>開ID</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>開ID? 依家: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>全部</value>
   </string>
 </strings>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Amnesia mode by Amber (@ayylimao)!
 Last update: 30/12/2016 by @ayylimao -->
 <strings>
@@ -7,12 +7,12 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>Did you forget? You're not in any games at the moment!</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} has started a game! Use /join to have so much fun you'll even forget who you are!</value>
-    <value>A new game has been started by {0}! Use /join to get eaten by amnesiac wolves!</value>
+    <value>{0} has started a game! Join to have so much fun you'll even forget who you are!</value>
+    <value>A new game has been started by {0}! Join to get eaten by amnesiac wolves!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} has started a chaos game! Use /join to take part in the confusion!</value>
-    <value>A new chaos game has been started by {0}! Use /join to get killed by accident!</value>
+    <value>{0} has started a chaos game! Join to take part in the confusion!</value>
+    <value>A new chaos game has been started by {0}! Join to get killed by accident!</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>You forgot to join while the game hadn't started yet! Use /nextgame and I'll notify you once a new game starts so you won't forget about it again!</value>
@@ -21,10 +21,10 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>You've already joined, remember?</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1 minute left to /join, don't forget about it!</value>
+    <value>1 minute left to join, don't forget about it!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} seconds left to /join</value>
+    <value>{0} seconds left to join</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Everyone forgot about this group... We didn't reach 5 players, cancelling game!</value>
@@ -476,7 +476,7 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>Your group is currently in the queue. Don't worry, it won't be forgotten! Position: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
   </string>
   <string key="MaxGames">
     <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
@@ -585,6 +585,10 @@ Last update: 30/12/2016 by @ayylimao -->
   <string key="HarlotFuckKiller">
     <value>{0} was the serial killer! You were killed.</value>
   </string>
+    <string key="HarlotFuckKillerPublic">
+    <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
+  </string>
+
   <string key="DGToMason">
     <value>Amidst the names in your head, a new one appears: {0}!</value>
   </string>
@@ -862,7 +866,7 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Nooo! Don't change the language out of Amnesia! If you really want to break my heart, what language do you want now?\nCurrent: {0}</value>
@@ -999,6 +1003,12 @@ Last update: 30/12/2016 by @ayylimao -->
   <string key="AllowCultA">
     <value>Cult as a role set to: {0}</value>
   </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
   <string key="ThankYou">
     <value>Thank you, have a good day :)</value>
   </string>
@@ -1116,7 +1126,7 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfeast. You can't see a damn thing. Can you even vote for the person you want to ? (You have 50% chances to vote for someone random)</value>
   </string>
   <string key="AboutBlacksmith">
-    <value>You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* 🤔
+    <value>You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* ??
     </value>
   </string>
   <string key="AboutAlphaWolf">
@@ -1260,12 +1270,12 @@ Last update: 30/12/2016 by @ayylimao -->
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Join time extended by {0} seconds!\n{1} left to /join, don't forget about it!</value>
+    <value>Join time extended by {0} seconds!\n{1} left to join, don't forget about it!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Join time decreased by {0} seconds!\n{1} left to /join, don't forget about it!</value>
+     <value>Join time decreased by {0} seconds!\n{1} left to join, don't forget about it!</value>
   </string>
   <string key="CantExtend">
     <value>Did you forget you already extended the time? Only group admins can do it multiple times!</value>
@@ -1278,10 +1288,331 @@ Last update: 30/12/2016 by @ayylimao -->
     <!--{0} = "Allow" / "Disallow" string-->
     <value>{0} players to extend join time</value>
   </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
     <string key="WolvesEatDrunkBlockSecondKill">
     <value>Did something happen at {0}'s house last night? You can't seem to remember...\nDid something happen at {1}'s house last night? You can't seem to remember...</value>
   </string>
-    <string key="HarlotFuckKillerPublic">
-    <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}joined the game in the last 30 seconds.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>As the sun starts to shine on the village, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the village. Looking at the sight of the corpses strewn all across the village, {0} sighs. Their lifelong dream of being chosen to be lynched by the villagers is as dead as the villagers are. They reach out and touch the rope, that had taken many lives, tenderly, before slipping it around their neck and letting themselves hang freely, with a sad smile on their face.</value>
+    <value>{0} wakes up at dawn, alone. {0} sees how abject a failure they has been, not being able to get the village to satisfy their masochistic desires of being lynched to death. {0} grabs a rope and hangs himself, realising no one can accomplish their dream, since there is no one left.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} opens their eyes, but instead of hearing the usual bustle of the village, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The wolves were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the village. A tear slips from their eye, as {0} recalls how close they and their wolves were to victory. Alas, it was time to start a new life, with a new pack. {0} slips into the darkness of the forest, away from the quiet village.</value>
+    <value>For all of {0}'s efforts, {0}'s wolf friends lay motionless and lifeless. Even if the wolves have been brought victory, there is no one to savour the success with, neither are there any living villagers to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new wolves, new allies, and new treachery to commit new crimes against humanity.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>You may not remember for sure who you are, but at least now you know this: {0} is NOT {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>You know you should be doing something, but does it need to be today?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>As the town talks, {0} goes back to their house and begins humming a soft melody.  Tonight, everyone will sleep very deeply, and no one will be able to use their night actions</value>
+  </string>
+  <string key="SandmanNight">
+    <value>As everyone heads home, they barely make it to their beds from exhaustion.  They all fall asleep so strongly, they don't even remember going to sleep...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>That's strange... you can't seem to remember who you are!</value>
+  </string>
+  <string key="WolfMan">
+    <value>the WolfMan 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="Lycan">
+    <value>the Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The lycan is a wolf, but will appear to be a villager to the seer</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="Oracle">
+    <value>the Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the day!</value>
+  </string>
+  <string key="Sandman">
+    <value>the Sandman 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the day!</value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>That's strange... you can't seem to remember who you are!</value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="AskPacifist">
+    <value>You know you should be doing something, but does it need to be today?</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>The Pacifist ☮️, {0}, is making a heartfelt speech of friendship and trust in front of the village. Moved by their speech, there will be no lynching today!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Because of the Pacifist's ☮️ heartfelt speech, the lynch phase will be skipped today!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Hunter 🎯, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and swore off their Hunter abilities. He died a simple Villager 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Gunner 🔫, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and decided to scrap their gun, becoming a simple Villager👱 with a field to plow.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Your role changed, but from what, and to what?  You may not remember who you are, but you do remember an important role: {0}</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>Did something happen at {0}'s house last night? And your role changed, but from what, and to what? You may not remember who you are, but you do remember an important role: {1}</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>You may not remember who you are, but you do remember someone important: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>You may not remember who you are, but you do remember someone important: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>You may not remember who you are, but you do remember someone important: {0}</value>
+  </string>
+  <string key="AskThief">
+    <value>You know you should be doing something to someone, but who should you choose?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+    <value>{0} votes went to {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+    <value>The lynch result for today:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+    <value>{0} votes went to {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
 </strings>

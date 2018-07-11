@@ -48,11 +48,13 @@ namespace Werewolf_Control
 
             //-1001052326089,
 #if BETA
+            /*
             if (!BetaGroups.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
                 Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
                 return;
             }
+            */
 #endif
     
 
@@ -79,6 +81,13 @@ namespace Werewolf_Control
                 grp.Name = update.Message.Chat.Title;
                 grp.UserName = update.Message.Chat.Username;
                 grp.BotInGroup = true;
+#if BETA
+                if (grp.BetaGroup != true & !UpdateHelper.Devs.Contains(update.Message.From.Id))
+                {
+                    Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
+                    return;
+                }
+#endif
                 if (grp.CreatedBy == "BAN")
                 {
                     Bot.Api.LeaveChatAsync(grp.GroupId);

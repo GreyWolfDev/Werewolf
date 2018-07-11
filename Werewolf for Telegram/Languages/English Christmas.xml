@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!-- Huge thanks to: Jorge, Rani, Fenrir and everyone else who helped me finishing this language file -->
+    <!---Beginning of the Rolelist: 
+    The Spirit of Christmas = Cultist Hunter
+    Gingerbread Man = Mason
+    The Nutcracker = Town Hunter
+    Non-Believer = Cultist
+    Buddy the Elf = Clumsy
+    The Grinch = Tanner
+    Krampus = Serial Killer 
+    Jack Frost = Alpha Wolf 
+    Frosty the Snowman = Wolf Cub
+    Snowman = Wolf
+    Elf = Villager
+    Santa Claus = Seer
+    Frank Claus = Drunk
+    Mary Claus = Harlot 
+    Miss Candy Cane = Traitor
+    Jack Skellington = Guardian Angel
+    Secret Santa = Detective
+    Dasher = Cursed
+    Black Pete = Gunner
+    Blitzen = Wild Child
+    Mrs. Claus = Beholder
+    Santa's Little Helper = Apprentice Seer
+    Mall Santa = Fool
+    The Weatherman = Blacksmith
+    Old Man Winter = Sorcerer
+    Grýla = Prince
+    Rudolph = Mayor
+    Love Reindeer = Cupid
+    Prancer = Doppelganger
+    Gnome = Lycan
+    Ice Sculpturist = WolfMan
+    Arctic Fox = Thief
+    not yet implemented = Pacifist
+    not yet implemented = Wise Elder
+    Street Santa = Oracle
+    Christmas Carol singer = Sandman
+    Ending of the Rolelist-->
+<strings>
+<language name="English Christmas" base="English" variant="Christmas" owner="skollwolf" code="en" />
+  <string key="NotInGame" deprecated="true">
+    <value>The delicious hot chocolate with marshmallows is ready, but it seems you aren't in it. Join this game now, before it starts.</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has prepared Santa's sleigh tonight and Rudolph is leading! Join to get gifts from Santa Claus, but be careful not to die 😈</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has prepared Santa's chaotic sleigh tonight and Rudolph is leading! Join to get gifts from Santa Claus, but be careful not to die 😈</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Your hot chocolate isn't served yet! An actual game is already running, don't interrupt it.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Tsk tsk tsk, someone seems to be impatient. You are already a player of this game, be more patient and drink your hot chocolate.</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Only 1 minute is left before you can't join this game anymore, use it or miss a chance to get your presents.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds are left before you can't join this game anymore, use it or miss a chance to get your presents.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Oh no! Christmas got cancelled this year because you didn't help to deliver presents for the people all over the world.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>It's December in the North Pole and almost time for Christmas! Time to snuff out the evil Snowmen and Krampus who are trying to stop Christmas from happening! Wait a bit while roles get assigned to players.</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /). It's Christmas no one likes players who are trying that.</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, please change your name to join this christmas game.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, all slots are already filled out! You have to wait till the next game starts, but don't worry your time will come.</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  You may not join the game until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't run away! You're frozen to death!  While waiting till the next game starts you can get yourself a hot chocolate to warm up a bit.</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has fled in fear of the evil Snowmen, Krampus and the fear of becoming a Non-Believer!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} players remain.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be playing...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a player by that name!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to freeze {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to burn {1}.</value>
+    <value>{0} points and glares at {1}.</value>
+    <value>{0} thinks {1} should not exist here!</value>
+    <value>{0} thinks {1} is a good material for firewood.</value>
+    <value>{0} wants to take revenge on {1}!</value>
+    <value>{0} thinks {1} is ominous to Christmas!</value>
+    <value>{0} thinks {1} is unholy to Christmas!</value>
+    <value>{0} says, "No Christmas gift for {1}!"</value>
+    <value>{0} claims that {1} had frozen some guests!</value>
+    <value>{0} claims to have witnessed {1} has some livers collected!</value>
+    <value>{0} says that {1} has a pair of bloody hands!</value>
+    <value>{0} says, "For Christmas' sake, let's eliminate {1}!"</value>
+    <value>{0} attempts to light a fire on {1}.</value>
+    <value>{0} throws some firewood on {1}.</value>
+    <value>{0} stares at {1} and lights up some matches.</value>
+    <value>{0} claims that {1} is a snowman in disguise!</value>
+    <value>{0} says {1} had prepared the feast badly and made everyone vomitted last night!</value>
+    <value>{0} says {1} had prepared the feast badly and made everyone suffer from gastroenteritis last night!</value>
+    <value>{0} says the Christmas turkey prepared by {1} was unpalatable!</value>
+    <value>{0} says {1} almost burned the house of the feast!</value>
+    <value>{0} says {1} almost killed him/her in the last snowball fight!</value>
+    <value>{0} accuses {1} of being an arsonist!</value>
+    <value>{0} says {1} did a friendly fire!</value>
+    <value>{0} sees {1} holding a flamethrower owned by someone else!</value>
+    <value>{0} will be delighted if {1} is burnt in fire.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} has not voted for about 2 days in a row and so they have suddenly been burnt. You need to continue without {1}.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>You were Miss Candy Cane 🍭 (🖕) but now you turned into a Snowman ☃️ (🐺)...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nThe Santa Claus 🎅🏻 (👳) is {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} was Santa Claus 🎅🏻 (👳). As Santa's Little Helper 👲 (🙇), you step up to become the new Santa Claus 🎅🏻 (👳).</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} was Santa's Little Helper 👲 (🙇), and has now stepped up to replace {1} as the Santa Claus 🎅🏻 (👳).</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see {0} is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to burn?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to detect?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Who do you want to burn down with your flamethrower? {0} charge(s) remain.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Who do you want to visit?</value>
+  </string>
+  <string key="AskSee">
+    <value>Who do you want to see?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to protect?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to freeze?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who do you want to hunt?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who is your role model?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to turn into a Non-Believer?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are Dasher 💧 (😾)! You are on Team Santa but if a Snowman or Jack Frost tries to freeze you, you magically transform into a Snowman yourself and will join Team Frost.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are the Secret Santa 🎁 (🕵️). Each day, you will have the chance to secretly find out a players role. But snoop carefully, as the Snowmen have a 40% chance to see you snooping.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>You are Frank Claus 👴🏻 (🍻), Santa's brother who gets a little wild with the eggnog! But you're still a loyal part of Team Santa. If the Snowmen try to freeze you the alcohol in your blood will start melting them and they will need to rest the next night.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are Jack Skellington 💀 (👼). Each night, you choose a player who you are protecting from the evil Snowmen and Krampus. However, if you choose to protect a Snowman or Krampus himself, there is a 50% chance you will get frozen by them.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are Black Pete 💁🏿‍♂️ (🔫). Since you are Santa's companion, you aren't kind to people who don't like Christmas. You get two chances to shoot someone with your flamethrower. Once you choose, everyone will know you are on Santa's side.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You are Mary Claus 💃🏻 (💋). As Santa's nosey daughter, you will be given the chance to visit another player each night. If that player is not one of the Snowmen or Krampus, you will survive a warm night by the fire, but if you visit a Snowman you will freeze. If you are visiting a player and the Snowmen choose to freeze you, you will not die because you are not at home.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>You are Miss Candy Cane 🍭 (🖕). Oh Santa's little mistress! You are on Team Santa… for now. If you live long enough for all the Snowmen to die, you will join Team Frost and become a Snowman.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>You are an evil Snowman ☃️ (🐺)! You only have a short time to live as the end of the winter is coming, but you plan to cause chaos before you melt away. Each night, you will pick a player and try to freeze them to death. But watch out, if you try to freeze Frank Claus, your powers will be impaired. However if you try to freeze Dasher, they will join Team Frost!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>You are Santa Claus 🎅🏻 (👳)! You are just trying to make sure Christmas runs smoothly. Each night you have the ability to find out a players true role. Don't reveal yourself too quickly, because if the Snowmen find you, they will try to freeze you.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>You are an Elf 👱👱‍♀️ (👱). Each day, you, along with other citizens of the North, will have a chance to melt a Snowman.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>You are the Grinch 🤢 (👺). If you get burnt, you win automatically!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>You are Blitzen 🐃 (👶), that crazy, silly reindeer. At the start of the game, you will choose your best friend. If they die, you will join Team Frost.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>You are Mrs. Claus 🤶🏻 (👁). You can tell who Santa is (the real one, not that silly Mall Santa which no one really needs).</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>You are Santa's Little Helper 👲 (🙇). You are on Team Santa. But if Santa dies, you will become Santa.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>You are a Non-Believer 👻 (👤). Your goal is to turn all other players (except Snowmen and Krampus) into Non-Believers. If at the end of the game, all the living players are Non-Believers, you all win.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>You are the Spirit of Christmas 🎄 (💂) and your job is to find the Non-Believers 👻 (👤). If the Non-Believers try to convert you, their newest member will die. Each night you may pick a player to hunt and if they are Non-Believers, they are going to die.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Dusk draws near, and all citizens of the North Pole are coming together to decide who they are burning this evening...
+      Everyone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>Another ice-cold night is over. You wake up and warm up next to your fireplaces. You have {0} seconds to get ready in time for today's work.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>Another stressful night at the North Pole is heading in.  The work is over for today, but the next day is already coming soon. Get yourself some rest to be ready for the next hard day.  The night active roles are preparing to choose their victims today, they have {0} seconds for it.</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>The citizens of the North Pole have cast their votes, amid doubts and suspicions. {0} has been burnt to death. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Unable to come up with a proper decision on who to burn, the citizens returns to their homes for the night, frustrated...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Something is fishy, because no one voted!  Time to go sleep now...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>The citizens of the North Pole gather in the morning, but they don't see {0}.  They wander over to the house, to find {0} frozen, a stocking shoved down their throat. The Secret Santa 🎁 (🕵️) is dead.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>Morning comes to the North Pole, and to everyone's dismay, {0} the Jack Skellington 💀 (👼) got found frozen to death.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>When everyone comes out of their cabins in the morning, they find pieces of Black Pete's ({0}) icey body 💁🏿‍♂️ (🔫) strewn about, frozen and smashed up by an attack of the evil Snowmen.  You have lost Black Pete 🔫.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>The citizens of the North Pole awake in the morning, to find the disemboweled remains of {0} in the snow.  Santa Claus 🎅🏻 (👳) is dead.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>Everyone wakes up and recognizes the smell of eggnog...the cabin of Frank Claus 👴🏻 (🍻) is frozen!  After the cabin has been freed from the ice, you find {0} dead inside it.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>As the sun rises above the North Pole, the citizens find {0} frozen in the snow with presents around him. But wait, those aren't actually the presents for the people out there. They are all empty inside. The Mall Santa 👳🏼 (🃏) has died.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>As everyone rises in the morning, they don't hear anything from {0}.  They are searching for {0} and are soon finding his body frozen in the snow. \n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>A noticeable stench is coming from {0}'s house...  the citizens inspect it to find a body lying in front of an xmas sign. A Non-Believer 👻 (👤) has been killed by the Spirit of Christmas 🎄 (💂)!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>The Elves gather the next morning in the town center, to sighs of relief - it appears that no one was frozen the previous night.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>You have been tried to froze by the evil Snowmen ☃️ (🐺).  As you were Dasher 💧 (😾), you have now turned into a evil Snowman yourself!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your Snowmen counterpart(s): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value>You tried to freeze {0}... but was Dasher, and has become a evil Snowman now! Congrats on your new teammate!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Oh no! The evil Snowmen ☃️ (🐺) froze you to death.</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>Oh no! {0} was Frank Claus 👴🏻 (🍻)! Now you aren't able to freeze anyone to death tomorrow night...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>You tried to guard a evil Snowman ☃️ (🐺)! The evil Snowman has frozen you to death.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >You have saved {0}'s life!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value>{0} was not attacked, so you didn't had to save them.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>You went to guard {0}, but they weren't home!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>Jack Skellington 💀 (👼) was watching over you last night and fought off an attacker!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value>Mary Claus 💃🏻 (💋) chose the wrong night to stay home. {0} has been frozen to death by the evil Snowmen!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>Odd... {0} was not home! No victim for you to freeze tonight...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>You slip into {0}'s house for some hot cocoa, only to be confronted by a evil Snowman. You have been frozen to death.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>{0} slipped into the wrong house last night! {0}'s remains have been found laying frozen in the snow...  how sad :(</value>
+  </string>
+   <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} slips into {1}'s house, ready to have a drink of hot cocoa to ease off the stress. Instead they find an evil Snowman freezing {1} to death!  The evil Snowman quickly turns around to {0} and freezes them too...</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value>You see {0} is not a evil Snowman, and so you enjoyed your hot chocolate all night long with them!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>Late last night Mary Claus came over to bring you some hot chocolate. How kind of her. When you were done drinking it, Mary Claus left you with a warm feeling inside.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>You caught {0} snooping about! That must be the Secret Santa!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Your snooping has shown you that {0} is {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Looks like {0} didn't liked Mary Claus' hot chocolate! The Black Pete got revenge. {1} is dead.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Suddenly, a bright flame lights up the sky.  The Elves turn to see {0} standing over {1}'s body, a flamethrower still aimed at them. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>The Snowman has won and successfully stopped Christmas!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>The Snowmen have won and successfully stopped Christmas!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>The citizens of the North Pole have won!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Oh no! You burnt the Grinch 🤢 (👺)! The Grinch wins the game, stupid.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living players, roles, and team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} has voted to turn {1} into a Non-Believer</value>
+  </string>
+   <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} was sent to do your dirty work, and tried to turn {1} into a Non-Believer... however, {1} is the Spirit of Christmas! {0} is dead!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} came to your house last night, ready to turn you into a Non-Believer....  you enlightened them so much with your faith in Christmas that they died of it.  A Non-Believer is dead... {1} remain!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>The Non-Believers 👻 (👤) have turned you to their order!  You are now a Non-Believer as well.  Every other night, you will have a chance to turn another player into a Non-Believer too.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Non-Believers: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} has joined the Non-Believers 👻 (👤)!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} was sent to do your dirty work, and turn {1} into a Non-Believer... but no one was at home!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>All Snowmen and Krampus died, and citizens left standing have all been converted to Non-Believers...  The Non-Believers 👻 (👤) won and destroyed the faith in Christmas completely!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>You went to visit {0} to check their faith. You see {0}'s ungarnished, forlorn house standing out from far away...</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil cultist.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>You went to visit {0} to check their faith. You see {0}'s well-adorned house glimmering with lights. In your mind, you trust that {0} believes in Christmas.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}'s role model just died!  In their rage, they have become a evil Snowman too!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} has died! In your rage, you have become a Snowman! Your new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>Elf 👱👱‍♀️ (👱)</value>
+  </string>
+  <string key="Drunk">
+    <value>Frank Claus 👴🏻 (🍻)</value>
+  </string>
+  <string key="Harlot">
+    <value>Mary Claus 💃🏻 (💋)</value>
+  </string>
+  <string key="Seer">
+    <value>Santa Claus 🎅🏻 (👳)</value>
+  </string>
+  <string key="Traitor">
+    <value>Miss Candy Cane 🍭 (🖕)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Jack Skellington 💀 (👼)</value>
+  </string>
+  <string key="Detective">
+    <value>Secret Santa 🎁 (🕵️)</value>
+  </string>
+  <string key="Wolf">
+    <value>Snowman ☃️ (🐺)</value>
+  </string>
+  <string key="Cursed">
+    <value>Dasher 💧 (😾)</value>
+  </string>
+  <string key="Gunner">
+    <value>Black Pete 💁🏿‍♂️ (🔫)</value>
+  </string>
+  <string key="Tanner">
+    <value>The Grinch 🤢 (👺)</value>
+  </string>
+  <string key="Fool">
+    <value>Mall Santa 👳🏼 (🃏)</value>
+  </string>
+  <string key="WildChild">
+    <value>Blitzen 🐃 (👶)</value>
+  </string>
+  <string key="Beholder">
+    <value>Mrs. Claus 🤶🏻 (👁)</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Santa's Little Helper 👲 (🙇)</value>
+  </string>
+  <string key="Cultist">
+    <value>Non-Believer 👻 (👤)</value>
+  </string>
+  <string key="CultistHunter">
+    <value>The Spirit of Christmas 🎄 (💂)</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Ran away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Dead</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Alive</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Citizens Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>a Gingerbread Man 🍞 (👷)</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a Gingerbread Man 🍞 (👷). Baked from the same oven, you know who the other Gingerbread Men are.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+   <value>As everyone rises, they find the body of {0} laying frozen in the deep snow.  One of your Gingerbread Men 🍞 (👷) has died!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The Gingerbread Men 🍞 (👷) are: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Your newest member heads over to {0}'s house to turn them into a Non-Believer, but instead finds the house a complete wreck, ice everywhere and some parts of the evil Snowmen were left behind there as a warning...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>The Snowmen head to {0}'s house to freeze them, but they are met by a tall dark figure, armed to the teeth. The Jack Skellington 💀 (👼) fights everyone off, and you head back defeated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>You send {0} out with the order to turn {1} into a Non-Believer, however their belief in Christmas are too strong, and you were unable to turn them into one of yours. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>You go to {0}'s house to have some hot cocoa... but as you are leaving, you happen to notice a Xmas sign, poorly hidden off in a side room, with a green glow coming from it...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the house to find the remains of {0}.</value>
+    <value>As the citizens gather as the sun rises, the find the remains of {0}, who died somehow last night...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Odd.... {0} didn't showed up for the Gingerbread meeting this morning... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>is dead</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a real Santa Claus can run this command.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No seer!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+   <string key="RoleInfoCupid">
+    <value>You are the Love Reindeer 💘 (🏹). You will choose two players at the start of the game. These 2 players will be madly in love! If one of them dies, the other will die of sadness. Note: Lovers know who they are but not each other’s role. If the lovers are the last 2 alive, they will win regardless of their team. If the lovers are on different teams (Team Santa + Team Frost) and one team wins (Snowman), the lover, (Elf) wins as well. If at least one of the lovers was on the winning team, they both win together.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are Prancer 🌟 (🎭)! You have a little extra Christmas magic in you. You have the ability to turn into other players. You can pick a player at the start of the game. If that player dies, you will become what they were.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are The Nutcracker 💂 (🎯)! Normally you would be spending your time rehearsing for the ballet but there's craziness in the North Pole. If the Snowmen try to freeze you, you have the chance to take one of them down with you. If you die any other way, you will get a chance to burn someone as you die.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Oh you are Krampus 👹 (🔪), here to punish all the children who misbehave. You are on your own team. Each night, you will be able to choose a player to kill. If the Snowmen try to freeze you, you will melt one of them and live.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>You have been struck by love. {0}'s memory will never fade in your heart. If one of you dies, the other one will die out of sorrow. If one of you wins, the other wins too.</value>
+    <value>The arrow of the Love Reindeer has struck you! You are madly in love with {0}! If they die, you will die too. If one of you two wins, you will both win.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The citizens of the North Pole has chosen to burn you! This is your last chance, choose to shoot someone as you go down!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} fumbles for their pistol as the temperature rises, but couldn't get it in time, and burnt to death.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} whips out their pistol and looks at the crowd... and cannot make a decision on who to shoot. They burn to death, accepting their fate...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>As the temperature rises, {0} whips out a pistol, takes aim, and shoots {1}! {1} falls over, dead.  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You've been murdered!  In your last moments, you have the chance to shoot someone... make it quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>The heat was too much for {0}, so much that they couldn't even reach for their sidearm, as they lay surrounded by flames...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>As {0} lays there, gasping for their final breaths, they can't decide who to shoot... and accept their fate.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Burning, {0} falls to the ground.... but not without grasping their pistol, and firing upon {1}, who takes a bullet right between the eyes. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>The evil Snowmen tried to attack the Nutcracker 💂 (🎯) last night, but the Nutcracker was able to take one down with them as he died! {0} has died (Evil Snowman)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>An evil Snowman tried to attack the Nutcracker 💂 (🎯) last night, but the Nutcracker was able to take the evil Snowman {0} down with their rifle!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The evil Snowmen attempted to freeze someone to death, but were instead greeted by Krampus 👹 (🔪)! {0} was killed in the fight!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>It seemed a quiet enough night for {0}, but they were wrong.  The citizens of the North Pole gather in the morning to find {0} split from head to toe, but oddly the liver was missing...  Krampus 👹 (🔪) has struck again! {1}</value>
+  </string> 
+ <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You tried to collect {0}'s liver for your collection, but you were fought off by Jack Skellington 💀 (👼)! No liver for you tonight...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The Non-Believers sent {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+     <value>The Non-Believers 👻 (👤) sent {0} out to try to turn {1} into one of them, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....Use /nextgame to get notified when the next game is starting</value>
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead. D: Use /nextgame to get notified when the next game is starting</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You tried to guard Krampus 👹 (🔪), but Krampus came out and stabbed your faith out of you! You are dead, but you can use /nextgame to get notified of when the next game starts....</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>You slip into {0}'s house to share some hot cocoa.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac!  You are dead, but you can use /nextgame to get notified of when the next game starts....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>The citizens of the North Pole see {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>The Prancer 🌟 (🎭) {0} has now become a Gingerbread Man 🍞 (👷), just like you!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>The Prancer 🌟 (🎭) {0} has now become a Non-Believer 👻 (👤), just like you!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, so you transform into a Non-Believer 👻 (👤).  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Prancer 🌟 (🎭) {0} has now become a evil Snowman ☃️ (🐺), just like you!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, so you transform into a evil Snowman ☃️ (🐺).  Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>The only person left standing is Krampus 👹 (🔪)! They have won!</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to kill tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>With {0}'s dying breath, {1} rushes over and falls, crying.  They cannot stand the loss of their loved one, and shoot themselves with the nearest pistol they can find. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Who do you want to become if they die?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who do you want the lovers to be? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who do you want the lovers to be? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>the Nutcracker 💂 (🎯)</value>
+  </string>
+  <string key="Cupid">
+    <value>the Love Reindeer 💘 (🏹)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Krampus 👹 (🔪)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the Prancer 🌟 (🎭)</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You are now Blitzen 🐃 (👶). Your role model is {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>True love endures! The lovers have won!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>In the middle of the North Pole, everyone finds {0}, with multiple shots to the body. It looks like they tried to sneak up on the Nutcracker 💂 (🎯)! Well done, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A Non-Believer 👻 (👤) tried to make you forget about Christmas, but your faith in Santa was too strong for them.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}. I will PM you when the next game is starting.\nWhile waiting, why not browsing the store or enjoy a hot chocolate with marshmallows? Store website: https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+   <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new game is starting in {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>It is morning of December the 25th. The last two people in the North Pole walk out to the center of town. {0} takes a look at {1}, laughs his evil laugh, pulls out a knife, and takes {1} out.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Everyone in the North Pole is dead. Christmas is cancelled this year. Don't hesitate to start a new game with /startgame or /startchaos whenever you are ready for it.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>As the sun rises over the snowy hills, {0} and {1} walk out into the middle of town. {0} pulls out their knife, and jumps at {1}. {1} pulls out a gun and fires a shot into {0}'s face as {0} lands, plunging the knife deep into {1}. Both are dead. The North Pole is silent. Not a creature in sight. No one wins this Winter. What a bad ending, don't hesitate to start a new game with /startgame or /startchaos, whenever you are ready for it.</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Aww, you didn’t choose a best friend. But you need one! Don’t worry, we picked one for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>You are an Elf 👱👱‍♀️ (👱)! All you want to do is make toys and make all the little children happy for Christmas. Each day, you will have the chance to destroy a Snowman.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are Santa Claus 🎅🏻 (👳)! Ho Ho Ho! Your job is to make sure Christmas runs smoothly for all the little boys and girls. Each night you have the ability to find who is naughty or nice. Don't reveal yourself, because if the Snowmen find you, they will try to freeze you.</value>
+  </string>
+  <string key="AboutWw">
+    <value>You are an evil Snowman ☃️ (🐺)! You only have a short time to live before the end of winter but you plan to cause chaos before you melt away. Each night, you will pick a player to freeze to death. But watch out, if you try to freeze Frank Claus, your powers will be impaired. If you try to freeze Dasher, they will join Team Frost!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>You are Mary Claus 💃🏻 (💋). As Santa's nosey daughter, you will be given the chance to visit another player each night. If they are not a Snowman, you will enjoy a warm night by the fire. However, if you are visiting a player and the Snowmen choose to freeze you, you will not die because you were not home. But if you visit the player the Snowman choose to freeze, you will also die a cold death.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You are Frank Claus 👴🏻 (🍻). As Santa's brother, you tend to get a little wild with the eggnog, but you're still a loyal part Team Santa. If the Snowmen try to freeze you, they will become tipsy and will be impaired for one night.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>You are Dasher 💧 (😾), the crazy reindeer. You are on Team Santa but if a Snowman tries to freeze you, you have a fit and transform into one yourself. You will be free to join Team Frost.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are Miss Candy Cane 🍭 (🖕). Oh Santa's nasty little mistress! You are on Team Santa… for now. Santa has been naughty and hasn’t returned your calls. So you may just switch sides. If you live long enough for all the Snowmen to die, you will join Team Frost, ready to freeze whom you please.</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are Jack Skellington, The Pumpkin King. You visit The North Pole every winter after Halloween to help out Santa. Each night, you choose a player to be protected from the evil Snowmen. Be careful because if you choose to protect a Snowman, there is a 50% chance you will be frozen.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You are the Secret Santa 🎁 (🕵️). You’re always off somewhere planting anonymous presents. Each day, you will have the chance to secretly find out a players role. But snoop carefully, as the Snowman have a 40% chance to see you giving presents.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>You are Black Pete 💁🏿‍♂️ (🔫), one of Santa’s oldest friends.  As Santa's companion, you don't take kindly to people who don't like Christmas. You are given two chances to shoot someone you think is bad. Once you choose, everyone will know you are on Team Santa.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>You are The Grinch 🤢 (👺). You are just soooooo annoyed by anything Christmas. If the people of the North Pole vote to kill you, then you will steal all the presents and Christmas will be cancelled!</value>
+  </string>
+  <string key="AboutFool">
+    <value>The Mall Santa 👳🏼 (🃏) gets told to be the real Santa. When they choose to see someone's role at night, they will be told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>You are a Non-Believer 👻 (👤), and you don’t believe in Santa Claus!  *gasp* Your goal is to convert all other players (except Snowmen) into Non-Believers. If at the end of the game, all the living players are Non-Believers, you all win.</value>
+  </string>
+  <string key="AboutCH">
+    <value>You are the Spirit of Christmas 🎄 (💂) and your job is to find the Non-Believers who don’t believe in Santa Claus! If the Non-Believers try to convert you, their newest member will die. Each night you may pick a player to hunt and if they are Non-Believers, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>You are Blitzen 🐃 (👶), that crazy, silly reindeer. At the start of each game, you will pick someone to be your best friend. If they die, you will be so upset and seek your revenge on Team Frost.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>You are Santa's Little Helper 👲 (🙇). You work so hard for Santa. Since you are so loyal, if Santa dies, you will become the new Santa.</value>
+  </string>
+  <string key="AboutBH">
+    <value>You are Mrs. Claus 🤶🏻 (👁). You are always behind the scene looking out for danger and baking the best cookies in the whole world. Since you are married to Santa, you can tell who Santa is. (the real one, not that silly Mall Santa)</value>
+  </string>
+  <string key="AboutMason">
+    <value>You are a Gingerbread Man 🍞 (👷)! You spend all your days building gingerbread houses for your family and you are on Team Santa. If there are any others, you will know.</value>
+  </string>
+  <string key="AboutDG">
+    <value>You are the Prancer 🌟 (🎭)! You have a little extra Christmas magic in you. You have the ability to turn into other players. You can pick a player at the start of the game. If that player dies, you will become what they were.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>You are the Love Reindeer 💘 (🏹), also known as Cupid! You will choose two players at the start of the game. These 2 players will be madly in love! If one of them dies, the other will die of sadness.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>You are The Nutcracker 💂 (🎯)! Normally you would be spending your time rehearsing for the ballet but there's craziness in the North Pole. If the Snowmen try to freeze you, you have the chance to take one of them down. If you die any other way, you will get a chance to shoot someone as you die.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Oh you are Krampus 👹 (🔪), here to punish all the children who misbehave. You are on your own team. Each night, you will be able to choose a player to kill. If the Snowmen try to freeze you they have a 20% chance to freeze you, if that doesn't happen, then you can kill one of them.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+ <string key="EndTime">
+    <value>Game Length: {0} \nUse /startgame or /startchaos to start the next game.</value>
+  </string>
+  <!--New strings, July the 8th -->
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+ <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow Mall Santa 👳🏼 (🃏) as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Mall Santa 👳🏼 (🃏) as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow The Grinch 🤢 (👺) as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>The Grinch 🤢 (👺) as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow Non-Believers 👻 (👤) as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Non-Believers 👻 (👤) as a role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you for using me, have a good Christmas and enjoy your hot chocolate with marshmallows 🙂</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} forgot to start the bot and was removed from the game because if you don't start me, I can't send the role in a private message to you!</value>
+  </string>
+  <string key="LatestList">
+    <value>I received the latest citizens list, here they are listed:</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>The delicious hot chocolate with marshmallows is ready and so are you now. You entered a Christmas game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+ <string key="RoleInfoMayor">
+    <value>You are the red-nosed reindeer, Rudolph 🦌 (🎖)! Once you reveal that you have a red nose, your votes will count twice. Use that power wisely to help Team Santa!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are Grýla 😇 (👑). If the people of the North Pole try to kill you, they will realize that they were wrong! However if it happens again, you will die.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are Buddy the Elf 🍀 (🤕)! You absolutely LOVE Christmas. So much so, that you can't see straight! You will try to vote for someone but there is a 50% chance you will vote for someone else. Oops.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are Old Man Winter 🌬 (🔮). You side yourself with Team Frost. You have the ability to see if someone is a Snowman or if they are Santa. Use your role wisely to help Team Frost win.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are the Weatherman 👨‍💼 (⚒)! You have the ability to cause a warm front to come through the North Pole. This prevents the Snowmen from freezing someone for one night.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are Jack Frost 🌨 (⚡️), the King of Winter. Everything you touch becomes cold. Like your snow henchman, you get to choose a player to freeze. Since you are the King, there's a 20% chance that the player you freeze will join Team Frost instead of freezing to death!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Awwww you are Frosty the Snowman ❄️ (🐶)! You are the cutest, coldest little Snowman in the WHOLE North Pole with a cute button nose. You get to choose a player to freeze every night. If anyone tries to kill you, your team will get 2 kills. But you will still be dead. :(</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the town begins to burn {0}, they realize that they tried to burn Grýla, the reason for the season! How dare they! Feeling silly, the people of the North Pole all head back home.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to look through your snow globe at {0}, but can't quite make out what they are through the blizzard. But you know it was not a Snowman or Santa Claus…</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} cries aloud, and the citizens of the North Pole seeing Rudolph 🦌 (🎖) in the manger. Rudolph is the reason for the season so {0}'s votes for banishing will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click &quot;Shout&quot; whenever you wanna shout out, that you are Rudolph the red-nosed reindeer.</value>
+  </string>
+  <string key="Reveal">
+    <value>Shout</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to bring the warm front today, preventing the Snowmen from freezing others tonight?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>BREAKING NEWS! {0} has brought in a warm front to the North Pole! Enjoy a bit of warm weather tonight. The Snowmen aren't able to freeze someone at the next night.</value>
+  </string>
+    <string key="Mayor">
+    <value>Rudolph 🦌 (🎖)</value>
+  </string>
+  <string key="Prince">
+    <value>Grýla 😇 (👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Old Man Winter 🌬 (🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Buddy the Elf 🍀 (🤕)</value>
+  </string>
+  <string key="Blacksmith">
+    <value>The Weatherman 👨‍💼 (⚒)</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Jack Frost 🌨 (⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>Frosty the Snowman ❄️ (🐶)</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the Snowmen start to freeze {0}, {1} stops everyone, being Jack Frost 🌨 (⚡️), the King of the Winter. {1} tells the team that {0} should join us instead of being frozen to death, so the team gives them a carrot for a nose and leaves them in the snow.  {0} will become a Snowman tomorrow night.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>You were about to be frozen by the Snowmen, but Jack Frost 🌨 (⚡️) chose you. Instead of being frozen, you will transform into a Snowman ☃️ (🐺) tomorrow night.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>When the night came, you felt that you were suddenly getting so cold. When you look at yourself in the mirror and you notice that you are suddenly a Snowman ☃️ (🐺), you are astonished how quickly and painlessly the transformation happened!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>You are the red-nosed reindeer, Rudolph 🦌 (🎖)! Once you shout out, that you have a red nose, your votes will count twice. Use that power wisely to help Team Santa!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>You are Grýla 😇 (👑). If the people of the North Pole try to kill you, they will realize that they were wrong! If it happens again, you will die.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>You are Old Man Winter 🌬 (🔮). You team up yourself with Team Frost. You have the ability to see if someone is a Snowman or if they are Santa. Use your role wisely to win with Team Frost.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are Buddy the Elf 🍀 (🤕)! You absolutely LOVE Christmas. So much so, that you can't see straight! You will try to vote for someone but there is a 50% chance you will vote for someone else. Oops.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are the Weatherman 👨‍💼 (⚒)! You have the ability to predict when a warm front will come through the North Pole. This prevents the Snowmen from freezing others for one night.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are Jack Frost 🌨 (⚡️), the King of the Winter. Everything you touch turns to cold. Like your snow henchman, you get to choose a player to freeze. Since you are King, there's a 20% chance that the player you freeze will join Team Frost instead of getting frozen!</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Awwww you are Frosty the Snowman ❄️ (🐶)! You are the cutest, coldest little Snowman in the WHOLE North Pole. You can choose the players you want to freeze during the night. If anyone tries to burn you the rest of your team will get 2 chances to freeze someone. But you will still remain burned. :(</value>
+  </string>
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isn't anymore alive, and so you are transforming into Jack Frost 🌨 (⚡️). Your teammates, if there are any: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isn't anymore alive, and so you are transforming into Frosty the Snowman ☃️ (🐺). Your teammates, if there are any: {1}</value>
+  </string>
+   <string key="VillageTeam" deprecated="true">
+    <value>Team Santa</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Neutral Team</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>Team Krampus</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Team Non-Believer</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Team Grinch</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Santa Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Frost Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Krampus Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Non-Believer Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Grinch Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The Non-Believers 👻 (👤) send out {0} trying to turn {1} into one of them, but {0} met a Snowman and got frozen to death by that Snowman...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} slips into {1}'s house, ready to share some hot cocoa, only to find a horned-goat demon removing {1}'s head! Krampus decides to add {0} to his naughty children collection!</value>
+  </string>
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>The people of the North Pole awake to find {0} frozen in. Santa’s Little Helper 👲 (🙇) is dead.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Seems like {0}, The Weatherman 👨‍💼 (⚒), couldn’t have predicted this. His insides were found all over the freshly laid snow. Maybe Krampus didn’t like the forecast.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} was found laying down in the deep snow. Krampus has struck again! Guess it doesn’t care if you believe in Santa or not! {0} was a Non-Believer 👻 (👤).</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The next morning, the citizens of the North Pole were heartbroken to find {0}, the Love Reindeer 💘 (🏹), laying in the snow. Maybe Krampus has a thing for reindeer hearts…</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>The citizens of the North Pole wander to the bar and find {0} cut up in pieces. All those years of drinking eggnog didn’t help him fight off Krampus.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally easily fight off Krampus, but was too tired to defend themself properly. {0} is no longer alive.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was sleeping on the job last night! The charging of the flamethrower was heard last night, but all that was left was the remains of Black Pete 💁🏿‍♂️ (🔫), with some burnings at the head and a stab to the heart. Krampus has taken another victim.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>It’s a sad day in the North Pole. {0}, Rudolph 🦌 (🎖), the red-nosed reindeer, was found dead in his stable! Krampus clearly doesn’t care if Rudolphs red nose glows or not.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Grýla 😇 (👑)! {0} was found slained in his manger! Clearly Krampus doesn’t care about the lives of innocent babies either.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The citizens of the North Pole wake up to see a red and white suit with blood all over it! {0} had stabs all over his holly jolly belly. Krampus has struck again. {0} was the Santa Claus 🎅🏻 (👳).</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>A large blizzard comes through the North Pole and the citizens see that a mistake has been made. The Snowmen have frozen one of their own. Old Man Winter 🌬 (🔮) {0} is dead.</value>
+    <value>&quot;I'm on Frost’s side!&quot; was heard last night. All the villagers found next morning were an old body and smashed snow globe, belonging to {0}, Old Man Winter 🌬 (🔮). He was frozen by one of his friends, and lies cold in the snow.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Oh no! Blitzen 🐃 (👶) was wandering around in the woods of the North Pole and stumbled upon a Snowman. He may have wanted a snack and ate the Snowman’s nose! The Snowmen did not like this and froze {0}, leaving only a reindeer icicle.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>The citizens of the North Pole wake up in the morning, only to find the severed body parts of {0}, the Spirit of Christmas 🎄 (💂), in a cart placed in full view outside the house of Rudolph. Lesson learned: don't visit Krampus!</value>
+    <value>The body of {0}, the Spirit of Christmas 🎄 (💂), was found in the middle of town, albeit cut precisely into a hundred pieces. Checking if Krampus was believing on Christmas doesn't seem to be the best idea that {0} had...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>While it seems that the Snowmen took a break this night, the Non-Believers didn't and so went {0} out to do his job and convert another citizen of the North Pole into a Non-Believer, but that wasn't just a Citizen like everyone else, it was a Snowman. {0} tried to escape as fast as possible, but the breath of the Snowman was faster and so anticipated {0} a cold death.</value>
+    <value>The last night the Non-Believers tried to turn someone into one of them, but they didn't recognized that someone is there which hates Christmas even more than them. {0} payed that mistake with the life.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>{0} one of the Non-Believers thought they could get another citizen away from Christmas and the faith in it, but oh no they came into the wrong house and got trapped by Krampus. Next time choose wisely before you try to convert the wrong citizen.</value>
+    <value>Last night, the cult tried to convert the one person in the village crazier than they are. Their newest member tried to convert the Serial Killer, and the Serial Killer made a new piece of art in the town square of {0}'s internal organs.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>It was supposed to be a night where {0} would save the citizens of the North Pole from Krampus, Snowmen and the Non-Believers, but {0}'s energy was gone because he stayed awake for too long now. Krampus used that mistake and knocked {0} out without any mercy.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0} tried to protect one of the Snowmen last night from melting away, but too bad that the Snowman recognized this and did his job. The citizens of the North Pole wake up to find {0} frozen in. That was a win for the Snowman this time.</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} tried to freeze {0} in vain, but {1} had to find out that he has no chance against the power of {0}. The last remaining Snowman has been melted and Christmas got saved The delivery of the Christmas presents is now no longer in danger. \nUse /startgame or /startchaos to start the next game and try your luck again.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>As {0}, the last remaining citizen of the North Pole, tried to keep the delivery of the Christmas presents ongoing, {1}, a Snowman, suddenly came around the corner and froze them. The cruel Snowmen successfully destroyed Christmas.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} go out in daylight. As {1} sees how {0} secretly tries to destroy the Christmas presents for all people all over the world, they pull him away and let {0} watch as the faith on Christmas never can be destroyed. Again has {1} shown that Christmas will always existing. Christmas got saved, but what is that, a new thread is coming in, use /startgame or /startchaos to find out how to stop this new thread.</value>
+  </string>
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>To prepare better for Christmas Party, the host delayed the start by {0} seconds! \n{1} left to Join.</value>
+    <value>The host found out some guests are on the way and decided to wait {0} seconds longer for them! \n{1} left to Join.</value>
+    <value>The gingerbread men need {0} seconds more to be baked! \n{1} left to Join.</value>
+    <value>Reports from the Weatherman that the snow falls slower for {0} seconds… \n{1} left to Join.</value>
+    <value>The plane coming to the North Pole is delayed for {0} seconds due to heavy blizzard ❄️ ... \n{1} left to Join.</value>
+    <value>“Rudolph with your nose so bright, \nWon't you guide my sleigh tonight?”\nSanta Claus needs {0} seconds more for Rudolph to guide his sleigh! \n{1} left to Join.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>All the Christmas Party guests arrived and they are very impatient! The party will start {0} seconds sooner! \n{1} left to Join.</value>
+    <value>The blizzard is howling and an army of Snowmen ☃️ arising from the snow! We decided to start snuffing them out {0} seconds earlier! \n{1} left to Join.</value>
+    <value>The Santa Claus 🎅🏻 decided to start giving away presents {0} seconds earlier! \n{1} left to Join</value>
+    <value>The Christmas turkey 🍗 is ready! Everyone is hyping and the host decided to start the party {0} seconds sooner! \n{1} left to Join.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was Frank Claus 🍻! Now you got drunk from all of his eggnog, and can't attack {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Fly to North Pole ✈️</value>
+    <value>Join Xmas Feast 🍗</value>
+    <value>Freeze! 🌬</value>
+    <value>Let It Snow~ ❄️</value>
+    <value>Decorate 🎄</value>
+    <value>Exchange 🎁</value>
+    <value>Sing Xmas Carols 🎶</value>
+    <value>Sing Xmas Hymns 🎵</value>
+    <value>Pretend to be a good child 😙</value>
+    <value>Sleep for Santa 🎅🏻</value>
+    <value>Merry Christmas 😄</value>
+    <value>Give away gifts as Santa 🎅🏻</value>
+    <value>Help setup Xmas Feast 😋</value>
+    <value>Play snowball fight</value>
+    <value>Build some Snowmen ⛄️</value>
+    <value>Enjoy views of aurora</value>
+    <value>Ride on Santa's Sleigh</value>
+    <value>Play with Rudolph 🦌</value>
+    <value>Witness the birth of Grýla 😇</value>
+    <value>Get hyped of Christmas 🎄</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You decided not to join the next Christmas Party in {0} due to the heaviness of your work.</value>
+    <value>You decided to give up the prize of flight to {0} on the North Pole.</value>
+    <value>"Lonely, lonely Christmas~" You realised that you better spend your loneliness at home rather than feeling lonely at Christmas Party and decided not to join the next party at {0}.</value>
+    <value>You are occupied for other events on the day of Christmas and turned down the invitation from {0} sadly.</value>
+    <value>You have caught a cold and are unable to attend the Christmas feast at {0}.</value>
+    <value>You planned to drive to attend the happy night at {0}. Unfortunately, your car broke down when you started its engine.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}arrived with the sled.</value>
+  </string>  
+  <string key="AllowCult">
+    <value>Allow Non-Believers</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow The Grinch</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Mall Santa</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+<string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Non-Believers / Mall Santa / The Grinch, will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+ <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>As the sun rises on the North Pole, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the North Pole. Looking at the sight of the corpses strewn all across the North Pole, {0} sighs. Their lifelong dream of being chosen to be lynched by the citizens of the North Pole is as dead as the citizens themself are. They reach out and touch the rope, that had taken many lives, tenderly, before slipping it around their neck and letting themselves hang freely, with a sad smile on their face.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} opens their eyes, but instead of hearing the usual bustle of the North Pole, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The Snowmen were melted away. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the North Pole. A tear slips from their eye, as {0} recalls how close they and their Snowmen were to victory. Lastly, it is time to start a new life, with a new pack now. {0} slips into the darkness of the forest, leaving the North Pole forever behind.</value>
+    <value>For all of {0}'s efforts, {0}'s Snowman friends lay motionless and lifeless in the deep snow. Even if the Snowmen have been brought victory, there is no one to savour the success with, neither are there any living citizens to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new Snowmen, new allies, and new treachery to commit new crimes against the humanity and their faith in christmas.</value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into the Gnome 📿. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>You see that {0} is NOT {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Would you like to sing your lullaby tonight?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>{0} starts singing and suddenly everyone feels so sleepy. Elves stop working in the shops, Santa's eyes feel so heavy, even Snowmen stop their ice for a good night of sleep.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Everyone is sleeping tonight. The calm is only interrupted by the isolated sounds of the toy machines which are working unsupervised.</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Allow Arctic Fox as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Arctic Fox as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Arctic Fox can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Arctic Fox will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Arctic Fox</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Arctic Fox Full Game</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+  <string key="WolfMan">
+    <value>the Ice Sculpturist ❄️</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are the Ice Sculpturist, you spend most of your time creating ice sculptures that are looking like snowmans. You are so good at it, that the Santa Claus gets confused when they see it, that you get seen as wolf by them</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>You are the Gnome 📿! You have been sent out to the North Pole to create confusion and secretly freeze players. With your clear hands, Santa can't blame you and will think you are one of their elves.</value>
+  </string>
+  <string key="Lycan">
+    <value>the Gnome 📿</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The gnome is a snowman, but will appear to be a elf to Santa Claus.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>You are the Street Santa! You are certainly not Santa and don't know who is who, you can only know who is good or bad... only because you stole the real Santa’s Naughty List.</value>
+  </string>
+  <string key="Oracle">
+    <value>the Street Santa 🤹🏻‍♀️🧤</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The Street Santa will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>You are the Christmas carol singer.  Once per game, you can use your magic to put everyone into such a deep sleep, they won't be able to use their role at night.</value>
+  </string>
+  <string key="Sandman">
+    <value>the Christmas Carol singer 👩🏼‍🎤 / 👨🏼‍🎤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>You are the Christmas Carol singer! Your voice is so melodic that makes everyone relax so much they can’t resist sleeping like a Christmas trunk for one night, temporarily losing the ability of acting.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>You are the Pacifist ☮️. You can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>You are the Wise Elder 📚. You can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>You are the Thief 😈! You can steal a player's role on the first night and turn that player into a villager!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>You are the Thief 😈! Since the [Full Thief] mode is turned on, you get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="Thief">
+    <value>the Arctic Fox 🦊</value>
+  </string>
+  <string key="AboutThief">
+    <value>You are the Arctic Fox! As a little rascal that you are, you can strip a player from its role in the game, this player will be now an Artic Fox themselves.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new arctic fox and continues with the theft!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>Hit this button when you want to make your heartfelt speech and stop the village from lynching the next time!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>The Pacifist ☮️, {0}, is making a heartfelt speech of friendship and trust in front of the village. Moved by their speech, there will be no lynching today!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Because of the Pacifist's ☮️ heartfelt speech, the lynch phase will be skipped today!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>You tried to intrude {0}'s home but unfortunately they were the Wise Elder 📚! {0} successfully thwart the attack, luckily they did not recognize any of you.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>The wolves tried to eat you, but you didn't become the Wise Elder 📚 by being easy to kill by an intruder! You successfully thwart the attack, but unfortunately you didn't recognize any attackers.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Hunter 🎯, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and swore off their Hunter abilities. He died a simple Villager 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Gunner 🔫, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and decided to scrap their gun, becoming a simple Villager👱 with a field to plow.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but {0} is already dead...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Your role got stolen! You are now {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>You successfully stole {0}'s role. You are now {1}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} is no longer your teammate and {1} has now become a mason, just like you!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Your theft target is now {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Whose role do you want to steal from?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votes went to {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>The lynch result for today:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votes went to {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Peace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
+  </string>
+</strings>

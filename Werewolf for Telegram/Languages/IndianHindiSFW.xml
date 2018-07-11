@@ -1,0 +1,1372 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Hindi SFW" base="Indian" variant="Hindi SFW" owner="A092_DEVS"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Tum abhi kisi bhi khel me nahi ho!!!</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ne ek game start kiya hai, kripya /join ka upyog kare khel ka anand uthane ke liye... aur shayad marne ke liye :P</value>
+    <value>{0} ne ek naya game start kiya! /join use kare khaye jaane ke liye!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ne ek chaos game start kiya hai, kripya /join ka upyog kare khel ka anand uthane ke liye... aur shayad marne ke liye :P</value>
+    <value>{0} ne ek naya chaos game start kiya! /join use kare khaye jaane ke liye!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Abhi tum join nahi kar sakte!! Game pahle hi shuru ho chuka hai</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Join kar chuke ho tum</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute bacha hai /join karne ke liye</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds bache hain /join karne ke liye</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Players kam hain, game cancel ho raha hai</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Game shuru ho raha hai, kripya ruke jab tak main sabke roles nirdharit aur database update karta hu</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} ko ek shoshan ka prayas karne ke liye pratibandh laga diya gaya hai (koi v naam / se start nahi hoga)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, kripya join karne ke liye apna naam badlo</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>maaf karo, khiladi join karne ki seema adhiktam pahuch gayi hai!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} ne game join kiya. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Kriypya start button par click karo ya {1} start me dabaye taki main tumhe tumhara role PM kar saku. Tum jab tak ye nahi karte, tum game nahi khel sakte!</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Tum bhaag nahi sakte! Tum game join karke phas gaye ho! Wapas aao game me....</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} darr ke bhaag gaya</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} {1} tha</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} players bache hain.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Abe maine tumse kuchh nahi puchha ab tak.</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Tum khelte huye nahi dikh rahe ho bevkoof</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Main iss naam se kisi khiladi ko nahi khoj pa raha hu!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Ye jawab sahi nahi hai!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} {1} ko khana chahta hai .</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} {1} ko marna chahta hai.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} ne lagataar 2 raato se vote nahi kiya. Bhagwan ki sena ne ise ek bhayanak apradh ke roop me dekha hai, aur {0} achanak mar jata hai. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Abe gaddar, ab tum bhediye ho...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Chunav swikaar kiya jata hai.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nSeer hai {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} Seer tha. Uska chhatra hone ke naate ab tum naye Seer ho.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} woh chhatra the, ab vo {1} ki jagah naye Seer ban rahe hain.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Tumne dekha {0} {1} hai!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Kisko maarna chahte ho?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Kiska role pata lagana chahte ho?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Kisko goli maarna chahte ho? {0} goli(ya) bachi hai</value>
+  </string>
+  <string key="AskVisit">
+    <value>Kiske paas jaana chahte ho?</value>
+  </string>
+  <string key="AskSee">
+    <value>Kisko dekhna chahte ho?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Kisko bachana chahte ho?</value>
+  </string>
+  <string key="AskEat">
+    <value>Kisko khana chahte ho?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Kiska shikar karna chahte ho?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Tumhara prernaasrot kaun hai?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Tum apne hisab se kisko pariwartit karna chahte ho?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  {0} se discuss karna na bhoole</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> aur </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Tum shaapit ho. Abhi ke liye tum gao wale ho,Lekin agar bhediye ne tumhe khaya, tab tum khud bhediye ban jaoge.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Tum Jasoos ho. Subah ke samay, tum kisi ek player ka role jaan sakte ho.  Lekin - ye karne se, aapki bhoomika bhediyon ko prakat ho sakti hai(40% chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Badhai ho! Tum gaon ke bevde ho! (jaisa ke kisi ko pata hi nahi...)</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Tum sanrakshak devdoot ho. Har raat, Tum kisi player ko bachane ka chunav kar sakte ho.  Halanki, agar tum ek bhediye ko chunte ho, wahan 50% chance hai tumhare marne ka bhi.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Tum bandook wale ho.  Tumhare paas 2 goliya hain.  Subah ke samay, tum kisi player ko maarne ka chayan kar sakte ho. Sabko goli ki awaaz sunai degi, aur sab jaan jayenge ke tum bandook wale ho (naki bhediye).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Tum Harlot ho. Raat ke wakt, tum doosre khiladi ke pass jaa sakti ho dekhne ke liye vo bhediya hai ki nahi.  Agar tum bhediye ke pass jaati ho, ya uske pass jaati ho jiske pass bhediya bhi gaya hai, tum mar jaogi.  Agar tum bhediye ke ghar jaati ho and bhediya ghar pe nahi raha, tum bach jaogi.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Dhokebaaz! abhi ke liye tum gao wale ho, lekin jab sab bhediye mar jayenge, tab tum bhediye ban jaoge. Agar Seer tumhe dekhta hai, tum shayad use bhediye dikh bhi sakte ho, aur nahi bhi.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>TUM BHEDIYE HO!! XD (aish karo). Har raat tum kisi ko maarne ke liye chun sakte ho.</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Tum Paigambar (Seer) ho.  Har raat, tum ek khiladi ka chehra 'dekh' sakte ho, aur uski bhoomika jaan sakte ho.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Tum nihayat hi neech kisam ke Gao wale ho, jise khet jotne aur marne ke alawa kuch nahi aata.</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Tum  (tanner) ho.  Agar sab tumhe maarne ki saza sunate hain to tum jeet jaoge.</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Tum jangli Bachche ho. Ek khiladi chuno, jise tum apna 'role model' banana chahte ho - agar wo mara, to tum bhediya ban jaoge.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Tum Dekhnewale (Beholder) ho, tumhe bataya jayega ke (asli) paigambar(seer) kaun hai - yahi tumhara kaam hai.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Tum Paigambar (Seer) ke Chhatra(App Seer) ho.  Agar asli Paigambar marta hai, tab tum uski jagah loge</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>Tum Saampradaayik (Cultist) ho.  Har raat, tum kisi ek khiladi ko saampradaayik banaane ka chayan kar sakte ho. Agar sabhi players ant me saampradaayik ban jate hai to wo jeet jayenge.</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value>Tum Saampradaayik Shikari ho, jo panth (Cult) ko gao ke sabhi logon ko pariwartit hone se bachate ho!  Har raat, tum ek khiladi ko chun sakte ho.  Agar wo saampradaayik hai to wo mar jayega. Agar Panth (cult) tumhe marna chahenge to unka sabse naya sadasya mar jayega.</value>
+  </string>
+  <string key="LynchTime">
+    <!-- 0 - number of seconds -->
+    <value>
+      Shaam hone ko aayi, sabhi gao wale ek jagah ikatthhe huye, taki wo nirnay le sake kisi ko marne ka. Sabke paas {0} seconds hai vote karne ke liye!
+    </value>
+  </string>
+  <string key="DayTime">
+    <!-- 0 - number of seconds -->
+    <value>Subah ho gayi maamu.  Sabke paas {0} seconds hai apne aarop, bachav, ya sirf baatein karne ke liye.</value>
+  </string>
+  <string key="NightTime">
+    <!-- 0 - number of seconds -->
+    <value>Raat ho gayi hai. Sab sone chale gaye ek thakawat bhare din ke baad.  Raat ke khiladi: tumhare paas {0} seconds apna kaam karne ke liye!</value>
+  </string>
+  <string key="LynchKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Apne apne vote de chuke hai gao wale, aur sandeh ke beecho beech. {0}  marne ki saza sunayi gayi. {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Dhang ka nirnaya nahi kar paane pe, gao wale apne apne ghar chale gaye, dimag kharab ho gaya sabka...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Kuch to gadbad hai Daya :P!  Koi gao wala aaya hi nai saza dene..</value>
+  </string>
+  <string key="DetectiveEaten">
+    <!-- 0 - victim name -->
+    <value>Gao wale subah ikatthha hue, but {0} nazar nai aaye.  Uske ghar gaye toh dekha, {0} ke saare ang bahar nikaale gaye the, ek purana billa unke gale me latkaya gaya tha.</value>
+  </string>
+  <string key="GuardianEaten">
+    <!-- 0 - victim name -->
+    <value>>Subah hoti hai, aur sabne aashcharya se dekha, mandir ke chaukhat pe {0}, devdoot (Guardian Angel) mare pade the.</value>
+  </string>
+  <string key="GunnerEaten">
+    <!-- 0 - victim name -->
+    <value>Jab sab apne ghar se nikle, Unko bandook ke tukde mile...  fir pairo ke.. fir ungliyo ke..  fir kuwein (well) me tairti hui, {0} ki lash, jisko bhediyo ne maar diya. Tumne tumhara bandookwala kho diya.</value>
+  </string>
+  <string key="SeerEaten">
+    <!-- 0 - victim name -->
+    <value>Subah subah gao wale uthe, {0} ke tukde nazar aaye jo ek ouija board pe pade the bhavishya ke patto (tarot card) ke sath. Paigambar (Seer) mar chuka hai.</value>
+  </string>
+  <string key="DrunkEaten">
+    <!-- 0 - victim name -->
+    <value>Sab uthe toh jalte hue daaru aur lakdi ki badbu aayi...  Madhushaala me aag lagi thi!!!!  Aag bujhane ke baad {0} ke bache huye hisse mile, jo faade gaye the...</value>
+  </string>
+  <string key="FoolEaten">
+    <!-- 0 - victim name -->
+    <value> Jaise hi gao me subah hoti hai, gao walo ko {0} ki laash Ouija board ke upar baithi huyi milti hai, lekin ek deck of... Bicycle playing cards? Kya bevkoof hai!</value>
+  </string>
+  <string key="DefaultEaten">
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Jaise hi sab subah uthe, unko ek bekar badbu aai. Badbu ke piche gaye toh {0} mila jiske chithde udd chuke the, aur sar gayab tha.  NOMNOMNOMNOM {1}.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Badi gandi badbu aa rhi hai {0} ke ghar se...  gao wale dekhne gaye toh ek laash dikhi vedi pe...  Ek saampradaayik (Cultist) ko shikari ne maar diya!!</value>
+  </string>
+  <string key="NoAttack">
+    <value>Sab subah ikathhte hote hain, Lagta hai ki raat ko kuch nahi hua.</value>
+  </string>
+  <string key="CursedBitten">
+    <value>Bhediye tumhe khane aaye. Shaapit hone ke naate, tum bhi ek bhediye ho ab se!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Baaki Bhediye: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} ko khaya gaya... lekin wo shaapit tha,  aur bhediya ban gaya! Naye saathi ke liye khushiya manao! </value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>Are! Bhediye tumhe khane aaye. NOMNOMNOMNOM</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <!-- 0 - victim name -->
+    <value>Are nahi! {0} bevda tha! Ab tum bevde ho, aur kal raat hamla nahi kar sakte...</value>
+  </string>
+  <string key="GuardWolf">
+    <value>Bhediye ne tumhe kha liya.</value>
+  </string>
+  <string key="GuardSaved">
+    <!-- 0 - saved player name -->
+    <value>Tumne {0} ki jaan bachayi (pata nahi kyun bachaya)...</value>
+  </string>
+  <string key="GuardNoAttack">
+    <!-- 0 - player name -->
+    <value >{0} pe hamla nahi hua tha, isliye tumne zyada kuch nahi kiya...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Tumne {0} ko bachana chaha, par wo ghar pe nahi tha!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Devdoot picchhli raat tumhari rakhwali kar raha tha aur hamlawaro ko maar bhagaya!!</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->
+    <value> Harlot ne galti ki aur ghar me baithi rahi. {0} ko bhediyon ne kha liya!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->
+    <value>Ajeeb hai! {0} Ghar pe nahi thi...koi khana nahi hai tumhare liye...</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <!-- 0 - player name -->
+    <value>Tum {0} ke ghar jaate ho thode maze karne ke liye, dekha toh bhediya tha waha.  Tum maare gaye.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <!-- 0 - player name -->
+    <value>{0} kal raat galat ghar me ghus gayi! Uss Harlot ke bache hue hisse mandir ke darwaze pe laga diye lohe ke sariye (iron rod) se. Bura hua :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} {1} ke ghar gayi, thode maze ke liye. Magar, usne dekha ki ek bhediya {1} ko kha rha tha!  Bhediya fataak se {0} ke taraf mud ke kooda aur... {0} maare gaye.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <!-- 0 - target name -->
+    <value>Tumne dekha{0} bhediya nahi hai.. </value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Thoda andhera tha, toh tum itne aasani se dekh nahi paye, magar achanak raat ko tum jaag jaate ho, tumhare ghar Harlot aayi thi... </value>
+  </string>
+  <string key="DetectiveCaught">
+    <!-- 0 - detective name -->
+    <value>Tumne {0} ko taak-jhaak karte huye dekha! Vo jaasoos hai!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Tumhari jaasoosi ne dikhaya ki {0} {1} hai!</value>
+  </string>
+  <string key="HarlotShot">
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Aisa lag raha hai ki {0} Bandookwale ne apna badla le liya. {1} mar chuki hai.</value>
+  </string>
+  <string key="DefaultShot">
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Achanak, ek goli ki awaaz aayi.  Gao walo ne dekha ki {0} {1} ke laash pe khada tha, uske sar par abhi tak bandook taane huye. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value>Bhediya jeet gaya!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value>Bhediye jeet gaye!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value>Gao wale jeet gaye!</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value>Are nahi! Tumne Tanner ko maarna chaha! Tanner game jeet gaya!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Bache hue zinda khiladi, kirdaar aur team:</value>
+  </string>
+  <string key="CultistVotedConvert">
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} ne {1} ko pariwartan karne ka chayan kiya.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} ko tumhara bura kaam karne ke liye bheja gaya hai, aur {1} ko badalne gaye... magar, vo saampradaayik shikhari (Cult Hunter) nikla! {0} mar gaya!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{{0} tumhare ghar aaya tumhe maarne....  magar tumne ek talwar ghusa di uske sar me.  ek saampradaayik (Cultist) mar chuka hai... {1} bacha hai!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Panth (Cult) ne tumhe badal diya hai!  tum ab ek saampradaayik (Cultist) ho.  Har doosri raat, tumhe mauka milega doosre khiladi ko apne panth me lene ke liye.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Saampradaayik: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} ne Panth (Cult) join kar liya hai/</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} ko tumhara bura kaam karne ke liye bheja gaya, aur {1} ko badalne gaye wo... magar koi ghar pe nai tha!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Sab bhediye mar gaye, aur jo khiladi bache the unko saampradaayik (Cultist) bana diya gaya hai... Panth jeet gaya!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Tum {0} ko maarne gaye, magar vo pehle hi mar chuka tha!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Tum {0} ke ghar jaate ho, aur tumne dekha wo koi anjaane bhagwaan se prarthna kar rha tha...  Tumne jaldi se apni talwar uske seene me daag di. Ek saampradaayik (Cultist) maara gaya!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Tum {0} ke ghar jaate ho, magar vaha kuch ajeebo-garib nai ho rha tha.  Vo saampradaayik (Cultist) nahi the, toh tum ghar laut gaye.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0} ke prernasrot (Role Model) mar gaye!  Gusse me, woh bhediye ban gaya!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} mar gaye! Gusse me, woh bhediye ban gaye! Tumhare naye saathi hain: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>Gao wala 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Bevda 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Harlot 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Paigambar 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Dhokebaaz 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Sanrakshak Devdoot 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Jasoos 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Bhediya 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Shaapit 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Bandook Wala 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Tanner 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Budbak 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Jangli Bachcha 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Dekhnewala 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Chhatra (Apprentice Seer) 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Sampradaayik 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Saampradaayik Shikari 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Bhaag Gaya</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Mrit (Dead)</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Zinda</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Zinda Khiladi</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Mazdoor 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Tum ek mazdoor ho.  Agar koi aur mazdoor hai, tumhe pata chal jayega. Nahi toh, tum gao wale ho.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Jaise gao wale uthe, unhone dekha ki patthharo me ek mazdooor ka sar ghusa pada tha, sab jagah khoon faila hua tha. Tumhara ek mazdoor mar chuka hai! -- {0}</value>
+  </string>
+  <string key="MasonTeam">
+    <value> Mazdoor hain: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Tumhara naya dost jab {0} ke ghar gaya unko badalne, tab woh darr gaya jab usko purje, khun aur bhediye ke kuchh baal wahan dikhe. Aur darr ke karan woh wapas aa gaya. </value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Bhediye {0} ke ghar use khane jaate hain, aur waha ek lambe kaale-kalute aadmi ko dekhte hai, jo hathiyarbandh tha. SanrakshakDevdoot ne sabko maar bhagaya, aur tum haar kar laut jaate ho.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Tumne {0} ko bheja {1} ko badalne ke liye, lekin unka vishwas bahut jabardast tha, isliye tum usko badal nahi sake :</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>{1}, {0} ke naam se pahle hi join kar chuka hai. Kripya apna naam change kare join hone ke liye.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Tum {0} ke ghar gaye thode maze karne ke liye... magar jaise hi tum jaa rhe the, tumne ek moorti dekhi, jise acchi tarah nai chhupaya gaya tha, ek baju ke kamre me, ajeeb si roshni aane lagi vaha se...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>tha</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Sab subah uthte hain, dekhte hain ki {0} aas paas nai hai...   Woh dekhte hain ki {0} ke bache kuche hisse pade the uske ghar mein.</value>
+    <value>Sab subah uthe, toh unhe {0} ki laash ke bache kuche hisse dikhe, jo pichhli raat maut ke ghaat utara gaya...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>>Ajeeb hai.... {0} aaj subah masons meeting ke liye aaye nahi.. O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Game ke dauran admin ne darwaja band kar diya hai ab koi nahi bhag sakta.</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>mar chuka hai</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} admin ban chuke hain. /config ka istemaal kare group settings badalne ke liye.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Tum pahle se game me ho! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Tumhare group vibhinn (multiple) khel shuru karne me safal raha... auro ko pachhadte huye.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Tumhara group abhi katar (queue) me hai. Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Kshama karo, Main abhi ek chhota sa maintenace break le raha hu, tum abhi game start nahi kar sakte. {0}  \n @greywolfdev pe jaiye apni samasya ka samadhan lene</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Kshama karo, adhikta samavarti (concurrent) khel ({0}) ho gaya hai.  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} ek pasandeeda group hai, aur isliye katar se hatt gaya hai!</value>
+  </string>
+  <string key="NoGame">
+    <value>Koi game nahi chal raha hai. Naya game shuru karne ke liye /start game, aur chaos game shuru karne ke liye /startchaos ka istemal kare.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Sirf group admin iss command ko istemal kar sakta hai.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>Iss game ke baad, Main maintenance ke liye ja raha hu..</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>Iss game ke baad, Main ek Update ke liye kuchh samay band ho raha hu (automated).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId ashakt (null) tha.  Kya tum isko ek jawab ke roop me bhejna chahte ho?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} pahle se hi admin hai!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} admin nahi hai!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} ko admin list se hataya gaya.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Language badalkar {0} rakha gaya</value>
+  </string>
+  <string key="NoSeer">
+    <value>Koi paigambar nahi hai!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Samay samapt hua!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Tum Kaamdev (Cupid) ho. Dharti par ek kachchha, ek dhanush aur do teer ke saath bheje gaye ho. Tumhe do khiladiyo ko chunna hoga, jinhe tum janam-janam ke premi banana chate ho. Agar ek marta hai, to dusra bhi dukh se mar jayega.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Tum Judwa (Doppleganger) ho. Legend kehte hai ki tumhare purwaj bhes badalne wale the, aur jo wo chahte the uska chayan kar sakte the. Tumhe unki kuchh shaktiyan wirasat me mili hai. Ek khiladi ko chuno, jab wo khiladi marega, Tum uske role me badal jaoge.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Tum shahri Shikari ho. Tum theek se sote nahi, aur tum kabhi bhi apne rifle ke bagair sone nahi jaoge. Agar tum marte ho, tum kisi aur ko maarne ka chayan kar sakte ho. Agar tumhe khaya jata hai, tumko ek mauka milega bhediye ko maarne ka, lekin tum kisi khiladi ko nahi chun sakte.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Tum serial killer ho. Haal hi me tum pagalkhaane se bhaag nikle, tumhara goal hai sabko marne ka. Har raat, tum ek khiladi ka shareer apne collection me rakh sakte ho.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Tum pyaar se maare gaye. {0} ki yaad tumhare dil se kabhi nahi udegi. Agar tum me se koi ek marta hai, doosra bhi uske gam me mar jayega. Agar ek jeet jata hai to doosra bhi jeet jayega.</value>
+    <value>Kaamdev ka teer tumko laga hai! Tum {0} ke pyaar me pagal ho gaye ho! Agar wo mara, tum bhi maroge. Agar dono me se koi ek jeet jaata hai to dono jeet jaoge</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Gao wale tumhe phansi dena chahte hain! Ye tumhara aakhri mauka hai, marte-marte kisi ko maar do!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>Jaise hi fanda tight hota hai {0} apni pistol uthane ke liye chhatpatata hai, lekin samay par nahi utha paata, Aur gardan tootne ki zordar awaaz ke saath uski maut ho jati hai...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} apni pistol bahar nikalta hai aur bheed ko dekhta hai... aur kisi ko maarne ka nirnay nahi le pata. Wo mar jata hai apna bhaagya sweekaar karke...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Jaise hi fanda tight hota hai, {0} pistol nikaalta hai, nishaana lagata hai, aur {1} pe goli chalata hai, jaise hi uske pairo tale zameen khisakti hai! {1} gir jaata hai, mrit (dead).  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Tumhara khoon hua hai!  Apne antin kshann me tum kisi ko goli maar sakte ho... Jaldi Karo!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>{0} ka phatna bahut jabardast tha, itna jabardast ke wo apna sidearm tak bhi nahi pahuch saka, khoon ka sailab ke becho beech pada raha...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Jab {0} apni antim saansein le raha tha, wo kisi ko goli maarne ka chayan nahi kar saka... aur apna bhaagya swikaarta hai.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>{0} zameen pe girta hai, marte hue.... lekin apne pistol ko liye huye, aur {1} pe goli chalata hai, jise goli theek uske dono aankho ke beech lagti hai. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Bhediyo ne pichhli raat Shikari pe hamla karna chaha, lekin shikari unme se ek ko maarnne me safal raha, marte-marte! {0} mar chuka hai (bhediya)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Bhediyo ne pichhli raat Shikari pe hamla karna chaha, lekin shikari bhediye {0} ko apne rifle se maarne me safal raha.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Bhediye der raat achhe naashte ki talaash me nikle, lekin unka swagat ek pagal khooni dwara hua! {0} ladayi me mara gaya!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0} ke liye ek shaant raat lag rahi thi, lekin wo galat tha.  Gao wale subah ikatthhe hue aur dekha ki {0} ke sar se pao tak chithde ude huye the, aur uska liver bhi gayab tha...  Serial Killer ne ek baar fir hamla kiya! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Tumne {0} ki shareer ko apne collection me rakhna chaha, lekin devdoot ne tumhare vaar ko rok liya! Aaj raat kisi ki hatya nahi huyi...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Panth ne {0} ko bheja gaya {1} ko badalne ke liye, lekin ek goli chalne ki awaaz aati hai aur {0} ki laash khidki se udte huye bahar girti hai! {0} mar gaya....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Panth ne {0} ko bheja {1} ko badalne ke liye, lekin iske wipreet {0} ka shareer khidki se udta hua bahar girta hai, uske shareer ke har hisse me chaaku chubhone ke nishaan the!! {0} mar gaya....</value>
+    <value>{0} {1} ke ghar me jhaankta hai, dheere se darwaza kholta hai, aur achanak hi ek pagal chhuri se uska swagat karta hai!!! {1} {0} ke shareer ke har organ me chhuri chubhota hai warnmala kram (alphabetical order) me, pura samay barbad karte hue! {0} mar gaya D:</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Tumne Serial Killer ko bachana chaha, lekin usne tumhe maar diya! Tum mar gaye ho....</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Tum {0} ke ghar jaate ho. Thodi der ke baad {0} chhuri nikalta hai aur tumhe chubhona shuru karta hai!  Tum mar chuke ho....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Gao wale {0} ke shareer ko dekhte hain, jo anginat chaku ke ghaav ke saath mrit padi hai. {0} mar chuki hai</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Judwa {0} ab tumhari tarah mazdoor ban gaya hai!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} mar gaya, aur tum mazdoor me badal gaye.  Tumhare teammates (agar koi hai) to: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Judwa {0} ab tumhari tarah ek saampradaayik ban gaya hai!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} mar gaya, aur tum saampradaayik me badal gaye.  Tumhare teammates (agar koi hai) to: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Judwa {0} ab tumhari tarah bhediya ban gaya hai!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} mar gaya, aur bhediye me badal gaya.  Tumhare teammates (agar koi hai) to: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Matr ek khiladi jo bacha hai, wo hai Serial Killer! Wo jeet gaya!</value>
+  </string>
+  <string key="AskKill">
+    <value>Kisko maarna chahte ho aaj raat?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>{0} apni antim saanse le raha tha, utne me {1} bhaag ke aaya aur gir gaya, rote huye.  Wo apne premi ki maut bardasht nahi kar saka, aur apne aap ko sabse nazdeeki pistol se goli maar li. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Tum kya banna chahte ho agar koi marta hai to?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Tum kise love birds banana chahte ho? Pahla khiladi chuno</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Tum kise lover banana chahte ho? Doosra khiladi chuno</value>
+  </string>
+  <string key="Hunter">
+    <value>Shikari 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Kaamdev 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Serial Killer 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Judwa 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Tum jangli bachche ban gaye ho.  Tumhara role model {0} hai.</value>
+  </string>
+  <string key="LoversWin">
+    <value>Sachcha Pyaar chamka! Premiyo ki jeet hui!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Gao ke chowk ke beech me, sabko {0} ka shareer milta hai, jiske chaaro or goliya lagi thi.  Aisa lagta hai ki wo shikari ki hassi uda raha tha! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Ek ajeeb se insaan ne tumhe panth banana chaha, lekin tumhare mann ke vishwas ne usko dara diya</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Tum pahle hi {0} ki wait list me ho!</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Tum {0} ki wait list me jud chuke ho.  Main tumhe PM karunga jab naya game shuru hoga.Jab tak wait kar rahe ho, tab tak store browse karo ? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Ek naya khel shuru ho raha hai {0} me</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Subah hoti hai, bache huye do gao wale gao ke chowk pe jate hain.  {0} {1} ko dekhta hai, uske chehre pe badi muskurahat aati hai, woh chhuri nikalta hai, aur {1} ko mar deta hai.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Sabhi gao wale maare ja chuke hain...  laasho ke alawa kuchh nahi rakha.  Iss round mein koi nahi jeeta, gidhdho (vultures) ke alawa...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Jaise hi suraj ugta hai, {0} aur {1} bahar nikalte hai gao mein.  {0} apni chhuri nikalta hai, aur {1} pe lapakta hai. {1} apni bandook nikalta hai aur {0} ke chehre pe goli chalata hai. {0} girta hai, {1} ko chaku marte huye.  Dono mar gaye, gao khaali hai, koi wijeta nahi bana...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Tum chayan karne me asafal rahe, isliye moderator ne tumhare liye chayan kiya! {0}</value>
+  </string>
+  <string key="Won">
+    <value>Jeet</value>
+  </string>
+  <string key="Lost">
+    <value>Haar</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Khiladi {0} ko maara gaya hai {1} baar vote na karne ke liye pichhle 24 ghanto me.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime ??\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>Tumhara kaam aasaan hai - zinda rehne ki koshish karo. Har din, tumhe bhediye ko maarne ka mauka milega.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Tum paigambar (Seer) ho. Is role me, har raat, tum ek khiladi ka chayan kar sakte ho, aur uska role tumhe pata lag jayega. Apne role ka sahi istemaal karna: Agar tumne bataya ke tum paigambar ho, Bhediye tumhe khaana chahenge!</value>
+  </string>
+ <string key="AboutWw">
+    <value>Tumhari mauj hai! Pratyek din, aap apne saathee khilaadiyon ko dhokha dene ka prayaas karenge. Haalaanki, pratyek raat, aapko maarne ke liye ek khilaadi ko chunna hoga!\nNote: Yadi aap shaapit par hamla karte hain, to ve aapke jaise bhediya ban jayenge! Hurre doston!\n Yadi aap bevde par hamla karte hain, to aap khud nashe mein honge, aur agla hamla karne mein asamarth honge kyunki aap apne hangover me so rahe honge! (aamataur par, iska matlab hai ki aap agli raat par hamla nahi kar sakte hain, lekin agar bhediye ka baccha maara gaya tha aur bevda tumhaaree pehli pasand tha, toh aap doosre khilaadee ko maarne mein saksham nahin honge, aur phir bhi aap agli raat hamla karne mein saksham honge.) </value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Harlot ke roop mein aapko pratyek raat ek aur khilaadi ke paas jaane ka mauka diya jayega. yadi wo bhediya nahi hai, to aapko aisa bataya jayega (kyonki aap marte nahi hain!). Yadi aap ek bhediye ke paas jaate hain, to aap ko maar diya jayega. Yadi aap aise khilaadi ke paas jaate hain jinko bhediyon ne maarne ke liye chuna hai, to aap bhi maare jayenge. haalaanki - yadi aap kisi aur khilaadi ke paas jaate hain, aur bhediye aapko maarne ke liye chunte hain, to aap bach jayenge (aap ghar par nahi the)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Tum bevde ho! Bevde hoke bhi, tum bas ek gav wale ho. Parantu! agar bhediye aapko maarte hain, to ve agli raat hatya ke liye asakksham ho jaate hain, kyonki ve aapki tarah atyadhik nashe mein hain</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Shaapit ke roop mein, aap ek saamaanya gav wale hain... jab tak bhediye tumhe maar na de. Ek baar ve aisa karte hain, aap bhi ek bhediya ban jayenge!! Raat mein shikaar karne ke liye..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Tum ek dhokebaaz ho. Yadi aap sabhi bhediyon ke marne tak jeevit rahte hain, to aap ek bhi ek bhediye ban jayenge, jo raat mein apne poorv team ke saathee ko maarne ke liye taiyaar honge!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Tum Sanrakshak Devdoot ho! Pratyek raat, aap ek khilaadi ko bachaane ke liye chun sakte hain. Haalaanki saavdhaan rahiye - yadi aap ek bhediya ko bachane ke liye chunte hain, to 50% mauka hai, ki aapko maar diya jayega.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Tum Jasoos ho. Pratyek din, aapko ek aur khilaadi ki jaanch karne ka mauka milega. Iska saavdhaaneepoorvak upayog karein, kyonki 40% mauka hai, jisme bhediye aapako pahachaan jayenge!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Ham thoda khush hain? Bandook wale ke roop mein, aapko khel ke shuruaat mein 2 rajat ki goliyaan di gayi hain, pratyek din, aapke paas doosre khilaadi ko shoot karne ka mauka hoga. ek baar jab aap aisa karte hain, toh sab log jaan jayenge ki aap Bandook wale hain! Haalaanki saavdhaan rahen, aapke paas keval 2 goliyaan hain!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Tanner ka lakshya saral hai: Yadi tanner ko maara jaata hai, to woh jeet jaata hai, baaki har koi haar jaata hai.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Bevakoof ko kaha jaata hai ki ve Paigambar(Seer) hain .... jab wo raat mein kisi ki bhoomika dekhane ko chunte hain, to unko random bhoomika batayi jaati hai.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Ek Panthavaadee(CULT) ke roop mein, aapka lakshya hai baaki sabhi khilaadiyon(bhediye ko chhodkar) ko apne panth  mein badalane ka. yadi khel ke ant mein, sabhi jeevit khilaadi panthavaadee hain - panth jeet jaata hai</value>
+  </string>
+  <string key="AboutCH">
+    <value>Tumhara kaam Panthavaadee(CULT) ko maarna hai. Yadi panth aap par hamla karta hai, to unka naveenatam sadasya mar jayega. Har raat aap shikaar ke liye ek khilaadi ko chun sakte hain - agar woh ek panthavaadee hain, to woh mar jayenge.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Khel ke shuruaat mein, aap kisi ko apne role modle ke roop mein chun lenge. yadi ve mar jaate hain, to aap ek bhediya ban jayenge.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Abhi ke liye, aap ek saamaanya gav wale hain haalaanki, agar Paigambar(Seer) mar jaata hai, to aap naye Paigambar(Seer) ban jayenge</value>
+  </string>
+  <string key="AboutBH">
+    <value>Aapko bataya jayega ki Paigambar(Seer) kaun hai (vaastavik, bevkoof nahi)</value>
+  </string>
+  <string key="AboutMason">
+    <value>Ek mazdoor ka kaam saral hai - woh jaante hain ki dusre saathi mazdoor kaun hain anyatha, woh ek saadhaaran gav wale hain.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Aapke poorvajon ke paas doosron ke roop me badlaav karne ki kshamata thi ... jabki aapke paas unki poori kshamta nahi hai, toh aap khel ke shuroo hone par ek khilaadi chun sakte hain. Agar woh khilaadi mar jaata hai, toh aap woh ban jayenge.
+      Note: Yadi khilaadi ko panth mein parivartit kiya gaya tha, to aap unka mool bhoomika mein aa jayenge. Baaki sabhi saamaanya niyam laagoo hote hain: Yadi wo jangli baccha tha aur unke role modle ki mrityu ho gayi, to aap ek bhediya ban jayenge. Anyatha, aap unke role model ban jayenge.
+      Panth Doppelgänger ko parivartit nahi kar sakte (Doppelgänger ke roop parivartan ke baad kar sakte hain). Iske alaava - Doppelgänger tab tak nahi jeet sakta jab tak ki wo parivartit na ho. Yadi game ke ant mein, Doppelgänger abhi bhi wahi hain, to woh game haar jayenge (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Fizaaon mein pyar hai. Kaamdev ke roop mein, aap khel ke shuru hone par do khilaadiyon ka chayan karenge. Ye do khilaadi pyaar mein paagal ho jaate hain! Yadi unme se ek mar jaata hai, to doosra uske dukh se mar jayega :(
+      Note: Premiyon ko pata rahega ki ek doosre ke pyar mein hain, lekin unki bhoomikaon ko nahi bataaya jayega, yadi premi akele jeevit rehte hain game ke ant mein, toh woh dono jeet jaate hain, chahe woh kisi bhi team ke ho. Yadi premi alag alag team ke hain (gav wale + bhediya), aur ek team jeet jaati hai (bhediya), toh premi (gav wala) bhi jeet jaata hai. TL;DR Yadi koi ek premi jeetne wali team mein hai, toh dono jeet jayenge.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Ek khush, pratishodhee khilaadi shikaari ke roop mein, aap svayam tak rakhne ki koshish karte hain. Haalaanki, jab doosre aap se milne aate hain, to woh khud ko mrit pa sakte hain, kyonki aap unko goli maarte hain. Agar bhediye tum par hamla karte hain, to tumhare paas unme se ek ko apne saath maar le jaane ka mauka hai. Anyatha, yadi aap mar jaate hain, to aapko kisi ek ko maarne ka mauka milega.
+      Note: Bhediye hamlon ke liye, mauka 30% se shuroo hota hai. Yadi ek bhediya hai, toh shikaari ko bhediye ko maarne ka 30% mauka hai (aur zinda rehne ka). Pratyek atirikt bhediye ke liye, 20% (2 bhediye = 50%, 3 = 70%, ityadi). Haalaanki - yadi kaye bhediye hain, jabki aap unme se ek ko maar sakte hain, aap abhi bhi sankhya mein kam honge aur maare jayenge.
+      Yadi panth aapko parivartit karne ki koshish karte hain, to unke paas viphal hone ka 50% mauka hota hai. Yadi woh asaphal ho jaate hain, to unme se ek ko maarne ke liye aapke paas 50% mauka hai!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Woh pagalkhana vaise bhi murkh tha. Kya mazaak hai. Aap ab svatantra hain, vaapas saamaanya roop mein vyaapaar karne ke liye - HATYA! Khooni ek akela khilaadi hai, apni team par. Wo keval tab jeet sakte hain jab wo antim khilaadi jeevit hain (exception: lovers). Khooni ke roop mein, tum kisi ko bhi maar sakte ho - bhediye, shikari, bandook wale, sanrakshak doot. Agar bhediye tum par hamla karte hain toh, tum kisi ek ko maar doge (random), aur jeevit rahoge.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Khel ki lambayee: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Aap mayor hain. Lynch ke dauraan aapka vote do baar gina jayega, jab aap svayam ko reveal kar denge. aap gav walo ki team mein hain.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Aap rajkumaar hain, in kisaanon ke saath din bitaane se apane ubaoo, laad pyaar jeevan se bachen. Agar woh aapko maarna chahenge, toh unhe unki galti ka ehsaas hoga, aur koi bhi nahi maara jayega.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Aap anadi aadmi hain: aap vote dene ka prayaas karenge, lekin 50% mauka hai jo aapke badle kisi aur ke liye vote karenge. Aap phir bhi ek gav wale hi hain.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Aap jaadoogar(Sorcerer) hain, apne aap ko gav walo ki bajaay raat ke praaniyon ke saath gathajod karte hain. Raat mein aap bhediyon ya Paigambar(Seer) ko khojne ke liye apni shakti ka prayog karenge. Aap keval agar bhediyiye jeetenge toh jeetenge. Un dukhee gaanvavaalon ko dhund nikaalne mein madad karne ka aanand uthaye.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Aap lohaar hain: gav ke dhaatukarm. Aapke paas thoda sa rajat (Silver) hai, bhediyon ko ek raat ke liye hamla karne se rokne ke liye paryaapt hai. Din ke dauraan, aap ise powder kar sakte hain aur gav ke chaaron aur faila sakate hain. Iske alawa, aap sirf ek gav wale hain.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Aap alpha bhediye hain; droh ka srot. Aapka kaatna abhishaap ka kaaran hai jo manushyon ko bhediyon mein badal deta hai. Har ek raat, aap ek manushya ka chayan karenge hamla karke maarne ke liye, lekin jab tak aap jeevit hain, apne shikaar ke paas ek bhediye mein badalne ka 20% mauka hai.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Aap bhediye ke bacche hain; apne bhediye parivaar dvaara pyaar kiya hua. Anya bhediyon ki tarah, aap har raat hamla karne aur maarne ke liye ek gav wala chunenge. Agar aap maare jaate ho, toh agli raat aapka bhediya parivaar krodh mein aake, do gav walo pe hamla karega. Aap phir bhi mar chuke honge.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Jaise hi gav wale {0} ko maarna chahte hain, woh kehte hain “Ruko! Main Rajkumaar hun. Raja ki muhar ke saath yeh shaahi angoothi, yeh saabit karti hai. Har raat main naukaron se ghira hua hoon. Toh main bura nahi ho sakta.” Moorkho ki tarah, gav wale raat ko sone chale gaye.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Aapne {0} ko dekhne ki koshish ki, lekin woh kaun hai nahi dekh paaye. Wo ek bhediya ya paigambar(Seer) nahi hai...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} apne kadam aage badhake aur apni aadhikaarik muhar pesh karte huye, apne aap ko Mayor batate hain.  Ab se, {0}'s ke votes do baar gine jayenge maarne ke liye.</value>
+  </string>
+  <string key="AskMayor">
+    <value>"Reveal" dabaye jab bhi aap taiyaar ho apne aap ko Mayor prakat karne ke liye</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Kya aap aaj chandee ko failana chaahte hain, aaj raat bhediyon ko aksham karne ke liye?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Jaise ki baaki gav wale ghatanaon par bahas karte hain, woh achaanak dekhte hain {0} zameen par chaandee faila raha tha.  Abhi ke liye, kam se kam, gav bhediye ke hamlon se surakshit hoga. (bhediye aaj raat nishkriy hain)</value>
+  </string>
+  <string key="Mayor">
+    <value>Mayor 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Rajkumaar 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Jaadugar 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Anadi aadmi 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Lohaar ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value> Alpha Bhediye ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Bhediye ke bacche 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Jaise hi bhediyon ne {0} pe attack kiya, {1} jo ki Alpha Bhediya hai sabko rokte huye.  {1} saare saathi bhediyo ko kehta hai {0} hamari team ko join karega, phir baaki saare bhediye chup chaap chale jaate hain.  Agli raat tum bhediye ban jaoge.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Tum par bhediyon ne hamla kiya tha, lekin Alpha bhediye ne aapko chuna hai.  Maare jaane ke bajaay, aapko sankramit kiya gaya hai..  aur aap agli raat bhediya ban jaoge!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Jaise hi raat hoti hai, aap ek ajeeb jhunjhunee mehsoos karte hain, aur aapke shareer mein dard hota hai kyonki yeh badalna shuroo hota hai .... ab aap ek bhediya hain!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Jab tak aap apne aap ko prakat nahi karte, Mayor ke roop mein, tab tak aap ek saadharan gav wale hain. Uske baad aapke votes ko do baar gina jayega maarne ke liye (iska matlab yeh hai ki aapke votes do guna takatwar hain kisi aur ki tulna mein). Iss taaqat ka buddhimaanee se prayog kare gav walo ki madad ke liye.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Rajkumar ki bhoomika mahatvapoorn hai gav walo ki ran neeti mein. Jab Rajkumar ko maara jaata hai, unka Rajkumar ka role sabke saamne prakat hota hai, aur woh nahi marte. Haalaanki, yeh keval ek baar hi ho sakta hai: yadi gav unhe maarne par zor de, to woh mar jayenge.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Kya aapko achchha puraana Paigambar (Seer) yaad hai?? Ab, woh bhediyon ke saath hai . Jaadugar, Bhediyon ka Paigambar(Seer) hai. Woh sirf yeh dekh sakte hain agar koi bhediya ya Paigambar hai, aur woh sirf bhediyon ke saath jeet sakte hain.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Tum Anadi aadmi ho. Tumhe naashte mein shayad itni daaru nahi peeni chahiye thi. Tum kuch bhi theek se nahi dekh pa rahe. Kya tum apni marzi se maar paoge jise maarna chahte ho? (Aapke paas 50% chance hai kisi galat ko maarne ka.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Tum lohaar ho. Saalon se, koi bhi talavaaren aapko jyaada santushti pradaan nahi karti jo ki chaandi ki talwaron ko baune banane ka aadesh de gaye the.\nTumhare paas thoda sa chaandi powder hai. Kise pata ? Yeh shayad *bhediyon ko hamla karne se rok de* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Tum Alpha bhediye ho, abhishaap ki utpatti, pratibandhon ka abhishaap. Har raat, 20% mauka hai ki aap apne saathiyon ke liye bhojan leke aayenge, aur wo marne ke bajaay aapki team mein shaamil honge!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Kya pyaara sa chotu sa bhediya hai. Jaise mein keh raha tha, tum bhediye ke bacche ho aur Mein khud ko nahi rok sakta. Mujhe lagta hai agar koi tumko maarta hai, mein bhediyon ko do shikaar dunga. Tum marne ke liye bahut hi pyaare ho. Main ab tumko aur gudgudi nahi kar paunga-</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} mar chuka hai, aur tum Alpha bhediye mein badal chuke ho.  Tumhare teammates (agar koi hai) to: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} mar chuka hai, aur tum bhediye ke bacche mein badal chuke ho.  Tumhare teammates (agar koi hai) to: {1}</value>
+  </string>
+  
+  <string key="VillageTeam" deprecated="true">
+    <value>Gav wale</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>koi team nahi</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>Khooni Team</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Saampradaayik Team</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Tanner Team</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Gav wale</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>koi team nahi</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Bhediya Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Khooni Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Saampradaayik Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Tanner Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Saampradaayik {0} bhejhte hain {1} badalne ke liye, lekin iske wipreet {0}'s ka shareer khidki se udta hua bahar girta hai... Pata nahi kyun yeh unko khane ke laayak nahi laga! {0} mar chuka hai...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} {1} ke ghar gayi thode maze ke liye. Keval ek rahasyamay ajanabee ko {1} ango ko nikaalte huye dekha! Khooni ne tay kiya apne collection mein {0} ka dil rakhne ko!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Subah subah gao wale uthe, {0} ke tukde nazar aaye jo ek ouija board pe pade the bhavishya ke patto (tarot card) ke sath. Pagaimbar ka chhatra (ApprenticeSeer) mar chuka hai.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Aisa lagta hai {0}, gav ka rehne wala lohaar, behad durbhaagyashaalee raha hoga. Paanch chaaku, taaze {0} ke shastraagaar se, uske haath, pair aur sar mein ghusaye gaye the, aur kal raat shilpakaar ke mej par tikaye huye the. Shaayad khooni apne ang ke collection ke saath apne hathiyaar collection ka vistaar karne ki ummeed kar raha tha...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} unki vedee dvaara ek momabattee ke saath maut ki saja di gayi thi. Khooni ne phir se maara hai, jaati, bhaasha ya dharm kee paravaah kiye bina! {0} ek saampradaayik mar chuka hai.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Agli subah, gav walo ka dil toot gaya jab unhone {0} a.k.a. kaamdevta ko sar se per tak vibhaajit paaya. Bahut ajeeb hai, uska dil gaayab tha...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Gav walo ne apne Martell ko badhayi dene ke liye {0} se milne ki ummeed ki thi, lekin unn sabko {0} ke ghar mein sirf toote huye chaaku ke tookde aur liver mila. Peene ke un sabhi varshon mein ek jigar ke liye itna mushkil hai ki khooni ko shaayad yeh liver accha nahi lagta hai...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} aamataur par khooni se ladne mein kaamayaab hota, lekin yeh ek vidambana hai ki Sanrakshak devdoot ki aatma ko bujha diya hai. {0} mar chuka hai.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Aisa lagata hai ki {0} kal raat sote huye pakda gaya tha! Kal raat goli chalne ki aawaz sunayi di, lekin vahaan bandook wale ke avashesh bache the, sar pe ek goli ka chedh aur dhadh pe ek chaaku. spasht roop se khooni jeeta hai.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Hatya!! {0} raat bhar kaam karte huye Mayor kaaryaalay mein mej par ek chaakoo se tikaya gaya! Zaahir hai yeh khooni hai, jisne apne jeevan ke varshon ko pagalkhane mein bitane ka badla liya!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Subah hone se pahle gav mein ghantee baji, aur sashastr sainik rajkumar {0} ke laapata hone ki jaanch kar rahe the. Koi suraag nahi mila, lekin yeh sandeh hai ki ek khooni sareaam gav mein ghoom raha hai...</value>
+    <value>{0} ke sainik sote huye paaye gaye. Rajkumar {0} ke shahi avshesh, mehal ke alag alag hisson mein latke huye paaye gaye, shayad chaakoo se shikaar ho chuke the. Shahi khoon ki ek bhi boond kisi khooni ke chaaku ko rok nahi sakti thi.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Gav wale jab subah uthe toh {0} ki sadi huyi laash paayi, sar se leke per tak tukdo mein bati huyi thi. Ajeeb tarah se mastishk ko dhyaan se nikala gaya tha, jaise ki yeh ek poorvakalpana thi ki gav ne apne sheersh dimaag kho diye hain. {0} Paigambar (Seer) tha.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Gav mein cheekhon ki aawaaz suni ja sakati hai. Ek galti ho chuki hai. Bhediyon ne apne hi parivar wale ki hatya kar di hai. Jaadugar {0} mar chuka hai.</value>
+    <value>"Main tumhaara sahayogee hoon!" kal raat sunayi diya tha. Sabhi gav walo ne agli subah ek mrit shareer aur ek jaaduyi gend ko toota hua paaya, {0} ko apno ki bhookh kha gayi...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Bhediyon ko kal raat suna gaya tha, unhone jangli bacche ko kha liya, {0}, keval ek kam-aakaar ke kankaal ke peechhe chhodakar! Gav walo ko aashcharya hai ki bhediyon ko koi dukh hai ek chote se bacche ko khane ke liye.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Gav wale subah jaagte hain toh sirf Saampradaayik Shikari {0} ke tukde paye jate hain, town hall ke bahar ek gaadi mein. Seekhne wali baat: khooni ke paas na jaaye!</value>
+    <value>{0} Saampradaayik Shikari ka shareer, gav ke beech mila, sau tukdo mein kata hua. Saampradaayik Shikari ka ek khooni ko jaanchna ek acchi baat nahi hai...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Aisa lag raha tha ki bhediyon ne ek baar ke liye achchha rahne ka faisla kiya, {0} ko saja mili, ek Saampradaayik jo ki bhediyon se panga lena chahta tha. {0} ka sar ek gift mein badalke bhediyon ke darwaze pe deliver kar diya gaya!</value>
+    <value>Kal raat apratyaashit pareshaani mein Saampradaayik chal pada. Unke naveenatam sadasya raat ko ek bhediye ko badalne gaye aur bhediyon ne ghar par rahne ka faisla kiya, aur bhediye ko {0} bahut tasty laga. {0} ke durbhagya se, bhediyon ko unke panth mein judne ka koi ruchi nahi hai.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Panth ka maanana ​​tha ki unke team mein ek naya sadasya hoga, lekin woh galat the! Subah {0}, ek Saampradaayik, ko tukdo mein kaat kar gav mein latka diya tha! Aashcharya ki baat hai ki unki "pavitr" kitaab ko ek chaakoo se chuboya gaya tha, jaise ki ek bayaan dikhaane ke liye jiska dharm vijayi tha.</value>
+    <value>Pichhali raat, panth gaanv mein ek vyakti ko badalne ki koshish karte hain jo unse zyada pagal hai. Unke naveenatam sadasya ne khooni ko badalane ki koshish ki, aur khooni ne {0} ke shareer ke ango ka ek naya design bana diya aur gav mein latka diya.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Yeh ek aisi raat ho sakti thi jab {0} ne gav ko khooni se bacha liya hota, lekin khooni ne {0} ki aatma ko daboch kar uske pankhon ko kutar diya! Vahan ek note tha, "main aapki tulna mein apne aap ko behtar dhang se bacha sakta hoon"</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} ne kal raat ek bhediye ki raksha karne ki koshish ki. Jab gav wale uthe toh unko sirf {0} ke pankh church cross par latke huye mile. Spasht roop se bhediyon ko ek atirikt bhojan eeshvar dwara bheja gaya tha, jo ki unke gharon mein muft tha.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Yeh jaante huye ki sirf {0} bacha hua hai, {1} ne {0} ko khane ki koshish ki, lekin {0} ki military training bahut zyaada thi sambhaal paane ke liye! Gav ka jeeta hua shikaari akela zinda hai: Sirf ek laash bachi hai jiske dhad mein do goliyan lagi huyi hain!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Yeh jaante huye ki sirf {0} bacha hua hai, {1} ne aisa samay chuna jab {0} ke bachne ka sabse kam mauka tha. Antim gav wale ko khatm karna {1} ke liye saral saabit hua, aur sirf shikari {0} ke shareer ke tukde bache huye the.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} aur {0} din mein bahar nikalte hain. {0} ke gale mein chamakta hua cross dekha aur {1} ne aakhiri baar apni talwar nikali aur gav mein saampraaydik ki gandagi pe rok laga di.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to /join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Nahii!!! {0} bevda tha! Ab tum bevde ho, aur hamla nahi kar sakte {1}...</value>
+  </string>
+</strings>

@@ -11,14 +11,14 @@ variant="SAW MODE"/>
   <string key="PlayerStartedGame">
 
 
-    <value>{0} ha iniziato un Classico Gioco Mortale. Povero illuso, non sa che cosa gli capiterà ora... Usate /join per giocare, se ci lascerete la pelle, sarò ben felice di farmici una giacca...</value>
-    <value>Un nuovo Classico Gioco Mortale è appena cominciato grazie a {0}. Con /join getta la tua vuota vita negli antri oscuri della Roulette, e non dimenticare. Ormai il dado è tratto...</value>
+    <value>{0} ha iniziato un Classico Gioco Mortale. Povero illuso, non sa che cosa gli capiterà ora... Premete qui per giocare, se ci lascerete la pelle, sarò ben felice di farmici una giacca...</value>
+    <value>Un nuovo Classico Gioco Mortale è appena cominciato grazie a {0}. Premi qui e getta la tua vuota vita negli antri oscuri della Roulette. Non dimenticare, ormai il dado è tratto...</value>
   </string>
   <string key="PlayerStartedChaosGame">
 
 
-    <value>{0} è entrato nella mortale Roulette, per iniziare un Gioco Mortale Chaos... Metti alla prova il tuo sangue freddo con /join, e scoprirai di avere finalmente qualcosa per cui vale la pena vivere...</value>
-    <value>Qualcuno è entrato nella Roulette. In lontananza potete scorgere la sagoma di {0} mentre si avvicina all'edificio... Usa /join per giocare con la tua vita... Un Gioco Mortale Chaos ti aspetta...</value>
+    <value>{0} è entrato nella Roulette, per iniziare un Gioco Mortale... Metti alla prova il tuo sangue freddo cliccando qui, e scoprirai di avere finalmente qualcosa per cui vale la pena vivere...</value>
+    <value>Qualcuno è entrato nella Roulette. In lontananza potete scorgere la sagoma di {0} mentre si avvicina all'edificio... Premi qui per giocare con la tua vita... Un Gioco Mortale ti aspetta...</value>
   </string>
   <string key="NoJoinGameRunning">
 
@@ -576,7 +576,7 @@ variant="SAW MODE"/>
   </string>
   <string key="MaintBreak">
 
-    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @werewolfdev per altre informazioni.</value>
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
   </string>
   <string key="MaxGames">
 
@@ -1315,12 +1315,12 @@ variant="SAW MODE"/>
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per entrare...</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per usare /join</value>
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per entrare</value>
   </string>
   <string key="CantExtend">
     <value>Smettila di premere comandi che sai che non funzionano...</value>
@@ -1342,5 +1342,74 @@ variant="SAW MODE"/>
 
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>{0} era il Dinamitardo... Ora sei ferito e non potrai attaccare {1}...</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+    <string key="JoinByButton">
+    <value>Per favore, non usare comandi per entrare nella Roulette. Usa questo bottone, invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+  </string>
+      <string key="HarlotFuckKillerPublic">
+    <value>Mentre la Roulette si ferma, sembra che non sia accaduto niente durante la Fase della Mala Sorte. Nella cella di {0}, però, il corpo all'interno sembra morto, e solo allora i Giocatori scorgono la maschera di Jigsaw a terra, accanto al suo bel corpo ormai sprecato. {0} era la Top Model...</value>
+    </string>
+      <string key="NoAutoJoin">
+    <value>{0}, ricordati di entrare nella Roulette per questa porta:</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo che cerchi. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Saggia decisione ripensarci e non entrare nella Roulette di {0}. Resta attaccato alla vita più che puoi finché puoi...</value>
+  </string>
+    <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sono entrati nella Roulette negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Ammettere i Membri dell'Associazione</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Ammettere il Misericordioso</value>
+  </string>
+  <string key="AllowFool">
+    <value>Ammettere il Febbricitante</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita Voto Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita Modalità Random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Ammettere Estensione Tempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Rivela Ruoli alla Morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Ammettere il Flee</value>
+  </string>
+    <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Il silenzio ammanta la candida Roulette mentre {0}, il Misericordioso che da preda doveva diventare eroe, guarda con sguardo stanco la devastazione della psiche umana che sempre porta solamente a cupi paradossi. Le porte però non si aprono, e {0} sospira lanciando un'ultima occhiata al vermiglio colore del sangue prima di esplodere, polverizzando la Roulette e ogni prova del macabro gioco. Jigsaw stavolta ha vinto ancora...</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} tra preda e predatore aveva scelto di giocare a fare il predatore. Ha giocato bene, senza sporcarsi troppo le mani, forse con un compito piuttosto infame, ma indispensabile. Se l'uomo riconosce negli occhi solo il barlume della follia soffocata e la mente non si contorce in mille complotti, il cinico attore é l'unico da oscar. Jigsaw è assai compiaciuto del suo lavoro... </value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Che Variante?\nCorrente: {0}\nPoiché hai giocato almeno 500 Giochi, sei degno di entrare qui: </value>
+  </string>
+  <string key="Skip">
+	<value>Nessuno</value>
   </string>
 </strings>

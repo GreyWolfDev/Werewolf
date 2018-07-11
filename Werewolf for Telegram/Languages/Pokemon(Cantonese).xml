@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
-    LAST UPDATE 31/12/2016 by @bluebear119
+    LAST UPDATE 31/12/2017 by @bluebear119
+    07/12  :Add new string
     31/12  :Add new string for 1vs1
     14/12  :Modify Harlot Description
     06/12  ：Add a bunch of Death String(SK,eaten)
@@ -15,7 +16,7 @@
     13/11  :Modify Tanner Description and Tanner Win.
 -->
 <strings>
-    <language name="廣東話（神奇寶貝寶可夢版）" base="廣東話" variant="神奇寶貝寶可夢版" owner="bluebear119，AnsonFat，Katherine_twn,Proflayton,Dino,Kri"/>
+    <language name="廣東話（寵物小精靈版）" base="廣東話" variant="寵物小精靈版" owner="bluebear119，AnsonFat，Katherine_twn,Proflayton,Dino,Kri"/>
     <string key="NotInGame">
         <value>訓練員，你根本就冇參加到寵物小精靈聯盟大賽...</value>
     </string>
@@ -616,7 +617,7 @@
     </string>
     <string key="MaintBreak">
         <!-- 0 - target's name -->
-        <value>對唔住，大木博士在主持一場比賽，你不能擾亂佢。\n正在等徒【{0}】比賽結果束……\n更多資訊請至 @werewolfdev。</value>
+        <value>對唔住，大木博士在主持一場比賽，你不能擾亂佢。\n正在等徒【{0}】比賽結果束……\n更多資訊請至 @greywolfdev。</value>
     </string>
     <string key="MaxGames">
         <!-- 0 - target's name -->
@@ -1423,10 +1424,10 @@
     <value>{0}個訓練師已經作出他們的選擇了,場上還有 {1} 個訓練師.</value>
   </string>
   <string key="EnableSecretLynchQ">
-    <value>是否使用秘密投票?\n 現在: {0}</value>
+    <value>是否使用秘密放生?\n 現在: {0}</value>
   </string>
   <string key="EnableSecretLynchA">
-    <value>你成功將秘密投票的選項調整至：{0}</value>
+    <value>你成功將秘密放生的選項調整至：{0}</value>
   </string>
   <string key="NoAutoJoin">
     <value>訓練師{0}, 請使用本會提供參加大賽的按鈕。</value>
@@ -1435,10 +1436,47 @@
     <value>找不到群組，請在你想停止等待的群組裡使用這個指令或者加鏈接，Telegram ID 或者你的用戶名在指令旁邊。</value>
   </string>
   <string key="DeletedFromWaitList">
-    <value>你已經成功在 {0}秒內取消參加寵物小精靈大賽.</value>
+    <value>你已經成功在{0}秒內取消參加寵物小精靈大賽.</value>
   </string>
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
     <value>{0} 在最後30秒時報名加入了寵物小精靈大賽。</value>
+  </string>
+    <string key="AllowCult">
+    <value>允許菊石獸</value>
+  </string>
+  <string key="AllowTanner">
+    <value>允許皮皮</value>
+  </string>
+  <string key="AllowFool">
+    <value>允許小呆獸</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>使用秘密放生</value>
+  </string>
+  <string key="RandomMode">
+    <value>使用隨機模式</value>
+  </string>
+  <string key="AllowExtend">
+    <value>允許延長比賽加入時間</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>死亡時顯示角色</value>
+  </string>
+  <string key="AllowFlee">
+    <value>允許比賽中逃跑</value>
+  </string>
+      <string key="ShowIDs">
+    <value>顯示現在有的訓練師ID</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>是否顯示在訓練員加入比賽的時候，顯示他們的ID?\n當前: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0}ID是</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>全部</value>
   </string>
 </strings>

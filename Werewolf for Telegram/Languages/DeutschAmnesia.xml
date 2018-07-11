@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- created by @ayylimao, translated by @syscaller at first, now maintained by @Olfi01 // version 3.2.2017 --> 
-<!-- created by @ayylimao, translated by @syscaller at first, now maintained by @Olfi01 // version 3.2.2017 --> 
 <strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" code="de" />
+  <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" code="de" isDefault="false"/>
   <string key="NotInGame">
     <value>Schon vergessen? Du bist keinem Spiel beigetreten!</value>
   </string>
-  <string key="PlayerStartedGame">
+  <string key="PlayerStartedGame" isgif="true">
     <value>{0} startete ein neues Spiel! Nutze den Join-Knopf, um beizutreten und alle Erinnerungen zu verlieren.</value>
     <value>Ein neues Spiel wurde von {0} gestartet! Nutze den Join-Knopf, um von sehr vergesslichen Wölfen gefressen zu werden!</value>
     <value>{0} hat... äh... irgendwas gemacht. Ich glaube, du solltest den Join-Knopf benutzen.</value>
   </string>
-  <string key="PlayerStartedChaosGame">
+  <string key="PlayerStartedChaosGame" isgif="true">
     <value>{0} startete ein neues Chaos-Spiel! Nutze den Join-Knopf, um komplett verwirrt zu werden.</value>
     <value>Ein neues Chaos-Spiel wurde von {0} gestartet! Nutze den Join-Knopf, um von vollkommen verwirrten Mitspieler getötet zu werden!</value>
     <value>{0} hat irgendwas gemacht... Im Dorf bricht Chaos aus!</value>
@@ -64,7 +62,7 @@
     <value>Irgendwas ist mit {0} passiert... leider kann sich niemand mehr daran erinnern.</value>
   </string>
   <string key="PlayerRoleWas">
-    <value>{0} war unwissentlich {1}</value>
+    <value>{0} war unwissentlich {1}.</value>
     <value>{0} hat völlig vergessen, dass er oder sie {1} war!</value>
   </string>
   <string key="CountPlayersRemain">
@@ -93,7 +91,7 @@
   </string>
   <string key="IdleKill">
     <value>{0} hat 2 Nächte hintereinander vergessen zu wählen. Das hat schreckliche Folgen! Obwohl man die Leiche sogleich findet, kann sich niemand einen Reim darauf machen, wie er gestorben ist... {1}</value>
-    <value>Das Dorf wird Zeuge eines grauenhaften Ereignisses... {0} liegt in der Wahlkabine, an seinem eigenen Stimmzettel erstickt... irgendeine höhere Macht muss ihm das angetan haben, denn alle anderen Dorfbewohner standen brav vor den Wahlkabinen an... Hoffentlich ist dieser Unfall eine Lehre für die anderen Dorfbewohner. Macht Gebrauch von eurem Stimmrecht! {1}</value>
+    <value>Das Dorf wird Zeuge eines grauenhaften Ereignisses... {0} liegt in der Wahlkabine, an seinem eigenen Stimmzettel erstickt... Irgendeine höhere Macht muss ihm das angetan haben, denn alle anderen Dorfbewohner standen brav vor den Wahlkabinen an... Hoffentlich ist dieser Unfall eine Lehre für die anderen Dorfbewohner. Macht Gebrauch von eurem Stimmrecht! {1}</value>
   </string>
   <string key="TraitorTurnWolf">
     <value>Deine Rolle hat sich geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest.</value>
@@ -118,7 +116,7 @@
     <value>Als du gerade damit beschäftigt bist, auf deinem Dachboden nach alten Bildern deiner Verwandten zu suchen, schießt dir plötzlich etwas durch den Kopf. Keine Angst, es ist keine Kugel, sondern nur {1}s Name... aber irgendetwas ist anders. Da ist noch ein Name... Ja, jetzt ist es ganz klar! Du erinnerst dich an {0}!</value>
   </string>
   <string key="SeerSees">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} ist.</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} ist.</value>
     <value>Eine Offenbarung! Plötzlich bist du dir ganz sicher: {0} ist {1}! Leider weißt du jedoch immer noch nicht, wer du selbst bist...</value>
     <value>Nanu? Plötzlich weißt du ganz genau: {0} ist {1}! Leider musst du erst mal die Anderen davon überzeugen...</value>
   </string>
@@ -141,49 +139,50 @@
   </string>
   <string key="AskVisit">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskSee">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskGuard">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskEat">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskHunt">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskRoleModel">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskConvert">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="DiscussWith">
+  <!-- leave the leadin spaces! -->
     <value> Vergiss nicht, es mit {0} zu besprechen!</value>
-    <value>Gerade noch rechtzeitig fällt dir ein, dass du das besser noch mit {0} besprechen solltest!</value>
+    <value> Gerade noch rechtzeitig fällt dir ein, dass du das besser noch mit {0} besprechen solltest!</value>
   </string>
   <string key="And">
     <value> und </value>
@@ -195,7 +194,7 @@
   </string>
   <string key="RoleInfoDetective">
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
-    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (warte, kann das nicht jeder?)</value>
+    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (Warte, kann das nicht jeder?)</value>
     <value>Seltsam... alle deine Erinnerungen sind verschwunden... was mag nur deine Rolle sein? Du weißt nur noch, dass du dich tagsüber immer besonders energiegeladen gefühlt hast...</value>
   </string>
   <string key="RoleInfoDrunk">
@@ -210,7 +209,7 @@
   </string>
   <string key="RoleInfoGunner">
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
-    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (warte, kann das nicht jeder?)</value>
+    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (Warte, kann das nicht jeder?)</value>
     <value>Seltsam... alle deine Erinnerungen sind verschwunden... was mag nur deine Rolle sein? Du weißt nur noch, dass du dich tagsüber immer besonders energiegeladen gefühlt hast...</value>
   </string>
   <string key="RoleInfoHarlot">
@@ -280,7 +279,7 @@
     <value>Der Tag beginnt. Nun haben alle Dorfbewohner {0} Sekunden Zeit, um verzweifelt nach Erinnerungen, Bildern von Verwandten und manchmal auch ihren Brillen zu suchen.</value>
   </string>
   <string key="NightTime">
-    <value>Es wurde Nacht. Alle Spieler schlafen in der Hoffung ein, sich am Morgen wieder an etwas erinnern zu können. Nachtaktive Spieler haben {0} Sekunden für deren Aktionen!</value>
+    <value>Es wurde Nacht. Alle Spieler schlafen in der Hoffnung ein, sich am Morgen wieder an etwas erinnern zu können. Nachtaktive Spieler haben {0} Sekunden für deren Aktionen!</value>
     <value>Der Abend bricht herein. Der Großteil des Dorfes liegt noch wach im Bett und versucht, den Tag nicht auch noch zu vergessen. Doch nun solltet ihr bald anfangen zu schlafen, denn die nachtaktiven Kreaturen haben bereits angefangen, aus ihren Häusern zu schleichen... Sie haben dazu {0} Sekunden Zeit.</value>
   </string>
   <string key="LynchKill">
@@ -296,7 +295,7 @@
     <value>Sagt mal, habt ihr alle vergessen zu wählen? Nur weil ihr euch an nichts erinnert, heißt das nicht, dass ihr nichts tun sollt!</value>
   </string>
   <string key="DetectiveEaten">
-    <value>Die Dorfbewohner versammeln sich am Morgen, treffen {0} aber nicht an. Sie begeben sich zu dessen Haus und treffen {0}, leblos mit einer Lupe in der Hand 🕵, an.</value>
+    <value>Die Dorfbewohner versammeln sich am Morgen, treffen {0} aber nicht an. Sie begeben sich zu dessen Haus und treffen {0}, leblos 🐺 mit einer Lupe in der Hand 🕵, an.</value>
     <value>Da hat {0} wohl im Eifer des Gefechts vergessen, die Türe abzuschließen... das haben die Wölfe 🐺 natürlich schamlos ausgenutzt! Ihr findet den Detektiv 🕵 zerrissen in seinem Haus hinter der offenen Türe liegend vor, seine Lupe fest umklammert, als habe er versucht, mit derselben die Angreifer zu entzünden... Er muss wohl vergessen haben, dass sowas nur in Comics funktioniert.</value>
   </string>
   <string key="GuardianEaten">
@@ -308,7 +307,7 @@
     <value>Wenn ihr nicht alle so vergesslich wärt, würdet ihr euch daran erinnern, dass mitten in der Nacht ein lauter Schuss erklang... Er scheint jedoch niemanden getroffen zu haben, denn als ihr das Dorf routinemäßig durchsucht, findet ihr einen einzelnen Zeigefinger und direkt daneben eine Waffe 🔫... Als ihr dann kurze Zeit später {0} tot vorfindet, habt ihr das zwar bereits wieder vergessen, aber vielleicht ist dem einen oder anderen aufmerksamen Beobachter ja doch ein Zusammenhang aufgefallen... 🐺</value>
   </string>
   <string key="SeerEaten">
-    <value>Die Sonne geht auf. Das Dorf erwacht, nur um die Überreste von {0} über einem Ouija-Brett und zwischen Seher-Karten verteilt zu finden. Der Seher 👳 ist tot.</value>
+    <value>Die Sonne geht auf. Das Dorf erwacht, nur um die Überreste 🐺 von {0} über einem Ouija-Brett und zwischen Seher-Karten verteilt zu finden. Der Seher 👳 ist tot.</value>
     <value>Die Strahlen der Sonne durchbrechen langsam die Wolkendecke... nur um euch zu zeigen, dass einer der Wenigen unter euch, die sich mehr als nur einige Namen merken können, von den Wölfen 🐺 zerfetzt und im Wald verteil wurde. In seiner Wohnung findet ihr Unmengen an beschriebenen Zetteln! Vielleicht wollte euch {0} damit etwas mitteilen... Die Handschrift des Sehers 👳 ist jedoch leider so unleserlich, dass ihr seine Notizen selbst dann nicht lesen könntet, wenn ihr sie euch länger als nur siebeneinhalb Minuten lang merken könntet...</value>
   </string>
   <string key="DrunkEaten">
@@ -316,16 +315,16 @@
     <value>Die Nacht war viel zu kurz, so scheint es euch, als ihr verkatert aufwacht: Gestern Abend hatte {0}, der Betrunkene 🍻 einige von euch zum Saufgelage eingeladen. Zum Glück sind bis auf ihn alle wieder rechtzeitig in ihre Häuser zurückgekehrt, sonst hätte in der Kneipe ein wahres Massaker 🐺 stattgefunden.</value>
   </string>
   <string key="FoolEaten">
-    <value>Als die Sonne über dem Dorf aufsteigt, finden die Dorfbewohner {0} angebissen neben einem Ouija-Brett, aber mit einem Deck aus... Spielkarten??? WAS FÜR EIN NARR 🃏!</value>
+    <value>Als die Sonne über dem Dorf aufsteigt, finden die Dorfbewohner {0} angebissen 🐺 neben einem Ouija-Brett, aber mit einem Deck aus... Spielkarten??? WAS FÜR EIN NARR 🃏!</value>
     <value>An diesem Morgen ist es ungewohnt still... nur mit Mühe erinnert ihr euch daran, dass bisher immer {0} euch den Morgen mit ein paar Späßen versüßt hat. Doch der Narr 🃏 ist nirgends auzufinden... vielleicht liegt das aber auch daran, dass ihr bereits nach drei Minuten wieder vergessen habt, wo sein Stapel Spielkarten lag: Auf seinem Bett... worunter auch die blutige Wahrheit 🐺 zu finden ist.</value>
   </string>
   <string key="DefaultEaten">
-    <value>Als jeder aufwacht, bemerken die Dorfbewohner einen schrecklichen Gestank. Sie folgen dem Geruch und finden {0}, auseinandergerissen und mit abgetrenntem Kopf im Schweinestall. {1}</value>
-    <value>Der Morgen bricht an und ihr wollt eigentlich schon zur Versammlung auf dem Dorfplatz laufen, da fällt plötzlich einem von euch ein Name wieder ein: {0}... Seltsamerweise erinnert sich keiner von euch daran, diesen Namen jemals besessen zu haben. Als ihr plötzlich jedoch einen toten Körper am Waldrand entdeckt, wird euch klar: {0} ist tot. {1}</value>
+    <value>Als jeder aufwacht, bemerken die Dorfbewohner einen schrecklichen Gestank. Sie folgen dem Geruch und finden {0}, auseinandergerissen und mit abgetrenntem Kopf 🐺 im Schweinestall. {1}</value>
+    <value>Der Morgen bricht an und ihr wollt eigentlich schon zur Versammlung auf dem Dorfplatz laufen, da fällt plötzlich einem von euch ein Name wieder ein: {0}... Seltsamerweise erinnert sich keiner von euch daran, diesen Namen jemals besessen zu haben. Als ihr plötzlich jedoch einen toten Körper 🐺 am Waldrand entdeckt, wird euch klar: {0} ist tot. {1}</value>
   </string>
   <string key="HunterKilledCultist">
-    <value>Ein bemerkbarer Gestank kommt aus dem Haus von {0}... Das Dorf untersucht es und findet einen Körper vor einem dunklen Altar liegend... Ein Kultist 👤, getötet von einem Jäger 💂!</value>
-    <value>Fast hättet ihr vergessen, {0}s Haus zu durchsuchen! Vielleicht hättet ihr es auch lieber bleiben lassen sollen... Der Gestank des toten Körpers von {0} löst Übelkeit aus. Trotzdem ist es gut, dass zumiundest der Kultjäger 💂 nicht vergessen hat, dem Kult 👤 hinterherzujagen...</value>
+    <value>Ein bemerkbarer Gestank kommt aus dem Haus von {0}... Das Dorf untersucht es und findet einen leblosen Körper vor einem dunklen Altar liegend... Ein Kultist 👤, getötet von einem Jäger 💂!</value>
+    <value>Fast hättet ihr vergessen, {0}s Haus zu durchsuchen! Vielleicht hättet ihr es auch lieber bleiben lassen sollen... Der Gestank des toten Körpers von {0} löst Übelkeit aus. Trotzdem ist es gut, dass zumindest der Kultjäger 💂 nicht vergessen hat, dem Kult 👤 hinterherzujagen...</value>
   </string>
   <string key="NoAttack">
     <value>Am nächsten Morgen sammeln sich die Dorfbewohner im Dorfzentrum, Gott sei Dank - es scheint vorherige Nacht keinen Angriff gegeben zu haben.</value>
@@ -336,7 +335,7 @@
     <value>Was ist das? Du spürst, wie sich dein Körper verändert... Komisch, dabei verläuft die Pubertät normalerweise nicht so schnell!</value>
   </string>
   <string key="WolfTeam">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
     <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}</value>
     <value>Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
   </string>
@@ -344,7 +343,7 @@
     <value>Plötzlich erinnerst du dich an einen wichtigen Namen: {0}</value>
     <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
   </string>
-  <string key="WolvesEatYou">
+  <string key="WolvesEatYou" isgif="true">
     <value>Oh nein! Die Wölfe haben dich gefressen. NOMNOMNOMNOM</value>
     <value>Du wachst an diesem Morgen nicht mehr auf, denn die Wölfe haben dich gefressen... das vergisst du ihnen so schnell nicht!</value>
   </string>
@@ -382,12 +381,12 @@
   </string>
   <string key="HarlotFuckWolf">
     <value>{0} war ein Werwolf. Du wurdest gefressen...</value>
-    <value>Da hast du wohl vergessen, die Liste deiner Kunden genauer unter die Lupe zu nehmen... {0} war ein Werwolf 🐺 und wurdest gefressen!</value>
+    <value>Da hast du wohl vergessen, die Liste deiner Kunden genauer unter die Lupe zu nehmen... {0} war ein Werwolf 🐺 und du wurdest gefressen!</value>
   </string>
   <string key="HarlotFuckedWolfPublic">
     <value>{0} geriet in das falsche Haus 🐺 letzte Nacht 💋! Ihre nuttigen Überreste wurden mit einer Eisenstange an das Kirchentor geheftet gefunden... wie schade :(</value>
     <value>Die Hure 💋 wollte ein bisschen Spass erleben, doch sie entschied sich für die falsche Person. Diese konnte wohl ein feines Abendessen 🐺 genießen... Ob {0} wohl gemundet hat?</value>
-    <value>{0} hat wohl einen besonderen Geschmack was ihre Kunden angeht... oder warum hat die Hure 💋 sich diese Nacht ausgerechnet einen Werwolf 🐺 ausgesucht? Wie auch immer, auf jeden Fall hat dieser Fehler sie das Leben gekostet...</value>
+    <value>{0} hat wohl einen besonderen Geschmack was ihre Kunden angeht... oder warum hat sich die Hure 💋 diese Nacht ausgerechnet einen Werwolf 🐺 ausgesucht? Wie auch immer, auf jeden Fall hat dieser Fehler sie das Leben gekostet...</value>
   </string>
   <string key="HarlotFuckedVictimPublic">
     <value>{0} schlüpfte in das Haus von {1}, bereit um Spaß zu haben 💋 und Stress abzubauen. Jedoch sah sie einen Werwolf 🐺 dabei, {1} zu essen! Plötzlich wand sich der Werwolf zu {0} und sprang... {0} ist tot.</value>
@@ -403,11 +402,11 @@
     <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
   </string>
   <string key="DetectiveCaught">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber weißt du, dass {0} der Detektiv 🕵 ist</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} der Detektiv 🕵 ist.</value>
     <value>Plötzlich meldet sich deine Nase... aus irgendeinem Grund mag sie den Geruch von Detektiven 🕵 nicht. Du entschließt dich, {0} ab sofort aus dem Weg zu gehen...</value>
   </string>
   <string key="DetectiveSnoop">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} ist</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} ist</value>
     <value>Trotz deines schlechten Gedächtnisses gibt es immer wieder ein paar Fetzen an Informationen, die du ihm entringen kannst... Zum Beispiel ist dir soeben eingefallen, dass {0} {1} ist!</value>
   </string>
   <string key="HarlotShot">
@@ -418,19 +417,19 @@
     <value>Plötzlich hört man einen Schuss. Das Dorf sieht sich um und entdeckt {0}, den Schützen 🔫, über dem Körper von {1} stehen, die Pistole noch immer auf den Kopf gerichtet. {2}</value>
     <value>Ein lauter Knall schallt durch das Dorf. Nach einiger Suche findet ihr {0}, der sich verzweifelt hinter einem Baum zu verstecken versucht, neben der Leiche von {1}... Der Schütze 🔫 scheint seine Aufgabe nicht vergessen zu haben! {2}</value>
   </string>
-  <string key="WolfWins">
+  <string key="WolfWins" isgif="true">
     <value>Der Werwolf hat gewonnen!</value>
     <value>Der Werwolf hat wohl seine Rolle sehr ernst genommen, auch wenn er sie gar nicht kannte... er gewinnt!</value>
   </string>
-  <string key="WolvesWin">
+  <string key="WolvesWin" isgif="true">
     <value>Die Werwölfe haben gewonnen!</value>
     <value>Die Wölfe haben sich wieder an ihre Aufgabe erinnert und das Dorf erfolgreich dezimiert! Sie haben gewonnen!</value>
   </string>
-  <string key="VillageWins">
+  <string key="VillageWins" isgif="true">
     <value>Die Dorfbewohner haben gewonnen! Alle Wölfe (und andere Menschenfresser) starben...</value>
     <value>Offensichtlich hab ihr es trotz fehlender Erinnerungen geschafft, das Dorf vom Bösen zu befreien! Das Dorf hat gewonnen!</value>
   </string>
-  <string key="TannerWins">
+  <string key="TannerWins" isgif="true">
     <value>Oh nein! Der Gerber wurde gelyncht! Er gewinnt das Spiel, ihr Dummerchen.</value>
     <value>Obwohl er es selbst nicht wusste (oder doch?), hat der Gerber das Spiel für sich entschieden!</value>
   </string>
@@ -454,7 +453,7 @@
     <value>Was ist das? Du spürst, wie sich dein Körper verändert... Komisch, dabei verläuft die Pubertät normalerweise nicht so schnell!</value>
   </string>
   <string key="CultTeam">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
     <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}</value>
     <value>Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
   </string>
@@ -466,7 +465,7 @@
     <value>{0} ging zu {1}s Haus, doch es war scheinbar niemand zu Hause!</value>
     <value>{0} schlich sich des Nachts heimlich zu zu {1}s Haus, doch entweder war es die falsche Adresse oder der Bewohner dieses Hauses treibt sich des Nachts an anderen Orten herum...</value>
   </string>
-  <string key="CultWins">
+  <string key="CultWins" isgif="true">
     <value>Alle Wölfe starben, alle anderen Lebenden wurden zu Kultisten bekehrt.. Der Kult hat gewonnen!</value>
     <value>Der Kult hat anscheinend mithilfe seines Gottes den Gedächtnisschwund überwunden... sie haben gewonnen!</value>
   </string>
@@ -487,7 +486,7 @@
     <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
   </string>
   <string key="WildChildTransform">
-    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
     <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
   </string>
   <string key="Villager">
@@ -564,11 +563,11 @@
     <value>Glückwunsch, du bist eine der mächtigsten Rollen im Spiel! Nur leider kennst du deine Fähigkeiten nicht, und sie sind offensichtlich eher passiver Natur. Wenn du Glück hast, werden sie sich jedoch in einem Augenblick der größten Not zur Schau stellen.</value>
   </string>
   <string key="MasonEaten">
-    <value>Als die Sonne aufging, konnte man den Körper von {0} blutverschmiert auf einem Fels liegen sehen. Der Tote hatte ein Freimaurerabzeichen 👷 in seiner Westentasche.</value>
-    <value>Statt der fröhlichen Holzschwertkampfgeräusche hört ihr heute aus {0}s Haus nur eine Totenstille dringen... Ein Freimaurer 👷 ist tot.</value>
+    <value>Als die Sonne aufging, konnte man den Körper von {0} blutverschmiert 🐺 auf einem Fels liegen sehen. Der Tote hatte ein Freimaurerabzeichen 👷 in seiner Westentasche.</value>
+    <value>Statt der fröhlichen Holzschwertkampfgeräusche hört ihr heute aus {0}s Haus nur eine Totenstille 🐺 dringen... Ein Freimaurer 👷 ist tot.</value>
   </string>
   <string key="MasonTeam">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
     <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}</value>
     <value>Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
   </string>
@@ -588,7 +587,7 @@
     <value>@{1}, ein Spieler mit dem Namen {0} ist bereits beigetreten. Bitte ändere deinen Namen, um beizutreten.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber weißt du, dass {0} ein Kultist 👤 ist</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} ein Kultist 👤 ist</value>
     <value>Eine Offenbarung! Plötzlich bist du dir ganz sicher: {0} ist ein Kultist 👤! Leider weißt du jedoch immer noch nicht, wer du selbst bist...</value>
     <value>Nanu? Plötzlich weißt du ganz genau: {0} ist ein Kultist 👤! Leider musst du erst mal die Anderen davon überzeugen...</value>
   </string>
@@ -626,7 +625,7 @@
     <value>Die Gruppe ist momentan in der Warteschlange. Position: {0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <value>Aufgrund von Wartungsarbeiten müssen wir eine kurze Pause einlegen.\nEs muss noch auf {0} Spiele gewartet werden...\nSiehe @werewolfdev für mehr Informationen</value>
+    <value>Aufgrund von Wartungsarbeiten müssen wir eine kurze Pause einlegen.\nEs muss noch auf {0} Spiele gewartet werden...\nSiehe @greywolfdev für mehr Informationen</value>
   </string>
   <string key="MaxGames">
     <value>Sorry, das Maximum an gleichzeitig laufenden Spielen wurde erreicht. Leider können keine weiteren Spiele gestartet werden ({0}).  \nPosition in der Warteschlange: {1} / {1}</value>
@@ -691,7 +690,7 @@
     <value>Tagsüber wirkst du auf deine Mitmenschen wie ein ganz normaler Dorfbewohner, doch nur des Nachts entpuppt sich deine wahre Gestalt! Leider klingt das sehr viel weniger gruselig, wenn du vergessen hast, worin deine Macht besteht...</value>
   </string>
   <string key="CupidChosen">
-    <value>Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {0}</value>
     <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}</value>
     <value>Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
   </string>
@@ -702,7 +701,7 @@
   </string>
   <string key="HunterNoChoiceLynched">
     <value>{0} tastet nach seiner Pistole 🎯, während die Schlinge sich um seinen Hals zuzieht, aber er schafft es nicht rechtzeitig und fällt mit einem lauten Knacken seines Nackens in den Tod...</value>
-    <value>{0} erschrickt, als er sich kurz vor seinem Tod wieder an seine Pistole erinnert... doch leider erreicht er sie nicht mehr rechtzeitig und stirbt mit einem verblüfften Ausdruck auf dem Gesicht.</value>
+    <value>{0} erschrickt, als er sich kurz vor seinem Tod wieder an seine Pistole 🎯 erinnert... doch leider erreicht er sie nicht mehr rechtzeitig und stirbt mit einem verblüfften Ausdruck auf dem Gesicht.</value>
   </string>
   <string key="HunterSkipChoiceLynched">
     <value>{0} zückt seine Pistole 🎯, schaut in die Menschenmenge... und kann sich nicht entscheiden, wen er erschießen soll. Er fällt, sein Schicksal akzeptierend, in seinen Tod...</value>
@@ -749,7 +748,7 @@
   </string>
   <string key="DefaultKilled">
     <value>{0} schien es erst so, als würde es eine ruhige Nacht werden, aber er lag falsch. Die Dorfbewohner versammeln sich am nächsten Morgen, um {0} vorzufinden, vom Kopf bis zu den Zehen geteilt, aber merkwürdigerweise fehlte die Leber... Der Serienmörder 🔪 hat wieder zugeschlagen - {1}</value>
-    <value>Als das Dorf erwacht, finden sie {0} mit aufgerissenen Augen und aufgeschlitztem Körper im Bett liegen, doch seltsamerweise fehlt die Leber... {1}</value>
+    <value>Als das Dorf erwacht, finden sie {0} mit aufgerissenen Augen und aufgeschlitztem 🔪 Körper im Bett liegen, doch seltsamerweise fehlt die Leber... {1}</value>
   </string>
   <string key="GuardBlockedKiller">
     <value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
@@ -776,7 +775,7 @@
     <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
   </string>
   <string key="DGTransformToMason">
-    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
     <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
   </string>
   <string key="DGToCult">
@@ -784,7 +783,7 @@
     <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
   </string>
   <string key="DGTransformToCult">
-    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
     <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
   </string>
   <string key="DGToWolf">
@@ -792,18 +791,18 @@
     <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
   </string>
   <string key="DGTransformToWolf">
-    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
     <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
   </string>
-  <string key="SerialKillerWins">
+  <string key="SerialKillerWins" isgif="true">
     <value>Die einzig lebende Person, die verbleibt, ist der Serienmörder! Er hat gewonnen!</value>
     <value>Anscheinend hat die Amnesie des Serienmörders nur sehr kurz gehalten... Er hat trotz allem das gesamte Dorf eliminiert und gewonnen!</value>
   </string>
   <string key="AskKill">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="LoverDied">
     <value>Mit dem sterbendem Atemzug von {0} eilt {1} herbei und fällt weinend auf die Knie. Er kann den Tod seiner Geliebten ❤️ nicht ertragen und erschießt sich mit der nächsten aufzutreibenden Pistole. {2}</value>
@@ -811,15 +810,15 @@
   </string>
   <string key="AskDoppelganger">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskCupid1">
     <value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
-    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor Allem warum?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
     <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
-    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
   </string>
   <string key="AskCupid2">
     <value>Du weißt, dass du mit noch jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
@@ -841,13 +840,13 @@
     <value>Deine Rolle hat sich geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du bist, aber du kannst dich noch an einen Namen erinnern: {0}</value>
     <value>Dein Körper verändert sich... das kann ja mal passieren, aber was ist mit deinem Gedächtnis los? Plötzlich will dir der Name {0} einfach nicht mehr aus dem Kopf gehen...</value>
   </string>
-  <string key="LoversWin">
+  <string key="LoversWin" isgif="true">
     <value>Wahre Liebe hält am längsten! Die Liebenden haben gewonnen!</value>
     <value>Die Liebe ist stärker als alles andere, und so hat sie auch die Vergesslichkeit besiegt! Das Liebespaar hat gewonnen!</value>
   </string>
   <string key="HunterKilledVisiter">
     <value>Inmitten des Dorfzentrums finden die Dorfbewohner den Körper von {0}, mehrfach beschossen. Sieht so aus, als hätte er versucht, sich an den Jäger 🎯 anzuschleichen! {1}</value>
-    <value>Eine seltsame Gestalt in einer Kutte liegt auf dem Marktplatz, in einer Pfütze aus Blut. Als ihr sie untersucht, erkennt ihr mit einem Schrecken: Es ist {0}, ein Kultist! Offenbar wollte der Kult den Jäger 🎯 in seine Reihen aufnehmen... {1}</value>
+    <value>Eine seltsame Gestalt in einer Kutte liegt auf dem Marktplatz, in einer Pfütze aus Blut. Als ihr sie untersucht, erkennt ihr mit einem Schrecken: Es ist {0}, ein Kultist 👤! Offenbar wollte der Kult den Jäger 🎯 in seine Reihen aufnehmen... {1}</value>
   </string>
   <string key="CultAttempt">
     <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
@@ -869,9 +868,9 @@
     <value>Am Morgen stehen sich die beiden verbliebenen Dorfbewohner in der Mitte des Dorfes gegenüber, als {0} auf einmal anfängt, breit zu grinsen. Man sieht noch kurz die Klinge eines Messers 🔪 aufblitzen, dann bohrt sie sich jedoch bereits in das Herz von {1}.</value>
     <value>Als {1} sein Haus verlässt, fällt ihm plötzlich auf: Außer ihm ist nur noch {0} am Leben. Die Morde haben aber immer noch nicht aufgehört... {1} versteckt sich ängstlich unter dem Bett, doch es gibt kein Entkommen. Der Serienmörder 🔪 beendet das Leben des letzten Dorfbewohners.</value>
   </string>
-  <string key="NoWinner">
+  <string key="NoWinner" isgif="true">
     <value>Jeder im Dorf starb... die toten Körper 💀  liegen überall herum. Niemand gewinnt die Runde...</value>
-    <value>Alles ist voller Leichen... und niemand kann sie mehr wegräumen! Es gibt keinen Gewinner.</value>
+    <value>Alles ist voller Leichen 💀 ... und niemand kann sie mehr wegräumen! Es gibt keinen Gewinner.</value>
   </string>
   <string key="SKHunterEnd">
     <value>Als die Sonne aufgeht, spazieren {0} und {1} in Richtung Dorf. Plötzlich nimmt {0} das Messer 🔪 heraus und springt auf {1}. Gerade als {0} das Messer tief in sein Herz rammt, greift {1} nach seinem Gewehr 🎯 und schießt {0} mit einem gezielten Schuss in den Kopf. Beide sind tot, und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value>
@@ -1186,7 +1185,7 @@
   </string>
   <string key="RoleInfoMayor">
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
-    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (warte, kann das nicht jeder?)</value>
+    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (Warte, kann das nicht jeder?)</value>
     <value>Seltsam... alle deine Erinnerungen sind verschwunden... was mag nur deine Rolle sein? Du weißt nur noch, dass du dich tagsüber immer besonders energiegeladen gefühlt hast...</value>
   </string>
   <string key="RoleInfoPrince">
@@ -1206,7 +1205,7 @@
   </string>
   <string key="RoleInfoBlacksmith">
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
-    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (warte, kann das nicht jeder?)</value>
+    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (Warte, kann das nicht jeder?)</value>
     <value>Seltsam... alle deine Erinnerungen sind verschwunden... was mag nur deine Rolle sein? Du weißt nur noch, dass du dich tagsüber immer besonders energiegeladen gefühlt hast...</value>
   </string>
   <string key="RoleInfoAlphaWolf">
@@ -1222,15 +1221,15 @@
   <string key="PrinceLynched">
     <value>Kurz bevor das Dorf {0} lyncht, hört man die verurteile Person rufen: "Wartet! Ich bin der Prinz 👑. Dieser königliche Ring mit dem Siegel meines Geschlechts beweist es. Ich bin jede Nacht von Dienern umgeben, folglich kann ich also nicht dem Bösen angehören." Von der eigenen Torheit überrascht, ziehen sich die Bewohner des Dorfes kleinlaut in ihre Gemächer zurück, ohne auf ihr Lynchopfer zu bestehen. Niemand denkt auch nur im Entferntesten darüber nach, wieso {0} sich überhaupt an seine königliche Abstammung erinnern konnte...</value>
     <value>Eine wundervolle Musik ertönt und {0} erstrahlt in allen Farben des Regenbogens. Mit dröhnender Stimme ruft der Prinz 👑: "Haltet ein, ihr Narren! Ihr begeht einen großen Fehler!" Nach diesem Auftritt traut sich keiner mehr, ihm die Schlinge um den Hals zu legen, und eingeschüchtert begibt sich das Dorf ins Bett.</value>
-    <value>Als ihr {0} gerade von der Klippe stoßen wollt, schreit plötzlich einer von euch auf: "Halt! Dieser Ring!" An der Hand des Prinzen entdeckt ihr, wovon der Dorfbewohner gesprochen hat: Ein goldenes Schmuckstück, mit einem eingravierten geflügelten Kreis und darunter drei Dreiecken. Das Wappen des Königs! Beschämt zieht das Dorf sich zurück und verzichtet darauf, den Prinzen zu lynchen.</value>
+    <value>Als ihr {0} gerade von der Klippe stoßen wollt, schreit plötzlich einer von euch auf: "Halt! Dieser Ring!" An der Hand des Prinzen 👑 entdeckt ihr, wovon der Dorfbewohner gesprochen hat: Ein goldenes Schmuckstück, mit einem eingravierten geflügelten Kreis und darunter drei Dreiecken. Das Wappen des Königs! Beschämt zieht das Dorf sich zurück und verzichtet darauf, den Prinzen zu lynchen.</value>
   </string>
   <string key="SorcererOther">
     <value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
     <value>Was ist nur in der letzten Nacht bei {0}s Haus passiert? Bist du etwa verkatert, oder warum kannst du dich partout nicht daran erinnern?</value>
   </string>
   <string key="MayorReveal">
-    <value>{0} erschrickt, nachdem er etwas aus seiner Tasche gezogen hat: Die offizielle Plakette des Bürgermeisters. Jeder kapiert, dass er der Boss ist, und seine Stimme wird von nun an auf der allabendlichen Versammlung doppelt gezählt.</value>
-    <value>{0} zieht etwas aus der Tasche und will es gerade wegwerfen, da erkennt man die Plakette des Bürgermeisters. Alle schnappen nach Luft, als ihnen klar wird, wer hier das Sagen hat, und sprechen der Stimme des Bürgermeisters doppelten Wert zu.</value>
+    <value>{0} erschrickt, nachdem er etwas aus seiner Tasche gezogen hat: Die offizielle Plakette des Bürgermeisters 🎖. Jeder kapiert, dass er der Boss ist, und seine Stimme wird von nun an auf der allabendlichen Versammlung doppelt gezählt.</value>
+    <value>{0} zieht etwas aus der Tasche und will es gerade wegwerfen, da erkennt man die Plakette des Bürgermeisters 🎖. Alle schnappen nach Luft, als ihnen klar wird, wer hier das Sagen hat, und sprechen der Stimme des Bürgermeisters doppelten Wert zu.</value>
   </string>
   <string key="AskMayor">
     <value>Du hast irgendwas in der Tasche...</value>
@@ -1311,11 +1310,11 @@
     <value>Sooooooo ein süßer kleiner Wolf 🐶! Du bist so weich, ich könnte dich den ganzen Tag nur knuddeln! *hustet* Entschuldigung. Also, du bist der Wolfswelpe 🐶. Wenn du stirbst - nein, guck mich nicht so an, das ist... so süüüüüüüüüß! Ähem. Wo waren wir stehen geblieben? Ach ja. Wenn du stirbst, dürfen die Werwölfe in der nächsten Nacht zwei Leute attackieren. Deshalb... meine Güte, bist du süß! *-*\n\nVerdammt. Jetzt hab ich vergessen, was ich sagen wollte. Naja, egal.</value>
   </string>
   <string key="DGTransformToAlpha">
-    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
     <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
-    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nich mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
     <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
   </string>
   <string key="VillageTeamEnd">
@@ -1350,7 +1349,7 @@
   </string>
   <string key="BlacksmithKilled">
     <value>Am frühen Morgen hört man einen Schrei, der aus der Werkstatt des Schmieds ⚒ kommt. Man hat {0} gefunden, der mit fünf seiner eigenen, aus rostfreiem Stahl gefertigten Messern an seine Werkbank genagelt wurde. 🔪 Das ist noch Qualität, die überzeugt! \nDennoch... Diese Messer will wohl niemand mehr benutzen, um Rohkost für die nächste Gartenparty zu schnibbeln.</value>
-    <value>Sieht so aus als wäre {0}, der örtliche Schmied ⚒, diese Nacht vom Pech verfolgt worden. Er hat anscheinend eine Nachtschicht einlegen wollen... Man findet ihn mit durchgeschlitzter Kehle 🔪 in einer Ecke, doch abgesehen davon wirkt die Werkstatt erstaunlich leer... Anscheinend hat der Serienmörder heute nicht nur seine Organsammlung erweitert!</value>
+    <value>Sieht so aus als wäre {0}, der örtliche Schmied ⚒, diese Nacht vom Pech verfolgt worden. Er hat anscheinend eine Nachtschicht einlegen wollen... Man findet ihn mit aufgeschlitzter Kehle 🔪 in einer Ecke, doch abgesehen davon wirkt die Werkstatt erstaunlich leer... Anscheinend hat der Serienmörder heute nicht nur seine Organsammlung erweitert!</value>
     <value>Die ungewöhnliche Stille im Dorf verwundert euch... warum hört man denn heute keine Hammerschläge von {0}, dem Schmied ⚒? Als ihr seine Wohnung durchsucht, erfahrt ihr es: Er liegt mit Messern auf die Werkbank genagelt tot da. Gegen den Serienmörder 🔪 konnte ihm auch sein Notvorrat an Silber nicht helfen...</value>
   </string>
   <string key="CultistKilled">
@@ -1359,7 +1358,7 @@
   </string>
   <string key="CupidKilled">
     <value>Die Liebe ist tot... Oder zumindest ihr Stellvertreter auf Erden 🏹: obwohl {0} seinen Bogen noch in der Hand hält, konnte er damit nichts gegen den übermächtigen Serienmörder 🔪 ausrichten. Seltsamerweise wurde das Herz sauber herausgetrennt... Ist es etwa das, was diesem Verrückten all die Jahre gefehlt hat?!</value>
-    <value>Schon als sie aufwachen, fühlen sich alle Dorfbewohner irgendwie lieblos. Zuerst hält man es für Einbildung, doch dann findet man Amor 🏹, von Kopf bis Fuß aufgeschlitzt, vor der Kirche... Aus irgendeinem Grund fehlt {0} auch das Herz. 🔪</value>
+    <value>Schon als sie aufwachen, fühlen sich alle Dorfbewohner irgendwie lieblos. Zuerst hält man es für Einbildung, doch dann findet man den Amor 🏹, von Kopf bis Fuß aufgeschlitzt, vor der Kirche... Aus irgendeinem Grund fehlt {0} auch das Herz. 🔪</value>
   </string>
   <string key="DrunkKilled">
     <value>Hand aufs Herz: eigentlich würde natürlich keiner von euch um diese Tageszeit schon mit dem Trinken anfangen. Aber einer Einladung muss man auch Folge leisten. Dass euch bei {0} niemand öffnet, wundert keinen, vermutlich ist der Trunkenbold schon - oder noch? - zu besoffen, um euer Klopfen zu hören. Drinnen seht ihr jedoch, wie falsch ihr damit lagt... Der Betrunkene 🍻 liegt reglos am Boden, in seinen feinsten Sonntagsklamotten. Daneben... kein schöner Anblick: eine ramponierte Leber, die wohl selbst dem Serienmörder 🔪 nicht gemundet hat. </value>
@@ -1370,7 +1369,7 @@
     <value>An einem normalen Tag wäre {0} definitiv in der Lage gewesen, dem Serienmörder 🔪 die Stirn zu bieten. Es gleicht Ironie, dass der Schein des Schutzengels 👼 erlosch, während er über einen anderen wachte...</value>
   </string>
   <string key="GunnerKilled">
-    <value>Anscheinend hat da jemand ein kleines Schläfchen gehalten... welch fataler Fehler. Man hört zwar einen Schuss 🔫, doch am nächsten Morgen findet man nur den Körper von {0}, dem die Kugel im Kopf steckt - und komischerweise fehlt ihm ebenso der rechte Zeigefinger... Wie es aussieht, wollte der Serienmörder 🔪 dem Schützen noch eine letzte Lektion erteilen!</value>
+    <value>Anscheinend hat da jemand ein kleines Schläfchen gehalten... welch fataler Fehler! Man hört zwar einen Schuss 🔫, doch am nächsten Morgen findet man nur den Körper von {0}, dem die Kugel im Kopf steckt - und komischerweise fehlt ihm ebenso der rechte Zeigefinger... Wie es aussieht, wollte der Serienmörder 🔪 dem Schützen noch eine letzte Lektion erteilen!</value>
   </string>
   <string key="MayorKilled">
     <value>Ein hinterhältiger Anschlag! {0} liegt ermordet auf seinem Schreibtisch... Vielleicht wollte der Serienmörder 🔪 sich für all die Jahre im Waisenhaus rächen, vielleicht hasst er aber auch einfach nur Politiker 🎖 und ihre Wahlversprechen. Das wird man wohl nie herausfinden.</value>
@@ -1400,18 +1399,18 @@
     <value>Was für ein Fehler... Der Kult 👤 hat letzte Nacht die einzige Person im Dorf besucht, die noch verrückter ist als jedes seiner Mitglieder. Dafür können alle Bewohner heute ein abstraktes Kunstwerk, bestehend aus den zerstückelten Organen des verstorbenen {0}, vor dem Rathaus bestaunen. Vielleicht nicht jedermanns Geschmack... aber der Serienmörder 🔪 hat seinen ganz eigenen Sinn für Ästhetik.</value>
   </string>
   <string key="GAGuardedKiller">
-    <value>Eigentlich sollte {0} das Dorf in dieser Nacht vor dem Bösen bewahren, stattdessen wurden jedoch seine Flügel 👼 gestutzt! Neben seiner Leiche findet man einen Zettel mit der Aufschrift: "Ich konnte mich eben besser verteidigen... 🔪"</value>
+    <value>Eigentlich sollte {0} das Dorf in dieser Nacht vor dem Bösen bewahren, stattdessen wurden ihm bei seinem Besuch die Flügel 👼 gestutzt! Neben seiner Leiche findet man einen Zettel mit der Aufschrift: "Ich konnte mich eben besser verteidigen... 🔪"</value>
   </string>
   <string key="GAGuardedWolf">
     <value>Euer Schutzengel 👼, {0}, hat gestern Nacht versucht, einen Wolf 🐺 zu beschützen. Am Morgen findet ihr nur die Flügel, aufgehängt am Ziffernblatt der Uhr - irgendwie ein verstörender Anblick...</value>
   </string>
   <string key="HunterKillsWolfEnd">
-    <value>{1} sah sich schon als glücklichen Gewinner, hatte aber nicht mit damit gerechnet, dass {0}, der komische alte Kauz, seine Drohungen tatsächlich wahr machen würde: die Reporterin des überregionalen Käseblatts findet am nächsten Morgen den Jäger 🎯, der stolz als einziger Überlebender neben dem getöteten Wolf 🐺 steht. Er hat sich außerdem gerade selbst zum Bürgermeister gewählt und will das Dorf nun in Eigenregie führen.</value>
+    <value>{1} sah sich schon als glücklichen Gewinner, hatte aber nicht damit gerechnet, dass {0}, der komische alte Kauz, seine Drohungen tatsächlich wahr machen würde: die Reporterin des überregionalen Käseblatts findet am nächsten Morgen den Jäger 🎯, der stolz als einziger Überlebender neben dem getöteten Wolf 🐺 steht. Er hat sich außerdem gerade selbst zum Bürgermeister gewählt und will das Dorf nun in Eigenregie führen.</value>
     <value>Im Wissen, dass nur noch {0} übrig war, versuchte {1} diesen aufzufressen, aber gegen militärisches Training und die jahrelange Paranoia des Jägers 🎯 kam der Werwolf 🐺 nicht im Geringsten an. Mit zwei präzisen Schüssen ist sein Leben verwirkt, und die letzte Person, die jetzt noch übrig ist ist, sichert dem Dorf den Sieg. Ein Hoch auf den Jäger!</value>
   </string>
   <string key="WolfKillsHunterEnd">
     <value>Aus gutem Grund hat {1} sich den Jäger 🎯 bis zuletzt aufgespart: mit seinem Gewehr ist er schon eine einschüchternde Erscheinung, doch scharfe Werwolfklauen sind schließlich auch eine nicht zu unterschätzende Waffe. Mit seiner gesammelten Erfahrung 🐺 war der arme {0} mit seiner Büchse allerdings chancenlos: mit seinem Tod stirbt der letzte menschliche Bewohner des Dorfes...</value>
-    <value>Was ein schlauer Wolf. 🐺 Obwohl {0} die längeste Zeit überaus wachsam war, hat jener es doch geschafft, ihn in einem unaufmerksamen Moment zu erwischen. Den letzten Dorfbewohner zu töten war dann keine schwere Aufgabe mehr für {1} und alles was jetzt von {0}, dem Jäger 🎯, noch übrig bleibt, ist sein Kopf, geziert mit zwei langen Kratzern.</value>
+    <value>Was für ein schlauer Wolf. 🐺 Obwohl {0} die längeste Zeit überaus wachsam war, hat jener es doch geschafft, ihn in einem unaufmerksamen Moment zu erwischen. Den letzten Dorfbewohner zu töten war dann keine schwere Aufgabe mehr für {1} und alles was jetzt von {0}, dem Jäger 🎯, noch übrig bleibt, ist sein Kopf, geziert mit zwei langen Kratzern.</value>
   </string>
   <string key="CHKillsCultistEnd">
     <value>Auch wenn dem Dorf nur noch zwei Personen geblieben sind, freut sich {1} auf die Aussicht, in dieser Nacht dem Kult entgültig den Garaus zu machen, obgleich die letzte andere überlebende Person im Dorf ein Kultist sein mag oder nicht - die Gewissheit zählt. In gewohnter Montur und Manier ist das Vorhaben für den Kultistenjäger 💂 kein Problem, den Job erledigt er immerhin jede Nacht. Und tatsächlich wird er fündig! Ein schimmerndes Kreuz, das sich auf einem Tisch im Eingang des Hauses von {0} befindet, verrät eindeutig, dass hier ein Kultist 👤 hausen muss. Doch fehlt jede Spur des Enttarten. Hinter ein großen Vase vor dem Haus versteckt, wartet {1} auf den erst am Morgen zurückkehrenden Kultisten. Was dieser in der Nacht getrieben hat, lässt {1} zwar erschaudern, kann ihn aber nicht daran hindern, sich von hinten zu nähern und das Dorf um eine weitere Person zu dezimieren.</value>
@@ -1469,8 +1468,194 @@
     <value>Was, ich soll dich nicht mehr für {0} erinnern? Oh, die Gruppe hätte ich sowieso fast vergessen...</value>
   </string>
   <string key="HaveJoined">
-    <!-- {0} = list of people who have joined -->
-    <!-- {0} = list of people who have joined -->
-    <value>{0} vergessliche Dorfbewohner haben das Dorf in den letzten 30 Sekunden betreten.</value>
+<!-- {0} = list of people who have joined -->
+    <value>{0} betrat(en) das Dorf in den letzten 30 Sekunden und wurden vergesslich.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Kult erlauben</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Gerber erlauben</value>
+  </string>
+  <string key="AllowFool">
+    <value>Narr erlauben</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Geheimes Lynchen aktivieren</value>
+  </string>
+  <string key="RandomMode">
+    <value>Zufallsmodus aktivieren</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Erhöhen der Zeit erlauben</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Rolle beim Tod aufdecken</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Fliehen erlauben</value>
+  </string>
+  <string key="ShowIDs">
+    <value>IDs beim Beitreten anzeigen</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>IDs beim Beitreten anzeigen? Momentan: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>IDs {0}.</value>
+  </string>
+  <string key="All">
+    <value>Alle</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Willst du den Zufallsmodus aktivieren? Momentan: {0}.</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Zufallsmodus {0}.</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>NSFW-Gif-Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Spielern NSFW-Gif-Packs erlauben? Momentan: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>NSFW-Gifs {0}.</value>
+  </string>
+  <string key="TannerEnd">
+    <value>Am Morgen erwacht {0}, der einzige Überlebende, von einer ungewöhnlichen Stille. {0} tritt aus dem Haus, blickt sich um und entdeckt nur Leichen über Leichen. Als {0} plötzlich klar wird, dass nun niemand mehr übrig ist, um sein Verlangen danach, gelyncht zu werden, zu stillen, schleicht sich ein trauriges Lächeln über sein Gesicht... Der Gerber 👺 geht mit langsamem Schritt auf die Klippe zu, blickt hinab, und mit einem beherzten Sprung macht er sich auf den Weg zu den anderen Dorfbewohnern.</value>
+  </string>
+  <string key="SorcererEnd">
+    <value>Mit einer zornigen Verzweiflung blickt {0}, der Zauberer 🔮 auf die Leichen seiner Kameraden, dann auf die Leichen der Dorfbewohner. Die seines verhassten Bruders jedoch kann er mysteriöserweise nicht finden... Mit einer Wutträne im Augenwinkel wendet er sich um und geht, ohne noch einmal zurückzublicken, in den Wald, und macht sich auf die Suche nach einem neuen Rudel, das er mit seiner Kraft unterstützen kann...</value>
+  </string>
+
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+	<value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, aber du kannst mit Sicherheit sagen, dass {0} nicht {1} ist.</value>
+    <value>Eine Offenbarung! Plötzlich bist du dir ganz sicher: {0} ist nicht {1}! Leider weißt du jedoch immer noch nicht, wer du selbst bist...</value>
+    <value>Nanu? Plötzlich weißt du ganz genau: {0} ist nicht {1}! Leider musst du erst mal die Anderen davon überzeugen...</value>
+  </string>
+  <string key="AskSandman">
+    <value>Du weißt, dass du etwas tun solltest, aber muss es heute sein?</value>
+    <value>Komisch... worüber denkst du gerade nach?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Während die Dorfbewohner verwirrt auf dem Dorfplatz herumstehen, sehen sie auf einmal {0} zwischen den Häusern herumschleichen und Sand 💤 aus einem roten Samtbeutel verstreuen. Einen Moment lang schauen sie verwundert zu, dann wenden sie sich wieder wichtigeren Dingen zu und haben den kleinen Zwischenfall nur Momente später bereits vergessen.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Mit müden Gliedern schleppen sich die Dorfbewohner in ihre Häuser. Bevor ihnen bewusst wird, wie ihnen geschieht, sacken sie an Ort und Stelle zusammen und fallen ausnahmslos in einen tiefen, traumlosen Schlaf 💤. </value>
+  </string>
+  
+  <string key="AllowThiefQ">
+    <value>Möchtest du den Dieb als Rolle zulassen?\nAktuell: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Einstellung für den Dieb: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Soll der Dieb jede Nacht eine Rolle stel?\nAktuell: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Der Dieb kann jede Nacht stehlen: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Dieb zulassen</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+  
+  <string key="RoleInfoWolfMan">
+    <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist!</value>
+    <value>Falls du eine besondere Fähigkeit hattest, hast du sie offenbar vergessen... aber vielleicht offenbart sie sich ja zum rechten Zeitpunkt!</value>
+    <value>Glückwunsch, du bist eine der mächtigsten Rollen im Spiel! Nur leider kennst du deine Fähigkeiten nicht, und sie sind offensichtlich eher passiver Natur. Wenn du Glück hast, werden sie sich jedoch in einem Augenblick der größten Not zur Schau stellen.</value>
+  </string>
+  <string key="WolfMan">
+    <value>der WolfMann 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Eigentlich bist du ein stinknormaler Dorfbewohner. Da du aber deine Familie und deine Herkunft vergessen hast, treibst du dich meist in den Wäldern des Dorfes rum und dein verwildertes Aussehen lässt den Seher denken, dass du zu den Wölfen gehörst. Wenn du das nicht bald wieder vergessen hättest, könnte man fast Mitleid haben mit deinem harten Schicksal.</value>
+  </string>
+  
+  <string key="RoleInfoLycan">
+	<value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
+    <value>Du scheinst eine Schlafstörung zu haben... oder warum brennt um kurz nach Mitternacht noch Licht in deinem Haus? Und was viel wichtiger ist, was zur Hölle treibst du da?</value>
+    <value>Tagsüber wirkst du auf deine Mitmenschen wie ein ganz normaler Dorfbewohner, doch nur des Nachts entpuppt sich deine wahre Gestalt! Leider klingt das sehr viel weniger gruselig, wenn du vergessen hast, worin deine Macht besteht...</value>
+  </string>
+  <string key="Lycan">
+    <value>der Lykan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>In der Nacht bist du ein Wolf wie deine flauschigen Kumpanen, aber tagsüber entfällt dir das meist und du mischst dich wie ein braver Bürger unters Volk. Vielleicht ist der Seher deshalb verwirrt, wenn er dich untersucht und hält dich dementsprechend für einen normalen Dorfbewohner.</value>
+  </string>
+  
+  <string key="RoleInfoOracle">
+    <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
+    <value>Du scheinst eine Schlafstörung zu haben... oder warum brennt um kurz nach Mitternacht noch Licht in deinem Haus? Und was viel wichtiger ist, was zur Hölle treibst du da?</value>
+    <value>Tagsüber wirkst du auf deine Mitmenschen wie ein ganz normaler Dorfbewohner, doch nur des Nachts entpuppt sich deine wahre Gestalt! Leider klingt das sehr viel weniger gruselig, wenn du vergessen hast, worin deine Macht besteht...</value>
+   </string>
+  <string key="Oracle">
+    <value>das Orakel 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Vor langer Zeit warst du einmal ein aufstrebender Stern in der Seher-Szene, aber das ist lange her. Deine früherigen Ambitionen und Fähigkeiten sind längst in Vergessenheit geraten. Heute begnügst du dich mit den bescheideneren Gebieten der Magie. Du kannst lediglich nachts feststellen, ob ein Spieler deiner Wahl eine gewisse Rolle - die sich aber mit Sicherheit im Spiel befindet - nicht hat.</value>
+  </string>
+  
+  <string key="RoleInfoSandman">
+    <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
+    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (Warte, kann das nicht jeder?)</value>
+    <value>Seltsam... alle deine Erinnerungen sind verschwunden... was mag nur deine Rolle sein? Du weißt nur noch, dass du dich tagsüber immer besonders energiegeladen gefühlt hast...</value>
+  </string>
+  <string key="Sandman">
+    <value>der Sandmann 💤</value>
+  </string>
+<string key="AboutSandman">
+    <value> Du bist der Sandmann 💤 - oder zumindest wirst du im Dorf so genannt, wegen der riesigen Sandgrube hinter deinem Haus, welche du von deinem Grossvater geerbt hast. Er hat dir auch beigebracht, wie du den Sand im Dorf verteilst, sodass alle in der Nacht besonders tief schlafen, ob sie wollen oder nicht. Warum der Trick funktioniert hast du allerdings vergessen... Unglücklicherweise gehen deine Vorräte jedoch bald zuneige, deswegen kannst du nur einmal pro Spiel streuen. Zumindest hört sich das besser an, als zu sagen, dass du zu vergesslich bist, mehr als einmal daran zu denken.</value>
+  </string>
+  
+  <!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>der Pazifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>der Dorfälteste 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>der Dieb 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
   </string>
 </strings>
+

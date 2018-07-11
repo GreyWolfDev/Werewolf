@@ -4,9 +4,13 @@
   <string key="NotInGame">
     <value>👇❌🎮❗️</value>
   </string>
-  <string key="PlayerStartedGame" isgif="true">
-    <value>{0} 🆕🎮❗️ /join 👇🎮</value>
-    <value>{0} 🆕🎮❗️ /join 👇🍝</value>
+  <string key="PlayerStartedGame">
+    <value>{0} 🆕🎮❗️ Join 👇🎮</value>
+    <value>{0} 🆕🎮❗️ Join 👇🍝</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} 🆕🌘🎮❗️ Join 👇🎮</value>
+    <value>{0} 🆕🌘🎮❗️ Join 👇🍝</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
     <value>{0} 🆕🌘🎮❗️ /join 👇🎮</value>
@@ -19,10 +23,10 @@
     <value>👇🎮✔️❗️</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>1️⃣🕚 /join</value>
+    <value>1️⃣🕚 join</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} ⏱ /join</value>
+    <value>{0} ⏱ join</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>🙂❌❗️🎮❌❗️</value>
@@ -40,7 +44,7 @@
     <value>👥👥👥👥🔆❗️👇🎮❌❗️</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} 🎮❗️ {1} 🎮 {2} 🔅 {3} 🔆. /join 👇🎮</value>
+    <value>{0} 🎮❗️ {1} 🎮 {2} 🔅  {3} 🔆. Join 👇🎮</value>
   </string>
   <string key="PMTheBot">
     <value>{0} click this: {1}, then click start.  Until you do, I cannot tell you what your role is.</value>
@@ -473,7 +477,7 @@
     <value>🚶🚶🚶🚶 {0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @werewolfdev for more information</value>
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
   </string>
   <string key="MaxGames">
     <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
@@ -795,7 +799,7 @@
     <value>You must start a game from within a group chat!</value>
   </string>
   <string key="PingInfo">
-    <value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
   </string>
   <string key="WhatLang">
     <value>What Language?\nCurrent: {0}</value>
@@ -1186,12 +1190,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>🕒 ➕ {0} ⏱❕\n{1} 🕒 /join</value>
+    <value>🕒 ➕ {0} ⏱❕\n{1} 🕒 Join!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>🕒 ➖ {0} ⏱❕\n{1} 🕒 /join</value>
+     <value>🕒 ➖ {0} ⏱❕\n{1} 🕒  Join!</value>
   </string>
   <string key="CantExtend">
     <value>⛔❕🔨 🚫❕</value>
@@ -1220,7 +1224,7 @@
   </string>
   
   <string key="JoinByButton">
-    <value>🚫/join, 👇</value>
+    <value>🚫/.join, 👇</value>
   </string>
   <string key="PlayerVoteCounts">
     <value>{0} 🙋, {1} 👱.</value>
@@ -1235,4 +1239,318 @@
   <string key="NotMember">
     <value>Before you can join the game, you need to join the group {0}!</value>
   </string>
+  <string key="NoAutoJoin">
+    <value>{0}, 👇🚫🎮❕</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>🚫💬👇❕ {0}.</value>
+  </string>
+  <string key="HaveJoined">
+<!-- {0} = list of people who have joined -->
+    <value>{0} 🚶🎮⬅3⃣0⃣⏱.</value>
+  </string>
+  <string key="AllowCult">
+    <value>👤❓</value>
+  </string>
+  <string key="AllowTanner">
+    <value>👺❓</value>
+  </string>
+  <string key="AllowFool">
+    <value>🃏❓</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>🤔🙋❓</value>
+  </string>
+  <string key="RandomMode">
+    <value>🔄❓</value>
+  </string>
+  <string key="AllowExtend">
+    <value>🕚➕❓</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>🙂➡️💀❓</value>
+  </string>
+  <string key="AllowFlee">
+    <value>🚶❓</value>
+  </string>
+  <string key="ShowIDs">
+    <value>IDs❓</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>IDs❓ {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>IDs {0}</value>
+  </string>
+  <string key="All">
+    <value>🌎</value>
+  </string>
+  <string key="NotMember">
+    <value>👇❌➡️{0}</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>{0} 👺❗️ 👱👱👱➡💀💀💀 🔜 👺❌🏆❗️ 👺🔜💀</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} 🔮❗️ 🐺🐺🐺➡️💀💀💀 🔜 🔮❌🏆❗️ 🔮🔜💀</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>❌❌❌</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} 💀❗️ 👇➡️❓❗️ 🤔 {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>{0} ❌➡️ {1}❗️</value>
+  </string>
+  <string key="AskSandman">
+    <value>👇🙋‍♂❓</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>👱💭👱💬👱, {0} 🎶🎶🚶🎶🎶. 🌃, 👱👱🐺🐺🔪🔜💤💤💤💤💤</value>
+  </string>
+  <string key="SandmanNight">
+    <value>👱👱👱🔜😴😴😴❗️ 🌃❗️ 👱👱🐺🐺🔪🔜💤💤💤💤💤</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>👇😀❗ 🚫️</value>
+  </string>
+  <string key="WolfMan">
+    <value>👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>👇😀❗ 🌙️</value>
+  </string>
+  <string key="Lycan">
+    <value>🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The lycan is a wolf, but will appear to be a villager to the seer</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>👇😀❗ 🌙️</value>
+  </string>
+  <string key="Oracle">
+    <value>🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>👇😀❗ ☀️️</value>
+  </string>
+  <string key="Sandman">
+    <value>💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
+  </string>
+  
+  <string key="RoleInfoPacifist">
+    <value>👇😀❗ ☀️️</value>
+  </string>
+  <string key="Pacifist">
+    <value>☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>👇😀❗ 🚫️</value>
+  </string>
+  <string key="WiseElder">
+    <value>📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>👇😀❗ 🌙️</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>👇😀❗ 🌙️</value>
+  </string>
+  <string key="Thief">
+    <value>😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>👇🙋‍♂❓</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>👱💭👱💬👱, {0} 🗣🗣🗣☮️. 👱😄👱❌🖐</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>☮️☮️☮️❗️ 👱😄👱❌🖐❗️</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>🤔 {0}❗️</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>❓➡👇❗️</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>{0} 🎯❗️ 🎯 {1} 📚❗️ {0} 😭, 🎯🔜👱💀❗️</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>{0} 🔫❗️ 🔫 {1} 📚❗️ {0} 😭, 🔫🔜👱❗️</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>🤔 {0}❗️</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>🤔 {0}❗️</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>👇➡{0}❗ 🤔</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>👇➡{1}❗ 🤔 {0}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>🤔 {0}, {1}❗</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>🤔 {0}❗</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>🤔 {0}, {1}❗</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>🤔 {0}, {1}❗</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>🤔 {0}❗</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>🤔 {0}❗</value>
+  </string>
+  <string key="AskThief">
+    <value>😀❓</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} 🖐 {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>🖐🖐🖐:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} 🖐 {1}</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>🤔 {0}❗️</value>
+  </string>
 </strings>
+
+

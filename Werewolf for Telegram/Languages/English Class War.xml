@@ -1,0 +1,1475 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="English Class War" base="English" variant="Class War" owner="TK1803" code="en"/>
+  <string key="NotInGame" deprecated="true">
+    <value>You don't appear to be in any classes right now...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a class! Join to get in on the fun... and probably die :P</value>
+    <value>A new class has been started by {0}! Join to get killed!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} has started a chaos class! Join to get in on the fun... and probably die :P</value>
+    <value>A new chaos game has been started by {0}! Join to get killed!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>You can't join now! The class has already started, try again through the exams next year :P.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>You've already joined the best class!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute left to Join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to Join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Too many people skipped this lesson, cancelling round!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Class is starting, please wait while I assign roles and update the database. If you're playing this in class... all I can say is "OH THE IRONY"</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, please change your name to join</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, max player limit has been reached!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  You may not join the game until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't run away! YOU'RE DEAD!  Get back in the ground... jeez!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} has fled in terror!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} classmates remain.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be playing...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a classmate by that name!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} has voted to kill {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} has voted to expel {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} has not voted for 2 nights in a row.  The forces of good have seen this as a terrible crime, and {0} suddenly falls, dead. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>You traitor from another class!!! You are now the teacher's lackey...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nThe all seeing eye is {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} was the all seeing eye. As the apprentice, you step up to become the new all seeing eye.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} was an apprentice, and has now stepped up to fill {1}'s place as the new all seeing eye.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>You see {0} is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to expel?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to interrogate?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Who do you want to attack? {0} attacks(s) remain.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Who do you want to spy on?</value>
+  </string>
+  <string key="AskSee">
+    <value>Whose role do you want to take a look at?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to guard?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to attack with school notes?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who do you want to hunt?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who is your role model?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to convert to your order?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are a killer at heart. You spend your nights pouring over torture books and planning ways to kill people. But that's just a fantasy you have. You are a normal student of the class at this time, but if the tutor's lackeys choose to kill you, you will realize that killing is much more fun than imagining it and you'll become a tutor's lackey yourself. Turning against your own classmates and somehow ALWAYS killing the blur block in the process. Poor blur guy.  😾</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are the class detective. Through your years of constantly working your mind, you have understood the ways humans process information and you can spot a liar at first glance. You have the ability to sieve through all sorts of information that is given to you.  During the day, you may choose to ask a player questions.  However - in doing so, your role could be revealed to the tutor's lackeys! (40% chance) 🕵 </value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Congrats! You're the most confused student in class! You never know what is going on and tbh you just seem to be stumbling around life without much of a goal in mind. (you don't admit it, but everyone knows it...) 🍻 </value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are the Eternal Guardian of the class. You are a scholar who has been blessed with a great scientific mind and you never fear to use your knowledge to help and protect those around you. Each night, you may choose a player to save.  However, if you choose the class killer, there is a 50% chance you will die. 👼 </value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are the great martial artist. After going through a harsh training regimen and studying the art of fighting, you have mastered the hidden arts of slaying wild beasts, but each time you attack another person, you lose a bit of your strength, hence you can only attack twice.  During the day, you may choose to attack and use your special secret martial art moves on another player. Everyone will hear the fight, and know you are the great fighter (not the tutor's lackey). 🔫 </value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You are the class spy, a highly well trained agent who is able to speak German very well cause all spies have the ability to speak more than one language. You have been dispatched by the class to crack down on the teacher who has been causing everyone so much pain and misery. Equipped with many hgih tech gears, you are able to break in and enter anyone's house that you please. During the night, you may choose to stalk and check up upon another player, to verify that they are not the tutor's lackey.  However--if you visit the tutor's lackey, or check up on someone killed by the tutor's lackey, you will die.  If you do go to check though, and the tutor's lackey tries to kill you at your home, you will survive. 💋 </value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Traitor!! You have come to break up the class! Originally you were from a different class, but for now, you are disguised as a student of the class. You do not wish to reveal yourself so soon just in case your are prematurely expelled from the class, thus you are waiting for the perfect time to transform into the teacher's lackey to destroy the class. Once all the tutor's lackeys die, you will become the tutor's lackey yourself.  If the all seeing eye looks to you, you may or may not be identified as the tutor's lackey. 🖕 </value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>YOU ARE THE TUTOR'S LACKEY!! XDD (good on ya, you'll be acing all your class tests from now on) After being "convinced" by the teacher that you cannot score good grades without him, you have subscribed yourself to worship your teacher and will do everything in your power to either take down the class from the inside or convert even more students to become the teacher's lackey. Each night you can choose to kill someone with the power granted to you by your civics tutor to whack another person to death with your class notes. 🐺 </value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You are the the all seeing eye. You have gained the powers to see into your classmates minds. Well... not really see into their minds per se, you just judge them for who they are and see their roles. Each night, you may choose a player to 'evaluate', and reveal their role. 👳 </value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >You are a student of this class, literally the greatest class in the world! You have fought to get here and now you are going to survive these 2 hectic years. Fight and survive. Do not give in! Stay bonded and stay true to ensure that we stay at the peak of our game. 👱</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are the happy tanner. If you get expelled, you win automatically! You are growing tired of the school life and you want out, at the same time you wish to be the center of attention as well, so what is the easiest way out other than getting expelled? (The happy tanner thrives on being given attention, if you were to expel the happy tanner, you would be giving her all the attention that she ever craved for, which would allow her to achieve her aim.)  👺 </value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You are a mad idol chaser! You used to be crazy about different idol groups in the past, but now after entering the class you've had another idol set in mind, that idol is one of your classmates! If the idol were to ever die, you would go crazy and become the tutor's lackey yourself, succumbing to studying under that teacher forever... Pick a player to be your 'role model' - if they die, you become the tutor's lackey. 👶 </value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are the class instagram stalker. Normal people spend at most 1 to 2 hours on instagram, whereas you spend more than half a day on it, stalking every single person from the class. You have memories of every single picture uploaded and every single caption and comment posted, from these data you have gathered and identified the real all seeing eye!( What a lousy stalker) 👁 </value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Congratulations on becoming accepted as an apprentice of the great all seeing eye. You have been bestowed with great powers, just that instead of the power of magic, you have the power of judging others as inherited from your master (or you close friend in this case). If the (real) all seeing eye dies you will seek vengence for your poor all seeing eye friend and convince others to destroy the evil doers, you will take their place as the new all seeing eye. 🙇 </value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >You are a part of the most exclusive club. Usually schools have after school clubs, but this club is different. This club aims to make the life of everyone around them as miserable as possible. Your group is highly exclusive, more exclusive than most clubs and you seek to crush all those who are not part of your club, seeking to exclude others from your gang. However, what is the use of only having a small club? You have your eyes on the prize and wish to convert everyone into joing your club! Every night, you may choose a player to convert to your club. If all remaining living players at the end are part of your club, they win. 👤 </value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >You are the Act rep aka the person who is in charge of class welfare together with other things. Your aim is to ensure that the class is bonded without having anyone being ostracized. Thus you have to try to stop the after school club in class from becoming too exclusive.  Each night, choose a player.  If they are part of the club, they will be expelled for ostracizing another student.  If the club tries to convert you, the club's newest member will leave the club. 💂 </value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Dusk draws near, and the class gathers to decide who they are expelling this evening...
+      Everyone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >It is now morning, time to go to school.  All of you have {0} seconds to make your accusations, defenses, or just talk.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >It is now night time.  Everyone heads home, weary after another stressful day.  night players: you have {0} seconds use your actions!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >The class has cast their votes, amid doubts and suspicions. {0} is dead. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Unable to come up with a proper decision on who to expel, the class returns to their homes for the night, frustrated...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Something is fishy, for no one voted!  No mob this this time round...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >The class gather in the morning, but do not see {0}.  They wander over to the classroom, to find {0} disemboweled, the School Counsellor badge shoved down their throat.  Beside him lay a copy of English notes about the topic of Arts. The original spark of genius is now gone... You've lost your detective...</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Morning comes, and to everyone's dismay, impaled on top of the school's crest is {0}, the class angel and scholar... You have lost the smartest in your class, no more will you be saved by her when you are attacked... What a terrible loss... </value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >As everyone comes out of the class, they find blood stains across all the walls, before seeing the body of {0}, lying dead on the classroom floor, dead after being attacked by a pack of crazed tutor's lackeys. Not even the martial artist could handle a whole group of such lackeys... May his German fighting style rest in peace with him. You have lost your martial artist.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >The class awake in the morning, to find the disemboweled remains of {0} hunched over a pile of books. The books that once contained all of the all seeing eye's thoughts on everyone, now ripped to shreds. One of the stray notes read "this guy is too fat...". One of your last hopes has been slain. The all seeing eye is dead.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Everyone wakes to the smell of burning notes and wood...  the concourse is on fire!  After putting the fire out, the remains of {0} are found, torn apart. So much for always staying in the concourse, no where is safe. </value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >As the sun rises above the school, the class finds the corpse of {0} sitting over a pack of tuition foolscap papers. His whole room full of conspiracy theories that are all clearly fake. WHAT A FOOL!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>A noticeable glow is coming from {0}'s classroom...  the class inspects it to find a broken phone lying in front of the teacher's table. A club member has been removed from the club!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >The class gather the next morning in the hall, to sighs of relief - it appears there was no attack the previous night.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >You have been killed by the tutor's lackeys.  As you are the sadist, you have finally tasted what it is like to kill another person and thus you have now become the tutor's lackey!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Your other tutor's lackeys(s): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} was attacked... but she is the cursed class sadist, and became a one of your tutor's lackeys! Congrats on your new teammate!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Oh no! The tutor's lackeys has converted you. Your loyalty now lies with the teacher... all you can say is a constant string of mathematical equations such as "The squared of seven is forty-nine..."</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >Oh no! {0} is the blur block! Now you have become just as blur as him, and can't attack tomorrow night... What a idiot! </value>
+  </string>
+  <string key="GuardWolf" >
+    <value >You tried to guard the tutor's lackey! The lackey has killed you with his economics Book 8 Inflation notes.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >You have saved {0}'s life by using all your smarts!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} was not attacked, so you didn't do much of anything. Try harder next time...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>You went to guard {0}, but they weren't in class!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >The class scholar was watching over you last night and fought off an attacker! Lucky you!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >The class spy chose the wrong night to stay home. {0} has been attacked by the tutor's lackeys! The house was painted with blood, or was it the red ink of the teacher's pen? Who knows?</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Odd... {0} was not home! No attacks for you tonight...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >You slip into {0}'s house for a recon mission to seek out the tutor's lackeys, only to be confronted by an actual crazed teacher's lackey. You were not prepared for this and sadly you died. Your sacrifice will be remembered... </value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >{0} checked in the wrong house last night! {0}'s  remains are found pinned to the class doors with an iron rod...  how sad :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} slips into {1}'s house, ready to begin their recon mission. Instead, {0} finds the tutor's lackey smacking {1} using his economics books 1 to 10!  The tutor's lackey quickly turns on {0} and starts attacking while reciting the reasons for a change in price elasticity...  {0} is dead.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >You see {0} is not the teacher's lackey, as you had a perfect recon mission without any major problems!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night you saw a flash of light from the end of the corridor.  A silhouette runs past and you are too scared to go and check out who it is. All you know is that you're alive... </value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >You caught {0} snooping and asking really weird questions! All your senses are tingling... That must be the detective!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Your snooping has shown you that {0} is {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Looks like {0} messed up during their practice session! An extremely heavy punch hit the class spy... {1} is dead.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Suddenly, the sound of a thunderous kick rings out.  The class turns to see {0} standing over {1}'s body, still in a fighting stance. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >Civics tutor's team has won!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >The civics tutor's team has won!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >The class has won!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Oh no! You expelled the happy tanner! The Tanner wins the game, silly. She has gotten all the attention she needed. Y'all suck.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living players, roles, and team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} has voted to convert {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} was sent to do your dirty work, and convert {1}... however, they were the Act rep! {0} is dead!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} came to your house last night, ready to convert you....  but you shoved your smashed their phone onto the ground, preventing them from being able to convert more people.  A club member is has been rendered useless... {1} remain!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>The club has converted you to their order!  You are now part of the club.  Every other night, you will have a chance to convert another player.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Club members: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} has joined the club!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >All the teacher's lackeys have died, and the only people left standing have joined the club...  The club has won! The club has become so exclusive that everyone else in the school had been excluded!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>You went to hunt {0}, but they are already dead!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>You go into {0}'s house and find them sending text messages to their club to further exclude the rest of the class. You quickly slap the phone to the ground, ending his ability to further communicate with his club. Without his phone, just as any other Millennial would, he has lost his will to fight.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>You go to {0}'s house, but there is no vigorous texting. You return home, convinced that {0} is not a part of the club.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}'s role model just died!  In their rage, they have become the tutor's lackey delegating their lives to the teacher!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} has died! In your rage, you have become the tutor's lackey! Your new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>student 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>the blur block 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Class spy 💋</value>
+  </string>
+  <string key="Seer">
+    <value>the all seeing eye 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>the Traitor from a different class 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Class scholar - your eternal guardian👼</value>
+  </string>
+  <string key="Detective">
+    <value>the Detective🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>The tutor's lackey 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>the Cursed class sadist 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>the Martial Artist 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>the Happy Tanner 👺</value>
+  </string>
+  <string key="Fool">
+    <value>the Fool 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>the star struck classmate 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Instagram stalker 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>all seeing eye's apprentice 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>a club member 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>the ACT rep 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Ran away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Dead</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Alive</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Players Alive</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>a Werewolf telegram user 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are part of the werewolf bot gamers in class. This telegram group that you have formed allows you to be in contact with others at the touch of a button, thus allowing you to know the name of every other person who is playing werewolf too. Hence if there are any other gamers, you will know who they are.  Otherwise, you are a normal forever alone student who is the only one using telegram in class (but honestly who can be considered normal?). 👷 </value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>As everyone rises, they find the body of {0} shoved into the stone tables, blood splattered everywhere. You all will have one less member to play werewolf with Oh no! One of your werewolf players has died!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The gamers are: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of tutors members notes snagged on the doorway...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>The pack of teacher's lackeys heads to {0}'s house to physically convince them that econs is the best subject in the world, but they are met by a tall dark figure. The class scholar fights everyone off, using all her complex mathematical equations and her excellent grades in all her sciences, she leaves you ashamed at your own pathetic grades. You head back defeated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>You send {0} to try to convert {1}, however their belief was too strong they loved the class way too much, and you were unable to convert them :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>You slipped into {0}'s house for a bit of recon... but as you are leaving, you happen to notice a room with a strange glowing coming from it, together with vigorous typing...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Everyone wakes up in the morning, and notices that {0} is not around...   They check the house to find the remains of {0}.</value>
+    <value>As the class gathers as the sun rises, the find the remains of {0}, who died somehow last night...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Odd.... {0} didn't show up for the werewolf game this morning... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>is dead</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>You are already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No one has the power judging others this round!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You are the class shit stirrer. You have been given the role of causing trouble within the class by claiming that 2 classmates are in love. You will slowly start to convince the class of the relationship that these two individuals have, making them awkward whenever they meet each other... MUAHAHAHAHA. Sent to Earth with only instagram, an active wifi connection and a brand new phone, you get to choose two players to love each other for eternity (or just ship them together till the end of time). If one of them dies, the other one dies of sorrow (all because you shipped them together, I hope you can sleep at night you shit stirrer). 🏹 </value>
+  </string> 
+  <string key="RoleInfoDoppelganger">
+    <value>You are the one and only vampire left alive, living within the class. You always had that weird habit of biting people for no good reason... weird... AND honestly some would say that your canines are larger than they should be... Legend has it that your ancestors were all vampires surviving by sucking the blood of living humans. However somehow along the way you attained some new evolutionary trait that allows you to transform into the role of the person whose blood you have drank. The only cache is that the person needs to die first. Choose a player, when that player dies, you will take on their role. 🎭 </value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are the class guitarist. Most of the time you are in love with your guitar, performing whenever you get the chance to do so. However due to hearing about how people wanted to do the class harm, you chose to arm your guitar with explosives of all things to protect. You do not sleep well due to always being one of the first to die every single time and you're getting really pissed off about it. In order to change your own fate, you always have your explosive guitar with you cause which guitar soloist doesn't like to go out with a BANG?! If you die, you can choose someone else to kill. If you are attacked, you have a chance to take one teacher's lackey down, but will not be able to choose a player to kill. 🎯 </value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are the insane student of the class, the cold blooded killer of yesteryear. Despite being a cold blooded killer, you are excellent at art too, which means all your kills will always be in the form of a grotesque art work. You were driven mad by the exams that were set by the school and now you are out for revenge. Recently escaped from the mental ward, your goal is for everyone else to die. Every night, you can add a classmate's body to your art collection. 🔪 </value>
+  </string>
+  <string key="CupidChosen">
+    <value>You have been struck by the shit stirrer's instagram post. {0}'s memory will never fade in your heart (because everyone will continuously tease you about this fake instagram post). If one of you dies, the other one will die out of sorrow. If one of you wins, the other one wins too.</value>
+    <value>The shit stirrer's instagram post has struck you! You are not madly in love with {0} but because of the social pressure you have to be! If they die, you will die too. If one of you two wins, you will both win.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The class has chosen to expel you! This is your last chance, choose to blow up spectacularly someone as you go down!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} looks back at the class one last time, deciding whether he should do anything for the class before his departure, but he refused to do anything, "If the class detests me so, so be it. They don't need my help" with that he left without another word...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} whips out their remote control bomb and looks at the crowd... and cannot make a decision on who to blow up. He just turns around and walks off, praying that the class will one day be able to expel the right person "May all of you survive, and good luck!" </value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>As the class starts lifting their brooms to chase you, {0} whips out a remote control for a guitar bomb, with a click, {1} is blown up in a fireball as the class chased him out! {1} falls over, dead.  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You've been murdered!  In your last moments, you have the chance to blow up someone using your guitar... make it quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>The blow to {0} was too much, so much that they couldn't even reach for their remote bomb, as they lay in a pool of blood...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>As {0} lays there, gasping for their final breaths, they can't decide who to blow up... and accept their fate.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Dying, {0} falls to the ground.... but not without grasping their guitar bomb remote control, and blowing up {1}, causing his body parts to fly everywhere. Nasty. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>The tutor's lackeys tried to attack the guitarist last night, but the poor guitarist had enough of their crap of always killing him so early in the game was able to blow them up with him as he died! {0} has died (wolf)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>The wolf tried to attack the guitarist last night, but the guitarist had finally lost his marbles and blew the tutor's lackeys {0} up with his guitar bomb! Talk about ending off with a blast!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The tutor's lackeys attempted to have a nice late night snack, but were instead greeted by a crazed class killer! Slicing and dicing till all was left was tutor's lackey sushi... All that remained was a gruesome statue made with bones of the lackeys. {0} was killed in the fight!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>It seemed a quiet enough night for {0}, but they were wrong.  The class gathers in the morning to find {0} innards become his "outnards". Beside the body, the words "Inside Out" were written in red. The class killer has struck again making a messy artwork out of her kills again! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>You tried to collect {0}'s body for your art collection, but you were fought off by the class scholar! Clearly you should have studied harder during physics as you would have realized that you would have needed a lot more force to stab through her armour! No kill for you tonight...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The club sends {0} to try to convert {1}, but instead a bomb is heard and {0}'s body comes flying out of the window! {0} is dead... You really should NOT try to convert a guy with a bomb to join your club...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>The club sends {0} to try to convert {1}, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
+    <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! Beside the body, the organs were used to make aa smiley face - another disgusting artwork by the class killer. {0} is dead D:</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You tried to guard the class killer, but they came out and stabbed you 49 times! The killer carved out the school crest onto your body, at least now you will be remembered for all the labour that you have put into saving the class. Alas it sadly amounted to nothing. You are dead....</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>You slip into {0}'s house, and start your recon mission.  All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac! You slowly lose consciousness and as you do, you hear the killer mutter, "don't worry, you will become a fantastic artwork..." You have died....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>The class sees {0}'s body, lying dead in the hall with countless stab wounds. Her arms were tied behind her back and the word "SPY" was seared onto her skin, another cruel attempt by the killer to create an artwork. {0} is dead.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>The vampire {0} has now slid into the werewolf group and has become a gamer just like you!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} has died, and you transform into a class werewolf gamer.  Your teammates (if any) are: {1}. Now you will be able to escape boring lessons by playing werewolf!</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>The vampire {0} has now become a club member, just like you! What an exclusive vampire!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a club member.  Your teammates (if any) are: {1}. </value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>The vampire {0} has now become the tutor's lackey, just like you! She still gets to bite and attack people even as a lackey so there's not much change. Oh well...</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you immediately take the chance to bite them. you slowly start to transform into the tutor's lackey.  Your teammates (if any) are: {1}. The entire chapter of physics thermodynamics has flooded your mind. You are ready to kill more people and spread the of being a teacher's lackey.</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>The only person left standing is the class killer! She won! As she walked around the empty school, she looked upon all her artworks and grinned maniacally. Her laughter echoed before all went quiet..</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to kill and make an artwork of tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>With {0}'s dying breath, {1} rushes over and falls, crying.  They cannot stand the loss of their loved one, and kill themselves with the nearest penknife they can find. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Whose blood do you want to suck if they die?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who do you want the lovers to be? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who do you want the lovers to be? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>The guitarist hunter 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Shit Stirrer 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Class killer 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the Vampire 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>You have become the star struck one. You role model is {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>True love endures! The lovers have won!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>In the middle of the town square, everyone finds the body of {0}, missing many body parts from an explosion. Looks like they tried to sneak up on the guitarist! Well, {1}  sure had a blasting good time.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A hooded figure tried to convert you to their club, but your faith in your class was too strong. Class camaraderie will always triumph!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}. I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A new game is starting in {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Morning comes, and the remaining two classmates walk out to the town square. {0} takes a look at {1}, gets a big grin on their face, pulls out a knife, and takes {1} out. The class killer has triumphed and one last statue was added to her collection... </value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Everyone in the class has died... there's nothing but bodies left. No one wins this round, except the vultures... How tragic...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>As the sun rises, {0} and {1} walk out into the hall. {0} pulls out their knife, and jumps at {1}. However due to being highly paranoid, {1} instinctively reacts and whacks her with a guitar before setting up the detonation device, causing the bombs to go off in {0}'s face. As {0} falls from the blast, she hurls the knife at the guitarist, plunging the knife deep into {1}. Both are dead, the school is empty, there is no winner... Can't there ever be peace?</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>You failed to make a choice so the moderator has chosen for you: {0} (concentrate on the game don't be half hearted either listen to your teacher teaching or play this game...)</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. You are part of the class and will do everything in your ability to ensure that the class survives. Each day, you will have a chance to lynch the tutor's lackey.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the all seeing eye. You may not seem very outspoken and do not seem to be very into any of the class discussions, but unbeknownst to many you have the uncanny ability to judge a person highly accurately (Yes you judge books by their cover, how do you feel now? - :P). Each night, you may choose a player, and know highly accurately what their role is. Admit to your role wisely: If you reveal you are the the all seeing eye, the tutor's lackeys will try to kill you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill!\nNote: If you attack the sadist, they will become the tutor's lackey like yourself! Hooray friends!\nIf you attack the blur block, you yourself will become blur, and will be unable to do the next attack as you sleep off your hangover! (Usually, this means you can't attack the following night, but if the cute tutor's lackey was killed and the blur block was your first choice, you won't be able to kill the second player, and you will still be able to attack the following night.) </value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the class spy you will be given the chance to 'visit' and check up on another player each night. If they are not the tutor's lackey, you will be told so (because you live!). If you visit the tutor's lackey, you will be killed. If you visit the player the tutor's lackeys have chosen to kill, you will be killed as well. However - If you are visiting a player, and the tutor's lackeys choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You blur block! As the blur one, you are still just a student of the class. BUT! If the tutor's lackeys kill you, they will become disabled for the next kill, as they become very blur off your insanely high blurness.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed sadist, you are a sadist constantly dreaming up new ways to torture and attack others, however your fantasy becomes a reality when the tutor's lackeys kill you. Once they do, you will become the tutor's lackey as well! Free to hunt in the night... XD and you pretty much can kill anyone, including the class blur kid. Poor blur block</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard from a different class, jealous of the best class in the school. You have come into this class to break the class apart! If you survive long enough for all the tutor's lackeys to die, you will become the tutor's lackey, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the eternal guardian - the class scholar! You aim to ensure that everyone is safe and sound regardless of whatever happens. A true good samaritan and highly intelligent. Each night, you may choose a player to watch over. Be careful however - if you choose to watch over the tutor's lackey, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You are pretty much close enough to the real life Sherlock Holmes. Each day, you will have the chance to investigate another player and ask them seemingly innocent questions during your game of 'Undercover'. Use this carefully however, for these is a 40% chance the tutor's lackeys will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>You are a skilled martial artist. You have trained and gone through numerous battles, making you a lethal fighter. You have learnt the ways of being a true martial artist and you have the ability to slay even wild beasts. As the martial artist, you are given 2 times to decide who are the tutor's lackeys and attack them at the beginning of the game. Each day, you will have the chance to whack another player. Once you do, everyone will know you are the great fighter! Be careful though, you only have 2 attempts!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Happy tanner's goal is simple: Get Expelled. If the happy tanner gets expelled, she wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>The fool is told they are the all seeing eye.... when they choose to reveal someone's role at night, they are told a random role. Well a mad guess is all it is...</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a club member, it is your goal to convert all other players (except wolves) to your club. If at the end of the game, all living players are club members - the club wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to break the club. If the club attacks you, their newest member will lose their phones and become useless. Each night you may pick a player to 'hunt' - if they are club members, they will leave the club from being admonished by you.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become the tutor's lackey.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal student. However, if the all seeing eye dies, you will become the new all seeing eye</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the all seeing eye is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A werewolf gamer's job is simple - they automatically know who the other gamers are. Otherwise, they are a simple student.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      You are the vampire *DUN DUN DUN*... you come from a long line of vampires each of them sucking blood to survive. However in the recent years you have discovered that if you suck the blood of a dying person you will be able to absorb their life power and you can transform into them. You can pick a player at the start of the game and if that player dies, you will become what they were.
+      Note: If the player was converted to club, you will take on their original role. All other normal rules apply: If they were star struck and their role model died, you will become the tutor's lackey. Otherwise, you will inherit their role model.
+      The club cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the vampire can NOT win unless they have transformed. If at the end of the game, the vampire is still the same, they lose cause you die after starving from the lack of blood. (exception: lover cause love is the strongest force out there. Ha made you cringe)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. Armed with the world's most hyper active mind and the most lacklustre attitude your aim is to make the life of those shipped together as painful as possible. As the shit stirrer, you will choose two players at the start of the game. These two players will forced to be madly in love! All you use is a single rumour and poof an entire new ship will happen!  If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (class + tutor's team), and one team wins (tutor's team), the lover (class student) wins as well. TL;DR if at least one of the lovers was on the winning team, they both win together.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      As good a demolitions expert as he is a guitarist. As this expert, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you just welcome them with a fireball to the face. If the tutor's lackeys attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to blow up someone as you die.
+      Note: For tutor's lackey attacks, the chance starts at 30%. If there is one tutor's lackey, the guitarist has a 30% chance to kill the tutor's lackey (and survive). For each additional tutor's lackey, add 20% (2 tutor's lackeys = 50%, 3 = 70%, etc). However - if there are multiple tutor's lackeys, while you may kill one of them, you will still be outnumbered and killed.
+      If the club tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. It's time to rewield your weapons and wreck havoc on the world. Back to business as usual - killing and art! Class killer is a lone player, on their own team. She can win only if they are the last player alive (exception: lovers). As the class killer, you can kill ANYONE - tutor's lackeys, demolitions experts, martial artists, guardians, whatever. If the tutor's lackeys try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with tutor's lackeys too long....Messing with tutor's lackeys is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow happy tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Happy tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow club as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>club as a role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Vote?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret expel set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>You are the the class CT rep aka the one in charge of the class, brave and courageous, willing to take it upon yourself to ensure that the class will stay bonded AND ALIVE. The class has bestowed upon you their trust and their faith and you will do everything in your power to ensure that you do not let your classmates down. Your vote during the expelling will count twice, once you have revealed yourself. You are on the class team. 🎖 </value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are secretly the richest in class, escaping from your boring, pampered life by spending the day with these peasants. After being surrounded by nothing but cash for so long, you realized that life would be so much more interesting within a loving caring class. The only problem was that you came to the class at the wrong time - when the class was fighting for their survival. If they try to expel you, they realize their error, and no one will be expelled. Cause they prefer getting bribed than expelling you. 👑 </value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are the class idiot. You are so clumsy that there was once you brought your younger sibling's bag to school instead of your own. No one really knows what goes on in your mind but to be honest, let's admit it, nothing really goes through your mind in the first place. You’ll try to vote, but there is a 50% chance you’ll vote for someone else other than you intended instead. You’re still on the class team though. 🤕 </value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are the quiet evil one in class, allying yourself with creatures of the night, secretly plotting to rule the world. You have had enough of your own class, realizing that you would rather have the class dead than alive. It's not really the class's fault, it's just that you have an ambition to take over the world. What better place to start off than inside your own class! At night you will use your power to find the tutor's lackeys or the all seing eye. You win only if the tutor's lackeys win. Enjoy helping snuff out those miserable students. 🔮 </value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are one of the class singers. Over the years you have trained to sing, winning the hearts of everyone around you. Once you have a mic in your hand, you will be able to blow everyone away with your sweet voice. You have the ability to sing and once you serenade the class with your smooth melodious voice you will be able to calm the tutor's lackeys down, enough to prevent the tutor's lackeys from attacking for one night. During the day, you can choose to turn on your mic and start singing. Other than that, you are a student. ⚒ </value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are civics tutor of the class; the bringer of terror, the marker marksman. Originally you were a loving caring teacher, but after seeing all the crappy answers that your class has given you for the essay on macroeconomic policies, you lost it. Your markers are the cause of the curse that turns students into mindless tutor's machines and your lackeys, able to write out the entire explanation for market failure within 4 mins. Each night, you will choose a student to attack and kill, but as long as you are alive, your victim has a 20% chance of turning into your lackey. ⚡️ </value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the most popular guy in class; adored by your class and your tutor's lackeys too... That's right you are the tutor's lackey! You are a fantastic gentleman, causing everyone to swoon over you. However at the end of the day sadly, you are still a tutor's lackey. The teacher has secretlt offered you some benefits and you had instantly been bought over by him! Like other tutor's lackeys, you will choose a student to attack and kill every night. If you happen to be killed, your tutor's lackey pack will fly into a rage and attack two people the next night. You’ll still be dead though. 🐶 </value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the class begins to chase {0} out of the school, they say “Wait! I am the richest in class! These wads of cash and my 20 different houses prove it. Every night my Bailey is always with me. So I cannot be evil.” Feeling foolish, the class sheepishly retire for the night.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to look at {0}, but can't quite judge their true role.  They are not the tutor's lackey or the all seeing eye however...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} steps forward and presents the official seal of the class CT, declaring themselves as such. From now on, {0}'s votes for expelling will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as the Class Ct.</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to sing today, disabling the tutor's lackeys tonight?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>As the rest of the class debates over the events, they suddenly notice {0} singing one of the latest global top 50 songs. These songs soothed the hearts and minds of everyone, preventing all the tutor's lackeys from being able to attack tonight. (tutor's lackeys are disabled tonight.)</value>
+  </string>
+  <string key="Mayor">
+    <value>Class CT 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>the rich boy 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>the World Dominator 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>the Class idiot 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>the class singer ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Mr Miliorel - your tutor ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>the cutest tutor's lackey 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the tutor's lackeys attack {0}, {1} stops everyone, being the Civics tutor, {1} tells the pack that {0} should join the pack instead of dying, so the pack leaves them to their infection. The student will become crazed with all the different ways to do organic chemistry!! They will become a lackey tomorrow night.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>You were attacked by the tutor's lackeys, but the civics tutor chose you. Instead of being killed, you have been infected... and will become a his tutor's lackey tomorrow night! You will never be able to escape the fact that you will forever be memorising the Newton's laws of physics... (also you need to go for the tutor's quiz that he volunteered you for , so there's that)</value>
+  </string>
+  <string key="BittenTurned">
+    <value>As night falls, you feel a strange tingling, and your body aches as it begins to transform... You are now the tutor's lackey! So much more information pours into your mind, from mathematical vectors all the way to books 4 to 9 for economics. You are now truely part of the lackeys.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As Class CT, you wield a holy power that is given to you by the class, you will be able to hide your identity until you reveal yourself. Then you are given twice the vote count for expelling (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the class Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The rich boy is a key role in the class Team's strategy. Once the class tries to expel the rich boy, their role as the rich boy is revealed, and they survive. However, this can only happen once: if the class insists on expelling them, they will eventually be expelled.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old all seeing eye? Well now, it has its tutor's Team counterpart. The evil quiet is the tutor's lackey's own all seeing eye. He plans to secretly kill everyone off and take over the world through his own tutor's lackeys. He can only see if someone is the tutor's lackey or all the all seeing eye, and they win with the tutor's lackeys.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the class idiot. You don't know what you even voting for. Can you even vote for the person you want to? (You have a 50% chance to vote for someone random.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are the class singer. Through the years, you've constantly honed your singing ability, singing day and night until you were able to captivate and melt the stone hearts of many men.\nWho knows ? It might *prevent tutor's lackeys from killing tonight* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are the civics tutor, the origin of the curse, the bane of banes. The one who causes everyone to tremble in fear. You have a 100% marker throwing accuracy and you have the most fantastic way of scolding people. One night you saw the tutor's essay written by one of your students severely lacking economic rigour, this essay talked about market failure when it was a macro tutor's question. This major sin drove you up the wall and now you go out to hunt down the tutor's students turning them into your lackeys with a toss of a marker. Every night, there's 20% chance that you will attack your pack's meal, and they will join your ranks instead of dying! 
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>What a dreamy looking boy. As i was saying, you are the cutest tutor's lackey and you _drops the mic_ -I just can't resist that. I think if anyone killed you, it be a MAJOR SIN. You're too cute to die. I wouldn't be able to stare at you dreamily you anymore-</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into the civics tutor. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} has died, and you transform into a the cutest tutor's lackey. Your teammates (if any) are: {1}</value>
+  </string>
+  
+  <string key="VillageTeam" deprecated="true">
+    <value>Class Team</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Neutral Team</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>club Team</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Tanner Team</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>Class Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Tutor Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>club Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Tanner Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>The club sends {0} to try to convert {1}, but instead {0}'s body comes flying out of the Window... together with a stack of chemistry notes! Looks like he needs to brush up in his Chemical equilibria...{0} is dead...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} slips into {1}'s house, ready for a recon mission, only to find a mysterious stranger surgically removing {1}'s innards! The class killer decides to destroy all evidence {0} before adding another heart to their art collection! Now the killer's wall has a whole range of spy tools to decorate their house too...</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>The class awoke to find {0} hunched over while practising judging people from afar, with head missing. All the judges he made were half baked, one read " That person was an idiot.." not very insightful after all. Well it's not that bad of a loss I guess... The all seeing eye's apprentice is dead.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Seems like {0}, the class singer, must have been extremely unlucky. A wireless microphone from {0}'s own schoolbag, was found bloodied beside his body, bruises lined his feet and head, and pinned to the classroom walls last night. Looks like the class killer is in deep TREBLE in class now... B careful of her SHARP knives everyone! (music puns - I can hear y'all groaning already, sorry guys)  </value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} was found stabbed to death with a their handphone shoved into their chest playing a classical meldey. Looks like the killer is more refined than we realized... The class killer has struck again, regardless of race, language or religion! {0} was a club member.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The next morning, the class was heartbroken to find {0} a.k.a. shit stirrer split from head to toe. Strangely the heart was missing and on {0} 's instagram page we see a picture of their mutilated body with the hashtage "#art"... </value>
+  </string>
+  <string key="DrunkKilled">
+    <value>The class had hoped to meet {0} to compliment his Martell, but all they found in {0}'s home was a knife and ripped school bag. All those years of being an idiot led to the killer deeming the student "not good enough" to be turnd into an artwork...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} would normally have managed to fight off class killer, but it was an irony that the class's great scientific mind has been extinguished. No more will there be a person explaining to use the rules of chemistry such as isomerism. Sadly, {0} is dead.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Looks like {0} was caught napping last night! A great fight broke out last night, but all there was was the remains of the poor martial artist, with a heavy blow to the head and a stab to the torso. Beside his mangled body the words "Martial ARTS" was written to mock the deceased martial artist. Looks like the killer's art triumphed over the martial artist. Clearly class killer has won.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Assassination! {0} the Class CT was found pinned with a pen on the table while collecting money for the sake of the class! Clearly it's the class killer exacting revenge for the asylum robbing him of years of his life!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Bells ring across the school before the sunrise, as armed FBI agents flood the streets investigating the disappearance of the rich boy {0}. No clues were discovered, but it is suspected that the class killer is on the loose...</value>
+    <value>{0}'s dog, Bailey was caught napping last night. The  remains of {0} were found, hung in various parts of the palace, having fallen prey to the knife. No amount of $50 notes will deter the class killer's blade.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>The class wakes up to a rotting corpse of {0}, split from head to toe, stabs all over. Strangely the brain was carefully extricated, as if it was a premonition that the class has lost their all seeing eye. {0} was the all seeing eye.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>The sound of mournful howls can be heard across the school. A mistake has been made. The tutor's lackeys have killed one of their own. The evil quiet one {0} is dead.</value>
+    <value>Cries of "I'm your ally!" were heard last night. All the class found next morning were an exhumed body and smashed mystical ball, belonging to {0}, the evil quiet one. Hunger trumps comradeship...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>FISCAL POLICIES...! The tutor's lackeys were heard last night, beating up the overly enthu star struck student {0}! The class wondered if the tutor's lackeys felt any guilt tearing apart the defenceless star struck student.</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>The class wakes up in the morning, only to find the severed body parts of {0}, the ACT rep, in a cart placed in full view outside the hall. Lesson learnt: don't visit the class killer!</value>
+    <value>The body of {0}, the ACT rep, was found in the middle of class, albeit cut precisely, forming a 27 by 22 artwork of chunks of flesh. Checking if the class killer was a club member does not seem to be a good idea...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>While it seemed that the teacher's lackeys decided to stay good for once, punishing {0}, a club member that decided to court trouble with the lackeys, proved too difficult to resist. {0}'s head was converted to a fine punching bag, delivered to the lackeys' doorsteps!</value>
+    <value>The club ran into unexpected trouble last night. Their newest member had the misfortune of visiting the tutor's lackey on the night the tutor's lackeys decided to stay home, and the tutor's lackey found {0} quite susceptible to physical cohesion after using Book 7: unemployment to whack him senseless. Unfortunately for {0}, teacher's lacheys have no interest in joining the new club movement.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>The club thought they would have a new member in their ranks, but they were wrong! {0}, a club member, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value>
+    <value>Last night, the club tried to convert the one person in the village crazier than they are. Their newest member tried to convert the class killer, and the class killer made a new piece of art in the town square of {0}'s internal organs.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>It was supposed to be a night where {0} would save the class from the old rusty knife of the class murderer, but {0}'s great mind was extinguished and books sliced by the cold blooded murderer! Left was a note, "I could protect myself better than you can. Now my art has won against your own scientific mind..."</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} tried to guard the tutor's lackey last night. The town woke up to find only the body of {0} hung on the school crest. Clearly the lackeys had an extra kill god-sent, free-of-charge, to their homes.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} tries to convert and beat {0} up, but {0}'s military demolition training and paranoia proves too much to handle! All there is left is a carcass with a blown up torso and the last man standing: the victorious class guitarist for the class!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final student proved to be effortless for {1}, for all there remains is a mutilated body of {0}, the guitarist, adorned with parallel slashes to the face. "Not even your music and save you now..."</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} and {0} walk out in daylight. Seeing the class logo worn around {0}'s neck, the righteous {1} prepares to fight for the final time, putting an end to the twisted learnings of the club that have contaminated the class. The ACT rep lashed out...</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Join time decreased by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was the blur block! Now you are as blur as him, and can't attack {1}... Idiot...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}joined the game in the last 30 seconds.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow club</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Vote</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Vote, Show Roles on Death, and Allow club / Fool / Happy Tanner will be randomly determined every time someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>As the sun starts to shine on the school, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the hall. Looking at the sight of the corpses strewn all across the school, {0} sighs. Their lifelong dream of being chosen to be expelled by the class is as dead and as empty as the class is. You are now the unhappiest tanner. You look at the class that had expelled so many of the members, tenderly, before whipping around and walking away, with a sad smile on their face. You never got the attention from the class that you had sought after for so long... what a sad ending...</value>
+    <value>{0} wakes up at dawn, alone. {0} sees how abject a failure they have been, not being able to get the class to expel them. {0} You turn around and cried in one corner, your dreams of being the center of attention of the class now over. Realising no one can accomplish your dream of becoming the center of attention, since there is no one left. What an unhappy tanner.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} opens their eyes, but instead of hearing the usual bustle of the school, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The tutor's lackeys were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the school. A tear slips from their eye, as {0} recalls how close they and their tutor's lackeys were to victory. Alas, it was time to start a new life, with a new pack. {0} slips into the darkness of the forest, away from the quiet school compound. You will have to take control of some place else...</value>
+    <value>For all of {0}'s efforts, {0}'s tutor's lackeys lay motionless and lifeless. Even if the tutor's lackeys have been brought victory, there is no one to savour the success with, neither are there any living classmates to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new tutor's lackeys, new allies, and new treachery to commit new crimes against humanity.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+	<value>Skip</value>
+  </string>
+</strings>

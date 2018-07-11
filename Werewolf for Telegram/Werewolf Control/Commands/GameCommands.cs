@@ -21,7 +21,7 @@ namespace Werewolf_Control
                 StartGame(false, update);
             else
             {
-                Send("Sorry, we are about to start maintenance.  Please check @werewolfdev for more information.",
+                Send("Sorry, we are about to start maintenance.  Please check @greywolfdev for more information.",
                     update.Message.Chat.Id);
             }
         }
@@ -33,7 +33,7 @@ namespace Werewolf_Control
                 StartGame(true, update);
             else
             {
-                Send("Sorry, we are about to start maintenance.  Please check @werewolfdev for more information.",
+                Send("Sorry, we are about to start maintenance.  Please check @greywolfdev for more information.",
                     update.Message.Chat.Id);
             }
         }
