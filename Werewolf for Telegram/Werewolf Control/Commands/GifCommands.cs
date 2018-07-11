@@ -321,7 +321,6 @@ namespace Werewolf_Control
             data.User.Id.Value = from.Id.ToString();
             data.User.Name.Value = from.FirstName;
             data.Settings.Currency = "USD";
-            data.Settings.Mode = "sandbox";
             data.Settings.ProjectId = Program.xsollaProjId.Value;
             data.Settings.Ui.Theme = "dark";
             return JsonConvert.SerializeObject(data, new JsonSerializerSettings { ContractResolver = new DefaultContractResolver { NamingStrategy = new SnakeCaseNamingStrategy() } });
