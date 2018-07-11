@@ -228,6 +228,12 @@ namespace Werewolf_Control
                         GetDonationInfo(m: u.Message);
                         return;
                     }
+                    
+                    if (args[1] == "xsolla")
+                    {
+                        GetXsollaLink(m: u.Message);
+                        return;
+                    }
 
                     //okay, they are joining a game.
                     string nodeid = "";
