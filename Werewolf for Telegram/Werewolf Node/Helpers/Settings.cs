@@ -112,6 +112,7 @@ namespace Werewolf_Node
             SandmanConversionChance = 60,
             WiseElderConversionChance = 30,
             PacifistConversionChance = 80,
+            ThiefStealChance = 50,
 #else
              PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
@@ -154,6 +155,7 @@ namespace Werewolf_Node
             SandmanConversionChance = 60,
             WiseElderConversionChance = 30,
             PacifistConversionChance = 80,
+            ThiefStealChance = 100,
 #endif
 
             GameJoinTime = 180,

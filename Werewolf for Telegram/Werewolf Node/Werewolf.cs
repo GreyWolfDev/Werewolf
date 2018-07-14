@@ -202,8 +202,8 @@ namespace Werewolf_Node
                 _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #endif
 
-                //let's keep this on for a while, then we will delete it
-                SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
+                // This can stay turned off now I think. Can enable it again if players don't get it at all
+                // SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
                 SendPlayerList(true);
 
                 new Thread(GameTimer).Start();
@@ -1436,10 +1436,10 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 rolesToAssign[0] = IRole.Wolf;
-                rolesToAssign[1] = IRole.Pacifist;
-                rolesToAssign[2] = IRole.Villager;
+                rolesToAssign[1] = IRole.Thief;
+                rolesToAssign[2] = IRole.Gunner;
                 if (rolesToAssign.Count >= 4)
-                    rolesToAssign[3] = IRole.Mason;
+                    rolesToAssign[3] = IRole.Wolf;
                 if (rolesToAssign.Count >= 5)
                     rolesToAssign[4] = IRole.Mason;
 #endif
@@ -2225,16 +2225,12 @@ namespace Werewolf_Node
 
             // notify both players (notify team?)
             // First Notify the stolen player becoming VG/Thief
-            Send(GetLocaleString("ThiefStoleYourRole", GetDescription(target.PlayerRole)), target.Id);
-            Send(GetRoleInfo(target.PlayerRole), target.Id);
+            Send(GetLocaleString((ThiefFull == true ? "ThiefStoleYourRoleThief" : "ThiefStoleYourRoleVillager")), target.Id);
 
             // Then notify Thief their new role
-            Send(GetLocaleString("ThiefStoleRole", target.GetName(), GetDescription(thief.PlayerRole)), thief.Id);
-            if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan }.Contains(thief.PlayerRole))
-            {
-                //tell them their new role
-                Send(GetRoleInfo(thief.PlayerRole), thief.Id);
-            }
+            Send(GetLocaleString("ThiefStoleRole", target.GetName()), thief.Id);
+            Send(GetRoleInfo(thief.PlayerRole), thief.Id);
+
             switch (thief.PlayerRole)
             {
                 case IRole.Beholder:
@@ -2865,14 +2861,17 @@ namespace Werewolf_Node
 
 
             /* Role priority:
-             * Wolf
+             * Wolves
              * Serial Killer
              * Cultist Hunter
              * Cult
              * Harlot
              * Seer
+             * Sorcerer
              * Fool
-             * GA
+             * Oracle
+             * Guardian Angel
+             * Thief
              */
 
             #region Wolf Night
@@ -3741,23 +3740,20 @@ namespace Werewolf_Node
 
             CheckRoleChanges();
 
-            if (AllowThief)
+            var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
+            if (thief != null)
             {
-                var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
-                if (thief != null)
+                var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
+                if (target != null)
                 {
-                    var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
-                    if (target != null)
+                    if (!ThiefFull && GameDay == 1)
+                        StealRole(thief, target);
+                    else if (ThiefFull)
                     {
-                        if (!ThiefFull && GameDay == 1)
+                        if (Program.R.Next(100) < Settings.ThiefStealChance)
                             StealRole(thief, target);
-                        else if (ThiefFull)
-                        {
-                            if (Program.R.Next(100) < 50)
-                                StealRole(thief, target);
-                            else
-                                Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
-                        }
+                        else
+                            Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                     }
                 }
             }
