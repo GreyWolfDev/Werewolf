@@ -1632,14 +1632,13 @@
   <!-- {0} - The name of the thief's target -->
     <value>You tried to steal the role from {0}, but {0} is already dead...</value>
   </string>
-  <string key="ThiefStoleYourRole">
+  <string key="ThiefStoleYourRole" deprecated="true">
   <!-- {0} - The new role -->
     <value>Your role got stolen! You are now {0}.</value>
   </string>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
-  <!-- {1} - The new role -->
-    <value>You successfully stole {0}'s role. You are now {1}.</value>
+    <value>You successfully stole {0}'s role!</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
@@ -1721,5 +1720,12 @@
   <string key="LynchPeaceTimeout">
   <!-- Used in PM if the pacifist uses his ability during lynch phase -->
 	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Your role got stolen! You are now the new thief 😈 and can steal a role the next night!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Your role got stolen! You are now a villager 👱, plowing your fields all day.</value>
   </string>
 </strings>

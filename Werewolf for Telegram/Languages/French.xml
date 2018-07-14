@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Version 1.05 2017-10-08 -->
+<!-- Version 1.5.1 2018-07-13 -->
 <!-- Translator 1 : Pierre de Brosses @CloneMMDDCVII ; Translator 2 : Kapryss [ENL BE] Brussels ♥️ @KapryssBoobzCulee ; Translator 3 : @ealhad & @acoussat -->
 <!-- RDV sur https://github.com/GreyWolfFR/FrenchNormal/ pour participer à la traduction -->
 <strings>
   <language name="french" base="Français" variant="Normal"/>
   <string key="NotInGame">
-    <value>Vous n'êtes pas actuellement dans une partie...</value>
+    <value>Vous n'êtes pas actuellement dans une partie…</value>
   </string>
   <string key="PlayerStartedGame">
-    <value>{0} a lancé une partie, utilisez le bouton pour rejoindre la partie, et probablement mourir...</value>
+    <value>{0} a lancé une partie, utilisez le bouton pour rejoindre la partie, et probablement mourir…</value>
     <value>Une nouvelle partie a été lancée par {0} ! Utilisez le bouton pour mourir.</value>
   </string>
   <string key="PlayerStartedChaosGame">
@@ -19,19 +19,22 @@
     <value>Vous ne pouvez pas rejoindre le jeu, car la partie est déjà en cours.</value>
   </string>
   <string key="AlreadyJoined">
-    <value>Vous êtes déjà dans la partie...</value>
+    <value>Vous êtes déjà dans la partie…</value>
+    <value>Mais enfin, vous êtes déjà dans la partie !</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>1 minute restante pour rejoindre la partie.</value>
   </string>
   <string key="SecondsLeftToJoin">
     <value>{0} secondes restantes pour rejoindre la partie.</value>
+    <value>{0} secondes restantes pour rejoindre la partie !</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>Il n'y a pas assez de joueurs, partie annulée...</value>
+    <value>Il n'y a pas assez de joueurs, partie annulée…</value>
   </string>
   <string key="StartingGameWait">
     <value>Démarrage du jeu, merci d'attendre que je mette à jour la banque de données et que j'attribue les rôles.</value>
+    <value>C’est parti, attendez donc un instant que j'attribue les rôles…</value>
   </string>
   <string key="BannedForExploit">
     <value>{0} a été banni pour tentative de triche (pas de noms commençant par /)</value>
@@ -49,7 +52,8 @@
     <value>{0}, envoyez moi un mp (@{1}) avec /start. Vous devez m'envoyer un message privé pour que je puisse vous contacter à mon tour.</value>
   </string>
   <string key="DeadFlee">
-    <value>Vous ne pouvez pas fuir, vous êtes mort, retournez à la terre !</value>
+    <value>Vous ne pouvez pas fuir, vous êtes mort !</value>
+    <value>Mais vous êtes déjà mort…</value>
   </string>
   <string key="Flee">
     <value>{0} a fui de terreur !</value>
@@ -64,7 +68,7 @@
     <value>Je ne t'ai encore rien demandé.</value>
   </string>
   <string key="NotPlaying">
-    <value>Vous ne semblez pas être dans une partie...</value>
+    <value>Vous ne semblez pas être dans une partie…</value>
   </string>
   <string key="NoPlayerName">
     <value>Je ne trouve pas de joueur avec ce nom !</value>
@@ -79,91 +83,102 @@
     <value>{0} veut lyncher {1}.</value>
   </string>
   <string key="IdleKill">
-    <value>{0} s'est abstenu de voter pendant 2 nuits... Les forces célestes ont vu en cela une insulte à leur culte. {0} tombe à terre, raide mort...\n{1}</value>
+    <value>{0} s'est abstenu de voter deux fois de suite… Les forces célestes ont vu en cela une insulte à leur culte. {0} tombe à terre, raide mort…\n{1}</value>
+    <value>{0} a par deux fois refusé d’accomplir son devoir citoyen sacré. Le ciel s’obscurcit, et et la foudre s’abat sur {0} !\n{1}</value>
   </string>
   <string key="TraitorTurnWolf">
-    <value>Traître ! Tu es maintenant un loup !..</value>
+    <value>Traître ! Vous êtes maintenant un loup !</value>
   </string>
   <string key="ChoiceAccepted">
-    <value>Un bon choix...</value>
+    <value>Un bon choix…</value>
+    <value>Un choix intéressant…</value>
   </string>
   <string key="BeholderSeer">
-    <value>\nLe voyant est {0}.</value>
+    <value>\nLa Voyante est {0}.</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>{0} était voyant. En tant qu'apprenti, vous prenez sa place, et remplirez son rôle.</value>
+    <value>{0} était Voyante. En tant qu'apprenti, vous prenez sa place, et remplirez désormais son rôle.</value>
   </string>
   <string key="BeholderNewSeer">
-    <value>{0}, apprenti, a prit la place de {1} en tant que voyant...</value>
+    <value>{0}, apprenti, a prit la place de {1} en tant que Voyante !</value>
   </string>
   <string key="SeerSees">
-    <value>Les astres vous révèlent que {0} est {1}!</value>
+    <value>Les astres vous révèlent que {0} est {1} !</value>
+    <value>Dans votre boule de cristal (finement ouvragée), vous découvrez que {0} est {1} !</value>
   </string>
   <string key="AskLynch">
-    <value>Qui vous paraît le plus coupable, et mérite d'être lynché ?</value>
+    <value>Qui vous paraît le plus coupable, et mérite d'être lynché ?</value>
+    <value>Qui préférez vous pendre ? Attention, ne vous trompez pas !</value>
+    <value>Qui vous paraît le plus coupable, et mérite de mourir ?</value>
   </string>
   <string key="AskDetect">
-    <value>Sur qui voulez vous enquêter ?</value>
+    <value>Sur qui voulez vous enquêter ?</value>
   </string>
   <string key="AskShoot">
-    <value>Qui voulez vous tuer ? {0} balle(s) restantes.</value>
+    <value>Qui voulez vous tuer ? {0} balle(s) restantes.</value>
   </string>
   <string key="AskVisit">
-    <value>Chez qui voulez-vous passer la nuit ?</value>
+    <value>Chez qui voulez-vous passer la nuit ?</value>
+    <value>À qui voulez-vous proposer vos services ce soir ?</value>
   </string>
   <string key="AskSee">
-    <value>Qui voulez vous observer ?</value>
+    <value>Qui voulez-vous observer ?</value>
   </string>
   <string key="AskGuard">
-    <value>Qui voulez-vous protéger ?</value>
+    <value>Qui voulez-vous protéger ?</value>
   </string>
   <string key="AskEat">
-    <value>De qui voulez-vous déchirer les entrailles, pour vos repaître de son corps ?</value>
+    <value>De qui voulez-vous déchirer les entrailles, pour vos repaître de son corps ?</value>
+    <value>Qui voulez-vous sauvagement dévorer ?</value>
+    <value>Avec le sang de quelle victime souhaitez vous assouvir votre faim ?</value>
   </string>
   <string key="AskHunt">
-    <value>Qui voulez-vous juger ?</value>
+    <value>Qui voulez-vous juger ?</value>
   </string>
   <string key="AskRoleModel">
-    <value>Qui voulez-vous prendre comme modèle et idole ?</value>
+    <value>Qui voulez-vous prendre comme modèle et idole ?</value>
   </string>
   <string key="AskConvert">
-    <value>Qui souhaitez vous convertir à votre culte ?</value>
+    <value>Qui souhaitez vous convertir à votre culte ?</value>
   </string>
-  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+  <string key="DiscussWith">
+    <!-- Les espaces en début de phrase sont importants ! -->
     <value>  Faites attention de discuter avec {0}.</value>
+    <value>  N’oubliez pas de vous concerter avec {0} !</value>
   </string>
-  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+  <string key="And">
+    <!-- Idem, les espaces sont importants. -->
     <value> et </value>
   </string>
   <string key="RoleInfoCursed">
-    <value>Vous êtes maudit ! Si les loups vous mangent, vous rejoindrez leurs rangs.</value>
+    <value>Vous êtes maudit ! Si les loups vous mangent, vous rejoindrez leurs rangs.</value>
   </string>
   <string key="RoleInfoDetective">
     <value>Vous êtes le détective.. Pendant la journée, vous pouvez choisir d'enquêter sur une personne, et de révéler son rôle publiquement. En faisant cela, vous vous exposez cependant aux yeux de tous, et avez 40% de chances d'être découvert.</value>
   </string>
   <string key="RoleInfoDrunk">
-    <value>Vous buvez... Pour oublier que vous avez honte... Que vous avez honte de boire. Vous êtes l'alcoolique du village, et ce n'est un secret pour personne.</value>
+    <value>Vous buvez… Pour oublier que vous avez honte… Que vous avez honte de boire. Vous êtes l'alcoolique du village, et ce n'est un secret pour personne.</value>
   </string>
   <string key="RoleInfoGuardianAngel">
     <value>Vous êtes un ange gardien, envoyé des cieux pour rétablir la lumière et protéger les âmes pures. Chaque nuit, vous pouvez choisir une personne à protéger, un être pur. Cependant, si vous choisissez de protéger un Loup, vous aurez une chance sur deux d'en mourir.</value>
   </string>
   <string key="RoleInfoGunner">
-    <value>Vous êtes le chasseur, vous avez deux cartouches... Durant la journée, vous pouvez choisir de tirer sur une personne de votre choix. Tous les villageois vous entendront, et sauront donc que vous n'êtes pas un loup.</value>
+    <value>Vous êtes le chasseur, vous avez deux cartouches… Durant la journée, vous pouvez choisir de tirer sur une personne de votre choix. Tous les villageois vous entendront, et sauront donc que vous n'êtes pas un loup.</value>
   </string>
   <string key="RoleInfoHarlot">
     <value>Catin ! Vous êtes la péripatéticienne. Pendant la nuit, vous pouvez « rendre visite » à un joueur, pour vous enquérir d'une potentielle lycanthropie. Si vous rendez visite à un loup, vous finirez démembrée, déchirée, et vos entrailles seront répandues dans le village.</value>
   </string>
   <string key="RoleInfoTraitor">
-    <value>Traître ! Pour l'instant, vous êtes un villageois, mais si tous les loups meurent, vous prendrez le relais. Si le voyant choisis de vous observer, vous serez vu au hasard comme un loup, ou commme un villageois.</value>
+    <value>Traître ! Pour l'instant, vous êtes un villageois, mais si tous les loups meurent, vous prendrez le relais. Si la voyante choisis de vous observer, vous serez vu au hasard comme un loup, ou commme un villageois.</value>
   </string>
   <string key="RoleInfoWolf">
-    <value>Vous êtes un loup (une bonne chose). Chaque soir, le ventre gargouillant, vous vous transformerez sous l'action de la lune, et ressentirez le besoin de vous repaître du corps d'un des villageois...</value>
+    <value>Vous êtes un loup (une bonne chose). Chaque soir, le ventre gargouillant, vous vous transformerez sous l'action de la lune, et ressentirez le besoin de vous repaître du corps d'un des villageois…</value>
   </string>
   <string key="RoleInfoSeer" >
     <value >Vous êtes la voyante, chaque nuit, vous pouvez choisir d'observer le cœur d'une personne, pour découvrir leur rôle.</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >Vous n'êtes qu'un villageois, voué à vous faire dévorer, à souffrir jusqu'à votre mort...</value>
+    <value >Vous n'êtes qu'un villageois, voué à vous faire dévorer, à souffrir jusqu'à votre mort…</value>
   </string>
   <string key="RoleInfoTanner" >
     <value >Vous êtes le tanneur, si vous êtes lynché, vous gagnerez !</value>
@@ -172,10 +187,10 @@
     <value >Vous êtes l'enfant sauvage. Choisissez un modèle, si cette personne meurt, alors vous deviendrez loup garou.</value>
   </string>
   <string key="RoleInfoBeholder" >
-    <value >Vous êtes le tyranœil, vous serez prévenu de l'identité du véritable voyant, c'est votre seule fonction..</value>
+    <value >Vous êtes le tyranœil, vous serez prévenu de l'identité de la véritable voyante. Et c'est votre seule fonction.</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
-    <value >Vous êtes l'apprenti voyant. Si le voyant meurt, alors vous prendrez sa place...</value>
+    <value >Vous êtes l'apprenti voyant. Si la voyante meurt, alors vous prendrez sa place…</value>
   </string>
   <string key="RoleInfoCultist" >
     <value >Vous êtes le cultiste. Chaque nuit, vous pouvez choisir une personnne à convertir au culte. Si tous les joueurs restants appartiennent au culte, vous gagnez.</value>
@@ -185,24 +200,27 @@
   </string>
   <string key="LynchTime" >
     <value >
-      Le crépuscule tombe sur Thiercelieux. Les villageois se réunissent pour décider qui lyncher...
+      Le crépuscule tombe sur Thiercelieux. Les villageois se réunissent pour décider qui lyncher…
       Vous avez {0} secondes pour voter !
     </value>
   </string>
   <string key="DayTime" >
-    <value >Le soleil viens de se lever. Vous avez {0} secondes pour accuser, défendre et préserver votre vie.</value>
+    <value>Le soleil viens de se lever. Vous avez {0} secondes pour accuser, défendre et préserver votre vie.</value>
+    <value>La journée commence. Vous avez {0} secondes pour débattre afin d’identifier les intrus !</value>
   </string>
   <string key="NightTime" >
-    <value >La nuit tombe sur le village de Thiercelieux, et les villageois se rendent chez eux, fatigués, après une autre dure journée de labeur. Joueurs spéciaux, vous avez {0} secondes pour utiliser vos pouvoirs !</value>
+    <value>La nuit tombe sur le village de Thiercelieux, et les villageois se rendent chez eux, fatigués, après une autre dure journée de labeur. Joueurs spéciaux, vous avez {0} secondes pour utiliser vos pouvoirs !</value>
   </string>
   <string key="LynchKill" >
-    <value >Les villageois ont fait leur choix, et {0} rejoint maintenant l'assemblée des pendus. {1}</value>
+    <value>Les villageois ont fait leur choix, et {0} rejoint maintenant l'assemblée des pendus. {1}</value>
+    <value>Les villageois ont voté pour {0} ! Son cadavre se balance maintenant au bout d’une corde. {1}</value>
   </string>
   <string key="LynchTie" >
-    <value >Incapables de mettre fin à des litiges personnels, les villageois ne peuvent assouvir leur soif de vengeance. L'ennemi survit un peu plus longtemps.</value>
+    <value>Incapables de mettre fin à des litiges personnels, les villageois ne peuvent assouvir leur soif de vengeance. L'ennemi survit un peu plus longtemps.</value>
+    <value>Le vote n’a aucune issue claire ! Les villageois rentrent donc chez eux. La nuit porte conseil…</value>
   </string>
   <string key="NoLynchVotes" >
-    <value >Quel est ce maléfice ? Personne n'a voté ce soir...</value>
+    <value>Quel est ce maléfice ? Personne n'a voté ce soir…</value>
   </string>
   <string key="DetectiveEaten" >
     <value >Les villageois se réunissent à l'aube, mais personne ne voit {0}. Tous se rendent chez lui, et découvrent {0} démembré, ses entrailles déchiquetées, une insigne en travers de la gorge.</value>
@@ -211,40 +229,41 @@
     <value >L'aube se lève, et au désespoir de tout le monde, un être ailé est empalé sur la girouette du clocher.{0}, L'ange gardien est mort..</value>
   </string>
   <string key="GunnerEaten" >
-    <value >Alors que tout les villageois sortent de chez eux, ils remarquent le canon d'un fusil... Puis des jambes... Puis des bras... puis, flottant dans la fontaine du village, le corps de votre chasseur, {0}. La fontaine va être dure à laver...</value>
+    <value >Alors que tout les villageois sortent de chez eux, ils remarquent le canon d'un fusil… Puis des jambes… Puis des bras… puis, flottant dans la fontaine du village, le corps de votre chasseur, {0}. La fontaine va être dure à laver…</value>
   </string>
   <string key="SeerEaten" >
-    <value >Les villageois se réveillent, pour entrevoir les restes de {0} étalés sur un jeu de tarot. Le voyant est mort.</value>
+    <value >Les villageois se réveillent, pour entrevoir les restes de {0} étalés sur un jeu de tarot. La voyante est morte !</value>
   </string>
   <string key="DrunkEaten" >
-    <value >Une odeur d'alcool et de fumée réveille les villageois.... Le bar est en feu... Le corps de {0} est retrouvé, à l'heure du déjeuner, cuit à point. Dommage que vous ayez mangé une tartine il y a peu...</value>
+    <value >Une odeur d'alcool et de fumée réveille les villageois…. Le bar est en feu… Le corps de {0} est retrouvé, à l'heure du déjeuner, cuit à point. Dommage que vous ayez mangé une tartine il y a peu…</value>
   </string>
   <string key="FoolEaten" >
-    <value >Les villageois se réveillent, pour entrevoir les restes de {0} étalés sur un jeu des ... sept familles ?! Quel fou !</value>
+    <value >Les villageois se réveillent, pour entrevoir les restes de {0} étalés sur un jeu des … sept familles ?! Quel fou !</value>
   </string>
   <string key="DefaultEaten" >
-    <value>Alors que le village se reveille, on retrouve les restes de {0} dispersés dans l'enclos à cochons... tête manquante... MIAMIAMIAMIAMIAMIAMIAMIAM.\n{1}</value>
+    <value>Alors que le village se reveille, on retrouve les restes de {0} dispersés dans l'enclos à cochons… tête manquante… MIAMIAMIAMIAMIAMIAMIAMIAM.\n{1}</value>
   </string>
   <string key="HunterKilledCultist">
-    <value>Une puanteur insoutenable émane de la maison de {0}...  Les villageois l'investissent et découvrent un corps en spasmes sur un autel d'onyx... L'inquisiteur a tué un cultiste.!</value>
+    <value>Une puanteur insoutenable émane de la maison de {0}…  Les villageois l'investissent et découvrent un corps en spasmes sur un autel d'onyx… L'inquisiteur a tué un cultiste.!</value>
   </string>
   <string key="NoAttack" >
-    <value >Les villageois se réunissent le lendemain, et pour le grand bonheur de tout le monde, il n'y a aucun signe d'attaque... mais jusqu'à quand...</value>
+    <value >Les villageois se réunissent le lendemain, et pour le grand bonheur de tout le monde, il n'y a aucun signe d'attaque… mais jusqu'à quand…</value>
   </string>
   <string key="CursedBitten" >
-    <value >Vous avez été mordu par un loup. En tant que maudit, vous rejoignez leurs rangs...</value>
+    <value >Vous avez été mordu par un loup. En tant que maudit, vous rejoignez leurs rangs…</value>
   </string>
   <string key="WolfTeam">
     <value>Vos partenaire(s) Loup(s): {0}</value>
   </string>
   <string key="CursedBittenToWolves" >
-    <value >{0} a été mordu... Son sang a un goût bizzare... celui d'une proie qui n'est pas humaine... Le maudit rejoint vos rangs...!</value>
+    <value >{0} a été mordu, mais son sang a un goût bizzare… Celui d'une proie qui n'est pas humaine. Le Maudit rejoint vos rangs !</value>
   </string>
   <string key="WolvesEatYou" >
-    <value >Vous vous réveillez le matin, les entrailles déchirées, le visage ensanglanté... mais ?! Vous vous voyez ? VOUS ÊTES MORT, les loups vous ont mangé...</value>
+    <value>Vous vous réveillez le matin, les entrailles déchirées, le visage ensanglanté… mais ?! Vous vous voyez ? VOUS ÊTES MORT, les loups vous ont mangé…</value>
+    <value>Vous ne vous réveillez pas. Enfin, si, mais pas assez longtemps pour reconnaître le loup qui vous tranche la gorge d’un coup de dents. Dommage…</value>
   </string>
   <string key="WolvesEatDrunk" >
-    <value >Quel dommage, {0} était alcoolique ! Maintenant, vous l'êtes aussi, et vous devrez cuver votre vin demain au lieu d'attaquer...</value>
+    <value >Quel dommage, {0} était alcoolique ! Maintenant, vous l'êtes aussi, et vous devrez cuver votre vin demain au lieu d'attaquer…</value>
   </string>
   <string key="GuardWolf" >
     <value >Vous avez tenté de protéger un être maléfique, il vous a mangé.</value>
@@ -262,25 +281,26 @@
     <value >Un être de lumière vous a protégé cette nuit.!</value>
   </string>
   <string key="HarlotEaten" >
-    <value >La catin a choisi le mauvais jour pour prendre une pause...  {0} a servi de repas aux loups !</value>
+    <value >La catin a choisi le mauvais jour pour prendre une pause…  {0} a servi de repas aux loups !</value>
   </string>
   <string key="HarlotNotHome" >
-    <value >Hmmmm... {0} n'était pas chez elle... Vous commencez un régime involontaire !</value>
+    <value >Hmmmm… {0} n'était pas chez elle… Vous commencez un régime involontaire !</value>
   </string>
   <string key="HarlotFuckWolf" >
-    <value >Vous vous rendez dans la maison de {0} pour vous amuser un peu, mais vous vous retrouvez face à face avec un être un peu plus poilu que la moyenne... vous êtes morte. </value>
+    <value >Vous vous rendez dans la maison de {0} pour vous amuser un peu, mais vous vous retrouvez face à face avec un être un peu plus poilu que la moyenne… vous êtes morte. </value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
-    <value >{0} a mal choisi sa clientèle cette nuit.... ses restes égaient maintenant la porte de l'église, plantés à coup de barres de fer. Quel dommage :/</value>
+    <value >{0} a mal choisi sa clientèle cette nuit…. ses restes égaient maintenant la porte de l'église, plantés à coup de barres de fer. Quel dommage :/</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
-    <value >{0} se rend chez {1}, mais découvre un lycanthrope en cours de dégustation. Ne souhaitant pas lui tenir la chandelle, {0} tente de se retirer... mais trébuche, tombe, et se fait manger... dommage, {0} est morte.</value>
+    <value >{0} se rend chez {1}, mais découvre un lycanthrope en cours de dégustation. Ne souhaitant pas lui tenir la chandelle, {0} tente de se retirer… mais trébuche, tombe, et se fait manger… dommage, {0} est morte.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <value >Vous remarquez que {0} n'est pas un loup, car il vous a prise toute la nuit !</value>
   </string>
   <string key="HarlotVisitYou" >
-    <value >Il faisait un peu sombre, et vous ne pouviez pas voir grand chose, mais vous vous réveillez au milieu de la nuit avec la catin sur les jambes.... Vous finissez rapidement vos affaires, puis la laissez partir silencieusement.</value>
+    <value>Hoho ! Vous ouvrez la porte, pour découvrir la catin, en nuisette, qui vous lance un regard aguicheur. Vous la laissez rentrer, et verrouillez la porte. Une bonne soirée en perspective !</value>
+    <value>Quelle chance ! C’est à vous que la catin a choisi d’offrir ses services ce soir. Conformément à ses instructions, vous vous étendez sur le lit…</value>
   </string>
   <string key="DetectiveCaught" >
     <value >Vous avez pris {0} en train d'enquêter. C'est le détective !</value>
@@ -289,7 +309,7 @@
     <value >Enquêter vous a permis de voir que {0} est {1}</value>
   </string>
   <string key="HarlotShot" >
-    <value >On dirait que {0} a passé une bonne nuit avec la catin... Le chasseur s'est vengé, {1} est morte...</value>
+    <value >On dirait que {0} a passé une bonne nuit avec la catin… Le chasseur s'est vengé, {1} est morte…</value>
   </string>
   <string key="DefaultShot" >
     <value >Vous entendez un coup de feu. Vous vous ruez en même temps que les autres villageois, et trouvez {0} surplombant le corps de {1}.\n{2} est mort.</value>
@@ -301,10 +321,10 @@
     <value >Les lycanthropes rentrent dans la légende !</value>
   </string>
   <string key="VillageWins" >
-    <value >Les villageois ont gagné, ils peuvent à présent poursuivre leur vie misérable...</value>
+    <value >Les villageois ont gagné, ils peuvent à présent poursuivre leur vie misérable…</value>
   </string>
   <string key="TannerWins" >
-    <value>Bande de tanches... Vous avez lynché le tanneur... Vous avez perdu.</value>
+    <value>Bande de tanches… Vous avez lynché le tanneur… Vous avez perdu.</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Joueurs restants, équipes et rôles :</value>
@@ -313,10 +333,10 @@
     <value>{0} voudrait convertir {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <value>{0} a été envoyé pour faire le sale boulot, et convertir {1}... C'était l'inquisiteur, et {0} est mort !</value>
+    <value>{0} a été envoyé pour faire le sale boulot, et convertir {1}… C'était l'inquisiteur, et {0} est mort !</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <value>{0} a tenté de vous convertir à sa foi ignoble la nuit dernière... Un crucifix dans la gorge a permis de le calmer... {1} restants !</value>
+    <value>{0} a tenté de vous convertir à sa foi ignoble la nuit dernière… Un crucifix dans la gorge a permis de le calmer… {1} restants !</value>
   </string>
   <string key="CultConvertYou">
     <value>Vous avez rejoint le culte. Chaque nuit, vous aurez la possibilité de voter pour convertir un autre joueur.</value>
@@ -325,22 +345,22 @@
     <value>Cultistes : {0}</value>
   </string>
   <string key="CultJoin">
-    <value>{0} a rejoint la secte!</value>
+    <value>{0} a rejoint la secte !</value>
   </string>
   <string key="CultVisitEmpty">
-    <value>{0} est partit faire le sale boulot pour convertir {1}... La maison était vide !..</value>
+    <value>{0} est partit faire le sale boulot pour convertir {1}… La maison était vide !..</value>
   </string>
   <string key="CultWins" >
-    <value >Tous les loups sont morts, et les seuls restants sont membres de la secte... les cultistes ont gagné !</value>
+    <value >Tous les loups sont morts, et les seuls restants sont membres de la secte… les cultistes ont gagné !</value>
   </string>
   <string key="HunterVisitDead">
     <value>Vous avez voulu vérifier l'intégrité de {0}, mais il est déjà mort !</value>
   </string>
   <string key="HunterFindCultist">
-    <value>En vous approchant de la maison de {0}, vous ressentez une aura démoniaque... Vous vous approchez d'un pas feutré, et lui plantez votre crucifix dans le cœur.</value>
+    <value>En vous approchant de la maison de {0}, vous ressentez une aura démoniaque… Vous vous approchez d'un pas feutré, et lui plantez votre crucifix dans le cœur.</value>
   </string>
   <string key="HunterFailedToFind">
-    <value>Vous vous rendez chez {0}, mais vous n'entendez ni chants ni prières démoniques... Il ne fait pas partie de la secte, donc vous rentrez chez vous.</value>
+    <value>Vous vous rendez chez {0}, mais vous n'entendez ni chants ni prières démoniques… Il ne fait pas partie de la secte, donc vous rentrez chez vous.</value>
   </string>
   <string key="WildChildToWolves">
     <value>L'idole de {0} est morte. Dans sa rage, il est devenu loup !</value>
@@ -418,24 +438,24 @@
     <value>un franc-maçon</value>
   </string>
   <string key="RoleInfoMason">
-    <value>Vous êtes Franc-Maçon S'il y a d'autres Franc-Maçons, vous saurez qui ils sont. En dehors de cela, vous êtes un villageois....</value>
+    <value>Vous êtes Franc-Maçon S'il y a d'autres Franc-Maçons, vous saurez qui ils sont. En dehors de cela, vous êtes un villageois….</value>
   </string>
   <string key="MasonEaten">
-    <value>Alors que le village se réveille, les restes d'un corps sans vie, étalés dans le sable et la boue, forment le symbole des françs maçons... l'un d'entre eux vient de mourir! -- {0}</value>
+    <value>Alors que le village se réveille, les restes d'un corps sans vie, étalés dans le sable et la boue, forment le symbole des françs maçons… l'un d'entre eux vient de mourir ! -- {0}</value>
   </string>
   <string key="MasonTeam">
     <value>  Les autres Franc-Maçons sont : {0}</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <value>Votre membre le plus jeune se rend dans la maison de {0} pour le convertir... mais un loup est passé par là, seul le corps sans vie de la victime rappelle les faits...</value>
+    <value>Votre membre le plus jeune se rend dans la maison de {0} pour le convertir… mais un loup est passé par là, seul le corps sans vie de la victime rappelle les faits…</value>
   </string>
   <string key="GuardBlockedWolf">
-    <value>La meute se rend chez {0} pour le manger, mais une créature de lumière porteuse d'une épée sacrée vous barre la route... Vous repartez chez vous, non sans égratignures...</value>
+    <value>La meute se rend chez {0} pour le manger, mais une créature de lumière porteuse d'une épée sacrée vous barre la route… Vous repartez chez vous, non sans égratignures…</value>
   </string>
  <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
-    <value>Vous envoyez {0} pour tenter de convertir {1}, mais sa foi était trop forte, et il a échoué...</value>
+    <value>Vous envoyez {0} pour tenter de convertir {1}, mais sa foi était trop forte, et il a échoué…</value>
   </string>
 <!-- new strings May 9 2016-->
   <string key="CultUnableToConvert">
@@ -446,7 +466,7 @@
     <value>@{1}, un joueur avec ce nom ({0}) a déjà rejoint la partie. Merci de changer votre nom pour rejoindre la partie.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Vous vous rendez chez {0} pour soulager ses besoins primaires... Mais en partant, vous remarquez dans le coin d'une pièce, à travers l'ouverture d'une porte mal fermée, un autel sombre, luisant d'une lueur sinistre.</value>
+    <value>Vous vous rendez chez {0} pour soulager ses besoins primaires… Mais en partant, vous remarquez dans le coin d'une pièce, à travers l'ouverture d'une porte mal fermée, un autel sombre, luisant d'une lueur sinistre.</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -456,7 +476,7 @@
     <value>Le village se réveille, devant le corps de {0} mort d'une étrange façon. Personne ne peut expliquer les circonstances de sa mort.</value>
   </string>
   <string key="MasonConverted">
-    <value>Bizarre... {0} n'est pas venu à la loge maçonnique ce matin...</value>
+    <value>Bizarre… {0} n'est pas venu à la loge maçonnique ce matin…</value>
   </string>
   <!-- new string May 16 2016-->
   <string key="FleeDisabled">
@@ -481,7 +501,7 @@
     <value>Votre groupe est actuellement dans la liste d'attente. Position : {0} / {1}</value>
   </string>
   <string key="MaintBreak">
-    <value>Désolé, je vais effectuer une courte maintenance. Vous ne pouvez pas démarrer une partie maintenant.\n{0} parties doivent encore se terminer...\nAllez sur @greywolfdev pour plus d'informations.</value>
+    <value>Désolé, je vais effectuer une courte maintenance. Vous ne pouvez pas démarrer une partie maintenant.\n{0} parties doivent encore se terminer…\nAllez sur @greywolfdev pour plus d'informations.</value>
   </string>
   <string key="MaxGames">
     <value>Désolé, le nombre maximum de joueurs est atteint. ({0}). \nPosition dans la liste d'attente: {1} / {1}</value>
@@ -517,7 +537,7 @@
     <value>Nouvelle langue : {0}</value>
   </string>
   <string key="NoSeer">
-        <value>Il n'y a pas de Voyant!</value>
+        <value>Il n'y a pas de Voyante !</value>
   </string>
   <string key="TimesUp">
         <value>Tic tac plouf, le temps est écoulé !</value>
@@ -542,25 +562,25 @@
     <value>Les villageois ont décidé de vous pendre ! C'est votre dernière chance. Choisissez quelqu'un à entraîner avec vous dans la tombe.</value>
   </string>
   <string key="HunterNoChoiceLynched">
-    <value>{0} cherche son fusil alors que sa mort est imminente... mais il ne peut l'atteindre à temps, et meurt, son cou brisé dans un craquement sinistre...</value>
+    <value>{0} cherche son fusil alors que sa mort est imminente… mais il ne peut l'atteindre à temps, et meurt, son cou brisé dans un craquement sinistre…</value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} sort son fusil, regarde la foule... mais est incapable de décider d'une cible. Il meurt résigné à sa funeste destinée...</value>
+    <value>{0} sort son fusil, regarde la foule… mais est incapable de décider d'une cible. Il meurt résigné à sa funeste destinée…</value>
   </string>
   <string key="HunterKilledFinalLynched">
     <value>Alors que le nœud coulant se resserre autour du cou de {0}, il brandit son fusil, vise et appuie sur la gachette, abattant {1} au moment ou la trappe disparaît sous ses pieds ! {1} tombe raide mort. {2}</value>
   </string>
   <string key="HunterShotChoice">
-    <value>Vous avez été assassiné ! À l'agonie, vous pouvez choisir de faire une dernière victime...</value>
+    <value>Vous avez été assassiné ! À l'agonie, vous pouvez choisir de faire une dernière victime…</value>
   </string>
   <string key="HunterNoChoiceShot">
-    <value>L'attaque contre {0} était d'une telle violence qu'il n'a même pas pu sortir son arme. Il gît à présent dans une marre de sang...</value>
+    <value>L'attaque contre {0} était d'une telle violence qu'il n'a même pas pu sortir son arme. Il gît à présent dans une marre de sang…</value>
   </string>
   <string key="HunterSkipChoiceShot">
-    <value>Alors que {0} rend son dernier souffle, il ne peut choisir de cible... et accepte son destin.</value>
+    <value>Alors que {0} rend son dernier souffle, il ne peut choisir de cible… et accepte son destin.</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>Touché par balle, {0} s'écroule lamentablement... mais non sans attraper son fusil et tirer en direction de {1} qui reçoit une balle entre les deux yeux. {2}</value>
+    <value>Touché par balle, {0} s'écroule lamentablement… mais non sans attraper son fusil et tirer en direction de {1} qui reçoit une balle entre les deux yeux. {2}</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>Les loups ont attaqué le fusilier la nuit dernière, mais il a pu en abattre un pour l'accompagner dans la tombe ! {0}, un loup, est mort.</value>
@@ -572,25 +592,25 @@
     <value>Les loups comptaient se faire un beau festin nocturne la nuit dernière, mais ils sont tombés sur un psychopathe tueur ! {0} est mort dans la bataille !</value>
   </string>
   <string key="DefaultKilled">
-    <value>La nuit avait pourtant eu l'air bien calme... Les villageois se rassemblent à l'aube et découvrent le cadavre de {0}, presque intact. Il ne lui manque qu'un doigt de pied. Le Céréales Killer a encore frappé ! {1}</value>
+    <value>La nuit avait pourtant eu l'air bien calme… Les villageois se rassemblent à l'aube et découvrent le cadavre de {0}, presque intact. Il ne lui manque qu'un doigt de pied. Le Céréales Killer a encore frappé ! {1}</value>
   </string>
   <string key="GuardBlockedKiller">
-    <value>Vous tentez de récupérer le corps de {0} pour égayer votre salon, mais vous vous retrouvez face à un ange ! Vous repartez bredouille et triste...</value>
+    <value>Vous tentez de récupérer le corps de {0} pour égayer votre salon, mais vous vous retrouvez face à un ange ! Vous repartez bredouille et triste…</value>
   </string>
   <string key="CultConvertHunter">
-    <value>Les cultistes envoient {0} convertir {1}, mais un coup de feu retentit et le corps sans vie de {0} vole par la fenêtre et s'écrase lamentablement contre l'arbre le plus proche. Quel accueil...</value>
+    <value>Les cultistes envoient {0} convertir {1}, mais un coup de feu retentit et le corps sans vie de {0} vole par la fenêtre et s'écrase lamentablement contre l'arbre le plus proche. Quel accueil…</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <value>Les cultistes envoient {0} convertir {1}, mais il ressort de la maison tête la première par la fenêtre, criblé de coups de couteau. Quel psychopathe !! {0} ne va plus pouvoir servir à grand chose...</value>
+    <value>Les cultistes envoient {0} convertir {1}, mais il ressort de la maison tête la première par la fenêtre, criblé de coups de couteau. Quel psychopathe !! {0} ne va plus pouvoir servir à grand chose…</value>
   </string>
   <string key="GuardKiller">
-    <value>En amateur de chocapics, vous vouliez protéger le Céréales Killer... celui-ci ne s'est pas laissé faire et vous a plumé comme un poulet. Vous êtes morts, lamentablement mort, et ça pique...</value>
+    <value>En amateur de chocapics, vous vouliez protéger le Céréales Killer… celui-ci ne s'est pas laissé faire et vous a plumé comme un poulet. Vous êtes morts, lamentablement mort, et ça pique…</value>
   </string>
   <string key="HarlotFuckKiller">
-    <value>Vous vous faufilez dans la maison de {0} et commencez à vous amuser un peu. Tout est parfait, jusqu'à ce qu'il sorte un grand couteau. Un nouveau jeu sexuel ? Il semblerait plutôt qu'il veuille vous assassiner. Vous mourrez dans d'atroces souffrances... dommage, vos charmes seront regrettés dans le village.</value>
+    <value>Vous vous faufilez dans la maison de {0} et commencez à vous amuser un peu. Tout est parfait, jusqu'à ce qu'il sorte un grand couteau. Un nouveau jeu sexuel ? Il semblerait plutôt qu'il veuille vous assassiner. Vous mourrez dans d'atroces souffrances… dommage, vos charmes seront regrettés dans le village.</value>
   </string>
   <string key="HarlotFuckKillerPublic">
-    <value>{0} voulait s'amuser un peu cette nuit... mais est tombée sur un tueur psychopathe au lieu de cela ! {0} est morte...</value>
+    <value>{0} voulait s'amuser un peu cette nuit… mais est tombée sur un tueur psychopathe au lieu de cela ! {0} est morte…</value>
   </string>
   <string key="DGToMason">
     <value>Le Döppelganger {0} est maintenant un franc-maçon comme vous !</value>
@@ -665,10 +685,10 @@
     <value>L'aube se lève, et les deux villageois encore en vie se rejoignent sur la place principale. {0} regarde {1} avec un étrange rictus sur son visage, sort un couteau et l'égorge sans aucune forme de pitié.</value>
   </string>
   <string key="NoWinner" isgif="true">
-    <value>Tous les villageois sont morts ! Il ne reste qu'un tas de cadavres...  Tout le monde a perdu, les vautours sont bien contents.</value>
+    <value>Tous les villageois sont morts ! Il ne reste qu'un tas de cadavres…  Tout le monde a perdu, les vautours sont bien contents.</value>
   </string>
   <string key="SKHunterEnd">
-    <value>Alors que le soleil se lève, {0} et {1} sortent de chez eux. {0} sort un grand couteau et se rue sur {1}.  Celui ci sort un pistolet et abat {0} au moment ou le couteau s'enfonce dans sa poitrine. Les deux protagonistes sont morts. Le village est vide et tout le monde a perdu...</value>
+    <value>Alors que le soleil se lève, {0} et {1} sortent de chez eux. {0} sort un grand couteau et se rue sur {1}.  Celui ci sort un pistolet et abat {0} au moment ou le couteau s'enfonce dans sa poitrine. Les deux protagonistes sont morts. Le village est vide et tout le monde a perdu…</value>
   </string>
   <string key="RoleModelChosen">
     <value>Vous n'avez fait aucun choix alors le modérateur a choisi pour vous : {0}</value>
@@ -695,13 +715,13 @@
     <value>Que la fête commence ! Vous êtes un loup garou. Toutes les nuits vous pourrez choisir d'attaquer et dévorer un joueur. A noter que si vous attaquez l'alcoolique, vous deviendrez ivre et devrez passer une nuit de repos avec un mal de crâne épouvantable. Si vous attaquez le maudit, il deviendra loup, et rejoindra votre meute. Youpi !</value>
   </string>
   <string key="AboutHarlot">
-    <value>Vous êtes la catin du village, toutes les nuits, vous pourrez rendre visite à un autre joueur pour lui vendre vos charmes. S'il s'agit d'un loup, vous serez tuée, si non, vous serez prévenue de l'innocence de votre partenaire. Si votre client est pris pour cible par les loups, ils vous dévoreront également... A l'inverse, si vous êtes de sortie et que les loups ont décidé de se rendre chez vous, vous survivrez !</value>
+    <value>Vous êtes la catin du village, toutes les nuits, vous pourrez rendre visite à un autre joueur pour lui vendre vos charmes. S'il s'agit d'un loup, vous serez tuée, si non, vous serez prévenue de l'innocence de votre partenaire. Si votre client est pris pour cible par les loups, ils vous dévoreront également… A l'inverse, si vous êtes de sortie et que les loups ont décidé de se rendre chez vous, vous survivrez !</value>
   </string>
   <string key="AboutDrunk">
     <value>Espèce d'alcoolique ! Vous n'êtes qu'un villageois, totalement imbibé d'alcool. Si un loup vous dévore, il aura un sacré mal de crâne et ne pourra pas attaquer la nuit suivante.</value>
   </string>
   <string key="AboutCursed">
-    <value>Vous êtes maudit ! Pour le moment vous n'êtes qu'un villageois ordinaire... mais si les loups vous dévorent, vous rejoindrez leurs rangs !</value>
+    <value>Vous êtes maudit ! Pour le moment vous n'êtes qu'un villageois ordinaire… mais si les loups vous dévorent, vous rejoindrez leurs rangs !</value>
   </string>
   <string key="AboutTraitor">
     <value>Sale traître ! Si vous survivez assez longtemps et que tous les loups viennent à mourir, vous en deviendrez un et pourrez dévorer vos anciens camarades !!</value>
@@ -710,10 +730,10 @@
     <value>Vous êtes l'ange gardien. Toutes les nuits, choisissez un être à protéger. Mais attention, si vous choisissez de protéger un loup, vous avez 50% de chances d'en mourir !</value>
   </string>
   <string key="AboutDetective">
-    <value>Vous êtes le détective... Durant la journée, vous aurez la chance de pouvoir enquêter sur un joueur. Soyez prudent... Il y a 40% de chances que les loups garous soient informés de votre rôle.</value>
+    <value>Vous êtes le détective… Durant la journée, vous aurez la chance de pouvoir enquêter sur un joueur. Soyez prudent… Il y a 40% de chances que les loups garous soient informés de votre rôle.</value>
   </string>
   <string key="AboutGunner">
-    <value>Vous êtes le chasseur, vous possédez deux balles d'argent. Pendant la journée, vous pourrez choisir d'abattre un autre joueur. Cependant tous les joueurs vous entendront, et connaîtront votre rôle. Vous n'avez que deux balles... Faites-en bon usage !</value>
+    <value>Vous êtes le chasseur, vous possédez deux balles d'argent. Pendant la journée, vous pourrez choisir d'abattre un autre joueur. Cependant tous les joueurs vous entendront, et connaîtront votre rôle. Vous n'avez que deux balles… Faites-en bon usage !</value>
   </string>
   <string key="AboutTanner">
     <value>Le rôle du tanneur est très simple : son but est d'être lynché. S'il y parvient, il gagne immédiatement et tous les autres joueurs perdent.</value>
@@ -728,20 +748,20 @@
     <value>Votre job est de traquer les cultistes. S'ils tentent de vous convertir, leur membre le plus récent mourra. De plus, chaque nuit, vous pourrez traquer un joueur et s'il est cultiste, vous le tuerez.</value>
   </string>
   <string key="AboutWC">
-    <value>L'enfant sauvage choisit un autre joueur en début de partie, qui sera son idole. S'il venait à mourir, l'enfant sauvage entrerait dans une rage incontrôlable et deviendrait un loup garou...</value>
+    <value>L'enfant sauvage choisit un autre joueur en début de partie, qui sera son idole. S'il venait à mourir, l'enfant sauvage entrerait dans une rage incontrôlable et deviendrait un loup garou…</value>
   </string>
   <string key="AboutAppS">
     <value>Pour le moment, vous n'êtes qu'un simple villageois. Mais si la voyante venait à mourir, vous prendriez sa place.</value>
   </string>
   <string key="AboutBH">
-    <value>En tant que Tyrannœil, vous serez prévenu de l'identité du véritable voyant (mais pas de celle du fou). Vous saurez également s'il n'y a pas de voyant.</value>
+    <value>En tant que Tyrannœil, vous serez prévenu de l'identité de la véritable voyante (mais pas de celle du fou). Vous saurez également s'il n'y a pas de voyante.</value>
   </string>
   <string key="AboutMason">
     <value>Le rôle des franc-maçons est très simple : ce sont de simples villageois à ceci près qu'ils savent qui est également franc-maçon.</value>
   </string>
   <string key="AboutDG">
     <value>
-      Vos ancêtres étaient capable de se métamorphoser en quelqu'un d'autre... Vous n'avez pas cette capacité, mais vous pouvez choisir un joueur en début de partie. S'il vient à mourir, vous prendrez son rôle.
+      Vos ancêtres étaient capable de se métamorphoser en quelqu'un d'autre… Vous n'avez pas cette capacité, mais vous pouvez choisir un joueur en début de partie. S'il vient à mourir, vous prendrez son rôle.
 Remarque: S'il était converti au culte, vous recevrez son rôle initial. Toutes les autres règles normales s'appliquent : si vous devenez l'enfant sauvage dont le modèle est mort, vous serez loup. S'il n'est pas mort, vous aurez ce même modèle.
 Les cultistes ne peuvent convertir un Doppelgänger qui n'a pas encore repris un rôle. Si le Doppelgänger n'est pas devenu quelqu'un d'autre à la fin de la partie, il perd sauf s'il est l'un des deux amoureux.
     </value>
@@ -760,10 +780,10 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     </value>
   </string>
   <string key="AboutSK">
-    <value>Cet asile était sympathique, mais rien ne vaut la liberté. Vous êtes à présent prêt à tuer de nouveau ! Le Céréales Killer est un joueur solitaire... et gagne s'il est le dernier en vie (sauf amoureux). Vous pouvez tuer tous les joueurs : loups, chasseur, fusilier, ange gardien... Si les loups vous attaquent vous en tuerez un au hasard et survivrez.</value>
+    <value>Cet asile était sympathique, mais rien ne vaut la liberté. Vous êtes à présent prêt à tuer de nouveau ! Le Céréales Killer est un joueur solitaire… et gagne s'il est le dernier en vie (sauf amoureux). Vous pouvez tuer tous les joueurs : loups, chasseur, fusilier, ange gardien… Si les loups vous attaquent vous en tuerez un au hasard et survivrez.</value>
   </string>
   <string key="AboutPara">
-    <value>Para est un développeur completement décalé, qui aime aboyer sur les gens. Peut-être a-t-il traîné trop longtemps avec des loups garous... Quelle mauvaise idée !</value>
+    <value>Para est un développeur completement décalé, qui aime aboyer sur les gens. Peut-être a-t-il traîné trop longtemps avec des loups garous… Quelle mauvaise idée !</value>
   </string>
   <string key="EndTime">
     <value>Durée du jeu: {0}</value>
@@ -820,7 +840,7 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>Vous devez utiliser cette commande dans un groupe.</value>
   </string>
   <string key="NotGlobalAdmin">
-    <value>Vous n'êtes pas admin général...</value>
+    <value>Vous n'êtes pas admin général…</value>
   </string>
   <string key="NotPara">
     <value>Vous n'êtes pas Para!</value>
@@ -982,10 +1002,10 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>Vous êtes le Prince. Secrètement, pour combattre l'ennui et la routine, vous donnez du piment à votre vie en passant la journée avec les paysans. S'ils essayent de vous lyncher, ils se rendront compte de leur erreur, et reviendront sur leur décision. Personne ne sera lynché.</value>
   </string>
   <string key="RoleInfoClumsyGuy">
-    <value>Vous êtes le Maladroit. Espèce d'empoté... Vous essayerez de voter, mais vous aurez 50% de chance que votre vote devienne pour quelqu'un d'autre. Vous êtes du côté des villageois, mais quel boulet tout de même...</value>
+    <value>Vous êtes le Maladroit. Espèce d'empoté… Vous essayerez de voter, mais vous aurez 50% de chance que votre vote devienne pour quelqu'un d'autre. Vous êtes du côté des villageois, mais quel boulet tout de même…</value>
   </string>
   <string key="RoleInfoSorcerer">
-    <value>Vous êtes la Sorcière, vous préférez vous allier au créatures de la nuit plutôt qu'aux faibles humains. La nuit, vous utiliserez votre pouvoir pour trouver les loups ou la voyante. Vous gagnerez si les loups gagnent. Aidez les donc à zigouiller tous les villageois !...</value>
+    <value>Vous êtes la Sorcière, vous préférez vous allier au créatures de la nuit plutôt qu'aux faibles humains. La nuit, vous utiliserez votre pouvoir pour trouver les loups ou la voyante. Vous gagnerez si les loups gagnent. Aidez les donc à zigouiller tous les villageois !…</value>
   </string>
   <string key="RoleInfoBlacksmith">
     <value>Vous êtes le Forgeron, vous travaillez le métal à votre forge. Vous possédez une petite quantité d'argent, suffisemment pour empêcher les loups d'attaquer pendant une nuit. Pendant la journée, vous pourrez donc choisir de réduire l'argent en poudre et de le disperser autour du village. En dehors de cette capacité, vous êtes un simple villageois.</value>
@@ -1015,7 +1035,7 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>Voulez-vous répandre l'argent aujourd'hui, pour empêcher les loups d'attaquer cette nuit ?</value>
   </string>
   <string key="BlacksmithSpreadSilver">
-    <value>Alors que les villageois débatent au sujet des récents évènements, ils remarquent {0}, le forgeron, faisant le tour du village et répandant de la poudre d'argent un peu partout sur le sol. Le village sera protégé cette nuit contre les attaques des loups...</value>
+    <value>Alors que les villageois débatent au sujet des récents évènements, ils remarquent {0}, le forgeron, faisant le tour du village et répandant de la poudre d'argent un peu partout sur le sol. Le village sera protégé cette nuit contre les attaques des loups…</value>
   </string>
   <string key="Mayor">
     <value>le Maire 🎖</value>
@@ -1039,13 +1059,13 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>le Louveteau 🐶</value>
   </string>
   <string key="PlayerBittenWolves">
-    <value>Alors que les loups s'apprêtent à attaquer {0}, {1} les arrête, grâce à son autorité de Loup Alpha. Il décide que {0} doit rejoindre la meute plutôt que mourir. D'une morsure il l'infecte, et laisse le poison se répandre en lui. La nuit prochaine, il deviendra un loup...</value>
+    <value>Alors que les loups s'apprêtent à attaquer {0}, {1} les arrête, grâce à son autorité de Loup Alpha. Il décide que {0} doit rejoindre la meute plutôt que mourir. D'une morsure il l'infecte, et laisse le poison se répandre en lui. La nuit prochaine, il deviendra un loup…</value>
   </string>
   <string key="PlayerBitten">
-    <value>Vous avez été attaqué par les loups, mais le Loup Alpha vous a choisi. Au lieu de vous tuer, il vous a simplement mordu... vous deviendrez un loup garou la nuit prochaine!</value>
+    <value>Vous avez été attaqué par les loups, mais le Loup Alpha vous a choisi. Au lieu de vous tuer, il vous a simplement mordu… vous deviendrez un loup garou la nuit prochaine!</value>
   </string>
   <string key="BittenTurned">
-    <value>Le soleil se couche, et vous ressentez une sensation étrange. Tout votre corps se transforme. Vous vous couvrez de fourrure, des griffes et des crocs vous poussent... vous êtes maintenant un loup garou !</value>
+    <value>Le soleil se couche, et vous ressentez une sensation étrange. Tout votre corps se transforme. Vous vous couvrez de fourrure, des griffes et des crocs vous poussent… vous êtes maintenant un loup garou !</value>
   </string>
   <string key="AboutMayor">
     <value>Le maire est un simple villageois, jusqu'à ce qu'il révèle son rôle. Pendant le vote pour le lynchage, sa voix compte alors double. Il est bien entendu du côté des villageois.</value>
@@ -1060,7 +1080,7 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>Vous êtes le Maladroit. Peut-être que vous n'auriez pas du traîner avec l'alcoolique hier soir. Ou bien regarder l'éclipse sans lunettes ? A moins que ce ne soit le jus de citron du rince-doigts que vous vous êtes mis dans les yeux, pensant que c'était un innocent mouchoir ? Bon, résultat, vous n'y voyez vraiment rien. Pas sûr que vous puissiez voter pour la personne que vous voulez réellement lyncher. (Vous avez 50 % de chance de voter aléatoirement pour une autre personne)</value>
   </string>
   <string key="AboutBlacksmith">
-    <value>Vous êtes le Forgeron. Au fil des ans, aucune lame, aucune épée, aucune arme de votre fabrication ne vous a apporté autant de satisfaction que les lames d'argent que vous avaient commandé les elfes.\nVous pourriez bien avoir encore un peu de limaille d'argent en stock... Qui sait ? Cela pourrait peut-être *empêcher les loups d'attaquer cette nuit* ? 🤔
+    <value>Vous êtes le Forgeron. Au fil des ans, aucune lame, aucune épée, aucune arme de votre fabrication ne vous a apporté autant de satisfaction que les lames d'argent que vous avaient commandé les elfes.\nVous pourriez bien avoir encore un peu de limaille d'argent en stock… Qui sait ? Cela pourrait peut-être *empêcher les loups d'attaquer cette nuit* ? 🤔
     </value>
   </string>
   <string key="AboutAlphaWolf">
@@ -1068,7 +1088,7 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     </value>
   </string>
   <string key="AboutWolfCub">
-    <value>Ooooooh quel adorable petit Louveteau !! Hum hum... Je disais donc. Vous êtes le louveteau et vous... roh et puis zut. Vous êtes trop mignon. Si vous mourrez, le reste de la meute pourra zigouiller deux victimes au lieu d'une. Vous êtes trop chou pour mourir. </value>
+    <value>Ooooooh quel adorable petit Louveteau !! Hum hum… Je disais donc. Vous êtes le louveteau et vous… roh et puis zut. Vous êtes trop mignon. Si vous mourrez, le reste de la meute pourra zigouiller deux victimes au lieu d'une. Vous êtes trop chou pour mourir. </value>
   </string>
 
   <!-- new strings 06 nov-->
@@ -1119,11 +1139,11 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>Equipe tanneur</value>
   </string>
   <string key="CultConvertWolf">
-    <value>Les cultistes envoient {0} convertir {1}, mais au lieu de ça ils voient la tête de {0} voler par la fenêtre... Ils n'en croient pas leurs yeux... {0} est mort...</value>
+    <value>Les cultistes envoient {0} convertir {1}, mais au lieu de ça ils voient la tête de {0} voler par la fenêtre… Ils n'en croient pas leurs yeux… {0} est mort…</value>
   </string>
   <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
     <!--{0} = Harlot name, {1} = SK's victim name-->
-    <value>{0} se faufile dans la maison de {1} afin d'y passer une nuit chaude et passionnée... Mais elle l'y trouve sous forme de cadavre, en train de se faire découper les doigts de pied avec une précision chirurgicale par le Céréales Killer ! Celui-ci décide alors de combler {0}, avant de l'ajouter à sa collection de victimes.</value>
+    <value>{0} se faufile dans la maison de {1} afin d'y passer une nuit chaude et passionnée… Mais elle l'y trouve sous forme de cadavre, en train de se faire découper les doigts de pied avec une précision chirurgicale par le Céréales Killer ! Celui-ci décide alors de combler {0}, avant de l'ajouter à sa collection de victimes.</value>
   </string>
 
 
@@ -1132,57 +1152,57 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <value>Les villageois se réveillent et découvrent {0}, tête manquante, tenant dans sa main un tarot de mauvaise facture et un manuel de voyance. L'apprenti voyant est mort.</value>
   </string>
   <string key="BlacksmithKilled">
-    <value>Il semblerait que {0}, le forgeron, soit extrêmement malchanceux. Cinq couteaux de sa propre armurerie sont plantés dans son corps, le punaisant contre le mur... Le Céréales Killer semble avoir agrandi sa collection d'organes...</value>
+    <value>Il semblerait que {0}, le forgeron, soit extrêmement malchanceux. Cinq couteaux de sa propre armurerie sont plantés dans son corps, le punaisant contre le mur… Le Céréales Killer semble avoir agrandi sa collection d'organes…</value>
   </string>
   <string key="CultistKilled">
     <value>{0} est retrouvé poignardé avec un chandelier.. Le Céréales Killer semble n'avoir que faire de la religion ! {0} était un Cultiste.</value>
   </string>
   <string key="CupidKilled">
-    <value>Le jour se lève et les villageois découvrent le cœur brisé {0} alias Cupidon, dépecé par un psychopathe collectionneur de doigts de pieds...</value>
+    <value>Le jour se lève et les villageois découvrent le cœur brisé {0} alias Cupidon, dépecé par un psychopathe collectionneur de doigts de pieds…</value>
   </string>
   <string key="DrunkKilled">
-    <value>Les villageois se rendent chez {0} pour l'apéro, mais ne retrouvent chez lui qu'un grand couteau et un foie complètement cyrrhosé. Il semblerait que des années d'alcoolisme aient sauvé son foie du Céréales Killer. Le reste en revanche...</value>
+    <value>Les villageois se rendent chez {0} pour l'apéro, mais ne retrouvent chez lui qu'un grand couteau et un foie complètement cyrrhosé. Il semblerait que des années d'alcoolisme aient sauvé son foie du Céréales Killer. Le reste en revanche…</value>
   </string>
   <string key="GuardianAngelKilled">
     <value>{0} aurait en théorie pu vaincre le Céréales Killer, mais il semblerait qu'il en soit advenu autrement. {0} est mort.</value>
   </string>
   <string key="GunnerKilled">
-    <value> {0} semble s'être réellement assoupi cette nuit ! Un coup de feu a été entendu, et on l'a retrouvé avec un trou dans la tête, et un doigt de pied manquant. Le Céréales Killer a encore frappé...</value>
+    <value> {0} devait dormir très profondément cette nuit ! Un coup de feu a été entendu, et on l'a retrouvé avec un trou dans la tête, et un doigt de pied manquant. Le Céréales Killer a encore frappé…</value>
   </string>
   <string key="MayorKilled">
     <value>Au meurtre ! {0} le maire est retrouvé poignardé, gisant sur son bureau sur des documents officiels. Il s'agit clairement d'un coup du Céréales Killer.</value>
   </string>
   <string key="PrinceKilled">
-    <value>Les cloches sonnent ce matin, et les gardes enquêtent sur la disparition du prince {0}. Aucun indice n'est retrouvé, on soupçonne un coup du sérial killer...</value>
-    <value>Les gardes royaux se sont permit une petite sieste... Les restes princiers de {0} sont retrouvés dispersés en plusieurs endroits du palais. Le Céréales Killer s'est bien amusé...</value>
+    <value>Les cloches sonnent ce matin, et les gardes enquêtent sur la disparition du prince {0}. Aucun indice n'est retrouvé, on soupçonne un coup du sérial killer…</value>
+    <value>Les gardes royaux se sont permit une petite sieste… Les restes princiers de {0} sont retrouvés dispersés en plusieurs endroits du palais. Le Céréales Killer s'est bien amusé…</value>
   </string>
   <string key="SeerKilled">
-    <value>Les villageois se réveillent et retrouvent le cadavre de {0}, criblé de coups de couteau. Bizarrement, il lui manque un doigt de pied... {0} était le voyant.</value>
+    <value>Les villageois se réveillent et retrouvent le cadavre de {0}, criblé de coups de couteau. Bizarrement, il lui manque un doigt de pied… {0} était le voyant.</value>
   </string>
   <string key="SorcererEaten">
-    <value>Une fanfare de cris de corbeaux retentit sur le village... Les loups ont fait une erreur, et tué une alliée. La sorcière {0} est morte.</value>
+    <value>Une fanfare de cris de corbeaux retentit sur le village… Les loups ont fait une erreur, et tué une alliée. La sorcière {0} est morte.</value>
     <value>Des cris retentissent dans la nuit. "Je suis votre alliée bande de stupides sacs à puces !". Au matin les villageois découvrent le corps sans vie de {0}, la sorcière, à moitié dévoré.</value>
   </string>
   <string key="WildChildEaten">
-    <value>Miam miam miam ! Les loups se sont régalés de l'enfant sauvage {0}, dont il ne reste qu'un tout petit squelette. Les villageois se demandent tout de même si les loups ont eu un peu de scrupules...</value>
+    <value>Miam miam miam ! Les loups se sont régalés de l'enfant sauvage {0}, dont il ne reste qu'un tout petit squelette. Les villageois se demandent tout de même si les loups ont eu un peu de scrupules…</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Les villageois se réveillent et retrouvent le corps de {0}, l'inquisiteur, démembré et répandu sur la grand place. Morale de l'histoire : ne pas déranger le Céréales Killer !</value>
-    <value>Le corps de {0}, l'inquisiteur, est retrouvé au milieu du village, découpé en morceaux. Ce n'était pas une bonne idée d'aller voir le Céréales Killer... Au moins, on sait qu'il n'est pas cultiste !</value>
+    <value>Le corps de {0}, l'inquisiteur, est retrouvé au milieu du village, découpé en morceaux. Ce n'était pas une bonne idée d'aller voir le Céréales Killer… Au moins, on sait qu'il n'est pas cultiste !</value>
   </string>
   <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>Les loups ont fait une bonne action cette nuit, en dévorant le cultiste {0}. Il a été converti en délicieux repas... cuisson ? Saignant !</value>
+    <value>Les loups ont fait une bonne action cette nuit, en dévorant le cultiste {0}. Il a été converti en délicieux repas… cuisson ? Saignant !</value>
     <value>Les cultistes ont fait face à l'inattendu cette nuit. Leur plus jeune membre a rendu visite à un loup, qui l'a trouvé fort apétissant. Malheureusement pour {0}, les loups ne sont pas très interessés pour rejoindre la secte à la mode.</value>
   </string>
   <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>Les cultistes souhaitaient agrandir leur confrérie, mais ils ont échoué. {0} est retrouvé mort, criblé de coups de couteaux. Mmmhh... Le Céréales Killer ne semble pas intéressé par la religion.</value>
+    <value>Les cultistes souhaitaient agrandir leur confrérie, mais ils ont échoué. {0} est retrouvé mort, criblé de coups de couteaux. Mmmhh… Le Céréales Killer ne semble pas intéressé par la religion.</value>
     <value>Cette nuit, les cultistes ont trouvé encore plus fou qu'eux ! Leur membre le plus jeune, parti convertir le Céréales Killer, n'est jamais revenu. Repose en paix, {0}.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
-    <value>Cette nuit, {0} était sensé sauver le village des tueurs, mais il a mal choisi son protégé. Il est retrouvé mort avec un post-it « Je sais me protéger tout seul, merci »...</value>
+    <value>Cette nuit, {0} était sensé sauver le village des tueurs, mais il a mal choisi son protégé. Il est retrouvé mort avec un post-it « Je sais me protéger tout seul, merci »…</value>
   </string>
   <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
-    <value>{0} a voulu protéger un loup la nuit dernière. {0} est retrouvé mort empalé sur la croix de l'église... Il a visiblement servi d'en-cas à une bestiole poilue.</value>
+    <value>{0} a voulu protéger un loup la nuit dernière. {0} est retrouvé mort empalé sur la croix de l'église… Il a visiblement servi d'en-cas à une bestiole poilue.</value>
   </string>
 
   <!--1vs1 finales-->
@@ -1230,7 +1250,7 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
     <value>Durée maximale d'extension fixée à {0} secondes</value>
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
-    <value>Oh non ! {0} était alcoolique ! Maintenant, vous êtes ivres, et ne pouvez pas attaquer {1}...</value>
+    <value>Oh non ! {0} était alcoolique ! Maintenant, vous êtes ivres, et ne pouvez pas attaquer {1}…</value>
   </string>
   <string key="JoinButton">
     <value>Rejoindre la partie</value>
@@ -1312,17 +1332,129 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
 
   <string key="TannerEnd">
     <!-- 0 - nom du Tanneur -->
-    <value>Tandis que le soleil se lève sur le village, {0} se réveille pour n’entendre que le silence. Réalisant qu’il ne reste plus personne, {0} marche jusqu’à la place du village. À la vue des cadavres épars, {0} soupire : son rêve de devenir la victime du courroux des villagois est mort en même temps que ses derniers membres. {0} gravit les marches de la potence, qui a tant servi récemment, et passe la tête dans le nœud de chanvre...</value>
+    <value>Tandis que le soleil se lève sur le village, {0} se réveille pour n’entendre que le silence. Réalisant qu’il ne reste plus personne, {0} marche jusqu’à la place du village. À la vue des cadavres épars, {0} soupire : son rêve de devenir la victime du courroux des villagois est mort en même temps que ses derniers membres. {0} gravit les marches de la potence, qui a tant servi récemment, et passe la tête dans le nœud de chanvre…</value>
   </string>
   <string key="SorcererEnd">
     <!-- 0 - nom de la Sorcière -->
-    <value>{0} opens their eyes, but instead of hearing the usual bustle of the village, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The wolves were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the village. A tear slips from their eye, as {0} recalls how close they and their wolves were to victory. Alas, it was time to start a new life, with a new pack. {0} slips into the darkness of the forest, away from the quiet village.</value>
-    <value>Malgré tous les efforts de {0}, tous ses alliés loups sont étendus sur la place du village, morts. Même si, ensemble, ils ont gagné, il ne reste plus personne avec qui savourer la victoire... {0} scrute sa boule de cristal, et disparaît dans un nuage de fumée sombre, en quête de nouveaux alliés poilus et de nouveaux crimes.</value>
+    <value>Malgré tous les efforts de {0}, tous ses alliés loups sont étendus sur la place du village, morts. Même si, ensemble, ils ont gagné, il ne reste plus personne avec qui savourer la victoire… {0} scrute sa boule de cristal, et disparaît dans un nuage de fumée sombre, en quête de nouveaux alliés poilus et de nouveaux crimes.</value>
   </string>
   <string key="WhatVariantVets">
     <value>Quelle variante ?\Actuellement : {0}\nAyant plus de 500 parties à votre actif, vous pouvez éąlement rejoindre : </value>
   </string>
   <string key="Skip">
 	<value>Passer</value>
+  </string>
+
+
+  <!-- Nouveaux rôles, avril 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - Nom de la cible -->
+    <!-- 1 - Nom des coéquipiers -->
+    <value>{0} est mort, et vous vous transformez en Lycan. Vos coéquipiers, s’ils existent, sont : {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - Nom de la cible -->
+    <!-- 1 - Rôle -->
+    <value>Vous voyez que {0} n’est PAS {1} !</value>
+  </string>
+  <string key="AskSandman">
+    <value>Voulez-vous user de votre magie, et forcer tout les habitants à dormir cette nuit ?</value>
+    <value>Voulez-vous que tout le monde dorme paisiblement cette nuit ?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Alors que les villageois discutent, {0} rentre dans sa demeure et commence à fredonner une douce mélodie. Ce soir, tout le monde dormira profondément, et personne ne sortira.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Il reste à peine assez d’énergie aux habitants pour rentrer dans leurs lits respectifs. Tout le monde s’endort, d’un profond sommeil sans rêves.</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Autoriser le Voleur ?\nActuellement : {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Voleur : {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Le Voleur peut-il utiliser son pouvoir toutes les nuits ?\Actuellement : {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Voleur actif toutes les nuits : {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Autoriser le Voleur</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Voleur à chaque tour</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Vous êtes l’Homoursporc. Simple villageois, vous passez tellement de temps dans la forêt que la Voyante vous confondra avec un loup ! Mince…</value>
+  </string>
+  <string key="WolfMan">
+    <value>l’Homoursporc 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Vous êtes l’Homoursporc. Simple villageois, vous passez tellement de temps dans la forêt que la Voyante vous confondra avec un loup ! Mince…</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Vous êtes le Lycan ! Vous avez beau être un gros loup poilu, la Voyante vous confondra avec un villageois. À vous d’en profiter !</value>
+  </string>
+  <string key="Lycan">
+    <value>le Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Le Lycan est un loup, mais apparaît comme un villageois aux yeux de la Voyante.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Vous êtse l’Oracle. Chaque nuit, vous pouvez choisir d’observer quelqu’un, mais tout ce que vous verrez est ce qu’il n’est PAS. Vous verrez à la place le rôle d’un autre joueur encore en vie.</value>
+  </string>
+  <string key="Oracle">
+    <value>l’Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>L’Oracle peut découvrir quel rôle un joueur n’a PAS, parmis les rôles des joueurs encore en vie.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Vous êtes le Marchand de sable. Une fois par partie, vous pouvez utiliser votre magie pour plonger tout le monde dans un sommeil profond les empêchant d’agir pendant une nuit.</value>
+  </string>
+  <string key="Sandman">
+    <value>le Marchand de sable 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Une fois par partie, le Marchand de sable utiliser votre magie pour plonger tout le monde dans un sommeil profond les empêchant d’agir pendant une nuit.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
   </string>
 </strings>
