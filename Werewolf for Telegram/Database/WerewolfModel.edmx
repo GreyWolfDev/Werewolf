@@ -122,6 +122,7 @@
           <Property Name="Winner" Type="nvarchar" MaxLength="50" />
           <Property Name="GrpId" Type="int" />
           <Property Name="Mode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Beta" Type="bit" />
         </EntityType>
         <EntityType Name="GameKill">
           <Key>
@@ -807,6 +808,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <NavigationProperty Name="GameKills" Relationship="Self.FK_GameKill_Game" FromRole="Game" ToRole="GameKill" />
           <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="GamePlayers" Relationship="werewolfModel.FK_GamePlayer_Game" FromRole="Game" ToRole="GamePlayer" />
+          <Property Name="Beta" Type="Boolean" />
         </EntityType>
         <EntityType Name="GameKill">
           <Key>
@@ -1534,6 +1536,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="werewolfModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="Beta" ColumnName="Beta" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="GroupName" ColumnName="GroupName" />
