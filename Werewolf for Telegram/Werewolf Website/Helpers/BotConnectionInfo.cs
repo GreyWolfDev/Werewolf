@@ -13,8 +13,8 @@ namespace Werewolf_Website.Helpers
         public static int BetaPort = 9062;
 
         public static string DebugIP = "localhost";
-        public static string Bot1IP = "138.201.172.151";
-        public static string Bot2IP = "138.201.172.151";
-        public static string BetaIP = "138.201.172.151";
+        public static string Bot1IP = "localhost";
+        //public static string Bot2IP = "138.201.172.151";
+        public static string BetaIP = "localhost";
     }
 }
