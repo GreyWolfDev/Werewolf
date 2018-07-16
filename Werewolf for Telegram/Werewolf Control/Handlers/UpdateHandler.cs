@@ -379,6 +379,8 @@ namespace Werewolf_Control.Handler
                                             Send("اینجا گروه پشتیبانیه نه بازی، لطفا دکمه استارت رو نزنید.", id);
                                         else if (id == Settings.TranslationChatId)
                                             Send("No games in translation group!", id);
+                                        else if (id == Settings.BetaReportingChatId)
+                                            Send("No games in Beta Reporting Group!", id);
                                         return;
                                     }
                                     if (command.DevOnly & !UpdateHelper.Devs.Contains(update.Message.From.Id))
@@ -881,6 +883,7 @@ namespace Werewolf_Control.Handler
                                     Bot.Api.SendDocumentAsync(id, pack.WolfWin, "Single Wolf Wins");
                                     Thread.Sleep(250);
                                     Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "SK Killed");
                                     Thread.Sleep(500);
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)

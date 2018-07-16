@@ -67,7 +67,8 @@ namespace Werewolf_Node
             TannerWin,
             CultWins,
             SerialKillerWins,
-            LoversWin;
+            LoversWin,
+            SKKilled;
 
         #region Constructor
         /// <summary>
@@ -92,6 +93,7 @@ namespace Werewolf_Node
                 CultWins = Settings.CultWins.ToList();
                 SerialKillerWins = Settings.SerialKillerWins.ToList();
                 LoversWin = Settings.LoversWin.ToList();
+                SKKilled = Settings.SKKilled.ToList();
 
                 new Thread(GroupQueue).Start();
                 using (var db = new WWContext())
@@ -436,6 +438,8 @@ namespace Werewolf_Node
                         WolfWin = customs.Select(x => x.GifPack.WolfWin).ToList();
                     if (customs.Any(x => x.GifPack.WolvesWin != null))
                         WolvesWin = customs.Select(x => x.GifPack.WolvesWin).ToList();
+                    if (customs.Any(x => x.GifPack.SKKilled != null))
+                        SKKilled = customs.Select(x => x.GifPack.SKKilled).ToList();
                     foreach (var p in customs)
                     {
                         cMsg += p.GetName() + Environment.NewLine;
@@ -3221,6 +3225,7 @@ namespace Werewolf_Node
                         DBKill(sk, skilled, KillMthd.SerialKilled);
                         if (WolfRoles.Contains(skilled.PlayerRole))
                             sk.SerialKilledWolvesCount++;
+                        SendGif(GetLocaleString("SerialKillerKilledYou"), GetRandomImage(SKKilled), skilled.Id);
                     }
                 }
             }
