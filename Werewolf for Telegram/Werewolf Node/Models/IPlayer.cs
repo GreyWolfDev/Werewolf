@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -101,6 +102,7 @@ namespace Werewolf_Node.Models
 
 
         #region Achievement Related Stuff
+        public BitArray NewAchievements { get; set; }
 
         public bool HasBeenVoted { get; set; } = false;
         public bool HasStayedHome { get; set; } = false;

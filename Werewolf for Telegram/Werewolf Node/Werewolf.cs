@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -658,9 +659,11 @@ namespace Werewolf_Node
                         p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
                     if (user.Achievements == null)
                         user.Achievements = 0;
+                    // switch achv system
+                    SwitchAchievementsSystem(p);
                     if (ChatId == Settings.VeteranChatId)
                     {
-                        if (!((Achievements)user.Achievements).HasFlag(Achievements.Veteran))
+                        if (!(p.NewAchievements.HasFlag(AchievementsReworked.Veteran)))
                         {
                             Helpers.Helpers.KickChatMember(ChatId, user.TelegramId);
                             Players.Remove(p);
@@ -1439,12 +1442,12 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 rolesToAssign[0] = IRole.Wolf;
-                rolesToAssign[1] = IRole.Thief;
-                rolesToAssign[2] = IRole.Gunner;
+                rolesToAssign[1] = IRole.Villager;
+                rolesToAssign[2] = IRole.Villager;
                 if (rolesToAssign.Count >= 4)
-                    rolesToAssign[3] = IRole.Wolf;
+                    rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
-                    rolesToAssign[4] = IRole.Mason;
+                    rolesToAssign[4] = IRole.Villager;
 #endif
 
 
@@ -5161,12 +5164,108 @@ namespace Werewolf_Node
                         p.Achievements = (long)(ach | newAch);
                         db.SaveChanges();
 
-                        //notify
+                        // switching to new achv system, do not notify now
+
+                        /*
                         var newFlags = newAch.GetUniqueFlags().ToList();
                         if (newAch == Achievements.None) continue;
                         var msg = "New Unlocks!".ToBold() + Environment.NewLine;
                         msg = newFlags.Aggregate(msg, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
                         Send(msg, p.TelegramId);
+                        */
+
+                        //
+                        //
+                        // new achievements system
+                        //
+                        //
+
+                        // saving new achvs
+                        BitArray newAch2 = new BitArray(200);
+
+                        // existing achvs
+                        BitArray ach2 = new BitArray(200);
+                        if (p.NewAchievements != null)
+                        {
+                            ach2 = new BitArray(p.NewAchievements);
+                        }
+
+                        //calculate achievements
+                        //automatically get welcome to hell
+                        if (!ach2.HasFlag(AchievementsReworked.WelcomeToHell))
+                            newAch2.Set(AchievementsReworked.WelcomeToHell);
+                        if (!ach2.HasFlag(AchievementsReworked.WelcomeToAsylum) && Chaos)
+                            newAch2.Set(AchievementsReworked.WelcomeToAsylum);
+                        if (!ach2.HasFlag(AchievementsReworked.AlzheimerPatient) && Language.Contains("Amnesia"))
+                            newAch2.Set(AchievementsReworked.AlzheimerPatient);
+                        //if (!ach2.HasFlag(AchievementsReworked.OHAIDER) && Players.Any(x => x.TeleUser.Id == Program.Para))
+                        //    newAch2.Set(AchievementsReworked.OHAIDER);
+                        if (!ach2.HasFlag(AchievementsReworked.SpyVsSpy) & !DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
+                            newAch2.Set(AchievementsReworked.SpyVsSpy);
+                        if (!ach2.HasFlag(AchievementsReworked.NoIdeaWhat) & !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) && Language.Contains("Amnesia"))
+                            newAch2.Set(AchievementsReworked.NoIdeaWhat);
+                        if (!ach2.HasFlag(AchievementsReworked.Enochlophobia) && Players.Count == 35)
+                            newAch2.Set(AchievementsReworked.Enochlophobia);
+                        if (!ach2.HasFlag(AchievementsReworked.Introvert) && Players.Count == 5)
+                            newAch2.Set(AchievementsReworked.Introvert);
+                        if (!ach2.HasFlag(AchievementsReworked.Naughty) && Language.Contains("NSFW"))
+                            newAch2.Set(AchievementsReworked.Naughty);
+                        if (!ach2.HasFlag(AchievementsReworked.Dedicated) && p.GamePlayers.Count >= 100)
+                            newAch2.Set(AchievementsReworked.Dedicated);
+                        if (!ach2.HasFlag(AchievementsReworked.Obsessed) && p.GamePlayers.Count >= 1000)
+                            newAch2.Set(AchievementsReworked.Obsessed);
+                        if (!ach2.HasFlag(AchievementsReworked.Veteran) && p.GamePlayers.Count >= 500)
+                            newAch2.Set(AchievementsReworked.Veteran);
+                        if (!ach2.HasFlag(AchievementsReworked.Masochist) && player.Won && player.PlayerRole == IRole.Tanner)
+                            newAch2.Set(AchievementsReworked.Masochist);
+                        if (!ach2.HasFlag(AchievementsReworked.Wobble) && !player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
+                            newAch2.Set(AchievementsReworked.Wobble);
+                        if (!ach2.HasFlag(AchievementsReworked.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
+                            newAch2.Set(AchievementsReworked.Survivalist);
+                        if (!ach2.HasFlag(AchievementsReworked.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
+                            newAch2.Set(AchievementsReworked.MasonBrother);
+                        if (!ach2.HasFlag(AchievementsReworked.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
+                            newAch2.Set(AchievementsReworked.ChangingSides);
+                        if (!ach2.HasFlag(AchievementsReworked.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
+                            newAch2.Set(AchievementsReworked.LoneWolf);
+                        if (!ach2.HasFlag(AchievementsReworked.Inconspicuous) && !player.HasBeenVoted & !player.IsDead)
+                            newAch2.Set(AchievementsReworked.Inconspicuous);
+                        if (!ach2.HasFlag(AchievementsReworked.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
+                            newAch2.Set(AchievementsReworked.Promiscuous);
+                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && player.ChangedRolesCount >= 2)
+                            newAch2.Set(AchievementsReworked.DoubleShifter);
+                        if (!ach2.HasFlag(AchievementsReworked.BrokenClock) && player.FoolCorrectSeeCount >= 2)
+                            newAch2.Set(AchievementsReworked.BrokenClock);
+                        if (!ach2.HasFlag(AchievementsReworked.SmartGunner) && player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
+                            newAch2.Set(AchievementsReworked.SmartGunner);
+                        if (!ach2.HasFlag(AchievementsReworked.CultCon) && player.PlayerRole == IRole.Cultist && convention)
+                            newAch2.Set(AchievementsReworked.CultCon);
+                        if (!ach2.HasFlag(AchievementsReworked.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
+                            newAch2.Set(AchievementsReworked.SerialSamaritan);
+                        if (!ach2.HasFlag(AchievementsReworked.CultistTracker) && player.PlayerRole == IRole.CultistHunter && player.CHHuntedCultCount >= 3)
+                            newAch2.Set(AchievementsReworked.CultistTracker);
+                        if (!ach2.HasFlag(AchievementsReworked.ImNotDrunk) && player.PlayerRole == IRole.ClumsyGuy && player.ClumsyCorrectLynchCount >= 3)
+                            newAch2.Set(AchievementsReworked.ImNotDrunk);
+                        if (!ach2.HasFlag(AchievementsReworked.WuffieCult) && player.PlayerRole == IRole.AlphaWolf && player.AlphaConvertCount >= 3)
+                            newAch2.Set(AchievementsReworked.WuffieCult);
+                        if (!ach2.HasFlag(AchievementsReworked.DidYouGuardYourself) && player.PlayerRole == IRole.GuardianAngel && player.GAGuardWolfCount >= 3)
+                            newAch2.Set(AchievementsReworked.DidYouGuardYourself);
+                        if (!ach2.HasFlag(AchievementsReworked.ThreeLittleWolves) && player.PlayerRole == IRole.Sorcerer && Players.GetPlayersForRoles(WolfRoles, true).Count() >= 3)
+                            newAch2.Set(AchievementsReworked.ThreeLittleWolves);
+                        if (!ach2.HasFlag(AchievementsReworked.President) && player.PlayerRole == IRole.Mayor && player.MayorLynchAfterRevealCount >= 3)
+                            newAch2.Set(AchievementsReworked.President);
+                        if (!ach2.HasFlag(AchievementsReworked.ItWasABusyNight) && player.BusyNight)
+                            newAch2.Set(AchievementsReworked.ItWasABusyNight);
+                        //now save
+                        p.NewAchievements = ach2.Or(newAch2).ToByteArray();
+                        db.SaveChanges();
+
+                        //notify
+                        var newFlags2 = newAch2.GetUniqueFlags().ToList();
+                        if (newAch2.Cast<bool>().All(x => x == false)) continue;
+                        var msg2 = "New Unlocks!".ToBold() + Environment.NewLine;
+                        msg2 = newFlags2.Aggregate(msg2, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
+                        Send(msg2, p.TelegramId);
                     }
                 }
             }
@@ -5235,8 +5334,53 @@ namespace Werewolf_Node
                     ach = ach | a;
                     p.Achievements = (long)ach;
                     db.SaveChanges();
+
+                    // switching to new achv system, do not notify now
+                    // Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
+
+                    // add to new achv system
+                    AddAchievement(player, (AchievementsReworked)Enum.Parse(typeof(AchievementsReworked), a.ToString()));
+                }
+            }
+        }
+
+        private void AddAchievement(IPlayer player, AchievementsReworked a)
+        {
+            using (var db = new WWContext())
+            {
+                var p = GetDBPlayer(player, db);
+                if (p != null)
+                {
+                    var ach = new BitArray(200);
+                    if (p.NewAchievements != null)
+                        ach = new BitArray(p.NewAchievements);
+                    if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                    ach = ach.Set(a);
+                    p.NewAchievements = ach.ToByteArray();
+                    db.SaveChanges();
+
                     Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
                 }
+            }
+        }
+
+        private void SwitchAchievementsSystem(IPlayer player)
+        {
+            using (var db = new WWContext())
+            {
+                var p = GetDBPlayer(player, db);
+                var ach2 = new BitArray(200);
+
+                // copy existing achievements to new achievements field
+                var oldAchList = ((Achievements)(p.Achievements ?? 0)).GetUniqueFlags();
+                foreach (var achv in oldAchList)
+                {
+                    var newAchv = (AchievementsReworked)Enum.Parse(typeof(AchievementsReworked), achv.ToString());
+                    ach2.Set(newAchv);
+                }
+                p.NewAchievements = ach2.ToByteArray();
+                player.NewAchievements = ach2;
+                db.SaveChanges();
             }
         }
 
