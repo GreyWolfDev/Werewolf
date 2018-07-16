@@ -1470,14 +1470,13 @@
   <!-- {0} - The name of the thief's target -->
     <value>🤔 {0}❗️</value>
   </string>
-  <string key="ThiefStoleYourRole">
+  <string key="ThiefStoleYourRole" deprecated="true">
   <!-- {0} - The new role -->
     <value>👇➡{0}❗ 🤔</value>
   </string>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
-  <!-- {1} - The new role -->
-    <value>👇➡{1}❗ 🤔 {0}.</value>
+    <value>🤔 {0}❗️</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
@@ -1550,6 +1549,22 @@
   <string key="CultistBitten">
   <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
 	<value>🤔 {0}❗️</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>🙋‍♂</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>❓➡👇❗️</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>❓➡👇❗️</value>
   </string>
 </strings>
 
