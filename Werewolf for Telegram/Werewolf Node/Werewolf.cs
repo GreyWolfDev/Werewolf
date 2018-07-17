@@ -282,6 +282,14 @@ namespace Werewolf_Node
                     if (selected.ToLower().Contains("/join"))
                         throw new Exception("/join found in the string, using the English file.");
 
+                    if (String.IsNullOrWhiteSpace(selected))
+                    {
+                        strings = Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
+                        values = strings.Descendants("value");
+                        choice = Program.R.Next(values.Count());
+                        selected = values.ElementAt(choice).Value;
+                    }
+
                     return String.Format(selected.FormatHTML(), args).Replace("\\n", Environment.NewLine);
                 }
                 else

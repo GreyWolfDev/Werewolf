@@ -324,16 +324,20 @@ namespace Werewolf_Control
             var strings = doc.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
             if (strings == null)
             {
-                var efile = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
-                strings =
-                    efile.Descendants("string")
-                        .FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
             }
             if (strings == null)
                 return null;
             var values = strings.Descendants("value");
             var choice = Bot.R.Next(values.Count());
             var selected = values.ElementAt(choice);
+            if (String.IsNullOrWhiteSpace(selected.Value))
+            {
+                strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value.ToLower() == args[0].ToLower());
+                values = strings.Descendants("value");
+                choice = Bot.R.Next(values.Count());
+                selected = values.ElementAt(choice);
+            }
             return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
         }
 

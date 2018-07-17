@@ -1849,6 +1849,13 @@ namespace Werewolf_Control.Handler
                 var values = strings.Descendants("value");
                 var choice = Bot.R.Next(values.Count());
                 var selected = values.ElementAt(choice);
+                if (String.IsNullOrWhiteSpace(selected.Value))
+                {
+                    strings = Bot.English.Descendants("string").FirstOrDefault(x => x.Attribute("key").Value == key);
+                    values = strings.Descendants("value");
+                    choice = Bot.R.Next(values.Count());
+                    selected = values.ElementAt(choice);
+                }
                 return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
             catch (Exception e)
