@@ -326,7 +326,6 @@ namespace Werewolf_Control.Handler
                                     update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
-                                    if (new[] { "Thief", "WiseElder", "Pacifist" }.Contains(args[0].Replace("about", ""))) return;
                                     var reply = Commands.GetAbout(update, args);
                                     if (!String.IsNullOrEmpty(reply))
                                     {
