@@ -2232,6 +2232,7 @@ namespace Werewolf_Node
             target.Team = ThiefFull == true ? ITeam.Thief : ITeam.Village;
             target.RoleModel = 0;
             target.ChangedRolesCount++;
+            target.HasNightAction = ThiefFull == true ? true : false;
 
             // notify both players (notify team?)
             // First Notify the stolen player becoming VG/Thief
