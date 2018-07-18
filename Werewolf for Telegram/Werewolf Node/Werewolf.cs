@@ -1454,8 +1454,8 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 rolesToAssign[0] = IRole.Wolf;
-                rolesToAssign[1] = IRole.Villager;
-                rolesToAssign[2] = IRole.Villager;
+                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[2] = IRole.Thief;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
@@ -2149,7 +2149,7 @@ namespace Werewolf_Node
 
             // the thief first
             thief.PlayerRole = target.PlayerRole;
-            thief.OriginalRole = IRole.Thief;
+            // thief.OriginalRole = IRole.Thief;
             thief.RoleModel = target.RoleModel;
             thief.ChangedRolesCount++;
 
@@ -2235,7 +2235,7 @@ namespace Werewolf_Node
             }
 
             // then the target
-            target.OriginalRole = target.PlayerRole;
+            // target.OriginalRole = target.PlayerRole;
             target.PlayerRole = ThiefFull == true ? IRole.Thief : IRole.Villager;
             target.Team = ThiefFull == true ? ITeam.Thief : ITeam.Village;
             target.RoleModel = 0;
