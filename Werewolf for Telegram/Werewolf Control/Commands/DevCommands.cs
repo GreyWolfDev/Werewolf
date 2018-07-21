@@ -438,7 +438,7 @@ namespace Werewolf_Control
             {
                 Bot.Send("Please hold, searching....", update.Message.Chat.Id);
 
-                var groups = db.Groups.Where(x => x.Preferred != false && x.GroupLink != null && x.GroupId != -1001030085238)
+                var groups = db.Groups.Where(x => x.Preferred != false && x.GroupLink != null && x.GroupId != Settings.MainChatId && x.GroupId != Settings.VeteranChatId)
                     .Select(x => new PossibleGroup() { GroupId = x.GroupId, GroupLink = x.GroupLink, MemberCount = x.MemberCount ?? 0, Name = x.Name }).ToList();
 
                 var ofcSpells = new[] { "official", "offciail", "official", "oficial", "offical" };
