@@ -1453,9 +1453,9 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Wolf;
-                rolesToAssign[1] = IRole.Doppelgänger;
-                rolesToAssign[2] = IRole.Thief;
+                rolesToAssign[0] = IRole.Tanner;
+                rolesToAssign[1] = IRole.Villager;
+                rolesToAssign[2] = IRole.Wolf;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
@@ -1832,6 +1832,10 @@ namespace Werewolf_Node
             {
                 if (lover.SpeedDating)
                     AddAchievement(lover, Achievements.OnlineDating);
+                if (lover.PlayerRole == IRole.Doppelgänger && lover.RoleModel == lover.LoverId)
+                    AddAchievement(lover, AchievementsReworked.DeepLove);
+                if (loversNotify.Any(x => x.PlayerRole == IRole.Seer) && loversNotify.Any(x => x.PlayerRole == IRole.Sorcerer))
+                    AddAchievement(lover, AchievementsReworked.SeeingBetweenTeams);
             }
 
             Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
@@ -2566,6 +2570,9 @@ namespace Werewolf_Node
                     }
                     else
                     {
+                        if (lynched.PlayerRole == IRole.Tanner && Players.Count(x => !x.IsDead) == 3)
+                            AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+
                         lynched.IsDead = true;
                         lynched.TimeDied = DateTime.Now;
                         if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
@@ -2680,6 +2687,12 @@ namespace Werewolf_Node
             }
             //check gunner
             if (Players == null) return;
+
+            if (_sandmanSleep && _silverSpread)
+            {
+                var bs = Players.First(x => x.PlayerRole == IRole.Blacksmith & !x.IsDead);
+                AddAchievement(bs, AchievementsReworked.WastedSilver);
+            }
 
             var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (gunner != null)
@@ -2811,6 +2824,7 @@ namespace Werewolf_Node
 
                     Send(msg, p.Id);
 
+                    AddAchievement(p, AchievementsReworked.JustABeardyGuy);
                 }
             }
             CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
@@ -3131,6 +3145,7 @@ namespace Werewolf_Node
                                         if (bitten)
                                         {
                                             BitePlayer(target, voteWolves, alpha);
+                                            voteWolves.First(x => x.PlayerRole == IRole.AlphaWolf).StrongestAlpha = true;
                                         }
                                         else
                                         {
@@ -3608,6 +3623,7 @@ namespace Werewolf_Node
                             case IRole.AlphaWolf:
                             case IRole.WolfMan: //poor wolf man, is just a villager!
                                 role = IRole.Wolf;
+                                target.Trustworthy = true;
                                 break;
                             case IRole.Lycan: //sneaky wuff
                                 role = IRole.Villager;
@@ -3663,6 +3679,8 @@ namespace Werewolf_Node
                         {
                             if (possibleRoles[0] == target.PlayerRole || (possibleRoles[0] == IRole.Wolf && WolfRoles.Contains(target.PlayerRole)))
                                 fool.FoolCorrectSeeCount++;
+                            if (possibleRoles[0] == IRole.Beholder && target.PlayerRole == IRole.Beholder)
+                                fool.FoolCorrectlySeenBH = true;
                         }
                         catch
                         {
@@ -4176,7 +4194,15 @@ namespace Werewolf_Node
                                         tann.IsDead = true;
                                         tann.TimeDied = DateTime.Now;
 
-                                        deathmessage = GetLocaleString(sorcOrThief.PlayerRole == IRole.Sorcerer ? "SorcererEnd" : "ThiefEnd", sorcOrThief.GetName()) + Environment.NewLine;
+                                        if (sorcOrThief.PlayerRole == IRole.Sorcerer)
+                                        {
+                                            deathmessage = GetLocaleString("SorcererEnd", sorcOrThief.GetName()) + Environment.NewLine;
+                                            AddAchievement(sorcOrThief, AchievementsReworked.TimeToRetire);
+                                        }
+                                        else
+                                        {
+                                            deathmessage = GetLocaleString("ThiefEnd", sorcOrThief.GetName()) + Environment.NewLine;
+                                        }
                                         deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName());
                                     }
                                 }
@@ -4210,6 +4236,7 @@ namespace Werewolf_Node
                                     else if (lastone.PlayerRole == IRole.Sorcerer)
                                     {
                                         deathmessage = GetLocaleString("SorcererEnd", lastone.GetName());
+                                        AddAchievement(lastone, AchievementsReworked.TimeToRetire);
                                     }
                                     else if (lastone.PlayerRole == IRole.Thief)
                                     {
@@ -4773,6 +4800,7 @@ namespace Werewolf_Node
                             SendWithQueue(GetLocaleString("HunterKilledWiseElder", hunter.GetName(), killed.GetName()));
                             hunter.OriginalRole = IRole.Hunter;
                             hunter.PlayerRole = IRole.Villager;
+                            AddAchievement(hunter, AchievementsReworked.DemotedByTheDeath);
                         }
                         killed.IsDead = true;
                         if (killed.PlayerRole == IRole.WolfCub)
@@ -5270,6 +5298,12 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.President);
                         if (!ach2.HasFlag(AchievementsReworked.ItWasABusyNight) && player.BusyNight)
                             newAch2.Set(AchievementsReworked.ItWasABusyNight);
+                        if (!ach2.HasFlag(AchievementsReworked.StrongestAlpha) && player.StrongestAlpha)
+                            newAch2.Set(AchievementsReworked.StrongestAlpha);
+                        if (!ach2.HasFlag(AchievementsReworked.AmIYourSeer) && player.FoolCorrectlySeenBH)
+                            newAch2.Set(AchievementsReworked.AmIYourSeer);
+                        if (!ach2.HasFlag(AchievementsReworked.Trustworthy) && player.Trustworthy && !player.IsDead && player.Won)
+                            newAch2.Set(AchievementsReworked.Trustworthy);
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();

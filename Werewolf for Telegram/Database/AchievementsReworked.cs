@@ -136,10 +136,26 @@ namespace Database
         IHelped = 60,
         [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visiting roles")]
         ItWasABusyNight = 61,
-        BLABLABLA = 62,
-        BLABLABLABLA = 63,
-        BLABLABLABLABLA = 64,
-        BLABLABLABLABLABLA = 65,
+        [Display(Name = "Strongest Alpha"), Description("As the alpha wolf, successfully infect the serial killer!")]
+        StrongestAlpha = 62,
+        [Display(Name = "Am I Your Seer?"), Description("As the fool, correctly spot the beholder")]
+        AmIYourSeer = 63,
+        [Display(Name = "Demoted by the Death"), Description("As the hunter, shoot the wise elder with your final shot and die as lowly villager")]
+        DemotedByTheDeath = 64,
+        [Display(Name = "Wasted Silver"), Description("As the blacksmith, spread your silver dust the same day that the sandman sings")]
+        WastedSilver = 65,
+        [Display(Name = "Trustworthy!"), Description("As the wolf man, survive and win the game after being checked by seer")]
+        Trustworthy = 66,
+        [Display(Name = "Deep Love"), Description("As the doppelgänger, choose your lover as role model. What a deep love &lt;3")]
+        DeepLove = 67,
+        [Display(Name = "Time to retire..."), Description("As the sorcerer, be the last person alive in the village and lose the game")]
+        TimeToRetire = 68,
+        [Display(Name = "Seeing between Teams"), Description("Be in a seer/sorcerer couple")]
+        SeeingBetweenTeams = 69,
+        [Display(Name = "Just a Beardy Guy..?"), Description("As the wolf man, be infected by the alpha wolf and become a real werewolf. AWOOOOOOO!")]
+        JustABeardyGuy = 70,
+        [Display(Name = "That Came Unexpected!"), Description("As tanner, be lynched and win the game when there are only 3 persons left")]
+        ThatCameUnexpected = 71,
     } // MAX VALUE: 9223372036854775807
       //            
 

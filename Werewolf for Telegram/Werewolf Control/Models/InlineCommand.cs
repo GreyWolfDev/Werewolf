@@ -56,7 +56,7 @@ namespace Werewolf_Control.Models
                     var roleInfo = db.PlayerRoles(u.Id).ToList();
                     var killed = db.PlayerMostKilled(u.Id).FirstOrDefault();
                     var killedby = db.PlayerMostKilledBy(u.Id).FirstOrDefault();
-                    var ach = (Achievements) (p.Achievements ?? 0);
+                    var ach = p.NewAchievements == null ? new System.Collections.BitArray(200) : new System.Collections.BitArray(p.NewAchievements);
                     var count = ach.GetUniqueFlags().Count();
 
                     Content = $"<a href='tg://user?id={p.TelegramId}'>{p.Name.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}</a>";
