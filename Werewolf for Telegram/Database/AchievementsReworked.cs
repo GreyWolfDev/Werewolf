@@ -200,5 +200,11 @@ namespace Database
             array[(int)achv] = true;
             return array;
         }
+
+        public static BitArray Unset(this BitArray array, AchievementsReworked achv)
+        {
+            array[(int)achv] = false;
+            return array;
+        }
     }
 }

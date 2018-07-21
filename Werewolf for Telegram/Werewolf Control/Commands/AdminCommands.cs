@@ -16,6 +16,7 @@ using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using System.Threading;
+using System.Collections;
 
 namespace Werewolf_Control
 {
@@ -365,7 +366,7 @@ namespace Werewolf_Control
             if (id != 0)
             {
                 //try to get the achievement
-                if (Enum.TryParse(param[achIndex], out Achievements a))
+                if (Enum.TryParse(param[achIndex], out AchievementsReworked a))
                 {
                     //get the player from database
                     using (var db = new WWContext())
@@ -373,12 +374,12 @@ namespace Werewolf_Control
                         var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
                         if (p != null)
                         {
-                            if (p.Achievements == null)
-                                p.Achievements = 0;
-                            var ach = (Achievements)p.Achievements;
+                            var ach = new BitArray(200);
+                            if (p.NewAchievements != null)
+                                ach = new BitArray(p.NewAchievements);
                             if (ach.HasFlag(a)) return; //no point making another db call if they already have it
-                            ach = ach | a;
-                            p.Achievements = (long)ach;
+                            ach = ach.Set(a);
+                            p.NewAchievements = ach.ToByteArray();
                             db.SaveChanges();
                             Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
                             Send($"Achievement {a} unlocked for {p.Name}", u.Message.Chat.Id);
@@ -447,8 +448,7 @@ namespace Werewolf_Control
             if (id != 0)
             {
                 //try to get the achievement
-                Achievements a;
-                if (Enum.TryParse(param[achIndex], out a))
+                if (Enum.TryParse(param[achIndex], out AchievementsReworked a))
                 {
                     //get the player from database
                     using (var db = new WWContext())
@@ -456,12 +456,12 @@ namespace Werewolf_Control
                         var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
                         if (p != null)
                         {
-                            if (p.Achievements == null)
-                                p.Achievements = 0;
-                            var ach = (Achievements)p.Achievements;
+                            var ach = new BitArray(200);
+                            if (p.NewAchievements != null)
+                                ach = new BitArray(p.NewAchievements);
                             if (!ach.HasFlag(a)) return; //no point making another db call if they already have it
-                            ach &= ~a;
-                            p.Achievements = (long)ach;
+                            ach = ach.Unset(a);
+                            p.NewAchievements = ach.ToByteArray();
                             db.SaveChanges();
 
                             Send($"Achievement {a} removed from {p.Name}", u.Message.Chat.Id);
