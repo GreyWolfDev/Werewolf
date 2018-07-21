@@ -5004,13 +5004,13 @@ namespace Werewolf_Node
 
                 try
                 {
-                    //if (ChatId == -1001094614730) //vets group
+                    //if (ChatId == Settings.VeteranChatId) //vets group
                     //{
                     //    //let's try this out, shall we?
-                    //    var status = Program.Bot.GetChatMemberAsync(-1001094614730, victim.Id).Result;
+                    //    var status = Program.Bot.GetChatMemberAsync(Settings.VeteranChatId, victim.Id).Result;
                     //    if (status.Status != ChatMemberStatus.Administrator && status.Status != ChatMemberStatus.Creator)
                     //    {
-                    //        Program.Bot.RestrictChatMemberAsync(-1001094614730, victim.Id, DateTime.Now.AddHours(1), false, false, false, false);
+                    //        Program.Bot.RestrictChatMemberAsync(Settings.VeteranChatId, victim.Id, DateTime.Now.AddHours(1), false, false, false, false);
                     //    }
                     //}
                 }
