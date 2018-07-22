@@ -57,6 +57,17 @@ namespace Werewolf_Control.Models
                     var killed = db.PlayerMostKilled(u.Id).FirstOrDefault();
                     var killedby = db.PlayerMostKilledBy(u.Id).FirstOrDefault();
                     var ach = p.NewAchievements == null ? new System.Collections.BitArray(200) : new System.Collections.BitArray(p.NewAchievements);
+                    
+                    // copy existing achievements to new achievements field
+                    var oldAchList = ((Achievements)(p.Achievements ?? 0)).GetUniqueFlags();
+                    foreach (var achv in oldAchList)
+                    {
+                        var newAchv = (AchievementsReworked)Enum.Parse(typeof(AchievementsReworked), achv.ToString());
+                        ach.Set(newAchv);
+                    }
+                    p.NewAchievements = ach.ToByteArray();
+                    db.SaveChanges();
+
                     var count = ach.GetUniqueFlags().Count();
 
                     Content = $"<a href='tg://user?id={p.TelegramId}'>{p.Name.FormatHTML()} the {roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "Noob"}</a>";
