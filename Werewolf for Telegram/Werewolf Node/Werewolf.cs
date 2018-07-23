@@ -2824,7 +2824,8 @@ namespace Werewolf_Node
 
                     Send(msg, p.Id);
 
-                    AddAchievement(p, AchievementsReworked.JustABeardyGuy);
+                    if (p.OriginalRole == IRole.WolfMan)
+                        AddAchievement(p, AchievementsReworked.JustABeardyGuy);
                 }
             }
             CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
@@ -5226,11 +5227,8 @@ namespace Werewolf_Node
                         BitArray newAch2 = new BitArray(200);
 
                         // existing achvs
-                        BitArray ach2 = new BitArray(200);
-                        if (p.NewAchievements != null)
-                        {
-                            ach2 = new BitArray(p.NewAchievements);
-                        }
+                        var ach2 = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+
 
                         //calculate achievements
                         //automatically get welcome to hell
@@ -5399,9 +5397,7 @@ namespace Werewolf_Node
                 var p = GetDBPlayer(player, db);
                 if (p != null)
                 {
-                    var ach = new BitArray(200);
-                    if (p.NewAchievements != null)
-                        ach = new BitArray(p.NewAchievements);
+                    var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
                     if (ach.HasFlag(a)) return; //no point making another db call if they already have it
                     ach = ach.Set(a);
                     p.NewAchievements = ach.ToByteArray();
@@ -5417,7 +5413,7 @@ namespace Werewolf_Node
             using (var db = new WWContext())
             {
                 var p = GetDBPlayer(player, db);
-                var ach2 = new BitArray(200);
+                var ach2 = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
 
                 // copy existing achievements to new achievements field
                 var oldAchList = ((Achievements)(p.Achievements ?? 0)).GetUniqueFlags();
