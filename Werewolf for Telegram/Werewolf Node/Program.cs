@@ -322,7 +322,7 @@ namespace Werewolf_Node
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                var menu = new ReplyKeyboardRemove();
                 return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else if (customMenu != null)
