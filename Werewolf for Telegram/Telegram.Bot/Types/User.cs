@@ -32,5 +32,11 @@ namespace Telegram.Bot.Types
         /// </summary>
         [JsonProperty(PropertyName = "username", Required = Required.Default)]
         public string Username { get; internal set; }
+
+        /// <summary>
+        /// Whether the user is a bot account
+        /// </summary>
+        [JsonProperty(PropertyName = "is_bot", Required = Required.Always)]
+        public bool IsBot { get; internal set; }
     }
 }

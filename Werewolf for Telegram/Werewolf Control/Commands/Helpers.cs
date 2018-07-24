@@ -63,7 +63,7 @@ namespace Werewolf_Control
             //retiring bot 2
             Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
             Thread.Sleep(1000);
-            Bot.Api.LeaveChat(update.Message.Chat.Id);
+            Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
             
             return;
 

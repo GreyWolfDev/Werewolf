@@ -25,7 +25,7 @@ namespace Telegram.Bot
         private const string BaseFileUrl = "https://api.telegram.org/file/bot";
         public string LogDirectory;
         private Status _status = Status.Normal;
-        private string LogPath => Path.Combine(LogDirectory, "getUpdates.log");
+        private string LogPath => LogDirectory == null ? null : Path.Combine(LogDirectory, "getUpdates.log");
         private readonly string _token;
         private bool _invalidToken;
 
@@ -129,13 +129,27 @@ namespace Telegram.Bot
         #endregion
 
         /// <summary>
-        /// Creat new Telegram Bot Api Client
+        /// Create new Telegram Bot Api Client with logging
         /// </summary>
         /// <param name="token">API token</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invvalid</exception>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invalid</exception>
         public Client(string token, string logDirectory)
         {
             LogDirectory = logDirectory;
+            if (!Regex.IsMatch(token, @"^\d*:[\w\d-_]{35}$"))
+                throw new ArgumentException("Invalid token format", nameof(token));
+
+            _token = token;
+        }
+
+        /// <summary>
+        /// Create new Telegram Bot Api Client without logging
+        /// </summary>
+        /// <param name="token">API Token</param>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invalid</exception>
+        public Client(string token)
+        {
+            LogDirectory = null;
             if (!Regex.IsMatch(token, @"^\d*:[\w\d-_]{35}$"))
                 throw new ArgumentException("Invalid token format", nameof(token));
 
@@ -207,7 +221,7 @@ namespace Telegram.Bot
 
                     if (updates.Length == 0)
                     {
-                       SetStatus(Status.NotReceiving);
+                        SetStatus(Status.NotReceiving);
                     }
                     else if (updates.Length == 100)
                     {
@@ -215,19 +229,22 @@ namespace Telegram.Bot
                     }
                     else SetStatus(Status.Normal);
 
-
                     try
                     {
-                        using (var s = new StreamWriter(LogPath, true))
+                        if (LogPath != null)
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
-                            s.Flush();
+                            using (var s = new StreamWriter(LogPath, true))
+                            {
+                                s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {updates.Length}");
+                                s.Flush();
+                            }
                         }
                     }
                     finally
                     {
-                        
+
                     }
+
                     foreach (var update in updates)
                     {
                         OnUpdateReceived(new UpdateEventArgs(update));
@@ -241,10 +258,13 @@ namespace Telegram.Bot
                     SetStatus(Status.Error);
                     try
                     {
-                        using (var s = new StreamWriter(LogPath, true))
+                        if (LogPath != null)
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                            s.Flush();
+                            using (var s = new StreamWriter(LogPath, true))
+                            {
+                                s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                                s.Flush();
+                            }
                         }
                     }
                     finally
@@ -258,10 +278,13 @@ namespace Telegram.Bot
                     SetStatus(Status.Error);
                     try
                     {
-                        using (var s = new StreamWriter(LogPath, true))
+                        if (LogPath != null)
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                            s.Flush();
+                            using (var s = new StreamWriter(LogPath, true))
+                            {
+                                s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                                s.Flush();
+                            }
                         }
                     }
                     finally
@@ -278,19 +301,22 @@ namespace Telegram.Bot
                         e = e.InnerException;
                     try
                     {
-                        var path = Path.GetDirectoryName(LogPath);
-                        Directory.CreateDirectory(path);
-                        using (var s = new StreamWriter(LogPath, true))
+                        if (LogPath != null)
                         {
-                            s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
-                            s.Flush();
+                            var path = Path.GetDirectoryName(LogPath);
+                            Directory.CreateDirectory(path);
+                            using (var s = new StreamWriter(LogPath, true))
+                            {
+                                s.WriteLine($"{DateTime.Now} - {sw.Elapsed.ToString("g")} - {e.Message}");
+                                s.Flush();
+                            }
                         }
                     }
                     finally
                     {
                         // do nothing
                     }
-                    
+
                 }
 
             }
@@ -1850,7 +1876,7 @@ namespace Telegram.Bot
                                 if (parameter.Value is FileToSend)
                                 {
                                     client.Timeout = UploadTimeout;
-                                    form.Add(content, parameter.Key, ((FileToSend) parameter.Value).Filename);
+                                    form.Add(content, parameter.Key, ((FileToSend)parameter.Value).Filename);
                                 }
                                 else
                                     form.Add(content, parameter.Key);

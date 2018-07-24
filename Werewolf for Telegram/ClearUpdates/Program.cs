@@ -10,17 +10,18 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Types.ReplyMarkups;
 using Database;
+using System.Reflection;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 
 namespace ClearUpdates
 {
     class Program
     {
         static int total = 0;
-        static TelegramBotClient WWAPI;
-        static TelegramBotClient Api;
+        static Client WWAPI;
+        static Client Api;
         internal static int[] Devs = new[] { 129046388, 133748469, 125311351 };
         static long DevGroup = -1001076212715;
         static void Main(string[] args)
@@ -39,13 +40,14 @@ namespace ClearUpdates
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            WWAPI = new TelegramBotClient(TelegramAPIKey);
-            WWAPI.OnUpdate += WWAPI_OnUpdate;
+
+            WWAPI = new Client(TelegramAPIKey);
+            WWAPI.UpdateReceived += WWAPI_OnUpdate;
             var apikey = key.GetValue("QueueAPI").ToString();
-            Api = new TelegramBotClient(apikey);
-            Api.OnMessage += Api_OnMessage;
-            Api.OnUpdate += ApiOnOnUpdate;
-            Api.OnCallbackQuery += Api_OnCallbackQuery;
+            Api = new Client(apikey);
+            Api.MessageReceived += Api_OnMessage;
+            Api.UpdateReceived += ApiOnOnUpdate;
+            Api.CallbackQueryReceived += Api_OnCallbackQuery;
             Api.StartReceiving();
             new Task(() => MonitorStatus()).Start();
             Thread.Sleep(-1);
@@ -84,11 +86,11 @@ namespace ClearUpdates
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var m = e.Message;
-            
+
             if (Devs.Contains(m.From.Id))
             {
                 Console.WriteLine($"{m.MessageId} - {m.From.FirstName}: {m.Text}");
-                switch (m.Text.Replace("@wwcleanbot",""))
+                switch (m.Text.Replace("@wwcleanbot", ""))
                 {
                     case "/clearqueue":
                         if (m.Date < DateTime.Now.AddSeconds(-1))
@@ -204,17 +206,17 @@ namespace ClearUpdates
                     msg += "\r\n";
                     sw.WriteLine(msg);
                     Console.WriteLine(msg);
-                    menu.Buttons.Add(InlineKeyboardButton.WithCallbackData($"{user.Id}: {t.Count}", user.Id.ToString()));
+                    menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
             if (menu.Buttons.Count > 0)
             {
-                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Close", "close"));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
                 Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
             }
             using (var fs = new FileStream("log.log", FileMode.Open))
             {
-                Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt"));
+                Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs));
             }
         }
     }

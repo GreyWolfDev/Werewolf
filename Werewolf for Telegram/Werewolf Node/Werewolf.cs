@@ -11,7 +11,7 @@ using Database;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InputFiles;
+using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
@@ -188,7 +188,7 @@ namespace Werewolf_Node
 
                     LoadLanguage(DbGroup.Language);
 
-                    _requestPMButton = new InlineKeyboardMarkup(new[] { InlineKeyboardButton.WithUrl("Start Me", "http://t.me/" + Program.Me.Username) });
+                    _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://t.me/" + Program.Me.Username) });
                     //AddPlayer(u);
                 }
 
@@ -196,13 +196,13 @@ namespace Werewolf_Node
                 //create our button
                 _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    InlineKeyboardButton.WithUrl(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=" + deeplink)
+                    new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=" + deeplink)
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
-                _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new InputOnlineFile("CgADAwADmAIAAnQXsQdKO62ILjJQMQI"), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocumentAsync(chatid, "CgADAwADmAIAAnQXsQdKO62ILjJQMQI", FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
-                _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new InputOnlineFile(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocumentAsync(chatid, GetRandomImage(Chaos ? StartChaosGame : StartGame), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #endif
 
                 // This can stay turned off now I think. Can enable it again if players don't get it at all
@@ -1048,7 +1048,7 @@ namespace Werewolf_Node
 #if (DEBUG)
             Send(text, id);
 #else
-            Program.Bot.SendDocumentAsync(id, new InputOnlineFile(image), text);
+            Program.Bot.SendDocumentAsync(id, image, text);
 #endif
         }
 

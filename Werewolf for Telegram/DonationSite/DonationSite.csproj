@@ -146,9 +146,6 @@
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Telegram.Bot, Version=14.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telegram.Bot.14.6.0\lib\net45\Telegram.Bot.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
@@ -255,6 +252,10 @@
     <ProjectReference Include="..\Database\Database.csproj">
       <Project>{a5e58eab-3171-4859-8fd5-d61e78cbdc93}</Project>
       <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Telegram.Bot\Telegram.Bot.csproj">
+      <Project>{5436a4df-7b54-41d3-855f-ad3f516ae377}</Project>
+      <Name>Telegram.Bot</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

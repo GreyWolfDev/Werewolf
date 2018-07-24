@@ -27,7 +27,7 @@ namespace Werewolf_Node
         internal static Guid ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
-        internal static TelegramBotClient Bot;
+        internal static Client Bot;
         internal static User Me;
         internal static Random R = new Random();
         internal static bool IsShuttingDown = false;
@@ -98,7 +98,7 @@ namespace Werewolf_Node
 #elif BETA
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
-            Bot = new TelegramBotClient(APIToken);
+            Bot = new Client(APIToken);
             Me = Bot.GetMeAsync().Result;
             ClientId = Guid.NewGuid();
             new Thread(KeepAlive).Start();
@@ -322,7 +322,7 @@ namespace Werewolf_Node
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove();
+                var menu = new ReplyKeyboardHide() { HideKeyboard = true };
                 return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else if (customMenu != null)
