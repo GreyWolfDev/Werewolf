@@ -1435,6 +1435,42 @@ namespace Werewolf_Control
             }
         }
 
+        [Attributes.Command(Trigger = "unlockbeta", GlobalAdminOnly = true)]
+        public static void UnlockBeta(Update u, string[] args)
+        {
+#if BETA
+            if (!Program.BetaUnlocked)
+            {
+                Program.BetaUnlocked = true;
+                foreach(var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
+                    Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName}!</b>", id);
+                
+            }
+            else
+            {
+                Bot.Send("Beta was already unlocked for all groups!", u.Message.Chat.Id);
+            }
+#endif
+        }
+
+        [Attributes.Command(Trigger = "lockbeta", GlobalAdminOnly = true)]
+        public static void LockBeta(Update u, string[] args)
+        {
+#if BETA
+            if (Program.BetaUnlocked)
+            {
+                Program.BetaUnlocked = false;
+                foreach (var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
+                    Bot.Send($"<b>Beta has been locked for non-betagroups by {u.Message.From.FirstName}!</b>", id);
+
+            }
+            else
+            {
+                Bot.Send("Beta was already locked for non-betagroups!", u.Message.Chat.Id);
+            }
+#endif
+        }
+
     }
 
 

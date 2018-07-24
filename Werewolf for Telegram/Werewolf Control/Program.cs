@@ -33,6 +33,9 @@ namespace Werewolf_Control
         public static int MaxGames;
         public static DateTime MaxTime = DateTime.MinValue;
         public static bool MaintMode = false;
+#if BETA
+        public static bool BetaUnlocked = false;
+#endif
         internal static BotanIO.Api.Botan Analytics;
         internal static string XsollaLink = null;
         internal static string XsollaApiId = null;
