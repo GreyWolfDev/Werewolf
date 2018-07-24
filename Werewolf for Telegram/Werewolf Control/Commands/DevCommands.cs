@@ -1443,7 +1443,7 @@ namespace Werewolf_Control
             {
                 Program.BetaUnlocked = true;
                 foreach(var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
-                    Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName}!</b>", id);
+                    Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
                 
             }
             else
@@ -1461,7 +1461,7 @@ namespace Werewolf_Control
             {
                 Program.BetaUnlocked = false;
                 foreach (var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
-                    Bot.Send($"<b>Beta has been locked for non-betagroups by {u.Message.From.FirstName}!</b>", id);
+                    Bot.Send($"<b>Beta has been locked for non-betagroups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
 
             }
             else
