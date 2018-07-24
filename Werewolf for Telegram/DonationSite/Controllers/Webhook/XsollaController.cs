@@ -22,7 +22,7 @@ namespace DonationSite.Controllers.Webhook
         public static long LogGroupId = long.Parse(ConfigurationManager.AppSettings.Get("LogGroupId"));
         private static string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
         private static string XsollaProjectSecretKey = ConfigurationManager.AppSettings.Get("XsollaProjectSecretKey");
-        public static Client bot = new Client(TelegramAPIKey);
+        public static TelegramBotClient bot = new TelegramBotClient(TelegramAPIKey);
 
         [HttpPost]
         public async Task<HttpResponseMessage> Post()

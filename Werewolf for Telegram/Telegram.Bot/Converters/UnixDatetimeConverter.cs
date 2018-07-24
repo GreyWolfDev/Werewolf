@@ -44,8 +44,6 @@ namespace Telegram.Bot.Converters
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
                                         JsonSerializer serializer)
         {
-            if (reader.Value == null) return null;
-
             if (reader.TokenType != JsonToken.Integer)
                 throw new Exception("Wrong Token Type");
 

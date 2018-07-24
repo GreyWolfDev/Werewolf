@@ -363,7 +363,7 @@ namespace Werewolf_Control.Handler
                                     if (update.Message.Chat.Type != ChatType.Private)
                                     {
                                         Thread.Sleep(1000);
-                                        Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
+                                        Bot.Api.LeaveChat(update.Message.Chat.Id);
                                     }
 #endif
                                     if (AddCount(update.Message.From.Id, update.Message)) return;
