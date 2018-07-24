@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InlineKeyboardButtons;
+using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Types.ReplyMarkups;
 using Database;
 
@@ -204,17 +204,17 @@ namespace ClearUpdates
                     msg += "\r\n";
                     sw.WriteLine(msg);
                     Console.WriteLine(msg);
-                    menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
+                    menu.Buttons.Add(InlineKeyboardButton.WithCallbackData($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
             if (menu.Buttons.Count > 0)
             {
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Close", "close"));
                 Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
             }
             using (var fs = new FileStream("log.log", FileMode.Open))
             {
-                Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs));
+                Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt"));
             }
         }
     }
