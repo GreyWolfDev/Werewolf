@@ -3622,6 +3622,8 @@ namespace Werewolf_Node
                                 break;
                             case IRole.WolfCub: //seer doesn't see wolf type
                             case IRole.AlphaWolf:
+                                role = IRole.Wolf;
+                                break;
                             case IRole.WolfMan: //poor wolf man, is just a villager!
                                 role = IRole.Wolf;
                                 target.Trustworthy = true;
