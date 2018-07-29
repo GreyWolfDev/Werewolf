@@ -240,7 +240,7 @@ namespace Werewolf_Control
                     string gameid = "";
                     Models.Node node = null;
                     Models.GameInfo game = null;
-                    ChatMemberStatus status = ChatMemberStatus.Creator;
+                    ChatMember chatmember = null;
                     try
                     {
                         nodeid = args[1].Substring(0, 32);
@@ -281,8 +281,8 @@ namespace Werewolf_Control
 
                         //ok we got the game, now join 
                         //make sure they are member
-                        status = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result.Status;
-                        if (status == ChatMemberStatus.Left || status == ChatMemberStatus.Kicked)
+                        chatmember = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result;
+                        if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !chatmember.CanSendMessages))
                         {
                             Bot.Send(
                                 GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()),
@@ -306,7 +306,7 @@ namespace Werewolf_Control
                              $"Game: {gameid}\n" +
                              $"Found Node: {node?.ClientId}\n" +
                              $"Found Game: {game?.Guid}\n" +
-                             $"Chat Member Status: {status}\n" +
+                             $"Chat Member Status: {chatmember?.Status.ToString() ?? "NULL"}\n" +
                              $"{ex.Message}\n{ex.StackTrace}",
                             Settings.ErrorGroup);
 
@@ -323,7 +323,7 @@ namespace Werewolf_Control
                              $"Game: {gameid}\n" +
                              $"Found Node: {node?.ClientId}\n" +
                              $"Found Game: {game?.Guid}\n" +
-                             $"Chat Member Status: {status}\n" +
+                             $"Chat Member Status: {chatmember?.Status.ToString() ?? "NULL"}\n" +
                              $"{ex.Message}\n{ex.StackTrace}",
                             Settings.ErrorGroup);
                     }
