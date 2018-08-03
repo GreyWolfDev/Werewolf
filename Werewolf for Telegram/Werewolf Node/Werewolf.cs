@@ -4227,7 +4227,7 @@ namespace Werewolf_Node
                                     }
                                 }
                                 // thief and sorcerer
-                                if (alives.Any(x => x.PlayerRole == IRole.Sorcerer) && alives.First(x => x.PlayerRole != IRole.Sorcerer).PlayerRole == IRole.Thief)
+                                else if (alives.Any(x => x.PlayerRole == IRole.Sorcerer) && alives.First(x => x.PlayerRole != IRole.Sorcerer).PlayerRole == IRole.Thief)
                                 {
                                     var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
                                     var thief = alives.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
