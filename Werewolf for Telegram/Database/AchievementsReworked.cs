@@ -156,6 +156,12 @@ namespace Database
         JustABeardyGuy = 70,
         [Display(Name = "That Came Unexpected!"), Description("As tanner, be lynched and win the game when there are only 3 persons left")]
         ThatCameUnexpected = 71,
+        [Display(Name = "Now I'm Blind"), Description("As the oracle, fail to get a vision because everyone else has the same role.")]
+        NowImBlind = 72,
+        [Display(Name = "Every Man for Himself!"), Description("As the pacifist, save yourself from being lynched (at least 50% of votes have been cast for you already)")]
+        EveryManForHimself = 73,
+        [Display(Name = "My Sweetie so Strong!"), Description("Be in love with the pacifist, and get saved from being lynched by them (at least 50% of votes have been cast for you already)")]
+        MySweetieSoStrong = 74
     } // MAX VALUE: 9223372036854775807
       //            
 

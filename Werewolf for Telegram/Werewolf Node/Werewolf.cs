@@ -1453,8 +1453,8 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Tanner;
-                rolesToAssign[1] = IRole.Villager;
+                rolesToAssign[0] = IRole.Pacifist;
+                rolesToAssign[1] = IRole.Cupid;
                 rolesToAssign[2] = IRole.Wolf;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
@@ -2390,6 +2390,7 @@ namespace Werewolf_Node
             {
                 p.CurrentQuestion = null;
                 p.VotedBy.Clear();
+                p.Votes = 0;
             }
 
             if (CheckForGameEnd()) return;
@@ -2423,6 +2424,18 @@ namespace Werewolf_Node
                         }
                         catch { } // ignored
                         p.CurrentQuestion = null;
+                    }
+                    var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead);
+                    if (pacifist != null)
+                    {
+                        if (Players.Count(x => x.Choice == pacifist.Id) > (double)Players.Count(x => !x.IsDead) / 2)
+                        {
+                            AddAchievement(pacifist, AchievementsReworked.EveryManForHimself);
+                        }
+                        else if (pacifist.LoverId != 0 && Players.Count(x => x.Choice == pacifist.LoverId) > (double)Players.Count(x => !x.IsDead) / 2)
+                        {
+                            AddAchievement(Players.First(x => x.Id == pacifist.LoverId), AchievementsReworked.MySweetieSoStrong);
+                        }
                     }
                     return;
                 }
@@ -3707,6 +3720,10 @@ namespace Werewolf_Node
                     if (possibleRoles.Any())
                     {
                         Send(GetLocaleString("NegSeerSees", target.GetName(), GetDescription(possibleRoles[0])), negSeer.Id);
+                    }
+                    else
+                    {
+                        AddAchievement(negSeer, AchievementsReworked.NowImBlind);
                     }
                 }
             }
