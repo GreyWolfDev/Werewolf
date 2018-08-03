@@ -4235,6 +4235,7 @@ namespace Werewolf_Node
                                     if (sorc != null && thief != null)
                                     {
                                         deathmessage = GetLocaleString("SorcererEnd", sorc.GetName()) + Environment.NewLine;
+                                        AddAchievement(sorc, AchievementsReworked.TimeToRetire);
                                         deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                     }
                                 }
