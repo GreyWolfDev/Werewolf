@@ -2819,6 +2819,9 @@ namespace Werewolf_Node
                         foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
                             Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
 
+                    else if (p.PlayerRole == IRole.WolfMan)
+                        AddAchievement(p, AchievementsReworked.JustABeardyGuy);
+
                     p.Bitten = false;
                     p.PlayerRole = IRole.Wolf;
                     p.Team = ITeam.Wolf;
@@ -2836,9 +2839,6 @@ namespace Werewolf_Node
                     Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
 
                     Send(msg, p.Id);
-
-                    if (p.OriginalRole == IRole.WolfMan)
-                        AddAchievement(p, AchievementsReworked.JustABeardyGuy);
                 }
             }
             CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
