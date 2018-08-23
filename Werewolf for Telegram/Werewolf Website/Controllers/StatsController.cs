@@ -255,8 +255,8 @@ namespace Werewolf_Web.Controllers
                         lost = new { total = lost, percent = lost * 100 / gamesPlayed },
                         survived = new { total = survived, percent = survived * 100 / gamesPlayed },
                         mostCommonRole = roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?",
-                        mostKilled = new { name = killed.Name, id = killed.TelegramId, link = killedlink, times = killed.times },
-                        mostKilledBy = new { name = killedby.Name, id = killedby.TelegramId, link = killedbylink, times = killedby.times },
+                        mostKilled = killed != null ? new { name = killed.Name, id = killed.TelegramId, link = killedlink, times = killed.times } : null,
+                        mostKilledBy = killedby != null ? new { name = killedby.Name, id = killedby.TelegramId, link = killedbylink, times = killedby.times } : null,
                         achievements = p.Achievements
                     };
                     return Json(reply, JsonRequestBehavior.AllowGet);
@@ -276,7 +276,7 @@ namespace Werewolf_Web.Controllers
                 {
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
-                var killed = DB.PlayerMostKilled(p.TelegramId).AsEnumerable().Take(5);
+                var killed = DB.PlayerMostKilled(p.TelegramId).AsEnumerable().Where(x => x != null).Take(5);
                 if (!json)
                 {
                     var reply = "<table class=\"table table-hover\"><tbody><tr><th>Player Name</th><th>Times</th></tr>";
@@ -305,7 +305,7 @@ namespace Werewolf_Web.Controllers
                 {
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
-                var killed = DB.PlayerMostKilledBy(p.TelegramId).AsEnumerable().Take(5);
+                var killed = DB.PlayerMostKilledBy(p.TelegramId).AsEnumerable().Where(x => x != null).Take(5);
                 if (!json)
                 {
                     var reply = "<table class=\"table table-hover\"><tbody><tr><th>Player Name</th><th>Times</th></tr>";
