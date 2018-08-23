@@ -4086,6 +4086,7 @@ namespace Werewolf_Node
                                     other.PlayerRole = IRole.Cultist;
                                     other.Team = ITeam.Cult;
                                     other.ChangedRolesCount++;
+                                    other.ConvertedToCult = true;
                                 }
                                 return DoGameEnd(ITeam.Cult);
                         }
