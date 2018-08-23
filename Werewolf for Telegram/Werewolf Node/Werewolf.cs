@@ -1334,8 +1334,8 @@ namespace Werewolf_Node
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Thief:
-                        if (AllowThief)
-                            rolesToAssign.Add(role);
+                        //if (AllowThief)
+                        //    rolesToAssign.Add(role);
                         break;
                     case IRole.Pacifist:
                     case IRole.WiseElder:
