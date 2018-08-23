@@ -1485,7 +1485,8 @@ namespace Werewolf_Node
                 }
 
                 foreach (var p in Players)
-                    p.OriginalRole = p.PlayerRole;
+                    p.CultLeader = p.PlayerRole == IRole.Cultist;
+
             }
             catch (Exception ex)
             {
@@ -1659,7 +1660,6 @@ namespace Werewolf_Node
                     //seer is dead, promote app seer
                     aps.HasDayAction = false;
                     aps.HasNightAction = true;
-                    aps.OriginalRole = IRole.ApprenticeSeer;
                     aps.PlayerRole = IRole.Seer;
                     aps.ChangedRolesCount++;
                     //notify
@@ -1877,6 +1877,7 @@ namespace Werewolf_Node
                             teammates += $"{w.GetName()}" + ", ";
                         }
                         wc.PlayerRole = IRole.Wolf;
+                        wc.ChangedRolesCount++;
                         wc.Team = ITeam.Wolf;
                         wc.ChangedRolesCount++;
                         wc.HasNightAction = true;
@@ -1900,17 +1901,8 @@ namespace Werewolf_Node
                 if (rm != null && rm.IsDead)
                 {
                     var teammates = "";
-                    //notify other wolves
-                    p.PlayerRole = rm.OriginalRole;
-                    if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.WildChild || rm.OriginalRole == IRole.Traitor || rm.OriginalRole == IRole.Cursed)
-                    {
-                        //if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.Cursed)
-                        if (rm.OriginalRole == IRole.ApprenticeSeer)     //if cursed turned wolf before dying, should DG turn cursed or directly wolf? use the above line if DG should turn cursed
-                            if (rm.PlayerRole != IRole.Wolf)
-                                p.PlayerRole = rm.PlayerRole;
-                        if (rm.PlayerRole != IRole.Cultist)
-                            p.PlayerRole = rm.PlayerRole;
-                    }
+                    //notify other wolves or cultists
+                    p.PlayerRole = rm.PlayerRole;
                     p.ChangedRolesCount++;
 
                     if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan }.Contains(p.PlayerRole))
@@ -2153,7 +2145,6 @@ namespace Werewolf_Node
 
             // the thief first
             thief.PlayerRole = target.PlayerRole;
-            // thief.OriginalRole = IRole.Thief;
             thief.RoleModel = target.RoleModel;
             thief.ChangedRolesCount++;
 
@@ -2239,7 +2230,6 @@ namespace Werewolf_Node
             }
 
             // then the target
-            // target.OriginalRole = target.PlayerRole;
             target.PlayerRole = ThiefFull == true ? IRole.Thief : IRole.Villager;
             target.Team = ThiefFull == true ? ITeam.Thief : ITeam.Village;
             target.RoleModel = 0;
@@ -2333,9 +2323,9 @@ namespace Werewolf_Node
                 if (target.PlayerRole == IRole.Harlot)
                     foreach (var c in voteCult)
                         AddAchievement(c, Achievements.DontStayHome);
-
-                target.OriginalRole = target.PlayerRole;
+                
                 target.PlayerRole = IRole.Cultist;
+                target.ChangedRolesCount++;
                 target.Team = ITeam.Cult;
                 target.HasDayAction = false;
                 target.HasNightAction = true;
@@ -2737,7 +2727,6 @@ namespace Werewolf_Node
                         case IRole.WiseElder:
                             SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
                             SendWithQueue(GetLocaleString("GunnerShotWiseElder", gunner.GetName(), check.GetName()));
-                            gunner.OriginalRole = IRole.Gunner;
                             gunner.PlayerRole = IRole.Villager;
                             gunner.ChangedRolesCount++;
                             gunner.HasDayAction = false;
@@ -4095,6 +4084,7 @@ namespace Werewolf_Node
                                 {
                                     other.PlayerRole = IRole.Cultist;
                                     other.Team = ITeam.Cult;
+                                    other.ChangedRolesCount++;
                                 }
                                 return DoGameEnd(ITeam.Cult);
                         }
@@ -4819,8 +4809,8 @@ namespace Werewolf_Node
                         if (killed.PlayerRole == IRole.WiseElder)
                         {
                             SendWithQueue(GetLocaleString("HunterKilledWiseElder", hunter.GetName(), killed.GetName()));
-                            hunter.OriginalRole = IRole.Hunter;
                             hunter.PlayerRole = IRole.Villager;
+                            hunter.ChangedRolesCount++;
                             AddAchievement(hunter, AchievementsReworked.DemotedByTheDeath);
                         }
                         killed.IsDead = true;
@@ -5190,7 +5180,7 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.Survivalist;
                         if (!ach.HasFlag(Achievements.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
                             newAch = newAch | Achievements.MasonBrother;
-                        if (!ach.HasFlag(Achievements.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
+                        if (!ach.HasFlag(Achievements.ChangingSides) && player.ChangedRolesCount > 0 && player.Won)
                             newAch = newAch | Achievements.ChangingSides;
                         if (!ach.HasFlag(Achievements.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
                             newAch = newAch | Achievements.LoneWolf;
@@ -5198,7 +5188,7 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.Inconspicuous;
                         if (!ach.HasFlag(Achievements.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             newAch = newAch | Achievements.Promiscuous;
-                        if (!ach.HasFlag(Achievements.DoubleShifter) && player.ChangedRolesCount >= 2)
+                        if (!ach.HasFlag(Achievements.DoubleShifter) && ((!player.CultLeader && player.ChangedRolesCount >= 2) || (player.ChangedRolesCount >= 3)))
                             newAch = newAch | Achievements.DoubleShifter;
                         if (!ach.HasFlag(Achievements.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch = newAch | Achievements.BrokenClock;
@@ -5284,7 +5274,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Survivalist);
                         if (!ach2.HasFlag(AchievementsReworked.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
                             newAch2.Set(AchievementsReworked.MasonBrother);
-                        if (!ach2.HasFlag(AchievementsReworked.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
+                        if (!ach2.HasFlag(AchievementsReworked.ChangingSides) && player.ChangedRolesCount > 0 && player.Won)
                             newAch2.Set(AchievementsReworked.ChangingSides);
                         if (!ach2.HasFlag(AchievementsReworked.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
                             newAch2.Set(AchievementsReworked.LoneWolf);
@@ -5292,7 +5282,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Inconspicuous);
                         if (!ach2.HasFlag(AchievementsReworked.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             newAch2.Set(AchievementsReworked.Promiscuous);
-                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && player.ChangedRolesCount >= 2)
+                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && ((!player.CultLeader && player.ChangedRolesCount >= 2) || (player.ChangedRolesCount >= 3)))
                             newAch2.Set(AchievementsReworked.DoubleShifter);
                         if (!ach2.HasFlag(AchievementsReworked.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch2.Set(AchievementsReworked.BrokenClock);
@@ -5322,6 +5312,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.AmIYourSeer);
                         if (!ach2.HasFlag(AchievementsReworked.Trustworthy) && player.Trustworthy && !player.IsDead && player.Won)
                             newAch2.Set(AchievementsReworked.Trustworthy);
+                        if (!ach2.HasFlag(AchievementsReworked.CultLeader) && player.CultLeader && !player.IsDead && player.Won)
+                            newAch2.Set(AchievementsReworked.CultLeader);
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
