@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -379,9 +380,9 @@ namespace Werewolf_Web.Controllers
                 {
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
-                if (p.Achievements == null)
-                    p.Achievements = 0;
-                var ach = (Achievements)p.Achievements;
+                if (p.NewAchievements == null)
+                    p.NewAchievements = new BitArray(200).ToByteArray();
+                var ach = new BitArray(p.NewAchievements);
                 if (!json)
                 {
                     var reply = "<br/><table class=\"table table-hover\"><tbody>";
