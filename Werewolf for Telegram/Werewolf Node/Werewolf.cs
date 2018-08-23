@@ -2326,6 +2326,7 @@ namespace Werewolf_Node
                 
                 target.PlayerRole = IRole.Cultist;
                 target.ChangedRolesCount++;
+                target.ConvertedToCult = true;
                 target.Team = ITeam.Cult;
                 target.HasDayAction = false;
                 target.HasNightAction = true;
