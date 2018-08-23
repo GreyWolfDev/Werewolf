@@ -46,7 +46,7 @@ namespace Werewolf_Control
                 menu.Buttons.Add(new InlineKeyboardUrlButton("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
             }
             var markup = menu.CreateMarkupFromMenu();
-            var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate, and click <a href='https://t.me/greywolfsupport'>here to claim your reward if you donate via Paypal</a>!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
+            var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate!!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
             Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, txt, replyMarkup: markup, parseMode: ParseMode.Html, disableWebPagePreview: true);
         }
 
