@@ -130,6 +130,7 @@ namespace Werewolf_Node.Models
         public bool FoolCorrectlySeenBH { get; set; } = false;
         public bool Trustworthy { get; set; } = false;
         public bool CultLeader { get; set; } = false;
+        public bool ConvertedToCult { get; set; } = false;
 
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;

@@ -5188,7 +5188,7 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.Inconspicuous;
                         if (!ach.HasFlag(Achievements.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             newAch = newAch | Achievements.Promiscuous;
-                        if (!ach.HasFlag(Achievements.DoubleShifter) && ((!player.CultLeader && player.ChangedRolesCount >= 2) || (player.ChangedRolesCount >= 3)))
+                        if (!ach.HasFlag(Achievements.DoubleShifter) && player.ChangedRolesCount - (player.ConvertedToCult ? 1 : 0) >= 2)
                             newAch = newAch | Achievements.DoubleShifter;
                         if (!ach.HasFlag(Achievements.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch = newAch | Achievements.BrokenClock;
@@ -5282,7 +5282,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Inconspicuous);
                         if (!ach2.HasFlag(AchievementsReworked.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             newAch2.Set(AchievementsReworked.Promiscuous);
-                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && ((!player.CultLeader && player.ChangedRolesCount >= 2) || (player.ChangedRolesCount >= 3)))
+                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && player.ChangedRolesCount - (player.ConvertedToCult ? 1 : 0) >= 2)
                             newAch2.Set(AchievementsReworked.DoubleShifter);
                         if (!ach2.HasFlag(AchievementsReworked.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch2.Set(AchievementsReworked.BrokenClock);
