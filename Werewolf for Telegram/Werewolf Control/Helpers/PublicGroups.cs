@@ -92,7 +92,7 @@ namespace Werewolf_Control.Helpers
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages())
                 {
-                    if (GetAll().Any(x => x.Language == lang.FileName))
+                    if (GetAll().Any(x => x.Language == lang.FileName && x.LastRefresh >= DateTime.Now.Date.AddDays(-21)))
                     {
                         //load the language to get the base
                         if (!langs.Contains(lang.Base))
@@ -112,7 +112,7 @@ namespace Werewolf_Control.Helpers
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang))
                 {
-                    if (GetAll().Any(x => x.Language == lang.FileName))
+                    if (GetAll().Any(x => x.Language == lang.FileName && x.LastRefresh >= DateTime.Now.Date.AddDays(-21)))
                     {
                         //load the language to get the variant
                         if (!langs.Contains(lang.Variant))
