@@ -1337,10 +1337,6 @@ namespace Werewolf_Node
                         //if (AllowThief)
                         //    rolesToAssign.Add(role);
                         break;
-                    case IRole.Pacifist:
-                    case IRole.WiseElder:
-                        rolesToAssign.Add(role);
-                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
@@ -1454,8 +1450,8 @@ namespace Werewolf_Node
 #if DEBUG
                 //force roles for testing
                 rolesToAssign[0] = IRole.Thief;
-                rolesToAssign[1] = IRole.Mason;
-                rolesToAssign[2] = IRole.Wolf;
+                rolesToAssign[1] = IRole.SerialKiller;
+                rolesToAssign[2] = IRole.Villager;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
@@ -1669,6 +1665,7 @@ namespace Werewolf_Node
                         Send(GetLocaleString("BeholderNewSeer", $"{aps.GetName()}", ds?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
                 }
             }
+
             CheckWildChild(checkbitten);
             CheckDoppelganger(checkbitten);
 
@@ -2170,7 +2167,6 @@ namespace Werewolf_Node
                     thief.HasDayAction = false;
                     thief.HasNightAction = false;
                     thief.Team = ITeam.Village;
-                    thief.HasUsedAbility = false;
                     break;
                 case IRole.Fool:
                 case IRole.Harlot:
@@ -2184,7 +2180,6 @@ namespace Werewolf_Node
                     thief.Team = ITeam.Village;
                     thief.HasNightAction = true;
                     thief.HasDayAction = false;
-                    thief.HasUsedAbility = false;
                     break;
                 case IRole.Doppelgänger:
                 case IRole.Thief:
@@ -2200,7 +2195,6 @@ namespace Werewolf_Node
                 case IRole.Gunner:
                     thief.Team = ITeam.Village;
                     thief.HasDayAction = true;
-                    thief.Bullet = 2;
                     thief.HasNightAction = false;
                     break;
                 case IRole.Sorcerer:
@@ -2237,6 +2231,8 @@ namespace Werewolf_Node
             target.RoleModel = 0;
             target.ChangedRolesCount++;
             target.HasNightAction = ThiefFull == true ? true : false;
+            target.HasUsedAbility = false;
+            target.Bullet = 2;
 
             // notify both players (notify team?)
             // First Notify the stolen player becoming VG/Thief
@@ -2313,14 +2309,14 @@ namespace Werewolf_Node
                     Send(GetLocaleString("ThiefTransformNewTeammates", teammates), thief.Id);
                     break;
                 case IRole.Mayor:
-                    if (!thief.HasUsedAbility)
+                    if (!thief.HasUsedAbility && GameDay != 1)
                     {
                         var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|reveal") } }.ToList();
                         SendMenu(choices, thief, GetLocaleString("AskMayor"), QuestionType.Mayor);
                     }
                     break;
                 case IRole.Pacifist:
-                    if (!thief.HasUsedAbility)
+                    if (!thief.HasUsedAbility && GameDay != 1)
                     {
                         var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|peace") } }.ToList();
                         SendMenu(choices, thief, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
@@ -4054,16 +4050,6 @@ namespace Werewolf_Node
                     if (alivePlayers.All(x => x.InLove))
                         return DoGameEnd(ITeam.Lovers);
                     //check for Tanner + Sorcerer + Thief
-                    /*
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Sorcerer))
-                    {
-                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Sorcerer);
-                        if (other != null && other.PlayerRole == IRole.Tanner)
-                        {
-                            return DoGameEnd(ITeam.NoOne);
-                        }
-                    }
-                    */
                     if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Tanner, IRole.Thief }.Contains(x)))
                         return DoGameEnd(ITeam.NoOne);
                     //check for Hunter + SK / Wolf
@@ -4266,7 +4252,6 @@ namespace Werewolf_Node
                                         deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                     }
                                 }
-
                                 break;
 
                             case 1: // Tanner or sorcerer or thief
