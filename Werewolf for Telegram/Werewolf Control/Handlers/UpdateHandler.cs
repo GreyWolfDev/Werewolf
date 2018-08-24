@@ -882,7 +882,7 @@ namespace Werewolf_Control.Handler
                                     Bot.Api.SendDocumentAsync(id, pack.WolfWin, "Single Wolf Wins");
                                     Thread.Sleep(250);
                                     Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
-                                    Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "SK Killed");
+                                    Bot.Api.SendDocumentAsync(id, pack.SKKilled, "SK Killed");
                                     Thread.Sleep(500);
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)
