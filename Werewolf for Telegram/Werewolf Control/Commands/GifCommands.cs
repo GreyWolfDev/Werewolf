@@ -302,6 +302,9 @@ namespace Werewolf_Control
                     case "Chaos":
                         data.StartChaosGame = id;
                         break;
+                    case "SK":
+                        data.SKKilled = id;
+                        break;
                 }
                 data.Approved = null;
                 data.ApprovedBy = 0;

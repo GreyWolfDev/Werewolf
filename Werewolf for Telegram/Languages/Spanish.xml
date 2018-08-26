@@ -327,7 +327,7 @@
   <string key="HarlotFuckedVictimPublic" >
     <!-- 0 - harlot name -->
     <!-- 1 - victim name -->
-    <value >{0} se escabulló anoche en la casa de {1} para pasar un buen rato y liberar el estrés. ¡Desafortunadamente, lo que se encontró fue a un hombre lobo que se estaba comiendo a {1}! ¡El hombre lobo se giró en un segundo y saltó a su yugular… {0} ha muerto.</value>
+    <value >{0} se escabulló anoche en la casa de {1} para pasar un buen rato y liberar el estrés. ¡Desafortunadamente, lo que se encontró fue a un hombre lobo que se estaba comiendo a {1}! ¡El hombre lobo se giró en un segundo y saltó a su yugular! {0} ha muerto.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <!-- 0 - target name -->
@@ -1517,7 +1517,7 @@
     <value>el guardabosques 👱🌚</value>
   </string>
   <string key="AboutWolfMan">
-    <value>El guardabosques es un aldeano normal, con la diferencia de que la vidente le percibe como un hombre lobo, debido al tiempo que pasa junto a los de verdad en los bosques.</value>
+    <value>Eres el guardabosques. Eres un aldeano más; sin embargo, dado que pasas mucho tiempo en el bosque junto a los lobos, la vidente te percibirá como uno. ¡Oh, no!</value>
   </string>
 
   <string key="RoleInfoLycan">
@@ -1574,6 +1574,9 @@
   <string key="RoleInfoThief">
     <value>¡Eres el ladrón 😈! Puedes robar el rol del jugador que elijas durante la primera noche y convertirlo en un simple aldeano.</value>
   </string>
+  <string key="RoleInfoThiefFull">
+    <value>¡Eres el ladrón 😈! Dado que el modo «Ladrón completo» está activado, tienes un 50% de posibilidades de robar el rol de algún jugador cada noche. Si lo consigues, dicho jugador se convertirá en el nuevo ladrón y seguirá con los robos.</value>
+  </string>
   <string key="Thief">
     <value>el ladrón 😈</value>
   </string>
@@ -1593,10 +1596,10 @@
   </string>
   <string key="WolvesTriedToEatWiseElder">
   <!-- 0 - Wise Elder's name -->
-    <value>Intentasteis entrar en la casa de {0}, ¡pero desgraciadamente la anciana sabia📚 se encontraba ahí! {0} successfully thwart the attack, luckily they did not recognize any of you.</value>
+    <value>Intentasteis entrar en la casa de {0}, ¡pero desgraciadamente la anciana sabia📚 se encontraba ahí! {0} impidió con éxito el ataque, pero, afortunadamente, no han reconocido a ninguno de vosotros.</value>
   </string>
   <string key="WolvesAteWiseElderPM">
-    <value>Los lobos se intentaron darse un festín con tu deliciosa carne, pero no te convertiste en la anciana sabia📚 y by being easy to kill by an intruder! You successfully thwart the attack, but unfortunately you didn't recognize any attackers.</value>
+    <value>Los lobos intentaron darse un festín con tu deliciosa carne, pero no te convertiste en la anciana sabia📚 Evitaste con éxito el ataque, pero por desgracia no reconociste a ninguno de los atacantes.</value>
   </string>
   <string key="HunterKilledWiseElder">
   <!-- {0} - Hunter's Name -->
@@ -1623,8 +1626,7 @@
   </string>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
-  <!-- {1} - The new role -->
-    <value>Le robaste con éxito el rol a {0}. Ahora eres {1}.</value>
+    <value>Le robaste con éxito el rol a {0}.</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
@@ -1693,5 +1695,30 @@
   </string>
   <string key="SecretLynchShowVotersA">
     <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>¡Qué extraño! Mientras discutís a quién convertir esta noche, os dais cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>¡Haya paz!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Hoy no habrá linchamientos gracias al emotivo discurso del pacifista!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>¡Te han robado el rol! ¡Ahora eres el nuevo ladrón😈 y podrás robar un rol la próxima noche!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>¡Te han robado el rol! Ahora eres un aldeano, ¡prepárate para arar la tierra!</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Toc, toc. ¿Tiene un momento para hablar de Nuestra Señora la asesina en serie?</value>
+	<value>La asesina en serie te ha tendido una emboscada, te ha inmovilizado ¡y te ha cosido a puñaladas!</value>
   </string>
 </strings>

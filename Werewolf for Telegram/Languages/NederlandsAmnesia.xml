@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- 28-1-2017 Started translating Amnesia mode made by @ayylimao. Started by Rick (@REXOTIUM)  -->
-<!-- 30-1-2017 Update 1. Added by @REXOTIUM-->
+<!-- 28-01-2017 Started translating Amnesia mode made by @ayylimao. Started by Rick (@REXOTIUM)  -->
+<!-- 30-01-2017 Update 1. Added by @REXOTIUM -->
+<!-- 06-08-2018 Update 2. Added by @REXOTIUM -->
+<!-- 06-08-2018 Added the not implemented yet and ofcourse did not implement it yet (did not translate) -->
+<!-- 11-08-2018 Update 3. Added by @REXOTIUM added before not implemented -->
 
 <strings>
   <language name="Nederlands (Amnesie Modus)" base="Nederlands" variant="Amnesie Modus"/>
@@ -8,25 +11,25 @@
     <value>Ben je het vergeten? Je zit op dit moment niet in een spel!</value>
   </string>
   <string key="PlayerStartedGame" isgif="true">
-    <value>{0} heeft een spel gestart! Typ /join om zoveel plezier te hebben dat je vergeet wie je bent!</value>
-    <value>Een nieuw spel is gestart door {0}! Typ /join om opgegeten te worden door vergeetachtige wolven!</value>
+    <value>{0} heeft een spel gestart! Druk op meedoen om zoveel plezier te hebben dat je vergeet wie je bent!</value>
+    <value>Een nieuw spel is gestart door {0}! Druk op meedoen om opgegeten te worden door vergeetachtige wolven!</value>
   </string>
   <string key="PlayerStartedChaosGame" isgif="true">
-    <value>{0} heeft een spel gestart! Typ /join om deel te nemen aan deze verwarring!</value>
-    <value>Een nieuw spel is gestart door {0}! Typ /join om per ongeluk dood gemaakt te worden!</value>
+    <value>{0} heeft een spel gestart! Druk op meedoen om deel te nemen aan deze verwarring!</value>
+    <value>Een nieuw spel is gestart door {0}! Druk op meedoen om per ongeluk dood gemaakt te worden!</value>
   </string>
-  <string key="NoJoinGameRunning">
+  <string key="NoJoinGameRunning" deprecated="true">
     <value>Je bent vergeten mee te doen toen het spel nog niet was gestart! Typ /nextgame en ik zal je verwittigen zodra er een nieuw spel start zodat je het niet opnieuw vergeet!</value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>Je speelt al mee, of ben je dat vergeten?</value>
     <value>Ben je vergeten dat je al meedeed?</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>Nog 1 minuut tot het spel begint, typ /join om mee te doen, vergeet het niet!</value>
+    <value>Nog 1 minuut tot het spel begint, druk op meedoen om mee te doen, vergeet het niet!</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>{0} seconden tot het spel begint, typ /join om mee te doen, vergeet het niet!</value>
+    <value>{0} seconden tot het spel begint, druk op meedoen om mee te doen, vergeet het niet!</value>
   </string>
   <string key="NotEnoughPlayers">
     <value>Iedereen vergeet deze groep... We hebben niet genoeg spelers, annuleer het spel!</value>
@@ -34,7 +37,7 @@
   <string key="StartingGameWait">
     <value>Het spel begint, wacht terwijl ik de rollen aanwijs en de databank bijwerk. Er gebeurd iets raars met het dorp! Om een of andere reden kan niemand zich herinneren wie ze zijn... (rollen zullen niet kenbaar worden gemaakt aan de spelers!)</value>
   </string>
-  <string key="BannedForExploit">
+  <string key="BannedForExploit" deprecated="true">
     <value>{0} is verbannen omdat ze geprobeerd hebben te exploiteren! (Je naam mag niet met een `/` beginnen)</value>
   </string>
   <string key="ChangeNameToJoin">
@@ -44,24 +47,34 @@
     <value>Sorry, het spel is vol! Probeer het nog een keer bij de volgende game, als je het kunt herinneren!</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} is vergeten wie hij is! {1} vergeetachtigen, {2} minimum, {3} max</value>
+	<!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} is vergeten wie hij is! {1} vergeetachtigen, {2} minimum, {3} maximum</value>
   </string>
   <string key="PMTheBot">
+	<!-- 0 - Player name -->
+    <!-- 1 - bot username -->
     <value>{0}, je bent vergeten de bot eerst een PM te sturen! Klik op de knop hieronder of hier: {1}, klik dan op start. Als je dat niet doet zal de bot vergeten dat je mee wil spelen...</value>
   </string>
   <string key="DeadFlee">
     <value>Ben je vergeten dat je dood bent? Doden kunnen niet wegrennen...</value>
   </string>
   <string key="Flee">
+	<!-- 0 - Player name -->
     <value>{0} vergat zijn vrienden en familie in het dorp en is vol angst gevlucht!</value>
   </string>
   <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
     <value>{0} was het vergeten, maar bleek {1} te zijn.</value>
   </string>
   <string key="CountPlayersRemain">
+	<!-- 0 - Number of players -->
     <value>{0} vergeetachtigen blijven achter.</value>
   </string>
-  <string key="DidntAsk">
+  <string key="DidntAsk" deprecated="true">
     <value>Je weet niet eens wie je bent en je wil nu al iets doen? Haal adem! Ik heb je niets gevraagd!</value>
   </string>
   <string key="NotPlaying">
@@ -70,16 +83,22 @@
   <string key="NoPlayerName">
     <value>Het lijkt erop dat ik ben vergeten over wie je het hebt... Ik kan geen speler met die naam vinden!</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>Ben je ook al vergeten hoe je moet spelen? Dit antwoord is niet geldig!</value>
   </string>
   <string key="WolfVotedKill">
+	<!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
     <value>{0} heeft gestemd om iets te doen bij {1}</value>
   </string>
   <string key="PlayerVotedLynch">
+	<!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
     <value>{0} heeft gestemd om {1} te lynchen.</value>
   </string>
   <string key="IdleKill">
+	<!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>{0} is vergeten te stemmen 2 nachten op een rij. Het spel vergeten is zo erg dat {0} vergat om te ademen en dood ging. {1}</value>
   </string>
   <string key="TraitorTurnWolf">
@@ -89,15 +108,21 @@
     <value>Keuze geaccepteerd.</value>
   </string>
   <string key="BeholderSeer">
+	<!-- 0 - seer name -->
     <value>\nJe mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {0}</value>
   </string>
   <string key="ApprenticeNowSeer">
+	<!-- 0 - seer name -->
     <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat?</value>
   </string>
   <string key="BeholderNewSeer">
+	<!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
     <value>Je begint een naam te vergeten... Wat was het, {1}? Wacht... Waar was je ook alweer over aan het nadenken? Te midden van alle namen in je hoofd verschijnt er een nieuwe: {0}!</value>
   </string>
   <string key="SeerSees">
+	<!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>Je mag dan vergeten zijn wie jij bent, maar je weet in ieder geval dit: {0} is {1}!</value>
   </string>
   <string key="AskLynch">
@@ -107,6 +132,7 @@
     <value>Je weet dat je iets moet doen met iemand, maar wie moet je kiezen?</value>
   </string>
   <string key="AskShoot">
+	<!-- 0 - bullet count -->
     <value>Je weet dat je iets moet doen met iemand, maar wie moet je kiezen? En waarom zit het nummer {0} in je hoofd?</value>
   </string>
   <string key="AskVisit">
@@ -132,6 +158,7 @@
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
+	<!-- 0 - teammate names -->
     <value>  Vergeet niet om te overleggen met {0}</value>
   </string>
   <string key="And">
@@ -224,16 +251,21 @@
     <value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
   </string>
   <string key="LynchTime">
+	<!-- 0 - number of seconds -->
     <value>De zon schuift langzaam onder de horizon, en de dorpsbewoners moeten beslissen... wie er moet vergeten te ademen. Iedereen heeft nu {0} seconden om te stemmen!</value>
   </string>
   <string key="DayTime">
+	<!-- 0 - number of seconds -->
     <value>Iedereen word wakker en is blij dat ze in ieder geval nog weten waar ze zijn, toch? Iedereen heeft nu {0} seconden om zich te herinneren wat je bent, of wat iemand anders is!</value>
     <value>Iedereen word wakker en.... waar zijn we eigenlijk? Iedereen heeft nu {0} seconden om iets te doen?</value>
   </string>
   <string key="NightTime">
+	<!-- 0 - number of seconds -->
     <value>Het is donker. Iedereen herinnert zich dat ze naar bed moeten, en hopen dat ze wakker worden met wat herinneringen. Nachtspelers: jullie hebben {0} seconden om iets te doen!</value>
   </string>
   <string key="LynchKill">
+	<!-- 0 - player name -->
+    <!-- 1 - player role -->
     <value>De dorpsbewoners hebben gestemd, hopende dat ze de goede keuze hebben gemaakt met zo weinig informatie. {0} is dood. {1}</value>
   </string>
   <string key="LynchTie">
@@ -243,27 +275,36 @@
     <value>Het ziet er naar uit dat iedereen is vergeten te stemmen! Iedereen kan rustig blijven ademen... Helaas</value>
   </string>
   <string key="DetectiveEaten">
+	<!-- 0 - victim name -->
     <value>De dorpelingen verzamelen zich voor de lange dag, maar {0} is er niet... Iemand loopt naar het huis en valt flauw van de schok. {0} ligt over de railing, ingewanden overal verspreid, met een oud insigne in hun bek gedauwd. </value>
   </string>
   <string key="GuardianEaten">
+	<!-- 0 - victim name -->
     <value>Vogels fluiten, de zon schijnt, en een lijk ligt voor de kerk. Vleugels in een onnatuurlijke hoek gebogen. {0} is dood.</value>
   </string>
   <string key="GunnerEaten">
+	<!-- 0 - victim name -->
     <value>Als iedereen wakker wordt en naar het plein toe wandelt, liggen er stukken metaal en hout, duidelijk van een geweer... Dan vingers... En verspreid over het plein ligt het lijk van {0}. Niet erg smakelijk, die stukken, tenminste niet voor een normale Burger 👱. Iemand kotst ervan. De Konstabel 🔫 is dood.</value>
   </string>
   <string key="SeerEaten">
+	<!-- 0 - victim name -->
     <value>Iedereen wordt langzaam wakker - en {0} wordt gevonden, zonder strot, losjes over een kristallen bal gebogen, Tarotkaarten besmeurd met bloed. De Ziener 👳 is dood.</value>
   </string>
   <string key="DrunkEaten">
+	<!-- 0 - victim name -->
     <value>Iemand roept brand - het café staat in de fik!!! Nadat de brand geblust is, worden delen van een lijk gevonden. {0} ligt werkelijk overal door de as... Hier wat, daar wat...</value>
   </string>
   <string key="FoolEaten">
+	<!-- 0 - victim name -->
     <value>Iedereen wordt langzaam wakker - en {0} wordt gevonden, zonder strot, losjes over een kristallen bal gebogen, ...met een stel memory kaarten? Huh? Wat een rare combinatie!</value>
   </string>
   <string key="DefaultEaten">
+	<!-- 0 - victim name -->
+	<!-- 1 - victim role -->
     <value>Iedereen wordt langzaam wakker... maar wat riekt er daar? Het spoor wordt gevolgd tot een schuur, die vlug opengebroken wordt. Binnen ligt het lijk van {0}, half opgevreten. NOMNOMNOMNOM {1}</value>
   </string>
   <string key="HunterKilledCultist">
+	<!-- 0 - victim name -->
     <value>Er komt een geurtje uit het huis van {0}...een paar dorpelingen schoppen de deur open, om een lijk te vinden, uitgespreid in een vijfpuntig symbool, wat afgehakte tentakels ernaast... een Sektelid 👤 is vermoord door de Sektejager 🎯!</value>
   </string>
   <string key="NoAttack">
@@ -273,117 +314,154 @@
     <value>Je rol is veranderd, maar van wat, en naar wat?</value>
   </string>
   <string key="WolfTeam">
+	<!-- 0 - teammate names -->
     <value>Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {0}</value>
   </string>
   <string key="CursedBittenToWolves">
+	<!-- 0 - victim name -->
     <value>Te midden van alle namen in je hoofd verschijnt er een nieuwe: {0}!</value>
   </string>
-  <string key="WolvesEatYou">
+  <string key="WolvesEatYou" isgif="true">
     <value>Ah fuck, je werd aangevallen door de wolven, en je bent nu hun avondeten! NOMNOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk">
+	<!-- 0 - victim name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="GuardWolf">
     <value>Je hebt een wolf beschermd. Bijwerkingen betrekken maar zijn niet gelimiteerd tot het worden van hun avondeten.</value>
   </string>
   <string key="GuardSaved">
+	<!-- 0 - saved player name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="GuardNoAttack">
+	<!-- 0 - player name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="GuardEmptyHouse">
+	<!-- 0 - player name -->
     <value>Je bent blijkbaar vergeten dat {0} niet thuis was vannacht!</value>
   </string>
   <string key="GuardSavedYou">
     <value>Is er iets gebeurd vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="HarlotEaten">
+	<!-- 0 - player name -->
     <value>De hoer is vergeten om vannacht weg te gaan, een gruwelijke vergissing... {0} is wolvenvoer!</value>
   </string>
   <string key="HarlotNotHome">
+	<!-- 0 - player name -->
     <value>Je bent blijkbaar vergeten dat {0} niet thuis was vannacht!</value>
   </string>
   <string key="HarlotFuckWolf">
+	<!-- 0 - player name -->
     <value>Je glipt het huis van {0} in om wat plezier te hebben... maar er staat alleen een Wolf 🐺. In plaats van honger zie je lust op hun gezicht, en jullie hebben een erg ruwe nacht. Maar voordat je kan s'ochtends kan ontsnappen klemmen hun kaken rond je keel...</value>
   </string>
   <string key="HarlotFuckedWolfPublic">
+	<!-- 0 - player name -->
     <value>{0} is in het verkeerde huis geglipt! Ze hangen van de kerkdeur met een ijzeren staaf door hun lichaam, en hun strot is eruit gescheurd. Hoe triest... :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic">
+	<!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
     <value>{0} kruipt stilletjes het huis van {1} binnen, klaar om wat te doen aan deze stress. Maar wat ze zag is een Wolf 🐺 die {1} aan het verorberen is! De wolf draait zich om... en bespringt {0} (niet op de manier waarop ze normaliter besprongen wordt)! {0} is morsdood.</value>
   </string>
   <string key="HarlotVisitNonWolf">
+	<!-- 0 - target name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="HarlotVisitYou">
     <value>Is er iets gebeurd vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="DetectiveCaught">
+	<!-- 0 - detective name -->
     <value>Je mag dan vergeten zijn wie jij bent, maar je weet in ieder geval dit: {0} is de Rechercheur 🕵!</value>
   </string>
   <string key="DetectiveSnoop">
+	<!-- 0 - target name -->
+    <!-- 1 - target role -->
     <value>Je mag dan vergeten zijn wie jij bent, maar je weet in ieder geval dit: {0} is {1}!</value>
   </string>
   <string key="HarlotShot">
+	<!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
     <value>Plotseling schalt er een schot. Iedereen haast zich naar het geluid toe... en ziet {0} staan met een geweer gericht op de schedel van {1}, de loop nog trillend. {1} was de Hoer 💋</value>
   </string>
   <string key="DefaultShot">
+	<!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
     <value>Plotseling schalt er een schot. Iedereen haast zich naar het geluid toe... en ziet {0} staan met een geweer gericht op de schedel van {1}, de loop nog trillend. {2}</value>
   </string>
-  <string key="WolfWins">
+  <string key="WolfWins" isgif="true">
     <value>De Weerwolf 🐺 heeft gewonnen!</value>
   </string>
-  <string key="WolvesWin">
+  <string key="WolvesWin" isgif="true">
     <value>De Weerwolven hebben gewonnen!</value>
   </string>
-  <string key="VillageWins">
+  <string key="VillageWins" isgif="true">
     <value>De Burgers hebben de wolven uitgeroeid... Da's nu effe een feestje waard!</value>
   </string>
-  <string key="TannerWins">
+  <string key="TannerWins" isgif="true">
     <value>Ah, shit. Het lijk wat nu van de galg zwaait is dat van de Looier 👺! Stom stom stom! Ze winnen!</value>
   </string>
   <string key="RemainingPlayersEnd">
     <value>Plots kunnen de overlevende spelers zich alles herinneren! Hun namen, rollen en facties:</value>
   </string>
   <string key="CultistVotedConvert">
+	<!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
     <value >{0} heeft gestemd om iets te doen bij {1}</value>
   </string>
   <string key="CultConvertCultHunter">
+	<!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
     <value>{0} ging naar {1} toe en nu is {0} dood!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
+	<!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
     <value>{0} is dood! Er spookt een nummer door je hoofd... {1}</value>
   </string>
   <string key="CultConvertYou">
     <value>Je rol is veranderd, maar van wat, en naar wat?</value>
   </string>
   <string key="CultTeam">
-    <value>Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {0}</value>
+	<!-- 0 - Number of cultists -->
+    <value>Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk nummer: {0}</value>
   </string>
   <string key="CultJoin">
+	<!-- 0 - new cultist's name -->
     <value>Te midden van alle namen in je hoofd verschijnt er een nieuwe: {0}!</value>
   </string>
   <string key="CultVisitEmpty">
+	<!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
     <value>{0} ging naar {1} toe, maar was blijkbaar vergeten dat {1} niet thuis was!</value>
   </string>
   <string key="CultWins" isgif="true">
     <value>Ze mogen dan vergeten zijn wie ze zijn, maar de enige nog levende dorpsbewoners zijn sekteleden... De sekte wint!</value>
   </string>
   <string key="HunterVisitDead">
-    <value>{0} is al dood!</value>
+	<!-- 0 - target name -->
+    <value>Je bent vergeten waarom je hier bent. En {0} is dood!</value>
   </string>
   <string key="HunterFindCultist">
+	<!-- 0 - target name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="HunterFailedToFind">
+	<!-- 0 - target name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="WildChildToWolves">
+	<!-- 0 - Werechild's name -->
     <value>Te midden van alle namen in je hoofd verschijnt er een nieuwe: {0}!</value>
   </string>
   <string key="WildChildTransform">
+	<!-- 0 - role's name -->
+    <!-- 1 - teamate's names -->
     <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Hunter, Cupid, SerialKiller, Doppelgänger, Mason-->
@@ -463,16 +541,16 @@
     <value>de Tovenaar 🔮 </value>
   </string>
   <string key="ClumsyGuy">
-    <value>de Kluns </value>
+    <value>de Kluns 🤕</value>
   </string>
   <string key="Blacksmith">
-    <value>de Smid ⚒ </value>
+    <value>de Smid ⚒</value>
   </string>
   <string key="AlphaWolf">
-    <value>de Roedelleider ⚡️ </value>
+    <value>de Roedelleider ⚡️</value>
   </string>
   <string key="WolfCub">
-    <value>het Welpje 🐶 </value>
+    <value>het Welpje 🐶</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -527,25 +605,25 @@
     <!-- used when gunner shoots a player -->
     <value>is dood.</value>
   </string>
-  <string key="AdminAdded">
+  <string key="AdminAdded" deprecated="true">
     <value>{0} aan admin lijst toegevoegd. Gebruik /config om instellingen te veranderen.</value>
   </string>
   <string key="AlreadyInGame">
     <value>Je zit al in een spel, of ben je dat vergeten? ({0})</value>
   </string>
-  <string key="MultipleGames">
+  <string key="MultipleGames" deprecated="true">
     <value>Je groep is erin geslaagd om meerdere spellen te starten...de anderen spellen werden gestopt.</value>
   </string>
-  <string key="GroupQueue">
+  <string key="GroupQueue" deprecated="true">
     <value>Je groep zit in de wachtrij. Ben maar niet bang, het zal niet worden vergeten! Positie: {0} / {1}</value>
   </string>
-  <string key="MaintBreak">
+  <string key="MaintBreak" deprecated="true">
     <value>Sorry, ik ga op een korte onderhoudspauze, jij mag momenteel geen spel starten.\nIk wacht op het einde van {0} spellen...\nGa naar @greywolfdev voor meer informatie.</value>
   </string>
-  <string key="MaxGames">
+  <string key="MaxGames" deprecated="true">
     <value>Sorry, het maximum aantal opvolgende spellen is bereikt({0}).\nPositie in wachtrij: {1} / {1}</value>
   </string>
-  <string key="SkipQueue">
+  <string key="SkipQueue" deprecated="true">
     <value>{0} is een voorkeursgroep en heeft de wachtrij overgeslagen!</value>
   </string>
   <string key="NoGame">
@@ -554,25 +632,25 @@
   <string key="GroupAdminOnly">
     <value>Je bent geen groepadmin, of ben je dat vergeten? Je kunt dit commando niet gebruiken!</value>
   </string>
-  <string key="ShuttingDown">
+  <string key="ShuttingDown" deprecated="true">
     <value>Na dit spel zet ik mezelf uit voor onderhoud.</value>
   </string>
-  <string key="ShuttingDownUpdate">
+  <string key="ShuttingDownUpdate" deprecated="true">
     <value>Na dit spel zet ik mezelf uit om mezelf bij te werken.</value>
   </string>
-  <string key="NullIdAdmin">
+  <string key="NullIdAdmin" deprecated="true">
     <value>UserId was null. Weet je zeker dat je op een bericht geantwoord hebt?</value>
   </string>
-  <string key="AlreadyAdmin">
+  <string key="AlreadyAdmin" deprecated="true">
     <value>{0} is al een admin, of ben je dat vergeten?</value>
   </string>
-  <string key="NotAdmin">
+  <string key="NotAdmin" deprecated="true">
     <value>{0} is geen admin, of ben je dat vergeten?</value>
   </string>
-  <string key="AdminRemoved">
+  <string key="AdminRemoved" deprecated="true">
     <value>{0} werd verwijderd van de admin lijst.</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <value>Taal verandert naar {0}</value>
   </string>
   <string key="NoSeer">
@@ -591,39 +669,52 @@
     <value>{0} pakt zijn geweer, maar sterft voor de trekker overgehaald kan worden. </value>
   </string>
   <string key="HunterSkipChoiceLynched">
-    <value>{0} trekt zijn geweer, kijk naar de woedende menigte..... maar kan niet kiezen wie hij wil neerschieten.de jarer sterft, zonder iets te doen...</value>
+    <value>{0} trekt zijn geweer, kijk naar de woedende menigte..... maar kan niet kiezen wie hij wil neerschieten.de jager sterft, zonder iets te doen...</value>
   </string>
   <string key="HunterKilledFinalLynched">
+	<!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
     <value>Als de strop rond {0}'s hoofd strakker wordt, trekt hij zijn geweer en richt op {1}! {1} sterft ter plaatse! {2}</value>
   </string>
   <string key="HunterShotChoice">
     <value>Je bent dodelijk gewond! De angst voor de dood geeft je een helder moment, je weet wat je moet doen... Dit is je laatste kans, Kies iemand om neer te schieten.... wees snel!</value>
   </string>
   <string key="HunterNoChoiceShot">
+	<!-- 0 - target's name -->
     <value>{0} was te erg gewond, dus hij kon zijn geweer niet pakken en sterft, zonder zich nog een keer te bewegen.....</value>
   </string>
   <string key="HunterSkipChoiceShot">
+	<!-- 0 - hunter's name -->
     <value>{0} ligt op de grond, en blaast zijn laatste adem uit, zonder te beslissen wie met hem moet sterven...</value>
   </string>
   <string key="HunterKilledFinalShot">
+	<!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
     <value>Terwijl {0} op de grond valt trekt hij zijn geweer en schiet op {1}, die nog eventjes verrast kijkt en dan ook neerstort. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
     <value>{0} ging naar {1} toe en nu is {0} dood!</value>
   </string>
   <string key="HunterShotWolfMulti">
+	<!-- 0 - target's name -->
     <value>De wolven wilden vannacht de Jager 🎯 opvreten, maar de Jager kon een van hen afmaken voordat hij stierf! {0} 🐺 ging dood.</value>
   </string>
   <string key="HunterShotWolf">
+	<!-- 0 - target's name -->
     <value>De Wolf 🐺 wilde vannacht de Jager 🎯 opeten, maar de Jager was sneller! {0} is niet meer onder de levenden!</value>
   </string>
   <string key="SerialKillerKilledWolf">
     <value>De wolven 🐺 hadden zin in een leuke middernachtsnack, maar in de koelkast was een gestoorde psychopaat! {0} is niet meer onder ons!</value>
   </string>
   <string key="DefaultKilled">
+	<!-- 0 - target's name -->
+    <!-- 1 - target's role -->
     <value>{0} was lekker rustig aan het slapen, maar zal nu nooit meer ontwaken! De dorpelingen verzamelen zich in het midden van het dorp, daar ligt het lichaam van {0} en tien meter verder zijn hoofd... De Seriemoordenaar 🔪 was vannacht weer bezig! (Weet iemand het nummer van CSI nog?){1}</value>
   </string>
   <string key="GuardBlockedKiller">
+	<!-- 0 - target's name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <string key="CultConvertHunter">
@@ -828,13 +919,13 @@
   <string key="SentPrivate">
     <value>Ik heb jou een PB gestuurd</value>
   </string>
-  <string key="StartPM">
+  <string key="StartPM" deprecated="true">
     <value>Stuur me alsjeblieft een PB, zodat ik je je rol kan vertellen: @werewolfbot</value>
   </string>
-  <string key="PMTrue">
+  <string key="PMTrue" deprecated="true">
     <value>Bedankt! Nu kan ik je ook een PB sturen</value>
   </string>
-  <string key="MustReplySmite">
+  <string key="MustReplySmite" deprecated="true">
     <value>Je moet antwoorden op de gebruiker die jij wil verwijderen, of ben je dat vergeten?</value>
   </string>
   <string key="WhatToDo">
@@ -847,7 +938,7 @@
     <value>Je moet vanuit een groep een spel starten!</value>
   </string>
   <string key="PingInfo">
-    <value>Tijd die telegram nodig had om me het bericht te sturen: {0}\nActuele CPU belasting: {1}%\nBerichten per seconde: {2}</value>
+    <value>Tijd die telegram nodig had om me het bericht te sturen: {0}\nBerichten per seconde: {1}</value>
   </string>
   <string key="WhatLang">
     <value>Neeee! Verander de taal niet! Als je dan echt mijn hart wil breken, welke taal wil je nu?\nActueel: {0}</value>
@@ -1002,7 +1093,6 @@
     <value>Ben je nu alweer vergeten wat er in de spelerslijst stond? Ga maar terug en lees het!</value>
   </string>
   <string key="UnableToGetList">
-    <value>Either I forgot when was the last time I sent the player list, or you forgot I can't send it until the game starts!</value>
     <value>Of ik ben vergeten wanneer ik de laatste spelerslijst heb gestuurd, of jij bent vergeten dat ik deze niet kan sturen tot het spel begint!</value>
   </string>
   <string key="YouJoined">
@@ -1037,22 +1127,22 @@
     <value>Is er iets gebeurd bij vannacht? Je kunt het je niet herinneren...</value>
   </string>
   <!-- Teams -->
-  <string key="VillageTeam">
+  <string key="VillageTeam" deprecated="true">
     <value>Dorp Team</value>
   </string>
-  <string key="NeutralTeam">
+  <string key="NeutralTeam" deprecated="true">
     <value>Neutraal Team</value>
   </string>
-  <string key="WolfTeam">
+  <string key="WolfTeam" deprecated="true">
     <value>Wolf Team</value>
   </string>
-  <string key="SerialKillerTeam">
+  <string key="SerialKillerTeam" deprecated="true">
     <value>SM Team</value>
   </string>
-  <string key="CultTeam">
+  <string key="CultTeam" deprecated="true">
     <value>Sekte Team</value>
   </string>
-  <string key="TannerTeam">
+  <string key="TannerTeam" deprecated="true">
     <value>Looier Team</value>
   </string>
   <string key="VillageTeamEnd">
@@ -1073,7 +1163,8 @@
   <string key="TannerTeamEnd">
     <value>Looier Team</value>
   </string>
-  <!-- Update 1-->
+  
+  <!-- Update 1 -->
   <string key="PrinceLynched">
     <value>Terwijl het dorp {0} probeert op te hangen, ziet iemand een ring om {0} zijn vinger, en begint te schreeuwen dat het dorp moet stoppen. "STOP! Deze persoon komt uit de koninklijke familie! De koninklijke ring zit om zijn vinger!" Bang om gestraft te worden, stopt iedereen met het lynchen en verdwijnen een voor een naar hun bed.</value>
   </string>
@@ -1169,12 +1260,12 @@
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Tijd om mee te doen verlengd met {0} seconden.\n{1} seconden tot het spel begint, typ /join om mee te doen, vergeet het niet!</value>
+    <value>Tijd om mee te doen verlengd met {0} seconden.\n{1} seconden tot het spel begint, druk op meedoen om mee te doen, vergeet het niet!</value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>Tijd om mee te doen verkort met {0} seconden.\n{1} seconden tot het spel begint, typ /join om mee te doen, vergeet het niet!</value>
+    <value>Tijd om mee te doen verkort met {0} seconden.\n{1} seconden tot het spel begint, druk op meedoen om mee te doen, vergeet het niet!</value>
   </string>
   <string key="CantExtend">
     <value>Ben je vergeten dat alleen admins dit meer dan eens kunnen doen?</value>
@@ -1195,5 +1286,361 @@
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
     <value>Oh nee! {0} was de Dronkenman! Nu ben je dronken en kun je niet aanvallen {1}...</value>
+  </string>
+  
+  <!-- Update 2 -->
+  <string key="JoinButton">
+    <value>Meedoen</value>
+  </string>
+  <string key="NotMember">
+    <value>Ben je vergeten dat je geen lid bent van groep {0}? Je kunt daarom niet meedoen.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Ben je vergeten dat er nu een hele mooie knop is? Gebruik die maar ;)</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} vergeetachtigen hebben gestemd, {1} totaal.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, vergeet niet dat je ook nog op de knop moet drukken.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Ik vergeet wel dat je op de wachtlijst stond voor {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}zijn/is vergeten wie zij/hij zijn/is in de afgelopen 30 seconden.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Sekte toestaan</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Looier toestaan</value>
+  </string>
+  <string key="AllowFool">
+    <value>Dwaas Toestaan</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Geheim lynchen aanzetten</value>
+  </string>
+  <string key="RandomMode">
+    <value>Random modus aanzetten</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Tijd verlengen toestaan</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Rollen bij doodgaan laten zien</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Vluchten toestaan</value>
+  </string>
+  <string key="ShowIDs">
+    <value>IDs laten zien bij joinen</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>IDs van spelers laten zien wanneer ze het spel joinen?\nHuidig: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Alle</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Random modus aanzetten?\nAls random modus aanstaat worden, chaos, geheim lynchen, rollen na doodgaan laten zien, en het toestaan van sekte / dwaas / looier door de bot random bepaald bij het starten van een spel.\nHuidig:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Aanzetten van random modus gezet naar: {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Toestaan van NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Toestaan dat spelers NSFW gif packs hebben?\nHuidige: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>As the sun starts to shine on the village, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the village. Looking at the sight of the corpses strewn all across the village, {0} sighs. Their lifelong dream of being chosen to be lynched by the villagers is as dead as the villagers are. They reach out and touch the rope, that had taken many lives, tenderly, before slipping it around their neck and letting themselves hang freely, with a sad smile on their face.</value>
+    <value>{0} wakes up at dawn, alone. {0} sees how abject a failure they has been, not being able to get the village to satisfy their masochistic desires of being lynched to death. {0} grabs a rope and hangs himself, realising no one can accomplish their dream, since there is no one left.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} opens their eyes, but instead of hearing the usual bustle of the village, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The wolves were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the village. A tear slips from their eye, as {0} recalls how close they and their wolves were to victory. Alas, it was time to start a new life, with a new pack. {0} slips into the darkness of the forest, away from the quiet village.</value>
+    <value>For all of {0}'s efforts, {0}'s wolf friends lay motionless and lifeless. Even if the wolves have been brought victory, there is no one to savour the success with, neither are there any living villagers to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new wolves, new allies, and new treachery to commit new crimes against humanity.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Welke variant?\nHuidige: {0}\nOmdat je meet dan 500 spellen hebt gespeeld kun je ook deelnemen aan deze: </value>
+  </string>
+  <string key="Skip">
+    <value>Overslaan</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Je mag dan vergeten zijn wie jij bent, maar je weet in ieder geval dit: {0} is NIET {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Would you like to put all players to sleep tonight?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>As the town talks, {0} goes back to their house and begins humming a soft melody.  Tonight, everyone will sleep very deeply, and no one will be able to use their night actions</value>
+  </string>
+  <string key="SandmanNight">
+    <value>As everyone heads home, they barely make it to their beds from exhaustion.  They all fall asleep so strongly, they don't even remember going to sleep...</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Sta de dief toe als roloptie?\nHuidige: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Dief als een rol is gezet op: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Kan de dief iedere nacht gebruikt worden?\nHuidige: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Dief zal iedere nacht gebruikt kunnen worden: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Dief toestaan</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Dief volledige spel</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Dat is vreemd... Je kunt je niet herinneren wie je bent!</value>
+  </string>
+  <string key="WolfMan">
+    <value>de WolfMan 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Je bent een gewone burger maar omdat je je zoveel in het bos bevind, waar de echte wolven zijn, zal de ziener verward zijn en je zien als wolf! Oh nee....</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
+  </string>
+  <string key="Lycan">
+    <value>de Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>De lycan is een wolf maar word door de ziener gezien als burger</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
+  </string>
+  <string key="Oracle">
+    <value>het oracel 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Het orakel laat zien welke rol iemand Niet is. Hierbij kiest de bot uit de rollen die momenteel nog meedoen in het spel (en dus nog leven)</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je overdag iets moet doen!</value>
+  </string>
+  <string key="Sandman">
+    <value>Klaas Vaak 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Eens per spel kan Klaas Vaak het dorp zo diep laten slapen dat niemand 's nachts iets kan doen</value>
+  </string>
+  
+  <!-- Update 3 -->
+  <string key="EnableSecretLynchQ">
+    <value>Geheime lynch aanzetten?\nHuidige: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Geheime lynch is gezet naar: {0}</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+	<value>Iedereen word langzaam wakker. Buiten worden lichaamsdelen van {0}, de sektejager, gevonden in een wagen geparkeerd voor het stadhuis. Een les is er vandaag geleerd: Ga niet op bezoek bij de seriemoordenaar!</value>
+    <value>Het lichaam van {0}, de sektejager, word gevonden in het midden van het dorp, in honderd kleine stukjes gesneden. Kijken of de seriemoordenaar een sektelid is, is blijkbaar geen goed idee...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Het zit de sekte niet mee. Ze zijn hun nieuwste lid, {0}, verloren aan de weerwolven toen ze vannacht een wolf wilde bekeren. Blijkbaar hebben ze geen interesse</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>De sekte heeft vannacht geprobeerd de seriemoordenaar toe te voegen aan hun gezelschap maar het enige wat er is gebeurd is dat {0} is toegevoegd aan zijn killcount.</value>
+  </string>
+  
+  <!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>You are the Pacifist ☮️. You can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>You are the Wise Elder 📚. You can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>You are the Thief 😈! You can steal a player's role on the first night and turn that player into a villager!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>You are the Thief 😈! Since the [Full Thief] mode is turned on, you get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="AskPacifist">
+    <value>Hit this button when you want to make your heartfelt speech and stop the village from lynching the next time!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>The Pacifist ☮️, {0}, is making a heartfelt speech of friendship and trust in front of the village. Moved by their speech, there will be no lynching today!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Because of the Pacifist's ☮️ heartfelt speech, the lynch phase will be skipped today!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>You tried to intrude {0}'s home but unfortunately they were the Wise Elder 📚! {0} successfully thwart the attack, luckily they did not recognize any of you.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>The wolves tried to eat you, but you didn't become the Wise Elder 📚 by being easy to kill by an intruder! You successfully thwart the attack, but unfortunately you didn't recognize any attackers.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Hunter 🎯, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and swore off their Hunter abilities. He died a simple Villager 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Gunner 🔫, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and decided to scrap their gun, becoming a simple Villager👱 with a field to plow.</value>
+  </string>
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but {0} is already dead...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Your role got stolen! You are now {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>You successfully stole {0}'s role!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} is no longer your teammate and {1} has now become a mason, just like you!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Your theft target is now {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Whose role do you want to steal from?</value>
+  </string>
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votes went to {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>The lynch result for today:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votes went to {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Peace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>Your role got stolen! You are now the new thief 😈 and can steal a role the next night!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Your role got stolen! You are now a villager 👱, plowing your fields all day.</value>
+  </string>
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Knock knock, you've been visited by the resident serial killer!</value>
+	<value>The Serial Killer ambushed you, tied you up, and then stabbed you in the heart!</value>
   </string>
 </strings>
