@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Version 1.5.1 2018-07-13 -->
+<!-- Version 1.6.1 2018-07-16 -->
 <!-- Translator 1 : Pierre de Brosses @CloneMMDDCVII ; Translator 2 : Kapryss [ENL BE] Brussels ♥️ @KapryssBoobzCulee ; Translator 3 : @ealhad & @acoussat -->
 <!-- RDV sur https://github.com/GreyWolfFR/FrenchNormal/ pour participer à la traduction -->
 <strings>
@@ -115,7 +115,7 @@
     <value>Sur qui voulez vous enquêter ?</value>
   </string>
   <string key="AskShoot">
-    <value>Qui voulez vous tuer ? {0} balle(s) restantes.</value>
+    <value>Qui voulez-vous tuer ? {0} balle(s) restantes.</value>
   </string>
   <string key="AskVisit">
     <value>Chez qui voulez-vous passer la nuit ?</value>
@@ -1427,34 +1427,176 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
     <value>Une fois par partie, le Marchand de sable utiliser votre magie pour plonger tout le monde dans un sommeil profond les empêchant d’agir pendant une nuit.</value>
   </string>
 
-<!-- NOT IMPLEMENTED YET -->
   <string key="RoleInfoPacifist">
     <value></value>
   </string>
   <string key="Pacifist">
-    <value>the Pacifist ☮️</value>
+    <value>le Pacifiste ☮️</value>
   </string>
   <string key="AboutPacifist">
     <value></value>
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value></value>
+    <value>Vous êtes le Sage 📚. Vous pouvez survivre à une — et une seule — attaque de loups. Si le Chasseur ou le Fusilier vous tuent, le chagrin leur fera perdre leur pouvoir et ils deviendront de simples villageois.</value>
   </string>
   <string key="WiseElder">
-    <value>the Wise Elder 📚</value>
+    <value>le Sage 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>Le Sage 📚 peut survivre à une — et une seule — attaque de loups. Si le Chasseur ou le Fusilier le tuent, le chagrin leur fera perdre leur pouvoir et ils deviendront de simples villageois.</value>
   </string>
 
   <string key="RoleInfoThief">
-    <value></value>
+    <value>Vous êtes le Voleur 😈 ! Vous pouvez voler le rôle d’un joueur lors de la première nuit, et le transformer en villageois.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Vous êtse le Voleur 😈 ! Puisque l’option [Voleur à chaque tour] est activée, vous avez chaque nuit 50 % de chances de voler son rôle à un joueur ; si vous y parvenez, ce joueur deviendra voleur à sont tour.</value>
   </string>
   <string key="Thief">
-    <value>the Thief 😈</value>
+    <value>le Voleur 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <value>Par défaut, le Voleur 😈 peut voler le rôle d’un joueur lors de la première nuit et le transformer en villageois. Si l’option [Voleur à chaque tour] est activée, il a chaque nuit 50 % de chances de voler son rôle à un joueur, et s’il y parvient, ce joueur devient voleur à sa place!</value>
+  </string>
+
+
+  <string key="AskPacifist">
+    <value>Utilisez ce bouton si vous voulez utiliser votre éloquence pour persuader le village de renoncer à lyncher quelqu’un !</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>Le Pacifiste ☮️, {0}, monte sur une estrade et déclame un poignant discours, prônant l’amitié, la liberté, l’égalité, la fraternité et le véganisme. Le village est temporairement apaisé par son éloquence, et il n’y aura aucun lynchage ce soir !</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Grâce au discours du Pacifiste ☮️, personne ne sera lynché ce soir.</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Vous essayez de pénétrer dans la demeure de {0}, mais il s’agissait du Sage 📚 ! {0} repousse l’attaque, mais ne parvient heureusement pas à vous identifier.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Les loups ont essayé de vous dévorer… Mais vous n’avez pas trouvé votre diplôme de Sage 📚 dans une pochette surprise ! Vous repoussez l’attaque, mais malheureusement sans parvenir à identifier un seul des attaquants.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Le Fusilier 🎯, {0}, a tué le Sage 📚, {1}. Tout en pleurant de rage et de chagrin, {0} renie ses compétences au fusil, et meurt simple villageois.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Le Chasseur 🔫, {0}, a tué le Sage 📚, {1}. Tout en retenant ses larmes, {0} renonce à son titre et jure de ne plus jamais utiliser son arme, qu’il jette dans le puit.</value>
+  </string>
+
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Vous tentez de voler le rôle de {0}, sans succès…</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Vous tentez de voler le rôle de {0}… Mais les morts n’ont pas de rôle !</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>On vous a volé votre rôle ! Vous êtes désormais {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Vous avez réussi à voler le rôle de {0} !</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} n’est plus votre collègue… Mais {1} est devenu Franc-Maçon, et le remplace !</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Vos collègues — s’il en est — sont : {0} </value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} n’est plus cultiste… Mais {1} a rejoint vos rang à sa place !</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} n’est plus loup ! {1} a volé sa place (et sa pilosité).</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Vos alliés — s’il en est — sont : {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>En cherchant une nouvelle cible pour exercer sa respectable (selon ses propres critères) profession, {0} s’aperçoit qu’il ne reste plus rien d’intéressant à voler… Adieu, village misérable, on trouvera mieux ailleurs !</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Votre cible est maintenant {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>À qui désirez-vous voler son rôle ?</value>
+  </string>
+
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} personnes ont voté pour {1} : {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Voici le résultat du vote :\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} personnes ont voté pour {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Total</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Étrange… Alors que vous débattez pour savoir qui convertir ce soir, vous vous apercevez que {0} n’est pas là ! Qu’a-t’il bien pu arriver ?</value>
+  </string>
+
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Paix !</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Le vote de ce soir a été annulé grâce à l’éloquence du Pacifiste !</value>
+  </string>
+
+  <string key="ThiefStoleYourRoleThief">
+    <value>On vous a volé votre rôle ! Vous êtes le nouveau Voleur 😈 et pourrez voler un rôle la nuit prochaine.</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>On vous a volé votre rôle ! Vous êtes désormais un pauvre Villageois 👱, condamné à travailler toute la journée…</value>
+  </string>
+
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Toc, toc ! C’est le Céréales Killer qui vient vous Céréales Killer.</value>
+    <value>Alors que vous vous changez pour la nuit, le Céréales Killer sort de sous votre lit, vous attrape par le cou, et vous ligote !\n\nHiiiiiiiiii !</value>
+    <value>Le Céréales Killer était derrière la porte ! Vous vous réveillez sur votre lit, des cordes autour des bras et des jambes, et pouvez l’apercevoir à l’autre bout de la pièce, en tablier à fleurs…</value>
   </string>
 </strings>

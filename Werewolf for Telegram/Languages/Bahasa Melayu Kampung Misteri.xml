@@ -1,1433 +1,1408 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!--ditulis oleh Jaha, Choppie dan Souji -->
-<!-- Welcome to the ordered english file! The strings here are ordered by where they're used instead of when they were added, so this file is ideal for people who're starting to make a new variant! Please remember to change the language name, base, and variant, and, once your variant is done, check the "Last updated" of this file and either look at the translators channel's changelog starting from the date there, or check the English.xml file to see if there are any strings after the one mentioned.
-
-INDEX
-Roles (not the /rolelist command, but a list of roles)
-RoleInfos (the strings sent to a player's PM saying what role they are)
-AboutRoles (the role explanations given in /rolelist)
-Role changes (public and private)
-Teammmates ("Your pack mates are:" etc)
-Time strings (day/night/lynching time has come!)
-Game ends ("The werewolves have won!" etc)
-Choice strings (strings asking a player to choose something)
-Private consequence strings (strings sent to a player's PM telling them what happened with their actions)
-Public consequence strings (strings sent to a group saying what happened with a player's actions)
-Private death strings (strings sent to player PMs after a certain player is killed)
-Public death strings (strings sent to the group once a player is killed)
-Group system strings ("{0} started a game!", "You're not a global admin!", all system strings that get changed with /config)
-Private system strings ("I have sent you a PM", all system strings that get changed with /setlang)
-Deprecated strings (only there so your file will pass through validation with no errors - no need to touch these strings) -->
-
-<!-- LAST UPDATED: 17/01/2016 (DD/MM/YYYY), WolvesEatDrunkBlockSecondKill -->
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- ditulis oleh Jaha, Choppie dan Souji -->
+<!-- dibantu Gulugulu, Tsukasa dan Cinderella -->
 
 <strings>
-  <language name="Bahasa Melayu Misteri" base="Bahasa Melayu" variant="Kampung Misteri" owner="@mazhartahir @skyzkillerz"/>
-  <!-- Roles -->
-	  <!-- Do NOT change the emojis, even if you are translating werewolf in a non-standard mode! -->
-	  <string key="Villager">
-		<value>Orang Kampung 👱</value>
-	  </string>
-	  <string key="Drunk">
-		<value>Penyangak 🍻</value>
-	  </string>
-	  <string key="Harlot">
-		<value>Makcik Kuih 💋</value>
-	  </string>
-	  <string key="Seer">
-		<value>Wartawan 👳</value>
-	  </string>
-	  <string key="Traitor">
-		<value>Si Kitol 🖕</value>
-	  </string>
-	  <string key="GuardianAngel">
-		<value>Pak Guard 👼</value>
-	  </string>
-	  <string key="Detective">
-		<value>Inspektor 🕵</value>
-	  </string>
-	  <string key="Wolf">
-		<value>Orang Minyak 🐺</value>
-	  </string>
-	  <string key="Cursed">
-		<value>Si Penakut 😾</value>
-	  </string>
-	  <string key="Gunner">
-		<value>Guru Silat 🔫</value>
-	  </string>
-	  <string key="Tanner">
-		<value>Pengebom  👺</value>
-	  </string>
-	  <string key="Fool">
-		<value>Si Dungu 🃏</value>
-	  </string>
-	  <string key="WildChild">
-		<value>Saka 👶</value>
-	  </string>
-	  <string key="Beholder">
-		<value>Anonymous 👁</value>
-	  </string>
-	  <string key="ApprenticeSeer">
-		<value>Wartawan Pelatih 🙇</value>
-	  </string>
-	  <string key="Cultist">
-		<value>Budak Hipster/Raver 👤</value>
-	  </string>
-	  <string key="CultistHunter">
-		<value>Otai 💂</value>
-	  </string>
-	  <string key="Mason">
-		<value>RELA 👷</value>
-	  </string>
-	  <string key="Hunter">
-		<value>Pemburu Hantu 🎯</value>
-	  </string>
-	  <string key="Cupid">
-		<value>Pencari Jodoh 🏹</value>
-	  </string>
-	  <string key="SerialKiller">
-		<value>Pontianak 🔪</value>
-	  </string>
-	  <string key="Doppelgänger">
-		<value>Hantu Raya 🎭</value>
-	  </string>
-	  <string key="Mayor">
-		<value>Tok Ketua 🎖</value>
-	  </string>
-	  <string key="Prince">
-		<value>VVIP 👑</value>
-	  </string>
-	  <string key="Sorcerer">
-		<value>Pawang 🔮</value>
-	  </string>
-	  <string key="ClumsyGuy">
-		<value>Pak Pandir 🤕</value>
-	  </string>
-	  <string key="Blacksmith">
-		<value>Bomoh ⚒</value>
-	  </string>
-	  <string key="AlphaWolf">
-		<value>Bunian ⚡️</value>
-	  </string>
-	  <string key="WolfCub">
-		<value>Penanggal 🐶</value>
-	  </string>
-	  <!-- These are for the player list -->
-	  <string key="RanAway">
-		<value>Melarikan diri</value>
-	  </string>
-	  <string key="Dead">
-		<value>💀 Mati</value>
-	  </string>
-	  <string key="Alive">
-		<value>🙂 Hidup</value>
-	  </string>
-	  <string key="Won">
-		<value>Menang</value>
-	  </string>
-	  <string key="Lost">
-		<value>Kalah</value>
-	  </string>
-	  <string key="VillageTeamEnd">
-		<value>Geng Kampung</value>
-	  </string>
-	  <string key="NeutralTeamEnd">
-		<value>Geng Neutral</value>
-	  </string>
-	  <string key="WolfTeamEnd">
-		<value>Geng Serigala</value>
-	  </string>
-	  <string key="SerialKillerTeamEnd">
-		<value>Geng Pontianak</value>
-	  </string>
-	  <string key="CultTeamEnd">
-		<value>Geng Raver/Hipster</value>
-	  </string>
-	  <string key="TannerTeamEnd">
-		<value>Geng Pengebom</value>
-	  </string>
-	  <string key="PlayersAlive">
-		<value>Pemain hidup</value>
-	  </string>
-	  
-	  
-  <!-- RoleInfos -->
-	  <string key="RoleInfoCursed">
-		<value>Anda merupakan Si Penakut 😾. Walaupon anda seorang penakut, anda telah membaca banyak buku berkaitan dengan alam mistik terutama perkara yang berkaitan dengan Orang Minyak. Anda akan menjadi orang minyak sekiranya orang minyak menyerang anda.</value>
-	  </string>
-	  <string key="RoleInfoDetective">
-		<value>Anda merupakan seorang Inspektor 🕵. Pada siang hari, anda memerhatikan seorang untuk mengetahui perwatakannya. Orang Minyak berpeluang mengenali diri anda jika anda melihat mereka (berpeluang 40%).</value>
-	  </string>
-	  <string key="RoleInfoDrunk">
-		<value>Anda adalah seorang Penyangak 🍻. Setiap hari anda suka mencuba pelbagai jenis dadah dan kebanyakan orang telah mengetahuinya kegiatan anda.</value>
-	  </string>
-	  <string key="RoleInfoGuardianAngel">
-		<value>Anda merupakan seorang Pengawal 👼. Setiap malam anda memilih seorang untuk diselamatkan. Bagaimanapun, jika anda tersilap pilih, anda ada kemungkinan 50% untuk dibunuh.</value>
-	  </string>
-	  <string key="RoleInfoGunner">
-		<value>Anda adalah seorang Guru Silat 🔫. Anda boleh menggunakan jurus anda sebanyak dua kali untuk melawan segala jenis makhluk. Semua orang akan mendengar jeritan anda apabila anda mengeluarkan jurus itu.</value>
-	  </string>
-	  <string key="RoleInfoHarlot">
-		<value>Anda merupakan Makcik Kuih 💋. Setiap malam anda akan memilih seorang untuk diberikan kuih yang tidak terjual pada siang hari. Anda akan dibunuh jika menghantar kuih ke tempat yang tidak selamat.</value>
-	  </string>
-	  <string key="RoleInfoTraitor">
-		<value>Anda adalah Si Kitol 🖕. Buat masa sekarang, anda adalah orang kampung, tetapi apabila semua makluk halus tiada, anda menjadi Orang Minyak.Wartawan akan melihat anda sebagai orang minyak ataupun orang kampung.</value>
-	  </string>
-	  <string key="RoleInfoWolf">
-		<value>ANDA ADALAH ORANG MINYAK 🐺!! Setiap malam anda mencari mangsa lalu membunuhnya.Anda pakai pemutih pun tetap takkan putih</value>
-	  </string>
-	  <string key="RoleInfoSeer" >
-		<value >Anda seorang Wartawan 👳. Setiap malam anda melihat seorang untuk dijadikan berita pada esok hari.</value>
-	  </string>
-	  <string key="RoleInfoVillager" >
-		<value >Anda adalah Orang Kampung 👱, menjalankan kehidupan seperti biasa. Tiada kelebihan untuk anda.</value>
-	  </string>
-	  <string key="RoleInfoTanner" >
-		<value >Anda merupakan seorang Pembuat Bom  👺. Anda akan meletupkan kawasan anda dan menyelamatkan diri sendiri jika dituduh melakukan sesuatu yang buruk dalam kampung.</value>
-	  </string>
-	  <string key="RoleInfoWildChild" >
-		<value >Anda mempunyai Saka 👶. Anda  boleh memilih seorang untuk dijadikan idola. Apabila idola anda mati, anda akan menjadi Orang Minyak.</value>
-	  </string>
-	  <string key="RoleInfoBeholder" >
-		<value >Anda seorang Anonymous  👁, mencari dan maklumat tentang wartawan terpilih.</value>
-	  </string>
-	  <string key="RoleInfoApprenticeSeer" >
-		<value >Anda adalah Wartawan Pelatih 🙇. Jika Wartawan telah hilang, anda akan mengambil tempat beliau.</value>
-	  </string>
-	  <string key="RoleInfoCultist" >
-		<value >Anda mempunyai fahaman yang pelik berkaitan tarian👤. Setiap malam anda memilih seorang untuk dijadikan pengikut anda. Anda akan menang jika semua baki pemain mengikuti anda.</value>
-	  </string>
-	  <string key="RoleInfoCultistHunter" >
-		<value >Anda merupakan seorang Otai 💂, cuba untuk menghentikan penyebaran tarian mengarut. Setiap malam anda pilih pemain. Jika mereka Budak Raver/Hipster, mereka akan hilang dari kawasan itu. Jika anda dihasut mereka, ahli sebelumnya akan hilang.</value>
-	  </string>
-	  <string key="RoleInfoMason">
-		<value>Anda merupakan seorang RELA 👷. Anda mengenali rakan seperjuangan anda.</value>
-	  </string>
-	  <string key="RoleInfoCupid">
-		<value>Anda seorang pencari jodoh 🏹. Menghabiskan masa anda mempelajari ilmu pengasih, anda dapat memilih dua orang pemain untuk di jodohkan. Jika salah seorang mati, seorang lagi akan mati dalam kesepian.</value>
-	  </string>
-	  <string key="RoleInfoDoppelganger">
-		<value>Anda merupakan hantu raya 🎭. Anda mewarisi daripada nenek moyang anda dan boleh menyerupai sesiapa. Pilih seorang pemain, jika pemain itu mati, anda akan memainkan watak pemain tersebut.</value>
-	  </string>
-	  <string key="RoleInfoHunter">
-		<value>Anda adalah Pemburu Hantu 🎯. Anda tidak dapat tidur dengan nyenyak. Jika anda hilang, anda membawa seorang untuk temani anda.</value>
-	  </string>
-	  <string key="RoleInfoSerialKiller">
-		<value>Anda merupakan Pontianak🔪 yang sedang mencari mangsa untuk diratah</value>
-	  </string>
-	  <string key="RoleInfoMayor">
-		<value>Anda adalah Tok Ketua🎖. Tuduhan anda dikira dua kali apabila anda mendedahkan diri anda.</value>
-	  </string>
-	  <string key="RoleInfoPrince">
-		<value>Anda merupakan VVIP 👑 dalam kampung. Apabila tuduhan ditujukan kepada anda, mereka mengakui melakukan kesilapan dan tiada orang yang dituduh pada hari itu.</value>
-	  </string>
-	  <string key="RoleInfoClumsyGuy">
-		<value>Anda adalah Pak Pandir🤕. Anda cuba untuk menuduh, tapi sayang tuduhan anda mempunyai 50% peluang ke arah orang selain yg anda pilih.</value>
-	  </string>
-	  <string key="RoleInfoSorcerer">
-		<value>Anda adalah Pawang🔮 yang berkawan dengan makhluk halus selain pontianak. Pada waktu malam, anda menggunakan jampi anda untuk membantu makhluk halus. Anda akan menang jika makluk halus menang.</value>
-	  </string>
-	  <string key="RoleInfoBlacksmith">
-		<value>Anda adalah seorang bomoh⚒, air jampi yang sangat berharga. Anda akan menjampi air hujan. Air hujan yang dijampi dapat menghalang makhluk halus selain pontianak daripada mengganggu penduduk kampung pada malam itu. </value>
-	  </string>
-	  <string key="RoleInfoAlphaWolf">
-		<value>Anda adalah Orang Bunian ⚡️. Kegiatan anda menyebabkan penduduk kampung menjadi Orang Minyak. Setiap malam anda akan memilih orang untuk diganggu. Selagi anda masih hidup mangsa anda berpeluang 20% untuk dijadikan sebagai orang minyak.</value>
-	  </string>
-	  <string key="RoleInfoWolfCub">
-		<value>Anda adalah Penanggal🐶 yang disanjung makhluk halus yang lain selain pontianak. Sama seperti makhluk halus yang lain, anda memilih seorang untuk diganggu pada setiap malam. Jika anda hilang, rakan-rakan anda mengganas dan mencari dua mangsa untuk diganggu.</value>
-	  </string>
-	  <string key="CupidChosen">
-		<value>Anda dilamun cinta bersama {0}. Jika salah seorang hilang, seorang lagi akan membawa diri ketempat lain. Jika pasangan anda menang, anda juga akan menang.</value>
-		<value>Jampi pengasih telah mengenai diri anda! Anda mabuk di lamun cinta dengan {0}! Jika si dia hilang, anda turut hilang, jika si dia menang kamu berdua akan menang.</value>
-	  </string>
-	  
-	  
-  <!-- AboutRoles -->
-	  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
-	  For example in Mafia, AboutMason would be:
-	  Caporegime 👷\nYou are a caporegime blah blah
-	  -->
-	  <string key="AboutVG">
-		<value>Peranan anda mudah, cuba untuk hidup dan singkirkan makhluk halus daripada kampung ini.</value>
-	  </string>
-	  <string key="AboutSeer">
-		<value>Anda adalah seorang wartawan pada setiap. Melalui peranan ini, pada setiap malam anda boleh memilih pemain lain untuk dilihat peranan mereka. Gunakan dengan bijak</value>
-	  </string>
-	  <string key="AboutWw">
-		<value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill!\nNote: If you attack the cursed, they will become a wolf like yourself! Hooray friends!\nIf you attack the drunk, you yourself will become drunk, and will be unable to do the next attack as you sleep off your hangover! (Usually, this means you can't attack the following night, but if the Wolf Cub was killed and the Drunk was your first choice, you won't be able to kill the second player, and you will still be able to attack the following night.) </value>
-	  </string>
-	  <string key="AboutHarlot">
-		<value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
-	  </string>
-	  <string key="AboutDrunk">
-		<value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next kill, as they are drunk off your insanely high BAC.</value>
-	  </string>
-	  <string key="AboutCursed">
-		<value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
-	  </string>
-	  <string key="AboutTraitor">
-		<value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
-	  </string>
-	  <string key="AboutGA">
-		<value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
-	  </string>
-	  <string key="AboutDetective">
-		<value>You old sleuth. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
-	  </string>
-	  <string key="AboutGunner">
-		<value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
-	  </string>
-	  <string key="AboutTanner">
-		<value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
-	  </string>
-	  <string key="AboutFool">
-		<value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
-	  </string>
-	  <string key="AboutCult">
-		<value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
-	  </string>
-	  <string key="AboutCH">
-		<value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
-	  </string>
-	  <string key="AboutWC">
-		<value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
-	  </string>
-	  <string key="AboutAppS">
-		<value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
-	  </string>
-	  <string key="AboutBH">
-		<value>You will be told who the seer is (the real one, not the fool)</value>
-	  </string>
-	  <string key="AboutMason">
-		<value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
-	  </string>
-	  <string key="AboutDG">
-		<value>
-		  Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
-		  Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
-		  The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
-		</value>
-	  </string>
-	  <string key="AboutCupid">
-		<value>
-		  Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
-		  Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if at least one of the lovers was on the winning team, they both win together.
-		</value>
-	  </string>
-	  <string key="AboutHunter">
-		<value>
-		  A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
-		  Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
-		  If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
-		</value>
-	  </string>
-	  <string key="AboutSK">
-		<value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
-	  </string>
-	  <string key="AboutMayor">
-		<value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
-	  </string>
-	  <string key="AboutPrince">
-		<value>The prince is a key role in the Village Team's strategy. Once the prince gets lynched, their role as Prince is revealed, and they survive. However, this can only happen once: if the village insists on lynching them, they will die.</value>
-	  </string>
-	  <string key="AboutSorcerer">
-		<value>Do you remember the good old seer? Well now, it has its Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
-	  </string>
-	  <string key="AboutClumsy">
-		<value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfast. You can't see a damn thing. Can you even vote for the person you want to? (You have a 50% chance to vote for someone random.)</value>
-	  </string>
-	  <string key="AboutBlacksmith">
-		<value>You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* 🤔
-		</value>
-	  </string>
-	  <string key="AboutAlphaWolf">
-		<value>You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
-		</value>
-	  </string>
-	  <string key="AboutWolfCub">
-		<value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, i'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
-	  </string>
-	  <string key="AboutPara">
-		<value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
-	  </string>
-	  
-	  
-  <!-- Role changes -->
-	  <string key="TraitorTurnWolf">
-		<value>Anda Si Kitol!!! Anda menjadi orang minyak...</value>
-	  </string>
-	  <string key="CursedBitten" >
-		<value >Anda telah di bunuh oleh orang minyak. Sebagai si Penakut, anda telah menjadi orang minyak!</value>
-	  </string>
-	  <string key="BittenTurned">
-		<value>Sewaktu malam, anda terasa aneh dan gatal-gatal badan anda dipenuhi dengan minyak bukan minyak masak dan bukan juga minyak ron95 mahupun ron 97... Anda adalah orang minyak!</value>
-	  </string>
-	  <string key="WildChildTransform">
-		<!-- 0 - role's name -->
-		<!-- 0 - teamate's names -->
-		<value>{0} telah terkorban! Dalam kemarahan anda mandi dalam air minyak dan menjadi orang minyak! Geng anda adalah: {1}</value>
-	  </string>
-	  <string key="ApprenticeNowSeer">
-		<!-- 0 - seer name -->
-		<value>{0} adalah seorang wartawan. Sebagai wartawan pelatih, anda kini menjadi wartawan yang baru.</value>
-	  </string>
-	  <string key="CultConvertYou">
-		<value>Budak raver telah merasuki anda untuk mengikut tarian mereka. Pada setiap malam, anda berpeluang untuk merasuk pemain lain.</value>
-	  </string>
-	  <string key="DGTransformToCult">
-		<!-- 0 - role's name -->
-		<!-- 1 - teammates's name -->
-		<value>{0} telah terkorban, dan sekarang anda bertukar menjadi geng Raver.  Geng anda(jika ada) adalah: {1}</value>
-	  </string>
-	  <string key="DGTransformToWolf">
-		<!-- 0 - target's name -->
-		<!-- 1 - teammates's name -->
-		<value>{0} telah mati, dan anda berubah menjadi orang minyak. Geng anda(jika ada) adalah: {1}</value>
-	  </string>
-	  <string key="DGTransformToMason">
-		<!-- 0 - dead mason's name -->
-		<!-- 1 - mason collegues's name -->
-		<value>{0} telah mati, dan anda berubah menjadi RELA. Ahli pasukan anda(jika ada) adalah: {1}</value>
-	  </string>
-	  <string key="DGTransformToAlpha">
-		<!-- 0 - target's name -->
-		<!-- 1 - teammates's name -->
-		<value>{0} telah mati, dan anda berubah menjadi orang bunian. Geng anda (jika ada) adalah: {1}</value>
-	  </string>
-	  <string key="DGTransformToWolfCub">
-		<!-- 0 - target's name -->
-		<!-- 1 - teammates's name -->
-		<value>{0} telah mati, dan anda berubah menjadi and penanggal. Geng anda(jika ada) adalah: {1}</value>
-	  </string>
-	  <string key="NewWCRoleModel">
-		<!-- 0 - target's name -->
-		<value>Anda telah menjadi saka. Model contoh anda adalah  {0}</value>
-	  </string>
-	  
-	  
-  <!-- Teammmates -->
-	  <string key="BeholderSeer">
-		<!-- 0 - seer name -->
-		<value>\nWartawan adalah {0}.</value>
-	  </string>
-	  <string key="NoSeer">
-		<value>Tiada wartawan!</value>
-	  </string>
-	  <string key="WolfTeam">
-		<!-- 0 - teammate names -->
-		<value>Geng mahluk halus anda: {0}</value>
-	  </string>
-	  <string key="CultTeam">
-		<!-- 0 - Number of cultists -->
-		<value>Budak raver: {0}</value>
-	  </string>
-	  <string key="MasonTeam">
-		<value>  Ahli RELA : {0}</value>
-	  </string>
-	  <string key="DGToMason">
-		<!-- 0 - target's name -->
-		<value>Hantu Raya {0} telah menjadi RELA, sama seperti anda!</value>
-	  </string>
-	  <string key="DGToCult">
-		<!-- 0 - new cultist's name -->
-		<value>Hantu Raya {0} telah menjadi budak Raver,sama seperti anda!</value>
-	  </string>
-	  <string key="DGToWolf">
-		<!-- 0 - DG's name -->
-		<value>Hantu raya {0} telah menjadi orang minyak, sama seperti anda!</value>
-	  </string>
-	  <string key="WildChildToWolves">
-		<!-- 0 - Werechild's name -->
-		<value>Model contoh {0} telah mati!  Dengan air mata yang berlinang, dia telah menjadi orang minyak!</value>
-	  </string>
-	  
-	  
-  <!-- Time strings -->
-	  <string key="LynchTime" >
-		<!-- 0 - number of seconds -->
-		<value>
-		  Malam menjelang, penduduk kampung misteri berkumpul untuk mengusir dan membunuh pada petang ini...
-		  Semua orang mempunyai {0} saat untuk mengundi!
-		</value>
-	  </string>
-	  <string key="DayTime" >
-		<!-- 0 - number of seconds -->
-		<value >Sekarang waktu siang. Setiap daripada anda mempunyai {0} saat untuk melakukan pertuduhan, mempertahankan diri atau sembang kosong.</value>
-	  </string>
-	  <string key="NightTime" >
-		<!-- 0 - number of seconds -->
-		<value >Malam menjelma. Setiap orang pergi ke tempat tidur mereka. Pemain malam: anda ada  {0} saat untuk melakukan tindakan!</value>
-	  </string>
-	  <string key="Day">
-		<!--0 - Day -->
-		<value>Hari {0}</value>
-	  </string>
-	  
-	  
-  <!-- Game ends -->
-	  <string key="WolfWins" isgif="true" >
-		<value >Orang minyak telah menang!</value>
-	  </string>
-	  <string key="WolvesWin" isgif="true" >
-		<value >Sekumpulan makhluk halus telah menang!</value>
-	  </string>
-	  <string key="VillageWins" isgif="true" >
-		<value >Penduduk kampung telah menang!</value>
-	  </string>
-	  <string key="TannerWins" isgif="true" >
-		<value >Oh tidak! Kamu singkirkan pembuat bom! Pembuat bom menang, gilalah kamu.</value>
-	  </string>
-	  <string key="CultWins" isgif="true">
-		<value >Semua orang minyak berjaya di hapuskan, yang tinggal hanyalah budak raver, semua penduduk kampung ditukarkan jadi budak raver. Budak raver telah menang!</value>
-	  </string>
-	  <string key="SerialKillerWins" isgif="true">
-		<value>Prmain yang tinggal adalah pontianak! Dia telah menang!</value>
-	  </string>
-	  <string key="LoversWin" isgif="true">
-		<value>Cinta sejati berkekalan! Pasangan berjodohan telah menang!</value>
-	  </string>
-	  <string key="NoWinner" isgif="true">
-		<value>Setiap orang dalam kampung telah mati, tiada sesiapa yang menang, gelap mula menyelubungi kawasan kampung..</value>
-	  </string>
-	  <string key="RemainingPlayersEnd">
-		<value>Pemain masih tinggal, peranan, dan pasukan:</value>
-	  </string>
-	  <string key="EndTime">
-		<value>Jangka masa permainan: {0}</value>
-	  </string>
-	  
-	  
-  <!-- Choice strings -->
-	  <string key="AskLynch">
-		<value>Siapa yang anda mahu singkirkan?</value>
-	  </string>
-	  <string key="HunterLynchedChoice">
-		<value>Penduduk kampung telah memilih untuk menggantung kamu! Ini adalah peluang terakhir anda, pilih seseorang untuk di tembak!</value>
-	  </string>
-	  <string key="HunterShotChoice">
-		<value>Anda telah dibunuh!  Pada saat akhir hayat anda, anda mempunyai peluang untuk menembak seseorang... lakukan dengan pantas!</value>
-	  </string>
-	  <string key="AskMayor">
-		<value>Klik "Tonjolkan" bila anda dah bersedia untuk nyatakan bahawa anda adalah Tok Ketua</value>
-	  </string>
-	  <string key="Reveal">
-		<value>Tonjolkan</value>
-	  </string>
-	  <string key="SpreadDust">
-		<value>Adakah anda mahu menyebarkan air jampi anda? Dapat menyebabkan orang minyak tidak dapat beraksi malam ini.</value>
-	  </string>
-	  <string key="AskDetect">
-		<value>Siapa yang anda mahu kesan?</value>
-	  </string>
-	  <string key="AskShoot">
-		<!-- 0 - bullet count -->
-		<value>Siapa yang mahu anda kenakan jurus anda? {0} jurus masih tinggal.</value>
-	  </string>
-	  <string key="AskVisit">
-		<value>Siapa yang anda mahu beri kuih?</value>
-	  </string>
-	  <string key="AskSee">
-		<value>Siapa yang anda mahu temu ramah??</value>
-	  </string>
-	  <string key="AskGuard">
-		<value>Siapa yang anda mahu jaga?</value>
-	  </string>
-	  <string key="AskEat">
-		<value>Siapa yang anda mahu makan?</value>
-	  </string>
-	  <string key="AskHunt">
-		<value>Siapa yang anda mahu buru?</value>
-	  </string>
-	  <string key="AskRoleModel">
-		<value>Siapakah model contoh anda?</value>
-	  </string>
-	  <string key="AskKill"> <!-- for serial killer -->
-		<value>Nyawa siapa yang anda ingin ragut malam ini?</value>
-	  </string>
-	  <string key="AskDoppelganger">
-		<value>Siapa yang anda mahu jadi sekiranya mereka meninggal?</value>
-	  </string>
-	  <string key="AskCupid1">
-		<value>Siapa yang anda mahu mereka berjodohan? Pilih pemain pertama</value>
-	  </string>
-	  <string key="AskCupid2">
-		<value>Siapa yang anda mahu mereka berjodohan? Pilih pemain kedua</value>
-	  </string>
-	  <string key="AskConvert">
-		<value>Siapa yang anda mahu ajar mereka tarian raver?</value>
-	  </string>
-	  <string key="DiscussWith">
-		<!--Leave the leading spaces here please-->
-		<!-- 0 - teammate names -->
-		<value>  Pastikan anda berbincang dengan {0}</value>
-	  </string>
-	  <string key="And">
-		<!--this is paired with "DiscussWith".  again, leave the spaces!-->
-		<value> dan </value>
-	  </string>
-	  <string key="WolfVotedKill">
-		<!-- 0 - wolf teammate name -->
-		<!-- 1 - Victim name -->
-		<value>{0} telah mengundi untuk membunuh {1}.</value>
-	  </string>
-	  <string key="CultistVotedConvert" >
-		<!-- 0 - Voter's name -->
-		<!-- 1 - target name -->
-		<value >{0} telah mengundi untuk mengajar {1}</value>
-	  </string>
-	  <string key="PlayerVotedLynch">
-		<!-- 0 - Voter name -->
-		<!-- 1 - Target name -->
-		<value>{0} telah mengundi untuk menyingkirkan {1}.</value>
-	  </string>
-	  <string key="ChoiceAccepted">
-		<value>Pilihan di terima.</value>
-	  </string>
-	  <string key="TimesUp">
-		<value>Masa tamat!</value>
-	  </string>
-	  <string key="RoleModelChosen">
-		<!-- 0 - target's name -->
-		<value>Anda gagal untuk melakukan keputusan, jadi moderator akan pilih bagi pihak anda: {0}</value>
-	  </string>
-	  
-	  
-  <!-- Private consequence strings -->
-	  <string key="SeerSees">
-		<!-- 0 - player name -->
-		<!-- 1 - player role -->
-		<value>Anda lihat {0} adalah {1}!</value>
-	  </string>
-	  <string key="CursedBittenToWolves" >
-		<!-- 0 - victim name -->
-		<value >{0} ... tetapi anda sebagai saka, sedikit dna telah bertukar menjadi orang minyak! Tahniah buat pasukan baru kamu!</value>
-	  </string>
-	  <string key="PlayerBittenWolves">
-		<value>Semasa mahluk halus menyerang {0}, {1} cuba menghentikan yang lain, sebagai orang bunian.  {1} Memberi mahluk halus lain bahawa {0} perlu menyertai mereka selain mati sia-sia, mahluk halus menghembus kepala mangsa tersebut dan dilumurkan dengan minyak ron97. Dia akan menjadi orang minyak pada malam seterusnya.</value>
-	  </string>
-	  <string key="WolvesEatDrunk" >
-		<!-- 0 - victim name -->
-		<value >Oh tidak! {0} seorang penyagak! Minyak di badan anda mulai luntur, buat masa ini anda tidak boleh menyerang malam keesokannya...</value>
-	  </string>
-	  <string key="WolvesEatDrunkBlockSecondKill">
-		<value>Oh tidak! {0} seorang penyangak! Kerana harga minyak yang semakin meningkat, sebelum tiba ajalnya dia telah mengambil sedikit minyak, dan tidak boleh menyerang {1}...</value>
-	  </string>
-	  <string key="GuardBlockedWolf">
-		<!-- 0 - target's name -->
-		<value>Sekumpulan mahluk halus menuju ke rumah {0} untuk membunuh mmereka, tetapi mereka menjumpai seorang bermisai dan kumis yang agak macho. Mahluk halus balik dengan hati yang kecewa kerana abang guard tak bagi masuk. </value>
-	  </string>
-	  <string key="DetectiveCaught" >
-		<!-- 0 - detective name -->
-		<value >Anda nampak {0} sedang melihat sesuatu! Ini mesti seorang inspektor!</value>
-	  </string>
-	  <string key="HarlotNotHome" >
-		<!-- 0 - player name -->
-		<value >Pelik... {0} tiada di rumah!</value>
-	  </string>
-	  <string key="GuardSaved" >
-		<!-- 0 - saved player name -->
-		<value >Anda telah menyelamatkan nyawa {0}!</value>
-	  </string>
-	  <string key="GuardNoAttack" >
-		<!-- 0 - player name -->
-		<value >{0} tidak diserang, jadi anda hanya duduk lenggang kangkung sambil bermain media sosial.</value>
-	  </string>
-	  <string key="GuardEmptyHouse">
-		<!-- 0 - player name -->
-		<value>Anda mahu menjaga {0}, tetapi dia tiada di rumah!</value>
-	  </string>
-	  <string key="GuardBlockedKiller">
-		<!-- 0 - target's name -->
-		<value>Anda cuba mengutip mayat {0} untuk ritual ilmu gelap, tetapi anda di awasi oleh pak guard. Tiada aktiviti ritua ilmu gelap malam ini...</value>
-	  </string>
-	  <string key="GuardSavedYou" >
-		<value >Seseorang pak guard tolong mengawasi anda malam tadi dan dia berjaya menghalang anda daripada gangguan makhluk halus!</value>
-	  </string>
-	  <string key="HarlotVisitYou" >
-		<value >Keadaan agak gelap kerana rumah anda terputus bekalan elektrik, anda merasakan ada sesuatu yang masuk ke dalam rumah anda. Sebiji kueh karipap di tinggalkan di atas meja..</value>
-	  </string>
-	  <string key="PlayerBitten">
-		<value>Anda diserang oleh orang minyak, tetapi orang bunian telah memilih anda. Anda tidak terbunuh tetapi sedikit minyak mula tersimbah di atas bahu anda, anda bakal menjadi orang minyak pada keesokan harinya!</value>
-	  </string>
-	  <string key="CultAttempt">
-		<value>Seorang budak tarian aneh cuba merekrut anda menyertai mereka tetapi anda tetap utuh dengan muzik lama.</value>
-	  </string>
-	  <string key="HarlotVisitNonWolf" >
-		<!-- 0 - target name -->
-		<value >Anda dapati {0} bukan orang minyak!</value>
-	  </string>
-	  <string key="HarlotDiscoverCult">
-		<!-- 0 - target's name -->
-		<value>Anda menyelinap masuk ke rumah {0} untuk sedekahkan hasil jualan kueh yang tak habis... tetapi ketika anda meninggal rumah tersebut, anda mula mendengari muzik yang aneh dan terlihat tarian raver...</value>
-	  </string>
-	  <string key="DetectiveSnoop" >
-		<!-- 0 - target name -->
-		<!-- 1 - target role -->
-		<value >Hasil pengintipan anda menunjukkan {0} adalah {1}.</value>
-	  </string>
-	  <string key="CultJoin">
-		<!-- 0 - new cultist's name -->
-		<value>{0} telah menyertai budak raver/hipster!</value>
-	  </string>
-	  <string key="CultVisitEmpty">
-		<!-- 0 - Newest cultist's name -->
-		<!-- 1 - target name -->
-		<value>{0} telah di hantar untuk mengajarkan tarian raver kepada {1}... tetapi tiada sesiapa di rumah!</value>
-	  </string>
-	  <string key="CultUnableToConvert">
-		<!-- 0 - newest  -->
-		<!-- 1 - target's name -->
-		<value>Anda telah dihantar {0} untuk cuba mengajak {1} menjadi budak raver, tetapi iman dia terlalu kuat. (</value>
-	  </string>
-	  <string key="CultTargetDead">
-		<!-- 0 - Youngest cultists name -->
-		<value>Ahli terbaru anda telah menuju ke rumah {0} untuk mengajak jadi ahli raver, tetapi dia telah di bunuh oleh orang minyak. Sotong bergelimpahan dan video yang cuba ditularkan belum sempat dimuat naik...</value>
-	  </string>
-	  <string key="HunterVisitDead">
-		<!-- 0 - target name -->
-		<value>Anda cuba untuk memburu {0}, tetapi mereka telah mati!</value>
-	  </string>
-	  <string key="HunterFailedToFind">
-		<!-- 0 - target name -->
-		<value>Anda pergi ke rumah {0}, tiada muzik aneh. Anda yakkin dan percaya {0} bukan budak raver/hipster/pavilion.</value>
-	  </string>
-	  <string key="MasonConverted">
-		<!-- 0 - mason's name -->
-		<value>Pelik.... {0} dia tak lagi pergi ke mesyurat RELA yang diadakan... O.o</value>
-	  </string>
-	  <string key="SorcererOther">
-		<value>Anda cuba untuk  melihat {0}, anda tidak pasti sama ada dia adalah orang minyak ataupun wartawan...</value>
-	  </string>
-	  
-	  
-  <!-- Public consequence strings -->
-	  <string key="HunterNoChoiceLynched">
-		<value>{0} cuba membaca beberapa cebisan perkataan tapi mulutnya tertutup, seorang pemburu hantu mati belum sempat mengamalkan ilmu yang dipelajari...</value>
-	  </string>
-	  <string key="HunterSkipChoiceLynched">
-		<value>{0} mula mahu membaca jampi untuk membunuh tetapi tidak berjaya, menerima nasib akan kematiannya sebelum berbuat apa-apa...</value>
-	  </string>
-	  <string key="HunterNoChoiceShot">
-		<!-- 0 - target's name -->
-		<value>Angin tiupan jampi yang dibaca mengenai {0} ...</value>
-	  </string>
-	  <string key="HunterSkipChoiceShot">
-		<!-- 0 - hunter's name -->
-		<value>Semasa {0} menghela nafas terakhir sebelum meninggal dunia, tidak dapat membuat keputusan menyebabkan dia mati.</value>
-	  </string>
-	  <string key="PrinceLynched">
-		<value>Semasa penduduk kampung mahu membunuh {0}, mereka berkata "Tunggu sebentar, dia tu VVIP yang telah memberi pelbagai sumbangan dalam membangunkan kampung kita. Takkan kita nak bunuh orang sebaik dia ni.</value>
-	  </string>
-	  <string key="MayorReveal">
-		<value>{0} melangkahkan kaki kehadapan dan menujukkan borang kuasa JKKK serta surat BR1M. Buat masa sekarang, setiap undian {0} dikira sebagai dua kali.</value>
-	  </string>
-	  <string key="BlacksmithSpreadSilver">
-		<value>Semasa penduduk kampung sedang sembang kencang perkara yang berlaku semalam, mereka menyedari {0} berkeliaran sambil memercik air bunga mawar. Buat masa sekarang(orang minyak dan beberapa mahluk halus) tidak dapat beraksi pada waktu malam.</value>
-	  </string>
-	  
-	  
-  <!-- Private death strings -->
-	  <string key="WolvesEatYou" isgif="true" >
-		<value >Oh tidak! Orang minyak telah membunuh kamu. ZASSSSSSSS</value>
-	  </string>
-	  <string key="GuardWolf" >
-		<value >Anda cuba untuk menjaga orang minyak! Orang minyak telah membunuh anda!</value>
-	  </string>
-	  <string key="HarlotFuckWolf" >
-		<!-- 0 - player name -->
-		<value >Anda masuk ke dalam rumah {0} untuk memberi sedikit lebihan kuih. Kemudian terjumpa orang minyak. Dahi anda terus berpeluh dan anda pun meninggal.</value>
-	  </string>
-	  <string key="CultConvertWolf">
-		<value>Budak raver menghantar {0} untuk cuba hasut {1}, tetapi kepala {0} terpelanting keluar ke langit! {0} telah mati...</value>
-	  </string>
-	  <string key="CultConvertCultHunter">
-		<!-- 0 - Yougest Cultist (killed)'s name' -->
-		<!-- 1 - CultHunter's name -->
-		<value>{0} telah dihantar untuk menghasut, dan menghasut {1}... tetapi dia merupakan seorang OTAI! {0} telah mati!</value>
-	  </string>
-	  <string key="CultHunterKilledCultVisit">
-		<!-- 0 - Youngest Cultist's name -->
-		<!-- 1 - Number of cultists left -->
-		<value>{0} datang ke rumah anda semalam, bersedia untuk meghasut anda menyertai tarian pelik... Tetapi anda mengambil rotan dan memukul budak raver sehingga mati... {1} telah meninggal!</value>
-	  </string>
-	  <string key="HunterFindCultist">
-		<!-- 0 - target name -->
-		<value>Anda masuk ke dalam rumah {0} dan mendapati mereka sedang melakukan tarian yang pelik. Anda mengeluarkan rotan dan memukul budak raver.</value>
-	  </string>
-	  <string key="CultConvertHunter"> <!-- for hunter, not cultist hunter -->
-		<!-- 0 - Youngest Cultist's name -->
-		<!-- 1 - target's name -->
-		<value>Geng Raver menghantar {0} untuk menghasut {1}, tetapi terdengar bunyi libasan rotan menghentam tubuh {0}. Tubuh {0} terpelangting keluar rumah. Dia telah mati...</value>
-	  </string>
-	  <string key="CultConvertSerialKiller">
-		<!-- 0 - Youngest Cultist's name -->
-		<!-- 1 - target's name -->
-		<value>Geng raver telah menghantar {0} untuk menghasut {1}, tetapi jasad {0} terbang keluar dari tingkap. Beberapa kesan gigitan terdapat pada tubuhnya. {0} telah mati....</value>
-		<value>{0} menyelinap masuk ke rumah {1} , di sambut dengan jawapan yang mengerikan!!! {1} menggigit pergelangan tangan {0} menyebabkan darah membasahi Bumi! {0} telah mati D:</value>
-	  </string>
-	  <string key="GuardKiller">
-		<value>Anda cuba mengawal penaggal, Anda telah dibunuh sebanyak 102 kali! Anda telah mati....</value>
-	  </string>
-	  <string key="HarlotFuckKiller">
-		<!-- 0 - target's name -->
-		<value>Anda menyelinap masuk ke rumah {0}. Pada awalnya anda gembira kerana kuih yang dibawa habis di makan, mungkin terlalu lapar.  {0} mula mengeluarkan suara yang mengerikan dan membunuh anda!  Anda telah mati...</value>
-	  </string>
-	  <string key="BeholderNewSeer">
-		<!-- 0 - apprentice name -->
-		<!-- 1 - seer name -->
-		<value>{0} adalah seorang wartawan pelatih, sekarang mengisi jawatan kosong yang di tinggalkan oleh {1} dan menjadi wartawan baru.</value>
-	  </string>
-	  
-	  
-  <!-- Public death strings -->
-	  <string key="NoAttack" >
-		<value>Penduduk kampung berkumpul pada keesokan paginya, tiada serangan pada malamnya, penduduk berasa sangat bersyukur.</value>
-	  </string>
-	  <string key="LynchTie" >
-		<value>Tidak dapat datang dengan keputusan, penduduk kampung balik ke rumah dengan kecewa...</value>
-	  </string>
-	  <string key="NoLynchVotes" >
-		<value >Pelik, tiada sesiapa yang mahu mengundi untuk malam ini...</value>
-	  </string>
-	  <string key="Flee">
-		<!-- 0 - Player name -->
-		<value>{0} telah melarikan diri kerana takut dengan misteri!</value>
-	  </string>
-	  <string key="IdleKill">
-		<!-- 0 - player name -->
-		<!-- 1 - player role -->
-		<value>{0} tidak mengundi untuk 2 malam berturut-turut. Ini tidak baik.{0} meninggal secara tergempar. {1}</value>
-	  </string>
-	  <string key="Was"> <!-- used in the above string, inside the {1} (that {1} = playername + was + playerrole) -->
-		<value>adalah</value>
-	  </string>
-	  <string key="LynchKill" >
-		<!-- 0 - player name -->
-		<!-- 1 - player role -->
-		<value >Penduduk kampung telah mengundi, dalam kekeliruan. {0} telah mati. {1}</value>
-	  </string>
-	  <string key="HunterKilledFinalLynched">
-		<!-- 0 - hunter's name -->
-		<!-- 1 - target's name -->
-		<!-- 2 - target's role -->
-		<value>Semasa keadaan bertambah tegang, {0} membacakan doa membunuh dan mengenakan pada {1} ! {1} terjatuh dan terbaring lalu meninggal. {2}</value>
-	  </string>
-	  <string key="GenericDeathNoReveal">
-		<!-- 0 - Dead's name -->
-		<value>Setiap orang bangun pada pagi esoknya, menyedari bahawa {0} tidak lagi kelihatan, mereka pergi kerumah untuk melihat {0}.</value>
-		<value>Semasa waktu pagi, kelihatan jasad {0}, mungkin meninggal pada waktu tadi...</value>
-	  </string>
-	  <string key="DetectiveEaten" >
-		<!-- 0 - victim name -->
-		<value >Penduduk kampung berjalan dan tidak nampak {0}.  Mereka kehairanan, untuk menjumpai mayat {0} dengan lencana polis terlekat di kerongkong.</value>
-	  </string>
-	  <string key="GuardianEaten" >
-		<!-- 0 - victim name -->
-		<value >Pagi menjelang, kelihatan uniform pegawai keselamatan di pokok pisang. {0} adalah seorang Pak Guard</value>
-	  </string>
-	  <string key="GunnerEaten" >
-		<!-- 0 - victim name -->
-		<value >Semua orang keluar daripada rumah dan mendapati {0} telah tiada. Ini menyebabkan semua orang kampung panik kerana {0} merupakan seorang yang dihormati disebabkan ilmu persilatannya.</value>
-	  </string>
-	  <string key="SeerEaten" >
-		<!-- 0 - victim name -->
-		<value >Penduduk kampung puas mencari  {0} di serata pelosok kampung namun mereka mendapat khabar berita terbaru ternyata dia sudah tiada. Wartawan anda telah menghilangkan diri.</value>
-	  </string>
-	  <string key="DrunkEaten" >
-		<!-- 0 - victim name -->
-		<value >Penduduk kampung mendapati rumah {0} terbakar. Semuanya membantu untuk memadam kebakaran tersebut. Selesai memadam api, mereka kelihatan pelik kerana tidak jumpa jasad {0} di mana-mana. </value>
-	  </string>
-	  <string key="FoolEaten" >
-		<!-- 0 - victim name -->
-		<value >Ketika matahari naik melepasi fajar, orang kampung mendapati rumah {0} kelihatan kosong seperti tiada berpenghuni. Kampung ini kehilangan Si Gosip.</value>
-	  </string>
-	  <string key="HarlotEaten" >
-		<!-- 0 - player name -->
-		<value >Makcik Kuih, {0}, tiada pada keesokan harinya. Orang kampung menjangkakan dia meninggalkan kampung kerana kuihnya tidak laku!</value>
-	  </string>
-	  <string key="SorcererEaten">
-		<value>Bunyi jeritan kesedihan kedenagran di seluruh kampung. Pawang {0} telah mati.</value>
-		<value>Tangisan "Aku sangat memuja dan menyeru kau dengan ilmu aku! Inikah balasannya?" kedengaran malam semalam. Semua penduduk kampung mendapati rumah Pawang {0} berselerakan tetapi orangnya telah tiada.</value>
-	  </string>
-	  <string key="WildChildEaten">
-		<value>ARGHH!!!! Bunyi menyeramkan kedengaran pada malam tadi. Semua mendapati bahawa {0} merupakan saka yang dibela semasa dirinya hidup.</value>
-	  </string>
-	  <string key="MasonEaten">
-		<!-- 0 - dead man's name -->
-		<value>Setelah semua orang bangun keesokan hari, mereka mendapati {0} tidak memasuki mesyurat RELA. Seorang RELA telah hilang!</value>
-	  </string>
-	  <string key="ApprenticeSeerEaten">
-		<value>Penduduk kampung mencari {0} di setiap sudut kampung. Hasil carian mendapati wartawan pelatih telah meninggalkan kampung ini..</value>
-	  </string>
-	  <string key="DefaultEaten" >
-		<!-- 0 - victim name -->
-		<!-- 1 - victim role -->
-		<value>Pada hari berikutnya penduduk kampung mendapati bau busuk yang melampaui tahap peghiduan manusia. Semua mencari bau itu dan mendapati tubuh {0} berteraburan di dalam rumahnya. Beliau kelihatan seperti mangsa Orang Minyak yang kejam.\n {1}</value>
-	  </string>
-	  <string key="HunterKilledCultist">
-		<!-- 0 - victim name -->
-		<value>{0} menari sehingga lupa ada Otai sedang menunggunya. Kecuaiannya itu memberikan impak buruk kepadanya dan dikurung oleh Otai di kawasan yang tidak diketahui sesiapa!</value>
-	  </string>
-	  <string key="LoverDied">
-		<!-- 0 - dead's name -->
-		<!-- 1 - lover's name -->
-		<!-- 2 - roles -->
-		<value>Dengan kematian {0}, {1} bergegas menangis kebasahan mengenangkan orang yang mereka sayang. Dia tidak tahan lagi dan mencari objek terdekat lalu membunuh diri. {2}</value>
-	  </string>
-	  <string key="HarlotFuckedWolfPublic" >
-		<!-- 0 - player name -->
-		<value >{0} telah melawat ke rumah yang silap semalam! Jasad {0} bergelimpangan bersama dengan kuih yang di bawa serta kain yang menghiasi bakulnya. Sangat menyedihkan :(</value>
-	  </string>
-	  <string key="HarlotFuckedVictimPublic" >
-		<!-- 0 - harlot name -->
-		<!-- 1 - victim name -->
-		<value >{0} menyelinap masuk ke rumah {1}, bersedia untuk mengagihkan lebihan kuih pada pagi tadi. Tiba-tiba, {0} ternampak orang minyak sedang menyerang {1}!  Orang minyak dengan tangkas beralih ke arah {0} dan menerkam...  {0} telah mati.</value>
-	  </string>
-	  <string key="HarlotFuckKillerPublic">
-		<value>Penduduk kampung menjumpai mayat {0}, terlekat di pokok pisang. {0} telah mati.</value>
-	  </string>
-	  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
-		<!--{0} = Harlot name, {1} = SK's victim name-->
-		<value>{0} menyelinap masuk ke rumah {1}, bersedia untuk mengagihkan lebihan kuih, kemudian dia tersempak, kemudian terhidu bau yang sangat harum sedang menyerang membuang organ {1}! Pontianak berhasrat untuk menakut-nakutkan sebelum membunuh {0}!</value>
-	  </string>
-	  <string key="HarlotShot" >
-		<!-- 0 - gunner's name -->
-		<!-- 1 - Harlot's name -->
-		<value>Nampaknya {0} berasa agak marah dengan kuih yang dibawa. Rasanya agak masam dan sedikit melekit. Dia menggunakan jurus ke atas mak cik kuih.! {1} telah mati.</value>
-	  </string>
-	  <string key="DefaultShot" >
-		<!-- 0 - Gunner's name -->
-		<!-- 1 - target name -->
-		<!-- 2 - Target's revealed name ( Target was a role) -->
-		<value>Tiba, satu bunyi jurus di dengari oleh penduduk kampung. Penduduk kampung berkumpul dan melihat {0} sedang membaca sambil mulut terkumat kamit pada {1}. {2}</value>
-	  </string>
-	  <string key="IsDead">
-		<!-- used when gunner shoots a player -->
-		<value>telah mati</value>
-	  </string>
-	  <string key="HunterKilledVisiter">
-		<!-- 0 - target's name -->
-		<!-- 1 - role -->
-		<value>Di tengah kampung, semua orang berkumpul dan menjumpai jasad {0}, beberapa jurus ditalakan ke atas tubuh mangsa. Nampaknya mereka cuba untuk membunuh Pencari Hantu! {1}</value>
-	  </string>
-	  <string key="HunterKilledFinalShot">
-		<!-- 0 - hunter -->
-		<!-- 1 - target's name -->
-		<!-- 2 - target's role -->
-		<value>Menggelupur, {0} terduduk atas tanah, dan tidak melepaskan kesempatan membaca mantera kepada {1}, menghabiskan hayatnya. {2}</value>
-	  </string>
-	  <string key="HunterShotWolfMulti">
-		<!-- 0 - target's name -->
-		<value>Orang minyak cuba untuk membunuh pemburu hantu malam semalam, pemburu hantu sempat menggunakan alat dan menyebabkan orang minyak menggelupur! {0} telah mati (orang minyak)</value>
-	  </string>
-	  <string key="HunterShotWolf">
-		<!-- 0 - target's name -->
-		<value>Orang minyak menyerang pemburu hantu semmalam, tetapi pemburu hantu tidak sempat berbuat apa. {0} telah mati dengan alat pemburuannya!</value>
-	  </string>
-	  <string key="SerialKillerKilledWolf">
-		<value>Orang minyak cuba untuk menikmati juadah lewat malam, tetapi digemparkan dengan pontianak. Mereka bergaduh! {0} terbunuh dalam pergaduhan tersebut!</value>
-	  </string>
-	  <string key="DefaultKilled">
-		<!-- 0 - target's name -->
-		<!-- 1 - target's role -->
-		<value>Nampak macam tiada apa terjadi pada {0}, tetapi penduduk kampung telah silap. Bunga bertaburan dan darah berada berdekatan tubuh {0} ...  Pontianak menyerang lagi! {1}</value>
-	  </string>
-	  <string key="BlacksmithKilled">
-		<value>Nampaknya {0}, seorang bomoh tidak bernasib baik. Daun kemenyan serta rempah kunyit bertaburan. Daun sireh menutupi jasad {0}. Nampaknya Pontinak tidak suka orang yang masuk  ke alam mistik...</value>
-	  </string>
-	  <string key="CultistKilled">
-		<value>Mayat {0} dijumpai dengan mp3 lagu raver masih terpasang. Pontinak menyerang lagi, tidak mengira budak muda mahupun orang tua yang sudah berumur! {0} seorang budak Raver.</value>
-	  </string>
-	  <string key="CupidKilled">
-		<value>Pada keesokan paginya, penduduk kampung berasa sedih kerana menjumpai {0} a.k.a. Si Penjodoh terpisah tubuhnya. Botol yang bertulis air pengasih juga dipecahkan...</value>
-	  </string>
-	  <string key="DrunkKilled">
-		<value>Penduduk kampung harap dapat berjumpa dengan {0} tetapi mereka silap kerana mereka menjumpai kertas penipuan di dalam rumah {0} dengan beberapa kuntum bunga. Pontiank menyerang lagi...</value>
-	  </string>
-	  <string key="GuardianAngelKilled">
-		<value>{0} pada kebiasaanya dapat menghalang pontianak daripada masuk, tapi malangnya dia yang terbunuh. {0} telah mati.</value>
-	  </string>
-	  <string key="GunnerKilled">
-		<value>Nampak {0} tertidur dengan khusyuk semalam. Pontianak telah menyerang Guru silat dan mengambil tali pinggang hitam Guru Silat.</value>
-	  </string>
-	  <string key="MayorKilled">
-		<value>Terbunuh! Mayat {0} di jumpai di tengah kampung dengan mesej! "Aku akan menyerang lagi". Pontianak membunuh sebab tok ketua telah menyebabkan dia bergelumang dengan alam misteri!</value>
-	  </string>
-	  <string key="PrinceKilled">
-		<value>Panggilan VVIP kampung dipanggil beberapa kali tetapi VVIP,{0} masih tidak memunculkan diri. Kedengaran gosip yang datang dari kampung sebelah mengatakan VVIP ini disorok Pontianak. Katanyee...</value>
-		<value>Kawalan terhadap VVIP,{0} agak longgar. VVIP {0} telah menghilang tanpa kesan.</value>
-	  </string>
-	  <string key="SeerKilled">
-		<value>Wartawan {0} tidak melakukan tugasnya pada hari ini. Wartawan kemungkinan bertukar kerja ke tempat lain tanpa diketahui sesiapa. {0} adalah Wartawan.</value>
-	  </string>
-	  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-		<value>Penduduk bangun pada keesokan hari, ternyata {0} pon tiada dimana-mana pelusuk kampung, Otai telah meninggalkan kampung. Pengajaran: Jangan mencari Pontianak!</value>
-		<value>Kelihatan orang yang paling berpengaruh {0}, Otai, tidak memunculkan dirinya. Memperlakukan Pontianak sebagai Budak Hipster/Raver bukanlah idea yang bagus...</value>
-	  </string>
-	  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-		<value>Nampaknya orang Minyak mahu bertaubat untuk malam ini, tetapi {0}, ahli baru Budak Hipster/Raver mencetuskan masalah. Kepala {0} dilumur dengan minyak, sebelum di ratah.!</value>
-		<value>Budak Hipster/Raver menghadapi masalah. Ahli terbaru mereka bersungguh-sungguh untuk merekrut sekutu raver baru, mereka melawat orang minyak semalam ketika orang minyak duduk di rumah. Orang minyak mendapati {0} sangat sesuai untuk dijadikan mangsa. Malang buat {0}, orang minyak tidak berminat untuk menyertai mereka.</value>
-	  </string>
-	  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-		<value>Budak Hipster/Raver ingat mereka boleh mempengaruhi orang baru tetapi mereka silap! {0}, seorang Budak Hipster/Raver tercincang dah diletakkan dekat pohon buluh! Anehnya telefon yang berbunyi lagu Hipster/Raver turut berbunyi.</value>
-		<value>Malam semalam Budak Hipster/Raver cuba menghasut penduduk kampung tetapi ahli terbaru cuba untuk menghasut Pontianak. Jasad {0} ditinggalkan di pohon buluh.</value>
-	  </string>
-	  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
-		<value>Malam ini sepatutnya {0} bertugas untuk menjaga penduduk kampung,tetapi {0} tersilap pilih rumah pula. Dalam perjalanan dia dibunuh oleh pontianak.</value>
-	  </string>
-	  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
-		<value>{0} cuba untuk menjaga Orang Minyak semalam. Penduduk Kampung bangun dan mendapati {0} tergantung bersama titisan minyak. Jelas dia telah dibunuh oleh Orang Minyak.</value>
-	  </string>
-	  <!--1vs1 finales-->
-	  <string key="HunterKillsWolfEnd">
-		<!--{0} = hunter's name, {1} = wolf's name-->
-		<value>Mengetahui hanya {0} masih tinggal, {1} cuba untuk membunuh {0}, tetapi berbekalkan ilmu yang {0} dapat semasa bertapa di dusun kampung telah menyelamatkan nyawanya! Pemburu hantu telah membawa kemenangan kepada penduduk kampung!
-		</value>
-	  </string>
-	  <string key="WolfKillsHunterEnd">
-		<!--{0} = hunter's name, {1} = wolf's name-->
-		<value>Mengetahui hanya  {0} masih hidup, {1} mencari masa yang sesuai untuk bunuh  {0}. Menyingkar seorang penduduk kampung agak mudah bagi {1}, yang tinggal jasad {0} pemburu hantu bergelimpangan.</value>
-	  </string>
-	  <string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
-		<value>{1} dan {0} berjalan panas. Nampak gelagat tarian raver di lakukan oleh {0}, otai mengeluarkan rotan ke arah {1} menyebabkan dia lari tanpa sempat menoleh belakang meninggalkan kampung.</value>
-	  </string>
-	  <string key="SKHunterEnd">
-		<!-- 0 - SK's name -->
-		<!-- 1 - Hunter's name -->
-		<value>Siang menjelang, {0} dan {1} berjalan masuk ke dalam kampung.  {0} mengeluarkan gigi untuk menggigit {1}.  {1} membaca ayat kearah muka {0}, {0} sempat menggigit {1} sebelum mati. Tiada sesiapa yang tinggal, semua telah mati…</value>
-	  </string>
-	  <string key="SerialKillerWinsOverpower">
-		<!-- 0 - SK's name -->
-		<!-- 1 - target's name -->
-		<value>Pagi menjelang, hanya dua penduduk kampong masih bernyawa. {0} melihat ke arah {1}, dengan muka yang mengerikan , mengeluarkan gigi dan mengigit {1}.</value>
-	  </string>
-	  
-	  
-  <!-- Group system strings -->
-    <string key="PlayerRoleWas">
+  <language name="Bahasa Melayu Misteri" base="Bahasa Melayu" variant="Kampung Misteri" owner="@jahagoldbiz @skyzkillerz" code="my"/>
+  <string key="NotInGame" deprecated="true">
+    <value>You don't appear to be in any games right now...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
     <!-- 0 - Player name -->
-    <!-- 1 - Player role -->
-    <value>{0} adalah {1}</value>
-    </string>
-    <string key="PlayerStartedGame" isgif="true">
+    <value>{0} telah memulakan permainan! Gunakan SERTAI untuk menyertai permainan dan kehidupan anda kini menjadi misteri. :P</value>
+    <value>Permainan baru telah dimulakan oleh {0}! Gunakan SERTAI untuk masuk dalam Kampung Misteri!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
     <!-- 0 - Player name -->
-    <value>{0} telah memulakan permainan! Gunakan SERTAI untuk menyertai permainan dan mungkin mati :P</value>
-    <value>Satu permainan baru telah dimulakan oleh {0}! Gunakan SERTAI untuk masuk dalam kampung misteri!</value>
-    </string>
-    <string key="PlayerStartedChaosGame" isgif="true">
-    <!-- 0 - Player name -->
-    <value>{0} telah memulakan permainan huru hara! Gunakan SERTAI untuk menyertai permainan dan mungkin mati :P</value>
-    <value>Satu permainan huru-hara baru telah dimulakan oleh {0}! Gunakan SERTAI untuk masuk dalam kampung misteri</value>
-    </string>
-    <string key="MinuteLeftToJoin">
-    <value>1 minit untuk SERTAI</value>
-    </string>
-    <string key="SecondsLeftToJoin">
+    <value>{0} telah memulakan permainan huru-hara! Gunakan SERTAI untuk menyertai permainan dan kehidupan anda kini menjadi misteri. :P</value>
+    <value>Permainan huru-hara telah dimulakan oleh {0}! Gunakan SERTAI untuk masuk dalam Kampung Misteri!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Anda tidak dapat makuk ke dalam Kampung Misteri kerana kampung itu sudah berada di alam lain.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Anda sudah menjadi penduduk Kampung Misteri!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Tinggal 1 minit untuk masuk ke Kampung Misteri</value>
+  </string>
+  <string key="SecondsLeftToJoin">
     <!-- 0 - remaining seconds (number) -->
-    <value>{0} saat tinggal untuk SERTAI</value>
-    </string>
-    <string key="NotEnoughPlayers">
-    <value>Pemain tidak mencukupi membatalkan permainan!</value>
-    </string>
-    <string key="PlayerLimitReached">
-    <value>Maaf, had pemain maksimum telah mencukupi!</value>
-    </string>
-    <string key="PlayerJoined">
+    <value>Tinggal {0} saat untuk masuk ke Kampung Misteri</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Tidak cukup penduduk untuk memulakan permainan!. Apa pon tak boleh.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Selamat datang ke Kampung Misteri, peranan anda akan diberi sebentar lagi.</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} diharamkan kerana cuba mengeksploitasi (nama tidak boleh bermula dengan tanda /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, Sila tukar nama lain untuk masuk ke Kampung Misteri.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Maaf, penduduk Kampung Misteri sudah penuh. Tiada penempatan untuk anda masuk kedalam kampung ini!</value>
+  </string>
+  <string key="PlayerJoined">
     <!-- 0 - Player name -->
     <!-- 1 - current players -->
     <!-- 2 - Minimum players -->
     <!-- 3 - Maximum players -->
-    <value>{0} menjadi orang Kampung Misteri. {1} penduduk kampung, {2} minimum, {3} maksimum</value>
-    </string>
-    <string key="CountPlayersRemain">
-    <!-- 0 - Number of players -->
-    <value>{0} orang kampung masih tinggal.</value>
-    </string>
-    <string key="StartingGameWait">
-    <value>Permainan sedang di mulakan, tunggu sebentar sementara saya menetapkan pengkalan data.</value>
-    </string>
-    <string key="ChangeNameToJoin">
-    <!-- 0 - Player name -->
-    <value>{0}, sila tukar nama anda untuk sertai</value>
-    </string>
-    <string key="PMTheBot">
+    <value>{0} telah masuk ke dalam Kampung Misteri. {1} Penduduk, {2} minimum, {3} maksimum</value>
+  </string>
+  <string key="PMTheBot">
     <!-- 0 - Player name -->
     <!-- 1 - bot username -->
     <value>{0} Sila klik butang start ataupun tekan saya {1} , supaya saya boleh PM peranan anda.  Anda tidak dapat bermain selagi tidak melakukan demikian.</value>
-    </string>
-    <string key="StartMe">
-    <value>Sila mulakan saya agar saya dapat PM kamu</value>
-    </string>
-    <string key="NotPlaying">
-    <value>Anda seolah tidak bermain...</value>
-    </string>
-    <string key="NameExists">
+  </string>
+  <string key="DeadFlee">
+    <value>Kamu tidak dapat lari dari Kampung Misteri.. Kembalilah ke tempat anda.. Bhahahahhaa!!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} telah melarikan diri kerana takut dengan perkara misteri!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} adalah {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>Kampung Misteri tinggal {0} penduduk.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hei, saya tidak meminta anda membuat sesuatu perkara lagi!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Anda seolah tidak bermain..</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Saya tidak jumpa penduduk Kampung Misteri dengan nama itu!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Jawapan ini adalah tidak sah!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} bercadang untuk mempergunakan {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} bercadang untuk menghukum {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} tidak masuk mesyuarat Kampung Misteri selama 2 malam berturut. Demi keselamatan Kampung Misteri, {0} dihukum mengikut adat lama Kampung Misteri. {0} dipercayai sebagai {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Anda merasakan Kampung Misteri terlalu aman. Anda mula membaca mantera untuk jadikan diri anda sebagai orang minyak. Mulai sekarang anda merupakan Orang Minyak</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Pilihan diterima.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nAnda memerhati {0} sebagai Wartawan yang sebenar.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} adalah seorang wartawan. Sebagai wartawan pelatih, mulai sekarang anda merupakan wartawan yang baru.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>Setelah kehilangan wartawan, {1}, Anda mengetahui bahawa perantisnya, {0}, mengambil alih peranan sebagai Wartawan. </value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Anda mendapati {0} merupakan {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Siapakah yang perlu dihukum?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Siapakah yang perlu dikesan?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Siapa yang mahu anda kenakan jurus anda? {0} jurus masih tinggal.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Siapa yang anda mahu beri kuih?</value>
+  </string>
+  <string key="AskSee">
+    <value>Siapa yang anda mahu temuramah?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Siapa yang perlu dilindungi?</value>
+  </string>
+  <string key="AskEat">
+    <value>Siapa yang perlu anda makan?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Siapa yang perlu diburu?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Siapakah tuan anda?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Siapakah yang akan anda pengaruh untuk dijadikan rakan raver dan hipster?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Pastikan anda berbincang bersama {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> dan </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Anda merupakan Si Penakut 😾. Walaupun anda seorang penakut, anda telah mendekati ilmu berkaitan Orang Minyak. Anda akan meminta untuk menjadi orang minyak sekiranya ada makhluk halus mendekati anda.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Anda merupakan seorang Inspektor 🕵. Pada siang hari, anda akan mengkaji seorang penduduk untuk mengetahui peranannya. Dalam masa yang sama, Orang Minyak berpeluang mengenali peranan anda sebanyak 40% jika anda mengkaji diri mereka.
+	</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Anda merupakan seorang Penyangak 🍻. Setiap hari anda menggunakan kebijaksanaan anda untuk mencipta dadah baru dan menggunakannya.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Anda merupakan seorang Pengawal 👼. Setiap malam anda memilih seorang penduduk Kampung Misteri untuk diselamatkan. Bagaimanapun, jika anda tersilap pilih, anda berkemungkinan 50% untuk dibunuh.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Anda adalah seorang Guru Silat 🔫. Anda mempunyai jurus untuk menhilangkan apa sahaja makhluk dan boleh menggunakannya sebanyak 2 kali. Semua akan kedengaran jeritan makhluk yang dikenakan jurus tersebut dan mengetahui anda merupakan guru silat yang luar biasa.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Anda merupakan Makcik Kuih 💋. Anda boleh pilih ke rumah sesiapa di tengah malam untuk diberikan kuih. Anda juga akan dibunuh jika pergi ke rumah yang salah seperti rumah orang minyak dan pontianak.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Anda adalah Si Kitol 🖕. Buat masa sekarang, anda adalah orang kampung, tetapi jika anda merasakan Kampung Misteri terlalu aman, anda bersungguh untuk menjadi Orang Minyak. Wartawan akan melihat anda sebagai orang minyak ataupun orang kampung.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>ANDA ADALAH ORANG MINYAK 🐺!! Setiap malam anda mencari mangsa untuk dijadikan makanan. Anda pakai pemutih pun tetap takkan putih. Bahahahaa.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Anda seorang Wartawan 👳. Setiap malam anda temuramah seorang penduduk Kampung Misteri untuk dijadikan berita pada esok hari.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Anda adalah Orang Kampung 👱, menjalankan kehidupan seperti biasa. Tiada kelebihan untuk anda.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Anda merupakan seorang Pembuat Bom 👺. Anda akan meletupkan kawasan anda dan menyelamatkan diri sendiri jika dihukum penduduk Kampung Misteri. Formula bom anda memang pelik kerana boleh menghilangkan semua makhluk.</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Anda merupakan Saka Sesat 👶. Anda akan memilih seorang untuk dijadikan tuan tanpa pengetahuannya. Apabila tuan anda mati, anda akan mengamuk menjadi Orang Minyak.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Anda seorang Anonymous 👁, mencari maklumat tentang wartawan terpilih.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Anda adalah Wartawan Pelatih 🙇. Jika Wartawan telah tiada, anda akan mengambil alih tempatnya sebagai wartawan.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Anda mempunyai fahaman yang pelik berkaitan tarian raver dan kehidupan hipster 👤. Setiap malam anda memilih seorang penduduk kampung untuk dijadikan pengikut anda. Anda akan menang jika semua penduduk Kampung Misteri mengikuti aliran anda.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Anda merupakan seorang Otai 💂. Sebagai otai, anda tidak suka kepada tarian dan kehidupan yang mengarut. Setiap malam anda melawat seorang penduduk kampung. Jika mereka Budak Raver/Hipster, mereka akan dihukum secara senyap mengikut adat Kampung Misteri.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Malam menjelang, penduduk Kampung Misteri berkumpul untuk menghukum seseorang pada petang ini.. Hukuman yang diberikan merupakan adat Kampung Misteri dari turun temurun iaitu terjun ke telaga misteri dihujung kampung. Telaga itu sangat misteri kerana setiap yang masuk tidak akan kembali.
+	  Semua orang mempunyai {0} saat untuk mengundi!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Sudah tiba waktu siang. Semua penduduk Kampung Misteri mempunyai {0} saat untuk penuduhan, pertahanan diri, atau cuma Sembang Lebat.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Malam menjelma. Setiap penduduk Kampung Misteri kembali ke rumah sendiri. \nPemain malam: anda ada mempunyai {0} saat untuk melakukan tindakan!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Penduduk Kampung Misteri telah bersatu hati untuk menghukum megikut adat terdahulu. {0} menerima hukuman dan hilang tak kembali.{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Penduduk Kampung Misteri tidak dapat membuat keputusan dengan jelas. Semua balik ke rumah dengan perasaan kecewa.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Pelik.. Tiada sesiapa yang hendak dihukum pada malam ini...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Penduduk Kampung Misteri dikejutkan dengan kehilangan {0}. Mereka menyiasat dirumah beliau dan mendapati terdapat lencana dan sijil leftenan yang mempunyai nama {0} tergantung kemas.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Pada pagi ini, pondok pak guard kelihatan kosong sehingga petang. Penduduk Kampung Misteri tiada penjaga terhormat. {0}, Pak Guard telah hilang selamanya.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >Penduduk Kampung Misteri berkumpul dan mendapati {0} telah tiada. Salah seorang penduduk memberitahu bahawa beliau merupakan seorang guru silat yang terkemuka.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >Hari ini dikhabarkan bahawa {0} telah menghilangkan diri. Ada seorang penduduk kampung mengatakan beliau pergi ke telaga misteri dihujung kampung.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Setiap penduduk Kampung Misteri terbau bahan kimia yang tidak dapat dijelaskan. Apabila diselidik, bau itu datang dari rumah {0} yang terbakar. Penduduk kampung berusaha untuk menghapuskan kebakaran tersebut. Selesai memadamkan kebakaran, penduduk Kampung Misteri mendapati {0} tiada dimana-mana. Tragis sungguh bunyinya..</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Ketika matahari naik melepasi fajar, penduduk kampung mendapati rumah {0} kelihatan kosong seperti tiada berpenghuni. Kampung ini kehilangan Si Gosip.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Pagi keesokannya, salah seorang penduduk kampung mencari {0} dan mendapati kasutnya berada di telaga misteri di hujung kampung. Kini penduduk Kampung Misteri kehilangan {1}.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Kehidupan {0} yang hipster dengan tarian yang pelik menyebabkan otai kampung menghumbannya ke telaga misteri dihujung kampung. Padan muka sama hang..</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Penduduk Kampung Misteri berkumpul pada keesokan paginya, tiada apa-apa perkara yang berlaku pada malamnya, penduduk berasa sangat bersyukur.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Anda dikunjungi makhluk halus. Anda membuat perjanjian dengannya dan menjadi Orang Minyak.</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Geng mahluk halus anda: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >Makhluk halus mengunjungi {0} dan ternyata beliau ingin membuat perjanjian untuk menjadi orang minyak! Tahniah buat pasukan baru kamu!.</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Oh tidak! Orang minyak telah membunuh kamu. ZASSSSSSSS</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >{0} merupakan penyagak! Anda merasakan sangat menikmati pemergian dia sehingga tidak melakukan sesuatu pada malam berikutnya..</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Anda cuba menjaga orang minyak. Hasil dari penjagaan anda, Orang Minyak melakukan sesuatu pada diri anda.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >Anda menyelamatkan nyawa {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >Tidak berlaku sesuatu terhadap {0}. Anda kembali ke pondok pak guard.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Anda cuba menjaga {0}, tetapi dia tiada dirumah!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Pak Guard menjaga kawasan anda semalam dan menyelamatkan anda!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Makcik Kuih, {0}, tiada pada keesokan harinya. Orang kampung menjangkakan dia meninggalkan kampung kerana kuihnya tidak laku!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Pelik... {0} tak ada dirumah! Anda pulang dengan perasaan kecewa...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Anda masuk ke dalam rumah {0} untuk memberi sedikit lebihan kuih. Kemudian terjumpa orang minyak. Dahi anda terus berpeluh dan anda pun meninggal.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >Makcik Kuih mengunjungi rumah yang silap. {0} telah menghilangkan diri!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} menyelinap masuk ke rumah {1}, bersedia untuk mengagihkan lebihan kuih pada pagi tadi. Tiba-tiba, {0} ternampak orang minyak sedang menyerang {1}!  Orang minyak dengan tangkas beralih ke arah {0} dan menerkam...  {0} telah hilang.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >Anda memberikan kuih pada {0} secara percuma. Dia bukan orang minyak!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Makcik Kuih mengunjungi anda dan memberikan kuih untuk dimakan. Anda menyambutnya dengan mesra.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >Anda mendapati {0} ingin membongkar sesuatu. Dia ni mesti seorang Inspektor!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Hasil pengintipan anda menunjukkan {0} merupakan {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Nampaknya {0} berasa agak marah dengan kuih yang dibawa. Rasanya agak masam dan sedikit melekit. Dia menggunakan jurus ke atas mak cik kuih.! {1} telah hilang.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Tiba, satu bunyi jurus di dengari oleh penduduk kampung. Penduduk kampung berkumpul dan melihat {0} sedang membaca sambil mulut terkumat kamit pada {1}. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >Orang minyak telah menakluk Kampung Misteri!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >Sekumpulan makhluk halus telah menakluk Kampung Misteri!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >Kini penduduk Kampung Misteri hidup dengan aman.</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Oh Tidak! Penduduk kampung cuba menghukum Pembuat Bom. Kampung Misteri telah di bom keseluruhan. GILA!!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Penduduk Kampung Misteri yang masih tinggal, peranan, dan pasukan:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} telah mengajak kamu untuk mengajar {1} tentang raver dan hipster.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} telah dihantar untuk menghasut, dan menghasut {1}... tetapi dia merupakan seorang OTAI! {0} dihumban ke telaga misteri.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} datang ke rumah anda semalam, bersedia untuk meghasut anda menyertai tarian pelik... Tetapi anda mengambil rotan dan memukul {1}, salah seorang budak raver, dan menghumbannya ke dalam telaga misteri.</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Anda tertarik dengan pendekatan raver dan hipster yang diberikan kepada anda. Kini anda menjadi sebahagian daripada mereka.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Budak Raver/Hipster: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} telah menyertai Budak Raver/Hipster!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} telah di hantar untuk mengajarkan tarian raver kepada {1}... tetapi dia tiada sesiapa di rumah!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Semua makhluk halus berjaya di hapuskan, yang tinggal hanyalah budak raver, semua penduduk Kampung Misteri terpengaruh untuk menjadi budak raver. Budak raver dan hipster telah menang!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Anda cuba untuk memburu {0}, tetapi dia telah hilang!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Anda masuk ke dalam rumah {0} dan mendapati dia sedang melakukan tarian yang pelik. Anda mengeluarkan rotan lalu memukul budak raver dan kemudiannya menghumban ke dia kedalam telaga misteri.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Anda pergi ke rumah {0}, tiada muzik aneh. Anda yakkin dan percaya {0} bukan budak raver/hipster/pavilion.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Tuan kepada {0} telah hilang! Kehilangan tuannya menyebabkan dia menjadi orang minyak!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} telah hilang! dalam keadan marah, anda menyertai Orang Minyak! Rakan anda adalah: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>Orang Kampung 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Penyangak 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Makcik Kuih 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Wartawan 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Si Kitol 💁🏻</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Pak Guard 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Inspektor 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Orang Minyak 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Si Penakut 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Guru Silat 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Pengebom 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Si Dungu 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Saka 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Anonymous 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Wartawan Pelatih 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Budak Hipster/Raver 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Otai 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Melarikan Diri</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Hilang</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Ada</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Penduduk Yang Tinggal</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>RELA 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Anda merupakan seorang RELA 👷. Anda mengenali rakan seperjuangan anda.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Setelah semua orang bangun keesokan hari, mereka mendapati {0} tidak memasuki mesyurat RELA. Seorang RELA telah hilang!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Ahli RELA :  {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Ahli terbaru anda telah menuju ke rumah {0} untuk mengajak jadi ahli raver, tetapi dia telah melarikan diri secara tiba-tiba. Sotong bergelimpahan dan video yang cuba ditularkan belum sempat dimuat naik...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Sekumpulan mahluk halus menuju ke rumah {0} untuk menjadikan mangsa, tetapi mereka menjumpai seorang bermisai dan kumis yang agak macho. Mahluk halus balik dengan hati yang kecewa kerana Pak Guard menjaga mangsa dengan baik.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Anda telah dihantar {0} untuk cuba mengajak {1} menjadi budak raver, tetapi iman dia terlalu kuat. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
     <!-- 0 - target's name -->
     <!-- 1 - name -->
-    <value>@{1}, seorang pemain {0} dengan nama sedemikian telah sertai mohon ubah nama anda.</value>
-    </string>
-    <string key="FleeDisabled">
-    <value>Melarikan diri semasa permainan sudah dimatikan oleh admin kumpulan!</value>
-    </string>
-    <string key="NoGame">
-    <value>Tiada permainan berlangsung. Mulakan dengan /startgame atau /startchaos</value>
-    </string>
-    <string key="GroupAdminOnly">
-    <value>Hanya admin kumpulan boleh menggunakan command ini.</value>
-    </string>
-    <string key="AlreadyInGame">
+    <value>@{1}, pemain bernama {0} sudah memasuki Kampung Misteri. Sila tukar nama lain  terlebih dahulu.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>Anda sudah berada dalam permainan! ({0})</value>
-    </string>
-    <string key="IdleCount">
+    <value>Anda menyelinap masuk ke rumah {0} untuk sedekahkan hasil jualan kueh yang tak habis... tetapi ketika anda meninggalkan rumah tersebut, anda mula mendengari muzik yang aneh dan terlihat sekumpulan penduduk melakukan tarian raver...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>merupakan</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Setiap orang bangun pada pagi esoknya, menyedari bahawa {0} tidak kelihatan, mereka pergi kerumah untuk melihat {0}..</value>
+    <value>Semasa waktu pagi, kelihatan kasut {0} berada di telaga misteri, mungkin masuk kedalam telaga pada malam tadi..</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Pelik.... {0} tidak masuk ke mesyurat RELA yang diadakan... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Nak lari mana tu? Melarikan diri semasa permainan sudah dimatikan oleh admin!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>telah hilang</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} telah dijadikan sebagai Admin. Gunakan /config untuk tukar tetapan kumpulan.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Anda sudah berada di dalam permainan! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>Tiada permainan berlangsung. Mulakan dengan /startgame atau /startchaos .</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Hanya admin boleh menggunakan command ini.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} sudah menjadi admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} bukan seorang admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} dibuang dari senarai admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Tukar bahasa kepada {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Anda mendapati tiada wartawan yang berada di Kampung Misteri!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Masa tamat!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Anda seorang pencari jodoh 🏹. Menghabiskan masa anda mempelajari ilmu pengasih, anda akan memilih dua orang pemain untuk di jodohkan. Jika salah seorang hilang, seorang lagi akan menghilangkan diri dalam kesepian.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Anda merupakan hantu raya 🎭. Anda mewarisi daripada nenek moyang anda dan boleh menyerupai sesiapa. Pilih seorang pemain, jika pemain itu hilang, anda akan memainkan peranan pemain tersebut.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Anda adalah Pemburu Hantu 🎯. Anda tidak dapat tidur dengan nyenyak. Jika anda hilang, anda membawa seseorang untuk menemani anda.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Anda merupakan Pontianak 🔪 yang sedang mencari mangsa untuk diratah</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Anda dilamun cinta bersama {0}. Jika salah seorang hilang, seorang lagi akan membawa diri ketempat lain. Jika pasangan anda menang, anda juga akan menang.</value>
+    <value>Jampi pengasih telah mengenai diri anda! Anda mabuk di lamun cinta dengan {0}! Jika si dia hilang, anda turut hilang, jika si dia menang kamu berdua akan menang.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Penduduk kampung telah bersatu pendapat untuk MENGHUKUM kamu! Ini adalah peluang terakhir anda, pilih seseorang menemani anda dan tarik dia bersama menerima hukuman!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} cuba membaca beberapa cebisan perkataan tapi mulutnya tertutup, seorang pemburu hantu tidak sempat mengamalkan ilmu yang dipelajari...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} membaca jampi tetapi tidak berjaya mengingati jampi tersebut lalu menerima nasib yang berlaku terhadap dirinya...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Semasa keadaan bertambah tegang, {0} membacakan jampi dan menarik {1} masuk kedalam telaga misteri. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Anda telah dihukum!  Pada saat akhir hayat anda, anda mempunyai peluang untuk menjampi seseorang... lakukan dengan pantas!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>'Jong jong inai mak ipong waja wali, Sepak tunggul inai berdarah ibu kaki'.. Jampi anda terpesong mengenai {0}. Secara tanpa sedar dia mengikuti anda ke telaga misteri...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} terjun kearah telaga misteri sambil menangis mengenang nasibnya yang tidak diterima penduduk Kampung Misteri.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Sebelum ke arah telaga  misteri, {0} seperti membaca sesuatu. Tiba-tiba, mata {1} menjadi putih dan dia terus menuju ke dalam telaga misteri. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Makluk halus cuba menyerang Pemburu Hantu tetapi sayang, hanya tinggal kenangan. {0} menerima jampi yang menyebabkan dirinya hilang.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Makluk halus menyerang Pemburu Hantu lalu menyebabkan {0} dijampi sepenuhnya!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Makluk halus cuba menyerang seorang penduduk Kampung Misteri. {0} cuba menyerang Pontianak tapi tidak berjaya dan terus menghilangkan diri. Nasib kau La NAkk!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Penduduk Kampung Misteri merasakan semalam merupakan malam yang baik bagi {0}, rupanya salah. Penduduk kampung terjumpa barangan {0} di merata tempat. Bermulanya viral tentang pontianak menyerang Kampung Misteri. {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Kamu cuba menyerang {0} tetapi dia dijaga oleh Pak Guard yang berpengalaman...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Budak Raver/Hipster menghantar {0} ke rumah {1} untuk dijadikan rakan raver. Ternyata {1} tidak suka lalu mengenakan jampi keatas {0}. {0} pon pergi ke telaga misteri sambil bernyanyi.. 'Beginilah nasib diriku yang malang, oh tuhan..'</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Budak Raver/Hipster menghantar {0} ke rumah {1} untuk dijadikan rakan raver. Tanpa diduga {0} tercampak ke seluruh kawasan rumah itu lalu menghilang. Gilalah, macam tak percaya....</value>
+    <value>{0} cuba menyelinap masuk ke rumah {1}. Tiba-tiba rumah tersebut terkunci keseluruhan. Entah macam mana {0} terbang menghentam syiling rumah dan dinding rumah lalu menghilang.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Kamu cuba menjaga seorang penduduk Kampung Misteri. Rupanya orang yang dijaga merupakan Pontianak lalu kamu dimakan sehingga tanpa meninggalkan kesan...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Anda pergi kerumah {0} untuk menghantarkan kuih. Dalam perjalanan balik dari rumah tersebut, kamu terjumpa perkara yang menyeramkan lalu tidak sedarkan diri.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Penduduk Kampung Misteri terdengar suara {0} menjerit ketakutan. Semua berkumpul mencari arah bunyi jeritan tersebut. Apabila tiba, hanya pakaian yang belumuran darah sahaja dijumpai.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Hantu Raya {0} bertukar menjadi seperti anda. Seorang RELA! Ntah apa-apa.. hahaha..</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} telah hilang, dan kamu berubah menjadi seperti dirinya.  Rakan RELA kamu adalah: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Hantu Raya {0} bertukar menjadi seperti anda. Seorang Budak Raver/Hipster! Bhahahaa!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} sudah hilang, dan kamu bertukar menjadi Budak Raver/Hipster.  Rakan Raver/Hipster kamu adalah (Jika ada): {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Hantu Raya {0} bertukar menjadi Orang Minyak seperti anda! Bertambah geng. Bhahahaa!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} telah menghilang, dan kamu berubah menjadi Orang Minyak. Rakan-rakan kamu adalah (jika ada) : {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Penduduk Kampung Misteri yang tinggal merupakan Pontianak! Selain Pontianak dah boleh menangis.</value>
+  </string>
+  <string key="AskKill">
+    <value>Siapakah yang akan menjadi mangsa anda?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>{1} mendapati bahawa {0} telang tiada. Tanpa berfikir panjang {1} terjun kearah telaga misteri dihujung kampung. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Andaingin menjadi seperti siapa jika dia menghilang?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Siapa yang anda mahu mereka berjodohan? Pilih pemain pertama</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Siapa yang anda mahu mereka berjodohan? Pilih pemain kedua</value>
+  </string>
+  <string key="Hunter">
+    <value>Pemburu Hantu 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Pencari Jodoh 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Pontianak 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Hantu Raya 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Anda menjadi saka dan tuan anda adalah {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>Cinta sejati berkekalan! Mereka bergembira kerana tiada lagi yang mengganggu mereka.. Kalau dah jodoh tak ke mana.. </value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Di tengah kampung, semua orang berkumpul dan menjumpai peralatan yan selalu digunakan {0}, beberapa jurus di beri ke atas tubuhnya. Nampaknya mereka cuba untuk mengganggu Pemburu Hantu! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Budak Raver/Hipster menerangkan pegangan mereka dan mengajak anda menjadi sepertinya tetapi anda lebih bijak menolak pelawaan mereka.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}. I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Permainan baru telah bermula di {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Pagi menjelang, hanya dua penduduk kampung masih bernyawa. {0} melihat ke arah {1}, dengan muka yang mengerikan , mengeluarkan gigi dan mengigit {1}. Baru tahu Pontianak boleh ada waktu pagi!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Setiap orang dalam kampung telah mati, tiada sesiapa yang menang, gelap mula menyelubungi kawasan kampung.. Lagenda kemisterian Kampung Misteri berlarutan di beberapa kawasan berdekatan.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Pagi menjelang, hanya dua penduduk kampung masih bernyawa. {0} melihat ke arah {1}, dengan muka yang mengerikan , mengeluarkan gigi dan mengigit {1}. Sebagai Pemburu Hantu, {1} pun terperanjat dan membalas tindakan itu dengan ilmunya menghapuskan Pontianak! Kampung Misteri menjadi sepi. Lagenda kemisterian Kampung Misteri berlarutan di beberapa kawasan berdekatan.</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Anda lambat membuat keputusan, jadi moderator akan pilih bagi pihak anda: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Menang</value>
+  </string>
+  <string key="Lost">
+    <value>Kalah</value>
+  </string>
+  <string key="IdleCount">
     <!-- 0 - player's name -->
     <!-- 1 - idle count -->
-    <value>Pemain {0} terbunuh kerana  tidak mengundi sebanyak {1} dalam masa 24 jam.</value>
-    </string>
-    <string key="AlreadyOnWaitList">
-    <!-- 0 - target's name -->
-    <value>Anda berada dalam fasa menunggu dalam {0}</value>
-    </string>
-    <string key="AddedToWaitList">
-    <!-- 0 - target's name -->
-    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
-    </string>
-    <string key="NotifyNewGame">
-    <!-- 0 - target's name -->
-    <value>Permainan baru telah bermula di {0}</value>
-    </string>
-    <string key="NodeShutsDown">
-    <value>Error berlaku, dan node perlu di tutup :/</value>
-    </string>
-    <string key="NoNodes">
+    <value>Pemain {0} terbunuh kerana tidak mengundi sebanyak {1} dalam masa 24 jam.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>Peranan anda mudah, cuba untuk hidup dan singkirkan makhluk halus daripada kampung ini.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Anda merupakan seorang wartawan. Pada setiap malam anda boleh memilih pemain lain untuk melihat peranan mereka. Gunakan peranan ini dengan bijak!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Berseronoklah anda kerana anda merupakan Orang Minyak. Setiap malam anda mencari mangsa bersama rakan-rakan anda.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Sebagai Makcik Kuih, anda bergembira untuk menghantar kuih pada salah seorang penduduk kampung. Anda akan terselamat jika orang minyak menyerang anda ketika keluar menghantar kuih. Tetapi harus berjaga-jaga, jangan hantar kuih ke tempat yang tidak selamat.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Anda merupakan seorang Penyangak yang bijak. Anda menghasilkan formula dadah baru yang membolehkan pengguna berkhayal kegembiraan. Formula anda hanya digunakan pada diri sendiri.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Anda merupakan Si Penakut. Demi menghapuskan rasa takut, anda akan meminta untuk menguah diri menjadi orang minyak jika terjumpa makhluk halus.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Anda adalah Si Kitol. Anda seorang yang tidak suka pada penduduk Kampung Misteri. Anda akan berubah menjadi Orang Minyak jika merasakan Kampung Misteri terlalu aman.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Anda adalah Pak Guard yang sangat berpengalaman berkaitan Kampung Misteri. Anda akan menyelamatkan seorang penduduk kampung. Walaupun begitu, jika anda menjaga Orang Minyak, kemungkinan anda mati sebanyak 50%.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Tidak semua penduduk kampung mengetahui pekerjaan anda. Anda adalah Inspektor yang dilatih untuk merungkai misteri di sesuatu kawasan. Anda boleh memerhatikan seorang penduduk kampung setiap hari. Tetapi, jika anda memerhati Orang Minyak, mereka berpeluang mengenali peranan anda sebanyak 40%!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Sedikit kegembiraan untuk anda. Anda merupakan Guru Silat yang sangat dikenali. Anda mempunyai jurus yang boleh menghilangkan setiap makhluk, tetapi anda boleh menggunakan jurus tersebut sebanyak 2 kali. Jika menggunakan jurus, bermakna benduduk kampung mengenali anda sebagai Guru Silat.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Peranan anda sebagai Pembuat Bom sangat mudah: Dapatkan hukuman dari penduduk. Jika anda dihukum, anda akan menang dan yang lain akan hilang.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Anda didedahkan sebagai Wartawan.... Apabila anda melihat seseorang, anda akan diberikan peranan orang tersebut secara random.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Sebagai Budak Raver/Hipster, anda akan menghasut setiap penduduk Kampung Misteri untuk menjadi ahli Hipster/Raver.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Anda merupakan Otai yang bengis, tidak suka pada budak-budak nak up. Anda akan menghumban kumpulan Raver/Hipster ke dalam perigi misteri.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Sebagai Saka sesat, anda akan memilih tuan anda awal permainan. Jika pilihan anda hilang, anda menjadi Orang Minyak</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Buat masa sekarang, anda merupakan Orang Kampung biasa. Jika Wartawan menghilang, anda mengambil peranan sebagai Wartawan.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Anda sebagai Anonymous mengetahui siapa Wartawan sebenar.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Ahli RELA mengenali sesama mereka. Selain itu, anda akan menganggap orang lain sebagai Orang Kampung yang biasa.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Sebagai Hantu Raya, anda akan memilih untuk menjadi seorang daripada pemain. Jika pemain itu hilang, peranan anda bertukar seperti orang tersebut. 
+	  Nota: Jika dipanggil untuk menyertai Raver/Hipster, anda tidak layan sehingga anda mendapatkan peranan baru anda. Jika pilihan anda adalah Saka dan tuannya sudah hilang, maka anda bertukar menjadi Orang Minyak. Selain itu, anda akan mewarisi tuan yang sama.
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Cinta itu buta. Sebagai Pencari Jodoh, anda memberikan jampi pengasih kepada dua pemain pada awal permainan. Mereka akan saling cinta mencintai dan tiada siapa boleh memutuskan perhubungan mereka. Jika salah seorang hilang, maka pasangannya akan bersedih lalu pergi ke telaga misteri :(.
+      Nota: Pencinta mengenali satu sama lain tetapi tidak tahu peranan kekasihnya. Jika mereka berdua tidak hilang diakhir permainan, mereka akan menang tidak kira baik atau jahat.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Anda sangat terkenal dengan gelaran Pemburu Hantu kerana mahir dalam jampi penghapus hantu. Sayangnya anda boleh melakukan jampi tersebut sebanyak sekali sahaja. Jika Orang Minyak menyerang anda, anda menggunakan jampi itu keatas Orang Minyak tersebut. Selain itu, anda diberi peluang membawa seorang penduduk Kampung Misteri mengikut anda ke telaga misteri. 
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Anda adalah Pontianak yang ingin membalas dendam terhadap penduduk Kampung Misteri. Setiap malam anda memilih seorang penduduk kampung untuk dibunuh tanpa dikesan. Anda akan menang jika semua penduduk kampung telah tiada(Kecuali ada kekasih). Jika orang minyak menyerang anda, mereka akan mati dibunuh.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Jumlah Masa Permainan: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Hari {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
     <value>There are no nodes online right now, please try again in a few seconds</value>
-    </string>
-    <string key="NotGlobalAdmin">
-    <value>Anda bukan admin global...</value>
-    </string>
-    <string key="NotPara">
-    <value>Anda bukan Para!</value>
-    </string>
-    <string key="PlayerNoPM">
-    <value>{0} gagal untuk memulakan bot, dan telah disingkirkan dari permainan!</value>
-    </string>
-    <string key="LatestList">
-    <value>Ini senarai pemain terkini</value>
-    </string>
-    <string key="UnableToGetList">
-    <value>Gagal untuk mendapatkan senarai</value>
-    </string>
-    <string key="YouJoined">
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Ya</value>
+  </string>
+  <string key="No">
+    <value>Tidak</value>
+  </string>
+  <string key="Allow">
+    <value>Benarkan</value>
+  </string>
+  <string key="Disallow">
+    <value>Tidak Membenarkan</value>
+  </string>
+  <string key="Show">
+    <value>Tunjuk</value>
+  </string>
+  <string key="Hide">
+    <value>Sembunyi</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Sahaja</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Huru-hara sahaja</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Pilih Pemain</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Jangan tunjukkan apa-apa</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Tunjuk pemain yang hidup</value>
+  </string>
+  <string key="ShowAll">
+    <value>Tunjuk semua pemain</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Batalkan</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
     <!-- 0 - Group Name -->
-    <value>Anda telah berjaya menyertai {0}</value>
-    </string>
-    <string key="SecondsAdded">
+    <value>You have successfully joined the game in {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Anda merupakan Tok Ketua. Jika anda mendedahkan diri anda, undian anda dikira dua kali.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Anda merupakan VVIP yang terhormat. Jika penduduk kampung mengundi anda kali pertama, mereka akan merasakan satu kesilapan dan tiada siapa yang akan dihumban ke telaga misteri.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Anda merupakan Pak Pandir. Anda akan membuat kesilapan mengundi sebanyak 50%.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Anda merupakan Pawang yang menggunakan khidmat Orang Minyak sebagai tuan. Anda mencari Orang Minyak dan bersatu dengan mereka untuk keperluan anda untuk menang.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Anda merupakan seorang Bomoh. Air jampi anda sangat berharga. Air jampian anda dapat menghalang makhluk halus (tidak termasuk Pontianak) daripada mengganggu penduduk kampung pada malam itu.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Anda adalah Orang Bunian dan merupakan ketua kepada Orang Minyak. Setiap malam anda akan memilih orang untuk diganggu. Selagi anda masih hidup mangsa anda berpeluang 20% untuk dijadikan sebagai orang minyak.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Anda adalah Penanggal yang disanjung Orang Minyak. Sama seperti Orang Minyak, anda boleh memilih seorang untuk diganggu pada setiap malam. Jika anda hilang, rakan-rakan anda mengganas dan mencari dua mangsa untuk diganggu pada malam berikutnya.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Penduduk Kampung Misteri bersetuju untuk menghumban {0} ke telaga misteri, tetapi dia mempertahankan diri dan berkata, "Tak, saya lah VVIP yang dijemput untuk membantu kampung ni. Tak kan saya nak buat benda-benda yang tak masuk akal!!". Akhirnya, penduduk kampung bersetuju tiada siapa yang dihukum pada waktu itu.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Anda melihat pada {0}, tetapi tidak tahu siapakah dia.. Dia bukanlah Orang Minyak dan bukan juga Wartawan.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} maju kedepan dan membuka janggut dan rambut palsunya. Rupanya dia adalah Tok Ketua. Mulai sekarang, undian {0} dikira sebanyak dua kali.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Klik "Beritahu" untuk mendedahkan diri anda sebagai Tok Ketua.</value>
+  </string>
+  <string key="Reveal">
+    <value>Beritahu</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Adakah anda hendak menaburkan air jampi hari ini?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Demi keselamatan penduduk kampung, {0} menaburkan air jampinya dari timur ke barat, selatan ke utara. Buat masa sekarang kampung menjadi sedikit aman. (Sila rehat wahai Orang Minyak 😜.)</value>
+  </string>
+  <string key="Mayor">
+    <value>Tok Ketua 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>VVIP 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Pawang 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Pak Pandir 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Bomoh ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Orang Bunian ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Penanggal 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Semasa Orang Minyak mendapatkan {0}, {1} iaitu ketua kepada Orang Minyak meminta supaya semua berhenti. {1} memberitahu bahawa {0} perlu dijadikan Orang Minyak. Dia menjadi Orang Minyak esoknya.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Anda diserang Orang minyak tetapi ketua mereka iaitu Orang Bunian memilih anda menjadi sebahagian dari mereka. Anda mula berubah menjadi Orang Minyak pada esok hari.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Setelah malam menjelma, anda merasakan sesuatu yang ganjil pada diri anda. Badan anda mengeluarkan minyak yang banyak berwarna hitam. Anda mula berubah menjadi Orang Minyak!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Sebagai Tok Ketua, anda merupakan Orang Kampung biasa sehigga anda mendedahkan diri anda. Kemudian, setiap undian anda dikira sebanyak dua kali. Gunakan kuasa anda untuk membantu Orang Kampung.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>VVIP merupakan kunci peranan terhadap strategi Kumpulan Orang Kampung. Sekiranya di undi, peranannya sebagai VVIP didedahkan, dan anda terselamat dari undian. Walaupun begitu, apabila diundi sekali lagi, anda tidak lepas dari hukuman penduduk kampung.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Pawang merupakan kunci untuk membantu Orang Minyak. Orang Minyak tidak suka pada wartawan yang menyebarkan diri mereka pada orang kampung. Anda akan membantu Orang Minyak untuk mencari Wartawan yang sebenar.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Anda merupakan Pak Pandir. Sebagai Pak Pandir anda sangat cuai untuk membuat keputusan. (Anda berpeluang membuat 50% undian secara rawak.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Anda merupakan seorang Bomoh. Sepanjang tahun, tiada orang yang mampu mengelak dari serangan Orang Minyak. Hanya menggunakan air jampi yang anda buat, siapa yang sangka air jampian itu menyelamatkan nyawa seseorang.. 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>
+      Anda adalah Orang Bunian, asal usul kutukan, kutukan larangan. Setiap malam, anda berpeluang 20% menggigit mangsa pek anda, dan mereka akan menyertai barisan anda dan bukannya mati!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Sungguh pelik kerana anda merupakan Penanggal yang di sukai semua Orang Minyak. Sifat anda serba sedikit menjadi seperti mereka.</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} telah tiada, dan anda berubah menjadi Orang Bunian, ketua Orang Minyak. Rakan-rakan anda (jika ada) adalah : {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} telah tiada, dan anda berubah menjadi Penanggal, pembantu Orang Minyak. Rakan-rakan anda (jika ada) adalah : {1}</value>
+  </string>
+
+  <string key="VillageTeam" deprecated="true">
+    <value>Kumpulan Orang Kampung</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Kumpulan Neutral</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>Kumpulan Pontianak</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Kumpulan Raver/Hipster</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Kumpulan Bom Berani Mati</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>Kumpulan Orang Kampung</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Kumpulan Neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Kumpulan Orang Minyak</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Kumpulan Pontianak</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Kumpulan Raver/Hipster</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Kumpulan Bom Berani Mati</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Kumpulan Raver/Hipster menghantar {0} untuk menerangkan tarian mereka kepada {1}, tetapi {0} tidak pulang semula... {0} telah hilang...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} memasuki rumah {1}, bersedia untuk memberikan kuihnya, tetapi terjumpa lembaga misteri berdekatan {1}! Pontianak melakukan sesuatu terhadap {0} sebelum disebarkan berita itu kepada orang kampung!</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Penduduk kampung mencari {0} di setiap sudut kampung. Hasil carian mendapati wartawan pelatih telah meninggalkan kampung ini..</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Nampaknya {0}, seorang bomoh tidak bernasib baik. Daun kemenyan serta rempah kunyit bertaburan. Daun sireh menutupi jasad {0}. Nampaknya Pontinak tidak suka orang yang masuk ke alam mistik...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Mayat {0} dijumpai dengan mp3 lagu raver masih terpasang. Pontinak menyerang lagi, tidak mengira budak muda mahupun orang tua yang sudah berumur! {0} seorang budak Raver/Hipster.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Pada keesokan paginya, penduduk kampung berasa sedih kerana menjumpai {0} a.k.a. Si Penjodoh terpisah tubuhnya. Botol yang bertulis air pengasih juga dipecahkan...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Penduduk kampung harap dapat berjumpa dengan {0} tetapi mereka silap kerana mereka menjumpai kertas penipuan di dalam rumah {0} dengan beberapa kuntum bunga. Pontiank menyerang lagi...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} pada kebiasaanya dapat menghalang pontianak daripada masuk, tapi malangnya dia yang terbunuh. {0} telah tiada.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Nampaknya {0} tertidur dengan khusyuk semalam. Pontianak telah menyerang Guru silat dan mengambil tali pinggang hitam Guru Silat.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Hilang! {0} tidak dijumpai di mana-mana bahagian kampung. Hasil carian terjumpalah mesej! "Aku akan menyerang lagi". Pontianak membunuh Tok Ketua menyebabkan dia bergelumang dengan alam misteri!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Panggilan VVIP kampung dipanggil beberapa kali tetapi VVIP,{0} masih tidak memunculkan diri. Kedengaran gosip yang datang dari kampung sebelah mengatakan VVIP ini disorok Pontianak. Katanyee...</value>
+    <value>Kawalan terhadap VVIP,{0} agak longgar. VVIP {0} telah menghilang tanpa kesan. Ini semua perbuatan Pontianak</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Wartawan {0} tidak melakukan tugasnya pada hari ini. Wartawan kemungkinan bertukar kerja ke tempat lain tanpa diketahui sesiapa. {0} adalah Wartawan.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Bunyi jeritan kesedihan kedengaran di seluruh kampung. Pawang {0} telah mati.</value>
+    <value>Tangisan "Aku sangat memuja dan menyeru kau dengan ilmu aku! Inikah balasannya?" kedengaran malam semalam. Semua penduduk kampung mendapati rumah Pawang {0} berselerakan tetapi orangnya telah tiada.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>ARGHH!!!! Bunyi menyeramkan kedengaran pada malam tadi. Semua mendapati bahawa {0} merupakan saka yang sesat dari mana pon tak tau..</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>Penduduk bangun pada keesokan hari, ternyata {0} pon tiada dimana-mana pelusuk kampung, Otai telah meninggalkan kampung. Pengajaran: Jangan mencari Pontianak!</value>
+    <value>Kelihatan orang yang paling berpengaruh {0}, Otai, tidak memunculkan dirinya. Memperlakukan Pontianak sebagai Budak Hipster/Raver bukanlah idea yang bagus...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Nampaknya orang Minyak mahu bertaubat untuk malam ini, tetapi {0}, ahli baru Budak Hipster/Raver mencetuskan masalah. Kepala {0} dilumur dengan minyak, sebelum di ratah.!</value>
+    <value>Budak Hipster/Raver menghadapi masalah. Ahli terbaru mereka bersungguh-sungguh untuk merekrut sekutu raver baru, mereka melawat orang minyak semalam ketika orang minyak duduk di rumah. Orang minyak mendapati {0} sangat sesuai untuk dijadikan mangsa. Malang buat {0}, orang minyak tidak berminat untuk menyertai mereka.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>Budak Hipster/Raver ingat mereka boleh mempengaruhi orang baru tetapi mereka silap! {0}, seorang Budak Hipster/Raver tercincang dah diletakkan dekat pohon buluh! Anehnya telefon yang berbunyi lagu Hipster/Raver turut berbunyi.</value>
+	<value>Malam semalam Budak Hipster/Raver cuba menghasut penduduk kampung tetapi ahli terbaru cuba untuk menghasut Pontianak. Jasad {0} ditinggalkan di pohon buluh.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>Malam ini sepatutnya {0} bertugas untuk menjaga penduduk kampung,tetapi {0} tersilap pilih rumah pula. Dalam perjalanan dia mungkin dijadikan mangsa oleh pontianak.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0} cuba untuk menjaga Orang Minyak semalam. Penduduk Kampung bangun dan mendapati {0} tergantung bersama titisan minyak. Jelas dia telah diburu oleh Orang Minyak.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>
+      Mengetahui hanya {0} masih tinggal, {1} cuba untuk membunuh {0}, tetapi berbekalkan ilmu yang {0} dapat semasa bertapa di dusun kampung telah menyelamatkan nyawanya! Pemburu hantu telah membawa kemenangan kepada penduduk kampung!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mengetahui hanya {0} masih hidup, {1} mencari masa yang sesuai untuk bunuh  {0}. Menyingkar seorang penduduk kampung agak mudah bagi {1}, yang tinggal jasad {0} pemburu hantu bergelimpangan.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} dan {0} berjalan panas. Nampak gelagat tarian raver di lakukan oleh {0}, otai mengeluarkan rotan ke arah {1} menyebabkan dia lari tanpa sempat menoleh belakang meninggalkan kampung.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
     <value>Masa permainan di tambah {0} saat!\n{1} tinggal untuk SERTAI</value>
-    </string>
-    <string key="SecondsRemoved">
+  </string>
+  <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-     <value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk SERTAI</value>
-    </string>
-    <string key="CantExtend">
-    <value>Hanya admin group boleh memanjangkan masa melebihi sekali!</value>
-    </string>
-	  
-	  
-  <!-- Private system strings -->
-	  <string key="SentPrivate">
-		<value>Saya telah menghantarkan PM kepada anda</value>
-	  </string>
-	  <string key="WhatLangGroup">
-		<value>What language do you want to look for a group to play in?</value>
-	  </string>
-	  <string key="HereIsList">
-		<value>Here are the groups for {0}:</value>
-	  </string>
-	  <string key="Members">
-		<value>Members</value>
-	  </string>
-	  <string key="Ping2">
-		<value>Time to send ping message: {0}</value>
-	  </string>
-	  <string key="PingInfo">
-		<value>Time to receive ping message: {0}\nCurrent CPU Usage: {1}%</value>
-	  </string>
-	  <string key="GroupCommandOnly">
-		<value>You must run this command in a group</value>
-	  </string>
-	  <string key="GetLang">
-		<value>Get which language file?</value>
-	  </string>
-	  <string key="WhatToDo">
-		<value>What would you like to do?</value>
-	  </string>
-	  <string key="Cancel">
-		<value>Membatalkan</value>
-	  </string>
-	  <string key="WhatLang">
-		<value>What Language?\nCurrent: {0}</value>
-	  </string>
-	  <string key="WhatVariant">
-		<value>What Variant?\nCurrent: {0}</value>
-	  </string>
-	  <string key="LangSet">
-		<value>Language set to {0}</value>
-	  </string>
-	  <string key="Yes">
-		<value>Ya</value>
-	  </string>
-	  <string key="No">
-		<value>Tidak</value>
-	  </string>
-	  <string key="Allow">
-		<value>Membenarkan</value>
-	  </string>
-	  <string key="Disallow">
-		<value>Tidak membenarkan</value>
-	  </string>
-	  <string key="Show">
-		<value>Show</value>
-	  </string>
-	  <string key="Hide">
-		<value>Menyembunyikan</value>
-	  </string>
-	  <!-- Game Mode Choices-->
-	  <string key="NormalOnly">
-		<value>Normal Only</value>
-	  </string>
-	  <string key="ChaosOnly">
-		<value>Chaos Only</value>
-	  </string>
-	  <string key="PlayerChoice">
-		<value>Player Choice</value>
-	  </string>
-	  <!-- Show Roles on End Game -->
-	  <string key="ShowNone">
-		<value>Don't show any</value>
-	  </string>
-	  <string key="ShowLiving">
-		<value>Show only living players</value>
-	  </string>
-	  <string key="ShowAll">
-		<value>Show all players</value>
-	  </string>
-	  <string key="AllowFleeQ">
-		<value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
-	  </string>
-	  <string key="AllowFleeA">
-		<value>{0} fleeing after game start</value>
-	  </string>
-	  <string key="MaxPlayersQ">
-		<value>How many players would like to set as the maximum?\nCurrent: {0}</value>
-	  </string>
-	  <string key="MaxPlayersA">
-		<value>Max players set to {0}</value>
-	  </string>
-	  <string key="ShowRolesDeathQ">
-		<value>Show or Hide roles on death?\nCurrent: {0}</value>
-	  </string>
-	  <string key="ShowRolesDeathA">
-		<value>Roles will be {0} on death.</value>
-	  </string>
-	  <string key="GameModeQ">
-		<value>What game mode will the group be?\nCurrent: {0}</value>
-	  </string>
-	  <string key="GameModeA">
-		<value>Game mode set to {0}</value>
-	  </string>
-	  <string key="ShowRolesEndQ">
-		<value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
-	  </string>
-	  <string key="ShowRolesEndA">
-		<value>Roles shown at end set to: {0}</value>
-	  </string>
-	  <string key="SetDayTimeQ">
-		<value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
-	  </string>
-	  <string key="SetDayTimeA">
-		<value>Base day time set to {0} seconds</value>
-	  </string>
-	  <string key="SetNightTimeQ">
-		<value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
-	  </string>
-	  <string key="SetNightTimeA">
-		<value>Night time set to {0} seconds</value>
-	  </string>
-	  <string key="SetLynchTimeQ">
-		<value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
-	  </string>
-	  <string key="SetLynchTimeA">
-		<value>Lynch voting time set to {0} seconds</value>
-	  </string>
-	  <string key="AllowFoolQ">
-		<value>Allow fool as a role option?\nCurrent: {0}</value>
-	  </string>
-	  <string key="AllowFoolA">
-		<value>Fool as a role set to: {0}</value>
-	  </string>
-	  <string key="AllowTannerQ">
-		<value>Allow tanner as a role option?\nCurrent: {0}</value>
-	  </string>
-	  <string key="AllowTannerA">
-		<value>Tanner as a role set to: {0}</value>
-	  </string>
-	  <string key="AllowCultQ">
-		<value>Allow cult as a role option?\nCurrent: {0}</value>
-	  </string>
-	  <string key="AllowCultA">
-		<value>Cult as a role set to: {0}</value>
-	  </string>
-	  <string key="AllowExtendQ">
-		<!--{0} = "Allow" / "Disallow" string-->
-		<value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
-	  </string>
-	  <string key="AllowExtendA">
-		<!--{0} = "Allow" / "Disallow" string-->
-		<value>{0} players to extend join time</value>
-	  </string>
-	  <string key="MaxExtendQ">
-		<value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
-	  </string>
-	  <string key="MaxExtendA">
-		<value>Maximum extending time set to {0} seconds</value>
-	  </string>
-	  <string key="ThankYou">
-		<value>Thank you, have a good day :)</value>
-	  </string>
-	  
-	  
-  <!-- Deprecated strings (no need to modify!) -->
-	  <string key="NotInGame" deprecated="true">
-		<value>You don't appear to be in any games right now...</value>
-	  </string>
-	  <string key="NoJoinGameRunning" deprecated="true">
-		<value>You can't join now! The game is already running.</value>
-	  </string>
-	  <string key="AlreadyJoined" deprecated="true">
-		<value>You've already joined!</value>
-	  </string>
-	  <string key="BannedForExploit" deprecated="true">
-		<!-- 0 - Player name -->
-		<value>{0} is banned for attempting an exploit (no names starting with /)</value>
-	  </string>
-	  <string key="DeadFlee">
-		<value>You can't run away! YOU'RE DEAD!  Get back in the ground... jeez!</value>
-	  </string>
-	  <string key="DidntAsk" deprecated="true">
-		<value>Hey I didn't ask you anything yet!</value>
-	  </string>
-	  <string key="NoPlayerName">
-		<value>I can't find a player by that name!</value>
-	  </string>
-	  <string key="AnswerNonValid" deprecated="true">
-		<value>This answer is not valid!</value>
-	  </string>
-	  <string key="AdminAdded" deprecated="true">
-		<!-- 0 - target's name -->
-		<value>{0} added to admin list. Use /config to change group settings.</value>
-	  </string>
-	  <string key="MultipleGames" deprecated="true">
-		<value>Your group has managed to start multiple games...  Killing extras.</value>
-	  </string>
-	  <string key="GroupQueue" deprecated="true">
-		<!-- 0 - target's name -->
-		<!-- 1 - target's name -->
-		<value>Your group is currently in the queue.  Position: {0} / {1}</value>
-	  </string>
-	  <string key="MaintBreak" deprecated="true">
-		<!-- 0 - target's name -->
-		<value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
-	  </string>
-	  <string key="MaxGames" deprecated="true">
-		<!-- 0 - target's name -->
-		<!-- 1 - target's name -->
-		<value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
-	  </string>
-	  <string key="SkipQueue" deprecated="true">
-		<!-- 0 - target's name -->
-		<value>{0} is a preferred group, and has skipped the queue!</value>
-	  </string>
-	  <string key="ShuttingDown" deprecated="true">
-		<value>After this game, I am shutting down for maintenance.</value>
-	  </string>
-	  <string key="ShuttingDownUpdate" deprecated="true">
-		<value>After this game, I am shutting down momentarily for an update (automated).</value>
-	  </string>
-	  <string key="NullIdAdmin" deprecated="true">
-		<value>UserId was null.  Are you sure you sent this as a reply?</value>
-	  </string>
-	  <string key="AlreadyAdmin" deprecated="true">
-		<!-- 0 - target's name -->
-		<value>{0} is already an admin!</value>
-	  </string>
-	  <string key="NotAdmin" deprecated="true">
-		<!-- 0 - target's name -->
-		<value>{0} is not an admin!</value>
-	  </string>
-	  <string key="AdminRemoved" deprecated="true">
-		<!-- 0 - target's name -->
-		<value>{0} removed from admin list.</value>
-	  </string>
-	  <string key="LanguageSet" deprecated="true">
-		<!-- 0 - language's name -->
-		<value>Language set to {0}</value>
-	  </string>
-	  <string key="StartPM" deprecated="true">
-		<value>Please send me a pm so I can PM you: @werewolfbot</value>
-	  </string>
-	  <string key="PMTrue" deprecated="true">
-		<value>Thanks for starting me! I can PM you now.</value>
-	  </string>
-	  <string key="MustReplySmite" deprecated="true">
-		<value>You must reply to the user you want to smite</value>
-	  </string>
-	  <string key="JoinFromGroup">
-		<value>You must join a game from within a group chat!</value>
-	  </string>
-	  <string key="StartFromGroup">
-		<value>You must start a game from within a group chat!</value>
-	  </string>
-	  <string key="VillageTeam" deprecated="true">
-		<value>Village Team</value>
-	  </string>
-	  <string key="NeutralTeam" deprecated="true">
-		<value>Neutral Team</value>
-	  </string>
-	  <string key="SerialKillerTeam" deprecated="true">
-		<value>SK Team</value>
-	  </string>
-	  <string key="CultTeam" deprecated="true">
-		<value>Cult Team</value>
-	  </string>
-	  <string key="TannerTeam" deprecated="true">
-		<value>Tanner Team</value>
-	  </string>
-      <string key="JoinButton">
-    	<value>Sertai</value>
- 	 </string>
- 		 <string key="NotMember">
-   		<value>Anda tidak boleh menyertai permainan ini kerana anda bukan dalam kumpulan {0}.</value>
+    <value>Masa untuk menyertai dikurangkan kepada {0} saat!\n{1} tinggal untuk SERTAI</value>
   </string>
-	  <string key="JoinByButton">
-	    <value>Mohon tidak menggunakan command, gunakan button sebaliknya.</value>
-	  </string>
-	  <string key="PlayerVoteCounts">
-	    <value>{0} pemain telah mengundi , {1} jumlah.</value>
-	  </string>
-	  <string key="EnableSecretLynchQ">
-	    <value>Membenarkan undian rahsia?\nSekarang: {0}</value>
-	  </string>
-	  <string key="EnableSecretLynchA">
-	    <value>Membenarkan undian rahsia ditetapkan ke: {0}</value>
-	  </string>
-	  <string key="NoAutoJoin">
+  <string key="CantExtend">
+    <value>Hanya admin group boleh memanjangkan masa melebihi sekali!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>{0} merupakan Penyangak! Anda tidak ingin melakukan sesuatu pada malam berikutnya disebabkan {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Sertai</value>
+  </string>
+  <string key="NotMember">
+    <value>Anda tidak boleh menyertai permainan ini kerana anda bukan dalam kumpulan {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Mohon tidak menggunakan command, gunakan button sebaliknya.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} daripada {1} pemain telah mengundi.</value>
+  </string>
+  <string key="NoAutoJoin">
     <value>{0}, anda juga perlu klik SERTAI.</value>
   </string>
-  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
     <value>Tidak menjumpai kumpulan. Sila jalankan command ini, dalam kumpulan yang anda tunggukan.</value>
   </string>
   <string key="DeletedFromWaitList">
@@ -1435,6 +1410,318 @@ Deprecated strings (only there so your file will pass through validation with no
   </string>
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
     <value>{0} telah menyertai permainan 30 saat yang lalu.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Apabila matahari menyinar di kampung, {0} bangun dengan keadaan yang sunyi. Menyedari tiada yang tersisa, berlajan dan terus berjalan sehingga beliau beridri ditengah-tengah kampung. Melihat tiada lagi yang ada pada Kampung Misteri, {0} mengeluh. Impian hidupnya diselubungi misteri, lalu {0} mengambil bahan-bahan yang terbaik dikampung untuk dijadikan bom dan mula mengebom Kampung Misteri dari telaga misteri sehingga hujung kampung.</value>
+    <value>{0} bangun disubuh hari, bersendirian. {0} melihat bagaimana kegagalan penduduk kampung yang obses dengan telaga misteri. {0} megambil bom dari bahan yang terbaik memulakan langkahnya untuk menghapuskan Kampung Misteri, menyedari tiada siapa yang boleh mencapai impian, semenjak tiada yang tersisa di kampung itu.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} membuka matanya, kebiasannya kedengaran riuh yang biasa di kampung,tetapi kini menjadi terlalu sunyi. Dia merenung syiling terasa suram. Semua orang telah tiada. Orang Minyak pon tiada.{0} terus bangun, dam mula mengemas barangannya, lalu berjalan dihujung kampung. Kelihatan air mata megalir di pipinya, sebagai Pawang {0} memikirkan kemenangan Orang Minyak yang begitu hampir. Akhirnya, tiba masanya memulakan hidup baru. {0} menyelinap dalam kegelapan hutan, menjauhkan diri dari Kampung Misteri.</value>
+    <value>Setelah pelbagai usaha dilakukan oleh {0}, akhirnya {0} sebagai rakan Orang Minyak merasa tidak bermaya. Walaupun Orang Minyak telah memenangi permainan, tiada sesiapa yang menikmati kemenangan tersebut, tiada juga penduduk yang hendak dikhianati. {0} melihat barangan pemujaannya, dan hilang secara senyap, didalam kabus awan, dalam pencarian Orang Minyak yang baru, rakan pasukan yang baru, dan penkhianatan baru terhadap kemanusiaan.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} telah tiada, dan anda berubah menjadi Polong. Rakan pasukan anda (jika ada) adalah: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Anda melihat {0} BUKANnya {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Adakah anda ingin mengajak penduduk kampung berqiamulail?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Terasa akan ancaman makhluk yang tidak boleh dilihat dengan mata kasar, {0} memanggil penduduk Kampung Misteri ke surau untuk melakukan qiamulail. Penduduk Kampung Misteri menyambut seruan itu dengan ikhlas hati.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Hampir kesemua peduduk Kampung Misteri berada di surau yang berada di tengah kampung. Tiada apa yang berlaku melainkan kedengaran orang berzikir dan membaca kandungan dalam kitab suci.</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Anda merupakan Sang Kelembai. Walaupun anda bukan seorang manusia, anda merupakan makhluk yang ingin membantu penduduk Kampung Misteri dengan cara anda sendiri. Tetapi sayang, wartawan melihat anda sebagai Orang Minyak.. Oh Tidaaaakkk!!</value>
+  </string>
+  <string key="WolfMan">
+    <value>Sang Kelembai 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Anda merupakan Sang Kelembai. Walaupun anda bukan seorang manusia, anda merupakan makhluk yang ingin membantu penduduk Kampung Misteri dengan cara anda sendiri. Tetapi sayang, wartawan melihat anda sebagai Orang Minyak.. Oh Tidaaaakkk!!</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Anda merupakan Polong! Anda sangat baik bersama Orang Minyak dan wartawan melihat anda sebagai penduduk biasa. :)</value>
+  </string>
+  <string key="Lycan">
+    <value>Polong 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Polong sangat rapat bersama Orang Minyak dan wartawan melihatnya sebagai penduduk biasa.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Anda merupakan Si Bijak. Setiap malam anda boleh melihat peranan seorang penduduk. Anda diberitahu bahawa orang itu TIDAK memegang peranan apa. Peranan yang diberikan merupakan peranan setiap pemain yang masih hidup selain orang yang dilihat. :)</value>
+  </string>
+  <string key="Oracle">
+    <value>Si Bijak 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Si Bijak diberitahu bahawa orang yang dipilih TIDAK memegang peranan yang diberikan. Peranan yang diberikan adalah peranan pemain yang masih hidup.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Anda merupakan Tok Imam. Sekali dalam permainan, anda menggunakan peranan anda untuk mengajak semua ke surau melakukan qiamulail. Pemain malam tidak melakukan kegiatannya pada malam tersebut.</value>
+  </string>
+  <string key="Sandman">
+    <value>Tok Imam 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Sekali dalam permainan, anda menggunakan peranan anda untuk mengajak semua ke surau melakukan qiamulail. Pemain malam tidak melakukan kegiatannya pada malam tersebut.</value>
+  </string>
+
+  <!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>Anda merupakan Pesara Tentera ☮️. Anda boleh mengarahkan semua supaya tidak melakukan hukuman. Ini boleh berlaku sekali dalam satu pusingan permainan.</value>
+  </string>
+  <string key="Pacifist">
+    <value>Pesara Tentera ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Pesara Tentera ☮️ boleh mengarahkan semua supaya tidak melakukan hukuman. Ini boleh berlaku sekali dalam satu pusingan permainan.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Anda merupakan Tukang Ramal 📚. Anda akan selamat apabila kumpulan Orang Minyak menyerang anda, tetapi hanya satu serangan sahaja yang terselamat. Jika Pemburu Hantu dan Guru Silat melakukan sesuatu kepada anda menggunakan kebolehan mereka, mereka kehilangan kuasa dan menjadi penduduk kampung biasa.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Tukang Ramal 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Tukang Ramal 📚 akan selamat apabila kumpulan Orang Minyak menyerang, tetapi hanya satu serangan sahaja yang terselamat. Jika Pemburu Hantu dan Guru Silat melakukan sesuatu kepada Tukang Ramal menggunakan kebolehan mereka, mereka kehilangan kuasa dan menjadi penduduk kampung biasa.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>Anda merupakan Si Psiko 😈! Anda akan menggunakan peranan orang lain dan menjadikan orang itu sebagai Orang Kampung biasa!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Anda merupakan Si Psiko 😈! Sejak [Full Thief] mode dibuka, anda berpeluang 50% tukar peranan dengan pemain lain setiap malam, Jika berjaya, pemain itu menjadi Si Psiko yang baru dan menggunakan peranan anda!</value>
+  </string>
+  <string key="Thief">
+    <value>Si Psiko 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Secara lalai, Si Psiko 😈 akan menggunakan peranan orang lain dan menjadikan orang itu sebagai Orang Kampung biasa.\nJika [Full Thief] mode dibuka, ia berpeluang 50% tukar peranan dengan pemain lain setiap malam, Jika berjaya, pemain itu menjadi Si Psiko yang baru dan sambung peranan tersebut!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>Tekan butang ini untuk semua pemain tidak mengundi!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>Sebagai Pesara Tentera ☮️, {0}, memberikan kata-kata semangat, pengalaman dan memberikan keyakinan terhadap kepercayaan orang kampung. Kesan daripada pengalamannya, tiada yang diundi menerima hukuman!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Oleh kerana Pesara Tentera ☮️ memberikan keyakinan kepada orang kampung, tiada yang akan dihukum ke telaga misteri!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Anda cuba mengganggu {0},Tukang Ramal 📚! Bagaimana pun, {0} berjaya menangkis serangan anda. Anda bernasib baik kerana beliau tidak mengenali anda semua. Mana tak nya, semua hitam..</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Orang Minyak cuba menyerang anda, tetapi sebagai Tukang Ramal 📚 dengan mudah menangkis serangan itu! Anda berjaya menggagalkan serangan tetapi tidak mengenali si penyerang.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Pemburu Hantu 🎯, {0} melakukan jampi kepada Tukang Ramal 📚, {1}. {0} menangis dan menyesali kesilapannya serta menyumpah kebolehan sebagai Pemburu Hantu, dengan mudah telah menjampi Orang Kampung 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Guru Silat 🔫, {0} melakukan jurus terhadap Tukang Ramal 📚, {1}. {0} menangis dan menyesali kesilapannya serta menyumpah kebolehan sebagai Guru Silat, dengan mudah telah menjurus Orang Kampung 👱.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Anda cuba mencuri peranan dari {0}, tetapi ternyata gagal...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Anda cuba mencuri peranan dari {0}, tetapi {0} sudah tiada...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Peranan anda dicuri! Sekarang anda merupakan {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>Anda berjaya mencuri peranan {0}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} bukan lagi ahli RELA. {1} menjadi ahli RELA, seperti kamu!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Rakan RELA anda (jika ada) adalah: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} bukan lagi rakan menari anda. Mulai sekarang ,{1} menjadi Budak Raver/Hipster, seperti kamu!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} bukan lagi rakan anda. {1} menjadi Orang Minyak, seperti kamu!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Rakan anda (jika ada) adalah: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>{0} mengembara disekitar Kampung Misteri dan mendapati tidak ada lagi peranan yang menyeronokkan dirinya. Tanpa membuang masa beliau meninggalkan kawasan tersebut dan mencari tempat yang boleh dia melakukan perbuatan Psikonya.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Sasaran Psiko anda sekarang adalah {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Peranan siapa yang anda mahu psiko atau curi?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} undian kepada {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Hasil undian:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} undian kepada {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Aneh... Kali kedua perbincangan Hipster/Raver, anda menyadari {0} telah tiada! Apa yang berlaku sebenarnya??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Elakkan Undian!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Hari ini tiada hukuman setelah semua mendengar kata-kata Pesara Tentera!</value>
   </string>
 </strings>
