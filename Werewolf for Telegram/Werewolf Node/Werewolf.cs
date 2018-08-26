@@ -4102,7 +4102,7 @@ namespace Werewolf_Node
                                 return DoGameEnd(ITeam.Village);
                             default:
                                 //autoconvert the other
-                                if (other.PlayerRole != IRole.Doppelgänger)
+                                if (other.PlayerRole != IRole.Doppelgänger && other.PlayerRole != IRole.Thief)
                                 {
                                     other.PlayerRole = IRole.Cultist;
                                     other.Team = ITeam.Cult;
