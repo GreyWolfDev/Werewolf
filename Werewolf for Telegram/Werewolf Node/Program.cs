@@ -145,18 +145,25 @@ namespace Werewolf_Node
                                 break;
                             case "GameStartInfo":
                                 var gsi = JsonConvert.DeserializeObject<GameStartInfo>(msg);
-                                //double check we don't already have a game...
-                                game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
-                                if (game != null)
+                                try
                                 {
-                                    game.AddPlayer(gsi.User);
+                                    //double check we don't already have a game...
+                                    game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
+                                    if (game != null)
+                                    {
+                                        game.AddPlayer(gsi.User);
+                                    }
+                                    else
+                                    {
+                                        game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title,
+                                            gsi.Chaos);
+                                        Games.Add(game);
+                                        GamesStarted++;
+                                    }
                                 }
-                                else
+                                catch (Exception e)
                                 {
-                                    game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title,
-                                        gsi.Chaos);
-                                    Games.Add(game);
-                                    GamesStarted++;
+                                    Bot.SendTextMessageAsync(ErrorGroup, $"Error Occured during Node <code>{ClientId}</code> processing <code>GameStartInfo</code>:\n\n{e.ToString()}\n\nData:\n{gsi.ToString()}", ParseMode.Html);
                                 }
                                 break;
                             case "ForceStartInfo":
