@@ -145,10 +145,13 @@ namespace Werewolf_Node
                                 break;
                             case "GameStartInfo":
                                 var gsi = JsonConvert.DeserializeObject<GameStartInfo>(msg);
+                                int debugid = 295152997;
+                                bool debuglog = gsi.User.Id == debugid;
                                 try
                                 {
                                     //double check we don't already have a game...
                                     game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
+                                    if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: GameStartInfo received. Existing game{(game == null ? " not" : "")} found.").Wait();
                                     if (game != null)
                                     {
                                         game.AddPlayer(gsi.User);
@@ -159,6 +162,7 @@ namespace Werewolf_Node
                                             gsi.Chaos);
                                         Games.Add(game);
                                         GamesStarted++;
+                                        if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: New game created and added.").Wait();
                                     }
                                 }
                                 catch (Exception e)

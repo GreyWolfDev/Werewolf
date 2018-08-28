@@ -81,8 +81,13 @@ namespace Werewolf_Node
         /// <param name="chaos">Chaos mode yes or no</param>
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
+            int debugid = 295152997;
+            bool debuglog = u.Id == debugid;
+
             try
             {
+                Send("GAME: Reached constructor. Initializing.", debugid).Wait();
+
                 VillagerDieImages = Settings.VillagerDieImages.ToList();
                 WolfWin = Settings.WolfWin.ToList();
                 WolvesWin = Settings.WolvesWin.ToList();
@@ -211,9 +216,12 @@ namespace Werewolf_Node
 
                 new Thread(GameTimer).Start();
 
+                if (debuglog) Send("GAME: Initializing complete, no exception occured", debugid).Wait();
             }
             catch (Exception ex)
             {
+                if (debuglog) Send("GAME: Exception during initializing: " + ex.Message + "\n" + ex.StackTrace, debugid).Wait();
+
                 while (ex.InnerException != null)
                     ex = ex.InnerException;
                 Program.Send("Hmm.. something went wrong, please try starting the game again...\n" + ex.Message, chatid);

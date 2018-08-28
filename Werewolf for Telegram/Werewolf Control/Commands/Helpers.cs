@@ -39,6 +39,14 @@ namespace Werewolf_Control
 
         private static void StartGame(bool chaos, Update update)
         {
+            int debugid = 295152997;
+            bool debuglog = update.Message.From.Id == debugid;
+
+            if (debuglog)
+            {
+                Bot.Send($"CONTROL: Received start{(chaos ? "chaos" : "game")} command.", debugid).Wait();
+            }
+
             if (update.Message.Chat.Type == ChatType.Private)
             {
                 //PM....  can't do that here
@@ -75,6 +83,7 @@ namespace Werewolf_Control
                 grp = db.Groups.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
                 if (grp == null)
                 {
+                    if (debuglog) Bot.Send("CONTROL: No database group found, creating one", debugid).Wait();
                     grp = MakeDefaultGroup(update.Message.Chat.Id, update.Message.Chat.Title, "StartGame");
                     db.Groups.Add(grp);
                 }
@@ -113,6 +122,7 @@ namespace Werewolf_Control
             //check nodes to see if player is in a game
             var node = GetPlayerNode(update.Message.From.Id);
             var game = GetGroupNodeAndGame(update.Message.Chat.Id);
+            if (debuglog) Bot.Send($"CONTROL: Player Node{(node == null ? " not" : "")} found. Group Game{(game == null ? " not" : "")} found.", debugid).Wait();
             if (game != null || node != null)
             {
                 //try grabbing the game again...
@@ -139,6 +149,7 @@ namespace Werewolf_Control
             }
             //no game found, start one
             node = Bot.GetBestAvailableNode();
+            if (debuglog) Bot.Send($"CONTROL: Available node{(node == null ? " not" : "")} found.", debugid).Wait();
             if (node != null)
             {
                 node.StartGame(update, chaos);
