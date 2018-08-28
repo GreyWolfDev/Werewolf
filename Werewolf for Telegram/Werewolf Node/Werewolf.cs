@@ -86,7 +86,7 @@ namespace Werewolf_Node
 
             try
             {
-                Send("GAME: Reached constructor. Initializing.", debugid).Wait();
+                if (debuglog) Send("GAME: Reached constructor. Initializing.", debugid).Wait();
 
                 VillagerDieImages = Settings.VillagerDieImages.ToList();
                 WolfWin = Settings.WolfWin.ToList();
