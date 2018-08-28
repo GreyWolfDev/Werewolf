@@ -120,9 +120,9 @@ namespace Werewolf_Node
                 bool debuglog = message.MessageString.Contains($"{debugid}");
 
                 var messages = message.MessageString.Split('\u0013');
-                if (debuglog) Bot.SendTextMessageAsync(debugid, $"Messages ({messages.Count()}):\n\n{string.Join("\n\n", messages)}").Wait();
                 foreach (var msg in messages)
                 {
+                    if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
 
                     string t = null;
