@@ -116,13 +116,13 @@ namespace Werewolf_Node
         {
             try
             {
-                int debugid = 295152997;
-                bool debuglog = message.MessageString.Contains($"{debugid}");
+                //int debugid = 295152997;
+                //bool debuglog = message.MessageString.Contains($"{debugid}");
 
                 var messages = message.MessageString.Split('\u0013');
                 foreach (var msg in messages)
                 {
-                    if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
+                    //if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
 
                     string t = null;
@@ -153,7 +153,7 @@ namespace Werewolf_Node
                                 {
                                     //double check we don't already have a game...
                                     game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
-                                    if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: GameStartInfo received. Existing game{(game == null ? " not" : "")} found.").Wait();
+                                    //if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: GameStartInfo received. Existing game{(game == null ? " not" : "")} found.").Wait();
                                     if (game != null)
                                     {
                                         game.AddPlayer(gsi.User);
@@ -164,7 +164,7 @@ namespace Werewolf_Node
                                             gsi.Chaos);
                                         Games.Add(game);
                                         GamesStarted++;
-                                        if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: New game created and added.").Wait();
+                                        //if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: New game created and added.").Wait();
                                     }
                                 }
                                 catch (Exception e)
