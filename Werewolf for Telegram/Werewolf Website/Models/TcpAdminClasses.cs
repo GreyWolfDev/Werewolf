@@ -36,13 +36,13 @@ namespace Werewolf_Website.Models
     public class GetNodeInfo : TcpRequest
     {
         public string JType { get; set; } = "GetNodeInfo";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
     }
 
     public class NodeResponseInfo
     {
         public string JType { get; set; } = "NodeResponseInfo";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public int CurrentGames { get; set; }
         public int CurrentPlayers { get; set; }
         public TimeSpan Uptime { get; set; }
@@ -56,12 +56,12 @@ namespace Werewolf_Website.Models
     {
         public string JType { get; set; } = "GetGameInfo";
         public long GroupId { get; set; }
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
     }
 
     public class StopNodeRequest
     {
         public string JType { get; set; } = "StopNodeRequest";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
     }
 }

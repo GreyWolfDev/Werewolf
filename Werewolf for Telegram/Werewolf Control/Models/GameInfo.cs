@@ -13,11 +13,11 @@ namespace Werewolf_Control.Models
     {
         public HashSet<int> Users { get; set; } = new HashSet<int>();  //update this to users alive
         public long GroupId { get; set; }
-        public Guid Guid { get; set; }
+        public string Guid { get; set; }
         public string Language { get; set; }
         public string ChatGroup { get; set; }
         public GameState State { get; set; }
-        public Guid NodeId { get; set; }
+        public string NodeId { get; set; }
         public IEnumerable<dynamic> Players { get; set; }
         public int PlayerCount { get; set; }
         public GameTime Cycle { get; set; }
@@ -29,14 +29,14 @@ namespace Werewolf_Control.Models
             Night
         }
 
-        public void AddPlayer(Update update)
+        public void AddPlayer(Update update, string gameid)
         {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;
             //var g = n.Games.FirstOrDefault(x => x.GroupId == update.Message.Chat.Id);
             //g?.
             Users.Add(update.Message.From.Id);
-            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GroupId = GroupId });
+            var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = update.Message.From, GameId = gameid });
             n.Broadcast(json);
         }
 

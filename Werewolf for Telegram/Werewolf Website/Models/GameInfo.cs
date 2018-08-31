@@ -17,7 +17,7 @@ namespace Werewolf_Website.Models
         [JsonConverter(typeof(StringEnumConverter))]
         public GameState State { get; set; }
         public IEnumerable<dynamic> Players { get; set; }
-        public Guid NodeId { get; set; }
+        public string NodeId { get; set; }
         public int PlayerCount { get; set; }
         public string Error { get; set; }
         public string RawData { get; set; }

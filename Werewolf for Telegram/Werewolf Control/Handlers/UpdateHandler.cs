@@ -837,7 +837,7 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "vote")
                     {
                         var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
-                        node?.SendReply(query);
+                        node?.SendReply(query, args[2]);
                         return;
                     }
                     if (new[] { "reviewgifs", "approvesfw", "approvensfw" }.Contains(args[0]))

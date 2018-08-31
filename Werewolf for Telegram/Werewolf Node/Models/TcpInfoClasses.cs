@@ -7,7 +7,7 @@ namespace Werewolf_Node.Models
     public class NodeInfo
     {
         public string JType { get; set; } = "NodeInfo";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public int CurrentGames { get; set; }
         public int TotalGames { get; set; }
         public int CurrentPlayers { get; set; }
@@ -25,7 +25,7 @@ namespace Werewolf_Node.Models
     public class ClientRegistrationInfo
     {
         public string JType { get; set; } = "ClientRegistrationInfo";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public string Secret => Environment.MachineName.GetHashCode().ToString();
     }
 
@@ -33,7 +33,7 @@ namespace Werewolf_Node.Models
     {
         public string JType { get; set; } = "PlayerJoinInfo";
         public User User { get; set; }
-        public long GroupId { get; set; }
+        public string GameId { get; set; }
     }
 
     public class GameStartInfo
@@ -49,7 +49,7 @@ namespace Werewolf_Node.Models
         public string JType { get; set; } = "GameEndInfo";
         public long GroupId { get; set; }
         public int PlayerCount { get; set; }
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
     }
 
     public class ForceStartInfo
@@ -100,6 +100,7 @@ namespace Werewolf_Node.Models
     {
         public string JType { get; set; } = "CallbackInfo";
         public CallbackQuery Query { get; set; }
+        public string GameId { get; set; }
     }
 
     public class SkipVoteInfo
@@ -120,5 +121,11 @@ namespace Werewolf_Node.Models
         public long User { get; set; }
         public bool Admin { get; set; }
         public int Seconds { get; set; }
+    }
+
+    public class JoinButtonRequestInfo
+    {
+        public string JType { get; set; } = "JoinButtonRequestInfo";
+        public long GroupId { get; set; }
     }
 }
