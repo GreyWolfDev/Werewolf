@@ -2327,14 +2327,14 @@ namespace Werewolf_Node
                 case IRole.Mayor:
                     if (!thief.HasUsedAbility && GameDay != 1)
                     {
-                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|reveal") } }.ToList();
+                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|reveal") } }.ToList();
                         SendMenu(choices, thief, GetLocaleString("AskMayor"), QuestionType.Mayor);
                     }
                     break;
                 case IRole.Pacifist:
                     if (!thief.HasUsedAbility && GameDay != 1)
                     {
-                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|peace") } }.ToList();
+                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|peace") } }.ToList();
                         SendMenu(choices, thief, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
                     }
                     break;
