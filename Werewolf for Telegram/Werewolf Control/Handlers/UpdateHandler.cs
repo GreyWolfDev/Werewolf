@@ -617,7 +617,7 @@ namespace Werewolf_Control.Handler
                         ex = ex.InnerException;
 
                     Send(ex.Message, id);
-                    Send($"Error: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
+                    Send($"Error at chatId <code>{id.ToString()}</code>: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
                 }
                 catch (Exception ex)
                 {
@@ -625,7 +625,7 @@ namespace Werewolf_Control.Handler
                         ex = ex.InnerException;
 
                     Send(ex.Message, id);
-                    Send($"Error: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
+                    Send($"Error at chatId <code>{id.ToString()}</code>: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
                 }
 #endif
             }
@@ -837,7 +837,7 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "vote")
                     {
                         var node = Bot.Nodes.FirstOrDefault(x => x.ClientId.ToString() == args[1]);
-                        node?.SendReply(query);
+                        node?.SendReply(query, args[2]);
                         return;
                     }
                     if (new[] { "reviewgifs", "approvesfw", "approvensfw" }.Contains(args[0]))

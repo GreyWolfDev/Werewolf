@@ -10,7 +10,7 @@ namespace Werewolf_Control.Models
     public class NodeInfo
     {
         public string JType { get; set; } = "NodeInfo";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public int CurrentGames { get; set; }
         public int TotalGames { get; set; }
         public int CurrentPlayers { get; set; }
@@ -22,12 +22,13 @@ namespace Werewolf_Control.Models
         public string Version { get; set; }
         public bool ShuttingDown { get; set; }
         public int MessagesSent { get; set; }
+
     }
 
     public class ClientRegistrationInfo
     {
         public string JType { get; set; } = "ClientRegistrationInfo";
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public string Secret { get; set; }
     }
 
@@ -35,7 +36,7 @@ namespace Werewolf_Control.Models
     {
         public string JType { get; set; } = "PlayerJoinInfo";
         public User User { get; set; }
-        public long GroupId { get; set; }
+        public string GameId { get; set; }
     }
 
     public class GameStartInfo
@@ -51,7 +52,7 @@ namespace Werewolf_Control.Models
         public string JType { get; set; } = "GameEndInfo";
         public long GroupId { get; set; }
         public int PlayerCount { get; set; }
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
     }
 
     public class ForceStartInfo
@@ -79,6 +80,12 @@ namespace Werewolf_Control.Models
         public long GroupId { get; set; }
     }
 
+    public class UpdateNodeInfo
+    {
+        public string JType { get; set; } = "UpdateNodeInfo";
+        public bool Kill { get; set; } = false;
+    }
+
     public class LoadLangInfo
     {
         public string JType { get; set; } = "LoadLangInfo";
@@ -92,17 +99,11 @@ namespace Werewolf_Control.Models
         public int UserId { get; set; }
         public long GroupId { get; set; }
     }
-
-    public class UpdateNodeInfo
-    {
-        public string JType { get; set; } = "UpdateNodeInfo";
-        public bool Kill { get; set; } = false;
-    }
-
     public class CallbackInfo
     {
         public string JType { get; set; } = "CallbackInfo";
         public CallbackQuery Query { get; set; }
+        public string GameId { get; set; }
     }
 
     public class SkipVoteInfo
@@ -110,7 +111,6 @@ namespace Werewolf_Control.Models
         public string JType { get; set; } = "SkipVoteInfo";
         public long GroupId { get; set; }
     }
-
     public class GameKillInfo
     {
         public string JType { get; set; } = "GameKillInfo";

@@ -34,7 +34,7 @@ namespace Werewolf_Node
             MessageQueueing = true,
             Chaos, WolfCubKilled,
             NoOneCastLynch;
-        public Guid Guid = Guid.NewGuid();
+        public string Guid;
         private readonly InlineKeyboardMarkup _requestPMButton;
         public DateTime LastPlayersOutput = DateTime.Now;
         public GameTime Time;
@@ -81,8 +81,19 @@ namespace Werewolf_Node
         /// <param name="chaos">Chaos mode yes or no</param>
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
+            //int debugid = 295152997;
+            //bool debuglog = u.Id == debugid;
+
             try
             {
+                //if (debuglog) Send("GAME: Reached constructor. Initializing.", debugid).Wait();
+
+                do
+                {
+                    Guid = Convert.ToBase64String(System.Guid.NewGuid().ToByteArray()).Substring(0, 22); // Since a GUID is always 128 bits, we can omit the "==" that we know will always be present at the end
+                }
+                while (!Guid.All(x => "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".Contains(x)));
+
                 VillagerDieImages = Settings.VillagerDieImages.ToList();
                 WolfWin = Settings.WolfWin.ToList();
                 WolvesWin = Settings.WolvesWin.ToList();
@@ -192,15 +203,16 @@ namespace Werewolf_Node
                     //AddPlayer(u);
                 }
 
-                var deeplink = $"{Program.ClientId.ToString("N")}{Guid.ToString("N")}";
+                var deeplink = $"{Program.ClientId}{Guid}";
                 //create our button
                 _joinButton = new InlineKeyboardMarkup(new[]
                 {
-                    new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=" + deeplink)
+                    new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=join" + deeplink)
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
-                _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend("CgADAwADmAIAAnQXsQdKO62ILjJQMQI"), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                //_joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend("CgADAwADmAIAAnQXsQdKO62ILjJQMQI"), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
                 _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #endif
@@ -211,9 +223,12 @@ namespace Werewolf_Node
 
                 new Thread(GameTimer).Start();
 
+                //if (debuglog) Send("GAME: Initializing complete, no exception occured", debugid).Wait();
             }
             catch (Exception ex)
             {
+                //if (debuglog) Send("GAME: Exception during initializing: " + ex.Message + "\n" + ex.StackTrace, debugid).Wait();
+
                 while (ex.InnerException != null)
                     ex = ex.InnerException;
                 Program.Send("Hmm.. something went wrong, please try starting the game again...\n" + ex.Message, chatid);
@@ -780,12 +795,13 @@ namespace Werewolf_Node
                 var args = query.Data.Split('|');
                 //0 - vote
                 //1 - clientid
-                //2 - choiceid
+                //2 - gameid
+                //3 - choiceid
                 var player = Players.FirstOrDefault(x => x.Id == query.From.Id);
 
                 if (player == null) return;
 
-                if (player.PlayerRole == IRole.Mayor && args[2] == "reveal" && player.HasUsedAbility == false)
+                if (player.PlayerRole == IRole.Mayor && args[3] == "reveal" && player.HasUsedAbility == false)
                 {
                     player.HasUsedAbility = true;
                     SendWithQueue(GetLocaleString("MayorReveal", player.GetName()));
@@ -796,10 +812,10 @@ namespace Werewolf_Node
 
                     return;
                 }
-                else if (player.PlayerRole == IRole.Mayor && args[2] == "reveal" && player.HasUsedAbility == true)
+                else if (player.PlayerRole == IRole.Mayor && args[3] == "reveal" && player.HasUsedAbility == true)
                     return;
 
-                if (player.PlayerRole == IRole.Pacifist && args[2] == "peace" && player.HasUsedAbility == false)
+                if (player.PlayerRole == IRole.Pacifist && args[3] == "peace" && player.HasUsedAbility == false)
                 {
                     player.HasUsedAbility = true;
                     _pacifistUsed = true;
@@ -810,12 +826,12 @@ namespace Werewolf_Node
                         GetLocaleString("ChoiceAccepted"));
                     return;
                 }
-                else if (player.PlayerRole == IRole.Pacifist && args[2] == "peace" && player.HasUsedAbility == true)
+                else if (player.PlayerRole == IRole.Pacifist && args[3] == "peace" && player.HasUsedAbility == true)
                     return;
 
                 if (player.PlayerRole == IRole.Blacksmith && player.CurrentQuestion.QType == QuestionType.SpreadSilver)
                 {
-                    if (args[2] == "yes")
+                    if (args[3] == "yes")
                     {
                         player.HasUsedAbility = true;
                         _silverSpread = true;
@@ -830,7 +846,7 @@ namespace Werewolf_Node
 
                 if (player.PlayerRole == IRole.Sandman && player.CurrentQuestion.QType == QuestionType.Sandman)
                 {
-                    if (args[2] == "yes")
+                    if (args[3] == "yes")
                     {
                         player.HasUsedAbility = true;
                         _sandmanSleep = true;
@@ -853,7 +869,7 @@ namespace Werewolf_Node
                     throw new NullReferenceException("Object was null: query.Data");
                 }
 
-                if (args[2] == "-1")
+                if (args[3] == "-1")
                 {
                     if (player.CurrentQuestion.QType == QuestionType.Kill2)
                         player.Choice2 = -1;
@@ -870,9 +886,9 @@ namespace Werewolf_Node
 
 
                 if (player.CurrentQuestion.QType == QuestionType.Kill2)
-                    player.Choice2 = int.Parse(args[2]);
+                    player.Choice2 = int.Parse(args[3]);
                 else
-                    player.Choice = int.Parse(args[2]);
+                    player.Choice = int.Parse(args[3]);
 
                 if (player.PlayerRole == IRole.ClumsyGuy && player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
@@ -920,8 +936,8 @@ namespace Werewolf_Node
                         var targets = Players.Where(x => !WolfRoles.Contains(x.PlayerRole) & !x.IsDead && x.Id != player.Choice).ToList();
                         var msg = GetLocaleString("AskEat");
                         var qtype = QuestionType.Kill2;
-                        var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                        buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
+                        var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
+                        buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
                         SendMenu(buttons, player, msg, qtype);
                         clearCurrent = false;
                     }
@@ -944,7 +960,7 @@ namespace Werewolf_Node
                         var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
                         var buttons =
                             secondChoices.Select(
-                                x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
+                                x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
                         player.Choice = 0;
                         Program.MessagesSent++;
                         ReplyToCallback(query,
@@ -2069,7 +2085,7 @@ namespace Werewolf_Node
                             p.Team = ITeam.Village;
                             p.HasNightAction = false;
                             p.HasDayAction = false;
-                            var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|reveal") } }.ToList();
+                            var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|reveal") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
                             break;
                         case IRole.Pacifist:
@@ -2077,7 +2093,7 @@ namespace Werewolf_Node
                             p.Team = ITeam.Village;
                             p.HasNightAction = false;
                             p.HasDayAction = false;
-                            choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|peace") } }.ToList();
+                            choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|peace") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
                             break;
                         case IRole.Thief:
@@ -4417,8 +4433,7 @@ namespace Werewolf_Node
             {
                 player.CurrentQuestion = null;
                 player.Choice = 0;
-                var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId.ToString()}|{x.Id}") }).ToList();
-                //choices.Add(new [] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId.ToString()}|skip") });
+                var choices = Players.Where(x => !x.IsDead && x.Id != player.Id).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
                 SendMenu(choices, player, GetLocaleString("AskLynch"), QuestionType.Lynch);
                 Thread.Sleep(100);
             }
@@ -4492,8 +4507,8 @@ namespace Werewolf_Node
                 var options = Players.Where(x => !x.IsDead && x.Id != detective.Id).ToList();
                 if (options.Any())
                 {
-                    var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                    choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
+                    var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
+                    choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
                     SendMenu(choices, detective, GetLocaleString("AskDetect"), QuestionType.Detect);
                 }
             }
@@ -4505,7 +4520,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|reveal")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|reveal")
                     }
                 }.ToList();
                 SendMenu(choices, mayor, GetLocaleString("AskMayor"), QuestionType.Mayor);
@@ -4518,7 +4533,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|peace")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|peace")
                     }
                 }.ToList();
                 SendMenu(choices, pacifist, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
@@ -4531,7 +4546,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|no")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|{Guid}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|no")
                     }
                 }.ToList();
                 SendMenu(choices, sandman, GetLocaleString("AskSandman"), QuestionType.Sandman);
@@ -4545,7 +4560,7 @@ namespace Werewolf_Node
                 {
                     new[]
                     {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|no")
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|{Guid}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|no")
                     }
                 }.ToList();
                 SendMenu(choices, blacksmith, GetLocaleString("SpreadDust"), QuestionType.SpreadSilver);
@@ -4561,8 +4576,8 @@ namespace Werewolf_Node
                     var options = Players.Where(x => !x.IsDead && x.Id != gunner.Id).ToList();
                     if (options.Any())
                     {
-                        var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
-                        choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
+                        var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
+                        choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
                         SendMenu(choices, gunner, GetLocaleString("AskShoot", gunner.Bullet), QuestionType.Shoot);
                     }
                 }
@@ -4690,9 +4705,9 @@ namespace Werewolf_Node
                     default:
                         continue;
                 }
-                var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }).ToList();
+                var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
                 if ((player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid && player.PlayerRole != IRole.Doppelgänger && player.PlayerRole != IRole.Thief) || (player.PlayerRole == IRole.Thief && ThiefFull))
-                    buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
+                    buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
 
                 if (!player.Drunk && !String.IsNullOrWhiteSpace(msg))
                 {
@@ -4792,8 +4807,8 @@ namespace Werewolf_Node
 
             //send a menu to the hunter, asking who he wants to kill as he is hung....
             var hunterChoices = new List<InlineKeyboardCallbackButton[]>();
-            hunterChoices.AddRange(Players.Where(x => !x.IsDead).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{x.Id}") }));
-            hunterChoices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|-1") });
+            hunterChoices.AddRange(Players.Where(x => !x.IsDead).Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }));
+            hunterChoices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
 
             //raise hunter from dead long enough to shoot
             hunter.IsDead = false;

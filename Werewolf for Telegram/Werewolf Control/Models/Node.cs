@@ -14,7 +14,7 @@ namespace Werewolf_Control.Models
     {
         public TcpClient TcpClient { get; set; }
         public bool ShuttingDown { get; set; }
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public int CurrentGames { get; set; }
         public int TotalGames { get; set; }
         public int CurrentPlayers { get; set; }
@@ -44,6 +44,7 @@ namespace Werewolf_Control.Models
                 Users = new HashSet<int> {update.Message.From.Id},
                 State = GameState.Joining
             });
+            //if (update.Message.From.Id == 295152997) Bot.Send("CONTROL: GameStartInfo broadcasted, GameInfo added.", 295152997).Wait(); //debuglog
         }
 
         public void EndGame(GameEndInfo gei)
@@ -65,9 +66,9 @@ namespace Werewolf_Control.Models
             this.Broadcast(JsonConvert.SerializeObject(new UpdateNodeInfo() {Kill = kill}));
         }
 
-        public void SendReply(CallbackQuery query)
+        public void SendReply(CallbackQuery query, string gameid)
         {
-            var info = JsonConvert.SerializeObject(new CallbackInfo {Query = query});
+            var info = JsonConvert.SerializeObject(new CallbackInfo {Query = query, GameId = gameid});
             this.Broadcast(info);
         }
 

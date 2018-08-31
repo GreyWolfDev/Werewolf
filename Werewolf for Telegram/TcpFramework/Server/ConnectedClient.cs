@@ -6,7 +6,7 @@ namespace TcpFramework.Server
 {
     public class ConnectedClient
     {
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
         public IPAddress ServerIP { get; internal set; }
         public TcpClient Client { get; internal set; }
     }

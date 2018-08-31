@@ -10,6 +10,6 @@ namespace Werewolf_Node.Models
     {
         public string JType { get; set; } = "GetGameInfo";
         public long GroupId { get; set; }
-        public Guid ClientId { get; set; }
+        public string ClientId { get; set; }
     }
 }

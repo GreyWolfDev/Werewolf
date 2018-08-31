@@ -46,7 +46,7 @@ namespace Werewolf_Website.Controllers
                          from g in n.Games
                          where (g.GroupId == groupid)
                          select n.ClientId).FirstOrDefault();
-            if (clientid == Guid.Empty)
+            if (clientid == null)
                 throw new HttpException(404, "Game with Group Id not found!");
             ViewBag.ClientId = clientid.ToString();
 
@@ -81,17 +81,15 @@ namespace Werewolf_Website.Controllers
         [HttpGet]
         public JsonResult GetNodeInfo(string clientid)
         {
-            Guid id;
-            if (!Guid.TryParse(clientid, out id)) return null;
             //NodeResponseInfo response = null;
 
             foreach (var bot in StatusMonitor.GetStatusResponses)
             {
                 if (bot?.Nodes != null)
                 {
-                    if (bot.Nodes.Any(n => n.ClientId == id))
+                    if (bot.Nodes.Any(n => n.ClientId == clientid))
                     {
-                        return new JsonNetResult {Data =bot.Nodes.FirstOrDefault(x => x.ClientId == id), JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+                        return new JsonNetResult {Data =bot.Nodes.FirstOrDefault(x => x.ClientId == clientid), JsonRequestBehavior = JsonRequestBehavior.AllowGet};
                     }
                 }
             }
@@ -117,9 +115,8 @@ namespace Werewolf_Website.Controllers
         [HttpGet]
         public JsonResult GetGameInfo(long groupid, string clientid)
         {
-            var guid = Guid.Parse(clientid);
             //find the node
-            var node = StatusMonitor.GetStatusResponses.FirstOrDefault(x => x.Nodes.Any(n => n.ClientId == guid));
+            var node = StatusMonitor.GetStatusResponses.FirstOrDefault(x => x.Nodes.Any(n => n.ClientId == clientid));
             if (node == null)
                 return null;
             return new JsonNetResult(new TcpAdminConnection(node.IP, node.Port).GetGameInfo(groupid, clientid), JsonRequestBehavior.AllowGet);
@@ -128,7 +125,7 @@ namespace Werewolf_Website.Controllers
         public void StopNode(string id, string ip, int port)
         {
             //create request
-            var request = new StopNodeRequest {ClientId = Guid.Parse(id)};
+            var request = new StopNodeRequest {ClientId = id};
             new TcpAdminConnection(ip, port).StopNode(request);
 
         }

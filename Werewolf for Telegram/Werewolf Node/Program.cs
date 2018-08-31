@@ -24,7 +24,7 @@ namespace Werewolf_Node
     class Program
     {  
         internal static SimpleTcpClient Client;
-        internal static Guid ClientId;
+        internal static string ClientId;
         internal static bool Running = true;
         internal static HashSet<Werewolf> Games = new HashSet<Werewolf>();
         internal static TelegramBotClient Bot;
@@ -100,7 +100,11 @@ namespace Werewolf_Node
 #endif
             Bot = new TelegramBotClient(APIToken);
             Me = Bot.GetMeAsync().Result;
-            ClientId = Guid.NewGuid();
+            do
+            {
+                ClientId = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 22); // Since a GUID is always 128 bits, we can omit the "==" that we know will always be present at the end
+            }
+            while (!ClientId.All(x => "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".Contains(x)));
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
             Thread.Sleep(-1);
@@ -116,9 +120,13 @@ namespace Werewolf_Node
         {
             try
             {
+                //int debugid = 295152997;
+                //bool debuglog = message.MessageString.Contains($"{debugid}");
+
                 var messages = message.MessageString.Split('\u0013');
                 foreach (var msg in messages)
                 {
+                    //if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
 
                     string t = null;
@@ -140,23 +148,32 @@ namespace Werewolf_Node
                         {
                             case "PlayerJoinInfo":
                                 var pji = JsonConvert.DeserializeObject<PlayerJoinInfo>(msg);
-                                game = Games.FirstOrDefault(x => x.ChatId == pji.GroupId);
+                                game = Games.FirstOrDefault(x => x.Guid == pji.GameId);
                                 game?.AddPlayer(pji.User);
                                 break;
                             case "GameStartInfo":
                                 var gsi = JsonConvert.DeserializeObject<GameStartInfo>(msg);
-                                //double check we don't already have a game...
-                                game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
-                                if (game != null)
+                                try
                                 {
-                                    game.AddPlayer(gsi.User);
+                                    //double check we don't already have a game...
+                                    game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
+                                    //if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: GameStartInfo received. Existing game{(game == null ? " not" : "")} found.").Wait();
+                                    if (game != null)
+                                    {
+                                        game.ShowJoinButton();
+                                    }
+                                    else
+                                    {
+                                        game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title,
+                                            gsi.Chaos);
+                                        Games.Add(game);
+                                        GamesStarted++;
+                                        //if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: New game created and added.").Wait();
+                                    }
                                 }
-                                else
+                                catch (Exception e)
                                 {
-                                    game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title,
-                                        gsi.Chaos);
-                                    Games.Add(game);
-                                    GamesStarted++;
+                                    Bot.SendTextMessageAsync(ErrorGroup, $"Error Occured during Node <code>{ClientId}</code> processing <code>GameStartInfo</code>:\n\n{e.ToString()}\n\nData:\n{gsi.ToString()}", ParseMode.Html);
                                 }
                                 break;
                             case "ForceStartInfo":
@@ -175,7 +192,8 @@ namespace Werewolf_Node
                                 var ci = JsonConvert.DeserializeObject<CallbackInfo>(msg);
                                 game =
                                     Games.FirstOrDefault(
-                                        x => x.Players?.Any(p => p != null && !p.IsDead && p.TeleUser.Id == ci.Query.From.Id) ?? false);
+                                        x => //x.Players?.Any(p => p != null && !p.IsDead && p.TeleUser.Id == ci.Query.From.Id) ?? false);
+                                            x.Guid == ci.GameId);
                                 game?.HandleReply(ci.Query);
                                 break;
                             case "PlayerListRequestInfo":
@@ -257,7 +275,7 @@ namespace Werewolf_Node
                                 game?.ExtendTime(eti.User, eti.Admin, eti.Seconds);
                                 break;
                             case "JoinButtonRequestInfo":
-                                var jbri = JsonConvert.DeserializeObject<PlayerListRequestInfo>(msg);
+                                var jbri = JsonConvert.DeserializeObject<JoinButtonRequestInfo>(msg);
                                 game = Games.FirstOrDefault(x => x.ChatId == jbri.GroupId);
                                 game?.ShowJoinButton();
                                 Console.ForegroundColor = ConsoleColor.Green;

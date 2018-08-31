@@ -108,6 +108,7 @@ namespace BuildAutomation.Controllers
 
                     //check what was built
                     var beta = push._ref.Contains("beta"); //beta or master - refs/head/<branch>
+                    var master = push._ref.Contains("master");
                     //now check if control was changed
                     var control =
                         push.commits.Any(
@@ -116,7 +117,7 @@ namespace BuildAutomation.Controllers
                         push.commits.Any(
                             x => x.modified.Union(x.added).Union(x.removed).Any(c => c.Contains("Werewolf Node")));
 
-                    if (!control && !node) //nothing to build
+                    if ((!beta && !master) || (!control && !node)) //nothing to build
                     {
                         bot.SendTextMessageAsync(GroupId, msg, parseMode: ParseMode.Html,
                             disableWebPagePreview: true);
