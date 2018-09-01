@@ -50,50 +50,13 @@ namespace Werewolf_Control
                     Send(GetLocaleString("JoinFromGroup", GetLanguage(update.Message.From.Id)), id);
                     return;
                 }
-                //check nodes to see if player is in a game
-                var node = GetPlayerNode(update.Message.From.Id);
+                //check if there is a game in that group
                 var game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                if (game == null)
+                if (game != null)
                 {
-                    Thread.Sleep(50);
-                    game = GetGroupNodeAndGame(update.Message.Chat.Id);
+                    game.ShowJoinButton();
                 }
-                if (game == null)
-                {
-                    Thread.Sleep(50);
-                    game = GetGroupNodeAndGame(update.Message.Chat.Id);
-                }
-
-                if (game != null || node != null)
-                {
-                    //try grabbing the game again...
-                    if (game == null)
-                        game = node.Games.FirstOrDefault(x => x.Users.Contains(update.Message.From.Id));
-                    if (game?.Users.Contains(update.Message.From.Id) ?? false)
-                    {
-                        if (game.GroupId != update.Message.Chat.Id)
-                        {
-                            //player is already in a game (in another group), and alive
-                            var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
-                            Send(GetLocaleString("AlreadyInGame", grp?.Language ?? "English", game.ChatGroup.ToBold()), update.Message.Chat.Id);
-                            return;
-                        }
-                        else
-                        {
-                            //do nothing, player is in the game, in that group, they are just being spammy
-                            return;
-                        }
-                    }
-
-                    //player is not in game, they need to join, if they can
-                    //game?.AddPlayer(update);
-
-                    game?.ShowJoinButton();
-                    if (game == null)
-                        Program.Log($"{update.Message.From.FirstName} tried to join a game on node {node?.ClientId}, but game object was null", true);
-                    return;
-                }
-                if (game == null)
+                else
                 {
                     var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
                     if (grp == null)

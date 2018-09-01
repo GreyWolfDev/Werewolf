@@ -248,6 +248,36 @@ namespace Werewolf_Control
                             nodeid = args[1].Substring(4, 22);
                             gameid = args[1].Substring(26, 22);
 
+                            // check that they aren't ingame in another group
+                            node = GetPlayerNode(u.Message.From.Id);
+                            if (node != null)
+                            {
+                                game = node.Games.ToList().FirstOrDefault(x => x.Users.Contains(u.Message.From.Id));
+                                if (game == null)
+                                    game = node.Games.ToList().FirstOrDefault(x => x.Users.Contains(u.Message.From.Id));
+                                if (game == null)
+                                    game = node.Games.ToList().FirstOrDefault(x => x.Users.Contains(u.Message.From.Id));
+
+                                if (game != null)
+                                {
+                                    if (node.ClientId != nodeid || game.Guid != gameid)
+                                    {
+                                        // they are in game in another group, can't join here
+                                        var pl = db.Players.FirstOrDefault(x => x.TelegramId == u.Message.From.Id);
+                                        Send(GetLocaleString("AlreadyInGame", pl?.Language ?? "English", game.ChatGroup.ToBold()), u.Message.Chat.Id);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        // do nothing, they are in the game, they are just being spammy
+                                        return;
+                                    }
+                                }
+                            }
+
+                            node = null;
+                            game = null;
+
                             //first get the node where to search for the game
 
                             for (var i = 0; i < 3; i++)
