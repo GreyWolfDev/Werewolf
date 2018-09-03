@@ -88,8 +88,8 @@ namespace Werewolf_Node.Helpers
         }
 
         public static IPlayer GetPlayerForRole(this IEnumerable<IPlayer> players, IRole role, bool aliveOnly = true, IPlayer exceptPlayer = null)
-        {
-            return players?.FirstOrDefault(x => x.PlayerRole == role && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
+        { // if aliveOnly is false, in case of multiple same roles, this will return the first alive one, or, if no alive one, the one who died the most recently
+            return players?.OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.PlayerRole == role && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
         }
 
         public static IEnumerable<IPlayer> GetPlayersForRoles(this IEnumerable<IPlayer> players, IRole[] roles,
