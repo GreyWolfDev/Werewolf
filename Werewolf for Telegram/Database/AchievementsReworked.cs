@@ -161,9 +161,11 @@ namespace Database
         [Display(Name = "Every Man for Himself!"), Description("As the pacifist, save yourself from being lynched (at least 50% of votes have been cast for you already)")]
         EveryManForHimself = 73,
         [Display(Name = "My Sweetie so Strong!"), Description("Be in love with the pacifist, and get saved from being lynched by them (at least 50% of votes have been cast for you already)")]
-        MySweetieSoStrong = 74
+        MySweetieSoStrong = 74,
+        [Display(Name = "Cult Leader"), Description("Be a cultist from the beginning of the game, survive and win.")]
+        CultLeader = 75,
     } // MAX VALUE: 9223372036854775807
-      //            
+      // Good luck reaching this XD
 
     public static partial class Extensions
     {

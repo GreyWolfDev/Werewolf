@@ -784,9 +784,9 @@ namespace Werewolf_Node
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-#endregion
+        #endregion
 
-#region Communications
+        #region Communications
         public void HandleReply(CallbackQuery query)
         {
             try
@@ -1304,9 +1304,9 @@ namespace Werewolf_Node
             }
 
         }
-#endregion
+        #endregion
 
-#region Roles
+        #region Roles
         string GetDescription(IRole en)
         {
             return GetLocaleString(en.ToString()).ToBold();
@@ -1350,12 +1350,8 @@ namespace Werewolf_Node
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Thief:
-                        //if (AllowThief)
-                        //    rolesToAssign.Add(role);
-                        break;
-                    case IRole.Pacifist:
-                    case IRole.WiseElder:
-                        rolesToAssign.Add(role);
+                        if (AllowThief)
+                            rolesToAssign.Add(role);
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -1469,9 +1465,9 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Pacifist;
-                rolesToAssign[1] = IRole.Cupid;
-                rolesToAssign[2] = IRole.Wolf;
+                rolesToAssign[0] = IRole.Thief;
+                rolesToAssign[1] = IRole.SerialKiller;
+                rolesToAssign[2] = IRole.Villager;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
@@ -1501,7 +1497,8 @@ namespace Werewolf_Node
                 }
 
                 foreach (var p in Players)
-                    p.OriginalRole = p.PlayerRole;
+                    p.CultLeader = p.PlayerRole == IRole.Cultist;
+
             }
             catch (Exception ex)
             {
@@ -1675,7 +1672,6 @@ namespace Werewolf_Node
                     //seer is dead, promote app seer
                     aps.HasDayAction = false;
                     aps.HasNightAction = true;
-                    aps.OriginalRole = IRole.ApprenticeSeer;
                     aps.PlayerRole = IRole.Seer;
                     aps.ChangedRolesCount++;
                     //notify
@@ -1685,6 +1681,7 @@ namespace Werewolf_Node
                         Send(GetLocaleString("BeholderNewSeer", $"{aps.GetName()}", ds?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
                 }
             }
+
             CheckWildChild(checkbitten);
             CheckDoppelganger(checkbitten);
 
@@ -1893,6 +1890,7 @@ namespace Werewolf_Node
                             teammates += $"{w.GetName()}" + ", ";
                         }
                         wc.PlayerRole = IRole.Wolf;
+                        wc.ChangedRolesCount++;
                         wc.Team = ITeam.Wolf;
                         wc.ChangedRolesCount++;
                         wc.HasNightAction = true;
@@ -1916,17 +1914,8 @@ namespace Werewolf_Node
                 if (rm != null && rm.IsDead)
                 {
                     var teammates = "";
-                    //notify other wolves
-                    p.PlayerRole = rm.OriginalRole;
-                    if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.WildChild || rm.OriginalRole == IRole.Traitor || rm.OriginalRole == IRole.Cursed)
-                    {
-                        //if (rm.OriginalRole == IRole.ApprenticeSeer || rm.OriginalRole == IRole.Cursed)
-                        if (rm.OriginalRole == IRole.ApprenticeSeer)     //if cursed turned wolf before dying, should DG turn cursed or directly wolf? use the above line if DG should turn cursed
-                            if (rm.PlayerRole != IRole.Wolf)
-                                p.PlayerRole = rm.PlayerRole;
-                        if (rm.PlayerRole != IRole.Cultist)
-                            p.PlayerRole = rm.PlayerRole;
-                    }
+                    //notify other wolves or cultists
+                    p.PlayerRole = rm.PlayerRole;
                     p.ChangedRolesCount++;
 
                     if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan }.Contains(p.PlayerRole))
@@ -2169,9 +2158,10 @@ namespace Werewolf_Node
 
             // the thief first
             thief.PlayerRole = target.PlayerRole;
-            // thief.OriginalRole = IRole.Thief;
             thief.RoleModel = target.RoleModel;
             thief.ChangedRolesCount++;
+            thief.Bullet = target.Bullet;
+            thief.HasUsedAbility = target.HasUsedAbility;
 
             switch (thief.PlayerRole)
             {
@@ -2193,7 +2183,6 @@ namespace Werewolf_Node
                     thief.HasDayAction = false;
                     thief.HasNightAction = false;
                     thief.Team = ITeam.Village;
-                    thief.HasUsedAbility = false;
                     break;
                 case IRole.Fool:
                 case IRole.Harlot:
@@ -2207,7 +2196,6 @@ namespace Werewolf_Node
                     thief.Team = ITeam.Village;
                     thief.HasNightAction = true;
                     thief.HasDayAction = false;
-                    thief.HasUsedAbility = false;
                     break;
                 case IRole.Doppelgänger:
                 case IRole.Thief:
@@ -2223,7 +2211,6 @@ namespace Werewolf_Node
                 case IRole.Gunner:
                     thief.Team = ITeam.Village;
                     thief.HasDayAction = true;
-                    thief.Bullet = 2;
                     thief.HasNightAction = false;
                     break;
                 case IRole.Sorcerer:
@@ -2255,12 +2242,13 @@ namespace Werewolf_Node
             }
 
             // then the target
-            // target.OriginalRole = target.PlayerRole;
             target.PlayerRole = ThiefFull == true ? IRole.Thief : IRole.Villager;
             target.Team = ThiefFull == true ? ITeam.Thief : ITeam.Village;
             target.RoleModel = 0;
             target.ChangedRolesCount++;
             target.HasNightAction = ThiefFull == true ? true : false;
+            target.HasUsedAbility = false;
+            target.Bullet = 2;
 
             // notify both players (notify team?)
             // First Notify the stolen player becoming VG/Thief
@@ -2336,6 +2324,20 @@ namespace Werewolf_Node
                     }
                     Send(GetLocaleString("ThiefTransformNewTeammates", teammates), thief.Id);
                     break;
+                case IRole.Mayor:
+                    if (!thief.HasUsedAbility && GameDay != 1)
+                    {
+                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|reveal") } }.ToList();
+                        SendMenu(choices, thief, GetLocaleString("AskMayor"), QuestionType.Mayor);
+                    }
+                    break;
+                case IRole.Pacifist:
+                    if (!thief.HasUsedAbility && GameDay != 1)
+                    {
+                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|peace") } }.ToList();
+                        SendMenu(choices, thief, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -2350,8 +2352,9 @@ namespace Werewolf_Node
                     foreach (var c in voteCult)
                         AddAchievement(c, Achievements.DontStayHome);
 
-                target.OriginalRole = target.PlayerRole;
                 target.PlayerRole = IRole.Cultist;
+                target.ChangedRolesCount++;
+                target.ConvertedToCult = true;
                 target.Team = ITeam.Cult;
                 target.HasDayAction = false;
                 target.HasNightAction = true;
@@ -2373,9 +2376,9 @@ namespace Werewolf_Node
 
 
 
-#endregion
+        #endregion
 
-#region Cycles
+        #region Cycles
 
         public void ForceStart()
         {
@@ -2753,7 +2756,6 @@ namespace Werewolf_Node
                         case IRole.WiseElder:
                             SendWithQueue(GetLocaleString("DefaultShot", gunner.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
                             SendWithQueue(GetLocaleString("GunnerShotWiseElder", gunner.GetName(), check.GetName()));
-                            gunner.OriginalRole = IRole.Gunner;
                             gunner.PlayerRole = IRole.Villager;
                             gunner.ChangedRolesCount++;
                             gunner.HasDayAction = false;
@@ -2937,7 +2939,7 @@ namespace Werewolf_Node
              * Thief
              */
 
-#region Wolf Night
+            #region Wolf Night
 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
 
@@ -3253,9 +3255,9 @@ namespace Werewolf_Node
                 eatCount = 0;
             }
             WolfCubKilled = false;
-#endregion
+            #endregion
 
-#region Serial Killer Night
+            #region Serial Killer Night
 
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
@@ -3287,12 +3289,12 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             if (Players == null)
                 return;
 
-#region Cult Hunter Night
+            #region Cult Hunter Night
 
             //cult hunter
             var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
@@ -3334,9 +3336,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region Cult Night
+            #region Cult Night
 
             //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead);
@@ -3542,7 +3544,7 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             if (Players == null)
             {
@@ -3550,7 +3552,7 @@ namespace Werewolf_Node
                 return;
             }
 
-#region Harlot Night
+            #region Harlot Night
 
             //let the harlot know
             var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
@@ -3626,9 +3628,9 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
-#region Seer / Fool
+            #region Seer / Fool
 
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead);
@@ -3745,9 +3747,9 @@ namespace Werewolf_Node
             }
 
 
-#endregion
+            #endregion
 
-#region GA Night
+            #region GA Night
 
             if (ga != null)
             {
@@ -3810,7 +3812,7 @@ namespace Werewolf_Node
                 }
             }
 
-#endregion
+            #endregion
 
             CheckRoleChanges();
 
@@ -3820,19 +3822,34 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
                 if (target != null)
                 {
-                    if (!ThiefFull && GameDay == 1)
-                        StealRole(thief, target);
-                    else if (ThiefFull)
+                    if (ThiefFull || GameDay == 1)
                     {
-                        if (Program.R.Next(100) < Settings.ThiefStealChance)
+                        if (target.PlayerRole == IRole.SerialKiller)
+                        {
+                            thief.IsDead = true;
+                            thief.TimeDied = DateTime.Now;
+                            thief.DiedLastNight = true;
+                            thief.DiedByVisitingKiller = true;
+                            thief.KilledByRole = IRole.SerialKiller;
+                            DBKill(target, thief, KillMthd.StealKiller);
+                            Send(GetLocaleString("StealKiller"), thief.Id);
+                        }
+                        else if (!ThiefFull)
+                        {
                             StealRole(thief, target);
-                        else
-                            Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
+                        }
+                        else if (ThiefFull)
+                        {
+                            if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist)
+                                StealRole(thief, target);
+                            else
+                                Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
+                        }
                     }
                 }
             }
 
-#region Night Death Notifications to Group
+            #region Night Death Notifications to Group
 
 
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
@@ -3959,6 +3976,10 @@ namespace Werewolf_Node
                                     else if (p.KilledByRole == IRole.SerialKiller)
                                         msg = GetLocaleString("GAGuardedKiller", p.GetName());
                                     break;
+                                case IRole.Thief:
+                                    if (p.KilledByRole == IRole.SerialKiller)
+                                        msg = GetLocaleString("ThiefStoleKiller", p.GetName());
+                                    break;
                             }
                         }
                     }
@@ -3980,7 +4001,7 @@ namespace Werewolf_Node
                     SendWithQueue(GetLocaleString("NoAttack"));
             }
 
-#endregion
+            #endregion
 
             if (CheckForGameEnd()) return;
 
@@ -4045,16 +4066,6 @@ namespace Werewolf_Node
                     if (alivePlayers.All(x => x.InLove))
                         return DoGameEnd(ITeam.Lovers);
                     //check for Tanner + Sorcerer + Thief
-                    /*
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Sorcerer))
-                    {
-                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Sorcerer);
-                        if (other != null && other.PlayerRole == IRole.Tanner)
-                        {
-                            return DoGameEnd(ITeam.NoOne);
-                        }
-                    }
-                    */
                     if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Tanner, IRole.Thief }.Contains(x)))
                         return DoGameEnd(ITeam.NoOne);
                     //check for Hunter + SK / Wolf
@@ -4107,10 +4118,12 @@ namespace Werewolf_Node
                                 return DoGameEnd(ITeam.Village);
                             default:
                                 //autoconvert the other
-                                if (other.PlayerRole != IRole.Doppelgänger)
+                                if (other.PlayerRole != IRole.Doppelgänger && other.PlayerRole != IRole.Thief)
                                 {
                                     other.PlayerRole = IRole.Cultist;
                                     other.Team = ITeam.Cult;
+                                    other.ChangedRolesCount++;
+                                    other.ConvertedToCult = true;
                                 }
                                 return DoGameEnd(ITeam.Cult);
                         }
@@ -4255,7 +4268,6 @@ namespace Werewolf_Node
                                         deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                     }
                                 }
-
                                 break;
 
                             case 1: // Tanner or sorcerer or thief
@@ -4408,9 +4420,9 @@ namespace Werewolf_Node
         }
 
 
-#endregion
+        #endregion
 
-#region Send Menus
+        #region Send Menus
 
         private void SendLynchMenu()
         {
@@ -4712,9 +4724,9 @@ namespace Werewolf_Node
             _silverSpread = false;
         }
 
-#endregion
+        #endregion
 
-#region Helpers
+        #region Helpers
         public void CleanupButtons()
         {
             foreach (var id in _joinButtons)
@@ -4834,8 +4846,8 @@ namespace Werewolf_Node
                         if (killed.PlayerRole == IRole.WiseElder)
                         {
                             SendWithQueue(GetLocaleString("HunterKilledWiseElder", hunter.GetName(), killed.GetName()));
-                            hunter.OriginalRole = IRole.Hunter;
                             hunter.PlayerRole = IRole.Villager;
+                            hunter.ChangedRolesCount++;
                             AddAchievement(hunter, AchievementsReworked.DemotedByTheDeath);
                         }
                         killed.IsDead = true;
@@ -4948,9 +4960,9 @@ namespace Werewolf_Node
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-#endregion
+        #endregion
 
-#region Database Helpers
+        #region Database Helpers
 
         // ReSharper disable UnusedParameter.Local
         private void DBAction(IPlayer initator, IPlayer receiver, string action)
@@ -5205,7 +5217,7 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.Survivalist;
                         if (!ach.HasFlag(Achievements.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
                             newAch = newAch | Achievements.MasonBrother;
-                        if (!ach.HasFlag(Achievements.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
+                        if (!ach.HasFlag(Achievements.ChangingSides) && player.ChangedRolesCount > 0 && player.Won)
                             newAch = newAch | Achievements.ChangingSides;
                         if (!ach.HasFlag(Achievements.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
                             newAch = newAch | Achievements.LoneWolf;
@@ -5213,7 +5225,7 @@ namespace Werewolf_Node
                             newAch = newAch | Achievements.Inconspicuous;
                         if (!ach.HasFlag(Achievements.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             newAch = newAch | Achievements.Promiscuous;
-                        if (!ach.HasFlag(Achievements.DoubleShifter) && player.ChangedRolesCount >= 2)
+                        if (!ach.HasFlag(Achievements.DoubleShifter) && player.ChangedRolesCount - (player.ConvertedToCult ? 1 : 0) >= 2)
                             newAch = newAch | Achievements.DoubleShifter;
                         if (!ach.HasFlag(Achievements.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch = newAch | Achievements.BrokenClock;
@@ -5299,7 +5311,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Survivalist);
                         if (!ach2.HasFlag(AchievementsReworked.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
                             newAch2.Set(AchievementsReworked.MasonBrother);
-                        if (!ach2.HasFlag(AchievementsReworked.ChangingSides) && player.OriginalRole != player.PlayerRole && player.Won)
+                        if (!ach2.HasFlag(AchievementsReworked.ChangingSides) && player.ChangedRolesCount > 0 && player.Won)
                             newAch2.Set(AchievementsReworked.ChangingSides);
                         if (!ach2.HasFlag(AchievementsReworked.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
                             newAch2.Set(AchievementsReworked.LoneWolf);
@@ -5307,7 +5319,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Inconspicuous);
                         if (!ach2.HasFlag(AchievementsReworked.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
                             newAch2.Set(AchievementsReworked.Promiscuous);
-                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && player.ChangedRolesCount >= 2)
+                        if (!ach2.HasFlag(AchievementsReworked.DoubleShifter) && player.ChangedRolesCount - (player.ConvertedToCult ? 1 : 0) >= 2)
                             newAch2.Set(AchievementsReworked.DoubleShifter);
                         if (!ach2.HasFlag(AchievementsReworked.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch2.Set(AchievementsReworked.BrokenClock);
@@ -5337,6 +5349,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.AmIYourSeer);
                         if (!ach2.HasFlag(AchievementsReworked.Trustworthy) && player.Trustworthy && !player.IsDead && player.Won)
                             newAch2.Set(AchievementsReworked.Trustworthy);
+                        if (!ach2.HasFlag(AchievementsReworked.CultLeader) && player.CultLeader && !player.IsDead && player.Won)
+                            newAch2.Set(AchievementsReworked.CultLeader);
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
@@ -5463,6 +5477,6 @@ namespace Werewolf_Node
             }
         }
 
-#endregion
+        #endregion
     }
 }

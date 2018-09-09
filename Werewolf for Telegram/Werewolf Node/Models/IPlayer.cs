@@ -85,8 +85,6 @@ namespace Werewolf_Node.Models
         public bool WasSavedLastNight { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
-        [JsonConverter(typeof(StringEnumConverter))]
-        public IRole OriginalRole { get; set; }
         public bool InLove { get; set; } = false;
         public int LoverId { get; set; } = 0;
         public int DBPlayerId { get; set; } = 0;
@@ -131,6 +129,8 @@ namespace Werewolf_Node.Models
         public bool StrongestAlpha { get; set; } = false;
         public bool FoolCorrectlySeenBH { get; set; } = false;
         public bool Trustworthy { get; set; } = false;
+        public bool CultLeader { get; set; } = false;
+        public bool ConvertedToCult { get; set; } = false;
 
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;
@@ -160,6 +160,6 @@ namespace Werewolf_Node.Models
 
     public enum KillMthd
     {
-        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide
+        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller
     }
 }
