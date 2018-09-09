@@ -49,6 +49,7 @@ namespace Werewolf_Control.Helpers
             var beta = updateType.StartsWith("beta");
             var control = !updateType.Contains("node");
             var node = !updateType.Contains("control");
+            var website = updateType.Contains("website");
 
             msg += "Build Definition(s) to Use:";
             var definitions = new List<string>();
@@ -58,6 +59,8 @@ namespace Werewolf_Control.Helpers
                 definitions.Add($"{env} Control");
             if (node)
                 definitions.Add($"{env} Node");
+            if (website)
+                definitions.Add("Website");
 
             msg = definitions.Aggregate(msg, (current, a) => current + "\n" + a);
             Thread.Sleep(500);

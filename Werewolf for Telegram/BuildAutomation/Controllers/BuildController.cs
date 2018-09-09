@@ -44,20 +44,28 @@ namespace BuildAutomation.Controllers
                         //what was released
                         var beta = obj.resource.environment.name.Contains("Beta");
                         var node = obj.resource.environment.name.Contains("Node");
-
+                        var website = obj.resource.environment.name.Contains("Website");
 
 
                         var msg = obj.detailedMessage.markdown;
                         InlineKeyboardMarkup menu = null;
                         if (obj.resource.environment.status == "succeeded")
                         {
-                            msg += "\nDo you want me to copy the files and update?";
-                            menu = new InlineKeyboardMarkup(new[]
+                            if (website)
                             {
+                                msg += "The website will now be deployed.";
+                                menu = null;
+                            }
+                            else
+                            {
+                                msg += "\nDo you want me to copy the files and update?";
+                                menu = new InlineKeyboardMarkup(new[]
+                                {
                                 new InlineKeyboardCallbackButton("Yes",
                                     $"update|{(beta ? "beta" : "release")}{(node ? "node" : "control")}"),
                                 new InlineKeyboardCallbackButton("No", "update|no")
-                            });
+                                });
+                            }
                         }
 
 
@@ -180,6 +188,13 @@ namespace BuildAutomation.Controllers
                     var r = bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Html,
                         disableWebPagePreview: true).Result;
 
+                    if (beta)
+                    {
+                        var m = "Changes on beta branch. Do you want to build the website too?";
+                        var websiteYes = new InlineKeyboardCallbackButton("Yes", "build|website");
+                        menu = new InlineKeyboardMarkup(new[] { websiteYes, none });
+                        bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
+                    }
 
                 }
 
