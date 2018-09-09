@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Version 1.6.1 2018-07-16 -->
+<!-- Version 1.6.2 2018-08-28 -->
 <!-- Translator 1 : Pierre de Brosses @CloneMMDDCVII ; Translator 2 : Kapryss [ENL BE] Brussels ♥️ @KapryssBoobzCulee ; Translator 3 : @ealhad & @acoussat -->
 <!-- RDV sur https://github.com/GreyWolfFR/FrenchNormal/ pour participer à la traduction -->
 <strings>
   <language name="french" base="Français" variant="Normal"/>
-  <string key="NotInGame">
-    <value>Vous n'êtes pas actuellement dans une partie…</value>
-  </string>
   <string key="PlayerStartedGame">
     <value>{0} a lancé une partie, utilisez le bouton pour rejoindre la partie, et probablement mourir…</value>
     <value>Une nouvelle partie a été lancée par {0} ! Utilisez le bouton pour mourir.</value>
@@ -17,10 +14,6 @@
   </string>
   <string key="NoJoinGameRunning">
     <value>Vous ne pouvez pas rejoindre le jeu, car la partie est déjà en cours.</value>
-  </string>
-  <string key="AlreadyJoined">
-    <value>Vous êtes déjà dans la partie…</value>
-    <value>Mais enfin, vous êtes déjà dans la partie !</value>
   </string>
   <string key="MinuteLeftToJoin">
     <value>1 minute restante pour rejoindre la partie.</value>
@@ -35,9 +28,6 @@
   <string key="StartingGameWait">
     <value>Démarrage du jeu, merci d'attendre que je mette à jour la banque de données et que j'attribue les rôles.</value>
     <value>C’est parti, attendez donc un instant que j'attribue les rôles…</value>
-  </string>
-  <string key="BannedForExploit">
-    <value>{0} a été banni pour tentative de triche (pas de noms commençant par /)</value>
   </string>
   <string key="ChangeNameToJoin">
     <value>{0}, merci de changer votre nom.</value>
@@ -64,17 +54,11 @@
   <string key="CountPlayersRemain">
     <value>Il reste {0} joueurs.</value>
   </string>
-  <string key="DidntAsk">
-    <value>Je ne t'ai encore rien demandé.</value>
-  </string>
   <string key="NotPlaying">
     <value>Vous ne semblez pas être dans une partie…</value>
   </string>
   <string key="NoPlayerName">
     <value>Je ne trouve pas de joueur avec ce nom !</value>
-  </string>
-  <string key="AnswerNonValid">
-    <value>Cette réponse n'est pas adaptée !</value>
   </string>
   <string key="WolfVotedKill">
     <value>{0} désire manger {1}.</value>
@@ -241,7 +225,7 @@
     <value >Les villageois se réveillent, pour entrevoir les restes de {0} étalés sur un jeu des … sept familles ?! Quel fou !</value>
   </string>
   <string key="DefaultEaten" >
-    <value>Alors que le village se reveille, on retrouve les restes de {0} dispersés dans l'enclos à cochons… tête manquante… MIAMIAMIAMIAMIAMIAMIAMIAM.\n{1}</value>
+    <value>Alors que le village se réveille, on retrouve les restes de {0} dispersés dans l'enclos à cochons… tête manquante… MIAMIAMIAMIAMIAMIAMIAMIAM.\n{1}</value>
   </string>
   <string key="HunterKilledCultist">
     <value>Une puanteur insoutenable émane de la maison de {0}…  Les villageois l'investissent et découvrent un corps en spasmes sur un autel d'onyx… L'inquisiteur a tué un cultiste.!</value>
@@ -488,53 +472,14 @@
   </string>
 
   <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
-    <value>{0} a été ajouté à la liste des administrateurs. Utilisez /config pour modifier les règlages.</value>
-  </string>
   <string key="AlreadyInGame">
     <value>Vous êtes déjà dans une partie ! ({0})</value>
-  </string>
-  <string key="MultipleGames">
-    <value>Vous avez lancé des parties jumelles. L'une a été avortée.</value>
-  </string>
-  <string key="GroupQueue">
-    <value>Votre groupe est actuellement dans la liste d'attente. Position : {0} / {1}</value>
-  </string>
-  <string key="MaintBreak">
-    <value>Désolé, je vais effectuer une courte maintenance. Vous ne pouvez pas démarrer une partie maintenant.\n{0} parties doivent encore se terminer…\nAllez sur @greywolfdev pour plus d'informations.</value>
-  </string>
-  <string key="MaxGames">
-    <value>Désolé, le nombre maximum de joueurs est atteint. ({0}). \nPosition dans la liste d'attente: {1} / {1}</value>
-  </string>
-  <string key="SkipQueue">
-    <value>{0} est un groupe prioritaire, et a évité l'attente !</value>
   </string>
   <string key="NoGame">
     <value>Aucune partie en cours.  Démarrez une nouvelle partie avec /startgame ou une partie chaotique avec /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
     <value>Seul un administrateur peut utiliser cette commande.</value>
-  </string>
-  <string key="ShuttingDown">
-    <value>Après cette partie, je démarrerai une maintenance.</value>
-  </string>
-  <string key="ShuttingDownUpdate">
-    <value>Après cette partie, je serai momentanément indisponible pour une mise à jour (automatique).</value>
-  </string>
-  <string key="NullIdAdmin">
-    <value>UserID est vide. Êtes-vous sûr d'avoir envoyé ce message en réponse au joueur visé ?</value>
-  </string>
-  <string key="AlreadyAdmin">
-    <value>{0} est déjà administrateur !</value>
-  </string>
-  <string key="NotAdmin">
-    <value>{0} n'est pas un administrateur !</value>
-  </string>
-  <string key="AdminRemoved">
-    <value>{0} a été retiré de la liste des administrateurs.</value>
-  </string>
-  <string key="LanguageSet">
-    <value>Nouvelle langue : {0}</value>
   </string>
   <string key="NoSeer">
         <value>Il n'y a pas de Voyante !</value>
@@ -550,7 +495,7 @@
     <value>Vous êtes un Doppelgänger. Un Doppelquoi ? Vous êtes métamorphe. Vous pouvoir prendre l'apparence de quelq'un d'autre. Pas trop compliqué pour vous ? Nous disions donc. Vous êtes un Doppelgänger. La légende raconte que vos ancêtres pouvaient se métamorphoser en n'importe quel être conscient. Vous avez hérité de certaines de leur capacités. Choisissez un joueur, et si celui ci meurt, vous prendrez son rôle.</value>
   </string>
   <string key="RoleInfoHunter">
-    <value>Vous êtes le fusilier. Vous ne dormez pas bien, et votre fusil est votre doudou. Si vous mourrez, vous pourrez choisir un autre joueur pour vous accompagenr dans ce grand voyage qu'est la mort. Cepandant, si vous êtes mangé, vous aurez une chance de tuer vos agresseurs, mais pas la possibilité de choisir.</value>
+    <value>Vous êtes le fusilier. Vous ne dormez pas bien, et votre fusil est votre doudou. Si vous mourrez, vous pourrez choisir un autre joueur pour vous accompagenr dans ce grand voyage qu'est la mort. Cependant, si vous êtes mangé, vous aurez une chance de tuer vos agresseurs, mais pas la possibilité de choisir.</value>
   </string>
   <string key="RoleInfoSerialKiller">
     <value>Vous êtes le Céréales Killer. Vous collectionnez les jouets promotionnels, les soldats en plomb, et les corps des villageois. Chaque nuit, choisissez quelqu'un à tuer, pour agrandir votre collection.</value>
@@ -580,7 +525,7 @@
     <value>Alors que {0} rend son dernier souffle, il ne peut choisir de cible… et accepte son destin.</value>
   </string>
   <string key="HunterKilledFinalShot">
-    <value>Touché par balle, {0} s'écroule lamentablement… mais non sans attraper son fusil et tirer en direction de {1} qui reçoit une balle entre les deux yeux. {2}</value>
+    <value>Agonisant, {0} s'écroule lamentablement… mais non sans attraper son fusil et tirer en direction de {1} qui reçoit une balle entre les deux yeux. {2}</value>
   </string>
   <string key="HunterShotWolfMulti">
     <value>Les loups ont attaqué le fusilier la nuit dernière, mais il a pu en abattre un pour l'accompagner dans la tombe ! {0}, un loup, est mort.</value>
@@ -604,7 +549,7 @@
     <value>Les cultistes envoient {0} convertir {1}, mais il ressort de la maison tête la première par la fenêtre, criblé de coups de couteau. Quel psychopathe !! {0} ne va plus pouvoir servir à grand chose…</value>
   </string>
   <string key="GuardKiller">
-    <value>En amateur de chocapics, vous vouliez protéger le Céréales Killer… celui-ci ne s'est pas laissé faire et vous a plumé comme un poulet. Vous êtes morts, lamentablement mort, et ça pique…</value>
+    <value>En amateur de chocapics, vous vouliez protéger le Céréales Killer… celui-ci ne s'est pas laissé faire et vous a plumé comme un poulet. Vous êtes mort, lamentablement mort, et ça pique…</value>
   </string>
   <string key="HarlotFuckKiller">
     <value>Vous vous faufilez dans la maison de {0} et commencez à vous amuser un peu. Tout est parfait, jusqu'à ce qu'il sorte un grand couteau. Un nouveau jeu sexuel ? Il semblerait plutôt qu'il veuille vous assassiner. Vous mourrez dans d'atroces souffrances… dommage, vos charmes seront regrettés dans le village.</value>
@@ -799,15 +744,6 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
   </string>
   <string key="SentPrivate">
     <value>Je vous ai envoyé un MP</value>
-  </string>
-  <string key="StartPM">
-    <value>Envoyez moi un message pour que je puisse vous écrire : @werewolfbot</value>
-  </string>
-  <string key="PMTrue">
-    <value>Merci de m'avoir démarré ! Je peux maintenant vous écrire en privé.</value>
-  </string>
-  <string key="MustReplySmite">
-    <value>Vous devez répondre au joueur que vous voulez frapper de votre justice.</value>
   </string>
   <string key="WhatToDo">
     <value>Que voulez-vous faire ?</value>
@@ -1101,23 +1037,6 @@ Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
     <value>{0} est mort, et vous vous transformez en Louveteau. Vos alliés, s'il en est, sont: {1}</value>
-  </string>
-
-  <!-- Keep this for now until bots update-->
-  <string key="VillageTeam">
-    <value>Equipe des villageois</value>
-  </string>
-  <string key="NeutralTeam">
-    <value>Equipe neutre</value>
-  </string>
-  <string key="SerialKillerTeam">
-    <value>Equipe Céréales Killer</value>
-  </string>
-  <string key="CultTeam">
-    <value>Equipe Cultiste</value>
-  </string>
-  <string key="TannerTeam">
-    <value>Equipe tanneur</value>
   </string>
 
   <string key="VillageTeamEnd">
@@ -1497,10 +1416,6 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
   <!-- {0} - The name of the thief's target -->
     <value>Vous tentez de voler le rôle de {0}… Mais les morts n’ont pas de rôle !</value>
   </string>
-  <string key="ThiefStoleYourRole" deprecated="true">
-  <!-- {0} - The new role -->
-    <value>On vous a volé votre rôle ! Vous êtes désormais {0}.</value>
-  </string>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
     <value>Vous avez réussi à voler le rôle de {0} !</value>
@@ -1544,7 +1459,7 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
   <!-- 0 - Number of votes -->
   <!-- 1 - Player got lynched -->
   <!-- 2 - A list of players who voted {1} -->
-    <value>{0} personnes ont voté pour {1} : {2}</value>
+    <value>Nombre de personnes ayant voté pour {1} : {0}.\n{2}</value>
   </string>
   <string key="SecretLynchResultFull">
   <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
@@ -1553,7 +1468,7 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
   <string key="SecretLynchResultNumber">
   <!-- 0 - Number of votes -->
   <!-- 1 - Player got lynched -->
-    <value>{0} personnes ont voté pour {1}.</value>
+    <value>Nombre de personnes ayant voté pour {1} : {0}.</value>
   </string>
   <string key="SecretLynchShowVotes">
     <value>Secret: Total</value>
@@ -1598,5 +1513,9 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
     <value>Toc, toc ! C’est le Céréales Killer qui vient vous Céréales Killer.</value>
     <value>Alors que vous vous changez pour la nuit, le Céréales Killer sort de sous votre lit, vous attrape par le cou, et vous ligote !\n\nHiiiiiiiiii !</value>
     <value>Le Céréales Killer était derrière la porte ! Vous vous réveillez sur votre lit, des cordes autour des bras et des jambes, et pouvez l’apercevoir à l’autre bout de la pièce, en tablier à fleurs…</value>
+  </string>
+
+  <string key="ThiefTeamEnd">
+    <value>Équipe du Voleur</value>
   </string>
 </strings>
