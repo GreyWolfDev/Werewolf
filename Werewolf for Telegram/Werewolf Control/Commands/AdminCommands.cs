@@ -393,7 +393,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "remach", DevOnly = true)]
         public static void RemAchievement(Update u, string[] args)
         {
-#if !BETA
+#if !RELEASE
             //get the user to add the achievement to
             //first, try by reply
             var id = 0;
