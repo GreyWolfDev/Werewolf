@@ -193,7 +193,7 @@ namespace BuildAutomation.Controllers
                         var m = "Changes on beta branch. Do you want to build the website too?";
                         var websiteYes = new InlineKeyboardCallbackButton("Yes", "build|website");
                         menu = new InlineKeyboardMarkup(new[] { websiteYes, none });
-                        bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
+                        bot.SendTextMessageAsync(GroupId, m, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
                     }
 
                 }

@@ -311,7 +311,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "addach", DevOnly = true)]
         public static void AddAchievement(Update u, string[] args)
         {
-#if !BETA
+#if !RELEASE
             //get the user to add the achievement to
             //first, try by reply
             var id = 0;
