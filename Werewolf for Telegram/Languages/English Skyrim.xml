@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?><!--
+<?xml version="1.0" encoding="utf-8" ?><!--
   DISCLAIMER: READ HERE FIRST
     MOD CREATED BY @igorfeiden
     COMPANIONS: @Istella - That entered the Dark Brotherhood and just vanished from the face of Earth.
@@ -12,6 +12,8 @@
 
      January 25 2018 - Finishing this FINALLY >:(
      May 28 2018 - Updating with new roles & stuff
+
+     SEPTEMBER 4 2018 - from Thief and on
 
 
 
@@ -2117,7 +2119,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
     <value>Azura – A Prince who maintains/draws power from the balance of night and day, light and dark. Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
   </string>
 
-<!-- NOT IMPLEMENTED YET -->
+<!-- NOT IMPLEMENTED YET --><!-- 
   <string key="RoleInfoPacifist">
     <value></value>
   </string>
@@ -2146,7 +2148,189 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
   </string>
   <string key="AboutThief">
     <value></value>
+  </string> -->
+
+
+  <string key="RoleInfoPacifist">
+    <value>You are the Kajiit ☮️. The kajiit are a very peaceful merchant race. You can choose to convince everyone in your village not to lynch anyone (because they will be distracted buying your stuff). This can only be done once.</value>
+  </string>
+  <string key="Pacifist">
+    <value>the Kajiit ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once. Why? Well, The kajiit are mostly merchants. You'll have a huge sale and ppl will forget to lynch.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>You are Esbern, the Wise Elder 📚. Esbern is an Elder Nord and one of the last remaining Blades, the powerful order of knights and warriors who served as bodyguards to the Septim Emperors, who were also known throughout Tamriel as the eyes and ears of the Emperors and Empresses. Since you're an expert, you can survive a Dragon attack once - the second time they can eat you up. If the Dragonborn or Forsworn kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Esbern, the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>You are Esbern, the Wise Elder 📚. Esbern is an Elder Nord and one of the last remaining Blades, the powerful order of knights and warriors who served as bodyguards to the Septim Emperors, who were also known throughout Tamriel as the eyes and ears of the Emperors and Empresses. Since you're an expert, you can survive a Dragon attack once - the second time they can eat you up. If the Dragonborn or Forsworn kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>You are Brynjolf the Thief 😈! Second in command of the Thieves' guild in Riften, you stole a magical artifact that can take a player's role on the first night and turn that player into a villager!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>You are Brynjolf the Thief 😈! econd in command of the Thieves' guild in Riften, you stole a magical artifact that can take a player's role. Since the [Full Thief] mode is turned on, you get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="Thief">
+    <value>Brynjolf the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>Hit this button when you want to have your big sale!</value>
+    <value>Hit the button below to earn all the village's gold!</value>
+    <value>You still have things in stock, want to have that sale?</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>The Kajiit ☮️ {0}, is making a heartfelt speech of... What is that? He is actually making a huge sale! Everybody runs out to the kajiit's store; and the lynching? Well, there's tomorrow for that.</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Because of the Pacifist's ☮️ heartfelt surprise sale, the lynch phase will be skipped today!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>You tried to kill {0}. Unfortunately you are confronted by none other than Esbern 📚! {0} kicks your asses. Even defeated and having to retreat, you spot a weak point in Esberns movements. Next time, you'll kill him for sure.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>The dragons tried to attack you, but you didn't become the first of the Blades 📚 by being easy to kill by an intruder! You successfully thwart the attack. Still, you need time to recover. If they come back anytime this game, you'll certainly die.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Forsworn 🎯 {0}, killed the Wise Elder 📚 {1}. With the blade dead, the remaining Blades casted a curst on {0}. He died a simple Villager 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Dragonborn 🔫 {0}, rebelled agains the blades! Since Esbern Wise Elder 📚 ({1}) is now dead, {0} sobbed mournfully, regretting their mistake. The Blades cast a curse on {0}, and the once Dragonborn is now just a simple Villager👱.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but {0} is already dead...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Your role got stolen! You are now {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>You successfully stole {0}'s role!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} is no longer your teammate and {1} has now become a Companion, just like you!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} is no longer your teammate and {1} has now become a vampire, just like you!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} is no longer your teammate and {1} has now become a dragon, just like you!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and head back to Riften to resupply. After that, {0} will wander around the villages of Skyrim, looking for more roles to steal.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Your theft target is now {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Whose role do you want to steal from?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votes went to {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>The lynch result for today:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votes went to {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+  <value>SALE!</value>
+  <value>ANNOUNCE!</value>
+  <value>CHEAP STUFF INCOMING!</value>
+  <value>Announce sale!</value>
+  <value>Open shop.</value>
+  <value>CALL THE HOOMANS</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <value>What is that? The kajiit started a huge sale on potions and other materials! You gotta check it out, so you will not lynch today.</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Your role got stolen! You are now the new thief 😈 and can steal a role the next night!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Your role got stolen! You are now a villager 👱, plowing your fields all day (and serving as dragon food).</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>In the middle of the night, you feel some strange cloth being shoved up your face! You pass out. Upon waking, you see some random guy with a rusty dagger on your neck. 
+      It really hurts.</value>
+  <value>The Dark Brotherhood ambushed you. You are tied up and brought to a ritual. This guy with a horned helm is there, a rusty dagger on his hand. He looks you in the eye while slitting your throat.</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+  <value>Thieves' guild Team</value>
   </string>
 </strings>
-
-
