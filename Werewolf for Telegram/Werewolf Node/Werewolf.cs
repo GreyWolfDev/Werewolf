@@ -1890,7 +1890,6 @@ namespace Werewolf_Node
                             teammates += $"{w.GetName()}" + ", ";
                         }
                         wc.PlayerRole = IRole.Wolf;
-                        wc.ChangedRolesCount++;
                         wc.Team = ITeam.Wolf;
                         wc.ChangedRolesCount++;
                         wc.HasNightAction = true;
