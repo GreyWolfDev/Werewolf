@@ -137,7 +137,7 @@ namespace Werewolf_Control
             Thread.Sleep(300);
             reply = "/aboutSandman - " + GetLocaleString("Sandman", lang) + "\n";
             reply += "/aboutOracle - " + GetLocaleString("Oracle", lang) + "\n";
-            reply += "/aboutWolfMan - " + GetLocaleString("Wolfman", lang) + "\n";
+            reply += "/aboutWolfMan - " + GetLocaleString("WolfMan", lang) + "\n";
             reply += "/aboutLycan - " + GetLocaleString("Lycan", lang) + "\n";
             reply += "/aboutPacifist - " + GetLocaleString("Pacifist", lang) + "\n";
             reply += "/aboutWiseElder - " + GetLocaleString("WiseElder", lang) + "\n";
