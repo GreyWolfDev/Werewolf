@@ -797,7 +797,7 @@ namespace Werewolf_Node
                 //1 - clientid
                 //2 - gameid
                 //3 - choiceid
-                var player = Players.FirstOrDefault(x => x.Id == query.From.Id);
+                var player = Players.FirstOrDefault(x => x.Id == query.From.Id && !x.IsDead);
 
                 if (player == null) return;
 
