@@ -100,7 +100,7 @@ namespace Werewolf_Control.Helpers
                 if (errors.Any(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error))
                     result = errors.Where(x => x.File == langfile.FileName && x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"_{fileError.Level} - {fileError.Key}_\n{fileError.Message}\n");
                 result += "\n";
-                
+
             }
             Bot.Api.SendTextMessageAsync(id, result, parseMode: ParseMode.Markdown);
             var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == (choice ?? x.Base)).OrderBy(x => x.LatestUpdate);
@@ -114,7 +114,7 @@ namespace Werewolf_Control.Helpers
         {
             var errors = new List<LanguageError>();
             var langfile = new LangFile(filePath);
-            
+
             //first, let's load up the English file, which is our master file
             var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
 
@@ -126,7 +126,7 @@ namespace Werewolf_Control.Helpers
 
             //get the errors
             GetFileErrors(langfile, errors, master);
-            
+
             //send the result
             var result = $"*{langfile.FileName}.xml* (Last updated: {langfile.LatestUpdate.ToString("MMM dd")})" + Environment.NewLine;
             if (errors.Any(x => x.Level == ErrorLevel.Ads))
@@ -201,7 +201,7 @@ namespace Werewolf_Control.Helpers
                     (x.FileName.ToLower() == newFile.FileName.ToLower() && x.Name != newFile.Name) //check for matching filename and mismatching name
                     || (x.Name == newFile.Name && (x.Base != newFile.Base || x.Variant != newFile.Variant)) //check for same name and mismatching base-variant
                     || (x.Base == newFile.Base && x.Variant == newFile.Variant && x.FileName != newFile.FileName) //check for same base-variant and mismatching filename
-                    //if we want to have the possibility to rename the file, change previous line with FileName -> Name
+                                                                                                                  //if we want to have the possibility to rename the file, change previous line with FileName -> Name
             );
             if (error != null)
             {
@@ -212,7 +212,7 @@ namespace Werewolf_Control.Helpers
 
             //get the errors in it
             GetFileErrors(newFile, newFileErrors, master);
-            
+
             //need to get the current file
             var curFile = langs.FirstOrDefault(x => x.Name == newFile.Name);
             var curFileErrors = new List<LanguageError>();
@@ -259,7 +259,7 @@ namespace Werewolf_Control.Helpers
             }
         }
 
-        
+
 
         public static void UseNewLanguageFile(string fileName, long id, int msgId)
         {
@@ -271,7 +271,7 @@ namespace Werewolf_Control.Helpers
             var langPath = Bot.LanguageDirectory;
             var newFilePath = Path.Combine(tempPath, fileName);
             var copyToPath = Path.Combine(langPath, fileName);
-            
+
             //get the new files language
             var doc = XDocument.Load(newFilePath);
 
@@ -302,22 +302,22 @@ namespace Werewolf_Control.Helpers
                     return;
                 }
             }
-            
+
 
             System.IO.File.Copy(newFilePath, copyToPath, true);
             msg += "File copied to bot\n";
-//#if RELEASE
-//            msg += $"File copied to bot 1\n";
-//#elif RELEASE2
-//            msg += $"File copied to bot 2\n";
-//#endif
+            //#if RELEASE
+            //            msg += $"File copied to bot 1\n";
+            //#elif RELEASE2
+            //            msg += $"File copied to bot 2\n";
+            //#endif
             //Bot.Api.EditMessageTextAsync(id, msgId, msg);
-//#if RELEASE
-//            copyToPath = copyToPath.Replace("Werewolf 3.0", "Werewolf 3.0 Clone");
-//            System.IO.File.Copy(newFilePath, copyToPath, true);
-//            msg += $"File copied to bot 2\n";
-//            Bot.Api.EditMessageTextAsync(id, msgId, msg);
-//#endif
+            //#if RELEASE
+            //            copyToPath = copyToPath.Replace("Werewolf 3.0", "Werewolf 3.0 Clone");
+            //            System.IO.File.Copy(newFilePath, copyToPath, true);
+            //            msg += $"File copied to bot 2\n";
+            //            Bot.Api.EditMessageTextAsync(id, msgId, msg);
+            //#endif
             var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
@@ -396,7 +396,7 @@ namespace Werewolf_Control.Helpers
                 foreach (var lang in langs)
                     zip.CreateEntryFromFile(lang, lang, CompressionLevel.Optimal); //add the langs to the zipfile
             }
-            
+
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
             Bot.Api.SendDocumentAsync(id, new FileToSend("languages.zip", fs));
@@ -404,12 +404,19 @@ namespace Werewolf_Control.Helpers
 
         public static void SendFile(long id, string choice)
         {
-            var langOptions = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x));
+            var langOptions = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
             Bot.Api.SendDocumentAsync(id, new FileToSend(option.FileName + ".xml", fs));
         }
-        
+
+        public static void SendFileByFilepath(long id, string filepath)
+        {
+            string filename = Path.GetFileNameWithoutExtension(filepath);
+            var fs = new FileStream(filepath, FileMode.Open);
+            Bot.Api.SendDocumentAsync(id, new FileToSend(filename + ".xml", fs));
+        }
+
         internal static void SendBase(string choice, long id)
         {
             try
@@ -429,7 +436,7 @@ namespace Werewolf_Control.Helpers
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
                 Bot.Api.SendDocumentAsync(id, new FileToSend($"{zipname}.zip", fs));
-                
+
             }
             catch (Exception e)
             {
@@ -448,7 +455,7 @@ namespace Werewolf_Control.Helpers
 
         private static void CheckLanguageNode(LangFile langfile, List<LanguageError> errors)
         {
-            
+
             if (String.IsNullOrWhiteSpace(langfile.Name))
                 errors.Add(new LanguageError(langfile.FileName, "*Language Node*", "Language name is missing", ErrorLevel.FatalError));
             if (String.IsNullOrWhiteSpace(langfile.Base))

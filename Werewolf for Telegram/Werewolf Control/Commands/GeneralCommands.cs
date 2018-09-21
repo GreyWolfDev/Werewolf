@@ -407,6 +407,35 @@ namespace Werewolf_Control
         [Command(Trigger = "getlang")]
         public static void GetLang(Update update, string[] args)
         {
+            if (!string.IsNullOrEmpty(args[1]))
+            {
+                string pattern = args[1];
+
+                if (pattern.ToLower().EndsWith(".xml")) pattern = pattern.Remove(pattern.Length - 4);
+                if (pattern.Contains("*") || pattern.Contains("\\") || pattern.Contains("."))
+                {
+                    Bot.Send("Invalid language file name. Make sure you enter the <b>filename</b> of the file you wish to download.", update.Message.Chat.Id);
+                    return;
+                }
+
+                var lang = Directory.GetFiles(Bot.LanguageDirectory, pattern + ".xml");
+
+                switch (lang.Length)
+                {
+                    case 0:
+                        Bot.Send("No matching language file found. Make sure you enter the <b>filename</b> of the file you wish to download.", update.Message.Chat.Id);
+                        return;
+
+                    case 1:
+                        LanguageHelper.SendFileByFilepath(update.Message.Chat.Id, lang[0]);
+                        return;
+
+                    default: //shouldn't happen, but you never know...
+                        Bot.Send("Multiple matching language files found. Make sure you enter the <b>filename</b> of the file you wish to download.", update.Message.Chat.Id);
+                        return;
+                }
+            }
+            
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
             List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
