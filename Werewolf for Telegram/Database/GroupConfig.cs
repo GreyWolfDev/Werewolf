@@ -24,7 +24,7 @@ namespace Database
         RandomMode = 16,
         [Editable(true), Question("extend"), DefaultValue(false)]
         AllowExtend = 32,
-        [Editable(true), Question("roles", SettingQuestion.YesNo), DefaultValue(true)]
+        [Editable(true), Question("roles", SettingQuestion.ShowHide), DefaultValue(true)]
         ShowRolesDeath = 64,
         [Editable(true), Question("flee"), DefaultValue(true)]
         AllowFlee = 128,
