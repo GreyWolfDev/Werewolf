@@ -135,7 +135,7 @@ namespace Werewolf_Node
                         dynamic m = JsonConvert.DeserializeObject(msg);
                         t = m.JType?.ToString();
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         //Bot.SendTextMessage(Settings.MainChatId, e.Message);
                         continue;
