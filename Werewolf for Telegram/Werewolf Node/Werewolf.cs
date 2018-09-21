@@ -1635,7 +1635,7 @@ namespace Werewolf_Node
                         msg = GetLocaleString("RoleInfoMason");
                         if (Players?.Count(x => x?.PlayerRole == IRole.Mason) > 1)
                         {
-                            msg += GetLocaleString("MasonTeam", Players.Where(x => x.PlayerRole == IRole.Mason).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                            msg += " " + GetLocaleString("MasonTeam", Players.Where(x => x.PlayerRole == IRole.Mason).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next)).Trim();
                         }
                         return msg;
                     case IRole.Doppelgänger:
