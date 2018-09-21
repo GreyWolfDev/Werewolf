@@ -2826,36 +2826,39 @@ namespace Werewolf_Node
                 p.Votes = 0;
                 p.DiedLastNight = false;
                 p.BeingVisitedSameNightCount = 0;
-                if (p.Bitten && !p.IsDead && !WolfRoles.Contains(p.PlayerRole))
-                {
-                    if (p.PlayerRole == IRole.Mason)
-                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
-                            Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
-
-                    else if (p.PlayerRole == IRole.Cultist)
-                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
-                            Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
-
-                    else if (p.PlayerRole == IRole.WolfMan)
-                        AddAchievement(p, AchievementsReworked.JustABeardyGuy);
-
+                if (p.Bitten)
+                { // p.Bitten may also still be true if the bitten player was wc or dg and turned ww by rm death the same day - in that case, do nothing
                     p.Bitten = false;
-                    p.PlayerRole = IRole.Wolf;
-                    p.Team = ITeam.Wolf;
-                    p.HasDayAction = false;
-                    p.HasNightAction = true;
-                    p.RoleModel = 0;
-                    p.ChangedRolesCount++;  //add count for double-shifter achv after converting to wolf
-                    var msg = GetLocaleString("BittenTurned") + "\n";
-                    var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p).Where(x => !x.IsDead).ToList();
-                    if (others.Any())
+                    if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                     {
-                        var andStr = $" {GetLocaleString("And").Trim()} ";
-                        msg += GetLocaleString("WolfTeam", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
-                    }
-                    Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
+                        if (p.PlayerRole == IRole.Mason)
+                            foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
+                                Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
 
-                    Send(msg, p.Id);
+                        else if (p.PlayerRole == IRole.Cultist)
+                            foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                                Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
+
+                        else if (p.PlayerRole == IRole.WolfMan)
+                            AddAchievement(p, AchievementsReworked.JustABeardyGuy);
+
+                        p.PlayerRole = IRole.Wolf;
+                        p.Team = ITeam.Wolf;
+                        p.HasDayAction = false;
+                        p.HasNightAction = true;
+                        p.RoleModel = 0;
+                        p.ChangedRolesCount++;  //add count for double-shifter achv after converting to wolf
+                        var msg = GetLocaleString("BittenTurned") + "\n";
+                        var others = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p).Where(x => !x.IsDead).ToList();
+                        if (others.Any())
+                        {
+                            var andStr = $" {GetLocaleString("And").Trim()} ";
+                            msg += GetLocaleString("WolfTeam", others.Select(x => x.GetName(true)).Aggregate((current, a) => current + andStr + a));
+                        }
+                        Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
+
+                        Send(msg, p.Id);
+                    }
                 }
             }
             CheckRoleChanges();     //so maybe if seer got converted to wolf, appseer will promote here
