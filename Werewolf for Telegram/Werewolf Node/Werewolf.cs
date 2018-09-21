@@ -2153,6 +2153,18 @@ namespace Werewolf_Node
                     }
                 }
             }
+
+            if (target.PlayerRole == IRole.SerialKiller)
+            {
+                thief.IsDead = true;
+                thief.TimeDied = DateTime.Now;
+                thief.DiedLastNight = true;
+                thief.DiedByVisitingKiller = true;
+                thief.KilledByRole = IRole.SerialKiller;
+                DBKill(target, thief, KillMthd.StealKiller);
+                Send(GetLocaleString("StealKiller"), thief.Id);
+                return;
+            }
             //swap roles
 
             // the thief first
@@ -3826,21 +3838,11 @@ namespace Werewolf_Node
                 {
                     if (ThiefFull || GameDay == 1)
                     {
-                        if (target.PlayerRole == IRole.SerialKiller)
-                        {
-                            thief.IsDead = true;
-                            thief.TimeDied = DateTime.Now;
-                            thief.DiedLastNight = true;
-                            thief.DiedByVisitingKiller = true;
-                            thief.KilledByRole = IRole.SerialKiller;
-                            DBKill(target, thief, KillMthd.StealKiller);
-                            Send(GetLocaleString("StealKiller"), thief.Id);
-                        }
-                        else if (!ThiefFull)
+                        if (target.PlayerRole == IRole.SerialKiller || !ThiefFull) // even for full thief mode, always "successfully" steal the sk - and die :P
                         {
                             StealRole(thief, target);
                         }
-                        else if (ThiefFull)
+                        else
                         {
                             if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist)
                                 StealRole(thief, target);
