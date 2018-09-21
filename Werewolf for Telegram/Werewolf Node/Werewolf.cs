@@ -3041,6 +3041,8 @@ namespace Werewolf_Node
                                             target.TimeDied = DateTime.Now;
                                             target.KilledByRole = IRole.Wolf;
                                             DBKill(voteWolves, target, KillMthd.Eat);
+                                            SendGif(GetLocaleString("WolvesEatYou"),
+                                                GetRandomImage(VillagerDieImages), target.Id);
                                             //SendWithQueue(DbGroup.ShowRoles != false
                                             //    ? GetLocaleString("HarlotEaten", target.GetName())
                                             //    : GetLocaleString("GenericDeathNoReveal", target.GetName()));
