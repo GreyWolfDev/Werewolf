@@ -141,9 +141,7 @@ namespace Werewolf_Control
             reply += "/aboutLycan - " + GetLocaleString("Lycan", lang) + "\n";
             reply += "/aboutPacifist - " + GetLocaleString("Pacifist", lang) + "\n";
             reply += "/aboutWiseElder - " + GetLocaleString("WiseElder", lang) + "\n";
-#if !RELEASE
             reply += "/aboutThief - " + GetLocaleString("Thief", lang) + "\n";
-#endif
             Send(reply, update.Message.From.Id);
         }
     }
