@@ -197,7 +197,7 @@ namespace Werewolf_Node
                     }
 
 
-                    LoadLanguage(DbGroup.Language);
+                    LoadLanguage(DbGroup.Language, DbGroup.HasFlag(GroupConfig.RandomLangVariant));
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://t.me/" + Program.Me.Username) });
                     //AddPlayer(u);
@@ -253,26 +253,42 @@ namespace Werewolf_Node
         /// Caches the language file in the instance
         /// </summary>
         /// <param name="language">The language filename to load</param>
-        public void LoadLanguage(string language)
+        public void LoadLanguage(string language, bool randomVariant = false)
         {
             try
             {
-                var files = Directory.GetFiles(Program.LanguageDirectory);
-                var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                var files = Directory.GetFiles(Program.LanguageDirectory, "*.xml");
+                if (randomVariant)
                 {
-                    var doc = XDocument.Load(file);
+                    var langfiles = files.Select(x => new LangFile(x));
+                    var langbase = langfiles.First(x => x.FileName == language).Base;
+                    var baseFiles = langfiles.Where(x => x.Base == langbase);
+                    var chosen = baseFiles.ElementAt(Program.R.Next(baseFiles.Count()));
+
                     Locale = new Locale
                     {
-                        Language = Path.GetFileNameWithoutExtension(file),
-                        File = doc
+                        Language = chosen.FileName,
+                        File = chosen.Doc
                     };
+                }
+                else
+                {
+                    var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                    {
+                        var doc = XDocument.Load(file);
+                        Locale = new Locale
+                        {
+                            Language = Path.GetFileNameWithoutExtension(file),
+                            File = doc
+                        };
+                    }
                 }
                 Language = Locale.Language;
             }
-            catch
+            catch (Exception e)
             {
-                if (language != "English")
-                    LoadLanguage("English");
+                if (language != "English" || randomVariant)
+                    LoadLanguage("English", false);
             }
         }
         /// <summary>
