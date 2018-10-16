@@ -164,6 +164,13 @@ namespace Database
         MySweetieSoStrong = 74,
         [Display(Name = "Cult Leader"), Description("Be a cultist from the beginning of the game, survive and win.")]
         CultLeader = 75,
+        [Display(Name = "Thanks, Junior!"), Description("After the wolf pack ate the drunk, you turn werewolf and successfully eat someone!")]
+        ThanksJunior = 76,
+        [Display(Name = "Death Village"), Description("Participate in a game that has no winner.")]
+        DeathVillage = 77,
+        [Display(Name = "I Lost my Wisdom"), Description("As the wise elder, change your role! Suddenly you're not that wise anymore...")]
+        ILostMyWisdom = 78,
+
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 

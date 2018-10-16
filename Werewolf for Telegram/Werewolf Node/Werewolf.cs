@@ -2165,6 +2165,9 @@ namespace Werewolf_Node
                 Send(GetLocaleString("StealKiller"), thief.Id);
                 return;
             }
+
+            else if (target.PlayerRole == IRole.WiseElder)
+                AddAchievement(target, AchievementsReworked.ILostMyWisdom);
             //swap roles
 
             // the thief first
@@ -2362,6 +2365,9 @@ namespace Werewolf_Node
                 if (target.PlayerRole == IRole.Harlot)
                     foreach (var c in voteCult)
                         AddAchievement(c, Achievements.DontStayHome);
+
+                else if (target.PlayerRole == IRole.WiseElder)
+                    AddAchievement(target, AchievementsReworked.ILostMyWisdom);
 
                 target.PlayerRole = IRole.Cultist;
                 target.ChangedRolesCount++;
@@ -2854,6 +2860,9 @@ namespace Werewolf_Node
                         else if (p.PlayerRole == IRole.WolfMan)
                             AddAchievement(p, AchievementsReworked.JustABeardyGuy);
 
+                        else if (p.PlayerRole == IRole.WiseElder)
+                            AddAchievement(p, AchievementsReworked.ILostMyWisdom);
+
                         p.PlayerRole = IRole.Wolf;
                         p.Team = ITeam.Wolf;
                         p.HasDayAction = false;
@@ -3268,6 +3277,12 @@ namespace Werewolf_Node
                     if (cub != null)
                         AddAchievement(cub, Achievements.IHelped);
                 }
+                if (wolves.Any(x => x.Drunk) && eatCount > 0)
+                {
+                    foreach (var w in voteWolves)
+                        AddAchievement(w, AchievementsReworked.ThanksJunior);
+                }
+
                 eatCount = 0;
             }
             WolfCubKilled = false;
@@ -5357,6 +5372,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Trustworthy);
                         if (!ach2.HasFlag(AchievementsReworked.CultLeader) && player.CultLeader && !player.IsDead && player.Won)
                             newAch2.Set(AchievementsReworked.CultLeader);
+                        if (!ach2.HasFlag(AchievementsReworked.DeathVillage) && Players.Count(x => x.Won) == 0)
+                            newAch2.Set(AchievementsReworked.DeathVillage);
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
