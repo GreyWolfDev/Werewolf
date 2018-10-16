@@ -585,9 +585,9 @@ namespace Werewolf_Control.Helpers
                         }
                     }
 
-                    if (isgif && value.Value.Length > 200)
+                    if (isgif && value.Value.Length > 1000)
                     {
-                        fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 200 characters", ErrorLevel.FatalError));
+                        fileErrors.Add(new LanguageError(file.FileName, key, "GIF string length cannot exceed 1000 characters", ErrorLevel.FatalError));
                     }
 
                     if (value.Value.ToLower().Contains("/join") && !fileErrors.Any(x => x.File == file.FileName && x.Key == key && x.Level == ErrorLevel.JoinLink))
