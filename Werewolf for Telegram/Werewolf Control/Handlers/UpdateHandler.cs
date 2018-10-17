@@ -1419,8 +1419,10 @@ namespace Werewolf_Control.Handler
                                 menu = GetConfigMenu(grp.GroupId);
 
                                 var langbase = args[2];
+                                var basefiles = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).Where(x => x.Base == langbase);
+                                var defaultfile = basefiles.FirstOrDefault(x => x.IsDefault || new[] { "normal", "standard", "default" }.Contains(x.Variant.ToLower())) ?? basefiles.First();
                                 grp.AddFlag(GroupConfig.RandomLangVariant);
-                                grp.Language = Path.GetFileNameWithoutExtension(Directory.GetFiles(Bot.LanguageDirectory).First(x => new LangFile(x).Base == langbase));
+                                grp.Language = defaultfile.FileName;
                                 DB.SaveChanges();
                                 Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("LangSet", language, langbase + ": Random"));
                                 Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
@@ -1828,8 +1830,8 @@ namespace Werewolf_Control.Handler
                 {
                     var buttons = new List<InlineKeyboardButton>();
                     buttons.AddRange(variants.Select(x => new InlineKeyboardCallbackButton(x.Variant, $"{command}|{args[1]}|{x.Base}|{x.Variant}|v")));
-                    if (addRandomButton)
-                        buttons.Insert(0, new InlineKeyboardCallbackButton("Random", $"{command}|{args[1]}|{args[2]}|Random|v"));
+                    //if (addRandomButton) // TO DO: Publish Random Language Variant Mode by uncommenting these 2 lines
+                    //    buttons.Insert(0, new InlineKeyboardCallbackButton("Random", $"{command}|{args[1]}|{args[2]}|Random|v"));
                     if (addAllbutton)
                         buttons.Insert(0, new InlineKeyboardCallbackButton("All", $"{command}|{args[1]}|{args[2]}|All|v"));
 

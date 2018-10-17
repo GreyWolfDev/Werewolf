@@ -263,6 +263,8 @@ namespace Werewolf_Node
                     var langfiles = files.Select(x => new LangFile(x));
                     var langbase = langfiles.First(x => x.FileName == language).Base;
                     var baseFiles = langfiles.Where(x => x.Base == langbase);
+                    if (baseFiles.Any(x => x.FileName.IndexOf("nsfw", StringComparison.InvariantCultureIgnoreCase) < 0))
+                        baseFiles = baseFiles.Where(x => x.FileName.IndexOf("nsfw", StringComparison.InvariantCultureIgnoreCase) < 0);
                     var chosen = baseFiles.ElementAt(Program.R.Next(baseFiles.Count()));
 
                     Locale = new Locale
@@ -270,6 +272,10 @@ namespace Werewolf_Node
                         Language = chosen.FileName,
                         File = chosen.Doc
                     };
+
+#if DEBUG
+                    SendWithQueue("Picked Language: " + chosen.FileName + ".xml");
+#endif
                 }
                 else
                 {
