@@ -291,7 +291,7 @@ namespace Werewolf_Node
                 }
                 Language = Locale.Language;
             }
-            catch (Exception e)
+            catch
             {
                 if (language != "English" || randomVariant)
                     LoadLanguage("English", false);
