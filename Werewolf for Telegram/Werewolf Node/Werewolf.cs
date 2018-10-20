@@ -1487,9 +1487,9 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Thief;
-                rolesToAssign[1] = IRole.SerialKiller;
-                rolesToAssign[2] = IRole.Villager;
+                rolesToAssign[0] = IRole.Drunk;
+                rolesToAssign[1] = IRole.Wolf;
+                rolesToAssign[2] = IRole.WildChild;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
@@ -2922,6 +2922,12 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
+            if (Players.Any(x => x.Drunk))
+            {
+                foreach (var w in Players.Where(x => WolfRoles.Contains(x.PlayerRole) && !x.Drunk))
+                    AddAchievement(w, AchievementsReworked.ThanksJunior);
+            }
+
             SendWithQueue(GetLocaleString("NightTime", nightTime.ToBold()));
             SendPlayerList();
             SendNightActions();
@@ -3298,11 +3304,6 @@ namespace Werewolf_Node
                     var cub = Players.GetPlayersForRoles(new[] { IRole.WolfCub }, false).OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.IsDead);
                     if (cub != null)
                         AddAchievement(cub, Achievements.IHelped);
-                }
-                if (wolves.Any(x => x.Drunk) && eatCount > 0)
-                {
-                    foreach (var w in voteWolves)
-                        AddAchievement(w, AchievementsReworked.ThanksJunior);
                 }
 
                 eatCount = 0;
