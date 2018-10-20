@@ -2684,7 +2684,7 @@ namespace Werewolf_Node
                 {
                     SendWithQueue(GetLocaleString("LynchTie"));
                     var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                    if (t != null)
+                    if (t != null && t.Votes > 0)
                         AddAchievement(t, Achievements.SoClose);
                 }
                 else
