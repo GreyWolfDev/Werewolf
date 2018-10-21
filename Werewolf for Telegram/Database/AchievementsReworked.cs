@@ -170,7 +170,16 @@ namespace Database
         DeathVillage = 77,
         [Display(Name = "I Lost my Wisdom"), Description("As the wise elder, change your role! Suddenly you're not that wise anymore...")]
         ILostMyWisdom = 78,
-
+        [Display(Name = "Affectionate"), Description("As the harlot, visit your lover!")]
+        Affectionate = 79,
+        [Display(Name = "Lucky Day"), Description("As the Alpha Wolf, infect the drunk and stay sober! Phew...")]
+        LuckyDay = 80,
+        [Display(Name = "Condition Red!"), Description("As the only alive wolf, eat the traitor. Oh no!")]
+        ConditionRed = 81,
+        [Display(Name = "Indestructible"), Description("Become Doppelgänger or Wild Child with your role model being yourself!")]
+        Indestructible = 82,
+        [Display(Name = "Psychopath Killer"), Description("As the serial killer, win a game with 35 players!")]
+        PsychopathKiller = 83
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 

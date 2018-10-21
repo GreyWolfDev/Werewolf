@@ -2029,6 +2029,8 @@ namespace Werewolf_Node
                             break;
                         case IRole.WildChild:
                             p.RoleModel = rm.RoleModel;
+                            if (p.RoleModel == p.Id)
+                                AddAchievement(p, AchievementsReworked.Indestructible);
                             p.Team = ITeam.Village;
                             p.HasNightAction = true;
                             p.HasDayAction = false;
@@ -2195,6 +2197,8 @@ namespace Werewolf_Node
             // the thief first
             thief.PlayerRole = target.PlayerRole;
             thief.RoleModel = target.RoleModel;
+            if (thief.RoleModel == thief.Id)
+                AddAchievement(thief, AchievementsReworked.Indestructible);
             thief.ChangedRolesCount++;
             thief.Bullet = target.Bullet;
             thief.HasUsedAbility = target.HasUsedAbility;
@@ -3114,6 +3118,7 @@ namespace Werewolf_Node
                                 case IRole.Drunk:
                                     if (bitten)
                                     {
+                                        AddAchievement(voteWolves.First(x => x.PlayerRole == IRole.AlphaWolf), AchievementsReworked.LuckyDay);
                                         BitePlayer(target, voteWolves, alpha);
                                     }
                                     else
@@ -3267,6 +3272,30 @@ namespace Werewolf_Node
                                                 Send(GetLocaleString("WolvesTriedToEatWiseElder", target.GetName()), wolf.Id);
                                             Send(GetLocaleString("WolvesAteWiseElderPM"), target.Id);
                                         }
+                                    }
+                                    break;
+                                case IRole.Traitor:
+                                    if (bitten)
+                                    {
+                                        BitePlayer(target, voteWolves, alpha);
+                                    }
+                                    else
+                                    {
+                                        if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 1) // just looking for voteWolves is not enough because of drunk wolves
+                                            AddAchievement(voteWolves.First(), AchievementsReworked.ConditionRed);
+
+                                        target.KilledByRole = IRole.Wolf;
+                                        target.IsDead = true;
+                                        target.TimeDied = DateTime.Now;
+                                        target.DiedLastNight = true;
+                                        if (target.PlayerRole == IRole.Sorcerer)
+                                        {
+                                            foreach (var w in voteWolves)
+                                                AddAchievement(w, Achievements.NoSorcery);
+                                        }
+                                        DBKill(voteWolves, target, KillMthd.Eat);
+                                        SendGif(GetLocaleString("WolvesEatYou"),
+                                            GetRandomImage(VillagerDieImages), target.Id);
                                     }
                                     break;
                                 default:
@@ -3615,6 +3644,8 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == harlot.Choice);
                 if (target != null)
                 {
+                    if (harlot.LoverId == target.Id)
+                        AddAchievement(harlot, AchievementsReworked.Affectionate);
 
                     DBAction(harlot, target, "Fuck");
                     if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
@@ -5397,6 +5428,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.CultLeader);
                         if (!ach2.HasFlag(AchievementsReworked.DeathVillage) && Players.Count(x => x.Won) == 0)
                             newAch2.Set(AchievementsReworked.DeathVillage);
+                        if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && player.PlayerRole == IRole.SerialKiller && player.Won)
+                            newAch2.Set(AchievementsReworked.PsychopathKiller);
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
