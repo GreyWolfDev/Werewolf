@@ -186,7 +186,7 @@
     <value >Você é a Aprendiz de Vidente, e joga pela Aldeia.  Caso a verdadeira Vidente morra, você tomará seu lugar como Vidente.</value>
   </string>
   <string key="RoleInfoCultist" >
-    <value >Você é um agente da Seita.  Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem da Seita, ela vence!</value>
+    <value >Você é um membro da Seita. Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem da Seita, ela vence!</value>
   </string>
   <string key="RoleInfoCultistHunter" >
     <value >A Seita está na sua Aldeia tentando converter todo mundo, e você, o Inquisidor, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir.  Se ele(a) for da Seita, ele(a) morre.  Caso a Seita tente te converter, o membro mais recente morre.</value>
@@ -1306,7 +1306,7 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
     <value>Permitir que os jogadores possuam pack de gifs NSFW?\nAtual: {0}</value>
   </string>
   <string key="AllowNSFWA">
-    <value>{0} gifs NSFW</value>
+    <value>{0} Gifs NSFW</value>
   </string>
 
   <string key="TannerEnd">
@@ -1329,7 +1329,7 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
   <string key="DGTransformToLycan">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} morreu, e você se transformou na Lupina. Sua alcateia (se houver): {1}</value>
+    <value>{0} morreu, e você se transformou na Lupina. Sua alcateia (se houver) é: {1}</value>
   </string>
   <string key="NegSeerSees">
     <!-- 0 - target's name -->
@@ -1350,19 +1350,19 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
     <value>Permitir a Ladra nas partidas?\nAtual: {0}</value>
   </string>
   <string key="AllowThiefA">
-    <value>Existência da Ladra definida como: {0}</value>
+    <value>Ladra como papel definida como: {0}</value>
   </string>
   <string key="ThiefFullQ">
     <value>A Ladra pode entrar em ação toda noite?\nAtual: {0}</value>
   </string>
   <string key="ThiefFullA">
-    <value>Ladra todas as noites: {0}</value>
+    <value>Ladra irá entrar em ação toda noite: {0}</value>
   </string>
   <string key="AllowThief">
     <value>Permitir Ladra</value>
   </string>
   <string key="ThiefFull">
-    <value>Ladra em todo o jogo:</value>
+    <value>Ladra Ativa</value>
   </string>
 
   <string key="RoleInfoWolfMan">
@@ -1407,32 +1407,185 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
 
 <!-- NOT IMPLEMENTED YET -->
   <string key="RoleInfoPacifist">
-    <value></value>
+    <value>Você é o Pacifista. Você pode escolher convencer todos em sua aldeia a não linchar ninguém. Isso só pode ser feito uma vez.</value>
   </string>
   <string key="Pacifist">
     <value>o Pacifista ☮️</value>
   </string>
   <string key="AboutPacifist">
-    <value></value>
+    <value>O Pacifista pode escolher convencer todos em sua aldeia a não linchar ninguém. Isso só pode ser feito uma vez.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value></value>
+    <value>Você é o Ancião. Você pode sobreviver ao ataque do lobisomem uma vez - a segunda vez ele pode te devorar. Se a Atiradora ou o Caçador te matarem com suas habilidades, eles irão perder seus poderes por tristeza e se tornarão um aldeão comum.</value>
   </string>
   <string key="WiseElder">
     <value> o Ancião 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>O Ancião pode sobreviver ao ataque do lobisomem uma vez - a segunda vez ele pode ser devorado. Se a Atiradora ou o Caçador o matarem com suas habilidades, eles irão perder seus poderes por tristeza e se tornarão um aldeão comum.</value>
   </string>
 
   <string key="RoleInfoThief">
-    <value></value>
+    <value>Você é a Ladra! Você pode roubar o papel de um jogador na primeira noite e transformar o jogador em um aldeão!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Você é a Ladra! Como o modo [Ladra Ativa] está ligado, você tem 50% de chance de roubar o papel de um jogador toda noite, e se tiver sucesso, ele se tornará a nova Ladra!</value>
   </string>
   <string key="Thief">
     <value>a Ladra 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <value>Por padrão, a Ladra pode roubar o papel de um jogador na primeira noite e transformar o jogador em um aldeão. \nSe o modo [Ladra Ativa] está ligado, ela tem 50% de chance de roubar o papel de um jogador toda noite, e se tiver sucesso, esse jogador se torna a nova Ladra.</value>
+   </string>
+  
+  <string key="AskPacifist">
+    <value>Aperte este botão quando você quiser fazer um discurso sincero e impedir a aldeia de linchar alguém na próxima rodada!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>O Pacifista, {0}, fez um discurso sincero sobre amizade na frente da aldeia. Inspirados por seu discurso, ninguém será linchado hoje!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Por causa do discurso sincero do Pacifista, a fase de linchamento será pulada hoje!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Você tentou invadir a casa de {0}, mas infelizmente ele é o Ancião! {0} impediu seu ataque, e por sorte, não lembra do invasor.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Os lobos tentaram de devorar, mas você não se tornou o Ancião por ser alvo fácil para um invasor! Você impediu o ataque, mas infelizmente, não lembra de nenhum invasor.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>O Caçador, {0} atirou no Ancião, {1}. {0} soluçou com profunda tristeza, se arrependendo de seu erro, e jurou abandonar suas habilidades de Caçador. Ele morreu como um Aldeão comum.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>A Atiradora, {0} atirou no Ancião, {1}. {0} soluçou com profunda tristeza, se arrependendo de seu erro, e decidiu abandonar sua arma, se tornando um Aldeão comum com um campo pra arar.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Você tentou roubar o papel de {0}, mas infelizmente você falhou...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Você tentou roubar o papel de {0}, mas {0} já morreu...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Seu papel foi roubado! Agora você é {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Você conseguiu roubar o papel de {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} não é mais seu companheiro e {1} se tornou um maçom, assim como você!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Seus companheiros (se houver) são: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} não é mais seu companheiro e {1} se tornou um maçom, assim como você!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} não é mais seu companheiro e {1} se tornou um lobo, assim como você!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Seus companheiros (se houver) são: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Conforme {0} anda pela vila, ele descobre que não há mais papéis divertidos para roubar. Ele rapidamente abandona essa vila pobre e procura outra aldeia para recomeçar sua carreira ilustre.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Seu alvo de roubo agora é {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Você quer roubar o papel de quem?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votos foram para {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>O resultado do linchamento para hoje:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votos foram para {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secreto: Contagem de Votos</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando o linchamento secreto estiver ativo, mostrar a contagem de votos ao fim do linchamento?\nAtual: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando o linchamento secreto estiver ativo, a contagem de votos ao fim do linchamento será: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secreto: Votantes</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando o linchamento secreto estiver ativo e a contagem de votos estiver sendo exibida, mostrar o nome do votante para cada jogador votado?\nAtual: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando o linchamento secreto estiver ativo e a contagem de votos estiver sendo exibida, o nome do votante para cada jogador votado será: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Estranho... No momento em que você começa a discurtir sobre quem converter esta noite, percebe que {0} não está aqui! Mas o que aconteceu com ele??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Paz!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>O Linchamento de hoje foi pulado por causa do discurso sincero do Pacifista!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Seu papel foi roubado! Você é a nova Ladra agora e poderá roubar um papel na próxima noite!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Seu papel foi roubado! Agora você é um Aldeão, arando campos todos os dias.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Toc toc, você foi visitado pelo Serial Killer!</value>
+	<value>O Serial Killer te atacou de surpresa, te amarrou e te esfaqueou no coração!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Time da Ladra</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Você tentou roubar um papel... mas seu alvo era o Serial Killer! Ele viu você rondando a casa, e menos de um minuto depois, te esfaqueou...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>A Ladra, {0}, tentou roubar o papel do Serial Killer! Isso não deu muito certo: {0} foi esfaqueado várias vezes e agora seu fígado está faltando...</value>
   </string>
 </strings>
