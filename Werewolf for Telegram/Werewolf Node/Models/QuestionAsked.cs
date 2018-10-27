@@ -14,6 +14,7 @@
         Visit,
         See,
         Shoot,
+        Detonate,
         Guard,
         Detect,
         Convert,

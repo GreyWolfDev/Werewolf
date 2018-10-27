@@ -1555,6 +1555,7 @@ namespace Werewolf_Node
                         break;
                     case IRole.Detective:
                     case IRole.Gunner:
+                    case IRole.Spumpkin:
                         p.Team = ITeam.Village;
                         p.HasDayAction = true;
                         p.HasNightAction = false;
@@ -2020,6 +2021,7 @@ namespace Werewolf_Node
                             break;
                         case IRole.Detective:
                         case IRole.Gunner:
+                        case IRole.Spumpkin:
                             p.Bullet = 2;
                             p.Team = ITeam.Village;
                             p.HasDayAction = true;
@@ -2215,11 +2217,8 @@ namespace Werewolf_Node
                     thief.HasDayAction = false;
                     break;
                 case IRole.Detective:
-                    thief.Team = ITeam.Village;
-                    thief.HasDayAction = true;
-                    thief.HasNightAction = false;
-                    break;
                 case IRole.Gunner:
+                case IRole.Spumpkin:
                     thief.Team = ITeam.Village;
                     thief.HasDayAction = true;
                     thief.HasNightAction = false;
@@ -2728,7 +2727,7 @@ namespace Werewolf_Node
             {
                 // ignored
             }
-            //check gunner
+
             if (Players == null) return;
 
             if (_sandmanSleep && _silverSpread)
@@ -2737,6 +2736,7 @@ namespace Werewolf_Node
                 AddAchievement(bs, AchievementsReworked.WastedSilver);
             }
 
+            //check gunner
             var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (gunner != null)
             {
@@ -2777,6 +2777,47 @@ namespace Werewolf_Node
                             break;
                     }
                     //check if dead was in love
+                    if (check.InLove)
+                        KillLover(check);
+                }
+            }
+
+            //check spumpkin
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            if (spumpkin != null)
+            {
+                var check = Players.FirstOrDefault(x => x.Id == spumpkin.Choice);
+                if (check != null)
+                {
+                    spumpkin.IsDead = true;
+                    spumpkin.TimeDied = DateTime.Now;
+                    check.IsDead = true;
+                    if (check.PlayerRole == IRole.WolfCub)
+                        WolfCubKilled = true;
+                    check.TimeDied = DateTime.Now;
+                    //update database
+                    DBKill(spumpkin, check, KillMthd.Detonate);
+                    DBAction(spumpkin, check, "Detonate");
+                    switch (check.PlayerRole)
+                    {
+                        case IRole.Hunter:
+                            SendWithQueue(GetLocaleString("Detonation", spumpkin.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            HunterFinalShot(check, KillMthd.Shoot);
+                            break;
+                        case IRole.WiseElder:
+                            SendWithQueue(GetLocaleString("Detonation", spumpkin.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            SendWithQueue(GetLocaleString("DetonatedWiseElder", spumpkin.GetName(), check.GetName()));
+                            spumpkin.PlayerRole = IRole.Villager;
+                            spumpkin.ChangedRolesCount++;
+                            spumpkin.HasDayAction = false;
+                            break;
+                        default:
+                            SendWithQueue(GetLocaleString("Detonation", spumpkin.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            break;
+                    }
+                    //check if dead was in love
+                    if (spumpkin.InLove)
+                        KillLover(spumpkin);
                     if (check.InLove)
                         KillLover(check);
                 }
@@ -3527,6 +3568,7 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Doppelgänger:
                                 case IRole.Thief:
+                                case IRole.Spumpkin:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
                                 case IRole.Oracle:
@@ -4586,6 +4628,20 @@ namespace Werewolf_Node
                         choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
                         SendMenu(choices, gunner, GetLocaleString("AskShoot", gunner.Bullet), QuestionType.Shoot);
                     }
+                }
+            }
+            
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead);
+
+            if (spumpkin != null)
+            {
+                spumpkin.Choice = 0;
+                var options = Players.Where(x => !x.IsDead && x.Id != spumpkin.Id).ToList();
+                if (options.Any())
+                {
+                    var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
+                    choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
+                    SendMenu(choices, spumpkin, GetLocaleString("AskDetonate"), QuestionType.Detonate);
                 }
             }
         }

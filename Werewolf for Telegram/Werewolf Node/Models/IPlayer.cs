@@ -147,7 +147,9 @@ namespace Werewolf_Node.Models
         //new roles
         Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince,
         //more new roles, from april fools.....
-        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief
+        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
+        //halloween role
+        Spumpkin
     }
 
     public enum ITeam
@@ -160,6 +162,6 @@ namespace Werewolf_Node.Models
 
     public enum KillMthd
     {
-        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller
+        None, Lynch, Eat, Shoot, Detonate, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller
     }
 }
