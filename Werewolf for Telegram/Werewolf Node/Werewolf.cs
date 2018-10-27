@@ -1487,9 +1487,9 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Drunk;
-                rolesToAssign[1] = IRole.Wolf;
-                rolesToAssign[2] = IRole.WildChild;
+                rolesToAssign[0] = IRole.WolfCub;
+                rolesToAssign[1] = IRole.Doppelgänger;
+                rolesToAssign[2] = IRole.Thief;
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
@@ -5428,7 +5428,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.CultLeader);
                         if (!ach2.HasFlag(AchievementsReworked.DeathVillage) && Players.Count(x => x.Won) == 0)
                             newAch2.Set(AchievementsReworked.DeathVillage);
-                        if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && player.PlayerRole == IRole.SerialKiller && player.Won)
+                        if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();

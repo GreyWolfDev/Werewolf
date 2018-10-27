@@ -174,7 +174,7 @@ namespace Database
         Affectionate = 79,
         [Display(Name = "Lucky Day"), Description("As the Alpha Wolf, infect the drunk and stay sober! Phew...")]
         LuckyDay = 80,
-        [Display(Name = "Condition Red!"), Description("As the only alive wolf, eat the traitor. Oh no!")]
+        [Display(Name = "Condition Red!"), Description("As the last wolf alive, eat the traitor. Oh no!")]
         ConditionRed = 81,
         [Display(Name = "Indestructible"), Description("Become Doppelgänger or Wild Child with your role model being yourself!")]
         Indestructible = 82,
