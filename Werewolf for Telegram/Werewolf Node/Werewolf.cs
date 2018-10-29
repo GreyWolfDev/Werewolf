@@ -1388,6 +1388,8 @@ namespace Werewolf_Node
                         if (AllowThief)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.Spumpkin:
+                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
@@ -1513,7 +1515,7 @@ namespace Werewolf_Node
                 // special roles for events
                 // halloween this time
                 var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
-                if (Language == "English" && (DateTime.UtcNow.AddHours(14).Date == new DateTime(2018, 10, 31) || DateTime.UtcNow.AddHours(-11) == new DateTime(2018, 10, 31)))
+                if ((DateTime.UtcNow.AddHours(14).Date == new DateTime(2018, 10, 31) || DateTime.UtcNow.AddHours(-11) == new DateTime(2018, 10, 31)))
                     if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
                         rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
 
