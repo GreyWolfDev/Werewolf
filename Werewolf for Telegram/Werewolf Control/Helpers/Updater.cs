@@ -55,12 +55,16 @@ namespace Werewolf_Control.Helpers
             var definitions = new List<string>();
             var env = beta ? "Beta" : "Release";
             //var what = control ? node ? "Both" : "Control" : "Node";
-            if (control)
-                definitions.Add($"{env} Control");
-            if (node)
-                definitions.Add($"{env} Node");
             if (website)
                 definitions.Add("Website");
+            else
+            {
+                if (control)
+                    definitions.Add($"{env} Control");
+                if (node)
+                    definitions.Add($"{env} Node");
+            }
+            
 
             msg = definitions.Aggregate(msg, (current, a) => current + "\n" + a);
             Thread.Sleep(500);

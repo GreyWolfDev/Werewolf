@@ -22,6 +22,7 @@ namespace Werewolf_Control.Helpers
         public string Name { get; set; }
         public string Base { get; set; }
         public string Variant { get; set; }
+        public bool IsDefault { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public XDocument Doc { get; set; }
@@ -33,6 +34,7 @@ namespace Werewolf_Control.Helpers
             Name = Doc.Descendants("language").First().Attribute("name")?.Value;
             Base = Doc.Descendants("language").First().Attribute("base")?.Value;
             Variant = Doc.Descendants("language").First().Attribute("variant")?.Value;
+            IsDefault = Doc.Descendants("language").First().Attribute("isDefault")?.Value == "true";
             FilePath = path;
             FileName = Path.GetFileNameWithoutExtension(path);
             LatestUpdate = File.GetLastWriteTimeUtc(path);

@@ -206,7 +206,7 @@ namespace Werewolf_Control
                 }
                 var menu = new Menu(2);
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Review", "reviewgifs|" + q.From.Id));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", "cancel|cancel|cancel"));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", $"dismiss|{q.From.Id}|{q.Message.Chat.Id}|{q.Message.MessageId}"));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
                 Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());

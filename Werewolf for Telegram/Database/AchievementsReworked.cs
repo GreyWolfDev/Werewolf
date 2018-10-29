@@ -164,6 +164,22 @@ namespace Database
         MySweetieSoStrong = 74,
         [Display(Name = "Cult Leader"), Description("Be a cultist from the beginning of the game, survive and win.")]
         CultLeader = 75,
+        [Display(Name = "Thanks, Junior!"), Description("After the wolf pack ate the Drunk, you turn into a wolf and can try to eat someone while the rest of the wolf pack is drunk!")]
+        ThanksJunior = 76,
+        [Display(Name = "Death Village"), Description("Participate in a game that has no winner.")]
+        DeathVillage = 77,
+        [Display(Name = "I Lost my Wisdom"), Description("As the wise elder, change your role! Suddenly you're not that wise anymore...")]
+        ILostMyWisdom = 78,
+        [Display(Name = "Affectionate"), Description("As the harlot, visit your lover!")]
+        Affectionate = 79,
+        [Display(Name = "Lucky Day"), Description("As the Alpha Wolf, infect the drunk and stay sober! Phew...")]
+        LuckyDay = 80,
+        [Display(Name = "Condition Red!"), Description("As the last wolf alive, eat the traitor. Oh no!")]
+        ConditionRed = 81,
+        [Display(Name = "Indestructible"), Description("Become Doppelgänger or Wild Child with your role model being yourself!")]
+        Indestructible = 82,
+        [Display(Name = "Psychopath Killer"), Description("As the serial killer, win a game with 35 players!")]
+        PsychopathKiller = 83
         [Display(Name = "Today's Special!"), Description("Be the role only available on special events!")]
         TodaysSpecial = 84,
     } // MAX VALUE: 9223372036854775807
