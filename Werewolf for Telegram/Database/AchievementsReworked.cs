@@ -164,6 +164,8 @@ namespace Database
         MySweetieSoStrong = 74,
         [Display(Name = "Cult Leader"), Description("Be a cultist from the beginning of the game, survive and win.")]
         CultLeader = 75,
+        [Display(Name = "Today's Special!"), Description("Be the role only available on special events!")]
+        TodaysSpecial = 84,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 
