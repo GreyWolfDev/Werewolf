@@ -2999,7 +2999,7 @@ namespace Werewolf_Node
             }
             
             var aliveWolves = Players.GetPlayersForRoles(WolfRoles, true);
-            if (aliveWolves.Where(x => x.Drunk))
+            if (aliveWolves.Any(x => x.Drunk))
             {
                 foreach (var w in aliveWolves.Where(x => !x.Drunk))
                     AddAchievement(w, AchievementsReworked.ThanksJunior);
