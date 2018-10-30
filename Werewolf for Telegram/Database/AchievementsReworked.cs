@@ -179,7 +179,7 @@ namespace Database
         [Display(Name = "Indestructible"), Description("Become Doppelgänger or Wild Child with your role model being yourself!")]
         Indestructible = 82,
         [Display(Name = "Psychopath Killer"), Description("As the serial killer, win a game with 35 players!")]
-        PsychopathKiller = 83
+        PsychopathKiller = 83,
         [Display(Name = "Today's Special!"), Description("Be the role only available on special events!")]
         TodaysSpecial = 84,
     } // MAX VALUE: 9223372036854775807
