@@ -1524,6 +1524,7 @@ namespace Werewolf_Node
                 for (var i = 0; i < Players.Count; i++)
                 {
                     Players[i].PlayerRole = rolesToAssign[i];
+                    if (rolesToAssign[i] == IRole.Spumpkin) AddAchievement(Players[i], AchievementsReworked.TodaysSpecial);
                 }
 
                 SetRoleAttributes();
@@ -2068,11 +2069,17 @@ namespace Werewolf_Node
                             break;
                         case IRole.Detective:
                         case IRole.Gunner:
+                            p.Bullet = 2;
+                            p.Team = ITeam.Village;
+                            p.HasDayAction = true;
+                            p.HasNightAction = false;
+                            break;
                         case IRole.Spumpkin:
                             p.Bullet = 2;
                             p.Team = ITeam.Village;
                             p.HasDayAction = true;
                             p.HasNightAction = false;
+                            AddAchievement(p, AchievementsReworked.TodaysSpecial);
                             break;
                         case IRole.AlphaWolf:
                         case IRole.WolfCub:
@@ -2270,10 +2277,15 @@ namespace Werewolf_Node
                     break;
                 case IRole.Detective:
                 case IRole.Gunner:
+                    thief.Team = ITeam.Village;
+                    thief.HasDayAction = true;
+                    thief.HasNightAction = false;
+                    break;
                 case IRole.Spumpkin:
                     thief.Team = ITeam.Village;
                     thief.HasDayAction = true;
                     thief.HasNightAction = false;
+                    AddAchievement(thief, AchievementsReworked.TodaysSpecial);
                     break;
                 case IRole.Sorcerer:
                 case IRole.AlphaWolf:
@@ -5518,10 +5530,6 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.DeathVillage);
                         if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
-
-                        // special event
-                        if (!ach2.HasFlag(AchievementsReworked.TodaysSpecial) && player.PlayerRole == IRole.Spumpkin)
-                            newAch2.Set(AchievementsReworked.TodaysSpecial);
                       
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
