@@ -823,7 +823,7 @@ namespace Werewolf_Control.Handler
 
                     if (args[0] == "cancel")
                     {
-                        Bot.Api.DeleteMessageAsync(query.From.Id, query.Message.MessageId);
+                        Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
                         return;
                     }
 
@@ -840,7 +840,7 @@ namespace Werewolf_Control.Handler
                         node?.SendReply(query, args[2]);
                         return;
                     }
-                    if (new[] { "reviewgifs", "approvesfw", "approvensfw" }.Contains(args[0]))
+                    if (new[] { "reviewgifs", "approvesfw", "approvensfw", "dismiss" }.Contains(args[0]))
                     {
                         if (UpdateHelper.IsGlobalAdmin(query.From.Id))
                         {
@@ -959,6 +959,17 @@ namespace Werewolf_Control.Handler
                                     DB.SaveChanges();
                                     Bot.Send(msg, query.Message.Chat.Id);
                                     Bot.Send(msg, pid);
+                                    Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                                    break;
+
+                                case "dismiss":
+                                    json = tplayer?.CustomGifSet;
+                                    if (!string.IsNullOrEmpty(json))
+                                    {
+                                        pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                                        pack.Submitted = false;
+                                        DB.SaveChanges();
+                                    }
                                     Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
                                     break;
                             }
@@ -1402,13 +1413,29 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, GetLocaleString("WhatLang", language, curLang.Base), replyMarkup: menu);
                             break;
                         case "setlang":
+                            if (args[3] == "Random" && args[4] == "v")
+                            {
+                                if (grp == null) return;
+                                menu = GetConfigMenu(grp.GroupId);
+
+                                var langbase = args[2];
+                                var basefiles = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).Where(x => x.Base == langbase);
+                                var defaultfile = basefiles.FirstOrDefault(x => x.IsDefault || new[] { "normal", "standard", "default" }.Contains(x.Variant.ToLower())) ?? basefiles.First();
+                                grp.AddFlag(GroupConfig.RandomLangVariant);
+                                grp.Language = defaultfile.FileName;
+                                DB.SaveChanges();
+                                Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("LangSet", language, langbase + ": Random"));
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
+                                return;
+                            }
+
                             menu = new InlineKeyboardMarkup();
-                            var slang = SelectLanguage(command, args, ref menu, false);
+                            var slang = SelectLanguage(command, args, ref menu, false, grp != null);
                             if (slang == null)
                             {
                                 buttons.Clear();
                                 var curLangfilePath = Directory.GetFiles(Bot.LanguageDirectory).First(x => Path.GetFileNameWithoutExtension(x) == (grp?.Language ?? p.Language));
-                                var curVariant = new LangFile(curLangfilePath).Variant;
+                                var curVariant = grp != null && grp.HasFlag(GroupConfig.RandomLangVariant) ? "Random" : new LangFile(curLangfilePath).Variant;
                                 Bot.ReplyToCallback(query, GetLocaleString("WhatVariant", language, curVariant),
                                     replyMarkup: menu);
                                 return;
@@ -1425,6 +1452,7 @@ namespace Werewolf_Control.Handler
                                 if (grp != null)
                                 {
                                     grp.Language = slang.FileName;
+                                    grp.RemoveFlag(GroupConfig.RandomLangVariant);
                                     //check for any games running
                                     var ig = GetGroupNodeAndGame(groupid);
 
@@ -1791,7 +1819,7 @@ namespace Werewolf_Control.Handler
         }
 
 
-        internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu, bool addAllbutton = true)
+        internal static LangFile SelectLanguage(string command, string[] args, ref InlineKeyboardMarkup menu, bool addAllbutton = true, bool addRandomButton = false)
         {
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
             var isBase = args[4] == "base";
@@ -1802,6 +1830,8 @@ namespace Werewolf_Control.Handler
                 {
                     var buttons = new List<InlineKeyboardButton>();
                     buttons.AddRange(variants.Select(x => new InlineKeyboardCallbackButton(x.Variant, $"{command}|{args[1]}|{x.Base}|{x.Variant}|v")));
+                    //if (addRandomButton) // TO DO: Publish Random Language Variant Mode by uncommenting these 2 lines
+                    //    buttons.Insert(0, new InlineKeyboardCallbackButton("Random", $"{command}|{args[1]}|{args[2]}|Random|v"));
                     if (addAllbutton)
                         buttons.Insert(0, new InlineKeyboardCallbackButton("All", $"{command}|{args[1]}|{args[2]}|All|v"));
 

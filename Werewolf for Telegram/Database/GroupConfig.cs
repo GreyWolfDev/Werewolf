@@ -40,6 +40,8 @@ namespace Database
         SecretLynchShowVotes = 4096,
         [Editable(true), Question("secretlynchshowvoters", SettingQuestion.ShowHide), DefaultValue(false)]
         SecretLynchShowVoters = 8192,
+        [Editable(false), Question("randomlangvariant"), DefaultValue(false)]
+        RandomLangVariant = 16384,
         
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings

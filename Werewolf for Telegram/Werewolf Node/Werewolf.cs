@@ -197,7 +197,7 @@ namespace Werewolf_Node
                     }
 
 
-                    LoadLanguage(DbGroup.Language);
+                    LoadLanguage(DbGroup.Language, DbGroup.HasFlag(GroupConfig.RandomLangVariant));
 
                     _requestPMButton = new InlineKeyboardMarkup(new[] { new InlineKeyboardUrlButton("Start Me", "http://t.me/" + Program.Me.Username) });
                     //AddPlayer(u);
@@ -253,28 +253,59 @@ namespace Werewolf_Node
         /// Caches the language file in the instance
         /// </summary>
         /// <param name="language">The language filename to load</param>
-        public void LoadLanguage(string language)
+        public void LoadLanguage(string language, bool randomVariant = false)
         {
             try
             {
-                var files = Directory.GetFiles(Program.LanguageDirectory);
-                var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                var files = Directory.GetFiles(Program.LanguageDirectory, "*.xml");
+                if (randomVariant)
                 {
-                    var doc = XDocument.Load(file);
+                    var langfiles = files.Select(x => new LangFile(x));
+                    var langbase = langfiles.First(x => x.FileName == language).Base;
+                    var baseFiles = langfiles.Where(x => x.Base == langbase);
+                    if (baseFiles.Any(x => x.FileName.IndexOf("nsfw", StringComparison.InvariantCultureIgnoreCase) < 0))
+                        baseFiles = baseFiles.Where(x => x.FileName.IndexOf("nsfw", StringComparison.InvariantCultureIgnoreCase) < 0);
+                    var chosen = baseFiles.ElementAt(Program.R.Next(baseFiles.Count()));
+
                     Locale = new Locale
                     {
-                        Language = Path.GetFileNameWithoutExtension(file),
-                        File = doc
+                        Language = chosen.FileName,
+                        File = chosen.Doc
                     };
+
+#if DEBUG
+                    SendWithQueue("Picked Language: " + chosen.FileName + ".xml");
+#endif
+                }
+                else
+                {
+                    var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                    {
+                        var doc = XDocument.Load(file);
+                        Locale = new Locale
+                        {
+                            Language = Path.GetFileNameWithoutExtension(file),
+                            File = doc
+                        };
+                    }
                 }
                 Language = Locale.Language;
             }
             catch
             {
-                if (language != "English")
-                    LoadLanguage("English");
+                if (language != "English" || randomVariant)
+                    LoadLanguage("English", false);
             }
         }
+
+        private string GetSpecialString(string key, params object[] args)
+        {
+            if (SpecialStrings.Strings.TryGetValue(key, out string res))
+                return res;
+            else
+                return null;
+        }
+
         /// <summary>
         /// Gets the matching language string and formats it with parameters
         /// </summary>
@@ -285,6 +316,10 @@ namespace Werewolf_Node
         {
             try
             {
+                var special = GetSpecialString(key);
+                if (special != null)
+                    return String.Format(special.FormatHTML(), args).Replace("\\n", Environment.NewLine);
+
                 var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
                               Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
                 if (strings != null)
@@ -1353,6 +1388,8 @@ namespace Werewolf_Node
                         if (AllowThief)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.Spumpkin:
+                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
@@ -1465,14 +1502,22 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Thief;
-                rolesToAssign[1] = IRole.SerialKiller;
-                rolesToAssign[2] = IRole.Villager;
+                rolesToAssign[0] = IRole.Wolf;
+                rolesToAssign[1] = IRole.Villager;
+                rolesToAssign[2] = IRole.Spumpkin;
+
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
                 if (rolesToAssign.Count >= 5)
                     rolesToAssign[4] = IRole.Villager;
 #endif
+
+                // special roles for events
+                // halloween this time
+                var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
+                if ((DateTime.UtcNow.AddHours(14).Date == new DateTime(2018, 10, 31) || DateTime.UtcNow.AddHours(-11) == new DateTime(2018, 10, 31)))
+                    if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
+                        rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
 
 
                 //assign the roles 
@@ -1555,6 +1600,7 @@ namespace Werewolf_Node
                         break;
                     case IRole.Detective:
                     case IRole.Gunner:
+                    case IRole.Spumpkin:
                         p.Team = ITeam.Village;
                         p.HasDayAction = true;
                         p.HasNightAction = false;
@@ -2007,6 +2053,8 @@ namespace Werewolf_Node
                             break;
                         case IRole.WildChild:
                             p.RoleModel = rm.RoleModel;
+                            if (p.RoleModel == p.Id)
+                                AddAchievement(p, AchievementsReworked.Indestructible);
                             p.Team = ITeam.Village;
                             p.HasNightAction = true;
                             p.HasDayAction = false;
@@ -2020,6 +2068,7 @@ namespace Werewolf_Node
                             break;
                         case IRole.Detective:
                         case IRole.Gunner:
+                        case IRole.Spumpkin:
                             p.Bullet = 2;
                             p.Team = ITeam.Village;
                             p.HasDayAction = true;
@@ -2165,11 +2214,16 @@ namespace Werewolf_Node
                 Send(GetLocaleString("StealKiller"), thief.Id);
                 return;
             }
+
+            else if (target.PlayerRole == IRole.WiseElder)
+                AddAchievement(target, AchievementsReworked.ILostMyWisdom);
             //swap roles
 
             // the thief first
             thief.PlayerRole = target.PlayerRole;
             thief.RoleModel = target.RoleModel;
+            if (thief.RoleModel == thief.Id)
+                AddAchievement(thief, AchievementsReworked.Indestructible);
             thief.ChangedRolesCount++;
             thief.Bullet = target.Bullet;
             thief.HasUsedAbility = target.HasUsedAbility;
@@ -2215,11 +2269,8 @@ namespace Werewolf_Node
                     thief.HasDayAction = false;
                     break;
                 case IRole.Detective:
-                    thief.Team = ITeam.Village;
-                    thief.HasDayAction = true;
-                    thief.HasNightAction = false;
-                    break;
                 case IRole.Gunner:
+                case IRole.Spumpkin:
                     thief.Team = ITeam.Village;
                     thief.HasDayAction = true;
                     thief.HasNightAction = false;
@@ -2362,6 +2413,9 @@ namespace Werewolf_Node
                 if (target.PlayerRole == IRole.Harlot)
                     foreach (var c in voteCult)
                         AddAchievement(c, Achievements.DontStayHome);
+
+                else if (target.PlayerRole == IRole.WiseElder)
+                    AddAchievement(target, AchievementsReworked.ILostMyWisdom);
 
                 target.PlayerRole = IRole.Cultist;
                 target.ChangedRolesCount++;
@@ -2656,7 +2710,7 @@ namespace Werewolf_Node
                 {
                     SendWithQueue(GetLocaleString("LynchTie"));
                     var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                    if (t != null)
+                    if (t != null && t.Votes > 0)
                         AddAchievement(t, Achievements.SoClose);
                 }
                 else
@@ -2728,7 +2782,7 @@ namespace Werewolf_Node
             {
                 // ignored
             }
-            //check gunner
+
             if (Players == null) return;
 
             if (_sandmanSleep && _silverSpread)
@@ -2737,6 +2791,7 @@ namespace Werewolf_Node
                 AddAchievement(bs, AchievementsReworked.WastedSilver);
             }
 
+            //check gunner
             var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (gunner != null)
             {
@@ -2779,6 +2834,54 @@ namespace Werewolf_Node
                     //check if dead was in love
                     if (check.InLove)
                         KillLover(check);
+                }
+            }
+
+            //check spumpkin
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            if (spumpkin != null)
+            {
+                var check = Players.FirstOrDefault(x => x.Id == spumpkin.Choice);
+                if (check != null)
+                {
+                    if (Program.R.Next(100) < 40)
+                    {
+                        spumpkin.IsDead = true;
+                        spumpkin.TimeDied = DateTime.Now;
+                        check.IsDead = true;
+                        if (check.PlayerRole == IRole.WolfCub)
+                            WolfCubKilled = true;
+                        check.TimeDied = DateTime.Now;
+                        //update database
+                        DBKill(spumpkin, check, KillMthd.Shoot);
+                        DBAction(spumpkin, check, "Shoot");
+                        switch (check.PlayerRole)
+                        {
+                            case IRole.Hunter:
+                                SendWithQueue(GetLocaleString("Detonation", spumpkin.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                                HunterFinalShot(check, KillMthd.Shoot);
+                                break;
+                            case IRole.WiseElder:
+                                SendWithQueue(GetLocaleString("Detonation", spumpkin.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                                SendWithQueue(GetLocaleString("DetonatedWiseElder", spumpkin.GetName(), check.GetName()));
+                                spumpkin.PlayerRole = IRole.Villager;
+                                spumpkin.ChangedRolesCount++;
+                                spumpkin.HasDayAction = false;
+                                break;
+                            default:
+                                SendWithQueue(GetLocaleString("Detonation", spumpkin.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                                break;
+                        }
+                        //check if dead was in love
+                        if (spumpkin.InLove)
+                            KillLover(spumpkin);
+                        if (check.InLove)
+                            KillLover(check);
+                    }
+                    else
+                    {
+                        Send(GetLocaleString("SpumpkinFailDetonate", check.GetName()), spumpkin.Id);
+                    }
                 }
             }
 
@@ -2854,6 +2957,9 @@ namespace Werewolf_Node
                         else if (p.PlayerRole == IRole.WolfMan)
                             AddAchievement(p, AchievementsReworked.JustABeardyGuy);
 
+                        else if (p.PlayerRole == IRole.WiseElder)
+                            AddAchievement(p, AchievementsReworked.ILostMyWisdom);
+
                         p.PlayerRole = IRole.Wolf;
                         p.Team = ITeam.Wolf;
                         p.HasDayAction = false;
@@ -2891,6 +2997,12 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
+            if (Players.Any(x => x.Drunk))
+            {
+                foreach (var w in Players.Where(x => WolfRoles.Contains(x.PlayerRole) && !x.Drunk))
+                    AddAchievement(w, AchievementsReworked.ThanksJunior);
+            }
+
             SendWithQueue(GetLocaleString("NightTime", nightTime.ToBold()));
             SendPlayerList();
             SendNightActions();
@@ -3077,6 +3189,7 @@ namespace Werewolf_Node
                                 case IRole.Drunk:
                                     if (bitten)
                                     {
+                                        AddAchievement(voteWolves.First(x => x.PlayerRole == IRole.AlphaWolf), AchievementsReworked.LuckyDay);
                                         BitePlayer(target, voteWolves, alpha);
                                     }
                                     else
@@ -3232,6 +3345,30 @@ namespace Werewolf_Node
                                         }
                                     }
                                     break;
+                                case IRole.Traitor:
+                                    if (bitten)
+                                    {
+                                        BitePlayer(target, voteWolves, alpha);
+                                    }
+                                    else
+                                    {
+                                        if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 1) // just looking for voteWolves is not enough because of drunk wolves
+                                            AddAchievement(voteWolves.First(), AchievementsReworked.ConditionRed);
+
+                                        target.KilledByRole = IRole.Wolf;
+                                        target.IsDead = true;
+                                        target.TimeDied = DateTime.Now;
+                                        target.DiedLastNight = true;
+                                        if (target.PlayerRole == IRole.Sorcerer)
+                                        {
+                                            foreach (var w in voteWolves)
+                                                AddAchievement(w, Achievements.NoSorcery);
+                                        }
+                                        DBKill(voteWolves, target, KillMthd.Eat);
+                                        SendGif(GetLocaleString("WolvesEatYou"),
+                                            GetRandomImage(VillagerDieImages), target.Id);
+                                    }
+                                    break;
                                 default:
                                     if (bitten)
                                     {
@@ -3268,6 +3405,7 @@ namespace Werewolf_Node
                     if (cub != null)
                         AddAchievement(cub, Achievements.IHelped);
                 }
+
                 eatCount = 0;
             }
             WolfCubKilled = false;
@@ -3527,6 +3665,7 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Doppelgänger:
                                 case IRole.Thief:
+                                case IRole.Spumpkin:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
                                 case IRole.Oracle:
@@ -3577,6 +3716,8 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == harlot.Choice);
                 if (target != null)
                 {
+                    if (harlot.LoverId == target.Id)
+                        AddAchievement(harlot, AchievementsReworked.Affectionate);
 
                     DBAction(harlot, target, "Fuck");
                     if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
@@ -4588,6 +4729,20 @@ namespace Werewolf_Node
                     }
                 }
             }
+            
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead);
+
+            if (spumpkin != null)
+            {
+                spumpkin.Choice = 0;
+                var options = Players.Where(x => !x.IsDead && x.Id != spumpkin.Id).ToList();
+                if (options.Any())
+                {
+                    var choices = options.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
+                    choices.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|-1") });
+                    SendMenu(choices, spumpkin, GetLocaleString("AskDetonate"), QuestionType.Shoot);
+                }
+            }
         }
 
         private void SendNightActions()
@@ -5357,6 +5512,15 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Trustworthy);
                         if (!ach2.HasFlag(AchievementsReworked.CultLeader) && player.CultLeader && !player.IsDead && player.Won)
                             newAch2.Set(AchievementsReworked.CultLeader);
+                        if (!ach2.HasFlag(AchievementsReworked.DeathVillage) && Players.Count(x => x.Won) == 0)
+                            newAch2.Set(AchievementsReworked.DeathVillage);
+                        if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
+                            newAch2.Set(AchievementsReworked.PsychopathKiller);
+
+                        // special event
+                        if (!ach2.HasFlag(AchievementsReworked.TodaysSpecial) && player.PlayerRole == IRole.Spumpkin)
+                            newAch2.Set(AchievementsReworked.TodaysSpecial);
+                      
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
