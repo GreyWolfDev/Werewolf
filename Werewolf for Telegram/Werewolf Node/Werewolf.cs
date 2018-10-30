@@ -2997,9 +2997,11 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
-            if (Players.Any(x => x.Drunk))
+            
+            var aliveWolves = Players.GetPlayersForRoles(WolfRoles, true);
+            if (aliveWolves.Any(x => x.Drunk))
             {
-                foreach (var w in Players.Where(x => WolfRoles.Contains(x.PlayerRole) && !x.Drunk))
+                foreach (var w in aliveWolves.Where(x => !x.Drunk))
                     AddAchievement(w, AchievementsReworked.ThanksJunior);
             }
 
