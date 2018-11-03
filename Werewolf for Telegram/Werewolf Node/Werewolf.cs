@@ -2349,7 +2349,7 @@ namespace Werewolf_Node
                         thief.HasNightAction = true;
                         var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                         if (beholder != null)
-                            Send(GetLocaleString("BeholderNewSeer", $"{thief.GetName()}", target.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                            Send(GetLocaleString("BeholderNewSeer", thief.GetName(), target.GetName()), beholder.Id);
                     }
                     break;
                 case IRole.Traitor:
@@ -2372,7 +2372,7 @@ namespace Werewolf_Node
                 case IRole.Seer:
                     var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                     if (bh != null)
-                        Send(GetLocaleString("BeholderNewSeer", $"{target.GetName()}", thief.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
+                        Send(GetLocaleString("BeholderSeerStolen", thief.GetName(), target.GetName()), bh.Id);
                     break;
                 case IRole.WildChild:
                     Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == thief.RoleModel)?.GetName() ?? "None was chosen!"), thief.Id);
