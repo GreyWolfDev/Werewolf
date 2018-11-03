@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?><!--
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
   DISCLAIMER: READ HERE FIRST
-    MOD CREATED BY @igorfeiden
+    MOD CREATED BY @iceschafer
     COMPANIONS: @Istella - That entered the Dark Brotherhood and just vanished from the face of Earth.
 
     EDIT HISTORY: 
@@ -14,7 +15,8 @@
      May 28 2018 - Updating with new roles & stuff
 
      SEPTEMBER 4 2018 - from Thief and on
-
+    
+     SEPTEMBER 11 2018 - new Strings for thief x SK.
 
 
     FEEL FREE TO EDIT IT. IF YOU DO SO, JUST MESSAGE ME BEFORE UPLOADING =)
@@ -25,22 +27,22 @@
       Thanks guys <3
 
       PS: DO NOT EDIT STRINGS UNDER THE DEPRECATED TAG.
-      PSS: This mod's for you, my beloved [DESTRUCTION 100] skill
+      PSS: This mod's dedicated to you, my beloved [DESTRUCTION 100] skill
 -->
 <strings>
-    <language name="English Skyrim" base="English" owner="igorfeiden" variant="Skyrim" />
+    <language name="English Skyrim" base="English" owner="iceschafer" variant="Skyrim" />
     <string deprecated="true" key="NotInGame">
         <value>You don't appear to be in any games right now...</value>
     </string>
     <string isgif="true" key="PlayerStartedGame">
         <!-- 0 - Player name -->
-        <value>{0} comes to the village, talking about some dragons being revived... Join now!
+        <value>'{0}' comes to the village, talking about some dragons being revived... Join now!
         </value>
         <value>The graybeards voice has been heard! The dragonborn comes! Join {0} if you think that you too, can be a Dragonborn.
         </value>
         <value>Beware, beware, the Dragonborn comes! {0} is about to slay some dragons. Join them using the button!
         </value>
-        <value>{0} used to be an adventurer like you. But then they took an arrow in the knee. Use the button to avoid more arrows!
+        <value>'{0}' used to be an adventurer like you. But then they took an arrow in the knee. Use the button to avoid more arrows!
         </value>
 		
     </string>
@@ -157,11 +159,11 @@
 		<value>{0} never liked {1} anyways.</value>
 		<value>{0} was {1}'s Thane, but now wants them just dead.</value>
 		<value>{0} says we should use {1} as fodder.</value>
-		<value>{1} has been accused of theft by {0}.</value>
+		<value>{1} has been accused of theft by {0} So {0} wants them dead.</value>
 		<value>{0} has just been robbed by {1}!</value>
 		<value>{0} says {1} is a vampire.</value>
 		<value>{0} stares at {1}, trying to remember their username.</value>
-		<value>{0} says that {1} is actually igorfeiden, the creator of this langpack.</value>
+		<value>{0} says that {1} is secretly 'iceschafer', the creator of this langpack.</value>
     </string>
     <string key="IdleKill">
         <!-- 0 - player name -->
@@ -203,7 +205,9 @@
 		<value>I knew it.</value>
 		<value>I saw this coming from a long ago.</value>
 		<value>So it really is how the Elder Scrolls said it would happen.</value>
-		<value>Of course.</value>
+    <value>Of course.</value>
+    <value>Okay, then.</value>
+    <value>I'm not so sure about that, but you're the boss.</value>
     </string>
     <string key="BeholderSeer">
         <!-- 0 - seer name -->
@@ -305,6 +309,7 @@
         <!--Leave the leading spaces here please-->
         <!-- 0 - teammate names -->
         <value>Make sure you discuss with {0}</value>
+        <value>You are not alone here. Ask {0} what they think.</value>
     </string>
     <string key="And">
         <!--this is paired with "DiscussWith".  again, leave the spaces!-->
@@ -363,7 +368,7 @@
             Dovahkiin, fah hin kogaan mu draal!\n \n
 
             just kidding. You may shout at someone and desintegrate them with your FUS RO DAH!
-            Everyone will knowthat you're the Dragonborn though.
+            Everyone will know that you're the Dragonborn though.
         </value>
     </string>
     <string key="RoleInfoHarlot">
@@ -451,9 +456,9 @@
     </string>
     <string key="DetectiveEaten">
         <!-- 0 - victim name -->
-        <value>Everyone gather in the morning, but no one sees {0}.\nA dragon is seen flying in the distance. When you follow it, you find {0}'s body burned down to the bones.\nDelphine is dead, maybe the Dragons are working with the Talmor?
+        <value>Everyone gather in the morning, but no one sees {0}.\nA dragon is seen flying in the distance. When you follow it, you find {0}'s body burned down to the bones.\nDelphine used to snoop about, bot is now dead; maybe the Dragons are working with the Talmor?
         </value>
-        <value>In the middle of the night, you all see {0}, A.K.A. Delphine, running to the town's gate to fight a dragon.\nThe fight lasts until dawn. Delphine ask you all for help, but you're too scared to move. The dragon hits {0} with its tail, breaking all her ribs instantly. Delphine crumbles, and the dragon burns her with its breath.\nDelphine is dead.\nWhile you all prepare for {0}'s burial, the Dragon flies away.
+        <value>In the middle of the night, you all see {0}, A.K.A. Delphine, running to the town's gate to fight a dragon.\nThe fight lasts until dawn. Delphine ask you all for help, but you're too scared to move. The dragon hits {0} with its tail, breaking all her ribs instantly. Delphine crumbles, and the dragon burns her with its breath.\nDelphine is dead.\nWhile you all prepare for {0}'s burial, the Dragon flies away. No more snooping days.
         </value>
     </string>
     <string key="GuardianEaten">
@@ -2331,6 +2336,16 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
   </string>
   
   <string key="ThiefTeamEnd">
-  <value>Thieves' guild Team</value>
+  <value>Thief Team</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>You tried to steal a role... but your target was a member of the Dark Brotherhood! They saw you around their house, and not a minute later, you were stabbed...</value>
+    <value>You tried to steal a role... Turns out that the members of the Dark Brotherhood are way more skilled than you. The last thing you saw was a strange altar to the Night Mother...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>The Thief {0}, thought they could outsmart the Dark Brotherhood. No one will ever see {0} again, the only clue in {0}'s house is a note with a red hand drawn in blood...</value>
+    <value>The Thieves guild sent {0} to steal some roles. It didn't work out well, because they tried to steal from the Dark Brotherhood! {0}'s body was seen on the main square, their organs spread out, spelling SITHIS</value>
   </string>
 </strings>

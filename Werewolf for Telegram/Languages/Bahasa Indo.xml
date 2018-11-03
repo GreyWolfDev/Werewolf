@@ -1573,33 +1573,186 @@
 
 <!-- NOT IMPLEMENTED YET -->
   <string key="RoleInfoPacifist">
-    <value></value>
+    <value>Kamu adalah Pacifist ☮️. Kamu dapat meyakinkan semua orang di desa untuk tidak melakukan eksekusi selama satu kali dalam permainan.</value>
   </string>
   <string key="Pacifist">
     <value>Pacifist ☮️</value>
   </string>
   <string key="AboutPacifist">
-    <value></value>
+    <value>Pacifist dapat memilih untuk meyakinkan semua orang di desa untuk tidak mengeksekusi siapa pun. Ini hanya bisa dilakukan satu kali dalam permainan.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value></value>
+    <value>Kamu adalah Wise Elder 📚. Kamu dapat bertahan dari serangan werewolf selama satu kali dalam permainan - kedua kalinya mereka bisa memakan kamu. Jika werewolf memakanmu lagi maka kamu akan mati. Jika Gunner atau Hunter membunuh kamu dengan kemampuan mereka, mereka akan kehilangan kekuatan mereka dan dikonversi menjadi warga desa biasa.</value>
   </string>
   <string key="WiseElder">
     <value>Wise Elder 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>Wise Elder 📚 dapat bertahan hidup dari serangan werewolf selama satu kali dalam permainan - kedua kalinya mereka bisa memakan kamu. Jika Gunner atau Hunter membunuh kamu dengan kemampuan mereka, mereka akan kehilangan kekuatan mereka dan akan dikonversi menjadi warga desa yang biasa.</value>
   </string>
 
   <string key="RoleInfoThief">
-    <value></value>
+    <value>Kamu adalah Thief 😈! Kamu dapat mencuri peran pemain lain pada malam pertama dan mengubah pemain itu menjadi seorang warga desa biasa!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Kamu adalah Thief 😈! Karena mode [Full Thief] dihidupkan, Kamu mendapat 50% kesempatan untuk mencuri peran pemain lain setiap malam, jika berhasil, pemain itu akan menjadi pencuri baru dan berlanjut dengan pencurian!</value>
   </string>
   <string key="Thief">
     <value>Thief 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <value>Secara default, Thief 😈 dapat mencuri peran pemain pada malam pertama dan mengubah pemain itu menjadi warga desa biasa. \ NJika mode [Full Thief] diaktifkan, mereka mendapat 50% kesempatan untuk mencuri peran pemain setiap malam, jika berhasil , pemain itu akan menjadi pencuri baru dan berlanjut dengan pencurian!</value>
+  </string>
+
+  <string key="AskPacifist">
+    <value>Tekan tombol ini ketika kamu ingin menyampaikan pidato perdamaian dan menghentikan warga desa melakukan eksekusi mati di waktu berikutnya!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>Pacifist ☮️, {0}, sedang berpidato tentang persahabatan dan kepercayaan di depan desa. Karena warga desa terharu dengan pidatonya, tidak akan ada hukuman mati hari ini!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Karena warga desa terharu dengan pidato Pacifist ☮️ yang sepenuh hati, fase lynch akan dilewati hari ini!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Kamu mencoba menyusup ke rumah {0} tetapi sayangnya dia adalah Wise Elder 📚! {0} berhasil menggagalkan serangan, untungnya dia tidak mengenali siapa pun termasuk kamu.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Werewolf mencoba memakanmu, tetapi kamu bukanlah Wise Elder 📚 yang mudah dibunuh oleh penyusup! Kamu berhasil menggagalkan serangan, tetapi sayangnya kamu tidak mengenali siapa saja mereka.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Hunter 🎯, {0} mencoba menembak Wise Elder 📚, {1}. {0} dia terisak sedih, menyesali kesalahannya, dan bersumpah tidak menjadi Hunter lagi. Dia meninggal sebagai seorang warga desa biasa 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Gunner 🔫, {0} menembak Wise Elder 📚, {1}. {0} dia menangis tersedu-sedu, menyesali kesalahannya, dan memutuskan untuk mencabut pistolnya dan menjadi warga desa biasa dan bersiap untuk bercocok tanam.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Kamu mencoba mencuri peran {0}, tapi sayangnya kamu gagal...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Kamu mencoba mencuri peran {0}, tapi {0} sudah ditemukan tewas...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Peran kamu dicuri seseorang 😱! Kamu sekarang adalah {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Kamu berhasil mencuri peran {0} 😏!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} bukan lagi rekan tim kamu, dan {1} sekarang menjadi mason sepertimu!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Rekan satu tim kamu (jika ada) adalah: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} bukan lagi rekan tim kamu, dan {1} sekarang menjadi cultist sepertimu!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} bukan lagi rekan tim kamu, dan {1} sekarang menjadi serigala sepertimu!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Rekan satu tim kamu (jika ada) adalah: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Saat {0} berkeliaran di sekitar desa, mereka menemukan bahwa tidak ada lagi peran menyenangkan yang tersedia bagi mereka untuk dicuri. Mereka dengan cepat meninggalkan desa miskin ini dan mencari desa lain untuk memulai kembali karir mereka yang termasyhur.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Target pencurian kamu sekarang {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Peran siapa yang ingin kamu curi?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} vote mengarah ke {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Hasil lynch untuk hari ini:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} vote mengarah ke {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Jumlah vote</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Ketika secret lynch diaktifkan, tunjukkan jumlah suara di akhir lynch?\nSekarang: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Ketika secret lynch diaktifkan, hitungan suara di akhir lynch menjadi: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Pemilih</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Ketika secret lynch diaktifkan dan penghitungan suara ditampilkan, tunjukkan nama pemilih untuk setiap pemain yang dipilih?\nSekarang: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Ketika secret lynch diaktifkan dan penghitungan suara ditampilkan, nama pemilih untuk setiap pemain yang dipilih akan: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Aneh ... Saat kamu mulai berdiskusi tentang siapa yang akan dikonversi malam ini, kamu menyadari bahwa {0} tidak ada di sini! Apa yang terjadi padanya😱??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Peace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Lynching hari ini dilewati karena pidato Pacifist mengharukan!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Peran kamu dicuri! Kamu sekarang adalah pencuri baru 😈 dan dapat mencuri peran malam berikutnya!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Peran kamu dicuri! Kamu sekarang adalah seorang warga desa biasa 👱, membajak sawah sepanjang hari.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Knock knock, kamu telah dikunjungi oleh pembunuh berantai!</value>
+	<value>Serial Killer menyergapmu, mengikatmu, dan kemudian menikammu dalam hati!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Thief Team</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Kamu mencoba mencuri peran ... tetapi target kamu adalah pembunuh berantai! Dia melihat kamu di sekitar rumahnya, dan tak lama kemudian, kamu ditikam...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Thief, {0}, mencoba mencuri peran dari pembunuh berantai! Oh tidak {0} ditikam beberapa kali dan sekarang hatinya hilang 😱</value>
   </string>
 </strings>
 
