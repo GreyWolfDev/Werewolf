@@ -2692,7 +2692,10 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
                         if (lynched.InLove)
+                        {
                             KillLover(lynched);
+                            AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
+                        }
 
                         //effects on game depending on the lynched's role
                         switch (lynched.PlayerRole)

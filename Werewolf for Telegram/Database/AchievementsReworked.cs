@@ -182,6 +182,8 @@ namespace Database
         PsychopathKiller = 83,
         [Display(Name = "Today's Special!"), Description("Be the role only available on special events!")]
         TodaysSpecial = 84,
+        [Display(Name = "Romeo and Juliet"), Description("Be in love with the tanner, and win by lynching your lover!")]
+        RomeoAndJuliet = 85,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 
