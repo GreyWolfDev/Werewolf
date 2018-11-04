@@ -2680,8 +2680,14 @@ namespace Werewolf_Node
                     }
                     else
                     {
-                        if (lynched.PlayerRole == IRole.Tanner && Players.Count(x => !x.IsDead) == 3)
-                            AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+                        if (lynched.PlayerRole == IRole.Tanner)
+                        {
+                            if (Players.Count(x => !x.IsDead) == 3)
+                                AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+
+                            if (lynched.InLove)
+                                AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
+                        }
 
                         lynched.IsDead = true;
                         lynched.TimeDied = DateTime.Now;
@@ -2692,10 +2698,7 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
                         if (lynched.InLove)
-                        {
                             KillLover(lynched);
-                            AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
-                        }
 
                         //effects on game depending on the lynched's role
                         switch (lynched.PlayerRole)
@@ -3013,7 +3016,7 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
-            
+
             var aliveWolves = Players.GetPlayersForRoles(WolfRoles, true);
             if (aliveWolves.Any(x => x.Drunk))
             {
@@ -4747,7 +4750,7 @@ namespace Werewolf_Node
                     }
                 }
             }
-            
+
             var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead);
 
             if (spumpkin != null)
@@ -5534,7 +5537,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.DeathVillage);
                         if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
-                      
+
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
