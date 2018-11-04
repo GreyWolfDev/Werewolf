@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Amnesia mode by Amber (@ayylimao)! Play with role reveal after death off to have some serious fun lol 
-Last update: 11/07/2016 by @ayylimao
-Traducción al español por @MuseInThaHouse y correcciones posteriores por @Aguapanelo (16/11/2016). Corregido y traducido al completo por @jabondemarsella (06/10/2017)-->
+Last update: 22/09/2018 by @malwod
+Traducción al español por @MuseInThaHouse y correcciones posteriores por @Aguapanelo (16/11/2016). Corregido y traducido al completo por @jabondemarsella (06/10/2017)
+Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
 <strings>
   <language name="Español (Amnesia)" base="Español" variant="Amnesia"/>
   <string key="NotInGame">
@@ -31,7 +32,7 @@ Traducción al español por @MuseInThaHouse y correcciones posteriores por @Agua
     <value>Todos se olvidaron de este grupo… No alcanzamos los 5 jugadores necesarios, ¡ se cancela el juego!</value>
   </string>
   <string key="StartingGameWait">
-    <value>La partida está comenzando. Por favor, espera a que actualice la base de datos y asigne los roles. ¡Algo raro está pasando en el pueblo! Por alguna extraña razón, nadie recuerda quién es en realidad… (los roles no serán revelados)</value>
+    <value>La partida está comenzando. Por favor, espera a que actualice la base de datos y asigne los roles. ¡Algo raro está pasando en el pueblo! Por lguna extraña razón, nadie recuerda quién es en realidad… (los roles no serán revelados)</value>
   </string>
   <string key="BannedForExploit">
     <value>{0} ha sido baneado por intentar hacer trampas (prohibidos nombres con /).</value>
@@ -163,7 +164,7 @@ Traducción al español por @MuseInThaHouse y correcciones posteriores por @Agua
     <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
   </string>
   <string key="RoleInfoVillager" >
-    <value >Que extraño… ¡No puedes recordar quién eres!</value>
+    <value>Que extraño… ¡No puedes recordar quién eres!</value>
   </string>
   <string key="RoleInfoTanner" >
     <value >Que extraño… ¡No puedes recordar quién eres!</value>
@@ -1254,7 +1255,7 @@ Traducción al español por @MuseInThaHouse y correcciones posteriores por @Agua
   </string>
     <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
-    <value>{0}se ha(n) unido en los últimos 30 segundos.</value>
+    <value>{0} se ha(n) unido en los últimos 30 segundos.</value>
   </string>
   <string key="AllowCult">
     <value>Permitir culto</value>
@@ -1324,5 +1325,364 @@ Traducción al español por @MuseInThaHouse y correcciones posteriores por @Agua
   </string>
   <string key="Skip">
 	<value>Omitir</value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}.</value>
+  </string>
+  <string key="NegSeerSees">
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+    <value>¡Percibes que {0} NO es {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>¿Quieres hacer lo que no recuerdas?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>{0} entra a su casa y recuerda una dulce melodía, que empieza a tararear. Esta noche, todos caerán en un sueño profundo, y nadie recordará haberse ido a dormir.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Cae la noche y los aldeanos apenas llegan a sus camas por el agotamiento. Se quedan dormidos profundamente, ni siquiera recuerdan haberse ido a dormir…</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>¿Permitir ladrón?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>El ladrón ahora: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>¿Usar el ladrón cada noche?\nActualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>El ladrón puede usarse cada noche: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permitir ladrón</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Modo «Ladrón completo»</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Que extraño… ¡No puedes recordar quién eres!</value>
+  </string>
+  <string key="WolfMan">
+    <value>el guardabosques 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Eres el guardabosques; es decir, un aldeano más; sin embargo, dado que pasas mucho tiempo en el bosque junto a los lobos, la vidente te percibirá como uno. ¡Oh, no!</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
+  </string>
+  <string key="Lycan">
+    <value>el licántropo 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>El licántropo es un lobo, pero le aparecerá como aldeano a la vidente.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
+  </string>
+  <string key="Oracle">
+    <value>el oráculo 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>El oráculo será informado del rol que alguien NO es, y ese rol será de alguien que esté vivo todavía.</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante el día!</value>
+  </string>
+  <string key="Sandman">
+    <value>el arenero 💤</value>
+  </string>
+  <string key="AboutSandman">
+<!-- NOT IMPLEMENTED YET -->
+<!-- NOT IMPLEMENTED YET -->
+<!-- NOT IMPLEMENTED YET -->
+<!-- NOT IMPLEMENTED YET -->
+<!-- NOT IMPLEMENTED YET -->
+    <value>Una vez por partida, el arenero puede dormir profundamente a todos los jugadores, de modo que nadie pueda realizar acciones esa noche.</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante el día!</value>
+  </string>
+  <string key="Pacifist">
+    <value>el pacifista ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>El pacifista puede persuadir a sus vecinos para que nadie linche. Solo podrá hacerlo una vez.</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Qué extraño… ¡no puedes recordar quién eres!</value>
+  </string>
+  <string key="WiseElder">
+    <value>la anciana sabia 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>La anciana sabia 📚 podrá sobrevivir al ataque de los hombres lobo una única vez; la siguiente vez que los lobos quieran comérsela podrán hacerlo. Si el justiciero o el cazador la matan, perderán sus poderes y se convertirán en aldeanos.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
+  </string>
+  <string key="Thief">
+    <value>el ladrón 😈 </value>
+  </string>
+  <string key="AboutThief">
+    <value>Por defecto, el ladrón 😈 puede robar el rol del jugador que elija durante la primera noche y convertirlo en un simple aldeano.\nSi el modo «Ladrón completo» está activado, cada noche tendrá un 50% de posibilidades de robar roles. Si lo consigue, el jugador afectado, se convertirá en el nuevo ladrón y continuará confundiendo a la aldea.</value>
+  </string>
+  <string key="AskPacifist">
+    <value>Pulsa el botón rojo de tu despacho cuando quieras hacer eso que no recuerdas.</value>
+  </string>
+  <string key="PacifistNoLynch">
+<!-- {0} - Pacifist's name -->
+<!-- {0} - Pacifist's name -->
+<!-- {0} - Pacifist's name -->
+<!-- {0} - Pacifist's name -->
+<!-- {0} - Pacifist's name -->
+    <value>El pacifista ☮️, {0}, está dando un emotivo discurso de paz, amor y amistad en la plaza del pueblo. Conmovido por su retórica, el pueblo decide no linchar a nadie esta noche.</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>A causa del enternecedor discurso del pacifista ☮️, no habrá linchamientos por hoy.
+</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+<!-- 0 - Wise Elder's name -->
+<!-- 0 - Wise Elder's name -->
+<!-- 0 - Wise Elder's name -->
+<!-- 0 - Wise Elder's name -->
+<!-- 0 - Wise Elder's name -->
+    <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo...</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+    <value>El cazador, {0}, no recordó qué hacer y disparó a la anciana sabia 📚, {1}. {0} solloza con gran tristeza, lamentando su grave error, que le ha hecho perder sus habilidades de cazador. Ha muerto como un simple aldeano.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+    <value>El justiciero 🔫, {0} no recordó qué hacer y disparó a la anciana sabia 📚, {1}. {0} solloza con gran tristeza, lamentando su grave error, y decide retirarse, lo que lo convierte en un simple aldeano con mucha tierra que arar.
+</value>
+  </string>
+  <string key="ThiefStealFailed">
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+    <value>Quizás no recuerdes quién eres, pero recuerdas que {0}… No, tampoco recuerdas eso.</value>
+  </string>
+  <string key="ThiefStealDead">
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+    <value>¡{0} ya ha muerto!</value>
+  </string>
+  <string deprecated="true" key="ThiefStoleYourRole">
+<!-- {0} - The new role -->
+<!-- {0} - The new role -->
+<!-- {0} - The new role -->
+<!-- {0} - The new role -->
+<!-- {0} - The new role -->
+    <value>Quizás no recuerdes quién eres, pero recuerdas algo importante: {0}</value>
+  </string>
+  <string key="ThiefStoleRole">
+<!-- {0} - The name of the thief's target -->
+<!-- {1} - The new role -->
+<!-- {0} - The name of the thief's target -->
+<!-- {1} - The new role -->
+<!-- {0} - The name of the thief's target -->
+<!-- {1} - The new role -->
+<!-- {0} - The name of the thief's target -->
+<!-- {0} - The name of the thief's target -->
+    <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ThiefToMason">
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+    <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {1}? Espera… ¿De qué estabas hablando? Entre los nombres en tu cabeza, aparece uno nuevo: {0}.
+</value>
+  </string>
+  <string key="ThiefTransformToMason">
+<!-- 0 - mason collegues's name -->
+<!-- 0 - mason collegues's name -->
+<!-- 0 - mason collegues's name -->
+<!-- 0 - mason collegues's name -->
+<!-- 0 - mason collegues's name -->
+    <value>Entre los nombres de tu cabeza, aparece uno nuevo: {0}!</value>
+  </string>
+  <string key="ThiefToCult">
+<!-- 0 - old cultist's name -->
+<!-- 1 - new cultist's name -->
+<!-- 0 - old cultist's name -->
+<!-- 1 - new cultist's name -->
+<!-- 0 - old cultist's name -->
+<!-- 1 - new cultist's name -->
+<!-- 0 - old cultist's name -->
+<!-- 1 - new cultist's name -->
+<!-- 0 - old cultist's name -->
+<!-- 1 - new cultist's name -->
+    <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {1}? Espera… ¿De qué estabas hablando? Entre los nombres en tu cabeza, aparece uno nuevo: {0}.</value>
+  </string>
+  <string key="ThiefToWolf">
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+    <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {1}? Espera… ¿De qué estabas hablando? Entre los nombres en tu cabeza, aparece uno nuevo: {0}.</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+<!-- 0 - teammates's name -->
+<!-- 0 - teammates's name -->
+<!-- 0 - teammates's name -->
+<!-- 0 - teammates's name -->
+<!-- 0 - teammates's name -->
+    <value>Entre los nombres en tu cabeza, aparece uno nuevo: ¡{0}!</value>
+  </string>
+  <string key="ThiefEnd">
+<!-- 0 - Thief's name -->
+<!-- 0 - Thief's name -->
+<!-- 0 - Thief's name -->
+<!-- 0 - Thief's name -->
+<!-- 0 - Thief's name -->
+    <value>{0} deambula por la aldea, y de pronto se da cuenta de que ya no quedan roles divertidos que robar, por lo que, rápidamente, recoge sus cosas y se va en busca de otro lugar donde retomar su ilustre carrera profesional.</value>
+  </string>
+  <string key="ThiefStealChosen">
+<!-- 0 - target's name -->
+<!-- 0 - target's name -->
+<!-- 0 - target's name -->
+<!-- 0 - target's name -->
+<!-- 0 - target's name -->
+    <value>Elección aceptada {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Sabes que deberías hacer algo con alguien, ¿pero a quién elegirás?</value>
+  </string>
+  <string key="SecretLynchResultEach">
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+<!-- 2 - A list of players who voted {1} -->
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+<!-- 2 - A list of players who voted {1} -->
+    <value>{0} votos para {1}: {2}&lt;</value>
+  </string>
+  <string key="SecretLynchResultFull">
+<!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+<!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>El resultado de los linchamientos de hoy:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+    <value>{0} votos para {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secreto: Recuento de votos</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>¿Mostrar el recuento de votos al final de los linchamientos secretos cuando estos estén activados?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Cuando los linchamientos secretos estén activados, el recuento al final de estos será del siguiente modo: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secreto: Votantes</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>¿Mostrar el nombre del votante por cada jugador votado cuando los linchamientos secretos estén activados y se muestre el recuento de votos?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
+  </string>
+  <string key="CultistBitten">
+<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {0}?
+</value>
+  </string>
+  <string key="Peace">
+<!-- Used for Pacifist's button -->
+<!-- Used for Pacifist's button -->
+    <value>Pulsar botón rojo</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+    <value>A causa del enternecedor discurso del pacifista, no habrá linchamientos por hoy.</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>Tu rol ha cambiado, ¿pero qué eres ahora? Vete tú a saber...</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Tu rol ha cambiado, ¿pero qué eres ahora? Vete tú a saber...</value>
+  </string>
+  <string key="SerialKillerKilledYou">
+    <value>Toc, toc. ¿Tiene un momento para hablar de Nuestra Señora la asesina en serie?</value>
+    <value>La asesina en serie te ha tendido una emboscada, te ha inmovilizado ¡y te ha cosido a puñaladas!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+    <value>Thief Team</value>
+  </string>
+  <string key="StealKiller">
+    <value>Has intentado robar un rol... ¡Pero tu objetivo fue la asesina en serie! Los aldeanos te vieron alrededor de sus casas, pero un minuto después fuiste apuñalado...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+<!-- used when Thief steals SK -->
+<!-- used when Thief steals SK -->
+    <value>¡El ladrón, {0}, intentó robar el rol de la asesina en serie! Esto no salió muy bien: {0} fue apuñalado múltiples veces y ahora tu hígado está perdido...</value>
   </string>
 </strings>
