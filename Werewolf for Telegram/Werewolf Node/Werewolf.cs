@@ -480,25 +480,25 @@ namespace Werewolf_Node
                     if (!AllowNSFW)
                         customs = customs.Where(x => !x.GifPack.NSFW);
                     if (customs.Any(x => x.GifPack.CultWins != null))
-                        CultWins = customs.Select(x => x.GifPack.CultWins).ToList();
+                        CultWins = customs.Where(x => x.GifPack.CultWins != null).Select(x => x.GifPack.CultWins).ToList();
                     if (customs.Any(x => x.GifPack.LoversWin != null))
-                        LoversWin = customs.Select(x => x.GifPack.LoversWin).ToList();
+                        LoversWin = customs.Where(x => x.GifPack.LoversWin != null).Select(x => x.GifPack.LoversWin).ToList();
                     if (customs.Any(x => x.GifPack.NoWinner != null))
-                        NoWinner = customs.Select(x => x.GifPack.NoWinner).ToList();
+                        NoWinner = customs.Where(x => x.GifPack.NoWinner != null).Select(x => x.GifPack.NoWinner).ToList();
                     if (customs.Any(x => x.GifPack.SerialKillerWins != null))
-                        SerialKillerWins = customs.Select(x => x.GifPack.SerialKillerWins).ToList();
+                        SerialKillerWins = customs.Where(x => x.GifPack.SerialKillerWins != null).Select(x => x.GifPack.SerialKillerWins).ToList();
                     if (customs.Any(x => x.GifPack.TannerWin != null))
-                        TannerWin = customs.Select(x => x.GifPack.TannerWin).ToList();
+                        TannerWin = customs.Where(x => x.GifPack.TannerWin != null).Select(x => x.GifPack.TannerWin).ToList();
                     if (customs.Any(x => x.GifPack.VillagerDieImage != null))
-                        VillagerDieImages = customs.Select(x => x.GifPack.VillagerDieImage).ToList();
+                        VillagerDieImages = customs.Where(x => x.GifPack.VillagerDieImage != null).Select(x => x.GifPack.VillagerDieImage).ToList();
                     if (customs.Any(x => x.GifPack.VillagersWin != null))
-                        VillagersWin = customs.Select(x => x.GifPack.VillagersWin).ToList();
+                        VillagersWin = customs.Where(x => x.GifPack.VillagersWin != null).Select(x => x.GifPack.VillagersWin).ToList();
                     if (customs.Any(x => x.GifPack.WolfWin != null))
-                        WolfWin = customs.Select(x => x.GifPack.WolfWin).ToList();
+                        WolfWin = customs.Where(x => x.GifPack.WolfWin != null).Select(x => x.GifPack.WolfWin).ToList();
                     if (customs.Any(x => x.GifPack.WolvesWin != null))
-                        WolvesWin = customs.Select(x => x.GifPack.WolvesWin).ToList();
+                        WolvesWin = customs.Where(x => x.GifPack.WolvesWin != null).Select(x => x.GifPack.WolvesWin).ToList();
                     if (customs.Any(x => x.GifPack.SKKilled != null))
-                        SKKilled = customs.Select(x => x.GifPack.SKKilled).ToList();
+                        SKKilled = customs.Where(x => x.GifPack.SKKilled != null).Select(x => x.GifPack.SKKilled).ToList();
                     foreach (var p in customs)
                     {
                         cMsg += p.GetName() + Environment.NewLine;
