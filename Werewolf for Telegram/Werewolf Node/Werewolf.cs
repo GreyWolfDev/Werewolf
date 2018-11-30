@@ -979,7 +979,7 @@ namespace Werewolf_Node
                 }
                 if (player.PlayerRole == IRole.WildChild && player.CurrentQuestion.QType == QuestionType.RoleModel)
                 {
-                    player.RoleModel = target.Id;
+                    player.RoleModel = RedirectNexus(player, target).Id;
                     player.Choice = -1;
                 }
                 if (player.PlayerRole == IRole.Cupid && player.CurrentQuestion.QType == QuestionType.Lover1)
@@ -988,11 +988,13 @@ namespace Werewolf_Node
 
                     if (lover1 != null)
                     {
+                        var originalLover = lover1; //so cupid sees original name even for nexus
+                        lover1 = RedirectNexus(player, lover1);
                         if (lover1.Id == player.Id)
                             AddAchievement(player, Achievements.SelfLoving);
                         lover1.InLove = true;
                         //send menu for second choice....
-                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
+                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != originalLover.Id).ToList();
                         var buttons =
                             secondChoices.Select(
                                 x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{x.Id}") }).ToList();
@@ -1019,14 +1021,16 @@ namespace Werewolf_Node
                     var lover2 = Players.FirstOrDefault(x => x.Id == player.Choice);
                     if (lover2 == null)
                         return;
+                    lover2 = RedirectNexus(player, lover2);
                     lover2.InLove = true;
+                    lover11.LoverId = int.Parse(lover2.Id.ToString());
                     lover2.LoverId = id;
                     player.Choice = -1;
                 }
 
                 if (player.PlayerRole == IRole.Doppelgänger && player.CurrentQuestion.QType == QuestionType.RoleModel)
                 {
-                    player.RoleModel = target.Id;
+                    player.RoleModel = RedirectNexus(player, target).Id;
                     player.Choice = -1;
                 }
 
@@ -1389,6 +1393,7 @@ namespace Werewolf_Node
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Spumpkin:
+                    case IRole.Nexus:
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -1577,6 +1582,7 @@ namespace Werewolf_Node
                     case IRole.Pacifist:
                     case IRole.WiseElder:
                     case IRole.Blacksmith:
+                    case IRole.Nexus:
                         p.HasDayAction = false;
                         p.HasNightAction = false;
                         p.Team = ITeam.Village;
@@ -1761,6 +1767,7 @@ namespace Werewolf_Node
                 var choice = Players.FirstOrDefault(x => x.Id == choiceid);
                 if (choice != null)
                 {
+                    choice = RedirectNexus(wc, choice);
                     wc.RoleModel = choice.Id;
                     Send(GetLocaleString("RoleModelChosen", choice.GetName()), wc.Id);
                 }
@@ -1773,6 +1780,7 @@ namespace Werewolf_Node
                 var choice = Players.FirstOrDefault(x => x.Id == choiceid);
                 if (choice != null)
                 {
+                    choice = RedirectNexus(dg, choice);
                     dg.RoleModel = choice.Id;
                     Send(GetLocaleString("RoleModelChosen", choice.GetName()), dg.Id);
                 }
@@ -1794,6 +1802,8 @@ namespace Werewolf_Node
                     var choice = Players.FirstOrDefault(x => x.Id == choiceid);
                     if (choice != null)
                     {
+                        var originalChoice = choice; //so thief sees original name even for nexus
+                        choice = RedirectNexus(thief, choice);
                         thief.Choice = choiceid;
                         Send(GetLocaleString("ThiefStealChosen", choice.GetName()), thief.Id);
                     }
@@ -1910,6 +1920,7 @@ namespace Werewolf_Node
             Console.WriteLine($"AddLover: {lover?.Name} picked");
             Console.ForegroundColor = ConsoleColor.Gray;
             if (lover == null) return null;
+            lover = RedirectNexus(null, lover);
             lover.InLove = true;
             lover.SpeedDating = true;
             if (existing == null) return lover;
@@ -1980,6 +1991,7 @@ namespace Werewolf_Node
                         case IRole.WolfMan:
                         case IRole.WiseElder:
                         case IRole.Blacksmith:
+                        case IRole.Nexus:
                             p.HasDayAction = false;
                             p.HasNightAction = false;
                             p.Team = ITeam.Village;
@@ -2173,11 +2185,11 @@ namespace Werewolf_Node
                         alpha), wolf.Id);
         }
 
-        private void StealRole(IPlayer thief, IPlayer target)
+        private void StealRole(IPlayer thief, IPlayer target, IPlayer originalTarget)
         {
             if (target.IsDead)
             {
-                Send(GetLocaleString("ThiefStealDead", target.GetName()), thief.Id);
+                Send(GetLocaleString("ThiefStealDead", originalTarget.GetName()), thief.Id);
 
                 if (ThiefFull)
                     return;
@@ -2193,6 +2205,8 @@ namespace Werewolf_Node
                             {
                                 var choiceid = ChooseRandomPlayerId(thief, false);
                                 target = Players.FirstOrDefault(x => x.Id == choiceid);
+                                originalTarget = target;
+                                target = RedirectNexus(thief, target);
                             }
                             catch (Exception e)
                             {
@@ -2200,7 +2214,7 @@ namespace Werewolf_Node
                             }
                         } while (target != null && tries < 10);
                         thief.Choice = target.Id;
-                        Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
+                        Send(GetLocaleString("ThiefStealChosen", originalTarget.GetName()), thief.Id);
                     }
                     catch (Exception e)
                     {
@@ -2253,6 +2267,7 @@ namespace Werewolf_Node
                 case IRole.Pacifist:
                 case IRole.WiseElder:
                 case IRole.Blacksmith:
+                case IRole.Nexus:
                     thief.HasDayAction = false;
                     thief.HasNightAction = false;
                     thief.Team = ITeam.Village;
@@ -2330,7 +2345,7 @@ namespace Werewolf_Node
             Send(GetLocaleString((ThiefFull == true ? "ThiefStoleYourRoleThief" : "ThiefStoleYourRoleVillager")), target.Id);
 
             // Then notify Thief their new role
-            Send(GetLocaleString("ThiefStoleRole", target.GetName()), thief.Id);
+            Send(GetLocaleString("ThiefStoleRole", originalTarget.GetName()), thief.Id);
             Send(GetRoleInfo(thief.PlayerRole), thief.Id);
 
             switch (thief.PlayerRole)
@@ -2417,6 +2432,30 @@ namespace Werewolf_Node
                     break;
             }
             //should a bitten player stay bitten? yes...
+        }
+
+        private IPlayer RedirectNexus(IPlayer actor, IPlayer target, Func<IPlayer, bool> predicate)
+        {
+            if (target.PlayerRole == IRole.Nexus) //choose someone else
+            {
+                var possible = Players.Where(x => !x.IsDead && x.Id != target.Id).Where(predicate).ToList();
+                if (actor != null)
+                {
+                    possible = possible.Where(x => x.Id != actor.Id).ToList();
+                }
+                if (possible.Any())
+                {
+                    possible.Shuffle();
+                    possible.Shuffle();
+                    target = possible[0];
+                }
+            }
+            return target;
+        }
+
+        private IPlayer RedirectNexus(IPlayer actor, IPlayer target)
+        {
+            return RedirectNexus(actor, target, x => true);
         }
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
@@ -2913,10 +2952,12 @@ namespace Werewolf_Node
                 }
 
                 var check = Players.FirstOrDefault(x => x.Id == detect.Choice);
+                var originalCheck = check; //so dete sees original name even for nexus
                 if (check != null)
                 {
                     DBAction(detect, check, "Detect");
-                    Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
+                    check = RedirectNexus(detect, check);
+                    Send(GetLocaleString("DetectiveSnoop", originalCheck.GetName(), GetDescription(check.PlayerRole)), detect.Id);
 
                     //if snooped non-bad-roles:
                     if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller }.Contains(check.PlayerRole))
@@ -2924,8 +2965,9 @@ namespace Werewolf_Node
                     else
                     {
                         if (detect.CorrectSnooped.Contains(check.Id))     //check if it is a re-snoop of correct roles
-                            detect.CorrectSnooped.Clear();             //clear the correct snoop list
-                        detect.CorrectSnooped.Add(check.Id);              //add the current snoop to list
+                            detect.CorrectSnooped.Clear();                    //clear the correct snoop list
+                        if (detect.Choice == check.Id)                    //don't count correct snoop if redirected by nexus
+                            detect.CorrectSnooped.Add(check.Id);              //add the current snoop to list
 
                         //if snooped 4 times correct continously
                         if (detect.CorrectSnooped.Count() >= 4)
@@ -3472,8 +3514,10 @@ namespace Werewolf_Node
                 var hunted = Players.FirstOrDefault(x => x.Id == hunter.Choice);
                 if (hunted != null)
                 {
-                    hunted.BeingVisitedSameNightCount++;
                     DBAction(hunter, hunted, "Hunt");
+                    var originalHunted = hunted; //so ch sees original name even for nexus
+                    hunted = RedirectNexus(hunter, hunted);
+                    hunted.BeingVisitedSameNightCount++;
                     if (hunted.PlayerRole == IRole.SerialKiller)
                     {
                         //awwwwww CH gets popped
@@ -3486,11 +3530,11 @@ namespace Werewolf_Node
                     }
                     else if (hunted.IsDead)
                     {
-                        Send(GetLocaleString("HunterVisitDead", hunted.GetName()), hunter.Id);
+                        Send(GetLocaleString("HunterVisitDead", originalHunted.GetName()), hunter.Id);
                     }
                     else if (hunted.PlayerRole == IRole.Cultist)
                     {
-                        Send(GetLocaleString("HunterFindCultist", hunted.GetName()), hunter.Id);
+                        Send(GetLocaleString("HunterFindCultist", originalHunted.GetName()), hunter.Id);
                         hunted.IsDead = true;
                         hunted.TimeDied = DateTime.Now;
                         hunted.DiedLastNight = true;
@@ -3534,6 +3578,7 @@ namespace Werewolf_Node
                     var target = Players.FirstOrDefault(x => x.Id == choice & !x.IsDead);
                     if (target != null)
                     {
+                        target = RedirectNexus(null, target, x => x.PlayerRole != IRole.Cultist);
                         target.BeingVisitedSameNightCount++;
                         if (!target.IsDead)
                         {
@@ -3732,7 +3777,8 @@ namespace Werewolf_Node
                 if (target != null)
                 {
                     if (harlot.LoverId == target.Id)
-                        AddAchievement(harlot, AchievementsReworked.Affectionate);
+                        AddAchievement(harlot, AchievementsReworked.Affectionate);  // give the achievement based on choice, not actual target
+                    target = RedirectNexus(harlot, target);
 
                     DBAction(harlot, target, "Fuck");
                     if (harlot.PlayersVisited.Contains(target.TeleUser.Id))
@@ -3762,7 +3808,7 @@ namespace Werewolf_Node
                                 harlot.DiedByVisitingKiller = true;
                                 harlot.KilledByRole = IRole.Wolf;
                                 DBKill(target, harlot, KillMthd.VisitWolf);
-                                Send(GetLocaleString("HarlotFuckWolf", target.GetName()), harlot.Id);
+                                Send(GetLocaleString("HarlotFuckWolf", originalTarget.GetName()), harlot.Id);
                                 break;
                             case IRole.SerialKiller:
                                 harlot.IsDead = true;
@@ -3771,7 +3817,7 @@ namespace Werewolf_Node
                                 harlot.DiedByVisitingKiller = true;
                                 harlot.KilledByRole = IRole.SerialKiller;
                                 DBKill(target, harlot, KillMthd.VisitKiller);
-                                Send(GetLocaleString("HarlotFuckKiller", target.GetName()), harlot.Id);
+                                Send(GetLocaleString("HarlotFuckKiller", originalTarget.GetName()), harlot.Id);
                                 break;
                             default:
                                 if (target.DiedLastNight && (WolfRoles.Contains(target.KilledByRole) || target.KilledByRole == IRole.SerialKiller) && !target.DiedByVisitingKiller)
@@ -3788,8 +3834,8 @@ namespace Werewolf_Node
                                 {
                                     Send(
                                         (target.PlayerRole == IRole.Cultist && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
-                                            GetLocaleString("HarlotDiscoverCult", target.GetName()) :
-                                            GetLocaleString("HarlotVisitNonWolf", target.GetName()),
+                                            GetLocaleString("HarlotDiscoverCult", originalTarget.GetName()) :
+                                            GetLocaleString("HarlotVisitNonWolf", originalTarget.GetName()),
                                         harlot.Id);
                                     if (!target.IsDead)
                                         Send(GetLocaleString("HarlotVisitYou"), target.Id);
@@ -3814,11 +3860,14 @@ namespace Werewolf_Node
                     if (target != null)
                     {
                         DBAction(seer, target, "See");
-                        var role = target.PlayerRole;
+                        var role = RedirectNexus(seer, target).PlayerRole;
                         switch (role)
                         {
                             case IRole.Beholder:
-                                AddAchievement(seer, Achievements.ShouldHaveKnown);
+                                if (role == target.PlayerRole) //don't give achievement for seeing nexus as bh
+                                {
+                                    AddAchievement(seer, Achievements.ShouldHaveKnown);
+                                }
                                 break;
                             case IRole.Traitor:
                                 role = Program.R.Next(100) > 50 ? IRole.Wolf : IRole.Villager;
@@ -3846,7 +3895,7 @@ namespace Werewolf_Node
                 if (target != null)
                 {
                     DBAction(sorcerer, target, "See");
-                    var role = target.PlayerRole;
+                    var role = RedirectNexus(sorcerer, target).PlayerRole;
                     switch (role)
                     {
                         case IRole.AlphaWolf:
@@ -3904,7 +3953,8 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == negSeer.Choice);
                 if (target != null)
                 {
-                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != negSeer.Id && x.PlayerRole != target.PlayerRole).Select(x => x.PlayerRole).ToList();
+                    var role = RedirectNexus(negSeer, target).PlayerRole;
+                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != negSeer.Id && x.PlayerRole != role).Select(x => x.PlayerRole).ToList();
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
                     if (possibleRoles.Any())
@@ -3930,15 +3980,17 @@ namespace Werewolf_Node
                 {
                     //if (save != null)
                     //    DBAction(ga, save, "Guard");
+                    var originalSave = save; //so ga sees original name even for nexus
+                    save = RedirectNexus(ga, save);
                     save.BeingVisitedSameNightCount++;
                     if (save.WasSavedLastNight)
                     {
-                        Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
+                        Send(GetLocaleString("GuardSaved", originalSave.GetName()), ga.Id);
                         Send(GetLocaleString("GuardSavedYou"), save.Id);
                     }
                     else if (save.DiedLastNight)
                     {
-                        Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
+                        Send(GetLocaleString("GuardEmptyHouse", originalSave.GetName()), ga.Id);
                     }
 
                     //check for save's role, even if they weren't attacked!
@@ -3961,7 +4013,7 @@ namespace Werewolf_Node
                             else if (!save.WasSavedLastNight && !save.DiedLastNight)
                             //only send if GA survived and wolf wasn't attacked
                             {
-                                Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
+                                Send(GetLocaleString("GuardNoAttack", originalSave.GetName()), ga.Id);
                                 ga.GAGuardWolfCount++;
                             }
                             break;
@@ -3976,7 +4028,7 @@ namespace Werewolf_Node
                             break;
                         default:
                             if (!save.WasSavedLastNight && !save.DiedLastNight) //only send if save wasn't attacked
-                                Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
+                                Send(GetLocaleString("GuardNoAttack", originalSave.GetName()), ga.Id);
                             break;
                     }
 
@@ -3996,16 +4048,18 @@ namespace Werewolf_Node
                 {
                     if (ThiefFull || GameDay == 1)
                     {
+                        var originalTarget = target; //so thief sees original name even for nexus
+                        target = RedirectNexus(thief, target);
                         if (target.PlayerRole == IRole.SerialKiller || !ThiefFull) // even for full thief mode, always "successfully" steal the sk - and die :P
                         {
-                            StealRole(thief, target);
+                            StealRole(thief, target, originalTarget);
                         }
                         else
                         {
                             if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist)
-                                StealRole(thief, target);
+                                StealRole(thief, target, originalTarget);
                             else
-                                Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
+                                Send(GetLocaleString("ThiefStealFailed", originalTarget.GetName()), thief.Id);
                         }
                     }
                 }
