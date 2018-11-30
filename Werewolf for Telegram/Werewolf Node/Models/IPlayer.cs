@@ -148,8 +148,8 @@ namespace Werewolf_Node.Models
         Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince,
         //more new roles, from april fools.....
         Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
-        //halloween role
-        Spumpkin
+        //roles from whatever wolf
+        Spumpkin, Nexus
     }
 
     public enum ITeam
