@@ -537,6 +537,9 @@ namespace Werewolf_Control.Handler
                                         id, parseMode: ParseMode.Markdown);
 #endif
                                 }
+                                /*
+                                 * Executrix will do this job for now, that will hopefully work better than this did before
+                                 * 
                                 else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
                                 {
                                     var uid = m.NewChatMember.Id;
@@ -554,24 +557,7 @@ namespace Werewolf_Control.Handler
                                         m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
-                                else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
-                                {
-                                    var uid = m.NewChatMember.Id;
-                                    //check that they are allowed to join.
-                                    var p = DB.Players.FirstOrDefault(x => x.TelegramId == uid);
-                                    var gamecount = p?.GamePlayers.Count ?? 0;
-                                    if (gamecount >= 500)
-                                    {
-                                        Send($"{m.NewChatMember.FirstName.FormatHTML()} has played {gamecount} games",
-                                            m.Chat.Id);
-                                        return;
-                                    }
-                                    //user has not reach veteran
-                                    Send(
-                                        $"{m.NewChatMember.FirstName.FormatHTML()} removed, as they have not unlocked veteran ({gamecount} games played, need 500)",
-                                        m.Chat.Id);
-                                    Commands.KickChatMember(Settings.VeteranChatId, uid);
-                                }
+                                */
                                 else if (m.NewChatMember != null && m.Chat.Id == Settings.SupportChatId)
                                 {
                                     var uid = m.NewChatMember.Id;

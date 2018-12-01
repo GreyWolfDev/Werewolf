@@ -723,6 +723,10 @@ namespace Werewolf_Node
                         user.Achievements = 0;
                     // switch achv system
                     SwitchAchievementsSystem(p);
+
+                    /* 
+                     * Executrix will do this job for now, that will hopefully work better than this did before
+                     * 
                     if (ChatId == Settings.VeteranChatId)
                     {
                         if (!(p.NewAchievements.HasFlag(AchievementsReworked.Veteran)))
@@ -732,6 +736,7 @@ namespace Werewolf_Node
                             return;
                         }
                     }
+                    */
 
                     db.SaveChanges();
 
