@@ -270,6 +270,7 @@ namespace Werewolf_Node
                     Locale = new Locale
                     {
                         Language = chosen.FileName,
+                        Base = chosen.Base,
                         File = chosen.Doc
                     };
 
@@ -280,14 +281,13 @@ namespace Werewolf_Node
                 else
                 {
                     var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                    var doc = XDocument.Load(file);
+                    Locale = new Locale
                     {
-                        var doc = XDocument.Load(file);
-                        Locale = new Locale
-                        {
-                            Language = Path.GetFileNameWithoutExtension(file),
-                            File = doc
-                        };
-                    }
+                        Language = language,
+                        Base = doc.Descendants("language").First().Attribute("base")?.Value,
+                        File = doc
+                    };
                 }
                 Language = Locale.Language;
             }
@@ -480,25 +480,25 @@ namespace Werewolf_Node
                     if (!AllowNSFW)
                         customs = customs.Where(x => !x.GifPack.NSFW);
                     if (customs.Any(x => x.GifPack.CultWins != null))
-                        CultWins = customs.Select(x => x.GifPack.CultWins).ToList();
+                        CultWins = customs.Where(x => x.GifPack.CultWins != null).Select(x => x.GifPack.CultWins).ToList();
                     if (customs.Any(x => x.GifPack.LoversWin != null))
-                        LoversWin = customs.Select(x => x.GifPack.LoversWin).ToList();
+                        LoversWin = customs.Where(x => x.GifPack.LoversWin != null).Select(x => x.GifPack.LoversWin).ToList();
                     if (customs.Any(x => x.GifPack.NoWinner != null))
-                        NoWinner = customs.Select(x => x.GifPack.NoWinner).ToList();
+                        NoWinner = customs.Where(x => x.GifPack.NoWinner != null).Select(x => x.GifPack.NoWinner).ToList();
                     if (customs.Any(x => x.GifPack.SerialKillerWins != null))
-                        SerialKillerWins = customs.Select(x => x.GifPack.SerialKillerWins).ToList();
+                        SerialKillerWins = customs.Where(x => x.GifPack.SerialKillerWins != null).Select(x => x.GifPack.SerialKillerWins).ToList();
                     if (customs.Any(x => x.GifPack.TannerWin != null))
-                        TannerWin = customs.Select(x => x.GifPack.TannerWin).ToList();
+                        TannerWin = customs.Where(x => x.GifPack.TannerWin != null).Select(x => x.GifPack.TannerWin).ToList();
                     if (customs.Any(x => x.GifPack.VillagerDieImage != null))
-                        VillagerDieImages = customs.Select(x => x.GifPack.VillagerDieImage).ToList();
+                        VillagerDieImages = customs.Where(x => x.GifPack.VillagerDieImage != null).Select(x => x.GifPack.VillagerDieImage).ToList();
                     if (customs.Any(x => x.GifPack.VillagersWin != null))
-                        VillagersWin = customs.Select(x => x.GifPack.VillagersWin).ToList();
+                        VillagersWin = customs.Where(x => x.GifPack.VillagersWin != null).Select(x => x.GifPack.VillagersWin).ToList();
                     if (customs.Any(x => x.GifPack.WolfWin != null))
-                        WolfWin = customs.Select(x => x.GifPack.WolfWin).ToList();
+                        WolfWin = customs.Where(x => x.GifPack.WolfWin != null).Select(x => x.GifPack.WolfWin).ToList();
                     if (customs.Any(x => x.GifPack.WolvesWin != null))
-                        WolvesWin = customs.Select(x => x.GifPack.WolvesWin).ToList();
+                        WolvesWin = customs.Where(x => x.GifPack.WolvesWin != null).Select(x => x.GifPack.WolvesWin).ToList();
                     if (customs.Any(x => x.GifPack.SKKilled != null))
-                        SKKilled = customs.Select(x => x.GifPack.SKKilled).ToList();
+                        SKKilled = customs.Where(x => x.GifPack.SKKilled != null).Select(x => x.GifPack.SKKilled).ToList();
                     foreach (var p in customs)
                     {
                         cMsg += p.GetName() + Environment.NewLine;
@@ -723,6 +723,10 @@ namespace Werewolf_Node
                         user.Achievements = 0;
                     // switch achv system
                     SwitchAchievementsSystem(p);
+
+                    /* 
+                     * Executrix will do this job for now, that will hopefully work better than this did before
+                     * 
                     if (ChatId == Settings.VeteranChatId)
                     {
                         if (!(p.NewAchievements.HasFlag(AchievementsReworked.Veteran)))
@@ -732,6 +736,7 @@ namespace Werewolf_Node
                             return;
                         }
                     }
+                    */
 
                     db.SaveChanges();
 
@@ -1504,7 +1509,7 @@ namespace Werewolf_Node
                 //force roles for testing
                 rolesToAssign[0] = IRole.Wolf;
                 rolesToAssign[1] = IRole.Villager;
-                rolesToAssign[2] = IRole.Spumpkin;
+                rolesToAssign[2] = IRole.Mason;
 
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
@@ -1515,7 +1520,8 @@ namespace Werewolf_Node
                 // special roles for events
                 // halloween this time
                 var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
-                if ((DateTime.UtcNow.AddHours(14).Date == new DateTime(2018, 10, 31) || DateTime.UtcNow.AddHours(-11) == new DateTime(2018, 10, 31)))
+                var availableDates = new[] { new DateTime(2018, 10, 31), new DateTime(2018, 11, 1) };
+                if (availableDates.Contains(DateTime.UtcNow.AddHours(14).Date) || availableDates.Contains(DateTime.UtcNow.Date) || availableDates.Contains(DateTime.UtcNow.AddHours(-11).Date))
                     if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
                         rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
 
@@ -2348,7 +2354,7 @@ namespace Werewolf_Node
                         thief.HasNightAction = true;
                         var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                         if (beholder != null)
-                            Send(GetLocaleString("BeholderNewSeer", $"{thief.GetName()}", target.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                            Send(GetLocaleString("BeholderNewSeer", thief.GetName(), target.GetName()), beholder.Id);
                     }
                     break;
                 case IRole.Traitor:
@@ -2371,7 +2377,7 @@ namespace Werewolf_Node
                 case IRole.Seer:
                     var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                     if (bh != null)
-                        Send(GetLocaleString("BeholderNewSeer", $"{target.GetName()}", thief.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
+                        Send(GetLocaleString("BeholderSeerStolen", thief.GetName(), target.GetName()), bh.Id);
                     break;
                 case IRole.WildChild:
                     Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == thief.RoleModel)?.GetName() ?? "None was chosen!"), thief.Id);
@@ -2679,8 +2685,14 @@ namespace Werewolf_Node
                     }
                     else
                     {
-                        if (lynched.PlayerRole == IRole.Tanner && Players.Count(x => !x.IsDead) == 3)
-                            AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+                        if (lynched.PlayerRole == IRole.Tanner)
+                        {
+                            if (Players.Count(x => !x.IsDead) == 3)
+                                AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+
+                            if (lynched.InLove)
+                                AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
+                        }
 
                         lynched.IsDead = true;
                         lynched.TimeDied = DateTime.Now;
@@ -3009,7 +3021,7 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
-            
+
             var aliveWolves = Players.GetPlayersForRoles(WolfRoles, true);
             if (aliveWolves.Any(x => x.Drunk))
             {
@@ -4743,7 +4755,7 @@ namespace Werewolf_Node
                     }
                 }
             }
-            
+
             var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead);
 
             if (spumpkin != null)
@@ -5530,7 +5542,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.DeathVillage);
                         if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
-                      
+
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
                         db.SaveChanges();
@@ -5558,15 +5570,25 @@ namespace Werewolf_Node
                     db.SaveChanges();
                 }
 
-                var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
-                if (grpranking == null)
+                var curRanking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
+                if (curRanking == null)
                 {
-                    grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = refreshdate };
-                    db.GroupRanking.Add(grpranking);
+                    curRanking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = refreshdate };
+                    db.GroupRanking.Add(curRanking);
                     db.SaveChanges();
                 }
 
-                if (grpranking.LastRefresh < refreshdate && grpranking.GamesPlayed != 0) //games played should always be != 0, but you never know..
+                var allVarRanking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Base + "BaseAllVariants");
+                if (allVarRanking == null && !string.IsNullOrEmpty(Locale.Base)) // Locale.Base shouldn't be empty but better be careful...
+                {
+                    allVarRanking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Base + "BaseAllVariants", LastRefresh = refreshdate };
+                    db.GroupRanking.Add(allVarRanking);
+                    db.SaveChanges();
+                }
+
+                var rankings = db.GroupRanking.Where(x => x.GroupId == DbGroup.Id && x.LastRefresh < refreshdate && x.GamesPlayed != 0); //games played should always be != 0, but you never know..
+
+                foreach (var grpranking in rankings)
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
                     daysspan = daysspan == 0 ? 1 : daysspan;
@@ -5575,20 +5597,35 @@ namespace Werewolf_Node
                     var avgminutesperday = grpranking.MinutesPlayed / daysspan; //average minutes played per day
                     var timefactor = avgplayerspergame * (decimal)1.6 * avgminutesperday / 1440; //(avg minutes per day played by the avg player) / (15 h in minutes). 15h is approximately the time played per day by the most active groups.
                     var malus = (playerfactor - timefactor) * (playerfactor - timefactor) / 5; //give some malus if they played for little time with lots of people or vice versa. 
-                    grpranking.Ranking = Math.Round(playerfactor + timefactor - malus, 10);
+                    var ranking = Math.Round(playerfactor + timefactor - malus, 10);
+                    /*if (ranking < 0)
+                    {
+                        Send($"#negrank Negative Ranking!!\n\nGamesPlayed = {grpranking.GamesPlayed}\n" +
+                            $"MinutesPlayed = {grpranking.MinutesPlayed}\nPlayersCount = {grpranking.PlayersCount}\n" +
+                            $"LastRefresh = {grpranking.LastRefresh.ToShortDateString()}\n\n" +
+                            $"daysspan = {daysspan}\navgplayerspergame = {avgplayerspergame}\nplayerfactor = {playerfactor}\n" +
+                            $"avgminutesperday = {avgminutesperday}\ntimefactor = {timefactor}\nmalus = {malus}\n\n" +
+                            $"Calculated Ranking: {ranking}\nGroup ID: {ChatId}", Program.ErrorGroup);
+                    }*/
+                    grpranking.Ranking = ranking;
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = 0;
                     grpranking.GamesPlayed = 0;
                     grpranking.LastRefresh = refreshdate;
-                    db.SaveChanges();
                 }
 
                 if (_timePlayed.HasValue)
                 {
-                    grpranking.GamesPlayed++;
-                    grpranking.PlayersCount += Players.Count();
-                    grpranking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
-                    db.SaveChanges();
+                    curRanking.GamesPlayed++;
+                    curRanking.PlayersCount += Players.Count();
+                    curRanking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
+
+                    if (allVarRanking != null)
+                    {
+                        allVarRanking.GamesPlayed++;
+                        allVarRanking.PlayersCount += Players.Count();
+                        allVarRanking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
+                    }
                 }
 
                 db.SaveChanges();

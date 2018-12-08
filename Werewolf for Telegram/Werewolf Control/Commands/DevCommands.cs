@@ -1130,15 +1130,15 @@ namespace Werewolf_Control
                     return;
                 }
                 //get the languages which they played, make a menu out of it
-                var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id).ToList();
+                var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id && !x.Language.EndsWith("BaseAllVariants")).ToList();
                 var menu = rankings.Select(x => new[] {
-                        new InlineKeyboardCallbackButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
-                        new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
-                    }).ToList();
+                    new InlineKeyboardCallbackButton(x.Language, $"pf|{grp.GroupId}|{x.Language}|i"),
+                    new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"pf|{grp.GroupId}|{x.Language}|t")
+                }).ToList();
                 //add a button at the beginning and at the end
                 menu.Insert(0, new[] {
-                    new InlineKeyboardCallbackButton("Global", $"preferred|{grp.GroupId}|null|info"),
-                    new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                    new InlineKeyboardCallbackButton("Global", $"pf|{grp.GroupId}|null|i"),
+                    new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"pf|{grp.GroupId}|null|t")
                 });
                 menu.Add(new[] { new InlineKeyboardCallbackButton("Done", "done") });
                 //send everything

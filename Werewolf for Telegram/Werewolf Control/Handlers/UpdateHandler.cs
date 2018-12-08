@@ -45,11 +45,11 @@ namespace Werewolf_Control.Handler
             {
                 if (!UserMessages.ContainsKey(id))
                     UserMessages.Add(id, new SpamDetector { Messages = new HashSet<UserMessage>() });
-                
+
                 var shouldReply = (UserMessages[id].Messages.Where(x => x.Replied).OrderByDescending(x => x.Time).FirstOrDefault()?.Time ?? DateTime.MinValue) <
                        DateTime.UtcNow.AddSeconds(-4);
 
-                UserMessages[id].Messages.Add(new UserMessage(m){Replied = shouldReply});
+                UserMessages[id].Messages.Add(new UserMessage(m) { Replied = shouldReply });
                 return !shouldReply;
 
             }
@@ -322,7 +322,7 @@ namespace Werewolf_Control.Handler
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
                                 Program.Analytics.TrackAsync("/" + args[0],
-                                    new {groupid = update.Message.Chat.Id, user = update.Message.From},
+                                    new { groupid = update.Message.Chat.Id, user = update.Message.From },
                                     update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
@@ -537,6 +537,9 @@ namespace Werewolf_Control.Handler
                                         id, parseMode: ParseMode.Markdown);
 #endif
                                 }
+                                /*
+                                 * Executrix will do this job for now, that will hopefully work better than this did before
+                                 * 
                                 else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
                                 {
                                     var uid = m.NewChatMember.Id;
@@ -554,24 +557,7 @@ namespace Werewolf_Control.Handler
                                         m.Chat.Id);
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
-                                else if (m.NewChatMember != null && m.Chat.Id == Settings.VeteranChatId)
-                                {
-                                    var uid = m.NewChatMember.Id;
-                                    //check that they are allowed to join.
-                                    var p = DB.Players.FirstOrDefault(x => x.TelegramId == uid);
-                                    var gamecount = p?.GamePlayers.Count ?? 0;
-                                    if (gamecount >= 500)
-                                    {
-                                        Send($"{m.NewChatMember.FirstName.FormatHTML()} has played {gamecount} games",
-                                            m.Chat.Id);
-                                        return;
-                                    }
-                                    //user has not reach veteran
-                                    Send(
-                                        $"{m.NewChatMember.FirstName.FormatHTML()} removed, as they have not unlocked veteran ({gamecount} games played, need 500)",
-                                        m.Chat.Id);
-                                    Commands.KickChatMember(Settings.VeteranChatId, uid);
-                                }
+                                */
                                 else if (m.NewChatMember != null && m.Chat.Id == Settings.SupportChatId)
                                 {
                                     var uid = m.NewChatMember.Id;
@@ -606,7 +592,7 @@ namespace Werewolf_Control.Handler
                             break;
                         default:
                             break;
-                        //throw new ArgumentOutOfRangeException();
+                            //throw new ArgumentOutOfRangeException();
                     }
                 }
 #if !DEBUG
@@ -1195,42 +1181,42 @@ namespace Werewolf_Control.Handler
                                 Bot.ReplyToCallback(query, "Status updated");
                             }
                             break;
-                        case "preferred":
+                        case "pf": // "preferred"
                             var grpid = grp.Id;
                             var rankings = DB.GroupRanking.Where(x => x.GroupId == grpid).ToList();
                             var lang = args[2];
                             if (lang == "null") //preferred
                             {
-                                if (args[3] == "toggle")
+                                if (args[3] == "t") // "toggle"
                                     //toggle preferred
                                     grp.Preferred = !(grp.Preferred ?? true);
                                 //say if they're preferred
                                 Bot.ReplyToCallback(query, "Global: " + (grp.Preferred == false ? "disabled" : "enabled"), false);
-                                if (args[3] == "info")
+                                if (args[3] == "i") // "info"
                                     return;
                             }
                             else
                             {
                                 //get the ranking
                                 var ranking = rankings.FirstOrDefault(x => x.Language == lang);
-                                if (args[3] == "toggle")
+                                if (args[3] == "t") // "toggle"
                                     //toggle show
                                     ranking.Show = !(ranking.Show ?? true);
                                 //say if they're shown
                                 Bot.ReplyToCallback(query, lang + ": " + (ranking.Show == false ? "disabled" : "enabled"), false);
-                                if (args[3] == "info")
+                                if (args[3] == "i") // "info"
                                     return;
                             }
                             DB.SaveChanges();
                             //make the menu
                             var rows = rankings.Select(x => new[] {
-                                new InlineKeyboardCallbackButton(x.Language, $"preferred|{grp.GroupId}|{x.Language}|info"),
-                                new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|{x.Language}|toggle")
+                                new InlineKeyboardCallbackButton(x.Language, $"pf|{grp.GroupId}|{x.Language}|i"),
+                                new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"pf|{grp.GroupId}|{x.Language}|t")
                             }).ToList();
                             //add a button at the beginning and at the end
                             rows.Insert(0, new[] {
-                                new InlineKeyboardCallbackButton("Global", $"preferred|{grp.GroupId}|null|info"),
-                                new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"preferred|{grp.GroupId}|null|toggle")
+                                new InlineKeyboardCallbackButton("Global", $"pf|{grp.GroupId}|null|i"),
+                                new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"pf|{grp.GroupId}|null|t")
                             });
                             rows.Add(new[] { new InlineKeyboardCallbackButton("Done", "done") });
                             //send everything
@@ -1318,39 +1304,21 @@ namespace Werewolf_Control.Handler
                                         i++;
                                     }
 
-                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode:ParseMode.Html);
+                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode: ParseMode.Html);
                                     break;
                                 }
                             }
-                           
+
 
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().GroupBy(x => x.GroupId).Select(x => x.First()).Where(x => x.LastRefresh >= DateTime.Now.Date.AddDays(-21)).OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
-                           
+
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
-                            if (groups.Count() > 5)
-                            {
-                                //need to split it
-                                var reply = groups.Take(5).Aggregate("",
-                                    (current, g) =>
-                                        current +
-                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                                Send(reply, query.Message.Chat.Id);
-                                Thread.Sleep(500);
-                                reply = groups.Skip(5).Aggregate("",
-                                    (current, g) =>
-                                        current +
-                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                                Send(reply, query.Message.Chat.Id);
-                            }
-                            else
-                            {
-                                var reply = groups.Aggregate("",
-                                    (current, g) =>
-                                        current +
-                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                                Send(reply, query.Message.Chat.Id);
-                            }
+                            var reply = groups.Aggregate("",
+                                (current, g) =>
+                                    current +
+                                    $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
+                            Send(reply, query.Message.Chat.Id);
 
                             break;
                         case "getlang":

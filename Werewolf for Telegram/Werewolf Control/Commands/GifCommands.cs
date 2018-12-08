@@ -199,6 +199,16 @@ namespace Werewolf_Control
                     {
                         var json = p?.CustomGifSet;
                         var data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                        if (data.Approved != null)
+                        {
+                            Bot.Send($"Your current GIF pack has already been {(data.Approved == true ? "" : "dis")}approved! You can't submit it again without any changes!", q.From.Id, customMenu: GetGifMenu(data));
+                            return;
+                        }
+                        if (new[] { data.CultWins, data.LoversWin, data.NoWinner, data.SerialKillerWins, data.SKKilled, data.StartChaosGame, data.StartGame, data.TannerWin, data.VillagerDieImage, data.VillagersWin, data.WolfWin, data.WolvesWin }.All(x => string.IsNullOrEmpty(x)))
+                        {
+                            Bot.Send($"Please set at least one GIF before you submit your pack!", q.From.Id, customMenu: GetGifMenu(data));
+                            return;
+                        }
                         data.Submitted = true;
                         p.CustomGifSet = JsonConvert.SerializeObject(data);
                         db.SaveChanges();
@@ -206,11 +216,11 @@ namespace Werewolf_Control
                 }
                 var menu = new Menu(2);
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Review", "reviewgifs|" + q.From.Id));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", $"dismiss|{q.From.Id}|{q.Message.Chat.Id}|{q.Message.MessageId}"));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", $"dismiss|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
                 Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
-                Bot.Send("Your pack has been submitted for approval to the admin.  Please wait while we review.",
+                Bot.Send("Your pack has been submitted for approval to the admins.  Please wait while we review.",
                     q.From.Id);
                 return;
             }
@@ -224,7 +234,7 @@ namespace Werewolf_Control
                     data.ShowBadge = !data.ShowBadge;
                     p.CustomGifSet = JsonConvert.SerializeObject(data);
                     db.SaveChanges();
-                    Bot.Send($"You badge will {(data.ShowBadge ? "" : "not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
+                    Bot.Send($"Your badge will {(data.ShowBadge ? "" : "not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
                     return;
                 }
             }
