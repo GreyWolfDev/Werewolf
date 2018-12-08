@@ -127,20 +127,14 @@ namespace Werewolf_Control.Helpers
         
         internal static IEnumerable<v_GroupRanking> ForLanguage(string baseLang, string variant)
         {
-            if (variant == "all")
+            string lang = variant == "all"
+                ? $"{baseLang}BaseAllVariants"
+                : LanguageHelper.GetAllLanguages().FirstOrDefault(x => x.Base == baseLang && x.Variant == variant).FileName;
+
+            foreach (var g in GetAll())
             {
-                var langs = LanguageHelper.GetAllLanguages().Where(x => x.Base == baseLang).Select(x => x.FileName);
-                foreach (var g in GetAll().Where(x => langs.Contains(x.Language)).GroupBy(x => x.GroupId).Select(x => x.OrderByDescending(y => y.LastRefresh).ThenByDescending(y => y.Ranking).First()))
+                if (lang == g.Language)
                     yield return g;
-            }
-            else
-            {
-                var lang = LanguageHelper.GetAllLanguages().FirstOrDefault(x => x.Base == baseLang && x.Variant == variant);
-                foreach (var g in GetAll())
-                {
-                    if (lang.FileName == g.Language)
-                        yield return g;
-                }
             }
         }
 

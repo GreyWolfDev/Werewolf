@@ -45,11 +45,11 @@ namespace Werewolf_Control.Handler
             {
                 if (!UserMessages.ContainsKey(id))
                     UserMessages.Add(id, new SpamDetector { Messages = new HashSet<UserMessage>() });
-                
+
                 var shouldReply = (UserMessages[id].Messages.Where(x => x.Replied).OrderByDescending(x => x.Time).FirstOrDefault()?.Time ?? DateTime.MinValue) <
                        DateTime.UtcNow.AddSeconds(-4);
 
-                UserMessages[id].Messages.Add(new UserMessage(m){Replied = shouldReply});
+                UserMessages[id].Messages.Add(new UserMessage(m) { Replied = shouldReply });
                 return !shouldReply;
 
             }
@@ -322,7 +322,7 @@ namespace Werewolf_Control.Handler
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
                                 Program.Analytics.TrackAsync("/" + args[0],
-                                    new {groupid = update.Message.Chat.Id, user = update.Message.From},
+                                    new { groupid = update.Message.Chat.Id, user = update.Message.From },
                                     update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
@@ -592,7 +592,7 @@ namespace Werewolf_Control.Handler
                             break;
                         default:
                             break;
-                        //throw new ArgumentOutOfRangeException();
+                            //throw new ArgumentOutOfRangeException();
                     }
                 }
 #if !DEBUG
@@ -1304,39 +1304,21 @@ namespace Werewolf_Control.Handler
                                         i++;
                                     }
 
-                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode:ParseMode.Html);
+                                    Bot.ReplyToCallback(query, message, replyMarkup: new InlineKeyboardMarkup(variantMenu.ToArray()), parsemode: ParseMode.Html);
                                     break;
                                 }
                             }
-                           
+
 
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().GroupBy(x => x.GroupId).Select(x => x.First()).Where(x => x.LastRefresh >= DateTime.Now.Date.AddDays(-21)).OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
-                           
+
                             Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
-                            if (groups.Count() > 5)
-                            {
-                                //need to split it
-                                var reply = groups.Take(5).Aggregate("",
-                                    (current, g) =>
-                                        current +
-                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                                Send(reply, query.Message.Chat.Id);
-                                Thread.Sleep(500);
-                                reply = groups.Skip(5).Aggregate("",
-                                    (current, g) =>
-                                        current +
-                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                                Send(reply, query.Message.Chat.Id);
-                            }
-                            else
-                            {
-                                var reply = groups.Aggregate("",
-                                    (current, g) =>
-                                        current +
-                                        $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                                Send(reply, query.Message.Chat.Id);
-                            }
+                            var reply = groups.Aggregate("",
+                                (current, g) =>
+                                    current +
+                                    $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
+                            Send(reply, query.Message.Chat.Id);
 
                             break;
                         case "getlang":

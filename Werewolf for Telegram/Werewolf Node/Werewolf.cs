@@ -270,6 +270,7 @@ namespace Werewolf_Node
                     Locale = new Locale
                     {
                         Language = chosen.FileName,
+                        Base = chosen.Base,
                         File = chosen.Doc
                     };
 
@@ -280,14 +281,13 @@ namespace Werewolf_Node
                 else
                 {
                     var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
+                    var doc = XDocument.Load(file);
+                    Locale = new Locale
                     {
-                        var doc = XDocument.Load(file);
-                        Locale = new Locale
-                        {
-                            Language = Path.GetFileNameWithoutExtension(file),
-                            File = doc
-                        };
-                    }
+                        Language = language,
+                        Base = doc.Descendants("language").First().Attribute("base")?.Value,
+                        File = doc
+                    };
                 }
                 Language = Locale.Language;
             }
@@ -1509,7 +1509,7 @@ namespace Werewolf_Node
                 //force roles for testing
                 rolesToAssign[0] = IRole.Wolf;
                 rolesToAssign[1] = IRole.Villager;
-                rolesToAssign[2] = IRole.Spumpkin;
+                rolesToAssign[2] = IRole.Mason;
 
                 if (rolesToAssign.Count >= 4)
                     rolesToAssign[3] = IRole.Villager;
@@ -5570,15 +5570,25 @@ namespace Werewolf_Node
                     db.SaveChanges();
                 }
 
-                var grpranking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
-                if (grpranking == null)
+                var curRanking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Language);
+                if (curRanking == null)
                 {
-                    grpranking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = refreshdate };
-                    db.GroupRanking.Add(grpranking);
+                    curRanking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Language, LastRefresh = refreshdate };
+                    db.GroupRanking.Add(curRanking);
                     db.SaveChanges();
                 }
 
-                if (grpranking.LastRefresh < refreshdate && grpranking.GamesPlayed != 0) //games played should always be != 0, but you never know..
+                var allVarRanking = db.GroupRanking.FirstOrDefault(x => x.GroupId == DbGroup.Id && x.Language == Locale.Base + "BaseAllVariants");
+                if (allVarRanking == null && !string.IsNullOrEmpty(Locale.Base)) // Locale.Base shouldn't be empty but better be careful...
+                {
+                    allVarRanking = new GroupRanking { GroupId = DbGroup.Id, Language = Locale.Base + "BaseAllVariants", LastRefresh = refreshdate };
+                    db.GroupRanking.Add(allVarRanking);
+                    db.SaveChanges();
+                }
+
+                var rankings = db.GroupRanking.Where(x => x.GroupId == DbGroup.Id && x.LastRefresh < refreshdate && x.GamesPlayed != 0); //games played should always be != 0, but you never know..
+
+                foreach (var grpranking in rankings)
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
                     daysspan = daysspan == 0 ? 1 : daysspan;
@@ -5593,7 +5603,7 @@ namespace Werewolf_Node
                         Send($"#negrank Negative Ranking!!\n\nGamesPlayed = {grpranking.GamesPlayed}\n" +
                             $"MinutesPlayed = {grpranking.MinutesPlayed}\nPlayersCount = {grpranking.PlayersCount}\n" +
                             $"LastRefresh = {grpranking.LastRefresh.ToShortDateString()}\n\n" +
-                            $"daysspan = {daysspan}\navgplayerspergame = {avgplayerspergame}\nplayerfactor = {playerfactor}" +
+                            $"daysspan = {daysspan}\navgplayerspergame = {avgplayerspergame}\nplayerfactor = {playerfactor}\n" +
                             $"avgminutesperday = {avgminutesperday}\ntimefactor = {timefactor}\nmalus = {malus}\n\n" +
                             $"Calculated Ranking: {ranking}\nGroup ID: {ChatId}", Program.ErrorGroup);
                     }
@@ -5602,15 +5612,20 @@ namespace Werewolf_Node
                     grpranking.MinutesPlayed = 0;
                     grpranking.GamesPlayed = 0;
                     grpranking.LastRefresh = refreshdate;
-                    db.SaveChanges();
                 }
 
                 if (_timePlayed.HasValue)
                 {
-                    grpranking.GamesPlayed++;
-                    grpranking.PlayersCount += Players.Count();
-                    grpranking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
-                    db.SaveChanges();
+                    curRanking.GamesPlayed++;
+                    curRanking.PlayersCount += Players.Count();
+                    curRanking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
+
+                    if (allVarRanking != null)
+                    {
+                        allVarRanking.GamesPlayed++;
+                        allVarRanking.PlayersCount += Players.Count();
+                        allVarRanking.MinutesPlayed += Math.Round((decimal)_timePlayed.Value.TotalMinutes, 10);
+                    }
                 }
 
                 db.SaveChanges();
