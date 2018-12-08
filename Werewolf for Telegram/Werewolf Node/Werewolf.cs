@@ -5598,7 +5598,7 @@ namespace Werewolf_Node
                     var timefactor = avgplayerspergame * (decimal)1.6 * avgminutesperday / 1440; //(avg minutes per day played by the avg player) / (15 h in minutes). 15h is approximately the time played per day by the most active groups.
                     var malus = (playerfactor - timefactor) * (playerfactor - timefactor) / 5; //give some malus if they played for little time with lots of people or vice versa. 
                     var ranking = Math.Round(playerfactor + timefactor - malus, 10);
-                    if (ranking < 0)
+                    /*if (ranking < 0)
                     {
                         Send($"#negrank Negative Ranking!!\n\nGamesPlayed = {grpranking.GamesPlayed}\n" +
                             $"MinutesPlayed = {grpranking.MinutesPlayed}\nPlayersCount = {grpranking.PlayersCount}\n" +
@@ -5606,7 +5606,7 @@ namespace Werewolf_Node
                             $"daysspan = {daysspan}\navgplayerspergame = {avgplayerspergame}\nplayerfactor = {playerfactor}\n" +
                             $"avgminutesperday = {avgminutesperday}\ntimefactor = {timefactor}\nmalus = {malus}\n\n" +
                             $"Calculated Ranking: {ranking}\nGroup ID: {ChatId}", Program.ErrorGroup);
-                    }
+                    }*/
                     grpranking.Ranking = ranking;
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = 0;
