@@ -149,7 +149,9 @@ namespace Werewolf_Node.Models
         //more new roles, from april fools.....
         Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
         //halloween role
-        Spumpkin
+        Spumpkin,
+        //and once again, new roles! :D
+        Troublemaker
     }
 
     public enum ITeam

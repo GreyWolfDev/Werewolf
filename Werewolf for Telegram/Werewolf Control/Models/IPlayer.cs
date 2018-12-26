@@ -75,7 +75,11 @@ namespace Werewolf_Control.Models
         //new roles
         Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince,
         //more new roles, from april fools.....
-        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief
+        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
+        //halloween role
+        Spumpkin,
+        //and once again, new roles! :D
+        Troublemaker
     }
 
     public enum ITeam

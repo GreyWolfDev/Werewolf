@@ -41,16 +41,16 @@ namespace Werewolf_Node
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
         public Group DbGroup;
-        private bool _playerListChanged = true, _silverSpread, _sandmanSleep, _pacifistUsed;
+        private bool _playerListChanged = true, _silverSpread, _sandmanSleep, _pacifistUsed, _doubleLynch;
         private DateTime _timeStarted;
-        private Nullable<TimeSpan> _timePlayed = null;
+        private TimeSpan? _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
         public List<long> HaveExtended = new List<long>();
         private List<IPlayer> _joined = new List<IPlayer>();
-        private int _joinMsgId;
-        private string FirstMessage = "";
+        private readonly int _joinMsgId;
+        private readonly string FirstMessage = "";
         private DateTime LastJoinButtonShowed = DateTime.MinValue;
-        private InlineKeyboardMarkup _joinButton;
+        private readonly InlineKeyboardMarkup _joinButton;
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
@@ -859,6 +859,7 @@ namespace Werewolf_Node
                 {
                     player.HasUsedAbility = true;
                     _pacifistUsed = true;
+                    _doubleLynch = false; // peace overrides trouble
                     SendWithQueue(GetLocaleString("PacifistNoLynch", player.GetName()));
 
                     Program.MessagesSent++;
@@ -895,6 +896,21 @@ namespace Werewolf_Node
 
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted"));
+                    player.CurrentQuestion = null;
+                    return;
+                }
+
+                if (player.PlayerRole == IRole.Troublemaker && player.CurrentQuestion.QType == QuestionType.Trouble)
+                {
+                    if (args[3] == "yes")
+                    {
+                        player.HasUsedAbility = true;
+                        _doubleLynch = true;
+                        _pacifistUsed = false; // trouble overrides peace
+                        SendWithQueue(GetLocaleString("TroublemakerDoubleLynch", player.GetName()));
+                    }
+
+                    ReplyToCallback(query, GetLocaleString("ChoiceAccepted"));
                     player.CurrentQuestion = null;
                     return;
                 }
@@ -1549,7 +1565,9 @@ namespace Werewolf_Node
                 }
 
                 foreach (var p in Players)
+                {
                     p.CultLeader = p.PlayerRole == IRole.Cultist;
+                }
 
             }
             catch (Exception ex)
@@ -1582,6 +1600,7 @@ namespace Werewolf_Node
                     case IRole.Pacifist:
                     case IRole.WiseElder:
                     case IRole.Blacksmith:
+                    case IRole.Troublemaker:
                         p.HasDayAction = false;
                         p.HasNightAction = false;
                         p.Team = ITeam.Village;
@@ -1985,6 +2004,7 @@ namespace Werewolf_Node
                         case IRole.WolfMan:
                         case IRole.WiseElder:
                         case IRole.Blacksmith:
+                        case IRole.Troublemaker:
                             p.HasDayAction = false;
                             p.HasNightAction = false;
                             p.Team = ITeam.Village;
@@ -2258,6 +2278,7 @@ namespace Werewolf_Node
                 case IRole.Pacifist:
                 case IRole.WiseElder:
                 case IRole.Blacksmith:
+                case IRole.Troublemaker:
                     thief.HasDayAction = false;
                     thief.HasNightAction = false;
                     thief.Team = ITeam.Village;
@@ -2444,6 +2465,7 @@ namespace Werewolf_Node
                 target.DayCult = GameDay;
                 Send(GetLocaleString("CultConvertYou"), target.Id);
                 Send(GetLocaleString("CultTeam", voteCult.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), target.Id);
+
                 foreach (var c in voteCult)
                     Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
             }
@@ -2488,32 +2510,78 @@ namespace Werewolf_Node
             if (!IsRunning) return;
             Time = GameTime.Lynch;
             if (Players == null) return;
-            foreach (var p in Players)
-            {
-                p.CurrentQuestion = null;
-                p.VotedBy.Clear();
-                p.Votes = 0;
-            }
 
-            if (CheckForGameEnd()) return;
-            if (_pacifistUsed)
-            {
-                SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
-                _pacifistUsed = false;
-                return;
-            }
-            SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
-            SendPlayerList();
-            SendLynchMenu();
+            int lynchAttempt = 0;
+            bool doubleLynch = _doubleLynch;
+            _doubleLynch = false;
 
-            for (var i = 0; i < (DbGroup.LynchTime ?? Settings.TimeLynch); i++)
+            do
             {
-                Thread.Sleep(1000);
+                lynchAttempt++;
+
+                foreach (var p in Players)
+                {
+                    p.CurrentQuestion = null;
+                    p.VotedBy.Clear();
+                    p.Votes = 0;
+                }
+
                 if (CheckForGameEnd()) return;
                 if (_pacifistUsed)
                 {
                     SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
                     _pacifistUsed = false;
+                    return;
+                }
+
+                if (lynchAttempt == 2) SendWithQueue(GetLocaleString("TroubleDoubleLynchNow"));
+                SendWithQueue(GetLocaleString("LynchTime", DbGroup.LynchTime.ToBold() ?? Settings.TimeLynch.ToBold()));
+                SendPlayerList();
+                SendLynchMenu();
+
+                for (var i = 0; i < (DbGroup.LynchTime ?? Settings.TimeLynch); i++)
+                {
+                    Thread.Sleep(1000);
+                    if (CheckForGameEnd()) return;
+                    if (_pacifistUsed)
+                    {
+                        SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
+                        _pacifistUsed = false;
+                        foreach (var p in Players.Where(x => x.CurrentQuestion != null))
+                        {
+                            try
+                            {
+                                if (p.CurrentQuestion.MessageId != 0)
+                                {
+                                    Program.MessagesSent++;
+                                    Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("LynchPeaceTimeout"));
+                                }
+                            }
+                            catch { } // ignored
+                            p.CurrentQuestion = null;
+                        }
+                        var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead);
+                        if (pacifist != null)
+                        {
+                            if (Players.Count(x => x.Choice == pacifist.Id) > (double)Players.Count(x => !x.IsDead) / 2)
+                            {
+                                AddAchievement(pacifist, AchievementsReworked.EveryManForHimself);
+                            }
+                            else if (pacifist.LoverId != 0 && Players.Count(x => x.Choice == pacifist.LoverId) > (double)Players.Count(x => !x.IsDead) / 2)
+                            {
+                                AddAchievement(Players.First(x => x.Id == pacifist.LoverId), AchievementsReworked.MySweetieSoStrong);
+                            }
+                        }
+                        return;
+                    }
+                    //check if all votes are cast
+                    var livePlayers = Players.Where(x => !x.IsDead);
+                    if (livePlayers.All(x => x.Choice != 0))
+                        break;
+                }
+                //remove menus
+                try
+                {
                     foreach (var p in Players.Where(x => x.CurrentQuestion != null))
                     {
                         try
@@ -2521,243 +2589,209 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 Program.MessagesSent++;
-                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("LynchPeaceTimeout"));
+                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                             }
                         }
-                        catch { } // ignored
+                        catch
+                        {
+                            // ignored
+                        }
                         p.CurrentQuestion = null;
                     }
-                    var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead);
-                    if (pacifist != null)
-                    {
-                        if (Players.Count(x => x.Choice == pacifist.Id) > (double)Players.Count(x => !x.IsDead) / 2)
-                        {
-                            AddAchievement(pacifist, AchievementsReworked.EveryManForHimself);
-                        }
-                        else if (pacifist.LoverId != 0 && Players.Count(x => x.Choice == pacifist.LoverId) > (double)Players.Count(x => !x.IsDead) / 2)
-                        {
-                            AddAchievement(Players.First(x => x.Id == pacifist.LoverId), AchievementsReworked.MySweetieSoStrong);
-                        }
-                    }
-                    return;
                 }
-                //check if all votes are cast
-                var livePlayers = Players.Where(x => !x.IsDead);
-                if (livePlayers.All(x => x.Choice != 0))
-                    break;
-            }
-            //remove menus
-            try
-            {
-                foreach (var p in Players.Where(x => x.CurrentQuestion != null))
+                catch
                 {
-                    try
-                    {
-                        if (p.CurrentQuestion.MessageId != 0)
-                        {
-                            Program.MessagesSent++;
-                            Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
-                        }
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
-                    p.CurrentQuestion = null;
+                    // ignored
                 }
-            }
-            catch
-            {
-                // ignored
-            }
 
-
-            //Log.WriteLine("Lynch time ended, adding up votes");
-            if (CheckForGameEnd()) return;
-            foreach (var p in Players.Where(x => !x.IsDead))
-            {
-                if (p.Choice != 0 && p.Choice != -1)
+                //Log.WriteLine("Lynch time ended, adding up votes");
+                if (CheckForGameEnd()) return;
+                foreach (var p in Players.Where(x => !x.IsDead))
                 {
-                    var target = Players.FirstOrDefault(x => x.Id == p.Choice);
-                    if (target != null)
+                    if (p.Choice != 0 && p.Choice != -1)
                     {
-                        target.HasBeenVoted = true;
-                        target.Votes++;
-
-                        if (SecretLynch && SecretLynchShowVotes && SecretLynchShowVoters && !target.VotedBy.ContainsKey(p))
-                            target.VotedBy.Add(p, 1);
-
-                        if (p.PlayerRole == IRole.Mayor && p.HasUsedAbility) //Mayor counts twice
+                        var target = Players.FirstOrDefault(x => x.Id == p.Choice);
+                        if (target != null)
                         {
-                            p.MayorLynchAfterRevealCount++;
+                            target.HasBeenVoted = true;
                             target.Votes++;
+
                             if (SecretLynch && SecretLynchShowVotes && SecretLynchShowVoters && !target.VotedBy.ContainsKey(p))
-                                target.VotedBy[p]++;
-                        }
-                        DBAction(p, target, "Lynch");
-                    }
-                    p.NonVote = 0;
-                }
-                else if (!p.IsDead && p.Choice != -2)
-                {
-                    p.NonVote++;
-                    if (p.NonVote < 2) continue;
-                    var idles24 = 0;
-                    try
-                    {
-                        using (var db = new WWContext())
-                        {
-                            idles24 = db.GetIdleKills24Hours(p.Id).FirstOrDefault() ?? 0;
-                        }
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
-                    SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n" : "") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
+                                target.VotedBy.Add(p, 1);
 
-                    //if hunter has died from AFK, too bad....
-                    p.IsDead = true;
-                    p.TimeDied = DateTime.Now;
-                    CheckRoleChanges();
-                    //update the database
-                    DBKill(p, p, KillMthd.Idle);
-                }
-            }
-
-
-            try
-            {
-                var maxVotes = Players.Max(x => x.Votes);
-                var choices = Players.Where(x => x.Votes == maxVotes).ToList();
-                IPlayer lynched = new IPlayer() { Votes = -1 };
-                if (choices.Count > 1)
-                {
-                    //Log.WriteLine("Lynch tie");
-                    if (Settings.RandomLynch)
-                    {
-                        //select one at random now
-                        choices.Shuffle();
-                        choices.Shuffle();
-                        lynched = Players.First(x => x.Id == choices.First().Id);
-                    }
-                }
-                else
-                {
-                    lynched = Players.First(x => x.Id == choices.First().Id);
-                }
-
-                //Log.WriteLine("lynched Votes = " + lynched.Votes);
-
-                // if secret lynch is on and show votes
-                if (SecretLynch && SecretLynchShowVotes)
-                {
-                    string sendMsg = "";
-                    // secret lynch vote results..
-                    var playerGotVoted = Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes);
-                    foreach (IPlayer p in playerGotVoted)
-                    {
-                        if (SecretLynchShowVoters == true)
-                        {
-                            List<string> voterList = new List<string>();
-                            string voterNames = "";
-                            foreach (KeyValuePair<IPlayer, int> pp in p.VotedBy)
+                            if (p.PlayerRole == IRole.Mayor && p.HasUsedAbility) //Mayor counts twice
                             {
-                                voterList.Add(pp.Value > 1 ? $"{pp.Key.GetName()} ({pp.Value})" : pp.Key.GetName());
+                                p.MayorLynchAfterRevealCount++;
+                                target.Votes++;
+                                if (SecretLynch && SecretLynchShowVotes && SecretLynchShowVoters && !target.VotedBy.ContainsKey(p))
+                                    target.VotedBy[p]++;
                             }
-                            voterNames = voterList.Aggregate((x, y) => x + ", " + y);
-                            sendMsg += GetLocaleString("SecretLynchResultEach", p.Votes, p.GetName(), voterNames) + "\n";
+                            DBAction(p, target, "Lynch");
                         }
-                        else
-                        {
-                            sendMsg += GetLocaleString("SecretLynchResultNumber", p.Votes, p.GetName()) + "\n";
-                        }
+                        p.NonVote = 0;
                     }
-                    SendWithQueue(GetLocaleString("SecretLynchResultFull", sendMsg));
+                    else if (!p.IsDead && lynchAttempt < 2)
+                    {
+                        p.NonVote++;
+                        if (p.NonVote < 2) continue;
+                        var idles24 = 0;
+                        try
+                        {
+                            using (var db = new WWContext())
+                            {
+                                idles24 = db.GetIdleKills24Hours(p.Id).FirstOrDefault() ?? 0;
+                            }
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+                        SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n" : "") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
+
+                        //if hunter has died from AFK, too bad....
+                        p.IsDead = true;
+                        p.TimeDied = DateTime.Now;
+                        CheckRoleChanges();
+                        //update the database
+                        DBKill(p, p, KillMthd.Idle);
+                    }
                 }
 
-                if (lynched.Votes > 0)
+
+                try
                 {
-                    if (lynched.PlayerRole == IRole.Prince & !lynched.HasUsedAbility) //can only do this once
+                    var maxVotes = Players.Max(x => x.Votes);
+                    var choices = Players.Where(x => x.Votes == maxVotes).ToList();
+                    IPlayer lynched = new IPlayer() { Votes = -1 };
+                    if (choices.Count > 1)
                     {
-                        SendWithQueue(GetLocaleString("PrinceLynched", lynched.GetName()));
-                        lynched.HasUsedAbility = true;
+                        //Log.WriteLine("Lynch tie");
+                        if (Settings.RandomLynch)
+                        {
+                            //select one at random now
+                            choices.Shuffle();
+                            choices.Shuffle();
+                            lynched = Players.First(x => x.Id == choices.First().Id);
+                        }
                     }
                     else
                     {
-                        if (lynched.PlayerRole == IRole.Tanner)
+                        lynched = Players.First(x => x.Id == choices.First().Id);
+                    }
+
+                    //Log.WriteLine("lynched Votes = " + lynched.Votes);
+
+                    // if secret lynch is on and show votes
+                    if (SecretLynch && SecretLynchShowVotes)
+                    {
+                        string sendMsg = "";
+                        // secret lynch vote results..
+                        var playerGotVoted = Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes);
+                        foreach (IPlayer p in playerGotVoted)
                         {
-                            if (Players.Count(x => !x.IsDead) == 3)
-                                AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+                            if (SecretLynchShowVoters == true)
+                            {
+                                List<string> voterList = new List<string>();
+                                string voterNames = "";
+                                foreach (KeyValuePair<IPlayer, int> pp in p.VotedBy)
+                                {
+                                    voterList.Add(pp.Value > 1 ? $"{pp.Key.GetName()} ({pp.Value})" : pp.Key.GetName());
+                                }
+                                voterNames = voterList.Aggregate((x, y) => x + ", " + y);
+                                sendMsg += GetLocaleString("SecretLynchResultEach", p.Votes, p.GetName(), voterNames) + "\n";
+                            }
+                            else
+                            {
+                                sendMsg += GetLocaleString("SecretLynchResultNumber", p.Votes, p.GetName()) + "\n";
+                            }
+                        }
+                        SendWithQueue(GetLocaleString("SecretLynchResultFull", sendMsg));
+                    }
+
+                    if (lynched.Votes > 0)
+                    {
+                        if (lynched.PlayerRole == IRole.Prince & !lynched.HasUsedAbility) //can only do this once
+                        {
+                            SendWithQueue(GetLocaleString("PrinceLynched", lynched.GetName()));
+                            lynched.HasUsedAbility = true;
+                        }
+                        else
+                        {
+                            if (lynched.PlayerRole == IRole.Tanner)
+                            {
+                                if (Players.Count(x => !x.IsDead) == 3)
+                                    AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
+
+                                if (lynched.InLove)
+                                    AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
+                            }
+
+                            lynched.IsDead = true;
+                            lynched.TimeDied = DateTime.Now;
+                            if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
+                                AddAchievement(lynched, Achievements.LackOfTrust);
+                            if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
+                                AddAchievement(lynched, Achievements.SpoiledRichBrat);
+                            SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
                             if (lynched.InLove)
-                                AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
+                                KillLover(lynched);
+
+                            //effects on game depending on the lynched's role
+                            switch (lynched.PlayerRole)
+                            {
+                                case IRole.WolfCub:
+                                    WolfCubKilled = true;
+                                    break;
+                                case IRole.Tanner:
+                                    //check for overkill
+                                    if (Players.Where(x => !x.IsDead).All(x => x.Choice == lynched.Id))
+                                        AddAchievement(lynched, Achievements.TannerOverkill);
+                                    //end game
+                                    lynched.DiedLastNight = true; //store the tanner who should win (DG is too complicated to handle)
+                                    DoGameEnd(ITeam.Tanner);
+                                    return;
+                                case IRole.Hunter:
+                                    HunterFinalShot(lynched, KillMthd.Lynch);
+                                    break;
+                            }
+
+                            //update the database
+                            DBKill(Players.Where(x => x.Choice == lynched.Id), lynched, KillMthd.Lynch);
+
+                            CheckRoleChanges(true);
                         }
-
-                        lynched.IsDead = true;
-                        lynched.TimeDied = DateTime.Now;
-                        if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
-                            AddAchievement(lynched, Achievements.LackOfTrust);
-                        if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
-                            AddAchievement(lynched, Achievements.SpoiledRichBrat);
-                        SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
-
-                        if (lynched.InLove)
-                            KillLover(lynched);
-
-                        //effects on game depending on the lynched's role
-                        switch (lynched.PlayerRole)
-                        {
-                            case IRole.WolfCub:
-                                WolfCubKilled = true;
-                                break;
-                            case IRole.Tanner:
-                                //check for overkill
-                                if (Players.Where(x => !x.IsDead).All(x => x.Choice == lynched.Id))
-                                    AddAchievement(lynched, Achievements.TannerOverkill);
-                                //end game
-                                lynched.DiedLastNight = true; //store the tanner who should win (DG is too complicated to handle)
-                                DoGameEnd(ITeam.Tanner);
-                                return;
-                            case IRole.Hunter:
-                                HunterFinalShot(lynched, KillMthd.Lynch);
-                                break;
-                        }
-
-                        //update the database
-                        DBKill(Players.Where(x => x.Choice == lynched.Id), lynched, KillMthd.Lynch);
-
-                        CheckRoleChanges(true);
                     }
+                    else if (lynched.Votes == -1)
+                    {
+                        SendWithQueue(GetLocaleString("LynchTie"));
+                        var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
+                        if (t != null && t.Votes > 0)
+                            AddAchievement(t, Achievements.SoClose);
+                    }
+                    else
+                    {
+                        SendWithQueue(GetLocaleString("NoLynchVotes"));
+                    }
+
+                    if (CheckForGameEnd(true)) return;
                 }
-                else if (lynched.Votes == -1)
+                catch (Exception e)
                 {
-                    SendWithQueue(GetLocaleString("LynchTie"));
-                    var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                    if (t != null && t.Votes > 0)
-                        AddAchievement(t, Achievements.SoClose);
-                }
-                else
-                {
-                    SendWithQueue(GetLocaleString("NoLynchVotes"));
-                }
-
-                if (CheckForGameEnd(true)) return;
-            }
-            catch (Exception e)
-            {
-                while (e.InnerException != null)
-                    e = e.InnerException;
+                    while (e.InnerException != null)
+                        e = e.InnerException;
 
 
-                Send("Oh no, something went wrong :( Error report is being sent to the developers\n" + e.Message);
+                    Send("Oh no, something went wrong :( Error report is being sent to the developers\n" + e.Message);
 #if DEBUG
-                Send(e.StackTrace);
+                    Send(e.StackTrace);
 #else
-                LogException(e);
+                    LogException(e);
 #endif
-                Program.RemoveGame(this);
+                    Program.RemoveGame(this);
+                }
             }
+            while (lynchAttempt < (doubleLynch ? 2 : 1));
         }
 
         private void DayCycle()
@@ -4769,6 +4803,21 @@ namespace Werewolf_Node
                     SendMenu(choices, spumpkin, GetLocaleString("AskDetonate"), QuestionType.Shoot);
                 }
             }
+
+            var troublemaker = Players.FirstOrDefault(x => x.PlayerRole == IRole.Troublemaker & !x.IsDead);
+
+            if (troublemaker != null)
+            {
+                troublemaker.Choice = 0;
+                var choices = new[]
+                {
+                    new[]
+                    {
+                        new InlineKeyboardCallbackButton(GetLocaleString("Yes"), $"vote|{Program.ClientId}|{Guid}|yes"), new InlineKeyboardCallbackButton(GetLocaleString("No"), $"vote|{Program.ClientId}|{Guid}|no")
+                    }
+                }.ToList();
+                SendMenu(choices, troublemaker, GetLocaleString("AskTroublemaker"), QuestionType.Trouble);
+            }
         }
 
         private void SendNightActions()
@@ -4830,22 +4879,15 @@ namespace Werewolf_Node
                             msg = null;
                         break;
                     case IRole.Cultist:
-                        //if (GameDay % 2 == 1)
+                        targets = targetBase.Where(x => x.PlayerRole != IRole.Cultist).ToList();
+                        msg = GetLocaleString("AskConvert");
+                        var otherCults = targetBase.Where(x => x.PlayerRole == IRole.Cultist).ToList();
+                        if (otherCults.Any())
                         {
-                            targets = targetBase.Where(x => x.PlayerRole != IRole.Cultist).ToList();
-                            msg = GetLocaleString("AskConvert");
-                            var otherCults = targetBase.Where(x => x.PlayerRole == IRole.Cultist).ToList();
-                            if (otherCults.Any())
-                            {
-                                var andStr = GetLocaleString("And");
-                                msg += GetLocaleString("DiscussWith", otherCults.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
-                            }
-                            qtype = QuestionType.Convert;
+                            var andStr = GetLocaleString("And");
+                            msg += GetLocaleString("DiscussWith", otherCults.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
                         }
-                        //else
-                        //{
-                        //    player.Choice = -1;
-                        //}
+                        qtype = QuestionType.Convert;
                         break;
                     case IRole.CultistHunter:
                         targets = targetBase.ToList();

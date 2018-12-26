@@ -142,6 +142,7 @@ namespace Werewolf_Control
             reply += "/aboutPacifist - " + GetLocaleString("Pacifist", lang) + "\n";
             reply += "/aboutWiseElder - " + GetLocaleString("WiseElder", lang) + "\n";
             reply += "/aboutThief - " + GetLocaleString("Thief", lang) + "\n";
+            reply += "/aboutTroublemaker - " + GetLocaleString("Troublemaker", lang) + "\n";
             Send(reply, update.Message.From.Id);
 
         }

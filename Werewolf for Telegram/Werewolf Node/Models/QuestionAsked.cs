@@ -28,6 +28,7 @@
         Kill2,
         Sandman,
         Pacifist,
-        Thief
+        Thief,
+        Trouble
     }
 }

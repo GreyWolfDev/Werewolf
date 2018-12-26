@@ -179,6 +179,8 @@ namespace Werewolf_Node.Helpers
                     return 11;
                 case IRole.Thief:
                     return 4;
+                case IRole.Troublemaker:
+                    return 5;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
