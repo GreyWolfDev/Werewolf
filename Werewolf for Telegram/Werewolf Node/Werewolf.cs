@@ -931,8 +931,6 @@ namespace Werewolf_Node
                         player.Choice2 = -1;
                     else
                         player.Choice = -1;
-                    if (player.CurrentQuestion.QType == QuestionType.Lynch)
-                        player.Choice = -2;
                     Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted") + $" - {GetLocaleString("Skip")}");
@@ -1614,6 +1612,7 @@ namespace Werewolf_Node
                     case IRole.Cupid:
                     case IRole.Sandman:
                     case IRole.Oracle:
+                    case IRole.Chemist:
                         p.Team = ITeam.Village;
                         p.HasNightAction = true;
                         p.HasDayAction = false;
@@ -2003,9 +2002,15 @@ namespace Werewolf_Node
                         case IRole.ClumsyGuy:
                         case IRole.WolfMan:
                         case IRole.WiseElder:
-                        case IRole.Blacksmith:
                         case IRole.Troublemaker:
                             p.HasDayAction = false;
+                            p.HasNightAction = false;
+                            p.Team = ITeam.Village;
+                            p.HasUsedAbility = false;
+                            break;
+                        case IRole.Sandman:
+                        case IRole.Blacksmith:
+                            p.HasDayAction = true;
                             p.HasNightAction = false;
                             p.Team = ITeam.Village;
                             p.HasUsedAbility = false;
@@ -2065,7 +2070,7 @@ namespace Werewolf_Node
                         case IRole.CultistHunter:
                         case IRole.GuardianAngel:
                         case IRole.Oracle:
-                        case IRole.Sandman:
+                        case IRole.Chemist:
                             p.Team = ITeam.Village;
                             p.HasNightAction = true;
                             p.HasDayAction = false;
@@ -2290,8 +2295,8 @@ namespace Werewolf_Node
                 case IRole.GuardianAngel:
                 case IRole.WildChild:
                 case IRole.Cupid:
-                case IRole.Sandman:
                 case IRole.Oracle:
+                case IRole.Chemist:
                     thief.Team = ITeam.Village;
                     thief.HasNightAction = true;
                     thief.HasDayAction = false;
@@ -2304,6 +2309,7 @@ namespace Werewolf_Node
                     break;
                 case IRole.Detective:
                 case IRole.Gunner:
+                case IRole.Sandman:
                     thief.Team = ITeam.Village;
                     thief.HasDayAction = true;
                     thief.HasNightAction = false;
@@ -3116,6 +3122,7 @@ namespace Werewolf_Node
              * Serial Killer
              * Cultist Hunter
              * Cult
+             * Chemist
              * Harlot
              * Seer
              * Sorcerer
@@ -3767,6 +3774,55 @@ namespace Werewolf_Node
                 return;
             }
 
+            #region Chemist Night
+            var chemist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chemist & !x.IsDead);
+            if (chemist != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == chemist.Choice);
+                if (target != null)
+                {
+                    target.BeingVisitedSameNightCount++;
+                    if (target.IsDead)
+                    {
+                        Send(GetLocaleString("ChemistTargetDead", target.GetName()), chemist.Id);
+                    }
+                    else if (target.PlayerRole == IRole.SerialKiller)
+                    {
+                        chemist.IsDead = true;
+                        chemist.TimeDied = DateTime.Now;
+                        chemist.DiedLastNight = true;
+                        chemist.DiedByVisitingKiller = true;
+                        chemist.KilledByRole = IRole.SerialKiller;
+                        DBKill(target, chemist, KillMthd.SerialKilled);
+                        Send(GetLocaleString("ChemistVisitYouSK", chemist.GetName()), target.Id);
+                        Send(GetLocaleString("ChemistSK", target.GetName()), chemist.Id);
+                    }
+                    else if (Program.R.Next(100) < Settings.ChemistSuccessChance) // chemist kills his target
+                    {
+                        target.IsDead = true;
+                        target.TimeDied = DateTime.Now;
+                        target.DiedLastNight = true;
+                        target.KilledByRole = IRole.Chemist;
+                        target.ChemistFailed = false;
+                        DBKill(chemist, target, KillMthd.Chemistry);
+                        Send(GetLocaleString("ChemistVisitYouSuccess", chemist.GetName()), target.Id);
+                        Send(GetLocaleString("ChemistSuccess", target.GetName()), chemist.Id);
+                    }
+                    else // chemist commits suicide by accident... oops!
+                    {
+                        chemist.IsDead = true;
+                        chemist.TimeDied = DateTime.Now;
+                        chemist.DiedLastNight = true;
+                        chemist.ChemistFailed = true;
+                        chemist.KilledByRole = IRole.Chemist;
+                        DBKill(chemist, chemist, KillMthd.Chemistry);
+                        Send(GetLocaleString("ChemistVisitYouFail", chemist.GetName()), target.Id);
+                        Send(GetLocaleString("ChemistFail", target.GetName()), chemist.Id);
+                    }
+                }
+            }
+            #endregion
+
             #region Harlot Night
 
             //let the harlot know
@@ -4033,6 +4089,7 @@ namespace Werewolf_Node
 
             CheckRoleChanges();
 
+            #region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
             if (thief != null)
             {
@@ -4055,6 +4112,7 @@ namespace Werewolf_Node
                     }
                 }
             }
+            #endregion
 
             #region Night Death Notifications to Group
 
@@ -4124,6 +4182,17 @@ namespace Werewolf_Node
                                     break;
                             }
                         }
+                        else if (p.KilledByRole == IRole.Chemist) //killed by chemist
+                        {
+                            if (p.ChemistFailed) // player is chemist and accidentally suicided
+                            {
+                                msg = GetLocaleString("ChemistFailPublic", p.GetName());
+                            }
+                            else // player was successfully killed by chemist
+                            {
+                                msg = GetLocaleString("ChemistSuccessPublic", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
+                            }
+                        }
                         //died by visiting
                         else
                         {
@@ -4186,6 +4255,10 @@ namespace Werewolf_Node
                                 case IRole.Thief:
                                     if (p.KilledByRole == IRole.SerialKiller)
                                         msg = GetLocaleString("ThiefStoleKiller", p.GetName());
+                                    break;
+                                case IRole.Chemist:
+                                    if (p.KilledByRole == IRole.SerialKiller)
+                                        msg = GetLocaleString("ChemistSKPublic", p.GetName());
                                     break;
                             }
                         }
@@ -4930,6 +5003,20 @@ namespace Werewolf_Node
                             qtype = QuestionType.Thief;
                         }
                         else player.Choice = -1;
+                        break;
+                    case IRole.Chemist:
+                        if (GameDay % 2 == 0)
+                        {
+                            targets = targetBase.ToList();
+                            msg = GetLocaleString("AskChemist");
+                            qtype = QuestionType.Chemistry;
+                        }
+                        else
+                        {
+                            player.Choice = -1;
+                            Send(GetLocaleString("ChemistBrewing"), player.Id);
+                            continue;
+                        }
                         break;
                     default:
                         continue;

@@ -134,6 +134,7 @@ namespace Werewolf_Control.Helpers
             BlacksmithConversionChance = 75,
             HarlotDiscoverCultChance = 50,
             ChanceDetectiveCaught = 40,
+            ChemistSuccessChance = 50,
 
 #else
             PlayerCountSeerCursed = 6,
@@ -164,6 +165,7 @@ namespace Werewolf_Control.Helpers
             BlacksmithConversionChance = 75,
             HarlotDiscoverCultChance = 50,
             ChanceDetectiveCaught = 40,
+            ChemistSuccessChance = 50,
 #endif
 
             GameJoinTime = 180,

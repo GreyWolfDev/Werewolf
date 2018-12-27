@@ -29,6 +29,7 @@
         Sandman,
         Pacifist,
         Thief,
-        Trouble
+        Trouble,
+        Chemistry
     }
 }
