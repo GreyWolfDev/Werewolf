@@ -3817,7 +3817,7 @@ namespace Werewolf_Node
                         target.KilledByRole = IRole.Chemist;
                         target.ChemistFailed = false;
                         DBKill(chemist, target, KillMthd.Chemistry);
-                        Send(GetLocaleString("ChemistVisitYouSuccess", chemist.GetName()), target.Id);
+                        Send(GetLocaleString("ChemistVisitYouSuccess"), target.Id);
                         Send(GetLocaleString("ChemistSuccess", target.GetName()), chemist.Id);
                     }
                     else // chemist commits suicide by accident... oops!
