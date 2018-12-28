@@ -900,7 +900,7 @@ namespace Werewolf_Node
                     return;
                 }
 
-                if (player.PlayerRole == IRole.Troublemaker && player.CurrentQuestion.QType == QuestionType.Trouble)
+                if (player.PlayerRole == IRole.Troublemaker && player.CurrentQuestion.QType == QuestionType.Trouble && player.HasUsedAbility == false)
                 {
                     if (args[3] == "yes")
                     {
@@ -1519,18 +1519,6 @@ namespace Werewolf_Node
                 rolesToAssign.Shuffle();
 
 
-#if DEBUG
-                //force roles for testing
-                rolesToAssign[0] = IRole.Wolf;
-                rolesToAssign[1] = IRole.Villager;
-                rolesToAssign[2] = IRole.Mason;
-
-                if (rolesToAssign.Count >= 4)
-                    rolesToAssign[3] = IRole.Villager;
-                if (rolesToAssign.Count >= 5)
-                    rolesToAssign[4] = IRole.Villager;
-#endif
-
                 // special roles for events
                 // halloween this time
                 var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
@@ -1539,6 +1527,24 @@ namespace Werewolf_Node
                     if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
                         rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
 
+
+#if DEBUG
+                //force roles for testing
+                IRole[] requiredRoles = new IRole[]
+                {
+                    IRole.Chemist,
+                    IRole.Wolf,
+                };
+                int requiredCount = requiredRoles.Length;
+
+                for (int i = 0; i < rolesToAssign.Count; i++)
+                {
+                    if (i < requiredCount)
+                        rolesToAssign[i] = requiredRoles[i];
+                    else
+                        rolesToAssign[i] = IRole.Villager;
+                }
+#endif
 
                 //assign the roles 
                 for (var i = 0; i < Players.Count; i++)
@@ -1663,6 +1669,12 @@ namespace Werewolf_Node
         private void NotifyRoles()
         {
             if (Players == null) return; //how the hell?
+
+            if (ChatId == -1001341772435) //publish roles in alpha testing group
+            {
+                Send(string.Join("\n", Players.Select(x => x.Name + ": " + x.PlayerRole.ToString())));
+            }
+
             //notify each player
             foreach (var p in Players.ToList())
             {
@@ -4877,7 +4889,7 @@ namespace Werewolf_Node
                 }
             }
 
-            var troublemaker = Players.FirstOrDefault(x => x.PlayerRole == IRole.Troublemaker & !x.IsDead);
+            var troublemaker = Players.FirstOrDefault(x => x.PlayerRole == IRole.Troublemaker & !x.IsDead & !x.HasUsedAbility);
 
             if (troublemaker != null)
             {
