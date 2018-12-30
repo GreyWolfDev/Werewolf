@@ -30,6 +30,7 @@
         Pacifist,
         Thief,
         Trouble,
-        Chemistry
+        Chemistry,
+        Freeze
     }
 }

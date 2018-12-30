@@ -183,6 +183,8 @@ namespace Werewolf_Node.Helpers
                     return 5;
                 case IRole.Chemist:
                     return 0;
+                case IRole.SnowWolf:
+                    return 15;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

@@ -84,6 +84,7 @@ namespace Werewolf_Node.Models
         public bool DiedByVisitingVictim { get; set; } = false;
         public bool WasSavedLastNight { get; set; } = false;
         public bool ChemistFailed { get; set; } = false;
+        public bool Frozen { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public bool InLove { get; set; } = false;
@@ -152,7 +153,7 @@ namespace Werewolf_Node.Models
         //halloween role
         Spumpkin,
         //and once again, new roles! :D
-        Troublemaker, Chemist
+        Troublemaker, Chemist, SnowWolf
     }
 
     public enum ITeam
