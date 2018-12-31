@@ -96,7 +96,7 @@ namespace Werewolf_Node
             WiseElderConversionChance = 30,
             PacifistConversionChance = 80,
             ThiefStealChance = 50,
-            ChemistSuccessChance = 50;
+            ChemistSuccessChance = 50,
 #else
             TannerChance = 40,
             FoolChance = 20,
