@@ -160,7 +160,7 @@ namespace Werewolf_Node.Models
         //halloween role
         Spumpkin,
         //and once again, new roles! :D
-        Troublemaker
+        Troublemaker, Chemist, SnowWolf
     }
 
     public enum ITeam
