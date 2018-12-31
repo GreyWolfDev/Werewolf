@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-  <!-- Huge thanks to: Jorge, Rani, Fenrir, Kath, Poolitzer and everyone else who helped me finishing this language file -->
+  <!-- Huge thanks to: Jorge, Rani, Fenrir, Kath, Poolitzer and everyone else who helped me finishing this language file // developed by @skollwolf-->
     <!---Beginning of the Rolelist: 
     The Spirit of Christmas = Cultist Hunter
     Gingerbread Man = Mason
@@ -33,8 +33,8 @@
     Gnome = Lycan
     Ice Sculpturist = WolfMan
     Arctic Fox = Thief
-    not yet implemented = Pacifist
-    not yet implemented = Wise Elder
+    Christmas Tree Decorator = Pacifist
+    Little Girl = Wise Elder
     Street Santa = Oracle
     Christmas Carol singer = Sandman
     Ending of the Rolelist-->
@@ -154,6 +154,11 @@
     <value>{0} says {1} did a friendly fire!</value>
     <value>{0} sees {1} holding a flamethrower owned by someone else!</value>
     <value>{0} will be delighted if {1} is burnt in fire.</value>
+    <value>{0} saw {1} coming out from a cave last night!</value>
+	<value>{0} scolds {1} for making them tinnitus during singing!</value>
+	<value>{0} says they had a bad dancing experience with {1}!</value>
+	<value>"Thief! Thief! Thief!" {0} points and shouts at {1}.</value>
+	<value>{0} says {1} ruins the Christmas Tree at the centre of village!</value>
   </string>
   <string key="IdleKill">
     <!-- 0 - player name -->
@@ -333,9 +338,12 @@
   </string>
   <string key="NoAttack" >
     <value>The Elves gather the next morning in the town center, to sighs of relief - it appears that no one was frozen the previous night.</value>
+    <value>People gather the next morning around the Christmas Tree, to sighs of disappointment - another boring day has passed.</value>
+  	<value>People wake up from their long and sweet dream, the reality is the same - everyone had a peaceful night.</value>
+  	<value>Who was dead this morning? The answer is nobody. Everyone was shocked and disappointed as soon as they realised this fact.</value>
   </string>
   <string key="CursedBitten" >
-    <value>You have been tried to froze by the evil Snowmen ☃️ (🐺).  As you were Dasher 💧 (😾), you have now turned into a evil Snowman yourself!</value>
+    <value>You have been tried to froze by the evil Snowmen ☃️ (🐺). As you were Dasher 💧 (😾), you have now turned into a evil Snowman yourself!</value>
   </string>
   <string key="WolfTeam">
     <!-- 0 - teammate names -->
@@ -892,7 +900,7 @@
   Caporegime 👷\nYou are a caporegime blah blah
   -->
   <string key="AboutVG">
-    <value>You are an Elf 👱👱‍♀️ (👱)! All you want to do is make toys and make all the little children happy for Christmas. Each day, you will have the chance to destroy a Snowman.</value>
+    <value>You are an Elf 👱👱‍♀️ (👱)! All you want to do is packing toys and make all the little children happy for christmas. Each day, you will have the chance to destroy a Snowman.</value>
   </string>
   <string key="AboutSeer">
     <value>You are Santa Claus 🎅🏻 (👳)! Ho Ho Ho! Your job is to make sure Christmas runs smoothly for all the little boys and girls. Each night you have the ability to find who is naughty or nice. Don't reveal yourself, because if the Snowmen find you, they will try to freeze you.</value>
@@ -1542,6 +1550,9 @@
     <value>{0} opens their eyes, but instead of hearing the usual bustle of the North Pole, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The Snowmen were melted away. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the North Pole. A tear slips from their eye, as {0} recalls how close they and their Snowmen were to victory. Lastly, it is time to start a new life, with a new pack now. {0} slips into the darkness of the forest, leaving the North Pole forever behind.</value>
     <value>For all of {0}'s efforts, {0}'s Snowman friends lay motionless and lifeless in the deep snow. Even if the Snowmen have been brought victory, there is no one to savour the success with, neither are there any living citizens to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new Snowmen, new allies, and new treachery to commit new crimes against the humanity and their faith in christmas.</value>
   </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
   <string key="Skip">
     <value>Skip</value>
   </string>
@@ -1558,6 +1569,30 @@
   </string>
   <string key="AskSandman">
     <value>Would you like to sing your lullaby tonight?</value>
+    <value>Would you like to sing your song tonight?</value>
+  	<value>Oh Wish You a Wuffy Christmas~</value>
+  	<value>Oh Wish You a Merry Christmas~</value>
+  	<value>Wuffy Night</value>
+  	<value>Silent Night</value>
+  	<value>The First Noel</value>
+  	<value>O Come All Ye Faithful</value>
+  	<value>Hark! The Herald Angels Sing</value>
+  	<value>Oh Christmas Tree</value>
+  	<value>Santa Claus Is Coming to Town</value>
+  	<value>Santa Wuff Is Coming to Town</value>
+  	<value>A Christmas Carol</value>
+  	<value>O Little Town of Bethlehem</value>
+  	<value>Joy to the World</value>
+  	<value>Jingle Bell</value>
+  	<value>Wuffy Bell</value>
+  	<value>Random Good Melody</value>
+  	<value>🎤</value>
+  	<value>🎹</value>
+  	<value>🎧</value>
+  	<value>🎬</value>
+  	<value>🎶</value>
+  	<value>🎵</value>
+  	<value>🎼</value>
   </string>
   <string key="SandmanSleepAll">
     <value>{0} starts singing and suddenly everyone feels so sleepy. Elves stop working in the shops, Santa's eyes feel so heavy, even Snowmen stop their ice for a good night of sleep.</value>
@@ -1591,8 +1626,8 @@
     <value>the Ice Sculpturist ❄️(👱🌚)</value>
   </string>
   <string key="AboutWolfMan">
-    <value>You are the Ice Sculpturist. You spend day and night in the snow, so take care, Santa Clause might think you are one of the snowmen, since you are all over with snow! Oh no...</value>
-    <value>You are the Ice Sculpturist. You spend day and night in the snow, so take care, Santa Clause might think you are one of the snowmen, since you work 24/7 so your body is covered in heavy snow till u get home...</value>
+    <value>You are the Ice Sculpturist. You spend day and night in the snow, so take care, Santa Clause might think you are one of the snowmen, since you are covered all over with snow! Oh no...</value>
+    <value>You are the Ice Sculpturist. You spend day and night in the snow, so take care, Santa Clause might think you are one of the snowmen, since you work 24/7 so your body is covered in heavy snow until you get back home...</value>
   </string>
   <string key="RoleInfoLycan">
     <value>You are the Gnome 📿(🐺🌝)! You are working for the snowmen, but since you stole an elf's costume, Santa will sure think you are an elf?</value>
@@ -1604,7 +1639,7 @@
     <value>You are the Gnome! You are working for the snowmen, but since you stole an elf's costume, Santa will sure think you are an elf?</value>
   </string>
   <string key="RoleInfoOracle">
-    <value>You are the Street Santa 🤹🏻‍♀️🧤(🌀)! You are certainly not Santa and don't know who is who, you can only know who is good or bad... only because you stole the real Santa’s Naughty List.</value>
+    <value>You are the Street Santa 🤹🏻‍♀️🧤(🌀)! You are certainly not Santa and don't know who is who, you can only know who is good or bad... and that because you stole the real Santa’s Naughty List.</value>
   </string>
   <string key="Oracle">
     <value>the Street Santa 🤹🏻‍♀️🧤(🌀)</value>
@@ -1654,33 +1689,33 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
     <value>You are the Arctic Fox! As a little rascal that you are, you can strip a player from its role, this player will be now an Artic Fox themselves.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new arctic fox and continues with the theft!</value>
   </string>
   <string key="AskPacifist">
-    <value>Hit this button when you want to make your heartfelt speech and stop the village from lynching the next time!</value>
+    <value>Hit this button if you want to show your tree to the whole village and let its beauty stop the burning.</value>
   </string>
   <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
-    <value>The Pacifist 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, is making a heartfelt speech of friendship and trust in front of the village. Moved by their speech, there will be no lynching today!</value>
+    <value>The Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, points towards the christmas tree in the middle of the village and as you see its glory, no one can burn anyone today.</value>
+    <value>As the Christmas Tree is finished, huge thanks to the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, everyone dances in great joy around the tree and decided not to burn anyone today.</value>
+    <value>As the Christmas Tree is put up by the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, everyone gathers inside host's house, they are overwhelmed by hype of the party and forget about burning anyone today.</value>
   </string>
   <string key="PacifistNoLynchNow">
-    <value>Because of the Pacifist's 🧙🏻‍♀️/🧙🏻‍♂️(☮️) heartfelt speech, the lynch phase will be skipped today!</value>
+    <value>Because of the glorious tree, decorated by the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), won't be any burning today!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
   <!-- 0 - Wise Elder's name -->
-    <value>You tried to intrude {0}'s home but unfortunately they were the Wise Elder 📚! {0} successfully thwart the attack, luckily they did not recognize any of you.</value>
+    <value>You tried to freeze {0}. Unfortunately, you are burnt with {0}'s matches! As you retreat, you see the empty match box of the little girl 👧🏻(📚). So next time, it will be time to freeze!</value>
   </string>
   <string key="WolvesAteWiseElderPM">
-    <value>The wolves tried to eat you, but you didn't become the Wise Elder 📚 by being easy to kill by an intruder! You successfully thwart the attack, but unfortunately you didn't recognize any attackers.</value>
+    <value>The snowmen tried to freeze you. You have your matches in your little girl hand📚 though, and succesfully showed them that they can lit on fire easily. You just hope that they don't notice you have none left.</value>
   </string>
   <string key="HunterKilledWiseElder">
   <!-- {0} - Hunter's Name -->
   <!-- {1} - Wise Elder's Name -->
-    <value>The Hunter 🎯, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and swore off their Hunter abilities. He died a simple Villager 👱.</value>
+    <value>As {0} decides to take {1} with them, they realize that they are the little girl 📚. Instantly regretting what they did, they decide to put their ballerinas down and die as a simple Elf 👱‍♂️</value>
   </string>
   <string key="GunnerShotWiseElder">
   <!-- {0} - Gunner's Name -->
   <!-- {1} - Wise Elder's Name -->
-    <value>The Gunner 🔫, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and decided to scrap their gun, becoming a simple Villager👱 with a field to plow.</value>
+    <value>As black petes 🔫 burns {1}, it turns out they are the little girl 📚. Sadly staring into the flams, {0}  throws their flamethrower right into them and becomes an Elf 👱‍♂️ from now on</value>
   </string>
-  
   <string key="ThiefStealFailed">
   <!-- {0} - The name of the thief's target -->
     <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
@@ -1695,13 +1730,12 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   </string>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
-  <!-- {1} - The new role -->
-    <value>You successfully stole {0}'s role. You are now {1}.</value>
+    <value>You successfully stole {0}'s role!</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
     <!-- 1 - new mason's name -->
-    <value>{0} is no longer your teammate and {1} has now become a mason, just like you!</value>
+    <value>{0} is no longer your teammate and {1} has now become a Gingerbread Man, just like you!</value>
   </string>
   <string key="ThiefTransformToMason">
     <!-- 0 - mason collegues's name -->
@@ -1710,12 +1744,12 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   <string key="ThiefToCult">
     <!-- 0 - old cultist's name -->
     <!-- 1 - new cultist's name -->
-    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+    <value>{0} is no longer your teammate and {1} has now become a Non-Believer, just like you!</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
     <!-- 1 - new wolf's name -->
-    <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
+    <value>{0} is no longer your teammate and {1} has now become a Snowman, just like you!</value>
   </string>
   <string key="ThiefTransformNewTeammates">
     <!-- 0 - teammates's name -->
@@ -1723,7 +1757,7 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   </string>
   <string key="ThiefEnd">
   <!-- 0 - Thief's name -->
-    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+    <value>As {0} sneaks around the northpole, they found out that there are no more fun roles available for them to steal. They quickly left this place and search for another one to restart their thieving career.</value>
   </string>
   <string key="ThiefStealChosen">
   <!-- 0 - target's name -->
@@ -1772,30 +1806,43 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   </string>
   <string key="Peace">
   <!-- Used for Pacifist's button -->
-	<value>Peace!</value>
+	<value>🌲➡️🎄</value>
+  	<value>Enchant 🎄!</value>
+  	<value>Power ⚡️🎄 on!</value>
+  	<value>Place some 🎁 beneath 🎄</value>
+  	<value>Place a 🌟 on the top of 🎄</value>
+  	<value>Organise a parade 💃🕺 around 🎄</value>
   </string>
   <string key="LynchPeaceTimeout">
   <!-- Used in PM if the pacifist uses his ability during lynch phase -->
-	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
+  	<value>The fire set up for burning people died out since everyone gathered at the Christmas Tree, ignoring the burning vote.</value>
+  	<value>"Burning people is no fun, let's dance around the Christmas Tree!" says the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️) suddenly, so everyone put out the fire for burning.</value>
+  	<value>Suddenly, the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️) puts out the fire and a Chrtistmas Tree stands tall on the remains of the fire, everyone has a fun snowball fight instead of burning.</value>
   </string>
   <string key="ThiefStoleYourRoleThief">
-    <value>Your role got stolen! You are now the new thief 😈 and can steal a role the next night!</value>
+    <value>Your role got stolen! You are now the new arctic fox 🦊(😈) and can steal a role the next night!</value>
   </string>
   <string key="ThiefStoleYourRoleVillager">
-    <value>Your role got stolen! You are now a villager 👱, plowing your fields all day.</value>
+    <value>Your role got stolen! You are now an elf 👱👱‍♀️ (👱), able to pack toys and make all the children happy.</value>
   </string>
   <string key="SerialKillerKilledYou" isgif="true">
-    <value>Knock knock, you've been visited by the resident serial killer!</value>
-  <value>The Serial Killer ambushed you, tied you up, and then stabbed you in the heart!</value>
+    <value>Are you too naughty? You are bagged by the Krampus for his dinner!</value>
+   	<value>Knock knock, you thought Santa Claus comes and happily opens the door... Oh no! You are greeted by the Krampus! You are his dinner now!</value>
+   	<value>The Krampus takes you away to his cave for his dinner! You dirty hands... reflect on what you have done this year!</value>
   </string>
   <string key="ThiefTeamEnd">
   <value>Thief Team</value>
   </string>
   <string key="StealKiller">
-    <value>You tried to steal a role... but your target was the serial killer! They saw you around their house, and not a minute later, you were stabbed...</value>
+    <value>You tried to steal a role... but your target was Krampus! They saw you around their house, and not a minute later, you found yourself as their dinner...</value>
   </string>
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
-    <value>The Thief, {0}, tried to steal the role from the serial killer! This didn't work out so well: {0} got stabbed multiple times and now his liver is missing...</value>
+    <value>The Arctic Fox 🦊(😈), {0}, tried to steal the role from the Krampus! This devious act was nothing before the expert Krampus. A moment later, Krampus finished his delicious fox meal.</value>
+    <value>The Arctic Fox 🦊(😈), {0}, tried to steal the role from the Krampus! Followed by loud screams of the fox, the Krampus ate fox meats in great satisfaction.</value>
+    <value>The Arctic Fox 🦊(😈), {0}, tried to steal the role from the Krampus! The skilful Krampus minced the fox in miliseconds. The Krampus: "There goes another naughty guy."</value>
+  </string>
+   <string key="BeholderSeerStolen">
+	<value>The Arctic Fox sneaked to Santa Clause! {0} is now Santa, while {1} isn't anymore.</value>
   </string>
 </strings>
