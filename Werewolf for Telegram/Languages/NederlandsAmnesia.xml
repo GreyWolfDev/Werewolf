@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- 28-01-2017 Started translating Amnesia mode made by @ayylimao. Started by Rick (@REXOTIUM)  -->
+<!-- 28-01-2017 Started translating Amnesia mode made by @ayylimao. Started by Rick (@REXOTIUM) -->
 <!-- 30-01-2017 Update 1. Added by @REXOTIUM -->
 <!-- 06-08-2018 Update 2. Added by @REXOTIUM -->
 <!-- 06-08-2018 Added the not implemented yet and ofcourse did not implement it yet (did not translate) -->
 <!-- 11-08-2018 Update 3. Added by @REXOTIUM added before not implemented -->
-<!-- 10-09-2018 Update 4 Translated the not implemented section. Done by @REXOTIUM-->
+<!-- 10-09-2018 Update 4 Translated the not implemented section. Done by @REXOTIUM -->
+<!-- 04-01-2019 Update 5 Translated new roles. Done by @REXOTIUM -->
 
 <strings>
   <language name="Nederlands (Amnesie Modus)" base="Nederlands" variant="Amnesie Modus"/>
@@ -1239,7 +1240,7 @@
   </string>
   <string key="GAGuardedWolf">
     <!-- used when GA guards a wolf -->
-    <value>{0} tried to guard a wolf last night. The town woke up to find only the wings of {0} hung on the church cross. Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes.</value>
+	<value>{0} heeft geprobeerd een wolf te beschermen vannacht. Toen iedereen wakker werd zagen ze de vleugels van {0} aan het kruis van de kerk gespijkert. Blijkbaar kregen de wolven gratis een goddelijk maal thuis bezorgd.</value>
   </string>
 
   <!--1vs1 finales-->
@@ -1291,7 +1292,7 @@
   
   <!-- Update 2 -->
   <string key="JoinButton">
-    <value>Meedoen</value>
+    <value>Meedoen!</value>
   </string>
   <string key="NotMember">
     <value>Ben je vergeten dat je geen lid bent van groep {0}? Je kunt daarom niet meedoen.</value>
@@ -1315,7 +1316,7 @@
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
     <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
-    <value>{0}zijn/is vergeten wie zij/hij zijn/is in de afgelopen 30 seconden.</value>
+	<value>In de afgelopen 30 seconden zijn deze mensen vergeten wie ze zijn... {0}</value>
   </string>
   <string key="AllowCult">
     <value>Sekte toestaan</value>
@@ -1653,5 +1654,165 @@
   <string key="ThiefStoleKiller">
 	<!-- used when Thief steals SK -->
 	<value>De Dief, {0}, probeerde de rol van de Seriemoordenaar te stelen! Dit ging helaas niet zo goed: {0} werd meerdere keren met een mes gestoken en nu is zijn lever kwijt...</value>
+  </string>
+  
+  <!-- Update 5 -->
+  <string key="Troublemaker">
+	<value>de herrieschopper 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>De herrieschopper is een razende tiener in de stad. Wanneer de herrieschopper begint te schreeuwen, loopt het helemaal uit de hand. Om de rust weer terug te krijgen in het dorp zullen er vandaag twee mensen worden opgehangen.</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je overdag iets moet doen!</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Je weet dat je iets moet doen, maar moest dat vandaag?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0}, de herrieschopper 🤯 is herrie aan het schoppen! Ren rond en scheeuw omdat het leuk is (probeer het maar eens!)! Jullie kunnen twee keer lynchen vandaag!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Vanwege de herrieschopper mogen jullie vandaag twee keer lynchen. Hopelijk is de herrieschopper stil morgen.</value>
+  </string>
+  <string key="Chemist">
+	<value>de gestoorde chemicus 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>De gestoorde chemicus is, zoals de naam al zegt, gestoord. De gestoorde chemicus brouwt graag drankjes en doet er dan rare dingen mee. Zo is een van de favoriete spelletje van de gestoorde chemicus twee drankjes meenemen naar een van de dorpelingen en dan hem of haar te forceren om er een te drinken. Uiteraard is het niet leuk als je alleen speelt en dus zal de gestoorde chemicus het andere drankje zelf opdrinken. Hoewel beide drankjes ruiken naar versgemaaid gras, zal een van de drankjes je in een pijnlijke dood laten sterven. Succes dus als de gestoorde chemicus laangskomt.</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Is er iets gebeurd vannacht? Je kunt het je niet herinneren...</value>
+  </string>
+  <string key="AskChemist">
+	<value>Je weet dat je iets moet doen met iemand, maar wie moet je kiezen?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<!-- {0} - target -->
+	<value>{0} is al dood!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<!-- {0} - chemist -->
+	<value>Je bent bezocht door de gestoorde chemicus 👨‍🔬 {0}. {0} forceerde je om mee te doen met zijn spel en na lang nadenken koos jij het goede drankje! Wat een geluk!</value>
+  </string>
+  <string key="ChemistSK">
+	<!-- {0} - target -->
+	<value>Je bent naar {0} gegaan om een spelletje te spelen. Helaas is {0} de seriemoordenaar en stak hij je dood! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<!-- {0} - chemist -->
+	<value>De gestoorde chemicus 👨‍🔬 {0} heeft geprobeerde te forceren dat de seriemoordenaar meedeed met zijn spel. Helaas voor {0} speelde de seriemoordenaar liever een ander spel... {0} heeft het spel "wie heeft je lever" helaas niet overleefd.</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Jij dacht een rustig avondje te hebben, helaas kwam een ongenodigde gast je avond verstoren met een "leuk" spelletje. De gestoorde chemicus 👨‍🔬 liet je tussen twee drankjes kiesen. En natuurlijk koos jij met jouw geluk de verkeerde... Je kunt nog net zien dat de gestoorde chemicus lachend wegloopt voordat jij je ogen voor het laatst dicht doet. Je bent dood!</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+	<!-- {0} - Chemist's victim -->
+	<!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>De gestoorde chemicus 👨‍🔬 heeft vannacht {0} bezocht. Helaas koos {0} het verkeerde drankje en stierf. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Je bent bezocht door de gestoorde chemicus 👨‍🔬 {0}. {0} forceerde je om mee te doen met zijn spel en na lang nadenken koos jij het goede drankje! Wat een geluk!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Je bezocht {0} en liet hem een drankje kiezen. Helaas voor jou koos {0} het goede drankje! Dit betekent dat jij het giftige drankje hebt gedronken... Terwijl je doodgaat denk je na over hoe je dit anders had gepland...</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>De gestoorde chemicus 👨‍🔬 {0} ligt dood op de grond. Blijkbaar is zijn spelletje gister niet helemaal volgens plan gegaan. Hopelijk heb je geen middeltjes bij {0} gekocht...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>Je bent blijkbaar vergeten dat {0} niet thuis was vannacht!</value>
+  </string>
+  <string key="CultistsList">
+	<value>De volgende namen zweven door je hoofd: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>de sneeuwwolf 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+	<value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
+  </string>
+  <string key="AboutSnowWolf">
+	<value>De sneeuwwolf 🐺☃️ is een wolf die is geboren in de besneeuwde bergen vlakbij het dorp. Hierdoor heeft hij de kunst van het beheersen van sneeuw en ijs onder de knie gekregen. Omdat hij lang alleen heeft geleefd gaat de sneeuwwolf liever alleen op pad. In plaats van 's nachts iemand op te eten, kan hij iemand bevriezen. Hierdoor kan zijn slachtoffer zijn nachtacties niet gebruiken. Maar het slachtoffer behoud een beetje van de kracht van de sneeuwwolf voor de rest van de dag, hierdoor is het slachtoffer immuun voor de sneeuwwolf voor één nacht.</value>
+  </string>
+  <string key="AskFreeze">
+	<value>Je weet dat je iets moet doen met iemand, maar wie moet je kiezen?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>De volgende namen zweven door je hoofd: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>De volgende namen zweven door je hoofd: {0} {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1} {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1} {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1} {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1} {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Te midden van alle namen in je hoofd verschijnt er een nieuwe: {0}!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zij wie jij bent, maar je herinnert je wel een belangrijk iemand: {1} {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} naam verdwijnt uit je geheugen en te midden van alle namen in je hoofd verschijnt er een nieuwe: {1}!</value>
+  </string>
+  <string key="HarlotFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="ChemistFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="CultistFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="CHFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="SeeingFrozen">
+	<!-- used for seer, fool, oracle and sorcerer -->
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="GAFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="SKFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="ThiefFrozen">
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="DefaultFrozen">
+	<!-- used for all roles without (every-)night action -->
+	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+	<value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
+  </string>
+  <string key="SuccessfulFreeze">
+	<value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>De sneeuwwolf {0} probeerde de seriemoordenaar te bevriezen. Helaas voor {0} had de seriemoordenaar dit optijd door en gaf hij een ijskoud cadeautje terug... Het blijkt dat {0} dodelijk allergisch is voor messteken.</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Je rol is veranderd, maar van wat, en naar wat?</value>
   </string>
 </strings>

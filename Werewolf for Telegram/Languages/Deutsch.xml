@@ -1969,4 +1969,163 @@
   <string key="BeholderSeerStolen">
 	<value>Der Dieb hat dem Seher seine Karten gestohlen! Scheint gar nicht so schwer zu sein mit den Dingern: {0} kann nun den Laug der Dinge vorhersehen, aber {1} sieht jetzt rein gar nichts mehr!</value>
   </string>
+  
+<!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>die Unruhestifterin 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>The Troublemaker is the raging teenager in town. When they start yelling, the whole village gets out of control. To gain silence, they will lynch twice that day!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Du bist die Unruhestifterin. Leider gibt es in diesem Dorf niemand Cooles in deinem Alter, und überhaupt sind alle um dich herum doof. Deine Eltern haben dich schon lange aufgegeben, </value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Heute schon fü Chaos gesorgt?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0}, the troublemaker 🤯 is making trouble! Run around and scream for satisfaction! You will lynch twice today!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Because of the troublemaker, you are going to lynch twice today! Hopefully they are going to be quiet tomorrow.</value>
+  </string>
+  <string key="Chemist">
+	<value>der Chemiker 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>The chemist is a quite crazy person who likes to brew potions and mess up with them. They mix two potions and force other people to choose one to drink, while the chemist will drink the other. However, while one solution is just tasting like rosebuds, the other one is going to kill you instantly. Good luck when they visit you!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Du bist der Chemiker! 👨‍🔬\nLeider kein besonders guter. Zum Jahrestag wolltest du der Liebe deines Lebens ein romantisches Candle-Light-Dinner schenken, aber statt dem teuren Rotwein hast du ihr aus Versehen etwas aus deinem Labor eingeschenkt... Hat sich nicht so gut für sie ausgegangen. Versteht sich von selbst, dass du seitdem ziemlich zynisch drauf bist. Jede zweite Nacht kannst du einen Dorfbewohner auswählen, den du auf einen Drink einlädst - der Rotwein trinkt sich schließlich nicht von alleine. Zu verschwenderisch willst du damit allerdings auch nicht umgehen: Du füllst nur ein Glas damit. In das zweite kommt ein Todestrank. Da du deine Manieren aber nicht ganz vergessen hast, lässt du deinem Opfer die Wahl. Wählt es den Todestrank, stirbt es. Wählt es den Wein, trinkst du das andere Glas und stirbst...</value>
+	<!-- Your love for poisonous potions is huge and as a hobby you like to gamble with your life... Just a bit! You brew two potions, one of them being poisonous, the other neutral, looking exactly the same. Every other night, you can choose a player and force them to have a drink with you, maybe they are lucky and survive. However, if your host chooses the good drink, you'll get the poisonous one and die. Good luck! -->
+  </string>
+  <string key="ChemistBrewing">
+	<value>Während das Dorf sich schlafen legt, bleibst du noch wach (deine Tränke brauen sich schließlich nicht alleine). Gutes Gelingen...!</value>
+	<!-- While the other villagers are going to bed, you're still up in your laboratory, mixing the potions for the next night. Make sure to not get caught by a wolf though! -->
+  </string>
+  <string key="AskChemist">
+	<value>Wer soll heute dein Gastgeber sein?</value>
+	<!-- Who would be a good host and gambling partner tonight? -->
+  </string>
+  <string key="ChemistTargetDead">
+	<value>You went to {0}'s house to have a drink with them, however, as you arrive there, they are already dead!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>You got visited by the Chemist 👨‍🔬 {0}! They pulled out a knife to force you to drink, but instead of drinking, you pulled out your own knife. Apparently, your knife was stronger 🤷‍♂️</value>
+  </string>
+  <string key="ChemistSK">
+	<value>You go to {0} to let them choose a potion, however, they were the serial killer and stabbed you! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>The chemist 👨‍🔬 {0} tried to force the serial killer to a game tonight. Looks like the murderer didn't feel like playing games... {0} was found, stabbed, with two potions still in their bag!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>You got visited by the chemist 👨‍🔬, they forced you to choose a potion and you chose the poisonous one. What a sad way to leave this world...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>You visited {0} and let them choose a potion! They chose the poisonous one and you returned home, satisfied of your gambling skills. This is no game of chances!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>The chemist 👨‍🔬 has visited {0} tonight and they chose the poisonous potion! While the crazy chemist is still alive, {0} died. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>You got visited by the chemist 👨‍🔬 {0}, they forced you to choose a potion. After a moment of hesitation, you chose the good one! Lucky you!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>You visited {0} and let them choose a potion! They chose the good one however! In result, you drank the poisonous one and died. Maybe you should have done a better job...</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>The chemist 👨‍🔬 {0} was found dead! Apparently, {0} had bad luck and drank the poisonous potion during their nightly visit! Pray you never bought your medicines from them...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} wasn't home! You drag your suitcase back home, cursing your bad luck.</value>
+  </string>
+  <string key="CultistsList">
+	<value>The cult members are currently: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>the Snow Wolf 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>You are the Snow Wolf 🐺☃️. Every night, instead of following your pack to hunt someone, you skulk around on your own to freeze someone out of your pack. A frozen person will be unable to use any night actions, if they have any. However, your victim will have some residue of your power the next night and can not be frozen a second time in a row.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>The Snow Wolf 🐺☃️ is an wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>Who do you want to freeze tonight?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>The wolf pack consists of {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>The wolf pack consists of {0} and the Snow Wolf {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} has died, and you transform into an Alpha wolf. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} has died, and you transform into the Wolf Cub. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} has died, and you transform into a Werewolf. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} has died, and you transform into the Lycan. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} has died, and you transform into the Snow Wolf. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>The doppelganger {0} has now become the new snow wolf!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} is no longer your teammate and {1} has now become the new snow wolf!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks 🐺☃️. You stand frozen in the doorway, silently cursing this weird form of bondage. Ah well, thank goodness you're thawed now. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow cultists dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
+  </string>
+  <string key="CHFrozen">
+    <value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched 🐺☃️. You mentally groaned, your limbs aching from being in this position until now... </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>As you sat at your table, ready to use your psychic powers, a gust of wind blew in from the window, causing you to freeze 🐺☃️. While being bound usually isn't a problem, the freezing spell also gave you a serious case of brain freeze. You weren't worried though, knowing that the sun rising is one of the constants of this world and that you'll be thawed now. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>As you willed your wings to appear, a gust of wind blew in from the windows, causing you to freeze 🐺☃️. You inwardly cringed as you suddenly imagine yourself as an ornament on a Christmas tree. Thankfully, this is now over since the sun has risen. </value>
+  </string>
+  <string key="SKFrozen">
+    <value>As you admired your liver collection one last time before leaving your house, a gust of wind blew in from the windows, frosting the glass jars... freezing you 🐺☃️. As you unfroze this morning, you gritted your teeth in annoyance at the Snow Wolf's spell, swearing to make them suffer as much as possible when you take their liver. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>As you sulked around the village, you felt a strong gust of wind. You stood frozen in your tracks, literally unable to move 🐺☃️. Luckily, it was dark enough for you to not be recognised by anyone who passed you that night. When you were completely thawed by dawn, you scampered back to your home before anyone could see you. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Snow Wolf 🐺☃️ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>You head to {0}'s house to freeze them, but you are met by a tall dark figure, armed to the teeth. The Guardian Angel fights you off, and you head back defeated.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>You went to {0}'s house and froze them! Tonight, they won't be able to use their night actions (if any).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>The snow wolf {0} attempted to freeze someone last night, but accidentally visited the serial killer! The murderer noticed the unwanted visitor and stabbed {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>As all the other wolves have died, you are the last part of the pack that is left! In order to gain some fresh villager meat, you decide to become a normal werewolf from now on, who goes eating rather than freezing at night!</value>
+  </string>
 </strings>
