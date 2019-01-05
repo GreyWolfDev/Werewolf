@@ -102,7 +102,7 @@ namespace Werewolf_Node.Helpers
         public static int GetStrength(this IRole role, List<IRole> allRoles)
         {
             IRole[] WolfRoles = { IRole.Wolf, IRole.WolfCub, IRole.AlphaWolf, IRole.Lycan };
-            IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller, IRole.Lycan, IRole.Thief, IRole.Spumpkin };
+            IRole[] nonConvertibleRoles = { IRole.Seer, IRole.GuardianAngel, IRole.Detective, IRole.Cursed, IRole.Harlot, IRole.Hunter, IRole.Doppelgänger, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.SerialKiller, IRole.Lycan, IRole.Thief, IRole.Spumpkin, IRole.SnowWolf };
             switch (role)
             {
                 case IRole.Villager:
@@ -124,7 +124,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Wolf:
                     return 10;
                 case IRole.Cursed:
-                    return 1 - allRoles.Count(x => WolfRoles.Contains(x)) / 2; //vg, or worse
+                    return 1 - allRoles.Count(x => WolfRoles.Contains(x) || x == IRole.SnowWolf) / 2; //vg, or worse
                 case IRole.Gunner:
                     return 6;
                 case IRole.Tanner:
@@ -156,7 +156,9 @@ namespace Werewolf_Node.Helpers
                 case IRole.AlphaWolf:
                     return 12;
                 case IRole.WolfCub:
-                    return 12;
+                    return new[] { IRole.AlphaWolf, IRole.Wolf, IRole.Lycan, IRole.SnowWolf, IRole.WildChild,
+                        IRole.Doppelgänger, IRole.Cursed, IRole.Traitor }
+                        .Any(x => allRoles.Contains(x)) ? 12 : 10; // only count as 12 if there can be another wolf
                 case IRole.Blacksmith:
                     return 5;
                 case IRole.ClumsyGuy:
