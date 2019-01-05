@@ -831,6 +831,8 @@ namespace Werewolf_Node
         {
             try
             {
+                if (!IsRunning) return; // ignore button presses after the game ended
+
                 //first off, what was I asking them?
                 var args = query.Data.Split('|');
                 //0 - vote
