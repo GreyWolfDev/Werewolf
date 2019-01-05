@@ -1,0 +1,1736 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Spanish Chespirito" base="Español" variant="Chespirito" code="es" isDefault="true"/>
+  <string key="NotInGame">
+    <value>¡Se te chispoteo! No parece que estés en una partida ahora mismo...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha empezado una partida! Pulsa el botón para unirte a la diversión… ¡Siguanme los buenos :p!</value>
+    <value>¡{0} ha iniciado una nueva partida! ¡Pulsa el botón para ser comido!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+   <!-- 0 - Player name -->
+   <value>¡{0} ha empezado una partida caótica! Pulsa el botón para unirte a la diversión... ¡Siganme los buenos:P!</value>
+   <value>¡{0} ha iniciado una nueva partida caótica! ¡Pulsa el botón para ser comido!</value>
+ </string>
+  <string key="NoJoinGameRunning">
+    <value>¡No te puedes unir ahora! La partida ya ha comenzado.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>¡Ya te has unido!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Queda 1 minuto para unirse.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Quedan {0} segundos para unirse.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>¡No hay suficientes jugadores, se cancela el juego!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>El juego está empezando, espera un segundo mientras asigno los roles y actualizo la base de datos.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} ha sido baneado por intentar hacer trampas (prohibidos nombres con /).</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, por favor, cambia tu nombre para unirte.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>¡Lo siento, se ha alcanzado el límite de jugadores!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} se ha unido a la partida. {1} jugadores, {2} mínimo, {3} máximo.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, por favor, mándame un privi (@{1}) con /start. No tengo constancia de haberte escrito por privado antes. Para que pueda enviarte mensajes necesito, que me hables tú primero.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>¡No puedes huir! ¡ESTÁS MUERTO! Vuelve a la tumba. ¡Por Dios!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha huido presa del pánico!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} jugadores restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>¡Hey, aún no te he preguntado nada!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>No parece que vivas en la vecindad...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>¡No encuentro ningún jugador con ese nombre!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>¡Esta respuesta no es válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha votado comerse a {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votado linchar a {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} no ha votado dos noches seguidas. Los demás vecinos han visto esto como un crimen terrible y {0} cae de repente, muerto.\n{1}.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>¡¡¡Tú, El Botija !!! Ahora eres un secuaz de El Shory.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Ya has elegido. No hay vuelta atrás.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>Doña Florinda es {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era Doña Florinda. Como La Popis, es tu turno de convertirte en Doña Florinda.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} eras La Popis, ahora ha llegado su turno de relevar a {1} como la nueva Doña Florinda.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>¡Percibes que {0} es {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>¿A quién quieres linchar?</value>
+  </string>
+  <string key="AskDetect">
+    <value>¿A quién quieres investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>¿A quién quieres pegarle con el Chipote Chillón? {0} golpes(s) restantes.</value>
+  </string>
+  <string key="AskVisit">
+    <value>¿A quién quieres visitar?</value>
+  </string>
+  <string key="AskSee">
+    <value>¿A quién quieres percibir?</value>
+  </string>
+  <string key="AskGuard">
+    <value>¿A quién quieres proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>¿A quién quieres comerte?</value>
+  </string>
+  <string key="AskHunt">
+    <value>¿A quién quieres dar caza?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>¿Quién quieres que sea tu guía?</value>
+  </string>
+  <string key="AskConvert">
+    <value>¿A quién quieres convertir en copión?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Asegúrate de discutirlo con {0}.</value>
+  </string>
+  <string key="And"> 
+	<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> y </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Eres el Chompiras 😾. ¡Eres un torpe ex ratero quien lleva años de vida Honrada!, pero si los secuaces de El Shory te tratan de matar, en lugar de morir te convertirás en uno de ellos.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Eres Doña Cleotilde, La Bruja del 71 🕵‍♂. ¡Tienes la ayuda de los Espíritus Chocarreros! . Durante el día, puedes elegir un jugador para investigar su rol. Sin embargo, si lo haces, tienes un 40% de probabilidad de que tu rol se revele a los secuaces de El Shory.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>¡Enhorabuena! Eres El Señor Barriga 🍻. ¡En realidad, todo el mundo conoce al tinaco desparramado!. Si los secuaces de El Shory te matan, no podrán actuar la siguiente noche.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Eres Ñoño 👼. ¡Eres inteligente y de buen corazón!. Cada noche, puedes elegir un jugador para proteger. Sin embargo, si eliges a un secuaz de El Shory existe un 50% de probabilidad de que mueras y si eliges a El Pocastrancas mueres enseguida.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Eres El Chapulin Colorado 🔫. ¡No contaban con tu astucia!. Durante el día, puedes elegir pegarle con el chipote chillón a otro jugador y sacarlo de la vecindad. ¡Chanfle! Todo el mundo oirá los golpes y sabrá que eres El Chapulin Colorado (y no un Secuaz de El Shory).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Eres Maruja 💋. ¡Eres hermosa y provocativa!. Tendrás la oportunidad de «visitar» a alguien cada noche. Si no es secuaz de El Shory, lo sabrás (¡porque seguirás viva!). Si visitas un secuaz de El Shory o a su víctima, morirás. Por otro lado, si te vas de visita y los secuaces de El Shory te eligen, vivirás, ya que no te encontrarán en casa.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Eres El Botija 🖕🏻. Eres un ex ratero quien lleva años de vida honrada!. Por ahora, eres un Vecino, pero una vez el resto de secuaces de El Shory muera, te convertirás en uno de ellos. Si Doña Florinda te elige, puede que te identifique como secuaz de El Shory o no.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Eres un Secuaz de El Shory 🐺(bien por ti). ¡Eres un bandido peligroso!. Cada noche podrás elegir matar a alguien. MUAJAJAJAJA</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Eres Doña Florinda👳‍♂. ¡Tienes el poder de ver a la "Chusma"!. Cada noche puedes elegir a alguien para saber cuál es su rol.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Eres un simple Vecino 👨. Estás condenado a pasar tus días conversando en el patio ... y a ser echado.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Eres Don Ramón 👺. ¡Debes 14 meses de renta!. Si consigues ser echado además de no pagar nada, ¡ganas inmediatamente!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Eres El Tripaseca 👶. ¡Eres un gángster peligroso!. Elige un jugador para que sea tu «guía»; si muere, te convertirás en Secuaz de El Shory.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Eres Quico 👁. ¡Estás esperando que te compren tu pelota cuadrada!. Sabrás si Doña Florinda está o no en casa. Esta es tu única función.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Eres La Popis. Aprendiz de Doña Florinda 🙇‍♂. ¡Tenga, tenga, tenga, tenga y tenga!. Sí Doña Florinda muere, ocuparás su puesto.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Eres un Alumno Copión 👤. ¡Gozas haciendo trampas! Cada noche puedes elegir a otro jugador para convertirlo en un Alumno copión. Si al final de la partida todos los jugadores vivos son Alumnos Copiones, ganas.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Eres El Profesor Jirafales 💂‍♂, ¡Ta, ta, ta, ta, ta! tu trabajo es acabar con los Alumnos copiones. Si los Alumnos quieren robar tus apuntes para copiarse, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es alumno copión, morirá.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      El ocaso se acerca y los Vecinos tratan de decidir a quién echarán esta tarde... ¡Todo el mundo tiene {0} segundos para votar a partir de ahora!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Ha llegado el día. Tienen {0} segundos para discutir y hacer sus acusaciones y defensas.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Cae la noche. Todo el mundo se dirige a su cama agotado después de un día tan intenso. Jugadores nocturnos, ¡tienen {0} segundos para realizar sus acciones!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Los aldeanos tienen su veredicto, entre tantas dudas y sospechas, {0} ha muerto linchado por el pueblo. {1}.</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Incapaces de tomar una decisión sobre el linchamiento, la multitud vuelve frustrada a pasar la noche en sus casas... [Empate en las votacione].</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >¡Qué extraño, nadie ha votado! No hay linchamiento esta noche...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Los Vecinos se reúnen por la mañana, pero no ven a {0}. Miran toda su casa, ¡hasta encontrarla desmembrada,junto a ella su fiel mascota Satanas. Han perdido a Doña Cleotilde 🕵‍♂.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Llega la mañana y, para la consternación de todos, empalado en lo alto de la iglesia aparece {0}, Ñoño 😇.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >Mientras que todo el mundo empieza a salir de sus casas, se encuentran piezas de un Chipote Chillón regadas por todos lados. Más lejos, una de las piernas…, a 10 metros un par de dedos…, y, por último, flotando en la fuente del segundo patio, el cuerpo de {0}, víctima de Los Secuaces de El Shory. Han perdido al Chapulin Colorado 🔫.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >Los Vecinos se despiertan en la mañana para encontrarse los restos desmembrados de {0}, esparcidos sobre el sofa de la sala y unas tacitas de café tiradas en el suelo. Doña Florinda 👳‍♂ ha muerto.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Todo el mundo se despierta con el olor a jamón quemado… ¡El Tinaco desparramado ha muerto!, encuentran los restos de {0}, despedazados. El Señor Barriga 🍻 ha sido eliminado,los Secuaces de El Shory no atacaran esta noche.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Mientras que el sol sale en la vecindad, encuentran a {0} sin vida sobre un viejo sofa, le ha dado la chiripiolca... ¡Decia venir de Checoslovaquia,que perdido estaba¡ Era Chaparrón Bonaparte 🃏</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Al levantarse todo el mundo, un olor terrible inunda la vecindad. Siguen el rastro hasta encontrar a {0} muerto en las escaleras, con un tiro en la frente...  ¡Bang! {1}.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Un gran hedor viene de la casa de {0}. Los vecinos la inspeccionan hasta encontrar un cuerpo yaciente junto a unas copias de la tarea de mañana. ¡Un Alumno Copión ha sido asesinado por El Marshall 🎯!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Los vecinos se reúnen por la mañana en el centro del patio, suspirando de alivio. Parece que esta noche no ha habido ningún ataque.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Has sido atacado por los Secuaces de El Shory. ¡Como eras El Chompiras😾, te has convertido en uno de ellos!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Tu Banda: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >¡Fuiste a matar a {0}... pero era El Chompiras y se ha convertido en un secuaz de El Shory más! ¡Felicidades por tu nuevo compañero!</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value >¡Oh, no! ¡Los Secuaces de  El Shory te han matado! Bang</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >¡Oh, no! ¡{0} era El Señor Barriga 🍻! Ahora están cansados de cargar el obeso cuerpo del Señor Barriga y no podrán atacar mañana por la noche.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >¡Has intentado proteger a un Secuaz de El Shory! Has tenido mala suerte y... te ha matado. :(</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >¡Has salvado la vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} no fue atacado anoche. Básicamente, no has hecho nada.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>¡Fuiste a proteger a {0}, pero no había nadie en casa! [Estaba visitando a otro jugador].</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >¡Ñoño estuvo cuidando de ti anoche y le dio un barrigazo a quien te quería atacar! (Fuiste elegido por un atacante —El Pocastrancas o Secuaz de El Shory—, pero te salvaron).</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Maruja decidió tomarse la noche libre y quedarse en casa. ¡¡Pero qué gran error!! ¡A {0} la han matado Los Secuaces de El Shory!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >¡Ups! ¡{0} no estaba en casa! Te quedaste sin cena. [Estaba visitando a otro jugador].</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Te escabulliste en la casa de {0} para divertirte un rato, pero te encontraste con Secuaz de El Shory. Has muerto (has visitado a un Secuaz de El Shory).</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >¡{0} se escabulló anoche en la casa equivocada! Se ha encontrado su cuerpo lujurioso clavado en la puerta de la vecindad con varas de hierro… ¡Qué tristeza! :( (Visitó a un Secuaz de El Shory).</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} se escabulló anoche en la casa de {1} para pasar un buen rato y liberar el estrés. ¡Desafortunadamente, lo que se encontró fue a un Secuaz de El Shory que estaba matando a {1}! ¡El Secuaz de El Shory se giró en un segundo y le Disparó a la yugular! {0} ha muerto.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >¡Después de una noche loca de sexo y perversión con {0}, puedes asegurar que no es un Secuaz de El Shory y tampoco El Pocastrancas!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >En mitad de la noche soñaste que Maruja te estaba cabalgando. ¡Pero al despertarte te diste cuenta de que no fue un sueño! Por desgracia, la noche era oscura y no pudiste ver bien su cara. En cuanto terminaron, se fue en silencio para dejarte a solas con tus pensamientos. ¡y una buena satisfacción en el cuerpo! [Maruja te ha visitado].</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >¡Has pillado a {0} husmeando por ahí! ¡Es Doña Cleotilde!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Tus investigaciones te han mostrado que {0} es {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Parece que El Chapulin Colorado pilló una ETS después de pasar la noche con Maruja. {0} se ha tomado la venganza por su mano y {1} ha muerto. [{0} es El Chapulin Colorado y ha eliminado a {1}].</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >De repente, el sonido de un golpe se escucha a lo lejos. La vecindad se gira para ver a {0} de pie sobre el cadáver de {1} con El Chipote Chillón ensangrentado. {2}. [{0} es El Chapulin Colorado y ha eliminado a {1}].</value>
+  </string>
+  <string key="WolfWins" >
+    <value>  ha ganado!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value >¡Los Secuaces de El Shory han ganado!</value>
+  </string>
+  <string key="VillageWins" >
+    <value >¡Los Vecinos han ganado! Pueden volver en paz a sus casas :)</value>
+  </string>
+  <string key="TannerWins" >
+    <value >¡Oh, no! ¡Han linchado a a Don Ramón! De forma estúpida, él gana la partida.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jugadores restantes, roles y equipos:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} ha votado convertir a {1}.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>Enviaron a {0} para hacer el trabajo sucio y convertir a {1}...; sin embargo, ¡era El Profesor Jirafales💂‍♂️!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} vino a tu casa esta noche para que te unieras a su causa…, pero no contaba con que eras El Profesor Jirafales y lo expulsaste de una. Un Alumno Copión ha muerto… ¡Queda(n) {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>¡Los Alumnos Copiones te ha convertido a su grupo! Ahora eres un Alumno Copión más. Cada noche tendrás ocasión de convertir a otra persona.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Alumnos Copiones: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>¡{0} se ha unido a Los Alumnos Copiones!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} fue enviado a hacer el trabajo sucio y convertir a {1}..., ¡pero no había nadie en casa!</value>
+  </string>
+  <string key="CultWins" >
+    <value >Todos las amenazas a Los Alumnos Copiones han sido eliminadas y los únicos Vecinos en pie han sido transformados en Alumnos Copiones. ¡Los Copiones han ganado! ¡VIVA LA TRAMPA!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>¡Fuiste a cazar a {0}, pero ya estaba muerto!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Vas a la casa de {0} y te lo encuentras concentrado copiando la tarea … Rápidamente, le quitas tus apuntes, le pones mala calificación y lo expulsas en el acto.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Vas a casa de {0}, pero no hay ningún acordeón o copia. No es un alumno copión, por lo que te vuelves a casa.</value>
+  </string>
+  <string key="WildChildToWolves"> 
+    <!-- 0 - Werechild's name -->
+    <value>¡El guía de {0} acaba de morir! En un ataque de rabia, ¡se convierte en Secuaz de El Shory!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>¡{0} ha muerto! En un ataque de rabia, ¡te has convertido en Secuaz de El Shory! Tus nuevos compañeros son: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>un Vecino 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>El Señor Barriga 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Maruja 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Doña Florinda 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>El Botija 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Ñoño 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Doña Cleotilde 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Secuaz de El Shory 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>El Chompiras 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>El Chapulin Colorado 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Don Ramón 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Chaparrón Bonaparte 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>El Tripaseca 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Quico 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>La Popis 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Alumno Copión 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>El Profesor Jirafales 💂</value>
+  </string>
+<!-- These are for the player list -->
+  <string key="RanAway">
+   <value>Huido</value>
+ </string>
+ <string key="Dead">
+   <value>💀 Muerto</value>
+ </string>
+ <string key="Alive">
+   <value>💃 Vivo</value>
+ </string>
+ <string key="PlayersAlive">
+   <value>Jugadores vivos</value>
+ </string>
+<!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Un Periodista 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Eres Un Periodista 👷‍♂. ¡Eres reportero de "La Chicharra"!. Si hay otro periodista, sabrás quién es; en caso contrario, eres un Vecino más.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Cuando todo el mundo se levanta, encuentran el cadáver de {0} sepultado bajo un montón de periódicos y salpicaduras de sangre por todos lados. ¡Uno de los Periodistas ha muerto!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Los Periodistas son: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>El miembro más reciente de los Alumnos Copiones fue a convertir a {0} a su casa, pero en su lugar encontró la casa destrozada, sangre por todas partes y pisadas de los Secuaces de El Shory en la entrada.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>La Banda se dirige a la casa de {0} para darse un gusto matandolo, pero se encuentran con una figura alta,fuerte y obesa en la puerta. Ñoño 😇 les impide la entrada y vuelven a su guarida derrotados.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Enviaste a {0} para intentar convertir a {1}; sin embargo, su voluntad era demasiado fuerte y fue imposible unirlo a tu causa :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un jugador con el nombre {0} ya se ha unido. Por favor, cambia tu nombre para unirte.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Te escabulliste anoche a la casa de {0} para pasar un buen rato, pero cuando te fuiste, notaste algo extraño: una copia de los apuntes del Profesor Jirafales… [{0} es un Alumno Copión].</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Todo el mundo se despierta a la mañana siguiente y se percata de que {0} no aparece por ningún sitio. Al buscar en su casa, se encuentran sus restos.</value>
+    <value>Mientras los vecinos se reúnen y el sol asciende en el cielo, se encuentran los restos de {0}, que, de alguna forma, murió anoche.</value>
+  </string>
+  <string key="MasonConverted">
+     <!-- 0 - mason's name -->
+    <value>¡Qué raro! {0} no apareció esta mañana en la reunión de Periodistas. O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>¡Va a ser que no! ¡El administrador del grupo ha decidido que no está permitido abandonar el juego en mitad de una partida!</value>
+  </string>
+  <string key="IsDead"> 
+    <!-- used when gunner shoots a player -->
+    <value>ha muerto</value>
+  </string>
+  
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} añadido a la lista de administración. Usa /config para cambiar los ajustes del grupo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>¡Ya estás en una partida en otro grupo!\nGrupo: {0}</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Se han comenzado varias partidas a la vez… Acabando con los excesos.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Tu grupo está en la cola de espera. Posición: {0} / {1}.</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>¡Perdona! Voy a empezar un breve periodo de mantenimiento. No podrás comenzar partidas a partir de ahora.\nEsperando que terminen {0} partidas...\nConsulta @greywolfdev para más información.</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Perdonad, se ha alcanzado el máximo de partidas simultáneas ({0}).\nPosición en la cola de espera: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>¡{0} es un grupo privilegiado y se ha saltado la cola de espera!</value>
+  </string>
+  <string key="NoGame">
+    <value>No hay ninguna partida en curso. Comienza una nueva partida con /startgame o una partida caótica con /startchaos ¡Siganme los buenos!.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo la administración puede usar este comando. Echa al bot y añádelo de nuevo. Se te incluirá como administrador.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Después de esta partida, no estaré disponible por razones de mantenimiento.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Después de esta partida, no estaré disponible durante un corto periodo de tiempo porque debo actualizarme (automático).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>El identificador de usuario es nulo. ¿Estás seguro de que quieres enviar esto como una respuesta?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>¡{0} ya es administrador/a!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>¡{0} no es administrador/a!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>¡{0} ha sido eliminado de la lista de administración!</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Idioma cambiado a {0}.</value>
+  </string>
+  <string key="NoSeer">
+	<value>¡No hay Doña florinda!</value>
+  </string>
+  <string key="TimesUp">
+	<value>¡Se acabó el tiempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Como Doña Nachita 🏹. ¡Eres la típica vieja chismosa!. Elegirás dos jugadores al principio de la partida para rumorar que están enamorados. Si uno de los dos muere, el otro tambien.
+Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son los dos únicos sobrevivientes, ganarán, independientemente de sus equipos. Si están en distintos equipos, y uno de ellos gana, su pareja también ganará.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Eres El Chamois (el doble) 🎭. ¡Estás dispuesto a matar a cualquiera si es necesario!. Escoge a un jugador; cuando muera, te quedarás con su rol.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Eres El Marchall 🎯. ¡El sheriff del viejo oeste!. Sí mueres linchado o por El Pocastrancas, puedes escoger a alguien para matar. Sí te matan los secuaces de El Shory, tienes una oportunidad de matar a un secuaz de ellos, cerraras los ojos y dispararas a la suerte.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Eres El Pocastrancas🔪. ¡Eres un loco peligroso que golpeas a cualquier persona que te hable!. Hace poco que escapaste del manicomio local, tu objetivo es que todos los demás mueran. Cada noche, puedes añadir un cuerpo a tu colección.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>¡Los rumores de Doña Nachita te han alcanzado! ¡Estás locamente enamorado(a) de {0}! Si muere, tú también. Si quedan vivos y uno de los dos gana, ¡los dos ganaran!</value>
+	<value>¡Los rumores de Doña Nachita te han alcanzado! ¡Estás locamente enamorado(a) de {0}! Si muere, tú también. Si quedan vivos y uno de los dos gana, ¡los dos ganaran!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>¡Los vecinos han decidido colgarte! Esta es tu última oportunidad, ¡escoge a quién disparar mientras caes!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} trata de alcanzar su pistola mientras el nudo se va apretando, pero no puede cogerla a tiempo, y muere con un sonoro chasquido del cuello.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} alcanza su pistola, mira a la multitud... y no puede escoger a quien disparar. Muere aceptando su destino.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mientras el nudo se aprieta alrededor del cuello de {0}, saca la pistola, la carga, apunta, aprieta el gatillo ¡y dispara a {1} mientras el suelo se acerca! {1} cae y muere. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>¡Has sido asesinado! En tus últimos momentos, puedes escoger a quién disparar. ¡Que no te tiemble el pulso!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>El ataque a {0} fue tan fuerte que no pudo alcanzar su arma, mientras yacía en un charco de sangre...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Mientras {0} yace ahí, luchando por su último aliento, no puede decidir a quién disparar. Muere aceptando su destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mientras la bala perfora a {0}, cae al suelo, pero no sin antes agarrar su pistola, y dispara a {1}, que se lleva una bala entre los ojos. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Los Secuaces de El Shory intentaron atacar a El Marshall anoche, ¡pero El Marshall pudo alcanzar con su rifle a uno mientras moría! {0} ha muerto y era un Secuaz de El Shory.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>{0} intentó atacar a El Marshall anoche, ¡pero El Marshall pudo alcanzarlo con su rifle! {0} era un Secuaz de El Shory.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Los Secuaces de El Shory intentaron tener un buen acto delictivo nocturno, ¡pero en vez de eso, fueron recibidos por El Pocastrancas 🗡️! ¡{0} fue asesinado en la pelea!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Parecía una noche tranquila para {0}, pero se equivocaba. Los vecinos se reunieron por la mañana y se lo encontraron despedazado… ¡El Pocastrancas ha atacado de nuevo! {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Quisiste incorporar el cuerpo de {0} para tu colección, ¡pero Ñoño lo protegió! No ha habido muertes esta noche.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Los Alumnos Copiones envían a {0} para intentar convertir a {1}, pero en vez de eso, suena un disparo y ¡el cuerpo de {0} sale volando por la ventana! {0} ha muerto.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Los Alumnos Copiones envían a {0} para intentar convertir a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la ventana, ¡con cuchillos clavados por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
+	<value>{0} se cuela en casa de {1}, abre la puerta, ¡¡y es recibido por un loco con un cuchillo!! {1} hunde el cuchillo en cada uno de los órganos internos de {0} por orden alfabético, ¡carcajeando todo el tiempo! {0} ha muerto.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Intentaste proteger Pocastrancas, ¡pero él te acuchilló 98 veces! Me parece que has muerto.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Te cuelas en la casa de {0} y empiezas a tener un poco de diversión. Todo va estupendamente hasta que. {0} saca un cuchillo y ¡empieza a acuchillarte 98 veces riendo como un maníaco! Has muerto.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>{0} intentó divertirse esta noche, pero se topó con El Pocastrancas de muy malas pulgas. {0} ha muerto.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>El Chamois (el doble) {0} se ha convertido en Reportero, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ha muerto y tú te conviertes en Reportero. Tus compañeros del periódico (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>El Chamois (doble) {0} se ha convertido en Alumno Copión, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto y tú te conviertes en Alumno Copión. Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>El Chamois (doble) {0} se ha convertido en Secuaz de El Shory, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto, por lo que, ¡te conviertes en Secuaz de El Shory! Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>¡La última persona en pie es El Pocastrancas! ¡Ha ganado!</value>
+  </string>
+  <string key="AskKill">
+    <value>¿A quién quieres matar esta noche?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Con el último aliento de {0}, su amado(a), {1}, se derrumba y se echa a llorar desconsoladamente. En un golpe de locura, no puede soportar su muerte y se dispara con la primera pistola que encuentra. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>¿En quién te quieres convertir si muere?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>¿A quiénes quieres convertir en amantes?\nEscoge al primer jugador:</value>
+  </string>
+  <string key="AskCupid2">
+    <value>¿A quiénes quieres convertir en amantes?\nEscoge al segundo jugador:</value>
+  </string>
+  <string key="Hunter">
+    <value>El Marshall 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Doña Nachita 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>El Pocastrancas 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>El Chamois (doble) 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Eres El Tripaseca. Tu guía  es {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>¡Triunfa el amor verdadero! ¡Los Tortolitos han ganado!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>En medio de la plaza de la ciudad, encuentran el cuerpo de {0}, con múltiples disparos en el cuerpo. ¡Parece ser que intentó acercarse sigilosamente a El Marshall! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una figura tramposa trató de convertirte a su grupo, pero tu honestidad es demasiado fuerte y has resistido a sus provocaciones y engaños.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Ya estás en la lista de espera del grupo: {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Has sido añadido a la lista de espera. Te enviaré un mensaje directo cuando empiece la próxima partida.\nGrupo: {0}</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>¡Está empezando una partida nueva!\nGrupo: {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Llega la mañana y los dos vecinos que quedan salen al patio. {0} mira a {1}, con una gran sonrisa en su cara, saca un cuchillo y acaba con {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos han muerto… solo quedan cadáveres. Nadie gana, excepto los buitres.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Cuando sale el sol, {0} y {1} caminan hacia el patio. {0} saca su cuchillo, y salta sobre {1}. {1} saca una pistola y dispara en la cara de {0} mientras {0} se lanza y clava el cuchillo profundamente en {1}. Ambos mueren, la vecindad está vacía, no hay ganador.</value>
+  </string>
+   <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>No has elegido un rol, el moderador eligió por ti: {0}</value>
+  </string>
+  <string key="Won">
+   <value>Ganó</value>
+  </string>
+  <string key="Lost">
+    <value>Perdió</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El jugador {0} ha sido asesinado por no votar {1} veces en las últimas 24 horas.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Eres un simple Vecino 👨: intenta sobrevivir. Cada día tendrás la oportunidad de linchar a los Secuaces de El Shory o a El Pocastrancas.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Eres Doña Florinda 👳‍♂️. En este rol, cada noche, deberás elegir a un jugador y se sabrás su rol. No te confíes de la chusma: Si revelas que eres Doña Florinda, ¡Los Secuaces de El Shory o El Pocastrancas intentarán matarte!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Eres Un Secuaz de El Shory 🐺 ¡Te vas a divertir! Cada día, podrás engañar a los demás jugadores. Y por las noches, ¡elegirás a un jugador que matar! Nota: Si atacas a El Señor Barriga, quedarás cansado de cargarlo y no podrás atacar la siguiente noche, ¡ya que estarás durmiendo para reponer energias! Si atacas a El Chompiras, ¡se convertirá en Secuaz de El Shory, ¡como tú! ¡Hurra, amigos!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Como Maruja 💋, tendrás la oportunidad de «visitar» a otro jugador cada noche. Si no es Secuaz de El Shory o El Pocastrancas, lo sabrás (¡porque seguirás viva!). Si visitas un Secuaz de El Shory o a El Pocastrancas, morirás. Si visitas a elegido por el Secuaz de El Shory o El Pocastrancas, a ti también te matará. De todas formas, si te vas de visita y los Secuaces de El Shory te eligen, sobrevivirás. [No estabas en casa]</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>¡Tinaco desparramado! Como El Señor Barriga 🍻, aún eres un vecino. Pero si los Secuaces de El Shory deciden matarte, no podrán atacar la noche siguiente, ya que estarán cansados por tu gran peso.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Como El Chompiras 😾, eres un vecino normal. hasta que los Secuaces de El Shory te ataquen. Cuando lo hayan hecho, ¡tú también te convertirás en Secuaz de El Shory! Serás libre para matar todas las noches.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Eres El Botija 🖕. Si sobrevives lo suficiente, cuando los Secuaces de El Shory hayan muerto, te convertirás en uno de ellos, ¡listo para matar a tus antiguos aliados cada noche!</value>
+  </string>
+  <string key="AboutGA">
+    <value>¡Eres Ñoño 😇! Cada noche, elegirás un jugador para proteger. Ten cuidado si eliges proteger a un Secuaz de El Shory, tienes un 50% de probabilidades de morir. Si visitas a El Pocastrancas, moriras al instante.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Doña Cleotilde 🕵️‍♂️ ¡Vieja Mañosa!. Cada día, tendrás la oportunidad de investigar a otro jugador. Pero ten cuidado, ¡ya que existe un 40% de probabilidades de que los Secuaces de El Shory te descubran!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>¿No contaban con tu astucia, eh? Como El Chapulin Colorado 🔫. Cada día tendrás la oportunidad de golpear con tu Chipote Chillón a otro jugador. Cuando lo hagas, ¡todos sabrán que eres El Chapulin Colorado! ¡Elige con cuidado: solo tienes 2 golpes!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Eres Don Ramón 👺,tu objetivo es sencillo: ser linchado. Si te linchan, ganas la partida. Todos los demás pierden.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Al Chaparrón Bonaparte 🃏 se le dice que es Doña Florinda. Cuando elija a alguien para adivinar su rol, se le dirá uno al azar.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Como Alumno Copión 👤, tu objetivo es convertir a todos los demás jugadores (excepto a Los Secuaces de El Shory) a tu grupo. Si al final de la partida todos los jugadores vivos son Alumnos Copiones, tu grupo gana.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Profesor Jirafales 💂‍♂️, tu trabajo es acabar con Los Alumnos Copiones. Si Alumno Copión te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es Alumno Copión, morirá.</value>
+  </string>
+  <string key="AboutWC">
+    <value>El Tripaseca 👶, Al principio del juego, elegirás a alguien para ser tu «modelo a seguir». Si lo matan, te convertirás en un Secuaz de El Shory.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>La Popis 🙇‍♂️, Por ahora eres un vecino corriente. Pero, si muere Doña Florinda, te convertirás en la nueva Doña Florinda.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Quico 👁️, Se te comunicará quien es Doña Florinda (la de verdad, no el Chaparrón Bonaparte).</value>
+  </string>
+  <string key="AboutMason">
+    <value>El trabajo de los Reporteros 👷‍♂️ es simple: se conocen entre ellos y se coordinan con los vecinos. Por lo demás, son simples vecinos.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      El Chamois 🎭, puedes escoger a alguien al principio de la partida. Si ese jugador muere, tomarás su rol.
+      Nota: Si el jugador se convierte en Alumno Copión, obtendrás su rol original. Para los demás se aplicarán las reglas normales: si era El Chamois y su modelo a seguir está muerto, te convertirás en Secuaz de El Shory. Si no, heredarás su modelo a seguir.
+      Los Alumnos Copiones no pueden convertir a El Chamois (el doble [pero sí después de cambiar de rol]). Cuidado: El Chamois no podrá ganar si no ha cambiado de rol. Si al finalizar el juego, El Chamois sigue siendo el doble, pierde (excepción: amantes).
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Como Doña Nachita 🏹. ¡Eres la típica vieja chismosa!. Elegirás dos jugadores al principio de la partida para rumorar que están enamorados. Si uno de los dos muere, el otro tambien.
+Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son los dos únicos sobrevivientes, ganarán, independientemente de sus equipos. Si están en distintos equipos, y uno de ellos gana, su pareja también ganará.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Eres El Marchall 🎯. ¡El sheriff del viejo oeste, Cuando alguien venga a visitarte, puede que se encuentre la muerte, ya que la paranoia puede contigo y disparas. Sí mueres linchado o por El Pocastrancas, puedes escoger a alguien para matar. Sí te matan los secuaces de El Shory, tienes una oportunidad de matar a un secuaz de ellos, cerraras los ojos y dispararas.
+      Nota: Para los ataques de los Secuaces de El Shory, la probabilidad empieza en un 30%. Si solo hay un secuaz de El Shory, El Marshall tiene un 30% de probabilidad de matarlo (y sobrevivir). Por cada Secuaz de El Shory adicional, suma un 20% (2 Secuaces de El Shory = 50%, 3 = 70%, etc). Ten en cuenta que si hay varios Secuaces de El Shory, aunque mates a uno, te superan en número y morirás.
+      Si Los Alumnos Copiones intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>El Pocastrancas 🗡️, para ti el manicomio era una idiotez. Menudo chiste. Pero ahora eres libre, y puedes volver a hacer lo que más te gusta: ¡matar! El Pocastrancas conforma su propio equipo individual. Ganará si es el último jugador en pie (excepción: amantes). Como El Pocastrancas, podrás matar a cualquiera: Secuaz de El Shory, Marshall, Chapulin Colorado, Ñoño, etc., quien sea. Si los Secuaces de El Shory te atacan, matarás a uno de ellos (aleatorio) y sobrevivirás.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para es el desarrollador majadero al que le gusta ladrarle a la gente (y con razón: a ver si lo dejáis jugar, eh). Puede que haya estado jugando con Los Secuaces de El Shory demasiado tiempo. Jugar con los Secuaces de El Shory es una MUY mala idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Duración de la partida: {0}</value>
+  </string>
+  
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Día {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Ha ocurrido un error y este nodo se cerrará :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Te he enviado un privi.</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor, envíame un privi para que pueda hablarte ;)</value>
+  </string>
+  <string key="PMTrue">
+    <value>¡Gracias por iniciarme! Ahora puedo enviarte privis.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Debes responder al usuario al que quieres castigar.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>¿Qué quieres hacer, eh?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>¡Debes unirte a un juego desde un grupo de chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>¡Debes empezar un juego desde un grupo de chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tiempo que tarda Telegram en enviarme un mensaje: {0}\nMensajes por segundo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>¿Qué idioma?\nActualmente: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>¿Qué variante?\nActualmente: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma puesto: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>¿Qué archivo de idioma quieres?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Ahora mismo no hay nodos online, por favor, inténtalo de nuevo pasados unos segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>¡Este comando solo se puede usar en un grupo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>No eres un administrador global.</value>
+  </string>
+  <string key="NotPara">
+    <value>¡Quita de aquí, tú no eres Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sí</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Está permitido</value>
+  </string>
+  <string key="Disallow">
+    <value>No está permitido</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Ocultar</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Solo modo normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo modo caótico</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Elección del jugador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>No mostrar ninguno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar solo los jugadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar todos los jugadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>¿Permitir que los jugadores abandonen el juego después de que haya empezado la partida?\nNota: Los jugadores aún podrán huir durante el join. \nActualmente: Los jugadores {0} pueden huir</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Los jugadores {0} tienen permitida la huida después de comenzar el juego.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>¿Cuántos jugadores pueden jugar como máximo en una partida?\nActualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>El máximo de jugadores está establecido en {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>¿Mostrar o esconder los roles a la muerte?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Los roles están en {0} a la muerte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>¿En qué modo de juego estará el grupo?\nActualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de juego establecido a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>¿Cómo quieres que se muestren los roles al final de la partida?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Mostrar roles al final establecido a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Elige la duración de las acciones diurnas (en segundos). Aun así, quedará modificado en base al número de jugadores.\nPor defecto: {0}\nActualmente: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duración de las acciones durante el día: {0} segundos.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Elige la duración de la noche.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duración de la noche: {0} segundos.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Elige la duración del linchamiento.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duración del linchamiento: {0} segundos.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>¿Permitir necio?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>El necio ahora: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>¿Permitir veterano?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>El veterano ahora: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>¿Permitir culto?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>El culto ahora: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Gracias, que tengas un buen día :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>¿En qué idioma quieres que esté el grupo en el que vas a jugar?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aquí tienes una lista para {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Miembros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor ábreme una conversación para que pueda enviarte mensajes privados</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>¡{0} no me abrió una conversación y ha sido eliminado del juego!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aquí tienes la última lista de jugadores:</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>No se pudo obtener la última lista de jugadores.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>¡Te has unido correctamente a la partida!\nGrupo: {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Duración en enviar el mensaje: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Eres El Licenciado Morales 🎖. ¡Trabajas en la comandancia de la policía!. Tu voto a la hora de linchar contará el doble una vez hayas revelado tu rol al pueblo. Estás en el equipo de los Vecinos.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Eres Patty 👑. ¡Eres una simpática niña!. Dejaste de ser timida y saliste a jugar un rato en el patio con los otros Vecinos. Si intentan lincharte, se arrepentirán y nadie será linchado.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Eres El Chavo 🤕. ¡Eres ingenuo y un poco distraído!. Al votar, tienes un 50% de probabilidades de votar por otra persona distinta a la que elegiste. Aun así, eres Vecino.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Eres La Bruja Baratuja 🔮. ¡Eres una misteriosa bruja!. Prefieres aliarte con los Bandidos en vez de con los Vecinos. Por la noche usarás tus poderes para encontrar a los secuaces de El Shory o a Doña Florinda. Solo ganas si los secuaces de El Shory ganan. ¡Disfruta ayudándolos a librarse de los miserables Vecinos!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Eres El Sargento Refugio ⚒. ¡Eres quien preserva el orden!. Posees un decreto de toque de queda con el cual no podrá atacar El Shory y sus secuaces durante una noche. Durante el día, podrás elegir si deseas declarar el toque de queda. Aparte de eso, eres un simple aldeano.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Eres El Shory ⚡️. ¡Eres un sanguinario Mafioso jefe de la banda, frío y calculador!. Tienes el poder de convertir a los Vecinos en tus secuaces. Cada noche, podrás elegir un jugador para atacarlo y matarlo, pero mientras estés vivo, existe un 20% de probabilidad de que se convierta en uno de tus secuaces.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Eres El Matonsisimo Kid 🐶. ¡Eres un peligroso pistolero! Como el resto de los secuaces de El Shory, elegirás atacar a un Vecino y matarlo cada noche. Si mueres, tu banda entrará en cólera y atacará a dos Vecinos la próxima noche. Por desgracia, seguirás muerto.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Mientras todos empiezan a linchar a {0}, de repente haciendo ojitos dice: «¡Esperen, soy Patty!». Avergonzados por querer linchar a una niña inocente, todos se marchan a sus casas.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Intentas mirar a {0}, pero no puedes distinguir qué es. Sin embargo, sabes que no es Secuaz de El Shory ni Doña Florinda.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} da un paso al frente y muestra su placa de la comandancía de la policia, que demuestra que es El Licenciado Morales. Desde ahora, los votos de {0} a la hora de linchar contarán el doble.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Haz clic en «Revelar rol» cuando quieras revelarte al pueblo como El Licenciado Morales.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar rol</value>
+  </string>
+  <string key="SpreadDust">
+    <value>¿Deseas declarar el toque de queda para impedir que los Secuaces de El Shory ataquen esta noche?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mientras los vecinos discuten sobre los hechos acontecidos, de repente ven a {0}, que se pone a dar vueltas declarando el toque de queda. Por ahora, todos estarán a salvo de los ataques de Los Secuaces de El Shory; Los Secuaces de El Shory no atacan esta noche.</value>
+  </string>
+  <string key="Mayor">
+    <value>Licenciado Morales 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Patty 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>La Bruja Baratuja 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>El Chavo 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>El Sargento Refugio ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>El Shory ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>El Matonsisimo Kid 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Mientras Los Secuaces de El Shory atacan a {0}, {1} para a la Banda, ya que es El Shory. {1} le dice a la Banda que {0} debería unirse a ellos en lugar de morir, por lo que la Banda lo suelta y deja que la corrupción siga su curso. Se convertirá en Secuaz de El Shory la próxima noche.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Fuiste mordido por los Secuaces de El Shory, pero El Shory te escogió. En lugar de morir, has sido tentado a unirte a la Banda ¡y te convertirás en Secuaz de El Shory la próxima noche!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Mientras cae la noche, sientes un extraño llamado y llegas a la guarida y empiezas a armarte. ¡Ahora eres un Secuaz de El Shory!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como Licenciado Morales, eres un simple aldeano, hasta que decidas revelarte. A partir de ese momento tus votos contarán el doble (por lo que tu voto será doblemente poderoso que el de cualquier otro jugador). Usa ese poder sabiamente para ayudar a todos.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Patty es un rol clave en la estrategia del team Vecinos. Si la linchan, su rol como Patty será revelado y sobrevivirá. A partir de entonces solo podrá ser asesinada por la noche (un Secuaz de El Shory o El Pocastrancas) o por el Marshall.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>¿Recuerdas a Doña Florinda? Pues bueno, ahora tiene a su némesis en el equipo de los Secuaces de El Shory. La Bruja Baratuja es Doña Florinda de los Secuaces de El Shory. Solo puede ver si alguien es Secuaz de El Shory o Doña Florinda, y gana cuando los Secuaces de El Shory ganan.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Eres El Chavo 🤕. Eres ingenuo y un poco distraido. No estás pendiente de nada por estar pensando en tortas de jamón. ¿Puedes al menos votar por la persona que quieres? (tienes 50% de probabilidades elegir a otra persona al azar).</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Eres El Sargento Refugio ⚒️. Durante los años de servicio, ninguna misión te emocionó tanto como la de acabar con la Banda de El Shory.\nPor eso estás feliz con la noticia del toque de queda. ¿Quién sabe? Ese podría prevenir que Los Secuaces de El Shory maten a alguien esta noche 🤔</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Eres El Shory ⚡, el jefe de La Banda, El más sanguinario mafioso. Mientras estés vivo, al ir a matar a alguien, existe un 20% de probabilidades de que le perdones la vida a esa persona y se una a tu Banda.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>¡Eres la mano derecha de El Shory! El Matonsisimo Kid 🐶, eres su mejor pistolero  y si alguien te mata, Los Secuaces de El Shory mataran a dos personas. Lastimosamente estaras muerto para ver esa escena :(</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto, por lo que te has transformado en El Shory. Tu Banda (si aún hay) es: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto, por lo que te has transformado en El Matonsisimo Kid. Tu Banda (si aún hay) es: {1}</value>
+  </string>
+  
+  <string key="VillageTeam">
+    <value>Equipo de la vecindad</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Equipo neutral</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Equipo de los Secuaces de El Shory</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Equipo de El Pocastrancas</value>
+  </string>
+  <string key="CultTeam">
+    <value>Equipo de Los Alumnos Copiones</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Equipo de Don Ramón</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Equipo de la vecindad</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equipo neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equipo de los Secuaces de El Shory</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equipo de El Pocastrancas</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equipo de Los Alumnos Copiones</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equipo de Don Ramón</value>
+  </string>
+  
+  <string key="CultConvertWolf">
+    <value>Los Alumnos Copiones envían a {0} para intentar convertir a {1}, pero en su lugar, la cabeza de {0} sale volando por la ventana. Mala idea en enviar a {0} donde Los Secuaces de El Shory, porque ahora está muerto.</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} se metió en la casa de {1} para pasar una noche de pasión y locura, pero en lugar de eso, se encontró a un ser misterioso, sacado de un manicomio, ¡que se dedica a extraer los órganos vitales de las personas! Aun así, El Pocastrancas decide satisfacer los deseos de {0}, y le deja pasar su última noche de travesuras, antes de añadir el corazón de Maruja a su colección!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Todos se despiertan y se encuentra el cuerpo decapitado de {0} Al lado de su muñeca Josefina. La  Popis ha muerto.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, El Sargento Refugio, ha tenido muy mala suerte durante la noche, ya que se lo ha encontrado en su patrulla junto con 5 cuchillos clavados en manos, pies y cabeza. Tal vez El Pocastrancas tenía la esperanza de ampliar su colección de órganos con el corazón, hígado y estómago de {0}.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} fue apuñalado hasta la muerte con un lapiz al lado de su silla. ¡El Pocastrancas ha atacado de nuevo, sin importarle nada! {0} era un Alumno Copión.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>A la mañana siguiente, los vecinos se levantaron destrozados al encontrar a Doña Nachita, {0}, dividida en dos. Curiosamente, le faltaba el corazón "y la lengua".</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Los vecinos esperaban dialogar con El Señor Barriga, {0}, pero lo único que encontraron en su casa fue un cuchillo y sus organos sobre la mesa. Tanto estaba su cuerpo grasiento que ni El Pocastrancas lo quiso.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} normalmente habría luchado contra El Pocastrancas, pero es irónico que los barrigazos de Ñoño hayan servido para protegerle. {0} ha muerto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>¡Parece que {0} fue sorprendido anoche! Se escuchó un grito, pero solo se pudo encontrar los restos de lo que parece ser El Chapulin Colorado, con un moretón en la cabeza y una puñalada en el torso. Es evidente que El Pocastrancas ha ganado.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>¡Magnicidio! Los vecinos se han encontrado a {0}, nuestro excelentísimo ilustrísimo Licenciado Morales, apuñalado por la espalda mientras ordenaba sobres en la comandancia por la noche. Parece que El Pocastrancas se ha vengado por todos los años que pasó metida dentro de un manicomio por culpa suya.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Suenan las campanas en todo la vecindad antes del amanecer. Decenas de policias armados inundan las calles investigando la desaparición de la simpatica Patty {0}. No se descubrieron pistas, pero se sospecha que El Pocastrancas anda suelto. Patty ha muerto.</value>
+    <value>Parece ser que la tía de Patty no estaba en casa esta noche. Se han encontrado los restos de {0} colgados en varias habitaciones del Apartamento. Resulta que la pobre Patty ha sido una victima más de El Pocastrancas.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Los vecinos se despiertan con el hedor del cadáver podrido de {0}. El cuerpo, acuchillado 94 veces, fue decapitado. Extrañamente, el cerebro fue extraído cuidadosamente ¡sin desarmar los rulos!. {0} era Doña Florinda.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Se oyen lamentos entristecidos por todo el patio… Los  Secuaces de El Shory han matado a {0}, un gran error, ya que era de los suyos. La Bruja Baratuja ha muerto.</value>
+    <value>Anoche se escucharon unos gritos agudos: «¡Soy tu aliado, tonto!». A la mañana siguiente, los vecinos encontraron un cuerpo yaciente junto con una bola de cristal de segunda mano. Pertenecía a {0}, La Bruja Baratuja. Craso error de la Banda.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>¡BANG! Anoche se oyó el ruido de un tiro de Los Secuaces de El Shory contra la humanidad de El Tripaseca. Todos se preguntan si Los  secuaces de El Shory no pensaron que {0} podria ser su aliado</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Los vecinos se despertaron por la mañana y se encontraron los restos del cuerpo de {0}, El Profesor Jirafales, cortados en pedazos en un carro al lado de la Escuela. Lección aprendida: ¡no hay que visitar a El Pocastrancas!</value>
+    <value>El cuerpo de {0}, El Profesor Jirafales, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si la El Pocastrancas era un Los Alumno Copión no parece ser una buena idea.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Aunque parecía que Los  secuaces de El Shory habían decidido quedarse en casa, un Alumno Copión decidió visitarlos, siendo demasiado difícil de resistir para Los  secuaces de El Shory. ¡La cabeza de {0} se convirtió en un blanco para sus tiros!</value>
+    <value>Los Alumnos Copiones se encontraron con problemas inesperados anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un secuaz de El Shory, justo la noche que estos habían decidido quedarse en casa. Desafortunadamente para los Alumnos Copiones, Los  secuaces de El Shory no tienen ningún interés en unirse a ningún grupo de tramposos y era una oportunidad que no podían dejar pasar. {0} ha muerto.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>Los Alumnos Copiones pensaban que tendría un nuevo miembro en su grupo, pero ¡nada más lejos de la realidad! {0}, un Alumno Copión, fue descuartizado y sus restos fueron esparcidos por todo el pueblo. Los apuntes con las copias fueron encontrados junto a un cuchillo, como muestra clara de quien es el que manda.</value>
+    <value>Anoche, Los Alumnos Copiones trataron de convertir al vecino más loco de la vecindad. Su miembro más reciente, {0}, trató de convertir a El Pocastrancas, y este hizo una nueva obra de arte en la patio de la vecindad, exhibiendo a todos sus órganos internos.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Se suponía que iba a ser una noche donde {0}, Ñoño, salvaría a la vecindad de El Pocastrancas, pero este desinfló su gran barriga y sus cachetes con su cuchillo! A la izquierda del cuerpo dejó una nota que decía: «Sé protegerme mejor que tú».</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>Ñoño, {0}, trató de proteger a un Los  secuaz de El Shory anoche. Al amanecer, todos se encontraron la barriga de {0} abierta y con las tripas afuera en el patio. Los  secuaces de El Shory recibieron un buena sorpresa extra, gratis, y sin tener que desplazarse. ¡Todo un lujo, vaya!</value>
+  </string>
+  
+    <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabiendo que solo quedaba {0} en el pueblo, {1} intenta matarlo, pero {0} lleva años practicando el tiro al blanco y se las arregla para hacer que {1} se lleve un tiro entre ceja y ceja. ¡Los vecinos han ganado!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} sabe que en la vecindad solo queda {0}, así que aprovecha mientras {0} está ocupado limpiando el arma en su casa y se mete para matarlo, {0} ha muerto.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} y {0} se encuentran en la plaza del pueblo. Sin embargo, {1} hoy no tiene ganas de molesta y antes de que {0} pueda mostrarle ls copia, se abalanza sobre él le quita los apuntes y lo expulsa. {0} era el último Alumno Copión</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El tiempo para unirse a la partida ha aumentado {0} segundos.\n{1} para unirse.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>El tiempo para unirse ha bajado {0} segundos.\n{1} para unirse.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo los administradores de este nuestro grupo pueden aumentar el tiempo para unirse más de una vez.</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>¿Permitir que los jugadores aumenten el tiempo para unirse?\nActualmente: {0} aumentar el tiempo\nNota: Los administradores siempre podrán aumentar el tiempo para unirse.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} que los jugadores aumenten el tiempo para unirse.</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Elige el máximo de segundos permitidos para añadir al tiempo de unirse a la partida para cada vez que se le dé a /extend.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>El máximo de tiempo se ha establecido en {0} segundos.</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>¡Oh, no! {0} era El Señor Barriga, y, al matarle, os ha provocado una hernia al tratar de cargar du pesado cuerpo lo que les impide actuar la siguiente noche {1}.</value>
+  </string>
+    <string key="JoinButton"><!-- this is for a button, no markdown or html -->
+    <value>¡Siganme los buenos!</value>
+  </string>
+    <string key="NotMember">
+    <value>No puedes unirte al juego porque parece que no pertecenes a {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>¡A ver cuántas veces tendré que repetir esto! Deja de usar join, ahora hay un botón que lo sustituye. Superalo ya.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jugadores han votado, {1} en total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>¿Activar linchamientos secretos?\nActualmente: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>La activación de linchamientos secretos está: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, no olvides que para unirte a la partida tienes que pulsar el botón aunque la hayas iniciado.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>No pude encontrar el grupo. Por favor, usa este comando en el grupo del que quieres dejar de esperar, o añade enlace, id o nombre de usuario al lado del comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Se te ha eliminado de la lista de espera de {0}.</value>
+  </string>
+    <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0}se ha(n) unido en los últimos 30 segundos.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Permitir culto</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permitir veterano</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permitir necio</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Activar linchamientos secretos</value>
+  </string>
+  <string key="RandomMode">
+    <value>Activar modo aleatorio</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permitir aumentar el tiempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostrar roles con la muerte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permitir salir del juego</value>
+  </string>
+    <string key="ShowIDs">
+    <value>Mostrar IDs durante el join.</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>¿Mostrar los IDs de los jugadores conforme se vayan uniendo?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Todas</value>
+  </string>
+    <string key="RandomModeQ">
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modo aleatorio: {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>Permitir packs de GIFs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>¿Permitir que los jugadores tengan packs de GIFs NSFW?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} GIFs NSFW</value>
+  </string>
+  
+    <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Con el albor del nuevo día, {0} se despierta en medio de un gran silencio. Dándose cuenta de que no queda nadie, {0} empieza a caminar en soledad por todo la vecindad. Entonces, {0} suspira al ver los cuerpos sin vida de sus antiguos vecinos; su sueño de ser linchado está tan muerto como ellos. Así pues, rebusca, y encuentra la vieja soga que tantas vidas se ha llevado, se la anuda al cuello con ternura y, se deja caer atado desde la escalera de la vecindad.</value>
+    <value>{0} se levanta solo con el alba. La impotencia recorre las venas de {0} al darse cuenta de que su misión masoquista ha fracasado estrepitosamente; así que {0} coge una cuerda y se cuelga al darse cuenta de que no queda nadie que pueda lincharlo.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Los místicos ojos de {0} se abren en medii de la aldea, se encuentra con un silencio sepulcral. Se queda mirando al cielo y deja que la realidad se funda en él. Todo el mundo está muerto. Sus aliados Los  secuaces de El Shory no volverán jamás. Con gran angustia en su negro corazón, {0} se pone en pie y mete sus pertenencias en su viejo baúl; después se asoma desde eo portón de la vecindad. Una lágrima se desliza del ojo de {0} mientras recuerda lo cerca que ella y la Banda estuvieron de la victoria. ¡Ay!, tiempo es ya de empezar una nueva vida con otros secuaces de El Shory que la requieran. {0} se dirige a la calle y deja atrás su querida vecindad.</value>
+    <value>A pesar de los esfuerzos de {0}, su vida ya carece de emoción y gracia. Aun con la victoria de Los  secuaces de El Shory, no queda nadie con quien saborear el éxito ni vecinos de quien mofarse. Así las cosas, {0} mira en su bola de cristal, donde silenciosamente desaparecen sus anhelos en una neblina espesa. Se dispone, pues, a buscar nuevos Secuaces de El Shory, aliados que la ayuden a llenar su oscura vida y sacia su sed de causar males a la humanidad.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>¿Qué variante?\nActualmente: {0}\nComo has jugado 500 juegos, puedes acceder también a: </value>
+  </string>
+  <string key="Skip">
+	<value>Omitir</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha muerto, por lo que te has transformado en El Cuajinais. Tu Banda (si la hay) es: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>¡Percibes que {0} NO es {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>¿Quieres paralizar a toda la aldea esta noche?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mientras todos discuten, {0} empieza a llorar y hablar ininteligiblemente . Esta noche, todos quedarán paralizados como si les hubiese dado la Garrotera, y nadie podrá realizar acciones nocturnas.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Cae la noche y los vecinos apenas llegan a sus casas, se quedan paralizados cual estuata… y no actuarán esta noche</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>¿Permitir ladrón?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>El ladrón ahora: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>¿Usar el ladrón cada noche?\nActualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>El ladrón puede usarse cada noche: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permitir ladrón</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Modo «Ladrón completo»</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Eres la Minina 👦🏼🌚, ¡Eres una mujer muy guapa!. Eres un Vecino más; sin embargo, dado que pasas mucho tiempo con El Shory y sus secuaces, Doña Florinda te percibirá como uno de ellos. ¡Oh, no!</value>
+  </string>
+  <string key="WolfMan">
+    <value>La Minina 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Eres la Minina 👨🌚, Eres un Vecino más; sin embargo, dado que pasas mucho tiempo con El Shory y sus secuaces, Doña Florinda te percibirá como uno de ellos.</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Eres El Cuajináis 🐺🌝. ¡Eres un mafioso peligroso!. Eres un Secuaz de El Shory, pero Doña Florinda se confundirá y te percibirá como un Vecino. :)</value>
+  </string>
+  <string key="Lycan">
+    <value>El Cuajináis 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>El Cuajináis es un secuaz de El Shory, pero le aparecerá como vecino a Doña Florinda.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Eres Lucas Tañeda 🌀. ¡Presentas un pequeño trastorno, por momentos, te conectas muy bien con la realidad de tu entorno!.  Cada noche podrás elegir a alguien para ver lo que NO es. Verás el rol de otro que esté vivo todavía, así que presta atención al rol, porque significa que aún queda uno de ellos.</value>
+  </string>
+  <string key="Oracle">
+    <value>Lucas Tañeda 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Lucas Tañeda será informado del rol que alguien NO es, y ese rol será de alguien que esté vivo todavía.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Eres La Chilindrina 💤. ¡Eres simpática, inteligente y manipuladora!. Una única vez en la partida podrás paralizar a todos, haciendo que nadie pueda usar sus acciones esa noche.</value>
+  </string>
+  <string key="Sandman">
+    <value>La Chilindrina 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una vez por partida, La Chilindrina puede paralizar a todos los jugadores, de modo que nadie pueda realizar acciones esa noche.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>Eres Jaimito el Cartero ☮️. ¡Tangamandapio, mi pueblo natal!. Tienes el poder de persuadir a tus vecinos para que nadie linche y así evitar la fatiga. Solo podrás hacerlo una vez.</value>
+  </string>
+  <string key="Pacifist">
+    <value>Jaimito el Cartero ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Jaimito el Cartero puede persuadir a sus vecinos para que nadie linche. Solo podrá hacerlo una vez.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Eres La Biscabuela Nieves 📚.¡Eres una anciana alegre y simpática!. Podrás sobrevivir al ataque de los secuaces de El Shory una única vez; la siguiente vez no tendrás tanta suerte. Si El Chapulin Colorado o El Marshall te matan, perderán sus poderes y se convertirán en simples Vecinos.</value>
+  </string>
+  <string key="WiseElder">
+    <value>La Biscabuela Nieves 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>La Biscabuela Nieves 📚 podrá sobrevivir al ataque de Los  secuaces de El Shory una única vez; la siguiente vez que Los secuaces de El Shory quieran comérsela podrán hacerlo. Si el Chapulin Colorado o El Marshall la matan, perderán sus poderes y se convertirán en vecinos.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>¡Eres El Señor Hurtado 😈. ¡Te robas cualquier cosa que tengas al alcance!. Puedes robar el rol del jugador que elijas durante la primera noche y convertirlo en un simple Vecino.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>¡Eres El Señor Hurtado 😈! Dado que el modo «Ladrón completo» está activado, tienes un 50% de posibilidades de robar el rol de algún jugador cada noche. Si lo consigues, dicho jugador se convertirá en el nuevo El Señor Hurtado y seguirá con los robos.</value>
+  </string>
+  <string key="Thief">
+    <value>El Señor Hurtado 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Por defecto, El Señor Hurtado 😈 puede robar el rol del jugador que elija durante la primera noche y convertirlo en un simple vecino.\nSi el modo «Ladrón completo» está activado, cada noche tendrá un 50% de posibilidades de robar roles. Si lo consigue, el jugador afectado, se convertirá en el nuevo El Señor Hurtado y continuará confundiendo a la aldea.</value>
+  </string>
+    
+  <string key="AskPacifist">
+    <value>¿Quieres evitar la fatiga de tus vecinos y que no se linche esta noche?</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>A causa de las historias de Tangamandapio su pueblo natal, {0} Jaimito el Cartero entretiene a todos y para evitar la fatiga, no habrá linchamientos hoy.</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Hoy no habrá linchamientos gracias a que todos se quedaron escuchando las historias de Jaimito el Cartero</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Intentaste matar a {0}, ¡pero desgraciadamente era La Biscabuela Nieves! {0} he impidió con éxito el ataque, pero, afortunadamente, no los ha reconocido.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Los secuaces de El Shory intentaron darte una muerte lenta, pero eras La Biscabuela Nieves 📚 Evitaste con éxito el ataque, pero por desgracia no reconociste a ninguno de los atacantes.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>El Marshall, {0}, disparó a La Biscabuela Nieves 📚, {1}. {0} llora con gran tristeza, lamentando su grave error, que le ha hecho perder sus habilidades de El Marshall. Ha muerto como un simple vecino.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>El Chapulin Colorado 🔫, {0} golpeó a La Biscabuela Nieves 📚, {1}. {0} llora con gran tristeza, lamentando su grave error, y decide retirarse, lo que lo convierte en un simple vecino.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Intentaste robarle el rol a {0}, pero no lo conseguiste.</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Intentaste robarle el rol a {0}, pero {0} ya está muerto.</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>¡Te han robado el rol! Ahora eres {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Le robaste con éxito el rol a {0}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Reportero y trabajaran mano a mano.</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Tus compañeros (si los hay) son: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Alumno Copión, ¡como tú!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Secuaz de El Shory, ¡como tú!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Tus compañeros (si los hay) son: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>{0} deambula por la vecindad, y de pronto se da cuenta de que ya no quedan roles divertidos que robar, por lo que, rápidamente, recoge sus cosas y se va en busca de otro lugar donde retomar su ilustre carrera profesional.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Tu objetivo de robo ahora es {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>¿A quién quieres robarle el rol?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votos para {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>El resultado de los linchamientos de hoy:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votos para {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secreto: Recuento de votos</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>¿Mostrar el recuento de votos al final de los linchamientos secretos cuando estos estén activados?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Cuando los linchamientos secretos estén activados, el recuento al final de estos será del siguiente modo: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secreto: Votantes</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>¿Mostrar el nombre del votante por cada jugador votado cuando los linchamientos secretos estén activados y se muestre el recuento de votos?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>¡Qué extraño! Mientras discutes a quién convertir esta noche, te das cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>¡Haya paz!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Hoy no habrá linchamientos gracias a que todos se quedaron escuchando las historias de Jaimito el Cartero</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>¡Te han robado el rol! ¡Ahora eres el nuevo El Señor Hurtado😈 y podrás robar un rol la próxima noche!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>¡Te han robado el rol! Ahora eres un vecino</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Toc, toc. ¿Tiene un momento para hablar de El Pocastrancas?</value>
+	<value>El Pocastrancas te ha tendido una emboscada, te ha inmovilizado ¡y te ha cosido a puñaladas!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+	<value>Equipo del El Señor Hurtado</value>
+  </string>
+  
+    <string key="StealKiller">
+    <value>Has intentado robar un rol, pero... ¡era el de El Pocastrancas! En cuestión de segundos has pasado de estar acechando su casa a acabar apuñalado por entrometerte en sus asuntos.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>¡El Señor Hurtado, {0}, intentó robar el rol de El Pocastrancas! Pero parece que le salió el tiro por la culata: encuentran el cuerpo de {0} apuñalado por todas partes, aunque su hígado no ha aparecido…</value>
+  </string>
+    <string key="BeholderSeerStolen">
+	<value>El señor Hurtado ha robado el rol de Doña Florinda. {0} es ahora doña Florinda y {1} no puede ver a la chusma</value>
+  </string>
+</strings>

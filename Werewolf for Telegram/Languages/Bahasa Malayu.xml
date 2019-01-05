@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <language name="Bahasa Malayu" base="Bahasa Melayu" variant="Normal" owner="@asy4f @skyzlangit @IllusionLight @NightcrawlerL"/>
+  <language name="Bahasa Malayu" base="Bahasa Melayu" variant="Normal" owner="@asy4f @skyzlangit @BadangKulim @Qudussiyyah @Own_Owl @ @IllusionLight @NightcrawlerL"/>
   <string key="NotInGame" deprecated="true">
     <value>Anda kelihatan tidak berada dalam mana-mana permainan sekarang...</value>
   </string>
@@ -1549,40 +1549,43 @@ Nota: Para adalah pembuat bot ini.</value>
 
 <!-- NOT IMPLEMENTED YET -->
   <string key="RoleInfoPacifist">
-    <value></value>
+    <value>Anda adalah pengaman. Pengaman boleh memilih untuk menyakinkan agar semua penduduk kampung tidak menyingkirkan sesiapa pada malam ini. Hanya boleh dilakukan sekali.</value>
   </string>
   <string key="Pacifist">
     <value>Pengaman ☮️</value>
   </string>
   <string key="AboutPacifist">
-    <value></value>
+    <value>Pengaman boleh memilih untuk menyakinkan agar semua penduduk kampung tidak menyingkirkan sesiapa pada malam ini. Hanya boleh dilakukan sekali.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value></value>
+    <value>Anda merupakan Orang Tua Bijak. Anda dapat mengelak serangan serigala buat kali pertama tapi buat seterusnya anda akan mati jika diserang. Jika Penembak ataupun Pemburu membunuh anda mereka akan kehilangan kebolehan kerana penyesalan lalu menjadi penduduk kampung biasa.</value>
   </string>
   <string key="WiseElder">
     <value>Orang Tua Bijak 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>Orang Tua Bijak 📚 dapat mengelak serangan serigala buat kali pertama tapi buat seterusnya anda akan mati jika diserang. Jika Penembak ataupun Pemburu membunuhnya mereka akan kehilangan kebolehan kerana penyesalan lalu menjadi penduduk kampung biasa.</value>
   </string>
 
   <string key="RoleInfoThief">
-    <value></value>
+    <value>Anda adalah Pencuri 😈! Anda boleh mencuri peranan pemain lain pada waktu malam dan menukarkan pemain itu menjadi penduduk kampung!</value>
+  </string>
+   <string key="RoleInfoThiefFull">
+    <value>Secara am, pencuri 😈 boleh mencuri peranan pemain pada malam pertama dan menukarkan pemain kepada  penduduk kampung.\nJika [Full Thief] diaktifkan, mereka mempunyai peluang sebanyak 50% untuk mencuri peranan lain pada setiap malam, jika berjaya, pemain yang telah dicuri itu pula akan menjadi pencuri seterusnya!</value>
   </string>
   <string key="Thief">
     <value>Pencuri 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <value>Secara am, pencuri 😈 boleh mencuri peranan pemain pada malam pertama dan menukarkan pemain kepada  penduduk kampung.\nJika [Full Thief] diaktifkan, mereka mempunyai peluang sebanyak 50% untuk mencuri peranan lain pada setiap malam, jika berjaya, pemain yang telah dicuri itu pula akan menjadi pencuri seterusnya!</value>
   </string>
    <string key="AskPacifist">
-    <value>Tekan punat ini menyebabkan penduduk kampung tidak mengundi malam ini!</value>
+    <value>Tekan punat ini jika anda ingin memberikan ucapan yang menyayat hati dan menghalang penduduk kampung untuk mengundi malam ini!</value>
   </string>
   <string key="PacifistNoLynch">
   <!-- {0} - Pacifist's name -->
-    <value>Pengaman ☮️, {0}, berucap dengan penuh sendu sehingga menyebabkan penduduk kampung tak sanggup untuk mengundi pada malam ini.!</value>
+    <value>Pengaman ☮️, {0}, berucap dengan penuh sendu sehingga menyebabkan penduduk kampung tidak sanggup untuk mengundi pada malam ini.!</value>
   </string>
   <string key="PacifistNoLynchNow">
     <value>kerana ucapan pengaman ☮️ , acara untuk menyingkirkan tidak berlaku pada malam ini!</value>
@@ -1620,7 +1623,7 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
   <!-- {1} - The new role -->
-    <value>Anda berjaya mencuri peranan {0}. Anda sekarang ialah {1}.</value>
+    <value>Anda berjaya mencuri peranan {0}.</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
@@ -1701,6 +1704,33 @@ Nota: Para adalah pembuat bot ini.</value>
   </string>
   <string key="LynchPeaceTimeout">
   <!-- Used in PM if the pacifist uses his ability during lynch phase -->
-  <value>Acara penyingkiran untuk hari ini ditangguhkan kerana ucapan pengaman!</value>
+  <value>Acara penyingkiran untuk hari ini ditangguhkan disebabkan ucapan pengaman ucapan pengaman!</value>
+  </string>
+
+   <string key="ThiefStoleYourRoleThief">
+    <value>Peranan anda telah dicuri! Sekarang anda adalah pencuri 😈 , anda boleh mencuri peranan lain pada malam seterusnya.</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Peranan anda telah dicuri! Mulai saat ini hanya hanya penduduk kampung biasa 👱, menghabiskan sisa hidup menanam padi</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Knock knock, anda telah didatangi oleh pembunuh bersiri!!!</value>
+  <value>Pembunuh bersiri menerkam, mengikat, kemudian merobek jantung anda keluar!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+  <value>Pasukan pencuri</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Anda cuba untuk mencuri peranan pemain lain.. Tapi tak disangka sasaran itu adalah pembunuh bersiri..Rupanya anda sedang diperhatikan.. Seketika kemudian anda ditikam</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Pencuri {0}, cuba untuk mencuri peranan pembunuh bersiri tapi gagal!: {0} ditikam beberapa kali dan hatinya turut hilang...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+  <value>The thief has stolen the seer's role! {0} is now the seer, and {1} does no longer have seeing abilities!</value>
   </string>
 </strings>
