@@ -180,6 +180,7 @@ namespace Werewolf_Control
                 m.Buttons.Add(new InlineKeyboardCallbackButton(i, "customgif|" + i));
             }
             m.Buttons.Add(new InlineKeyboardCallbackButton("Show Badge: " + (d.ShowBadge ? "✅" : "🚫"), "customgif|togglebadge"));
+            m.Buttons.Add(new InlineKeyboardCallbackButton("❗️ RESET GIFS ❗️", "customgif|resetgifs"));
             m.Buttons.Add(new InlineKeyboardCallbackButton("Done for now", "cancel|cancel|cancel"));
             m.Buttons.Add(new InlineKeyboardCallbackButton("Submit for approval", "customgif|submit"));
 
@@ -235,6 +236,40 @@ namespace Werewolf_Control
                     p.CustomGifSet = JsonConvert.SerializeObject(data);
                     db.SaveChanges();
                     Bot.Send($"Your badge will {(data.ShowBadge ? "" : "not ")}be shown.", q.From.Id, customMenu: GetGifMenu(data));
+                    return;
+                }
+            }
+            if (choice == "resetgifs")
+            {
+                var menu = new Menu();
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("❗️ CONFIRM RESET ❗️", "customgif|confirmreset"));
+                menu.Buttons.Add(new InlineKeyboardCallbackButton("Cancel", "customgif|cancelreset"));
+                Bot.Send("You are about to reset your custom GIF set! All your saved GIFs will be deleted! You can set them again, but you will not be able to restore your current GIFs. Are you sure you want to continue?", q.From.Id, customMenu: menu.CreateMarkupFromMenu());
+                return;
+            }
+            if (choice == "confirmreset")
+            {
+                using (var db = new WWContext())
+                {
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                    var data = new CustomGifData
+                    {
+                        HasPurchased = true
+                    };
+                    p.CustomGifSet = JsonConvert.SerializeObject(data);
+                    db.SaveChanges();
+                    Bot.Send("Your custom GIFs have successfully been reset.", q.From.Id, customMenu: GetGifMenu(data));
+                    return;
+                }
+            }
+            if (choice == "cancelreset")
+            {
+                using (var db = new WWContext())
+                {
+                    var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                    var json = p?.CustomGifSet;
+                    var data = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    Bot.Send($"You cancelled resetting your GIFs.", q.From.Id, customMenu: GetGifMenu(data));
                     return;
                 }
             }
