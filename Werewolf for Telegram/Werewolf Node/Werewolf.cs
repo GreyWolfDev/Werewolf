@@ -3266,6 +3266,24 @@ namespace Werewolf_Node
                     target.WasSavedLastNight = true;
                     Send(GetLocaleString("GuardBlockedSnowWolf", target.GetName()), snowwolf.Id);
                 }
+                else if (target.PlayerRole == IRole.Hunter)
+                {
+                    if (Program.R.Next(100) < 50)
+                    {
+                        target.Frozen = true;
+                        Send(GetLocaleString("DefaultFrozen"), target.Id);
+                        Send(GetLocaleString("SuccessfulFreeze", target.GetName()), snowwolf.Id);
+                    }
+                    else
+                    {
+                        snowwolf.IsDead = true;
+                        snowwolf.TimeDied = DateTime.Now;
+                        snowwolf.DiedByVisitingKiller = true;
+                        snowwolf.KilledByRole = IRole.Hunter;
+                        snowwolf.DiedLastNight = true;
+                        DBKill(target, snowwolf, KillMthd.HunterShot);
+                    }
+                }
                 else // go and freeze that player!
                 {
                     target.Frozen = true;
@@ -4455,6 +4473,8 @@ namespace Werewolf_Node
                                 case IRole.SnowWolf:
                                     if (p.KilledByRole == IRole.SerialKiller)
                                         msg = GetLocaleString("SnowFrozeKiller", p.GetName());
+                                    else // died from hunter
+                                        msg = GetLocaleString("SnowFrozeHunter", p.GetName());
                                     break;
                             }
                         }
