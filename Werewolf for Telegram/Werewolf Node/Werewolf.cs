@@ -2444,11 +2444,11 @@ namespace Werewolf_Node
             }
 
             // then the target
-            target.PlayerRole = ThiefFull == true ? IRole.Thief : IRole.Villager;
-            target.Team = ThiefFull == true ? ITeam.Thief : ITeam.Village;
+            target.PlayerRole = ThiefFull ? IRole.Thief : IRole.Villager;
+            target.Team = ThiefFull ? ITeam.Thief : ITeam.Village;
             target.RoleModel = 0;
             target.ChangedRolesCount++;
-            target.HasNightAction = ThiefFull == true ? true : false;
+            target.HasNightAction = ThiefFull;
             target.HasUsedAbility = false;
             target.Bullet = 2;
 
@@ -5217,14 +5217,16 @@ namespace Werewolf_Node
                         else player.Choice = -1;
                         break;
                     case IRole.Chemist:
-                        if (GameDay % 2 == 0)
+                        if (player.HasUsedAbility)
                         {
+                            player.HasUsedAbility = false;
                             targets = targetBase.ToList();
                             msg = GetLocaleString("AskChemist");
                             qtype = QuestionType.Chemistry;
                         }
                         else
                         {
+                            player.HasUsedAbility = true;
                             player.Choice = -1;
                             Send(GetLocaleString("ChemistBrewing"), player.Id);
                         }
