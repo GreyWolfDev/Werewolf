@@ -4709,6 +4709,13 @@ namespace Werewolf_Node
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
                     }
+                    var cupids = Players.Where(x => x.PlayerRole == IRole.Cupid && !x.InLove); // include dg cupid
+                    foreach (var cupid in cupids)
+                    {
+                        cupid.Won = true;
+                        var p = GetDBGamePlayer(cupid, db);
+                        p.Won = true;
+                    }
                 }
                 else
                 {
