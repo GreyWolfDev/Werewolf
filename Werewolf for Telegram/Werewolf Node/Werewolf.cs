@@ -2834,6 +2834,9 @@ namespace Werewolf_Node
                             if (lynched.InLove)
                                 KillLover(lynched);
 
+                            //update the database
+                            DBKill(Players.Where(x => x.Choice == lynched.Id), lynched, KillMthd.Lynch);
+
                             //effects on game depending on the lynched's role
                             switch (lynched.PlayerRole)
                             {
@@ -2852,9 +2855,6 @@ namespace Werewolf_Node
                                     HunterFinalShot(lynched, KillMthd.Lynch);
                                     break;
                             }
-
-                            //update the database
-                            DBKill(Players.Where(x => x.Choice == lynched.Id), lynched, KillMthd.Lynch);
 
                             CheckRoleChanges(true);
                         }
