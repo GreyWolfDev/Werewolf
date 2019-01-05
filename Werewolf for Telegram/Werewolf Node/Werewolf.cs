@@ -4314,7 +4314,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist)
+                            if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist && target.PlayerRole != IRole.SnowWolf)
                                 StealRole(thief, target);
                             else
                                 Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
