@@ -3180,11 +3180,7 @@ namespace Werewolf_Node
             for (var i = 0; i < nightTime; i++)
             {
                 Thread.Sleep(1000);
-                if (Players == null)
-                {
-                    CheckForGameEnd();
-                    return;
-                }
+                if (CheckForGameEnd()) return;
                 //check if all votes are cast
 
                 if (nightPlayers.All(x => x.CurrentQuestion == null))
@@ -3329,8 +3325,6 @@ namespace Werewolf_Node
 
             #region Other wolves
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
-
-            if (CheckForGameEnd()) return;
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
 
@@ -3965,17 +3959,9 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("CultTargetDead", target.GetName()), c.Id);
                         }
                     }
-                    if (CheckForGameEnd()) return;
                 }
             }
-
             #endregion
-
-            if (Players == null)
-            {
-                CheckForGameEnd();
-                return;
-            }
 
             #region Chemist Night
             var chemist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chemist & !x.IsDead);
