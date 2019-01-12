@@ -1856,21 +1856,6 @@ namespace Werewolf_Node
                 CreateLovers();
                 NotifyLovers();
             }
-
-            if (!ThiefFull)
-            {
-                var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
-                if (thief != null && thief.Choice <= 0)
-                {
-                    var choiceid = ChooseRandomPlayerId(thief);
-                    var choice = Players.FirstOrDefault(x => x.Id == choiceid);
-                    if (choice != null)
-                    {
-                        thief.Choice = choiceid;
-                        Send(GetLocaleString("ThiefStealChosen", choice.GetName()), thief.Id);
-                    }
-                }
-            }
         }
 
         private void CreateLovers()
@@ -2324,7 +2309,7 @@ namespace Werewolf_Node
                             {
                                 LogAllExceptions(e);
                             }
-                        } while (target != null && tries < 10);
+                        } while (target == null && tries < 10);
                         thief.Choice = target.Id;
                         Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
                     }
@@ -4290,24 +4275,42 @@ namespace Werewolf_Node
 
             #region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
-            if (thief != null && (!ThiefFull || !thief.Frozen))
+            if (thief != null)
             {
-                var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
-                if (target != null)
+                if (!ThiefFull) // Not full thief, steal no matter if frozen or not
                 {
-                    if (ThiefFull || GameDay == 1)
+                    if (GameDay == 1)
                     {
-                        if (target.PlayerRole == IRole.SerialKiller || !ThiefFull) // even for full thief mode, always "successfully" steal the sk - and die :P
+                        var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
+                        int tries = 0;
+                        while (target == null && tries < 10)
                         {
+                            tries++;
+                            try
+                            {
+                                var choiceid = ChooseRandomPlayerId(thief, false);
+                                target = Players.FirstOrDefault(x => x.Id == choiceid);
+                            }
+                            catch (Exception e)
+                            {
+                                LogAllExceptions(e);
+                            }
+                        }
+                        if (tries > 0) Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
+                        StealRole(thief, target);
+                    }
+                }
+                else if (!thief.Frozen)
+                {
+                    var target = Players.FirstOrDefault(x => x.Id == thief.Choice);
+                    if (target != null)
+                    {
+                        if (target.PlayerRole == IRole.SerialKiller)
                             StealRole(thief, target);
-                        }
+                        else if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist && target.PlayerRole != IRole.SnowWolf)
+                            StealRole(thief, target);
                         else
-                        {
-                            if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist && target.PlayerRole != IRole.SnowWolf)
-                                StealRole(thief, target);
-                            else
-                                Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
-                        }
+                            Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                     }
                 }
             }
