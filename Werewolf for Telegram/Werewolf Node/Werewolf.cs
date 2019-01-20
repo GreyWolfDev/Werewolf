@@ -3978,6 +3978,8 @@ namespace Werewolf_Node
                     }
                     else if (Program.R.Next(100) < Settings.ChemistSuccessChance) // chemist kills his target
                     {
+                        if (target.PlayerRole == IRole.WolfCub)
+                            WolfCubKilled = true;
                         target.IsDead = true;
                         target.TimeDied = DateTime.Now;
                         target.DiedLastNight = true;
