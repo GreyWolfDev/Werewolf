@@ -3967,6 +3967,7 @@ namespace Werewolf_Node
                     }
                     else if (target.PlayerRole == IRole.SerialKiller)
                     {
+                        chemist.HasUsedAbility = false;
                         chemist.IsDead = true;
                         chemist.TimeDied = DateTime.Now;
                         chemist.DiedLastNight = true;
@@ -3978,6 +3979,7 @@ namespace Werewolf_Node
                     }
                     else if (Program.R.Next(100) < Settings.ChemistSuccessChance) // chemist kills his target
                     {
+                        chemist.HasUsedAbility = false;
                         if (target.PlayerRole == IRole.WolfCub)
                             WolfCubKilled = true;
                         target.IsDead = true;
@@ -3991,6 +3993,7 @@ namespace Werewolf_Node
                     }
                     else // chemist commits suicide by accident... oops!
                     {
+                        chemist.HasUsedAbility = false;
                         chemist.IsDead = true;
                         chemist.TimeDied = DateTime.Now;
                         chemist.DiedLastNight = true;
@@ -5240,7 +5243,6 @@ namespace Werewolf_Node
                     case IRole.Chemist:
                         if (player.HasUsedAbility)
                         {
-                            player.HasUsedAbility = false;
                             targets = targetBase.ToList();
                             msg = GetLocaleString("AskChemist");
                             qtype = QuestionType.Chemistry;
