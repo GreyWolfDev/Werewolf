@@ -83,6 +83,8 @@ namespace Werewolf_Node.Models
         public bool DiedByVisitingKiller { get; set; } = false;
         public bool DiedByVisitingVictim { get; set; } = false;
         public bool WasSavedLastNight { get; set; } = false;
+        public bool ChemistFailed { get; set; } = false;
+        public bool Frozen { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public bool InLove { get; set; } = false;
@@ -149,7 +151,9 @@ namespace Werewolf_Node.Models
         //more new roles, from april fools.....
         Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
         //halloween role
-        Spumpkin
+        Spumpkin,
+        //and once again, new roles! :D
+        Troublemaker, Chemist, SnowWolf
     }
 
     public enum ITeam
@@ -162,6 +166,6 @@ namespace Werewolf_Node.Models
 
     public enum KillMthd
     {
-        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller
+        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller, Chemistry
     }
 }

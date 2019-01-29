@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
 using Newtonsoft.Json;
@@ -569,13 +568,13 @@ namespace Werewolf_Control
                 {
                     var packs = db.Players.Where(x => x.CustomGifSet != null).ToList();
                     var count = 0;
-                    var list = "Pending Review:\n";
+                    var list = "<b>Pending Review:</b>\n";
                     foreach (var p in packs)
                     {
                         var pack = JsonConvert.DeserializeObject<CustomGifData>(p.CustomGifSet);
                         if (pack.Approved != null || !pack.Submitted) continue;
                         count++;
-                        list += p.TelegramId + Environment.NewLine;
+                        list += "<code>" + p.TelegramId + "</code>" + Environment.NewLine;
                         if (count == 10)
                             break;
                     }

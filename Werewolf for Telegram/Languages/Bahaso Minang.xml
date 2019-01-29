@@ -853,7 +853,7 @@ LALOK 😌</value>
       <value>Sanak mancaliak martabak jo Sate lah bacampua di muko pintu rumah Sanak, tapi ndak ado urang surang alah e do.</value>
     </string>
     <string key="AlreadyOnWaitList">
-      <value>Sanak lah mamasan imbauan tadi, jan mada jo Sanak! Mandul Sanak ko! Tunggu se lah! {0}</value>
+      <value>Sanak jan mada juo lai! Alah bara kali manakan /nextgame dari tadi ha??? {0}</value>
     </string>
     <string key="AddedToWaitList">
       <value>Sanak alah mamasan imbauan untuak Grup {0}. Jan lupo untuak join. Kami agiah notifikasi untuak manganaan kok pamainan barikuiknyo dimulai.
@@ -1520,6 +1520,272 @@ LALOK 😌</value>
   </string>
   <string key="Skip">
 	   <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} alah mati, sanak barubah jadi Lycan. Kawan sanak (kalau ado) adolah: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Sanak mancaliak {0} indak {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Sanak nio mambuek sado pamain lalok malam ko?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Sarupo biaso, {0} baliak ka rumahnyo sambia badendang-dendang di jalan.  Malam ko, sado urang akan lalok mati, indak ado nan tajago sampai pagi.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Sado urang baliak ka rumah, dek latiah bana langsuang se ka tampek lalok.  Masyarakaik langsuang lalok kareh, bahkan ndak sadar bilo takalok.</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Buliah pancilok sabagai pilihan peran?\nKini: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Pancilok sabagai pilihan peran ditatapkan: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Pancilok bisa dipakai satiok malam?\nKini: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Pancilok bisa main tiok malam: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Buliah Pancilok</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Full Game Pancilok</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Sanak adolah masyarakaik biaso, tapi alah lamo bamain didalam rimbo, tampek main Serigala, Sanak mambuek Dukun binguang dan manyangko sanak adolah Serigala! Onde Mandeh....</value>
+  </string>
+  <string key="WolfMan">
+    <value>the WolfMan 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sanak adolah masyarakaik biaso, tapi alah lamo bamain didalam rimbo, tampek main Serigala, Sanak mambuek Dukun binguang dan manyangko sanak adolah Serigala! Onde Mandeh....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Sanak adolah lycan! Sanak adolah serigala, tapi sanak mambuek dukun binguang dan manyangko sanak adolah masyarakaik biaso :)</value>
+  </string>
+  <string key="Lycan">
+    <value>the Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Lycan adolah serigala, tapi tacaliak sabagai masyarakaik biaso.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Sanak adolah Oracle. Satiok malam sanak bisa mamiliah untuak mancaliak urang, tapi sanak hanyo bisa mancaliak peran nan indak sabananyo. Peran tu adolah peran urang lain nan masih iduik dalam permainan, jadi paratian elok-elok yo sanak :)</value>
+  </string>
+  <string key="Oracle">
+    <value>the Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Oracle bisa mancaliak peran urang lain tapi nan indak sabananyo. Peran nan tacaliak adolah peran dari urang lain nan masih iduik dalam permainan.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Sanak adolah Manusia Kasiak. Sakali dalam permainan, sanak bisa mamakai kasiak ajaib nan bisa mambuek sadoalah masyarakaik takalok lamak, sahinggo dak bisa manggunoan perannyo malam hari.</value>
+  </string>
+  <string key="Sandman">
+    <value>Manusia Kasiak 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Sakali dalam permainan, sanak bisa mamakai kasiak ajaib nan bisa mambuek sadoalah masyarakaik takalok lamak, sahinggo dak bisa manggunoan perannyo malam hari.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>Sanak adolah Pacifist ☮️. Sanak bisa mamiliah untuak mayakinkan satiok urang di dalam nagari untuak indak mambaka sia pun. Bisa dilakukan cuma sakali se nyo sanak.</value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Pacifist bisa mamiliah untuak mayakinkan satiok urang di dalam nagari untuak indak mambaka sia pun. Bisa dilakukan cuma sakali se nyo.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Sanak adolah Niniak Mamak 📚. Sanak bisa selamat dari serangan serigala partamo, tapi nan kaduo kali sanak bisa dimakan dek serigala. Kok Panembak atau Pamburu mambunuah sanak, ilemunyo akan hilang dan perannyo akan barubah jadi masyarakaik biaso.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Niniak Mamak 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Niniak Mamak 📚 bisa selamat dari serangan serigala partamo, tapi nan kaduo kali sanak bisa dimakan dek serigala. Kok Panembak atau Pamburu mambunuah sanak, ilemunyo akan hilang dan perannyo akan barubah jadi masyarakaik biaso.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>Sanak adolah Pancilok 😈! Sanak bisa mancilok peran saorang pamain di hari partamo dan pamain tasabuik akan barubah jadi masyarakaik biaso!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sanak adolah Pancilok 😈! [Pancilok Full] mode alah iduik, sanak punyo kesempatan 50% untuak mancilok peran saorang pamain satiok malam, kok barhasil, pamain tasabuik akan barubah jadi Pancilok baru dan malanjuik tugas sabagai pancilok!</value>
+  </string>
+  <string key="Thief">
+    <value>Pancilok 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Normalnyo, Pancilok 😈 bisa mancilok peran saorang pamain di malam partamo dan marubah pamain tasabuik jadi masyarakaik biaso.\nKok [Pancilok Full] mode iduik, inyo punyo 50% kesempatan untuk mancilok peran pamain lain satiok malam, kok barhasil, pamain tasabuik akan jadi Pancilok dan malanjuik tugasnyo sabagai pancilok!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>Takan tombol ko katiko sanak nio mambuek pidato nan sangaik manyantuah hati sahinggo masyarakaik indak akan mambaka sia pun patang barikuiknyo!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>Pacifist ☮️, {0}, bapidato nan manyantuah hati tantang hiduik badunsanak dan saliang pacayo dimuko para masyarakaik. Tergerak dek pidato tu, masyarakaik indak ka mambaka sia pun hari ko!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Dek pidato Pacifist ☮️ nan manyantuah hati, indak ado baka mambaka hari ko do!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Sanak mancubo manyalinap ka dalam rumah {0} tapi kironyo inyo adolah saorang Niniak Mamak 📚! {0} barahsil manggagalkan serangan, untuangnyo inyo indak tau siapo se sanak nan masuak karumahnyo.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Para Sarigala mancubo mamakan sanak, tapi sanak adolah Niniak Mamak 📚, indak mudah mabunuah sanak do! Sanak alah barhasil manggagalkan serangan, tapi sayangnyo sanak indak tau sia nan manyerang sanak do.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Pamburu  🎯, {0} manembak Niniak Mamak 📚, {1}. {0} taibo, manyasa dek kesalahannyo, sahinggo trauma dan manghilangkan ilemunyo. {0} jadi masyarakaik biaso 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Panembak 🔫, {0} manmembak Niniak Mamak 📚, {1}. {0} takajuik, indak disangko nan tatembak adolah Niniak Mamak, dek pantangan alah dilangga akhirnyo {0} dikutuak manjadi masyarakaik biaso.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Sanka nio mancilok peran {0}, tapi sayangnyo sanak gagal...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Sanak mancubo mancilok peran {0}, tapi {0} alah mati se dulu...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Peran sanak alah dicilok! Sanak kini adolah {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Sanak barhasil mancilok peran {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} indak kawan sanak lai dan {1} adolah kawan mason baru sanak!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Kawan-kawan sanaka (kok lai ado) adolah: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} indak kawan sanak lai, dan {1} alah jadi kawan Urang Bunian baru sanak!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} indak kawan sanak lai, dan {1} alah jadi kawan sarigala baru sanak!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Kawan-kawan sanak (kok lai ado) adolah: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>{0} alah bakalilian sakililiang kampuang, inyo indak manamukan peran nan rancak lai untuk dicilok. Akhirnyo mereka maninggaan kampuang nan malang tu dan mancari kampuang lain untuak mamulai karir baru.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Mangsa untuak dicilok kini adolah {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Peran sia nan nio sanak cilok kini?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} urang mamiliah untuak mambaka {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Hasil rapek sia nan ka dibaka hari ko:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} urang mamiliah untuak mambaka {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Rahasia: Banyak nan mamiliah</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Katiko pamiliahan rahasia iduik, tampilan banyak nan mamiliah di akhir pamiliahan?\nKini: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Katiko pamiliahan rahasia iduik, banyak nan mamiliah diakhir piliahan akan: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Rahasia: Pamiliah</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Katiko pamiliahan rahasia iduik dan banyak nan mamiliah ditampilan, tampilan namo pamiliah untuak satiok pamain nan dipiliah?\nKini: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Katiko pamiliahan rahasia iduik dan banyak nan mamiliah ditampilan, namo pamiliah disatiok pamain nan dipiliah akan: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Aneh... Kaduo kalinyo sanak mulai badiskusi sia nan ka di ajak ka aliran sesat malam ko, sanak sadar {0} indak ado diruang rapek! Apo nan tajadi ka inyo??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Damai Gaes!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Pamiliah sia nan ka dibaka hari ko dibatalkan karano pidato Pacifist nan manyantuah hati!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Peran sanak alah dicilok! Sanak kini adolah Pancilok 😈 baru dan bisa mancilok peran sasorang malam barikuiknyo!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Peran sanak alah dicilok! Sanak kini manjadi masyarakaik biaso 👱, mambajak sawah se karajo sanak tiok hari kini lai.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Tok Tok! Sanak dikunjungi dek Serial Killer!</value>
+	  <value>Serial Killer menyergap sanak, mangabek sanak jo tali teyin, sudah tu ditusuak-tusuak lah jantuang sanak jo pisau dapua!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Tim Pancilok</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Sanak mancubo mancilok peran sasaorang.. tapi target sanak adolah serial killer! Inyo mancaliak sanak ado didalam rumahnyo, dan dak lamo sudah tu sanak dimutilasi...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Pancilok, {0}, mancubo mancilok peran saorang Serial Killer! Ado-ado se karajo e, wik wik wik. {0} basobok dalam keadaan alah dimutilasi...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Pancilo alah mancilok peran Dukun! {0} kini alah manjadi Dukun, dan {1} indak punyo kekuatan dukun lai!</value>
   </string>
 
 </strings>

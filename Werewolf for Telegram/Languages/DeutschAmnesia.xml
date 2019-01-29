@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<!-- version: 01.11.2018 von @Appfel -->
+	<!-- version: 07.11.2018 von @Appfel -->
   <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" code="de" isDefault="false"/>
   <string key="NotInGame">
     <value>Schon vergessen? Du bist keinem Spiel beigetreten!</value>
@@ -376,7 +376,7 @@
     <value>Du kommst gerade bei {0}s Haus an, da fällt dir auf, dass es vollkommen menschenleer ist... Hast du die richtige Adresse vergessen oder verbirgt {0} irgendetwas?</value>
   </string>
   <string key="GuardSavedYou">
-    <value>Irgendetwas geschah wolvletzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
     <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
   </string>
   <string key="HarlotEaten">
@@ -671,7 +671,7 @@
     <value>Die Sprache wurde geändert zu: {0}</value>
   </string>
   <string key="NoSeer">
-    <value>&#x00A0;</value>
+  <value> </value>
   </string>
   <string key="TimesUp">
     <value>Hast du vergessen zu antworten? Die Zeit ist um!</value>
@@ -1678,7 +1678,7 @@
   <!-- 0 - Name des Dorfältesten -->
   	<value>Ihr geht zu {0}s Haus, doch es war scheinbar niemand zu Hause!</value>
     <value>Ihr schleicht euch des Nachts heimlich zu zu {0}s Haus, doch entweder war es die falsche Adresse oder der Bewohner dieses Hauses treibt sich des Nachts an anderen Orten herum...</value>
-    <value>Könnt ihr mir mal erklären, was das sollte?</value>
+    <value>Könnt ihr mir mal erklären, was das sollte? Mit {0} ist auf jeden Fall nichts passiert</value>
   </string>
   <string key="RoleInfoThief">
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
@@ -1724,8 +1724,12 @@
   </string>
   <string key="ThiefStoleYourRole">
   <!-- {0} - neue Rolle (Dieb oder Dorfbewohner) -->
-    <value>Du weißt nicht was du warst und nicht was du bist...</value>
+    <value>Du weißt nicht was du warst und nicht was du bist, {0} auf jeden Fall nicht!</value>
     <value>Du warst eben noch ... und schon bist du {0}. Jetzt kennst du deine Rolle, hilft das?</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - Ziel des Diebes -->
+    <value>Du hast erfolgreich {0} ge-... ja was eigentlich? Keine Ahnung, du weißt auch nicht, was du bist. Hilft dir nicht, aber ich kann es auch nicht ändern!</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - Name alter Freimaurer -->
@@ -1838,5 +1842,9 @@
   <string key="ThiefStoleKiller">
   	<value>Der Dieb {0} 😈 hat wohl vergessen, wer hier stärker ist und wurde vom Serienmörder 🔪 getötet.</value>
   	<value>Der Dieb {0} 😈 hat wohl vergessen, wer hier stärker ist und so findet ihr ihn am nächsten morgen aufgespießt auf dem Dorfplatz. Eigentlich ein witziger Anblick und ihr solltet nicht vergessen, die Finger vom Serienmörder 🔪 zu lassen!</value>
+  </string>
+  <string key="BeholderSeerStolen">
+    <!-- <value>The thief has stolen the seer's role! {0} is now the seer, and {1} does no longer have seeing abilities!</value> -->
+    <value>Ist letzte Nacht irgendetwas bei {0}s Haus passiert? Du kannst dich nicht erinnern... \nIrgendwas hat {1} damit zu tun.</value>
   </string>
 </strings>

@@ -236,17 +236,18 @@ namespace Werewolf_Control.Handler
                 var id = update.Message.Chat.Id;
 
 #if DEBUG
-                //if (update.Message.Chat.Title != "Werewolf Translators Group" && !String.IsNullOrEmpty(update.Message.Chat.Title) && update.Message.Chat.Title != "Werewolf Mod / Dev chat (SFW CUZ YOUNGENS)" && update.Message.Chat.Title != "Werewolf Translators Group (SFW cuz YOUNGENS)")
-                //{
-                //    try
-                //    {
-                //        Bot.Api.LeaveChat(update.Message.Chat.Id);
-                //    }
-                //    catch
-                //    {
-                //        // ignored
-                //    }
-                //}
+                if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
+                    -1001077134233 /*developer team chat*/}.Contains(id))
+                {
+                    try
+                    {
+                        Bot.Api.LeaveChatAsync(update.Message.Chat.Id).Wait();
+                    }
+                    catch
+                    {
+                        //ignored
+                    }
+                }
 #endif
 
                 //let's make sure it is a bot command, as we shouldn't see anything else....

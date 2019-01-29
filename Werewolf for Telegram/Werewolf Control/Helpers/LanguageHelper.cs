@@ -134,7 +134,7 @@ namespace Werewolf_Control.Helpers
             if (errors.Any(x => x.Level == ErrorLevel.Ads))
             {
                 result += "*ADS DETECTED*\n";
-                result = errors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                result = errors.Where(x => x.Level == ErrorLevel.Ads).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
             else
             {
@@ -472,7 +472,7 @@ namespace Werewolf_Control.Helpers
             if (newFileErrors.Any(x => x.Level == ErrorLevel.Ads))
             {
                 result += "*ADS DETECTED*\n";
-                result = newFileErrors.Where(x => x.Level == ErrorLevel.Error).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
+                result = newFileErrors.Where(x => x.Level == ErrorLevel.Ads).Aggregate(result, (current, fileError) => current + $"{fileError.Key}\n");
             }
             else
             {
@@ -535,6 +535,11 @@ namespace Werewolf_Control.Helpers
             var count = Encoding.UTF8.GetByteCount(test);
             if (count > 64)
                 fileErrors.Add(new LanguageError(file.FileName, "*Language Node*", "Base and variant are too long. (*38 utf8 byte max*)", ErrorLevel.FatalError));
+
+            test = $"preferred|-1001049529775|{file.FileName}|toggle";
+            count = Encoding.UTF8.GetByteCount(test);
+            if (count > 64)
+                fileErrors.Add(new LanguageError(file.FileName, "*Language Node*", "Filename is too long. (*32 utf8 byte max*)", ErrorLevel.FatalError));
         }
 
         private static void GetFileErrors(LangFile file, List<LanguageError> fileErrors, XDocument master)
