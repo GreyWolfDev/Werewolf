@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
 	<language name="简体中文" base="简体中文" variant="SFW"/>
+	<!-- 很久没更新了，更新中 WIP-->
 	<string key="NotInGame">
 		<value>你现在似乎并不在这场游戏中……</value>
 	</string>
@@ -1099,50 +1100,148 @@
   </string>
   <string key="RoleInfoWolfCub">
     <value>你是狼崽，和狼人一样，你会每晚攻击一个村民，但是如果你死了，出于悲愤，那晚其它狼会再攻击一个人。</value>
-    <!-- 未完成
+   
   </string>
   <string key="PrinceLynched">
-    <value>As the village begins to lynch {0}, they say 鈥淲ait! I am the Prince. This royal ring, with the seal of the king proves it. Every night I am surrounded by servants. So I cannot be evil.鈥� Feeling foolish, the villagers sheepishly retire for the night.</value>
+    <value>当村民开始处决{0}时, {0}却说:“我是公主！” ，并亮出她的皇家戒指和国王颁发的证书（雾）。于是村民们放过了她。</value>
   </string>
   <string key="SorcererOther">
-    <value>You try to look at {0}, but can't quite make out what they are.  They are not a wolf or seer however...</value>
+    <value>你尝试试探{0}，可惜，{0} 并不是狼或先知。</value>
   </string>
   <string key="MayorReveal">
-    <value>{0} steps forward and presents the official seal of the Mayor, declaring themselves as such. From now on, {0}'s votes for lynching will count twice.</value>
+    <value>{0} 走上前，亮出了他的市长证，从此，{0}的投票将以两票计算。</value>
   </string>
+   <!-- 未完成 WIP
   <string key="AskMayor">
-    <value>Click "Reveal" whenever you are ready to reveal yourself as the Mayor.</value>
+   <value>Click "Reveal" whenever you are ready to reveal yourself as the Mayor.</value>
   </string>
+  -->
   <string key="Reveal">
-    <value>Reveal</value>
+   <value>揭露</value>
   </string>
   <string key="SpreadDust">
-    <value>Would you like to spread the silver today, disabling the wolves tonight?</value>
+    <value>今晚你打算撒银粉了吗？</value>
   </string>
   <string key="BlacksmithSpreadSilver">
-    <value>As the rest of the village debates over the events, they suddenly notice {0} wandering around spreading silver across the grounds. For now, at least, the village will be safe from wolf attacks. (Wolves are disabled tonight.)</value>
- -->
+    <value>当村民熟睡时，有人发现{0}在村里撒银粉，看来，今晚是安全的了。</value>
+  	
+  	
   </string>
   <string key="Mayor">
-    <value>市长</value>
+    <value>市长👮</value>
   </string>
   <string key="Prince">
-    <value>王子</value>
+    <value>王子👑</value>
   </string>
   <string key="Sorcerer">
-    <value>黑暗法师</value>
+    <value>黑暗法师◼</value>
   </string>
   <string key="ClumsyGuy">
-    <value>傻瓜</value>
+    <value>傻瓜😴</value>
   </string>
   <string key="Blacksmith">
-    <value>铁匠</value>
+    <value>铁匠🔨</value>
   </string>
   <string key="AlphaWolf">
     <value>源狼🐺（the Alpha Wolf）</value>
   </string>
   <string key="WolfCub">
-    <value>狼崽（the Wolf Cub）</value>
+    <value>狼崽🐶（the Wolf Cub）</value>
   </string>
+  <!-- updated at 2019_2_5 -->
+    <string key="CultistsList">
+	<value>目前被诅咒的名单The cult members are currently: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>雪狼❄🐺</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>你是雪狼：源自雪山，特立独行。拥有冻结他人能力的能力，但不久后他们将对你免疫，不能再冻结能力了。</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>雪狼：源自雪山，特立独行。拥有冻结他人能力的能力，但不久后他们将对你免疫，不能再冻结能力了。</value>
+  </string>
+  <string key="AskFreeze">
+	<value>你想冻结谁的能力？</value>
+  </string>
+  <string key="WolfPackList">
+    <value>当前狼群：{0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>当前狼群 {0} ，雪狼：{1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0}死了，你变身成了 源狼. 你的队友： {1} 以及雪狼：{2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0}死了，你变身成了 狼崽. 你的队友： {1} 以及雪狼：{2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0}死了，你变身成了 狼人（werewolf） 你的队友： {1} 以及雪狼：{2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0}死了，你变身成了 狼人（ Lycan）. 你的队友： {1} 以及雪狼：{2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0}死了，你变身成了 雪狼. 你的队友（if any）： {1} </value>
+    <!-- wip
+    
+  </string>
+  <string key="DGToSnowWolf">
+    <value>The doppelganger {0} has now become the new snow wolf!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1} 以及雪狼：{2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} is no longer your teammate and {1} has now become the new snow wolf!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks ðºâï¸. You stand frozen in the doorway, silently cursing this weird form of bondage. Ah well, thank goodness you're thawed now. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze ðºâï¸. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze ðºâï¸. Your fellow cultists dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
+  </string>
+  <string key="CHFrozen">
+    <value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched ðºâï¸. You mentally groaned, your limbs aching from being in this position until now... </value
+ -->
+
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>As you sat at your table, ready to use your psychic powers, a gust of wind blew in from the window, causing you to freeze ðºâï¸. While being bound usually isn't a problem, the freezing spell also gave you a serious case of brain freeze. You weren't worried though, knowing that the sun rising is one of the constants of this world and that you'll be thawed now. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>As you willed your wings to appear, a gust of wind blew in from the windows, causing you to freeze ðºâï¸. You inwardly cringed as you suddenly imagine yourself as an ornament on a Christmas tree. Thankfully, this is now over since the sun has risen. </value>
+  </string>
+  <string key="SKFrozen">
+    <value>As you admired your liver collection one last time before leaving your house, a gust of wind blew in from the windows, frosting the glass jars... freezing you ðºâï¸. As you unfroze this morning, you gritted your teeth in annoyance at the Snow Wolf's spell, swearing to make them suffer as much as possible when you take their liver. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>As you sulked around the village, you felt a strong gust of wind. You stood frozen in your tracks, literally unable to move ðºâï¸. Luckily, it was dark enough for you to not be recognised by anyone who passed you that night. When you were completely thawed by dawn, you scampered back to your home before anyone could see you. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Snow Wolf ðºâï¸ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>You head to {0}'s house to freeze them, but you are met by a tall dark figure, armed to the teeth. The Guardian Angel fights you off, and you head back defeated.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>You went to {0}'s house and froze them! Tonight, they won't be able to use their night actions (if any).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>The snow wolf {0} attempted to freeze someone last night, but accidentally visited the serial killer! The murderer noticed the unwanted visitor and stabbed {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>As all the other wolves have died, you are the last part of the pack that is left! In order to gain some fresh villager meat, you decide to become a normal werewolf from now on, who goes eating rather than freezing at night!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>The snow wolf {0} tried to freeze the hunter last night, but the hunter was able to catch them and take them down with their rifle!</value>
+    </string>
   
 </strings>
