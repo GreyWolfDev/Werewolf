@@ -40,6 +40,7 @@ namespace Werewolf_Node
         public GameTime Time;
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
+        public Locale Fallback;
         public Group DbGroup;
         private bool _playerListChanged = true, _silverSpread, _sandmanSleep, _pacifistUsed, _doubleLynch;
         private DateTime _timeStarted;
@@ -290,6 +291,27 @@ namespace Werewolf_Node
                     };
                 }
                 Language = Locale.Language;
+
+                // also caches the fallback file of the current base in the instance
+                using (var db = new WWContext())
+                {
+                    string fallbackLanguage = db.LanguageFallbacks.FirstOrDefault(x => x.LanguageFileName == language).FallbackFileName;
+                    // if there is no fallback language or it can't be found, it will just ignore this and directly fall back to english
+                    if (!string.IsNullOrEmpty(fallbackLanguage))
+                    {
+                        var file = files.FirstOrDefault(x => Path.GetFileNameWithoutExtension(x) == fallbackLanguage);
+                        if (!string.IsNullOrEmpty(file))
+                        {
+                            var doc = XDocument.Load(file);
+                            Fallback = new Locale
+                            {
+                                Language = fallbackLanguage,
+                                Base = doc.Descendants("language").First().Attribute("base")?.Value,
+                                File = doc
+                            };
+                        }
+                    }
+                }
             }
             catch
             {
@@ -321,6 +343,7 @@ namespace Werewolf_Node
                     return String.Format(special.FormatHTML(), args).Replace("\\n", Environment.NewLine);
 
                 var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
+                              Fallback?.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
                               Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
                 if (strings != null)
                 {

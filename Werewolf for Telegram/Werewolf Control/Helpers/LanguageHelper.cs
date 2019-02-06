@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -376,6 +377,28 @@ namespace Werewolf_Control.Helpers
                     msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
                 }
             }
+
+            using (var db = new WWContext())
+            {
+                // read in new file to check whether it's default
+                var newFile = new LangFile(copyToPath);
+
+                // if it is, add fallbacks for all other files of the same base and store them into the db
+                if (newFile.IsDefault)
+                {
+                    var fallbackFromFileNames = langs.FindAll(x => x.Base == newFile.Base && x.FileName != newFile.FileName).Select(x => x.FileName);
+
+                    foreach(var fallbackFromName in fallbackFromFileNames)
+                    {
+                        LanguageFallback langFallback = db.LanguageFallbacks.FirstOrDefault(x => x.LanguageFileName == fallbackFromName);
+                        if (langFallback == null) langFallback = db.LanguageFallbacks.Add(new LanguageFallback { LanguageFileName = fallbackFromName, FallbackFileName = newFile.FileName });
+                        else langFallback.FallbackFileName = newFile.FileName;
+                    }
+
+                    db.SaveChanges();
+                }
+            }
+
             msg += "\n<b>Operation complete.</b>";
 
             Bot.Api.EditMessageTextAsync(id, msgId, msg, parseMode: ParseMode.Html);

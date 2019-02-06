@@ -1156,6 +1156,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="GroupRanking" EntityType="werewolfModel.GroupRanking" />
           <EntitySet Name="RefreshDate" EntityType="werewolfModel.RefreshDate" />
           <EntitySet Name="v_GroupRanking" EntityType="werewolfModel.v_GroupRanking" />
+          <EntitySet Name="LanguageFallbacks" EntityType="werewolfModel.LanguageFallback" />
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1521,6 +1522,13 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="LastRefresh" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LanguageFallback">
+          <Key>
+            <PropertyRef Name="LanguageFileName" />
+          </Key>
+          <Property Name="LanguageFileName" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FallbackFileName" Type="String" Nullable="false" DefaultValue="" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
