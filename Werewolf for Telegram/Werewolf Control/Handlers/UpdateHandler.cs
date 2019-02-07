@@ -1036,14 +1036,21 @@ namespace Werewolf_Control.Handler
                             return;
                         }
                     }
-
-
-
-
+                    
                     //config helpers
-                    if (choice == "cancel")
+                    if (choice == "back")
                     {
                         Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                        return;
+                    }
+                    if (choice == "cancel")
+                    {
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command)));
+                        return;
+                    }
+                    if (ConfigGroupAttribute.GetConfigGroups().Contains(command))
+                    {
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, command));
                         return;
                     }
                     grp?.UpdateFlags();
@@ -1548,7 +1555,7 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
                             DB.SaveChanges();
                             break;
-                        case "day":
+                        case "daytimer":
                             buttons.Add(new InlineKeyboardCallbackButton("90", $"setday|{groupid}|30"));
                             buttons.Add(new InlineKeyboardCallbackButton("120", $"setday|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("150", $"setday|{groupid}|90"));
@@ -1892,30 +1899,14 @@ namespace Werewolf_Control.Handler
         {
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
             //base menu
-            //buttons.Add(new InlineKeyboardCallbackButton("Show Online Message", $"online|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Change Language", $"lang|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Change Game Mode", $"mode|{id}"));
-            //buttons.Add(new InlineKeyboardCallbackButton("Show Roles On Death", $"roles|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Show Roles At Game End", $"endroles|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Allow Fleeing", $"flee|{id}")); //TODO add
-            //buttons.Add(new InlineKeyboardCallbackButton("Allow Extending Timer", $"extend|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Set Max Players", $"maxplayer|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Set Max Extend Time", $"maxextend|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Set Day Timer", $"day|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Set Lynch Timer", $"lynch|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Set Night Timer", $"night|{id}"));
-            //buttons.Add(new InlineKeyboardCallbackButton("Allow Fool", $"fool|{id}"));
-            //buttons.Add(new InlineKeyboardCallbackButton("Allow Tanner", $"tanner|{id}"));  //DONE
-            //buttons.Add(new InlineKeyboardCallbackButton("Allow Cult", $"cult|{id}"));
-            //buttons.Add(new InlineKeyboardCallbackButton("Enable Secret Lynch", $"secretlynch|{id}"));  //DONE
-            foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>())
+            var configGroups = ConfigGroupAttribute.GetConfigGroups();
+
+            foreach (var cg in configGroups)
             {
-                if (!flag.IsEditable()) continue;
-                //get the flag, determine the shortname and make a button out of it.
-                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(flag.ToString(), GetLanguage(id)), $"{flag.GetInfo().ShortName}|{id}"));
+                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(cg, GetLanguage(id)), $"{cg}|{id}"));
             }
 
-            buttons.Add(new InlineKeyboardCallbackButton("Done", $"done"));
+            buttons.Add(new InlineKeyboardCallbackButton("Done", $"done")); // TODO: make translatable
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
             {
@@ -1932,6 +1923,68 @@ namespace Werewolf_Control.Handler
             return menu;
         }
 
+        /// <summary>
+        /// A list of hardcoded config options, key is the config group and value is an array of identifiers that will be used for language and callback data
+        /// </summary>
+        private static readonly Dictionary<string, string[]> hardcodedConfigOptions = new Dictionary<string, string[]>
+        {
+            { "groupconfigbase", new string[] { "lang", "mode", "maxplayer" } },    // 
+            { "mechanics", new string[] { "endroles" } },                           // TODO: write strings for those
+            { "timers", new string[] { "maxextend", "daytimer", "lynch", "night" } }     //
+        };
+
+        internal static InlineKeyboardMarkup GetConfigSubmenu(long id, string configGroup)
+        {
+            List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
+
+            if (hardcodedConfigOptions.ContainsKey(configGroup))
+            {
+                foreach (var opt in hardcodedConfigOptions[configGroup])
+                {
+                    buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(opt, GetLanguage(id)), $"{opt}|{id}"));
+                }
+            }
+
+            /*//buttons.Add(new InlineKeyboardCallbackButton("Show Online Message", $"online|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Change Language", $"lang|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Change Game Mode", $"mode|{id}"));
+            //buttons.Add(new InlineKeyboardCallbackButton("Show Roles On Death", $"roles|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Show Roles At Game End", $"endroles|{id}"));
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Fleeing", $"flee|{id}")); //TODO add
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Extending Timer", $"extend|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Set Max Players", $"maxplayer|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Set Max Extend Time", $"maxextend|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Set Day Timer", $"daytimer|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Set Lynch Timer", $"lynch|{id}"));
+            buttons.Add(new InlineKeyboardCallbackButton("Set Night Timer", $"night|{id}"));
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Fool", $"fool|{id}"));
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Tanner", $"tanner|{id}"));  //DONE
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Cult", $"cult|{id}"));
+            //buttons.Add(new InlineKeyboardCallbackButton("Enable Secret Lynch", $"secretlynch|{id}"));  //DONE*/
+            foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>())
+            {
+                if (!flag.IsEditable() || ConfigGroupAttribute.GetConfigGroup(flag.GetInfo().ShortName) != configGroup) continue;
+                //get the flag, determine the shortname and make a button out of it.
+                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(flag.ToString(), GetLanguage(id)), $"{flag.GetInfo().ShortName}|{id}"));
+            }
+
+            buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("Back", GetLanguage(id)), $"{configGroup}|{id}|back"));
+
+            var twoMenu = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                if (buttons.Count - 1 == i)
+                {
+                    twoMenu.Add(new[] { buttons[i] });
+                }
+                else
+                    twoMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                i++;
+            }
+
+            var menu = new InlineKeyboardMarkup(twoMenu.ToArray());
+            return menu;
+        }
 
 
         public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)

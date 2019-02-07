@@ -12,33 +12,33 @@ namespace Database
     {
         //Group settings are now as simple as adding an enum to this list.  No more database schema changes.
         None = 0,
-        [Editable(true), Question("tanner"), DefaultValue(true)]
+        [Editable(true), Question("tanner"), DefaultValue(true), ConfigGroup("roleconfig")]
         AllowTanner = 1,
-        [Editable(true), Question("fool"), DefaultValue(true)]
+        [Editable(true), Question("fool"), DefaultValue(true), ConfigGroup("roleconfig")]
         AllowFool = 2,
-        [Editable(true), Question("cult"), DefaultValue(true)]
+        [Editable(true), Question("cult"), DefaultValue(true), ConfigGroup("roleconfig")]
         AllowCult = 4,
-        [Editable(true), Question("secretlynch", SettingQuestion.YesNo), DefaultValue(false)]
+        [Editable(true), Question("secretlynch", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("mechanics")]
         EnableSecretLynch = 8,
-        [Editable(true), Question("randommode", SettingQuestion.YesNo), DefaultValue(false)] //WAIT WHAT IS THIS? Shhhhhhhhh
+        [Editable(true), Question("randommode", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("mechanics")] //WAIT WHAT IS THIS? Shhhhhhhhh
         RandomMode = 16,
-        [Editable(true), Question("extend"), DefaultValue(false)]
+        [Editable(true), Question("extend"), DefaultValue(false), ConfigGroup("permissions")]
         AllowExtend = 32,
-        [Editable(true), Question("roles", SettingQuestion.ShowHide), DefaultValue(true)]
+        [Editable(true), Question("roles", SettingQuestion.ShowHide), DefaultValue(true), ConfigGroup("mechanics")]
         ShowRolesDeath = 64,
-        [Editable(true), Question("flee"), DefaultValue(true)]
+        [Editable(true), Question("flee"), DefaultValue(true), ConfigGroup("permissions")]
         AllowFlee = 128,
-        [Editable(true), Question("showid", SettingQuestion.ShowHide), DefaultValue(false)]
+        [Editable(true), Question("showid", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("groupconfigbase")]
         ShowIDs = 256,
-        [Editable(true), Question("allownsfw"), DefaultValue(false)]
+        [Editable(true), Question("allownsfw"), DefaultValue(false), ConfigGroup("permissions")]
         AllowNSFW = 512,
-        [Editable(true), Question("allowthief"), DefaultValue(true)]
+        [Editable(true), Question("allowthief"), DefaultValue(true), ConfigGroup("roleconfig")]
         AllowThief = 1024,
-        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(false)]
+        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("mechanics")]
         ThiefFull = 2048,
-        [Editable(true), Question("secretlynchshowvotes", SettingQuestion.ShowHide), DefaultValue(false)]
+        [Editable(true), Question("secretlynchshowvotes", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("mechanics")]
         SecretLynchShowVotes = 4096,
-        [Editable(true), Question("secretlynchshowvoters", SettingQuestion.ShowHide), DefaultValue(false)]
+        [Editable(true), Question("secretlynchshowvoters", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("mechanics")]
         SecretLynchShowVoters = 8192,
         [Editable(false), Question("randomlangvariant"), DefaultValue(false)]
         RandomLangVariant = 16384,
@@ -85,6 +85,51 @@ namespace Database
         {
             Question = question;
             ShortName = shortName;
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Field)]
+    public class ConfigGroupAttribute : Attribute
+    {
+        /// <summary>
+        /// The name of the config group to order the option by. Will also be used for the translation file. Property will be the key for the button option.
+        /// </summary>
+        public string ConfigGroup { get; set; }
+
+        public ConfigGroupAttribute(string configGroup)
+        {
+            ConfigGroup = configGroup;
+        }
+
+        public static List<string> GetConfigGroups()
+        {
+            var strings = new List<string>();
+            
+            // add hardcoded config groups here, if there is no GroupConfig attribute of the same config group
+
+            // search for all config groups
+            foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>())
+            {
+                var fieldInfo = flag.GetType().GetField(flag.ToString());
+                var cgA = fieldInfo.GetCustomAttributes(typeof(ConfigGroupAttribute), false) as ConfigGroupAttribute[];
+                if (cgA == null || cgA.Length < 1) continue;
+                if (!strings.Contains(cgA[0].ConfigGroup)) strings.Add(cgA[0].ConfigGroup);
+            }
+
+            return strings;
+        }
+
+        public static string GetConfigGroup(string configOption)
+        {
+            foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>())
+            {
+                if (flag.GetInfo()?.ShortName != configOption) continue;
+                var fieldInfo = flag.GetType().GetField(flag.ToString());
+                var cgA = fieldInfo.GetCustomAttributes(typeof(ConfigGroupAttribute), false) as ConfigGroupAttribute[];
+                if (cgA == null || cgA.Length < 1) return null;
+                return cgA[0].ConfigGroup;
+            }
+            return null;
         }
     }
 
