@@ -42,7 +42,9 @@ namespace Database
         SecretLynchShowVoters = 8192,
         [Editable(false), Question("randomlangvariant"), DefaultValue(false)]
         RandomLangVariant = 16384,
-        
+        [Editable(false), Question("shuffleplayerlist", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("groupconfigbase")]
+        ShufflePlayerList = 32768,
+
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings
         Update = 4611686018427387904
