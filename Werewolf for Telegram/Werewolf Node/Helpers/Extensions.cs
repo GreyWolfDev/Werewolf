@@ -168,7 +168,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Prince:
                     return 3;
                 case IRole.WolfMan:
-                    return -1;
+                    return allRoles.Contains(IRole.Seer) ? -1 : 1;
                 case IRole.Pacifist:
                     return 3;
                 case IRole.WiseElder:
@@ -178,7 +178,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Sandman:
                     return 3;
                 case IRole.Lycan:
-                    return 11;
+                    return allRoles.Contains(IRole.Seer) ? 11 : 10;
                 case IRole.Thief:
                     return 4;
                 case IRole.Troublemaker:
@@ -187,6 +187,8 @@ namespace Werewolf_Node.Helpers
                     return 0;
                 case IRole.SnowWolf:
                     return 15;
+                case IRole.GraveDigger:
+                    return 8;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
