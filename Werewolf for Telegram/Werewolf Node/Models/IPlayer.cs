@@ -157,7 +157,7 @@ namespace Werewolf_Node.Models
         //and once again, new roles! :D
         Troublemaker, Chemist, SnowWolf,
         //who would have guessed... more roles!
-        GraveDigger
+        GraveDigger, Chef
     }
 
     public enum ITeam

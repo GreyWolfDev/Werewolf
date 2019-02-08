@@ -4161,6 +4161,10 @@ namespace Werewolf_Node
                                 role = IRole.Wolf;
                                 target.Trustworthy = true;
                                 break;
+                            case IRole.Chef:    //technically, he could use that knife... but he doesn't!
+                                role = IRole.Chef;
+                                target.Trustworthy = true;
+                                break;
                             case IRole.Lycan: //sneaky wuff
                                 role = IRole.Villager;
                                 break;

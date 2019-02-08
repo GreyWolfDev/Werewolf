@@ -169,6 +169,8 @@ namespace Werewolf_Node.Helpers
                     return 3;
                 case IRole.WolfMan:
                     return allRoles.Contains(IRole.Seer) ? -1 : 1;
+                case IRole.Chef:
+                    return allRoles.Contains(IRole.Seer) ? -1 : 1;
                 case IRole.Pacifist:
                     return 3;
                 case IRole.WiseElder:
