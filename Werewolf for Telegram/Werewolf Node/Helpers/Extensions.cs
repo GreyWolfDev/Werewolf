@@ -114,7 +114,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Harlot:
                     return 6;
                 case IRole.Seer:
-                    return 7;
+                    return 7 - allRoles.Count(x => x == IRole.Lycan) - (allRoles.Count(x => x == IRole.WolfMan || x == IRole.Chef) * 2);
                 case IRole.Traitor:
                     return 0;
                 case IRole.GuardianAngel:
@@ -134,7 +134,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.WildChild:
                     return 1;
                 case IRole.Beholder:
-                    return 2 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0); //only good if seer is present!
+                    return 1 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0) + (allRoles.Any(x => x == IRole.Fool) ? 1 : 0); //only good if seer is present!
                 case IRole.ApprenticeSeer:
                     return 6;
                 case IRole.Cultist:
@@ -168,9 +168,9 @@ namespace Werewolf_Node.Helpers
                 case IRole.Prince:
                     return 3;
                 case IRole.WolfMan:
-                    return allRoles.Contains(IRole.Seer) ? -1 : 1;
+                    return 1;
                 case IRole.Chef:
-                    return allRoles.Contains(IRole.Seer) ? -1 : 1;
+                    return 1;
                 case IRole.Pacifist:
                     return 3;
                 case IRole.WiseElder:
@@ -180,7 +180,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Sandman:
                     return 3;
                 case IRole.Lycan:
-                    return allRoles.Contains(IRole.Seer) ? 11 : 10;
+                    return 10;
                 case IRole.Thief:
                     return 4;
                 case IRole.Troublemaker:
