@@ -42,7 +42,7 @@ namespace Database
         SecretLynchShowVoters = 8192,
         [Editable(false), Question("randomlangvariant"), DefaultValue(false)]
         RandomLangVariant = 16384,
-        
+
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings
         Update = 4611686018427387904
@@ -109,25 +109,9 @@ namespace Database
             ConfigGroup = configGroup;
         }
 
-        public static List<string> GetConfigGroups()
+        public static List<ConfigGroup> GetConfigGroups()
         {
-            var strings = new List<string>
-            {
-                "Timers"
-            };
-            
-            // add hardcoded config groups here, if there is no GroupConfig attribute of the same config group
-
-            // search for all config groups
-            foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>())
-            {
-                var fieldInfo = flag.GetType().GetField(flag.ToString());
-                var cgA = fieldInfo.GetCustomAttributes(typeof(ConfigGroupAttribute), false) as ConfigGroupAttribute[];
-                if (cgA == null || cgA.Length < 1) continue;
-                if (!strings.Contains(cgA[0].ConfigGroup.ToString())) strings.Add(cgA[0].ConfigGroup.ToString());
-            }
-
-            return strings;
+            return Enum.GetValues(typeof(ConfigGroup)).Cast<ConfigGroup>().ToList();
         }
 
         public static ConfigGroup GetConfigGroup(string configOption)
@@ -140,7 +124,7 @@ namespace Database
                 if (cgA == null || cgA.Length < 1) continue;
                 return cgA[0].ConfigGroup;
             }
-            throw new ArgumentException("Did not find a config group for this option.");
+            throw new ArgumentException("Did not find a config group for the option: " + configOption);
         }
     }
 
