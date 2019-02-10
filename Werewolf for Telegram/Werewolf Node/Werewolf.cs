@@ -3601,6 +3601,25 @@ namespace Werewolf_Node
                 }
 
                 eatCount = 0;
+
+                var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
+                if (gd != null)
+                {
+                    //give wolves a chance to spot and kill grave digger
+                    var spotChance = (20 + (30 - (30 * Math.Pow(0.5, gd.DugGravesLastNight - 1)))) / 2;
+                    if (Program.R.Next(100) < spotChance)
+                    {
+                        gd.IsDead = true;
+                        gd.DiedByVisitingKiller = true;
+                        gd.TimeDied = DateTime.Now;
+                        gd.KilledByRole = IRole.Wolf;
+                        gd.DiedLastNight = true;
+                        DBKill(voteWolves, gd, KillMthd.Spotted);
+                        foreach (var w in voteWolves)
+                            Send(GetLocaleString("WolvesSpotted", gd.GetName()), w.Id);
+                        SendGif(GetLocaleString("WolvesSpottedYou"), GetRandomImage(VillagerDieImages), gd.Id);
+                    }
+                }
             }
             WolfCubKilled = false;
             #endregion
@@ -3652,6 +3671,24 @@ namespace Werewolf_Node
                         if (WolfRoles.Contains(skilled.PlayerRole))
                             sk.SerialKilledWolvesCount++;
                         SendGif(GetLocaleString("SerialKillerKilledYou"), GetRandomImage(SKKilled), skilled.Id);
+                    }
+                }
+
+                var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
+                if (gd != null)
+                {
+                    //give sk a chance to spot and kill grave digger
+                    var spotChance = (20 + (30 - (30 * Math.Pow(0.5, gd.DugGravesLastNight - 1)))) / 2;
+                    if (Program.R.Next(100) < spotChance)
+                    {
+                        gd.IsDead = true;
+                        gd.DiedByVisitingKiller = true;
+                        gd.TimeDied = DateTime.Now;
+                        gd.KilledByRole = IRole.SerialKiller;
+                        gd.DiedLastNight = true;
+                        DBKill(sk, gd, KillMthd.Spotted);
+                        Send(GetLocaleString("SerialKillerSpotted", gd.GetName()), sk.Id);
+                        SendGif(GetLocaleString("SerialKillerSpottedYou"), GetRandomImage(SKKilled), gd.Id);
                     }
                 }
             }
@@ -4577,6 +4614,12 @@ namespace Werewolf_Node
                                         msg = GetLocaleString("SnowFrozeKiller", p.GetName());
                                     else // died from hunter
                                         msg = GetLocaleString("SnowFrozeHunter", p.GetName());
+                                    break;
+                                case IRole.GraveDigger:
+                                    if (p.KilledByRole == IRole.SerialKiller)
+                                        msg = GetLocaleString("KillerSpottedDiggerPublic", p.GetName());
+                                    else
+                                        msg = GetLocaleString("WolvesSpottedDiggerPublic", p.GetName());
                                     break;
                             }
                         }
