@@ -1927,14 +1927,14 @@ namespace Werewolf_Control.Handler
         /// <summary>
         /// A list of hardcoded config options, key is the config group and value is an array of identifiers that will be used for language and callback data
         /// </summary>
-        private static readonly Dictionary<string, string[]> hardcodedConfigOptions = new Dictionary<string, string[]>
+        private static readonly Dictionary<ConfigGroup, string[]> hardcodedConfigOptions = new Dictionary<ConfigGroup, string[]>
         {
-            { "GroupSettings", new string[] { "Lang", "Mode", "MaxPlayer" } },    // 
-            { "Mechanics", new string[] { "EndRoles" } },                           // TODO: write strings for those
-            { "Timers", new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }     //
+            { ConfigGroup.GroupSettings, new string[] { "Lang", "Mode", "MaxPlayer" } },    // 
+            { ConfigGroup.Mechanics, new string[] { "EndRoles" } },                           // TODO: write strings for those
+            { ConfigGroup.Timers, new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }     //
         };
 
-        internal static InlineKeyboardMarkup GetConfigSubmenu(long id, string configGroup)
+        internal static InlineKeyboardMarkup GetConfigSubmenu(long id, ConfigGroup configGroup)
         {
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
 
