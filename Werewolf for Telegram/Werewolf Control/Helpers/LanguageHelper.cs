@@ -289,7 +289,7 @@ namespace Werewolf_Control.Helpers
 
 
             //check for existing file
-            var langs = Directory.GetFiles(langPath).Select(x => new LangFile(x)).ToList();
+            var langs = Directory.GetFiles(langPath, "*.xml").Select(x => new LangFile(x)).ToList();
             var lang = langs.FirstOrDefault(x => x.Name == newFileLang.Name && x.FilePath != copyToPath);
             if (lang != null)
             {
@@ -323,6 +323,7 @@ namespace Werewolf_Control.Helpers
             //            msg += $"File copied to bot 2\n";
             //            Bot.Api.EditMessageTextAsync(id, msgId, msg);
             //#endif
+#if !DEBUG
             var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
@@ -379,6 +380,7 @@ namespace Werewolf_Control.Helpers
                     msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
                 }
             }
+#endif
 
             using (var db = new WWContext())
             {
@@ -466,7 +468,7 @@ namespace Werewolf_Control.Helpers
             }
         }
 
-        #region Helpers
+#region Helpers
 
         private static string GetLocaleString(string key, XDocument file)
         {
@@ -629,7 +631,7 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        #endregion
+#endregion
     }
 
     public class LanguageError
