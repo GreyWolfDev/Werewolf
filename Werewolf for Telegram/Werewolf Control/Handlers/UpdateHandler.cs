@@ -1045,12 +1045,13 @@ namespace Werewolf_Control.Handler
                     }
                     if (choice == "cancel")
                     {
-                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command)));
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command.Substring(3))));
                         return;
                     }
-                    if (ConfigGroupAttribute.GetConfigGroups().Contains(command))
+                    var confGroup = ConfigGroupAttribute.GetConfigGroups().Where(x => x.ToString() == command);
+                    if (confGroup.Count() > 0)
                     {
-                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, command));
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, confGroup.First()));
                         return;
                     }
                     grp?.UpdateFlags();
@@ -1904,7 +1905,7 @@ namespace Werewolf_Control.Handler
 
             foreach (var cg in configGroups)
             {
-                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(cg, lang), $"{cg}|{id}"));
+                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(cg.ToString(), lang), $"{cg.ToString()}|{id}"));
             }
 
             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("Done", lang), $"done"));
