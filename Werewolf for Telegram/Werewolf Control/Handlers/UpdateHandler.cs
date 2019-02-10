@@ -1900,13 +1900,14 @@ namespace Werewolf_Control.Handler
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
             //base menu
             var configGroups = ConfigGroupAttribute.GetConfigGroups();
+            var lang = GetLanguage(id);
 
             foreach (var cg in configGroups)
             {
-                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(cg, GetLanguage(id)), $"{cg}|{id}"));
+                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(cg, lang), $"{cg}|{id}"));
             }
 
-            buttons.Add(new InlineKeyboardCallbackButton("Done", $"done")); // TODO: make translatable
+            buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("Done", lang), $"done"));
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
             {
@@ -1928,9 +1929,9 @@ namespace Werewolf_Control.Handler
         /// </summary>
         private static readonly Dictionary<string, string[]> hardcodedConfigOptions = new Dictionary<string, string[]>
         {
-            { "groupconfigbase", new string[] { "lang", "mode", "maxplayer" } },    // 
-            { "mechanics", new string[] { "endroles" } },                           // TODO: write strings for those
-            { "timers", new string[] { "maxextend", "daytimer", "lynch", "night" } }     //
+            { "GroupSettings", new string[] { "Lang", "Mode", "MaxPlayer" } },    // 
+            { "Mechanics", new string[] { "EndRoles" } },                           // TODO: write strings for those
+            { "Timers", new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }     //
         };
 
         internal static InlineKeyboardMarkup GetConfigSubmenu(long id, string configGroup)

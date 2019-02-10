@@ -12,33 +12,33 @@ namespace Database
     {
         //Group settings are now as simple as adding an enum to this list.  No more database schema changes.
         None = 0,
-        [Editable(true), Question("tanner"), DefaultValue(true), ConfigGroup("roleconfig")]
+        [Editable(true), Question("tanner"), DefaultValue(true), ConfigGroup("RoleConfig")]
         AllowTanner = 1,
-        [Editable(true), Question("fool"), DefaultValue(true), ConfigGroup("roleconfig")]
+        [Editable(true), Question("fool"), DefaultValue(true), ConfigGroup("RoleConfig")]
         AllowFool = 2,
-        [Editable(true), Question("cult"), DefaultValue(true), ConfigGroup("roleconfig")]
+        [Editable(true), Question("cult"), DefaultValue(true), ConfigGroup("RoleConfig")]
         AllowCult = 4,
-        [Editable(true), Question("secretlynch", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("mechanics")]
+        [Editable(true), Question("secretlynch", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("Mechanics")]
         EnableSecretLynch = 8,
-        [Editable(true), Question("randommode", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("mechanics")] //WAIT WHAT IS THIS? Shhhhhhhhh
+        [Editable(true), Question("randommode", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("Mechanics")] //WAIT WHAT IS THIS? Shhhhhhhhh
         RandomMode = 16,
-        [Editable(true), Question("extend"), DefaultValue(false), ConfigGroup("permissions")]
+        [Editable(true), Question("extend"), DefaultValue(false), ConfigGroup("GroupSettings")]
         AllowExtend = 32,
-        [Editable(true), Question("roles", SettingQuestion.ShowHide), DefaultValue(true), ConfigGroup("mechanics")]
+        [Editable(true), Question("roles", SettingQuestion.ShowHide), DefaultValue(true), ConfigGroup("Mechanics")]
         ShowRolesDeath = 64,
-        [Editable(true), Question("flee"), DefaultValue(true), ConfigGroup("permissions")]
+        [Editable(true), Question("flee"), DefaultValue(true), ConfigGroup("GroupSettings")]
         AllowFlee = 128,
-        [Editable(true), Question("showid", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("groupconfigbase")]
+        [Editable(true), Question("showid", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("GroupSettings")]
         ShowIDs = 256,
-        [Editable(true), Question("allownsfw"), DefaultValue(false), ConfigGroup("permissions")]
+        [Editable(true), Question("allownsfw"), DefaultValue(false), ConfigGroup("GroupSettings")]
         AllowNSFW = 512,
-        [Editable(true), Question("allowthief"), DefaultValue(true), ConfigGroup("roleconfig")]
+        [Editable(true), Question("allowthief"), DefaultValue(true), ConfigGroup("RoleConfig")]
         AllowThief = 1024,
-        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("mechanics")]
+        [Editable(true), Question("thieffull", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("Mechanics")]
         ThiefFull = 2048,
-        [Editable(true), Question("secretlynchshowvotes", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("mechanics")]
+        [Editable(true), Question("secretlynchshowvotes", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("Mechanics")]
         SecretLynchShowVotes = 4096,
-        [Editable(true), Question("secretlynchshowvoters", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("mechanics")]
+        [Editable(true), Question("secretlynchshowvoters", SettingQuestion.ShowHide), DefaultValue(false), ConfigGroup("Mechanics")]
         SecretLynchShowVoters = 8192,
         [Editable(false), Question("randomlangvariant"), DefaultValue(false)]
         RandomLangVariant = 16384,
@@ -103,7 +103,10 @@ namespace Database
 
         public static List<string> GetConfigGroups()
         {
-            var strings = new List<string>();
+            var strings = new List<string>
+            {
+                "Timers"
+            };
             
             // add hardcoded config groups here, if there is no GroupConfig attribute of the same config group
 
