@@ -138,7 +138,16 @@ namespace Database
             {
                 return hardcodedConfigOptions.First(x => x.Value.Any(y => y.ToLower() == configOption.ToLower())).Key;
             }
-            throw new ArgumentException("Did not find a config group for the option: " + configOption);
+            switch (configOption)
+            {
+                //add all the config options with messed up naming here manually
+                case "night":
+                    return ConfigGroup.Timers;
+                case "lynch":
+                    return ConfigGroup.Timers;
+                default:
+                    throw new ArgumentException("Did not find a config group for the option: " + configOption);
+            }
         }
     }
 

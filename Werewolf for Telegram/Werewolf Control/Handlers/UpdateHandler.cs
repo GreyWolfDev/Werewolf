@@ -1574,7 +1574,7 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
-                        case "night":
+                        case "nighttimer":
                             buttons.Add(new InlineKeyboardCallbackButton("30", $"setnight|{groupid}|30"));
                             buttons.Add(new InlineKeyboardCallbackButton("60", $"setnight|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("90", $"setnight|{groupid}|90"));
@@ -1593,7 +1593,7 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
-                        case "lynch":
+                        case "lynchtimer":
                             buttons.Add(new InlineKeyboardCallbackButton("30", $"setlynch|{groupid}|30"));
                             buttons.Add(new InlineKeyboardCallbackButton("60", $"setlynch|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("90", $"setlynch|{groupid}|90"));
