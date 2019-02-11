@@ -1925,23 +1925,13 @@ namespace Werewolf_Control.Handler
             return menu;
         }
 
-        /// <summary>
-        /// A list of hardcoded config options, key is the config group and value is an array of identifiers that will be used for language and callback data
-        /// </summary>
-        private static readonly Dictionary<ConfigGroup, string[]> hardcodedConfigOptions = new Dictionary<ConfigGroup, string[]>
-        {
-            { ConfigGroup.GroupSettings, new string[] { "Lang", "Mode", "MaxPlayer" } },
-            { ConfigGroup.Mechanics, new string[] { "EndRoles" } },
-            { ConfigGroup.Timers, new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }
-        };
-
         internal static InlineKeyboardMarkup GetConfigSubmenu(long id, ConfigGroup configGroup)
         {
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
 
-            if (hardcodedConfigOptions.ContainsKey(configGroup))
+            if (ConfigGroupAttribute.hardcodedConfigOptions.ContainsKey(configGroup))
             {
-                foreach (var opt in hardcodedConfigOptions[configGroup])
+                foreach (var opt in ConfigGroupAttribute.hardcodedConfigOptions[configGroup])
                 {
                     buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(opt, GetLanguage(id)), $"{opt.ToLower()}|{id}"));
                 }

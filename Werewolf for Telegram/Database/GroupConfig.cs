@@ -100,6 +100,16 @@ namespace Database
     public class ConfigGroupAttribute : Attribute
     {
         /// <summary>
+        /// A list of hardcoded config options, key is the config group and value is an array of identifiers that will be used for language and callback data
+        /// </summary>
+        public static readonly Dictionary<ConfigGroup, string[]> hardcodedConfigOptions = new Dictionary<ConfigGroup, string[]>
+        {
+            { ConfigGroup.GroupSettings, new string[] { "Lang", "Mode", "MaxPlayer" } },
+            { ConfigGroup.Mechanics, new string[] { "EndRoles" } },
+            { ConfigGroup.Timers, new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }
+        };
+
+        /// <summary>
         /// The name of the config group to order the option by. Will also be used for the translation file. Property will be the key for the button option.
         /// </summary>
         public ConfigGroup ConfigGroup { get; set; }
@@ -123,6 +133,10 @@ namespace Database
                 var cgA = fieldInfo.GetCustomAttributes(typeof(ConfigGroupAttribute), false) as ConfigGroupAttribute[];
                 if (cgA == null || cgA.Length < 1) continue;
                 return cgA[0].ConfigGroup;
+            }
+            if (hardcodedConfigOptions.Any(x => x.Value.Any(y => y.ToLower() == configOption.ToLower())))
+            {
+                return hardcodedConfigOptions.First(x => x.Value.Any(y => y.ToLower() == configOption.ToLower())).Key;
             }
             throw new ArgumentException("Did not find a config group for the option: " + configOption);
         }
