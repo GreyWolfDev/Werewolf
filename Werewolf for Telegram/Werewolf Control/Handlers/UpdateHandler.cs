@@ -1055,8 +1055,6 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     grp?.UpdateFlags();
-                    var Yes = GetLocaleString("Yes", language);
-                    var No = GetLocaleString("No", language);
                     var Cancel = GetLocaleString("Cancel", language);
 
                     switch (command)

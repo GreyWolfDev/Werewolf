@@ -42,7 +42,7 @@ namespace Database
         SecretLynchShowVoters = 8192,
         [Editable(false), Question("randomlangvariant"), DefaultValue(false)]
         RandomLangVariant = 16384,
-        [Editable(false), Question("shuffleplayerlist", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup("groupconfigbase")]
+        [Editable(false), Question("shuffleplayerlist", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup(ConfigGroup.GroupSettings)]
         ShufflePlayerList = 32768,
 
 
