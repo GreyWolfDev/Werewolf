@@ -17,6 +17,7 @@ namespace Werewolf_Control.Helpers
             142032675,  //Para 2
             295152997,  //Ludwig
             106665913,  //Jeff
+            267376056,  //Florian
         };
 
         internal static int[] LangAdmins =
