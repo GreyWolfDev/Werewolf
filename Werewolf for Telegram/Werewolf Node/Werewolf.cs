@@ -40,6 +40,7 @@ namespace Werewolf_Node
         public GameTime Time;
         public string Language = "English SFW", ChatGroup;
         public Locale Locale;
+        public Locale Fallback;
         public Group DbGroup;
         private bool _playerListChanged = true, _silverSpread, _sandmanSleep, _pacifistUsed, _doubleLynch;
         private DateTime _timeStarted;
@@ -290,6 +291,27 @@ namespace Werewolf_Node
                     };
                 }
                 Language = Locale.Language;
+                
+                // also load fallback file
+                using (var db = new WWContext())
+                {
+                    // if fallback doesn't exist, it will just be ignored
+                    Language fallback = db.Language.FirstOrDefault(x => x.Base == Locale.Base && x.FileName != language && x.IsDefault);
+                    if (fallback != null)
+                    {
+                        var file = files.FirstOrDefault(x => Path.GetFileNameWithoutExtension(x) == fallback.FileName);
+                        if (!string.IsNullOrEmpty(file))
+                        {
+                            var doc = XDocument.Load(file);
+                            Fallback = new Locale
+                            {
+                                Language = fallback.FileName,
+                                Base = fallback.Base,
+                                File = doc
+                            };
+                        }
+                    }
+                }
             }
             catch
             {
@@ -321,6 +343,7 @@ namespace Werewolf_Node
                     return String.Format(special.FormatHTML(), args).Replace("\\n", Environment.NewLine);
 
                 var strings = Locale.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
+                              Fallback?.File.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key) ??
                               Program.English.Descendants("string").FirstOrDefault(x => x.Attribute("key")?.Value == key);
                 if (strings != null)
                 {
