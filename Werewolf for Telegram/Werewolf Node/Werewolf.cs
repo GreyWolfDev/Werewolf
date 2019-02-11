@@ -1324,7 +1324,7 @@ namespace Werewolf_Node
 
         private void SendPlayerList(bool joining = false)
         {
-            if (!_playerListChanged) return;
+            if (!_playerListChanged && (!DbGroup.HasFlag(GroupConfig.ShufflePlayerList) || joining)) return;
             if (Players == null) return;
             try
             {
@@ -1338,17 +1338,33 @@ namespace Werewolf_Node
                     }
                     else
                     {
-                        //Thread.Sleep(4500); //wait a moment before sending
                         LastPlayersOutput = DateTime.Now;
                         msg =
-                            $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n" +
-                            Players.OrderBy(x => x.TimeDied)
+                            $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n";
+                        if (DbGroup.HasFlag(GroupConfig.ShufflePlayerList))
+                        {
+                            msg += Players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
                                         ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                        //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
-
+                            msg += Players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
+                                .Aggregate("",
+                                    (current, p) =>
+                                        current +
+                                        ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                        }
+                        else
+                        {
+                            //Thread.Sleep(4500); //wait a moment before sending
+                             msg +=
+                                Players.OrderBy(x => x.TimeDied)
+                                    .Aggregate("",
+                                        (current, p) =>
+                                            current +
+                                            ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                            //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
+                        }
                     }
                     _playerListChanged = false;
                     SendWithQueue(new Message(msg) { PlayerList = true, Joining = joining });
