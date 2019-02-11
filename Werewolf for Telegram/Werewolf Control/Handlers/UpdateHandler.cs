@@ -1393,7 +1393,7 @@ namespace Werewolf_Control.Handler
                             if (args[3] == "Random" && args[4] == "v")
                             {
                                 if (grp == null) return;
-                                menu = GetConfigMenu(grp.GroupId);
+                                menu = GetConfigSubmenu(grp.GroupId, ConfigGroup.GroupSettings);
 
                                 var langbase = args[2];
                                 var basefiles = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).Where(x => x.Base == langbase);
@@ -1501,7 +1501,7 @@ namespace Werewolf_Control.Handler
                             grp.MaxPlayers = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxPlayersA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.GroupSettings));
                             DB.SaveChanges();
                             break;
                         //case "roles":
@@ -1536,7 +1536,7 @@ namespace Werewolf_Control.Handler
                             grp.Mode = choice;
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("GameModeA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.GroupSettings));
                             DB.SaveChanges();
                             break;
                         case "endroles":
@@ -1553,7 +1553,7 @@ namespace Werewolf_Control.Handler
                             grp.ShowRolesEnd = choice;
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("ShowRolesEndA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Mechanics));
                             DB.SaveChanges();
                             break;
                         case "daytimer":
@@ -1571,7 +1571,7 @@ namespace Werewolf_Control.Handler
                             grp.DayTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetDayTimeA", language, int.Parse(choice) + 60));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         case "night":
@@ -1590,7 +1590,7 @@ namespace Werewolf_Control.Handler
                             grp.NightTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetNightTimeA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         case "lynch":
@@ -1608,7 +1608,7 @@ namespace Werewolf_Control.Handler
                             grp.LynchTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetLynchTimeA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         //case "fool":
@@ -1702,7 +1702,7 @@ namespace Werewolf_Control.Handler
                             grp.MaxExtend = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxExtendA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         case "done":
@@ -1751,7 +1751,7 @@ namespace Werewolf_Control.Handler
                                 grp.Flags = (long)flags;
                                 command = command.Substring(3);
                                 Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString($"{chosen.ToString()}A", language, current ? GetLocaleString(pos, language) : GetLocaleString(neg, language)));
-                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command.Substring(3))));
                                 DB.SaveChanges();
                             }
                             else
