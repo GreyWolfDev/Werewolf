@@ -1930,9 +1930,9 @@ namespace Werewolf_Control.Handler
         /// </summary>
         private static readonly Dictionary<ConfigGroup, string[]> hardcodedConfigOptions = new Dictionary<ConfigGroup, string[]>
         {
-            { ConfigGroup.GroupSettings, new string[] { "Lang", "Mode", "MaxPlayer" } },    // 
-            { ConfigGroup.Mechanics, new string[] { "EndRoles" } },                           // TODO: write strings for those
-            { ConfigGroup.Timers, new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }     //
+            { ConfigGroup.GroupSettings, new string[] { "Lang", "Mode", "MaxPlayer" } },
+            { ConfigGroup.Mechanics, new string[] { "EndRoles" } },
+            { ConfigGroup.Timers, new string[] { "MaxExtend", "DayTimer", "LynchTimer", "NightTimer" } }
         };
 
         internal static InlineKeyboardMarkup GetConfigSubmenu(long id, ConfigGroup configGroup)
@@ -1943,7 +1943,7 @@ namespace Werewolf_Control.Handler
             {
                 foreach (var opt in hardcodedConfigOptions[configGroup])
                 {
-                    buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(opt, GetLanguage(id)), $"{opt}|{id}"));
+                    buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(opt, GetLanguage(id)), $"{opt.ToLower()}|{id}"));
                 }
             }
 

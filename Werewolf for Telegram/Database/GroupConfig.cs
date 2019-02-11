@@ -118,7 +118,7 @@ namespace Database
         {
             foreach (var flag in Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>())
             {
-                if (flag.GetInfo()?.ShortName != configOption) continue;
+                if (flag.GetInfo()?.ShortName.ToLower() != configOption.ToLower()) continue;
                 var fieldInfo = flag.GetType().GetField(flag.ToString());
                 var cgA = fieldInfo.GetCustomAttributes(typeof(ConfigGroupAttribute), false) as ConfigGroupAttribute[];
                 if (cgA == null || cgA.Length < 1) continue;
