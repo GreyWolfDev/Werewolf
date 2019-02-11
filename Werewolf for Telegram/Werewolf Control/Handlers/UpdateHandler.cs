@@ -1751,7 +1751,7 @@ namespace Werewolf_Control.Handler
                                 grp.Flags = (long)flags;
                                 command = command.Substring(3);
                                 Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString($"{chosen.ToString()}A", language, current ? GetLocaleString(pos, language) : GetLocaleString(neg, language)));
-                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command.Substring(3))));
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command)));
                                 DB.SaveChanges();
                             }
                             else
