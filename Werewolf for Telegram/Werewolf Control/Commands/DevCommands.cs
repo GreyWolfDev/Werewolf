@@ -26,6 +26,7 @@ using Werewolf_Control.Attributes;
 using File = System.IO.File;
 using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
+using System.Collections.ObjectModel;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
@@ -1469,6 +1470,42 @@ namespace Werewolf_Control
                 Bot.Send("Beta was already locked for non-betagroups!", u.Message.Chat.Id);
             }
 #endif
+        }
+
+        [Attributes.Command(Trigger = "getbalancing", DevOnly = true)]
+        public static void GetBalancing(Update u, string[] args)
+        {
+            ObservableCollection<UnbalancedRole> resultSet = new ObservableCollection<UnbalancedRole>();
+            Bot.Send("Looking for roles and combinations with an unfair win chance in certain combinations.", u.Message.Chat.Id);
+            using (var sw = new StreamWriter(File.OpenWrite("temp_balancing.txt")))
+            {
+                long locks = 0;
+                resultSet.CollectionChanged += (sender, e) =>
+                {
+                    locks++;
+                    try
+                    {
+                        foreach (var item in e.NewItems)
+                        {
+                            sw.WriteLine(JsonConvert.SerializeObject(item, Formatting.Indented));
+                            sw.Flush();
+                        }
+                    }
+                    finally
+                    {
+                        locks--;
+                    }
+                };
+
+                Balancing.ReadBalance(resultSet);
+                while (locks != 0) { };
+            }
+            Bot.Send("Finished reading the unbalanced roles.", u.Message.Chat.Id);
+            using (var stream = File.OpenRead("temp_balancing.txt"))
+            {
+                Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("balancing.txt", stream)).Wait();
+            }
+            File.Delete("temp_balancing.txt");
         }
 
     }
