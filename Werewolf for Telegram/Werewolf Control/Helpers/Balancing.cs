@@ -45,7 +45,7 @@ namespace Werewolf_Control.Helpers
                     {
                         if (!wins.ContainsKey(role)) wins.Add(role, 0);
                     }
-                    foreach (var game in db.Games.Where(x => IsSame(combination, x.GamePlayers.Select(y => y.Role))))
+                    foreach (var game in db.Games.Where(x => combination.All(y => x.GamePlayers.Select(z => z.Role).Contains(y)) && x.GamePlayers.Select(z => z.Role).All(y => combination.Contains(y))))
                     {
                         games++;
                         foreach (var player in game.GamePlayers.Where(x => x.Won))
