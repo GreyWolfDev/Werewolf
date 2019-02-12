@@ -47,6 +47,7 @@ namespace Werewolf_Control.Helpers
                     }
                     foreach (var game in db.Games.Where(x => combination.All(y => x.GamePlayers.Select(z => z.Role).Contains(y)) && x.GamePlayers.Select(z => z.Role).All(y => combination.Contains(y))))
                     {
+                        if (!game.TimeEnded.HasValue) continue;
                         games++;
                         foreach (var player in game.GamePlayers.Where(x => x.Won))
                             wins[player.Role] = wins[player.Role] + 1;
