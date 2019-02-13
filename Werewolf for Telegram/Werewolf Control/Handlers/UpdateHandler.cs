@@ -1137,7 +1137,12 @@ namespace Werewolf_Control.Handler
                             var groupsmoved = (from g in DB.Groups where g.Language == oldfilename select g).ToList();
                             var players = (from pl in DB.Players where pl.Language == oldfilename select pl).ToList();
                             var grouprankings = (from gr in DB.GroupRanking where gr.Language == oldfilename select gr).ToList();
-
+                            var lang = DB.Language.FirstOrDefault(x => x.FileName == oldfilename);
+                            
+                            if (lang != null)
+                            {
+                                DB.Language.Remove(lang);
+                            }
                             foreach (var g in groupsmoved)
                             {
                                 g.Language = newfilename;
