@@ -163,7 +163,7 @@ namespace Werewolf_Node
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
-                    FullCupid = (DateTime.Now.Month == 2 && DateTime.Now.Day == 14);
+                    FullCupid = (DateTime.UtcNow.Month == 2 && DateTime.UtcNow.Day == 14);
                     db.SaveChanges();
                     if (RandomMode)
                     {
