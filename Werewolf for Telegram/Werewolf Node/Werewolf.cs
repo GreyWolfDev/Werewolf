@@ -59,7 +59,7 @@ namespace Werewolf_Node
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
-        public readonly string[] hearts = new string[] { "❤️", "🧡", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
+        public readonly string[] hearts = new string[] { "❤️", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "🧡", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
         private int pairCount;
 
         public List<string> VillagerDieImages,
@@ -2033,6 +2033,7 @@ namespace Werewolf_Node
             Console.ForegroundColor = ConsoleColor.Gray;
             if (lover == null) return null;
             lover.InLove = true;
+            lover.LoverId = pairCount;
             lover.SpeedDating = true;
             if (existing == null) return lover;
             existing.LoverId = lover.Id;
