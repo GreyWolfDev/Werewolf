@@ -55,10 +55,12 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull, FullCupid;
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
+        public readonly string[] hearts = new string[] { "❤️", "🧡", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
+        private int pairCount;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -161,6 +163,7 @@ namespace Werewolf_Node
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
+                    FullCupid = (DateTime.UtcNow.Month == 2 && DateTime.UtcNow.Day == 14);
                     db.SaveChanges();
                     if (RandomMode)
                     {
@@ -1039,8 +1042,10 @@ namespace Werewolf_Node
                         if (lover1.Id == player.Id)
                             AddAchievement(player, Achievements.SelfLoving);
                         lover1.InLove = true;
+                        lover1.LoverId = -1;
+                        lover1.LoverCount = pairCount;
                         //send menu for second choice....
-                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
+                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id && !x.InLove).ToList();
                         var buttons =
                             secondChoices.Select(
                                 x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Lover2}|{x.Id}") }).ToList();
@@ -1055,7 +1060,7 @@ namespace Werewolf_Node
                 }
                 if (qtype == QuestionType.Lover2 && player.PlayerRole == IRole.Cupid && player.CurrentQuestion.QType == QuestionType.Lover2)
                 {
-                    var lover11 = Players.FirstOrDefault(x => x.InLove);
+                    var lover11 = Players.FirstOrDefault(x => x.InLove && x.LoverId == -1);
                     if (lover11 == null)
                         return;
                     if (lover11.Id == player.Id)
@@ -1069,6 +1074,7 @@ namespace Werewolf_Node
                         return;
                     lover2.InLove = true;
                     lover2.LoverId = id;
+                    lover2.LoverCount = pairCount;
                     player.Choice = -1;
                 }
 
@@ -1349,7 +1355,7 @@ namespace Werewolf_Node
                                 .Aggregate("",
                                     (current, p) =>
                                         current +
-                                        p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "") + "\n");
+                                        p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "") : "") + "\n");
 
                             msg += Players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
                                 .Aggregate("",
@@ -1365,7 +1371,7 @@ namespace Werewolf_Node
                                     .Aggregate("",
                                         (current, p) =>
                                             current +
-                                            ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                                            ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "") : "")) : GetLocaleString("Alive"))}\n"));
                             //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         }
                     }
@@ -1902,90 +1908,94 @@ namespace Werewolf_Node
 
         private void CreateLovers()
         {
-            //REDO
-            //how many lovers do we have?
-            var count = Players.Count(x => x.InLove);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine($"{count} Lovers found");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            if (count == 2)
+            if (GameDay == 1 || !FullCupid || Players.Count(x => x.InLove && x.NewLover) == 1)
             {
-                return;
-            }
-            if (count > 2) //how?!?
-            {
-                var lovers = Players.Where(x => x.InLove).ToList(); //to list, we have broken off
-                var l1 = Players.FirstOrDefault(x => x.Id == lovers[0].Id);
-                var l2 = Players.FirstOrDefault(x => x.Id == lovers[1].Id);
-                if (l1 == null || l2 == null)
-                {
-                    //WTF IS GOING ON HERE?!
-                    if (l1 != null)
-                        AddLover(l1);
-                    if (l2 != null)
-                        AddLover(l2);
-                    //if both are null..
-                    if (l1 == null && l2 == null)
-                    {
-                        //so lost....
-                        l1 = AddLover();
-                        l2 = AddLover(l1);
-                    }
-                }
-                if (l1 != null && l2 != null)
-                {
-                    l1.LoverId = l2.Id;
-                    l2.LoverId = l1.Id;
-                }
-                foreach (var p in lovers.Skip(2))
-                {
-                    var foreverAlone = Players.FirstOrDefault(x => x.Id == p.Id);
-                    if (foreverAlone != null)
-                    {
-                        foreverAlone.InLove = false;
-                        foreverAlone.LoverId = 0;
-                    }
-                }
+                //REDO
+                //how many lovers do we have?
+                var count = Players.Count(x => x.InLove && x.NewLover);
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"Step 1: {Players.Count(x => x.InLove)} Lovers found");
+                Console.WriteLine($"{count} Lovers found");
                 Console.ForegroundColor = ConsoleColor.Gray;
+                if (count == 2)
+                {
+                    return;
+                }
+                if (count > 2) //how?!?
+                {
+                    var lovers = Players.Where(x => x.InLove && x.NewLover).ToList(); //to list, we have broken off
+                    var l1 = Players.FirstOrDefault(x => x.Id == lovers[0].Id);
+                    var l2 = Players.FirstOrDefault(x => x.Id == lovers[1].Id);
+                    if (l1 == null || l2 == null)
+                    {
+                        //WTF IS GOING ON HERE?!
+                        if (l1 != null)
+                            AddLover(l1);
+                        if (l2 != null)
+                            AddLover(l2);
+                        //if both are null..
+                        if (l1 == null && l2 == null)
+                        {
+                            //so lost....
+                            l1 = AddLover();
+                            l2 = AddLover(l1);
+                        }
+                    }
+                    if (l1 != null && l2 != null)
+                    {
+                        l1.LoverId = l2.Id;
+                        l2.LoverId = l1.Id;
+                    }
+                    foreach (var p in lovers.Skip(2))
+                    {
+                        var foreverAlone = Players.FirstOrDefault(x => x.Id == p.Id);
+                        if (foreverAlone != null)
+                        {
+                            foreverAlone.InLove = false;
+                            foreverAlone.LoverId = 0;
+                            foreverAlone.LoverCount = 0;
+                        }
+                    }
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine($"Step 1: {Players.Count(x => x.InLove)} Lovers found");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+                if (count < 2)
+                {
+                    //ok, missing lovers.
+                    var exist = (Players.FirstOrDefault(x => x.InLove && x.NewLover) ?? AddLover()) ?? AddLover();
+                    AddLover(exist);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine($"Step 2: {Players.Count(x => x.InLove)} Lovers found");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+                ////cupid stuffs
+                //var lovers = Players.Where(x => x.InLove);
+                //while (lovers.Count() != 2)
+                //{
+                //    //ok, missing lover, create one
+                //    var choiceid = ChooseRandomPlayerId(lovers);
+                //    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
+                //    if (newLover != null)
+                //    {
+                //        newLover.InLove = true;
+                //        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
+                //        if (otherLover != null)
+                //        {
+                //            otherLover.LoverId = newLover.Id;
+                //            newLover.LoverId = otherLover.Id;
+                //        }
+                //    }
+                //}
             }
-            if (count < 2)
-            {
-                //ok, missing lovers.
-                var exist = (Players.FirstOrDefault(x => x.InLove) ?? AddLover()) ?? AddLover();
-                AddLover(exist);
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"Step 2: {Players.Count(x => x.InLove)} Lovers found");
-                Console.ForegroundColor = ConsoleColor.Gray;
-            }
-            ////cupid stuffs
-            //var lovers = Players.Where(x => x.InLove);
-            //while (lovers.Count() != 2)
-            //{
-            //    //ok, missing lover, create one
-            //    var choiceid = ChooseRandomPlayerId(lovers);
-            //    var newLover = Players.FirstOrDefault(x => x.Id == choiceid);
-            //    if (newLover != null)
-            //    {
-            //        newLover.InLove = true;
-            //        var otherLover = lovers.FirstOrDefault(x => x.Id != newLover.Id);
-            //        if (otherLover != null)
-            //        {
-            //            otherLover.LoverId = newLover.Id;
-            //            newLover.LoverId = otherLover.Id;
-            //        }
-            //    }
-            //}
         }
 
         private void NotifyLovers()
         {
-            var loversNotify = Players.Where(x => x.InLove).ToList();
+            var loversNotify = Players.Where(x => x.InLove && x.NewLover).ToList();
             while (loversNotify.Count != 2)
             {
                 CreateLovers();
-                loversNotify = Players.Where(x => x.InLove).ToList();
+                loversNotify = Players.Where(x => x.InLove && x.NewLover).ToList();
             }
 
             foreach (var lover in loversNotify)
@@ -1996,7 +2006,9 @@ namespace Werewolf_Node
                     AddAchievement(lover, AchievementsReworked.DeepLove);
                 if (loversNotify.Any(x => x.PlayerRole == IRole.Seer) && loversNotify.Any(x => x.PlayerRole == IRole.Sorcerer))
                     AddAchievement(lover, AchievementsReworked.SeeingBetweenTeams);
+                lover.NewLover = false;
             }
+            pairCount++;
 
             Send(GetLocaleString("CupidChosen", loversNotify[0].GetName()), loversNotify[1].Id);
             Send(GetLocaleString("CupidChosen", loversNotify[1].GetName()), loversNotify[0].Id);
@@ -2004,7 +2016,8 @@ namespace Werewolf_Node
 
         private IPlayer AddLover(IPlayer existing = null)
         {
-            var lover = Players.FirstOrDefault(x => x.Id == ChooseRandomPlayerId(existing));
+            var possibleLovers = Players.Where(x => !x.IsDead && !x.InLove);
+            var lover = FullCupid ? possibleLovers.ElementAt(Program.R.Next(possibleLovers.Count())) : Players.FirstOrDefault(x => x.Id == ChooseRandomPlayerId(existing));
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"AddLover: {lover?.Name} picked");
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -2848,7 +2861,7 @@ namespace Werewolf_Node
                                 if (Players.Count(x => !x.IsDead) == 3)
                                     AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
 
-                                if (lynched.InLove)
+                                if (lynched.InLove && !FullCupid)
                                     AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
                             }
 
@@ -4613,7 +4626,7 @@ namespace Werewolf_Node
                         return DoGameEnd(p.Team);
                 case 2:
                     //check for lovers
-                    if (alivePlayers.All(x => x.InLove))
+                    if (alivePlayers.All(x => x.InLove) && (!FullCupid || alivePlayers.Count(x => x.InLove) == 2))
                         return DoGameEnd(ITeam.Lovers);
                     //check for Tanner + Sorcerer + Thief
                     if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Tanner, IRole.Thief }.Contains(x)))
@@ -4700,7 +4713,7 @@ namespace Werewolf_Node
                     var wolves = alivePlayers.Where(x => WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf);
                     var others = alivePlayers.Where(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.SnowWolf);
                     // gunner makes the difference only if wolves are exactly as many as the others, or two wolves are in love and the gunner can kill two of them at once
-                    var gunnermakesthedifference = (wolves.Count() == others.Count()) || (wolves.Count() == others.Count() + 1 && wolves.Count(x => x.InLove) == 2);
+                    var gunnermakesthedifference = (wolves.Count() == others.Count()) || (wolves.Count() == others.Count() + 1 && wolves.Any(x => x.InLove && wolves.Select(y => y.Id).Contains(x.LoverId)));
                     if (gunnermakesthedifference)
                     {
                         // do nothing, gunner can still make VGs win
@@ -4736,7 +4749,7 @@ namespace Werewolf_Node
 
                 if (team == ITeam.Lovers)
                 {
-                    var lovers = Players.Where(x => x.InLove);
+                    var lovers = FullCupid ? Players.Where(x => x.InLove && !x.IsDead) : Players.Where(x => x.InLove);
                     var forbidden = lovers.Any(x => WolfRoles.Contains(x.PlayerRole)) && lovers.Any(x => x.PlayerRole == IRole.Villager);
                     foreach (var w in lovers)
                     {
@@ -4939,11 +4952,11 @@ namespace Werewolf_Node
                         msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
                         break;
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
-                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
+                        msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.InLove ? hearts[p.LoverCount] : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
                 }
                 if (game.TimeStarted.HasValue)
@@ -5267,9 +5280,9 @@ namespace Werewolf_Node
                         break;
                     case IRole.Cupid:
                         //this is a bit more difficult....
-                        if (GameDay == 1)
+                        if (GameDay == 1 || (FullCupid && Players.Count(x => !x.IsDead && !x.InLove) >= 2))
                         {
-                            targets = Players.Where(x => !x.IsDead).ToList();
+                            targets = Players.Where(x => !x.IsDead && !x.InLove).ToList();
                             msg = GetLocaleString("AskCupid1");
                             qtype = QuestionType.Lover1;
                         }
