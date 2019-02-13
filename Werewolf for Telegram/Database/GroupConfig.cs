@@ -44,7 +44,8 @@ namespace Database
         RandomLangVariant = 16384,
         [Editable(true), Question("shuffleplayerlist", SettingQuestion.YesNo), DefaultValue(false), ConfigGroup(ConfigGroup.GroupSettings)]
         ShufflePlayerList = 32768,
-
+        [Editable(false), Question("fullcupid"), DefaultValue(false)]
+        FullCupid = 65536,
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings
         Update = 4611686018427387904

@@ -55,7 +55,7 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull, FullCupid;
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
@@ -161,6 +161,7 @@ namespace Werewolf_Node
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
+                    FullCupid = DbGroup.HasFlag(GroupConfig.FullCupid);
                     db.SaveChanges();
                     if (RandomMode)
                     {
@@ -1040,7 +1041,7 @@ namespace Werewolf_Node
                             AddAchievement(player, Achievements.SelfLoving);
                         lover1.InLove = true;
                         //send menu for second choice....
-                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
+                        var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id && !x.InLove).ToList();
                         var buttons =
                             secondChoices.Select(
                                 x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Lover2}|{x.Id}") }).ToList();
@@ -5267,9 +5268,9 @@ namespace Werewolf_Node
                         break;
                     case IRole.Cupid:
                         //this is a bit more difficult....
-                        if (GameDay == 1)
+                        if (GameDay == 1 || (FullCupid && Players.Count(x => !x.InLove && !x.IsDead) > 1))
                         {
-                            targets = Players.Where(x => !x.IsDead).ToList();
+                            targets = Players.Where(x => !x.IsDead && !x.InLove).ToList();
                             msg = GetLocaleString("AskCupid1");
                             qtype = QuestionType.Lover1;
                         }
