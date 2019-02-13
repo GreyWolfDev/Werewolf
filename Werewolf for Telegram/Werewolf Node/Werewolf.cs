@@ -2033,6 +2033,7 @@ namespace Werewolf_Node
             Console.ForegroundColor = ConsoleColor.Gray;
             if (lover == null) return null;
             lover.InLove = true;
+            lover.LoverId = pairCount;
             lover.SpeedDating = true;
             if (existing == null) return lover;
             existing.LoverId = lover.Id;
