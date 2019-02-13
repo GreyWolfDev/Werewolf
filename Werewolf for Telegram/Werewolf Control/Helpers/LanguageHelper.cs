@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -23,6 +24,7 @@ namespace Werewolf_Control.Helpers
         public string Base { get; set; }
         public string Variant { get; set; }
         public bool IsDefault { get; set; }
+        public string LangCode { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public XDocument Doc { get; set; }
@@ -35,6 +37,7 @@ namespace Werewolf_Control.Helpers
             Base = Doc.Descendants("language").First().Attribute("base")?.Value;
             Variant = Doc.Descendants("language").First().Attribute("variant")?.Value;
             IsDefault = Doc.Descendants("language").First().Attribute("isDefault")?.Value == "true";
+            LangCode = Doc.Descendants("language").First().Attribute("code")?.Value;
             FilePath = path;
             FileName = Path.GetFileNameWithoutExtension(path);
             LatestUpdate = File.GetLastWriteTimeUtc(path);
@@ -286,7 +289,7 @@ namespace Werewolf_Control.Helpers
 
 
             //check for existing file
-            var langs = Directory.GetFiles(langPath).Select(x => new LangFile(x)).ToList();
+            var langs = Directory.GetFiles(langPath, "*.xml").Select(x => new LangFile(x)).ToList();
             var lang = langs.FirstOrDefault(x => x.Name == newFileLang.Name && x.FilePath != copyToPath);
             if (lang != null)
             {
@@ -320,6 +323,7 @@ namespace Werewolf_Control.Helpers
             //            msg += $"File copied to bot 2\n";
             //            Bot.Api.EditMessageTextAsync(id, msgId, msg);
             //#endif
+#if !DEBUG
             var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
@@ -376,6 +380,24 @@ namespace Werewolf_Control.Helpers
                     msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
                 }
             }
+#endif
+
+            using (var db = new WWContext())
+            {
+                var newFile = new LangFile(copyToPath);
+
+                // search for language file entry and update it or add it if it's not present yet
+                Language language = db.Language.FirstOrDefault(x => x.FileName == newFile.FileName);
+                if (language == null) language = db.Language.Add(new Language { FileName = newFile.FileName });
+                language.Base = newFile.Base;
+                language.IsDefault = newFile.IsDefault;
+                language.LangCode = newFile.LangCode;
+                language.Name = newFile.Name;
+                language.Variant = newFile.Variant;
+
+                db.SaveChanges();
+            }
+
             msg += "\n<b>Operation complete.</b>";
 
             Bot.Api.EditMessageTextAsync(id, msgId, msg, parseMode: ParseMode.Html);
@@ -446,7 +468,7 @@ namespace Werewolf_Control.Helpers
             }
         }
 
-        #region Helpers
+#region Helpers
 
         private static string GetLocaleString(string key, XDocument file)
         {
@@ -609,7 +631,7 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        #endregion
+#endregion
     }
 
     public class LanguageError
