@@ -59,7 +59,7 @@ namespace Werewolf_Node
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
-        public readonly string[] hearts = new string[] { "❤️", "🧡", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
+        public readonly string[] hearts = new string[] { "❤️", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "🧡", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
         private int pairCount;
 
         public List<string> VillagerDieImages,
