@@ -30,7 +30,7 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>Everyone forgot about this group... We didn't reach 5 players, cancelling game!</value>
   </string>
   <string key="StartingGameWait">
-    <value>Game is starting, please wait while I assign roles and update the database. Something strange is happening to the village! For some reason, no one can seem to remember who they are... (roles will not be revealed to their players!)</value>
+    <value>Game is starting, please wait while I assign roles and update the database. Something strange is happening to the village! For some reason, no one can seem to remember who they are... (roles will not be revealed to their players!) These roles are possible to be assigned for this game:</value>
   </string>
   <string key="BannedForExploit">
     <value>{0} is banned for attempting an exploit (no names starting with /)</value>
@@ -1072,10 +1072,10 @@ Last update: 30/12/2016 by @ayylimao -->
     <value>{0} suddenly gasps, after taking something out of their pocket: the official seal of the Mayor. Everyone realizes he is the village's ruler, and, from now on, will count his vote twice when lynching.</value>
   </string>
   <string key="AskMayor">
-    <value>There seems to be something in your pocket...</value>
+    <value>You know you should be doing something, but does it need to be today?</value>
   </string>
   <string key="Reveal">
-    <value>Take it out</value>
+    <value>Yes</value>
   </string>
   <string key="SpreadDust">
     <value>You know you should be doing something, but does it need to be today?</value>
@@ -1551,7 +1551,7 @@ Last update: 30/12/2016 by @ayylimao -->
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
   <!-- {1} - The new role -->
-    <value>Did something happen at {0}'s house last night? And your role changed, but from what, and to what? You may not remember who you are, but you do remember an important role: {1}</value>
+    <value>Did something happen at {0}'s house last night? And your role changed, but from what, and to what?</value>
   </string>
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
@@ -1614,5 +1614,42 @@ Last update: 30/12/2016 by @ayylimao -->
   </string>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+      <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Yes</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Today's Lynching got skipped because of the Pacifist's heartfelt speech!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Your role changed, but from what, and to what?</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Your role changed, but from what, and to what?</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Knock knock, you've been visited by the resident serial killer!</value>
+	<value>The Serial Killer ambushed you, tied you up, and then stabbed you in the heart!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Thief Team</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>The Thief, {0}, tried to steal the role from the serial killer! This didn't work out so well: {0} got stabbed multiple times and now his liver is missing...</value>
   </string>
 </strings>
