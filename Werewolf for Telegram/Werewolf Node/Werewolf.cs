@@ -1879,17 +1879,7 @@ namespace Werewolf_Node
 
         private void ValidateSpecialRoleChoices()
         {
-            if (GameDay != 1 && !FullCupid) return;
-
-            //first, make sure there even IS a cupid
-            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
-            {
-                CreateLovers();
-                NotifyLovers();
-            }
-
-            if (!FullCupid) return;
-
+            if (GameDay != 1) return;
             //Wild Child
             var wc = Players.GetPlayerForRole(IRole.WildChild);
             if (wc != null && wc.RoleModel == 0)
@@ -1913,6 +1903,13 @@ namespace Werewolf_Node
                     dg.RoleModel = choice.Id;
                     Send(GetLocaleString("RoleModelChosen", choice.GetName()), dg.Id);
                 }
+            }
+
+            //first, make sure there even IS a cupid
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
+            {
+                CreateLovers();
+                NotifyLovers();
             }
         }
 
