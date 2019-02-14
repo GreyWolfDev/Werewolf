@@ -1888,7 +1888,7 @@ namespace Werewolf_Node
                 NotifyLovers();
             }
 
-            if (!FullCupid) return;
+            if (GameDay != 1) return;
 
             //Wild Child
             var wc = Players.GetPlayerForRole(IRole.WildChild);
@@ -1918,7 +1918,7 @@ namespace Werewolf_Node
 
         private void CreateLovers()
         {
-            if (GameDay == 1 || !FullCupid || Players.Count(x => x.InLove && x.NewLover) == 1)
+            if (GameDay == 1 || (FullCupid && Players.Count(x => x.InLove && x.NewLover) == 1))
             {
                 //REDO
                 //how many lovers do we have?
