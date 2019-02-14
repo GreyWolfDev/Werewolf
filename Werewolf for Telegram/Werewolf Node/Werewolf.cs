@@ -5297,11 +5297,7 @@ namespace Werewolf_Node
                             msg = GetLocaleString("AskCupid1");
                             qtype = QuestionType.Lover1;
                         }
-                        else
-                        {
-                            player.CurrentQuestion = null;
-                            player.Choice = -1;
-                        }
+                        else player.Choice = -1;
                         break;
                     case IRole.Thief:
                         if ((!ThiefFull && GameDay == 1) || ThiefFull)
