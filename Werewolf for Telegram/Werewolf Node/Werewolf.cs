@@ -1535,7 +1535,7 @@ namespace Werewolf_Node
                     if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
                     {
                         //just pick a vg, and turn them to CH
-                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x) && (!FullCupid || x != IRole.Cupid));
                         rolesToAssign[vg] = IRole.CultistHunter;
                     }
 
@@ -1882,7 +1882,7 @@ namespace Werewolf_Node
             if (GameDay != 1 && !FullCupid) return;
 
             //first, make sure there even IS a cupid
-            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid) && (GameDay == 1 || (FullCupid && Players.Count(x => x.InLove && x.NewLover) + Players.Count(x => !x.InLove && !x.IsDead) >= 2)))
             {
                 CreateLovers();
                 NotifyLovers();
@@ -5297,11 +5297,7 @@ namespace Werewolf_Node
                             msg = GetLocaleString("AskCupid1");
                             qtype = QuestionType.Lover1;
                         }
-                        else
-                        {
-                            player.CurrentQuestion = null;
-                            player.Choice = -1;
-                        }
+                        else player.Choice = -1;
                         break;
                     case IRole.Thief:
                         if ((!ThiefFull && GameDay == 1) || ThiefFull)
