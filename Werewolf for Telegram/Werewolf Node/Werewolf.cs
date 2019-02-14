@@ -59,7 +59,7 @@ namespace Werewolf_Node
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
-        public readonly string[] hearts = new string[] { "❤️", "🧡", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
+        public readonly string[] hearts = new string[] { "❤️", "💛", "💚", "💙", "💜", "❣️", "💕", "💞", "💓", "🧡", "💗", "💖", "💘", "💝", "♥️", "♡", "<3" };
         private int pairCount;
 
         public List<string> VillagerDieImages,
@@ -163,7 +163,7 @@ namespace Werewolf_Node
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
-                    FullCupid = (DateTime.Now.Month == 2 && DateTime.Now.Day == 14);
+                    FullCupid = (DateTime.UtcNow.Month == 2 && DateTime.UtcNow.Day == 14);
                     db.SaveChanges();
                     if (RandomMode)
                     {
@@ -296,7 +296,7 @@ namespace Werewolf_Node
                     };
                 }
                 Language = Locale.Language;
-                
+
                 // also load fallback file
                 using (var db = new WWContext())
                 {
@@ -1366,12 +1366,12 @@ namespace Werewolf_Node
                         else
                         {
                             //Thread.Sleep(4500); //wait a moment before sending
-                             msg +=
-                                Players.OrderBy(x => x.TimeDied)
-                                    .Aggregate("",
-                                        (current, p) =>
-                                            current +
-                                            ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "") : "")) : GetLocaleString("Alive"))}\n"));
+                            msg +=
+                               Players.OrderBy(x => x.TimeDied)
+                                   .Aggregate("",
+                                       (current, p) =>
+                                           current +
+                                           ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "") : "")) : GetLocaleString("Alive"))}\n"));
                             //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         }
                     }
@@ -1523,11 +1523,19 @@ namespace Werewolf_Node
                         rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
 
+                    //valentines day without cupid -> add cupid
+                    if (FullCupid && !rolesToAssign.Contains(IRole.Cupid))
+                    {
+                        //just pick a vg, and turn them to cupid
+                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                        rolesToAssign[vg] = IRole.Cupid;
+                    }
+
                     //cult without CH -> add CH
                     if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
                     {
                         //just pick a vg, and turn them to CH
-                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x) && (!FullCupid || x != IRole.Cupid));
                         rolesToAssign[vg] = IRole.CultistHunter;
                     }
 
@@ -1586,8 +1594,7 @@ namespace Werewolf_Node
                 IRole[] requiredRoles = new IRole[]
                 {
                     IRole.Wolf,
-                    IRole.Seer,
-                    IRole.Hunter
+                    IRole.Cupid,
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -1872,7 +1879,17 @@ namespace Werewolf_Node
 
         private void ValidateSpecialRoleChoices()
         {
-            if (GameDay != 1) return;
+            if (GameDay != 1 && !FullCupid) return;
+
+            //first, make sure there even IS a cupid
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid) && (GameDay == 1 || (FullCupid && Players.Count(x => x.InLove && x.NewLover) + Players.Count(x => !x.InLove && !x.IsDead) >= 2)))
+            {
+                CreateLovers();
+                NotifyLovers();
+            }
+
+            if (!FullCupid) return;
+
             //Wild Child
             var wc = Players.GetPlayerForRole(IRole.WildChild);
             if (wc != null && wc.RoleModel == 0)
@@ -1896,13 +1913,6 @@ namespace Werewolf_Node
                     dg.RoleModel = choice.Id;
                     Send(GetLocaleString("RoleModelChosen", choice.GetName()), dg.Id);
                 }
-            }
-
-            //first, make sure there even IS a cupid
-            if (Players.Any(x => x.PlayerRole == IRole.Cupid))
-            {
-                CreateLovers();
-                NotifyLovers();
             }
         }
 
@@ -2023,6 +2033,7 @@ namespace Werewolf_Node
             Console.ForegroundColor = ConsoleColor.Gray;
             if (lover == null) return null;
             lover.InLove = true;
+            lover.LoverId = pairCount;
             lover.SpeedDating = true;
             if (existing == null) return lover;
             existing.LoverId = lover.Id;
@@ -2861,7 +2872,7 @@ namespace Werewolf_Node
                                 if (Players.Count(x => !x.IsDead) == 3)
                                     AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
 
-                                if (lynched.InLove && !FullCupid)
+                                if (lynched.InLove)
                                     AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
                             }
 
