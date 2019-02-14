@@ -1882,7 +1882,7 @@ namespace Werewolf_Node
             if (GameDay != 1 && !FullCupid) return;
 
             //first, make sure there even IS a cupid
-            if (Players.Any(x => x.PlayerRole == IRole.Cupid) && (GameDay == 1 || (FullCupid && Players.Count(x => x.InLove && x.NewLover) + Players.Count(x => !x.InLove && !x.IsDead) >= 2)))
+            if (Players.Any(x => x.PlayerRole == IRole.Cupid) && (GameDay == 1 || (FullCupid && Players.Count(x => (x.InLove && x.NewLover) || (!x.InLove && !x.IsDead)) >= 2)))
             {
                 CreateLovers();
                 NotifyLovers();
