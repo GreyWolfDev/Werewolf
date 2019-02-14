@@ -90,14 +90,6 @@ namespace Werewolf_Node.Models
         public string Name { get; set; }
         public bool InLove { get; set; } = false;
         public int LoverId { get; set; } = 0;
-        /// <summary>
-        /// Only used in Full Cupid mode, defaults to true
-        /// </summary>
-        public bool NewLover { get; set; } = true;
-        /// <summary>
-        /// Used to show the correct hearts in Full Cupid mode, defaults to 0
-        /// </summary>
-        public int LoverCount { get; set; }
         public int DBPlayerId { get; set; } = 0;
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
