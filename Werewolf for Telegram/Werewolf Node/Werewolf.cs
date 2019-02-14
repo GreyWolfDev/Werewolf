@@ -296,7 +296,7 @@ namespace Werewolf_Node
                     };
                 }
                 Language = Locale.Language;
-
+                
                 // also load fallback file
                 using (var db = new WWContext())
                 {
@@ -1366,12 +1366,12 @@ namespace Werewolf_Node
                         else
                         {
                             //Thread.Sleep(4500); //wait a moment before sending
-                            msg +=
-                               Players.OrderBy(x => x.TimeDied)
-                                   .Aggregate("",
-                                       (current, p) =>
-                                           current +
-                                           ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "") : "")) : GetLocaleString("Alive"))}\n"));
+                             msg +=
+                                Players.OrderBy(x => x.TimeDied)
+                                    .Aggregate("",
+                                        (current, p) =>
+                                            current +
+                                            ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? hearts[p.LoverCount] : "") : "")) : GetLocaleString("Alive"))}\n"));
                             //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         }
                     }
@@ -1523,14 +1523,6 @@ namespace Werewolf_Node
                         rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
 
-                    //valentines day without cupid -> add cupid
-                    if (FullCupid && !rolesToAssign.Contains(IRole.Cupid))
-                    {
-                        //just pick a vg, and turn them to cupid
-                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-                        rolesToAssign[vg] = IRole.Cupid;
-                    }
-
                     //cult without CH -> add CH
                     if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
                     {
@@ -1594,7 +1586,8 @@ namespace Werewolf_Node
                 IRole[] requiredRoles = new IRole[]
                 {
                     IRole.Wolf,
-                    IRole.Cupid,
+                    IRole.Seer,
+                    IRole.Hunter
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -2868,7 +2861,7 @@ namespace Werewolf_Node
                                 if (Players.Count(x => !x.IsDead) == 3)
                                     AddAchievement(lynched, AchievementsReworked.ThatCameUnexpected);
 
-                                if (lynched.InLove)
+                                if (lynched.InLove && !FullCupid)
                                     AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
                             }
 
