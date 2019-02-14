@@ -1535,7 +1535,7 @@ namespace Werewolf_Node
                     if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
                     {
                         //just pick a vg, and turn them to CH
-                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
+                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x) && (!FullCupid || x != IRole.Cupid));
                         rolesToAssign[vg] = IRole.CultistHunter;
                     }
 
