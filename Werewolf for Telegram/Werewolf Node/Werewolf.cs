@@ -1,3 +1,5 @@
+using Database;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +9,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Database;
-using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InlineKeyboardButtons;
@@ -55,7 +55,7 @@ namespace Werewolf_Node
         private List<int> _joinButtons = new List<int>();
         private int _playerListId = 0;
         public bool RandomMode = false;
-        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull;
+        public bool ShowRolesOnDeath, AllowTanner, AllowFool, AllowCult, SecretLynch, ShowIDs, AllowNSFW, AllowThief, ThiefFull, AllowArsonist, BurningOverkill;
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
@@ -175,6 +175,8 @@ namespace Werewolf_Node
                         ShowRolesOnDeath = Program.R.Next(100) < 50;
                         SecretLynchShowVotes = Program.R.Next(100) < 50;
                         SecretLynchShowVoters = Program.R.Next(100) < 50;
+                        AllowArsonist = Program.R.Next(100) < 50;
+                        BurningOverkill = Program.R.Next(100) < 1;
                         var r = Program.R.Next(100);
                         if (r < 33)
                             ShowRolesEnd = "None";
@@ -198,6 +200,8 @@ namespace Werewolf_Node
                         ShowRolesOnDeath = DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
                         SecretLynchShowVotes = DbGroup.HasFlag(GroupConfig.SecretLynchShowVotes);
                         SecretLynchShowVoters = DbGroup.HasFlag(GroupConfig.SecretLynchShowVoters);
+                        AllowArsonist = DbGroup.HasFlag(GroupConfig.AllowArsonist);
+                        BurningOverkill = DbGroup.HasFlag(GroupConfig.BurningOverkill);
                     }
 
 
@@ -294,7 +298,7 @@ namespace Werewolf_Node
                     };
                 }
                 Language = Locale.Language;
-                
+
                 // also load fallback file
                 using (var db = new WWContext())
                 {
@@ -989,6 +993,15 @@ namespace Werewolf_Node
                     }
                 }
 
+                if (choice == "-2" && qtype == QuestionType.Douse && player.PlayerRole == IRole.Arsonist && player.CurrentQuestion.QType == QuestionType.Douse)
+                {
+                    player.Choice = -2;
+                    Program.MessagesSent++;
+                    ReplyToCallback(query,
+                        GetLocaleString("ChoiceAccepted") + $" - {GetLocaleString("Spark")}");
+                    player.CurrentQuestion = null;
+                    return;
+                }
 
                 var target = Players.FirstOrDefault(x => player.CurrentQuestion.QType == QuestionType.Kill2 ? x.Id == player.Choice2 : x.Id == player.Choice);
                 if (target == null)
@@ -1361,12 +1374,12 @@ namespace Werewolf_Node
                         else
                         {
                             //Thread.Sleep(4500); //wait a moment before sending
-                             msg +=
-                                Players.OrderBy(x => x.TimeDied)
-                                    .Aggregate("",
-                                        (current, p) =>
-                                            current +
-                                            ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                            msg +=
+                               Players.OrderBy(x => x.TimeDied)
+                                   .Aggregate("",
+                                       (current, p) =>
+                                           current +
+                                           ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                             //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                         }
                     }
@@ -1457,6 +1470,10 @@ namespace Werewolf_Node
                         break;
                     case IRole.Spumpkin:
                         break;
+                    case IRole.Arsonist:
+                        if (AllowArsonist)
+                            rolesToAssign.Add(role);
+                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
@@ -1490,7 +1507,7 @@ namespace Werewolf_Node
 
                 var balanced = false;
                 var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf };
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist };
 
                 do
                 {
@@ -1541,6 +1558,9 @@ namespace Werewolf_Node
                     )
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it
+
+                    if (rolesToAssign.Contains(IRole.SerialKiller) && rolesToAssign.Contains(IRole.Arsonist))
+                        balanced = balanced && BurningOverkill;
 
                     //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
                     if (!Chaos)
@@ -3153,6 +3173,8 @@ namespace Werewolf_Node
 
             /* Role priority:
              * Snow Wolf
+             * Grave Digger
+             * Arsonist
              * Wolves
              * Serial Killer
              * Cultist Hunter
@@ -3167,9 +3189,7 @@ namespace Werewolf_Node
              * Thief
              */
 
-            #region Wolf Night
             var ga = Players.FirstOrDefault(x => x.PlayerRole == IRole.GuardianAngel & !x.IsDead && x.Choice != 0 && x.Choice != -1);
-
             #region Snow Wolf
             var snowwolf = Players.FirstOrDefault(x => x.PlayerRole == IRole.SnowWolf & !x.IsDead);
 
@@ -3243,6 +3263,7 @@ namespace Werewolf_Node
                             break;
                         case IRole.GuardianAngel:
                             Send(GetLocaleString("GAFrozen"), target.Id);
+                            ga = null;
                             break;
                         case IRole.Thief:
                             if (ThiefFull)
@@ -3268,7 +3289,69 @@ namespace Werewolf_Node
             }
             #endregion
 
-            #region Other wolves
+            #region Arsonist
+            var arsonist = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Arsonist);
+            if (arsonist != null)
+            {
+                if (arsonist.Choice == -2) //Spark
+                {
+                    foreach (var burn in Players.Where(x => !x.IsDead && x.Doused))
+                    {
+                        if (ga?.Choice == burn.Id)
+                        {
+                            Send(GetLocaleString("GuardSavedYouFromFire"), burn.Id);
+                            Send(GetLocaleString("GuardSavedFromFire", burn.GetName()), ga.Id);
+                            burn.Doused = false;
+                        }
+                        else
+                        {
+                            burn.IsDead = true;
+                            burn.DiedLastNight = true;
+                            burn.TimeDied = DateTime.Now;
+                            burn.KilledByRole = IRole.Arsonist;
+                            DBKill(arsonist, burn, KillMthd.Burn);
+                            burn.Doused = false;
+                        }
+                    }
+                }
+                else
+                {
+                    var doused = Players.FirstOrDefault(x => !x.IsDead && x.Id == arsonist.Choice);
+                    if (doused != null)
+                    {
+                        if (doused.PlayerRole == IRole.SerialKiller)
+                        {
+                            arsonist.IsDead = true;
+                            arsonist.DiedLastNight = true;
+                            arsonist.KilledByRole = IRole.SerialKiller;
+                            arsonist.DiedByVisitingKiller = true;
+                            arsonist.TimeDied = DateTime.Now;
+                            DBKill(doused, arsonist, KillMthd.VisitKiller);
+                        }
+                        else
+                        {
+                            if (doused.PlayerRole == IRole.GraveDigger && doused.DugGravesLastNight > 0 && Program.R.Next(100) < 20 + (30 - (30 * Math.Pow(0.5, doused.DugGravesLastNight - 1))))
+                            {
+                                arsonist.IsDead = true;
+                                arsonist.DiedLastNight = true;
+                                arsonist.KilledByRole = IRole.GraveDigger;
+                                arsonist.TimeDied = DateTime.Now;
+                                DBKill(doused, arsonist, KillMthd.FallGrave);
+                                Send(GetLocaleString("ArsonistFell", doused.GetName()), arsonist.Id);
+                                Send(GetLocaleString("ArsonistFellDigger", arsonist.GetName()), doused.Id);
+                            }
+                            else
+                            {
+                                doused.Doused = true;
+                                Send(GetLocaleString("Doused", doused.GetName()), arsonist.Id);
+                            }
+                        }
+                    }
+                }
+            }
+            #endregion
+
+            #region Wolf Night - Non-snow wolves
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
@@ -3391,7 +3474,7 @@ namespace Werewolf_Node
                                             DBKill(target, wolfFell, KillMthd.FallGrave);
                                         }
                                         else foreach (var wolf in voteWolves)
-                                            Send(GetLocaleString("GraveDiggerNotHome", target.GetName()), wolf.Id);
+                                                Send(GetLocaleString("GraveDiggerNotHome", target.GetName()), wolf.Id);
                                     }
                                     break;
                                 case IRole.Cursed:
@@ -3664,7 +3747,6 @@ namespace Werewolf_Node
                 }
             }
             WolfCubKilled = false;
-            #endregion
             #endregion
 
             #region Serial Killer Night
@@ -4175,7 +4257,7 @@ namespace Werewolf_Node
                                     harlot.RoleModel = target.Id; //store who they visited
                                     DBKill(target, harlot, KillMthd.VisitVictim);
                                 }
-                                else if (target.PlayerRole == IRole.GraveDigger && target.DugGravesLastNight > 0) 
+                                else if (target.PlayerRole == IRole.GraveDigger && target.DugGravesLastNight > 0)
                                 {
                                     var fallChanceGood = (20 + (30 - (30 * Math.Pow(0.5, target.DugGravesLastNight - 1)))) / 2;
                                     if (Program.R.Next(100) < fallChanceGood)
@@ -4355,6 +4437,11 @@ namespace Werewolf_Node
                     else if (save.DiedLastNight)
                     {
                         Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
+                    }
+                    else if (save.Doused)
+                    {
+                        Send(GetLocaleString("CleanDoused", save.GetName()), ga.Id);
+                        save.Doused = false;
                     }
 
                     //check for save's role, even if they weren't attacked!
@@ -4564,6 +4651,7 @@ namespace Werewolf_Node
                                 msg = GetLocaleString("ChemistSuccessPublic", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                             }
                         }
+                        //killed by visiting grave digger
                         else if (p.KilledByRole == IRole.GraveDigger)
                         {
                             switch (p.PlayerRole)
@@ -4583,6 +4671,11 @@ namespace Werewolf_Node
                                     msg = GetLocaleString("DefaultFellPublic", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
                             }
+                        }
+                        //killed by arsonist
+                        else if (p.KilledByRole == IRole.Arsonist)
+                        {
+
                         }
                         //died by visiting
                         else
@@ -5452,6 +5545,11 @@ namespace Werewolf_Node
                             qtype = QuestionType.Freeze;
                         }
                         break;
+                    case IRole.Arsonist:
+                        targets = targetBase.ToList();
+                        msg = GetLocaleString("AskArsonist");
+                        qtype = QuestionType.Douse;
+                        break;
                     case IRole.GraveDigger:
                         player.DugGravesLastNight = DiedSinceLastGrave.Count;
                         player.Choice = -1;
@@ -5481,6 +5579,8 @@ namespace Werewolf_Node
                 var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)qtype}|{x.Id}") }).ToList();
                 if ((player.PlayerRole != IRole.WildChild && player.PlayerRole != IRole.Cupid && player.PlayerRole != IRole.Doppelgänger && player.PlayerRole != IRole.Thief) || (player.PlayerRole == IRole.Thief && ThiefFull))
                     buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|{(int)qtype}|-1") });
+                if (player.PlayerRole == IRole.Arsonist)
+                    buttons.Add(new[] { new InlineKeyboardCallbackButton(GetLocaleString("Spark"), $"vote|{Program.ClientId}|{Guid}|{(int)qtype}|-2") });
 
                 SendMenu(buttons, player, msg, qtype);
                 Thread.Sleep(100);

@@ -91,6 +91,8 @@ namespace Werewolf_Node.Models
         public string Name { get; set; }
         public bool InLove { get; set; } = false;
         public int LoverId { get; set; } = 0;
+        public bool Doused { get; set; } = false;
+        public bool Burning { get; set; } = false;
         public int DBPlayerId { get; set; } = 0;
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
@@ -157,13 +159,13 @@ namespace Werewolf_Node.Models
         //and once again, new roles! :D
         Troublemaker, Chemist, SnowWolf,
         //who would have guessed... more roles!
-        GraveDigger, Chef
+        GraveDigger, Chef, Arsonist
     }
 
     public enum ITeam
     {
         Village, Cult, Wolf, Tanner,
-        Neutral, SerialKiller, Lovers,
+        Neutral, SerialKiller, Lovers, Arsonist,
         SKHunter,
         NoOne, Thief
     }
@@ -171,6 +173,6 @@ namespace Werewolf_Node.Models
     public enum KillMthd
     {
         None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller, Chemistry, FallGrave,
-        Spotted
+        Spotted, Burn, VisitBurning
     }
 }
