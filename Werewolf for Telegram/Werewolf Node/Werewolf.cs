@@ -3306,6 +3306,7 @@ namespace Werewolf_Node
             {
                 if (arsonist.Choice == -2) //Spark
                 {
+                    Send(GetLocaleString("Sparked"), arsonist.Id);
                     foreach (var burn in Players.Where(x => !x.IsDead && x.Doused))
                     {
                         if (ga?.Choice == burn.Id)
@@ -4861,6 +4862,10 @@ namespace Werewolf_Node
                                         msg = GetLocaleString("SnowFrozeKiller", p.GetName());
                                     else // died from hunter
                                         msg = GetLocaleString("SnowFrozeHunter", p.GetName());
+                                    break;
+                                case IRole.Arsonist:
+                                    //can only die by visiting sk
+                                    msg = GetLocaleString("ArsonistVisitKiller", p.GetName());
                                     break;
                                 case IRole.GraveDigger:
                                     if (p.KilledByRole == IRole.SerialKiller)
