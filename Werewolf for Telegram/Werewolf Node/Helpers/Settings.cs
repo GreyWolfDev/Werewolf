@@ -102,6 +102,7 @@ namespace Werewolf_Node
             ThiefStealChance = 50,
             ChemistSuccessChance = 50,
             GraveDiggerConversionChance = 30,
+            AugurConversionChance = 40,
 #else
             TannerChance = 40,
             FoolChance = 20,
@@ -127,6 +128,7 @@ namespace Werewolf_Node
             ThiefStealChance = 100,
             ChemistSuccessChance = 50,
             GraveDiggerConversionChance = 30,
+            AugurConversionChance = 40,
 #endif
 
             GameJoinTime = 180,

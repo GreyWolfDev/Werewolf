@@ -114,7 +114,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Harlot:
                     return 6;
                 case IRole.Seer:
-                    return 7 - allRoles.Count(x => x == IRole.Lycan) - (allRoles.Count(x => x == IRole.WolfMan || x == IRole.Chef) * 2);
+                    return 7 - allRoles.Count(x => x == IRole.Lycan) - (allRoles.Count(x => x == IRole.WolfMan) * 2);
                 case IRole.Traitor:
                     return 0;
                 case IRole.GuardianAngel:
@@ -169,8 +169,8 @@ namespace Werewolf_Node.Helpers
                     return 3;
                 case IRole.WolfMan:
                     return 1;
-                case IRole.Chef:
-                    return 1;
+                case IRole.Augur:
+                    return 5;
                 case IRole.Pacifist:
                     return 3;
                 case IRole.WiseElder:

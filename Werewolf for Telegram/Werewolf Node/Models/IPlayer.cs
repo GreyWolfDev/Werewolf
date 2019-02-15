@@ -96,6 +96,10 @@ namespace Werewolf_Node.Models
         public int DBPlayerId { get; set; } = 0;
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
+        /// <summary>
+        /// Currently only used for augur
+        /// </summary>
+        public List<IRole> SawRoles { get; set; }
 
         public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;
@@ -159,7 +163,7 @@ namespace Werewolf_Node.Models
         //and once again, new roles! :D
         Troublemaker, Chemist, SnowWolf,
         //who would have guessed... more roles!
-        GraveDigger, Chef, Arsonist
+        GraveDigger, Augur, Arsonist
     }
 
     public enum ITeam

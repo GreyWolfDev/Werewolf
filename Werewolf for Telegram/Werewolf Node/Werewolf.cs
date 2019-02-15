@@ -60,6 +60,7 @@ namespace Werewolf_Node
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
         private readonly List<IPlayer> DiedSinceLastGrave = new List<IPlayer>();
+        private List<IRole> PossibleRoles;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -1528,6 +1529,7 @@ namespace Werewolf_Node
 
                     //determine which roles should be assigned
                     rolesToAssign = GetRoleList(count);
+                    PossibleRoles = rolesToAssign;
                     rolesToAssign.Shuffle();
                     rolesToAssign = rolesToAssign.Take(count).ToList();
 
@@ -3193,6 +3195,7 @@ namespace Werewolf_Node
              * Sorcerer
              * Fool
              * Oracle
+             * Augur
              * Guardian Angel
              * Thief
              */
@@ -4089,6 +4092,15 @@ namespace Werewolf_Node
                                             Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
                                     }
                                     break;
+                                case IRole.Arsonist:
+                                    if (target.Choice == -1 || target.Frozen)
+                                        ConvertToCult(target, voteCult, 0);
+                                    else
+                                    {
+                                        foreach (var c in voteCult)
+                                            Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
+                                    }
+                                    break;
                                 case IRole.Seer:
                                     ConvertToCult(target, voteCult, Settings.SeerConversionChance);
                                     break;
@@ -4145,6 +4157,9 @@ namespace Werewolf_Node
                                         foreach (var c in voteCult)
                                             Send(GetLocaleString("CultVisitEmpty", newbie.GetName(), target.GetName()), c.Id);
                                     }
+                                    break;
+                                case IRole.Augur:
+                                    ConvertToCult(target, voteCult, Settings.AugurConversionChance);
                                     break;
                                 default:
                                     ConvertToCult(target, voteCult);
@@ -4390,10 +4405,6 @@ namespace Werewolf_Node
                                 role = IRole.Wolf;
                                 target.Trustworthy = true;
                                 break;
-                            case IRole.Chef:    //technically, he could use that knife... but he doesn't!
-                                role = IRole.Chef;
-                                target.Trustworthy = true;
-                                break;
                             case IRole.Lycan: //sneaky wuff
                                 role = IRole.Villager;
                                 break;
@@ -4485,6 +4496,16 @@ namespace Werewolf_Node
             }
 
 
+            #endregion
+
+            #region Augur
+            var augur = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Augur);
+            if (augur != null)
+            {
+                PossibleRoles.Shuffle();
+                var roleToSee = PossibleRoles.FirstOrDefault(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x));
+                Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
+            }
             #endregion
 
             #region GA Night

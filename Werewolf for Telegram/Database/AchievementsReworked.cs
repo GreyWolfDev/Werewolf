@@ -144,7 +144,7 @@ namespace Database
         DemotedByTheDeath = 64,
         [Display(Name = "Wasted Silver"), Description("As the blacksmith, spread your silver dust the same day that the sandman sings")]
         WastedSilver = 65,
-        [Display(Name = "Trustworthy!"), Description("As the wolf man or chef, survive and win the game after being checked by seer")]
+        [Display(Name = "Trustworthy!"), Description("As the wolf man, survive and win the game after being checked by seer")]
         Trustworthy = 66,
         [Display(Name = "Deep Love"), Description("As the doppelgänger, choose your lover as role model. What a deep love &lt;3")]
         DeepLove = 67,
