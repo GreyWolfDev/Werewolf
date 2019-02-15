@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
 	<language name="简体中文" base="简体中文" variant="SFW"/>
-	<!--Last Update 最后更新2019-2-6-->
+	<!--Last Update 最后更新2019-2-8-->
+	<!-- 更新日志-->
+		<!-- 2019-2-6 正式补全翻译-->
+		<!-- 2019-2-8 调整翻译-->
 	<string key="NotInGame">
 		<value>你现在似乎并不在这场游戏中……</value>
 	</string>
@@ -141,7 +144,7 @@
 		<value>你想为谁施洗？</value>
 	</string>
 	<string key="DiscussWith"><!--Leave the leading spaces here please-->
-		<value>		请确定你已与 {0} 商量。</value>
+		<value>请确定你已与 {0} 商量。</value>
 	</string>
 	<string key="And"> <!--this is paired with "DiscussWith".		again, leave the spaces!-->
 		<value> 和 </value>
@@ -995,22 +998,21 @@
     <value>你成功加入了{0}的游戏</value>
   </string>
   <string key="Ping2">
-    <value>ping通时间 {0}</value>
+    <value>Pong！ping通时间 {0}</value>
   </string>
   
   <string key="TannerEnd">
     <!-- 0 - Tanner name -->
-    <value>胜利还是属于死亡，{0} 在阳光中走入了烈火，世界最终会归尽，圣战者胜。</value>
+    <value>胜利还是属于死亡，{0} 在清晨的阳光中走入了烈火，世界最终会归尽，圣战者胜。</value>
     <value>清晨，死寂的村庄里，雾气刚散，而{0} 的房子却和{0} 一起燃烧在烈焰中。</value>
   </string>
   <string key="SorcererEnd">
     <!-- 0 - Sorcerer name -->
-    <value>清晨的雾气消散，{0}离开村庄，寻找下一个繁盛的村庄。</value>
+    <value>清晨的雾气消散，{0}离开这个空无一人村庄，寻找下一个繁盛的村庄。</value>
     <value>清晨的雾气消散了，死寂的村庄中，迎来第一缕阳光。但世界还会继续孤僻地运转，村庄已死，但{0}离开了村庄，离开了他的狼群，寻找下一个即将灭亡的村庄。</value>
   </string>
   <string key="WhatVariantVets">
-    <value>什么变种?\n现在: {0}\nAs you have played over 500 games you can also join: </value>
-    <!-- 未完成-->
+    <value>什么变种?\n现在: {0}\n当你进行500次游戏，才可以加入(As you have played over 500 games you can also join): </value>
   </string>
    <string key="Skip">
     <value>跳过</value>
@@ -1059,16 +1061,16 @@
     <value>进入游戏时展示ID</value>
   </string>
   <string key="ShowIDsQ">
-    <value>进入游戏时展示玩家?\n现在: {0}</value>
+    <value>进入游戏时展示玩家ID?\n现在: {0}</value>
   </string>
   <string key="ShowIDsA">
     <value>{0} IDs</value>
   </string>
 
    <string key="RoleInfoMayor">
-    <value>你是市长。一旦你透露自己身份，你在投票处决中将计算两次。你在村民阵营</value>  </string>
+    <value>你是市长。一旦你透露自己身份，你的权重将上升，投票处决中将计算两票。你在村民阵营</value>  </string>
   <string key="RoleInfoPrince">
-    <value>你是秘密公主，当你被投票处决时，你可以逃避一次处决。</value>
+    <value>你是秘密公主，当你被投票处决时，你能以皇家的权力，逃避一次处决。</value>
   </string>
   <string key="RoleInfoClumsyGuy">
     <value>你是傻瓜，你投票时总是投不准:你有50%几率不小心投给其他人。但你还是属于村民阵营的。</value>
@@ -1080,7 +1082,7 @@
     <value>你是铁匠，你有一代祖传的银粉，它可以撒在村里，防止狼人攻击一次。（村民阵营）</value>
   </string>
   <string key="RoleInfoAlphaWolf">
-    <value>你是源狼，狼人之源。只要你活着，被你咬过的，有20%的几率变成狼人。</value>
+    <value>你是源狼，一切狼人之源，一切的开始。只要你活着，被你咬过的，有20%的几率变成狼人。</value>
   </string>
   <string key="RoleInfoWolfCub">
     <value>你是幼狼，和狼人一样，你会每晚攻击一个村民，但是如果你死了，出于悲愤，那晚其它狼会再攻击一个人。</value>
@@ -1096,7 +1098,7 @@
     <value>{0} 走上前，亮出了他的市长证，从此，{0}的投票将以两票计算。</value>
   </string>
   <string key="AskMayor">
-   <value>点击 "揭露自己身份" 以报告你的身份--市长</value>
+   <value>点击 "揭露自己身份" 以揭示你的身份--市长</value>
   </string>
   <string key="Reveal">
    <value>揭露自己身份</value>
@@ -1142,13 +1144,13 @@
   </string>
   
   <string key="AboutMayor">
-    <value>你是市长。一旦你透露自己身份，你在投票处决中将计算两次。你在村民阵营</value>
+    <value>市长，一旦你透露自己身份，你在投票处决中将计算两次。你在村民阵营</value>
   </string>
   <string key="AboutPrince">
-    <value>你是秘密公主，当你被投票处决时，你可以逃避一次处决。</value>
+    <value>秘密公主，当你被投票处决时，你可以逃避一次处决。</value>
   </string>
   <string key="AboutSorcerer">
-    <value>你是黑暗法师:夜里你总会而那些生物呆在一起。夜里你可以用你的能力，找到狼或先知。你属于狼人阵营。</value>
+    <value>黑暗法师:夜里你总会而那些生物呆在一起。夜里你可以用你的能力，找到狼或先知。你属于狼人阵营。</value>
   </string>
   <string key="AboutClumsy">
     <value>你是傻瓜，你投票时总是投不准:你有50%几率不小心投给其他人。但你还是属于村民阵营的。</value>
@@ -1182,60 +1184,65 @@
     <value>村民阵营</value>
   </string>
   <string key="NeutralTeam" deprecated="true">
-    <value>精神病院</value>
+    <value>中立方</value>
   </string>
   <string key="SerialKillerTeam" deprecated="true">
     <value>变态杀人狂阵营</value>
+    <value>精神病院</value>
   </string>
   <string key="CultTeam" deprecated="true">
     <value>邪教教会</value>
   </string>
   <string key="TannerTeam" deprecated="true">
     <value>圣战者们</value>
+    <value>死神（雾）</value>
   </string>
   
   <string key="VillageTeamEnd">
     <value>村民阵营</value>
   </string>
   <string key="NeutralTeamEnd">
-    <value>精神病院</value>
+    <value>中立方</value>
   </string>
   <string key="WolfTeamEnd">
     <value>狼人阵营</value>
   </string>
   <string key="SerialKillerTeamEnd">
     <value>变态杀人狂阵营</value>
+    <value>精神病院</value>
   </string>
   <string key="CultTeamEnd">
     <value>邪教教会</value>
   </string>
   <string key="TannerTeamEnd">
     <value>圣战者们</value>
+    <value>死神（雾）</value>
   </string>
+  
   <string key="CultConvertWolf">
-    <value>邪教会让 {0} 劝说 {1}入会, 但除了{0} 的头，{0}再也找不到了...</value>
+    <value>邪教会让 {0} 劝说 {1}入会, 但似乎{0} 遭遇不测，{0}再也没回来了...</value>
   </string>
   <string key="HarlotFuckedKilledPublic">
     <!-- used when Harlot visit's SK's victim, and dies -->
     <!--{0} = Harlot name, {1} = SK's victim name-->
-    <value>{0} 溜进{1}的家， 准备搜查...然而似乎他再也没能出去。</value>
+    <value>{0} 溜进{1}的家， 准备搜查...然而似乎他再也没能出去，而且几分钟后，{0} 的头从窗子里飞出来了(#ﾟДﾟ)。</value>
   </string>
   
   <!--New Death Strings 05 DEC-->
   <string key="ApprenticeSeerEaten">
-    <value>村民发现先知学徒 {0}的心脏不在了...一路走好 </value>
+    <value>新闻：今日，村民们发现先知学徒 {0}的心脏不在了...一路走好 </value>
   </string>
   <string key="BlacksmithKilled">
-    <value>村民发展铁匠{0}的肝不见了... 一路走好</value>
+    <value>新闻：今日，村民们发展铁匠{0}的肝不见了... 一路走好</value>
   </string>
   <string key="CultistKilled">
-    <value>次日，邪教徒{0}发现自己的肾不见了（雾） ...</value>
+    <value>次日清晨，邪教徒{0}发现自己的肾不见了（雾） ...</value>
   </string>
   <string key="CupidKilled">
     <value>天哪，不，我的上帝，看看发生了什么。我们的爱神{0}的心不见了，噢，可怜的孩子。伙计们，让我们为她默哀一分钟，一路走好！</value>
   </string>
   <string key="DrunkKilled">
-    <value>次日，村民们发现酒鬼 {0} 的肝和一把刀在他家门口。 由于多年的酗酒，变态杀人狂都不要他的肝了！</value>
+    <value>新闻：酒鬼 {0} 的肝和一把刀发现在他家门口。 由于多年的酗酒，似乎变态杀人狂都不要他的肝了！刑警温馨提示您：珍爱生命，远离酗酒！</value>
   </string>
    <string key="GuardianAngelKilled">
     <value>新闻：守卫{0} 惨死在自己家中，五脏六腑不翼而飞，其他细节警方拒绝透露。</value>
@@ -1248,17 +1255,17 @@
   </string>
   <string key="PrinceKilled">
     <value>新闻：士兵封锁{0}住宅，警方开始调查此事。据称，{0}是秘密公主，目前已被变态杀人狂杀害。</value>
-    <value>新闻：水库打捞起一无头死尸，身上有皇家戒指。结果法医鉴定，认为是秘密公主{0}，但皇家成员，尤其是王子，拒绝承认此事。</value>
+    <value>新闻：水库打捞起一无头死尸，身上有皇家戒指。结果法医鉴定，认为是秘密公主{0}，但皇家成员，尤其是国王，拒绝承认此事。</value>
   </string>
   <string key="SeerKilled">
-    <value>震惊！{0} 的大脑不易而飞。</value>
+    <value>震惊！先知{0} 的大脑不易而飞。</value>
   </string>
   <string key="SorcererEaten">
     <value>震惊！黑暗法师{0} 惨死街头，周围有狼人痕迹。</value>
     <value>新闻：震惊黑暗法师{0}惨死在街头，村民认为和狼人近期活动有关</value>
   </string>
   <string key="WildChildEaten">
-    <value>新闻：震惊幼狼{0} 惨死在街头，村民认为和狼人近期活动有关</value>
+    <value>新闻：震惊！！！幼狼{0} 惨死在街头，村民认为和狼人近期活动有关</value>
   </string>
   <string key="SerialKillerKilledCH">
     <!--used when CH visits SK-->
@@ -1297,7 +1304,7 @@
   </string>
   <string key="CHKillsCultistEnd">
     <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>村里只剩{1} 和 {0} 了，可惜最后{0}的邪教仪式 还是被发现了{1} </value>
+    <value>村里只剩{1} 和 {0} 了，可惜最后{0}的邪教仪式 还是被{1} 发现了</value>
   </string>
 
   <!-- Extend time -->
@@ -1329,7 +1336,7 @@
     <value>最大延长时间 {0} 秒</value>
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
-    <value>!{0} 是酒鬼，现在你是酒鬼，你不能袭击{1}...</value>
+    <value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了，所以好好上床睡觉吧，今晚哪儿都去不了，你不能袭击{1}了！（难道你打算这样醉醺醺地去吗？）</value>
   </string>
   <string key="JoinButton">
     <value>加入游戏</value>
@@ -1351,7 +1358,7 @@
     <value>找不到群组，请在群组中发送这个命令以停止等待（Please run this command in the group you want to stop waiting for）,或添加链接，ID，用户名在命令后。</value>
   </string>
   <string key="DeletedFromWaitList">
-    <value>你已经从wait list for {0}中移除了</value>
+    <value>你已经从等待清单（wait list for {0}）中移除了</value>
   </string>
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
@@ -1372,29 +1379,29 @@
    </string>
  
   	<string key="RoleInfoThief">
-    <value>你是小偷！\n 默认情况：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民。</value>
+    <value>你是小偷！\n 小偷模式-默认：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民。</value>
   </string>
   <string key="RoleInfoThiefFull">
-    <value>你是小偷！\n  [Full Thief]（小偷模式-完整）：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力）</value>
+    <value>你是小偷！\n  小偷模式-完整(Full Thief)：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力）</value>
   </string>
   <string key="Thief">
     <value>👤小偷</value>
   </string>
   <string key="AboutThief">
-    <value>默认情况：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民\n  [Full Thief]（小偷模式-完整）：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力）</value>
+    <value>小偷模式-默认：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民\n小偷模式-完整(Full Thief)：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力）</value>
   </string>
   
     <string key="CultistsList">
-	<value>目前被诅咒的名单The cult members are : {0}</value>
+	<value>目前邪教教会成员: {0}</value>
   </string>
   <string key="SnowWolf">
 	<value>❄🐺雪狼</value>
   </string>
   <string key="RoleInfoSnowWolf">
-    <value>你是雪狼：源自雪山，特立独行。拥有冻结他人夜间能力的能力，但不久后他们将对你免疫，不能再冻结能力了。</value>
+    <value>你是雪狼：源自雪山，特立独行。拥有冻结他人夜间能力的能力，但不久后他们将对你免疫，你不再能冻结他的能力了。</value>
   </string>
   <string key="AboutSnowWolf">
-    <value>雪狼：源自雪山，特立独行。拥有冻结他人能力的能力，但不久后他们将对你免疫，不能再冻结能力了。</value>
+    <value>雪狼：源自雪山，特立独行。拥有冻结他人能力的能力，但不久后他们将对你免疫，不再能冻结他的能力了。</value>
   </string>
   <string key="AskFreeze">
 	<value>你想冻结谁的能力？</value>
@@ -1412,10 +1419,10 @@
     <value>{0}死了，你变身成了 幼狼. 你的队友： {1} 以及雪狼：{2}</value>
   </string>
   <string key="DGTransformToWolfWithSnow">
-    <value>{0}死了，你变身成了 狼人（werewolf） 你的队友： {1} 以及雪狼：{2}</value>
+    <value>{0}死了，你变身成了 狼人(werewolf) 你的队友： {1} 以及雪狼：{2}</value>
   </string>
   <string key="DGTransformToLycanWithSnow">
-    <value>{0}死了，你变身成了 狼人（ Lycan）. 你的队友： {1} 以及雪狼：{2}</value>
+    <value>{0}死了，你变身成了 狼人( Lycan). 你的队友： {1} 以及雪狼：{2}</value>
   </string>
   <string key="DGTransformToSnowWolf">
     <value>{0}死了，你变身成了 雪狼. 你的队友（if any）： {1} </value>
@@ -1431,24 +1438,24 @@
     <value>{0} 不再是你的同伙了 ， {1} 现在变成了新雪狼！</value>
   </string>
   <string key="HarlotFrozen">
-    <value>当你刚出门时，一阵寒风，把你冻住了。</value>
+    <value>当你刚出门，进行调查时，一阵寒风，把你冻住了。</value>
   </string>
   <string key="ChemistFrozen">
     <value>气温骤降，加热器也坏了，你不能合成你的药了。</value>
   </string>
   <string key="CultistFrozen">
-    <value>当你开始举行你的诅咒仪式时，一阵风，把你冻住了。</value>
+    <value>当你开始准备邪教入会仪式事宜时，一阵风，把你冻住了。</value>
   </string>
   <string key="CHFrozen">
-    <value>正当你拔出剑时, 一阵寒风，把你冻住了。You mentally groaned, your limbs aching from being in this position until now... </value>
+    <value>正当你出门，调查最近镇上出现的邪教活动时,，突然来了一阵寒风，把你冻住了，看来今天调查不成了。 </value>
 
   </string>
   <string key="SeeingFrozen">
   <!-- used for seer, fool, oracle and sorcerer -->
-    <value>昨夜降温，太冷了，你只能上床睡觉了，不能做事了。 </value>
+    <value>昨夜降温，太冷了，圣火熄灭了，每天正午才能点燃。看来今天你只能上床睡觉了，不能进行占卜活动了。 </value>
   </string>
   <string key="GAFrozen">
-    <value>昨夜，当你正打算出门时，发现门好像冻住了。你只能待在家。</value>
+    <value>昨夜，当你正打算出门守护时，发现门好像冻住了。你只能待在家。</value>
   </string>
   <string key="SKFrozen">
     <value>当你打算偷肾来氪金时,发现门好像冻住了。你只能待在家,玩“免费游戏”了。</value>
@@ -1467,7 +1474,7 @@
     <value>成功✅，你成功冻结了{0}的能力。</value>
   </string>
   <string key="SnowFrozeKiller">
-	<value>昨夜雪狼{0} 尝试冻结某人的能力，可惜似乎碰到了一些麻烦。很不幸 {0}被杀死了!</value>
+	<value>昨夜雪狼{0} 尝试冻结某人的能力，可惜似乎碰到了一些麻烦。很不幸 最后{0}被杀死了!</value>
   </string>
   <string key="SnowWolfTurnWolf">
 	<value>你似乎是最后的狼了，为了生存，你不得不变成了只普通狼人。</value>
@@ -1513,7 +1520,7 @@
     <value>允许小偷</value>
   </string>
   <string key="ThiefFull">
-    <value>［Thief Full Game］（小偷模式-完整）</value>
+    <value>小偷模式-完整(Thief Full)</value>
   </string>
 
   <string key="RoleInfoWolfMan">
@@ -1527,13 +1534,13 @@
   </string>
 
   <string key="RoleInfoLycan">
-    <value>你是狼人（ lycan ），可以不被先知发现你的身份。</value>
+    <value>你是普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在你可以不被先知发现你的身份。</value>
   </string>
   <string key="Lycan">
-    <value>🐺狼人（ Lycan ）</value>
+    <value>🐺狼人( Lycan )</value>
   </string>
   <string key="AboutLycan">
-    <value>狼人（ lycan ），可以不被先知发现自己身份。</value>
+    <value>狼人( lycan )，普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在可以不被先知发现你的身份。。</value>
   </string>
 
   <string key="RoleInfoOracle">
@@ -1547,13 +1554,13 @@
   </string>
 
   <string key="RoleInfoSandman">
-    <value>你是睡神，可以让所有人入睡，夜间不再活动。（仅一次）</value>
+    <value>你是睡神，可以催眠一切生物，让所有人入睡，夜间不再活动。（仅一次）</value>
   </string>
   <string key="Sandman">
     <value>💤睡神</value>
   </string>
   <string key="AboutSandman">
-    <value> 睡神，可以让所有人入睡，夜间不再活动。（仅一次）</value>
+    <value> 睡神，可以催眠一切生物，让所有人入睡，夜间不再活动。（仅一次）</value>
   </string>
    
     <string key="AskPacifist">
@@ -1603,7 +1610,7 @@
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
     <!-- 1 - new mason's name -->
-    <value>{0} 不再是你的队友 而且{1}现在变成了一个 搬瓦工,。</value>
+    <value>{0} 不再是你的队友 而且{1}现在变成了一个 重症拖延症患者。</value>
   </string>
   <string key="ThiefTransformToMason">
     <!-- 0 - mason collegues's name -->
@@ -1617,7 +1624,7 @@
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
     <!-- 1 - new wolf's name -->
-    <value>{0} 不再是你的队友 而且{1}现在变成了一只狼🐺</value>
+    <value>{0} 不再是你的队友 而且{1}现在变成了一只狼。</value>
   </string>
   <string key="ThiefTransformNewTeammates" deprecated="true">
     <!-- 0 - teammates's name -->
@@ -1625,7 +1632,7 @@
   </string>
   <string key="ThiefEnd">
   <!-- 0 - Thief's name -->
-    <value>小偷{0} 离开了这个小村庄，去追寻 诗和远方 （划去）..更好更多的职业</value>
+    <value>小偷{0} 离开了这个落后的小村庄，去追寻 诗和远方 （划去）..更好更多的职业</value>
   </string>
   <string key="ThiefStealChosen">
   <!-- 0 - target's name -->
@@ -1651,7 +1658,7 @@
     <value>{0} 票投给 {1}.</value>
   </string>
   <string key="SecretLynchShowVotes">
-    <value>秘密 投票处决</value>
+    <value>秘密投票处决</value>
   </string>
   <string key="SecretLynchShowVotesQ">
     <value>秘密处决允许时, 展示最终投票计数?\n 现在: {0}</value>
@@ -1663,7 +1670,7 @@
     <value>秘密 投票者</value>
   </string>
   <string key="SecretLynchShowVotersQ">
-    <value>秘密处决允许时 且 投票计数开启时, 非匿名投票?\n现在: {0}</value>
+    <value>秘密处决允许时 且 投票计数开启时, 允许非匿名投票?\n现在: {0}</value>
   </string>
   <string key="SecretLynchShowVotersA">
     <value>秘密处决允许时 且 投票计数开启时, 投票者姓名将: {0}</value>
@@ -1690,8 +1697,8 @@
   </string>
   
   <string key="SerialKillerKilledYou" isgif="true">
-    <value>午夜十二点，潮湿的空气中传来一阵冰冷的敲门声，DongDongDong...</value>
-	<value>震惊！路上出现无肝死尸...</value>
+    <value>午夜十二点，潮湿的空气中传来一阵冰冷的敲门声，DongDongDong...你打开门，一个黑影站在那里，似乎，似乎手中还拿着一把正在滴血的刀...</value>
+	<value>午夜十二点，空气中传来一阵冰冷的敲门声，DongDongDong...然而，当你打开门时，你突然吸入一种不明气体，立刻晕了过去，身体渐渐失去知觉...RIP，一路走好</value>
   </string>
   
   <string key="ThiefTeamEnd">
@@ -1699,7 +1706,7 @@
   </string>
   
   <string key="StealKiller">
-    <value>你尝试偷取对方能力，但是对方好像不太乐意，于是...一路走好:)</value>
+    <value>你尝试偷取对方能力，但是对方好像不太乐意，于是对方...一路走好:)</value>
   </string>
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
@@ -1710,42 +1717,42 @@
   </string>
   
   <string key="RoleInfoPacifist">
-    <value>你是和平演说者 鈽笍.你可以选择劝说所有人不投票处决一次（仅一次）</value>
+    <value>你是和平演说者，你可以选择进行一次和平演说，劝说所有人不投票处决一次（仅一次）</value>
   </string>
   <string key="Pacifist">
     <value>😇和平演说者</value>
   </string>
   <string key="AboutPacifist">
-    <value>和平演说者 鈽笍.可以选择劝说所有人不投票处决一次（仅一次）</value>
+    <value>和平演说者\n可以选择进行一次和平演说，劝说所有人不投票处决一次（仅一次）</value>
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value>你是长老，你可以躲避狼人的一次攻击（仅一次）。如果枪手或猎人杀死了你，出于慈悲，他们都会失去他们的能力，变成普通村民。</value>
+    <value>你是长老，苍老但睿智。\n你可以躲避狼人的一次攻击（仅一次）。\n如果枪手或猎人杀死了你，出于慈悲，他们都会后悔，失去他们的能力，变成普通村民。</value>
   </string>
   <string key="WiseElder">
     <value>📚长老</value>
   </string>
   <string key="AboutWiseElder">
-    <value>长老，可以躲避狼人的一次攻击（仅一次）。如果枪手或猎人杀死了你，出于慈悲，他们都会失去他们的能力，变成普通村民。</value>
+    <value>长老，苍老但睿智。\n你可以躲避狼人的一次攻击（仅一次）。\n如果枪手或猎人杀死了你，出于慈悲，他们都会后悔，失去他们的能力，变成普通村民。</value>
   </string>
   
     <string key="Troublemaker">
 	<value>👲捣乱者 </value>
   </string>
   <string key="AboutTroublemaker">
-	<value>捣乱者，村里的小阿飞。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
+	<value>捣乱者，小镇里的无业青年，经常闹事情。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
   </string>
   <string key="RoleInfoTroublemaker">
-	<value>捣乱者，村里的小阿飞。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
+	<value>你是捣乱者，小镇里的无业青年，经常闹事情。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
   </string>
   <string key="AskTroublemaker">
-	<value>要找麻烦吗？</value>
+	<value>要去小镇里搞事情吗？</value>
   </string>
   <string key="TroublemakerDoubleLynch">
-	<value>{0},捣乱者开始了他的表演...因此今天将投票处决两次！</value>
+	<value>捣乱者{0},开始在镇上闹事...因此今天将投票处决两次！</value>
   </string>
   <string key="TroubleDoubleLynchNow">
-	<value>由于捣乱者的表演开始了（逃），我们将要投票处决两次。希望有用。</value>
+	<value>由于捣乱者开始在镇上闹事，我们将投票处决两次。希望有用。</value>
   </string>
   
   <string key="Chemist">
@@ -1758,13 +1765,13 @@
 	<value>你是疯狂化学家，拥有两片药，一片毒药，一片是糖。当他们逃出来时，会强制让人吞服其中一片，而他吞服另一片。所以，祝你好运。</value>
   </string>
   <string key="ChemistBrewing">
-	<value>夜深人静，疯狂的化学家开始制药了。</value>
+	<value>夜深人静，疯狂的化学家开始制药了，希望不被人发现。</value>
   </string>
   <string key="AskChemist">
-	<value>今晚谁会成为好客的主人，还是赌博伙伴？</value>
+	<value>今晚你想和谁进行博弈？</value>
   </string>
   <string key="ChemistTargetDead">
-	<value>你要访问的人{0}，似乎——已经死了。</value>
+	<value>你要访问的人{0}，似乎🤔——已经死了。</value>
   </string>
   <string key="ChemistVisitYouSK">
 	<value>你被疯狂化学家{0}拜访了。他用刀强制让你服药，但似乎你随身携带的刀更锋利。</value>
@@ -1773,7 +1780,7 @@
 	<value>你似乎反而被{0}杀死了</value>
   </string>
   <string key="ChemistSKPublic">
-	<value>疯狂化学家{0}在玩毒药与糖的俄罗斯转盘中时，似乎被对方直接杀死了</value>
+	<value>疯狂化学家{0}在玩毒药与糖的俄罗斯转盘中时，似乎对方对他不满，直接杀死他了</value>
   </string>
   <string key="ChemistVisitYouSuccess">
 	<value>你被疯狂化学家拜访了。他用刀强制让你服药。...RIP，一路走好。</value>
@@ -1790,7 +1797,7 @@
 	<value>你被疯狂化学家 {0} 拜访了, 他强制让你吃药片，幸运的是，你似乎吃到的不是毒药!</value>
   </string>
   <string key="ChemistFail">
-	<value>你访问了 {0} 并进行了毒药与糖的俄罗斯转盘。然而，似乎他抽到了糖，而你抽到了毒药。一路走好，希望你下辈子换个好工作...</value>
+	<value>你访问了 {0} 并进行了毒药与糖的俄罗斯转盘。然而，似乎他抽到了糖，而你抽到了毒药。一路走好，希望你下辈子换个好工作😞...</value>
   </string>
   <string key="ChemistFailPublic">
 	<value>疯狂化学家{0} 被发现已经死了！显然，,{0}似乎昨夜抽到了他的毒药...</value>
