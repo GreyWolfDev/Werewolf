@@ -99,7 +99,7 @@ namespace Werewolf_Node.Models
         /// <summary>
         /// Currently only used for augur
         /// </summary>
-        public List<IRole> SawRoles { get; set; }
+        public List<IRole> SawRoles { get; set; } = new List<IRole>();
 
         public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;

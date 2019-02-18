@@ -4697,7 +4697,7 @@ namespace Werewolf_Node
                         KillLover(p);
                 }
                 //notify of arsonist victims separately, if mode is not secret
-                foreach (var p in Players.Where(x => x.DiedLastNight && (secret || (!x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist))))
+                foreach (var p in Players.Where(x => x.DiedLastNight && (secret || !(!x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist))))
                 {
                     //add them to the grave diggers grave list for next night
                     DiedSinceLastGrave.Add(p);
