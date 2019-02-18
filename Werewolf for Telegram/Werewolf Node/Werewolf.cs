@@ -4518,6 +4518,7 @@ namespace Werewolf_Node
                     //if (save != null)
                     //    DBAction(ga, save, "Guard");
                     save.BeingVisitedSameNightCount++;
+                    bool cleanedDoused = false;
                     if (save.WasSavedLastNight)
                     {
                         Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
@@ -4531,6 +4532,7 @@ namespace Werewolf_Node
                     {
                         Send(GetLocaleString("CleanDoused", save.GetName()), ga.Id);
                         save.Doused = false;
+                        cleanedDoused = true;
                     }
 
                     //check for save's role, even if they weren't attacked!
@@ -4580,12 +4582,12 @@ namespace Werewolf_Node
                             }
                             else
                             {
-                                if (!save.WasSavedLastNight && !save.DiedLastNight) //only send if save wasn't attacked
+                                if (!save.WasSavedLastNight && !save.DiedLastNight && !cleanedDoused) //only send if save wasn't attacked
                                     Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             }
                             break;
                         default:
-                            if (!save.WasSavedLastNight && !save.DiedLastNight) //only send if save wasn't attacked
+                            if (!save.WasSavedLastNight && !save.DiedLastNight && !cleanedDoused) //only send if save wasn't attacked
                                 Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
                             break;
                     }
