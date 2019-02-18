@@ -4503,8 +4503,15 @@ namespace Werewolf_Node
             if (augur != null)
             {
                 PossibleRoles.Shuffle();
-                var roleToSee = PossibleRoles.FirstOrDefault(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x));
-                Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
+                if (PossibleRoles.Any(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x)))
+                {
+                    var roleToSee = PossibleRoles.FirstOrDefault(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x));
+                    Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
+                }
+                else
+                {
+                    Send(GetLocaleString("AugurSeesNothing"), augur.Id);
+                }
             }
             #endregion
 

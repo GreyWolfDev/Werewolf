@@ -118,7 +118,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Traitor:
                     return 0;
                 case IRole.GuardianAngel:
-                    return 7;
+                    return 7 + (allRoles.Contains(IRole.Arsonist) ? 1 : 0);
                 case IRole.Detective:
                     return 6;
                 case IRole.Wolf:
