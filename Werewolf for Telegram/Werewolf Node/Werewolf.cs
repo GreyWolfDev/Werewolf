@@ -1697,6 +1697,8 @@ namespace Werewolf_Node
                     case IRole.Detective:
                     case IRole.Gunner:
                     case IRole.Spumpkin:
+                    case IRole.Augur:
+                    case IRole.GraveDigger:
                         p.Team = ITeam.Village;
                         break;
                     case IRole.Doppelgänger:
@@ -1719,6 +1721,9 @@ namespace Werewolf_Node
                         break;
                     case IRole.SerialKiller:
                         p.Team = ITeam.SerialKiller;
+                        break;
+                    case IRole.Arsonist:
+                        p.Team = ITeam.Arsonist;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
