@@ -3306,7 +3306,6 @@ namespace Werewolf_Node
             {
                 if (arsonist.Choice == -2) //Spark
                 {
-                    Send(GetLocaleString("Sparked"), arsonist.Id);
                     foreach (var burn in Players.Where(x => !x.IsDead && x.Doused))
                     {
                         if (ga?.Choice == burn.Id)
