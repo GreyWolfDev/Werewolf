@@ -146,9 +146,11 @@ namespace Werewolf_Control
             reply += "/aboutChemist - " + GetLocaleString("Chemist", lang) + "\n";
             reply += "/aboutSnowWolf - " + GetLocaleString("SnowWolf", lang) + "\n";
             Send(reply, update.Message.From.Id);
+            Thread.Sleep(300);
             reply = "/aboutGraveDigger - " + GetLocaleString("GraveDigger", lang) + "\n";
             reply += "/aboutArsonist - " + GetLocaleString("Arsonist", lang) + "\n";
             reply += "/aboutAugur - " + GetLocaleString("Augur", lang) + "\n";
+            Send(reply, update.Message.From.Id);
         }
     }
 }
