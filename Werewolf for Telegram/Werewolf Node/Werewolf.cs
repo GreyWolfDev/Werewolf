@@ -3472,8 +3472,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     {
                         target.BeingVisitedSameNightCount++;
                         if (ga?.Choice == target.Id &&
-                            !(target.PlayerRole == IRole.Harlot && (target.Choice == 0 || target.Choice == -1 || target.Frozen)) && //doesn't apply to harlot not home
-                            !(target.PlayerRole == IRole.GraveDigger && (target.DugGravesLastNight < 1))) //doesn't apply to grave digger not home
+                            !(target.PlayerRole == IRole.Harlot && !(target.Choice == 0 || target.Choice == -1 || target.Frozen)) && //doesn't apply to harlot not home
+                            !(target.PlayerRole == IRole.GraveDigger && (target.DugGravesLastNight > 0))) //doesn't apply to grave digger not home
                         {
                             foreach (var wolf in voteWolves)
                                 Send(GetLocaleString("GuardBlockedWolf", target.GetName()), wolf.Id);
