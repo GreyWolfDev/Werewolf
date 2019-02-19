@@ -4841,6 +4841,12 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         {
                             switch (p.PlayerRole)
                             {
+                                case IRole.AlphaWolf:
+                                case IRole.Lycan:
+                                case IRole.WolfCub:
+                                case IRole.Wolf:
+                                    msg = GetLocaleString("WolfVisitBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
+                                    break;
                                 default:
                                     msg = GetLocaleString("DefaultVisitBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
