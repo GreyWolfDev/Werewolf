@@ -3465,6 +3465,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         burntWuff.KilledByRole = IRole.Arsonist;
                         burntWuff.DiedLastNight = true;
                         DBKill(arsonist, burntWuff, KillMthd.VisitBurning);
+                        foreach(var wolf in voteWolves)
+                            Send(GetLocaleString("WolvesVisitBurn", target.GetName(), burntWuff.GetName()), wolf.Id);
                         target = null;
                     }
                     else target = Players.FirstOrDefault(x => x.Id == choice && !x.IsDead);
