@@ -3843,7 +3843,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     if (sk.StumbledGrave && Program.R.Next(100) < 50)
                     {
                         oldSkilled = skilled;
-                        skilled = Players.Where(x => x.PlayerRole != IRole.SerialKiller).ElementAt(Program.R.Next(Players.Count - 1));
+                        skilled = Players.Where(x => x.PlayerRole != IRole.SerialKiller && !x.IsDead).ElementAt(Program.R.Next(Players.Count(x => x.PlayerRole != IRole.SerialKiller && !x.IsDead)));
                         Send(GetLocaleString("KillerRandomKill", oldSkilled.GetName(), skilled.GetName()), sk.Id);
                     }
                     skilled.BeingVisitedSameNightCount++;
