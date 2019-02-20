@@ -184,6 +184,8 @@ namespace Database
         TodaysSpecial = 84,
         [Display(Name = "Romeo and Juliet"), Description("Be in love with the tanner, and win by lynching your lover!")]
         RomeoAndJuliet = 85,
+        [Display(Name = "Really bad luck"), Description("As a serial killer, stumble in a grave, then kill someone randomly and get fought off by the guardian angel.")]
+        ReallyBadLuck = 86,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 

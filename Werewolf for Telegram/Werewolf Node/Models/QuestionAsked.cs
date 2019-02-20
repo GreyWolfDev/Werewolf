@@ -31,6 +31,7 @@
         Thief,
         Trouble,
         Chemistry,
-        Freeze
+        Freeze,
+        Douse
     }
 }
