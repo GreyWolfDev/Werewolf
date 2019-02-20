@@ -4824,7 +4824,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 case IRole.AlphaWolf:
                                 case IRole.Lycan:
                                 case IRole.WolfCub:
-                                    msg = GetLocaleString("WolfFellPublic", p.GetName());
+                                    msg = GetLocaleString("WolfFellPublic", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
                                 case IRole.Harlot:
                                 case IRole.Cultist:
