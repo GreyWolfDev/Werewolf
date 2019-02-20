@@ -454,6 +454,7 @@ namespace Werewolf_Control.Handler
                                 var doc = update.Message.Document;
                                 Send(doc.FileId, update.Message.Chat.Id);
                             }
+#if !BETA
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
@@ -462,6 +463,12 @@ namespace Werewolf_Control.Handler
                             {
                                 Commands.AddGif(update.Message);
                             }
+#else
+                            else if (update.Message.Chat.Type == ChatType.Channel && update.Message.Chat.Id == Commands.GifChannelId && update.Message.Caption.Split('|').Length == 2)
+                            {
+                                Commands.AddGif(update.Message);
+                            }
+#endif
                             break;
                         case MessageType.StickerMessage:
                             break;
@@ -1059,7 +1066,7 @@ namespace Werewolf_Control.Handler
 
                     switch (command)
                     {
-                        #region Dev Commands
+#region Dev Commands
                         case "update":
                             Updater.DoUpdate(query);
                             return;
@@ -1172,8 +1179,8 @@ namespace Werewolf_Control.Handler
                             }
                             Bot.Edit(query, query.Message.Text + "\n\n" + msg);
                             return;
-                        #endregion
-                        #region Global Admin Commands
+#endregion
+#region Global Admin Commands
                         case "status":
                             if (args[3] == "null")
                             {
@@ -1276,8 +1283,8 @@ namespace Werewolf_Control.Handler
                             }
                             Helpers.LanguageHelper.UseNewLanguageFile(choice, query.Message.Chat.Id, query.Message.MessageId);
                             return;
-                        #endregion
-                        #region Other Commands
+#endregion
+#region Other Commands
                         case "groups":
                             var variant = args[3];
 
@@ -1365,8 +1372,8 @@ namespace Werewolf_Control.Handler
                                 db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
                             Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", grp.Language, grp.Name));
                             break;
-                        #endregion
-                        #region Config Commands
+#endregion
+#region Config Commands
                         case "lang":
                             //load up each file and get the names
                             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
@@ -1777,7 +1784,7 @@ namespace Werewolf_Control.Handler
                             }
 
                             break;
-                            #endregion
+#endregion
                     }
                 }
                 catch (Exception ex)

@@ -547,8 +547,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
                 _playerListChanged = true;
-
-#if !BETA
+                
                 if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
                 {
                     var cMsg = "Players with custom gif packs:\n";
@@ -585,7 +584,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                     Send(cMsg);
                 }
-#endif
                 Program.Analytics.TrackAsync("gamestart", new { players = Players, playerCount = Players.Count(), mode = Chaos ? "Chaos" : "Normal" }, "0");
                 IsRunning = true;
                 AssignRoles();
@@ -798,7 +796,11 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
                     if (!String.IsNullOrEmpty(user.CustomGifSet))
+#if BETA
+                        p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet).Beta;
+#else
                         p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
+#endif
                     if (user.Achievements == null)
                         user.Achievements = 0;
                     // switch achv system
@@ -904,7 +906,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 Console.WriteLine($"Error in RemovePlayer: {e.Message}");
             }
         }
-        #endregion
+#endregion
 
         #region Communications
         public void HandleReply(CallbackQuery query)
@@ -927,7 +929,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 if (player == null) return;
 
-                #region Reveal at any time roles
+#region Reveal at any time roles
                 if (qtype == QuestionType.Mayor && player.PlayerRole == IRole.Mayor && choice == "reveal" && !player.HasUsedAbility)
                 {
                     player.HasUsedAbility = true;
@@ -956,7 +958,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
                 else if (qtype == QuestionType.Pacifist && player.PlayerRole == IRole.Pacifist && choice == "peace" && player.HasUsedAbility)
                     return;
-                #endregion
+#endregion
 
 
                 if (player.CurrentQuestion == null || player.CurrentQuestion.QType != qtype)
@@ -1467,7 +1469,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
 
         }
-        #endregion
+#endregion
 
         #region Roles
         string GetDescription(IRole en)
@@ -2593,7 +2595,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
 
 
-        #endregion
+#endregion
 
         #region Cycles
 
@@ -3247,7 +3249,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
              */
 
             var ga = Players.FirstOrDefault(x => x.PlayerRole == IRole.GuardianAngel & !x.IsDead && x.Choice != 0 && x.Choice != -1);
-            #region Snow Wolf
+#region Snow Wolf
             var snowwolf = Players.FirstOrDefault(x => x.PlayerRole == IRole.SnowWolf & !x.IsDead);
 
             if (snowwolf != null && snowwolf.Choice != -1 && snowwolf.Choice != 0)
@@ -3344,9 +3346,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     Send(GetLocaleString("SuccessfulFreeze", target.GetName()), snowwolf.Id);
                 }
             }
-            #endregion
+#endregion
 
-            #region Arsonist
+#region Arsonist
             var arsonist = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Arsonist);
             if (arsonist != null)
             {
@@ -3408,9 +3410,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                 }
             }
-            #endregion
+#endregion
 
-            #region Wolf Night - Non-snow wolves
+#region Wolf Night - Non-snow wolves
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
@@ -3830,9 +3832,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
             }
             WolfCubKilled = false;
-            #endregion
+#endregion
 
-            #region Serial Killer Night
+#region Serial Killer Night
 
             //give serial killer a chance!
             var sk = Players.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller & !x.IsDead);
@@ -3900,12 +3902,12 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
             }
 
-            #endregion
+#endregion
 
             if (Players == null)
                 return;
 
-            #region Cult Hunter Night
+#region Cult Hunter Night
 
             //cult hunter
             var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
@@ -3966,9 +3968,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
             }
 
-            #endregion
+#endregion
 
-            #region Cult Night
+#region Cult Night
 
             //CULT
             var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead & !x.Frozen);
@@ -4231,9 +4233,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                 }
             }
-            #endregion
+#endregion
 
-            #region Chemist Night
+#region Chemist Night
             var chemist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chemist & !x.IsDead);
             if (chemist != null && !chemist.Frozen)
             {
@@ -4314,9 +4316,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                 }
             }
-            #endregion
+#endregion
 
-            #region Harlot Night
+#region Harlot Night
 
             //let the harlot know
             var harlot = Players.FirstOrDefault(x => x.PlayerRole == IRole.Harlot & !x.IsDead);
@@ -4422,9 +4424,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
             }
 
-            #endregion
+#endregion
 
-            #region Seer / Fool
+#region Seer / Fool
 
             //let the seer know
             var seers = Players.Where(x => x.PlayerRole == IRole.Seer && !x.IsDead && !x.Frozen);
@@ -4544,9 +4546,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
 
 
-            #endregion
+#endregion
 
-            #region Augur
+#region Augur
             var augur = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Augur);
             if (augur != null)
             {
@@ -4561,9 +4563,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     Send(GetLocaleString("AugurSeesNothing"), augur.Id);
                 }
             }
-            #endregion
+#endregion
 
-            #region GA Night
+#region GA Night
 
             if (ga != null && !ga.Frozen)
             {
@@ -4651,11 +4653,11 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
             }
 
-            #endregion
+#endregion
 
             CheckRoleChanges();
 
-            #region Thief Night
+#region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
             if (thief != null)
             {
@@ -4715,17 +4717,17 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                 }
             }
-            #endregion
+#endregion
 
-            #region Grave Digger Night
+#region Grave Digger Night
             var graveDigger = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead);
             if (graveDigger != null && !graveDigger.Frozen)
             {
                 if (graveDigger.DugGravesLastNight > 0) DiedSinceLastGrave.Clear();
             }
-            #endregion
+#endregion
 
-            #region Night Death Notifications to Group
+#region Night Death Notifications to Group
 
 
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
@@ -4956,7 +4958,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     SendWithQueue(GetLocaleString("NoAttack"));
             }
 
-            #endregion
+#endregion
 
             if (CheckForGameEnd()) return;
 
@@ -5399,7 +5401,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         }
 
 
-        #endregion
+#endregion
 
         #region Send Menus
 
@@ -5785,7 +5787,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
         }
 
-        #endregion
+#endregion
 
         #region Helpers
         public void CleanupButtons()
@@ -6024,7 +6026,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-        #endregion
+#endregion
 
         #region Database Helpers
 
@@ -6571,6 +6573,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
         }
 
-        #endregion
+#endregion
     }
 }
