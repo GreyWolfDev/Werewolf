@@ -5107,6 +5107,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 return false;
 
             if (alivePlayers.Any(x => x.Team == ITeam.Arsonist)) //there is still Arsonist alive, do nothing (surely more than two players)
+                return false;
 
             //is everyone left a cultist?
             if (alivePlayers.All(x => x.Team == ITeam.Cult))
