@@ -124,7 +124,7 @@ namespace Werewolf_Control
         public static InlineKeyboardMarkup GetGifMenu(CustomGifData d)
         {
             var m = new Menu(2);
-            var images = new[] { "Villager Eaten", "Lone Wolf Wins", "Wolf Pack Win", "Village Wins", "Tanner Wins", "Cult Wins", "Serial Killer Wins", "Lovers Win", "No Winner", "Normal Game Start", "Chaos Game Start", "SK Killed" };
+            var images = new[] { "Villager Eaten", "Lone Wolf Wins", "Wolf Pack Win", "Village Wins", "Tanner Wins", "Cult Wins", "Serial Killer Wins", "Lovers Win", "No Winner", "Normal Game Start", "Chaos Game Start", "SK Killed", "Arsonist Wins", "Burn to death" };
             foreach (var img in images)
             {
                 var i = img;
@@ -169,6 +169,12 @@ namespace Werewolf_Control
                             break;
                         case "SK":
                             added = d.SKKilled != null;
+                            break;
+                        case "Arsonist":
+                            added = d.ArsonistWins != null;
+                            break;
+                        case "Burn":
+                            added = d.BurnToDeath != null;
                             break;
                     }
                     i += (added ? " ✅" : " 🚫");
@@ -349,6 +355,12 @@ namespace Werewolf_Control
                         break;
                     case "SK":
                         data.SKKilled = id;
+                        break;
+                    case "Arsonist":
+                        data.ArsonistWins = id;
+                        break;
+                    case "Burn":
+                        data.BurnToDeath = id;
                         break;
                 }
                 data.Approved = null;
