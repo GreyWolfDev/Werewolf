@@ -543,7 +543,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 SendWithQueue(GetLocaleString("StartingGameWait"));
                 _playerListChanged = true;
 
-#if !BETA
                 if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
                 {
                     var cMsg = "Players with custom gif packs:\n";
@@ -580,7 +579,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                     Send(cMsg);
                 }
-#endif
                 Program.Analytics.TrackAsync("gamestart", new { players = Players, playerCount = Players.Count(), mode = Chaos ? "Chaos" : "Normal" }, "0");
                 IsRunning = true;
                 AssignRoles();
@@ -793,7 +791,11 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     user.UserName = u.Username;
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
                     if (!String.IsNullOrEmpty(user.CustomGifSet))
+#if BETA
+                        p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet).Beta;
+#else
                         p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
+#endif
                     if (user.Achievements == null)
                         user.Achievements = 0;
                     // switch achv system
@@ -4230,7 +4232,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             if (!target.Burning && target.PlayerRole == IRole.GraveDigger) Send(GetLocaleString("ThiefFell", target.GetName()), thief.Id);
                             else if (target.PlayerRole == IRole.SerialKiller) Send(GetLocaleString("StealKiller"), thief.Id);
                             break;
-                        case VisitResult.Fail: fail:
+                        case VisitResult.Fail:
+                            fail:
                             Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                             break;
                     }

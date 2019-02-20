@@ -21,6 +21,11 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+#if DEBUG
+        public const long GifChannelId = 0;
+#else
+        public const long GifChannelId = -1001373234685;
+#endif
         [Attributes.Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
@@ -94,7 +99,7 @@ namespace Werewolf_Control
                     " - Gifs containing illegal content\n" +
                     " - Others, at our discretion\n" +
                     "• I will send you a description of the image, to which you will reply (to the message) with the gif you want to use\n" +
-                    "• At this time, custom gif packs ONLY work in @werewolfbot, NOT @werewolfbetabot\n" +
+                    "• Gifs now work in @werewolfbetabot, too!\n" +
                     "\n\n" +
                     "PLEASE NOTE: Changing any gifs will automatically remove the approval for your pack, and an admin will need to approve it again\n" +
                     "Let's begin! Select the situation you want to set a gif for",
@@ -288,7 +293,13 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
+#if !BETA
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == m.From.Id);
+#else
+                var caption = m.Caption;
+                var split = caption.Split('|');
+                var p = db.Players.FirstOrDefault(x => x.TelegramId.ToString() == split[1]);
+#endif
                 var json = p?.CustomGifSet;
 
                 if (String.IsNullOrEmpty(json))
@@ -304,19 +315,23 @@ namespace Werewolf_Control
                 }
 
                 //figure out which gif
-
+#if !BETA
                 var gifchoice = m.ReplyToMessage.Text;
                 gifchoice = gifchoice.Substring(gifchoice.IndexOf("#") + 1);
-				
-				if (m.Document.FileSize >= 1048576) // Maximum size is 1 MB
-				{
-					Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
-					"Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, 
-					replyMarkup: new ForceReply() { Force = true });
-					return;
-				}
-				
+#else
+                var gifchoice = split[0];
+#endif
+
+                if (m.Document.FileSize >= 1048576) // Maximum size is 1 MB
+                {
+                    Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is too large, the maximum allowed size is 1MB.\n\n" +
+                    "Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice,
+                    replyMarkup: new ForceReply() { Force = true });
+                    return;
+                }
+
                 var id = m.Document.FileId;
+#if !BETA
                 switch (gifchoice)
                 {
                     case "Villager":
@@ -362,18 +377,115 @@ namespace Werewolf_Control
                         data.BurnToDeath = id;
                         break;
                 }
+#else
+                switch (gifchoice)
+                {
+                    case "Villager":
+                        data.Beta.VillagerDieImage = id;
+                        break;
+                    case "Lone":
+                        data.Beta.WolfWin = id;
+                        break;
+                    case "Wolf":
+                        data.Beta.WolvesWin = id;
+                        break;
+                    case "Village":
+                        data.Beta.VillagersWin = id;
+                        break;
+                    case "Tanner":
+                        data.Beta.TannerWin = id;
+                        break;
+                    case "Cult":
+                        data.Beta.CultWins = id;
+                        break;
+                    case "Serial":
+                        data.Beta.SerialKillerWins = id;
+                        break;
+                    case "Lovers":
+                        data.Beta.LoversWin = id;
+                        break;
+                    case "No":
+                        data.Beta.NoWinner = id;
+                        break;
+                    case "Normal":
+                        data.Beta.StartGame = id;
+                        break;
+                    case "Chaos":
+                        data.Beta.StartChaosGame = id;
+                        break;
+                    case "SK":
+                        data.Beta.SKKilled = id;
+                        break;
+                    case "Arsonist":
+                        data.Beta.ArsonistWins = id;
+                        break;
+                    case "Burn":
+                        data.Beta.BurnToDeath = id;
+                        break;
+                }
+#endif
                 data.Approved = null;
                 data.ApprovedBy = 0;
                 p.CustomGifSet = JsonConvert.SerializeObject(data);
                 db.SaveChanges();
+#if RELEASE
+                SendGifToChannel(p.TelegramId, gifchoice, id);
+#endif
                 Bot.Send("Got it! Any more?", m.From.Id, customMenu: GetGifMenu(data));
             }
+        }
+
+        private static void SendGifToChannel(int pId, string gifchoice, string id)
+        {
+            Bot.Api.SendDocumentAsync(GifChannelId, id, caption: $"{gifchoice}|{pId}");
         }
 
         [Attributes.Command(Trigger = "submitgif")]
         public static void SubmitGifs(Update u, string[] args)
         {
 
+        }
+
+        [Attributes.Command(Trigger = "movegifs", DevOnly = true)]
+        public static void MoveGifs(Update u, string[] args)
+        {
+#if RELEASE
+            using (var db = new WWContext())
+            {
+                foreach (var p in db.Players.Where(x => x.CustomGifSet != null))
+                {
+                    var gifset = JsonConvert.DeserializeObject<CustomGifData>(p.CustomGifSet);
+                    if (gifset.ArsonistWins != null && gifset.Beta.ArsonistWins == null)
+                        SendGifToChannel(p.TelegramId, "Arsonist", gifset.ArsonistWins);
+                    if (gifset.BurnToDeath != null && gifset.Beta.BurnToDeath == null)
+                        SendGifToChannel(p.TelegramId, "Burn", gifset.BurnToDeath);
+                    if (gifset.CultWins != null && gifset.Beta.CultWins == null)
+                        SendGifToChannel(p.TelegramId, "Cult", gifset.CultWins);
+                    if (gifset.LoversWin != null && gifset.Beta.LoversWin == null)
+                        SendGifToChannel(p.TelegramId, "Lovers", gifset.LoversWin);
+                    if (gifset.NoWinner != null && gifset.Beta.NoWinner == null)
+                        SendGifToChannel(p.TelegramId, "No", gifset.NoWinner);
+                    if (gifset.SerialKillerWins != null && gifset.Beta.SerialKillerWins == null)
+                        SendGifToChannel(p.TelegramId, "Serial", gifset.SerialKillerWins);
+                    if (gifset.SKKilled != null && gifset.Beta.SKKilled == null)
+                        SendGifToChannel(p.TelegramId, "SK", gifset.SKKilled);
+                    if (gifset.StartChaosGame != null && gifset.Beta.StartChaosGame == null)
+                        SendGifToChannel(p.TelegramId, "Chaos", gifset.StartChaosGame);
+                    if (gifset.StartGame != null && gifset.Beta.StartGame == null)
+                        SendGifToChannel(p.TelegramId, "Normal", gifset.StartGame);
+                    if (gifset.TannerWin != null && gifset.Beta.TannerWin == null)
+                        SendGifToChannel(p.TelegramId, "Tanner", gifset.TannerWin);
+                    if (gifset.VillagerDieImage != null && gifset.Beta.VillagerDieImage == null)
+                        SendGifToChannel(p.TelegramId, "Villager", gifset.VillagerDieImage);
+                    if (gifset.VillagersWin != null && gifset.Beta.VillagersWin == null)
+                        SendGifToChannel(p.TelegramId, "Village", gifset.VillagersWin);
+                    if (gifset.WolfWin != null && gifset.Beta.WolfWin == null)
+                        SendGifToChannel(p.TelegramId, "Lone", gifset.WolfWin);
+                    if (gifset.WolvesWin != null && gifset.Beta.WolvesWin == null)
+                        SendGifToChannel(p.TelegramId, "Wolf", gifset.WolvesWin);
+                }
+            }
+#endif
         }
 
         public static string CreateXsollaJson(User from)
