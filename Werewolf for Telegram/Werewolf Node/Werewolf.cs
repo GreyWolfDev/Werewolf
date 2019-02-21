@@ -4745,6 +4745,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     //add them to the grave diggers grave list for next night
                     DiedSinceLastGrave.Add(p);
                     var msg = "";
+                    var msg2 = "";
                     if (secret)
                     {
                         SendWithQueue(GetLocaleString("GenericDeathNoReveal", p.GetName()));
@@ -4813,6 +4814,12 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             else // player was successfully killed by chemist
                             {
                                 msg = GetLocaleString("ChemistSuccessPublic", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
+                                if (p.PlayerRole == IRole.WiseElder && chemist != null && !chemist.IsDead)
+                                {
+                                    msg2 = GetLocaleString("ChemistKillWiseElder", p.GetName());
+                                    chemist.PlayerRole = IRole.Villager;
+                                    chemist.ChangedRolesCount++;
+                                }
                             }
                         }
                         //killed by visiting grave digger
