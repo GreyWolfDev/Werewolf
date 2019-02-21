@@ -2415,8 +2415,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 case IRole.WiseElder:
                 case IRole.Blacksmith:
                 case IRole.Troublemaker:
-                    thief.Team = ITeam.Village;
-                    break;
                 case IRole.Fool:
                 case IRole.Harlot:
                 case IRole.CultistHunter:
@@ -2427,6 +2425,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 case IRole.Oracle:
                 case IRole.Chemist:
                 case IRole.GraveDigger:
+                case IRole.Augur:
                     thief.Team = ITeam.Village;
                     break;
                 case IRole.Doppelgänger:
@@ -2458,6 +2457,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     break;
                 case IRole.SerialKiller:
                     thief.Team = ITeam.SerialKiller;
+                    break;
+                case IRole.Arsonist:
+                    thief.Team = ITeam.Arsonist;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
