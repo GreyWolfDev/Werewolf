@@ -1707,68 +1707,73 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         {
             foreach (var p in Players)
             {
-                switch (p.PlayerRole)
-                {
-                    case IRole.Villager:
-                    case IRole.Cursed:
-                    case IRole.Drunk:
-                    case IRole.Beholder:
-                    case IRole.ApprenticeSeer:
-                    case IRole.Traitor:
-                    case IRole.Mason:
-                    case IRole.Hunter:
-                    case IRole.Mayor:
-                    case IRole.ClumsyGuy:
-                    case IRole.Prince:
-                    case IRole.WolfMan:
-                    case IRole.Pacifist:
-                    case IRole.WiseElder:
-                    case IRole.Blacksmith:
-                    case IRole.Troublemaker:
-                    case IRole.Fool:
-                    case IRole.Harlot:
-                    case IRole.CultistHunter:
-                    case IRole.Seer:
-                    case IRole.GuardianAngel:
-                    case IRole.WildChild:
-                    case IRole.Cupid:
-                    case IRole.Sandman:
-                    case IRole.Oracle:
-                    case IRole.Chemist:
-                    case IRole.Detective:
-                    case IRole.Gunner:
-                    case IRole.Spumpkin:
-                    case IRole.Augur:
-                    case IRole.GraveDigger:
-                        p.Team = ITeam.Village;
-                        break;
-                    case IRole.Doppelgänger:
-                    case IRole.Thief:
-                        p.Team = ITeam.Thief;
-                        break;
-                    case IRole.Sorcerer:
-                    case IRole.AlphaWolf:
-                    case IRole.WolfCub:
-                    case IRole.Wolf:
-                    case IRole.Lycan:
-                    case IRole.SnowWolf:
-                        p.Team = ITeam.Wolf;
-                        break;
-                    case IRole.Tanner:
-                        p.Team = ITeam.Tanner;
-                        break;
-                    case IRole.Cultist:
-                        p.Team = ITeam.Cult;
-                        break;
-                    case IRole.SerialKiller:
-                        p.Team = ITeam.SerialKiller;
-                        break;
-                    case IRole.Arsonist:
-                        p.Team = ITeam.Arsonist;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                SetTeam(p);
+            }
+        }
+
+        private static void SetTeam(IPlayer p)
+        {
+            switch (p.PlayerRole)
+            {
+                case IRole.Villager:
+                case IRole.Cursed:
+                case IRole.Drunk:
+                case IRole.Beholder:
+                case IRole.ApprenticeSeer:
+                case IRole.Traitor:
+                case IRole.Mason:
+                case IRole.Hunter:
+                case IRole.Mayor:
+                case IRole.ClumsyGuy:
+                case IRole.Prince:
+                case IRole.WolfMan:
+                case IRole.Pacifist:
+                case IRole.WiseElder:
+                case IRole.Blacksmith:
+                case IRole.Troublemaker:
+                case IRole.Fool:
+                case IRole.Harlot:
+                case IRole.CultistHunter:
+                case IRole.Seer:
+                case IRole.GuardianAngel:
+                case IRole.WildChild:
+                case IRole.Cupid:
+                case IRole.Sandman:
+                case IRole.Oracle:
+                case IRole.Chemist:
+                case IRole.Detective:
+                case IRole.Gunner:
+                case IRole.Spumpkin:
+                case IRole.Augur:
+                case IRole.GraveDigger:
+                    p.Team = ITeam.Village;
+                    break;
+                case IRole.Doppelgänger:
+                case IRole.Thief:
+                    p.Team = ITeam.Thief;
+                    break;
+                case IRole.Sorcerer:
+                case IRole.AlphaWolf:
+                case IRole.WolfCub:
+                case IRole.Wolf:
+                case IRole.Lycan:
+                case IRole.SnowWolf:
+                    p.Team = ITeam.Wolf;
+                    break;
+                case IRole.Tanner:
+                    p.Team = ITeam.Tanner;
+                    break;
+                case IRole.Cultist:
+                    p.Team = ITeam.Cult;
+                    break;
+                case IRole.SerialKiller:
+                    p.Team = ITeam.SerialKiller;
+                    break;
+                case IRole.Arsonist:
+                    p.Team = ITeam.Arsonist;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -2133,24 +2138,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                     switch (p.PlayerRole)
                     {
-                        case IRole.Villager:
-                        case IRole.Cursed:
-                        case IRole.Drunk:
-                        case IRole.Prince:
-                        case IRole.ClumsyGuy:
-                        case IRole.WolfMan:
-                        case IRole.WiseElder:
-                        case IRole.Troublemaker:
-                            p.Team = ITeam.Village;
-                            p.HasUsedAbility = false;
-                            break;
-                        case IRole.Sandman:
-                        case IRole.Blacksmith:
-                            p.Team = ITeam.Village;
-                            p.HasUsedAbility = false;
-                            break;
                         case IRole.Beholder:
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
                             Send(
                                 seer != null
@@ -2158,7 +2147,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     : GetLocaleString("NoSeer"), p.Id);
                             break;
                         case IRole.ApprenticeSeer:
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Seer) == 0)
                             {
                                 p.PlayerRole = IRole.Seer;
@@ -2168,7 +2157,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                             break;
                         case IRole.Traitor:
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
                             {
                                 p.PlayerRole = IRole.Wolf;
@@ -2176,7 +2165,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                             break;
                         case IRole.Mason:
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
                             {
                                 Send(GetLocaleString("DGToMason", $"{p.GetName()}"), w.Id);
@@ -2184,21 +2173,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                             Send(GetLocaleString("DGTransformToMason", rm.GetName(), teammates), p.Id);
                             break;
-                        case IRole.Hunter:
-                            p.Team = ITeam.Village;
-                            break;
-                        case IRole.Fool:
-                        case IRole.Harlot:
-                        case IRole.CultistHunter:
-                        case IRole.GuardianAngel:
-                        case IRole.Oracle:
-                        case IRole.Chemist:
-                        case IRole.GraveDigger:
-                        case IRole.Augur:
-                            p.Team = ITeam.Village;
-                            break;
                         case IRole.Seer:
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                             if (bh != null)
                                 Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
@@ -2207,28 +2183,23 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             p.RoleModel = rm.RoleModel;
                             if (p.RoleModel == p.Id)
                                 AddAchievement(p, AchievementsReworked.Indestructible);
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == p.RoleModel)?.GetName() ?? "None was chosen!"), p.Id);
                             break;
-                        case IRole.Cupid:
-                        case IRole.Doppelgänger:
-                            p.Team = ITeam.Village;
-                            break;
-                        case IRole.Detective:
                         case IRole.Gunner:
                             p.Bullet = 2;
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             break;
                         case IRole.Spumpkin:
                             p.Bullet = 2;
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             AddAchievement(p, AchievementsReworked.TodaysSpecial);
                             break;
                         case IRole.AlphaWolf:
                         case IRole.WolfCub:
                         case IRole.Wolf:
                         case IRole.Lycan:
-                            p.Team = ITeam.Wolf;
+                            SetTeam(p);
                             var wolves = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p);
                             var snowwolf = Players.GetPlayerForRole(IRole.SnowWolf);
                             teammates = string.Join(", ", wolves.Select(x => x.GetName()));
@@ -2277,7 +2248,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                             break;
                         case IRole.SnowWolf:
-                            p.Team = ITeam.Wolf;
+                            SetTeam(p);
                             wolves = Players.GetPlayersForRoles(WolfRoles);
                             teammates = string.Join(", ", wolves.Select(x => x.GetName()));
                             foreach (var w in wolves)
@@ -2286,11 +2257,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                             Send(GetLocaleString("DGTransformToSnowWolf", rm.GetName(), teammates), p.Id);
                             break;
-                        case IRole.Tanner:
-                            p.Team = ITeam.Tanner;
-                            break;
                         case IRole.Cultist:
-                            p.Team = ITeam.Cult;
+                            SetTeam(p);
                             foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
                             {
                                 Send(GetLocaleString("DGToCult", p.GetName()), w.Id);
@@ -2298,32 +2266,22 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                             Send(GetLocaleString("DGTransformToCult", rm.GetName(), teammates), p.Id);
                             break;
-                        case IRole.SerialKiller:
-                            p.Team = ITeam.SerialKiller;
-                            break;
-                        case IRole.Sorcerer:
-                            p.Team = ITeam.Wolf;
-                            break;
                         case IRole.Mayor:
                             p.HasUsedAbility = false;
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Mayor}|reveal") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
                             break;
                         case IRole.Pacifist:
                             p.HasUsedAbility = false;
-                            p.Team = ITeam.Village;
+                            SetTeam(p);
                             choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace") } }.ToList();
                             SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
                             break;
-                        case IRole.Thief:
-                            p.Team = ITeam.Thief;
-                            break;
-                        case IRole.Arsonist:
-                            p.Team = ITeam.Arsonist;
-                            break;
                         default:
-                            throw new ArgumentOutOfRangeException();
+                            SetTeam(p);
+                            p.HasUsedAbility = false;
+                            break;
                     }
                 }
             }
@@ -2401,72 +2359,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             thief.Bullet = target.Bullet;
             thief.HasUsedAbility = target.HasUsedAbility;
 
-            switch (thief.PlayerRole)
+            SetTeam(thief);
+            if (thief.PlayerRole == IRole.Spumpkin)
             {
-                case IRole.Villager:
-                case IRole.Cursed:
-                case IRole.Drunk:
-                case IRole.Beholder:
-                case IRole.ApprenticeSeer:
-                case IRole.Traitor:
-                case IRole.Mason:
-                case IRole.Hunter:
-                case IRole.ClumsyGuy:
-                case IRole.WolfMan:
-                case IRole.Mayor:
-                case IRole.Prince:
-                case IRole.Pacifist:
-                case IRole.WiseElder:
-                case IRole.Blacksmith:
-                case IRole.Troublemaker:
-                case IRole.Fool:
-                case IRole.Harlot:
-                case IRole.CultistHunter:
-                case IRole.Seer:
-                case IRole.GuardianAngel:
-                case IRole.WildChild:
-                case IRole.Cupid:
-                case IRole.Oracle:
-                case IRole.Chemist:
-                case IRole.GraveDigger:
-                case IRole.Augur:
-                    thief.Team = ITeam.Village;
-                    break;
-                case IRole.Doppelgänger:
-                case IRole.Thief:
-                    thief.Team = ITeam.Thief;
-                    break;
-                case IRole.Detective:
-                case IRole.Gunner:
-                case IRole.Sandman:
-                    thief.Team = ITeam.Village;
-                    break;
-                case IRole.Spumpkin:
-                    thief.Team = ITeam.Village;
-                    AddAchievement(thief, AchievementsReworked.TodaysSpecial);
-                    break;
-                case IRole.Sorcerer:
-                case IRole.AlphaWolf:
-                case IRole.WolfCub:
-                case IRole.Wolf:
-                case IRole.Lycan:
-                case IRole.SnowWolf:
-                    thief.Team = ITeam.Wolf;
-                    break;
-                case IRole.Tanner:
-                    thief.Team = ITeam.Tanner;
-                    break;
-                case IRole.Cultist:
-                    thief.Team = ITeam.Cult;
-                    break;
-                case IRole.SerialKiller:
-                    thief.Team = ITeam.SerialKiller;
-                    break;
-                case IRole.Arsonist:
-                    thief.Team = ITeam.Arsonist;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                AddAchievement(thief, AchievementsReworked.TodaysSpecial);
             }
 
             // then the target
