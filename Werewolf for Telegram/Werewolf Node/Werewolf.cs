@@ -1894,13 +1894,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     var ds = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer && x.IsDead);
 
                     //seer is dead, promote app seer
-                    aps.PlayerRole = IRole.Seer;
-                    aps.ChangedRolesCount++;
-                    //notify
-                    Send(GetLocaleString("ApprenticeNowSeer", ds?.GetName() ?? GetDescription(IRole.Seer)), aps.Id);
-                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                    if (beholder != null)
-                        Send(GetLocaleString("BeholderNewSeer", $"{aps.GetName()}", ds?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                    Transform(aps, IRole.Seer, TransformationMethod.ApprenticeSeer, roleModel: ds);
                 }
             }
 
@@ -2089,26 +2083,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 {
                     if (rm.IsDead)
                     {
-                        var wolves = Players.GetPlayersForRoles(WolfRoles);
-                        var snowwolf = Players.GetPlayerForRole(IRole.SnowWolf);
-                        var teammates = string.Join(", ", wolves.Select(x => x.GetName()));
-
-                        //notify other wolves
-                        foreach (var w in wolves)
-                        {
-                            Send(GetLocaleString("WildChildToWolves", wc.GetName()), w.Id);
-                        }
-
-                        if (snowwolf != null)
-                        {
-                            Send(GetLocaleString("WildChildToWolves", wc.GetName()), snowwolf.Id);
-                            Send(GetLocaleString("WildChildSnowTransform", rm.GetName(), teammates, snowwolf.GetName()), wc.Id);
-                        }
-                        else Send(GetLocaleString("WildChildTransform", rm.GetName(), teammates), wc.Id);
-
-                        wc.PlayerRole = IRole.Wolf;
-                        wc.Team = ITeam.Wolf;
-                        wc.ChangedRolesCount++;
+                        Transform(wc, IRole.Wolf, TransformationMethod.WildChild, roleModel: rm);
                     }
                 }
             }
@@ -2126,163 +2101,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 var rm = Players.FirstOrDefault(x => x.Id == p.RoleModel);
                 if (rm != null && rm.IsDead)
                 {
-                    var teammates = "";
-                    //notify other wolves or cultists
-                    p.PlayerRole = rm.PlayerRole;
-                    p.ChangedRolesCount++;
-
-                    if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan, IRole.SnowWolf }.Contains(p.PlayerRole))
-                    {
-                        //tell them their new role
-                        Send(GetRoleInfo(p.PlayerRole), p.Id);
-                    }
-                    switch (p.PlayerRole)
-                    {
-                        case IRole.Beholder:
-                            SetTeam(p);
-                            var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                            Send(
-                                seer != null
-                                    ? GetLocaleString("BeholderSeer", $"{seer.GetName()}")
-                                    : GetLocaleString("NoSeer"), p.Id);
-                            break;
-                        case IRole.ApprenticeSeer:
-                            SetTeam(p);
-                            if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Seer) == 0)
-                            {
-                                p.PlayerRole = IRole.Seer;
-                                var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                                if (beholder != null)
-                                    Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
-                            }
-                            break;
-                        case IRole.Traitor:
-                            SetTeam(p);
-                            if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
-                            {
-                                p.PlayerRole = IRole.Wolf;
-                                p.Team = ITeam.Wolf;
-                            }
-                            break;
-                        case IRole.Mason:
-                            SetTeam(p);
-                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
-                            {
-                                Send(GetLocaleString("DGToMason", $"{p.GetName()}"), w.Id);
-                                teammates += $"{w.GetName()}" + ", ";
-                            }
-                            Send(GetLocaleString("DGTransformToMason", rm.GetName(), teammates), p.Id);
-                            break;
-                        case IRole.Seer:
-                            SetTeam(p);
-                            var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                            if (bh != null)
-                                Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", rm.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
-                            break;
-                        case IRole.WildChild:
-                            p.RoleModel = rm.RoleModel;
-                            if (p.RoleModel == p.Id)
-                                AddAchievement(p, AchievementsReworked.Indestructible);
-                            SetTeam(p);
-                            Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == p.RoleModel)?.GetName() ?? "None was chosen!"), p.Id);
-                            break;
-                        case IRole.Gunner:
-                            p.Bullet = 2;
-                            SetTeam(p);
-                            break;
-                        case IRole.Spumpkin:
-                            p.Bullet = 2;
-                            SetTeam(p);
-                            AddAchievement(p, AchievementsReworked.TodaysSpecial);
-                            break;
-                        case IRole.AlphaWolf:
-                        case IRole.WolfCub:
-                        case IRole.Wolf:
-                        case IRole.Lycan:
-                            SetTeam(p);
-                            var wolves = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p);
-                            var snowwolf = Players.GetPlayerForRole(IRole.SnowWolf);
-                            teammates = string.Join(", ", wolves.Select(x => x.GetName()));
-
-                            foreach (var w in wolves)
-                            {
-                                Send(GetLocaleString($"DGToWolf", p.GetName()), w.Id);
-                            }
-
-                            if (snowwolf != null)
-                            {
-                                Send(GetLocaleString($"DGToWolf", p.GetName()), snowwolf.Id);
-                                switch (p.PlayerRole)
-                                {
-                                    case IRole.AlphaWolf:
-                                        Send(GetLocaleString("DGTransformToAlphaWithSnow", rm.GetName(), teammates, snowwolf.GetName()), p.Id);
-                                        break;
-                                    case IRole.WolfCub:
-                                        Send(GetLocaleString("DGTransformToWolfCubWithSnow", rm.GetName(), teammates, snowwolf.GetName()), p.Id);
-                                        break;
-                                    case IRole.Wolf:
-                                        Send(GetLocaleString("DGTransformToWolfWithSnow", rm.GetName(), teammates, snowwolf.GetName()), p.Id);
-                                        break;
-                                    case IRole.Lycan:
-                                        Send(GetLocaleString("DGTransformToLycanWithSnow", rm.GetName(), teammates, snowwolf.GetName()), p.Id);
-                                        break;
-                                }
-                            }
-                            else
-                            {
-                                switch (p.PlayerRole)
-                                {
-                                    case IRole.AlphaWolf:
-                                        Send(GetLocaleString("DGTransformToAlpha", rm.GetName(), teammates), p.Id);
-                                        break;
-                                    case IRole.WolfCub:
-                                        Send(GetLocaleString("DGTransformToWolfCub", rm.GetName(), teammates), p.Id);
-                                        break;
-                                    case IRole.Wolf:
-                                        Send(GetLocaleString("DGTransformToWolf", rm.GetName(), teammates), p.Id);
-                                        break;
-                                    case IRole.Lycan:
-                                        Send(GetLocaleString("DGTransformToLycan", rm.GetName(), teammates), p.Id);
-                                        break;
-                                }
-                            }
-                            break;
-                        case IRole.SnowWolf:
-                            SetTeam(p);
-                            wolves = Players.GetPlayersForRoles(WolfRoles);
-                            teammates = string.Join(", ", wolves.Select(x => x.GetName()));
-                            foreach (var w in wolves)
-                            {
-                                Send(GetLocaleString($"DGToSnowWolf", p.GetName()), w.Id);
-                            }
-                            Send(GetLocaleString("DGTransformToSnowWolf", rm.GetName(), teammates), p.Id);
-                            break;
-                        case IRole.Cultist:
-                            SetTeam(p);
-                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
-                            {
-                                Send(GetLocaleString("DGToCult", p.GetName()), w.Id);
-                                teammates += $"{w.GetName()}" + ", ";
-                            }
-                            Send(GetLocaleString("DGTransformToCult", rm.GetName(), teammates), p.Id);
-                            break;
-                        case IRole.Mayor:
-                            p.HasUsedAbility = false;
-                            SetTeam(p);
-                            var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Mayor}|reveal") } }.ToList();
-                            SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
-                            break;
-                        case IRole.Pacifist:
-                            p.HasUsedAbility = false;
-                            SetTeam(p);
-                            choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace") } }.ToList();
-                            SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
-                            break;
-                        default:
-                            SetTeam(p);
-                            p.HasUsedAbility = false;
-                            break;
-                    }
+                    Transform(p, rm.PlayerRole, TransformationMethod.Doppelgänger,
+                        newRoleModel: rm.RoleModel, bullet: new[] { IRole.Spumpkin, IRole.Gunner }.Contains(rm.PlayerRole) ? (int?)2 : null, hasUsedAbility: false, roleModel: rm);
                 }
             }
         }
@@ -2294,6 +2114,355 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 Send(
                     GetLocaleString("PlayerBittenWolves", target.GetName(),
                         alpha), wolf.Id);
+        }
+
+        /// <summary>
+        /// Transforms the player to a new role, checks for achievements before and after and notifies the player and possible teammates
+        /// </summary>
+        /// <param name="p">The player whose role is to be changed</param>
+        /// <param name="toRole">New role for the player</param>
+        /// <param name="method">Method of transformation</param>
+        /// <param name="newRoleModel">New role model of player. Since role models are mandatory if there are any, defaults to 0 (no role model)</param>
+        /// <param name="teamMembers">Team members to notify, depending on transformation method, if any</param>
+        /// <param name="bullet">new bullet count of player, or null if it shouldn't change</param>
+        /// <param name="hasUsedAbility">new HasUsedAbility value of player, or null if it shouldn't change</param>
+        /// <param name="roleModel">The role model of the player to transform if they were DG or WC, or the old seer if they were apprentice, or the victim if they were thief</param>
+        private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> teamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null)
+        {
+            // increase change roles count
+            p.ChangedRolesCount++;
+
+            // check for possible achievements before transformation
+            if (p.PlayerRole == IRole.WiseElder)
+                AddAchievement(p, AchievementsReworked.ILostMyWisdom);
+            if (p.PlayerRole == IRole.WolfMan && method == TransformationMethod.AlphaBitten)
+                AddAchievement(p, AchievementsReworked.JustABeardyGuy);
+            if (p.Id == newRoleModel)
+                AddAchievement(p, AchievementsReworked.Indestructible);
+
+            // transformation specific additions
+            if (method == TransformationMethod.ConvertToCult)
+            {
+                p.ConvertedToCult = true;
+                p.DayCult = GameDay;
+            }
+            if (method == TransformationMethod.AutoConvertToCult)
+                p.ConvertedToCult = true;
+
+            // notify masons if given
+            if (p.PlayerRole == IRole.Mason && toRole != IRole.Mason && teamMembers != null)
+                foreach (var m in teamMembers)
+                    Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
+
+            // actually transform the player
+            if (bullet.HasValue) p.Bullet = bullet.Value;
+            if (hasUsedAbility.HasValue) p.HasUsedAbility = hasUsedAbility.Value;
+            p.RoleModel = newRoleModel;
+            p.PlayerRole = toRole;
+            SetTeam(p);
+
+            // check achievements after transformation
+            if (p.PlayerRole == IRole.Spumpkin)
+                AddAchievement(p, AchievementsReworked.TodaysSpecial);
+
+            // role specific after-actions
+            #region Method-specific
+            switch (method)
+            {
+                #region Cursed
+                case TransformationMethod.BiteCursed:
+                    var msg = GetLocaleString("CursedBitten");
+                    var snowwolf = Players.GetPlayerForRole(IRole.SnowWolf);
+                    if (snowwolf != null)
+                    {
+                        Send(GetLocaleString("CursedBittenToWolves", p.GetName()), snowwolf.Id);
+                        msg += " " + GetLocaleString("WolfPackSnowList",
+                            teamMembers.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
+                            snowwolf.GetName());
+                    }
+                    else
+                    {
+                        msg += " " + GetLocaleString("WolfPackList",
+                            teamMembers.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                    }
+                    try
+                    {
+                        Send(msg, p.Id);
+                    }
+                    catch
+                    {
+                        //ignored
+                    }
+                    foreach (var w in teamMembers)
+                        Send(GetLocaleString("CursedBittenToWolves", p.GetName()), w.Id);
+                    break;
+                #endregion
+                #region Traitor
+                case TransformationMethod.Traitor:
+                    Send(GetLocaleString("TraitorTurnWolf"), p.Id);
+                    break;
+                #endregion
+                #region Apprentice Seer
+                case TransformationMethod.ApprenticeSeer:
+                    Send(GetLocaleString("ApprenticeNowSeer", roleModel?.GetName() ?? GetDescription(IRole.Seer)), p.Id);
+                    var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                    if (beholder != null)
+                        Send(GetLocaleString("BeholderNewSeer", p.GetName(), roleModel?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                    break;
+                #endregion
+                #region Cult
+                case TransformationMethod.ConvertToCult:
+                    Send(GetLocaleString("CultConvertYou"), p.Id);
+                    Send(GetLocaleString("CultTeam", teamMembers.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
+                    foreach (var c in teamMembers)
+                        Send(GetLocaleString("CultJoin", $"{p.GetName()}"), c.Id);
+                    break;
+                #endregion
+                #region Wild Child
+                case TransformationMethod.WildChild:
+                    var wolves = Players.GetPlayersForRoles(WolfRoles);
+                    var snowwolf1 = Players.GetPlayerForRole(IRole.SnowWolf);
+                    var teammates = string.Join(", ", wolves.Select(x => x.GetName()));
+
+                    //notify other wolves
+                    foreach (var w in wolves)
+                    {
+                        Send(GetLocaleString("WildChildToWolves", p.GetName()), w.Id);
+                    }
+
+                    if (snowwolf1 != null)
+                    {
+                        Send(GetLocaleString("WildChildToWolves", p.GetName()), snowwolf1.Id);
+                        Send(GetLocaleString("WildChildSnowTransform", roleModel.GetName(), teammates, snowwolf1.GetName()), p.Id);
+                    }
+                    else Send(GetLocaleString("WildChildTransform", roleModel.GetName(), teammates), p.Id);
+                    break;
+                #endregion
+                #region Doppelgänger
+                case TransformationMethod.Doppelgänger:
+                    var teammates2 = "";
+                    if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan, IRole.SnowWolf }.Contains(p.PlayerRole))
+                    {
+                        //tell them their new role
+                        Send(GetRoleInfo(p.PlayerRole), p.Id);
+                    }
+                    switch (p.PlayerRole)
+                    {
+                        case IRole.Mason:
+                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
+                            {
+                                Send(GetLocaleString("DGToMason", $"{p.GetName()}"), w.Id);
+                                teammates2 += $"{w.GetName()}" + ", ";
+                            }
+                            Send(GetLocaleString("DGTransformToMason", roleModel.GetName(), teammates2), p.Id);
+                            break;
+                        case IRole.Seer:
+                            var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                            if (bh != null)
+                                Send(GetLocaleString("BeholderNewSeer", $"{p.GetName()}", roleModel.GetName() ?? GetDescription(IRole.Seer)), bh.Id);
+                            break;
+                        case IRole.AlphaWolf:
+                        case IRole.WolfCub:
+                        case IRole.Wolf:
+                        case IRole.Lycan:
+                            var wolves2 = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p);
+                            var snowwolf2 = Players.GetPlayerForRole(IRole.SnowWolf);
+                            teammates2 = string.Join(", ", wolves2.Select(x => x.GetName()));
+
+                            foreach (var w in wolves2)
+                            {
+                                Send(GetLocaleString($"DGToWolf", p.GetName()), w.Id);
+                            }
+
+                            if (snowwolf2 != null)
+                            {
+                                Send(GetLocaleString($"DGToWolf", p.GetName()), snowwolf2.Id);
+                                switch (p.PlayerRole)
+                                {
+                                    case IRole.AlphaWolf:
+                                        Send(GetLocaleString("DGTransformToAlphaWithSnow", roleModel.GetName(), teammates2, snowwolf2.GetName()), p.Id);
+                                        break;
+                                    case IRole.WolfCub:
+                                        Send(GetLocaleString("DGTransformToWolfCubWithSnow", roleModel.GetName(), teammates2, snowwolf2.GetName()), p.Id);
+                                        break;
+                                    case IRole.Wolf:
+                                        Send(GetLocaleString("DGTransformToWolfWithSnow", roleModel.GetName(), teammates2, snowwolf2.GetName()), p.Id);
+                                        break;
+                                    case IRole.Lycan:
+                                        Send(GetLocaleString("DGTransformToLycanWithSnow", roleModel.GetName(), teammates2, snowwolf2.GetName()), p.Id);
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (p.PlayerRole)
+                                {
+                                    case IRole.AlphaWolf:
+                                        Send(GetLocaleString("DGTransformToAlpha", roleModel.GetName(), teammates2), p.Id);
+                                        break;
+                                    case IRole.WolfCub:
+                                        Send(GetLocaleString("DGTransformToWolfCub", roleModel.GetName(), teammates2), p.Id);
+                                        break;
+                                    case IRole.Wolf:
+                                        Send(GetLocaleString("DGTransformToWolf", roleModel.GetName(), teammates2), p.Id);
+                                        break;
+                                    case IRole.Lycan:
+                                        Send(GetLocaleString("DGTransformToLycan", roleModel.GetName(), teammates2), p.Id);
+                                        break;
+                                }
+                            }
+                            break;
+                        case IRole.SnowWolf:
+                            wolves = Players.GetPlayersForRoles(WolfRoles);
+                            teammates2 = string.Join(", ", wolves.Select(x => x.GetName()));
+                            foreach (var w in wolves)
+                            {
+                                Send(GetLocaleString($"DGToSnowWolf", p.GetName()), w.Id);
+                            }
+                            Send(GetLocaleString("DGTransformToSnowWolf", roleModel.GetName(), teammates2), p.Id);
+                            break;
+                        case IRole.Cultist:
+                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                            {
+                                Send(GetLocaleString("DGToCult", p.GetName()), w.Id);
+                                teammates2 += $"{w.GetName()}" + ", ";
+                            }
+                            Send(GetLocaleString("DGTransformToCult", roleModel.GetName(), teammates2), p.Id);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                #endregion
+                #region Alpha
+                case TransformationMethod.AlphaBitten:
+                    if (p.PlayerRole == IRole.Cultist)
+                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                            Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
+                    var msg1 = GetLocaleString("BittenTurned");
+                    var wolfpack = Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf));
+                    if (wolfpack.Count() > 1)
+                    {
+                        if (wolfpack.Any(x => x.PlayerRole == IRole.SnowWolf))
+                        {
+                            msg1 += " " + GetLocaleString("WolfPackSnowList",
+                                wolfpack.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
+                                wolfpack.First(x => x.PlayerRole == IRole.SnowWolf).GetName());
+                        }
+                        else
+                        {
+                            msg1 += " " + GetLocaleString("WolfPackList",
+                                wolfpack.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                        }
+                    }
+                    Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
+
+                    Send(msg1, p.Id);
+                    break;
+                #endregion
+                #region Thief
+                case TransformationMethod.ThiefSteal:
+                    Send(GetLocaleString("ThiefStoleRole", roleModel.GetName()), p.Id);
+                    Send(GetRoleInfo(p.PlayerRole), p.Id);
+                    switch (p.PlayerRole)
+                    {
+                        case IRole.Mason:
+                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
+                            {
+                                Send(GetLocaleString("ThiefToMason", roleModel.GetName(), p.GetName()), w.Id);
+                            }
+                            break;
+                        case IRole.Seer:
+                            var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
+                            if (bh != null)
+                                Send(GetLocaleString("BeholderSeerStolen", p.GetName(), roleModel.GetName()), bh.Id);
+                            break;
+                        case IRole.AlphaWolf:
+                        case IRole.WolfCub:
+                        case IRole.Wolf:
+                        case IRole.Lycan:
+                            foreach (var w in Players.Where(x => !x.IsDead && x.Id != p.Id && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf)))
+                            {
+                                Send(GetLocaleString("ThiefToWolf", roleModel.GetName(), p.GetName()), w.Id);
+                            }
+                            break;
+                        case IRole.SnowWolf:
+                            foreach (var w in Players.GetPlayersForRoles(WolfRoles))
+                            {
+                                Send(GetLocaleString("ThiefToSnowWolf", roleModel.GetName(), p.GetName()), w.Id);
+                            }
+                            break;
+                        case IRole.Cultist:
+                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                            {
+                                Send(GetLocaleString("ThiefToCult", roleModel.GetName(), p.GetName()), w.Id);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case TransformationMethod.ThiefStolen:
+                    Send(GetLocaleString((ThiefFull == true ? "ThiefStoleYourRoleThief" : "ThiefStoleYourRoleVillager")), p.Id);
+                    break;
+                    #endregion
+            }
+            #endregion
+            #region General
+            switch (p.PlayerRole)
+            {
+                case IRole.ApprenticeSeer:
+                    if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Seer) == 0)
+                    {
+                        Transform(p, IRole.Seer, TransformationMethod.ApprenticeSeer, roleModel: roleModel);
+                    }
+                    break;
+                case IRole.Beholder:
+                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                    Send(
+                        seer != null
+                            ? GetLocaleString("BeholderSeer", $"{seer.GetName()}")
+                            : GetLocaleString("NoSeer"), p.Id);
+                    break;
+                case IRole.Traitor:
+                    if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
+                    {
+                        Transform(p, IRole.Wolf, TransformationMethod.Traitor);
+                    }
+                    break;
+                case IRole.WildChild:
+                    Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == p.RoleModel)?.GetName() ?? "None was chosen!"), p.Id);
+                    break;
+                case IRole.Mayor:
+                    if (!p.HasUsedAbility && GameDay != 1)
+                    {
+                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Mayor}|reveal") } }.ToList();
+                        SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
+                    }
+                    break;
+                case IRole.Pacifist:
+                    if (!p.HasUsedAbility && GameDay != 1)
+                    {
+                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace") } }.ToList();
+                        SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
+                    }
+                    break;
+            }
+            #endregion
+        }
+
+        private enum TransformationMethod
+        {
+            BiteCursed,
+            Traitor,
+            ApprenticeSeer,
+            AutoConvertToCult,
+            ConvertToCult,
+            WildChild,
+            Doppelgänger,
+            AlphaBitten,
+            ThiefSteal,
+            ThiefStolen,
         }
 
         private void StealRole(IPlayer thief, IPlayer target)
@@ -2345,120 +2514,13 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 Send(GetLocaleString("StealKiller"), thief.Id);
                 return;
             }
-
-            else if (target.PlayerRole == IRole.WiseElder)
-                AddAchievement(target, AchievementsReworked.ILostMyWisdom);
             //swap roles
 
             // the thief first
-            thief.PlayerRole = target.PlayerRole;
-            thief.RoleModel = target.RoleModel;
-            if (thief.RoleModel == thief.Id)
-                AddAchievement(thief, AchievementsReworked.Indestructible);
-            thief.ChangedRolesCount++;
-            thief.Bullet = target.Bullet;
-            thief.HasUsedAbility = target.HasUsedAbility;
-
-            SetTeam(thief);
-            if (thief.PlayerRole == IRole.Spumpkin)
-            {
-                AddAchievement(thief, AchievementsReworked.TodaysSpecial);
-            }
+            Transform(thief, target.PlayerRole, TransformationMethod.ThiefSteal, newRoleModel: target.RoleModel, bullet: target.Bullet, hasUsedAbility: target.HasUsedAbility);
 
             // then the target
-            target.PlayerRole = ThiefFull ? IRole.Thief : IRole.Villager;
-            target.Team = ThiefFull ? ITeam.Thief : ITeam.Village;
-            target.RoleModel = 0;
-            target.ChangedRolesCount++;
-            target.HasUsedAbility = false;
-            target.Bullet = 2;
-
-            // notify both players (notify team?)
-            // First Notify the stolen player becoming VG/Thief
-            Send(GetLocaleString((ThiefFull == true ? "ThiefStoleYourRoleThief" : "ThiefStoleYourRoleVillager")), target.Id);
-
-            // Then notify Thief their new role
-            Send(GetLocaleString("ThiefStoleRole", target.GetName()), thief.Id);
-            Send(GetRoleInfo(thief.PlayerRole), thief.Id);
-
-            switch (thief.PlayerRole)
-            {
-                case IRole.Beholder:
-                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                    Send(
-                        seer != null
-                            ? GetLocaleString("BeholderSeer", $"{seer.GetName()}")
-                            : GetLocaleString("NoSeer"), thief.Id);
-                    break;
-                case IRole.ApprenticeSeer:
-                    if (Players.Count(x => !x.IsDead && x.PlayerRole == IRole.Seer) == 0)
-                    {
-                        thief.PlayerRole = IRole.Seer;
-                        var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                        if (beholder != null)
-                            Send(GetLocaleString("BeholderNewSeer", thief.GetName(), target.GetName()), beholder.Id);
-                    }
-                    break;
-                case IRole.Traitor:
-                    if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
-                    {
-                        thief.PlayerRole = IRole.Wolf;
-                        thief.Team = ITeam.Wolf;
-                    }
-                    break;
-                case IRole.Mason:
-                    foreach (var w in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != thief.Id))
-                    {
-                        Send(GetLocaleString("ThiefToMason", target.GetName(), thief.GetName()), w.Id);
-                    }
-                    break;
-                case IRole.Seer:
-                    var bh = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
-                    if (bh != null)
-                        Send(GetLocaleString("BeholderSeerStolen", thief.GetName(), target.GetName()), bh.Id);
-                    break;
-                case IRole.WildChild:
-                    Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == thief.RoleModel)?.GetName() ?? "None was chosen!"), thief.Id);
-                    break;
-                case IRole.AlphaWolf:
-                case IRole.WolfCub:
-                case IRole.Wolf:
-                case IRole.Lycan:
-                    foreach (var w in Players.Where(x => !x.IsDead && x.Id != thief.Id && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf)))
-                    {
-                        Send(GetLocaleString("ThiefToWolf", target.GetName(), thief.GetName()), w.Id);
-                    }
-                    break;
-                case IRole.SnowWolf:
-                    foreach (var w in Players.GetPlayersForRoles(WolfRoles))
-                    {
-                        Send(GetLocaleString("ThiefToSnowWolf", target.GetName(), thief.GetName()), w.Id);
-                    }
-                    break;
-                case IRole.Cultist:
-                    foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != thief.Id))
-                    {
-                        Send(GetLocaleString("ThiefToCult", target.GetName(), thief.GetName()), w.Id);
-                    }
-                    break;
-                case IRole.Mayor:
-                    if (!thief.HasUsedAbility && GameDay != 1)
-                    {
-                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Mayor}|reveal") } }.ToList();
-                        SendMenu(choices, thief, GetLocaleString("AskMayor"), QuestionType.Mayor);
-                    }
-                    break;
-                case IRole.Pacifist:
-                    if (!thief.HasUsedAbility && GameDay != 1)
-                    {
-                        var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace") } }.ToList();
-                        SendMenu(choices, thief, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
-                    }
-                    break;
-                default:
-                    break;
-            }
-            //should a bitten player stay bitten? yes...
+            Transform(target, ThiefFull ? IRole.Thief : IRole.Villager, TransformationMethod.ThiefStolen);
         }
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
@@ -2469,19 +2531,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     foreach (var c in voteCult)
                         AddAchievement(c, Achievements.DontStayHome);
 
-                else if (target.PlayerRole == IRole.WiseElder)
-                    AddAchievement(target, AchievementsReworked.ILostMyWisdom);
-
-                target.PlayerRole = IRole.Cultist;
-                target.ChangedRolesCount++;
-                target.ConvertedToCult = true;
-                target.Team = ITeam.Cult;
-                target.DayCult = GameDay;
-                Send(GetLocaleString("CultConvertYou"), target.Id);
-                Send(GetLocaleString("CultTeam", voteCult.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), target.Id);
-
-                foreach (var c in voteCult)
-                    Send(GetLocaleString("CultJoin", $"{target.GetName()}"), c.Id);
+                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, teamMembers: voteCult);
             }
             else
             {
@@ -3019,43 +3069,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     p.Bitten = false;
                     if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                     {
-                        if (p.PlayerRole == IRole.Mason)
-                            foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id))
-                                Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
-
-                        else if (p.PlayerRole == IRole.Cultist)
-                            foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
-                                Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
-
-                        else if (p.PlayerRole == IRole.WolfMan)
-                            AddAchievement(p, AchievementsReworked.JustABeardyGuy);
-
-                        else if (p.PlayerRole == IRole.WiseElder)
-                            AddAchievement(p, AchievementsReworked.ILostMyWisdom);
-
-                        p.PlayerRole = IRole.Wolf;
-                        p.Team = ITeam.Wolf;
-                        p.RoleModel = 0;
-                        p.ChangedRolesCount++;  //add count for double-shifter achv after converting to wolf
-                        var msg = GetLocaleString("BittenTurned");
-                        var wolfpack = Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf));
-                        if (wolfpack.Count() > 1)
-                        {
-                            if (wolfpack.Any(x => x.PlayerRole == IRole.SnowWolf))
-                            {
-                                msg += " " + GetLocaleString("WolfPackSnowList",
-                                    wolfpack.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
-                                    wolfpack.First(x => x.PlayerRole == IRole.SnowWolf).GetName());
-                            }
-                            else
-                            {
-                                msg += " " + GetLocaleString("WolfPackList",
-                                    wolfpack.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
-                            }
-                        }
-                        Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
-
-                        Send(msg, p.Id);
+                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, teamMembers: Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id));
                     }
                 }
             }
@@ -3367,7 +3381,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         burntWuff.KilledByRole = IRole.Arsonist;
                         burntWuff.DiedLastNight = true;
                         DBKill(arsonist, burntWuff, KillMthd.VisitBurning);
-                        foreach(var wolf in voteWolves)
+                        foreach (var wolf in voteWolves)
                             Send(GetLocaleString("WolvesVisitBurn", target.GetName(), burntWuff.GetName()), wolf.Id);
                         target = null;
                     }
@@ -3463,32 +3477,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     }
                                     break;
                                 case IRole.Cursed:
-                                    target.PlayerRole = IRole.Wolf;
-                                    target.Team = ITeam.Wolf;
-                                    target.ChangedRolesCount++;
-                                    var msg = GetLocaleString("CursedBitten");
-                                    if (snowwolf != null)
-                                    {
-                                        Send(GetLocaleString("CursedBittenToWolves", target.GetName()), snowwolf.Id);
-                                        msg += " " + GetLocaleString("WolfPackSnowList",
-                                            wolves.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
-                                            snowwolf.GetName());
-                                    }
-                                    else
-                                    {
-                                        msg += " " + GetLocaleString("WolfPackList",
-                                            wolves.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
-                                    }
-                                    try
-                                    {
-                                        Send(msg, target.Id);
-                                    }
-                                    catch
-                                    {
-                                        //ignored
-                                    }
-                                    foreach (var w in wolves)
-                                        Send(GetLocaleString("CursedBittenToWolves", target.GetName()), w.Id);
+                                    Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, teamMembers: wolves);
                                     break;
                                 case IRole.Drunk:
                                     if (bitten)
@@ -4911,10 +4900,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         if (!checkbitten || alivePlayers.All(x => !x.Bitten)) //traitor should not turn wolf if bitten is about to turn
                         {
                             //traitor turns wolf!
-                            traitor.PlayerRole = IRole.Wolf;
-                            traitor.Team = ITeam.Wolf;
-                            traitor.ChangedRolesCount++;
-                            Send(GetLocaleString("TraitorTurnWolf"), traitor.Id);
+                            Transform(traitor, IRole.Wolf, TransformationMethod.Traitor);
                         }
                         else return false; //bitten is turning wolf! game doesn't end
                     }
@@ -4991,10 +4977,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 //autoconvert the other
                                 if (other.PlayerRole != IRole.Doppelgänger && other.PlayerRole != IRole.Thief)
                                 {
-                                    other.PlayerRole = IRole.Cultist;
-                                    other.Team = ITeam.Cult;
-                                    other.ChangedRolesCount++;
-                                    other.ConvertedToCult = true;
+                                    Transform(other, IRole.Cultist, TransformationMethod.AutoConvertToCult);
                                 }
                                 return DoGameEnd(ITeam.Cult);
                         }

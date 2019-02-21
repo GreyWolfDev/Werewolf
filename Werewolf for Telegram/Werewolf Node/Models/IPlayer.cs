@@ -150,7 +150,7 @@ namespace Werewolf_Node.Models
 
     }
 
-
+    // If you add a role, make sure to add it into the SetTeam method!
     public enum IRole
     {
         Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller,
