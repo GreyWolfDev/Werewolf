@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<!-- version: 07.11.2018 von @Appfel -->
+	<!-- version: 07.02.2019 -->
   <language name="Deutsch (Amnesia Mode)" base="Deutsch" variant="Amnesia" code="de" isDefault="false"/>
   <string key="NotInGame">
     <value>Schon vergessen? Du bist keinem Spiel beigetreten!</value>
@@ -117,9 +117,10 @@
     <value>Als du gerade damit beschäftigt bist, auf deinem Dachboden nach alten Bildern deiner Verwandten zu suchen, schießt dir plötzlich etwas durch den Kopf. Keine Angst, es ist keine Kugel, sondern nur {1}s Name... aber irgendetwas ist anders. Da ist noch ein Name... Ja, jetzt ist es ganz klar! Du erinnerst dich an {0}!</value>
   </string>
   <string key="SeerSees">
-    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} ist.</value>
-    <value>Eine Offenbarung! Plötzlich bist du dir ganz sicher: {0} ist {1}! Leider weißt du jedoch immer noch nicht, wer du selbst bist...</value>
-    <value>Nanu? Plötzlich weißt du ganz genau: {0} ist {1}! Leider musst du erst mal die Anderen davon überzeugen...</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} sein könnte. Oder auch nicht ...</value>
+    <value>Trotz deines schlechten Gedächtnisses gibt es immer wieder ein paar Fetzen an Informationen, die du ihm entringen kannst... Zum Beispiel ist dir soeben eingefallen, dass {0} {1} ist! Aber ob auf dein Gedrächtnis auch wirklich Verlass ist?</value>
+    <!-- <value>Eine Offenbarung! Plötzlich bist du dir ganz sicher: {0} ist {1}! Leider weißt du jedoch immer noch nicht, wer du selbst bist...</value> -->
+    <!-- <value>Nanu? Plötzlich weißt du ganz genau: {0} ist {1}! Leider musst du erst mal die Anderen davon überzeugen...</value> -->
   </string>
   <string key="AskLynch">
     <value>Wen willst du lynchen?</value>
@@ -414,8 +415,8 @@
     <value>Plötzlich meldet sich deine Nase... aus irgendeinem Grund mag sie den Geruch von Detektiven 🕵 nicht. Du entschließt dich, {0} ab sofort aus dem Weg zu gehen...</value>
   </string>
   <string key="DetectiveSnoop">
-    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} ist</value>
-    <value>Trotz deines schlechten Gedächtnisses gibt es immer wieder ein paar Fetzen an Informationen, die du ihm entringen kannst... Zum Beispiel ist dir soeben eingefallen, dass {0} {1} ist!</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} sein könnte. Oder auch nicht ...</value>
+    <value>Trotz deines schlechten Gedächtnisses gibt es immer wieder ein paar Fetzen an Informationen, die du ihm entringen kannst... Zum Beispiel ist dir soeben eingefallen, dass {0} {1} ist! Aber ob auf dein Gedrächtnis auch wirklich Verlass ist?</value>
   </string>
   <string key="HarlotShot">
     <value>Plötzlich hört man einen Schuss. Das Dorf sieht sich um und entdeckt {0}, den Schützen 🔫, über dem Körper von {1} stehen, die Pistole noch immer auf den Kopf gerichtet. {1} war die Hure 💋</value>
@@ -470,8 +471,8 @@
     <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
   </string>
   <string key="CultVisitEmpty">
-    <value>{0} ging zu {1}s Haus, doch es war scheinbar niemand zu Hause!</value>
-    <value>{0} schlich sich des Nachts heimlich zu zu {1}s Haus, doch entweder war es die falsche Adresse oder der Bewohner dieses Hauses treibt sich des Nachts an anderen Orten herum...</value>
+    <value>Dank {0} erinnerst du dich, dass {1} nicht zu Hause war!</value>
+    <!-- <value>Du kommst gerade bei {1}s Haus an, da fällt dir auf, dass es vollkommen menschenleer ist... Hast du die richtige Adresse vergessen oder verbirgt {1} irgendetwas?</value> -->
   </string>
   <string key="CultWins" isgif="true">
     <value>Alle Wölfe starben, alle anderen Lebenden wurden zu Kultisten bekehrt.. Der Kult hat gewonnen!</value>
@@ -691,7 +692,6 @@
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist!</value>
     <value>Falls du eine besondere Fähigkeit hattest, hast du sie offenbar vergessen... aber vielleicht offenbart sie sich ja zum rechten Zeitpunkt!</value>
     <value>Glückwunsch, du bist eine der mächtigsten Rollen im Spiel! Nur leider kennst du deine Fähigkeiten nicht, und sie sind offensichtlich eher passiver Natur. Wenn du Glück hast, werden sie sich jedoch in einem Augenblick der größten Not zur Schau stellen.</value>
-    <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
   </string>
   <string key="RoleInfoSerialKiller">
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
@@ -1558,9 +1558,8 @@
   <string key="NegSeerSees">
     <!-- 0 - target's name -->
     <!-- 1 - role that they are not -->
-    <value>Du weißt vielleicht nicht mehr wer du selbst bist, aber du kannst mit Sicherheit sagen, dass {0} nicht {1} ist.</value>
-    <value>Eine Offenbarung! Plötzlich bist du dir ganz sicher: {0} ist nicht {1}! Leider weißt du jedoch immer noch nicht, wer du selbst bist...</value>
-    <value>Nanu? Plötzlich weißt du ganz genau: {0} ist nicht {1}! Leider musst du erst mal die Anderen davon überzeugen...</value>
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber weißt du, dass {0} {1} sein könnte. Oder auch nicht ...</value>
+    <value>Trotz deines schlechten Gedächtnisses gibt es immer wieder ein paar Fetzen an Informationen, die du ihm entringen kannst... Zum Beispiel ist dir soeben eingefallen, dass {0} {1} ist! Aber ob auf dein Gedrächtnis auch wirklich Verlass ist?</value>
   </string>
   <string key="AskSandman">
     <value>Du weißt, dass du etwas tun solltest, aber muss es heute sein?</value>
@@ -1662,7 +1661,6 @@
   	<value>Ihr tanzt noch immer um das Lagerfeuer und vergesst völlig, jemanden zu lynchen!\n👯‍♀️🔥👯‍♂️   🕺🔥💃</value>
   </string>
   <string key="RoleInfoWiseElder">
-    <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
     <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist!</value>
     <value>Falls du eine besondere Fähigkeit hattest, hast du sie offenbar vergessen... aber vielleicht offenbart sie sich ja zum rechten Zeitpunkt!</value>
     <value>Glückwunsch, du bist eine der mächtigsten Rollen im Spiel! Nur leider kennst du deine Fähigkeiten nicht, und sie sind offensichtlich eher passiver Natur. Wenn du Glück hast, werden sie sich jedoch in einem Augenblick der größten Not zur Schau stellen.</value>
@@ -1693,6 +1691,9 @@
   <string key="Thief">
     <value>der Dieb 😈</value>
   </string>
+
+
+
   <string key="AboutThief">
     <value>Der Dieb 😈! Niemand mag ihn, alle fürchten ihn. Kann dir aber im Grunde egal sein, du klaust dich munter in der Weltgeschichte umher. Blöd nur, dass beklaute Spieler, ihre Original-Rolle komplett vergessen. Ist aber beim Kult auch nicht anders...\nOh! Fast vergessen: Beklaute werden neuer Dieb oder Dorfbewohner, je nachdem , was aktuell eingestellt ist!</value>
   </string>
@@ -1846,5 +1847,280 @@
   <string key="BeholderSeerStolen">
     <!-- <value>The thief has stolen the seer's role! {0} is now the seer, and {1} does no longer have seeing abilities!</value> -->
     <value>Ist letzte Nacht irgendetwas bei {0}s Haus passiert? Du kannst dich nicht erinnern... \nIrgendwas hat {1} damit zu tun.</value>
+  </string>
+
+
+<!-- New roles 28.12.2018 -->
+
+  <string key="Troublemaker">
+	<value>die Unruhestifterin 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Die Unruhestifterin 🤯 ist in der Trotzphase (aka Pubertät) und sorgt einmal im Spiel für Chaos. Das nervt das Dorf so sehr, dass es direkt zweimal lyncht.</value>
+	<value>Die Unruhestifterin 🤯 hat einen riesigen Putzfimmel. Dies geht soweit, dass selbst dein Stuhl und deine Hütte nicht vor ihr sicher sind. Nachdem jetzt alle komplett durch sie aufgeschreckt sind, wissen sie nach dem ersten Lynch gar nicht mehr, dass sie schon mal gelyncht haben und lynchen an diesem Tag auch noch ein zweites Mal.</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du tagsüber etwas machen kannst.</value>
+    <value>Wow, du bist so... besonders! Du kannst tagsüber etwas machen! (Warte, kann das nicht jeder?)</value>
+    <value>Seltsam... alle deine Erinnerungen sind verschwunden... was mag nur deine Rolle sein? Du weißt nur noch, dass du dich tagsüber immer besonders energiegeladen gefühlt hast...</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Oha! Du kannst etwas machen! Wie cool ist das denn? Frage ist nur: heute oder nicht heute?</value>
+  	<value>Du weißt, dass du etwas tun solltest, aber muss es heute sein?</value>
+    <value>Komisch... worüber denkst du gerade nach?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0} 🤯 steht auf und erzählt etwas von einem Vincent, der voll süß sei. Als sie merkt, dass es euch eher nervt, schreit die Unruhestifterin 🤯 voll los und beschimpft die Eltern und alle "alten Leute". Ihr seid so genervt, dass ihr heute Abend vergesst, dass ihr nur einmal lynchen wollt und stimmt doppelt ab...</value>
+	<value>Was ist das denn für ein Chaos hier? Und wieso hängt überall die Wäsche auf der Leine? Scheinbar putzt heute {0} 🤯 wieder das ganze Dorf und sorgt für mächtig Unruhe. Nach eurem ersten Lynch seid ihr euch unsicher, ob ihr bereits gelyncht habt und werden zur Sicherheit noch einen zweiten Lynch anhängen.</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Ihr seid noch immer genervt von der Unruhestifterin 🤯 und wählt heute doppelt, wen ihr töten wollt. Hoffentlich ist morgen Ruhe!</value>
+	<value>Dank dem Chaos der Unruhestifterin 🤯 wählt ihr heute zwei Personen aus dem Dorf raus. Aber wählt weise!</value>
+  </string>
+  <string key="Chemist">
+	<value>der Chemiker 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>Der Chemiker 👨‍🔬 ist schon eine verrückte Person! In seinem Labor, zu dem fast wöchentlich die Feuerwehr 🚒 gerufen wird, braut er verschiedene Tränke, die meisten rot 🍷 und tödlich. Jede zweite Nacht geht er auf ein romantisches Date und da ist es schon passiert, dass er ein Glas mit Rotwein und eins mit einem tödlichen Trank füllt. Das Date wählt ein Glas, er trinkt das andere. Und einer stirbt. Das ist dann weniger romantisch!</value>
+	<!-- <value>The chemist is a quite crazy person who likes to brew potions and mess up with them. They mix two potions and force other people to choose one to drink, while the chemist will drink the other. However, while one solution is just tasting like rosebuds, the other one is going to kill you instantly. Good luck when they visit you!</value> -->
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist!</value>
+    <value>Falls du eine besondere Fähigkeit hattest, hast du sie offenbar vergessen... aber vielleicht offenbart sie sich ja zum rechten Zeitpunkt!</value>
+    <value>Glückwunsch, du bist eine der mächtigsten Rollen im Spiel! Nur leider kennst du deine Fähigkeiten nicht, und sie sind offensichtlich eher passiver Natur. Wenn du Glück hast, werden sie sich jedoch in einem Augenblick der größten Not zur Schau stellen.</value>
+	<!-- Your love for poisonous potions is huge and as a hobby you like to gamble with your life... Just a bit! You brew two potions, one of them being poisonous, the other neutral, looking exactly the same. Every other night, you can choose a player and force them to have a drink with you, maybe they are lucky and survive. However, if your host chooses the good drink, you'll get the poisonous one and die. Good luck! -->
+  </string>
+  <string key="ChemistBrewing">
+	<value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- While the other villagers are going to bed, you're still up in your laboratory, mixing the potions for the next night. Make sure to not get caught by a wolf though! -->
+  </string>
+  <string key="AskChemist">
+	<value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
+    <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>You've got the power... aber welche Macht hast du? Und was passiert, wenn du jemanden gewählt hast? Ich habe etwas Angst was wohl passiert wenn du den Falsc... NEIN! Ich darf dir keine Angst machen. Wähle jemanden! Du kannst! Wird schon nichts schlimmes passieren! Hoffentlich...</value>
+	<!-- Who would be a good host and gambling partner tonight? -->
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
+    <value>Was ist nur in der letzten Nacht bei {0}s Haus passiert? Bist du etwa verkatert, oder warum kannst du dich partout nicht daran erinnern?</value>
+	<!-- <value>You went to {0}'s house to have a drink with them, however, as you arrive there, they are already dead!</value> -->
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
+    <value>Was ist nur in der letzten Nacht bei {0}s Haus passiert? Bist du etwa verkatert, oder warum kannst du dich partout nicht daran erinnern?</value>
+	<!-- <value>Du hattest heute ein Date bei {0}, dem Chemiker. 👨‍🔬 Doch als dieser mit Rotwein 🍷 kam, hast du ihn mit dem Messer getötet. Warum?</value> -->
+	<!-- <value>You got visited by the Chemist 👨‍🔬 {0}! They pulled out a knife to force you to drink, but instead of drinking, you pulled out your own knife. Apparently, your knife was stronger 🤷‍♂️</value> -->
+  </string>
+  <string key="ChemistSK">
+	<value>Du willst deinem Date {0} gerade den Rotwein 🍷 servieren, als dieser aufsteht und dich umarmt. Du spürst einen Stich im Rücken. Der Serienkiller hat sein Messer 🔪 in deinen Rücken gerammt. Das ist nicht romantisch!</value>
+	<!--<value>You go to {0} to let them choose a potion, however, they were the serial killer and stabbed you! 🔪</value>-->
+  </string>
+  <string key="ChemistSKPublic">
+  	<value>Die Liebe ist doch nicht tot! ❤️ Der Chemiker 👨‍🔬 {0} hatte letzte Nacht ein romantisches Date mit Candle Light Döner. Er meinte noch, jetzt kann er zufrieden sterben. Blöd nur, dass sein Date der Serienmörder 🔪 war und den Chemiker getötet hat.\nEntschuldigung! Die Liebe ist doch tot. 💔 Und der Chemiker auch!</value>
+	<!-- <value>The chemist 👨‍🔬 {0} tried to force the serial killer to a game tonight. Looks like the murderer didn't feel like playing games... {0} was found, stabbed, with two potions still in their bag!</value>-->
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Du hattest ein tolles Date mit dem Chemiker 👨‍🔬. Alles war perfekt bis zum Rotwein 🍷, den hast du irgendwie nicht überlebt. Der Chemiker hat dir aus Versehen einen tödlichen Trank statt Rotwein gegeben.</value>
+	<!-- <value>You got visited by the chemist 👨‍🔬, they forced you to choose a potion and you chose the poisonous one. What a sad way to leave this world...</value> -->
+  </string>
+  <string key="ChemistSuccess">
+	<value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
+    <value>Was ist nur in der letzten Nacht bei {0}s Haus passiert? Bist du etwa verkatert, oder warum kannst du dich partout nicht daran erinnern?</value>
+	<!-- <value>Du hattest ein tolles Date mit {0}. Alles war perfekt bis zum Rotwein 🍷, den hat dein Date irgendwie nicht überlebt. Du hast ihm aus Versehen einen tödlichen Trank statt Rotwein gegeben.</value> -->
+	<!-- <value>You visited {0} and let them choose a potion! They chose the poisonous one and you returned home, satisfied of your gambling skills. This is no game of chances!</value>-->
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Opfer des Chemikers -->
+  <!-- {1} - Wird durch "(Opfer) war (Rolle)" ersetzt -->
+	<value>Der Chemiker 👨‍🔬 hatte ein Date. Das lief aber irgendwie nicht so gut, da das Date {0} nun tot ist. Och ne, hat der verwirrte Chemiker schon wieder den Rotwein 🍷 mit seinen giftigen Tränken vertauscht?\n{1}</value>
+	<!-- <value>The chemist 👨‍🔬 has visited {0} tonight and they chose the poisonous potion! While the crazy chemist is still alive, {0} died. {1}</value> -->
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Du hattest ein tolles Date mit {0}, dem Chemiker 👨‍🔬. Alles war perfekt, bis ihr zum Wein kamt. 🍷 In deinem Glas war Rotwein, aber es scheint, als sei der Chemiker dagegen allergisch. Komisch... Fakt ist, bei dir liegt jetzt 'ne Leiche im Wohnzimmer. Was machst du damit?</value>
+	<!-- <value>You got visited by the chemist 👨‍🔬 {0}, they forced you to choose a potion. After a moment of hesitation, you chose the good one! Lucky you!</value> -->
+  </string>
+  <string key="ChemistFail">
+	<value>Du hattest ein tolles Date mit {0}. Alles war perfekt bis zum Rotwein 🍷. Dein Date hatte Rotwein, ist aber trotzdem nicht glücklich, da du einen giftigen Trank getrunken hast und direkt verstarbst.</value>
+	<!-- <value>You visited {0} and let them choose a potion! They chose the good one however! In result, you drank the poisonous one and died. Maybe you should have done a better job...</value> -->
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Der verrückte Chemiker 👨‍🔬 hatte ein Date. Das lief aber irgendwie nicht so gut, da {0}, also der Chemiker 👨‍🔬, nun tot ist. Och ne, hat der verwirrte Chemiker schon wieder den Rotwein 🍷 mit seinen giftigen Tränken vertauscht? Die Medikamente, die ihr bei ihm gekauft habt, würde ich übrigens nicht mehr nehmen...</value>
+	<!-- <value>The chemist 👨‍🔬 {0} was found dead! Apparently, {0} had bad luck and drank the poisonous potion during their nightly visit! Pray you never bought your medicines from them...</value> -->
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} war nicht zu Hause!</value>
+    <value>Du kommst gerade bei {0}s Haus an, da fällt dir auf, dass es vollkommen menschenleer ist... Hast du die richtige Adresse vergessen oder verbirgt {0} irgendetwas?</value>
+	<!-- <value>{0} wasn't home! You drag your suitcase back home, cursing your bad luck.</value> -->
+  </string>
+  <string key="CultistsList">
+	<value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an: {0}</value>
+    <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>der Eiswolf 🐺❄️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Komisch... du kannst dich nicht mehr daran erinnern, wer du bist! Du weißt nur, dass du nachts nicht schlafen kannst.</value>
+    <value>Du scheinst eine Schlafstörung zu haben... oder warum brennt um kurz nach Mitternacht noch Licht in deinem Haus? Und was viel wichtiger ist, was zur Hölle treibst du da?</value>
+    <value>Tagsüber wirkst du auf deine Mitmenschen wie ein ganz normaler Dorfbewohner, doch nur des Nachts entpuppt sich deine wahre Gestalt! Leider klingt das sehr viel weniger gruselig, wenn du vergessen hast, worin deine Macht besteht...</value>
+    <!-- <value>Es herrschen aktuell -21°C und du rennst im T-Shirt rum. Das kann eigentlich nur eines bedeuten: du musst der Eiswolf 🐺❄️ sein. Statt mit den anderen Wölfen zu jagen frierst du Leute ein, die dann ihre mögliche nächtliche Betätigung vergessen. Aber vorsicht, wer bereits eingefroren war, zieht sich nächste Nacht deutlich wärmer an und kann erstmal nicht mehr eingefroren werden.</value> -->
+    <!-- <value>You are the Snow Wolf 🐺☃️. Every night, instead of following your pack to hunt someone, you skulk around on your own to freeze someone out of your pack. A frozen person will be unable to use any night actions, if they have any. However, your victim will have some residue of your power the next night and can not be frozen a second time in a row.</value> -->
+  </string>
+  
+  <string key="AboutSnowWolf">
+    <value>Der Eiswolf 🐺❄️ sollte vielleicht tagsüber Handschuhe tragen, damit beim Handschütteln der Gegenüber nicht einfriert. Denn statt mit den anderen Wölfen zu fressen, friert er nachts auf eigene Faust Leute ein. Diese können dann ihre nächtliche Aktion, soweit vorhanden, nicht durchführen. Wer so eingefroren wurde, zieht sich danach warm an und kann nächste Nacht nicht eingefroren werden.</value>
+    <!-- <value>The Snow Wolf 🐺☃️ is an wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value> -->
+  </string>
+  <string key="AskFreeze">
+	<value>Du weißt, dass du mit jemanden irgenwas machen kannst, aber wen willst du wählen?</value>
+    <value>Was musstest du nochmal tun? Ach ja, du wolltest eine Person auswählen. Aber wen... und vor allem warum?</value>
+    <value>Wie du siehst, sind da unten Knöpfe mit Namen darauf. Aber welchen von diesen Knöpfen wirst du drücken, und wirst du die Schuld ertragen können, die du damit auf dich nimmst?</value>
+    <value>Du hast eine schwierige Wahl vor dir... Jeder dieser Namen steht für einen Menschen, dessen Leben auf seine Art und Weise lebenswert ist. Hinter jedem dieser Namen steht ein Individuum. Und du hältst die Macht in den Händen, einen dieser Namen auszuwählen. Es gibt nur einen Haken: Du weißt nicht, was du damit anrichtest. Du könntest das Leben der gewählten Person bereichern... aber du könntest es auch vollkommen zerstören. Die Entscheidung liegt bei dir.</value>
+    <value>You've got the power... aber welche Macht hast du? Und was passiert, wenn du jemanden gewählt hast? Ich habe etwas Angst was wohl passiert wenn du den Falsc... NEIN! Ich darf dir keine Angst machen. Wähle jemanden! Du kannst! Wird schon nichts schlimmes passieren! Hoffentlich...</value>
+	<!-- <value>Wen willst du heute berühren und somit einfrieren?</value> -->
+  </string>
+  <string key="WolfPackList">
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an: {0}</value>
+    <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}</value>
+    <!-- <value>Das Wolfrudel 🐺🐺 besteht aus: {0}</value> -->
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an: {0}, {1} </value>
+    <value>Dein Gedächtnis scheint dich doch nicht vollständig im Stich gelassen zu haben... Irgendwo in den hintersten Windungen deines Gehirns findest du folgende Namen: {0}, {1}</value>
+    <!-- <value>Das Wolfrudel 🐺🐺 besteht aus: {0}\nOh, und natürlich {1}, dem Eiswolf.</value> -->
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}, {2}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}, {2}</value>
+    <!-- <value>Nachdem {0} verstarb, nimmst du seinen Platz ein und wirst Rudelführer. 🐺⚡️ Du bist jetzt im Team 🐺🐺 mit {1} und dem Eiswolf 🐺❄️ {2}.</value> -->
+    <!-- <value>{0} has died, and you transform into an Alpha wolf. Your teammates are: {1} and the Snow Wolf {2}</value>-->
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}, {2}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}, {2}</value>
+	<!-- <value>Nachdem {0} verstarb, nimmst du seinen Platz ein und wirst Wolfswelpe. 🐶 Du bist jetzt im Team 🐺🐺 mit {1} und dem Eiswolf 🐺❄️ {2}.</value> -->
+    <!-- <value>{0} has died, and you transform into the Wolf Cub. Your teammates are: {1} and the Snow Wolf {2}</value>-->
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}, {2}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}, {2}</value>
+	<!-- <value>Nachdem {0} verstarb, nimmst du seinen Platz ein und wirst zum Werwolf. 🐺 Du bist jetzt im Team 🐺🐺 mit {1} und dem Eiswolf 🐺❄️ {2}.</value> -->
+    <!-- <value>{0} has died, and you transform into a Werewolf. Your teammates are: {1} and the Snow Wolf {2}</value>-->
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}, {2}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}, {2}</value>
+	<!-- <value>Nachdem {0} verstarb, nimmst du seinen Platz ein und wirst Lykan. 🐺🌝 Du bist jetzt im Team 🐺🐺 mit {1} und dem Eiswolf 🐺❄️ {2}.</value> -->
+    <!--<value>{0} has died, and you transform into the Lycan. Your teammates are: {1} and the Snow Wolf {2}</value>-->
+  </string>
+  <string key="DGTransformToSnowWolf">
+  	<value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}</value>
+	<!-- <value>Nachdem {0} verstorben ist, nimmst du seinen Platz ein und wirst Eiswolf. 🐺❄️ Da es alleine langweilig wäre, hast du Unterstützung von den Wölfen: {1}</value> -->
+    <!--<value>{0} has died, and you transform into the Snow Wolf. Your teammates (if any) are: {1}</value>-->
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Plötzlich erinnerst du dich an einen wichtigen Namen: {0}</value>
+    <value>Aus dem hintersten Winkel deines Kopfes kommt ein Name hervorgekrochen: {0}</value>
+	<!-- <value>Gerade war {0} noch der Doppelgänger, nun wird er zum neuen Eiswolf 🐺❄️!</value> -->
+    <!--<value>The doppelganger {0} has now become the new snow wolf!</value>-->
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>Durch {0}s Tod hat sich deine Rolle geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest. Du weißt vielleicht nicht mehr wer du selbst bist, dafür aber erinnerst du dich an jemand anderen: {1}, {2}</value>
+    <value>Etwas Seltsames geschieht aufgrund von {0}s Tod: Du spürst, wie sich dein Körper verändert! Noch wärend du gerade denkst, dass die Pubertät normalerweise langsamer verlaufen sollte, schießen dir plötzlich folgende Namen durch den Kopf: {1}, {2}</value>
+    <!-- <value>Du musst erfahren, dass dein Vorbild {0} starb. Du wirst wild, aber nicht nur das, du bist ab jetzt auch ein Werwolf 🐺! Du bist jetzt im Team 🐺🐺 mit {1} und dem Eiswolf 🐺❄️ {2}.</value> -->
+    <!--<value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1} and the Snow Wolf {2}</value>-->
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value> Du hast nicht nur dein Gedächtnis verloren, sondern jegliche Erinnerung an {0} ist mit einmal auch verschwunden. Dafür haben deine grauen Zellen nun aber eine Verbindung zu {1} aufgebaut.</value>
+    <!-- <value>Es gibt Veränderungen in deinem Team: {0} hat das Team verlassen. Aber es gibt auch eine gute Nachricht: {1} ist der neue Eiswolf! 🐺❄️</value> -->
+    <!--<value>{0} is no longer your teammate and {1} has now become the new snow wolf!</value>-->
+  </string>
+  <string key="HarlotFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+    <!-- <value>Gerade als du die Tür öffnest, um in fremden Betten "nach dem Rechten zu sehen", spürst du eine Berührung von hinten. Du möchtest sehen, was es war, aber kannst dich nicht umdrehen. Erstarrt und erfroren 🐺❄️ stehst du vor deiner Tür. Erst die morgendlichen Sonnenstrahlen tauen dich am Morgen wieder auf.</value> -->
+    <!--<value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks 🐺☃️. You stand frozen in the doorway, silently cursing this weird form of bondage. Ah well, thank goodness you're thawed now. </value>-->
+  </string>
+  <string key="ChemistFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Liebevoll hast du das Date vorbereitet und nun sitzt ihr euch gegenüber. Ihr seht euch sehr tief in die Augen, die Funken sprühen. Doch als ihr eure Hände berührt, wird dir schlagartig kalt und du erstarst! Ob der Eiswolf 🐺❄️ das mit Absicht oder aus Versehen gemacht hat ist dir nicht bekannt, aber bewegen kannst du dich nicht mehr. Und den Wein kannst du auch nicht servieren. Kopf hoch, es gibt immer noch eine Chance und am Morgen bist du eh wieder aufgetaut.</value> -->
+    <!-- <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>-->
+  </string>
+  <string key="CultistFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Gerade als du das Haus verlässt, um zum Gemeindehaus zu gehen, merkst du wie die Beine immer schwerer werden. Auch sonst ist dir kalt. Nach kurzer Zeit erstarrst du völlig 🐺❄️ und kannst den Kult nicht unterstützen. Nur gut, dass du noch vor dem Morgengrauen wieder auftaust und dich niemand in der Kluft gesehen hat!</value> -->
+    <!--<value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow cultists dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>-->
+  </string>
+  <string key="CHFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Hast du alles? Die Liste mit dem bekannten Kult, die Liste möglicher Kultisten, deinen blauen Helm, dein Schwert, deinen Eiswürf... Moment! Was? Och ne, du bist auf den Eiswolf 🐺❄️ reingefallen und nun ist dir kalt, du erstarrst und frierst! Ein Glück, dass du bald auftaust. Leider reicht heute Nacht die Zeit nicht mehr den Kult zu jagen. Naja, morgen wieder!</value> -->
+    <!--<value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched 🐺☃️. You mentally groaned, your limbs aching from being in this position until now... </value>-->
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Du legst gerade die Karten und schaust in die Glasugel. Doch diese zeigt heute keine Prophhezeihung über einen Mitbewohner, sondern ähnelt einer Schneekugel. Der Eiswolf 🐺❄️ hat dich voll erwischt und du siehst nichts ordentliches heute Nacht!</value> -->
+    <!--<value>As you sat at your table, ready to use your psychic powers, a gust of wind blew in from the window, causing you to freeze 🐺☃️. While being bound usually isn't a problem, the freezing spell also gave you a serious case of brain freeze. You weren't worried though, knowing that the sun rising is one of the constants of this world and that you'll be thawed now. </value>-->
+  </string>
+  <string key="GAFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Du willst gerade deine schlecht bezahlte Arbeit antreten und jemanden vor dem Tod retten, als dir sehr kalt wird. Der Eiswolf hat dich von hinten angegriffen und eingefroren. Mit den eingefrorenen Flügeln 🐺❄️ kannst du nicht fliegen und schwer sind die auch! So wird das nichts mit der guten Tat! Nur gut, dass du am Morgen durch die Sonne auftaust und nach Hause und heiße Schokolade trinken kannst!</value> -->
+    <!--<value>As you willed your wings to appear, a gust of wind blew in from the windows, causing you to freeze 🐺☃️. You inwardly cringed as you suddenly imagine yourself as an ornament on a Christmas tree. Thankfully, this is now over since the sun has risen. </value>-->
+  </string>
+  <string key="SKFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Du willst gerade das Messer 🔪 nehmen um deine Leber-Sammlung zu erweitern, aber das Messer ist gefroren 🐺❄️ und zerbricht. Jetzt musst du morgen erstmal ein neues Messer kaufen und gehst heute Nacht leer aus!</value> -->
+    <!--<value>As you admired your liver collection one last time before leaving your house, a gust of wind blew in from the windows, frosting the glass jars... freezing you 🐺☃️. As you unfroze this morning, you gritted your teeth in annoyance at the Snow Wolf's spell, swearing to make them suffer as much as possible when you take their liver. </value>-->
+  </string>
+  <string key="ThiefFrozen">
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Bereit zu klauen und die besten Rollen anzunehmen, spürst du eine Berührung von hinten und merkst, wie du einfrierst 🐺❄️. Klauen entfällt heute, aber zum Glück rettet dich bald die Morgensonne. Jetzt schnell nach Hause und was warmes trinken, klauen kannst du morgen immer noch!</value> -->
+    <!--<value>As you sulked around the village, you felt a strong gust of wind. You stood frozen in your tracks, literally unable to move 🐺☃️. Luckily, it was dark enough for you to not be recognised by anyone who passed you that night. When you were completely thawed by dawn, you scampered back to your home before anyone could see you. </value>-->
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Irgendetwas geschah letzte Nacht. Du kannst dich nicht mehr daran erinnern.</value>
+    <value>Etwas Großartiges ist letzte Nacht geschehen! Leider kannst du dich nicht mehr daran erinnern, was es war...</value>
+	<!-- <value>Du schläfst tief und fest, aber wachst frierend auf. War da eben jemand im Zimmer? 🐺❄️\nDu kuschelst dich noch mehr in deine Decke ein und schläfst diese Nacht etwas tiefer als normal.</value> -->
+    <!--<value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Snow Wolf 🐺☃️ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>-->
+  </string>
+  <string key="GuardBlockedSnowWolf">
+	<value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
+    <value>Was ist nur in der letzten Nacht bei {0}s Haus passiert? Bist du etwa verkatert, oder warum kannst du dich partout nicht daran erinnern?</value>
+	<!-- <value>Gerade als du {0} berühren und einfrieren möchtest, spürst du eine Berührung von hinten. Der Schutzengel 👼 setzt dich mit einem gezielten Schlag schach-matt. Heute Nacht kannst du wohl niemanden einfrieren</value> -->
+    <!--<value>You head to {0}'s house to freeze them, but you are met by a tall dark figure, armed to the teeth. The Guardian Angel fights you off, and you head back defeated.</value>-->
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Irgendetwas geschah bei {0}s Haus letzte Nacht. Leider kannst du dich nicht mehr daran erinnern ...</value>
+    <value>Was ist nur in der letzten Nacht bei {0}s Haus passiert? Bist du etwa verkatert, oder warum kannst du dich partout nicht daran erinnern?</value>
+	<!-- <value>Du schleicht dich an {0} heran und willst ihn gerade erschrecken und legst die Hand auf die Schulter, als dir der Fluch 🐺❄️ einfällt. Du hast wieder jemanden eingefroren. Schnell gehst du nach Hause und trinkst einen schönen Tee, der wärmt von innen. Nur dumm, dass du ihn einfrierst, als du die Tasse berührst.</value> -->
+    <!--<value>You went to {0}'s house and froze them! Tonight, they won't be able to use their night actions (if any).</value>-->
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Der Eiswolf {0} 🐺❄️ wollte letzte Nacht jemanden einfrieren, traf aber auf den Serienmörder! Schnell berührt er das Messer 🔪 und friert es ein, doch der Serienmörder kann es noch da rein stechen, wo ein Herz zu erwarten ist. Durch die Kälte erfriert der Eiswolf selbst. Leider ist der Fluch so, dass der Eiswolf bei seinem eigenen Kältefluch auf Edelstahl stirbt und genau das passierte.\nDer Serienmörder 🔪 hat den Eiswolf 🐺❄️ getötet.</value>
+	<!--<value>The snow wolf {0} attempted to freeze someone last night, but accidentally visited the serial killer! The murderer noticed the unwanted visitor and stabbed {0}!</value>-->
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value>Deine Rolle hat sich geändert. Doch du weißt weder was du warst, noch zu was du gerade wurdest.</value>
+    <value>Was ist das? Du spürst, wie sich dein Körper verändert... Komisch, dabei verläuft die Pubertät normalerweise nicht so schnell!</value>
+	<!-- <value>Du findest eine große blaue Truhe. Du öffnest sie und darin liegen sie endlich: die blauen Handschuhe. Du ziehst sie an, wissend, nun niemanden mehr grundlos einzufrieren. Ebenfalls in der Truhe steht eine Nachricht:\n📜 "Diese Handschuhe helfen dir, deine Einfrierkünste zu kontrollieren. Nun kannst du anderen Aufgaben nachgehen, wie Bäume pflanzen oder Leute töten." Das trifft sich gut, denn in der Zeitung 📰 liest du, dass der letzte Werwolf 🐺 verstorben ist und nun musst du als Wolf arbeiten.\n\nTL;DR\nDu bist normaler Werwolf 🐺 geworden und alleine.</value> -->
+	<!-- <value>Nachdem all deine Wolfkollegen gestorben sind, musst du dich ab sofort selbst um dein nächtliches Futter kümmern. Ab sofort verabschiedest du dich von deiner kalten Fähigkeit, widmest dich der täglichen Fellpflege und jagst ab sofort selbst als Werwolf 🐺 nachts durch das Dorf. </value> -->
+	<!--<value>As all the other wolves have died, you are the last part of the pack that is left! In order to gain some fresh villager meat, you decide to become a normal werewolf from now on, who goes eating rather than freezing at night!</value>-->
+  </string>
+  <string key="SnowFrozeHunter">
+	<!-- 0 - target's name -->
+	<value>Der Eiswolf 🐺❄️ {0} wollte letzte Nacht den Jäger 🎯 mit seinem eisigen Atem überraschen, doch der ließ sich nicht so leicht überlisten... {0} wird nachts nicht mehr sein Unwesen treiben, denn er ist tot.</value>
+    <!-- <value>The snow wolf {0} tried to freeze the hunter last night, but the hunter was able to catch them and take them down with their rifle!</value> -->
   </string>
 </strings>
