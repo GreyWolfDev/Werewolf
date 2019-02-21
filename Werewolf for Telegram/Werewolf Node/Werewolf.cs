@@ -3358,7 +3358,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             {
                 if (arsonist.Choice == -2) //Spark
                 {
-                    foreach (var burn in Players.Where(x => !x.IsDead && x.Doused))
+                    foreach (var burn in Players.Where(x => !x.IsDead && x.Doused && x.PlayerRole != IRole.Arsonist))
                     {
                         if (ga?.Choice == burn.Id)
                         {
