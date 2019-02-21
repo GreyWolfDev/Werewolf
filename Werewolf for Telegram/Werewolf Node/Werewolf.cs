@@ -5072,6 +5072,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     //check for SK
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.SerialKiller))
                         return DoGameEnd(ITeam.SerialKiller);
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Arsonist) && !alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
+                        return DoGameEnd(ITeam.Arsonist);
                     //check for cult
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Cultist))
                     {
