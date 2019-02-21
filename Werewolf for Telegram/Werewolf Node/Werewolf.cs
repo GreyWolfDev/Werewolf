@@ -4947,6 +4947,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                     if (!String.IsNullOrEmpty(msg))
                         SendWithQueue(msg);
+                    if (!String.IsNullOrEmpty(msg2))
+                        SendWithQueue(msg2);
                     if (p.InLove)
                         KillLover(p);
                 }
