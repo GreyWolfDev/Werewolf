@@ -5109,10 +5109,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 return false;
 
             if (alivePlayers.Any(x => x.Team == ITeam.Arsonist)) //there is still Arsonist alive, do nothing (surely more than two players)
-
-                //is everyone left a cultist?
-                if (alivePlayers.All(x => x.Team == ITeam.Cult))
-                    return DoGameEnd(ITeam.Cult);
+                return false;
+            //is everyone left a cultist?
+            if (alivePlayers.All(x => x.Team == ITeam.Cult))
+                return DoGameEnd(ITeam.Cult);
 
             //do the wolves outnumber the others?
             if (alivePlayers.Count(x => WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf) >= alivePlayers.Count(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.SnowWolf))
