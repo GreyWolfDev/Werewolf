@@ -802,7 +802,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     if (user.Achievements == null)
                         user.Achievements = 0;
                     // switch achv system
-                    SwitchAchievementsSystem(p);
+                    //SwitchAchievementsSystem(p);
 
                     /* 
                      * Executrix will do this job for now, that will hopefully work better than this did before
@@ -1101,7 +1101,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     if (lover1 != null)
                     {
                         if (lover1.Id == player.Id)
-                            AddAchievement(player, Achievements.SelfLoving);
+                            AddAchievement(player, AchievementsReworked.SelfLoving);
                         lover1.InLove = true;
                         //send menu for second choice....
                         var secondChoices = Players.Where(x => !x.IsDead && x.Id != lover1.Id).ToList();
@@ -1123,7 +1123,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     if (lover11 == null)
                         return;
                     if (lover11.Id == player.Id)
-                        AddAchievement(player, Achievements.SelfLoving);
+                        AddAchievement(player, AchievementsReworked.SelfLoving);
                     lover11.LoverId = player.Choice;
                     lover11.InLove = true;
 
@@ -1178,7 +1178,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                     if (player.FirstStone == 5)
                     {
-                        AddAchievement(player, Achievements.FirstStone);
+                        AddAchievement(player, AchievementsReworked.FirstStone);
                     }
                 }
                 Program.MessagesSent++;
@@ -1906,7 +1906,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             {
                 foreach (var w in wolves)
                 {
-                    AddAchievement(w, Achievements.PackHunter);
+                    AddAchievement(w, AchievementsReworked.PackHunter);
                 }
             }
 
@@ -1914,7 +1914,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             if (seers.Count() > 1)
             {
                 foreach (var s in seers)
-                    AddAchievement(s, Achievements.DoubleVision);
+                    AddAchievement(s, AchievementsReworked.DoubleVision);
             }
         }
 
@@ -2045,7 +2045,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             foreach (var lover in loversNotify)
             {
                 if (lover.SpeedDating)
-                    AddAchievement(lover, Achievements.OnlineDating);
+                    AddAchievement(lover, AchievementsReworked.OnlineDating);
                 if (lover.PlayerRole == IRole.Doppelgänger && lover.RoleModel == lover.LoverId)
                     AddAchievement(lover, AchievementsReworked.DeepLove);
                 if (loversNotify.Any(x => x.PlayerRole == IRole.Seer) && loversNotify.Any(x => x.PlayerRole == IRole.Sorcerer))
@@ -2529,7 +2529,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             {
                 if (target.PlayerRole == IRole.Harlot)
                     foreach (var c in voteCult)
-                        AddAchievement(c, Achievements.DontStayHome);
+                        AddAchievement(c, AchievementsReworked.DontStayHome);
 
                 Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, teamMembers: voteCult);
             }
@@ -2793,9 +2793,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             lynched.IsDead = true;
                             lynched.TimeDied = DateTime.Now;
                             if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
-                                AddAchievement(lynched, Achievements.LackOfTrust);
+                                AddAchievement(lynched, AchievementsReworked.LackOfTrust);
                             if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
-                                AddAchievement(lynched, Achievements.SpoiledRichBrat);
+                                AddAchievement(lynched, AchievementsReworked.SpoiledRichBrat);
                             SendWithQueue(GetLocaleString("LynchKill", lynched.GetName(), DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{lynched.GetName()} {GetLocaleString("Was")} {GetDescription(lynched.PlayerRole)}" : ""));
 
                             if (lynched.InLove)
@@ -2816,7 +2816,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 case IRole.Tanner:
                                     //check for overkill
                                     if (Players.Where(x => !x.IsDead).All(x => x.Choice == lynched.Id))
-                                        AddAchievement(lynched, Achievements.TannerOverkill);
+                                        AddAchievement(lynched, AchievementsReworked.TannerOverkill);
                                     //end game
                                     lynched.DiedLastNight = true; //store the tanner who should win (DG is too complicated to handle)
                                     DoGameEnd(ITeam.Tanner);
@@ -2834,7 +2834,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         SendWithQueue(GetLocaleString("LynchTie"));
                         var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                         if (t != null && t.Votes > 0)
-                            AddAchievement(t, Achievements.SoClose);
+                            AddAchievement(t, AchievementsReworked.SoClose);
                     }
                     else
                     {
@@ -3040,7 +3040,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         //if snooped 4 times correct continously
                         if (detect.CorrectSnooped.Count() >= 4)
                         {
-                            AddAchievement(detect, Achievements.Streetwise);
+                            AddAchievement(detect, AchievementsReworked.Streetwise);
                             detect.CorrectSnooped.Clear();
                         }
                     }
@@ -3427,7 +3427,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                             //    : GetLocaleString("GenericDeathNoReveal", target.GetName()));
                                         }
                                         foreach (var w in voteWolves)
-                                            AddAchievement(w, Achievements.DontStayHome);
+                                            AddAchievement(w, AchievementsReworked.DontStayHome);
                                     }
                                     else
                                     {
@@ -3655,7 +3655,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                         if (target.PlayerRole == IRole.Sorcerer)
                                         {
                                             foreach (var w in voteWolves)
-                                                AddAchievement(w, Achievements.NoSorcery);
+                                                AddAchievement(w, AchievementsReworked.NoSorcery);
                                         }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
@@ -3676,7 +3676,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                         if (target.PlayerRole == IRole.Sorcerer)
                                         {
                                             foreach (var w in voteWolves)
-                                                AddAchievement(w, Achievements.NoSorcery);
+                                                AddAchievement(w, AchievementsReworked.NoSorcery);
                                         }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
@@ -3696,7 +3696,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 {
                     var cub = Players.GetPlayersForRoles(new[] { IRole.WolfCub }, false).OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.IsDead);
                     if (cub != null)
-                        AddAchievement(cub, Achievements.IHelped);
+                        AddAchievement(cub, AchievementsReworked.IHelped);
                 }
 
                 eatCount = 0;
@@ -3945,7 +3945,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     newbie.IsDead = true;
                                     newbie.KilledByRole = IRole.CultistHunter;
                                     newbie.DiedByVisitingKiller = true;
-                                    AddAchievement(newbie, Achievements.CultFodder);
+                                    AddAchievement(newbie, AchievementsReworked.CultFodder);
                                     newbie.TimeDied = DateTime.Now;
                                     DBKill(target, newbie, KillMthd.Hunt);
                                     //notify everyone
@@ -4331,7 +4331,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         switch (role)
                         {
                             case IRole.Beholder:
-                                AddAchievement(seer, Achievements.ShouldHaveKnown);
+                                AddAchievement(seer, AchievementsReworked.ShouldHaveKnown);
                                 break;
                             case IRole.Traitor:
                                 role = Program.R.Next(100) < 50 ? IRole.Wolf : IRole.Villager;
@@ -4839,7 +4839,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 if (bloodyVictims.Count() >= 4)
                     foreach (var p in bloodyVictims)
-                        AddAchievement(p, Achievements.BloodyNight);
+                        AddAchievement(p, AchievementsReworked.BloodyNight);
             }
             else
             {
@@ -5010,7 +5010,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     {
                         // do nothing, gunner can still make VGs win
                         foreach (var p in alivePlayers.Where(x => x.Team == ITeam.Village))
-                            AddAchievement(p, Achievements.GunnerSaves);
+                            AddAchievement(p, AchievementsReworked.GunnerSaves);
                         return false;
                     }
                 }
@@ -5046,7 +5046,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     foreach (var w in lovers)
                     {
                         if (forbidden)
-                            AddAchievement(w, Achievements.ForbiddenLove);
+                            AddAchievement(w, AchievementsReworked.ForbiddenLove);
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
@@ -5219,8 +5219,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         var skh = skhunter.FirstOrDefault(x => x.PlayerRole == IRole.SerialKiller);
                         msg += GetLocaleString("NoWinner");
                         game.Winner = "NoOne";
-                        AddAchievement(skh, Achievements.DoubleKill);
-                        AddAchievement(hunter, Achievements.DoubleKill);
+                        AddAchievement(skh, AchievementsReworked.DoubleKill);
+                        AddAchievement(hunter, AchievementsReworked.DoubleKill);
                         DBKill(skh, hunter, KillMthd.SerialKilled);
                         DBKill(hunter, skh, KillMthd.HunterShot);
                         if (skh != null)
@@ -5804,7 +5804,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             WolfCubKilled = true;
                         killed.TimeDied = DateTime.Now;
                         if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.AlphaWolf || killed.PlayerRole == IRole.WolfCub || killed.PlayerRole == IRole.SerialKiller || killed.PlayerRole == IRole.Lycan || killed.PlayerRole == IRole.SnowWolf)
-                            AddAchievement(hunter, Achievements.HeyManNiceShot);
+                            AddAchievement(hunter, AchievementsReworked.HeyManNiceShot);
 
                         DBKill(hunter, killed, KillMthd.HunterShot);
                         if (killed.InLove)
@@ -6020,9 +6020,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             if (victim.LoverId == killer.Id && Time == GameTime.Night && method != KillMthd.LoverDied)
             {
                 if (GameDay == 1) //killed lover on first night
-                    AddAchievement(killer, Achievements.OhShi);
+                    AddAchievement(killer, AchievementsReworked.OhShi);
                 else if (WolfRoles.Contains(killer.PlayerRole)) //wolf pack killed lover, not on first night
-                    AddAchievement(killer, Achievements.ShouldveMentioned);
+                    AddAchievement(killer, AchievementsReworked.ShouldveMentioned);
             }
 
         }
@@ -6055,7 +6055,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             {
                 foreach (var p in Players.Where(x => !x.IsDead && !x.Fled))
                 {
-                    AddAchievement(p, Achievements.LongHaul);
+                    AddAchievement(p, AchievementsReworked.LongHaul);
                 }
                 _longHaulReached = true;
             }
@@ -6125,83 +6125,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                     if (p != null)
                     {
-                        Achievements newAch = Achievements.None;
-                        //var gp = GetDBGamePlayer(p);
-
-                        if (p.Achievements == null)
-                            p.Achievements = 0;
-                        var ach = (Achievements)p.Achievements;
-
-                        //calculate achievements
-                        //automatically get welcome to hell
-                        if (!ach.HasFlag(Achievements.WelcomeToHell))
-                            newAch = newAch | Achievements.WelcomeToHell;
-                        if (!ach.HasFlag(Achievements.WelcomeToAsylum) && Chaos)
-                            newAch = newAch | Achievements.WelcomeToAsylum;
-                        if (!ach.HasFlag(Achievements.AlzheimerPatient) && Language.Contains("Amnesia"))
-                            newAch = newAch | Achievements.AlzheimerPatient;
-                        //if (!ach.HasFlag(Achievements.OHAIDER) && Players.Any(x => x.TeleUser.Id == Program.Para))
-                        //    newAch = newAch | Achievements.OHAIDER;
-                        if (!ach.HasFlag(Achievements.SpyVsSpy) & !DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
-                            newAch = newAch | Achievements.SpyVsSpy;
-                        if (!ach.HasFlag(Achievements.NoIdeaWhat) & !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) && Language.Contains("Amnesia"))
-                            newAch = newAch | Achievements.NoIdeaWhat;
-                        if (!ach.HasFlag(Achievements.Enochlophobia) && Players.Count == 35)
-                            newAch = newAch | Achievements.Enochlophobia;
-                        if (!ach.HasFlag(Achievements.Introvert) && Players.Count == 5)
-                            newAch = newAch | Achievements.Introvert;
-                        if (!ach.HasFlag(Achievements.Naughty) && Language.Contains("NSFW"))
-                            newAch = newAch | Achievements.Naughty;
-                        if (!ach.HasFlag(Achievements.Dedicated) && p.GamePlayers.Count >= 100)
-                            newAch = newAch | Achievements.Dedicated;
-                        if (!ach.HasFlag(Achievements.Obsessed) && p.GamePlayers.Count >= 1000)
-                            newAch = newAch | Achievements.Obsessed;
-                        if (!ach.HasFlag(Achievements.Veteran) && p.GamePlayers.Count >= 500)
-                            newAch = newAch | Achievements.Veteran;
-                        if (!ach.HasFlag(Achievements.Masochist) && player.Won && player.PlayerRole == IRole.Tanner)
-                            newAch = newAch | Achievements.Masochist;
-                        if (!ach.HasFlag(Achievements.Wobble) && !player.IsDead && player.PlayerRole == IRole.Drunk && Players.Count >= 10)
-                            newAch = newAch | Achievements.Wobble;
-                        if (!ach.HasFlag(Achievements.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
-                            newAch = newAch | Achievements.Survivalist;
-                        if (!ach.HasFlag(Achievements.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
-                            newAch = newAch | Achievements.MasonBrother;
-                        if (!ach.HasFlag(Achievements.ChangingSides) && player.ChangedRolesCount > 0 && player.Won)
-                            newAch = newAch | Achievements.ChangingSides;
-                        if (!ach.HasFlag(Achievements.LoneWolf) && Players.Count >= 10 && WolfRoles.Contains(player.PlayerRole) && Players.GetPlayersForRoles(WolfRoles, false).Count() == 1 && player.Won)
-                            newAch = newAch | Achievements.LoneWolf;
-                        if (!ach.HasFlag(Achievements.Inconspicuous) && !player.HasBeenVoted & !player.IsDead)
-                            newAch = newAch | Achievements.Inconspicuous;
-                        if (!ach.HasFlag(Achievements.Promiscuous) && !player.HasStayedHome & !player.HasRepeatedVisit && player.PlayersVisited.Count >= 5)
-                            newAch = newAch | Achievements.Promiscuous;
-                        if (!ach.HasFlag(Achievements.DoubleShifter) && player.ChangedRolesCount - (player.ConvertedToCult ? 1 : 0) >= 2)
-                            newAch = newAch | Achievements.DoubleShifter;
-                        if (!ach.HasFlag(Achievements.BrokenClock) && player.FoolCorrectSeeCount >= 2)
-                            newAch = newAch | Achievements.BrokenClock;
-                        if (!ach.HasFlag(Achievements.SmartGunner) && player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
-                            newAch = newAch | Achievements.SmartGunner;
-                        if (!ach.HasFlag(Achievements.CultCon) && player.PlayerRole == IRole.Cultist && convention)
-                            newAch = newAch | Achievements.CultCon;
-                        if (!ach.HasFlag(Achievements.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
-                            newAch = newAch | Achievements.SerialSamaritan;
-                        if (!ach.HasFlag(Achievements.CultistTracker) && player.PlayerRole == IRole.CultistHunter && player.CHHuntedCultCount >= 3)
-                            newAch = newAch | Achievements.CultistTracker;
-                        if (!ach.HasFlag(Achievements.ImNotDrunk) && player.PlayerRole == IRole.ClumsyGuy && player.ClumsyCorrectLynchCount >= 3)
-                            newAch = newAch | Achievements.ImNotDrunk;
-                        if (!ach.HasFlag(Achievements.WuffieCult) && player.PlayerRole == IRole.AlphaWolf && player.AlphaConvertCount >= 3)
-                            newAch = newAch | Achievements.WuffieCult;
-                        if (!ach.HasFlag(Achievements.DidYouGuardYourself) && player.PlayerRole == IRole.GuardianAngel && player.GAGuardWolfCount >= 3)
-                            newAch = newAch | Achievements.DidYouGuardYourself;
-                        if (!ach.HasFlag(Achievements.ThreeLittleWolves) && player.PlayerRole == IRole.Sorcerer && Players.GetPlayersForRoles(WolfRoles, true).Count() >= 3)
-                            newAch = newAch | Achievements.ThreeLittleWolves;
-                        if (!ach.HasFlag(Achievements.President) && player.PlayerRole == IRole.Mayor && player.MayorLynchAfterRevealCount >= 3)
-                            newAch = newAch | Achievements.President;
-                        if (!ach.HasFlag(Achievements.ItWasABusyNight) && player.BusyNight)
-                            newAch = newAch | Achievements.ItWasABusyNight;
-
-                        //now save
-                        p.Achievements = (long)(ach | newAch);
-                        db.SaveChanges();
 
                         // switching to new achv system, do not notify now
 
@@ -6394,6 +6317,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
         }
 
+        /*
         private void AddAchievement(IPlayer player, Achievements a)
         {
             using (var db = new WWContext())
@@ -6416,7 +6340,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     AddAchievement(player, (AchievementsReworked)Enum.Parse(typeof(AchievementsReworked), a.ToString()));
                 }
             }
-        }
+        }*/
 
         private void AddAchievement(IPlayer player, AchievementsReworked a)
         {
@@ -6436,6 +6360,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
         }
 
+        /*
         private void SwitchAchievementsSystem(IPlayer player)
         {
             using (var db = new WWContext())
@@ -6454,7 +6379,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 player.NewAchievements = ach2;
                 db.SaveChanges();
             }
-        }
+        }*/
 
         #endregion
     }
