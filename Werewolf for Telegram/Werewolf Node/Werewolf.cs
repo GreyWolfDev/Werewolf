@@ -5304,6 +5304,19 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         SendWithQueue(msg, GetRandomImage(TannerWin));
                         break;
                     case ITeam.Arsonist:
+                        if (Players.Count(x => !x.IsDead) > 1)
+                        {
+                            var alive = Players.Where(x => !x.IsDead);
+                            var otherPerson = alive.FirstOrDefault(x => x.PlayerRole != IRole.Arsonist);
+                            var arsonist = alive.FirstOrDefault(x => x.PlayerRole == IRole.Arsonist);
+                            SendWithQueue(GetLocaleString("ArsonistWinsOverpower", arsonist.GetName(), otherPerson.GetName()));
+                            DBKill(arsonist, otherPerson, KillMthd.Burn);
+                            if (otherPerson != null)
+                            {
+                                otherPerson.IsDead = true;
+                                otherPerson.TimeDied = DateTime.Now;
+                            }
+                        }
                         msg += GetLocaleString("ArsonistWins");
                         game.Winner = "Arsonist";
                         SendWithQueue(msg, GetRandomImage(ArsonistWins));
