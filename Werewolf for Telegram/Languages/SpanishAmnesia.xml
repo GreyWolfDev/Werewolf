@@ -998,7 +998,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
 	<value>{0} se rasca la cabeza y encuentra algo en el bolsillo de la camisa, ¡las llaves del pueblo! {0} no recuerda para qué sirven, pero de ahora en adelante, los votos de {0} contarán el doble.</value>
   </string>
   <string key="AskMayor">
-	<value>Pulsa el botón rojo de tu despacho cuando quieras hacer eso que no recuerdas.</value>
+	<value>Pulsa el botón rojo cuando quieras hacer eso que no recuerdas.</value>
   </string>
   <string key="Reveal">
 	<value>Pulsar botón rojo</value>
@@ -1447,7 +1447,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>Por defecto, el ladrón 😈 puede robar el rol del jugador que elija durante la primera noche y convertirlo en un simple aldeano.\nSi el modo «Ladrón completo» está activado, cada noche tendrá un 50% de posibilidades de robar roles. Si lo consigue, el jugador afectado, se convertirá en el nuevo ladrón y continuará confundiendo a la aldea.</value>
   </string>
   <string key="AskPacifist">
-    <value>Pulsa el botón rojo de tu despacho cuando quieras hacer eso que no recuerdas.</value>
+    <value>Pulsa el botón rojo cuando quieras hacer eso que no recuerdas.</value>
   </string>
   <string key="PacifistNoLynch">
 <!-- {0} - Pacifist's name -->
@@ -1684,5 +1684,167 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
 <!-- used when Thief steals SK -->
 <!-- used when Thief steals SK -->
     <value>¡El ladrón, {0}, intentó robar el rol de la asesina en serie! Esto no salió muy bien: {0} fue apuñalado múltiples veces y ahora tu hígado está perdido...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+  <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {1}? Espera… ¿De qué estabas hablando? Entre los nombres en tu cabeza, aparece uno nuevo: {0}.</value>
+  </string>
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+  <value>El buscapleitos 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+  <value>El buscapleitos es el adolescente problemático de la aldea. Cuando empieza a gritar, la aldea entera pierde el control. Para desfogarse, ¡los aldeanos lincharán 2 veces ese día!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+  <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante el día!</value>
+  </string>
+  <string key="AskTroublemaker">
+  <value>Pulsa el botón rojo cuando quieras hacer eso que no recuerdas.</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+  <value>{0} recordó su capacidad de gritar descontroladamente, aunque no recuerde por qué lo hace. Los aldeanos recuerdan sentirse irritados al escuchar eso siempre y se vuelven locos. ¡Hoy podrán linchar 2 veces!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+  <value>Gracias al buscapleitos, ¡recuerdas que hoy podrás linchar 2 veces! Esperemos que el día de mañana sea más calmado.</value>
+  </string>
+  <string key="Chemist">
+  <value>El químico 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+  <value>El químico es una persona desequilibrada a la que le gusta fabricar pociones y provocar el caos con ellas. Mezclará dos de sus pociones y obligará a otras personas a elegir una para probarla, mientras que él beberá de la otra. Una poción es simple agua de rosas, mientras que la otra acabará en el momento con tu vida. ¡Buena suerte!</value>
+  </string>
+  <string key="RoleInfoChemist">
+  <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
+  </string>
+  <string key="ChemistBrewing">
+  <value>¿Ocurrió algo anoche? No pareces recordarlo....</value>
+  </string>
+  <string key="AskChemist">
+  <value>Sabes que deberías hacer algo con alguien, ¿pero a quién elegirás?</value>
+  </string>
+  <string key="ChemistTargetDead">
+  <value>¡{0} ya ha muerto!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+  <value>¿Ocurrió algo anoche? No pareces recordarlo, excepto que {0} dijo algo (que tampoco recuerdas)…</value>
+  </string>
+  <string key="ChemistSK">
+  <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ChemistSKPublic">
+  <value> El químico 👨‍🔬, {0}, trató de forzar a la asesina en serie a beber durante la noche. Pero ella le dejó claro que no es no. {0} fue encontrado apuñalado, con 2 pociones en sus bolsillos.</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+  <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ChemistSuccess">
+  <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+  <value>El químico 👨‍🔬 ha visitado a {0} esta noche y su huésped eligió la poción venonosa. Mientras que el sádico químico sigue vivo, {0} muere. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+  <value>¿Ocurrió algo anoche? No pareces recordarlo, excepto que {0} dijo algo (que tampoco recuerdas)…</value>
+  </string>
+  <string key="ChemistFail">
+  <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ChemistFailPublic">
+  <value>El químico 👨‍🔬, {0}, fue encontrado muerto. Aparentemente, {0} tuvo mala suerte y bebió la poción que contenía veneno durante su visita nocturna. Reza para que tus medicamentos nunca provengan de su laboratorio.</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+  <value>¡{0} no estaba en casa!</value>
+  </string>
+  <string key="CultistsList">
+  <value>Quizás que no recuerdes quién eres, pero te acuerdas de alguien importante: {0}</value>
+  </string>
+  <string key="SnowWolf">
+  <value>El lobo de nieve 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Qué extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>El lobo de nieve 🐺☃️ es un lobo de las montañas nevadas. Como tal, ha dominado el arte de controlar el hielo y la nieve. Ya que ha vivido mucho tiempo solo, el lobo de nieve prefiere atacar por separado. En lugar de comerse a alguien con su manada, durante la noche puede escoger a otra víctima para congelarla; de este modo, imposibilita a sus víctimas para realizar acciones nocturnas. Sin embargo, su víctima tendrá residuos de su poder y no podrá ser congelado dos noches seguidas.</value>
+  </string>
+  <string key="AskFreeze">
+  <value>Sabes que deberías hacer algo con alguien, ¿pero a quién elegirás?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Quizás que no recuerdes quién eres, pero te acuerdas de alguien importante: {0}.</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Quizás que no recuerdes quién eres, pero te acuerdas de alguien importante: {0}. También recuerdas que {1} es importante.</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}. También recuerdas que {2} es importante.</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+   <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}. También recuerdas que {2} es importante.</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+   <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}. También recuerdas que {2} es importante.</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+   <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}. También recuerdas que {2} es importante.</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+   <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}.</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Entre los nombres en tu cabeza, aparece uno nuevo: {0}.</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora?\nQuizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}. También recuerdas que {2} es importante.</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {1}? Espera… ¿De qué estabas hablando? Entre los nombres en tu cabeza, aparece uno nuevo: {0}.</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="CHFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo… </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="GAFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="SKFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
+  </string>
+  <string key="SnowFrozeKiller">
+  <value>El lobo de nieve, {0}, se preparaba para congelar a alguien durante la noche, pero no recordó a quién estaría tratando de congelar y visitó a la asesina en serie; esta se ha percatado de su inesperado visitante y ha apuñalado a {0}.</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+  <value>Tu rol ha cambiado, pero ¿qué eres ahora?</value>
+  </string>
+<string key="SnowFrozeHunter">
+    <!-- 0 - nombre del objetivo-->
+    <value>El lobo de nieve, {0}, intentó congelar al cazador anoche, ¡pero el cazador pudo alcanzarlo con su rifle! {0} era un hombre lobo.</value>
   </string>
 </strings>

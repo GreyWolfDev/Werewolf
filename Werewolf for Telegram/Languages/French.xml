@@ -1518,4 +1518,176 @@ Comme il ne reste que {0}, {1} attend patiemment le moment où celui-ci baissera
   <string key="ThiefTeamEnd">
     <value>Équipe du Voleur</value>
   </string>
+
+  <string key="StealKiller">
+    <value>Vous essayez de voler un rôle, mais vous vous êtes attaqué à la mauvaise cible… Le Céréales Killer vous a repéré, a bondi, et vous a enfoncé son grand couteau dans le cœur.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>{0}, le Voleur, a essayé de voler le rôle du Céréales Killer ! Mal lui en a pris, il gît maintenant le cœur transpercé, et le foie manquant.</value>
+  </string>
+  <string key="BeholderSeerStolen">
+    <value>Le Voleur a volé la Voyante ! {0} est la nouvelle Voyante, et {1} a perdu son don.</value>
+  </string>
+
+
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+    <value>le Trouble-Fête 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+    <value>Perturbé par son trop-plein d’hormones, le Trouble-Fête est un adolescent un peu bruyant. Ses cris incessants et sa propension à pousser n’importe quel instrument de musique à un volume déraisonnable sont difficiles à supporter pour le reste du village. Pour le pousser à s’arrêter, la population est prête à exécuter DEUX personnes !</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+    <value>Vous êtes le Trouble-Fête, et l’adolescence, c’est pas marrant. Personne ne vous comprend, et vous êtes oppressé pour vos goûts musicaux… Quand vous vous y mettez, tout le monde pète un câble, et c’est rigolo. Ces vieux crétins ne trouvent pas d’autre solution que d’exécuter deux personnes d’un coup !</value>
+  </string>
+  <string key="AskTroublemaker">
+    <value>Voulez-vous être insupportable aujourd’hui ?</value>
+    <value>Voulez-vous mettre un peu d’ambiance dans le village ?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+    <value>{0}, le Trouble-Fête 🤯, est encore en train de casser les oreilles à tout le monde… Ça ne va pas se passer comme ça ! Exécutez deux personnes pour rétablir l’ordre !</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+    <value>À cause du boucan du Trouble-Fête, deux personnes seront exécutées ce soir. Avec un peu de chance, ça lui apprendra et il sera calmé demain…</value>
+  </string>
+  <string key="Chemist">
+    <value>le Chimiste 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+    <value>Le Chimiste est un ancien professeur un peu timbré, qui aime jouer avec ses mixtures. Sa passion ? Concocter deux potions dont une mortelle, et trouver quelqu’un avec qui boire… Bonne chance s’il s’invite chez vous !</value>
+  </string>
+  <string key="RoleInfoChemist">
+    <value>Vous êtes le Chimiste 👨‍🔬! Les potions, c’est votre passion, et ce qui vous amuse, c’est de leur confier votre vie. Deux potions, une seule mortelle, vous pouvez chaque nuit rendre visite à quelqu’un pour un apéro nocturne. Enfin, chaque nuit, tant que vous ne buvez pas la mauvaise potion…</value>
+  </string>
+  <string key="ChemistBrewing">
+    <value>Tandis que le village s’endort paisiblement, vous êtes toujours éveillé, surveillant votre alambic duquel s’échappent des volutes de fumée. Mais prenez garde, il parait que des gens pas très nets trainent dehors.</value>
+  </string>
+  <string key="AskChemist">
+    <value>Avec qui souhaitez-vous prendre un funeste apéro ?</value>
+  </string>
+  <string key="ChemistTargetDead">
+    <value>Vous vous rendez chez {0} pour boire un petit verre, mais vous ne trouvez qu’un cadavre !</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>{0}, Le Chimiste 👨‍🔬, vous rend une petite visite ! Il sort un couteau et vous propose de façon un peu insistante de choisir entre deux verres. Vous sortez le vôtre, de couteau, et il est manifestement plus grand et plus affuté.</value>
+  </string>
+  <string key="ChemistSK">
+    <value>Vous vous rendez chez {0} pour boire un verre, mais il s’avère que c’était le Céréales Killer et que son couteau est planté dans votre cœur.</value>
+  </string>
+  <string key="ChemistSKPublic">
+	  <value>Le Chimiste 👨‍🔬, a essayé de jouer avec le Céréales Killer ce soir. Il semblerait que celui-ci n’ait pas été du même avis. {0} a été retrouvé le cœur transpercé, avec deux potions dans son sac.</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+    <value>Le Chimiste vous a rendu visite cette nuit. Et vous avez choisi la mauvaise potion. Mourir de cette façon est à la fois triste et douloureux.</value>
+  </string>
+  <string key="ChemistSuccess">
+    <value>Vous vous êtes rendu chez {0} pour un petit verre. Ce soir encore, vous avez gagné votre pari et bu la bonne potion ; il n’y a pas de hasard !</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>Le Chimiste 👨‍🔬 a pris l’apéro chez {0} ! Il court encore, et {0} n’est plus qu’un cadavre. Avec une légère teine verdâtre. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+    <value>{0}, le Chimiste 👨‍🔬, vous a rendu visite ! Vous avez le choix entre deux potions. Après un instant d’hésitation, vous choisissez, buvez tous les deux… Et {0} s’effondre. Ouf !</value>
+  </string>
+  <string key="ChemistFail">
+    <value>Vous avez rendu visite à {0} pour votre jeu favori. Et on dirait bien que vous êtes tombé à court de chance…</value>
+  </string>
+  <string key="ChemistFailPublic">
+    <value>{0}, le Chimiste 👨‍🔬 est retrouvé mort ! C’était son dernier apéro.</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+    <value>La maison de {0} est vide ! Vous rentrez chez vous avec vos flacons, maugréant, déçu.</value>
+  </string>
+  <string key="CultistsList">
+    <value>Les cultistes sont : {0}</value>
+  </string>
+  <string key="SnowWolf">
+    <value>le Loup des Neiges 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Vous êtes le Loup des Neiges 🐺☃️. Chaque nuit, au lieu de suivre votre meute, vous partez seul en vadrouille pour geler une proie. Un personnage gelé ne peut pas agir la nuit, et ne peut pas être gelé à nouveau la nuit suivante.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Le Loup des Neiges 🐺☃️ est un loup originaire des montagnes enneigées près du village. C’est là-bas qu’il a appris à contrôler la neige et la glace. Solitaire, il préfère agir sans la meute, et peut choisir chaque nuit une proie pour la geler. Un personnage gelé ne peut pas agir la nuit, et ne peut pas être gelé à nouveau la nuit suivante. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>Qui voulez-vous geler cette nuit ?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>La meute est constituée de {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>La meute est constituée {0}, ainsi que le Loup des Neiges {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} est mort, et vous vous transformez en Loup Alpha. Vos coéquipiers sont {1} et le Loup des Neiges {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} est mort, et vous vous transformez en Louveteau. Vos coéquipiers sont {1} et le Loup des Neiges {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} est mort, et vous vous transformez en Loup. Vos coéquipiers sont {1} et le Loup des Neiges {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} est mort, et vous vous transformez en Lycan. Vos coéquipiers sont {1} et le Loup des Neiges {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} est mort, et vous vous transformez en Loup des Neiges. Vos coéquipiers, s’ils existent, sont : {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>{0}, le Doppelgänger, devient le nouveau Loup des Neiges !</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} est mort ! La colère vous fait vous transformer en Loup. Vos nouveaux coéquipiers sont : {1} et le Loup des Neiges {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} n’est plus votre coéquipier, et {1} est devenu le nouveau Loup des Neiges.</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Alors que vous ouvrez la porte pour aller travailler, une rafale de vent vous congèle littéralement sur place. Vous n’êtes pas contre les jeux de soumission, mais là, c’est froid… Heureusement, la nuit n’est pas si longue.</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Alors que vous vous apprêtez à vous lever pour aller jouer avec vos potions, une rafale de vent ouvre votre fenêtre, et vous congèle sur place. Du coin de l’œil, vous pouvez constater que le froid n’a pas épargné vos fioles… Dommage.</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Vous enfilez votre cape et vous apprêtez à quitter votre demeure, quand soudain, une rafale de vent envahit l’entrée et vous congèle littéralement. Vos camarades cultistes arrivent peu de temps après, et éclatent (discrètement) de rire en vous voyant dans cet état ridicule. Ils partent en vous promettant de bien travailler cette nuit.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Alors que vous vous penchez pour attraper votre épée pour aller pourfendre du mécréant, une rafale de vent ouvre la fenêtre et vous congèle sur place. Bloqué dans cette position désagréable, la nuit va être un peu longue…</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Alors que vous vous asseyez à votre table, vos pouvoirs bouillonant déjà, une rafale de vent ouvre la fenêtre et vous congèle sur place. Vous n’avez pas spécialement besoin de bouger pour exercer votre art, mais le froid vous embrouille également l’esprit. Tant, le soleil se lèvera bien assez vite, et la vie reprendra son cours.</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Alors que vous conjurez vos angéliques ailes, une rafale de vent souffle par la fenêtre, vous congélant sur place. Vous tressaillez intérieurement en vous imaginant déjà finir en décoration de Noël… Heureusement, la nuit n’est pas si longue.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Alors que vous jetez un œil ému sur votre collection de foies avant de quitter votre demeure, une rafale de vent souffle par la fenêtre et vous congèle sur place. Fichu Loup des Neiges ! Quand vous le tiendrez au bout de votre couteau, il rira moins…</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Alors que vous rôdez dans le village, une rafale de vent vous congèle sur place, rendant tout mouvement impossible. Heureusement, vous êtes suffisamment bien caché, et personne ne vous aperçoit. À l’aube, le soleil vous dégèle, et vous rentrez chez vous aussi discrètement que possible.</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Alors que vous dormez paisiblement, vous êtes soudainement transi de froid. Impossible de bouger ! Le Loup des Neiges vous a gelé.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Vous vous rendez chez {0} pour y conjurer la neige et la glace, mais vous tombez nez à nez avec une grande silouhette, ailée et armée. Vous ne faites pas le poids face à l’Ange Gardien, et vous rentrez chez vous la queue entre les jambes.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Vous vous rendez chez {0} pour y conjurer la neige et la glace ! Cette nuit, {0} ne bougera pas.</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>{0}, le Loup des Neiges, a essayé de geler quelqu’un cette nuit, mais on dirait qu’il est tombé sur plus fort. Le Céréales Killer l’a remarqué avant qu’il ne puisse agir, et lui a plongé quelques pouces d’acier dans le cœur.</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value>Tous les autres loups sont morts, et vous êtes le derniers membre de la meute ! Vous devez donc à présent chasser pour manger, comme un simple Loup.</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <value>{0}, le Loup des Neiges, a essayé de geler le Fusilier cette nuit, mais celui-ci l’a aperçu et abattu avant qu’il ne puisse agir.</value>
+  </string>
 </strings>

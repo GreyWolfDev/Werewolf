@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <language name="Bahasa Malayu" base="Bahasa Melayu" variant="Normal" owner="@asy4f @skyzlangit @BadangKulim @Qudussiyyah @Own_Owl @ @IllusionLight @NightcrawlerL"/>
+  <language name="Bahasa Malayu" base="Bahasa Melayu" variant="Normal" owner="@asy4f @skyzlangit @BadangKulim @Qudussiyyah @syinaliffa @Own_Owl @ @IllusionLight @NightcrawlerL"/>
   <string key="NotInGame" deprecated="true">
     <value>Anda kelihatan tidak berada dalam mana-mana permainan sekarang...</value>
   </string>
@@ -1732,5 +1732,165 @@ Nota: Para adalah pembuat bot ini.</value>
   </string>
   <string key="BeholderSeerStolen">
   <value>The thief has stolen the seer's role! {0} is now the seer, and {1} does no longer have seeing abilities!</value>
+  </string>
+
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+  <value>Si Kepala Angin 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+  <value>The Troublemaker is the raging teenager in town. When they start yelling, the whole village gets out of control. To gain silence, they will lynch twice that day!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+  <value>Anda ialah Si Kepala Angin..!! Sebagai seorang budak baru nak up, anda dalam proses nak membesar. Satu hari, anda jadi bengang tak tentu pasal, dan boleh membuat seluruh kampung turut serabut bersama anda dan mengundi dua kali...!!</value>
+  </string>
+  <string key="AskTroublemaker">
+  <value>Adakah anda mahu buat kecoh dalam kampung hari ini..?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+  <value>Oleh kerana melayan Si Kepala Angin {0}, seluruh kampung perlu mengundi dua kali hari ini. Harap - harap dia ok la esoknya...</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+  <value>Because of the troublemaker, you are going to lynch twice today! Hopefully they are going to be quiet tomorrow.</value>
+  </string>
+  <string key="Chemist">
+  <value>Ahli Kimia 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+  <value>Ahli kimia ialah seorang gila dan suka menghasilkan ramuan yang pelik. Mereka mencampurkan dua ramuan dan memilih seseorang untuk meminumnya, manakala ahli kimia akan meminum ramuan yang satu lagi. Walau bagaimanapun, satu ramuan mempunyai rasa yang sangat sedap tetapi ramuan yang satu lagi akan membunuh anda serta merta. Semoga  anda kekal hidup apabila mereka melawat anda!</value>
+  </string>
+  <string key="RoleInfoChemist">
+  <value>Anda ialah Ahli Kimia 👨‍🔬! Cinta anda pada ramuan beracun amatlah besar dan anda suka menggadaikan nyawa anda sebagai hobi... Tetapi mungkin hanya sedikit! Anda menghasilkan dua ramuan, salah satunya beracun, dan yang satu kelihatan neutral, kelihatan sama. Setiap malam, anda boleh memilih seorang pemain dan memaksa mereka untuk minum bersama, mungkin mereka bertuah dan meminum ramuan yang elok. Namun, jika tebusan anda meminum ramuan yang elok, anda akan meminum ramuan yang beracun dan mati. Semoga berjaya!</value>
+  </string>
+  <string key="ChemistBrewing">
+  <value>Apabila penduduk kampung sedang bersedia untuk beradu, anda masih lagi bekerja di makmal, menghasilkan ramuan untuk malam yang seterusnya. Namun, pastikan anda tidak dibaham oleh Sang Serigala!</value>
+  </string>
+  <string key="AskChemist">
+  <value>Siapakah yang sesuai dijadikan sasaran bagi pertaruhan nyawa malam ini..?</value>
+  </string>
+  <string key="ChemistTargetDead">
+  <value>Anda pergi ke rumah {0} untuk pertaruhan nyawa ini, tetapi dia sudah tidak bernyawa ketika anda tiba..</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+  <value>Anda telah dilawat oleh Ahli Kimia 👨‍🔬{0}! Dia mengeluarkan pisau dan memaksa anda untuk meminum ramuan, namun sebaliknya anda tidak minum tetapi mengeluarkan pisau. Ternyata pisau anda lebih hebat dan tajam 🤷‍♂</value>
+  </string>
+  <string key="ChemistSK">
+  <value>Di rumah {0} anda memberi pilihan kepadanya untuk memilih ramuan, malangnya dia ialah Pembunuh Bersiri lalu terus menikam anda! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+  <value>Ahli Kimia tersilap dalam memilih pasangan untuk berkongsi kegilaannya. Pembunuh bersiri lebih tertarik untuk membunuh daripada membuat pertaruhan... {0} dijumpai bersama dua botol ramuan serta kesan tikaman yang jelas menunjukkan keghairahan pembunuhan tersebut.</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+  <value>Anda dilawati oleh Ahli Kimia 👨‍🔬, Dalam keterpaksaan, anda telah memilih ramuan beracun. Bukan cara yang terbaik untuk meninggalkan dunia ini...</value>
+  </string>
+  <string key="ChemistSuccess">
+  <value>Di rumah {0} anda memberi pilihan kepadamya! Dia telah memilih ramuan beracun manakala anda pulang dengan kepuasan yang tak terhingga atas kemenangan dalam pertaruhan ini. Ini adalah pertaruhan maut , bukan pertaruhan biasa!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+  <value>Ahli Kimia 👨‍🔬 telah melawat {0} semalam dan pertaruhan maut telah dijalankan! Dengan mulut berbuih, jelas {0} kalah dalam pertaruhan itu. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+  <value>Ahli Kimia 👨‍🔬 {0} telah melawat dan memaksa anda memilih satu daripada dua ramuan yang dibawanya. Walaupun tidak yakin dengan pilihan anda, anda telah memilih ramuan yang selamat! Anda terselamat dari menjadi mangsa Ahli Kimia!</value>
+  </string>
+  <string key="ChemistFail">
+  <value>Anda ke rumah {0} dan memaksa dia bermain pertaruhan maut! Dia telah memilih ramuan yang selamat. Manakala ramuan yang anda minum mula memberi reaksi negatif, lutut terasa longlai, pandangan mata menjadi kelam dan nafas terasa semput.  Lantas diri anda mulai rebah.</value>
+  </string>
+  <string key="ChemistFailPublic">
+  <value>Ahli Kimia 👨‍🔬 {0} telah dijumpai mati! Nampaknya, pertaruhan maut {0} telah memakan diri! Anda segera teringat ramuan ubat yang telah dibeli dari Ahli Kimia, mungkin anda patut membuangnya...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+  <value>{0} tiada di rumah! Anda mengheret beg sambil menyumpah nasib malang anda.</value>
+  </string>
+  <string key="CultistsList">
+  <value>Senarai keahlian ahli cultist terkini: {0}</value>
+  </string>
+  <string key="SnowWolf">
+  <value>Serigala Salju🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Anda ialah Serigala Salju🐺☃️. Setiap malam, anda berseorangan mencari mangsa untuk dibekukan dan tidak bersama kumpulan serigala di kampung ini memilih mangsa untuk dimakan. Mangsa yang dibekukan tidak dapat menjalankan aktiviti malam ini, jika ada. Walaubagaimanapun, mangsa anda akan menjadi kebal dari dibekukan hasil tinggalan baki dari kuasa anda keesokan harinya dan anda tidak dapat membekukannya untuk dua malam berturut - turut.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Serigala Salju ialah serigala yang berasal dari pergunungan salju berhampiran dengan kawasan perkampungan. Seyogia, dia telah mahir dalam mengawal ais dan salji. Oleh kerana selalu bersendirian, dia lebih selesa bergerak seorang diri. Bertentangan dengan lumrah serigala yang menyerang berkumpulan, dia boleh membekukan mangsa yang berlainan dengan pilihan kumpulan, dan menyebabkan mangsa tidak dapat bertindak pada malam itu. Kendatipun begitu, mangsa akan menjadi kebal dari serigala salju untuk malam berikutnya hasil tinggalan baki kuasa yang dikenakan oleh serigala salju. </value>
+  </string>
+  <string key="AskFreeze">
+  <value>Pada malam ini, siapakah yang anda hendak pilih agar dia tidak berfungsi?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Kawanan serigala termasuk {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Kawanan serigala mengandungi {0} dan seekor serigala Salju {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} telah mati, dan anda berubah menjadi serigala Allfa. Ahli pasukan anda adalah: {1} dan Serigala Salju {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} telah mati, dan anda berubah menjadi Anak Serigala. Ahli pasukan anda adalah: {1} dan Serigala Salju {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} telah mati, anda telah berubah menjadi serigala. Ahli pasukan anda adalah: {1} dan Serigala Salju {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} telah mati, dan kamu bertukar kepada Lycan. Kawanan serigala anda ialah: {1} dan Serigala Salju {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} telah mati, dan anda bertukar kepada Serigala Salju. Kawanan serigala anda (if any) ialah: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Pelanduk dua serupa {0} kini telah menjadi serigala salju yang baharu!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} telah mati! Dalam kemarahan anda menjadi serigala! Ahli pasukan anda adalah: {1} dan Serigala Salju {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} bukan lagi ahli kumpulan anda dan {1} telah bertukar menjadi serigala salju yang baharu!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Semasa anda membuka daun pintu untuk meninggalkan rumah. Bayu angin yang sejuk masuk ke dalam rumah anda menyebabkan anda kesejukan. 🐺☃️. Anda berdiri kesejukan sambil menyumpah pada keadaan. Syukurlah, anda mulai selesa sekarang dari kesejukan. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Semasa anda terjaga daripada tidur, bersedia untuk bangun dan mendapatkan ramuan anda, bayu angin yang kencang meniup ke dalam daripada tingkap menyebabkan anda beku 🐺☃️. Daripada sudut penglihatan mata, anda melihat botol-botol ramuan anda turut membeku. Nampaknya ia juga tidak terlepas daripada serangan mantera  beku itu. Anda mengeluh, mengimpikan matahari akan segera terbit. Syukurlah anda mulai selesa sekarang daripada kesejukan. </value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Semasa anda menggantungkan jubah dan bersedia untuk meninggalkan rumah anda, bayu angin berhembus melalui daun pintu, menyebabkan anda membeku 🐺☃️. Rakan-rakan cultist anda singgah ke  rumah anda untuk membawa ahli yang baharu, tetapi mereka malah mentertawakan anda.  Sejurus mereka meninggalkan rumah anda,  mereka berjanji akan melakukan kerja yang baik pada malam ini. Setelah anda pulih seperti sediakala, anda meninggalkan rumah, merengek malu.  </value>
+  </string>
+  <string key="CHFrozen">
+    <value>Semasa mengambil pedang anda, bayu angin berhembus ke dalam melalui tingkap, menyebabkan anda membeku dalam keadaan badan membongkok 🐺☃️. Anda mengerang kesakitan, anggota badan mulai terasa lenguh dek berada dalam keadaan yang membongkok sehingga sekarang...  </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Semasa duduk menghadap meja, dalam keadaan bersedia untuk menggunakan kuasa psikik anda, bayu angin berhembus ke dalam melalui tingkap, menyebabkan anda membeku 🐺☃️. Walaupun berada dalam keadaan yang terikat bukan menjadi satu masalah, sihir beku itu juga menyebabkan kes otak beku yang sangat serius. Namun begitu anda tidak risau kerana mengetahui fenomena matahari terbit ialah sesuatu yang sentiasa berlaku di dunia ini dan anda akan pulih seperti sediakala. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>Semasa anda melebarkan sayap anda, hembusan bayu angin berhembus ke dalam melalui tingkap, menyebabkan anda membeku 🐺☃️. Anda berasa seram sejuk kerana membayangkan diri anda sebagai perhiasan untuk pokok Krismas. Syukurlah, semuanya telah berakhir kerana matahari telah terbit. </value>
+  </string>
+  <string key="SKFrozen">
+    <value>Semasa mengagumi koleksi hati anda buat kali yang terakhir sebelum anda keluar untuk memburu mangsa yang baharu, angin bayu berhembus ke dalam melalui tingkap , membekukan tingkap kaca... membekukan anda 🐺☃️. Setelah pulih seperti sediakala, anda mengetap gigi, geram akan sihir Serigala Salju dan bersumpah akan membuatkan mereka berasa terseksa semasa anda meragut hati mereka. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Semasa anda merayau-rayau di sekitar kampung, anda merasakan hembusan bayu angin yang kencang. Anda berdiri beku, kaku di atas jalan, tidak mampu untuk bergerak 🐺☃️. Anda bernasib baik kerana keadaan yang gelap gelita menyebabkan anda tidak dikenali oleh sesiapa yang melewati anda pada malam itu. Apabila anda pulih seperti sediakala pada waktu subuh, anda berlari lintang-pukang sebelum sesiapa melihat anda.</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Semasa anda sedang tidur, anda berasa sangat sejuk. Anda terjaga dalam keadaan yang beku, tidak dapat bergerak sama sekali! Nampaknya Serigala Salju 🐺☃️ telah menyihir anda. Anda menutup mata anda semula, bersedia untuk tidur tanpa perasaan risau kerana ia langsung tidak menjejaskan anda... selain daripada berasa sejuk.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Anda menuju ke rumah {0} untuk membekukan mereka, tapi anda bertembung dengan lembaga yang tinggi, dilengkapi dengan perisai. Dewa Penjaga bertempur dengan anda, dan anda pulang, tewas.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Anda menuju ke rumah {0} dan membekukan mereka! Mereka tidak akan dapat menggunakan kuasa mereka pada malam ini. (Jika ada).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+  <value>Serigala Salju {0} cuba untuk membekukan seseorang semalam, namun secara tidak sengaja telah melawat rumah pembunuh upahan! Pembunuh upahan sedar akan kehadiran tetamu tidak diundang itu lalu menikamnya {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+  <value>Apabila semua serigala yang lain telah mati, anda adalah satu-satunya serigala yang tinggal! Untuk mendapatkan daging orang kampung yang segar, anda membuat keputusan untuk menjadi serigala normal, yang lebih rela memakan daging daripada membekukan orang pada waktu malam! </value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Serigala Salju {0} cuba untuk membekukan pemburu semalam, namun pemburu berjaya menangkap serta meragut nyawa mereka dengan senapangnya! </value>
   </string>
 </strings>

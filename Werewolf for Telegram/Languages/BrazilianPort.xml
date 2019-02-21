@@ -3,7 +3,7 @@
 	Texto original traduzido por @Montuano e @guto_xtino
 	Atualmente sendo traduzido pelo grupo Tradutores WWBR
 		Team leaders: @ayylimao e @sats_sjrp
-			(Última edição: 14/04/2018 por @sats_sjrp)
+			(Última edição: 30/01/2019 por Zaulao [não membro])
 
 	Algum problema com a tradução? Contate alguém da equipe.
 -->
@@ -486,7 +486,7 @@
 		<value>O corpo de {0} está jogado no meio da praça, seu focinho estraçalhado por um tiro. Foi uma péssima ideia atacar uma Sentinela...</value>
 	</string>
 	<string key="SerialKillerKilledWolf">
-		<value>Os Lobisomens tentaram atacar a pessoa errada noite passada! Aldeões encontraram {0} ao lado da forca, sem sua pele ou sua orelha direita. Alguém ganhou um casaco de peles...</value>
+		<value>Os Lobisomens tentaram atacar a pessoa errada noite passada! Aldeões encontraram {0} ao lado da forca, sem sua pele e sua orelha direita. Alguém ganhou um casaco de peles...</value>
 	</string>
 	<string key="DefaultKilled">
 		<value>Pareceu uma manhã normal, mas onde está {0}? A Aldeia se reúne na casa de {0} e encontra seu corpo na cama. Quase não dá pra perceber a orelha faltando, porque seus órgãos estão espalhados pelo quarto... {1}</value>
@@ -1302,35 +1302,340 @@ Atual: {1}</value>
     <value> Uma vez por jogo, o Controlador 💤, poderá usar seu papel para fazer adormecer as pessoas e elas não usarão seus papéis durante a noite.</value>
   </string>
 
-<!-- NOT IMPLEMENTED YET -->
+<!--Not IMPLEMENTED YET-->
+
   <string key="RoleInfoPacifist">
-    <value></value>
+    <value>Você é o Pacifista ☮️. Você pode escolher convencer todos os integrantes da Aldeia a não enforcar ninguém, mas isso só pode ser feito uma vez</value>
   </string>
   <string key="Pacifist">
     <value>Pacifista  ☮️</value>
   </string>
   <string key="AboutPacifist">
-    <value></value>
+    <value>O Pacifista ☮️ pode escolher convencer todos os integrantes da Aldeia a não enforcar ninguém, mas isso só pode ser feito uma vez</value>
   </string>
-
-  <string key="RoleInfoWiseElder">
-    <value></value>
+	<string key="AskPacifist">
+    <value>Aperte este botão quando você quiser fazer seu discurso sincero e impedir a Aldeia de enforcar alguém da próxima vez</value>
   </string>
-  <string key="WiseElder">
+	<string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>O Pacifista ☮️, {0}, está fazendo um discurso sincero sobre amizade e confiança na frente da Aldeia. Graças ao seu discurso, não haverá enforcamento hoje!</value>
+  </string>
+	<string key="PacifistNoLynchNow">
+    <value>Por causa do discurso sincero do Pacifista ☮️, não haverá enforcamento hoje!</value>
+  </string>
+	
+	<string key="WiseElder">
     <value>Lobo Sensato 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>O Lobo Sensato 📚 pode sobreviver ao ataque de um lobisomem uma vez, da segunda ele já consegue pode ser devorado. Se o Vigilante ou o Sentinela o matarem com seus rifles, eles perdem suas patentes e são convertidos a meros Aldeões</value>
   </string>
-
-  <string key="RoleInfoThief">
-    <value></value>
+  <string key="RoleInfoWiseElder">
+    <value>Você é O Lobo Sensato 📚. Você pode sobreviver ao ataque de um lobisomem uma vez, da segunda ele já consegue te devorar. Se o Vigilante ou o Sentinela matarem você com seus rifles, eles perdem suas patentes e são convertidos a meros Aldeões</value>
+  </string>
+	<string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Você tentou invador a casa de {0}, mas {0} é um Lobo Sensato 📚! {0} conseguiu se livrar do seu ataque, mas não conseguiu reconhecer nenhum dos Lobos.</value>
+  </string>
+	<string key="WolvesAteWiseElderPM">
+    <value>Os lobos tentaram devorar você, mas você não é um Lobo Sentado 📚 atoa! Você conseguiu se livrar do ataque, mas infelizmente não sabe quem te atacou.</value>
+  </string>
+	<string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>O Sentinela 🎯, {0}, atirou no Lobo Sensato 📚, {1}. {0} chorou de soluçar, extremamente triste pelo seu fracasso, e dispensou suas habilidades de Sentinela. Ele morreu como um simples Aldeão 👱.</value>
+  </string>
+	<string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>O Vigilante 🔫, {0}, atirou no Lobo Sensato 📚, {1}. {0} chorou de soluçar, extremamente triste pelo seu fracasso, e decidiu pendurar sua pistola, tornando-se um simples Aldeão 👱 com um campo para arar.</value>
+  </string>
+	<string key="RoleInfoThiefFull">
+    <value>Você é o Ladrão 😈! Quando o modo [Full Thief] está ativado, você tem 50% de chance de roubar o papel de um jogador toda noite, se for bem sucedido, esse jogador se tornará o novo ladrão e continuará com o roubo!</value>
+  </string>
+	<string key="RoleInfoThief">
+    <value>Você é O Ladrão 😈! Você pode roubar o papel de um jogador na primeira noite e transformar aquele jogador em um simples Aldeão</value>
   </string>
   <string key="Thief">
-    <value>the Ladrão 😈</value>
+    <value>O Ladrão 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <!--Informação sobre o modo [FULL Thief] suprimida-->
+    <value>Por padrão, o Ladrão 😈 pode roubar o papel de um jogador a primeira noite e transformar aquele jogador em um simples Aldeão.</value>
   </string>
-</strings>
+	<string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Você tentou roubar o papel de {0}, mas infelizmente você falhou...</value>
+  </string>
+	<string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Você tentou roubar o papel de {0}, mas {0} já morreu...</value>
+  </string>
+	<string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Seu papel foi roubado! Agora você é um {0}.</value>
+  </string>
+	<string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} não é mais seu companheiro, e {1} agora se tornou um Maçom, igualzinho a você!</value>
+  </string>
+	<string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Seus companheiros (se houver) são: {0}</value>
+  </string>
+	<string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} não é mais seu companheiro, e {1} agora se tornou um integrande da Seita, igualzinho a você!</value>
+  </string>
+	<string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} não é mais seu companheiro, e {1} agora se tornou um Lobo, igualzinho a você!</value>
+  </string>
+	<string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>Seus companheiros (se houver) são: {0}</value>
+  </string>
+	<string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Enquanto {0} perambula pela vila, {0} descobre que não há mais papéis divertidos para roubar. {0} rapidamente sai dessa vila pobre e procura por outra aldeia para reiniciar sua ilustre carreira.</value>
+  </string>
+	<string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>O alvo do seu roubo agora é {0}.</value>
+  </string>
+	<string key="AskThief">
+    <value>Você quer roubar o papel de quem?</value>
+  </string>
+	<string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votos para {1}: {2}</value>
+  </string>
+	<string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Resultado do enforcamento de hoje:\n{0}</value>
+  </string>
+	<string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votos para {1}.</value>
+  </string>
+	<string key="SecretLynchShowVotes">
+    <value>Segredo: Contagem de Votos</value>
+  </string>
+	<string key="SecretLynchShowVotesQ">
+    <value>Quando o votos secretos durante os enforcamentos são ativados, a contagem dos votos será mostrada no final?\nAtualmente: {0}</value>
+  </string>
+	<string key="SecretLynchShowVotesA">
+    <value>Quando o votos secretos durante os enforcamentos são ativados, a contagem de votos no final do enforcamento será: {0}</value>
+  </string>
+	<string key="SecretLynchShowVoters">
+    <value>Segredo: Votantes</value>
+  </string>
+	<string key="SecretLynchShowVotersQ">
+    <value>Quando o votos secretos durante os enforcamentos são ativados e a contagem de votos é mostrada, os nomes dos votantes para cada jogador votado será mostrado?\nAtualmente: {0}</value>
+  </string>
+	<string key="SecretLynchShowVotersA">
+    <value>Quando o votos secretos durante os enforcamentos são ativados e a contagem de votos é mostrada, os nomes dos votantes para cada jogador votado será: {0}</value>
+  </string>
+	<string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Estranho... Assim que a Seita começa a discutir quem será convertido esta noite, você percebe que {0} não está aqui! O que será que aconteceu com {0}??</value>
+  </string>
+	<string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Paz e amor, gente!</value>
+  </string>
+	<string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Não haverá enforcamento hoje devido ao discurso engrandecedor do Pacifista!</value>
+  </string>
+	<string key="ThiefStoleYourRoleThief">
+    <value>Seu papel foi roubado! Agora você é o Ladrão 😈 e pode roubar um papel na próxima noite!</value>
+  </string>
+	<string key="ThiefStoleYourRoleVillager">
+    <value>Seu papel foi roubado! Agora você é Aldeão 👱, arando seus campos o dia todo.</value>
+  </string>
+	<string key="SerialKillerKilledYou" isgif="true">
+    <value>Toc toc, você foi visitado pelo Serial Killer 🔪!</value>
+		<value>Ele emboscou você, te amarrou e depois te esfaqueou no coração!</value>
+  </string>
+	<string key="ThiefTeamEnd">
+		<value>Time dos Ladrões</value>
+  </string>
+	<string key="StealKiller">
+    <value>Você tentou roubar um papel... mas você escolheu o Serial Killer! Ele viu você se esgueirando pela casa e, em instantes, você foi brutalmente esfaqueado...</value>
+  </string>
+	<string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value> O Ladrão, {0}, tentou roubar o papel do Serial Killer! Parece que não deu muito certo: {0} foi esfaqueado multiplas vezes e já não tem mais sua orelha direita...</value>
+  </string>
+	<string key="BeholderSeerStolen">
+	<value>O Ladrão roubou o papel do Vidente! {0} agora é o Vidente, e {1} não tem mais poderes psíquicos!</value>
+  </string>
 
+	<!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>O Agitador 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>O Agitador é um jovem enfurecido na cidade. Quando começa a gritar em fúria, toda a aldeia fica fora de controle. Para ganhar silêncio, ocorrerão dois enforcamentos naquela noite!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Você é O Agitador 🤯. Como jovem dinâmico na vila, seus hormônios estão à flor da pele. Um dia, quando você se sente irritado por qualquer coisa, você causa um grande barraco e a vila executará dois enforcamentos naquele dia.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Você quer causar problemas hoje?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0}, O Agitador 🤯, está causando! Corra por aí e grite por sua satisfação! Haverão dois enforcamentos hoje!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Por causa do Agitador, haverão dois enforcamentos hoje! Com sorte, ele estará mais calmo amanhã.</value>
+  </string>
+  <string key="Chemist">
+	<value>O Químico 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>O Químico é uma pessoa peculiar que adora preparar poções e fazer loucuras com elas. Ele irá preparar duas poções e forçar outra pessoa a beber uma, enquanto ele mesmo bebe a outra. Entretando, enquanto uma poção é bastante saborosa e refrescante, a outra é extremamente letal e mata instantaneamente. Boa sorte quando for visitado por ele!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Você é o Químico 👨‍🔬! Seu amor por poções venenosas é grandioso e, como hobby, você gosta de colocar sua vida em jogo... Só um pouquinho! Você prepara duas poções, uma delas sendo venenosa e extremamente mortal e a outra sendo neutra, porém ambas são idênticas. Toda noite, você pode escolher um jogador e forçá-lo a bebê-las com você, talvez ele seja sortudo e sobreviva. Contudo, se seu anfitrião escolher a poção saudável, você tomará veneno e morrerá. Boa sorte!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Enquanto os outros moradores da vila vão dormir, você permanece no seu laboratório, preparando as poções para a noite seguinte. Tome cuidado para não ser pego por um lobo esta noite!</value>
+  </string>
+  <string key="AskChemist">
+	<value>Quem seria um bom anfitrião e parceiro de jogo hoje à noite?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Você foi para a casa de {0} para beber, porém, quando você chegou lá, {0} já havia morrido!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Você foi visitado pelo Químico 👨‍🔬 {0}! Ele empunhou uma faca para forçar você a beber, mas ao invés de beber, você empunhou sua própria faca. Aparentemente, a sua era mais poderosa 🤷‍♂️</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Você foi à casa de {0} para beber uma poção, porém, {0} é o serial killer e te esquartejou! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>O Químico 👨‍🔬 {0} tentou jogar um jogo com o Serial Killer 🔪 esta noite. Mas parece que o assassino não gosta de joguinhos... {0} foi encontrado morto ainda com duas poções em sua bolsa!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Você foi visitado pelo Químico 👨‍🔬, que forçou você a escolher uma poção e você escolheu a envenenada. Que maneira triste de deixar este mundo...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Você visitou {0} e deixou que escolhesse uma poção! {0} escolheu a envenenada e você voltou para casa, satisfeito com suas habilidades de escolha. Esse não é um jogo de opções!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>O Químico 👨‍🔬 visitou {0} esta noite e {0} escolheu a poção envenenada! Enquanto o químico insano está vivo, {0} morreu. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Você foi visitado pelo Químico 👨‍🔬 {0}, que forçou você a escolher uma poção. Após um momento de hesitação, você escolheu a poção saudável! Que sortudo!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Você visitou {0} e deixou que escolhesse uma poção! Mas {0} escolheu a poção saudável! Como resultado, você tomou a poção envenenada e morreu. Você deveria ter feito um trabalho melhor...</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>O Químico 👨‍🔬 {0} foi encontrado morto! Aparentemente, {0} teve má sorte e bebeu veneno durante sua visitinha noturna! Nunca compre seus remédios com ele...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} não estava em casa! Você carrega sua maleta de volta para casa, resmungando pela sua má sorte.</value>
+  </string>
+  <string key="CultistsList">
+	<value>Os membros da seita são, atualmente: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>O Lobo Das Neves🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Você é o Lobo das Neves 🐺☃️. Todas as noites, em vez de seguir o seu bando para caçar alguém, você se esquiva por conta própria para congelar alguém de sua preferência. Uma pessoa congelada não poderá usar nenhuma ação noturna, se tiver alguma. No entanto, sua vítima carregará algum resíduo do seu poder na noite seguinte e não pode ser congelada pela segunda vez consecutiva.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>O Lobo das Neves 🐺☃️ é um lobo nativo dos campos nevados próximos à Aldeia. Sendo assim, ele é mestre na arte de controlar gelo e neve. Tendo vivido um bom tempo solitário, o Lobo das Neves prefere agir sozinho. No lugar de caçar com a alcateia à noite, ele escolhe uma vítima diferente para congelar, o que a deixa incapaz de usar sua ação noturna, se tiver alguma. Entretanto, ela ainda carregará resíduos da magia do Lobo das Neves na noite seguinte, ficando protegido contra um congelamento por uma noite. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>Quem você quer congelar esta noite?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Sua alcatéia é {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>A alcatéia é {0} e o Lobo das Neves {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} morreu e você se transformou no lobo Alfa. Seus companheiros são: {1} e o Lobo das Neves {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} morreu e você se transformou no Filhote de Lobisomem. Seus companheiros são: {1} e o Lobo das Neves {2}}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} morreu e você se transformou no Lobisomem. Seus companheiros são: {1} e o Lobo das Neves {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} morreu e você se transformou no Lycan. Seus companheiros são: {1} e o Lobo das Neves {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} morreu e você se transformou no Lobo das Neves. Seus companheiros (se existiram) são: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>O doppelganger {0} se tornou um novo Lobo das Neves!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} Morreu! Em fúria, você se tornou um Lobisomem! Seus novos companheiros são: {1} e o Lobo das Neves {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} não é mais seu companheiro e {1} agora se tornou um Lobo das Neves!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Assim que você abre a porta para sair de casa, uma rajada de vento soprou em sua direção, fazendo com que você congele no mesmo lugar onde está 🐺☃️. Você fica congelado na porta, silenciosamente amaldiçoando essa estranha forma de escravidão. Bem, graças a Deus que você está começando a derreter. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Você está dormindo na cama, prestes a acordar para preparar suas poções, quando uma forte rajada de vento entra pela janela, fazendo você congelar 🐺☃️. Pelo canto dos seus olhos, você percebe seus potes de poção também gelarem. Parece que elas também não escaparam do feitiço congelante. Você suspirou mentalmente, desejando que o sol nascesse mais cedo ... Ainda bem que você já está começando a derreter</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Você veste sua túnica e se prepara para deixar sua casa, quando uma rajada de vento forte entra pela porta e te congela 🐺☃️. Seus companheiros cultistas apareçeram rapidamente para te apresentar novos integrantes da Seita, mas eles rolaram de rir da sua desgraça. Saindo pela sua porta, eles prometem que farão um bom trabalho esta noite. Agora que você está começando a descongelar, você se prepara para sair de casa, morto de vergonha... </value>
+  </string>
+  <string key="CHFrozen">
+    <value>Você branda sua espada, quando uma rajada de vento forte entra pela porta e te congela, ainda em posição de ataque 🐺☃️. Você geme mentalmente, seus membros doem de estar nesta posição até agora ... </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Você está sentado à mesa, prestes a usar seus poderes psiquicos, quando uma rajada de vento forte entra pela porta e te congela 🐺☃️. Apesar de ficar imóvel normalmente não ser um problema, o feitiço de congelamento também lhe deu um caso sério de congelamento cerebral. Você não está preocupado, sabendo que o nascer do sol é uma das constantes deste mundo e que você será descongelado em breve. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>Você estica suas asas, quando uma rajada de vento forte entra pela porta e te congela 🐺☃️. Você interiormente se encolhe quando, de repente, você se imagina como um enfeite em uma árvore de Natal. Felizmente, isso acabou agora que o sol está nascendo.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Enquanto você admirava sua coleção de orelhas uma última vez antes de sair de casa, uma rajada de vento sopra pelas janelas, congelando os potes de vidro ... e você também 🐺☃️. Enquanto você descongela esta manhã, você range os dentes em aborrecimento com o feitiço do Lobo das Neves, jurando fazê-lo sofrer o máximo possível quando encontrar com ele novamente. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Enquanto você ficava de tocaia ao redor da aldeia, sentiu uma forte rajada de vento. Você fica congelado, literalmente incapaz de se mover 🐺☃️. Com sorte, está escuro o suficiente para que você não seja reconhecido por ninguém que passe por você esta noite. Quando você está completamente descongelado, graças ao nascer do sol, você sorrateiramente parte de volta para casa antes que alguém possa te ver</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Enquanto você dormia esta noite, você sentiu um frio congelante. Ao acordar para se aquecer, você percebe que não pode mexer nem o dedinho do pé! Parece que o Lobo das Neves 🐺☃️ soltou um feitiço congelante em você. Você volta a dormir, intrigado por isso não afetar você em nada... além de fazê-lo beirar a hipotermia.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Você vai até a casa de {0} para congelá-lo, mas você é barrado por uma figura alta e sombria, armada até os dentes. O Anjo da Guarda te dá umas porradas e você vai embora derrotado...</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Você vai até a casa de {0} para congelá-lo! Esta noite, {0} não usará suas ações noturnas (se tiver).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value> O Lobo das Neves {0} tentou congelar alguém esta noite, mas acidentalmente visitou o Serial Killer 🔪 ! O assassino notou o visitante indesejado e esfaqueou {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Como todos os outros lobos morreram, você é o único integrante da alcatéia que sobrou! Na sede de ganhar mais carne fresca de morador da vila, você decide se tornar um lobo normal a partir de agora, que prefere devorar ao invés de congelar durante a noite!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>O Lobo das Neves {0} tentou congelar o Sentinela 🎯 esta noite, mas ele conseguiu abatê-lo com seu rifle!</value>
+  </string>
+
+</strings>
