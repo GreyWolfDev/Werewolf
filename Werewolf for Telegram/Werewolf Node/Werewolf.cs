@@ -4561,6 +4561,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 {
                     var roleToSee = PossibleRoles.FirstOrDefault(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x));
                     Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
+                    augur.SawRoles.Add(roleToSee);
                 }
                 else
                 {
