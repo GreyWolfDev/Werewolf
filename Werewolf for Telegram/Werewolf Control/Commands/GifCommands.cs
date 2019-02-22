@@ -486,6 +486,7 @@ namespace Werewolf_Control
                         SendGifToChannel(p.TelegramId, "Lone", gifset.WolfWin);
                     if (gifset.WolvesWin != null && gifset.Beta.WolvesWin == null)
                         SendGifToChannel(p.TelegramId, "Wolf", gifset.WolvesWin);
+                    Thread.Sleep(1000);
                 }
             }
 #endif
