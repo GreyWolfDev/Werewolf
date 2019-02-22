@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Database;
 using Newtonsoft.Json;
@@ -438,6 +439,7 @@ namespace Werewolf_Control
         private static void SendGifToChannel(int pId, string gifchoice, string id)
         {
             Bot.Api.SendDocumentAsync(GifChannelId, id, caption: $"{gifchoice}|{pId}");
+            Thread.Sleep(200);
         }
 
         [Attributes.Command(Trigger = "submitgif")]
