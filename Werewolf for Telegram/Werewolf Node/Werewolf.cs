@@ -4556,10 +4556,11 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             var augur = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Augur);
             if (augur != null)
             {
+                bool isNotInGame(IRole x) => !augur.SawRoles.Contains(x) && !Players.Any(y => (!y.IsDead || y.DiedLastNight) && y.PlayerRole == x);
                 PossibleRoles.Shuffle();
-                if (PossibleRoles.Any(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x)))
+                if (PossibleRoles.Any(isNotInGame))
                 {
-                    var roleToSee = PossibleRoles.FirstOrDefault(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x));
+                    var roleToSee = PossibleRoles.FirstOrDefault(isNotInGame);
                     Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
                     augur.SawRoles.Add(roleToSee);
                 }
