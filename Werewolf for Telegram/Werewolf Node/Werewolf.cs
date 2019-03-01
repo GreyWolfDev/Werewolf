@@ -3801,6 +3801,25 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                         }
                         eatCount++;
+                        
+                        var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
+                        if (gd != null)
+                        {
+                            //give wolves a chance to spot and kill grave digger
+                            var spotChance = (20 + (30 - (30 * Math.Pow(0.5, gd.DugGravesLastNight - 1)))) / 2;
+                            if (Program.R.Next(100) < spotChance)
+                            {
+                                gd.IsDead = true;
+                                gd.DiedByVisitingKiller = true;
+                                gd.TimeDied = DateTime.Now;
+                                gd.KilledByRole = IRole.Wolf;
+                                gd.DiedLastNight = true;
+                                DBKill(voteWolves, gd, KillMthd.Spotted);
+                                foreach (var w in voteWolves)
+                                    Send(GetLocaleString("WolvesSpotted", gd.GetName()), w.Id);
+                                SendGif(GetLocaleString("WolvesSpottedYou"), GetRandomImage(VillagerDieImages), gd.Id);
+                            }
+                        }
                     }
                     else
                     {
@@ -3815,25 +3834,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
 
                 eatCount = 0;
-
-                var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
-                if (gd != null)
-                {
-                    //give wolves a chance to spot and kill grave digger
-                    var spotChance = (20 + (30 - (30 * Math.Pow(0.5, gd.DugGravesLastNight - 1)))) / 2;
-                    if (Program.R.Next(100) < spotChance)
-                    {
-                        gd.IsDead = true;
-                        gd.DiedByVisitingKiller = true;
-                        gd.TimeDied = DateTime.Now;
-                        gd.KilledByRole = IRole.Wolf;
-                        gd.DiedLastNight = true;
-                        DBKill(voteWolves, gd, KillMthd.Spotted);
-                        foreach (var w in voteWolves)
-                            Send(GetLocaleString("WolvesSpotted", gd.GetName()), w.Id);
-                        SendGif(GetLocaleString("WolvesSpottedYou"), GetRandomImage(VillagerDieImages), gd.Id);
-                    }
-                }
             }
             WolfCubKilled = false;
             #endregion
@@ -4561,6 +4561,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 if (PossibleRoles.Any(isNotInGame))
                 {
                     var roleToSee = PossibleRoles.FirstOrDefault(isNotInGame);
+                    if (roleToSee == IRole.ApprenticeSeer && !Players.Any(x => x.PlayerRole == IRole.Seer && !x.IsDead)) roleToSee = IRole.ApprenticeSeer;  //replace Seer by AppSeer if they are about to transform
                     Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
                     augur.SawRoles.Add(roleToSee);
                 }
