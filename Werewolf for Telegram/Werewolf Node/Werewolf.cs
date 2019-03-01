@@ -4560,6 +4560,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 if (PossibleRoles.Any(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x)))
                 {
                     var roleToSee = PossibleRoles.FirstOrDefault(x => !augur.SawRoles.Contains(x) && !Players.Any(y => !y.IsDead && y.PlayerRole == x));
+                    if (roleToSee == IRole.ApprenticeSeer && !Players.Any(x => x.PlayerRole == IRole.Seer && !x.IsDead)) roleToSee = IRole.ApprenticeSeer;  //replace Seer by AppSeer if they are about to transform
                     Send(GetLocaleString("AugurSees", GetDescription(roleToSee)), augur.Id);
                     augur.SawRoles.Add(roleToSee);
                 }
