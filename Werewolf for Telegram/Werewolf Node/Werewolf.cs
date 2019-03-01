@@ -2123,7 +2123,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 {
                     var teammates = "";
                     //notify other wolves or cultists
-                    p.PlayerRole = rm.PlayerRole;
+                    p.PlayerRole = !ThiefFull && rm.PlayerRole == IRole.Thief ? IRole.Villager : rm.PlayerRole;
                     p.ChangedRolesCount++;
 
                     if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan, IRole.SnowWolf }.Contains(p.PlayerRole))
