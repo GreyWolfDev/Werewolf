@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
 	<language name="简体中文" base="简体中文" variant="SFW"/>
-	<!--Last Update 最后更新2019-2-8-->
+	<!--  未完工-->
+	<!--Last Update 最后更新2019-2-21-->
 	<!-- 更新日志-->
 		<!-- 2019-2-06 补全 正式补全翻译-->
 		<!-- 2019-2-08 调整 调整翻译-->
 		<!-- 2019-2-14 更新 同步翻译（官方2019.2.12更新）-->
+		<!-- 2019-2-21 更新 同步翻译 未完成-->
 	<string key="NotInGame">
 		<value>你现在似乎并不在这场游戏中……</value>
 	</string>
@@ -36,8 +38,8 @@
 		<value>人数不足，游戏启动失败。</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>游戏启动中……请诸位耐心等待……</value>
-		<value>游戏启动中，正在分配角色及更新数据库，请稍等片刻。</value>
+		<value>游戏启动中……请诸位耐心等待……❌翻译也未完工，勿喷</value>
+		<value>游戏启动中，正在分配角色及更新数据库，请稍等片刻。❌翻译也未完工，勿喷</value>
 	</string>
 	<string key="BannedForExploit">
 		<value>警告：{0} ，请不要以 / 作为名字开头。</value>
@@ -1857,5 +1859,247 @@
   </string>
   <string key="ShufflePlayerListA">
     <value>每次将对对玩家列表随机安排\nPlayer list will be shuffled every time: {0}</value>
+  </string>
+  
+  <!-- 2019－2－21 未完成 -->
+    <string key="AboutGraveDigger">
+	<value>掘墓人👷，每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 但是因为你晚上外出，狼或变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 此外，显然连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人的能力...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>你是掘墓人👷， 每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 但是因为你晚上外出，狼或变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 此外，显然连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人的能力... </value>
+  </string>
+  <string key="GraveDigger">
+	<value>掘墓人👷</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>The dead are buried, and the living are not. Everything is as it should be, and you can get a good night's sleep.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Until late into the night, you dig the grave(s) for {0}. May their souls come to rest and their bodies lie in peace.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>As you left your house to bury those who passed away, a gust of wind blew in from the shadows, causing you to freeze. Unable to move, you waited for the sun to go up and thaw you. The dead will have to be restless for yet another night...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>The pack heads to the house of {0}, just to find that they are not home. All you can see is a candle shining lonely on a grave...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>The pack heads to the house of {0}, but on the way there, {1} suddenly steps into a bear trap, falls into an open grave and gets impaled by a silver spear!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>As you just want to close the grave you dug all night, you notice a foul stench, different from the usual smell of dead bodies... The wolf {0} fell into the grave and died!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>You cut the liver out of {0}'s body, but on your way back you leaned too far over an unfinished grave and stumbled into it. Maybe you shouldn't have looked for the liver of the corpse... Now your leg really hurts.</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>On your way to the house of {0}, a sharp pain surges through your leg. You decide to just go to the nearest house, which appears to be {1}'s, murder them and hurry home.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>You arrive at {0}'s house, just to see the guardian angel standing in front of it! You try to fight, but you stand no chance. Tonight really was a bad night for you...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Another night without being able to slay one of those bloody cultists! Frustrated, you walk over the graveyard, without noticing the bear trap until it closes around your ankle. You scream and struggle, but it's too late. You fall backwards into a grave that {0} left open and the sound of your neck breaking is the last thing you hear before everything goes black.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>After another tiring night, you walk back to your home with the sun already rising. Just before you arrive, you notice a sword lying on the ground next to an unfinished grave. Inside that grave you see the dead body of {0}. The cultist hunter should not have suspected you...</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>As you are on your way to {0}'s house, you try to remember which of your drinks was the poisonous one again and stumble, falling into an open grave where a silver spear pierces right through your heart. Before you can make a sound, you are dead.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"I could use a glass of wine now", you think to yourself. A strange feeling lets you look into a grave next to you, and as if fate heard your wish, a bottle of wine lies inside! Too bad there's also {0}'s dead body... Suddenly, you lost all your appetite.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>You put your favorite lipstick on and head to {0}'s house to have a little fun. Sadly, you don't get far enough, as you step into a bear trap and fall into a grave on the way... Talk about occupational risk!</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>Apparently fate doesn't want you to have fun... Not only that you have to dig graves all night, you even find {0}, the harlot, dead in one of your unfinished graves. No fun for you tonight!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>You wander to {0}'s house, carefully avoiding all the open graves, but when you arrive, their house is empty... Apparently {0} is out all night digging graves again!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>Fortune surely didn't favor you tonight... You just wanted to watch over {0}, but instead you fell into an open grave after stepping into a bear trap and died! Why does the grave digger even have to secure some graves?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>On your way home, you notice a feather lying around on the ground... You don't have to search long to find {0}, the guardian angel, lying dead inside one of your graves! Sometimes your "security measurements" really go off on the wrong people.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>You sneak through the graveyard on your way to steal {0}'s role, but you're too focused on not making a sound to notice the bear trap that clanks around your ankle! Not enought that your stealth is surely broken, you even fall into the grave next to you and break your neck!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Good thing you put security measurements around your graves... {0} tried to steal your role last night, but they were caught in your bear trap and fell into your grave! Maybe now the village will believe you that your traps are actually necessary.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>You should watch your step when you go to douse someones house next time... You stepped into a bear trap, fell into a grave and got a silver spear right through your heart! Serves you right, you little pyromaniac.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>From one of your graves you notice a smell of kerosene. Alarmed, you hurry there and find {0}, the arsonist, lying dead inside. At least your house stayed clean...</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>One of the graves on the graveyard contained too many people tonight... Apperently {0} tried to visit the grave digger, fell into a grave and died! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>As the harlot {0} went home after a night of fun they tried to take a shortcut through the local graveyard. They must have been still a bit dizzy that they didn't see the uncovered grave until they felt no grounds under her next step. Maybe they should have taken that daytime job they got offered yesterday!</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultFellPublic">
+	<value>The cults tried to burn the church, but as {0} led the group through the graveyard, a bear trap snapped around his ankle!  He screamed when he fell into an open grave and the other cultists fled in terror...</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Maybe {0} the thief was trying to steal from the dead. Maybe it was karma. All we know is that he lurked around the graveyard when the trap snapped his leg. While falling into the grave, he wondered whether he should have brought a partner in crime for this job. {0} wont be stealing any more for sure!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>As the wolf pack goes out for a hunt, {0} smells potential prey and doesn't notice the bear trap that snaps around their ankle! Surprised, {0} falls over into the grave, where the tip of a silver spear meets their head. Luckily the grave digger keeps his graves secured! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>You're just trying to do your job, when suddenly a crazy killer spots and stabs you! What a pity...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>As you walk past the graveyard with blood on your knife, you notice {0}, the grave digger. Following your instinct, you decide there will be two victims for you today...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>You're just trying to do your job, when suddenly a wolf jumps onto you from behind and kills you!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>The packs runs across the graveyard, as they suddenly notice {0}, the grave digger. Before they can react, one of you jumps on their back and kills them with one bite.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} doesn't show up to the town meeting. Have they overslept again? As you go look for them, you find them lying dead on the graveyard, the shovel still in their hands. It seems they were surprised by wolves in the night...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} is missing today... Did they maybe oversleep? You go look for them and find them dead on the graveyard, still holding their shovel. It seems they died from several stabbing wounds...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Arsonist</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Allow arsonist? Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Arsonist is now set to {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! ð Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>你是纵火犯.，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>纵火犯.，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。</value>
+  </string>
+  <string key="Arsonist">
+	<value>纵火犯💥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>今天你想浇汽油，还是放一把火，烧掉你曾经浇过汽油的房子？</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>The arsonist {0} tried to douse the house of the serial killer... He didn't quite survive that.</value>
+  </string>
+  <string key="Spark">
+	<value>放一把火</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>You successfully doused {0}'s house with kerosene!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>A fire broke out in your house, but luckily the guardian angel was there and extinguished it right away! They'd make a good firefighter, if they weren't so busy protecting people...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>You didn't quite expect a fire to break out when you went to visited {0}, but you saved them nevertheless! Ain't nobody gonna call you a bad protector...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>You didn't have to fight off any enemies at {0}'s house tonight, so you had time to look around a bit and noticed that the house was doused in kerosene! Since you got nothing better to do, you cleaned the house for them...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>The village awakens to the smell of fire... It's burning! You try to extinguish the fire altogether, but you're too late to save the people whose houses were mysteriously doused in kerosene. Today you mourn the deaths of the following people:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>The only one left is the arsonist, standing on a pile of ashes. The arsonist wins...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>You should have kept a fire extinguisher! Now your house burnt down and you died inside...</value>
+  </string>
+  <string key="Augur">
+	<value>占卜者👨the Augur</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>As you look into the skies, you see the birds form a very unusual pattern. That can only mean that {0} is not in the village.</value>
+	<value>The birds tell you that {0} is not part of the village right now.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>你是占卜家，每天早上，你观看天空中鸟的排列，预知村子里没有的角色（雾）。注：每个不存在的角色只会告诉你一次，如果出现两次...那么，你应该知道昨晚发生了什么了吧！</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>你是占卜家，每天早上，你观看天空中鸟的排列，预知村子里没有的角色（雾）。注：每个不存在的角色只会告诉你一次，如果出现两次...那么，你应该知道昨晚发生了什么了吧！</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>There are absolutely no birds in the skies today. That probably means you have seen all the roles that are not in the village already...</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>The pack storms into {0}'s house, when suddenly you notice smoke. You try to escape, but it's too late for {1}, who dies in the flames.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} should have stayed home tonight... They visited a burning house and died in the flames! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>The wolves tried to eat someone tonight again, but the arsonist was quicker! {0} couldn't escape from the burning house in time... {1}</value>
   </string>
 </strings>
