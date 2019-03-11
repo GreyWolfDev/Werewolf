@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-	<language name="简体中文" base="简体中文" variant="SFW"/>
-	<!--  未完工-->
-	<!--Last Update 最后更新2019-2-21-->
-	<!-- 更新日志-->
+	<language name="简体中文" base="简体中文" variant="SFW" version="2019.03.10"/>
+	<!--Last Updated 最后更新2019-03-10 11:36:20-->
+	<!--也请在 StartingGameWait 处添加最后更新时间-->
+	<!--也请在 头部version处 添加最后更新时间-->
+
+
+	<!-- Update Logs 更新日志-->
 		<!-- 2019-2-06 补全 正式补全翻译-->
 		<!-- 2019-2-08 调整 调整翻译-->
 		<!-- 2019-2-14 更新 同步翻译（官方2019.2.12更新）-->
-		<!-- 2019-2-21 更新 同步翻译 未完成-->
+		<!-- 2019-2-21~24 更新 同步翻译（官方2019.2.21更新-->
+		<!-- 2019-2-24 修正扩展补充 扩展SecondsLeftToJoin，重命名CultFellPublic成CultistFellPublic （官方2019.2.22修正），添加
+ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
+	    <!-- 2019-3-2   修复ArsonistFell-->
+		<!-- 2019-3-3   重命名 守护神＞守卫，普通人＞普通村民，源狼＞头狼-->
+		<!-- 2019-3-3   修复 emoji 混乱-->
+		<!-- 2019-3-3   补充调整 -->
+		<!-- 2019-3-10 补充 为每个Roleinfo添加能力说明-->
+			
 	<string key="NotInGame">
 		<value>你现在似乎并不在这场游戏中……</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} 已经敲响了末日的钟声！ 点击按钮来参加这场屠杀宴会……说不定会暴死当场！</value>
-		<value>{0} 已经召唤出了血月！ 点击按钮 来互相伤害！</value>
-		<value>反人类的 {0} 开启了一场死亡游戏！ 点击按钮 来参加这场互相伤害的盛会！</value>
+		<value>{0} 已经敲响了末日的钟声！ 点击按钮来参加这场屠杀宴会……说不定会暴死当场！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
+		<value>{0} 已经召唤出了血月！ 点击按钮 来互相伤害！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
+		<value>反人类的 {0} 开启了一场死亡游戏！ 点击按钮 来参加这场互相伤害的盛会！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
-		<value>{0} 召唤出了隐藏着黑暗力量的钥匙……点击按钮 来成为暴徒……混乱才是现实的真正模样。</value>
-		<value>以 {0} 为先锋，混乱模式全面启动！点击按钮来响应 {0} 的号召。</value>
-		<value>{0} 开启了一场混乱的生存竞赛！现实世界从不曾有公平！输入 点击按钮 加入！如果人类全灭，你就是罪人！</value>
+		<value>{0} 召唤出了隐藏着黑暗力量的钥匙……点击按钮 来成为暴徒……混乱才是现实的真正模样。\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
+		<value>以 {0} 为先锋，混乱模式全面启动！点击按钮来响应 {0} 的号召。\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
+		<value>{0} 开启了一场混乱的生存竞赛！现实世界从不曾有公平！输入 点击按钮 加入！如果人类全灭，你就是罪人！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
 	</string>
 	<string key="NoJoinGameRunning">
 		<value>死亡游戏已经开始了，遗憾的是你错过了这场盛会，等下一次吧。 /nextgame 以收到下局游戏的提醒。</value>
@@ -29,17 +40,17 @@
 		<value>你已经加入游戏！</value>
 	</string>
 	<string key="MinuteLeftToJoin">
-		<value>还有 60 秒 </value>
+		<value>🕔还有 60 秒 </value>
 	</string>
 	<string key="SecondsLeftToJoin">
-		<value>还剩 {0} 秒 </value>
+		<value>🕐还剩 {0} 秒 \n 可使用 /extend 命令延长时间</value>
 	</string>
 	<string key="NotEnoughPlayers">
 		<value>人数不足，游戏启动失败。</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>游戏启动中……请诸位耐心等待……❌翻译也未完工，勿喷</value>
-		<value>游戏启动中，正在分配角色及更新数据库，请稍等片刻。❌翻译也未完工，勿喷</value>
+		<value>游戏启动中……请诸位耐心等待……		\n 提示：向机器人发送 /rolelist 以获取角色说明（记得先 /setlang 设置语言） \n🆕翻译仍在完善中\n最后更新于2019-03-10 11:36</value>
+		<value>游戏启动中，正在分配角色及更新数据库，请稍等片刻。		\n 提示：向机器人发送 /rolelist 以获取角色说明（记得先 /setlang 设置语言）  \n🆕翻译仍在完善中\n 最后更新于2019-03-10 11:36</value>
 	</string>
 	<string key="BannedForExploit">
 		<value>警告：{0} ，请不要以 / 作为名字开头。</value>
@@ -92,24 +103,25 @@
 	</string>
 	<string key="IdleKill">
 		<value>{0} 已经两天没有投票了，正义的朋友认为这种投票是罪恶的民主，是一种恶行。剩下的愚昧公民们却认为他不投票是因为他做贼心虚，所以也把他处死了。\n{1}。</value>
+		<value>{0}已经两次没有到广场投票了，村民们认为他似乎隐瞒了什么，于是所以也把他处死了。\n{1}。</value>
 	</string>
 	<string key="TraitorTurnWolf">
 		<value>现在，潜伏在你基因中的钥匙被激活了，你不再是一名人类，而是成为了一名狼人！</value>
 	</string>
 	<string key="ChoiceAccepted">
-		<value>选择完成。</value>
+		<value>已选择</value>
 	</string>
 	<string key="BeholderSeer">
-		<value>\n带着无神论者冷静的目光，你知道所谓的「先知」是 {0} 。</value>
-		<value>\n你看到「先知」 {0} 在布道。</value>
+		<value>\n带着无神论者冷静的目光，你知道所谓的“先知”是 {0} 。</value>
+		<value>\n你看到“先知” {0} 在布道。</value>
 	</string>
 	<string key="ApprenticeNowSeer">
 		<value>{0} 曾经是一名先知，在他回归主的身边之后，为了给人类带来希望，你受到了神启。你现在不是先知学徒了，而是一名伟大的先知。</value>
 		<value>学徒啊，请感受神明的号召，像 {0} 一样成为先知吧！。</value>
 	</string>
 	<string key="BeholderNewSeer">
-		<value>{0} 曾经是先知学徒，现在他响应主的神启，代替 {1} 成为了新的「先知」。</value>
-		<value>现在 {0} 代替 {1} 成为「先知」了，虽然你对这一切看得清清楚楚，但是你还是不知道教堂的人在搞什么幺蛾子。</value>
+		<value>{0} 曾经是先知学徒，现在他响应主的神启，代替 {1} 成为了“先知”。</value>
+		<value>现在 {0} 代替 {1} 成为“先知”了，虽然你对这一切看得清清楚楚，但是你还是不知道教堂的人在搞什么幺蛾子。</value>
 	</string>
 	<string key="SeerSees">
 		<value>你从梦中惊醒，虽然记不清梦境里的内容，但是你隐隐约约的想起， {0} 是 {1}。</value>
@@ -153,63 +165,64 @@
 		<value> 和 </value>
 	</string>
 	<string key="RoleInfoCursed">
-		<value>你是基因缺陷者，一旦被狼人咬到就会成为狼人，小心了……</value>
+		<value>你是基因缺陷者，一旦被狼人咬到就会成为狼人，小心了……\n [能力被动，当被狼人咬到时，能力才被使用（变成狼人） ]</value>
 	</string>
 	<string key="RoleInfoDetective">
-		<value>你是一名侦探。白天，你可以调查一名玩家。但是调查时，狼人们有可能发现你是侦探 ( 40% 的几率 ) 。</value>
+		<value>你是一名侦探。白天，你可以调查一名玩家。但是调查时，狼人们有可能发现你是侦探 ( 40% 的几率 ) 。\n [能力主动；日间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoDrunk">
-		<value>你是众所周知的酗酒艺术家，能不能把酒瓶放下？</value>
+		<value>你是众所周知的酗酒艺术家，能不能把酒瓶放下？\n [能力被动，当被狼人吃掉后，能力才被使用，使狼人无法进行下一次攻击 ]</value>
 	</string>
 	<string key="RoleInfoGuardianAngel">
-		<value>身为守护神，每当夜幕降临，你可以保护一个人。但是，如果你保护了狼人，你有一半的几率会死。</value>
+		<value>身为守卫，每当夜幕降临，你可以保护一个人。但是，如果你保护了狼人，你有一半的几率会死。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoGunner">
-		<value>你是枪手，有两颗子弹。每日你可以射杀一个人，一旦你出手了，大家就都知道你是枪手了。</value>
+		<value>你是枪手，有两颗子弹。每日你可以射杀一个人，一旦你出手了，大家就都知道你是枪手了。\n [能力主动；日间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoHarlot">
-		<value>你是秘密警察。每晚你都可以去搜查一个人，顺便看看他是不是狼人。不过，如果你和狼人共处一室，你就会被狼人吃掉。如果你刚好出勤，而狼人来吃你，你能逃过一劫。</value>
+		<value>你是秘密警察。每晚你都可以去搜查一个人，顺便看看他是不是狼人。不过，如果你和狼人共处一室，你就会被狼人吃掉。如果你刚好出勤，而狼人来吃你，你能逃过一劫。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoTraitor">
-		<value>你是人类中出的叛徒，你憎恨人类已久，只要其他狼人全部死亡，诅咒之力就会附着到你身上，享受你仅剩的人类生活吧！</value>
+		<value>你是人类中出的叛徒，你憎恨人类已久，只要其他狼人全部死亡，诅咒之力就会附着到你身上，享受你仅剩的人类生活吧！\n [能力被动，但所有狼人死亡时，能力才被使用（变成狼人）]</value>
 	</string>
 	<string key="RoleInfoWolf">
-		<value>你是狼人！每晚你都可以大开杀戒！</value>
+		<value>你是狼人！每晚你都可以大开杀戒！\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoSeer">
-		<value>你是先知。夜深人静时，你可以占卜他人的身份。</value>
+		<value>你是先知。夜深人静时，你可以占卜他人的身份。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoVillager">
-		<value>你不过是一个普通人罢了，不过不用管那么多，来一盘昆特牌怎么样？</value>
-		<value>你不过是一个普通人罢了，难道你觉得自己会有什么超能力吗？</value>
-		<value>你不过是一个普通人罢了，机智一点，好好利用手中的票！</value>
+		<value>你不过是一个普通村民罢了，不过不用管那么多，来一盘昆特牌怎么样？</value>
+		<value>你不过是一个普通村民罢了，难道你觉得自己会有什么超能力吗？</value>
+		<value>你不过是一个普通村民罢了，机智一点，好好利用手中的票！</value>
 	</string>
 	<string key="RoleInfoTanner">
-		<value>你是圣战者。你痛恨那帮愚蠢的非信徒，你想干掉他们，他们却不靠近你。好在，你有一个机会，只要你被大家全民公审，你就可以带着炸弹去杀死那些非信徒，达成主的嘱托。</value>
+		<value>你是圣战者。你痛恨那帮愚蠢的非信徒，你想干掉他们，他们却不靠近你。好在，你有一个机会，只要你被大家全民公审，你就可以带着炸弹去杀死那些非信徒，达成主的嘱托。\n [能力被动，当被公投处死时，能力才被使用（boom！），此时你也赢了]</value>
 	</string>
 	<string key="RoleInfoWildChild">
-		<value>你是孤儿，选择一个默默关心的人。当你关心的人死去，你就会黑化成为狼人。</value>
+		<value>你是孤儿，选择一个默默关心的人。当你关心的人死去，你就会黑化成为狼人。\n [能力被动，需要在第一晚选择关注的玩家，但当选择的玩家死亡，能力才能被使用（变成狼人）]</value>
 	</string>
 	<string key="RoleInfoBeholder">
-		<value>你是无神论者，你知道谁是所谓的「先知」。除此之外，你就是个普通人。</value>
+		<value>你是无神论者，你知道谁是所谓的“先知”。除此之外，你就是个普通村民。\n [能力被动，仅告知信息 ]</value>
 	</string>
 	<string key="RoleInfoApprenticeSeer">
-		<value>你是先知学徒，当你的老师回到主的身边，你就会成为先知引领人类继续斗争。</value>
+		<value>你是先知学徒，当你的老师回到主的身边，你就会成为先知引领人类继续斗争。\n [能力被动，当先知死亡时，能力才被使用（变成先知）]</value>
 	</string>
 	<string key="RoleInfoCultist">
-		<value>你是邪教徒。你可以在晚上施洗任意一名玩家，让他们成为你的一员。如果所有玩家都受洗成邪教徒，邪教徒就赢了。</value>
+		<value>你是邪教徒。你可以在晚上施洗任意一名玩家，让他们成为你的一员。如果所有玩家都受洗成邪教徒，邪教徒就赢了。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoCultistHunter">
-		<value>村里出现了邪教活动，所有人的思想自由都受到了威胁！作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是邪教徒，他就会死。如果有人想施洗你，最新加入的那位邪教徒就会死于非命。</value>
+		<value>村里出现了邪教活动，所有人的思想自由都受到了威胁！作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是邪教徒，他就会死。如果有人想施洗你，最新加入的那位邪教徒就会死于非命。\n [能力主动；夜间使用能力 ]</value>
 	</string>
+	
 	<string key="LynchTime">
-		<value>黄昏将至，全民公投。\n请在 {0} 秒内投票！</value>
+		<value>黄昏将至，全民公投。\n请在 {0} 秒内投票!\n🕠现在时间：黄昏（投票处决）时间，请私聊该机器人，进行投票。</value>
 	</string>
 	<string key="DayTime">
-		<value>日上三竿，大家有 {0} 秒的时间讨论和行动</value>
+		<value>日上三竿，大家有 {0} 秒的时间讨论和行动\n🕗现在时间：白天，请所有白天（主动）行动的角色，私聊机器人以使用自己能力。</value>
 	</string>
 	<string key="NightTime">
-		<value>夜幕降临，人们都活在恐惧中，彻夜难眠。这漫长的夜晚竟然有 {0} 秒！</value>
+		<value>夜幕降临，人们都活在恐惧中，彻夜难眠。这漫长的夜晚竟然有 {0} 秒！\n🕢现在时间：夜晚，请所有夜晚（主动）行动的角色，私聊机器人以使用自己能力。</value>
 	</string>
 	<string key="LynchKill">
 		<value>所有人投票后，还是惶惶不安。{0} 被全民公审\n{1}。</value>
@@ -221,29 +234,29 @@
 		<value>这回怪了，没人投票？你们终于意识到投票杀人是不人道的了吗？。</value>
 	</string>
 	<string key="DetectiveEaten">
-		<value>新闻：居民闻到恶臭后报警，警察打开房门后发现， {0} 惨遭杀害，身上还有数道可怖的伤口，犯罪现场留下了动物毛发。</value>
+		<value>📣新闻：居民闻到恶臭后报警，警察打开房门后发现， {0} 惨遭杀害，{0}尸体仅剩少量碎片，犯罪现场留下了动物毛发。</value>
 	</string>
 	<string key="GuardianEaten">
-		<value>新闻：本市最大教堂中发生命案：守护神 {0} 被钉在十字架上杀死了！</value>
+		<value>📣新闻：守卫 {0} 惨死在自己家中，{0}尸体仅剩少量碎片，凶手未知。但村民们认为和近日出现的狼人有关。</value>
 	</string>
 	<string key="GunnerEaten">
-		<value>天哪！著名神枪手 {0} 被狼人杀死了！据说满地都是枪械零件！</value>
+		<value>📣新闻：著名神枪手 {0} 被狼人杀死了！据说满地都是枪械零件！</value>
 	</string>
  <string key="SeerEaten">
-		<value>先知死了？怎么可能？{0} 死在了天文台上面，身边还散落着写满占星结果的羊皮纸。</value>
-		<value>先知死了？怎么可能？{0} 死在了塔罗牌前，最后一张牌似乎在预示着凶手的身份，但遗憾的是，没人能够知道先知的占卜结果了。</value>
+		<value>📣新闻：先知{0} 死在了天文台上面，身边还散落着写满占星结果的羊皮纸，但村民们认为和近日出现的狼人有关。</value>
+		<value>📣新闻：先知死了{0} 死在了塔罗牌前，最后一张牌似乎在预示着凶手的身份，但遗憾的是，没人能够知道先知的占卜结果了。</value>
 	</string>
 	<string key="DrunkEaten">
-		<value>新闻：著名艺术家 {0} 死于火灾，警察调查后表示是纵火，罪犯还在犯罪现场留下了动物的毛发。</value>
+		<value>📣新闻：著名艺术家 {0} 死于火灾，警察调查后表示是纵火，罪犯还在犯罪现场留下了动物的毛发。</value>
 	</string>
 	<string key="FoolEaten">
 		<value>先知死了？怎么可能？……唔……让我仔细看看，天哪，大家这么信任的先知 {0} 竟然是用 Uno 牌占卜的！好吧，看来 {0} 是个冒牌先知呢……</value>
 	</string>
 	<string key="DefaultEaten">
-		<value>新闻：{0} 在家中被杀害，犯罪现场留下了动物毛发。\n{1}</value>
+		<value>📣新闻：{0} 在家中被杀害，尸体仅剩碎片，犯罪现场留下了动物毛发。\n{1}</value>
 	</string>
 	<string key="HunterKilledCultist">
-		<value>新闻：知名的公众人物 {0} 竟是邪教成员！\n{0} 被发现死在祭坛上，亲友纷纷表示震惊，并表示理解邪教猎人的工作。</value>
+		<value>📣新闻：知名的公众人物 {0} 竟是邪教成员！\n{0} 被发现死在祭坛上，亲友纷纷表示震惊，并表示理解邪教猎人的工作。</value>
 	</string>
 	<string key="NoAttack">
 		<value>今天是个平常的一天，大家都在各自摸鱼🐟。</value>
@@ -263,8 +276,10 @@
 		<value>糟糕！你已被狼人吃掉。</value>
 	</string>
 	<string key="WolvesEatDrunk">
-		<value>你在纵火杀死 {0} 之后，吸入了过多的一氧化碳，好在你是狼人，能够自我修复，在家休息一天吧。</value>
-		<value>你一氧化碳中毒啦！好好的烧什么 {0} 呢？休息一天吧！</value>
+		<value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了，安心在家休息吧！</value>
+		<value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了。</value>
+		<value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了，所以好好上床睡觉休息吧。</value>
+
 	</string>
 	<string key="GuardWolf">
 		<value>真是可惜，你保护了狼人，他却吃了你，真美味啊。</value>
@@ -280,10 +295,10 @@
 		<value>你来到 {0} 家试图保护他，但他家却空无一人……</value>
 	</string>
 	<string key="GuardSavedYou">
-		<value>守护神在你家看守了一整夜，甚至还赶走了狼人！</value>
+		<value>守卫在你家看守了一整夜，甚至还赶走了狼人！</value>
 	</string>
 	<string key="HarlotEaten">
-		<value>新闻：{0} 意外死亡，身份曝光，竟然是秘密警察！\n{0} 昨夜没有出勤，被在家中杀害，犯罪现场留下了动物毛发。</value>
+		<value>📣新闻：{0} 意外死亡，身份曝光，竟然是秘密警察！\n{0} 昨夜没有出勤，被在家中杀害，犯罪现场留下了动物毛发。</value>
 	</string>
 	<string key="HarlotNotHome">
 		<value>哎呀……{0} 不在家中呢！今晚晚餐落空了。</value>
@@ -318,7 +333,7 @@
 		<value>{0} 和 {1} 昨晚在一间屋子，不过枪手还是把 {1} 射死了。</value>
 	</string>
 	<string key="DefaultShot">
-		<value>新闻：我市发生一起枪击案，{0} 将 {1} 射杀，原因不明，目前 {0} 行踪不明，请有线索者联系警方\n{2}。</value>
+		<value>📣新闻：我市发生一起枪击案，{0} 将 {1} 射杀，原因不明，目前 {0} 行踪不明，请有线索者联系警方\n{2}。</value>
 	</string>
 	<string key="WolfWins">
 		<value>#狼人胜！ 看来这届村民不行啊！</value>
@@ -367,7 +382,7 @@
 		<value>你潜入了 {0} 的家，发现道貌岸然的 {0} 竟然是邪教成员，你立刻刺死了他。</value>
 	</string>
 	<string key="HunterFailedToFind">
-		<value>你潜入了 {0} 的家，但发现他只是一个普通人。</value>
+		<value>你潜入了 {0} 的家，但发现他只是一个普通村民。</value>
 	</string>
 	<string key="WildChildToWolves">
 		<value>{0} 的关心的人死了！所以，他黑化成了狼人！。</value>
@@ -377,13 +392,13 @@
 	</string>
 	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
 	<string key="Villager">
-		<value>普通人</value>
+		<value>普通村民</value>
 	</string>
 	<string key="Drunk">
 		<value>🍻 酗酒的艺术家</value>
 	</string>
 	<string key="Harlot">
-		<value>👤 秘密警察</value>
+		<value>👮 秘密警察</value>
 	</string>
 	<string key="Seer">
 		<value>👳 先知</value>
@@ -392,7 +407,7 @@
 		<value>☹ 叛徒</value>
 	</string>
 	<string key="GuardianAngel">
-		<value>😇 守护神</value>
+		<value>⚔守卫</value>
 	</string>
 	<string key="Detective">
 		<value>🕵 侦探</value>
@@ -407,7 +422,7 @@
 		<value>🔫 枪手</value>
 	</string>
 	<string key="Tanner">
-		<value>🌚 圣战者</value>
+		<value>👺圣战者</value>
 	</string>
 	<string key="Fool">
 		<value>🤓 冒牌先知</value>
@@ -445,20 +460,20 @@
 		<value>🙈 拖延症患者</value>
 	</string>
 	<string key="RoleInfoMason">
-		<value>你是拖延症患者，每天除了摸鱼🐟什么都不干，你很忧心，为此加入了拖延症患者互助协会。</value>
+		<value>你是拖延症患者，每天除了摸鱼🐟什么都不干，你很忧心，为此加入了拖延症患者互助协会。\n [能力被动，仅告知信息 ] </value>
 	</string>
 	<string key="MasonEaten">
-		<value>新闻：拖延症患者互助协会的成员{0}被人杀害！犯罪现场还留下了动物毛发。</value>
+		<value>📣新闻：拖延症患者互助协会的成员{0}被人杀害！犯罪现场还留下了动物毛发。</value>
 	</string>
 	<string key="MasonTeam">
 		<value>你来到了拖延症患者互助协会，这里的人都和你有一样的毛病，来认识一下大家吧: {0}</value>
 	</string>
 	<!-- new strings May 6 2016-->
 	<string key="CultTargetDead">
-		<value>你们试图施洗 {0} ，但却发现 {0} 家中一片狼藉，满地是血和动物毛发。</value>
+		<value>你们试图施洗 {0} ，但却发现 {0} 家中一片狼藉，满地是血，只剩下{0}的尸体。</value>
 	</string>
 	<string key="GuardBlockedWolf">
-		<value>诶呀，守护神守护了 {0}，看来狼人今晚没吃的了！</value>
+		<value>诶呀，守卫守护了 {0}，看来狼人今晚没吃的了！</value>
 	</string>
 	<!-- new strings May 9 2016-->
 	<string key="CultUnableToConvert">
@@ -547,16 +562,16 @@
 	</string>
 	<!-- new strings june 10 2016 -->
 	<string key="RoleInfoCupid">
-		<value>你是爱神。你可以用箭射中两个玩家让他们成为情侣。如果一方死去，另一方伤心之下，会自杀殉情。</value>
+		<value>你是爱神。你可以用箭射中两个玩家让他们成为情侣。如果一方死去，另一方伤心之下，会自杀殉情。\n [能力主动；仅第一晚使用能力 ]</value>
 	</string>
 	<string key="RoleInfoDoppelganger">
-		<value>你是模仿者。选择一名玩家，当该玩家死后，你将接替他们的角色。</value>
+		<value>你是模仿者。选择一名玩家，当该玩家死后，你将接替他们的角色。\n [能力被动；需第一晚确定所选玩家后，由被选择的玩家是否死亡，能力才被使用力（变成所选玩家角色）]</value>
 	</string>
 	<string key="RoleInfoHunter">
-		<value>你是猎人。手上没枪你就睡不踏实。如果你死了，你可以选择一名玩家和你陪葬。如果你被狼人咬了，那你有机会把这个狼人杀死，但却不能再选择杀死其他人。</value>
+		<value>你是猎人。手上没枪你就睡不踏实。如果你死了，你可以选择一名玩家和你陪葬。如果你被狼人咬了，那你有机会把这个狼人杀死，但却不能再选择杀死其他人。\n [能力被动，被攻击时，能力才被使用]</value>
 	</string>
 	<string key="RoleInfoSerialKiller">
-		<value>你是变态杀人狂。最近刚从精神病院逃出来，想要杀死所有的人。每晚你可以在你的死亡清单上添加一名玩家（包括狼人）。</value>
+		<value>你是变态杀人狂。最近刚从精神病院逃出来，想要杀死所有的人。每晚你可以在你的死亡清单上添加一名玩家（包括狼人）。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<!--重复
 	<string key="CupidChosen">
@@ -602,16 +617,18 @@
 		<value>昨晚狼人闯入一个屋子想饱餐一顿，没想到进的是变态杀人魔的家！狼人 {0} 在战斗中被杀死了！</value>
 	</string>
 	<string key="DefaultKilled">
-		<value>新闻：市中出现连环杀人案，疑杀人狂所为，{0} 惨遭不测，被折磨致死\n{1} </value>
+		<value>📣新闻：市中出现连环杀人案，疑杀人狂所为，{0} 惨遭不测，被折磨致死\n{1} </value>
 	</string>
 	<string key="GuardBlockedKiller">
-		<value>你想要收集 {0} 的身体来完成你的死亡清单，但守护天使的出现，令你的计划泡汤，白白浪费了一晚……</value>
+		<value>你想要收集 {0} 的身体来完成你的死亡清单，但守卫的出现，令你的计划泡汤，白白浪费了一晚……</value>
 	</string>
 	<string key="CultConvertHunter">
 		<value>邪教徒 {0} 被派去给 {1} 受洗，只听一声枪响过后， {0} 的身体从窗户飞了出来！ {0} 死了……</value>
 	</string>
 	<string key="GuardKiller">
 		<value>你一时手滑选择去保护这个变态杀人狂！他不仅把你赶了出去，还捅了你八十九刀！你死了……</value>
+		<value>你尝试保护他时，却发现他是变态杀人狂...“谢谢，但我可以自己保护自己”他笑道，随后...你死了……</value>
+
 	</string>
 	<string key="HarlotFuckKiller">
 		<value>你在搜查 {0} 的家时，突然被击晕了！等你醒来时，你发现你被绑在处刑室的椅子上，被凌迟致死。</value>
@@ -718,7 +735,7 @@
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
-    <value>你不过是一个普通人罢了，为了能活下来，机智一点，好好利用手中的票！</value>
+    <value>你不过是一个普通村民罢了，为了能活下来，机智一点，好好利用手中的票！</value>
   </string>
   <string key="AboutSeer">
     <value>你是先知。每当夜深人静时，你就可以预知其中一个玩家的身份。除非你希望被狼人杀掉，不要暴露你的身份！</value>
@@ -739,7 +756,7 @@
     <value>你是人类中出的叛徒，你憎恨人类已久，只要其他狼人全部死亡，诅咒之力就会附着到你身上，享受你仅剩的人类生活，或者在狼人全部死掉之后转而向你曾经的队友展开屠杀吧！不过作为叛徒，先知也有可能会把你当成真的狼人。</value>
   </string>
   <string key="AboutGA">
-    <value>身为守护神，每当夜幕降临，你可以保护一个人。但是，如果你保护了狼人，你有一半的几率会死。</value>
+    <value>身为守卫，每当夜幕降临，你可以保护一个人。但是，如果你保护了狼人，你有一半的几率会死。</value>
   </string>
   <string key="AboutDetective">
     <value>你是一名侦探。你可以在白天调查一名玩家的身份，不过要小心的选择调查的目标！调查时，狼人们有40%的机率会发现你是侦探。</value>
@@ -763,10 +780,10 @@
     <value>你是孤儿。可以默默关心一名玩家。但如果你关心的人死亡，你就会黑化成为狼人。</value>
   </string>
   <string key="AboutAppS">
-    <value>你是先知学徒，当你的老师回到主的身边，你就会成为先知引领人类继续斗争。不过在这之前你还是个学徒（普通人）。</value>
+    <value>你是先知学徒，当你的老师回到主的身边，你就会成为先知引领人类继续斗争。不过在这之前你还是个学徒（普通村民）。</value>
   </string>
   <string key="AboutBH">
-    <value>你是无神论者，你知道谁是所谓的「先知」。除此之外，你就是个普通人。</value>
+    <value>你是无神论者，你知道谁是所谓的「先知」。除此之外，你就是个普通村民。</value>
   </string>
   <string key="AboutMason">
     <value>你是拖延症患者，每天除了摸鱼🐟什么都不干，你很忧心，为此加入了拖延症患者互助协会。你也会知道他们是谁。除此之外你就跟普通村民一样。不过如果同伴没来参加协会的定期聚会，你就会知道他的身份变了，极有可能被洗成了邪教徒。
@@ -1022,7 +1039,7 @@
     </string>
 <string key="All">
     <!-- used when searching for groups in all the variants -->
-    <value>全部</value>
+    <value>#⃣全部</value>
   </string>
   <string key="RandomModeQ">
     <value>开启随机模式?\n随机模式开启后，每次 混乱模式，秘密投票处决，展示玩家死亡，允许邪教，允许冒牌先知，允许圣战者，将会随机开启或关闭。\n现在:{0}</value>
@@ -1071,24 +1088,24 @@
   </string>
 
    <string key="RoleInfoMayor">
-    <value>你是市长。一旦你透露自己身份，你的权重将上升，投票处决中将计算两票。你在村民阵营</value>  </string>
+    <value>你是市长。一旦你透露自己身份，你的权重将上升，投票处决中将计算两票。你在村民阵营。\n [能力主动；日间使用能力 ]</value> </string>
   <string key="RoleInfoPrince">
-    <value>你是秘密公主，当你被投票处决时，你能以皇家的权力，逃避一次处决。</value>
+    <value>你是秘密公主，当你被投票处决时，你能以皇家的权力，逃避一次处决。\n [能力被动，当被公投处死时，能力才被使用（避免处死一次） ]</value>
   </string>
   <string key="RoleInfoClumsyGuy">
-    <value>你是傻瓜，你投票时总是投不准:你有50%几率不小心投给其他人。但你还是属于村民阵营的。</value>
+    <value>你是傻瓜，你投票时总是投不准:你有50%几率不小心投给其他人。但你还是属于村民阵营的。\n [能力随机使用，投票时使用能力 ]</value>
   </string>
   <string key="RoleInfoSorcerer">
-    <value>你是黑暗法师:夜里你总会而那些生物呆在一起。夜里你可以用你的能力，找到狼或先知。你属于狼人阵营。</value>
+    <value>你是黑暗法师:夜里你总会而那些生物呆在一起。夜里你可以用你的能力，找到狼或先知。你属于狼人阵营。\n [能力主动；夜间使用能力 ]</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value>你是铁匠，你有一代祖传的银粉，它可以撒在村里，防止狼人攻击一次。（村民阵营）</value>
+    <value>你是铁匠，你有一代祖传的银粉，它可以撒在村里，防止狼人攻击一次。（村民阵营）\n [能力主动；日间使用能力 ]</value>
   </string>
   <string key="RoleInfoAlphaWolf">
-    <value>你是源狼，一切狼人之源，一切的开始。只要你活着，被你咬过的，有20%的几率变成狼人。</value>
+    <value>你是头狼(源狼)，一切狼人之源，一切的开始。只要你活着，被你咬过的，有20%的几率变成狼人。\n [能力主动，随机使用 ]</value>
   </string>
   <string key="RoleInfoWolfCub">
-    <value>你是幼狼，和狼人一样，你会每晚攻击一个村民，但是如果你死了，出于悲愤，那晚其它狼会再攻击一个人。</value>
+    <value>你是幼狼，和狼人一样，你会每晚攻击一个村民，但是如果你死了，出于悲愤，那晚其它狼会再攻击一个人。\n [能力被动，当你死亡时，能力才被使用（那晚狼人攻击两个人） ]</value>
    
   </string>
   <string key="PrinceLynched">
@@ -1115,29 +1132,29 @@
   	
   </string>
   <string key="Mayor">
-    <value>👮市长</value>
+    <value>🎖市长</value>
   </string>
   <string key="Prince">
     <value>👑公主</value>
   </string>
   <string key="Sorcerer">
-    <value>🔥黑暗法师</value>
+    <value>🔮黑暗法师</value>
   </string>
   <string key="ClumsyGuy">
-    <value>😴傻瓜</value>
+    <value>🤕傻瓜</value>
   </string>
   <string key="Blacksmith">
     <value>🔨铁匠</value>
   </string>
   <string key="AlphaWolf">
-    <value>🐺源狼(the Alpha Wolf)</value>
+    <value>🐺⚡️头狼(源狼)</value>
   </string>
   <string key="WolfCub">
     <value>🐺幼狼(the Wolf Cub)</value>
   </string>
   
   <string key="PlayerBittenWolves">
-    <value>当狼人们攻击 {0}, 源狼{1} 停止了所有人。 {1} 告诉其它狼,{0} 应该加入狼群，因此，明日他将成为新的狼人。</value>
+    <value>当狼人们攻击 {0}, 头狼{1} 停止了所有人。 {1} 告诉其它狼,{0} 应该加入狼群，因此，明日他将成为新的狼人。</value>
   </string>
   <string key="PlayerBitten">
     <value>你被狼人袭击了，你明日将变成狼人。</value>
@@ -1165,7 +1182,7 @@
   </string>
   <string key="AboutAlphaWolf">
     <value>
-    <value>你是源狼，狼人之源。只要你活着，被你咬过的，有20%的几率变成狼人。</value>
+    <value>你是头狼(源狼)，狼人之源。只要你活着，被你咬过的，有20%的几率变成狼人。</value>
     </value>
   </string>
   <string key="AboutWolfCub">
@@ -1176,7 +1193,7 @@
   <string key="DGTransformToAlpha">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} 死了，你变成了源狼，你的队友(if any) : {1}</value>
+    <value>{0} 死了，你变成了头狼，你的队友(if any) : {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
     <!-- 0 - target's name -->
@@ -1233,10 +1250,10 @@
   
   <!--New Death Strings 05 DEC-->
   <string key="ApprenticeSeerEaten">
-    <value>新闻：今日，村民们发现先知学徒 {0}的心脏不在了...一路走好 </value>
+    <value>📣新闻：今日，村民们发现先知学徒 {0}的心脏不在了...一路走好 </value>
   </string>
   <string key="BlacksmithKilled">
-    <value>新闻：今日，村民们发展铁匠{0}的肝不见了... 一路走好</value>
+    <value>📣新闻：今日，村民们发展铁匠{0}的肝不见了... 一路走好</value>
   </string>
   <string key="CultistKilled">
     <value>次日清晨，邪教徒{0}发现自己的肾不见了（雾） ...</value>
@@ -1245,53 +1262,53 @@
     <value>天哪，不，我的上帝，看看发生了什么。我们的爱神{0}的心不见了，噢，可怜的孩子。伙计们，让我们为她默哀一分钟，一路走好！</value>
   </string>
   <string key="DrunkKilled">
-    <value>新闻：酒鬼 {0} 的肝和一把刀发现在他家门口。 由于多年的酗酒，似乎变态杀人狂都不要他的肝了！刑警温馨提示您：珍爱生命，远离酗酒！</value>
+    <value>📣新闻：酒鬼 {0} 的肝和一把刀发现在他家门口。 由于多年的酗酒，似乎变态杀人狂都不要他的肝了！刑警温馨提示您：珍爱生命，远离酗酒！</value>
   </string>
    <string key="GuardianAngelKilled">
-    <value>新闻：守卫{0} 惨死在自己家中，五脏六腑不翼而飞，其他细节警方拒绝透露。</value>
+    <value>📣新闻：守卫{0} 惨死在自己家中，五脏六腑不翼而飞，其他细节警方拒绝透露。</value>
   </string>
   <string key="GunnerKilled">
-    <value>新闻：震惊，枪手{0} 的尸首和枪出现在村庄水井，警方开始调查此事。</value>
+    <value>📣新闻：震惊，枪手{0} 的尸首和枪出现在村庄水井，警方开始调查此事。</value>
   </string>
   <string key="MayorKilled">
-    <value>新闻：市长{0} 今日未上班，警方封锁其住宅。有知情人士透露，市长昨晚惨遭毒手，但警方拒绝透露任何细节，我们将继续跟踪报道。</value>
+    <value>📣新闻：市长{0} 今日未上班，警方封锁其住宅。有知情人士透露，市长昨晚惨遭毒手，但警方拒绝透露任何细节，我们将继续跟踪报道。</value>
   </string>
   <string key="PrinceKilled">
-    <value>新闻：士兵封锁{0}住宅，警方开始调查此事。据称，{0}是秘密公主，目前已被变态杀人狂杀害。</value>
-    <value>新闻：水库打捞起一无头死尸，身上有皇家戒指。结果法医鉴定，认为是秘密公主{0}，但皇家成员，尤其是国王，拒绝承认此事。</value>
+    <value>📣新闻：士兵封锁{0}住宅，警方开始调查此事。据称，{0}是秘密公主，目前已被变态杀人狂杀害。</value>
+    <value>📣新闻：水库打捞起一无头死尸，身上有皇家戒指。结果法医鉴定，认为是秘密公主{0}，但皇家成员，尤其是国王，拒绝承认此事。</value>
   </string>
   <string key="SeerKilled">
     <value>震惊！先知{0} 的大脑不易而飞。</value>
   </string>
   <string key="SorcererEaten">
     <value>震惊！黑暗法师{0} 惨死街头，周围有狼人痕迹。</value>
-    <value>新闻：震惊黑暗法师{0}惨死在街头，村民认为和狼人近期活动有关</value>
+    <value>📣新闻：震惊黑暗法师{0}惨死在街头，村民认为和狼人近期活动有关</value>
   </string>
   <string key="WildChildEaten">
-    <value>新闻：震惊！！！幼狼{0} 惨死在街头，村民认为和狼人近期活动有关</value>
+    <value>📣新闻：震惊！！！幼狼{0} 惨死在街头，村民认为和狼人近期活动有关</value>
   </string>
   <string key="SerialKillerKilledCH">
     <!--used when CH visits SK-->
-    <value>新闻：震惊，异端审判官{0}的肺被发现在水井中，村民表示并不知情。</value>
-    <value>新闻：震惊，异端审判官{0}的肝被发现在水井中，村民表示并不知情。</value>
+    <value>📣新闻：震惊，异端审判官{0}的肺被发现在水井中，村民表示并不知情。</value>
+    <value>📣新闻：震惊，异端审判官{0}的肝被发现在水井中，村民表示并不知情。</value>
   </string>
   <string key="CultConvertWolfPublic">
     <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>新闻：震惊！邪教徒{0}惨死在街头，原因未知。警方调查显示，可能和近期狼人频繁活动有关。</value>
-    <value>新闻：邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的狼人有关。</value>
+    <value>📣新闻：震惊！邪教徒{0}惨死在街头，原因未知。警方调查显示，可能和近期狼人频繁活动有关。</value>
+    <value>📣新闻：邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的狼人有关。</value>
   </string>
   <string key="CultConvertKillerPublic">
     <!--used when Cultists convert the SK-->
-    <value>新闻：邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
-    <value>新闻：邪教徒{0}惨死在广场，原因未知，警方认为这可能与最近小镇出现的变态杀人狂有关。</value>
+    <value>📣新闻：邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
+    <value>📣新闻：邪教徒{0}惨死在广场，原因未知，警方认为这可能与最近小镇出现的变态杀人狂有关。</value>
   </string>
   <string key="GAGuardedKiller">
     <!-- used when GA guards SK -->
-    <value>新闻：震惊守卫{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
+    <value>📣新闻：震惊守卫{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
   </string>
   <string key="GAGuardedWolf">
     <!-- used when GA guards a wolf -->
-    <value>新闻：{0} 昨晚尝试守护一只狼。 似乎，事情进行得不太愉快。</value>
+    <value>📣新闻：{0} 昨晚尝试守护一只狼。 似乎，事情进行得不太愉快。</value>
   </string>
 
   <!--1vs1 finales-->
@@ -1366,7 +1383,7 @@
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
     <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
-    <value>{0}在最后30s加入了游戏</value>
+    <value>{0}在30s内加入了游戏</value>
   </string>
   <string key="AllowCult">
     <value>允许邪教</value>
@@ -1382,13 +1399,13 @@
    </string>
  
   	<string key="RoleInfoThief">
-    <value>你是小偷！\n 小偷模式-默认：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民。</value>
+    <value>你是小偷！\n 小偷模式-默认：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民。\n [能力主动；仅第一晚使用能力 ]</value>
   </string>
   <string key="RoleInfoThiefFull">
-    <value>你是小偷！\n  小偷模式-完整(Full Thief)：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力）</value>
+    <value>你是小偷！\n  小偷模式-完整(Full Thief)：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力.）\n [能力主动；仅第一晚使用能力 ]</value>
   </string>
   <string key="Thief">
-    <value>👤小偷</value>
+    <value>👻小偷</value>
   </string>
   <string key="AboutThief">
     <value>小偷模式-默认：小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民\n小偷模式-完整(Full Thief)：小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成小偷。（其实就是交换能力）</value>
@@ -1401,7 +1418,7 @@
 	<value>❄🐺雪狼</value>
   </string>
   <string key="RoleInfoSnowWolf">
-    <value>你是雪狼：源自雪山，特立独行。拥有冻结他人夜间能力的能力，但不久后他们将对你免疫，你不再能冻结他的能力了。</value>
+    <value>你是雪狼：源自雪山，特立独行。拥有冻结他人夜间能力的能力，但不久后他们将对你免疫，你不再能冻结他的能力了。\n [能力主动；夜间使用能力 ]</value>
   </string>
   <string key="AboutSnowWolf">
     <value>雪狼：源自雪山，特立独行。拥有冻结他人能力的能力，但不久后他们将对你免疫，不再能冻结他的能力了。</value>
@@ -1416,7 +1433,7 @@
     <value>当前狼群 {0} ，雪狼：{1}</value>
   </string>
   <string key="DGTransformToAlphaWithSnow">
-    <value>{0}死了，你变身成了 源狼. 你的队友： {1} 以及雪狼：{2}</value>
+    <value>{0}死了，你变身成了 头狼. 你的队友： {1} 以及雪狼：{2}</value>
   </string>
   <string key="DGTransformToWolfCubWithSnow">
     <value>{0}死了，你变身成了 幼狼. 你的队友： {1} 以及雪狼：{2}</value>
@@ -1501,11 +1518,21 @@
     <value>打算让所有人安睡了吗?</value>
   </string>
   <string key="SandmanSleepAll">
-    <value>只见{0} 轻轻吟唱，金雾笼罩了小镇，所有人都入睡了。</value>
+        <value>只见睡神{0}的手轻轻一挥，不久，黑夜立即笼罩了小镇，所有人都该入睡了。</value>
+        <value>只见睡神{0}的手轻轻一挥，不久，星月立即升上了小镇的夜空，灯也熄灭了，所有人都该入睡了。</value>
+        <value>只见睡神{0}的手轻轻一挥，不久，夜色瞬间笼罩了小镇，所有人都该入睡了，今晚没有人再会活动。</value>
+        <value>只见睡神{0}走上了神坛，不久，黑夜立即笼罩了小镇，所有人都该入睡了。</value>
+        <value>只见睡神{0}走上了神坛，不久，星月立即升上了小镇的夜空，所有人都该入睡了。</value>
+        <value>只见睡神{0}走上了神坛，不久，夜幕瞬间笼罩了小镇，所有人都该入睡了，今晚没有人再会活动。</value>
+        <value>只见睡神{0}走上了神坛，不久，夜幕瞬间笼罩了小镇，灯也熄灭了，所有人都该入睡了，今晚没有人再会活动。</value>
+        <value>只见睡神{0}的手轻轻一挥，不久，黑夜立即笼罩了小镇，所有人都该入睡了，今晚没有人再会活动。</value>
+        <value>只见睡神{0}的手轻轻一挥，不久，星月立即升上了小镇的夜空，灯也熄灭了，所有人都该入睡了，。</value>
   </string>
+  
   <string key="SandmanNight">
-    <value>金雾在小镇里飘散，所有人都进入了梦境。</value>
-  </string>
+        <value>💤奇怪，天怎么突然这么黑，好像也停电了，火也点不燃，该回家睡觉了，今晚注定是个宁静的夜晚。今晚没有人会活动</value>
+        <value>💤奇怪，天怎么突然这么黑，好像也停电了，火也点不燃，今晚注定是个宁静的夜晚。今晚没有人会活动。</value> 
+</string>
 
   <string key="AllowThiefQ">
     <value>允许小偷?\n现在: {0}</value>
@@ -1527,27 +1554,27 @@
   </string>
 
   <string key="RoleInfoWolfMan">
-    <value>你是狼语者（wolfman）--村民，但由于你经常在树林里，似乎先知把你当狼人看。</value>
+    <value>你是“狼”人--村民，但由于你经常在树林里，似乎先知把你当狼人看。\n [能力被动，被先知查验时]</value>
   </string>
   <string key="WolfMan">
-    <value>👤狼语者（wolfman）</value>
+    <value>👱🌚狼语者</value>
   </string>
   <string key="AboutWolfMan">
-    <value>狼语者--村民，但由于经常在树林里，似乎先知把他当狼人看。</value>
+    <value>“狼”人--村民，但由于经常在树林里，似乎先知把他当狼人看。</value>
   </string>
 
   <string key="RoleInfoLycan">
-    <value>你是普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在你可以不被先知发现你的身份。</value>
+    <value>你是普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在你可以不被先知发现你的身份。\n [能力被动，被先知查验时]</value>
   </string>
   <string key="Lycan">
-    <value>🐺狼人( Lycan )</value>
+    <value>🐺狼人( 潜隐者 )</value>
   </string>
   <string key="AboutLycan">
-    <value>狼人( lycan )，普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在可以不被先知发现你的身份。。</value>
+    <value>狼人( 潜隐者 )，普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在可以不被先知发现你的身份。。</value>
   </string>
 
   <string key="RoleInfoOracle">
-    <value>你是神谕，每天晚上你可以知道一个人（只能是活人） ** 不是 ** 什么身份。</value>
+    <value>你是神谕，每天晚上你可以知道一个人（只能是活人） ** 不是 ** 什么身份。\n [能力被动，仅告知信息 ]</value>
   </string>
   <string key="Oracle">
     <value>🏛神谕</value>
@@ -1557,7 +1584,7 @@
   </string>
 
   <string key="RoleInfoSandman">
-    <value>你是睡神，可以催眠一切生物，让所有人入睡，夜间不再活动。（仅一次）</value>
+    <value>你是睡神，可以催眠一切生物，让所有人入睡，夜间不再活动。（仅一次）\n [能力主动；日间使用能力 ] </value>
   </string>
   <string key="Sandman">
     <value>💤睡神</value>
@@ -1713,14 +1740,14 @@
   </string>
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
-    <value>小偷{0}尝试偷取 变态杀人狂 的能力。\n 新闻：震惊！路上惊现无头死尸...</value>
+    <value>小偷{0}尝试偷取 变态杀人狂 的能力。\n 📣新闻：震惊！路上惊现无头死尸...</value>
   </string>
   <string key="BeholderSeerStolen">
 	<value>小偷偷取了先知的能力！现在{0} 是先知，{1} 不再是先知了。</value>
   </string>
   
   <string key="RoleInfoPacifist">
-    <value>你是和平演说者，你可以选择进行一次和平演说，劝说所有人不投票处决一次（仅一次）</value>
+    <value>你是和平演说者，你可以选择进行一次和平演说，劝说所有人不投票处决一次（仅一次）\n [能力主动；日间使用能力 ]</value>
   </string>
   <string key="Pacifist">
     <value>😇和平演说者</value>
@@ -1730,7 +1757,7 @@
   </string>
 
   <string key="RoleInfoWiseElder">
-    <value>你是长老，苍老但睿智。\n你可以躲避狼人的一次攻击（仅一次）。\n如果枪手或猎人杀死了你，出于慈悲，他们都会后悔，失去他们的能力，变成普通村民。</value>
+    <value>你是长老，苍老但睿智。\n你可以躲避狼人的一次攻击（仅一次）。\n如果枪手或猎人杀死了你，出于慈悲，他们都会后悔，失去他们的能力，变成普通村民。\n [能力被动，当被攻击时，能力才被使用 ]</value>
   </string>
   <string key="WiseElder">
     <value>📚长老</value>
@@ -1746,7 +1773,7 @@
 	<value>捣乱者，小镇里的无业青年，经常闹事情。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
   </string>
   <string key="RoleInfoTroublemaker">
-	<value>你是捣乱者，小镇里的无业青年，经常闹事情。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
+	<value>你是捣乱者，小镇里的无业青年，经常闹事情。当他们捣乱时，整个村都炸了。因此，那天要处决两次!\n [能力主动；日间使用能力 ]</value>
   </string>
   <string key="AskTroublemaker">
 	<value>要去小镇里搞事情吗？</value>
@@ -1765,7 +1792,7 @@
 	<value>疯狂化学家，拥有两片药，一片毒药，一片是糖。当他们逃出来时，会强制让人吞服其中一片，而他吞服另一片。所以，祝你好运。</value>
   </string>
   <string key="RoleInfoChemist">
-	<value>你是疯狂化学家，拥有两片药，一片毒药，一片是糖。当他们逃出来时，会强制让人吞服其中一片，而他吞服另一片。所以，祝你好运。</value>
+	<value>你是疯狂化学家，拥有两片药，一片毒药，一片是糖。当他们逃出来时，会强制让人吞服其中一片，而他吞服另一片。所以，祝你好运。\n [能力主动；夜间使用能力，随机决定能力使用结果 ]</value>
   </string>
   <string key="ChemistBrewing">
 	<value>夜深人静，疯狂的化学家开始制药了，希望不被人发现。</value>
@@ -1861,245 +1888,253 @@
     <value>每次将对对玩家列表随机安排\nPlayer list will be shuffled every time: {0}</value>
   </string>
   
-  <!-- 2019－2－21 未完成 -->
+  <!-- 2019－2－21 更新-->
     <string key="AboutGraveDigger">
-	<value>掘墓人👷，每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 但是因为你晚上外出，狼或变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 此外，显然连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人的能力...</value>
+	<value>掘墓人👷，每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 但是因为你晚上外出，狼或变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 此外，连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人对象的决定权...</value>
   </string>
   <string key="RoleInfoGraveDigger">
-	<value>你是掘墓人👷， 每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 但是因为你晚上外出，狼或变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 此外，显然连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人的能力... </value>
+	<value>你是掘墓人👷， 每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 \n每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 \n但是因为你晚上外出，狼或变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 \n此外，连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人对象的决定权... \n [能力被动 ]</value>
   </string>
   <string key="GraveDigger">
-	<value>掘墓人👷</value>
+	<value>👷掘墓人</value>
   </string>
   <string key="DigNoGraves">
-    <value>The dead are buried, and the living are not. Everything is as it should be, and you can get a good night's sleep.</value>
+    <value>逝者已去，生者未亡。一切都安排好了，似乎你今晚没有事可做了。</value>
   </string>
   <!--{0}: list of people who died since last grave-->
   <string key="DigGraves">
-	<value>Until late into the night, you dig the grave(s) for {0}. May their souls come to rest and their bodies lie in peace.</value>
+	<value>直到深夜，你还在为{0}挖掘坟墓。 May愿他们的灵魂安息，他们的身体安息。</value>
   </string>
   <string key="GraveDiggerFrozen">
-	<value>As you left your house to bury those who passed away, a gust of wind blew in from the shadows, causing you to freeze. Unable to move, you waited for the sun to go up and thaw you. The dead will have to be restless for yet another night...</value>
+	<value>当你准备离开你家，去为那些死去的村民挖掘坟墓时，一阵风，似乎把你你家的房子冻住了...似乎，今天死者可能要再等一天了...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="GraveDiggerNotHome">
-	<value>The pack heads to the house of {0}, just to find that they are not home. All you can see is a candle shining lonely on a grave...</value>
+	<value>走进{0}家里后，发现他根本没在家！不过，远处小树林里似乎有亮光...</value>
   </string>
   <!--{0}: grave digger, {1}: wolf who fell into the grave-->
   <string key="WolfFellWolves">
-	<value>The pack heads to the house of {0}, but on the way there, {1} suddenly steps into a bear trap, falls into an open grave and gets impaled by a silver spear!</value>
+	<value>狼人走进{0}家后,发现他根本不在家！但在离开时{1} 突然掉进一个坑里...一路走好{1}！</value>
   </string>
   <!--{0}: the wolf who fell into the grave-->
   <string key="WolfFell">
-	<value>As you just want to close the grave you dug all night, you notice a foul stench, different from the usual smell of dead bodies... The wolf {0} fell into the grave and died!</value>
+	<value>当你开始去填你最近挖的坑时，发现一具截然不同的尸体，看了看似乎是狼人 {0} 的尸体，似乎他是不小心掉进去的。当然，你还是把它一块埋了。</value>
   </string>
   <!--{0}: grave digger-->
   <string key="KillerStumbled">
-	<value>You cut the liver out of {0}'s body, but on your way back you leaned too far over an unfinished grave and stumbled into it. Maybe you shouldn't have looked for the liver of the corpse... Now your leg really hurts.</value>
+	<value>在你回家的路上，你和{0}刚切下来的肝滚到了一个坑里...现在你可能要养几天伤了。</value>
   </string>
   <!--{0}: intended victim, {1}: actual victim-->
   <string key="KillerRandomKill">
-	<value>On your way to the house of {0}, a sharp pain surges through your leg. You decide to just go to the nearest house, which appears to be {1}'s, murder them and hurry home.</value>
+	<value>在你去{0}家的路上时，你的腿突然痛起来，似乎昨天的伤还没好。你决定只有到最近的房子— {1}的家下手了</value>
   </string>
   <!--{0}: victim-->
   <string key="GuardBlockedRandomKiller">
-	<value>You arrive at {0}'s house, just to see the guardian angel standing in front of it! You try to fight, but you stand no chance. Tonight really was a bad night for you...</value>
+	<value>但你来到{0}的家，却发现守卫在门口...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="HunterFell">
-	<value>Another night without being able to slay one of those bloody cultists! Frustrated, you walk over the graveyard, without noticing the bear trap until it closes around your ankle. You scream and struggle, but it's too late. You fall backwards into a grave that {0} left open and the sound of your neck breaking is the last thing you hear before everything goes black.</value>
+	<value>当你正走近{0}家时，准备检查{0}时，突然脚下一空...你跌入了一个未完工的墓穴中，你也失去了意识...</value>
   </string>
   <!--{0}: cult hunter-->
   <string key="HunterFellDigger">
-	<value>After another tiring night, you walk back to your home with the sun already rising. Just before you arrive, you notice a sword lying on the ground next to an unfinished grave. Inside that grave you see the dead body of {0}. The cultist hunter should not have suspected you...</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，很可惜，{0}是异端审判官</value>
   </string>
   <!--{0}: cultist-->
   <string key="CultFell">
-	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，幸好，{0}是邪教徒</value>
   </string>
   <!--{0}: cultist who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
-	<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
+	<value>当你们正走近{0}家时，准备施洗{0}时，{1}突然脚下一空，跌入了一个未完工的墓穴中，{1}也失去了意识...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="ChemistFell">
-	<value>As you are on your way to {0}'s house, you try to remember which of your drinks was the poisonous one again and stumble, falling into an open grave where a silver spear pierces right through your heart. Before you can make a sound, you are dead.</value>
+	<value>当你正走近{0}家时，准备与{0}进行生死游戏时，突然脚下一空...你跌入了一个未完工的墓穴中，你也失去了意识...</value>
   </string>
   <!--{0}: chemist-->
   <string key="ChemistFellDigger">
-	<value>"I could use a glass of wine now", you think to yourself. A strange feeling lets you look into a grave next to you, and as if fate heard your wish, a bottle of wine lies inside! Too bad there's also {0}'s dead body... Suddenly, you lost all your appetite.</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，{0}是疯狂的化学家！</value>
   </string>
   <!--{0}: grave digger-->
   <string key="HarlotFell">
-	<value>You put your favorite lipstick on and head to {0}'s house to have a little fun. Sadly, you don't get far enough, as you step into a bear trap and fall into a grave on the way... Talk about occupational risk!</value>
+	<value>当你正走近{0}家时，准备调查{0}身份时，突然脚下一空...你跌入了一个未完工的墓穴中，你也失去了意识...</value>
   </string>
   <!--{0}: harlot-->
   <string key="HarlotFellDigger">
-	<value>Apparently fate doesn't want you to have fun... Not only that you have to dig graves all night, you even find {0}, the harlot, dead in one of your unfinished graves. No fun for you tonight!</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，{0}是侦探。</value>
   </string>
   <!--{0}: grave digger-->
   <string key="HarlotVisitDigger">
-	<value>You wander to {0}'s house, carefully avoiding all the open graves, but when you arrive, their house is empty... Apparently {0} is out all night digging graves again!</value>
+	<value>你正走近{0}家时，准备调查{0}身份时，却发现{0} 并不在家，不过附近的公墓园里中，好像有亮光...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="GAFell">
-	<value>Fortune surely didn't favor you tonight... You just wanted to watch over {0}, but instead you fell into an open grave after stepping into a bear trap and died! Why does the grave digger even have to secure some graves?</value>
+	<value>当你正走近{0}家时，保卫{0}时，突然脚下一空...你跌入了一个未完工的墓穴中，你也失去了意识...</value>
   </string>
   <!--{0}: guardian angel-->
   <string key="GAFellDigger">
-	<value>On your way home, you notice a feather lying around on the ground... You don't have to search long to find {0}, the guardian angel, lying dead inside one of your graves! Sometimes your "security measurements" really go off on the wrong people.</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，很可惜，{0}是守卫</value>
   </string>
   <!--{0}: grave digger-->
   <string key="ThiefFell">
-	<value>You sneak through the graveyard on your way to steal {0}'s role, but you're too focused on not making a sound to notice the bear trap that clanks around your ankle! Not enought that your stealth is surely broken, you even fall into the grave next to you and break your neck!</value>
+	<value>当你正走近{0}家时，准备偷取{0}身份时，突然脚下一空...你跌入了一个未完工的墓穴中，你也失去了意识...</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellDigger">
-	<value>Good thing you put security measurements around your graves... {0} tried to steal your role last night, but they were caught in your bear trap and fell into your grave! Maybe now the village will believe you that your traps are actually necessary.</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，幸好，{0}是小偷</value>
   </string>
   <!--{0}: grave digger-->
   <string key="ArsonistFell">
-	<value>You should watch your step when you go to douse someones house next time... You stepped into a bear trap, fell into a grave and got a silver spear right through your heart! Serves you right, you little pyromaniac.</value>
+	<value>当你准备行事时，突然脚下一空...你跌入了一个未完工的墓穴中，你也失去了意识...</value>
   </string>
   <!--{0}: arsonist-->
   <string key="ArsonistFellDigger">
-	<value>From one of your graves you notice a smell of kerosene. Alarmed, you hurry there and find {0}, the arsonist, lying dead inside. At least your house stayed clean...</value>
+	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，幸好，{0}是纵火犯</value>
   </string>
   <!--{0}: person that died, {1}: "(person) was (role)"-->
   <string key="DefaultFellPublic">
-	<value>One of the graves on the graveyard contained too many people tonight... Apperently {0} tried to visit the grave digger, fell into a grave and died! {1}</value>
+	<value>{0}从村里消失了...不过，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下的几个名字：{0} \n 以及，还有他们的身份：{1}</value>
   </string>
   <!--{0}: harlot-->
   <string key="HarlotFellPublic">
-	<value>As the harlot {0} went home after a night of fun they tried to take a shortcut through the local graveyard. They must have been still a bit dizzy that they didn't see the uncovered grave until they felt no grounds under her next step. Maybe they should have taken that daytime job they got offered yesterday!</value>
+	<value>侦探{0}从村里消失了...不过，有人发现，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下几个字：侦探{0}亦安息在此 </value>
   </string>
   <!--{0}: cultist who died-->
-  <string key="CultFellPublic">
-	<value>The cults tried to burn the church, but as {0} led the group through the graveyard, a bear trap snapped around his ankle!  He screamed when he fell into an open grave and the other cultists fled in terror...</value>
+  <string key="CultistFellPublic">
+	<value>{0}从村里消失了...不过，有人发现，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下几个字：邪教徒{0}亦安息在此</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellPublic">
-	<value>Maybe {0} the thief was trying to steal from the dead. Maybe it was karma. All we know is that he lurked around the graveyard when the trap snapped his leg. While falling into the grave, he wondered whether he should have brought a partner in crime for this job. {0} wont be stealing any more for sure!</value>
+	<value>{0}从村里消失了...不过，有人发现，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下几个字：小偷{0} 亦安息在此</value>
   </string>
   <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
   <string key="WolfFellPublic">
-	<value>As the wolf pack goes out for a hunt, {0} smells potential prey and doesn't notice the bear trap that snaps around their ankle! Surprised, {0} falls over into the grave, where the tip of a silver spear meets their head. Luckily the grave digger keeps his graves secured! {1}</value>
+	<value>{0}从村里消失了...不过，有人发现，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下几个字：以及{0} 亦安息在此 \n{1}</value>
   </string>
   <string key="SerialKillerSpottedYou" isgif="true">
-	<value>You're just trying to do your job, when suddenly a crazy killer spots and stabs you! What a pity...</value>
+	<value>当你正在努力挖坑时，突然，你发现地面上有人，影子刚好挡住了光...回头一看，上面只有一个黑影以及一把雪亮的匕首，突然，听到了一阵恐怖的笑声...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="SerialKillerSpotted">
-	<value>As you walk past the graveyard with blood on your knife, you notice {0}, the grave digger. Following your instinct, you decide there will be two victims for you today...</value>
+	<value>当你走过墓地时，发现墓地里有火光。走近一看，却发现是掘墓者{0}...你突然一笑，自言自语：“看了，今天有两个受害者了...”</value>
   </string>
   <string key="WolvesSpottedYou" isgif="true">
-	<value>You're just trying to do your job, when suddenly a wolf jumps onto you from behind and kills you!</value>
+	<value>当你正在努力挖坑时，突然，你发现地面上有人，影子刚好挡住了光...当你做准备回头时，你晕倒在地上，似乎头上有一只狼人，可惜你在你看清之前，你已经失去意识了...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpotted">
-	<value>The packs runs across the graveyard, as they suddenly notice {0}, the grave digger. Before they can react, one of you jumps on their back and kills them with one bite.</value>
+	<value>当狼人们走过墓地时，发现墓地里有火光。走近一看，却发现是掘墓者{0}...这时，所以狼人互相看了看，笑了起来...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpottedDiggerPublic">
-	<value>{0} doesn't show up to the town meeting. Have they overslept again? As you go look for them, you find them lying dead on the graveyard, the shovel still in their hands. It seems they were surprised by wolves in the night...</value>
+	<value>{0}消失了，村民们找了一天，只发现 {0} 的工具在一个未挖完的墓穴里...周围还有狼人的痕迹...似乎掘墓人{0}昨天遭遇了不测...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="KillerSpottedDiggerPublic">
-	<value>{0} is missing today... Did they maybe oversleep? You go look for them and find them dead on the graveyard, still holding their shovel. It seems they died from several stabbing wounds...</value>
+	<value>{0}消失了，村民们找了一天，发现 {0} 的尸体躺在一个未挖完的墓穴里，同时，{0}的肝也不在了...似乎掘墓人{0}昨天惨遭变态杀人狂的杀害...</value>
   </string>
   <string key="AllowArsonist">
-	<value>Arsonist</value>
+	<value>允许纵火犯</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="AllowArsonistQ">
-	<value>Allow arsonist? Current: {0}</value>
+	<value>允许纵火犯？\n现在: {0}</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="AllowArsonistA">
-	<value>Arsonist is now set to {0}.</value>
+	<value>纵火犯设置：{0}.</value>
   </string>
   <string key="BurningOverkill">
-	<value>Burning Overkill</value>
+	<value>过度纵火(Burning Overkill)</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="BurningOverkillQ">
-	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! ð Current: {0}</value>
+	<value>允许纵火犯和变态杀人狂同时存在？ Might be deadly!\n现在: {0}</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="BurningOverkillA">
-	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+	<value>纵火犯和变态杀人狂同时存在： {0}.</value>
   </string>
   <string key="AboutArsonist">
-	<value>你是纵火犯.，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。</value>
+	<value>纵火犯，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。</value>
   </string>
   <string key="RoleInfoArsonist">
-	<value>纵火犯.，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。</value>
+	<value>你是纵火犯.，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。\n [能力主动；夜间使用能力 ]</value>
   </string>
   <string key="Arsonist">
-	<value>纵火犯💥</value>
+	<value>🔥纵火犯</value>
   </string>
   <string key="AskArsonist">
 	<value>今天你想浇汽油，还是放一把火，烧掉你曾经浇过汽油的房子？</value>
   </string>
   <!--{0}: arsonist-->
   <string key ="ArsonistVisitKiller">
-	<value>The arsonist {0} tried to douse the house of the serial killer... He didn't quite survive that.</value>
+	<value>昨夜，纵火犯{0} 试图在变态杀人狂的家上浇汽油... 可惜，他变态杀人狂还没有睡着...</value>
   </string>
   <string key="Spark">
 	<value>放一把火</value>
   </string>
   <!--{0}: person whose house was doused-->
   <string key="Doused">
-	<value>You successfully doused {0}'s house with kerosene!</value>
+	<value>你成功在{0}的家上浇上了汽油!</value>
   </string>
   <string key="GuardSavedYouFromFire">
-	<value>A fire broke out in your house, but luckily the guardian angel was there and extinguished it right away! They'd make a good firefighter, if they weren't so busy protecting people...</value>
+	<value>你的家被汽油浇透了（雾），但在守卫和他的水管下，他帮你冲干净了（大雾）。PS：记得交水费！</value>
   </string>
   <!--{0}: saved person-->
   <string key="GuardSavedFromFire">
-	<value>You didn't quite expect a fire to break out when you went to visited {0}, but you saved them nevertheless! Ain't nobody gonna call you a bad protector...</value>
+	<value>当你去拜访{0}时，你并不认为火灾会爆发，但你还是保护了他们！至少没有人会称你为坏守卫...（You didn't quite expect a fire to break out when you went to visited {0}, but you saved them nevertheless! Ain't nobody gonna call you a bad protector...）</value>
   </string>
   <!--{0}: person whose house was cleaned-->
   <string key="CleanDoused">
-	<value>You didn't have to fight off any enemies at {0}'s house tonight, so you had time to look around a bit and noticed that the house was doused in kerosene! Since you got nothing better to do, you cleaned the house for them...</value>
+	<value>今晚在{0}家中，似乎没有什么危险人员在附近，所以你开始参观{0}的家。似乎{0}的家被汽油浇透了，于是你打开了水龙头，开始帮助{0}冲洗{0}的家。</value>
   </string>
   <!--{0}: list of people who died in the flames-->
   <string key="Burning">
-	<value>The village awakens to the smell of fire... It's burning! You try to extinguish the fire altogether, but you're too late to save the people whose houses were mysteriously doused in kerosene. Today you mourn the deaths of the following people:\n{0}</value>
+	<value>📣新闻：近日，本县纵火狂猖獗。今日，本村村民{0}的房子昨晚被人恶意纵火，可惜，虽然在本地消防队的大力扑救、营救下，仍然无法控制火势，以致...\n{0}的追悼会将在..举行...</value>
   </string>
   <string key="ArsonistWins">
-	<value>The only one left is the arsonist, standing on a pile of ashes. The arsonist wins...</value>
+	<value>最后，除了纵火犯的家，村子里只剩一片火海。纵火犯胜利...</value>
   </string>
   <string key="Burn" isgif="true">
-	<value>You should have kept a fire extinguisher! Now your house burnt down and you died inside...</value>
+	<value>珍爱生命，远离火海。你和你的家，一起葬身火海...至于谁干的？额...</value>
   </string>
   <string key="Augur">
-	<value>占卜者👨the Augur</value>
+	<value>☁️占卜者</value>
   </string>
   <!--{0}: role that is not part of the village-->
   <string key="AugurSees">
-	<value>As you look into the skies, you see the birds form a very unusual pattern. That can only mean that {0} is not in the village.</value>
-	<value>The birds tell you that {0} is not part of the village right now.</value>
+	<value>根据今天的云彩变化，似乎游戏中{0}不存在。</value>
   </string>
   <string key="AboutAugur">
-	<value>你是占卜家，每天早上，你观看天空中鸟的排列，预知村子里没有的角色（雾）。注：每个不存在的角色只会告诉你一次，如果出现两次...那么，你应该知道昨晚发生了什么了吧！</value>
+	<value>占卜家，每天早上，你观察早霞的颜色和云彩变化，以及物像，预知村子里没有的角色（雾）。提示：每个不存在的角色只会告诉你一次。</value>
   </string>
   <string key="RoleInfoAugur">
-	<value>你是占卜家，每天早上，你观看天空中鸟的排列，预知村子里没有的角色（雾）。注：每个不存在的角色只会告诉你一次，如果出现两次...那么，你应该知道昨晚发生了什么了吧！</value>
+	<value>你是占卜家，每天早上，你观察早霞的颜色和云彩变化，以及物像，预知村子里没有的角色（雾）。：每个不存在的角色只会告诉你一次。\n [能力被动，仅告知信息 ]</value>
   </string>
   <string key="AugurSeesNothing">
-	<value>There are absolutely no birds in the skies today. That probably means you have seen all the roles that are not in the village already...</value>
+	<value>天上没有云了，看来你已经得到所有不存在的玩家了</value>
+	<value>今天是晴天，天上没有云，看来你已经得到所有不存在的玩家了</value>
+	<value>今天是阴天，看不见日出，看来你已经得到所有不存在的玩家了</value>
   </string>
   <!--{0}: chosen victim, {1}: wolf who died in flames-->
   <string key="WolvesVisitBurn">
-	<value>The pack storms into {0}'s house, when suddenly you notice smoke. You try to escape, but it's too late for {1}, who dies in the flames.</value>	  
+	<value>狼人溜进{0}的家， 但突然发现好像房内有火光。 你尝试逃跑，但对于{1}来说已经太晚了...</value>	  
   </string>
   <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
   <string key="DefaultVisitBurn">
-	<value>{0} should have stayed home tonight... They visited a burning house and died in the flames! {1}</value>
+	<value>📣新闻：..{0}今晚应该好好呆在家... 但他（们）昨夜拜访了他人住所时，屋内突然失火...经警方确认：{1}。民警温馨提示广大村民：房屋千万所，安全第一条。拜访不判断，村民两行泪！</value>
   </string>
   <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
   <string key="WolfVisitBurn">
-	<value>The wolves tried to eat someone tonight again, but the arsonist was quicker! {0} couldn't escape from the burning house in time... {1}</value>
+	<value>狼人昨晚尝试袭击某人，但纵火犯抢先一步了！📣新闻：震惊！昨夜某村民家中失火，发现屋中内有一名死尸，经辨认，尸体为{0}。而且 {1}！</value>
+  </string>
+  <!--2019.2.21 更新-->
+    <string key="ChemistKillWiseElder">
+	<value>疯狂化学家袭击了长老 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>只剩下{0} 和 {1} ... 突然 {0} 笑起来, 划了一根火柴，丢向了了 {1}，{1}瞬间燃烧起来了...</value>
   </string>
 </strings>
