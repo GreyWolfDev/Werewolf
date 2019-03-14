@@ -431,6 +431,37 @@ namespace Werewolf_Control
         {
         }
 
+        /// <summary>
+        /// Gets CPU and RAM usage
+        /// </summary>
+        /// <param name="update"></param>
+        /// <param name="args"></param>
+        [Attributes.Command(Trigger = "usage", DevOnly = true)]
+        public static void Usage(Update update, string[] args)
+        {
+            var msgId = Bot.Send("Please hold, reading values", update.Message.Chat.Id).Result.MessageId;
+            var cpuCount = new PerformanceCounter
+            {
+                CategoryName = "Processor",
+                CounterName = "% Processor Time",
+                InstanceName = "_Total"
+            };
+            var cpu = cpuCount.NextValue() + "%";
+            var cpuTimes = new List<int>();
+
+            for (var i = 0; i < 10; i++)
+            {
+                Thread.Sleep(500);
+                cpuTimes.Add((int)cpuCount.NextValue());
+            }
+
+            var cpuAvg = (int)cpuTimes.Average();
+
+            var ram = new PerformanceCounter("Memory", "Available MBytes").NextValue() + "MB";
+
+            Bot.Edit(update.Message.Chat.Id, msgId, $"CPU Usage: {cpuAvg}%\r\nRAM available: {ram}");
+        }
+
         [Attributes.Command(Trigger = "checkgroups", DevOnly = true)]
         public static void CheckGroupList(Update update, string[] args)
         {
