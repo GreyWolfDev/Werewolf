@@ -1101,7 +1101,6 @@ namespace Werewolf_Control
         }
 
 
-
         [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]
         public static void LeaveGroup(Update update, string[] args)
         {

@@ -1225,7 +1225,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         }
 
 
-
         //TODO move the message queue elsewhere
         class Message
         {
