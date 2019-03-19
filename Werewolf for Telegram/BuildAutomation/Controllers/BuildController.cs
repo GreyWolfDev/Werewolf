@@ -85,9 +85,11 @@ namespace BuildAutomation.Controllers
                         detail = detail.Replace("\r\n+ ", "\r\n");
                         var msg = detail + "\n";
                         var urlPre = "https://github.com/GreyWolfDev/Werewolf/commit/";
+                        var ver = build.resource.sourceGetVersion;
+                        var commit = ver.Substring(ver.Length - 40, 40);
                         msg +=
-                            $"Built with commit [{build.resource.sourceGetVersion.Substring(0, 7)}]({urlPre + build.resource.sourceGetVersion}) as latest";
-                        if (build.resource.result == "succeeded")
+                            $"Built with commit [{commit}]({urlPre + commit}) as latest";
+                        if (build.resource.status == "succeeded")
                             msg += "\nRelease is now being created, you will be notified when it is completed.";
 
                         bot.SendTextMessageAsync(GroupId, msg, parseMode: ParseMode.Markdown);
