@@ -400,6 +400,8 @@ namespace Werewolf_Control.Helpers
 
             msg += "\n<b>Operation complete.</b>";
 
+            msg += "\n\n<b>PLEASE REMEMBER TO REPLACENODES TO REFRESH THE CACHED ENGLISH FILES!";
+
             Bot.Api.EditMessageTextAsync(id, msgId, msg, parseMode: ParseMode.Html);
         }
 

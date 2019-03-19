@@ -86,7 +86,7 @@ namespace BuildAutomation.Controllers
                         var msg = detail + "\n";
                         var urlPre = "https://github.com/GreyWolfDev/Werewolf/commit/";
                         msg +=
-                            $"Built with commit [{build.resource.sourceVersion.Substring(0, 7)}]({urlPre + build.resource.sourceVersion}) as latest";
+                            $"Built with commit [{build.resource.sourceGetVersion.Substring(0, 7)}]({urlPre + build.resource.sourceGetVersion}) as latest";
                         if (build.resource.result == "succeeded")
                             msg += "\nRelease is now being created, you will be notified when it is completed.";
 
