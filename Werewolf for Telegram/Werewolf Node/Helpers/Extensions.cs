@@ -192,7 +192,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.GraveDigger:
                     return 8;
                 case IRole.Arsonist:
-                    return 14;
+                    return 8;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
