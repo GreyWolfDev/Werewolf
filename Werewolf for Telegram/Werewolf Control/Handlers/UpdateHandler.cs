@@ -1195,7 +1195,7 @@ namespace Werewolf_Control.Handler
                             break;
                         case "pf": // "preferred"
                             var grpid = grp.Id;
-                            var rankings = DB.GroupRanking.Where(x => x.GroupId == grpid).ToList();
+                            var rankings = DB.GroupRanking.Where(x => x.GroupId == grpid && !x.Language.EndsWith("BaseAllVariants")).ToList();
                             var lang = args[2];
                             if (lang == "null") //preferred
                             {

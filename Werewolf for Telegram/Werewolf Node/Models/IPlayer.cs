@@ -74,8 +74,8 @@ namespace Werewolf_Node.Models
         public bool Fled { get; set; } = false;
         [JsonConverter(typeof(StringEnumConverter))]
         public ITeam Team { get; set; } = ITeam.Village;
-        public bool HasNightAction { get; set; } = false;
-        public bool HasDayAction { get; set; } = false;
+        //public bool HasNightAction { get; set; } = false;
+        //public bool HasDayAction { get; set; } = false;
         public int DayCult { get; set; } = 0;
         public int RoleModel { get; set; } = 0;
         [JsonConverter(typeof(StringEnumConverter))]
@@ -85,13 +85,21 @@ namespace Werewolf_Node.Models
         public bool WasSavedLastNight { get; set; } = false;
         public bool ChemistFailed { get; set; } = false;
         public bool Frozen { get; set; } = false;
+        public int DugGravesLastNight { get; set; } = 0;
+        public bool StumbledGrave { get; set; } = false;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public bool InLove { get; set; } = false;
         public int LoverId { get; set; } = 0;
+        public bool Doused { get; set; } = false;
+        public bool Burning { get; set; } = false;
         public int DBPlayerId { get; set; } = 0;
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
+        /// <summary>
+        /// Currently only used for augur
+        /// </summary>
+        public List<IRole> SawRoles { get; set; } = new List<IRole>();
 
         public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;
@@ -153,19 +161,22 @@ namespace Werewolf_Node.Models
         //halloween role
         Spumpkin,
         //and once again, new roles! :D
-        Troublemaker, Chemist, SnowWolf
+        Troublemaker, Chemist, SnowWolf,
+        //who would have guessed... more roles!
+        GraveDigger, Augur, Arsonist
     }
 
     public enum ITeam
     {
         Village, Cult, Wolf, Tanner,
-        Neutral, SerialKiller, Lovers,
+        Neutral, SerialKiller, Lovers, Arsonist,
         SKHunter,
         NoOne, Thief
     }
 
     public enum KillMthd
     {
-        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller, Chemistry
+        None, Lynch, Eat, Shoot, VisitWolf, VisitVictim, GuardWolf, Detected, Flee, Hunt, HunterShot, LoverDied, SerialKilled, HunterCult, GuardKiller, VisitKiller, Idle, Suicide, StealKiller, Chemistry, FallGrave,
+        Spotted, Burn, VisitBurning
     }
 }

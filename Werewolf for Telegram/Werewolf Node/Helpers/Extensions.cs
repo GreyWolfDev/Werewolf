@@ -114,11 +114,11 @@ namespace Werewolf_Node.Helpers
                 case IRole.Harlot:
                     return 6;
                 case IRole.Seer:
-                    return 7;
+                    return 7 - allRoles.Count(x => x == IRole.Lycan) - (allRoles.Count(x => x == IRole.WolfMan) * 2);
                 case IRole.Traitor:
                     return 0;
                 case IRole.GuardianAngel:
-                    return 7;
+                    return 7 + (allRoles.Contains(IRole.Arsonist) ? 1 : 0);
                 case IRole.Detective:
                     return 6;
                 case IRole.Wolf:
@@ -134,7 +134,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.WildChild:
                     return 1;
                 case IRole.Beholder:
-                    return 2 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0); //only good if seer is present!
+                    return 1 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0) + (allRoles.Any(x => x == IRole.Fool) ? 1 : 0); //only good if seer is present!
                 case IRole.ApprenticeSeer:
                     return 6;
                 case IRole.Cultist:
@@ -168,7 +168,9 @@ namespace Werewolf_Node.Helpers
                 case IRole.Prince:
                     return 3;
                 case IRole.WolfMan:
-                    return -1;
+                    return 1;
+                case IRole.Augur:
+                    return 5;
                 case IRole.Pacifist:
                     return 3;
                 case IRole.WiseElder:
@@ -178,7 +180,7 @@ namespace Werewolf_Node.Helpers
                 case IRole.Sandman:
                     return 3;
                 case IRole.Lycan:
-                    return 11;
+                    return 10;
                 case IRole.Thief:
                     return 4;
                 case IRole.Troublemaker:
@@ -187,6 +189,10 @@ namespace Werewolf_Node.Helpers
                     return 0;
                 case IRole.SnowWolf:
                     return 15;
+                case IRole.GraveDigger:
+                    return 8;
+                case IRole.Arsonist:
+                    return 8;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

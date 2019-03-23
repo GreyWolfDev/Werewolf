@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Currently updated by @MatteoIlGrande. Ask me for anything, thanks -->
-<!-- Last updated on 12 September 2017 -->
+<!-- Currently updated by @Ponyta. Ask me for anything, thanks -->
+<!-- Last updated on 11 March 2019 -->
 <strings>
-  <language name="Italiano - Standard" base="Italiano" variant="Standard" owner="MatteoIlGrande" code="it" isDefault="true"/>
+  <language name="Italiano - Standard" base="Italiano" variant="Standard" owner="Ponyta" code="it" isDefault="true"/>
   <string key="NotInGame" deprecated="true">
     <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
   </string>
@@ -200,7 +200,7 @@
   </string>
   <string key="RoleInfoBeholder" >
     <value >Sei l'osservatore, ti verrà detto chi è il (vero) Veggente. Tutto qui.</value>
-    <value >Sei la spalla destra del veggente. Tu, e soltanto tu, sai chi è il Veggente. Prova a proteggere la sua identità e farlo sopravvivere fino a fine partita!</value>
+    <value >Sei l'osservatore,la spalla destra del veggente. Tu, e soltanto tu, sai chi è il Veggente. Prova a proteggere la sua identità e farlo sopravvivere fino a fine partita!</value>
   </string>
   <string key="RoleInfoApprenticeSeer" >
     <value >Sei l'apprendista Veggente. Quando (e se) il (vero) Veggente muore, erediterai il ruolo di Veggente.</value>
@@ -1379,7 +1379,7 @@
     <value>Ladro ammesso per tutta la partita</value>
   </string>
   <string key="RoleInfoWolfMan">
-    <value>Sei un semplice contadino, ma visto che trascorri la maggior parte del tuo tempo nei boschi insieme ai lupi, il Veggente si confonderà e ti vedrà come lupo.. Ops</value>
+    <value>Sei l'UomoLupo 👱🌚, un semplice contadino, ma visto che trascorri la maggior parte del tuo tempo nei boschi insieme ai lupi, il Veggente si confonderà e ti vedrà come lupo.. Ops</value>
   </string>
   <string key="WolfMan">
     <value>l'UomoLupo 👱🌚</value>
@@ -1418,33 +1418,34 @@
 
 <!-- NOT IMPLEMENTED YET -->
   <string key="RoleInfoPacifist">
-    <value></value>
+    <value>Sei il Pacifista ☮️. Puoi scegliere di convincere tutti gli abitanti del villaggio di non linciare nessuno. Questo può essere usato solo una volta.</value>
   </string>
   <string key="Pacifist">
     <value>il Pacifista ☮️</value>
   </string>
   <string key="AboutPacifist">
-    <value></value>
+    <value>Il pacifista può convincere tutti a non linciare nessuno. Potrà farlo solo una volta.</value>
   </string>
-
   <string key="RoleInfoWiseElder">
-    <value></value>
+    <value>Sei il Vecchio Saggio 📚. Puoi sopravvivere a un attacco dei lupi, grazie alla tua saggezza ed esperienza. Se un Artigliere, un Urbano o un Chimico ti ucciderà, si trasformerà in un contadino.</value>
   </string>
   <string key="WiseElder">
     <value>il Vecchio Saggio 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value></value>
+    <value>il Vecchio saggio sopravvive a un attacco notturno dei lupi. Se viene ucciso da Artigliere, Urbano o Chimico, essi si trasformeranno in contadini.</value>
   </string>
-
   <string key="RoleInfoThief">
-    <value></value>
+    <value>Sei il Ladro 😈! Puoi rubare il ruolo a un giocatore e trasformarlo in un contadino! NB: Se provi a rubare al Serial Killer, morirai!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei il Ladro 😈! Siccome il Ladro è impostato per tutta la partita, avrai il 50% di probabilità di rubare un ruolo a un giocatore ogni notte. Se riuscirai, quel giocatore diventerà il nuovo ladro e continuerà a rubare ruoli. NB: Non puoi rubare a un lupo, e se provi a rubare al killer verrai ucciso.</value>
   </string>
   <string key="Thief">
     <value>il Ladro 😈</value>
   </string>
   <string key="AboutThief">
-    <value></value>
+    <value>Il ladro 😈 ruba il ruolo e lo trasforma in un contadino.\nSe c'è impostato il Ladro per tutta la partita, quel giocatore si trasformerà nel nuovo ladro e continuerà a rubare ruoli per tutta la partita.</value>
   </string>
   
   
@@ -1666,7 +1667,7 @@
 	<value>Hai visitato {0} e gli hai fatto scegliere una pozione! Sfortunatamente, però, hanno scelto quella innocua mentre tu ti sei bevuto quella Velenosa! Che brutta fine per il povero chimico!</value>
   </string>
   <string key="ChemistFailPublic">
-	<value>Il chimico 👨‍🔬 {0} è stato trovato morto! A quanto pare, {0} è stato sfortunato e ha bevuto la sua stessa pozione velenosa durante la visita notturna! Prega di non aver mai usato medicine fabbricate da esso...</value>
+	<value>Il chimico 👨‍🔬 {0} è stato trovato morto! A quanto pare, {0} è stato sfortunato e ha bevuto la sua stessa pozione velenosa durante la visita notturna! Giocare d'azzardo non porta sempre buoni risultati..</value>
   </string>
   <string key="ChemistTargetEmpty">
 	<value>{0} Non era a casa! Torni a casa deluso, che sfortuna.</value>
@@ -1681,85 +1682,383 @@
     <value>Sei il lupo delle Nevi 🐺☃️. Ogni notte, invece di attaccare le vittime, vai solitario per case, congelando le persone e impedendole di usare le loro azioni notturne! Nota però che una persona congelata non può essere visitata due giorni di fila.</value>
   </string>
   <string key="AboutSnowWolf">
-    <value>The Snow Wolf 🐺☃️ is an wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value>
+    <value>Il lupo delle nevi 🐺☃️ è un lupo nato nelle montagne innevate vicino il villaggio. Essendo vissuto da solo a lungo preferisce cacciare da solo e date le condizioni climatiche dove ha vissuto è in grado di controllare il freddo. Invece di attaccare insieme agli altri lupi preferisce scegliere da solo una vittima da congelare in modo da non farle usare le sue azioni notturne per una notte. Tuttavia non può scegliere ogni notte la stessa persona che potrà essere però congelata una notte si e una note no. Se tutti gli altri lupi muoiono diventerà un lupo normale.</value>
   </string>
   <string key="AskFreeze">
 	<value>Chi vuoi congelare questa notte?</value>
   </string>
   <string key="WolfPackList">
-    <value>The wolf pack consists of {0}</value>
+    <value>I lupi sono {0}</value>
   </string>
   <string key="WolfPackSnowList">
-    <value>The wolf pack consists of {0} and the Snow Wolf {1}</value>
+    <value>I lupi sono {0} e il lupo delle nevi {1}</value>
   </string>
   <string key="DGTransformToAlphaWithSnow">
-    <value>{0} has died, and you transform into an Alpha wolf. Your teammates are: {1} and the Snow Wolf {2}</value>
+    <value>{0} è morto, e tu ti trasformi nel lupo alfa. I tuoi compagni sono: {1} mentre il lupo delle nevi {2}</value>
   </string>
   <string key="DGTransformToWolfCubWithSnow">
-    <value>{0} has died, and you transform into the Wolf Cub. Your teammates are: {1} and the Snow Wolf {2}</value>
+    <value>{0} è morto, e tu ti trasformi nel cucciolo di lupo. I tuoi compagni sono: {1} e il lupo delle nevi {2}</value>
   </string>
   <string key="DGTransformToWolfWithSnow">
-    <value>{0} has died, and you transform into a Werewolf. Your teammates are: {1} and the Snow Wolf {2}</value>
+    <value>{0} è morto, e tu ti trasformi in un lupo mannaro. I tuoi compagni sono: {1} e il lupo delle nevi {2}</value>
   </string>
   <string key="DGTransformToLycanWithSnow">
-    <value>{0} has died, and you transform into the Lycan. Your teammates are: {1} and the Snow Wolf {2}</value>
+    <value>{0} è morto, e tu ti trasformi in un licantropo. I tuoi compagni sono: {1} e il lupo delle nevi {2}</value>
   </string>
   <string key="DGTransformToSnowWolf">
-    <value>{0} has died, and you transform into the Snow Wolf. Your teammates (if any) are: {1}</value>
+    <value>{0} è morto, e tu ti trasformi nel lupo delle nevi. I tuoi compagni (se ci sono ancora) sono: {1}</value>
   </string>
   <string key="DGToSnowWolf">
-    <value>The doppelganger {0} has now become the new snow wolf!</value>
+    <value>Il sosia {0} è diventato il lupo delle nevi!</value>
   </string>
   <string key="WildChildSnowTransform">
-    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1} and the Snow Wolf {2}</value>
+    <value>{0} è morto! per la rabbia sei diventato un lupo mannaro! I tuoi compagni sono: {1} e il lupo delle nevi {2}</value>
   </string>
   <string key="ThiefToSnowWolf">
-    <value>{0} is no longer your teammate and {1} has now become the new snow wolf!</value>
+    <value>{0} non è più un lupo delle nevi, adesso {1} lo è!</value>
   </string>
   <string key="HarlotFrozen">
-    <value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks 🐺☃️. You stand frozen in the doorway, silently cursing this weird form of bondage. Ah well, thank goodness you're thawed now. </value>
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti 🐺☃️. Resti immobile sull'uscio della porta finchè in mattinata finalmente ti scongeli. </value>
   </string>
   <string key="ChemistFrozen">
-    <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
+    <value>Dopo esserti svegliato pronto a preparare una delle tue soluzioni velenose una raffica di vento entra dalla finestra congelandoti 🐺☃️. Con la coda dell'occhio vedi che tutte le soluzioni sono state congelate. Non ti resta altro che aspettare la mattina per scongelarti.</value>
   </string>
   <string key="CultistFrozen">
-    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow cultists dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
+    <value>Dopo esserti preparato per andare a convertire qualcuno esci dalla porta per essere colpito da una raffica di vento che ti congela 🐺☃️. I tuoi compagni satanisti vedendoti ti deridono ma ti assicurano che ci penseranno loro a convertire qualcuno. </value>
   </string>
   <string key="CHFrozen">
-    <value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched 🐺☃️. You mentally groaned, your limbs aching from being in this position until now... </value>
+    <value>Appena prendi la tua spada pronto per andare a cacciare qualche satanista una raffica di vento ti colpisce congelandoti in una posizione scomodissima 🐺☃️. Dopo tutta la notte finalmente ti scongeli del tutto e riesci a metterti in una posizione comoda </value>
   </string>
   <string key="SeeingFrozen">
   <!-- used for seer, fool, oracle and sorcerer -->
-    <value>As you sat at your table, ready to use your psychic powers, a gust of wind blew in from the window, causing you to freeze 🐺☃️. While being bound usually isn't a problem, the freezing spell also gave you a serious case of brain freeze. You weren't worried though, knowing that the sun rising is one of the constants of this world and that you'll be thawed now. </value>
+    <value>Ti siedi al tavolo pronto ad usare i tuoi poteri quando all'improvviso una raffica di vento ti congela 🐺☃️. Essere bloccato non dovrebbe essere un problema ma ti si è pure congelato il cervello. Fortunatamente col sorgere del sole tutto torna come prima. </value>
   </string>
   <string key="GAFrozen">
-    <value>As you willed your wings to appear, a gust of wind blew in from the windows, causing you to freeze 🐺☃️. You inwardly cringed as you suddenly imagine yourself as an ornament on a Christmas tree. Thankfully, this is now over since the sun has risen. </value>
+    <value>Non appena esci di casa pronto per spiegare le ali una raffica di vento ti colpisce congelandoti 🐺☃️. Ridi tra te e te pensandoti un ornamento per l'albero di natale. Per fortuna col sorgere del sole ti scongeli. </value>
   </string>
   <string key="SKFrozen">
-    <value>As you admired your liver collection one last time before leaving your house, a gust of wind blew in from the windows, frosting the glass jars... freezing you 🐺☃️. As you unfroze this morning, you gritted your teeth in annoyance at the Snow Wolf's spell, swearing to make them suffer as much as possible when you take their liver. </value>
+    <value>Mentre ammiri la tua collezione di cuori dalla finestra entra una raffica di vento freddissimo che congela i barattoli... e anche te 🐺☃️. La mattina, una volta scongelato, digrigni i denti dalla rabbia giurando che per fargliela pagare farai soffrire al lupo delle nevi le pene dell'inferno prima di prendergli il cuore. </value>
   </string>
   <string key="ThiefFrozen">
-    <value>As you sulked around the village, you felt a strong gust of wind. You stood frozen in your tracks, literally unable to move 🐺☃️. Luckily, it was dark enough for you to not be recognised by anyone who passed you that night. When you were completely thawed by dawn, you scampered back to your home before anyone could see you. </value>
+    <value>Mentre ti aggiri silenziosamente per il villaggio senti una forte raffica di vento che ti colpisce. Resti immobile e congelato 🐺☃️. Per fortuna nessuno è riuscito a riconoscerti. Non appena ti scongeli del tutto corri a casa facendo attenzione che nessuno ti veda. </value>
   </string>
   <string key="DefaultFrozen">
   <!-- used for all roles without (every-)night action -->
-    <value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Snow Wolf 🐺☃️ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>
+    <value>Mentre la scorsa notte dormivi hai iniziato a sentire molto freddo. Appena ti sei svegliato per controllare realizzi che non puoi muoverti! Sembra che il lupo delle nevi 🐺☃️ abbia usato i suoi poteri su di te. Torni a dormire non risentendono se non per il freddo.</value>
   </string>
   <string key="GuardBlockedSnowWolf">
-    <value>You head to {0}'s house to freeze them, but you are met by a tall dark figure, armed to the teeth. The Guardian Angel fights you off, and you head back defeated.</value>
+    <value>Sei andato a casa di {0} per congelarlo ma appena sei arrivato hai incontrato un'oscura figura armata fino ai denti. Inizi uno scontro epico contro l'angelo custode che alla fine lo vede vincitore costringendoti ad andare via.</value>
   </string>
   <string key="SuccessfulFreeze">
-    <value>You went to {0}'s house and froze them! Tonight, they won't be able to use their night actions (if any).</value>
+    <value>Sei andato a casa di {0} e l'hai congelato! Sta notte non potrà agire.</value>
   </string>
   <string key="SnowFrozeKiller">
-	<value>The snow wolf {0} attempted to freeze someone last night, but accidentally visited the serial killer! The murderer noticed the unwanted visitor and stabbed {0}!</value>
+	<value>Il lupo delle nevi {0} ha cercato di congelare qualcuno la scorsa notte ma sfortunatamente era il serial killer! L'assassino ha notato il visitatore {0} e dopo averlo ucciso l'ha squartato e usato le viscere per farci un sorbetto a grandezza lupo!</value>
   </string>
   <string key="SnowWolfTurnWolf">
-	<value>As all the other wolves have died, you are the last part of the pack that is left! In order to gain some fresh villager meat, you decide to become a normal werewolf from now on, who goes eating rather than freezing at night!</value>
+	<value>Tutti gli altri lupi sono morti, sei l'ultimo rimasto! Date le circostanze preferisci iniziare a mangiare le persone piuttosto che congelarle!</value>
   </string>
     <string key="SnowFrozeHunter">
     <!-- 0 - target's name -->
-    <value>The snow wolf {0} tried to freeze the hunter last night, but the hunter was able to catch them and take them down with their rifle!</value>
+    <value>Il lupo delle nevi {0} ha provato a congelare il cacciatore la scorsa notte ma quest'ultimo se n'è accorto in tempo e gli ha piantato un proiettile in gola!</value>
   </string>
-  
+ 
+    <string key="Lang">
+    <value>Cambia Linguaggio</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia Modalità di Gioco</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Imposta Limite Giocatori</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra Ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Imposta il tempo massimo di estensione</value>
+  </string>
+  <string key="DayTimer">
+    <value>Imposta durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Imposta durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Imposta durata del linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Configurazione Ruoli</value>
+  </string>
+  <string key="Mechanics">
+	<value>Meccaniche del Gioco</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Impostazioni del Gruppo</value>
+  </string>
+  <string key="Timers">
+	<value>Durata Fasi del gioco</value>
+  </string>
+  <string key="Done">
+	<value>Fatto!</value>
+  </string>
+  <string key="Back">
+	<value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia Lista dei Giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La Lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Sei il Becchino ☠️. Ogni notte, scavi le tombe per ogni persona morta dall'ultima volta che l'hai fatto(Sì, anche i lupi meritano una sepoltura). Visto che sei fuori tutta la notte, I lupi e i satanisti non possono trovarti a casa, a meno che tu non abbia nulla da fare, in quel caso resterai a casa.. Tutti quelli che ti visitano hanno una probabilità di cadere nelle tombe che scavi, in base a quante ne hai scavate. Inoltre, la probabilità è dimezzata per chiunque sia del team villaggio come te. Però i lupi e il killer potrebbero vederti mentre scavi tombe, in base a quante ne hai scavate, e ucciderti. Inoltre il Serial Killer potrà trovarti comunque a casa, indipendemente se scavi o meno, però potrebbe inciampare sulla tomba e perdere il controllo della sua prossima vittima!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Sei il Becchino ☠️. È tua responsabilità sbarazzarti dei cadaveri del popolo. Scavi una tomba per chiunque è stato ucciso dall'ultima notte. Sei però pigro a ricoprire la tomba, quindi lascerai buche per il tuo giardino, e i visitatori potrebbero caderci e morire... Almeno, i lupi non possono ucciderti se non sei a casa!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>il Becchino ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>I morti sono sepolti, e i vivi no. Tutto è come dovrebbe essere, e ti metti sotto le lenzuola a dormire.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Scavi fino a tarda notte per {0}. Possano le loro anime e i loro corpi riposare in pace fino alla fine dei tempi.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Appena uscito dalla tua casa per sotterrare coloro che sono passati a miglior vita, una folata di vento soffiò dall'ombra, congelandoti. Impossibilitato a muoverti, aspetti il sorgere del sole per scongelarti e finalmente uscire di casa. I morti dovranno aspettare un'altra notte per ricevere una degna sepoltura...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>Il branco decide di dirigersi a casa di {0}, solo per trovare casa vuota. Tutto quello che si vede è la luce soffusa di una candela sopra una tomba...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>Il branco si dirige a casa di {0}, ma nel giardino, {1} improvvisamente fa scattare una troppa per orsi, e cade su una buca aperta dove viene trafitto da una lancia fatta d'argento!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Appena ti appresti a richiudere le tombe che hai scavato tutta notte, noti un tanfo nauseante, diverso dal solito odore di cadaveri... Il lupo {0} è caduto in una tomba ed è morto!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>Hai squartato e fatto a pezzi {0}, ma mentre uscivi dalla sua casa ti sei avvicinato troppo a una tomba non finita e ci sei caduto dentro.. Ora la tua gamba fa davvero male...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Mentre ti dirigevi a casa di {0}, senti un dolore atroce attraversarti la gamba. Decidi di deviare verso la casa più vicina di {1}, assassinarlo e tornare subito a casa.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>Arrivi a casa di {0}, solo per trovare la figura dell'angelo custode proteggerla! Dato il dolore atroce alla gamba non perdi nemmeno tempo a lottare ma torni direttamente a casa.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Un'altra notte inutile senza riuscire a uccidere uno di questi maledetti satanisti! Frustrato, corri freneticamente attraverso il cimitero,  senza accorgerti della trappola per orsi. Urli e ti dimeni, ma è troppo tardi. Cadi all'indietro su una tomba che {0} non ha richiuso e il suono del tuo collo rompersi è l'ultima cosa che senti prima che tutto diventasse nero.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare a casa, noti una spada poggiata sopra una tomba non finita. Dentro la tomba noti il cadavere di {0}. Il cacciatore di Satanisti non avrebbe dovuto sospettare di te...</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle tombe non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una tomba. Da quando i satanisti provano a convertire i becchini?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea bruciare la chiesa. Ti guidano tramite il cimitere quando improvvisamente una trappola per orsi gli cattura l'anca! Tutto quello che senti è il suo urlo mentre casca nella tomba e voi scappate via.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>Mentre vai a casa di {0}, provi a ricordarti a mente quale delle due bevante è quella velenosa e inciampi, cadendo in una tomba non finita dove una lancia d'argento ti infilza il cuore. Prima che possa dire una parola, sei già morto...</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"Potrei bere un po' di vino rosso", pensi tra te e te. Hai un presentimento strano che ti fa guardare la tomba accanto a te, e come se il destino ti sentisse, noti una bottiglia di vino rosso. Peccato che c'è il cadavere di {0}, che ti fa andar via tutta la voglia che avevi.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>Ti metti il tuo rossetto preferito e vai a casa di {0} per un po' di divertimento. Purtroppo, non fai molta strada, visto che sali su una trappola per orsi e cadi in una tomba accanto... Rischi del mestiere?</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>A quanto pare il fato non vuole farti divertire. Non solo hai scavato tombe tutta la notte, ma trovi {0}, the prostituta, morta su una delle tue tombe. Niente divertimento per stasera!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Vai a casa di {0}, stando attenta a tutte le tombe aperte, ma appena arrivi, la casa è vuota.. A quanto pare {0} è fuori a scavare tombe di nuovo!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>La fortuna non è dalla tua parte stanotte.. Volevi solo proteggere {0}, mentre perlustrando la casa cadi in una delle tombe non finite e muori sul colpo. C'è davvero bisogno di mettere trappole in un cimitero?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Mentre torni a casa, noti delle piume per terra. Non cerchi molto che trovi {0}, l'angelo custode, morto cadendo in una delle tue tombe! Forse hai esagerato con le tue trappole.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Ti infiltri tramite il cimitero per rubare il ruolo a {0}, ma concentrato a non far rumore non noti la trappola per orsi finchè non ti cattura la gamba! Non solo hai fatto rumore, ma inciampi e cadi in una tomba, rompendoti l'osso del collo!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Buona cosa che hai messo delle trappole nel cimitero. {0} ha provato a rubarti il ruolo l'altra notte, ma è stato catturato dalle trappole ed è caduto in una tomba, morendo sul colpo. Magari ora il popolo capirà che le tue trappole non sono esagerate.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>Dovresti controllare meglio dove vai mentre cospargi le case degli altri. Sei andato su una trappola per orsi, e mentre ti liberavi sei caduto in una tomba dove una lancia d'argento ti ha trafitto il cuore. Questo è quello che si riceve quando si è un Piromane</value>
+  </string>
+  <!--{0}: Arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>Da una delle tue tombe senti odore di kerosene. Allarmato, ti appresti a controllarla e noti {0} il Piromane, morto all'interno. Almeno la tua casa è rimasta pulita!</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Una delle tombe nel cimitero aveva troppe persone stanotte! A quanto pare {0} ha provato a visitare il becchino, è cascato in una tomba ed è morto! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Mentre la prostituta {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+	<value>I satanisti hanno provato a bruciare la setta, ma come {0} guidava il gruppo tramite il cimitero, è stato colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e provava a levarsi la trappola, è caduto in una tomba aperta. Gli altri satanisti sono fuggiti in preda al panico!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Forse il ladro {0} stava provando a rubare ai morti. Magari era il Karma. Tutto ciò che sappiamo è che stava camminando nel cimitero quando è caduto dentro una tomba profonda. {0} pentendosi di non aver portato complici, di sicuro non riuscirà più a rubare nulla!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Come il branco esce in cerca di prede, {0} seguendo le tracce non si accorge della trappola per orsi che lo intrappola! Colto di sorpresa, {0} cade nelle tombe, dove una lancia d'argento trapassa il suo cranio! Per fortuna il Becchino tiene misure di sicurezza nel suo cimitero. {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Stai solo facendo il tuo lavoro, mentre improvvisamente un pazzo killer ti nota e ti accoltella! Chi scaverà la tua tomba, adesso?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Come cammini attraverso il cimitero con in mano il tuo coltello insanguinato, noti il becchino {0}. Seguendo il tuo istinto, decidi che farai almeno due vittime oggi!</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Stai semplicemente facendo il tuo lavoro, quando improvissamente un lupo ti assale da dietro e ti uccide!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>Il branco corre nel cimitero, quando notano la presenza del Becchino {0}. Prima che possa reagire, uno di voi gli salta addosso e lo mangia in un sol boccone.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} non si è presentato alla riunione del popolo. Starà ancora dormendo? Mentre andate a visitarlo, lo trovate morto nel cimitero, con la pala ancora in mano. Sembra che i lupi l'abbiamo attaccato di sorpresa...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} è sparito dalla circolazione... Sarà rimasto a dormire fino a tardi? Andate a cercarlo e trovate un cadavere fatto a pezzi nel cimitero, vicino a una pala. Sembra che il killer l'abbia sorpreso di notte...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Piromane</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Ammettere il Piromane? Attualmente: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>il Piromane è ora {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Ammettere il Piromane e Serial killer nella stessa partita? Potrebbe essere mortale! 😈 Attualmente: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Piromane e Serial Killer nella stessa partita sono ora {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Sei il Piromane. Come il serial killer, sei da solo in squadra. Ogni notte, puoi riempire casa di qualcuno con il kerosene. Dopo che almeno una casa è cosparsa, puoi decidere di far scattare la Scintilla, bruciando tutte le case cosparse e uccidendo chiunque sia dentro, compresi potenziali visitatori. Vinci se rimani l'ultimo in vita.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Sei il Piromane 🔥. Ogni notte, puoi cospargere una casa di kerosene o bruciare tutte le case cosparse e uccidendo chiunque sia al suo interno. Vinci se sei l'ultimo sopravissuto.</value>
+  </string>
+  <string key="Arsonist">
+	<value>il Piromane 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Vuoi cospargere una casa o vuoi vedere tutte le case bruciare?</value>
+  </string>
+  <!--{0}: Arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>il Piromane {0} ha provato a cospargere la casa del Serial Killer con il kerosene. No, non è sopravvissuto a ciò.</value>
+  </string>
+  <string key="Spark">
+	<value>Brucia 🔥</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>Hai cosparso con successo la casa di {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Un fuoco è stato appiccato nella tua casa, ma per fortura l'angelo custode era lì e lo ha spento prima che divampasse! Sarebbe un buon pompiere, se non fosse così impegnato a proteggere gli altri...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>Non ti aspettavi che la casa di {0} avrebbe iniziato a bruciare, ma li hai salvati senza problemi! Nessuno potrà dirti che sei un cattivo Protettore!</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>Non hai lottato contro nessuno a casa di {0}, quindi hai avuto tempo di perlustrarla e hai notato che la casa era piena di kerosene! Visto che non avevi niente da fare, hai ripulito la casa dal kerosene...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>Il villaggio si sveglia con odore di fumo... Sta bruciando! Provate a estinguere il fuoco tutti insieme, ma è troppo tardi per provare a salvare coloro che stavano dentro. Piangete per il lutto delle seguenti persone:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>Gli unici rimasti in vita sono il Piromane, sopra a un mucchio di ceneri. Il Piromane ha vinto!</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Dovevi tenerti un estintore a casa! Ora tutto ciò che rimane della tua casa e di te stesso sono solo ceneri...</value>
+  </string>
+  <string key="Augur">
+	<value>l'Augure 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>Come guardi nel cielo, vedi gli uccelli che formano una forma molto strana. Ciò può solo significare che {0} non è in questo villaggio.</value>
+	<value>Gli uccelli ti dicono che {0} non fa parte del villaggio in questo momento.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Sei l'Augure 🦅. Ogni mattina, guardi gli uccelli e ne deduci un ruolo che sicuramente non è in gioco dal modo in cui volano. Non ti diranno mai un ruolo due volte, quindi fai buon uso dell'informazione!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Sei l'Augure 🦅. Hai il potere di veder cose, ma molto diversamente dal veggente o l'oracolo. Sei l'unico che può vedere i ruoli non in partita, e mai due volte!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Non ci sono uccelli nel cielo oggi. Questo può solo significare che hanno finito i ruoli non in gioco.</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>Il branco entra a casa di {0}, quando all'improvvisamente prende fuoco. È troppo tardi per salvare {1}, che muore tra le fiamme.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} doveva rimanere a casa stanotte. Invece, è andato in una casa che ha preso immediatamente fuoco! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>I lupi hanno provato a uccidere qualcuno stanotte, ma il Piromane è stato più veloce di loro! {0} non è riuscito a fuggire dalle fiamme in tempo... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Anche se non sai davvero l'identità del chimico, sei sicuro che non farà mai più un errore del genere. Il chimico ha abbandonato il suo rischioso lavoro ed è diventato un normale contadino!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Solo {0} e {1} sono rimasti... Improvvisamente {0} ride, tira fuori un fiammifero, lo accende e lo tira ai piedi di {1}, che viene avvolto dalle fiamme!</value>
+	<value>˜Mentre {1} sta nella sua casa a riposare, si vede {0} avvicinarsi alla sua casa, cospargerla di kerosene e buttarci uno zippo! Tutto ciò che rimane di {1} sono cenere.</value>
+  </string>
 </strings>

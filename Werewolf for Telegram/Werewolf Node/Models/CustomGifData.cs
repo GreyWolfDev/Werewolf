@@ -24,6 +24,8 @@ namespace Werewolf_Node.Models
         public string SerialKillerWins { get; set; }
         public string LoversWin { get; set; }
         public string SKKilled { get; set; }
+        public string ArsonistWins { get; set; }
+        public string BurnToDeath { get; set; }
         public bool ShowBadge { get; set; } = true;
         public bool Submitted { get; set; }
     }
