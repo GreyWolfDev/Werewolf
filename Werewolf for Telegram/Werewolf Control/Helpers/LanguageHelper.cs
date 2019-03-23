@@ -378,6 +378,8 @@ namespace Werewolf_Control.Helpers
                         commit = match.Value.Replace("[master ", "").Replace("]", "");
                     }
                     msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
+
+                    msg += "\n\n<b>PLEASE REMEMBER TO REPLACENODES TO REFRESH THE CACHED ENGLISH FILES!</b>\n";
                 }
             }
 #endif
@@ -399,8 +401,6 @@ namespace Werewolf_Control.Helpers
             }
 
             msg += "\n<b>Operation complete.</b>";
-
-            msg += "\n\n<b>PLEASE REMEMBER TO REPLACENODES TO REFRESH THE CACHED ENGLISH FILES!";
 
             Bot.Api.EditMessageTextAsync(id, msgId, msg, parseMode: ParseMode.Html);
         }
