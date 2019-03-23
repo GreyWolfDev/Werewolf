@@ -323,6 +323,7 @@ namespace Werewolf_Control.Helpers
             //            msg += $"File copied to bot 2\n";
             //            Bot.Api.EditMessageTextAsync(id, msgId, msg);
             //#endif
+            if (newFilePath.EndsWith("English.xml")) foreach (var node in Bot.Nodes) node.Broadcast("reloadlang");
 #if !DEBUG
             var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             File.Copy(newFilePath, gitPath, true);
