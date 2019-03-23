@@ -323,13 +323,13 @@ namespace Werewolf_Control.Helpers
             //            msg += $"File copied to bot 2\n";
             //            Bot.Api.EditMessageTextAsync(id, msgId, msg);
             //#endif
-            if (newFilePath.EndsWith("English.xml")) foreach (var node in Bot.Nodes) node.Broadcast("reloadlang");
+            if (Path.GetFileName(newFilePath) == "English.xml") foreach (var node in Bot.Nodes) node.Broadcast("reloadlang");
 #if !DEBUG
             var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += $"File copied to git directory\n";
-            if (newFilePath.EndsWith("English.xml"))
+            if (Path.GetFileName(newFilePath) == "English.xml")
             {
                 var p = new Process
                 {
