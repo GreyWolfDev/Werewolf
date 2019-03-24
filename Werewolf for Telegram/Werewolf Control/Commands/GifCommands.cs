@@ -118,7 +118,6 @@ namespace Werewolf_Control
                 Bot.Send(msg, u.Message.From.Id);
             }
 
-
         }
 
         public static InlineKeyboardMarkup GetGifMenu(CustomGifData d)
