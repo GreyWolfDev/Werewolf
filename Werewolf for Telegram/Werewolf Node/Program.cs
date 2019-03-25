@@ -128,7 +128,11 @@ namespace Werewolf_Node
                 {
                     //if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
-                    if (msg == "reloadlang") English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
+                    if (msg == "reloadlang")
+                    {
+                        English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
+                        return;
+                    }
 
                     string t = null;
                     try
