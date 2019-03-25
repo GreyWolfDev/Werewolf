@@ -311,10 +311,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         {
             try
             {
-                var files = Directory.GetFiles(Program.LanguageDirectory, "*.xml");
                 if (randomVariant)
                 {
-                    var langfiles = files.Select(x => new LangFile(x));
+                    var langfiles = Program.Languages.Select(x => x.Value);
                     var langbase = langfiles.First(x => x.FileName == language).Base;
                     var baseFiles = langfiles.Where(x => x.Base == langbase);
                     if (baseFiles.Any(x => x.FileName.IndexOf("nsfw", StringComparison.InvariantCultureIgnoreCase) < 0))
@@ -334,13 +333,12 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
                 else
                 {
-                    var file = files.First(x => Path.GetFileNameWithoutExtension(x) == language);
-                    var doc = XDocument.Load(file);
+                    var file = Program.Languages[language];
                     Locale = new Locale
                     {
                         Language = language,
-                        Base = doc.Descendants("language").First().Attribute("base")?.Value,
-                        File = doc
+                        Base = file.Base,
+                        File = file.Doc
                     };
                 }
                 Language = Locale.Language;
@@ -352,15 +350,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     Language fallback = db.Language.FirstOrDefault(x => x.Base == Locale.Base && x.FileName != language && x.IsDefault);
                     if (fallback != null)
                     {
-                        var file = files.FirstOrDefault(x => Path.GetFileNameWithoutExtension(x) == fallback.FileName);
-                        if (!string.IsNullOrEmpty(file))
+                        if (Program.Languages.ContainsKey(fallback.FileName))
                         {
-                            var doc = XDocument.Load(file);
+                            var file = Program.Languages[fallback.FileName];
                             Fallback = new Locale
                             {
                                 Language = fallback.FileName,
-                                Base = fallback.Base,
-                                File = doc
+                                Base = file.Base,
+                                File = file.Doc
                             };
                         }
                     }

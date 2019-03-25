@@ -381,7 +381,6 @@ namespace Werewolf_Control.Helpers
                 }
             }
 #endif
-
             using (var db = new WWContext())
             {
                 var newFile = new LangFile(copyToPath);
@@ -397,6 +396,10 @@ namespace Werewolf_Control.Helpers
 
                 db.SaveChanges();
             }
+
+            msg += "\nBroadcasting reload message to nodes...\n";
+            Bot.Edit(id, msgId, msg);
+            foreach (var node in Bot.Nodes) node.Broadcast($"reload:{Path.GetFileNameWithoutExtension(copyToPath)}");
 
             msg += "\n<b>Operation complete.</b>";
 
