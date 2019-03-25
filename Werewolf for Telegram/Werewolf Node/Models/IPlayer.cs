@@ -145,6 +145,7 @@ namespace Werewolf_Node.Models
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;
         public CustomGifData GifPack { get; set; } = null;
+        public string LoverMsg { get; set; }
 
         #endregion
 
