@@ -53,6 +53,7 @@ namespace Werewolf_Node
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         internal static Dictionary<string, LangFile> Languages { get; } = new Dictionary<string, LangFile>();
         internal static XDocument English;
+        internal const string MasterLanguage = "English.xml";
         internal static int MessagesSent = 0;
         static void Main(string[] args)
         {
@@ -74,7 +75,7 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
-            English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
+            English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
 
             LoadLanguages();
 

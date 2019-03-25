@@ -42,6 +42,7 @@ namespace Werewolf_Control
         internal static string XsollaApiKey = null;
         internal static int? xsollaProjId = 0;
         internal static readonly HttpClient xsollaClient = new HttpClient();
+        internal const string MasterLanguage = "English.xml";
         static void Main(string[] args)
         {
 #if !DEBUG

@@ -551,7 +551,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
-            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
+            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
         }
 
 
