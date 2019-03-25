@@ -45,13 +45,23 @@ namespace Werewolf_Node.Helpers
             return str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
         }
 
+        public static string TrimEnd(this string str, bool removeWhitespaces = true, params string[] trim)
+        {
+            if (removeWhitespaces && char.IsWhiteSpace(str.Last())) return str.Remove(str.Length - 1).TrimEnd(removeWhitespaces, trim);
+            foreach (var s in trim)
+            {
+                if (str.EndsWith(s)) return str.Remove(str.LastIndexOf(s)).TrimEnd(removeWhitespaces, trim);
+            }
+            return str;
+        }
+
         public static string GetName(this IPlayer player, bool menu = false, bool dead = false)
         {
             var name = player.Name;
 
-            var end = name.Substring(name.Length - Math.Min(name.Length, 5));
-            name = name.Substring(0, Math.Max(name.Length - 5, 0));
-            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎", "").Replace("📟", "");
+            string[] removeStrings = { "🥇", "🥈", "🥉", "💎", "📟" };
+            var end = "";
+            name = name.TrimEnd(true, removeStrings);
 
             if (player.GifPack?.ShowBadge ?? false || (player.GifPack == null && player.DonationLevel >= 10))
             {
