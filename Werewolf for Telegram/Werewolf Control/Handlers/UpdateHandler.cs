@@ -1012,7 +1012,7 @@ namespace Werewolf_Control.Handler
                     }
                     else if (new[] { "validate", "upload" }.Contains(command))
                     {
-                        //global admin only commands
+                        //lang admin only commands
                         if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id) && !UpdateHelper.IsLangAdmin(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);

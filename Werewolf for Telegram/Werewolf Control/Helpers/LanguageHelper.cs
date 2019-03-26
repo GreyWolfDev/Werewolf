@@ -66,7 +66,7 @@ namespace Werewolf_Control.Helpers
             //first, let's load up the English file, which is our master file
             var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
 
-            foreach (var langfile in Directory.GetFiles(Bot.LanguageDirectory).Where(x => !x.EndsWith(Program.MasterLanguage)).Select(x => new LangFile(x)))
+            foreach (var langfile in Directory.GetFiles(Bot.LanguageDirectory).Where(x => Path.GetFileName(x) != Program.MasterLanguage).Select(x => new LangFile(x)))
                 if (langfile.Base == choice || choice == null)
                 {
                     //first check the language node
@@ -328,7 +328,7 @@ namespace Werewolf_Control.Helpers
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += $"File copied to git directory\n";
-            if (newFilePath.EndsWith(Program.MasterLanguage))
+            if (Path.GetFileName(newFilePath) == Program.MasterLanguage)
             {
                 var p = new Process
                 {
@@ -378,8 +378,6 @@ namespace Werewolf_Control.Helpers
                         commit = match.Value.Replace("[master ", "").Replace("]", "");
                     }
                     msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
-
-                    msg += "\n\n<b>PLEASE REMEMBER TO REPLACENODES TO REFRESH THE CACHED ENGLISH FILES!</b>\n";
                 }
             }
 #endif
