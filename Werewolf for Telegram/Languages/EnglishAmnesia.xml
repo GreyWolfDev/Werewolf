@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Amnesia mode by Amber (@ayylimao)!
-Last update: 30/12/2016 by @ayylimao -->
+Last update: 23/02/2019 -->
 <strings>
   <language name="English (Amnesia Mode)" base="English" variant="Amnesia Mode" code="en" isDefault="false"/>
   <string key="NotInGame">
@@ -1651,5 +1651,465 @@ Last update: 30/12/2016 by @ayylimao -->
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
     <value>The Thief, {0}, tried to steal the role from the serial killer! This didn't work out so well: {0} got stabbed multiple times and now his liver is missing...</value>
+  </string>
+    <string key="BeholderSeerStolen">
+	<value>You start to forget a name... What was it, {1}? Wait...What were you thinking about,again? Amidst the names in your head, a new one appears:{0}</value>
+  </string>
+  
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>the Troublemaker 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>The Troublemaker is the raging teenager in town. When they start yelling, the whole village gets out of control. To gain silence, they will lynch twice that day!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>That's strange... you can't seem to remember who you are, only that you should do something during the day!</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>You know you should be doing something, but does it need to be today?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0}, the troublemaker 🤯 is making trouble! Run around and scream for satisfaction! You will lynch twice today!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Because of the troublemaker, you are going to lynch twice today! Hopefully they are going to be quiet tomorrow.</value>
+  </string>
+  <string key="Chemist">
+	<value>the Chemist 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>The chemist is a quite crazy person who likes to brew potions and mess up with them. They mix two potions and force other people to choose one to drink, while the chemist will drink the other. However, while one potion is just tasting like rosebuds, the other one is going to kill you instantly. Good luck when they visit you!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="AskChemist">
+	<value>You know you should be doing something to someone, but who should you choose?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>{0} is already dead!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}.But for what reason?</value>
+  </string>
+  <string key="ChemistSK">
+	<value>{0} was the serial killer! You were killed.🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>The chemist 👨‍🔬 {0} tried to force the serial killer to a game tonight. Looks like the murderer didn't feel like playing games... {0} was found, stabbed, with two potions still in their bag!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>You got visited by the chemist 👨‍🔬, they forced you to choose a potion and you chose the poisonous one. What a sad way to leave this world...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Did something happen at {0}’'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>The chemist 👨‍🔬 has visited {0} tonight and they chose the poisonous potion! While the crazy chemist is still alive, {0} died. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Did something happen at {0}'s house last night? You don't have time to remember as you are already dead.</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>The chemist 👨‍🔬 {0} was found dead! Apparently, {0} had bad luck and drank the poisonous potion during their nightly visit! Pray you never bought your medicines from them...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} wasn't home!</value>
+  </string>
+  <string key="CultistsList">
+	<value>Remember to discuss with: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>the Snow Wolf 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>The Snow Wolf 🐺☃️ is a wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>You know you should be doing something to someone, but who should you choose?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Remember to discuss with: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Remember to discuss with: {0} and {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1} and {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1} and {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1} and {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1} and {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Amidst the names in your head, a new one appears: {0}</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} is dead! Your role changed, but from what, and to what? You may not remember who you are, but you do remember someone important: {1} and {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears:{1}!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Did something happen last night? You can't seem to remember.. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>The snow wolf {0} attempted to freeze someone last night, but accidentally visited the serial killer! The murderer noticed the unwanted visitor and stabbed {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Your role changed, but from what, and to what?</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>The snow wolf {0} tried to freeze the hunter last night, but the hunter was able to catch them and take them down with their rifle!</value>
+  </string>
+    <string key="Lang">
+    <value>Change Language</value>
+  </string>
+  <string key="Mode">
+    <value>Change Game Mode</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Set Max Players</value>
+  </string>
+  <string key="EndRoles">
+    <value>Show Roles At Game End</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Set Max Extend Time</value>
+  </string>
+  <string key="DayTimer">
+    <value>Set Day Timer</value>
+  </string>
+  <string key="NightTimer">
+    <value>Set Night Timer</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Set Lynch Timer</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Role Configuration</value>
+  </string>
+  <string key="Mechanics">
+	<value>Game Mechanics</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Group Settings</value>
+  </string>
+  <string key="Timers">
+	<value>Game Timers</value>
+  </string>
+  <string key="Done">
+	<value>Done!</value>
+  </string>
+  <string key="Back">
+	<value>Back</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Shuffle Player List</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Shuffle player list every time? Current: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Player list will be shuffled every time: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>You are the Grave Digger ☠️. Every night, you dig the graves for all the people who died since the last time you did (yes, even werewolves deserve a proper burial). Since you are out all night, wolves and the cult can't find you, unless you actually have nothing to do (i.e. no one died), in that case you'll just stay home. Everyone who visits you has a chance of falling into your newly dug graves, depending on how many graves you dug. Also, the chance is halved for everyone who is on the village team with you. But since you are out at night, the wolves or the serial killer might spot and kill you, and the more graves you have to dig, the more likely it is. Also, apparently the serial killer can find you whether you're at home or not, but he might at least stumble in one of your graves and hurt his leg, causing him to maybe lose control over who is his victim the next night...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>That's strange... you can't seem to remember who you are!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>the Grave Digger ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>{0} wasn't home!</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember... but you do remember that {1} is now dead.</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember... A name comes to your mind: {1}. But for what reason?</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Did something happen at {1}'s house last night? You can't seem to remember... but you do remember that {0} is now dead.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>On your way, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>One of the graves on the graveyard contained too many people tonight... Apperently {0} tried to visit the grave digger, fell into a grave and died! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>As the harlot {0} went home after a night of fun they tried to take a shortcut through the local graveyard. They must have been still a bit dizzy that they didn't see the uncovered grave until they felt no grounds under her next step. Maybe they should have taken that daytime job they got offered yesterday!</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+	<value>The cults tried to burn the church, but as {0} led the group through the graveyard, a bear trap snapped around his ankle!  He screamed when he fell into an open grave and the other cultists fled in terror...</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Maybe {0} the thief was trying to steal from the dead. Maybe it was karma. All we know is that he lurked around the graveyard when the trap snapped his leg. While falling into the grave, he wondered whether he should have brought a partner in crime for this job. {0} wont be stealing any more for sure!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>As the wolf pack goes out for a hunt, {0} smells potential prey and doesn't notice the bear trap that snaps around their ankle! Surprised, {0} falls over into the grave, where the tip of a silver spear meets their head. Luckily the grave digger keeps his graves secured! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>The Serial Killer ambushed you, tied you up, and then stabbed you in the heart!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Oh no! The wolves ate you. NOMNOMNOMNOM</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>Did something happen last night? You can't seem to remember... A name comes to your mind: {0}. But for what reason?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} doesn't show up to the town meeting. Have they overslept again? As you go look for them, you find them lying dead on the graveyard, the shovel still in their hands. It seems they were surprised by wolves in the night...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} is missing today... Did they maybe oversleep? You go look for them and find them dead on the graveyard, still holding their shovel. It seems they died from several stabbing wounds...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Arsonist</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Allow arsonist? Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Arsonist is now set to {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! 😈 Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>You are the arsonist. Like the serial killer, you are alone on your team. Every night, you may douse one targets house with kerosene. Once one or more houses are doused, you may choose to spark instead, burning all doused houses and killing everyone that is inside, including potential visitors. You win if you're the only one left.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>That's strange... you can't seem to remember who you are, only that you should do something during the night!</value>
+  </string>
+  <string key="Arsonist">
+	<value>the Arsonist 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>You know you should be doing something to someone, but what should you choose?</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>The arsonist {0} tried to douse the house of the serial killer... He didn't quite survive that.</value>
+  </string>
+  <string key="Spark">
+	<value>Spark</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>The village awakens to the smell of fire... It's burning! You try to extinguish the fire altogether, but you're too late to save the people whose houses were mysteriously doused in kerosene. Today you mourn the deaths of the following people:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>The only one left is the arsonist, standing on a pile of ashes. The arsonist wins...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>You should have kept a fire extinguisher! Now your house burnt down and you died inside...</value>
+  </string>
+  <string key="Augur">
+	<value>the Augur 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>That's strange... you can't seem to remember who you are! But a role comes to your mind: {0}</value>
+	<value>That's strange... you can't seem to remember who you are! But a role comes to your mind: {0}</value>
+  </string>
+  <string key="AboutAugur">
+	<value>You are the Augur 🦅. Every morning, you watch the birds and deduce a role that certainly is not in the game right now from their flight. They also will never tell you a role twice, so be sure you make use of that information!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>That's strange... you can't seem to remember who you are!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>That's strange... you can't seem to remember who you are!</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>Did something happen at {0}'s house last night? You can't seem to remember... but you do remember that {1} is now dead.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} should have stayed home tonight... They visited a burning house and died in the flames! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>The wolves tried to eat someone tonight again, but the arsonist was quicker! {0} couldn't escape from the burning house in time... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Did something happen last night? You can't seem to remember...</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Only {0} and {1} are left... Suddenly {0} smiles, pulls out a match, lights it and throws it to the feet of {1}, who goes up in flames!</value>
   </string>
 </strings>
