@@ -1944,7 +1944,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             //first, make sure there even IS a cupid
             if (Players.Any(x => x.PlayerRole == IRole.Cupid))
             {
-                CreateLovers();
+                //CreateLovers();, will already be called in NotifyLovers
                 NotifyLovers();
             }
         }
@@ -2002,7 +2002,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             if (count < 2)
             {
                 //ok, missing lovers.
-                var exist = (Players.FirstOrDefault(x => x.InLove) ?? AddLover()) ?? AddLover();
+                var exist = Players.FirstOrDefault(x => x.InLove) ?? AddLover();
                 AddLover(exist);
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"Step 2: {Players.Count(x => x.InLove)} Lovers found");
@@ -2031,7 +2031,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         private void NotifyLovers()
         {
             var loversNotify = Players.Where(x => x.InLove).ToList();
-            while (loversNotify.Count != 2)
+            if (loversNotify.Count != 2)
             {
                 CreateLovers();
                 loversNotify = Players.Where(x => x.InLove).ToList();
@@ -2888,7 +2888,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     AddAchievement(Players.First(x => x.Id == lynched.LoverId), AchievementsReworked.RomeoAndJuliet);
                             }
 
-                            KillPlayer(lynched, KillMthd.Lynch, killers: Players.Where(x => x.Choice == lynched.Id), diedLastNight: false);
+                            KillPlayer(lynched, KillMthd.Lynch, killers: Players.Where(x => x.Choice == lynched.Id), isNight: false);
                             if (lynched.PlayerRole == IRole.Seer && GameDay == 1)
                                 AddAchievement(lynched, AchievementsReworked.LackOfTrust);
                             if (lynched.PlayerRole == IRole.Prince && lynched.HasUsedAbility)
@@ -3008,7 +3008,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     //kill them
                     gunner.Bullet--;
                     gunner.HasUsedAbility = true;
-                    KillPlayer(check, KillMthd.Shoot, killer: gunner, diedLastNight: false);
+                    KillPlayer(check, KillMthd.Shoot, killer: gunner, isNight: false);
                     if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan }.Contains(check.PlayerRole))
                         gunner.BulletHitVillager = true;
                     //update database
@@ -3039,8 +3039,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 {
                     if (Program.R.Next(100) < 40)
                     {
-                        KillPlayer(spumpkin, killMethod: null, killer: null, diedLastNight: false);
-                        KillPlayer(check, KillMthd.Shoot, killer: spumpkin, diedLastNight: false);
+                        KillPlayer(spumpkin, killMethod: null, killer: null, isNight: false);
+                        KillPlayer(check, KillMthd.Shoot, killer: spumpkin, isNight: false);
                         //update database
                         DBAction(spumpkin, check, "Shoot");
                         switch (check.PlayerRole)
@@ -3463,7 +3463,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                                     {
                                                         SendGif(GetLocaleString("WolvesEatYou"),
                                                             GetRandomImage(VillagerDieImages), target.Id);
-                                                        KillPlayer(target, KillMthd.Eat, killers: voteWolves, killedByRole: IRole.Wolf);
+                                                        KillPlayer(target, KillMthd.Eat, killers: voteWolves, killedByRole: IRole.Wolf, hunterFinalShot: false);
                                                     }
                                                 }
                                                 KillPlayer(shotWuff, KillMthd.HunterShot, killer: target, diedByVisitingKiller: true);
@@ -4264,6 +4264,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     SendWithQueue(GetLocaleString("Burning", string.Join("\n", burnDeaths.Select(x => $"{x.GetName()} {GetLocaleString("Was")} {GetDescription(x.PlayerRole)}"))));
                     foreach (var p in burnDeaths.Where(x => x.InLove && !burnDeaths.Any(y => y.Id == x.LoverId) && Players.Any(y => !string.IsNullOrEmpty(y.LoverMsg) && y.Id == x.LoverId)))
                         SendWithQueue(Players.First(x => x.Id == p.LoverId).LoverMsg);
+                    foreach (var p in burnDeaths.Where(x => x.FinalShotDelay.HasValue))
+                        HunterFinalShot(p, p.FinalShotDelay.Value);
                 }
                 //notify of arsonist victims separately, if mode is not secret
                 foreach (var p in Players.Where(x => x.DiedLastNight && (secret || !(!x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist))))
@@ -4324,7 +4326,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     msg = null;
                                     SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
                                         $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
-                                    HunterFinalShot(p, KillMthd.SerialKilled);
                                     break;
                                 default:
                                     msg = GetLocaleString("DefaultKilled", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
@@ -4478,6 +4479,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         SendWithQueue(msg2);
                     var lover = Players.FirstOrDefault(x => x.Id == p.LoverId && !string.IsNullOrEmpty(x.LoverMsg));
                     if (lover != null) SendWithQueue(lover.LoverMsg);
+                    if (p.FinalShotDelay.HasValue) HunterFinalShot(p, p.FinalShotDelay.Value);
+                    if (lover?.FinalShotDelay.HasValue ?? false) HunterFinalShot(lover, lover.FinalShotDelay.Value);
                 }
 
                 var bloodyVictims = Players.Where(x => x.TimeDied > nightStart && x.IsDead);
@@ -4583,13 +4586,13 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             if (Program.R.Next(100) < Settings.HunterKillWolfChanceBase)
                             {
                                 SendWithQueue(GetLocaleString("HunterKillsWolfEnd", hunter.GetName(), other.GetName()));
-                                KillPlayer(other, KillMthd.HunterShot, killer: hunter, diedLastNight: false);
+                                KillPlayer(other, KillMthd.HunterShot, killer: hunter, isNight: false);
                                 return DoGameEnd(ITeam.Village);
                             }
                             else
                             {
                                 SendWithQueue(GetLocaleString("WolfKillsHunterEnd", hunter.GetName(), other.GetName()));
-                                KillPlayer(hunter, KillMthd.Eat, killer: other, diedLastNight: false);
+                                KillPlayer(hunter, KillMthd.Eat, killer: other, isNight: false);
                                 return DoGameEnd(ITeam.Wolf);
                             }
                         }
@@ -4741,7 +4744,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                                     if (sorcOrThief != null && tann != null)
                                     {
-                                        KillPlayer(tann, KillMthd.Suicide, killer: tann, diedLastNight: false);
+                                        KillPlayer(tann, KillMthd.Suicide, killer: tann, isNight: false);
 
                                         if (sorcOrThief.PlayerRole == IRole.Sorcerer)
                                         {
@@ -4776,7 +4779,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 {
                                     if (lastone.PlayerRole == IRole.Tanner)
                                     {
-                                        KillPlayer(lastone, KillMthd.Suicide, killer: lastone, diedLastNight: false);
+                                        KillPlayer(lastone, KillMthd.Suicide, killer: lastone, isNight: false);
 
                                         deathmessage = GetLocaleString("TannerEnd", lastone.GetName());
                                     }
@@ -4854,7 +4857,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             SendWithQueue(GetLocaleString("SerialKillerWinsOverpower", sk.GetName(), otherPerson.GetName()));
                             if (otherPerson != null)
                             {
-                                KillPlayer(otherPerson, KillMthd.SerialKilled, killer: sk, diedLastNight: false);
+                                KillPlayer(otherPerson, KillMthd.SerialKilled, killer: sk, isNight: false);
                             }
                         }
                         msg += GetLocaleString("SerialKillerWins");
@@ -4876,10 +4879,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         AddAchievement(hunter, AchievementsReworked.DoubleKill);
                         if (skh != null)
                         {
-                            KillPlayer(skh, KillMthd.HunterShot, killer: hunter, diedLastNight: false);
+                            KillPlayer(skh, KillMthd.HunterShot, killer: hunter, isNight: false);
                             if (hunter != null)
                             {
-                                KillPlayer(hunter, KillMthd.SerialKilled, killer: skh, diedLastNight: false, hunterFinalShot: false);
+                                KillPlayer(hunter, KillMthd.SerialKilled, killer: skh, isNight: false, hunterFinalShot: false);
                                 SendWithQueue(GetLocaleString("SKHunterEnd", skh.GetName(), hunter.GetName()));
                             }
                         }
@@ -5349,7 +5352,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 if (IsRunning)
                 {
                     //kill the player
-                    KillPlayer(p, KillMthd.Flee, killer: p, diedLastNight: false, hunterFinalShot: false);
+                    KillPlayer(p, KillMthd.Flee, killer: p, isNight: false, hunterFinalShot: false);
                     p.Fled = true;
                     if (DbGroup.HasFlag(GroupConfig.ShowRolesDeath))
                         SendWithQueue(GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole)));
@@ -5393,9 +5396,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 p.Choice = -1;
         }
 
-        public void HunterFinalShot(IPlayer hunter, KillMthd method)
+        public void HunterFinalShot(IPlayer hunter, KillMthd method, bool delay = false)
         {
             CheckRoleChanges();
+            if (delay)
+            {
+                hunter.FinalShotDelay = method;
+                return;
+            }
 
             //send a menu to the hunter, asking who he wants to kill as he is hung....
             var hunterChoices = new List<InlineKeyboardCallbackButton[]>();
@@ -5438,7 +5446,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     if (killed != null)
                     {
                         SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterKilledFinalLynched" : "HunterKilledFinalShot", hunter.GetName(), killed.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{killed.GetName()} {GetLocaleString("Was")} {GetDescription(killed.PlayerRole)}"));
-                        KillPlayer(killed, KillMthd.HunterShot, killer: hunter, diedLastNight: false);
+                        KillPlayer(killed, KillMthd.HunterShot, killer: hunter, isNight: false);
                         if (killed.PlayerRole == IRole.WiseElder)
                         {
                             SendWithQueue(GetLocaleString("HunterKilledWiseElder", hunter.GetName(), killed.GetName()));
@@ -5474,7 +5482,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         {
             try
             {
-                var possible = exclude != null ? Players.Where(x => x.Id != exclude.Id).ToList() : Players.ToList();
+                var possible = Players.Where(x => x.Id != exclude?.Id).ToList();
                 if (!all)
                     possible = possible.Where(x => !x.IsDead).ToList();
                 possible.Shuffle();
@@ -5547,12 +5555,12 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-        private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool diedLastNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
-            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, diedLastNight: diedLastNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? p.PlayerRole, hunterFinalShot: hunterFinalShot);
+        private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
+            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? p.PlayerRole, hunterFinalShot: hunterFinalShot);
 
-        private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool diedLastNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
+        private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
         {
-            p.DiedLastNight = diedLastNight;
+            p.DiedLastNight = isNight;
             p.TimeDied = DateTime.Now;
             if (killedByRole.HasValue) p.KilledByRole = killedByRole.Value;
             p.DiedByVisitingKiller = diedByVisitingKiller;
@@ -5562,14 +5570,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             //add the player to the list of graves for the grave digger
             DiedSinceLastGrave.Add(p);
             if (p.InLove)
-                KillLover(p, sendNoMessage: diedLastNight);
+                KillLover(p, sendNoMessage: isNight);
             switch (p.PlayerRole)
             {
                 case IRole.WolfCub:
                     WolfCubKilled = true;
                     break;
                 case IRole.Hunter:
-                    if (killMethod.HasValue && hunterFinalShot) HunterFinalShot(p, killMethod.Value);
+                    if (killMethod.HasValue && hunterFinalShot) HunterFinalShot(p, killMethod.Value, delay: isNight);
                     break;
             }
         }
@@ -5699,7 +5707,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             {
                 if (!sendNoMessage) SendWithQueue(GetLocaleString("LoverDied", victim.GetName(), p.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                 else p.LoverMsg = GetLocaleString("LoverDied", victim.GetName(), p.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
-                KillPlayer(p, KillMthd.LoverDied, killer: victim, diedLastNight: false);
+                KillPlayer(p, KillMthd.LoverDied, killer: victim, isNight: sendNoMessage);
             }
             CheckRoleChanges();
         }
