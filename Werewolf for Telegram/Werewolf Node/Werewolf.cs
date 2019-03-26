@@ -2810,11 +2810,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n" : "") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
 
                         //if hunter has died from AFK, too bad....
-                        p.IsDead = true;
-                        p.TimeDied = DateTime.Now;
+                        KillPlayer(p, KillMthd.Idle, killer: p, isNight: false, hunterFinalShot: false);
                         CheckRoleChanges();
-                        //update the database
-                        DBKill(p, p, KillMthd.Idle);
                     }
                 }
 
@@ -5567,6 +5564,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             if (killers != null && killMethod.HasValue) DBKill(killers, p, killMethod.Value);
             //add the player to the list of graves for the grave digger
             DiedSinceLastGrave.Add(p);
+            // if it was an idle kill, all further consequences will be skipped
+            if (killMethod == KillMthd.Idle) return;
             if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
                 KillLover(p, sendNoMessage: isNight);
             switch (p.PlayerRole)
