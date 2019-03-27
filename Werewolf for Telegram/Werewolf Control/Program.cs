@@ -404,7 +404,7 @@ namespace Werewolf_Control
             }
         }
 
-        private static void NewNode()
+        internal static void NewNode()
         {
             //all nodes have quite a few games, let's spin up another
             //this is a bit more tricky, we need to figure out which node folder has the latest version...
