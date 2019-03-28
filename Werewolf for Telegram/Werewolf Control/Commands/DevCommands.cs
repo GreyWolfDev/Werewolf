@@ -1504,7 +1504,8 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "startnodes", DevOnly = true)]
         public static void StartNodes(Update u, string[] args)
         {
-            if (args.Length < 1 || !int.TryParse(args[0], out int n)) return;
+            if (args.Length < 2 || !int.TryParse(args[1], out int n)) return;
+            n = Math.Min(n, 5);
             Bot.Send($"Starting {n} new nodes...", u.Message.Chat.Id);
             for (int i = 0; i < n; i++)
             {
