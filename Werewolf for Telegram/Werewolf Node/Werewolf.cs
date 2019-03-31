@@ -5406,7 +5406,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     case ITeam.Lovers:
                         msg += GetLocaleString("LoversWin");
                         game.Winner = "Lovers";
-                        SendWithQueue(msg, GetRandomImage(LoversWin));
+                        SendWithQueue(msg, _blackDeath ? null : GetRandomImage(LoversWin));
                         break;
                     case ITeam.SKHunter:
                         var skhunter = Players.Where(x => !x.IsDead);
@@ -5435,7 +5435,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         if (!_blackDeath)
                             msg += GetLocaleString("VillageWins");
                         game.Winner = "Village";
-                        SendWithQueue(msg, GetRandomImage(VillagersWin));
+                        SendWithQueue(msg, _blackDeath ? null : GetRandomImage(VillagersWin));
                         break;
                 }
                 db.SaveChanges();
