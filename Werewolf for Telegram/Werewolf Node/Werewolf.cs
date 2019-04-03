@@ -2468,7 +2468,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         /// <returns>true if the player surived the visit</returns>
         private VisitResult VisitPlayer(IPlayer visitor, IPlayer visited)
         {
-            if (visited == null) return VisitResult.Fail;
+            if (visited == null) return VisitResult.TargetNull;
             // increment visit count
             visited.BeingVisitedSameNightCount++;
             // If someone's dead, they're dead.
@@ -2571,7 +2571,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             Success,
             VisitorDied,
             Fail,
-            AlreadyDead
+            AlreadyDead,
+            TargetNull
         }
 
         private void StealRole(IPlayer thief, IPlayer target)
@@ -3618,7 +3619,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 AddAchievement(sk, AchievementsReworked.ReallyBadLuck);
                             }
                             skilled.WasSavedLastNight = true;
-                            DBKill(sk, skilled, KillMthd.SerialKilled);
                         }
                         else
                         {
@@ -4265,8 +4265,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 //notify of arsonist victims separately, if mode is not secret
                 foreach (var p in Players.Where(x => x.DiedLastNight && (secret || !(!x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist))))
                 {
-                    //add them to the grave diggers grave list for next night
-                    DiedSinceLastGrave.Add(p);
                     var msg = "";
                     var msg2 = "";
                     if (secret)
@@ -4315,12 +4313,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 case IRole.Prince:
                                 case IRole.Seer:
                                     msg = GetLocaleString(p.PlayerRole.ToString() + "Killed", p.GetName());
-                                    break;
-
-                                case IRole.Hunter:
-                                    msg = null;
-                                    SendWithQueue(GetLocaleString("DefaultKilled", p.GetName(),
-                                        $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}"));
                                     break;
                                 default:
                                     msg = GetLocaleString("DefaultKilled", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
@@ -4391,8 +4383,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                 case IRole.AlphaWolf:
                                 case IRole.Lycan:
                                 case IRole.Wolf: //sk and hunter can kill
-                                    if (p.PlayerRole == IRole.WolfCub)
-                                        WolfCubKilled = true;
                                     if (p.KilledByRole == IRole.SerialKiller)
                                         msg = GetLocaleString("SerialKillerKilledWolf", p.GetName());
                                     else //died from hunter
@@ -5551,7 +5541,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         }
 
         private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
-            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? p.PlayerRole, hunterFinalShot: hunterFinalShot);
+            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? killer?.PlayerRole, hunterFinalShot: hunterFinalShot);
 
         private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
         {
