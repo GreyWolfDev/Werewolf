@@ -145,14 +145,12 @@ namespace Werewolf_Node.Models
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;
         public CustomGifData GifPack { get; set; } = null;
-        public string LoverMsg { get; set; } = null;
-        public KillMthd? FinalShotDelay { get; set; } = null;
 
         #endregion
 
     }
 
-    // If you add a role, make sure to add it into the SetTeam method!
+
     public enum IRole
     {
         Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller,

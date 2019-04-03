@@ -15,7 +15,6 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
-using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 using Message = TcpFramework.Message;
 
@@ -51,9 +50,7 @@ namespace Werewolf_Node
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
 #endif
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
-        internal static Dictionary<string, LangFile> Languages { get; } = new Dictionary<string, LangFile>();
         internal static XDocument English;
-        internal const string MasterLanguage = "English.xml";
         internal static int MessagesSent = 0;
         static void Main(string[] args)
         {
@@ -75,9 +72,9 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
-            English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+            English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
 
-            LoadLanguages();
+
 
 
             //get api token from registry
@@ -113,22 +110,6 @@ namespace Werewolf_Node
             Thread.Sleep(-1);
         }
 
-        private static void LoadLanguages()
-        {
-            foreach (var file in Directory.GetFiles(LanguageDirectory, "*.xml"))
-            {
-                var langFile = new LangFile(file);
-                var key = Path.GetFileNameWithoutExtension(file);
-                if (Languages.ContainsKey(key)) Languages[key] = langFile;
-                else Languages.Add(key, langFile);
-            }
-        }
-
-        private static void ReloadLang(string langName)
-        {
-            Languages[langName] = new LangFile(Path.Combine(LanguageDirectory, langName + ".xml"));
-        }
-
         private static void ClientOnDelimiterDataReceived(object sender, Message message)
         {
             //if (message.MessageString != "ping")
@@ -147,11 +128,6 @@ namespace Werewolf_Node
                 {
                     //if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
-                    if (msg.StartsWith("reload:"))
-                    {
-                        ReloadLang(msg.Substring("reload:".Length));
-                        return;
-                    }
 
                     string t = null;
                     try
