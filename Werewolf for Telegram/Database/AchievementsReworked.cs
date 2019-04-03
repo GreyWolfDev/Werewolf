@@ -186,8 +186,6 @@ namespace Database
         RomeoAndJuliet = 85,
         [Display(Name = "Really bad luck"), Description("As a serial killer, stumble in a grave, then kill someone randomly and get fought off by the guardian angel.")]
         ReallyBadLuck = 86,
-        [Display(Name = "Domino"), Description("As a hunter, shoot another hunter causing them to shoot as well.")]
-        Domino = 87,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 

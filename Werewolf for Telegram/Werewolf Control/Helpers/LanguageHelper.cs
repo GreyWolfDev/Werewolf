@@ -64,9 +64,9 @@ namespace Werewolf_Control.Helpers
             var errors = new List<LanguageError>();
 
             //first, let's load up the English file, which is our master file
-            var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
+            var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
 
-            foreach (var langfile in Directory.GetFiles(Bot.LanguageDirectory).Where(x => Path.GetFileName(x) != Program.MasterLanguage).Select(x => new LangFile(x)))
+            foreach (var langfile in Directory.GetFiles(Bot.LanguageDirectory).Where(x => !x.EndsWith("English.xml")).Select(x => new LangFile(x)))
                 if (langfile.Base == choice || choice == null)
                 {
                     //first check the language node
@@ -121,7 +121,7 @@ namespace Werewolf_Control.Helpers
             var langfile = new LangFile(filePath);
 
             //first, let's load up the English file, which is our master file
-            var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
+            var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
 
             //first check the language node
             CheckLanguageNode(langfile, errors);
@@ -192,7 +192,7 @@ namespace Werewolf_Control.Helpers
             var newFileErrors = new List<LanguageError>();
             //first, let's load up the English file, which is our master file
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x));
-            var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
+            var master = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
             var newFile = new LangFile(newFilePath);
 
             //make sure it has a complete langnode
@@ -328,7 +328,7 @@ namespace Werewolf_Control.Helpers
             File.Copy(newFilePath, gitPath, true);
             System.IO.File.Delete(newFilePath);
             msg += $"File copied to git directory\n";
-            if (Path.GetFileName(newFilePath) == Program.MasterLanguage)
+            if (newFilePath.EndsWith("English.xml"))
             {
                 var p = new Process
                 {
@@ -378,9 +378,12 @@ namespace Werewolf_Control.Helpers
                         commit = match.Value.Replace("[master ", "").Replace("]", "");
                     }
                     msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
+
+                    msg += "\n\n<b>PLEASE REMEMBER TO REPLACENODES TO REFRESH THE CACHED ENGLISH FILES!</b>\n";
                 }
             }
 #endif
+
             using (var db = new WWContext())
             {
                 var newFile = new LangFile(copyToPath);
@@ -396,10 +399,6 @@ namespace Werewolf_Control.Helpers
 
                 db.SaveChanges();
             }
-
-            msg += "\nBroadcasting reload message to nodes...\n";
-            Bot.Edit(id, msgId, msg);
-            foreach (var node in Bot.Nodes) node.Broadcast($"reload:{Path.GetFileNameWithoutExtension(copyToPath)}");
 
             msg += "\n<b>Operation complete.</b>";
 
