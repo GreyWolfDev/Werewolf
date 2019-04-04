@@ -61,6 +61,7 @@ namespace Werewolf_Node
         public string ShowRolesEnd;
         private readonly List<IPlayer> DiedSinceLastGrave = new List<IPlayer>();
         private List<IRole> PossibleRoles;
+        private bool _blackDeath = false;
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -208,6 +209,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
+                    _blackDeath = IsDateAnywhere(1, 4) && Program.R.Next(100) < 10;
                     db.SaveChanges();
                     if (RandomMode)
                     {
@@ -1479,16 +1481,20 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             var rolesToAssign = new List<IRole>();
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
             //25% was too much, max it at 5 wolves.
-            var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
-            var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
-            possiblewolves.Add(IRole.SnowWolf); // add snow wolf only after one other wolf has been chosen already
-            for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
+            if (!_blackDeath)
             {
-                rolesToAssign.Add(wolftoadd);
-                if (wolftoadd != IRole.Wolf)
-                    possiblewolves.Remove(wolftoadd);
-                wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
+                var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
+                var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
+                possiblewolves.Add(IRole.SnowWolf); // add snow wolf only after one other wolf has been chosen already
+                for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
+                {
+                    rolesToAssign.Add(wolftoadd);
+                    if (wolftoadd != IRole.Wolf)
+                        possiblewolves.Remove(wolftoadd);
+                    wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
+                }
             }
+
             //add remaining roles to 'card pile'
             foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
             {
@@ -1502,11 +1508,11 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         break;
                     case IRole.CultistHunter:
                     case IRole.Cultist:
-                        if (AllowCult && playerCount > 10)
+                        if (AllowCult && playerCount > 10 && !_blackDeath)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Tanner:
-                        if (AllowTanner)
+                        if (AllowTanner && !_blackDeath)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Fool:
@@ -1520,7 +1526,15 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     case IRole.Spumpkin:
                         break;
                     case IRole.Arsonist:
-                        if (AllowArsonist)
+                        if (AllowArsonist && !_blackDeath)
+                            rolesToAssign.Add(role);
+                        break;
+                    case IRole.SerialKiller:
+                    case IRole.Traitor:
+                    case IRole.WildChild:
+                    case IRole.Sorcerer:
+                    case IRole.Cursed:
+                        if (!_blackDeath)
                             rolesToAssign.Add(role);
                         break;
                     default:
@@ -1603,8 +1617,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                     //make sure that we have at least two teams
                     if (
-                        rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner && x != IRole.Thief) //make sure we have at least one enemy
+                        _blackDeath ||
+                        (rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner && x != IRole.Thief)) //make sure we have at least one enemy
                     )
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it
@@ -1613,7 +1628,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         balanced = balanced && BurningOverkill;
 
                     //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
-                    if (!Chaos)
+                    if (!Chaos && !_blackDeath)
                     {
                         var villageStrength =
                             rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
@@ -1640,8 +1655,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 // special roles for events
                 // halloween this time
                 var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
-                var availableDates = new[] { new DateTime(2018, 10, 31), new DateTime(2018, 11, 1) };
-                if (availableDates.Contains(DateTime.UtcNow.AddHours(14).Date) || availableDates.Contains(DateTime.UtcNow.Date) || availableDates.Contains(DateTime.UtcNow.AddHours(-11).Date))
+                if (IsDateAnywhere(31, 10) || IsDateAnywhere(1, 11))
                     if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
                         rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
 
@@ -1650,9 +1664,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Wolf,
-                    IRole.Seer,
-                    IRole.Hunter
+                    IRole.Cupid
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -3193,6 +3205,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             SendNightActions();
 
             var nightPlayers = Players.Where(x => !x.IsDead & !x.Drunk);
+            var waituntil = Program.R.Next(nightTime / 5, nightTime * 4 / 5);
             // ReSharper disable once LoopVariableIsNeverChangedInsideLoop
             for (var i = 0; i < nightTime; i++)
             {
@@ -3200,7 +3213,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 if (CheckForGameEnd()) return;
                 //check if all votes are cast
 
-                if (nightPlayers.All(x => x.CurrentQuestion == null))
+                if (nightPlayers.All(x => x.CurrentQuestion == null) && (!_blackDeath || i >= waituntil))
                     break;
             }
 
@@ -3420,7 +3433,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
 
-            if (voteWolves.Any())
+            if (voteWolves.Any() || (_blackDeath && Program.R.Next(100) < 90))
             {
                 var votechoice = voteWolves.Where(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1));
 
@@ -3433,6 +3446,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     foreach (var pl in p)
                         pl.Votes++;
                 }
+
+                if (_blackDeath)
+                {
+                    var victimId = ChooseRandomPlayerId(null, false);
+                    var bd = Players.FirstOrDefault(x => x.Id == victimId);
+                    if (bd != null) bd.Votes = 1;
+                }
+
                 choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
 
 
@@ -3449,9 +3470,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 int eatCount = 0;
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
-                    if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
+                    if (!voteWolves.Any() && !_blackDeath) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice);
-                    if (target != null && target.IsDead && target.Burning)
+                    if (target != null && target.IsDead && target.Burning && !_blackDeath)
                     {
                         IPlayer burntWuff;
                         try
@@ -3549,7 +3570,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     {
                                         // check whether a wolf fell into the grave
                                         var fallChanceWolf = 20 + (30 - (30 * Math.Pow(0.5, target.DugGravesLastNight - 1)));
-                                        if (Program.R.Next(100) < fallChanceWolf)
+                                        if (Program.R.Next(100) < fallChanceWolf && !_blackDeath)
                                         {
                                             var wolfFell = voteWolves.ElementAt(Program.R.Next(voteWolvesCount));
                                             foreach (var wolf in voteWolves)
@@ -3624,7 +3645,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     voteWolvesCount = voteWolves.Count();
                                     //figure out what chance they have...
                                     var chance = Settings.HunterKillWolfChanceBase + ((voteWolves.Count() - 1) * 20);
-                                    if (Program.R.Next(100) < chance)
+                                    if (Program.R.Next(100) < chance && !_blackDeath)
                                     {
                                         //wolf dies!
                                         IPlayer shotWuff;
@@ -3686,7 +3707,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     break;
                                 case IRole.SerialKiller:
                                     //serial killer has 80% of winning the fight....
-                                    if (Program.R.Next(100) < 80)
+                                    if (Program.R.Next(100) < 80 && !_blackDeath)
                                     {
                                         //serial killer wins...
                                         IPlayer shotWuff;
@@ -3766,11 +3787,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                         target.IsDead = true;
                                         target.TimeDied = DateTime.Now;
                                         target.DiedLastNight = true;
-                                        if (target.PlayerRole == IRole.Sorcerer)
-                                        {
-                                            foreach (var w in voteWolves)
-                                                AddAchievement(w, Achievements.NoSorcery);
-                                        }
                                         DBKill(voteWolves, target, KillMthd.Eat);
                                         SendGif(GetLocaleString("WolvesEatYou"),
                                             GetRandomImage(VillagerDieImages), target.Id);
@@ -5004,6 +5020,18 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             if (!IsRunning) return true;
             var alivePlayers = Players.Where(x => !x.IsDead);
 
+            if (_blackDeath)
+            {
+                if (alivePlayers.Count() > 1)
+                {
+                    if (alivePlayers.Count() == 2 && alivePlayers.All(x => x.InLove))
+                        return DoGameEnd(ITeam.Lovers);
+
+                    return false;
+                }
+                return DoGameEnd(ITeam.Village);
+            }
+
             //first of all, check for traitor!
             if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole)))
             {
@@ -5186,6 +5214,25 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
                     }
+                    if (_blackDeath)
+                    {
+                        msg += GetLocaleString("BlackDeathLovers", lovers.First().GetName(), lovers.Last().GetName(), "BLACK DEATH".ToBold()) + "\n\n";
+                    }
+                }
+                else if (_blackDeath)
+                {
+                    var w = Players.SingleOrDefault(x => !x.IsDead);
+                    if (w != null)
+                    {
+                        w.Won = true;
+                        var p = GetDBGamePlayer(w, db);
+                        p.Won = true;
+                        msg += GetLocaleString("BlackDeathWinner", w.GetName(), "BLACK DEATH".ToBold());
+                    }
+                    else
+                    {
+                        msg += GetLocaleString("BlackDeathKilledAll", "BLACK DEATH".ToBold());
+                    }
                 }
                 else
                 {
@@ -5359,7 +5406,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     case ITeam.Lovers:
                         msg += GetLocaleString("LoversWin");
                         game.Winner = "Lovers";
-                        SendWithQueue(msg, GetRandomImage(LoversWin));
+                        SendWithQueue(msg, _blackDeath ? null : GetRandomImage(LoversWin));
                         break;
                     case ITeam.SKHunter:
                         var skhunter = Players.Where(x => !x.IsDead);
@@ -5385,9 +5432,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         SendWithQueue(msg, GetRandomImage(NoWinner));
                         break;
                     default: //village
-                        msg += GetLocaleString("VillageWins");
+                        if (!_blackDeath)
+                            msg += GetLocaleString("VillageWins");
                         game.Winner = "Village";
-                        SendWithQueue(msg, GetRandomImage(VillagersWin));
+                        SendWithQueue(msg, _blackDeath ? null : GetRandomImage(VillagersWin));
                         break;
                 }
                 db.SaveChanges();
@@ -5424,7 +5472,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 //        Program.Bot.RestrictChatMemberAsync(-1001094614730, p.Id, default(DateTime), true, true, true, true);
                 //    }
                 //}
-
+                
                 Thread.Sleep(10000);
                 Program.RemoveGame(this);
                 return true;
@@ -6057,6 +6105,13 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
+        public static bool IsDateAnywhere(int day, int month, int year = 0)
+        {
+            var timezones = new[] { DateTime.UtcNow.AddHours(14), DateTime.UtcNow, DateTime.UtcNow.AddHours(-11) };
+
+            return timezones.Any(x => x.Day == day && x.Month == month && (year == 0 || x.Year == year));
+        }
+
         #endregion
 
         #region Database Helpers
@@ -6452,6 +6507,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             newAch2.Set(AchievementsReworked.DeathVillage);
                         if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
+                        if (!ach2.HasFlag(AchievementsReworked.TodaysSpecial) && _blackDeath)
+                            newAch2.Set(AchievementsReworked.TodaysSpecial);
 
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
