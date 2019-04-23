@@ -5563,8 +5563,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             if (killers != null && killMethod.HasValue) DBKill(killers, p, killMethod.Value);
             //add the player to the list of graves for the grave digger
             DiedSinceLastGrave.Add(p);
-            // if it was an idle kill, all further consequences will be skipped
-            if (killMethod == KillMthd.Idle) return;
+            // if it was an idle kill or flee, all further consequences will be skipped
+            if (killMethod == KillMthd.Idle || killMethod == KillMthd.Flee) return;
             if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
                 KillLover(p, sendNoMessage: isNight);
             switch (p.PlayerRole)
