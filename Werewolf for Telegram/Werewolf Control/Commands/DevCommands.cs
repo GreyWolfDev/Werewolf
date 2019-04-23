@@ -582,7 +582,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
-            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
+            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
         }
 
 
@@ -1499,6 +1499,18 @@ namespace Werewolf_Control
                 Bot.Send("Beta was already locked for non-betagroups!", u.Message.Chat.Id);
             }
 #endif
+        }
+
+        [Attributes.Command(Trigger = "startnodes", DevOnly = true)]
+        public static void StartNodes(Update u, string[] args)
+        {
+            if (args.Length < 2 || !int.TryParse(args[1], out int n)) return;
+            n = Math.Min(n, 5);
+            Bot.Send($"Starting {n} new nodes...", u.Message.Chat.Id);
+            for (int i = 0; i < n; i++)
+            {
+                Program.NewNode();
+            }
         }
 
     }

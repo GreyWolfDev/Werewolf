@@ -45,13 +45,23 @@ namespace Werewolf_Node.Helpers
             return str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
         }
 
+        public static string TrimEnd(this string str, bool removeWhitespaces = true, params string[] trim)
+        {
+            if (removeWhitespaces && char.IsWhiteSpace(str.Last())) return str.Remove(str.Length - 1).TrimEnd(removeWhitespaces, trim);
+            foreach (var s in trim)
+            {
+                if (str.EndsWith(s)) return str.Remove(str.LastIndexOf(s)).TrimEnd(removeWhitespaces, trim);
+            }
+            return str;
+        }
+
         public static string GetName(this IPlayer player, bool menu = false, bool dead = false)
         {
             var name = player.Name;
 
-            var end = name.Substring(name.Length - Math.Min(name.Length, 5));
-            name = name.Substring(0, Math.Max(name.Length - 5, 0));
-            end = end.Replace("🥇", "").Replace("🥈", "").Replace("🥉", "").Replace("💎", "").Replace("📟", "");
+            string[] removeStrings = { "🥇", "🥈", "🥉", "💎", "📟" };
+            var end = "";
+            name = name.TrimEnd(true, removeStrings);
 
             if (player.GifPack?.ShowBadge ?? false || (player.GifPack == null && player.DonationLevel >= 10))
             {
@@ -87,8 +97,11 @@ namespace Werewolf_Node.Helpers
             return players?.Where(x => x.Team == team && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
         }
 
+        /// <summary>
+        /// if aliveOnly is false, in case of multiple same roles, this will return the first alive one, or, if no alive one, the one who died the most recently
+        /// </summary>
         public static IPlayer GetPlayerForRole(this IEnumerable<IPlayer> players, IRole role, bool aliveOnly = true, IPlayer exceptPlayer = null)
-        { // if aliveOnly is false, in case of multiple same roles, this will return the first alive one, or, if no alive one, the one who died the most recently
+        {
             return players?.OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.PlayerRole == role && (!aliveOnly || !x.IsDead) && x.Id != exceptPlayer?.Id);
         }
 
