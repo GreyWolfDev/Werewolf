@@ -2561,7 +2561,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             // Checks for harlot or GA not home visited
             if ((visited.PlayerRole == IRole.Harlot || (visited.PlayerRole == IRole.GuardianAngel && !WolfRoles.Contains(visitor.PlayerRole))) && visited.Choice != 0 && visited.Choice != -1 && !visited.Frozen)
             {
-                return VisitResult.Fail;
+                if (visitor.PlayerRole == IRole.Thief && !ThiefFull) return VisitResult.Success;
+                else return VisitResult.Fail;
             }
             return VisitResult.Success;
         }
@@ -3520,7 +3521,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                         }
                                         else
                                         {
-                                            KillPlayer(target, KillMthd.Eat, killers: voteWolves, killedByRole: IRole.Wolf);
+                                            KillPlayer(target, KillMthd.Eat, killers: voteWolves, killedByRole: IRole.Wolf, hunterFinalShot: false);
                                             if (target.PlayerRole == IRole.Sorcerer)
                                             {
                                                 foreach (var w in voteWolves)
@@ -4213,7 +4214,15 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             }
                         }
                         if (tries > 0) Send(GetLocaleString("ThiefStealChosen", target.GetName()), thief.Id);
-                        StealRole(thief, target);
+                        switch (VisitPlayer(thief, target))
+                        {
+                            case VisitResult.Success:
+                                StealRole(thief, target);
+                                break;
+                            case VisitResult.VisitorDied:
+                                // don't steal from SKs :P
+                                break;
+                        }
                     }
                 }
                 else if (!thief.Frozen)
