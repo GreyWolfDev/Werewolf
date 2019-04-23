@@ -104,7 +104,7 @@ sum(count(x.Gameid)) over (partition by players) as Games
             chart.Height = 400;
             var legend = new Legend();
             //create serie...
-            foreach (var team in new[] { "Wolf", "Village", "Tanner", "Cult", "SerialKiller", "Lovers" })
+            foreach (var team in new[] { "Wolf", "Village", "Tanner", "Cult", "SerialKiller", "Arsonist", "Lovers" })
             {
                 Series serie1 = new Series();
                 //serie1.Label = team;
@@ -126,6 +126,9 @@ sum(count(x.Gameid)) over (partition by players) as Games
                         break;
                     case "SerialKiller":
                         serie1.Color = Color.Black;
+                        break;
+                    case "Arsonist":
+                        serie1.Color = Color.Orange;
                         break;
                     case "Lovers":
                         serie1.Color = Color.Pink;

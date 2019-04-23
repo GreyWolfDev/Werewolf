@@ -2212,16 +2212,16 @@
     <value>Dauer des Lynchens</value>
   </string>
   <string key="RoleConfig">
-	<value>Role Configuration</value>
+	<value>Rolleneinstellungen</value>
   </string>
   <string key="Mechanics">
-	<value>Game Mechanics</value>
+	<value>Spielmechaniken</value>
   </string>
   <string key="GroupSettings">
-	<value>Group Settings</value>
+	<value>Gruppeneinstellungen</value>
   </string>
   <string key="Timers">
-	<value>Game Timers</value>
+	<value>Zeiteinstellungen</value>
   </string>
   <string key="Done">
 	<value>Fertig!</value>
@@ -2230,12 +2230,216 @@
 	<value>Zurück</value>
   </string>
   <string key="ShufflePlayerList">
-    <value>Shuffle Player List</value>
+    <value>Spielerliste mischen</value>
   </string>
   <string key="ShufflePlayerListQ">
-    <value>Shuffle player list every time? Current: {0}</value>
+    <value>Die Spielerliste jedes mal neu mischen? Aktuell: {0}</value>
   </string>
   <string key="ShufflePlayerListA">
-    <value>Player list will be shuffled every time: {0}</value>
+    <value>Die Spielerliste wird jedes mal neu gemischt: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Du bist der Totengräber ☠️. Jede Nacht gräbst du die Gräber für alle, die gestorben sind, seitdem du das das letzte Mal getan hast (ja, sogar Werwölfe verdienen eine Beerdigung). Da du damit die ganze Nacht beschäftigt bist, können die Wölfe oder der Kult dich nicht finden, es sei denn, du hast in einer Nacht tatsächlich nichts zu tun. Jeder, der dich besucht, hat eine gewisse Chance, in eines deiner Gräber zu fallen und zu sterben, abhängig davon, wie viele du gegraben hast. Außerdem wird die Chance für jeden halbiert, der dir gegenüber eine gute Gesinnung besitzt. Aber deine Nachtaktivität hat auch ihre Nachteile... Wenn du deine Gräber gräbst, haben der Serienmörder oder die Wölfe eine Chance, dich zufällig zu sehen und sofort zu töten, und je mehr du zu graben hast, desto größer ist das Risiko. Ach ja, und der Serienmörder ist anscheinend verrückt genug, um dich selbst dann zu finden, wenn du draußen unterwegs bist. Allerdings könnte er dabei dann in eines deiner Gräber stolpern und dadurch eventuell in der nächsten Nacht die Kontrolle darüber verlieren, wer sein Opfer ist.</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Du bist der Totengräber ☠️. Deine Aufgabe ist es, die Leichen der Dorfbewohner (und Werwölfe) ordentlich zu entsorgen. Du gräbst ihnen also allen ein schönes Grab. Allerdings bist du meistens zu faul, sie wieder zuzuschütten und lässt sie einfach offen. Außerdem bringst du normalerweise ein paar Sicherheitsmaßnahmen an... Zumindest bist du nicht daheim, falls dich währenddessen die Wölfe besuchen. Pass nur auf, dass sie dich nicht zufällig auf dem Heimweg erblicken!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>der Totengräber ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Die Toten ruhen in ihren Gräbern, und die Lebenden warten noch auf ihren Tod. Alles ist wie es sein sollte und du kannst dich schön ausschlafen.</value>
+  </string>
+  <string key="DigGraves">
+	<value>Bis tief in die Nacht gräbst du für {0}. Mögen die Seelen der Toten Frieden finden und ihre Körper Ruhe.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Als du gerade dein Haus verlassen willst, um die Toten zu begraben, fährt dir plötzlich ein eisiger Windstoß ❄️ durch die Haare und friert dich auf mysteriöse Weise ein. Dir bleibt wohl nichts übrig, als auf den Morgen zu warten, damit die Sonne dich auftaut. Die Seelen der Toten werden wohl noch etwas länger rastlos herumgeistern müssen...</value>
+  </string>
+  <string key="GraveDiggerNotHome">
+	<value>Das Wolfsrudel läuft zu dem Haus von {0}, aber es ist niemand zuhause. Alles, was ihr sehen könnt, ist eine Kerze, die einsam auf einem Grab ☠️ leuchtet...</value>
+  </string>
+  <string key="WolfFellWolves">
+	<value>Das Wolfsrudel läuft zum Haus von {0}, aber bevor sie dort ankommen, tritt {1} plötzlich in eine Bärenfalle und stürzt in ein offenes Grab ☠️, wo ein Silberspeer den Wolf aufspießt! Das ist also der Grund, weswegen der Totengräber seine Gräber sichert...</value>
+  </string>
+  <string key="WolfFell">
+	<value>Gerade willst du das letzte Grab zuschütten, da fällt dir plötzlich ein seltsamer Geruch auf, irgendwie anders als die üblichen Leichen... Als du nachschaust, findest du {0}, einen Werwolf 🐺, der wohl niemanden mehr fressen wird!</value>
+  </string>
+  <string key="KillerStumbled">
+	<value>Du schneidest die Leber aäuberlich aus {0}'s Körper, und auf dem Rückweg beschließt du, in einem der Gräber ☠️ noch nach weiteren Lebern zu suchen. Leider lehnst du dich ein wenig zu weit über ein Grab und fällst hinein... Du hast es zwar überlebt, aber jetzt tut dir dein Bein ziemlich weh.</value>
+  </string>
+  <string key="KillerRandomKill">
+	<value>Auf dem Weg zu {0}s Haus schießt plötzlich ein scharfer Schmerz durch dein Bein ☠️. Du entscheidest dich, einfach schnell zum nächsten Haus zu laufen, in diesem Fall also das von {1}, den Bewohner umzubringen und schnell wieder heimzugehen.</value>
+  </string>
+  <string key="GuardBlockedRandomKiller">
+	<value>Du kommst am Haus von {0} an, aber dort steht plötzlich der Schutzengel 👼! Du versuchst, noch irgendwie an ihm vorbeizukommen, aber mit diesem Bein hast du keine Chance. Das war ja wirklich eine grauenvolle Nacht für dich!</value>
+  </string>
+  <string key="HunterFell">
+	<value>Noch eine erfolglose Nacht ohne einen Kultisten, den du hättest erledigen können! {0} war ja unschuldig. Verärgert läufst du über den Friedhof ☠️ und bemerkst die Bärenfalle nicht, bis sie sich um dein Fußgelenk schließt. Erschrocken schreist du auf und versuchst dich zu befreien, aber zu spät! Du fällst rückwärts in ein offenes Grab und das Geräusch, das dein Genick beim Brechen macht, ist alles, was du noch hörst, bevor alles dunkel wird.</value>
+  </string>
+  <string key="HunterFellDigger">
+	<value>Nach einer weiteren ermüdenden Nacht läufst du nach Hause, als die Sonne schon über dem Dorf aufgeht. Gerade willst du dein Haus betreten, da bemerkst du plötzlich ein Schwert 💂‍♀️ auf dem Boden neben einem offenen Grab, in welchem der tote Körper von {0} liegt. Der Kultjäger hätte dich wohl besser nicht verdächtigen sollen...</value>
+  </string>
+  <string key="CultFell">
+	<value>Du kehrst nach einer ermüdenden Nacht nach Hause zurück, als du plötzlich einen Schrei aus der Richtung eines deiner Gräber hörst. Du eilst dorthin und findest {0} tot in der offenen Grube... Welcher Kultist 👤 würde denn auch einen Totengräber konvertieren wollen?</value>
+  </string>
+  <string key="CultConvertGraveDigger">
+	<value>Auf dem Weg zu {1}s Haus entscheidet {0} plötzlich, die Kirche abbrennen zu wollen. {0} führt euch also über den Friedhof ☠️, doch plötzlich schnappt eine Bärenfalle um {0}s Fuß zu! Ihr hört nur noch den entsetzten Schrei, bevor ihr euch umdreht und schnell das Weite sucht.</value>
+  </string>
+  <string key="ChemistFell">
+	<value>Auf dem Weg zu einem romantischen Dinner mit {0} überprüfst du zum zehnten Mal das Etikett deiner Weinflasche. Du bist so konzentriert darauf, dass du stolperst und in ein offenes Grab ☠️ fällst, wo du direkt von einem Silberspeer aufgespießt wirst. Bevor du auch nur ein Geräusch machen könntest, bist du tot.</value>
+  </string>
+  <string key="ChemistFellDigger">
+	<value>Irgendwie hast du plötzlich Lust auf einen guten Wein. Einem Instinkt folgend schaust du in das Grab direkt neben dir, wo tatsächlich eine Weinflasche 👨‍🔬 liegt! Leider ist sie noch in {0}s toten Händen... Plötzlich ist dir jeglicher Appetit vergangen.</value>
+  </string>
+  <string key="HarlotFell">
+	<value>Mit deinem Lieblingslippenstift auf den Lippen begibst du dich zu {0}s Haus, um dort ein wenig Spaß zu haben. Leider kommst du nicht weit genug, da du auf dem Weg in eine Bärenfalle trittst und bei dem Versuch, dich zu befreien, in ein Grab ☠️ stürzt und stirbst. Fällt das auch unter Berufsrisiko?</value>
+  </string>
+  <string key="HarlotFellDigger">
+	<value>Anscheinend hat das Schicksal was gegen dich. Nicht nur, dass du die ganze Nacht mit Gräbern beschäftigt bist, jetzt ist auch noch {0}, die Hure 💋, in eines deiner Gräber gefallen und gestorben, als sie mit dir die Nacht verbringen wollte...</value>
+  </string>
+  <string key="HarlotVisitDigger">
+	<value>Du läufst zu {0}s Haus und weichst unterwegs geschickt allen Gräbern aus, allerdings ist am Ende des Weges niemand zuhause! Anscheindend gräbt {0} immer noch an den Gräbern ☠️...</value>
+  </string>
+  <string key="GAFell">
+	<value>Das war wirklich keine gute Nacht für dich... Statt {0} wie geplant vor allen Gefahren zu beschützen, bist du in eine Bärenfalle getreten, in ein Grab ☠️ gefallen und gestorben! Wieso muss der Totengräber überhaupt alle seine Gräber sichern?</value>
+  </string>
+  <string key="GAFellDigger">
+	<value>Auf deinem Heimweg findest du eine weiße Feder am Rande des Weges. Es bedarf keiner langen Suche, um {0}, den Schutzengel 👼, tot in einem deiner Gräber liegen zu sehen. Manchmal treffen deine sogenannten Sicherheitsmaßnahmen auch die falschen Leute...</value>
+  </string>
+  <string key="ThiefFell">
+	<value>Du schleichst dich über den Friedhof, um {0}s Rolle zu stehlen. Leider bist du so konzentriert, dass du die Bärenfalle erst dann bemerkst, als sie laut krachend zuschnappt... Schlimm genug, dass deine Tarnung aufgeflogen ist, aber zu allem Überfluss fällst du auch noch in ein Grab ☠️ und brichst dir dein Genick!</value>
+  </string>
+  <string key="ThiefFellDigger">
+	<value>Gut, dass du deine Gräber immer gewissenhaft sicherst! {0} wollte letzte Nacht deine Rolle stehlen 😈, aber ist dabei in deine Falle getappt. Vielleicht glauben die Dorfbewohner dir jetzt endlich, dass deine Sicherheitsmaßnahmen tatsächlich nötig sind!</value>
+  </string>
+  <string key="ArsonistFell">
+	<value>Das nächste Mal, wenn du ein Haus in Benzin tränken willst, solltest du vielleicht besser aufpassen, wo du hintrittst! Dieses Mal bist du nämlich in eine Bärenfalle getreten, in ein Grab ☠️ gefallen und von einem Speer aufgespießt worden. Vielleicht gibt es ja doch so etwas wie Karma...</value>
+  </string>
+  <string key="ArsonistFellDigger">
+	<value>Aus einem deiner Gräber riecht es verdächtig nach Benzin... Besorgt schaust du nach und findest {0}, den Pyromanen 🔥 tot in einem Grab liegen. Immerhin, dein Haus ist benzinfrei!</value>
+  </string>
+  <string key="DefaultFellPublic">
+	<value>In einem der Gräber auf dem Friedhof lag heute eine Leiche zu viel... Anscheinend ist {0} beim Versuch, den Totengräber ☠️ zu besuchen, in ein Grab gefallen und gestorben! {1}</value>
+  </string>
+  <string key="HarlotFellPublic">
+	<value>Als die Hure 💋 {0} von ihrer Nacht zurückkam, nahm sie eine Abkürzung über den Friedhof. Allerdings war sie wohl ein wenig abgelenkt und sah das offene Grab ☠️ nicht, bis sie den Boden unter den Füßen verlor... Vielleicht hätte sie sich lieber doch einen Job für tagsüber suchen sollen!</value>
+  </string>
+  <string key="CultFellPublic">
+	<value>Die Kultisten wollten die Kirche verbrennen, aber als {0} sie über den Friedhof ☠️ führen wollte, trat der Kultist 👤 in eine Bärenfalle! Nur noch ein verzweifelter Schrei war zu hören, als die anderen Kultisten schon die Flucht ergirffen...</value>
+  </string>
+  <string key="ThiefFellPublic">
+	<value>Vielleicht hat sich {0} auf Grabraub verlegt, vielleicht war es auch nur Karma. Jedenfalls hat der Dieb 😈 sich gerade auf dem Friedhof ☠️ herumgetrieben, als eine Bärenfalle seinen Fuß umschloss. Vielleicht hätte er sich lieber einen Komplizen suchen sollen... So schnell wird {0} nichts mehr stehlen!</value>
+  </string>
+  <string key="WolfFellPublic">
+	<value>Als die Wölfe auf Jagd waren, hat sich {0} wohl so sehr auf die Jagd konzentriert, dass der Wolf die Bärenfalle gar nicht bemerkte, die um seinen Fuß zuschnappte! Überrascht fiel {0} in ein Grab und wurde von einem Silberspeer aufgespießt! Vielleicht ist es ja doch eine gute Idee vom Totengräber ☠️, seine Gräber zu sichern... {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Du machst brav deinen Job, als plötzlich ein verrückter Serienmörder 🔪 auf dich zuspringt und dich ersticht! So ein Mist...</value>
+  </string>
+  <string key="SerialKillerSpotted">
+	<value>Du läufst gerade mit blutigem Messer am Friedhof vorbei, als du plötzlich {0}, den Totengräber ☠️ entdeckst. Deinen Instinkten folgend entscheidest du, dass es heute Nacht zwei Opfer geben wird...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Du machst brav deinen Job, als dich plötzlich ein Wolf 🐺 von hinten anspringt und dich umbringt!</value>
+  </string>
+  <string key="WolvesSpotted">
+	<value>Das Wolfsrudel rennt gerade über den Friedhof, als ihr plötzlich {0}, den Totengräber ☠️ entdeckt. Bevor der überhaupt eine Chance hat, zu reagieren, springt einer von euch auf seinen Rücken und bringt ihn mit einem gezielten Biss um.</value>
+  </string>
+  <string key="WolvesSpottedDiggerPublic">
+	<value>Hat {0} etwa schon wieder verschlafen? Als ihr nachsehen geht, findet ihr den Totengräber ☠️ allerdings tot auf dem Friedhof liegen, mit seiner Schaufel in der Hand! Anscheinend wurde {0} in der Nacht von den Wölfen 🐺 überrascht...</value>
+  </string>
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} fehlt euch heute... Hat da etwa schon wieder jemand verschlafen? Ihr macht euch auf die Suche und findet den Totengräber ☠️ tot auf dem Friedhof, immer noch die Schaufel umklammernd. Anscheinend ist er an einigen Stichwunden 🔪 gestorben...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Pyromane</value>
+  </string>
+  <string key="AllowArsonistQ">
+	<value>Pyromanen erlauben? Momentan: {0}</value>
+  </string>
+  <string key="AllowArsonistA">
+	<value>Pyromanen sind nun {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Serieninferno</value>
+  </string>
+  <string key="BurningOverkillQ">
+	<value>Einen Pyromanen und einen Serienmörder im selben Spiel erlauben? Könnte tödlich sein! 😈 Aktuell: {0}</value>
+  </string>
+  <string key="BurningOverkillA">
+	<value>Ein Pyromane und ein Serienmörder im selben Spiel sind nun {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Du bist der Pyromane 🔥. Wie der Serienkiller bist du alleine in deinem Team. Jede Nacht hast du die Möglichkeit, das Haus eines Spielers mit Benzin zu tränken. Sobald mindestens ein Haus getränkt ist, kannst du dich stattdessen entscheiden, alles anzuzünden, wodurch alle in Benzin getränkten Häuser abbrennen und jeder stirbt der darin wohnt oder sich gerade dort aufhält. Du gewinnst, wenn außer dir niemand mehr lebt.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Du bist der Pyromane 🔥. Jede Nacht darfst du entweder ein Haus in Benzin tränken oder alle getränkten Häuser entzünden. Du kannst nur gewinnen, wenn du alle anderen umbringst.</value>
+  </string>
+  <string key="Arsonist">
+	<value>der Pyromane 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Willst du ein weiteres Haus tränken oder möchtest du alle getränkten Häuser brennen sehen?</value>
+  </string>
+  <string key ="ArsonistVisitKiller">
+	<value>Der Pyromane 🔥 {0} hat versucht, das Haus eines Serienmörders 🔪 in Benzin zu tränken. Das hat er wohl nicht überlebt...</value>
+  </string>
+  <string key="Spark">
+	<value>Entzünden</value>
+  </string>
+  <string key="Doused">
+	<value>Du schleichst dich in {0}s Haus und verschüttest an einigen unauffälligen Stellen Benzin. Das sollte reichen, um die Brandgefahr deutlich zu steigern...</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Ein Feuer 🔥 ist in deinem Haus ausgebrochen! Zum Glück war der Schutzengel 👼 da und hat es gelöscht. Aus ihm könnte auch ein guter Feuerwehrmann werden...</value>
+  </string>
+  <string key="GuardSavedFromFire">
+	<value>Du hast zwar nicht direkt damit gerechnet, {0} vor einem Hausbrand 🔥 retten zu müssen, aber dennoch hast du das Feuer erfolgreich gelöscht! Es soll ja niemand sagen können, du hättest deinen Schützling im Stich gelassen...</value>
+  </string>
+  <string key="CleanDoused">
+	<value>Da du bei {0} heute nichts zu tun hattest, konntest du dich ein wenig umsehen und bemerktest Benzin 🔥 in einigen Ecken des Hauses! Aus Langeweile entferntest du also alles und putztest sogar noch ein wenig das Haus.</value>
+  </string>
+  <string key="Burning">
+	<value>Das Dorf erwacht zum Geruch von gegrilltem Fleisch... Halt, es brennt 🔥! Gemeinsam macht ihr euch daran das Feuer einzudämmen, doch für einige Leute kommt alle Hilfe zu spät. Heute trauert ihr über den Tod von folgenden Dorfbewohnern:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>Das Dorf ist nur noch ein Haufen Asche und verbranntes Holz, und auf der Spitze dessen steht der Pyromane 🔥. Er hat gewonnen...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Vielleicht solltest du dir einen Rauchmelder anschaffen... Dein Haus ist abgebrannt und du bist gestorben!</value>
+  </string>
+  <string key="Augur">
+	<value>der Augur 🦅</value>
+  </string>
+  <string key="AugurSees">
+	<value>Du blickst hinauf in den Himmel und siehst die Vögel ein ungewöhnliches Muster bilden. Das kann nur eines bedeuten: {0} ist nicht Teil eures Dorfes.</value>
+	<value>Die Vögel berichten dir, dass {0} momentan nicht Teil des Dorfes ist.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Du bist der Augur 🦅. Jeden Morgen betrachtest du die Vögel und siehst eine Rolle, die momentan definitiv nicht im Dorf existiert. Außerdem werden die Vögel nie eine Rolle zweimal erwähnen, also pass auf, dass du diese Informationen gut verwendest!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Du bist der Augur 🦅. Du besitzt die Macht, zu erkennen, welche Rollen momentan nicht Teil des Dorfes sind!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Seltsam, heute sind absolut keine Vögel am Himmel... Das heißt wohl, dass du bereits alle Rollen erfahren hast, die nicht im Dorf sind!</value>
+  </string>
+  <string key="WolvesVisitBurn">
+	<value>Das Wolfsrudel stürmt {0}s Haus, doch irgendwas stimmt nicht. Es brennt 🔥! Ihr versucht zu entkommen, aber für {1} gibt es keine Rettung mehr, der Wolf stirbt in den Flammen.</value>	  
+  </string>
+  <string key="DefaultVisitBurn">
+	<value>{0} hätte heute Nacht daheimbleiben sollen... Ein brennendes Haus 🔥 zu besuchen war wohl {0}s letzter Fehler! {1}</value>
+  </string>
+  <string key="WolfVisitBurn">
+	<value>Die Wölfe wollten heute wieder jemanden essen, aber der Pyromane 🔥 kam ihnen zuvor! {0} konnte nicht rechtzeitig aus dem brennenden Haus entkommen... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value> Auch wenn du nicht weißt, der im Dorf nachts als Chemiker heimlich Tränke braut, weißt du, dass diese Person dieses Hobby sofort beenden wird. Der Chemiker ist ab sofort ein normaler Dorfbewohner, as hat er nun davon, dass er alte Menschen nicht achtet und respektiert!</value>
+	<!-- <value>Even though you still don't really know who the chemist is, you are sure that they will never again do such a miserable mistake. The chemist gave up on their job and became a normal villager!</value> -->
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value> Am Morgen stehen sich die beiden verbliebenen Dorfbewohner {0} und {1} in der Mitte des Dorfes gegenüber. Plötzlich zieht {0} ein Packung Streichhölzer aus der Hosentasche, entzündet eins und wirft es {1} vor die Füße, sodass dieser Feuer 🔥 fängt und verbrennt. </value>
+	<!-- <value>Only {0} and {1} are left... Suddenly {0} smiles, pulls out a match, lights it and throws it to the feet of {1}, who goes up in flames!</value> -->
   </string>
 </strings>

@@ -431,6 +431,37 @@ namespace Werewolf_Control
         {
         }
 
+        /// <summary>
+        /// Gets CPU and RAM usage
+        /// </summary>
+        /// <param name="update"></param>
+        /// <param name="args"></param>
+        [Attributes.Command(Trigger = "usage", DevOnly = true)]
+        public static void Usage(Update update, string[] args)
+        {
+            var msgId = Bot.Send("Please hold, reading values", update.Message.Chat.Id).Result.MessageId;
+            var cpuCount = new PerformanceCounter
+            {
+                CategoryName = "Processor",
+                CounterName = "% Processor Time",
+                InstanceName = "_Total"
+            };
+            var cpu = cpuCount.NextValue() + "%";
+            var cpuTimes = new List<int>();
+
+            for (var i = 0; i < 10; i++)
+            {
+                Thread.Sleep(500);
+                cpuTimes.Add((int)cpuCount.NextValue());
+            }
+
+            var cpuAvg = (int)cpuTimes.Average();
+
+            var ram = new PerformanceCounter("Memory", "Available MBytes").NextValue() + "MB";
+
+            Bot.Edit(update.Message.Chat.Id, msgId, $"CPU Usage: {cpuAvg}%\r\nRAM available: {ram}");
+        }
+
         [Attributes.Command(Trigger = "checkgroups", DevOnly = true)]
         public static void CheckGroupList(Update update, string[] args)
         {
@@ -551,7 +582,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "reloadenglish", DevOnly = true)]
         public static void ReloadEnglish(Update update, string[] args)
         {
-            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, "English.xml"));
+            Bot.English = XDocument.Load(Path.Combine(Bot.LanguageDirectory, Program.MasterLanguage));
         }
 
 
@@ -1070,7 +1101,6 @@ namespace Werewolf_Control
         }
 
 
-
         [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]
         public static void LeaveGroup(Update update, string[] args)
         {
@@ -1469,6 +1499,18 @@ namespace Werewolf_Control
                 Bot.Send("Beta was already locked for non-betagroups!", u.Message.Chat.Id);
             }
 #endif
+        }
+
+        [Attributes.Command(Trigger = "startnodes", DevOnly = true)]
+        public static void StartNodes(Update u, string[] args)
+        {
+            if (args.Length < 2 || !int.TryParse(args[1], out int n)) return;
+            n = Math.Min(n, 5);
+            Bot.Send($"Starting {n} new nodes...", u.Message.Chat.Id);
+            for (int i = 0; i < n; i++)
+            {
+                Program.NewNode();
+            }
         }
 
     }

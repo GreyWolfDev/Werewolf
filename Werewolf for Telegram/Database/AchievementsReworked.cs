@@ -180,12 +180,14 @@ namespace Database
         Indestructible = 82,
         [Display(Name = "Psychopath Killer"), Description("As the serial killer, win a game with 35 players!")]
         PsychopathKiller = 83,
-        [Display(Name = "Today's Special!"), Description("Be the role only available on special events!")]
+        [Display(Name = "Today's Special!"), Description("Take part in a special werewolf event!")]
         TodaysSpecial = 84,
         [Display(Name = "Romeo and Juliet"), Description("Be in love with the tanner, and win by lynching your lover!")]
         RomeoAndJuliet = 85,
         [Display(Name = "Really bad luck"), Description("As a serial killer, stumble in a grave, then kill someone randomly and get fought off by the guardian angel.")]
         ReallyBadLuck = 86,
+        [Display(Name = "Domino"), Description("As a hunter, shoot another hunter causing them to shoot as well.")]
+        Domino = 87,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 

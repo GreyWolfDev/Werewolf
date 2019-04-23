@@ -53,7 +53,7 @@ namespace BuildAutomation.Models.Build
         public Project1 project { get; set; }
         public string uri { get; set; }
         public string sourceBranch { get; set; }
-        public string sourceVersion { get; set; }
+        public string sourceGetVersion { get; set; }
         public Queue queue { get; set; }
         public string priority { get; set; }
         public string reason { get; set; }
