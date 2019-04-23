@@ -35,7 +35,7 @@ To set up werewolf on a private server, follow these steps:
       * .gitignore has marked this file, so it won't be committed. **However, when you create the setting, VS will copy it to the app.config - make sure to remove it if you plan on committing back to your fork**
    * Create another new string value named BotanReleaseAPI. You can leave this blank if you don't want to track your usage using BotanIO.
    * If you plan on running another instance of the bot as beta, add another two new string values named BotanBetaAPI and BetaAPI. Again, you can leave BotanBetaAPI empty if you want. Set BetaAPI to the token of your beta bot.
-   * In Visual Studio, open the solution.  Make sure you are set to `RELEASE` build.  You may want to go into `Werewolf_Control.Helpers.UpdateHelper.cs` and add your id to `internal static int[] Devs = { ... }`.  Also, double check the settings.cs files in both Control/Helpers and Node/Helpers.
+   * In Visual Studio, open the solution.  Make sure you are set to `RELEASE` build.  You may want to go into `Werewolf_Control.Helpers.UpdateHelper.cs` and add your id to `internal static int[] Devs = { ... }`.  Also, double check the `Settings.cs` files in both `Werewolf Control/Helpers` and `Werewolf Node/Helpers`.
    * Build the solution
 4. Server directories
    * Pick any directory for your root directory
