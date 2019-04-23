@@ -79,7 +79,7 @@ namespace Werewolf_Control.Helpers
 //#else
 //            Api.Timeout = TimeSpan.FromSeconds(20);
 //#endif
-            English = XDocument.Load(Path.Combine(LanguageDirectory, "English.xml"));
+            English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
 
             //load the commands list
             foreach (var m in typeof(Commands).GetMethods())

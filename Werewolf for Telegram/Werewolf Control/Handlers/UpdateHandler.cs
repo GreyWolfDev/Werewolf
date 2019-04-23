@@ -18,6 +18,7 @@ using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
+using System.Collections;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control.Handler
@@ -870,6 +871,9 @@ namespace Werewolf_Control.Handler
                                     Thread.Sleep(250);
                                     Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
                                     Bot.Api.SendDocumentAsync(id, pack.SKKilled, "SK Killed");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, pack.ArsonistWins, "Arsonist Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.BurnToDeath, "Arsonist Burnt");
                                     Thread.Sleep(500);
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)
@@ -1011,7 +1015,7 @@ namespace Werewolf_Control.Handler
                     }
                     else if (new[] { "validate", "upload" }.Contains(command))
                     {
-                        //global admin only commands
+                        //lang admin only commands
                         if (!UpdateHelper.Devs.Contains(query.From.Id) && !UpdateHelper.IsGlobalAdmin(query.From.Id) && !UpdateHelper.IsLangAdmin(query.From.Id))
                         {
                             Bot.ReplyToCallback(query, GetLocaleString("GlobalAdminOnly", language), false, true);
@@ -1090,20 +1094,11 @@ namespace Werewolf_Control.Handler
                                 var count = 0;
                                 foreach (var player in ohaiplayers)
                                 {
-                                    //add the achievement
-                                    if (player.Achievements == null)
-                                        player.Achievements = 0;
-                                    var ach = (Achievements)player.Achievements;
-                                    if (ach.HasFlag(Achievements.OHAIDER)) continue;
-                                    count++;
-                                    var a = Achievements.OHAIDER;
-                                    player.Achievements = (long)(ach | a);
-                                    //log these ids, just in case....
-                                    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\ohaider.log"), true))
-                                    {
-                                        sw.WriteLine(player.Id);
-                                    }
-                                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.TelegramId);
+                                    var a = AchievementsReworked.OHAIDER;
+                                    var ach = player.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+                                    if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                                    ach = ach.Set(a);
+                                    player.NewAchievements = ach.ToByteArray();
                                     Thread.Sleep(200);
                                 }
                                 DB.SaveChanges();
