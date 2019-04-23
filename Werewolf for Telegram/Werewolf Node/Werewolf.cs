@@ -2615,7 +2615,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             //swap roles
 
             // the thief first
-            Transform(thief, target.PlayerRole, TransformationMethod.ThiefSteal, newRoleModel: target.RoleModel, bullet: target.Bullet, hasUsedAbility: target.HasUsedAbility);
+            Transform(thief, target.PlayerRole, TransformationMethod.ThiefSteal, newRoleModel: target.RoleModel, bullet: target.Bullet, hasUsedAbility: target.HasUsedAbility, roleModel: target);
 
             // then the target
             Transform(target, ThiefFull ? IRole.Thief : IRole.Villager, TransformationMethod.ThiefStolen);
