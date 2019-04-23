@@ -60,7 +60,6 @@ namespace Werewolf_Control
                 }
             };
 #endif
-
             //get the version of the bot and set the window title
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
