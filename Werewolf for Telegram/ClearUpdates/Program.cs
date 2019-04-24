@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Database;
+using Telegram.Bot.Types.InputFiles;
 
 namespace ClearUpdates
 {
@@ -25,6 +25,11 @@ namespace ClearUpdates
         static long DevGroup = -1001077134233;
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+            {
+                var exc = (Exception)e.ExceptionObject;
+                Console.WriteLine("==" + exc.Message + "==\n" + exc.StackTrace);
+            };
 
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
@@ -84,11 +89,11 @@ namespace ClearUpdates
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var m = e.Message;
-            
+
             if (Devs.Contains(m.From.Id))
             {
                 Console.WriteLine($"{m.MessageId} - {m.From.FirstName}: {m.Text}");
-                switch (m.Text.Replace("@wwcleanbot",""))
+                switch (m.Text.Replace("@wwcleanbot", ""))
                 {
                     case "/clearqueue":
                         if (m.Date < DateTime.Now.AddSeconds(-1))
@@ -204,17 +209,17 @@ namespace ClearUpdates
                     msg += "\r\n";
                     sw.WriteLine(msg);
                     Console.WriteLine(msg);
-                    menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
+                    menu.Buttons.Add(InlineKeyboardButton.WithCallbackData($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
             if (menu.Buttons.Count > 0)
             {
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Close", "close"));
                 Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
             }
             using (var fs = new FileStream("log.log", FileMode.Open))
             {
-                Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs));
+                Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt"));
             }
         }
     }
