@@ -2052,7 +2052,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
         private IPlayer AddLover(IPlayer existing = null)
         {
-            var lover = Players.FirstOrDefault(x => x.Id == ChooseRandomPlayerId(existing));
+            var loverId = ChooseRandomPlayerId(existing);
+            var lover = Players.FirstOrDefault(x => x.Id == loverId);
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"AddLover: {lover?.Name} picked");
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -2614,12 +2615,13 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
             }
             //swap roles
+            var targetRole = target.PlayerRole;
 
-            // the thief first
-            Transform(thief, target.PlayerRole, TransformationMethod.ThiefSteal, newRoleModel: target.RoleModel, bullet: target.Bullet, hasUsedAbility: target.HasUsedAbility, roleModel: target);
-
-            // then the target
+            // the target first
             Transform(target, ThiefFull ? IRole.Thief : IRole.Villager, TransformationMethod.ThiefStolen);
+
+            // then the thief
+            Transform(thief, targetRole, TransformationMethod.ThiefSteal, newRoleModel: target.RoleModel, bullet: target.Bullet, hasUsedAbility: target.HasUsedAbility, roleModel: target);
         }
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
