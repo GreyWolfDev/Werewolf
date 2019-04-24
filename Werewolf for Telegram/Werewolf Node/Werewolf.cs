@@ -2118,11 +2118,11 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         /// <param name="toRole">New role for the player</param>
         /// <param name="method">Method of transformation</param>
         /// <param name="newRoleModel">New role model of player. Since role models are mandatory if there are any, defaults to 0 (no role model)</param>
-        /// <param name="teamMembers">Team members to notify, depending on transformation method, if any</param>
+        /// <param name="newTeamMembers">Team members to notify, depending on transformation method, if any</param>
         /// <param name="bullet">new bullet count of player, or null if it shouldn't change</param>
         /// <param name="hasUsedAbility">new HasUsedAbility value of player, or null if it shouldn't change</param>
         /// <param name="roleModel">The role model of the player to transform if they were DG or WC, or the old seer if they were apprentice, or the victim if they were thief</param>
-        private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> teamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null)
+        private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> newTeamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null, IEnumerable<IPlayer> masons = null)
         {
             if (toRole == IRole.Thief && !ThiefFull) toRole = IRole.Villager;
             // increase change roles count
@@ -2146,8 +2146,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 p.ConvertedToCult = true;
 
             // notify masons if given
-            if (p.PlayerRole == IRole.Mason && toRole != IRole.Mason && teamMembers != null)
-                foreach (var m in teamMembers)
+            if (p.PlayerRole == IRole.Mason && toRole != IRole.Mason && masons != null)
+                foreach (var m in masons)
                     Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
 
             // actually transform the player
@@ -2173,13 +2173,13 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     {
                         Send(GetLocaleString("CursedBittenToWolves", p.GetName()), snowwolf.Id);
                         msg += " " + GetLocaleString("WolfPackSnowList",
-                            teamMembers.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
+                            newTeamMembers.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
                             snowwolf.GetName());
                     }
                     else
                     {
                         msg += " " + GetLocaleString("WolfPackList",
-                            teamMembers.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                            newTeamMembers.Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
                     }
                     try
                     {
@@ -2189,7 +2189,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     {
                         //ignored
                     }
-                    foreach (var w in teamMembers)
+                    foreach (var w in newTeamMembers)
                         Send(GetLocaleString("CursedBittenToWolves", p.GetName()), w.Id);
                     break;
                 #endregion
@@ -2209,8 +2209,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 #region Cult
                 case TransformationMethod.ConvertToCult:
                     Send(GetLocaleString("CultConvertYou"), p.Id);
-                    Send(GetLocaleString("CultTeam", teamMembers.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
-                    foreach (var c in teamMembers)
+                    Send(GetLocaleString("CultTeam", newTeamMembers.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
+                    foreach (var c in newTeamMembers)
                         Send(GetLocaleString("CultJoin", $"{p.GetName()}"), c.Id);
                     break;
                 #endregion
@@ -2336,19 +2336,18 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
                             Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
                     var msg1 = GetLocaleString("BittenTurned");
-                    var wolfpack = Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf));
-                    if (wolfpack.Count() > 1)
+                    if (newTeamMembers?.Count() > 1)
                     {
-                        if (wolfpack.Any(x => x.PlayerRole == IRole.SnowWolf))
+                        if (newTeamMembers.Any(x => x.PlayerRole == IRole.SnowWolf))
                         {
                             msg1 += " " + GetLocaleString("WolfPackSnowList",
-                                wolfpack.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
-                                wolfpack.First(x => x.PlayerRole == IRole.SnowWolf).GetName());
+                                newTeamMembers.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next),
+                                newTeamMembers.First(x => x.PlayerRole == IRole.SnowWolf).GetName());
                         }
                         else
                         {
                             msg1 += " " + GetLocaleString("WolfPackList",
-                                wolfpack.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                                newTeamMembers.Where(x => WolfRoles.Contains(x.PlayerRole)).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
                         }
                     }
                     Players.GetPlayerForRole(IRole.AlphaWolf, false).AlphaConvertCount++;
@@ -2633,7 +2632,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     foreach (var c in voteCult)
                         AddAchievement(c, AchievementsReworked.DontStayHome);
 
-                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, teamMembers: voteCult);
+                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: voteCult, masons: Players.Where(x => x.PlayerRole == IRole.Mason));
             }
             else
             {
@@ -3123,7 +3122,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     p.Bitten = false;
                     if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                     {
-                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, teamMembers: Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id));
+                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, masons: Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id),
+                            newTeamMembers: Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf)));
                     }
                 }
             }
@@ -3409,7 +3409,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                             AddAchievement(w, AchievementsReworked.DontStayHome);
                                         goto default;
                                     case IRole.Cursed:
-                                        Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, teamMembers: wolves);
+                                        Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, newTeamMembers: wolves);
                                         break;
                                     case IRole.Drunk:
                                         if (bitten)
@@ -3757,12 +3757,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                         Send(GetLocaleString("CultConvertCultHunter", newbie.GetName(), target.GetName()), c.Id);
                                     }
                                     Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), CountCultistsAlive()), target.Id);
-                                    break;
-                                case IRole.Mason:
-                                    //notify other masons....
-                                    ConvertToCult(target, voteCult);
-                                    foreach (var m in Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead))
-                                        Send(GetLocaleString("MasonConverted", target.GetName()), m.Id);
                                     break;
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
@@ -5568,7 +5562,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
         private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
         {
-            p.DiedLastNight = isNight;
+            // if it was a death by love, don't handle it separately
+            p.DiedLastNight = isNight && killMethod != KillMthd.LoverDied;
             p.TimeDied = DateTime.Now;
             if (killedByRole.HasValue) p.KilledByRole = killedByRole.Value;
             p.DiedByVisitingKiller = diedByVisitingKiller;
