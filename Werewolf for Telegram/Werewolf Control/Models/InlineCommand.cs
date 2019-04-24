@@ -59,14 +59,14 @@ namespace Werewolf_Control.Models
                     var ach = p.NewAchievements == null ? new System.Collections.BitArray(200) : new System.Collections.BitArray(p.NewAchievements);
                     
                     // copy existing achievements to new achievements field
-                    var oldAchList = ((Achievements)(p.Achievements ?? 0)).GetUniqueFlags();
+                    /*var oldAchList = ((Achievements)(p.Achievements ?? 0)).GetUniqueFlags();
                     foreach (var achv in oldAchList)
                     {
                         var newAchv = (AchievementsReworked)Enum.Parse(typeof(AchievementsReworked), achv.ToString());
                         ach.Set(newAchv);
                     }
                     p.NewAchievements = ach.ToByteArray();
-                    db.SaveChanges();
+                    db.SaveChanges();*/
 
                     var count = ach.GetUniqueFlags().Count();
 
