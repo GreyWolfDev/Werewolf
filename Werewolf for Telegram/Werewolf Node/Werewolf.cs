@@ -2124,6 +2124,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         /// <param name="roleModel">The role model of the player to transform if they were DG or WC, or the old seer if they were apprentice, or the victim if they were thief</param>
         private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> teamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null)
         {
+            if (toRole == IRole.Thief && !ThiefFull) toRole = IRole.Villager;
             // increase change roles count
             p.ChangedRolesCount++;
 
@@ -3755,7 +3756,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     {
                                         Send(GetLocaleString("CultConvertCultHunter", newbie.GetName(), target.GetName()), c.Id);
                                     }
-                                    Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), voteCult.Count()), target.Id);
+                                    Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), CountCultistsAlive()), target.Id);
                                     break;
                                 case IRole.Mason:
                                     //notify other masons....
@@ -4512,6 +4513,17 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 p.BeingVisitedSameNightCount = 0;
             }
 
+        }
+
+        private int CountCultistsAlive()
+        {
+            int cultists = 0;
+            // check for alive cultists
+            cultists += Players.Count(x => x.PlayerRole == IRole.Cultist);
+            // check for dg about to transform
+            cultists += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Cultist);
+            // return the sum
+            return cultists;
         }
 
         private bool CheckForGameEnd(bool checkbitten = false)
