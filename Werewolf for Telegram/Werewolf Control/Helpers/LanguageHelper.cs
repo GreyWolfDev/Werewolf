@@ -270,7 +270,7 @@ namespace Werewolf_Control.Helpers
         {
             var msg = "Moving file to production..\n";
             msg += "Checking paths for duplicate language file...\n";
-            Bot.Api.EditMessageTextAsync(id, msgId, msg);
+            Bot.Api.EditMessageTextAsync(id, msgId, msg).Wait();
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
             var langPath = Bot.LanguageDirectory;
@@ -346,7 +346,7 @@ namespace Werewolf_Control.Helpers
 
                 p.Start();
                 msg += "Started the committing process. Reading output from git...";
-                Bot.Edit(id, msgId, msg);
+                Bot.Edit(id, msgId, msg).Wait();
 
                 var output = "";
                 while (!p.StandardOutput.EndOfStream)
@@ -355,7 +355,7 @@ namespace Werewolf_Control.Helpers
                     output += p.StandardError.ReadLine() + Environment.NewLine;
 
                 msg += "\nValidating the output...";
-                Bot.Edit(id, msgId, msg);
+                Bot.Edit(id, msgId, msg).Wait();
 
                 //validate the output
                 if (output.Contains("failed"))
