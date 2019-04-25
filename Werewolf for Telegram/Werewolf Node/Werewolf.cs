@@ -2640,7 +2640,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     foreach (var c in voteCult)
                         AddAchievement(c, AchievementsReworked.DontStayHome);
 
-                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: voteCult, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id));
+                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: voteCult, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id && !x.IsDead));
             }
             else
             {
