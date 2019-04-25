@@ -3356,6 +3356,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
+            WolfCubKilled = false;
 
             if (voteWolves.Any())
             {
@@ -3602,7 +3603,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 eatCount = 0;
             }
-            WolfCubKilled = false;
             #endregion
 
             #region Serial Killer Night
