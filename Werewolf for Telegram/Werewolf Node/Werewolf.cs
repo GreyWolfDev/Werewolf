@@ -2122,7 +2122,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         /// <param name="bullet">new bullet count of player, or null if it shouldn't change</param>
         /// <param name="hasUsedAbility">new HasUsedAbility value of player, or null if it shouldn't change</param>
         /// <param name="roleModel">The role model of the player to transform if they were DG or WC, or the old seer if they were apprentice, or the victim if they were thief</param>
-        private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> newTeamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null, IEnumerable<IPlayer> masons = null)
+        private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> newTeamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null, IEnumerable<IPlayer> oldTeamMates = null)
         {
             if (toRole == IRole.Thief && !ThiefFull) toRole = IRole.Villager;
             // increase change roles count
@@ -2146,9 +2146,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 p.ConvertedToCult = true;
 
             // notify masons if given
-            if (p.PlayerRole == IRole.Mason && toRole != IRole.Mason && masons != null)
-                foreach (var m in masons)
+            if (p.PlayerRole == IRole.Mason && toRole != IRole.Mason && oldTeamMates != null)
+                foreach (var m in oldTeamMates)
                     Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
+
+            // notify cultists if given
+            if (p.PlayerRole == IRole.Cultist && toRole != IRole.Cultist && oldTeamMates != null)
+                foreach (var c in oldTeamMates)
+                    Send(GetLocaleString("CultistBitten", p.GetName()), c.Id);
 
             // actually transform the player
             if (bullet.HasValue) p.Bullet = bullet.Value;
@@ -2616,12 +2621,15 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             }
             //swap roles
             var targetRole = target.PlayerRole;
+            var targetRoleModel = target.RoleModel;
+            var targetBullet = target.Bullet;
+            var targetHasUsedAbility = target.HasUsedAbility;
 
             // the target first
             Transform(target, ThiefFull ? IRole.Thief : IRole.Villager, TransformationMethod.ThiefStolen);
 
             // then the thief
-            Transform(thief, targetRole, TransformationMethod.ThiefSteal, newRoleModel: target.RoleModel, bullet: target.Bullet, hasUsedAbility: target.HasUsedAbility, roleModel: target);
+            Transform(thief, targetRole, TransformationMethod.ThiefSteal, newRoleModel: targetRoleModel, bullet: targetBullet, hasUsedAbility: targetHasUsedAbility, roleModel: target);
         }
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
@@ -2632,7 +2640,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     foreach (var c in voteCult)
                         AddAchievement(c, AchievementsReworked.DontStayHome);
 
-                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: voteCult, masons: Players.Where(x => x.PlayerRole == IRole.Mason));
+                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: voteCult, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id && !x.IsDead));
             }
             else
             {
@@ -3122,7 +3130,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     p.Bitten = false;
                     if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole))
                     {
-                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, masons: Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id),
+                        List<IPlayer> oldTeamMembers = p.PlayerRole == IRole.Cultist
+                            ? Players.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead && x.Id != p.Id).ToList()
+                            : Players.Where(x => x.PlayerRole == IRole.Mason && !x.IsDead && x.Id != p.Id).ToList();
+                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id),
                             newTeamMembers: Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf)));
                     }
                 }
@@ -3345,6 +3356,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
+            WolfCubKilled = false;
 
             if (voteWolves.Any())
             {
@@ -3591,7 +3603,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 eatCount = 0;
             }
-            WolfCubKilled = false;
             #endregion
 
             #region Serial Killer Night
@@ -3917,8 +3928,17 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         Send(GetLocaleString("ChemistTargetEmpty", target.GetName()), chemist.Id);
                         break;
                     case VisitResult.VisitorDied:
-                        Send(GetLocaleString("ChemistVisitYouSK", chemist.GetName()), target.Id);
-                        Send(GetLocaleString("ChemistSK", target.GetName()), chemist.Id);
+                        switch (target.PlayerRole)
+                        {
+                            case IRole.SerialKiller:
+                                Send(GetLocaleString("ChemistVisitYouSK", chemist.GetName()), target.Id);
+                                Send(GetLocaleString("ChemistSK", target.GetName()), chemist.Id);
+                                break;
+                            case IRole.GraveDigger:
+                                Send(GetLocaleString("ChemistFellDigger", chemist.GetName()), target.Id);
+                                Send(GetLocaleString("ChemistFell", target.GetName()), chemist.Id);
+                                break;
+                        }
                         break;
                 }
             }
@@ -3944,22 +3964,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 switch (VisitPlayer(harlot, target))
                 {
-                    case VisitResult.Success:
-                        if (target.DiedLastNight && (WolfRoles.Contains(target.KilledByRole) || target.KilledByRole == IRole.SerialKiller) && !target.DiedByVisitingKiller && !target.DiedByVisitingVictim)
-                        {
-                            KillPlayer(harlot, KillMthd.VisitVictim, killer: target, diedByVisitingVictim: true, killedByRole: target.KilledByRole);
-                            harlot.RoleModel = target.Id; //store who they visited
-                        }
-                        else
-                        {
-                            Send(
-                                (target.PlayerRole == IRole.Cultist && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
-                                    GetLocaleString("HarlotDiscoverCult", target.GetName()) :
-                                    GetLocaleString("HarlotVisitNonWolf", target.GetName()),
-                                harlot.Id);
-                            if (!target.IsDead)
-                                Send(GetLocaleString("HarlotVisitYou"), target.Id);
-                        }
+                    case VisitResult.Success: success:
+                        Send(
+                            (target.PlayerRole == IRole.Cultist && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
+                                GetLocaleString("HarlotDiscoverCult", target.GetName()) :
+                                GetLocaleString("HarlotVisitNonWolf", target.GetName()),
+                            harlot.Id);
+                        if (!target.IsDead)
+                            Send(GetLocaleString("HarlotVisitYou"), target.Id);
                         break;
                     case VisitResult.VisitorDied:
                         if (!target.Burning)
@@ -3979,6 +3991,14 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                                     Send(GetLocaleString("HarlotFell", target.GetName()), harlot.Id);
                                     break;
                             }
+                        break;
+                    case VisitResult.AlreadyDead:
+                        if (target.DiedLastNight && (WolfRoles.Contains(target.KilledByRole) || target.KilledByRole == IRole.SerialKiller) && !target.DiedByVisitingKiller && !target.DiedByVisitingVictim)
+                        {
+                            KillPlayer(harlot, KillMthd.VisitVictim, killer: target, diedByVisitingVictim: true, killedByRole: target.KilledByRole);
+                            harlot.RoleModel = target.Id; //store who they visited
+                        }
+                        else goto success;
                         break;
                     case VisitResult.Fail:
                         switch (target.PlayerRole)
@@ -4236,7 +4256,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             if (!target.Burning && target.PlayerRole == IRole.GraveDigger) Send(GetLocaleString("ThiefFell", target.GetName()), thief.Id);
                             else if (target.PlayerRole == IRole.SerialKiller) Send(GetLocaleString("StealKiller"), thief.Id);
                             break;
-                        case VisitResult.Fail: fail:
+                        case VisitResult.Fail:
+                            fail:
                             Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                             break;
                     }
