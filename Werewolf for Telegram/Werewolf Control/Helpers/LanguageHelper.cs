@@ -397,7 +397,7 @@ namespace Werewolf_Control.Helpers
                 db.SaveChanges();
             }
 
-            msg += "\nBroadcasting reload message to nodes...\n";
+            msg += "Broadcasting reload message to nodes...";
             Bot.Edit(id, msgId, msg);
             foreach (var node in Bot.Nodes) node.Broadcast($"reload:{Path.GetFileNameWithoutExtension(copyToPath)}");
 
