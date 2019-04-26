@@ -2478,7 +2478,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             // increment visit count
             visited.BeingVisitedSameNightCount++;
             // If someone's dead, they're dead.
-            if (visited.IsDead && !visited.Burning) return VisitResult.AlreadyDead;
+            if (visited.IsDead && !visited.Burning && (ThiefFull || visitor.PlayerRole != IRole.Thief)) return VisitResult.AlreadyDead;
             // A serial killer never misses their target. They might stumble into a grave, though.
             if (visitor.PlayerRole == IRole.SerialKiller && visited.PlayerRole != IRole.GraveDigger) return visited.IsDead ? VisitResult.AlreadyDead : VisitResult.Success;
             // if the visited person is burning, everyone but the SK burns with them
@@ -2498,6 +2498,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                 }
                 else return VisitResult.Success;
             }
+            if (visitor.PlayerRole == IRole.Thief && !ThiefFull) return VisitResult.Success;
             // A snow wolf can only maybe not freeze a serial killer
             if (visitor.PlayerRole == IRole.SnowWolf) return VisitResult.Success;
             // If the visited player is a wolf, only certain roles might die
