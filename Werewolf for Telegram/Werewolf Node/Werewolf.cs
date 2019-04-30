@@ -4540,7 +4540,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
             // check for alive cultists
             cultists += Players.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead);
             // check for dg about to transform
-            cultists += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Cultist);
+            cultists += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && !x.IsDead && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Cultist);
             // return the sum
             return cultists;
         }
