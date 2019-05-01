@@ -86,9 +86,6 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
 🦊RAVE VICTORY!!!🦊 #RaveWin" },
 
-            // 2 months
-            { 229477366, @"Congrats to my amazing, winning team! To the losers— better luck next time😈🥳" },
-
             // 4 months
             { 501853952, @"Congrats on winning, if you ever lose a game, there's always next game button! Better luck next time!" },
 
